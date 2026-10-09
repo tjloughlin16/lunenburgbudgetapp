@@ -1,0 +1,602 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2023-10-23",
+ "video_id": "E470s7YnyyA",
+ "video_url": "https://www.youtube.com/watch?v=E470s7YnyyA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2023-10-23-E470s7YnyyA.json",
+  "sha256": "fc616bcdff44a0d926c3fb978b12f8fd2c02e2cf8247782618dda69f00622462",
+  "caption_lines": 458,
+  "segments": 3488
+ },
+ "recording": {
+  "duration_s": 9680,
+  "duration": "2:41",
+  "spoken_chars": 118499,
+  "words_approx": 19749
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10232023-438",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-10-23-agenda-438.txt",
+   "path": "sources/meetings/planning-board/2023-10-23-agenda-438.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10232023-439",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-10-23-agenda-439.txt",
+   "path": "sources/meetings/planning-board/2023-10-23-agenda-439.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10232023-816",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-10-23-agenda-816.txt",
+   "path": "sources/meetings/planning-board/2023-10-23-agenda-816.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10232023-816",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-10-23-minutes-816.txt",
+   "path": "sources/meetings/planning-board/2023-10-23-minutes-816.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T05:36:05Z",
+  "cost_usd": 0.400383
+ },
+ "minutes": {
+  "headline": "Planning Board endorsed two ANR plans and approved a parking-link change, but continued two stormwater hearings pending reviews.",
+  "summary": "The vice chair ran the meeting with the interim planning director. The board continued the 171 Arbor Street hearing, approved a minor site plan modification at 1325 Massachusetts Avenue, endorsed ANR plans for 255 Sunny Hill Road and 1083 Northfield Road, and closed the 274 Prospect Street stormwater hearing. The 255 Sunny Hill stormwater hearing drew many neighbors' flooding and wildlife concerns and was continued.",
+  "attendees": [
+   {
+    "name_as_heard": "Vice chair (unnamed)",
+    "role": "vice chair, running the meeting"
+   },
+   {
+    "name_as_heard": "Richard Harris",
+    "role": "interim planning director"
+   },
+   {
+    "name_as_heard": "Mr Wilmer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Allison",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Annie",
+    "role": "planning office staff"
+   },
+   {
+    "name_as_heard": "Mr Brener",
+    "role": "member (referred to as returning that week)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 286,
+    "topic": "Chair asked for general public comment; none offered."
+   },
+   {
+    "t": 1568,
+    "topic": "Resident whose mother lives on Lemonster Road asked whether the ANR land is across from her house and about wetlands.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 1735,
+    "topic": "Neighbor concerned about wetlands, wildlife, groundwater flooding and the address used for the study (Sunny Hill vs Lemonster Road)."
+   },
+   {
+    "t": 2112,
+    "speaker_as_heard": "Berkeley gray",
+    "stated_role": "resident, 325 Sunny Hill Road",
+    "topic": "Called the division of the property into ANR lots irresponsible."
+   },
+   {
+    "t": 3302,
+    "speaker_as_heard": "Christina senle",
+    "stated_role": "resident, family of 255 Lemonster Road",
+    "topic": "Opposed more building near protected wetlands; worried about runoff, wildlife, noise and an elderly mother."
+   },
+   {
+    "t": 3469,
+    "speaker_as_heard": "Raymond lejoy",
+    "stated_role": "resident, 245 Lemonster Road",
+    "topic": "Wildlife, worsening drainage and septic problems, property value, and opposition to the project."
+   },
+   {
+    "t": 3828,
+    "speaker_as_heard": "Amanda morovich",
+    "stated_role": "resident, 355 Sunny Hill Road; environmental science teacher",
+    "topic": "Loss of federal wetland protections, tree cutting, flooding, bats and endangered species."
+   },
+   {
+    "t": 4014,
+    "speaker_as_heard": "Wade CER",
+    "stated_role": "resident, 218 Lemonster Road",
+    "topic": "Asked for clarification of the plan for lot access from Lemonster Road and stream protection."
+   },
+   {
+    "t": 4141,
+    "speaker_as_heard": "Evan Waters",
+    "stated_role": "resident, 245 Sunny Hill Road (via Zoom)",
+    "topic": "Clearing of trees, flooding, wildlife corridor, culvert and the fourth lot's frontage."
+   },
+   {
+    "t": 4547,
+    "speaker_as_heard": "Debbie Chaplan",
+    "stated_role": "resident, 208 Lemonster Road",
+    "topic": "Asked about the wildlife biologist report required for the Arbor Street application."
+   },
+   {
+    "t": 4630,
+    "speaker_as_heard": "Berkeley gray",
+    "stated_role": "resident, 325 Sunny Hill Road",
+    "topic": "Who will oversee and enforce stormwater plans and erosion control after approval."
+   },
+   {
+    "t": 5362,
+    "speaker_as_heard": "Evan Waters",
+    "stated_role": "resident (via Zoom)",
+    "topic": "Asked about deed restrictions for stormwater, whether calculations considered the whole parcel, and fill for septic systems."
+   },
+   {
+    "t": 5850,
+    "speaker_as_heard": "Ken Patton",
+    "stated_role": "resident, 290 Lemonster Road",
+    "topic": "Runoff onto his property, possible damming by the new driveway, silt into wetlands and wells."
+   },
+   {
+    "t": 6406,
+    "speaker_as_heard": "Christina sonical",
+    "stated_role": "resident, 255 Lemonster Road",
+    "topic": "Asked how far below her driveway the new driveway would sit and about existing runoff."
+   },
+   {
+    "t": 6516,
+    "speaker_as_heard": "Berkeley gray",
+    "stated_role": "resident, 325 Sunny Hill Road",
+    "topic": "Stormwater must be controlled in any storm event; dredging the wetland for the driveway; enforcement."
+   },
+   {
+    "t": 7017,
+    "speaker_as_heard": "Evan Waters",
+    "stated_role": "resident, 245 Sunny Hill Road",
+    "topic": "Asked how the development benefits the town."
+   },
+   {
+    "t": 7311,
+    "speaker_as_heard": "Ken Paton",
+    "stated_role": "resident, 290 Lemonster Road",
+    "topic": "Asked who checks endangered species mapping."
+   }
+  ],
+  "tags": [
+   "facilities",
+   "housing",
+   "legal",
+   "planning-and-zoning",
+   "public-comment",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 242,
+    "motion": "Continue the public hearing for 171 Arbor Street to November 13 at 6:05 p.m.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 1254,
+    "motion": "Approve modification of the 1325 Massachusetts Avenue site plan: eliminate interconnection between parking areas and add a small paved area.",
+    "moved_by": "so moved",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 2154,
+    "motion": "Endorse the ANR plan for 255 Sunny Hill Road as presented.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 2630,
+    "motion": "Endorse the ANR plan for 1083 Northfield Road as provided.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 7560,
+    "motion": "Continue the stormwater permit hearing for 255 Sunny Hill Road to November 13 at 6:05 p.m.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 8103,
+    "motion": "Close the public hearing on the 274 Prospect Street stormwater permit.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 8817,
+    "motion": "Approve minutes of October 2, 2023 for the planning board meeting, 274 Prospect Street and 560 Mulpus Road, with the stone diaphragm spelling correction.",
+    "outcome": "passed (voice vote, all in favor)",
+    "procedural": true
+   },
+   {
+    "t": 9663,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 6702,
+    "topic": "First right of refusal on the Sunny Hill property",
+    "what_was_said": "A member said the town passed on buying the property when it was offered, ultimately because of funding and timing."
+   },
+   {
+    "t": 9290,
+    "topic": "ARPA funds for rural towns",
+    "what_was_said": "The regional planning commission heard about a new state rural policy effort to help towns obtain ARPA funds."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8568,
+    "decision": "274 Prospect Street stormwater permit: the interim director will draft a decision with standard residential construction hours and no Sunday or holiday work, for deliberation and signing at the next meeting."
+   },
+   {
+    "t": 8353,
+    "decision": "Board members will sign the 1083 Northfield Road ANR at the office, then the planning office will notify the applicant to pick it up."
+   },
+   {
+    "t": 8659,
+    "decision": "560 Mulpus Road solar decision signed, with construction hours Monday-Friday 8 to 4 and Saturday 8 to 12, none on Sundays or federal holidays."
+   },
+   {
+    "t": 3236,
+    "decision": "The Sunny Hill stormwater hearing stays open pending the peer review engineer's letter."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 12,
+    "t_end": 54,
+    "topic": "Opening and Pledge of Allegiance",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 54,
+    "t_end": 285,
+    "topic": "171 Arbor Street hearing continued (peer review and wildlife biologist pending)",
+    "resolution": "voted to continue to November 13",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 286,
+    "t_end": 326,
+    "topic": "Public comment and 560 Mulpus Road solar decision deferred",
+    "resolution": "put on hold",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 327,
+    "t_end": 1295,
+    "topic": "1325 Massachusetts Avenue site plan modification (MassDOT curb cut, parking interconnection)",
+    "resolution": "voted to approve",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1296,
+    "t_end": 2214,
+    "topic": "255 Sunny Hill Road ANR plan and neighbor comment",
+    "resolution": "voted to endorse",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2215,
+    "t_end": 2670,
+    "topic": "1083 Northfield Road ANR plan",
+    "resolution": "voted to endorse",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2671,
+    "t_end": 7603,
+    "topic": "255 Sunny Hill Road stormwater permit hearing",
+    "resolution": "continued to November 13",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7604,
+    "t_end": 8590,
+    "topic": "274 Prospect Street stormwater permit hearing and conditions",
+    "resolution": "hearing closed; decision to be drafted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 8591,
+    "t_end": 8730,
+    "topic": "560 Mulpus Road decision signed",
+    "resolution": "signed",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 8731,
+    "t_end": 8862,
+    "topic": "Minutes approval",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 8863,
+    "t_end": 9560,
+    "topic": "Committee reports: building design, agriculture, MRPC, and others",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 9561,
+    "t_end": 9690,
+    "topic": "Board comments, schedule, vacancies, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote result is not captured beyond the call for 'all in favor'.",
+   "Names of board members other than Mr Wilmer, Mr Allison and the interim director are not given.",
+   "Date typed in captions as 'October 13th' is corrected in the room to November 13th.",
+   "Speaker names are caption-rendered and may be wrong."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board endorsed the ANR plan for 255 Sunny Hill Road and, later, the ANR plan for 1083 Northfield Road, both by voice vote with all in favor.",
+    "t": 2154
+   },
+   {
+    "line": "The 255 Sunny Hill Road stormwater permit hearing was continued to November 13 at 6:05 p.m. and stays open pending the peer review engineer's letter.",
+    "t": 7560
+   },
+   {
+    "line": "The board closed the 274 Prospect Street stormwater hearing; the interim director will draft a decision with standard residential construction hours for the next meeting.",
+    "t": 8103
+   },
+   {
+    "line": "The board approved a modification of the 1325 Massachusetts Avenue site plan that removes the interconnection between parking areas and adds a small paved area.",
+    "t": 1254
+   },
+   {
+    "line": "The 171 Arbor Street hearing was continued to November 13, with peer review and a wildlife biologist report pending.",
+    "t": 242
+   }
+  ],
+  "why_it_matters": [
+   "Neighbors of Sunny Hill Road raised flooding, wetlands and wildlife concerns, and the stormwater hearing that addresses runoff and enforcement is still open, so those concerns can still shape the permit conditions.",
+   "The ANR endorsements were voted before the stormwater hearing for the same address, and residents who spoke on the lots' access and wetlands will find the remaining decision point at the permit stage."
+  ],
+  "watch_next": [
+   "November 13, 6:05 p.m.: the Planning Board resumes the 255 Sunny Hill Road stormwater hearing and the 171 Arbor Street hearing.",
+   "The peer review engineer's letter on Sunny Hill, and the draft 274 Prospect Street decision to be deliberated and signed at the next meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T05:36:14Z",
+   "cost_usd": 0.22509099999999999
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10232023-816",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-10-23-minutes-816.txt",
+   "path": "sources/meetings/planning-board/2023-10-23-minutes-816.pdf"
+  },
+  "official_sha256": "04cb3f500c94f9d03dac3b918b1e1cf54764e653367b30296c9c817cb0cbe449",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records share almost nothing beyond the board members' names. The official minutes as structured record no votes, decisions or transfers, while ours record six votes and four decisions. A reader should know that every vote in ours has no counterpart in the official text, so check the full official minutes for the missing motions before treating any of them as unrecorded.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 2,
+   "discrepancy": 10,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue 171 Arbor Street hearing to Nov 13",
+    "ours": "Continue the public hearing for 171 Arbor Street to November 13 at 6:05 p.m. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "Vote in our minutes with no vote in the official record; check the official minutes for the continuance motion.",
+    "t": 242
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: 1325 Massachusetts Ave site plan modification",
+    "ours": "Approve modification of the 1325 Massachusetts Avenue site plan: eliminate interconnection between parking areas and add a small paved area. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "Approval of a site plan modification appears only in ours; check whether the official minutes omit it or record it elsewhere.",
+    "t": 1254
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: ANR endorsement, 255 Sunny Hill Road",
+    "ours": "Endorse the ANR plan for 255 Sunny Hill Road as presented. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "ANR endorsement vote not in the official record; check the official minutes.",
+    "t": 2154
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: ANR endorsement, 1083 Northfield Road",
+    "ours": "Endorse the ANR plan for 1083 Northfield Road as provided. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "ANR endorsement vote not in the official record; check the official minutes.",
+    "t": 2630
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue 255 Sunny Hill Road stormwater hearing",
+    "ours": "Continue the stormwater permit hearing for 255 Sunny Hill Road to November 13 at 6:05 p.m. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "Continuance vote only in ours; check the official minutes.",
+    "t": 7560
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: close 274 Prospect Street stormwater hearing",
+    "ours": "Close the public hearing on the 274 Prospect Street stormwater permit. — passed (voice vote, all in favor)",
+    "official": "",
+    "note": "Hearing closure vote only in ours; check the official minutes.",
+    "t": 8103
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: 274 Prospect Street permit conditions",
+    "ours": "274 Prospect Street stormwater permit: the interim director will draft a decision with standard residential construction hours and no Sunday or holiday work, for deliberation and signing at the next meeting.",
+    "official": "",
+    "note": "Decision recorded only in ours; check the official minutes for the Prospect Street hearing outcome.",
+    "t": 8568
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: sign 1083 Northfield Road ANR at office",
+    "ours": "Board members will sign the 1083 Northfield Road ANR at the office, then the planning office will notify the applicant to pick it up.",
+    "official": "",
+    "note": "Decision only in ours; check the official minutes.",
+    "t": 8353
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: 560 Mulpus Road solar decision signed",
+    "ours": "560 Mulpus Road solar decision signed, with construction hours Monday-Friday 8 to 4 and Saturday 8 to 12, none on Sundays or federal holidays.",
+    "official": "",
+    "note": "Signed decision with hours only in ours; check the official minutes.",
+    "t": 8659
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: Sunny Hill hearing stays open",
+    "ours": "The Sunny Hill stormwater hearing stays open pending the peer review engineer's letter.",
+    "official": "",
+    "note": "Decision only in ours; check the official minutes.",
+    "t": 3236
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Wilmer",
+    "ours": "Mr Wilmer (member)",
+    "official": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney",
+    "official_reading": "Timothy Willsmer",
+    "note": "Likely a misheard surname for Timothy Willsmer, listed as a member.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Brener",
+    "ours": "Mr Brener (member (referred to as returning that week))",
+    "official": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney",
+    "official_reading": "Matthew Brenner",
+    "note": "Name is a misspelling of Brenner; the official minutes call him Chair and present, so check his role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr Allison",
+    "ours": "Mr Allison (member)",
+    "official": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney",
+    "note": "Same person, present in both; the official minutes call him Vice Chair, which fits our unnamed vice chair running the meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Richard Harris, interim planning director",
+    "ours": "Richard Harris (interim planning director)",
+    "official": "",
+    "note": "Staff member named only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Annie, planning office staff",
+    "ours": "Annie (planning office staff)",
+    "official": "",
+    "note": "Staff member named only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Amanda Reid and Adam Burney present",
+    "ours": "",
+    "official": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney",
+    "note": "Two members listed present in the official minutes were not identified in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Erik Torgersen absent",
+    "ours": "",
+    "official": "absent: erik torgersen",
+    "note": "Absence recorded only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant presentation: Anthony Cleaves",
+    "ours": "",
+    "official": "anthony cleaves presented application from haley ward 510 mechanic street leominster,",
+    "note": "Application presentation not in our minutes; check which item this was."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: Courtney Martino on Pond St driveways",
+    "ours": "",
+    "official": "ms. martino expressed concerns about driveways on pond st. growth makes it difficult to see driveways and wanted to make sure",
+    "note": "Public comment not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T05:36:58Z",
+   "cost_usd": 0.246773
+  }
+ }
+}

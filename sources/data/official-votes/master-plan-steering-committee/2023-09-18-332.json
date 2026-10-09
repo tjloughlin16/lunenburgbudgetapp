@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2023-09-18",
  "docid": "332",
@@ -12,25 +12,190 @@
  },
  "votes": [
   {
-   "motion": "Joeci Gilchrest be elected Chair",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "joeci gilchrest volunteered and was nominated for chair. there was a s econd and a roll call vote which was unanimous ."
+   "motion": "Elect Joeci Gilchrest as Chair, on nomination by roll call.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "nominations for chair - joeci gilchrest volunteered and was nominated for chair. there was a s econd and a roll call vote which was unanimous ."
   },
   {
-   "motion": "Tim Willsmer be elected Vice-Chair",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Tim Willsmer as Vice-Chair, on nomination by roll call (minutes read 'nominated for Chair').",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "tim w illsmer volunteered and was nominated for chair. there was a s econd and a roll call vote which was unanimous ."
   },
   {
-   "motion": "to adjourn at 6:58pm",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 6:58pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion made and seconded to adjourn at 6 :58pm . a roll call vote was taken and was un animous ."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minor OCR artifacts present (spacing in words like \"s econd\", \"un animous\", \"W illsmer\") but text is readable throughout.",
- "cost_usd": 0.12048
+ "note": "Text is OCR-style with broken word spacing (e.g. 'Attendee s-', 'Boul iari', 'un animous') and quotes are copied with that spacing as printed. Vote motions are nominations and an adjournment; no mover or seconder names are printed for any of them, and no tally counts are printed (only 'unanimous'). The Vice-Chair nomination reads 'nominated for Chair' in the minutes, apparently a typo. The Chair's name is spelled 'Gilchrest' in the vote text and 'Gilcrest' in the attendance list; both are recorded as printed. No dollar figures appear, so budget_items and transfers are empty. Public comment is a single speaker, identified by name as printed.",
+ "cost_usd": 0.01562957,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney (land use director), evan watters (finance com.), karin"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "adam burney (land use director), evan watters (finance com.), karin"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "menard (parks), debbie lincoln (council on aging), tim willsmer (planning board)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "menard (parks), debbie lincoln (council on aging), tim willsmer (planning board)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "menard (parks), debbie lincoln (council on aging), tim willsmer (planning board)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustees of Library",
+   "status": "present",
+   "quote": "lou franco (select board), joeci gilcrest (economic"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "lou franco (select board), joeci gilcrest (economic"
+  },
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Economic Development",
+   "status": "present",
+   "quote": "lou franco (select board), joeci gilcrest (economic"
+  },
+  {
+   "name": "Jerry Reid",
+   "role": "resident",
+   "status": "present",
+   "quote": "jerry reid (resident)"
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "OverUnder Consultant",
+   "status": "present",
+   "quote": "rami el samahy ( overunder consultant), and"
+  },
+  {
+   "name": "Foteini Bouliari",
+   "role": "RKG Consultant",
+   "status": "present",
+   "quote": "and foteini boul iari (rkg consultant)"
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "Architectural Preservation District Com. (as printed: Architectu ral Prese rvation District C om .)",
+   "status": "present",
+   "quote": "tony asked if the survey process will be active or passive"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to meet on the first Thursday of each month at 6pm.",
+   "quote": "the consensus was to meet the 1 st thursday of the month at 6pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tony Sc ulimbre ne",
+   "stated_role": "Architectu ral Prese rvation District C om .",
+   "topic": "survey process, engagement plan, and how the committee was formed",
+   "quote": "tony asked if the survey process will be active or passive"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Committee organization (Chair and Vice-Chair)",
+   "resolution": "Chair and Vice-Chair elected unanimously by roll call",
+   "quote": "nominations for chair - joeci gilchrest volunteered and was nominated for chair.",
+   "tags": [
+    "elections",
+    "chair",
+    "vice-chair"
+   ]
+  },
+  {
+   "topic": "Overview of Master Plan progress",
+   "resolution": "No action; consultants described process and next steps",
+   "quote": "the master plan is a living document",
+   "tags": [
+    "master plan",
+    "consultants",
+    "community engagement"
+   ]
+  },
+  {
+   "topic": "Discussion of meeting schedule",
+   "resolution": "Consensus to meet first Thursday monthly at 6pm",
+   "quote": "the consensus was to meet the 1 st",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Committee comment: library strategic plan",
+   "resolution": "No action; noted for information",
+   "quote": "the plan is on the library website",
+   "tags": [
+    "library",
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "No action; questions answered by consultant and Land Use Director",
+   "quote": "tony asked if the survey process will be active or passive",
+   "tags": [
+    "public comment",
+    "survey",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 6:58pm by roll call vote",
+   "quote": "motion made and seconded to adjourn at 6 :58pm .",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "steering committee",
+  "elections",
+  "meeting schedule",
+  "community engagement",
+  "public comment",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

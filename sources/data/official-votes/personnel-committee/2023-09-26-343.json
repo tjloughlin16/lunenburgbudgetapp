@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-09-26",
  "docid": "343",
@@ -12,59 +12,223 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the September 6, 2023 meeting",
+   "motion": "Approve the minutes of the September 6, 2023 meeting.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to accept and approve the minutes from the september 6, 2023 meeting second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept and approve the minutes from the september 6, 2023 meeting"
   },
   {
-   "motion": "move discussion of Vacation Leave Accrual to the next meeting",
+   "motion": "Move discussion of the Vacation Leave Accrual to the next meeting so J. Bilotta can take part.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "s. andrews made a motion to move the discussion of the vacation leave accrual to the next meeting as j. bilotta was not in attendance and the group wanted her to be able to particip",
-   "quote_taken_from_text": true
+   "quote": "s. andrews made a motion to move the discussion of the vacation leave accrual to the next meeting"
   },
   {
-   "motion": "establish job description for P.S. Head Clerk Coordinator in the SAP",
+   "motion": "Accept the HR Director's recommendations to establish the job description for the P.S. Head Clerk Coordinator in the SAP, pending final Select Board approval.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "s. andrews made a motion to accept the recommendations of the hr director to establish this job description for the p.s. head clerk coordinator in the sap, pending final approval by the select board. se",
-   "quote_taken_from_text": true
+   "quote": "s. andrews made a motion to accept the recommendations of the hr director to establish this job description for the p.s. head clerk coordinator"
   },
   {
-   "motion": "amend job description for Reserve Police Officer in the SAP",
+   "motion": "Accept the HR Director's recommendations to amend the job description for the Reserve Police Officer in the SAP, pending Select Board approval.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "w. bertrand made a motion to accept the recommendations of the hr director to amend this job description for the reserve police officer in the sap, pending approval by the select board. second: d",
-   "quote_taken_from_text": true
+   "quote": "w. bertrand made a motion to accept the recommendations of the hr director to amend this job description for the reserve police officer in the sap"
   },
   {
-   "motion": "amend job description for Executive Assistant to the Town Manager and Select Board in the SAP",
-   "moved_by": "D. Fortune",
+   "motion": "Accept the HR Director's recommendations to amend the job description for the Executive Assistant to the Town Manager and Select Board in the SAP, pending Select Board approval.",
+   "moved_by": "D, Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "d, fortune made a motion to accept the recommendations of the hr director to amend this job description for the executive assistant to the town manager and select board in the sap, pending approval by the select board",
-   "quote_taken_from_text": true
+   "quote": "d, fortune made a motion to accept the recommendations of the hr director to amend this job description"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 6.52pm.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "d. fortune made a motion to adjourn at 6.52pm second: s. andrews roll call vote: all in favor"
+   "quote": "d. fortune made a motion to adjourn at 6.52pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded as \"All in Favor\". Note: Minutes contain a typo in vote 5, listing \"D, Fortune\" with a comma instead of \"D. Fortune\" with a period; quote preserves this exactly as printed.",
- "cost_usd": 0.13870549999999998
+ "note": "Minutes are marked \"Revised\". Every vote is recorded only as \"Roll Call Vote: All in Favor\" with no count printed, so outcomes are recorded as \"passed\" without a count. One mover is printed \"D, Fortune\" (comma, not period); recorded as printed. Two attendees (Patrick Sullivan, Pauline Roy) are marked as on the phone, hence remote. No dollar figures are printed; the position-rating numbers (380, 775, 475 pts) are classification points, not money, so budget_items is empty. Titles vary across the text (Public Safety Head Clerk vs P.S. Head Clerk Coordinator); recorded as printed. The Vacation Leave Accrual discussion was deferred, not taken up, so no discussion content exists for it.",
+ "cost_usd": 0.01565657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "committee member; opened the meeting",
+   "status": "present",
+   "quote": "w. bertrand opened the meeting at 5:05pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "committee attendee (in person)",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "committee attendee (in person)",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager, julie belliveau, assistant town manager/hr director,"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director,"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "thomas gammel police chief, bill bernard, dpw, paula bertram sewer business manager, amanda"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW",
+   "status": "present",
+   "quote": "thomas gammel police chief, bill bernard, dpw, paula bertram sewer business manager, amanda"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "thomas gammel police chief, bill bernard, dpw, paula bertram sewer business manager, amanda"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Administrative support Police Department",
+   "status": "present",
+   "quote": "moore, administrative support police department,"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "remote",
+   "quote": "patrick sullivan fire chief, pauline roy, coa"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "remote",
+   "quote": "patrick sullivan fire chief, pauline roy, coa"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "committee member",
+   "status": "absent",
+   "quote": "absent: joanna bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that new leadership in the sewer department should adapt the Sewer Business Manager job description as needed and present it to the HR Director for review.",
+   "quote": "the committee agreed that the new leadership should adapt the jd as needed and present it to the hr director for review."
+  },
+  {
+   "decision": "The committee agreed to analyze the position-rating grid and explore how group ratings complement the different areas, looking for outliers that may need reexamination.",
+   "quote": "the committee agreed that they would now analyze the grid and explore how group ratings complement the different areas"
+  },
+  {
+   "decision": "The group targeted October 17, 2023 as the next scheduled meeting.",
+   "quote": "the group targeted october 17, 2023 as next scheduled meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Sewer Business Manager",
+   "topic": "Sewer Business Manager job description out of date",
+   "quote": "paula bertram spoke about her concerns that the previous leadership in the sewer department had created the job description for the sewer business manager"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Sewer Business Manager job description",
+   "resolution": "committee agreed new leadership adapt the JD and present it to HR Director",
+   "quote": "the committee agreed that the new leadership should adapt the jd as needed and present it to the hr director for review.",
+   "tags": [
+    "job description",
+    "sewer department"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, September 6, 2023",
+   "resolution": "approved",
+   "quote": "motion by s. andrews to accept and approve the minutes from the september 6, 2023 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Vacation Leave Accrual",
+   "resolution": "continued to next meeting",
+   "quote": "s. andrews made a motion to move the discussion of the vacation leave accrual to the next meeting",
+   "tags": [
+    "vacation leave"
+   ]
+  },
+  {
+   "topic": "Job description review: P.S. Head Clerk Coordinator, Reserve Police Officer, Executive Assistant",
+   "resolution": "approved recommendations, pending Select Board approval",
+   "quote": "chief sullivan presented an amended job description for the public safety head clerk he had worked on",
+   "tags": [
+    "job description",
+    "police department",
+    "fire department",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Job description rating (position classification points)",
+   "resolution": "reviewed and assigned points; PACC Manager not completed",
+   "quote": "the committee then reviewed the following jobs utilizing the position classification rating and guidelines",
+   "tags": [
+    "position classification",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Next steps and next meeting",
+   "resolution": "agreed to analyze the grid; next meeting October 17, 2023",
+   "quote": "the group targeted october 17, 2023 as next scheduled meeting.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "SAP",
+  "position classification",
+  "vacation leave",
+  "sewer department",
+  "police department",
+  "fire department",
+  "Select Board approval",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-10-10",
  "docid": "305",
@@ -12,23 +12,248 @@
  },
  "votes": [
   {
-   "motion": "approve the September 12, 2023 minutes",
-   "moved_by": "Deb Lincoln",
-   "seconded_by": "Betty DiGiacomo",
+   "motion": "Approve the minutes of the September 12, 2023 meeting.",
+   "moved_by": "Ms. Lincoln",
+   "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. lincoln motioned to approve the september 12, 2023 minutes & ms. digiacomo seconded the motion. all approved and motion carried."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Betty DiGiacomo",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. Digiacomo",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln moved to adjourn the meeting. ms. digiacomo seconded the motion. all approved and the motion was carried."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0832725
+ "dropped_unquoted": 1,
+ "note": "Text is complete for the content of pages 1-2; page 3 is empty. Two procedural votes (minutes approval, adjournment) are recorded as 'all approved' with no vote count, so outcome is 'passed' without a tally. No dollar figures appear anywhere in the minutes, so budget_items and transfers are empty. Public comment reads 'None', so no speakers are recorded. Ambiguity: 'Mr. Lincoln' and 'Ms. Lincoln' are printed without first names; Pete Lincoln and Deb Lincoln are listed as present, but the minutes do not state which Lincoln made each motion, so none is assigned. The header says the minutes were approved at a later meeting on 11/14/2023, which is printed text, not a vote recorded in this meeting. Names mentioned but not taking part (Mario Patacchiola, Kathy Herrick, Bob Hamel, Chris Ruth, Mr. Nadareski, Jim Hayes, Pauline Roy) are excluded from attendees.",
+ "cost_usd": 0.01536657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, betty"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, betty"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, betty"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, betty"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Lunenburg Selectperson",
+   "status": "present",
+   "quote": "lou franco, lunenburg selectperson"
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Michele Beauvais",
+   "status": "present",
+   "quote": "digiacomo, jim mcguigan, cathy beale, lou franco, helen balcom, jane rabbitt & michele beauvais."
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "absent",
+   "quote": "judy tarbell, susan o'sullivan & george martin"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "absent",
+   "quote": "judy tarbell, susan o'sullivan & george martin"
+  },
+  {
+   "name": "George Martin",
+   "status": "absent",
+   "quote": "judy tarbell, susan o'sullivan & george martin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Balcom will contact Kathy Herrick to discuss band concerts at the new outdoor pavilion (a follow-up action, no vote).",
+   "quote": "she will contact kathy herrick to discuss further."
+  },
+  {
+   "decision": "Ms. Doherty will contact a local brick mason for ideas on a small brick wall by the Pollinator Garden (a follow-up action, no vote).",
+   "quote": "ms doherty will contact a local brick mason for ideas."
+  },
+  {
+   "decision": "Ms. Lincoln and Ms. Rabbitt will contact Mr. Nadareski about any ongoing Council on Aging board member email issues (a follow-up action, no vote).",
+   "quote": "ms. lincoln & ms. rabbitt will contact mr. nadareski with any ongoing email issues."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: passing of Jim Hayes",
+   "resolution": "moment of silence observed",
+   "quote": "the passing of jim hayes was announced. the board observed a moment of silence in his honor.",
+   "tags": [
+    "announcements",
+    "moment of silence"
+   ]
+  },
+  {
+   "topic": "Minutes approval (September 12, 2023)",
+   "resolution": "approved",
+   "quote": "ms. lincoln motioned to approve the september 12, 2023 minutes & ms. digiacomo seconded the motion. all approved and motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: potential LAAC recreation area programs",
+   "resolution": "discussed; ideas gathered, no action",
+   "quote": "ms. lincoln asked coa board members to think of new program ideas for the newly improved recreation area.",
+   "tags": [
+    "recreation area",
+    "programs",
+    "LAAC"
+   ]
+  },
+  {
+   "topic": "Current business: 100 Club",
+   "resolution": "no action; induction being planned",
+   "quote": "plans are being made to induct him into the club.",
+   "tags": [
+    "100 Club"
+   ]
+  },
+  {
+   "topic": "Current business: ribbon cutting ceremony",
+   "resolution": "no action; scheduled",
+   "quote": "wednesday october 11 @ noon. the dogfather hotdog truck & the sunshine boys will be available for the ceremony.",
+   "tags": [
+    "ribbon cutting",
+    "events"
+   ]
+  },
+  {
+   "topic": "Current business: Lunenburg Master Plan",
+   "resolution": "no action; website pending",
+   "quote": "the website should be up and running at the end of the week.",
+   "tags": [
+    "master plan",
+    "website"
+   ]
+  },
+  {
+   "topic": "Current business: Lunenburg Senior Tax Relief",
+   "resolution": "no update",
+   "quote": "lunenburg senior tax relief - no update",
+   "tags": [
+    "tax relief"
+   ]
+  },
+  {
+   "topic": "Current business: Council on Aging board email",
+   "resolution": "two members to contact town IT on email issues",
+   "quote": "ms. lincoln & ms. rabbitt will contact mr. nadareski with any ongoing email issues.",
+   "tags": [
+    "town email"
+   ]
+  },
+  {
+   "topic": "Current business: Lunenburg 300th Celebration",
+   "resolution": "no action; still in planning",
+   "quote": "we are currently still in the planning stages.",
+   "tags": [
+    "300th celebration"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan, buildings and grounds, upcoming events",
+   "resolution": "received; no action",
+   "quote": "the generator is ready to send out to bid.",
+   "tags": [
+    "capital plan",
+    "buildings and grounds",
+    "events",
+    "pavilion"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no report",
+   "quote": "eagle house supporters report no report",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "comment recorded",
+   "quote": "mr. lincoln commented that chris ruth was a gem. he greatly appreciated his efforts regarding the cupola.",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "mr. lincoln moved to adjourn the meeting. ms. digiacomo seconded the motion. all approved and the motion was carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "recreation area",
+  "LAAC",
+  "capital plan",
+  "pavilion",
+  "programs and events",
+  "town email",
+  "tax relief",
+  "300th celebration",
+  "minutes approval",
+  "memorial"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

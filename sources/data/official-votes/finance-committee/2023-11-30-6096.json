@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-11-30",
  "docid": "6096",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tom Gray",
    "seconded_by": "Chris Menard",
    "outcome": "passed",
@@ -21,6 +21,260 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0676205
+ "note": "Text extraction, not a scan. One recorded motion (adjournment, 'All in favor', no count printed). The tabling of the 11/13/23 minutes and the other items are recorded without a motion or vote, so they are in decisions, not votes. Public comment is recorded as none, twice. No dollar transfers recorded. Heather Lemieux's role is not printed in the minutes.",
+ "cost_usd": 0.01447487,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: member tom gray, vice chair chris menard, board member dave passios, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: member tom gray, vice chair chris menard, board member dave passios, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: member tom gray, vice chair chris menard, board member dave passios, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: member tom gray, vice chair chris menard, board member dave passios, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: member tom gray, vice chair chris menard, board member dave passios, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not printed in the minutes",
+   "status": "present",
+   "quote": "heather lemieux states that the deadline cannot be extended."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 11/13/23 minutes were tabled to the next week so members can review them.",
+   "quote": "the minutes were tabled to next week so members can review."
+  },
+  {
+   "decision": "The Treasurer's year-end cash report will be reviewed at the next meeting, and the Chair asked the Treasurer to attend.",
+   "quote": "evan watters is requesting the treasurer to attend the next meeting to discuss her report."
+  },
+  {
+   "decision": "Evan Watters will email members to check availability for an off-cycle Dec 7th meeting and whether a quorum can be met.",
+   "quote": "evan watters will send out an email to check availability to see if a quorum will be met to hold this meeting."
+  },
+  {
+   "decision": "The Dec 14th meeting was canceled for lack of a quorum.",
+   "quote": "dec 14th (no quorum)- canceled."
+  },
+  {
+   "decision": "Chris Menard confirmed all department presentations and spreadsheets were added to the SharePoint drive, and members were asked to come to next meetings prepared to discuss priority levels.",
+   "quote": "chris menard confirms that all presentations and spreadsheets were added to the sharepoint drive"
+  },
+  {
+   "decision": "Dave Passios agreed to discuss grants further with Green Communities.",
+   "quote": "dave passios agrees to discuss further with green communities regarding grants."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash",
+   "what_was_recorded": "The free cash certified value was reported as currently 1.87 million.",
+   "figures_as_printed": [
+    "1.87 million"
+   ],
+   "quote": "heather lemieux shares that the free cash certified value is currently 1.87 million."
+  },
+  {
+   "topic": "School department capital requests",
+   "what_was_recorded": "The school department's requests were summarized, including window repair and an estimated capital project total.",
+   "figures_as_printed": [
+    "17.6 million dollars"
+   ],
+   "quote": "schools: entire window repair and an estimated 17.6 million dollars' worth of capital projects identified."
+  },
+  {
+   "topic": "Marshall Pond treatment capital request",
+   "what_was_recorded": "The updated Marshall Pond request was described as significantly less money because work covers only a small section of the pond.",
+   "figures_as_printed": [],
+   "quote": "the updated request will be significantly less money as the work being done will only be on a small section of the pond."
+  },
+  {
+   "topic": "Turkey Hill capital items and matching funding",
+   "what_was_recorded": "The Turkey Hill items in the capital plan were described as half the total value, assuming matching funding.",
+   "figures_as_printed": [],
+   "quote": "chris menard states that the turkey hill items listed in the capital plan are half the total value with an assumption there will be matching funding associated."
+  },
+  {
+   "topic": "Police recurring capital items moved to operating budgets",
+   "what_was_recorded": "Recurring police items such as vests and cars were discussed as items to pull out of the capital fund into operating budgets.",
+   "figures_as_printed": [],
+   "quote": "there are items such as bullet proof vests and cars that are a known item to occur on specific years."
+  },
+  {
+   "topic": "Municipal investing and interest rates",
+   "what_was_recorded": "The committee questioned why interest rates on most accounts are very low; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "evan watters questions why interest rates on the majority of accounts have very low interest rates."
+  },
+  {
+   "topic": "Grants for green communities",
+   "what_was_recorded": "Grant funding under Green Communities was to be discussed further.",
+   "figures_as_printed": [],
+   "quote": "dave passios agrees to discuss further with green communities regarding grants."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:05 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Plan Lunenburg Survey",
+   "resolution": "no action (informational)",
+   "quote": "the master plan steering committee survey is available, and residents are encouraged to participate.",
+   "tags": [
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Public Comment (first)",
+   "resolution": "no action",
+   "quote": "there was no public or committee comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action (informational)",
+   "quote": "there are currently 2 projects out to bid.",
+   "tags": [
+    "bids",
+    "tax bills",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Old Business: STM wrap-up",
+   "resolution": "no action (discussion)",
+   "quote": "dave passios shares that he felt the votes went as expected.",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "New Business: Capital Plan Committee update",
+   "resolution": "no action (discussion; priorities to be ranked at later meetings)",
+   "quote": "chris menard states that all department presentations for the fiscal year 2025 have been completed.",
+   "tags": [
+    "capital plan",
+    "free cash",
+    "schools",
+    "police",
+    "DPW",
+    "parks"
+   ]
+  },
+  {
+   "topic": "New Business: Treasurer year-end cash report for DOR",
+   "resolution": "continued to next meeting",
+   "quote": "the committee members have not had a chance to review the year-end report so this will be reviewed at the next meeting.",
+   "tags": [
+    "treasurer",
+    "year-end report"
+   ]
+  },
+  {
+   "topic": "New Business: Municipal investing",
+   "resolution": "continued to next meeting",
+   "quote": "evan watters questions why interest rates on the majority of accounts have very low interest rates.",
+   "tags": [
+    "treasurer",
+    "investing",
+    "interest rates"
+   ]
+  },
+  {
+   "topic": "Minutes of 11/13/23",
+   "resolution": "tabled to next week",
+   "quote": "the minutes were tabled to next week so members can review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action (discussion)",
+   "quote": "chris menard posted to the drive multiple departments worth of projects anticipated for the next 10 years.",
+   "tags": [
+    "capital plan",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "noted",
+   "quote": "meeting with the treasurer.",
+   "tags": [
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "Dec 14th canceled; Dec 7th off-cycle pending quorum check",
+   "quote": "dec 14th (no quorum)- canceled.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no action",
+   "quote": "there was no public or committee comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:32 PM",
+   "quote": "motion to adjourn the meeting by tom gray, seconded by chris menard. all in favor.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "free cash",
+  "school capital",
+  "tax bills",
+  "treasurer",
+  "municipal investing",
+  "special town meeting",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

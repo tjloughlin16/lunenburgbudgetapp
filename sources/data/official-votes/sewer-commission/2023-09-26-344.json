@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-09-26",
  "docid": "344",
@@ -12,40 +12,289 @@
  },
  "votes": [
   {
-   "motion": "Extend the permit for The Reboot Restaurant, with the stipulation that a report will be received when the next pumping is done, conditional that the permit will be issued once invoices are received",
+   "motion": "To extend the permit for The Reboot Restaurant (Lawrence Lagoy), with the stipulation that the Commission gets a full report at the next pumping; amended to make issuance conditional on receipt of the pumping invoices.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mike Nault",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to extend the permit, with the stipulation that they expect when the next pumping is done, the commission will get a full report. discussion: paula requested, as a condition, they receive copies of the invoices. mr. lagoy stated he will email them to her. brett also asked to continue to get the information from arrow septic and mr. lagoy said he will continue to do that. amendment to the motion: john re",
-   "quote_taken_from_text": true
+   "quote": "to extend the permit, with the stipulation that they expect when the next pumping is done, the commission will get a full report."
   },
   {
-   "motion": "Accept the minutes of the 9/12/23 meeting",
+   "motion": "To accept the minutes of 9/12/23.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mike Nault",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "to accept the minutes of 9/12/23. roll call vote: mike m.-aye, mike n.-aye and john-aye."
+   "quote": "to accept the minutes of 9/12/23."
   },
   {
-   "motion": "Appoint Paula Bertram as the Enforcing Agent",
+   "motion": "To appoint Paula as the enforcing agent.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mike Nault",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "to appoint paula as the enforcing agent. roll call vote: mike n.-aye, mike m.-aye and john-aye."
+   "quote": "to appoint paula as the enforcing agent."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 7:29pm.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mike Nault",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "to adjourn at 7:29pm. roll call vote: mike n.-aye, mike m.-aye and john-aye."
+   "quote": "to adjourn at 7:29pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly readable. Four votes recorded: one substantive permit extension (with amendment), one approval of prior minutes, one appointment, and one adjournment. Note: Brett Ramsden left the meeting before the votes on Paula's appointment and adjournment, resulting in 3-person roll calls for those votes; he was present for the first vote (permit extension), making that 4-0.",
- "cost_usd": 0.1251335
+ "note": "Clean extracted text, two pages, no scan. Three votes are roll calls of 3 members (Brett Ramsden had left before the minutes vote; Bill Bernard left before it too). The Lagoy motion was amended and the roll call is recorded once, after the amendment, as 4-0. No vote was recorded on the Bad Larry's item, which was postponed. Public comment was recorded as none both times. Dollar figures appear only for the pumping cost ($1,500) and storm costs ($2K); the 21% delinquency rate is a percentage, not a dollar figure.",
+ "cost_usd": 0.01782197,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin, dpw"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member (absent)",
+   "status": "absent",
+   "quote": "absent: dave macdonald"
+  },
+  {
+   "name": "Lawrence Lagoy",
+   "role": "representing The Reboot Restaurant (appointment)",
+   "status": "present",
+   "quote": "mr. lagoy stated he emailed the forms to the pumping company but they have not sent the"
+  },
+  {
+   "name": "Alan Wernick",
+   "role": "Bad Larry's (appointment)",
+   "status": "present",
+   "quote": "alan said when he took over bad larry's, there was no functioning grease trap and the baffles were removed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Decision on an external grease trap for Bad Larry's postponed; Alan Wernick to contact his landlord and both to attend the October 10 meeting.",
+   "quote": "john suggested postponing a decision and talking to the landlord."
+  },
+  {
+   "decision": "Alan Wernick to contact his landlord; both he and the landlord to attend the October 10 meeting.",
+   "quote": "alan will contact his landlord and both will attend the october 10th meeting."
+  },
+  {
+   "decision": "Paula Bertram to send a draft letter to the landlord to Bill and John.",
+   "quote": "paula will send a draft to bill and john."
+  },
+  {
+   "decision": "Sewer Business Manager position rating to stay on future agendas.",
+   "quote": "john will keep it on future agendas."
+  },
+  {
+   "decision": "Paula Bertram to ask Wade (CTE Business Manager) to attend a Commission meeting.",
+   "quote": "paula will also ask wade (cte business manager) to attend the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease interceptor pumping cost (Reboot Restaurant)",
+   "what_was_recorded": "Mr. Lagoy said pumping the interceptor costs $1,500, which he described as a hardship, and asked to pump later.",
+   "quote": "mr. lagoy noted it costs $1,500 to pump, which would be a hardship and asked if he can pump it late october/early november.",
+   "figures_as_printed": [
+    "$1,500"
+   ]
+  },
+  {
+   "topic": "Storm damage added flow costs (9/11/23)",
+   "what_was_recorded": "Paula calculated about $2K in added costs for extra flow after the 9/11/23 storm, which Bill included in his MEMA request.",
+   "quote": "she calculated they incurred about $2k in added costs for the extra flow and bill has incorporated it in his mema request.",
+   "figures_as_printed": [
+    "$2K"
+   ]
+  },
+  {
+   "topic": "Sewer bill delinquency",
+   "what_was_recorded": "Paula reported a high delinquency rate on first-quarter sewer bills; no dollar amount was printed.",
+   "quote": "paula reported they have a high delinquency rate of 21% on the first quarter bills.",
+   "figures_as_printed": [
+    "21%"
+   ]
+  },
+  {
+   "topic": "Line item for system jetting",
+   "what_was_recorded": "Paula recommended increasing the jetting line item so at least 3 miles are jetted each year; no dollar figure was printed.",
+   "quote": "paula recommended increasing line item for jetting to do at least 3 miles each year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost of clearing the Bad Larry's clog",
+   "what_was_recorded": "Paula said clearing the grease clog was extremely expensive; no dollar figure was printed.",
+   "quote": "paula pointed out that clearing this clog was extremely expensive, and they need to make sure it does not happen again.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Salary plan rating of Sewer Business Manager position",
+   "what_was_recorded": "Bill and Paula disputed the salary-plan rating of the Sewer Business Manager position (rated 10, believed to be 7); no dollar figure was printed.",
+   "quote": "bill and paula have concerns about the rating given to her position as a 10 but it should be a 7, which is a higher level.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "public comment & announcements -none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: Lawrence Lagoy, The Reboot Restaurant (grease interceptor permit)",
+   "resolution": "permit extended 4-0, conditional on invoices",
+   "quote": "to extend the permit, with the stipulation that they expect when the next pumping is done, the commission will get a full report.",
+   "tags": [
+    "grease interceptor",
+    "permit",
+    "FOG compliance",
+    "restaurant"
+   ]
+  },
+  {
+   "topic": "Appointment: Alan Wernick, Bad Larry's (grease in sewer line)",
+   "resolution": "continued to October 10 meeting",
+   "quote": "john suggested postponing a decision and talking to the landlord.",
+   "tags": [
+    "grease trap",
+    "sewer blockage",
+    "landlord",
+    "FOG compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/12/23",
+   "resolution": "approved 3-0",
+   "quote": "to accept the minutes of 9/12/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Leominster Intermunicipal Agreement negotiations",
+   "resolution": "no action (nothing new)",
+   "quote": "leominster intermunicipal agreement negotiations - nothing new",
+   "tags": [
+    "intermunicipal agreement",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Damages from 9/11/23 storm",
+   "resolution": "no action (reported)",
+   "quote": "damages from 9/11/23 storm- paula noted there was significant damage to washed out roads and drainage.",
+   "tags": [
+    "storm damage",
+    "MEMA",
+    "flows"
+   ]
+  },
+  {
+   "topic": "Appointment of enforcing agent (delinquent bills)",
+   "resolution": "Paula appointed 3-0",
+   "quote": "to appoint paula as the enforcing agent.",
+   "tags": [
+    "delinquency",
+    "enforcement",
+    "non-criminal disposition"
+   ]
+  },
+  {
+   "topic": "Business Manager report: maintenance, technician, jetting, position rating",
+   "resolution": "no action (reported; rating to future agenda)",
+   "quote": "business manager report -update on system maintenance & upgrades- new technician - paula reported",
+   "tags": [
+    "system maintenance",
+    "technician",
+    "jetting",
+    "personnel classification"
+   ]
+  },
+  {
+   "topic": "Assistant to the Sewer Business Manager position",
+   "resolution": "no action (reported; recruiting continues)",
+   "quote": "assistant to the sewer business manager position- paula reported the individual that was interested has decided",
+   "tags": [
+    "staffing",
+    "personnel classification"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action (none)",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 7:29pm",
+   "quote": "to adjourn at 7:29pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease interceptor",
+  "FOG compliance",
+  "permit extension",
+  "enforcement",
+  "sewer delinquency",
+  "storm damage",
+  "personnel classification",
+  "restaurant",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-09-26",
  "docid": "345",
@@ -12,6 +12,170 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This is a Cemetery Commission presentation document, not formal meeting minutes with recorded votes. No motions or voting actions are documented in the text.",
- "cost_usd": 0.0763005
+ "note": "This is a slide-deck presentation (pages 1-15), not minutes of a meeting. It records no motions, votes, discussion, or public comment, so the votes, transfers and public_comment lists are empty. Page 12 is blank. The $350K figure is the Commission's request; no Select Board action appears in this document. The November 14, 2023 date is a call for the public to vote on the matter, not a board vote. Budget figures are the Commission's and its contractors' estimates as printed, not quotes.",
+ "cost_usd": 0.01484387,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair, Cemetery Commission (presenter)",
+   "status": "present",
+   "quote": "presented by: nancy foss-yasko, chair"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk, Cemetery Commission",
+   "status": "not stated",
+   "quote": "david dorren - vice-chair & clerk, cemetery commission"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "bill bernard - dpw, director"
+  },
+  {
+   "name": "Fred Anderson",
+   "role": "Anderson Landscape Construction Horticulture Preservation",
+   "status": "not stated",
+   "quote": "anderson landscape construction horticulture preservation walked the cemetery commission and dpw director through this process."
+  },
+  {
+   "name": "Stan Dillis",
+   "role": "Dillis & Roy Civil Design Group",
+   "status": "not stated",
+   "quote": "stan dillis - dillis & roy civil design group"
+  },
+  {
+   "name": "Jeff Schwarz",
+   "role": "Alphagraphics - Shirley",
+   "status": "not stated",
+   "quote": "schwarz - alphagraphics - shirley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Ramsden Stone Walls and Waterproofing, LLC",
+   "status": "not stated",
+   "quote": "brett ramsden - ramsden stone walls and waterproofing, llc"
+  },
+  {
+   "name": "Matt May",
+   "role": "Lakeview Landscaping & Irrigation",
+   "status": "not stated",
+   "quote": "matt may - lakeview landscaping & irrigation"
+  },
+  {
+   "name": "Mark Flagg",
+   "role": "M Flagg Tree Service/Arborist",
+   "status": "not stated",
+   "quote": "mark flagg - m flagg tree service/arborist"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Cemetery Commission recommended that the Select Board move forward with seeking American Rescue Plan Act funding for a New England Rustic Field-Stone Wall rather than Hemlock Hedges. This is a commission recommendation; the minutes record no Select Board action.",
+   "quote": "the cemetery commission recommended to the select board members to move forward with securing from the american rescue plan act"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Replacement cost of Hemlock hedges",
+   "what_was_recorded": "The estimated replacement cost of the Hemlock hedges is stated as approximately $185K.",
+   "quote": "replacement cost of hemlock hedges are estimated at approximately $185k.",
+   "figures_as_printed": [
+    "$185K"
+   ]
+  },
+  {
+   "topic": "Preferred stone wall estimate",
+   "what_was_recorded": "The preferred New England Rustic Field-Stone Wall is estimated at approximately $288K to $388K, presented as lower life-cycle cost than hedges.",
+   "quote": "estimated cost at approximately $288k to $388k.",
+   "figures_as_printed": [
+    "$288K to $388K"
+   ]
+  },
+  {
+   "topic": "Stone wall price per face foot",
+   "what_was_recorded": "The Ramsden estimate prices the free-standing wall at $40.00 per face foot over 6,180 square face feet.",
+   "quote": "a 6,180 square face feet of free- standing rustic semi formal dry, stacked - new england field-stone wall at $40.00 per face feet.",
+   "figures_as_printed": [
+    "$40.00"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Request to Select Board",
+   "what_was_recorded": "The Commission requests $350K for the Restoration of North Cemetery Boundaries.",
+   "quote": "$350k for restoration of north cemetery boundaries.",
+   "figures_as_printed": [
+    "$350K"
+   ]
+  },
+  {
+   "topic": "Watering cost for new hemlocks",
+   "what_was_recorded": "One year of watering the new trees is estimated at $3K to be borne by the Cemetery Commission and DPW.",
+   "quote": "one year of watering will cost the cemetery commission and dpw - estimated at $3k.",
+   "figures_as_printed": [
+    "$3K"
+   ]
+  },
+  {
+   "topic": "Well for hemlock irrigation",
+   "what_was_recorded": "A well for the new plantings is estimated at $25K or more, excluding pump, piping and electricity; tie-in to the Highland Street water system is listed as a possible alternative with cost to be determined.",
+   "quote": "additional cost of $25k or more for a well to be drilled.",
+   "figures_as_printed": [
+    "$25K"
+   ]
+  },
+  {
+   "topic": "Hedge trimming cost",
+   "what_was_recorded": "Professional hedge trimming is amortized at $500.00 a year, with trimming at 3-4 year intervals estimated at $2,000.00 per incident.",
+   "quote": "trimming may be required at 3 - 4 year intervals at estimated $2,000.00 per incident.",
+   "figures_as_printed": [
+    "$500.00",
+    "$2,000.00"
+   ]
+  },
+  {
+   "topic": "Three seasons of watering",
+   "what_was_recorded": "Three seasons of watering for the hemlocks is described as cost prohibitive, with no figure printed.",
+   "quote": "three seasons of water needs to be complete, which is going to be cost prohibitive",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Stabilization Fund use",
+   "what_was_recorded": "The Commission says it will support a Select Board request to use the Stabilization Fund at the Fall Town Meeting so more funds are available for ARPA distribution; no dollar figure is printed.",
+   "quote": "use the stabilization fund at this fall's town meeting, so more funds are available for arpa distribution.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Restoration of North Cemetery Boundaries (presentation to Select Board and Town Manager)",
+   "resolution": "presented; $350K request stated; no action recorded in this document",
+   "quote": "$350k for restoration of north cemetery boundaries.",
+   "tags": [
+    "North Cemetery",
+    "hedges",
+    "stone wall",
+    "ARPA",
+    "capital request"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "arborvitae hedges",
+  "hemlock hedges",
+  "stone wall",
+  "ARPA",
+  "Stabilization Fund",
+  "life-cycle cost",
+  "capital request"
+ ],
+ "dropped_unquoted_by_field": {}
 }

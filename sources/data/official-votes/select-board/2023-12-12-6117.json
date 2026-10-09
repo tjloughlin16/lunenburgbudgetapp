@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-12-12",
  "docid": "6117",
@@ -12,71 +12,375 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Sandy Ricci as assistant meal site manager",
-   "outcome": "passed 4-0-0",
-   "procedural": true,
+   "motion": "Ratify the Town Manager's appointment of Sandy Ricci as assistant meal site manager.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Emkey",
+   "outcome": "passed 4-0-0",
+   "procedural": false,
    "quote": "member alonzo made motion for the ratification of the town manager's appointment of the assistant meal site manager, sandy ricci. seconded by member emkey. passed unanimously (4-0-0)."
   },
   {
-   "motion": "Appoint Tom Alonzo as liaison for the Board of Assessors",
-   "outcome": "passed 4-0-0",
-   "procedural": true,
+   "motion": "Appoint Tom Alonzo as liaison to the Board of Assessors.",
    "moved_by": "Vice-Chair Franco",
    "seconded_by": "Chair Jeffreys",
+   "outcome": "passed 4-0-0",
+   "procedural": false,
    "quote": "vice-chair franco made motion to appoint tom alonzo as liaison for the board of assessors. seconded by chair jeffreys. passed unanimously (4-0-0)."
   },
   {
-   "motion": "Approve the 3rd quarter preliminary tax bill insert",
-   "outcome": "passed 4-0-0",
-   "procedural": false,
+   "motion": "Approve the 3rd quarter preliminary tax bill insert.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Emkey",
+   "outcome": "passed 4-0-0",
+   "procedural": false,
    "quote": "member alonzo made motion to approve the 3'd quarter preliminary tax bill insert. seconded by member emkey. passed unanimously (4-0-0)."
   },
   {
-   "motion": "Issue limousine licenses for First Choice Limousine and Lloyd's Limousine Service",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Issue a limousine license for First Choice Limousine and Lloyd's Limousine Service.",
+   "moved_by": "",
    "seconded_by": "Renee Emkey",
-   "quote": "motion: to issue a limousine license for first choice limousine and lloyd's limousine service. seconded by: renee emkey vote: unanimous approval. ",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: to issue a limousine license for first choice limousine and lloyd's limousine service. seconded by: renee emkey vote: unanimous approval."
   },
   {
-   "motion": "Approve Auto Dealers licenses for Class 1, 2, and 3",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve Auto Dealers licenses for Class 1, 2, and 3 as read.",
+   "moved_by": "",
    "seconded_by": "Renee Emkey",
-   "quote": "motion: to approve auto dealers licenses for class 1, 2, and 3 as read. seconded by: renee emkey vote: unanimous approval. ",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: to approve auto dealers licenses for class 1, 2, and 3 as read. seconded by: renee emkey vote: unanimous approval."
   },
   {
-   "motion": "Approve Common Victuallers licenses",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve Common Victuallers licenses as presented.",
+   "moved_by": "",
    "seconded_by": "Renee Emkey",
-   "quote": "motion: to approve common victuallers licenses as presented. seconded by: renee emkey vote: unanimous approval. ",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: to approve common victuallers licenses as presented. seconded by: renee emkey vote: unanimous approval."
   },
   {
-   "motion": "Approve Miscellaneous Licenses for 2024",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve Miscellaneous Licenses for 2024 as presented.",
+   "moved_by": "",
    "seconded_by": "Renee Emkey",
-   "quote": "motion: to approve miscellaneous licenses for 2024 as presented seconded by: renee emkey vote: unanimous approval. d",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: to approve miscellaneous licenses for 2024 as presented seconded by: renee emkey vote: unanimous approval."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed 4-0-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Emkey",
+   "outcome": "passed 4-0-0",
+   "procedural": true,
    "quote": "chair jeffreys made motion to adjourn. seconded by member emkey. passed unanimously (4-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were OCR'd by macOS Vision; text is generally readable with minor OCR artifacts (e.g., \"3'd\" for \"3rd\").",
- "cost_usd": 0.055799600000000005
+ "note": "Text is macOS Vision OCR with visible errors (e.g. 'Otficer', 'Breaktast', '9\"h'); quotes are copied as printed, including those errors. No roll call is printed: 'present' for members is inferred from the printed 4-0-0 counts and from each member moving, seconding or speaking. Heather Lemieux is named as 'Town Manager Lemieux' in the Town Manager report but is also listed among 'other board members' in Board Comments; the minutes do not resolve this. Lou Franco appears as both 'Member Franco' and 'Vice-Chair Franco'. The four license motions print no mover, only the seconder. The renewal sentence lists Liquor Licenses as renewed, but no motion or vote for liquor licenses is recorded. The Accounts Payable warrant is listed with no vote. No transfers are recorded. Public comment section shows one speaker; the closing 'PUBLIC COMMENTS None' is not a speaker.",
+ "cost_usd": 0.02139137,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chair Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:00 pm by chair jeffreys."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member (named as Member Alonzo; also named as a board member in Board Comments)",
+   "status": "present",
+   "quote": "member alonzo made motion to approve the 3'd quarter preliminary tax bill insert."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member (named as Member Emkey)",
+   "status": "present",
+   "quote": "motion: to approve common victuallers licenses as presented. seconded by: renee emkey vote: unanimous approval."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair (also printed as Member Franco)",
+   "status": "present",
+   "quote": "lou franco shared further announcements"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager (also named among board members in Board Comments)",
+   "status": "present",
+   "quote": "town manager lemieux provided comprehensive updates on vacancies in various town boards"
+  },
+  {
+   "name": "John Wagner",
+   "role": "Officer",
+   "status": "present",
+   "quote": "who introduced himself and cody, the new k-9 officer, recently certified after completing 560 hours of training"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not printed in minutes (public commenter, 91 Main Street)",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, commented on remote meetings, suggesting that in-person meetings offer a better platform for discussions"
+  },
+  {
+   "name": "Annie M. Aubrey",
+   "role": "Executive Assistant to the Town Manager and Select Board",
+   "status": "not stated",
+   "quote": "annie m. aubrey executive assistant to the town manager and select board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board suggested scheduling a January workshop for extensive review of the draft Board, Committee, Commission Handbook.",
+   "quote": "the board acknowledged the effort and suggested scheduling a workshop for extensive reviews in january, stressing"
+  },
+  {
+   "decision": "Chair Jeffreys suggested setting time in January for an in-depth discussion of the town vision and mission statements.",
+   "quote": "chair jeffreys suggested setting time in january for an in-depth discussion to address community issues"
+  },
+  {
+   "decision": "Clear directives were given on flexible payment arrangements, including an option to pay in advance, for taxpayers needing budget management.",
+   "quote": "clear directives were provided regarding flexible payment arrangements for those requiring budget management, proposing the option to make payments in advance."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "A warrant for accounts payable is listed on the agenda; the minutes record no vote on it.",
+   "figures_as_printed": [
+    "$346,641.46"
+   ],
+   "quote": "warrants: accounts payable $346,641.46"
+  },
+  {
+   "topic": "Community Compact asset management grant for bridges and culverts",
+   "what_was_recorded": "The town received funding under the Community Compact Best Practices program for an asset management plan for local bridges and culverts.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "highlighting the town received $25,000 towards creating an asset management plan for the local bridges and culverts under the"
+  },
+  {
+   "topic": "Turkey Hill window engineering capital request (School Committee)",
+   "what_was_recorded": "The capital request was set to be deferred to fiscal year 2026; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "turkey hill window engineering capital request, set to be deferred to fiscal year 2026."
+  },
+  {
+   "topic": "Fiscal year 2025 budget pressures (School Committee)",
+   "what_was_recorded": "Diminishing ESSER funds and anticipated health insurance increases were discussed as FY2025 budget challenges; the minutes speculate increases could reach up to 10%.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "anticipated increases in health insurance costs, speculated to reach up to 10%"
+  },
+  {
+   "topic": "Fiscal year 2025 budget process and health insurance premiums",
+   "what_was_recorded": "The Town Manager reported increased health insurance premiums as part of the FY2025 budget process; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "acknowledging increased health insurance premiums and working around the timeline"
+  },
+  {
+   "topic": "Green Communities Grant reimbursements",
+   "what_was_recorded": "LED Conversion Project completion and monetary reimbursements were reported as underway; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "green communities grant stating the led conversion project completion and monetary reimbursements were underway"
+  },
+  {
+   "topic": "Broadband grant funding support letters",
+   "what_was_recorded": "Support letters were submitted for Verizon and Comcast applications seeking grant funding for fiber optic expansion; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "these letters support grant funding for fiber optic expansion for underserved areas."
+  },
+  {
+   "topic": "Third-quarter preliminary tax bill and fourth-quarter adjustment",
+   "what_was_recorded": "An anticipated larger-than-usual fourth-quarter increase was discussed, caused by adjustments falling entirely in that quarter; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "with an anticipated larger-than-usual increase in the fourth quarter."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "remote versus in-person meetings",
+   "quote": "ana lockwood, 91 main street, commented on remote meetings, suggesting that in-person meetings offer a better platform for discussions and proposed a system where citizens could request in-person meetings"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:00 pm by chair jeffreys.",
+   "tags": [
+    "procedure",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Board comments: K-9 officer presentation",
+   "resolution": "presented",
+   "quote": "who introduced himself and cody, the new k-9 officer, recently certified after completing 560 hours of training",
+   "tags": [
+    "police",
+    "K-9"
+   ]
+  },
+  {
+   "topic": "Public comments: remote meetings",
+   "resolution": "heard, no action recorded",
+   "quote": "ana lockwood, 91 main street, commented on remote meetings",
+   "tags": [
+    "remote meetings",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "heather lemieux provided several key updates.",
+   "tags": [
+    "master plan",
+    "survey",
+    "holidays",
+    "community events"
+   ]
+  },
+  {
+   "topic": "Ratification of assistant meal site manager appointment",
+   "resolution": "approved 4-0-0",
+   "quote": "member alonzo made motion for the ratification of the town manager's appointment of the assistant meal site manager, sandy ricci.",
+   "tags": [
+    "appointments",
+    "senior services"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported",
+   "quote": "town manager lemieux provided comprehensive updates on vacancies in various town boards",
+   "tags": [
+    "vacancies",
+    "hiring",
+    "broadband",
+    "community compact",
+    "budget",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Vote on 3rd quarter preliminary tax bill insert",
+   "resolution": "approved 4-0-0",
+   "quote": "vote on 3rd quarter preliminary tax bill insert",
+   "tags": [
+    "tax bills",
+    "taxpayers"
+   ]
+  },
+  {
+   "topic": "Board of Assessors liaison appointment",
+   "resolution": "approved 4-0-0",
+   "quote": "vice-chair franco made motion to appoint tom alonzo as liaison for the board of assessors.",
+   "tags": [
+    "appointments",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Annual license renewals",
+   "resolution": "approved (Limousine, Auto Dealers, Common Victuallers, Miscellaneous; no vote recorded for Liquor Licenses)",
+   "quote": "the board discussed and renewed license categories, including limousine, auto dealers (class 1,2, 3), common victuallers, miscellaneous licenses, and liquor licenses.",
+   "tags": [
+    "licenses",
+    "business"
+   ]
+  },
+  {
+   "topic": "Draft Board, Committee, Commission Handbook",
+   "resolution": "January workshop suggested, no vote",
+   "quote": "town manager lemieux introduced an early draft of a committee handbook",
+   "tags": [
+    "governance",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "What makes Lunenburg a great place to live, work, and volunteer",
+   "resolution": "discussed, no action",
+   "quote": "discussion spearheaded by chair jeffreys entertained ideas for compiling a thorough community",
+   "tags": [
+    "community events",
+    "culture"
+   ]
+  },
+  {
+   "topic": "Draft environmental policies overview",
+   "resolution": "discussed, no action",
+   "quote": "the board discussed the need for a thorough review of draft environmental policies distributed",
+   "tags": [
+    "environment",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Initial discussion: town vision and mission statements",
+   "resolution": "discussed; January discussion suggested",
+   "quote": "chair jeffreys proposed creating a distinct vision and mission statements for lunenburg",
+   "tags": [
+    "strategic planning",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Warrants: accounts payable",
+   "resolution": "listed, no vote recorded",
+   "quote": "warrants: accounts payable $346,641.46",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports (School Committee, Capital Planning Committee, Finance Committee)",
+   "resolution": "reported",
+   "quote": "school committee: member emkey provided detailed topics: key issues included efforts to locate class officers",
+   "tags": [
+    "school committee",
+    "capital planning",
+    "finance committee",
+    "MSBA",
+    "ESSER"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:39 P.M.",
+   "quote": "meeting adjourned at 8:39 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "licenses",
+  "tax bills",
+  "town manager",
+  "appointments",
+  "vacancies",
+  "community compact",
+  "health insurance",
+  "remote meetings",
+  "vision and mission",
+  "public comment",
+  "school committee",
+  "capital planning",
+  "grants",
+  "broadband",
+  "K-9 officer"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,298 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee - Special Meeting",
+ "meeting_date": "2023-11-08",
+ "video_id": "RM2UnEaPcKQ",
+ "video_url": "https://www.youtube.com/watch?v=RM2UnEaPcKQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2023-11-08-RM2UnEaPcKQ.json",
+  "sha256": "faa39cf4d0a694af79d908eaeebab6b9bbfa1951659b0ae6c77e3159ef922232",
+  "caption_lines": 92,
+  "segments": 693
+ },
+ "recording": {
+  "duration_s": 1949,
+  "duration": "0:32",
+  "spoken_chars": 23858,
+  "words_approx": 3976
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11082023-3366",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2023-11-08-agenda-3366.txt",
+   "path": "sources/meetings/school-committee/2023-11-08-agenda-3366.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11082023-3366",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2023-11-08-minutes-3366.txt",
+   "path": "sources/meetings/school-committee/2023-11-08-minutes-3366.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T04:40:37Z",
+  "cost_usd": 0.2532718
+ },
+ "minutes": {
+  "headline": "Committee voted by roll call to authorize the superintendent to hire the finance/HR candidate after a public interview.",
+  "summary": "The meeting was a short remote session whose main business was a public interview of a candidate for the district's human resources and finance position. Members asked about handling pushback in a small town, working with the committee on policy and budget, communication style, and a non-teaching background. The committee then voted to authorize the superintendent to secure the candidate's employment, and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Dr Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mrs Carol ashino / Mrs arshambo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Brian Leon / Mr Leighton",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Mr Anthony SCH brini / Mr School and Briny",
+    "role": "secretary"
+   },
+   {
+    "name_as_heard": "Mr Peter beardmore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs Laura bosski / brazowski",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs Ellen Whitmore",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment",
+   "superintendent-report"
+  ],
+  "votes": [
+   {
+    "t": 1806,
+    "motion": "Authorize the superintendent to engage with the candidate on behalf of the committee to secure her employment with Lunenburg Public Schools.",
+    "moved_by": "Mr Leon",
+    "outcome": "roll call taken; the captions record yes from the members called, with no count stated",
+    "procedural": false
+   },
+   {
+    "t": 1909,
+    "motion": "Adjourn.",
+    "moved_by": "Mr Leon",
+    "outcome": "roll call yes responses heard; no count stated",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1806,
+    "decision": "Committee authorized the superintendent to finalize employment with the candidate."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 238,
+    "topic": "Call to order, roll call, open meeting law and ground rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 238,
+    "t_end": 259,
+    "topic": "Public comment",
+    "resolution": "no speakers",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 259,
+    "t_end": 1592,
+    "topic": "Public interview of candidate for HR/finance position",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1592,
+    "t_end": 1887,
+    "topic": "Committee discussion and vote to authorize superintendent to hire candidate",
+    "resolution": "voted by roll call",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1887,
+    "t_end": 1932,
+    "topic": "Second public comment and adjournment",
+    "resolution": "no comment; adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not stated; only individual yes responses appear in the captions.",
+   "The position title was not stated in the captions.",
+   "Adjournment time is garbled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted by roll call to authorize the superintendent to finalize employment with the candidate for the district's HR and finance position.",
+    "t": 1806
+   },
+   {
+    "line": "The committee held a public interview of the candidate, with questions on handling pushback in a small town, working with the committee on policy and budget, and a non-teaching background.",
+    "t": 259
+   },
+   {
+    "line": "The remote meeting opened with roll call and ground rules; public comment drew no speakers, and the meeting adjourned after a second public comment period with none.",
+    "t": 238
+   }
+  ],
+  "why_it_matters": [
+   "The position covers the district's finance and human resources work, so the person hired will help prepare and manage the school budget residents vote on each year.",
+   "The captions record yes votes from the members called but state no count, so the tally is not confirmed by these minutes."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T04:40:54Z",
+   "cost_usd": 0.215893
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11082023-3366",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2023-11-08-minutes-3366.txt",
+   "path": "sources/meetings/school-committee/2023-11-08-minutes-3366.pdf"
+  },
+  "official_sha256": "5b59034e1bc378f24545287e0f8aee7ec936ed66a1654d6db86ab0cc0a98f8a5",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the one substantive vote: authorizing the superintendent to secure the Director of Administration & Finance candidate's employment. They differ on how the vote was taken and on the wording of the decision. Our attendee names are mostly caption errors, and the official minutes add the recording secretary.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote authorizing superintendent to secure employment of candidate (Director of Administration & Finance)",
+    "ours": "Authorize the superintendent to engage with the candidate on behalf of the committee to secure her employment with Lunenburg Public Schools. — roll call taken; the captions record yes from the members called, with no count stated",
+    "official": "mr. lehtinen makes a motion for dr. burnham to move forward and work with ms. whittemore to secure her employment with lunenburg public schools.",
+    "note": "Same motion, but our record says a roll call was taken with yes votes while the official minutes list the vote as passed with no roll call or tally in the quoted text; check the recording at about t=1806 and the full official minutes for how the vote was taken and the count.",
+    "t": 1806
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision recorded vs. none",
+    "ours": "Committee authorized the superintendent to finalize employment with the candidate.",
+    "official": "",
+    "note": "Our minutes list a separate decision (finalize employment), while the official minutes list no decisions and record only the motion; the wording 'finalize' versus 'move forward and work with' should be checked against the recording.",
+    "t": 1806
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Mrs Carol ashino / Mrs arshambo (chair)",
+    "official": "carol archambault, chair - present",
+    "note": "Same person, a misheard name in the captions.",
+    "official_reading": "Carol Archambault",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Mr Brian Leon / Mr Leighton (vice chair)",
+    "official": "brian lehtinen, vice chair - present",
+    "note": "Same person, a misheard name in the captions.",
+    "official_reading": "Brian Lehtinen",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary name",
+    "ours": "Mr Anthony SCH brini / Mr School and Briny (secretary)",
+    "official": "anthony sculimbrene, secretary - present",
+    "note": "Same person, a misheard name in the captions.",
+    "official_reading": "Anthony Sculimbrene",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Member Peter Beardmore",
+    "ours": "Mr Peter beardmore (member)",
+    "official": "peter beardmore, member - present",
+    "note": "Same attendee in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Laura Brzozoski",
+    "ours": "Mrs Laura bosski / brazowski (member)",
+    "official": "laura brzozoski, member - present",
+    "note": "Same person, a misheard surname in the captions.",
+    "official_reading": "Laura Brzozoski",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter/candidate name",
+    "ours": "Mrs Ellen Whitmore (presenter)",
+    "official": "ms. whittemore takes the time to share about herself and her family and why she has",
+    "note": "Same person; captions spelled Whitmore, official gives Ellen A. Whittemore.",
+    "official_reading": "Ellen A. Whittemore",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent attendance",
+    "ours": "Dr Burnham (superintendent)",
+    "official": "dr. burnham introduces ms. whittemore to the committee and to the public.",
+    "note": "Same person present in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording secretary",
+    "ours": "",
+    "official": "respectfully submitted courtney fuller",
+    "note": "Official minutes name Courtney Fuller as recording secretary; ours does not list her."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T04:41:28Z",
+   "cost_usd": 0.228435
+  }
+ }
+}

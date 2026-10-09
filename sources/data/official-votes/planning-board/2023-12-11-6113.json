@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-12-11",
  "docid": "6113",
@@ -12,69 +12,316 @@
  },
  "votes": [
   {
-   "motion": "Continue public hearings for 171 Arbor Street and 255 Sunny Hill Road to specified dates in January 2024",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "timothy willsmer thank you. to continue hearing for 171 arbor st. and 255 sunny hill road to the first meeting of 2024, which i think is january 11th, 888. thank you. oh, today's. 00:23:14 matthew brenner i will help. i will happily accept that if that's what you wi",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Agree to extension of deadline for decision on 171 Arbor Street from February 15, 2024 to April 15, 2024",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "all right, great. it was moved second, moved and seconded. all in favor, aye."
-  },
-  {
-   "motion": "Close public hearing on 360 Flat Hill Road",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Matthew Brenner",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i'll move to close the public hearing on 360 flat hill rd. 00:52:00 matthew brenner second, moved and seconded all in fa",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Reopen public hearing on 360 Flat Hill Road",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Matthew Brenner",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to reopen the public hearing for 360 flat little growth. 01:06:08 matthew brenner second, moved and seconded all in favor. aye ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Close hearing and continue deliberation on 360 Flat Hill Road",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "timothy willsmer motion to close hearing and and continue deliberation. 01:09:41 timothy willsmer on 360 black hill rd. i will second. 01:09:45 matthew brenner mov",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Accept remediation plan for 360 Flat Hill Road: plant six flamethrower redbud trees with minimum height of 6 feet at planting, to be planted by April 2024, roughly regularly spaced",
+   "motion": "Continue the hearings for 171 Arbor St. to the second meeting of 2024 and for 255 Sunny Hill Road to the first meeting of 2024 (January 8th as printed), as a combined motion.",
    "moved_by": "Timothy Willsmer",
    "seconded_by": "Amanda Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "timothy willsmer so motion to accept the plans as given for the six flamethrower red bud trees. 01:25:56 timothy willsmer with a minimum height. 01:25:59 matthew brenner of 6 foot on planting. 01:26:01 timothy willsmer and a plant by date of. 01:26:04 timothy willsmer apr",
-   "quote_taken_from_text": true
+   "quote": "moved and seconded. all in favor. aye, aye."
   },
   {
-   "motion": "Authorize the chair to sign a letter to the Building Commissioner and Conservation Administrator regarding discussion of tonight's meeting",
+   "motion": "Agree to the extension of the decision deadline for 171 Arbor St. (transcribed as Auburn St.) from February 15, 2024 to April 15, 2024.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "it was moved second, moved and seconded. all in favor, aye."
+  },
+  {
+   "motion": "Close the public hearing on 360 Flat Hill Rd.",
+   "moved_by": "Speaker 6 (noted in the minutes as Amanda Reid)",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "i'll move to close the public hearing on 360 flat hill rd."
+  },
+  {
+   "motion": "Reopen the public hearing for 360 Flat Hill Rd. (to take in the Town Tree Warden correspondence).",
+   "moved_by": "Speaker 6 (noted in the minutes as Amanda Reid)",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to reopen the public hearing for 360 flat little growth."
+  },
+  {
+   "motion": "Close the public hearing on 360 Flat Hill Rd. again and continue deliberation.",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to close hearing and and continue deliberation."
+  },
+  {
+   "motion": "Accept the tree replacement plans as given for six flamethrower red bud trees, with a minimum planting height of 6 feet, planted by April 2024, roughly regularly spaced (scenic road remediation, 360 Flat Hill Rd.).",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Speaker 6 (noted in the minutes as Amanda Reid)",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "so motion to accept the plans as given for the six flamethrower red bud trees."
+  },
+  {
+   "motion": "Authorize the Chair to sign a letter to the Building Commissioner, copied to the Conservation Administrator, stating the board's preference on the 711 Massachusetts Ave. site work (no limited work order).",
    "moved_by": "Matt Allison",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "richard harris i think that the board could take make a motion to authorize the chair to sign. 01:57:42 richard harris a letter to. 01:57:43 richard harris commission conservation administrator regarding discussion night and i could draft it up. sent up to",
-   "quote_taken_from_text": true
+   "quote": "so moved that work, does that does that work?"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are from audio transcript with OCR errors in some sections. All votes recorded passed with no opposing votes noted.",
- "cost_usd": 0.2757391
+ "note": "The text is a transcript-derived set of minutes (it cites an audio file and has a blank Transcript heading), with heavy transcription errors: street names vary (171 Arbor / Alder / Auburn St.; 255 Seven Hill / Sunny Hill Rd.), a continuance date reads both January 8th and January 11th, and Speaker 5, 6 and 8 are identified only by the transcript note (Speaker 6 = Amanda Reid; Speaker 5 appears to be Mr. Parker and Speaker 8 Stefan McSweeney from context). Votes are recorded as 'All in favor, aye' with no counts printed, so every outcome is 'passed' by statement, not by tally. The tree-replacement vote reads 'All in favor? Aye, aye. All opposed, aye.' and the Chair then says 'Then we have a plan'; the outcome is recorded as passed on that basis, and Matt Allison stated his objection to the plan on the record. The text ends mid-word ('Timot') around 02:15:38, so later items and any adjournment vote are not in this text. Attendance for Adam Burney is as printed in the roll call; he does not appear on the letterhead. Joeci Gilchrest is on the letterhead but is not recorded as attending.",
+ "cost_usd": 0.16245335,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew brenner, chair"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, vice chair"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk (transcript note: Speaker 6)",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "richard harris - interim"
+  },
+  {
+   "name": "Anne Aubrey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "i just want to make note as well when the land use director was in the office"
+  },
+  {
+   "name": "Mr. Parker",
+   "role": "not stated (applicant side, 360 Flat Hill Rd. hearing)",
+   "status": "present",
+   "quote": "mr. parker, would you like to explain to us where just where we at?"
+  },
+  {
+   "name": "Stefan McSweeney",
+   "role": "representative; owner of the 711 Massachusetts Ave. site",
+   "status": "present",
+   "quote": "stefan mcsweeney, representative, i am the owner of southern london at massachusetts"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will put the policy on continuance requests on the January agenda.",
+   "quote": "i would like to put that on our agenda for the first."
+  },
+  {
+   "decision": "Richard Harris will draft a written decision on 360 Flat Hill Rd. and send it out.",
+   "quote": "we'll draft a decision, get written up and send it."
+  },
+  {
+   "decision": "Two working groups were formed for future bylaw work (one on scenic roads, one on solar), with members meeting outside public session; no vote was taken.",
+   "quote": "that is what we don't need to vote to do this. we just have two working groups."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Home price cited in the 360 Flat Hill Rd. scenic road discussion",
+   "what_was_recorded": "A board member told the applicant he bought an $800,000 home on the scenic road, with the stormwater and scenic road conditions in the deed. A figure from the discussion, not a town budget item.",
+   "figures_as_printed": [
+    "$800,000"
+   ],
+   "quote": "you bought an $800,000 home on the scenic rd. with a deed"
+  },
+  {
+   "topic": "Home values raised in the 360 Flat Hill Rd. hearing",
+   "what_was_recorded": "A speaker said it does not matter whether a home is worth $100,000 or $1,000,000. Figures from the discussion, not a budget item.",
+   "figures_as_printed": [
+    "$100,000",
+    "$1,000,000"
+   ],
+   "quote": "if i want $100,000 house or $1,000,000 house comments like"
+  },
+  {
+   "topic": "Chapter 40S money in the affordable housing discussion",
+   "what_was_recorded": "A member said the town got 40S money back for occupancy of units in a past project. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we got 40 s money back for inhabitants"
+  },
+  {
+   "topic": "Stormwater utility funding task force mission",
+   "what_was_recorded": "The Chair read the stormwater task force mission: estimate the program's cost and create an ongoing funding source. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "establish the estimated cost of the program as well as provide for the creation of an ongoing funding source"
+  },
+  {
+   "topic": "Cost of delay on the 711 Massachusetts Ave. site work",
+   "what_was_recorded": "The applicant said delays would stretch the project and make it more expensive. No figure is printed.",
+   "figures_as_printed": [],
+   "quote": "if i had heard that, that means delays, delays to me mean."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Parker",
+   "stated_role": "not stated (applicant side, 360 Flat Hill Rd. hearing)",
+   "topic": "Account of tree removal and proposed replacement at 360 Flat Hill Rd.",
+   "quote": "yeah. so i've been in town 21 years. i built the house on hillcrest st. 20 years ago."
+  },
+  {
+   "speaker": "Susan Whelan",
+   "stated_role": "resident, 377 Flat Hill Rd. (written letter read into the record)",
+   "topic": "Native tree species for scenic road replacement",
+   "quote": "i feel that a tree species native to the area is an appropriate replacement for a scenic rd."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening public comment",
+   "resolution": "no comment offered",
+   "quote": "and as always, we're open with any public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Continuance of 171 Arbor St. and 255 Sunny Hill Rd. hearings",
+   "resolution": "continued to 2024 meetings",
+   "quote": "to continue hearing for 171 arbor st. and 255 sunny hill road to the first meeting of 2024, which i think is january 11th, 888.",
+   "tags": [
+    "continuance",
+    "subdivision",
+    "stormwater permit"
+   ]
+  },
+  {
+   "topic": "Decision deadline extension, 171 Arbor St.",
+   "resolution": "approved, extended to April 15, 2024",
+   "quote": "submitted an extension until april 15th of 2024.",
+   "tags": [
+    "deadline",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Policy on continuance requests",
+   "resolution": "placed on January agenda",
+   "quote": "i would like to put that on our agenda for the first.",
+   "tags": [
+    "policy",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Scenic road hearing and tree replacement, 360 Flat Hill Rd.",
+   "resolution": "plan accepted with conditions (six trees, 6 ft minimum, planted by April 2024)",
+   "quote": "so motion to accept the plans as given for the six flamethrower red bud trees.",
+   "tags": [
+    "scenic road",
+    "tree removal",
+    "public hearing",
+    "tree warden",
+    "remediation"
+   ]
+  },
+  {
+   "topic": "Site work at 711 Massachusetts Ave.",
+   "resolution": "letter to Building Commissioner authorized; no limited work order",
+   "quote": "so moved that work, does that does that work?",
+   "tags": [
+    "site work",
+    "stormwater",
+    "wetlands",
+    "cease and desist",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Future bylaw updates (scenic roads, solar, signs)",
+   "resolution": "two working groups formed, no vote",
+   "quote": "we just have two working groups.",
+   "tags": [
+    "bylaw",
+    "scenic roads",
+    "solar",
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "40B application and 40R/40S zoning",
+   "resolution": "discussed, no action",
+   "quote": "i'm not sure who was aware, but the 40b application that's before the town.",
+   "tags": [
+    "housing",
+    "40B",
+    "40R",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Stormwater task force and utility funding",
+   "resolution": "discussed; Chair to brief Select Board after the task force meets, no action",
+   "quote": "i'd like to give you one last chance.",
+   "tags": [
+    "stormwater",
+    "funding",
+    "task force",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Water supply zone overlap (Zone 2 and Zone 1)",
+   "resolution": "DEP response awaited, no action",
+   "quote": "how can zone 2 overlap zone 1?",
+   "tags": [
+    "water supply",
+    "zone 1",
+    "zone 2",
+    "DEP"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "scenic road",
+  "tree removal remediation",
+  "public hearing",
+  "continuance",
+  "stormwater",
+  "711 Massachusetts Ave",
+  "wetlands",
+  "site work",
+  "bylaw",
+  "subcommittees",
+  "40B",
+  "water supply",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

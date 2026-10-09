@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-12-07",
  "docid": "6112",
@@ -12,15 +12,314 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn the meeting by chris menard, seconded by dave passios. all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The approval of 11/13/23 minutes was deferred, not voted on at this meeting.",
- "cost_usd": 0.0673955
+ "note": "Text is a plain extracted transcript of the minutes, not a scan. Only one motion is recorded (adjournment), and it records \"All in favor\" with no count, so its outcome is given as \"passed\" on that wording. No roll call or vote counts appear elsewhere. The minutes were not approved in this meeting (deferred). Heather Lemieux's title is not printed; she is listed by the role of the section she speaks in. Attorney Costa is mentioned but did not take part, so is not listed as an attendee. Public comment item 13 names no speaker. Some dollar-like figures are printed without a dollar sign (\"20k\", \"500k\"), and recorded as printed.",
+ "cost_usd": 0.015306170000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: vice chair chris menard, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: vice chair chris menard, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: vice chair chris menard, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: vice chair chris menard, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: vice chair chris menard, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager Report presenter (title not printed in these minutes)",
+   "status": "present",
+   "quote": "heather lemieux has nothing new to report."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "the treasurer, myleen mallari, provided 2 documents to the committee to review."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "public commenter (address printed: 91 Main Street)",
+   "status": "present",
+   "quote": "anna lockwood - 91 main street- watched prior meetings and feels there are some disadvantages now that recreation and facilities fall under the same group."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the 11/13/23 minutes deferred to a later date because some members could not find them in the committee group drive.",
+   "quote": "the approval of the minutes will be discussed at a further date as some members weren't able to find them under the committee group drive."
+  },
+  {
+   "decision": "Dave Passios to compile a list of future projects that may qualify for Green Communities, send the spreadsheet to the Green Communities chair, and contact those departments early.",
+   "quote": "dave passios will provide spreadsheet to chair of green communities and contact those departments to get into the look early."
+  },
+  {
+   "decision": "Turkey Hill Elementary School window study and schematic design pushed back one year to fall under FY 26.",
+   "quote": "the study and schematic design for windows at turkey hill elementary school was pushed back another year so it will now fall under fy 26."
+  },
+  {
+   "decision": "Marshall Pond capital request reduced to $50,000, starting with a small portion of the pond rather than the entire pond.",
+   "quote": "the marshall pond request decreased to $50,000. instead of treating the entire pond they will only start with a small portion."
+  },
+  {
+   "decision": "An additional member to be added to the committee and appointed on December 13th, so the committee will consist of a full board.",
+   "quote": "an additional member will be added to the committee and appointed on december 13th."
+  },
+  {
+   "decision": "A full committee reorganization and committee liaison assignments to be held at an upcoming meeting (Jan 11th agenda).",
+   "quote": "at an upcoming meeting there will be a full committee reorganization and committee liaison assignments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Treasurer year-end cash report and account interest rates",
+   "what_was_recorded": "Members questioned accounts paying under half a percent interest and whether rates could be improved; the treasurer said a new account was opened because no rate was available for a new account.",
+   "quote": "some accounts have less than half percent interest and there is the question of whether this has to do with the accounts being fluid.",
+   "figures_as_printed": [
+    "less than half percent"
+   ]
+  },
+  {
+   "topic": "Bank fees on municipal investment accounts",
+   "what_was_recorded": "The treasurer said the banks charge fees for wires but offer free service for investments with good interest rates.",
+   "quote": "myleen mallari states they do charge fees for wire.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital plan request for Marshall Pond",
+   "what_was_recorded": "The Marshall Pond capital request was reduced to $50,000.",
+   "quote": "the marshall pond request decreased to $50,000.",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Capital request list thresholds",
+   "what_was_recorded": "A suggestion to split capital planning requests into two lists by project size.",
+   "quote": "a list for 20k to 500k projects and a list for over 500k projects.",
+   "figures_as_printed": [
+    "20k",
+    "500k"
+   ]
+  },
+  {
+   "topic": "MSBA recovery of payments to the town",
+   "what_was_recorded": "Discussion that the MSBA can recover payments made to the town and stop future payments if outside the allowed period; no dollar figure printed.",
+   "quote": "the msba rule is that they can recover any payments made to the town and stop any future payments to the town",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MMA Annual Meeting attendance funding",
+   "what_was_recorded": "Current funding covers attendance by 3 people at the MMA Annual Meeting; no dollar figure printed.",
+   "quote": "current there is funding for 3 people to attend.",
+   "figures_as_printed": [
+    "3 people"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "Parks separate from facilities in the capital and funding process",
+   "quote": "anna lockwood - 91 main street- watched prior meetings and feels there are some disadvantages now that recreation and facilities fall under the same group."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:10 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Plan Lunenburg survey",
+   "resolution": "no action",
+   "quote": "evan watters encourages residents to take the survey to provide their input.",
+   "tags": [
+    "survey",
+    "public input"
+   ]
+  },
+  {
+   "topic": "Public Comment: parks and facilities grouping; capital request split",
+   "resolution": "discussed; suggestion to split capital requests into two lists",
+   "quote": "evan watters suggests having 2 separate capital planning requests.",
+   "tags": [
+    "parks",
+    "facilities",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "heather lemieux has nothing new to report.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Old Business a: Treasurer year-end cash report for DOR",
+   "resolution": "discussed; no action",
+   "quote": "the treasurer, myleen mallari, provided 2 documents to the committee to review.",
+   "tags": [
+    "treasurer",
+    "cash",
+    "interest rates",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Old Business b: Municipal investing",
+   "resolution": "discussed; no action",
+   "quote": "myleen mallari states they all fall under the master law and under chapter 44 section 55 operating funds.",
+   "tags": [
+    "investing",
+    "treasurer",
+    "chapter 44"
+   ]
+  },
+  {
+   "topic": "Old Business c: Capital Plan Committee input",
+   "resolution": "discussed; Green Communities list; two capital request changes recorded; MSBA letter noted",
+   "quote": "dave passios is putting together a list of future projects that may qualify for green communities.",
+   "tags": [
+    "capital plan",
+    "green communities",
+    "MSBA",
+    "Marshall Pond",
+    "Turkey Hill"
+   ]
+  },
+  {
+   "topic": "New Business a: Budget season calendar",
+   "resolution": "no action; calendar available in the committee folder",
+   "quote": "members can find a copy of the budget season calendar in the finance committee folder.",
+   "tags": [
+    "budget season",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Minutes: 11/13/23",
+   "resolution": "deferred to a later date",
+   "quote": "the approval of the minutes will be discussed at a further date as some members weren't able to find them under the committee group drive.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "noted; Green Communities meeting and Plan Lunenburg survey",
+   "quote": "dave passios states that the green communities committee has a meeting scheduled for the week of the 18th.",
+   "tags": [
+    "green communities",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings: committee membership",
+   "resolution": "noted; additional member to be appointed December 13th",
+   "quote": "an additional member will be added to the committee and appointed on december 13th.",
+   "tags": [
+    "committee membership",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "noted; Jan 11th, Jan 18th and Jan 25th dates listed",
+   "quote": "jan 18th - 5 yr financial forecast &amp; capital plan recommendations",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "noted; MMA, warrant, budget and town meeting dates listed",
+   "quote": "jan 19th-20th (mma annual meeting) current there is funding for 3 people to attend.",
+   "tags": [
+    "schedule",
+    "town meeting",
+    "MMA"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public or committee comment",
+   "quote": "no public or committee comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "passed; meeting ended 8:58PM",
+   "quote": "motion to adjourn the meeting by chris menard, seconded by dave passios. all in favor",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "treasurer",
+  "cash management",
+  "interest rates",
+  "municipal investing",
+  "stabilization funds",
+  "green communities",
+  "MSBA",
+  "budget season",
+  "committee membership",
+  "minutes approval",
+  "public comment",
+  "parks and facilities",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

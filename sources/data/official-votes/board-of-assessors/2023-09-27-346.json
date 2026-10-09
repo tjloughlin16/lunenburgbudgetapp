@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-09-27",
  "docid": "346",
@@ -12,30 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Elect Brian Laffond as Chair",
+   "motion": "Elect Brian Laffond as Chair, on nomination by Sarah Cammer.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "sarah cammer nominated brian laffond for chair, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Elect Sarah Cammer as Vice Chair",
+   "motion": "Elect Sarah Cammer as Vice Chair, on nomination by John Rabbitt.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "john rabbitt nominated sarah cammer for vice chair, seconded by brian laffond. all in favor."
   },
   {
-   "motion": "Elect John Rabbitt as Clerk",
+   "motion": "Elect John Rabbitt as Clerk, on his own nomination.",
    "moved_by": "John Rabbitt",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "john rabbitt nominated himself for clerk. all in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "not stated",
@@ -44,6 +45,187 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The adjournment motion (vote 4) has no explicit outcome recorded in the minutes; the narrative simply proceeds to state the meeting closing time. All other votes are explicitly recorded as \"all in favor.\"",
- "cost_usd": 0.0855425
+ "note": "Text is clean extracted text with page markers; no scan. Votes are recorded only as 'All in favor' with no tally, so outcome is 'passed' for each officer election. The adjournment motion has no printed result, so outcome is 'not stated'. No dollar figures appear in the minutes; budget items record tax-bill and abatement matters without figures. No vote to approve prior minutes is recorded. Nate Cramer and Sheila are named only as people others will work with or contact, not as attendees, and are omitted from attendees.",
+ "cost_usd": 0.01501597,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "status": "present",
+   "quote": "michael ray jeffreys states the first steps include prioritizing and communication."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo- 284 lancaster ave. - states that the task in front of you is significant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brian Laffond will investigate how to officially change the regular meetings to Monday nights and the process for doing so.",
+   "quote": "brian laffond will investigate how to officially change the meetings to monday nights and what the process is."
+  },
+  {
+   "decision": "Someone from the board will reach out to Sheila to see whether she can attend one meeting a month.",
+   "quote": "someone from the board will reach out to sheila to see if she is able to make it to 1 meeting a month."
+  },
+  {
+   "decision": "The board agreed there needs to be communication with the office; board must be made aware of documents or letters sent out, and they must be date stamped.",
+   "quote": "the board agrees that there needs to be communication with the office."
+  },
+  {
+   "decision": "Whoever makes the meeting agenda will do research and bring essential materials to provide a basis for discussion.",
+   "quote": "john rabbitt suggests whoever makes the meeting agenda do a little research and bring essential materials to provide a basis for discussion."
+  },
+  {
+   "decision": "Sarah Cammer will review the assessment and the DOR database to familiarize herself.",
+   "quote": "sarah cammer is going to review the assessment and the dor database to familiarize."
+  },
+  {
+   "decision": "Rena Swezey will look at other communities for ideas and references regarding the webpage, which is being launched soon.",
+   "quote": "rena swezey will look at other communities for ideas/references regarding the webpage as the new webpage is being launched soon."
+  },
+  {
+   "decision": "The plan is to invite the town manager to an upcoming meeting to discuss how to communicate with and address the public.",
+   "quote": "the plan is to invite the town manager to an upcoming meeting to discuss how to communicate with and address the public."
+  },
+  {
+   "decision": "Agenda policy review will be added as a regular topic on the agenda.",
+   "quote": "agenda policy review will be added as a regular topic on the agenda."
+  },
+  {
+   "decision": "Nate Cramer will work with the IT department to save the valuations and billing values.",
+   "quote": "nate cramer will work with the it department to save the valuations and billing values."
+  },
+  {
+   "decision": "The next meeting is scheduled for October 11 at 6:45 PM.",
+   "quote": "the next meeting is scheduled for october 11th at 6:45 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q3 and Q4 tax bills and abatement deadlines",
+   "what_was_recorded": "Estimated third-quarter bills will be sent, re-evaluation actual bills are not expected until February 1, and the abatement filing deadline is March 1; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "3rd quarter estimated bills will be sent. the re-eval actual bills won't be received until february 1st."
+  },
+  {
+   "topic": "Abatements",
+   "what_was_recorded": "Motor vehicle abatements were signed, and a reference book of granted abatements was proposed; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "motor vehicle abatements were signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael Ray Jeffreys",
+   "stated_role": "1170 Massachusetts Ave.",
+   "topic": "recent excise tax issue; priorities and communication",
+   "quote": "michael ray jeffreys - 1170 massachusetts ave.- briefly discussed the recent excise tax issue."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Ave.",
+   "topic": "size of the task; prioritizing a list; community anxiety over lack of response",
+   "quote": "tom alonzo- 284 lancaster ave. - states that the task in front of you is significant."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 6:30 pm."
+  },
+  {
+   "topic": "Board comment: welcome of new members",
+   "resolution": "no action",
+   "quote": "two additional members are welcomed on the board: sarah cammer and brian laffond."
+  },
+  {
+   "topic": "Public comment on excise tax issue and communication",
+   "resolution": "no action",
+   "quote": "michael ray jeffreys - 1170 massachusetts ave.- briefly discussed the recent excise tax issue."
+  },
+  {
+   "topic": "Reorganization: election of Chair, Vice-chair and Clerk",
+   "resolution": "approved (Chair, Vice Chair and Clerk elected)",
+   "quote": "reorganization of the board to elect a chair, vice-chair, and clerk"
+  },
+  {
+   "topic": "Regular meeting schedule and next meeting dates",
+   "resolution": "continued; Chair to investigate change to Monday nights",
+   "quote": "based on everyone's schedule there is a discussion to move the meetings to monday nights at 6:45 pm."
+  },
+  {
+   "topic": "Status report from Interim Principal Assessor",
+   "resolution": "no action; informational",
+   "quote": "rena swezey provides a general update and shares that she has been very busy."
+  },
+  {
+   "topic": "Community meeting to update the public on Q3 and Q4 tax bills",
+   "resolution": "continued; invite town manager to a future meeting",
+   "quote": "the plan is to invite the town manager to an upcoming meeting to discuss how to communicate with and address the public."
+  },
+  {
+   "topic": "Future agenda topics",
+   "resolution": "continued; policies manual, terms glossary, procedures and charts proposed",
+   "quote": "agenda policy review will be added as a regular topic on the agenda."
+  },
+  {
+   "topic": "Board comments and public comment",
+   "resolution": "no action; assignments noted",
+   "quote": "the board agrees that there needs to be communication with the office."
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action; next meeting set",
+   "quote": "the next meeting is scheduled for october 11th at 6:45 pm."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting closed at 9:00 PM",
+   "quote": "the meeting closed at 9:00 pm."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "officer elections",
+  "reorganization",
+  "meeting schedule",
+  "tax bills",
+  "abatements",
+  "revaluation",
+  "public comment",
+  "communication with the public",
+  "excise tax",
+  "interim principal assessor",
+  "website"
+ ],
+ "dropped_unquoted_by_field": {}
 }

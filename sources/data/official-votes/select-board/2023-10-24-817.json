@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-10-24",
  "docid": "817",
@@ -12,39 +12,417 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's Appointment of Mason Cooper to the position of DPW Driver/Laborer",
+   "motion": "Ratify the Town Manager's appointment of Mason Cooper to the position of DPW Driver Laborer.",
    "moved_by": "Lou Franco",
    "seconded_by": "Tom Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "lou franco made motion to ratify the town manager's appointment of mason cooper to the position of dpw driver labor. seconded by tom alonzo. roll call vote, t. alonzo, aye; l. franco, aye; c. nuzzolo, aye; r. emkey, aye; m. jeffreys, aye."
+   "quote": "lou franco made motion to ratify the town manager's appointment of mason cooper to the position of dpw driver labor. seconded by tom alonzo."
   },
   {
-   "motion": "Issue a certificate of commendation to Jorge Marzuca Rosas for outstanding immigrant business founder and nominee for the 2023 Barry Portnoy Immigrant Entrepreneur Award",
+   "motion": "Issue a certificate of commendation to Jorge Marzuca Rosas on behalf of the Lunenburg Select Board.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. jeffreys made motion to issue a certificate of commendation to jorge marzuca rosas on behalf of the lunenburg select board for outstanding immigrant business founder and nominee for the 2023 barry portnoy immigrant entrepreneur award in recognition of the outstanding contribution that has business has made to the town of lunenburg and massachusetts economic well-being. seconded by lou franco. roll call vote, t. alonzo, aye; l. franco, aye; c. nuzzolo, aye; r. emkey, aye; m. jeffreys, aye."
+   "quote": "m. jeffreys made motion to issue a certificate of commendation to jorge marzuca rosas on behalf of the lunenburg select board"
   },
   {
-   "motion": "Approve Minutes from August 22, 2023",
+   "motion": "Approve the minutes of August 22, 2023.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "m. jeffreys made motion to approve minutes from august 22, 2023. seconded by l. franco. roll call vote, t. alonzo, aye; l. franco, aye; r. emkey, aye; c. nuzzolo, aye; m. jeffreys, aye."
-  },
-  {
-   "motion": "Adjourn",
-   "moved_by": "L. Franco",
-   "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "l. franco made motion to adjourn, seconded by t. alonzo. adjourned 8:43 pm"
+   "quote": "m. jeffreys made motion to approve minutes from august 22, 2023. seconded by l. franco."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Alonzo",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "l. franco made motion to adjourn, seconded by t. alonzo."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes read and processed. Four votes recorded, all passed unanimously.",
- "cost_usd": 0.1027391
+ "note": "Text extracted from pages with page markers; no scan. Roles of Select Board members are not printed in the minutes, so none is recorded for them. The Chair is referred to but never named. Motion to adjourn has no recorded result, so outcome is 'not stated'. Roll-call votes are printed as individual ayes with no count; outcomes recorded as 'passed'. Minutes approval and adjournment are marked procedural. Public-comment entries include Board members' remarks that appear in that section. Hours figures (cemetery 805, 2,431, 3,900 hours) are hours, not dollars, and are not recorded as budget items.",
+ "cost_usd": 0.01864747,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, tom alonzo, lou franco, caesar nuzzolo (remote), renee emkey (remote), heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, tom alonzo, lou franco, caesar nuzzolo (remote), renee emkey (remote), heather lemieux"
+  },
+  {
+   "name": "Lou Franco",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, tom alonzo, lou franco, caesar nuzzolo (remote), renee emkey (remote), heather lemieux"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "status": "remote",
+   "quote": "present: michael-ray jeffreys, tom alonzo, lou franco, caesar nuzzolo (remote), renee emkey (remote), heather lemieux"
+  },
+  {
+   "name": "Renee Emkey",
+   "status": "remote",
+   "quote": "present: michael-ray jeffreys, tom alonzo, lou franco, caesar nuzzolo (remote), renee emkey (remote), heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux: last week's presentation regarding the staffing shortages covered staffing needs by department"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager of Sewer Department",
+   "status": "present",
+   "quote": "paula bertram: (business manager of sewer department) thanked heather for coming to dpw to meet with employees."
+  },
+  {
+   "name": "Jean Russell",
+   "role": "80 West Street",
+   "status": "present",
+   "quote": "jean russell, 80 west street: jean was distressed with the comments made by the chair last week."
+  },
+  {
+   "name": "Mark Feinberg",
+   "role": "resident",
+   "status": "present",
+   "quote": "mark feinberg: has been a resident for 38 years and wife is in the cemetery"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "155 Island Road",
+   "status": "present",
+   "quote": "dave has worked with the dpw for many years, dave wanted to thank heather for the efforts"
+  },
+  {
+   "name": "Christos Lekaditis",
+   "role": "President of Lunenburg Professional Firefighters",
+   "status": "present",
+   "quote": "christos lekaditis, president of lunenburg professional firefighters: christos wanted to thank the town manager for the presentation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Remote-participation policy: the consensus is to observe the state's stance and potentially align with it, since the state policy may be broader.",
+   "quote": "the consensus is to observe the state's stance on the matter and potentially align with it"
+  },
+  {
+   "decision": "Review of Select Board Bylaws Chapter 305 (remote policy) deferred; Town Manager to review with Town Counsel and the Board to revisit at the December meeting.",
+   "quote": "town manager requested more time to review and consult with town counsel. board agreed to revisit the review at the december meeting."
+  },
+  {
+   "decision": "Board agreed to plan a date for a broader workshop discussion and keep immediate focus on the specific policies discussed that night.",
+   "quote": "board agreed to plan a date for the broader discussion and to keep immediate focus on the specific policies that were discussed tonight."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery Commission request",
+   "what_was_recorded": "A Board member recalled questioning an earlier Cemetery Commission request for a sum of money.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "michael-ray recalls questioning a request from the cemetery commission for $10,000 and remembers the strong feedback he received"
+  },
+  {
+   "topic": "Seasonal cemetery and DPW staffing and wages",
+   "what_was_recorded": "Public comment addressed wages, job classification and budgets for DPW and cemetery staff, and public safety department heads' pay.",
+   "figures_as_printed": [],
+   "quote": "he mentioned department heads are grossly underpaid and hope the board and finance committee can support the efforts to address the wages."
+  },
+  {
+   "topic": "DPW tools and equipment",
+   "what_was_recorded": "A speaker said the town needs to invest in basic tools to make DPW work more efficient; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "the town needs to invest in basic tools needed to get the jobs done more efficiently"
+  },
+  {
+   "topic": "Real Estate Services Technical Assistance grant",
+   "what_was_recorded": "The Town Manager reported receiving a grant for the 925 Massav project.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the town manager reported receiving $25,000 from the real estate services technical assistance program for the 925 massav project."
+  },
+  {
+   "topic": "Mass Development funding",
+   "what_was_recorded": "Discussion of how Mass Development's focus on urban areas may affect funding for towns like Lunenburg; no figure stated.",
+   "figures_as_printed": [],
+   "quote": "its impact on funding for towns like lunenburg"
+  },
+  {
+   "topic": "Warrants and payments",
+   "what_was_recorded": "Warrants were listed for payroll deductions, accounts payable and payroll.",
+   "figures_as_printed": [
+    "$212,068.82",
+    "$337,279.25",
+    "$971,088.89"
+   ],
+   "quote": "payroll deductions $212,068.82 accounts payable warrant $337,279.25; payroll warrant $971,088.89"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Master Plan kick-off meeting",
+   "speaker": "Lou Franco",
+   "stated_role": "",
+   "quote": "master plan will host a kick-off public meeting on november 2, 2023 at smokestack roasters 6:30 pm to 8:30 pm."
+  },
+  {
+   "topic": "Cemetery and DPW staffing hours and roles",
+   "speaker": "Heather Lemieux",
+   "stated_role": "",
+   "quote": "heather requests the board use their voice to support the employees and better understand the roles and responsibilities of its staff."
+  },
+  {
+   "topic": "DPW morale, equipment and workload",
+   "speaker": "Paula Bertram",
+   "stated_role": "Business Manager of Sewer Department",
+   "quote": "morale is low, employees are being asked to do more with less, and responsibility increased but salary has not."
+  },
+  {
+   "topic": "Comments by the Chair on cemetery hours",
+   "speaker": "Jean Russell",
+   "stated_role": "80 West Street",
+   "quote": "jean was distressed with the comments made by the chair last week."
+  },
+  {
+   "topic": "Cemetery employees and closed captions",
+   "speaker": "Mark Feinberg",
+   "stated_role": "resident for 38 years",
+   "quote": "mark also requested there be closed captions on the tv for those hard of hearing."
+  },
+  {
+   "topic": "Thanks to Heather Lemieux for DPW visit",
+   "speaker": "Dave McDonald",
+   "stated_role": "155 Island Road",
+   "quote": "dave wanted to thank heather for the efforts and if anything is needed he is happy to help."
+  },
+  {
+   "topic": "Fire recruitment and retention; department head pay",
+   "speaker": "Christos Lekaditis",
+   "stated_role": "President of Lunenburg Professional Firefighters",
+   "quote": "losing one or two people in a department drastically affects the department operations, specifically in public safety"
+  },
+  {
+   "topic": "Team approach and public input",
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "quote": "tom agrees with the public comments and stressed the importance of working as a team"
+  },
+  {
+   "topic": "Thanks for hearing feedback",
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "",
+   "quote": "michael-ray thanked the members that came today and spoke"
+  },
+  {
+   "topic": "Step in the right direction; wages",
+   "speaker": "Renee Emkey",
+   "stated_role": "",
+   "quote": "renee wanted to thank heather for going to the dpw and getting feedback first hand and is a step in the right direction."
+  },
+  {
+   "topic": "Thanks for feedback",
+   "speaker": "Caesar Nuzzolo",
+   "stated_role": "",
+   "quote": "thanked the town manager as well as the public for bringing feedback to the board's attention."
+  },
+  {
+   "topic": "Social media support for public-safety and DPW work",
+   "speaker": "Lou Franco",
+   "stated_role": "",
+   "quote": "lou made note there is positivity on social media for the public appreciating the work that"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "call to order and pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "received; no action recorded",
+   "quote": "heather lemieux: last week's presentation regarding the staffing shortages covered staffing needs by department",
+   "tags": [
+    "DPW staffing",
+    "cemetery",
+    "public safety recruitment",
+    "wages"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "yard waste days are every saturday until november 18th 8:00am - 4:00pm at youngs rd",
+   "tags": [
+    "events",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Communications from other Boards",
+   "resolution": "no action recorded",
+   "quote": "communications from other boards",
+   "tags": [
+    "boards"
+   ]
+  },
+  {
+   "topic": "Interviews/Appointments/Reappointments/Resignations",
+   "resolution": "approved (ratified appointment)",
+   "quote": "lou franco made motion to ratify the town manager's appointment of mason cooper to the position of dpw driver labor. seconded by tom alonzo.",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "received",
+   "quote": "the town manager reported receiving $25,000 from the real estate services technical assistance program for the 925 massav project.",
+   "tags": [
+    "vacancies",
+    "grants",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Old Business: Special Town Meeting warrant articles",
+   "resolution": "no discussion",
+   "quote": "select board recommendation vote/discussion on special town meeting warrant articles: no discussion",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Old Business: Select Board Bylaws, remote policy",
+   "resolution": "continued to December meeting",
+   "quote": "board agreed to revisit the review at the december meeting.",
+   "tags": [
+    "bylaws",
+    "remote meetings",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Old Business: Disposition of Town Properties",
+   "resolution": "no action recorded",
+   "quote": "3. disposition of town properties",
+   "tags": [
+    "town property"
+   ]
+  },
+  {
+   "topic": "Current Business: certificate of commendation",
+   "resolution": "approved",
+   "quote": "m. jeffreys made motion to issue a certificate of commendation to jorge marzuca rosas on behalf of the lunenburg select board",
+   "tags": [
+    "commendation",
+    "business"
+   ]
+  },
+  {
+   "topic": "Current Business: future workshop",
+   "resolution": "agreed to plan a date",
+   "quote": "board agreed to plan a date for the broader discussion and to keep immediate focus on the specific policies that were discussed tonight.",
+   "tags": [
+    "workshop",
+    "employment",
+    "finances"
+   ]
+  },
+  {
+   "topic": "Current Business: approval of minutes August 22, 2023",
+   "resolution": "approved",
+   "quote": "m. jeffreys made motion to approve minutes from august 22, 2023. seconded by l. franco.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business: warrants",
+   "resolution": "no action recorded",
+   "quote": "payroll deductions $212,068.82 accounts payable warrant $337,279.25; payroll warrant $971,088.89",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Current Business: committee reports",
+   "resolution": "received; no action recorded",
+   "quote": "committee reports: significant focus on planning, budgeting, and public involvement in town developments and master planning efforts.",
+   "tags": [
+    "committees",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "no action",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Destination Groton event",
+   "resolution": "mentioned; no action",
+   "quote": "an invitation-only event called \"destination groton\" was mentioned, focusing on regional economic",
+   "tags": [
+    "regional economy"
+   ]
+  },
+  {
+   "topic": "Flat Hill Rd November 7 meeting",
+   "resolution": "no action recorded",
+   "quote": "flat hill rd-november 7th meeting",
+   "tags": [
+    "Flat Hill Rd"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:43 PM",
+   "quote": "l. franco made motion to adjourn, seconded by t. alonzo.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "DPW staffing",
+  "cemetery",
+  "wages and classification",
+  "public safety recruitment",
+  "remote meeting policy",
+  "bylaws",
+  "town manager report",
+  "grants",
+  "warrants",
+  "appointments",
+  "commendation",
+  "Master Plan",
+  "announcements"
+ ],
+ "dropped_unquoted_by_field": {}
 }

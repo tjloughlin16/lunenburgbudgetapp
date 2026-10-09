@@ -1,0 +1,299 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "personnel-committee",
+ "board": "Personnel Committee",
+ "video_title": "Personnel Committee Part 1",
+ "meeting_date": "2023-11-13",
+ "video_id": "iWUlBLWR0Q4",
+ "video_url": "https://www.youtube.com/watch?v=iWUlBLWR0Q4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/personnel-committee/2023-11-13-iWUlBLWR0Q4.json",
+  "sha256": "a2fadbb0ab18a1999c7633e35156adc2d9ade04e0e8619ac4ef86257c771ec6e",
+  "caption_lines": 27,
+  "segments": 199
+ },
+ "recording": {
+  "duration_s": 671,
+  "duration": "0:11",
+  "spoken_chars": 6357,
+  "words_approx": 1059
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11132023-3522",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-11-13-agenda-3522.txt",
+   "path": "sources/meetings/personnel-committee/2023-11-13-agenda-3522.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11132023-3522",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-11-13-minutes-3522.txt",
+   "path": "sources/meetings/personnel-committee/2023-11-13-minutes-3522.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T04:28:14Z",
+  "cost_usd": 0.230119
+ },
+ "minutes": {
+  "headline": "Personnel Committee met but spent most of the time fixing a Zoom link problem; only two sets of minutes were approved.",
+  "summary": "The Personnel Committee approved the October 17 and October 24 minutes, then spent the rest of the captioned portion troubleshooting Zoom access for a member (Nancy) and others who could not get in. No substantive personnel or budget business appears in the captions.",
+  "attendees": [
+   {
+    "name_as_heard": "Donna",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Sue",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Heidi",
+    "role": "town staff (hosting Zoom)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Nancy",
+    "role": "member (unable to join)",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "personnel",
+   "policy"
+  ],
+  "votes": [
+   {
+    "t": 131,
+    "motion": "Accept the minutes of October 17 as submitted",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 154,
+    "motion": "Accept the minutes of October 24 as submitted",
+    "outcome": "passed unanimously",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 131,
+    "decision": "Public comment deferred because no public was present yet; chair to circle back."
+   },
+   {
+    "t": 501,
+    "decision": "Members agreed to ask the absent member to call in by phone since she could not join by Zoom."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 89,
+    "t_end": 131,
+    "topic": "Waiting for participants; public comment deferred",
+    "resolution": "no public present; circle back",
+    "tags": []
+   },
+   {
+    "t_start": 131,
+    "t_end": 175,
+    "topic": "Approval of October 17 and October 24 minutes",
+    "resolution": "voted by roll call; October 24 passed unanimously",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 175,
+    "t_end": 700,
+    "topic": "Zoom access troubleshooting for absent members",
+    "resolution": "unresolved in captions; Nancy still not connected",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Result of the roll call on the October 17 minutes was not stated clearly (roll call names heard: Donna, I)",
+   "Whether the meeting ever reached substantive agenda items (captions end mid-troubleshooting)",
+   "Reference to a vacation-related article on the agenda was unclear"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Personnel Committee approved the October 17 and October 24 minutes by roll call; the October 24 minutes passed unanimously.",
+    "t": 131
+   },
+   {
+    "line": "Public comment was deferred because no members of the public were present; the chair planned to circle back.",
+    "t": 131
+   },
+   {
+    "line": "Most of the captioned portion went to Zoom access problems for absent members, and the captions do not show the problem resolved.",
+    "t": 175
+   },
+   {
+    "line": "Members agreed to ask the absent member to join by phone because she could not connect by Zoom.",
+    "t": 501
+   }
+  ],
+  "why_it_matters": [
+   "The captioned portion shows no personnel, staffing or budget decisions, so nothing in it changes a tax bill or a town service.",
+   "Remote access matters for public bodies: if members and residents cannot get into a Zoom meeting, the meeting loses part of its quorum and its public view."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T04:28:22Z",
+   "cost_usd": 0.215763
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11132023-3522",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-11-13-minutes-3522.txt",
+   "path": "sources/meetings/personnel-committee/2023-11-13-minutes-3522.pdf"
+  },
+  "official_sha256": "720c5e4246b5f04d24361ebcd1e73d4d4693420a864bde0ffc7e86ccc07f7716",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records differ substantially: the official minutes record a passed Grade 8 Step 4 vote and several decisions that ours omits entirely. The thing to know is that our minutes record no votes while the official records one, so the recording needs a check for that motion, and the absent member's identity and the Zoom outage handling also differ.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on Grade 8 Step 4 offer for Assistant to the Sewer Business Manager",
+    "ours": "VOTES: none",
+    "official": "motion by s. andrews to accept the recommendation of the assistant town manager/hr director to offer grade 8 step 4 to the candidate for assistant to the sewer business manager.",
+    "note": "The official minutes record a passed motion; our minutes record no vote at all. Check the recording for the motion and vote, since our captions may have missed it.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Grade 8 Step 4 offer rationale (related experience)",
+    "ours": "",
+    "official": "offer the assistant to the sewer business manager candidate a grade 8, step 4 as she had related experience",
+    "note": "Our minutes have no mention of this hiring recommendation or its basis; no dollar figure in either record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No warrant preparation needed for vacation/sick leave article",
+    "ours": "",
+    "official": "no warrant preparation is needed at this time.",
+    "note": "A decision on the vacation and sick leave hours-to-days article appears only in the official minutes; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "COA and Library reevaluations to finish next meeting",
+    "ours": "",
+    "official": "the goal is to complete the reevaluation of these departments at the next meeting.",
+    "note": "Official-only decision about the schedule; not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "COA confidentiality factor reevaluated 100 to 20 points",
+    "ours": "",
+    "official": "each job role was reevaluated from 100 pts down to 20 pts. in this specific area.",
+    "note": "Official-only decision/figure about Council on Aging job roles; not in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting restart after Zoom outage",
+    "ours": "Members agreed to ask the absent member to call in by phone since she could not join by Zoom.",
+    "official": "the committee restarted the meeting and again opened the public comment",
+    "note": "Both describe the Zoom problem but differ: ours says to ask the absent member to call in; the official says the meeting restarted and reapproved the Oct 17 and 24 minutes. Check the recording for how the outage was handled."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Public comment",
+    "ours": "Public comment deferred because no public was present yet; chair to circle back.",
+    "official": "the committee restarted the meeting and again opened the public comment",
+    "note": "The official records public comment as none; ours records deferral. Check whether anyone spoke."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Wendy Bertrand / Nancy",
+    "ours": "Nancy (member (unable to join))",
+    "official": "absent: wendy bertrand",
+    "note": "Our minutes treat Nancy as a member who could not join; the official lists Wendy Bertrand as the absent member and Nancy O'Rourke as staff present. Check who the absent member was and Nancy's role."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Donna Fortune",
+    "ours": "Donna (member)",
+    "official": "susan andrews, joanna bilotta, donna fortune",
+    "note": "Donna matches Donna Fortune, a committee member present."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Sue",
+    "ours": "Sue (member)",
+    "official": "susan andrews, joanna bilotta, donna fortune",
+    "note": "Sue is a short form of Susan Andrews, committee member.",
+    "official_reading": "Susan Andrews"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Bill Bernard",
+    "ours": "Bill (member)",
+    "official": "bill bernard dpw director",
+    "note": "Same person present, though ours labels him a member and the official lists him as DPW Director."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Julie Belliveau",
+    "ours": "Julie (member)",
+    "official": "julie belliveau, assistant town manager/hr director",
+    "note": "Same person present; role labelled differently."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Joanna Bilotta",
+    "ours": "",
+    "official": "j. bilotta opened the meeting at 5:38pm with members noted in attendance",
+    "note": "Bilotta, who opened the meeting, is not named in ours; Heidi (Zoom host) appears only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Heidi (Zoom host)",
+    "ours": "Heidi (town staff (hosting Zoom))",
+    "official": "",
+    "note": "Heidi is not listed in the official attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T04:29:34Z",
+   "cost_usd": 0.232635
+  }
+ }
+}

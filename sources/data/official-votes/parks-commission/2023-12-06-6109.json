@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-12-06",
  "docid": "6109",
@@ -12,23 +12,265 @@
  },
  "votes": [
   {
-   "motion": "Submit the letter to the Department of Labor Standards and authorize Attorney Costa to speak on the Parks Commission's behalf on any other related further issues",
-   "moved_by": "Christopher Sullivan",
-   "seconded_by": "Karin Menard",
+   "motion": "Submit the letter to the Department of Labor Standards and authorize Attorney Costa to speak on the Parks Commission's behalf on related issues (Skate Park).",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "K. Menard",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "c. sullivan made a motion to submit the letter to the department of labor standards and authorize attorney costa to speak on the parks commission's behalf on any other related further issues. k. menard seconded. all in favor, motion carried (5-0)."
+   "quote": "c. sullivan made a motion to submit the letter to the department of labor standards and authorize attorney costa to speak on the parks commission's behalf"
   },
   {
-   "motion": "Approve the minutes with corrections for April 11, May 24, June 28, August 16, September 20, and October 10, 2023",
-   "moved_by": "Christopher Sullivan",
-   "seconded_by": "Ana Lockwood",
+   "motion": "Approve the minutes with correction of April 11, May 24, June 28, August 16, September 20, and October 10, 2023.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "A. Lockwood",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "c. sullivan made a motion to approve the minutes with correction of april 11, may 24, june 28, august 16, september 20, and october 10, 2023. a. lockwood seconded. all in favor (5-0)."
+   "quote": "c. sullivan made a motion to approve the minutes with correction of april 11, may 24, june 28,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0655544
+ "note": "Text is a clean digital extraction, not a scan; both recorded votes are readable and quoted. No motion was recorded for adjournment (\"Adjourned: 8:55 pm\") or for any other item, so no further votes are listed. The Open Space item refers to a \"January 16, 2023 Select Board meeting\", which appears to be a year typo in a December 2023 document; not corrected here. C. Ruth and A. Clement are named without titles beside them; the Facilities Director & Recreation Director role is taken from the agenda heading, not printed beside C. Ruth. Mary Wilson, Attorney Costa, Micheal Toohill and the Open Space Committee are mentioned but did not take part, so are not listed as attendees.",
+ "cost_usd": 0.01613297,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, anita schiepers, and colleen shapiro"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, anita schiepers, and colleen shapiro"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, anita schiepers, and colleen shapiro"
+  },
+  {
+   "name": "Anita Schiepers",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, anita schiepers, and colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, anita schiepers, and colleen shapiro"
+  },
+  {
+   "name": "C. Ruth",
+   "role": "presenter for Facilities Director & Recreation Director Update item; title not printed beside the name",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "A. Clement",
+   "role": "presenter for recreation program updates; title not printed",
+   "status": "present",
+   "quote": "a. clement gave the following updates:"
+  },
+  {
+   "name": "D Passios",
+   "role": "Finance and Green Communities member and past member of the Parks Commission",
+   "status": "present",
+   "quote": "d passios, finance and green communities member and past member of the parks commission."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members signed the PARC grant agreement for the Marshall Park Renovation, with no vote recorded.",
+   "quote": "the members signed the agreement."
+  },
+  {
+   "decision": "C. Shapiro and A. Schiepers agreed to assist Mary Wilson with 2024 Earth Day volunteer organizing and advertising, with no vote recorded.",
+   "quote": "c. shapiro and a. schiepers stated they would assist."
+  },
+  {
+   "decision": "A. Schiepers suggested the self-funded swim lessons question go to a future meeting, with further information gathered from other towns. Suggested, not voted.",
+   "quote": "a. schiepers suggested discussing this at a future meeting and gathering further information from other towns."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Beach fee schedule (past three years)",
+   "what_was_recorded": "K. Menard read out the Town Beach fee schedule for the past three years, covering adult, senior, family and individual passes for residents and non-residents.",
+   "figures_as_printed": [
+    "$5/ adult",
+    "$2 per Senior or additional child",
+    "$10 per adult",
+    "$5 per Senior or additional child",
+    "$65",
+    "$80",
+    "$44",
+    "$60",
+    "$25 for a Senior pass",
+    "$35 for a non-resident Senior pass"
+   ],
+   "quote": "k. menard indicated the fees for the past 3 years have been $5/ adult and included 3 children 15 years"
+  },
+  {
+   "topic": "Town Beach pass sales and revenue this season",
+   "what_was_recorded": "A. Lockwood reported 161 beach passes sold this season and the revenue from resident and non-resident passes.",
+   "figures_as_printed": [
+    "$9600",
+    "$2800"
+   ],
+   "quote": "a. lockwood indicated 161 beach passes were sold this season, revenue $9600 residents and $2800 non-resident passes."
+  },
+  {
+   "topic": "Swim lesson fees and self-funding",
+   "what_was_recorded": "A. Lockwood stated the current swim lesson fees; K. Menard said she would like to see swim lessons self-funded.",
+   "figures_as_printed": [
+    "$25 per child",
+    "$75 for a family"
+   ],
+   "quote": "a. lockwood stated lesson fees are $25 per child and $75 for a family."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D Passios",
+   "stated_role": "Finance and Green Communities member and past member of the Parks Commission",
+   "topic": "preservation and renovation of the cave at Marshall Park",
+   "quote": "d. passios spoke on behalf of the citizens and the town of lunenburg for the preservation and renovation of the cave at marshall park."
+  },
+  {
+   "speaker": "D. Passios",
+   "stated_role": "Finance and Green Communities member and past member of the Parks Commission",
+   "topic": "whether the outfield was shortened because of the cave",
+   "quote": "d. passios does not believe that to be true."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "reported; no action",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "facilities",
+    "recreation",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Skate Park updates",
+   "resolution": "approved letter to Department of Labor Standards and authorized Attorney Costa (5-0)",
+   "quote": "next item on the agenda, skate park updates",
+   "tags": [
+    "skate park",
+    "prevailing wage"
+   ]
+  },
+  {
+   "topic": "NHS",
+   "resolution": "reported; no action",
+   "quote": "next item on the agenda, nhs",
+   "tags": [
+    "NHS",
+    "volunteer hours"
+   ]
+  },
+  {
+   "topic": "2024 Earth Day Celebration",
+   "resolution": "volunteer assistance assigned, no vote",
+   "quote": "next item on the agenda, 2024 earth day celebration",
+   "tags": [
+    "earth day",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Town Beach Fee Discussions",
+   "resolution": "discussed; swim lesson self-funding deferred to a future meeting",
+   "quote": "next item on the agenda, town beach fee discussions",
+   "tags": [
+    "town beach",
+    "fees",
+    "swim lessons"
+   ]
+  },
+  {
+   "topic": "Marshall Park Renovation: PARC Grant Signatures",
+   "resolution": "members signed the grant agreement, no vote",
+   "quote": "next item on the agenda, marshall park renovation: parc grant signatures",
+   "tags": [
+    "marshall park",
+    "PARC grant"
+   ]
+  },
+  {
+   "topic": "Community Updates",
+   "resolution": "reported; no action",
+   "quote": "next item on the agenda, community updates",
+   "tags": [
+    "master plan",
+    "open space",
+    "lake shirley road",
+    "title search"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "none reported",
+   "quote": "next item on the agenda, chair updates",
+   "tags": [
+    "chair"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved with corrections (5-0)",
+   "quote": "c. sullivan made a motion to approve the minutes with correction of april 11, may 24, june 28,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for January 17, 2024 at 7 pm",
+   "quote": "last item on the agenda, next meeting: january 17, 2024 at 7 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action",
+   "quote": "d passios, finance and green communities member and past member of the parks commission.",
+   "tags": [
+    "marshall park",
+    "cave",
+    "public comment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "skate park",
+  "town beach",
+  "swim lessons",
+  "marshall park",
+  "PARC grant",
+  "earth day",
+  "open space",
+  "lake shirley road",
+  "capital projects",
+  "recreation programs",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

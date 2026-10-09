@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-10-10",
  "docid": "308",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve September meeting minutes",
+   "motion": "Approve the September meeting minutes.",
    "moved_by": "McGrath",
    "seconded_by": "Lloyd",
    "outcome": "passed",
@@ -21,6 +21,130 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07895450000000001
+ "note": "Text extraction is readable, with no scan issues. Only one motion is recorded (approval of September minutes), and the minutes print no tally, so the outcome is 'passed' with the printed words 'approved by all members present'. The call to order and the adjournment at 8:38 PM are not recorded as motions. Attendance is taken from the 'Present:' line. The minutes do not state a role for Mr. Gingras. Figures are recorded as printed ('70K', '300K', '$300'). The Ritter estimate is discussed in money terms but carries no figure.",
+ "cost_usd": 0.013551569999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "not stated",
+   "status": "present",
+   "quote": "introduction with mr. brian gingras"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will review the August minutes at its October meeting.",
+   "quote": "will be reviewing august minutes at the october meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall renovation chimney repairs",
+   "what_was_recorded": "The APDC wanted to see the estimate for chimney repairs at the approved Town Hall renovation; the repair cost came in well above the original estimate.",
+   "figures_as_printed": [
+    "70K",
+    "300K"
+   ],
+   "quote": "apdc wanted to see estimate for the repairs (estimated 70k, came in at 300k)"
+  },
+  {
+   "topic": "By-law 21D fines for demolition by neglect",
+   "what_was_recorded": "A suggestion to meet with Town Council about By-law 21D enforcement, which can issue fines of up to a stated amount per day per violation.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "suggest meeting with town council about by-law 21d enforcement which can issue fines up to $300 per day/per violation"
+  },
+  {
+   "topic": "Ritter building estimate",
+   "what_was_recorded": "A member expressed worry about the approved Ritter building estimate; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "worried about approved ritter building estimate"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Brian Gingras",
+   "stated_role": "",
+   "topic": "introduction to APDC committee members; later demolition by neglect at a Lancaster Ave house",
+   "quote": "introduction with mr. brian gingras"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved; August minutes deferred to October meeting",
+   "quote": "voted approved by all members present."
+  },
+  {
+   "topic": "Correspondences: Freedoms Way Grant Program post",
+   "resolution": "discussed; no action recorded",
+   "quote": "post from freedoms way grant program"
+  },
+  {
+   "topic": "Town Master Plan meeting",
+   "resolution": "discussed; no action recorded",
+   "quote": "town master plan meeting"
+  },
+  {
+   "topic": "Boucher / Mailer",
+   "resolution": "draft mailer reviewed; no action recorded",
+   "quote": "mbr sculimbrene provided a draft to review of mailer sample"
+  },
+  {
+   "topic": "District historical markers",
+   "resolution": "discussed; digital means added to plan",
+   "quote": "district historical markers"
+  },
+  {
+   "topic": "Demolition by neglect (Lancaster Ave house)",
+   "resolution": "discussed; enforcement options reviewed; no action recorded",
+   "quote": "demolition by neglect conversation"
+  },
+  {
+   "topic": "Town Hall renovation estimate and Ritter building estimate",
+   "resolution": "discussed; no action recorded",
+   "quote": "apdc wanted to see estimate for the repairs (estimated 70k, came in at 300k)"
+  }
+ ],
+ "tags": [
+  "historic district",
+  "demolition by neglect",
+  "By-law 21D",
+  "Town Hall renovation",
+  "Ritter building",
+  "master plan",
+  "historical markers",
+  "minutes approval",
+  "grants",
+  "energy code"
+ ],
+ "dropped_unquoted_by_field": {}
 }

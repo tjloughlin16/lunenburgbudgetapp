@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-09-14",
  "docid": "330",
@@ -10,8 +10,275 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09142023-330",
   "doc_url": "/docs/meetings/finance-committee/2023-09-14-minutes-330.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "Only one vote recorded: motion to adjourn at the end of the meeting. The minutes describe committee discussions and reports but do not record any motions or votes on substantive business items.",
- "cost_usd": 0.0087436
+ "votes": [
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jay Simeone",
+   "seconded_by": "Tom Gray",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to adjourn by jay simeone , seconded by tom gray."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction splits words and doubles spaces (e.g. 'B usiness'); quotes are copied as printed, with line breaks collapsed. No dollar figures appear anywhere in the minutes, so every figures_as_printed list is empty. Minutes of June 8 and June 22, 2023 were deferred without a vote. The only motion recorded is adjournment; it is marked 'All in favor' with no count printed, so outcome is 'passed'. Article transfers (opioid, Capital Plan, Sewer, Special Purpose) are listed as articles for special town meeting, not executed transfers, so transfers is empty. Chris Menard appears only as a liaison assignee and is not listed as attending. 'No public comment' is recorded twice with no speaker, so public_comment is empty. The minutes do not record a roll call.",
+ "cost_usd": 0.018891869999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jean russell , board member jay simeone , chairman evan watters"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: board member tom gray , town manager heather lemieux , board member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "members present: board member tom gray , town manager heather lemieux , board member"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jean russell , board member jay simeone , chairman evan watters"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jean russell , board member jay simeone , chairman evan watters"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of Primary School Air Conditioning deferred until after the special meeting.",
+   "quote": "the c ommittee m ember s agreed to discuss this topic after the special meeting ."
+  },
+  {
+   "decision": "Minutes of June 8, 2023 and June 22, 2023 carried to the next agenda because not all members have reviewed them.",
+   "quote": "will be added to the next agenda as not all of"
+  },
+  {
+   "decision": "Budget season calendar to be put on an upcoming agenda once available next month.",
+   "quote": "topic will be on an upcoming agenda."
+  },
+  {
+   "decision": "Committee to discuss committee reports at the next meeting after the Municipal Buildings meeting.",
+   "quote": "after that meeting, the committee will discuss,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trash removal contract (EL Harvey) and pay-as-you-throw bags",
+   "what_was_recorded": "A quote was received from Supportive Business Alternatives regarding the EL Harvey trash removal contract, the last year of the pay-as-you-throw bag agreement; no dollar figure is printed.",
+   "quote": "with el harvey trash removal.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Page Street culvert project",
+   "what_was_recorded": "The project is complete and came in under the projected budget; no figure is printed.",
+   "quote": "and under the projected budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "LED street light project funding",
+   "what_was_recorded": "The project is delayed by wiring issues; if funding is needed it would come from the Community Green Communities Grant. No figure is printed.",
+   "quote": "if funding is needed it will come from the",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "925 Mass Ave additional funding",
+   "what_was_recorded": "Additional funding was approved for testing, monitoring well installation and groundwater sampling; the completed first phase was covered by EPA dollars. No figure is printed.",
+   "quote": "additional funding was approved for 925 mass ave",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Police chief article: opioid settlement stabilization fund",
+   "what_was_recorded": "Article to transfer funds from the opioid settlement stabilization fund for the mental health co-response program; no amount is printed.",
+   "quote": "to be used for mental health co-response program",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital Plan article: primary school air conditioner",
+   "what_was_recorded": "Article to transfer an amount from the fiscal 23 Capital Plan for the air conditioner project; no amount is printed.",
+   "quote": "from fiscal 23 ca pital p lan for air conditioner",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer Commission stabilization fund articles",
+   "what_was_recorded": "Sewer Commission articles to transfer the remaining funds in the Sewer Reserve Capacity Stabilization Fund and the Sewer Infiltration Stabilization Fund; no amount is printed.",
+   "quote": "to transfer the remaining funds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special Purpose Stabilization Fund article: ambulance and DPW trucks",
+   "what_was_recorded": "Article to transfer from the Special Purpose Stabilization Fund for an ambulance and two DPW trucks; no amount is printed.",
+   "quote": "for an a mbulance and 2 dpw trucks.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special town funds review",
+   "what_was_recorded": "Interim finance director and treasurer to review the number of accounts, balances, appropriated funds and possible consolidation into higher-yield accounts; no figure is printed.",
+   "quote": "to consolidate funds in higher yield accounts",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened 7:02 PM",
+   "quote": "the meeting opened at 7:02 pm .",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action recorded",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements from Committee",
+   "resolution": "none",
+   "quote": "no c ommittee announcements .",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "4. public comment no public comment .",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager / Finance Director Report",
+   "resolution": "reported; no action recorded",
+   "quote": "town manager / finance director report",
+   "tags": [
+    "trash removal",
+    "street lights",
+    "capital projects",
+    "tax recertification",
+    "town website",
+    "accounting system",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Special Town Funds",
+   "resolution": "reported; November account review planned",
+   "quote": "planning to mee t in november",
+   "tags": [
+    "town funds",
+    "treasurer",
+    "stabilization funds"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "noted; committee needs 2 more members",
+   "quote": "an additional 2 members",
+   "tags": [
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Liaison organization assignments",
+   "resolution": "assignments listed by member",
+   "quote": "organizations that have no town budget",
+   "tags": [
+    "liaisons",
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Primary School Air Conditioning",
+   "resolution": "deferred until after special meeting",
+   "quote": "a. primary school air conditioning",
+   "tags": [
+    "capital projects",
+    "school"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "deferred to next agenda",
+   "quote": "june 8, 2023 and june 22, 2023",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "carried to next agenda",
+   "quote": "after that meeting, the committee will discuss,",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "budget season calendar to come next month",
+   "quote": "topic will be on an upcoming agenda.",
+   "tags": [
+    "budget season",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Public Comment from the Committee",
+   "resolution": "none",
+   "quote": "comment from the committee",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "dates listed",
+   "quote": "sep 28 th , oct 12 th , oct 26 th",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:50 PM",
+   "quote": "motion to adjourn by jay simeone , seconded by tom gray.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town finance",
+  "special town meeting",
+  "trash removal",
+  "capital projects",
+  "street lights",
+  "stabilization funds",
+  "sewer",
+  "committee membership",
+  "liaisons",
+  "budget season",
+  "town website"
+ ],
+ "dropped_unquoted_by_field": {}
 }

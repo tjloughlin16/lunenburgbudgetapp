@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2023-10-05",
  "docid": "2107",
@@ -12,15 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting at 6:41pm",
-   "moved_by": "Joeci Gilcrest",
-   "seconded_by": "Lou Franco",
-   "outcome": "passed 9-0",
+   "motion": "Adjourn the meeting at 6:41pm.",
+   "moved_by": "Joeci G.",
+   "seconded_by": "Lou F.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joeci g. second: lou f. to adjourn at 6:41pm. roll call vote: dick m., karin, jerry, evan, lou, debbie, tim, carol and joeci -all aye."
+   "quote": "to adjourn at 6:41pm. roll call vote: dick m., karin, jerry, evan, lou, debbie, tim, carol and joeci -all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote to adjourn. The minutes record discussion of upcoming outreach events, a public forum, website development, and survey distribution strategy, but no other formal motions or votes were called.",
- "cost_usd": 0.0797385
+ "note": "Text is clean extracted minutes, not a scan. The only recorded vote is the adjournment motion; no votes were taken on the teams, the forum, the website or the surveys. No public speaker is recorded under Public Comment. The minutes print the HTML entity \"&amp;\" literally; quotes avoid it. No dollar figures are printed. Rami, Matt and Kari McCarthy are named in discussion but are not listed as attendees, so they are not recorded as attendees. The minutes are unsigned as to approval.",
+ "cost_usd": 0.01416697,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair (Economic Dev.)",
+   "status": "present",
+   "quote": "chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), dick mailloux (trustees of library), lou franco (select board)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), dick mailloux (trustees of library), lou franco (select board)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustees of Library",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), dick mailloux (trustees of library), lou franco (select board)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), dick mailloux (trustees of library), lou franco (select board)"
+  },
+  {
+   "name": "Jerry Reid",
+   "role": "Resident",
+   "status": "present",
+   "quote": "jerry reid (resident), adam burney (land use director), and carol archambault (school committee)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "jerry reid (resident), adam burney (land use director), and carol archambault (school committee)"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "jerry reid (resident), adam burney (land use director), and carol archambault (school committee)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Create two outreach teams: OverUnder, RKG and Anez will form them to staff public events.",
+   "quote": "overunder, rkg and anez will create 2 teams."
+  },
+  {
+   "decision": "Hold a Committee meeting on 10/19 at 6pm to go over details for the 11/2 forum.",
+   "quote": "committee agreed to have a meeting on 10/19 at 6pm to go over details for the 11/2 forum."
+  },
+  {
+   "decision": "Matt (Planning Board) to meet with Rami every 2 weeks; Adam to check on use of the Library room on 11/2.",
+   "quote": "matt (planning board) will be meeting with rami every 2 weeks and adam will check on use of the room at library on 11/2."
+  },
+  {
+   "decision": "Joeci to distribute surveys from her trunk at Trunk or Treat and encourage others to do so.",
+   "quote": "joeci will distribute surveys from her trunk and encourage others to do so."
+  },
+  {
+   "decision": "Website PlanLunenburg.com to be live by 10/21, with a link from the town website.",
+   "quote": "the website should be live by 10/21."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan advertising",
+   "what_was_recorded": "The Master Plan has no advertising budget; the Planning Board has one for placing ads in the Ledger, and Adam suggested using it for the Ledger.",
+   "figures_as_printed": [],
+   "quote": "the master plan does not have an advertising budget but the planning board does for placing ads in the ledger"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Outreach for public events",
+   "resolution": "discussed; two outreach teams named, 10/19 meeting agreed, surveys and website planned",
+   "quote": "outreach for public events- adam noted that october 21st will be homecoming",
+   "tags": [
+    "public outreach",
+    "homecoming",
+    "trunk or treat",
+    "survey",
+    "11/2 forum",
+    "website",
+    "social media",
+    "advertising"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no comment recorded",
+   "quote": "committee comment- none",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no speakers recorded; 10/19 meeting agreed",
+   "quote": "public comment - committee agreed to have a meeting on 10/19 at 6pm",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "public outreach",
+  "community survey",
+  "11/2 public forum",
+  "PlanLunenburg website",
+  "social media",
+  "advertising",
+  "Lanni Orchards",
+  "Trunk or Treat",
+  "Homecoming"
+ ],
+ "dropped_unquoted_by_field": {}
 }

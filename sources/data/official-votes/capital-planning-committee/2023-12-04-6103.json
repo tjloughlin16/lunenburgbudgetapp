@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2023-12-04",
  "docid": "6103",
@@ -12,15 +12,195 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Brenner",
    "seconded_by": "Peter Beardmore",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by matt brenner, seconded by peter beardmore. all in favor. unanimous vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record only one vote: the motion to adjourn at the end of the meeting. The bulk of the document is discussion of capital planning requests, budget priorities, and individual projects, but no formal motions were voted upon during these discussions.",
- "cost_usd": 0.0718885
+ "note": "Text is readable and not a scan. Only one motion is recorded (adjournment, unanimous). Discussions of priorities produced no votes. Dollar figures are printed for the Senior Center design phase, Marshall Pond and the page 69 line; the DPW roof and Turkey Hill film discussions involve cost but print no figure. Heather Lemieux's role is not printed. No public comment was made.",
+ "cost_usd": 0.014438470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present members: chairman tom alonzo, clerk peter beardmore, planning board representative matt brenner, member george martin, finance committee member chris menard."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chairman tom alonzo, clerk peter beardmore, planning board representative matt brenner, member george martin, finance committee member chris menard."
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "present members: chairman tom alonzo, clerk peter beardmore, planning board representative matt brenner, member george martin, finance committee member chris menard."
+  },
+  {
+   "name": "George Martin",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chairman tom alonzo, clerk peter beardmore, planning board representative matt brenner, member george martin, finance committee member chris menard."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "present members: chairman tom alonzo, clerk peter beardmore, planning board representative matt brenner, member george martin, finance committee member chris menard."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux thinks this is a project that addresses safety issues, and the project could add an additional 19 parking spaces."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tom Alonzo will work with the Town Manager to create a spreadsheet listing all the capital items.",
+   "quote": "tom alonzo will work with the town manager to create a spreadsheet with all the items."
+  },
+  {
+   "decision": "Each committee member will rank priority levels individually for the next meeting.",
+   "quote": "each member is to rank priority levels on an individual basis."
+  },
+  {
+   "decision": "Peter Beardmore will inquire to get clarification on the unlabeled $15,000 line on page 69.",
+   "quote": "peter beardmore will inquire to get more clarification."
+  },
+  {
+   "decision": "Wallace Park basketball and tennis court questions to be taken up with the chair for more information.",
+   "quote": "there will be a discussion with the chair to get additional information."
+  },
+  {
+   "decision": "Subsequent CPC meetings confirmed for December 18 at 6PM and December 21 at 6PM, both at the Ritter Building.",
+   "quote": "december 18 6pm at the ritter building"
+  },
+  {
+   "decision": "Approval of the minutes deferred to the next meeting agenda.",
+   "quote": "the approval of minutes will be on the agenda for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Center parking lot design phase",
+   "what_was_recorded": "The senior center parking lot project was split into design and construction phases, with the design phase estimated at $35,000.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "the design phase is estimated to total $35,000."
+  },
+  {
+   "topic": "Marshall Pond treatment",
+   "what_was_recorded": "The original request was $256,000 for treating the entire pond; it was scaled back to sections starting at an estimated $50,000.",
+   "figures_as_printed": [
+    "$256,000",
+    "$50,000"
+   ],
+   "quote": "the original request was for $256,000 for treatment of the entire pond."
+  },
+  {
+   "topic": "Unlabeled $15,000 line on page 69",
+   "what_was_recorded": "A $15,000 line on page 69 has no label, and a member questioned it.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "there is a question of why on page 69 there a line with is $15,000 but there is no label."
+  },
+  {
+   "topic": "Turkey Hill safety film cost",
+   "what_was_recorded": "A member questioned the priority of the safety film and said he was struggling with its cost. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the safety film is a top priority and is struggling with the cost."
+  },
+  {
+   "topic": "DPW roof price",
+   "what_was_recorded": "The committee said the price is very high for the amount of space being repaired. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "overall, the committee seems the price is very high for the amount of space"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 7:04 PM",
+   "quote": "the meeting opened at 7:04 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Discussion of Capital Planning Requests and Preliminary Prioritization",
+   "resolution": "discussed; no action taken",
+   "quote": "there were 2 revisions received from the prior school presentation and the facilities and parks presentation.",
+   "tags": [
+    "capital planning",
+    "prioritization",
+    "school facilities",
+    "parks",
+    "DPW equipment",
+    "cemetery",
+    "drainage",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Action items for next meeting",
+   "resolution": "assigned to chair and members",
+   "quote": "tom alonzo will work with the town manager to create a spreadsheet with all the items.",
+   "tags": [
+    "capital planning",
+    "prioritization"
+   ]
+  },
+  {
+   "topic": "Confirm subsequent CPC meetings",
+   "resolution": "confirmed December 18 and December 21 meetings",
+   "quote": "december 18 6pm at the ritter building",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "the approval of minutes will be on the agenda for the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "the meeting closed at 8:50 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "prioritization",
+  "school facilities",
+  "parks and recreation",
+  "DPW equipment",
+  "cemetery",
+  "drainage",
+  "Marshall Pond",
+  "Senior Center parking",
+  "Turkey Hill",
+  "Ritter Building",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

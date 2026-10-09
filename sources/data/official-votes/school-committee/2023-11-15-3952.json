@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2023-11-15",
  "docid": "3952",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from Regular Session 10/18/23",
+   "motion": "Approve the minutes of the Regular Session of 10/18/23.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mr. lehtinen makes a motion to approve minutes, ms. brzozoski seconded the motion, all approve"
   },
   {
-   "motion": "Accept the FY23 End of Year Report",
+   "motion": "Accept the FY 23 End of Year Report (submitted to DESE as incomplete, to be amended).",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Lehtinen",
    "outcome": "passed",
@@ -28,23 +28,23 @@
    "quote": "ms. brzozoski makes a motion to accept the end of year report, mr. lehtinen seconds the motion, all approve"
   },
   {
-   "motion": "Send the petty cash policy back to the subcommittee, keep these accounts open, rename and adjust the accounts accordingly, and communicate with town offices as needed",
+   "motion": "Send the petty cash policy back to the subcommittee, keep the listed petty cash accounts open, rename and adjust them, and communicate with town offices as needed.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to send the petty cash policy back to the subcommittee as well as keep these accounts open, rename and adjust the accounts accordingly and communicate with town offices as needed, ms. brzozoski seconds the motion, all approve"
+   "quote": "mr. lehtinen makes a motion to send the petty cash policy back to the subcommittee as well as keep these accounts open"
   },
   {
-   "motion": "Table the Student Activity Class Accounts item for the next meeting",
+   "motion": "Table the Student Activity Class Accounts item to the next meeting.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. lehtinen makes a motion to table this item for the next meeting, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Accept the donations with gratitude",
+   "motion": "Accept the donations for the class of 2027 homecoming parade float with gratitude.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -52,7 +52,31 @@
    "quote": "mr. lehtinen makes a motion to accept the donations with gratitude, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Enter executive session at 8:19 and adjourn immediately following",
+   "motion": "Finance Committee vote on Article 1 (with a few adjustments), as reported by Mr. Lehtinen. This is another body's vote, not this board's.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "article 1 had a few adjustments voted 5-0 for approval"
+  },
+  {
+   "motion": "Finance Committee vote on Article 2, as reported by Mr. Lehtinen. This is another body's vote, not this board's.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "article 2 they also voted 5-0"
+  },
+  {
+   "motion": "Finance Committee vote on Article 3 (deferred early), as reported by Mr. Lehtinen. This is another body's vote, not this board's.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "article 3 was deferred early and voted 5-0 for approval"
+  },
+  {
+   "motion": "Enter executive session at 8:19 under the nonunion personnel negotiation exemption and adjourn immediately following.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -61,6 +85,353 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0777721
+ "note": "Text extracted cleanly from three pages; no scan or missing pages. Votes are recorded as \"all approve\" with no tally, so outcomes are \"passed\" rather than a count. The three Finance Committee votes (Articles 1-3) were reported by Mr. Lehtinen as another body's votes and are recorded as such, not as this board's. No separate vote on item 14 (Adjournment) is printed; adjournment followed the executive session motion. Item 3, headed \"Public Comment\", contains only a member's remarks, and item 11 reads \"Public Comment - None\", so no public speakers are recorded. Names mentioned but not taking part (Ms. Lorenzen, Ms. Whittemore as incoming hire, Mr. Passios) are excluded from attendees. Transfers: the minutes state \"No line item transfers\".",
+ "cost_usd": 0.01920687,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "anthony sculimbrene, secretary - absent"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "absent",
+   "quote": "peter beardmore, member - absent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member- present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager/ HR Director",
+   "status": "present",
+   "quote": "mr. cassidy presents the annual submission, this is a dese document"
+  },
+  {
+   "name": "Ms. Peterson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. peterson reports that town hall has contacted all town departments about petty cash reconciliation"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The warrant was signed off by the Chair and will be processed, with no questions from the committee.",
+   "quote": "ms. archambault has signed off and the warrant will be processed."
+  },
+  {
+   "decision": "The superintendent's office will present to the capital planning committee on November 20 (scheduled, not voted).",
+   "quote": "november 20 we will present to the capital planning committee."
+  },
+  {
+   "decision": "Mr. Lehtinen suggested a letter be drafted from the school committee to the legislature; the minutes record this as a suggestion, with no vote or direction recorded.",
+   "quote": "mr. lehtinen suggests a letter be drafted from the school committee to legislation emphasizing our concerns"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total, last two weeks",
+   "what_was_recorded": "The warrant total for the prior two weeks was reported, with no questions from the committee.",
+   "quote": "warrant total for the last two weeks is $213,362.67 no questions from the committee.",
+   "figures_as_printed": [
+    "$213,362.67"
+   ]
+  },
+  {
+   "topic": "Chapter 70 aid at risk if end-of-year report is late",
+   "what_was_recorded": "If the DESE report is not submitted by the deadline, monthly Chapter 70 funds may not be received; the file was submitted incomplete to avoid this.",
+   "quote": "there is a possibility, we will not receive our monthly chapter 70 funds",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ESSER surplus from position resignations",
+   "what_was_recorded": "Resignations of ESSER-funded positions created a surplus; a Guidance Counselor position is being advertised.",
+   "quote": "resignations of positions in esser has created a surplus",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Petty cash reconciliation",
+   "what_was_recorded": "Reconciling petty cash accounts requires taking money from the budget line; no amount was printed.",
+   "quote": "we need to take money from our budget line to reconcile the accounts",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Student activity class accounts with pending money",
+   "what_was_recorded": "Some class activity accounts have been open for over 10 years holding pending money; the funds could defray field trip costs or fund scholarships. No amount was printed.",
+   "quote": "some of these accounts have been left open for upwards of 10 years and have pending money in them",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Athletic fees",
+   "what_was_recorded": "An increase in athletic fees may be considered in the next two years; no amount was printed.",
+   "quote": "we could be looking at an increase in athletic fees in the next two years.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY24 grants data",
+   "what_was_recorded": "The Director of Finance vacancy may delay up-to-date grant data; no amount was printed.",
+   "quote": "things may be in limbo or run a little behind during our transitions",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY25 budget: expected increase to regular expenses",
+   "what_was_recorded": "Regular expenses are expected to rise by about $1 million in the next budget year.",
+   "quote": "we are expecting a $1 million increase to our regular expenses in this next budget year.",
+   "figures_as_printed": [
+    "$1 million"
+   ]
+  },
+  {
+   "topic": "FY25 budget: health insurance and total expenditure increase",
+   "what_was_recorded": "Health insurance is expected to rise 10%, with a total increase in expenditures of $7,672,125.",
+   "quote": "health insurance is expected to increase 10%, total increase in expenditures of $7,672,125.",
+   "figures_as_printed": [
+    "$7,672,125"
+   ]
+  },
+  {
+   "topic": "FY25 budget: ESSER loss",
+   "what_was_recorded": "A loss of ESSER funds of $650,000 was reported, described as much more significant than expected.",
+   "quote": "we have a loss of $650,000 in esser funds, this is much more significant than we expected.",
+   "figures_as_printed": [
+    "$650,000"
+   ]
+  },
+  {
+   "topic": "FY25 budget: anticipated increase versus insurance",
+   "what_was_recorded": "The anticipated 2.5% budget increase was described as barely covering insurance; no dollar figure was printed.",
+   "quote": "increase to our budget will barely cover our insurance.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "AC project funding",
+   "what_was_recorded": "Possible funding for AC project phase 2 from the Green Community Committee was mentioned; no amount was printed.",
+   "quote": "with the possibility of funding for the ac project phase 2",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:30 p.m.",
+   "quote": "1. call to order by carol archambault at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "ms. archambault thanks everyone that attended the special town meeting.",
+   "tags": [
+    "town meeting",
+    "AC project"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved (10/18/23 regular session)",
+   "quote": "mr. lehtinen makes a motion to approve minutes, ms. brzozoski seconded the motion, all approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrant signed and to be processed; no line item transfers",
+   "quote": "warrant total for the last two weeks is $213,362.67 no questions from the committee.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "ms. whittemore has accepted the contract, her title will be director of administration and finance",
+   "tags": [
+    "staffing",
+    "AC project"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "no report",
+   "quote": "8. student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "FY 23 End of Year Report",
+   "resolution": "accepted; to be submitted to DESE as incomplete",
+   "quote": "ms. brzozoski makes a motion to accept the end of year report, mr. lehtinen seconds the motion, all approve",
+   "tags": [
+    "DESE",
+    "end of year report",
+    "chapter 70"
+   ]
+  },
+  {
+   "topic": "ESSER update",
+   "resolution": "update received; no action",
+   "quote": "mr. cassidy shares the updates with closure of grant next september",
+   "tags": [
+    "ESSER",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Petty cash",
+   "resolution": "policy sent back to subcommittee; accounts kept open and to be reconciled",
+   "quote": "ms. peterson reports that town hall has contacted all town departments about petty cash reconciliation",
+   "tags": [
+    "petty cash",
+    "accounts",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Student activity class accounts",
+   "resolution": "tabled to next meeting",
+   "quote": "mr. lehtinen makes a motion to table this item for the next meeting, ms. brzozoski seconds the motion, all approve",
+   "tags": [
+    "student activity accounts",
+    "school finance"
+   ]
+  },
+  {
+   "topic": "Donations",
+   "resolution": "accepted with gratitude",
+   "quote": "mr. lehtinen makes a motion to accept the donations with gratitude, ms. brzozoski seconds the motion, all approve",
+   "tags": [
+    "donations"
+   ]
+  },
+  {
+   "topic": "Athletic reports",
+   "resolution": "presented; no action",
+   "quote": "mr. cassidy presents a summary of athletics department",
+   "tags": [
+    "athletics",
+    "fees"
+   ]
+  },
+  {
+   "topic": "FY 24 grants",
+   "resolution": "update received; no action",
+   "quote": "things may be in limbo or run a little behind during our transitions",
+   "tags": [
+    "grants",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "FY 25 budget development",
+   "resolution": "presented; letter to legislature suggested; no vote",
+   "quote": "esser positions are not guaranteed, mr cassidy presents a slide show",
+   "tags": [
+    "budget",
+    "FY25",
+    "ESSER",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "School Committee goals",
+   "resolution": "reviewed; no action",
+   "quote": "our three major goals as a school committee are (1) budget (2) policy and (3) transparency and communication",
+   "tags": [
+    "goals",
+    "policy",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "reports received; no action",
+   "quote": "ms. brzozoski reports the turkey hill advisory met yesterday",
+   "tags": [
+    "advisory council",
+    "finance committee",
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "11. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed for future meetings",
+   "quote": "12. topics for future discussion student activity class accounts budget development",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "motion passed; entered executive session at 8:19 and adjourned following",
+   "quote": "mr. lehtinen makes a motion to enter executive session at 8:19 and adjourn immediately following, ms. brzozoski seconded the motion, all approve",
+   "tags": [
+    "executive session",
+    "negotiations"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "ESSER",
+  "health insurance",
+  "Chapter 70",
+  "petty cash",
+  "student activity accounts",
+  "end of year report",
+  "DESE",
+  "athletics fees",
+  "warrants",
+  "donations",
+  "executive session",
+  "AC project",
+  "finance committee report"
+ ],
+ "dropped_unquoted_by_field": {}
 }

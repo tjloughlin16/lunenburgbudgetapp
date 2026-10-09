@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-09-14",
  "docid": "326",
@@ -12,40 +12,178 @@
  },
  "votes": [
   {
-   "motion": "Appoint Sarah Cammer to the Board of Assessors until the May 2024 election",
+   "motion": "Appoint Sarah Cammer to the Board of Assessors until the next election in May 2024.",
    "moved_by": "T. Alonzo",
    "seconded_by": "B. Laffond",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: b. laffond to appoint sarah cammer to the board of assessors until the next election in may 2024 vote: mr. alonzo-aye, mr. nuzzolo-aye, ms. emkey-aye, mr. rabbitt-aye, mr. laffond-aye, mr. franco-aye"
+   "quote": "motion: t. alonzo 2nd: b. laffond to appoint sarah cammer to the board of assessors until the next election in may 2024"
   },
   {
-   "motion": "Request the Town Manager to place an article on the November Special Town Meeting warrant to use the special purpose stabilization fund to purchase three vehicles rather than ARPA funding",
+   "motion": "Request the Town Manager place an article on the November Special Town Meeting warrant to use the special purpose stabilization fund to purchase three vehicles rather than ARPA funding.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: c. nuzzolo to request town manager to place an article on the november special town meeting warrant to ===page 2=== use the special purpose stabilization fund to purchase three vehicles rather than arpa funding discussion: mr. alonzo clarified this was just to place",
-   "quote_taken_from_text": true
+   "quote": "to request town manager to place an article on the november special town meeting warrant to"
   },
   {
-   "motion": "Request the Town Manager to place an article on the Special Town Meeting warrant to revise Town Charter Chapter 110, Animals, Article 1 Dog Control",
+   "motion": "Request the Town Manager place an article on the Special Town Meeting warrant to revise the Town Charter, Chapter 110, Animals, Article 1 Dog Control.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Emkey",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd. r. emkey to request town manager place an article on the special town meeting warrant to revise the town charter, chapter 110, animals, article 1 dog control vote: ms. emkey-aye, mr. nuzzolo-aye, mr. alonzo-aye, mr. franco-aye"
+   "quote": "to request town manager place an article on the special town meeting warrant to revise the town charter, chapter 110, animals, article 1 dog control"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting vote: ms. emkey-aye, mr. nuzzolo-aye, mr. alonzo-aye, mr. franco-aye 2'°: c. nuzzolo"
+   "quote": "motion: t. alonzo to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Michael-Ray Jeffreys' Zoom connection dropped early in the meeting, so he was not present for any votes. Four Select Board members present for votes 2-4 (Alonzo, Nuzzolo, Emkey, Franco); six total present for vote 1 which also included the two Board of Assessors members voting on the Cammer appointment.",
- "cost_usd": 0.1412501
+ "note": "Text is macOS Vision OCR with visible errors: names printed as \"Brian Latfond\" and \"Jack Rabbit\" (recorded here as the header prints them, Brian Laffond and Jack Rabbitt), and motion seconds as \"2\"d\", \"2'°\" and \"2nd.\" Page 1 ends mid-motion, so the second warrant motion is quoted from page 1 only. Michael-Ray Jeffreys is listed as present, but his Zoom link ended and he did not return, and he does not appear in the roll call on the appointment. The four warrant and adjournment votes list each member's aye, with no count printed; outcome is recorded as passed. Lou Franco is named as presiding. Elaine M. Peterson signs the minutes but is not recorded as taking part, so she is not listed as an attendee.",
+ "cost_usd": 0.014547670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chairman, presiding",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "tom alonzo, renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; sarah cammer"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "applicant for the Board of Assessors vacancy",
+   "status": "present",
+   "quote": "mr. franco stated sarah cammer was applying for the vacancy."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Board of Assessor member",
+   "status": "present",
+   "quote": "board of assessor members present: brian laffond, jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board of Assessor member",
+   "status": "present",
+   "quote": "board of assessor members present: brian laffond, jack rabbitt"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Funding for three vehicles: special purpose stabilization fund versus ARPA",
+   "what_was_recorded": "The Board requested a warrant article to use the special purpose stabilization fund to buy three vehicles instead of ARPA funding; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "use the special purpose stabilization fund to purchase three vehicles rather than arpa funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; joint meeting with Board of Assessors",
+   "resolution": "opened; joint meeting noted",
+   "quote": "mr: franco called the meeting to order at 6:00 p.m., noting this is a joint meeting with the two members",
+   "tags": [
+    "joint meeting",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Board of Assessors vacancy appointment",
+   "resolution": "appointed Sarah Cammer until May 2024 election",
+   "quote": "to appoint sarah cammer to the board of assessors until the next election in may 2024",
+   "tags": [
+    "appointments",
+    "board of assessors"
+   ]
+  },
+  {
+   "topic": "Warrant article: vehicles from stabilization fund instead of ARPA",
+   "resolution": "approved request to place article on November Special Town Meeting warrant",
+   "quote": "to request town manager to place an article on the november special town meeting warrant to",
+   "tags": [
+    "town meeting warrant",
+    "stabilization fund",
+    "ARPA",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Warrant article: Town Charter Chapter 110 dog control",
+   "resolution": "approved request to place article on Special Town Meeting warrant",
+   "quote": "to request town manager place an article on the special town meeting warrant to revise the town charter, chapter 110, animals, article 1 dog control",
+   "tags": [
+    "town meeting warrant",
+    "town charter",
+    "dog control"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment: there was none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:24 p.m.",
+   "quote": "the meeting adjourned at 6:24 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "appointments",
+  "board of assessors",
+  "town meeting warrant",
+  "stabilization fund",
+  "ARPA",
+  "vehicles",
+  "town charter",
+  "dog control",
+  "joint meeting",
+  "zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-11-13",
  "docid": "3521",
@@ -12,32 +12,353 @@
  },
  "votes": [
   {
-   "motion": "Grant an extension requested by the applicant until January 3, 2024 to submit a grease trap report",
+   "motion": "To give the extension requested by the applicant to 1/3/24 (amended motion on the grease trap report deadline at 1 Main St.).",
    "moved_by": "Mike M.",
    "seconded_by": "Dave M.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mike m. amended motion to: to give the extension requested by the applicant to 1/3/24. dave asked paula if the convenience store, which used to be a meat market, h",
-   "quote_taken_from_text": true
+   "quote": "mike m. amended motion to: to give the extension requested by the applicant to 1/3/24."
   },
   {
-   "motion": "Approve the minutes of October 10, 2023",
+   "motion": "To approve the minutes of 10/10/23.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: dave m. second: brett r. to approve the minutes of 10/10/23. roll call vote: dave-aye, brett-aye, mike m.-aye, mike n.-aye, and john-aye."
+   "quote": "to approve the minutes of 10/10/23."
   },
   {
-   "motion": "Adjourn at 7:05 p.m.",
+   "motion": "To adjourn at 7:05pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike m. to adjourn at 7:05pm roll call vote: brett-aye, dave-aye, mike m.-aye, mike n.-aye, and john-aye."
+   "quote": "to adjourn at 7:05pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1057091
+ "note": "Text extraction of a Zoom meeting; no scan. Three roll-call votes are recorded and quoted; the minutes record no other motions. Attendee status is marked 'remote' because the header says the meeting was held via Zoom; the minutes do not state each person's attendance mode separately. Abbreviated names 'Mike M.' and 'Dave M.' are read as Mike Mackin and Dave MacDonald from the Members list; 'Brett R.' as Brett Ramsden. The 'Public comment' speakers are Commission members, as the minutes print them. Non-attending people named in the text (Mr. Arcidiacono, Robert Lilly, Camille Farrar, Heather, Julie, Dan, Casey, Peggy Whitten, Tyler Tech, Suzor) are not recorded as attendees. Dollar figures are printed as in the minutes; no transfers appear.",
+ "cost_usd": 0.020905970000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members: dave macdonald and mike mackin, dpw director- bill bernard"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members: dave macdonald and mike mackin, dpw director- bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "members: dave macdonald and mike mackin, dpw director- bill bernard"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "remote",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Q2 FY24 commitment tabled at the Business Manager's request until the billing issue is resolved and she has talked to the town accountant.",
+   "quote": "paula asked to table this until she can get the billing issue resolved and talk to the town accountant."
+  },
+  {
+   "decision": "Business Manager and DPW Director to draft IMA language for the Leominster subcommittee.",
+   "quote": "paula said she and bill will come up with some language and give it to the subcommittee."
+  },
+  {
+   "decision": "Draft Leominster IMA language to be reviewed through the board before it is sent to Leominster.",
+   "quote": "dave added it should be then reviewed through the board prior to sending to leominster."
+  },
+  {
+   "decision": "Ratepayer rate increase to be discussed at the 11/28 meeting.",
+   "quote": "they will need to discuss this at the 11/28 meeting."
+  },
+  {
+   "decision": "Chair to meet with the Business Manager on a software conversion timeline and email Heather and the Select Board.",
+   "quote": "john said he will meet with paula to do timeline on the issue and send an email to heather and select board."
+  },
+  {
+   "decision": "DPW Director and HR to write a new Sewer Business Manager job description and present it to Personnel.",
+   "quote": "julie and bill will work it and present it to personnel."
+  },
+  {
+   "decision": "Robert Lilly (CTE) asked to look at a macerator before the pumps as a viable option.",
+   "quote": "she asked robert to look at putting a macerator before the pumps, as a viable option."
+  },
+  {
+   "decision": "Maintenance Plan to be discussed at the January meeting; Business Manager to get a quote for wet well cleaning work.",
+   "quote": "dave asked to discuss the maintenance plan in january."
+  },
+  {
+   "decision": "The 12/26 Commission meeting cancelled, by consensus with all in favor and no motion recorded.",
+   "quote": "john asked the commissioners if they wanted to cancel the meeting on 12/26 and all were in favor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q2 FY24 commitment billing",
+   "what_was_recorded": "The Q2 FY24 commitment was tabled while the billing issue is resolved; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "q2 fy24 commitment- paula asked to table this until she can get the billing issue resolved and talk to the town accountant."
+  },
+  {
+   "topic": "Leominster IMA flow request",
+   "what_was_recorded": "Negotiation discussion included an additional 300K in flows to Leominster over 25 years.",
+   "figures_as_printed": [
+    "300K"
+   ],
+   "quote": "requested an additional 300k in flows to leominster over the next 25 years"
+  },
+  {
+   "topic": "Sewer covers funding",
+   "what_was_recorded": "The sewer covers are expected to bring in $100K, and Leominster may help.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "dave noted they have $100k coming for sewer covers and will see if leominster will help out."
+  },
+  {
+   "topic": "Ratepayer rate increase",
+   "what_was_recorded": "A worksheet was sent out; rates will need to rise because of increases from Leominster and Fitchburg. No rate figure was printed.",
+   "figures_as_printed": [],
+   "quote": "paula noted she sent out a worksheet for that and they will need to increase the rates due to increases from leominster and fitchburg."
+  },
+  {
+   "topic": "Wet well cleaning and pumping cost",
+   "what_was_recorded": "A pumping truck rental for cleaning wet wells is needed; the cost and number of days are not yet known. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "paula replied yes but she needs to find out the cost and how many days it will take to do them."
+  },
+  {
+   "topic": "Pump macerator cost",
+   "what_was_recorded": "Dillis & Roy said the macerator units can be pretty expensive; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "be pretty expensive, but if 2 pumps shut down it would be very expensive."
+  },
+  {
+   "topic": "Re-Boot restaurant unpaid bills",
+   "what_was_recorded": "Unpaid sewer bill owed by The Re-Boot restaurant, described as in excess of $15K.",
+   "figures_as_printed": [
+    "$15K"
+   ],
+   "quote": "the bill is in excess of $15k, but the business manager has asked to meet with her about a plan."
+  },
+  {
+   "topic": "Overdue vendor notices",
+   "what_was_recorded": "Overdue notices were received from vendors for bills already submitted for payment; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "paula noted she received over-due notices from verizon and next amp, for bills already submitted for payment."
+  },
+  {
+   "topic": "Enterprise Fund FY23 final report",
+   "what_was_recorded": "FY23 closed with additional Betterment income, lower revenue, a final surplus and a certified Retained Earnings figure.",
+   "figures_as_printed": [
+    "$48,734.05",
+    "$61,180.36",
+    "$190,730.19",
+    "$2,124,854"
+   ],
+   "quote": "they brought in an additional $48,734.05 more due to final betterment payments, but revenue was down $61,180.36."
+  },
+  {
+   "topic": "Capital expenditures planned spending",
+   "what_was_recorded": "The Commission planned to spend a fixed amount each year on Capital Expenditures.",
+   "figures_as_printed": [
+    "$100K / year"
+   ],
+   "quote": "paula said they planned on spending $100k / year for capital expenditures."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike M. and Dave",
+   "topic": "Special Town Meeting reminder",
+   "quote": "mike m. and dave reminded all that 11/14 is the special town meeting and urged all to come"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Special Town Meeting reminder",
+   "resolution": "no action; reminder given",
+   "quote": "mike m. and dave reminded all that 11/14 is the special town meeting and urged all to come",
+   "tags": [
+    "public comment",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Q2 FY24 commitment",
+   "resolution": "tabled",
+   "quote": "paula asked to table this until she can get the billing issue resolved and talk to the town accountant.",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Grease trap extension, 1 Main St.",
+   "resolution": "extension granted to 1/3/24 (passed 5-0)",
+   "quote": "paula stated she received a request from mr. arcidiacono for an extension of the deadline to submit the grease trap report.",
+   "tags": [
+    "grease trap",
+    "extension",
+    "1 Main St"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/10/23",
+   "resolution": "approved (passed 5-0)",
+   "quote": "to approve the minutes of 10/10/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Leominster intermunicipal agreement negotiations",
+   "resolution": "discussed; language to be drafted; no vote",
+   "quote": "dave stated they asked for a 25-year contract and requested an additional 300k in flows to",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Business Manager report: system maintenance and upgrades",
+   "resolution": "discussed; quote to be obtained; no vote",
+   "quote": "paula reported they met today with robert lilly (cte technician).",
+   "tags": [
+    "maintenance",
+    "pump stations",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Re-Boot restaurant unpaid pumping bills",
+   "resolution": "discussed; no action",
+   "quote": "paula noted that the re-boot restaurant has not submitted the pumping invoices and the",
+   "tags": [
+    "billing",
+    "pumping",
+    "collections"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund FY23 final report",
+   "resolution": "received; reported",
+   "quote": "paula reported fy23 is finally closed.",
+   "tags": [
+    "enterprise fund",
+    "budget",
+    "surplus"
+   ]
+  },
+  {
+   "topic": "Software system conversion (Munis)",
+   "resolution": "discussed; escalation to Town Manager; no vote",
+   "quote": "paula reported the conversion has been a nightmare.",
+   "tags": [
+    "Munis",
+    "billing software",
+    "IT",
+    "Tyler Tech"
+   ]
+  },
+  {
+   "topic": "Sewer Business Manager proposed job description",
+   "resolution": "in progress; to Personnel",
+   "quote": "julie and bill will work it and present it to personnel.",
+   "tags": [
+    "staffing",
+    "job description",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Assistant to the Sewer Business Manager",
+   "resolution": "reported; candidate selected; start 11/28",
+   "quote": "paula reported they found a good candidate- camille farrar.",
+   "tags": [
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Maintenance program 2020",
+   "resolution": "deferred to January agenda",
+   "quote": "dave asked to discuss the maintenance plan in january.",
+   "tags": [
+    "maintenance",
+    "I/I",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Cancel 12/26 meeting",
+   "resolution": "cancellation agreed by all in favor; no motion",
+   "quote": "john asked the commissioners if they wanted to cancel the meeting on 12/26 and all were in favor.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:05pm (passed 5-0)",
+   "quote": "to adjourn at 7:05pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Leominster intermunicipal agreement",
+  "rates",
+  "grease trap",
+  "enterprise fund",
+  "billing software conversion",
+  "Munis",
+  "staffing",
+  "capital maintenance",
+  "Special Town Meeting",
+  "meeting cancellation",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

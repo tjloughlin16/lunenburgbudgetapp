@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-11-28",
  "docid": "4147",
@@ -12,31 +12,333 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Christian Piscopo as Public Access Videographer",
+   "motion": "Ratify the Town Manager's appointment of Christian Piscopo as Public Access Videographer.",
    "moved_by": "Member Emkey",
    "seconded_by": "Member Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "member emkey made motion to ratify the town manager's appointment christian piscopo as public access videographer. seconded by member franco. roll call vote: member franco, aye. member emkey, aye. member alonzo, aye. member nuzzolo, aye. chair jeffreys, aye. unanimous approval (5-0-0)."
+   "quote": "member emkey made motion to ratify the town manager's appointment christian piscopo as public access videographer. seconded by member franco."
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Julie Costello to the position of Interim Town Accountant",
+   "motion": "Ratify the Town Manager's appointment of Julie Costello as Interim Town Accountant.",
    "moved_by": "Member Franco",
    "seconded_by": "Member Emkey",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "member franco made motion to ratify the town manager's appointment of julie costello to the position of interim town accountant. seconded by member emkey. roll call vote: member franco, aye. member emkey, aye. member alonzo, aye. member nuzzolo, aye. chair jeffreys, aye. unanimous approval (5-0-0)."
+   "quote": "member franco made motion to ratify the town manager's appointment of julie costello to the position of interim town accountant. seconded by member emkey."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "chair jeffreys made motion to adjourn. seconded by member franco. roll call vote: member franco, aye. member emkey, aye. member alonzo, aye. member nuzzolo, aye. chair jeffreys, aye. unanimous approval (5-0-0)."
+   "quote": "chair jeffreys made motion to adjourn. seconded by member franco."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0782451
+ "note": "Text is a machine extraction with some visible artifacts (for example \"pro-contorted spreadsheet\", a split \"300 th\" and a \"5 th\" line break), so quotes were copied as printed. Roll calls are printed as 5-0-0 with five named members; Caesar Nuzzolo is counted in the roll call as \"Member Nuzzolo\". The minutes do not print a vote on the warrants, which were \"signed\", so they are not recorded as votes. Under the PUBLIC COMMENTS heading, Members Emkey, Franco, Alonzo and Chair Jeffreys also spoke; they are members, not public speakers, and are not listed as public comment. Mr. McDonald is named once as \"Mr. McDonald\" and once as \"Sam\" in the same paragraph; the printed name is used. Julie Costello and Christian Piscopo are the subjects of ratifications and are not recorded as attending. Written reports (Architectural Preservation District Commission, Agricultural Commission) carry attendance status \"not stated\".",
+ "cost_usd": 0.017096069999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, renee emkey, tom alonzo (remote via zoom)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, renee emkey, tom alonzo (remote via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, renee emkey, tom alonzo (remote via zoom)"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "remote",
+   "quote": "present: michael-ray jeffreys, lou franco, renee emkey, tom alonzo (remote via zoom)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Member",
+   "status": "remote",
+   "quote": "caesar nuzzolo (remote via zoom)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others: heather lemieux"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public speaker (address 91 Main Street; no role printed)",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street: refuted claims of a"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "council on aging: deb lincoln updated on the council on aging (coa)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "300th Anniversary Committee",
+   "status": "present",
+   "quote": "pete lincoln shared the committee's objectives for the 300th"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Public Access Cable Committee (PACC)",
+   "status": "present",
+   "quote": "steve walker presented an update on pacc's"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Conservation Commission",
+   "status": "present",
+   "quote": "conservation commission: mary wilson elaborated on the commission's initiatives"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "written report submitted for Architectural Preservation District Commission",
+   "status": "not stated",
+   "quote": "written report submitted by anthony"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "written report submitted for Agricultural Commission",
+   "status": "not stated",
+   "quote": "agricultural commission (written report submitted by matthew allison)"
+  },
+  {
+   "name": "Mr. McDonald",
+   "role": "public speaker (no role printed)",
+   "status": "present",
+   "quote": "mr. mcdonald spoke expressing deep appreciation and support for troops deployed abroad."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable Warrant",
+   "what_was_recorded": "Accounts Payable Warrant signed by the board, amount printed.",
+   "figures_as_printed": [
+    "$342,056.89"
+   ],
+   "quote": "accounts payable warrant: $342,056.89"
+  },
+  {
+   "topic": "Payroll Warrant",
+   "what_was_recorded": "Payroll Warrant signed by the board, amount printed.",
+   "figures_as_printed": [
+    "$987,327.38"
+   ],
+   "quote": "payroll warrant: $987,327.38"
+  },
+  {
+   "topic": "Park Grant and Mass Trails Grant paperwork",
+   "what_was_recorded": "The town is processing paperwork for a park grant and a mass trails grant; the mass trails grant is partly funded by the rod rights account.",
+   "figures_as_printed": [
+    "$500,000",
+    "$61,305",
+    "$15,450"
+   ],
+   "quote": "the town is currently processing the necessary paperwork for a $500,000 park grant and a $61,305 mass trails grant, partially funded by the rod rights account at $15,450."
+  },
+  {
+   "topic": "Q3 preliminary tax bill increases",
+   "what_was_recorded": "Board and Assessors given a draft tax bill insert on anticipated Q3 preliminary bill increases; residents encouraged to consider prepaying. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "q3 preliminary billing and tax recaps: a draft of the tax bill insert has been provided to the board of assessors"
+  },
+  {
+   "topic": "Unitil rate hikes",
+   "what_was_recorded": "Two upcoming Unitil public hearings on proposed rate hikes were announced. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "member alonzo informed the board about two upcoming unitil public hearings scheduled for tomorrow related to proposed rate hikes."
+  },
+  {
+   "topic": "Capital plan projects from FY24 and prior",
+   "what_was_recorded": "Overview of remaining funds and ongoing projects given; completed project balances discussed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a brief overview of remaining funds and ongoing projects was provided."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street (no role printed)",
+   "topic": "backdoor deal claims, community involvement",
+   "quote": "ana lockwood, 91 main street: refuted claims of a \"backdoor deal\" between the cemetery"
+  },
+  {
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "interaction requiring separate correspondence",
+   "quote": "heather lemieux, town manager: lemieux expressed the need to address this encounter with"
+  },
+  {
+   "speaker": "Mr. McDonald",
+   "stated_role": "no role printed (also referred to as Sam)",
+   "topic": "support for troops, volunteer efforts, tree lighting",
+   "quote": "mr. mcdonald spoke expressing deep appreciation and support for troops deployed abroad."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:00 pm by the chair. the pledge of allegiance was recited.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "heard; members also spoke",
+   "quote": "ana lockwood, 91 main street: refuted claims of a \"backdoor deal\" between the cemetery",
+   "tags": [
+    "public comment",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "annual tree lighting ceremony is this thursday at 6:00 p.m. at the town gazebo.",
+   "tags": [
+    "events",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "received",
+   "quote": "council on aging: deb lincoln updated on the council on aging (coa), noting new members",
+   "tags": [
+    "boards and committees",
+    "council on aging",
+    "300th anniversary",
+    "public access",
+    "conservation",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Appointments: Public Access Videographer and Interim Town Accountant",
+   "resolution": "approved (ratified)",
+   "quote": "ratification of the town manager's appointment of public access videographer christian piscopo",
+   "tags": [
+    "appointments",
+    "public access",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received",
+   "quote": "employee highlights: the town manager praised the department of public works (dpw)",
+   "tags": [
+    "town manager",
+    "DPW",
+    "vacancies",
+    "employment",
+    "grants",
+    "tax billing"
+   ]
+  },
+  {
+   "topic": "Old business: capital plan status update",
+   "resolution": "received",
+   "quote": "status update on capital plan projects from fy24 and prior",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Current business: Special Town Meeting follow-up and water protection map",
+   "resolution": "discussed",
+   "quote": "the board discussed the necessity of advancing the water protection map update",
+   "tags": [
+    "special town meeting",
+    "water protection",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "accounts payable warrant: $342,056.89",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "planning board: member alonzo noted the planning board has been actively engaged",
+   "tags": [
+    "planning board",
+    "school committee",
+    "economic development",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "quote": "upcoming meetings: december 5",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comments (closing)",
+   "resolution": "heard",
+   "quote": "mr. mcdonald spoke expressing deep appreciation and support for troops deployed abroad.",
+   "tags": [
+    "public comment",
+    "veterans",
+    "master plan survey",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed 5-0-0 at 9:22 PM",
+   "quote": "chair jeffreys made motion to adjourn. seconded by member franco.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager",
+  "appointments",
+  "warrants",
+  "grants",
+  "utility rates",
+  "tax billing",
+  "capital plan",
+  "water protection bylaw",
+  "special town meeting",
+  "master plan survey",
+  "committee reports",
+  "public comment",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

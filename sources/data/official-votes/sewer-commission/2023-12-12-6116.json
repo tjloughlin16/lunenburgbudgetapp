@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-12-12",
  "docid": "6116",
@@ -12,39 +12,308 @@
  },
  "votes": [
   {
-   "motion": "To make the Commitment of $269,236.80 for Q2 FY24.",
+   "motion": "Make the Commitment of $269,236.80 (Q2 billing), roll call.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: mike n. to make the commitment of $269,236.80. roll call vote: mike m.-aye, mike n.-aye, brett-aye, and john-aye."
+   "quote": "to make the commitment of $269,236.80."
   },
   {
-   "motion": "To accept the minutes of 11/13/23.",
+   "motion": "Accept the minutes of 11/13/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: mike m. to accept the minutes of 11/13/23. roll call vote: mike m.-aye, mike n.-aye, brett-aye, and john-aye."
+   "quote": "to accept the minutes of 11/13/23."
   },
   {
-   "motion": "The payment plan as developed by the Business Manager be approved by the Commission, with the debtor to pay $600 per week beginning December 19, 2023, pay all future sewer quarterly bills in full by due date, and pay the outstanding balance in full by May 28, 2024, with the balance to transfer to the real estate tax bill for 50 Massachusetts Avenue in February 2024.",
+   "motion": "Approve the Re-Boot payment plan as developed by the Business Manager: $600 per week from December 19, 2023, all future sewer bills paid by due date, balance paid by May 28, 2024, balance transferred to the 50 Massachusetts Avenue tax bill in February 2024.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: mike n. the payment plan as developed by the business manager be approved by the commission, that the debtor shall pay $600 per week beginning december 19, 2023"
+   "quote": "the payment plan as developed by the business manager be approved by the commission, that the debtor"
   },
   {
-   "motion": "To adjourn at 7:09pm.",
+   "motion": "Adjourn the meeting at 7:09pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to adjourn at 7:09pm roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
+   "quote": "to adjourn at 7:09pm roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The third vote (Re-Boot payment plan) shows John temporarily lost Zoom signal during the roll call vote, so the vote was 3-0 with only three commissioners voting.",
- "cost_usd": 0.0990801
+ "note": "Text extracted from a typed minutes document (not a scan); all quotes were checked against it, with runs of spaces and line breaks collapsed. Roll-call counts are not printed as totals, so outcomes read 'passed' rather than a count. The Re-Boot payment-plan vote lists three ayes (Mike M., Mike N., Brett) with 'John temporarily lost signal', so John's vote is not recorded. Dave MacDonald's role is not printed. Robert Lily, Wade, Jake Fleming, Elaine Peterson, Heather and Julie are mentioned but are not recorded as attending. The minutes print 'February 30, 2024' in the upcoming schedule, which is a date that does not exist, and this is reproduced as printed rather than corrected.",
+ "cost_usd": 0.023945,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member: mike mackin"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: dave macdonald, dpw director- bill bernard,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: dave macdonald, dpw director- bill bernard,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John to talk to the Select Board as a memo from the chair about the Munis billing problem, without a vote, as all agreed.",
+   "quote": "john said they do not need a vote as long as all agree to have john talk to the select board."
+  },
+  {
+   "decision": "Paula to send a memo to the Select Board as Licensing Authority on the Re-Boot agreement terms and a possible revocation hearing if the owner defaults.",
+   "quote": "paula asked, in addition to the agreement, to send a memo to the select board, as the licensing authority, letting them know the terms of the agreement"
+  },
+  {
+   "decision": "Commission agreed that if the Re-Boot owner will not sign the agreement, they would recommend the Select Board not renew the license.",
+   "quote": "if he is unwilling to sign the agreement, the commission agreed they would need to recommend the select board not renew his license."
+  },
+  {
+   "decision": "John to place the Leominster Intermunicipal Agreement on the 1/9 agenda and ask Commissioners to review it for suggestions.",
+   "quote": "john stated he will put it on the 1/9 agenda and asked the commissioners to go through it to"
+  },
+  {
+   "decision": "Paula to let Leominster know the draft is in progress and ask to meet after the January meeting; suggestions to be sent to Paula for the subcommittee.",
+   "quote": "paula said she will let jake know they are working on it and ask if they can meet after their january meeting."
+  },
+  {
+   "decision": "Paula to request readable copies of the generator inspection reports from Power Pumps.",
+   "quote": "paula noted they received the generator inspection reports from power pumps but they were unreadable, so she has requested readable copies."
+  },
+  {
+   "decision": "Paula asked Wade and Robert from CTE to attend the 1/9/24 meeting to discuss capital needs, with a priority wish list.",
+   "quote": "paula asked wade and robert from cte to attend the 1/9/24 meeting to discuss capital needs."
+  },
+  {
+   "decision": "Paula to send copies of the Re-Boot correspondence to both Silver Lining Investments addresses; the business must notify the property owner in writing, and the signed agreement is due by 12/15.",
+   "quote": "she will send copies of this correspondence to both addresses"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q2 FY24 commitment billed out",
+   "what_was_recorded": "The Business Manager reported the Q2 amount billed, which the Commission then voted to commit; corrections for incorrect bills will be reflected in Q3.",
+   "quote": "paula reported the amount billed out for q2 was $269,236.80",
+   "figures_as_printed": [
+    "$269,236.80"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund FY23 surplus",
+   "what_was_recorded": "FY23 surplus transferred to Retained Earnings, with the end-of-year fund balance stated.",
+   "quote": "there was a surplus of $190,730.26 which was transferred to retained earnings.",
+   "figures_as_printed": [
+    "$190,730.26",
+    "$2,124,854"
+   ]
+  },
+  {
+   "topic": "Line-item shortage covered within the Sewer budget",
+   "what_was_recorded": "Payroll showed a shortage for the Business Manager line, to be covered from the Assistant Business Manager line; noted to the Commission, no vote needed.",
+   "quote": "there was a shortage of $1,242.56 for the business manager and they will take it from the assistant business manager line",
+   "figures_as_printed": [
+    "$1,242.56"
+   ]
+  },
+  {
+   "topic": "Billing software: delinquency and receipts",
+   "what_was_recorded": "The delinquency rate is described as high and receipts as low, with posting to the general ledger not yet confirmed; no dollar figures printed.",
+   "quote": "the delinquency rate is high and receipts are low but she is not sure if everything has been posted",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Repair costs for generators and block heaters",
+   "what_was_recorded": "Repair quotes for block heaters, generator blister buttons and a switch were judged high on labor and travel and are being revised; no figures printed.",
+   "quote": "she thought the labor and travel costs were high so she and bill are working with cte to revise them.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Re-Boot arrears and payment plan",
+   "what_was_recorded": "The business was about $13K behind; the original $500/week plan was not kept; the revised plan requires $600/week.",
+   "quote": "the original plan was to pay $500/week but that did not happen.",
+   "figures_as_printed": [
+    "$13K",
+    "$500/week",
+    "$600/week"
+   ]
+  },
+  {
+   "topic": "Re-Boot balance after payment",
+   "what_was_recorded": "A $1,500 payment was made on the day, leaving a stated balance of $13,221, which moves to the 50 Mass Ave tax bill as a sewer lien.",
+   "quote": "with the $1,500 they received today their balance is $13,221.",
+   "figures_as_printed": [
+    "$1,500",
+    "$13,221"
+   ]
+  },
+  {
+   "topic": "Rate increases and capital needs",
+   "what_was_recorded": "Capital needs are to be understood before any rate increase; no figures printed.",
+   "quote": "prior to any rate increase, we need to understand capital needs.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Payroll shortage on the Business Manager line, covered from the Assistant Business Manager line.",
+   "amount_as_printed": "$1,242.56",
+   "outcome": "No vote taken; the Commission was made aware. The minutes say line-item transfers need approval by Bill and Heather.",
+   "quote": "there was a shortage of $1,242.56 for the business manager and they will take it from the assistant business manager line"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Q2 FY24 Commitment",
+   "resolution": "approved by roll call vote",
+   "quote": "q2 fy24 commitment- paula reported the amount billed out for q2 was $269,236.80",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes of 11/13/23",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 11/13/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Leominster Intermunicipal Agreement Negotiations",
+   "resolution": "continued; to 1/9 agenda, Commissioners to send suggestions",
+   "quote": "leominster intermunicipal agreement negotiations- john stated paula took the old typewritten version from 24 years ago",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Line Item Transfer",
+   "resolution": "noted; no vote needed",
+   "quote": "line item transfer -john reported that payroll informed the office that there was a shortage",
+   "tags": [
+    "line-item transfer",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Business Manager Report: System Maintenance & Upgrades",
+   "resolution": "no action; update received",
+   "quote": "update on system maintenance & upgrades- paula reported she is still waiting for estimates from clean basins",
+   "tags": [
+    "pump stations",
+    "CTE",
+    "capital needs",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund FY23 Final Report",
+   "resolution": "no action; report noted",
+   "quote": "there was a surplus of $190,730.26 which was transferred to retained earnings.",
+   "tags": [
+    "enterprise fund",
+    "surplus"
+   ]
+  },
+  {
+   "topic": "Update on Software System Conversion",
+   "resolution": "discussed; Select Board to be informed by chair; no vote",
+   "quote": "update on software system conversion- paula stated this has truly been a nightmare and it has consumed",
+   "tags": [
+    "Munis",
+    "billing",
+    "software"
+   ]
+  },
+  {
+   "topic": "Sewer Business Manager Job Description",
+   "resolution": "no action; sent to Personnel Board",
+   "quote": "paula reported she sent out the revised job description, done by bill and julie, which she has no concerns about.",
+   "tags": [
+    "personnel",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Assistant to the Sewer Business Manager",
+   "resolution": "no action; welcomed",
+   "quote": "paula reported that she is very happy to welcome camille farrar, as the assistant business manager.",
+   "tags": [
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "The Re-Boot, 50 Mass Avenue payment agreement (unanticipated topic)",
+   "resolution": "approved by roll call vote; agreement to be signed",
+   "quote": "john stated that re-boot has not paid a sewer bill since they opened up.",
+   "tags": [
+    "payment agreement",
+    "liquor license",
+    "tax lien",
+    "arrears"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer billing",
+  "Munis software conversion",
+  "payment agreement",
+  "liquor license",
+  "Leominster intermunicipal agreement",
+  "capital needs",
+  "CTE engineering",
+  "personnel",
+  "line-item transfer",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

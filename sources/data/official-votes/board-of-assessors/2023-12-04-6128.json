@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-12-04",
  "docid": "6128",
@@ -12,39 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 6, 2023",
-   "moved_by": "John Rabbitt",
+   "motion": "Approve the minutes of November 6, 2023, as amended.",
+   "moved_by": "John RabbiƩ",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a moɵon by john rabbiʃ to approve the minutes from november 6th, seconded by sarah cammer. all in favor."
+   "quote": "to approve the minutes from november 6th, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Accept the data collection manual revised on December 4, 2023",
-   "moved_by": "John Rabbitt",
+   "motion": "Accept the data collection manual revised on December 4, 2023, as a living document subject to BOA approval of changes.",
+   "moved_by": "John RabbiƩ",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "there was a moɵon by john rabbiʃ, seconded by sarah cammer to accept the data collecɵon manual that was revised on december 4, 2023. it was agreed that this will be a living document, subject to change. all changes are to be approved by the boa. all in favor."
+   "quote": "seconded by sarah cammer to accept the data collecɵon manual that was revised on december 4, 2023."
   },
   {
-   "motion": "Accept the minutes from the executive session on October 11 and November 6",
+   "motion": "Accept the minutes compiled by Rena Swezey from the executive session on October 11th and November 6th, to be added to the file but not publicly posted until the Abatement/ATB resolution.",
    "moved_by": "Sarah Cammer",
-   "seconded_by": "John Rabbitt",
+   "seconded_by": "John RabbiƩ",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a moɵon by sarah cammer, seconded by john rabbiʃ to accept the minutes compiled by rena swezey from the execuɵve session on october 11th and november 6th. all in favor."
+   "quote": "seconded by john rabbiʃ to accept the minutes compiled by rena swezey from the execuɵve session on october 11th and november 6th. all in favor."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "John Rabbitt",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "John RabbiƩ",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "moɵon to adjourn by john rabbiʃ, seconded by sarah cammer."
+   "quote": "adjourn by john rabbiʃ, seconded by sarah cammer."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text has OCR artifacts (special characters for \"t\" rendered as \"Ɵ\" and \"ff\" as \"ﬀ\"); names standardized for readability while preserving exact quote text.",
- "cost_usd": 0.1297651
+ "note": "Digital text, not a scan, with heavy character corruption from the extraction (ligatures and letters such as Ɵ, Ʃ, ﬁ, ﬀ), so names and quotes carry those glyphs as printed. Three motions are recorded with 'All in favor' and no vote count; the adjournment motion has no recorded result. The minutes say 'The board approved' changes to living documents without recording a motion, so that is listed as a decision, not a vote. Dollar figures appear only in the CAI program cost ($1,800) and the sketch fee (20 dollars); no transfers are recorded. Roles for several named people (Heather Lemieux, Tim Fountain's attendance, Mike Tarello, Nate Cramer) are not printed, so their status is marked not stated.",
+ "cost_usd": 0.019496470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "vice chair sarah cammer"
+  },
+  {
+   "name": "Brian Laﬀond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair brian laﬀond"
+  },
+  {
+   "name": "John RabbiƩ",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk john rabbiʃ"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "interim principal assessor rena swezey."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "and heather lemieux met with tim fountain from cai"
+  },
+  {
+   "name": "Tim Fountain",
+   "role": "CAI",
+   "status": "not stated",
+   "quote": "tim fountain talked about an advanced query program"
+  },
+  {
+   "name": "Marlene",
+   "role": "tax collector",
+   "status": "not stated",
+   "quote": "working with the tax collector, marlene, to"
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "sent to the board and mike tarello."
+  },
+  {
+   "name": "Nate Cramer",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "nate cramer has responded to the quesɵons previously provided."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public speaker, 155 Island Road",
+   "status": "present",
+   "quote": "dave macdonald - 155 island road- thanks the board for their work."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public speaker, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck - 50 sunset lane - shares his ongoing concern regarding abatement values and vision cards."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The October 11, 2023 minutes will be addressed at the next meeting.",
+   "quote": "the october 11th minutes will be addressed at the next meeɵng."
+  },
+  {
+   "decision": "The November 20, 2023 minutes were tabled to the next meeting because they were received the same day as the meeting.",
+   "quote": "the minutes from november 20th were tabled to the next meeɵng as they were"
+  },
+  {
+   "decision": "Brian Laffond will follow up with whoever uploads minutes to the website about the September 27 minutes not being posted.",
+   "quote": "brian laﬀond will follow up with whoever uploads minutes to the"
+  },
+  {
+   "decision": "Sarah Cammer will use an example template, from the Town of Concord, to be added to the website for the 'How to read your Vision card' document.",
+   "quote": "sarah cammer will use an example template to be added to the website."
+  },
+  {
+   "decision": "It was agreed that the data collection manual is a living document, subject to change, with all changes approved by the BOA.",
+   "quote": "that this will be a living document, subject to change."
+  },
+  {
+   "decision": "The board agreed that changes can be added to living documents when necessary.",
+   "quote": "the board approved that changes can be added to living documents when"
+  },
+  {
+   "decision": "Citizen questions discussion (Derner, Lucks, Blatt) tabled to a future meeting.",
+   "quote": "brian laﬀond is tabling this discussion to a future meeɵng"
+  },
+  {
+   "decision": "Potential for ad-hoc citizen committees tabled to the next meeting.",
+   "quote": "the board has not had a chance to discuss this so this was tabled to the next"
+  },
+  {
+   "decision": "Website recommendations to be run by Heather Lemieux for further discussion and recommendations.",
+   "quote": "all these ideas will be run by heather lemieux for"
+  },
+  {
+   "decision": "Assessment Reconciliation sample findings discussion (review of property cards for abatement requests) tabled to the next meeting.",
+   "quote": "this discussion is tabled to the next meeɵng."
+  },
+  {
+   "decision": "Senior / Veterans Exemptions review to be discussed after the first of the year and brought to town meeting in May.",
+   "quote": "will be brought to the town meeɵng in may."
+  },
+  {
+   "decision": "Software (Xembly discussion) added as a future agenda topic.",
+   "quote": "this was added as a future agenda topic for upcoming meeɵng."
+  },
+  {
+   "decision": "Policy Establishment / Review item removed from future agendas as it is being implemented.",
+   "quote": "the board feels that this has been addressed and can be removed from any future"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CAI advanced query program",
+   "what_was_recorded": "Tim Fountain of CAI described an advanced query program with a one-time cost for the added program.",
+   "figures_as_printed": [
+    "$1,800"
+   ],
+   "quote": "there is a one-ɵme cost of $1,800 for this addiɵonal program."
+  },
+  {
+   "topic": "Mapping of missing sketches",
+   "what_was_recorded": "Sketches not brought over or missing can be added to the map at an additional per-sketch charge.",
+   "figures_as_printed": [
+    "20 dollars"
+   ],
+   "quote": "of an addiɵonal 20 dollars per sketch."
+  },
+  {
+   "topic": "Abatement values on vision cards",
+   "what_was_recorded": "A public commenter discussed abatement values and vision cards, stating a percent inflation in good-property values; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "carl luck looked at over 100 properɵes that were listed as good"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road",
+   "topic": "thanks the Board for its work",
+   "quote": "dave macdonald - 155 island road- thanks the board for their work."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "abatement values and vision cards; request for calculations and qualified sales numbers",
+   "quote": "carl luck - 50 sunset lane - shares his ongoing concern regarding abatement values and vision cards."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "no board or public comment recorded",
+   "quote": "the meeɵng opened at 6:41pm.",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old business: minutes approval",
+   "resolution": "November 6 minutes approved; October 11 deferred; November 20 tabled",
+   "quote": "to approve the minutes from november 6th, seconded by sarah cammer. all in favor.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers, abatements and signatures",
+   "resolution": "invoices and abatements signed",
+   "quote": "the following invoices and abatements were signed:",
+   "tags": [
+    "invoices",
+    "abatements",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Status report from Interim Principal Assessor",
+   "resolution": "noted; no action recorded",
+   "quote": "rena swezey has also completed the data collecɵon manual.",
+   "tags": [
+    "third quarter tax bills",
+    "data collection manual"
+   ]
+  },
+  {
+   "topic": "Property cards and CAI mapping",
+   "resolution": "noted; discussion of one-time program cost and mapping sketch fees",
+   "quote": "and heather lemieux met with tim fountain from cai to address the problems",
+   "tags": [
+    "CAI",
+    "property cards",
+    "mapping",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Community outreach: Senior Center and vision card template",
+   "resolution": "presentation date discussed; template to be added to website",
+   "quote": "there was a discussion about a presentaɵon date in early",
+   "tags": [
+    "senior center",
+    "vision card",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Collaboration with Town Manager: Q3 tax bill insert",
+   "resolution": "noted; draft insert provided",
+   "quote": "prior to the meeɵng brian laﬀond did speak to heather lemieux",
+   "tags": [
+    "tax bill insert",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Existing contracts and service agreements",
+   "resolution": "listed; future RFP development noted",
+   "quote": "rrc pp maintenance, vision cama s/w, nearmap arc/gis, cai tax map",
+   "tags": [
+    "contracts",
+    "RFP",
+    "CAI",
+    "software"
+   ]
+  },
+  {
+   "topic": "Response to citizen questions",
+   "resolution": "tabled to a future meeting",
+   "quote": "brian laﬀond is tabling this discussion to a future meeɵng",
+   "tags": [
+    "citizen questions",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Data collection manual (field inspection manual)",
+   "resolution": "approved",
+   "quote": "seconded by sarah cammer to accept the data collecɵon manual that was revised on december 4, 2023.",
+   "tags": [
+    "data collection manual",
+    "field inspection"
+   ]
+  },
+  {
+   "topic": "Potential ad-hoc citizen committees",
+   "resolution": "tabled to the next meeting",
+   "quote": "the board has not had a chance to discuss this so this was tabled to the next",
+   "tags": [
+    "citizen committee"
+   ]
+  },
+  {
+   "topic": "Website improvements",
+   "resolution": "ideas referred to Heather Lemieux; no in-depth discussion",
+   "quote": "all these ideas will be run by heather lemieux for",
+   "tags": [
+    "website",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "CAI property record card freeze and updating",
+   "resolution": "board agreed changes can be added to living documents",
+   "quote": "the board approved that changes can be added to living documents when",
+   "tags": [
+    "property record card",
+    "CAI"
+   ]
+  },
+  {
+   "topic": "Guidelines for public comment",
+   "resolution": "discussed; time limit considered; no action recorded",
+   "quote": "brian laﬀond states that some comments from the board and the public can be",
+   "tags": [
+    "public comment",
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Review property cards and assessment reconciliation",
+   "resolution": "assessment reconciliation tabled; neighborhood designations noted",
+   "quote": "this discussion is tabled to the next meeɵng.",
+   "tags": [
+    "abatements",
+    "neighborhoods",
+    "property cards"
+   ]
+  },
+  {
+   "topic": "Corrective action request proposal",
+   "resolution": "discussed; no action recorded",
+   "quote": "john rabbiʃ suggests that a methodology be put in place",
+   "tags": [
+    "corrective action",
+    "root cause"
+   ]
+  },
+  {
+   "topic": "Future agenda topics",
+   "resolution": "senior/veterans exemptions, chapter land, software and policy items listed",
+   "quote": "will be brought to the town meeɵng in may.",
+   "tags": [
+    "exemptions",
+    "chapter land",
+    "software",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Public Q&A session with Nate Cramer",
+   "resolution": "scheduling discussed; questions previously answered",
+   "quote": "nate cramer has responded to the quesɵons previously provided.",
+   "tags": [
+    "public Q&A",
+    "Nate Cramer"
+   ]
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "public comment recorded",
+   "quote": "carl luck - 50 sunset lane - shares his ongoing concern regarding abatement values and vision cards.",
+   "tags": [
+    "public comment",
+    "abatements",
+    "vision cards"
+   ]
+  },
+  {
+   "topic": "Board comments and executive session minutes",
+   "resolution": "executive session minutes accepted, not for public posting until resolution",
+   "quote": "seconded by john rabbiʃ to accept the minutes compiled by rena swezey from the execuɵve session on october 11th and november 6th. all in favor.",
+   "tags": [
+    "executive session",
+    "minutes",
+    "OneDrive archive"
+   ]
+  },
+  {
+   "topic": "Tanner Cole Property (61B)",
+   "resolution": "noted; selectman has 120 days to act",
+   "quote": "john rabbiʃ posed a quesɵon in regard to the tanner cole property (61b).",
+   "tags": [
+    "61B",
+    "Chapter land"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50 PM",
+   "quote": "adjourn by john rabbiʃ, seconded by sarah cammer.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "vision cards",
+  "abatements",
+  "CAI contract",
+  "data collection manual",
+  "website",
+  "public comment",
+  "minutes approval",
+  "executive session",
+  "senior exemptions",
+  "61B",
+  "tax bills"
+ ],
+ "dropped_unquoted_by_field": {}
 }

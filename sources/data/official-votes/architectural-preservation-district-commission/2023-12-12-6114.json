@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-12-12",
  "docid": "6114",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse and support the hometown heroes' banner program",
+   "motion": "Discussion of, and endorsement and support for, the hometown heroes banner program from the historical commission.",
    "moved_by": "Sculimbrene",
    "seconded_by": "Lloyd",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motioned to discuss by member sculimbrene, seconded by member lloyd 1. voted to endorse and support approved by all"
   },
   {
-   "motion": "Approve the May 2023 minutes",
+   "motion": "Approve the May 2023 minutes.",
    "moved_by": "Lloyd",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "may 2023; motion to approve by member lloyd voted approved by all"
   },
   {
-   "motion": "Delay approval of the August 2023 minutes",
+   "motion": "Delay the August 2023 minutes (the motion is recorded only as 'to delay to allow'; no result or mover printed).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "august 2023; motion to delay to allow"
   },
   {
-   "motion": "Approve the October 2023 minutes",
+   "motion": "Approve the October 2023 minutes.",
    "moved_by": "Lloyd",
    "seconded_by": "",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "october 2023; motion to approve by member lloyd voted approved by all"
   },
   {
-   "motion": "Approve the November 2023 minutes",
+   "motion": "Approve the November 2023 minutes.",
    "moved_by": "Sculimbrene",
    "seconded_by": "",
    "outcome": "passed",
@@ -53,6 +53,238 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The August 2023 minutes vote is incomplete in the text (cuts off at \"motion to delay to allow\"), so the outcome cannot be determined. No motion to adjourn is explicitly recorded.",
- "cost_usd": 0.146473
+ "note": "Text extraction of a typed minutes document (not a scan). Votes are recorded as 'approved by All' with no member count printed. The August 2023 entry reads 'motion to delay to allow' and is truncated: no mover, reason, or result is printed, so it is recorded as 'not stated'. The banner endorsement is recorded as a vote with no mover count. Decisions are limited to items with explicit directions; 'Recommendations to town' items were requests, not decisions. Budget items include figures as printed without reconciliation (e.g., two banner prices with no indication which applies). No transfers recorded.",
+ "cost_usd": 0.01530887,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Mr. William Lax",
+   "role": "from the historical commission",
+   "status": "present",
+   "quote": "mr. william lax & mrs. jennifer sanderson from the historical commission for hometown heroes' banner"
+  },
+  {
+   "name": "Mrs. Jennifer Sanderson",
+   "role": "from the historical commission",
+   "status": "present",
+   "quote": "mr. william lax & mrs. jennifer sanderson from the historical commission for hometown heroes' banner"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Asked the architect to come up with another Town Hall estimate using updated pricing, after the bid came in over the allotted amount.",
+   "quote": "asked architect to come up with another estimate with updated pricing"
+  },
+  {
+   "decision": "Town Hall project to be split into phases, with Phase 1 including the chimney repair.",
+   "quote": "will split project into phases based. phase 1 will include chimney repair"
+  },
+  {
+   "decision": "Board will follow up with the Town Council on enforcement of APDC by-laws and request a timeline.",
+   "quote": "will follow up & request a timeline"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hometown heroes banner cost",
+   "what_was_recorded": "The historical commission presented banner costs as two printed figures, with an estimated lifecycle of 6-8 years; the minutes do not say which figure applies.",
+   "figures_as_printed": [
+    "$104.95",
+    "$69.50",
+    "24” x 36”",
+    "6-8 Years"
+   ],
+   "quote": "cost $104.95/$69.50 / 24\" x 36\" / est lifecycle of 6-8 years"
+  },
+  {
+   "topic": "Hometown heroes banner funding",
+   "what_was_recorded": "The historical commission voted to fund the first 10 banners; no dollar amount is printed for that funding.",
+   "figures_as_printed": [
+    "10"
+   ],
+   "quote": "historical commission voted to fund first 10 banners"
+  },
+  {
+   "topic": "Town Hall roof, windows and clock tower repair estimate",
+   "what_was_recorded": "An estimate for repairing the roof, windows and clock tower; the bid was over the allotted amount.",
+   "figures_as_printed": [
+    "$258K"
+   ],
+   "quote": "estimate for $258k to repair roof, windows and clock tower"
+  },
+  {
+   "topic": "Town Hall chimney repairs",
+   "what_was_recorded": "A separate figure for two chimney repairs at Town Hall.",
+   "figures_as_printed": [
+    "$43K"
+   ],
+   "quote": "$43k for two chimney repairs"
+  },
+  {
+   "topic": "Town fund to support homeowners",
+   "what_was_recorded": "The Town Council is looking into whether the town can have a fund (loans or grants) to help homeowners with repairs; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "looking into if town can have a fund to support homeowners, leans or grants"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. William Lax",
+   "stated_role": "from the historical commission",
+   "topic": "hometown heroes banner program",
+   "quote": "mr. william lax & mrs. jennifer sanderson from the historical commission for hometown heroes' banner"
+  },
+  {
+   "speaker": "Mrs. Jennifer Sanderson",
+   "stated_role": "from the historical commission",
+   "topic": "hometown heroes banner program",
+   "quote": "mr. william lax & mrs. jennifer sanderson from the historical commission for hometown heroes' banner"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: hometown heroes banner program",
+   "resolution": "endorsed and supported, approved by all",
+   "tags": [
+    "banners",
+    "historical commission",
+    "endorsement"
+   ],
+   "quote": "voted to endorse and support approved by all"
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "May, October and November 2023 approved; August 2023 delayed",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "may 2023; motion to approve by member lloyd voted approved by all"
+  },
+  {
+   "topic": "Correspondence: outside state organization post",
+   "resolution": "no action recorded",
+   "tags": [
+    "correspondence",
+    "grants"
+   ],
+   "quote": "post from outside state organization"
+  },
+  {
+   "topic": "Old business: Town Hall repairs",
+   "resolution": "project to be phased; architect asked for new estimate",
+   "tags": [
+    "Town Hall",
+    "repairs",
+    "estimates"
+   ],
+   "quote": "estimate for $258k to repair roof, windows and clock tower"
+  },
+  {
+   "topic": "Old business: recommendations to town",
+   "resolution": "no action recorded",
+   "tags": [
+    "annual reports",
+    "website",
+    "committees"
+   ],
+   "quote": "annual reports to match terms of committee chairs"
+  },
+  {
+   "topic": "Old business: work next to 912 Mass Ave (CTA project)",
+   "resolution": "no action recorded",
+   "tags": [
+    "permits",
+    "enforcement"
+   ],
+   "quote": "no building permit was issued"
+  },
+  {
+   "topic": "Old business: 3 Lancaster Ave deviations",
+   "resolution": "no action recorded; building commission backing needed",
+   "tags": [
+    "enforcement",
+    "windows",
+    "signage"
+   ],
+   "quote": "no change orders were submitted to the apdc for review"
+  },
+  {
+   "topic": "Old business: Town Council enforcement of APDC by-laws",
+   "resolution": "board to follow up and request a timeline",
+   "tags": [
+    "enforcement",
+    "fines",
+    "homeowner fund"
+   ],
+   "quote": "building inspection had visited apdc and discussion on what they can do to help enforce apdc"
+  },
+  {
+   "topic": "Old business: Town Master Plan and signage",
+   "resolution": "no action recorded",
+   "tags": [
+    "master plan",
+    "signage"
+   ],
+   "quote": "library asked for input of a new sign (signage plan for town center)"
+  },
+  {
+   "topic": "Old business: work plan activities",
+   "resolution": "no action recorded",
+   "tags": [
+    "work plan",
+    "mailer"
+   ],
+   "quote": "7) work plan activities"
+  },
+  {
+   "topic": "New business",
+   "resolution": "none",
+   "tags": [],
+   "quote": "new business: 1) none"
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "tags": [],
+   "quote": "other business: 1) none"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "historic district",
+  "banners",
+  "town hall repairs",
+  "enforcement",
+  "minutes approval",
+  "signage",
+  "master plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,555 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-12-05",
+ "video_id": "a8BzgkQFxXI",
+ "video_url": "https://www.youtube.com/watch?v=a8BzgkQFxXI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-12-05-a8BzgkQFxXI.json",
+  "sha256": "6047812a60e00af7b0e85360ee4c6b4e4c4280540504c1e3344da5b5a5aabc0b",
+  "caption_lines": 257,
+  "segments": 2205
+ },
+ "recording": {
+  "duration_s": 5416,
+  "duration": "1:30",
+  "spoken_chars": 78505,
+  "words_approx": 13084
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12052023-6106",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-12-05-agenda-6106.txt",
+   "path": "sources/meetings/select-board/2023-12-05-agenda-6106.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12052023-6106",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-12-05-minutes-6106.txt",
+   "path": "sources/meetings/select-board/2023-12-05-minutes-6106.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T03:38:07Z",
+  "cost_usd": 0.3946506
+ },
+ "minutes": {
+  "headline": "Board ratified a police sergeant and assistant town accountant, extended health opt-out pilot, deferred building fee vote",
+  "summary": "The board heard two complaints in public comment, ratified two appointments, and heard the Building Commissioner's proposed new fee schedules for building, electrical, plumbing and gas permits, with the vote deferred two weeks for public input. It voted to extend the health insurance opt-out pilot through fiscal year 25 and signed the unused levy capacity form. It then went into executive session to review old minutes and adjourn.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeff",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Selectman Nuo",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Selectman Imy",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Selectman Alonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Selectman Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Brian Gingis",
+    "role": "building commissioner"
+   },
+   {
+    "name_as_heard": "Chief Gam",
+    "role": "police chief"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 372,
+    "speaker_as_heard": "George Burton",
+    "stated_role": "resident",
+    "topic": "Wants to file a complaint against the chief of police, says the town manager has not responded, and describes a dispute with a neighbor."
+   },
+   {
+    "t": 601,
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident",
+    "topic": "Read a statement complaining about the cemetery commission chair's conduct at a November 30th meeting and a reported fuel spill."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "fees",
+   "health-insurance",
+   "hiring",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "tax-rate",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1286,
+    "motion": "Ratify the appointment of patrol officer Paul Theodulu to the rank of Sergeant",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 1881,
+    "motion": "Ratify the appointment of Amy Driggers as assistant town accountant",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 4207,
+    "motion": "Extend the health insurance opt-out pilot program through fiscal year 25",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5265,
+    "motion": "Enter executive session under 30A s21 (litigation strategy, real estate) to approve release of minutes, and adjourn directly from it",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2024,
+    "topic": "Building permit fees",
+    "what_was_said": "Sheet metal permits move to a per-thousand rate from a flat fee, and the minimum fee rises.",
+    "figures_as_heard": [
+     "$10 per th000",
+     "$25",
+     "$60",
+     "50"
+    ]
+   },
+   {
+    "t": 2064,
+    "topic": "Stop work order and occupancy fees",
+    "what_was_said": "New residential fees for stop work orders and occupancy permits.",
+    "figures_as_heard": [
+     "$75",
+     "$50 per per unit"
+    ]
+   },
+   {
+    "t": 2168,
+    "topic": "Commercial building fees",
+    "what_was_said": "Commercial rate rises above the residential rate, with a higher minimum.",
+    "figures_as_heard": [
+     "$12.75 per th000",
+     "$10",
+     "150",
+     "27.5%"
+    ]
+   },
+   {
+    "t": 2210,
+    "topic": "Reinspection fees",
+    "what_was_said": "Reinspection fee rises.",
+    "figures_as_heard": [
+     "$60",
+     "25"
+    ]
+   },
+   {
+    "t": 2507,
+    "topic": "Electrical inspector pay and fees",
+    "what_was_said": "Electrical fees move to a per-inspection basis; the inspector is paid a share of permit fees.",
+    "figures_as_heard": [
+     "82.5%",
+     "5250 per inspection",
+     "$34.30 per inspection"
+    ]
+   },
+   {
+    "t": 2759,
+    "topic": "Plumbing and gas fees",
+    "what_was_said": "Plumbing and gas fees date from 1987 and are raised; current minimum is very low.",
+    "figures_as_heard": [
+     "$38",
+     "$36"
+    ]
+   },
+   {
+    "t": 3787,
+    "topic": "Unused levy capacity",
+    "what_was_said": "Form filed with DOR with the pro forma recap shows unused levy capacity after the November special town meeting.",
+    "figures_as_heard": [
+     "$862 17",
+     "$88,000"
+    ]
+   },
+   {
+    "t": 3850,
+    "topic": "Health insurance opt-out pilot",
+    "what_was_said": "Extension aligns with the public employee committee agreement; health insurance is costly per person.",
+    "figures_as_heard": [
+     "over 20 grand"
+    ]
+   },
+   {
+    "t": 4250,
+    "topic": "Warrants",
+    "what_was_said": "Payroll and accounts payable warrants read into the record.",
+    "figures_as_heard": [
+     "1,3,4 289",
+     "$144,800",
+     "$57,900",
+     "$ 24,750 and7"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2445,
+    "decision": "Chair asked that the building department fee schedule not be voted until two weeks later to allow public review; to be posted on the website."
+   },
+   {
+    "t": 3679,
+    "decision": "Fee vote expected at the December 19th meeting."
+   },
+   {
+    "t": 3300,
+    "decision": "Building commissioner asked to report back about a year later on how the fees are working."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 21,
+    "t_end": 351,
+    "topic": "Opening, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 372,
+    "t_end": 900,
+    "topic": "Public comment: police complaint and cemetery commission",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 900,
+    "t_end": 1485,
+    "topic": "Sergeant promotion ratified and sworn",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1505,
+    "t_end": 1930,
+    "topic": "Assistant town accountant appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1942,
+    "t_end": 3690,
+    "topic": "Building department fee schedule presentation",
+    "resolution": "deferred two weeks",
+    "tags": [
+     "fees",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3700,
+    "t_end": 3850,
+    "topic": "Birthday letters and unused levy capacity form",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 3850,
+    "t_end": 4240,
+    "topic": "Health insurance opt-out pilot extension",
+    "resolution": "voted",
+    "tags": [
+     "health-insurance",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4250,
+    "t_end": 4700,
+    "topic": "Warrants and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4700,
+    "t_end": 5400,
+    "topic": "Schedule, board comments, executive session and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Warrant amounts are garbled in places.",
+   "Unused levy capacity figure rendered as $862 17 and later $88,000, which do not agree.",
+   "Public speakers' names are as heard."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 5-0 to extend the health insurance opt-out pilot program through fiscal year 25.",
+    "t": 4207
+   },
+   {
+    "line": "The board deferred its vote on the Building Commissioner's new fee schedules for building, electrical, plumbing and gas permits, to allow two weeks of public review.",
+    "t": 2445
+   },
+   {
+    "line": "The proposed schedules raise the commercial rate and minimums, move sheet metal permits to a per-thousand rate, and raise the plumbing and gas fees set in 1987.",
+    "t": 2168
+   },
+   {
+    "line": "The board ratified, 5-0 by roll call, a police sergeant promotion and the appointment of an assistant town accountant.",
+    "t": 1286
+   },
+   {
+    "line": "The board heard two public comments with complaints about the police chief and the cemetery commission chair.",
+    "t": 372
+   }
+  ],
+  "why_it_matters": [
+   "Anyone pulling a building, electrical, plumbing or gas permit, or applying for a stop work or occupancy permit, could pay different fees if the schedule is adopted, and the vote has not yet happened.",
+   "The opt-out pilot extension keeps in place the arrangement that the board tied to the public employee committee agreement, which bears on what the town spends on employee health insurance."
+  ],
+  "watch_next": [
+   "The vote on the building department fee schedule, expected at the December 19th Select Board meeting, with the schedule to be posted on the town website beforehand.",
+   "The Building Commissioner's report back, about a year later, on how the new fees are working."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T03:38:17Z",
+   "cost_usd": 0.221025
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12052023-6106",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-12-05-minutes-6106.txt",
+   "path": "sources/meetings/select-board/2023-12-05-minutes-6106.pdf"
+  },
+  "official_sha256": "88c1829fce8f8b9a08ad9f09604c9758ab9759fad54c5a2fc123a11adec3464d",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The three votes (two ratifications and the opt-out extension) match on motion and 5-0 outcome, and the postponed fee-schedule vote matches. Most differences are caption errors in names and warrant or levy figures; the one thing to know is that our minutes omit the public comment section and add details (Dec 19 date, one-year report-back, other fee lines) the official minutes lack.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 8,
+   "discrepancy": 0,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Sergeant ratification: officer's name",
+    "ours": "Ratify the appointment of patrol officer Paul Theodulu to the rank of Sergeant — passed 5-0 by roll call",
+    "official": "chair jeffreys made motion to ratify the appointment of patrol officer paul theodoulou to the rank of sergeant. seconded by lou franco.",
+    "official_reading": "Paul Theodoulou",
+    "note": "Same vote and 5-0 outcome; only the surname is misspelled by the captions.",
+    "t": 1286
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify Amy Driggers as Assistant Town Accountant",
+    "ours": "Ratify the appointment of Amy Driggers as assistant town accountant — passed 5-0 by roll call",
+    "official": "chair jeffreys made motion to ratify the appointment of amy driggers as assistant town accountant. seconded by lou franco.",
+    "note": "Same motion, same 5-0 outcome.",
+    "t": 1881
+   },
+   {
+    "kind": "agree",
+    "about": "Extend health insurance opt-out pilot through FY25",
+    "ours": "Extend the health insurance opt-out pilot program through fiscal year 25 — passed 5-0 by roll call",
+    "official": "chair jeffreys made a motion to extend the pilot health insurance opt out program through fiscal year 2025. seconded by member emkey.",
+    "note": "Same motion and 5-0 outcome; 'fiscal year 25' is fiscal year 2025.",
+    "t": 4207
+   },
+   {
+    "kind": "agree",
+    "about": "Building fee schedule rates ($12.75 commercial, $10 residential per $1,000; $150; $50 per unit; $75)",
+    "ours": "Commercial building fees: $12.75 per th000, $10, 150, 27.5%",
+    "official": "set rates of $12.75 per $1,000 for commercial and $10 per $1,000 for residential projects, as well as",
+    "note": "The headline rates match; the 27.5% in ours has no counterpart in the official summary.",
+    "t": 2168
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Detailed fee lines (permit, reinspection, electrical, plumbing/gas)",
+    "ours": "Reinspection fees: $60, 25; Electrical inspector pay and fees: 82.5%, 5250 per inspection, $34.30 per inspection; Plumbing and gas fees: $38, $36",
+    "official": "",
+    "note": "Official minutes summarize the fee schedule without these line items; figures come from captions and should be checked against the presented schedule.",
+    "t": 2507
+   },
+   {
+    "kind": "caption_error",
+    "about": "Unused levy capacity",
+    "ours": "Unused levy capacity: $862 17, $88,000",
+    "official": "the board signed off on the calculation, indicating an unused levy capacity of $8,629.17.",
+    "official_reading": "$8,629.17",
+    "note": "'$862 17' is a garbled $8,629.17; the separate $88,000 has no official counterpart.",
+    "t": 3787
+   },
+   {
+    "kind": "agree",
+    "about": "Fee schedule vote postponed for public review",
+    "ours": "Chair asked that the building department fee schedule not be voted until two weeks later to allow public review; to be posted on the website.",
+    "official": "the board decided to postpone the vote on the new fee schedules to provide the public with an opportunity for comments",
+    "note": "Both record that the vote was postponed for public comment.",
+    "t": 2445
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Specific date for fee vote (December 19)",
+    "ours": "Fee vote expected at the December 19th meeting.",
+    "official": "",
+    "note": "Official minutes say only 'a future meeting'; not a conflict, but the date is only in ours.",
+    "t": 3679
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Building commissioner to report back in a year",
+    "ours": "Building commissioner asked to report back about a year later on how the fees are working.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3300
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance opt-out pilot cost",
+    "ours": "Health insurance opt-out pilot: over 20 grand",
+    "official": "",
+    "note": "Discussion figure not in the official minutes; check the recording at this time.",
+    "t": 3850
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "Warrants: $144,800",
+    "official": "accounts payable warrant: $144,864",
+    "official_reading": "$144,864",
+    "note": "Likely misheard digits of the same warrant.",
+    "t": 4250
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair",
+    "ours": "Mr. Jeff (chair)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Misheard name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Selectman Nuo",
+    "ours": "Selectman Nuo (member)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Misheard name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Selectman Imy",
+    "ours": "Selectman Imy (member)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard name.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Alonzo and Franco",
+    "ours": "Selectman Alonzo (member); Selectman Franco (member)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo",
+    "note": "Both present in each record.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: police chief",
+    "ours": "Chief Gam (police chief)",
+    "official": "others: heather lemieux, police chief thomas gammel",
+    "official_reading": "Thomas Gammel",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: building commissioner",
+    "ours": "Brian Gingis (building commissioner)",
+    "official": "presentation and review of new fee schedules for the building department - brian gingras, building commissioner.",
+    "official_reading": "Brian Gingras",
+    "note": "Misspelled surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: town manager",
+    "ours": "Heather (town manager)",
+    "official": "others: heather lemieux, police chief thomas gammel",
+    "note": "Same person; ours gives first name only.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters and public comment",
+    "ours": "",
+    "official": "george burden, 39 cortland circle: voiced concerns during public comment about",
+    "note": "Our minutes record no public comment (Burden; Bowen and Price on the cemetery commission) or board remarks on it; check the recording.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T03:39:29Z",
+   "cost_usd": 0.256625
+  }
+ }
+}

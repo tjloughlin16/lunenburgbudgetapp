@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-12-05",
  "docid": "6106",
@@ -12,41 +12,359 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Patrol Officer Paul Theodoulou to the rank of Sergeant",
-   "moved_by": "Michael-Ray Jeffreys",
+   "motion": "Ratify the Town Manager's appointment of Patrol Officer Paul Theodoulou to the rank of Sergeant.",
+   "moved_by": "Chair Jeffreys",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "chair jeffreys made motion to ratify the appointment of patrol officer paul theodoulou to the rank of sergeant. seconded by lou franco. roll call vote: member nuzzolo, aye; member emkey, aye; member alonzo, aye; member franco, aye; chair jeffreys, aye. unanimous approval vote (5-0-0)."
+   "quote": "chair jeffreys made motion to ratify the appointment of patrol officer paul theodoulou to the rank of sergeant. seconded by lou franco."
   },
   {
-   "motion": "Ratify the appointment of Amy Driggers as Assistant Town Accountant",
-   "moved_by": "Michael-Ray Jeffreys",
+   "motion": "Ratify the appointment of Amy Driggers as Assistant Town Accountant.",
+   "moved_by": "Chair Jeffreys",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "chair jeffreys made motion to ratify the appointment of patrol officer paul theodoulou to the rank of sergeant. seconded by lou franco. roll call vote: member nuzzolo, aye; member emkey, aye; member alonzo, aye; member franco, aye; chair jeffreys, aye. ",
-   "quote_taken_from_text": true
+   "quote": "chair jeffreys made motion to ratify the appointment of amy driggers as assistant town accountant. seconded by lou franco."
   },
   {
-   "motion": "Extend the pilot Health Insurance Opt Out Program through fiscal year 2025",
-   "moved_by": "Michael-Ray Jeffreys",
-   "seconded_by": "Renee Emkey",
-   "outcome": "passed 5-0",
+   "motion": "Extend the pilot Health Insurance Opt Out Program through fiscal year 2025.",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Member Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "chair jeffreys made a motion to extend the pilot health insurance opt out program through fiscal year 2025. seconded by member emkey. roll call vote: aye by member nuzzolo, member emkey, member alonzo, member franco, and chair jeffreys. unanimous approval (5-0-0)."
+   "quote": "chair jeffreys made a motion to extend the pilot health insurance opt out program through fiscal year 2025. seconded by member emkey."
   },
   {
-   "motion": "Enter into executive session and adjourn the meeting directly from executive session to discuss strategy with respect to litigation and to consider the purchase, exchange, lease, or value of real estate",
-   "moved_by": "Michael-Ray Jeffreys",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "passed 5-0",
+   "motion": "Enter executive session under M.G.L. Chapter 30A Section 21, subsections 3 and 6, and adjourn the meeting directly from executive session.",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Member Alonzo",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "chair jeffreys made motion to enter into executive session and to adjourn the meeting directly from executive session pursuant to m.g.l. chapter 30a section 21, subsection 3 to discuss strategy with respect to litigation, if an open meeting may have a detrimental effect on the litigating position, and subsection 6 to consider the purchase, exchange, lease, or value of real estate, if the chair declares that an open meeting may have a detrimental effect on the negotiating position of the public body, which i do declare. seconded by member alonzo. roll call vote: aye by member nuzzolo, member emkey, member alonzo, member franco, and chair jeffreys. unanimous approval (5-0- 0)",
-   "quote_taken_from_text": true
+   "quote": "executive session: chair jeffreys made motion to enter into executive session and to adjourn the meeting directly from executive session"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Four votes recorded, all passed unanimously 5-0. One procedural (executive session entry and adjournment), three substantive (two appointment ratifications and one program extension).",
- "cost_usd": 0.11479150000000002
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan. The PRESENT line says \"(Remote via Zoom)\" without naming which member(s) attended remotely, so every member is recorded as present. The \"PUBLIC COMMENTS\" heading on page 4 holds board and staff remarks (Town Manager, Alonzo, Jeffreys, Franco) as well as the public speakers on page 1; those are recorded as public_comment entries with their printed roles. Two votes have no roll call printed as a separate motion beyond the one shown. The warrants were presented with no recorded motion or vote. The fee-schedule vote was postponed, so it is not a vote. The minutes name Chairwoman Miss Yasko and Officer Thibodeaux but they did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.01745027,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: michael-ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others: heather lemieux, police chief thomas gammel"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "others: heather lemieux, police chief thomas gammel"
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "presentation and review of new fee schedules for the building department - brian gingras, building commissioner."
+  },
+  {
+   "name": "Paul Theodoulou",
+   "role": "Patrol Officer (ratified as Sergeant)",
+   "status": "present",
+   "quote": "officer theodoulou addressed the board, and the board expressed support."
+  },
+  {
+   "name": "Amy Driggers",
+   "role": "Assistant Town Accountant (ratified appointee)",
+   "status": "present",
+   "quote": "driggers addressed the board outlining her background in banking and bookkeeping as qualifications."
+  },
+  {
+   "name": "George Burden",
+   "role": "public commenter, 39 Cortland Circle",
+   "status": "present",
+   "quote": "george burden, 39 cortland circle: voiced concerns during public comment about"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public commenter, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen & jeanmarie price, 162 highland street: presented a prepared statement"
+  },
+  {
+   "name": "Jeanmarie Price",
+   "role": "public commenter, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen & jeanmarie price, 162 highland street: presented a prepared statement"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board postponed the vote on the new Building Department fee schedules to give the public an opportunity to comment and ensure ample review, planning to revisit at a future meeting.",
+   "quote": "the board decided to postpone the vote on the new fee schedules to provide the public with an opportunity for comments"
+  },
+  {
+   "decision": "The board signed off on the unused levy capacity calculation, indicating unused levy capacity of $8,629.17.",
+   "quote": "the board signed off on the calculation, indicating an unused levy capacity of $8,629.17."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building Department fee schedules",
+   "what_was_recorded": "The Building Commissioner presented new building fee schedules with rates per $1,000 for commercial and residential projects, a minimum commercial permit fee, occupancy and work-order rates; the vote was postponed.",
+   "figures_as_printed": [
+    "$12.75 per $1,000 for commercial",
+    "$10 per $1,000 for residential",
+    "$150",
+    "$50 per unit",
+    "$75"
+   ],
+   "quote": "set rates of $12.75 per $1,000 for commercial and $10 per $1,000 for residential projects, as well as"
+  },
+  {
+   "topic": "Unused levy capacity",
+   "what_was_recorded": "The board signed off on a calculation of unused levy capacity for the pro forma recap and third quarter preliminary bills, attributed to a less-than-expected increase in taxes.",
+   "figures_as_printed": [
+    "$8,629.17"
+   ],
+   "quote": "the board signed off on the calculation, indicating an unused levy capacity of $8,629.17."
+  },
+  {
+   "topic": "Warrants presented",
+   "what_was_recorded": "Four warrants were presented to the board; no vote on them is recorded in the minutes.",
+   "figures_as_printed": [
+    "$1,030,042.89",
+    "$144,864",
+    "$57,009.62",
+    "$214,705.07"
+   ],
+   "quote": "accounts payable warrant: $144,864"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "George Burden",
+   "stated_role": "39 Cortland Circle",
+   "topic": "harassment by neighbors, police involvement, town responses",
+   "quote": "voiced concerns during public comment about harassment from neighbors, specifically involving \"misters sarapas and liu,\" leading to police involvement."
+  },
+  {
+   "speaker": "John Bowen & Jeanmarie Price",
+   "stated_role": "162 Highland Street",
+   "topic": "Lunenburg Cemetery Commission and neighbor disputes",
+   "quote": "presented a prepared statement expressing concerns with the lunenburg cemetery commission, particularly regarding an encounter with chairwoman miss yasko"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "purpose of public comment (board and staff remarks under the public comments heading)",
+   "quote": "town manager: ms. lemieux reiterated that public comment sessions at meetings were not meant for engagement or lengthy discussions"
+  },
+  {
+   "speaker": "Member Alonzo",
+   "stated_role": "Member",
+   "topic": "recording all public meetings and remote camera use (board remarks under the public comments heading)",
+   "quote": "member alonzo: suggested that all meetings of public bodies should be both audio and video recorded to improve transparency."
+  },
+  {
+   "speaker": "Chair Jeffreys",
+   "stated_role": "Chair",
+   "topic": "volume of emails to staff (board remarks under the public comments heading)",
+   "quote": "chair jeffreys: highlighted the challenges faced by town staff due to excessive communications from a few members of the public"
+  },
+  {
+   "speaker": "Member Franco",
+   "stated_role": "Member",
+   "topic": "volume of emails to staff (board remarks under the public comments heading)",
+   "quote": "member franco: criticized the excessive number of emails sent to staff as both harassment and a waste of town resources"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:00 pm by the chair. the pledge of allegiance was recited.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "quote": "announced that the lunenburg basketball booster is hosting its first holiday fair on december 9th",
+   "tags": [
+    "community events",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Public comments (first)",
+   "resolution": "no action",
+   "quote": "voiced concerns during public comment about harassment from neighbors, specifically involving",
+   "tags": [
+    "public comment",
+    "cemetery commission",
+    "police"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "ms. lemieux shared about the ongoing master plan survey available through the town's website",
+   "tags": [
+    "master plan",
+    "town offices closure"
+   ]
+  },
+  {
+   "topic": "Appointments: Building Department fee schedules",
+   "resolution": "vote postponed to a future meeting",
+   "quote": "the board decided to postpone the vote on the new fee schedules to provide the public with an opportunity for comments",
+   "tags": [
+    "building department",
+    "fees",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Ratification of Patrol Officer Paul Theodoulou to Sergeant",
+   "resolution": "approved 5-0-0",
+   "quote": "the town manager recommended the promotion of patrol officer paul theodoulou to sergeant.",
+   "tags": [
+    "police",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Ratification of Assistant Town Accountant Amy Driggers",
+   "resolution": "approved 5-0-0",
+   "quote": "the town manager recommended amy driggers for the assistant town accountant.",
+   "tags": [
+    "finance",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no report",
+   "quote": "town manager report: no report",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Sign 100th birthday letters to Frederick Cuddy and Mario Patacchiola",
+   "resolution": "signed",
+   "quote": "board members signed letters in recognition of the 100th birthdays of frederick cuddy and mario patacchiola.",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Extend pilot Health Insurance Opt Out Program through FY25",
+   "resolution": "approved 5-0-0",
+   "quote": "vote to extend the pilot health insurance opt out program through fy25",
+   "tags": [
+    "health insurance",
+    "employee benefits"
+   ]
+  },
+  {
+   "topic": "Unused levy capacity letter for pro forma recap and third quarter bills",
+   "resolution": "signed off on calculation of $8,629.17",
+   "quote": "the board signed off on the calculation, indicating an unused levy capacity of $8,629.17.",
+   "tags": [
+    "levy",
+    "tax bills",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "warrants presented; no vote recorded",
+   "quote": "warrants presented were as follows:",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "school committee: member emkey highlighted efforts to convene the storm water task force",
+   "tags": [
+    "school committee",
+    "capital planning",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Public comments (second, board and staff remarks)",
+   "resolution": "no action",
+   "quote": "town manager: ms. lemieux reiterated that public comment sessions at meetings were not meant for engagement or lengthy discussions",
+   "tags": [
+    "public comment",
+    "transparency",
+    "staff emails"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session 5-0-0; adjourned 8:29 PM",
+   "quote": "executive session: chair jeffreys made motion to enter into executive session and to adjourn the meeting directly from executive session",
+   "tags": [
+    "executive session",
+    "litigation",
+    "real estate"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "building fees",
+  "appointments",
+  "police",
+  "health insurance",
+  "levy capacity",
+  "warrants",
+  "public comment",
+  "executive session",
+  "cemetery commission"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

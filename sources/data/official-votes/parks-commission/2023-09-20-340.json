@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-09-20",
  "docid": "340",
@@ -12,15 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Allow the Special Olympics to use Fitzgerald Field on Sunday mornings for six weeks through November 5, 2023",
+   "motion": "Allow the Special Olympics to use Fitzgerald Field on Sunday mornings for six weeks through November 5, 2023.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "k. menard made a motion to allow the special olympics to use fitzgerald field on sunday mornings for six weeks through november 5, 2023. c. sullivan seconded. roll call vote. motion carried (3-0)."
+   "quote": "k. menard made a motion to allow the special olympics to use fitzgerald field on sunday mornings for six weeks through november 5, 2023."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One discrepancy noted: the minutes state the vote was 3-0, but the roll call that follows lists four yes votes (K. Menard, C. Shapiro, C. Sullivan, A. Lockwood), suggesting the outcome should be 4-0. However, the printed outcome in the minutes is 3-0, so that is what is reported.",
- "cost_usd": 0.07726039999999999
+ "note": "Text extracted from page-numbered PDF pages 1-3 (page headers read 'page of 31-33'); the printed roll call lists four yes votes (K. Menard, C. Shapiro, C. Sullivan, A. Lockwood) while the motion line prints 'Motion carried (3-0)'. The vote is recorded with the printed count 3-0 and this discrepancy is not resolved by the text. No vote is recorded for approval of minutes ('None') or for adjournment at 7:58 pm, so neither is listed as a vote. No public comment period is recorded. The Clerk's attendance at the meeting is not stated; her name appears only in the closing signature line. The Special Olympics representatives are not named in the text.",
+ "cost_usd": 0.014427770000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and colleen shapiro"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and colleen shapiro"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and colleen shapiro"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "a. clement stated she has a copy of their liability policy."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris Ruth to take the Commission's Capital Plan project list to the Town Manager for discussion.",
+   "quote": "c. ruth asked the commission to send over their list and he will talk it over with the town manager."
+  },
+  {
+   "decision": "Next meeting set for October 18, 2023 at 7 pm.",
+   "quote": "last item on the agenda: next meeting, october 18, 2023 at 7 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Special Olympics field use fee",
+   "what_was_recorded": "Chris Ruth asked whether the Commission would waive the fee for the Special Olympics field use; no amount is printed and the minutes record the fee waiver in the motion context only.",
+   "figures_as_printed": [],
+   "quote": "c. ruth asked if the commission would be willing to waive the fee."
+  },
+  {
+   "topic": "Capital Plan: McNally and Northfield",
+   "what_was_recorded": "Lockwood said McNally was not funded last year and that Northfield should be added to the Capital Plan; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood indicated mcnally was not funded last year and northfield should be added to the capital plan."
+  },
+  {
+   "topic": "Grant received at prior Town Meeting",
+   "what_was_recorded": "Lockwood stated that a prior grant amount was received at a Town Meeting the year before.",
+   "figures_as_printed": [
+    "$184,000"
+   ],
+   "quote": "a. lockwood stated $184,000 was received at a town meeting last year."
+  },
+  {
+   "topic": "Special Town Meeting warrant appropriation",
+   "what_was_recorded": "Lockwood said a Town Meeting vote is needed to appropriate the full project cost for the grant and to dedicate land to Chapter 45; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood stated a town meeting vote is needed to appropriate the 100% of the total cost project and to dedicate the land to chapter 45."
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "Lockwood indicated ARPA funds do not need a Town Meeting vote; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood indicated arpa funds do not need a town meeting vote."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "received updates; no action",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "facilities",
+    "maintenance",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Special Olympic Request Use of Fields",
+   "resolution": "approved 3-0 (Fitzgerald Field, six Sundays through November 5, 2023)",
+   "quote": "next item on the agenda, special olympic request use of fields",
+   "tags": [
+    "special olympics",
+    "field use",
+    "fee waiver"
+   ]
+  },
+  {
+   "topic": "Capital Plan Projects",
+   "resolution": "discussed; Ruth to take list to Town Manager",
+   "quote": "next item on the agenda, capital plan projects",
+   "tags": [
+    "capital plan",
+    "mcnally",
+    "northfield",
+    "fitzgerald"
+   ]
+  },
+  {
+   "topic": "Beach House Work: Removal old carpet work",
+   "resolution": "volunteer lead offered; no vote",
+   "quote": "next item on the agenda, beach house work: removal old carpet work",
+   "tags": [
+    "beach house",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Warrant",
+   "resolution": "discussed; no action",
+   "quote": "next item on the agenda, special town meeting warrant",
+   "tags": [
+    "town meeting",
+    "grant",
+    "chapter 45",
+    "arpa"
+   ]
+  },
+  {
+   "topic": "Skate Park Update",
+   "resolution": "no action; groundbreaking deferred to spring",
+   "quote": "next item on the agenda, skate park update",
+   "tags": [
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "no action; appointment application received; joint meeting with Select Board October 10, 2023",
+   "quote": "next item on the agenda, chair updates",
+   "tags": [
+    "appointments",
+    "select board",
+    "little league"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "none listed",
+   "quote": "next item on the agenda, approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for October 18, 2023 at 7 pm",
+   "quote": "last item on the agenda: next meeting, october 18, 2023 at 7 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "special olympics",
+  "fitzgerald field",
+  "capital plan",
+  "beach house",
+  "town meeting warrant",
+  "skate park",
+  "fee waiver",
+  "grant",
+  "arpa",
+  "facilities",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

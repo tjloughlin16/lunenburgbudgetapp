@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2023-11-20",
  "docid": "4086",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from October 23, 2023 meeting",
+   "motion": "Approve the minutes of the October 23, 2023 meeting.",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Chris Menard",
-   "outcome": "passed 4-1",
+   "outcome": "passed 4 to 1",
    "procedural": true,
    "quote": "motion to approve minutes from the october 23, 2023, meeting by peter beardmore, seconded by chris menard. vote 4 to 1."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Brenner",
    "seconded_by": "Peter Beardmore",
    "outcome": "passed",
@@ -29,6 +29,377 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0769235
+ "note": "Readable digital text, not a scan. Attendance comes from the 'Present Members' line; the minutes print no absences. The 4 to 1 minutes vote does not name who dissented, and no roll call is recorded. Dollar figures are capital requests as printed in the School Department presentation, not appropriations or votes to fund them. The Phase 4 figure is printed as '1.2 million' with no dollar sign, and the HVAC and fire suppression figures are printed in millions. The minutes name no fund for most items, and the 3M film total is printed with three school sub-amounts.",
+ "cost_usd": 0.01774277,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair tom alonzo, clerk peter beardmore, planning board representative matt brenner, finance committee member chris menard, board member dave passios"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair tom alonzo, clerk peter beardmore, planning board representative matt brenner, finance committee member chris menard, board member dave passios"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "present members: chair tom alonzo, clerk peter beardmore, planning board representative matt brenner, finance committee member chris menard, board member dave passios"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "present members: chair tom alonzo, clerk peter beardmore, planning board representative matt brenner, finance committee member chris menard, board member dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair tom alonzo, clerk peter beardmore, planning board representative matt brenner, finance committee member chris menard, board member dave passios"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Public speaker, 181 reservoir road",
+   "status": "present",
+   "quote": "rhonda lisio- 181 reservoir road- rhonda addresses the problems with drainage wells on her street."
+  },
+  {
+   "name": "Dr. Kathleen Burnham",
+   "role": "Speaker, School Department presentation",
+   "status": "present",
+   "quote": "speakers present: dr. kathleen burnham, business manager michael cassidy, director of facilities and grounds eric hevy."
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "speakers present: dr. kathleen burnham, business manager michael cassidy, director of facilities and grounds eric hevy."
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Director of Facilities and Grounds",
+   "status": "present",
+   "quote": "speakers present: dr. kathleen burnham, business manager michael cassidy, director of facilities and grounds eric hevy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair asked each member to email him the other committees they sit on, so meetings can be scheduled without conflict.",
+   "quote": "tom alonzo requests that each member send him an email with what other committees they are on to better scheduled without conflict."
+  },
+  {
+   "decision": "Next meeting set for November 29 at 6 PM for the Facilities presentation.",
+   "quote": "the next meeting is scheduled for november 29th at 6 pm for the facilities presentation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf field: Phase 1 initial assessment (ARPA-funded)",
+   "what_was_recorded": "Phase 1 initial assessment of the middle high school turf field, stated as funded through ARPA.",
+   "quote": "phase 1: initial assessment that is being funded through arpa funding: $50,000",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Turf field: Phase 2 engineering survey",
+   "what_was_recorded": "Phase 2 detailed engineering survey requested for FY 25.",
+   "quote": "b. phase 2 fy 25: detailed engineering survey with recommendations: $200,000",
+   "figures_as_printed": [
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "Turf field: Phase 3 rehabilitation",
+   "what_was_recorded": "Phase 3 extensive rehabilitation and construction requested for FY 26.",
+   "quote": "c. phase 3 fy 26: extensive rehabilitation and construction projects recommend from the feasibility study: $300,000",
+   "figures_as_printed": [
+    "$300,000"
+   ]
+  },
+  {
+   "topic": "Turf field: Phase 4 additional rehabilitation",
+   "what_was_recorded": "Phase 4 additional extensive rehabilitation and construction requested for FY 27; the figure is printed without a dollar sign.",
+   "quote": "d. phase 4 fy 27: additional extensive rehabilitation and construction projects recommend from the feasibility study: 1.2 million",
+   "figures_as_printed": [
+    "1.2 million"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: renovation study",
+   "what_was_recorded": "FY 25 study for renovations, assessments and schematic design.",
+   "quote": "fy 25: study for renovations, assessments, and schematic design: $275,000",
+   "figures_as_printed": [
+    "$275,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: window replacement plans",
+   "what_was_recorded": "FY 26 complete window replacement, plans only.",
+   "quote": "fy 26: complete window replacement (plans only): $290,000",
+   "figures_as_printed": [
+    "$290,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: classroom technology",
+   "what_was_recorded": "FY 26 classroom technology update.",
+   "quote": "fy 26: update classroom technology: $40,000",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: new roof",
+   "what_was_recorded": "FY 27 new roof.",
+   "quote": "fy 27: new roof: $625,000",
+   "figures_as_printed": [
+    "$625,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: building-wide HVAC",
+   "what_was_recorded": "FY 30 building-wide HVAC upgrade.",
+   "quote": "fy 30: hvac building wide upgrade: $4.349 million",
+   "figures_as_printed": [
+    "$4.349 million"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: fire suppression system",
+   "what_was_recorded": "FY 31 fire suppression system, which the minutes say does not currently exist in the building.",
+   "quote": "fy 31: fire suppression system (currently doesn't exist): $2.615 million",
+   "figures_as_printed": [
+    "$2.615 million"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: tile floor replacement",
+   "what_was_recorded": "FY 31 tile floor replacement.",
+   "quote": "fy 31: tile floor replacement: $225,000",
+   "figures_as_printed": [
+    "$225,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill: plumbing upgrades",
+   "what_was_recorded": "FY 31 building-wide plumbing upgrades; annual water testing is flagging elevated lead levels.",
+   "quote": "fy 31 plumbing upgrades building wide: $261,882",
+   "figures_as_printed": [
+    "$261,882"
+   ]
+  },
+  {
+   "topic": "Primary School: playground equipment designer",
+   "what_was_recorded": "FY 25 designer service for playground equipment.",
+   "quote": "fy 25: designer service for playground equipment: $30,000",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Primary School: entry and driveway feasibility study",
+   "what_was_recorded": "FY 25 feasibility study for entry and driveway expansion.",
+   "quote": "fy 25: feasibility study for entry and driveway expansion: $30,000",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Primary School: classroom AC units, Phase 2",
+   "what_was_recorded": "FY 25 classroom AC units, Phase 2.",
+   "quote": "fy 25: classroom ac units' phase 2: $160,000",
+   "figures_as_printed": [
+    "$160,000"
+   ]
+  },
+  {
+   "topic": "Primary School: gas condensing boilers (plans)",
+   "what_was_recorded": "FY 26 gas condensing boilers, plans only.",
+   "quote": "fy 26: gas condensing boilers (plans only): $30,000",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Primary School: accessible playground equipment",
+   "what_was_recorded": "FY 27 age-appropriate and accessible playground equipment.",
+   "quote": "fy 27: age appropriate and accessible playground equipment: $170,000",
+   "figures_as_printed": [
+    "$170,000"
+   ]
+  },
+  {
+   "topic": "Primary School: driveway and parking expansion",
+   "what_was_recorded": "FY 27 driveway and parking expansion.",
+   "quote": "fy 27: driveway and parking expansion: $175,000",
+   "figures_as_printed": [
+    "$175,000"
+   ]
+  },
+  {
+   "topic": "All schools: 3M window safety film",
+   "what_was_recorded": "FY 25 installation of 3M window safety film, totalling a sum split across three buildings.",
+   "quote": "fy 25: installation of 3m window safety film totaling: $130,000",
+   "figures_as_printed": [
+    "$130,000",
+    "$38,120",
+    "$33,569",
+    "$42,618"
+   ]
+  },
+  {
+   "topic": "All schools: 1-ton dump truck with plow",
+   "what_was_recorded": "FY 25 replacement of a 1-ton dump truck with plow for maintenance and grounds.",
+   "quote": "fy 25: replace 1-ton dump truck with plow for maintenance and grounds: $74,500",
+   "figures_as_printed": [
+    "$74,500"
+   ]
+  },
+  {
+   "topic": "All schools: pickup truck with plow",
+   "what_was_recorded": "FY 27 replacement of a ¾ ton or 1-ton pickup truck with plow.",
+   "quote": "fy 27: replace ¾ ton or 1-ton pickup truck with plow: $72,000",
+   "figures_as_printed": [
+    "$72,000"
+   ]
+  },
+  {
+   "topic": "All schools: 13-person passenger van",
+   "what_was_recorded": "FY 29 13-person passenger van for athletics, student groups and miscellaneous use.",
+   "quote": "fy 29: 13-person passenger van for athletics, student groups and misc. use.: $40,000",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "All schools: lawnmower replacement",
+   "what_was_recorded": "FY 33 lawnmower replacement.",
+   "quote": "fy 33: replace lawnmower: $55,000",
+   "figures_as_printed": [
+    "$55,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 reservoir road",
+   "topic": "drainage wells and asphalt berm on her street",
+   "quote": "rhonda addresses the problems with drainage wells on her street."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "CPC Members",
+   "topic": "appreciation of Tom Alonzo's statement on Article 4",
+   "quote": "peter beardmore states that he appreciated tom alonzo's statement at the special town meeting regarding article 4."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened at 7:00PM",
+   "quote": "the meeting opened at 7:00pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (Rhonda Lisio, drainage)",
+   "resolution": "heard; suggestion that Stormwater and the planning board meet",
+   "quote": "there is a suggestion that stormwater and the planning board meet to discuss.",
+   "tags": [
+    "drainage",
+    "stormwater",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Presentation of Capital Planning Requests: School Department",
+   "resolution": "presented",
+   "quote": "the presentation was split into 10-year plans by building.",
+   "tags": [
+    "capital requests",
+    "school department",
+    "facilities",
+    "turf field",
+    "Turkey Hill Elementary",
+    "Primary School"
+   ]
+  },
+  {
+   "topic": "Discussion of Capital Planning Requests",
+   "resolution": "no action",
+   "quote": "there was no additional discussion regarding capital planning requests.",
+   "tags": [
+    "capital requests"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes (October 23, 2023)",
+   "resolution": "approved 4 to 1",
+   "quote": "motion to approve minutes from the october 23, 2023, meeting by peter beardmore, seconded by chris menard. vote 4 to 1.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Action Items for Next Meeting",
+   "resolution": "chair asked members to email committee memberships",
+   "quote": "tom alonzo requests that each member send him an email with what other committees they are on to better scheduled without conflict.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Confirm Subsequent CPC Meetings",
+   "resolution": "next meeting set for November 29 at 6 PM",
+   "quote": "the next meeting is scheduled for november 29th at 6 pm for the facilities presentation.",
+   "tags": [
+    "scheduling",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Public Comment (public and CPC members)",
+   "resolution": "no public comment; member remark",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned; closed at 9:30 PM",
+   "quote": "the meeting closed at 9:30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school department",
+  "capital requests",
+  "facilities",
+  "turf field",
+  "drainage",
+  "stormwater",
+  "Turkey Hill Elementary",
+  "Primary School",
+  "Middle High School",
+  "ARPA",
+  "MSBA grants",
+  "minutes approval",
+  "scheduling"
+ ],
+ "dropped_unquoted_by_field": {}
 }

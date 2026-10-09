@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-10-10",
  "docid": "422",
@@ -12,56 +12,386 @@
  },
  "votes": [
   {
-   "motion": "Allow a dog grooming business at 1295 Mass. Ave with any additional flow included",
+   "motion": "Allow a dog grooming business at 1295 Mass. Ave (unknown unit #) with any additional flow included.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike Mackin",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: brett r. second: mike mackin to allow a dog grooming business at 1295 ma ss. ave (unknown unit # ) with any additional flow included. roll call vote: dave-aye, brett-aye, mike m.-aye, and john -aye."
+   "quote": "to allow a dog grooming business at 1295 ma ss. ave (unknown unit # ) with any additional flow included. roll call vote: dave-aye, brett-aye, mike m.-aye, and john -aye."
   },
   {
-   "motion": "Approve the minutes of the 9/26/23 Sewer Commission meeting",
+   "motion": "Approve the minutes of the 9/26/23 Sewer Commission meeting.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike m. second: brett r. to approve the 9/26/23 sewer commission meeting. roll call vote: dave-aye, mike m.-aye, brett-aye, and john -aye."
+   "quote": "to approve the 9/26/23 sewer commission meeting. roll call vote: dave-aye, mike m.-aye, brett-aye, and john -aye."
   },
   {
-   "motion": "Approve the sewer extension proposal at 10 Ramgren Rd with manhole at midpoint, Y connection, stub for future connections, and two 45-degree bends from the house",
+   "motion": "Approve the 10 Ramgren Rd. sewer extension proposal, with stipulations: manhole moved to midpoint of property, a Y connection at the street, a stub for future connections, and two 45s out of the house.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Dave M.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike mackin second: dave m. to approve the proposal, with stipulations that the manhole be moved to the midpoint of the property , a y connection be added at the street, a stub for future connections, and two 45's coming out of the house . roll call vote: dave-aye, brett-aye, mike m.-aye, and john -aye."
+   "quote": "to approve the proposal, with stipulations that the manhole be moved to the midpoint of the property , a y connection be added at the street"
   },
   {
-   "motion": "Give the landlord and tenant at 1 Main St. sixty days to have an engineer determine whether a larger interior grease trap can solve the grease problem, or otherwise require an external grease trap",
+   "motion": "Give the property owner and tenant of 1 Main St. 60 days to have an engineer determine whether a larger interior grease trap will keep all grease out of the sewer; if not, an external grease trap will be required.",
    "moved_by": "Mike M.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: dave m. the commission is giving the property owner and tenant 60 days to have an engineer determine whether a larger interior grease trap is going to do the job of keeping all grease out of our sewer system. if not, we will require an external grease trap. roll call vote: dave-aye, mike m.-aye, and brett-aye"
+   "quote": "the commission is giving the property owner and tenant 60 days to have an engineer determine whether a larger interior grease trap is going to do the job"
   },
   {
-   "motion": "Direct the Chair to draft a letter to the Personnel Committee regarding the Sewer Business Manager position rating and its complexity",
+   "motion": "Have the Chair communicate to the Personnel Committee the concern that the Sewer Business Manager job is not considered an outlier under the current formula; the Chair will draft a letter for all members' signatures.",
    "moved_by": "Mike M.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: dave m. to have the chair communicate to the personnel committee our concerns that the job of the sewer business manager is not considered an outlier in terms of the current formula for reconsideration . our concern is due to the scope and complexity of the responsibilities that due con sideration should be looked at to consider it to be an outlier and examine ways to rectify that. mike amended his motion to add \"that the chair will draft it for all their signatures\". paula rephrased the motion \"john will draft a letter for approval and signature b",
-   "quote_taken_from_text": true
+   "quote": "to have the chair communicate to the personnel committee our concerns that the job of the sewer business manager is not considered an outlier"
   },
   {
-   "motion": "Adjourn the meeting at 8:10 pm",
+   "motion": "Adjourn the meeting at 8:10pm.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike mackin second: brett r. to adjourn at 8:10pm roll call vote: dave-aye, brett-aye, mike m.-aye, and john -aye."
+   "quote": "to adjourn at 8:10pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded with clear motion, mover, seconder, and roll call votes. Note: Votes 4 and 5 show only three commissioners voting (John Reynolds lost signal during the grease trap discussion and was also absent from the Business Manager rating vote).",
- "cost_usd": 0.1193991
+ "note": "Clean clerk's minutes with no scan or missing pages. Vote counts are not printed as totals; each outcome is 'passed' from the roll-call ayes listed for that motion. Withdrawn and amended motions on 1 Main St. are not recorded as votes, only the final motion, which has a roll call. Chair John Reynolds lost signal during the 1 Main St. discussion and Brett Ramsden took over. Dave's opening public comment comes from a Commission member. The transfers item records two Town Meeting transfer articles with no amounts printed, so the transfers list is empty. Jack Rodriquenz is named only as a past inspector and is not listed as an attendee.",
+ "cost_usd": 0.02300197,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike nault"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Appointment – Dog Grooming Business, 1325 Mass. Avenue",
+   "status": "present",
+   "quote": "appointments - dan proctor - 1325 mass. avenue -dog grooming business"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "greg noted he is representing the applicant and paula screen-shared the plan."
+  },
+  {
+   "name": "Chris MacKensie",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "greg roy and chris mackensie (dillis & roy) - sewer extension request 10 ramgren rd"
+  },
+  {
+   "name": "Al Wernick",
+   "role": "tenant at 1 Main St.",
+   "status": "present",
+   "quote": "had talked to his tenant (al wernick) and bill b. (dpw)"
+  },
+  {
+   "name": "Philip Arcidiacono",
+   "role": "representing Lunenburg Village Realty",
+   "status": "present",
+   "quote": "philip stated he is representing lunenburg village realty"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula to send an email to Mike N. and Dave to set a time to meet on the Leominster Intermunicipal Agreement negotiations.",
+   "quote": "dave asked paula to send an email to mike n. and himself to set a time to meet."
+  },
+  {
+   "decision": "Commission confirmed it would vote to assess the 711 Mass. Ave. privilege fee and then allow it to be apportioned after the project is permitted.",
+   "quote": "john and dave confirmed that. the project will come before the commission"
+  },
+  {
+   "decision": "Office to send a courtesy letter to neighbors on 10 Ramgren Rd. after completion; Paula to check the regulations.",
+   "quote": "john suggested the office send a courtesy letter to neighbors after completion and paula will check the regs."
+  },
+  {
+   "decision": "Robert and Wade invited to attend the 11/14 meeting; Paula to call them.",
+   "quote": "paula invited robert and wade to attend the 11/14 meeting. dave suggested paula call them also."
+  },
+  {
+   "decision": "Dave's motion on 1 Main St. withdrawn and the first motion rescinded before the final motion was voted.",
+   "quote": "paula noted they need to rescind the 1st motion and dave withdrew his motion."
+  },
+  {
+   "decision": "Al Wernick to forward the professionally cleaned grease trap report to the Commission.",
+   "quote": "paula asked al to forward the report when it is professionally cleaned and al said he will"
+  },
+  {
+   "decision": "Paula to schedule the next 1 Main St. date after the engineer's report is received.",
+   "quote": "paula said she will schedule the next date after they receive the engineer's report."
+  },
+  {
+   "decision": "Commission asked that the Personnel Committee know they want to see the final draft of the Sewer Business Manager job description and give input.",
+   "quote": "dave and brett stated the personnel committee should know they would like to see the final draft and give input."
+  },
+  {
+   "decision": "Fall Town Meeting night (11/14) meeting moved to 11/13 by consensus.",
+   "quote": "dave suggested moving the meeting to 11/13 and all agreed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Control panels, Francis St. and West St.",
+   "what_was_recorded": "Paula is waiting for a quote on control panels at Francis St. and West St., which were quoted at $8K each last year.",
+   "figures_as_printed": [
+    "$8K"
+   ],
+   "quote": "paula is waiting for a quote on those and noted they were quoted at $8k each last year."
+  },
+  {
+   "topic": "Sewer Business Manager rating",
+   "what_was_recorded": "Paula said the position manages a budget over $1 million and is rated below a van driver or seasonal cemetery worker.",
+   "figures_as_printed": [
+    "$1Mil."
+   ],
+   "quote": "in this position where she is dealing with a budget over $1mil., she is rated less than a van driver"
+  },
+  {
+   "topic": "Delinquent sewer bills",
+   "what_was_recorded": "Delinquency rate reported at 21%, then 19% after 22 payments; 415 bills outstanding since 2017. No dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "total, there are 415 bills outstanding, beginning in 2017."
+  },
+  {
+   "topic": "711 Mass. Ave. privilege fee",
+   "what_was_recorded": "The developer of an 8-townhome project asked to apportion the privilege fee over 10 years. No dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "they are looking to apportion the privilege fee over 10 years."
+  },
+  {
+   "topic": "1 Main St. grease trap costs",
+   "what_was_recorded": "Tenant said he spends a lot cleaning the internal grease trap and does not want to pay for an external trap on property he does not own; Dave said an external trap would pay for itself in a couple of years. No dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "al is spending a lot of money to clean the internal trap, where the external trap would pay for self in a couple of years."
+  },
+  {
+   "topic": "Town Meeting transfer articles",
+   "what_was_recorded": "The Commission has two Fall Town Meeting articles for transfers; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the commission has 2 articles for transfers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "prayers for allies in the Middle East; thanks to new member",
+   "quote": "public comment- dave asked to send prayers along to our allies in the middle east."
+  },
+  {
+   "speaker": "Dave",
+   "topic": "closing remarks on the meeting",
+   "quote": "public comment - dave said it was a good meeting and they got a lot done."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening public comment and announcements",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment- dave asked to send prayers along to our allies in the middle east."
+  },
+  {
+   "topic": "Dog grooming business, 1295 Mass. Ave.",
+   "resolution": "approved, with any additional flow",
+   "tags": [
+    "dog grooming",
+    "commercial connection",
+    "appointment"
+   ],
+   "quote": "appointments - dan proctor - 1325 mass. avenue -dog grooming business"
+  },
+  {
+   "topic": "Minutes of 9/26/23",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the 9/26/23 sewer commission meeting."
+  },
+  {
+   "topic": "Leominster Intermunicipal Agreement negotiations",
+   "resolution": "no action; meeting time to be set",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement"
+   ],
+   "quote": "leominster intermunicipal agreement negotiations - dave asked paula to send an email to mike n. and himself"
+  },
+  {
+   "topic": "System maintenance and upgrades",
+   "resolution": "reported; no action",
+   "tags": [
+    "SCADA",
+    "pump stations",
+    "CTE",
+    "capital plan"
+   ],
+   "quote": "1. system maintenance & upgrades - paula reported that cte had been good about checking in but they missed"
+  },
+  {
+   "topic": "Permits and privilege fee, 711 Mass. Ave.",
+   "resolution": "reported; procedure confirmed",
+   "tags": [
+    "permits",
+    "privilege fee",
+    "townhomes"
+   ],
+   "quote": "2. permits- paula reported there were 12 permits to connect in 2023"
+  },
+  {
+   "topic": "Sewer extension, 10 Ramgren Rd.",
+   "resolution": "approved with stipulations",
+   "tags": [
+    "sewer extension",
+    "Ramgren Rd",
+    "gravity sewer"
+   ],
+   "quote": "greg roy and chris mackensie (dillis & roy) - sewer extension request 10 ramgren rd"
+  },
+  {
+   "topic": "Grease trap, 1 Main St.",
+   "resolution": "approved: 60 days for engineer report on internal trap",
+   "tags": [
+    "grease trap",
+    "1 Main St",
+    "sewer backup",
+    "engineering report"
+   ],
+   "quote": "al wernick & philip arcidiacono - 1 main st. - grease trap"
+  },
+  {
+   "topic": "Software update and bill printing",
+   "resolution": "reported; no action",
+   "tags": [
+    "software",
+    "billing"
+   ],
+   "quote": "3. update on software - paula reported she has worked with a technician"
+  },
+  {
+   "topic": "Delinquency rate",
+   "resolution": "reported; no action",
+   "tags": [
+    "delinquency",
+    "billing",
+    "collections"
+   ],
+   "quote": "4. delinquency rate - paula noted the delinquency rate was 21%"
+  },
+  {
+   "topic": "Rating and classification of Sewer Business Manager position",
+   "resolution": "Chair to send letter to Personnel Committee (approved)",
+   "tags": [
+    "personnel",
+    "job classification",
+    "Personnel Committee"
+   ],
+   "quote": "5. rating & classification of sewer business manager position - paula sent an outline of her concerns"
+  },
+  {
+   "topic": "Assistant to Sewer Business Manager position",
+   "resolution": "reported; two interviews scheduled",
+   "tags": [
+    "hiring",
+    "personnel"
+   ],
+   "quote": "6. assistant to sewer business manager position - paula reported the person who was interested is no longer"
+  },
+  {
+   "topic": "Fall Town Meeting night meeting date",
+   "resolution": "moved to 11/13 by consensus",
+   "tags": [
+    "Town Meeting",
+    "meeting schedule"
+   ],
+   "quote": "dave suggested moving the meeting to 11/13 and all agreed."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "november 13 , 2023 @ 6pm - regular meeting, remote participation"
+  },
+  {
+   "topic": "Closing public comment and adjournment at 8:10pm",
+   "resolution": "adjourned at 8:10pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "public comment - dave said it was a good meeting and they got a lot done."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "DPW",
+  "grease trap",
+  "sewer extension",
+  "dog grooming",
+  "Leominster intermunicipal agreement",
+  "billing and delinquency",
+  "personnel and job classification",
+  "Town Meeting",
+  "permits and privilege fee",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

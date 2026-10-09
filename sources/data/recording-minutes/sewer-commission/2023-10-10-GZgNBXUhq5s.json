@@ -1,0 +1,637 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2023-10-10",
+ "video_id": "GZgNBXUhq5s",
+ "video_url": "https://www.youtube.com/watch?v=GZgNBXUhq5s",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2023-10-10-GZgNBXUhq5s.json",
+  "sha256": "67422cec0a5ff73546a97e6d85bcfb474a421e677c258f978c6bb2515c87b325",
+  "caption_lines": 363,
+  "segments": 2776
+ },
+ "recording": {
+  "duration_s": 7659,
+  "duration": "2:07",
+  "spoken_chars": 92868,
+  "words_approx": 15478
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10102023-422",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-10-10-agenda-422.txt",
+   "path": "sources/meetings/sewer-commission/2023-10-10-agenda-422.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10102023-422",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-10-10-minutes-422.txt",
+   "path": "sources/meetings/sewer-commission/2023-10-10-minutes-422.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T06:25:25Z",
+  "cost_usd": 0.362291
+ },
+ "minutes": {
+  "headline": "Sewer Commission gave One Main Street 60 days to prove a bigger interior grease trap works or else install an external one.",
+  "summary": "The commission approved a dog grooming business at 12295 Mass Ave and a sewer extension on Ramgren Road with stipulations. Most of the meeting was a dispute over grease buildup in the town sewer line near One Main Street, which ended in a 60-day engineering-report motion. The business manager also reported on system maintenance, billing and delinquencies, a job rating concern, and the next meeting date.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynold",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Brett Ramson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Jane",
+    "role": "recording secretary / clerk"
+   },
+   {
+    "name_as_heard": "Greg Roy",
+    "role": "presenter (engineer, Dillon Roy)"
+   },
+   {
+    "name_as_heard": "Chris McKenzie",
+    "role": "presenter (engineer)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 7527,
+    "topic": "Public comment was called at the end; no members of the public remained to speak."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "facilities",
+   "fees",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 874,
+    "motion": "Approve a dog grooming business at 12295 Mass Ave, unit unknown, with any additional water flow.",
+    "moved_by": "Dave McDonald",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1000,
+    "motion": "Approve the minutes of the 9/26 Sewer Commission meeting.",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3237,
+    "motion": "Approve the 10 Ramgren Road sewer extension with stipulations: manhole moved to midpoint of property, a Y connection, a stub for future connection, and two 45-degree bends.",
+    "moved_by": "Mike Mackin",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5183,
+    "motion": "Require landlord and tenant to place an external grease trap at One Main Street (later withdrawn).",
+    "moved_by": "Dave McDonald",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 6416,
+    "motion": "Give the property owner and tenant 60 days to have an engineer determine whether a larger interior grease trap will keep grease out of the sewer; if not, an external trap will be required.",
+    "moved_by": "Mike Mackin",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7088,
+    "motion": "Chair to draft a letter, signed by all members, to the Personnel Board about the sewer business manager position not being treated as an outlier.",
+    "moved_by": "Mike Mackin",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7591,
+    "motion": "Adjourn the meeting.",
+    "moved_by": "Mike Mackin",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1250,
+    "topic": "Control panel replacements at Francis Street and West Street pumping stations",
+    "what_was_said": "Business manager awaiting updated quotes; last year's estimate was given per panel.",
+    "figures_as_heard": [
+     "$8,000 each"
+    ]
+   },
+   {
+    "t": 1483,
+    "topic": "Privilege fee for proposed eight town home project on Mass Ave",
+    "what_was_said": "Developer wants to apportion the privilege fee over ten years; the commission votes to assess it and the apportionment follows after permitting.",
+    "figures_as_heard": [
+     "10-year period"
+    ]
+   },
+   {
+    "t": 662,
+    "topic": "Additional sewer fees for dog grooming use",
+    "what_was_said": "Change of use from the approved retail and storage will trigger additional fees because of flow.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6628,
+    "topic": "Sewer bill delinquencies",
+    "what_was_said": "Delinquency rate fell after reminder bills were sent and some were paid; older outstanding bills remain.",
+    "figures_as_heard": [
+     "21 or 22%",
+     "193 bills",
+     "22 of those bills",
+     "19%",
+     "80 bills",
+     "415 bills"
+    ]
+   },
+   {
+    "t": 6774,
+    "topic": "Sewer business manager job rating",
+    "what_was_said": "Business manager says the position manages a large budget yet is rated below other town jobs.",
+    "figures_as_heard": [
+     "over a million dollar budget"
+    ]
+   },
+   {
+    "t": 4573,
+    "topic": "Cost of grease trap maintenance and external trap",
+    "what_was_said": "Tenant cannot afford an external trap; professional cleaning costs are cited and an external trap would pay for itself over time.",
+    "figures_as_heard": [
+     "$500 a pop"
+    ]
+   },
+   {
+    "t": 7321,
+    "topic": "Special town meeting articles",
+    "what_was_said": "Two articles to move money into various funds are before town meeting.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1083,
+    "decision": "Business manager to email subcommittee members to set a date at the DPW for the IMA discussion; subcommittee meetings need open meeting law posting and minutes."
+   },
+   {
+    "t": 1418,
+    "decision": "Business manager to phone the CTE owner about missing updates and reports; CTE staff asked to attend the first November meeting."
+   },
+   {
+    "t": 3332,
+    "decision": "A courtesy letter will go from the office to neighbors on Ramgren Road after the line is complete; staff to check the regulation on extending to the property midpoint."
+   },
+   {
+    "t": 7384,
+    "decision": "The November meeting is moved to Monday November 13 at 6 PM; the late October meeting is on November 28 per a corrected agenda."
+   },
+   {
+    "t": 6500,
+    "decision": "The One Main Street 60-day report will be scheduled on the agenda once received."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 204,
+    "topic": "Call to order, pledge, roll call, open meeting law notice",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 204,
+    "t_end": 372,
+    "topic": "Announcements and informal chat",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 372,
+    "t_end": 940,
+    "topic": "Dog grooming business at 12295 Mass Ave (Dan Proctor)",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "planning-and-zoning",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 940,
+    "t_end": 1041,
+    "topic": "Approval of minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1041,
+    "t_end": 1167,
+    "topic": "Intermunicipal agreement negotiations subcommittee",
+    "resolution": "referred",
+    "tags": [
+     "water-sewer",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1167,
+    "t_end": 1609,
+    "topic": "Business manager report: system maintenance, CTE reports, permits to connect, proposed town homes",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "facilities",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1609,
+    "t_end": 3416,
+    "topic": "10 Ramgren Road sewer extension (Greg Roy)",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3416,
+    "t_end": 6544,
+    "topic": "One Main Street grease trap/interceptor",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6544,
+    "t_end": 6672,
+    "topic": "Billing software conversion and delinquencies",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 6672,
+    "t_end": 7216,
+    "topic": "Rating and classification of sewer business manager",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 7216,
+    "t_end": 7527,
+    "topic": "Assistant hire update and meeting schedule",
+    "resolution": "decided",
+    "tags": [
+     "hiring",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 7527,
+    "t_end": 7655,
+    "topic": "Public comment, closing remarks, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts were mostly announced by name as 'hi'/'I' and not in tally form.",
+   "The outcome of the first One Main Street motion and amendment was not voted; they were withdrawn.",
+   "Whether the first motion on the dog grooming business included the unit number was unclear.",
+   "Exact figures for delinquency and bill counts are caption-rendered and may be wrong.",
+   "The chair's connection dropped several times and parts of his remarks were lost."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission gave the owner and tenant of One Main Street 60 days to have an engineer decide whether a larger interior grease trap works, or an external trap will be required.",
+    "t": 6416
+   },
+   {
+    "line": "An earlier motion to require an external grease trap at One Main Street was withdrawn before a vote.",
+    "t": 5183
+   },
+   {
+    "line": "The commission approved the 10 Ramgren Road sewer extension with stipulations on the manhole, a Y connection, a stub for future connection and two 45-degree bends.",
+    "t": 3237
+   },
+   {
+    "line": "A dog grooming business at 12295 Mass Ave was approved, with a change of use that the commission said will trigger additional sewer fees because of flow.",
+    "t": 874
+   },
+   {
+    "line": "The commission voted to have the chair draft a letter, signed by all members, asking the Personnel Board not to treat the sewer business manager position as an outlier.",
+    "t": 7088
+   }
+  ],
+  "why_it_matters": [
+   "Grease in the town sewer line near One Main Street is a maintenance problem for the whole system, and who pays for a trap or for cleaning falls on the property owner and tenant first.",
+   "New connections and changes of use, such as the Ramgren Road extension and the grooming business, carry stipulations and sewer fees that set what those properties pay to use the system."
+  ],
+  "watch_next": [
+   "The engineering report on One Main Street, due within 60 days, will be put on the agenda once received.",
+   "The November meeting moved to Monday, November 13, at 6 PM, per the corrected agenda."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T06:25:34Z",
+   "cost_usd": 0.222435
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10102023-422",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-10-10-minutes-422.txt",
+   "path": "sources/meetings/sewer-commission/2023-10-10-minutes-422.pdf"
+  },
+  "official_sha256": "23111875840ca1515774f355ef2f3460a143bbe6e30964ac6513edb3ecb31ae0",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the four main votes (dog grooming, 10 Ramgren Rd, 1 Main St. 60-day trap, Personnel letter) and mostly on decisions, with the differences coming from caption misspellings of names and addresses. The thing to check is the dog grooming address: our captions say 12295 Mass Ave, while the official minutes give 1295 in the vote but 1325 in the appointment line, so the town's own record is inconsistent.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Dog grooming business address (vote)",
+    "ours": "Approve a dog grooming business at 12295 Mass Ave, unit unknown, with any additional water flow.",
+    "official": "to allow a dog grooming business at 1295 ma ss. ave (unknown unit # ) with any additional flow included. roll call vote: dave-aye, brett-aye, mike m.-aye, and john -aye.",
+    "official_reading": "1295 Mass. Ave",
+    "note": "Same vote and outcome; the captions' extra digit gives 12295, though the official minutes' own appointment line says 1325 Mass. Avenue, so the true address should be checked.",
+    "t": 874
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dog grooming address inside the official minutes",
+    "ours": "12295 Mass Ave",
+    "official": "appointments - dan proctor - 1325 mass. avenue -dog grooming business",
+    "note": "The official minutes give 1295 in the vote and 1325 in the attendee line; check the application or agenda for the correct street number.",
+    "t": 874
+   },
+   {
+    "kind": "agree",
+    "about": "10 Ramgren Rd sewer extension vote",
+    "ours": "Approve the 10 Ramgren Road sewer extension with stipulations: manhole moved to midpoint of property, a Y connection, a stub for future connection, and two 45-degree bends.",
+    "official": "to approve the proposal, with stipulations that the manhole be moved to the midpoint of the property , a y connection be added at the street",
+    "note": "Both record it as passed with the same stipulations.",
+    "t": 3237
+   },
+   {
+    "kind": "agree",
+    "about": "1 Main St grease trap 60-day vote",
+    "ours": "Give the property owner and tenant 60 days to have an engineer determine whether a larger interior grease trap will keep grease out of the sewer; if not, an external trap will be required.",
+    "official": "the commission is giving the property owner and tenant 60 days to have an engineer determine whether a larger interior grease trap is going to do the job",
+    "note": "Same motion and outcome (passed).",
+    "t": 6416
+   },
+   {
+    "kind": "agree",
+    "about": "Letter to Personnel Board/Committee on business manager outlier",
+    "ours": "Chair to draft a letter, signed by all members, to the Personnel Board about the sewer business manager position not being treated as an outlier.",
+    "official": "to have the chair communicate to the personnel committee our concerns that the job of the sewer business manager is not considered an outlier",
+    "note": "Same vote and outcome; body is called Personnel Board in ours and Personnel Committee in the official minutes.",
+    "t": 7088
+   },
+   {
+    "kind": "discrepancy",
+    "about": "External grease trap motion at One Main Street, later withdrawn",
+    "ours": "Require landlord and tenant to place an external grease trap at One Main Street (later withdrawn). — not audible",
+    "official": "paula noted they need to rescind the 1st motion and dave withdrew his motion.",
+    "note": "We could not hear the outcome; the official minutes only say a motion was rescinded and another withdrawn, so check which motion passed or failed first and whether a vote was taken.",
+    "t": 5183
+   },
+   {
+    "kind": "caption_error",
+    "about": "Control panel cost",
+    "ours": "Control panel replacements at Francis Street and West Street pumping stations: $8,000 each",
+    "official": "paula is waiting for a quote on those and noted they were quoted at $8k each last year.",
+    "official_reading": "$8K each",
+    "note": "Same figure; ours omits that it was last year's quote and a new quote is pending.",
+    "t": 1250
+   },
+   {
+    "kind": "agree",
+    "about": "Privilege fee period",
+    "ours": "Privilege fee for proposed eight town home project on Mass Ave: 10-year period",
+    "official": "they are looking to apportion the privilege fee over 10 years.",
+    "note": "Same 10-year apportionment.",
+    "t": 1483
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer business manager rating, budget over $1 million",
+    "ours": "Sewer business manager job rating: over a million dollar budget",
+    "official": "in this position where she is dealing with a budget over $1mil., she is rated less than a van driver",
+    "note": "Same figure.",
+    "t": 6774
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Delinquent sewer bill figures",
+    "ours": "Sewer bill delinquencies: 21 or 22%, 193 bills, 22 of those bills, 19%, 80 bills, 415 bills",
+    "official": "total, there are 415 bills outstanding, beginning in 2017.",
+    "note": "Both have 415 total, 21% and 19%; ours also has 193 and 80 bills that the official minutes do not print, so check the recording.",
+    "t": 6628
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Grease trap cost",
+    "ours": "Cost of grease trap maintenance and external trap: $500 a pop",
+    "official": "al is spending a lot of money to clean the internal trap, where the external trap would pay for self in a couple of years.",
+    "note": "Ours has a $500 figure; the official minutes print no dollar amount, so check the recording for who said it.",
+    "t": 4573
+   },
+   {
+    "kind": "agree",
+    "about": "Subcommittee meeting for Leominster IMA",
+    "ours": "Business manager to email subcommittee members to set a date at the DPW for the IMA discussion; subcommittee meetings need open meeting law posting and minutes.",
+    "official": "dave asked paula to send an email to mike n. and himself to set a time to meet.",
+    "note": "Same action; ours adds the DPW location and open meeting law note.",
+    "t": 1083
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Call to CTE owner about missing reports",
+    "ours": "Business manager to phone the CTE owner about missing updates and reports; CTE staff asked to attend the first November meeting.",
+    "official": "",
+    "note": "The official minutes list Robert and Wade attending the 11/14 meeting, which may be the same people, but CTE is not named.",
+    "t": 1418
+   },
+   {
+    "kind": "agree",
+    "about": "Courtesy letter to Ramgren Rd neighbors",
+    "ours": "A courtesy letter will go from the office to neighbors on Ramgren Road after the line is complete; staff to check the regulation on extending to the property midpoint.",
+    "official": "john suggested the office send a courtesy letter to neighbors after completion and paula will check the regs.",
+    "note": "Same decision.",
+    "t": 3332
+   },
+   {
+    "kind": "discrepancy",
+    "about": "November meeting date change",
+    "ours": "The November meeting is moved to Monday November 13 at 6 PM; the late October meeting is on November 28 per a corrected agenda.",
+    "official": "dave suggested moving the meeting to 11/13 and all agreed.",
+    "note": "Both move the meeting to 11/13; the official minutes do not mention the 6 PM time or November 28, so check the recording.",
+    "t": 7384
+   },
+   {
+    "kind": "agree",
+    "about": "1 Main St report scheduling",
+    "ours": "The One Main Street 60-day report will be scheduled on the agenda once received.",
+    "official": "paula said she will schedule the next date after they receive the engineer's report.",
+    "note": "Same decision.",
+    "t": 6500
+   },
+   {
+    "kind": "only_in_official",
+    "about": "711 Mass Ave privilege fee decision",
+    "ours": "",
+    "official": "john and dave confirmed that. the project will come before the commission",
+    "note": "The official minutes record that the commission would assess the fee and allow apportionment after permitting; ours records only the 10-year period.",
+    "t": 1483
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Personnel Committee wants to see final job description",
+    "ours": "",
+    "official": "dave and brett stated the personnel committee should know they would like to see the final draft and give input.",
+    "note": "Not in our minutes.",
+    "t": 7088
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Meeting transfer articles",
+    "ours": "",
+    "official": "total, there are 415 bills outstanding, beginning in 2017.",
+    "note": "The official minutes list two Fall Town Meeting transfer articles (no amounts); ours has none. The quote is the nearest verbatim text because the official text is not checked here.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Al Wernick to forward grease trap report",
+    "ours": "",
+    "official": "paula asked al to forward the report when it is professionally cleaned and al said he will",
+    "note": "Not in our minutes.",
+    "t": 6500
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "John Reynold (chair)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw",
+    "official_reading": "John Reynolds",
+    "note": "Misheard spelling of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Dave McDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw",
+    "official_reading": "Dave MacDonald",
+    "note": "Spelling variant of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Brett Ramson",
+    "ours": "Brett Ramson (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike mackin, dpw",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname; official lists him as Vice-Chair.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager surname and clerk",
+    "ours": "Paula (business manager)",
+    "official": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "official_reading": "Paula Bertram",
+    "note": "Ours gives first name only; the official minutes also give Jane Ranley as minutes clerk.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer Chris McKenzie",
+    "ours": "Chris McKenzie (presenter (engineer))",
+    "official": "greg roy and chris mackensie (dillis & roy) - sewer extension request 10 ramgren rd",
+    "official_reading": "Chris MacKensie (Dillis & Roy)",
+    "note": "Spelling variant; the firm appears as Dillon Roy in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent clerk and other named attendees",
+    "ours": "",
+    "official": "absent: clerk- mike nault",
+    "note": "Mike Nault was recorded absent; Dan Proctor, Al Wernick and Philip Arcidiacono also appear only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T06:27:25Z",
+   "cost_usd": 0.26233300000000004
+  }
+ }
+}

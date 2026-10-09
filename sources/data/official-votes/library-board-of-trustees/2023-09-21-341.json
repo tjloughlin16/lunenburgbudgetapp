@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-09-21",
  "docid": "341",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of May 18, 2023 as amended",
+   "motion": "Accept the minutes of May 18, 2023, as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "dick made a motion to accept the minutes of may 18, 2023 as amended, seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed",
@@ -29,6 +29,215 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06934509999999999
+ "note": "Text extraction covers only pages 1-2 with content; pages 3-11 are blank in the extract, so it is not known whether they are scanned or empty. The attendance line lists eight people; only the Chairperson and Director are assigned roles in the minutes. Only two motions appear (approval of minutes and adjournment); the adjournment motion records no explicit vote count, so its outcome is inferred as 'passed' from the statement that the meeting was adjourned. No reserve fund or line-item transfers appear.",
+ "cost_usd": 0.014183169999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:53 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to send individual director evaluation forms, to be completed by November, with the evaluation done by December.",
+   "quote": "the evaluation should be done by december. harry will send out individual forms, to be completed by november."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 unexpended budget lines",
+   "what_was_recorded": "Some FY23 budget line items were not fully expended, about $12k, which returns to the general fund.",
+   "figures_as_printed": [
+    "$12k"
+   ],
+   "quote": "some budget line items for fy23 have not been fully expended, about $12k. money not spent goes back into the general fund."
+  },
+  {
+   "topic": "Money paid after June 30 not in report",
+   "what_was_recorded": "This month's report excludes money paid after June 30, which the director estimated at about $5k.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "this month's report does not include money paid after june 30 th which will be about $5k."
+  },
+  {
+   "topic": "ARPA teen room renovation",
+   "what_was_recorded": "The selectboard decided to fund three of the library's ARPA requests, including $120k for the teen room renovation.",
+   "figures_as_printed": [
+    "$120k"
+   ],
+   "quote": "the selectboard has decided to fund three of our arpa requests including $120k for the teen room renovation."
+  },
+  {
+   "topic": "Friends of LPL sign grant",
+   "what_was_recorded": "The Friends granted $10k for the library sign.",
+   "figures_as_printed": [
+    "$10k"
+   ],
+   "quote": "annual meeting was held in july they granted $10k for the sign."
+  },
+  {
+   "topic": "Friends book sale proceeds",
+   "what_was_recorded": "The last Friends book sale netted around $1900.",
+   "figures_as_printed": [
+    "$1900"
+   ],
+   "quote": "the last book sale netted around $1900."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Donna",
+   "stated_role": "member of the Cultural Council",
+   "topic": "Cultural Council artists-in-residence and ARPA funding",
+   "quote": "donna, who is also a member of the cultural council, mentioned cultural council funding for an artists-in-residence program at the high school."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "arpa",
+    "cultural council",
+    "high school"
+   ],
+   "quote": "donna, who is also a member of the cultural council, mentioned cultural council funding for an artists-in-residence program at the high school."
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended, unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "dick made a motion to accept the minutes of may 18, 2023 as amended, seconded by laura. the motion passed unanimously."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action recorded",
+   "tags": [
+    "budget",
+    "programs",
+    "staffing",
+    "arpa",
+    "facilities"
+   ],
+   "quote": "we are three months into fy24 and the budget is on schedule."
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "no update",
+   "tags": [
+    "investments"
+   ],
+   "quote": "no update. the funds have been stable."
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "continued; director to meet sign contractor",
+   "tags": [
+    "sign",
+    "facilities"
+   ],
+   "quote": "muir will meet with wass-arthur next week."
+  },
+  {
+   "topic": "Proctor Memorial Garden and Pocket Pollinator Update",
+   "resolution": "discussed; long-term maintenance plan requested",
+   "tags": [
+    "gardens",
+    "arpa",
+    "maintenance"
+   ],
+   "quote": "harry asked about funding for the maintenance of the gardens."
+  },
+  {
+   "topic": "Director's Evaluation Plan/Timing",
+   "resolution": "timeline set; forms to be sent",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ],
+   "quote": "the evaluation should be done by december."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; no action recorded",
+   "tags": [
+    "friends",
+    "fundraising"
+   ],
+   "quote": "annual meeting was held in july they granted $10k for the sign."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "received; no action recorded",
+   "tags": [
+    "master plan",
+    "staff"
+   ],
+   "quote": "dick wanted to point out that lydia's monthly report was excellent and she is doing a great job."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:50 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by dick. seconded by laura. meeting was adjourned at 8:50 p.m."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "arpa",
+  "friends of lpl",
+  "director evaluation",
+  "gardens",
+  "library sign",
+  "teen room",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

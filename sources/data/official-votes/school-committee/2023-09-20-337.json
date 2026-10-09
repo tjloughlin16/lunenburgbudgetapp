@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2023-09-20",
  "docid": "337",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to conduct strategy sessions in preparation for negotiations with nonunion personnel",
+   "motion": "Enter executive session for strategy sessions in preparation for negotiations with nonunion personnel or collective bargaining or contract negotiations with nonunion personnel.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,23 +20,342 @@
    "quote": "mr. beardmore makes a motion to enter executive session, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Approve regular session minutes from 8/28/23",
+   "motion": "Approve the minutes of the Regular Session of 8/28/23.",
    "moved_by": "Ms. Brzozski",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. brzozski makes a motion to approve minutes, mr. beardmore seconds the motion. all approve."
+   "quote": "ms. brzozski makes a motion to approve minutes, mr. beardmore seconds the motion."
   },
   {
-   "motion": "Accept the personnel report",
+   "motion": "Accept the personnel report.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept the personnel report, mr. beardmore seconds the motion, all approve."
+  },
+  {
+   "motion": "Waive the reading of the non-discrimination policies (first read).",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "ms. brzozoski makes a motion to waive the reading of non- discrimination policie",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Adjourn the meeting at 8:20 p.m.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "ms. brzozoski makes a motion to adjourn at 8:20p.m. mr. beardmore seconds the motion."
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.0886685
+ "dropped_unquoted": 0,
+ "note": "Text extracted from a non-scanned PDF with line breaks and spacing artifacts; quotes have line breaks collapsed to single spaces. Votes are recorded only as \"All approve\" or \"all approve via roll call\", with no tallies, so outcomes are recorded as \"passed\". Executive session's return to open session is not recorded. The capital plan and goals items have no motion. Speaker roles in the minutes are printed inconsistently (e.g., \"Ms. Brzozski\" and \"Ms. Brzozoski\"); names are kept as printed.",
+ "cost_usd": 0.01728607,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "anthony sculimbrene, secretary- absent"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager/ HR Director",
+   "status": "present",
+   "quote": "mr. cassidy reports that we have resignation of geri sampson coming up as of november 1,"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, courtney fuller"
+  },
+  {
+   "name": "Sibyl Kaufmann",
+   "role": "",
+   "status": "present",
+   "quote": "sibyl kaufmann wanted to share some positive things in our school system."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The FY24 School Committee Goals discussion was deferred: the Chair and Vice Chair will compile a list from all suggestions for the next meeting, and those present agreed.",
+   "quote": "and instead she and mr. lehtinen will put together a list from all suggestions for the next meeting, all in attendance are ok with this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funds approved by the Select Board (reported by Chair)",
+   "what_was_recorded": "The Chair reported that the Select Board approved ARPA funds for an athletic field study, a sidewalk request and an artist-in-residence program.",
+   "figures_as_printed": [
+    "$50,000",
+    "$101,640",
+    "$22,500"
+   ],
+   "quote": "at the sept 5 select board meeting, arpa funds were approved for the athletic field study for $50,000, sidewalk request $101,640 and also the request for the artist-in-residents program for $22,500"
+  },
+  {
+   "topic": "Warrant total reviewed",
+   "what_was_recorded": "The Committee reviewed the warrant total for 9/1 to 9/12/23.",
+   "figures_as_printed": [
+    "$237,048.13"
+   ],
+   "quote": "warrant total 9/1 to 9/12/23: $237,048.13 - committee has reviewed"
+  },
+  {
+   "topic": "FY25 draft capital plan: safety film costs",
+   "what_was_recorded": "Safety film was added to the draft capital plan at the Primary School and at LMHS.",
+   "figures_as_printed": [
+    "$38,120",
+    "$42,618"
+   ],
+   "quote": "year 1-safety film $38,120 at the primary school."
+  },
+  {
+   "topic": "Health insurance budget projection",
+   "what_was_recorded": "The Finance Committee was told the health insurance budget projects a 10% increase, and a five-year projection shows 8-10%.",
+   "figures_as_printed": [
+    "10%",
+    "8 -10%"
+   ],
+   "quote": "health insurance budget is projecting a 10% increase and a 5 year projection shows 8 -10% increase."
+  },
+  {
+   "topic": "ARPA balance remaining",
+   "what_was_recorded": "The Town reported ARPA has funds left, and a meeting with the interim finance director is planned.",
+   "figures_as_printed": [
+    "$58,000"
+   ],
+   "quote": "arpa has $58,000 left and will be meeting with the interim finance director."
+  },
+  {
+   "topic": "EPA funding for 925 Mass Ave remediation",
+   "what_was_recorded": "EPA approved additional funding for soil, well installation, lift removal, floor drain and tank work; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "925 mass ave, epa has approved additional funding for soil, well installation, lift removal, and floor drain and tank."
+  },
+  {
+   "topic": "LED street light project cost",
+   "what_was_recorded": "The LED street light project hit wiring issues and its price is still to be determined; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "led street light project began last week, they ran into some wiring issues price is still tbd."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Positive feedback on speech assessment and staff",
+   "speaker": "Sibyl Kaufmann",
+   "stated_role": "",
+   "quote": "sibyl kaufmann wanted to share some positive things in our school system."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:30 p.m.",
+   "quote": "by carol archambault at 6:30",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered by motion, passed",
+   "quote": "mr. beardmore makes a motion to enter executive session, ms. brzozoski seconds the motion, all approve",
+   "tags": [
+    "executive session",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "received; ARPA approvals noted",
+   "quote": "ms. archambault reports meetings sessions have a new platform.",
+   "tags": [
+    "ARPA",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (early call)",
+   "resolution": "no comment",
+   "quote": "4. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved 8/28/23 regular session minutes",
+   "quote": "ms. brzozski makes a motion to approve minutes, mr. beardmore seconds the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and Line Item Transfers",
+   "resolution": "reviewed by Committee; no transfers recorded",
+   "quote": "warrant total 9/1 to 9/12/23: $237,048.13 - committee has reviewed",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "received",
+   "quote": "dr. burnham reports transportation continues to be working well, we have only 2 students",
+   "tags": [
+    "transportation",
+    "staffing",
+    "MCAS"
+   ]
+  },
+  {
+   "topic": "Student Representative's Report",
+   "resolution": "none",
+   "quote": "student representative's report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "New Business: athletics, Keystone, bullying plan, personnel report",
+   "resolution": "reports received; personnel report accepted by vote",
+   "quote": "the committee has received a report with all updated numbers for fall sports",
+   "tags": [
+    "athletics",
+    "personnel",
+    "bullying prevention",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Old Business: FY25 Draft Capital Plan",
+   "resolution": "discussed; adjustments noted, no action recorded",
+   "quote": "dr. burnham reports that we have made some adjustments.",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Old Business: Strategy Action Plan",
+   "resolution": "discussed; no action recorded",
+   "quote": "dr. burnham has shared the report for families and staff, the work outlined is currently",
+   "tags": [
+    "strategic plan",
+    "climate"
+   ]
+  },
+  {
+   "topic": "Old Business: FY24 School Committee Goals",
+   "resolution": "deferred to next meeting",
+   "quote": "and instead she and mr. lehtinen will put together a list from all suggestions for the next meeting, all in attendance are ok with this.",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "Action: First Read Non-Discrimination Policies",
+   "resolution": "reading waived, passed",
+   "quote": "ms. brzozoski makes a motion to waive the reading of non- discrimination policie",
+   "tags": [
+    "policy"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Reports (Finance, Policy subcommittee, PTO, Master Plan)",
+   "resolution": "received",
+   "quote": "mr. lehtinen reports the finance committee met last thursday.",
+   "tags": [
+    "town reports",
+    "finance",
+    "ARPA",
+    "facilities",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "one speaker; positive comments",
+   "quote": "sibyl kaufmann wanted to share some positive things in our school system.",
+   "tags": [
+    "public comment",
+    "speech services"
+   ]
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "listed for a future meeting",
+   "quote": "capital plan, school committee goals, approve strategy",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 p.m., passed",
+   "quote": "ms. brzozoski makes a motion to adjourn at 8:20p.m. mr. beardmore seconds the motion.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "capital plan",
+  "ARPA",
+  "warrants",
+  "athletics",
+  "bullying prevention",
+  "policy",
+  "personnel",
+  "executive session",
+  "town reports",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

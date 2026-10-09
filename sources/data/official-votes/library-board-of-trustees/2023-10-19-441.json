@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-10-19",
  "docid": "441",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of September 21, 2023 as amended",
+   "motion": "Accept the minutes of September 21, 2023 as amended.",
    "moved_by": "Donna",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -20,15 +20,227 @@
    "quote": "donna made a motion to accept the minutes of september 21, 2023 as amended, seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick. seconded by donna. meeting was adjourned at 9:02 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0678911
+ "note": "Text is two pages of minutes; pages 3-11 are blank in the extraction. Two motions are recorded: the minutes approval passed unanimously; the adjournment motion records no result, so its outcome is not stated. Public comment: the minutes say 'No public comment', so no speakers are recorded. Budget figures are as printed; the minutes do not state the FY24 dollar totals. Attachments listed at the end (agenda, director's and services reports) are not in the text and were not read.",
+ "cost_usd": 0.01459957,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:50 p.m. by chairperson harry kubetz.",
+   "role": "Chairperson"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "remote",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": "Director LPL"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux - remote, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, jana-lee balish",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director's evaluation: forms to be filled out before the November meeting, with the review ready for the December meeting.",
+   "quote": "forms should be filled out before our november meeting and the review should be ready for the december meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 budget expenditure",
+   "what_was_recorded": "The FY24 budget was reported as 33% expended in month four, with the FY23 budget still open.",
+   "figures_as_printed": [
+    "33%"
+   ],
+   "quote": "the fy23 budget is still open. october is month four and the fy24 budget is 33% expended."
+  },
+  {
+   "topic": "Budget increases",
+   "what_was_recorded": "Budget increases were reported in heating charges, office supplies and library materials.",
+   "figures_as_printed": [],
+   "quote": "some budget increases have been in heating charges, office supplies and library materials."
+  },
+  {
+   "topic": "CWMARS Network cost",
+   "what_was_recorded": "The CWMARS Network cost was reported as having increased over several years, attributed to town population growth; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cwmars network cost has increased over the last few years due to the town population increase."
+  },
+  {
+   "topic": "Restitution from break-in case",
+   "what_was_recorded": "The library was offered restitution after an arrest in the break-in last May.",
+   "figures_as_printed": [
+    "$1k"
+   ],
+   "quote": "and the library has been offered $1k in restitution."
+  },
+  {
+   "topic": "Security camera upgrade",
+   "what_was_recorded": "The director received a quote of $4k to $40k to replace the older cameras and integrate them into the newer system, and a separate quote of $80k to install 24 cameras.",
+   "figures_as_printed": [
+    "$4k - $40k",
+    "$80k"
+   ],
+   "quote": "he received a quote for $4k - $40k for this. he also received a quote for $80k to install 24 cameras."
+  },
+  {
+   "topic": "Library invested funds balance",
+   "what_was_recorded": "The library invested funds balance was reported as $88.9k, described as down a bit.",
+   "figures_as_printed": [
+    "$88.9k"
+   ],
+   "quote": "the balance is currently at $88.9k which is down a bit."
+  },
+  {
+   "topic": "ARPA funds for Memorial Garden",
+   "what_was_recorded": "The director told Jean Proctor the library will receive ARPA funds for the Memorial Garden; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "let her know that we will be receiving arpa funds for the memorial garden."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended, passed unanimously",
+   "quote": "donna made a motion to accept the minutes of september 21, 2023 as amended, seconded by laura. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; reported",
+   "quote": "the fy23 budget is still open. october is month four and the fy24 budget is 33% expended.",
+   "tags": [
+    "budget",
+    "director report",
+    "security cameras",
+    "IT services",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "no action; reported",
+   "quote": "the balance is currently at $88.9k which is down a bit.",
+   "tags": [
+    "budget",
+    "invested funds"
+   ]
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "no action; staff to obtain drawing and estimate",
+   "quote": "tony will send an updated drawing and a cost estimate.",
+   "tags": [
+    "sign",
+    "building"
+   ]
+  },
+  {
+   "topic": "Proctor Memorial Garden and Pocket Pollinator Update",
+   "resolution": "no action; reported",
+   "quote": "let her know that we will be receiving arpa funds for the memorial garden.",
+   "tags": [
+    "ARPA",
+    "memorial garden"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Plan/Timing",
+   "resolution": "timeline set: forms before November, review by December",
+   "quote": "forms should be filled out before our november meeting and the review should be ready for the december meeting.",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action; discussed",
+   "quote": "there was some discussion about volunteers for the book sale and about reviving the bake sale but there are currently no concrete plans for the bake sale.",
+   "tags": [
+    "Friends of LPL",
+    "book sale",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; announcement",
+   "quote": "the master plan committee will be holding a public forum at smokestack roasters on november 2nd at 6:30 pm.",
+   "tags": [
+    "Master Plan",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:02 p.m.",
+   "quote": "motion to adjourn by dick. seconded by donna. meeting was adjourned at 9:02 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "library trustees",
+  "budget",
+  "security cameras",
+  "IT services",
+  "director evaluation",
+  "ARPA",
+  "Friends of LPL",
+  "Master Plan",
+  "minutes approval",
+  "sign"
+ ],
+ "dropped_unquoted_by_field": {}
 }

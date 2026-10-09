@@ -1,0 +1,437 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-09-14",
+ "video_id": "dKXagYIu9yM",
+ "video_url": "https://www.youtube.com/watch?v=dKXagYIu9yM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-09-14-dKXagYIu9yM.json",
+  "sha256": "959b2e5d3a19429f8fee29a89897f82886779cad7344dec535b0b4a8816d6dea",
+  "caption_lines": 69,
+  "segments": 559
+ },
+ "recording": {
+  "duration_s": 1430,
+  "duration": "0:23",
+  "spoken_chars": 17077,
+  "words_approx": 2846
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09142023-326",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-09-14-agenda-326.txt",
+   "path": "sources/meetings/select-board/2023-09-14-agenda-326.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09142023-326",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-09-14-minutes-326.txt",
+   "path": "sources/meetings/select-board/2023-09-14-minutes-326.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T07:40:20Z",
+  "cost_usd": 0.25519980000000003
+ },
+ "minutes": {
+  "headline": "Select Board and Assessors appointed Sarah Kammer to the vacant Board of Assessors seat until the May 2024 election.",
+  "summary": "A joint meeting of the Select Board and Board of Assessors interviewed one applicant for the vacant assessor seat and appointed her by roll call. The board then voted to add two placeholder articles to the special town meeting warrant: one for vehicles funded from a special purpose stabilization fund, and one to amend the animal bylaw. The chair had dropped off, so only four Select Board members voted.",
+  "attendees": [
+   {
+    "name_as_heard": "Lou Franco",
+    "role": "vice chair of the Select Board, presiding",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr Jeffries",
+    "role": "chair of the Select Board (present early, left before the votes)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr nuzolo",
+    "role": "member, Select Board",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Alonso",
+    "role": "member, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Nissan key",
+    "role": "member, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "John rabbit",
+    "role": "member, Board of Assessors",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Brian Lafond",
+    "role": "member, Board of Assessors",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Michael Ray",
+    "role": "member, Select Board (audio trouble, joined from a car)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 124,
+    "topic": "Mr rabbit asked whether the Board of Assessors meeting is called to order at this point; told it would be handled shortly."
+   }
+  ],
+  "tags": [
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "motion": "Board of Assessors to open its meeting",
+    "outcome": "not audible",
+    "procedural": true,
+    "t": 212
+   },
+   {
+    "motion": "Appoint Sarah Kammer to the Board of Assessors until the May 2024 town election",
+    "moved_by": "Mr Alonso (as heard, unclear)",
+    "outcome": "passed unanimously by roll call (all members voting aye)",
+    "procedural": false,
+    "t": 943
+   },
+   {
+    "motion": "Board of Assessors to close its meeting",
+    "outcome": "not audible",
+    "procedural": true,
+    "t": 1026
+   },
+   {
+    "motion": "Direct the town manager to put an article on the special town meeting warrant to use the special purpose stabilization fund to buy three vehicles previously funded with ARPA",
+    "outcome": "passed 4-0",
+    "procedural": false,
+    "t": 1169
+   },
+   {
+    "motion": "Direct the town manager to put an article on the special town meeting warrant to revise the animals bylaw (chapter 110) nuisance section",
+    "outcome": "passed 4-0",
+    "procedural": false,
+    "t": 1275
+   },
+   {
+    "motion": "Adjourn",
+    "outcome": "passed by roll call (all aye as heard)",
+    "procedural": true,
+    "t": 1399
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1169,
+    "topic": "Special purpose stabilization fund for three vehicles",
+    "what_was_said": "A placeholder article would use the special purpose stabilization fund to buy three vehicles that ARPA money had earlier been used for. The vote was only to put it on the warrant, not to support it.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1108,
+    "decision": "A request for a rain date for the Oktoberfest was withdrawn, so the event stays on schedule for the Saturday."
+   },
+   {
+    "t": 1169,
+    "decision": "The warrant article deadline is Monday; placeholder articles were voted on to meet it, with the content to be discussed before town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 171,
+    "topic": "Call to order, open meeting law notice, public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 171,
+    "t_end": 232,
+    "topic": "Board of Assessors opens its meeting",
+    "resolution": "Assessors' motion to open; outcome not audible",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 232,
+    "t_end": 880,
+    "topic": "Applicant Sarah Kammer interviewed for assessor vacancy",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 880,
+    "t_end": 984,
+    "topic": "Appointment of Sarah Kammer to Board of Assessors",
+    "resolution": "voted, unanimous roll call",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 984,
+    "t_end": 1108,
+    "topic": "Chair left meeting; assessors close their meeting; public comment",
+    "resolution": "voted to close the assessors' meeting",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1108,
+    "t_end": 1339,
+    "topic": "Special town meeting warrant: vehicle stabilization fund article and animals bylaw article",
+    "resolution": "both voted 4-0",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 1339,
+    "t_end": 1430,
+    "topic": "Final public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Votes to open and close the Board of Assessors meeting: the captions do not give the result.",
+   "Exactly who made the appointment motion is unclear in the captions.",
+   "Chair Jeffries' departure time is not stated; he was gone by the time of the appointment vote."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "A joint meeting of the Select Board and Board of Assessors appointed Sarah Kammer to the vacant assessor seat by unanimous roll call, until the May 2024 election.",
+    "t": 943
+   },
+   {
+    "line": "The Select Board voted 4-0 to direct the town manager to place a special town meeting article on using the special purpose stabilization fund for three vehicles.",
+    "t": 1169
+   },
+   {
+    "line": "The board voted 4-0 to place an article on the special town meeting warrant revising the nuisance section of the animals bylaw.",
+    "t": 1275
+   },
+   {
+    "line": "Both articles are placeholders voted to meet a Monday warrant deadline, with their content to be discussed before town meeting.",
+    "t": 1169
+   },
+   {
+    "line": "A request for a rain date for the Oktoberfest was withdrawn, so the event stays on schedule for the Saturday.",
+    "t": 1108
+   }
+  ],
+  "why_it_matters": [
+   "The assessors set the valuations that distribute the property tax levy, so the appointee will serve on that board until residents vote on the seat in May 2024.",
+   "The vehicle article would draw on the special purpose stabilization fund for vehicles earlier bought with ARPA money, and voters at special town meeting will be asked to approve or reject that spending; the board's vote only put it on the warrant."
+  ],
+  "watch_next": [
+   "The Monday warrant deadline, and the final wording of the vehicle stabilization fund and animals bylaw articles before special town meeting.",
+   "The May 2024 town election, when the assessor seat goes to the voters."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T07:40:29Z",
+   "cost_usd": 0.21990099999999999
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09142023-326",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-09-14-minutes-326.txt",
+   "path": "sources/meetings/select-board/2023-09-14-minutes-326.pdf"
+  },
+  "official_sha256": "26e8fd277c1f0aab0056ef5508b552aee71007082226bc4787375602c38e4614",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the Assessors appointment and on the two warrant-article requests, and neither records transfers or dollar figures. The tallies and the Oktoberfest and deadline discussion appear only in ours, and the two warrant votes may differ in substance: the official names the November special town meeting and Article 1 Dog Control, ours the nuisance section. Our attendee list also treats Mr Jeffries and Michael Ray as two people, though the official lists one Michael-Ray Jeffreys.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Name of appointee to Board of Assessors",
+    "ours": "Sarah Kammer",
+    "official": "motion: t. alonzo 2nd: b. laffond to appoint sarah cammer to the board of assessors until the next election in may 2024",
+    "official_reading": "Sarah Cammer",
+    "note": "Same appointment; the captions misspelled the surname.",
+    "t": 943
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to appoint Sarah Cammer to Board of Assessors until May 2024 election",
+    "ours": "Appoint Sarah Kammer to the Board of Assessors until the May 2024 town election — passed unanimously by roll call (all members voting aye)",
+    "official": "motion: t. alonzo 2nd: b. laffond to appoint sarah cammer to the board of assessors until the next election in may 2024",
+    "note": "Both record the appointment passing; the official text quoted here does not show the roll call or unanimity, but the outcome matches.",
+    "t": 943
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on warrant article to use special purpose stabilization fund for three vehicles",
+    "ours": "Direct the town manager to put an article on the special town meeting warrant to use the special purpose stabilization fund to buy three vehicles previously funded with ARPA — passed 4-0",
+    "official": "to request town manager to place an article on the november special town meeting warrant to",
+    "note": "Both record it passing, but ours gives a 4-0 tally and the official gives no tally and names the November special town meeting; check the tally against the roll and the number of members present (five listed officially).",
+    "t": 1169
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on animals bylaw/chapter 110 article",
+    "ours": "Direct the town manager to put an article on the special town meeting warrant to revise the animals bylaw (chapter 110) nuisance section — passed 4-0",
+    "official": "to request town manager place an article on the special town meeting warrant to revise the town charter, chapter 110, animals, article 1 dog control",
+    "note": "Ours says the nuisance section of the animals bylaw; the official says Article 1 Dog Control of chapter 110 (called the town charter); check the recording and the warrant for which section and document was meant, and the 4-0 tally.",
+    "t": 1275
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Oktoberfest rain date request withdrawn",
+    "ours": "A request for a rain date for the Oktoberfest was withdrawn, so the event stays on schedule for the Saturday.",
+    "official": "",
+    "note": "Official minutes record no decisions and do not mention the Oktoberfest rain date.",
+    "t": 1108
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article deadline and placeholder articles",
+    "ours": "The warrant article deadline is Monday; placeholder articles were voted on to meet it, with the content to be discussed before town meeting.",
+    "official": "",
+    "note": "Official minutes do not mention the Monday deadline or placeholder articles.",
+    "t": 1169
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "",
+    "note": "Neither record lists any transfers."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Lou Franco presiding",
+    "ours": "Lou Franco (vice chair of the Select Board, presiding)",
+    "official": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom",
+    "note": "Both show Franco as vice chairman presiding."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Michael-Ray Jeffreys",
+    "ours": "Mr Jeffries (chair of the Select Board (present early, left before the votes))",
+    "official": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Surname misspelled in captions; the official minutes do not say he left before the votes, and do not label him chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Caesar Nuzzolo",
+    "ours": "Mr nuzolo (member, Select Board)",
+    "official": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Misspelled surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tom Alonzo",
+    "ours": "Mr Alonso (member, Select Board)",
+    "official": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom",
+    "official_reading": "Tom Alonzo",
+    "note": "Misspelled surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Renee Emkey",
+    "ours": "Nissan key (member, Select Board)",
+    "official": "tom alonzo, renee emkey",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Michael Ray joined from a car",
+    "ours": "Michael Ray (member, Select Board (audio trouble, joined from a car))",
+    "official": "members present: michael-ray jeffreys, lou franco, vice chairman; caesar nuzzolo, clerk; tom",
+    "note": "Ours lists Mr Jeffries and Michael Ray as two people; the official lists one Michael-Ray Jeffreys, so they may be the same person. Check the recording; this affects the 4-0 count."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jack Rabbitt",
+    "ours": "John rabbit (member, Board of Assessors)",
+    "official": "board of assessor members present: brian laffond, jack rabbitt",
+    "official_reading": "Jack Rabbitt",
+    "note": "Misheard first name and spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Laffond",
+    "ours": "Brian Lafond (member, Board of Assessors)",
+    "official": "board of assessor members present: brian laffond, jack rabbitt",
+    "official_reading": "Brian Laffond",
+    "note": "Spelling variant."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Town Manager",
+    "ours": "the town manager (town manager)",
+    "official": "others present: heather lemieux, town manager; sarah cammer",
+    "note": "Same role; ours gives no name, official names Heather Lemieux."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Sarah Cammer, applicant",
+    "ours": "",
+    "official": "mr. franco stated sarah cammer was applying for the vacancy.",
+    "note": "Official lists the applicant as present; ours does not list her as an attendee."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T07:41:19Z",
+   "cost_usd": 0.242413
+  }
+ }
+}

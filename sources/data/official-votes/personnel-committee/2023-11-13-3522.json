@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-11-13",
  "docid": "3522",
@@ -12,39 +12,199 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes as presented for the October 17, 2023 Personnel Committee Meeting",
+   "motion": "Accept the minutes of the October 17, 2023 Personnel Committee meeting as presented.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to accept the minutes as presented for the october 17, 2023 personnel committee meeting second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the minutes as presented for the october 17, 2023 personnel committee meeting"
   },
   {
-   "motion": "accept the minutes as presented for the October 24, 2023 Personnel Committee Meeting",
+   "motion": "Accept the minutes of the October 24, 2023 Personnel Committee meeting as presented.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to accept the minutes as presented for the october 24, 2023 personnel committee meeting second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the minutes as presented for the october 24, 2023 personnel committee meeting"
   },
   {
-   "motion": "accept the recommendation of the Assistant Town Manager/HR Director to offer Grade 8 Step 4 to the candidate for Assistant to the Sewer Business Manager",
+   "motion": "Accept the recommendation of the Assistant Town Manager/HR Director to offer Grade 8 Step 4 to the candidate for Assistant to the Sewer Business Manager.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the assistant town manager/hr director to offer grade 8 step 4 to the candidate for assistant to the sewer business manager. second d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the assistant town manager/hr director to offer grade 8 step 4 to the candidate for assistant to the sewer business manager."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "s. andrews made a motion to adjourn the meeting at 6:44m second: d. fortune roll call vote: all in favor"
+   "quote": "s. andrews made a motion to adjourn the meeting at 6:44m"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes describe a re-starting of the meeting after a Zoom connection was restored mid-session. The text says the committee \"restated the approval\" of the October 17 and October 24 minutes after reconnecting \"so that the items would be recorded,\" but does not provide explicit motion language for these restatements. Therefore, only the initial explicit motions are recorded above. All votes carried unanimously.",
- "cost_usd": 0.1241745
+ "note": "Text is a complete, legible transcription with no scan or missing pages. Four motions are recorded; each has an 'All in Favor' roll call with no numeric count, so outcome is recorded as 'passed'. The minutes restate approval of the October 17 and 24 minutes after the Zoom outage, but no separate motion is printed for that restatement, so it is not recorded as a vote. The chair is not named as such; J. Bilotta is recorded only as opening the meeting. The minutes print no dollar figures; the one budget item is a pay step with no amount. Public comment is recorded as none at both points.",
+ "cost_usd": 0.01446937,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member (opened the meeting; chair not stated)",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:38pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "absent: wendy bertrand"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits coordinator/risk manager"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard dpw director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No warrant preparation is needed at this time for the vacation and sick leave hours-to-days article; the question is to be part of the wider SAP vacation and sick leave project.",
+   "quote": "no warrant preparation is needed at this time."
+  },
+  {
+   "decision": "Council on Aging and Library position reevaluations are to be completed at the next meeting.",
+   "quote": "the goal is to complete the reevaluation of these departments at the next meeting."
+  },
+  {
+   "decision": "Each Council on Aging job role was reevaluated in the confidentiality factor from 100 points down to 20 points.",
+   "quote": "each job role was reevaluated from 100 pts down to 20 pts. in this specific area."
+  },
+  {
+   "decision": "After the Zoom outage, the committee restarted the meeting and restated approval of the October 17 and October 24, 2023 minutes so the items would be recorded.",
+   "quote": "the committee restarted the meeting and again opened the public comment"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grade 8 Step 4 offer for Assistant to the Sewer Business Manager",
+   "what_was_recorded": "A pay step was recommended for a new hire with related prior municipal experience; the minutes discuss the compensation level but print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "offer the assistant to the sewer business manager candidate a grade 8, step 4 as she had related experience"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (October 17 and October 24, 2023)",
+   "resolution": "approved",
+   "quote": "minutes from the october 17, 2023 meeting of the personnel committee were reviewed",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Zoom connection failure and meeting restart",
+   "resolution": "meeting restarted at 5:50pm; prior minutes re-approved for the record",
+   "quote": "the committee realized that the zoom connection was not working and we were neither connected nor recording.",
+   "tags": [
+    "zoom",
+    "recording",
+    "technical"
+   ]
+  },
+  {
+   "topic": "Grade 8 Step 4 offer, Assistant to the Sewer Business Manager",
+   "resolution": "approved",
+   "quote": "b. bernard presented a request to the committee to offer the assistant to the sewer business manager candidate a grade 8, step 4",
+   "tags": [
+    "hiring",
+    "compensation",
+    "DPW",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Warrant article on vacation and sick leave (hours to days)",
+   "resolution": "no action; no warrant preparation needed now",
+   "quote": "j. belliveau discussed the language for a warrant article for the annual town meeting in may",
+   "tags": [
+    "warrant article",
+    "vacation",
+    "sick leave",
+    "town meeting",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Council on Aging position grading re-examination",
+   "resolution": "continued; COA and Library reevaluation carried to next meeting",
+   "quote": "positions in the council on aging were re-examined as a result of the initial grading.",
+   "tags": [
+    "grading",
+    "SAP",
+    "Council on Aging",
+    "confidentiality",
+    "job evaluation"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comments received",
+   "quote": "there were no public or committee comments",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting scheduling",
+   "resolution": "scheduled for November 28, 2023, in person only",
+   "quote": "next meeting is november 28, 2023 at 5:30pm in-person only at the ritter building.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP job grading",
+  "Council on Aging",
+  "Library",
+  "hiring",
+  "pay grade",
+  "vacation and sick leave",
+  "warrant article",
+  "Zoom outage",
+  "minutes approval",
+  "sewer department"
+ ],
+ "dropped_unquoted_by_field": {}
 }

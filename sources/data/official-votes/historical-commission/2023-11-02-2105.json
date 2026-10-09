@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2023-11-02",
  "docid": "2105",
@@ -12,6 +12,123 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No explicit votes recorded. The minutes describe discussions and decisions (banner design, budget allocation) but use no formal voting language (motion, seconded, voted, passed, carried, unanimously approved, etc.).",
- "cost_usd": 0.0726555
+ "note": "The minutes name no attendees; they say only that all members were present, so the attendees list is empty. No motions or votes are recorded, including the call to order and the 7:40PM adjournment, so the votes list is empty and no procedural votes are recorded. No public comment is recorded. Words in the extracted text are run together without spaces; quotes are copied as they appear. The $25,000 figure is the only dollar amount printed.",
+ "cost_usd": 0.013236669999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [
+  {
+   "decision": "Marshall Park tunnels deferred to the next meeting for discussion of whether they should be deemed historic and whether they are worth saving.",
+   "quote": "soit will bediscussedat thenext meetingastowhether or not theseshouldbedeemedhistoricandif theyareworthsaving."
+  },
+  {
+   "decision": "Additional historic sites to be found beyond the K houses, to be discussed further with the consultant.",
+   "quote": "thismeanswewill havetofindadditional sitesontopof thekhouses, andthisistobediscussedfurther withtheconsultant."
+  },
+  {
+   "decision": "Design for the Hometown Heroes banners has been decided on by the commission.",
+   "quote": "adesignfor thebannershasbeendecidedonbythecommission."
+  },
+  {
+   "decision": "Jen is to check with the DPW to find out who to contact about the utility poles for Hometown Heroes.",
+   "quote": "jenistocheckwiththedpwtofigureout whotocontact inregardstotheutilitypoles."
+  },
+  {
+   "decision": "Plan stated for the commission's yearly budget: put funds toward the Hometown Heroes project and use the remainder for historic markers, to be researched further.",
+   "quote": "theplanfor thecommission'syearlybudget istoput fundstowardsthehometownheroesproject andusetheremainder for historicmarkers"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town historic survey budget",
+   "what_was_recorded": "The $25,000 budget allotted for the survey was said to allow for up to 80-100 historic sites in town to be included.",
+   "quote": "asit turnsout, the$25,000budget allottedfor thesurveywouldallowfor upto80-100historicsitesintowntobeincluded.",
+   "figures_as_printed": [
+    "$25,000",
+    "80-100"
+   ]
+  },
+  {
+   "topic": "Commission yearly budget and historic markers",
+   "what_was_recorded": "The plan for the commission's yearly budget is to put funds toward Hometown Heroes and use the remainder for historic markers; no dollar figure is printed.",
+   "quote": "theplanfor thecommission'syearlybudget istoput fundstowardsthehometownheroesproject andusetheremainder for historicmarkers",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "899 Flat Hill Road demolition without permit",
+   "resolution": "noted; owner asked to stop work pending correct demolition steps",
+   "quote": "newcorrespondencewasreceivedfromthebuildinginspector followinganinspectionon899flat hill road.",
+   "tags": [
+    "demolition",
+    "permits",
+    "building inspector"
+   ]
+  },
+  {
+   "topic": "Marshall Park tunnels",
+   "resolution": "continued to next meeting",
+   "quote": "newbusinessregardingthemarshall parktunnelswasbrought toour attention.",
+   "tags": [
+    "historic site",
+    "Marshall Park",
+    "Mass Historical Commission"
+   ]
+  },
+  {
+   "topic": "Town historic survey",
+   "resolution": "survey signed and formal application submitted; additional sites to be discussed with consultant",
+   "quote": "returningtoolder business, thetownsurveyhasbeensignedandaformal applicationhasbeensubmitted.",
+   "tags": [
+    "survey",
+    "historic sites",
+    "consultant",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes",
+   "resolution": "banner design decided; plan to go to APDC and select board for approval; utility pole contact to be found",
+   "quote": "continuingwithhometownheroes, theplanistobepresentedtotheapdcandselect boardfor approval.",
+   "tags": [
+    "Hometown Heroes",
+    "banners",
+    "utility poles",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery",
+   "resolution": "no action; status uncertain",
+   "quote": "thestateof thearnoldlitchcemeterystill remainsuncertain, andthereisthepossibilitythetowncouldobtainthelandbyeminent domain.",
+   "tags": [
+    "cemetery",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "Commission yearly budget and historic markers",
+   "resolution": "plan stated; markers to be researched further",
+   "quote": "theplanfor thecommission'syearlybudget istoput fundstowardsthehometownheroesproject andusetheremainder for historicmarkers",
+   "tags": [
+    "budget",
+    "historic markers"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "demolition permits",
+  "Marshall Park",
+  "historic survey",
+  "Hometown Heroes",
+  "Arnold Litch cemetery",
+  "budget",
+  "historic markers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

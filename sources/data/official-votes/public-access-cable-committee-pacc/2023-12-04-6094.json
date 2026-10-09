@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-12-04",
  "docid": "6094",
@@ -12,16 +12,16 @@
  },
  "votes": [
   {
-   "motion": "Approve the November 6, 2023 minutes with corrections",
-   "moved_by": "P. Sarapas",
-   "seconded_by": "F. Beall",
+   "motion": "Approve the 11.6.2023 minutes with corrections.",
+   "moved_by": "P.Sarapas",
+   "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
    "quote": "11.6.2023 minutes approved with corrections (motion - p.sarapas, 2nd f.beall, passed"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "F. Beall",
+   "motion": "Adjourn the meeting at 6:30 pm.",
+   "moved_by": "F.Beall",
    "seconded_by": "Paul Sarapas",
    "outcome": "passed",
    "procedural": true,
@@ -29,6 +29,172 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0745835
+ "note": "Plain extracted text, not a scan; no pages missing (pages 1-2). Quotes are reproduced with whitespace collapsed to single spaces. Eric Foster's attendance is not recorded (he is named only as a person who will meet new hires and review kits), so status is \"not stated\". Public comment and committee comment are printed as \"None\". Minutes say \"Comcast\" once and \"Xfinity\" elsewhere; both are reported as printed. Only two motions are recorded, both procedural; no vote was taken on the Town Manager matter.",
+ "cost_usd": 0.01353897,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "Chairman Walker (PACC member)",
+   "status": "present",
+   "quote": "pacc members present: steve walker, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "pacc members excused: steve archambault, pete lincoln"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "pacc members excused: steve archambault, pete lincoln"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager (PAC Manager)",
+   "status": "present",
+   "quote": "manager: jo toale public comments: - none"
+  },
+  {
+   "name": "Eric Foster",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "eric foster will meet with new hires chris and connor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Walker will communicate with the Town Manager that the re-defined Manager position was not made in line with the PACC motion (salary adjustment not made).",
+   "quote": "chairman walker will communicate with town manager as to the change not being in line with the motion passed by pacc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Enterprise Fund balance",
+   "what_was_recorded": "The Enterprise Fund balance is printed as $988,203, and a potential Comcast fee could put it over $1M.",
+   "quote": "balance $988,203 plus potentially comcast fee will put enterprize fund balance over $1m",
+   "figures_as_printed": [
+    "$988,203",
+    "$1M"
+   ]
+  },
+  {
+   "topic": "Videographer kits funded by ARPA",
+   "what_was_recorded": "E. Foster and Jo T. will review videographer kits to be purchased with ARPA funding; no dollar figure is printed.",
+   "quote": "e. foster and jo t. will be reviewing videographer kits to be purchased with arpa funding",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "what_was_recorded": "Nothing to report on the Enterprise Fund investment until the next update in February; no figure printed.",
+   "quote": "by virtue of timing nothing to report, next update is in february.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and opening",
+   "resolution": "no action",
+   "quote": "meeting was called to order at 6:03 pm.",
+   "tags": [
+    "procedure",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Communications: Town Manager position change",
+   "resolution": "Chair to contact Town Manager",
+   "quote": "steve walker has been attempting to contact the town manager re: pacc motion of prior meeting to re-define the manager's position.",
+   "tags": [
+    "town manager",
+    "governance",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Communications: Select Board report",
+   "resolution": "noted",
+   "quote": "chairman walker reports that he presented a summary to select board on 11/28/23 of all of the good work that pacc has been doing over the past year",
+   "tags": [
+    "select board",
+    "reporting",
+    "new space"
+   ]
+  },
+  {
+   "topic": "Communications: Xfinity channel changes",
+   "resolution": "noted; bulletin boards updated",
+   "quote": "a letter from xfinity to pacc was shared, noting that the pac channels have been changed.",
+   "tags": [
+    "xfinity",
+    "channels",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved with corrections",
+   "quote": "11.6.2023 minutes approved with corrections (motion - p.sarapas, 2nd f.beall, passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "noted",
+   "quote": "j. toale reporting. holiday 'storytimes' were recorded in november.",
+   "tags": [
+    "programming",
+    "equipment",
+    "staffing",
+    "social media"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "resolution": "no action; next update February",
+   "quote": "by virtue of timing nothing to report, next update is in february.",
+   "tags": [
+    "enterprise fund",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:30 pm",
+   "quote": "meeting adjourned at 6:30 pm o (motion - f.beall, 2nd paul sarapas - passed).",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "Xfinity channel change",
+  "Enterprise Fund",
+  "ARPA funding",
+  "town manager position",
+  "equipment and staffing",
+  "Select Board report",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

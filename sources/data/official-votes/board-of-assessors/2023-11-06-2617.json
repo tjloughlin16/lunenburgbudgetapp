@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-11-06",
  "docid": "2617",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve amended minutes from the September 27, 2023 meeting",
+   "motion": "Approve amended minutes of the September 27, 2023 meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion by sarah cammer to approve amended minutes from the september 27, 2023, meeting, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve annual membership fee for Massachusetts Associates of Assessing Offices",
+   "motion": "Approve the annual membership fee for Massachusetts Associates of Assessing Offices.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to approve annual membership fee for massachusetts associates of assessing offices by john rabbitt, seconded by sarah cammer. all in favor"
   },
   {
-   "motion": "Approve RRC personal property software for fiscal 2024",
+   "motion": "Approve RRC personal property software for fiscal 2024.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion to approve rrc personal property software for fiscal 2024 by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Approve fee from Vision Government Solutions for fiscal 2023",
+   "motion": "Approve the fee from Vision Government Solutions for fiscal 2023.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to approve fee from vision government solutions for fiscal 2023 by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve the bill for advertising the principal assessor's position",
+   "motion": "Approve the bill for advertising the principal assessor's position.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion to approve the bill for advertising the principal assessor's position by sarah cammer, seconded by john rabbitt. all in favor"
   },
   {
-   "motion": "Approve two invoices from MFS",
+   "motion": "Approve two invoices from MFS.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "motion to approve two invoices from mfs by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve WB Mason bill for office supplies",
+   "motion": "Approve the WB Mason bill for office supplies.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -68,7 +68,7 @@
    "quote": "motion to approve wb mason bill for office supplies by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve the $65 per square foot rate for seasonal cottages",
+   "motion": "Approve the $65 per square foot rate for seasonal cottages for fiscal 2024.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -76,7 +76,7 @@
    "quote": "motion to approve the $65 per square foot rate for seasonal cottages by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Support the 400,000-dollar actual bill to get the new growth",
+   "motion": "Support the 400,000-dollar actual bill to obtain the new growth proposed by Heather Lemieux.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -84,15 +84,393 @@
    "quote": "motion by john rabbitt to support the 400,000-dollar actual bill to get the new growth proposed by heather lemieux, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Adjourn to executive session not to return to open session",
+   "motion": "Adjourn to executive session, not to return to open session after exiting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by sarah cammer, seconded by john rabbitt to enter into executive sessions not to return to open session after exiting executive sessions. all in favor."
+   "quote": "motion to adjourn by sarah cammer, seconded by john rabbitt to enter into executive sessions not to return to open session after exiting executive sessions."
   }
  ],
  "dropped_unquoted": 0,
- "note": "October 11, 2023 minutes were not approved due to a technical gap; no vote recorded for them.",
- "cost_usd": 0.0795401
+ "note": "Text extraction of the minutes, not a scan. Vote results are recorded only as \"All in favor\" with no tally, so outcomes are entered as \"passed\". The minutes do not record a vote on adjournment at the close, only the executive-session motion. The October 11, 2023 minutes are not approved because of a recorded gap. The minutes spell John Rabbitt as \"John Rabbit\" once. Attendance for Eric, Heather Lemieux and Nate Cramer is not stated. Carl Derner is named as a source of citizen questions and is not recorded as a participant. A team vote on the cottage definition is mentioned but was not a board motion at this meeting, so it is not recorded as a vote.",
+ "cost_usd": 0.01999457,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Eric",
+   "role": "",
+   "status": "not stated",
+   "quote": "eric states he wasn't provided a zoom link and there wasn't one on the agenda."
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "from Vision Government Solution",
+   "status": "present",
+   "quote": "mike tarello from vision government solution has started to go through databases pulling records, sales information, land tables"
+  },
+  {
+   "name": "Nate Cramer",
+   "role": "of MFS",
+   "status": "not stated",
+   "quote": "the board needs to prepare questions for an in-depth meeting with nate cramer of mfs on november 20, 2023."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "",
+   "status": "not stated",
+   "quote": "there was a brief discussion with heather lemieux regarding the minutes from the executive session."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public comment, Sunset Lane",
+   "status": "present",
+   "quote": "carl luck- sunset lane- thanks the board and is happy that a new category regarding cottages was created."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will consolidate citizen questions and post the answers on the webpage; further discussion tabled to another meeting.",
+   "quote": "the board will consolidate questions and put the answers on the webpage. further discussion is tabled for another meeting."
+  },
+  {
+   "decision": "The board will review the MLS and give Mike Tarello a list of any properties not showing up on MLS.",
+   "quote": "the board is to review the mls and then give a list to mike tarello of any properties not showing up on mls."
+  },
+  {
+   "decision": "Mike Tarello will set up a data collection guide with descriptions and field review guidelines.",
+   "quote": "mike tarello will set up a data collection guide that includes descriptions and field review guidelines."
+  },
+  {
+   "decision": "The Heather Lemieux insert topic goes on the November 20 agenda for further discussion.",
+   "quote": "this topic will be put on the agenda for november 20th to discuss further."
+  },
+  {
+   "decision": "Brian Laffond and Rena Swezey will try to recreate and fill in the gap in the October 11, 2023 minutes.",
+   "quote": "brian laffond and rena swezey will try to recreate and fill in those gaps."
+  },
+  {
+   "decision": "Brian Laffond will get a copy of questions to Nate Cramer before the November 20 meeting.",
+   "quote": "brian laffond plans to get a copy of questions to nate cramer prior to the next meeting on november 20th."
+  },
+  {
+   "decision": "Nate Cramer will give Rena Swezey a list of MFS services to distribute.",
+   "quote": "nate cramer states they do almost anything related to assessing but will give a list to rena swezey to distribute."
+  },
+  {
+   "decision": "The team is to add the cottage definition (600 SqFt and lack of central heating) into Policies Definitions.",
+   "quote": "team was to add this into policies definitions."
+  },
+  {
+   "decision": "Motions to approve executive session minutes are made during the executive session.",
+   "quote": "the motions to approve minutes are made during the executive session."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DLS tax reform: senior work-off for abatements",
+   "what_was_recorded": "Board comment that DLS tax reform raises the maximum senior work-off for abatements from 1,500 to 2,000 starting in 2025.",
+   "figures_as_printed": [
+    "1,500",
+    "2,000"
+   ],
+   "quote": "this will raise the maximum senior work off for abatements from 1,500 to 2,000 starting in 2025."
+  },
+  {
+   "topic": "Massachusetts Associates of Assessing Offices membership",
+   "what_was_recorded": "Approved the annual membership fee; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve annual membership fee for massachusetts associates of assessing offices by john rabbitt, seconded by sarah cammer. all in favor"
+  },
+  {
+   "topic": "RRC personal property software FY2024",
+   "what_was_recorded": "Approved RRC personal property software for fiscal 2024; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve rrc personal property software for fiscal 2024 by john rabbitt, seconded by sarah cammer. all in favor."
+  },
+  {
+   "topic": "Vision Government Solutions fee FY2023",
+   "what_was_recorded": "Approved a fee from Vision Government Solutions for fiscal 2023; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve fee from vision government solutions for fiscal 2023 by sarah cammer, seconded by john rabbitt. all in favor."
+  },
+  {
+   "topic": "Advertising bill for principal assessor position",
+   "what_was_recorded": "Approved the bill for advertising the principal assessor's position; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve the bill for advertising the principal assessor's position by sarah cammer, seconded by john rabbitt. all in favor"
+  },
+  {
+   "topic": "MFS invoices",
+   "what_was_recorded": "Approved two invoices from MFS; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve two invoices from mfs by sarah cammer, seconded by john rabbitt. all in favor."
+  },
+  {
+   "topic": "WB Mason office supplies bill",
+   "what_was_recorded": "Approved the WB Mason bill for office supplies; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "motion to approve wb mason bill for office supplies by sarah cammer, seconded by john rabbitt. all in favor."
+  },
+  {
+   "topic": "Postage fees for Vision cards",
+   "what_was_recorded": "Brian Laffond signed the postage fees for the Vision cards; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "brian laffond signed the postage fees for the vision cards."
+  },
+  {
+   "topic": "Motor vehicle abatements",
+   "what_was_recorded": "Motor vehicle abatements were signed; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "motor vehicle abatements signed."
+  },
+  {
+   "topic": "Seasonal cottage price per square foot in other towns",
+   "what_was_recorded": "Reported local seasonal cottage prices per square foot for Groton, Littleton and Ashburnham.",
+   "figures_as_printed": [
+    "$63",
+    "$68.50",
+    "$95"
+   ],
+   "quote": "the seasonal cottage price per square foot locally is as follows: groton is $63 per square foot, littleton is $68.50 per square foot, and ashburnham is $95 per square foot."
+  },
+  {
+   "topic": "Seasonal cottage rate for fiscal 2024",
+   "what_was_recorded": "Rena Swezey and Nate Cramer agreed $65 per square foot is fair; the board approved that rate.",
+   "figures_as_printed": [
+    "$65"
+   ],
+   "quote": "rena swezey spoke with nate cramer, and they agreed that $65 per square foot is a fair number for fiscal 2024."
+  },
+  {
+   "topic": "Estimated new growth FY24",
+   "what_was_recorded": "Final new growth figure and total tax dollars reported after all building permits were finished.",
+   "figures_as_printed": [
+    "$33,190,000",
+    "$484,203"
+   ],
+   "quote": "the final number for new growth is $33,190,000 with total tax dollars being $484,203."
+  },
+  {
+   "topic": "New growth actual bill",
+   "what_was_recorded": "Board supported a 400,000-dollar actual bill to obtain the new growth proposed by Heather Lemieux.",
+   "figures_as_printed": [
+    "400,000-dollar"
+   ],
+   "quote": "motion by john rabbitt to support the 400,000-dollar actual bill to get the new growth proposed by heather lemieux, seconded by sarah cammer. all in favor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "Sunset Lane",
+   "topic": "thanks board for cottage category",
+   "quote": "carl luck- sunset lane- thanks the board and is happy that a new category regarding cottages was created."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening board comments: DLS tax reform and Zoom",
+   "resolution": "no action",
+   "tags": [
+    "DLS",
+    "tax reform",
+    "abatements"
+   ],
+   "quote": "john rabbitt shares dls has a new tax reform bill."
+  },
+  {
+   "topic": "Approve minutes of September 27 and October 11, 2023",
+   "resolution": "approved Sept 27 amended minutes; Oct 11 gap to be recreated",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "motion by sarah cammer to approve amended minutes from the september 27, 2023, meeting, seconded by john rabbitt. all in favor."
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers and payroll",
+   "resolution": "approved",
+   "tags": [
+    "invoices",
+    "vendors",
+    "expenses"
+   ],
+   "quote": "motion to approve annual membership fee for massachusetts associates of assessing offices by john rabbitt, seconded by sarah cammer. all in favor"
+  },
+  {
+   "topic": "Seasonal use cottage: add to database and set rate",
+   "resolution": "approved $65 per square foot rate",
+   "tags": [
+    "seasonal cottages",
+    "rate",
+    "valuation"
+   ],
+   "quote": "rena swezey suggested to cj last winter that seasonal cottages should be added to the database."
+  },
+  {
+   "topic": "Estimated new growth for FY24",
+   "resolution": "supported 400,000-dollar actual bill",
+   "tags": [
+    "new growth",
+    "building permits"
+   ],
+   "quote": "rena swezey has finished all building permits for new construction."
+  },
+  {
+   "topic": "Handling of executive session minutes",
+   "resolution": "discussed; procedure noted",
+   "tags": [
+    "executive session",
+    "minutes"
+   ],
+   "quote": "there was a brief discussion with heather lemieux regarding the minutes from the executive session."
+  },
+  {
+   "topic": "Community outreach: Senior Center",
+   "resolution": "no action",
+   "tags": [
+    "senior center",
+    "outreach"
+   ],
+   "quote": "status of requests for improved collaboration with the town manager."
+  },
+  {
+   "topic": "Insert for Q3 property tax bills",
+   "resolution": "continued to November 20",
+   "tags": [
+    "tax bills",
+    "DOR",
+    "insert"
+   ],
+   "quote": "contact needs to be made with dor about the third quarter billing."
+  },
+  {
+   "topic": "Existing contracts folder",
+   "resolution": "no action; folder being created",
+   "tags": [
+    "contracts",
+    "Vision",
+    "records"
+   ],
+   "quote": "an electronic folder is being created."
+  },
+  {
+   "topic": "Future RFP development",
+   "resolution": "no action; board expressed interest",
+   "tags": [
+    "RFP",
+    "procurement"
+   ],
+   "quote": "the board shares an interest in and wants to participate in future rfp developments."
+  },
+  {
+   "topic": "Appointment: Vision and MFS updates",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "revaluation",
+    "Vision Government Solution",
+    "MFS",
+    "sales"
+   ],
+   "quote": "mike tarello from vision government solution has started to go through databases pulling records, sales information, land tables"
+  },
+  {
+   "topic": "Meeting with Nate Cramer of MFS",
+   "resolution": "questions to be prepared for November 20",
+   "tags": [
+    "MFS",
+    "ATB",
+    "traffic adjustments"
+   ],
+   "quote": "the board needs to prepare questions for an in-depth meeting with nate cramer of mfs on november 20, 2023."
+  },
+  {
+   "topic": "Responses to extensive citizen questions",
+   "resolution": "tabled",
+   "tags": [
+    "citizen questions",
+    "webpage"
+   ],
+   "quote": "further discussion is tabled for another meeting."
+  },
+  {
+   "topic": "Future agenda topics",
+   "resolution": "listed; no action",
+   "tags": [
+    "agenda",
+    "exemptions",
+    "policy"
+   ],
+   "quote": "review and approve senior / veterans exemptions"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for November 20, 2023",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the next meeting is november 20, 2023."
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "cottages"
+   ],
+   "quote": "carl luck- sunset lane- thanks the board and is happy that a new category regarding cottages was created."
+  },
+  {
+   "topic": "Adjourn to executive session",
+   "resolution": "passed; not to return to open session",
+   "tags": [
+    "executive session",
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by sarah cammer, seconded by john rabbitt to enter into executive sessions not to return to open session after exiting executive sessions."
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "Board of Assessors",
+  "seasonal cottages",
+  "new growth",
+  "Vision Government Solutions",
+  "MFS",
+  "minutes approval",
+  "invoices",
+  "executive session",
+  "tax bills",
+  "abatements",
+  "DLS tax reform",
+  "revaluation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

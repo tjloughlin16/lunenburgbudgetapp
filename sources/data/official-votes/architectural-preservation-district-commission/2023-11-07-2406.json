@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-11-07",
  "docid": "2406",
@@ -12,15 +12,156 @@
  },
  "votes": [
   {
-   "motion": "Ratify the replacement of the roof shingles at 912 Massachusetts Avenue",
+   "motion": "Ratify the replacement of the roof shingles at 912 Massachusetts Ave, for which the chair had informed the applicant through town staff that work could proceed.",
    "moved_by": "Nathan Lockwood",
    "seconded_by": "Richard McGrath",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "nathan lockwood moved to ratify the replacement of the roof shingles with richard mcgrath offering the second. the ratification was approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "No vote count is stated; outcome recorded as approved only. Review of prior minutes was pending (not voted on). No motion to adjourn recorded.",
- "cost_usd": 0.0711375
+ "note": "Clean text extract, not a scan. The one motion (roof ratification) records approval with no tally, so outcome is 'passed' without a count. No dollar figures appear. Public comment is recorded as 'None' in both places, so no speakers. William Lloyd's attendance is not stated; he appears only in the header and as a recipient of a follow-up. The October and August 2023 minutes were not approved at this meeting, and the adjournment (8:24 PM) was not put to a vote in the text. The minutes contain the typo 'Sculimrene' and 'Richared', which are kept as printed.",
+ "cost_usd": 0.013948770000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, nathan lockwood, richard mcgrath"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, nathan lockwood, richard mcgrath"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, nathan lockwood, richard mcgrath"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "william lloyd, clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus to revise the notification process for planned work with the APDC, and to seek support from the Building Commissioner to enforce that requirement through the building permit process.",
+   "quote": "there was consensus to revise the current notification process of planned work with the apdc"
+  },
+  {
+   "decision": "Sculimbrene to follow up with the Building Commissioner on why there was no CTA or notification for roofing work at the property just east of 912 Massachusetts Ave.",
+   "quote": "sculimbrene will follow up with the building commissioner to determine why there was no cta or notification for roofing work"
+  },
+  {
+   "decision": "The October and August 2023 minutes are to be reviewed and, if possible, approved at the December meeting; Nathan to provide August data and Sculimbrene to touch base with William Lloyd.",
+   "quote": "he will touch base with william lloyd to see if the october minutes can be reviewed and approved at the december meeting."
+  },
+  {
+   "decision": "Sculimbrene to keep monitoring the Master Plan process, since neither the Historical Commission nor the APDC is represented on the Steering Committee.",
+   "quote": "sculimbrene will continue to monitor the planning process as there is no representation from the historical commission or the apdc on the steering committee."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "continued to December meeting",
+   "quote": "the minutes for the october and august 2023 meetings are still under development.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "there was no correspondence to report.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "CTA, 912 Massachusetts Ave roof replacement",
+   "resolution": "ratified",
+   "quote": "the cta for 912 massachusetts ave roof replacement was discussed.",
+   "tags": [
+    "certificate to alter",
+    "roof replacement",
+    "912 Massachusetts Ave"
+   ]
+  },
+  {
+   "topic": "Routine work notification process",
+   "resolution": "consensus to revise notification process; chair to follow up with Building Commissioner",
+   "quote": "there was discussion about how to allow for routine work to proceed quickly and yet still follow the apd bylaw.",
+   "tags": [
+    "notification",
+    "routine work",
+    "building permit",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Demolition by neglect, Town Counsel meeting",
+   "resolution": "meeting scheduled 16 November",
+   "quote": "a meeting is scheduled with town counsel on 16 november, 1:40-2 pm, to discuss apdc authority with regard to demolition by neglect.",
+   "tags": [
+    "demolition by neglect",
+    "town counsel",
+    "authority"
+   ]
+  },
+  {
+   "topic": "Master Plan consultant presentation",
+   "resolution": "report received; chair to keep monitoring",
+   "quote": "sculimrene provided a report of the presentation made by the master plan consultant on 2 november.",
+   "tags": [
+    "master plan",
+    "steering committee",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Resident notification, brochure and guidelines",
+   "resolution": "continued; chair to follow up by phone",
+   "quote": "work on the notification of residents in the apd, a brochure and modifications to the guidelines and the cta continues.",
+   "tags": [
+    "brochure",
+    "guidelines",
+    "notification"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes banners",
+   "resolution": "request for a December agenda item",
+   "quote": "richared mcgrath asked to include an agenda item at the apdc's december meeting for a report on the hometown heroes banners",
+   "tags": [
+    "hometown heroes",
+    "banners",
+    "historical commission"
+   ]
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "historic preservation",
+  "certificate to alter",
+  "roof replacement",
+  "demolition by neglect",
+  "master plan",
+  "minutes approval",
+  "Zoom meeting",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

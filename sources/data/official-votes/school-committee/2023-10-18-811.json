@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2023-10-18",
  "docid": "811",
@@ -12,79 +12,400 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to conduct strategy sessions in preparation for negotiations with nonunion personnel or to conduct collective bargaining sessions or contract negotiations with nonunion personnel",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Beardmore",
+   "motion": "Enter executive session to conduct strategy sessions for negotiations with nonunion personnel.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Peter Beardmore",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lehtinen makes a motion to enter executive session, mr. beardmore seconds the motion all approve"
   },
   {
-   "motion": "Approve regular session minutes from 9-20-23",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Lehtinen",
-   "outcome": "passed",
+   "motion": "Approve the regular session minutes of 9-20-23.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Brian Lehtinen",
+   "outcome": "passed (Mr. Sculimbrene abstaining)",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to approve minutes, mr. lehtinen seconded the motion, all approve with mr. sculimbrene abstaining"
   },
   {
-   "motion": "Table line item transfers until contracts for custodian team are completed",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Beardmore",
+   "motion": "Table the line item transfers until the custodian team contracts are completed.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Peter Beardmore",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. lehtinen makes a motion to table the line item transfers, mr. beardmore seconds the motion all agree."
   },
   {
-   "motion": "Postpone contract negotiations for Café & Custodians",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Postpone negotiation on the Contract Ratification for the Café and Custodians.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to postpone negotiation, mr. sculimbrene seconds the motion. all approve"
   },
   {
-   "motion": "Accept donations of $2,171.21 from PTO from Scholastic Book Fair and $5,513.27 from PTO from Penny Wars",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Accept both donations: $2171.21 from the PTO (Scholastic Book Fair) to the gift account, and $5513.27 from the PTO (Penny Wars) to the gift account earmarked for the library.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept both donations, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "Accept Policies 4106, 4106.01, 4202.01, 4202.02, 5103.01, 5201.01, 5402, 5412, 5801, 5801.01",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Beardmore",
+   "motion": "Accept Policies 4106, 4106.01, 4202.01, 4202.02, 5103.01, 5201.01, 5402, 5412, 5801, 5801.01 as read (third read).",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Peter Beardmore",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to accept policies 4106, 4106.01, 4202.01, 4202.02, 5103.01, 5201.01, 5402, 5412, 5801, 5801.01 as read, mr. beardmore seconds the motion all approve."
+   "quote": "mr. lehtinen makes a motion to accept policies 4106, 4106.01, 4202.01, 4202.02, 5103.01, 5201.01, 5402, 5412, 5801, 5801.01 as read"
   },
   {
-   "motion": "Waive second reading of Policy 6214",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Beardmore",
+   "motion": "Waive second reading of Policy 6214.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Peter Beardmore",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. brzozoski makes a motion to waive second reading, mr. beardmore seconds the motion, all approve"
   },
   {
-   "motion": "Postpone discussion of FY25 Draft Capital Plan Priorities until 11/1/23",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Mr. Lehtinen",
+   "motion": "Postpone discussion of the FY25 Draft Capital Plan Priorities until 11/1/23.",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. sculimbrene makes a motion to postpone discussion. mr. lehtinen seconds the motion, all approve"
+   "procedural": false,
+   "quote": "mr. sculimbrene makes a motion to postpone discussion."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Adjourn the meeting at 9:17.",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. sculimbrene makes a motion to adjourn at 9:17, ms. brzozoski seconds the motion, all approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09081009999999999
+ "note": "Text extraction, not a scan; all votes read from the text. Votes are recorded as printed ('all approve', 'all agree') with no numeric count, so outcome is 'passed'. The Finance Committee votes (4-1, 3-2) are another body's votes and are not recorded as School Committee votes. The Chair's report names 'Mr. Hevy' as superintendent while the header lists Dr. Kate Burnham as Superintendent; both appear and the minutes do not reconcile them. Attendance status is printed only for the five members; the other named people have no present/absent marker. Michael Cassidy's role comes from the header layout. Typos in source ('Police 5402', 'Maclean'/'MacLean') are left as printed.",
+ "cost_usd": 0.019939070000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "carol archambault, chair - present dr. kate burnham"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager/ HR Director",
+   "status": "not stated",
+   "quote": "anthony sculimbrene, secretary - present michael cassidy"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Julianna Hansom",
+   "role": "Director of Special Services",
+   "status": "not stated",
+   "quote": "julianna hansom - director of special services"
+  },
+  {
+   "name": "Annica Scott",
+   "role": "Director of Teaching and Learning",
+   "status": "not stated",
+   "quote": "annica scott - director of teaching and learning"
+  },
+  {
+   "name": "Amy Resnick",
+   "role": "Math Specialist",
+   "status": "not stated",
+   "quote": "amy resnick - math specialist"
+  },
+  {
+   "name": "Megan Wheeler",
+   "role": "Co-Teaching Coach",
+   "status": "not stated",
+   "quote": "megan wheeler - co-teaching coach"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that phases one and two of the plan involving the Ritter Building and the Town Hall should get underway as soon as possible (following the joint meeting with the Lunenburg Municipal Design Committee).",
+   "quote": "we did agree that phases one and two of the plan involving the ritter building and the town hall should get underway as soon as possible."
+  },
+  {
+   "decision": "Policy 5218 will come back for approval, needing a cut-and-paste edit.",
+   "quote": "policy 5218 will come back for approval needs to have a cut & paste edit."
+  },
+  {
+   "decision": "Ms. Archambault will prepare a prioritized capital plan list and send it to Dr. Burnham to put in the folders.",
+   "quote": "ms. archambault will come up with a prioritized list and will send to dr. burnham to put in the folders."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total for bills paid",
+   "what_was_recorded": "The warrant total for 9/21/23 to 10/6/23 was reported, and the chair signed off after committee review.",
+   "figures_as_printed": [
+    "$271,472.93"
+   ],
+   "quote": "warrant total 9/21/23 to 10/6/23 $271,472.93 committee has reviewed and ms. archambault has signed off."
+  },
+  {
+   "topic": "Line item transfers",
+   "what_was_recorded": "Line item transfers were tabled until the custodian team contracts are completed; no amount is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the committee votes to table the line item transfer until the contracts for the custodian team is completed."
+  },
+  {
+   "topic": "PTO donations",
+   "what_was_recorded": "Two PTO donations were accepted into the gift account, one earmarked for the library.",
+   "figures_as_printed": [
+    "$2171.21",
+    "$5513.27"
+   ],
+   "quote": "two donations first is $2171.21 from the pto from the scholastic book fair, this will be deposited into the gift account."
+  },
+  {
+   "topic": "Current-year (FY24) budget freeze",
+   "what_was_recorded": "The superintendent reported a freeze on the current-year FY24 budget pending transition to a new Finance Director; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "i have put a freeze on our current year budget the fy24"
+  },
+  {
+   "topic": "Capital plan and field work",
+   "what_was_recorded": "Postponement of capital plan priorities discussion was tied to the $50,000 allocated but not yet spent for the field.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the $50,000 that has been allocated."
+  },
+  {
+   "topic": "Special town meeting article: mini splits",
+   "what_was_recorded": "A warrant article to fund the first phase of mini splits for climate control at Primary School was presented; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this article was to fund the first phase of mini splits for the climate control at primary school."
+  },
+  {
+   "topic": "Ambulance and dump truck special stabilization funding",
+   "what_was_recorded": "Discussion of the annual $250,000 deposit into the special stabilization fund for large equipment, and the Finance Committee's disapproval vote (3-2) on the request.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "as long as we place $250,000 annually into that fund."
+  },
+  {
+   "topic": "Funding for school projects",
+   "what_was_recorded": "The chair reported that possible funding for school projects goes through an energy building audit; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the path for possible funding for school projects goes through the execution of an energy building audit"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfers (custodian team contracts pending)",
+   "amount_as_printed": "not stated",
+   "outcome": "tabled until the custodian team contracts are completed",
+   "quote": "the committee votes to table the line item transfer until the contracts for the custodian team is completed."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "topic": "SEL program and empathy",
+   "quote": "mr. beardmore takes this opportunity to reiterate all the work that has been put into the sel program"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Chair's report: special town meeting article, Municipal Design Committee, Green Communities",
+   "resolution": "reported; committee agreed phases one and two should start as soon as possible",
+   "tags": [
+    "capital",
+    "school buildings",
+    "warrant article"
+   ],
+   "quote": "the superintendent presented our warrant article for special town meeting, this article was to fund the first phase of mini splits for the climate control at primary school."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session (motion approved)",
+   "tags": [
+    "executive session",
+    "negotiations"
+   ],
+   "quote": "mr. lehtinen makes a motion to enter executive session"
+  },
+  {
+   "topic": "Review and approve minutes (9-20-23)",
+   "resolution": "approved, one abstention",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. brzozoski makes a motion to approve minutes, mr. lehtinen seconded the motion, all approve with mr. sculimbrene abstaining"
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrant total noted; line item transfers tabled",
+   "tags": [
+    "warrants",
+    "line item transfers",
+    "budget"
+   ],
+   "quote": "warrant total 9/21/23 to 10/6/23 $271,472.93"
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "noted; homecoming rescheduled; staffing changes reported; FY24 budget freeze",
+   "tags": [
+    "staffing",
+    "budget freeze",
+    "homecoming",
+    "MCAS"
+   ],
+   "quote": "homecoming has been moved to october 28th, due to the forecast of inclement weather"
+  },
+  {
+   "topic": "New business: contract ratification (Café and Custodians)",
+   "resolution": "negotiations postponed",
+   "tags": [
+    "contracts",
+    "collective bargaining"
+   ],
+   "quote": "contract ratification - café & custodians - committee decides to table contract negotiations."
+  },
+  {
+   "topic": "New business: donations",
+   "resolution": "accepted",
+   "tags": [
+    "donations",
+    "PTO",
+    "library"
+   ],
+   "quote": "two donations first is $2171.21 from the pto from the scholastic book fair"
+  },
+  {
+   "topic": "New business: assessment report (MCAS and iReady)",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "MCAS",
+    "iReady",
+    "assessment"
+   ],
+   "quote": "dr. burnham shares and discusses a presentation regarding the highlights of the mcas and iready results"
+  },
+  {
+   "topic": "Old business: third read of non-discrimination policies",
+   "resolution": "accepted as read; Policy 5218 to return",
+   "tags": [
+    "policy",
+    "non-discrimination"
+   ],
+   "quote": "third read of non-discrimination policies ms. brzozoski reads policy 4106 equal employment opportunity"
+  },
+  {
+   "topic": "Old business: second read Policy 6214",
+   "resolution": "second reading waived",
+   "tags": [
+    "policy"
+   ],
+   "quote": "second read policy 6214 - committee confirms no comments or questions have been received"
+  },
+  {
+   "topic": "Old business: FY25 draft capital plan priorities",
+   "resolution": "postponed to 11/1/23",
+   "tags": [
+    "capital plan",
+    "field",
+    "Turkey Hill"
+   ],
+   "quote": "fy25 draft capital plan priorities mr. beardmore wants to postpone discussion until 11/1/23"
+  },
+  {
+   "topic": "Committee reports: Finance Committee, athletic advisory, master planning",
+   "resolution": "reported; no action by the board",
+   "tags": [
+    "Finance Committee",
+    "warrant articles",
+    "athletics",
+    "master planning"
+   ],
+   "quote": "mr. lehtinen reports the finance committee met on october 12 th they reviewed warrant articles"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker, Mr. Beardmore, on SEL",
+   "tags": [
+    "public comment",
+    "SEL"
+   ],
+   "quote": "mr. beardmore takes this opportunity to reiterate all the work that has been put into the sel program"
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed; no action",
+   "tags": [
+    "agenda planning"
+   ],
+   "quote": "topics for future discussion capital plan priorities line item transfers"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:17",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mr. sculimbrene makes a motion to adjourn at 9:17"
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "capital plan",
+  "policy",
+  "donations",
+  "personnel",
+  "contract negotiations",
+  "executive session",
+  "line item transfers",
+  "warrant articles",
+  "MCAS",
+  "Finance Committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

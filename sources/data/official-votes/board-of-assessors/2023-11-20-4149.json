@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-11-20",
  "docid": "4149",
@@ -10,8 +10,299 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11202023-4149",
   "doc_url": "/docs/meetings/board-of-assessors/2023-11-20-minutes-4149.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One procedural vote recorded. No vote outcomes (pass/fail/counts) are stated in the minutes for the executive session motion, despite the notation that a roll call vote was taken.",
- "cost_usd": 0.0923891
+ "votes": [
+  {
+   "motion": "Adjourn to executive session, not to return to open session after exiting executive session.",
+   "moved_by": "Sarah Cammer",
+   "seconded_by": "John RabbiƩ",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "moɵon to adjourn by sarah cammer, seconded by john rabbiʃ to enter into execuɵve session not to return to open session aōer exiɵng execuɵve session. roll call vote."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is OCR/PDF-extracted: several letters render as ligatures or substitute glyphs (e.g. 'ﬀ', 'Ʃ' for 'tt', 'Ɵ' for 'ti'), spacing is broken in places ('Stre et', 'th e'), and names are reproduced as printed. Quotes copy the text as extracted. The executive-session motion records no roll-call result, so its outcome is 'not stated'. No vote is recorded on approving any minutes. Nate Cramer's attendance is not stated: his answers are described as a written list sent beforehand, though some answers say 'states'. The opening public comment reads 'No public comment.' and is not recorded as a speaker.",
+ "cost_usd": 0.01819827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laﬀond, clerk john rabbiʃ, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Brian Laﬀond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laﬀond, clerk john rabbiʃ, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John RabbiƩ",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laﬀond, clerk john rabbiʃ, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laﬀond, clerk john rabbiʃ, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Nate Cramer",
+   "role": "respondent to questions for MFS",
+   "status": "not stated",
+   "quote": "rena swezey sent a list of quesɵons to nate cramer prior to the scheduled meeɵng."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "public commenter, 91 Main Stre et",
+   "status": "present",
+   "quote": "anna lockwood- 91 main stre et- refers to a prior meeɵng regarding rules and responsibiliɵes."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck - 50 sunset lane-shares he is happy that the board is addressing quesɵons from the public."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck - 50 sunset lane- suggests that people can work in subcommiʃees to gather data and informaɵon from other towns."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The November 6 minutes were not approved as written; amendments will be made, with John Rabbitt's corrections incorporated by Brian Laffond and Sarah Cammer's two corrections given to Rena Swezey and Brian Laffond.",
+   "quote": "sarah cammer has 2 correcɵons that she will give to rena swezey and brian laﬀond to adjust minutes."
+  },
+  {
+   "decision": "Brian Laffond and Rena Swezey will inquire about getting the September 27 minutes added to the town website.",
+   "quote": "brian laﬀond and rena swezey will inquire to get them added."
+  },
+  {
+   "decision": "The Board will give the citizen question list to Nate Cramer for responses, and answers will be added to the website.",
+   "quote": "the board will give this list of quesɵons to nate cramer to get his responses."
+  },
+  {
+   "decision": "The Board wants a copy of all contracts.",
+   "quote": "the board wants a copy of all contracts."
+  },
+  {
+   "decision": "Brian Laffond volunteered John Rabbitt to work with the person who runs the town website.",
+   "quote": "brian laﬀond volunteered john rabbiʃ to work with the person who runs the town website to help evolve."
+  },
+  {
+   "decision": "The Field Inspection / Data Collection Manual draft review was added to the December 4 agenda.",
+   "quote": "this topic has been added on the agenda for the december 4th meeɵng."
+  },
+  {
+   "decision": "Senior / Veterans exemption review and the other listed items were added as agenda items for the next meeting.",
+   "quote": "the bullets below were added as an agenda items for the next meeɵng."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior work-off program",
+   "what_was_recorded": "Board member shared information that the senior work-off program takes a fixed amount off taxes each year.",
+   "quote": "the senior work oﬀ program that takes $2,000 a year oﬀ on taxes.",
+   "figures_as_printed": [
+    "$2,000"
+   ]
+  },
+  {
+   "topic": "Tax rate change",
+   "what_was_recorded": "Commenting on the Town Manager's answers, the minutes say the tax rate dropped by a printed dollar amount, which is called a red flag, and that 15 cents is considered a big change.",
+   "quote": "the tax rate dropped $3 dollars which is a red ﬂag, and 15 cents is considered a big change.",
+   "figures_as_printed": [
+    "$3 dollars",
+    "15 cents"
+   ]
+  },
+  {
+   "topic": "Assessment amount discrepancy",
+   "what_was_recorded": "A board member noticed a discrepancy in assessment amounts between the CAI and Vision property cards; no dollar figure is printed.",
+   "quote": "noɵced a discrepancy in the assessment amount.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "91 Main Stre et",
+   "topic": "gray area in rules and responsibilities",
+   "quote": "anna lockwood- 91 main stre et- refers to a prior meeɵng regarding rules and responsibiliɵes."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Nate Cramer answers and draft report numbers",
+   "quote": "carl luck - 50 sunset lane-shares he is happy that the board is addressing quesɵons from the public."
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "subcommittees to gather data from other towns",
+   "quote": "phyllis luck - 50 sunset lane- suggests that people can work in subcommiʃees to gather data and informaɵon from other towns."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening comments: board comments",
+   "resolution": "discussed; item to be added to next agenda",
+   "quote": "john rabbi ʃ looked at cai property card and the vision property card and noɵced a discrepancy in the assessment amount.",
+   "tags": [
+    "assessment",
+    "Vision system",
+    "CAI",
+    "senior exemptions"
+   ]
+  },
+  {
+   "topic": "Old business: approve minutes",
+   "resolution": "not approved as written; amendments to be made; Oct 11 minutes still to be reviewed",
+   "quote": "the minutes for november 6 th were not approved as wriʃen and amendments will be made.",
+   "tags": [
+    "minutes",
+    "website"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, vouchers, payroll",
+   "resolution": "no action recorded",
+   "quote": "review and approve invoices, expense vouchers, payroll, etc.",
+   "tags": [
+    "payroll",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Status report from Interim Principal Assessor",
+   "resolution": "discussed; DOR schedule as guideline; meeting with DOR set for December 5",
+   "quote": "rena swezey has met with vision, and she is working on creaɵng a data collecɵon manual.",
+   "tags": [
+    "third quarter billing",
+    "DOR",
+    "data collection"
+   ]
+  },
+  {
+   "topic": "Community outreach: senior center",
+   "resolution": "discussed; senior exemptions to start after the first of the year",
+   "quote": "john rabbiʃ and rena swezey are going to be seƫng up a meeɵng prior to their presentaɵon regarding exempɵons.",
+   "tags": [
+    "senior exemptions",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Requests for collaboration with Town Manager",
+   "resolution": "discussed; actions assigned",
+   "quote": "the board wants a copy of all contracts.",
+   "tags": [
+    "tax bill insert",
+    "contracts",
+    "RFP",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Response to citizen questions",
+   "resolution": "list sent to Nate Cramer for responses",
+   "quote": "the board will give this list of quesɵons to nate cramer to get his responses.",
+   "tags": [
+    "citizen questions",
+    "public records"
+   ]
+  },
+  {
+   "topic": "Appointment 7:00 p.m.: questions for MFS (Nate Cramer)",
+   "resolution": "responses recorded; discussion of sales method, trends and checks",
+   "quote": "below are the public quesɵons with a response by nate cramer.",
+   "tags": [
+    "MFS",
+    "sales method",
+    "assessment ratio",
+    "waterfront",
+    "topography"
+   ]
+  },
+  {
+   "topic": "New business: website improvements",
+   "resolution": "John Rabbitt assigned to work with website staff",
+   "quote": "brian laﬀond volunteered john rabbiʃ to work with the person who runs the town website to help evolve.",
+   "tags": [
+    "website",
+    "seniors",
+    "archive"
+   ]
+  },
+  {
+   "topic": "Field inspection / data collection manual draft",
+   "resolution": "added to December 4 agenda",
+   "quote": "this topic has been added on the agenda for the december 4th meeɵng.",
+   "tags": [
+    "data collection manual",
+    "draft review"
+   ]
+  },
+  {
+   "topic": "Ad-hoc citizen committees",
+   "resolution": "discussed; research to continue",
+   "quote": "brian laﬀond believes the board should take as many resources as possible.",
+   "tags": [
+    "citizen committee",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Future agenda topics",
+   "resolution": "items added to next agenda",
+   "quote": "the bullets below were added as an agenda items for the next meeɵng.",
+   "tags": [
+    "exemptions",
+    "chapter land",
+    "software",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Closing comments: public and board",
+   "resolution": "public comment taken; board suggestions recorded",
+   "quote": "anna lockwood- 91 main stre et- refers to a prior meeɵng regarding rules and responsibiliɵes.",
+   "tags": [
+    "public comment",
+    "subcommittees",
+    "master project plan"
+   ]
+  },
+  {
+   "topic": "Adjourn to executive session",
+   "resolution": "motion made; roll call result not recorded",
+   "quote": "moɵon to adjourn by sarah cammer, seconded by john rabbiʃ to enter into execuɵve session not to return to open session aōer exiɵng execuɵve session. roll call vote.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "property assessment",
+  "tax",
+  "senior exemptions",
+  "website",
+  "citizen questions",
+  "MFS",
+  "minutes approval",
+  "public comment",
+  "executive session",
+  "Vision system",
+  "DOR"
+ ],
+ "dropped_unquoted_by_field": {}
 }

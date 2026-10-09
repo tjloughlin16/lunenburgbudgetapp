@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2023-12-07",
  "docid": "6108",
@@ -12,24 +12,142 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the November meeting",
+   "motion": "Approve the minutes of the November meeting, with one correction.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "theminutesfor thenovember meetingwerereviewedandpassedwithonecorrection"
+   "quote": "theminutesfor thenovember meetingwerereviewedandpassedwithonecorrection."
   },
   {
-   "motion": "Allow the project at 899 Flat Hill Road to continue",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Allow the project at 899 Flat Hill road to continue, after the historical status of the structure was found to have no historical significance.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "thecommissionvotedunanimouslytoallowtheproject tocontinu",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "sothecommissionvotedunanimouslytoallowtheproject tocontinue."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes appear to be OCR'd with irregular spacing (spaces removed between words). Text reconstructed for clarity in quotes. No mover or seconder names recorded for either vote.",
- "cost_usd": 0.08706349999999999
+ "note": "The minutes are one unbroken block of text with most word spaces collapsed, so quotes are copied as printed, spacing included. The minutes give no mover, seconder or vote count for either motion; the vote outcomes are recorded only as \"reviewed and passed\" and \"voted unanimously\". No motion to adjourn is recorded; the minutes state only that the meeting was adjourned at 7:40. No dollar figures appear. The owner of 899 Flat Hill road is not named. Richard McGrath is named once, without a role; it is not stated whether he is the McGrath listed as present.",
+ "cost_usd": 0.013029370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwereinattendance."
+  },
+  {
+   "name": "Lakso",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwereinattendance."
+  },
+  {
+   "name": "Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwereinattendance."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "richardmcgrathplanstofindstoragefor themarkersover thewinter."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident",
+   "status": "present",
+   "quote": "resident davepassiosadvocatedfor thepreservationof themarshall parkcave."
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "resident",
+   "status": "present",
+   "quote": "resident bill tyler alsoagreedthat it wasanimportant pieceof local history"
+  },
+  {
+   "name": "Owner of 899 Flat Hill road (unnamed)",
+   "role": "applicant, presented project plans",
+   "status": "present",
+   "quote": "theowner of 899flat hill roadpresentedtothecommissionplansfor theproject"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The plan on how to proceed with the Marshall Park cave will be discussed at the next meeting.",
+   "quote": "theplanonhowtoproceedwiththemarshall parkcavewill bediscussedat thenext meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "resident",
+   "topic": "preservation of Marshall Park cave",
+   "quote": "resident davepassiosadvocatedfor thepreservationof themarshall parkcave."
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "resident",
+   "topic": "preservation of Marshall Park cave",
+   "quote": "resident bill tyler alsoagreedthat it wasanimportant pieceof local history"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of November minutes",
+   "resolution": "approved with one correction",
+   "quote": "theminutesfor thenovember meetingwerereviewedandpassedwithonecorrection.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment: Marshall Park cave",
+   "resolution": "no action; plan to be discussed at next meeting",
+   "quote": "theplanonhowtoproceedwiththemarshall parkcavewill bediscussedat thenext meeting.",
+   "tags": [
+    "Marshall Park",
+    "cave",
+    "preservation",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "899 Flat Hill road project (demolition delay)",
+   "resolution": "approved to continue, unanimously",
+   "quote": "sothecommissionvotedunanimouslytoallowtheproject tocontinue.",
+   "tags": [
+    "899 Flat Hill Road",
+    "demolition delay",
+    "historic structure"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery",
+   "resolution": "no action; status still held up by landowner's lawyer",
+   "quote": "thestatusof thearnoldlitchcemeteryisstill beingheldupbythelawyer of thecurrentlandowner.",
+   "tags": [
+    "cemetery",
+    "markers",
+    "landowner"
+   ]
+  }
+ ],
+ "tags": [
+  "historical preservation",
+  "demolition delay",
+  "Marshall Park cave",
+  "899 Flat Hill Road",
+  "Arnold Litch cemetery",
+  "cemetery markers",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-11-14",
  "docid": "3679",
@@ -12,32 +12,117 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 1",
+   "motion": "To recommend approval of Article 1 of the Special Town Meeting warrant (vote: All in Favor).",
    "moved_by": "L. Franco",
    "seconded_by": "R. Emkey",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2nd: r. emkey to recommend approval of article 1 vote: all in favor"
+   "quote": "to recommend approval of article 1"
   },
   {
-   "motion": "Recommend approval of Article 2",
+   "motion": "To recommend approval of Article 2 of the Special Town Meeting warrant (vote: All in Favor).",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to recommend approval of article 2 vote: all in favor"
+   "quote": "to recommend approval of article 2"
   },
   {
-   "motion": "Recommend approval of Article 3",
+   "motion": "To recommend approval of Article 3 of the Special Town Meeting warrant (vote: All in Favor).",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to recommend approval of article 2 vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of article 3"
+  },
+  {
+   "motion": "To recommend approval of Article 15 of the Special Town Meeting warrant (vote: All in Favor).",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Emkey",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to recommend approval of article 15"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0906085
+ "dropped_unquoted": 0,
+ "note": "Short minutes, read in full. Four votes are recorded as 'All in Favor' with no numeric count, so outcome is recorded as 'passed'. Article 9 was deferred with no motion or vote printed, so it is a decision, not a vote. The adjournment at 6:32 p.m. has no motion printed, so it is not recorded as a procedural vote. The minutes print no subject matter for any article and no dollar figures, so budget_items and transfers are empty. No public comment is recorded. Anne Aubrey, who signs as Executive Assistant to the Town Manager, is omitted as recorder only. Motion lines in the source have line breaks inside the word '2nd', so the quotes use only the article-reference lines.",
+ "cost_usd": 0.012483870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, vice chairman; tom alonzo, renee emkey"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, vice chairman; tom alonzo, renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, vice chairman; tom alonzo, renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, vice chairman; tom alonzo, renee emkey"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "member not present: caesar nuzzolo, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 9 of the Special Town Meeting warrant was deferred until the Planning Board presents information later that evening.",
+   "quote": "article 9 was deferred until the planning board presents information later this evening on the warrant article."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special Town Meeting warrant article recommendations",
+   "resolution": "Articles 1, 2, 3 and 15 recommended for approval; Article 9 deferred",
+   "quote": "the board voted on recommendations of the special town meeting warrant articles.",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "recommendations"
+   ]
+  },
+  {
+   "topic": "Article 9 (Planning Board information)",
+   "resolution": "deferred until Planning Board presents information later in the meeting",
+   "quote": "article 9 was deferred until the planning board presents information later this evening on the warrant article.",
+   "tags": [
+    "warrant articles",
+    "planning board"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "warrant articles",
+  "recommendations",
+  "planning board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

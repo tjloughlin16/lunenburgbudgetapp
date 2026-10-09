@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-09-19",
  "docid": "336",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Sign the easement agreement for 895 Flat Hill Road",
+   "motion": "Sign the easement agreement for 895 Flat Hill Road.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
@@ -20,32 +20,299 @@
    "quote": "motion: m. jeffreys to sign the easement agreement for 895 flat hill road 2nd: c. nuzzolo vote: all in favor"
   },
   {
-   "motion": "Approve the amendment to license #07528-RS-0636 for Lakefront Beverage Inc. d/b/a On the Rocks, for a Pledge of Collateral",
+   "motion": "Approve the amendment to license #07528-RS-0636 for Lakefront Beverage Inc. d/b/a On the Rocks, for a Pledge of Collateral.",
    "moved_by": "C. Nuzzolo",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: c. nuzzolo 2nd: t. alonzo to approve the amendment to license #07528-rs-0636 for lakefront beverage inc. d/b/a on the rocks, for a pledge of collateral discussion: mr. je",
-   "quote_taken_from_text": true
+   "quote": "to approve the amendment to license #07528-rs-0636 for lakefront beverage inc. d/b/a on the rocks, for a pledge of collateral"
   },
   {
-   "motion": "Change the wording of 'Board of Selectmen' and 'Selectmen' to 'Select Board' in every legal document including the bylaws, procedures, and every other document that the Town has, except the Charter which will have its own review",
+   "motion": "Change \"Board of Selectmen\" and \"Selectmen\" to \"Select Board\" in every legal document except the Charter, which will have its own review.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2'°: c. nuzzolo that the board change the wording of \"board of selectmen\" and \" selectmen\" to \"select board\" in every legal document including the bylaws, procedures, and every other document that the town has, except the charter which will have its own review vote: all in favor"
+   "procedural": false,
+   "quote": "that the board change the wording of \"board of selectmen\" and \" selectmen\" to \"select board\" in every legal document including the bylaws"
   },
   {
-   "motion": "Enter into Executive Session and adjourn the meeting to discuss strategy with respect to collective bargaining for the Clerical Union",
+   "motion": "Enter Executive Session under MGL c. 30 § 21, Paragraph 3, to discuss collective bargaining (Clerical Union), and adjourn the meeting after exiting Executive Session.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: t. alonzo to enter into executive session and to adjourn the meeting after exiting executive session pursuant to mgl c. 30 § 21, paragraph 3, to discuss strategy with respect to collective bargaining, where an open meeting may have a detrimental effect on the government's bargaining position and the chair so declares. (clerical union) vote: ms. emkey-aye, mr. nuzzolo-aye, mr. alonzo-aye, mr. jeffreys- aye"
+   "quote": "to enter into executive session and to adjourn the meeting after exiting executive session"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. One OCR corruption noted: '2'°:' in vote 3 is a scan artifact for '2nd:'.",
- "cost_usd": 0.11884109999999999
+ "note": "Text is macOS Vision OCR of the printed minutes. Garbled readings noted: the second-seconder marker on the bylaws motion reads \"2'°:\" (taken as 2nd: C. Nuzzolo); the page-1 header \"Emkey\" is a stray word, but Ms. Emkey is confirmed present by her vote and her questions. The applicant's brother is printed \"Jignesh\" in the text and \"Jignash\" in the attendance line; they may be the same person and are listed separately as printed. Page 3 ends mid-discussion of the Liquor Mart hearing and no motion or vote on that license appears in the text, so none is recorded. Page 4 begins a different hearing. The executive session motion has a roll-call vote (four aye) but the minutes do not record the return to open session. No dollar figures appear anywhere in the minutes, so budget items carry no printed figures. Page 2 is partially OCR-garbled in the vacancy list.",
+ "cost_usd": 0.019116970000000004,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Emkey",
+   "role": "board member",
+   "status": "present",
+   "quote": "ms. emkey asked what was the plan for being at the business since you have two other businesses in"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "member not present: lou franco, vice chairman"
+  },
+  {
+   "name": "C. Nuzzolo",
+   "role": "board member",
+   "status": "present",
+   "quote": "mr. nuzzolo read aloud the public hearing notice."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "board member",
+   "status": "present",
+   "quote": "mr. alonzo asked for clarification that the pledge cannot occur without the select board's approval."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager, attorney gina wilson, vinay patel, jignash patel,"
+  },
+  {
+   "name": "Gina Wilson",
+   "role": "attorney, Pusateri and Wilson PC",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager, attorney gina wilson, vinay patel, jignash patel,"
+  },
+  {
+   "name": "Vinay Patel",
+   "role": "applicant",
+   "status": "present",
+   "quote": "attorney wilson from pusateri and wilson pc, introduced herself and mr. vinay patel, the applicant."
+  },
+  {
+   "name": "Jignash Patel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager, attorney gina wilson, vinay patel, jignash patel,"
+  },
+  {
+   "name": "Jasminkumar Patel",
+   "role": "via Zoom, 155 Northfield Road, in opposition",
+   "status": "remote",
+   "quote": "jasminkumar patel via zoom, attorney jeff aveni, jonathan dickhaut"
+  },
+  {
+   "name": "Jeff Aveni",
+   "role": "Attorney, representing Avidia Bank",
+   "status": "present",
+   "quote": "attorney aveni, 6 grove street, leominster, stated he was representing avidia bank who provided a"
+  },
+  {
+   "name": "Jonathan Dickhaut",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. aveni and mr. dickhaut thanked the board and exited the meeting."
+  },
+  {
+   "name": "Jignesh Patel",
+   "role": "brother of applicant Vinay Patel (as printed: \"Mr. Patel's brother, Jignesh\")",
+   "status": "present",
+   "quote": "mr. patel's brother, jignesh stepped forward and stated he owns other businesses and has"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Parks Commission is to be invited to a meeting to clarify the requirements and wording of its warrant article (ARPA funding, PARC grant).",
+   "quote": "the parks commission will be invited in to a meeting to clarify the requirements and the article wording."
+  },
+  {
+   "decision": "The Planning Board is to be requested to explain the changes in its warrant articles at the Special Town Meeting.",
+   "quote": "the planning board will be requested to explain the changes in their warrant articles."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third quarter preliminary tax bills and New Growth estimate (FY24)",
+   "what_was_recorded": "Third quarter estimated tax bills would go out before December 31 using the Annual Town Meeting New Growth estimate, pending a Pro Forma Recap after the Special Town Meeting; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "this equates to using the same estimate that we used at the annual town meeting for new growth at the upcoming fall town meeting."
+  },
+  {
+   "topic": "LED streetlight project costs with Unitil",
+   "what_was_recorded": "Contractor has converted about 50 lights; wiring issues will be documented and provided to Unitil to review costs with the Town at project end; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "we will provide all this information to unitil at the conclusion of the project to review costs with the town."
+  },
+  {
+   "topic": "Special Purpose Stabilization Account for ambulance and dump trucks (warrant article)",
+   "what_was_recorded": "A Special Town Meeting warrant article proposes using the Special Purpose Stabilization Account to buy an ambulance and two dump trucks; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "using the special purpose stabilization account to purchase an ambulance and two dump trucks."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "General public comment",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "public comment: there was none this evening."
+  },
+  {
+   "topic": "Liquor Mart license hearing, opposition to transfer out of town center",
+   "speaker": "Jasminkumar Patel",
+   "stated_role": "via Zoom, 155 Northfield Road, in opposition",
+   "quote": "jasminkumar patel via zoom, 155 northfield road, was in opposition of the license being transferred"
+  },
+  {
+   "topic": "Liquor Mart license hearing, applicant's brother testimony",
+   "speaker": "Jignesh",
+   "stated_role": "Mr. Patel's brother",
+   "quote": "mr. patel's brother, jignesh stepped forward and stated he owns other businesses and has"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "mr. jeffreys stated the cemetery commission would like the community to join them at town hall next",
+   "tags": [
+    "announcements",
+    "cemetery",
+    "farmers market",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments, resignations",
+   "resolution": "resignations announced; no action",
+   "quote": "ms. lemieux announced she had received two resignations, the first was from alex page, dpw heavy",
+   "tags": [
+    "personnel",
+    "resignations",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies and job postings",
+   "resolution": "noted; no action",
+   "quote": "the following is a list of current vacancies on the following boards/committees/commissions:",
+   "tags": [
+    "vacancies",
+    "job postings",
+    "boards"
+   ]
+  },
+  {
+   "topic": "Town Manager report: FY24 property values, New Growth, third quarter tax bills",
+   "resolution": "noted; no action",
+   "quote": "we will need to submit a pro forma recap after the special town meeting and once approved, can mail out the",
+   "tags": [
+    "tax bills",
+    "new growth",
+    "property values",
+    "DOR certification"
+   ]
+  },
+  {
+   "topic": "Infrastructure: LED streetlight project",
+   "resolution": "noted; no action",
+   "quote": "led streetlight project: our contractor has converted approximately 50 lights so far.",
+   "tags": [
+    "streetlights",
+    "Unitil",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Old business: easement, 895 Flat Hill Road",
+   "resolution": "approved",
+   "quote": "1. resign the temporary/permanent easement for 895 flat hill road",
+   "tags": [
+    "easement",
+    "property"
+   ]
+  },
+  {
+   "topic": "Public hearing: Liquor Mart all-alcohol package store license, change of location to 88 Mass. Ave.",
+   "resolution": "hearing held; no vote recorded in this text (continues past end of text)",
+   "quote": "the lunenburg licensing authority/select board will hold a public hearing on september 19, 2023 at 7:15 pm",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "change of location",
+    "abutter notice"
+   ]
+  },
+  {
+   "topic": "Public hearing: Lakefront Beverage (On the Rocks) license amendment, pledge of collateral",
+   "resolution": "approved",
+   "quote": "public hearing for amendment to alcohol license 07528-rs-0636 for lakefront",
+   "tags": [
+    "liquor license",
+    "pledge of collateral",
+    "bank loan"
+   ]
+  },
+  {
+   "topic": "Review of November 14 Special Town Meeting warrant articles",
+   "resolution": "reviewed; no vote",
+   "quote": "ms. lemieux presented warrant articles that have been added to the warrant since the last meeting.",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "ARPA",
+    "PARC grant",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Select Board bylaws review (FY24 Goal #3)",
+   "resolution": "approved wording change",
+   "quote": "mr. jeffreys stated as part of our goal we are starting the process of reviewing the wording in the charter",
+   "tags": [
+    "bylaws",
+    "charter",
+    "select board",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings, executive session, adjournment",
+   "resolution": "entered executive session; adjourned 8:03 p.m.",
+   "quote": "the meeting adjourned at 8:03 p.m.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "clerical union"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "public hearing",
+  "special town meeting",
+  "warrant articles",
+  "tax bills",
+  "new growth",
+  "streetlights",
+  "personnel",
+  "resignations",
+  "vacancies",
+  "bylaws",
+  "executive session",
+  "collective bargaining",
+  "easement"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2023-10-19",
  "docid": "802",
@@ -12,15 +12,182 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 6:45pm",
+   "motion": "Motion by Lou Franco, seconded by Carol Archambault, to adjourn the meeting at 6:45pm.",
    "moved_by": "Lou Franco",
    "seconded_by": "Carol Archambault",
-   "outcome": "passed 7-0",
+   "outcome": "passed, all aye (7 named in roll call)",
    "procedural": true,
-   "quote": "to adjourn at 6:45pm roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye"
+   "quote": "roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned document with minor OCR inconsistency: 'Archambault' appears as 'Ar chambault' in vote section but 'Archambault' in attendees list.",
- "cost_usd": 0.11520749999999999
+ "note": "Text extraction, not a scan. One procedural vote (adjournment) is recorded with all-aye roll call and no numeric count printed; outcome is recorded as printed. Dick Mailloux appears in the roll call of attendees but is not among the seven named in the roll call vote, so his status is recorded as not stated. Jerry Reid's role is not printed. Tony Sculimbrene's role is not printed beyond 'via phone'. Several quotes contain odd spacing from the extraction, reproduced as printed.",
+ "cost_usd": 0.01451377,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair (Economic Dev.)",
+   "status": "present",
+   "quote": "roll call of attendees - chair: joeci gilcrest ( econ omic dev.) , vice-chair: tim willsmer"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "roll call of attendees - chair: joeci gilcrest ( econ omic dev.) , vice-chair: tim willsmer"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustees of Library",
+   "status": "not stated",
+   "quote": "roll call of attendees - chair: joeci gilcrest ( econ omic dev.) , vice-chair: tim willsmer"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "lou said he will put the flyer on his page and will platform it at select board."
+  },
+  {
+   "name": "Jerry Reid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "carol said she can email it to the superintendent 's office who will get to parents of school age kids."
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "OverUnder",
+   "status": "present",
+   "quote": "rami said they will come with 4 or 5 of their team, but it would be helpful"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joeci will post the Rami flyer on the Master Plan Committee Facebook page.",
+   "quote": "joeci will post the flyer on the master plan committee facebook page."
+  },
+  {
+   "decision": "Lou will put the flyer on his own page and raise it at the Select Board.",
+   "quote": "lou said he will put the flyer on his page and will platform it at select board."
+  },
+  {
+   "decision": "Carol will forward items from Joeci to the Superintendent's office for its newsletters.",
+   "quote": "carol said she will forward items from joeci to that office."
+  },
+  {
+   "decision": "Rami will make sure there are items to give out at the 11/14 Special Town Meeting.",
+   "quote": "rami replied he will make sure there are items to give out on 11/14."
+  },
+  {
+   "decision": "Rami will consider a Municipal Building Design Committee interim report at Spring Town Meeting, floated to the Select Board by Lou.",
+   "quote": "lou said he thought that wou ld be a good idea and would float the idea to the select board."
+  },
+  {
+   "decision": "Joeci will ask someone at Town Hall to make copies of the flyer and email it to committee members.",
+   "quote": "she will ask someone at town hall to make copies and will"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tony Sculimbrene",
+   "stated_role": "via phone",
+   "topic": "outreach, survey method, Municipal Building Design Committee",
+   "quote": "also, he suggested advertising the public meeting in the lunenburg ledger."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Details for Nov. 2nd forum",
+   "resolution": "discussed; flyer to be shared; no vote",
+   "quote": "there will be several public engagement opportunities, including a public meeting on 11/2 at smokestack roasters, 6:30- 8:30pm.",
+   "tags": [
+    "public meeting",
+    "forum",
+    "flyer",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Upcoming events for OverUnder to attend",
+   "resolution": "Football Field location agreed for Homecoming",
+   "quote": "evan suggested moving to the football field at 1pm and rami agreed.",
+   "tags": [
+    "Homecoming",
+    "outreach",
+    "events"
+   ]
+  },
+  {
+   "topic": "Open discussion of Master Plan questions for OverUnder",
+   "resolution": "discussed; no action",
+   "quote": "lou said the public meeting would help open the floodgates for questions.",
+   "tags": [
+    "Existing Conditions Report",
+    "master plan",
+    "consultants"
+   ]
+  },
+  {
+   "topic": "OverUnder additional questions and committee comment",
+   "resolution": "discussed; items to be forwarded",
+   "quote": "carol suggested looking at some of the municipal building design committee meetings",
+   "tags": [
+    "Special Town Meeting",
+    "newsletters",
+    "Municipal Building Design Committee"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received; no action",
+   "quote": "he also suggested rami talk to michael ray jeffreys, who is the chair of that committee",
+   "tags": [
+    "public comment",
+    "surveys",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45pm",
+   "quote": "roll call vote: lou , jerry, joeci, tim, carol, debbie, and evan - all aye",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "Master Plan",
+  "public meeting",
+  "Nov. 2 forum",
+  "OverUnder",
+  "outreach",
+  "surveys",
+  "Special Town Meeting",
+  "Municipal Building Design Committee",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

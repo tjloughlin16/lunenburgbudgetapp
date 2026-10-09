@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-10-24",
  "docid": "812",
@@ -12,23 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Direct W. Bertrand to research and recommend changes to the vacation leave accrual policy and report back to the committee",
+   "motion": "Direct W. Bertrand to research and recommend changes to the vacation leave accrual policy, back to the committee for final resolution.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "j. bilotta made a motion to direct w. bertrand to research and recommend any changes to the vacation leave accrual policy, back to this committee for final resolution second d. fortune roll call vote: all in favor"
+   "quote": "j. bilotta made a motion to direct w. bertrand to research and recommend any changes to the vacation leave accrual policy, back to this committee for final resolution"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:15 (as printed, \"7:15m\").",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "d. fortune made a motion to adjourn at 7:15m second: s. andrews roll call vote: all in favor"
+   "quote": "d. fortune made a motion to adjourn at 7:15m"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1137089
+ "note": "Text is a two-page extract with no scan noted. Two motions are recorded, both with roll-call result printed only as 'All in Favor' (no count), so outcome is recorded as passed. No dollar figures appear anywhere in the minutes. Previous minutes were not available, so no approval vote was taken. Public comment is printed under two headings; the first block includes committee member D. Fortune and staff speakers, recorded here as printed. Dave McDonald's and Brett Ramsden's roles are not stated; Brett Ramsden is listed as 'on the call' without any statement of his participation.",
+ "cost_usd": 0.01511737,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "Committee attendee",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee attendee",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee attendee; opened the meeting",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:36pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee attendee",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director, pauline roy, coa"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director, pauline roy, coa"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "paula bertram, sewer business manager"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits coordinator/risk manager"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave mcdonald addressed the committee on the project, as he felt that the project may not be accurately"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "dave mcdonald, brett ramsden"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "W. Bertrand offered to act as project lead researching the vacation accrual issue and bring recommendations back to the committee.",
+   "quote": "wendy bertrand offered to be the project lead to research this important issue and come back to the committee with recommendations on a possible remedy."
+  },
+  {
+   "decision": "Target for any vacation accrual policy change is the May 2024 Town Meeting.",
+   "quote": "the target of any policy change would be the may 2024 town meeting."
+  },
+  {
+   "decision": "S. Andrews and D. Fortune will examine the Benefits Coordinator/Risk Manager job description.",
+   "quote": "s. andrews and d. fortune will examine the benefits coordinator/risk manager jd."
+  },
+  {
+   "decision": "D. Fortune will update the job description spreadsheet to reflect currently active elements.",
+   "quote": "will update the current spreadsheet to reflect current active elements so that the group might begin to look"
+  },
+  {
+   "decision": "Proposed next meeting to examine the COA and Library departments.",
+   "quote": "proposed next meeting will examine coa and library departments"
+  },
+  {
+   "decision": "Potential next meetings set for November 13, 2023 at 5:30pm, then November 28, 2023 (tentative).",
+   "quote": "potential next meeting will be november 13, 2023, at 5:30pm; then another on november 28, 2023."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Fortune",
+   "stated_role": "not stated",
+   "topic": "job description revision project objectives",
+   "quote": "d. fortune asked that j. belliveau update the objectives of the current project of the revision of job descriptions"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "not stated",
+   "topic": "job description project and sewer department input",
+   "quote": "dave mcdonald addressed the committee on the project, as he felt that the project may not be accurately"
+  },
+  {
+   "speaker": "Julie Belliveau",
+   "stated_role": "Assistant Town Manager/HR Director",
+   "topic": "project objectives and rating tool",
+   "quote": "julie belliveau then outlined the project objectives, noting the use of a rating tool"
+  },
+  {
+   "speaker": "Pauline Roy",
+   "stated_role": "COA",
+   "topic": "town vacation policies comparison",
+   "quote": "pauline roy spoke about the previous reference that most of the various town vacation policies were similar."
+  },
+  {
+   "speaker": "Nancy O’Rourke",
+   "stated_role": "Payroll and Benefits Coordinator/Risk Manager",
+   "topic": "include sick time with vacation accrual review",
+   "quote": "nancy o'rourke recommended that while looking at the vacation accrual time we should include sick time as well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on job description revision project",
+   "resolution": "discussed; no action",
+   "quote": "d. fortune asked that j. belliveau update the objectives of the current project of the revision of job descriptions",
+   "tags": [
+    "job descriptions",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; previous minutes not available",
+   "quote": "minutes from previous meeting not available",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "no action; none listed",
+   "quote": "ongoing business none",
+   "tags": [
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Vacation leave accrual",
+   "resolution": "passed motion directing W. Bertrand to research and recommend changes",
+   "quote": "j. bilotta made a motion to direct w. bertrand to research and recommend any changes to the vacation leave accrual policy, back to this committee for final resolution",
+   "tags": [
+    "vacation leave",
+    "personnel policy",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Job description rating project next steps",
+   "resolution": "continued; reviewing job descriptions and assigning members",
+   "quote": "job description rating project - next steps the group believes that we now have examined each sap job description",
+   "tags": [
+    "job descriptions",
+    "SAP classification",
+    "job rating"
+   ]
+  },
+  {
+   "topic": "Public comment on sick time",
+   "resolution": "no action; recommendation noted",
+   "quote": "there was no committee comments, nancy o'rourke recommended that while looking at the vacation accrual time",
+   "tags": [
+    "sick leave",
+    "vacation leave"
+   ]
+  },
+  {
+   "topic": "Next meeting scheduling",
+   "resolution": "tentative dates noted",
+   "quote": "potential next meeting will be november 13, 2023, at 5:30pm",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved (procedural)",
+   "quote": "d. fortune made a motion to adjourn at 7:15m",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "vacation leave accrual",
+  "sick leave",
+  "SAP classification",
+  "town employees",
+  "human resources",
+  "Town Meeting May 2024"
+ ],
+ "dropped_unquoted_by_field": {}
 }

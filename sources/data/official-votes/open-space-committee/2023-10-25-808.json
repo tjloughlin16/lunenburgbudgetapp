@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2023-10-25",
  "docid": "808",
@@ -12,23 +12,146 @@
  },
  "votes": [
   {
-   "motion": "Recommend Selectboard transfer care and control of 51 Parmenter Road Assessor Parcel 136-0006 and Shirley Reservoir Lake Assessor Parcel 137-0012 to the Parks Commission, subject to Town Meeting Approval",
-   "moved_by": "B. Kibbe",
-   "seconded_by": "M. Wilson",
-   "outcome": "passed 5-0-1",
+   "motion": "Recommend that the Selectboard transfer care and control of 51 Parmenter Road (Assessor Parcel 136-0006) and 0 Shirley Reservoir Lake (Assessor Parcel 137-0012) to the Parks Commission, subject to Town Meeting approval.",
+   "moved_by": "Brandon Kibbe",
+   "seconded_by": "Mary Wilson",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "b. kibbe motion: recommend selectboard transfers care and control of 51 parmenter road assessor parcel 136-0006 and 0 shirley reservoir lake assessor parcel 137-0012 to the parks commission, subject to town meeting approval. seconded by m. wilson. roll call vote. in favor: e. hinds, b. kibbe, a. lockwood, m. wilson, m. toohill. m. allison abstains due to technical difficulties."
+   "quote": "b. kibbe motion: recommend selectboard transfers care and control of 51 parmenter road assessor parcel 136-0006 and 0 shirley reservoir lake"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "B. Kibbe",
-   "seconded_by": "M. Wilson",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Brandon Kibbe",
+   "seconded_by": "Mary Wilson",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "b. kibbe motion, m. wilson seconded. unanimously voted."
+   "quote": "b. kibbe motion, m. wilson seconded. unanimously voted. meeting adjourned at 8:39 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1290705
+ "note": "Text is plain (not a scan). The minutes print no tally or result word for the parcel motion; the roll call lists five in favour (E. Hinds, B. Kibbe, A. Lockwood, M. Wilson, M. Toohill) and M. Allison abstaining, so the outcome is recorded as not stated rather than as a count the minutes do not print. The header reads \"Open Space Ad Hoc Committee\" and the body \"Open Space Committee\". No dollar figures appear in the minutes.",
+ "cost_usd": 0.01375967,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), brandon kibbe (clerk), ana lockwood (vice chair), mary wilson"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), brandon kibbe (clerk), ana lockwood (vice chair), mary wilson"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), brandon kibbe (clerk), ana lockwood (vice chair), mary wilson"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), brandon kibbe (clerk), ana lockwood (vice chair), mary wilson"
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), brandon kibbe (clerk), ana lockwood (vice chair), mary wilson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison (not participating due to technical issues)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chairman suggested the Open Space Committee make a recommendation to the Selectboard on the Shirley Reservoir Lake and Parmenter Road parcels; this was then taken up by the recorded motion.",
+   "quote": "chairman suggests open space committee make a recommendation to selectboard."
+  },
+  {
+   "decision": "Next meetings set for December 13, 2023 and January 10, 2024.",
+   "quote": "next meetings: december 13, 2023; january 10, 2024"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "No public comment",
+   "quote": "4. public comment: none."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Shirley Reservoir Lake (Stump Cove) and Parmenter Road, continued discussion",
+   "resolution": "recommendation to Selectboard: transfer care and control to Parks Commission, subject to Town Meeting approval",
+   "quote": "0 shirley reservoir lake (aka stump cove) and parmenter road - continued discussion:",
+   "tags": [
+    "land",
+    "Parks Commission",
+    "Town Meeting",
+    "access",
+    "Parmenter Road",
+    "Shirley Reservoir Lake"
+   ]
+  },
+  {
+   "topic": "Committee comments and concerns: Parcel 4 Leominster Road, Chapter 61B withdrawal",
+   "resolution": "no action",
+   "quote": "parcel 4 leominster road chapter 61b notice of withdrawal, a. lockwood shared plans",
+   "tags": [
+    "Chapter 61B",
+    "Leominster Road",
+    "acquisition",
+    "conservation",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "4. public comment: none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "set December 13, 2023 and January 10, 2024",
+   "quote": "5. next meetings: december 13, 2023; january 10, 2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:39 pm",
+   "quote": "b. kibbe motion, m. wilson seconded. unanimously voted. meeting adjourned at 8:39 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "open space",
+  "land transfer",
+  "Parks Commission",
+  "Town Meeting",
+  "Shirley Reservoir Lake",
+  "Parmenter Road",
+  "Chapter 61B",
+  "conservation",
+  "access"
+ ],
+ "dropped_unquoted_by_field": {}
 }

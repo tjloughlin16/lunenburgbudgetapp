@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-10-04",
  "docid": "6498",
@@ -12,15 +12,418 @@
  },
  "votes": [
   {
-   "motion": "Approve Certificate of Compliance for 4 Townsend Harbor Road (DEP #208-1203) contingent upon Jack Maloney providing certified language to his letter",
+   "motion": "Approve the Request for Determination for A & M Construction at 274 Prospect Street with a negative determination and Standard Order of Conditions.",
+   "moved_by": "Jeff V .",
+   "seconded_by": "Mike L.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "motion: jeff v ., second: mike l. to approve with a negative determination with a standard order of conditions. roll call vote was unanimous to approve."
+  },
+  {
+   "motion": "Approve the Request for Determination for the 19 Cliffview Terrace rolling dock with a negative determination and Standard Order of Conditions.",
+   "moved_by": "Rich T.",
+   "seconded_by": "Jeff V .",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "motion: rich t., second: jeff v . to approve with a negative determination with a standard order of conditions. roll call vote was unanimous to approve."
+  },
+  {
+   "motion": "Approve the Notice of Intent for 899 Flat Hill Road (DEP # 208-1307) with silt fencing added to the straw wattles.",
+   "moved_by": "Jeff V .",
+   "seconded_by": "Mike L.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "motion: jeff v ., second: mike l. to approve this noi, with dep # 208-1307, with the addition of silt fencing to the straw wattles."
+  },
+  {
+   "motion": "Continue the 38 Oak Ridge Road Notice of Intent hearing to 10/18/23.",
+   "moved_by": "Jeff V .",
+   "seconded_by": "Mike L.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "ryan asked to continue the hearing to 10/18 and he will get them a revised landscaping plan in a week. motion: jeff v ., second: mike l. to continue the hearing to 10/18/23."
+  },
+  {
+   "motion": "Continue the 6 Peninsula Drive Notice of Intent hearing to 10/18/23.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jeff V .",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "insect activity in the tree. motion: rich b., second: jeff v . to continue the hearing to 10/18/23."
+  },
+  {
+   "motion": "Continue the 441 Townsend Harbor Road Amended Order of Conditions hearing to 10/18/23.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jeff V .",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "no one present for this hearing and commission agreed to continue it. motion: rich b., second: jeff v . to continue the hearing to 10/18/23."
+  },
+  {
+   "motion": "Approve the Notice of Intent for 205 Sunset Lane (DEP # 208-1299) with the four conditions as outlined by the chair.",
+   "moved_by": "Jeff V .",
+   "seconded_by": "Rich B.",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "motion: jeff v ., second: rich b. to approve this noi with the 4 conditions as previously outlined."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 4 Townsend Harbor Road, contingent upon Jack providing the extra certified language to his letter.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: rich b., second: mike l. to approve the certificate of compliance, contingent upon jack providing the extra certified language to his letter. roll call vote was unanimous to approve."
+   "quote": "motion: rich b., second: mike l. to approve the certificate of compliance, contingent upon jack providing the extra certified language to his letter."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Jeff V .",
+   "outcome": "passed unanimous",
+   "procedural": true,
+   "quote": "motion: mike l., second: jeff v . to adjourn at 9:43pm."
   }
  ],
- "dropped_unquoted": 8,
- "note": "All votes found and recorded. Minutes are a clean scan with readable votes throughout. Note: one vote (Larry Coffren & Marsha Beers NOI) had a split vote with Richard Bursch voting no despite seconding the motion.",
- "cost_usd": 0.0955781
+ "dropped_unquoted": 0,
+ "note": "Text is a clean digital extract of the minutes, not a scan; all quotes were copied from it. Meeting was held on Zoom. The minutes record no vote on approval of prior minutes (deferred for backlog). Public Comment is recorded as \"none\"; the only public remark listed is the abutter's during a hearing. The 205 Sunset Lane vote is recorded by roll call (4 aye, 1 no: Rich B.), so the \"4-1\" outcome is derived from that roll call rather than a printed count. Named but not taking part, so omitted from attendees: Chris St. Germain (header only), Ashleigh Denio (Conservation Assistant, referenced), Jane Ranley (Minutes Clerk, signature), Adam Burney, Chris Ruth, Nick Morrison, and Haley Ward (in parentheses). Several items list \"no update\" and were recorded without votes.",
+ "cost_usd": 0.022068070000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: mary w., rich t., jeff v ., mike l., and rich b."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: bob p. call to order at 7pm"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: mary w., rich t., jeff v ., mike l., and rich b."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: mary w., rich t., jeff v ., mike l., and rich b."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: mary w., rich t., jeff v ., mike l., and rich b."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: mary w., rich t., jeff v ., mike l., and rich b."
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing A & M",
+   "status": "present",
+   "quote": "wesley flis (haley ward), representing a & m, screen-shared the site plan for the property."
+  },
+  {
+   "name": "Korina Veenstra",
+   "role": "representing herself",
+   "status": "present",
+   "quote": "korina veenstra, representing herself, noted she lives on hickory hills lake"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "jack maloney (dillis & roy) and thomas crocker were present."
+  },
+  {
+   "name": "Thomas Crocker",
+   "role": "applicant",
+   "status": "present",
+   "quote": "jack maloney (dillis & roy) and thomas crocker were present."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy; representing the applicant (Coffren & Beers)",
+   "status": "present",
+   "quote": "greg roy (dillis & roy), representing the applicant who is also on the call, screen-shared the site plan."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy), peter and lily koronis were in attendance."
+  },
+  {
+   "name": "Peter and Lily Koronis",
+   "role": "applicant",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy), peter and lily koronis were in attendance."
+  },
+  {
+   "name": "Denise Charpentier",
+   "role": "applicant",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy), representing the applicant who is also present"
+  },
+  {
+   "name": "Tom Charpentier",
+   "role": "abutter",
+   "status": "present",
+   "quote": "tom charpentier (abutter) noted that one of the trees they are taking down has some large holes from a pileated woodpecker"
+  },
+  {
+   "name": "Nicholas Eaton",
+   "role": "applicant",
+   "status": "absent",
+   "quote": "no one present for this hearing and commission agreed to continue it."
+  },
+  {
+   "name": "Larry Coffren",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "notice of intent by larry coffren & marsha beers for the"
+  },
+  {
+   "name": "Marsha Beers",
+   "role": "applicant",
+   "status": "present",
+   "quote": "marsha said they have not hired anyone yet and were waiting to see if the commission would approve it."
+  },
+  {
+   "name": "Steven Petrazillo",
+   "role": "owner, 4 Townsend Harbor Road",
+   "status": "not stated",
+   "quote": "jack maloney (dillis & roy), steven petrazillo (owner) and kelly feehan (realtor)."
+  },
+  {
+   "name": "Kelly Feehan",
+   "role": "Realtor",
+   "status": "not stated",
+   "quote": "jack maloney (dillis & roy), steven petrazillo (owner) and kelly feehan (realtor)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed the agenda order is at the discretion of the chair.",
+   "quote": "rich b. noted the agenda order is at the discretion of the chair and the rest of the commission agreed."
+  },
+  {
+   "decision": "Mary will work with Ashleigh to underline addresses in the minutes to make scanning and historical data easier; Mary will note the folder-labelling and Meeting ID items.",
+   "quote": "mary will work with ashleigh to underline the addresses to make it easier to scan minutes and historical data."
+  },
+  {
+   "decision": "The Commission asked the 6 Peninsula Drive applicant's representative to add the requested information to the plan for the next meeting.",
+   "quote": "the commission asked ryan to add the additional information to his plan and ryan replied he can do so for the next meeting."
+  },
+  {
+   "decision": "The Commission agreed that handrails are a good idea for the 205 Sunset Lane deck.",
+   "quote": "the commission discussed and agreed that the handrails are a good idea."
+  },
+  {
+   "decision": "Mary asked the 4 Townsend Harbor Road representative to email her when the certified language is provided.",
+   "quote": "mary asked jack to email her when he provides the certified language."
+  },
+  {
+   "decision": "Mary and Bob will reach out to other towns to see whether conservation administrators can give extra hours while the office is short-staffed.",
+   "quote": "they will reach out to other towns to see if there are conservation administrators that could use some ex",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Mary asked the 38 Oak Ridge Road applicant to update the plan with the changes to the replacement trees.",
+   "quote": "mary thanked ryan for the updated plan with more details and asked him to update the plan with the changes to the replacement trees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road Residence maintenance cost overage",
+   "what_was_recorded": "The Hollis Road maintenance work is reported as above the original quote, for a current total, with a $10,000 cap mentioned.",
+   "figures_as_printed": [
+    "$3,300",
+    "$4,800",
+    "$8,100"
+   ],
+   "quote": "right now, they are $3,300 above the quote of $4,800 for current total of $8,100."
+  },
+  {
+   "topic": "Hollis Road chimney flashing overage and cap",
+   "what_was_recorded": "Chair asked whether the $3,300 overage included chimney flashing; the Commission was told there is a $10,000 cap.",
+   "figures_as_printed": [
+    "$3,300",
+    "$10,000"
+   ],
+   "quote": "mary asked if the $3,300 overage included the chimney flashing and mike replied he did not think that was included. there is a $10,000 cap."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Charpentier",
+   "stated_role": "abutter",
+   "topic": "large insect-damaged holes in a tree at 6 Peninsula Drive hearing",
+   "quote": "tom charpentier (abutter) noted that one of the trees they are taking down has some large holes from a pileated woodpecker, indicating some insect activity in the tree."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "deferred; backlog due to staffing",
+   "quote": "minutes of previous meetings - on backlog due to staffing issues.",
+   "tags": [
+    "minutes",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "New public hearing: Request for Determination, 274 Prospect Street (A & M Construction)",
+   "resolution": "approved, negative determination with Standard Order of Conditions",
+   "quote": "a public hearing on a request for determination by a & m construction services for the construction of three residential homes with associated driveways",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "Prospect Street"
+   ]
+  },
+  {
+   "topic": "New public hearing: Request for Determination, 19 Cliffview Terrace rolling dock",
+   "resolution": "approved, negative determination with Standard Order of Conditions",
+   "quote": "a public hearing on a request for determination by korina veenstra for the placement of a 4'x16' rolling dock at 19 cliffview terrace",
+   "tags": [
+    "wetlands",
+    "dock",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "New public hearing: Notice of Intent, 899 Flat Hill Road (house rebuild)",
+   "resolution": "approved with silt fencing added to straw wattles",
+   "quote": "a public hearing on a notice of intent by thomas crocker for the removal and reconstruction of a two-family home at 899 flat hill road",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "foundation rebuild"
+   ]
+  },
+  {
+   "topic": "Continued hearing: Notice of Intent, 38 Oak Ridge Road (tear-down and rebuild)",
+   "resolution": "continued to 10/18/23",
+   "quote": "a public hearing on a notice of intent by peter and lily koronis for the demolition of existing dwelling and detached garage",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "tree replacement"
+   ]
+  },
+  {
+   "topic": "Continued hearing: Notice of Intent, 6 Peninsula Drive (tear-down, Denise Charpentier)",
+   "resolution": "continued to 10/18/23",
+   "quote": "a public hearing on a notice of intent by denise charpentier for the removal of an existing dwelling and construction of a new single-family dwelling at 6 peninsula drive",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "tree removal",
+    "floodplain"
+   ]
+  },
+  {
+   "topic": "Continued hearing: Amended Order of Conditions, 441 Townsend Harbor Road",
+   "resolution": "continued to 10/18/23; no one present",
+   "quote": "a public hearing on an amended order of conditions by nicholas eaton for repair and construction of existing deck at 441 townsend harbor road",
+   "tags": [
+    "wetlands",
+    "deck"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, 205 Sunset Lane (deck relocation)",
+   "resolution": "approved with four conditions, 4-1",
+   "quote": "a public hearing on a notice of intent by larry coffren & marsha beers for the relocation of an existing deck at 205 sunset lane",
+   "tags": [
+    "wetlands",
+    "deck",
+    "pilings",
+    "conditions"
+   ]
+  },
+  {
+   "topic": "New Business: agenda formats, staffing, application guidelines",
+   "resolution": "discussed; agenda order set by chair; staffing update; guidelines in progress",
+   "quote": "agenda formats - mary suggested addressing the enforcements and certificates of compliance first.",
+   "tags": [
+    "staffing",
+    "agenda",
+    "administration",
+    "timber rights fund"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance, 4 Townsend Harbor Road",
+   "resolution": "approved, contingent on certified language in letter",
+   "quote": "4 townsend harbor road - jack maloney (dillis & roy), steven petrazillo (owner) and kelly feehan (realtor).",
+   "tags": [
+    "certificate of compliance",
+    "lawn",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "Old Business: Hollis Road Residence maintenance",
+   "resolution": "update only; overage above quote noted",
+   "quote": "right now, they are $3,300 above the quote of $4,800 for current total of $8,100.",
+   "tags": [
+    "maintenance",
+    "windows",
+    "chimney",
+    "jumping worms"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and hearings",
+   "resolution": "update; 39 Island Road NOI to be filed",
+   "quote": "39 island road - greg roy (dillis & roy) reported that the owners have retained their firm to file a notice of intent",
+   "tags": [
+    "enforcement",
+    "wetlands",
+    "wall"
+   ]
+  },
+  {
+   "topic": "Grants, committee reports, communications",
+   "resolution": "no action; no updates",
+   "quote": "committee reports - no updates",
+   "tags": [
+    "grants",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:43pm",
+   "quote": "motion: mike l., second: jeff v . to adjourn at 9:43pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearings",
+  "certificate of compliance",
+  "enforcement",
+  "staffing",
+  "Hollis Road",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

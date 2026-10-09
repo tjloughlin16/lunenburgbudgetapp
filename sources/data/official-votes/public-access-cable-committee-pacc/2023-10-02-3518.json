@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-10-02",
  "docid": "3518",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of August 14, 2023",
+   "motion": "Approve the 8.14.2023 minutes.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "8.14.2023 minutes approved (motion - s.archambault, 2nd f.beall, abstained s.archambault)"
   },
   {
-   "motion": "Approve the purchase of a Go Pro camera",
+   "motion": "Approve the purchase or request of a “Go Pro” camera requested by J.Toale.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
@@ -28,15 +28,201 @@
    "quote": "j.toale requested a \"go pro\" camera. (motion to approve s.archambault, 2nd f.beall, passed)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:53.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 6:53 o (motion - s.archambault, 2nd f.beall - passed)"
+   "quote": "meeting adjourned at 6:53 o (motion - s.archambault, 2nd f.beall - passed)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded: approval of prior minutes (with one abstention noted), approval of equipment purchase, and adjournment.",
- "cost_usd": 0.07518649999999999
+ "note": "Text extract, not a scan. Three votes are recorded, all with mover and seconder; only the 8.14.2023 minutes vote notes an abstention, and no vote tallies are printed, so outcomes are recorded as 'passed' without counts. The printed text contains apparent typos kept as printed: 'PAAC members excused' (the committee is PACC) and 'adjourned at 6:53 o' (trailing letter, time not clearly completed). The Go Pro motion is parenthetical inside the Manager's update and was recorded as a vote because the minutes say it passed. Public comment: minutes print 'None'.",
+ "cost_usd": 0.01398217,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, faith beall"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, faith beall"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "paac members excused: pete lincoln, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "paac members excused: pete lincoln, paul sarapas"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "4. manager: jo toale public comments: - none"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S.Walker will call Comcast next week to clarify why channel #99 was not on the list of Comcast Cable Channels.",
+   "quote": "#99 was not listed. he is going to call comcast next week to clarify."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Current balance",
+   "what_was_recorded": "The manager reported the current balance, noting it is now over one million dollars and that a Comcast payment was added late.",
+   "figures_as_printed": [
+    "$1,007,793.26",
+    "1 million"
+   ],
+   "quote": "current balance, is $1,007,793.26 - a milestone as we are now over 1 million."
+  },
+  {
+   "topic": "New laptop for Town Hall Control room",
+   "what_was_recorded": "The manager said a new laptop will need to be purchased for the Town Hall Control room to run presentations; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "no major spending at this point but will need to purchase a new laptop for use in the town hall control room to run presentations"
+  },
+  {
+   "topic": "Go Pro camera request",
+   "what_was_recorded": "J.Toale requested a Go Pro camera, and the motion to approve passed; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "j.toale requested a \"go pro\" camera. (motion to approve s.archambault, 2nd f.beall, passed)"
+  },
+  {
+   "topic": "Town Hall audio system review",
+   "what_was_recorded": "PAC is seeking an audio expert to recommend improvements to the Town Hall sound system; the minutes say the money is earmarked from ARPA funds, with no amount printed.",
+   "figures_as_printed": [],
+   "quote": "money is earmarked from arpa funds."
+  },
+  {
+   "topic": "Enterprise Fund Investment monthly report",
+   "what_was_recorded": "A monthly report on the Enterprise Fund Investment is being arranged with Town Hall; it is expected to run a month behind; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "s.walker has been in touch with town hall to facilitate a monthly report."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "noted",
+   "quote": "s.archambault reported that several community members thanked pac for their video of the st. boniface october festival.",
+   "tags": [
+    "community",
+    "St. Boniface October Festival"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted",
+   "quote": "p.lincoln wanted the committee to know that \"talking baseball\" has aired for 9 years for a total of 75 shows.",
+   "tags": [
+    "Talking Baseball",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Comcast channel list",
+   "resolution": "S.Walker to call Comcast",
+   "quote": "#99 was not listed. he is going to call comcast next week to clarify.",
+   "tags": [
+    "Comcast",
+    "channel listing"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "8.14.2023 minutes approved (motion - s.archambault, 2nd f.beall, abstained s.archambault)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "noted",
+   "quote": "manager's update: (september & october)",
+   "tags": [
+    "manager report",
+    "balance",
+    "programming",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Go Pro camera request",
+   "resolution": "approved",
+   "quote": "j.toale requested a \"go pro\" camera. (motion to approve s.archambault, 2nd f.beall, passed)",
+   "tags": [
+    "equipment",
+    "camera"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund Investment",
+   "resolution": "noted; report to run a month behind",
+   "quote": "s.walker has been in touch with town hall to facilitate a monthly report.",
+   "tags": [
+    "enterprise fund",
+    "monthly report"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for November 6th, 6:00 pm",
+   "quote": "next meeting: - november 6th, 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:53",
+   "quote": "meeting adjourned at 6:53 o (motion - s.archambault, 2nd f.beall - passed).",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access cable",
+  "Town Hall",
+  "fund balance",
+  "equipment",
+  "minutes approval",
+  "Comcast channels",
+  "ARPA funds",
+  "programming",
+  "October 2023"
+ ],
+ "dropped_unquoted_by_field": {}
 }

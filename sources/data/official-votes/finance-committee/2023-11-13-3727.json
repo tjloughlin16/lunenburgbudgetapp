@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-11-13",
  "docid": "3727",
@@ -12,26 +12,26 @@
  },
  "votes": [
   {
-   "motion": "Approve Article 1: FY24 budget adjustments including revenue projections, state aid adjustment, and salary survey increase.",
+   "motion": "Approve Article 1 (FY 24 budget adjustments, revenue projection changes) for the Special Town Meeting warrant.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "motion to approve article 1 by tom gray, seconded by jay simeone. roll call vote. unanimous vote."
   },
   {
-   "motion": "Approve Article 2: carryover of $1,413.52 from FY23 wages paid from excess revenue.",
+   "motion": "Approve Article 2 (carry-over wages of $1,413.52 paid from excess revenue).",
    "moved_by": "Tom Gray",
    "seconded_by": "Dave Passios",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "motion to approve article 2 by tom gray, seconded by dave passios. roll call vote. all in favor. unanimous vote."
   },
   {
-   "motion": "Recommend approval of Article 3: collective bargaining agreement covering eight town positions.",
+   "motion": "Recommend approval of Article 3 (collective bargaining agreement, first-year funding).",
    "moved_by": "Tom Grey",
    "seconded_by": "Jean Russell",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "motion to recommend approval for article 3 by tom grey, seconded by jean russell. roll call vote. unanimous vote."
   },
@@ -39,12 +39,167 @@
    "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tom Gray",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn by jay simeone, seconded by tom gray. roll call vote. meeting adjourned at 7:33 pm."
+   "quote": "motion to adjourn by jay simeone, seconded by tom gray. roll call vote."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded as unanimous, though specific vote counts (e.g., 5-0) were not stated. Minutes note \"Tom Gray\" at the meeting opening but \"Tom Grey\" in the Article 3 motion—name printed as it appears.",
- "cost_usd": 0.0845355
+ "dropped_unquoted": 2,
+ "note": "Text extraction, not a scan; all readable. Votes are recorded as roll calls with 'Unanimous vote' or 'All in favor' but no per-member tallies. The adjournment motion has no printed result; the minutes say only 'Meeting adjourned at 7:33 PM', so its outcome is recorded as not stated. The minutes print 'Tom Grey' for the Article 3 motion and 'Tom Gray' elsewhere; both are recorded as printed. Article 3 text reads 'the sick board' (probably 'select board' in the original), recorded here as not corrected. Public comment was twice recorded as none, so the public_comment list is empty. Heather Lemieux's title is not printed beside her name.\"/>\n",
+ "cost_usd": 0.014632970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: board member tom gray, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: board member tom gray, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: board member tom gray, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: board member tom gray, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: board member tom gray, board member dave passios, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager Report presenter (title not printed beside her name)",
+   "status": "present",
+   "quote": "heather lemieux does not have any additional reports but wants to review some of the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to add an additional $20,000 to the Article 1 amount, based on a salary survey of comparable towns requested by the select board chair.",
+   "quote": "the board all agreed to add an additional $20,000. this is based on the area comparable to other towns."
+  },
+  {
+   "decision": "Members are to check in at the Special Town Meeting and obtain their voting clickers.",
+   "quote": "members are to check in and obtain their voting clickers."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 1 revenue projection changes",
+   "what_was_recorded": "The revenue projection differs from the annual town meeting estimate by an additional amount, and estimated state aid came in lower than projected.",
+   "figures_as_printed": [
+    "$200,000",
+    "$119,000"
+   ],
+   "quote": "there is an additional $200,000 difference from the annual town meeting estimate."
+  },
+  {
+   "topic": "Article 1 state aid estimate",
+   "what_was_recorded": "Estimated state aid presented at the annual town meeting was lower than projected since that meeting.",
+   "figures_as_printed": [
+    "$119,000"
+   ],
+   "quote": "the estimated state aid presented at the annual town meeting was $119,000 lower than projected since the annual town meeting."
+  },
+  {
+   "topic": "Article 1 balance levy capacity",
+   "what_was_recorded": "Balance levy capacity will go toward the overall additional allowable appropriation.",
+   "figures_as_printed": [
+    "$9,772.70"
+   ],
+   "quote": "the balance levy capacity of $9,772.70 will go towards the overall additional allowable appropriation."
+  },
+  {
+   "topic": "Article 1 salary survey addition",
+   "what_was_recorded": "The board agreed to add $20,000 following a salary survey based on comparable towns.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the board all agreed to add an additional $20,000. this is based on the area comparable to other towns."
+  },
+  {
+   "topic": "Article 2 carry-over wages",
+   "what_was_recorded": "Wages meant to be carried over at fiscal year end were not carried over; the money came from excess revenue.",
+   "figures_as_printed": [
+    "$1,413.52"
+   ],
+   "quote": "a total of $1,413.52 was meant to be carried over at the end of the fiscal year,"
+  },
+  {
+   "topic": "Article 3 collective bargaining cost",
+   "what_was_recorded": "Compensation analysis found bargaining unit positions underpaid by 8 to 20 percent against comparable towns; the first-year cost was described as unknown but within budget.",
+   "figures_as_printed": [
+    "between 8 and 20 percent"
+   ],
+   "quote": "this would be an unknown cost but would be within budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:03 pm."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "evan watters announces dave passios has joined the finance committee."
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action; wanted to review articles with the Committee",
+   "quote": "heather lemieux does not have any additional reports but wants to review some of the"
+  },
+  {
+   "topic": "Deferred STM Warrant Articles Updates (Articles 1-3)",
+   "resolution": "Article 1 approved; Article 2 approved; Article 3 recommended for approval",
+   "quote": "article 1 addresses budget adjustments for fy 24."
+  },
+  {
+   "topic": "Deferred STM Warrant Article Votes",
+   "resolution": "no action; no additional deferments",
+   "quote": "there are no additional deferments to address."
+  },
+  {
+   "topic": "Special Town Meeting preparation",
+   "resolution": "discussed; members to check in and obtain voting clickers",
+   "quote": "there was a short discussion about preparing for the november 13th special town meeting starting at 7:00 pm at the high school."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:33 PM",
+   "quote": "meeting adjourned at 7:33 pm."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting",
+  "STM warrant articles",
+  "FY24 budget adjustments",
+  "state aid",
+  "levy capacity",
+  "salary survey",
+  "collective bargaining",
+  "carry-over wages",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

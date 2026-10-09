@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-11-01",
  "docid": "1748",
@@ -12,63 +12,659 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the May 17, 2023 meeting",
+   "motion": "Approve the minutes of May 17, 2023.",
    "moved_by": "Bob P.",
    "seconded_by": "Rich B.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: bob p., second: rich b. to approve the minutes of may 17, 2023."
+   "quote": "to approve the minutes of may 17, 2023. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the public hearing on 390 Howard Street Abbreviated Notice of Resource Area Delineation to November 15th",
+   "motion": "Continue the 390 Howard Street Abbreviated Notice of Resource Area Delineation hearing to November 15.",
    "moved_by": "Bob P.",
    "seconded_by": "Rich B.",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: bob p., second: rich b. to continue 390 howard street to november 15th."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 390 howard street to november 15th. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the public hearing on 201 Fire Road #16 Notice of Intent for septic system installation to November 15th",
+   "motion": "Continue the 201 Fire Road #16 Notice of Intent hearing to November 15.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l. to continue 201 fire road #16 to november 15th."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 201 fire road #16 to november 15th. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the public hearing on 143 Island Road Request for Determination for tree removal to November 15th",
+   "motion": "Continue the 143 Island Road Request for Determination hearing to November 15.",
    "moved_by": "Rich T.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: rich t., second: chris s. to continue 143 island road to november 15th."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 143 island road to november 15th. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Accept administrator's recommendations for tree removal at 833 Flat Hill Road, allow limbing above the cabin, and require submission of photos of 3 saplings by May 1, 2024",
+   "motion": "Accept the administrator's recommendations on 833 Flat Hill Road tree removal, with an added note allowing limbing above the cabin and pictures of three 2-inch saplings due May 1, 2024 (amended by Bob P. from April 1).",
    "moved_by": "Bob P.",
    "seconded_by": "Rich B.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: bob p., second: rich b. to accept the administrator's recommendations, with added note to allow limbing in the additional area above the cabin"
+   "quote": "to accept the administrator's recommendations, with added note to allow limbing in the additional area above the cabin, with stipulation that by april 1, 2024, they submit pictures"
   },
   {
-   "motion": "Allow the applicant to cut down the remaining tree at 1118 Massachusetts Avenue with stumps ground with erosion protections in place, area loamed and seeded, and 2 saplings planted within 50 feet of the resource area",
+   "motion": "Continue the Administrative Determination for 70 Horizon Island Road to 11/15 and ask the homeowners to bring a site map with designated new planting locations.",
    "moved_by": "Bob P.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: bob p., second: chris s. under enforcement actions, that we allow the applicant to cut the tree down, so long as he has the stumps"
+   "quote": "to continue the administrative determination for 70 horizon island road to 11/15 and ask the homeowners bring a site map with designated new planting locations."
   },
   {
-   "motion": "Adjourn at 9:42 PM",
+   "motion": "Under Enforcement Actions at 1118 Massachusetts Avenue, allow the applicant to cut the tree down, so long as stumps are ground with erosion protections in place, the area loamed and seeded, and two saplings planted near the last tree within 50' of the resource area.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed, all aye (RB, ML, RT, CS, BP)",
+   "procedural": false,
+   "quote": "under enforcement actions, that we allow the applicant to cut the tree down, so long as he has the stumps ground with erosion protections in place"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:42pm.",
    "moved_by": "Mike L.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike l., second: chris s. to adjourn at 9:42pm"
+   "quote": "to adjourn at 9:42pm roll call vote was unanimous to approve."
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes recorded. Vote 7 had only 5 members voting (6-0 to 5-0) because Mary W recused herself on the 1118 Massachusetts Avenue enforcement matter.",
- "cost_usd": 0.12613649999999998
+ "dropped_unquoted": 0,
+ "note": "Text is complete (pages 1 through 7), not a scan. Roll call votes are recorded but counts are printed only for the 1118 Massachusetts Avenue vote (\"all aye\" with five initials); other outcomes are recorded as passed without a printed count. No dollar figures appear anywhere in the minutes, so budget items carry no figures. Meeting was held on Zoom; attendance is from the roll call. Several non-vote items (tabling, referrals, staff tasks) are recorded as decisions where the minutes state a direction, and as topics where they are only discussed.",
+ "cost_usd": 0.02428547,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: mary w, bob p, rich t, rich b, mike l and chris s. also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: jv call to order at 7pm"
+  },
+  {
+   "name": "Charlotte",
+   "role": "Admin. Agent",
+   "status": "present",
+   "quote": "also present - charlotte (admin. agent)"
+  },
+  {
+   "name": "Steve Wright",
+   "role": "property owner",
+   "status": "present",
+   "quote": "steve wright (property owner) stated he emailed the site plan and he was waiting for a memo stating what his violation was."
+  },
+  {
+   "name": "Sue Ropiak",
+   "role": "homeowner",
+   "status": "not stated",
+   "quote": "sue ropiak (homeowner) pointed out the dead tree near the creek running into the lake."
+  },
+  {
+   "name": "Chris MacKensie",
+   "role": "Dillis & Roy (affiliation as printed)",
+   "status": "not stated",
+   "quote": "chris mackensie (dillis & roy) asked for another continuance because they were requested to locate some trees"
+  },
+  {
+   "name": "Nick Eaton",
+   "role": "441 Townsend Harbor Rd. (address as printed)",
+   "status": "present",
+   "quote": "public comment: nick eaton, 441 townsend harbor rd., stated he had been trying to contact the office"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bob P. will correct the website listing showing Rich B.'s term as expired.",
+   "quote": "bob p. said he would take care of that."
+  },
+  {
+   "decision": "Minutes of 6/7 held until the next meeting because they are not yet on the drive.",
+   "quote": "bob noted the minutes of 6/7 are done but not on the drive, so they will be held until the next meeting."
+  },
+  {
+   "decision": "New public hearings not addressed; held to the next meeting (11/15) for lack of legal advertisement.",
+   "quote": "mary stated they cannot be addressed due to lack of legal advertisements and be heard at the next meeting."
+  },
+  {
+   "decision": "Bob will email Ashleigh to notify the 143 Island Road applicant they are on the 11/15 agenda.",
+   "quote": "bob stated he will send ashleigh an email to notify them that they are on the agenda for 11/15."
+  },
+  {
+   "decision": "780 Northfield Road tabled to the next meeting, per Bob's suggestion; no vote recorded.",
+   "quote": "he suggested tabling it to the next meeting, with the hopes the office staff invite jim to the 11/15 meeting."
+  },
+  {
+   "decision": "10 Massachusetts Ave. owner must file a Request for Determination of Applicability.",
+   "quote": "bob stated they will now need to submit an rda and charlotte confirmed the owner as lance rossel."
+  },
+  {
+   "decision": "39 Island Road placed on the 11/15 agenda as a new hearing.",
+   "quote": "mary said this will be on 11/15 agenda as a new hearing."
+  },
+  {
+   "decision": "Mike L. volunteered to join the North County Land Trust site visit on 11/20.",
+   "quote": "mike l. volunteered to do the visit with them."
+  },
+  {
+   "decision": "Mary will contact the Tax Collector about cost and deadlines for the tax-bill brochure; waiting until more staff are hired.",
+   "quote": "mary said she will contact the tax collector for cost/deadlines and suggested waiting until more staff are hired."
+  },
+  {
+   "decision": "Application Instructions/Guidelines held until a full-time administrator is hired.",
+   "quote": "application instructions/guidelines - will be held until full-time administrator is hired."
+  },
+  {
+   "decision": "Commissioners agreed to continue Zoom meetings; meetings available on YouTube.",
+   "quote": "the commissioners agreed with continuing to use zoom and noted the meetings are all available on youtube for the public."
+  },
+  {
+   "decision": "Mary will contact the Town Manager about moving Commission files from Google Drive to SharePoint.",
+   "quote": "mary said she will contact the town manager."
+  },
+  {
+   "decision": "Mary asked Ashleigh to put together a task tracker for staff activities and Commission decisions.",
+   "quote": "so she asked ashleigh to put together a task tracker."
+  },
+  {
+   "decision": "Charlotte told the 441 Townsend Harbor Rd. owner to file an amended Order of Conditions paperwork; Rich B. suggested a Field Change instead.",
+   "quote": "charlotte told him to fill out the paperwork for the amended order and write a letter on what will be changed"
+  },
+  {
+   "decision": "Bob will check with the timber person on the timber sale contract.",
+   "quote": "bob will check with the timber person and mary asked how long the contract is good."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax-bill brochure mailing cost",
+   "what_was_recorded": "Adding the conservation brochure to the January tax bills has a cost and timing to be confirmed with the Tax Collector; the last time the General Fund covered the cost. No figure printed.",
+   "quote": "bob said they would need to update the brochure and contact the tax collector about timing and cost for adding it to the january bills.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MACC memberships lapsed",
+   "what_was_recorded": "Memberships have lapsed; the MACC handbook was offered for a charge that depends on membership status. No figure printed.",
+   "quote": "chris said he tried to get the macc handbook but they wanted to charge him.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Unpaid carpet invoice",
+   "what_was_recorded": "A carpet invoice has still not been paid by the town. No figure printed.",
+   "quote": "mike l. noted that the carpet invoice has still not been paid by the town.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Timber Rights and Hawes funds for bills",
+   "what_was_recorded": "Fund numbers for the Timber Rights and Hawes Fund were given so bills can be paid through the Select Board warrant. No figure printed.",
+   "quote": "bob was able to give steve fund numbers for the timber rights and hawes fund so he can get bills paid through the select board warrant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Shawn Kelly Estate money",
+   "what_was_recorded": "Money was deposited but the Commission has no information on the fund. No figure printed.",
+   "quote": "bob said the money was deposited but has no information on the fund.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant support for Japanese Knotweed removal",
+   "what_was_recorded": "Mary would like to find grant support to remove Japanese Knotweed at Table Rock; no grants exist for invasive plant removal. No figure printed.",
+   "quote": "mary stated she would like to find some grant support to remove the pervasive japanese knotweed at table rock.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Website listing of his term",
+   "speaker": "Rich B.",
+   "stated_role": "not stated",
+   "quote": "public comment: rich b. noted on the website it shows his term expired june 2023 and asked to have it"
+  },
+  {
+   "topic": "Field change for 441 Townsend Harbor Rd. driveway paving near wetlands",
+   "speaker": "Nick Eaton",
+   "stated_role": "441 Townsend Harbor Rd. (address as printed)",
+   "quote": "public comment: nick eaton, 441 townsend harbor rd., stated he had been trying to contact the office"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: website term listing",
+   "resolution": "Bob P. to update website",
+   "quote": "rich b. noted on the website it shows his term expired june 2023 and asked to have it",
+   "tags": [
+    "website",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes of May 17, 2023",
+   "resolution": "approved; 6/7 minutes held to next meeting",
+   "quote": "to approve the minutes of may 17, 2023. roll call vote was unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "none",
+   "quote": "appointments: none new public hearings",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "New public hearings",
+   "resolution": "held to 11/15 for lack of legal advertisement",
+   "quote": "mary stated they cannot be addressed due to lack of legal advertisements and be heard at the next meeting.",
+   "tags": [
+    "public hearings"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 390 Howard Street (ANRAD)",
+   "resolution": "continued to November 15",
+   "quote": "bob p. reported that matt morro had asked for a continuance to nov. 15th.",
+   "tags": [
+    "wetlands",
+    "public hearings",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 201 Fire Road #16 (NOI, septic)",
+   "resolution": "continued to November 15",
+   "quote": "chris mackensie (dillis & roy) asked for another continuance because they were requested to locate some trees",
+   "tags": [
+    "wetlands",
+    "septic",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 143 Island Road (RDA, tree removal)",
+   "resolution": "continued to November 15",
+   "quote": "mary asked if mario or any representative was on the call.",
+   "tags": [
+    "tree removal",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Administrative determination: 833 Flat Hill Road tree removal",
+   "resolution": "administrator recommendations approved with amended pictures date",
+   "quote": "mary reported that bryanna did a site visit and charlotte screen-shared the pictures.",
+   "tags": [
+    "tree removal",
+    "administrative determination"
+   ]
+  },
+  {
+   "topic": "Administrative determination: 70 Horizon Island Road tree removal",
+   "resolution": "continued to 11/15 for site map",
+   "quote": "70 horizon island road tree removal- bob said the residents were not present but he read bryanna's site visit report.",
+   "tags": [
+    "tree removal",
+    "administrative determination",
+    "planting"
+   ]
+  },
+  {
+   "topic": "Enforcement: 780 Northfield Road culvert and wetlands replication",
+   "resolution": "tabled to next meeting",
+   "quote": "mary noted this is the farm access to the old christmas tree farm.",
+   "tags": [
+    "enforcement",
+    "culvert",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Enforcement: 390 Howard St erosion",
+   "resolution": "stays on enforcement list; site visit pending permission",
+   "quote": "so mary has left it on the enforcements list.",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Enforcement: 1118 Massachusetts Avenue tree removal",
+   "resolution": "enforcement order approved, 5 aye",
+   "quote": "steve wright (property owner) stated he emailed the site plan and he was waiting for a memo stating what his violation was.",
+   "tags": [
+    "enforcement",
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Enforcement: 10 Massachusetts Ave",
+   "resolution": "RDA required",
+   "quote": "bob stated they will now need to submit an rda and charlotte confirmed the owner as lance rossel.",
+   "tags": [
+    "enforcement",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "39 Island Road",
+   "resolution": "placed on 11/15 agenda as new hearing",
+   "quote": "mary said this will be on 11/15 agenda as a new hearing.",
+   "tags": [
+    "public hearings"
+   ]
+  },
+  {
+   "topic": "Awareness campaign and municipal bylaws",
+   "resolution": "Mary to contact Tax Collector about cost and timing",
+   "quote": "mary suggested doing another public awareness campaign, since several people noted they were not aware of the municipal bylaws.",
+   "tags": [
+    "outreach",
+    "tax bills",
+    "website"
+   ]
+  },
+  {
+   "topic": "Application instructions and guidelines",
+   "resolution": "held until full-time administrator hired",
+   "quote": "will be held until full-time administrator is hired.",
+   "tags": [
+    "staffing",
+    "applications"
+   ]
+  },
+  {
+   "topic": "NCLT conservation restriction site visit (Hawes, Peabody)",
+   "resolution": "Mike L. volunteered for 11/20 visit",
+   "quote": "mike l. volunteered to do the visit with them.",
+   "tags": [
+    "land trust",
+    "conservation restriction"
+   ]
+  },
+  {
+   "topic": "Staff task tracker",
+   "resolution": "task tracker requested from Ashleigh; authority not confirmed",
+   "quote": "so she asked ashleigh to put together a task tracker.",
+   "tags": [
+    "staffing",
+    "administration"
+   ]
+  },
+  {
+   "topic": "Commissioner access to decisions and permitting system",
+   "resolution": "deferred until fully staffed",
+   "quote": "mary said they can go back to this item when they are fully staffed.",
+   "tags": [
+    "permitting",
+    "opengov",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Move of Commission files from Google Drive to SharePoint",
+   "resolution": "Mary to contact Town Manager; no vote",
+   "quote": "permission to shift commission file data from google drive to share point",
+   "tags": [
+    "records",
+    "IT",
+    "google drive",
+    "sharepoint"
+   ]
+  },
+  {
+   "topic": "Meeting space and Zoom",
+   "resolution": "Commissioners agreed to continue Zoom",
+   "quote": "mary stated her intent is to continue with zoom meetings, as long as they are allowed",
+   "tags": [
+    "zoom",
+    "meetings",
+    "parks commission"
+   ]
+  },
+  {
+   "topic": "Timber Rights Fund update",
+   "resolution": "no update",
+   "quote": "update on timber rights fund - no update",
+   "tags": [
+    "timber",
+    "funds"
+   ]
+  },
+  {
+   "topic": "Shawn Kelly Estate update",
+   "resolution": "no information on the fund",
+   "quote": "bob said the money was deposited but has no information on the fund.",
+   "tags": [
+    "estate",
+    "funds"
+   ]
+  },
+  {
+   "topic": "Staff access to new MUNIS accounts",
+   "resolution": "training after FY23 close; no vote",
+   "quote": "bob reported that karen comes in a few times a week but is working on high level items.",
+   "tags": [
+    "munis",
+    "staffing",
+    "bills"
+   ]
+  },
+  {
+   "topic": "MACC memberships",
+   "resolution": "lapsed; reinstatement not yet done",
+   "quote": "mary said ashleigh told her the memberships have lapsed and she has not been able to get them back.",
+   "tags": [
+    "memberships",
+    "training"
+   ]
+  },
+  {
+   "topic": "Encroachment: 950 Chase Road",
+   "resolution": "court hearing 11/2; injunction sought",
+   "quote": "bob signed a statement of fact on 10/30 which was filed with the court",
+   "tags": [
+    "encroachment",
+    "court"
+   ]
+  },
+  {
+   "topic": "Encroachment: 315 Lancaster Ave.",
+   "resolution": "waiting for more staff to send letter",
+   "quote": "bob said he is waiting for more staff to have a letter sent to inquire on what is happening.",
+   "tags": [
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Extension request: 351 Mass Ave.",
+   "resolution": "noted; extension previously approved",
+   "quote": "a 3-year extension was approved at the last meeting.",
+   "tags": [
+    "extension",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance: 176 Elmwood Road",
+   "resolution": "site visit needed",
+   "quote": "176 elmwood road - needs a site visit.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Emergency certification",
+   "resolution": "no action recorded",
+   "quote": "emergency certification:",
+   "tags": [
+    "emergency"
+   ]
+  },
+  {
+   "topic": "Grants update (LCC and LSR)",
+   "resolution": "noted; LSR trail work with Boy Scouts",
+   "quote": "grants update (lcc sponsored, award year 2023) - no update.",
+   "tags": [
+    "grants",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Timber sales near Hannaford Plaza",
+   "resolution": "Bob to check with timber person",
+   "quote": "timber sales - bob will check with the timber person and mary asked how long the contract is good.",
+   "tags": [
+    "timber",
+    "forestry"
+   ]
+  },
+  {
+   "topic": "Conservation land invasive removal service project",
+   "resolution": "High School NHS project at Lane Property; grant search for knotweed",
+   "quote": "mary said they got a request from the high school national honor society for projects.",
+   "tags": [
+    "invasives",
+    "volunteers",
+    "knotweed"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence maintenance",
+   "resolution": "maintenance pending; DPW or volunteer to remove debris",
+   "quote": "mike l. said there are bags of invasives and debris the dpw would remove if they are able.",
+   "tags": [
+    "hollis road",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Open Space Committee recommendation (Lake Shirley parcels)",
+   "resolution": "recommended conveyance to Parks Commission",
+   "quote": "the committee voted to recommend to the select board to convey those parcels to the care and control of the parks commission.",
+   "tags": [
+    "open space",
+    "lake shirley",
+    "parks commission"
+   ]
+  },
+  {
+   "topic": "Stormwater task force",
+   "resolution": "restarting; agenda with DPW director",
+   "quote": "rich t. reported it will be started up again",
+   "tags": [
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Communications: National Grid work on Sunset Lane",
+   "resolution": "noted",
+   "quote": "mary stated national grid notified them of maintenance work on the distribution line",
+   "tags": [
+    "utilities",
+    "notice"
+   ]
+  },
+  {
+   "topic": "Communications: timber harvesting violation hearings",
+   "resolution": "noted",
+   "quote": "bob said the office got copies of the letters that were sent to the people who did the harvesting",
+   "tags": [
+    "timber",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Public comment: 441 Townsend Harbor Rd. septic and driveway paving",
+   "resolution": "Field Change suggested; paperwork directed",
+   "quote": "nick eaton, 441 townsend harbor rd., stated he had been trying to contact the office",
+   "tags": [
+    "septic",
+    "field change",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:42pm",
+   "quote": "to adjourn at 9:42pm roll call vote was unanimous to approve.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "tree removal",
+  "enforcement",
+  "public hearings",
+  "continuances",
+  "administrative determinations",
+  "staffing",
+  "records",
+  "google drive",
+  "sharepoint",
+  "munis",
+  "zoom",
+  "invasive species",
+  "grants",
+  "open space",
+  "timber",
+  "septic",
+  "encroachment",
+  "budget discussion"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2023-12-06",
  "docid": "6110",
@@ -12,64 +12,451 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of special meeting held 11/8/23",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Beardmore",
+   "motion": "Approve the minutes of the Special Meeting of 11/8/23.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to approve minutes, mr. beardmore seconded the motion, all approve"
   },
   {
-   "motion": "Approve the Spain trip scheduled for April 18-26, 2025",
-   "moved_by": "Sculimbrene",
-   "seconded_by": "Brzozoski",
+   "motion": "Approve the initial Spain trip in April 2025 for students.",
+   "moved_by": "Mr. Sculimbrene",
+   "seconded_by": "Ms. Brzozoski",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "mr. sculimbrene makes a motion to approve the trip to spain, ms. brzozoski seconds the motion. mr. sculimbrene - yes, mr. lehtinen yes, ms. brzozoski - yes, mr. beardmore - no, ms. archambault yes"
+   "quote": "mr. sculimbrene makes a motion to approve the trip to spain, ms. brzozoski seconds the motion."
   },
   {
-   "motion": "Accept donations totaling $3,923.41 from Bright Funds, Hannaford Helps, and PTO",
-   "moved_by": "Lehtinen",
-   "seconded_by": "Brzozoski",
+   "motion": "Accept the donations from Bright Funds, Hannaford Helps, and the PTO with gratitude.",
+   "moved_by": "Mr. Lehtinen",
+   "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to accept these donations with g ratitude, ms. brzozoski seconds the motion, all approve",
-   "quote_taken_from_text": true
+   "quote": "mr. lehtinen makes a motion to accept these donations with g ratitude, ms. brzozoski seconds the motion, all approve."
   },
   {
-   "motion": "Pull the window replacement from the Capital Plan, but not the safety film",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Beardmore",
+   "motion": "Pull the window replacement from the Capital Plan, but not the safety film.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to pull the window replacement from the capital plan, but not the safely film, mr. beardmore seconds the motion, all approve"
   },
   {
-   "motion": "Approve the response letter regarding LEA negotiations with a proposed meeting in January",
-   "moved_by": "Beardmore",
-   "seconded_by": "Brzozoski",
+   "motion": "Approve the response letter to the LEA negotiations.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to approve the letter, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Continue communication regarding inactive class accounts through 6/30/2024, then transfer remaining funds to account for scholarships for travel abroad field trips",
-   "moved_by": "Beardmore",
-   "seconded_by": "Sculimbrene",
+   "motion": "Continue all communication to reach class officers for inactive class accounts, with left-over funds to be transferred after 6/30/2024.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to continue all communication, including facebook and social media, inviting class officers to reach out as soon as possible, no later than the end of the fiscal year 6/30/2024, at that time all left over funds will be transferred to another account for future scholarships for travel abroad field trips. mr. sculimbrene seconds the motion. mr. lehtinen - yes, mr. beardmore - yes, mr. sculimbrene - yes, ms. brzozoski - no, ms. archambault - yes."
+   "quote": "mr. beardmore makes a motion to continue all communication, including facebook and social media, inviting class officers to reach out as soon as possible"
   },
   {
-   "motion": "Enter into executive session to conduct strategy sessions in preparation for negotiations with nonunion personnel and adjourn immediately following",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Beardmore",
+   "motion": "Enter executive session to conduct strategy sessions and contract negotiations with nonunion personnel, and adjourn immediately following.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion at 9:31 to enter into executive session and adjourn immediately following, mr. beardmore seconds the motion, all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0890725
+ "note": "Text extraction of the minutes, with stray spacing and a typo (\"g ratitude\", \"safely film\") copied as printed. Most votes are recorded as \"all approve\" with no count; those are recorded as passed. Two votes carry a printed roll call: Spain trip (4-1, Beardmore no) and student activity accounts (4-1, Brzozoski no). The Business Manager/HR Director is listed without a name, so is not recorded. Mr. Bigelow, Mr. Hevy, Mr. Santry and Chris Menard are mentioned but do not appear as attendees. The executive session contents are not in the minutes. The Chair's signing off on the warrant is recorded as a decision, not a vote.",
+ "cost_usd": 0.021863270000000004,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member- present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shares that mrs. whittemore will have a start date of february 12, 2024."
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Mrs. Lynn Radford",
+   "role": "Guest",
+   "status": "present",
+   "quote": "mrs. radford presents her slide show for an anticipated approval for a trip to spain in april of 2025"
+  },
+  {
+   "name": "Ms. Mary Foyle",
+   "role": "teacher (as stated in public comment)",
+   "status": "present",
+   "quote": "ms. mary foyle, 95 flat hill road, as a teacher over the past 6 or 7 years"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed the Chair's letter to the legislature on emergency funding is well written and should be sent.",
+   "quote": "the committee agrees the letter is well written and should be sent"
+  },
+  {
+   "decision": "The warrant was signed off by the Chair and will be processed, with no questions raised.",
+   "quote": "no questions from the committee, ms. archambault has signed off, and the warrant will be processed."
+  },
+  {
+   "decision": "Turkey Hill schematics request to be pushed to FY26, with communication sent to MSBA.",
+   "quote": "request for turkey hill schematics be pushed to fy26"
+  },
+  {
+   "decision": "The committee does not change sports programs; that is left to the Athletic Director.",
+   "quote": "as a school committee we do not make changes for sports"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "The warrant total for 11/14-12/4/23 was recorded and the warrant will be processed.",
+   "quote": "warrant total 11/14-12/4/23 $206,275.16",
+   "figures_as_printed": [
+    "$206,275.16"
+   ]
+  },
+  {
+   "topic": "Donations received",
+   "what_was_recorded": "The High School and Primary Schools received donations, which were directed to the gift account and Student Activities.",
+   "quote": "the high school received a donation from bright funds, an employer of one of our students of $656.41",
+   "figures_as_printed": [
+    "$656.41",
+    "$267",
+    "$1500.00",
+    "$1500.00"
+   ]
+  },
+  {
+   "topic": "Inactive student activity class accounts",
+   "what_was_recorded": "Classes with no contact since 2003 through 2018 hold a combined balance that the committee reallocated.",
+   "quote": "classes 2003, 2007, 2010, 2016, and 2018, have no activity or communication with us with a total of $11,215.23",
+   "figures_as_printed": [
+    "$11,215.23"
+   ]
+  },
+  {
+   "topic": "Class account balance raised in public comment",
+   "what_was_recorded": "A class advisor reported a balance held in a class account that has been hard to access.",
+   "quote": "we have $1000.00 in our account and it has not been very easy to get this money",
+   "figures_as_printed": [
+    "$1000.00"
+   ]
+  },
+  {
+   "topic": "Capital plan",
+   "what_was_recorded": "The capital plan was presented to the Capital Planning Committee and window replacement was pulled from it; no dollar figures were printed.",
+   "quote": "mr. beardmore and dr. burnham presented the capital plan to the capital planning committee three weeks ago",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Operating versus capital budget items",
+   "what_was_recorded": "The town manager discussed whether items such as police cars or bulletproof vests belong in the operating or capital budget; no figures printed.",
+   "quote": "the town manager went over funding and whether some items should be the operating budget versus the capital budget ie. police cars or bulletproof vests.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Tax bills",
+   "what_was_recorded": "Third quarter preliminary tax bills were reported to match the first and second quarters, with the fourth quarter higher; no figures printed.",
+   "quote": "third quarter preliminary tax bills will be the same as the 1st and 2nd quarter, the 4th quarter will be higher",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Green Community Grants",
+   "what_was_recorded": "Only the mini-splits on the 10-year plan might be eligible for Green Community Grants, and only if used for heat; no figures printed.",
+   "quote": "dr burnham shares that mr. hevy has reached out to the state regarding green community grants and the only item on our 10 year plan that would possibly be allowable",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Spain trip vendor and fees",
+   "what_was_recorded": "A committee member asked about vendor and fees for the Spain trip compared with the Costa Rica trip; no figures printed.",
+   "quote": "asked a few questions regarding vendor and fees and how it compared to the planned trip to costa rica",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DC trip financial aid",
+   "what_was_recorded": "Financial aid was said to be built into the price of the DC trip; no figures printed.",
+   "quote": "registration for the dc trip is open, financial aid is built into the price.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant for substance use and mental health screening",
+   "what_was_recorded": "A five-year grant to help with screening for substance abuse and mental health was described; no figures printed.",
+   "quote": "also, some information about a 5 year grant to help with screening for substance abuse and mental health.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY budget development",
+   "what_was_recorded": "Data was distributed pending decisions on cuts; no figures printed in the minutes.",
+   "quote": "in the folder are some examples of the kinds of data that we are using pending our decisions on cuts.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Warrant item: no line item transfers were recorded.",
+   "amount_as_printed": "none",
+   "outcome": "none recorded",
+   "quote": "no line item transfers mr. beardmore requests that a link be included in the meeting folder for the warrants."
+  },
+  {
+   "description": "Left-over funds in inactive class accounts to be moved to another account for travel-abroad scholarships after 6/30/2024.",
+   "amount_as_printed": "not stated",
+   "outcome": "motion passed 4-1; transfer deferred to the 6/30/2024 deadline",
+   "quote": "at that time all left over funds will be transferred to another account for future scholarships for travel abroad field trips"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Mary Foyle",
+   "stated_role": "teacher",
+   "topic": "LEA negotiations, class funds, field trips",
+   "quote": "ms. mary foyle, 95 flat hill road, as a teacher over the past 6 or 7 years i have been in three different departments"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:30 p.m.",
+   "quote": "call to order by carol archambault at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no speakers",
+   "quote": "3. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "committee agreed the legislative letter should be sent",
+   "quote": "the committee agrees the letter is well written and should be sent",
+   "tags": [
+    "legislature",
+    "emergency funding"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "ms. brzozoski makes a motion to approve minutes, mr. beardmore seconded the motion, all approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrant signed and to be processed; no transfers",
+   "quote": "warrant total 11/14-12/4/23 $206,275.16",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "informational",
+   "quote": "dr. burnham shares that mrs. whittemore will have a start date of february 12, 2024.",
+   "tags": [
+    "staffing",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "informational",
+   "quote": "our student representative reports all the students are looking forward to winter break",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Spain trip approval",
+   "resolution": "approved 4-1",
+   "quote": "mr. sculimbrene makes a motion to approve the trip to spain, ms. brzozoski seconds the motion.",
+   "tags": [
+    "field trips",
+    "equity"
+   ]
+  },
+  {
+   "topic": "Donations",
+   "resolution": "accepted",
+   "quote": "mr. lehtinen makes a motion to accept these donations with g ratitude, ms. brzozoski seconds the motion, all approve.",
+   "tags": [
+    "donations",
+    "gift account"
+   ]
+  },
+  {
+   "topic": "Winter sport report",
+   "resolution": "discussed; no change",
+   "quote": "as a school committee we do not make changes for sports",
+   "tags": [
+    "athletics"
+   ]
+  },
+  {
+   "topic": "Francis W. Parker Essential Charter School report",
+   "resolution": "received",
+   "quote": "the annual report is shared with the committee.",
+   "tags": [
+    "charter school"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "window replacement pulled from plan; safety film kept",
+   "quote": "ms. brzozoski makes a motion to pull the window replacement from the capital plan",
+   "tags": [
+    "capital planning",
+    "MSBA",
+    "Turkey Hill"
+   ]
+  },
+  {
+   "topic": "Response to LEA negotiations",
+   "resolution": "approved",
+   "quote": "mr. beardmore makes a motion to approve the letter, ms. brzozoski seconds the motion, all approve",
+   "tags": [
+    "union",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Student activity class account reallocation",
+   "resolution": "passed 4-1; outreach continues to 6/30/2024",
+   "quote": "mr. beardmore makes a motion to continue all communication, including facebook and social media",
+   "tags": [
+    "student activity accounts",
+    "scholarships"
+   ]
+  },
+  {
+   "topic": "FY budget development",
+   "resolution": "information only; cuts pending",
+   "quote": "in the folder are some examples of the kinds of data that we are using pending our decisions on cuts.",
+   "tags": [
+    "budget",
+    "cuts"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "received",
+   "quote": "mr. sculimbrene reports the pto met on the 4th",
+   "tags": [
+    "PTO",
+    "finance committee",
+    "athletics",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "one speaker, no action",
+   "quote": "ms. mary foyle, 95 flat hill road, as a teacher over the past 6 or 7 years",
+   "tags": [
+    "LEA negotiations",
+    "class accounts",
+    "field trips"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed: Master Panning; Liaison for Green Communities",
+   "quote": "13. topics for future discussion",
+   "tags": [
+    "planning",
+    "Green Communities"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, adjourning after",
+   "quote": "ms. brzozoski makes a motion at 9:31 to enter into executive session and adjourn immediately following",
+   "tags": [
+    "negotiations",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned after executive session",
+   "quote": "mr. beardmore seconds the motion, all approve 15. adjournment",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "capital planning",
+  "MSBA",
+  "Turkey Hill",
+  "student activity accounts",
+  "class funds",
+  "Spain trip",
+  "donations",
+  "athletics",
+  "LEA negotiations",
+  "Green Communities",
+  "public comment",
+  "warrants",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

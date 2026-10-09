@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2023-11-08",
  "docid": "3389",
@@ -12,27 +12,236 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 11 at the special Town Meeting in 2023",
-   "outcome": "unanimously",
+   "motion": "Approve the minutes Mr. Lehtinen provided, by roll call.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "mr. gray, mr. roy, mr. allison, mr. blatt, mr. lehtinen unanimously approved."
+  },
+  {
+   "motion": "Recommend approval of Article 11 at the special Town Meeting in 2023 (replacement of the central roof over the TC Passios / Municipal Building).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the municipal building design committee unanimously recommends approval of article 11 at the special town meeting in 2023."
   },
   {
-   "motion": "Approval of prior minutes",
-   "outcome": "unanimously",
-   "procedural": true,
-   "quote": "mr. lehtinen provided some minutes to us, and we will do a roll call vote on them. mr. gray, mr. roy, mr. allison, mr. blatt, mr. lehtinen unanimously approved."
-  },
-  {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tom Gray",
    "seconded_by": "David Blatt",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "tom gray, made a motion to adjourn, seconded by david blatt at 7:01pm. roll call vote: tom gray, aye, greg roy, aye, david blatt, aye, matthew allison aye, brian lehtinen aye, michael-ray jeffreys, aye."
+   "quote": "tom gray, made a motion to adjourn,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1440225
+ "note": "Digital text, not a scan. No public comment (Community Guests: NA). The 'unanimously recommends' action on Article 11 is recorded with no motion, mover or second printed, so it is included as a vote with moved_by blank. Vote counts are not printed as numbers for the minutes approval; the roll-call adjournment lists six ayes but no count is printed, so outcome is 'passed'. The phrase 'The council members agreed' is ambiguous (the body is this committee) and is recorded as printed. The Facilities Director is referred to without a name and is not listed as an attendee.",
+ "cost_usd": 0.015391769999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray, david blatt, matthew allison"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town employees: town manager heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The council members (as printed) agreed to the Town Manager's request for approval of $300,000 for the roof replacement.",
+   "quote": "the council members agreed and heather added that the roof is getting worse"
+  },
+  {
+   "decision": "Mr. Blatt will work with Mr. Jeffreys on the Town Meeting presentation.",
+   "quote": "mr blatt would work with mr jeffreys on the presentation."
+  },
+  {
+   "decision": "The presentation will set out the work between now and spring to identify cost and timeline.",
+   "quote": "we should put in the presentation what we are working on between now and the spring to identify cost and timeline"
+  },
+  {
+   "decision": "The committee will use some of the ARPPA funds to begin a cost estimation.",
+   "quote": "we have some good language and will use some of the arppa funds to get a cost estimation going."
+  },
+  {
+   "decision": "The committee will make award at its first meeting in January.",
+   "quote": "we will make award at our first meeting in january and have all the numbers in the early part of the spring"
+  },
+  {
+   "decision": "The committee will partner with the school committee on what is needed to shore up Turkey Hill, and a capital planning study of Turkey Hill was requested.",
+   "quote": "we are partnering with the school committee to work on what is needed to shore up turkey hill."
+  },
+  {
+   "decision": "The committee will meet on the 21st (week of Thanksgiving) to discuss RFP language, then on Monday, November 20, and on the 4th and 18th of December.",
+   "quote": "we are meeting again on the 21st, the week of thanksgiving to talk about rfp language in detail"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roof replacement, central portion of TC Passios (Municipal Building)",
+   "what_was_recorded": "The Town Manager asked for approval of a $300,000 roof replacement, and the town received a hard quote of the same amount.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "the town manager asked for approval of $300,000 for the replacement of the roof over the central"
+  },
+  {
+   "topic": "Roof quote",
+   "what_was_recorded": "The town received a hard quote for the roof repair.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "the town received a hard quote of $300,000."
+  },
+  {
+   "topic": "Funding source for roof repair (30 School Street leftover)",
+   "what_was_recorded": "Leftover funding from the 30 School Street project was described as a logical source for the roof work; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the town has funding left over from the 30 school street project, so it seemed like a logical place to move the funding from."
+  },
+  {
+   "topic": "Cost estimation funding (ARPPA)",
+   "what_was_recorded": "The committee said it would use ARPPA funds to start a cost estimation; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we have some good language and will use some of the arppa funds to get a cost estimation going."
+  },
+  {
+   "topic": "Annex cost size comparison",
+   "what_was_recorded": "The annex is described as roughly the size of a 35,000 square foot building, so the cost is expected to be substantially lower; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the size of the annex to the main building is roughly the same as a 35,000 square foot building, so the cost should be substantially lower at least."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed move of leftover funding from the 30 School Street project toward the roof repair.",
+   "amount_as_printed": "",
+   "outcome": "not stated; discussed as a logical source, no transfer vote recorded",
+   "quote": "the town has funding left over from the 30 school street project, so it seemed like a logical place to move the funding from."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Municipal Building roof repair (Article 11)",
+   "resolution": "recommended for special Town Meeting Article 11",
+   "quote": "the municipal building design committee unanimously recommends approval of article 11 at the special town meeting in 2023.",
+   "tags": [
+    "roof",
+    "municipal building",
+    "asbestos",
+    "capital",
+    "Article 11"
+   ]
+  },
+  {
+   "topic": "Phased plan for municipal building",
+   "resolution": "discussed",
+   "quote": "we want to break this process into three phases: renovate the ritter building, build an addition, and move all town offices into the new town hall.",
+   "tags": [
+    "town hall",
+    "Ritter building",
+    "community center",
+    "TC Passios"
+   ]
+  },
+  {
+   "topic": "Town Meeting presentation",
+   "resolution": "assigned to Mr. Blatt and Mr. Jeffreys",
+   "quote": "mr blatt would work with mr jeffreys on the presentation.",
+   "tags": [
+    "presentation",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Turkey Hill capital planning with school committee",
+   "resolution": "discussed; computer with CAD being procured",
+   "quote": "we are partnering with the school committee to work on what is needed to shore up turkey hill.",
+   "tags": [
+    "Turkey Hill",
+    "school committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "RFP language and next meetings",
+   "resolution": "continued; next meetings scheduled",
+   "quote": "we are meeting again on the 21st, the week of thanksgiving to talk about rfp language in detail",
+   "tags": [
+    "RFP",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "mr. gray, mr. roy, mr. allison, mr. blatt, mr. lehtinen unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "roof repair",
+  "capital projects",
+  "Article 11",
+  "special Town Meeting",
+  "TC Passios",
+  "Ritter building",
+  "town hall",
+  "Turkey Hill",
+  "asbestos",
+  "RFP",
+  "ARPPA funds",
+  "30 School Street",
+  "cost estimate"
+ ],
+ "dropped_unquoted_by_field": {}
 }

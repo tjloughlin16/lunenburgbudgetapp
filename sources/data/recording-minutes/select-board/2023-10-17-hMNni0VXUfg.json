@@ -1,0 +1,624 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-10-17",
+ "video_id": "hMNni0VXUfg",
+ "video_url": "https://www.youtube.com/watch?v=hMNni0VXUfg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-10-17-hMNni0VXUfg.json",
+  "sha256": "b2c511c54439c75b990682d2898d92a84108a1e82b0ff3f8aa31623f5582b290",
+  "caption_lines": 279,
+  "segments": 2255
+ },
+ "recording": {
+  "duration_s": 5832,
+  "duration": "1:37",
+  "spoken_chars": 79222,
+  "words_approx": 13203
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10172023-443",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-10-17-agenda-443.txt",
+   "path": "sources/meetings/select-board/2023-10-17-agenda-443.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10172023-443",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-10-17-minutes-443.txt",
+   "path": "sources/meetings/select-board/2023-10-17-minutes-443.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T06:00:45Z",
+  "cost_usd": 0.3407758
+ },
+ "minutes": {
+  "headline": "Board deferred most special town meeting articles pending numbers, recommended others, and heard a staffing shortage report.",
+  "summary": "The Select Board granted a one-day entertainment license, ratified two interim conservation administrators, and gave final recommendations on special town meeting warrant articles, keeping several deferred for lack of numbers. The town manager presented a detailed staffing-shortage report, and the board agreed pay is a central problem and asked for a workshop. The Municipal Building Design Committee reported on phasing and overlap with the school committee over Turkey Hill and TC Passios.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Jeffrey",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr Alonzo",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr Nuo",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "member (vice chair)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Caesar",
+    "role": "booth/broadcast staff",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 87,
+    "topic": "Chair asked for public comment at start; none offered."
+   },
+   {
+    "t": 1195,
+    "speaker_as_heard": "Joan p",
+    "stated_role": "resident",
+    "topic": "Asked that the aquifer protection zone map be included in the warrant article/booklet for the water protection bylaw; told it will be included."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "primary-school",
+   "public-comment",
+   "staffing",
+   "state-aid",
+   "town-meeting",
+   "turkey-hill",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 358,
+    "motion": "Approve one-day entertainment license for American Graffiti, 1113 Summer Street, November 22, 2023, 7:30-11 p.m.",
+    "outcome": "passed (roll call, all four members aye)",
+    "procedural": false
+   },
+   {
+    "t": 609,
+    "motion": "Ratify town manager's appointment of Charlotte Steves and Brianna Weagle as interim conservation administrators",
+    "outcome": "passed (roll call, all four members aye)",
+    "procedural": false
+   },
+   {
+    "t": 966,
+    "motion": "Recommend approval of special town meeting Article Five (opioid settlement stabilization transfer)",
+    "outcome": "passed (roll call, four ayes, one member said he remained torn)",
+    "procedural": false
+   },
+   {
+    "t": 1596,
+    "motion": "Accept and sign the warrant posting with modifications discussed",
+    "outcome": "passed (roll call, four ayes)",
+    "procedural": false
+   },
+   {
+    "t": 4861,
+    "motion": "Approve minutes of August 15, 2023",
+    "outcome": "passed (roll call, four ayes)",
+    "procedural": true
+   },
+   {
+    "t": 5787,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call; adjourned at 8:37)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 714,
+    "topic": "State aid estimate at special town meeting",
+    "what_was_said": "Town manager said the state aid estimate can be amended, increasing available surplus, and new growth estimate is expected to rise.",
+    "figures_as_heard": [
+     "120,000",
+     "200 to 400"
+    ]
+   },
+   {
+    "t": 881,
+    "topic": "Special purpose stabilization fund (ARPA) article",
+    "what_was_said": "Finance committee recommended against the request; objections included alignment with capital plan and school allocation.",
+    "figures_as_heard": [
+     "3 to 2",
+     "7%"
+    ]
+   },
+   {
+    "t": 946,
+    "topic": "Opioid settlement stabilization fund transfer",
+    "what_was_said": "Article transfers money from the opioid settlement fund, contingent on Lancaster paying half of the program cost.",
+    "figures_as_heard": [
+     "$80,000",
+     "50%"
+    ]
+   },
+   {
+    "t": 1049,
+    "topic": "Duct-less split climate control at primary school",
+    "what_was_said": "Article transfers capital plan funds to the school district for climate control at the primary school.",
+    "figures_as_heard": [
+     "$232,800"
+    ]
+   },
+   {
+    "t": 1534,
+    "topic": "Park commission article wording",
+    "what_was_said": "Article wording modified to replace 'here to four' with 'already' regarding a sum for the park commission.",
+    "figures_as_heard": [
+     "1 million"
+    ]
+   },
+   {
+    "t": 3625,
+    "topic": "Assistant town accountant and finance director pay",
+    "what_was_said": "A member said the assistant town accountant pay seems low versus the finance director posting, hindering the pipeline.",
+    "figures_as_heard": [
+     "45 to $50,000",
+     "100,000 plus"
+    ]
+   },
+   {
+    "t": 3816,
+    "topic": "Cemetery staffing hours",
+    "what_was_said": "A member noted budgeted hours far exceed estimated mowing time.",
+    "figures_as_heard": [
+     "600 hours",
+     "3,952 hours"
+    ]
+   },
+   {
+    "t": 5285,
+    "topic": "Turkey Hill hold cost",
+    "what_was_said": "School committee estimated cost to hold Turkey Hill another 10 years, with possible state funding.",
+    "figures_as_heard": [
+     "14 million"
+    ]
+   },
+   {
+    "t": 4910,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "Warrant read as a list of numbers; total not clearly audible.",
+    "figures_as_heard": [
+     "1,256,257,258"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 946,
+    "description": "Transfer from opioid settlement stabilization fund (Article Five), contingent on Lancaster approving 50% of program cost",
+    "amount_as_heard": "$80,000",
+    "outcome": "voted (recommendation of approval)"
+   },
+   {
+    "t": 1049,
+    "description": "Transfer from capital plan (Article 6 of May 2022 annual town meeting) to school district for climate control at primary school",
+    "amount_as_heard": "$232,800",
+    "outcome": "discussed only (earlier recommendation stands 3-1)"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 795,
+    "decision": "Articles one, two and three continue to be deferred pending final numbers."
+   },
+   {
+    "t": 1111,
+    "decision": "Prior recommendation on Article Six stands at 3-1; a late additional vote was not added."
+   },
+   {
+    "t": 1153,
+    "decision": "Articles 7 and 8 recommended approval; articles 10 through 14 and 16 recommended approval."
+   },
+   {
+    "t": 1448,
+    "decision": "Solar parking canopy article continues to be deferred because the minimum height change was not included."
+   },
+   {
+    "t": 4777,
+    "decision": "Chair will schedule a board workshop on staffing, with pay as the top item."
+   },
+   {
+    "t": 5388,
+    "decision": "Board gave informal feedback to continue exploring overlap with the school committee on TC Passios and Turkey Hill; no formal direction."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 200,
+    "topic": "Opening, pledge, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 87,
+    "t_end": 100,
+    "topic": "Public comment",
+    "resolution": "none offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 215,
+    "t_end": 400,
+    "topic": "One-day entertainment license, American Graffiti",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 401,
+    "t_end": 650,
+    "topic": "Ratify interim conservation administrators",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 651,
+    "t_end": 1638,
+    "topic": "Special town meeting warrant article recommendations",
+    "resolution": "voted / several deferred",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 1639,
+    "t_end": 4810,
+    "topic": "Town manager staffing shortage report and board discussion",
+    "resolution": "informational; workshop to be scheduled",
+    "tags": [
+     "staffing",
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4811,
+    "t_end": 4950,
+    "topic": "Minutes, warrants, committee reports",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 4951,
+    "t_end": 5680,
+    "topic": "Municipal Building Design Committee report, Turkey Hill and TC Passios",
+    "resolution": "informational; feedback only",
+    "tags": [
+     "facilities",
+     "turkey-hill",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5681,
+    "t_end": 5829,
+    "topic": "Closing comments and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Accounts payable warrant total is garbled.",
+   "Chair's roll call votes sometimes captioned without individual responses.",
+   "Whether the Article Nine vote count was stated is unclear."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to recommend the opioid settlement stabilization transfer, Article Five, with one member saying he remained torn.",
+    "t": 966
+   },
+   {
+    "line": "Articles one, two and three stay deferred pending final numbers, and the solar parking canopy article stays deferred because a height change was left out.",
+    "t": 795
+   },
+   {
+    "line": "The board kept its earlier 3-1 recommendation on Article Six and recommended articles 7, 8, 10 through 14 and 16.",
+    "t": 1153
+   },
+   {
+    "line": "After the town manager's staffing-shortage report, the chair said a board workshop will be scheduled, with pay as the top item.",
+    "t": 4777
+   },
+   {
+    "line": "The board gave informal feedback, with no formal direction, to keep exploring overlap with the school committee on TC Passios and Turkey Hill.",
+    "t": 5388
+   }
+  ],
+  "why_it_matters": [
+   "Special town meeting warrant articles that spend town money, including the opioid settlement transfer and the school climate-control transfer, are what residents will be asked to vote on, and several still lack final numbers.",
+   "Staffing shortages tied to pay can affect how well town services are staffed, and a pay workshop is the next step toward any change that would reach the budget."
+  ],
+  "watch_next": [
+   "The board workshop on staffing, with pay as the top item, which the chair said will be scheduled.",
+   "Final numbers for articles one, two and three, and a revised solar parking canopy article, before the special town meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T06:00:54Z",
+   "cost_usd": 0.222015
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10172023-443",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-10-17-minutes-443.txt",
+   "path": "sources/meetings/select-board/2023-10-17-minutes-443.pdf"
+  },
+  "official_sha256": "31ce592782740cb59e1bd998f9cf551bbab4495b703444e6e60662b347223401",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all four votes, both transfers and the Article 5/6 figures. Differences are mostly misheard names and one digit-garbled warrant total. The main thing to check is how the Municipal Building Design Committee discussion ended: ours says no formal direction, while the official minutes record an agreement that phases one and two proceed first.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "One-day entertainment license, American Graffiti",
+    "t": 358,
+    "ours": "Approve one-day entertainment license for American Graffiti, 1113 Summer Street, November 22, 2023, 7:30-11 p.m. — passed (roll call, all four members aye)",
+    "official": "tom alonzo made motion to approve the one-day entertainment license for american graffiti at 1113 summer street for november 22,2023 from 7:30 pm to 11:00 pm.",
+    "note": "Same item, date, hours and 4-0 outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Interim conservation administrators' names",
+    "t": 609,
+    "ours": "Ratify town manager's appointment of Charlotte Steves and Brianna Weagle as interim conservation administrators — passed (roll call, all four members aye)",
+    "official": "tom alonzo made motion to ratify the town manager's appointment as interim conservation administrators charlotte steeves and bryanna weigel.",
+    "official_reading": "Charlotte Steeves and Bryanna Weigel",
+    "note": "Same vote and outcome; the captions misspelled both names."
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting Article 5 vote",
+    "t": 966,
+    "ours": "Recommend approval of special town meeting Article Five (opioid settlement stabilization transfer) — passed (roll call, four ayes, one member said he remained torn)",
+    "official": "tom alonzo made motion to approve article 5; seconded by lou franco.",
+    "note": "Both record a 4-0 passage; the 'torn' remark appears only in ours and does not change the outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Accept and sign warrant posting",
+    "t": 1596,
+    "ours": "Accept and sign the warrant posting with modifications discussed — passed (roll call, four ayes)",
+    "official": "m. jeffreys made motion for the board to accept and sign the warrant posting with the modifications discussed.",
+    "note": "Same motion and 4-0 outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Opioid settlement transfer, $80,000, contingent on Lancaster 50%",
+    "t": 946,
+    "ours": "Transfer from opioid settlement stabilization fund (Article Five), contingent on Lancaster approving 50% of program cost — $80,000",
+    "official": "article 5: refers to the transfer of $80,000 in opioid settlement stabilization fund",
+    "note": "Same amount and condition."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan transfer to school district, $232,800",
+    "t": 1049,
+    "ours": "Transfer from capital plan (Article 6 of May 2022 annual town meeting) to school district for climate control at primary school — $232,800 (discussed only (earlier recommendation stands 3-1))",
+    "official": "refers to the school's request to transfer $232,800 from the capital plan to the lunenburg school district",
+    "note": "Same amount and 3-1 recommendation with no new Board motion."
+   },
+   {
+    "kind": "agree",
+    "about": "State aid estimate and new growth 200 to 400",
+    "t": 714,
+    "ours": "State aid estimate at special town meeting: 120,000, 200 to 400",
+    "official": "so that increases our available surplus $120,000 and estimated increase in new growth as well",
+    "note": "The $120,000 matches. The official minutes' structured summary gives the new growth estimate as 200 to 400 properties, consistent with ours."
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA special purpose stabilization article, 3 to 2 and 7%",
+    "t": 881,
+    "ours": "Special purpose stabilization fund (ARPA) article: 3 to 2, 7%",
+    "official": "had specific objections to funds allocated for the artisan schools which accounts for 7% of the funding",
+    "note": "Same 7% figure; the 3-2 Finance Committee split is in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant total",
+    "t": 4910,
+    "ours": "Accounts payable warrant: 1,256,257,258",
+    "official": "accounts payable warrant: $1,256,239.82",
+    "official_reading": "$1,256,239.82",
+    "note": "The captions garbled the digits of the same warrant total, which begins 1,256."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Park commission article wording, 1 million",
+    "t": 1534,
+    "ours": "Park commission article wording: 1 million",
+    "official": "",
+    "note": "The official minutes carry no park commission figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant town accountant / finance director pay figures",
+    "t": 3625,
+    "ours": "Assistant town accountant and finance director pay: 45 to $50,000, 100,000 plus",
+    "official": "",
+    "note": "The official minutes say no dollar figure was printed for the staffing pay discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery staffing hours",
+    "t": 3816,
+    "ours": "Cemetery staffing hours: 600 hours, 3,952 hours",
+    "official": "",
+    "note": "No cemetery hours appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill hold cost, 14 million",
+    "t": 5285,
+    "ours": "Turkey Hill hold cost: 14 million",
+    "official": "",
+    "note": "The official minutes print no dollar figure for the municipal building discussion."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 1, 2 and 3 deferred",
+    "t": 795,
+    "ours": "Articles one, two and three continue to be deferred pending final numbers.",
+    "official": "board agreed until they get final numbers recommend to defer.",
+    "note": "Same deferral pending final numbers."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 6 recommendation stands at 3-1",
+    "t": 1111,
+    "ours": "Prior recommendation on Article Six stands at 3-1; a late additional vote was not added.",
+    "official": "refers to the school's request to transfer $232,800 from the capital plan to the lunenburg school district",
+    "note": "Official records Recommend approval 3 to 1 with no Board motion, matching ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles recommended for approval",
+    "t": 1153,
+    "ours": "Articles 7 and 8 recommended approval; articles 10 through 14 and 16 recommended approval.",
+    "official": "article 7: recommend approval article 8: recommend approval",
+    "note": "Official lists the same articles 7, 8, 10-14 and 16."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 9 and 15 deferred",
+    "ours": "",
+    "official": "article 15: deferred article 16: recommend approval",
+    "note": "Our minutes do not list Articles 9 and 15 as deferred. The solar canopy deferral in ours may correspond to one of them; check the warrant."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Solar parking canopy article deferred",
+    "t": 1448,
+    "ours": "Solar parking canopy article continues to be deferred because the minimum height change was not included.",
+    "official": "",
+    "note": "The official minutes do not mention the solar canopy or the height reason."
+   },
+   {
+    "kind": "agree",
+    "about": "Staffing: scheduling pay items",
+    "t": 4777,
+    "ours": "Chair will schedule a board workshop on staffing, with pay as the top item.",
+    "official": "board comments concluded to consider the presentation from the town manager and to start getting items scheduled to increase procurement efforts and increase current employee pay and morale.",
+    "note": "Both point to scheduling follow-up with pay as the focus. Ours specifies a workshop; the official wording is looser."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Municipal building / Turkey Hill outcome",
+    "t": 5388,
+    "ours": "Board gave informal feedback to continue exploring overlap with the school committee on TC Passios and Turkey Hill; no formal direction.",
+    "official": "it was agreed that phase one and phase two should proceed first, with detailed planning and cost estimation.",
+    "note": "Ours says no formal direction; the official minutes record an agreement that phases one and two proceed first. Check the recording and whether this was the Municipal Building Design Committee's report rather than a Board decision."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Mr Jeffrey (chair)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, caesar nuzzolo (via zoom), heather lemieux",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Surname misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Nuzzolo",
+    "ours": "Mr Nuo (member)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, caesar nuzzolo (via zoom), heather lemieux",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Name misheard. Ours also lists 'Caesar' as booth/broadcast staff, which is probably the same person, a member attending by Zoom. Check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees: Alonzo, Franco, town manager",
+    "ours": "Mr Alonzo (member); Mr Franco (member (vice chair)); Town manager (town manager)",
+    "official": "present: michael-ray jeffreys, lou franco, tom alonzo, caesar nuzzolo (via zoom), heather lemieux",
+    "note": "Alonzo and Franco match. The official minutes name Heather Lemieux as present, presumably the town manager."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Renee Emkey",
+    "ours": "",
+    "official": "absent: renee emkey",
+    "note": "Our minutes do not record the absent member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Joan Pease",
+    "ours": "",
+    "official": "public comment: joan pease, 11 winter green ct, the water protection district warrant article has a procedural irregularity/inconsistency.",
+    "note": "Our minutes do not record this public comment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "License applicant Todd Jennison",
+    "ours": "",
+    "official": "todd jennison, 129 sunnyhill rd is the applicant requesting one day entertainment license for a three person band.",
+    "note": "Our minutes do not name the applicant."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T06:02:21Z",
+   "cost_usd": 0.273043
+  }
+ }
+}
