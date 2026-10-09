@@ -1,18 +1,21 @@
 # Running the refresh every day
 
-**It runs in its own checkout.** `scripts/setup_refresh_tree.sh` (once) creates a git
-worktree at `../lunenburgbudgets-refresh` on a branch called `refresh`; every run resets
-it to `origin/main`, refreshes, commits, pushes to `main`, builds and deploys. People and
-agents never work in that tree -- they work here, on branches, and merge to `main`. After
-each refresh this tree is behind `main` by one commit: `git pull` before starting work.
-Why: on 15 September 2026 the refresh ran here while a feature branch was checked out and
-its deploy went to a Pages preview alias; production missed a day.
+**It runs in this working tree, on whatever branch is checked out** (since 9 October 2026;
+see `notes/HANDOFF-REFRESH-ADDITIVE.md`). It is ADDITIVE: it resets, cleans and deletes
+nothing, commits ONLY the files it wrote (`scripts/refresh_git.py`), puts back anything
+of somebody else's uncommitted work it overwrote -- reported as *not yet refreshable* --
+and reaches `main` by replaying its commit onto a moved `origin/main`, never by a side
+branch or a force. On a branch other than `main` it commits locally and reports
+`not deployed: on branch X`. It deploys only from `main`'s own commit, gated only on
+the generators that run executed. `scripts/check_refresh_safe.py` fails the build if any
+destructive command reappears in the refresh's code.
 
-    bash scripts/setup_refresh_tree.sh    # once; pulls the archive's binaries from R2 (~1.4 GB)
+`scripts/daily_refresh.sh` runs `refresh.py --deploy` and logs to
+`build/refresh-logs/<date>.log`. Nothing in it posts to Facebook; the paste-ready texts
+land in `build/notices-to-post.md`.
 
-`scripts/daily_refresh.sh` runs `refresh.py --deploy`, commits the observation logs,
-previews, minutes and payloads, and pushes. It logs to `build/refresh-logs/<date>.log`.
-Nothing in it posts to Facebook; the paste-ready texts land in `build/notices-to-post.md`.
+The old separate checkout, `../lunenburgbudgets-refresh`, and
+`scripts/setup_refresh_tree.sh` are retired: nothing runs there any more.
 
 Install it as a launchd job. It fires at 7:00 every morning AND at every login/boot; the
 script itself refuses to run twice in one day, so a Mac that was off at 7:00 catches up

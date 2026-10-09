@@ -1,0 +1,29 @@
+# UNION MERGE FOR LOGS THAT ARE ONLY EVER APPENDED TO.
+#
+# On 8 October 2026 the refresh's push was rejected because main had moved, and the
+# conflict that had to be resolved by hand was in agentic-spend.csv: two writers had each
+# appended rows. The right resolution is mechanical -- keep both sides' rows EXACTLY,
+# duplicates included -- and git's built-in `union` driver does exactly that, so the
+# refresh can replay its commit onto a moved main without a person (see
+# scripts/refresh_git.py, which replays with merge-tree and honours this file).
+#
+# A FILE BELONGS HERE ONLY IF NOTHING EVER REWRITES OR DELETES A ROW OF IT. Union on a
+# file that is rewritten keeps both the old and the new version of a changed row, which
+# is silent corruption. So, deliberately NOT here:
+#   sources/data/archive-manifest.csv     keyed, rows corrected and superseded
+#   sources/data/archive-push-state.csv   keyed state, rewritten
+#   sources/data/refresh-runs.csv         rewritten each run; one row per day REPLACED
+#   sources/meetings/index.csv            rows updated in place (path filled in)
+#
+# What is here, and who appends:
+#   agentic-spend.csv   sweep_backlog.py, triage_refresh.py, the metered steps -- append only
+#   ocr-minutes.csv     ocr_scanned_minutes.py -- append only
+#   */checked.csv       snapshot_log.record(): "Append one row saying we looked. Never
+#                       rewrites the file." (the staff directories and job postings)
+# and the byte copies of the first two that the site publishes under fy28/public/docs/data,
+# which merge identically because their two sides are the same appends.
+sources/data/agentic-spend.csv            merge=union
+sources/data/ocr-minutes.csv              merge=union
+fy28/public/docs/data/agentic-spend.csv   merge=union
+fy28/public/docs/data/ocr-minutes.csv     merge=union
+sources/**/checked.csv                    merge=union

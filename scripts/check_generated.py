@@ -44,6 +44,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Every generator that can check itself. Ordered cheapest first, so a fast failure comes
 # back fast. `sync_d1` is last because it is the only one that touches the network.
 CHECKS = [
+    # THE REFRESH MAY ONLY EVER ADD. TJ, 8 October 2026: *"this shouldnt have ANY chance of
+    # a destructive path"*. The first fails if daily_refresh.sh, refresh.py, refresh_git.py
+    # or triage_refresh.py ever contains a reset, clean, checkout, stash, force-push or a
+    # delete outside build/ -- and proves, every run, that it still catches each form. The
+    # second makes each git situation the refresh handles actually happen, in throwaway
+    # repositories under build/, and asserts on what is left on disk. Both are verifiers,
+    # cheap and offline, which is why they come first.
+    ('check_refresh_safe.py', ['--selftest']),
+    ('test_refresh_git.py', []),
     ('build_readme.py', ['--check']),
     # The printable decisions/questions sheet is EXTRACTED from the notes rather
     # than typed, so this fails the moment a decision is taken and struck from
