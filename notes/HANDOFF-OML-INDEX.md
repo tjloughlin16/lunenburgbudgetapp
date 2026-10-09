@@ -75,3 +75,15 @@ the determinations. But later."* So when it is built, the digest runs exactly as
 backlog does -- `process_meeting.py`'s shape: newest first, resumable, one step per letter
 saved as it succeeds, the usage governor (`--until-usage`, session and weekly caps, the
 output guard matching every paid call to its file). Not a separate one-off batch.
+
+## The letters are DIGITAL. Do not OCR them wholesale (TJ, 8 October 2026)
+
+Checked with `scripts/pdf_kind.py` on the first 81 letters held: **79 digital, 2 mixed** (one
+image page each -- OML 2024-218 p5 and OML 2022-174 p5, both the closing "CC:" list), none a
+scan. They are read from the text layer; OCR runs ONLY on a page `pdf_kind` classifies as an
+image, and the index records it per letter (`read`: "pdf text layer + ocr (1 of 5 pages)").
+TJ: *"when we start processing these letters, that we don't attempt to OCR everything and
+make that mistake."* So the processing step reads the extracted text already in
+`sources/state-law/text/`; it never re-renders or OCRs a letter, and any new extraction goes
+through `pdf_kind.extract_text` (rule 13d). Re-run the classification over the full set when
+the download finishes; older letters may include scans, and those -- only those -- get OCR.
