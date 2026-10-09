@@ -133,6 +133,10 @@ CATEGORIES = [
             'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'sportsmoney', 'stopped', 'unwind',
             'insurance',
             'athletics-ledger',
+            # SCHOOL BUSES, beside the two athletics entries because half its question is
+            # athletic transportation -- and under "what the money buys" because the other
+            # half is the school day's buses, the larger cost by far.
+            'transportation',
         ]),
         # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
         # students'". It had been a top-level shelf of its own, and the correction is
@@ -411,6 +415,10 @@ ABOUT = {
     'athletics':
         'The one programme where both sides of the money are visible, and therefore the '
         'only place the net-versus-gross problem can be measured rather than described.',
+    'transportation':
+        'What the school buses cost and who pays: the school day against athletics, budgeted '
+        'and spent, every year since FY2010; athletic buses sport by sport, with our estimate '
+        'of the trips the dollars buy; and what the Dee Bus contract fixes through FY2028.',
     'athletics-ledger':
         'Three years of the athletics revolving fund at transaction level, from a records '
         'request. Includes $254,121.18 described only as “per memo”.',

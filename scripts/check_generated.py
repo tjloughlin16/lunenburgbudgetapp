@@ -529,6 +529,16 @@ CHECKS = [
     # extracted text this page cites. Any one of those going quiet leaves every number on
     # the page a faithful copy and a sentence beside it wrong.
     ('build_monty_tech.py', ['--check']),
+    # School transportation, /analysis/transportation. The generator refuses to write unless
+    # the Finance Committee workbook still ties to the MUNIS reports line by line, every
+    # transportation account is classified, the budget book's FY2025 and FY2026 columns still
+    # equal the ledger, every Dee Bus rate still reproduces the subtotals and totals the bid
+    # form prints (and the legible tokens of its text layer), DESE still ties to the ledger in
+    # FY2023 and FY2024, every quotation is verbatim, and every money_gaps row it cites exists.
+    ('build_transportation.py', ['--check']),
+    # ...and the second route: the ledger from the database by org and object, the contract
+    # prices from the subtotals the form prints, the athletics totals from the database.
+    ('verify_transportation.py', []),
 
     # The generator agrees with its own output by construction. This recomputes every
     # figure /where-students-go-instead renders by a SECOND route -- SQL against the raw
