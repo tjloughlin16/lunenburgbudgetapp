@@ -301,11 +301,18 @@ def main():
     ap.add_argument('--until-usage', action='store_true', help='run the backlog until a usage cap, paced by the live bars (the governor)')
     ap.add_argument('--session-cap', type=float, default=95.0, help='governor: stop starting meetings at this %% of the 5-hour window')
     ap.add_argument('--session-caps', help='governor: one cap per window, e.g. 100,80 (the last repeats)')
-    ap.add_argument('--week-cap', type=float, default=90.0, help='governor: stop at this %% of the week')
+    ap.add_argument('--week-cap', type=float, default=None, help='governor: stop at this %% of the week (default 90; 101 with --week-line)')
+    ap.add_argument('--week-line', type=float, metavar='GOAL', help='governor: pace to a straight line across the week -- GOAL%% x the week elapsed, '
+                    'climbing to 100%% over the last day -- waiting (never stopping) whenever the weekly bar is at or over it')
     ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
     ap.add_argument('--ramp', type=float, default=300, help='governor: seconds between adding workers (the brake on a fast fill)')
     ap.add_argument('--max-jobs', type=int, default=3, help='governor: most workers at once (one is ~16%%/h of a window)')
     a = ap.parse_args()
+    # WITH A LINE, THE LINE IS IN CHARGE. A fixed weekly cap STOPS the run; the line only
+    # makes it wait. Left at 90 it would end a week-long run the moment the last day's climb
+    # passed 90 -- so with --week-line the cap sits above 100, out of the way, unless given.
+    if a.week_cap is None:
+        a.week_cap = 101.0 if a.week_line else 90.0
 
     if a.status:
         import review_queue as Q
@@ -355,7 +362,7 @@ def main():
         import usage_governor as G
         G.fetch(force=True)
         print('  ... (%d in all)\n[gov] %s' % (len(plan), G.describe(
-            G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs), G.readings(), time.time())), flush=True)
+            G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs, week_goal=a.week_line), G.readings(), time.time())), flush=True)
     if a.dry_run:
         return 0
 
@@ -475,7 +482,8 @@ def run_governed(plan, a, S, ceiling):
     import usage_governor as G
     by = parse_by(a.by)
     caps = [float(c) for c in a.session_caps.split(',')] if a.session_caps else None
-    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps)
+    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps,
+                week_goal=a.week_line)
     G.fetch(force=True)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
     # THE DENOMINATOR IS THE PLAN, NOT THE BACKLOG. TJ, 8 October 2026: "when we set the
@@ -557,8 +565,9 @@ def run_governed(plan, a, S, ceiling):
                     if est >= cap:
                         d.update(start=False, jobs=0, wait_reset=limit_means_wait(gp) or bool(gp.by and now < gp.by),
                                  note='STALE -- estimated %.0f%% >= cap %g%%: stop starting' % (est, cap))
-                line = '5h %s (target %s) workers %d/%d  %s  [%.2f pt/meeting]' % (
+                line = '5h %s%s (target %s) workers %d/%d  %s  [%.2f pt/meeting]' % (
                     ('%g%%' % h[-1]['u5']) if h else '?',
+                    ('  7d %g%%' % h[-1]['u7']) if (h and gp.week_goal) else '',
                     ('%.0f%%' % d['target']) if d['target'] is not None else '-',
                     len(active), d['jobs'], d['note'], gp.per_meeting)
                 if d['note'] != (last_line or ('', ''))[1] or d['jobs'] != (last_line or (0,))[0]:

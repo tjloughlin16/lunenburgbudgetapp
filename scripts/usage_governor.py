@@ -54,6 +54,19 @@ SLOPE_S = 900            # the window the emergency slope is measured over
 EMERGENCY_X = 2.0        # filling at more than this multiple of the planned slope
 PER_MEETING_PCT = 0.2    # what one in-flight meeting adds to the five-hour bar -- the
                          # STARTING guess only; the run measures its own (Plan.per_meeting)
+# THE WEEKLY LINE. TJ, 9 October 2026: *"I have a weekly limit. and usually i waste it at
+# the end of the week ... I don't want to burn weekly spend too early. so linear progression
+# throughout the week"* -- and, of a big interactive session: *"the automation for minutes
+# should assume it doesn't have that capacity to fill and throttle back. So I don't need to
+# stop minutes, I just use capacity and the minutes fills in the rest."* That second sentence
+# is why the line is compared with the SERVER's weekly bar, which counts every session on
+# the account: interactive use raises the bar, the gap to the line shrinks, and the batch
+# starts less, without anybody coordinating anything. The line binds the batch, never TJ.
+WEEK_S = 7 * 86400
+WEEK_RESET = os.path.expanduser('~/.claude/usage-week-reset.txt')   # written by fetch()
+WEEK_PER_MEETING = 0.1   # points of the WEEK one in-flight meeting adds; measured 7-8 Oct
+                         # 2026 at ~0.1% (notes/findings/METERED-BATCH-COST.md section 7)
+WEEK_LAST_DAY = 6 / 7    # the goal holds until here, then climbs to 100% by the reset
 MARGIN_MAX_S = 600       # stop aiming this long before the deadline...
 MARGIN_FRAC = 0.10       # ...or this fraction of a short horizon, whichever is smaller
 
@@ -87,6 +100,10 @@ def fetch(force=False):
         d = json.loads(urllib.request.urlopen(req, timeout=15).read())
         f5, f7 = d['five_hour'], d['seven_day']
         reset = dt.datetime.fromisoformat(f5['resets_at']).timestamp()
+        if f7.get('resets_at'):
+            with open(WEEK_RESET + '.tmp', 'w') as fh:
+                fh.write('%d\n' % dt.datetime.fromisoformat(f7['resets_at']).timestamp())
+            os.replace(WEEK_RESET + '.tmp', WEEK_RESET)
         new = not os.path.exists(LOG)
         with open(LOG, 'a', encoding='utf-8') as fh:
             if new:
@@ -118,10 +135,36 @@ def readings(path=LOG):
     return sorted(out, key=lambda x: x['t'])
 
 
+def week_reset(now=None):
+    """When the current week ends (epoch), from the last reading -- or None if never read.
+    A reset already in the past means the week has rolled over and no reading since has said
+    so; the next one is a week later."""
+    try:
+        r = float(open(WEEK_RESET).read().strip())
+    except (OSError, ValueError):
+        return None
+    now = now or __import__('time').time()
+    while r <= now:
+        r += WEEK_S
+    return r
+
+
+def week_line(goal, reset, now):
+    """Where the weekly bar SHOULD be now: `goal` x the fraction of the week elapsed, then,
+    over the final day, a straight climb from wherever that left it to 100% at the reset --
+    so a reserve is kept for a heavy interactive day and is never left unspent."""
+    frac = min(1.0, max(0.0, 1.0 - (reset - now) / WEEK_S))
+    if frac <= WEEK_LAST_DAY:
+        return goal * frac
+    held = goal * WEEK_LAST_DAY
+    return held + (100.0 - held) * (frac - WEEK_LAST_DAY) / (1 - WEEK_LAST_DAY)
+
+
 class Plan:
     """What the run is aiming at, and what it has decided so far."""
 
-    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S, caps=None):
+    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S, caps=None,
+                 week_goal=None):
         # ONE CAP PER WINDOW. TJ, 7 October 2026: "Run the session to 100% for the first
         # session, then up to 80% for the second." `caps` is that list; the last one repeats.
         self.caps = list(caps) if caps else [session_cap]
@@ -129,6 +172,7 @@ class Plan:
         session_cap = self.caps[0]
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
         self.ramp = ramp                         # seconds between added workers
+        self.week_goal = week_goal               # the weekly line's goal, or None for no line
         self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
         self.jobs = 1
         self.last_change = 0.0
@@ -175,6 +219,17 @@ def decide(plan, hist, now, in_flight=0):
     if u7 >= plan.week_cap:
         return dict(jobs=0, start=False, stop='weekly cap %g%% reached (%g%%)' % (plan.week_cap, u7),
                     wait_reset=False, target=None, note='')
+
+    # THE WEEKLY LINE: under it, carry on; at or over it, start nothing and WAIT -- never stop.
+    # What is in flight counts, at WEEK_PER_MEETING each, so a full set of workers cannot all
+    # start in the last minute below the line.
+    if plan.week_goal:
+        wr = week_reset(now)
+        if wr:
+            line = week_line(plan.week_goal, wr, now)
+            if u7 + in_flight * WEEK_PER_MEETING >= line:
+                return dict(jobs=0, start=False, stop=None, wait_reset=False, target=None,
+                            note='weekly line: %g%% used against %.1f%% -- waiting for it' % (u7, line))
 
     # A NEW WINDOW re-anchors the line where it starts.
     if plan.window != reset and not (reset is None and plan.window and now <= plan.window):
@@ -244,6 +299,11 @@ def describe(plan, hist, now):
     age = now - last['t']
     dl = plan.deadline(last['reset'])
     s = '5h %g%%  7d %g%%  (reading %ds old%s)' % (last['u5'], last['u7'], age, ', STALE' if age > STALE_S else '')
+    wr = week_reset(now) if plan.week_goal else None
+    if wr:
+        s += '  week line %.1f%% (goal %g%%, resets %s)' % (
+            week_line(plan.week_goal, wr, now), plan.week_goal,
+            dt.datetime.fromtimestamp(wr).strftime('%a %H:%M'))
     if dl and dl > now:
         need = (plan.session_cap - last['u5']) / ((dl - now) / 3600)
         s += '  -> %g%% by %s needs %.0f%%/h' % (plan.session_cap,
@@ -328,7 +388,35 @@ def _test():
     other = [R(now + 60, 76), R(now + 700, 80), R(now + 960, 87)]
     d = decide(p12, other, now + 960)
     case('bar climbs while WE are at one worker (someone else): pause, no emergency', not d['stop'] and not d['start'])
-    print('%d of %d rules hold' % (16 - len(fails), 16))
+    # THE WEEKLY LINE. week_reset() reads a file, so the tests point it at their own.
+    global WEEK_RESET
+    saved, WEEK_RESET = WEEK_RESET, os.path.join(os.path.dirname(LOG), '.usage-week-reset-test')
+    try:
+        wr = now + 4 * 86400                       # three days into the week
+        open(WEEK_RESET, 'w').write('%d\n' % wr)
+        case('line: 90% goal, 3 of 7 days gone -> 38.6%', abs(week_line(90, wr, now) - 90 * 3 / 7) < 0.01)
+        case('line: holds at 90% x 6/7 until the last day', abs(week_line(90, now + 86400, now) - 90 * 6 / 7) < 0.01)
+        case('line: reaches 100% at the reset', abs(week_line(90, now, now) - 100) < 0.01)
+        WR = lambda t, u7: dict(t=t, u5=10, u7=u7, reset=reset)
+        p = Plan(session_cap=80, week_cap=101, week_goal=90)
+        d = decide(p, [WR(now - 60, 45)], now)
+        case('weekly: over the line -> wait, never stop', not d['start'] and d['stop'] is None and not d['wait_reset'])
+        p = Plan(session_cap=80, week_cap=101, week_goal=90)
+        d = decide(p, [WR(now - 60, 30)], now)
+        case('weekly: under the line -> may start', d['start'])
+        p = Plan(session_cap=80, week_cap=101, week_goal=90)
+        d = decide(p, [WR(now - 60, 38)], now, in_flight=8)
+        case('weekly: in-flight meetings count against the line', not d['start'])
+        open(WEEK_RESET, 'w').write('%d\n' % (now - 3600))
+        case('a reset in the past rolls forward a week', week_reset(now) == now - 3600 + WEEK_S)
+    finally:
+        try:
+            os.remove(WEEK_RESET)
+        except OSError:
+            pass
+        WEEK_RESET = saved
+    total = 16 + 7
+    print('%d of %d rules hold' % (total - len(fails), total))
     return 1 if fails else 0
 
 

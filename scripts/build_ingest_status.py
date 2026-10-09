@@ -2601,6 +2601,57 @@ def finished(n=14):
 
 # ONE TAB BAR, SHARED. Three pages that each wrote their own would drift the first time a
 # fourth was added -- the stale-copy failure this repo has hit with every hand-kept list.
+# THE WEEKLY PACING LINE, beside what is running. TJ, 9 October 2026: the minutes run paces
+# to a straight line across the week (process_meeting.py --week-line), so the page shows the
+# same two numbers the governor decides on -- the server's weekly bar and where the line is
+# -- read from the same files, so the card and the run cannot disagree.
+def _week_pacing_card():
+    try:
+        sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+        import usage_governor as G
+        hist = G.readings()
+        wr = G.week_reset()
+    except Exception:
+        return ''
+    if not hist or not wr:
+        return ''
+    last = hist[-1]
+    now = time.time()
+    goal = 90.0
+    m = re.search(r'--week-line\s+([\d.]+)', ' '.join(r.get('cmd', '') for r in running()))
+    live = bool(m)
+    if m:
+        goal = float(m.group(1))
+    line = G.week_line(goal, wr, now)
+    u7 = last['u7']
+    gap = u7 - line
+    catch = ''
+    if gap > 0:
+        # when the line reaches today's bar, if nothing else is spent
+        lo, hi = now, wr
+        for _ in range(40):
+            mid = (lo + hi) / 2
+            if G.week_line(goal, wr, mid) < u7:
+                lo = mid
+            else:
+                hi = mid
+        catch = ' &middot; the line reaches %g%% around <b>%s</b>' % (u7, dt.datetime.fromtimestamp(hi).strftime('%a %H:%M'))
+    state = (('<span class="pill">waiting</span>' if gap >= 0 else '<span class="pill go">filling</span>')
+             if live else '<span class="pill">no paced run</span>')
+    pct = lambda v: max(0.0, min(100.0, v))
+    bar = ('<div style="position:relative;height:10px;background:#21262d;border-radius:5px;margin:8px 0 2px">'
+           '<div style="position:absolute;left:0;top:0;bottom:0;width:%.1f%%;background:#d29922;border-radius:5px"></div>'
+           '<div title="the line" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#e6edf3"></div>'
+           '</div>' % (pct(u7), pct(line)))
+    return ('<div class="card"><div class="row"><b class="grow">Weekly pacing</b>%s</div>%s'
+            '<div class="tiny">Weekly bar <b>%g%%</b> against a line at <b>%.1f%%</b> (%s %.1f points) &middot; goal %g%%, '
+            'climbing to 100%% over the last day &middot; resets %s%s</div>'
+            '<div class="tiny" style="color:#8b949e;margin-top:2px">The bar counts every session on the account, so a heavy '
+            'interactive day raises it and the minutes run starts less; reading %s.</div></div>'
+            % (state, bar, u7, line, 'ahead by' if gap >= 0 else 'behind by', abs(gap), goal,
+               dt.datetime.fromtimestamp(wr).strftime('%a %d %b %H:%M'), catch, ago(dt.datetime.fromtimestamp(last['t'], dt.timezone.utc).isoformat())))
+
+
 def tabs(sel, q=None):
     """The tab bar. `Questions (N)` carries the count of OPEN questions, so somebody waiting
     on an answer is visible from every page, not only from the Questions tab."""
@@ -2651,6 +2702,8 @@ def page_live(st):
                     '<div class="tiny" style="margin-top:4px">Its individual steps appear '
                     'below, under Running now as they go and Done today when they '
                     'finish.</div>'))
+
+    h.append(_week_pacing_card())
 
     h.append('<h2>Running now</h2>'
              '<p class="sub" style="margin:-4px 0 10px">'
