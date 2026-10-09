@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-09-14",
  "docid": "328",
@@ -12,48 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from August 17, 2023",
+   "motion": "Approve the minutes of the August 17, 2023 meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Matt",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jackie made a motion to approve the minutes from the following meetings: august 17, 2023 matt seconded commission unanimously approved"
+   "quote": "jackie made a motion to approve the minutes from the following meetings: august 17, 2023"
   },
   {
-   "motion": "Submit a warrant article in conjunction with Planning Board regarding references to farm size in bylaws",
+   "motion": "Submit a warrant article, in conjunction with the Planning Board, regarding references to farm size in the bylaws as drafted by town council.",
    "moved_by": "Jackie",
    "seconded_by": "Jen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jackie made a motion to submit a warrant article in conjunction with planning board regarding references to farm size in the bylaws as drafted by town council. jen seconded. ===page 2=== commission unanimou",
-   "quote_taken_from_text": true
+   "quote": "jackie made a motion to submit a warrant article in conjunction with planning board regarding references to farm size in the bylaws as drafted by town council."
   },
   {
-   "motion": "Schedule a joint meeting with Planning Board for public hearing on the warrant article",
+   "motion": "Schedule a joint meeting with the Planning Board for the public hearing on the warrant article.",
    "moved_by": "Jen",
    "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jen motion to schedule a joint meeting with the planning board for the public hearing on the warrant article motioned. jackie seconded. commission unanimously approved."
+   "quote": "jen motion to schedule a joint meeting with the planning board for the public hearing on the warrant article"
   },
   {
-   "motion": "Move the next meeting to October 19th at 7:00 pm",
+   "motion": "Move the next meeting to October 19th, 7:00pm.",
    "moved_by": "Jackie",
    "seconded_by": "Jen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jackie made a motion to move the next meeting to october 19th, 7:00pm jen seconded commission unanimously approved"
+   "quote": "jackie made a motion to move the next meeting to october 19th, 7:00pm"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Jen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jackie motion to adjourn; jen seconds. commission unanimously approved"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08278450000000001
+ "dropped_unquoted": 2,
+ "note": "Scanned text was not present; this is extracted text of minutes with five motions, all recorded as 'unanimously approved' with no vote count printed, so outcomes are recorded as 'passed'. Item numbering repeats '8' (Unfinished Business and Committee reports). First names 'Matt' and 'Jen' are taken to be Matthew Allison and Jennifer Duffy by position in the minutes; the minutes do not say so directly. Attendance is marked only by check marks; members without a check are recorded as 'not stated', not absent. No dollar figures appear in the minutes. Public comment: no speakers named.",
+ "cost_usd": 0.013984870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jackie chabot ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "vice-chair maryrae holman"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member jorge marzuca"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate ashley york"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:10 pm",
+   "quote": "call to order meeting commencement time: 7:10 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no action",
+   "quote": "farm complaints no complaints",
+   "tags": [
+    "farms",
+    "complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of August 17, 2023",
+   "quote": "jackie made a motion to approve the minutes from the following meetings: august 17, 2023",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update",
+   "resolution": "no action; planning a touch a truck day under consideration",
+   "quote": "looking into planning a touch a truck day for the farmers' market",
+   "tags": [
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Action Items from previous meeting",
+   "resolution": "no action",
+   "quote": "action items from previous meeting no new information",
+   "tags": [
+    "action items"
+   ]
+  },
+  {
+   "topic": "New Business: bylaw references to farm size",
+   "resolution": "warrant article submitted; joint public hearing meeting scheduled",
+   "quote": "jackie made a motion to submit a warrant article in conjunction with planning board regarding references to farm size in the bylaws as drafted by town council.",
+   "tags": [
+    "bylaws",
+    "warrant article",
+    "farm size",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "no new information on any listed item",
+   "quote": "agcom holding land no new information",
+   "tags": [
+    "Lufa Farms",
+    "Brightfarm",
+    "farm regulations",
+    "community gardens",
+    "farm inspections",
+    "marketing",
+    "farm map"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no new information",
+   "quote": "committee reports: economic development comm., planning board, building reuse",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "moved to October 19, 2023 at 7:00pm",
+   "quote": "jackie made a motion to move the next meeting to october 19th, 7:00pm",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn Meeting",
+   "resolution": "adjourned at 7:46pm",
+   "quote": "jackie motion to adjourn; jen seconds. commission unanimously approved",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farms",
+  "bylaws",
+  "warrant article",
+  "planning board",
+  "farmers market",
+  "minutes approval",
+  "no budget figures"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

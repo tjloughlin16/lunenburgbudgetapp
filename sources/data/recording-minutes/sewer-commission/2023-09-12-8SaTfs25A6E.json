@@ -1,0 +1,508 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2023-09-12",
+ "video_id": "8SaTfs25A6E",
+ "video_url": "https://www.youtube.com/watch?v=8SaTfs25A6E",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2023-09-12-8SaTfs25A6E.json",
+  "sha256": "9c3dc88df10c03177de2543e5112c3822ccf4cbc89fb654daa8d4f710cf93810",
+  "caption_lines": 154,
+  "segments": 1184
+ },
+ "recording": {
+  "duration_s": 3236,
+  "duration": "0:53",
+  "spoken_chars": 38696,
+  "words_approx": 6449
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09122023-318",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-09-12-agenda-318.txt",
+   "path": "sources/meetings/sewer-commission/2023-09-12-agenda-318.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122023-318",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-09-12-minutes-318.txt",
+   "path": "sources/meetings/sewer-commission/2023-09-12-minutes-318.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T10:49:19Z",
+  "cost_usd": 0.285443
+ },
+ "minutes": {
+  "headline": "Sewer Commission re-elected its officers, adopted a new oil-water separator log, and began an emergency pump-failure response plan.",
+  "summary": "The commission elected a chair, vice chair and clerk, approved the minutes, and voted to accept a new oil/water separator inspection and maintenance log for property owners. Staff presented an emergency response plan prompted by two pump failures at the Dana Street station, and updated the board on Leominster/Fitchburg IMA rate increases and ARPA funding for manholes. The meeting adjourned after a roll call.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynolds",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brett Ramson",
+    "role": "member (elected vice chair)"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mike KN",
+    "role": "member (elected clerk)"
+   },
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "staff (DPW)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 172,
+    "topic": "A commissioner/speaker offered condolences to Jane and sympathy for flood victims, and promoted the next day's volunteer/retirement fair at the adult activity center. (Speaker appears to be a board member; no public attended.)"
+   }
+  ],
+  "tags": [
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "fees",
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 358,
+    "motion": "Elect John Reynolds chairman for 2023-2024",
+    "moved_by": "Dave McDonald",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 469,
+    "motion": "Elect Brett Ramson vice chair",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 572,
+    "motion": "Elect Mike KN clerk",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 657,
+    "motion": "Accept the minutes of the 8/29 meeting",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1014,
+    "motion": "Accept the new oil/water separator inspection and maintenance log form",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3182,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2153,
+    "topic": "Connection (hookup) charges",
+    "what_was_said": "Staff said connection charges will need to rise if Leominster's proposed hookup charge goes ahead.",
+    "figures_as_heard": [
+     "2,000"
+    ]
+   },
+   {
+    "t": 2091,
+    "topic": "Rate impact worksheet",
+    "what_was_said": "Staff circulated a worksheet modelling the effect of Fitchburg and Leominster rate increases on income and operating costs and on homeowners and businesses.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2426,
+    "topic": "ARPA funding for manholes",
+    "what_was_said": "The town allocated money for manhole repairs, which will go out through an IFB; timing of the funds was not yet confirmed.",
+    "figures_as_heard": [
+     "$100,000"
+    ]
+   },
+   {
+    "t": 2722,
+    "topic": "Pump station capital request",
+    "what_was_said": "The commission had asked the town for pump station money that was largely not granted; staff said capital planning is needed and will affect rates.",
+    "figures_as_heard": [
+     "250,000",
+     "300,000"
+    ]
+   },
+   {
+    "t": 2947,
+    "topic": "Vacuum pump, spare pump and rebuild kits",
+    "what_was_said": "Cost of the new vacuum pump, spare pump and rebuilds at six stations was called substantial; invoice to be submitted.",
+    "figures_as_heard": [
+     "$1,281 127"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2467,
+    "decision": "Staff to go ahead and develop the bid (IFB/RFP) for manhole repairs; no vote needed."
+   },
+   {
+    "t": 1647,
+    "decision": "Emergency response plan stays on the agenda until complete; final draft to go to department heads and other agencies, with Board of Health and water district added."
+   },
+   {
+    "t": 3161,
+    "decision": "Next meeting on the 26th; emergency response plan and the IMA to remain on agendas; no meeting at month end around Halloween."
+   },
+   {
+    "t": 2302,
+    "decision": "Commissioners to send IMA comments only to Paula, who will compile them for the negotiating team."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 150,
+    "topic": "Call to order, pledge, open meeting law notice, roll call",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 172,
+    "t_end": 338,
+    "topic": "Opening remarks: condolences, flooding, volunteer fair",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 358,
+    "t_end": 633,
+    "topic": "Election of officers: chair, vice chair, clerk",
+    "resolution": "roll-call votes held; results not audible",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 657,
+    "t_end": 699,
+    "topic": "Approval of minutes",
+    "resolution": "voted, accepted",
+    "tags": []
+   },
+   {
+    "t_start": 699,
+    "t_end": 1077,
+    "topic": "Oil and water separator inspection log",
+    "resolution": "voted, accepted",
+    "tags": [
+     "policy",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1122,
+    "t_end": 1903,
+    "topic": "Emergency response plan for pump station failures",
+    "resolution": "informational; kept on agenda",
+    "tags": [
+     "water-sewer",
+     "facilities",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1903,
+    "t_end": 2302,
+    "topic": "Leominster/Fitchburg IMA rates and hookup charges",
+    "resolution": "informational; negotiating team continues",
+    "tags": [
+     "water-sewer",
+     "fees",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 2322,
+    "t_end": 2825,
+    "topic": "ARPA funding for manhole repairs and capital needs",
+    "resolution": "informational; staff to prepare bid",
+    "tags": [
+     "capital",
+     "grants",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2845,
+    "t_end": 3094,
+    "topic": "Town meeting articles and business manager's report",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "hiring",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 3116,
+    "t_end": 3250,
+    "topic": "Public comment, meeting schedule, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Outcomes of the three officer roll-call votes were not stated clearly",
+   "Vote count on the oil separator form and minutes beyond individual ayes",
+   "The pump/rebuild cost figure was garbled",
+   "Which town meeting articles were submitted was not specified"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to accept a new oil/water separator inspection and maintenance log form for property owners; the motion passed.",
+    "t": 1014
+   },
+   {
+    "line": "Staff presented an emergency response plan for pump station failures; it stays on the agenda until a final draft goes to department heads and other agencies.",
+    "t": 1647
+   },
+   {
+    "line": "Staff updated the board on Leominster and Fitchburg rate increases and a possible hookup charge, and circulated a worksheet modelling the effect on income, costs and customers.",
+    "t": 2091
+   },
+   {
+    "line": "Staff were told to go ahead and develop a bid for manhole repairs paid from town ARPA money, with no vote needed; timing of the funds was not confirmed.",
+    "t": 2467
+   },
+   {
+    "line": "Roll-call votes elected a chair, vice chair and clerk, but the captions do not make the outcomes audible.",
+    "t": 358
+   }
+  ],
+  "why_it_matters": [
+   "Sewer rates and connection charges can rise because Leominster and Fitchburg raise what they charge the town, and staff said local connection charges would need to rise if Leominster's hookup charge goes ahead.",
+   "The commission asked the town for pump station money that was largely not granted, so future capital needs are likely to be paid through sewer rates rather than other town funds.",
+   "Property owners with oil/water separators, such as businesses, now have a standard inspection and maintenance log form to use."
+  ],
+  "watch_next": [
+   "Next meeting on the 26th: the emergency response plan and the Leominster/Fitchburg IMA stay on the agenda.",
+   "The bid for manhole repairs, once staff develop it and the ARPA funds are confirmed."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T10:49:30Z",
+   "cost_usd": 0.221693
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122023-318",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-09-12-minutes-318.txt",
+   "path": "sources/meetings/sewer-commission/2023-09-12-minutes-318.pdf"
+  },
+  "official_sha256": "7c2140ea5e09035fb0b010bd61865453e431fd29d7b13d7c417a16125699d486",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on all four non-procedural votes and most figures, though ours could not hear the outcomes of the three elections. The main differences are the $250,000 pump station figure and the manhole bid timing, plus ours-only decisions (IMA comments, next meeting) and official-only Paula action items.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Elect John Reynolds as chair",
+    "ours": "Elect John Reynolds chairman for 2023-2024 — not audible",
+    "official": "chair - dave m. nominated john r. for chair, seconded by mike n.",
+    "note": "Same election; ours could not hear the outcome, official records nomination and second (outcome per official: passed)."
+   },
+   {
+    "kind": "agree",
+    "about": "Elect Brett Ramson/Ramsden vice chair",
+    "ours": "Elect Brett Ramson vice chair — not audible",
+    "official": "vice-chair - dave m. nominated brett r. for vice-chair, seconded by mike nault.",
+    "note": "Same election; 'Ramson' is a caption rendering of Ramsden."
+   },
+   {
+    "kind": "agree",
+    "about": "Elect Mike Nault clerk",
+    "ours": "Elect Mike KN clerk — not audible",
+    "official": "clerk - brett nominated mike nault as clerk, seconded by mike mackin",
+    "note": "Same election; 'KN' is a mishearing of Nault."
+   },
+   {
+    "kind": "agree",
+    "about": "Accept oil/water separator inspection and maintenance log form",
+    "ours": "Accept the new oil/water separator inspection and maintenance log form — passed",
+    "official": "to accept the oil-water separator inspection and maintenance log. roll call vote: dave-aye, brett-aye, mike mackin-aye, mike nault-aye and john-aye.",
+    "note": "Both record it passing; official gives a unanimous 5-0 roll call."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Spare pump and rebuild kits cost",
+    "ours": "Vacuum pump, spare pump and rebuild kits: $1,281 127",
+    "official": "the cost for the spare pump and the rebuild kits was $10,281.27.",
+    "note": "Garbled digits of the same item; official gives $10,281.27.",
+    "official_reading": "$10,281.27",
+    "t": 2947
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA manhole funding",
+    "ours": "ARPA funding for manholes: $100,000",
+    "official": "sewer was given $100k to address manholes.",
+    "note": "Same amount.",
+    "t": 2426
+   },
+   {
+    "kind": "agree",
+    "about": "Connection charge",
+    "ours": "Connection (hookup) charges: 2,000",
+    "official": "the current connection charge of $2,000 will need to increase based on leominster's increasing cost.",
+    "note": "Same figure.",
+    "t": 2153
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pump station capital request amount",
+    "ours": "Pump station capital request: 250,000, 300,000",
+    "official": "paula added the commission had requested $300k to bring the pump stations up to snuff.",
+    "note": "Ours heard two figures (250,000 and 300,000); official gives only $300K. Check the recording around t=2722 for what the $250,000 refers to.",
+    "t": 2722
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Manhole repair bid timing",
+    "ours": "Staff to go ahead and develop the bid (IFB/RFP) for manhole repairs; no vote needed.",
+    "official": "they will need to write up an ifb and she is waiting to find out when the money will be available.",
+    "note": "Ours says go ahead now; official says the IFB waits on when ARPA money is available. Check the recording at t=2467.",
+    "t": 2467
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency response plan stays on agenda; Board of Health and water district added",
+    "ours": "Emergency response plan stays on the agenda until complete; final draft to go to department heads and other agencies, with Board of Health and water district added.",
+    "official": "john will keep it on the agenda until it is finalized and paula will send drafts out as they get completed.",
+    "note": "Same decision; official also records adding Board of Health and water district.",
+    "t": 1647
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "IMA comments routed to Paula",
+    "ours": "Commissioners to send IMA comments only to Paula, who will compile them for the negotiating team.",
+    "official": "",
+    "note": "Official minutes as structured have no IMA comment decision; check the recording at t=2302.",
+    "t": 2302
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting date and agenda items",
+    "ours": "Next meeting on the 26th; emergency response plan and the IMA to remain on agendas; no meeting at month end around Halloween.",
+    "official": "",
+    "note": "Official record has no next-meeting date or IMA agenda item; verify against the full official text.",
+    "t": 3161
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Oil-water separator form mailing",
+    "ours": "",
+    "official": "paula noted she would be sending it out to the property owners, along with a cover letter, copy of regulations and a sample form.",
+    "note": "Follow-up action recorded only in official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Contact Leominster about debt service",
+    "ours": "",
+    "official": "paula will contact jake (leominster) regarding any impacts and increases in debt service due to the flooding.",
+    "note": "Action item absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Business manager reports each meeting",
+    "ours": "",
+    "official": "she will send out the reports each meeting so commissioners know what is happening with the system.",
+    "note": "Action item absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Rate increase worksheet",
+    "ours": "",
+    "official": "she also put together a worksheet to look at the impact of what the rate increases from leominster and fitchburg will do.",
+    "note": "Item absent from ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Brett Ramsden",
+    "ours": "Brett Ramson (member (elected vice chair))",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin, dave macdonald and mike",
+    "note": "Same person; surname misheard.",
+    "official_reading": "Brett Ramsden",
+    "t": 469
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "John Reynolds (chair); Dave McDonald; Mike Mackin; Mike KN; Paula Bertram; Bill Bernard (DPW)",
+    "official": "mike nault, dpw director- bill bernard, business manager-paula bertram",
+    "note": "Same people present; McDonald/MacDonald and KN/Nault are spelling variants."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes clerk absent",
+    "ours": "",
+    "official": "absent: minutes clerk- jane ranley",
+    "note": "Absence recorded only in official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T10:50:56Z",
+   "cost_usd": 0.382195
+  }
+ }
+}

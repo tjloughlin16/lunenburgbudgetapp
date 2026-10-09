@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-08-17",
  "docid": "365",
@@ -12,39 +12,221 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from June 01, 2023 and June 15, 2023",
-   "moved_by": "Jorge Marzuca",
-   "seconded_by": "Jackie Chabot",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of the June 1, 2023 and June 15, 2023 meetings.",
+   "moved_by": "Jorge",
+   "seconded_by": "Jackie",
+   "outcome": "passed (unanimously approved; no count recorded)",
    "procedural": true,
    "quote": "jorge made a motion to approve the minutes from the following meetings: june 01, 2023 and june 15, 2023 jackie seconded commission unanimously approved"
   },
   {
-   "motion": "Approve a $50 stipend for minimum 2 hours of music per week at the Lunenburg Farmers' Market for the duration of the 2023 Lunenburg Farmers' Market",
-   "moved_by": "Jennifer Duffy",
-   "seconded_by": "Jackie Chabot",
-   "outcome": "unanimously approved",
+   "motion": "Approve a $50 stipend for minimum 2 hours of music per week at the Lunenburg Farmers' Market for the duration of the 2023 market.",
+   "moved_by": "Jen",
+   "seconded_by": "Jackie",
+   "outcome": "passed (unanimously approved; no count recorded)",
    "procedural": false,
-   "quote": "jen made a motion to approve a $50 stipend for minimum 2 hours of music per week at the lunenburg farmers' market for the duration of the 2023 lunenburg farmers' market. jackie seconded commission unanimously approved"
+   "quote": "jen made a motion to approve a $50 stipend for minimum 2 hours of music per week at the lunenburg farmers' market for the duration of the 2023"
   },
   {
-   "motion": "Authorize town council to draft a warrant article to update the bylaws to align with state law",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Jorge Marzuca",
-   "outcome": "unanimously approved",
+   "motion": "Authorize town council to draft a warrant article to update the zoning bylaws on farm size to align with state law.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Jorge",
+   "outcome": "passed (unanimously approved; no count recorded)",
    "procedural": false,
    "quote": "motion made by maryrae to authorize town council to draft a warrant article to update the bylaws to align with state law. jorge seconded, commission unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jackie Chabot",
-   "seconded_by": "Jorge Marzuca",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jackie",
+   "seconded_by": "Jorge",
+   "outcome": "passed (unanimously approved; no count recorded)",
    "procedural": true,
    "quote": "jackie motion to adjourn; jorge seconds. commission unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0785265
+ "note": "Text-only minutes, not a scan; all readable. Three votes and the adjournment are recorded only as \"unanimously approved\" with no count, so outcomes are given as passed without a tally. The attendance table leaves Kira McClellan and Ashley York without a check mark, so their status is not stated rather than absent. The agenda numbers item 8 twice; both are kept in order. The minutes describe the bylaw motion as \"Motion made by Maryrae\" and the stipend motion as \"Jen\", both as printed. The \"Next meeting\" line records a date approved earlier, not a vote at this meeting.",
+ "cost_usd": 0.01445741,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔ clerk jennifer duffy ✔ member jorge marzuca ✔ member jackie chabot ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔ clerk jennifer duffy ✔ member jorge marzuca ✔ member jackie chabot ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy ✔ member jorge marzuca ✔ member jackie chabot ✔"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jorge marzuca ✔ member jackie chabot ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jorge marzuca ✔ member jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan alternate ashley york"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan alternate ashley york"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Council",
+   "status": "present",
+   "quote": "town council adam costa ✔"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Farmers market music stipend",
+   "what_was_recorded": "The commission approved a stipend for live music at the Lunenburg Farmers' Market for the 2023 season, at a minimum of 2 hours per week.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "jen made a motion to approve a $50 stipend for minimum 2 hours of music per week at the lunenburg farmers' market for the duration of the 2023"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:07 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order meeting commencement time: 7:07 pm"
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment/open discussion no public comment."
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints",
+   "tags": [
+    "farms"
+   ],
+   "quote": "farm complaints no complaints"
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of June 1 and June 15, 2023",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review/approve minutes jorge made a motion to approve the minutes from the"
+  },
+  {
+   "topic": "Farmers market update - Seasonal",
+   "resolution": "approved $50 stipend for live music at the farmers market",
+   "tags": [
+    "farmers market",
+    "stipend"
+   ],
+   "quote": "farmers market update -seasonal jen made a motion to approve a $50 stipend for"
+  },
+  {
+   "topic": "Action Items from previous meeting",
+   "resolution": "no new information",
+   "tags": [
+    "follow-up"
+   ],
+   "quote": "action items from previous meeting no new information"
+  },
+  {
+   "topic": "New Business: bylaw references to farm size",
+   "resolution": "authorized town council to draft a warrant article to align farm-size bylaw with state law",
+   "tags": [
+    "bylaws",
+    "zoning",
+    "farm definition",
+    "warrant article"
+   ],
+   "quote": "reviewed references to definition of a farm as 5 acres in the zoning bylaws."
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "no new information on any listed item (Lufa Farms, Brightfarm, AgCom land, farm regulations, community gardens, inspections, marketing, farm map)",
+   "tags": [
+    "Lufa Farms",
+    "Brightfarm",
+    "community gardens",
+    "farm inspections",
+    "marketing"
+   ],
+   "quote": "lufa farms, new interest in brightfarm permit/location no new information"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no new information",
+   "tags": [
+    "committees"
+   ],
+   "quote": "comm., planning board, building reuse no new information"
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment/open discussion no public comment"
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "no action; next meeting already approved for September 14th, 7:00pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next meeting was already approved for september 14th, 7:00pm"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:36pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "adjourn meeting adjournment time: jackie motion to adjourn;"
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "farm bylaws",
+  "zoning",
+  "state law Chapter 40A",
+  "music stipend",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

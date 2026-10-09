@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-08-10",
  "docid": "358",
@@ -12,64 +12,265 @@
  },
  "votes": [
   {
-   "motion": "Accept motion regarding Stan Barney's letter to Select Board expressing sadness about vacancy",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion accepted unanimously."
-  },
-  {
-   "motion": "Accept motion for anonymous donation of granite bench for Stan Barney's grave site",
+   "motion": "Accept the motion on Stan Barney's letter to the Select Board stating the Commission is saddened by the open vacancy.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion to accepted unanimously."
+   "quote": "will be sadly missed. motion accepted unanimously."
   },
   {
-   "motion": "Re-organize Cemetery Commission with Nancy Foss-Yasko as Chairperson and David Dorren as Vice-Chairperson & Clerk",
+   "motion": "Accept the motion on an anonymous donation/gift of a granite bench to be placed by the grave site of Stan Barney.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion accepted unanimously."
+   "procedural": false,
+   "quote": "and was newly appointed a few months ago. motion to accepted unanimously."
   },
   {
-   "motion": "Accept New Cemetery Commission Policies to take effect immediately",
+   "motion": "Re-organize the Commission: Nancy Foss-Yasko voted in as Chairperson, David Dorren voted in as Vice-Chairperson & Clerk.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion accepted unanimously."
+   "procedural": false,
+   "quote": "david dorren voted in as vice-chairperson & clerk. motion accepted unanimously."
   },
   {
-   "motion": "Approve minutes of June 15, 2023 meeting as written",
+   "motion": "Accept the New Cemetery Commission Policies, to take effect immediately.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "to take effect immediately. motion accepted unanimously."
+  },
+  {
+   "motion": "Approve the minutes of the June 15, 2023 meeting as written.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "upon a motion by chairperson, nancy foss- yasko - to accept the minutes as written, seconded by vice-chairperson and clerk, david dorren, minutes were approved unanimously",
-   "quote_taken_from_text": true
+   "quote": "to accept the minutes as written, seconded by vice-chairperson and clerk, david dorren, minutes were approved unanimously."
   },
   {
-   "motion": "Continue Cemetery Commission meeting at North Cemetery in new field section area",
+   "motion": "Continue the Cemetery Commission meeting at the North Cemetery in the new field section area.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "chairperson nancy foss-yasko, made a motion to continue the cemetery commission meeting at the north cemetery in the new field section area; seconded by the vice-chairperson and clerk, david dorren."
+   "quote": "made a motion to continue the cemetery commission meeting at the north cemetery in the new field section area;"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion was made to adjourn by chairperson, nancy foss-yasko, seconded by vice-chairperson and clerk, david dorren. with no further discussion, meeting was adjourned at 12:15pm."
+   "quote": "motion was made to adjourn by chairperson, nancy foss-yasko, seconded by vice-chairperson and clerk, david dorren."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from macOS Vision. First four motions lack explicit mover/seconder names in minutes; \"Motion to accepted\" in vote 2 appears to contain OCR or transcription error. Vote 6 (continue meeting) shows no explicit vote outcome but motion appears to have passed since commission reconvened as indicated.",
- "cost_usd": 0.0998955
+ "note": "Text is OCR (macOS Vision) of a scanned minutes document, so exact wording may carry OCR error; quotes are copied from the OCR text as given. The body names Nancy Foss-Yasko as Vice-Chairperson at the call to order but as Chairperson in the header and later text; recorded as printed. Items 1-4 record \"Motion accepted unanimously\" with no mover or seconder printed. No roll-call counts are printed for any vote. Two results (the continuation to North Cemetery and the adjournment) are recorded as motions with no stated outcome, so they are \"not stated\". The minutes print no dollar figures at all, so budget_items hold no figures. Bill Bernard is also printed once as \"Bill Barnard\". Public comment was invited and there was none. Attendance for Todd Holman, Adam Costa and Mark Flagg is recorded as \"not stated\" because the minutes mention them without saying whether they attended.",
+ "cost_usd": 0.01921311,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chairperson (header); called to order as Vice-Chairperson in the body",
+   "status": "present",
+   "quote": "meeting was called to order at 9:05am by vice-chairperson, nancy foss-yasko, other members present"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chairperson and Clerk",
+   "status": "present",
+   "quote": "other members present were david dorren, clerk."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present was bill bernard, dp w director."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "not stated",
+   "quote": "that the cemetery superintendent - todd holman utilizes."
+  },
+  {
+   "name": "Adam Costa, Esq.",
+   "role": "Town's Counsel",
+   "status": "not stated",
+   "quote": "the town's counsel - adam costa, esq."
+  },
+  {
+   "name": "Mark Flagg",
+   "role": "Professional Tree Arborist",
+   "status": "not stated",
+   "quote": "mark flagg, professional tree arborist - walk through the area"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission decided to move the meeting to the North Cemetery to review the plot plans for burials, cremations, tree removal and roads.",
+   "quote": "we decided before we adjourned the meeting, we would move the meeting to the north cemetery to review the plot plans for both full burial's"
+  },
+  {
+   "decision": "Chairperson to look into the future cost of keeping historical gravestones clean; DPW Director agreed to find out future pricing.",
+   "quote": "stated that she would look into the future cost of keeping the historical gravestones looking new."
+  },
+  {
+   "decision": "Rainmaker software discussion deferred to the next Cemetery Commission meeting.",
+   "quote": "a more in-dept discussion needs to be take place at our next cemetery commission meeting."
+  },
+  {
+   "decision": "An audit trail for the software is to be established in the very near future.",
+   "quote": "an audit trail needs to be established in the very near future."
+  },
+  {
+   "decision": "Commission found the Superintendent's plan to remove most open-field trees unacceptable and relied on the arborist's assessment.",
+   "quote": "this was unacceptable to the cemetery commission, who had recently had mark flagg, professional tree arborist - walk through the area"
+  },
+  {
+   "decision": "No project to begin until the Commission gives prior approval; future projects to be approved and discussed with the Commission first.",
+   "quote": "future projects will need to be approved and discussed with the cemetery commission before a project can begin."
+  },
+  {
+   "decision": "DPW Director to contact the Commission once the conservation agent is hired, to review the open area and protect the wetlands.",
+   "quote": "will contact the cemetery commission; once the individual has been hired to review the open area and make sure that the wetlands behind this area is protected."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gravestone washing cost",
+   "what_was_recorded": "The chair will look into the future cost of keeping historical gravestones clean; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "stated that she would look into the future cost of keeping the historical gravestones looking new."
+  },
+  {
+   "topic": "Granite bench engraving and payment",
+   "what_was_recorded": "The anonymous gift bench will later be engraved and paid for by the Cemetery Commission; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "this bench will later be engraved and paid by the cemetery commission - once the barney family has time to process their loss."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Letter on Stan Barney's vacancy",
+   "resolution": "motion accepted unanimously",
+   "quote": "will be sadly missed. motion accepted unanimously.",
+   "tags": [
+    "vacancy",
+    "condolence"
+   ]
+  },
+  {
+   "topic": "Anonymous donation of granite bench",
+   "resolution": "accepted unanimously; engraving to be paid later by the Commission",
+   "quote": "and was newly appointed a few months ago. motion to accepted unanimously.",
+   "tags": [
+    "donation",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Re-organization of the Commission",
+   "resolution": "officers elected; accepted unanimously",
+   "quote": "david dorren voted in as vice-chairperson & clerk. motion accepted unanimously.",
+   "tags": [
+    "officers",
+    "governance"
+   ]
+  },
+  {
+   "topic": "New Cemetery Commission policies",
+   "resolution": "accepted unanimously, effective immediately; DPW Director does not yet recognise them",
+   "quote": "to take effect immediately. motion accepted unanimously.",
+   "tags": [
+    "policy",
+    "governance",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Hedges damage and removal",
+   "resolution": "discussed; no action recorded",
+   "quote": "to cut the hedges down, but no one reached out",
+   "tags": [
+    "hedges",
+    "DPW",
+    "Beaulac Brothers"
+   ]
+  },
+  {
+   "topic": "Dillis and Roy Land Surveying proposal",
+   "resolution": "discussed; plans to be reviewed face-to-face with the surveyors",
+   "quote": "discussions were made about dillis and roy land surveying proposal.",
+   "tags": [
+    "surveying",
+    "plot plans"
+   ]
+  },
+  {
+   "topic": "Minutes of June 15, 2023",
+   "resolution": "approved unanimously",
+   "quote": "to accept the minutes as written, seconded by vice-chairperson and clerk, david dorren, minutes were approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Gravestone washing and Leominster Monument",
+   "resolution": "chair to research future cost; DPW to find pricing",
+   "quote": "stated that she would look into the future cost of keeping the historical gravestones looking new.",
+   "tags": [
+    "gravestones",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Rainmaker software program",
+   "resolution": "deferred to next meeting",
+   "quote": "a more in-dept discussion needs to be take place at our next cemetery commission meeting.",
+   "tags": [
+    "software",
+    "records",
+    "audit trail"
+   ]
+  },
+  {
+   "topic": "North Cemetery open field and trees",
+   "resolution": "Superintendent's tree-removal plan rejected; no motion recorded",
+   "quote": "this was unacceptable to the cemetery commission, who had recently had mark flagg, professional tree arborist - walk through the area",
+   "tags": [
+    "trees",
+    "North Cemetery",
+    "cremations"
+   ]
+  },
+  {
+   "topic": "Project approval process",
+   "resolution": "future projects need prior Commission approval",
+   "quote": "nothing will be done until the cemetery commission gives prior approval and motion to go forward with the project plans",
+   "tags": [
+    "approval",
+    "projects"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "trees",
+  "DPW",
+  "governance",
+  "software",
+  "policy",
+  "donation",
+  "vacancy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

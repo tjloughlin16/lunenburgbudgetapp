@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-08-16",
  "docid": "363",
@@ -12,23 +12,198 @@
  },
  "votes": [
   {
-   "motion": "Support the Boys & Girls Club efforts to work with the Parks for a Polar Plunge",
+   "motion": "Support the Boys & Girls Club efforts to work with the Parks for a Polar Plunge.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "k. menard made a motion to support the boys & girls efforts to work with the parks for a polar plunge. c. sullivan seconded. roll call vote.motion carried (3-0)."
+   "quote": "k. menard made a motion to support the boys & girls efforts to work with the parks for a polar plunge. c. sullivan seconded."
   },
   {
-   "motion": "Approve the naming policy for the Parks Commission as written",
+   "motion": "Approve the Parks Commission naming policy as written.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "c. sullivan made a motion to approve the naming policy for the parks commission as written. k. menard seconded. roll call vote. motion carried (3-0)."
+   "quote": "c. sullivan made a motion to approve the naming policy for the parks commission as written. k. menard seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10350140000000001
+ "note": "Text extraction is clean and complete for the pages given (3 pages), with the chair's roll call present. Two motions are recorded, both with roll-call results of 3-0; no motion or vote is recorded for approval of minutes (agenda shows \"None\") or for adjournment, so none is listed. The minutes contain no public comment section, so public_comment is empty; M. Belleza's appearance is recorded as a presenter, not a public speaker. Dave Passios appears only in the letterhead and is not recorded as present or absent. The meeting's revenue line (\"$25,000 - $17,000 in profit\") is printed without a breakdown, and the minutes do not say whether the figures are gross or net.",
+ "cost_usd": 0.014210010000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "absent",
+   "quote": "colleen shapiro and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "colleen shapiro and patrick hakey"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "dave passios, vice chair"
+  },
+  {
+   "name": "A. Clement",
+   "role": "Facilities Director & Recreation Director",
+   "status": "present",
+   "quote": "a. clement gave the following updates:"
+  },
+  {
+   "name": "M. Belleza",
+   "role": "Director of the Boys and Girls Club",
+   "status": "present",
+   "quote": "m. belleza, director of the boys and girls club discussed possibly partnering with the parks commission on a"
+  },
+  {
+   "name": "C. Ruth",
+   "role": "not stated",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Recreation program revenue and profit",
+   "what_was_recorded": "The Facilities and Recreation Director reported total revenue and profit for the recreation programs, as a single printed line.",
+   "figures_as_printed": [
+    "$25,000",
+    "$17,000"
+   ],
+   "quote": "total revenue was $25,000 - $17,000 in profit"
+  },
+  {
+   "topic": "Beach house materials cost",
+   "what_was_recorded": "The Chair asked whether materials for the beach house would cost about $5000; C. Ruth did not have the numbers but felt $6000 was a safe figure if volunteers were used.",
+   "figures_as_printed": [
+    "$5000",
+    "$6000"
+   ],
+   "quote": "c. ruth was unsure he did not have the numbers in front of him but felt $6000 was a safe number if they had volunteers."
+  },
+  {
+   "topic": "Lifeguard salaries and swim lesson revenue",
+   "what_was_recorded": "K. Menard said that if lifeguard salaries ran over, swim lesson revenue would be used to cover the overage. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard indicated if the lifeguard salaries were over, the revenue from the swim lessons would be used to cover the overage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "no action; informational update",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "recreation",
+    "beach",
+    "programs",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club Polar Plunge fundraiser collaboration",
+   "resolution": "approved (motion carried 3-0) to support the partnership",
+   "quote": "next item on the agenda, lunenburg boys & girls club: polar plunge fundraiser collaboration",
+   "tags": [
+    "polar-plunge",
+    "beach",
+    "partnerships"
+   ]
+  },
+  {
+   "topic": "Beach house work",
+   "resolution": "discussed; no action recorded",
+   "quote": "next item on the agenda, beach house work",
+   "tags": [
+    "beach-house",
+    "materials",
+    "costs"
+   ]
+  },
+  {
+   "topic": "Green Community Committee update on Marshall Park renovation",
+   "resolution": "discussed; no action recorded",
+   "quote": "k. menard stated they primarily help for upgrade with lighting, appliances, etc.",
+   "tags": [
+    "marshall-park",
+    "green-community"
+   ]
+  },
+  {
+   "topic": "Naming policy review draft",
+   "resolution": "approved as written (motion carried 3-0)",
+   "quote": "c. sullivan made a motion to approve the naming policy for the parks commission as written.",
+   "tags": [
+    "naming-policy",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "informational; member resignation noted",
+   "quote": "a. lockwood stated p. hakey has resigned for the commission, he does not have the time dedicate.",
+   "tags": [
+    "membership",
+    "state-grant",
+    "marshall-park"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "none on the agenda",
+   "quote": "none next meeting, september 20, 2023 at 7 pm.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "parks-commission",
+  "recreation",
+  "beach",
+  "polar-plunge",
+  "naming-policy",
+  "marshall-park",
+  "beach-house",
+  "swim-lessons",
+  "membership",
+  "state-grant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

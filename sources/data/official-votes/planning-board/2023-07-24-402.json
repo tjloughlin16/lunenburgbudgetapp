@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-07-24",
  "docid": "402",
@@ -12,39 +12,258 @@
  },
  "votes": [
   {
-   "motion": "Approve ANR Plan for 828 Lancaster Avenue",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan for 828 Lancaster Avenue.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison made a motion to approve anr plan. seconded by a. reid, all aye."
   },
   {
-   "motion": "Approve Site Plan Approval with Standard and Special Conditions for 525 Chase Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Approve Site Plan Approval with standard and special conditions for 525 Chase Road (continued public hearing).",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. allison made motion to approve site plan approval with standard and special conditions, a. reid seconded, passed unanimously."
+   "quote": "approval with standard and special conditions, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve application for Joeci Gilchrest as appointed member of the Master Plan Steering Committee",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Approve the application of Gerald Reid as an appointed member of the Master Plan Steering Committee.",
+   "moved_by": "A. Reid",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a. reid made motion to approve app lication for gerald reid as an appointed member of the master plan steering committee, m. allison seconded, all aye."
+  },
+  {
+   "motion": "Approve the application of Joeci Gilchrest as an appointed member of the Master Plan Steering Committee.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison made motion to approve application for joeci gilchrest as an appointed member of the master plan steering committee, a. reid seconded, all aye."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes listed below (6/26/23 Lot A Northfield Rd; 7/10/23 525 Chase Road).",
+   "moved_by": "A. Reid",
+   "seconded_by": "T. Willsmer",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote- t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously."
+   "quote": "a. reid made motion to appro ve minutes listed below, t. willsmer seconded, roll call vote - t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote- t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye."
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.0755001
+ "dropped_unquoted": 0,
+ "note": "Clean text extraction, not a scan; all votes are readable. Votes recorded as \"all aye\" or \"passed unanimously\" without a count are reported as \"passed\". No public comment section and no dollar figures appear in these minutes. Gerald Reid is recorded as present via Zoom. Stephen Violette and Joeci Gilchrest are named but their attendance is not stated.",
+ "cost_usd": 0.0207344,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Dillis & Roy Civil Design Group Inc.)",
+   "status": "present",
+   "quote": "greg roy from dillis & roy civil design group inc. represented applicant stephen violette."
+  },
+  {
+   "name": "Gerald Reid",
+   "role": "volunteer applicant for Master Plan Steering Committee",
+   "status": "remote",
+   "quote": "gerald reid presented a volunteer application and was present at meeting via zoom."
+  },
+  {
+   "name": "Stephen Violette",
+   "role": "applicant (ANR Plan)",
+   "status": "not stated",
+   "quote": "greg roy from dillis & roy civil design group inc. represented applicant stephen violette."
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "applicant for Master Plan Steering Committee",
+   "status": "not stated",
+   "quote": "joeci gilchrest submitted application for master plan steering committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will write a letter to the Select Board stating the Planning Board's recommendation on Select Board representation on the Master Plan Steering Committee.",
+   "quote": "a. burney will write letter of board's recommendation to select board."
+  },
+  {
+   "decision": "Section 250-6.4 (Driveway & Entrances) tabled to the August 14 meeting.",
+   "quote": "section 250-6.4., driveway & entrances - tabled for august 14 meeting"
+  },
+  {
+   "decision": "A. Burney will redistribute the map of Aquifer Protection Zones and the existing bylaw for further discussion.",
+   "quote": "a. burney will redistribute the map"
+  },
+  {
+   "decision": "The Board will review the municipal solar bylaw examples distributed for discussion; the solar bylaw draft remains pending.",
+   "quote": "distributed several examples of municipal solar bylaws for discussion purposes. board will review."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan – 828 Lancaster Avenue",
+   "resolution": "approved",
+   "quote": "proposing to divide lot 1 with remaining land and intends to demolish existing farmhouse",
+   "tags": [
+    "ANR plan",
+    "subdivision",
+    "Lancaster Avenue"
+   ]
+  },
+  {
+   "topic": "Public hearing – 525 Chase Road (continued)",
+   "resolution": "site plan approval approved",
+   "quote": "public hearing - 525 chase road",
+   "tags": [
+    "site plan approval",
+    "public hearing",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee applications",
+   "resolution": "two applicants approved as appointed members",
+   "quote": "master plan steering committee applications - board received two applications.",
+   "tags": [
+    "Master Plan",
+    "appointments",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Select Board representation on Master Plan Steering Committee",
+   "resolution": "no vote; letter to Select Board to be written",
+   "quote": "a. burney noted representation from the select board on the mpsc would",
+   "tags": [
+    "Master Plan",
+    "Select Board",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Master Plan Community Engagement Plan",
+   "resolution": "discussed",
+   "quote": "master plan community engagement plan - overunder provided written engagement plan for discussion.",
+   "tags": [
+    "Master Plan",
+    "public engagement",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw",
+   "resolution": "draft pending; board to review examples",
+   "quote": "solar bylaw - draft is pending.",
+   "tags": [
+    "zoning bylaw",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4, Driveway & Entrances",
+   "resolution": "tabled to August 14 meeting",
+   "quote": "section 250-6.4., driveway & entrances - tabled for august 14 meeting",
+   "tags": [
+    "zoning bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Aquifer Protection Bylaw",
+   "resolution": "discussed; map and bylaw to be redistributed",
+   "quote": "aquifer protection bylaw - sent to building commissioner, dep, and water district.",
+   "tags": [
+    "aquifer protection",
+    "zoning bylaw",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "a. reid made motion to appro ve minutes listed below",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Open Space ROFR discussed",
+   "quote": "open space ad hoc committee- discussed decision on select board not exercising right of first refusal",
+   "tags": [
+    "Open Space",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:35 p.m.",
+   "quote": "m. allison made motion to adjourn, a. reid seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "site plan approval",
+  "Master Plan Steering Committee",
+  "appointments",
+  "solar bylaw",
+  "aquifer protection",
+  "zoning bylaw",
+  "Lunenburg",
+  "2023"
+ ],
+ "dropped_unquoted_by_field": {}
 }

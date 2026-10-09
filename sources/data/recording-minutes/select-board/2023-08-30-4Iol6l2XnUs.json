@@ -1,0 +1,359 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-08-30",
+ "video_id": "4Iol6l2XnUs",
+ "video_url": "https://www.youtube.com/watch?v=4Iol6l2XnUs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-08-30-4Iol6l2XnUs.json",
+  "sha256": "2d821f9ae22f396b6cf6f361b608215a854c2ab00cf4c950342c717a997e9995",
+  "caption_lines": 52,
+  "segments": 427
+ },
+ "recording": {
+  "duration_s": 1082,
+  "duration": "0:18",
+  "spoken_chars": 13068,
+  "words_approx": 2178
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08302023-378",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-30-agenda-378.txt",
+   "path": "sources/meetings/select-board/2023-08-30-agenda-378.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08302023-378",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-30-minutes-378.txt",
+   "path": "sources/meetings/select-board/2023-08-30-minutes-378.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T11:07:09Z",
+  "cost_usd": 0.28228000000000003
+ },
+ "minutes": {
+  "headline": "Select Board appointed Brian Lafond to the vacant Board of Assessors seat through the May 2024 election.",
+  "summary": "A remote joint meeting with the lone sitting Board of Assessors member to interview a candidate for a vacancy. Board members and the assessor spoke in favor of the candidate, who described his town government background. A motion to appoint was made and a roll call taken. Meeting adjourned by roll call.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Alonso",
+    "role": "vice chair (presiding in absence of chair)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Miss Anki",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr nazolo",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Lou Franco / Mr Franco",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Jeffries",
+    "role": "member (appeared not to be present)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr rabbit",
+    "role": "sole sitting member, Board of Assessors",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Arena Sweezy",
+    "role": "interim principal assessor",
+    "remote": true
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "monitoring public participation",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "hiring",
+   "personnel"
+  ],
+  "votes": [
+   {
+    "t": 798,
+    "motion": "Appoint Mr Lafond of 247 Arbor Street to the Board of Assessors vacancy, term to run to the May 2024 election.",
+    "moved_by": "not stated",
+    "outcome": "passed; caption says 'four two' on roll call then 'unanimous support of all members present' (Alonso, Anki, Nazola, Franco, Rabbit voting aye)",
+    "procedural": false
+   },
+   {
+    "t": 1049,
+    "motion": "Adjourn.",
+    "outcome": "passed by roll call (ayes from Alonso, Anki, Nazola and the presiding member heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 986,
+    "decision": "Assessors tentatively plan to move meetings to Wednesday evenings, 6:30 to 8:30."
+   },
+   {
+    "t": 884,
+    "decision": "Appointee may begin scheduling Board of Assessors meetings now since a quorum exists, though the oath should wait for another candidate per discussion."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 127,
+    "topic": "Call to order, remote meeting notice, roll call, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 127,
+    "t_end": 798,
+    "topic": "Interview of Brian Lafond for Board of Assessors vacancy",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 798,
+    "t_end": 884,
+    "topic": "Motion and roll call vote to appoint Mr Lafond",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 884,
+    "t_end": 1028,
+    "topic": "Next steps: swearing in, training modules, assessors meeting schedule",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1028,
+    "t_end": 1069,
+    "topic": "Final public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact vote count: caption says 'four two' then 'unanimous support of all members present'.",
+   "Whether Mr Jeffries attended; appeared not present.",
+   "Who moved and seconded the appointment."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to appoint Brian Lafond to the vacant Board of Assessors seat, with the term running to the May 2024 election.",
+    "t": 798
+   },
+   {
+    "line": "The appointment followed an interview in a remote joint session with the Board of Assessors' one sitting member, who spoke in favor along with Select Board members.",
+    "t": 127
+   },
+   {
+    "line": "The caption of the roll call is garbled, but it ends with unanimous support from members present.",
+    "t": 798
+   },
+   {
+    "line": "A quorum of assessors now exists, so the appointee may begin scheduling meetings, though the oath of office is to wait for another candidate.",
+    "t": 884
+   },
+   {
+    "line": "Assessors tentatively plan to move their meetings to Wednesday evenings, 6:30 to 8:30.",
+    "t": 986
+   }
+  ],
+  "why_it_matters": [
+   "The Board of Assessors sets property valuations that feed into tax bills, and it had one sitting member, so this appointment restores a quorum to the board that does that work.",
+   "The seat is filled only until the May 2024 election, so residents will be asked to vote on it then."
+  ],
+  "watch_next": [
+   "Swearing in of the new assessor, which the discussion tied to the arrival of another candidate.",
+   "The May 2024 election, when the seat goes to a vote."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T11:07:19Z",
+   "cost_usd": 0.21770499999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08302023-378",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-30-minutes-378.txt",
+   "path": "sources/meetings/select-board/2023-08-30-minutes-378.pdf"
+  },
+  "official_sha256": "6a08f6f6d9d2a5fdffa449fe3257d8125c3213f0e74a8aa02610a0e9672732df",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree that the Board appointed Mr. Laffond to the Board of Assessors, with five aye votes and Chairman Jeffreys absent. They differ on the oath: ours says it should wait for another candidate, while the official minutes say he was reminded to go get sworn in.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to appoint Laffond to Board of Assessors",
+    "ours": "Appoint Mr Lafond of 247 Arbor Street to the Board of Assessors vacancy, term to run to the May 2024 election. — passed",
+    "official": "to appoint brian laffond, 247 arbor street, to the board of assessors until the next election vote: mr. alonzo-aye, ms. emkey-aye, mr. nuzzolo-aye, mr. franco-aye, mr. rabbitt-aye",
+    "note": "Same motion, same outcome (passed), same five aye votes; the May 2024 election is the next election per the agenda item in the official minutes.",
+    "t": 798
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee's surname",
+    "ours": "Mr Lafond",
+    "official": "mr. laffond",
+    "official_reading": "Laffond",
+    "note": "Spelling of the same person's name as heard in captions.",
+    "t": 798
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Alonso",
+    "ours": "Mr Alonso",
+    "official": "mr. alonzo-aye",
+    "official_reading": "Alonzo",
+    "note": "Misheard spelling of Tom Alonzo.",
+    "t": 798
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Anki",
+    "ours": "Miss Anki",
+    "official": "ms. emkey-aye",
+    "official_reading": "Emkey",
+    "note": "Misheard name of Renee Emkey.",
+    "t": 798
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Nazola",
+    "ours": "Mr nazolo",
+    "official": "mr. nuzzolo-aye",
+    "official_reading": "Nuzzolo",
+    "note": "Misheard name of Caesar Nuzzolo.",
+    "t": 798
+   },
+   {
+    "kind": "caption_error",
+    "about": "Roll call count 'four two'",
+    "ours": "caption says 'four two' on roll call then 'unanimous support of all members present' (Alonso, Anki, Nazola, Franco, Rabbit voting aye)",
+    "official": "mr. alonzo-aye, ms. emkey-aye, mr. nuzzolo-aye, mr. franco-aye, mr. rabbitt-aye",
+    "official_reading": "five ayes, unanimous",
+    "note": "The odd 'four two' count is a caption artifact; the official roll call shows five ayes with no opposition.",
+    "t": 798
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Oath of office timing",
+    "ours": "Appointee may begin scheduling Board of Assessors meetings now since a quorum exists, though the oath should wait for another candidate per discussion.",
+    "official": "mr. laffond was reminded to go to the town clerk office to get sworn in. he thanked everyone for their",
+    "note": "Ours says the oath should wait for another candidate; the official minutes say he was reminded to go get sworn in. Check the recording near t=884 for what was actually said.",
+    "t": 884
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessors meeting schedule",
+    "ours": "Assessors tentatively plan to move meetings to Wednesday evenings, 6:30 to 8:30.",
+    "official": "",
+    "note": "Tentative scheduling discussion; the official minutes do not mention it.",
+    "t": 986
+   },
+   {
+    "kind": "agree",
+    "about": "Attendance: Jeffreys absent",
+    "ours": "Mr Jeffries (member (appeared not to be present))",
+    "official": "member not present: michael-ray jeffreys, chairman",
+    "note": "Both show the chair absent, with Franco presiding as vice chair; the spelling is a caption variant.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Franco, Alonzo, Emkey, Nuzzolo present",
+    "ours": "Lou Franco / Mr Franco (member)",
+    "official": "members present: lou franco, vice chairman; caesar nuzzolo, clerk; tom alonzo, renee emkey",
+    "note": "Same four Select Board members present.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Rabbitt",
+    "ours": "Mr rabbit (sole sitting member, Board of Assessors)",
+    "official": "others present: heather lemieux, town manager; rena swezey, interim principal assessor; jack rabbitt, assessor; brian laffond",
+    "note": "Same person, Jack Rabbitt, as the sitting assessor; the name spelling is a caption variant.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Interim principal assessor name",
+    "ours": "Arena Sweezy (interim principal assessor)",
+    "official": "rena swezey, interim principal assessor",
+    "official_reading": "Rena Swezey",
+    "note": "Misheard name; same role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager present",
+    "ours": "the town manager (town manager)",
+    "official": "others present: heather lemieux, town manager; rena swezey, interim principal assessor; jack rabbitt, assessor; brian laffond",
+    "note": "Ours lists the town manager and a 'Heather' monitoring public participation as separate entries; the official minutes name Heather Lemieux as town manager, so they are probably the same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Appointee as attendee",
+    "ours": "",
+    "official": "joint meeting with member of board assessors to interview/appoint to board of assessor vacancy until the may 2024 election: brian laffond, 247 arbor street",
+    "note": "Our attendee list does not include the applicant, though our vote item names him.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T11:08:06Z",
+   "cost_usd": 0.29242399999999996
+  }
+ }
+}

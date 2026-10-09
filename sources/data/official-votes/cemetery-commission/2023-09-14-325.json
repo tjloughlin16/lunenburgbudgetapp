@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-09-14",
  "docid": "325",
@@ -12,23 +12,196 @@
  },
  "votes": [
   {
-   "motion": "To call in Lakeview in October to see how many hours it would take them to finish the task at North Cemetery",
-   "outcome": "passed 2-0",
+   "motion": "Call in Lakeview in October to see how many hours it would take to finish mowing/trimming at North Cemetery, as a one-time pilot test paid for by the Commission.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 2-0",
    "procedural": false,
    "quote": "the cemetery commission voted 2-0 to call in lakeview in october to see how many hours it would takes them to finish the task at north cemetery."
   },
   {
-   "motion": "To adjourn the meeting",
-   "outcome": "passed 2-0",
+   "motion": "Adjourn the meeting at 12:01 PM.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
+   "outcome": "passed 2-0",
    "procedural": true,
    "quote": "chair, nancy foss-yasko, made the motion to adjourn meeting at 12:01 pm. vice-chair & clerk, david dorren seconded the motion. motion passed 2-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0812025
+ "note": "Text-extracted minutes (not a scan); all content readable. Only two recorded votes, both 2-0, although seven people are listed as attending; the minutes do not say which members voted. The header gives the meeting as 9:00 AM – 11:30 AM but the minutes record adjournment at 12:01 PM; both printed times are kept as printed. No member of the public is recorded as speaking. The mover of the Lakeview pilot motion is not stated. The Chapter 310 motion was delayed and never voted in this text. The minutes are the Commission's own and unsigned beyond the Chair and Clerk names.",
+ "cost_usd": 0.0197011,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance was nancy foss-yasko, chair; david dorren, vice-chair & clerk; bill bernard, director dpw; todd holman, superintendent;"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "in attendance was nancy foss-yasko, chair; david dorren, vice-chair & clerk; bill bernard, director dpw; todd holman, superintendent;"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "Director DPW",
+   "status": "present",
+   "quote": "in attendance was nancy foss-yasko, chair; david dorren, vice-chair & clerk; bill bernard, director dpw; todd holman, superintendent;"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "in attendance was nancy foss-yasko, chair; david dorren, vice-chair & clerk; bill bernard, director dpw; todd holman, superintendent;"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "michael-ray jeffreys, select board chair; tom alonzo, select board member; heather lemiuex, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "michael-ray jeffreys, select board chair; tom alonzo, select board member; heather lemiuex, town manager."
+  },
+  {
+   "name": "Heather Lemiuex",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "michael-ray jeffreys, select board chair; tom alonzo, select board member; heather lemiuex, town manager."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission did not make a motion to accept the minutes of August 24, 2023; the Chair will review and make changes and the minutes will be voted on at the next meeting.",
+   "quote": "under advisement, it was decided to not make a motion to accept these meeting minutes, at this time."
+  },
+  {
+   "decision": "The motion to accept Chapter 310 – Cemetery Rules and Regulations – Amended 9-14-2023 was delayed and not taken up at this meeting.",
+   "quote": "the cemetery commission will delay a motion to accept the chapter 310 - cemetery rules and regulations - amended 9-14-2023 in today's meeting."
+  },
+  {
+   "decision": "The Commission agreed to pay for the one-time North Cemetery mowing/trimming pilot test with Lakeview.",
+   "quote": "has agreed to pay for this one time pilot test."
+  },
+  {
+   "decision": "The following holidays are to be addressed in the mowing/trimming plan: Memorial Day, Fourth of July, Labor Day and Veterans Day.",
+   "quote": "the following holidays needs to be addressed:"
+  },
+  {
+   "decision": "Next meeting set for October 19, 2023.",
+   "quote": "next meeting will take place on october 19, 2023."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Landscaping quotes for North Cemetery mowing/trimming",
+   "what_was_recorded": "The DPW sought quotes from two landscaping companies; one quoted a single hourly rate for both mowing and trimming, the other quoted separate hourly rates.",
+   "quote": "ne acreage quoted $90.00 per hour for both mowing/trimming.",
+   "figures_as_printed": [
+    "$90.00 per hour",
+    "$110.00 per hour",
+    "$65.00 per hour"
+   ]
+  },
+  {
+   "topic": "Estimated cost of Lakeview pilot test at North Cemetery",
+   "what_was_recorded": "The Chair suggested a pilot test with Lakeview doing mowing/trimming at North Cemetery, with an estimated cost range.",
+   "quote": "estimated cost to be $1,600.00 - $1,800.00.",
+   "figures_as_printed": [
+    "$1,600.00 - $1,800.00"
+   ]
+  },
+  {
+   "topic": "Operational cost line in the budget",
+   "what_was_recorded": "A Select Board member proposed a plan with the DPW requesting an increase in the final operational cost line to the budget; no figure printed.",
+   "quote": "requesting an increase in the final operational cost line to the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Commission payment for pilot test",
+   "what_was_recorded": "The Commission agreed to pay for the one-time pilot test; no figure printed.",
+   "quote": "has agreed to pay for this one time pilot test.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public speaker recorded",
+   "quote": "nancy foss-yasko, chair asked if there was any public comment?",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW director updates on North Cemetery mowing quotes",
+   "resolution": "quotes reported; no action",
+   "quote": "bill bernard stated he sent out for quotes for landscaping companies to do the mowing/trimming of the north cemetery.",
+   "tags": [
+    "DPW",
+    "mowing",
+    "landscaping",
+    "quotes"
+   ]
+  },
+  {
+   "topic": "Chapter 310 Cemetery Rules and Regulations",
+   "resolution": "motion delayed; not voted at this meeting",
+   "quote": "the cemetery commission will delay a motion to accept the chapter 310 - cemetery rules and regulations - amended 9-14-2023 in today's meeting.",
+   "tags": [
+    "chapter 310",
+    "rules and regulations",
+    "cemetery rules"
+   ]
+  },
+  {
+   "topic": "North Cemetery mowing/trimming pilot test with Lakeview",
+   "resolution": "approved 2-0 (call in Lakeview in October)",
+   "quote": "chair, nancy foss-yasko suggested we have a pilot test for the north cemetery, which includes mowing/trimming by lakeview.",
+   "tags": [
+    "north cemetery",
+    "mowing",
+    "pilot test",
+    "lakeview"
+   ]
+  },
+  {
+   "topic": "Minutes of August 24, 2023",
+   "resolution": "not accepted; deferred to next meeting",
+   "quote": "under advisement, it was decided to not make a motion to accept these meeting minutes, at this time.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting October 19, 2023; adjourned 12:01 PM, 2-0",
+   "quote": "chair, nancy foss-yasko, made the motion to adjourn meeting at 12:01 pm.",
+   "tags": [
+    "adjournment",
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "mowing and trimming",
+  "landscaping quotes",
+  "pilot test",
+  "Lakeview",
+  "Chapter 310 rules",
+  "minutes approval deferred",
+  "DPW"
+ ],
+ "dropped_unquoted_by_field": {}
 }

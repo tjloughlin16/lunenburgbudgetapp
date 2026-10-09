@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-08-22",
  "docid": "368",
@@ -12,55 +12,430 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Michele Beauvais to COA Administrative Assistant",
+   "motion": "Ratify the Town Manager's appointment of Michele Beauvais to COA Administrative Asst.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed, all in favor (count not printed)",
    "procedural": false,
    "quote": "motion: m. jeffreys 2\"d: l. franco to ratify the town manager's appointment of michele beauvais to coa administrative asst. vote: all in favor"
   },
   {
-   "motion": "Accept the gift to the Cemetery Commission",
+   "motion": "Accept the gift to the Cemetery Commission as discussed.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed, all in favor (count not printed)",
    "procedural": false,
    "quote": "motion: m. jeffreys to accept the gift to the cemetery commission as discussed 2nd: l. franco vote: all in favor"
   },
   {
-   "motion": "Approve the pole petition for proposed pole #23-51 at Northfield Road and Gilchrest Street as presented by Unitil",
+   "motion": "Approve the pole petition for proposed pole #23-51 as presented by Unitil.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor (count not printed)",
    "procedural": false,
    "quote": "motion: t. alonzo 2': c. nuzzolo to approve the pole petition for proposed pole #23-51as presented by unitil vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Scott Oja to Facilities Superintendent",
+   "motion": "Ratify the Town Manager appointment of Scott Oja to Facilities Superintendent.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed, all in favor (count not printed)",
    "procedural": false,
    "quote": "motion: m. jeffreys 2nd: l. franco to ratify the town manager appointment of scott oja to facilities superintendent vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of April 25 and May 16, 2023",
+   "motion": "Approve the minutes of April 25 and May 16, 2023 as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 3-0-2",
+   "outcome": "passed, 3 in favor, 2 abstentions (Nuzzolo, Emkey)",
    "procedural": true,
    "quote": "motion: t. alonzo 2nd: m. jeffreys to approve the minutes of april 25 and may 16, 2023 as presented vote: 3 in favor, 2 abstentions (nuzzolo, emkey)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed, all in favor (count not printed)",
    "procedural": true,
    "quote": "motion: t. alonzo to adjourn the meeting 2'd: l. franco vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted from scanned minutes; minor OCR errors present (such as '2\"d' and '2'\" for '2nd') but votes are clearly readable.",
- "cost_usd": 0.12112510000000001
+ "dropped_unquoted": 1,
+ "note": "Text is machine OCR (macOS Vision) of a scanned minutes document, and some passages are garbled (notably pages 9-10 of the Assessor investigation section, which read as scrambled words). Quotes are copied as the OCR prints them, including artifacts such as 'amountof$14,709', '2'd:' and 'pole #23-51as'. The attendance line at the start of the document is truncated, so the status of the five Select Board members is inferred from their speech and votes rather than a complete roll call. Five motions were recorded with results: four appointments/approvals/petitions were 'All in Favor' with no count printed, and minutes were approved 3 in favor, 2 abstentions. The Dream Team ARPA request, PFAS/Board of Health discussion, DBA change, opioid funds and tax investigation were discussed with no motion recorded. The Town Manager's ARPA 'rankings' and the tax investigation were not voted on.",
+ "cost_usd": 0.02351147,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of allegiance."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. alonzo stated in order to prevent this from happening again, that cause has to go on somebody."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "ms. emkey agreed, the purpose of looking back is not to point fingers and assign blame."
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. franco stated many of the points that have been made so far are fine."
+  },
+  {
+   "name": "C. Nuzzolo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. nuzzolo stated it was important to remember the impacts that this situation caused to people."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; nancy foss yasko, cemetery commissioner; john kimball, lawrence lagoy, scott oja, dr. robin chandler, donna saiia, george emond ji., perry jewell, paul fortin, jim garreffi"
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; nancy foss yasko, cemetery commissioner; john kimball, lawrence lagoy, scott oja, dr. robin chandler, donna saiia, george emond ji., perry jewell, paul fortin, jim garreffi"
+  },
+  {
+   "name": "John Kimball",
+   "role": "Unitil Field Services Supervisor",
+   "status": "present",
+   "quote": "john kimball, unitil field services supervisor, was present for the hearing."
+  },
+  {
+   "name": "Lawrence Lagoy",
+   "role": "Owner (La Balena LLC)",
+   "status": "present",
+   "quote": "owner lawrence lagoy presented for the request of a change of \"doing business as.\""
+  },
+  {
+   "name": "Scott Oja",
+   "role": "appointee to Facilities Superintendent",
+   "status": "present",
+   "quote": "mr. oja stated facilities director chris ruth reached out to him to see if he would be interested in applying for the position"
+  },
+  {
+   "name": "Dr. Robin Chandler",
+   "role": "Cultural Council member",
+   "status": "present",
+   "quote": "dr. chandler, 717 reservoir road, cultural council member, presented an artist at school program for the high school curriculum"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Treasurer, Cultural Council",
+   "status": "present",
+   "quote": "ms. saiia noted as treasurer for the cultural council, she would be working closely with the town treasurer"
+  },
+  {
+   "name": "George Emond Ji.",
+   "role": "BOH Chair",
+   "status": "present",
+   "quote": "boh chair emond opened the board of health meeting."
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "mr. jewell believed the most helpful part is education."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "mr. fortin stated nothing is going to happen until after january 2024 so there are no requests from the boh at this time."
+  },
+  {
+   "name": "Jim Garreffi",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; nancy foss yasko, cemetery commissioner; john kimball, lawrence lagoy, scott oja, dr. robin chandler, donna saiia, george emond ji., perry jewell, paul fortin, jim garreffi"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Assessor",
+   "status": "present",
+   "quote": "john rabbitt, 314 townsend harbor road, assessor, appealed to anyone who might want to volunteer on the board of assessors due to the recent resignations."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Asst. to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive asst. to the town manager"
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "Council on Aging Administrative Asst. (appointee)",
+   "status": "not stated",
+   "quote": "ratification of town manager's appointment of council on aging administrative asst. michele beauvais"
+  },
+  {
+   "name": "Leah Grogorov",
+   "role": "Temporary Conservation Administrator (appointee)",
+   "status": "not stated",
+   "quote": "ratification of town manager's appointment of temporary conservation administrator leah grogorov"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tax investigation: the board will make revisions to the report, the chair will make notes on recommendations, and the item is to be revisited the second week of September.",
+   "quote": "mr. jeffreys stated we will make revisions to the report and i will make notes on recommendations. we will schedule to revisit this for the second week of september."
+  },
+  {
+   "decision": "ARPA project ranking: the chair will amend the ranking process and return it for the next round of discussion on how to award the funding.",
+   "quote": "mr. jeffreys will amend and return with it for the next round of discussion about how to award the funding."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dream Team pilot budget, LHS Artist at School program (ARPA request)",
+   "what_was_recorded": "Dr. Chandler presented an ARPA funding request for an Artist at School program at Lunenburg High School.",
+   "figures_as_printed": [
+    "$22,500"
+   ],
+   "quote": "the amount she was requesting was $22,500."
+  },
+  {
+   "topic": "Water District ARPA request for PFAS work",
+   "what_was_recorded": "Mr. Jeffreys noted the Water District's ARPA request total and its breakdown across PFAS pilot testing, a master plan and public education.",
+   "figures_as_printed": [
+    "$485,000",
+    "$400,000",
+    "$50,000",
+    "$35,000"
+   ],
+   "quote": "mr. jeffreys noted the water district is requesting arpa funding for $485,000; $400,000 for pfas pilot testing for the lancaster and keating wells; $50,000 for a pfas master plan related to the public water supply; $35,000 for public education related to pfas."
+  },
+  {
+   "topic": "Cost of testing private wells for PFAS",
+   "what_was_recorded": "Mr. Emond estimated the cost of a private well test and the number of private wells in town.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "the amount to test a private well is around $400 and we guess there are around 1800 private wells in lunenburg."
+  },
+  {
+   "topic": "Opioid settlement payment and stabilization fund balance",
+   "what_was_recorded": "The Town received another opioid settlement payment, bringing the Opioid Settlement Stabilization Fund balance to the printed figure.",
+   "figures_as_printed": [
+    "$14,709",
+    "$99,449"
+   ],
+   "quote": "the town received another opioid settlement payment in the amountof$14,709, bringing the opioid settlement stabilization fund balance to $99,449."
+  },
+  {
+   "topic": "Assessor reevaluation: average tax bill increase",
+   "what_was_recorded": "A board member said that if everyone had received the average tax bill increase of the printed amount, most people would not have commented.",
+   "figures_as_printed": [
+    "$278"
+   ],
+   "quote": "if everyone had gotten the average tax bill increase of $278, i feel like most people wouldn't have said anything."
+  },
+  {
+   "topic": "Tax bill hardship from late tax bills",
+   "what_was_recorded": "A speaker said residents had to raise money on short notice because of the tax bill timing; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "now people had to come up in two weeks with thousands of dollars."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Board of Assessors vacancies",
+   "speaker": "John Rabbitt",
+   "stated_role": "Assessor",
+   "quote": "john rabbitt, 314 townsend harbor road, assessor, appealed to anyone who might want to volunteer on the board of assessors due to the recent resignations."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Ratification: COA Administrative Asst. appointment (Michele Beauvais)",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ],
+   "quote": "to ratify the town manager's appointment of michele beauvais to coa administrative asst."
+  },
+  {
+   "topic": "Ratification: Temporary Conservation Administrator (Leah Grogorov)",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "appointments",
+    "conservation"
+   ],
+   "quote": "ms. lemieux stated the filling of the permanent position is ongoing. ms. grogorov would be filling this role temporarily for about 10 hours a week."
+  },
+  {
+   "topic": "Gift to the Cemetery Commission",
+   "resolution": "approved",
+   "tags": [
+    "cemetery",
+    "gifts"
+   ],
+   "quote": "to accept the gift to the cemetery commission as discussed"
+  },
+  {
+   "topic": "Pole petition hearing, Northfield Road at Gilchrest Street (Unitil, Plan 977-L)",
+   "resolution": "approved pole #23-51",
+   "tags": [
+    "utilities",
+    "hearing",
+    "unitil"
+   ],
+   "quote": "john kimball, unitil field services supervisor, was present for the hearing."
+  },
+  {
+   "topic": "Change of DBA, La Balena LLC, 50 Massachusetts Ave.",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "licensing",
+    "business"
+   ],
+   "quote": "owner lawrence lagoy presented for the request of a change of \"doing business as.\" the llc will remain the same."
+  },
+  {
+   "topic": "Ratification: Facilities Superintendent appointment (Scott Oja)",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "facilities"
+   ],
+   "quote": "to ratify the town manager appointment of scott oja to facilities superintendent"
+  },
+  {
+   "topic": "Dream Team pilot budget, LHS Artist at School (ARPA request)",
+   "resolution": "presented; no vote recorded",
+   "tags": [
+    "arpa",
+    "schools",
+    "arts"
+   ],
+   "quote": "dr. chandler, 717 reservoir road, cultural council member, presented an artist at school program for the high school curriculum that would, if approved, be paid for with arpa funding."
+  },
+  {
+   "topic": "Meeting with Board of Health on ARPA funding for PFAS",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "pfas",
+    "water",
+    "arpa",
+    "board of health"
+   ],
+   "quote": "the water district has requested arpa funding to address this."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "town manager",
+    "beach",
+    "farmers market",
+    "vacancies"
+   ],
+   "quote": "town beach hours are saturdays and sundays from 12 to 6 and monday through friday 10 a.m. to 7 p.m."
+  },
+  {
+   "topic": "Opioid settlement funds",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "opioids",
+    "finance"
+   ],
+   "quote": "the town received another opioid settlement payment in the amountof$14,709, bringing the opioid settlement stabilization fund balance to $99,449."
+  },
+  {
+   "topic": "Employee highlights",
+   "resolution": "recognized; no action",
+   "tags": [
+    "staff",
+    "council on aging",
+    "treasurer",
+    "assessors"
+   ],
+   "quote": "thank you to all the volunteers and staff at the lunenburg adult activity center."
+  },
+  {
+   "topic": "Assessor reevaluation and certification extension",
+   "resolution": "discussed; letter and tax bill vote deferred to next meeting",
+   "tags": [
+    "assessing",
+    "reevaluation",
+    "tax bills"
+   ],
+   "quote": "ms. lemieux stated she needs to submit a letter to the division of local assessment to request an extension for the certification of values"
+  },
+  {
+   "topic": "ARPA funding requests and project rankings (old business)",
+   "resolution": "discussed; ranking to be amended",
+   "tags": [
+    "arpa",
+    "rankings"
+   ],
+   "quote": "the board discussed the ranking process and how to improve it to make it easier."
+  },
+  {
+   "topic": "Tax investigation update (old business)",
+   "resolution": "reviewed; revisit second week of September",
+   "tags": [
+    "tax investigation",
+    "assessors",
+    "principal assessor",
+    "dor"
+   ],
+   "quote": "mr. jeffreys reviewed core questions that the investigation sought to answer."
+  },
+  {
+   "topic": "Dog hearing procedure review",
+   "resolution": "reviewed",
+   "tags": [
+    "hearings",
+    "dogs"
+   ],
+   "quote": "the board reviewed the hearing procedure in anticipation of a dog hearing next week."
+  },
+  {
+   "topic": "Approval of minutes, April 25 and May 16, 2023",
+   "resolution": "approved, 3 in favor, 2 abstentions",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of april 25 and may 16, 2023 as presented"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:49 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion: t. alonzo to adjourn the meeting 2'd: l. franco vote: all in favor"
+  }
+ ],
+ "tags": [
+  "select board",
+  "ARPA funding",
+  "tax assessments investigation",
+  "assessor reevaluation",
+  "appointments",
+  "pole petition",
+  "unitil",
+  "DBA change",
+  "PFAS and private wells",
+  "board of health",
+  "opioid settlement",
+  "cemetery gift",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

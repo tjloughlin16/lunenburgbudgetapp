@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-07-12",
  "docid": "3524",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Recommend adding an additional part-time, as needed lifeguard, Cole Kiefer, with authority to hire another without returning to commission if licensing comes through",
+   "motion": "Recommend adding an additional part-time, as needed lifeguard, Cole Kiefer, and if licensing comes through, hire another without returning to the Commission.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion that the parks commission recommend adding an additional part-time, as needed lifeguard, cole kiefer and, if the licensing does come through, move on to hire someone else without returning to the commission. c. sullivan seconded. roll call vote.motion carried (4-0)."
+   "quote": "k. menard made a motion that the parks commission recommend adding an additional part-time, as needed lifeguard, cole kiefer"
   },
   {
-   "motion": "Present the Skate Park design as presented",
-   "moved_by": "K. Menard",
+   "motion": "Present the Skate Park design as presented.",
+   "moved_by": "K.Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "k.menard made a mothon to present the skate park design as presented. c. sullivan seconded. roll call vote.motion carried (4-0)."
   },
   {
-   "motion": "Support the grant application as discussed",
+   "motion": "Support the grant application as discussed.",
    "moved_by": "C. Sullivan",
    "seconded_by": "P. Hakey",
    "outcome": "passed 4-0",
@@ -37,6 +37,194 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes recorded in these minutes are substantive commission business (hiring, design approval, and grant support), not procedural motions. The meeting adjourned at 8:58 pm but no formal vote on adjournment is recorded.",
- "cost_usd": 0.0715494
+ "note": "Text extraction, not a scan. Page headers print 'page  of 41' through 'page  of 44', which looks like a pagination artifact. No public comment section appears in the minutes. The 8:58 pm adjournment is recorded with no motion or vote. No dollar figures appear anywhere in the text. Member 'Patrick Hakey' has no printed title. Quotes were taken from single-line spans, and double spaces in the source were collapsed to single spaces where noted.",
+ "cost_usd": 0.0184029,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "absent",
+   "quote": "colleen shapiro, member"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris ruth, angela clement, anthony caiozzo, and greg roy"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris ruth, angela clement, anthony caiozzo, and greg roy"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris ruth, angela clement, anthony caiozzo, and greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris ruth, angela clement, anthony caiozzo, and greg roy"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Lockwood will send C. Ruth's comments on the schematic design to WOLA.",
+   "quote": "a. lockwood will send c. ruth's comments to wola."
+  },
+  {
+   "decision": "A. Lockwood designated as the contact for the grant application.",
+   "quote": "a. lockwod will be the contact for the grant."
+  },
+  {
+   "decision": "A. Lockwood will meet with the Select Board and give them and the community an update on the Marshall Park project.",
+   "quote": "a. lockwood will meet with the select board and give them and the community an update on the project."
+  },
+  {
+   "decision": "A. Lockwood stated a wish to meet with the Board of Health to obtain a letter of commitment to repair the septic at Marshall Park (stated intent, no vote).",
+   "quote": "a. lockwood would like to meet with the board of health and get a letter of commitment to repair the septic."
+  },
+  {
+   "decision": "A. Lockwood asked for an update on revenue totals to be provided at the next meeting.",
+   "quote": "a. lockwood asked for an update on revenue totals for next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Multi-sport age 5-7 program cost",
+   "what_was_recorded": "Chair suggested the Commission cover the program's cost so it would run, after cancellations; no figure printed.",
+   "quote": "a. lockwood suggested the commission make up the cost for the program to ensure it will run.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Revenue totals for summer programs",
+   "what_was_recorded": "Chair asked for an update on revenue totals for the next meeting; no figure printed.",
+   "quote": "a. lockwood asked for an update on revenue totals for next meeting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant application qualification",
+   "what_was_recorded": "Commission was told it qualified for the larger grant because of the 100 parking spot; no dollar amount printed.",
+   "quote": "k. menard stated they qualified for the larger grant due to the 100 parking spot.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Marshall Park septic repair",
+   "what_was_recorded": "Chair wants a letter of commitment from the Board of Health to repair the septic; no cost printed.",
+   "quote": "a. lockwood would like to meet with the board of health and get a letter of commitment to repair the septic.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "approved a part-time as-needed lifeguard recommendation (passed 4-0); program updates noted",
+   "quote": "application for a part-time fill in lifeguard has been received, certification is active.",
+   "tags": [
+    "lifeguard",
+    "staffing",
+    "recreation programs",
+    "swim lessons"
+   ]
+  },
+  {
+   "topic": "Lunenburg Skate Park Review Design",
+   "resolution": "design presented as presented (passed 4-0)",
+   "quote": "next item on the agenda, lunenburg skate park review design, discussion, and possible vote.",
+   "tags": [
+    "skate park",
+    "conservation commission",
+    "wetlands",
+    "design"
+   ]
+  },
+  {
+   "topic": "Feedback on Schematic Design Presentation",
+   "resolution": "discussed; no vote; chair to send comments to WOLA",
+   "quote": "next item on the agenda, feedback on schematic design presentation",
+   "tags": [
+    "design feedback",
+    "parking",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Review Grant Application",
+   "resolution": "support motion passed 4-0",
+   "quote": "next item on the agenda, review grant application",
+   "tags": [
+    "grant",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Update from meeting with Green Community Committee on Marshall Park Renovation Project",
+   "resolution": "no action; contact with Dave Blatt not yet returned",
+   "quote": "p. hakey reached out to dave blatt but has not heard back from him.",
+   "tags": [
+    "Marshall Park",
+    "green community committee"
+   ]
+  },
+  {
+   "topic": "Select Board and Community Update Meeting on Marshall Renovation Project",
+   "resolution": "no vote; chair to meet Board of Health and Select Board",
+   "quote": "next item on the agenda, select board and community update meeting on marshall renovation project.",
+   "tags": [
+    "Marshall Park",
+    "select board",
+    "board of health",
+    "septic"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "lifeguard staffing",
+  "skate park",
+  "grant application",
+  "Marshall Park renovation",
+  "recreation programs",
+  "conservation commission",
+  "summer camps"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-09-12",
  "docid": "320",
@@ -12,37 +12,534 @@
  },
  "votes": [
   {
-   "motion": "Authorize Town Counsel to respond to the appeal filed by residents of 15 Cliffview Terrace to Worcester Superior Court",
+   "motion": "Authorize Town Counsel to respond to the appeal to Worcester Superior Court filed by the residents of 15 Cliffview Terrace.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\": t. alonzo to authorize town counsel to respond to the appeal to worcester superior court vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye"
+   "quote": "to authorize town counsel to respond to the appeal to worcester superior court vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye"
   },
   {
-   "motion": "Sign the temporary and permanent easement for 895 Flat Hill Road as presented",
+   "motion": "Sign the temporary/permanent easement for 895 Flat Hill Road as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: t. alonzo 2'°: c. nuzzolo to sign the temporary/permanent casement for 895 flat hill road as presented vote: ms. emkey-aye, mr. alonzo-aye, mr. nuzzolo-aye, mr. franco-aye mr. jeffreys-aye"
+   "quote": "to sign the temporary/permanent casement for 895 flat hill road as presented vote: ms. emkey-aye, mr. alonzo-aye, mr. nuzzolo-aye, mr. franco-aye mr. jeffreys-aye"
   },
   {
-   "motion": "Approve the minutes of June 30, 2023 as presented",
+   "motion": "Approve the minutes of June 30, 2023 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "motion: l. franco 2nd: c. nuzzolo to approve the minutes of june 30, 2023 as presented vote: ms. emkey-abstain, mr. nuzzolo-aye, mr. alonzo-aye, mr. jeffreys-aye, mr. franco-aye"
+   "quote": "to approve the minutes of june 30, 2023 as presented vote: ms. emkey-abstain, mr. nuzzolo-aye, mr. alonzo-aye, mr. jeffreys-aye, mr. franco-aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn the meeting vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye the meeting adjourned at 8:56 p.m."
+   "quote": "to adjourn the meeting vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from recorded minutes. The Cemetery Commission ARPA funding request and dog hearing bylaw discussion are recorded without formal votes. Four votes identified: three substantive motions and one to adjourn.",
- "cost_usd": 0.11249410000000001
+ "note": "OCR text from a scan (macOS Vision). Vote tallies and names were read from OCR and may carry transcription errors; the quotes are copied from the OCR text as printed. Page 6 to page 7 is missing agenda item 4 under Current Business: the text runs from item 3 (dog bylaw) directly to item 5. The dog bylaw discussion is cut off mid-sentence at the page break. Agenda heading says Approval of Minutes of June 20, 2023 but the motion says June 30, 2023; the minutes record the motion's wording. The Cemetery Commission portion records no Select Board vote; the Cemetery Commission's own adjournment is not a Select Board vote. Mr. Alonzo and Mr. Franco appear in Public Comment as speakers. Presentation-credit names (Dillis, Schwarz, Ramsden, May, Flagg, Anderson) are listed as status not stated because the minutes do not say they attended. The recorder (Elaine M. Peterson, Executive Assistant) is not listed as an attendee. The first names of Select Board members are not printed except where shown as initials.",
+ "cost_usd": 0.023747370000000004,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Emkey",
+   "role": "Select Board member (role not printed; voted)",
+   "status": "present",
+   "quote": "vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Alonzo",
+   "role": "Select Board member (role not printed; voted)",
+   "status": "present",
+   "quote": "mr. alonzo reported finance committee will be meeting next week."
+  },
+  {
+   "name": "Franco",
+   "role": "Select Board member (role not printed; voted)",
+   "status": "present",
+   "quote": "mr. franco will be representing the select board on that committee."
+  },
+  {
+   "name": "Nuzzolo",
+   "role": "Select Board member (role not printed; voted)",
+   "status": "present",
+   "quote": "mr. nuzzolo reported the planning board met and discussed the lack of a select board representative on the master planning steering"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; bill bernard, dpw director"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; bill bernard, dpw director"
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Cemetery Commission Member",
+   "status": "present",
+   "quote": "cemetery commission members: nancy foss yasko, david dorren"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk, Cemetery Commission",
+   "status": "present",
+   "quote": "david dorren - vice-chair & clerk, cemetery commission"
+  },
+  {
+   "name": "Tom Watkins",
+   "role": "Resident",
+   "status": "present",
+   "quote": "residents tom watkins, 64 beale street and tim murphy, 97 island road, noted their previously"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Resident",
+   "status": "present",
+   "quote": "residents tom watkins, 64 beale street and tim murphy, 97 island road, noted their previously"
+  },
+  {
+   "name": "Fred Anderson",
+   "role": "Anderson Landscape Construction Horticulture Preservation (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "fred anderson - anderson landscape construction horticulture preservation"
+  },
+  {
+   "name": "Stan Dillis",
+   "role": "Dillis & Roy Civil Design Group (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "stan dillis - dillis & roy civil design group"
+  },
+  {
+   "name": "Jeff Schwarz",
+   "role": "Alphagraphics - Shirley (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "jeff schwarz - alphagraphics - shirley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Ramsden Stone Walls and Waterproofing, LLC (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "brett ramsden - ramsden stone walls and waterproofing, llc"
+  },
+  {
+   "name": "Matt May",
+   "role": "Lakeview Landscaping & Irrigation (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "matt may - lakeview landscaping & irrigation"
+  },
+  {
+   "name": "Mark Flagg",
+   "role": "M Flagg Tree Service/Arborist Central Mass Gardens (listed in the presentation credits; attendance not stated)",
+   "status": "not stated",
+   "quote": "mark flagg - m flagg tree service/arborist central mass gardens"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair stated the request would be added to the Select Board's Thursday agenda.",
+   "quote": "mr. jeffreys stated the select board was meeting on thursday so the request would be added to their agenda."
+  },
+  {
+   "decision": "Chair recommended reaching out to abutters and other residents for feedback on the Cemetery Commission proposal before any decision.",
+   "quote": "he recommended reaching out to the abutters and other residents for feedback on their proposal."
+  },
+  {
+   "decision": "Feedback on the dog hearing bylaw to be solicited from the Police Chief; the chair hoped to take the item up again at another meeting.",
+   "quote": "feedback will be solicited from the police chief, animal"
+  },
+  {
+   "decision": "Chair hoped to discuss the dog bylaw information further at another meeting (item continued).",
+   "quote": "he hoped to discuss this further at another meeting."
+  },
+  {
+   "decision": "Mr. Franco to represent the Select Board on the Master Planning Steering Committee.",
+   "quote": "mr. franco will be representing the select board on that committee."
+  },
+  {
+   "decision": "Mr. Franco to attend the 300th anniversary committee meetings on an informal basis; the board concurred.",
+   "quote": "on an informal basis, the board concurred"
+  },
+  {
+   "decision": "Town Manager, Mr. Alonzo and the chair to attend the Cemetery Commission meeting on Thursday.",
+   "quote": "the cemetery commission is meeting this thursday; town manager, mr. alonzo and myself will attend their meeting."
+  },
+  {
+   "decision": "Chair to work with the Water District to schedule an informational seminar on representation.",
+   "quote": "mr. jeffreys will work with them to get that scheduled."
+  },
+  {
+   "decision": "No change to the current town website for the iPad double-tap menu issue; it will be a feature of the new CivicPlus website instead.",
+   "quote": "we will not make this change on the current website but it will be a feature in the new website."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Cemetery boundaries ARPA request",
+   "what_was_recorded": "The Cemetery Commission requested ARPA funding of $350K for restoration of the North Cemetery boundaries.",
+   "quote": "request: $350k for restoration of north cemetery boundaries.",
+   "figures_as_printed": [
+    "$350K"
+   ]
+  },
+  {
+   "topic": "Permanent field-stone wall versus hemlock hedges",
+   "what_was_recorded": "The preferred permanent New England Rustic Field-Stone Wall was estimated at a range of approximately $288K to $388K.",
+   "quote": "permanent new england rustic field-stone wall - estimated range at approximately $288k to $388k,",
+   "figures_as_printed": [
+    "$288K",
+    "$388K"
+   ]
+  },
+  {
+   "topic": "Replacement hemlock hedges",
+   "what_was_recorded": "The replacement cost of hemlock hedges was estimated at approximately $185K.",
+   "quote": "replacement cost of hemlock hedges are estimated at approximately $185k.",
+   "figures_as_printed": [
+    "$185K"
+   ]
+  },
+  {
+   "topic": "Watering of new trees",
+   "what_was_recorded": "One year of watering for the newly planted trees was estimated at $3K, with three seasons of watering needed.",
+   "quote": "one year of watering will cost the cemetery commission and dpw an estimated $3k.",
+   "figures_as_printed": [
+    "$3K"
+   ]
+  },
+  {
+   "topic": "Well for North Cemetery water",
+   "what_was_recorded": "A well to be drilled at North Cemetery was estimated at $15K or more, excluding pump, piping and electricity.",
+   "quote": "additional cost of $15k or more for a well to be drilled.",
+   "figures_as_printed": [
+    "$15K"
+   ]
+  },
+  {
+   "topic": "September 11 storm damage estimate",
+   "what_was_recorded": "DPW put storm-related costs at approximately $24,000, forwarded to the state senator's office for relief funding.",
+   "quote": "put together an estimate of approximately $24,000 in costs attributed to this storm",
+   "figures_as_printed": [
+    "$24,000"
+   ]
+  },
+  {
+   "topic": "Health insurance estimate for FY25",
+   "what_was_recorded": "The town was advised to budget a 10% increase for active health plans for FY25 and expect 8-10% annual increases over the next five years; the retiree renewal for calendar 2024 is estimated at 6%.",
+   "quote": "we should budget 10% for active plans for fy25 and expect 8-10% increases in health insurance rates each year over the next five years.",
+   "figures_as_printed": [
+    "10%",
+    "8-10%",
+    "6%"
+   ]
+  },
+  {
+   "topic": "Third quarter preliminary tax installment",
+   "what_was_recorded": "The third quarter preliminary tax installment cannot exceed the first quarter preliminary installment.",
+   "quote": "third quarter preliminary tax installment cannot be more than the amount of the first quarter preliminary tax",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Funds available versus cost of cemetery project",
+   "what_was_recorded": "Board questions addressed the high cost of the cemetery project compared with the ARPA funding remaining.",
+   "quote": "as well as the high cost of the project versus what arpa funding remains.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "TC Passios roof repairs",
+   "what_was_recorded": "The Facilities Director will seek quotes to repair the TC Passios roof in phases; a warrant article is a placeholder for the Special Town Meeting.",
+   "quote": "he is going to seek quotes to repair that roof in phases.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Warrant payments signed",
+   "what_was_recorded": "The board signed school and accounts payable and payroll warrants.",
+   "quote": "the board signed a school payroll warrant in the amount of $3514.26; an accounts payable warrant in the amount of $40,779.97;",
+   "figures_as_printed": [
+    "$3514.26",
+    "$40,779.97",
+    "$971,248.01",
+    "$1,099,483.99"
+   ]
+  },
+  {
+   "topic": "Sewer Reserve Capacity Stabilization transfer article",
+   "what_was_recorded": "A Sewer Commission warrant article proposes transferring $1,851.30 from available funds into the Sewer Reserve Capacity Stabilization Fund.",
+   "quote": "to see if the town will vote to transfer from available funds $1,851.30 into the sewer reserve capacity stabilization fund",
+   "figures_as_printed": [
+    "$1,851.30"
+   ]
+  },
+  {
+   "topic": "Sewer Inflow/Infiltration Stabilization transfer article",
+   "what_was_recorded": "A Sewer Commission warrant article proposes transferring $5,340.00 from available funds into the Sewer Inflow/Infiltration Stabilization Fund.",
+   "quote": "to see if the town will vote to transfer from available funds $5,340.00 into the sewer inflow/infiltration stabilization fund",
+   "figures_as_printed": [
+    "$5,340.00"
+   ]
+  },
+  {
+   "topic": "Vehicles originally funded by ARPA",
+   "what_was_recorded": "A proposed warrant article would transfer funds from the special purpose stabilization account to pay for three vehicles originally to be paid by ARPA funding; no amount printed.",
+   "quote": "an article to transfer funds from the special purpose stabilization account to pay for three vehicles originally to be paid by arpa funding.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from available funds into the Sewer Reserve Capacity Stabilization Fund (Sewer Commission warrant article)",
+   "amount_as_printed": "$1,851.30",
+   "outcome": "Proposed warrant article for the November 14 Special Town Meeting; no transfer voted at this meeting.",
+   "quote": "to see if the town will vote to transfer from available funds $1,851.30 into the sewer reserve capacity stabilization fund"
+  },
+  {
+   "description": "Transfer from available funds into the Sewer Inflow/Infiltration Stabilization Fund (Sewer Commission warrant article)",
+   "amount_as_printed": "$5,340.00",
+   "outcome": "Proposed warrant article for the November 14 Special Town Meeting; no transfer voted at this meeting.",
+   "quote": "to see if the town will vote to transfer from available funds $5,340.00 into the sewer inflow/infiltration stabilization fund"
+  },
+  {
+   "description": "Transfer from the special purpose stabilization account to pay for three vehicles originally to be paid by ARPA funding (Planning Board request, as relayed)",
+   "amount_as_printed": "not printed",
+   "outcome": "Article to be submitted; no transfer voted at this meeting.",
+   "quote": "an article to transfer funds from the special purpose stabilization account to pay for three vehicles originally to be paid by arpa funding."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Condolences for flooding in Leominster and Fitchburg",
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "quote": "mr. alonzo expressed condolences to the cities of leominster and fitchburg that experienced extreme flooding conditions yesterday."
+  },
+  {
+   "topic": "Pancake breakfast reminder",
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "quote": "mr. franco reminded all of the pancake breakfast tomorrow morning at the eagle house adult activity center from 8:00 to 10:30 am."
+  },
+  {
+   "topic": "Oktoberfest liquor license postponement",
+   "speaker": "Tom Watkins",
+   "stated_role": "Residents",
+   "quote": "noted their previously approved event of the oktoberfest at st. boniface parish scheduled for this saturday may need to be postponed due to the extreme weather conditions."
+  },
+  {
+   "topic": "Oktoberfest liquor license postponement",
+   "speaker": "Tim Murphy",
+   "stated_role": "Residents",
+   "quote": "they had a one day liquor license for saturday and in hindsight they should have requested sunday as well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard; chair said the Oktoberfest request would go to the Select Board Thursday",
+   "quote": "public comment: mr. alonzo expressed condolences to the cities of leominster and fitchburg",
+   "tags": [
+    "public comment",
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational",
+   "quote": "announcements: ms. lemieux announced the following:",
+   "tags": [
+    "announcements",
+    "farmers market",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Cemetery Commission: ARPA request",
+   "resolution": "presented; no Select Board vote; abutter outreach recommended; Cemetery Commission adjourned its own meeting",
+   "quote": "joint meeting with the cemetery commission: arpa request",
+   "tags": [
+    "ARPA",
+    "cemetery",
+    "North Cemetery",
+    "hedges",
+    "stone wall"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies and job openings",
+   "resolution": "informational",
+   "quote": "town manager report board/committee/commission vacancies:",
+   "tags": [
+    "vacancies",
+    "employment",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "September 11 flash floods and MEMA update",
+   "resolution": "informational; DPW storm estimate of about $24,000 forwarded to state",
+   "quote": "september 11th flash floods storm event and mema situational awareness update on upcoming rain",
+   "tags": [
+    "flooding",
+    "storm",
+    "MEMA",
+    "Hurricane Lee"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave environmental work",
+   "resolution": "informational; EPA approved additional work",
+   "quote": "925 mass ave (tm goal #1,ii) the epa has approved funding for additional work to be done at 925 mass ave",
+   "tags": [
+    "925 Mass Ave",
+    "EPA",
+    "environmental"
+   ]
+  },
+  {
+   "topic": "Infrastructure, facilities and IT updates",
+   "resolution": "informational; TC Passios roof to be repaired in phases",
+   "quote": "infrastructure, facilities, and it updates",
+   "tags": [
+    "streetlights",
+    "senior center",
+    "TC Passios",
+    "website"
+   ]
+  },
+  {
+   "topic": "Third quarter preliminary tax bills for FY24",
+   "resolution": "informational",
+   "quote": "third quarter preliminary tax bills for fy24",
+   "tags": [
+    "tax bills",
+    "tax recap"
+   ]
+  },
+  {
+   "topic": "Budget updates: health insurance estimate",
+   "resolution": "informational",
+   "quote": "health insurance estimate for fy25 and future years",
+   "tags": [
+    "health insurance",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Old business: November 14 Special Town Meeting warrant articles",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "review november 14 special town meeting warrant articles",
+   "tags": [
+    "Special Town Meeting",
+    "warrant articles",
+    "sewer",
+    "TC Passios"
+   ]
+  },
+  {
+   "topic": "Authorize Town Counsel on 15 Cliffview Terrace appeal",
+   "resolution": "approved 5-0",
+   "quote": "vote to authorize town counsel to respond to 15 cliffview terrace appeal to",
+   "tags": [
+    "zoning",
+    "short-term rental",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Sign easement for 895 Flat Hill Road",
+   "resolution": "approved 5-0",
+   "quote": "sign temporary/permanent easement for 895 flat hill road",
+   "tags": [
+    "easement",
+    "Flat Hill bridge"
+   ]
+  },
+  {
+   "topic": "Dog hearing bylaw, Section 110-1",
+   "resolution": "discussed; feedback to be solicited; continued to a later meeting",
+   "quote": "discuss/review dog hearing bylaw, section 110-1",
+   "tags": [
+    "dog bylaw",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "to approve the minutes of june 30, 2023 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed a school payroll warrant in the amount of $3514.26",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "7. committee reports ms. emkey reported the school committee met for the first time since school was back in session.",
+   "tags": [
+    "school committee",
+    "finance committee",
+    "planning board",
+    "council on aging",
+    "300th anniversary"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:56 p.m.",
+   "quote": "to adjourn the meeting vote: ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. nuzzolo-aye, mr. jeffreys-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "ARPA",
+  "North Cemetery",
+  "hedges",
+  "flooding",
+  "storm",
+  "MEMA",
+  "warrant articles",
+  "Special Town Meeting",
+  "sewer",
+  "health insurance",
+  "tax bills",
+  "TC Passios",
+  "Cliffview",
+  "easement",
+  "dog bylaw",
+  "minutes",
+  "warrants",
+  "public comment",
+  "website"
+ ],
+ "dropped_unquoted_by_field": {}
 }

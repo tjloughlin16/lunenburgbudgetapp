@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-09-06",
  "docid": "315",
@@ -12,64 +12,399 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent with a waiver for work within the 50-foot no-build zone and have the wattles overlap for better reinforcement",
+   "motion": "Approve the Notice of Intent for Martin and Patricia Lawlor, 86 Oak Ridge Road, with a waiver for work within the 50' no-build zone and wattles overlapping.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b., second: mike l. to approve the noi with a waiver for work within the 50' no-build zone and have the wattles overlap for better reinforcement. roll call vote was unanimous to approve."
+   "quote": "motion: rich b., second: mike l. to approve the noi with a waiver for work within the 50' no-build zone and have the wattles"
   },
   {
-   "motion": "Continue the hearing to 9/20/23",
+   "motion": "Continue the public hearing on the Robert J. Correa Notice of Intent to 9/20/23.",
    "moved_by": "Rich B.",
    "seconded_by": "Rich T.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: rich t. to continue hearing to 9/20/23. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "motion: rich b., second: rich t. to continue hearing to 9/20/23."
   },
   {
-   "motion": "Continue the hearing to 10/4/23",
+   "motion": "Continue the public hearing on the Larry Coffren and Marsha Beers Notice of Intent to 10/4/23.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to continue hearing to 10/4/23. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "motion: rich b., second: mike l. to continue hearing to 10/4/23."
   },
   {
-   "motion": "Issue a Certificate of Compliance to 40 Brookview Terrace",
+   "motion": "Issue a Certificate of Compliance to 40 Brookview Terrace.",
    "moved_by": "Chris S.",
    "seconded_by": "Jeff V.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: chris s., second: jeff v. to issue a certificate of compliance to 40 brookview terrace. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "motion: chris s., second: jeff v. to issue a certificate of compliance to 40 brookview terrace."
   },
   {
-   "motion": "Move for a continuance until they get a more definitive answer on the swale",
+   "motion": "Continue the Northfield Road, Lot A matter until a more definitive answer on the swale is obtained.",
    "moved_by": "Chris S.",
    "seconded_by": "Rich B.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: chris s., second: rich b. to move for a continuance until they get a more definitive answer on the swale. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "motion: chris s., second: rich b. to move for a continuance until they get a more definitive answer on the swale."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 91 Lancaster Avenue",
+   "motion": "Approve the Certificate of Compliance for 91 Lancaster Avenue.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to approve the certificate of compliance for 91 lancaster avenue. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "motion: rich b., second: chris s. to approve the certificate of compliance for 91 lancaster avenue."
   },
   {
-   "motion": "Adjourn at 8:50 p.m.",
+   "motion": "Adjourn the meeting at 8:50pm.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: rich b., second: mike l. to adjourn at 8:50pm. roll call vote was unanimous to approve. r",
-   "quote_taken_from_text": true
+   "quote": "motion: rich b., second: mike l. to adjourn at 8:50pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clearly readable. One vote was tabled rather than taken (mushroom signs), so it is not included.",
- "cost_usd": 0.0747931
+ "note": "Text is a clean extraction of pages 1-3; page 4 is blank. Roll call votes are recorded only as 'unanimous' with no per-member count, so outcomes are given as 'passed'. The mushroom-sign item was tabled with no recorded motion, so it is a decision, not a vote. No minutes were reviewed and no dollar figures appear in the text beyond the grant mention, which carries none. Several applicants (Lawlor, Correa, Coffren/Beers) were named as subjects but not as attending, so only Jack Maloney, James Tetreault and Justin LeClair are recorded as present. The 'Public Comment' entry is Jeff, a Commission member, speaking from the floor, and his stated role is not printed.",
+ "cost_usd": 0.01809937,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Rich Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Leah Grigorov",
+   "role": "Interim Admin.",
+   "status": "present",
+   "quote": "roll call: rich t., rich b., jeff v ., mike l., chris s., mary w., and leah grigorov (interim admin.)"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: bob p. call to order at 7pm"
+  },
+  {
+   "name": "Ashleigh Denio",
+   "role": "Conservation Assistant",
+   "status": "not stated",
+   "quote": "ashleigh will contact them."
+  },
+  {
+   "name": "Sue and Gary Ropiak",
+   "role": "appointment applicants",
+   "status": "absent",
+   "quote": "appointment- for sue and gary ropiak regarding tree removal within buffer zones - no one present"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "jack maloney (dillis & roy) screen-shared the site plan for the project"
+  },
+  {
+   "name": "James Tetreault",
+   "role": "Azimuth Land Design",
+   "status": "present",
+   "quote": "james tetreault (azimuth land design) screen-shared"
+  },
+  {
+   "name": "Justin LeClair",
+   "role": "McCarty Engineering",
+   "status": "present",
+   "quote": "justin leclair (mccarty engineering) confirmed the controls are now out."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission tabled the vote on the mushroom signs until members can view the verbiage on the signs.",
+   "quote": "the commission tabled a vote until they can view the verbiage on the signs."
+  },
+  {
+   "decision": "The Commission asked Leah to advise the 143 Island Road homeowners that they must file for a retroactive RDA.",
+   "quote": "the commission asked leah to advise the homeowners that they need to file for a retroactive rda."
+  },
+  {
+   "decision": "The Commission agreed to do more research on the swale and ditch at Northfield Road, Lot A.",
+   "quote": "the commission discussed the swale and ditch and agreed to do more research."
+  },
+  {
+   "decision": "The Commission requested that the Flat Hill Road plan note existing trees will remain, hydroseed with meadow or slope mix, add ground cover, and put in stones to demarcate the area.",
+   "quote": "the commission requested to note existing trees will remain, hydroseed with meadow or slope mix, add ground cover and put in stones"
+  },
+  {
+   "decision": "Leah asked Jack Maloney to provide side-to-side erosion control, and he agreed.",
+   "quote": "leah also asked jack to have side to side erosion control and jack agreed."
+  },
+  {
+   "decision": "73 Horizon Island Rd. administrative determination to be continued, as no one attended.",
+   "quote": "administrative determination: 73 horizon island rd. - no one in attendance and will be continued."
+  },
+  {
+   "decision": "Ashleigh will contact Sue and Gary Ropiak about the tree removal appointment.",
+   "quote": "ashleigh will contact them."
+  },
+  {
+   "decision": "The Commissioners will do a site walk with Leah at 238 Fire Road 16 on 9/9/23.",
+   "quote": "the commissioners will do a site walk with leah on 9/9/23."
+  },
+  {
+   "decision": "Leah will do another site visit at 91 Lancaster Avenue to confirm any effect on the tree canopy.",
+   "quote": "leah will do another site visit to confirm any effect on the tree canopy."
+  },
+  {
+   "decision": "Leah will do a site visit at 10 Mass Ave on 9/9.",
+   "quote": "leah will do a site visit on 9/9."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant application for trail projects",
+   "what_was_recorded": "The grant application was reported as approved for building the Kiosk and for gravel at Cowdrey; no dollar figures were printed.",
+   "quote": "the application has been approved for building the kiosk and for gravel at cowdrey.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Northfield Road Lot A boulders, from the 2022 minutes",
+   "speaker": "Jeff",
+   "stated_role": "not stated",
+   "quote": "public comment: jeff commented that the 8/17/22 minutes noted that the commission voted to have"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointment: Sue and Gary Ropiak, tree removal in buffer zones",
+   "resolution": "no action; no one present, Ashleigh to contact",
+   "tags": [
+    "tree removal",
+    "buffer zone",
+    "appointment"
+   ],
+   "quote": "appointment- for sue and gary ropiak regarding tree removal within buffer zones - no one present"
+  },
+  {
+   "topic": "New public hearing: Martin and Patricia Lawlor NOI, 86 Oak Ridge Road",
+   "resolution": "approved with waiver",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "retaining wall",
+    "wetlands"
+   ],
+   "quote": "a public hearing on a notice of intent by martin and patricia lawlor for the proposed installation of a septic tank"
+  },
+  {
+   "topic": "Continued public hearing: Robert J. Correa NOI, 932 Flat Hill Road",
+   "resolution": "continued to 9/20/23",
+   "tags": [
+    "notice of intent",
+    "garage",
+    "riparian zone",
+    "stormwater"
+   ],
+   "quote": "notice of intent by robert j. correa for the construction of a garage at 932 flat hill road"
+  },
+  {
+   "topic": "Continued public hearing: Larry Coffren and Marsha Beers NOI, 205 Sunset Lane",
+   "resolution": "continued to 10/4/23",
+   "tags": [
+    "notice of intent",
+    "deck"
+   ],
+   "quote": "notice of intent by larry coffren and marsha beers for the relocation of an existing deck at 205 sunset lane"
+  },
+  {
+   "topic": "Administrative determination: 73 Horizon Island Rd.",
+   "resolution": "continued; no one attended",
+   "tags": [
+    "administrative determination"
+   ],
+   "quote": "administrative determination: 73 horizon island rd. - no one in attendance and will be continued."
+  },
+  {
+   "topic": "Certificate of Compliance: 40 Brookview Terrace",
+   "resolution": "approved",
+   "tags": [
+    "certificate of compliance",
+    "erosion control"
+   ],
+   "quote": "40 brookview terrace - leah reported that she did a site visit and the erosion controls were in place."
+  },
+  {
+   "topic": "Northfield Road, Lot A (swale and ditch)",
+   "resolution": "continued pending research on the swale",
+   "tags": [
+    "swale",
+    "well",
+    "order of conditions"
+   ],
+   "quote": "northfield road, lot a - leah noted everything was in, stable and the erosion controls can come out."
+  },
+  {
+   "topic": "Certificate of Compliance: 91 Lancaster Avenue",
+   "resolution": "approved",
+   "tags": [
+    "certificate of compliance",
+    "tree canopy"
+   ],
+   "quote": "91 lancaster avenue - leah reported that she did a site visit and the site is stable, with grass growing."
+  },
+  {
+   "topic": "238 Fire Road 16 certificate",
+   "resolution": "deferred; site walk set for 9/9/23",
+   "tags": [
+    "certificate of compliance",
+    "staffing"
+   ],
+   "quote": "238 fire road 16 - mary stated this was deferred due to staff shortage."
+  },
+  {
+   "topic": "New business: topics raised 48 hours ahead",
+   "resolution": "no action; none",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "topics unknown 48 hours in advance of meeting- none"
+  },
+  {
+   "topic": "Timber Rights Fund update",
+   "resolution": "no action; no update",
+   "tags": [
+    "timber rights fund"
+   ],
+   "quote": "update on timber rights fund -none."
+  },
+  {
+   "topic": "Grant application proposals",
+   "resolution": "noted; no vote",
+   "tags": [
+    "grants",
+    "parking lot",
+    "trails",
+    "snowmobile"
+   ],
+   "quote": "grant application proposals - mary noted there are no updates for the parking lot project."
+  },
+  {
+   "topic": "Mushroom signs at trail heads and kiosks",
+   "resolution": "vote tabled pending review of sign wording",
+   "tags": [
+    "signage",
+    "trails",
+    "town counsel"
+   ],
+   "quote": "mushrooms signs - mary stated that bob talked to town counsel, who said if they want to put disclaimers they can."
+  },
+  {
+   "topic": "Encroachment: 950 Chase Road",
+   "resolution": "noted; litigation permission reported",
+   "tags": [
+    "encroachment",
+    "litigation"
+   ],
+   "quote": "950 chase road- mary noted that bob got permission to pursue litigation."
+  },
+  {
+   "topic": "Hollis Road residence: painting and trim, shooting report",
+   "resolution": "noted; police notified",
+   "tags": [
+    "property",
+    "vandalism"
+   ],
+   "quote": "update - painting, trim- mike reported that nick morrison began painting the trim work"
+  },
+  {
+   "topic": "Enforcement: 143 Island Road tree cutting and debris",
+   "resolution": "homeowners advised; retroactive RDA requested",
+   "tags": [
+    "enforcement",
+    "trees",
+    "RDA",
+    "debris"
+   ],
+   "quote": "143 island road - leah reported that she met with the homeowners and the photos are on the google drive."
+  },
+  {
+   "topic": "Enforcement: 10 Mass Ave slope clearing",
+   "resolution": "cease and desist issued; site visit 9/9",
+   "tags": [
+    "enforcement",
+    "cease and desist",
+    "slope",
+    "buffer zone"
+   ],
+   "quote": "10 mass ave- leah stated that the gis map does not show wetlands but they may be in the buffer zone."
+  },
+  {
+   "topic": "Public comment: Northfield Road Lot A boulders",
+   "resolution": "noted",
+   "tags": [
+    "public comment",
+    "boulders"
+   ],
+   "quote": "public comment: jeff commented that the 8/17/22 minutes noted that the commission voted to have"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50pm",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: rich b., second: mike l. to adjourn at 8:50pm."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "certificate of compliance",
+  "enforcement",
+  "erosion control",
+  "public hearing",
+  "grants",
+  "trails",
+  "zoom remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

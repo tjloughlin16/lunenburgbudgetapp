@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-07-18",
  "docid": "395",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To reappoint Barbara Reynolds as Montachusett Regional School Representative",
+   "motion": "Motion by T. Alonzo, seconded by L. Franco, on the Montachusett Regional School Representative reappointment of Barbara Reynolds. The motion text and result are not in the extract.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "not stated",
@@ -20,54 +20,404 @@
    "quote": "motion: t. alonzo 2\"d: l. franco"
   },
   {
-   "motion": "To ratify the appointment of Michelle Durkee as Veterans Service Agent",
+   "motion": "To ratify the appointment of Michelle Durkee as Veterans Service Agent.",
    "moved_by": "L. Franco",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2\"d. c. nuzzolo to ratify the appointment of michelle durkee as veterans service agent vote: all in favor"
+   "quote": "to ratify the appointment of michelle durkee as veterans service agent vote: all in favor"
   },
   {
-   "motion": "To approve the transfer of the wine and malt license to Mahant's Baker Variety, Inc., doing business as Baker's Whalom Variety, inclusive of the common victualler license and three automatic amusement device licenses",
+   "motion": "To approve the transfer of the wine and malt license to Mahant's Baker Variety, Inc. doing business as Baker's Whalom Variety at 423 Electric Avenue, inclusive of the common victualler license and three automatic amusement licenses.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: c. nuzzolo to approve the transfer of license of the wine and malt license to mahant's baker variety, inc. doing business as ",
-   "quote_taken_from_text": true
+   "quote": "to approve the transfer of license of the wine and malt license to mahant's baker variety, inc. doing business as baker's whalom variety located at 423 electric avenue"
   },
   {
-   "motion": "To appoint Michael Mackin to the Sewer Commission to fill the vacancy",
-   "outcome": "passed 3-0",
+   "motion": "Sewer Commission roll-call vote on the Sewer Commission vacancy (Michael/Mike Mackin). The motion text, mover and total are not printed in the extract; the three ayes shown are Ramsden, Mr. MacDonald and Mr. Reynolds.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "ramsden- aye. mr. macdonald-aye, mr. reynolds-aye"
   },
   {
-   "motion": "To ratify the Town Manager's appointment of Cole Keefer as Lifeguard",
+   "motion": "To ratify the Town Manager's appointment of Cole Keefer as Lifeguard.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to ratify the town manager's appointment of cole keefer as lifeguard 2'': c. nuzzolo vote: all in favor"
+   "quote": "to ratify the town manager's appointment of cole keefer as lifeguard"
   },
   {
-   "motion": "To authorize the Chair to sign the letter on behalf of the board",
+   "motion": "To authorize the Chair to sign the letter to the ABCC on behalf of the board confirming the withdrawal of the Jaxx Country Variety license transfer.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"'': c. nuzzolo to authorize the chair to sign the letter on behalf of the board vote: all in favor"
+   "quote": "to authorize the chair to sign the letter on behalf of the board vote: all in favor"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2\": l. franco vote: all in favor"
+   "quote": "to adjourn the meeting 2\": l. franco vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Vote 1 (Barbara Reynolds reappointment) has incomplete information due to page break—the motion text and vote outcome were not captured in OCR output.",
- "cost_usd": 0.15841349999999998
+ "note": "OCR text (macOS Vision) with several garbled passages; quotes are copied from the OCR as printed. Gaps: (1) the Montachusett Regional School reappointment shows a motion header (T. Alonzo / L. Franco) but no motion text or result in the extract, so it is recorded as outcome 'not stated'; (2) the Sewer Commission roll-call (Ramsden, Mr. MacDonald, Mr. Reynolds aye) has no motion text, mover, total or result and belongs to the Sewer Commission, not the Select Board; 'Mr. MacDonald' may or may not be Dave MacDonald; (3) 'All in Favor' is printed without a count for every Select Board vote. Name variants as printed: 'Mike Mackin' in the body vs 'Michael Mackin' in the heading; 'Cole Keeter' in the heading vs 'Cole Keefer' in the motion; 'Claire m. Peterson' OCR vs 'Elaine M. Peterson' signature. No dollar figures appear anywhere in the extract, so budget items record discussion only. No transfers. Public comment includes hearing testimony by Carol Baker and Matthew Straight. Ms. Lemieux's job title is not printed. Barbara Reynolds, Michelle Durkee, Cole Keefer and Stanley Barney were discussed but are not recorded as present.",
+ "cost_usd": 0.025920870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of"
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. alonzo thanked the town band and its conductor, steve archambault"
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "a common theme from three mr. franco, mr. nuzzolo and ms. emkey was staffing"
+  },
+  {
+   "name": "C. Nuzzolo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. nuzzolo read the public hearing notice aloud:"
+  },
+  {
+   "name": "Ms. Emkey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. emkey asked for confirmation that the applicant owned four other businesses in massachusetts."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux reported ms. reynolds is an excellent representative for the town."
+  },
+  {
+   "name": "Beau Akers",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "attorney beau akers of brainsky levinson, llc introduced himself as representing the applicant/proposed manager, ashishkumar patel."
+  },
+  {
+   "name": "Ashishkumar Patel",
+   "role": "applicant / proposed manager",
+   "status": "present",
+   "quote": "mr. patel stated no, he has never received any tickets for anything."
+  },
+  {
+   "name": "Carol Baker",
+   "role": "current owner of Baker's Whalom Variety",
+   "status": "present",
+   "quote": "carol baker, current owner of baker's whalom variety, stated she and her husband henry have owned it for 35 years."
+  },
+  {
+   "name": "Henry",
+   "role": "co-owner of Baker's Whalom Variety, husband of Carol Baker",
+   "status": "present",
+   "quote": "my husband henry is here; we both own the store and we just can't do it anymore."
+  },
+  {
+   "name": "Matthew Straight",
+   "role": "listing real estate agent, representing the Bakers",
+   "status": "present",
+   "quote": "matthew straight, 279 west street, stated he represented the bakers as the listing real estate agent."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "candidate for Sewer Commission vacancy (heading prints Michael Mackin)",
+   "status": "present",
+   "quote": "mike mackin, 26 cortland circle, stated we just passed our 20th anniversary as homeowners in lunenburg."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Sewer Commissioner Chair",
+   "status": "present",
+   "quote": "john reynolds, sewer commissioner chair, clarified some comments made at the last meeting."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "155 Island Road, public comment",
+   "status": "remote",
+   "quote": "dave macdonald, 155 island road, via zoom, thanked mike mackin, who was up for appointment to the sewer commission this evening."
+  },
+  {
+   "name": "Ramsden",
+   "role": "Sewer Commission (roll-call vote)",
+   "status": "not stated",
+   "quote": "ramsden- aye. mr. macdonald-aye, mr. reynolds-aye"
+  },
+  {
+   "name": "Mr. MacDonald",
+   "role": "Sewer Commission (roll-call vote); may or may not be Dave MacDonald",
+   "status": "not stated",
+   "quote": "ramsden- aye. mr. macdonald-aye, mr. reynolds-aye"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes author)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair said the applicant is expected to return to the board to change the manager of record or add another manager, given the distance from Seekonk to Lunenburg. Stated as an expectation; no vote.",
+   "quote": "to be fully compliant with our policies i would expect that you will come back before us and submit a change of manager or add another manager in"
+  },
+  {
+   "decision": "Consensus that the FY24 goals should include a goal related to buildings by next spring.",
+   "quote": "after further discussion, mr. jeffreys asked, are we in agreement about a goal related to buildings by next spring? there was consensus on that."
+  },
+  {
+   "decision": "The Chair said the board would continue working on the means-tested senior citizen tax exemption goal.",
+   "quote": "mr. jeffreys stated he would like the select board to continue working on this goal."
+  },
+  {
+   "decision": "The Chair said he would report on the tax assessment investigation on August 15, after speaking with Mr. Alonzo.",
+   "quote": "mr. jeffreys stated he would be reporting on august 15"
+  },
+  {
+   "decision": "The board did not vote on the Chair's signature of the ABCC letter by separate action beyond the motion; no separate decision recorded here.",
+   "quote": "mr. jeffreys would be signing the letter for the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall (Bilotta Meeting Room) roof replacement, done in phases",
+   "what_was_recorded": "The roof replacement is being done in phases because the initial bid for the comprehensive project exceeded the appropriation; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we are doing that in phases because the initial bid we received for the comprehensive project exceeded the appropriation."
+  },
+  {
+   "topic": "TC Passios roof leaks and capital plan",
+   "what_was_recorded": "About 23 leaks have been identified in the TC Passios roof, which was part of a capital plan; the matter is to go to the Municipal Building Design Committee. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "that project obviously was part of a capital plan to replace this roof so that's going to become a higher priority."
+  },
+  {
+   "topic": "Means-tested senior tax exemption financial models",
+   "what_was_recorded": "Goal to create financial models showing what an exemption or abatement would be to eligible seniors and the impact on other taxpayers; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "work with town manager and finance director to create financial models and illustrations to allow the select board to weigh options"
+  },
+  {
+   "topic": "Solar panels at the old dump for town income",
+   "what_was_recorded": "Goal suggestion to work with the Green Communities Committee on solar panels at the old dump to generate income for the Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "another goal suggestion was to work with the green communities committee on installing solar panels placed at the old dump to generate income for the town."
+  },
+  {
+   "topic": "Municipal electrical power plant and electricity costs",
+   "what_was_recorded": "A board member noted the town pays more than double the national average in electricity costs and proposed exploring a municipal power plant; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we pay more than double the national average in electricity costs"
+  },
+  {
+   "topic": "30 School Street funding sources",
+   "what_was_recorded": "Goal action to communicate funding sources for the 30 School Street project, distinct from the Marshall Park project; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "communicate funding sources, distinct from marshall park project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Town band summer concert",
+   "quote": "mr. alonzo thanked the town band and its conductor, steve archambault, which held its first summer concert last night."
+  },
+  {
+   "speaker": "John Reynolds",
+   "stated_role": "Sewer Commissioner Chair",
+   "topic": "Clarification of Sewer Commission request",
+   "quote": "john reynolds, sewer commissioner chair, clarified some comments made at the last meeting."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road, via ZOOM",
+   "topic": "Thanks to Mike Mackin; encouraging volunteering",
+   "quote": "dave macdonald, 155 island road, via zoom, thanked mike mackin, who was up for appointment to the sewer commission this evening."
+  },
+  {
+   "speaker": "Carol Baker",
+   "stated_role": "current owner of Baker's Whalom Variety",
+   "topic": "Public hearing on license transfer, testimony",
+   "quote": "carol baker, current owner of baker's whalom variety, stated she and her husband henry have owned it for 35 years."
+  },
+  {
+   "speaker": "Matthew Straight",
+   "stated_role": "listing real estate agent",
+   "topic": "Public hearing on license transfer, testimony",
+   "quote": "matthew straight, 279 west street, stated he represented the bakers as the listing real estate agent."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting notice",
+   "resolution": "noted (recording and broadcast notice, ZOOM link)",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "mr. alonzo thanked the town band and its conductor, steve archambault, which held its first summer concert",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "the farmers market is every sunday from 10 am until 1 pm until mid-october on the ritter lawn.",
+   "tags": [
+    "beach",
+    "farmers market",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Montachusett Regional School Representative reappointment (Barbara Reynolds)",
+   "resolution": "motion made; result not stated in extract",
+   "quote": "montachusett regional school representative reappointment- barbara reynolds, 952 flat",
+   "tags": [
+    "appointments",
+    "regional school"
+   ]
+  },
+  {
+   "topic": "Ratify Veterans Service Agent appointment (Michelle Durkee)",
+   "resolution": "ratified",
+   "quote": "to ratify the appointment of michelle durkee as veterans service agent",
+   "tags": [
+    "appointments",
+    "veterans services"
+   ]
+  },
+  {
+   "topic": "Public hearing: wine and malt license transfer, Baker's Whalom Variety",
+   "resolution": "transfer approved; hearing closed 7:39 p.m.",
+   "quote": "public hearing for transfer of a wine & malt license to mahant baker's variety inc., d/b/a bakers",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Joint Sewer Commission and Select Board interview of Michael Mackin, Sewer Commission vacancy",
+   "resolution": "interviewed; Sewer Commission roll call recorded; Sewer Commission adjourned 7:54 p.m.",
+   "quote": "joint meeting of sewer commission & select board to interview michael mackin to fill the sewer commission",
+   "tags": [
+    "sewer commission",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Ratify seasonal lifeguard appointment (Cole Keefer)",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of seasonal lifeguard, cole keeter",
+   "tags": [
+    "appointments",
+    "lifeguard",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, job openings, Home Rule Petition, facilities, IT",
+   "resolution": "reported; no action recorded",
+   "quote": "home rule petition for means tested senior citizen tax exemption (house bill 3911)",
+   "tags": [
+    "town manager report",
+    "vacancies",
+    "facilities",
+    "IT",
+    "senior tax exemption"
+   ]
+  },
+  {
+   "topic": "Sign letter to ABCC revoking Jaxx Country Variety transfer",
+   "resolution": "chair authorized to sign letter",
+   "quote": "sign letter to abcc revoking jaxx country variety transfer to priha, inc.",
+   "tags": [
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "FY24 Select Board goals discussion",
+   "resolution": "discussed; consensus on a buildings goal; senior exemption goal continued",
+   "quote": "discussion on fy24 select board goals",
+   "tags": [
+    "board goals",
+    "30 School Street",
+    "senior tax exemption",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Action items: tax assessment investigation update",
+   "resolution": "Chair to report August 15",
+   "quote": "ms. emkey requested an update on the tax assessment investigation.",
+   "tags": [
+    "tax assessment"
+   ]
+  },
+  {
+   "topic": "Committee reports and further public comment",
+   "resolution": "none",
+   "quote": "there were no committee reports or further public comment this evening.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:23 p.m.",
+   "quote": "the meeting adjourned at 9:23 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "public hearing",
+  "appointments",
+  "veterans services",
+  "sewer commission",
+  "lifeguard",
+  "town manager report",
+  "facilities",
+  "IT",
+  "senior tax exemption",
+  "board goals",
+  "electricity costs",
+  "solar",
+  "town band",
+  "30 School Street",
+  "tax assessment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

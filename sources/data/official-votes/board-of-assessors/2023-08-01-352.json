@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-08-01",
  "docid": "352",
@@ -12,15 +12,169 @@
  },
  "votes": [
   {
-   "motion": "to adjourn and enter into executive session and not return to the open meeting",
+   "motion": "Adjourn and enter into executive session and not return to the open meeting.",
    "moved_by": "Kevin Fish",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion to adjourn and enter into executive session and not return to the open meeting by kevin fish, seconded by john rabbitt. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes from macOS Vision. Nominations for board positions (Vice Chairman, Clerk) are mentioned but no votes on them are recorded; expense vouchers were signed but no formal vote motion is documented. One procedural vote recorded: adjournment and executive session entry.",
- "cost_usd": 0.0691615
+ "note": "Text is macOS Vision OCR. Page 1 ends mid-sentence in the Meeting Protocol item and page 2 begins mid-sentence (\"as placeholders but meetings can be canceled...\"), so the protocol item is incomplete in the text provided. The only recorded motion is the adjournment vote (\"All in favor\", no count). Nominations (Kevin Fish for Vice Chair, declined; Rabbitt for Clerk and Vice Chair) have no recorded vote or result. The minutes spell \"Kevn Fish\" for the Clerk nomination; \"Kevin Fish\" is used here. Dollar figures are limited to the 129 to 155 dollars per-square-foot figure. The minutes do not state who was absent or whether there was a quorum beyond the listed members.",
+ "cost_usd": 0.01375941,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "member of the public (address printed as 155 Island Road)",
+   "status": "present",
+   "quote": "dave mcdonald - 155 island road - inquires as to why the evaluation of the house went up and"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board told the taxpayer at 155 Island Road he should receive an answer by the end of the week regarding his abatement decision.",
+   "quote": "the board states he should receive an answer by the end of the week regarding the abatement decision."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Townwide property valuation increase (conventional properties per square foot)",
+   "what_was_recorded": "Minutes record the price per square foot for conventional properties rising from 129 to 155 dollars, and the Board attributing the townwide increase to construction cost per square foot.",
+   "figures_as_printed": [
+    "129 to 155 dollars"
+   ],
+   "quote": "all conventional properties' prices per square foot went from 129 to 155 dollars."
+  },
+  {
+   "topic": "Estimated tax calculation",
+   "what_was_recorded": "A resident asked how estimated taxes are calculated; the minutes record that they are based on the previous year's tax rate and previous year's value.",
+   "figures_as_printed": [],
+   "quote": "rena swezey states that they are based on the previous year's tax rate and the previous year's"
+  },
+  {
+   "topic": "Expense vouchers, motor vehicle abatements and payroll",
+   "what_was_recorded": "The board reviewed and approved expense vouchers, motor vehicle abatements and July payroll; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "review and approval of expense vouchers, motor vehicle abatements, and payroll from july."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Property valuation increase and abatement",
+   "speaker": "Dave McDonald",
+   "stated_role": "address printed as 155 Island Road",
+   "quote": "dave mcdonald - 155 island road - inquires as to why the evaluation of the house went up and whether it was town-wide or based on the type of property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Board Member Comment: officer nominations",
+   "resolution": "no vote recorded",
+   "quote": "john rabbitt nominated kevin fish for vice chairman, but kevin fish declined.",
+   "tags": [
+    "board officers",
+    "nominations"
+   ]
+  },
+  {
+   "topic": "Board Member Comment: staffing and meeting frequency",
+   "resolution": "discussed; no action recorded",
+   "quote": "john rabbitt also recommends getting more help or resources to fix the mess.",
+   "tags": [
+    "office staffing",
+    "meeting frequency"
+   ]
+  },
+  {
+   "topic": "Public Comment: Dave McDonald property evaluation",
+   "resolution": "answer promised by end of week",
+   "quote": "dave mcdonald - 155 island road - inquires as to why the evaluation of the house went up and",
+   "tags": [
+    "property valuation",
+    "abatements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting Protocol",
+   "resolution": "discussed; no action recorded",
+   "quote": "john rabbitt suggests an update to the meeting protocol.",
+   "tags": [
+    "meeting protocol"
+   ]
+  },
+  {
+   "topic": "Review of expense vouchers, abatements and payroll",
+   "resolution": "approved",
+   "quote": "review and approval of expense vouchers, motor vehicle abatements, and payroll from july.",
+   "tags": [
+    "expense vouchers",
+    "abatements",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Discuss Office Functions",
+   "resolution": "no action; status reported",
+   "quote": "rena swezey confirms that everything is proceeding as normal.",
+   "tags": [
+    "office operations",
+    "sales verification",
+    "property cards"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned to executive session",
+   "quote": "the meeting adjourned at 3:15 pm.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "assessors",
+  "property valuation",
+  "abatements",
+  "meeting protocol",
+  "board officers",
+  "public comment",
+  "office staffing",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

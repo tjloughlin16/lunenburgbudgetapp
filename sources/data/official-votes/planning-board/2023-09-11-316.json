@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-09-11",
  "docid": "316",
@@ -12,47 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Accept modification to Site Plan Waiver at 5 Summer Street to utilize Unit 10 instead of Unit 1",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
+   "motion": "Accept the modification to the Site Plan Waiver for the 5 Summer Street request (Unit 10 in place of Unit 1).",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
    "quote": "m. allison made motion to accept modification to site plan waiver. seconded by a. reid. all, aye."
   },
   {
-   "motion": "Prepare a warrant article for the proposed changes to the Solar Bylaw, including the addition of regulations for solar canopies",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
+   "motion": "Prepare a warrant article for the proposed changes to the Solar Bylaw, including regulations for solar canopies.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "t. willsmer made motion to prepare a warrant article for the proposed changes to the solar bylaw, includ ing the addition of regulations for solar canopies. seconded by a. reid, all aye."
+   "quote": "t. willsmer made motion to prepare a warrant article for the proposed changes to the solar bylaw"
   },
   {
-   "motion": "Approve Bylaws to submit warrant for Town Meeting",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the bylaws to submit to the warrant for Town Meeting (Aquifer Protection Bylaw discussed).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "t. willsmer made motion to approve bylaws to submit warrant for town meeting. seconded, by a. reid. all, aye."
+   "quote": "t. willsmer made motion to approve bylaws to submit warrant for town meeting."
   },
   {
-   "motion": "Approve Minutes for August 28, 2023 and 1263 Reservoir Road",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the minutes of August 28, 2023 and 1263 Reservoir Road.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": true,
    "quote": "t. willsmer made motion to approve minutes for august 28, 2023 and 1263 reservoir road. seconded by a. reid. all, aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Amanda Reid",
-   "seconded_by": "Matthew Allison",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
    "quote": "amanda reid made motion to adjourn, seconded by m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clear and readable. All five votes are recorded with explicit motions, seconders, and outcomes (all unanimous).",
- "cost_usd": 0.0801221
+ "note": "Clean text extraction of a typed minutes document; no scan. Vote results are recorded only as \"All, aye\" or \"all aye\" with no numeric count, so outcomes are recorded as \"passed\". The Section 250-6.4 driveway item records a consensus but no motion. No public comment section is printed. Some quotes collapse double spaces and line breaks to single spaces, and the Solar Bylaw motion contains an extraction artifact (\"includ ing\"), so that quote is truncated before it.",
+ "cost_usd": 0.01433357,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board decided to continue giving wet signatures rather than using DocuSign for decisions.",
+   "quote": "discussed utilizing docusign for decisions. board decided to continue to give wet signatures."
+  },
+  {
+   "decision": "The consensus on Section 250-6.4 (Driveways & Entrances) was to maintain a maximum of four lots for residential common driveways.",
+   "quote": "the consensus was to maintain a maximum of four for residential lots to limit the intensity of development while allowing for some flexibility."
+  },
+  {
+   "decision": "Common driveway regulations would not be applied retroactively to existing properties and would affect only new developments.",
+   "quote": "it was confirmed that these regulations wouldn't be retroactively applied to existing properties but would only affect new developments."
+  },
+  {
+   "decision": "The board will consider revising the Solar Bylaw to base regulations on square footage rather than kilowatts.",
+   "quote": "board will consider revising the solar bylaw to base regulations on square footage rather than kilowatts"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal building design funding (ARPA)",
+   "what_was_recorded": "The Lunenburg Municipal Building Design Committee reported on a previously approved amount for municipal building design from ARPA funds, with a mention of volunteer CAD services and AutoCAD purchase.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "discussion revolved around the approved $225,000 for municipal building design from arpa funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request for modification to Site Plan Waiver, 5 Summer Street",
+   "resolution": "approved (modification accepted)",
+   "quote": "m. allison made motion to accept modification to site plan waiver. seconded by a. reid. all, aye.",
+   "tags": [
+    "site plan",
+    "waiver",
+    "restaurant",
+    "5 Summer Street"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "no action; discussed upcoming meeting",
+   "quote": "discussed the upcoming meeting scheduled for monday september 18, 2023 at 6:00 pm.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw",
+   "resolution": "approved: warrant article to be prepared",
+   "quote": "t. willsmer made motion to prepare a warrant article for the proposed changes to the solar bylaw",
+   "tags": [
+    "solar",
+    "bylaw",
+    "warrant article",
+    "solar canopies"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4 Driveways & Entrances (common driveways)",
+   "resolution": "discussed; consensus to keep maximum of four residential lots; no motion recorded",
+   "quote": "the consensus was to maintain a maximum of four for residential lots to limit the intensity of development while allowing for some flexibility.",
+   "tags": [
+    "zoning",
+    "driveways",
+    "common driveway",
+    "residential"
+   ]
+  },
+  {
+   "topic": "Aquifer Protection Bylaw",
+   "resolution": "approved bylaws to submit to Town Meeting warrant",
+   "quote": "t. willsmer made motion to approve bylaws to submit warrant for town meeting.",
+   "tags": [
+    "aquifer protection",
+    "bylaw",
+    "Town Meeting",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Minutes approval, August 28, 2023 and 1263 Reservoir Road",
+   "resolution": "approved",
+   "quote": "t. willsmer made motion to approve minutes for august 28, 2023 and 1263 reservoir road. seconded by a. reid. all, aye.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received, including ARPA-funded municipal building design, Capital Planning, Economic Development, MRPC",
+   "quote": "lunenburg municipal building design committee: discussion revolved around the approved $225,000 for municipal building design from arpa funds.",
+   "tags": [
+    "committees",
+    "ARPA",
+    "capital planning",
+    "economic development",
+    "recycling"
+   ]
+  },
+  {
+   "topic": "Director's item: DocuSign for decisions",
+   "resolution": "board decided to continue wet signatures",
+   "quote": "discussed utilizing docusign for decisions. board decided to continue to give wet signatures.",
+   "tags": [
+    "administration",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; next meetings September 28, 2023 and October 23, 2023",
+   "quote": "september 28, 2023; october 23, 2023",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comments: stormwater and Scenic Road violations",
+   "resolution": "no action; to be addressed at a future meeting",
+   "quote": "scenic road violations were acknowledged, and an application for mitigation was mentioned, which will be addressed in a future meeting.",
+   "tags": [
+    "stormwater",
+    "scenic road",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:57 p.m.",
+   "quote": "amanda reid made motion to adjourn, seconded by m. allison, all aye.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "solar bylaw",
+  "common driveways",
+  "aquifer protection",
+  "site plan waiver",
+  "Town Meeting warrant",
+  "master plan",
+  "ARPA",
+  "minutes approval",
+  "stormwater",
+  "scenic road"
+ ],
+ "dropped_unquoted_by_field": {}
 }

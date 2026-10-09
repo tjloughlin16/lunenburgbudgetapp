@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-09-12",
  "docid": "317",
@@ -12,15 +12,172 @@
  },
  "votes": [
   {
-   "motion": "approve the August 2023 COA minutes",
+   "motion": "Approve the August 2023 COA minutes.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln's motion was made & seconded to approve the august 2023 coa minutes. all approved and motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with significant corruption. Attendee list at top unreadable; adjournment section at bottom is cut off and corrupted—\"Being no further busine[ss] / motion carried / Meeting adjourned at 1[time]\"—which appears to record an adjournment but lacks detail. Only the minutes-approval vote is clear enough to record verbatim.",
- "cost_usd": 0.0734905
+ "note": "Text is a single OCR'd page (macOS Vision) with many lines truncated or garbled, e.g. 'Preserve inclin chain san san one lies', 'EAGLE HOUSE SUPPOR', 'Being no further busine', 'Next Meeting: Tuesda', 'If the COA board is una'. The adjournment motion is unreadable, so no adjournment vote is recorded, and the adjournment quote given is only a fragment. The minutes call the chair 'Mr. Lincoln' in the approval motion while naming Deb Lincoln as Chairperson; the vote is recorded under the printed name. The approval motion prints no seconder. Pete Lincoln is named only as a nominee and is not recorded as attending. Michele Beauvais's attendance is not stated. Public comment and budget figures are not recorded; the document prints no dollar amounts. Items 3, 5-6 and 8-9 of the director's report and the Eagle House and upcoming meeting items are cut off, so their content is not recorded.",
+ "cost_usd": 0.01596437,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln called the meeting to order at 9:37 am."
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "",
+   "status": "absent",
+   "quote": "excused cathy beale, helen balcom, george martin & jane rabbitt."
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "",
+   "status": "absent",
+   "quote": "excused cathy beale, helen balcom, george martin & jane rabbitt."
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "absent",
+   "quote": "excused cathy beale, helen balcom, george martin & jane rabbitt."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "absent",
+   "quote": "excused cathy beale, helen balcom, george martin & jane rabbitt."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Lunenburg Selectperson",
+   "status": "present",
+   "quote": "guests lunenburg selectperson, lou franco & i.t. representative dan nadareski."
+  },
+  {
+   "name": "Dan Nadareski",
+   "role": "I.T. representative",
+   "status": "present",
+   "quote": "guests lunenburg selectperson, lou franco & i.t. representative dan nadareski."
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "COA Administrative Assistant (new)",
+   "status": "not stated",
+   "quote": "michele beauvais was introduced as new coa administrative assistant."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (August 2023)",
+   "resolution": "approved",
+   "quote": "mr. lincoln's motion was made & seconded to approve the august 2023 coa minutes. all approved and motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New administrative assistant introduced",
+   "resolution": "introduced",
+   "quote": "michele beauvais was introduced as new coa administrative assistant.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Board members town email and Outlook setup",
+   "resolution": "no action; IT assistance given",
+   "quote": "mr. nadareski assisted members with downloading outlook onto their phones.",
+   "tags": [
+    "town email",
+    "IT"
+   ]
+  },
+  {
+   "topic": "100 Club recognition",
+   "resolution": "discussed; possible certificate",
+   "quote": "she declined an invitation to be recognized publically. discussion was made to possibly send her a certificate.",
+   "tags": [
+    "100 Club",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Pavilion ribbon cutting ceremony",
+   "resolution": "update; ceremony still October 11",
+   "quote": "the ceremony is still slated for october 11.",
+   "tags": [
+    "pavilion",
+    "ceremony"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300th celebration",
+   "resolution": "update; bonfire location concerns",
+   "quote": "a potential bonfire has been planned. however, there are concerns over location.",
+   "tags": [
+    "300th celebration",
+    "events"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan",
+   "resolution": "no update",
+   "quote": "discussion: lunenburg master plan- no update.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Lunenburg Senior Tax Relief",
+   "resolution": "no update",
+   "quote": "discussion: lunenburg senior tax relief - no update.",
+   "tags": [
+    "senior tax relief"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan and events",
+   "resolution": "update; capital plan still with Facility Manager",
+   "quote": "capital plan: still in facility managers hands.",
+   "tags": [
+    "capital plan",
+    "director report",
+    "events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned; motion text unreadable in scan",
+   "quote": "meeting adjourned at 1",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "minutes",
+  "pavilion",
+  "ribbon cutting",
+  "Lunenburg 300th",
+  "senior tax relief",
+  "master plan",
+  "town email",
+  "staffing",
+  "events"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-08-14",
  "docid": "360",
@@ -12,62 +12,233 @@
  },
  "votes": [
   {
-   "motion": "approve De Minimis Change for 88 Massachusetts Avenue",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "Approve the De Minimis Change for 88 Massachusetts Avenue.",
+   "moved_by": "A. Reid",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed",
    "procedural": false,
    "quote": "a. reid made motion to approve de minimis change for 88 massachusetts avenue. seconded by t. willsmer. all, aye."
   },
   {
-   "motion": "approve the minutes from July 24, 2023",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Timothy Willsmer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a reid made motion to approve the aforementioned minutes. seconded by t. willsmer. all, aye. passed unanimously."
-  },
-  {
-   "motion": "agree on all standard and special conditions of decision for site plan approval for 525 Chase Road",
-   "moved_by": "Matthew Allison",
+   "motion": "Agree on all Standard and Special conditions of the Decision for Site Plan Approval for 525 Chase Road.",
+   "moved_by": "M. Allison",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
    "quote": "m. allison made motion to agree on all standard and special conditions of decision for site plan approval for 525 chase road."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "Approve the minutes of 7/24/23 (525 Chase Road).",
+   "moved_by": "A Reid",
+   "seconded_by": "T. Willsmer",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "a reid made motion to approve the aforementioned minutes. seconded by t. willsmer. all, aye."
+  },
+  {
+   "motion": "Adjourn the August 14, 2023 meeting.",
+   "moved_by": "A.Reid",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed",
    "procedural": true,
    "quote": "a.reid made motion to adjourn, seconded by t. willsmer. all, aye."
   },
   {
-   "motion": "accept waivers as requested for 1263 Reservoir Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
+   "motion": "Accept the waivers as requested for 1263 Reservoir Road.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
    "quote": "m. allison made motion to accept waivers as requested. seconded by a. reid. all, aye."
   },
   {
-   "motion": "close public hearing for 1263 Reservoir Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
+   "motion": "Close the public hearing on 1263 Reservoir Road.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": true,
    "quote": "m. allison made motion to close public hearing. seconded by a. reid. all, aye."
   },
   {
-   "motion": "approve site plan for 1263 Reservoir Road with standard conditions and industrial construction hours of Monday-Friday 7:00am-5:00pm, Saturday 8:00am-3:00pm",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the Site Plan for 1263 Reservoir Road with Standard Conditions and industrial construction hours of Monday-Friday 7:00am-5:00pm, Saturday 8:00am-3:00pm.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "t. willsmer made motion to approve site plan with standard conditions and industrial construction hours of monday - friday 7:00am - 5:00pm, saturday 8:00am - 3:00pm. seconded by a. reid. all aye."
+   "quote": "t. willsmer made motion to approve site plan with standard conditions and industrial construction hours of monday -"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text (macOS Vision extraction) containing two separate Planning Board meetings: August 14, 2023 and August 28, 2023. Text quality is good; all votes clearly readable.",
- "cost_usd": 0.09636710000000001
+ "note": "OCR text (macOS Vision) with garbling: page 1 header reads 'NCORPOR'; 'Open Spacee'; page 3 waiver paragraph is partly garbled ('va is required, a in naci, packing pai, petands'), so the waiver list is incomplete. Page 2 begins mid-sentence ('communities in order to achieve quorum.'). The file holds two meetings: 14 Aug 2023 (pages 1-2) and a 28 Aug 2023 public hearing (page 3); the 28 Aug part is not headed as a separate meeting beyond its own header. The minutes state 'Minutes are not in order of events.' Votes: 'All, aye' with no vote count printed. Conflicts: the 88 Massachusetts Avenue item says discussion was tabled to 28 Aug, then records an approval motion the same night; A. Burney is listed absent on 14 Aug yet 'supplied a memorandum' that night. The 525 Chase Road motion has no second and no recorded result. Annie M. Aubrey appears only in the letterhead, not as a participant, so she is not listed. No public comment section is recorded. No dollar figures are printed; the only money reference is 'no fiscal impact for the Town'. Attendees are listed once per person: Brenner and Burney are recorded as present (28 Aug) with their 14 Aug absence noted here.",
+ "cost_usd": 0.01626401,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: matthew brenner, adam burney, erik torgersen"
+  },
+  {
+   "name": "Anastasia Halkiadakis (Staci)",
+   "role": "Applicant, 88 Massachusetts Avenue",
+   "status": "present",
+   "quote": "anastasia halkiadakis (staci) is the applicant for 88 massachusetts avenue and submitted request for de minimis"
+  },
+  {
+   "name": "Mark Pillsbury",
+   "role": "represented Applicant (P.J. Keating)",
+   "status": "present",
+   "quote": "mark pillsbury of p.j. keating represented applicant requesting site plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the 88 Massachusetts Avenue De Minimis Change request tabled to August 28, 2023 (the same minutes later record an approval motion; see note).",
+   "quote": "m. allison, a. reid and t. willsmer had questions on de minimis change request and made decision to table"
+  },
+  {
+   "decision": "Board members asked to sign the 525 Chase Road Site Plan decision at the Planning office so all signatures are obtained.",
+   "quote": "requested members of the board to sign decision at planning office in order to obtain all signatures."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "1263 Reservoir Road site plan - fiscal impact",
+   "what_was_recorded": "The applicant's waiver request states there is no fiscal impact for the Town; no dollar figure is printed.",
+   "quote": "and no impact on traffic, parking, signage, drainage, environment or stormwater and no fiscal impact for the town.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request for De Minimis Change - 88 Massachusetts Avenue",
+   "resolution": "approved (motion recorded); header line also says discussion tabled to August 28, 2023",
+   "quote": "m. allison, a. reid and t. willsmer had questions on de minimis change request and made decision to table",
+   "tags": [
+    "de minimis change",
+    "zoning",
+    "liquor store",
+    "retail use"
+   ]
+  },
+  {
+   "topic": "Decisions - 525 Chase Road",
+   "resolution": "motion to agree on conditions recorded with no result; signatures to be gathered at Planning office",
+   "quote": "m. allison made motion to agree on all standard and special conditions of decision for site plan approval for 525 chase road.",
+   "tags": [
+    "site plan approval",
+    "decision signing"
+   ]
+  },
+  {
+   "topic": "Board discussions (Master Plan, Solar Bylaw, Driveways, Aquifer Protection)",
+   "resolution": "no discussion",
+   "quote": "d. aquifer protection bylaw - no discussion",
+   "tags": [
+    "master plan",
+    "solar bylaw",
+    "driveways",
+    "aquifer protection"
+   ]
+  },
+  {
+   "topic": "Minutes approval - 7/24/23 (525 Chase Road)",
+   "resolution": "approved unanimously",
+   "quote": "a reid made motion to approve the aforementioned minutes. seconded by t. willsmer. all, aye.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no report",
+   "quote": "open spacee ad hoc committee - no report.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; no action",
+   "quote": "6:00 p.m., all board meetings are held at town hall unless otherwise indicated",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment - Pledge of Allegiance",
+   "resolution": "noted by M. Allison; no vote",
+   "quote": "m. allison noted chair m. brenner wishes to exclude the pledge of allegiance at the beginning of planning board",
+   "tags": [
+    "board comment",
+    "pledge of allegiance"
+   ]
+  },
+  {
+   "topic": "Adjournment (August 14, 2023)",
+   "resolution": "adjourned at 6:40 p.m.",
+   "quote": "a.reid made motion to adjourn, seconded by t. willsmer. all, aye.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Public hearing - 1263 Reservoir Road site plan (August 28, 2023)",
+   "resolution": "waivers accepted, hearing closed, site plan approved with standard conditions and construction hours",
+   "quote": "t. willsmer made motion to approve site plan with standard conditions and industrial construction hours of monday -",
+   "tags": [
+    "site plan approval",
+    "public hearing",
+    "waivers",
+    "asphalt plant",
+    "construction hours"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "de minimis change",
+  "site plan approval",
+  "public hearing",
+  "zoning use table",
+  "liquor store",
+  "minutes approval",
+  "meeting schedule",
+  "two meetings in one file"
+ ],
+ "dropped_unquoted_by_field": {}
 }

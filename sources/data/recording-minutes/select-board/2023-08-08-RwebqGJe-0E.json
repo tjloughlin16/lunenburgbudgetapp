@@ -1,0 +1,340 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-08-08",
+ "video_id": "RwebqGJe-0E",
+ "video_url": "https://www.youtube.com/watch?v=RwebqGJe-0E",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-08-08-RwebqGJe-0E.json",
+  "sha256": "8e37189c17c53c5ed78dc9361d3ddd81001948cb2f44342313bfe3c7168f5a24",
+  "caption_lines": 86,
+  "segments": 734
+ },
+ "recording": {
+  "duration_s": 1792,
+  "duration": "0:29",
+  "spoken_chars": 23835,
+  "words_approx": 3972
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08082023-446",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-08-agenda-446.txt",
+   "path": "sources/meetings/select-board/2023-08-08-agenda-446.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08082023-446",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-08-minutes-446.txt",
+   "path": "sources/meetings/select-board/2023-08-08-minutes-446.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T11:45:56Z",
+  "cost_usd": 0.2578146
+ },
+ "minutes": {
+  "headline": "Two assessors resigned, leaving no quorum; Select Board and town manager appealed for volunteers to fill the vacancies.",
+  "summary": "The Select Board met with the vice chair presiding. Most of the meeting was the town manager's statement on the resignations of two Board of Assessors members and the board's call for volunteers, including former assessors, to fill the seats. Routine warrants and upcoming meetings were noted, and the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Lou Franco",
+    "role": "vice chair (presiding)"
+   },
+   {
+    "name_as_heard": "Mr Jeffries",
+    "role": "chair (absent)"
+   },
+   {
+    "name_as_heard": "Ms emptke",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Elaine Peterson",
+    "role": "executive assistant to the town manager (named, not clearly present)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 81,
+    "topic": "Announcement that the final town band concert of the series is August 14 at the town hall pavilion at seven o'clock."
+   },
+   {
+    "t": 103,
+    "topic": "Announcement of a pancake breakfast at the Eagle house the next morning, 8 to 10 a.m."
+   },
+   {
+    "t": 1621,
+    "speaker_as_heard": "John rabbits 314 townsendale Road",
+    "topic": "Said assessors' meeting time may shift to another day to allow participation; said he is nearly finished with the training modules and offered to coach new members."
+   },
+   {
+    "t": 1721,
+    "topic": "A speaker offered to talk with anyone interested in the assessor position, citing recent experience, and gave contact by phone or email."
+   },
+   {
+    "t": 1742,
+    "topic": "A speaker with 11 years on the board of assessors offered to field questions by town email."
+   }
+  ],
+  "tags": [
+   "legal",
+   "personnel",
+   "public-comment",
+   "tax-rate",
+   "town-departments",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1764,
+    "motion": "Adjourn the meeting",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1510,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "A warrant for accounts payable was read into the record; no vote on it is audible.",
+    "figures_as_heard": [
+     "509 823 dollars and twenty seven cents"
+    ]
+   },
+   {
+    "t": 1530,
+    "topic": "Payroll warrant",
+    "what_was_said": "A payroll warrant amount was read; the captions are unclear on which warrant it belongs to.",
+    "figures_as_heard": [
+     "four thousand forty six dollars and four cents"
+    ]
+   },
+   {
+    "t": 1552,
+    "topic": "Payroll warrant",
+    "what_was_said": "A second payroll warrant amount was read.",
+    "figures_as_heard": [
+     "237 226.46"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 775,
+    "decision": "Meeting time of the board of assessors was said to be up to that committee, not the Select Board."
+   },
+   {
+    "t": 1386,
+    "decision": "Select Board asked former assessors to serve on an interim basis through the next May election."
+   },
+   {
+    "t": 652,
+    "decision": "Interested volunteers to register interest through the executive assistant to the town manager."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 125,
+    "topic": "Call to order, pledge, open meeting law notice, and public comment announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 125,
+    "t_end": 402,
+    "topic": "Town manager statement on board of assessors resignations and implications",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "town-departments",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 402,
+    "t_end": 1510,
+    "topic": "Call for volunteers for the board of assessors; board comments and Q&A on deadlines and meeting time",
+    "resolution": "no resolution; call for volunteers issued",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1510,
+    "t_end": 1598,
+    "topic": "Warrants and upcoming meetings",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1599,
+    "t_end": 1764,
+    "topic": "Final public comment on assessors' meeting time, training modules, offers to advise candidates",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1764,
+    "t_end": 1790,
+    "topic": "Adjournment",
+    "resolution": "motion made and seconded; outcome not audible",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote count on adjournment is not in the captions.",
+   "Which warrants the amounts at 1530 and 1552 belong to is unclear, and no votes on the warrants are audible.",
+   "Whether the town band played the previous night was unknown to the speaker."
+  ],
+  "confidence": "high"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board heard a town manager statement that two Board of Assessors members had resigned, leaving that board without a quorum.",
+    "t": 125
+   },
+   {
+    "line": "The board and town manager called for volunteers to fill the assessor seats, to register interest through the town manager's executive assistant.",
+    "t": 652
+   },
+   {
+    "line": "The Select Board asked former assessors to serve on an interim basis through the next May election.",
+    "t": 1386
+   },
+   {
+    "line": "The assessors' meeting time was described as the assessors' own decision, not the Select Board's; a speaker said it may move to another day.",
+    "t": 775
+   },
+   {
+    "line": "No votes were recorded; routine warrants were read, and an adjournment motion was made with its outcome not audible.",
+    "t": 1510
+   }
+  ],
+  "why_it_matters": [
+   "The Board of Assessors sets property valuations that feed the tax bill, so a board without a quorum can stall that work until the seats are filled.",
+   "Residents can volunteer for the vacancies, and interim appointees are meant to serve only until the May election, when the seats would be on the ballot."
+  ],
+  "watch_next": [
+   "Whether the two assessor seats are filled on an interim basis, and by whom.",
+   "The next May election, when the interim arrangement is meant to end."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T11:46:05Z",
+   "cost_usd": 0.2187638
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08082023-446",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-08-08-minutes-446.txt",
+   "path": "sources/meetings/select-board/2023-08-08-minutes-446.pdf"
+  },
+  "official_sha256": "ab45b7adf35be8496e8ba159a46904878ea135990bdaef428e6ad6edb0af67a3",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the three warrant amounts and the interim-assessor request, and both record no votes or transfers. They differ on which warrant carries which amount: ours puts $509,823.27 on accounts payable, the official minutes put it on payroll.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Which warrant carries $509,823.27 and which $237,226.46",
+    "ours": "Accounts payable warrant: 509 823 dollars and twenty seven cents; Payroll warrant: 237 226.46",
+    "official": "the board signed an accounts payable warrant in the amount of $237,226.46; an encore fire payroll warrant in the amount of $4046.04 and a payroll warrant in the amount of $509,823.27.",
+    "note": "The same two amounts appear in both records but are attached to opposite warrants (accounts payable vs payroll); check the recording at t=1510-1552 and the signed warrants.",
+    "t": 1510
+   },
+   {
+    "kind": "agree",
+    "about": "Third warrant of $4,046.04",
+    "ours": "Payroll warrant: four thousand forty six dollars and four cents",
+    "official": "an encore fire payroll warrant in the amount of $4046.04",
+    "note": "Same amount; the official minutes name it as the Encore fire payroll warrant, ours calls it just payroll.",
+    "t": 1530
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessors meeting time is up to that board",
+    "ours": "Meeting time of the board of assessors was said to be up to that committee, not the Select Board.",
+    "official": "",
+    "note": "The official minutes do not mention this statement.",
+    "t": 775
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Volunteers register interest through the executive assistant",
+    "ours": "Interested volunteers to register interest through the executive assistant to the town manager.",
+    "official": "",
+    "note": "The official minutes record the call for volunteers but not the registration route.",
+    "t": 652
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Ms emptke (town manager)",
+    "official": "ms. emkey noted this appeal is a high priority but also wanted to remind that there are other vacancies and",
+    "note": "Captions misheard Emkey as emptke.",
+    "official_reading": "Emkey"
+   },
+   {
+    "kind": "agree",
+    "about": "Vice Chairman Franco presiding",
+    "ours": "Lou Franco (vice chair (presiding))",
+    "official": "vice chairman franco called the meeting to order at 6:30 p.m. and asked everyone to stand for the pledge of",
+    "note": "Both record Franco as vice chair presiding."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees Alonzo and Lemieux",
+    "ours": "",
+    "official": "mr. alonzo announced next monday at 7:00 p.m. is the last town band concert of the season.",
+    "note": "Alonzo and Lemieux (who spoke on the assessor resignations) are not listed as attendees in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair Mr Jeffries absent; Elaine Peterson named",
+    "ours": "Mr Jeffries (chair (absent)); Elaine Peterson (executive assistant to the town manager (named, not clearly present))",
+    "official": "",
+    "note": "Neither is mentioned in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Announcements: band concert and pancake breakfast",
+    "ours": "",
+    "official": "mr. franco announced the pancake breakfast tomorrow morning at the adult activity center from 8-10 a.m.",
+    "note": "Announcements appear only in the official minutes; not a vote or decision."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T11:46:48Z",
+   "cost_usd": 0.23426580000000002
+  }
+ }
+}

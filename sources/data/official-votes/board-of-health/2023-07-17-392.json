@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-07-17",
  "docid": "392",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 15, 2023 and June 5, 2023",
+   "motion": "Approve the minutes of May 15, 2023 and June 5, 2023.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed",
@@ -20,31 +20,31 @@
    "quote": "motion by jewell and second by watters to approve minutes. all in favor"
   },
   {
-   "motion": "Approve variance for 131 Island Road conditioned upon the abutter's well being tested and the recording of a two-bedroom deed restriction",
+   "motion": "Approve the well variance at 131 Island Road (neighboring well from 100 feet to 72 feet), conditioned on the abutter's well being tested and a two-bedroom deed restriction being recorded.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by watters to approve the variance conditioned upon the abutter 's well being tested and the recording of a two bedroom deed restriction. all in favor."
+   "quote": "motion by jewell and second by watters to approve the variance conditioned upon the abutter"
   },
   {
-   "motion": "Approve variances for 1074 Lancaster Avenue with requirement of maintenance agreement for the tank",
+   "motion": "Approve the variances at 1074 Lancaster Avenue, with a requirement of a maintenance agreement for the tank.",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion watters and second my fortin, the variances were approved with the requirement of a maintenance agreement for the tank. all in favor."
+   "quote": "on motion watters and second my fortin, the variances were approved with the requirement of a maintenance agreement for the tank."
   },
   {
-   "motion": "Approve variances for 222 Hollis Road",
+   "motion": "Approve the variances at 222 Hollis Road (property line, groundwater, wetland offsets and sieve analysis).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin the variances were approve d. all in favor."
+   "quote": "on motion by jewell and second by fortin the variances were approve d."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:15 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Watters",
    "outcome": "passed",
@@ -53,6 +53,137 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded as \"all in favor\" with 4 members present (Emond, Jewell, Fortin, Watters). No vote counts were specified numerically; all appear to have passed unanimously.",
- "cost_usd": 0.07746650000000001
+ "note": "The minutes record five motions, each with only \"All in favor\" or \"approved\" and no vote counts, so each outcome is recorded as passed. Several names and words carry transcription artifacts: \"my Fortin\" is recorded as Fortin, and \"approve d\", \"s hould\" and \"sit e\" are read as typos. No dollar figures appear, so budget_items and transfers are empty. The abutter input at 131 Island Road is not attributed to a named speaker, so public_comment is left empty. The text does not show whether the Hollis Road notification question was resolved after the meeting.",
+ "cost_usd": 0.0183075,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner (131 Island Road)",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Michael Koneko",
+   "role": "abutter",
+   "status": "present",
+   "quote": "also present were michael koneko and toshiaki kanek, abutters."
+  },
+  {
+   "name": "Toshiaki Kanek",
+   "role": "abutter",
+   "status": "present",
+   "quote": "also present were michael koneko and toshiaki kanek, abutters."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the owner (1074 Lancaster Avenue)",
+   "status": "present",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner (222 Hollis Road)",
+   "status": "present",
+   "quote": "chris mackenzie met with the board of behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board let the 222 Hollis Road hearing go forward although an abutter-notification question was open; if notification is later found to be required, the matter must be reheard.",
+   "quote": "the board allowed this hearing to go forward however"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (May 15 and June 5, 2023)",
+   "resolution": "approved",
+   "quote": "motion by jewell and second by watters to approve minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "131 Island Road – septic failure, well variance",
+   "resolution": "variance approved with conditions (well tested, two-bedroom deed restriction)",
+   "quote": "motion by jewell and second by watters to approve the variance conditioned upon the abutter",
+   "tags": [
+    "septic",
+    "variance",
+    "well offsets",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "1074 Lancaster Avenue – septic failure, multiple variances",
+   "resolution": "variances approved with maintenance agreement for the tank",
+   "quote": "on motion watters and second my fortin, the variances were approved with the requirement of a maintenance agreement for the tank.",
+   "tags": [
+    "septic",
+    "variance",
+    "wetlands",
+    "well offsets",
+    "pressure dosed system"
+   ]
+  },
+  {
+   "topic": "222 Hollis Road – septic failure, variances, abutter notification question",
+   "resolution": "variances approved; hearing proceeded with notification question open",
+   "quote": "on motion by jewell and second by fortin the variances were approve d.",
+   "tags": [
+    "septic",
+    "variance",
+    "abutter notice",
+    "wetlands",
+    "sieve analysis"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "on motion by fortin and seconded by watters, the meeting was adjourned at 8:15 pm, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "Title 5 variances",
+  "well offsets",
+  "wetlands",
+  "abutters",
+  "abutter notification",
+  "board of health",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

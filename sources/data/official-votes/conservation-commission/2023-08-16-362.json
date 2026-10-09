@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-08-16",
  "docid": "362",
@@ -12,128 +12,574 @@
  },
  "votes": [
   {
-   "motion": "Approve the Owl Prowl walk at the Lane property",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Owl Prowl at the Lane property (guided walk, no charge, donations accepted).",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: bob p., second: mike l. to approve the owl prowl at the lane property. roll call was unanimous to approve."
   },
   {
-   "motion": "Approve the minutes of 5/17/23",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Rich Tremblay",
+   "motion": "Approve the minutes of 5/17/23.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Rich T.",
    "outcome": "passed 4-0-1",
    "procedural": true,
    "quote": "motion: bob p., second: rich t. to approve the 5/17/23 minutes. roll call vote: rich t., bob p., mike l and mary w. -all aye, chris-abstained."
   },
   {
-   "motion": "Issue a negative determination for the RDA at 429-433 Electric Avenue (stone trench and drainage pipe installation)",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for the Request for Determination of Applicability by Vasilios Halkiadakis (429-433 Electric Avenue).",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: bob p., second: mike l. to issue a negative determination for this rda. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve the Skate Park NOI as proposed at 100 Chestnut Street (DEP #208-1290)",
-   "moved_by": "Mike Larouche",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Skate Park Notice of Intent as proposed (100 Chestnut Street).",
+   "moved_by": "Mike L.",
+   "seconded_by": "Rich B.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: mike l., second: rich b. to approve the skate park noi as proposed. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the garage at 932 Flat Hill Road to 9/6/23",
-   "moved_by": "Chris St. Germain",
-   "seconded_by": "Rich Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Continue the 932 Flat Hill Road hearing to 9/6/23.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Rich T.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: chris s., second: rich t. to continue 932 flat hill rd. hearing to 9/6/23. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Issue a negative determination for the tree removal RDA at 131 Island Road",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for the tree removal plan presented (Michael Masciarelli, 131 Island Road).",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: bob p., second: mike l. to issue a negative determination for the plan presented. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the deck at 441 Townsend Harbor Road (DEP #208-1240) to 9/20/23",
-   "moved_by": "Rich Tremblay",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Continue the 441 Townsend Harbor Road hearing to 9/20/23.",
+   "moved_by": "Rich T.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: rich t., second: mike l. to continue 441 townsend harbor rd. hearing to 9/20/23. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the deck relocation at 205 Sunset Lane to 9/6/23",
-   "moved_by": "Mike Larouche",
-   "seconded_by": "Chris St. Germain",
+   "motion": "Continue the 205 Sunset Lane hearing to 9/6/23 (roll call started, then held when the engineer arrived).",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: mike l., second: chris s. to continue the hearing to 9/6/23. a roll call vote was started but held when the engineer was present."
+   "quote": "motion: mike l., second: chris s. to continue the hearing to 9/6/23."
   },
   {
-   "motion": "Continue the hearing for the deck relocation at 205 Sunset Lane (DEP #208-1299) to 9/6/23",
-   "moved_by": "Rich Tremblay",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Continue the hearing to 9/6/23 (following the 205 Sunset Lane discussion with the engineer).",
+   "moved_by": "Rich T.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: rich t., second: mike l. to continue hearing to 9/6/23. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 54 Pine Acres Road",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Certificate of Compliance for 54 Pine Acres Road.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for 54 pine acres road. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 43 Summer Street",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mike Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Certificate of Compliance for 43 Summer St.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for 43 summer st. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 386 Sunset Lane",
-   "moved_by": "Mike Larouche",
-   "seconded_by": "Bob Pease",
+   "motion": "Approve the Certificate of Compliance for 386 Sunset Lane.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Bob P.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: mike l., second: bob p. to approve the certificate of compliance for 386 sunset lane. roll call vote: mary w., bob p., mike l. and chris s.- all aye. rich t. absta",
-   "quote_taken_from_text": true
+   "quote": "to approve the certificate of compliance for 386 sunset lane. roll call vote: mary w., bob p., mike l. and chris s.- all aye. rich t. abstained."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 475 Leominster-Shirley Road",
-   "moved_by": "Mike Larouche",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Certificate of Compliance for 475 Leominster-Shirley Road.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: mike l., second: chris s. to approve the certificate of compliance for 475 leominster-shirley road. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve $4,800 for painting the trim at the Hollis Road Residence",
-   "moved_by": "Mary Wilson",
-   "seconded_by": "Rich Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Approve $4,800 for painting the trim at the Hollis Road residence.",
+   "moved_by": "Mary W.",
+   "seconded_by": "Rich T.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: mary w., second: rich t. to approve $4,800 for painting the trim. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Adjourn at 9:49pm",
-   "moved_by": "Mike Larouche",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 9:49pm.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: mike l., second: chris s. to adjourn at 9:49pm. roll call vote was unanimous to approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and readable. Minutes are clear text, not a scan.",
- "cost_usd": 0.0976451
+ "note": "Text extracted from a typed document, not a scan. Meeting was held by Zoom, and the minutes do not record remote or in-person status for anyone, so attendance statuses are as printed or 'not stated'. Bob Pease left the meeting before old business (noted in the minutes). Rich B. is recorded as absent yet seconds one motion (Skate Park NOI); recorded as printed. Several votes record only 'Roll Call Vote was unanimous' with no count. The 205 Sunset Lane first motion's roll call was started but held, so its outcome is not stated; a later motion to continue the hearing is recorded as passed without naming the property. Adam Burney, Jeff Walsh and other staff/consultants named only in reports of others are listed only where they are described as reviewing or appearing. The minutes name 'Mike L.' and 'Michael Larouche', which I took as the same member. Jane Ranley (minutes clerk) signed the minutes and is not listed as an attendee.",
+ "cost_usd": 0.02199631,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: rich t., bob p., mike l., chris s., and mary w."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: rich t., bob p., mike l., chris s., and mary w."
+  },
+  {
+   "name": "Rich Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: rich t., bob p., mike l., chris s., and mary w."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member (called Mike L. in minutes)",
+   "status": "present",
+   "quote": "roll call: rich t., bob p., mike l., chris s., and mary w."
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Member (called Chris S. in minutes)",
+   "status": "present",
+   "quote": "roll call: rich t., bob p., mike l., chris s., and mary w."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Member (called Rich B. in minutes)",
+   "status": "absent",
+   "quote": "absent: rich b., jeff v ."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member (called Jeff V. in minutes)",
+   "status": "absent",
+   "quote": "absent: rich b., jeff v ."
+  },
+  {
+   "name": "Peter Cowley",
+   "role": "applicant for guided Owl Prowl walk",
+   "status": "not stated",
+   "quote": "peter cowley (72 peninsula dr.) - stated he submitted an application to do a guided owl prowl walk to"
+  },
+  {
+   "name": "Butch Magurn",
+   "role": "applicant, 238 Fire Road 16 (listed as Butch & Joanne Magurn)",
+   "status": "not stated",
+   "quote": "butch noted that nadia had okayed it last year and the state had looked at it."
+  },
+  {
+   "name": "Vasilios Halkiadakis",
+   "role": "applicant, RDA 429-433 Electric Avenue",
+   "status": "not stated",
+   "quote": "a request for determination of applicability by vasilios halkiadakis for installation of stone trench and drainage pipe at 429-433 electric avenue."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing the applicant",
+   "status": "not stated",
+   "quote": "greg roy (dillis & roy), representing the applicant, stated they were having issues with groundwater seepage"
+  },
+  {
+   "name": "Lunenburg Skate Park, Inc.",
+   "role": "applicant, Notice of Intent (no individual named as present)",
+   "status": "not stated",
+   "quote": "a notice of intent by lunenburg skate park, inc. for the proposed construction of a skate park and drainage basin at 100 chestnut street"
+  },
+  {
+   "name": "Robert J. Correa",
+   "role": "applicant, NOI 932 Flat Hill Road",
+   "status": "not stated",
+   "quote": "notice of intent by robert j. correa for the construction of a garage at 932 flat hill road"
+  },
+  {
+   "name": "James Tetreault",
+   "role": "Azimuth Land Design, representing the applicant",
+   "status": "present",
+   "quote": "james tetreault (azimuth land design) screen-shared the 3rd version of the site plan"
+  },
+  {
+   "name": "Ginny Albertson",
+   "role": "member of the public (50 Upland Ave.)",
+   "status": "not stated",
+   "quote": "ginny albertson (50 upland ave.) asked james to substitute native shrubs, such as dogwood or spicebush for the butterfly bushes."
+  },
+  {
+   "name": "Michael Masciarelli",
+   "role": "applicant, RDA 131 Island Road",
+   "status": "present",
+   "quote": "michael screen-shared the site plan and noted the commission asked for revisions at the 7/5/23 meeting."
+  },
+  {
+   "name": "Nicholas Easton",
+   "role": "applicant, Amended Order of Conditions 441 Townsend Harbor Road (called Nick in minutes)",
+   "status": "present",
+   "quote": "nick confirmed that the deck will be the same, cantilevered over the resource area but with"
+  },
+  {
+   "name": "Larry Coffren",
+   "role": "applicant, NOI 205 Sunset Lane",
+   "status": "not stated",
+   "quote": "it appeared that no one was present and the commission agreed to vote for a continuance."
+  },
+  {
+   "name": "Marsha Beers",
+   "role": "applicant, NOI 205 Sunset Lane",
+   "status": "present",
+   "quote": "marsha beers stated that they were regretful about what had happened."
+  },
+  {
+   "name": "Seth Donohoe",
+   "role": "Dillis & Roy, representing the applicant",
+   "status": "present",
+   "quote": "seth donohoe (dillis & roy) stated that the applicant was originally granted a negative determination of"
+  },
+  {
+   "name": "Natt Dutton",
+   "role": "David E. Ross Associates, representing the applicant, 54 Pine Acres Road",
+   "status": "present",
+   "quote": "natt noted this goes back to 1997 and adam burney had done a site walk."
+  },
+  {
+   "name": "Brandon Duchard",
+   "role": "David E. Ross Associates, applicant, 54 Pine Acres Road",
+   "status": "not stated",
+   "quote": "54 pine acres road - natt dutton & brandon duchard (david e. ross associates)."
+  },
+  {
+   "name": "Ian Ainslie",
+   "role": "applicant, 43 Summer Street",
+   "status": "not stated",
+   "quote": "43 summer street - ian ainslie-- adam burney did a site visit on 8/23/23"
+  },
+  {
+   "name": "Jeff Walsh",
+   "role": "Graves Engineering, reviewed 475 Leominster-Shirley Road",
+   "status": "not stated",
+   "quote": "jeff walsh (graves engineering) also reviewed the site and stated it was in compliance with the plans."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Magurn Certificate of Compliance (238 Fire Road 16) could not be addressed and was deferred, because there is no administrative staff to walk the property.",
+   "quote": "mary stated that they cannot address it tonight because they do not have administrative staff to walk the property."
+  },
+  {
+   "decision": "The appointment with Sue and Gary Ropiak regarding tree removal within buffer zones was tabled because no one was present.",
+   "quote": "appointment-sue and gary ropiak regarding tree removal within buffer zones - tabled --no one present."
+  },
+  {
+   "decision": "Discussion of mushroom signs was tabled to the next meeting.",
+   "quote": "discussion was tabled to the next meeting."
+  },
+  {
+   "decision": "The Commission will not accept the Easton deck without a plan showing the piers and an accurate high water mark reference; approvals are not given in the field.",
+   "quote": "they want to see a plan noting the piers, with an accurate reference to the high water mark and not overhang into the resource area."
+  },
+  {
+   "decision": "Bob Pease will meet with Julie about hiring a 10-hour temporary staff member to help in the office.",
+   "quote": "bob will be meeting with julie about hiring a 10 hour temp to help out."
+  },
+  {
+   "decision": "Bob Pease received approval to proceed with litigation on the Chase Road encroachment.",
+   "quote": "bob received approval to proceed with litigation on the chase road encroachment."
+  },
+  {
+   "decision": "Adam Burney issued three emergency orders, which Bob Pease counter-signed (338 W. Townsend Road, 164 White St., 32 Hemlock Road).",
+   "quote": "adam burney issued 3 emergency orders and bob counter-signed them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road residence exterior painting",
+   "what_was_recorded": "Repainting quotes were obtained: the trim painting at $4,800 and the rest of the house at $6,400; the Commission approved the trim now and the rest of the house next year.",
+   "figures_as_printed": [
+    "$4,800",
+    "$6,400"
+   ],
+   "quote": "nick quoted the trim painting at $4,800 and the rest of the house at $6,400."
+  },
+  {
+   "topic": "Office staffing temp",
+   "what_was_recorded": "Salary for a proposed 10-hour temporary office worker was discussed with the Select Board; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "they talked about salary and keeping the chair involved."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Cowley",
+   "stated_role": "72 Peninsula Dr.",
+   "topic": "Owl Prowl guided walk application",
+   "quote": "peter cowley (72 peninsula dr.) - stated he submitted an application to do a guided owl prowl walk to look for owls at the lane property."
+  },
+  {
+   "speaker": "Butch",
+   "stated_role": "238 Fire Road 16 (Butch & Joanne Magurn)",
+   "topic": "Magurn certificate of compliance deferred",
+   "quote": "butch noted that nadia had okayed it last year and the state had looked at it."
+  },
+  {
+   "speaker": "Ginny Albertson",
+   "stated_role": "50 Upland Ave.",
+   "topic": "native shrubs at 932 Flat Hill Road",
+   "quote": "ginny albertson (50 upland ave.) asked james to substitute native shrubs, such as dogwood or spicebush for the butterfly bushes."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and public comment (Owl Prowl)",
+   "resolution": "approved",
+   "quote": "motion: bob p., second: mike l. to approve the owl prowl at the lane property.",
+   "tags": [
+    "owl prowl",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Magurn certificate of compliance, 238 Fire Road 16",
+   "resolution": "deferred",
+   "quote": "mary stated that they cannot address it tonight because they do not have administrative staff to walk the property.",
+   "tags": [
+    "certificate of compliance",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes of 5/17/23",
+   "resolution": "approved",
+   "quote": "to approve the 5/17/23 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment, Sue and Gary Ropiak (tree removal in buffer zones)",
+   "resolution": "tabled",
+   "quote": "appointment-sue and gary ropiak regarding tree removal within buffer zones - tabled --no one present.",
+   "tags": [
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "RDA, Vasilios Halkiadakis, 429-433 Electric Avenue",
+   "resolution": "negative determination issued",
+   "quote": "to issue a negative determination for this rda.",
+   "tags": [
+    "wetlands",
+    "stormwater",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "NOI, Lunenburg Skate Park, Inc., 100 Chestnut Street",
+   "resolution": "approved",
+   "quote": "to approve the skate park noi as proposed.",
+   "tags": [
+    "notice of intent",
+    "skate park",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "NOI, Robert J. Correa, 932 Flat Hill Road",
+   "resolution": "continued to 9/6/23",
+   "quote": "to continue 932 flat hill rd. hearing to 9/6/23.",
+   "tags": [
+    "notice of intent",
+    "riverfront",
+    "garage"
+   ]
+  },
+  {
+   "topic": "RDA, Michael Masciarelli, tree removal at 131 Island Road",
+   "resolution": "negative determination issued",
+   "quote": "to issue a negative determination for the plan presented.",
+   "tags": [
+    "tree removal",
+    "canopy"
+   ]
+  },
+  {
+   "topic": "Amended Order of Conditions, Nicholas Easton, 441 Townsend Harbor Road",
+   "resolution": "continued to 9/20/23",
+   "quote": "to continue 441 townsend harbor rd. hearing to 9/20/23.",
+   "tags": [
+    "deck",
+    "resource area",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "NOI, Larry Coffren and Marsha Beers, 205 Sunset Lane",
+   "resolution": "continued to 9/6/23",
+   "quote": "to continue hearing to 9/6/23.",
+   "tags": [
+    "deck",
+    "lake",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance (54 Pine Acres Road, 43 Summer St, 386 Sunset Lane, 475 Leominster-Shirley Road)",
+   "resolution": "approved",
+   "quote": "to approve the certificate of compliance for 54 pine acres road.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law, Public Records Law and Conflict of Interest",
+   "resolution": "no action (discussion of public comment limits)",
+   "quote": "bob stated that the supreme court ruled that you cannot cut someone off during public comment",
+   "tags": [
+    "open meeting law",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Timber Rights Fund",
+   "resolution": "no update",
+   "quote": "update on timber rights fund -no update.",
+   "tags": [
+    "timber rights"
+   ]
+  },
+  {
+   "topic": "PACC",
+   "resolution": "no action",
+   "quote": "mary noted that eric foster said he can make videos for the commission on rules, information, brochures, etc.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Meeting with Select Board (grant award, litigation, office staffing)",
+   "resolution": "reported; litigation approval and temp-staff plan noted",
+   "quote": "bob received approval to proceed with litigation on the chase road encroachment.",
+   "tags": [
+    "select board",
+    "grant",
+    "litigation",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Emergency certifications",
+   "resolution": "reported",
+   "quote": "adam burney issued 3 emergency orders and bob counter-signed them.",
+   "tags": [
+    "emergency permit",
+    "dam",
+    "tree"
+   ]
+  },
+  {
+   "topic": "Grant application proposals and Hickory Hills Well",
+   "resolution": "no update; awaiting DPW comments",
+   "quote": "hickory hills well -208 northfield road - they are waiting for dpw comments.",
+   "tags": [
+    "grant",
+    "well"
+   ]
+  },
+  {
+   "topic": "Mushroom signs",
+   "resolution": "tabled",
+   "quote": "discussion was tabled to the next meeting.",
+   "tags": [
+    "signs",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Encroachment issues (950 Chase Road, 315 Lancaster Ave., 26 Mulpus Road)",
+   "resolution": "litigation pursued at 950 Chase Road; others no update",
+   "quote": "mary noted that bob got permission to pursue litigation.",
+   "tags": [
+    "encroachment",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence maintenance",
+   "resolution": "approved $4,800 for trim painting",
+   "quote": "to approve $4,800 for painting the trim.",
+   "tags": [
+    "hollis road",
+    "painting",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Pollinator habitat open house",
+   "resolution": "reported",
+   "quote": "mike reported that the open house was success and he read several comments from attendees",
+   "tags": [
+    "pollinators",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Enforcement: Town Beach erosion and related items",
+   "resolution": "noted; no action recorded",
+   "quote": "mary noted that with the intense rain and repaving of the road above the curb, there has been some erosion, which triggered a violation.",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "town beach"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:49pm",
+   "quote": "motion: mike l., second: chris s. to adjourn at 9:49pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "certificate of compliance",
+  "tree removal",
+  "order of conditions",
+  "enforcement",
+  "encroachment",
+  "litigation",
+  "staffing",
+  "hollis road",
+  "public comment",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

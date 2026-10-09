@@ -1,0 +1,431 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "personnel-committee",
+ "board": "Personnel Committee",
+ "video_title": "Personnel Committee",
+ "meeting_date": "2023-09-06",
+ "video_id": "OqjhveRDU3c",
+ "video_url": "https://www.youtube.com/watch?v=OqjhveRDU3c",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/personnel-committee/2023-09-06-OqjhveRDU3c.json",
+  "sha256": "b7b5d6c76df4431a624d9820bc24e56ff104e5c0e5f577384255da1c621e24eb",
+  "caption_lines": 318,
+  "segments": 1849
+ },
+ "recording": {
+  "duration_s": 7533,
+  "duration": "2:05",
+  "spoken_chars": 49508,
+  "words_approx": 8251
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09062023-313",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-09-06-agenda-313.txt",
+   "path": "sources/meetings/personnel-committee/2023-09-06-agenda-313.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09062023-313",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-09-06-minutes-313.txt",
+   "path": "sources/meetings/personnel-committee/2023-09-06-minutes-313.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T10:59:40Z",
+  "cost_usd": 0.29391500000000004
+ },
+ "minutes": {
+  "headline": "Personnel Committee scored seven job descriptions for grading and heard the DPW director say the scoring weights are wrong.",
+  "summary": "The committee spent most of the meeting rating job descriptions category by category: facilities director, land use director, network administrator, payroll/benefits coordinator and risk manager, principal assessor, and treasurer/tax collector. Two descriptions (executive assistant, park manager) were deferred because none is approved. After the job reviews, the committee heard a report on vacation accrual practice across groups and concluded no change was needed.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Wendy",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Donna",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Sue",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Nancy",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Joanna",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 79,
+    "topic": "The DPW director said the scoring weights over-weight hazards, work environment and physical demands compared with knowledge and experience, compared them with a federal system, and urged the committee to re-examine its weighting.",
+    "stated_role": "DPW director"
+   },
+   {
+    "t": 7477,
+    "topic": "Closing public comment was invited; no comment is captured."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 223,
+    "motion": "Approve the minutes of August 23",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 264,
+    "motion": "Move ongoing business on vacation leave accrual to after new business",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 7498,
+    "motion": "Adjourn at 8:11 PM",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 305,
+    "decision": "Executive assistant to the town manager and select board deferred until a job description is approved."
+   },
+   {
+    "t": 3749,
+    "decision": "Park manager review deferred to a future meeting because no job description is available."
+   },
+   {
+    "t": 1595,
+    "decision": "Facilities director left about 150 points off the target grade; committee agreed to move on and return to it."
+   },
+   {
+    "t": 5871,
+    "decision": "Principal assessor total looked low against its current grade; flagged for revisiting."
+   },
+   {
+    "t": 6739,
+    "decision": "Treasurer/tax collector flagged as an outlier; the committee will revisit it along with the park manager and executive assistant."
+   },
+   {
+    "t": 7030,
+    "decision": "No change to the vacation accrual practice; the committee found no disparity between groups."
+   },
+   {
+    "t": 7498,
+    "decision": "Next meeting targeted for September 20."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 12,
+    "t_end": 54,
+    "topic": "Call to order",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 54,
+    "t_end": 223,
+    "topic": "Public comment on scoring weights",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 223,
+    "t_end": 284,
+    "topic": "Minutes and agenda reorder",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 284,
+    "t_end": 1637,
+    "topic": "Facilities director job scoring",
+    "resolution": "scored; some points left off",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1637,
+    "t_end": 2637,
+    "topic": "Land use director job scoring",
+    "resolution": "scored",
+    "tags": [
+     "personnel",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2637,
+    "t_end": 3749,
+    "topic": "Network administrator job scoring",
+    "resolution": "scored",
+    "tags": [
+     "personnel",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 3749,
+    "t_end": 4811,
+    "topic": "Payroll benefits coordinator and risk manager scoring",
+    "resolution": "scored; outlier",
+    "tags": [
+     "personnel",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 4811,
+    "t_end": 5946,
+    "topic": "Principal assessor scoring",
+    "resolution": "scored; flagged",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5946,
+    "t_end": 6760,
+    "topic": "Treasurer/tax collector scoring",
+    "resolution": "scored; outlier flagged",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6760,
+    "t_end": 7477,
+    "topic": "Vacation leave accrual review",
+    "resolution": "informational; no change",
+    "tags": [
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 7477,
+    "t_end": 7530,
+    "topic": "Public comment, next date, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Voter names and counts on the motions are mostly not captured; only spoken ayes are heard.",
+   "Much of the job-scoring dialogue is garbled and speakers are not identified.",
+   "Many point values are garbled and cannot be relied on.",
+   "Who moved the minutes motion is unclear."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee scored seven job descriptions category by category, leaving the facilities director well off its target grade and flagging the principal assessor as low.",
+    "t": 1595
+   },
+   {
+    "line": "The DPW director told the committee its scoring weights over-weight hazards, work environment and physical demands relative to knowledge and experience.",
+    "t": 79
+   },
+   {
+    "line": "The treasurer/tax collector scored as an outlier and will be revisited with the park manager and executive assistant.",
+    "t": 6739
+   },
+   {
+    "line": "The executive assistant and park manager reviews were deferred because no job description is approved or available.",
+    "t": 305
+   },
+   {
+    "line": "The committee found no disparity in vacation accrual between groups and made no change to the practice.",
+    "t": 7030
+   }
+  ],
+  "why_it_matters": [
+   "The scores set how town jobs are graded, and grades drive pay, so the weighting questions raised here could shift what the town pays for several positions that show up in future budgets.",
+   "Vacation accrual stays as it is, so no leave-cost change follows from this meeting."
+  ],
+  "watch_next": [
+   "Next meeting targeted for September 20, when the committee is to revisit the facilities director, principal assessor, treasurer/tax collector, park manager and executive assistant.",
+   "Whether the committee re-examines its scoring weights after the DPW director's comment."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T10:59:49Z",
+   "cost_usd": 0.218939
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09062023-313",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2023-09-06-minutes-313.txt",
+   "path": "sources/meetings/personnel-committee/2023-09-06-minutes-313.pdf"
+  },
+  "official_sha256": "2af7d0f99c2b818e8e330f4f159b0513f27c652e7748b63b515bfd964239cc78",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on no votes and on the September 20 next-meeting target, but otherwise cover different ground: ours records job-grading deferrals, while the official minutes are a thin summary. The main thing to know is that the vacation accrual item is described in opposite ways (no change vs. deferred to the next meeting).",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record shows a non-procedural vote.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting targeted for September 20.",
+    "official": "the group attempted to identify the next meeting date, and targeted september 20 at 6:00pm.",
+    "note": "Both give September 20 as the target; the official minutes add the 6:00pm time.",
+    "t": 7498
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vacation accrual decision",
+    "ours": "No change to the vacation accrual practice; the committee found no disparity between groups.",
+    "official": "the group agreed to discuss again at the next meeting.",
+    "note": "Ours records a conclusion (no change) while the official minutes say the issue was deferred to the next meeting because J. Bilotta was absent; check the recording near t=7030 to see whether it was closed or carried over.",
+    "t": 7030
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive assistant deferral",
+    "ours": "Executive assistant to the town manager and select board deferred until a job description is approved.",
+    "official": "",
+    "note": "The official minutes do not mention this deferral; it is a decision, so a person may want to confirm it on the recording.",
+    "t": 305
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Park manager review deferral",
+    "ours": "Park manager review deferred to a future meeting because no job description is available.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3749
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facilities director grading",
+    "ours": "Facilities director left about 150 points off the target grade; committee agreed to move on and return to it.",
+    "official": "",
+    "note": "Job-grading discussion is absent from the official minutes.",
+    "t": 1595
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Principal assessor and treasurer/tax collector flags",
+    "ours": "Principal assessor total looked low against its current grade; flagged for revisiting.",
+    "official": "",
+    "note": "The official minutes record none of the individual position-grading discussions (assessor at t=5871, treasurer/tax collector at t=6739).",
+    "t": 5871
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on assessment system",
+    "ours": "",
+    "official": "b. bernard questioned the type of assessment system",
+    "note": "Bill Bernard's comment is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Joanna",
+    "ours": "Joanna (member)",
+    "official": "absent: joanna bilotta",
+    "note": "We list Joanna as an attendee; the official minutes list Joanna Bilotta as absent. Check whether she joined remotely or the captions attributed another speaker.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Wendy, Donna, Sue",
+    "ours": "Wendy (member); Donna (member); Sue (member)",
+    "official": "in person attendees: susan andrews, wendy bertrand, donna fortune",
+    "note": "The three members match (Sue is Susan Andrews).",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Heather and Nancy",
+    "ours": "Heather (presenter); Nancy (presenter)",
+    "official": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director",
+    "note": "Heather Lemieux and Nancy O'Rourke appear in both.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Julie",
+    "ours": "Julie (presenter)",
+    "official": "",
+    "note": "No Julie is in the official attendance list; she may be a caption misattribution, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees Pauline Roy and Bill Bernard",
+    "ours": "",
+    "official": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director",
+    "note": "Pauline Roy (COA) and Bill Bernard (DPW) are in the official list but not in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T11:00:39Z",
+   "cost_usd": 0.231833
+  }
+ }
+}

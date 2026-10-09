@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-08-29",
  "docid": "377",
@@ -12,47 +12,371 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 6/27/23",
+   "motion": "Accept the minutes of 6/27/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to accept the minutes of 6/27/23. roll call vote: mike m.-aye, mike n.-aye, brett-aye and john -aye."
+   "quote": "to accept the minutes of 6/27/23. roll call vote: mike m.-aye, mike n.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Accept the minutes of 7/11/23",
+   "motion": "Accept the minutes of 7/11/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to accept the minutes of 7/11/23. roll call vote: mike n.-aye, mike m.-aye, brett-aye and john -aye."
+   "quote": "to accept the minutes of 7/11/23. roll call vote: mike n.-aye, mike m.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Apply the $100 fee to the 3 non-compliant restaurants",
+   "motion": "Apply the $100 automatic non-compliance fee to the 3 non-compliant restaurants.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: mike m. second: brett r. to apply the $100 fee to the 3 non-compliant restaurants. roll call vote: mike m.-aye, mike n.-aye, brett-aye and john -aye."
+   "quote": "to apply the $100 fee to the 3 non-compliant restaurants. roll call vote: mike m.-aye, mike n.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Approve the 2 transfers for the FY24 Special Town Meeting articles",
+   "motion": "Approve the 2 transfers for the FY24 Special Town Meeting articles (Sewer Reserve Capacity and Inflow/Infiltration stabilization funds).",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: brett r. second: mike m. to approve the 2 transfers for the fy24 special town meeting articles. roll call vote: mike n.-aye, mike m.-aye, brett-aye and john -aye."
+   "quote": "to approve the 2 transfers for the fy24 special town meeting articles. roll call vote: mike n.-aye, mike m.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Adjourn at 7:04pm",
+   "motion": "Adjourn the meeting at 7:04pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: mike m. second: mike n. to adjourn at 7:04pm roll call vote: mike m.-aye, brett-aye, mike n.-aye and john -aye."
+   "quote": "to adjourn at 7:04pm roll call vote: mike m.-aye, brett-aye, mike n.-aye and john -aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1001211
+ "note": "Text is a clean machine extraction of a three-page set of minutes, not a scan; all votes are roll calls with names and aye counts printed. The minutes do not print a Dave MacDonald vote; he is recorded absent. The second 'PUBLIC COMMENT' heading contains a staff statement by Paula Bertram, not a public speaker, so public_comment is empty. The '$25/day' fine was discussed as a possible future step and was not voted. Motion quotes collapse the minutes' multiple spaces to single spaces.",
+ "cost_usd": 0.01729797,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin and mike nault, dpw"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: dave macdonald"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Kevin Olsen",
+   "role": "representing Wright Pierce (guest)",
+   "status": "present",
+   "quote": "guests: kevin olsen & matthew corbin (wright pierce)"
+  },
+  {
+   "name": "Matthew Corbin",
+   "role": "representing Wright Pierce (guest)",
+   "status": "present",
+   "quote": "guests: kevin olsen & matthew corbin (wright pierce)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Organization of the board tabled until all members are present.",
+   "quote": "organization of the board - tabled to when all members are present."
+  },
+  {
+   "decision": "Commission agreed to resume random inspection audits, to be done by the CTE maintenance person with a Commissioner; the Sewer Department decides which establishments to inspect.",
+   "quote": "the commission discussed and agreed it is a good idea."
+  },
+  {
+   "decision": "Oil water separator log form to be discussed at the next meeting; Paula to check with Fitchburg on what it uses.",
+   "quote": "the commission agreed to discuss this at the next meeting."
+  },
+  {
+   "decision": "October meeting on Halloween night (10/31) cancelled.",
+   "quote": "the commission agreed to cancel the meeting on halloween night (10/31)."
+  },
+  {
+   "decision": "Wright Pierce to produce a tech memo in 4-6 weeks and meet again on the Fitchburg-to-Leominster flow redirection; Paula to send 2020-2023 flow data and ask for comments on the Pond View project.",
+   "quote": "matt noted they could get a tech memo for them in 4-6 weeks and meet again."
+  },
+  {
+   "decision": "Paula to send flow data from 2020 to 2023 to Wright Pierce.",
+   "quote": "paula will send data from 2020 to 2023 and asked if they could get some comments"
+  },
+  {
+   "decision": "Commission to discuss a possible sewer rate increase.",
+   "quote": "the commission will discuss a possible rate increase due to fitchburg going up 7%"
+  },
+  {
+   "decision": "Paula and John contracted Katie Forester to mow and weed the exterior of the pump stations and make the gates operational.",
+   "quote": "they have contracted with katie forester to mow and weed the exterior of the stations"
+  },
+  {
+   "decision": "Spill Sense I/I meter to be trialled on one unit before any further purchase; Paula holds a purchase order for one unit and training is to be provided.",
+   "quote": "they will try one unit and if it works well, she may suggest purchasing more."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap permit fee and automatic non-compliance fee",
+   "what_was_recorded": "The grease trap permit fee is $150 and the automatic non-compliance fee is $100.",
+   "figures_as_printed": [
+    "$150",
+    "$100"
+   ],
+   "quote": "the permit fee is $150 and an automatic non-compliance fee of $100."
+  },
+  {
+   "topic": "Possible $25/day non-compliance fine",
+   "what_was_recorded": "If permit holders stay non-compliant, staff would ask the Commission to institute a $25 per day fine.",
+   "figures_as_printed": [
+    "$25/day"
+   ],
+   "quote": "if they stay non-compliant, paula will ask the commission to institute the $25/day fine."
+  },
+  {
+   "topic": "Oil water separator permit fee",
+   "what_was_recorded": "The new oil water separator regulation carries a $150 fee.",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "this is a new regulation and the fee is $150."
+  },
+  {
+   "topic": "Warrant article transfer to Sewer Reserve Capacity Stabilization Fund",
+   "what_was_recorded": "Warrant article #1 proposes a transfer of $1,851.30 to the Sewer Reserve Capacity Stabilization Fund.",
+   "figures_as_printed": [
+    "$1,851.30"
+   ],
+   "quote": "transfer of $1,851.30 to the sewer reserve capacity stabilization fund (received when people connect)"
+  },
+  {
+   "topic": "Warrant article transfer to Sewer Inflow/Infiltration Stabilization Fund",
+   "what_was_recorded": "Warrant article #2 proposes a transfer of $5,340.00 into the Sewer Inflow/Infiltration Stabilization Fund.",
+   "figures_as_printed": [
+    "$5,340.00"
+   ],
+   "quote": "transfer of $5,340.00 into the sewer inflow/infiltration stabilization fund."
+  },
+  {
+   "topic": "Pump station maintenance contract award (CTE)",
+   "what_was_recorded": "CTE won the maintenance bid, with an award of $174,058.",
+   "figures_as_printed": [
+    "$174,058"
+   ],
+   "quote": "cte won the maintenance bid and the award is $174,058."
+  },
+  {
+   "topic": "Exterior pump station maintenance contract (Katie Forester)",
+   "what_was_recorded": "Exterior mowing, weeding and gate repair contract at the pump stations costs $3,200.",
+   "figures_as_printed": [
+    "$3,200"
+   ],
+   "quote": "the cost will be $3,200 and she will start soon."
+  },
+  {
+   "topic": "Possible sewer rate increase from Fitchburg and Leominster",
+   "what_was_recorded": "Fitchburg is going up 7% and Leominster is proposing a substantial increase; the IMA with Leominster is under negotiation.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "the commission will discuss a possible rate increase due to fitchburg going up 7%"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to the Sewer Reserve Capacity Stabilization Fund (received when people connect), FY24 Special Town Meeting warrant article #1",
+   "amount_as_printed": "$1,851.30",
+   "outcome": "approved by motion, passed 4-0",
+   "quote": "transfer of $1,851.30 to the sewer reserve capacity stabilization fund (received when people connect)"
+  },
+  {
+   "description": "Transfer to the Sewer Inflow/Infiltration Stabilization Fund, FY24 Special Town Meeting warrant article #2",
+   "amount_as_printed": "$5,340.00",
+   "outcome": "approved by motion, passed 4-0",
+   "quote": "transfer of $5,340.00 into the sewer inflow/infiltration stabilization fund."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no comment or announcements",
+   "quote": "public comment and announcements -none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Organization of the board",
+   "resolution": "tabled until all members present",
+   "quote": "organization of the board - tabled to when all members are present.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Appointment: Wright Pierce, redirecting flow from Fitchburg to Leominster",
+   "resolution": "discussed; Wright Pierce to produce a tech memo and meet again",
+   "quote": "kick off discussion for a review for possible redirection of flow from fitchburg to",
+   "tags": [
+    "wastewater",
+    "Wright Pierce",
+    "Fitchburg",
+    "Leominster",
+    "CWMP",
+    "flow"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/27/23 and 7/11/23",
+   "resolution": "approved 4-0 each",
+   "quote": "to accept the minutes of 6/27/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Grease trap permits and non-compliance fees",
+   "resolution": "approved: $100 fee applied to 3 non-compliant restaurants; $25/day fine to be considered if non-compliance continues",
+   "quote": "to apply the $100 fee to the 3 non-compliant restaurants.",
+   "tags": [
+    "grease traps",
+    "fees",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Random inspection audits",
+   "resolution": "agreed to resume; no vote recorded",
+   "quote": "john stated they used to do random inspection audits and he would like do them again.",
+   "tags": [
+    "grease traps",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Oil water separators",
+   "resolution": "discussed; deferred to next meeting",
+   "quote": "the commission agreed to discuss this at the next meeting.",
+   "tags": [
+    "oil water separators",
+    "fees"
+   ]
+  },
+  {
+   "topic": "October meeting schedule",
+   "resolution": "October 31 meeting cancelled",
+   "quote": "the commission agreed to cancel the meeting on halloween night (10/31).",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles",
+   "resolution": "two transfers approved 4-0",
+   "quote": "these are the regular transfers and bill confirmed that the special town meeting will be 11/14.",
+   "tags": [
+    "town meeting",
+    "transfers",
+    "stabilization funds"
+   ]
+  },
+  {
+   "topic": "Business manager report: system maintenance, I/I, exterior maintenance",
+   "resolution": "reported; contract award and exterior work noted, no vote recorded",
+   "quote": "paula reported that cte won the maintenance bid and the award is $174,058.",
+   "tags": [
+    "pump stations",
+    "maintenance",
+    "CTE",
+    "inflow/infiltration",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Second public comment heading: IMA discussion scheduling",
+   "resolution": "noted; IMA to be discussed 9/12; no public speakers recorded",
+   "quote": "paula noted they will be discussing the ima at the 9/12 meeting.",
+   "tags": [
+    "IMA",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed; no action",
+   "quote": "september 12, 2023 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:04pm, 4-0",
+   "quote": "to adjourn at 7:04pm roll call vote: mike m.-aye, brett-aye, mike n.-aye and john -aye.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "grease traps",
+  "fees",
+  "Wright Pierce",
+  "Fitchburg",
+  "Leominster",
+  "IMA",
+  "rate increase",
+  "pump stations",
+  "CTE maintenance contract",
+  "inflow/infiltration",
+  "town meeting transfers",
+  "stabilization funds",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

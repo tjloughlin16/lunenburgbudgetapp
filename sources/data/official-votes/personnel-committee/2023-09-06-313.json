@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-09-06",
  "docid": "313",
@@ -12,31 +12,185 @@
  },
  "votes": [
   {
-   "motion": "accept and approve the minutes from the August 23, 2023 meeting",
+   "motion": "Approve the minutes of the August 23, 2023 meeting.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. fortune to accept and approve the minutes from the august 23, 2023 meeting second: s. andrews roll call vote: all in favor"
+   "quote": "motion by d. fortune to accept and approve the minutes from the august 23, 2023 meeting"
   },
   {
-   "motion": "move the discussion of the Vacation Leave Accrual to later in the meeting",
+   "motion": "Move the discussion of the Vacation Leave Accrual to later in the meeting.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "w. bertrand made a motion to move the discussion of the vacation leave accrual to later in the meeting as we expected j. bilotta to arrive later, and she would be able to participate in the discussion second: s. andrews roll call vote: all in favor"
+   "quote": "w. bertrand made a motion to move the discussion of the vacation leave accrual to later in the meeting as"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 8:11pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "s. andrews made a motion to adjourn at 8:11pm second: d. fortune roll call vote: all in favor"
+   "quote": "s. andrews made a motion to adjourn at 8:11pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09214150000000002
+ "note": "Machine-extracted text, not a scan. Every roll call is recorded only as \"All in Favor\" with no tally, so outcomes are entered as \"passed\" without a count. The minutes do not print a dollar figure anywhere, so budget_items and transfers are empty. The public-comment speaker is printed as \"B. Bernard\"; the only Bernard listed is Bill Bernard, DPW Director, under Also Present, so the link is an inference. The minutes do not print \"Chair\"; W. Bertrand is recorded as opening the meeting. Roles for Joanna Bilotta are not stated.",
+ "cost_usd": 0.014914070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "In Person Attendees",
+   "status": "present",
+   "quote": "in person attendees: susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "In Person Attendees; opened the meeting",
+   "status": "present",
+   "quote": "in person attendees: susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "In Person Attendees",
+   "status": "present",
+   "quote": "in person attendees: susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll & Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, pauline roy, coa outreach coordinator, nancy o'rourke, payroll & benefits coordinator/risk manager, bill bernard, dpw director"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "committee member (per minutes; role not stated)",
+   "status": "absent",
+   "quote": "absent: joanna bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group agreed to discuss the vacation accrual issue again at the next meeting, since J. Bilotta could not attend.",
+   "quote": "the group agreed to discuss again at the next meeting."
+  },
+  {
+   "decision": "The group targeted September 20, 2023 at 6:00pm as the next meeting date.",
+   "quote": "the group attempted to identify the next meeting date, and targeted september 20 at 6:00pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "B. Bernard",
+   "stated_role": "",
+   "topic": "job assessment weighting and tools",
+   "quote": "b. bernard questioned the type of assessment system"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "received; one comment on the assessment system",
+   "quote": "b. bernard questioned the type of assessment system",
+   "tags": [
+    "public comment",
+    "job assessment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "minutes of the august 23, 2023 meeting were presented and reviewed.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Move vacation accrual discussion later",
+   "resolution": "moved later in the agenda",
+   "quote": "w. bertrand made a motion to move the discussion of the vacation leave accrual to later in the meeting as",
+   "tags": [
+    "vacation accrual",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Position classification points",
+   "resolution": "reviewed; points assigned to listed jobs",
+   "quote": "the committee reviewed the following jobs utilizing the position classification rating and guidelines and",
+   "tags": [
+    "position classification",
+    "job assessment"
+   ]
+  },
+  {
+   "topic": "Vacation accrual issue",
+   "resolution": "discussed; continued to next meeting",
+   "quote": "s. andrews reviewed her discussion with nancy o'rourke regarding how vacation accrual was determined",
+   "tags": [
+    "vacation accrual",
+    "benefits",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comments",
+   "quote": "there were neither committee comments, nor public comments during this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "targeted September 20 at 6:00pm",
+   "quote": "the group attempted to identify the next meeting date, and targeted september 20 at 6:00pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:11pm",
+   "quote": "s. andrews made a motion to adjourn at 8:11pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "vacation accrual",
+  "position classification",
+  "job assessment",
+  "benefits",
+  "public comment",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

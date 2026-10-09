@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-08-15",
  "docid": "361",
@@ -12,55 +12,340 @@
  },
  "votes": [
   {
-   "motion": "Approve the tollbooth fundraiser for the Boys and Girls Club on September 16 from 10 am to 2 pm in town center following all applicable laws and guidelines as presented",
+   "motion": "Approve the tollbooth fundraiser for the Boys and Girls Club on September 16 from 10 am to 2 pm in town center, as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Emkey",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\": r. emkey to approve the tollbooth fundraiser for the boys and girls club on september 16\" from 10 am to 2 pm in town center following all applicable laws and guidelines as presented vote: all in favor"
+   "quote": "to approve the tollbooth fundraiser for the boys and girls club on september 16\" from 10 am to 2 pm"
   },
   {
-   "motion": "Approve permits #15, 16, 17, 27, 30 and 57 as presented in the inspection report",
+   "motion": "Approve earth removal permits #15, 16, 17, 27, 30 and 57 as presented in the inspection report.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\" :l. franco to approve permits #15, 16, 17, 27, 30 and 57 as presented in the inspection report vote: all in favor"
+   "quote": "to approve permits #15, 16, 17, 27, 30 and 57 as presented in the inspection report"
   },
   {
-   "motion": "Approve the special event license and the one day wine and beer license for September 16, 2023 as described in the application",
+   "motion": "Approve the special event license and the one day wine and beer license for September 17, 2023 for St Boniface Parish's Oktoberfest, as described in the application.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2'': t. alonzo to approve the special event license and the one day wine and beer license for september 17, 2023 as described in their application vote: all in favor"
+   "quote": "to approve the special event license and the one day wine and beer license for september 17, 2023 as described in their application"
   },
   {
-   "motion": "Schedule a Special Town Meeting for November 14 at 7:00 p.m. and open the warrant on August 16 through September 18 at 5:00 p.m.",
+   "motion": "Schedule a Special Town Meeting for November 14 at 7:00 p.m. and open the Special Town Meeting warrant on August 16 through September 18 at 5:00 p.m.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: t. alonzo to schedule a special town meeting for november 14 at 7:00 p.m. and open the special town meeting warrant on august 16\" and through september 18 at 5:00 p.m. vote: all in favor"
+   "quote": "to schedule a special town meeting for november 14 at 7:00 p.m. and open the special town meeting"
   },
   {
-   "motion": "Approve the minutes of May 2 and May 9, 2023 as presented",
+   "motion": "Approve the minutes of May 2 and May 9, 2023 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor, 1 abstention (Emkey)",
    "procedural": true,
-   "quote": "motion: l. franco 2\"d: t. alonzo to approve the minutes of may 2 and may 9, 2023 as presented vote: 3 in favor, 1 abstention (emkey)"
+   "quote": "to approve the minutes of may 2 and may 9, 2023 as presented vote: 3 in favor, 1 abstention (emkey)"
   },
   {
-   "motion": "Authorize litigation for the encroachment on the Large Town Forest by the property owners at 950 Chase Road",
+   "motion": "Authorize litigation for the encroachment on the Large Town Forest by the property owners at 950 Chase Road.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2'd: l. franco to authorize litigation for the encroachment on the large town forest by the property owners at 950 chase road vote: all in favor"
+   "quote": "to authorize litigation for the encroachment on the large town forest by the property owners at 950 chase road"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting the meeting adjourned at 8:49 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan from macOS Vision. The minutes contain a discrepancy: the motion to approve the special event license states September 17, 2023, but all prior references (heading, hearing notice) specify September 16, 2023. Quote preserves the motion's actual text. Minor OCR artifacts present in transcription of \"2nd:\" notation across multiple votes.",
- "cost_usd": 0.1095815
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision), not a clean original. Several names and seconds are garbled (chair printed as \"Chairman Jeffieys\" and \"Clave M. Peterson\" in the signature block; seconders such as \"2\\\":\" and \"2'':\"). Quotes were taken from the readable lines. Pages 1-6 appear continuous, but page 5 ends mid-goals discussion and page 6 resumes mid-sentence, so part of the Goals discussion is not captured. The Bicycles Battling Cancer request has no recorded motion or result in the text. The Oktoberfest motion says September 17, 2023 while the hearing notice and request say the event is September 16, 2023; printed as the minutes print it. Board roles for Alonzo, Franco, Emkey and Belliveau are not printed in the text. Alonzo and Emkey appear under PUBLIC COMMENT and also as voting members; recorded as printed. The Oktoberfest hearing notice was read, but no hearing closing is recorded.",
+ "cost_usd": 0.02035121,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chair (printed as Mr. Jeffreys / M. Jeffreys; opening line OCR reads Chairman Jeffieys)",
+   "status": "present",
+   "quote": "mr. jeffreys stated their next meeting is august 22nd"
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. alonzo noted last night was the last summer band concert for the season."
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: l. franco 2'': t. alonzo to approve the special event license and the one day wine and beer license"
+  },
+  {
+   "name": "R. Emkey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. emkey reminded of the immediate need for assessors due to the two recent resignations"
+  },
+  {
+   "name": "Mr. Gingras",
+   "role": "reported on PJ Keating site inspections (agenda heading: Building Commissioner)",
+   "status": "present",
+   "quote": "mr. gingras reported he had conducted site inspections of all the pj keating permit sites."
+  },
+  {
+   "name": "Andrew Woods",
+   "role": "presented for the request (Flat Hill Road)",
+   "status": "present",
+   "quote": "andrew woods, 94/ flat hill road, presented for the request."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "coa director sue doherty and jamie toale, 147 island road, appeared for the presentation."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "appeared for the presentation; also presented the St Boniface request",
+   "status": "present",
+   "quote": "tom bodkin and jamie toale presented for the requests."
+  },
+  {
+   "name": "Mark Walter",
+   "role": "presented on the bicycle ride request",
+   "status": "present",
+   "quote": "mark walter presented on the request to pass through lunenburg"
+  },
+  {
+   "name": "Tom Bodkin",
+   "role": "presented for the St Boniface Oktoberfest requests",
+   "status": "present",
+   "quote": "tom bodkin and jamie toale presented for the requests."
+  },
+  {
+   "name": "Ms. Belliveau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. belliveau reported the special town meeting is scheduled for november 14"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Commissioner, Conservation Commission (138 Whiting Street)",
+   "status": "present",
+   "quote": "commissioners bob pease, 11 wintergreen court, and mary wilson, 138 whiting street, were present."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commissioner, Conservation Commission (11 Wintergreen Court)",
+   "status": "present",
+   "quote": "commissioners bob pease, 11 wintergreen court, and mary wilson, 138 whiting street, were present."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes recorder)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board was supportive of the Council on Aging's proposal to set up a booth at the Discovery Center event for town committee and board volunteer recruitment, and some Select Board members may join the booth.",
+   "quote": "the board was supportive of the idea. some select board members may join him that day at the booth."
+  },
+  {
+   "decision": "The chair asked the board to continue its FY24 Select Board Goals discussion on Objective 1 (30 School Street).",
+   "quote": "mr. jeffreys asked the board to continue on objective# 1."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the board",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$742,050.93",
+    "$768,160.76",
+    "$17,945.56"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $742,050.93; a payroll warrant in the amount of"
+  },
+  {
+   "topic": "Conservation Commission MassTrails grant",
+   "what_was_recorded": "The Conservation Commission announced a MassTrails grant of $61,305 for engineered plans for improvements to three conservation areas.",
+   "figures_as_printed": [
+    "$61,305"
+   ],
+   "quote": "ms. wilson announced the conservation commission has received grant funding in the amount of $61,305"
+  },
+  {
+   "topic": "Conservation Commission grant matching funds",
+   "what_was_recorded": "The grant requires the town to provide matching funds of $15,450, to come from the Conservation Commission's timber rights fund.",
+   "figures_as_printed": [
+    "$15,450"
+   ],
+   "quote": "the grant requires that the town provide matching funds of $15,450 which will come from the conservation"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Emkey",
+   "topic": "Assessors vacancies and volunteers",
+   "quote": "ms. emkey reminded of the immediate need for assessors due to the two recent resignations and encouraged"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Summer band concert",
+   "quote": "mr. alonzo noted last night was the last summer band concert for the season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements (beach hours, board vacancies, job openings)",
+   "resolution": "no action",
+   "quote": "town beach hours are saturdays and sundays from 12 to 6 and monday through friday 10 a.m. to 7",
+   "tags": [
+    "announcements",
+    "vacancies",
+    "town beach"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "lunenburg boys & girls club tollbooth fundraiser request for 9/16/23; 10 am to 2 pm- town center",
+   "tags": [
+    "event permit",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "COA Director report on the Discovery Program",
+   "resolution": "presented; board supportive of volunteer booth; no vote recorded",
+   "quote": "coa director report on the discovery program",
+   "tags": [
+    "council on aging",
+    "volunteer recruitment"
+   ]
+  },
+  {
+   "topic": "Earth removal permit renewals (PJ Keating) after site inspections",
+   "resolution": "approved",
+   "quote": "meeting with building commissioner for earth removal permit renewals",
+   "tags": [
+    "earth removal",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Bicycles Battling Cancer request to pass through Lunenburg on September 17, 2023",
+   "resolution": "presented; no vote recorded in the text",
+   "quote": "bicycles battling cancer request to pass through lunenburg on september 17",
+   "tags": [
+    "event permit",
+    "bicycle ride"
+   ]
+  },
+  {
+   "topic": "St Boniface Parish Oktoberfest special event and one day wine and beer license (public hearing)",
+   "resolution": "approved",
+   "quote": "request for special event license and one day wine & beer license for st boniface parish's",
+   "tags": [
+    "liquor license",
+    "special event",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting date and warrant opening/closing dates",
+   "resolution": "approved",
+   "quote": "vote on special town meeting date (november 14, 2023 at 7 pm)",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of May 2 and May 9, 2023",
+   "resolution": "approved",
+   "quote": "approval of minutes of may 2, may 9, 2023",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $742,050.93",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning Committee, Municipal Building Design Committee)",
+   "resolution": "no action",
+   "quote": "mr. alonzo reported the capital planning committee will hold their first meeting",
+   "tags": [
+    "committees",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "FY24 Select Board Goals, continued (Objective 1 on 30 School Street; Objective 3 on bylaws)",
+   "resolution": "continued",
+   "quote": "discussion on fy24 select board goals (continued)",
+   "tags": [
+    "goals",
+    "30 School Street",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Conservation Commission: encroachment litigation, MassTrails grant, staffing",
+   "resolution": "litigation authorized; grant announced; staffing discussed, no action on hiring",
+   "quote": "meeting with conservation commission representatives to request select board authorization of",
+   "tags": [
+    "conservation commission",
+    "litigation",
+    "grant",
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and adjournment",
+   "resolution": "adjourned at 8:49 p.m.; next meeting August 22",
+   "quote": "mr. jeffreys stated their next meeting is august 22nd",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting",
+  "liquor and special event licenses",
+  "earth removal permits",
+  "conservation commission",
+  "litigation",
+  "grants",
+  "staffing and hiring",
+  "select board goals",
+  "warrants",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

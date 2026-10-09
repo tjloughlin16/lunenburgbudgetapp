@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-07-18",
  "docid": "394",
@@ -12,15 +12,170 @@
  },
  "votes": [
   {
-   "motion": "adjourn and enter into executive session and not return to the open meeting",
+   "motion": "Send out third-quarter estimated tax bills.",
+   "moved_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion to send out estimated 3rd",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Adjourn and enter executive session, not returning to the open meeting.",
    "moved_by": "Kevin Fish",
-   "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn and enter into executive session and not return to the open meeting by kevin fish, seconded by john rabbitt. all in favor."
+   "quote": "motion to adjourn and enter into executive session and not return to the open meeting by kevin fish, seconded by john rabbitt. all in favor.",
+   "seconded_by": "John Rabbitt"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes contain an incomplete partial motion on page 1 regarding sending out third-quarter estimated tax bills—the text reads \"Motion to send out estimated 3rd\" and cuts off mid-sentence, with no recorded mover, seconder, or outcome. This has been excluded per the rule that only complete recorded votes count.",
- "cost_usd": 0.0730321
+ "note": "Text is macOS Vision OCR with page breaks. The third-quarter tax bill motion is cut off at the page 1/2 break (\"Motion to send out estimated 3rd\"): the minutes record a motion but no mover, second, or result, so it is listed with outcome \"not stated\". The adjournment vote is recorded as \"All in favor\" with no count. No dollar figures are printed anywhere. Nate Cramer and Vision are mentioned but did not take part, so they are not listed as attendees. Expense vouchers were signed, not voted on.",
+ "cost_usd": 0.013937550000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane (as printed in public comment)",
+   "status": "present",
+   "quote": "carl luck -50 sunset lane- questions whether inspections are primarily to confirm or certify"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rena Swezey will work with Vision to review all building permits and properties sold last year.",
+   "quote": "rena sweezy will work with vision to review all the building permits and properties sold last year"
+  },
+  {
+   "decision": "The site index used by Nate Cramer will be put into place, per Rena Swezey.",
+   "quote": "rena swezey states that the site index used by nate cramer will be put into place."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third-quarter estimated tax bills",
+   "what_was_recorded": "Rena Swezey asked the board to vote to send out third-quarter estimated tax bills, to be completed by August; no dollar figures printed.",
+   "quote": "rena swezey wants the board to make a motion and take a vote to send out third-quarter estimated tax bills.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Expense vouchers",
+   "what_was_recorded": "Two board members reviewed and signed the expense vouchers; no amounts printed.",
+   "quote": "kevin fish and richard letarte reviewed and signed the expense vouchers.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Accounts payable and abatement review",
+   "what_was_recorded": "The chair described the board's main function as reviewing accounts payable, payroll, abatements and exemptions; no dollar figures printed.",
+   "quote": "review payments for accounts payable for payroll, abatement requests, excise tax abatements",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "-50 Sunset Lane-",
+   "topic": "inspections, property tiers, lakefront valuation",
+   "quote": "carl luck -50 sunset lane- questions whether inspections are primarily to confirm or certify that the information collected for every house is correct."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "-50 Sunset Lane-",
+   "topic": "lakefront properties and rating without inspection",
+   "quote": "carl luck states that not all lakefront properties were looked at only the ones who requested an abatement."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "discussed, no action",
+   "quote": "carl luck -50 sunset lane- questions whether inspections are primarily to confirm or certify",
+   "tags": [
+    "public comment",
+    "inspections",
+    "valuation"
+   ]
+  },
+  {
+   "topic": "Discuss Office Function",
+   "resolution": "discussed, no action",
+   "quote": "review payments for accounts payable for payroll, abatement requests, excise tax abatements",
+   "tags": [
+    "abatements",
+    "exemptions",
+    "accounts payable",
+    "mapping"
+   ]
+  },
+  {
+   "topic": "Discuss Office Work Plan",
+   "resolution": "third-quarter tax bill motion recorded without result; recertification and sales verification discussed",
+   "quote": "rena swezey wants the board to make a motion and take a vote to send out third-quarter estimated tax bills.",
+   "tags": [
+    "tax bills",
+    "recertification",
+    "sales verification",
+    "data collection"
+   ]
+  },
+  {
+   "topic": "Review and Approval of Expense Vouchers",
+   "resolution": "reviewed and signed by two members",
+   "quote": "kevin fish and richard letarte reviewed and signed the expense vouchers.",
+   "tags": [
+    "expense vouchers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved, adjourned to executive session",
+   "quote": "motion to adjourn and enter into executive session and not return to the open meeting by kevin fish, seconded by john rabbitt. all in favor.",
+   "tags": [
+    "executive session",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "assessing",
+  "property valuation",
+  "tax bills",
+  "abatements",
+  "recertification",
+  "public comment",
+  "executive session",
+  "Board of Assessors"
+ ],
+ "dropped_unquoted_by_field": {}
 }

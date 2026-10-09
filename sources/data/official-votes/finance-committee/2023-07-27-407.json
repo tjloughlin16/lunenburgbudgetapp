@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-07-27",
  "docid": "407",
@@ -12,15 +12,237 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion by chris menard to adjourn, seconded by jay simeone."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. No other motions to vote appear in the minutes; committee members agreed informally to various actions (Jean Russell taking on Facilities Committee liaison, Karen Menard helping with minutes) but these were not recorded as formal motions put to a vote.",
- "cost_usd": 0.0679031
+ "dropped_unquoted": 1,
+ "note": "Plain text extraction, complete for all three pages. The minutes record one motion (to adjourn) with no result printed, so its outcome is 'not stated', though the minutes say the meeting adjourned at 7:47 PM. The minutes say there was no clerk and that minutes for 5/25, 6/8 and 6/22 were not recorded. No votes on any other item. Public comment is recorded twice as 'No public comment.' with no speakers. Budget figures are as printed in the minutes and were not checked against any other document.",
+ "cost_usd": 0.0168187,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: school committee member brian lehtinen, town manager heather lemieux, vice chair chris menard, board member jean russell, board member jay simeone, chair evan watters."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reorganization deferred to the next meeting, when additional members will be available; no clerk or administrative applicants at present.",
+   "quote": "evan watters wants to wait until the next meeting when additional members will be available to discuss reorganization."
+  },
+  {
+   "decision": "Liaison reorganization deferred to the next meeting so Evan Watters can bring a list of liaisons.",
+   "quote": "the group agrees to discuss this at the next meeting so evan watters can bring a list of liaisons and additional members will be present."
+  },
+  {
+   "decision": "Karen Menard of the Parks Commission agreed to help complete the minutes for the 5/25, 6/8 and 6/22 meetings, which had no clerk to record them.",
+   "quote": "karen menard from the parks commission agrees to help and complete the meeting minutes."
+  },
+  {
+   "decision": "Chris Menard will reach out to the Select Board and additional groups for input on a written policy for capital money.",
+   "quote": "chris menard will reach out to the select board and additional groups for input."
+  },
+  {
+   "decision": "A look back at the committee policies will be a topic for future meetings.",
+   "quote": "for future meetings, there will be a look back at the committee policies."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Guardrail repair services award",
+   "what_was_recorded": "A guardrail repair services bid was awarded to Premier Fence, funded in part by a Mass DOT program.",
+   "quote": "the need for guardrail repair services bid of 80,886 dollars was awarded to premier fence.",
+   "figures_as_printed": [
+    "80,886 dollars"
+   ]
+  },
+  {
+   "topic": "Mass DOT Winter Recovery Assistance Program funding",
+   "what_was_recorded": "Funding from the Mass DOT Winter Recovery Assistance Program was used for the guardrail project; no amount is printed.",
+   "quote": "funding from the mass dot winter recovery assistance program was used for this project.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Page Street culvert bid",
+   "what_was_recorded": "A bid from Powell Construction was received for the Page Street culvert.",
+   "quote": "a bid from powell construction in the amount of 86,913 dollars was received for the page street culvert.",
+   "figures_as_printed": [
+    "86,913 dollars"
+   ]
+  },
+  {
+   "topic": "5-year reassessing evaluation proposal",
+   "what_was_recorded": "A proposal from Vision for the 5-year reassessing evaluation was received at an estimated cost.",
+   "quote": "a proposal from vision regarding the 5-year reassessing evaluation was received with an estimated cost of 112,000 dollars.",
+   "figures_as_printed": [
+    "112,000 dollars"
+   ]
+  },
+  {
+   "topic": "Parks Commission grant for Marshall Park",
+   "what_was_recorded": "The Parks Commission submitted a grant for Marshall Park.",
+   "quote": "chris menard states that the parks commission submitted a 500,000 dollar grant for marshall park.",
+   "figures_as_printed": [
+    "500,000 dollars"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "noted: new member Jean Russell; open committee positions",
+   "quote": "the finance committee has a new member, jean russell.",
+   "tags": [
+    "membership",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Town manager/Finance report",
+   "resolution": "noted: bid openings, grants, projects and website update",
+   "quote": "heather lemieux discusses current bid openings.",
+   "tags": [
+    "bids",
+    "grants",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Committee reorganization",
+   "resolution": "deferred to next meeting",
+   "quote": "evan watters wants to wait until the next meeting when additional members will be available to discuss reorganization.",
+   "tags": [
+    "governance",
+    "committee organization"
+   ]
+  },
+  {
+   "topic": "Liaison reorganization",
+   "resolution": "deferred to next meeting; Jean Russell agrees to take on the Facilities Committee",
+   "quote": "jean russell agrees to take on the facilities committee.",
+   "tags": [
+    "governance",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Past meeting minutes plan (5/25, 6/8, 6/22)",
+   "resolution": "Karen Menard agrees to help complete the minutes",
+   "quote": "karen menard from the parks commission agrees to help and complete the meeting minutes.",
+   "tags": [
+    "minutes",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Tax assessment/abatement update",
+   "resolution": "no update; town manager not on the call",
+   "quote": "the town manager was not currently on the zoom meeting so there are no updates.",
+   "tags": [
+    "tax bills",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no committee meetings since the kick-off",
+   "quote": "brian lehtinen from the school committee has no update as they have not had a meeting since the prior meeting.",
+   "tags": [
+    "committee reports",
+    "Parks",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "look back at committee policies to be scheduled",
+   "quote": "for future meetings, there will be a look back at the committee policies.",
+   "tags": [
+    "governance",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Capital fiscal policy and Town Hall, AC and roof projects",
+   "resolution": "discussion; Chris Menard to seek input from Select Board and other groups",
+   "quote": "chris menard questions if there are any fiscal policies related to capital money.",
+   "tags": [
+    "capital planning",
+    "Town Hall project",
+    "fiscal policy",
+    "roof repair"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "dates listed",
+   "quote": "august 24, september 14, september 28",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made; adjourned at 7:47 PM",
+   "quote": "motion by chris menard to adjourn, seconded by jay simeone.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "capital planning",
+  "bids and contracts",
+  "town reorganization",
+  "committee governance",
+  "Town Hall project",
+  "roads and culverts",
+  "reassessment",
+  "grants",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

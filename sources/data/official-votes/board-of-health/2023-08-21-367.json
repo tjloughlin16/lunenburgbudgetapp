@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-08-21",
  "docid": "367",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from July 17, 2023",
+   "motion": "Approve the above minutes (the July 17, 2023 minutes).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,31 +20,31 @@
    "quote": "motion by jewell, second by fortin, to approved above minutes. all in favor."
   },
   {
-   "motion": "Approve variances for 222 Hollis Road (rehearing)",
+   "motion": "At 222 Hollis Road (a rehearing, abutter notice now given), the variances were again approved.",
    "moved_by": "Jewell",
    "seconded_by": "Normandin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by normandin, the variances were again approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by normandin, the variances were again approved. all in favor."
   },
   {
-   "motion": "Approve one open room in basement at 60 Elm Street with deed restriction limiting house to 4 bedrooms and 10 rooms total and no additional living space",
+   "motion": "At 60 Elm Street, approve one open room in the basement, conditioned on a deed restriction limiting the house to 4 bedrooms and 10 rooms total and no additional living space. The printed roll shows Emond, Jewell, Fortin, Normandin approve and Watters deny (4 approve, 1 deny; tally counted from the roll, not printed as a count).",
    "moved_by": "Jewell",
    "seconded_by": "Normandin",
-   "outcome": "passed 4-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by normandin, the board approved one open room in the basement with the condition of a deed restriction limiting the house to 4 bedrooms and 10 rooms total"
+   "quote": "the board approved one open room in the basement with the condition of a deed restriction limiting the house to 4 bedrooms and 10 rooms total and no additional living space."
   },
   {
-   "motion": "Elect George Emond as Chairman, Evan Watters as Vice-Chairman, and Lisa Normandin as Secretary",
+   "motion": "Elect the nominated officers: George Emond as Chairman, Evan Watters as Vice-Chairman, and Lisa Normandin as Secretary.",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "on motion by fortin and second by jewell the above were elected. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:15 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Watters",
    "outcome": "passed",
@@ -53,6 +53,152 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. Minutes are readable; all votes recorded with outcomes.",
- "cost_usd": 0.0782765
+ "note": "Text is macOS Vision OCR; page 2 has visible OCR errors (e.g. 'PrAs', 'PrAS', 'selectboara', 'coula'), so quotes were taken from wording that reads cleanly. The minutes headed 'MINUTES July 17, 2023' are the approved item; the body of this document does not print its own meeting date, so the 2023-08-21 date comes from the request, not the text. Board members' attendance is not printed as a list; 'present' is inferred from the roll votes. The 60 Elm Street tally (4 approve, 1 deny) is counted from the printed roll, not stated as a count. No public comment section is recorded. No dollar figures appear in the text.",
+ "cost_usd": 0.0195051,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "perry jewell stated that he is not presently in favor of using arpa funds for the testing of private wells."
+  },
+  {
+   "name": "George Emond",
+   "role": "Board of Health member; nominated for Chairman and elected",
+   "status": "present",
+   "quote": "perry jewell nominated for following: chairman vice-chairman secretary george emond evan watters lisa normandin"
+  },
+  {
+   "name": "Fortin",
+   "role": "Board of Health member (first name not printed)",
+   "status": "present",
+   "quote": "emond approve jewell approve fortin approve normandin approve watters deny"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Board of Health member; nominated for Secretary and elected",
+   "status": "present",
+   "quote": "perry jewell nominated for following: chairman vice-chairman secretary george emond evan watters lisa normandin"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Board of Health member; nominated for Vice-Chairman and elected",
+   "status": "present",
+   "quote": "perry jewell nominated for following: chairman vice-chairman secretary george emond evan watters lisa normandin"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner (as printed: 'on behalf of the owner') for 222 Hollis Road",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Joe Rameau",
+   "role": "presenter for 60 Elm Street building permit",
+   "status": "present",
+   "quote": "joe rameau met with the board regarding this building permit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Not to favor using ARPA funds for private well testing at this time; the board will wait until after the first of the year to see what the State and EPA propose (no vote recorded).",
+   "quote": "it was decided that the instant issue of using arpa funds for private well testing is not something that the board would favor at this time"
+  },
+  {
+   "decision": "Members agreed that well testing should not bypass the Board of Health (no vote recorded).",
+   "quote": "members were in agreement that testing should not bypass board of health."
+  },
+  {
+   "decision": "The board is willing to look at current well regulations and possibly include well testing on conveyance, similar to Title 5 on septic systems (no vote recorded).",
+   "quote": "collectively, the board is willing to looking at currently well regulations and possibly include well testing on conveyance"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funds for PFAS testing of private wells (Selectboard request)",
+   "what_was_recorded": "The Selectboard asked the Board of Health to consider using ARPA funds the town currently has for PFAS testing of private wells; the board discussed questions on who pays and the cost of remediation, and did not favor using the funds at this time. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the funding would come from arpa funds the town currently has."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (July 17, 2023)",
+   "resolution": "approved",
+   "quote": "motion by jewell, second by fortin, to approved above minutes. all in favor.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "222 Hollis Road variances (rehearing)",
+   "resolution": "approved (variances again approved)",
+   "quote": "after discussion and on motion by jewell and second by normandin, the variances were again approved. all in favor.",
+   "tags": [
+    "variance",
+    "hearing",
+    "rehearing",
+    "abutter notification"
+   ]
+  },
+  {
+   "topic": "60 Elm Street building permit (basement room)",
+   "resolution": "approved with deed restriction (4 bedrooms, 10 rooms total)",
+   "quote": "the board approved one open room in the basement with the condition of a deed restriction limiting the house to 4 bedrooms and 10 rooms total and no additional living space.",
+   "tags": [
+    "building permit",
+    "septic",
+    "deed restriction",
+    "basement"
+   ]
+  },
+  {
+   "topic": "PFAS testing of private wells and ARPA funds",
+   "resolution": "no vote; board would not favor ARPA funds now and will wait until after the first of the year",
+   "quote": "it was decided that the instant issue of using arpa funds for private well testing is not something that the board would favor at this time",
+   "tags": [
+    "PFAS",
+    "private wells",
+    "ARPA",
+    "water testing",
+    "Selectboard"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "elected George Emond (Chairman), Evan Watters (Vice-Chairman), Lisa Normandin (Secretary)",
+   "quote": "on motion by fortin and second by jewell the above were elected. all in favor.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "on motion by fortin and seconded by watters, the meeting was adjourned at 8:15 pm, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "variance",
+  "building permit",
+  "septic",
+  "deed restriction",
+  "PFAS",
+  "ARPA",
+  "private wells",
+  "well testing",
+  "election of officers",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

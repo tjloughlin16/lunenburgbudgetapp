@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-08-24",
  "docid": "373",
@@ -12,35 +12,200 @@
  },
  "votes": [
   {
-   "motion": "To not allow Beaulac Brothers into the North and South Cemeteries",
-   "outcome": "passed unanimously",
+   "motion": "Not to allow Beaulac Brothers into the North and South Cemeteries.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the cemetery commission made a motion to not allow beaulac brothers into the north and south cemeteries, which was approved unanimously."
   },
   {
-   "motion": "To accept Chair Nancy Foss-Yasko as primary contact with permission to speak on behalf of the Cemetery Commission",
-   "outcome": "passed unanimously",
+   "motion": "To accept Chair Nancy Foss-Yasko as primary contact and permission to speak on behalf of the Cemetery Commission.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was presented to accept chair, nancy foss-yasko as primary contact and permission to speak on behalf for the cemetery commission. therefore, giving the chair the authority to move forward within the cemetery commission and combined dpw projects. the cemetery commission motion was approved and accepted unanimously."
+   "quote": "a motion was presented to accept chair, nancy foss-yasko as primary contact and permission to speak on behalf for the cemetery commission."
   },
   {
-   "motion": "To accept the minutes from the August 10, 2023 meeting as written, with spelling error corrections",
-   "moved_by": "Nancy Foss-Yasko",
-   "seconded_by": "David Dorren",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "upon a motion by chair, nancy foss-yasko - to accept the minutes as written, with changes on spelling errors of bernard, dpw director; seconded by vice-chair and clerk, david dorren, minutes were approved unanimously."
-  },
-  {
-   "motion": "To adjourn",
+   "motion": "To accept the minutes of the August 10, 2023 meeting as written, with changes on spelling errors of Bernard, DPW Director.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren. with no further discussion, meeting was adjourned at 4:35 pm."
+   "quote": "to accept the minutes as written, with changes on spelling errors of bernard, dpw director; seconded by vice-chair and clerk, david dorren, minutes were approved unanimously."
+  },
+  {
+   "motion": "To adjourn the meeting.",
+   "moved_by": "Nancy Foss-Yasko",
+   "seconded_by": "David Dorren",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1372795
+ "note": "Digital text, no scan. Two motions (Beaulac exclusion, chair as contact) name no mover or seconder and record only \"unanimously\"; the adjournment records no vote count and the outcome is not stated. Header says 2:00 PM but the minutes record the call to order at 2:07 PM, and the opening line carries a stray \"9:00 AM –\". The hedge discussion records no decision. The wall alternative has no printed cost.",
+ "cost_usd": 0.015258669999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the cemetery commission meeting was called to order at 2:07 pm by chair, nancy foss-yasko, other members present"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "other members present were david dorren, vice-chair & clerk."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present was bill bernard, dpw director."
+  },
+  {
+   "name": "Fred Anderson",
+   "role": "from Anderson Landscaping",
+   "status": "present",
+   "quote": "vice-chair and clerk, david dorren had fred anderson from anderson landscaping attend our meeting to discuss findings and solutions for our 100+ year old hedges."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission requests that it be informed ahead of time of any future trimming, pruning or tree removal in all cemeteries.",
+   "quote": "the cemetery commission requests moving forward, that the commission is informed ahead of time of any future trimming, pruning or tree removal in all cemeteries."
+  },
+  {
+   "decision": "DPW Director asked the Commission to email him other landscaping companies to choose from, after he disagreed with excluding Beaulac Brothers.",
+   "quote": "but asked the cemetery commission to e-mail him other landscaping companies to choose from."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery work allocation",
+   "what_was_recorded": "The DPW allocated a sum for cemetery work, and taking out the trimming/pruning amount leaves a remainder.",
+   "figures_as_printed": [
+    "$22K",
+    "$12K"
+   ],
+   "quote": "the dpw allocates $22k for work in the cemeteries. taking the amount out of the budget for the trimming/pruning, leaves an amount of $12k."
+  },
+  {
+   "topic": "Seasonal workers allocation",
+   "what_was_recorded": "An allocation was set aside for seasonal workers, and DPW had not filled the role as of the meeting date.",
+   "figures_as_printed": [
+    "$18K"
+   ],
+   "quote": "in addition, allocation has been put aside for $18k for seasonal workers."
+  },
+  {
+   "topic": "Arborvitae hedge replacement estimate",
+   "what_was_recorded": "A first estimate was given for replacing the arborvitae hedges, which would also need three seasons of trucked water.",
+   "figures_as_printed": [
+    "$167 - $187K"
+   ],
+   "quote": "first estimate cost was: $167 - $187k."
+  },
+  {
+   "topic": "Wall as an alternative to hedges",
+   "what_was_recorded": "A wall was raised as an alternative, described as cheaper in the long run; no cost figure was printed.",
+   "figures_as_printed": [],
+   "quote": "cheaper in the long run, as a one time cost with no on-going maintenance needed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment - nancy foss-yasko, chair asked if there was any public comment?",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: bench length, pruning, cemetery budget",
+   "resolution": "discussed; no decision recorded on bench length",
+   "quote": "dpw director updates - discussion on the length of the bench that was accepted by the select board on tuesday, august 22, 2023.",
+   "tags": [
+    "benches",
+    "DPW",
+    "budget",
+    "pruning"
+   ]
+  },
+  {
+   "topic": "Holiday upkeep and mowing contractor",
+   "resolution": "discussed; decision on outside contractor left open",
+   "quote": "brief discussion with dpw director, bill bernard - holidays that all cemeteries need to look their best for.",
+   "tags": [
+    "mowing",
+    "landscaping contractor",
+    "holidays"
+   ]
+  },
+  {
+   "topic": "Exclusion of Beaulac Brothers from North and South Cemeteries",
+   "resolution": "approved unanimously",
+   "quote": "the cemetery commission made a motion to not allow beaulac brothers into the north and south cemeteries, which was approved unanimously.",
+   "tags": [
+    "Beaulac Brothers",
+    "landscaping contractor"
+   ]
+  },
+  {
+   "topic": "Chair as primary contact for Commission and DPW projects",
+   "resolution": "approved unanimously",
+   "quote": "a motion was presented to accept chair, nancy foss-yasko as primary contact and permission to speak on behalf for the cemetery commission.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Minutes of August 10, 2023",
+   "resolution": "approved unanimously with spelling changes",
+   "quote": "to accept the minutes as written, with changes on spelling errors of bernard, dpw director; seconded by vice-chair and clerk, david dorren, minutes were approved unanimously.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Arborvitae hedge replacement, North Cemetery",
+   "resolution": "discussed with landscaper; no decision recorded",
+   "quote": "vice-chair and clerk, david dorren had fred anderson from anderson landscaping attend our meeting to discuss findings and solutions for our 100+ year old hedges.",
+   "tags": [
+    "hedges",
+    "arborvitae",
+    "North Cemetery",
+    "water",
+    "wall"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 4:35 PM",
+   "quote": "with no further discussion, meeting was adjourned at 4:35 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "DPW",
+  "arborvitae hedges",
+  "landscaping contractor",
+  "Beaulac Brothers",
+  "budget",
+  "seasonal workers",
+  "minutes approval",
+  "North Cemetery"
+ ],
+ "dropped_unquoted_by_field": {}
 }

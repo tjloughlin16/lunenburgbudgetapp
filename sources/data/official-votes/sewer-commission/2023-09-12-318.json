@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-09-12",
  "docid": "318",
@@ -12,55 +12,302 @@
  },
  "votes": [
   {
-   "motion": "To elect John Reynolds as Chair",
+   "motion": "Elect John R. as Chair.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "dave m. nominated john r. for chair, seconded by mike n. dave thanked john for all his work in the past year. roll call vote: mike nault - aye, brett-aye, mike mackin-aye, and dave-aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "chair - dave m. nominated john r. for chair, seconded by mike n."
   },
   {
-   "motion": "To elect Brett Ramsden as Vice-Chair",
+   "motion": "Elect Brett R. as Vice-Chair.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike Nault",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "dave m. nominated brett r. for vice-chair, seconded by mike nault. roll call vote: dave-aye, brett-aye, mike mackin-aye and mike nault-aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vice-chair - dave m. nominated brett r. for vice-chair, seconded by mike nault."
   },
   {
-   "motion": "To elect Mike Nault as Clerk",
+   "motion": "Elect Mike Nault as Clerk.",
    "moved_by": "Brett",
    "seconded_by": "Mike Mackin",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "brett nominated mike nault as clerk, seconded by mike mackin roll call vote: dave-aye, brett-aye, mike mackin-aye, mike nault-aye and john-aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "clerk - brett nominated mike nault as clerk, seconded by mike mackin"
   },
   {
-   "motion": "To accept the minutes of 8/29/23",
+   "motion": "Accept the minutes of 8/29/23.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Brett R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "to accept the minutes of 8/29/23. roll call vote: dave-aye, mike m.-aye, mike n.-aye, brett-aye and john-aye."
   },
   {
-   "motion": "To accept the Oil-Water Separator Inspection and Maintenance Log",
+   "motion": "Accept the Oil-Water Separator Inspection and Maintenance Log.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike Nault",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "to accept the oil-water separator inspection and maintenance log. roll call vote: dave-aye, brett-aye, mike mackin-aye, mike nault-aye and john-aye."
   },
   {
-   "motion": "To adjourn at 6:56pm",
+   "motion": "Adjourn at 6:56pm.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mike Nault",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "to adjourn at 6:56pm. roll call vote: mike m.-aye, mike n.-aye and john-aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded with roll-call outcomes shown as vote counts (e.g., passed 4-0, passed 5-0, passed 3-0).",
- "cost_usd": 0.1197301
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan; all pages read. Roll-call results are inferred from the printed aye votes: the minutes never print the word 'passed' or a count, so outcomes are recorded as 'passed' without a tally. The chair's own vote on his nomination is not printed. Dave MacDonald and Brett Ramsden left mid-meeting (Dave before the adjournment vote, Brett before the Town Meeting item); their attendance is recorded as present for the meeting as a whole. The first PUBLIC COMMENT entry is spoken by a Commissioner (Dave), not a member of the public; the second PUBLIC COMMENT heading reads 'none'. Albe (CTE) and Jake Fleming (Leominster) are reported on but did not attend, so they are not listed as attendees. The minutes name Heather as part of a Leominster meeting group; she is not recorded as attending this meeting and is omitted.",
+ "cost_usd": 0.01817017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin, dave macdonald and mike"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin, dave macdonald and mike"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: mike mackin, dave macdonald and mike"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: mike mackin, dave macdonald and mike"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "mike nault, dpw director- bill bernard, business manager-paula bertram"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "mike nault, dpw director- bill bernard, business manager-paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "mike nault, dpw director- bill bernard, business manager-paula bertram"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula will send the oil-water separator form to property owners with a cover letter, a copy of the regulations and a sample form.",
+   "quote": "paula noted she would be sending it out to the property owners, along with a cover letter, copy of regulations and a sample form."
+  },
+  {
+   "decision": "The Emergency Response Plan stays on the agenda until finalized; Paula sends drafts out as they are completed, first to department heads.",
+   "quote": "john will keep it on the agenda until it is finalized and paula will send drafts out as they get completed."
+  },
+  {
+   "decision": "Paula will add the Board of Health and the Water District to the Emergency Response Plan recipient list.",
+   "quote": "paula went over the list of recipients and will add the board of health, as well as the water district."
+  },
+  {
+   "decision": "Paula will contact Leominster (Jake) about impacts and increases in debt service due to the flooding.",
+   "quote": "paula will contact jake (leominster) regarding any impacts and increases in debt service due to the flooding."
+  },
+  {
+   "decision": "Paula will send out the business manager system reports at each meeting so Commissioners know the status of the system.",
+   "quote": "she will send out the reports each meeting so commissioners know what is happening with the system."
+  },
+  {
+   "decision": "Sewer will write an Invitation for Bids (IFB) for the manhole repairs once the ARPA money is available.",
+   "quote": "they will need to write up an ifb and she is waiting to find out when the money will be available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Spare pump and pump rebuild kits",
+   "what_was_recorded": "The cost of the spare pump and the rebuild kits was reported.",
+   "quote": "the cost for the spare pump and the rebuild kits was $10,281.27.",
+   "figures_as_printed": [
+    "$10,281.27"
+   ]
+  },
+  {
+   "topic": "ARPA manhole repair allocation",
+   "what_was_recorded": "The Town Manager's allocation to Sewer for manhole repairs was reported.",
+   "quote": "sewer was given $100k to address manholes.",
+   "figures_as_printed": [
+    "$100K"
+   ]
+  },
+  {
+   "topic": "Pump station funding request",
+   "what_was_recorded": "The Commission had requested funding to bring the pump stations up to standard.",
+   "quote": "paula added the commission had requested $300k to bring the pump stations up to snuff.",
+   "figures_as_printed": [
+    "$300K"
+   ]
+  },
+  {
+   "topic": "Connection charge increase",
+   "what_was_recorded": "The current connection charge will need to increase because of Leominster's rising costs.",
+   "quote": "the current connection charge of $2,000 will need to increase based on leominster's increasing cost.",
+   "figures_as_printed": [
+    "$2,000"
+   ]
+  },
+  {
+   "topic": "Leominster rate and hook-up increases",
+   "what_was_recorded": "Leominster will raise its rates and hook-up charges; the final numbers were not yet known. No dollar figure was printed.",
+   "quote": "john noted that leominster will be increasing their rates and hook-up charges.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Rate increase worksheet",
+   "what_was_recorded": "A worksheet was prepared to show how rate increases from Leominster and Fitchburg would affect homeowners and businesses. No dollar figure was printed.",
+   "quote": "she also put together a worksheet to look at the impact of what the rate increases from leominster and fitchburg will do.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Funding of I/I repairs",
+   "what_was_recorded": "Remaining manhole repairs for I/I will come from Sewer funds and be reflected in rate increases. No dollar figure was printed.",
+   "quote": "whatever repairs still need to be done to address i/i will need to come from sewer funds and will be reflected in the rate increases.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "condolences, storm sympathy, and Volunteer Fair announcement",
+   "quote": "public comment- dave passed on condolences and prayers to jane for the loss of her husband."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment- dave passed on condolences and prayers to jane for the loss of her husband.",
+   "tags": [
+    "public comment",
+    "condolences"
+   ]
+  },
+  {
+   "topic": "Organization of the board: election of officers",
+   "resolution": "approved (Chair John Reynolds, Vice-Chair Brett Ramsden, Clerk Mike Nault)",
+   "quote": "organization of the board- election of officers-",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/29/23",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 8/29/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Oil water separators",
+   "resolution": "inspection and maintenance log accepted; form to property owners",
+   "quote": "oil water separators - paula reported that she was not able to find sample logs.",
+   "tags": [
+    "oil-water separators",
+    "inspection",
+    "property owners"
+   ]
+  },
+  {
+   "topic": "Emergency Response Plan",
+   "resolution": "continued; plan being drafted",
+   "quote": "emergency response plan- john and paula met with albe (cte rep. for the pump stations) and he reported that",
+   "tags": [
+    "emergency response",
+    "pump stations",
+    "Dana Street",
+    "overflow"
+   ]
+  },
+  {
+   "topic": "Intermunicipal agreement (IMA) with Leominster",
+   "resolution": "no action; discussed",
+   "quote": "ima - john noted that leominster will be increasing their rates and hook-up charges.",
+   "tags": [
+    "IMA",
+    "Leominster",
+    "rates",
+    "connection charge"
+   ]
+  },
+  {
+   "topic": "ARPA funding for manhole repairs",
+   "resolution": "no action; discussed, IFB to be written",
+   "quote": "arpa funding - manhole repairs - paula sent out the priority list of manholes they want to work on.",
+   "tags": [
+    "ARPA",
+    "manholes",
+    "I/I",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Town Meeting articles",
+   "resolution": "no action; reported",
+   "quote": "town meeting articles- paula reported the 2 articles have been submitted.",
+   "tags": [
+    "town meeting",
+    "articles",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Business Manager report: system maintenance and upgrades",
+   "resolution": "no action; reported",
+   "quote": "business manager report - update on system maintenance & upgrades",
+   "tags": [
+    "alarms",
+    "pumps",
+    "line jetting",
+    "exterior maintenance",
+    "staffing"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "pump stations",
+  "Leominster IMA",
+  "rate increase",
+  "ARPA",
+  "manholes",
+  "I/I",
+  "emergency response",
+  "oil-water separators",
+  "officer elections",
+  "Dana Street"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-09-12",
  "docid": "319",
@@ -12,6 +12,114 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a presentation by the Cemetery Commission to the Select Board, not meeting minutes with recorded votes. It contains recommendations and a funding request ($350K for North Cemetery boundary restoration) but no motions, seconds, or vote outcomes are recorded in the text. No votes found.",
- "cost_usd": 0.0727125
+ "note": "This is the Cemetery Commission's presentation slide deck to the Select Board (a slide text extraction), not formal minutes. It records no motion, vote, public comment or Q&A. The two decisions listed are the Commission's own stated recommendation and commitment, not votes of the board. Attendance is inferred only from the presenter line and the thank-you list; no roll call is printed, so David Dorren and Bill Bernard are listed as 'not stated'. Dollar figures are the Commission's cited estimates, not Town-adopted amounts.",
+ "cost_usd": 0.012966670000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "presented by: nancy foss-yasko, chair"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk, Cemetery Commission",
+   "status": "not stated",
+   "quote": "david dorren - vice-chair & clerk, cemetery commission"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW, Director",
+   "status": "not stated",
+   "quote": "bill bernard - dpw, director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Cemetery Commission recommends that the Select Board pursue American Rescue Plan Act funding for a New England Rustic Field-Stone Wall rather than Hemlock Hedges.",
+   "quote": "cemetery commission recommends to the select board members to move forward with securing from the american rescue plan act"
+  },
+  {
+   "decision": "The Cemetery Commission will support the Select Board's request to use the Stabilization Fund at the Fall Town Meeting so more funds are available for ARPA distribution.",
+   "quote": "the cemetery commission will support the select board request to use the stabilization fund at this fall's town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hemlock hedge replacement cost",
+   "what_was_recorded": "The estimated replacement cost of Hemlock Hedges, the alternative the presentation does not recommend.",
+   "figures_as_printed": [
+    "$185K"
+   ],
+   "quote": "replacement cost of hemlock hedges are estimated at approximately $185k."
+  },
+  {
+   "topic": "Field-stone wall estimate (preferred option)",
+   "what_was_recorded": "The estimated cost of the preferred Permanent New England Rustic Field-Stone Wall.",
+   "figures_as_printed": [
+    "$288K to $388K"
+   ],
+   "quote": "estimated cost at approximately $288k to $388k."
+  },
+  {
+   "topic": "Field-stone wall unit price",
+   "what_was_recorded": "The Ramsden Stone Walls estimate for the free-standing field-stone wall, priced per face foot.",
+   "figures_as_printed": [
+    "$40.00 per face feet"
+   ],
+   "quote": "new england field-stone wall at $40.00 per face feet."
+  },
+  {
+   "topic": "Annual watering cost for replanted hemlocks",
+   "what_was_recorded": "Estimated cost of one year of watering for the newly planted hemlock trees, borne by the Cemetery Commission and DPW.",
+   "figures_as_printed": [
+    "$3K"
+   ],
+   "quote": "one year of watering will cost the cemetery commission and dpw - estimated at $3k."
+  },
+  {
+   "topic": "Well for the North Cemetery",
+   "what_was_recorded": "Additional cost of a well to supply water, excluding pump, piping and electricity.",
+   "figures_as_printed": [
+    "$15K or more"
+   ],
+   "quote": "additional cost of $15k or more for a well to be drilled."
+  },
+  {
+   "topic": "Funding request for North Cemetery boundary restoration",
+   "what_was_recorded": "The Commission's request for ARPA-related funding for the Restoration of North Cemetery Boundaries.",
+   "figures_as_printed": [
+    "$350K"
+   ],
+   "quote": "$350k for restoration of north cemetery boundaries."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Restoration of North Cemetery Boundaries",
+   "resolution": "presented; no action recorded",
+   "quote": "restoration of north cemetery boundaries select board town meeting september 12, 2023",
+   "tags": [
+    "North Cemetery",
+    "hedges",
+    "stone wall",
+    "ARPA"
+   ]
+  }
+ ],
+ "tags": [
+  "North Cemetery",
+  "arborvitae hedge",
+  "hemlock hedge",
+  "field-stone wall",
+  "ARPA",
+  "Stabilization Fund",
+  "Select Board",
+  "cemetery budget request"
+ ],
+ "dropped_unquoted_by_field": {}
 }

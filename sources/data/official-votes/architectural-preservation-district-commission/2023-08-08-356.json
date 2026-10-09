@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-08-08",
  "docid": "356",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes of July 11, 2023",
+   "motion": "Approve the minutes of 11 July 2023 meeting.",
    "moved_by": "Richard McGrath",
    "seconded_by": "Nathan Lockwood",
    "outcome": "passed",
@@ -21,6 +21,101 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record discussion and agreement about declaring the Certificate to Alter application complete and scheduling a public hearing, but no formal motion or vote count is stated for these items. Only the approval of prior meeting minutes is explicitly recorded as a motion with a vote result.",
- "cost_usd": 0.0774615
+ "note": "The minutes name no vote except approval of the prior minutes, which is recorded with no count (\"accepted\"), so outcome is 'passed' without a tally. Declaring the application complete and scheduling the hearing were agreed without a recorded motion, so they are listed as decisions. Attendance is inferred from the text: no roll call is printed; William Lloyd is marked absent from his prior departure, and Adam Burney is named only in emails, so his status is not stated. No public comment was received and no dollar figures appear. Minutes were recorded by Nathan Lockwood with AI assistance and the chair, per the minutes' closing line.",
+ "cost_usd": 0.013125610000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with the chair (anthony sculimbrene) addressing the attendees and reminding them that not all items"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "they had been prepared and distributed by william lloyd prior to his departure for business abroad."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "richard mcgrath moved and nathan lockwood provided a second. there was no discussion about the minutes and they were accepted."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "nathan lockwood argued that the application was complete and that the committee should not delay the project."
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "not stated",
+   "status": "present",
+   "quote": "the chair welcomed chris ruth and damon mcquaid to the meeting."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "damon defended the choice of black windows, stating that it would create a contrast with the brickwork"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the chair and adam burney as well as emails from damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Declare the Certificate to Alter application for 960 Massachusetts Ave (Ritter Building) complete, pending submission of minor updates discussed at the meeting.",
+   "quote": "the committee eventually agreed to declare the application complete pending the submission of minor updates discussed during the meeting."
+  },
+  {
+   "decision": "Schedule a public hearing within 45 days of the 8 August 2023 meeting to allow public input on the Ritter project.",
+   "quote": "they also agreed to schedule a public hearing within 45 days of today's meeting to provide an opportunity for public input."
+  },
+  {
+   "decision": "Deem the Certificate to Alter complete because window color is exempt from APDC review, despite the chair's view that some materials were missing.",
+   "quote": "as colors are exempt from review by the apdc the cta was deemed to be complete."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 11 July 2023 minutes",
+   "resolution": "approved",
+   "quote": "approval of 11 july 23 meeting minutes was requested by the chair."
+  },
+  {
+   "topic": "Chair's contact with architect on Ritter project",
+   "resolution": "no action",
+   "quote": "the chair advised the members of the commission that he had corresponded with the architect by phone to discuss the ritter project"
+  },
+  {
+   "topic": "Certificate to Alter, 960 Massachusetts Ave (Ritter Building)",
+   "resolution": "declared complete; public hearing scheduled",
+   "quote": "certificate to alter, 960 massachusetts ave (ritter building) discussion included comments from the chair"
+  },
+  {
+   "topic": "Property owner notification, outreach, guidelines and work plan",
+   "resolution": "no action",
+   "quote": "the apdc meeting concluded with discussions on property owner notification, public outreach, and modifications"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "certificate to alter",
+  "Ritter building",
+  "960 Massachusetts Ave",
+  "historic windows",
+  "public hearing",
+  "meeting minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

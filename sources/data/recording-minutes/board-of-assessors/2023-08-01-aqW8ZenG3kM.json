@@ -1,0 +1,390 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-08-01",
+ "video_id": "aqW8ZenG3kM",
+ "video_url": "https://www.youtube.com/watch?v=aqW8ZenG3kM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-08-01-aqW8ZenG3kM.json",
+  "sha256": "12bb715d186a9b29c3021731bb1b55b5b9e32c23204d83f4a035c44b771bbe0f",
+  "caption_lines": 123,
+  "segments": 913
+ },
+ "recording": {
+  "duration_s": 2698,
+  "duration": "0:44",
+  "spoken_chars": 29371,
+  "words_approx": 4895
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08012023-352",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-08-01-agenda-352.txt",
+   "path": "sources/meetings/board-of-assessors/2023-08-01-agenda-352.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08012023-352",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-08-01-minutes-352.txt",
+   "path": "sources/meetings/board-of-assessors/2023-08-01-minutes-352.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-09T11:53:35Z",
+  "cost_usd": 0.2917468
+ },
+ "minutes": {
+  "headline": "Assessors debated staffing and meeting frequency, then moved to executive session on abatements; the vote count is cut off.",
+  "summary": "The Board of Assessors met remotely, signed expense vouchers and excise batches, and heard a resident ask why his property's valuation rose. A member pressed for more office staff, a written meeting protocol, a vice chair and secretary, and two meetings a month, which another member opposed. A motion to enter executive session on abatements was made and a roll call began, but the result is not in the captions.",
+  "attendees": [
+   {
+    "name_as_heard": "John rabbit",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Richard attack / Richard Lafayette",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Kevin Fisher / Kevin fish",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Sheila / Arena / Rina",
+    "role": "principal assessor (office staff)",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1002,
+    "topic": "A resident (Dave) asked whether the board had made an official decision on his property's abatement. He questioned why his valuation rose when the house had not changed, and how estimated taxes are calculated."
+   },
+   {
+    "t": 1339,
+    "topic": "The same resident said insurance and refund checks issued in a trust's name cannot be cashed at banks, and that reissuing them is slow. He voiced strong dissatisfaction and mentioned a possible recall."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "personnel",
+   "policy",
+   "public-comment",
+   "staffing",
+   "tax-rate",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 2640,
+    "motion": "Enter executive session, not to return to open session, under purpose seven (to comply with or act under any general or special law or federal grant and aid requirements).",
+    "moved_by": "John rabbit",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1319,
+    "topic": "Estimated tax rate",
+    "what_was_said": "A resident and the board discussed how estimated taxes are projected and a rate figure circulating for the coming year. The board said the rate is not yet produced.",
+    "figures_as_heard": [
+     "15.30 a thousand",
+     "14. 14 and change"
+    ]
+   },
+   {
+    "t": 1191,
+    "topic": "Cost per square foot revaluation",
+    "what_was_said": "Board members explained that the replacement cost per square foot was raised town-wide for conventional-style homes, raising valuations.",
+    "figures_as_heard": [
+     "129 a square foot",
+     "155 dollars of Squidward"
+    ]
+   },
+   {
+    "t": 1046,
+    "topic": "Resident's assessment increase",
+    "what_was_said": "The resident said his assessment rose over the last two years.",
+    "figures_as_heard": [
+     "135 000"
+    ]
+   },
+   {
+    "t": 1359,
+    "topic": "Refund checks issued to trusts",
+    "what_was_said": "Checks are issued in the same name as the bill; banks reject some, and reissue goes through the accountant's office.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2068,
+    "topic": "New growth",
+    "what_was_said": "The board discussed assessing completion levels on building permits, since this feeds the town's new growth revenue.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1086,
+    "decision": "The board told the resident it would consider his abatement request in executive session and that he should hear by the end of the week."
+   },
+   {
+    "t": 2537,
+    "decision": "Kevin Fisher declined the vice chair nomination; Jack accepted the secretary role. The board treated this as agreed, with no formal vote in the captions."
+   },
+   {
+    "t": 2598,
+    "decision": "Members will send the chair or principal assessor items they want on current and future agendas."
+   },
+   {
+    "t": 2619,
+    "decision": "Sheila and Rich are to work out a meeting protocol, which will then go to legal counsel for review."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 232,
+    "topic": "Call to order, open meeting law notice, and board comments on protocol, officers, and staffing",
+    "resolution": "informational",
+    "tags": [
+     "policy",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 232,
+    "t_end": 252,
+    "topic": "Public comment call; none at first",
+    "resolution": "no public comment",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 252,
+    "t_end": 1000,
+    "topic": "Expense vouchers, excise tax batches, abatement paperwork signing, roll call, and office functions",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1002,
+    "t_end": 1444,
+    "topic": "Resident questions on valuation increase, tax rate estimates, and refund checks",
+    "resolution": "no resolution; abatement to be considered in executive session",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1444,
+    "t_end": 2232,
+    "topic": "Office workload, staffing, sales verification, cyclical inspections, and new growth",
+    "resolution": "no resolution",
+    "tags": [
+     "staffing",
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2232,
+    "t_end": 2640,
+    "topic": "Meeting protocol, meeting frequency, and officer positions",
+    "resolution": "agreed informally; protocol to be drafted",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2640,
+    "t_end": 2700,
+    "topic": "Motion to enter executive session on abatements",
+    "resolution": "motion made, roll call begun; result not audible",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The result of the vote to enter executive session is cut off after the roll call begins",
+   "Voting on expense vouchers and excise batches is not audible",
+   "Several stretches of signing and side conversation are garbled or marked as music",
+   "Name renderings are inconsistent: the chair appears as John rabbit and Jackrabbit, Richard as attack and Lafayette, and the assessor as Sheila, Arena and Rina",
+   "Who spoke in several exchanges cannot be told"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors moved to enter executive session on abatements and began a roll call, but the captions do not show the result.",
+    "t": 2640
+   },
+   {
+    "line": "The board told a resident it would take up his abatement request in executive session and that he should hear by the end of the week.",
+    "t": 1086
+   },
+   {
+    "line": "Board members said the replacement cost per square foot was raised town-wide for conventional-style homes, which raised valuations; the resident said his assessment rose over two years.",
+    "t": 1191
+   },
+   {
+    "line": "Kevin Fisher declined the vice chair nomination and Jack accepted the secretary role, treated as agreed with no formal vote in the captions.",
+    "t": 2537
+   },
+   {
+    "line": "Two members are to draft a meeting protocol and send it to legal counsel for review.",
+    "t": 2619
+   }
+  ],
+  "why_it_matters": [
+   "A change in the cost-per-square-foot schedule can raise assessed values on many homes without any change to the houses, so a resident's bill can move on a board's valuation input rather than on anything done to the property.",
+   "Abatement requests are decided in closed session, so a resident who applies learns the outcome only afterward, and the board said the tax rate for the coming year has not yet been produced."
+  ],
+  "watch_next": [
+   "The board's meeting protocol, once drafted and reviewed by legal counsel, and any decision on how often the board meets.",
+   "The tax rate for the coming year, which the board said is not yet produced."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-09T11:53:45Z",
+   "cost_usd": 0.2202838
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08012023-352",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-08-01-minutes-352.txt",
+   "path": "sources/meetings/board-of-assessors/2023-08-01-minutes-352.pdf"
+  },
+  "official_sha256": "61fdff7f3327a18b0cac964d9ab6aed10601a44d397d60dcb571466ca3a2c528",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "Neither record has a non-procedural vote or transfer, and both agree the resident should hear on his abatement by the end of the week and that the price per square foot went from 129 to 155. They differ on who chaired: ours has John Rabbit as chair and Richard as a member, while the official minutes have Richard Letarte as chairman and John Rabbitt as a member.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "about": "Cost per square foot revaluation (129 to 155)",
+    "kind": "caption_error",
+    "ours": "Cost per square foot revaluation: 129 a square foot, 155 dollars of Squidward",
+    "official": "all conventional properties' prices per square foot went from 129 to 155 dollars.",
+    "official_reading": "129 to 155 dollars",
+    "note": "Same fact; the captions garbled '155 dollars' as 'Squidward'.",
+    "t": 1191
+   },
+   {
+    "about": "Resident abatement request: answer by end of week",
+    "kind": "agree",
+    "ours": "The board told the resident it would consider his abatement request in executive session and that he should hear by the end of the week.",
+    "official": "the board states he should receive an answer by the end of the week regarding the abatement decision.",
+    "note": "Both record an answer by end of week; the executive session detail appears only in ours.",
+    "t": 1086
+   },
+   {
+    "about": "Estimated tax rate 15.30 per thousand",
+    "kind": "only_in_ours",
+    "ours": "Estimated tax rate: 15.30 a thousand, 14. 14 and change",
+    "official": "",
+    "note": "Official minutes give no tax rate figure, only that estimates are based on the prior year's rate and value; ours has a rate that is itself unclear (15.30 vs 14 and change).",
+    "t": 1319
+   },
+   {
+    "about": "Resident's assessment increase of 135,000",
+    "kind": "only_in_ours",
+    "ours": "Resident's assessment increase: 135 000",
+    "official": "",
+    "note": "Official minutes print no dollar figure for the resident's assessment increase.",
+    "t": 1046
+   },
+   {
+    "about": "Estimated tax calculation explanation",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "rena swezey states that they are based on the previous year's tax rate and the previous year's",
+    "note": "Official records the explanation of how estimated taxes are calculated; ours has only the rate figure.",
+    "t": 0
+   },
+   {
+    "about": "Expense vouchers, motor vehicle abatements, July payroll",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "review and approval of expense vouchers, motor vehicle abatements, and payroll from july.",
+    "note": "Official records this approval item; ours records no vote. Check the recording whether a vote was taken.",
+    "t": 0
+   },
+   {
+    "about": "Vice chair/secretary organization",
+    "kind": "only_in_ours",
+    "ours": "Kevin Fisher declined the vice chair nomination; Jack accepted the secretary role. The board treated this as agreed, with no formal vote in the captions.",
+    "official": "",
+    "note": "Official minutes do not mention officer roles; not a recorded vote in ours.",
+    "t": 2537
+   },
+   {
+    "about": "Agenda items and meeting protocol",
+    "kind": "only_in_ours",
+    "ours": "Sheila and Rich are to work out a meeting protocol, which will then go to legal counsel for review.",
+    "official": "",
+    "note": "Official minutes contain no mention of the agenda-item submission process or the protocol going to counsel.",
+    "t": 2619
+   },
+   {
+    "about": "Chair identity",
+    "kind": "discrepancy",
+    "ours": "John rabbit (chair)",
+    "official": "members present: administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Ours names John Rabbit as chair and Richard as member; official has Richard Letarte as chairman and John Rabbitt as member. Check the recording for who chaired.",
+    "t": 0
+   },
+   {
+    "about": "Attendees: other names",
+    "kind": "caption_error",
+    "ours": "Kevin Fisher / Kevin fish (member)",
+    "official": "board member kevin fish",
+    "official_reading": "Kevin Fish",
+    "note": "Misheard surname; Sheila/Rena (principal assessor) also variously rendered, official has Rena Swezey as interim principal assessor and Sheila Craigen as assistant.",
+    "t": 2537
+   },
+   {
+    "about": "Resident Dave McDonald, 155 Island Road",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "dave mcdonald - 155 island road - inquires as to why the evaluation of the house went up and whether it was town-wide or based on the type of property.",
+    "note": "Official names the resident; ours does not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-09T11:54:30Z",
+   "cost_usd": 0.2325378
+  }
+ }
+}

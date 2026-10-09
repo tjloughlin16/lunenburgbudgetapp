@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-08-01",
  "docid": "353",
@@ -12,55 +12,379 @@
  },
  "votes": [
   {
-   "motion": "Appoint Lois Filiau to the 300th Anniversary Committee",
+   "motion": "Appoint Lois Filiau to the 300th anniversary committee.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (All in Favor)",
    "procedural": false,
    "quote": "motion: t. alonzo 2nd: l. franco to appoint lois filiau to the 300# anniversary committee vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointments of Civilian Traffic Member Tyler Thibodeau, Reserve Officer Sean Connery, and Assistant Outreach Coordinator Lori-Ann Tessier",
+   "motion": "Ratify the Town Manager's appointments of Civilian Traffic Member Tyler Thibodeau, Reserve Officer Sean Connery and Assistant Outreach Coordinator Lori Ann Tessier.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
+   "outcome": "passed (All in Favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\": r. emkey to ratify the town manager's appointments of civilian traffic member tyler thibodeau, reserve officer sean connery and assistant outreach coordinator lori ann tessier vote: all in favor"
+   "quote": "motion: t. alonzo 2\": r. emkey to ratify the town manager's appointments of civilian traffic member tyler thibodeau, reserve officer"
   },
   {
-   "motion": "Correct the term to expire on June 30, 2027 for Barbara Reynolds",
+   "motion": "Correct the term to expire on June 30, 2027 for Barbara Reynolds (Montachusett Regional School Representative).",
    "moved_by": "I. Alonzo",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
+   "outcome": "passed (All in Favor)",
    "procedural": false,
-   "quote": "motion: i. alonzo to correct the term to expire on june 30, 2027 for barbara reynolds 2\": r. emkey vote: all in favor"
+   "quote": "motion: i. alonzo to correct the term to expire on june 30, 2027 for barbara reynolds"
   },
   {
-   "motion": "Approve the minutes of April 4 and April 11, 2023",
+   "motion": "Approve the minutes of April 4 and April 11, 2023 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor, 1 abstention (Emkey)",
    "procedural": true,
-   "quote": "motion: l. franco 2'd: t. alonzo to approve the minutes of april 4 and april 11, 2023 as presented vote: 3 in favor, 1 abstention (emkey)"
+   "quote": "motion: l. franco 2'd: t. alonzo to approve the minutes of april 4 and april 11, 2023 as presented vote: 3 in favor, 1 abstention"
   },
   {
-   "motion": "Approve the 1st Quarter Water Commitment in the amount of $10,375.83",
+   "motion": "Approve the FY24 1st Quarter Water Commitment in the amount of $10,375.83.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (All in Favor)",
    "procedural": false,
    "quote": "motion: t. alonzo to approve the 1s quarter water commitment in the amount of $10,375.83 2\"d: l. franco vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (All in Favor)",
    "procedural": true,
    "quote": "motion: t. alonzo to adjourn the meeting 2\": l. franco vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision; document quality is good with readable votes.",
- "cost_usd": 0.0891601
+ "note": "Text is macOS Vision OCR of a scan with garbled tables and typos; capital plan project-level figures are not reliably transcribed here, only the totals quoted. The minutes print no roll call, no Chair title, and do not name the Town Manager's title for Ms. Lemieux. Motions print \"T. Alonzo\" and \"I. Alonzo\" and public comment prints \"Mr. Alonzo\"; identity is by surname only. Only four members are named (Alonzo, Franco, Emkey, Jeffreys); the 3-in-favor, 1-abstention count implies four voting members. Executive session minutes are separate and not in this text: the recess is recorded but no motion to enter executive session is printed. The Karen Brochu appointment is announced after executive session with no vote recorded here.",
+ "cost_usd": 0.021346209999999997,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. jeffreys announced in accordance with the requirements of the open meeting law, please be"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux read the letter from police chief gammel:"
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated (member, as printed in motions)",
+   "status": "present",
+   "quote": "motion: t. alonzo 2nd: l. franco to appoint lois filiau to the 300# anniversary committee"
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated (member, as printed in motions)",
+   "status": "present",
+   "quote": "motion: t. alonzo 2nd: l. franco to appoint lois filiau to the 300# anniversary committee"
+  },
+  {
+   "name": "R. Emkey",
+   "role": "not stated (printed as Ms. Emkey elsewhere)",
+   "status": "present",
+   "quote": "motion: t. alonzo 2\": r. emkey to ratify the town manager's appointments"
+  },
+  {
+   "name": "Lois Filiau",
+   "role": "Lunenburg 300th Anniversary Committee Interview for appointment (applicant)",
+   "status": "present",
+   "quote": "ms. filiau has been a town resident for years and shared a memory from the 275' anniversary celebration with"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "not stated (public comment; minutes identify by surname only)",
+   "status": "present",
+   "quote": "mr. alonzo stated the town band concerts are ongoing; he was not able to make last night's, but there are two"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Conservation Commission's request to meet with the Select Board on three topics will be scheduled for an upcoming meeting.",
+   "quote": "this will be scheduled for an upcoming meeting."
+  },
+  {
+   "decision": "ARPA funding requests to be focused on more at the August 15th meeting.",
+   "quote": "these requests will be focused on more at the august 15th meeting."
+  },
+  {
+   "decision": "Ms. Emkey volunteered to serve as the Select Board representative on the Storm Water Task Force (no vote recorded).",
+   "quote": "after a brief discussion, ms. emkey volunteered to serve on the task force."
+  },
+  {
+   "decision": "The board appointed Karen Brochu as Interim Finance Director/Town Accountant until a replacement is hired; announced after executive session, no vote recorded in these minutes.",
+   "quote": "mr. jeffreys announced that the board had appointed karen brochu as interim finance director/town accountant."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 tax abatement refunds",
+   "what_was_recorded": "Principal and interest paid to date in tax refunds from FY23 abatements; staff recommended the remaining funds stay in the Overlay Account until appeals to the ATB are known.",
+   "figures_as_printed": [
+    "$1,317,690",
+    "$14,771",
+    "$1,332,461"
+   ],
+   "quote": "the current principal paid in tax refunds related to the fy23 tax abatements is $1,317,690 and the interest paid to date is"
+  },
+  {
+   "topic": "LED streetlight conversion (Pine Ridge Technologies)",
+   "what_was_recorded": "Installation cost for the estimated 358 lights, with a 3-year maintenance contract awarded to Pine Ridge Technologies.",
+   "figures_as_printed": [
+    "$23,055"
+   ],
+   "quote": "the installation cost will be $23,055 for the estimated 358 lights and they will have the maintenance"
+  },
+  {
+   "topic": "FY24 and prior capital plan totals",
+   "what_was_recorded": "Capital plan table totals printed in the status update; the table's OCR is partly garbled and project-level figures are not reliably transcribed here.",
+   "figures_as_printed": [
+    "$1,597,825.00",
+    "$752,595.00"
+   ],
+   "quote": "total capital plan 1,597,825.00 752,595.00"
+  },
+  {
+   "topic": "FY2024 capital plan",
+   "what_was_recorded": "Capital plan total for FY2024 projects, printed twice in the table.",
+   "figures_as_printed": [
+    "$2,025,010.00",
+    "$2,025,010.00"
+   ],
+   "quote": "$2,025,010.00 $2,025,010.00 for fiscal year 2024: replacement rescue 1 has been ordered."
+  },
+  {
+   "topic": "Town Hall repair (Ritter / Town Hall projects)",
+   "what_was_recorded": "Town Hall repair estimate referenced as approximately $300K, with the project to be done in phases; OCR of the line is garbled.",
+   "figures_as_printed": [
+    "$300K"
+   ],
+   "quote": "for approx. $300k; facilities director will do project in phases with rood chimney to be first phese:"
+  },
+  {
+   "topic": "Old primary school earmark",
+   "what_was_recorded": "State earmark of $100,000 for the old primary school; the demolition and design article covered the project and some remaining balance will be reappropriated at a future town meeting.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "we had $100,000 from the state for an earmark and the article that was for the"
+  },
+  {
+   "topic": "Water commitment",
+   "what_was_recorded": "FY24 1st quarter water commitment approved.",
+   "figures_as_printed": [
+    "$10,375.83"
+   ],
+   "quote": "fy24 1st quarter water commitment in the amount of$10,375.83"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed payroll, payroll deductions and accounts payable warrants.",
+   "figures_as_printed": [
+    "$756,257.36",
+    "$832, 672.08",
+    "$412,439.15"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $756,257.36, a payroll deductions warrant in the amount of"
+  },
+  {
+   "topic": "ARPA funding requests",
+   "what_was_recorded": "Board discussed ARPA project rankings; leaving money in reserve was mentioned. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "leaving money in reserve was also mentioned."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "not stated",
+   "topic": "Town band concerts; Town Accountant comment on social media",
+   "quote": "mr. alonzo stated the town band concerts are ongoing; he was not able to make last night's, but there are two"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "not stated",
+   "topic": "Maternity unit closing at UMass/Leominster Hospital",
+   "quote": "mr. jeffreys stated he was asked to speak at the public hearing regarding the maternity unit closing at"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and recording notice",
+   "resolution": "no action",
+   "tags": [
+    "open meeting law",
+    "recording"
+   ],
+   "quote": "mr. jeffreys announced in accordance with the requirements of the open meeting law, please be"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "town beach",
+    "farmers market",
+    "band concerts",
+    "town accountant"
+   ],
+   "quote": "the farmers market is every sunday from 10 am until 1 pm until mid-october on the ritter lawn."
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "band concerts",
+    "maternity unit"
+   ],
+   "quote": "mr. alonzo stated the town band concerts are ongoing; he was not able to make last night's, but there are two"
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "Conservation Commission meeting to be scheduled",
+   "tags": [
+    "conservation",
+    "mass trails grant",
+    "staffing"
+   ],
+   "quote": "mr. jeffreys stated the conservation commission has requested meeting with the select board on three topics;"
+  },
+  {
+   "topic": "Interviews and appointments",
+   "resolution": "approved (Lois Filiau appointed)",
+   "tags": [
+    "appointments",
+    "300th anniversary committee"
+   ],
+   "quote": "lunenburg 300th anniversary committee interview for appointment- lois filiau, 919 mass. ave."
+  },
+  {
+   "topic": "Ratifications and term correction",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "police",
+    "school committee representative"
+   ],
+   "quote": "ratification of the town manager's appointment of civilian traffic member, tyler thibodeau"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "job postings",
+    "tax abatements",
+    "925 mass ave",
+    "bids",
+    "age friendly",
+    "streetlights"
+   ],
+   "quote": "the following isa list of current vacancies on the following boards/committees/commissions:"
+  },
+  {
+   "topic": "ARPA funding requests",
+   "resolution": "continued to August 15th meeting",
+   "tags": [
+    "arpa",
+    "reserve funds"
+   ],
+   "quote": "discussion on arpa funding requests and review select board rankings for project requests"
+  },
+  {
+   "topic": "Storm Water Task Force representative",
+   "resolution": "volunteered (no vote)",
+   "tags": [
+    "storm water"
+   ],
+   "quote": "select board representative for storm water task force"
+  },
+  {
+   "topic": "Approval of April 2023 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approval of april 4, april 11, 2023 minutes"
+  },
+  {
+   "topic": "Capital plan status (FY24 and prior)",
+   "resolution": "no action",
+   "tags": [
+    "capital plan",
+    "town hall",
+    "facilities",
+    "fire",
+    "dpw",
+    "schools"
+   ],
+   "quote": "status update on capital plan projects from fy24 and prior"
+  },
+  {
+   "topic": "FY24 water commitment",
+   "resolution": "approved",
+   "tags": [
+    "water"
+   ],
+   "quote": "fy24 1st quarter water commitment in the amount of$10,375.83"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $756,257.36"
+  },
+  {
+   "topic": "Executive session and interim finance appointment",
+   "resolution": "appointment announced; executive session minutes separate",
+   "tags": [
+    "executive session",
+    "finance director",
+    "town accountant"
+   ],
+   "quote": "the meeting was recessed at 8:42 p.m."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 8:52 p.m."
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "capital plan",
+  "ARPA funding",
+  "tax abatements",
+  "LED streetlights",
+  "town accountant",
+  "interim finance director",
+  "age friendly",
+  "water commitment",
+  "warrants",
+  "executive session",
+  "public comment",
+  "town beach and events",
+  "storm water task force"
+ ],
+ "dropped_unquoted_by_field": {}
 }
