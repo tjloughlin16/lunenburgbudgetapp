@@ -73,7 +73,16 @@ work.
 7. **Two working-copy fetchers are untested in a real run**: `fetch_board_pages.py` now
    lands every changed page through `ingest.land_version()`. Tomorrow's refresh is its first
    live use; check its log and `working-copies.csv`.
-8. The journal export (13e gate), the OML index (model-free parts), MUNIS Part 2, an
+8. **The journal export: SAMPLES RECEIVED 9 Oct, full report requested.** The Town Manager
+   sent pages 1-29 and 1740-1744 of a 1,744-page MUNIS `glytdbud` run with journal detail
+   (school accounts, FY2023 p0 to FY2026 p13) to ask if it is the right TYPE -- it is. TJ
+   asked for the full report (Excel if possible) and which funds were selected. Samples in
+   `build/inbox/2026-10-09-town-manager-journal-samples/` (PROVENANCE.md), NOT ingested.
+   Its FY2026 grand total does not tie to our held p13 school reports (wider fund
+   selection, probably). When the full report lands: 13e gate, tie journal lines to the
+   printed totals per account, then the kindergarten para accounts, the 82 budget changes,
+   and the special-education overrun.
+9. The journal export (13e gate), the OML index (model-free parts), MUNIS Part 2, an
    off-machine backup, the 9 MUNIS PDFs to publish -- unchanged from the 07:30 list.
 
 ## Done on 9 October (all on origin/main)
