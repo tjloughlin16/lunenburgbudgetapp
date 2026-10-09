@@ -204,7 +204,8 @@ BY_HAND = {
 # So the map is now the folders the refresh's own fetchers write into (watch_documents.py,
 # fetch_board_pages.py, fetch_staff_directory.py, fetch_school_staff_directory.py,
 # fetch_school_job_postings.py), plus `analyses`, which its build steps write. Any other
-# folder is outside its scope: not counted, never an error. Whether the WHOLE archive is
+# folder is outside its scope: never an error, and never reported as FOUND -- a new
+# document there is listed separately, as found in our local files (LOCAL, below). Whether the WHOLE archive is
 # catalogued and backed up is a different question, asked by build_source_index.py and
 # check_archive_backed_up.py, which do not stand between the town and the morning fetch.
 # `meetings` and `data` are counted from the event logs above, not from here.
@@ -218,12 +219,22 @@ REFRESH_WRITES = {
     'town-supplementary': 'other town documents',
     'analyses': 'analyses',                      # ours
 }
+# Counted from the event logs (agendas, minutes, videos, transcripts), not the manifest; and
+# `data` is ours throughout.
+ARCHIVE_EVENTS = {'meetings', 'data'}
 ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts', 'announcements',
            'budget documents', 'state documents', 'other town documents',
            'annual reports', 'ledgers', 'contracts', 'correspondence',
            'peer district documents')
 MAKES = ('generated minutes', 'analyses')
-FIRST_CLASS = ARRIVES + MAKES
+# FOUND ON EXTERNAL SITES vs FOUND IN OUR LOCAL FILES. TJ, 9 October 2026: *"counting them
+# as 'found' is OK too, but we should be sure to distinguish 'found on external sites' or
+# 'found in our local files'"*. ARRIVES is the first: what this run's watchers and fetchers
+# brought in. LOCAL is the second: a published document that is new to the archive but sits
+# in a folder the refresh does not fetch into -- placed by hand, or by another job such as
+# the AG determinations download -- which the run catalogues and does not claim to have found.
+LOCAL = ('local documents',)
+FIRST_CLASS = ARRIVES + LOCAL + MAKES
 RUN_COLS = (['ran_at', 'as_of'] + ['new_' + k.replace(' ', '_') for k in FIRST_CLASS] +
             ['deployed', 'seconds', 'timings', 'notes',
             # `incomplete` until the run reaches its own end. A row that stays incomplete
@@ -515,6 +526,37 @@ def adopt_new_meeting_documents(as_of):
     return added
 
 
+# WHERE EACH DOCUMENT WAS FOUND. TJ, 9 October 2026: *"we should show the docs we found
+# and from where we found them. if the finance committee put a DUMP of files somewhere and
+# we found them, it should show that"*. Each mirrored folder's index.csv carries the
+# publisher's title and the address; the district's also carries the LISTING PAGE it was
+# found on and the meeting date. The town's and the state's do not record the page, so
+# for those the address is the answer.
+WHERE_PAGE = {'sc-meetings': 'School Committee meeting documents', 'budget': 'budget page'}
+WHERE_FOLDER = {'district-budget': 'district site', 'town-budget': 'town site, budget and finance pages',
+                'town-supplementary': 'town site, other pages', 'state-dls': 'state, Division of Local Services',
+                'state-dese': 'state, DESE'}
+DOC_INFO = {}
+
+
+def where_found():
+    """{archive key: {title, where, url, meeting}} for every row of the refresh's own indexes."""
+    out = {}
+    for top in REFRESH_WRITES:
+        for r in read_csv(os.path.join(ROOT, 'sources', top, 'index.csv')):
+            local = r.get('local') or ''
+            key = local[len('sources/'):] if local.startswith('sources/') else local
+            if not key:
+                continue
+            where = WHERE_FOLDER.get(top, top)
+            if r.get('page'):
+                where += ' \u00b7 ' + WHERE_PAGE.get(r['page'], r['page'])
+            out[key] = {'title': r.get('label') or r.get('title') or '', 'where': where,
+                        'url': r.get('upstream') or r.get('url') or '',
+                        'meeting': r.get('meeting_date') or ''}
+    return out
+
+
 def inventory():
     """WHICH DOCUMENTS we hold, not how many.
 
@@ -557,23 +599,39 @@ def inventory():
     # project holds. Keyed on SHA256, so a publisher who overwrites a file in place --
     # which the state does, and the district's web pages do -- shows up as a new document
     # rather than as nothing at all.
-    for group in ARRIVES + MAKES:
+    for group in ARRIVES + LOCAL + MAKES:
         inv.setdefault(group, {})
+    inv['renderings'] = {}
+    found_at = where_found()
     for r in read_csv(MANIFEST):
         key = r.get('key') or ''
-        group = REFRESH_WRITES.get(key.split('/')[0]) if '/' in key else None
-        if not group:                            # not ours to count -- and not ours to fail on
+        if '/' not in key:
             continue
-        # A DOCUMENT, NOT ITS RENDERINGS. The 8 October run reported 279 budget documents,
-        # and the list counted `facilities-report.pdf` and `facilities-report.txt` as two,
-        # with `checked.csv` and a PROVENANCE note among them. A published document is what
-        # archive_storage.frozen() says it is; of our own analyses, the document is the .md.
-        if group in MAKES:
-            if not key.endswith('.md'):
-                continue
-        elif not archive_storage.frozen(key):
+        top = key.split('/')[0]
+        ident = r.get('sha256') or key
+        group = REFRESH_WRITES.get(top)
+        if group in MAKES:                       # our analyses: the document is the .md
+            if key.endswith('.md'):
+                inv[group][ident] = key.split('/')[-1][:70]
             continue
-        inv[group][r.get('sha256') or key] = key.split('/')[-1][:70]
+        # A DOCUMENT, NOT ITS RENDERINGS. The 8 October run reported 279 budget documents:
+        # 6 were the district's, the rest extracted text and working files of ours. A
+        # published document is what archive_storage.frozen() says it is; the rest are
+        # counted once, as renderings, and never listed as documents.
+        if not archive_storage.frozen(key):
+            if top not in ARCHIVE_EVENTS:
+                inv['renderings'][ident] = key
+            continue
+        if top in ARCHIVE_EVENTS:                # counted from the watchers' event logs above
+            continue
+        if group:
+            w = found_at.get(key, {})
+            inv[group][ident] = ('%s  [%s%s]' % (w.get('title') or key.split('/')[-1], w.get('where') or top,
+                                                 (', meeting ' + w['meeting']) if w.get('meeting') else ''))[:160]
+            DOC_INFO[ident] = dict(kind=group, file=key, **{k: w.get(k, '') for k in ('title', 'where', 'url', 'meeting')})
+        else:                                    # new to us, and not fetched by the refresh
+            inv['local documents'][ident] = key[:110]
+            DOC_INFO[ident] = dict(kind='local documents', file=key, dir=os.path.dirname(key))
     return inv
 
 
@@ -1006,6 +1064,13 @@ def main():
     found = {'as_of': a.as_of, 'written_at': dt.datetime.now().isoformat(timespec='seconds'),
              'dry_run': bool(a.dry_run), 'tree': ROOT,
              'found': {k: sorted(arrived[k]) for k in ARRIVES},
+             # the same documents with their title, where they were found and the address
+             'found_docs': [DOC_INFO[i] for k in ARRIVES for i in after[k]
+                            if i not in before[k] and i in DOC_INFO],
+             'local': sorted(arrived['local documents']),
+             'local_docs': [DOC_INFO[i] for i in after['local documents']
+                            if i not in before['local documents'] and i in DOC_INFO],
+             'renderings': len(arrived['renderings']),
              'wrote': {k: sorted(arrived[k]) for k in MAKES}}
     tmp = os.path.join(found_dir, '.%s.json.tmp' % a.as_of)
     with open(tmp, 'w', encoding='utf-8') as fh:
@@ -1151,13 +1216,28 @@ def main():
     print('\n=== refresh %s — %d document(s) in, %d written, %d min %d s ==='
           % (a.as_of, n_in, delta['generated minutes'], total // 60, total % 60))
 
-    print('\n  FOUND -- %d document(s)' % n_in)
+    print('\n  FOUND ON EXTERNAL SITES -- %d document(s)' % n_in)
     for key in ARRIVES:
         print('    %-22s %d' % (key, delta[key]))
         for line in sorted(arrived[key]):
             print('        %s' % line)
     if not n_in:
         print('    nothing new was published today')
+
+    print('\n  FOUND IN OUR LOCAL FILES -- %d document(s) new to the archive that this run did '
+          'not fetch (placed by hand, or by another job)' % delta['local documents'])
+    by_dir = {}
+    for line in arrived['local documents']:
+        by_dir.setdefault(os.path.dirname(line), []).append(line)
+    for d in sorted(by_dir, key=lambda d: -len(by_dir[d])):
+        print('    %-60s %d' % (d, len(by_dir[d])))
+        for line in sorted(by_dir[d])[:10]:
+            print('        %s' % os.path.basename(line))
+        if len(by_dir[d]) > 10:
+            print('        ... and %d more' % (len(by_dir[d]) - 10))
+    if delta['renderings']:
+        print('    plus %d rendering(s) of ours catalogued -- extracted text, working files; '
+              'not documents' % delta['renderings'])
 
     print('\n  WROTE -- %d document(s) of our own' % delta['generated minutes'])
     for line in sorted(arrived['generated minutes']):

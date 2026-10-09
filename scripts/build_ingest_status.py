@@ -1821,37 +1821,154 @@ def refresh_found(days=10):
     return None, None
 
 
+# FOUND SO FAR, LIVE. TJ, 9 October 2026, waiting for the Finance Committee video to appear:
+# *"oh it updates it at the END"*. The run writes its list only after the slow steps, but
+# every watcher records a find the moment it makes it, in its own event log. So while
+# today's list does not exist yet, this reads those logs -- the refresh tree's first,
+# because that is where the scheduled run writes -- for what has been found today so far.
+EVENT_LOGS = (
+    ('meeting-watch-events.csv', lambda r: r.get('kind') == 'agenda' and 'agendas'
+                                 or r.get('kind') == 'minutes' and 'official minutes',
+     lambda r: '%s  %s' % (r.get('board', ''), r.get('meeting_date', '')),
+     lambda r: 'town AgendaCenter', 'url'),
+    ('youtube-watch-events.csv', lambda r: 'videos',
+     lambda r: r.get('title', ''), lambda r: 'town YouTube channel', 'url'),
+    ('document-watch-events.csv', lambda r: 'documents',
+     lambda r: r.get('label', ''), lambda r: WHERE_DOC.get(r.get('folder', ''), r.get('folder', '')), 'upstream'),
+    ('feed-watch-events.csv', lambda r: 'announcements',
+     lambda r: r.get('title', ''), lambda r: r.get('source', ''), 'link'),
+)
+WHERE_DOC = {'district-budget': 'district site', 'town-budget': 'town site, budget and finance pages',
+             'town-supplementary': 'town site, other pages'}
+
+
+def found_today(today):
+    """{kind: [(label, where, url)]} from the watchers' event logs, first seen today."""
+    for tree in (TREE, ROOT):
+        out = collections.OrderedDict()
+        for f, kind_of, label, where, url in EVENT_LOGS:
+            p = os.path.join(tree, 'sources', 'data', f)
+            try:
+                rs = list(csv.DictReader(open(p, encoding='utf-8')))
+            except OSError:
+                continue
+            for r in rs:
+                if r.get('first_seen') != today:
+                    continue
+                k = kind_of(r)
+                if k:
+                    out.setdefault(k, []).append((label(r), where(r), r.get(url, '')))
+        if out:
+            return out
+    return {}
+
+
+def _found_live(today, live):
+    got = found_today(today)
+    n = sum(len(v) for v in got.values())
+    out = ['<div class="card on"><div class="tiny" style="margin-bottom:6px"><b>Found so far today</b>'
+           ' &mdash; %d %s <span style="color:#8b949e">&middot; read live from the watchers&rsquo; '
+           'logs; the full list (with transcripts, local files and what we wrote) appears when the '
+           'run finishes</span></div>' % (n, 'so far' if live else 'today')]
+    if not got:
+        out.append('<div class="tiny" style="color:#8b949e">nothing yet%s</div>'
+                   % ('' if live else ' -- no run has looked today'))
+    for kind, items in got.items():
+        body = ''.join('<div class="mono tiny" style="padding:1px 0 1px 14px">%s '
+                       '<span style="color:#8b949e">&mdash; %s</span>%s</div>'
+                       % (html.escape(lb), html.escape(wh),
+                          (' <a href="%s" target="_blank">link</a>' % html.escape(u, quote=True)) if u else '')
+                       for lb, wh, u in items)
+        out.append('<details data-k="live-%s" open style="margin:3px 0 3px 10px"><summary class="tiny" '
+                   'style="cursor:pointer"><b>%d</b> %s</summary>%s</details>'
+                   % (re.sub(r'\W+', '-', kind), len(items), html.escape(kind), body))
+    out.append('</div>')
+    return ''.join(out)
+
+
 def _found_card(today):
     day, j = refresh_found()
     if not j:
         return ('<div class="card"><div class="tiny"><b>What it picked up.</b> No run in the '
                 'last ten days got far enough to list what it found.</div></div>')
+    # NEUTRAL, NOT AMBER. TJ, 9 October 2026: *"shouldnt be orange. that looks like an error
+    # or warning"*. The last run's list is not a fault; the date says which run it is, and
+    # whether today's run failed is the alert banner's job, not this panel's.
     stale = day != today
-    head = ('<b>What it picked up</b> &mdash; %s' % day +
-            (' <span class="pill warn">today&rsquo;s run did not get this far; this is the '
-             'last run that did</span>' if stale else ''))
-    out = ['<div class="card%s"><div class="tiny" style="margin-bottom:6px">%s</div>'
-           % (' warnbox' if stale else '', head)]
-    empty = []
-    sections = [(k, v, 'found') for k, v in j.get('found', {}).items()] + \
-               [(k, v, 'wrote') for k, v in j.get('wrote', {}).items()]
-    for kind, items, part in sections:
+    live = any(r['name'] == 'Daily refresh' for r in running())
+    lead = _found_live(today, live) if stale else ''
+    when = ('the %s run' % dt.date.fromisoformat(day).strftime('%-d %B') if stale else 'today')
+    note = (' <span class="tiny" style="color:#8b949e">&middot; today&rsquo;s run is in progress; '
+            'its list appears when it finishes</span>' if stale and live else '')
+    out = [lead + '<div class="card"><div class="tiny" style="margin-bottom:6px">'
+           '<b>What it picked up</b> &mdash; %s%s</div>' % (when, note)]
+    def fold(key, n, label, body, open_at=15):
+        return ('<details data-k="found-%s"%s style="margin:3px 0 3px 10px"><summary class="tiny" '
+                'style="cursor:pointer"><b>%d</b> %s</summary>%s</details>'
+                % (re.sub(r'\W+', '-', key), ' open' if n <= open_at else '', n, label, body))
+
+    def line(x):
+        return '<div class="mono tiny" style="padding:1px 0 1px 14px">%s</div>' % x
+
+    # FOUND ON EXTERNAL SITES: each document with where it was found and its address.
+    docs = collections.defaultdict(list)
+    for d in j.get('found_docs') or []:
+        docs[d['kind']].append(d)
+    ext, empty = [], []
+    for kind, items in (j.get('found') or {}).items():
         if not items:
             empty.append(kind)
             continue
-        label = ('%s &mdash; <span style="color:#c09cf5">written by us</span>' % html.escape(kind)
-                 if part == 'wrote' else html.escape(kind))
-        rows_html = ''.join('<div class="mono tiny" style="padding:1px 0 1px 12px">%s</div>'
-                            % html.escape(x) for x in items)
-        out.append('<details data-k="found-%s"%s style="margin:4px 0"><summary class="tiny" '
-                   'style="cursor:pointer"><b>%d</b> %s</summary>%s</details>'
-                   % (re.sub(r'\W+', '-', kind), ' open' if len(items) <= 15 else '',
-                      len(items), label, rows_html))
-    if empty:
-        out.append('<div class="tiny" style="margin-top:6px;color:#8b949e">nothing new: %s</div>'
+        if docs.get(kind):
+            body = ''.join(line('%s <span style="color:#8b949e">&mdash; %s%s</span>%s' % (
+                html.escape(d['title'] or os.path.basename(d['file'])), html.escape(d['where']),
+                (', meeting ' + html.escape(d['meeting'])) if d.get('meeting') else '',
+                (' <a href="%s" target="_blank">link</a>' % html.escape(d['url'], quote=True)) if d.get('url') else ''))
+                for d in sorted(docs[kind], key=lambda d: (d['where'], d['title'])))
+        else:
+            body = ''.join(line(html.escape(x)) for x in items)
+        ext.append(fold(kind, len(items), html.escape(kind), body))
+    n_ext = sum(len(v) for v in (j.get('found') or {}).values())
+    out.append('<div class="tiny" style="margin-top:4px"><b>Found on external sites</b> &mdash; '
+               '%d document(s)</div>' % n_ext)
+    out.extend(ext or ['<div class="tiny" style="margin-left:10px;color:#8b949e">nothing new was published</div>'])
+    if empty and ext:
+        out.append('<div class="tiny" style="margin:2px 0 0 10px;color:#6e7681">nothing new: %s</div>'
                    % html.escape(', '.join(empty)))
+
+    # FOUND IN OUR LOCAL FILES: grouped by the folder they landed in, so a batch shows as one.
+    if 'local' in j:
+        local = j.get('local_docs') or [{'file': f, 'dir': os.path.dirname(f)} for f in j.get('local', [])]
+        out.append('<div class="tiny" style="margin-top:10px"><b>Found in our local files</b> &mdash; '
+                   '%d document(s) new to the archive that the refresh did not fetch: placed by hand, '
+                   'or by another job</div>' % len(local))
+        by_dir = collections.defaultdict(list)
+        for d in local:
+            by_dir[d['dir']].append(os.path.basename(d['file']))
+        for d in sorted(by_dir, key=lambda d: -len(by_dir[d])):
+            out.append(fold('local-' + d, len(by_dir[d]), '<span class="mono">%s</span>' % html.escape(d),
+                            ''.join(line(html.escape(f)) for f in sorted(by_dir[d])), open_at=5))
+        if not local:
+            out.append('<div class="tiny" style="margin-left:10px;color:#8b949e">none</div>')
+        if j.get('renderings'):
+            out.append('<div class="tiny" style="margin:4px 0 0 10px;color:#6e7681">plus %d rendering(s) '
+                       'of ours catalogued &mdash; extracted text and working files, not documents</div>'
+                       % j['renderings'])
+
+    # WRITTEN BY US
+    wrote = [(k, v) for k, v in (j.get('wrote') or {}).items() if v]
+    out.append('<div class="tiny" style="margin-top:10px"><b>Written by us</b> &mdash; %d</div>'
+               % sum(len(v) for _, v in wrote))
+    for kind, items in wrote:
+        out.append(fold('wrote-' + kind, len(items), html.escape(kind),
+                        ''.join(line(html.escape(x)) for x in items)))
+    if j.get('replayed'):
+        out.append('<div class="tiny" style="margin-top:6px;color:#8b949e">replayed under the '
+                   '9 October rules from the git state before and after that run; it reported 279 '
+                   'budget documents at the time, counting extracted text and files it did not '
+                   'fetch</div>')
     if j.get('source') == 'log':
-        out.append('<div class="tiny" style="margin-top:6px;color:#d29922">read off that '
+        out.append('<div class="tiny" style="margin-top:6px;color:#8b949e">read off that '
                    'run&rsquo;s log, and COUNTED THE OLD WAY: until 9 October 2026 a run also '
                    'listed extracted text files, our own working files, and documents and '
                    'minutes other processes landed while it ran. Runs from 10 October list '
@@ -2271,6 +2388,55 @@ def alert():
 
 
 
+QUESTIONS_STALE_S = 3600
+
+
+def reader_questions():
+    """What residents have asked through /ask-a-question: counts, the rows, and WHEN CHECKED.
+
+    Counts and metadata only. The bodies and any email addresses stay in the questions
+    database and never reach this machine -- see scripts/pull_questions.py.
+
+    THE LAST CHECK IS SHOWN, AND KEPT WITHIN THE HOUR. TJ, 9 October 2026: *"the last date it
+    was checked so i know its accurate"*. The daily refresh pulls the questions in its own
+    tree, and the file is gitignored, so this tree's copy only moved when somebody ran the
+    pull by hand -- a dashboard could say `0 open` off a copy days old. So the copy is read
+    from whichever tree checked most recently, and when that is over an hour ago this pulls
+    again: one small read of a separate database, at most once an hour.
+    """
+    def stamp(tree):
+        try:
+            return open(os.path.join(tree, 'build', 'reader-questions-checked.txt')).read().strip()
+        except OSError:
+            return ''
+    best = max((ROOT, TREE), key=stamp)
+    checked = stamp(best)
+    try:
+        when = dt.datetime.fromisoformat(checked) if checked else None
+        if when is not None and when.tzinfo is None:     # an older stamp, written as local time
+            when = when.astimezone()
+        age = (dt.datetime.now(dt.timezone.utc) - when).total_seconds() if when else None
+    except ValueError:
+        age = None
+    if age is None or age > QUESTIONS_STALE_S:
+        try:
+            subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'pull_questions.py')],
+                           cwd=ROOT, capture_output=True, timeout=120)
+        except Exception:
+            pass
+        if stamp(ROOT) > checked:
+            best, checked = ROOT, stamp(ROOT)
+    f = os.path.join(best, 'sources', 'data', 'reader-questions.csv')
+    if not os.path.exists(f):
+        return None
+    rs = list(csv.DictReader(open(f, encoding='utf-8')))
+    open_ = [r for r in rs if (r.get('status') or '') != 'answered']
+    return dict(total=len(rs), open=len(open_), answered=len(rs) - len(open_), rows=rs,
+                checked=checked,
+                newest=max((r.get('asked_at') or '' for r in rs), default=''),
+                oldest_open=min((r.get('asked_at') or '' for r in open_), default=''))
+
+
 # WHAT GOT DONE TODAY, BY CATEGORY. TJ, 19 September 2026: "the 'finished recently' is the
 # individual jobs, but that's too detailed for me to draw insights from it, and it doesnt
 # give me overall COUNTS of what was done and the category (Youtube found X videos. Built
@@ -2298,103 +2464,6 @@ def alert():
 # So every count comes from a registry that records when the work happened, or from the
 # run log, which prints each job as it completes. Where neither exists, the category is
 # left out rather than estimated.
-
-def held_but_unread():
-    """RAW MATERIAL WE HOLD, AGAINST WHAT HAS BEEN MADE FROM IT.
-
-    TJ, 20 September 2026: "can you expose data we have sitting around that hasn't been
-    processed yet? Like if we have OCR data that needs to be processed."
-
-    The streams above answer "what is the job queue". This answers a different question:
-    what is ALREADY ON THIS DISK, fetched and readable, that nothing has read. Those are
-    not the same -- a transcript we hold is not in any queue until a policy file says the
-    board is in scope, so 1,937 of them can sit there looking like nobody's work.
-
-    AND IT IS A REAL BACKLOG, not a choice -- which the first version of this got wrong.
-    recording-minutes-policy.csv looks like a scope file and is not: its `*` row covers
-    any board since 2000-01-01, so `refresh.covered()` matches every transcript. The file
-    sets PRIORITY, not eligibility -- Town Meeting first, then the three budget boards,
-    then everything else -- and MAX_MINUTES_PER_RUN is what actually limits the night.
-    So the queue drains in order and nothing is excluded from it.
-
-    Saying otherwise was the exact failure this section exists to avoid: presenting work
-    as a decision somebody made, when it is work nobody has got to yet.
-    """
-    import glob as g
-    def n(pat):
-        return len(g.glob(os.path.join(ROOT, pat)))
-
-    transcripts = n('sources/data/youtube-transcripts/*/*.json')
-    minutes = n('sources/data/recording-minutes/*/*.json')
-    ocr_minutes = len([r for r in rows('ocr-minutes.csv') if r.get('ocr_at')])
-    votes = n('sources/data/official-votes/*/*.json')
-    reports_ocr = n('sources/town-budget/ocr/*.tsv')
-    proven_years = 0
-    f = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
-    if os.path.exists(f):
-        proven_years = len({r['fy'] for r in csv.DictReader(open(f, encoding='utf-8'))})
-
-    # The annual reports at PAGE grain, which is the project's own definition of done.
-    import collections as _c
-    _by = _c.defaultdict(_c.Counter)
-    _f = os.path.join(DATA, 'annual-report-pages.csv')
-    for _r in csv.DictReader(open(_f, encoding='utf-8-sig')):
-        _fy = (_r.get('fy') or '').strip()
-        if not _fy:
-            continue
-        _by[_fy][(_r.get('state') or '').strip()] += 1
-        _by[_fy]['pages'] += 1
-    _ar_total = len(_by)
-    _ar_done = sum(1 for _c2 in _by.values()
-                   if _c2['proven'] + _c2['blocked'] == _c2['pages'])
-    _ar_pages = sum(_c2['pages'] for _c2 in _by.values())
-    _ar_blocked = sum(_c2['blocked'] for _c2 in _by.values())
-    _ar_left = sum(_c2['pages'] - _c2['proven'] - _c2['blocked'] for _c2 in _by.values())
-    return [
-        dict(held='Machine captions of meetings', n=transcripts,
-             made='%s written up as minutes' % '{:,}'.format(minutes),
-             left=max(0, transcripts - minutes),
-             note='Every board is in scope \u2014 the policy file sets priority, not '
-                  'eligibility. Town Meeting first, then the three budget boards, then '
-                  'the rest, capped per night.'),
-        dict(held='Scanned minutes read by OCR', n=ocr_minutes,
-             made='%s sets with their votes extracted' % '{:,}'.format(votes),
-             left=max(0, ocr_minutes - votes),
-             note='An OCR\u2019d scan enters search immediately; the votes are a '
-                  'separate reading.'),
-        # A STABILIZATION ROW IS NOT A READ REPORT, and this card used to say it was:
-        # `N year(s) yielding a PROVEN stabilization row` out of sixteen reports, with the
-        # remainder as `unread`. One table standing in for a whole document -- rule 7's
-        # proxy error pointed at our own progress. The question the project actually
-        # defines is per PAGE, and `annual_report_progress.py` answers it.
-        dict(held='Annual reports, financial pages', n=_ar_pages,
-             made='%d of %d year(s) CLOSED -- every page proven or blocked' % (_ar_done, _ar_total),
-             left=_ar_left,
-             note='A year is closed when every financial page it holds is `proven` or '
-                  '`blocked`; run `annual_report_progress.py`. %d page(s) are BLOCKED -- a '
-                  'person read them and could not -- so CLOSED does not mean every figure '
-                  'is in a dataset. And do not read the row counts in AGENTIC-BACKLOG.md '
-                  'as a backlog: a page read by eye supersedes the generic extract without '
-                  'emptying it.' % _ar_blocked),
-    ]
-
-
-def reader_questions():
-    """What residents have asked through /ask-a-question.
-
-    Counts only. The bodies and any email addresses stay in the questions database and
-    never reach this machine -- see scripts/pull_questions.py. The refresh pulls them so a
-    question cannot sit unanswered with no sign of it anywhere a person looks.
-    """
-    f = os.path.join(ROOT, 'sources', 'data', 'reader-questions.csv')
-    if not os.path.exists(f):
-        return None
-    rs = list(csv.DictReader(open(f, encoding='utf-8')))
-    open_ = [r for r in rs if (r.get('status') or '') != 'answered']
-    return dict(total=len(rs), open=len(open_), answered=len(rs) - len(open_),
-                newest=max((r.get('asked_at') or '' for r in rs), default=''),
-                oldest_open=min((r.get('asked_at') or '' for r in open_), default=''))
-
 
 def done_today():
     """One card per category: how many landed today, and when the last one did."""
@@ -2532,9 +2601,16 @@ def finished(n=14):
 
 # ONE TAB BAR, SHARED. Three pages that each wrote their own would drift the first time a
 # fourth was added -- the stale-copy failure this repo has hit with every hand-kept list.
-TABS = ('<div class="tabs"><a%s href="index.html">Running</a>'
-        '<a%s href="backlog.html">Backlog</a>'
-        '<a%s href="sources.html">Documents</a></div>')
+def tabs(sel, q=None):
+    """The tab bar. `Questions (N)` carries the count of OPEN questions, so somebody waiting
+    on an answer is visible from every page, not only from the Questions tab."""
+    n = (q or {}).get('open') or 0
+    items = [('index.html', 'Running'), ('backlog.html', 'Backlog'), ('sources.html', 'Documents'),
+             ('questions.html', 'Questions' + (' (%d)' % n if n else ''))]
+    return '<div class="tabs">%s</div>' % ''.join(
+        '<a%s href="%s">%s</a>' % (' class="sel"' if href == sel else '', href, label)
+        for href, label in items)
+
 
 def page_live(st):
     # The refresh prints each job's cost as it finishes, so its spend so far is readable
@@ -2544,7 +2620,7 @@ def page_live(st):
     h = []
     h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Ingestion</h1>'
              '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
-             '%s</div>' % (st['generated'], TABS % (' class="sel"', '', '')))
+             '%s</div>' % (st['generated'], tabs('index.html', st.get('questions'))))
 
     for a in st['alerts']:
         tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
@@ -2652,45 +2728,6 @@ def page_live(st):
                         else '<span class="pill no">exit %d</span>' % x['exit']))
         h.append('</table></details>')
 
-    # WHAT RESIDENTS HAVE ASKED. Above the refresh because an unanswered question is the
-    # only thing on this page with somebody waiting at the other end of it.
-    q = reader_questions()
-    if q:
-        h.append('<h2>Questions from readers</h2>')
-        h.append('<div class="card %s"><div class="row"><b class="grow">%s open</b>'
-                 '<span class="pill %s">%d answered of %d</span></div>'
-                 % ('on' if q['open'] else '', q['open'],
-                    'go' if q['open'] else '', q['answered'], q['total']))
-        if q['open'] and q['oldest_open']:
-            h.append('<div class="tiny" style="margin-top:6px">Oldest unanswered: <b>%s</b>'
-                     ' &middot; answer at <a href="https://lunenburgbudgetproject.org'
-                     '/ask-a-question" target="_blank">/ask-a-question</a></div>'
-                     % ago(q['oldest_open']))
-        elif q['newest']:
-            h.append('<div class="tiny" style="margin-top:6px">Newest arrived %s. '
-                     'Counts only \u2014 the questions themselves stay in their own '
-                     'database and never reach this machine.</div>' % ago(q['newest']))
-        h.append('</div>')
-
-    # WHAT IS ON THIS DISK THAT NOTHING HAS READ. Different from the backlog above, which
-    # is a job queue: this is raw material already fetched and legible, where the derived
-    # thing does not exist yet.
-    held = held_but_unread()
-    if held:
-        h.append('<h2>Held, and not yet read</h2>')
-        h.append('<div class="card"><div class="tiny" style="margin-bottom:6px">'
-                 'Material already on this disk, against what has been made from it. '
-                 '<b>Not all of it is meant to be processed</b> \u2014 the distance is '
-                 'what is worth seeing, not a target.</div><table>')
-        for x in held:
-            h.append('<tr><td><b>%s</b><div class="tiny">%s</div></td>'
-                     '<td class="r tnum">%s</td><td class="tiny">%s</td>'
-                     '<td class="r"><span class="pill %s">%s unread</span></td></tr>'
-                     % (html.escape(x['held']), html.escape(x['note']),
-                        '{:,}'.format(x['n']), html.escape(x['made']),
-                        'go' if x['left'] else '', '{:,}'.format(x['left'])))
-        h.append('</table></div>')
-
     h.append('<h2>The daily refresh</h2>')
     h.append('<div class="card %s"><div class="row"><b class="grow">%s</b><span class="pill %s">%s</span></div>'
              % ('on' if F['live'] else '', 'Today&rsquo;s run &mdash; ' + F['today'],
@@ -2779,6 +2816,47 @@ def page_live(st):
     h.append('</table></div></div>')
     return ''.join(h)
 
+def page_questions(st):
+    """What readers have asked, on its own tab. TJ, 9 October 2026: *"Questions from Readers
+    should be a whole tab"*, with the last check beside the figures *"so i know its
+    accurate"*."""
+    q = st.get('questions')
+    h = ['<div class="wrap"><div class="row"><div class="grow"><h1>Questions from readers</h1>'
+         '<p class="sub">%s</p></div>%s</div>' % (st['generated'], tabs('questions.html', q))]
+    if not q:
+        h.append('<div class="card idle">No questions file yet &mdash; run '
+                 '<code>python3 scripts/pull_questions.py</code>.</div></div>')
+        return ''.join(h)
+    checked = q.get('checked') or ''
+    h.append('<div class="card %s"><div class="row"><b class="grow">%d open</b>'
+             '<span class="pill %s">%d answered of %d</span></div>'
+             '<div class="tiny" style="margin-top:6px">Last checked <b>%s</b>%s &middot; checked '
+             'again whenever the last check is over an hour old, and by every daily refresh</div>'
+             % ('on' if q['open'] else '', q['open'], 'warn' if q['open'] else '', q['answered'],
+                q['total'], html.escape(checked.replace('T', ' ')[:16]) if checked else 'never',
+                (' (%s)' % ago(checked)) if checked else ''))
+    if q['open'] and q['oldest_open']:
+        h.append('<div class="tiny" style="margin-top:4px">Oldest unanswered: <b>%s</b> &middot; '
+                 'answer at <a href="https://lunenburgbudgetproject.org/ask-a-question" '
+                 'target="_blank">/ask-a-question</a></div>' % ago(q['oldest_open']))
+    h.append('</div>')
+    h.append('<h2>Every question</h2><p class="sub" style="margin:-4px 0 10px">Metadata only. '
+             'The words and any email address stay in the questions database and never reach '
+             'this machine; read and answer them at /ask-a-question.</p>'
+             '<div class="card"><table><tr><th>asked</th><th>status</th><th>topic</th>'
+             '<th class="r">length</th><th>email</th><th>country</th></tr>')
+    for r in sorted(q['rows'], key=lambda r: r.get('asked_at') or '', reverse=True):
+        st_ = r.get('status') or ''
+        h.append('<tr><td class="mono tiny">%s</td><td><span class="pill %s">%s</span></td>'
+                 '<td>%s</td><td class="r num">%s chars</td><td>%s</td><td>%s</td></tr>'
+                 % (html.escape((r.get('asked_at') or '').replace('T', ' ')[:16]),
+                    '' if st_ == 'answered' else 'warn', html.escape(st_ or 'open'),
+                    html.escape(r.get('topic') or '\u2014'), html.escape(r.get('body_chars') or ''),
+                    'yes' if r.get('has_email') == '1' else 'no', html.escape(r.get('country') or '')))
+    h.append('</table></div></div>')
+    return ''.join(h)
+
+
 def page_backlog(st):
     """What is still owed: every stream's remainder, and anything waiting in the inbox.
 
@@ -2809,7 +2887,7 @@ def page_backlog(st):
                 if biggest else 'every stream is complete',
                 (', %d delivery not filed' % unfiled) if unfiled == 1 else
                 (', %d deliveries not filed' % unfiled) if unfiled else '',
-                st['generated'], TABS % ('', ' class="sel"', '')))
+                st['generated'], tabs('backlog.html', st.get('questions'))))
     bd = backlog_depth()
     if bd and bd.get('total_jobs'):
         h.append(backlog_chart(bd))
@@ -3042,7 +3120,7 @@ def page_sources(st, n, counts, kinds, docs=()):
             '<table><tr><th>document</th><th>kind</th><th class="r">size</th>'
             '<th>where it came from</th><th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
-            % ('{:,}'.format(n), st['generated'], TABS % ('', '', ' class="sel"'),
+            % ('{:,}'.format(n), st['generated'], tabs('sources.html', st.get('questions')),
                docs_fy_chart(docs), origin, kind))
 
 
@@ -3119,7 +3197,8 @@ def write(open_it=False):
     os.makedirs(OUT, exist_ok=True)
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
-              alerts=alert(), finished=finished(), done=done_today())
+              alerts=alert(), finished=finished(), done=done_today(),
+              questions=reader_questions())
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
@@ -3146,6 +3225,10 @@ def write(open_it=False):
                          page_backlog(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'backlog.html'), 'w', encoding='utf-8') as fh:
         fh.write(_backlog)
+    _questions = (shell % ('Questions', '<meta http-equiv="refresh" content="60">', CSS,
+                           page_questions(st)) + '<script>' + KEEP + '</script>')
+    with open(os.path.join(OUT, 'questions.html'), 'w', encoding='utf-8') as fh:
+        fh.write(_questions)
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)

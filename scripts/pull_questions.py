@@ -22,6 +22,7 @@ land in a file that could be committed by accident. The body is reduced to its l
 COUNTS, NOT CONTENT, is also what makes this safe to run unattended in the refresh.
 """
 import argparse
+import datetime as dt
 import csv
 import io
 import json
@@ -33,6 +34,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'sources', 'data', 'reader-questions.csv')
 DB = 'lunenburg-questions'
+CHECKED = os.path.join(ROOT, 'build', 'reader-questions-checked.txt')
 FIELDS = ['id', 'asked_at', 'status', 'topic', 'body_chars', 'has_email', 'country']
 
 
@@ -82,6 +84,12 @@ def main():
     for r in rows:
         w.writerow({k: r.get(k, '') for k in FIELDS})
     open(OUT, 'w', encoding='utf-8', newline='').write(s.getvalue())
+    # WHEN IT WAS CHECKED, not when the file changed. TJ, 9 October 2026: *"the last date
+    # it was checked so i know its accurate"*. A file's mtime moves on a checkout and stands
+    # still on a check that found nothing new, so the time is written down, beside the run
+    # that took it (build/ is gitignored, like the questions file).
+    os.makedirs(os.path.join(ROOT, 'build'), exist_ok=True)
+    open(CHECKED, 'w').write(dt.datetime.now().astimezone().isoformat(timespec='seconds') + '\n')
     opn = sum(1 for r in rows if (r.get('status') or '') != 'answered')
     print('wrote %s — %d question(s), %d open'
           % (os.path.relpath(OUT, ROOT), len(rows), opn))
