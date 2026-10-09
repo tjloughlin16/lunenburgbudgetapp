@@ -95,6 +95,15 @@ she was *"working on producing a complete, current Agreement"*; that is evidence
 intends, not of a document that exists. And the memorandum's signature page prints five
 names and no date.
 
+### The paraprofessional correction and the Dee Bus contract, by records request
+
+Eight documents from the Superintendent's response of 9 October 2026 to two requests made
+that day: the corrected paraprofessional scale, the paraprofessional MOA, two blank draft
+wage documents (`docx/`), and the Dee Bus school bus agreement, bid form, first amendment and
+FY27 bonds. Every file as delivered, its publisher's filename, sha256 and the decision on it:
+`PROVENANCE-records-request-2026-10-09.md`. What they show:
+`notes/findings/PARA-SALARY-CORRECTION.md` and `notes/findings/DEE-BUS-CONTRACT.md`.
+
 The district copy of the teachers' agreement is
 [Lunenburg Education Association 2024-2027](https://drive.google.com/file/d/19IaKYDVtYXgJ63J0MOod-8Io6F3oZ6dw/view),
 70pp. We keep DESE's 72pp filing instead because it is the same document plus the stipend
@@ -173,6 +182,13 @@ Paraprofessional scale runs four classifications (Para 1–4) over 9–11 steps;
 starts at **$16.82/hr** ($21,101 a year) and FY28 Para 1 tops out at **$27.89/hr**
 ($35,169). Steps advance on the first July payroll, one a year, to the maximum
 (Art. VI) — again, on top of the percentages above.
+
+> **Superseded on 7 October 2026.** The School Committee approved a corrected scale
+> (`pdf/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.pdf`, by records request):
+> FY26 step 1 in the first column is **$17.49/hr**, and steps 1–8 rose about 4% in every
+> year while the top steps stayed put. Its same-step rise into FY28 is about 2.5%, not the
+> posted 2.00%. Cell by cell: `notes/findings/PARA-SALARY-CORRECTION.md`. The figures in the
+> paragraph above, and the 2.0% for FY28 in the table, are the posted scale's.
 
 Custodial scale is four grades over five steps; FY27 grade 1 step 1 is **$20.88/hr**,
 grade 4 step 5 tops **$29.83/hr**. Longevity $500 at 5 years rising to $1,750 at 20+;

@@ -98,7 +98,12 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'town-ledgers/', 'budget-workbooks/school-funds-fy26.xlsx'}
+BY_REQUEST = {'town-ledgers/', 'budget-workbooks/school-funds-fy26.xlsx',
+              # The records request of 9 October 2026 to the Superintendent.
+              'contracts/pdf/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.pdf',
+              'contracts/pdf/paraprofessional-moa-fy26-fy28.pdf',
+              'contracts/docx/paraprofessional-wages-draft-',
+              'contracts/pdf/dee-bus-'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -441,7 +446,49 @@ GROUPS = [
             ('contracts/pdf/paraprofessional-fy26-fy28.pdf', 'Paraprofessional agreement, FY26–FY28', 2,
              'Raises of 3.0%, 2.0% and 2.0%. Runs to 30 June 2028.'),
             ('contracts/pdf/paraprofessional-salary-fy26-fy28.pdf', 'Paraprofessional salary schedule', 2,
-             'The rate grid behind the agreement.'),
+             'The rate grid behind the agreement, as first posted. Superseded by the corrected '
+             'scale the School Committee approved on 7 October 2026.'),
+            ('contracts/pdf/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.pdf',
+             'Paraprofessional salary scale, corrected, approved 7 October 2026', 3,
+             'Obtained by records request, 9 October 2026. Four columns by education, hourly '
+             'and annual, FY2026 to FY2028, with the re-signed sick-leave page of the MOA. '
+             'notes/findings/PARA-SALARY-CORRECTION.md compares it cell by cell with the '
+             'scale first posted.'),
+            ('contracts/pdf/paraprofessional-moa-fy26-fy28.pdf',
+             'Paraprofessional memorandum of agreement, 2025-2028', 2,
+             'Obtained by records request, 9 October 2026. The move from hourly wage to a '
+             'four-column salary scale, a new top step each year, 22 or 26 pay cycles, and '
+             'sick leave counted in 6.5-hour days.'),
+            ('contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx',
+             'Draft agreement with the paraprofessional union on wage payments, September 2026', 2,
+             'Obtained by records request, 9 October 2026. Blank and unsigned: one extra '
+             'personal day and a lump sum for FY2027 retroactive pay, for a waiver.'),
+            ('contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx',
+             'Draft individual Wage Act waiver, paraprofessionals, September 2026', 2,
+             'Obtained by records request, 9 October 2026. A blank template.'),
+            ('contracts/pdf/dee-bus-transportation-agreement-fy26-fy28.pdf',
+             'School bus agreement with Dee Bus Service, FY2026-FY2028', 3,
+             'Obtained by records request, 9 October 2026. Three years from 1 July 2025 with two '
+             'optional one-year extensions, paid at the prices on the bid form. '
+             'notes/findings/DEE-BUS-CONTRACT.md reads it.'),
+            ('contracts/pdf/dee-bus-bid-proposal-rates-fy26-fy30.pdf',
+             'Dee Bus bid proposal: the daily rate per bus, FY2026-FY2030', 3,
+             'Obtained by records request, 9 October 2026. Eight 77-passenger and three '
+             '83-passenger buses for 180 days, priced per bus per day for each year, with '
+             'field-trip and wait-time rates.'),
+            ('contracts/pdf/dee-bus-first-amendment-2025.pdf',
+             'First amendment to the Dee Bus agreement, May 2025', 1,
+             'Obtained by records request, 9 October 2026. Bonds for one year’s price, '
+             'posted each year. Its second page is a stray page of another agreement.'),
+            ('contracts/pdf/dee-bus-performance-and-payment-bond-fy27.pdf',
+             'Dee Bus performance and payment bonds, FY2027', 1,
+             'Obtained by records request, 9 October 2026. $2,019,685.00 for 1 July 2026 to '
+             '30 June 2027.'),
+            ('contracts/PROVENANCE-records-request-2026-10-09.md',
+             'How the paraprofessional and Dee Bus documents reached us', 2,
+             'The records request of 9 October 2026: every file as delivered, its sha256, '
+             'where it was filed, and the one email held privately and published as a '
+             'transcription.'),
             ('contracts/pdf/custodial-2023-2026.pdf', 'Custodial agreement, 2023–2026', 2,
              'The expiring custodial contract.'),
             ('contracts/pdf/custodial-moa-2026.pdf', 'Custodial memorandum of agreement, 2026', 2,
