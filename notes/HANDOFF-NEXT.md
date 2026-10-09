@@ -1,67 +1,103 @@
-# Handoff: everything not yet done, as of 7 October 2026
+# Handoff: everything not yet done, as of 9 October 2026, 07:30
 
-One list for the next session. Read this first; the two linked handoffs carry their own
-detail. Everything below the line "Done" is context, not work.
+One list for the next session. Read this first; the linked handoffs carry their own detail.
+The 7 October version of this file is in git history (`git log -p notes/HANDOFF-NEXT.md`).
+
+## Running right now (background, started 9 October)
+
+- **The minutes backlog, governed.** Started 06:45:58:
+  `python3 scripts/process_meeting.py --until-usage --session-caps 80 --by 09:00 --max-jobs 6 --week-cap 85 --max-usd 45`,
+  log `build/process-meeting-2026-10-09.log` (marker `=== MORNING`). At 07:22 the window
+  was at 28% against a line of 26%, at ~1.0 point a meeting. **The `--by 09:00` is wrong for
+  this window:** it opened ~06:40 and resets ~11:40, so the run will stop at 80% around
+  09:00 and leave ~2.5 h of window unused. To retarget: stop it (`touch build/STOP-METERED`
+  or kill the process; finished meetings are kept), remove the stop file, restart with
+  `--by 11:30` and a cap TJ chooses (95% was suggested). Its output -- files under
+  `sources/data/official-votes/`, `recording-minutes/` and friends -- is UNCOMMITTED;
+  commit it when the run ends (the 8-9 Oct overnight output was committed as `cf19f3c3`).
+- **The AG determinations download.** `python3 scripts/fetch_oml_determinations.py --all`,
+  appending to `build/oml-determinations-all.log`; at 07:22 it was walking OML 2013-170.
+  Download only: TJ, 8 Oct, *"Let's just ingest them. Don't process them for now."*
+  Lands through `ingest`, so every letter is in the bucket. Restarted 9 Oct ~06:46 after the
+  OML 2012-5 crash (one number listed twice; fixed in `7f5005a8`). When it finishes: commit
+  `sources/state-law/`, then re-run `pdf_kind` over every letter (see
+  `HANDOFF-OML-INDEX.md` -- the letters are DIGITAL; never OCR them wholesale).
+- Nothing watches either job once this session ends. `tail -f` the logs, or
+  `bash scripts/tail_backlog.sh`.
 
 ## Open work, in rough priority order
 
-1. **Deploy the per-board "Missing records" pages** -- built and committed (`ab15603a`), NOT
-   live: they are new routes, so they need a FULL site build (`cd fy28 && npm run build:site`,
-   ~36 min today, never a bare `vite build`), then `npx wrangler pages deploy` from `fy28/`
-   (Node 22), then check `/boards/parks-commission/records` on production. The same build
-   relabels the email-notice agenda link (item 8). See the section at the bottom.
-2. **The site build is incremental** (7 October, `HANDOFF-FASTER-SITE-BUILD.md`): a build
-   with nothing changed takes ~1 minute, one data file ~2. NOT YET DEPLOYED with it: the
-   og:url fix (every live page says `localhost:61348`), the "not available" approval
-   window on board records, and `meeting-record-explanations.csv`.
-3. **A way to delete from the archive** -- `notes/HANDOFF-TAKEDOWN.md`. Still wanted, but
-   it has NO current case: the MUNIS logins it was for look like staff email names, and TJ
-   decided on 7 October they are not an issue (see the top of that handoff). Not urgent.
-4. **The meeting backlog** -- TJ runs it, ideally outside a long session:
-   `python3 scripts/process_meeting.py --next N --dry-run`, then without `--dry-run`,
-   redirecting to `build/process-meeting-<date>.log`. Watch for free with
-   `tail -f build/process-meeting-*.log | grep --line-buffered -E "^\[|wrote|FAILED|STOPPED|done|completed"`.
-   ~$0.14 a meeting measured. If a session watches it, by EXCEPTION only (memory:
-   monitor-by-exception).
-5. **FY25 and FY26 school surplus reports** (`/analysis/fy25-school-surplus`,
-   `/analysis/fy26-school-surplus`, both UNLISTED) -- one generator,
-   `scripts/build_school_surplus.py --fy <year>`, one verifier,
-   `scripts/verify_school_surplus.py --fy <year>`. The waterfall is now a component
-   (`SchoolSurplusCharts.tsx`, rule 7f) -- unseen in a browser until the next site build.
-   FY26 is period 13 AS RUN 6 October 2026 with $236,767 still encumbered: rerun when the
-   Town's post-close report arrives. Before linking either: the persona review (rule 15a);
-   then delete its line from `sources/analyses/UNLISTED`.
-6. **MUNIS Part 2** -- the Town Manager is still preparing it; she is removing citizen names
-   that appear as vendors in a special-education fund. The request PDF she has
-   (`notes/outbound/drafts/MUNIS-REQUEST-RUNS.pdf`) gives her the steps, keeping the vendor
-   number. When it arrives: it is held at the gate automatically (`redact.gate`, any key
-   under `town-ledgers/`); verify every text field ourselves (a vendor name that is a
-   person; logins in PDF headers), publish what is safe, THEN build (CLAUDE.md 13e). Re-run
-   `scripts/build_munis_request_xlsx.py` and `build_munis_request_runs_pdf.py` -- they fill
-   in what arrived from the data.
-7. **The 9 PDFs of the 6 October MUNIS delivery** are `pending` in `redactions.csv` only
-   because every page prints the report user's login. With the 7 October decision that
-   logins are not an issue, they can be screened and published as-is -- TJ to confirm,
-   since it is a publish (13e). The spreadsheets already carry every figure.
-8. **Next full site build** will also: relabel an email-notice agenda link (the board page
-   says "the posted agenda" -- wrong for one that was emailed; the label is in the page
-   code), and refresh the prerendered HTML behind today's data-only deploys.
-9. **`notes/reference/records-requests.csv`** -- another session's uncommitted edits to it
-   were lost on 6 October (overwritten; unrecoverable). If TJ recalls updating a request's
-   status or dates around 5 October, that needs redoing.
-10. **Reports to build** -- `notes/REPORTS-TO-GENERATE.md`, ordered; 1 = "Is anyone sitting on
-    money?", now with four closed school years from `munis-school-ytd.csv`.
-11. **An off-machine backup copy** -- the verified snapshot
-    (`~/lunenburg-backups/2026-10-06-214608/`) is on the same disk as the repo.
+1. **Retarget the minutes run** (above), and commit its output when it ends.
+2. **The refresh, rebuilt as always-additive** -- design approved in principle,
+   NOT BUILT: `notes/HANDOFF-REFRESH-ADDITIVE.md`. Runs in whatever branch it is in, never
+   destructive, a page that fails to build is marked blocked and the run moves on. Today's
+   refresh tree was unstuck by hand on 9 Oct (reset to main; the stranded 22 Sep commit is
+   kept on branch `stranded-refresh-2026-09-22`). Also: the refresh does not log spend for
+   `write_recording_minutes` -- fix inside the redesign.
+3. **D1 sync fails with a FOREIGN KEY constraint** (seen 9 Oct). Not investigated. The
+   live `/api/query` still serves the older database. Start with `python3 scripts/sync_d1.py`
+   and read which table it stops on.
+4. **The journal export** (TJ, 9 Oct: *"I'm told the journal export is on its way"*). When
+   it arrives it is held at the gate (13e): verify every text field for a person, publish,
+   THEN build. It answers: report #12's "spent with no budget" lines, the surplus
+   "Was it thrift?" question, and what the special-education overrun was spent on. Roll up
+   the journal lines to the period-13 totals before using any of it.
+5. **The OML index** (model-free parts only): rule units, issue taxonomy, FTS over the
+   letters, citation graph -- `HANDOFF-OML-INDEX.md` sections 1, 3, 4. The model DIGEST of
+   the letters waits, and when built runs as a pipeline identical to `process_meeting.py`
+   (newest first, resumable, governed). TJ, 8 Oct.
+6. **Decisions waiting on TJ:**
+   - the new top-level folder `sources/state-law/` (CLAUDE.md "no new top-level folder";
+     it holds the statute, 940 CMR 29, AG guidance and the determinations);
+   - whether to LIST any of the unlisted reports (below) -- persona review (rule 15a) first;
+   - the next FinCom report: #3, "The school budget beyond the vote"
+     (`notes/REPORTS-TO-GENERATE.md`);
+   - the 9 PDFs of the 6 Oct MUNIS delivery, pending only for staff logins in the
+     headers, which TJ said on 7 Oct are not an issue -- confirm publish (13e).
+7. **After the next refresh**: check that no 2027-dated minutes reappeared (a resurrection
+   seen once, cause not established).
+8. **MUNIS Part 2** -- still with the Town Manager (vendor names that are people). Same gate.
+9. **An off-machine backup copy** -- `~/lunenburg-backups/` is on the same disk.
+10. **`notes/reference/records-requests.csv`** -- edits lost 6 Oct; if TJ remembers changing
+    a request around 5 Oct, redo it.
 
-12. **The usage governor -- TJ approved 7 October, BUILD AFTER 4:40 PM that day.** Live
-    usage now arrives without /usage: `~/.claude/statusline-usage.sh` (statusLine,
-    refresh 60 s) logs `five_hour`, `seven_day` and the reset epoch to
-    `~/.claude/usage-log.csv` while a session is open. Build into process_meeting: stop at
-    X% of session OR weekly; pace along a straight line to the cap at the reset (wait when
-    ahead, add a worker -- 2-3, one dispatcher, one queue -- when behind); emergency stop if
-    the window fills >2x the planned slope over 15 min; keep backlog_pace's spend-to-output
-    guard; stale reading -> dollar estimate and ONE worker.
+## Built 7-9 October -- where to find it
+
+**Reports, all live and UNLISTED** (`sources/analyses/UNLISTED`), each a generator + payload
++ verifier (rule 7d):
+
+| page | generator | verifier |
+|---|---|---|
+| `/analysis/special-education-costs` | `build_sped_costs.py` | `verify_sped_costs.py` |
+| `/analysis/fy26-school-surplus` (and fy25) | `build_school_surplus.py --fy/--all` | `verify_school_surplus.py` |
+| `/analysis/sitting-on-money` (FinCom #9) | `build_sitting_on_money.py` | `verify_sitting_on_money.py` |
+| `/analysis/spending-what-comes-in` (#7) | `build_spending_what_comes_in.py` | `verify_spending_what_comes_in.py` |
+| `/analysis/spent-with-no-budget` (#12) | `build_spent_no_budget.py` | `verify_spent_no_budget.py` |
+
+FY26 surplus is period 13 AS RUN 6 Oct with encumbrances still open: rerun when the Town's
+post-close report arrives.
+
+**Open Meeting Law, EXPERIMENTAL and hidden** (no links, not in the sitemap, not
+prerendered, noindex): `/meeting-minutes/<board>/<date>-<video>/oml`, written by
+`scripts/oml_review.py <board> <date> [--without-minutes]`, rendered by
+`fy28/src/pages/OmlReview.tsx`, numbered points (`#point-N`). Never says "violation".
+Reviews exist for Parks 2026-06-24 and 2026-07-22, School Committee 2026-07-29, 2026-08-26
+and 2026-10-07. The law: `scripts/oml_law.py`, `sources/state-law/`.
+
+**The usage governor**: `process_meeting.py --until-usage` (`--session-caps`, `--week-cap`,
+`--by`, `--max-jobs`, `--ramp`, `--oldest`), `scripts/usage_governor.py` (reads the
+server's own usage bars, polls every 150 s), output guard in `scripts/backlog_pace.py`.
+`notes/HANDOFF-USAGE-GOVERNOR.md`. Measured: a three-step meeting ~1% of a 5-hour window,
+~0.1% of the week (`notes/findings/METERED-BATCH-COST.md` sections 6-7). Two things that
+cost hours: a new window opens only on FIRST USE after a reset, so do not wait for a
+reading to change before starting; and always arm a watcher on an overnight run.
+
+**Faster site build**: one Chrome over a DevTools pipe plus a reuse cache --
+`notes/HANDOFF-FASTER-SITE-BUILD.md`. Full build ~10-14 min, nothing changed: seconds.
+
+**Board records**: "not available" until the OML approval window closes (later of 30 days
+and the third subsequent meeting), MISSING only after; reasons in
+`sources/data/meeting-record-explanations.csv`. Live.
 
 ## Held, by TJ's decision (not work)
 
@@ -90,7 +126,7 @@ detail. Everything below the line "Done" is context, not work.
 
 ## Per-board "Missing records" pages -- status
 
-Built 7 October 2026, committed `ab15603a`, not deployed.
+Built 7 October 2026, committed `ab15603a`; deployed and live since.
 
 - `/boards/<slug>/records` (`fy28/src/pages/BoardRecords.tsx`): every meeting a board has
   held; gaps only by default, "show every meeting" toggle; YouTube / official minutes /
