@@ -2541,6 +2541,31 @@
    "side": "extraction",
    "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
    "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. \u2014 closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
+  },
+  {
+   "side": "money_in",
+   "what": "Why does DESE's FY2024 figure for out-of-district tuition paid from funds other than the general fund exceed what the circuit breaker account paid by exactly the FY2024 circuit breaker payment?",
+   "why": "DESE's End of Year Financial Report reports FY2024 tuition (functions 9300 and 9400) paid from funds other than the general fund. The town's year-end report for the school special funds shows what the circuit breaker account (fund 2640) paid in tuition that year. The remainder between the two is, to the dollar, the circuit breaker payment DESE's reimbursement file lists for FY2024; in FY2023 and FY2025 the remainder is small. The figures are computed, not typed, in the report's payload under circuit_breaker.unexplained. It may be a coincidence, a second fund, or the receipt reported as an expenditure; nothing in this archive distinguishes them, so /analysis/special-education-costs shows the figure as 'other funds' and says it cannot explain it. Computed in scripts/build_sped_costs.py, which refuses to print the sentence if the equality stops holding. \u2014 closes: the district's FY2024 End of Year Financial Report as submitted to DESE (Schedule 1 by fund), or the school special funds year-end report for any fund other than 2640 that paid tuition in FY2024."
+  },
+  {
+   "side": "held",
+   "what": "What the town\u2019s own special revenue funds held at 30 June 2024, 2025 and 2026",
+   "why": "The annual town reports print every special revenue fund's balance at 30 June, and this project has read and proved FY2011 to FY2023 -- forward, receipts, disbursements and carried, every row and every printed GRAND TOTAL tying (special-revenue-read.csv). FY2024 and FY2025 print a DIFFERENT table, a balance detail with no receipts or disbursements, no row identity and no stable fund key: it is printed and has not yet been read into a dataset, which is our gap rather than the town's. FY2026's annual report is not yet published. The school side of 'is anyone sitting on money' runs to 30 June 2026 through the MUNIS period-13 ledgers; the town side stops at 30 June 2023, so whether the town's own funds kept growing cannot be said. Measured in /analysis/sitting-on-money. \u2014 closes: a MUNIS fund balance report (or trial balance) at period 13 for FY2024, FY2025 and FY2026 covering the town's special revenue funds -- the same system that produced the school delivery of 6 October 2026, pointed at the town's funds."
+  },
+  {
+   "side": "held",
+   "what": "What the school grant funds held at 30 June 2024, 2025 and 2026",
+   "why": "Fourteen school funds -- circuit breaker, school choice, lunch, eight fee-funded revolving funds and three gift funds -- are carried from the annual report's 30 June 2023 balance through the MUNIS period-13 ledgers, and the result ties to the cent to the Town's March 2026 special revenue report for every one. The grant funds cannot be carried that way: the annual report names a grant by programme and year, MUNIS numbers it, and nothing published maps one to the other; and a reimbursement grant spends before it is paid, so one year's revenue less expense is not a change in what it holds. So the school total after 2023 covers the fourteen and not the grants. Measured in /analysis/sitting-on-money. \u2014 closes: a MUNIS fund balance report at period 13 for the school grant funds (26xx-29xx), FY2024 to FY2026, with each fund's opening and closing balance."
+  },
+  {
+   "side": "money_in",
+   "what": "Which school special revenue funds the period-13 special funds report leaves out",
+   "why": "The FY2023 annual town report's special revenue schedule prints $3,667,636 received and $4,333,280 spent across every school special revenue fund; the MUNIS period-13 special funds report for the same year, delivered 6 October 2026, carries $2,440,883 and $2,962,716. The difference is funds that report does not carry -- among them, the annual report's FY22 ESSER II #115, FY22 ARP Idea #252 and FY22 Idea ARP #264 rows have no fund of that name or number in the MUNIS report. And the FY2026 report books $59,333 of grant revenue against $557,427 of grant spending. A reimbursement booked after the close, a grant receipt held in a fund outside the report, and both together all fit; the report cannot separate them, so whether the schools spend the grant money that comes in can be said only for the funds it carries. Measured in /analysis/spending-what-comes-in. \u2014 closes: the MUNIS period-13 revenue and expense report for EVERY school special revenue fund, FY2023 to FY2026, with each fund's opening and closing balance (or the trial balance for funds 2xxx at each close)."
+  },
+  {
+   "side": "money_out",
+   "what": "What a fee-funded school programme costs that is not booked to its own fund",
+   "why": "A revolving fund that takes in more than it spends covers the costs BOOKED TO IT, and nothing more (rule 11). The ledger can test whether the general fund also carries a programme's costs only where both book to the same programme-specific DESE function code, and among the schools' fee and lunch funds that is true of athletics alone (function 3510, where the general fund booked most of the four years' athletics spending). Extended day, after-school activities, facilities rental and adult education book their spending to function codes that name no programme -- 2000, 4000, 5200 -- so whether the general fund pays any of their custodians, utilities, administration or benefits cannot be shown either way. 'Pays its own way' therefore cannot be stated for any of them beyond their own books. Measured in /analysis/spending-what-comes-in. \u2014 closes: the district's indirect-cost allocation for each revolving programme, or a cost study listing the general fund accounts that carry part of each programme's cost."
   }
  ],
  "generated_by": "scripts/build_athletics_charts.py",
@@ -2612,13 +2637,13 @@
  "memo_total": 304046.18,
  "minutes": {
   "first_date": "2009-01-05",
-  "held": 12140,
+  "held": 12148,
   "image_scan": 1119,
   "last_date": "2026-11-17",
-  "published": 12190,
-  "searchable": 11003,
-  "searchable_share": 0.9063,
-  "text_files_present": 12139,
+  "published": 12198,
+  "searchable": 11011,
+  "searchable_share": 0.9064,
+  "text_files_present": 12147,
   "unsearchable": 1137
  },
  "negatives": [

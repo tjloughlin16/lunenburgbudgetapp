@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**604 of 1908 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**610 of 1975 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **1304 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **1365 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -46,8 +46,8 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY22 | 22 |
 | FY23 | 45 |
 | FY24 | 89 |
-| FY25 | 117 |
-| FY26 | 153 |
+| FY25 | 119 |
+| FY26 | 157 |
 | FY27 | 216 |
 | FY28 | 6 |
 | FY29 | 3 |
@@ -70,6 +70,18 @@ Listed so this view cannot look more complete than it is.
 - `analyses/charts/board-composition-where.svg` — Where the town’s seats are, by body
 - `analyses/charts/department-budgets-index.svg` — Chart: town and school starting budgets, indexed to FY2010
 - `analyses/charts/department-budgets-pull.svg` — Chart: each group’s pull on the gap
+- `analyses/charts/sitting-on-money-balances.svg` — Chart: what each pot held at each 30 June
+- `analyses/charts/sitting-on-money-school.svg` — Chart: the schools’ fourteen funds by kind, FY2011-FY2026
+- `analyses/charts/sitting-on-money-turnback.svg` — Chart: unspent appropriations at the close, town and schools
+- `analyses/charts/special-education-costs-circuit-breaker.svg` — Chart: out-of-district tuition by who paid it, beside the circuit breaker
+- `analyses/charts/special-education-costs-surprise.svg` — Chart: the special education overrun, year by year
+- `analyses/charts/special-education-costs-trend.svg` — Chart: in-district and out-of-district special education, by year
+- `analyses/charts/spending-what-comes-in-athletics.svg` — Chart: athletics spending as booked, general fund and fee fund
+- `analyses/charts/spending-what-comes-in-funds.svg` — Chart: each school fund, in minus out, by year
+- `analyses/charts/spending-what-comes-in-kinds.svg` — Chart: money in and money out of the school funds, by kind, FY2023-FY2026
+- `analyses/charts/spent-with-no-budget-kindergarten.svg` — Chart: the kindergarten aide lines, voted against spent
+- `analyses/charts/spent-with-no-budget-lines.svg` — Chart: each school line that spent against a $0 vote
+- `analyses/charts/spent-with-no-budget-years.svg` — Chart: spending on school lines voted at $0, by year, three definitions
 - `analyses/charts/stabilization-all.svg` — The stabilization funds compared, on one scale
 - `analyses/charts/stabilization-each.svg` — The stabilization funds, each on its own scale
 - `analyses/charts/stabilization-flows.svg` — Money in and money out of the stabilization funds, by year
@@ -108,9 +120,13 @@ Listed so this view cannot look more complete than it is.
 - `analyses/per-pupil-spending.md` — What Lunenburg spends for each pupil, and what that number hides
 - `analyses/questions.md` — A hundred questions this archive can answer, each with the query
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
+- `analyses/sitting-on-money.md` — Is anyone sitting on money? Town and schools
+- `analyses/special-education-costs.md` — Special education costs, and the size of a mid-year surprise
 - `analyses/sped-and-funds.md` — Special education and the funds outside the budget
 - `analyses/sped-and-the-curve.md` — Special education and the curve
 - `analyses/spending-compared.md` — How Lunenburg compares, and what matching would cost
+- `analyses/spending-what-comes-in.md` — Are we spending what comes in? The school funds, FY2023 to FY2026
+- `analyses/spent-with-no-budget.md` — Spent with no budget: school lines voted at $0, FY2023 to FY2026
 - `analyses/stabilization-funds.md` — The stabilization funds, and who may spend them
 - `analyses/stabilization-option.md` — Solution options: what the stabilization funds could do about the gap
 - `analyses/town-budget-assistance.md` — Assistance: what the town votes for it
@@ -241,6 +257,7 @@ Listed so this view cannot look more complete than it is.
 - `data/dls-override-votes.csv` — Override and underride votes, extracted
 - `data/document-basis.csv` — What produced each document’s figures
 - `data/document-defects.csv` — Where a document the town published is itself incomplete
+- `data/document-watch-events.csv` — Documents that appeared on the district's and the town's pages, and when we first saw them
 - `data/enterprise-balance-sheet-printed-totals.csv` — The TOTAL rows and the PROOF row each enterprise sheet prints
 - `data/enterprise-balance-sheet.csv` — The enterprise-funds balance sheet, read from the page
 - `data/eoyr-nss.csv` — Net school spending as the End of Year Report computes it, FY2023 and FY2024
@@ -276,6 +293,8 @@ Listed so this view cannot look more complete than it is.
 - `data/lps-budget-lines.csv` — Budget lines, tidy CSV
 - `data/lunenburg.db` — The whole analysis database, SQLite
 - `data/meeting-document-timestamps.csv` — When each agenda and each set of minutes was MADE, from the document itself
+- `data/meeting-notices-email.csv` — Meetings announced only by email, never posted to the AgendaCenter
+- `data/meeting-record-explanations.csv` — Why a meeting record will never exist, when somebody has said so
 - `data/meeting-register.csv` — Every meeting, and what survives of it
 - `data/meeting-watch-events.csv` — What appeared on the town’s site between one crawl and the next
 - `data/meeting-watch-runs.csv` — When we looked, how much answered, and what was new
@@ -340,6 +359,7 @@ Listed so this view cannot look more complete than it is.
 - `data/report-trust-funds.csv` — Trust and stabilisation funds
 - `data/report-valuation.csv` — Valuation and tax rate history
 - `data/report-vital-records.csv` — Births, marriages and deaths
+- `data/review-queue.csv` — Structured reads of the town's minutes flagged for a person to check
 - `data/role-classification.csv` — What kind of job each printed roster title is
 - `data/roster-completeness.csv` — How many of a body’s people the org chart holds, against the town’s own count
 - `data/salary-schedule-refused.csv` — Wage-grid rates that nothing confirms, and the rows that came up short
@@ -440,23 +460,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/personnel/job-postings/2026-10-05/job-5931978.json` — Job postings: SchoolSpring posting 5931978, detail, fetched 2026-10-05
 - `district-budget/docs/personnel/job-postings/2026-10-05/job-5937399.json` — Job postings: SchoolSpring posting 5937399, detail, fetched 2026-10-05
 - `district-budget/docs/personnel/job-postings/2026-10-05/job-5947400.json` — Job postings: SchoolSpring posting 5947400, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/listing.json` — Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-05
-- `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv` — Directory of Staff - All Lunenburg Public Schools Staff (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html` — Directory of Staff - All Lunenburg Public Schools Staff (school staff directory), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff.html` — Directory of Staff (the district's own index of the listings), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/district-office.csv` — District Office (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/district-office.html` — District Office (school staff directory), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.csv` — Lunenburg High School (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.html` — Lunenburg High School (school staff directory), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.csv` — Lunenburg Middle School (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.html` — Lunenburg Middle School (school staff directory), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.csv` — Lunenburg Primary School (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.html` — Lunenburg Primary School (school staff directory), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.csv` — Turkey Hill Elementary School (school staff directory, rows), fetched 2026-09-25
-- `district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.html` — Turkey Hill Elementary School (school staff directory), fetched 2026-09-25
-- `district-budget/docs/sc-meetings/2023-09-06-20-21-fall-athletic-report.pdf` — 20/21 Fall Athletic Report
-- `district-budget/docs/sc-meetings/2023-09-06-20-21-superintendent-goals.pdf` — 20/21 Superintendent Goals
-- `district-budget/docs/sc-meetings/2023-09-06-2020-2021-revised-proposed-school-calendar.xlsx` — 2020-2021 Revised Proposed School Calendar
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-c-o-1.pdf` — 2021-2022 Action Plan C & O.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C 1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C.1
