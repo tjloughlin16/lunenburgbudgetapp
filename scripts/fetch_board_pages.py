@@ -58,6 +58,23 @@ def sha256(p):
     return h.hexdigest()
 
 
+def keep(local, blob, url):
+    """Every version of a page its publisher rewrites in place, and the latest at `local`.
+
+    These pages used to be written straight over their fixed names, so a page the district
+    changed on 14 September replaced the version the bucket held, and the new one never
+    reached the bucket at all (found 9 October 2026). ingest.land_version() lands each
+    distinct version under a dated folder -- pushed, read back, catalogued -- and keeps the
+    fixed name as the working copy this script and its readers use.
+    """
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    import ingest
+    key = os.path.relpath(local, os.path.join(ROOT, 'sources'))
+    ok, why = ingest.land_version(key, blob, url)
+    if not ok:
+        print('  !! %s: %s -- working copy left as it was' % (key, why))
+
+
 def slugify(name):
     s = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
     return s
@@ -227,7 +244,7 @@ def main():
         html = fetch(url)
         pid = u.split('/')[1]
         local = os.path.join(TOWN_DOCS, 'board-%s-%s.html' % (pid, slugify(name)))
-        open(local, 'wb').write(html)
+        keep(local, html, url)
         digest = sha256(local)
         add_index_row(TOWN_INDEX, name + ' (board page)', url, local, digest, len(html))
         p = parse_town(html.decode('utf-8', 'replace'))
@@ -238,7 +255,7 @@ def main():
         print('  %-45s %s' % (name, 'charter: ' + p['charter_ref'] if p['charter_ref'] else ('overview %d chars' % len(p['overview']))))
     html = fetch(SC_URL)
     local = os.path.join(DIST_DOCS, 'school-committee-page.html')
-    open(local, 'wb').write(html)
+    keep(local, html, SC_URL)
     digest = sha256(local)
     add_index_row(DIST_INDEX, 'School Committee (district page)', SC_URL, local, digest, len(html))
     p = parse_district(html.decode('utf-8', 'replace'))

@@ -84,6 +84,25 @@ def in_flight():
         return [r for r in csv.DictReader(fh) if r.get('key')]
 
 
+def changed_unbacked():
+    """Frozen keys whose CURRENT bytes are not the bytes the bucket holds under that key.
+
+    THE NAME IS NOT THE DOCUMENT. Until 9 October 2026 this check compared keys alone, so a
+    file its publisher had changed -- re-fetched over the same name, new bytes on disk, the
+    old bytes in the locked bucket -- passed as backed up. Three did, for up to four weeks.
+    The manifest records what is on disk; the push state records what was read back out of
+    the bucket; a frozen key on which they disagree is a version held in one place.
+    """
+    if not os.path.exists(PUSH_STATE) or not os.path.exists(A.MANIFEST):
+        return []
+    with open(PUSH_STATE, encoding='utf-8') as fh:
+        pushed = {r['key']: r.get('sha256', '') for r in csv.DictReader(fh) if r.get('key')}
+    with open(A.MANIFEST, encoding='utf-8') as fh:
+        return sorted(r['key'] for r in csv.DictReader(fh)
+                      if r.get('key') in pushed and r.get('sha256') and pushed[r['key']]
+                      and pushed[r['key']] != r['sha256'] and A.frozen(r['key']))
+
+
 def audit():
     """(held_unbacked, indexed_unbacked) -- both lists of frozen keys."""
     safe = pushed_keys()
@@ -115,6 +134,14 @@ def main():
                         '--push', '--frozen'], cwd=ROOT, check=False)
         held, indexed = audit()
 
+    changed = changed_unbacked()
+    if changed:
+        print('%d DOCUMENT(S) WHOSE CURRENT VERSION IS NOT IN THE BUCKET -- the bucket holds an '
+              'earlier version under the same name:' % len(changed))
+        for k in changed[:20]:
+            print('   ', k)
+        print('  The bucket cannot take a new version under an old name. Land it with '
+              'ingest.land_version(), which keeps every version under a dated folder.')
     if flight:
         print('%d DOCUMENT(S) IN FLIGHT -- staged and not yet in the bucket:' % len(flight))
         for r in flight[:20]:
@@ -134,11 +161,11 @@ def main():
             print('   ', k)
         print('  These cannot be repaired from here. Find the tree that still holds them '
               'BEFORE it is cleaned; `git worktree list` is where to start.')
-    if not held and not indexed and not flight and not a.quiet:
+    if not held and not indexed and not flight and not changed and not a.quiet:
         n = len([k for k in A.walk_sources() if A.frozen(k)])
         print('ok: all %d document(s) this tree holds are in the bucket, read back and '
               'compared. Safe to clean.' % n)
-    return 1 if (held or indexed or flight) else 0
+    return 1 if (held or indexed or flight or changed) else 0
 
 
 if __name__ == '__main__':

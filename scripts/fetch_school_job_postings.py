@@ -53,10 +53,11 @@ THE COUNT IS ASSERTED. SchoolSpring answers a separate count endpoint; a listing
 length disagrees with it is refused, because a page that silently came back short would
 otherwise record real postings as REMOVED -- the one thing this table exists to say.
 
-SCREENED, AND FAIL CLOSED. Postings are published to the world by the district, so they
-have a public upstream and the redaction gate passes them; each blob is still run through
-`pii_screen` as text, and any finding stops the snapshot for a person to look at rather
-than freezing it in the public bucket. A posting names its hiring contact (a district
+SCREENED, AND NOTED -- NOT REFUSED. Postings are published to the world by the district, so
+they have a public upstream and the redaction gate passes them. Each blob is still run
+through `pii_screen` as text and any finding is printed, but it no longer stops the
+snapshot: a public posting is not confidential (TJ, 9 October 2026, after "diagnosis" in an
+occupational therapist's duties held the whole batch). A posting names its hiring contact (a district
 work address) -- that is the district's own publication, and is what the screen should
 not and does not flag.
 """
@@ -345,13 +346,16 @@ def main():
         print('changed (%s), but %s is already held; the change waits for the next run'
               % (why, day))
         return 0
+    # NOTED, NOT REFUSED. TJ, 9 October 2026, after the screen held an occupational
+    # therapist's posting over "the identification and diagnosis of students" in its list of
+    # duties: *"i dont know how a job posting can be considered confidential or sensitive"*.
+    # It cannot. The district published it to a public job board; rule 13e's gate is for
+    # documents with NO public address, and this one has one. Refusing here stopped the
+    # district's own publication over a word every therapist and nurse posting carries. The
+    # screen still runs, so a finding is in the log beside the snapshot, and nothing waits.
     bad = screen(files, names)
-    if bad:
-        snapshot_log.record(DOCS, day, True, snapshot='', files=0,
-                            note='REFUSED by pii_screen: ' + ' | '.join(bad)[:300])
-        for b in bad:
-            print('  !! %s' % b)
-        raise SystemExit('pii_screen flagged the postings; nothing staged -- a person decides')
+    for b in bad:
+        print('  note: pii_screen matched %s -- a public posting, kept' % b)
 
     import ingest
     for n in names:

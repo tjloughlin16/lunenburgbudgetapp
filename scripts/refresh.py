@@ -219,13 +219,25 @@ REFRESH_WRITES = {
     'town-supplementary': 'other town documents',
     'analyses': 'analyses',                      # ours
 }
+# A SNAPSHOT IS ONE LOOK, NOT A PILE OF DOCUMENTS. TJ, 9 October 2026: the run reported 10
+# budget documents and 29 other town documents, and they were this week's staff-directory
+# copies -- the district's six sheets and the town directory's pages, each saved whole into
+# a dated folder because the publishers overwrite in place. Real fetches, not new
+# publications. So a dated folder under one of these is counted ONCE, as a snapshot.
+import re as _re
+SNAPSHOT = _re.compile(r'^(.+/(staff-directory|job-postings))/(\d{4}-\d{2}-\d{2})/')
+SNAPSHOT_WHAT = {'town-supplementary': {'staff-directory': 'town staff directory'},
+                 'district-budget': {'staff-directory': 'district staff directory',
+                                     'job-postings': 'district job postings (SchoolSpring)'}}
+
 # Counted from the event logs (agendas, minutes, videos, transcripts), not the manifest; and
 # `data` is ours throughout.
 ARCHIVE_EVENTS = {'meetings', 'data'}
 ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts', 'announcements',
            'budget documents', 'state documents', 'other town documents',
            'annual reports', 'ledgers', 'contracts', 'correspondence',
-           'peer district documents')
+           'peer district documents',
+           'snapshots')
 MAKES = ('generated minutes', 'analyses')
 # FOUND ON EXTERNAL SITES vs FOUND IN OUR LOCAL FILES. TJ, 9 October 2026: *"counting them
 # as 'found' is OK too, but we should be sure to distinguish 'found on external sites' or
@@ -624,6 +636,13 @@ def inventory():
             continue
         if top in ARCHIVE_EVENTS:                # counted from the watchers' event logs above
             continue
+        snap = SNAPSHOT.match(key)
+        if snap and top in REFRESH_WRITES:
+            what = SNAPSHOT_WHAT.get(top, {}).get(snap.group(2), snap.group(2).replace('-', ' '))
+            folder = snap.group(0).rstrip('/')
+            files = inv['snapshots'].get(folder, (0,))[0] + 1 if isinstance(inv['snapshots'].get(folder), tuple) else 1
+            inv['snapshots'][folder] = (files, what, snap.group(3))
+            continue
         if group:
             w = found_at.get(key, {})
             inv[group][ident] = ('%s  [%s%s]' % (w.get('title') or key.split('/')[-1], w.get('where') or top,
@@ -632,6 +651,8 @@ def inventory():
         else:                                    # new to us, and not fetched by the refresh
             inv['local documents'][ident] = key[:110]
             DOC_INFO[ident] = dict(kind='local documents', file=key, dir=os.path.dirname(key))
+    for folder, (n, what, day) in list(inv['snapshots'].items()):
+        inv['snapshots'][folder] = '%s, %s  [%d file%s]' % (what, day, n, '' if n == 1 else 's')
     return inv
 
 
@@ -1177,7 +1198,12 @@ def main():
             a.deploy = False
     if a.deploy and not a.dry_run:
         sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
-        sh(['npx', 'wrangler', 'pages', 'deploy'], cwd=os.path.join(ROOT, 'fy28'))
+        # `--branch main`, NAMED. Wrangler takes production-or-preview from the git branch,
+        # and this tree's branch is `refresh` even when its commit is exactly main's -- on
+        # 9 October 2026 a hand deploy from here went to `refresh.lunenburg-fy28.pages.dev`
+        # while production kept the old site. The guard above already refuses anything but
+        # main's own commit, so naming the branch only says what is already true.
+        sh(['npx', 'wrangler', 'pages', 'deploy', '--branch', 'main'], cwd=os.path.join(ROOT, 'fy28'))
         deployed = True
 
     # THE ROW GOES IN BEFORE THE RISKY PART, NOT AFTER IT.

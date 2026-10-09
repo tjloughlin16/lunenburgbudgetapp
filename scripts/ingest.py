@@ -335,6 +335,51 @@ def secure(quiet=False):
     return len(done), len(failed)
 
 
+def register_working_copy(key, upstream='', why=''):
+    """Name `key` a working copy (see archive_storage.WORKING_COPIES). Idempotent."""
+    reg = A.WORKING_COPIES
+    rows = list(csv.DictReader(open(reg, encoding='utf-8'))) if os.path.exists(reg) else []
+    if key in {r['key'] for r in rows}:
+        return
+    rows.append({'key': key, 'upstream': upstream, 'why': why})
+    tmp = reg + '.tmp'
+    with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=['key', 'upstream', 'why'], lineterminator='\n')
+        w.writeheader()
+        w.writerows(rows)
+    os.replace(tmp, reg)
+
+
+def land_version(key, blob, upstream='', day=None):
+    """A file a publisher OVERWRITES IN PLACE: keep every version, and the latest at `key`.
+
+    Each distinct version is landed -- staged, pushed, read back, catalogued -- under
+    `<dir>/<YYYY-MM-DD>/<name>`, a dated folder archive_storage freezes. `key` itself becomes
+    a WORKING COPY: registered in sources/data/working-copies.csv, so frozen() stops
+    treating it as a publisher's file, then rewritten with the latest bytes for the scripts
+    that read it. Bytes already held under any dated version are not landed twice.
+    Returns (ok, reason); on failure the working copy is left as it was.
+    """
+    import glob as _glob
+    day = day or datetime.date.today().isoformat()
+    sha = hashlib.sha256(blob).hexdigest()
+    d, name = os.path.split(key)
+    stem, ext = os.path.splitext(name)
+    held = [p for p in _glob.glob(os.path.join(A.SRC, d, '[0-9]' * 4 + '-*', stem + '*' + ext))
+            if A.hash_file(p)[0] == sha]
+    if not held:
+        dated = '%s/%s/%s' % (d, day, name)
+        if os.path.exists(A.local_path(dated)):          # a second change on the same day
+            dated = '%s/%s/%s-%s%s' % (d, day, stem, sha[:8], ext)
+        ok, why = land(dated, blob, upstream)
+        if not ok:
+            return False, why
+    register_working_copy(key, upstream, 'overwritten in place by its publisher; every '
+                                         'version is held under %s/<date>/' % d)
+    _atomic_write(A.local_path(key), blob)
+    return True, ''
+
+
 def land(key, blob, upstream=''):
     """One document, all the way in. Returns (ok, reason)."""
     ok, why = stage(key, blob, upstream)

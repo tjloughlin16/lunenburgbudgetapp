@@ -491,6 +491,31 @@ def incomplete(prefix=None, manifest_path=None):
                   and not os.path.exists(local_path(k)))
 
 
+# A WORKING COPY IS OURS; ITS DATED VERSIONS ARE THE PUBLISHER'S. Some files are fetched to
+# a FIXED name and overwritten whenever the publisher changes them -- DLS exports, the
+# district's School Committee page -- because the scripts that read them want "the latest".
+# Until 9 October 2026 those were frozen like any publisher's file, so a changed version
+# could never reach the locked bucket: three of them sat on one disk for weeks while the
+# backup check, which compared names, called them backed up. Now each version is landed
+# under a dated folder by ingest.land_version(), which is frozen, and the fixed name is a
+# working copy: registered in sources/data/working-copies.csv by that same function, so
+# the list cannot drift from what the fetchers actually do.
+WORKING_COPIES = os.path.join(SRC, 'data', 'working-copies.csv')
+_working = {'mtime': None, 'keys': frozenset()}
+
+
+def working_copies():
+    try:
+        m = os.path.getmtime(WORKING_COPIES)
+    except OSError:
+        return frozenset()
+    if _working['mtime'] != m:
+        with open(WORKING_COPIES, encoding='utf-8') as fh:
+            _working['keys'] = frozenset(r['key'] for r in csv.DictReader(fh) if r.get('key'))
+        _working['mtime'] = m
+    return _working['keys']
+
+
 def frozen(key):
     """Is this key one of the publisher's own files, rather than one of our renderings?
 
@@ -512,6 +537,8 @@ def frozen(key):
     is the strongest possible reason to require a backup. A `checked.csv` at the root of
     such a tree is ours and is not caught, correctly, because it appends on every run.
     """
+    if key in working_copies():
+        return False
     parts = key.split('/')
     if parts[0] in OURS_TOP:
         return False

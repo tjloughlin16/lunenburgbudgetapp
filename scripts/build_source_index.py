@@ -683,6 +683,13 @@ GROUPS = [
              'behind that nothing can find or remove. This register names each one, matched '
              'by sha256 rather than by name, and says `superseded_by` where the same bytes '
              'are held under another key. That is the only remedy there is.'),
+            ('data/working-copies.csv',
+             'Files kept under a fixed name and overwritten when their publisher changes them', 2,
+             'Written by ingest.land_version(). Each row is a WORKING COPY -- the latest version, '
+             'under the name the scripts read -- whose every version is held under a dated folder '
+             'beside it. A working copy is ours; the dated versions are the publisher\u2019s and '
+             'are what the bucket keeps. Added 9 October 2026, after three changed versions sat on '
+             'one disk while the backup check, comparing names, called them backed up.'),
             ('data/dls-cherry-sheet.csv',
              'The cherry sheet: every line of state aid and every state assessment', 3,
              'All 351 municipalities and all 87 regional school districts, FY2010–FY2027, '
