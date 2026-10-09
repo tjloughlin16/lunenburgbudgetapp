@@ -34,6 +34,21 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 OUT  = os.path.join(ROOT, 'build', 'status')
 TREE = os.path.join(os.path.dirname(ROOT), 'lunenburgbudgets-refresh')
 
+# ONCE PER BUILD. It was called twice a build at ~10 s each (9 October 2026; 1.3 s when the
+# comment above was written), and the launchd job rebuilds every 60 s -- so the page spent
+# more time computing than resting. write() clears this at the start of every build.
+_ONCE = {}
+
+
+def once(fn):
+    def wrapped():
+        if fn.__name__ not in _ONCE:
+            _ONCE[fn.__name__] = fn()
+        return _ONCE[fn.__name__]
+    wrapped.__name__ = fn.__name__
+    return wrapped
+
+
 def rows(name):
     p = os.path.join(DATA, name)
     if not os.path.exists(p): return []
@@ -757,6 +772,7 @@ def _local(stamp):
     return dt.datetime.fromisoformat(stamp)
 
 
+@once
 def oml_progress():
     try:
         age = time.time() - os.path.getmtime(OML_CENSUS)
@@ -1260,6 +1276,7 @@ def streams():
 BACKLOG_DEPTH = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
 
 
+@once
 def backlog_depth():
     try:
         import build_backlog_depth as B
@@ -3097,6 +3114,7 @@ q.addEventListener('input',draw);draw();
 """
 
 def write(open_it=False):
+    _ONCE.clear()
     os.makedirs(OUT, exist_ok=True)
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
