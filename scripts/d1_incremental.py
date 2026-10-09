@@ -155,7 +155,12 @@ def plan(local, remote, limit, deps=None):
             reason = 'new'
         elif remote[t][0] == sha:
             continue
-        elif remote[t][1] is not None and remote[t][1] != create:
+        elif remote[t][1] is None or remote[t][1] != create:
+            # AN UNKNOWN SHAPE IS NOT THE SAME SHAPE. Where the remote never recorded a
+            # table's CREATE, this used to assume it matched and send `rows` -- a DELETE and
+            # INSERTs into the OLD table. 9 October 2026: special_revenue_funds had gained
+            # `fund_balance` locally and the push died on `no column named fund_balance`.
+            # Rebuilding costs the same writes as replacing every row, which `rows` does.
             reason = 'reshaped'
         else:
             reason = 'rows'
@@ -179,8 +184,16 @@ def plan(local, remote, limit, deps=None):
     while pending and progress:
         progress = False
         still = []
+        # A PARENT BEING RESENT IS NOT YET THERE. `have` starts as every table the remote
+        # holds, so a child whose parent is ALSO in this push was eligible at once and, being
+        # smaller, went first -- ahead of the parent rows it points at. 9 October 2026: the
+        # trial-balance tables (17 and 102 rows) went ahead of `document` (2,595 rows, 1,175
+        # of them new to D1) and every push failed SQLITE_CONSTRAINT_FOREIGNKEY. Deferring
+        # the check did not save it, so the hypothesis below does not hold for D1 and the
+        # order must. A parent waiting in this push blocks its children until it is kept.
+        waiting = {x for x, _, _ in pending}
         for t, reason, rows in pending:
-            missing = {p for p in deps.get(t, ()) if p not in have}
+            missing = {p for p in deps.get(t, ()) if p not in have or p in waiting}
             if missing:
                 still.append((t, reason, rows))
                 continue
@@ -189,6 +202,7 @@ def plan(local, remote, limit, deps=None):
                 continue
             kept.append((t, reason, rows))
             have.add(t)
+            waiting.discard(t)
             total += rows
             progress = True
         pending = still

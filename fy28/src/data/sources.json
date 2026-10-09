@@ -1412,6 +1412,18 @@
      "textUrl": "/docs/data/dls-cherry-sheet-sources.csv"
     },
     {
+     "path": "data/archive-orphans.csv",
+     "title": "Objects in the bucket that the index no longer names",
+     "stars": 2,
+     "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
+     "kind": "Data",
+     "bytes": 7057,
+     "url": "/docs/data/archive-orphans.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/archive-orphans.csv"
+    },
+    {
      "path": "state-dls/PROVENANCE.md",
      "title": "Where these came from, and what they cannot do",
      "stars": 2,
@@ -1422,18 +1434,6 @@
      "count": 100,
      "unit": "lines",
      "textUrl": "/docs/state-dls/PROVENANCE.md"
-    },
-    {
-     "path": "data/archive-orphans.csv",
-     "title": "Objects in the bucket that the index no longer names",
-     "stars": 2,
-     "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
-     "kind": "Data",
-     "bytes": 4983,
-     "url": "/docs/data/archive-orphans.csv",
-     "count": 11,
-     "unit": "rows",
-     "textUrl": "/docs/data/archive-orphans.csv"
     },
     {
      "path": "data/ingest-pending.csv",
@@ -31114,7 +31114,7 @@
  "totals": {
   "documents": 2756,
   "groups": 24,
-  "bytes": 4856806443,
+  "bytes": 4856808517,
   "loadBearing": 185
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 45 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **14,340 documents** — PDFs, spreadsheets, Word files and slide decks — 38,526 files and 8.58 GB in all, each with its address, its publisher’s filename and a checksum.
+- **14,340 documents** — PDFs, spreadsheets, Word files and slide decks — 38,524 files and 8.58 GB in all, each with its address, its publisher’s filename and a checksum.
 - **15 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,198 meeting documents** from **51 town boards**: 4,736 sets of minutes and 7,462 agendas, 2009-01-05 to 2026-10-07 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -14,8 +14,8 @@
 
 ## What we made from it
 
-- **4,507 hours of meeting recordings transcribed** — 2,679 meetings, 187.8 days of audio end to end, 2012-05-02 to 2026-10-08. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **1124 meetings with our own minutes** written from those recordings — **3500 substantive votes** and **627 transfers** logged, each linked to the second of the video.
+- **4,511 hours of meeting recordings transcribed** — 2,681 meetings, 188.0 days of audio end to end, 2012-05-02 to 2026-10-08. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
+- **1122 meetings with our own minutes** written from those recordings — **3497 substantive votes** and **627 transfers** logged, each linked to the second of the video.
 - **A database of 159,121 rows in 122 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **38 analyses** and **239 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.

@@ -242,7 +242,7 @@ CREATE TABLE munis_trial_balance_account (
 CREATE TABLE munis_trial_balance_journal (
     source                  TEXT NOT NULL REFERENCES document(doc_id),
     fiscal_year             INTEGER NOT NULL,
-    key                     TEXT NOT NULL REFERENCES munis_trial_balance_account(key),
+    key                     TEXT NOT NULL,
     org                     TEXT,
     account                 TEXT,
     period                  INTEGER,         -- the MUNIS period (1-13) the line posted in
@@ -253,7 +253,13 @@ CREATE TABLE munis_trial_balance_journal (
     reference               TEXT,
     debits                  REAL,
     credits                 REAL,
-    running_balance         REAL
+    running_balance         REAL,
+    -- THE PAIR, NOT THE KEY ALONE. This said `key REFERENCES munis_trial_balance_account(key)`,
+    -- and `key` alone is not unique there (its PRIMARY KEY is the pair), so the foreign key
+    -- was malformed. SQLite only noticed when asked; D1 enforces foreign keys, and every
+    -- push carrying this table failed with SQLITE_CONSTRAINT_FOREIGNKEY (found 9 October
+    -- 2026 -- the D1 sync had been failing since the table arrived).
+    FOREIGN KEY (source, key) REFERENCES munis_trial_balance_account(source, key)
 );
 
 -- One row per budget line per year per STAGE. From line-history.csv, which is already
