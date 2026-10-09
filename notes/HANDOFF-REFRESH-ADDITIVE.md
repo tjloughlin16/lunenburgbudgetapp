@@ -52,7 +52,7 @@ Three all-or-nothing gates, none of them about the new data:
 - **A person's unpushed local commits are never pushed for them.** If `main` holds local
   commits that are not the refresh's (each refresh commit carries a `Refresh-Run:` trailer),
   the refresh commits locally and reports `NOT PUSHED (local-only)`.
-- **No deploy while `fy28/` holds somebody else's uncommitted change.** The build reads the
+- **No deploy while `fy28/` holds somebody else's uncommitted change.** DECIDED: KEEP IT (TJ, 9 October 2026, "yes"). The build reads the
   working tree, so it would ship that change to production uncommitted. Refused and named.
 - **The run row is a second, small commit.** The row cannot say whether the run deployed
   until after the deploy, which now follows the first commit.
@@ -78,9 +78,7 @@ Three all-or-nothing gates, none of them about the new data:
   (`build/refresh-logs/<date>.log`), `sources/data/refresh-runs.csv`, and
   `build/refresh-found/<date>.json`, which the dashboard reads. The macOS notification still
   fires on a failure only.
-- **Whether a dirty `fy28/` should block the deploy**, or whether the deploy should build
-  from a clean checkout of main instead. Blocking is the safe default; building elsewhere
-  needs `node_modules`, the database and the prerender inputs in that checkout.
+
 
 ## To switch it on
 

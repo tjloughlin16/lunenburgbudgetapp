@@ -68,7 +68,13 @@ work.
    budget, with the fee-fund share falling the same year -- a hypothesis, not established).
    TJ will request the contract later; drafts were given in the session (contract + rate
    schedule; athletic-trip invoices). Not yet a money-gaps row.
-6. **The refresh, rebuilt as always-additive** -- design approved, NOT BUILT:
+6. **The refresh, rebuilt as always-additive -- MERGED 9 Oct (`7a316d2f`), live from the
+   10 Oct 07:00 run.** Runs in this tree on any branch, stages only what it wrote, puts back
+   files with others' uncommitted edits ("not yet refreshable"), replays onto a moved main,
+   deploy gated only by the generators it ran; `check_refresh_safe.py` forbids destructive
+   commands. TJ kept the extra rule: no deploy while `fy28/` has others' uncommitted
+   changes. CHECK THE 10 OCT LOG. Still open: retire `~/lunenburgbudgets-refresh`; the
+   morning report (notification/file/both). Design + what was built:
    `notes/HANDOFF-REFRESH-ADDITIVE.md`.
 7. **Two working-copy fetchers are untested in a real run**: `fetch_board_pages.py` now
    lands every changed page through `ingest.land_version()`. Tomorrow's refresh is its first
