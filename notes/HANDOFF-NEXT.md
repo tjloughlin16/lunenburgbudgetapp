@@ -47,9 +47,10 @@ The 7 October version of this file is in git history (`git log -p notes/HANDOFF-
    the letters waits, and when built runs as a pipeline identical to `process_meeting.py`
    (newest first, resumable, governed). TJ, 8 Oct.
 6. **Decisions waiting on TJ:**
-   - the new top-level folder `sources/state-law/` (CLAUDE.md "no new top-level folder";
-     it holds the statute, 940 CMR 29, AG guidance and the determinations);
+   - ~~the new top-level folder `sources/state-law/`~~ APPROVED by TJ, 9 Oct 2026;
+     recorded in `check_archive_layout.py`;
    - whether to LIST any of the unlisted reports (below) -- persona review (rule 15a) first;
+     TJ, 9 Oct 2026: do NOT list the Open Meeting Law reviews (they stay hidden);
    - the next FinCom report: #3, "The school budget beyond the vote"
      (`notes/REPORTS-TO-GENERATE.md`);
    - the 9 PDFs of the 6 Oct MUNIS delivery, pending only for staff logins in the

@@ -283,13 +283,53 @@ def search(text):
     return 0
 
 
+# HOW MANY THERE ARE, FROM THE PORTAL ITSELF. Found 9 October 2026: the keyword lookup
+# takes a trailing wildcard, so `OML 2014*` returns every 2014 entry in one call. That is
+# the denominator --all could not know while walking -- it only stops after GAP_STOP empty
+# numbers -- and the check that the walk missed nothing: a year is complete when every
+# number the portal lists is held. One call a year; no documents fetched.
+CENSUS = os.path.join(ROOT, 'build', 'oml-census.json')
+
+
+def census(first_year=2010, last_year=None):
+    last_year = last_year or dt.date.today().year
+    years = {}
+    for year in range(first_year, last_year + 1):
+        d = post('/CustomQuery/KeywordSearch',
+                 {'QueryID': 104, 'Keywords': [{'ID': 135, 'Value': 'OML %d*' % year}], 'QueryLimit': 0})
+        data = d.get('Data') or []
+        nums = set()
+        for x in data:
+            m = re.search(r'OML (\d{4})-(\d+)', x['Name'])
+            if x['Name'].startswith('DETERMINATION') and m and int(m.group(1)) == year:
+                nums.add(int(m.group(2)))
+        years[str(year)] = {'entries': len(data), 'numbers': sorted(nums),
+                            'truncated': bool(d.get('Truncated'))}
+    out = {'asked': dt.datetime.now().isoformat(timespec='seconds'), 'route': LOOKUP,
+           'query': 'keyword 135 (Determination Number) = "OML <year>*"', 'years': years}
+    os.makedirs(os.path.dirname(CENSUS), exist_ok=True)
+    tmp = CENSUS + '.tmp'
+    with open(tmp, 'w') as fh:
+        json.dump(out, fh)
+    os.replace(tmp, CENSUS)
+    n = sum(len(y['numbers']) for y in years.values())
+    print('census: %d determination numbers listed, %d-%d%s' % (
+        n, first_year, last_year,
+        '; TRUNCATED: ' + ', '.join(k for k, y in years.items() if y['truncated'])
+        if any(y['truncated'] for y in years.values()) else ''))
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--search')
     ap.add_argument('--all', action='store_true', help='walk every determination number, 2010 to this year (resumable)')
     ap.add_argument('--year', type=int, help='with --all: one year only')
+    ap.add_argument('--census', action='store_true', help='count what the portal lists, per year; fetch nothing')
     a = ap.parse_args()
+    if a.census:
+        return census()
     if a.search:
         return search(a.search)
     if a.all:

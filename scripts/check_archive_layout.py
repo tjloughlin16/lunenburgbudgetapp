@@ -56,8 +56,10 @@ TOP = {
     'state-massgis':            'MassGIS downloads — the assessors’ parcel data, as the state publishes it',
     # Added 8 October 2026 for the Open Meeting Law: the statute, its regulations and the
     # Attorney General's guide, as the State publishes them. A law is not DESE's or DLS's,
-    # so it could not go in either -- scripts/fetch_open_meeting_law.py.
-    'state-law':                'the law as the State publishes it — Open Meeting Law statute, regulations, AG guide',
+    # so it could not go in either -- scripts/fetch_open_meeting_law.py. APPROVED by TJ,
+    # 9 October 2026 ("i approve state-law folder"), with the AG's determination letters
+    # in it (scripts/fetch_oml_determinations.py).
+    'state-law':                'the law as the State publishes it — Open Meeting Law statute, regulations, AG guide, AG determinations',
     'peer-districts':              'other districts, assembled by us from several publishers',
     'contracts':          'union contracts, from the district HR page and DESE',
     'town-ledgers':      'MUNIS reports — sent to us, never published',

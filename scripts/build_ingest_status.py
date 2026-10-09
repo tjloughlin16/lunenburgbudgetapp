@@ -133,6 +133,9 @@ WATCHED = [
      'cuts, the proposals. Feeds the budget season page.', False),
     ('Backlog sweep', r'[s]weep_backlog\.py',
      'Works the votes and minutes backlog in bulk, newest first, until the plan says no.', False),
+    ('Downloading the AG’s Open Meeting Law determinations', r'[f]etch_oml_determinations\.py',
+     'Every determination letter the Attorney General has issued, 2010 to today, each one '
+     'landed in the bucket with its text. Download only; nothing reads them yet.', False),
     ('Text extraction', r'[e]xtract_minutes\.py',
      'Pulls the text out of newly downloaded PDFs and Word files.', False),
     ('Site build', r'[v]ite build|[p]rerender\.mjs',
@@ -350,6 +353,13 @@ def running():
                                                capture_output=True, text=True).stdout.strip())
         out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd, idle=idle,
                         costs=name in AGENTIC, **scope(name, cmd, el)))
+
+    for x in out:
+        if x['name'] == OML_JOB:
+            o = oml_progress()
+            if o:
+                x.update(plan=o['listed'], done=o['held'], scope_word='held of the AG’s list',
+                         extra=o['running_line'])
 
     # ...and anything else of ours that is running, described or not. The patterns above
     # are bracketed so they cannot match their own argv (`[d]aily_refresh`), so the
@@ -720,6 +730,182 @@ def _counted(n, unit, total=None, remaining=False):
     return '%s %s' % ('{:,}'.format(n), word)
 
 
+# THE AG'S OPEN MEETING LAW DETERMINATIONS. TJ, 9 October 2026: put the download on the
+# dashboard -- running, a burndown, and completion overall.
+#
+# THE DENOMINATOR IS THE PORTAL'S OWN LIST, not the walk. `fetch_oml_determinations.py
+# --all` walks numbers and only learns a year has ended after 25 empty ones, so it cannot
+# say how many are left. `--census` asks the portal `OML <year>*` and gets every number it
+# lists -- one call a year, nothing downloaded -- into build/oml-census.json. Refreshed here
+# when it is over six hours old, because the AG keeps issuing letters this year.
+#
+# THE BURNDOWN IS TIMED FROM THE BUCKET, not from file mtimes: archive-push-state.csv
+# records when each letter was read back from R2 and compared, which is the moment it was
+# actually secured.
+OML_JOB = 'Downloading the AG’s Open Meeting Law determinations'
+OML_CENSUS = os.path.join(ROOT, 'build', 'oml-census.json')
+OML_LOG = os.path.join(ROOT, 'build', 'oml-determinations-all.log')
+OML_INDEX = os.path.join(ROOT, 'sources', 'state-law', 'index.csv')
+
+
+def _local(stamp):
+    """A push-state timestamp as naive LOCAL time. Two writers, two conventions:
+    sync_archive.py writes UTC with a trailing Z, ingest.py writes local time with none."""
+    if stamp.endswith('Z'):
+        return (dt.datetime.strptime(stamp, '%Y-%m-%dT%H:%M:%SZ')
+                .replace(tzinfo=dt.timezone.utc).astimezone().replace(tzinfo=None))
+    return dt.datetime.fromisoformat(stamp)
+
+
+def oml_progress():
+    try:
+        age = time.time() - os.path.getmtime(OML_CENSUS)
+    except OSError:
+        age = None
+    if age is None or age > 6 * 3600:
+        try:
+            subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'fetch_oml_determinations.py'),
+                            '--census'], cwd=ROOT, timeout=120, capture_output=True)
+        except Exception:
+            pass
+    try:
+        cen = json.load(open(OML_CENSUS))
+    except Exception:
+        return None
+    listed = {(int(y), n) for y, v in cen['years'].items() for n in v['numbers']}
+    held = set()
+    try:
+        for r in csv.DictReader(open(OML_INDEX, encoding='utf-8')):
+            m = re.match(r'oml-det-(\d{4})-(\d+)', r['id'])
+            if m:
+                held.add((int(m.group(1)), int(m.group(2))))
+    except OSError:
+        pass
+    got = held & listed
+    # when each was secured
+    when = {}
+    for r in rows('archive-push-state.csv'):
+        k = r.get('key') or ''
+        m = re.search(r'/determinations/.*?oml-(\d{4})-(\d+)', k)
+        if m and r.get('verified_at'):
+            yn = (int(m.group(1)), int(m.group(2)))
+            t = _local(r['verified_at'])
+            if yn in listed and (yn not in when or t < when[yn]):
+                when[yn] = t
+    times = sorted(when.values())
+    years = []
+    for y in sorted(cen['years']):
+        nums = cen['years'][y]['numbers']
+        h = sum(1 for n in nums if (int(y), n) in held)
+        years.append(dict(year=y, listed=len(nums), held=h,
+                          missing=[n for n in nums if (int(y), n) not in held],
+                          truncated=cen['years'][y].get('truncated')))
+    # where the walk is, and how fast -- the last 30 minutes of bucket timestamps
+    pos, failed = '', 0
+    try:
+        lines = open(OML_LOG, encoding='utf-8', errors='replace').read().splitlines()
+        oks = [l for l in lines if l.startswith('  ok OML')]
+        pos = oks[-1].split()[1] + ' ' + oks[-1].split()[2] if oks else ''
+        failed = sum(1 for l in lines if l.startswith('  !!'))
+    except OSError:
+        pass
+    cut = dt.datetime.now() - dt.timedelta(minutes=30)
+    recent = sum(1 for t in times if t >= cut)
+    rate = recent * 2.0                         # per hour
+    left = len(listed) - len(got)
+    eta = ('about %.1f hours to go at that pace (an estimate, not a schedule)' % (left / rate)
+           if rate and left else '')
+    line = ' &middot; '.join(x for x in (
+        ('last landed <b>%s</b>' % pos) if pos else '',
+        '%d in the last 30 minutes' % recent, eta,
+        ('<span style="color:#f85149">%d failed lines in the log</span>' % failed) if failed else ''
+    ) if x)
+    return dict(listed=len(listed), held=len(got), left=left, years=years, times=times,
+                asked=cen.get('asked', ''), running_line=line, rate=rate)
+
+
+def oml_chart(o):
+    """Two panels, one measure each (never two y-scales on one): what is left over time,
+    and what is held of each year's list."""
+    if not o:
+        return ''
+    out = ['<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:10px">']
+    # --- burndown: letters left, over clock time
+    W, H, L, R, T, B = 460, 170, 40, 10, 14, 24
+    total = o['listed']
+    pts = []
+    for i, t in enumerate(o['times']):
+        pts.append((t, total - (i + 1)))
+    # THIS RUN, NOT THE WHOLE HISTORY. The fourteen chosen letters landed the evening
+    # before the walk, and the walk itself stopped overnight on OML 2012-5, so an axis from
+    # the first letter is mostly a flat line across hours nobody was fetching. The axis
+    # starts after the last pause of over an hour; what was held before it is the level
+    # the line starts from, and the caption says so.
+    before = 0
+    for i in range(len(pts) - 1, 0, -1):
+        if (pts[i][0] - pts[i - 1][0]).total_seconds() > 3600:
+            before, pts = i, pts[i:]
+            break
+    if pts:
+        t0 = pts[0][0]
+        t1 = max(dt.datetime.now(), pts[-1][0])
+        span = max((t1 - t0).total_seconds(), 60)
+        def X(t):
+            return L + (W - L - R) * (t - t0).total_seconds() / span
+        def Y(v):
+            return T + (H - T - B) * (1 - v / float(total))
+        step = max(1, len(pts) // 300)
+        keep = pts[::step] + [pts[-1]]
+        poly = ' '.join('%.1f,%.1f' % (X(t), Y(v)) for t, v in keep)
+        svg = ['<svg viewBox="0 0 %d %d" width="%d" height="%d" style="max-width:100%%">' % (W, H, W, H)]
+        for v in (0, total // 2, total):
+            svg.append('<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" stroke="#21262d"/>'
+                       '<text x="%d" y="%.1f" fill="#8b949e" font-size="10" text-anchor="end">%s</text>'
+                       % (L, W - R, Y(v), Y(v), L - 4, Y(v) + 3, '{:,}'.format(v)))
+        svg.append('<polyline points="%s" fill="none" stroke="#d29922" stroke-width="2"/>' % poly)
+        for t, v in keep[::max(1, len(keep) // 40)] + [keep[-1]]:
+            svg.append('<circle cx="%.1f" cy="%.1f" r="7" fill="transparent"><title>%s: %s left</title></circle>'
+                       % (X(t), Y(v), t.strftime('%a %H:%M'), '{:,}'.format(v)))
+        for when, anchor, x in ((t0, 'start', L), (t1, 'end', W - R)):
+            svg.append('<text x="%d" y="%d" fill="#8b949e" font-size="10" text-anchor="%s">%s</text>'
+                       % (x, H - 6, anchor, when.strftime('%a %H:%M')))
+        svg.append('</svg>')
+        out.append('<div style="width:%dpx;max-width:100%%"><div class="tiny" style="margin-bottom:2px">'
+                   '<b>Letters still to fetch</b>, by when each was secured in the bucket &mdash; '
+                   'this run, since %s%s</div>%s</div>'
+                   % (W, pts[0][0].strftime('%a %H:%M'),
+                      ('; %d were held before it' % before) if before else '', ''.join(svg)))
+    # --- by year: held of the portal's list
+    ys = o['years']
+    W2, H2, B2, T2 = 460, 170, 24, 14
+    mx = max(y['listed'] for y in ys) or 1
+    bw = (W2 - 10) / float(len(ys)) - 3
+    svg = ['<svg viewBox="0 0 %d %d" width="%d" height="%d" style="max-width:100%%">' % (W2, H2, W2, H2)]
+    for i, y in enumerate(ys):
+        x = 5 + i * (bw + 3)
+        full = (H2 - T2 - B2) * y['listed'] / float(mx)
+        hh = full * y['held'] / float(y['listed'] or 1)
+        tip = '%s: %d of %d held, %d to fetch' % (y['year'], y['held'], y['listed'], y['listed'] - y['held'])
+        done = y['held'] >= y['listed']
+        svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="#21262d"><title>%s</title></rect>'
+                   % (x, H2 - B2 - full, bw, full, tip))
+        if hh:
+            svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="%s"><title>%s</title></rect>'
+                       % (x, H2 - B2 - hh, bw, hh, '#3fb950' if done else '#d29922', tip))
+        svg.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="9.5" text-anchor="middle">’%s</text>'
+                   % (x + bw / 2, H2 - B2 + 12, y['year'][-2:]))
+        svg.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="9" text-anchor="middle">%d</text>'
+                   % (x + bw / 2, H2 - B2 - full - 3, y['listed']))
+    svg.append('</svg>')
+    out.append('<div style="width:%dpx;max-width:100%%"><div class="tiny" style="margin-bottom:2px"><b>By year of the letter</b> &mdash; '
+               '<span style="color:#3fb950">&#9632;</span> year complete '
+               '<span style="color:#d29922">&#9632;</span> held '
+               '<span style="color:#6e7681">&#9632;</span> still to fetch; the number on top is '
+               'how many the portal lists</div>%s</div>' % (W2, ''.join(svg)))
+    out.append('</div>')
+    return ''.join(out)
+
+
 def streams():
     """One row per ingestion stream: how many done, how many left, measured ONE way.
 
@@ -848,6 +1034,26 @@ def streams():
                            len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json')))),
                   last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',
                   pending=mp))
+    o = oml_progress()
+    if o:
+        s.append(dict(key='oml', unit=('determination letter held', 'determination letters held',
+                                       'determination letters still to fetch'),
+                      name='The AG’s Open Meeting Law determinations',
+                      io='in: the Attorney General’s determination lookup, walked number by number '
+                         '&rarr; out: every letter, in the bucket, with its text. Download only '
+                         '&mdash; nothing reads them yet (TJ, 8 October 2026)',
+                      done=o['held'], todo=o['left'], blocked=0, blocked_why='',
+                      cost='no model — plain downloads from the AG’s portal, paced half a second apart',
+                      last=ago(newest([os.path.join(ROOT, 'sources', 'state-law', '*', 'determinations', '*.pdf')])),
+                      note='the total is what the portal itself lists, %s determination numbers, counted %s'
+                           % ('{:,}'.format(o['listed']), o['asked'].replace('T', ' ')[:16]),
+                      chart=oml_chart(o),
+                      pending=[dict(board='%s letters' % y['year'], n=len(y['missing']),
+                                    first='OML %s-%d' % (y['year'], y['missing'][0]),
+                                    last='OML %s-%d' % (y['year'], y['missing'][-1]),
+                                    dates=['%d' % n for n in y['missing']])
+                               for y in reversed(o['years']) if y['missing']]))
+
     # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
     ex_done, ex_pend = extraction_pending()
     s.append(dict(key='extraction', unit=('row that ties to a printed total', 'rows that tie to a printed total', 'rows still to reconcile'), name='Reconciling the annual-report tables',
@@ -1535,6 +1741,105 @@ def refresh_phase(text):
     in_flight = last and ('exit ' not in tail)
     return dict(now=phase_of(last) if in_flight else None,
                 step=last if in_flight else '', seen=seen)
+
+
+# WHAT THE REFRESH PICKED UP, ITEMISED. TJ, 9 October 2026: *"i want the dashboard to show
+# the actual files the refresh found or created, itemized ... i want to see which meetings
+# and docs it picked up to make sure its working everyday"*.
+#
+# refresh.py writes build/refresh-found/<date>.json the moment it has diffed its inventory.
+# Runs from before that file existed printed the same list into their log as a FOUND block,
+# so a day with no JSON is read off its log -- the same list, from the run's own output.
+# Dry runs are never shown here: this panel answers "did the morning run work".
+FOUND_DIRS = (os.path.join(ROOT, 'build', 'refresh-found'), os.path.join(TREE, 'build', 'refresh-found'))
+FOUND_KIND = re.compile(r'^    ([a-z][a-z ]+?)\s+(\d+)$')
+
+
+def _found_from_log(path):
+    try:
+        text = open(path, encoding='utf-8', errors='replace').read()
+    except OSError:
+        return None
+    if '  FOUND -- ' not in text:
+        return None
+    found, wrote, kind, part = {}, {}, None, None
+    for line in text.split('  FOUND -- ', 1)[1].splitlines()[1:]:
+        if line.startswith('  WROTE -- '):
+            part = 'wrote'
+            continue
+        if line.startswith('  note:') or line.strip() in ('deployed', 'NOT deployed (pass --deploy)') \
+                or line.startswith('  ---'):
+            break
+        if part == 'wrote':
+            m = re.match(r'^        (generated minutes|analyses)\s+(.*)$', line)
+            if m:
+                wrote.setdefault(m.group(1), []).append(m.group(2).strip())
+            continue
+        m = FOUND_KIND.match(line)
+        if m:
+            kind = m.group(1).strip()
+            found.setdefault(kind, [])
+        elif line.startswith('        ') and kind and line.strip() != 'nothing new was published today':
+            found[kind].append(line.strip())
+    return dict(found=found, wrote=wrote, source='log')
+
+
+def refresh_found(days=10):
+    """The most recent real run's itemised list: (date, payload), or (None, None)."""
+    for i in range(days):
+        day = (dt.date.today() - dt.timedelta(days=i)).isoformat()
+        for d in FOUND_DIRS:
+            f = os.path.join(d, day + '.json')
+            if os.path.exists(f):
+                try:
+                    j = json.load(open(f, encoding='utf-8'))
+                    j['source'] = 'json'
+                    return day, j
+                except Exception:
+                    pass
+        j = _found_from_log(os.path.join(ROOT, 'build', 'refresh-logs', day + '.log'))
+        if j:
+            return day, j
+    return None, None
+
+
+def _found_card(today):
+    day, j = refresh_found()
+    if not j:
+        return ('<div class="card"><div class="tiny"><b>What it picked up.</b> No run in the '
+                'last ten days got far enough to list what it found.</div></div>')
+    stale = day != today
+    head = ('<b>What it picked up</b> &mdash; %s' % day +
+            (' <span class="pill warn">today&rsquo;s run did not get this far; this is the '
+             'last run that did</span>' if stale else ''))
+    out = ['<div class="card%s"><div class="tiny" style="margin-bottom:6px">%s</div>'
+           % (' warnbox' if stale else '', head)]
+    empty = []
+    sections = [(k, v, 'found') for k, v in j.get('found', {}).items()] + \
+               [(k, v, 'wrote') for k, v in j.get('wrote', {}).items()]
+    for kind, items, part in sections:
+        if not items:
+            empty.append(kind)
+            continue
+        label = ('%s &mdash; <span style="color:#c09cf5">written by us</span>' % html.escape(kind)
+                 if part == 'wrote' else html.escape(kind))
+        rows_html = ''.join('<div class="mono tiny" style="padding:1px 0 1px 12px">%s</div>'
+                            % html.escape(x) for x in items)
+        out.append('<details data-k="found-%s"%s style="margin:4px 0"><summary class="tiny" '
+                   'style="cursor:pointer"><b>%d</b> %s</summary>%s</details>'
+                   % (re.sub(r'\W+', '-', kind), ' open' if len(items) <= 15 else '',
+                      len(items), label, rows_html))
+    if empty:
+        out.append('<div class="tiny" style="margin-top:6px;color:#8b949e">nothing new: %s</div>'
+                   % html.escape(', '.join(empty)))
+    if j.get('source') == 'log':
+        out.append('<div class="tiny" style="margin-top:6px;color:#d29922">read off that '
+                   'run&rsquo;s log, and COUNTED THE OLD WAY: until 9 October 2026 a run also '
+                   'listed extracted text files, our own working files, and documents and '
+                   'minutes other processes landed while it ran. Runs from 10 October list '
+                   'only what the refresh itself fetched or wrote.</div>')
+    out.append('</div>')
+    return ''.join(out)
 
 
 def refresh():
@@ -2262,8 +2567,9 @@ def page_live(st):
         h.append('<div class="card idle">No individual job is running.</div>')
     for r in [x for x in R if x['name'] != 'Daily refresh']:
         if r['done'] is not None and r['plan']:
-            sc = ('<span class="pill go">%d of %d this batch</span>'
-                  % (min(r['done'], r['plan']), r['plan'])
+            sc = ('<span class="pill go">%s of %s %s</span>'
+                  % ('{:,}'.format(min(r['done'], r['plan'])), '{:,}'.format(r['plan']),
+                     r.get('scope_word', 'this batch'))
                   + bar(r['done'], max(0, r['plan'] - r['done'])))
         elif r['done'] is not None:
             sc = ('<span class="pill" title="a looping wrapper: no total of its own">'
@@ -2280,13 +2586,15 @@ def page_live(st):
                  '<span class="unit" style="width:11rem;text-align:right">%s</span>'
                  '<span class="when"><span class="pill %s">%s</span></span>'
                  '<span class="tiny num" style="width:6.5rem;text-align:right">up %s</span></div>'
-                 '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
+                 '<div class="tiny">%s</div>%s<div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
                  % ('' if r['idle'] else 'on', html.escape(r['name']),
                     ' <span class="tag agentic">agentic</span>' if r['costs'] else '',
                     spent, sc, '' if r['idle'] else 'go',
                     'waiting' if r['idle'] else
                     (('%d procs' % r['n']) if r['n'] > 1 else 'working'),
-                    html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
+                    html.escape(r['elapsed']), html.escape(r['what']),
+                    ('<div class="tiny" style="margin-top:4px">%s</div>' % r['extra'] if r.get('extra') else ''),
+                    html.escape(r['cmd'])))
 
     # WHAT JUST FINISHED, in the same shape as what is running. Without this, "nothing is
     # running" cannot be told apart from "nothing ever started", and the first is fine
@@ -2389,6 +2697,8 @@ def page_live(st):
                  'across %d job(s) &mdash; about %.1f%% of the week.</div>'
                  % (F['spent'], F['spent_n'], F['spent'] / 5))
     h.append('</div>')
+
+    h.append(_found_card(F['today']))
 
     h.append('<div class="card"><div class="tiny" style="margin-bottom:6px"><b>Where it looked today.</b> '
              'A watcher that did not run is a watcher that did not look.</div><table>')
@@ -2530,6 +2840,8 @@ def page_backlog(st):
                         '#f85149' if term == 'BLOCKED' else
                         '#d29922' if term in ('UNPROVEN', 'REFUSED') else '#8b949e',
                         html.escape(term), '{:,}'.format(n), html.escape(means), action))
+        if s.get('chart'):
+            h.append(s['chart'])
         # THE BREAKDOWN, COLLAPSED. A backlog total says how worried to be; the boards and
         # the years say what it actually is. Collapsed because the number is the thing a
         # glance wants and the detail is the thing a decision wants.

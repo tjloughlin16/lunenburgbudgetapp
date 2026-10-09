@@ -55,6 +55,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRIPTS = os.path.join(ROOT, 'scripts')
+sys.path.insert(0, SCRIPTS)
+import archive_storage  # noqa: E402  -- the one line between a publisher's document and our renderings
 POLICY = os.path.join(ROOT, 'sources', 'data', 'recording-minutes-policy.csv')
 RUNS = os.path.join(ROOT, 'sources', 'data', 'refresh-runs.csv')
 WHATS_NEW = os.path.join(ROOT, 'fy28', 'public', 'data', 'whats-new.json')
@@ -183,26 +185,39 @@ BY_HAND = {
 # counting them tells a reader how talkative a meeting was rather than what moved. Defined
 # once, here, and read by the run row, the printed summary and the dashboard, so the three
 # cannot drift into three different answers.
-# EVERY FOLDER OF THE ARCHIVE IS MAPPED, and a folder that is not raises. TJ, 29
-# September 2026: *"literally anything that is a 'document' i want trcked. i dont want
-# things INSIDE documents, like votes or public commment or segments or data sizes"*.
-# So the classes are read off the archive rather than typed here from memory: a new
-# top-level folder appears in the report the day it appears in `sources/`, the same way
-# money-gaps takes its `side` values off the data. `data/` is OURS -- extracted text,
-# derived CSVs, caption files -- so it is not a document and is named here as ignored
-# rather than silently dropped.
-ARCHIVE_GROUPS = {
+# THE REFRESH COUNTS WHAT IT WRITES, AND NOTHING ELSE. TJ, 9 October 2026: *"state-law has
+# nothing to do with refresh, so it shouldnt ever fail on something unrelated to it"* and
+# *"if the refresh will impact something, then sure its important it doesnt overwrite. but
+# things it has NOTHING to do with?"*
+#
+# This used to map EVERY top-level folder of the archive and raise on one it did not know,
+# so that no class of document went uncounted (TJ, 29 September). Two things went wrong
+# with that, and both came from diffing the WHOLE archive:
+#
+#   * it STOPPED the run over folders the refresh never touches. sources/state-law/ arrived
+#     on 8 October from a hand-started download, and the 9 October refresh died at 07:00:03
+#     having fetched nothing at all -- to protect the accuracy of one line of its report;
+#   * it CREDITED the refresh with documents it never fetched. The 8 October row reports 3
+#     ledgers, 9 contracts and 5 peer-district documents, and the refresh has no fetcher
+#     for any of the three: whatever landed in the run's window was counted as its own.
+#
+# So the map is now the folders the refresh's own fetchers write into (watch_documents.py,
+# fetch_board_pages.py, fetch_staff_directory.py, fetch_school_staff_directory.py,
+# fetch_school_job_postings.py), plus `analyses`, which its build steps write. Any other
+# folder is outside its scope: not counted, never an error. Whether the WHOLE archive is
+# catalogued and backed up is a different question, asked by build_source_index.py and
+# check_archive_backed_up.py, which do not stand between the town and the morning fetch.
+# `meetings` and `data` are counted from the event logs above, not from here.
+#
+# The other classes in ARRIVES (annual reports, ledgers, contracts, correspondence, peer
+# district documents) only ever arrive by hand, so a refresh reports 0 for them by
+# construction. The columns stay, because refresh-runs.csv is read by its header.
+REFRESH_WRITES = {
     'district-budget': 'budget documents', 'town-budget': 'budget documents',
-    'budget-workbooks': 'budget documents',
     'state-dls': 'state documents', 'state-dese': 'state documents',
-    'state-census': 'state documents', 'state-massgis': 'state documents',
-    'town-annual-reports': 'annual reports', 'town-ledgers': 'ledgers',
-    'contracts': 'contracts', 'correspondence': 'correspondence',
-    'peer-districts': 'peer district documents',
     'town-supplementary': 'other town documents',
     'analyses': 'analyses',                      # ours
 }
-ARCHIVE_IGNORE = {'data', 'meetings'}            # ours; and meetings come from the events
 ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts', 'announcements',
            'budget documents', 'state documents', 'other town documents',
            'annual reports', 'ledgers', 'contracts', 'correspondence',
@@ -525,7 +540,8 @@ def inventory():
     tr = read_csv(TRANSCRIPT_INDEX)
     inv['transcripts'] = {(t.get('video_id') or t.get('id') or str(i)):
                           '%s  %s' % (t.get('meeting_date') or t.get('uploaded') or '',
-                                      t.get('board') or t.get('title') or '')
+                                      (t.get('board_slug') or '').replace('-', ' ').title()
+                                      or t.get('board') or t.get('title') or '')
                           for i, t in enumerate(tr)}
     ours = {}
     for f in glob.glob(os.path.join(RECORDED, '*', '*.json')):
@@ -541,23 +557,23 @@ def inventory():
     # project holds. Keyed on SHA256, so a publisher who overwrites a file in place --
     # which the state does, and the district's web pages do -- shows up as a new document
     # rather than as nothing at all.
-    for group in set(ARCHIVE_GROUPS.values()):
-        inv[group] = {}
-    unmapped = set()
+    for group in ARRIVES + MAKES:
+        inv.setdefault(group, {})
     for r in read_csv(MANIFEST):
-        top = (r.get('key') or '').split('/')[0]
-        if not top or top in ARCHIVE_IGNORE or '/' not in (r.get('key') or ''):
+        key = r.get('key') or ''
+        group = REFRESH_WRITES.get(key.split('/')[0]) if '/' in key else None
+        if not group:                            # not ours to count -- and not ours to fail on
             continue
-        group = ARCHIVE_GROUPS.get(top)
-        if group is None:
-            unmapped.add(top)
+        # A DOCUMENT, NOT ITS RENDERINGS. The 8 October run reported 279 budget documents,
+        # and the list counted `facilities-report.pdf` and `facilities-report.txt` as two,
+        # with `checked.csv` and a PROVENANCE note among them. A published document is what
+        # archive_storage.frozen() says it is; of our own analyses, the document is the .md.
+        if group in MAKES:
+            if not key.endswith('.md'):
+                continue
+        elif not archive_storage.frozen(key):
             continue
-        inv[group][r.get('sha256') or r['key']] = r['key'].split('/')[-1][:70]
-    if unmapped:
-        # LOUD, NOT SILENT. An unmapped folder is a class of document nobody is counting,
-        # which is the one outcome this whole change exists to prevent.
-        raise SystemExit('refresh: %d archive folder(s) are not in ARCHIVE_GROUPS and so '
-                         'would go uncounted: %s' % (len(unmapped), ', '.join(sorted(unmapped))))
+        inv[group][r.get('sha256') or key] = key.split('/')[-1][:70]
     return inv
 
 
@@ -971,7 +987,30 @@ def main():
     after = inventory()
     # THE DOCUMENTS THEMSELVES, not the difference between two counts.
     arrived = {k: [after[k][i] for i in after[k] if i not in before[k]] for k in after}
+    # OUR MINUTES: ONLY THE ONES THIS RUN ASKED FOR. The folder is shared with
+    # process_meeting.py, which can be writing beside the refresh -- the 9 October dry run
+    # wrote nothing and still listed four 2023 meetings as its own. `wrote_minutes` is the
+    # set step 7 actually requested; a new file outside it belongs to somebody else.
+    arrived['generated minutes'] = [
+        after['generated minutes'][f] for f in after['generated minutes']
+        if f not in before['generated minutes']
+        and (os.path.basename(os.path.dirname(f)), os.path.basename(f)[:10]) in wrote_minutes]
     delta = {k: len(v) for k, v in arrived.items()}
+    # THE LIST ITSELF, KEPT FOR THE DASHBOARD. TJ, 9 October 2026: *"i want to see which
+    # meetings and docs it picked up to make sure its working everyday"*. The run printed
+    # this into its log and nowhere else, so checking a morning meant reading a log. Written
+    # here, before the check and the deploy that follow, so a run that dies there still leaves what
+    # it found; a dry run writes it too, marked, because that is how a change gets checked.
+    found_dir = os.path.join(ROOT, 'build', 'refresh-found')
+    os.makedirs(found_dir, exist_ok=True)
+    found = {'as_of': a.as_of, 'written_at': dt.datetime.now().isoformat(timespec='seconds'),
+             'dry_run': bool(a.dry_run), 'tree': ROOT,
+             'found': {k: sorted(arrived[k]) for k in ARRIVES},
+             'wrote': {k: sorted(arrived[k]) for k in MAKES}}
+    tmp = os.path.join(found_dir, '.%s.json.tmp' % a.as_of)
+    with open(tmp, 'w', encoding='utf-8') as fh:
+        json.dump(found, fh, indent=1, ensure_ascii=False)
+    os.replace(tmp, os.path.join(found_dir, '%s%s.json' % (a.as_of, '-dry-run' if a.dry_run else '')))
 
     # 10. The site, only when asked -- AND ONLY IF IT REPRODUCES.
     deployed = False
