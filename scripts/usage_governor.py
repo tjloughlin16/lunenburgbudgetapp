@@ -205,7 +205,10 @@ def decide(plan, hist, now, in_flight=0):
     `hist` is readings() (oldest first). `in_flight` is how many meetings are running now.
     Mutates `plan` (anchors the line, records worker changes)."""
     last = hist[-1] if hist else None
-    if not last or now - last['t'] > STALE_S:
+    # STALE IS RELATIVE TO HOW OFTEN WE ASK. A run that reads every 10 or 30 minutes (TJ, 9
+    # October 2026: "every 2.5 is too much") sets plan.stale_s past its own interval, or every
+    # reading would look blind half the time.
+    if not last or now - last['t'] > getattr(plan, 'stale_s', STALE_S):
         plan.jobs = 1
         return dict(jobs=1, start=True, stop=None, wait_reset=False, target=None,
                     note='STALE reading -- one worker, caps unseen')

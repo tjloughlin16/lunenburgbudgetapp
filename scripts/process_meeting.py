@@ -503,6 +503,7 @@ def run_governed(plan, a, S, ceiling):
     active = {}
     nxt, n = 0, len(plan)
     d, last_tick, last_line, last_guard = None, 0.0, None, 0.0
+    last_fetch = time.time()                     # the fetch(force=True) above
     window_full = False
     try:
         while True:
@@ -543,7 +544,12 @@ def run_governed(plan, a, S, ceiling):
             now = time.time()
             if now - last_tick >= TICK:
                 last_tick = now
-                G.fetch()                                  # the server's figure, paced by usage_governor
+                waiting = bool(d and d['note'].startswith('weekly line'))
+                every = FETCH_WAITING_S if waiting else FETCH_RUNNING_S
+                gp.stale_s = every + 300
+                if now - last_fetch >= every:
+                    G.fetch(force=True)                    # the server's figure, at most once a minute
+                    last_fetch = now
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
                     gp.measured(T.done, h[-1]['u5'])
@@ -607,6 +613,15 @@ def run_governed(plan, a, S, ceiling):
                 outcome, cost, why = 'stopped', 0.0, None
             T.add(outcome, cost)
         pool.shutdown(wait=True)
+    # A DELIBERATE STOP IS FOR A PERSON. The paced run is restarted by launchd after a reboot
+    # or a crash (scripts/minutes_pacing.sh); after a stop -- the ceiling, the output guard,
+    # the emergency brake, three failures, the kill switch -- it must NOT be, because each of
+    # those exists so that somebody looks first. So the reason is written down, and the
+    # launcher stays out until the file is removed.
+    if stop and getattr(a, 'week_line', None):
+        with open(os.path.join(ROOT, 'build', 'minutes-pacing.STOPPED'), 'w') as fh:
+            fh.write('%s  %s\nRemove this file to let scripts/minutes_pacing.sh start the paced run again.\n'
+                     % (dt.datetime.now().isoformat(timespec='seconds'), stop))
     return finish(T, n, stop, S)
 
 
@@ -660,7 +675,9 @@ def wait_for_reset(gp, S, G):
         dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
     while not S.kill_switch():
         time.sleep(30)
-        G.fetch()                        # paced by usage_governor, not by this loop
+        if time.time() - getattr(gp, '_last_wait_fetch', 0) >= FETCH_RUNNING_S:
+            G.fetch(force=True)          # every FETCH_RUNNING_S while waiting for a reset
+            gp._last_wait_fetch = time.time()
         h = G.readings()
         # A NEW WINDOW BEGINS WITH ITS FIRST USE, so after the old reset the server may name no
         # reset at all until something calls the model. Resume once the old reset has passed
@@ -683,6 +700,14 @@ def limit_means_wait(gp):
 
 
 TICK = 30            # seconds between governor decisions
+# HOW OFTEN THE BARS ARE READ. TJ, 9 October 2026: "I think it can check every 10m, or maybe
+# even every 30m. every 2.5 is too much." Waiting on the weekly line, nothing moves fast -- at
+# a 90% goal the line climbs ~0.54 points an hour -- so 30 minutes. Running meetings, the
+# five-hour bar moves about a point a meeting, so 10. Decisions still happen every TICK, on
+# the last reading; a reading is fetched FIRST whenever one is due, so a machine waking from
+# sleep never decides on the numbers it went to sleep with.
+FETCH_RUNNING_S = 600
+FETCH_WAITING_S = 1800
 DOLLARS_PER_POINT = 0.45   # blind estimate; measured ~0.55 on 7 October -- kept low on purpose
 GUARD_EVERY = 60     # seconds between output-guard audits
 

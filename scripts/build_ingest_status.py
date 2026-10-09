@@ -2618,7 +2618,11 @@ def _week_pacing_card():
     last = hist[-1]
     now = time.time()
     goal = 90.0
-    m = re.search(r'--week-line\s+([\d.]+)', ' '.join(r.get('cmd', '') for r in running()))
+    # pgrep, not running(): the launcher starts the run as `scripts/process_meeting.py`, a
+    # relative path, which running()'s discovery (it matches the repository's absolute path)
+    # does not see -- so the card would say "no paced run" with one waiting.
+    ps = subprocess.run(['pgrep', '-fl', '[p]rocess_meeting.py --until-usage'], capture_output=True, text=True).stdout
+    m = re.search(r'--week-line\s+([\d.]+)', ps)
     live = bool(m)
     if m:
         goal = float(m.group(1))

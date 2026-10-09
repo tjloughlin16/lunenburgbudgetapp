@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AbandonProcessGroup</key>
+	<true/>
+	<key>Label</key>
+	<string>org.lunenburgbudgetproject.minutes-pacing</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/tj/lunenburgbudgets/scripts/minutes_pacing.sh</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/tj/lunenburgbudgets/build/minutes-pacing.launchd.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/tj/lunenburgbudgets/build/minutes-pacing.launchd.out</string>
+	<key>StartInterval</key>
+	<integer>1800</integer>
+</dict>
+</plist>
