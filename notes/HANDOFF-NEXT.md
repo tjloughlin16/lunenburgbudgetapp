@@ -88,7 +88,12 @@ work.
    selection, probably). When the full report lands: 13e gate, tie journal lines to the
    printed totals per account, then the kindergarten para accounts, the 82 budget changes,
    and the special-education overrun.
-9. the OML index (model-free parts), MUNIS Part 2, an
+9. **Cloudflare Pages' 20,000-file limit.** The 9 Oct deploy was refused at 21,134 files;
+   the OML determination texts now link to the GitHub mirror instead (`be4f1142`), and the
+   build is 18,238. That is weeks-to-months of headroom at the archive's growth rate. Before
+   the next refusal: move more of our derived text out of the build the same way, or the
+   paid plan (100,000 files). A deploy that hits it fails loudly; nothing is lost.
+10. the OML index (model-free parts), MUNIS Part 2, an
    off-machine backup, the 9 MUNIS PDFs to publish -- unchanged from the 07:30 list.
 
 ## Done on 9 October (all on origin/main)
