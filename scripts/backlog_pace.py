@@ -51,7 +51,7 @@ OUT = os.path.join(ROOT, 'build', 'backlog-pace.log')
 LO, HI, STALE_MIN = 2.0, 10.0, 15
 
 
-OUT_DIRS = ('official-votes', 'recording-minutes')
+OUT_DIRS = ('official-votes', 'recording-minutes', 'oml-reviews')   # oml-reviews: 8 Oct 2026, an OML review's paid call looked unpaid and stopped the evening run
 # A FILE IS NOT JUDGED UNPAID UNTIL ITS STEP HAS CERTAINLY LOGGED. A step that reads two
 # sets of minutes writes the first file, then the second, then ONE ledger row -- school-
 # committee 2025-08-06 wrote at 15:48:43 and logged at 15:49:06, and a governed run's audit
