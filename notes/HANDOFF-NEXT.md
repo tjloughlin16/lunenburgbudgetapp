@@ -1,66 +1,93 @@
-# Handoff: everything not yet done, as of 9 October 2026, 07:30
+# Handoff: everything not yet done, as of 9 October 2026, 13:50
 
 One list for the next session. Read this first; the linked handoffs carry their own detail.
-The 7 October version of this file is in git history (`git log -p notes/HANDOFF-NEXT.md`).
+The 07:30 version of this file is in git history (`git log -p notes/HANDOFF-NEXT.md`).
 
-## Running right now (background, started 9 October)
+## Nothing is running (TJ restarted the laptop, 9 October ~13:50)
 
-- **The minutes backlog, governed.** Started 06:45:58:
-  `python3 scripts/process_meeting.py --until-usage --session-caps 80 --by 09:00 --max-jobs 6 --week-cap 85 --max-usd 45`,
-  log `build/process-meeting-2026-10-09.log` (marker `=== MORNING`). At 07:22 the window
-  was at 28% against a line of 26%, at ~1.0 point a meeting. **The `--by 09:00` is wrong for
-  this window:** it opened ~06:40 and resets ~11:40, so the run will stop at 80% around
-  09:00 and leave ~2.5 h of window unused. To retarget: stop it (`touch build/STOP-METERED`
-  or kill the process; finished meetings are kept), remove the stop file, restart with
-  `--by 11:30` and a cap TJ chooses (95% was suggested). Its output -- files under
-  `sources/data/official-votes/`, `recording-minutes/` and friends -- is UNCOMMITTED;
-  commit it when the run ends (the 8-9 Oct overnight output was committed as `cf19f3c3`).
-- **The AG determinations download.** `python3 scripts/fetch_oml_determinations.py --all`,
-  appending to `build/oml-determinations-all.log`; at 07:22 it was walking OML 2013-170.
-  Download only: TJ, 8 Oct, *"Let's just ingest them. Don't process them for now."*
-  Lands through `ingest`, so every letter is in the bucket. Restarted 9 Oct ~06:46 after the
-  OML 2012-5 crash (one number listed twice; fixed in `7f5005a8`). When it finishes: commit
-  `sources/state-law/`, then re-run `pdf_kind` over every letter (see
-  `HANDOFF-OML-INDEX.md` -- the letters are DIGITAL; never OCR them wholesale).
-- Nothing watches either job once this session ends. `tail -f` the logs, or
-  `bash scripts/tail_backlog.sh`.
+- The minutes run stopped at its 80% session cap at ~08:45: 61 meetings, $28.25 (~5.7% of
+  the week). Its output was committed (`a9bca989` and the 9 Oct refresh `55ed43ed`).
+- **The AG determinations download FINISHED:** 2,808 fetched + 82 held, 0 failed, against a
+  portal census of 2,889 numbers (`fetch_oml_determinations.py --census`). Letters to
+  early 2014 are committed (`708f2d49`); **the rest of `sources/state-law/` is uncommitted
+  in the MAIN tree** (see "two trees" below). Next: commit it, then `pdf_kind` over every
+  letter (the letters are DIGITAL; never OCR wholesale -- `HANDOFF-OML-INDEX.md`).
+- Today's refresh ran (09:54, exit 0) after the 07:00 one died on the `state-law` folder;
+  the site was deployed to PRODUCTION at 13:09 (`wrangler pages deploy --branch main`;
+  a bare deploy from the refresh tree goes to a PREVIEW alias -- refresh.py now names the
+  branch). Production verified by sha256 of `/data/app-metrics.json`.
+
+## TWO TREES, AND THE MAIN ONE IS BEHIND
+
+`../lunenburgbudgets-refresh` is clean at `origin/main` (`1bce4f0d`). **This tree is several
+commits behind origin and dirty**: the OML letters' text and index, today's job-postings
+snapshot, `notes/reference/records-requests.csv` (one row added), and copies of script
+changes that are already on origin. Bring it up to date carefully: commit the OML/state-law
+data first, then `git pull --no-rebase`; expect conflicts only in the append-only CSVs
+(archive-manifest, archive-push-state, ingest-pending, agentic-spend) -- resolve as a
+union, then `sync_archive.py --manifest`. Never `git checkout`/`stash` another session's
+work.
 
 ## Open work, in rough priority order
 
-1. **Retarget the minutes run** (above), and commit its output when it ends.
-2. **The refresh, rebuilt as always-additive** -- design approved in principle,
-   NOT BUILT: `notes/HANDOFF-REFRESH-ADDITIVE.md`. Runs in whatever branch it is in, never
-   destructive, a page that fails to build is marked blocked and the run moves on. Today's
-   refresh tree was unstuck by hand on 9 Oct (reset to main; the stranded 22 Sep commit is
-   kept on branch `stranded-refresh-2026-09-22`). Also: the refresh does not log spend for
-   `write_recording_minutes` -- fix inside the redesign.
-3. **D1 sync fails with a FOREIGN KEY constraint** (seen 9 Oct). Not investigated. The
-   live `/api/query` still serves the older database. Start with `python3 scripts/sync_d1.py`
-   and read which table it stops on.
-4. **The journal export** (TJ, 9 Oct: *"I'm told the journal export is on its way"*). When
-   it arrives it is held at the gate (13e): verify every text field for a person, publish,
-   THEN build. It answers: report #12's "spent with no budget" lines, the surplus
-   "Was it thrift?" question, and what the special-education overrun was spent on. Roll up
-   the journal lines to the period-13 totals before using any of it.
-5. **The OML index** (model-free parts only): rule units, issue taxonomy, FTS over the
-   letters, citation graph -- `HANDOFF-OML-INDEX.md` sections 1, 3, 4. The model DIGEST of
-   the letters waits, and when built runs as a pipeline identical to `process_meeting.py`
-   (newest first, resumable, governed). TJ, 8 Oct.
-6. **Decisions waiting on TJ:**
-   - ~~the new top-level folder `sources/state-law/`~~ APPROVED by TJ, 9 Oct 2026;
-     recorded in `check_archive_layout.py`;
-   - whether to LIST any of the unlisted reports (below) -- persona review (rule 15a) first;
-     TJ, 9 Oct 2026: do NOT list the Open Meeting Law reviews (they stay hidden);
-   - the next FinCom report: #3, "The school budget beyond the vote"
-     (`notes/REPORTS-TO-GENERATE.md`);
-   - the 9 PDFs of the 6 Oct MUNIS delivery, pending only for staff logins in the
-     headers, which TJ said on 7 Oct are not an issue -- confirm publish (13e).
-7. **After the next refresh**: check that no 2027-dated minutes reappeared (a resurrection
-   seen once, cause not established).
-8. **MUNIS Part 2** -- still with the Town Manager (vendor names that are people). Same gate.
-9. **An off-machine backup copy** -- `~/lunenburg-backups/` is on the same disk.
-10. **`notes/reference/records-requests.csv`** -- edits lost 6 Oct; if TJ remembers changing
-    a request around 5 Oct, redo it.
+1. **The weekly pacing line -- APPROVED, NOT BUILT** (TJ, 9 Oct: "Yes ok let's build
+   that!"). `process_meeting.py --week-line`: start a meeting only while the server's
+   seven_day utilization is under `goal x hours-since-reset/168` (goal 90%, rising to 100%
+   in the last 24 h before the reset) AND the 5-hour window is under 80%. Interactive use
+   counts against the same bars, so the batch throttles itself -- TJ: "I just use capacity
+   and the minutes fills in the rest." Week resets Thu 23:00 (seven_day.resets_at; the
+   governor does not record it yet). Always running, one serial stream, newest first; a
+   dashboard line actual-vs-target. At 12:30 Fri: 19% used vs a line of 8%, so nothing
+   should start before ~Sat 07:00.
+2. **D1 sync, bug 3 of 3 -- a decision.** Fixed today: the journal's malformed foreign key
+   (`build_db.py`, now `(source, key)`), and parents sent after their children
+   (`d1_incremental.py`). Still failing: rebuilding `document` (2,595 local rows vs 1,420 in
+   D1) while `crosswalk` and `ledger_snapshot` reference it. `batch_sql`'s docstring lists
+   three fixes; the recommendation given TJ was UPSERT for parent tables. Until then
+   `sync_d1.py --check` fails and check_generated reports it; TJ said deploy past it.
+3. **The anonymous records-request files -- in the inbox, NOT INGESTED.**
+   `build/inbox/2026-10-09-anonymous-records-request/` (nine files + PROVENANCE.md +
+   the original zip; also still in ~/Downloads). TJ: "these are from a FOIA request and
+   someone sent it to me anonymously. Dont ingest." Includes
+   `Corrected Lunenburg_Paraprofessional_Salary_Scale FY27-FY28 (1).xlsx` -- apparently the
+   corrected schedule approved 7 Oct. When TJ says ingest: through the 13e gate, provenance
+   "a third party's records request, forwarded anonymously". `build/` is gitignored and on
+   this disk only.
+4. **Paraprofessional salary schedule: compare original and corrected.** We hold the
+   pre-correction FY26-FY28 agreement and schedule (committed 20 Aug; the district's HR page
+   still serves those exact bytes, checked 9 Oct). The correction (Superintendent, 16 Sep,
+   per our captions): hourly rates "did not calculate accurately into the annual salaries".
+   Records request sent 9 Oct (`records-requests.csv`). When TJ clears the inbox file or
+   the district answers: diff every classification, step and figure.
+5. **Dee Bus.** We hold no transportation contract. 11 regular-education buses (TJ,
+   confirmed; also our captions, SC 22 Jan 2025 1:34:54). Sports transport is in dollars
+   only (by-sport workbook; budget line $40,000 FY24 -> $87,822 FY25 -> $127,550 FY26
+   budget, with the fee-fund share falling the same year -- a hypothesis, not established).
+   TJ will request the contract later; drafts were given in the session (contract + rate
+   schedule; athletic-trip invoices). Not yet a money-gaps row.
+6. **The refresh, rebuilt as always-additive** -- design approved, NOT BUILT:
+   `notes/HANDOFF-REFRESH-ADDITIVE.md`.
+7. **Two working-copy fetchers are untested in a real run**: `fetch_board_pages.py` now
+   lands every changed page through `ingest.land_version()`. Tomorrow's refresh is its first
+   live use; check its log and `working-copies.csv`.
+8. The journal export (13e gate), the OML index (model-free parts), MUNIS Part 2, an
+   off-machine backup, the 9 MUNIS PDFs to publish -- unchanged from the 07:30 list.
+
+## Done on 9 October (all on origin/main)
+
+- Refresh: counts only what it writes; "found on external sites" vs "found in our local
+  files", each with where it was found; snapshots counted once; a failed run no longer
+  counts as the day's run; `--branch main` on deploy. (`2906aa17`, `86b6191a`, `a8defc14`,
+  `a5e37e13`)
+- Dashboard: OML card + burndown + by-year; live "Found so far today"; "What it picked up"
+  itemised; Questions tab with "(N)" and last-checked; Held section removed.
+- The 2027 resurrection SOLVED: two recordings with misdated minutes and captions whose
+  manifest rows kept restoring them; rows removed, objects in `archive-orphans.csv`; the two
+  correct transcripts (held on one disk only) now in the bucket. (`056b2abb`)
+- Backups: the check compares CONTENTS now; three versions held on one disk are landed;
+  `working-copies.csv` + `ingest.land_version()`. (`a5e37e13`)
+- Job postings: a pii_screen match on a public posting is noted, not refused.
+- `state-law/` approved as a top-level folder; OML reviews stay unlisted (TJ).
 
 ## Built 7-9 October -- where to find it
 
