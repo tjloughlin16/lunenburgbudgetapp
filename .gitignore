@@ -203,3 +203,7 @@ sources/data/pages-read.csv
 
 # The OML complaint as filed carries a home address and phone; held locally, hashed in MANIFEST.json
 notes/outbound/sent-2026-10/*.pdf
+# A determination whose filename the AG portal sent MIME-encoded (=?utf-8?b?...?=) and that
+# was archived under the encoded text with no extension (OML 2023-243). It is a PDF, in the
+# bucket like every other letter; this keeps it out of git the way sources/**/*.pdf keeps the rest.
+sources/state-law/*/determinations/utf-8-b-*

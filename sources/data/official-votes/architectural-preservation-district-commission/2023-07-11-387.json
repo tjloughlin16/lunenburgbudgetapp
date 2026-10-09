@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-07-11",
  "docid": "387",
@@ -12,15 +12,171 @@
  },
  "votes": [
   {
-   "motion": "approve the June meeting minutes",
-   "moved_by": "Sculimbrene",
-   "seconded_by": "Lloyd",
-   "outcome": "passed 2-0-1",
+   "motion": "Approve the June meeting minutes.",
+   "moved_by": "",
+   "seconded_by": "Mbr Lloyd",
+   "outcome": "passed",
    "procedural": true,
    "quote": "meeting minutes for june, sculimbrene voted to approve, seconded by mbr lloyd; approved by sculimbrene, lloyd; mcgrath abstained"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10108249999999999
+ "note": "Single text extraction, not a scan; all content readable. One vote recorded (approval of June minutes), with McGrath abstaining; the minutes do not print the word 'moved', so moved_by is left blank and the outcome is given as passed. No adjournment motion is printed (adjourned at 8:10 PM only). Public comment reads 'None'. No dollar figures appear anywhere; the Community Preservation Act item is recorded as a budget item only because it concerns a funding mechanism, with no figures. Nathan Lockwood is listed in the header but not in the Present line, so attendance is recorded as not stated.",
+ "cost_usd": 0.013174770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "nathan lockwood, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Historical banners are on hold for a few months because of committee availability.",
+   "quote": "on hold for a few months for committee availability."
+  },
+  {
+   "decision": "Chair Sculimbrene will contact the new architect about the Ritter Building design process and status.",
+   "quote": "chair sculimbrene will reach out to the new architect to ask about the design process and status."
+  },
+  {
+   "decision": "Goal for the year is to keep the certificate to alter in simple terms to avoid guidelines changes.",
+   "quote": "goal is to keep certificate to alter in simple terms to avoid any guidelines changes."
+  },
+  {
+   "decision": "Spring is the recommended time to raise the Community Preservation Act question with the town.",
+   "quote": "spring would be recommended time to raise the question to the town."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act",
+   "what_was_recorded": "The board discussed raising the Community Preservation Act with the town and checking feasibility of work tied to it; no dollar figures were printed.",
+   "quote": "5) the push for community preservation act a. spring would be recommended time to raise the question to the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (June minutes)",
+   "quote": "meeting minutes for june, sculimbrene voted to approve, seconded by mbr lloyd; approved by sculimbrene, lloyd; mcgrath abstained",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted",
+   "quote": "heritage area information card.",
+   "tags": [
+    "heritage area"
+   ]
+  },
+  {
+   "topic": "Website photos",
+   "resolution": "no action; chair has photos to submit",
+   "quote": "chair sculimbrene has taken a few pictures to submit for the apdc website.",
+   "tags": [
+    "website",
+    "photos"
+   ]
+  },
+  {
+   "topic": "Ritter Building",
+   "resolution": "discussed; chair to contact architect",
+   "quote": "old photo provided proof that some windows were not original",
+   "tags": [
+    "Ritter Building",
+    "windows",
+    "design review"
+   ]
+  },
+  {
+   "topic": "New building inspector",
+   "resolution": "discussed; mailer suggested",
+   "quote": "made contact with new building inspector brian gingras",
+   "tags": [
+    "building inspector",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New member solicitation",
+   "resolution": "no action; committee to look at recruiting",
+   "quote": "going to look at recruiting a member within the apdc zone",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Master plan input",
+   "resolution": "no action; next meeting date and location requested",
+   "quote": "initial meeting could not attend, with ask about next meeting date/time & location",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Setting goals for the year",
+   "resolution": "discussed; certificate to alter to be updated",
+   "quote": "main point of effect will be to update 'certificate to alter'.",
+   "tags": [
+    "goals",
+    "certificate to alter",
+    "digital submittal"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "discussed; spring recommended for raising the question",
+   "quote": "spring would be recommended time to raise the question to the town.",
+   "tags": [
+    "Community Preservation Act"
+   ]
+  },
+  {
+   "topic": "Historical banners",
+   "resolution": "on hold",
+   "quote": "on hold for a few months for committee availability.",
+   "tags": [
+    "historical banners"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural review",
+  "Ritter Building",
+  "certificate to alter",
+  "Community Preservation Act",
+  "historical banners",
+  "master plan",
+  "membership",
+  "building inspector",
+  "Town of Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

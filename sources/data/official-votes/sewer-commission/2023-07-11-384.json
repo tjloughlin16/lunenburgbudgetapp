@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-07-11",
  "docid": "384",
@@ -12,47 +12,337 @@
  },
  "votes": [
   {
-   "motion": "move the 6/27/23 minutes to the next meeting",
+   "motion": "Move the 6/27/23 minutes to the next meeting.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett r. second: dave m. to move the 6/27/23 minutes to the next meeting. roll call vote: brett-aye, dave-aye and john-aye."
+   "quote": "to move the 6/27/23 minutes to the next meeting. roll call vote: brett-aye, dave-aye and john-aye."
   },
   {
-   "motion": "approve the adjusted FY23 End of Year Commitment of $1,641.08",
+   "motion": "Approve the adjusted FY23 End of Year Commitment of $1,641.08.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to approve the adjusted fy23 end of year commitment of $1,641.08. roll call vote: brett-aye, dave-aye and john-aye."
+   "quote": "to approve the adjusted fy23 end of year commitment of $1,641.08. roll call vote: brett-aye, dave-aye and john-aye."
   },
   {
-   "motion": "accept the new Internal Log form with Paula's suggestion to swap the Maintenance and Cleaning columns",
+   "motion": "Accept the new Internal Log form, with Paula's suggestion to swap the Maintenance and Cleaning columns.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to accept the new internal log form with paula's suggestion to swap the maintenance and cleaning columns. discussion: dave asked how the establishment would know the grease trap model number. paula said she could remove that line but john asked her to leave it in but not penalize if it is not filled out. paula stated she is mainly looking for information in the highlighted areas. roll call vote: dave-aye, brett-aye and john-aye."
+   "quote": "to accept the new internal log form with paula's suggestion to swap the maintenance and cleaning columns."
   },
   {
-   "motion": "approve the revised amount of $32,616 for the FY23 Encumbrances",
+   "motion": "Approve the revised amount of $32,616 for the FY23 Encumbrances.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to approve the revised amount of $32,616 for the fy23 encumbrances. roll call vote: brett-aye, dave-aye and john-aye."
+   "quote": "to approve the revised amount of $32,616 for the fy23 encumbrances. roll call vote: brett-aye, dave-aye and john-aye."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 7:06pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett r. second: dave m. to adjourn at 7:06pm. roll call vote: brett-aye, dave-aye and john-aye."
+   "quote": "to adjourn at 7:06pm. roll call vote: brett-aye, dave-aye and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed unanimously 3-0 (three Commission members present: John Reynolds, Brett Ramsden, Dave MacDonald; one absent: Mike Nault).",
- "cost_usd": 0.13838109999999998
+ "note": "Text extract of a typed minutes document, not a scan. All votes are roll calls, recorded 3-0 with Mike Nault absent; a quorum is not stated in the minutes. The minutes do not reconcile two figures: the FY23 encumbrance is said to be reduced to $36,616 in discussion but the motion approves $32,616, so the motion figure is recorded as printed. The FY23 adjustment components ($656.87 and $2,297.95) do not sum to the printed total ($1,641.08); the minutes do not say whether one is a credit. The meeting was held via Zoom, so attendees are recorded as present rather than remote. Ken Olsen, Jake Fleming, Barb, Ratta, Al Packard and Mr. Arcidi are mentioned but did not take part and are not listed as attendees. The 'Public comment' line near the end (Paula's attendance at upcoming meetings) is not a public speaker and is not recorded as one.",
+ "cost_usd": 0.01845284,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: mike nault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to be lenient with establishments on the new internal grease trap log until they get used to it.",
+   "quote": "the commission discussed the new form and agreed to be a little lenient until establishments get used to it."
+  },
+  {
+   "decision": "Annual permit fee discussion tabled to a later meeting; current permits continue in the meantime.",
+   "quote": "paula replied the current permits would continue and they can table the discussion to later."
+  },
+  {
+   "decision": "Whether to implement the $100 late fee for a chronically late establishment added to the July 25 agenda.",
+   "quote": "brett suggested adding it on the july 25th meeting agenda and all agreed."
+  },
+  {
+   "decision": "DPW to inspect the manhole at the Massachusetts Avenue grease blockage, and Business Manager to send a formal letter to the establishment.",
+   "quote": "the commission agreed to have the dpw look at the manhole and have paula send the formal letter."
+  },
+  {
+   "decision": "Business Manager to bring a new oil/water separator form and application to the next agenda for review.",
+   "quote": "paula will put together a new form and application for the commission to review on the next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 End of Year Commitment adjustment",
+   "what_was_recorded": "Bill adjustments and final reads since the 4th quarter billing produced a total adjustment, which the Commission voted to approve.",
+   "quote": "since the 4th quarter billing went out, there have been bill adjustments of $656.87 and final reads of $2,297.95, for a total adjustment of $ 1,641.08.",
+   "figures_as_printed": [
+    "$656.87",
+    "$2,297.95",
+    "$ 1,641.08"
+   ]
+  },
+  {
+   "topic": "FY23 Encumbrances",
+   "what_was_recorded": "The encumbrance was reported reduced in discussion to $36,616, but the motion approved $32,616. The minutes do not reconcile the two figures.",
+   "quote": "fy23 encumbrances- paula reported the figure has changed due to receiving some bills and the encumbrance has been reduced to $36,616.",
+   "figures_as_printed": [
+    "$36,616",
+    "$32,616"
+   ]
+  },
+  {
+   "topic": "Annual permit fee for grease traps",
+   "what_was_recorded": "Regulations adopted 2/28/23 set the annual permit fee for internal and external traps; the Commission discussed whether to implement it this year, and the decision was tabled.",
+   "quote": "set the annual permit fee for both internal & external traps at $150",
+   "figures_as_printed": [
+    "$150"
+   ]
+  },
+  {
+   "topic": "Non-compliance fines",
+   "what_was_recorded": "New regulations set an automatic $100 non-compliance fine, with continued non-compliance at $25 per day of violation.",
+   "quote": "the new regulations state there is an automatic $100 non-compliance fine.",
+   "figures_as_printed": [
+    "$100",
+    "$25/day"
+   ]
+  },
+  {
+   "topic": "Oil/water separator annual fee",
+   "what_was_recorded": "New oil/water separator regulation requires an annual fee, with the same $100 automatic fine and $25/day for non-compliance.",
+   "quote": "need to clean it twice per year and pay an annual fee of $150.",
+   "figures_as_printed": [
+    "$150",
+    "$100",
+    "$25/day"
+   ]
+  },
+  {
+   "topic": "Maintenance spending threshold",
+   "what_was_recorded": "Business Manager noted that work under the threshold can be done with three written quotes; no other figure is given.",
+   "quote": "as long as the amount is under $50k, they can do it with 3 written quotes.",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Neighbouring town grease fine",
+   "what_was_recorded": "A Commission member cited a fine another town imposed on an establishment for grease discharge; it is not a Lunenburg figure.",
+   "quote": "caught an establishment dumping grease into the floor drains, for which they were fined $10k.",
+   "figures_as_printed": [
+    "$10K"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "condolences and Pancake breakfast notice",
+   "quote": "dave said he wanted to send their prayers along to jane for her husband's speedy recovery and offered their help if needed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; condolences and a Senior Center pancake breakfast notice",
+   "quote": "dave said he wanted to send their prayers along to jane for her husband's speedy recovery and offered their help if needed.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/27/23",
+   "resolution": "moved to next meeting",
+   "quote": "minutes of 6/27/23 - john suggested moving them to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY23 End of Year Commitment",
+   "resolution": "approved adjusted commitment",
+   "quote": "to approve the adjusted fy23 end of year commitment of $1,641.08.",
+   "tags": [
+    "FY23 budget",
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Grease trap permits and internal log form",
+   "resolution": "new internal log form approved; enforcement to be lenient at first",
+   "quote": "paula asked the commission to consider issuing a new form, due to the issue on mass ave",
+   "tags": [
+    "grease traps",
+    "forms",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Massachusetts Avenue grease blockage",
+   "resolution": "DPW to inspect manhole; formal letter to establishment; no finding of fault",
+   "quote": "dave asked about the recent grease blockage on massachusetts avenue and questioned if anything could have been caused by the construction at the old gas station.",
+   "tags": [
+    "grease blockage",
+    "manhole",
+    "private property",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Annual permit fees",
+   "resolution": "discussion tabled",
+   "quote": "paula stated the commission adopted regulations on 2/28/23 that set the annual permit fee for both internal & external traps at $150",
+   "tags": [
+    "permit fees",
+    "non-compliance fines"
+   ]
+  },
+  {
+   "topic": "Oil/water separators",
+   "resolution": "new form and application to come to next agenda",
+   "quote": "paula noted this was a new regulation implemented on 2/28/23 and is new to establishments.",
+   "tags": [
+    "oil water separators",
+    "car washes",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "ARPA funding",
+   "resolution": "no action; Select Board to discuss 7/11",
+   "quote": "dave noted the select board will discuss this at their 7/11 meeting",
+   "tags": [
+    "ARPA",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "IMA with Leominster",
+   "resolution": "no action; meeting to be confirmed",
+   "quote": "ima with leominster- paula reported jake fleming is thinking of meeting in the middle of august",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement",
+    "engineers"
+   ]
+  },
+  {
+   "topic": "Pond View Commons",
+   "resolution": "no action; with lawyers and Housing Authority",
+   "quote": "john stated this is currently up to the lawyers and the housing authority.",
+   "tags": [
+    "Pond View Commons",
+    "Housing Authority"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Select Board",
+   "resolution": "scheduled for 7/18 at 7:30pm",
+   "quote": "joint meeting with select board- scheduled for 7/18 at 7:30pm.",
+   "tags": [
+    "Select Board",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Business Manager report and FY23 encumbrances",
+   "resolution": "revised FY23 encumbrance approved; I&I data work continuing",
+   "quote": "paula reported she is trying to get the liift tool (database) to work.",
+   "tags": [
+    "I&I",
+    "infrastructure",
+    "encumbrances",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed; no action",
+   "quote": "july 25, 2023 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:06pm",
+   "quote": "to adjourn at 7:06pm. roll call vote: brett-aye, dave-aye and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease traps",
+  "permit fees",
+  "non-compliance fines",
+  "oil water separators",
+  "FY23 budget",
+  "encumbrances",
+  "billing commitment",
+  "Leominster IMA",
+  "ARPA",
+  "Select Board joint meeting",
+  "I&I",
+  "roll call votes",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

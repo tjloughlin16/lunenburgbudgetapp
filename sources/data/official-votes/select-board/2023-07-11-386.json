@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-07-11",
  "docid": "386",
@@ -12,47 +12,450 @@
  },
  "votes": [
   {
-   "motion": "ratify the appointment of Michael McCormack as a full-time police officer",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Ratify the Town Manager's appointment of Michael McCormack as a full-time police officer.",
    "outcome": "passed",
    "procedural": false,
    "quote": "to ratify the town manager appointment of michael mecormick as a full-time police officer vote: all in favor"
   },
   {
-   "motion": "ratify the appointment of George Martin as Town Clock winder with term to expire June 30, 2024",
+   "motion": "Ratify the Town Manager's appointment of George Martin as Town Clock winder with a term to expire June 30, 2024.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2': t. alonzo to ratify the town manager's appointment of george martin as town clock winder with a term to expire june 30, 2024 vote: all in favor"
+   "quote": "to ratify the town manager's appointment of george martin as town clock winder with a term to expire june 30, 2024"
   },
   {
-   "motion": "commit ARPA funding of $50,750 for the Public Access Committee",
+   "motion": "Commit ARPA funding of $50,750 for the Public Access Committee.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. alonzo motioned to commit arpa funding of $50,750 for public access committee. mr. franco seconded the motion. vote: all in favor"
+   "quote": "mr. alonzo motioned to commit arpa funding of $50,750 for public access committee. mr. franco seconded the motion."
   },
   {
-   "motion": "commit $20,000 to the Lions Club for the community food pantry",
+   "motion": "Commit $20,000 to the Lions Club for the community food pantry.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor, 1 abstention (Nuzzolo)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to commit $20,000 to the lions club for the community food pantry vote: 4 in favor, 1 abstention (nuzzolo)"
+   "quote": "to commit $20,000 to the lions club for the community food pantry vote: 4 in favor, 1 abstention (nuzzolo)"
   },
   {
-   "motion": "waive the right of first refusal for parcel 4 on Leominster Road",
+   "motion": "Waive the right of first refusal for parcel 4, Leominster Road.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: c. nuzzolo to waive the right of first refusal for parcel 4, leominster road vote: all in favor"
+   "quote": "to waive the right of first refusal for parcel 4, leominster road vote: all in favor"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting the meeting adjourned at 10:25 p.m. vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1326101
+ "dropped_unquoted": 0,
+ "note": "OCR of a scanned set of minutes (macOS Vision). Misreads survive in the source: 'MeCormick' for McCormack, \\\"2'\\\" for 2nd, 'Koad' for Road, 'Jeffieys', and a split 'Peters on'. Quotes are copied as printed, so a few carry these misreads. No roll call is printed; attendance is inferred from participation, and the Town Manager title for Ms. Lemieux is inferred from context. Three votes record only 'All in Favor' and one records a count (4 in favor, 1 abstention). The McCormack ratification and the adjournment print no mover or seconder. Chief Gammel, Rena Swezey, George Martin and others are named but did not take part, so they are not listed as attendees. One unnamed resident's remarks on the Flat Hill flooding are not attributed to anyone.",
+ "cost_usd": 0.030077600000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys (Chairman Jeffreys)",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of"
+  },
+  {
+   "name": "Mr. Franco (L. Franco)",
+   "role": "Select Board member (role inferred from participation; not printed)",
+   "status": "present",
+   "quote": "mr. franco stated he understood the concern but work needs to continue in the assessor's office until a permanent principal assessor is hired."
+  },
+  {
+   "name": "Mr. Alonzo (T. Alonzo)",
+   "role": "Select Board member (role inferred from participation; not printed)",
+   "status": "present",
+   "quote": "mr. alonzo asked how far we are into the solid waste removal contract."
+  },
+  {
+   "name": "C. Nuzzolo",
+   "role": "Select Board member (role inferred from participation; not printed)",
+   "status": "present",
+   "quote": "vote: 4 in favor, 1 abstention (nuzzolo)"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager (inferred; the minutes refer to 'the Town Manager' and do not print the title beside her name)",
+   "status": "present",
+   "quote": "ms. lemieux reported since the last meeting she had received four resignations"
+  },
+  {
+   "name": "Lt. Thibodeau",
+   "role": "Lt. (title as printed)",
+   "status": "present",
+   "quote": "lt. thibodeau read chief gammel's letter to the town manager:"
+  },
+  {
+   "name": "Michael McCormack",
+   "role": "Full Time Police Officer (appointee)",
+   "status": "present",
+   "quote": "officer mccormick thanked the board."
+  },
+  {
+   "name": "Mr. Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "mr. bernard reported the town has been trying to replace the bridge for at least three years."
+  },
+  {
+   "name": "Mr. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "mr. burney replied the approval does say it should be maintained as constructed but how and what that means isn't clearly defined."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "consultant",
+   "status": "present",
+   "quote": "consultant brian marchetti contacted the residents across the street from the allison's property"
+  },
+  {
+   "name": "Mr. Pratt",
+   "role": "trustee, Village at Flat Hill (role as referred to by Mr. Alonzo; not printed beside his name)",
+   "status": "present",
+   "quote": "mr. pratt exited the meeting."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "resident, 50 Sunset Lane (address as printed)",
+   "status": "present",
+   "quote": "phyllis luck, 50 sunset lane, expressed disagreement with the town manager's appointment of rena swezey as interim principal assessor."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "resident, 50 Sunset Lane (address as printed)",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, thanked the two newly elected members for stepping up to run for select board."
+  },
+  {
+   "name": "Matt Woodward",
+   "role": "resident, 64 Arbor Street (address as printed)",
+   "status": "present",
+   "quote": "matt woodward, 64 arbor street, suggested that we can investigate whose problem this is"
+  },
+  {
+   "name": "Stefan McSweeney",
+   "role": "co-owner of the limited liability company that owns the parcel",
+   "status": "present",
+   "quote": "stefan mcsweeney, co-owner of the limited liability company that owns the parcel, stated the intent is to develop the entire property"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (recording the minutes)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair said the board will reach out to the Trustees (Village at Flat Hill) and schedule a meeting to further the drainage conversation; no vote recorded.",
+   "quote": "mr. jeffreys stated we will reach out to the trustees board and schedule a meeting with them for the purpose of furthering this conversation."
+  },
+  {
+   "decision": "Board decided to ask the Planning Board whether the Master Plan Steering Committee resident-representative seat must be a Select Board member; board to revisit after the answer. No vote recorded.",
+   "quote": "it was decided to ask the planning board if it absolutely has to be a select board member."
+  },
+  {
+   "decision": "Board signed an accounts payable warrant (action taken without a recorded vote).",
+   "quote": "the board signed an accounts payable warrant in the amount of $43,489.90."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flat Hill detention basin maintenance cost to owners",
+   "what_was_recorded": "The consultant estimated the cost for the condominium owners to maintain the detention basins at around $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "mr. marchetti estimated around $10,000."
+  },
+  {
+   "topic": "ARPA requests and remaining funds",
+   "what_was_recorded": "The Chair reported ARPA requests totalling $2,027,390.00 against $1,080,000.00 remaining, after some requests were modified.",
+   "figures_as_printed": [
+    "$2,027,390.00",
+    "$1,080,000.00"
+   ],
+   "quote": "so they have $2,027,390.00 in requests and $1,080,000.00 remaining."
+  },
+  {
+   "topic": "ARPA items left blank (Board of Health hours and remote meeting costs)",
+   "what_was_recorded": "Two ARPA request items, Board of Health COVID response hours and remote meeting costs, were left blank because final numbers were not available; the two together were described as totalling around $90,000.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "the remote meeting costs which totaled around $90,000 have been left blank as he does not have final numbers."
+  },
+  {
+   "topic": "ARPA commitment to Public Access Committee",
+   "what_was_recorded": "The board voted to commit $50,750 in ARPA funding to the Public Access Committee.",
+   "figures_as_printed": [
+    "$50,750"
+   ],
+   "quote": "mr. alonzo motioned to commit arpa funding of $50,750 for public access committee."
+  },
+  {
+   "topic": "ARPA commitment to Lions Club food pantry",
+   "what_was_recorded": "The board voted to commit $20,000 to the Lions Club for the community food pantry.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "to commit $20,000 to the lions club for the community food pantry"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$43,489.90"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $43,489.90."
+  },
+  {
+   "topic": "Fog sealing roadway maintenance bid",
+   "what_was_recorded": "One bid was received for roadway maintenance fog sealing, from Sealcoating Inc. dba as Indus.",
+   "figures_as_printed": [
+    "$103,233"
+   ],
+   "quote": "we received one bid sealcoating inc. dba as indus for $103,233."
+  },
+  {
+   "topic": "Assistant Town Accountant pay",
+   "what_was_recorded": "The Chair reported that the former Assistant Town Accountant said she could not afford to stay at about $40,000 a year.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "she can't do it on $40,000 a year and that makes perfect sense to me."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Interim Principal Assessor appointment",
+   "quote": "phyllis luck, 50 sunset lane, expressed disagreement with the town manager's appointment of rena swezey as interim principal assessor."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Tax investigation updates and Assessors' office hiring hold",
+   "quote": "he requested an update on it from chairman jeffieys and placing a hold on hiring until there is a comprehensive plan in place for the assessors' office."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "not stated",
+   "topic": "Flat Hill bridge completion timing",
+   "quote": "carl luck, regarding the bridge, wanted clarification on the timing of completion of the project."
+  },
+  {
+   "speaker": "Matt Woodward",
+   "stated_role": "64 Arbor Street",
+   "topic": "Flat Hill drainage solution",
+   "quote": "matt woodward, 64 arbor street, suggested that we can investigate whose problem this is, but the real solution is how to try to fix it."
+  },
+  {
+   "speaker": "Mr. Pratt",
+   "stated_role": "trustee, Village at Flat Hill (as referred to in the minutes)",
+   "topic": "Flat Hill detention ponds and responsibility",
+   "quote": "mr. pratt did not believe the statement that the detention ponds are not up to snuff was a factual statement."
+  },
+  {
+   "speaker": "Stefan McSweeney",
+   "stated_role": "co-owner of the limited liability company that owns the parcel",
+   "topic": "Development plan for parcel 4, Leominster Road",
+   "quote": "stefan mcsweeney, co-owner of the limited liability company that owns the parcel, stated the intent is to develop the entire property"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and meeting notice",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure",
+    "open meeting law",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment on Assessor appointment and tax investigation",
+   "resolution": "discussed; no action",
+   "quote": "phyllis luck, 50 sunset lane, expressed disagreement with the town manager's appointment of rena swezey as interim principal assessor.",
+   "tags": [
+    "public comment",
+    "assessor",
+    "tax investigation",
+    "hiring hold"
+   ]
+  },
+  {
+   "topic": "Ratification of police officer appointment, Michael McCormack",
+   "resolution": "ratified, all in favor",
+   "quote": "ratification of town manager's appointment of full time police officer, michael mccormack",
+   "tags": [
+    "police",
+    "appointment",
+    "ratification"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Clock Winder appointment, George Martin",
+   "resolution": "ratified, all in favor",
+   "quote": "ratification of town manager's appointment of town clock winder, george martin",
+   "tags": [
+    "clock winder",
+    "appointment",
+    "ratification"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road culvert, bridge and drainage update",
+   "resolution": "discussed; board to meet the Trustees",
+   "quote": "mr. bernard reported the town has been trying to replace the bridge for at least three years.",
+   "tags": [
+    "flat hill road",
+    "drainage",
+    "bridge",
+    "easements",
+    "detention basins",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests and evaluation criteria",
+   "resolution": "approved $50,750 Public Access and $20,000 Lions Club; criteria discussion continued",
+   "quote": "discussion on arpa funding requests and evaluation criteria.",
+   "tags": [
+    "ARPA",
+    "funding",
+    "criteria",
+    "reserve"
+   ]
+  },
+  {
+   "topic": "Right of first refusal, parcel 4 Leominster Road",
+   "resolution": "approved, right waived",
+   "quote": "to waive the right of first refusal for parcel 4, leominster road",
+   "tags": [
+    "land",
+    "right of first refusal",
+    "parcel 4",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action recorded",
+   "quote": "the town beach hours are saturdays and sundays 12 pm-6 pm and monday through friday 10 am-7 pm.",
+   "tags": [
+    "town manager report",
+    "beach",
+    "farmers market",
+    "vacancies",
+    "employment",
+    "bids",
+    "remediation"
+   ]
+  },
+  {
+   "topic": "Staffing statement by Town Manager",
+   "resolution": "read into record; discussion",
+   "quote": "ms. lemieux read a commentary statement on staffing:",
+   "tags": [
+    "staffing",
+    "finance director",
+    "assessor",
+    "vacancies",
+    "pay"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee resident representative",
+   "resolution": "to ask Planning Board; revisit later",
+   "quote": "it was decided to ask the planning board if it absolutely has to be a select board member.",
+   "tags": [
+    "master plan",
+    "planning board",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $43,489.90.",
+   "tags": [
+    "warrant",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. alonzo reported the finance appointing committee reappointed jay simeone to the finance committee earlier today.",
+   "tags": [
+    "finance committee",
+    "economic development",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Action file issues: solid waste contract and Ritter Building certificate",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo asked how far we are into the solid waste removal contract.",
+   "tags": [
+    "solid waste",
+    "trash pickup",
+    "ritter building",
+    "certificate to alter"
+   ]
+  },
+  {
+   "topic": "Board remarks on meeting decorum and public participation",
+   "resolution": "discussion only",
+   "quote": "so i offer the comment tonight not as a rebuke of anyone in particular but just to kind of reaffirm what my belief system is.",
+   "tags": [
+    "decorum",
+    "public participation",
+    "civic discourse"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25 p.m.",
+   "quote": "the meeting adjourned at 10:25 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "assessor vacancy",
+  "Flat Hill drainage",
+  "Flat Hill bridge",
+  "ARPA funds",
+  "staffing vacancies",
+  "finance director vacancy",
+  "police appointment",
+  "clock winder",
+  "right of first refusal",
+  "warrants",
+  "town manager report",
+  "public comment",
+  "decorum"
+ ],
+ "dropped_unquoted_by_field": {}
 }
