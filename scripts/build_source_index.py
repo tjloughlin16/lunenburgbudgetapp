@@ -4379,6 +4379,10 @@ def upstream_by_hash():
     return known
 
 
+_TEXT_ON_GITHUB = re.compile(r'^state-law/text/oml-det-')
+GITHUB_RAW = 'https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/'
+
+
 def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
                  what='Mirrored from the publisher. Not used in any figure on this site.',
                  prefix=None):
@@ -4407,7 +4411,18 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
             text_rel = (os.path.relpath(os.path.join(ROOT, r['text']), SRC)
                         if r['text'] else None)
             publish(rel)
-            if text_rel:
+            text_url = ('/docs/' + text_rel) if text_rel else None
+            if text_rel and _TEXT_ON_GITHUB.match(text_rel):
+                # NOT COPIED INTO THE BUILD. Cloudflare Pages takes at most 20,000 files a
+                # deployment, and the 9 October 2026 deploy was refused at 21,134 -- the
+                # text of every AG determination (2,915 files) had just been mirrored here.
+                # The letters themselves are served from the bucket like any publisher's
+                # file; their text is ours, regenerated whenever an extractor improves, so
+                # it does not belong in a bucket that locks objects for ten years. It is in
+                # git, so the GitHub mirror -- the fallback CLAUDE.md already names -- serves
+                # it at a stable address.
+                text_url = GITHUB_RAW + 'sources/' + text_rel
+            elif text_rel:
                 publish(text_rel)
             ext = os.path.splitext(rel)[1].lower()
             items.append({
@@ -4417,7 +4432,7 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': size,
                 'url': '/docs/' + rel,
-                **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
+                **({'textUrl': text_url} if text_url else {}),
                 'upstream': r['upstream'],
                 **({'upstreamRestricted': True}
                    if (LINKS or {}).get(rel, (True,))[0] is False else {}),
@@ -4726,8 +4741,8 @@ def main():
         # because the State's HTML pages differ byte for byte on every request.
         mirror_group('state-law', 'state-law', 'The Open Meeting Law, as the State publishes it',
                      'The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), '
-                     'the Attorney General’s guide, FAQ and checklists, and a chosen set of '
-                     'the AG’s determination letters — {n} documents, each '
+                     'the Attorney General’s guide, FAQ and checklists, and every determination '
+                     'letter the AG has issued since 2010 — {n} documents, each '
                      'the publisher’s own file. Held so that a quotation of the law can be '
                      'checked against the law.', 'state-law', catalogued_hashes,
                      what='Mirrored from the publisher. The law itself; not a figure on this site.'),
