@@ -24,13 +24,16 @@ WHAT IT MAY AND MAY NOT DO
 The site went public on 19 September 2026. An agent that can push to main is an agent
 that can break a live public budget tool at 07:00 while nobody is awake, so:
 
-  - It works in the REFRESH TREE, on a branch of its own, never on main.
-  - It may read anything, run the checks, and edit files.
+  - With --own-tree (how daily_refresh.sh calls it) it works in a DETACHED worktree of
+    its own under build/refresh-triage/, at the commit the refresh ran -- never in the
+    working tree a person is using, since the refresh now runs there (9 October 2026).
+  - It may read anything and edit files.
   - It MUST NOT push to main, deploy, or touch the interactive tree.
-  - It cannot commit or push anything itself -- `acceptEdits` gives it no shell.
-    daily_refresh.sh commits what it leaves onto a dated `triage/` branch, so the
-    work survives the next run's `git reset --hard` and is there to review
-    and reviewable from anywhere, and merging stays a person's decision.
+  - It cannot commit or push anything itself -- `acceptEdits` gives it no shell -- and
+    nothing commits for it: its edits stay in its own tree, which nothing resets or
+    cleans, for a person to review with `git -C <tree> diff`. No branch is created.
+    (The old version committed them to a dated `triage/` branch because its tree was
+    reset every morning; the reset is gone, so the branch had nothing left to protect.)
 
 ONE ATTEMPT PER DAY. The report file is the lock: if it exists, the day is already
 triaged. A loop that retries a failing fix every hour is how a plan's weekly allowance
@@ -112,7 +115,7 @@ RULES, and the first is not negotiable:
 
 - NEVER push to main, never deploy, never run `npm run build:site` unless you need it to
   reproduce the failure. This site is live to the public.
-- Commit anything you change to the current branch only.
+- Do not commit. Leave your changes in this tree; a person reviews them with git diff.
 - CLAUDE.md is the contract for this repository. Rule 2 (never type a figure into prose),
   rule 13 (quote the source, not your rendering of it) and the note about generated files
   all apply to you.
@@ -144,10 +147,24 @@ def record(cost, result):
                     '%.4f' % cost if cost else '', result])
 
 
+def own_tree(day):
+    """A detached worktree at HEAD under build/refresh-triage/, made once per day and
+    never removed by anything here: it holds the agent's edits until a person reads them.
+    Detached, so no branch is created; `worktree add` only ever ADDS a checkout."""
+    tree = os.path.join(OUTDIR, 'tree-' + day)
+    if not os.path.exists(tree):
+        os.makedirs(OUTDIR, exist_ok=True)
+        subprocess.run(['git', 'worktree', 'add', '-q', '--detach', tree, 'HEAD'],
+                       cwd=ROOT, check=True)
+    return tree
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--log')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--own-tree', action='store_true',
+                    help='work in a detached worktree under build/refresh-triage/, not here')
     ap.add_argument('--force', action='store_true',
                     help='triage again even if today already has a report')
     a = ap.parse_args()
@@ -176,7 +193,8 @@ def main():
 
     print('triaging: %s (exit %s)' % (fail['step'], fail['exit']))
     cmd = ['claude', '-p', '--model', MODEL, '--permission-mode', 'acceptEdits', prompt]
-    r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    tree = own_tree(today) if a.own_tree else ROOT
+    r = subprocess.run(cmd, cwd=tree, capture_output=True, text=True)
     out = (r.stdout or '') + (('\n--- stderr ---\n' + r.stderr) if r.stderr else '')
 
     with open(report, 'w', encoding='utf-8') as fh:
@@ -186,8 +204,8 @@ def main():
         fh.write('Written by `scripts/triage_refresh.py` with `claude -p` (%s), under '
                  '`--permission-mode acceptEdits`: it can EDIT files and cannot run '
                  'commands, so it cannot commit, build or reproduce a failure. '
-                 'daily_refresh.sh commits whatever it leaves onto a dated `triage/` '
-                 'branch afterwards.\n\n---\n\n' % MODEL)
+                 'Its edits are left uncommitted in `%s`; review with '
+                 '`git -C %s diff`.\n\n---\n\n' % (MODEL, tree, tree))
         fh.write(out)
     cost = 0.0
     m = re.search(r'\$([\d.]+)', out)

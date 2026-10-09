@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """One run that brings the archive up to today, deterministically, and says what changed.
 
-    python3 scripts/refresh.py                # watch, fetch, write, rebuild; deploy nothing
-    python3 scripts/refresh.py --deploy       # ...and build the site and deploy it
+    python3 scripts/refresh.py                # watch, fetch, write, rebuild; commit and deploy nothing
+    python3 scripts/refresh.py --commit       # ...and commit ONLY the files it wrote; push when on main
+    python3 scripts/refresh.py --deploy       # ...and build the site and deploy it (implies --commit)
     python3 scripts/refresh.py --dry-run      # watch only; write nothing, fetch nothing
     python3 scripts/refresh.py --no-minutes   # skip the model step (costs money per meeting)
     python3 scripts/refresh.py --check        # every watcher's state holds together
@@ -31,7 +32,9 @@ THE ORDER, AND WHY IT CANNOT MOVE
                          errors resolved beside the as-heard reading, real differences flagged
   8. rebuild             the feed, the minutes payload, the notices, the index, the metrics
   9. push                the search index to D1, inside the day's write budget
- 10. deploy              only with --deploy. Rule 10: nothing deploys without being asked.
+ 10. commit              only the files this run wrote (refresh_git.py), replayed onto main
+ 11. deploy              only with --deploy, only from main's own commit, gated only on the
+                         generators this run executed. Rule 10: nothing deploys unasked.
 
 THE POLICY FILE IS THE APPROVAL. `sources/data/recording-minutes-policy.csv` names which
 boards, from which date, TJ has approved minutes for. Step 7 writes minutes for a
@@ -126,7 +129,8 @@ SITE_PAYLOADS = [
     'build_readme.py', 'build_app_metrics.py',
 ]
 
-# A FAILING CHECK THAT IS NOT STALENESS, and why. Everything else blocks the deploy.
+# A FAILING CHECK THAT IS NOT STALENESS, and why. Any other generator THIS RUN executed
+# blocks the deploy when it no longer reproduces (see scoped_gate).
 # Each entry has to say what it is instead, so this cannot quietly become the place a
 # real failure goes to be ignored.
 NOT_BLOCKING = {
@@ -147,25 +151,15 @@ NOT_BLOCKING = {
     'fetch_board_pages.py': 'compares the town\u2019s live board pages against the bytes our '
         'extract was read from. A change there is the TOWN editing a page, which is a thing '
         'to look at rather than a thing to rebuild',
-    'check_github_mirror.py': 'it asks whether files are COMMITTED, and this run commits '
-                              'AFTER the gate -- so it cannot pass at the moment the gate '
-                              'reads it, whatever the tree holds. daily_refresh.sh runs it '
-                              'after the push, which is where the question is answerable',
+    'check_github_mirror.py': 'it asks whether files are COMMITTED, which is a question '
+                              'about the repository rather than whether the site matches '
+                              'its data; the refresh does not run it',
 }
 
-# A GENERATOR A PERSON RUNS, AND WHY IT MAY NOT RUN HERE. These block the deploy when they
-# go stale -- the site would not match its data -- but the run must NOT fix them itself.
-# Every one was found on 29 September 2026 to DESTROY or MISSTATE data when run unattended.
-# Rebuilt earlier in the run, in step 8, for ordering reasons -- the meeting record has to
-# exist before anything that lists meetings reads it. Named here so the gate knows they were
-# already rebuilt and a still-stale one reads as a defect rather than as unclassified.
-STEP_8 = (
-    'extract_document_timestamps.py', 'build_meeting_register.py', 'build_meeting_feed.py',
-    'build_recording_minutes.py', 'build_notices.py', 'extract_personnel.py',
-    'build_open_seats.py', 'build_board_composition.py', 'build_town_personnel.py',
-    'build_boards.py', 'build_budget_feed.py', 'build_feeds.py',
-)
-
+# A GENERATOR A PERSON RUNS, AND WHY IT MAY NOT RUN HERE. The run must NOT fix these
+# itself: every one was found on 29 September 2026 to DESTROY or MISSTATE data when run
+# unattended. Since 9 October 2026 a stale one is REPORTED with this reason and never holds
+# the deploy -- the refresh never executes them, so the scoped gate cannot be about them.
 BY_HAND = {
     'extract_trust_balance_detail.py': 'ran unattended it DELETED a year of trust balances: '
         'its text-layer reader returns [] for `the heading is not here`, which the caller '
@@ -217,6 +211,10 @@ REFRESH_WRITES = {
     'district-budget': 'budget documents', 'town-budget': 'budget documents',
     'state-dls': 'state documents', 'state-dese': 'state documents',
     'town-supplementary': 'other town documents',
+    # The Attorney General's Open Meeting Law determinations, fetched WEEKLY by this run
+    # since 9 October 2026 (see oml_due). The statute and the guide in the same folder
+    # arrived by hand, and arrive no more often than the legislature acts.
+    'state-law': 'state documents',
     'analyses': 'analyses',                      # ours
 }
 # A SNAPSHOT IS ONE LOOK, NOT A PILE OF DOCUMENTS. TJ, 9 October 2026: the run reported 10
@@ -257,6 +255,12 @@ RUN_COLS = (['ran_at', 'as_of'] + ['new_' + k.replace(' ', '_') for k in FIRST_C
 
 
 TIMINGS = []          # (step, seconds, exit code) -- printed at the end and written to the run row
+# EVERY SCRIPT THIS RUN EXECUTED, by file name, whatever its arguments or exit code. This is
+# what scopes the deploy gate: only the --check of a generator THIS RUN ran may hold the
+# site back. Recorded where the subprocess is started, so it cannot drift from what ran --
+# a hand-kept list of `generators the refresh rebuilds` is exactly the shape of defect
+# CLAUDE.md names first. (TIMINGS cannot serve: its names carry positional arguments.)
+RAN = set()
 
 
 
@@ -284,6 +288,57 @@ def directory_due(root, as_of):
         return True
     gap = dt.date.fromisoformat(as_of) - dt.date.fromisoformat(max(days))
     return gap.days >= DIRECTORY_EVERY_DAYS
+
+
+# THE ATTORNEY GENERAL'S OPEN MEETING LAW DETERMINATIONS, WEEKLY. The archive's copy of the
+# AG's determination letters was walked by hand with `--all` on 8-9 October 2026, and
+# nothing was arranged to fetch the next one, which is the staff-directory gap again
+# (see directory_due): a corpus that silently stops at the day somebody last ran it.
+#
+# WEEKLY, AND GATED ON A STAMP RATHER THAN ON THE WEEKDAY, for the reason the directories
+# give: a run missed on its day would otherwise wait a full week. The stamp is written only
+# when the fetch EXITS 0, so a failed week is retried the next morning rather than skipped.
+# Network only -- plain HTTPS to the AG's portal, no model call -- and `--all --year` skips
+# every letter already held without asking the portal for it, so a quiet week costs the
+# walk past the last held number and no more.
+OML_EVERY_DAYS = 7
+OML_STAMP = os.path.join(ROOT, 'build', 'oml-determinations-last-fetch.txt')
+
+
+def oml_due(as_of):
+    try:
+        last = open(OML_STAMP, encoding='utf-8').read().strip()
+        gap = dt.date.fromisoformat(as_of) - dt.date.fromisoformat(last)
+    except (OSError, ValueError):
+        return True
+    return gap.days >= OML_EVERY_DAYS
+
+
+def oml_years(as_of):
+    """This year, and in January last year too: a letter issued on 30 December is numbered
+    in the old year and may not be posted until the new one."""
+    d = dt.date.fromisoformat(as_of)
+    return [d.year - 1, d.year] if d.month == 1 else [d.year]
+
+
+def fetch_oml(a, notes):
+    """-> whether it ran. Its failure is a NOTE, never fatal: the determinations are
+    reference material and have nothing to do with whether this morning's meetings reach
+    the site."""
+    if not oml_due(a.as_of):
+        return False
+    bad = [y for y in oml_years(a.as_of)
+           if py('fetch_oml_determinations.py', '--all', '--year', str(y),
+                 check=False).returncode != 0]
+    if bad:
+        notes.append('OML determinations: the weekly fetch failed for %s -- retried tomorrow; '
+                     'run fetch_oml_determinations.py --all --year %s'
+                     % (', '.join(map(str, bad)), bad[-1]))
+        return True
+    os.makedirs(os.path.dirname(OML_STAMP), exist_ok=True)
+    with open(OML_STAMP, 'w', encoding='utf-8') as fh:
+        fh.write(a.as_of + '\n')
+    return True
 
 
 def record_run(a, delta, deployed, state, notes=()):
@@ -319,6 +374,7 @@ def sh(args, check=True, quiet=False, **kw):
     r = subprocess.run(args, env=env, capture_output=quiet, text=True, **kw)
     secs = time.monotonic() - t0
     TIMINGS.append((name, secs, r.returncode))
+    RAN.add(os.path.basename(args[1] if 'python' in os.path.basename(args[0]) else args[0]))
     print('  [%s: %.1fs, exit %d]' % (name, secs, r.returncode), flush=True)
     if check and r.returncode != 0:
         if quiet:
@@ -369,6 +425,7 @@ def metered(script, *args, notes=None):
     rc = p.wait()
     secs = time.monotonic() - t0
     TIMINGS.append((script, secs, rc))
+    RAN.add(script)
     print('  [%s: %.1fs, exit %d]' % (script, secs, rc), flush=True)
     low = ''.join(seen[-200:]).lower()
     hit = next((w for w in HARD_LIMIT_WORDS if w in low), None)
@@ -547,7 +604,8 @@ def adopt_new_meeting_documents(as_of):
 WHERE_PAGE = {'sc-meetings': 'School Committee meeting documents', 'budget': 'budget page'}
 WHERE_FOLDER = {'district-budget': 'district site', 'town-budget': 'town site, budget and finance pages',
                 'town-supplementary': 'town site, other pages', 'state-dls': 'state, Division of Local Services',
-                'state-dese': 'state, DESE'}
+                'state-dese': 'state, DESE',
+                'state-law': 'state, Attorney General (Open Meeting Law determinations)'}
 DOC_INFO = {}
 
 
@@ -743,13 +801,13 @@ def back_up_documents(notes, why):
     Six agendas were in that state on 25 September.
 
     So it is called the moment documents land, not at the end. A run that dies after this
-    has already saved what it fetched, and the next run's `git reset --hard` and `git clean`
-    cannot take anything with them.
+    has already saved what it fetched. (The refresh no longer destroys anything at the top of
+    a run -- see refresh_git.py -- but a disk can still fail, and one copy is one copy.)
 
     AND A FAILED BACKUP IS NOW A NOTE, which reaches `refresh-runs.csv` and the
-    notification. It does not abort the run: the documents are still on disk and the gate at
-    the top of the NEXT run refuses to destroy anything while that is true, so the safe
-    thing is to carry on ingesting and tell somebody. A backup that fails silently is the
+    notification. It does not abort the run: the documents are still on disk, nothing in the
+    refresh deletes them, and the next run backs them up again, so the safe thing is to
+    carry on ingesting and tell somebody. A backup that fails silently is the
     only version of this that loses a document.
     """
     rc = py('sync_archive.py', '--manifest', check=False).returncode
@@ -760,9 +818,213 @@ def back_up_documents(notes, why):
     return rc == 0
 
 
+# ------------------------------------------------------------- COMMITTING WHAT IT WROTE
+# THE REFRESH RUNS IN THE WORKING TREE A PERSON IS USING, on whatever branch is checked out
+# (TJ, 8 October 2026: *"refresh should work in whatever branch we're currently on"*). So it
+# commits ONLY what it wrote, puts back anything of somebody else's it overwrote, and
+# reaches main by replay rather than by a side branch. The mechanics, and why each rule
+# exists, are in refresh_git.py; this is where the run calls them.
+#
+# CALLED TWICE: once before the deploy gate, so the gate and the deploy judge the commit
+# that is actually on main, and once at the very end for the run row, which cannot know
+# whether it deployed until after. A run that DIES is committed too (see main), because
+# what it fetched is real and the old shell wrapper committed a failed run as well -- left
+# uncommitted, tomorrow's run would find it dirty and treat it as somebody else's work.
+def commit_run(a, notes, ctx, why):
+    import refresh_git as G
+    base = ctx.get('base')
+    if base is None:
+        return
+    try:
+        ours, blocked, appended = G.settle(ROOT, base)
+        for p in appended:
+            note = ('%s held uncommitted rows, so the rows this run appended stay '
+                    'uncommitted with them (nothing set aside)' % p)
+            if note not in notes:
+                notes.append(note)
+        new_blocked = [p for p in blocked if p not in ctx['blocked']]
+        ctx['blocked'].extend(new_blocked)
+        if new_blocked:
+            # NOT YET REFRESHABLE, NOT FAILED. TJ, 8 October 2026: *"just mark that page as
+            # a block and move on."* Every one is listed in the log; the note names a few.
+            print('\n  NOT YET REFRESHABLE -- the refresh overwrote these, and they held '
+                  'uncommitted changes it did not make; their owner’s version is back in '
+                  'place, the refresh’s is kept in %s/conflicts/'
+                  % os.path.relpath(base.store, ROOT))
+            for p in new_blocked:
+                print('    not yet refreshable: %s has uncommitted changes the refresh did '
+                      'not make' % p)
+            notes.append('not yet refreshable: %d file(s) have uncommitted changes the '
+                         'refresh did not make, so its version was set aside: %s%s'
+                         % (len(new_blocked), ', '.join(new_blocked[:6]),
+                            ' ...' if len(new_blocked) > 6 else ''))
+        reason = G.operation_in_progress(ROOT)
+        if not G.branch(ROOT) or reason:
+            if ours and not ctx.get('said_uncommitted'):
+                ctx['said_uncommitted'] = True
+                notes.append('NOT COMMITTED: %s, so the refresh left its %d file(s) in the '
+                             'working tree' % ('a %s is in progress' % reason if reason
+                                               else 'HEAD is detached', len(ours)))
+            ctx['push'] = 'uncommitted'
+            return
+        last = read_csv(RUNS)
+        found = ', '.join('%s=%s' % (k[4:], v) for k, v in (last[-1] if last else {}).items()
+                          if k.startswith('new_') and v and v != '0') or 'nothing new'
+        msg = ('Daily refresh, %s%s\n\n%s\n\nAutomated by scripts/refresh.py: only the %d '
+               'file(s) this run wrote.' % (a.as_of, '' if why == 'data' else ' (%s)' % why,
+                                           found, len(ours)))
+        sha = G.commit(ROOT, ours, msg)
+        if sha:
+            print('  committed %d file(s) the refresh wrote, as %s' % (len(ours), sha[:8]))
+        status, detail = G.publish(ROOT)
+        ctx['push'] = status
+        print('  %s: %s' % (status, detail))
+        if status == 'not-main':
+            note = 'not deployed: on branch %s' % (G.branch(ROOT) or 'detached')
+            if note not in notes:
+                notes.append(note)
+        elif status not in ('pushed', 'nothing'):
+            notes.append('NOT PUSHED (%s): %s' % (status, detail))
+    except G.GitError as e:
+        ctx['push'] = 'failed'
+        notes.append('COMMIT FAILED: %s' % e)
+        print('  COMMIT FAILED: %s' % e)
+
+
+# ------------------------------------------------------------- THE SCOPED DEPLOY GATE
+def scoped_gate(notes):
+    """-> True when every generator THIS RUN executed still reproduces its output.
+
+    IT USED TO BE ALL OF THEM. Any failing check in check_generated held the site back, so
+    on 8 October 2026 fourteen unrelated stale outputs -- state aid, the money flow, the
+    README -- kept that morning's new meetings off the site. A stale page this run never
+    touched is no less stale for being withheld with everything else, and withholding the
+    meetings fixes nothing about it.
+
+    SO ONLY THE RUN'S OWN GENERATORS BLOCK (RAN, recorded where each was started); every
+    other failure is REPORTED, with its reason, and never blocks. The whole check still
+    runs, because the report is how somebody learns a page elsewhere has gone stale.
+    """
+    chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
+                         cwd=ROOT, capture_output=True, text=True)
+    # The whole output is read, never its tail: fifteen of twenty-three failures went
+    # unread on 29 September 2026 because a person read the report through `tail -25`.
+    failing = []
+    for line in (chk.stdout or '').splitlines():
+        if not line.startswith('  FAIL'):
+            continue
+        parts = line.split(None, 2)
+        failing.append((parts[1] if len(parts) > 1 else '?',
+                        (parts[2] if len(parts) > 2 else '').strip()))
+    blocking = [(n, w) for n, w in failing if n in RAN and n not in NOT_BLOCKING]
+    reported = [(n, w) for n, w in failing if (n, w) not in blocking]
+    if reported:
+        notes.append('stale elsewhere, reported and NOT blocking: %d output(s): %s'
+                     % (len(reported), ', '.join(sorted({n for n, _ in reported}))))
+        print('  STALE ELSEWHERE -- reported, never blocking:')
+        for name, why in sorted(reported):
+            tag = ('[a person runs this: %s]' % BY_HAND[name][:70] if name in BY_HAND else
+                   '[not blocking: %s]' % NOT_BLOCKING[name][:70] if name in NOT_BLOCKING else
+                   '[this run did not execute it]')
+            print('      %-34s %s  %s' % (name, why[:80], tag))
+    if blocking:
+        notes.append('DID NOT DEPLOY: %d output(s) THIS RUN rebuilt still do not reproduce '
+                     'from their inputs -- a defect in the refresh, or an input holding '
+                     'uncommitted changes: %s'
+                     % (len(blocking), ', '.join(sorted(n for n, _ in blocking))))
+        print('  NOT deploying -- executed by this run and still stale:')
+        for name, why in sorted(blocking):
+            print('      %-34s %s' % (name, why[:104]))
+        return False
+    print('  every generator this run executed (%d scripts) reproduces its output; safe to '
+          'deploy' % len(RAN))
+    return True
+
+
+# ONE SITE BUILD AT A TIME. `npm run build:site` writes a shared dist/ and binds a fixed
+# Chrome port (CLAUDE.md, "Several agents in one working tree"), and check-then-build
+# races. So: an flock -- released by the kernel if this process dies, so it cannot go
+# stale -- and, for a build somebody started by hand without the lock, a wait on the
+# process itself. The patterns are BRACKETED so pgrep cannot match its own argv:
+# unbracketed, this exact kind of wait reported a builder that was itself, forever.
+BUILD_LOCK = os.path.join(ROOT, 'build', 'site-build.lock')
+BUILD_WAIT_S = 30 * 60
+
+
+def acquire_build_lock(notes):
+    import fcntl
+    import time
+    os.makedirs(os.path.dirname(BUILD_LOCK), exist_ok=True)
+    fh = open(BUILD_LOCK, 'a+')
+    t0 = time.monotonic()
+    while True:
+        busy = subprocess.run(['pgrep', '-f', '[v]ite build|[s]cripts/prerender.mjs'],
+                              capture_output=True).returncode == 0
+        if not busy:
+            try:
+                fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                return fh
+            except BlockingIOError:
+                pass
+        if time.monotonic() - t0 > BUILD_WAIT_S:
+            fh.close()
+            notes.append('DID NOT DEPLOY: another site build was running for %d minutes'
+                         % (BUILD_WAIT_S // 60))
+            return None
+        time.sleep(15)
+
+
+def deploy_allowed(notes, ctx):
+    """Every condition a deploy needs, each refusal a NOTE rather than a printed line -- a
+    note reaches refresh-runs.csv, the dashboard and the notification, and the old refusal
+    was one line in a 1,600-line log while the run exited 0.
+
+    1. THE BRANCH IS main. Anywhere else the run ingests, commits locally and reports
+       `not deployed: on branch X` (15 September 2026: a refresh built a feature branch and
+       Cloudflare put the deploy on a preview alias while the log said "deployed").
+    2. THE COMMIT REACHED origin/main, AND HEAD IS EXACTLY origin/main. A NAME IS NOT THE
+       FACT: from 23 September 2026 the refresh pushed to main and then silently refused to
+       deploy for four days because it tested the branch NAME of a detached HEAD. What
+       matters is whether this commit is the one main points at.
+    3. NO SITE FILE HOLDS SOMEBODY ELSE'S UNCOMMITTED WORK. The build reads fy28/ from the
+       working tree, and this tree is a person's: a dirty file there would be shipped to
+       production without ever being committed. Refused and named, never cleaned.
+    4. EVERY GENERATOR THIS RUN EXECUTED REPRODUCES -- see scoped_gate.
+    """
+    import refresh_git as G
+    b = G.branch(ROOT)
+    if b != 'main':
+        note = 'not deployed: on branch %s' % (b or 'detached')
+        if note not in notes:
+            notes.append(note)
+        return False
+    if ctx.get('push') not in ('pushed', 'nothing'):
+        notes.append('DID NOT DEPLOY: the refresh commit did not reach origin/main (%s)'
+                     % ctx.get('push'))
+        return False
+    head = G.head(ROOT)
+    origin_main = G.git(ROOT, 'rev-parse', 'refs/remotes/origin/main', check=False).stdout.strip()
+    if not head or head != origin_main:
+        notes.append('DID NOT DEPLOY: this tree is at %s and origin/main is at %s, so the '
+                     'build would not be main’s own commit' % (head[:8] or '?',
+                                                                origin_main[:8] or '?'))
+        return False
+    site_dirty = [p for p in G.dirty_paths(ROOT) if p.startswith('fy28/')]
+    if site_dirty:
+        notes.append('DID NOT DEPLOY: %d file(s) under fy28/ hold uncommitted changes the '
+                     'refresh did not make, and the build would ship them: %s%s'
+                     % (len(site_dirty), ', '.join(site_dirty[:5]),
+                        ' ...' if len(site_dirty) > 5 else ''))
+        return False
+    return scoped_gate(notes)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--deploy', action='store_true')
+    ap.add_argument('--deploy', action='store_true',
+                    help='commit, push, and build and deploy the site (implies --commit)')
+    ap.add_argument('--commit', action='store_true',
+                    help='commit ONLY the files this run wrote, and push them when on main')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-minutes', action='store_true')
     ap.add_argument('--no-push', action='store_true', help='skip the search index push to D1')
@@ -779,8 +1041,33 @@ def main():
             bad += py(s, *args, check=False).returncode != 0
         return 1 if bad else 0
 
-    before = inventory()
+    # THE BASELINE FIRST, before the run writes a byte: what is dirty now is somebody
+    # else's, and a copy of it goes into build/ so nothing the run overwrites is lost.
+    a.commit = (a.commit or a.deploy) and not a.dry_run
+    ctx = {'base': None, 'blocked': [], 'push': None}
+    if a.commit:
+        import refresh_git as G
+        ctx['base'] = G.Baseline.take(ROOT)
+        print('baseline: branch %s at %s; %d path(s) already hold uncommitted work and will '
+              'not be committed by this run' % (ctx['base'].branch or '(detached)',
+                                                ctx['base'].head[:8], len(ctx['base'].dirty)))
     notes = []
+    finished = False
+    try:
+        rc = run(a, notes, ctx)
+        finished = True
+        return rc
+    finally:
+        if not finished and ctx['base'] is not None and not ctx.get('done'):
+            # A RUN THAT DIES STILL COMMITS WHAT IT FETCHED -- see commit_run. No deploy.
+            print('\nthe run stopped early; committing what it had written')
+            commit_run(a, notes, ctx, 'stopped early')
+            for n in notes:
+                print('  note: ' + n)
+
+
+def run(a, notes, ctx):
+    before = inventory()
 
     # 0. THE TREE IS MADE WHOLE BEFORE ANYTHING COUNTS IT.
     #
@@ -882,6 +1169,11 @@ def main():
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).
     py('watch_feeds.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+
+    # 3g. The Attorney General's Open Meeting Law determinations, weekly -- see oml_due.
+    if not a.dry_run:
+        if fetch_oml(a, notes) and not a.no_push:
+            back_up_documents(notes, 'after the OML determinations')
 
     # 4-6. The town's recordings.
     py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
@@ -1098,114 +1390,6 @@ def main():
         json.dump(found, fh, indent=1, ensure_ascii=False)
     os.replace(tmp, os.path.join(found_dir, '%s%s.json' % (a.as_of, '-dry-run' if a.dry_run else '')))
 
-    # 10. The site, only when asked -- AND ONLY IF IT REPRODUCES.
-    deployed = False
-    # A STALE TREE MAY NOT SHIP. check_generated runs every generator's own --check and
-    # fails if an output no longer reproduces from its inputs. That is exactly the question
-    # `is this site consistent with its data` and the refresh never asked it: on 29
-    # September 2026 one refresh commit carried twenty-five stale public payloads to
-    # production, and every run that did it exited 0.
-    #
-    # The whole output is read, never its tail. Fifteen of twenty-three failures went
-    # unread that morning because a person was reading a 259-line report through `tail -25`.
-    if a.deploy and not a.dry_run:
-        chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
-                             cwd=ROOT, capture_output=True, text=True)
-        # AND WHY, NOT JUST WHICH. The first cut printed the names alone, so the log said
-        # fourteen outputs were stale and nothing said what any of them wanted -- and two
-        # of the fourteen turned out not to be staleness at all. A refusal a person cannot
-        # act on is most of the way to a refusal a person learns to ignore.
-        stale = []
-        for line in (chk.stdout or '').splitlines():
-            if not line.startswith('  FAIL'):
-                continue
-            parts = line.split(None, 2)
-            name = parts[1] if len(parts) > 1 else '?'
-            why = (parts[2] if len(parts) > 2 else '').strip()
-            if name not in NOT_BLOCKING:
-                stale.append((name, why))
-        # THREE KINDS OF STALE, and the third is the one that matters. A generator the run
-        # already rebuilt and which is STILL stale is a real defect in this pipeline. One a
-        # person must run is named with the reason it may not run here. And one that is in
-        # NEITHER list is UNCLASSIFIED -- nobody has ever decided whether the refresh may
-        # touch it -- which is how the list stayed incomplete for as long as it did: it was
-        # only ever extended when somebody noticed a deploy had shipped stale.
-        #
-        # The classification completes itself from real events rather than from a guess at
-        # all 158 checks: an unclassified generator blocks, is named, and asks to be put in
-        # one of the two lists. Safe by default, and the list grows only where it must.
-        if stale:
-            made = set(SITE_PAYLOADS) | set(STEP_8)
-            rebuilt = [(n, w) for n, w in stale if n in made]
-            by_hand = [(n, w) for n, w in stale if n in BY_HAND]
-            unknown = [(n, w) for n, w in stale if n not in made and n not in BY_HAND]
-            notes.append('DID NOT DEPLOY: %d generated output(s) no longer reproduce from '
-                         'their inputs, so the site would not match its own data: %s'
-                         % (len(stale), ', '.join(sorted(n for n, _ in stale))))
-            print('  NOT deploying: %d stale generated output(s)' % len(stale))
-            for label, group in (('REBUILT BY THIS RUN AND STILL STALE -- a defect here',
-                                  rebuilt),
-                                 ('A PERSON RUNS THESE', by_hand),
-                                 ('UNCLASSIFIED -- decide whether the refresh may rebuild '
-                                  'it, then add it to SITE_PAYLOADS or BY_HAND', unknown)):
-                if not group:
-                    continue
-                print('    %s' % label)
-                for name, why in sorted(group):
-                    print('      %-34s %s' % (name, why[:104]))
-                    if name in BY_HAND:
-                        print('      %-34s   because %s' % ('', BY_HAND[name][:88]))
-            a.deploy = False
-        else:
-            print('  every generated output reproduces; safe to deploy')
-    # DEPLOY ONLY FROM MAIN, or from the refresh tree's branch that IS main. Cloudflare
-    # Pages sends any other branch to a preview alias and the log would still say
-    # "deployed" -- which is exactly what happened on 15 September 2026.
-    if a.deploy and not a.dry_run:
-        # DEPLOY WHEN THE CONTENT IS MAIN'S, NOT WHEN THE BRANCH IS NAMED main.
-        #
-        # This used to test `git rev-parse --abbrev-ref HEAD` against ('main', 'refresh'),
-        # and the refresh worktree sits on a DETACHED HEAD on purpose so it cannot move
-        # main's pointer. A detached HEAD reports as `HEAD`, which matched neither -- so the
-        # refresh committed and pushed to main and then silently refused to deploy, in every
-        # run from 23 September 2026 onward. Production served 21 September's site for four
-        # days while the data kept moving, and both runs exited 0 saying `committed and
-        # pushed to main`.
-        #
-        # A NAME IS NOT THE FACT. What matters is whether the tree's commit is the one main
-        # points at, so that is what is tested: Cloudflare Pages sends anything else to a
-        # preview alias while the log still says "deployed", which is what happened on 15
-        # September. A branch called `main` that has drifted from origin/main is no safer
-        # than a detached HEAD that has not.
-        head = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
-                              capture_output=True, text=True).stdout.strip()
-        origin_main = subprocess.run(['git', 'rev-parse', 'origin/main'], cwd=ROOT,
-                                     capture_output=True, text=True).stdout.strip()
-        branch = subprocess.run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], cwd=ROOT,
-                                capture_output=True, text=True).stdout.strip()
-        if not head or head != origin_main:
-            # A NOTE, NOT JUST A PRINTED LINE. The old refusal was one line in a 1,600-line
-            # log and the run still exited 0 -- which is the shape of every silent failure
-            # this project has been bitten by. A note reaches refresh-runs.csv, the status
-            # dashboard and the notification.
-            notes.append('DID NOT DEPLOY: this tree is at %s and origin/main is at %s, so '
-                         'the build would go to a preview alias rather than production'
-                         % (head[:8] or '?', origin_main[:8] or '?'))
-            print('  NOT deploying: HEAD is %s and origin/main is %s (branch %r). Only '
-                  'main\u2019s own commit deploys to production; anything else lands on a '
-                  'preview alias while the log says "deployed".'
-                  % (head[:8] or '?', origin_main[:8] or '?', branch))
-            a.deploy = False
-    if a.deploy and not a.dry_run:
-        sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
-        # `--branch main`, NAMED. Wrangler takes production-or-preview from the git branch,
-        # and this tree's branch is `refresh` even when its commit is exactly main's -- on
-        # 9 October 2026 a hand deploy from here went to `refresh.lunenburg-fy28.pages.dev`
-        # while production kept the old site. The guard above already refuses anything but
-        # main's own commit, so naming the branch only says what is already true.
-        sh(['npx', 'wrangler', 'pages', 'deploy', '--branch', 'main'], cwd=os.path.join(ROOT, 'fy28'))
-        deployed = True
-
     # THE ROW GOES IN BEFORE THE RISKY PART, NOT AFTER IT.
     #
     # It used to be appended at the very end, so a run that died anywhere earlier left
@@ -1216,15 +1400,47 @@ def main():
     # A registry written only by success cannot record a failure, which is the one thing
     # it most needs to record. So the row is written here, marked `incomplete`, and
     # updated to the finished state at the end. A run that dies now leaves its own
-    # tombstone with what it had found before it went.
+    # tombstone with what it had found before it went. The notices and what's-new go with
+    # it, BEFORE the commit, because the site serves both and the deploy below builds what
+    # was committed.
     if not a.dry_run:
-        record_run(a, delta, deployed=False, state='incomplete')
+        record_run(a, delta, deployed=False, state='incomplete', notes=notes)
         write_to_post(a.as_of)
         payload = whats_new(a.as_of)
         with open(WHATS_NEW, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
             fh.write('\n')
+
+    # COMMIT WHAT THIS RUN WROTE, AND ONLY THAT, BEFORE ANYTHING JUDGES A DEPLOY. The old
+    # order deployed the uncommitted working tree and committed afterwards in the shell
+    # wrapper, which was safe only because that tree was reset to main each morning. This
+    # tree is a person's, so the site must be built from what is on main.
+    if a.commit:
+        commit_run(a, notes, ctx, 'data')
+
+    # 10. The site, only when asked -- and see deploy_allowed for every condition.
+    deployed = False
+    if a.deploy and not a.dry_run and deploy_allowed(notes, ctx):
+        lock = acquire_build_lock(notes)
+        if lock is not None:
+            try:
+                sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
+                # `--branch main`, NAMED. Wrangler takes production-or-preview from the git
+                # branch; on 9 October 2026 a hand deploy from a tree on another branch went
+                # to `refresh.lunenburg-fy28.pages.dev` while production kept the old site.
+                # deploy_allowed already refuses anything but main's own commit, so naming
+                # the branch only says what is already true.
+                sh(['npx', 'wrangler', 'pages', 'deploy', '--branch', 'main'],
+                   cwd=os.path.join(ROOT, 'fy28'))
+                deployed = True
+            finally:
+                lock.close()
+
+    if not a.dry_run:
         record_run(a, delta, deployed, 'ok', notes)
+        if a.commit:
+            commit_run(a, notes, ctx, 'run row')
+        ctx['done'] = True
 
     # THE DOCUMENTS FIRST. WHAT CAME IN, WHAT WE MADE, THEN THE CLOCK.
     #
@@ -1273,7 +1489,7 @@ def main():
 
     for n in notes:
         print('\n  note: ' + n)
-    print('\n  deployed' if deployed else '\n  NOT deployed (pass --deploy)')
+    print('\n  deployed' if deployed else '\n  NOT deployed%s' % ('' if a.deploy else ' (pass --deploy)'))
 
     # The clock last, because it is about US and not about the town.
     print('\n  --- where the time went ---')
