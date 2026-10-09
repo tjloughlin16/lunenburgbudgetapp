@@ -3801,9 +3801,19 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 _EDITION_RE = re.compile(r'^(?P<stem>.+)-\d{4}-\d{2}-\d{2}(?:-[0-9a-f]{12})?(?P<ext>\.[A-Za-z0-9]+)$')
 
 
+# ...AND THE SAME DOCUMENT UNDER A DATED FOLDER. ingest.land_version() (9 October 2026)
+# keeps every version of a file its publisher overwrites in place as `<dir>/<YYYY-MM-DD>/
+# <name>`, beside the working copy `<dir>/<name>`. That is another edition of the catalogued
+# document by the same reasoning, and the entry for `<dir>/<name>` covers it.
+_DATED_DIR_RE = re.compile(r'^(?P<dir>.+)/\d{4}-\d{2}-\d{2}/(?P<name>[^/]+)$')
+
+
 def is_edition(rel, catalogued):
     m = _EDITION_RE.match(rel)
-    return bool(m) and (m.group('stem') + m.group('ext')) in catalogued
+    if m and (m.group('stem') + m.group('ext')) in catalogued:
+        return True
+    d = _DATED_DIR_RE.match(rel)
+    return bool(d) and '%s/%s' % (d.group('dir'), d.group('name')) in catalogued
 
 
 # A FAMILY OF EXPORTS THAT IS ONE DOCUMENT IN SEVENTY-TWO PIECES.
