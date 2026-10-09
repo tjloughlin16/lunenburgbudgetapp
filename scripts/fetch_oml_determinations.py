@@ -106,6 +106,12 @@ def lookup(number):
     hits = [x for x in d.get('Data') or [] if x['Name'].startswith('DETERMINATION')]
     if not hits and TOLERANT:
         return None, None, None                 # --all walks numbers; a gap is not an error
+    if len(hits) > 1 and TOLERANT:
+        # ONE NUMBER, SEVERAL ENTRIES: OML 2012-5 is listed twice under the same name
+        # (found 9 Oct 2026, when it ended the overnight walk). fetch_one fetches each and
+        # keeps a second only if its bytes differ -- a duplicate is not a second letter.
+        return [(x['ID'], x['Name'], dict(zip(heads, [v['Value'] for v in x.get('DisplayColumnValues') or []])))
+                for x in hits], None, None
     if len(hits) != 1:
         raise SystemExit('%s: the portal returned %d determinations, expected 1: %s'
                          % (number, len(hits), [x['Name'] for x in d.get('Data') or []]))
@@ -147,10 +153,29 @@ def fetch_one(number, rows, today):
     doc_id, name, cols = lookup(number)
     if doc_id is None:
         return 'gap'
+    if isinstance(doc_id, list):
+        seen, result = set(), 'gap'
+        for i, (one_id, one_name, one_cols) in enumerate(doc_id):
+            url, status, disp, blob = download(one_id)
+            h = hashlib.sha256(blob).hexdigest() if blob else ''
+            if not blob.startswith(b'%PDF') or h in seen:
+                continue
+            seen.add(h)
+            r = land_one(number if not seen - {h} else '%s (%s)' % (number, chr(97 + i)),
+                         did if len(seen) == 1 else '%s-%s' % (did, chr(97 + i)),
+                         url, disp, blob, one_cols, rows, today)
+            result = 'ok' if r == 'ok' or result == 'ok' else r
+        return result
     url, status, disp, blob = download(doc_id)
     if status != 200 or not blob.startswith(b'%PDF'):
         print('  !! %-14s HTTP %s, not a PDF' % (number, status), flush=True)
         return 'failed'
+    return land_one(number, did, url, disp, blob, cols, rows, today)
+
+
+def land_one(number, did, url, disp, blob, cols, rows, today):
+    """Land, extract and catalogue one fetched letter under `did`."""
+    import ingest
     pub = F.publisher_filename(url, disp, 'application/pdf')
     key = 'state-law/%s/determinations/%s' % (today, F.archival_name(pub))
     ok, reason = ingest.land(key, blob, url)
@@ -211,7 +236,9 @@ def fetch_all(first_year=2010, last_year=None):
             number = 'OML %d-%d' % (year, n)
             try:
                 r = fetch_one(number, rows, today)
-            except Exception as e:                   # noqa: BLE001 -- one letter must not end the walk
+            except (Exception, SystemExit) as e:     # noqa: BLE001 -- one letter must not end the walk
+                # SystemExit too: lookup() raises it on a portal answer it does not expect,
+                # and on 8 October that ended the whole walk at OML 2012-5 overnight.
                 print('  !! %-14s %s' % (number, str(e)[:120]), flush=True)
                 r = 'failed'
             totals[r] += 1
