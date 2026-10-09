@@ -112,7 +112,7 @@ def clock(ts):
 # which PROCESS is costing money right now.
 #
 # So the parent stays green and names its spend as a figure; the child carries the tag.
-AGENTIC = {'Writing up a recorded meeting', 'Reading the votes out of the town’s minutes', 'Backlog sweep', 'Reading what a budget meeting decided'}
+AGENTIC = {'Writing up a recorded meeting', 'Reading the town’s official minutes', 'Backlog sweep', 'Reading what a budget meeting decided'}
 
 # WHAT EACH JOB IS, IN ONE LINE A PERSON WOULD SAY. TJ, 19 September 2026: "I think these
 # steps need descriptions too, short descriptions. the 'votes' one keeps getting me."
@@ -140,9 +140,10 @@ WATCHED = [
     ('Writing up a recorded meeting', r'[w]rite_recording_minutes\.py',
      'Our record of what happened, from our captions: decisions, votes, transfers, '
      'topics, public comment. Used where the town published no minutes at all.', False),
-    ('Reading the votes out of the town’s minutes', r'[e]xtract_official_votes\.py',
-     'Just the votes, each with the town’s own words quoted. Nothing else from the '
-     'document — their minutes are already the record.', False),
+    ('Reading the town’s official minutes', r'[e]xtract_official_votes\.py',
+     'The whole meeting as the town recorded it: attendees, votes, decisions, budget items, '
+     'transfers, public comment, topics, each quoted verbatim. Structured reads since 6 '
+     'October 2026; before that it took the votes only.', False),
     ('Reading what a budget meeting decided', r'[w]rite_budget_state\.py',
      'Reads a budget meeting and records what it put on the record: the deficit, the '
      'cuts, the proposals. Feeds the budget season page.', False),
@@ -279,8 +280,8 @@ STEP_WORDS = {
     # --- writing
     'write_recording_minutes': ('Writing up a recorded meeting',
         'Our record of what happened, from our captions: decisions, votes, transfers, topics, public comment.'),
-    'extract_official_votes': ('Reading the votes out of the town’s minutes',
-        'Each vote with the town’s own words quoted, so votes can be counted and checked.'),
+    'extract_official_votes': ('Reading the town’s official minutes',
+        'The whole meeting as the town recorded it, each item quoted verbatim.'),
     'write_budget_state': ('Reading what a budget meeting decided',
         'The deficit, the cuts and the proposals a meeting put on the record.'),
     'write_document_budget_state': ('Reading what a new budget document says',
@@ -2440,7 +2441,7 @@ def done_today():
          len(re.findall(r'written \(\$', text)) + sum(1 for r in spend if r['stream'] == 'minutes'),
          spend_at('minutes'))
     # The unit is a SET OF MINUTES READ, never a vote counted -- see FOUND_PATTERNS.
-    card('Reading the votes out of the town’s minutes', 'sets of minutes read',
+    card('Reading the town’s official minutes', 'sets of minutes read',
          len(re.findall(r'wrote \d+ vote', text)) + sum(1 for r in spend if r['stream'] == 'votes'),
          spend_at('votes'))
 
@@ -2463,7 +2464,7 @@ def done_today():
     # registry card is the better of the two because it counts what landed.
     named = {c['name'] for c in out}
     counted = {'write_recording_minutes': 'Writing up a recorded meeting',
-               'extract_official_votes': 'Reading the votes out of the town’s minutes',
+               'extract_official_votes': 'Reading the town’s official minutes',
                'ocr_scanned_minutes': 'Reading scanned minutes',
                'fetch_youtube_transcripts': 'Fetching captions'}
     runs = collections.Counter()

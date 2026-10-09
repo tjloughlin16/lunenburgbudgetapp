@@ -40,7 +40,13 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
   fi
   # ONCE A DAY, WHENEVER THE MACHINE IS ON. launchd fires this at 7:00 and again at every
   # login/boot (RunAtLoad); the guard makes the second firing a no-op on a day that ran.
-  if grep -q "=== finished" "$LOG" 2>/dev/null; then
+  #
+  # A FAILED RUN HAS NOT RUN. A run that dies still prints `=== finished`, so this guard used
+  # to treat the 9 October failure (exit 1 at 07:00:03, nothing fetched) as the day's run,
+  # and every later firing -- at login, or by hand once the cause was fixed -- did nothing.
+  # The day is done only when the LAST `refresh exit` it logged is 0.
+  if grep -q "=== finished" "$LOG" 2>/dev/null \
+     && [ "$(grep '^refresh exit ' "$LOG" | tail -1)" = "refresh exit 0" ]; then
     echo "already ran today ($(date)); nothing to do" >> "$LOG"
     exit 0
   fi
