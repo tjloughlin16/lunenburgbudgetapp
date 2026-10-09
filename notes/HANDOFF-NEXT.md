@@ -30,15 +30,18 @@ work.
 
 ## Open work, in rough priority order
 
-1. **The weekly pacing line -- APPROVED, NOT BUILT** (TJ, 9 Oct: "Yes ok let's build
-   that!"). `process_meeting.py --week-line`: start a meeting only while the server's
-   seven_day utilization is under `goal x hours-since-reset/168` (goal 90%, rising to 100%
-   in the last 24 h before the reset) AND the 5-hour window is under 80%. Interactive use
-   counts against the same bars, so the batch throttles itself -- TJ: "I just use capacity
-   and the minutes fills in the rest." Week resets Thu 23:00 (seven_day.resets_at; the
-   governor does not record it yet). Always running, one serial stream, newest first; a
-   dashboard line actual-vs-target. At 12:30 Fri: 19% used vs a line of 8%, so nothing
-   should start before ~Sat 07:00.
+1. **The weekly pacing line -- BUILT AND RUNNING** (`1bbb53bb`, `810b613b`).
+   `process_meeting.py --until-usage --week-line 90 --session-cap 80 --max-jobs 1`, kept
+   alive by launchd (`ops/org.lunenburgbudgetproject.minutes-pacing.plist` ->
+   `scripts/minutes_pacing.sh`: login, every 30 min, and on wake). Waits whenever the weekly
+   bar is at or over `90% x week elapsed` (climbing to 100% over the last day); reads the
+   bars every 30 min waiting, 10 min running. A deliberate stop writes
+   `build/minutes-pacing.STOPPED` and is not restarted until removed; `build/STOP-METERED`
+   stops everything. Log: `build/process-meeting-week-<date>.log`; launcher log
+   `build/minutes-pacing.log`; dashboard "Weekly pacing" card. FIRST REAL FILL expected
+   ~Sat 10 Oct 12:20 -- check it started meetings. ITS OUTPUT ACCUMULATES UNCOMMITTED in
+   this tree (official-votes/, recording-minutes/, budget-state/): commit it daily.
+   Cosmetic: the "projection ~N meetings" line counts the 5-hour window only.
 2. **D1 sync, bug 3 of 3 -- a decision.** Fixed today: the journal's malformed foreign key
    (`build_db.py`, now `(source, key)`), and parents sent after their children
    (`d1_incremental.py`). Still failing: rebuilding `document` (2,595 local rows vs 1,420 in
