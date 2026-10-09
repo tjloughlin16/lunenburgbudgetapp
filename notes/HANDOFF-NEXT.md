@@ -82,7 +82,7 @@ work.
    selection, probably). When the full report lands: 13e gate, tie journal lines to the
    printed totals per account, then the kindergarten para accounts, the 82 budget changes,
    and the special-education overrun.
-9. The journal export (13e gate), the OML index (model-free parts), MUNIS Part 2, an
+9. the OML index (model-free parts), MUNIS Part 2, an
    off-machine backup, the 9 MUNIS PDFs to publish -- unchanged from the 07:30 list.
 
 ## Done on 9 October (all on origin/main)
