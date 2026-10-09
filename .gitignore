@@ -207,3 +207,5 @@ notes/outbound/sent-2026-10/*.pdf
 # was archived under the encoded text with no extension (OML 2023-243). It is a PDF, in the
 # bucket like every other letter; this keeps it out of git the way sources/**/*.pdf keeps the rest.
 sources/state-law/*/determinations/utf-8-b-*
+# Isolated worktrees Claude Code agents work in; their work arrives as merged commits.
+.claude/worktrees/
