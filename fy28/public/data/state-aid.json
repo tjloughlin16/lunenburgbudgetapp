@@ -389,6 +389,24 @@
    "side": "money_in",
    "what": "Why the general fund\u2019s starting budget grew more slowly than the levy limit, FY2010 to FY2025",
    "why": "Measured from the general fund history against the Division of Local Services\u2019 certified levy limits, the whole starting budget grew more slowly each year, on average, than the levy limit did \u2014 even with the FY2025 override taken back out of the limit. Three readings fit: the rest of the revenue (state aid, local receipts, free cash) grew more slowly than the levy; the town levied below its limit; or money raised under the limit went outside the general fund operating budget, to capital articles or enterprise subsidies. They imply different things about how much room the levy has left. Measured in /analysis/department-budgets."
+  },
+  {
+   "closes": "the district's FY2024 End of Year Financial Report as submitted to DESE (Schedule 1 by fund), or the school special funds year-end report for any fund other than 2640 that paid tuition in FY2024.",
+   "side": "money_in",
+   "what": "Why does DESE's FY2024 figure for out-of-district tuition paid from funds other than the general fund exceed what the circuit breaker account paid by exactly the FY2024 circuit breaker payment?",
+   "why": "DESE's End of Year Financial Report reports FY2024 tuition (functions 9300 and 9400) paid from funds other than the general fund. The town's year-end report for the school special funds shows what the circuit breaker account (fund 2640) paid in tuition that year. The remainder between the two is, to the dollar, the circuit breaker payment DESE's reimbursement file lists for FY2024; in FY2023 and FY2025 the remainder is small. The figures are computed, not typed, in the report's payload under circuit_breaker.unexplained. It may be a coincidence, a second fund, or the receipt reported as an expenditure; nothing in this archive distinguishes them, so /analysis/special-education-costs shows the figure as 'other funds' and says it cannot explain it. Computed in scripts/build_sped_costs.py, which refuses to print the sentence if the equality stops holding."
+  },
+  {
+   "closes": "a MUNIS fund balance report at period 13 for the school grant funds (26xx-29xx), FY2024 to FY2026, with each fund's opening and closing balance.",
+   "side": "held",
+   "what": "What the school grant funds held at 30 June 2024, 2025 and 2026",
+   "why": "Fourteen school funds -- circuit breaker, school choice, lunch, eight fee-funded revolving funds and three gift funds -- are carried from the annual report's 30 June 2023 balance through the MUNIS period-13 ledgers, and the result ties to the cent to the Town's March 2026 special revenue report for every one. The grant funds cannot be carried that way: the annual report names a grant by programme and year, MUNIS numbers it, and nothing published maps one to the other; and a reimbursement grant spends before it is paid, so one year's revenue less expense is not a change in what it holds. So the school total after 2023 covers the fourteen and not the grants. Measured in /analysis/sitting-on-money."
+  },
+  {
+   "closes": "the MUNIS period-13 revenue and expense report for EVERY school special revenue fund, FY2023 to FY2026, with each fund's opening and closing balance (or the trial balance for funds 2xxx at each close).",
+   "side": "money_in",
+   "what": "Which school special revenue funds the period-13 special funds report leaves out",
+   "why": "The FY2023 annual town report's special revenue schedule prints $3,667,636 received and $4,333,280 spent across every school special revenue fund; the MUNIS period-13 special funds report for the same year, delivered 6 October 2026, carries $2,440,883 and $2,962,716. The difference is funds that report does not carry -- among them, the annual report's FY22 ESSER II #115, FY22 ARP Idea #252 and FY22 Idea ARP #264 rows have no fund of that name or number in the MUNIS report. And the FY2026 report books $59,333 of grant revenue against $557,427 of grant spending. A reimbursement booked after the close, a grant receipt held in a fund outside the report, and both together all fit; the report cannot separate them, so whether the schools spend the grant money that comes in can be said only for the funds it carries. Measured in /analysis/spending-what-comes-in."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

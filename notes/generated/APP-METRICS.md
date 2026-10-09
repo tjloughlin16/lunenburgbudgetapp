@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **14,340 documents** — PDFs, spreadsheets, Word files and slide decks — 38,479 files and 8.57 GB in all, each with its address, its publisher’s filename and a checksum.
+- **14,340 documents** — PDFs, spreadsheets, Word files and slide decks — 38,526 files and 8.58 GB in all, each with its address, its publisher’s filename and a checksum.
 - **15 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,198 meeting documents** from **51 town boards**: 4,736 sets of minutes and 7,462 agendas, 2009-01-05 to 2026-10-07 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -24,10 +24,10 @@
 
 ## Where it came from
 
-- `www.lunenburgma.gov` — 12,576 files
+- `www.lunenburgma.gov` — 12,605 files
 - `drive.google.com` — 1,519 files
 - `massago.hylandcloud.com` — 1,508 files
-- `docs.google.com` — 40 files
+- `docs.google.com` — 52 files
 - `www.mass.gov` — 22 files
 - `educationtocareer.data.mass.gov` — 21 files
 
