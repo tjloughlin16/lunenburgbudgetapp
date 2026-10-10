@@ -4679,8 +4679,14 @@ def main():
             # it -- which SKIP_FILES already said for the two mirror folders, one name at
             # a time. Said once here instead, because four more trees got one on
             # 2 October 2026 (build_unfetched_indexes.py) and the next tree will too.
+            # A SQLite side file (`-journal`, `-wal`, `-shm`) belongs to a skipped database
+            # and exists only while something is writing it. On 10 October 2026 the refresh
+            # ran this check while build_search_index.py held `search-fts.db-journal` open,
+            # and failed on a file that was gone a minute later.
+            sidecar = re.sub(r'-(journal|wal|shm)$', '', rel)
             if (fn.startswith('.') or fn == 'index.csv'
                     or fn in SKIP_FILES or rel in SKIP_FILES
+                    or (sidecar != rel and sidecar in SKIP_FILES)
                     or rel in catalogued or is_edition(rel, catalogued)
                     or in_family(rel)):
                 continue
