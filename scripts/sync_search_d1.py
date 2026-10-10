@@ -198,6 +198,7 @@ def push(limit, dry_run):
     # rather than dying; a push and a rebuild still should not be run together.
     local = sqlite3.connect(B.DB, timeout=300)
     local.row_factory = sqlite3.Row
+    B.ensure_keys(local)                         # an index built before search_key gets one, from one scan
     ensure_schema()
     want, have, to_send, to_delete = plan(local)
     rows_to_send = sum(want[k]['rows'] for k in to_send)
@@ -265,7 +266,7 @@ def push(limit, dry_run):
             print('STOPPED at the write limit (%d): %d file(s) remain; run again tomorrow'
                   % (limit, len(to_send) - sent_files))
             break
-        rows = local.execute('SELECT %s FROM search WHERE file_key=?' % cols, (k,)).fetchall()
+        rows = B.rows_for_file(local, k, cols)       # an index seek; `WHERE file_key=?` scanned it all
         vals, size = [], 0
         for r in rows:
             v = '(%s)' % ','.join(q(r[c]) for c in B.COLS)

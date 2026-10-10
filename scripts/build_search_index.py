@@ -156,6 +156,19 @@ CREATE TABLE indexed_file (
 );
 CREATE TABLE build_meta (k TEXT PRIMARY KEY, v TEXT);
 """
+
+# AN UNINDEXED FTS5 COLUMN HAS NO INDEX. `WHERE file_key=?` or `WHERE doc_key=?` on `search`
+# is a scan of every row, body and all -- and the build ran one per affinity row (1,318) and
+# one per changed file, so once ~2,900 Open Meeting Law letters joined the index the
+# 10 October 2026 overnight run spent 5.5 hours in fts5NextMethod and never finished. This
+# ordinary table maps each search rowid to its file and document, with real indexes, so
+# every such lookup is an index seek and then a rowid fetch. It is local bookkeeping only:
+# sync_search_d1.py names the tables it pushes, and this is not one of them.
+KEY_SCHEMA = """
+CREATE TABLE IF NOT EXISTS search_key (rid INTEGER PRIMARY KEY, file_key TEXT NOT NULL, doc_key TEXT);
+CREATE INDEX IF NOT EXISTS search_key_file ON search_key(file_key);
+CREATE INDEX IF NOT EXISTS search_key_doc ON search_key(doc_key);
+"""
 AFFINITY_DDL = ("CREATE VIRTUAL TABLE affinity USING fts5(tags, doc_key UNINDEXED, "
                 "corpus UNINDEXED, title UNINDEXED, cite_url UNINDEXED, tokenize=%r)" % TOKENIZE)
 
@@ -437,7 +450,39 @@ def connect(path, create):
     if create:
         db.executescript(SCHEMA)
         db.execute(fts_ddl())
+    ensure_keys(db)
     return db
+
+
+def ensure_keys(db):
+    """Create search_key if this index predates it, and fill it from ONE scan of `search`.
+    And if it disagrees with indexed_file's own row counts -- both ordinary tables, so the
+    comparison is cheap -- refill it, so a key table that drifted can never send a lookup
+    to the wrong row or miss one."""
+    if not db.execute("SELECT 1 FROM sqlite_master WHERE name='search'").fetchone():
+        return
+    db.executescript(KEY_SCHEMA)
+    keyed = db.execute('SELECT COUNT(*) FROM search_key').fetchone()[0]
+    expect = db.execute('SELECT COALESCE(SUM(rows), 0) FROM indexed_file').fetchone()[0]
+    if keyed != expect:
+        db.execute('DELETE FROM search_key')
+        db.execute('INSERT INTO search_key SELECT rowid, file_key, doc_key FROM search')
+        db.commit()
+        print('  search_key: filled %d row(s) from one scan (held %d, indexed_file says %d)'
+              % (db.execute('SELECT COUNT(*) FROM search_key').fetchone()[0], keyed, expect),
+              file=sys.stderr)
+
+
+def rows_for_file(db, file_key, cols='*'):
+    """Every search row of one file, in rowid order -- an index seek, never a scan."""
+    rids = [r[0] for r in db.execute('SELECT rid FROM search_key WHERE file_key=? ORDER BY rid', (file_key,))]
+    return [db.execute('SELECT %s FROM search WHERE rowid=?' % cols, (rid,)).fetchone() for rid in rids]
+
+
+def row_for_doc(db, doc_key, cols):
+    """The first search row carrying `doc_key`, or None -- an index seek, never a scan."""
+    hit = db.execute('SELECT rid FROM search_key WHERE doc_key=? ORDER BY rid LIMIT 1', (doc_key,)).fetchone()
+    return db.execute('SELECT %s FROM search WHERE rowid=?' % cols, (hit[0],)).fetchone() if hit else None
 
 
 def have(db):
@@ -552,8 +597,9 @@ def index_file(db, entry):
             r['chars'] = len(part)
             rows.append((r, part))
     for row, body in rows:
-        db.execute('INSERT INTO search (%s) VALUES (%s)' % (','.join(COLS), ','.join('?' * len(COLS))),
-                   [body] + [row.get(c) for c in META_COLS])
+        cur = db.execute('INSERT INTO search (%s) VALUES (%s)' % (','.join(COLS), ','.join('?' * len(COLS))),
+                         [body] + [row.get(c) for c in META_COLS])
+        db.execute('INSERT INTO search_key VALUES (?,?,?)', (cur.lastrowid, row.get('file_key'), row.get('doc_key')))
     db.execute('INSERT OR REPLACE INTO indexed_file VALUES (?,?,?,?,?)',
                (entry['file_key'], entry['corpus'], entry['sha256'],
                 os.path.getsize(entry['file']), len(rows)))
@@ -561,7 +607,9 @@ def index_file(db, entry):
 
 
 def forget(db, file_key):
-    db.execute('DELETE FROM search WHERE file_key=?', (file_key,))
+    for (rid,) in db.execute('SELECT rid FROM search_key WHERE file_key=?', (file_key,)).fetchall():
+        db.execute('DELETE FROM search WHERE rowid=?', (rid,))
+    db.execute('DELETE FROM search_key WHERE file_key=?', (file_key,))
     db.execute('DELETE FROM indexed_file WHERE file_key=?', (file_key,))
 
 
@@ -622,8 +670,7 @@ def build_affinity(db):
     db.execute(AFFINITY_DDL)
     missing = []
     for doc_key, tags in affinity_rows():
-        hit = db.execute('SELECT corpus, title, cite_url FROM search WHERE doc_key=? LIMIT 1',
-                         (doc_key,)).fetchone()
+        hit = row_for_doc(db, doc_key, 'corpus, title, cite_url')
         if not hit:
             missing.append(doc_key)
             continue
@@ -661,8 +708,7 @@ def build_affinity(db):
             if canon is None or canon == key.split(':', 1)[1]:
                 still.append(key)
                 continue
-            hit = db.execute('SELECT corpus, title, cite_url FROM search WHERE doc_key=? '
-                             'LIMIT 1', ('page:' + canon,)).fetchone()
+            hit = row_for_doc(db, 'page:' + canon, 'corpus, title, cite_url')
             if not hit:
                 still.append(key)
                 continue
