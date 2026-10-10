@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-07-10",
  "docid": "382",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve ANR Plan for 1325 Massachusetts Avenue",
+   "motion": "Approve the ANR Plan for 1325 Massachusetts Avenue.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "m. allison made a motion to approve anr plan. seconded by a. reid, all aye."
   },
   {
-   "motion": "Approve modifications to Site Plan Approval and Stormwater Permit for 525 Chase Road",
+   "motion": "Approve modifications to Site Plan Approval and Stormwater Permit for 525 Chase Road (public hearing).",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "m. allison made motion to approve modifications to site plan approval and stormwater permit, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Recommend not pursuing Right of First Refusal for Parcel 4, Leominster Road",
+   "motion": "Recommend not pursuing the Right of First Refusal for Parcel 4, Leominster Rd.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "m. allison made motion to recommend not pursuing right of first refusal for parcel 4 . seconded by a. reid, all aye."
   },
   {
-   "motion": "Approve minutes from 6/26/23",
+   "motion": "Approve the minutes of 6/26/23 and the Lot A Northfield Rd minutes of 7/10/23.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "m. allison made motion to appro ve minutes listed below, a. reid seconded, roll call vote - t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -53,6 +53,199 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1234191
+ "note": "Clean machine-readable text, not a scan. Votes are recorded as \"all aye\" or \"passed unanimously\" with no numeric counts, so outcomes are given as printed. The 525 Chase Road public hearing refers to separate minutes that are not in this text, and its vote is recorded only here. No public comment is recorded in these minutes. The Lot A 524 Northfield Road item records a decision with no motion or vote. Annie M. Aubrey appears only in the letterhead, not as a participant, so she is omitted from attendees. No dollar figures are printed.",
+ "cost_usd": 0.01658115,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lot A 524 Northfield Road decision approved and signed by the Board, with no discussion.",
+   "quote": "no discussion, decision approved and signed by board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Inflation Reduction Act green technology funding",
+   "what_was_recorded": "Board noted that the Inflation Reduction Act has funding for green technology, to be looked into for Fall Town Meeting; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "inflation reduction act has funding for green technology per edc meeting and is something to start looking into"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan - 1325 Massachusetts Avenue",
+   "resolution": "approved",
+   "quote": "anr plan - 1325 massachusetts avenue - no changes to previously endorsed site plan approval.",
+   "tags": [
+    "ANR plan",
+    "site plan",
+    "contractor storage"
+   ]
+  },
+  {
+   "topic": "Public hearing - 525 Chase Road",
+   "resolution": "approved modifications to Site Plan Approval and Stormwater Permit; see separate minutes",
+   "quote": "public hearing - 525 chase road - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal - Parcel 4, Leominster Rd.",
+   "resolution": "continued; recommended not pursuing",
+   "quote": "right of first refusal - parcel 4, leominster rd. - continued",
+   "tags": [
+    "right of first refusal",
+    "chapter 61B",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Decision - Lot A 524 Northfield Road",
+   "resolution": "decision approved and signed",
+   "quote": "decisions - lot a 524 northfield road",
+   "tags": [
+    "decision",
+    "lot A"
+   ]
+  },
+  {
+   "topic": "Board discussion - Right of First Refusal process",
+   "resolution": "discussed, no action",
+   "quote": "right of first refusal: discussed process driven by the state and local towns/cities capabilities",
+   "tags": [
+    "right of first refusal",
+    "state requirements"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "discussed, no action",
+   "quote": "master plan - consultants are in process of finalizing public engageme nt plan.",
+   "tags": [
+    "master plan",
+    "public engagement"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw",
+   "resolution": "discussed, no action",
+   "quote": "solar bylaw- discussed parking lot solar and is not something that is doable in lunenburg right now.",
+   "tags": [
+    "solar bylaw",
+    "parking lot solar",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Driveway & Entrances bylaw, Section 250-6.4",
+   "resolution": "drafts discussed, no action",
+   "quote": "section 250 -6.4., driveway & entrances - a. burney sent draft to board members",
+   "tags": [
+    "driveway bylaw",
+    "zoning",
+    "common driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "m. allison made motion to appro ve minutes listed below",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "economic development committee - meeting june 29.",
+   "tags": [
+    "committee reports",
+    "economic development",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Ongoing items and director's items",
+   "resolution": "no report",
+   "quote": "aquifer protection district - no report.",
+   "tags": [
+    "master plan",
+    "aquifer protection"
+   ]
+  },
+  {
+   "topic": "Board comments and meeting schedule",
+   "resolution": "noted, no action",
+   "quote": "board comments- a. reid mentioned potentially being absent for july 24 meeting.",
+   "tags": [
+    "construction vehicles",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:05 p.m.",
+   "quote": "m. allison made motion to adjourn, a. reid seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "land use",
+  "ANR plan",
+  "site plan approval",
+  "stormwater permit",
+  "right of first refusal",
+  "master plan",
+  "solar bylaw",
+  "driveway bylaw",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

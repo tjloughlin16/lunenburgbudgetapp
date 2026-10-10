@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-07-10",
  "docid": "383",
@@ -12,23 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Approve June 12, 2023 minutes as amended",
-   "moved_by": "P. Lincoln",
-   "seconded_by": "P. Sarapas",
+   "motion": "Approve the June 12th, 2023 minutes as amended.",
+   "moved_by": "P.Lincoln",
+   "seconded_by": "P.Sarapas",
    "outcome": "passed",
    "procedural": true,
    "quote": "june 12th, 2023 minutes as amended, motion - p.lincoln, 2nd p.sarapas, passed"
   },
   {
-   "motion": "Set the FY23-24 PACC meeting dates as specified",
-   "moved_by": "F. Beall",
-   "seconded_by": "P. Sarapas",
+   "motion": "Set the FY23-24 PACC meeting dates (August 14 through June 3), held in the Sudolnik Conference Room at 6pm.",
+   "moved_by": "F.Beall",
+   "seconded_by": "P.Sarapas",
+   "outcome": "passed; P.Lincoln abstained",
+   "procedural": false,
+   "quote": "motion f.beall, 2nd p.sarapas (passed p.lincoln abstained), to set the fy23-24 pacc meeting dates as;"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:02 pm.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion f.beall, 2nd p.sarapas (passed p.lincoln abstained), to set the fy23-24 pacc meeting dates as;"
+   "quote": "motion - s.archambault, 2nd f.beall - passed)."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0878705
+ "dropped_unquoted": 0,
+ "note": "Text extracted from a digital document with tab-separated words; quotes were collapsed to single spaces. Only three motions are recorded, all with a mover and seconder and an outcome; the minutes print no vote counts, so the abstention is recorded as printed. Public comment was recorded as 'None', so no speaker entries. The Enterprise Fund transfer has no printed amount. The meeting-dates motion is not procedural in the sense of minutes/adjournment/executive session, so it is marked procedural false.",
+ "cost_usd": 0.019230900000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin-Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "3. manager: jo mclaughlin-toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S.Archambault will contact the Library and book the FY23-24 meeting dates.",
+   "quote": "s.archambault will contact the library and book the above dates"
+  },
+  {
+   "decision": "J. McLaughlin-Toale will use the banner function to post cancellations of the summer Town Band Concerts.",
+   "quote": "j. mclaughlin-toale, will use the banner function."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 current balance (Manager's update)",
+   "what_was_recorded": "The Manager reported the FY23 books are not closed and the current balance, subject to change, is a stated figure.",
+   "quote": "books are not closed on fy23 yet. current balance, subject to change, is $983,682.86",
+   "figures_as_printed": [
+    "$983,682.86"
+   ]
+  },
+  {
+   "topic": "CASTUS closed captioning costs",
+   "what_was_recorded": "S.Walker reported CASTUS quoted hardware costs and yearly maintenance fees for closed captioning, plus an hourly cost and a 3-second delay; no decision was recorded.",
+   "quote": "hardware costs 70-80k plus 7-8k yearly maintenance fees",
+   "figures_as_printed": [
+    "70-80k",
+    "7-8k"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "what_was_recorded": "S.Walker announced money was transferred into investments as of June 22nd, as outlined in the June 12th minutes; no dollar amount is printed.",
+   "quote": "as of june 22nd money was transferred into investments as outlined in the june 12th minutes",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Enterprise Fund money moved into investments, as outlined in the June 12th, 2023 minutes.",
+   "outcome": "Reported by S.Walker as completed as of June 22nd; monthly investment reports still to be set up. No amount printed.",
+   "amount_as_printed": "not printed",
+   "quote": "as of june 22nd money was transferred into investments as outlined in the june 12th minutes"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "noted; meeting called to order at 6:04 pm",
+   "quote": "meeting was called to order at 6:04 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments: conference report and closed captioning",
+   "resolution": "discussed, no action",
+   "quote": "s.walker went to a conference and heard 2 presentations",
+   "tags": [
+    "captioning",
+    "conference",
+    "PAC",
+    "5013C"
+   ]
+  },
+  {
+   "topic": "Communications: reappointments",
+   "resolution": "noted",
+   "quote": "s.walker, s.archambault & p.sarapas were duly notified that they were reappointed to the pac committee with terms through 2026",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Approval of June 12th, 2023 minutes",
+   "resolution": "approved as amended",
+   "quote": "june 12th, 2023 minutes as amended, motion - p.lincoln, 2nd p.sarapas, passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "noted; programming analysis, workshops, equipment, staffing, Town Band concert streaming",
+   "quote": "books are not closed on fy23 yet. current balance, subject to change, is $983,682.86",
+   "tags": [
+    "manager update",
+    "programming",
+    "staffing",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "resolution": "noted; monthly investment reports to be arranged",
+   "quote": "s.walker announced that as of june 22nd money was transferred into investments as outlined in the june 12th minutes.",
+   "tags": [
+    "enterprise fund",
+    "investments"
+   ]
+  },
+  {
+   "topic": "FY23-24 meeting dates",
+   "resolution": "approved (P.Lincoln abstained)",
+   "quote": "motion f.beall, 2nd p.sarapas (passed p.lincoln abstained), to set the fy23-24 pacc meeting dates as;",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:02 pm",
+   "quote": "motion - s.archambault, 2nd f.beall - passed).",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "Lunenburg",
+  "closed captioning",
+  "CASTUS",
+  "enterprise fund",
+  "investments",
+  "meeting schedule",
+  "Manager update",
+  "appointments"
+ ],
+ "dropped_unquoted_by_field": {}
 }

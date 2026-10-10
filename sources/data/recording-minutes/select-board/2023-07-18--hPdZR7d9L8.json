@@ -365,5 +365,159 @@
    "at": "2026-10-09T12:16:39Z",
    "cost_usd": 0.22073500000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07182023-395",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-07-18-minutes-395.txt",
+   "path": "sources/meetings/select-board/2023-07-18-minutes-395.pdf"
+  },
+  "official_sha256": "4733f6bcaa0f5ad97552e8cdc6328c82d43b8b9387028f07e277ed0ffb3721f7",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on most of the license, appointment and letter votes, apart from caption misspellings of names. They differ most on the Barbara Reynolds and Mackin votes, where ours records a unanimous pass and the official extract records no result, and on the ARPA figures and decisions, which only ours has.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Montachusett Regional School representative (Barbara Reynolds)",
+    "ours": "Appoint Barbara Reynolds as Montachusett Regional School representative (term first stated to 2027, amended to June 30 2028) — passed unanimously",
+    "official": "motion: t. alonzo 2\"d: l. franco",
+    "note": "Ours records a unanimous pass; the official extract records only mover and seconder with no result, so check the official minutes and the recording for the outcome and term.",
+    "t": 667
+   },
+   {
+    "kind": "caption_error",
+    "about": "Veterans services agent name",
+    "ours": "Ratify town manager's appointment of Michelle durkey as veterans services agent — passed",
+    "official": "to ratify the appointment of michelle durkee as veterans service agent vote: all in favor",
+    "official_reading": "Michelle Durkee",
+    "note": "Same vote and outcome; the surname is misheard in the captions.",
+    "t": 852
+   },
+   {
+    "kind": "agree",
+    "about": "Wine and malt license transfer to Mahant Baker's Variety Inc",
+    "ours": "Approve transfer of wine and malt license to Mahant Baker's Variety Inc, including common victualler, three automatic amusement devices and video game licenses — passed unanimously",
+    "official": "to approve the transfer of license of the wine and malt license to mahant's baker variety, inc. doing business as baker's whalom variety located at 423 electric avenue",
+    "note": "Both record the same transfer and that it passed. The official extract's quote does not itself state the result, and it says three amusement licenses where ours adds video game licenses.",
+    "t": 2385
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sewer Commission appointment of Mike Mackin (roll call)",
+    "ours": "Jointly appoint Mike Mackin to the Sewer Commission (roll call) — passed unanimously",
+    "official": "ramsden- aye. mr. macdonald-aye, mr. reynolds-aye",
+    "note": "Ours says it passed unanimously; the official shows only three ayes and no total or outcome. Check the full roll call and whether the appointment was made jointly.",
+    "t": 3057
+   },
+   {
+    "kind": "caption_error",
+    "about": "Seasonal lifeguard name",
+    "ours": "Ratify town manager's appointment of Cole Kiefer as seasonal lifeguard — passed",
+    "official": "to ratify the town manager's appointment of cole keefer as lifeguard",
+    "official_reading": "Cole Keefer",
+    "note": "Same appointment; the surname spelling differs.",
+    "t": 3284
+   },
+   {
+    "kind": "agree",
+    "about": "Letter to ABCC withdrawing Jaxx Country Variety transfer",
+    "ours": "Authorize chair to sign letter to ABCC withdrawing the Jax Country Variety transfer to Pure Inc — passed",
+    "official": "to authorize the chair to sign the letter on behalf of the board vote: all in favor",
+    "note": "Same vote and outcome. The captions spell the store name Jax; the official spells it Jaxx.",
+    "t": 4094
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer Commission ARPA request figures",
+    "ours": "Sewer Commission ARPA request: 200 and 300 thousand dollars, three hundred five thousand dollars, $200,000 for manholes, $300,000 for the pump stations",
+    "official": "",
+    "note": "The official extract prints no ARPA figures, so these cannot be compared.",
+    "t": 248
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrants",
+    "ours": "Warrants: 745 000.93, 684 808.48, 506 723.09",
+    "official": "",
+    "note": "The official extract has no warrant amounts.",
+    "t": 4136
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA committed items and parks request",
+    "ours": "ARPA committed items: 506 000, 480 000, nine hundred and eighty six thousand dollars",
+    "official": "",
+    "note": "The official extract has no ARPA allocation figures. This covers the parks request and the MUNIS software and revenue-loss figures as well.",
+    "t": 4716
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA ranking process decisions",
+    "ours": "Members to submit ARPA rankings to the chair by Friday the 28th; the August 1 meeting will focus on ARPA. Public schools plow truck request removed from the ARPA list; ambulance and DPW truck funds excluded from ranking.",
+    "official": "",
+    "note": "The official extract records no ARPA discussion or decisions. Check whether the official minutes cover it.",
+    "t": 5336
+   },
+   {
+    "kind": "agree",
+    "about": "FY24 goals: buildings goal",
+    "ours": "FY24 goals: continue the bylaws review and add a buildings goal combining municipal building design and 30 School Street, to be worded later.",
+    "official": "after further discussion, mr. jeffreys asked, are we in agreement about a goal related to buildings by next spring? there was consensus on that.",
+    "note": "Both record consensus on a buildings goal. The official adds a 'by next spring' timing, and the bylaws item is not in the official extract.",
+    "t": 5839
+   },
+   {
+    "kind": "agree",
+    "about": "Investigation report on August 15",
+    "ours": "Update on the investigation report targeted for the August 15 meeting.",
+    "official": "mr. jeffreys stated he would be reporting on august 15",
+    "note": "Both give August 15 for the report.",
+    "t": 8341
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Means-tested senior tax exemption goal",
+    "ours": "",
+    "official": "mr. jeffreys stated he would like the select board to continue working on this goal.",
+    "note": "Our minutes have no senior tax exemption goal."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manager of record expectation for the license applicant",
+    "ours": "",
+    "official": "to be fully compliant with our policies i would expect that you will come back before us and submit a change of manager or add another manager in",
+    "note": "The Chair's expectation is not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Solar panels at the old dump goal",
+    "ours": "",
+    "official": "another goal suggestion was to work with the green communities committee on installing solar panels placed at the old dump to generate income for the town.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members and Sewer Commission",
+    "ours": "Mr. Alonso / Mr. Nazolo; Mr. Franco; Mr. Jeffries; Ms. Mkey / Emkey; John Reynolds; Dave McDonald",
+    "official": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of",
+    "note": "Same people, with captions misspelling Alonzo, Nuzzolo, Jeffreys, Emkey and MacDonald. The official lists many more attendees, such as the applicant, attorney, Bakers and Ms. Lemieux, who are not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-10T02:06:29Z",
+   "cost_usd": 0.2597959
+  }
  }
 }

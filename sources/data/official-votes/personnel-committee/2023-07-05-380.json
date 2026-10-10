@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-07-05",
  "docid": "380",
@@ -12,39 +12,155 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from June 6 and June 13, 2023 meetings",
+   "motion": "Approve the minutes of the June 6, 2023 and June 13, 2023 meetings.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. fortune to accept and approve both sets of minutes from the june 6, 2023 meeting and june 13, 2023 meeting. second: s. andrews vote: all in favor"
+   "quote": "motion by d. fortune to accept and approve both sets of minutes from the june 6, 2023 meeting and june 13, 2023 meeting."
   },
   {
-   "motion": "Adjust agenda to review Fire Department job descriptions",
+   "motion": "Adjust the agenda to review the Fire Department job descriptions to accommodate Chief Sullivan's attendance.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "w. bertrand made a motion to adjust the agenda to review the job descriptions from the fire department to accommodate chief sullivan's attendance in the meeting. second: s. andrews vote: all in favor"
+   "quote": "w. bertrand made a motion to adjust the agenda to review the job descriptions from the fire department to accommodate chief sullivan's attendance in the meeting."
   },
   {
-   "motion": "Accept the new Police Reserve Officer job description",
+   "motion": "Accept the new job description for a Police Reserve Officer.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "d. fortune made a motion to accept the new job description for a police reserve officer. second: s. andrews vote: all in favor"
+   "quote": "d. fortune made a motion to accept the new job description for a police reserve officer."
   },
   {
-   "motion": "Adjourn at 8:08pm",
+   "motion": "Adjourn the meeting at 8:08pm.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "d. fortune made a motion to adjourn at 8:08pm second: s. andrews vote: all in favor"
+   "quote": "d. fortune made a motion to adjourn at 8:08pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12329849999999999
+ "note": "Plain text minutes, not a scan. All votes recorded only as \"All in Favor\" with no count printed, so outcome is recorded as passed. Public comment: neither speaker appears (minutes say no public or committee comments). No dollar figure is printed; the only money item is a 10-cent promotion example. Member roles are not printed beyond \"In Person Attendees\", and Wendy Bertrand's chair role is inferred from opening the meeting, so role is left blank.",
+ "cost_usd": 0.01351725,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "",
+   "status": "present",
+   "quote": "w. bertrand opened the meeting at 6:08pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "In Person Attendee",
+   "status": "present",
+   "quote": "in person attendees: susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "In Person Attendee",
+   "status": "present",
+   "quote": "in person attendees: susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, patrick sullivan fire chief"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, patrick sullivan fire chief"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "remote",
+   "quote": "phone: nancy o'rourke, payroll and benefits coordinator/risk manager"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanna bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Belliveau will send a note to the entire committee seeking the best alternatives for a future meeting date, since not all members were present.",
+   "quote": "j. belliveau agreed to send a note to entire committee seeking the best alternatives for a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Department on-call promotions and pay steps",
+   "what_was_recorded": "The Chief said promotions to on-call roles follow the SAP salary grid and can move an employee only a very small amount, sometimes by 10 cents.",
+   "figures_as_printed": [
+    "10 cents"
+   ],
+   "quote": "sometimes a promotion only moved the employee up by 10 cents"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (June 6 and June 13, 2023 minutes)",
+   "quote": "motion by d. fortune to accept and approve both sets of minutes from the june 6, 2023 meeting and june 13, 2023 meeting.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Fire Department job descriptions and grading",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "with chief sullivan's assistance the group reviewed the departments job descriptions and identify how it might be assessed using the grading tool.",
+   "tags": [
+    "fire department",
+    "job descriptions",
+    "grading",
+    "on-call",
+    "promotions"
+   ]
+  },
+  {
+   "topic": "Police Reserve Officer job description",
+   "resolution": "approved",
+   "quote": "d. fortune made a motion to accept the new job description for a police reserve officer.",
+   "tags": [
+    "police",
+    "job descriptions"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "deferred; staff to poll members",
+   "quote": "the group attempted to identify the next meeting date, because we didn't have all members",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "fire department",
+  "on-call pay",
+  "promotions",
+  "grading tool",
+  "police reserve",
+  "minutes approval",
+  "scheduling"
+ ],
+ "dropped_unquoted_by_field": {}
 }
