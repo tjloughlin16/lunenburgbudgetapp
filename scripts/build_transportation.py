@@ -288,6 +288,14 @@ QUOTES = [
          why='The Superintendent’s plan to restore high school athletic buses for FY2027. '
              'She attributed the lower figure to scheduling competitions closer to Lunenburg, '
              'more home competitions, and estimating from actual schedules.'),
+    dict(key='restore-why', path='sources/meetings/text/school-committee/2026-08-26-minutes-7980.txt',
+         board='School Committee', date='2026-08-26',
+         quote='the reduced cost resulted from scheduling more competitions closer to Lunenburg, '
+               'increasing home competitions, and using actual schedules and prior-year spring '
+               'costs to obtain a more accurate transportation estimate',
+         why='The Superintendent’s reasons for the restoration estimate, as minuted. They are '
+             'her account of the figure; the page sets it beside the district’s own FY2025 '
+             'sheet and the contract’s FY2027 rates without testing it.'),
     dict(key='cb-75', path='sources/meetings/text/school-committee/2025-05-07-minutes-7207.txt',
          board='School Committee', date='2025-05-07',
          quote='75% reimbursement for FY25 out of district special education transportation '
@@ -329,7 +337,22 @@ GAP_ROWS = {
     'riders': 'How many children ride the school buses, and how many pay the fee',
     'dese-fy25': 'Why DESE’s FY2025 transportation spending for Lunenburg differs from the '
                  'town ledger',
+    # Registered 10 October 2026 from the audit pass (notes/findings/TRANSPORTATION-AUDIT.md).
+    'fee-balance': 'What the athletic fee fund held at each 30 June, FY2021 to FY2026',
+    'fee-pos': 'What the athletic fee fund’s high school purchase-of-service account paid for '
+               'in FY2026',
+    'fy24-regular': 'Why FY2024’s regular-route bus spending was higher than FY2025’s',
 }
+
+# THE AUDIT PASS (notes/process/AUDIT-PASS.md). These inputs exist only for the comparisons
+# the summary now leads with: the fee fund's receipts against its spending, the model's
+# transport rate against the contract, and the last fee fund balance anybody published.
+FUND_BAL = os.path.join(D, 'fund-balances-fincom.csv')
+MODEL_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'model.json')
+# OUR choice, and said where it is used: the special education under-budget window opens in
+# the first year the gap between voted and spent passed this amount. It exists so the window
+# is a rule rather than a pair of years somebody picked by eye.
+BIG_GAP = 100000
 
 
 # --------------------------------------------------------------------- helpers
@@ -452,8 +475,11 @@ def load_ledger():
                     fail('FY%d has no %s account in the workbook' % (fy, c))
                 o, rv, ex = gl[(fy, c)]
                 en = 0.0
+            # `over_revised` is computed from the unrounded amounts: spent at the close
+            # against the REVISED budget, the test of control (AUDIT-PASS test 2).
             row[c] = dict(budget=r0(o), revised=r0(rv), spent=r0(ex + en), expended=r0(ex),
-                          committed=r0(en))
+                          committed=r0(en), over_revised=r0(ex + en - rv),
+                          transfer=r0(rv - o))
         for side in ('budget', 'spent'):
             row['school_' + side] = sum(row[c][side] for c in SCHOOL_DAY)
             row['all_' + side] = sum(row[c][side] for c in CAT_NAME)
@@ -755,6 +781,90 @@ def check_gaps():
     return dict(GAP_ROWS)
 
 
+# --------------------------------------------------------------------- the audit inputs
+
+def load_fee_funds():
+    """Fund 1301 (athletics) receipts against spending, and what fund 1308 (school choice)
+    does NOT do. Period 13, spending = ytd_expended + encumbrances; receipts are revenue rows,
+    which MUNIS prints as negatives."""
+    rows = [r for r in csv.DictReader(open(MUNIS, encoding='utf-8'))
+            if r['period'] == '13' and r['fund'] in ('1301', '1308')]
+    f = {}
+    for r in rows:
+        if r['fund'] != '1301':
+            continue
+        fy = int(r['fiscal_year'])
+        d = f.setdefault(fy, dict(receipts=0.0, spending=0.0, hs_pos=0.0, hs_salaries=0.0))
+        if r['type'] == 'R':
+            d['receipts'] -= num(r['ytd_expended'])
+        elif r['type'] == 'E':
+            amt = num(r['ytd_expended']) + num(r['encumbrances'])
+            d['spending'] += amt
+            s = segs(r['account'])
+            if s[3] == '3510' and s[4] == '06' and s[8] == '531006':
+                d['hs_pos'] += amt
+            if s[3] == '3510' and s[4] == '06' and s[8] == '519999':
+                d['hs_salaries'] += amt
+        else:
+            fail('fund 1301 row of type %r: %s' % (r['type'], r['account']))
+    if sorted(f) != [2023, 2024, 2025, 2026]:
+        fail('fund 1301 is not in all four year-end reports: %s' % sorted(f))
+    fund = []
+    for fy in sorted(f):
+        d = {k: round(v, 2) + 0.0 for k, v in f[fy].items()}
+        if not d['receipts'] or not d['spending']:
+            fail('FY%d fund 1301 has no receipts or no spending -- a join that matched nothing'
+                 % fy)
+        fund.append(dict(fy=fy, net=round(d['receipts'] - d['spending'], 2) + 0.0, **d))
+
+    # Fund 1308: no expense account coded to transportation (function 3300, one of the
+    # transportation object codes this page classifies by, or a description naming it), and
+    # its transfer to the general fund is zero in every year. The page states both, so the
+    # build refuses if either stops being true. (A 5350xx prefix is NOT a transportation
+    # test: 535029 is course reimbursement.)
+    s8 = [r for r in rows if r['fund'] == '1308' and r['type'] == 'E']
+    if not s8:
+        fail('fund 1308 has no expense rows -- a join that matched nothing')
+    t_objs = {o for _, _, _, o in CATS}
+    transport = [r['account'] for r in s8 if segs(r['account'])[3] == '3300'
+                 or r['obj'] in t_objs
+                 or re.search(r'TRANSP|\bBUS\b', r['description'], re.I)]
+    if transport:
+        fail('fund 1308 now carries a transportation-coded expense, which the page denies: %s'
+             % transport)
+    xfer = {}
+    for r in s8:
+        if 'TRANSFER' in r['description'].upper():
+            fy = int(r['fiscal_year'])
+            xfer[fy] = xfer.get(fy, 0.0) + num(r['ytd_expended']) + num(r['encumbrances'])
+    if sorted(xfer) != [2023, 2024, 2025, 2026]:
+        fail('fund 1308 has no transfer-out account in every year: %s' % sorted(xfer))
+    if any(abs(v) > 0.005 for v in xfer.values()):
+        fail('fund 1308 transferred money out, which the page denies: %s' % xfer)
+
+    bal = [r for r in csv.DictReader(open(FUND_BAL, encoding='utf-8'))
+           if r['fund_code'] == '1301' and r['measure'].startswith('ending_balance')]
+    if len(bal) != 1:
+        fail('fund-balances-fincom.csv holds %d ending balances for fund 1301, not one'
+             % len(bal))
+    return dict(fund=fund, by={x['fy']: x for x in fund}, xfer_years=sorted(xfer),
+                last_balance=dict(amount=round(num(bal[0]['amount']), 2),
+                                  as_of=bal[0]['as_of_date'], source=bal[0]['source_file']))
+
+
+def load_model(book):
+    """The site's projection, as published: its transport rate and its starting amount. Read,
+    never changed here -- a contract rate beating a model default is flagged, not fixed."""
+    mj = json.load(open(MODEL_JSON, encoding='utf-8'))
+    rate_ = mj['assumptions']['transport']
+    base = mj['expenseBase']['transport']
+    if r0(base) != book['regular']['fy27_balanced']:
+        fail('the model’s transport base (%s) is no longer the FY2027 regular-route budget '
+             '(%s); the contract comparison is not like for like' % (base,
+                                                                      book['regular']['fy27_balanced']))
+    return dict(rate=rate_, base=base, fy28=round(base * (1 + rate_), 2))
+
+
 # --------------------------------------------------------------------- measure
 
 def measure():
@@ -831,8 +941,10 @@ def measure():
     top5 = sum(r['fy2025'] for r in sp['ranked'][:5])
     spring25 = [s for s in sp['seasons'] if s['season'] == 'Spring' and s['fy'] == 2025][0]
     agree = sum(1 for c in sp['compare'] if c['agree'])
+    audit = measure_audit(ledger, ml, book, k, sp, st, quotes, y, L, last, recent_over)
 
     return dict(
+        audit=audit,
         ledger=ledger, tie_years=tie_years, book=book, contract=k, sports=sp, state=st,
         quotes=quotes, gaps=gaps, fees=fees, first=ledger[0]['fy'], last=last, L=L, share=share,
         hi_share=hi_share, lo_share=lo_share, sped_low=sped_low, sped_over=sped_over,
@@ -845,6 +957,141 @@ def measure():
         spring25=spring25, agree=agree, ystep=y)
 
 
+def measure_audit(ledger, ml, book, k, sp, st, quotes, y, L, last, recent_over):
+    """The eight comparisons of notes/process/AUDIT-PASS.md, run against this page's data.
+    Every figure here is a COMPARISON -- one measured thing set against another it was
+    supposed to equal. Budget against budget, actual against actual, except test 2, which is
+    spent against the revised budget by definition, and test 8, which sets the next budget
+    beside the latest actual as a comparison and never as a projection (rule 1)."""
+    by = {r['fy']: r for r in ledger}
+    A = {}
+
+    # Test 2, control: every line closed past its REVISED budget, every year.
+    A['overdrawn'] = [dict(fy=r['fy'], cat=c, revised=r[c]['revised'], spent=r[c]['spent'],
+                           over=r[c]['over_revised'], transfer=r[c]['transfer'])
+                      for r in ledger for c in CAT_NAME if r[c]['over_revised'] >= 1]
+    s26 = ml[(last, 'sped')]
+    A['sped26'] = dict(voted=r0(s26[0]), revised=r0(s26[1]), expended=r0(s26[2]),
+                       committed=r0(s26[3]), spent=r0(s26[2] + s26[3]),
+                       over=r0(s26[2] + s26[3] - s26[1]), transfer=r0(s26[1] - s26[0]))
+    if A['sped26']['over'] <= 0:
+        fail('FY%d special education transportation no longer closed past its revised budget'
+             % last)
+    if abs(s26[1] - s26[0]) > 0.01 * A['sped26']['over']:
+        fail('a transfer now covers part of the FY%d special education overrun; the card says '
+             'none did' % last)
+    A['sped27'] = book['sped']['fy27_balanced']
+    A['sped27_margin'] = r0(book['sped']['fy27_balanced'] - (s26[2] + s26[3]))
+    A['sped_rise'] = pct1(L['sped']['spent'] - by[last - 1]['sped']['spent'],
+                          by[last - 1]['sped']['spent'])
+    A['sped25'] = by[last - 1]['sped']['spent']
+    o24 = {c: by[2024][c]['over_revised'] for c in SCHOOL_DAY}
+    if not all(v > 0 for v in o24.values()):
+        fail('FY2024 school-day lines no longer both closed past their revised budgets')
+    A['fy24'] = dict(regular=o24['regular'], sped=o24['sped'],
+                     both=r0(sum(ml[(2024, c)][2] + ml[(2024, c)][3] - ml[(2024, c)][1]
+                                 for c in SCHOOL_DAY)),
+                     reg_transfer=by[2024]['regular']['transfer'],
+                     reg_spent=by[2024]['regular']['spent'],
+                     reg25_spent=by[2025]['regular']['spent'])
+    if not A['fy24']['reg_spent'] > A['fy24']['reg25_spent']:
+        fail('FY2024 regular routes no longer cost more than FY2025')
+
+    # Test 1, credibility: the special education line's DIRECTION, held for years.
+    run = [r for r in ledger if 2016 <= r['fy'] <= 2023]
+    under = {r['fy']: r['sped']['budget'] - r['sped']['spent'] for r in run}
+    start = min(fy for fy, v in under.items() if v > BIG_GAP)
+    cut = min(run, key=lambda r: r['sped']['budget'])['fy']
+    prior = [r['fy'] for r in ledger if r['fy'] < cut
+             and r['sped']['budget'] <= by[cut]['sped']['budget']]
+    if not prior:
+        fail('the FY%d special education budget is the lowest in the series' % cut)
+    A['lag'] = dict(start=start, cut=cut, years=cut - start + 1,
+                    sum=sum(under[f] for f in range(start, cut + 1)),
+                    pre=sum(under[f] for f in range(start, 2020)),
+                    lo=min(under.values()), hi=max(under.values()),
+                    run0=run[0]['fy'], run1=run[-1]['fy'], all=sum(under.values()),
+                    cut_budget=by[cut]['sped']['budget'], since=max(prior),
+                    over=[dict(fy=x['fy'], over=x['over']) for x in recent_over])
+
+    # Test 7, an offset that masks: FY2027 budget against FY2026 budget.
+    sd26 = by[last]['school_budget']
+    sd27 = sum(book[c]['fy27_balanced'] for c in SCHOOL_DAY)
+    all26 = by[last]['all_budget']
+    all27 = sum(book[c]['fy27_balanced'] for c in CAT_NAME)
+    if sd26 != sum(book[c]['fy26_final'] for c in SCHOOL_DAY):
+        fail('the FY2026 school-day budget no longer ties to the budget book')
+    A['mask'] = dict(sd26=sd26, sd27=sd27, sd_rise=sd27 - sd26, sd_pct=pct1(sd27 - sd26, sd26),
+                     all26=all26, all27=all27, all_pct=pct1(all27 - all26, all26),
+                     ath_cut=book['athletic']['fy26_final'] - book['athletic']['fy27_balanced'],
+                     band26=book['band']['fy26_final'], band27=book['band']['fy27_balanced'])
+    A['mask']['offset_pct'] = pct1(A['mask']['ath_cut'], A['mask']['sd_rise'])
+
+    # Test 3, who pays: the fee year's regular routes against the contract.
+    reg = L['regular']
+    if reg['spent'] != r0(y[2026]['regular']):
+        fail('FY2026 regular routes no longer spent exactly the contract price')
+    A['feeyear'] = dict(voted=reg['budget'], transfer=reg['transfer'], spent=reg['spent'],
+                        price=y[2026]['regular'],
+                        receipts=round(st['fee'][2025] + st['fee'][2026], 2))
+
+    # Test 3 and test 4: the athletic fee fund, receipts against spending.
+    ff = load_fee_funds()
+    fb = ff['by']
+    A['fund'] = ff
+    A['fund_short'] = r0(-(fb[2023]['net'] + fb[2024]['net']))
+    A['fund_ahead'] = r0(fb[2025]['net'] + fb[2026]['net'])
+    if A['fund_short'] <= 0 or A['fund_ahead'] <= 0:
+        fail('fund 1301 no longer ran short in FY2023-FY2024 and ahead in FY2025-FY2026')
+    A['reclass25'] = by[2025]['athletic']['transfer']
+
+    # Test 4, said against did: the FY2027 restoration split, and FY2024's town share.
+    qd = {q['key']: q['quote'] for q in quotes}
+    m_ = [float(x.replace(',', '')) for x in re.findall(r'\$([\d,]+(?:\.\d+)?)', qd['restore'])]
+    restore, rounded, town, fundpart = m_
+    if town + fundpart != rounded:
+        fail('the restoration split no longer sums to the rounded figure')
+    A['restore'] = dict(estimate=restore, rounded=rounded, town=town, fund=fundpart,
+                        fund_pct=pct1(fundpart, rounded), town_pct=pct1(town, rounded),
+                        town24_pct=pct1(by[2024]['athletic']['budget'], sp['totals'][2024]),
+                        hs25=round(sum(r['fy2025'] or 0 for r in sp['rows']
+                                       if r['level'] == 'HS'), 2))
+
+    # Test 5, locked-in growth: the contract against the model's rate.
+    mo = load_model(book)
+    A['model'] = dict(mo, contract28=y[2028]['regular'], contract_pct=pct1(
+        y[2028]['regular'] - y[2027]['regular'], y[2027]['regular']),
+        gap=r0(y[2028]['regular'] - mo['fy28']))
+
+    # Test 6, two sources, one quantity: the two per-sport sheets on the sports both print.
+    c24 = [c for c in sp['compare'] if c['fy'] == 2024]
+    A['sheets'] = dict(n=len(c24), agree=sum(1 for c in c24 if c['agree']),
+                       workbook=round(sum(c['workbook'] for c in c24), 2),
+                       fincom=round(sum(c['fincom'] for c in c24), 2),
+                       widest=max(c24, key=lambda c: c['workbook'] / c['fincom']
+                                  if c['fincom'] else 0))
+    A['sheets']['lower_pct'] = pct1(A['sheets']['workbook'] - A['sheets']['fincom'],
+                                    A['sheets']['workbook'])
+    # The cheap test: identical figures in paired rows are an allocation, not a measurement.
+    pairs = {}
+    for r in sp['rows']:
+        for fy in (2024, 2025):
+            v = r['fy%d' % fy]
+            if v:
+                pairs.setdefault((r['season'], r['level'], fy, v), []).append(r['sport'])
+    A['paired'] = sorted([dict(season=s, level=lv, fy=fy, value=v, sports=sorted(n))
+                          for (s, lv, fy, v), n in pairs.items() if len(n) > 1],
+                         key=lambda x: (x['fy'], SEASONS.index(x['season']), x['sports']))
+    spring = {s['fy']: s for s in sp['seasons'] if s['season'] == 'Spring'}
+    A['spring'] = dict(rows24=spring[2024]['rows'], rows25=spring[2025]['rows'],
+                       printed25=spring[2025]['printed'],
+                       fall_pct=pct1(spring[2025]['rows'] - spring[2024]['rows'],
+                                     spring[2024]['rows']),
+                       share_of_drop=pct1(spring[2024]['rows'] - spring[2025]['rows'],
+                                          sp['totals'][2024] - sp['totals'][2025]))
+    return A
+
+
 # --------------------------------------------------------------------- conclusions
 
 def fyf(y):
@@ -852,304 +1099,290 @@ def fyf(y):
 
 
 def build_conclusions(m):
-    L, last, k, sp, st = m['L'], m['last'], m['contract'], m['sports'], m['state']
+    """The summary, from the audit pass (notes/process/AUDIT-PASS.md), ranked as
+    notes/findings/TRANSPORTATION-AUDIT.md ranks it: dollars at stake, weighted by whether a
+    board can act on it this budget season. Every card is a COMPARISON. The contested ones
+    -- the bus fee, the fee fund, the restored buses, the two sheets -- set two measured
+    things side by side and end on a question for the budget, never a charge (rule 8).
+    Every cause is a hypothesis and says so (rule 7)."""
+    A, L, last, k, sp, st = m['audit'], m['L'], m['last'], m['contract'], m['sports'], m['state']
     y = m['ystep']
     rows = []
+    U = lambda v: figure(v, C.usd(v))
 
-    # 1. THE SIGNATURE: schools against athletics.
-    sh = m['share'][last]
+    # 1. Control, and a thin margin: the special education line, FY2026.
+    s = A['sped26']
     rows.append(conclusion(
-        id='school-day-is-the-bill', bearing='sizes', kind='measured',
-        figure='share',
-        claim='Athletic buses were %s of school transportation spending in %s.'
-              % (C.pct(sh['spent']), C.fy(last)),
-        so_what='The school-day buses — regular routes and special education vans — were '
-                '%s; band trips the rest.' % C.pct(100 - sh['spent'] - pct1(L['band']['spent'],
-                                                                         L['all_spent'])),
-        detail='In %s the general fund spent %s on regular routes, %s on special education '
-               'transportation, %s on athletic buses and %s on band trips — %s in all. On the '
-               'budget side alone, athletics was %s of what was voted. From %s to %s '
-               'athletics never passed %s of what was spent, and fell as low as %s in %s.'
-               % (C.fy(last), C.usd(L['regular']['spent']), C.usd(L['sped']['spent']),
-                  C.usd(L['athletic']['spent']), C.usd(L['band']['spent']),
-                  C.usd(L['all_spent']), C.pct(sh['budget']), C.fy(m['first']), C.fy(last),
-                  C.pct(m['share'][m['hi_share']['fy']]['spent']),
-                  C.pct(m['share'][m['lo_share']['fy']]['spent']), C.fy(m['lo_share']['fy'])),
-        figures={'share': figure(sh['spent'], C.pct(sh['spent'])),
-                 'rest': figure(100 - sh['spent'] - pct1(L['band']['spent'], L['all_spent']),
-                                C.pct(100 - sh['spent'] - pct1(L['band']['spent'],
-                                                               L['all_spent']))),
-                 'fy': fyf(last), 'first': fyf(m['first']),
-                 'reg': figure(L['regular']['spent'], C.usd(L['regular']['spent'])),
-                 'sped': figure(L['sped']['spent'], C.usd(L['sped']['spent'])),
-                 'ath': figure(L['athletic']['spent'], C.usd(L['athletic']['spent'])),
-                 'band': figure(L['band']['spent'], C.usd(L['band']['spent'])),
-                 'all': figure(L['all_spent'], C.usd(L['all_spent'])),
-                 'bshare': figure(sh['budget'], C.pct(sh['budget'])),
-                 'hi': figure(m['share'][m['hi_share']['fy']]['spent'],
-                              C.pct(m['share'][m['hi_share']['fy']]['spent'])),
-                 'lo': figure(m['share'][m['lo_share']['fy']]['spent'],
-                              C.pct(m['share'][m['lo_share']['fy']]['spent'])),
-                 'lofy': fyf(m['lo_share']['fy'])},
-        basis='General fund school accounts, voted budget and spent at the close (expended '
-              'plus still committed): MUNIS year-end reports FY2023 to FY2026, the Finance '
-              'Committee’s ledger history before that. Which account is which kind is ours, '
-              'by function and object code.',
-        not_shown='Athletic buses the athletic fee fund paid for are not in the general fund '
-                  'and not in this share: in FY2024 the district’s own sheet put athletic '
-                  'transportation at about three times the general fund line. Every line is '
-                  'net of whatever else pays for it (rule 11).',
-        see=[('/what-sports-cost', 'What sports cost')],
-    ))
-
-    # 2. Athletics: the FY2026 rise moved who pays.
-    a24 = m['ledger'][[r['fy'] for r in m['ledger']].index(2024)]['athletic']
-    rows.append(conclusion(
-        id='athletic-cost-was-already-there', bearing='sizes', kind='measured',
-        figure='sheet24',
-        claim='The district’s own sheet put %s athletic bus costs at %s; the voted line was %s.'
-              % (C.fy(2024), C.usd(sp['totals'][2024]), C.usd(a24['budget'])),
-        so_what='So the line’s jump to %s in %s moved who pays, as the district said; the '
-                'cost was already there.' % (C.usd(L['athletic']['budget']), C.fy(last)),
-        detail='The district’s sport-by-sport workbook, hand-assembled and received by records '
-               'request, totals %s for %s and %s for %s. The general fund line was voted at '
-               '%s in both years and spent %s and %s. The district’s FY2026 overview says the '
-               'line was “budgeted to cover full cost of transportation for athletics; '
-               'athletic revolving can not support these increased costs”.'
-               % (C.usd(sp['totals'][2024]), C.fy(2024), C.usd(sp['totals'][2025]),
-                  C.fy(2025), C.usd(a24['budget']), C.usd(a24['spent']),
-                  C.usd(m['ledger'][[r['fy'] for r in m['ledger']].index(2025)]['athletic']['spent'])),
-        figures={'sheet24': figure(sp['totals'][2024], C.usd(sp['totals'][2024])),
-                 'sheet25': figure(sp['totals'][2025], C.usd(sp['totals'][2025])),
-                 'line': figure(a24['budget'], C.usd(a24['budget'])),
-                 'spent24': figure(a24['spent'], C.usd(a24['spent'])),
-                 'spent25': figure(m['ledger'][[r['fy'] for r in m['ledger']].index(2025)]['athletic']['spent'],
-                                   C.usd(m['ledger'][[r['fy'] for r in m['ledger']].index(2025)]['athletic']['spent'])),
-                 'new': figure(L['athletic']['budget'], C.usd(L['athletic']['budget'])),
-                 'fy24': fyf(2024), 'fy25': fyf(2025), 'fy': fyf(last)},
-        allow=('FY2026',),
-        basis='The district’s sport-by-sport workbook (records request, June 2026), row sums; '
-              'the general fund athletic transportation account in the MUNIS year-end reports; '
-              'the district’s FY2026 budget overview.',
-        not_shown='The workbook is assembled by hand and a second district sheet gives '
-                  'different figures for several of the same sports. Nothing published says how '
-                  'many trips either year ran, so a change in trips and a change in who paid '
-                  'cannot be fully separated.',
-        see=[('/analysis/athletics-ledger', 'The athletics fee fund, line by line')],
-    ))
-
-    # 3. Per sport, and the trip estimate -- OURS.
-    t0, t1 = m['top'][0], m['top'][1]
-    rows.append(conclusion(
-        id='trips-per-sport', bearing='sizes', kind='hypothesis', figure='trips',
-        claim='Our estimate: %s athletic bus spending equals about %s trips at the new '
-              'contract’s prices.' % (C.fy(2025), C.num(m['trips_total'])),
-        so_what='%s buses cost the most, about %s trips; %s next. No sport topped %s.'
-                % ((t0['sport'] if t0['level'] == 'HS' else 'MS ' + t0['sport']),
-                   C.num(t0['trips']),
-                   (t1['sport'] if t1['level'] == 'HS' else 'MS ' + t1['sport']).lower(),
-                   C.usd(t0['fy2025'])),
-        detail='The sheet’s %s transportation, %s, divided by the cost of the bid form’s own '
-               'average trip at %s prices: %s miles at %s a mile and %s hours of waiting at %s '
-               'an hour, %s. With no waiting time a trip is %s and the same dollars are about '
-               '%s trips. %s prices are not held; if they were lower, the counts are higher.'
-               % (C.fy(2025), C.usd(sp['totals'][2025]), C.fy(2026),
-                  C.num(k['per_trip_miles']), usd2(k['years'][0]['trip_rate']),
-                  C.num(k['wait_hours']), usd2(k['years'][0]['wait_rate']),
-                  usd2(k['trip_full']), usd2(k['trip_nowait']),
-                  C.num(m['trips_total_nowait']), C.fy(2025)),
-        figures={'trips': figure(m['trips_total'], C.num(m['trips_total']), 'bus trips'),
-                 'fy25': fyf(2025), 'fy26': fyf(2026),
-                 'top_trips': figure(t0['trips'], C.num(t0['trips']), 'trips'),
-                 'top': figure(t0['fy2025'], C.usd(t0['fy2025'])),
-                 'tot': figure(sp['totals'][2025], C.usd(sp['totals'][2025])),
-                 'miles': figure(k['per_trip_miles'], C.num(k['per_trip_miles']), 'miles'),
-                 'mrate': figure(k['years'][0]['trip_rate'], usd2(k['years'][0]['trip_rate'])),
-                 'hours': figure(k['wait_hours'], C.num(k['wait_hours']), 'hours'),
-                 'wrate': figure(k['years'][0]['wait_rate'], usd2(k['years'][0]['wait_rate'])),
-                 'full': figure(k['trip_full'], usd2(k['trip_full'])),
-                 'nowait': figure(k['trip_nowait'], usd2(k['trip_nowait'])),
-                 'tnw': figure(m['trips_total_nowait'], C.num(m['trips_total_nowait']),
-                               'trips')},
-        basis='OUR ESTIMATE. Dollars from the district’s sport-by-sport workbook (stated), '
-              'divided by a trip priced from the Dee Bus bid form’s FY2026 rates and its own '
-              'estimate of 100 trips, 6,500 miles and four hours of waiting per trip.',
-        allow=('100', '6,500'),
-        not_shown='Nobody publishes a trip count. A sport that rides farther, or waits longer, '
-                  'buys fewer trips for the same dollars; golf and cross country may ride '
-                  'short buses. The FY2025 dollars were paid under the previous contract, whose '
-                  'rates were requested and not delivered.',
-    ))
-
-    # 4. The contract fixes the price, and when it ends.
-    rows.append(conclusion(
-        id='contract-fixes-the-price', bearing='lever', kind='measured', figure='p28',
-        claim='The bus contract already fixes %s’s regular-route price: %s for %s buses.'
-              % (C.fy(2028), C.usd(y[2028]['regular']), C.num(N77 + N83)),
-        so_what='A known %s rise. It ends June 2028; renewal, or the two priced option years, '
-                'is the decision.' % C.pct(m['rises'][2028]),
-        detail='Prices per bus per day are bid for every year: %s and %s in %s rising to %s '
-               'and %s in %s, for %s 77-passenger and %s 83-passenger buses, %s days. The '
-               '%s budget carries %s for the line, the contract’s second-year price to the '
-               'dollar. The option years are priced at %s and %s.'
-               % (rate(y[2026]['p77']), rate(y[2026]['p83']), C.fy(2026), rate(y[2028]['p77']),
-                  usd2(y[2028]['p83']), C.fy(2028), C.num(N77), C.num(N83), C.num(DAYS),
-                  C.fy(2027), C.usd(m['book']['regular']['fy27_balanced']),
-                  C.usd(y[2029]['regular']), C.usd(y[2030]['regular'])),
-        figures={'p28': figure(y[2028]['regular'], C.usd(y[2028]['regular'])),
-                 'buses': figure(N77 + N83, C.num(N77 + N83), 'buses'),
-                 'rise': figure(m['rises'][2028], C.pct(m['rises'][2028])),
-                 'fy28': fyf(2028), 'fy26': fyf(2026), 'fy27': fyf(2027),
-                 'a': figure(y[2026]['p77'], rate(y[2026]['p77'])),
-                 'b': figure(y[2026]['p83'], rate(y[2026]['p83'])),
-                 'c': figure(y[2028]['p77'], rate(y[2028]['p77'])),
-                 'd': figure(y[2028]['p83'], usd2(y[2028]['p83'])),
-                 'n77': figure(N77, C.num(N77), 'buses'), 'n83': figure(N83, C.num(N83), 'buses'),
-                 'days': figure(DAYS, C.num(DAYS), 'days'),
-                 'b27': figure(m['book']['regular']['fy27_balanced'],
-                               C.usd(m['book']['regular']['fy27_balanced'])),
-                 'o29': figure(y[2029]['regular'], C.usd(y[2029]['regular'])),
-                 'o30': figure(y[2030]['regular'], C.usd(y[2030]['regular']))},
-        allow=('77-passenger', '83-passenger', '2028'),
-        basis='The Dee Bus bid form (Exhibit E), signed 27 December 2024, every rate checked '
-              'against its printed totals; the agreement’s term; the district’s FY2027 budget '
-              'book.',
-        not_shown='The contract prices regular routes; it does not fix how many buses run — '
-                  'the form lets the district add or drop up to two a year at the same unit '
-                  'prices. The contract’s price is not what the town will pay: the line is '
-                  'voted net of anything else that pays for it.',
-    ))
-
-    # 5. The 7.6%, what it is and what cannot be settled.
-    rows.append(conclusion(
-        id='the-seven-point-six', bearing='sizes', kind='measured', figure='step',
-        claim='%s’s 7.6%% bus increase is the new contract’s first-year price over the old '
-              'budget line.' % C.fy(2026),
-        so_what='Whether it bought a price rise or an extra bus cannot be told without the old '
-                'contract.',
-        detail='The contract’s %s regular-route price is %s; the %s line was %s; the difference '
-               'is %s. If the old line paid for the same %s buses it averaged %s a bus a day '
-               'against %s now, and all of the rise is price. If it paid for %s, it averaged %s '
-               'and the rise is a bus.'
-               % (C.fy(2026), C.usd(y[2026]['regular']), C.fy(2025), C.usd(m['reg25']),
-                  C.usd(m['step']), C.num(N77 + N83), usd2(m['fleet_a']), usd2(m['fy26_avg']),
-                  C.num(N77 + N83 - 1), usd2(m['fleet_b'])),
-        figures={'step': figure(m['step'], C.usd(m['step'])), 'fy26': fyf(2026),
-                 'fy25': fyf(2025),
-                 'p26': figure(y[2026]['regular'], C.usd(y[2026]['regular'])),
-                 'b25': figure(m['reg25'], C.usd(m['reg25'])),
-                 'n': figure(N77 + N83, C.num(N77 + N83), 'buses'),
-                 'n1': figure(N77 + N83 - 1, C.num(N77 + N83 - 1), 'buses'),
-                 'fa': figure(m['fleet_a'], usd2(m['fleet_a'])),
-                 'fb': figure(m['fleet_b'], usd2(m['fleet_b'])),
-                 'f26': figure(m['fy26_avg'], usd2(m['fy26_avg']))},
-        allow=('7.6%',),
-        basis='The district’s FY2026 budget overview (“Dee Bus 7.6% line increase = $69,300”); '
-              'the contract’s FY2026 prices; the FY2025 general education transportation '
-              'budget, budget to budget.',
-        not_shown='The FY2025 rates and fleet were requested and not delivered. A district '
-                  'presentation says eleven buses were in use; that is a statement, not a rate.',
-    ))
-
-    # 6. Special education transportation: the line that moves.
-    lo = m['sped_low']
-    over = m['recent_over']
-    rows.append(conclusion(
-        id='sped-transport-is-the-variable', bearing='sizes', kind='measured', figure='now',
-        claim='Special education transportation spending rose from %s in %s to %s in %s.'
-              % (C.usd(lo['sped']['spent']), C.fy(lo['fy']), C.usd(L['sped']['spent']),
-                 C.fy(last)),
-        so_what='It ran over its voted budget in %s; the district cites more vans and '
-                'monitors.' % ' and '.join(C.fy(x['fy']) for x in over),
-        detail='%s is the base because it is the last year before the 2020 school closures — our '
-               'choice. The line came in under budget every year from %s to %s. Overruns: %s. '
-               'The state’s circuit breaker paid back %s for out-of-district '
-               'transportation in %s and %s in %s — never netted here, and it covers only '
-               'children placed outside the district. The district’s FY2026 overview gives the '
-               'line’s rise as a 7%% rate increase and more vans and monitors.'
-               % (C.fy(lo['fy']), C.fy(m['sped_under_run'][0]), C.fy(m['sped_under_run'][-1]),
-                  '; '.join('%s over in %s' % (C.usd(x['over']), C.fy(x['fy'])) for x in over),
-                  C.usd(st['cb'][-2]['transport']), C.fy(st['cb'][-2]['fy']),
-                  C.usd(st['cb'][-1]['transport']), C.fy(st['cb'][-1]['fy'])),
-        figures=dict({'low': figure(lo['sped']['spent'], C.usd(lo['sped']['spent'])),
-                      'now': figure(L['sped']['spent'], C.usd(L['sped']['spent'])),
-                      'lofy': fyf(lo['fy']), 'fy': fyf(last),
-                      'cb1': figure(st['cb'][-2]['transport'], C.usd(st['cb'][-2]['transport'])),
-                      'cb2': figure(st['cb'][-1]['transport'], C.usd(st['cb'][-1]['transport'])),
-                      'cbfy1': fyf(st['cb'][-2]['fy']),
-                      'u0': fyf(m['sped_under_run'][0]), 'u1': fyf(m['sped_under_run'][-1])},
-                     **{'o%d' % x['fy']: figure(x['over'], C.usd(x['over'])) for x in over},
-                     **{'ofy%d' % x['fy']: fyf(x['fy']) for x in over}),
-        allow=('7%', '2020'),
-        basis='General fund special education transportation account, voted against spent at '
-              'the close; DESE’s circuit breaker schedule, transportation column; the '
-              'district’s FY2026 budget overview.',
-        not_shown='The van contract is not in the archive, so how much of the rise is price, '
-                  'routes, children or monitors cannot be split. The cause given is the '
-                  'district’s; nothing here tests it.',
+        id='sped-buses-over-budget', bearing='lever', kind='measured', figure='over',
+        claim='Special education buses closed %s %s past their budget, and no transfer covered it.'
+              % (C.fy(last), C.usd(s['over'])),
+        so_what='%s budgets %s above what %s spent, after spending rose %s in one year.'
+                % (C.fy(2027), C.usd(A['sped27_margin']), C.fy(last), C.pct(A['sped_rise'])),
+        detail='Voted %s and revised to %s; %s paid out and %s still committed at the close, %s '
+               'in all. %s spent %s. The %s balanced budget carries %s for the line. The '
+               'district’s FY2026 budget overview attributes the line’s growth to a 7%% rate '
+               'increase and more vans and monitors; that is its explanation, and nothing here '
+               'tests it. The School Committee holds the line during the year; the Finance '
+               'Committee weighs the next budget against it.'
+               % (C.usd(s['voted']), C.usd(s['revised']), C.usd(s['expended']),
+                  C.usd(s['committed']), C.usd(s['spent']), C.fy(last - 1), C.usd(A['sped25']),
+                  C.fy(2027), C.usd(A['sped27'])),
+        figures={'over': U(s['over']), 'fy': fyf(last), 'fy27': fyf(2027),
+                 'margin': U(A['sped27_margin']),
+                 'rise': figure(A['sped_rise'], C.pct(A['sped_rise'])),
+                 'voted': U(s['voted']), 'revised': U(s['revised']), 'paid': U(s['expended']),
+                 'committed': U(s['committed']), 'spent': U(s['spent']), 'fy25': fyf(last - 1),
+                 'spent25': U(A['sped25']), 'b27': U(A['sped27'])},
+        allow=('7%',),
+        basis='MUNIS FY2026 year-end report, special education transportation (function 3300, '
+              'object 535026): original appropriation, revised budget, expended and '
+              'encumbered; the district’s FY2027 budget book, balanced scenario. Spent against '
+              'the REVISED budget is the test of control; the FY2027 figure is set beside '
+              'FY2026’s spending as a comparison, never as a projection.',
+        not_shown='Why it overran. The van contract is not in the archive, so price, routes, '
+                  'children and monitors cannot be separated; the circuit breaker repays part of '
+                  'out-of-district transportation a year later and is never netted here.',
         see=[('/analysis/special-education-costs', 'Special education costs')],
     ))
 
-    # 7. The fee, netted.
+    # 2. Credibility: the same line's budget, against its spending, for years.
+    g = A['lag']
     rows.append(conclusion(
-        id='fee-netted-from-the-line', bearing='lever', kind='measured', figure='net',
-        claim='The %s bus line was voted %s under the contract price, then topped back up '
-              'mid-year.' % (C.fy(2026), C.usd(m['netted'])),
-        so_what='The Finance Committee was told the bus fee cut the line by that much; where '
-                'the fees are booked is unstated.',
-        detail='Voted %s; contract price %s; transfers of %s during the year brought the line '
-               'to %s, all of it spent. Where the fee receipts landed is not stated anywhere; an '
-               'account named SCH. CHOICE BUS FEE in the school choice fund took in %s in %s and '
-               '%s in %s, after nothing in %s and %s.'
-               % (C.usd(m['L']['regular']['budget']), C.usd(y[2026]['regular']),
-                  C.usd(m['moved_back']), C.usd(m['L']['regular']['revised']),
-                  usd2(st['fee'][2025]), C.fy(2025), usd2(st['fee'][2026]), C.fy(2026),
-                  C.fy(2023), C.fy(2024)),
-        figures={'net': figure(m['netted'], C.usd(m['netted'])), 'fy26': fyf(2026),
-                 'voted': figure(m['L']['regular']['budget'], C.usd(m['L']['regular']['budget'])),
-                 'price': figure(y[2026]['regular'], C.usd(y[2026]['regular'])),
-                 'rev': figure(m['L']['regular']['revised'], C.usd(m['L']['regular']['revised'])),
+        id='sped-budget-trailed-spending', bearing='sizes', kind='measured', figure='sum',
+        claim='From %s to %s the special education bus line was budgeted %s above its spending.'
+              % (C.fy(g['start']), C.fy(g['cut']), C.usd(g['sum'])),
+        so_what='Its %s budget fell to %s, the lowest since %s; it then ran over in %s.'
+                % (C.fy(g['cut']), C.usd(g['cut_budget']), C.fy(g['since']),
+                   ' and '.join(C.fy(x['fy']) for x in g['over'])),
+        detail='It came in under its voted budget every year from %s to %s, by %s to %s; %s of '
+               'the gap in the window was %s to %s, before the 2020 school closures. Against '
+               'the voted budget it ran over by %s. The window is ours: it opens in '
+               'the first year the gap passed %s and closes in the year the budget was cut. '
+               'What the data shows is a budget trailing its spending in both directions. Why '
+               'is a hypothesis, untested: a budget set from the prior year’s actual would draw '
+               'this shape, and so would placements arriving and leaving between budget and '
+               'year.'
+               % (C.fy(g['run0']), C.fy(g['run1']), C.usd(g['lo']), C.usd(g['hi']),
+                  C.usd(g['pre']), C.fy(g['start']), C.fy(2019),
+                  ' and '.join('%s in %s' % (C.usd(x['over']), C.fy(x['fy'])) for x in g['over']),
+                  C.usd(BIG_GAP)),
+        figures=dict({'sum': U(g['sum']), 'start': fyf(g['start']), 'cut': fyf(g['cut']),
+                      'cutb': U(g['cut_budget']), 'since': fyf(g['since']),
+                      'run0': fyf(g['run0']), 'run1': fyf(g['run1']), 'lo': U(g['lo']),
+                      'hi': U(g['hi']), 'pre': U(g['pre']), 'fy19': fyf(2019),
+                      'big': U(BIG_GAP)},
+                     **{'o%d' % x['fy']: U(x['over']) for x in g['over']},
+                     **{'ofy%d' % x['fy']: fyf(x['fy']) for x in g['over']}),
+        allow=('2020',),
+        basis='General fund special education transportation account, voted budget against '
+              'spent at the close, every year: MUNIS year-end reports FY2023 to FY2026, the '
+              'Finance Committee’s ledger history before that, tied to MUNIS where both exist.',
+        not_shown='Two of the window’s years are the 2020 and 2021 closures, when buses barely '
+                  'ran; the pre-closure part is given separately. How many children, vans and '
+                  'routes each year paid for is not published.',
+    ))
+
+    # 3. An offset that masks: FY2027's school-day buses under a flat-looking total.
+    x = A['mask']
+    rows.append(conclusion(
+        id='school-day-rise-offset', bearing='sizes', kind='measured', figure='sd',
+        claim='%s’s school-day bus budget rises %s; the transportation total rises only %s.'
+              % (C.fy(2027), C.pct(x['sd_pct']), C.pct(x['all_pct'])),
+        so_what='Cutting athletic buses, %s, offset %s of the %s school-day rise.'
+                % (C.usd(x['ath_cut']), C.pct(x['offset_pct'], 0), C.usd(x['sd_rise'])),
+        detail='Regular routes and special education were voted %s for %s and carry %s in the '
+               '%s balanced budget. All four transportation lines go from %s to %s, because '
+               'athletic buses go to %s and band trips from %s to %s. Budget to budget '
+               'throughout. The two lines that carry children to school are the ones rising.'
+               % (C.usd(x['sd26']), C.fy(last), C.usd(x['sd27']), C.fy(2027),
+                  C.usd(x['all26']), C.usd(x['all27']), C.usd(0), C.usd(x['band26']),
+                  C.usd(x['band27'])),
+        figures={'sd': figure(x['sd_pct'], C.pct(x['sd_pct'])),
+                 'all': figure(x['all_pct'], C.pct(x['all_pct'])),
+                 'cut': U(x['ath_cut']), 'off': figure(x['offset_pct'], C.pct(x['offset_pct'], 0)),
+                 'rise': U(x['sd_rise']), 'fy27': fyf(2027), 'fy': fyf(last),
+                 'sd26': U(x['sd26']), 'sd27': U(x['sd27']), 'all26': U(x['all26']),
+                 'all27': U(x['all27']), 'zero': U(0), 'band26': U(x['band26'])},
+        basis='MUNIS FY2026 original appropriations; the district’s FY2027 budget book, '
+              'balanced scenario, whose FY2026 column ties to MUNIS line by line.',
+        not_shown='A budget is not a cost: the regular-route rise is the contract’s second-year '
+                  'price, and the special education rise is a budget, not a measured change in '
+                  'routes or children.',
+    ))
+
+    # 4. Who pays: the bus fee's first year against the regular-route contract.
+    f = A['feeyear']
+    rows.append(conclusion(
+        id='bus-fee-and-the-bill', bearing='lever', kind='measured', figure='paid',
+        claim='In the bus fee’s first year, the general fund still paid the full %s bus contract.'
+              % C.usd(f['spent']),
+        so_what='The fee’s candidate fund took in %s and spent nothing on buses. What does the '
+                'fee pay for?' % C.usd(st['fee'][2026]),
+        detail='%s regular routes were voted at %s, %s under the contract’s %s — the amount the '
+               'Finance Committee was told the fee cut — then %s was transferred in and %s '
+               'spent. In the school choice fund (1308), account 437601, SCH. CHOICE BUS FEE, '
+               'took in %s in %s and %s in %s, %s in two years. From %s to %s that fund has no '
+               'expense account coded to transportation, and its transfer to the general fund '
+               'is zero every year. Measured: the general fund paid the whole contract. A '
+               'hypothesis: the fund 1308 receipts are the fees.'
+               % (C.fy(last), C.usd(f['voted']), C.usd(m['netted']), C.usd(f['price']),
+                  C.usd(f['transfer']), C.usd(f['spent']), usd2(st['fee'][2025]), C.fy(2025),
+                  usd2(st['fee'][2026]), C.fy(2026), usd2(f['receipts']), C.fy(2023),
+                  C.fy(2026)),
+        figures={'paid': U(f['spent']), 'rec': U(st['fee'][2026]), 'fy': fyf(last),
+                 'voted': U(f['voted']), 'net': U(m['netted']), 'price': U(f['price']),
+                 'xfer': U(f['transfer']),
                  'f25': figure(st['fee'][2025], usd2(st['fee'][2025])),
                  'f26': figure(st['fee'][2026], usd2(st['fee'][2026])),
-                 'fy25': fyf(2025), 'fy23': fyf(2023), 'fy24': fyf(2024)},
-        basis='MUNIS FY2026 year-end report, account 535025, original appropriation and '
-              'transfers; the contract’s FY2026 price; Finance Committee minutes, 20 March '
-              '2025; MUNIS fund 1308 account 437601.',
-        not_shown='That the fund 1308 receipts are the bus fees is a hypothesis: the account '
-                  'is named for school choice, and nothing published ties it to the fee. The '
-                  'number of families who paid is not published.',
+                 'both': figure(f['receipts'], usd2(f['receipts'])),
+                 'fy25': fyf(2025), 'fy23': fyf(2023)},
+        allow=('1308', '437601'),
+        basis='MUNIS FY2026 year-end report, account 535025: original appropriation, transfers, '
+              'expended; the contract’s FY2026 price; Finance Committee minutes, 20 March 2025; '
+              'MUNIS school special funds, fund 1308, every account, FY2023 to FY2026.',
+        not_shown='Whether the fund 1308 receipts are the fees is not established: the account '
+                  'is named for school choice. How many families paid is not published. What '
+                  'the fee was meant to fund is a question for the budget to answer.',
         see=[('/what-families-pay', 'What families pay')],
     ))
 
-    # 8. FY2027: athletic buses cut, and the restoration plan.
+    # 5. Said against did: the FY2027 restoration, and the 2025 correction.
+    r = A['restore']
     rows.append(conclusion(
-        id='fy27-athletic-buses', bearing='lever', kind='measured', figure='restore',
-        claim='%s’s budget cut athletic buses to %s; restoring high school buses was put at %s.'
-              % (C.fy(2027), C.usd(m['fy27']['athletic']), C.usd(m['restore'])),
-        so_what='The August plan: %s from the town and %s from the athletics fee fund.'
-                % (C.usd(m['restore_town']), C.usd(m['restore_fund'])),
-        detail='The balanced budget carried %s; the %s level-service budget had carried %s. The Superintendent told the '
-               'School Committee on 26 August 2026 the lower figure came from scheduling '
-               'competitions closer to Lunenburg, more home games and actual schedules. At %s '
-               'contract prices %s is about %s of the bid form’s average trips — our estimate.'
-               % (C.usd(m['fy27']['athletic']), C.fy(2027),
-                  C.usd(m['book']['athletic']['fy27_level_service']), C.fy(2027),
-                  C.usd(m['restore']), C.num(m['restore_trips'])),
-        figures={'zero': figure(m['fy27']['athletic'], C.usd(m['fy27']['athletic'])),
-                 'restore': figure(m['restore'], C.usd(m['restore'])),
-                 'town': figure(m['restore_town'], C.usd(m['restore_town'])),
-                 'fund': figure(m['restore_fund'], C.usd(m['restore_fund'])),
-                 'fy27': fyf(2027),
-                 'ls': figure(m['book']['athletic']['fy27_level_service'],
-                              C.usd(m['book']['athletic']['fy27_level_service'])),
-                 'tr': figure(m['restore_trips'], C.num(m['restore_trips']), 'trips')},
-        allow=('26 August 2026',),
-        basis='The district’s FY2027 budget book, balanced and level-service scenarios; School '
-              'Committee minutes, 26 August 2026, as minuted; the contract’s FY2027 rates for '
-              'our trip estimate.',
-        not_shown='The $58,880 is the Superintendent’s figure as minuted, not a contract or a '
-                  'ledger amount, and whether Special Town Meeting funded it is not in this '
-                  'archive’s ledgers yet. Middle school buses are not in it.',
+        id='restored-buses-on-the-fee-fund', bearing='lever', kind='measured', figure='pct',
+        claim='The %s plan puts %s of restored athletic buses back on the athletic fee fund.'
+              % (C.fy(2027), C.pct(r['fund_pct'], 0)),
+        so_what='In March 2025, moving them off it was called a correction. The budget has to '
+                'say which policy holds.',
+        detail='On 26 August 2026 the Superintendent put restoring high school buses at %s, '
+               'rounded to %s: %s from the town and %s from the athletic revolving account. On '
+               '12 March 2025 a School Committee member said athletic transportation accounting '
+               '“has been corrected from past practice that was done incorrectly”, and in April '
+               'transfers moved costs charged to the revolving account onto the town line. In '
+               '%s the town line was %s of %s on the higher of the district’s two sheets, %s; '
+               'the %s plan’s town share is %s.'
+               % (C.usd(r['estimate']), C.usd(r['rounded']), C.usd(r['town']),
+                  C.usd(r['fund']), C.fy(2024), C.usd(m['ledger'][[q['fy'] for q in m['ledger']].index(2024)]['athletic']['budget']),
+                  C.usd(sp['totals'][2024]), C.pct(r['town24_pct'], 0), C.fy(2027),
+                  C.pct(r['town_pct'], 0)),
+        figures={'pct': figure(r['fund_pct'], C.pct(r['fund_pct'], 0)), 'fy27': fyf(2027),
+                 'est': U(r['estimate']), 'rnd': U(r['rounded']), 'town': U(r['town']),
+                 'fund': U(r['fund']), 'fy24': fyf(2024),
+                 'line24': U(m['ledger'][[q['fy'] for q in m['ledger']].index(2024)]['athletic']['budget']),
+                 'sheet24': U(sp['totals'][2024]),
+                 't24': figure(r['town24_pct'], C.pct(r['town24_pct'], 0)),
+                 't27': figure(r['town_pct'], C.pct(r['town_pct'], 0))},
+        allow=('March 2025', '26 August 2026', '12 March 2025'),
+        basis='School Committee minutes, 26 August 2026, 12 March 2025 and 16 April 2025, each '
+              'quotation re-read from the archive on every build; the district’s by-sport '
+              'workbook; the general fund athletic transportation account.',
+        not_shown='Whether Special Town Meeting funded the town’s share is not in the ledgers '
+                  'held yet. The 2025 statement concerned how costs were accounted for; whether '
+                  'the plan is the same practice is the question, not a finding.',
+    ))
+
+    # 6. The fee fund: receipts against spending, and the reclassification in the same card.
+    ff = A['fund']['by']
+    rows.append(conclusion(
+        id='fee-fund-receipts-against-spending', bearing='sizes', kind='measured',
+        figure='short',
+        claim='The athletic fee fund spent %s more than it took in over %s and %s.'
+              % (C.usd(A['fund_short']), C.fy(2023), C.fy(2024)),
+        so_what='Over %s and %s it took in %s more, after costs were reclassified off it. %s '
+                'draws %s.' % (C.fy(2025), C.fy(2026), C.usd(A['fund_ahead']), C.fy(2027),
+                               C.usd(r['fund'])),
+        detail='Receipts against spending, fund 1301: %s. The district’s FY2026 budget overview '
+               'says the “athletic revolving can not support these increased costs”, which fits '
+               'the first two years. The surplus came after costs moved to the town line: %s was '
+               'transferred into the general fund athletic line in %s, and the fund’s high '
+               'school salaries account closed that year at %s, which is what a '
+               'reclassification out looks like (our reading). No balance after %s is '
+               'published.'
+               % ('; '.join('%s %s in, %s out' % (C.fy(q), C.usd(ff[q]['receipts']),
+                                                   C.usd(ff[q]['spending'])) for q in sorted(ff)),
+                  C.usd(A['reclass25']), C.fy(2025), C.usd(ff[2025]['hs_salaries']),
+                  C.fy(2020)),
+        figures=dict({'short': U(A['fund_short']), 'ahead': U(A['fund_ahead']),
+                      'fy23': fyf(2023), 'fy24': fyf(2024), 'fy25': fyf(2025),
+                      'fy26': fyf(2026), 'fy27': fyf(2027), 'draw': U(r['fund']),
+                      'reclass': U(A['reclass25']), 'sal': U(ff[2025]['hs_salaries']),
+                      'fy20': fyf(2020)},
+                     **{'in%d' % q: U(ff[q]['receipts']) for q in ff},
+                     **{'out%d' % q: U(ff[q]['spending']) for q in ff}),
+        allow=('1301',),
+        basis='MUNIS school special funds year-end reports, fund 1301, FY2023 to FY2026: '
+              'revenue rows against expended plus encumbered; the general fund athletic '
+              'transportation account’s FY2025 transfer; the FY2026 budget overview.',
+        not_shown='The fund’s balance at any 30 June since 2020 is not published, so whether it '
+                  'ran below zero is unknown. In FY2026 its purchase-of-service account spent '
+                  'about what it did in FY2024; what that bought is not itemised.',
+        see=[('/analysis/athletics-ledger', 'The athletics fee fund, line by line')],
+    ))
+
+    # 7. Locked-in growth: the contract against the model.
+    mo = A['model']
+    rows.append(conclusion(
+        id='contract-outruns-the-model', bearing='lever', kind='measured', figure='gap',
+        claim='The signed bus contract rises %s into %s; this site’s model grows the line %s.'
+              % (C.pct(mo['contract_pct']), C.fy(2028), C.pct(100 * mo['rate'], 0)),
+        so_what='That leaves the model’s %s regular routes %s under a price already fixed.'
+                % (C.fy(2028), C.usd(mo['gap'])),
+        detail='The contract fixes %s regular routes at %s for %s buses, %s days, after %s in '
+               '%s — and the %s budget carries that price to the dollar. The model starts from '
+               '%s and applies its default rate: %s. The contract ends 30 June 2028; two option '
+               'years are priced at %s and %s. Special education transportation is not in this '
+               'line; the model grows it with special education.'
+               % (C.fy(2028), C.usd(mo['contract28']), C.num(N77 + N83), C.num(DAYS),
+                  C.usd(y[2027]['regular']), C.fy(2027), C.fy(2027), C.usd(mo['base']),
+                  C.usd(mo['fy28']), C.usd(y[2029]['regular']), C.usd(y[2030]['regular'])),
+        figures={'gap': U(mo['gap']), 'cpct': figure(mo['contract_pct'], C.pct(mo['contract_pct'])),
+                 'rate': figure(mo['rate'], C.pct(100 * mo['rate'], 0)), 'fy28': fyf(2028),
+                 'p28': U(mo['contract28']), 'buses': figure(N77 + N83, C.num(N77 + N83), 'buses'),
+                 'days': figure(DAYS, C.num(DAYS), 'days'), 'p27': U(y[2027]['regular']),
+                 'fy27': fyf(2027), 'base': U(mo['base']), 'm28': U(mo['fy28']),
+                 'o29': U(y[2029]['regular']), 'o30': U(y[2030]['regular'])},
+        allow=('30 June 2028',),
+        basis='The Dee Bus bid form (Exhibit E), every rate checked against its printed totals; '
+              'the agreement’s term; the district’s FY2027 budget book; this site’s model as '
+              'published (model.json: the transport rate and its starting amount). The model '
+              'is OURS.',
+        not_shown='The contract fixes a price per bus; it does not fix how many buses run, and '
+                  'the district may add or drop up to two a year at the same unit prices.',
+    ))
+
+    # 8. Two sources, one quantity: the two per-sport sheets.
+    h = A['sheets']
+    wd = h['widest']
+    rows.append(conclusion(
+        id='two-sheets-one-cost', bearing='sizes', kind='measured', figure='hi',
+        claim='The district’s two athletic bus sheets price the same %s sports at %s and %s.'
+              % (C.fy(2024), C.usd(h['workbook']), C.usd(h['fincom'])),
+        so_what='Both are above the %s town line. Nothing published says which sheet is right.'
+                % C.usd(m['ledger'][[q['fy'] for q in m['ledger']].index(2024)]['athletic']['budget']),
+        detail='The by-sport workbook (records request) and the Finance Committee’s copy of a '
+               'second sheet both print transportation for %s sports in %s; %s agree to the cent '
+               'and %s do not. The widest: %s, %s in one and %s in the other. The workbook’s '
+               'total for every sport it lists is %s. Both are hand-assembled and neither is a '
+               'ledger, so this page publishes the spread and picks neither.'
+               % (C.num(h['n']), C.fy(2024), C.num(h['agree']), C.num(h['n'] - h['agree']),
+                  wd['name'], usd2(wd['workbook']), usd2(wd['fincom']),
+                  C.usd(sp['totals'][2024])),
+        figures={'hi': U(h['workbook']), 'lo': U(h['fincom']), 'fy24': fyf(2024),
+                 'line': U(m['ledger'][[q['fy'] for q in m['ledger']].index(2024)]['athletic']['budget']),
+                 'n': figure(h['n'], C.num(h['n']), 'sports'),
+                 'agree': figure(h['agree'], C.num(h['agree']), 'sports'),
+                 'differ': figure(h['n'] - h['agree'], C.num(h['n'] - h['agree']), 'sports'),
+                 'w1': figure(wd['workbook'], usd2(wd['workbook'])),
+                 'w2': figure(wd['fincom'], usd2(wd['fincom'])),
+                 'all': U(sp['totals'][2024])},
+        basis='The district’s sport-by-sport workbook (records request, June 2026) and '
+              '“Athletics Costs (1).xlsx” from the Finance Committee’s FY2026 budget files, '
+              'matched sport by sport through a crosswalk that is ours; the general fund '
+              'athletic transportation account.',
+        not_shown='Which figure is right. Paired sports carry identical figures in both sheets, '
+                  'so per-sport amounts are allocations, not measurements. No trip count is '
+                  'published for any year.',
+        see=[('/what-sports-cost', 'What sports cost')],
     ))
     return emit(ID, rows)
 
@@ -1235,6 +1468,7 @@ def sources():
 
 def payload(m, rows):
     L, last, k, sp, st = m['L'], m['last'], m['contract'], m['sports'], m['state']
+    A = m['audit']
     by_year = []
     for r in m['ledger']:
         d = dict(fy=r['fy'], source=r['source'])
@@ -1302,21 +1536,40 @@ def payload(m, rows):
               'spent at its close (expended plus still committed), %s; never added together. '
               'Per-sport dollars are the district’s hand-assembled sheets (stated). Every trip '
               'count is OUR ESTIMATE.' % C.fyspan(m['first'], last),
+        # The stat row leads with COMPARISONS, as the cards do (notes/process/AUDIT-PASS.md).
+        # The fourth is the credit the ledger shows: a line carried to the dollar.
         stats=[
-            dict(value=C.usd(L['all_spent']),
-                 label='spent on school transportation in %s — every general fund line: '
-                       'regular routes, special education, athletics, band' % C.fy(last),
+            dict(value=C.usd(A['sped26']['over']),
+                 label='special education buses spent past their revised %s budget; no '
+                       'transfer covered it' % C.fy(last),
                  tone='var(--series-cost)'),
-            dict(value=C.pct(m['share'][last]['spent']),
-                 label='of that was athletic buses — %s of spending; %s of the budget voted'
-                       % (C.usd(L['athletic']['spent']), C.pct(m['share'][last]['budget']))),
-            dict(value=C.usd(m['ystep'][2028]['regular']),
-                 label='the contract’s fixed %s price for the %s regular-route buses, '
-                       '%s days' % (C.fy(2028), C.num(N77 + N83), C.num(DAYS))),
-            dict(value='≈%s trips' % C.num(m['trips_total']),
-                 label='what %s athletic bus spending buys at the new contract’s prices — '
-                       'OUR ESTIMATE' % C.fy(2025)),
+            dict(value='+' + C.pct(A['mask']['sd_pct']),
+                 label='%s school-day bus budget, against %s; all transportation +%s once '
+                       'athletic buses were cut' % (C.fy(2027), C.fy(last),
+                                                   C.pct(A['mask']['all_pct']))),
+            dict(value=C.usd(A['feeyear']['spent']),
+                 label='general fund spending on regular routes in %s, the bus fee’s first '
+                       'year — the full contract price' % C.fy(last)),
+            dict(value=C.usd(b['regular']['fy27_balanced']),
+                 label='the %s regular-route budget — the contract’s price to the dollar, a '
+                       'line a board can plan exactly' % C.fy(2027)),
         ],
+        audit=dict(
+            overdrawn=A['overdrawn'],
+            fee_fund=A['fund']['fund'],
+            fee_fund_last_balance=A['fund']['last_balance'],
+            school_choice_fund=dict(transportation_expense_accounts=0,
+                                    transfer_out_years=A['fund']['xfer_years'],
+                                    transfer_out_total=0),
+            fy27_mask=A['mask'],
+            sped_lag=A['lag'],
+            model=dict(rate=A['model']['rate'], base=A['model']['base'],
+                       fy28=A['model']['fy28'], contract_fy28=A['model']['contract28'],
+                       gap=A['model']['gap']),
+            sheets=dict((k_, v) for k_, v in A['sheets'].items() if k_ != 'widest'),
+            paired=A['paired'],
+            restore=A['restore'],
+        ),
         conclusions=rows,
         by_year=by_year,
         by_year_keys=[dict(key=c, name=CAT_NAME[c]) for c, _, _, _ in CATS],
@@ -1348,6 +1601,14 @@ def payload(m, rows):
             'FY2026; it books transportation inside one purchase-of-service account with '
             'officials, uniforms and ice time.',
             'Why DESE’s FY2025 transportation figure differs from the town ledger.',
+            'What the athletic fee fund held at any 30 June after 2020, so whether it ran below '
+            'zero in FY2024, and what it holds as FY2027 draws on it.',
+            'What the fee fund’s high school purchase-of-service account paid for in FY2026, '
+            'the year the general fund line was budgeted to carry athletic buses in full.',
+            'What made FY2024’s regular routes cost more than FY2025’s; both years ran under '
+            'the contract before the current one, which is not held.',
+            'Why the special education line was budgeted above its spending for years and then '
+            'below it; every explanation offered here is a hypothesis.',
         ],
         gaps=[dict(key=k_, what=w) for k_, w in m['gaps'].items()],
         sources=sources(),
@@ -1355,6 +1616,184 @@ def payload(m, rows):
 
 
 # --------------------------------------------------------------------- markdown
+
+def render_audit(m):
+    """The evidence for the summary's comparisons: each table first, then what it does not
+    show. Run before the inventory sections, because these are what the summary leads with."""
+    A, L, last, b, sp, st, k = (m['audit'], m['L'], m['last'], m['book'], m['sports'],
+                                m['state'], m['contract'])
+    y = m['ystep']
+    byfy = {r['fy']: r for r in m['ledger']}
+    qs = {q['key']: q for q in m['quotes']}
+    w = []
+    a = w.append
+    a('## The budget against what happened\n\n')
+    a('Each comparison below is one measured thing set against another it was supposed to '
+      'equal. Causes are hypotheses wherever they appear, and say so.\n\n')
+
+    # ---- control
+    a('### Lines that closed the year past their revised budget\n\n')
+    a('The **revised** budget is the voted budget after every transfer made during the year. A '
+      'line that spent more than it was closed overdrawn.\n\n')
+    a('| FY | line | revised budget | spent at the close | past revised by | transferred in during the year |\n'
+      '|---|---|---:|---:|---:|---:|\n')
+    for o in A['overdrawn']:
+        a('| %s | %s | %s | %s | %s | %s |\n' % (
+            C.fy(o['fy']), CAT_NAME[o['cat']], C.usd(o['revised']), C.usd(o['spent']),
+            C.usd(o['over']), C.usd(o['transfer']) if o['transfer'] else '—'))
+    big = max(A['overdrawn'], key=lambda o: o['over'])
+    s = A['sped26']
+    a('\n**%s, special education: %s past its revised budget**, the largest overrun on any '
+      'transportation line since %s. Voted %s, revised to %s, %s paid out and %s still '
+      'committed at the close. The %s budget for the line is %s, %s above what %s spent.\n\n'
+      % (C.fy(last), C.usd(s['over']), C.fy(m['first']), C.usd(s['voted']),
+         C.usd(s['revised']), C.usd(s['expended']), C.usd(s['committed']), C.fy(2027),
+         C.usd(A['sped27']), C.usd(A['sped27_margin']), C.fy(last)))
+    if (big['fy'], big['cat']) != (last, 'sped'):
+        fail('the FY%d special education overrun is no longer the largest in the series' % last)
+    f4 = A['fy24']
+    a('**%s, both school-day lines: %s past their revised budgets together.** Regular routes '
+      '%s past, after %s was transferred in; special education %s past. And %s’s regular routes '
+      'spent %s, more than %s’s whole year, %s. Both years ran under the contract before the '
+      'current one, which is not held, so what the extra was cannot be told (registered: '
+      '*%s*). A Finance Committee member asked for the bus contracts that spring (section 4).\n\n'
+      % (C.fy(2024), C.usd(f4['both']), C.usd(f4['regular']), C.usd(f4['reg_transfer']),
+         C.usd(f4['sped']), C.fy(2024), C.usd(f4['reg_spent']), C.fy(2025),
+         C.usd(f4['reg25_spent']), m['gaps']['fy24-regular']))
+
+    # ---- credibility
+    g = A['lag']
+    a('### Special education: budgeted above its spending for years, then below it\n\n')
+    a('From %s to %s the line came in under its voted budget every year, by %s to %s, %s in '
+      'all. From %s, the first year the gap passed %s — our threshold — to %s, the year the '
+      'budget was cut to %s, the gap was %s; %s of it fell in %s to %s, before the school '
+      'closures. Then the line ran over its voted budget: %s. The year-by-year is in section '
+      '6.\n\n'
+      % (C.fy(g['run0']), C.fy(g['run1']), C.usd(g['lo']), C.usd(g['hi']), C.usd(g['all']),
+         C.fy(g['start']), C.usd(BIG_GAP), C.fy(g['cut']), C.usd(g['cut_budget']),
+         C.usd(g['sum']), C.usd(g['pre']), C.fy(g['start']), C.fy(2019),
+         '; '.join('%s in %s' % (C.usd(x['over']), C.fy(x['fy'])) for x in g['over'])))
+    a('*What the data shows:* a budget that trailed its spending in both directions. *What it '
+      'does not show:* why. *A hypothesis, untested:* a budget set from the prior year’s actual '
+      'would draw this shape, and so would placements arriving and leaving between the budget '
+      'and the year. The van contract and a count of routes by year would settle it '
+      '(registered: *%s*).\n\n' % m['gaps']['vans'])
+
+    # ---- masking
+    x = A['mask']
+    a('### %s: the school-day rise under a flat-looking total\n\n' % C.fy(2027))
+    a('| line | %s voted | %s balanced budget | change |\n|---|---:|---:|---:|\n'
+      % (C.fy(last), C.fy(2027)))
+    for c in CAT_NAME:
+        v0, v1 = b[c]['fy26_final'], b[c]['fy27_balanced']
+        a('| %s | %s | %s | %s |\n' % (CAT_NAME[c], C.usd(v0), C.usd(v1),
+                                       ('+' if v1 > v0 else '') + C.usd(v1 - v0)))
+    a('| **school day** (regular + special education) | **%s** | **%s** | **+%s, %s** |\n'
+      % (C.usd(x['sd26']), C.usd(x['sd27']), C.usd(x['sd_rise']), C.pct(x['sd_pct'])))
+    a('| **all transportation** | **%s** | **%s** | **+%s, %s** |\n\n'
+      % (C.usd(x['all26']), C.usd(x['all27']), C.usd(x['all27'] - x['all26']),
+         C.pct(x['all_pct'])))
+    a('The athletic cut, %s, offsets %s of the school-day rise. Budget to budget throughout; '
+      'the regular-route rise is the contract’s second-year price.\n\n'
+      % (C.usd(x['ath_cut']), C.pct(x['offset_pct'])))
+
+    # ---- who pays: the fee
+    f = A['feeyear']
+    a('### The bus fee and the general fund\n\n')
+    a('In %s, the fee’s first year, regular routes were voted %s and spent %s — the contract’s '
+      'full price, all of it from the general fund after %s was transferred in. The candidate '
+      'fee account in the school choice fund took in %s across %s and %s (section 5). In every '
+      'year %s to %s that fund has **no expense account coded to transportation** — by '
+      'function 3300, by the transportation object codes, or by description — and its '
+      'transfer to the general fund is **zero**. So on this ledger the fee’s effect on what the '
+      'town paid for regular routes is nil. What the fee does pay for is a question the budget '
+      'has to answer; that the fund 1308 receipts are the fees remains a hypothesis '
+      '(registered: *%s*).\n\n'
+      % (C.fy(last), C.usd(f['voted']), C.usd(f['spent']), C.usd(f['transfer']),
+         usd2(f['receipts']), C.fy(2025), C.fy(2026), C.fy(A['fund']['xfer_years'][0]),
+         C.fy(A['fund']['xfer_years'][-1]), m['gaps']['fee-account']))
+
+    # ---- the fee fund
+    ff = A['fund']
+    a('### The athletic fee fund: receipts against spending\n\n')
+    a('Fund 1301, every account, at the year-end close. Receipts are the high school and middle '
+      'school user charges; spending is expended plus still committed.\n\n')
+    a('| FY | receipts | spending | receipts less spending | of which: high school purchase of service | high school salaries |\n'
+      '|---|---:|---:|---:|---:|---:|\n')
+    for q in ff['fund']:
+        a('| %s | %s | %s | %s | %s | %s |\n' % (
+            C.fy(q['fy']), usd2(q['receipts']), usd2(q['spending']), usd2(q['net']),
+            usd2(q['hs_pos']), usd2(q['hs_salaries'])))
+    fb = ff['by']
+    a('\nThe district’s FY2026 budget overview says the *“%s”*. Across %s and %s the fund '
+      'spent %s more than it took in, which fits that. Across %s and %s it took in %s more '
+      'than it spent — **after** costs moved off it onto the town line: %s was transferred '
+      'into the general fund athletic line in %s, and the fund’s high school salaries account '
+      'closed that year at %s, which is what a reclassification out looks like (our reading). '
+      'The %s plan draws %s from it (section 2).\n\n'
+      % (OVERVIEW_QUOTES['athletics'].split('; ')[1], C.fy(2023), C.fy(2024),
+         C.usd(A['fund_short']), C.fy(2025), C.fy(2026), C.usd(A['fund_ahead']),
+         C.usd(A['reclass25']), C.fy(2025), usd2(fb[2025]['hs_salaries']), C.fy(2027),
+         C.usd(A['restore']['fund'])))
+    a('**One thing to ask.** In %s the town line paid %s for athletic buses, and the fund’s '
+      'high school purchase-of-service account — where buses used to be charged, with officials '
+      'and ice time — spent %s, about what it spent in %s, %s, when it still carried most of '
+      'them. Equally consistent with that: officials and ice time rose; some buses are still '
+      'charged to the fund; reclassifications landed in a different year. Nothing published '
+      'separates them (registered: *%s*).\n\n'
+      % (C.fy(last), C.usd(L['athletic']['spent']), usd2(fb[2026]['hs_pos']), C.fy(2024),
+         usd2(fb[2024]['hs_pos']), m['gaps']['fee-pos']))
+    lb = ff['last_balance']
+    a('**The balance is not known.** The last published is %s at %s, in the Finance '
+      'Committee’s special revenue fund workbook (`%s`, stated). Receipts and spending do not '
+      'give a balance without a starting one, so whether the fund ran below zero in %s cannot '
+      'be said (registered: *%s*).\n\n'
+      % (usd2(lb['amount']), lb['as_of'], lb['source'], C.fy(2024), m['gaps']['fee-balance']))
+
+    # ---- the restoration
+    r = A['restore']
+    rq, rw = qs['restore'], qs['restore-why']
+    a('### The %s restoration: the plan against the sheet and the fund\n\n' % C.fy(2027))
+    a('On 26 August 2026 the Superintendent told the School Committee *“%s”* ([minutes](%s)). '
+      'That is %s of the restoration on the athletic fee fund and %s on the town. In %s the '
+      'town line was %s of %s on the district’s by-sport workbook, %s — the higher of its two '
+      'sheets, so on the lower one the town’s share would be larger. On 12 March 2025 a School '
+      'Committee member called the move onto the town line a correction (section 2). Both are '
+      'measured; which policy holds is for the budget to say.\n\n'
+      % (rq['quote'], rq['cite'], C.pct(r['fund_pct']), C.pct(r['town_pct']), C.fy(2024),
+         C.usd(byfy[2024]['athletic']['budget']), C.usd(sp['totals'][2024]),
+         C.pct(r['town24_pct'])))
+    a('**The estimate against the sheet.** She explained that *“%s”* ([minutes](%s)). The '
+      'district’s own by-sport workbook puts %s high school athletic buses at %s, and the '
+      'contract’s rates rise from %s to %s: %s to %s a mile, %s to %s an hour of waiting. '
+      'If %s is short, the difference lands on the fee fund or the town line. A comparison, '
+      'not a forecast.\n\n'
+      % (rw['quote'], rw['cite'], C.fy(2025), usd2(r['hs25']), C.fy(2026), C.fy(2027),
+         usd2(y[2026]['trip_rate']), usd2(y[2027]['trip_rate']), usd2(y[2026]['wait_rate']),
+         usd2(y[2027]['wait_rate']), C.usd(r['estimate'])))
+
+    # ---- the model
+    mo = A['model']
+    a('### The contract against this site’s model\n\n')
+    a('The contract’s regular-route price rises %s into %s and %s into %s, both already '
+      'signed. This site’s model (`model/finance.py`, published in `model.json`) starts the '
+      'line at the %s budget, %s, and grows it at a default %s a year: %s for %s, **%s under '
+      'the %s the contract fixes**. A contracted price is stronger evidence than a default '
+      'rate (rules 4 and 6), so this changes an assumption; it is reported here and the model '
+      'has not been changed. Special education transportation is not in that line; the model '
+      'grows it with special education.\n\n'
+      % (C.pct(m['rises'][2027]), C.fy(2027), C.pct(m['rises'][2028]), C.fy(2028), C.fy(2027),
+         C.usd(mo['base']), C.pct(100 * mo['rate'], 0), C.usd(mo['fy28']), C.fy(2028),
+         C.usd(mo['gap']), C.usd(mo['contract28'])))
+
+    a('### What this does not show\n\n')
+    a('- **Why any line overran.** Every cause offered above is a hypothesis; the van contract, '
+      'the earlier bus contract and the fee fund’s account detail would each settle one.\n')
+    a('- **That anybody did anything wrong.** A variance is a question the next budget has to '
+      'answer, and several of these have more than one innocent explanation.\n')
+    a('- **The fee fund’s balance**, at any 30 June after %s.\n\n' % lb['as_of'][:4])
+    return ''.join(w)
+
 
 def render_md(m, rows):
     L, last, k, sp, st, b = m['L'], m['last'], m['contract'], m['sports'], m['state'], m['book']
@@ -1379,6 +1818,19 @@ def render_md(m, rows):
     for c in rows:
         tag = ' *(our estimate — a hypothesis, not a measurement)*' if c['kind'] == 'hypothesis' else ''
         a('**%s**%s %s\n\n' % (c['claim'], tag, c['so_what']))
+    reg25, reg26 = byfy[2025]['regular'], L['regular']
+    if not (reg25['spent'] == reg25['budget'] and reg26['spent'] == reg26['revised']
+            and b['regular']['fy27_balanced'] == r0(y[2027]['regular'])
+            and all(byfy[f]['regular']['over_revised'] > 0 for f in (2023, 2024))):
+        fail('the regular-route line no longer matches its budget exactly in FY2025, FY2026 and '
+             'FY2027, which the credit paragraph states')
+    a('**Credit where the ledger shows it.** Regular routes are now a line a board can plan to '
+      'the dollar. %s spent its budget exactly, %s; %s spent its revised budget exactly, %s, '
+      'the contract’s price; and the %s budget carries the contract’s second-year price, %s, '
+      'to the dollar. The contract fixes %s too. That control was not there before: the same '
+      'line closed %s and %s past its revised budget.\n\n'
+      % (C.fy(2025), C.usd(reg25['spent']), C.fy(last), C.usd(reg26['spent']), C.fy(2027),
+         C.usd(b['regular']['fy27_balanced']), C.fy(2028), C.fy(2023), C.fy(2024)))
     a('Every line on this page is a general fund budget line, and a budget line is **net**: it '
       'is what the town raises after anything else that pays for the thing — bus fees, the '
       'athletic fee fund, state reimbursement — has been taken off (rule 11). None of those is '
@@ -1396,6 +1848,8 @@ def render_md(m, rows):
       'contract fixes for FY2026 to FY2028, with the two optional years.](charts/transportation-contract.svg)\n\n')
     a('![Special education transportation: voted and spent each year, with the circuit '
       'breaker’s transportation reimbursement beside it, never netted.](charts/transportation-sped.svg)\n\n')
+
+    a(render_audit(m))
 
     # ---- 1. schools vs athletics
     a('## 1. The school day against athletics\n\n')
@@ -1479,12 +1933,16 @@ def render_md(m, rows):
     a25 = byfy[2025]['athletic']
     a('## 2. Athletic transportation: what it costs and who has paid\n\n')
     a('### In plain terms\n\n')
+    sh = m['audit']['sheets']
     a('The athletic bus line in the town budget used to be a fraction of what athletic buses '
       'cost; the athletic fee fund — what families pay to play — covered the rest. In %s the '
-      'district’s own sheet put the cost at %s while the voted line was %s. From %s the line '
-      'was set to carry the full cost, and the district said so at the time. In %s the '
-      'balanced budget cut it to %s.\n\n'
-      % (C.fy(2024), C.usd(sp['totals'][2024]), C.usd(a24['budget']), C.fy(2026), C.fy(2027),
+      'district’s by-sport workbook put the cost at %s while the voted line was %s; on the %s '
+      'sports both of its sheets print, one says %s and the other %s, and the town has not '
+      'said which is right. Either way the cost was above the line. From %s the line was set '
+      'to carry the full cost, and the district said so at the time. In %s the balanced '
+      'budget cut it to %s.\n\n'
+      % (C.fy(2024), C.usd(sp['totals'][2024]), C.usd(a24['budget']), C.num(sh['n']),
+         C.usd(sh['workbook']), C.usd(sh['fincom']), C.fy(2026), C.fy(2027),
          C.usd(b['athletic']['fy27_balanced'])))
     a('### The evidence\n\n')
     a('| FY | general fund line, budget | general fund line, spent | fee fund, stated by the district | full cost, district by-sport sheet (stated) |\n')
@@ -1577,6 +2035,23 @@ def render_md(m, rows):
         if not c['agree']:
             a('| %s | %s | %s | %s |\n' % (C.fy(c['fy']), c['name'], usd2(c['workbook']),
                                           usd2(c['fincom'])))
+    au = m['audit']
+    a('\nOn the %s sports both sheets print for %s, the workbook totals %s and the Finance '
+      'Committee copy %s, %s lower. This page publishes both and picks neither.\n\n'
+      % (C.num(au['sheets']['n']), C.fy(2024), usd2(au['sheets']['workbook']),
+         usd2(au['sheets']['fincom']), C.pct(au['sheets']['lower_pct'])))
+    a('**Paired sports carry identical figures**, so a per-sport amount is an allocation, not '
+      'a measurement — one bus split between two teams would print this way (a hypothesis): '
+      '%s.\n\n' % '; '.join('%s %s %s, %s each' % (
+          C.fy(p['fy']), p['level'], ' and '.join(p['sports']), usd2(p['value']))
+          for p in au['paired']))
+    spr = au['spring']
+    a('**Spring %s.** Its rows sum to %s, %s against %s’s %s, and spring is %s of the whole '
+      'fall from %s to %s. The workbook prints %s as the season total. *A hypothesis:* the '
+      'spring section was unfinished when the sheet was made; nothing here tests it.\n'
+      % (C.fy(2025), usd2(spr['rows25']), C.pct(spr['fall_pct']), C.fy(2024),
+         usd2(spr['rows24']), C.pct(spr['share_of_drop']), C.fy(2024), C.fy(2025),
+         usd2(spr['printed25'])))
     a('\n**One trip, priced.** On 4 March 2026 a teacher told the School Committee a class '
       'field trip would cost *“%s”*: one Dee Bus trip under the new contract, between this '
       'page’s no-waiting and four-hour prices of %s and %s ([minutes](%s)).\n\n'
