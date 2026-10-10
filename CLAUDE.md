@@ -1308,7 +1308,17 @@ measurement.
 agent is refused, and it is worth telling people: paste `/api/tables` or a query URL into
 the prompt and the tool will take it.
 
-## What /api/query can cost, and why it currently cannot cost money
+## What /api/query can cost -- and since 9 October 2026, it CAN cost money
+
+**THE ACCOUNT IS ON WORKERS PAID SINCE 9 OCTOBER 2026** (TJ upgraded after the search
+database passed the free plan's 500 MB cap). D1 no longer STOPS at a daily limit: reads and
+writes are a monthly allowance, and usage past it is BILLED per million rows. A database may
+now reach 10 GB. So the failure mode below has flipped -- a runaway query no longer takes the
+site dark until midnight, it runs up a bill nobody capped -- and the four protections listed
+below (the read estimate, the edge cache, the LIMIT, `rowsRead`) are now the spending guard.
+A full `sync_d1.py --full` (~320,000 writes) now fits comfortably; it no longer has to be
+rationed across days. The Pages 20,000-file limit is NOT lifted by this plan (that needs Pro).
+What follows is the free-plan history, kept because it explains why those guards exist.
 
 **On the Workers Free plan D1 does not bill. It stops.** 5 million rows read a day, 100,000
 written; past either, queries fail until tomorrow. That is what happened on 5 September --
