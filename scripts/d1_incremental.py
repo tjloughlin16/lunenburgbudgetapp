@@ -210,10 +210,61 @@ def plan(local, remote, limit, deps=None):
     return kept, drop, deferred, total
 
 
-def batch_sql(local, send, drop):
+def schema(db_path):
+    """{table: (pk columns, [(child, child cols, parent cols)])} from the live schema."""
+    db = sqlite3.connect(db_path)
+    out = {}
+    names = [t for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' "
+                                       "AND name NOT LIKE 'sqlite_%'")]
+    for t in names:
+        pk = [r[1] for r in sorted(db.execute('PRAGMA table_info("%s")' % t), key=lambda r: r[5]) if r[5]]
+        out[t] = (pk, [])
+    for c in names:
+        fks = {}
+        for r in db.execute('PRAGMA foreign_key_list("%s")' % c):
+            fks.setdefault(r[0], (r[2], [], []))
+            fks[r[0]][1].append(r[3])
+            fks[r[0]][2].append(r[4])
+        for parent, ccols, pcols in fks.values():
+            if parent in out and parent != c:
+                out[parent][1].append((c, ccols, pcols))
+    return out
+
+
+def _cols(cs):
+    return ', '.join('"%s"' % c for c in cs)
+
+
+def _tuple(cs, alias=''):
+    cs = ['%s"%s"' % (alias, c) for c in cs]
+    return cs[0] if len(cs) == 1 else '(%s)' % ', '.join(cs)
+
+
+def _prune_children(sch, table, doomed, out, touched, depth=0):
+    """DELETE every row, at any depth, that references a row of `table` matched by `doomed`
+    (a SELECT of `table`'s rows that are about to go), deepest first."""
+    if depth > 8:
+        raise SystemExit('foreign keys nest deeper than 8 below %s; refusing' % table)
+    for child, ccols, pcols in sch.get(table, ((), []))[1]:
+        hit = '%s IN (SELECT %s FROM "%s" WHERE %s)' % (_tuple(ccols), _cols(pcols), table, doomed)
+        _prune_children(sch, child, hit, out, touched, depth + 1)
+        out.append('DELETE FROM "%s" WHERE %s;' % (child, hit))
+        touched.add(child)
+
+
+def batch_sql(local, send, drop, sch=None):
     """One transaction's worth of SQL: defer the keys, then replace only what changed.
 
-    THE DEFERRAL DOES NOT SURVIVE WRANGLER, AND THIS IS CURRENTLY BROKEN. On 4 October
+    A PARENT IS UPSERTED, NEVER EMPTIED -- the fix for the failure described below, chosen
+    10 October 2026. For a same-shape table that other tables reference: every local row
+    goes in as INSERT ... ON CONFLICT(pk) DO UPDATE, so no row a child points at is ever
+    missing, in any batch. Rows removed locally are then removed remotely, matched against a
+    scratch table of the local keys (no read of the remote's keys, so no rows-read cost),
+    and only after every remote row referencing them -- at any depth -- has gone first. A
+    child pruned that way has its synced_table row cleared, so the next push resends it
+    whole instead of trusting a digest that no longer describes the remote.
+
+    WHAT IT USED TO DO, AND WHY THAT FAILED. On 4 October
     2026 a 14-table, 12,846-row incremental push failed outright:
 
         FOREIGN KEY constraint failed: SQLITE_CONSTRAINT_FOREIGNKEY
@@ -241,20 +292,28 @@ def batch_sql(local, send, drop):
         against remote. Correct and minimal, and it needs a read of the remote's keys,
         which is rows-read against the daily budget.
 
-    Until one is chosen the push is attempted and refused, which is loud and safe. Do not
+    The upsert is the first with the third's correctness, and it needs no remote read. Do not
     reach for `PRAGMA foreign_keys = OFF`: it is connection-scoped, D1 gives no guarantee
     about the connection between batches, and a push that silently breaks referential
     integrity is worse than one that refuses.
     """
     out = ['PRAGMA defer_foreign_keys = true;', SYNC_SCHEMA + ';']
+    sch = sch or {}
+    stale_children = set()
     for t in drop:
         out.append('DROP TABLE IF EXISTS "%s";' % t)
         out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(t)))
     for t, reason, _rows in send:
         sha, rows, create, inserts = local[t]
+        pk, children = sch.get(t, ([], []))
+        if reason == 'rows' and children and pk:
+            out.extend(_upsert_parent(t, pk, children, create, inserts, sch, stale_children))
+            out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(t)))
+            out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
+                       % (SYNC_TABLE, _q(t), _q(sha), rows))
+            continue
         if reason == 'rows':
-            # Same shape: keep the table, replace its contents. Nothing referencing it is
-            # touched, which is the whole point of splitting the two cases.
+            # Same shape, and nothing references it: keep the table, replace its contents.
             out.append('DELETE FROM "%s";' % t)
         else:
             out.append('DROP TABLE IF EXISTS "%s";' % t)
@@ -263,7 +322,69 @@ def batch_sql(local, send, drop):
         out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(t)))
         out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
                    % (SYNC_TABLE, _q(t), _q(sha), rows))
+    sent = {t for t, _, _ in send}
+    for c in sorted(stale_children - sent):
+        out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(c)))
     return '\n'.join(out) + '\n'
+
+
+KEEP = '_sync_keep'
+KEEP_CHUNK = 400          # keys per INSERT: well under D1's ~100 KB statement limit
+
+
+def _upsert_parent(t, pk, children, create, inserts, sch, stale_children):
+    cols = _insert_cols(inserts[0]) if inserts else list(pk)     # an emptied parent: every row goes
+    upd = [c for c in cols if c not in pk]
+    tail = (' ON CONFLICT(%s) DO UPDATE SET %s;' % (_cols(pk), ', '.join('"%s" = excluded."%s"' % (c, c) for c in upd))
+            if upd else ' ON CONFLICT(%s) DO NOTHING;' % _cols(pk))
+    out = ['DROP TABLE IF EXISTS "%s";' % KEEP,
+           'CREATE TABLE "%s" (%s);' % (KEEP, ', '.join('"%s"' % c for c in pk))]
+    idx = [cols.index(c) for c in pk]
+    keys = [[_values(s)[i] for i in idx] for s in inserts]
+    for i in range(0, len(keys), KEEP_CHUNK):
+        out.append('INSERT INTO "%s" (%s) VALUES %s;' % (
+            KEEP, _cols(pk), ', '.join('(%s)' % ', '.join(k) for k in keys[i:i + KEEP_CHUNK])))
+    doomed = '%s NOT IN (SELECT %s FROM "%s")' % (_tuple(pk), _cols(pk), KEEP)
+    touched = set()
+    _prune_children(sch, t, doomed, out, touched)
+    stale_children.update(touched)
+    out.append('DELETE FROM "%s" WHERE %s;' % (t, doomed))
+    out.extend(s.rstrip().rstrip(';') + tail for s in inserts)
+    out.append('DROP TABLE "%s";' % KEEP)
+    return out
+
+
+def _insert_cols(stmt):
+    """The column list of one INSERT that table_sql() wrote."""
+    m = re.match(r'INSERT INTO "[^"]+" \(([^)]*)\) VALUES', stmt)
+    return [c.strip().strip('"') for c in m.group(1).split(',')]
+
+
+def _values(stmt):
+    """The literal values of one INSERT that table_sql() wrote, as SQL text, in order.
+    A tokenizer, not a split on commas: a quoted string may hold commas and doubled quotes."""
+    body = stmt[stmt.index(') VALUES (') + len(') VALUES ('):].rstrip().rstrip(';')[:-1]
+    out, cur, q, i = [], '', False, 0
+    while i < len(body):
+        ch = body[i]
+        if q:
+            cur += ch
+            if ch == "'":
+                if i + 1 < len(body) and body[i + 1] == "'":
+                    cur += "'"
+                    i += 1
+                else:
+                    q = False
+        elif ch == "'":
+            q, cur = True, cur + ch
+        elif ch == ',':
+            out.append(cur.strip())
+            cur = ''
+        else:
+            cur += ch
+        i += 1
+    out.append(cur.strip())
+    return out
 
 
 def parse_remote(rows):

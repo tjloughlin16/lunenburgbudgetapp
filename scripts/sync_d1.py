@@ -146,7 +146,7 @@ def push_incremental(limit, dry=False):
         print('  ' + line)
     if dry or (not send and not drop):
         return len(send), len(deferred), 0
-    sql = INC.batch_sql(local, send, drop)
+    sql = INC.batch_sql(local, send, drop, INC.schema(DB))
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
         fh.write(sql)
         path = fh.name
