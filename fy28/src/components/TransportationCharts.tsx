@@ -90,7 +90,11 @@ export function TransportationSchoolsAthletics({ data }: ChartProps) {
     return o
   })
   return (
-    <div style={{ width: '100%', height: 380 }}>
+    <div>
+      {/* THE CHART GETS THE FIXED HEIGHT, NOT THE BOX. Both lived in one 380px box, so the
+          note below spilled out of it and printed on top of the page's own caption (TJ, 9
+          October 2026). */}
+      <div style={{ width: '100%', height: 380 }}>
       <ResponsiveContainer>
         <BarChart data={rows} margin={{ top: 8, right: 8, left: 4, bottom: 4 }} barGap={1}>
           <CartesianGrid stroke="var(--grid)" vertical={false} />
@@ -118,6 +122,7 @@ export function TransportationSchoolsAthletics({ data }: ChartProps) {
           ))}
         </BarChart>
       </ResponsiveContainer>
+      </div>
       <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>
         Left bar, pale: budget voted before the year. Right bar, solid: spent at the close.
         General fund. The last year is budget only.
