@@ -1301,6 +1301,10 @@ def run(a, notes, ctx):
         py('build_board_composition.py')
         py('build_town_personnel.py')
         py('build_boards.py', '--as-of', a.as_of)
+        # THE SCHOOL COMMITTEE'S LINE ITEM TRANSFERS, by fiscal year -- from the same
+        # official-votes files step 7c just wrote, so a transfer voted at a meeting reaches
+        # /boards/school-committee/transfers the day its minutes are read (TJ, 10 Oct 2026).
+        py('build_school_transfers.py', check=False)
         py('build_budget_feed.py', '--as-of', a.as_of)
         py('build_feeds.py')
         # AND THE DATABASE, AND EVERYTHING THE SITE SERVES OFF IT. See SITE_PAYLOADS:

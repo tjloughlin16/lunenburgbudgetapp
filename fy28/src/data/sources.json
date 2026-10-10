@@ -2759,6 +2759,18 @@
      "textUrl": "/docs/data/staffing-coverage.csv"
     },
     {
+     "path": "data/school-committee-transfers.csv",
+     "title": "Every line item transfer in the School Committee’s minutes, by fiscal year",
+     "stars": 2,
+     "what": "Written by us, by `build_school_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT -- a line, a batch total, or only the vote. `counted` and `why_not` keep what is not a voted line item transfer (tabled, pending, class accounts, none recorded). `fy` is the year the minutes state, else the year the meeting fell in, and `fy_basis` says which. Rows from a RECORDING are captions, a finding aid, and never counted.",
+     "kind": "Data",
+     "bytes": 35540,
+     "url": "/docs/data/school-committee-transfers.csv",
+     "count": 64,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-committee-transfers.csv"
+    },
+    {
      "path": "analyses/budget-vs-actual.md",
      "title": "Budget versus actual",
      "stars": 2,
@@ -4319,9 +4331,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 238861,
+     "bytes": 240075,
      "url": "/docs/data/money-gaps.csv",
-     "count": 259,
+     "count": 260,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -55093,9 +55105,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4935,
+  "documents": 4936,
   "groups": 25,
-  "bytes": 6401360974,
+  "bytes": 6401397728,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

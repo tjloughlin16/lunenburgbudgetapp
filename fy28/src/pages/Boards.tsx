@@ -198,6 +198,9 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
     ...(p?.facebook && p.facebook_scope === 'board' ? [[p.facebook, 'Facebook ↗'] as [string, string]] : []),
     ...(b.counts.our_minutes ? [[`${b.urls.what_was_said}#${b.slug}`, 'Its meeting minutes'] as [string, string]] : []),
     ...(b.finance ? [[`/boards/${b.slug}/finance`, `Finance — ${b.finance.accounts} account${b.finance.accounts === 1 ? '' : 's'}`] as [string, string]] : []),
+    // Every line item transfer it voted, by fiscal year -- the School Committee's alone, since
+    // it is the one board here that votes transfers between its own budget lines.
+    ...(b.slug === 'school-committee' ? [['/boards/school-committee/transfers', 'Line item transfers'] as [string, string]] : []),
     [`/boards/${b.slug}/records`, 'Missing records →'] as [string, string],
     ...(p ? [[p.charter_url, 'Charter & bylaws ↗'] as [string, string]] : []),
   ]

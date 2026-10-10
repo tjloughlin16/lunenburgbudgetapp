@@ -1438,6 +1438,15 @@ GROUPS = [
              'that differs between two looks), `relisted`, `removed`. `date` is the look '
              'that saw it and `prev_look` the one before; the town made the change somewhere '
              'between the two.'),
+            ('data/school-committee-transfers.csv',
+             'Every line item transfer in the School Committee\u2019s minutes, by fiscal year', 2,
+             'Written by us, by `build_school_transfers.py`, from the transfers and votes '
+             '`extract_official_votes.py` reads out of each set of the town\u2019s minutes, each '
+             'with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT -- a line, a '
+             'batch total, or only the vote. `counted` and `why_not` keep what is not a voted '
+             'line item transfer (tabled, pending, class accounts, none recorded). `fy` is the '
+             'year the minutes state, else the year the meeting fell in, and `fy_basis` says '
+             'which. Rows from a RECORDING are captions, a finding aid, and never counted.'),
             ('data/job-posting-owners.csv',
              'Which board or department each job posting is linked from, and why', 2,
              'Written by us, by hand. The town prints a department name on a posting and the '
