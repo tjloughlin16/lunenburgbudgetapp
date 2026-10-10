@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Grain, H3, ReportShell, Section, useReport } from '../components/report'
+import { Grain, ReportShell, Section, useReport } from '../components/report'
 
 /** THE SCHOOL COMMITTEE'S LINE ITEM TRANSFERS, BY FISCAL YEAR, with a running tally.
  *
