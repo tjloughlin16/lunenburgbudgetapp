@@ -849,9 +849,362 @@
   "answer": {
    "figures": {},
    "literals": [],
-   "text": "Regular bus routes are under control, priced by contract to the dollar. The rest is less settled: special education busing keeps missing its budget, the bus fee has not lowered the town’s bus bill, and no one can yet say what each sport’s buses cost."
+   "text": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from families’ fees onto the town."
   },
   "chains": [
+   {
+    "id": "trend",
+    "label": "Mixed picture",
+    "question": "Are buses getting more expensive, and where?",
+    "say": {
+     "figures": {
+      "f": {
+       "text": "FY2019",
+       "unit": "fiscal year",
+       "value": 2019
+      },
+      "r": {
+       "text": "40%",
+       "unit": "",
+       "value": 40.2
+      },
+      "s": {
+       "text": "97%",
+       "unit": "",
+       "value": 96.6
+      }
+     },
+     "literals": [
+      "2.5%"
+     ],
+     "text": "Yes, in two places. Since FY2019 special education buses rose 97% and regular routes 40%, both faster than the 2.5% a levy may grow."
+    },
+    "steps": [
+     {
+      "figures": {
+       "a": {
+        "text": "$322,047",
+        "unit": "",
+        "value": 322047
+       },
+       "b": {
+        "text": "FY2019",
+        "unit": "fiscal year",
+        "value": 2019
+       },
+       "c": {
+        "text": "$633,291",
+        "unit": "",
+        "value": 633291
+       },
+       "d": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       },
+       "e": {
+        "text": "10.1%",
+        "unit": "",
+        "value": 10.1
+       },
+       "g": {
+        "text": "$696,600",
+        "unit": "",
+        "value": 696600
+       },
+       "h": {
+        "text": "$976,500",
+        "unit": "",
+        "value": 976500
+       },
+       "i": {
+        "text": "4.9%",
+        "unit": "",
+        "value": 4.9
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "6-special-education-transportation",
+       "label": "6. Special education transportation"
+      },
+      "literals": [],
+      "text": "Spent at the close of the year: special education $322,047 in FY2019 and $633,291 in FY2026, 10.1% a year; regular routes $696,600 and $976,500, 4.9% a year."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "$1,131,390",
+        "unit": "",
+        "value": 1131390.0
+       },
+       "b": {
+        "text": "FY2028",
+        "unit": "fiscal year",
+        "value": 2028
+       },
+       "c": {
+        "text": "15.9%",
+        "unit": "",
+        "value": 15.9
+       },
+       "d": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was",
+       "label": "The Dee Bus contract"
+      },
+      "literals": [],
+      "text": "Regular routes are priced in advance: the contract fixes $1,131,390 for FY2028, 15.9% more than FY2026 paid."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "$36,974",
+        "unit": "",
+        "value": 36974
+       },
+       "b": {
+        "text": "$110,650",
+        "unit": "",
+        "value": 110650
+       },
+       "c": {
+        "text": "$117,555",
+        "unit": "",
+        "value": 117555.0
+       },
+       "d": {
+        "text": "FY2024",
+        "unit": "fiscal year",
+        "value": 2024
+       },
+       "e": {
+        "text": "$91,066",
+        "unit": "",
+        "value": 91066.06
+       },
+       "f": {
+        "text": "FY2025",
+        "unit": "fiscal year",
+        "value": 2025
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "2-athletic-transportation-what-it-costs-and-who-has-paid",
+       "label": "2. Athletic transportation: what it costs and who has paid"
+      },
+      "literals": [],
+      "text": "Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town took over a bill families’ fees had paid."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "FY2027",
+        "unit": "fiscal year",
+        "value": 2027
+       },
+       "b": {
+        "text": "11.2%",
+        "unit": "",
+        "value": 11.2
+       },
+       "c": {
+        "text": "$127,550",
+        "unit": "",
+        "value": 127550
+       },
+       "d": {
+        "text": "2.4%",
+        "unit": "",
+        "value": 2.4
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "fy2027-the-school-day-rise-under-a-flat-looking-total",
+       "label": "FY2027: the school-day rise under a flat-looking total"
+      },
+      "literals": [],
+      "text": "FY2027 budgets school-day buses 11.2% higher; cutting athletic buses, $127,550, made the total look like 2.4%."
+     },
+     {
+      "closes": "the special education van contract and a count of routes by year, from the district",
+      "figures": {
+       "a": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       }
+      },
+      "kind": "gap",
+      "literals": [],
+      "text": "The district put its FY2026 special education rise down to more vans and monitors. Nothing published counts either, so price and volume cannot be told apart."
+     }
+    ],
+    "verdict": "concern"
+   },
+   {
+    "id": "offsets",
+    "label": "Mixed picture",
+    "question": "Does state money or the bus fee offset the cost?",
+    "say": {
+     "figures": {
+      "a": {
+       "text": "$94,993",
+       "unit": "",
+       "value": 94993
+      },
+      "b": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "literals": [],
+     "text": "Only a little. The state paid back $94,993 in FY2026, all of it for special education; the bus fee did not lower the town’s bus bill."
+    },
+    "steps": [
+     {
+      "figures": {
+       "a": {
+        "text": "$14,596",
+        "unit": "",
+        "value": 14596
+       },
+       "b": {
+        "text": "FY2022",
+        "unit": "fiscal year",
+        "value": 2022
+       },
+       "c": {
+        "text": "$111,560",
+        "unit": "",
+        "value": 111560
+       },
+       "d": {
+        "text": "FY2025",
+        "unit": "fiscal year",
+        "value": 2025
+       },
+       "e": {
+        "text": "$94,993",
+        "unit": "",
+        "value": 94993
+       },
+       "f": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "5-what-pays-for-it-the-fee-the-fee-fund-the-state",
+       "label": "5. What pays for it: the fee, the fee fund, the state"
+      },
+      "literals": [],
+      "text": "The state’s circuit breaker repays part of busing children placed out of district: $14,596 in FY2022, $111,560 at its FY2025 peak, $94,993 in FY2026."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       },
+       "b": {
+        "text": "15.0%",
+        "unit": "",
+        "value": 15.0
+       },
+       "c": {
+        "text": "5.5%",
+        "unit": "",
+        "value": 5.5
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "5-what-pays-for-it-the-fee-the-fee-fund-the-state",
+       "label": "5. What pays for it: the fee, the fee fund, the state"
+      },
+      "literals": [],
+      "text": "Set beside FY2026 spending, that is 15.0% of special education buses and 5.5% of all buses. It repays the year before’s claims, not that year’s buses."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "FY2010",
+        "unit": "fiscal year",
+        "value": 2010
+       },
+       "b": {
+        "text": "FY2027",
+        "unit": "fiscal year",
+        "value": 2027
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "5-what-pays-for-it-the-fee-the-fee-fund-the-state",
+       "label": "5. What pays for it: the fee, the fee fund, the state"
+      },
+      "literals": [],
+      "text": "Regular routes and athletics get nothing from the state: Lunenburg is not a regional district, and the Cherry Sheet shows no regional busing aid in any year FY2010 to FY2027."
+     },
+     {
+      "cite": {
+       "href": "/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt",
+       "label": "Finance Committee minutes, 2025-03-20"
+      },
+      "figures": {
+       "a": {
+        "text": "$11,000",
+        "unit": "",
+        "value": 11000
+       },
+       "c": {
+        "text": "$11,000",
+        "unit": "",
+        "value": 11000
+       }
+      },
+      "kind": "quote",
+      "link": {
+       "anchor": "the-bus-fee-and-the-general-fund",
+       "label": "The bus fee and the general fund"
+      },
+      "literals": [],
+      "text": "The Finance Committee was told the new bus fee cut the line by $11,000. The line was voted $11,000 below the contract, then $11,000 was moved back in during the year."
+     },
+     {
+      "closes": "the account the bus fee payments are deposited to, from the Town Accountant",
+      "figures": {
+       "a": {
+        "text": "$52,717",
+        "unit": "",
+        "value": 52717.04
+       },
+       "b": {
+        "text": "FY2026",
+        "unit": "fiscal year",
+        "value": 2026
+       }
+      },
+      "kind": "gap",
+      "literals": [],
+      "text": "Where the fees are booked is not established; the only account named for them, in the school choice fund, took in $52,717 in FY2026 and spent nothing on buses."
+     }
+    ],
+    "verdict": "concern"
+   },
    {
     "id": "sped",
     "label": "Does not match",
@@ -1145,103 +1498,118 @@
     "verdict": "sound"
    },
    {
-    "id": "fee",
-    "label": "Does not match",
-    "question": "Did the new bus fee lower what the town pays for buses?",
+    "id": "athletic-fund",
+    "label": "Mixed picture",
+    "question": "How does the athletic fee fund play into bus costs?",
     "say": {
      "figures": {
-      "p": {
-       "text": "$976,500",
+      "a": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "b": {
+       "text": "$40,000",
        "unit": "",
-       "value": 976500
+       "value": 40000
+      },
+      "c": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
       }
      },
      "literals": [],
-     "text": "No. In the bus fee’s first year the town’s general fund still paid the full $976,500 bus contract."
+     "text": "In FY2024 the town paid $40,000 of athletic buses and the families’ fee fund the rest. From FY2025 the district moved that cost to the town."
     },
     "steps": [
      {
-      "cite": {
-       "href": "/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt",
-       "label": "Finance Committee minutes, 2025-03-20"
-      },
       "figures": {
        "a": {
-        "text": "$11,000",
-        "unit": "",
-        "value": 11000
+        "text": "FY2024",
+        "unit": "fiscal year",
+        "value": 2024
        },
        "b": {
-        "text": "$965,500",
+        "text": "$117,555",
         "unit": "",
-        "value": 965500
+        "value": 117555.0
        },
        "c": {
-        "text": "$11,000",
+        "text": "$81,553",
         "unit": "",
-        "value": 11000
-       }
-      },
-      "kind": "quote",
-      "link": {
-       "anchor": "the-bus-fee-and-the-general-fund",
-       "label": "The bus fee and the general fund"
-      },
-      "literals": [],
-      "text": "The Finance Committee was told the fee cut the line by $11,000. The line was voted at $965,500, and then $11,000 was moved back in during the year."
-     },
-     {
-      "figures": {
-       "a": {
-        "text": "$52,717",
-        "unit": "",
-        "value": 52717.04
+        "value": 81553.0
        },
-       "b": {
-        "text": "FY2026",
-        "unit": "fiscal year",
-        "value": 2026
+       "d": {
+        "text": "24",
+        "unit": "sports",
+        "value": 24
+       },
+       "e": {
+        "text": "$40,000",
+        "unit": "",
+        "value": 40000
        }
       },
       "kind": "measured",
       "link": {
-       "anchor": "the-bus-fee-and-the-general-fund",
-       "label": "The bus fee and the general fund"
+       "anchor": "2-athletic-transportation-what-it-costs-and-who-has-paid",
+       "label": "2. Athletic transportation: what it costs and who has paid"
       },
       "literals": [],
-      "text": "The only account named for a bus fee took in $52,717 in FY2026. It sits in the school choice fund, which spent nothing on buses and moved nothing to them."
+      "text": "The district’s by-sport sheet puts FY2024 athletic buses at $117,555; its second sheet prints $81,553 for the 24 sports both list. Either way, well above $40,000."
      },
      {
-      "closes": "the account the bus fee payments are deposited to, from the Town Accountant",
-      "figures": {},
-      "kind": "gap",
-      "literals": [],
-      "text": "Whether that account holds the families’ fees at all is not established."
-     }
-    ],
-    "verdict": "problem"
-   },
-   {
-    "id": "athletic-fund",
-    "label": "Mixed picture",
-    "question": "Who pays for athletic buses?",
-    "say": {
-     "figures": {
-      "fy": {
-       "text": "FY2027",
-       "unit": "fiscal year",
-       "value": 2027
+      "cite": {
+       "href": "/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt",
+       "label": "School Committee minutes, 2025-04-16"
       },
-      "p": {
-       "text": "83%",
-       "unit": "",
-       "value": 83.3
-      }
+      "figures": {
+       "a": {
+        "text": "FY2025",
+        "unit": "fiscal year",
+        "value": 2025
+       },
+       "b": {
+        "text": "$47,822",
+        "unit": "",
+        "value": 47822
+       },
+       "c": {
+        "text": "$87,822",
+        "unit": "",
+        "value": 87822
+       }
+      },
+      "kind": "quote",
+      "link": {
+       "anchor": "2-athletic-transportation-what-it-costs-and-who-has-paid",
+       "label": "2. Athletic transportation: what it costs and who has paid"
+      },
+      "literals": [],
+      "text": "In FY2025 $47,822 was moved into the town line, to $87,822, to “reclassify expenses that had been charged against the revolving account”."
      },
-     "literals": [],
-     "text": "The FY2027 plan puts 83% of restored athletic buses back on the families’ fee fund, a year after the district moved them off it."
-    },
-    "steps": [
+     {
+      "figures": {
+       "a": {
+        "text": "$115,994",
+        "unit": "",
+        "value": 115993.84
+       },
+       "b": {
+        "text": "$26,685",
+        "unit": "",
+        "value": 26685.06
+       }
+      },
+      "kind": "measured",
+      "link": {
+       "anchor": "the-athletic-fee-fund-receipts-against-spending",
+       "label": "The athletic fee fund: receipts against spending"
+      },
+      "literals": [],
+      "text": "The same year the fee fund’s high school purchase-of-service account, which carried buses with officials and ice time, fell from $115,994 to $26,685."
+     },
      {
       "cite": {
        "href": "/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
@@ -1249,11 +1617,21 @@
       },
       "figures": {
        "a": {
+        "text": "FY2027",
+        "unit": "fiscal year",
+        "value": 2027
+       },
+       "b": {
+        "text": "$0",
+        "unit": "",
+        "value": 0
+       },
+       "c": {
         "text": "$10,000",
         "unit": "",
         "value": 10000.0
        },
-       "b": {
+       "d": {
         "text": "$50,000",
         "unit": "",
         "value": 50000.0
@@ -1267,75 +1645,32 @@
       "literals": [
        "26 August 2026"
       ],
-      "text": "On 26 August 2026 the School Committee voted $10,000 from the town; the Superintendent put the rest, $50,000, on the athletic fee fund."
+      "text": "FY2027 cut the town line to $0. On 26 August 2026 $10,000 was restored from the town and $50,000 put back on the fee fund."
      },
      {
+      "closes": "the fee fund’s purchase-of-service detail by vendor, and its balance at each 30 June, from the Town Accountant",
       "figures": {
        "a": {
-        "text": "$284,723",
-        "unit": "",
-        "value": 284723
-       },
-       "b": {
-        "text": "FY2023",
-        "unit": "fiscal year",
-        "value": 2023
-       },
-       "c": {
-        "text": "FY2024",
-        "unit": "fiscal year",
-        "value": 2024
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "the-athletic-fee-fund-receipts-against-spending",
-       "label": "The athletic fee fund: receipts against spending"
-      },
-      "literals": [],
-      "text": "Before the move the fund spent $284,723 more than it took in over FY2023 and FY2024, and the district said it could not carry the buses."
-     },
-     {
-      "figures": {
-       "a": {
-        "text": "$140,718",
-        "unit": "",
-        "value": 140718
-       },
-       "b": {
-        "text": "FY2025",
-        "unit": "fiscal year",
-        "value": 2025
-       },
-       "c": {
         "text": "FY2026",
         "unit": "fiscal year",
         "value": 2026
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "the-athletic-fee-fund-receipts-against-spending",
-       "label": "The athletic fee fund: receipts against spending"
-      },
-      "literals": [],
-      "text": "After costs moved to the town line it took in $140,718 more than it spent over FY2025 and FY2026."
-     },
-     {
-      "closes": "the athletic fee fund’s balance at each 30 June, from the Town Accountant",
-      "figures": {
-       "a": {
-        "text": "$50,000",
+       },
+       "b": {
+        "text": "$113,602",
         "unit": "",
-        "value": 50000.0
+        "value": 113602.4
+       },
+       "c": {
+        "text": "$110,650",
+        "unit": "",
+        "value": 110650
        }
       },
       "kind": "gap",
       "literals": [
-       "30 June 2020",
        "30 June"
       ],
-      "text": "Nothing published states what the fund holds after 30 June 2020, so whether it can carry $50,000 cannot be checked."
+      "text": "In FY2026 that fee fund account spent $113,602 again while the town line paid $110,650 for athletic buses. What the fund paid for is not published."
      }
     ],
     "verdict": "concern"
@@ -1355,10 +1690,20 @@
        "text": "FY2024",
        "unit": "fiscal year",
        "value": 2024
+      },
+      "l": {
+       "text": "one",
+       "unit": "trips",
+       "value": 1
+      },
+      "t": {
+       "text": "15",
+       "unit": "trips",
+       "value": 15
       }
      },
      "literals": [],
-     "text": "Track, not soccer, costs the most to bus on the district’s sheet once its two split rows are added back together: $13,864 in FY2024."
+     "text": "Track costs most to bus on the district’s sheet: $13,864 in FY2024, by our estimate 15 trips. The cheapest team, middle school softball, is about one."
     },
     "steps": [
      {
@@ -1400,33 +1745,74 @@
      {
       "figures": {
        "a": {
-        "text": "FY2025",
-        "unit": "fiscal year",
-        "value": 2025
+        "text": "$942.50",
+        "unit": "",
+        "value": 942.5
        },
        "b": {
-        "text": "$0.00",
-        "unit": "",
-        "value": 0.0
+        "text": "65",
+        "unit": "miles",
+        "value": 65.0
        },
        "c": {
-        "text": "46.1%",
-        "unit": "",
-        "value": 46.1
+        "text": "15",
+        "unit": "trips",
+        "value": 15
        },
        "d": {
-        "text": "FY2024",
-        "unit": "fiscal year",
-        "value": 2024
+        "text": "8",
+        "unit": "trips",
+        "value": 8
+       },
+       "e": {
+        "text": "$985.50",
+        "unit": "",
+        "value": 985.5
+       },
+       "f": {
+        "text": "one",
+        "unit": "trips",
+        "value": 1
+       },
+       "g": {
+        "text": "14",
+        "unit": "times",
+        "value": 14
        }
       },
-      "kind": "measured",
+      "kind": "estimate",
       "link": {
        "anchor": "which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together",
        "label": "Which sport’s buses cost most"
       },
       "literals": [],
-      "text": "Outdoor track looks cheapest only in FY2025, whose spring section prints a $0.00 total and runs 46.1% below FY2024."
+      "text": "At the new contract’s average trip, $942.50 for 65 miles and four hours’ wait, track is about 15 trips, girls’ soccer 8, and middle school softball at $985.50 about one: track costs 14 times as much."
+     },
+     {
+      "figures": {
+       "a": {
+        "text": "100",
+        "unit": "trips",
+        "value": 100
+       },
+       "b": {
+        "text": "FY2024",
+        "unit": "fiscal year",
+        "value": 2024
+       },
+       "c": {
+        "text": "125",
+        "unit": "trips",
+        "value": 125
+       }
+      },
+      "kind": "estimate",
+      "link": {
+       "anchor": "which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together",
+       "label": "Which sport’s buses cost most"
+      },
+      "literals": [],
+      "text": "The bid form projects 100 trips a year for athletics, field trips and band together. At the same price, the FY2024 athletic sheet alone is about 125."
      },
      {
       "cite": {
@@ -1437,37 +1823,6 @@
       "kind": "caption",
       "literals": [],
       "text": "At the School Committee, members said the indoor track league meet had moved to the Reggie Lewis Center in Boston, and that the bus is billed in full while it waits there."
-     },
-     {
-      "figures": {
-       "a": {
-        "text": "$130.00",
-        "unit": "",
-        "value": 130.0
-       },
-       "b": {
-        "text": "FY2026",
-        "unit": "fiscal year",
-        "value": 2026
-       },
-       "c": {
-        "text": "$140.00",
-        "unit": "",
-        "value": 140.0
-       },
-       "d": {
-        "text": "FY2027",
-        "unit": "fiscal year",
-        "value": 2027
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was",
-       "label": "The Dee Bus contract"
-      },
-      "literals": [],
-      "text": "The contract bills every hour a bus waits: $130.00 an hour in FY2026, $140.00 in FY2027."
      },
      {
       "closes": "Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office",
@@ -1485,116 +1840,182 @@
       },
       "kind": "gap",
       "literals": [],
-      "text": "The district’s second sheet prices FY2024 indoor track at $6,085.00, and no trip-by-trip record exists to say which sheet is right."
+      "text": "The district’s second sheet prices FY2024 indoor track at $6,085.00. No trip-by-trip record exists to say which sheet is right, or what any one trip cost."
      }
     ],
     "verdict": "unknown"
-   },
-   {
-    "id": "fy27",
-    "label": "Mixed picture",
-    "question": "Is the FY2027 bus budget as flat as it looks?",
-    "say": {
-     "figures": {
-      "a": {
-       "text": "11.2%",
-       "unit": "",
-       "value": 11.2
-      },
-      "b": {
-       "text": "FY2027",
-       "unit": "fiscal year",
-       "value": 2027
-      },
-      "c": {
-       "text": "2.4%",
-       "unit": "",
-       "value": 2.4
-      }
-     },
-     "literals": [
-      "FY2027"
-     ],
-     "text": "No. School-day buses rise 11.2% in FY2027; cutting athletic buses made the total look like 2.4%."
-    },
-    "steps": [
-     {
-      "figures": {
-       "a": {
-        "text": "$1,531,234",
-        "unit": "",
-        "value": 1531234
-       },
-       "b": {
-        "text": "$1,703,313",
-        "unit": "",
-        "value": 1703313
-       },
-       "c": {
-        "text": "$127,550",
-        "unit": "",
-        "value": 127550
-       },
-       "d": {
-        "text": "$0",
-        "unit": "",
-        "value": 0
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "fy2027-the-school-day-rise-under-a-flat-looking-total",
-       "label": "FY2027: the school-day rise under a flat-looking total"
-      },
-      "literals": [],
-      "text": "Regular routes and special education go from $1,531,234 to $1,703,313. Athletic buses go from $127,550 to $0."
-     },
-     {
-      "figures": {
-       "a": {
-        "text": "74%",
-        "unit": "",
-        "value": 74.1
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "fy2027-the-school-day-rise-under-a-flat-looking-total",
-       "label": "FY2027: the school-day rise under a flat-looking total"
-      },
-      "literals": [],
-      "text": "The athletic cut offsets 74% of the school-day rise. The regular-route rise is the contract’s price; the special education rise is a budget, not a count."
-     },
-     {
-      "figures": {
-       "a": {
-        "text": "6%",
-        "unit": "",
-        "value": 6.0
-       },
-       "b": {
-        "text": "$14,828",
-        "unit": "",
-        "value": 14828
-       },
-       "c": {
-        "text": "FY2028",
-        "unit": "fiscal year",
-        "value": 2028
-       }
-      },
-      "kind": "measured",
-      "link": {
-       "anchor": "the-contract-against-this-site-s-model",
-       "label": "The contract against this site’s model"
-      },
-      "literals": [],
-      "text": "This site’s own model grows regular routes 6% a year and lands $14,828 under the price the contract already fixes for FY2028."
-     }
-    ],
-    "verdict": "concern"
    }
-  ]
+  ],
+  "costs": {
+   "cols": [
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "The town’s general fund at the year-end close, paid plus still owed. The last row is a sheet the district built, not the ledger; it adds what the families’ fee fund paid."
+   },
+   "rows": [
+    {
+     "cells": [
+      {
+       "text": "$837,900",
+       "unit": "",
+       "value": 837900
+      },
+      {
+       "text": "$917,525",
+       "unit": "",
+       "value": 917525
+      },
+      {
+       "text": "$907,200",
+       "unit": "",
+       "value": 907200
+      },
+      {
+       "text": "$976,500",
+       "unit": "",
+       "value": 976500
+      }
+     ],
+     "kind": "ledger",
+     "label": "Regular routes",
+     "total": false
+    },
+    {
+     "cells": [
+      {
+       "text": "$320,244",
+       "unit": "",
+       "value": 320244
+      },
+      {
+       "text": "$401,402",
+       "unit": "",
+       "value": 401402
+      },
+      {
+       "text": "$434,922",
+       "unit": "",
+       "value": 434922
+      },
+      {
+       "text": "$633,291",
+       "unit": "",
+       "value": 633291
+      }
+     ],
+     "kind": "ledger",
+     "label": "Special education",
+     "total": false
+    },
+    {
+     "cells": [
+      {
+       "text": "$39,880",
+       "unit": "",
+       "value": 39880
+      },
+      {
+       "text": "$40,000",
+       "unit": "",
+       "value": 40000
+      },
+      {
+       "text": "$87,822",
+       "unit": "",
+       "value": 87822
+      },
+      {
+       "text": "$110,650",
+       "unit": "",
+       "value": 110650
+      }
+     ],
+     "kind": "ledger",
+     "label": "Athletics, town line",
+     "total": false
+    },
+    {
+     "cells": [
+      {
+       "text": "$7,565",
+       "unit": "",
+       "value": 7565
+      },
+      {
+       "text": "$4,205",
+       "unit": "",
+       "value": 4205
+      },
+      {
+       "text": "$5,205",
+       "unit": "",
+       "value": 5205
+      },
+      {
+       "text": "$3,902",
+       "unit": "",
+       "value": 3902
+      }
+     ],
+     "kind": "ledger",
+     "label": "Band and music trips",
+     "total": false
+    },
+    {
+     "cells": [
+      {
+       "text": "$1,205,589",
+       "unit": "",
+       "value": 1205589
+      },
+      {
+       "text": "$1,363,132",
+       "unit": "",
+       "value": 1363132
+      },
+      {
+       "text": "$1,435,149",
+       "unit": "",
+       "value": 1435149
+      },
+      {
+       "text": "$1,724,343",
+       "unit": "",
+       "value": 1724343
+      }
+     ],
+     "kind": "ledger",
+     "label": "All school buses, town",
+     "total": true
+    },
+    {
+     "cells": [
+      null,
+      {
+       "text": "$117,555",
+       "unit": "",
+       "value": 117555.0
+      },
+      {
+       "text": "$91,066",
+       "unit": "",
+       "value": 91066.06
+      },
+      null
+     ],
+     "kind": "stated",
+     "label": "Athletics, all payers (district sheet)",
+     "total": false
+    }
+   ],
+   "title": "What the buses cost, spent at the close of each year"
+  }
  },
  "bus_fee_account": [
   {

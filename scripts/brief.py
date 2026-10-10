@@ -72,6 +72,8 @@ QUESTION_MAX = 70
 SAY_MAX = 150
 STEP_MAX = 220
 CLOSES_MAX = 150
+TABLE_NOTE_MAX = 240
+TABLE_COLS = (2, 4)      # four figures and a label is what a 368px phone column holds
 CHAINS = (3, 6)          # fewer than three is not a picture; more than six is a list
 STEPS = (2, 5)           # a sentence with one reason under it is a card; five is a report
 
@@ -158,7 +160,36 @@ def chain(id, question, verdict, say, steps, figures=None, allow=()):
                 steps=steps)
 
 
-def brief(answer, chains, answer_figures=None, answer_allow=()):
+def table(title, cols, rows, note, note_figures=None, note_allow=()):
+    """The few figures a resident asks for by name -- "what did it actually cost?" -- set out
+    under the answer, before the verdicts. A TABLE, not a stat row: each row says what KIND of
+    figure it holds (`ledger`, printed by the accounting system; `stated`, a sheet somebody
+    built -- rule 13a), so a row from the books and a row from a hand-built sheet never look
+    alike. Every cell is built by figure(); an empty cell is None, and renders as a dash."""
+    if not title or re.search(r'\d', title):
+        raise ConclusionError('a table title states no figure: %r' % title)
+    if not TABLE_COLS[0] <= len(cols) <= TABLE_COLS[1]:
+        raise ConclusionError('%d columns; a table at the top holds %d to %d'
+                              % ((len(cols),) + TABLE_COLS))
+    out = []
+    for r in rows:
+        if r.get('kind') not in ('ledger', 'stated'):
+            raise ConclusionError('table row %r: kind must be ledger or stated' % r.get('label'))
+        if re.search(r'\d', r['label']):
+            raise ConclusionError('a row label states no figure: %r' % r['label'])
+        if len(r['cells']) != len(cols):
+            raise ConclusionError('row %r has %d cells for %d columns'
+                                  % (r['label'], len(r['cells']), len(cols)))
+        for c in r['cells']:
+            if c is not None and not (isinstance(c, dict) and set(c) == {'value', 'text', 'unit'}):
+                raise ConclusionError('row %r: a cell was not built by figure()' % r['label'])
+        out.append(dict(label=r['label'], kind=r['kind'], total=bool(r.get('total')),
+                        cells=list(r['cells'])))
+    return dict(title=title, cols=list(cols), rows=out,
+                note=_unit(note, note_figures, note_allow, TABLE_NOTE_MAX, 'table note'))
+
+
+def brief(answer, chains, answer_figures=None, answer_allow=(), costs=None):
     """Validate the whole top and return it ready for a payload. Refuses rather than warns."""
     a = _unit(answer, answer_figures, answer_allow, ANSWER_MAX, 'answer')
     if not CHAINS[0] <= len(chains) <= CHAINS[1]:
@@ -167,6 +198,8 @@ def brief(answer, chains, answer_figures=None, answer_allow=()):
     if len(set(ids)) != len(ids):
         raise ConclusionError('two chains share an id')
     out = dict(answer=a, chains=chains)
+    if costs:
+        out['costs'] = costs
     bad = check(out)
     if bad:
         raise ConclusionError('the brief did not pass:\n  ' + '\n  '.join(bad))
@@ -177,10 +210,21 @@ def units(b):
     """Every unit of prose in a brief, with where it sits -- for the check and for a
     verifier that wants to recompute each figure."""
     yield 'answer', b['answer']
+    if b.get('costs'):
+        yield 'costs/note', b['costs']['note']
     for c in b['chains']:
         yield '%s/say' % c['id'], c['say']
         for i, s in enumerate(c['steps']):
             yield '%s/step%d' % (c['id'], i + 1), s
+
+
+def cells(b):
+    """Every figure in the top table, with its row and column -- the verifier recomputes each."""
+    t = b.get('costs')
+    for r in (t['rows'] if t else []):
+        for col, c in zip(t['cols'], r['cells']):
+            if c is not None:
+                yield r['label'], col, c
 
 
 def check(b):

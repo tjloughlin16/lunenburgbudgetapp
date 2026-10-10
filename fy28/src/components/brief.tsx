@@ -28,7 +28,9 @@ export type Verdict = 'sound' | 'concern' | 'problem' | 'unknown'
 export type Chain = {
   id: string; question: string; verdict: Verdict; label: string; say: Unit; steps: Step[]
 }
-export type Brief = { answer: Unit; chains: Chain[] }
+export type CostRow = { label: string; kind: 'ledger' | 'stated'; total: boolean; cells: (Fig | null)[] }
+export type Costs = { title: string; cols: string[]; rows: CostRow[]; note: Unit }
+export type Brief = { answer: Unit; chains: Chain[]; costs?: Costs }
 
 /* A verdict is told apart by a coloured mark AND its word, never by colour alone: the word
    carries it for a reader who cannot tell the hues apart, and in print. The hues are the
@@ -149,12 +151,63 @@ function ChainRow({ c }: { c: Chain }) {
   )
 }
 
+/** The figures a resident asks for by name, under the answer. On a phone each row's label
+    takes its own line above its figures, so four columns of dollars keep their width
+    without the page scrolling sideways. A row from a hand-built sheet is set in italic and
+    says so in its label -- it must never look like a row from the books (rule 13a). */
+function CostTable({ t }: { t: Costs }) {
+  const n = t.cols.length
+  return (
+    <figure className="mt-5">
+      <figcaption className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
+        {t.title}</figcaption>
+      <table className="w-full mt-2 text-[13px] tabular-nums border-collapse">
+        <thead>
+          <tr style={{ color: 'var(--text-muted)' }}>
+            <th className="hidden sm:table-cell" />
+            {t.cols.map(c => (
+              <th key={c} scope="col" className="text-right font-semibold pb-1 pl-2">{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {t.rows.map(r => {
+            const style: React.CSSProperties = {
+              color: r.kind === 'stated' ? 'var(--text-muted)' : 'var(--text-secondary)',
+              fontStyle: r.kind === 'stated' ? 'italic' : undefined,
+              fontWeight: r.total ? 600 : undefined,
+            }
+            return [
+              <tr key={r.label + '-m'} className="sm:hidden" style={style}>
+                <th scope="row" colSpan={n} className="text-left font-normal pt-1.5"
+                  style={{ fontWeight: r.total ? 600 : undefined }}>{r.label}</th>
+              </tr>,
+              <tr key={r.label} className="border-b" style={{ ...style, borderColor: 'var(--grid)' }}>
+                <th scope="row" className="hidden sm:table-cell text-left font-normal py-1 pr-2"
+                  style={{ fontWeight: r.total ? 600 : undefined }}>{r.label}</th>
+                {r.cells.map((c, i) => (
+                  <td key={i} className="text-right py-1 pl-2 whitespace-nowrap">
+                    {c ? c.text : '—'}</td>
+                ))}
+              </tr>,
+            ]
+          })}
+        </tbody>
+      </table>
+      <p className="text-[12.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        {t.note.text}</p>
+    </figure>
+  )
+}
+
 export function BriefTop({ brief }: { brief: Brief }) {
   return (
     <section data-section="brief" className="mt-6 max-w-3xl">
       <p data-short="" data-point="" className="text-[19px] leading-snug font-semibold">
         {brief.answer.text}
       </p>
+
+      {brief.costs ? <CostTable t={brief.costs} /> : null}
 
       <ol className="mt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
         {brief.chains.map(c => <ChainRow key={c.id} c={c} />)}

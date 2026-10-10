@@ -386,6 +386,25 @@ def main():
     r23o = -dz(gl_row(2023, 'S3991692', '535025')['available_budget'])
     r24 = gl_row(2024, 'S3991692', '535025')
     f1sum = lambda fys, sign: r0(sum(sign * (f1[f][1] - f1[f][0]) for f in fys))
+    cagr = lambda a_, b_, n_: round(100 * ((b_ / a_) ** (1 / n_) - 1), 1)
+    # The circuit breaker from the DATABASE; the generator reads DESE's CSV.
+    cbt = {int(fy): r0(v) for fy, v in db.execute(
+        "SELECT fy, reimb_transport FROM dese_circuit_breaker WHERE lea=? AND level='district' "
+        "AND reimb_transport > 0", (LEA,))}
+    cherry = sorted({int(r['fy']) for r in csv.DictReader(open(os.path.join(DATA, 'dls-cherry-sheet.csv'),
+                     encoding='utf-8')) if r['name'] == 'Lunenburg' and r['line'] == 'Regional Transportation'
+                     and not D(r['amount'] or '0')})
+    # The fee fund's high school purchase-of-service account, by its ACCOUNT STRING.
+    pos = {int(r['fiscal_year']): dz(r['ytd_expended']) + dz(r['encumbrances']) for r in mrows
+           if r['account'] == '1301-3-300-3510-06-0-00-2-531006'}
+    # The cheapest team that rode in FY2024: the lowest single row above zero, every level,
+    # asserted not to be one half of a paired row.
+    rows24 = [x for x in (D(str(v)) for v, in db.execute(
+        "SELECT value FROM athletics_by_sport WHERE metric='Transportation' AND is_numeric=1 "
+        "AND fy=2024")) if x > 0]
+    low = min(rows24)
+    if rows24.count(low) != 1:
+        bad.append('the cheapest FY2024 row is now one half of a pair')
     EXPECT = {
         ('sped/say', 'over'): r0(over26), ('sped/say', 'fy'): 2026,
         ('sped/step1', 'v'): r0(dz(s26['original_approp'])), ('sped/step1', 's'): r0(sp26),
@@ -405,39 +424,76 @@ def main():
         ('regular/step3', 'c'): p1(reg[2028] - reg[2027], reg[2027]), ('regular/step3', 'd'): 2028,
         ('regular/step4', 'a'): 2024, ('regular/step4', 'b'): 2025,
         ('regular/step4', 'c'): 2026, ('regular/step4', 'd'): p1(reg[2026] - b25, b25),
-        ('fee/say', 'p'): r0(paid),
-        ('fee/step1', 'a'): r0(reg[2026] - dz(r26['original_approp'])),
-        ('fee/step1', 'b'): r0(dz(r26['original_approp'])),
-        ('fee/step1', 'c'): r0(dz(r26['transfers_adjustments'])),
-        ('fee/step2', 'a'): float(r2(fee[2026])), ('fee/step2', 'b'): 2026,
-        ('athletic-fund/say', 'fy'): 2027, ('athletic-fund/say', 'p'): p1(nums[3], nums[1]),
-        ('athletic-fund/step1', 'a'): r0(nums[2]), ('athletic-fund/step1', 'b'): r0(nums[3]),
-        ('athletic-fund/step2', 'a'): f1sum((2023, 2024), 1), ('athletic-fund/step2', 'b'): 2023,
-        ('athletic-fund/step2', 'c'): 2024,
-        ('athletic-fund/step3', 'a'): f1sum((2025, 2026), -1), ('athletic-fund/step3', 'b'): 2025,
-        ('athletic-fund/step3', 'c'): 2026,
-        ('athletic-fund/step4', 'a'): r0(nums[3]),
+        ('trend/say', 'f'): 2019,
+        ('trend/say', 's'): (p1(spent(2026, 'sped') - spent(2019, 'sped'), spent(2019, 'sped'))),
+        ('trend/say', 'r'): (p1(spent(2026, 'regular') - spent(2019, 'regular'), spent(2019, 'regular'))),
+        ('trend/step1', 'a'): spent(2019, 'sped'), ('trend/step1', 'b'): 2019,
+        ('trend/step1', 'c'): spent(2026, 'sped'), ('trend/step1', 'd'): 2026,
+        ('trend/step1', 'e'): cagr(spent(2019, 'sped'), spent(2026, 'sped'), 7),
+        ('trend/step1', 'g'): spent(2019, 'regular'), ('trend/step1', 'h'): spent(2026, 'regular'),
+        ('trend/step1', 'i'): cagr(spent(2019, 'regular'), spent(2026, 'regular'), 7),
+        ('trend/step2', 'a'): r0(reg[2028]), ('trend/step2', 'b'): 2028,
+        ('trend/step2', 'c'): p1(reg[2028] - spent(2026, 'regular'), spent(2026, 'regular')),
+        ('trend/step2', 'd'): 2026,
+        ('trend/step3', 'a'): spent(2019, 'athletic'), ('trend/step3', 'b'): spent(2026, 'athletic'),
+        ('trend/step3', 'c'): r0(sheet[2024]), ('trend/step3', 'd'): 2024,
+        ('trend/step3', 'e'): float(sheet[2025]), ('trend/step3', 'f'): 2025,
+        ('trend/step4', 'a'): 2027, ('trend/step4', 'b'): p1(sd27 - sd26, sd26),
+        ('trend/step4', 'c'): r0(bk[170][0] - bk[170][1]), ('trend/step4', 'd'): p1(al27 - al26, al26),
+        ('trend/step5', 'a'): 2026,
+        ('offsets/say', 'a'): cbt[2026], ('offsets/say', 'b'): 2026,
+        ('offsets/step1', 'a'): cbt[min(cbt)], ('offsets/step1', 'b'): min(cbt),
+        ('offsets/step1', 'c'): max(cbt.values()), ('offsets/step1', 'd'): max(cbt, key=cbt.get),
+        ('offsets/step1', 'e'): cbt[2026], ('offsets/step1', 'f'): 2026,
+        ('offsets/step2', 'a'): 2026, ('offsets/step2', 'b'): p1(cbt[2026], spent(2026, 'sped')),
+        ('offsets/step2', 'c'): p1(cbt[2026], all26),
+        ('offsets/step3', 'a'): min(cherry), ('offsets/step3', 'b'): max(cherry),
+        ('offsets/step4', 'a'): r0(reg[2026] - dz(r26['original_approp'])),
+        ('offsets/step4', 'c'): r0(dz(r26['transfers_adjustments'])),
+        ('offsets/step5', 'a'): float(r2(fee[2026])), ('offsets/step5', 'b'): 2026,
+        ('athletic-fund/say', 'a'): 2024, ('athletic-fund/say', 'b'): spent(2024, 'athletic'),
+        ('athletic-fund/say', 'c'): 2025,
+        ('athletic-fund/step1', 'a'): 2024, ('athletic-fund/step1', 'b'): r0(sheet[2024]),
+        ('athletic-fund/step1', 'c'): r0(sum(fin)), ('athletic-fund/step1', 'd'): len(fin),
+        ('athletic-fund/step1', 'e'): spent(2024, 'athletic'),
+        ('athletic-fund/step2', 'a'): 2025,
+        ('athletic-fund/step2', 'b'): r0(dz(gl_row(2025, 'S3066672', '535016')['transfers_adjustments'])),
+        ('athletic-fund/step2', 'c'): spent(2025, 'athletic'),
+        ('athletic-fund/step3', 'a'): float(r2(pos[2024])), ('athletic-fund/step3', 'b'): float(r2(pos[2025])),
+        ('athletic-fund/step4', 'a'): 2027, ('athletic-fund/step4', 'b'): 0,
+        ('athletic-fund/step4', 'c'): r0(nums[2]), ('athletic-fund/step4', 'd'): r0(nums[3]),
+        ('athletic-fund/step5', 'a'): 2026, ('athletic-fund/step5', 'b'): float(r2(pos[2026])),
+        ('athletic-fund/step5', 'c'): spent(2026, 'athletic'),
         ('track/say', 'a'): float(it24), ('track/say', 'b'): 2024,
+        ('track/say', 't'): round(it24 / full), ('track/say', 'l'): round(low / full),
         ('track/step1', 'a'): float(tr[(2024, 'Indoor Track - Boys')]), ('track/step1', 'b'): 2024,
         ('track/step1', 'c'): float(it24), ('track/step1', 'd'): float(tr[(2024, 'Football')]),
         ('track/step1', 'e'): float(tr[(2024, 'Girls Soccer')]),
-        ('track/step2', 'a'): 2025, ('track/step2', 'b'): 0.0,
-        ('track/step2', 'c'): abs(p1(sp_rows[2025] - sp_rows[2024], sp_rows[2024])),
-        ('track/step2', 'd'): 2024,
-        ('track/step4', 'b'): 2026, ('track/step4', 'd'): 2027,
+        ('track/step2', 'a'): float(r2(full)), ('track/step2', 'b'): float(D(miles) / trips_n),
+        ('track/step2', 'c'): round(it24 / full),
+        ('track/step2', 'd'): round(tr[(2024, 'Girls Soccer')] / full),
+        ('track/step2', 'e'): float(low), ('track/step2', 'f'): round(low / full),
+        ('track/step2', 'g'): round(it24 / low),
+        ('track/step3', 'a'): trips_n, ('track/step3', 'b'): 2024,
+        ('track/step3', 'c'): round(sheet[2024] / full),
         ('track/step5', 'a'): 2024, ('track/step5', 'b'): float(fin_it24),
-        ('fy27/say', 'a'): p1(sd27 - sd26, sd26), ('fy27/say', 'b'): 2027,
-        ('fy27/say', 'c'): p1(al27 - al26, al26),
-        ('fy27/step1', 'a'): r0(sd26), ('fy27/step1', 'b'): r0(sd27),
-        ('fy27/step1', 'c'): r0(bk[170][0]), ('fy27/step1', 'd'): r0(bk[170][1]),
-        ('fy27/step2', 'a'): p1(bk[170][0] - bk[170][1], sd27 - sd26),
-        ('fy27/step3', 'a'): float(rate) * 100, ('fy27/step3', 'b'): r0(reg[2028] - m28),
-        ('fy27/step3', 'c'): 2028,
     }
-    # The waiting rates, from the bid form's own text layer: the FY2026 page (line 73,
-    # `x s 130-`) and the FY2027 page (line 161, `x $ 140.00 x`), read by position.
-    EXPECT[('track/step4', 'a')] = float(money(re.search(r's (\d+)', at(73)).group(1)))
-    EXPECT[('track/step4', 'c')] = float(money(re.search(r'\$ ([\d.]+)', at(161)).group(1)))
+    # The table under the answer: every cell, from the DB+GL route and the sheet's DB table.
+    rowcat = {'Regular routes': 'regular', 'Special education': 'sped',
+              'Athletics, town line': 'athletic', 'Band and music trips': 'band'}
+    for label, col, c_ in BR.cells(bf):
+        fy = int(col[2:])
+        if label in rowcat:
+            want = spent(fy, rowcat[label])
+        elif label == 'All school buses, town':
+            want = sum(spent(fy, c) for c in cats)
+        elif label.startswith('Athletics, all payers'):
+            want = r0(sheet[fy])
+        else:
+            bad.append('table row %r has no second route here' % label)
+            continue
+        if abs(float(want) - float(c_['value'])) > 0.5:
+            bad.append('table %s %s: recomputed %r, payload says %r' % (label, col, want, c_['value']))
     seen = set()
     for where, u in BR.units(bf):
         for k_, f_ in u['figures'].items():

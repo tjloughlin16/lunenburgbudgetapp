@@ -6,7 +6,36 @@
 
 ## The short version
 
-Regular bus routes are under control, priced by contract to the dollar. The rest is less settled: special education busing keeps missing its budget, the bus fee has not lowered the town’s bus bill, and no one can yet say what each sport’s buses cost.
+Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from families’ fees onto the town.
+
+**What the buses cost, spent at the close of each year**
+
+| | FY2023 | FY2024 | FY2025 | FY2026 |
+|---|---:|---:|---:|---:|
+| Regular routes | $837,900 | $917,525 | $907,200 | $976,500 |
+| Special education | $320,244 | $401,402 | $434,922 | $633,291 |
+| Athletics, town line | $39,880 | $40,000 | $87,822 | $110,650 |
+| Band and music trips | $7,565 | $4,205 | $5,205 | $3,902 |
+| **All school buses, town** | $1,205,589 | $1,363,132 | $1,435,149 | $1,724,343 |
+| Athletics, all payers (district sheet) | — | $117,555 | $91,066 | — |
+
+The town’s general fund at the year-end close, paid plus still owed. The last row is a sheet the district built, not the ledger; it adds what the families’ fee fund paid.
+
+**Mixed picture.** *Are buses getting more expensive, and where?* **Yes, in two places. Since FY2019 special education buses rose 97% and regular routes 40%, both faster than the 2.5% a levy may grow.**
+
+- Spent at the close of the year: special education $322,047 in FY2019 and $633,291 in FY2026, 10.1% a year; regular routes $696,600 and $976,500, 4.9% a year. *(measured; [6. Special education transportation](#6-special-education-transportation))*
+- Regular routes are priced in advance: the contract fixes $1,131,390 for FY2028, 15.9% more than FY2026 paid. *(measured; [The Dee Bus contract](#4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was))*
+- Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town took over a bill families’ fees had paid. *(measured; [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
+- FY2027 budgets school-day buses 11.2% higher; cutting athletic buses, $127,550, made the total look like 2.4%. *(measured; [FY2027: the school-day rise under a flat-looking total](#fy2027-the-school-day-rise-under-a-flat-looking-total))*
+- The district put its FY2026 special education rise down to more vans and monitors. Nothing published counts either, so price and volume cannot be told apart. Would settle it: the special education van contract and a count of routes by year, from the district. *(not published)*
+
+**Mixed picture.** *Does state money or the bus fee offset the cost?* **Only a little. The state paid back $94,993 in FY2026, all of it for special education; the bus fee did not lower the town’s bus bill.**
+
+- The state’s circuit breaker repays part of busing children placed out of district: $14,596 in FY2022, $111,560 at its FY2025 peak, $94,993 in FY2026. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
+- Set beside FY2026 spending, that is 15.0% of special education buses and 5.5% of all buses. It repays the year before’s claims, not that year’s buses. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
+- Regular routes and athletics get nothing from the state: Lunenburg is not a regional district, and the Cherry Sheet shows no regional busing aid in any year FY2010 to FY2027. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
+- The Finance Committee was told the new bus fee cut the line by $11,000. The line was voted $11,000 below the contract, then $11,000 was moved back in during the year. *(on the record; [Finance Committee minutes, 2025-03-20](/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt); [The bus fee and the general fund](#the-bus-fee-and-the-general-fund))*
+- Where the fees are booked is not established; the only account named for them, in the school choice fund, took in $52,717 in FY2026 and spent nothing on buses. Would settle it: the account the bus fee payments are deposited to, from the Town Accountant. *(not published)*
 
 **Does not match.** *Is special education busing budgeted right?* **Special education buses spent $67,555 more than their FY2026 budget, and no transfer covered it.**
 
@@ -23,32 +52,21 @@ Regular bus routes are under control, priced by contract to the dollar. The rest
 - The price is fixed but not flat: it rises 7.9% into FY2027 and 7.4% into FY2028, against the 2.5% a levy may grow in a year without an override. The contract ends on 30 June 2028. *(measured; [The Dee Bus contract](#4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was))*
 - The contract before this one has not been published, so neither why FY2024 cost more than FY2025 nor whether FY2026’s 7.6% rise was price or an extra bus can be told. Would settle it: the Dee Bus contract that ran to June 2025, requested 9 October 2026. *(not published)*
 
-**Does not match.** *Did the new bus fee lower what the town pays for buses?* **No. In the bus fee’s first year the town’s general fund still paid the full $976,500 bus contract.**
+**Mixed picture.** *How does the athletic fee fund play into bus costs?* **In FY2024 the town paid $40,000 of athletic buses and the families’ fee fund the rest. From FY2025 the district moved that cost to the town.**
 
-- The Finance Committee was told the fee cut the line by $11,000. The line was voted at $965,500, and then $11,000 was moved back in during the year. *(on the record; [Finance Committee minutes, 2025-03-20](/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt); [The bus fee and the general fund](#the-bus-fee-and-the-general-fund))*
-- The only account named for a bus fee took in $52,717 in FY2026. It sits in the school choice fund, which spent nothing on buses and moved nothing to them. *(measured; [The bus fee and the general fund](#the-bus-fee-and-the-general-fund))*
-- Whether that account holds the families’ fees at all is not established. Would settle it: the account the bus fee payments are deposited to, from the Town Accountant. *(not published)*
+- The district’s by-sport sheet puts FY2024 athletic buses at $117,555; its second sheet prints $81,553 for the 24 sports both list. Either way, well above $40,000. *(measured; [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
+- In FY2025 $47,822 was moved into the town line, to $87,822, to “reclassify expenses that had been charged against the revolving account”. *(on the record; [School Committee minutes, 2025-04-16](/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt); [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
+- The same year the fee fund’s high school purchase-of-service account, which carried buses with officials and ice time, fell from $115,994 to $26,685. *(measured; [The athletic fee fund: receipts against spending](#the-athletic-fee-fund-receipts-against-spending))*
+- FY2027 cut the town line to $0. On 26 August 2026 $10,000 was restored from the town and $50,000 put back on the fee fund. *(on the record; [School Committee minutes, 2026-08-26](/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt); [The FY2027 restoration: the plan against the sheet and the fund](#the-fy2027-restoration-the-plan-against-the-sheet-and-the-fund))*
+- In FY2026 that fee fund account spent $113,602 again while the town line paid $110,650 for athletic buses. What the fund paid for is not published. Would settle it: the fee fund’s purchase-of-service detail by vendor, and its balance at each 30 June, from the Town Accountant. *(not published)*
 
-**Mixed picture.** *Who pays for athletic buses?* **The FY2027 plan puts 83% of restored athletic buses back on the families’ fee fund, a year after the district moved them off it.**
-
-- On 26 August 2026 the School Committee voted $10,000 from the town; the Superintendent put the rest, $50,000, on the athletic fee fund. *(on the record; [School Committee minutes, 2026-08-26](/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt); [The FY2027 restoration: the plan against the sheet and the fund](#the-fy2027-restoration-the-plan-against-the-sheet-and-the-fund))*
-- Before the move the fund spent $284,723 more than it took in over FY2023 and FY2024, and the district said it could not carry the buses. *(measured; [The athletic fee fund: receipts against spending](#the-athletic-fee-fund-receipts-against-spending))*
-- After costs moved to the town line it took in $140,718 more than it spent over FY2025 and FY2026. *(measured; [The athletic fee fund: receipts against spending](#the-athletic-fee-fund-receipts-against-spending))*
-- Nothing published states what the fund holds after 30 June 2020, so whether it can carry $50,000 cannot be checked. Would settle it: the athletic fee fund’s balance at each 30 June, from the Town Accountant. *(not published)*
-
-**Can’t tell yet.** *Which sport’s buses cost most? Can we trust the figures?* **Track, not soccer, costs the most to bus on the district’s sheet once its two split rows are added back together: $13,864 in FY2024.**
+**Can’t tell yet.** *Which sport’s buses cost most? Can we trust the figures?* **Track costs most to bus on the district’s sheet: $13,864 in FY2024, by our estimate 15 trips. The cheapest team, middle school softball, is about one.**
 
 - Boys’ and girls’ indoor track each print $6,931.75 for FY2024. Added, $13,863.50 is ahead of football’s $9,078.50 and girls’ soccer’s $7,662.00. *(measured; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
-- Outdoor track looks cheapest only in FY2025, whose spring section prints a $0.00 total and runs 46.1% below FY2024. *(measured; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
+- At the new contract’s average trip, $942.50 for 65 miles and four hours’ wait, track is about 15 trips, girls’ soccer 8, and middle school softball at $985.50 about one: track costs 14 times as much. *(our estimate; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
+- The bid form projects 100 trips a year for athletics, field trips and band together. At the same price, the FY2024 athletic sheet alone is about 125. *(our estimate; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
 - At the School Committee, members said the indoor track league meet had moved to the Reggie Lewis Center in Boston, and that the bus is billed in full while it waits there. *(machine captions — check the video; [School Committee, 2025-03-12, video at 1:48:16 (machine captions)](https://www.youtube.com/watch?v=b7caO9Kd7VA&t=6496s))*
-- The contract bills every hour a bus waits: $130.00 an hour in FY2026, $140.00 in FY2027. *(measured; [The Dee Bus contract](#4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was))*
-- The district’s second sheet prices FY2024 indoor track at $6,085.00, and no trip-by-trip record exists to say which sheet is right. Would settle it: Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office. *(not published)*
-
-**Mixed picture.** *Is the FY2027 bus budget as flat as it looks?* **No. School-day buses rise 11.2% in FY2027; cutting athletic buses made the total look like 2.4%.**
-
-- Regular routes and special education go from $1,531,234 to $1,703,313. Athletic buses go from $127,550 to $0. *(measured; [FY2027: the school-day rise under a flat-looking total](#fy2027-the-school-day-rise-under-a-flat-looking-total))*
-- The athletic cut offsets 74% of the school-day rise. The regular-route rise is the contract’s price; the special education rise is a budget, not a count. *(measured; [FY2027: the school-day rise under a flat-looking total](#fy2027-the-school-day-rise-under-a-flat-looking-total))*
-- This site’s own model grows regular routes 6% a year and lands $14,828 under the price the contract already fixes for FY2028. *(measured; [The contract against this site’s model](#the-contract-against-this-site-s-model))*
+- The district’s second sheet prices FY2024 indoor track at $6,085.00. No trip-by-trip record exists to say which sheet is right, or what any one trip cost. Would settle it: Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office. *(not published)*
 
 ---
 
@@ -158,6 +176,8 @@ On 26 August 2026 the Superintendent told the School Committee *“the verified 
 | 5 | HS Girls Soccer | $7,662.00 | HS Ice Hockey - Boys | $6,215.00 |
 
 On the workbook, indoor track is first in both years. On the Finance Committee’s copy of the second district sheet, which prints indoor track as one row, it is first in FY2025 and number 4 in FY2024, at $8,169.50 and $6,085.00. Two hand-built sheets, $7,778.50 apart on the same team in FY2024; neither is an invoice, and this page picks neither (rule 13a).
+
+**In trips — OUR ESTIMATE, and what it cannot say.** Nobody publishes a trip count, so this page divides dollars by the bid form’s average trip at the new contract’s FY2026 prices: $942.50, or $422.50 with no waiting. In FY2024 that puts indoor track at about 15 trips (33 with no waiting), girls’ soccer at about 8, and the cheapest team that rode at all, MS Softball at $985.50, at about 1. The whole sheet, $117,555.00, is about 125 trips, against the 100 a year the bid form projects for athletics, field trips and band together. Two limits. **Every sport is priced at the same average trip, so a cost per trip by sport is not something this can give** — a golf match and a meet in Boston are not the same bus. And FY2024 was paid under the previous contract, whose rates have not been published; if they were lower, every count here is too low.
 
 **Why outdoor track looks cheapest.** Only in FY2025, and only on rows whose season total the workbook prints as $0.00: the spring rows sum to $18,242.50, -46.1% against FY2024’s $33,835.50. *A hypothesis:* the spring section was unfinished when the sheet was made; nothing here tests it (registered: *Whether the FY2025 spring section of the district’s by-sport athletics workbook is complete*).
 
