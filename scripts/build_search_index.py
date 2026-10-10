@@ -488,11 +488,30 @@ def drift(db):
 MAX_CHARS = 40_000
 
 
+def _pieces(body):
+    """Sentence and paragraph breaks first; a piece STILL over MAX_CHARS is cut at line
+    breaks, then at spaces, then hard. Spreadsheet text has neither sentence ends nor blank
+    lines, so a 246,000-character Finance Committee sheet came through as one "paragraph",
+    was never split, and every search push from 8 October 2026 died on SQLITE_TOOBIG."""
+    for para in re.split(r'(?<=[.!?])\s+|\n{2,}', body):
+        if len(para) <= MAX_CHARS:
+            yield para
+            continue
+        for line in re.split(r'\n', para):
+            while len(line) > MAX_CHARS:
+                cut = line.rfind(' ', 0, MAX_CHARS)
+                cut = cut if cut > MAX_CHARS // 2 else MAX_CHARS
+                yield line[:cut]
+                line = line[cut:].lstrip()
+            if line:
+                yield line
+
+
 def split_body(body):
     if len(body) <= MAX_CHARS:
         return [body]
     parts, buf = [], ''
-    for para in re.split(r'(?<=[.!?])\s+|\n{2,}', body):
+    for para in _pieces(body):
         if buf and len(buf) + len(para) + 1 > MAX_CHARS:
             parts.append(buf)
             buf = ''
