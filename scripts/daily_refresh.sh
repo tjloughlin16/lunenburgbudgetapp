@@ -31,6 +31,12 @@
 #     contains a command that could.
 set -u
 export PATH="/Users/tj/.nvm/versions/node/v22.22.2/bin:/usr/local/bin:/usr/bin:/bin"
+# ONCE STARTED, STAY AWAKE UNTIL DONE. On 10 October 2026 a job launched at 02:36 during a
+# dark wake went back to sleep 18 seconds later and then ran ~45 seconds an hour, so a
+# 14-minute search build read as "5.5 hours, too slow". This holds an idle-sleep assertion
+# for exactly as long as this shell lives. It cannot WAKE the machine at 07:00 -- launchd
+# runs a missed time on the next wake -- and a closed lid on battery still sleeps.
+/usr/bin/caffeinate -i -w $$ &
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$HERE" || exit 1
 LOGDIR="$HERE/build/refresh-logs"
