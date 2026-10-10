@@ -1,36 +1,42 @@
-# Handoff: everything not yet done, as of Saturday 10 October 2026, 08:30
+# Handoff: everything not yet done, as of Saturday 10 October 2026, 09:10
 
 One list for the next session. Read this first; the linked handoffs carry their own detail.
 Earlier versions are in git history (`git log -p notes/HANDOFF-NEXT.md`).
 
-## RIGHT NOW (Sat 10 Oct 08:30)
+## RIGHT NOW (Sat 10 Oct 09:10) -- everything from the 08:30 list is DONE
 
-- **The new always-additive refresh is RUNNING** (started 07:00, its FIRST real run, in this
-  tree; log `build/refresh-logs/2026-10-10.log`). DO NOT commit in the main tree until it
-  finishes (`pgrep -fl "[d]aily_refresh"`). Then read its log end to end: did it commit only
-  its own files, replay/push cleanly, report "not yet refreshable" files, and deploy (or say
-  why not)? Its search step (`build_search_index.py`) will be SLOW -- see below.
-- **The paced minutes run is STOPPED on purpose** (`build/minutes-pacing.STOPPED`). Overnight,
-  its usage readings went STALE and the stale branch ran BEFORE the weekly-line rule, so it
-  wrote meetings with the week at 28% vs a line near 18%. Fixed in `usage_governor.py`
-  (stale + weekly line -> wait; 24 of 24 rules). Before removing the marker: find WHY the
-  readings went stale overnight (429 back-off? the OAuth token in the keychain expiring
-  while no interactive session refreshed it?) -- `~/.claude/usage-api-log.csv`,
-  `~/.claude/usage-api-backoff`. Then `rm build/minutes-pacing.STOPPED`; launchd restarts it
-  within 30 min. Its overnight output (recording-minutes/, official-votes/) is uncommitted
-  in this tree -- the refresh will treat it as somebody else's work; commit it after.
-- **The overnight job (02:30) was STOPPED and unscheduled** at 08:20. It spent 5.5 hours in
-  `build_search_index.py` -- every file read (4,535), then a long FTS5 query loop
-  (fts5NextMethod) that scales badly now the index holds ~2,900 OML letters and the new
-  split rows. Never reached the D1 steps. So STILL TO DO, after the refresh:
-  1. `python3 scripts/sync_d1.py --full` (fits on Workers Paid; recreates parents+children,
-     so it sidesteps the foreign-key wall; `--check` after).
-  2. Find the slow FTS5 step in `build_search_index.py` (likely a per-document MATCH or the
-     affinity pass) and fix it; then `sync_search_d1.py` -- site search has been frozen
-     since 8 Oct (SQLITE_TOOBIG, fixed by `890111ac`, but never pushed).
-- **Uncommitted in the main tree** (from last night's deploy builds + the paced run): fy28 API
-  payloads, views/ (2,896 OML text view links removed), recording-minutes, official-votes,
-  watcher logs. Commit them once the refresh finishes (the refresh will not stage them).
+- **The paced minutes run is RUNNING again, and WAITING** (week 30% vs line 18.3%; the line
+  reaches 30% around Sun 07:00). Restarted 09:06 on the fixed governor. Why it overspent
+  overnight, all fixed and pushed:
+  - stale + weekly line -> wait (`9c560673`);
+  - after a 5-hour reset the server sends `resets_at: null`; fetch() threw and discarded the
+    reading -> went STALE at 22:05 (`47a2ea70`, a null reset is now a reading);
+  - a failed fetch waited a full 30 min to retry (now retried at FETCH_EVERY_S) and left no
+    trace -- failures now go to `~/.claude/usage-api-errors.csv` (`47a2ea70`);
+  - the OAuth token lapses ~8 h after last use when nothing calls the model; fetch() now
+    renews it first (`claude auth status`, else one haiku call, $0.0054, at most 1/30 min,
+    logged as kind `renew`) (`954bc940`). HYPOTHESIS for 06:20-08:15 Sat, not proven: the
+    first `renew` or `401` row in the errors CSV will settle it.
+- **The "5.5-hour search build" was SLEEP, not compute.** The 02:36 job slept at 02:37:11
+  and ran ~45 s an hour. Awake, the build is 15 s. `daily_refresh.sh` now holds
+  `caffeinate -i` for its lifetime (`c505bcff`); it still cannot WAKE the machine at 07:00
+  (that needs `sudo pmset repeat wakeorpoweron`, TJ's call).
+- **Site search is current** -- frozen since 8 Oct, now pushed (3,288 files) and
+  `sync_search_d1.py --check` ok. Fixed: FTS5 UNINDEXED lookups scanned the table
+  (`b784473b`, a `search_key` table); rows indexed before the 40,000-char split were never
+  re-split (`235a4806`); two files could share a doc_key and hide each other (`235a4806`).
+- **D1 analysis database current**: `sync_d1.py --full`, 122 tables / 161,301 rows match.
+  D1 bug 3 FIXED in the incremental path (`6445f815`: parents upserted, never emptied;
+  tested against strict FKs, not yet against D1 itself -- watch the next push that changes
+  `document`).
+- `build_source_index.py` no longer fails on a SQLite `-journal` beside a skipped DB (`b9a83593`).
+- **The 10 Oct refresh did NOT deploy** -- six outputs were stale because the overnight run's
+  output was uncommitted; that is committed (`cced8d52`) and they reproduce (`9028f145`).
+  The site deploys on the next refresh, or by hand when TJ asks (rule 10).
+- `check_watch_gaps.py` exits 1 on six days the watcher missed (18 Sep - 6 Oct). History;
+  nothing to fix.
+- **Not mine, left alone:** uncommitted `build_transportation.py` / `transportation.md` /
+  `transportation.json` (another session, 08:53) and fy28/public/api/* payloads.
 
 ## Open work, in rough priority order
 
@@ -38,8 +44,7 @@ Earlier versions are in git history (`git log -p notes/HANDOFF-NEXT.md`).
    (CLAUDE.md updated); databases may reach 10 GB. The PAGES 20,000-file limit is NOT lifted
    (needs Pro): the build is 18,238 after the OML texts were moved to GitHub links
    (`be4f1142`). Plan the next cut before the next refusal.
-2. **D1 bug 3** (rebuilding a parent table under its children) remains in the incremental
-   path; `--full` sidesteps it. Decide later whether to fix the incremental path (UPSERT).
+2. ~~D1 bug 3~~ FIXED 10 Oct (`6445f815`).
 3. **Para salary correction -- DONE** (`notes/findings/PARA-SALARY-CORRECTION.md`): 107 of 120
    hourly rates rose ~4%; the model's 3.0/2.0/2.0 para rates are now understated -- queue a
    model update. **Dee Bus -- DONE** (`notes/findings/DEE-BUS-CONTRACT.md`). Request only
