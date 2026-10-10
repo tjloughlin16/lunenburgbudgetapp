@@ -47,6 +47,7 @@ URL = 'https://api.anthropic.com/api/oauth/usage'
 FETCH_EVERY_S = 150      # the endpoint answers 429 when polled every minute (7 October, 22:40)
 BACKOFF_S = 600          # after a refusal, ask nothing for this long
 _BACKOFF = os.path.expanduser('~/.claude/usage-api-backoff')
+ERRORS = os.path.expanduser('~/.claude/usage-api-errors.csv')   # every failed fetch, by fetch()
 STALE_S = 420            # a reading older than this is unknown, never current (> FETCH_EVERY_S x 2)
 BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
@@ -83,8 +84,11 @@ def _token():
 def fetch(force=False):
     """Ask the server for the bars and append a row to LOG. At most once per FETCH_EVERY_S
     (the last row's age decides). Returns True on a fresh reading. Any failure -- an expired
-    token, no network -- returns False and writes nothing, so the reading goes STALE and the
-    governor drops to one worker: a reading it could not get is never guessed."""
+    token, no network -- returns False and writes no reading, so the reading goes STALE and the
+    governor waits (or, with no weekly line, drops to one worker): a reading it could not get
+    is never guessed. The FAILURE is written to ERRORS, though: on the night of 9-10 October
+    2026 the readings went stale twice and nothing recorded why, so the cause had to be
+    reconstructed from sleep logs the next morning."""
     import json
     import urllib.request
     hist = readings()
@@ -93,13 +97,19 @@ def fetch(force=False):
         return True                      # even a forced fetch is at most once a minute
     if os.path.exists(_BACKOFF) and now - os.path.getmtime(_BACKOFF) < BACKOFF_S:
         return False                     # refused recently: ask nothing until the back-off ends
+    if os.path.exists(ERRORS) and now - os.path.getmtime(ERRORS) < FETCH_EVERY_S:
+        return False                     # failed recently: a retry waits as long as a poll would
     try:
         req = urllib.request.Request(URL, headers={
             'Authorization': 'Bearer ' + _token(), 'anthropic-beta': 'oauth-2025-04-20',
             'Content-Type': 'application/json', 'User-Agent': 'claude-cli'})
         d = json.loads(urllib.request.urlopen(req, timeout=15).read())
         f5, f7 = d['five_hour'], d['seven_day']
-        reset = dt.datetime.fromisoformat(f5['resets_at']).timestamp()
+        # AFTER A RESET THE SERVER NAMES NO NEW ONE until something calls the model, so
+        # `resets_at` is null -- and reading it unguarded threw, the reading was discarded, and
+        # the run went STALE five minutes after the 22:00 reset on 9 October 2026. An empty
+        # reset is a real reading: the bar is known, the window has not opened yet.
+        reset = dt.datetime.fromisoformat(f5['resets_at']).timestamp() if f5.get('resets_at') else None
         if f7.get('resets_at'):
             with open(WEEK_RESET + '.tmp', 'w') as fh:
                 fh.write('%d\n' % dt.datetime.fromisoformat(f7['resets_at']).timestamp())
@@ -108,13 +118,43 @@ def fetch(force=False):
         with open(LOG, 'a', encoding='utf-8') as fh:
             if new:
                 fh.write('at,five_hour,seven_day,five_hour_resets_at\n')
-            fh.write('%s,%s,%s,%d\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                                         f5['utilization'], f7['utilization'], reset))
+            fh.write('%s,%s,%s,%s\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                         f5['utilization'], f7['utilization'], '%d' % reset if reset else ''))
         return True
     except Exception as e:                              # noqa: BLE001 -- any failure is "unknown"
         if getattr(e, 'code', None) == 429:
             open(_BACKOFF, 'w').write(str(now))
+        _record_error(e)
         return False
+
+
+def _record_error(e):
+    """One row per failed fetch: when, what kind, and a short reason. Never the token -- only the
+    exception's class, its HTTP status if it had one, and the first 120 characters of its text."""
+    try:
+        new = not os.path.exists(ERRORS)
+        with open(ERRORS, 'a', encoding='utf-8') as fh:
+            if new:
+                fh.write('at,kind,status,reason\n')
+            reason = str(e).replace('\n', ' ').replace(',', ';')[:120]
+            fh.write('%s,%s,%s,%s\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                         type(e).__name__, getattr(e, 'code', '') or '', reason))
+    except OSError:
+        pass
+
+
+def last_error(since=0.0):
+    """The most recent failed fetch after `since` (epoch) as (epoch, kind, status, reason), or None."""
+    if not os.path.exists(ERRORS):
+        return None
+    rows = list(csv.DictReader(open(ERRORS, encoding='utf-8')))
+    for r in reversed(rows):
+        try:
+            t = dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00')).timestamp()
+        except (ValueError, KeyError):
+            continue
+        return (t, r.get('kind'), r.get('status'), r.get('reason')) if t > since else None
+    return None
 
 
 def readings(path=LOG):
@@ -439,3 +479,8 @@ if __name__ == '__main__':
         sys.exit(_test())
     ok = fetch(force=True)
     print(('' if ok else 'COULD NOT FETCH -- ') + describe(Plan(), readings(), dt.datetime.now().timestamp()))
+    h = readings()
+    err = last_error(h[-1]['t'] if h else 0.0)
+    if err:
+        print('last failed fetch %s: %s %s %s' % (dt.datetime.fromtimestamp(err[0]).strftime('%a %H:%M'),
+                                                  err[1], err[2] or '', err[3]))

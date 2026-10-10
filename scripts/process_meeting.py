@@ -547,8 +547,11 @@ def run_governed(plan, a, S, ceiling):
                 waiting = bool(d and d['note'].startswith('weekly line'))
                 every = FETCH_WAITING_S if waiting else FETCH_RUNNING_S
                 gp.stale_s = every + 300
-                if now - last_fetch >= every:
-                    G.fetch(force=True)                    # the server's figure, at most once a minute
+                # A FAILED FETCH IS RETRIED NEXT TICK, not next interval. Waiting reads every 30
+                # minutes and stale_s is that plus five, so one failure used to mean STALE: the
+                # 22:00 fetch on 9 October 2026 failed and the run went blind at 22:05. fetch()
+                # itself still asks at most once a minute and honours the 429 back-off.
+                if now - last_fetch >= every and G.fetch(force=True):
                     last_fetch = now
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
