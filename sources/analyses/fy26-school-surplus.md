@@ -8,21 +8,164 @@
 
 ![The FY2026 school budget stepping from the $26,247,474 voted appropriation to $482,118 unspent at period 13, beside the period-12 floor of $482,101 and ceiling of $718,885; $236,767 is still encumbered.](charts/fy26-school-surplus-waterfall.svg)
 
-**$482,118 was unspent and uncommitted in the school general fund at period 13 of FY2026**, of a revised budget of $26,332,564 ($26,247,474 voted, $85,090 moved in during the year).
+**$482,118 was left unspent and uncommitted in the school general fund at period 13 of FY2026**, of a revised budget of $26,332,564 — net of $1,683,552 left on lines that came in under and $1,201,434 spent past the budgets of the rest. Read against what each line was supposed to equal, it says this:
+
+**FY27 budgets $700,142 for out-of-district tuition; FY26 spent $1,202,771 on the same lines.** The circuit breaker paid $333,495 on top. The FY28 line has to say which figure it plans from.
+
+**57 school accounts closed FY26 $1,201,434 past their revised budgets; FY25 closed with 4.** The 29 July transfers moved $148,364. FY23 and FY24 closed like FY26, with 70 and 52 over.
+
+**FY26 left $482,118 unspent; the FY27 school budget was set $761,000 below level service.** The surplus goes to the town as free cash, and Town Meeting decides where certified free cash is spent.
+
+**Electricity and contracted therapy ran past their voted budgets all 4 years, by $489,283.** FY27 budgets them at $316,250 and $130,000; FY26 already paid $319,109 and $204,758.
+
+**20 accounts were given $117,626 by transfer in FY26 and still ended $223,361 under.** School Committee dues got $13,500 for a search invoice and ended with $13,689 unspent.
+
+**The circuit breaker paid 21.7% of FY26 out-of-district tuition; in FY23 it paid 61.9%.** Over the same years the general fund's tuition bill went from $304,748 to $1,202,771.
+
+**Supplies and services were voted above what they spent in all 4 years, $375,175 in all.** Building upkeep's vote rose 96.4% from FY23 to FY26; FY26 spent $156,984 less than voted.
+
+**A $98,784 psychologist line paid nobody in FY26; FY27 budgets the line at $102,227.** Kindergarten aides went the other way: $99,064 paid against no budget, and FY27 budgets none.
+
+**Salary lines left $192,211 net, though paraprofessionals ran $208,082 over.** The record names one leave of absence; no document here says why counselor money was left.
+
+**The FY26 school surplus stands at $482,118, $16.95 more than the June ledger showed.** Not one of the 258 accounts in both runs changed its spending between them.
+
+**$236,767 is still committed to open purchase orders, across 27 accounts.** Paid, the surplus stays at $482,118; released, it can rise to at most $718,885.
+
+**In July the Committee heard FY26 would return well below FY25’s $600,000.** The floor, $482,118, is below it; the ceiling, $718,885, is above it.
+
+**Credit where the ledger shows it.** FY27 budgets special-ed aides $297,321 above what FY26 paid them, after an overrun. Health insurance, $328,771 short over FY23 and FY24, closed FY26 $78,313 under its budget. And the year-end transfers were voted in open session and itemised, one by one, in the minutes.
+
+Every figure is in the evidence below, with the account it comes from. Where a cause is offered it is a hypothesis, and it says so.
+
+---
+
+## The audit: each finding against what it should equal
+
+Every finding below sets a figure against something it was supposed to equal — a budget against its spending, one year against the next, a statement against the ledger. Accounts are cited by their full MUNIS string; raw values are to the cent. The FY2027 figures are the district’s FY2027 workbook, Balanced column, each line first tied to the MUNIS FY2026 original appropriation. Where a cause is offered it is a hypothesis and says so.
+
+### 1. Out-of-district tuition: the FY2027 budget against the FY2026 bill
+
+| line | account | FY2026 voted | FY2026 spent | FY2026 spent and committed | FY2027 budget |
+|---|---|---:|---:|---:|---:|
+| Private tuition | `0100-3-300-9300-51-1-06-2-535019` | $988,630.00 | $466,000.82 | $466,000.82 | $536,400.00 |
+| Collaborative tuition | `0100-3-300-9400-51-1-06-2-535023` | $302,662.56 | $678,062.05 | $736,770.12 | $163,742.00 |
+| **Both** | | $1,291,292.56 | $1,144,062.87 | **$1,202,770.94** | **$700,142.00** |
+
+The FY2027 budget is $502,629 below what FY2026 spent and committed on the same two lines. The circuit breaker fund (2640) paid $333,495 more tuition in FY2026, outside these lines. The FY2027 figure is the same in the Balanced, Level Service, Core and Restoration columns, so it was the district’s estimate rather than one of the spring’s cuts.
+
+*What it does not show:* how many children either figure pays for, or for which months. *Readings that fit, none tested here (hypotheses):* placements ending in FY2027; more expected from the circuit breaker; FY2027 tuition paid in advance from FY2026 money, which would raise FY2026 and lower FY2027 by the same amount. *Would settle it:* the tuition invoices by service period, and the FY2027 placement list with the fund expected to pay each.
+
+### 2. Lines that closed past their revised budgets
+
+| fiscal year | accounts past revised budget | by | transfers in, gross | accounts spent to exactly $0 left |
+|---|---:|---:|---:|---:|
+| FY2023 | 70 | $753,697 | $590,339 | 26 |
+| FY2024 | 52 | $1,167,996 | $486,257 | 23 |
+| FY2025 | 4 | $22,275 | $1,463,210 | 91 |
+| FY2026 | 57 | $1,201,434 | $394,929 | 29 |
+
+FY2025 is the exception, not FY2026: it is the one year in four in which nearly every line was brought back to its budget by transfer. *That this was a deliberate year-end reconciliation after the FY2025 surplus became public is a hypothesis; nothing here records it.* The school appropriation is a single bottom-line total, so a line past its budget is not spending past the appropriation — but the lines are what the next budget is built from.
+
+The five largest FY2026 overruns, $811,010 of the $1,201,434:
+
+| account | description | voted | moved in | spent | committed | past budget |
+|---|---|---:|---:|---:|---:|---:|
+| `0100-3-300-9400-51-1-06-2-535023` | Collaborative Tuitions | $302,662.56 | $0.00 | $678,062.05 | $58,708.07 | -$434,107.56 |
+| `0100-3-300-4130-99-1-74-2-521011` | Electricity Charges | $265,000.00 | $6,132.42 | $319,108.72 | $62,362.13 | -$110,338.43 |
+| `0100-3-300-2310-51-1-06-2-535012` | Contract Related Services | $103,000.00 | $2,500.00 | $204,757.65 | $1,262.40 | -$100,520.05 |
+| `0100-3-300-2330-03-2-12-1-511103` | Kindergarten Aides/Regular | $0.00 | $0.00 | $93,691.03 | $0.00 | -$93,691.03 |
+| `0100-3-300-2305-06-6-10-1-511001` | H.S. Teachers/Regular | $2,719,099.00 | $0.00 | $2,791,452.42 | $0.00 | -$72,353.42 |
+
+The minutes of 29 July 2026 describe “a series of year-end line-item transfers needed to cover overages within the FY26 budget” and list ten, totalling $148,364.31. They also record that “additional year-end transfers may still be forthcoming”. The period-13 run of 6 October 2026 shows no transfer posted after the period-12 run of 1 September 2026. 38 of the 57 accounts past their budget received no transfer in at all.
+
+### 3. The surplus beside the FY2027 cuts
+
+| | |
+|---|---:|
+| FY2027 school budget, Level Service | $27,333,288.00 |
+| FY2027 school budget, Balanced (the no-override budget) | $26,572,287.50 |
+| **The difference** | **$761,000.50** |
+| FY2026 unspent at period 13 | $482,118.07 (63.4% of the difference) |
+| …with every open purchase order released | $718,885.01 (94.5%) |
+
+Two measured things, side by side; neither explains the other. The FY2027 budget was set in March 2026, when the FY2026 year was nine months in; this surplus was measured in October. A school appropriation that is not spent lapses to the town’s general fund and reaches the free cash the state certifies; Town Meeting appropriates free cash. The district’s FY2027 projection of 23 March 2026 prints the same two totals, rounded to the dollar.
+
+### 4. Two lines voted below their spending in every year held
+
+| line | account | FY2023 voted − spent | FY2024 voted − spent | FY2025 voted − spent | FY2026 voted − spent | FY2027 budget |
+|---|---|---:|---:|---:|---:|---:|
+| Electricity | `0100-3-300-4130-99-1-74-2-521011` | -$13,633 | -$105,732 | -$67,266 | -$116,471 | $316,250 |
+| Contracted related services (special-education therapy) | `0100-3-300-2310-51-1-06-2-535012` | -$14,197 | -$41,922 | -$27,042 | -$103,020 | $130,000 |
+
+FY2026 had already paid $319,108.72 for electricity and $204,757.65 for therapy before anything still committed. Beside electricity, natural-gas heating (`0100-3-300-4120-99-1-74-2-521025`) was voted above its spending in FY2024, FY2025, FY2026 and received transfers in, net, in every year held: FY2023 voted $98,151, moved $14,500, spent and committed $122,623; FY2024 voted $98,151, moved $16,400, spent and committed $94,480; FY2025 voted $120,000, moved $5,608, spent and committed $82,522; FY2026 voted $145,000, moved $11,024, spent and committed $110,464.
+
+At the Finance Committee on 26 February 2026 a member “questions the impact of the solar panels”. *Hypotheses, untested:* buildings moving load from gas to electricity; rates; the solar arrangement. *Would settle it:* the utility bills by building, with kilowatt-hours and any solar credit.
+
+### 5. Transfers in to lines that then ended unspent
+
+20 accounts received $117,626.28, net, by transfer during FY2026 and closed with $223,360.98 still unspent. The largest:
+
+| account | description | voted | moved in, net | spent | committed | left |
+|---|---|---:|---:|---:|---:|---:|
+| `0100-3-300-4220-01-1-74-2-535006` | Contracted Services | $257,000.00 | $31,291.13 | $203,782.93 | $8,848.00 | $75,660.20 |
+| `0100-3-300-1110-01-1-01-2-535003` | Dues/Meetings | $6,500.00 | $13,500.00 | $6,311.00 | $0.00 | $13,689.00 |
+| `0100-3-300-4120-99-1-74-2-521025` | Heating Charges/Natural Gas | $145,000.00 | $11,024.22 | $92,495.36 | $17,968.44 | $45,560.42 |
+| `0100-3-300-3510-06-6-67-2-535020` | Dues And Fees | $0.00 | $29,965.45 | $21,481.00 | $0.00 | $8,484.45 |
+| `0100-3-300-4210-01-1-74-2-535006` | Contracted Services | $21,730.00 | $16,598.45 | $34,336.02 | $0.00 | $3,992.43 |
+| `0100-3-300-1210-01-1-02-2-545001` | General Supplies | $1,500.00 | $3,655.03 | $490.20 | $149.38 | $4,515.45 |
+
+School Committee minutes, 5 November 2025: “transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice”. The ledger shows that line received $13,500.00, spent $6,311.00 of its original $6,500.00, and closed with $13,689.00 left — so whatever paid the search invoice, this line did not, or did not yet. Two measured things; the reconciling explanation, if there is one, is not in any document held.
+
+And heating. The 29 July minutes record “$11,000 from Heating Charges, where funds remained available, to Regular Transportation”. The ledger shows natural-gas heating received $11,024.22, net, over the year — so at least $22,024.22 moved into it from somewhere — and it closed with $45,560.42 left and $17,968.44 still committed. The ledger is net per account and cannot say which transfer was which.
+
+### 6. Who paid for out-of-district tuition
+
+| fiscal year | general fund (functions 9000+) | circuit breaker (fund 2640) | both | circuit breaker share |
+|---|---:|---:|---:|---:|
+| FY2023 | $304,748 | $494,968 | $799,715 | 61.9% |
+| FY2024 | $588,508 | $466,296 | $1,054,804 | 44.2% |
+| FY2025 | $732,298 | $473,650 | $1,205,949 | 39.3% |
+| FY2026 | $1,202,771 | $333,495 | $1,536,266 | 21.7% |
+
+Spent and committed, both funds. Measured: tuition from the two funds together rose, and the circuit breaker’s share of it fell, so the general-fund lines rose faster than the cost. Not measured: why its share fell. The reimbursement follows the year of the cost, at a rate the state sets, and the fund’s balance is not held here; any of those could move it (a hypothesis). A general-fund line is the town’s share, not the cost (rule 11).
+
+### 7. Supplies and upkeep, voted against spent
+
+| fiscal year | supplies & services voted | spent and committed | voted − spent | building upkeep voted | spent and committed | voted − spent |
+|---|---:|---:|---:|---:|---:|---:|
+| FY2023 | $734,753 | $697,059 | $37,694 | $332,016 | $348,533 | -$16,517 |
+| FY2024 | $767,189 | $695,520 | $71,669 | $406,910 | $391,355 | $15,555 |
+| FY2025 | $858,905 | $685,939 | $172,966 | $517,358 | $515,876 | $1,482 |
+| FY2026 | $745,084 | $652,238 | $92,846 | $652,033 | $495,049 | $156,984 |
+
+These are the categories of *Why there was money left over* below, measured against what was VOTED rather than the revised budget. A line left under its vote every year reads as budgeted high as much as run lean.
+
+### 8. Lines budgeted again
+
+| line | account(s) | FY2026 voted | FY2026 spent | FY2027 budget |
+|---|---|---:|---:|---:|
+| Primary school psychologist | `0100-3-300-2800-07-2-06-1-511023` | $98,784.00 | $0.00 | $102,227.00 |
+| Kindergarten aides and paraprofessionals | `0100-3-300-2330-03-2-12-1-511103`, `0100-3-300-2330-03-2-13-1-511203` | $0.00 | $99,064.15 | $0.00 |
+
+*Hypotheses, untested:* the psychologist post was vacant or on leave, or paid from another line; the kindergarten aides were hired for children whose plans required them. *Would settle it:* the position-control roster by month, and payroll by account.
+
+### Credit where the ledger shows it
+
+- **Special-education aides.** The five lines ran $111,018 past their revised budgets in FY2026 and spent $1,526,467. FY2027 budgets $1,823,788 — $297,321 above what FY2026 paid. A budget that moved toward its spending.
+- **Health insurance** (`0100-3-300-5200-99-1-99-2-570001`) closed FY2023 and FY2024 a combined $328,771 past its budget; FY2026 closed $78,313 under, 2.1% of the budget.
+- **The year-end transfers were voted in open session and itemised** in the 29 July 2026 minutes, account by account, with a reason for each.
+
+---
+
+
+## Why there was money left over
 
 ![Where the FY2026 school surplus was left, by category: Building & grounds upkeep $195,934; Counselors & psychologists $191,162; Teachers & substitutes $167,992; Health insurance & benefits $107,003; Supplies, services & everything else $96,363; Out-of-district tuition $88,522; Nurses, coaches & other staff $25,700; Custodians $11,352; Administrators & office staff $4,087; Equipment & technology -$8,305; Heat, electricity & utilities -$21,792; Transportation -$67,555; Special-ed contracted services -$100,262; Paraprofessionals -$208,082.](charts/fy26-school-surplus-causes.svg)
 
 **Where it came from. Three categories left the most:** building & grounds upkeep, $195,934 (28.4% of its budget); counselors & psychologists, $191,162 (18.1% of its budget); teachers & substitutes, $167,992 (1.5% of its budget). Accounts that ended over budget used $1,201,434 of what the rest left, led by paraprofessionals, $208,082 over and special-ed contracted services, $100,262 over.
 
 **Was it thrift? $283,991 of it (59%) sat in discretionary lines — supplies, upkeep and equipment, the part a decision to spend less could explain.** The other $198,127 sat in salaries, benefits, tuition and other lines that follow staffing, placements and prices. The split of lines into the two groups is ours; see *Was it thrift?* below.
-
-**It landed at the bottom of the period-12 range: $16.95 above the $482,101 the June ledger showed.** Spending did not change by a cent in any of the 415 accounts between the run of 1 September 2026 and the run of 6 October 2026. The one change was $16.95 of a purchase order released in one account, General Supplies `S2510042` 545001.
-
-**It is not final. $236,767 is still encumbered — committed to open purchase orders — across 27 accounts.** Paid, the surplus stays at $482,118; released, it rises to at most $718,885, the same ceiling the June ledger gave. The FY2025 report of the same department, run the same day, shows $0 encumbered.
-
----
-
-## Why there was money left over
 
 ![Each category’s FY2026 revised budget split into what was spent, what is still committed to open purchase orders, and what was left.](charts/fy26-school-surplus-budget-vs-spent.svg)
 
@@ -99,7 +242,7 @@ For each category that moved by at least $25,000: first what the ledger shows (m
 
 *On the record — evidence of what was said, not a test of it:*
 
-- *School Committee minutes, 29 July 2026 (page 3):* “regular transportation had been budgeted too low for FY26”. [Our copy](https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt) · [the Town’s](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292026-7930).
+- *School Committee minutes, 29 July 2026 (page 3):* “regular transportation had been budgeted too low for FY26”. [Our copy](https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt) · [the Town’s](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292026-7930). It is about the regular-route line, which closed exactly on its budget after the transfer; the overrun in this category is all on the special-education line, which no transfer covered.
 - *School Committee minutes, 29 July 2026 (page 3):* “$11,000 from Heating Charges, where funds remained available, to Regular Transportation to cover an overage”. [Our copy](https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt) · [the Town’s](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292026-7930).
 
 *What the record does not establish:* how much of the figure above it accounts for. Other causes that fit: route or contract prices above budget, or special-education routes added mid-year. *Would settle it:* the transportation contract and the route list by month.
@@ -309,7 +452,7 @@ Net unspent at period 13, by function family (the account string’s 4th segment
 
 ## The paraprofessional accounts (function 2330)
 
-4 of 4 special-education paraprofessional lines ended over their revised budget, $105,644 over between them, after mid-year transfers into 3 of them. Two kindergarten accounts with $0 budgeted spent $99,064; `fy26-closeout.md` §3 reads them.
+5 of 5 special-education paraprofessional lines ended over their revised budget, $111,018 over between them, after mid-year transfers into 4 of them. Two kindergarten accounts with $0 budgeted spent $99,064; `fy26-closeout.md` §3 reads them.
 
 | school | account | original | transfers | revised | spent | available |
 |---|---|---:|---:|---:|---:|---:|
