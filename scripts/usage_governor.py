@@ -209,6 +209,14 @@ def decide(plan, hist, now, in_flight=0):
     # October 2026: "every 2.5 is too much") sets plan.stale_s past its own interval, or every
     # reading would look blind half the time.
     if not last or now - last['t'] > getattr(plan, 'stale_s', STALE_S):
+        # BLIND IS NOT PERMISSION, WHEN THERE IS A WEEKLY LINE. This branch ran BEFORE the
+        # weekly-line rule, so on the night of 9-10 October 2026 the readings went stale and
+        # the paced run wrote meetings with the week at 28% against a line near 18% -- the one
+        # thing --week-line exists to prevent. With a line to keep, an unseen bar means wait.
+        if getattr(plan, 'week_goal', None):
+            plan.jobs = 0
+            return dict(jobs=0, start=False, stop=None, wait_reset=False, target=None,
+                        note='STALE reading -- the weekly line cannot be checked; waiting')
         plan.jobs = 1
         return dict(jobs=1, start=True, stop=None, wait_reset=False, target=None,
                     note='STALE reading -- one worker, caps unseen')
@@ -418,7 +426,10 @@ def _test():
         except OSError:
             pass
         WEEK_RESET = saved
-    total = 16 + 7
+        p = Plan(session_cap=80, week_cap=101, week_goal=90)
+        d = decide(p, [WR(now - 99999, 5)], now)
+        case('weekly: a STALE reading with a line -> wait, not one blind worker', not d['start'] and d['stop'] is None)
+    total = 16 + 8
     print('%d of %d rules hold' % (total - len(fails), total))
     return 1 if fails else 0
 

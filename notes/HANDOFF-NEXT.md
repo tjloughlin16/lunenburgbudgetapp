@@ -1,100 +1,59 @@
-# Handoff: everything not yet done, as of 9 October 2026, 13:50
+# Handoff: everything not yet done, as of Saturday 10 October 2026, 08:30
 
 One list for the next session. Read this first; the linked handoffs carry their own detail.
-The 07:30 version of this file is in git history (`git log -p notes/HANDOFF-NEXT.md`).
+Earlier versions are in git history (`git log -p notes/HANDOFF-NEXT.md`).
 
-## Nothing is running (TJ restarted the laptop, 9 October ~13:50)
+## RIGHT NOW (Sat 10 Oct 08:30)
 
-- The minutes run stopped at its 80% session cap at ~08:45: 61 meetings, $28.25 (~5.7% of
-  the week). Its output was committed (`a9bca989` and the 9 Oct refresh `55ed43ed`).
-- **The AG determinations download FINISHED:** 2,808 fetched + 82 held, 0 failed, against a
-  portal census of 2,889 numbers (`fetch_oml_determinations.py --census`). Letters to
-  early 2014 are committed (`708f2d49`); **the rest of `sources/state-law/` is uncommitted
-  in the MAIN tree** (see "two trees" below). Next: commit it, then `pdf_kind` over every
-  letter (the letters are DIGITAL; never OCR wholesale -- `HANDOFF-OML-INDEX.md`).
-- Today's refresh ran (09:54, exit 0) after the 07:00 one died on the `state-law` folder;
-  the site was deployed to PRODUCTION at 13:09 (`wrangler pages deploy --branch main`;
-  a bare deploy from the refresh tree goes to a PREVIEW alias -- refresh.py now names the
-  branch). Production verified by sha256 of `/data/app-metrics.json`.
-
-## TWO TREES, AND THE MAIN ONE IS BEHIND
-
-`../lunenburgbudgets-refresh` is clean at `origin/main` (`1bce4f0d`). **This tree is several
-commits behind origin and dirty**: the OML letters' text and index, today's job-postings
-snapshot, `notes/reference/records-requests.csv` (one row added), and copies of script
-changes that are already on origin. Bring it up to date carefully: commit the OML/state-law
-data first, then `git pull --no-rebase`; expect conflicts only in the append-only CSVs
-(archive-manifest, archive-push-state, ingest-pending, agentic-spend) -- resolve as a
-union, then `sync_archive.py --manifest`. Never `git checkout`/`stash` another session's
-work.
+- **The new always-additive refresh is RUNNING** (started 07:00, its FIRST real run, in this
+  tree; log `build/refresh-logs/2026-10-10.log`). DO NOT commit in the main tree until it
+  finishes (`pgrep -fl "[d]aily_refresh"`). Then read its log end to end: did it commit only
+  its own files, replay/push cleanly, report "not yet refreshable" files, and deploy (or say
+  why not)? Its search step (`build_search_index.py`) will be SLOW -- see below.
+- **The paced minutes run is STOPPED on purpose** (`build/minutes-pacing.STOPPED`). Overnight,
+  its usage readings went STALE and the stale branch ran BEFORE the weekly-line rule, so it
+  wrote meetings with the week at 28% vs a line near 18%. Fixed in `usage_governor.py`
+  (stale + weekly line -> wait; 24 of 24 rules). Before removing the marker: find WHY the
+  readings went stale overnight (429 back-off? the OAuth token in the keychain expiring
+  while no interactive session refreshed it?) -- `~/.claude/usage-api-log.csv`,
+  `~/.claude/usage-api-backoff`. Then `rm build/minutes-pacing.STOPPED`; launchd restarts it
+  within 30 min. Its overnight output (recording-minutes/, official-votes/) is uncommitted
+  in this tree -- the refresh will treat it as somebody else's work; commit it after.
+- **The overnight job (02:30) was STOPPED and unscheduled** at 08:20. It spent 5.5 hours in
+  `build_search_index.py` -- every file read (4,535), then a long FTS5 query loop
+  (fts5NextMethod) that scales badly now the index holds ~2,900 OML letters and the new
+  split rows. Never reached the D1 steps. So STILL TO DO, after the refresh:
+  1. `python3 scripts/sync_d1.py --full` (fits on Workers Paid; recreates parents+children,
+     so it sidesteps the foreign-key wall; `--check` after).
+  2. Find the slow FTS5 step in `build_search_index.py` (likely a per-document MATCH or the
+     affinity pass) and fix it; then `sync_search_d1.py` -- site search has been frozen
+     since 8 Oct (SQLITE_TOOBIG, fixed by `890111ac`, but never pushed).
+- **Uncommitted in the main tree** (from last night's deploy builds + the paced run): fy28 API
+  payloads, views/ (2,896 OML text view links removed), recording-minutes, official-votes,
+  watcher logs. Commit them once the refresh finishes (the refresh will not stage them).
 
 ## Open work, in rough priority order
 
-1. **The weekly pacing line -- BUILT AND RUNNING** (`1bbb53bb`, `810b613b`).
-   `process_meeting.py --until-usage --week-line 90 --session-cap 80 --max-jobs 1`, kept
-   alive by launchd (`ops/org.lunenburgbudgetproject.minutes-pacing.plist` ->
-   `scripts/minutes_pacing.sh`: login, every 30 min, and on wake). Waits whenever the weekly
-   bar is at or over `90% x week elapsed` (climbing to 100% over the last day); reads the
-   bars every 30 min waiting, 10 min running. A deliberate stop writes
-   `build/minutes-pacing.STOPPED` and is not restarted until removed; `build/STOP-METERED`
-   stops everything. Log: `build/process-meeting-week-<date>.log`; launcher log
-   `build/minutes-pacing.log`; dashboard "Weekly pacing" card. FIRST REAL FILL expected
-   ~Sat 10 Oct 12:20 -- check it started meetings. ITS OUTPUT ACCUMULATES UNCOMMITTED in
-   this tree (official-votes/, recording-minutes/, budget-state/): commit it daily.
-   Cosmetic: the "projection ~N meetings" line counts the 5-hour window only.
-2. **D1 sync, bug 3 of 3 -- a decision.** Fixed today: the journal's malformed foreign key
-   (`build_db.py`, now `(source, key)`), and parents sent after their children
-   (`d1_incremental.py`). Still failing: rebuilding `document` (2,595 local rows vs 1,420 in
-   D1) while `crosswalk` and `ledger_snapshot` reference it. `batch_sql`'s docstring lists
-   three fixes; the recommendation given TJ was UPSERT for parent tables. Until then
-   `sync_d1.py --check` fails and check_generated reports it; TJ said deploy past it.
-3. **The anonymous records-request files -- in the inbox, NOT INGESTED.**
-   `build/inbox/2026-10-09-anonymous-records-request/` (nine files + PROVENANCE.md +
-   the original zip; also still in ~/Downloads). TJ: "these are from a FOIA request and
-   someone sent it to me anonymously. Dont ingest." Includes
-   `Corrected Lunenburg_Paraprofessional_Salary_Scale FY27-FY28 (1).xlsx` -- apparently the
-   corrected schedule approved 7 Oct. When TJ says ingest: through the 13e gate, provenance
-   "a third party's records request, forwarded anonymously". `build/` is gitignored and on
-   this disk only.
-4. **Paraprofessional salary schedule: compare original and corrected.** We hold the
-   pre-correction FY26-FY28 agreement and schedule (committed 20 Aug; the district's HR page
-   still serves those exact bytes, checked 9 Oct). The correction (Superintendent, 16 Sep,
-   per our captions): hourly rates "did not calculate accurately into the annual salaries".
-   Records request sent 9 Oct (`records-requests.csv`). When TJ clears the inbox file or
-   the district answers: diff every classification, step and figure.
-5. **Dee Bus.** We hold no transportation contract. 11 regular-education buses (TJ,
-   confirmed; also our captions, SC 22 Jan 2025 1:34:54). Sports transport is in dollars
-   only (by-sport workbook; budget line $40,000 FY24 -> $87,822 FY25 -> $127,550 FY26
-   budget, with the fee-fund share falling the same year -- a hypothesis, not established).
-   TJ will request the contract later; drafts were given in the session (contract + rate
-   schedule; athletic-trip invoices). Not yet a money-gaps row.
-6. **The refresh, rebuilt as always-additive -- MERGED 9 Oct (`7a316d2f`), live from the
-   10 Oct 07:00 run.** Runs in this tree on any branch, stages only what it wrote, puts back
-   files with others' uncommitted edits ("not yet refreshable"), replays onto a moved main,
-   deploy gated only by the generators it ran; `check_refresh_safe.py` forbids destructive
-   commands. TJ kept the extra rule: no deploy while `fy28/` has others' uncommitted
-   changes. CHECK THE 10 OCT LOG. Still open: retire `~/lunenburgbudgets-refresh`; the
-   morning report (notification/file/both). Design + what was built:
-   `notes/HANDOFF-REFRESH-ADDITIVE.md`.
-7. **Two working-copy fetchers are untested in a real run**: `fetch_board_pages.py` now
-   lands every changed page through `ingest.land_version()`. Tomorrow's refresh is its first
-   live use; check its log and `working-copies.csv`.
-8. **The journal export: SAMPLES RECEIVED 9 Oct, full report requested.** The Town Manager
-   sent pages 1-29 and 1740-1744 of a 1,744-page MUNIS `glytdbud` run with journal detail
-   (school accounts, FY2023 p0 to FY2026 p13) to ask if it is the right TYPE -- it is. TJ
-   asked for the full report (Excel if possible) and which funds were selected. Samples in
-   `build/inbox/2026-10-09-town-manager-journal-samples/` (PROVENANCE.md), NOT ingested.
-   Its FY2026 grand total does not tie to our held p13 school reports (wider fund
-   selection, probably). When the full report lands: 13e gate, tie journal lines to the
-   printed totals per account, then the kindergarten para accounts, the 82 budget changes,
-   and the special-education overrun.
-9. **Cloudflare Pages' 20,000-file limit.** The 9 Oct deploy was refused at 21,134 files;
-   the OML determination texts now link to the GitHub mirror instead (`be4f1142`), and the
-   build is 18,238. That is weeks-to-months of headroom at the archive's growth rate. Before
-   the next refusal: move more of our derived text out of the build the same way, or the
-   paid plan (100,000 files). A deploy that hits it fails loudly; nothing is lost.
-10. the OML index (model-free parts), MUNIS Part 2, an
-   off-machine backup, the 9 MUNIS PDFs to publish -- unchanged from the 07:30 list.
+1. **Cloudflare: the account is on WORKERS PAID since 9 Oct.** D1 bills instead of stopping
+   (CLAUDE.md updated); databases may reach 10 GB. The PAGES 20,000-file limit is NOT lifted
+   (needs Pro): the build is 18,238 after the OML texts were moved to GitHub links
+   (`be4f1142`). Plan the next cut before the next refusal.
+2. **D1 bug 3** (rebuilding a parent table under its children) remains in the incremental
+   path; `--full` sidesteps it. Decide later whether to fix the incremental path (UPSERT).
+3. **Para salary correction -- DONE** (`notes/findings/PARA-SALARY-CORRECTION.md`): 107 of 120
+   hourly rates rose ~4%; the model's 3.0/2.0/2.0 para rates are now understated -- queue a
+   model update. **Dee Bus -- DONE** (`notes/findings/DEE-BUS-CONTRACT.md`). Request only
+   partly answered: a follow-up for the FY23-FY25 contract would settle the 7.6% question.
+4. **Transportation report -- LIVE** at /analysis/transportation (schools section). TJ is
+   reviewing; changes go in `scripts/build_transportation.py`, never by hand.
+5. **Journal export** -- full 1,744-page report requested from the Town Manager; samples in
+   `build/inbox/2026-10-09-town-manager-journal-samples/`. 13e gate when it lands.
+6. **Decisions still with TJ:** the internal para-wages email (raw withheld, transcription
+   published -- OK?); retire `~/lunenburgbudgets-refresh`; the morning report
+   (notification/file/both).
+7. The OML index (model-free parts), the OML filename-decoding bug (OML 2023-243),
+   MUNIS Part 2, an off-machine backup, the 9 MUNIS PDFs to publish, and having the paced
+   run commit its own output daily.
 
 ## Done on 9 October (all on origin/main)
 
