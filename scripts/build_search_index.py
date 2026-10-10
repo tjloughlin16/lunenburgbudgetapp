@@ -235,7 +235,30 @@ def source_files():
                 'local': local,
                 'upstream': (r.get('upstream') or '').strip(),
             })
+    # TWO FILES, ONE KEY. A source row's doc_key is `<folder>/<file stem>`, so the FY26 and
+    # FY27 copies of `warrant-article-tracking-copy.xlsx` -- and the three PROVENANCE notes
+    # for one MUNIS delivery, in expenses/, revenue/ and fund-balances/ -- shared a key. The
+    # search de-duplicates hits on doc_key, so one of each pair could never be found, and
+    # sync_search_d1.py --check failed on "3 duplicated rows". Where a key would collide,
+    # every file sharing it is keyed by its path within the folder instead. Keys that do not
+    # collide are unchanged, so search-affinity.csv and every published citation still hold.
+    seen = {}
+    for e in out:
+        seen.setdefault((e['folder'], _stem(e['file'])), []).append(e)
+    for (folder, _), group in seen.items():
+        # Distinct FILES, not distinct catalogue rows: a folder's index.csv may list one text
+        # twice, and those already share a file_key, so wanted() keeps one and nothing collides.
+        if len({e['file_key'] for e in group}) > 1:
+            for e in group:
+                d = os.path.relpath(os.path.dirname(e['file']), os.path.join(SRC, folder)).split(os.sep)
+                if d and d[-1] == 'text':
+                    d = d[:-1]
+                e['key_stem'] = '/'.join([x for x in d if x not in ('', '.')] + [_stem(e['file'])])
     return out
+
+
+def _stem(path):
+    return os.path.splitext(os.path.basename(path))[0]
 
 
 def source_rows(entry):
@@ -252,7 +275,7 @@ def source_rows(entry):
         pages.append((None, parts[0]))
     for i in range(1, len(parts) - 1, 2):
         pages.append((int(parts[i]), parts[i + 1]))
-    stem = os.path.splitext(os.path.basename(entry['file']))[0]
+    stem = entry.get('key_stem') or _stem(entry['file'])
     doc_url = '%s/docs/%s' % (SITE, entry['local'][len('sources/'):]) if entry['local'] else ''
     text_url = '%s/docs/%s' % (SITE, entry['file_key'][len('sources/'):])
     out = []
@@ -438,6 +461,11 @@ def wanted():
     for e in (minutes_files() + M.transcript_files() + source_files()
               + page_files() + post_files() + recorded_files()):
         e['sha256'] = M.sha256_of(e['file'])
+        if e.get('key_stem'):
+            # The KEY is part of what the indexer makes, so it is part of the fingerprint:
+            # a file re-keyed with unchanged bytes must still be re-read here and re-sent
+            # by sync_search_d1.py, which both decide on this field alone.
+            e['sha256'] += ':key=' + e['key_stem']
         out[e['file_key']] = e
     if not out:
         raise SystemExit('no inputs found at all; refusing to write an empty index')
@@ -633,6 +661,21 @@ def build(rebuild=False, quiet=False):
         added, changed, removed = list(w), [], []
     else:
         w, _, added, changed, removed = drift(db)
+        # A SPLIT RULE APPLIES TO WHAT IS ALREADY INDEXED, NOT ONLY TO WHAT ARRIVES NEXT. The
+        # index re-reads a file only when its text changes, so when long bodies began to be
+        # split (890111ac) every document already in the index kept its one 246 KB row, and
+        # the 10 October push still died on SQLITE_TOOBIG. Whenever the index was split to a
+        # different limit than MAX_CHARS -- or never recorded one -- every file holding a row
+        # over the limit is re-read. One scan, and only when the limit moves.
+        split = db.execute("SELECT v FROM build_meta WHERE k='max_chars'").fetchone()
+        if not split or split[0] != str(MAX_CHARS):
+            long_files = {r[0] for r in db.execute('SELECT DISTINCT file_key FROM search WHERE length(body) > ?',
+                                                   (MAX_CHARS,))}
+            again = [k for k in long_files if k in w and k not in changed and k not in added]
+            if again:
+                print('  re-splitting %d file(s) indexed before the %d-character limit'
+                      % (len(again), MAX_CHARS), file=sys.stderr)
+            changed += again
     for k in removed + changed:
         forget(db, k)
     n = 0
@@ -642,6 +685,7 @@ def build(rebuild=False, quiet=False):
             print('  %d/%d files' % (i, len(added) + len(changed)), file=sys.stderr)
     build_affinity(db)
     db.execute('INSERT OR REPLACE INTO build_meta VALUES (?,?)', ('tokenize', TOKENIZE))
+    db.execute('INSERT OR REPLACE INTO build_meta VALUES (?,?)', ('max_chars', str(MAX_CHARS)))
     if added or changed or removed or fresh:
         db.execute('INSERT OR REPLACE INTO build_meta VALUES (?,?)',
                    ('built', dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')))
