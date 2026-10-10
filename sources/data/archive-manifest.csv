@@ -62,6 +62,11 @@ analyses/charts/towns-like-us-funding.svg,12039,887beab727f6091ec60bcc157d2e38dc
 analyses/charts/towns-like-us-heat.svg,143361,2a09a9420876c715108bd701d182b36f5386553c97327a53da949bcd15193c28,b92f9deec88c78e2507b05d02952e086,
 analyses/charts/towns-like-us-map.svg,158351,8dc1ef90a6f9554554436a8f95b7f5bd67a2fcb226da29a1f320e7745daa4f99,dd452f062e5d7fe19cb5f043ec52fc56,
 analyses/charts/towns-like-us-positions.svg,222120,86de86715841713fa515f59228362f28ca9e02e8b3fec290a84f9e83ffea2150,39cbc99373100fd78ddbf7596beb4ce8,
+analyses/charts/transportation-athletics.svg,5587,b18f15e87a9f483917bdb2d4c327924fe06c206809f05c31842868da3d7c7711,8577e4810fb143dddc10592eeefdaa78,
+analyses/charts/transportation-contract.svg,4248,f466a05ee6603ad74e543ccd4834c8f50d3fd4189b82bb8346191caaf5799476,a73c2f0abeda534e7c1a79ff9f29484c,
+analyses/charts/transportation-schools-athletics.svg,14212,2a2db513b5d93f98c4154c3bb406287bd552a0d80523dcdbedf10834013ad308,09a48f9f1bce12386e93d2fe7821058b,
+analyses/charts/transportation-sped.svg,3262,6e3dd9ebc909b2ec3c444aeedd6f303e9802086dcf5b88cd115b5971c9c166cf,8c590be4f1655c705b87244c012ba62b,
+analyses/charts/transportation-sports.svg,7431,d021b2e70108dfdf51e6279c26ce398634348a7f747d083b9a30281828de3e54,34b7d419a6b2be004fdcbc8ae8e1b50f,
 analyses/connecting-the-budget.md,5588,ae41aa0f390a70bbd4e587cdc2709b76f922d649ffc9c55d054b594dd15e3d2b,6b46fc294b8508e3914179447490f9c6,
 analyses/connecting-the-budget.pdf,173991,d9d8cc4aceee423c858644a287fcf86feeb6bf1130619dd89c0ca7980d085635,637fcc9b4b53a475b11c2b7f86cf326e,
 analyses/department-budgets.md,31730,c3b38bee4b283d1b820dd5351f846a4b56f9dc45ed611f31266855441c817e00,b2f3674c929b2ba73fb7dd492777cca5,
@@ -104,6 +109,7 @@ analyses/town-budget-unclassified.md,4984,3820615a7932245782cfef3345c7148342dc61
 analyses/town-budgets.md,7673,af0a123dea8202955ab8c9ac782ff999957ce95fc4f8189f12d7cbb5bc00744e,de8a2669b02a1f4035ad69498b612939,
 analyses/town-personnel.md,13551,b1868705f64deebdf87cc2991dc624740e7db990514b5d2f13da40ff8c38a87a,795aefb0c31d8e758a6965b21e52deac,
 analyses/towns-like-us.md,74491,8c3adeb6d7137a2939641b4d1982c0bc67624ba66f133831d4c21645e6ab093e,9497f5aaffd5d8a2e85c88ee8c29593b,
+analyses/transportation.md,41427,d4bc34797d678689a77ca1bf9e7ec3e68bb70bbfda403f65247f8308fe813ae8,6e58025a3110dc82fda25052a65dfd49,
 analyses/what-you-can-ask.md,10641,7d1be4794cc5d14bae5cdfa14cb523505d2eee78282028c1b94d865bc516d617,7229572489271c22866656ce8248925f,
 budget-workbooks/PROVENANCE-finance-committee.md,5297,365517c9cd8ce9764bbca57324243d640215657bf8ca0b9fd013fce3414e3d31,f76ebb8bce290d5b6e86dfbfd7eb38b7,
 budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md,5918,6c1477eebcabc6c99cc77063efe064a3b08d5f94a1fb86c9ade62bd34b3e766d,fc001cedd47a1b6a8ec72e57557b0920,
@@ -675,25 +681,26 @@ budget-workbooks/fy27-budget-projection-3-25-26.xlsx,122265,6b3649c98c67cfc4dd88
 budget-workbooks/fy27-proposals.xlsx,97035,94184d3b167a6e803bb8e0b329dd86ee47306e358411f65424c048892fd00a92,a3642cf36d23d81ef344797bd2feb6a8,
 budget-workbooks/index.csv,145987,ebd143830b49053fc805bad26b2a91b92733e8c0b947ad44cc1803470d0a6401,cfd03eed0f624034b87fa0501ca8c86f,
 budget-workbooks/school-funds-fy26.xlsx,17069,2662ca779de6170dd61e7645265f7968aec6203edf64de89b30ffd58b608ecca,ab7ec36dc6ce3112ea9e510b24becd3e,
-contracts/CONTRACTS.md,17339,37119f61da00d86e2ed0ed1a57aed907b5a41a6d08767ca5e285d7dc4b26fee3,512d1d27069dc734a99c7e85e57a6642,
+contracts/CONTRACTS.md,18464,5883a75149e5a13089d824f815d05c04d51f549c48626f4a7a6ed4371d7de827,de4d22a55adcc77f3ed1f3f235fceab9,
+contracts/PROVENANCE-records-request-2026-10-09.md,6342,e660a74d16e1c4292fe64f951a5cac174f47a9444abb765e42fdc722f9ffe3b8,4c02ab680d3c88b42f20f444af86e787,
 contracts/data/lea-teacher-salary-schedule.csv,3567,1b13cbfd919cae0ae144b0b915bcac11f6f2b5d6b7e64d6ee37e84258d0efb91,bbd78df3092565abc397425a1daf3b4d,
-contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx,24747,43111a96e031bb9b717d37753df9d151d3cee4c2fc6626a81caf47f3648f51f2,5f3aee859ff6397206b880720b699642,
-contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx,24630,b66ca4b1489d77f1e3b4bffde14ff32af55272aa229f93649d51be1bfd9e10cf,3b406342625a31298bbc2bbe0e45c27a,
-contracts/index.csv,9252,5a9f6fb0de3e66648205d2b2db3f46e1c027b3f42cb91362b9b6602debefc1b3,a67c5cd7b6d01b0f1a95985500e637b5,
+contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx,24747,43111a96e031bb9b717d37753df9d151d3cee4c2fc6626a81caf47f3648f51f2,5f3aee859ff6397206b880720b699642,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Draft Individual Waiver - Para Wages.docx"""
+contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx,24630,b66ca4b1489d77f1e3b4bffde14ff32af55272aa229f93649d51be1bfd9e10cf,3b406342625a31298bbc2bbe0e45c27a,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Draft Union Agreement - Para Wages.docx"""
+contracts/index.csv,15597,4f9e380f88fe8b47aede018d2ead538df526f819f6e295bd95957c205972fd0d,c4b33e07d89e35d5b3261010535a9fb1,
 contracts/pdf/custodial-2023-2026.pdf,23726623,5929416a16d74c28622e5cbd47b273c787911fb875d74aa03178eff3b336ab52,94adfc3de683eef0e0f36e7a2dd874c1,https://drive.google.com/file/d/1TEAfls-FpbxdztLzjlmUIuXYdO-DUcOp/view
 contracts/pdf/custodial-moa-2026.pdf,2038371,bca82b63e54f375a8e0361da596d11290f47f861b983d631d3f780ff7b573db6,39b9b9e2999863a3eabe18ea24b538d6,https://drive.google.com/file/d/1sQpGjV0WqURuhcmde6C8qZkrsVoOMJCn/view
-contracts/pdf/dee-bus-bid-proposal-rates-fy26-fy30.pdf,4356894,2a05b91924d7a680339c75b199e233876ef3ba4acc33a2d6ba838233aa624599,0a914525f02fd32ca46889db5d076db3,
-contracts/pdf/dee-bus-first-amendment-2025.pdf,1289945,d4b6bf07e55b0fd054a2aede74e7b22a4fd9a40c269e25bb4a230dad8860a354,02aeb6c8231297b894b6820bc9f80ce0,
-contracts/pdf/dee-bus-performance-and-payment-bond-fy27.pdf,2903717,f5c1d9517e1d93d4eabc08aa9e9190d5dc4d1d1a7f681a6755f44eadd5a7232c,82b3471fb0e69756aa835eff2fbe4a2d,
-contracts/pdf/dee-bus-transportation-agreement-fy26-fy28.pdf,1087006,67e4279cb4029279d202c1d9defb424b97cf50bd701f62a123c6b116f405a2c3,a7132e461efc137d5e644c7923e6abe7,
+contracts/pdf/dee-bus-bid-proposal-rates-fy26-fy30.pdf,4356894,2a05b91924d7a680339c75b199e233876ef3ba4acc33a2d6ba838233aa624599,0a914525f02fd32ca46889db5d076db3,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Daily Transportation Rates 25-28.pdf"""
+contracts/pdf/dee-bus-first-amendment-2025.pdf,1289945,d4b6bf07e55b0fd054a2aede74e7b22a4fd9a40c269e25bb4a230dad8860a354,02aeb6c8231297b894b6820bc9f80ce0,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""First Amendment to Specimen Agreement.pdf"""
+contracts/pdf/dee-bus-performance-and-payment-bond-fy27.pdf,2903717,f5c1d9517e1d93d4eabc08aa9e9190d5dc4d1d1a7f681a6755f44eadd5a7232c,82b3471fb0e69756aa835eff2fbe4a2d,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Performance Bond 2026-2027.pdf"""
+contracts/pdf/dee-bus-transportation-agreement-fy26-fy28.pdf,1087006,67e4279cb4029279d202c1d9defb424b97cf50bd701f62a123c6b116f405a2c3,a7132e461efc137d5e644c7923e6abe7,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Lunenburg Schools - Dee Bus - Transportation Contract - 05.23.2025 smv.pdf"""
 contracts/pdf/dese-administrator-contract.pdf,338411,726f74672117e3d27e23d5c130fcbaf4a9fc4ca300591181e17e4b3943f232af,287b8e23eb669ef15ded11f385cc67a4,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=A
 contracts/pdf/dese-superintendent-contract.pdf,238453,8ee1ac7e1debfdb67994e7149e736c711141993b137c8067ba596035f11e5270,824fb8d85587ecb6bf4dcd010fb7ae0b,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=S
 contracts/pdf/dese-teacher-contract.pdf,53425589,64e480cb21dfeb3966f41d87c08ba1072f6a1d04c5d7fc8a01a2513bc7146122,825b4389460b397a64f8a1443353ab3f,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=T
 contracts/pdf/nonaffiliated-benefits.pdf,228477,ebd95697c61d8d68c69d679b571383c0a60a46f2e43aaa5a03aef46502b717e2,70b022e96cb093c064dbb714495a127c,https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view
 contracts/pdf/nonaffiliated-salary-schedule.pdf,26536,c0130d322221b9807fe7995bd2c950958b1a69cebff35020790371b36a2e14e2,2dd71801cdc210a30396fcea7691012e,https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view
 contracts/pdf/paraprofessional-fy26-fy28.pdf,14255635,871e8fb95085b0613d253f3a81d2c11068a937aa1861b444f4747cd3d8d65eac,3304b01697a19ea9875658865c41e4d8,https://drive.google.com/file/d/1RIXSUui7D-dSglzXg_yhQRrdXooNRVsc/view
-contracts/pdf/paraprofessional-moa-fy26-fy28.pdf,1046171,f0a55557bf531c07dedef40545c69104bf3f83358d62a3083084e30e559f882f,2c0f8644c0b92051c96c32f1e3e242a1,
-contracts/pdf/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.pdf,2522982,f70d37dc4ca9eb335b0933a8f4239932abdf1258cd09efd5c6fa69e9a3e04700,3697f3c2de2d1171204dd1ecd9b99852,
+contracts/pdf/paraprofessional-moa-fy26-fy28.pdf,1046171,f0a55557bf531c07dedef40545c69104bf3f83358d62a3083084e30e559f882f,2c0f8644c0b92051c96c32f1e3e242a1,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""MOA Para 2025-2028.pdf"""
+contracts/pdf/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.pdf,2522982,f70d37dc4ca9eb335b0933a8f4239932abdf1258cd09efd5c6fa69e9a3e04700,3697f3c2de2d1171204dd1ecd9b99852,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Para Contract Signature Page with Corrected Salary Schedule Approved by SC 10-7-26.pdf"""
 contracts/pdf/paraprofessional-salary-fy26-fy28.pdf,684652,4b271fad3aca78e4e69601ed10a948217b8739a61ab3c5a33eb1a7e3016fc599,ba222f9ac7d20731994c26fffd61a33a,https://drive.google.com/file/d/1NCXXh3kcYwWamsZu4sJkg6BKSbnJrD2J/view
 contracts/pdf/pec-agreement-2008.pdf,512010,aeb166be95c1ea186c9669d04d796239c0abadde0407876c32b3702f24185ee4,b6b4ae5b190f3082a254e7c5f8fd33e9,"email of 6 October 2026, 12:35 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager, and Renee Emkey, Select Board), after a phone conversation, in reply to the request of 5 October 2026 — delivered as repecagreement.zip; publisher filename ""2008 PEC Agreement.pdf"""
 contracts/pdf/pec-agreement-fy27-fy29.pdf,124142,6f12f5a0d6f54e09c0ea752da2c70204d4d697f20992955acd8d1b22b7c644df,5bd07b01d2185da59688b24964ad63f3,"email of 5 October 2026, 4:39 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager), after a phone conversation, in answer to the records request of 19 September 2026 — publisher filename ""Lunenburg PEC Agreement FY27 - FY29.pdf"""
@@ -704,6 +711,10 @@ contracts/pdf/pec-fy27-attachment-a-4-blue-care-elect.pdf,1414547,130ec4eff26d6f
 contracts/pdf/pec-fy27-attachment-b-opt-out-policy.pdf,120788,296646ecc647a6bef5e9620b8a256dd572ed42a82db31bb3fbc5933e4c659d57,f7b438ee77f69354d6a2fecefc2f889e,"email of 6 October 2026, 12:35 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager, and Renee Emkey, Select Board), after a phone conversation, in reply to the request of 5 October 2026 — delivered as repecagreement.zip; publisher filename ""Lunenburg Opt Out Policy FY27.pdf"""
 contracts/txt/custodial-2023-2026.txt,59871,1180051c8159c014c7b347d0dd5542f92c1f4fa2a76bd549dbb87f2307c4575f,2785d15c629d7fa147066f502cda797d,https://drive.google.com/file/d/1TEAfls-FpbxdztLzjlmUIuXYdO-DUcOp/view
 contracts/txt/custodial-moa-2026.txt,4998,c2d046828d52ca96655ee18b46e8932fecb3326b4b10925ad8e6cf478e225822,a37d1e54e9f5b07da00bdcd7b8fd29fa,https://drive.google.com/file/d/1sQpGjV0WqURuhcmde6C8qZkrsVoOMJCn/view
+contracts/txt/dee-bus-bid-proposal-rates-fy26-fy30.txt,11895,71619617fbc5318543e13dba1662a604c342cb148234ac57aaeb1161ad59d5b6,7931c078d0e50716f82ef37b68b54e7e,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Daily Transportation Rates 25-28.pdf"""
+contracts/txt/dee-bus-first-amendment-2025.txt,3457,41b428370a583e92b26585f66b592e7fc9d92528eb36daaff730b11974c883ef,fff7243f51474d42ad742d9ce5d1c755,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""First Amendment to Specimen Agreement.pdf"""
+contracts/txt/dee-bus-performance-and-payment-bond-fy27.txt,10861,2475df6548b29385dcccb51d5ac066631e86642a7f8d0b2c0f6249f3b188783f,95c8493f8c52446ddfdf3da3890825de,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Performance Bond 2026-2027.pdf"""
+contracts/txt/dee-bus-transportation-agreement-fy26-fy28.txt,6879,87488f0a491d9987e68228ad4d89df9db530fdc7d75d3fdf99c293c0ce2d8b90,0bb39377c76b1b51ba1e6296adadf3f8,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-dee-bus-contract); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Lunenburg Schools - Dee Bus - Transportation Contract - 05.23.2025 smv.pdf"""
 contracts/txt/dese-administrator-contract.txt,13924,8b4ac89dc1378cf4991db7f0a95846fbb490bf19de486670ab8e64dad25ad683,ca300f2650133b4085f19d04c78132d9,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=A
 contracts/txt/dese-superintendent-contract.txt,13541,9aa35d3ce3cd782ebcedfaa91f046e80a46d943fdfb92087aeacc936598abe30,95475123720845ba3b002b554ac1d9c7,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=S
 contracts/txt/dese-teacher-contract.txt,146615,1709151e54e38849942ac20115768db66ca441b355a16273f2dc6688cea55279,6635e6cf82d7332290eb0b8fe248c2be,https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=T
@@ -711,7 +722,11 @@ contracts/txt/lea-teachers-2024-2027.txt,146484,21c9210f3efd022efbbcaeaf86bf0b99
 contracts/txt/nonaffiliated-benefits.txt,8425,b8d07ead5561f45730f77304005a006d2b394b6e3e8436a4c73422648a199023,6b18f657b5e4762d0aa50c594eb94636,https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view
 contracts/txt/nonaffiliated-salary-schedule.txt,2048,f29b5eadf68585f69caedc2482f8b2c48efe50fd6eba5b01f7be123f60fdabaf,790146ef7b89419d1340188d9d6b605f,https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view
 contracts/txt/paraprofessional-fy26-fy28.txt,45502,35817144cd2cd9224202f6583e90e07786c62718dc73e9b897690459936ccf5e,78c124c0090ce0e53432c96dc669273d,https://drive.google.com/file/d/1RIXSUui7D-dSglzXg_yhQRrdXooNRVsc/view
+contracts/txt/paraprofessional-moa-fy26-fy28.txt,2976,0c0fa1d1354362c8c05149abb93fc132e35351901bd3c960ea4030f0c9a00abc,961fc4ff9069aea80f3006576cf6a8a7,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""MOA Para 2025-2028.pdf"""
+contracts/txt/paraprofessional-salary-fy26-fy28-corrected-2026-10-07.txt,3695,0fdd6abe818e9c7d95c0b8e69501a26e9f6bbee82e229a2680fb24a3cce5222e,b19182c40c936758427d941ffa49f410,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Para Contract Signature Page with Corrected Salary Schedule Approved by SC 10-7-26.pdf"""
 contracts/txt/paraprofessional-salary-fy26-fy28.txt,2534,2c33935c5b29c728ad0e8c078a197f28941a2e30972bf0d6a542ae6aec138f94,16813babdb1635b135c0237a579d8594,https://drive.google.com/file/d/1NCXXh3kcYwWamsZu4sJkg6BKSbnJrD2J/view
+contracts/txt/paraprofessional-wages-draft-individual-waiver-2026-09.txt,1826,d43da15cc63aecc30f04c597d5d664399c9072b54108c309a3eae559d0cc6a2e,d8e17ecd09ac8b9480839d1d7f9733a7,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Draft Individual Waiver - Para Wages.docx"""
+contracts/txt/paraprofessional-wages-draft-union-agreement-2026-09.txt,1991,a7e7c8dbd189456511cf8e7775c5473c29def7d5fb307cc4b6ebc7e16ea8c205,d09395c536435298715b24b1aed18828,"Public records request by TJ Loughlin to the Superintendent, 9 October 2026 (records-requests.csv, 2026-10-09-revised-para-salary-schedule); response forwarded to him on 9 October 2026 in fwexternalrecordsrequest.zip (sha256 6aab4c710a5a1e8d5f7972cb109ac8645c8d9edd1d2a181a1b9155f8bbdb6dd5) — publisher filename ""Draft Union Agreement - Para Wages.docx"""
 contracts/txt/pec-agreement-2008.txt,25173,02cafafe6b85403d5be56a4781f7c14f7caec504277791eb4e00ce19ed718f05,ffe591d725779b3336ff3a5a0ad0d35d,"email of 6 October 2026, 12:35 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager, and Renee Emkey, Select Board), after a phone conversation, in reply to the request of 5 October 2026 — delivered as repecagreement.zip; publisher filename ""2008 PEC Agreement.pdf"""
 contracts/txt/pec-agreement-fy27-fy29.txt,3931,53e50cae885f286cd7a9c709ede213c287dfa21e9a49826b57480edd8160e908,c46cc3a74ddcf8bba288379df50116fa,"email of 5 October 2026, 4:39 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager), after a phone conversation, in answer to the records request of 19 September 2026 — publisher filename ""Lunenburg PEC Agreement FY27 - FY29.pdf"""
 contracts/txt/pec-fy27-attachment-a-1-network-blue-new-england.txt,14767,7fa3e44ccc5365976fa033b5edd80f6d703d49befba7c168fee22d5210184f36,39a1a94438fa6c3b124ee84f708bf502,"email of 6 October 2026, 12:35 PM, from Julie Belliveau, Human Resources Director, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager, and Renee Emkey, Select Board), after a phone conversation, in reply to the request of 5 October 2026 — delivered as repecagreement.zip; publisher filename ""Bene Summary 1.pdf"""
@@ -726,7 +741,7 @@ correspondence/2026-03-30-ski-coop-invoice.xlsx,11586,f44b5357a801fb5e52a586a489
 correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt,1974,b08af7ae35004b5a0e3dfdea102af6e8d5bf13b0fc7f39c0530bcfadbe1f9cb5,89e4e05b0b73d99b0a3b4d4bebe9e835,
 correspondence/2026-09-16-para-wages-superintendent-counsel-payroll.txt,5914,1602cdd0aca2d06d2724d61330f9753ba968be0c612d67347d3ecba911e55608,46987ca6a2e9685552050bb47e2e7815,
 correspondence/2026-09-18-school-field-maintenance-superintendent.txt,2757,1fa02ec8afc9188310bc96cf38d93a6ca9978ef7708dc737817e0dab02d94b4e,2dfaf1330c78c95e8dc504f5da66fe82,
-correspondence/index.csv,1805,915266d1e6e1f01f1ba5ebcedc786b060a6fe387af0b2f33fd67a78d692423e8,74c88e1e9285b52158509731c5ae29e9,
+correspondence/index.csv,2309,18a16360c0f631b0d52450975dee1adb8625d26efcdb5baf0fc98917c2bcbc0e,7a34b5372b7912cf4118d6179d7ac32a,
 data/PROVENANCE-annual-report-receipts.md,12854,dec6aec6b1d637eab4bc1071970844fcc9746ad712e6a8a79fe95d89d52b539b,052c7355b8927378ddf1829ef896139e,
 data/PROVENANCE-balance-sheet.md,14214,96ce2f2d7dddd4e0fdd42d6e173c05f73eaee35129e68700ee96ca9a31f9650b,3aa2ae2af2b8d50143a4b9ef490c6bbd,
 data/PROVENANCE-debt-tables.md,12776,7e225ba0fa802d298fcce8c666a1f61c063ab9f4998560e6a03026a9847f0047,ed9697d7ad397855f2e3a83e567e0961,
@@ -751,7 +766,7 @@ data/agenda-previews/select-board/2026-09-15-8011.json,5696,7fedb99b75f89e3b1d33
 data/agenda-previews/select-board/2026-09-29-8040.json,7283,25060d691db9ceb5879396da5424eee176216bfd6b57a85869ad004dd3f391e3,6409b26e1287e5490d352f2d0ca594d1,
 data/agenda-previews/select-board/2026-10-06-8052.json,5565,0525eebe22b9907a4511cc3004ffcc91656494934cac1655537d9c1a1a18398e,7b0cc817db84c84a242cca39606f9533,
 data/agenda-previews/select-board/2026-11-17-7975.json,1679,b90d45b421ed720bc70915431bd9644ace3523b11d7e5641565bb6b2bd4124d4,e30db0b705e2edbe9c13f74925a97a63,
-data/agentic-spend.csv,658063,51d046462774162220ed5ec1cb63cd4cfcefb10b4c77e05ecd9cc50b217760dd,bfdbae945640c07e73a68f141ab9f58e,
+data/agentic-spend.csv,659966,00c81184cd4757e4811e9cc9f6fc94c875bcc40ff70e39a2daa1feb89da88116,f3de2794c4f7b77b46a399045436e49a,
 data/ambulance-receipts-vs-gl-history.csv,453,dfcf105ae3fbebcf2ef8b791c150e1e3145ab1f910abe796c5a00fd25b950943,fe061dd994efefbea4c9dcdd1ebdf658,
 data/ambulance-receipts.csv,2331,c24980c00f08404afef7588b90d01ac234781bf47b240880b0a0c8a68ffbf7c6,32a8e86dce3d452ba362c3cbc0751399,
 data/annual-report-catalogue.csv,884570,f7f79296e2c143e7ca3b69db15ae4da58600c079ecaa1890d25b300fa3723bd2,7ec0ccd71bdc06b523f24f88ed0732d3,
@@ -888,6 +903,7 @@ data/budget-state/finance-committee/2026-08-13-v4qvpgKlYRg.json,9780,53bdc7fe6f7
 data/budget-state/finance-committee/2026-08-27-LGdwK249dSA.json,8592,47653faaaea2318875b5c57c4d3dd9dfb45d25d6a5128e1854e9faa1b582e8e7,fd454fd25d434943f6642a5f998e298f,
 data/budget-state/finance-committee/2026-09-24-euQG57Zrac0.json,2213,5ed16ed79c526c454805a1169709c928b82b34db13452be6ac2e3dbd511d119c,e262628d7d229c8af16b123495ba84a1,
 data/budget-state/finance-committee/2026-10-08-1Md_UYOImC0.json,3660,70f33b522adc64524dd640c539821a7b8c2542eeeb7f645213c3fce614584d39,93c35e62c03ee2c200535dbb2be70e1e,
+data/budget-state/school-committee/2023-06-29-SFn8b8ShPXw.json,839,b3606f2e0027f624eae79fe65b7c3482bfefacf39914ffaa68a56adc5acc33ed,abe5a2a3ec4c4de044a72eb4236fdf76,
 data/budget-state/school-committee/2023-08-28-uvV851hVgMw.json,839,2837afc3080c5be1585f6648fbf50e8afcb9dc0b500468e8881025403862dff0,535f2eda6a38ae6eb9d7abd779289a20,
 data/budget-state/school-committee/2023-09-06-mBfewgP6U2k.json,1710,4f511ab75d69973281a3d8434d8a716626f967692f7672d9364cf6b3e9602ee3,453b002739047ca7c484ced4576fc013,
 data/budget-state/school-committee/2023-09-20-pxAlbuPeROQ.json,1205,c53689f9d82ec92a0fd49ffd94bd6fd2ee66902e9bc66f9144712ea3cdfa47bb,17bfd278393116a84556a8bede7d0a12,
@@ -1167,7 +1183,7 @@ data/health-insurance-law.csv,5754,04e48a31c4576217a13b414cfbcbd778c7a286db74e04
 data/indexnow-key.txt,33,3ef3fd14c0d8b4494efe318e891d555971dac104f5a8b132a024bc333878c572,46e97d9436d67bb0e71f37b1be1340a9,
 data/ingest-benchmark.csv,20346,603ec009e8253d1e98a16df67f1db9d682df0282cb985583793ffbc5ebb804fd,c261c9a314bd4b09d961a326401c5b99,
 data/ingest-pending.csv,47,7414e0703f41aac2603df157a593a336e8651305c050915bab55d0ca539ead3f,02f294c6bb959cd0c78c55f191eafa3a,
-data/ingest-plan.csv,5619,dc3b31eedbe3df57f62753dabb9f7e8ae9ad0237c8ab1f5cb3414c9d21308811,0a76a470a53e2864b5da4cee32abe7e6,
+data/ingest-plan.csv,5619,36051d0ebfdcb1690ffd51316e1bf45f33a8e1e0322f3cbe1616fa8c2d0e3e99,fbaf56668e33bf6206be6ba6457f76cf,
 data/inventory/FY2011.json,64216,bad62cc8dd8584dccc92bbfb07057f70b8b80b72cd1c8f8e0f24264b1e021364,dddcefa3e817d21fd78e42bb641049fc,
 data/inventory/FY2012.json,75142,af4562c1eb99b612032723b162c51877777d8e4c519d58c90556b11e18c323c9,68641d727eda70e56c98e9e775fe839d,
 data/inventory/FY2013.json,71223,27b9e9e53bfac1316648abf858cae3e58fda2cddcaacf89840cf51f8d021eadb,f3f30ad45dec515a09cd6330cfc35b90,
@@ -1190,20 +1206,20 @@ data/line-history-disagreements.csv,198848,f5476420405aa529ecd44dce7cc2434ec4784
 data/line-history.csv,1085932,f6944f35801a2a313d0eff8583fa113eb75210d4b58b91f2725227bfc677847d,a56a673d7f93513608ed50940f0d38c5,
 data/link-status.csv,58184,7c0864b7f44aceb5bde61be0dc594ca441d8d84926156bbe1f38ed2799905b21,c1cbeb14c4d7915051bc87c36fe0526b,
 data/lps-budget-lines.csv,55376,5089db312b3407908d9ccb30166a45a8b66c57f9ce311ad003afb0ebfe96541c,186f7bd2f34bbdcf8601e69e339cc0b4,
-data/lunenburg.db,41279488,69758e40b9fb3f8c194826f4678c6f077532d2e9310feec1b28339ec4e7ca878,7b360b42208038ec819081bbe54186cd,
+data/lunenburg.db,43413504,81506ba3b025ba1b5771191928c367f5039058f01ad9147ed3e168f36329dc3f,0d12f950e76236caa0b9187f3427a13f,
 data/meeting-document-timestamps.csv,2579282,823e47d551d0efc637876848115ef5631deda0d90ca9c8cd519275ddb93136ef,8900b96a596061639cfcb87fd27484b3,
 data/meeting-notices-email.csv,668,01624f9358b639169eac298478b6deade4eeb887d8ab96696aad118522e5fd9b,69c740de1415ad142210a4b8355c11de,
 data/meeting-record-explanations.csv,202,e0c62705c893eef0e1eafb4f6982cfb07adc73fc4624c514fbc464898ea103e6,76407b170c77ac1d900cb21ec2cdcf59,
-data/meeting-register.csv,3687109,995f628f433da82dfa74f31ec327b421227cac65f7ee52c2b4349417550449c9,ce0958e9fd83dd600ede6aaa4a02a9b7,
+data/meeting-register.csv,3689673,e898a8ddc84756dcc35c87b554a863d7b256adabca3e2176a51ecfbbc7763bfa,5e74668171fae472469f78441d699318,
 data/meeting-watch-events.csv,19021,c5525b32e0e65a3f09554d2cb699da6298df229a0137bfe271764bb5cb048931,3758344ea4409ceb453ed481dcfa6ccb,
-data/meeting-watch-runs.csv,862,cfecfc37c9c30bee862dfb8115202260ec15a7551ecaae13ec4b1ca4edc8ee0e,4615889b669eed41f25d12ec20701865,
+data/meeting-watch-runs.csv,893,bdbf89213eea7974d987e2b79884c8c30c05bd0c191a80fc679c025f00f36888,72e166eb4d51899bf1349f07e2014dd5,
 data/meeting-watch-state.csv,1778385,d4a84b909e8f22557c1a49295d18c5ed4b38616ef0ab96688c776b1a3aa75a70,ed607e112d1c1fbb0eeb008636599ad6,
 data/minutes-coverage.csv,51362,b3f80c0d0f88f413ae7ffdffaebacd3cfd5eeac75fd00506e84ada48ef474073,54c70c9e4b5e105d03eb4c437fe3d1b0,
 data/minutes-searchable.csv,41717,9a77017746db5e5e6c11966750902ffee388eb7d2354ee6c9b670786159beb19,e8f33ebf4745ec003b288706499ae87b,
 data/money-assumptions.csv,1646,620c2b74ce21d327b3c00f5ef414a49aa1e036d374f91ac5d9901a50c26d1912,62d24194615efa8368ddcbb684675b65,
 data/money-classification.csv,34508,2ece30bf2f0347a96198725838d23ec43cc35b383e06b3a648e2a640f87fcef0,9eba6a16c01067c656ace8d28b4477fe,
 data/money-edges.csv,1752,0b05cefe4369e8d6a1ab4d5310f3e9a80bd95d0c8da9a64b17974261a9b76ada,b316c4a2f66c6a268494d65b35d337ce,
-data/money-gaps.csv,226321,07ea4b1eb8c2f8b7fe97d550b03b0689e246ac79c5450b0cbfc6b81ecf092d41,d359e38e6f7eee300905a3f4b81155a5,
+data/money-gaps.csv,232257,cbe3f40b01edbfc4c9dcc5dd407bb6b88641180162bb59dbce5ce8d8ee57be24,47994b4b85f2b20db6552179b537a975,
 data/monty-tech-assessment.csv,8145,fdd357731c7b5fc1d011d2af83d7a09c66da5d0d3089996724a41f718b975fd4,144f5b7742c0716879239456b2f84ce9,
 data/monty-tech-expenses.csv,7130,199238e878646b90e9fa9f3af842610e9b569a4dce078b9c9b64f7681df8d71d,9be011d8d931e7f41f2c2082f044aaae,
 data/munis-ledger.csv,230432,b9cbc07f552c9de2ad865bf615bd04f76828c4b76e2160edd6b641e6d9726f75,a174246700e9bdac8845d6096e97bda9,
@@ -1522,7 +1538,7 @@ data/official-votes/board-of-assessors/2023-06-06-35.json,1418,e315f0bd73d4e4fe8
 data/official-votes/board-of-assessors/2023-06-08-37.json,1107,276e2e759b7692489774bd9d6771661fc74831963fdf0667c8ed833d5a421394,efffd6b090a1126abea2437e8a595b2f,
 data/official-votes/board-of-assessors/2023-06-13-31.json,1571,3722b663048cf95c9a5b5946276b05bc945996e16ca92979dfe973945fa29179,5f1e6208522495fdd671b233943bf774,
 data/official-votes/board-of-assessors/2023-06-15-33.json,1079,71627ab67500fb7ea716775ea0b1fae2375fed7a091704e6177d93e6b7405cd3,4e2a541bc7f4acd36498800ef2c8c202,
-data/official-votes/board-of-assessors/2023-06-29-416.json,1166,d15354abff2b06ac7ac45efde3790dc4600d8fc9f2ed9afe569c69d758f6e9e5,efc4cdc0855250ca5793b1d1b340d559,
+data/official-votes/board-of-assessors/2023-06-29-416.json,6976,69024ac70fac6094548400f46ffe1968a34757fcdc4614e1c70e6edba04205fb,bcfa93de6a53a55a28d8e08a8bed4557,
 data/official-votes/board-of-assessors/2023-07-18-394.json,7450,41287c2898a4115acd4a7a01285e2055668118d791e5fd873d00901a668a2287,c2d4a74e2d696427a187ed8175bd00d3,
 data/official-votes/board-of-assessors/2023-08-01-352.json,7503,edac66422651e47bb5335961e5299e7002c31d83bb36911f372042fb14a72700,f60fb76349804fd0e6caf4ac4c457a86,
 data/official-votes/board-of-assessors/2023-09-27-346.json,9958,2fd14dc146f1cf884b1a64e6bc37b1350ffc25a913fdb04bef3cc0a4fc586b0b,9a840e62aff5856253a580740e2f1a74,
@@ -2264,7 +2280,7 @@ data/official-votes/conservation-commission/2023-04-19-64.json,3364,94016839e026
 data/official-votes/conservation-commission/2023-05-03-61.json,4174,ed17181abb324ef3ea29c4e4f4956de74c5379dba1e8f357ba3980b867dfb39d,f2be05b8821ecd4b4df97798b36b723c,
 data/official-votes/conservation-commission/2023-05-17-58.json,4421,9afcf46c5a836aa6a5f5ab820ec15caed8c780f1b740ddaf42d75e6f1e3d494d,26629c0499c4987d467afa797f71a20c,
 data/official-votes/conservation-commission/2023-06-07-59.json,4236,0ff5ccf3e24044f7e5f83bd7197c3109705124bc1aa1b165ee98085a4c0d9281,d363104501d586c9626f50fb720a8d8a,
-data/official-votes/conservation-commission/2023-07-05-381.json,4986,b1cb9d2b20c015b2ecf8c4aca1beaab783e50f5ea56f9187c72f67338aec2621,2019cc9757d52f757b97127729061025,
+data/official-votes/conservation-commission/2023-07-05-381.json,18366,eb1c965b4e8b016c853dfa5148becf9dde3f87f5d7583c89943645a489952cad,813606e6668a166ceea69e1ec9a5a0ba,
 data/official-votes/conservation-commission/2023-08-02-354.json,18751,75e9ee95be4ab83bcdb4f85722564374eb408b33c3ba43fb175f7c4b0cc2c1cf,57d0068af8bdb40063d878d137dfa720,
 data/official-votes/conservation-commission/2023-08-16-362.json,21486,5cce903648d3ff1a904060938bcea927b77b9e21c6973aad52a2470e8f23409c,87d2e45b6a412068732c1905b60b6fd7,
 data/official-votes/conservation-commission/2023-09-06-315.json,14659,ea948ea38036351bf95571edae77eb587b356e42a1c5e26cfb83200d35169a14,e29390a05bc15096e0b6a7909197e230,
@@ -3395,7 +3411,7 @@ data/official-votes/lunenburg-housing-authority/2023-02-16-113.json,2946,3e86427
 data/official-votes/lunenburg-housing-authority/2023-03-16-114.json,2102,2aa655333ef8cc875e97af954aa94152611bd2ad377d62d0009b79ff5f437a7f,c0ed602ef8738830a4a81068d0abb5d4,
 data/official-votes/lunenburg-housing-authority/2023-04-20-2025.json,2775,0270694450bfa3f76514c68d5795560ac5eef819513973b644f0c2a0d36906b4,108c5a289193f2e79bc1333490810589,
 data/official-votes/lunenburg-housing-authority/2023-05-18-112.json,2260,7344d238401d8e36dfcb2cfe8d71fee0f1199ce4b9acf829549e5204fbe27f41,49cac78e1a16b0d040f8b474ea779a65,
-data/official-votes/lunenburg-housing-authority/2023-06-29-415.json,2743,773bac4689274b06eb79df19ed6a8abb32876cdf875b582b26835c51b6cc5abf,0320beb9817d97a2765e6ccdcc1e9f6c,
+data/official-votes/lunenburg-housing-authority/2023-06-29-415.json,7999,124f49ddcf6a4ba41fef7b5f1dcb2caa87533102cb06eee9587457e3c45cc3e3,21c0b97db361bffd82e013ae5461bd1d,
 data/official-votes/lunenburg-housing-authority/2023-08-17-364.json,8616,bfe8244230ff4aa6068d9eb266fa023aa1a3ce901b1d8c62b756a0007b4ec89b,be8ff956706f5937516af95f5b82e73a,
 data/official-votes/lunenburg-housing-authority/2023-09-28-349.json,4361,8c5c2ccc5024c3806287da41c0b33275378cf41d9d1fb12c36b27b79be24d00f,d5ec4df121a3850c13f9720d1ba19a72,
 data/official-votes/lunenburg-housing-authority/2023-10-19-424.json,7778,ee254e4b644983fc15def90e64ca76c669caeec08dd51e58291a5d86b45e8e86,2aab23dbccc08891dc492a23e1c61741,
@@ -3639,7 +3655,7 @@ data/official-votes/parks-commission/2023-04-11-133.json,1202,d3f350a9665a85704e
 data/official-votes/parks-commission/2023-04-19-131.json,4061,fe7f4a259c38e7223c2b080f7de798d42205cdab6fe2be2bf99882c9df3e32b0,ec64a420b52cb2ba81ce8267defecac1,
 data/official-votes/parks-commission/2023-05-24-132.json,3512,82172e35b4c01c801fc03c82ef2cd1aaa87463e645d340df56cbaad03260b33c,7caa214515ef1162eb1fd1989050d520,
 data/official-votes/parks-commission/2023-05-31-137.json,1049,1e24b01509b60f42a51a63b85e7e1a0758da78b0a22dd9f78871b73cace3444e,8a04725a178ed126f29cae471c9d6d4d,
-data/official-votes/parks-commission/2023-06-28-414.json,1218,f8b6350df697fdbd3502b51ee0d99b2e2701772d10b8926ec23bd598b8125e0a,16209f1d9595b08ab9fd5948ef7ada20,
+data/official-votes/parks-commission/2023-06-28-414.json,8949,90eb9d6a96fb376fe3b621dc4c5179cf779c20bc620075b722cc228cf6db9b9e,408122c9da404d06659938df147155a9,
 data/official-votes/parks-commission/2023-07-12-3524.json,8626,823c218eb205cff02b6afe0ba6e7ed6bbbac0eedfa93f76d8ff17ad785adea97,7e531d176b73588e85656e1a9763cf07,
 data/official-votes/parks-commission/2023-08-16-363.json,7140,fb83d30e94d7ff1dbc0302fb047a68232ef157e309c24348a4e130d5e38763a2,5847d1bda040cdf32939588e67ed1fc9,
 data/official-votes/parks-commission/2023-09-20-340.json,7804,341abf2004a1a1ac3c674c10fabaa7fe84cbb964c39be37902518f2087eb7435,1e8479661c352919b900d2923335de43,
@@ -3773,7 +3789,7 @@ data/official-votes/personnel-committee/2023-05-31-153.json,2230,986f704dda3c4a0
 data/official-votes/personnel-committee/2023-06-06-154.json,1490,88ef991f01d12058984c756a738be0938e2fce6e58af4b741fef2d4be1b9a9fc,0515c3d55a90ec52bd39e35b8baac703,
 data/official-votes/personnel-committee/2023-06-13-147.json,1899,d5a614594d9a6a0e82dc6c2578f3b99b471aa9ed2470addc3fbb6f1e46d8d259,a2f8ff6aa44a3805dc33b293b40899e0,
 data/official-votes/personnel-committee/2023-06-13-148.json,1785,92b6b0bd3be3ccca210c6086570d411ffa181ef0f6f98d0b8098399404f31c8e,658851d09342cfccffdaddad9e315023,
-data/official-votes/personnel-committee/2023-07-05-380.json,2075,09453781601cf27a7911176f15e9f33925e8e6ccf83ae13aebe7951ad9b36f46,13dfbcfb3ae90b557f058bcc166be9bb,
+data/official-votes/personnel-committee/2023-07-05-380.json,5964,8edccc6b495fe1e2b645dd9349f226e7e7a1a3912818b3fb944e40c350e48e7b,e3d8231f5d6ced1a17267747851c5d92,
 data/official-votes/personnel-committee/2023-07-19-397.json,6659,3b2969c59f63be00dc88bf68343fd5aa710afefff23605f8f428a436df9a3da4,25faf7e8baaa43c75f90b4e310e2f289,
 data/official-votes/personnel-committee/2023-08-23-370.json,7774,c6ef1b080a69c88b86ac7c14c414c54271bf9692043f547c3a2efcc7ca3a6752,05063b49583e0bf57ea058b8a76bd821,
 data/official-votes/personnel-committee/2023-09-06-313.json,6930,9dcb65dd0e91d3a1735ac7f5bce65d8823da64522fc09797fde739fd6c4010bb,9c3ef2ffbf9e078373788475f3e716f3,
@@ -4332,7 +4348,7 @@ data/official-votes/planning-board/2023-05-08-160.json,2592,bfb86b36a25411dcf20c
 data/official-votes/planning-board/2023-05-22-173.json,1908,a351dbc16fa39904ae626cf852c32b4b13cb0934df96f2660fbfbda020e43f0c,ffa0a8365c61e38b30d72ee8107bfb6f,
 data/official-votes/planning-board/2023-06-12-174.json,5125,90250dc129b7291e4a858a4acf3607372dfb306b3ff32bae6bba1ec405b6c300,5f7dd7c1aa446ed29a5cbe5cb18c56d7,
 data/official-votes/planning-board/2023-06-26-175.json,2202,cf9a0648762067f17e8c931ee0d72debe0c75ae6cf410c22905c4c226ff47673,d0361fc095eb07073f93c54115536e29,
-data/official-votes/planning-board/2023-07-10-382.json,2367,2496fb30fa486ce0feb691ac972db4d0ee16fb4480146d0e4f6f94abe423382f,d3e5d722e3c74700ee9da8b95a2f9c44,
+data/official-votes/planning-board/2023-07-10-382.json,8353,d165f11430df784a6aafac6c352498e33f60c981110808376ac57a4cc3717c75,8cb0d5c005fdb5c6ba891592b8188f07,
 data/official-votes/planning-board/2023-07-24-402.json,9197,491a010ffb4966f7149073974aa99d9c1be0d0b40f57a5ee90eb6295ff6a148c,5c83cf7ac662eaeb14ce2741e6b84c88,
 data/official-votes/planning-board/2023-08-14-360.json,9649,e0c1f4663c328707610770098829507036f52c71d05a644c920c48499f629f03,a879d60d245bb0b07f2bcbe6b5015b06,
 data/official-votes/planning-board/2023-08-28-375.json,8278,ce61c469ff0dc25d4003aae26e4f66b285f34e9301ef8aa4997fdcf41358ab71,9afeef0a3e33444300abef9b5b355d5b,
@@ -4511,7 +4527,7 @@ data/official-votes/public-access-cable-committee-pacc/2023-04-10-178.json,1634,
 data/official-votes/public-access-cable-committee-pacc/2023-05-08-183.json,2140,1b5d505a813ecc271c3af64cb2b05aa1de5a9f38876b35f3d37cb08d2ae425ba,6877bfc9220e6aa7db653cc0cd5a8c1e,
 data/official-votes/public-access-cable-committee-pacc/2023-05-08-184.json,2036,06d0090943b07a88c7c783f3540635bb72306dd52dbb15206b6c4f51a7f8aad2,1ad06576e8dbb28dcbad127c3371bdf4,
 data/official-votes/public-access-cable-committee-pacc/2023-06-12-181.json,2124,5accda64f40644ae7c3e30cc22999ef477d781d3cd4ef5d87676e1a15b486e65,c61c2afbb65fa18871f984c2f821e22d,
-data/official-votes/public-access-cable-committee-pacc/2023-07-10-383.json,1327,9390247efe95c3666365089a355fee18860d8124dd32a8f2287409720e7c7193,4689907a1d503e2ee397a4ae2b1e66f0,
+data/official-votes/public-access-cable-committee-pacc/2023-07-10-383.json,7808,f56d6e5f9782222cb893935dbd604863103550f7fd35f52e7a12ff70d205fafa,bcac9632e1266ab16799722d2c57ba76,
 data/official-votes/public-access-cable-committee-pacc/2023-08-14-359.json,6508,a0db7126a671618b28cbef889123ed81b3a9c0a768f13826c34ae0500c2d5de9,d2de2dfb75a5c2012823353555ab304c,
 data/official-votes/public-access-cable-committee-pacc/2023-10-02-3518.json,7723,f3078dcf3ae0909ad3f72119b60b93f8feaf476f6a91ec2ff6f455c5a7f74b21,3517eb6f398ab97e429e7971bbedfa32,
 data/official-votes/public-access-cable-committee-pacc/2023-12-04-6094.json,6737,7304fb8c0b1e63029e9cea258ec6f3de0a6490f96a2370282bfdb527cabcf371,5bc059eb9a753da11a6636b11a79a2ff,
@@ -5600,7 +5616,7 @@ data/official-votes/sewer-commission/2023-04-11-286.json,2974,db94152c0e988212a2
 data/official-votes/sewer-commission/2023-04-25-287.json,1222,9b9eedf73e346d6207a45728d1e7c46d15d24fbb0bfcc483639b1078133f92cf,09fe89f6dbe90aba13cb32763a7ed742,
 data/official-votes/sewer-commission/2023-05-09-288.json,1294,d350e483c9483e412df95c4e41ddb347432abe681fe1897a1d18d3fe9688ba8f,73626bd8859236d7f527be8d2c01ba13,
 data/official-votes/sewer-commission/2023-05-30-282.json,3322,3cf03b164b2a113b2790ae32565f6be1274e2830bc13c040ae61d2302c457abb,e98093e3899983373c9e8681d025ecdf,
-data/official-votes/sewer-commission/2023-06-27-413.json,1632,3e22da6ed8e113a2c1aef4e71f1d5abcaa633b5724c990467ce987d2156593cf,25291684fff0b42887eace4c2dc2d742,
+data/official-votes/sewer-commission/2023-06-27-413.json,17449,091be5031807b1ae233ed8a91a5f9e4a94ee39e6dd4063f5f0bc7b1e6fc80a05,d9bbc7e985a2c08623ca62025253999c,
 data/official-votes/sewer-commission/2023-07-11-384.json,13413,e8d3266811fe753f1a6b0912580e34495cad54c219f9150c1b8dba364df650e6,74c720e7ea007a3352f8cf8d5d7a3732,
 data/official-votes/sewer-commission/2023-08-29-377.json,13843,922ee4073456775da77cf5d129cc95595ffe35ebbf76cb3abef1459050f9f5a8,2e15845f94f12479da005f513ff334c5,
 data/official-votes/sewer-commission/2023-09-12-318.json,11588,bc0429443af83fa5cbec6f71219d10b16ade45a1bae215a98666e37073e6b8ad,3ea69d88a0455471166e27a068002fbc,
@@ -6155,7 +6171,7 @@ data/public-safety-staffing-plans-vs-roster.csv,1635,969e603c473271503c41b69d6c0
 data/public-safety-staffing-plans.csv,128430,ace2ffb0992e56a6724d34ab9e69dbaf5e3ef20e6f0566d71074959ea0fbb1f3,426686db80006e4d306baa186595323a,
 data/rate-limit.txt,3,917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469,31d30eea8d0968d6458e0ad0027c9f80,
 data/rate-register.csv,16948,1be10be8452807e294b152bdb78c238c820bc57bb6efea4a507c99b6990cbb89,b4e169bd4b53fb41e357e312b9662931,
-data/reader-questions.csv,54,8c0471b00b6bd9724e18d8ccac76db0899e21acc46c58bffa64983a897aba68b,e3cd7f6d17e8a1055afa8c4746a12bd0,
+data/reader-questions.csv,118,cdad1b8102d38606bdb7b70fdcf63b1e7ebfa4af8c722f80fd0fe1ee8cd65931,9e9ee84623f2cc125c3b4cc95bf26435,
 data/receivables-reconciliation.csv,4512,3d4c961488aeb08b3d8fce14a84f2452cf2db8a8f498ccbe05ead5b1a36d3a59,c148550ab9bf9145ca4029854eaef994,
 data/receivables-refused.csv,3171,85d9e74c585f3a415a5c3a72a6cb2b8e38b886b0de837797c9d0189f0ac8e046,d4fab50bb0d08dd7c8e3f52afc29cf29,
 data/receivables.csv,42695,d0d754a04c21f188f40ee88eaeea316bff905555ab7cb34a25bacdf3ba380e7c,19633e1273f4d242280237772e45792a,
@@ -6197,6 +6213,7 @@ data/recording-minutes/architectural-preservation-district-commission/2026-06-11
 data/recording-minutes/architectural-preservation-district-commission/2026-10-06-E2OZuLqP4zE.json,11802,bc9b3f7a737742a0a3651c6ea36cf84dd347fe2f6cbd61f000b805084ac7967c,fc5f0433aa87fe328fce5275b8a5cce1,
 data/recording-minutes/athletic-advisory-council/2025-01-27-_tYwHQu995w.json,13861,26f65cbc220de03f13374669c66d6df581fca2865e9691cd09d634d53f3a4971,859e0c65e6364f889ae1d99cde7570ee,
 data/recording-minutes/athletic-advisory-council/2025-02-04-YwNTz8iSK1k.json,11412,3e8da4e3247ef46a8640099dc9c8cd000436ad344931c7e038e263faeea7e6da,a3a6df22f6c4c8e411ab8ca64bb810c2,
+data/recording-minutes/board-of-assessors/2023-06-29-1kPWP6EM9Ik.json,17902,ad807a73aa26d27d44273fcd5524803717d2d49fe0e8ea12a540ec75a1f0d0f3,5ab42c795b52afc0e1d06c14d688da14,
 data/recording-minutes/board-of-assessors/2023-07-18-hbIbzEfZhW8.json,17704,c9a6f22884bc13e3953aaa7eb42903fb2277c578c4df92dc71148e66bc237fd9,760bae8a77b5f39256f49bf3e9ad0d8e,
 data/recording-minutes/board-of-assessors/2023-08-01-aqW8ZenG3kM.json,15607,a44fb0ffeaa27cd735aef8684aecc4730fd9201be816179f455ff0b62caf8bbf,b31d10aa105fe25b85f441f1c7e80b81,
 data/recording-minutes/board-of-assessors/2023-09-27-pq7iKP5I5nI.json,15954,5d3b54e495a4335742f3201275511ef35810afb19b135c6769d6aea2120c616e,4bd06d8069ad61250c034bd5f711d47a,
@@ -6332,6 +6349,7 @@ data/recording-minutes/cemetery-commission/2026-06-25-jUunqV11dU4.json,33083,5a9
 data/recording-minutes/cemetery-commission/2026-07-30-gc8unwrEL3k.json,23731,2f095c6ad6ae1ccfe81a363c9dc5d3f2732396aeca3db26f87014eed787e6355,b7e7156e4297897acb1ba5d873d46002,
 data/recording-minutes/cemetery-commission/2026-08-19-9B8uWI7kA7w.json,12330,c7dead1a0701f40b5bdf4896b1ae855f50acb54f73f405e04912701d554edc56,a156c6993efd183305041bcc528ce8d3,
 data/recording-minutes/cemetery-commission/2026-09-24-I-vEsgVC3hk.json,9990,6e1bfc91c5bc35b75aa97601632c1dc75aa2ee1c0b1930bb39ac67f2d62b81f9,b60eab839f0a7fe99c861897e91aa730,
+data/recording-minutes/conservation-commission/2023-07-05-UATf1fJiGmk.json,25937,991f4b33b3fc8c64e5daa674e7b232dadf48b7b8749f39f1cb639e5fa178c399,3f30ad173465fa936dfa5ef9e5d64175,
 data/recording-minutes/conservation-commission/2023-08-02-6mtGRS7x41w.json,25487,5af7b62d768cb8619a1628b2a32a9299f3df818805da9a49578a513a2c459236,cc394921148e70779b4c999201a1abb4,
 data/recording-minutes/conservation-commission/2023-08-16-5AMISKRF1as.json,22851,b23e79280526ca987425bd950128f5a860a60e960ac6eed0b6172c5256bce2ed,ce83396107c1deb4cddb09b0a6a5a7a8,
 data/recording-minutes/conservation-commission/2023-09-06-aJVr3uZVNJg.json,19091,60ae036d3f9259e6def727d3fb1f8a3bd7b748d28b4128626fff830e0622d134,8fdd33833ce7f4ee61c583f120fc8fd9,
@@ -6408,7 +6426,7 @@ data/recording-minutes/conservation-commission/2026-07-01-un0bhVKAzGs.json,32589
 data/recording-minutes/conservation-commission/2026-08-05-GZqWkWkz8IY.json,31651,15c2395654ebfe65b5ade3337db143e5322a8196085de810a40d6f097d869644,fd3e319edbd5cdfe9e1f1f7c7bea4fe7,
 data/recording-minutes/conservation-commission/2026-08-19-cNWQtYXh2fQ.json,30481,5dc85d57abf2f9702787cd49d37d0eeda5dd0224a9caffbe6936e562bcd08c20,37779db66eb91328afb5a3761a2125eb,
 data/recording-minutes/conservation-commission/2026-09-02-9E1d1VRhxCs.json,26491,04d9e95e34b05761dc06436b540f656f5aa3d22ca434c5da6b60b1996e7aca30,aaaddb50d3601ea1396ed9c06c7cdb00,
-data/recording-minutes/conservation-commission/2026-09-16-KXzIph3Demg.json,22020,5669367b62a45a1e661dcaf73d30c1eaf42cb92ab63da30cd8ba433b4a585112,8ec0508aa030f80a2127500ed7c60728,
+data/recording-minutes/conservation-commission/2026-09-16-KXzIph3Demg.json,31796,aff53f2ee19aae6a9d716ca7e94e7b3c7a38b43c9e4154d996a6a3a42c81b74c,ce139d2e1779001e565545bb2faa5286,
 data/recording-minutes/conservation-commission/2026-10-07-fuvplLsgLNE.json,14373,c2a0ee76fa0394f2c0deee54373942021ef4c4dd650734ca1bb0176a6feb9661,034e743fe2b4771ee8fcea2c3605d054,
 data/recording-minutes/council-on-aging/2024-09-10-O5apGU3rlO8.json,24405,6c88759859720b85a10781ad1e7d801f43ebf005b28f63eb33a3a878d49da548,5bcf4554d4cbd8d9fab6d567c48a0990,
 data/recording-minutes/council-on-aging/2024-11-12-MQvdf8JrUaw.json,21726,9ee9ff0cec7c796d37b7e2dea18d2c55541a173437355964d4a313e3311bb266,03faeacbdcbcdcb1b399aaff5167087b,
@@ -6580,6 +6598,7 @@ data/recording-minutes/lunenburg-municipal-building-design-committee/2026-08-17-
 data/recording-minutes/lunenburg-municipal-building-design-committee/2026-08-31-kY5j-uu0MRo.json,26725,66a87b754432fb8f5265bc613cbd98323eef01159b6a77ca6745535439cf7b64,843ca2d47526e356fab7f1f423695a61,
 data/recording-minutes/lunenburg-municipal-building-design-committee/2026-09-21-MdHSKqTjxjk.json,20131,02c0262da65da54b7f51debcb87467b6e7a2ca6a36fe8c69500a4e5bdb478c9a,4e5e7827404b80be207598958b0ef5f1,
 data/recording-minutes/lunenburg-municipal-building-design-committee/2026-10-05-5UjLq555UeQ.json,10656,a6fa5298c95bc3e8d1fe8b1f5637656b81f5d915d00e8036bb43b473a9b79c99,e758d3788b8ea96fb4ccea156565b26b,
+data/recording-minutes/lunenburg-water-district/2023-06-28-P06A2usx3aY.json,8150,87d66795da23663e17f8199347d49cc1cb94d3ca3e75577888b58f2214580366,acc5c1e008c058dea8ba2ef765e5c67f,
 data/recording-minutes/lunenburg-water-district/2023-07-12-2jmzVOKS6oY.json,6054,4ed03b02749e27322a3a59555414431738b0f377b36036e65b25250e860a9556,49cc005f950976400a97035053cc6025,
 data/recording-minutes/lunenburg-water-district/2023-07-26-lOlM8cPsBs0.json,9736,518c7d007ab866eaff842fc2bd0c04c681ba4ff66d40a75b3e85d8b6e1cbcce3,f7a82d7f271ae5929136cb490c96984a,
 data/recording-minutes/lunenburg-water-district/2023-08-09-lEXTABtn9_Y.json,10160,7d527a0b75d1f460e54ea5d8304f8ce3304c4fe057d93c5f828634a5e8cc4dd6,13a94577a65760807fc0dc6aa67a3ea0,
@@ -6709,6 +6728,7 @@ data/recording-minutes/open-space-committee/2026-03-11-AibsbE20srM.json,12899,ba
 data/recording-minutes/open-space-committee/2026-05-13-LNEq_Bcx4ac.json,11780,0cf4b94d489fad7e87ae5536e45b1f1d849c2991bb8550d7e7fa479fb52b91aa,88a8ba1b68863506fdbcbe1e09a9ac76,
 data/recording-minutes/open-space-committee/2026-09-09-qp-NjUCVwuc.json,9734,c6228af9c86324a2590ae732fc5ef5c1ad0c85326d72ee20a91617f103a89504,7f5af127ca1697f27c03a3d7db0d7466,
 data/recording-minutes/parks-commission/2021-11-22-KTc7uLCgIqo.json,12617,c127cbb79f16cb5822ae60acf3f99fd70599702f79ca8189d4f130459eac5230,d559b936104f8fd53768d4688666a4f0,
+data/recording-minutes/parks-commission/2023-06-28-xItLPcgE8Co.json,22057,77627f465ba741fdd32f7a4be4533aad01752ae14fb813d92d0a17c3291db88d,7725e25fa5713bc234d31784806f0b82,
 data/recording-minutes/parks-commission/2023-07-12-lRu-YPIy9sw.json,21186,5d8dabf9f5ab762677c5a6c9b09858a61a01d496f8b75e2f56a9c500fc74c1c7,19d5e0fe13313caa910b39807a6cd385,
 data/recording-minutes/parks-commission/2023-08-16-KCkYHX-FH-w.json,21908,143f49a7553e70a882dc172a400c5da8358ebdfc54ce37ae5a1593677141424b,35bea91a872f0b058b2d5ac07ae10a18,
 data/recording-minutes/parks-commission/2023-09-20-JSMjh47R52I.json,19306,48fcd615d745f92e5b220c88ed9336d96192a8c9de679cf957b034400fc4d1a8,e7467f3c7ee2e20a0bcdeb5f7190b14d,
@@ -6747,6 +6767,7 @@ data/recording-minutes/parks-commission/2026-06-24-sYBbdYKeNe4.json,20982,fac21a
 data/recording-minutes/parks-commission/2026-07-22-QhMt1oE8eZo.json,23162,7b80a2e20195bd343306e7a5705a5fdc0a8ff81b812c62a73cbfcb7d90835957,fc6fe0f7b347e8b11bf94ac8f7719153,
 data/recording-minutes/parks-commission/2026-08-26-myQGZh_udNc.json,13031,8a982f317fd1ce4818518a26ca6461725189cfbffaa4f2d434ee5de1b4b4f45e,157cf75b24c67dfa9270688b39214ac2,
 data/recording-minutes/parks-commission/2026-09-30-j4r_5tj48fg.json,10082,c0ae67d3ebef0ab47a4c061ebbd2edc957b90edd4035dc98d2b3155b8b27a89c,4fd3da4c74450b549b1071e4cc904953,
+data/recording-minutes/personnel-committee/2023-07-05-O8BgTx6LfWg.json,10816,006880c638b75bd5270fb70ef3fb30680d0f379560773278a9a09ef6ebe03e76,a9ecf81dd4b5752d84cdce078e0d2d10,
 data/recording-minutes/personnel-committee/2023-07-19-IRDZe8Eq8g4.json,13454,227371e91b06eec539564c621d9c763c8565ef590b40f3e5858aaa8014da2077,c156204745970b71aad38d6f9eb69db3,
 data/recording-minutes/personnel-committee/2023-08-23-m1KBjtJrEZ0.json,15303,e82b1eb1e0a7c8ecbd331556a352d07f9b6775899f936a8d5ac4b6233c22e036,6c16e46089aad0f303ea1e82fe3b5d6a,
 data/recording-minutes/personnel-committee/2023-09-06-OqjhveRDU3c.json,14767,940eba3ead0bda07b9d9fc2df366183dbb5d7b9d43f0f1e862c7b142cec5a33e,8733954acb3b1f09171d432dcc939753,
@@ -6768,6 +6789,7 @@ data/recording-minutes/personnel-committee/2026-08-03-QDMwtSUlVDY.json,13860,3a7
 data/recording-minutes/personnel-committee/2026-08-31-DcEdUB3CsCU.json,14191,15aa93790eae65a42b355bb08c4499d47f1c3381075cba9226fa9ee3bddbe8b0,6d84076b472a08125272796230f0efbf,
 data/recording-minutes/personnel-committee/2026-09-03-x4HDKD0Ol7c.json,7693,a9a0691be0b72c846f0ff84ac7f520ec4ade162927c2aeb489119ae95905661e,ec756dbdc290be5bd4c9d7ed172e641f,
 data/recording-minutes/personnel-committee/2026-09-21-aJWq6GB5GYc.json,8421,fdaee8617aadb6b6c15b8fea1c03292ff6bb83f4e16968331848515791bda615,151cefdc5031e7493497212825a056ea,
+data/recording-minutes/planning-board/2023-07-10-rJ6-gChA-kY.json,16648,79e0405a3b9fca0872211610c2e8feea18763560714df8799d20c65fc61e76b0,afb2d7249200c4ef51f6c962b560a3a3,
 data/recording-minutes/planning-board/2023-07-24-y4QR6lSh6p4.json,19822,e593fe6f4243d93ea207e7c380ad11a3c1af73bb7ae578d4359d64952a00a2e8,dff6346e44f861088b1d4b39c39cfa3a,
 data/recording-minutes/planning-board/2023-08-14-7Jdorucbnnc.json,14128,a889a9d33953719f1296f67c9c22e73b540af73148c80b36ae2114cc38465f4f,29e8f60fc881aa0b5ba5f272de9841cc,
 data/recording-minutes/planning-board/2023-08-28-42bMGRvUT4Q.json,18051,fdc2ea88c2d105f82b57506e3c1a6b9c05b98ecfd74ca55c0c93934245f7d762,5265ee3ef84b5a494d4d71140fda86ba,
@@ -6833,6 +6855,7 @@ data/recording-minutes/planning-board/2026-07-27-2GIMJnxvJyg.json,19733,78d6cd7d
 data/recording-minutes/planning-board/2026-08-10-KZf5AVu8sjQ.json,17619,9bd62124902dd6d5b8b11b574d8ce5c0a290db04941b7276b69136b333a9a9f2,ab312887e4210b3cb465167d6c8e80d4,
 data/recording-minutes/planning-board/2026-08-24-vZDJ6B71qqI.json,27169,1d020597547c9cc733795e48d9bd86e4c0b9a83215b83cafee221e616f24dec2,a14068d8d3a7a28d241dbbd510b1b5f3,
 data/recording-minutes/planning-board/2026-09-28-JGeGZxGcC7I.json,12350,703bb3cdbc22f2c445447222dbeb4684666b39e80b6e5ad8f8508a9c75ba8ad0,e0aba9ba805c5fd5e0140f1bcc802aff,
+data/recording-minutes/public-access-cable-committee-pacc/2023-07-10-J0fl3-d6tKg.json,17241,429b098d427812df07fbbc3f05bdd628cb455c421a026fc954f736f69a054761,ef33484c57c1adf5f4b15577901f7d2c,
 data/recording-minutes/public-access-cable-committee-pacc/2023-08-14-bwYVy_6NHT0.json,16777,8cb4f2c35e2c16fd26629c3fbe717052d50d7a8b60b5ff9131f5106c33f0de25,cda44332142d1254b99f1042bcc29741,
 data/recording-minutes/public-access-cable-committee-pacc/2023-10-02-8lKZC1kAWOE.json,15924,65d448d9702c580d5a5dd1a89f1b383169cf2afbfc728357144e16be3f4f93eb,4049aea12354e3c87a76a6ccf78c4626,
 data/recording-minutes/public-access-cable-committee-pacc/2023-11-06-cPHmT5J83Zg.json,10094,c87eeea48228176076a94deb41fa5fde06b3e4b9f71cfa065485d8da090d4bbb,d5424fb8758d3bc2f7ab79833e6526bb,
@@ -6868,6 +6891,7 @@ data/recording-minutes/public-access-cable-committee-pacc/2026-04-06-8usm4uHzje8
 data/recording-minutes/public-access-cable-committee-pacc/2026-05-04-hOtGSCdR_Rs.json,20577,606416309c8234037e3aa6f63476f01072691dcb8c9e91c206cd7005f50b7816,d7bd00a8cd0332397e34d89a9f6b3c4c,
 data/recording-minutes/public-access-cable-committee-pacc/2026-06-01-wbVcmEKBCvs.json,21602,f4bec6539872cc0d153fa862e471087155c4e1a229f0c237b18fe80c04837488,f60f215f16be607907e06fa115c52cd4,
 data/recording-minutes/public-access-cable-committee-pacc/2026-09-08-f1AbB5ZEQ5Q.json,12263,ba2857157feb1db064fe878208409c7f230f89a542b8d1eb1d4d2b8eacdd1d0f,5518d0b86d2096b6d613ced27a930957,
+data/recording-minutes/school-committee/2023-06-29-SFn8b8ShPXw.json,9011,ac037c4cab7d72b14005a9f3736b71716488b3eb30a11e4ac59c1c30f2f1a0b2,a90dedbb9f9401e4f81959e9bff47061,
 data/recording-minutes/school-committee/2023-08-28-uvV851hVgMw.json,9829,3c6d24899adbc51128c016010a0306dbbf41c5a106714589ec1de48d7a08aa6a,c468204aa4ec842a027588c1e09111bf,
 data/recording-minutes/school-committee/2023-09-06-mBfewgP6U2k.json,21102,5936571ba36349693af086534440500e0ad5e88249f11de02a51b28d52328b51,45d4d89372209441f1a0f75e9e95f15b,
 data/recording-minutes/school-committee/2023-09-20-pxAlbuPeROQ.json,21175,8913b9e0362320309b5393e6fe46ea984594138e70555f86526b04c6c433cf63,68020d5d153ab1d821eed07fc538e87a,
@@ -6967,7 +6991,7 @@ data/recording-minutes/school-committee/2026-09-16-XY8Ru12S9Xg.json,15812,142e72
 data/recording-minutes/school-committee/2026-10-01-kWX2YIfTOMg.json,8331,206f9e9b93e10f2cfa50861641a7262dcd7b7abeccc17d9706e164e9140f64d5,e5a9566a6f108cc097e7d35e3015decd,
 data/recording-minutes/school-committee/2026-10-07-kPZcnFd5COw.json,13228,ebcfcf61979db586bf9d49026959018db3579139c973527e15e336aae52e8976,5a00e1cf63720e1a9eeb8ced1c8fa127,
 data/recording-minutes/select-board/2023-07-11-u059EVnf7AA.json,24197,916279f54aa87550e6b07209124d130115486bfec0587403f82e1d90ad9ce588,84be0ce431efce5bb9494c370260b4f2,
-data/recording-minutes/select-board/2023-07-18--hPdZR7d9L8.json,11559,5c15e524cbf1fc6c1a009137152b596c6e759948238427429dfc2d5df09168e3,858afcb0e0a1c4f102ef07d9129dec88,
+data/recording-minutes/select-board/2023-07-18--hPdZR7d9L8.json,19787,34ea9610597f0e3416d73633fe5bdd21f58883a5c45d987f9b05c56b3438d018,9fa2332cd622c6188130506d9a062573,
 data/recording-minutes/select-board/2023-08-01-qPxVBuo3FcA.json,22214,36fdcc2df6d9642499cd3fc352e15c7b58bf394f11e258b672b6eb5fa6aba0bf,dd7ac1f1f5ad982322d42d13e36843e4,
 data/recording-minutes/select-board/2023-08-08-RwebqGJe-0E.json,12726,b499d4f9194ad5dae765e0c3cbd27f8d70cfb8dd1b63816029a355cbfb2db714,8de0f4b7a9a8f97c0bb4a06983af3f5b,
 data/recording-minutes/select-board/2023-08-15-aea1hlFZGoY.json,21349,089051043204152ae87ab7421856bc3db8338066f74efe89d692f54c4d873a92,8d37850130a315d934d432590e0f3da5,
@@ -7104,6 +7128,7 @@ data/recording-minutes/select-board/2026-09-01-kG4KE9VgCdY.json,19289,a7d892b54d
 data/recording-minutes/select-board/2026-09-15-kig-BTakGjQ.json,33836,fec646708994e3864d67b5387025e027efd93530df88cb87097040c5a54fdabc,8506748542b6d902c0684ee13f3d0144,
 data/recording-minutes/select-board/2026-09-29-Pn0PV7qGjp4.json,14875,af0d044c1191771a5b2ed48f1c512e1ec843729082b4c2d7c81ee5f427910385,5466f7c630685cd809e704e84a3cee76,
 data/recording-minutes/select-board/2026-10-06-PaRmbzsOMks.json,15199,1739974a39f08798c22f58853da991307c309bd04ae3d5723e8f6f4a6f62ea00,e89d76d506cd25c1818ebd3221cd798a,
+data/recording-minutes/sewer-commission/2023-06-27-TbLdFYlFDtQ.json,24458,82155c6789093bc749ea56d1fca7c76c6d9eaac6beb16fcb3fe4e9f82ae46d14,6f941c958e5b3f8202f813a3534496f9,
 data/recording-minutes/sewer-commission/2023-07-11-DpwS4V18xTQ.json,22407,417a6cd257d243b4afec2f0b789129ccb1d56ecb58828abd25beca2c84c15130,4b36aa45f5e258ea04be44473920368e,
 data/recording-minutes/sewer-commission/2023-08-29-E5ydLKP97q8.json,22540,2d47800b1448630fc8137fa959bf176064a32ee3a7e50eab221a66691e24f08b,5f5f857b3d23d251f69ad17bb39163e1,
 data/recording-minutes/sewer-commission/2023-09-12-8SaTfs25A6E.json,18494,7c5cd7cfdbb4aa58c99c3748289f7c6f9f11603b0e094fee7a4d56f5ae68511e,8475849bfafa8da95aece5d3f772f33f,
@@ -7240,6 +7265,7 @@ data/recording-minutes/trust-fund-commission/2026-07-24-UvO292Q4t1E.json,21174,1
 data/recording-minutes/trust-fund-commission/2026-08-27-lO_rw3eY5D8.json,14535,939cfb8e6ee502e62b9db959a3222ad371a180bf49d1df0a23a6bbe3ba632193,ac4a9400fcc622996c22f4ca93cdba6c,
 data/recording-minutes/trust-fund-commission/2026-09-10-7wCeOTdyvdc.json,13090,756a972436190cc089782ff769b38a8fb614badaa219572fba51f8a7d16c7f1d,829b39ba661b9fbd6d60b5932e904dcd,
 data/recording-minutes/trust-fund-commission/2026-09-24-kNEMWtxiZOM.json,13866,378bc6b1c1dd87d1cacbbf483e80be3a9a9f8233995bff376f69c58307c8f656,0edf73369100373ab220b85adea37f4e,
+data/recording-minutes/zoning-board-of-appeals/2023-06-28-8woW4wx2mYY.json,6423,e84726b0ec8af9964c1ddb1c01650b5f8aa4fcabeb2cb56f1e4bb85a75533934,3af4238385576f0437c17d933825c8e3,
 data/recording-minutes/zoning-board-of-appeals/2023-07-12-NCBV_dIV2O4.json,6914,22161a941a250d97b9d3505894a0961c37b840a0e99101ca87e5380fc7ed06a8,801081e9f8e6bb78882463e692d5a036,
 data/recording-minutes/zoning-board-of-appeals/2023-07-26-lZFr0fz3gVw.json,7336,0a84c25f87ae03800c1c1c21fe3b1df24c23547fbe95b6d5fb05aa4eb098f1d4,a388efe87a625b494a188a78a6c2ccdd,
 data/recording-minutes/zoning-board-of-appeals/2023-08-23-Wc348zQY9iA.json,6551,fc2f2c1a988ff36185f40558617c5b9d73632ed0045e7a7162ffdc58d9f9c573,76959d89ebdc80102b5fb9a22ec4b924,
@@ -7284,7 +7310,7 @@ data/recording-minutes/zoning-board-of-appeals/2026-06-24-SkWt4MhuLnA.json,8512,
 data/recording-minutes/zoning-board-of-appeals/2026-07-08-WVuUsWyBmqA.json,9109,7ef1d1a23cb0f26eee8b9d5d240da883e2d80c7720b886f1c1640424aeae2d96,8f9df38746176d549a0e14098bfb5091,
 data/recording-minutes/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8.json,5557,6cd6bc56fa53c76a2cf272f4ac6f8e8067bfb31cad806dfc66761e85ccd8a13f,507156c0a14730fec2eea6a490de02d6,
 data/recording-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro.json,8794,80ee740a9b0e71feb9506525fa4ef6cbfcb489cb8420db6df2b580ac7a1ae6bb,1fea89033f1d6c77016632b66f13497d,
-data/redactions.csv,53246,90d9dd23bf359646499fd5e08896d2b49d84b481be5aa70d35177cbf46ee6b6d,812085d133fc04b594b9ead66b8efa15,
+data/redactions.csv,59248,456cd73d52f3ee5bd3b44cbf245cd20adf26823c093d20f5cd760b1e91c396a5,8cfa8b2d30847cf0120dc125fd6fa29c,
 data/refresh-runs.csv,46653,a411dec2c6aef8fd9898917186af7674d8b74ce6a30616753af6c5fcc2a2b38a,469207b6dc990ecc68ff083b70640f8a,
 data/report-anomalies.csv,160255,852376eaeed5dc275a5a5adf98e2e522ef501b2a35bf12caa99d886047f0c890,d891eae49fb87ffd662bc87b962c4c14,
 data/report-appropriations-supplement-refused.csv,1311,51fd78feffcff505b27837b9a114a78f5d15f6296860ac831db8b717dec6470f,76931b2449c55792dff0f0031b9041fa,
@@ -7515,14 +7541,14 @@ data/school-budget-comparison-fy25.csv,19548,08a693c6cf222746f88fb6d418a940db345
 data/school-enrollment-lps-staff.csv,143,6fabc553948b6ce9bd633387583a007754aedddce8429e9cb29dfb0dadff4bda,c4e0d9cfc8daca830872282e99cd9f99,
 data/school-field-maintenance.csv,1492,9a8ec032b9900eda2bb1de81c30ebef6610be17c617f4c0d1392fdfb405197bb,c1e7d13e2b17a6f1077bedeb42a9ca80,
 data/school-insurance-tiers.csv,1092,3ff0149c8692e2f80daa38e9412081cc5016985162b48edd2dbf124ec88dfdcf,d245dd0b1de123b95375d12b1c5f72a5,
-data/school-job-posting-changes.csv,3326,7bb8f6aac6febcccbd3814cee2116f99c13705af4c4fc252112b3c4d5706ad32,c041bc4143239ada47c8dad6d58f253e,
-data/school-job-postings.csv,7975,13aa0afa815ef7b7691981ea2ef136abd86b3b9c58248163940a99fece3eea7a,1d8c3ae127a72f45cfe6fdbf31a3d5d7,
+data/school-job-posting-changes.csv,5094,a2d246ef92eb5e63d557ea01f43f9c61fd05be97ebf67b5fbd46fec58f041fbc,b5eefb7edb0be8ec3d2b53bed23f2644,
+data/school-job-postings.csv,8419,898bd00d94ba2b36aad5f52668484f5310d70e4fdc79319906fc9ddbb4e94c20,64bcd9553514c1178e0378229170ac74,
 data/school-special-revenue-fy26-q3.csv,3693,5a686aa6fc916185c31ebcc83fa4b4f0d290df6a215350736a3397e08b6bdd9f,c52c1833e6ad40ec450a3d017631b664,
 data/school-staff-directory.csv,395753,90bb59520601fb7e6d3278554dee01c994d41db6dcdbce2565f1487ca3214ff9,870854070568f8be8fe737f081a8de63,
 data/school-staff-fte.csv,57609,8e5695d4ac6cbacd5296c6e222c5472e94e8a2f412cb9a04fd05805699c187ab,6a3011fab041ac86808e5e0de1e5bdec,
 data/school-staff-shared.csv,3976,62e0e606fa2b52d716a07aa57e3bb315ddb11aea2eb17aea4f4e6c191864bb25,2133f7f203a353e77d2ccba6130f70dc,
 data/school-target-fy26.csv,488642,1b66bac0ce4c44ea007e9ba36b9b9889eb1eb3085856374cabecf719b1b6a158,963b0fe7a27c0c54d68afa9fef418299,
-data/search-affinity.csv,168807,5533a637814a6cea47e6a5f857840fcee00b82395c7c8e45b263f04ac9853153,ca171dac773c77d4a7d93ea1fb8e8440,
+data/search-affinity.csv,182805,cd0e058d4b60089fe4cd8bd590e42c26dd3aa5b97c829a104d47af5c993b06f7,6db7ca543091a38eb9a410a8428df763,
 data/search-vocabulary.csv,3312,9d4a1f21a2f8006e4291117fbadf4a2a6cf399a69284e18718d60f39aeb301cd,a2aa1859e34827b31a5b3e6ccd572474,
 data/ski-coop.csv,982,c59a9c794d5dd4c4d19ddc9fbc983597cf130b6bde34db675dc12781b4cfa210,72351b8ad246577b8f31dfb355e21879,
 data/special-revenue-funds.csv,1443483,85de67e5a9518f6219e6486dc7a599e512c3ccc4420b669cc355c3dcb278bcbc,20c57d437adafa815062fa70025f4e4a,
@@ -7587,7 +7613,7 @@ data/warrant-article-tracking-diff.csv,2307,a441fbd409a6b72431650bf3dbe7b26a1b74
 data/warrant-article-tracking-fincom.csv,32398,42e320a9774093ab23d553dccf11ad997fcbc4124aec03d8c468d7f7a8dbccc6,29977ccb4b821324f4380baf8a75bd58,
 data/warrant-articles-fincom.csv,131956,7f951d7425f78215df5e2f8c22910724495820633b87bfa49cb9804413856dea,3a4daf0fbd3bc2a5f1a87f2779d47957,
 data/warrant-vs-votes-fincom.csv,50285,2b3863b6b76850f3f85d9555458ac79b934631f0aa07be4e78d45b9db4676063,6d623edeb2399e2a4c35856048eae3c1,
-data/working-copies.csv,1250,c1f721be57cd25cc9505d84376a13dd377d1a5b0177278631e40c31e2fb598fa,ef6371c38d066d5e8537a81a771c3820,
+data/working-copies.csv,2298,187e751945e9e1a61b05468fda127c54545e230bd3c2be56674ff3e352897d83,2346b7c285cfd124742ea602b8953f15,
 data/youtube-boards.csv,9625,f651d488d1c7b9b8f409e946e942533c2ae26f03c64f1f0bde0a23dc91d8e40f,ba753aebbc799bb8efe21279dc1bb814,
 data/youtube-classification-overrides.csv,1049,b37eb340f2f1739b52c7b2d3f98418401cc9454a482d26ba9b8aaa48d177b68b,ac1f92afa7468fdf61090f6de5f94135,
 data/youtube-no-captions.csv,24816,cfef04bccaf53e9a7d1a55be1ed8f9e0d851c8dc62e127d69277cffc86e0f2cb,af4f841fe039a650de6ef547a9032391,
@@ -10277,10 +10303,10 @@ data/youtube-transcripts/zoning-board-of-appeals/2026-07-08-WVuUsWyBmqA.json,595
 data/youtube-transcripts/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8.json,5822,532246d781215acef5223e22995c7f3b4b8357ff3afdc5c4f2029e9ba4a38d0e,d3eb44f837c9c72e070f8e5d45717555,
 data/youtube-transcripts/zoning-board-of-appeals/2026-08-26-62qwUKHEBro.json,223249,9b47991b92c7d581f1e53f82caad30aa58e2712257982c99c7226e7fe83839e6,5a001f5544b246582cafef2f79ee940c,
 data/youtube-video-boards.csv,455985,1a5f3362423a32cb74d8b6fa58dee3384f36828e1122538fe07f7ca4c9636684,468de181256216269efcbb3571df8b84,
-data/youtube-video-classification.csv,1048502,c8954c49ee14eeef6ef38eee63f49473e95123cc38aa68bd25513ff700eceb0d,8ff7b51bfb56e28b5d57d5bcd4c7f537,
-data/youtube-videos.csv,592588,d35ff5b1f8e5ed3c9f350d270fd9467c45eaf876621db8072d8bab05a1405d10,b1b23d5fc9839f404de2fbc4dc733beb,
-data/youtube-watch-events.csv,5209,7148a319fe4b45498abb5acf180ca844f8ee527af71cf3e84a64bbb8583826b4,89313e369d1c30c09c03d09075ee09e7,
-district-budget/docs/2026-09-14/school-committee-page.html,158675,875e2df0fed384dcd8803ebf3499971adc73903f4c85ba7ce8761607c3a3cf88,4901cf17697d443f979301a9bf108341,https://www.lunenburgschools.net/school-committee-1
+data/youtube-video-classification.csv,1048772,2ac042b01219b3ae694c7f563c5071ae7e93df8595188d32ed9261c662ef350c,6eb7ca9c022537922d6aaacbf26ad1e8,
+data/youtube-videos.csv,592730,f6a9d257c6a79bd60546f3772b56f7222bb291ddc7948b9587b55830b83015a9,47fed5631d449368f81a82e76191a258,
+data/youtube-watch-events.csv,5339,5d97f9f6e6a07b4d98b3af5229221c41f259fac50344f2d8c03084556201e930,ae472db2c8e282e1d5aa408469ef8f86,
+district-budget/docs/2026-09-14/school-committee-page.html,158675,875e2df0fed384dcd8803ebf3499971adc73903f4c85ba7ce8761607c3a3cf88,4901cf17697d443f979301a9bf108341,
 district-budget/docs/3-12-25-town-manager-39-s-budget.pdf,244571,ee64717d3a8c454fa7aa5199f7e44694bbeb599a2aed1bf659a818ad7f9b5739,dc5774b4fbc883c25c93ee17419317e3,https://drive.google.com/file/d/1-VhsxRDJaU2Hq_NWkbDBWy4Gxy6zq8hu/view?usp=drive_link
 district-budget/docs/additional-town-revenue-spending-plan.pdf,131840,80c6ad5647c4731de7983dc411e4f10e3e75d09e3b62eea244895aa9c9dd58ab,cc81d846667db4382313f90b712f3e06,https://drive.google.com/file/d/1siNOaM58z3fUYGOK2F5OWiEzl9wgBfNM/view?usp=drive_link
 district-budget/docs/athletic-program-costs-by-sport.pdf,54143,218d17e1f192de3248888d09ba9f70928cf692b8947e8939385f8bf362d302f4,54ccfed6b09644029f83c17e60ce0020,https://drive.google.com/file/d/1KNp5CK-CELcwLjPDQPpgk1aagkSHC-Du/view?usp=drive_link
@@ -10379,7 +10405,9 @@ district-budget/docs/personnel/job-postings/2026-10-09/job-5822498.json,4367,7c5
 district-budget/docs/personnel/job-postings/2026-10-09/job-5822506.json,3661,e23e4bba960725eb139956edb56a7e19dda42da37497b04f098c2dd444c9dcac,cccd2458eea52a5edb27f5a3e241465e,https://api.schoolspring.com/api/Jobs/5822506?domainName=www.schoolspring.com
 district-budget/docs/personnel/job-postings/2026-10-09/job-5954290.json,10292,8502e2fb627e4e33a6ce0bebdba28f0db9e11b1c8e1f826d1e201b7b966ecf4d,e9ed3258a6eaae854e827cf4d7dbc0e2,https://api.schoolspring.com/api/Jobs/5954290?domainName=www.schoolspring.com
 district-budget/docs/personnel/job-postings/2026-10-09/listing.json,3041,d3f0329d1108c47cad1c6c6d4159f12bfaf8860586402f032256503c0f484a89,3d4f108dd6950092e64024fc3d5204fc,https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false
-district-budget/docs/personnel/job-postings/checked.csv,531,8dc97a6307517f0f5b723366b98cbf8553569009fbad147c6d66826901a45277,2608b76d4ece4f9f2c5bf4f57e1cef42,
+district-budget/docs/personnel/job-postings/2026-10-10/job-5822489.json,3485,5a808204da3f7921072da130f1d9fa7a0b3b155a67028f0bbac1629a7705a48e,be64d8615e71a20fc4ce9092aaa44f77,https://api.schoolspring.com/api/Jobs/5822489?domainName=www.schoolspring.com
+district-budget/docs/personnel/job-postings/2026-10-10/listing.json,3041,d3f0329d1108c47cad1c6c6d4159f12bfaf8860586402f032256503c0f484a89,3d4f108dd6950092e64024fc3d5204fc,https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false
+district-budget/docs/personnel/job-postings/checked.csv,621,db5b9570a688b38a6295238580f4c35a1e58a1b72aa67c99f15dfc0e6a0d2cce,e6aa64135e6bfa987cf935eb8c5c5637,
 district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv,23831,efecd99e86b06693c1fcf38bca68adaf4bf36d1010baf2f614869b544824fad9,51ae22a713574e4dd716bafe00c0df67,https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pub?gid=1144400950&single=true&output=csv
 district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html,48482,66e04c02b9feb4ff1137426dc001267d041fb87235695f383554f9f2def8f93e,be422f217639e879584a0599a66aa3c4,https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml
 district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff.html,118162,39e8dd0bb7e3536a8f82bde44ce2e35fad621f85dfdde2f1a8df7bb26e177161,86f5738730b3138da69dd0a645222dec,https://www.lunenburgschools.net/contact
@@ -11107,7 +11135,7 @@ district-budget/docs/tm-budget-updated-3-12-25.pdf,650518,a3f42d69989d08ac48def8
 district-budget/docs/town-meeting-budget-presentation.pdf,548492,d7137d9f545a54727bc5992dcdebd16a54789e74638966fc0603d5f33c06a379,efdef37693577d8cf01474941bcf1656,https://drive.google.com/file/d/1ciEXB4jOhnQ4pIpMwHtQnKm0b-AeM9Ay/view?usp=sharing
 district-budget/docs/town-meeting-fy20-budget-documents.pdf,9867652,9c9323c53a74638ef322151ebba9c4848a0de933fe79077f1310fbbd1a33291c,6b1bff29f792985553d210ac425228bd,https://drive.google.com/file/d/1CLVdMtkGvtvtHoNJPBL6YEulsEh4OhHO/view?usp=sharing
 district-budget/docs/updated-town-manager-39-s-budget-sheets-2-66-2-5-25.xlsx,25580,b80f9cf981cf5a029e6b4c0fb71935fdb603109af2f6c69ae6abd83400ee32a5,cef763909ccf8574a9af1476c84ecf66,https://docs.google.com/spreadsheets/d/1-51ZwN7Bb9qrnM3bPrMMdXveWfrxJq5c/edit?usp=drive_link&amp;ouid=115866774118931112779&amp;rtpof=true&amp;sd=true
-district-budget/index.csv,354414,c04ad450429d655de4dc6ead70e0200a92a453be8d5852a8dd72041d71b4e4a7,60bf0d619eb3e7b21f9d2c033f752535,
+district-budget/index.csv,356090,dca08800290cd7f2816a869e6df727ea54acc041e7c735230cb82b2e2487e52d,6f86b3508b4df98d87bea3a498d2ce3f,
 district-budget/text/3-12-25-town-manager-39-s-budget.txt,24799,453d3a6cc65edfa77005dd020cff50b9bde57b623e80456e7794299c50434019,ef8fd38d25bce6a12b93245391ebb8e1,https://drive.google.com/file/d/1-VhsxRDJaU2Hq_NWkbDBWy4Gxy6zq8hu/view?usp=drive_link
 district-budget/text/additional-town-revenue-spending-plan.txt,12742,b9ec342843a7de9756c25afc3684a4770c993a2c77dcdb73a63387b2f1e990f7,2ff074afb12fdfeefa116de6c3b5bd1e,https://drive.google.com/file/d/1siNOaM58z3fUYGOK2F5OWiEzl9wgBfNM/view?usp=drive_link
 district-budget/text/athletic-program-costs-by-sport.txt,1411,80fe82a9c4e5b543a1d75db011948c5ea4b220bf4a938ebfed0e95a755e26bd9,ba3741650d419c54667a2be4eb8605e5,https://drive.google.com/file/d/1KNp5CK-CELcwLjPDQPpgk1aagkSHC-Du/view?usp=drive_link
@@ -36362,7 +36390,7 @@ state-dls/health-insurance-expenditures-2026-09-26-92a72d5d93a4.xlsx,84916,92a72
 state-dls/health-insurance-expenditures.xlsx,84916,14332a009235249b41c2fb08ecd3461e44a2fd95f190ba1eeea11174e922c285,2c4d32739e0a90947ec7a2b9d106a247,https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.HealthInsExpenditures&rdReportFormat=NativeExcel&rdExportTableID=ctHealthExp&rdExportFilename=health_insurance&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 state-dls/health-self-insured-funds-2026-09-26-386b09a3b235.xlsx,344220,386b09a3b23502d463cf5323a2cc191d55c563f812d470bc63e273828b40d966,10a1d9c6e94c1242db02691c0c7afbd5,https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.Self_InsuredFunds&rdReportFormat=NativeExcel&rdExportTableID=TblPt6_HealthFund&rdExportFilename=self_insured&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 state-dls/health-self-insured-funds.xlsx,344220,fadf6102b91bd29c84e37aecd2214a9a8e6193069daa3ee8317cbbbf0da81282,059457a361291e6b085f669cbebab895,https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.Self_InsuredFunds&rdReportFormat=NativeExcel&rdExportTableID=TblPt6_HealthFund&rdExportFilename=self_insured&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
-state-dls/index.csv,7207,fdea3913aa30cc078f0f9c3e6078919945b5a53f88796393d0594595684ad188,2725cff026ab9dd41ef1d1c594f13bf5,
+state-dls/index.csv,10345,91b4a656232c17ea4e3324fe69ec9cef76d1fac9201b89f98c8b4fa2faef9849,6827bf3269d759308584892b1270beee,
 state-dls/new_growth-2026-09-26-3b8980b0efc3.xlsx,704508,3b8980b0efc38de6e3659bd1aaa83c986485b130666e6dad4eeba9001987923c,7fa347593b4d3f553561eb998d185c31,https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=NewGrowth.NewGrowth_dash_v2_test&rdReportFormat=NativeExcel&rdExportTableID=tblNewGrowth&rdExportFilename=new_growth&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 state-dls/new_growth.xlsx,38614,41bbb8deb4cda42475bf94022f67709815bff90f2129bdfb72cf91a8284f5f74,a8cc41fb060a47f192bb0d531de5ea91,https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=NewGrowth.NewGrowth_dash_v2_test&rdReportFormat=NativeExcel&rdExportTableID=tblNewGrowth&rdExportFilename=new_growth&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 state-law/2026-10-08/11.06.2024-oml-executive-session-checklist-2024.pdf,128752,e1ff4ec2e90cb4028fc73822bcf43318f53ab4553f5bce9f97cf0eb76cfc9fdf,c5aaae000ff38fe673de318d99afbcb4,https://www.mass.gov/doc/11062024-oml-executive-session-checklist/download

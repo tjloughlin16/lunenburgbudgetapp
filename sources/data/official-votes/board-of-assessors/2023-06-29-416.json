@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-06-29",
  "docid": "416",
@@ -12,6 +12,172 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formal votes recorded. Minutes describe discussion of appointing Rena Swezey as interim principal assessor and the charter process governing such appointment, but do not record a motion or a vote being taken. Public comment and charter discussion are documented, but the appointment appears to have proceeded under the charter's automatic confirmation provision rather than by recorded board vote. Final page is corrupted OCR text and unreadable.",
- "cost_usd": 0.0683521
+ "note": "Text is macOS Vision OCR, not a clean transcript: page 1 starts mid-line (\"Channel.\"), and page 3 is unreadable (\"Hic licchis au vulicu al v•te l lvi.\"), so any content after page 2 is missing. No motions, votes, roll-call results, agenda, or adjournment appear in the readable text; votes list is empty. The charter 15-day rejection mechanism is described but no board vote is recorded. No dollar figures appear, so budget_items and transfers are empty. Quotes are copied from the OCR text and may carry OCR errors. Nate Cramer and CJ Carroll are named but do not take part, so they are not listed as attendees.",
+ "cost_usd": 0.014840250000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish,"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: administrative assessing assistant sheila craigen, board member kevin fish,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Eric Pettus",
+   "role": "43 Hemlock Terrace",
+   "status": "present",
+   "quote": "eric pettus - 43 hemlock terrace- thanks the board for all the work to fix the mess."
+  },
+  {
+   "name": "Jonah Potter Kiola",
+   "role": "132 Hemlock Drive",
+   "status": "present",
+   "quote": "jonah potter kiola - 132 hemlock drive- thanks the board for their efforts regarding the"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Island Road",
+   "status": "present",
+   "quote": "dave mcdonald - island road - explains that the public is outraged and believes that the town"
+  },
+  {
+   "name": "Carl Derner",
+   "role": "291 Sunset Lane",
+   "status": "present",
+   "quote": "carl derner - 291 sunset lane - questions why public comment takes place prior to the meeting"
+  },
+  {
+   "name": "Sue Joel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sue joel suggests that an outside contractor should have been hired as the town had previously done."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux has submitted a notice of appointment to ratify rena swezey as interim principal assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "An additional meeting will be held to include the other members who were on Zoom to give comments.",
+   "quote": "an additional meeting will be held to include the other members who were on zoom to give comments."
+  },
+  {
+   "decision": "Heather Lemieux agreed there is a verbal agreement for Nate Cramer to come and assist the town (as reported in discussion; no vote recorded).",
+   "quote": "nate cramer agreeing to come and assist the town and heather lemieux agrees that there is a verbal agreement."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Unknown resident",
+   "stated_role": "not stated",
+   "topic": "procedural changes and data review before DOR",
+   "quote": "unknown resident- inquiries about what procedural changes are being made to make sure this"
+  },
+  {
+   "speaker": "Eric Pettus",
+   "stated_role": "43 Hemlock Terrace",
+   "topic": "thanks board; questions hiring; land card acreage error",
+   "quote": "eric pettus - 43 hemlock terrace- thanks the board for all the work to fix the mess."
+  },
+  {
+   "speaker": "Jonah Potter Kiola",
+   "stated_role": "132 Hemlock Drive",
+   "topic": "abatement thanks; opposes Rena Swezey as interim assessor",
+   "quote": "jonah potter kiola - 132 hemlock drive- thanks the board for their efforts regarding the"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "Island Road",
+   "topic": "board should be reset; opposes Rena Swezey",
+   "quote": "dave mcdonald - island road - explains that the public is outraged and believes that the town"
+  },
+  {
+   "speaker": "Carl Derner",
+   "stated_role": "291 Sunset Lane",
+   "topic": "public comment placement; principal assessor vs outside contractor",
+   "quote": "carl derner - 291 sunset lane - questions why public comment takes place prior to the meeting"
+  },
+  {
+   "speaker": "Sue Joel",
+   "stated_role": "not stated",
+   "topic": "outside contractor should have been hired",
+   "quote": "sue joel suggests that an outside contractor should have been hired as the town had previously done."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "comments taken; no action recorded",
+   "quote": "unknown resident- inquiries about what procedural changes are being made to make sure this",
+   "tags": [
+    "public comment",
+    "procedure",
+    "assessing"
+   ]
+  },
+  {
+   "topic": "Appointment of Interim Principal Assessor",
+   "resolution": "discussed; ratification not voted in the minutes",
+   "quote": "heather lemieux has submitted a notice of appointment to ratify rena swezey as interim principal assessor.",
+   "tags": [
+    "appointment",
+    "principal assessor",
+    "charter",
+    "staffing shortage"
+   ]
+  },
+  {
+   "topic": "Zoom access for public participation",
+   "resolution": "additional meeting to be held for Zoom participants",
+   "quote": "john rabbitt - informs residents that zoom was turned off at the start of the meeting.",
+   "tags": [
+    "zoom",
+    "public access",
+    "meeting notice"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "interim principal assessor",
+  "appointment",
+  "town charter",
+  "public comment",
+  "Zoom access",
+  "staffing shortage",
+  "abatement",
+  "assessing data",
+  "Groton"
+ ],
+ "dropped_unquoted_by_field": {}
 }

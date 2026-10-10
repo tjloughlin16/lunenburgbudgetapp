@@ -216,6 +216,17 @@ measured conclusions has to stay visibly a scenario however short it gets: a rea
 takes a modelled figure as something that happened has been misled, which is worse than
 any sentence cut to make room.
 
+### A conclusion is a COMPARISON, or it is inventory
+
+TJ, 10 October 2026: *"the summary at the top feels like a nothing-burger... we need to find
+the contentious points and surface them, not just show blank metrics."* The transportation
+page led with *athletic buses were 6.4% of spending* while its own ledger showed the special
+education bus line closing FY2026 $67,556 past its budget, uncovered. **Before drafting any
+card, run `notes/process/AUDIT-PASS.md`** -- eight comparisons, and a card leads only if a
+member of the deciding board would dispute it or have to answer for it. Rule 8 still governs
+how it is WRITTEN: two measured things side by side, a question for the budget, never a
+charge.
+
 ### Three years is a trend HERE, and that is not a general claim
 
 The default instinct — "three years is too short to plot" — is wrong in this town, and

@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**610 of 1975 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4929 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **1365 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4313 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -47,10 +47,11 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY23 | 45 |
 | FY24 | 89 |
 | FY25 | 119 |
-| FY26 | 157 |
-| FY27 | 216 |
-| FY28 | 6 |
+| FY26 | 161 |
+| FY27 | 218 |
+| FY28 | 10 |
 | FY29 | 3 |
+| FY30 | 1 |
 | FY32 | 1 |
 | FY33 | 7 |
 | FY34 | 11 |
@@ -109,6 +110,11 @@ Listed so this view cannot look more complete than it is.
 - `analyses/charts/towns-like-us-heat.svg` — Every Massachusetts town, shaded by one measure
 - `analyses/charts/towns-like-us-map.svg` — Who Lunenburg is compared with, and where they are
 - `analyses/charts/towns-like-us-positions.svg` — Where Lunenburg sits, measure by measure
+- `analyses/charts/transportation-athletics.svg` — Chart: athletic transportation, the general fund line and the full cost
+- `analyses/charts/transportation-contract.svg` — Chart: the regular-route line against the Dee Bus contract price
+- `analyses/charts/transportation-schools-athletics.svg` — Chart: school transportation by kind, budget beside spending, by year
+- `analyses/charts/transportation-sped.svg` — Chart: special education transportation, voted and spent, and the circuit breaker
+- `analyses/charts/transportation-sports.svg` — Chart: athletic transportation by sport, FY2024 and FY2025
 - `analyses/connecting-the-budget.md` — What connects the school budget to the Town’s books, and what does not
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/department-budgets.md` — The town departments and the schools, budget by budget, FY2010–FY2025
@@ -144,8 +150,10 @@ Listed so this view cannot look more complete than it is.
 - `analyses/town-budgets.md` — Budgets across town: every department, and which ones move the total
 - `analyses/town-personnel.md` — Who runs the town: every elected seat, appointed seat and officer
 - `analyses/towns-like-us.md` — How Lunenburg compares: neighbours, peers, look-alikes and destinations
+- `analyses/transportation.md` — School transportation: what the buses cost, and who pays
 - `analyses/what-you-can-ask.md` — What you can ask this archive, in plain English
 - `budget-workbooks/PROVENANCE-finance-committee.md` — How the Finance Committee’s files reached us
+- `budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md` — How these documents reached us, and what is not known
 - `budget-workbooks/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
 - `budget-workbooks/finance-committee/data-and-trends/lps-staff-2019-2025.xlsx` — LPS Staff 2019-2025 — Finance Committee, Data and Trends
 - `budget-workbooks/finance-committee/dls-levylimitsprimer.pdf` — DLS levylimitsprimer — Finance Committee
@@ -158,9 +166,20 @@ Listed so this view cannot look more complete than it is.
 - `budget-workbooks/finance-committee/staffing-plans/additional-officers-10-year-plan-1-21-2020.xlsx` — Additional Officers 10 Year Plan 1-21-2020 — Finance Committee, Staffing Plans
 - `budget-workbooks/finance-committee/staffing-plans/fd-staffing-plan-fy-21-update.xlsx` — FD Staffing Plan- FY'21 update — Finance Committee, Staffing Plans
 - `budget-workbooks/finance-committee/town-revenue-and-proposition-2-half-updated-20240125.pptx` — Town Revenue & Proposition 2 ½ - Updated 20240125 — Finance Committee
+- `budget-workbooks/forwarded-anonymously-2026-10-09/advisory-on-special-education-stabilization-fund-circuit-breaker-school-finance.pdf` — Advisory on Special Education Stabilization Fund - Circuit Breaker - School Finance — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/brooks-house-memo-10-7-26.docx` — Brooks House Memo 10-7-26 — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/brooks-house-redevelopment-summary.pdf` — Brooks House redevelopment summary — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/excessmaterialsoctober7.pdf` — ExcessMaterialsOctober7 — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/fair-share-earmarks-memo.pdf` — Fair_Share_Earmarks_Memo — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/fc1192-fair-share-special-support-memo.pdf` — FC1192_Fair_Share_Special_Support_Memo — forwarded anonymously, 9 October 2026
+- `budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf` — Line Item Transfers 10-7-26 — forwarded anonymously, 9 October 2026
 - `contracts/CONTRACTS.md` — Research notes: union contracts
+- `contracts/PROVENANCE-records-request-2026-10-09.md` — How the paraprofessional and Dee Bus documents reached us
+- `contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx` — Draft individual Wage Act waiver, paraprofessionals, September 2026
+- `contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx` — Draft agreement with the paraprofessional union on wage payments, September 2026
 - `contracts/pdf/custodial-2023-2026.pdf` — Custodial agreement, 2023–2026
 - `contracts/pdf/custodial-moa-2026.pdf` — Custodial memorandum of agreement, 2026
+- `contracts/pdf/dee-bus-first-amendment-2025.pdf` — First amendment to the Dee Bus agreement, May 2025
 - `contracts/pdf/dese-administrator-contract.pdf` — Administrator contract template
 - `contracts/pdf/dese-superintendent-contract.pdf` — Superintendent contract template
 - `contracts/pdf/dese-teacher-contract.pdf` — Lunenburg Education Association agreement
@@ -421,6 +440,7 @@ Listed so this view cannot look more complete than it is.
 - `data/warrant-article-tracking-fincom.csv` — The Finance Committee’s warrant article tracking sheets
 - `data/warrant-articles-fincom.csv` — Town Meeting warrant articles and amounts, FY2024–FY2027 drafts
 - `data/warrant-vs-votes-fincom.csv` — Draft warrant amounts against recorded Town Meeting votes
+- `data/working-copies.csv` — Files kept under a fixed name and overwritten when their publisher changes them
 - `data/youtube-boards.csv` — The bodies we named, and why we say two names are one board
 - `data/youtube-classification-overrides.csv` — Human corrections to the video classification
 - `data/youtube-no-captions.csv` — Recordings whose captions are switched off
@@ -441,22 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
 - `district-budget/docs/budget-sandbox-embed.html` — District budget page: Budget Proposal & FAQ
 - `district-budget/docs/budget-sandbox-site.html` — Budget Proposal & FAQ site (Google Sites page, as fetched)
-- `district-budget/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
-- `district-budget/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
-- `district-budget/docs/lhs-athletics-faq.pdf` — High school athletics fee schedule
-- `district-budget/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822484.json` — Job postings: SchoolSpring posting 5822484, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822489.json` — Job postings: SchoolSpring posting 5822489, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822498.json` — Job postings: SchoolSpring posting 5822498, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822506.json` — Job postings: SchoolSpring posting 5822506, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5880726.json` — Job postings: SchoolSpring posting 5880726, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5882191.json` — Job postings: SchoolSpring posting 5882191, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5899812.json` — Job postings: SchoolSpring posting 5899812, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5914236.json` — Job postings: SchoolSpring posting 5914236, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5915634.json` — Job postings: SchoolSpring posting 5915634, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5917125.json` — Job postings: SchoolSpring posting 5917125, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5926148.json` — Job postings: SchoolSpring posting 5926148, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5928041.json` — Job postings: SchoolSpring posting 5928041, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5931978.json` — Job postings: SchoolSpring posting 5931978, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5937399.json` — Job postings: SchoolSpring posting 5937399, detail, fetched 2026-10-05
-- `district-budget/docs/personnel/job-postings/2026-10-05/job-5947400.json` — Job postings: SchoolSpring posting 5947400, detail, fetched 2026-10-05

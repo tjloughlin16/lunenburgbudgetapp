@@ -54,6 +54,15 @@ useful one.
 $1,683,534 against $1,201,434 is a completely different year from a quiet one, and only
 the gross figures show it.
 
+## 2a. Audit it before you summarise it — `notes/process/AUDIT-PASS.md`
+
+Eight comparisons — budget against spent, spent against revised, payer against payer, what
+was said against what the ledger shows, the contract against the model, source against
+source, net against gross, next budget against last actual. **A summary card leads only if
+somebody who decides the line would dispute it or have to answer for it.** A share or a
+total with nothing set against it is an inventory, and it is why summaries read as
+nothing-burgers.
+
 ## 3. Write both halves of every section
 
 Each section is written twice, under these headings:

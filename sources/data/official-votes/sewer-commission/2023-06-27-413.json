@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-06-27",
  "docid": "413",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 6/13/23",
+   "motion": "To accept the minutes of 6/13/23.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: mike n. second: brett r. to accept the minutes of 6/13/23. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye."
   },
   {
-   "motion": "Accept the encumbrance of $51,592.50",
+   "motion": "To accept the encumbrance of $51,592.50.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -28,7 +28,7 @@
    "quote": "motion: dave m. second: mike n. to accept the encumbrance of $51,592.50. roll call vote: brett-aye, dave-aye, mike n.-aye and john-aye."
   },
   {
-   "motion": "Adjourn the meeting at 7:19 pm",
+   "motion": "To adjourn at 7:19pm.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -37,6 +37,413 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0864431
+ "note": "Digital text, three pages, no scan; nothing unreadable. Votes are roll calls printed by name, all four aye. Three votes recorded (two approvals and adjournment), none failed. Several \"PUBLIC COMMENT\" entries are by Commissioners, not members of the public, and the minutes give only first names there. Items discussed without a motion (ARPA input, grease traps, IFB as one contract, manhole follow-up) are recorded as decisions or discussion, not votes. Figures are as printed; the minutes do not reconcile the $51,592.50 total against the individual items. Names of people not present (Julie, Adam, Al Packard, Joe Progin, Chad Empey, Jack Welsh, Jim Stickler) are not recorded as attendees. The minutes say the meeting was held via Zoom but do not state each attendee's mode.",
+ "cost_usd": 0.0233012,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Guest (interested in joining the Commission)",
+   "status": "present",
+   "quote": "john welcomed mike mackin who is interested in joining the commission and will be on board after the commission meets with the select board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners to send their input on the modified ARPA request to Paula as soon as possible, so that she and John can compose the final letter to the Select Board.",
+   "quote": "the commissioners will send input to paula asap."
+  },
+  {
+   "decision": "The Commission agreed the draft ARPA request looks good.",
+   "quote": "the commissioners agreed that the request looks good."
+  },
+  {
+   "decision": "The modified ARPA request is to go to the Select Board for its 7/11 meeting.",
+   "quote": "paula stated the modified request needs to go to the select board for their 7/11 meeting."
+  },
+  {
+   "decision": "The Commission agreed to post a joint meeting on 7/11 with the Select Board for Mike Mackin’s appointment.",
+   "quote": "paula asked about posting a joint meeting on 7/11 with the select board for mike mackin's appointment and the commission agreed."
+  },
+  {
+   "decision": "The Commission agreed it must make sure the grease-trap overflow does not happen again; further investigation to follow, with the grease-trap records being pulled.",
+   "quote": "the commission discussed and agreed they need to make sure it does not happen again."
+  },
+  {
+   "decision": "Paula is to discuss the manhole issue with Adam at the next Town Counsel hours; Bill is to talk to Joe Progin about investigating other manholes (recommended, not voted).",
+   "quote": "paula will discuss the issue with adam during the next town counsel hours and she recommended having bill talk to joe progin to do more investigating into other manholes."
+  },
+  {
+   "decision": "John suggested re-issuing the IFB as one contract; Paula said the quantities were already modified and the IFB was ready to send out. No vote recorded.",
+   "quote": "john suggested putting the ifb out again as one contract and paula stated bill has already modified the quantities, so they are ready to send it out now."
+  },
+  {
+   "decision": "Paula has tentatively scheduled Wright Pierce to attend the 7/25 meeting to discuss their proposal for redirecting flow; Paula is preparing the 7/25 agenda early.",
+   "quote": "has tentatively scheduled wright pierce to attend that meeting to discuss their proposal for redirecting flow."
+  },
+  {
+   "decision": "Pond View update added to the 7/25 agenda at Brett’s request.",
+   "quote": "brett had asked for an update on pond view and has added it to 7/25 agenda."
+  },
+  {
+   "decision": "John will pass on information about the Mass. Ave. backup as it becomes available.",
+   "quote": "john will pass on information as available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 User Charges received to date",
+   "what_was_recorded": "User Charges received as of 6/27 were well below the forecast.",
+   "quote": "as of 6/27, they have $945,366.77 in user charges, which is much less than the forecasted $1.1 million.",
+   "figures_as_printed": [
+    "$945,366.77",
+    "$1.1 million"
+   ]
+  },
+  {
+   "topic": "FY23 User Charges year-end estimate",
+   "what_was_recorded": "Business Manager's conservative year-end User Charges estimate, with the year ending positive through transfers and encumbrances.",
+   "quote": "paula estimated conservatively there will be $975k in user charges but will end the year positive due to moving money from other line items and encumbrances.",
+   "figures_as_printed": [
+    "$975K"
+   ]
+  },
+  {
+   "topic": "FY23 surplus",
+   "what_was_recorded": "Projected surplus, which may rise if the Revenue figure increases.",
+   "quote": "there will be a surplus of about $20k which may increase if the revenue figure increases.",
+   "figures_as_printed": [
+    "$20K"
+   ]
+  },
+  {
+   "topic": "Retained Earnings contribution",
+   "what_was_recorded": "The usual contribution to Retained Earnings will not be made this year.",
+   "quote": "they will not have the money they usually put into retained earnings, due to the personnel shift and upgrades done.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Contract spending thresholds",
+   "what_was_recorded": "Under current rules, contracts above $10K need three bids and above $50K must go out to bid; the Business Manager suggested spending more on jetting, manholes and I/I.",
+   "quote": "right now, they are limited to spending less than $10k on contracts. if more than $10k, they need 3 bids and if more than $50k, it will need to go out for bid.",
+   "figures_as_printed": [
+    "$10K",
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Encumbrances total",
+   "what_was_recorded": "Total FY23 encumbrances reported at just over $50K.",
+   "quote": "paula reported there is just over $50k in encumbrances.",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Manhole cover repairs, Mass. Ave.",
+   "what_was_recorded": "Martinez Road Construction repaired manhole covers at a cost reported as just under $10K; no bill yet received.",
+   "quote": "martinez road construction repaired 16 manhole covers on mass. ave. for just under $10k but she has not received a bill yet.",
+   "figures_as_printed": [
+    "just under $10K"
+   ]
+  },
+  {
+   "topic": "Clean Basins jetting",
+   "what_was_recorded": "Clean Basins to jet lines for a quoted price.",
+   "quote": "clean basins will be jetting lines soon for $9,800.",
+   "figures_as_printed": [
+    "$9,800"
+   ]
+  },
+  {
+   "topic": "Wright Pierce flow-redirection proposal",
+   "what_was_recorded": "Proposal for evaluating feasibility of redirecting flows.",
+   "quote": "paula has a proposal of $9,100 from wright pierce for evaluation of feasibility of redirecting flows.",
+   "figures_as_printed": [
+    "$9,100"
+   ]
+  },
+  {
+   "topic": "Manhole covers ordered",
+   "what_was_recorded": "Additional manhole covers ordered at the stated cost.",
+   "quote": "she also ordered more manhole covers for $3,624 and she has estimated bills for telephone and utilities.",
+   "figures_as_printed": [
+    "$3,624"
+   ]
+  },
+  {
+   "topic": "Waste disposal and asphalt, PJ Keatings",
+   "what_was_recorded": "Cost of waste disposal and asphalt from PJ Keatings.",
+   "quote": "the cost of waste disposal and asphalt from pj keatings is $1,195.",
+   "figures_as_printed": [
+    "$1,195"
+   ]
+  },
+  {
+   "topic": "Emergency jetting, Mass Ave",
+   "what_was_recorded": "Estimated emergency jetting cost, plus police details, which are not priced in the minutes.",
+   "quote": "the emergency jetting on mass ave is estimated at $2,800 plus the money for police details.",
+   "figures_as_printed": [
+    "$2,800"
+   ]
+  },
+  {
+   "topic": "PFAS and flood plain costs (ARPA context)",
+   "what_was_recorded": "Chair estimated the PFAS issue could cost $200-300K and is an unfunded mandate; Commissioners noted costs would fall on the sewer budget.",
+   "quote": "john replied that the pfas issue is a much greater unknown than the flood plain issue, which could be $200-300k.",
+   "figures_as_printed": [
+    "$200-300K"
+   ]
+  },
+  {
+   "topic": "Generator cost share of system maintenance bid",
+   "what_was_recorded": "Generator cost is a share of the Chad Empey bid, reported as 11% overall.",
+   "quote": "bill said he favors 1 contract and noted on chad empey's bid, the generator cost was only 11% overall.",
+   "figures_as_printed": [
+    "11%"
+   ]
+  },
+  {
+   "topic": "System maintenance bid (Chad Empey)",
+   "what_was_recorded": "The single bid received was significantly above estimate; the IFB will be re-bid with revised quantities.",
+   "quote": "system maintenance - paula stated they received 1 bid from chad empey and it was significantly more than they anticipated.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY23 encumbrances: funds to come from various budget line items and carry over from this year's budget to next year.",
+   "outcome": "passed 4-0 (encumbrance accepted)",
+   "amount_as_printed": "$51,592.50",
+   "quote": "she noted the funds will be coming from various line items in the budget for a total of $51,592.50 and will carry over from this year's budget to next."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Thanks to Mike Mackin and John; joining paperwork",
+   "quote": "public comment- dave thanked mike mackin for joining the commission - just a matter of paperwork to make it official."
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "Commendation of DPW pothole repairs on Mulpus Road",
+   "quote": "brett said he was very impressed with the dpw's repairs on the potholes on mulpus road, using the grinding machine."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Closing public comment: holiday wishes",
+   "quote": "public comment - dave wished everyone a safe holiday."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, roll call and Pledge",
+   "resolution": "no action",
+   "quote": "john opened the meeting at 6:04pm. and did a roll call of attendees.",
+   "tags": [
+    "call to order",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; commendation of DPW",
+   "quote": "brett said he was very impressed with the dpw's repairs on the potholes on mulpus road, using the grinding machine.",
+   "tags": [
+    "public comment",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Announcements: sewage backup on Mass. Ave.",
+   "resolution": "informational; investigation continuing",
+   "quote": "john stated they received an email from paula regarding some sewage backup in a mass. ave. residence, near the center of town.",
+   "tags": [
+    "sewer backup",
+    "grease blockage",
+    "Mass. Ave.",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/13/23",
+   "resolution": "approved 4-0",
+   "quote": "motion: mike n. second: brett r. to accept the minutes of 6/13/23. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ARPA funding request",
+   "resolution": "Commissioners to send input; modified request to Select Board 7/11",
+   "quote": "paula stated the modified request needs to go to the select board for their 7/11 meeting.",
+   "tags": [
+    "ARPA",
+    "Select Board",
+    "NPDES",
+    "PFAS",
+    "Covid"
+   ]
+  },
+  {
+   "topic": "FY23 encumbrances",
+   "resolution": "accepted, passed 4-0",
+   "quote": "motion: dave m. second: mike n. to accept the encumbrance of $51,592.50. roll call vote: brett-aye, dave-aye, mike n.-aye and john-aye.",
+   "tags": [
+    "encumbrances",
+    "budget",
+    "FY23"
+   ]
+  },
+  {
+   "topic": "Action items: grease traps and backup follow-up",
+   "resolution": "further investigation; no vote",
+   "quote": "john suggested future discussion on grease traps in light of the recent overflow issue.",
+   "tags": [
+    "grease traps",
+    "sewer backup",
+    "after-hours response"
+   ]
+  },
+  {
+   "topic": "Business Manager report: system maintenance and upgrades",
+   "resolution": "informational",
+   "quote": "update on system maintenance & upgrades - paula reported they recently replaced pumps at meadowwoods, francis and mass ave.",
+   "tags": [
+    "pumps",
+    "cranes",
+    "upgrades"
+   ]
+  },
+  {
+   "topic": "FY23 budget and User Charges",
+   "resolution": "informational",
+   "quote": "fy23 budget-paula sent out the updated budget but it is difficult to find out where they are because the accounting department is severely understaffed.",
+   "tags": [
+    "FY23 budget",
+    "user charges",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "System maintenance contract (IFB)",
+   "resolution": "to be re-bid as one contract; no vote",
+   "quote": "system maintenance - paula stated they received 1 bid from chad empey and it was significantly more than they anticipated.",
+   "tags": [
+    "contract",
+    "bid",
+    "IFB",
+    "generator"
+   ]
+  },
+  {
+   "topic": "July 25 and August 8 attendance and agenda",
+   "resolution": "agenda items set; no vote",
+   "quote": "july 25th & august 8th attendance- paula noted she will be able to attend the 7/25 meeting via zoom but will not be able to attend the 8/8 meeting.",
+   "tags": [
+    "agenda",
+    "Wright Pierce",
+    "Pond View"
+   ]
+  },
+  {
+   "topic": "Manhole covers and concrete failure",
+   "resolution": "Town Counsel and DPW follow-up; no vote",
+   "quote": "john noted in regard to system maintenance, the manholes that were fixed a few years ago used a cement/concrete which degraded into powder.",
+   "tags": [
+    "manholes",
+    "Mass DOT",
+    "concrete"
+   ]
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "no action",
+   "quote": "public comment - dave wished everyone a safe holiday.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "july 11, 2023 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:19pm, passed 4-0",
+   "quote": "motion: mike n. second: brett r. to adjourn at 7:19pm roll call vote: mike n.-aye, dave-aye, brett-aye and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "sewer backup",
+  "grease traps",
+  "ARPA",
+  "encumbrances",
+  "FY23 budget",
+  "user charges",
+  "system maintenance bid",
+  "manholes",
+  "PFAS",
+  "NPDES",
+  "Wright Pierce",
+  "appointment",
+  "Select Board",
+  "DPW",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2023-06-29",
  "docid": "415",
@@ -12,49 +12,228 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of May 18, 2023",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Deborah A.H. Christen",
+   "motion": "Approve the minutes of May 18, 2023.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Chair",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tenant board member made a motion to approve the minutes; chair seconded, with all in favor."
+   "quote": "with no discussion, tenant board member made a motion to approve the minutes; chair seconded, with all in favor."
   },
   {
-   "motion": "approve the May 2023 financials as presented",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Nicole Waters",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "tenant board member made a motion to approve the minutes; chair seconded, with all in favor. 3. executive director report a. welcome",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "approve the Accounting Services Contract",
-   "moved_by": "Nicole Waters",
-   "seconded_by": "Wayne Caron",
+   "motion": "Approve the May 2023 financials as presented.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Board Member Nicole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by board member nicole to approve the accounting services contract ; tenant board member seconded the motion, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "as presented; board member nicole seconded, with all in favor."
   },
   {
-   "motion": "authorize acceptance and approval of the low bidder for installation and federal pacific panel replacement",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Nicole Waters",
+   "motion": "Approve the Accounting Services Contract (Resolution 2023-8).",
+   "moved_by": "Board Member Nicole",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by tenant board member to approve the authorizing the acceptance and approval of the low bidder for installation and federal pacific panel replacement; board member nicole seconded the motion, with all in favor."
+   "quote": "motion made by board member nicole"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Nicole Waters",
+   "motion": "Authorize acceptance and approval of the low bidder, Laracy Electrical Contractors, for the Installation and Federal Pacific Panel Replacement (Resolution 2023-9).",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Board Member Nicole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the authorizing the acceptance and approval of the low bidder for installation"
+  },
+  {
+   "motion": "Adjourn the meeting at 2:37 p.m.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Board Member Nicole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tenant board member made a motion to adjourn the meeting at 2:37 p.m. board member nicole seconded and with all in favor the meeting was adjourned."
+   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting at"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in minutes. Member identities mapped from attendees section: Wayne Caron is Tenant Board Member, Deborah A.H. Christen is Chair, Nicole Waters is Board Member.",
- "cost_usd": 0.1309225
+ "note": "Text extraction is clean for most pages but page 2 is letter-spaced in places and some figures carry stray spaces (e.g. '202 3'); quotes were copied as they stand with line breaks collapsed. Motions name members by role ('Tenant Board Member', 'Board Member Nicole', 'Chair'); the minutes do not state whether the Tenant Board Member is Wayne Caron, so no mover is linked to a name beyond what is printed. Resolution 2023-8 and 2023-9 outcomes are recorded as 'all in favor' in the minutes, so 'passed' is the outcome printed in substance; no tally count is printed. The minutes print no dollar figures at all, so budget_items carry no figures. The public commenter is not named.",
+ "cost_usd": 0.021993600000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, chair"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "as linda and dale were absent"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "wayne caron-present, and nicole waters-present"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Treasurer",
+   "status": "absent",
+   "quote": "dale proulx, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "jade tavares, administrative assistance/special projects"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The election of officers was deferred to the next board meeting because the Vice Chair and Treasurer were absent.",
+   "quote": "stated the election will be held off until the next board meeting, as linda and dale were absent"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "May 2023 financials",
+   "what_was_recorded": "The board reviewed the May 2023 financials and approved them; no figures are printed in the minutes.",
+   "quote": "the financials of may, 2023 were reviewed."
+  },
+  {
+   "topic": "Accounting Services Contract",
+   "what_was_recorded": "The board approved the Accounting Services Contract under Resolution 2023-8; no amount is printed.",
+   "quote": "to approve the accounting services contract"
+  },
+  {
+   "topic": "Low bid award for intercom and Federal Pacific panel replacement",
+   "what_was_recorded": "Only one bid was received; Resolution 2023-9 was presented to award the contract to Laracy Electrical Contractors; no amount is printed.",
+   "quote": "resolution 2023-9 was presented to the board members to award the contract to laracy electrical contractors."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tenant",
+   "topic": "Calling into meetings; two designated parking spots",
+   "quote": "tenant expressed gratitude for being able to now call into the board meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opportunity for Public Comments",
+   "resolution": "discussion, no action",
+   "tags": [
+    "public comment",
+    "parking",
+    "remote access"
+   ],
+   "quote": "tenant expressed gratitude for being able to now call into the board meeting"
+  },
+  {
+   "topic": "Call to order and minutes",
+   "resolution": "quorum declared; minutes of May 18, 2023 approved",
+   "tags": [
+    "quorum",
+    "minutes"
+   ],
+   "quote": "the chair declared a quorum present and opened"
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received; officer election deferred",
+   "tags": [
+    "officers",
+    "conference",
+    "DHCD"
+   ],
+   "quote": "stated the election will be held off until the next board meeting, as linda and dale were absent"
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "May 2023 financials approved",
+   "tags": [
+    "financials"
+   ],
+   "quote": "tenant board member made a motion to approve the may"
+  },
+  {
+   "topic": "Administration: modernization, work orders, state-aided housing report",
+   "resolution": "received, no action",
+   "tags": [
+    "modernization",
+    "work orders",
+    "occupancy",
+    "waiting list"
+   ],
+   "quote": "resolution 2023-9 was presented to the board members to award the contract"
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "tags": [],
+   "quote": "6. unfinished business"
+  },
+  {
+   "topic": "New Business: Resolutions 2023-8 and 2023-9",
+   "resolution": "both approved",
+   "tags": [
+    "contracts",
+    "accounting",
+    "electrical",
+    "bids"
+   ],
+   "quote": "to approve the accounting services contract"
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "received",
+   "tags": [
+    "DHCD",
+    "income limits",
+    "mediation"
+   ],
+   "quote": "dhcd phn 2023-7 revised income limits for admission"
+  },
+  {
+   "topic": "Motion to Adjourn",
+   "resolution": "adjourned at 2:37 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting at"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "public housing",
+  "modernization",
+  "work orders",
+  "occupancy and waiting list",
+  "officer election",
+  "contracts",
+  "financials",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }
