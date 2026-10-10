@@ -10,6 +10,7 @@ const SHORT_HEADING = /^(the short version|what this establishes|in plain terms|
 import { analysisIdFromPath } from '../routes'
 import { Body, Conclusions, Grain, H2, MoreReports, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
 import type { Conclusion } from '../components/report'
+import { BriefTop, type Brief } from '../components/brief'
 
 /** THE MARKDOWN ANALYSES, IN THE SAME SHELL AS EVERY OTHER REPORT.
  *
@@ -75,6 +76,10 @@ type Payload = {
   stats?: { value: string; label: string; tone?: string }[]
   grain?: string
   conclusions?: Conclusion[]
+  /** The citizen-first top (components/brief.tsx), a prototype of the format proposed in
+   *  notes/process/REPORT-FORMAT.md. A payload that carries it gets that layout; every other
+   *  report renders exactly as before. */
+  brief?: Brief
 }
 
 export function Analysis() {
@@ -204,6 +209,9 @@ export function Analysis() {
   const ownsShort = !!(model?.stats?.length || model?.conclusions?.length)
   const moreRows = model?.conclusions ? splitConclusions(model.conclusions, undefined)[1] : []
 
+  const brief = model?.brief
+  const deeper = contents.filter(h => !SHORT_HEADING.test(h.text))
+
   const title = meta?.title
     ?? (rendered?.headings[0]?.depth === 1 ? rendered.headings[0].text : id)
 
@@ -216,6 +224,37 @@ export function Analysis() {
       loading={!src && !err}
       sourceUrl={`/docs/analyses/${id}.md`}
     >
+      {/* THE BRIEF LAYOUT, a prototype (notes/process/REPORT-FORMAT.md). Depth runs top to
+          bottom: what is going on and a verdict per question, each with the sentence to
+          repeat and -- one click down -- what it rests on; what to ask for; then the
+          document itself, evidence first, inventory after, sources last. No stat row, no
+          cards, no fold: the top is complete on its own, and everything under it is one
+          scroll or one link away for the reader who doubts it. */}
+      {brief ? (
+        <>
+          <BriefTop brief={brief} />
+          {heroFigures.length ? (
+            <div className="report-body mt-12 [&>figure]:max-w-none">{heroFigures}</div>
+          ) : null}
+          {deeper.length ? (
+            <nav aria-label="Further down this page" className="no-print mt-10 max-w-3xl">
+              <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+                style={{ color: 'var(--text-muted)' }}>Further down this page</p>
+              <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
+                {deeper.map((h: Heading) => (
+                  <li key={h.id}>
+                    <a href={`#${h.id}`} className="text-[13.5px] leading-snug underline"
+                      style={{ color: 'var(--series-cost)' }}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
+          <div className="report-body mt-6">
+            {(split ? split.rest : body ?? []).filter(n => !isHero(n))}
+          </div>
+        </>
+      ) : (<>
       {/* The contents list draws only where there is no fold; the fold carries its own. */}
       {contents.length > 2 && !split && (
         <nav aria-label="Contents" className="no-print card p-4 mt-8 max-w-2xl">
@@ -325,6 +364,7 @@ export function Analysis() {
       ) : (
         <div className="report-body mt-6">{body?.filter(n => !isHero(n))}</div>
       )}
+      </>)}
 
       {/* AFTER the document, not above it. Rule 7a: the page leads with the thing, and
           the note about how to read it comes after -- except where the caveat changes
