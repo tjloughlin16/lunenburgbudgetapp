@@ -81,6 +81,54 @@ def _token():
     return json.loads(raw)['claudeAiOauth']['accessToken']
 
 
+RENEW_EVERY_S = 1800     # at most one token renewal attempt per half hour
+_RENEWED = os.path.expanduser('~/.claude/usage-api-renewed')
+
+
+def _token_expires():
+    """When the keychain's access token expires (epoch), or None if it cannot be read."""
+    import json
+    import subprocess
+    try:
+        raw = subprocess.run(['security', 'find-generic-password', '-s', 'Claude Code-credentials', '-w'],
+                             capture_output=True, text=True, timeout=10).stdout.strip()
+        exp = json.loads(raw)['claudeAiOauth'].get('expiresAt')
+        return exp / 1000 if exp else None
+    except Exception:                                   # noqa: BLE001
+        return None
+
+
+def _renew_token(now):
+    """THE TOKEN EXPIRES WHEN NOTHING USES IT. The access token lasts about eight hours and only
+    a Claude Code process renews it. Overnight, a run that is only WAITING makes no model calls,
+    so the token lapses and every reading after that fails until morning -- the likeliest reading
+    of 9-10 October 2026, when readings stopped after 06:20 and the token in the keychain at 08:20
+    had been issued at 07:42, the moment a meeting first called the model.
+
+    So before reading, an expired token is renewed: `claude auth status` first, and if that does
+    not move the expiry, one minimal haiku call -- the same route a meeting takes. Measured
+    10 October 2026 at $0.0054 run from a neutral directory (never the repo, whose CLAUDE.md
+    would ride along in the prompt): about 0.001% of the week, and a renewal lasts ~8 hours. At most once per RENEW_EVERY_S, and every attempt is written
+    to ERRORS as kind `renew`, so the log says whether renewing is happening at all."""
+    import subprocess
+    import tempfile
+    if os.path.exists(_RENEWED) and now - os.path.getmtime(_RENEWED) < RENEW_EVERY_S:
+        return
+    open(_RENEWED, 'w').write(str(now))
+    how = 'failed'
+    for cmd in (['claude', 'auth', 'status'],
+                ['claude', '-p', '--model', 'haiku', '--tools', '', 'Reply with the single word: ok']):
+        try:
+            subprocess.run(cmd, capture_output=True, text=True, timeout=120, cwd=tempfile.gettempdir())
+        except Exception:                               # noqa: BLE001
+            continue
+        exp = _token_expires()
+        if exp and exp > now + 300:
+            how = cmd[1]
+            break
+    _record_error(RuntimeError('token expired; renewal by `%s`' % how), kind='renew')
+
+
 def fetch(force=False):
     """Ask the server for the bars and append a row to LOG. At most once per FETCH_EVERY_S
     (the last row's age decides). Returns True on a fresh reading. Any failure -- an expired
@@ -99,6 +147,9 @@ def fetch(force=False):
         return False                     # refused recently: ask nothing until the back-off ends
     if os.path.exists(ERRORS) and now - os.path.getmtime(ERRORS) < FETCH_EVERY_S:
         return False                     # failed recently: a retry waits as long as a poll would
+    exp = _token_expires()
+    if exp and exp < now + 60:
+        _renew_token(now)
     try:
         req = urllib.request.Request(URL, headers={
             'Authorization': 'Bearer ' + _token(), 'anthropic-beta': 'oauth-2025-04-20',
@@ -128,7 +179,7 @@ def fetch(force=False):
         return False
 
 
-def _record_error(e):
+def _record_error(e, kind=None):
     """One row per failed fetch: when, what kind, and a short reason. Never the token -- only the
     exception's class, its HTTP status if it had one, and the first 120 characters of its text."""
     try:
@@ -138,7 +189,7 @@ def _record_error(e):
                 fh.write('at,kind,status,reason\n')
             reason = str(e).replace('\n', ' ').replace(',', ';')[:120]
             fh.write('%s,%s,%s,%s\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                                         type(e).__name__, getattr(e, 'code', '') or '', reason))
+                                         kind or type(e).__name__, getattr(e, 'code', '') or '', reason))
     except OSError:
         pass
 
