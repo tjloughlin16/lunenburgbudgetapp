@@ -444,9 +444,158 @@ def post_rows(entry):
     return out
 
 
+# ------------------------------------------------ job postings: the town's and the district's
+#
+# TJ, 10 October 2026: *"I'm looking for a job posting for the school and can't find it."*
+# The postings were already fetched daily and catalogued in `district-budget/index.csv`,
+# which put them inside the `source` corpus's contract -- and out of its reach: they are
+# JSON, their catalogue rows carry no `text`, and their labels say `SchoolSpring posting
+# 5822484` rather than the job. So a search for `paraprofessional` found nothing.
+#
+# One row per POSTING, read from the history `extract_school_job_postings.py` already
+# builds, with the description from the posting's latest snapshot. The date is the
+# publisher's own `posted_date`, so newest-first means newest posted. A posting no longer
+# listed stays findable and says so in its title: it left the listing, which is not a hire.
+
+JOBS_CSV = os.path.join(ROOT, 'sources', 'data', 'school-job-postings.csv')
+TOWN_JOBS_CSV = os.path.join(ROOT, 'sources', 'data', 'town-job-postings.csv')
+# Since 10 October 2026 the town's postings are read too (fetch_town_job_postings.py), and
+# both employers share one page, /jobs, which is where a posting no longer listed is cited.
+JOBS_PAGE = SITE + '/jobs'
+
+
+def job_files():
+    return [{'file': f, 'file_key': rel(f), 'corpus': 'job'}
+            for f in (JOBS_CSV, TOWN_JOBS_CSV) if os.path.exists(f)]
+
+
+def _job(employer, employer_name, r, posting_id, title, posted, closes, last_seen, parts):
+    listed = r['status'] != 'removed'
+    body = re.sub(r'\s+', ' ', ' '.join(x for x in parts + [
+        'job posting', 'job opening', 'vacancy', employer_name,
+        'posted ' + posted, 'still listed' if listed else 'no longer listed'] if x)).strip()
+    return ({
+        'corpus': 'job',
+        'doc_key': 'job:%s:%s' % (employer, posting_id),
+        'file_key': rel(TOWN_JOBS_CSV if employer == 'town' else JOBS_CSV),
+        'title': title if listed else 'No longer listed: ' + title,
+        'board': employer_name,
+        'board_slug': None,
+        'date': posted,
+        'kind': (closes or 'open') if listed else 'last seen %s' % last_seen,
+        # An open posting cites the place to apply; one that has come down cites its line
+        # in the history on /jobs, because the employer's page for it may not answer now.
+        'cite_url': r['url'] if listed else '%s#job-%s-%s-down' % (JOBS_PAGE, employer, posting_id),
+        'source_url': None,
+        'start_s': None, 'seg_starts': None,
+        'chars': len(body),
+    }, body)
+
+
+def job_rows(entry):
+    import extract_school_job_postings as J
+    out = []
+    town = entry['file'] == TOWN_JOBS_CSV
+    for r in csv.DictReader(open(entry['file'], encoding='utf-8')):
+        if town:
+            row, body = _job('town', 'Town of Lunenburg', r, r['posting_id'], r['title'],
+                             r['posted_date'], r['closing_as_printed'].lower(), r['last_seen'],
+                             [r['title'], r['department_as_printed'], r['category']])
+            row['source_url'] = '%s/docs/%s' % (SITE, r['listing_file'][len('sources/'):])
+        else:
+            info = {}
+            if r.get('detail_file'):
+                p = os.path.join(ROOT, r['detail_file'])
+                if os.path.exists(p):
+                    info = json.load(open(p, encoding='utf-8'))['value'].get('jobInfo') or {}
+            row, body = _job('schools', r['employer_as_printed'] or 'Lunenburg Public Schools', r,
+                             r['posting_id'], r['title'], r['posted_date'],
+                             'open until %s' % r['closing_date'] if r['closing_date'] else '', r['last_seen'],
+                             [r['title'], r['locations'], r['category'], r['job_type'],
+                              'positions: ' + r['positions'] if r['positions'] else '',
+                              'closes ' + r['closing_date'] if r['closing_date'] else '',
+                              J.text_of(info.get('jobDescription')), J.text_of(info.get('requirements'))])
+            if r.get('detail_file'):
+                row['source_url'] = '%s/docs/%s' % (SITE, r['detail_file'][len('sources/'):])
+        out.append((row, body))
+    return out
+
+
+# -------------------------------------------------------------------------------- people
+#
+# Same request: *"We need to add a PEOPLE and JOBS lookup in search."* Everybody the org
+# charts hold -- the annual reports' rosters, FY2011 onward, and both staff directories --
+# is already public on /org-charts, one unit and one year at a time. Nothing let a reader
+# start from a NAME.
+#
+# One row per name as printed (whitespace collapsed, case ignored), listing every role,
+# body and year it appears under. The SAME NAME IS NOT PROVEN TO BE ONE PERSON -- two
+# Jennifers in two decades are one row here -- and the card says so. The link goes to the
+# most recent chart the name is on. No email, no extension: the search carries what the
+# chart shows and nothing more.
+
+ORG_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
+
+
+def person_files():
+    if not os.path.exists(ORG_JSON):
+        return []
+    return [{'file': ORG_JSON, 'file_key': rel(ORG_JSON), 'corpus': 'person'}]
+
+
+def _fy_span(fys):
+    fys = sorted(set(fys))
+    return ('FY%s' % fys[0]) if len(fys) == 1 else ('FY%s–FY%s' % (fys[0], fys[-1]))
+
+
+def person_rows(entry):
+    from urllib.parse import urlencode
+    rows = json.load(open(entry['file'], encoding='utf-8'))['rows']
+    people = {}
+    for r in rows:
+        name = ' '.join((r.get('person') or '').split())
+        if r.get('status') != 'filled' or not name:
+            continue
+        people.setdefault(name.lower(), {'names': [], 'rows': []})
+        people[name.lower()]['names'].append(name)
+        people[name.lower()]['rows'].append(r)
+    out = []
+    for key, p in sorted(people.items()):
+        name = max(set(p['names']), key=p['names'].count)
+        held = {}
+        for r in p['rows']:
+            where = r['unit'] + (' — ' + r['subunit'] if r.get('subunit') else '')
+            held.setdefault((r['role'] or 'listed', where), []).append(r['fy'])
+        # Most recent first, so the snippet a reader sees is what they hold now.
+        lines = sorted(held.items(), key=lambda kv: max(kv[1]), reverse=True)
+        latest = max(p['rows'], key=lambda r: (r['fy'], -int(r.get('tier') or 0)))
+        body = name + '. ' + ' '.join('%s, %s, %s.' % (role, where, _fy_span(fys))
+                                      for (role, where), fys in lines)
+        out.append(({
+            'corpus': 'person',
+            'doc_key': 'person:' + re.sub(r'[^a-z0-9]+', '-', key).strip('-'),
+            'file_key': entry['file_key'],
+            'title': name,
+            'board': latest['unit'], 'board_slug': None,
+            'date': '',
+            'kind': '%s, FY%s' % (latest['role'] or 'listed', latest['fy']),
+            'cite_url': '%s/org-charts?%s' % (SITE, urlencode({'unit': latest['unit'], 'fy': latest['fy']})),
+            'source_url': None,
+            'start_s': None, 'seg_starts': None,
+            'chars': len(body),
+        }, body))
+    return out
+
+
 # ------------------------------------------------------------------------------- the build
 
+# EVERY CORPUS, IN ONE PLACE. sync_search_d1.py reads this rather than keeping its own
+# list: a corpus added here and not there is indexed locally and never counted remotely.
+CORPORA = ('post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript')
+
 READERS = {
+    'job': job_rows,
+    'person': person_rows,
     'minutes': minutes_rows,
     'transcript': transcript_rows,
     'source': source_rows,
@@ -459,7 +608,7 @@ READERS = {
 def wanted():
     out = {}
     for e in (minutes_files() + M.transcript_files() + source_files()
-              + page_files() + post_files() + recorded_files()):
+              + page_files() + post_files() + recorded_files() + job_files() + person_files()):
         e['sha256'] = M.sha256_of(e['file'])
         if e.get('key_stem'):
             # The KEY is part of what the indexer makes, so it is part of the fingerprint:

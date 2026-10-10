@@ -42,7 +42,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'growth'
   | 'homestudents'
   | 'boardcompare' | 'youthsports'
-  | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts'
+  | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts' | 'jobs'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -349,6 +349,8 @@ export const SLUG: Record<Tab, string> = {
   parks: 'parks-and-recreation',
   accounts: 'accounts',
   orgcharts: 'org-charts',
+  // The town's and the school district's open jobs, and every one we saw come and go.
+  jobs: 'jobs',
   departments: 'departments',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
@@ -481,6 +483,8 @@ export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   // Every department, board and school as a chart of who held which role. A reference
   // you look somebody up in, not a page you read.
   'orgcharts',
+  // Open jobs and their history: looked up, not read.
+  'jobs',
 ])
 
 /** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
@@ -825,6 +829,7 @@ export const LABEL: Record<Tab, string> = {
   parks: 'Parks & Recreation — the department, its fund, its sales, its grounds',
   accounts: 'Every account, once',
   orgcharts: 'Town-wide org charts',
+  jobs: 'Job postings — the town and the schools',
   departments: 'The departments',
   healthlever: 'Health insurance',
   freecashlever: 'Free cash — can it fill the gap?',

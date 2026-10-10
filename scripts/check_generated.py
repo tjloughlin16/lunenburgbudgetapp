@@ -54,6 +54,10 @@ CHECKS = [
     ('check_refresh_safe.py', ['--selftest']),
     ('test_refresh_git.py', []),
     ('build_readme.py', ['--check']),
+    # JOB POSTINGS: the town's snapshots tie to their catalogue and to the page's own printed
+    # count, and /jobs, the town's two tables and every board's link reproduce from them.
+    ('fetch_town_job_postings.py', ['--check']),
+    ('build_job_postings.py', ['--check']),
     # The printable decisions/questions sheet is EXTRACTED from the notes rather
     # than typed, so this fails the moment a decision is taken and struck from
     # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is

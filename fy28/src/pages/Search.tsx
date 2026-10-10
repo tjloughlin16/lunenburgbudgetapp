@@ -136,7 +136,7 @@ type Hit = {
   matched: string[]
   via?: 'text' | 'topic'
 }
-type Corpus = 'post' | 'page' | 'recorded' | 'source' | 'minutes' | 'transcript'
+type Corpus = 'post' | 'page' | 'job' | 'person' | 'recorded' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
@@ -156,7 +156,11 @@ type Vocab = Record<string, { try: string[]; note: string }>
 /** DOCUMENTS AND MINUTES FIRST, RECORDINGS LAST. The order this page renders in, and the
  *  reason it changed: `post, page, recorded, source, minutes, transcript` put the
  *  archive's own documents FOURTH, under three sections of things we wrote. */
-const ORDER: Corpus[] = ['source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+const ORDER: Corpus[] = ['job', 'person', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+/* JOBS AND PEOPLE GO FIRST, and that is not a ranking of importance. Both are small and
+ * exact: a name or a job title matches a handful of rows that ARE the answer, where the same
+ * word in the minutes is a mention. TJ, 10 October 2026: *"I'm looking for a job posting for
+ * the school and can't find it."* It was in the archive, fetched daily, and unreachable. */
 
 /** THE KINDS A RESIDENT THINKS IN -- four of them, named in their words and not ours.
  *
@@ -187,9 +191,16 @@ const GROUPS: { id: string; label: string; short: string; hint: string; corpora:
     hint: 'Machine captions of the videos, and our own notes written from them. A finding aid, never the record.' },
   { id: 'site', label: 'On this site', short: 'This site', corpora: ['page', 'post'],
     hint: 'The analyses, the board and meeting pages, and the posts written by this project.' },
+  { id: 'jobs', label: 'Job postings', short: 'Jobs', corpora: ['job'],
+    hint: 'Openings at the town (its own job board) and the school district (SchoolSpring), checked daily since October 2026. Ones no longer listed stay here and say so. All of them: /jobs.' },
+  { id: 'people', label: 'People', short: 'People', corpora: ['person'],
+    hint: 'Every name on the org charts — the town reports’ rosters since FY2011 and today’s staff directories — with each role and year. One name is not proven to be one person.' },
 ]
 /** The kinds a board or a date can narrow at all: only these rows carry either. */
 const DATED: Corpus[] = ['minutes', 'recorded', 'transcript']
+/** The kinds that can be put in date order. One more than DATED: a job posting carries the
+ *  date it was posted, but no board, so it can be sorted and cannot be narrowed by board. */
+const SORTABLE: Corpus[] = [...DATED, 'job']
 
 /** THE TWO ORDERS, AND THE DEFAULT. `newest` first because that is what a reader asks of a
  *  record; `relevance` kept because it is the only order the undated nine tenths of the
@@ -240,6 +251,8 @@ const groupOf = (c: Corpus) => GROUPS.find(g => g.corpora.includes(c))!
 const NAME: Record<Corpus, string> = {
   post: 'Blog posts',
   page: 'Pages on this site',
+  job: 'Job postings — the town and the schools',
+  person: 'People on the org charts',
   recorded: 'What was said — our notes from the recordings',
   source: 'Documents in the archive',
   minutes: 'Minutes and agendas the town published',
@@ -248,6 +261,8 @@ const NAME: Record<Corpus, string> = {
 const UNIT: Record<Corpus, [string, string]> = {
   post: ['post', 'posts'],
   page: ['page', 'pages'],
+  job: ['posting', 'postings'],
+  person: ['name', 'names'],
   recorded: ['meeting', 'meetings'],
   source: ['document page', 'document pages'],
   minutes: ['document', 'documents'],
@@ -270,6 +285,8 @@ const WHAT_ALWAYS: Corpus[] = ['recorded', 'transcript']
 const WHAT: Record<Corpus, string> = {
   post: 'What this project has published, one finding at a time.',
   page: 'The analyses and reference pages here.',
+  job: 'The town’s and the school district’s postings. An open one links to the employer’s page, to apply; one no longer listed links to its history on /jobs. Leaving the listing is not the same as being filled.',
+  person: 'A name as the org charts print it, with every role and year. The same name in two decades may be two people.',
   recorded: 'Our notes on recorded meetings, written from the captions: votes, transfers, topics. Each links to the video by the second.',
   source: 'Budgets, contracts, annual reports and state files, cited to the page.',
   minutes: 'What the town itself published. A record.',
@@ -285,6 +302,8 @@ function badge(h: Hit): string {
     case 'transcript': return 'Machine transcript'
     case 'recorded': return 'Our notes from the video'
     case 'post': return 'Post'
+    case 'job': return h.title.startsWith('No longer listed') ? 'Job, closed' : 'Job opening'
+    case 'person': return 'Person'
     default: return 'Page on this site'
   }
 }
@@ -502,8 +521,9 @@ export default function Search() {
           But the structural fault is the one worth fixing: THESE WERE NEVER FIVE OF A KIND.
           `Everything` is not a content type, it is the absence of a filter, and laying it
           out as a peer of the four types is what the rag was a picture of. So the four types
-          get a strict 2x2 (1fr 1fr) that becomes 4x1 on a wider screen, and the reset is a
-          quiet line that only exists while there is something to reset.
+          get a strict two-column grid (1fr 1fr) that becomes three columns on a wider
+          screen -- six types since Jobs and People joined, so 2x3 and then 3x2, both even --
+          and the reset is a quiet line that only exists while there is something to reset.
           
           EQUAL CELLS ARE WHAT MAKES THE NUMBERS READABLE. The counts are right-aligned in
           cells of identical width, so `where is it?` is answered by reading a column of four
@@ -513,7 +533,7 @@ export default function Search() {
           that kind for this query, and it now costs no line at all. */}
       {asked && data && !err && (
         <div className="mt-3">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="group" aria-label="What kind of thing">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" role="group" aria-label="What kind of thing">
             {GROUPS.map(g => {
               const { hits, capped } = groupCount(g.id)
               const active = type === g.id
@@ -611,7 +631,7 @@ export default function Search() {
         <p className="text-xs mt-2 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
           {typeIsDated
             ? <>A document in the archive carries no board and no date — a purchase order is filed by how it reached us, not by who met about it. So these two do not narrow documents or the pages here: they <strong>remove</strong> them from the results.</>
-            : <>{GROUPS.find(g => g.id === type)!.label} carry no board and no date, so neither of these applies. Choose <em>Everything</em> to use them.</>}
+            : <>{GROUPS.find(g => g.id === type)!.label} cannot be narrowed by board or date here, so neither of these applies. Choose <em>Everything</em> to use them.</>}
         </p>
       </details>}
 
@@ -711,7 +731,7 @@ export default function Search() {
                   {/* THE ORDER, AND THE SWITCH FOR IT, ON THIS SECTION'S OWN HEADING --
                       quiet furniture rather than a button, because it refines what one
                       reader in fifty asked for and the chips above it are the answer. */}
-                  <Order dated={DATED.includes(c)} by={data.sortedBy?.[c]} set={setSort} />
+                  <Order dated={SORTABLE.includes(c)} by={data.sortedBy?.[c]} set={setSort} />
                 </div>
                 {(WHAT_ALWAYS.includes(c) || (type && GROUPS.find(g => g.id === type)!.corpora.includes(c))) && (
                   <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{WHAT[c]}</p>
@@ -792,7 +812,9 @@ function Result({ h }: { h: Hit }) {
     ? `${h.board || h.board_slug}, ${h.date} — at ${hms(h.start_s || 0)}`
     : h.corpus === 'minutes' ? `${h.board || h.board_slug || ''}${h.date ? ', ' + h.date : ''}`
     : h.corpus === 'source' ? (h.board || '')
-    : h.corpus === 'post' ? `published ${h.date}` : ''
+    : h.corpus === 'post' ? `published ${h.date}`
+    : h.corpus === 'job' ? `${h.board || ''} · posted ${h.date} · ${h.kind}`
+    : h.corpus === 'person' ? h.kind : ''
   return (
     <li className="card p-3" style={isT ? { borderLeft: '4px solid var(--series-revenue, #b5540f)' } : undefined}>
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -806,7 +828,7 @@ function Result({ h }: { h: Hit }) {
             : { border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>
           {badge(h)}
         </span>
-        <a className="font-semibold underline" href={h.cite_url} target={isT || h.corpus === 'source' ? '_blank' : undefined} rel="noreferrer"
+        <a className="font-semibold underline" href={h.cite_url} target={isT || h.corpus === 'source' || (h.corpus === 'job' && !h.cite_url.includes('lunenburgbudgetproject.org')) ? '_blank' : undefined} rel="noreferrer"
           style={{ color: isT ? 'var(--series-revenue, #b5540f)' : 'var(--series-cost)' }}>
           {isT ? <><span aria-hidden="true">&#9654; </span>{h.title}</> : h.title}
         </a>
@@ -823,7 +845,7 @@ function Result({ h }: { h: Hit }) {
         {isT
           ? <>Opens the video about a minute before these words. A transcript is a finding aid: what was said is on the recording, not here.</>
           : h.matched.length ? <>matched: {h.matched.join(', ')}</> : null}
-        {h.source_url && !isT && <> · <a className="underline" href={h.source_url} target="_blank" rel="noreferrer">publisher&rsquo;s copy</a></>}
+        {h.source_url && !isT && <> · <a className="underline" href={h.source_url} target="_blank" rel="noreferrer">{h.corpus === 'job' ? 'our copy of the posting' : <>publisher&rsquo;s copy</>}</a></>}
       </p>
       <span className="sr-only">{g.label}</span>
     </li>

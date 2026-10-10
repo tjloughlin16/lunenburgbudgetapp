@@ -51,6 +51,7 @@ import { Boards } from './pages/Boards'
 import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
+import { JobsPage } from './components/JobPostings'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
@@ -528,6 +529,7 @@ export default function App() {
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}
       {tab === 'orgcharts' && <OrgCharts />}
+      {tab === 'jobs' && <JobsPage />}
       {tab === 'parks' && <Parks />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}

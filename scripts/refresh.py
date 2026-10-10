@@ -197,7 +197,7 @@ BY_HAND = {
 #
 # So the map is now the folders the refresh's own fetchers write into (watch_documents.py,
 # fetch_board_pages.py, fetch_staff_directory.py, fetch_school_staff_directory.py,
-# fetch_school_job_postings.py), plus `analyses`, which its build steps write. Any other
+# fetch_school_job_postings.py, fetch_town_job_postings.py), plus `analyses`, which its build steps write. Any other
 # folder is outside its scope: never an error, and never reported as FOUND -- a new
 # document there is listed separately, as found in our local files (LOCAL, below). Whether the WHOLE archive is
 # catalogued and backed up is a different question, asked by build_source_index.py and
@@ -1165,6 +1165,17 @@ def run(a, notes, ctx):
         r = py('fetch_school_job_postings.py', '--if-changed', check=False)
         schoolspring_alert(r.returncode, notes)
         py('extract_school_job_postings.py', check=False)
+        # THE TOWN'S OWN JOB BOARD, daily for the same reason. A page whose parse no longer
+        # ties to its own printed count exits 3 and records nothing, so a redesign can never
+        # mark every open town job as taken down; it says so here instead.
+        r = py('fetch_town_job_postings.py', '--if-changed', check=False)
+        if r.returncode:
+            notes.append('!!! TOWN JOB BOARD exit %d -- town postings NOT read today, none marked '
+                         'taken down. Run: python3 scripts/fetch_town_job_postings.py --dry-run'
+                         % r.returncode)
+        # Both employers into one page, /jobs, and the links on every board and department
+        # page -- after both sides have been read.
+        py('build_job_postings.py', check=False)
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).

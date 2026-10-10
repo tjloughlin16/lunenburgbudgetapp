@@ -1424,6 +1424,27 @@ GROUPS = [
              'one before; the district made the change somewhere between the two, and the '
              'data cannot narrow it further. Pay is compared as SchoolSpring displays it, so '
              'a change to a figure the district hides is not an event here.'),
+            ('data/town-job-postings.csv',
+             'The town’s job postings, as a history: what was listed, and when it left', 2,
+             'Written by us, by `build_job_postings.py`, from the snapshots of the town’s own '
+             'job board (lunenburgma.gov/Jobs.aspx) that `fetch_town_job_postings.py` takes '
+             'daily, one row per posting keyed on the town’s job id. The posted date and the '
+             'closing terms (`Open Until Filled`) are the town’s; `department_as_printed` is '
+             'read from the town’s own summary line. `first_seen`, `last_seen` and '
+             '`removed_seen` ARE OURS, the days we looked. A REMOVAL IS NOT A HIRE.'),
+            ('data/town-job-posting-changes.csv',
+             'Every change we saw to a town job posting, one row per event', 2,
+             'Written by us, from the same snapshots: `posted`, `edited` (one row per field '
+             'that differs between two looks), `relisted`, `removed`. `date` is the look '
+             'that saw it and `prev_look` the one before; the town made the change somewhere '
+             'between the two.'),
+            ('data/job-posting-owners.csv',
+             'Which board or department each job posting is linked from, and why', 2,
+             'Written by us, by hand. The town prints a department name on a posting and the '
+             'site’s pages are keyed by board and department; this is the join between the '
+             'two, one row per employer and printed department, each with its basis. A '
+             'JUDGEMENT, NOT A FACT the employer publishes. A posting whose department has no '
+             'row is still on /jobs and linked from no board, and the build says so.'),
             ('data/report-filing.csv',
              'Which bodies file an annual report, and which say they did not', 2,
              'One row per body: the years it filed, and the years the contents page '

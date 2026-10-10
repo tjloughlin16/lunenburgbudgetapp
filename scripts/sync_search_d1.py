@@ -187,7 +187,7 @@ def plan(local):
         to_send += [k for k in half if k not in to_send]
     # Smallest corpora first, so a run cut off by the budget has sent the pages, the
     # posts and the documents whole and left only transcripts for tomorrow.
-    order = {c: i for i, c in enumerate(('post', 'page', 'recorded', 'source', 'minutes', 'transcript'))}
+    order = {c: i for i, c in enumerate(B.CORPORA)}
     to_send.sort(key=lambda k: (order.get(want[k]['corpus'], 9), k))
     return want, have, to_send, to_delete
 
@@ -325,7 +325,7 @@ def record_counts(written):
     import datetime as dt
     rc = remote_counts()
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
-        for c in ('post', 'page', 'recorded', 'source', 'minutes', 'transcript'):
+        for c in B.CORPORA:
             fh.write("INSERT OR REPLACE INTO build_meta VALUES ('rows:%s', %s);\n" % (c, q(str(rc.get(c, 0)))))
         built = sqlite3.connect(B.DB, timeout=300).execute("SELECT v FROM build_meta WHERE k='built'").fetchone()
         fh.write("INSERT OR REPLACE INTO build_meta VALUES ('built', %s);\n" % q(built[0] if built else ''))

@@ -3,7 +3,7 @@ import { RecordCell, type RecordStatus } from '../components/RecordCell'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
-import { SchoolJobPostings } from '../components/SchoolJobPostings'
+import { JobsLink } from '../components/JobPostings'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
 import { daysAway as daysFromToday, meetingBody, splitMeetings } from '../lib/meetings'
@@ -379,6 +379,12 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </div>
       )}
 
+      {/* JOB POSTINGS, for any board a posting belongs to -- open now, and a link to /jobs
+          for the history. TJ, 10 October 2026: *"make sure the boards and department pages
+          have a JOB POSTINGS page linked for any jobs available."* Renders nothing for a
+          board that has never had one. See components/JobPostings.tsx. */}
+      <JobsLink slug={b.slug} />
+
       {/* WHAT THE BOARD SAID IT WOULD DO, near the top because it is the frame every
           other section on this page is read against: the meetings, the votes and the
           minutes are how a board got on with what it committed to. */}
@@ -551,10 +557,6 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </>
       )}
 
-      {/* THE DISTRICT'S JOB OPENINGS, open now and as a history -- only on the School
-          Committee's page, since the district is the employer and the committee is its
-          board. Its own payload; see components/SchoolJobPostings.tsx. */}
-      {b.slug === 'school-committee' && <SchoolJobPostings />}
 
       {/* -------------------------------------------------------------------- time */}
       {b.time_by_tag.length > 0 && (

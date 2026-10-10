@@ -1,3 +1,4 @@
+import { JobsLink } from '../components/JobPostings'
 import { useState } from 'react'
 import type { Tab } from '../routes'
 import { boardFinanceSlugFromPath, departmentSlugFromPath } from '../routes'
@@ -153,6 +154,8 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
     <>
       <Grain>{d.grain}</Grain>
       {isBoard && <p className="text-[13px] mt-3"><a className="underline" href={`/boards/${slug}`}>&larr; the {o.name}&rsquo;s board page</a> · <a className="underline" href="/accounts">every account, once</a></p>}
+      {/* JOB POSTINGS this body owns, if any -- the same block the board pages carry. */}
+      <JobsLink slug={slug} />
       {/* THE PEOPLE BEHIND THE MONEY. TJ, 25 September 2026: *"i would like to cross link the
           org chart and the personell pages for each department, so we can see the trends over
           time when needed, or directly se the people when needed."*

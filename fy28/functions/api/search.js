@@ -66,11 +66,12 @@
  */
 
 const SITE = 'https://lunenburgbudgetproject.org'
-const CORPORA = ['post', 'page', 'recorded', 'source', 'minutes', 'transcript']
+const CORPORA = ['post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript']
 /** The only corpora whose rows carry a date. Measured on the index, not assumed:
- *  every `minutes`, `recorded` and `transcript` row has one; no `source` or `page` row
- *  does. A date sort is offered for these three and refused for the rest. */
-const DATED = ['minutes', 'recorded', 'transcript']
+ *  every `minutes`, `recorded` and `transcript` row has one, and every `job` row carries
+ *  the date SchoolSpring prints as posted; no `source`, `page` or `person` row does. A date
+ *  sort is offered for these four and refused for the rest. */
+const DATED = ['job', 'minutes', 'recorded', 'transcript']
 const PER_CORPUS = 12          // hits returned per corpus
 const CANDIDATES = 2000        // rows a corpus search may read before ranking
 const CACHE_SECONDS = 600
@@ -132,7 +133,10 @@ export async function onRequest(context) {
     note: 'minutes = documents the town published; transcript = our machine captions of '
       + 'recordings, a finding aid cited to the video at a timestamp; recorded = our minutes '
       + 'of a recording; source = pages of '
-      + 'archive documents; page = this site; post = published posts.',
+      + 'archive documents; page = this site; post = published posts; job = job postings, the '
+      + 'town\'s (its own job board) and the school district\'s (SchoolSpring); person = a name on the org '
+      + 'charts, with every role and year it appears under (the same name is not proven to '
+      + 'be one person).',
   }
 
   if (!expr) return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
