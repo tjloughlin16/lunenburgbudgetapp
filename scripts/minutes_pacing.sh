@@ -29,5 +29,5 @@ if pgrep -f "[p]rocess_meeting.py --until-usage" >/dev/null; then
 fi
 say "not running -- starting the paced run (log: $LOG)"
 echo "=== WEEKLY PACED RUN, started by minutes_pacing.sh $(date)" >> "$LOG"
-nohup "$PY" scripts/process_meeting.py --until-usage --week-line 90 --session-cap 80 --max-jobs 1 \
+nohup "$PY" scripts/process_meeting.py --until-usage --week-line 90 --session-cap 80 --max-jobs 1 --notify \
   >> "$LOG" 2>&1 < /dev/null &

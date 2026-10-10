@@ -306,6 +306,8 @@ def main():
                     'climbing to 100%% over the last day -- waiting (never stopping) whenever the weekly bar is at or over it')
     ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
     ap.add_argument('--ramp', type=float, default=300, help='governor: seconds between adding workers (the brake on a fast fill)')
+    ap.add_argument('--notify', action='store_true', help='governor: macOS notifications -- whether the batch is on pace '
+                    'every NOTIFY_EVERY_S, and the moment it starts meetings after holding back')
     ap.add_argument('--max-jobs', type=int, default=3, help='governor: most workers at once (one is ~16%%/h of a window)')
     a = ap.parse_args()
     # WITH A LINE, THE LINE IS IN CHARGE. A fixed weekly cap STOPS the run; the line only
@@ -484,6 +486,8 @@ def run_governed(plan, a, S, ceiling):
     caps = [float(c) for c in a.session_caps.split(',')] if a.session_caps else None
     gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps,
                 week_goal=a.week_line)
+    global NOTE
+    NOTE = Notifier(G) if a.notify else None
     G.fetch(force=True)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
     # THE DENOMINATOR IS THE PLAN, NOT THE BACKLOG. TJ, 8 October 2026: "when we set the
@@ -582,6 +586,8 @@ def run_governed(plan, a, S, ceiling):
                 if d['note'] != (last_line or ('', ''))[1] or d['jobs'] != (last_line or (0,))[0]:
                     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), line))
                     last_line = (d['jobs'], d['note'])
+                if NOTE:
+                    NOTE.tick(gp, h, d, now, in_flight=len(active))
                 if d['stop']:
                     stop = d['stop']
                     break
@@ -668,6 +674,97 @@ def spend_since(ts):
     return total
 
 
+NOTIFY_EVERY_S = 7200    # a pace notification every two hours (TJ, 10 October 2026)
+
+
+class Notifier:
+    """MACOS NOTIFICATIONS FOR THE PACED RUN. TJ, 10 October 2026: *"send an OS notification
+    every couple hours when it checks and concludes if we're on pace or off pace? and then,
+    anytime it detects we're off pace and it kicks in to fetching, send an OS notification
+    to show that its starting"*.
+
+    The PACE is the weekly bar against the line: within G.BAND points is ON PACE, over it is
+    AHEAD (the batch holds back and leaves the room to interactive use), under it is BEHIND
+    (there is unspent allowance, and the batch starts meetings to close the gap). That transition,
+    holding -> starting, is announced the moment it happens; everything else waits for the
+    two-hourly summary. One notification per decision, never per meeting: a meeting every
+    few minutes would be noise, and the log already has them."""
+
+    def __init__(self, G):
+        self.G, self.last_t, self.mode = G, 0.0, None
+
+    def send(self, title, text):
+        say('[notify] %s -- %s' % (title, text))
+        try:
+            subprocess.run(['osascript', '-e', 'display notification %s with title %s'
+                            % (_applescript(text), _applescript(title))],
+                           capture_output=True, timeout=10)
+        except Exception:                               # noqa: BLE001 -- a notice must never stop the run
+            pass
+
+    def resume_at(self, plan, u7, now):
+        """When the line reaches the weekly bar, if nothing else is used -- or None."""
+        wr = self.G.week_reset(now)
+        if not (wr and plan.week_goal):
+            return None
+        t = now
+        while t < wr:
+            if self.G.week_line(plan.week_goal, wr, t) >= u7:
+                return t
+            t += 600
+        return None
+
+    def tick(self, plan, h, d, now, in_flight=0, mode=None):
+        """What it is doing, then why -- TJ: *"Ahead of weekly pace of 25% at 33%, holding"*.
+        The title carries the action, the text the reason, so the banner alone is enough."""
+        last = h[-1] if h else None
+        if mode is None:
+            if d and d['start']:
+                mode = 'starting'
+            elif d and d['note'].startswith('weekly line'):
+                mode = 'holding'
+            elif d and 'STALE' in d['note']:
+                mode = 'blind'
+            else:
+                mode = 'paused'
+        wr = self.G.week_reset(now)
+        line = self.G.week_line(plan.week_goal, wr, now) if (wr and plan.week_goal) else None
+        why = ''
+        if last and line is not None:
+            gap = last['u7'] - line
+            side = 'ahead of' if gap > self.G.BAND else 'behind' if gap < -self.G.BAND else 'on'
+            why = 'Week at %g%%, %s its %.0f%% pace line' % (last['u7'], side, line)
+        if mode == 'starting' and self.mode not in (None, 'starting'):
+            self.send('Paced minutes: starting', '%s -- starting meetings to use the spare room.' % why)
+            self.last_t = now
+        elif now - self.last_t >= NOTIFY_EVERY_S:
+            if mode == 'holding':
+                r = self.resume_at(plan, last['u7'], now) if last else None
+                # LOCAL TIME, WITH ITS ZONE -- TJ: "EST time, not UTC". fromtimestamp is already local;
+                # the zone is printed so nobody has to wonder.
+                until = (' until about %s' % dt.datetime.fromtimestamp(r).astimezone().strftime('%a %-I:%M %p %Z')) if r else ''
+                self.send('Paced minutes: holding', '%s -- holding%s.' % (why, until))
+            elif mode == 'starting':
+                self.send('Paced minutes: running', '%s -- running, %d meeting%s in progress.'
+                          % (why, in_flight, '' if in_flight == 1 else 's'))
+            elif mode == 'blind':
+                self.send('Paced minutes: waiting', 'Cannot read the usage bars right now -- waiting until it can.')
+            elif mode == 'session cap':
+                self.send('Paced minutes: waiting', '5-hour window at %g%%, its cap -- waiting for it to reset.'
+                          % (last['u5'] if last else 0))
+            else:
+                self.send('Paced minutes: paused', '%s -- %s.' % (why or 'No reading', (d or {}).get('note', '')))
+            self.last_t = now
+        self.mode = mode
+
+
+def _applescript(text):
+    return '"%s"' % str(text).replace('\\', '\\\\').replace('"', '\\"')
+
+
+NOTE = None               # the run's Notifier, when --notify
+
+
 def wait_for_reset(gp, S, G):
     """Block until the server reports a NEW window (a different reset time) in a fresh
     reading, or the kill switch is thrown. Fetches every 30 s -- the first version of this
@@ -682,6 +779,8 @@ def wait_for_reset(gp, S, G):
             G.fetch(force=True)          # every FETCH_RUNNING_S while waiting for a reset
             gp._last_wait_fetch = time.time()
         h = G.readings()
+        if NOTE:
+            NOTE.tick(gp, h, None, time.time(), mode='session cap')
         # A NEW WINDOW BEGINS WITH ITS FIRST USE, so after the old reset the server may name no
         # reset at all until something calls the model. Resume once the old reset has passed
         # (the first meeting opens the new window), or as soon as a different reset is named.
