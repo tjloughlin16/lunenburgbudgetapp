@@ -376,6 +376,15 @@ export default function Search() {
   const [asked, setAsked] = useState(initial.q)
   const [data, setData] = useState<Payload | null>(null)
   const [busy, setBusy] = useState(false)
+  // PAST TWELVE SECONDS, SAY SO. A spinner that turns for a minute reads as frozen (TJ, 10
+  // October 2026: "the search bar is always spinning"); after this long the card says the
+  // search is slow rather than leaving a reader to guess whether anything is happening.
+  const [slow, setSlow] = useState(false)
+  useEffect(() => {
+    if (!busy) { setSlow(false); return }
+    const t = window.setTimeout(() => setSlow(true), 12000)
+    return () => window.clearTimeout(t)
+  }, [busy])
   const [err, setErr] = useState<string | null>(null)
   const [vocab, setVocab] = useState<Vocab>({})
   const [boards, setBoards] = useState<BoardOpt[]>(BOARDS_FALLBACK)
@@ -529,7 +538,10 @@ export default function Search() {
           <Spinner size={22} color="var(--series-cost)" />
           <span className="text-[14.5px]">
             <strong>Searching</strong> every document, set of minutes and recording for <strong>{asked}</strong>&hellip;
-            <span className="block text-[12px]" style={{ color: 'var(--text-muted)' }}>Matching the start of every word takes a few seconds.</span>
+            <span className="block text-[12px]" style={{ color: slow ? 'var(--status-warning)' : 'var(--text-muted)' }}>
+              {slow ? 'This is taking longer than usual. It is still running — a very common word reads a lot of the archive.'
+                    : 'Matching the start of every word takes a few seconds.'}
+            </span>
           </span>
         </div>
       )}

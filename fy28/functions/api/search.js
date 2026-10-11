@@ -215,7 +215,12 @@ export async function onRequest(context) {
   }
 
   try {
-    for (const c of corpora) {
+    // EVERY KIND AT ONCE. This was a `for ... await` loop: two queries per kind, one kind
+    // after another, so eight kinds were sixteen round trips end to end, and starts-with
+    // matching (10 October 2026) made each of them heavier -- TJ: "search is SLOW". In
+    // parallel the wait is the slowest kind, not the sum. Rows READ are identical, which is
+    // what D1 bills; only the waiting changes.
+    await Promise.all(corpora.map(async c => {
       // The outer ORDER BY, over rows the subselect has already read. A row whose date is
       // missing, empty OR NOT AN ISO DATE goes LAST, and the test is the shape of the
       // string rather than its emptiness. '' sorts before every real date, so a bare DESC
@@ -268,7 +273,7 @@ export async function onRequest(context) {
           .filter((w, i, a) => a.indexOf(w) === i),
       })))
       if (byTopic.length) counts[c].hits += byTopic.filter(t => !(r.results || []).some(x => x.cite_url === t.cite_url)).length
-    }
+    }))
   } catch (e) {
     return json({
       error: 'query_failed',
