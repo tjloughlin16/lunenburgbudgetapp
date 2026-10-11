@@ -1,0 +1,59 @@
+{
+ "board": "Board of Health",
+ "grain": "A row is a transfer as the Board of Health’s minutes record it: sometimes one line to another, sometimes one total for a batch, sometimes only the vote. Totals add the amounts the minutes print; a transfer approved with no amount printed is counted and adds nothing. The fiscal year is the one the minutes state where they state one, otherwise the year the meeting fell in, marked as ours.",
+ "has_forms": false,
+ "minutes_from": "2009-01-05",
+ "minutes_read": 193,
+ "minutes_to": "2026-07-20",
+ "slug": "board-of-health",
+ "sources": [
+  {
+   "label": "Every row for every board, counted or not, with the reason and the evidence",
+   "url": "/docs/data/board-transfers.csv"
+  }
+ ],
+ "what": "transfers",
+ "years": [
+  {
+   "awaiting": [],
+   "counted": [
+    {
+     "amount": "",
+     "amount_as_printed": "",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "Septic Repair Fund from Parks Commission to Board of Health",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "Parks Commission",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2026-04-06",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04062026-7749",
+     "our_copy": "/docs/meetings/board-of-health/2026-04-06-minutes-7749.txt",
+     "outcome": "approved",
+     "quote": "the board voted to take back the use of the septic repair fund for use by the board of health. all in favor.",
+     "running_total": "0.00",
+     "to_line": "Board of Health",
+     "video_url": "",
+     "why_not": ""
+    }
+   ],
+   "fy": 2026,
+   "meetings": 1,
+   "n": 1,
+   "n_fy_ours": 1,
+   "n_gold": 0,
+   "n_no_amount": 1,
+   "not_counted": [],
+   "sheets": [],
+   "tentative": [],
+   "tentative_total": "0.00",
+   "total": "0.00"
+  }
+ ]
+}

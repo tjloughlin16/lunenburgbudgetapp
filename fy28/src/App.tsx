@@ -52,7 +52,7 @@ import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
 import { JobsPage, JobsTray } from './components/JobPostings'
-import { SchoolTransfers } from './pages/SchoolTransfers'
+import { BoardTransfers } from './pages/BoardTransfers'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
@@ -92,7 +92,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, omlSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -529,13 +529,13 @@ export default function App() {
       {tab === 'search' && <Search />}
       {tab === 'recorded' && (omlSlugFromPath(window.location.pathname) ? <OmlReview /> : <WhatWasSaid />)}
       {tab === 'boards' && (boardRecordsSlugFromPath(window.location.pathname) ? <BoardRecords />
+        : boardTransfersSlugFromPath(window.location.pathname) ? <BoardTransfers />
         : boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
       {tab === 'schoolfinance' && <SchoolFinance />}
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}
       {tab === 'orgcharts' && <OrgCharts />}
       {tab === 'jobs' && <JobsPage />}
-      {tab === 'sctransfers' && <SchoolTransfers />}
       {tab === 'parks' && <Parks />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}

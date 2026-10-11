@@ -1,7 +1,21 @@
 import { useEffect, useState } from 'react'
 import { Grain, ReportShell, Section, useReport } from '../components/report'
+import { boardTransfersSlugFromPath } from '../routes'
 
-/** THE SCHOOL COMMITTEE'S LINE ITEM TRANSFERS, BY FISCAL YEAR, with a running tally.
+/** A BOARD'S TRANSFERS, BY FISCAL YEAR, with a running tally -- /boards/<slug>/transfers.
+ *
+ *  Built for the School Committee and opened to every board whose minutes record a transfer
+ *  (TJ, 10 October 2026: *"we need a link on each board page for their TRANSFER link"*).
+ *
+ *  EVERY ROW SAYS HOW GOOD ITS EVIDENCE IS (TJ: *"we need to say whether or not these
+ *  transfers have the GOLD STANDARD for each. flag when not"*): the district's signed transfer
+ *  FORM, with every account; the town's MINUTES, official but naming lines in words; our notes
+ *  from the RECORDING, a finding aid. Gold is the form.
+ *
+ *  AND WHERE THE FORM GIVES ACCOUNTS, WHERE THE MONEY WENT: each account looked up in the
+ *  school ledger for its building and its DESE program, and a transfer that changes either on
+ *  the way is flagged -- *"esp for cross-program transfers this is critical"*.
+ *
  *
  *  TJ, 10 October 2026: *"build a page for the school committee that captures all the line
  *  item transfers that were voted in a meeting ... a running tally"* and *"this needs to be
@@ -20,6 +34,7 @@ import { Grain, ReportShell, Section, useReport } from '../components/report'
  *  And a year we inferred from the meeting date is marked beside the row, not explained
  *  above the table (rule 7a). */
 
+type Evidence = { form: boolean; minutes: boolean; recording: boolean }
 type Item = {
   meeting_date: string; description: string; from_line: string; to_line: string
   amount_as_printed: string; amount: string; amount_basis: string; outcome: string
@@ -28,20 +43,25 @@ type Item = {
   /** The accounts, where a district sheet gives them -- never inferred. */
   accounts?: { from: Account[]; to: Account[] }
   sheet?: string; sheet_page?: string; form?: string; ties?: boolean
+  evidence: Evidence; crosses: string[]; kind: string
 }
-type Account = { org: string; object: string; description: string; amount_as_printed: string }
+type Account = {
+  org: string; object: string; description: string; amount_as_printed: string
+  found?: boolean; building?: string; building_basis?: string; function_code?: string
+  function_name?: string; munis_name?: string; munis_account?: string
+}
 type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; transfers_as_printed: string[]; reclassifications_as_printed: string[]; url: string; publisher_url: string }
 type Year = {
-  fy: number; n: number; total: string; n_no_amount: number; meetings: number; n_fy_ours: number
+  fy: number; n: number; n_gold: number; total: string; n_no_amount: number; meetings: number; n_fy_ours: number
   tentative_total: string
   counted: Item[]; tentative: Item[]; awaiting: Item[]; not_counted: Item[]; sheets: Sheet[]
 }
 type Payload = {
-  board: string; minutes_read: number; minutes_from: string; minutes_to: string
+  board: string; slug: string; what: string; has_forms: boolean; minutes_read: number; minutes_from: string; minutes_to: string
   years: Year[]; grain: string; sources: { label: string; url: string }[]
 }
 
-const FILE = 'school-committee-transfers.json'
+const fileFor = (slug: string) => `transfers/${slug}.json`
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const d = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return `${dd} ${MONTHS[m - 1]} ${y}` }
 const usd = (s: string) => s ? '$' + Number(s).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : ''
@@ -51,7 +71,9 @@ function fyFromUrl() {
   return Number(new URLSearchParams(window.location.search).get('fy') || 0)
 }
 
-export function SchoolTransfers() {
+export function BoardTransfers() {
+  const slug = boardTransfersSlugFromPath(window.location.pathname) || 'school-committee'
+  const FILE = fileFor(slug)
   const { d: p, err } = useReport<Payload>(FILE)
   const [fy, setFy] = useState(fyFromUrl())
   // THE NEWEST YEAR IS THE DEFAULT, even when the town's minutes have not reached it yet --
@@ -59,7 +81,9 @@ export function SchoolTransfers() {
   // so far for FY27?!"* There had: voted 7 October 2026, in no minutes the town had posted.
   // Opening on the last complete year hid exactly the transfers a reader came for.
   const years = p?.years ?? []
-  const pick = years.find(y => y.fy === fy) ?? years[0]
+  // ...but a year with NOTHING to show is not a default: the Select Board's newest year held
+  // only a transfer heard in a recording, and the page opened on an empty table.
+  const pick = years.find(y => y.fy === fy) ?? years.find(y => y.n > 0 || y.tentative.length > 0) ?? years[0]
   useEffect(() => {
     if (!pick) return
     const u = new URL(window.location.href)
@@ -67,11 +91,11 @@ export function SchoolTransfers() {
     window.history.replaceState(null, '', u)
   }, [pick])
   return (
-    <ReportShell tab="sctransfers" title="School Committee line item transfers" err={err} loading={!p && !err}
+    <ReportShell tab="boards" title={p ? `${p.board}: ${p.what}` : 'Transfers'} err={err} loading={!p && !err}
       dataUrl={`/data/${FILE}`}
       standfirst={p && pick
-        ? <>FY{pick.fy}: {pick.n} transfer{pick.n === 1 ? '' : 's'} approved at {pick.meetings} meeting{pick.meetings === 1 ? '' : 's'}, {usd(pick.total)} as the minutes print the amounts. Every School Committee vote to move money between budget lines, year by year.</>
-        : 'Every School Committee vote to move money between budget lines, year by year.'}>
+        ? <>FY{pick.fy}: {pick.n} transfer{pick.n === 1 ? '' : 's'} approved at {pick.meetings} meeting{pick.meetings === 1 ? '' : 's'}, {usd(pick.total)} as the minutes print the amounts. Every vote by the {p.board} to move money, year by year. <a className="underline" href={`/boards/${p.slug}`}>The {p.board}&rsquo;s page</a>.</>
+        : 'Every vote to move money, year by year.'}>
       {p && pick && <>
         <div className="flex flex-wrap gap-2 mt-6" role="group" aria-label="Fiscal year">
           {years.map(y => (
@@ -94,6 +118,11 @@ export function SchoolTransfers() {
               <Fig v={usd(pick.tentative_total)} l="TENTATIVE: voted in a recording, not yet in the town’s minutes" tone="var(--status-warning)" />
             )}
           </div>
+          {pick.n > 0 && p.has_forms && (
+            <p className="text-[13px] mt-3 max-w-2xl" style={{ color: pick.n_gold < pick.n ? 'var(--status-warning)' : 'var(--text-secondary)' }}>
+              <strong>{pick.n_gold} of {pick.n}</strong> have the gold standard &mdash; the district&rsquo;s signed transfer form, with every account. The rest rest on the minutes alone: the lines named in words, no account numbers.
+            </p>
+          )}
           {pick.counted.length === 0
             ? <p className="text-[14px] mt-4 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
                 None in the town&rsquo;s minutes yet &mdash; the last School Committee minutes the town has posted are from {d(p.minutes_to)}.
@@ -138,6 +167,7 @@ export function SchoolTransfers() {
                     <span className="tnum font-semibold">{d(it.meeting_date)}</span>
                     <span className="tnum font-bold ml-auto">{it.amount_as_printed}</span>
                   </div>
+                  <div className="mt-1"><EvidenceBadges e={it.evidence} crosses={it.crosses} kind="" /></div>
                   {it.description && <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>{it.description}</p>}
                   {it.accounts && <Accounts a={it.accounts} ties={it.ties} />}
                   <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
@@ -232,9 +262,16 @@ function Accounts({ a, ties }: { a: { from: Account[]; to: Account[] }; ties?: b
       <p className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{label}</p>
       <ul className="mt-0.5">
         {xs.map((x, i) => (
-          <li key={i} className="text-[12.5px] flex justify-between gap-3 tnum">
-            <span className="min-w-0 break-words">{x.description} <span style={{ color: 'var(--text-muted)' }}>{x.org}-{x.object}</span></span>
-            <span className="shrink-0">{x.amount_as_printed}</span>
+          <li key={i} className="text-[12.5px] py-0.5">
+            <span className="flex justify-between gap-3 tnum">
+              <span className="min-w-0 break-words font-semibold">{x.description}</span>
+              <span className="shrink-0">{x.amount_as_printed}</span>
+            </span>
+            <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+              {x.found
+                ? <><span title={x.building_basis}>{x.building}</span>{x.function_name ? <> · {x.function_name}</> : x.function_code ? <> · function {x.function_code}</> : null} · <span className="tnum">{x.org}-{x.object}</span></>
+                : <><span className="tnum">{x.org}-{x.object}</span> · not in the ledger as printed</>}
+            </span>
           </li>
         ))}
       </ul>
@@ -245,6 +282,34 @@ function Accounts({ a, ties }: { a: { from: Account[]; to: Account[] }; ties?: b
       <div className="grid gap-3 sm:grid-cols-2">{col('From', a.from)}{col('To', a.to)}</div>
       {ties === false && <p className="text-[11.5px] mt-1" style={{ color: 'var(--status-warning)' }}>The lines as printed do not add up to the sheet&rsquo;s own total.</p>}
     </div>
+  )
+}
+
+/** THE EVIDENCE FOR ONE TRANSFER, AS THREE MARKS, and the flag when the money changes school
+ *  or program. Gold is the district's form; without it the row says so in words, not only by
+ *  a missing mark -- an absence nobody notices is not a flag. */
+function EvidenceBadges({ e, crosses, kind }: { e: Evidence; crosses: string[]; kind: string }) {
+  const mark = (on: boolean, label: string, gold?: boolean) => (
+    <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
+      style={on
+        ? { background: gold ? '#b8860b' : 'var(--surface-3)', color: gold ? '#fff' : 'var(--text-secondary)' }
+        : { border: '1px dashed var(--grid)', color: 'var(--text-muted)', textDecoration: 'line-through' }}>
+      {label}
+    </span>
+  )
+  return (
+    <span className="flex flex-wrap items-center gap-1 mb-1">
+      {mark(e.form, e.form ? 'Gold · district form' : 'No form', true)}
+      {mark(e.minutes, 'Town minutes')}
+      {mark(e.recording, 'Recording')}
+      {crosses.map(c => (
+        <span key={c} className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
+          style={{ background: 'var(--status-critical)', color: '#fff' }}>Crosses {c}</span>
+      ))}
+      {kind && kind !== 'line item' && kind !== 'other' && (
+        <span className="text-[10px] uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{kind}</span>
+      )}
+    </span>
   )
 }
 
@@ -266,13 +331,14 @@ function Row({ it }: { it: Item }) {
         {d(it.meeting_date)}{it.fy_ours && <sup title={it.fy_basis}>†</sup>}
       </td>
       <td className="py-2 pr-3 min-w-[12rem]">
+        <EvidenceBadges e={it.evidence} crosses={it.crosses} kind={it.kind} />
         {moved
           ? <span className="font-semibold">{it.from_line} <span aria-label="to">&rarr;</span> {it.to_line}</span>
           : <span className="font-semibold">{it.description}</span>}
         {moved && <span className="block text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>{it.description}</span>}
         {it.accounts && (
           <details className="mt-1">
-            <summary className="cursor-pointer text-[12px]" style={{ color: 'var(--series-cost)' }}>Accounts, from the district&rsquo;s sheet</summary>
+            <summary className="cursor-pointer text-[12px]" style={{ color: 'var(--series-cost)' }}>Accounts, from the district&rsquo;s form</summary>
             <Accounts a={it.accounts} ties={it.ties} />
           </details>
         )}
@@ -288,5 +354,41 @@ function Row({ it }: { it: Item }) {
       </td>
       <td className="py-2 text-right tnum whitespace-nowrap hidden sm:table-cell" style={{ color: 'var(--text-secondary)' }}>{usd(it.running_total || '')}</td>
     </tr>
+  )
+}
+
+/* -------------------------------------- the link on a board's page, and its sidebar */
+
+type Index = { boards: { slug: string; name: string; what: string; transfers: number; latest_fy: number; latest_n: number; latest_tentative: string; url: string }[] }
+
+/** Whether this board has a transfers page, and its headline -- read once, shared by the
+ *  block on the page and the sidebar link, so the two cannot disagree. */
+export function useBoardTransfers(slug: string) {
+  const { d } = useReport<Index>('transfers/index.json')
+  return d?.boards.find(b => b.slug === slug) ?? null
+}
+
+/** TRANSFERS, ON THE BOARD'S OWN PAGE, near the top. TJ, 10 October 2026: *"we need a link on
+ *  each board page for their TRANSFER link to find the transfer page. i dont see one on the
+ *  school committee page."* It was in the sidebar only, which is a place nobody looks for a
+ *  thing they do not know exists. Renders nothing for a board with no transfers. */
+export function TransfersLink({ slug }: { slug: string }) {
+  const t = useBoardTransfers(slug)
+  if (!t) return null
+  const tent = Number(t.latest_tentative)
+  return (
+    <section aria-label="Transfers" className="card p-4 mt-6 max-w-3xl">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+          {t.what === 'line item transfers' ? 'Line item transfers' : 'Transfers'}
+        </h2>
+        <a className="text-[13px] font-semibold underline" href={t.url} style={{ color: 'var(--series-cost)' }}>
+          every one, by fiscal year &rarr;
+        </a>
+      </div>
+      <p className="text-[13.5px] mt-1.5 tnum" style={{ color: 'var(--text-secondary)' }}>
+        FY{t.latest_fy}: {t.latest_n} approved in the town&rsquo;s minutes{tent > 0 ? <>, plus <strong style={{ color: 'var(--status-warning)' }}>{usd(t.latest_tentative)} tentative</strong> awaiting the minutes</> : ''}. {t.transfers} in all.
+      </p>
+    </section>
   )
 }

@@ -142,6 +142,10 @@ def board_pages():
     if os.path.exists(rp):
         recs = json.load(io.open(rp, encoding='utf-8')).get('boards', [])
         out += ['/boards/%s/records' % b['board_slug'] for b in recs]
+    # THE TRANSFERS TAB, for every board whose minutes record a transfer.
+    tp = os.path.join(PUB, 'data', 'transfers', 'index.json')
+    if os.path.exists(tp):
+        out += [b['url'] for b in json.load(io.open(tp, encoding='utf-8')).get('boards', [])]
     return out
 
 

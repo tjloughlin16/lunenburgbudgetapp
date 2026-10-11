@@ -167,6 +167,9 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
           level. */}
       {o.people?.length ? (
         <p className="text-[13px] mt-3">
+          {/* "Org chart" FIRST, as the words a reader looks for -- TJ could not find this line
+              when it opened with a headcount. */}
+          <strong>Org chart:</strong>{' '}
           {o.people.map((p, i) => (
             <span key={p.unit}>
               {i > 0 ? ' · ' : ''}

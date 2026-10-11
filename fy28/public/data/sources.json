@@ -2531,6 +2531,18 @@
      "textUrl": "/docs/data/school-staff-directory.csv"
     },
     {
+     "path": "data/board-transfers.csv",
+     "title": "Every transfer in every board’s minutes, by fiscal year, with its evidence",
+     "stars": 2,
+     "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
+     "kind": "Data",
+     "bytes": 233786,
+     "url": "/docs/data/board-transfers.csv",
+     "count": 380,
+     "unit": "rows",
+     "textUrl": "/docs/data/board-transfers.csv"
+    },
+    {
      "path": "data/town-personnel.csv",
      "title": "Every town post and who held it, FY2022 to FY2025",
      "stars": 2,
@@ -2745,18 +2757,6 @@
      "count": 295,
      "unit": "rows",
      "textUrl": "/docs/data/staff-directory.csv"
-    },
-    {
-     "path": "data/school-committee-transfers.csv",
-     "title": "Every line item transfer in the School Committee’s minutes, by fiscal year",
-     "stars": 2,
-     "what": "Written by us, by `build_school_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT -- a line, a batch total, or only the vote. `counted` and `why_not` keep what is not a voted line item transfer (tabled, pending, class accounts, none recorded). `fy` is the year the minutes state, else the year the meeting fell in, and `fy_basis` says which. Rows from a RECORDING are captions, a finding aid, and never counted.",
-     "kind": "Data",
-     "bytes": 37473,
-     "url": "/docs/data/school-committee-transfers.csv",
-     "count": 66,
-     "unit": "rows",
-     "textUrl": "/docs/data/school-committee-transfers.csv"
     },
     {
      "path": "data/staffing-coverage.csv",
@@ -55119,7 +55119,7 @@
  "totals": {
   "documents": 4937,
   "groups": 25,
-  "bytes": 6401420040,
+  "bytes": 6401616353,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

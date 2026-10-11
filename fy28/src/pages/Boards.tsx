@@ -4,6 +4,8 @@ import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
 import { JobsLink } from '../components/JobPostings'
+import { TransfersLink, useBoardTransfers } from './BoardTransfers'
+import { useOrgCharts } from '../lib/orgChartLink'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
 import { daysAway as daysFromToday, meetingBody, splitMeetings } from '../lib/meetings'
@@ -186,6 +188,8 @@ function Overview({ text, who }: { text: string; who: string }) {
 }
 
 function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: boolean) => void }) {
+  const transfers = useBoardTransfers(b.slug)
+  const charts = useOrgCharts(b.slug)
   const jump: [string, string, boolean][] = [
     ['#up', 'Upcoming meetings', true], ['#recent', 'Recent meetings', true], ['#votes', 'Votes', b.votes.length > 0],
     ['#time', 'Time tracking', b.time_by_tag.length > 0], ['#calendar', 'Budget schedule', b.calendar.length > 0],
@@ -198,9 +202,11 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
     ...(p?.facebook && p.facebook_scope === 'board' ? [[p.facebook, 'Facebook ↗'] as [string, string]] : []),
     ...(b.counts.our_minutes ? [[`${b.urls.what_was_said}#${b.slug}`, 'Its meeting minutes'] as [string, string]] : []),
     ...(b.finance ? [[`/boards/${b.slug}/finance`, `Finance — ${b.finance.accounts} account${b.finance.accounts === 1 ? '' : 's'}`] as [string, string]] : []),
-    // Every line item transfer it voted, by fiscal year -- the School Committee's alone, since
-    // it is the one board here that votes transfers between its own budget lines.
-    ...(b.slug === 'school-committee' ? [['/boards/school-committee/transfers', 'Line item transfers'] as [string, string]] : []),
+    // ITS ORG CHART(S) -- who sat on it and who works for it, year by year. A board and its
+    // staff can be two charts (`Council on Aging (board)` and `(staff)`), so each is named.
+    ...charts.map(c => [c.chart_url, charts.length > 1 ? `Org chart: ${c.unit}` : 'Org chart'] as [string, string]),
+    // Every transfer it voted, by fiscal year -- any board whose minutes record one.
+    ...(transfers ? [[transfers.url, transfers.what === 'line item transfers' ? 'Line item transfers' : 'Transfers'] as [string, string]] : []),
     [`/boards/${b.slug}/records`, 'Missing records →'] as [string, string],
     ...(p ? [[p.charter_url, 'Charter & bylaws ↗'] as [string, string]] : []),
   ]
@@ -387,6 +393,9 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           have a JOB POSTINGS page linked for any jobs available."* Renders nothing for a
           board that has never had one. See components/JobPostings.tsx. */}
       <JobsLink slug={b.slug} />
+      {/* TRANSFERS -- every one this board voted, by fiscal year, for any board that has
+          voted one. See pages/BoardTransfers.tsx. */}
+      <TransfersLink slug={b.slug} />
 
       {/* WHAT THE BOARD SAID IT WOULD DO, near the top because it is the frame every
           other section on this page is read against: the meetings, the votes and the
@@ -457,7 +466,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           read as a claim about today. */}
       {b.people?.length ? <p className="text-[13px] mt-2">{b.people.map((p, i) => (
         <span key={p.unit}>{i > 0 ? ' · ' : ''}
-          <a className="underline" href={p.chart_url}>The people: {p.named} named in {p.unit} in FY{p.fy}, across {p.years} years of charts &rarr;</a>
+          <a className="underline" href={p.chart_url}>Org chart: {p.unit} &mdash; {p.named} named in FY{p.fy}, {p.years} years of charts &rarr;</a>
         </span>
       ))}</p> : null}
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />

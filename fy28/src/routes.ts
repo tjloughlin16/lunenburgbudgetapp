@@ -42,7 +42,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'growth'
   | 'homestudents'
   | 'boardcompare' | 'youthsports'
-  | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts' | 'jobs' | 'sctransfers'
+  | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts' | 'jobs'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -346,8 +346,6 @@ export const SLUG: Record<Tab, string> = {
   // own; every other board's is /boards/<slug>/finance, read by the boards tab; the
   // town-manager departments are /departments/<slug>; /accounts lists every measure once.
   schoolfinance: 'boards/school-committee/finance',
-  // Every line item transfer the School Committee voted, by fiscal year (TJ, 10 October 2026).
-  sctransfers: 'boards/school-committee/transfers',
   parks: 'parks-and-recreation',
   accounts: 'accounts',
   orgcharts: 'org-charts',
@@ -828,7 +826,6 @@ export const LABEL: Record<Tab, string> = {
   boardcompare: 'The boards, compared',
   youthsports: 'Youth sports and the fields',
   schoolfinance: 'The School Committee’s finances — every fund and line it owns',
-  sctransfers: 'School Committee line item transfers, by fiscal year',
   parks: 'Parks & Recreation — the department, its fund, its sales, its grounds',
   accounts: 'Every account, once',
   orgcharts: 'Town-wide org charts',
@@ -909,7 +906,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   homestudents: 'reports',
   boardcompare: 'boards',
   youthsports: 'reports',
-  schoolfinance: 'boards', sctransfers: 'boards', accounts: 'themoney', departments: 'boards', parks: 'reports',
+  schoolfinance: 'boards', accounts: 'themoney', departments: 'boards', parks: 'reports',
   healthlever: 'reports', freecashlever: 'reports', salarylever: 'reports', feelever: 'reports', extraslever: 'reports', positionslever: 'reports',
   analysis: 'reports',
   required: 'reports',
@@ -942,7 +939,6 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
   if (seg === 'boards/compared') return 'boardcompare'
   if (seg === 'boards/school-committee/finance') return 'schoolfinance'
-  if (seg === 'boards/school-committee/transfers') return 'sctransfers'
   if (seg.startsWith('boards/')) return 'boards'
   if (seg.startsWith('departments/')) return 'departments'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
@@ -985,6 +981,13 @@ export function boardFinanceSlugFromPath(pathname: string): string | null {
  *  "every board should have a link that shows its missing data." */
 export function boardRecordsSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/records\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
+/** The board a `/boards/<slug>/transfers` address names, or null. Every board whose minutes
+ *  record a transfer has one (TJ, 10 October 2026); see scripts/build_board_transfers.py. */
+export function boardTransfersSlugFromPath(pathname: string): string | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/transfers\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
 }
 
@@ -1101,7 +1104,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
   override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses', youthsports: 'analyses',
-  schoolfinance: 'analyses', sctransfers: 'analyses', accounts: 'money', departments: 'money', parks: 'analyses',
+  schoolfinance: 'analyses', accounts: 'money', departments: 'money', parks: 'analyses',
   healthlever: 'analyses', freecashlever: 'analyses', salarylever: 'analyses', feelever: 'analyses', extraslever: 'analyses', positionslever: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:

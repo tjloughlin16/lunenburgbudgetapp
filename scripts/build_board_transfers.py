@@ -1,7 +1,36 @@
 #!/usr/bin/env python3
-"""THE SCHOOL COMMITTEE'S LINE ITEM TRANSFERS, voted meeting by meeting, tallied by fiscal year.
+"""EVERY BOARD'S TRANSFERS, voted meeting by meeting, tallied by fiscal year -- with how good the
+evidence for each one is, and, where a district form gives the accounts, which school and which
+program the money left and reached.
 
-    python3 scripts/build_school_transfers.py [--check]
+    python3 scripts/build_board_transfers.py [--check]
+
+Built first for the School Committee and generalised the same day (TJ, 10 October 2026: *"we
+need a link on each board page for their TRANSFER link"*): the town's minutes of every board are
+read for transfers by the meeting process, so every board that has voted one gets a page at
+/boards/<slug>/transfers. The School Committee's is the deep one, because only the school
+district publishes a transfer FORM with account numbers.
+
+THE EVIDENCE, GRADED (TJ: *"we need to say whether or not these transfers have the GOLD STANDARD
+for each. flag when not"*). Three records can speak for a transfer, and they are not equal:
+
+  * THE DISTRICT'S TRANSFER FORM -- `Budget Transfer` or `Reclassification of expenses`, signed,
+    with every account's org and object code and the amount. The GOLD STANDARD: it says exactly
+    what moved where. Held for very few.
+  * THE TOWN'S MINUTES -- the official record that the vote happened, naming the lines in WORDS
+    and never by account number. Good, and far less detailed.
+  * OUR NOTES FROM THE RECORDING -- machine captions, a finding aid. Least dependable.
+
+Every row carries which of the three exist for it, and `gold` is true only with the form.
+
+THE ACCOUNTS, LOOKED UP IN OUR OWN RECORDS. A form's org and object code are found in the
+school department's MUNIS ledger (`munis-school-ytd.csv`), whose full account string carries the
+DESE function code (segment 4, named from DESE's own list) and the BUILDING (segment 6). The
+building reading is OURS, measured: in the ledger every account name with a school prefix sits
+in one value of that segment -- E.S. in 4, M.S. in 5, H.S. in 6, P.S. and kindergarten in 2 --
+with no exception, and the support is printed with it. A transfer whose sides differ in building
+or function is flagged as crossing schools or programs. An org the ledger does not hold is said
+to be not found, never guessed.
 
 TJ, 10 October 2026: *"build a page for the school committee that captures all the line item
 transfers that were voted in a meeting ... part of the meeting fetch process ... a running
@@ -59,11 +88,14 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOARD = 'school-committee'
-OFFICIAL = os.path.join(ROOT, 'sources', 'data', 'official-votes', BOARD)
-RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes', BOARD)
-OUT = os.path.join(ROOT, 'sources', 'data', 'school-committee-transfers.csv')
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-committee-transfers.json')
+SCHOOL = 'school-committee'
+OFFICIAL_ROOT = os.path.join(ROOT, 'sources', 'data', 'official-votes')
+RECORDED_ROOT = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
+OUT = os.path.join(ROOT, 'sources', 'data', 'board-transfers.csv')
+PAYLOAD_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'transfers')
+BOARDS_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
+MUNIS_SCHOOL = os.path.join(ROOT, 'sources', 'data', 'munis-school-ytd.csv')
+DESE_FUNCTIONS = os.path.join(ROOT, 'sources', 'data', 'dese-function-expenditure.csv')
 # THE ACCOUNTS ON EACH DISTRICT SHEET, transcribed by eye from the page images and tied to each
 # side's printed total (the OCR of these scans scrambles columns and drops lines). Optional:
 # without it the sheets still give their totals, and no account is ever inferred.
@@ -72,7 +104,8 @@ SHEET_LINES = os.path.join(ROOT, 'sources', 'data', 'school-transfer-sheet-lines
 SHEET_WINDOW_DAYS = 14
 SITE = 'https://lunenburgbudgetproject.org'
 
-COLS = ['fy', 'fy_basis', 'meeting_date', 'source', 'status', 'counted', 'why_not', 'description',
+COLS = ['board', 'kind', 'fy', 'fy_basis', 'meeting_date', 'source', 'status', 'counted', 'gold', 'has_form',
+        'has_minutes', 'has_recording', 'crosses', 'why_not', 'description',
         'from_line', 'to_line', 'amount_as_printed', 'amount', 'amount_basis', 'outcome',
         'quote', 'minutes_url', 'our_copy', 'video_url']
 
@@ -87,6 +120,35 @@ NOT_VOTED = [
 ]
 NOT_LINE_ITEM = re.compile(r'class (?:of \d{4}|accounts?)|scholarship|Finance Committee transfer|'
                            r'reserve fund transfer|donat', re.I)
+# For any other board a reserve fund transfer IS a transfer it votes -- the Finance Committee's
+# main one -- so only student-activity and gift money is set aside there.
+NOT_TRANSFER_ANY = re.compile(r'class (?:of \d{4}|accounts?)|scholarship|donat', re.I)
+
+
+def not_line_item(board):
+    return NOT_LINE_ITEM if board == SCHOOL else NOT_TRANSFER_ANY
+
+
+# WHAT KIND OF TRANSFER, for the boards whose minutes say "transfer" about more than one thing.
+# Read on 10 October 2026 from a sample of the Select Board's and Finance Committee's rows: a
+# LICENCE transfer moves no money at all, and a town meeting ARTICLE is a transfer the board
+# only recommends -- town meeting votes it. Both are kept in the table with the reason and
+# kept out of the board's total. Ours, by the minutes' own words; a row that matches nothing
+# is `other` and counted, because the minutes recorded a transfer vote.
+NOT_MONEY = re.compile(r'licen[cs]e|ownership|deed|easement', re.I)
+ARTICLE = re.compile(r'\barticle\b|\bwarrant\b|town meeting|recommend', re.I)
+KINDS = [(re.compile(r'reserve fund', re.I), 'reserve fund'),
+         (re.compile(r'stabili[sz]ation', re.I), 'stabilization fund'),
+         (re.compile(r'line item|line-item', re.I), 'line item')]
+
+
+def kind_of(board, text):
+    if board == SCHOOL:
+        return 'line item'
+    for rx, k in KINDS:
+        if rx.search(text):
+            return k
+    return 'other'
 
 
 def school_fy(date):
@@ -134,9 +196,10 @@ def lines_of(description):
     return '', ''
 
 
-def official_rows():
+def official_rows(board):
     rows = []
-    for f in sorted(glob.glob(os.path.join(OFFICIAL, '*.json'))):
+    NLI = not_line_item(board)
+    for f in sorted(glob.glob(os.path.join(OFFICIAL_ROOT, board, '*.json'))):
         d = json.load(open(f, encoding='utf-8'))
         date = d['meeting_date']
         src = d.get('source') or {}
@@ -145,7 +208,7 @@ def official_rows():
         items = d.get('transfers') or []
         # A transfer VOTE with no transfer itemised: the minutes kept the vote, not the lines.
         if not items and any(PASSED.search(v.get('outcome', '')) for v in votes) \
-                and not any(NOT_LINE_ITEM.search(v['motion']) for v in votes):
+                and not any(NLI.search(v['motion']) for v in votes):
             v = votes[0]
             items = [{'description': v['motion'] + ' (the minutes record the vote, not the lines)',
                       'amount_as_printed': '', 'outcome': v['outcome'], 'quote': v.get('quote', '')}]
@@ -167,8 +230,12 @@ def official_rows():
                 if rx.search(outcome) or (reason == 'the minutes record no transfer' and rx.search(desc)):
                     why = reason
                     break
-            if not why and NOT_LINE_ITEM.search(desc):
+            if not why and NLI.search(desc):
                 why = 'not a budget line item transfer (a class, scholarship, donation or reserve-fund account)'
+            if not why and board != SCHOOL and NOT_MONEY.search(desc):
+                why = 'not a transfer of money (a licence or property transfer)'
+            if not why and board != SCHOOL and ARTICLE.search(desc + ' ' + t.get('outcome', '')):
+                why = 'a town meeting article the board acted on; town meeting votes the transfer'
             if not why and (t.get('amount_as_printed') or '').strip().lower() in ('none', 'none printed') \
                     and not PASSED.search(outcome):
                 why = 'the minutes record no transfer'
@@ -177,6 +244,7 @@ def official_rows():
             amt, abasis = amount_of(t.get('amount_as_printed'))
             fl, tl = lines_of(desc)
             rows.append({
+                'board': board, 'kind': kind_of(board, desc),
                 'fy': str(fy), 'fy_basis': basis, 'meeting_date': date, 'source': 'town minutes',
                 'counted': 'no' if why else 'yes', 'why_not': why,
                 'description': desc, 'from_line': fl, 'to_line': tl,
@@ -188,11 +256,23 @@ def official_rows():
     return rows
 
 
-def recording_rows(have_minutes):
+def recording_dates(board):
+    """Meetings whose recording our notes say discussed or voted a transfer -- the third, least
+    dependable kind of evidence, recorded per meeting."""
+    out = set()
+    for f in glob.glob(os.path.join(RECORDED_ROOT, board, '*.json')):
+        m = json.load(open(f, encoding='utf-8'))
+        if any(t.get('amount_as_heard') not in ('none', 'none reported') for t in m['minutes'].get('transfers') or []):
+            out.add(m['meeting_date'])
+    return out
+
+
+def recording_rows(board, have_minutes):
     """Transfers our notes heard VOTED at a meeting whose town minutes are not read. Listed,
     never counted: captions are a finding aid."""
     rows = []
-    for f in sorted(glob.glob(os.path.join(RECORDED, '*.json'))):
+    NLI = not_line_item(board)
+    for f in sorted(glob.glob(os.path.join(RECORDED_ROOT, board, '*.json'))):
         m = json.load(open(f, encoding='utf-8'))
         date = m['meeting_date']
         if date in have_minutes:
@@ -202,12 +282,15 @@ def recording_rows(have_minutes):
             if not re.search(r'\bvoted\b|passed|approved', outcome, re.I) or re.search(r'discussed only|prior meeting', outcome, re.I):
                 continue
             desc = t.get('description', '')
-            if NOT_LINE_ITEM.search(desc):
+            if NLI.search(desc):
                 continue
             own = fys_in(desc)
             fy, basis = (own.pop(), 'stated in the recording') if len(own) == 1 else (
                 school_fy(date), 'the fiscal year the meeting fell in (ours)')
+            if board != SCHOOL and (NOT_MONEY.search(desc) or ARTICLE.search(desc)):
+                continue
             rows.append({
+                'board': board, 'kind': kind_of(board, desc),
                 'fy': str(fy), 'fy_basis': basis, 'meeting_date': date,
                 'source': 'recording (machine captions)', 'counted': 'no',
                 'why_not': 'awaiting the town’s minutes; heard in the recording only',
@@ -377,26 +460,101 @@ def attach_accounts(rows, sh):
                 break
 
 
-def build():
-    off = official_rows()
-    have = {r['meeting_date'] for r in off} | {
-        json.load(open(f, encoding='utf-8'))['meeting_date'] for f in glob.glob(os.path.join(OFFICIAL, '*.json'))}
-    sh = sheets()
+# ------------------------------------------------------------------ accounts, looked up
+
+def munis_accounts():
+    """{(org, object): account} from the school department's MUNIS ledger, the latest year
+    each pair appears, with its full account string, the ledger's own name, the DESE function
+    and the building. Plus the support for the building reading, measured on this ledger."""
+    if not os.path.exists(MUNIS_SCHOOL):
+        return {}, {}
+    fnames = {}
+    if os.path.exists(DESE_FUNCTIONS):
+        for r in csv.DictReader(open(DESE_FUNCTIONS, encoding='utf-8')):
+            if r.get('level') == 'detail' and r.get('func_code', '').isdigit():
+                fnames[r['func_code']] = r['func_desc']
+    rows = [r for r in csv.DictReader(open(MUNIS_SCHOOL, encoding='utf-8'))
+            if r['fund'] == '0100' and r['account'].count('-') == 8]
+    # THE BUILDING SEGMENT, read off the ledger itself: which school prefix the names in each
+    # value carry. A value whose names carry none is district-wide -- also our reading.
+    prefix = re.compile(r'^(P\.S\.|E\.S\.|M\.S\.|H\.S\.|KIND)', re.I)
+    votes = {}
+    for r in rows:
+        m = prefix.match(r['description'].replace('M.S.PARA', 'M.S. PARA'))
+        if m:
+            votes.setdefault(r['account'].split('-')[5], {}).setdefault(m.group(1).upper(), set()).add(r['account'])
+    label = {'P.S.': 'Primary School', 'KIND': 'Primary School', 'E.S.': 'Elementary School',
+             'M.S.': 'Middle School', 'H.S.': 'High School'}
+    building = {}
+    for seg, by in votes.items():
+        names = {label[k] for k in by}
+        n = sum(len(v) for v in by.values())
+        if len(names) == 1:
+            building[seg] = (names.pop(), 'ours: all %d account names in this building code carry its prefix' % n)
+    out = {}
+    for r in sorted(rows, key=lambda r: r['fiscal_year']):
+        seg = r['account'].split('-')
+        b = building.get(seg[5], ('District-wide', 'ours: no account name in this code carries a school prefix'))
+        out[(r['org'], r['obj'])] = {
+            'munis_account': r['account'], 'munis_name': r['description'], 'munis_fy': r['fiscal_year'],
+            'building': b[0], 'building_basis': b[1],
+            'function_code': seg[3], 'function_name': fnames.get(seg[3], ''),
+        }
+    return out, building
+
+
+def enrich(accounts, look):
+    """Each account line gets what our ledger says about it, or `found: False`."""
+    for side in ('from', 'to'):
+        for a in accounts.get(side, []):
+            hit = look.get((a['org'], a['object']))
+            a['found'] = bool(hit)
+            if hit:
+                a.update(hit)
+    return accounts
+
+
+def crosses(accounts):
+    """['schools', 'programs'] where the money changes building or DESE function on the way."""
+    out = []
+    for key, word in (('building', 'schools'), ('function_code', 'programs')):
+        f = {a.get(key) for a in accounts.get('from', []) if a.get('found')}
+        t = {a.get(key) for a in accounts.get('to', []) if a.get('found')}
+        if f and t and f != t:
+            out.append(word)
+    return out
+
+
+def build(board):
+    off = official_rows(board)
+    have = {json.load(open(f, encoding='utf-8'))['meeting_date']
+            for f in glob.glob(os.path.join(OFFICIAL_ROOT, board, '*.json'))}
+    sh = sheets() if board == SCHOOL else []
     for r in off:
         r['status'] = 'confirmed' if r['counted'] == 'yes' else 'not counted'
     attach_accounts(off, sh)
-    rec = recording_rows(have)
+    rec = recording_rows(board, have)
     for r in rec:
         r['status'] = 'heard only'
     tent, rec = tentative_rows(rec, sh)
     rows = off + tent + rec
+    heard = recording_dates(board)
+    look, _ = munis_accounts() if board == SCHOOL else ({}, {})
+    for r in rows:
+        if r.get('accounts'):
+            enrich(r['accounts'], look)
+        r['has_form'] = 'yes' if r.get('accounts') else 'no'
+        r['has_minutes'] = 'yes' if r['source'] == 'town minutes' else 'no'
+        r['has_recording'] = 'yes' if r['meeting_date'] in heard else 'no'
+        r['gold'] = r['has_form']
+        r['crosses'] = ' '.join(crosses(r['accounts'])) if r.get('accounts') else ''
     rows.sort(key=lambda r: (r['fy'], r['meeting_date'], r['source'] != 'town minutes'))
     return rows, sorted(have)
 
 
-def payload(rows, read_dates):
+def payload(board, name, rows, read_dates):
     years = {}
-    for sh in [dict(x) for x in sheets()]:
+    for sh in ([dict(x) for x in sheets()] if board == SCHOOL else []):
         sh.pop('pages', None); sh.pop('dated', None)
         years.setdefault(sh['fy'], {'fy': int(sh['fy']), 'counted': [], 'tentative': [], 'awaiting': [],
                                     'not_counted': [], 'sheets': []}).setdefault('sheets', []).append(sh)
@@ -407,13 +565,17 @@ def payload(rows, read_dates):
                                   'amount_as_printed', 'amount', 'amount_basis', 'outcome',
                                   'quote', 'minutes_url', 'our_copy', 'video_url', 'fy_basis', 'why_not')}
         item['fy_ours'] = r['fy_basis'].startswith('the fiscal year the meeting')
+        item['evidence'] = {'form': r['has_form'] == 'yes', 'minutes': r['has_minutes'] == 'yes',
+                            'recording': r['has_recording'] == 'yes'}
+        item['crosses'] = r['crosses'].split() if r['crosses'] else []
+        item['kind'] = r.get('kind', '')
         for k in ('accounts', 'sheet', 'sheet_page', 'form', 'ties'):
             if k in r:
                 item[k] = r[k]
         if r['counted'] == 'yes':
             y['counted'].append(item)
         elif r['status'] == 'tentative':
-            y.setdefault('tentative', []).append(item)
+            y['tentative'].append(item)
         elif r['source'] != 'town minutes':
             y['awaiting'].append(item)
         else:
@@ -421,8 +583,6 @@ def payload(rows, read_dates):
     out = []
     for fy in sorted(years, reverse=True):
         y = years[fy]
-        y.setdefault('sheets', [])
-        y.setdefault('tentative', [])
         y['tentative_total'] = '%.2f' % sum(float(t['amount']) for t in y['tentative'] if t['amount'])
         running = 0.0
         for it in y['counted']:
@@ -435,60 +595,91 @@ def payload(rows, read_dates):
         for k in ('counted', 'tentative', 'awaiting', 'not_counted'):
             y[k] = list(reversed(y[k]))
         y['n'] = len(y['counted'])
+        y['n_gold'] = sum(1 for it in y['counted'] if it['evidence']['form'])
         y['n_no_amount'] = sum(1 for it in y['counted'] if not it['amount'])
         y['meetings'] = len({it['meeting_date'] for it in y['counted']})
         y['n_fy_ours'] = sum(1 for it in y['counted'] if it['fy_ours'])
         out.append(y)
-    first, last = read_dates[0], read_dates[-1]
+    school = board == SCHOOL
     return {
-        'board': 'School Committee',
-        'minutes_read': len(read_dates), 'minutes_from': first, 'minutes_to': last,
+        'board': name, 'slug': board,
+        'what': 'line item transfers' if school else 'transfers',
+        'has_forms': school,
+        'minutes_read': len(read_dates),
+        'minutes_from': read_dates[0] if read_dates else '', 'minutes_to': read_dates[-1] if read_dates else '',
         'years': out,
-        'grain': ('A row is a line item transfer as the School Committee’s minutes record it: '
-                  'sometimes one line to another, sometimes one total for a batch, sometimes only '
-                  'the vote. Totals add the amounts the minutes print; a transfer approved with no '
-                  'amount printed is counted and adds nothing. The fiscal year is the one the '
-                  'minutes state where they state one, otherwise the year the meeting fell in, '
-                  'marked as ours.'),
+        'grain': ('A row is a transfer as the %s\u2019s minutes record it: sometimes one line to another, '
+                  'sometimes one total for a batch, sometimes only the vote. Totals add the amounts the '
+                  'minutes print; a transfer approved with no amount printed is counted and adds nothing. '
+                  'The fiscal year is the one the minutes state where they state one, otherwise the year '
+                  'the meeting fell in, marked as ours.' % name),
         'sources': [
-            {'label': 'Every row, counted or not, with the reason', 'url': '/docs/data/school-committee-transfers.csv'},
-            {'label': 'The town’s minutes, as read for votes and transfers',
-             'url': '/docs/data/official-votes/school-committee/'},
-        ],
+            {'label': 'Every row for every board, counted or not, with the reason and the evidence',
+             'url': '/docs/data/board-transfers.csv'},
+        ] + ([{'label': 'Every account line on the district\u2019s transfer forms',
+               'url': '/docs/data/school-transfer-sheet-lines.csv'}] if school else []),
     }
+
+
+def boards():
+    """Every board whose minutes or recordings hold a transfer, with its name from the site."""
+    names = {}
+    if os.path.exists(BOARDS_JSON):
+        names = {b['slug']: b['name'] for b in json.load(open(BOARDS_JSON, encoding='utf-8'))['boards']}
+    slugs = set()
+    for root in (OFFICIAL_ROOT, RECORDED_ROOT):
+        for d in glob.glob(os.path.join(root, '*')):
+            if os.path.isdir(d):
+                slugs.add(os.path.basename(d))
+    return sorted((s, names[s]) for s in slugs if s in names)
+
+
+def render(obj):
+    return json.dumps(obj, indent=1, sort_keys=True, ensure_ascii=False) + '\n'
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, read = build()
+    all_rows, outs, index = [], [], []
+    for slug, name in boards():
+        rows, read = build(slug)
+        if not any(r['counted'] == 'yes' or r['status'] in ('tentative', 'heard only') for r in rows):
+            continue
+        p = payload(slug, name, rows, read)
+        all_rows += rows
+        outs.append((os.path.join(PAYLOAD_DIR, slug + '.json'), render(p)))
+        latest = p['years'][0]
+        index.append({'slug': slug, 'name': name, 'what': p['what'],
+                      'transfers': sum(y['n'] for y in p['years']),
+                      'latest_fy': latest['fy'], 'latest_n': latest['n'],
+                      'latest_tentative': latest['tentative_total'],
+                      'url': '/boards/%s/transfers' % slug})
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=COLS, lineterminator='\n', extrasaction='ignore')
     w.writeheader()
-    w.writerows(rows)
-    p = payload(rows, read)
-    outs = [(OUT, buf.getvalue()),
-            (PAYLOAD, json.dumps(p, indent=1, sort_keys=True, ensure_ascii=False) + '\n')]
+    w.writerows(all_rows)
+    outs += [(OUT, buf.getvalue()),
+             (os.path.join(PAYLOAD_DIR, 'index.json'), render({'boards': index}))]
     if a.check:
         bad = 0
         for path, want in outs:
             have = open(path, encoding='utf-8', newline='').read() if os.path.exists(path) else None
             if have != want:
-                print('STALE -- %s; run scripts/build_school_transfers.py' % os.path.relpath(path, ROOT))
+                print('STALE -- %s; run scripts/build_board_transfers.py' % os.path.relpath(path, ROOT))
                 bad = 1
         if not bad:
-            print('ok -- %d transfer rows across %d fiscal years reproduce' % (len(rows), len(p['years'])))
+            print('ok -- %d transfer rows across %d boards reproduce' % (len(all_rows), len(index)))
         return bad
+    os.makedirs(PAYLOAD_DIR, exist_ok=True)
     for path, want in outs:
         tmp = path + '.tmp'
         open(tmp, 'w', encoding='utf-8', newline='').write(want)
         os.replace(tmp, path)
-    for y in p['years']:
-        print('FY%d: %d transfer(s) at %d meeting(s), $%s printed (%d with no amount; %d year by meeting '
-              'date); %d awaiting minutes; %d not counted'
-              % (y['fy'], y['n'], y['meetings'], '{:,.2f}'.format(float(y['total'])), y['n_no_amount'],
-                 y['n_fy_ours'], len(y['awaiting']), len(y['not_counted'])))
+    for b in index:
+        print('%-40s %3d transfers; FY%d: %d%s' % (b['name'], b['transfers'], b['latest_fy'], b['latest_n'],
+              ', $%s tentative' % b['latest_tentative'] if float(b['latest_tentative']) else ''))
     return 0
 
 

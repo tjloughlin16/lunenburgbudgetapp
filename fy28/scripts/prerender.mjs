@@ -189,6 +189,14 @@ async function readRoutes() {
     records = recs.map(b => `/boards/${b.board_slug}/records`).sort()
     console.log(`  ${records.length} board records pages at /boards/<slug>/records`)
   }
+  // THE TRANSFERS TAB, for every board whose minutes record a transfer
+  // (scripts/build_board_transfers.py writes the index of which).
+  const transfersFile = join(APP, 'public', 'data', 'transfers', 'index.json')
+  let transfers = []
+  if (existsSync(transfersFile)) {
+    transfers = JSON.parse(await readFile(transfersFile, 'utf8')).boards.map(b => b.url).sort()
+    console.log(`  ${transfers.length} board transfers pages at /boards/<slug>/transfers`)
+  }
   // EVERY MEETING WITH OUR MINUTES. Client-rendered until 17 September 2026, so a link
   // shared on Facebook carried the site's description rather than the meeting's headline.
   const minutesFile = join(APP, 'public', 'data', 'recording-minutes.json')
@@ -204,7 +212,7 @@ async function readRoutes() {
     departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
     console.log(`  ${departments.length} departments at /departments/<slug>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...records, ...departments, ...meetings]
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...records, ...transfers, ...departments, ...meetings]
 }
 
 /** Serve dist, falling back to the PRISTINE shell -- with the probe in it.
