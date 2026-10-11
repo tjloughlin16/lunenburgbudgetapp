@@ -1447,6 +1447,13 @@ GROUPS = [
              'line item transfer (tabled, pending, class accounts, none recorded). `fy` is the '
              'year the minutes state, else the year the meeting fell in, and `fy_basis` says '
              'which. Rows from a RECORDING are captions, a finding aid, and never counted.'),
+            ('data/school-transfer-sheet-lines.csv',
+             'Every account line on the district\u2019s budget transfer sheets', 2,
+             'Written by us: transcribed BY EYE from the page images of the district\u2019s transfer '
+             'forms (two are scans with no text layer, checked with pdf_kind.py; their OCR scrambles '
+             'columns and dropped a $284.30 line), one row per account line with org and object code '
+             'as printed. Every side of every page sums to the total the form itself prints, to the '
+             'cent, and build_school_transfers.py rechecks that on every build.'),
             ('data/job-posting-owners.csv',
              'Which board or department each job posting is linked from, and why', 2,
              'Written by us, by hand. The town prints a department name on a posting and the '

@@ -25,11 +25,16 @@ type Item = {
   amount_as_printed: string; amount: string; amount_basis: string; outcome: string
   quote: string; minutes_url: string; our_copy: string; video_url: string
   fy_basis: string; fy_ours: boolean; why_not: string; running_total?: string
+  /** The accounts, where a district sheet gives them -- never inferred. */
+  accounts?: { from: Account[]; to: Account[] }
+  sheet?: string; sheet_page?: string; form?: string; ties?: boolean
 }
+type Account = { org: string; object: string; description: string; amount_as_printed: string }
 type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; transfers_as_printed: string[]; reclassifications_as_printed: string[]; url: string; publisher_url: string }
 type Year = {
   fy: number; n: number; total: string; n_no_amount: number; meetings: number; n_fy_ours: number
-  counted: Item[]; awaiting: Item[]; not_counted: Item[]; sheets: Sheet[]
+  tentative_total: string
+  counted: Item[]; tentative: Item[]; awaiting: Item[]; not_counted: Item[]; sheets: Sheet[]
 }
 type Payload = {
   board: string; minutes_read: number; minutes_from: string; minutes_to: string
@@ -85,11 +90,16 @@ export function SchoolTransfers() {
             <Fig v={String(pick.n)} l={`transfer${pick.n === 1 ? '' : 's'} approved in the town’s minutes`} />
             <Fig v={usd(pick.total)} l={`printed in those minutes${pick.n_no_amount ? `; ${pick.n_no_amount} approved with no amount printed` : ''}`} />
             <Fig v={String(pick.meetings)} l={`meeting${pick.meetings === 1 ? '' : 's'} with a transfer vote`} />
+            {Number(pick.tentative_total) > 0 && (
+              <Fig v={usd(pick.tentative_total)} l="TENTATIVE: voted in a recording, not yet in the town’s minutes" tone="var(--status-warning)" />
+            )}
           </div>
           {pick.counted.length === 0
             ? <p className="text-[14px] mt-4 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
                 None in the town&rsquo;s minutes yet &mdash; the last School Committee minutes the town has posted are from {d(p.minutes_to)}.
-                {(pick.awaiting.length > 0 || pick.sheets.length > 0) && <> What is known so far is below: {pick.awaiting.length > 0 && <>{pick.awaiting.length} vote{pick.awaiting.length === 1 ? '' : 's'} heard in the recording</>}{pick.awaiting.length > 0 && pick.sheets.length > 0 && ' and '}{pick.sheets.length > 0 && <>the district&rsquo;s own transfer sheet{pick.sheets.length === 1 ? '' : 's'}</>}.</>}
+                {pick.tentative.length > 0
+                  ? <> The transfers voted since are below as <strong>tentative</strong>: heard in the recording, with the district&rsquo;s sheet for the amounts and accounts.</>
+                  : (pick.awaiting.length > 0 || pick.sheets.length > 0) && <> What is known so far is below.</>}
               </p>
             : <div className="mt-4 overflow-x-auto">
               <table className="w-full text-[13.5px] border-collapse">
@@ -112,6 +122,33 @@ export function SchoolTransfers() {
             </p>
           )}
         </Section>
+
+        {pick.tentative.length > 0 && (
+          <Section kind="categorical" id="tentative" title="Tentative: voted, awaiting the town’s minutes">
+            <p className="text-[13.5px] max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+              <strong>Interpreted, not yet the record.</strong> The vote is heard in the meeting&rsquo;s recording; the amounts and accounts are the district&rsquo;s own transfer sheet for that meeting. Each moves into the total above when the town posts the minutes.
+            </p>
+            <ul className="mt-3 space-y-3">
+              {pick.tentative.map((it, i) => (
+                <li key={i} className="card p-3" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-warning)' }}>
+                      {it.form === 'reclassification' ? 'Reclassification · not in the motion' : 'Tentative'}
+                    </span>
+                    <span className="tnum font-semibold">{d(it.meeting_date)}</span>
+                    <span className="tnum font-bold ml-auto">{it.amount_as_printed}</span>
+                  </div>
+                  {it.description && <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>{it.description}</p>}
+                  {it.accounts && <Accounts a={it.accounts} ties={it.ties} />}
+                  <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+                    {it.sheet && <><a className="underline" href={it.sheet}>the district&rsquo;s sheet{it.sheet_page ? `, page ${it.sheet_page}` : ''}</a> · </>}
+                    {it.video_url && <a className="underline" href={it.video_url} target="_blank" rel="noreferrer">the vote, in the recording</a>}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )}
 
         {pick.sheets.length > 0 && (
           <Section kind="raw" id="sheets" title="The district’s transfer sheets">
@@ -186,10 +223,35 @@ export function SchoolTransfers() {
   )
 }
 
-function Fig({ v, l }: { v: string; l: string }) {
+/** THE ACCOUNTS ON THE DISTRICT'S SHEET: org and object codes as printed, from -> to. A side
+ *  that does not add up to the sheet's own printed total says so -- the transcription keeps
+ *  what is printed rather than correcting it. */
+function Accounts({ a, ties }: { a: { from: Account[]; to: Account[] }; ties?: boolean }) {
+  const col = (label: string, xs: Account[]) => (
+    <div className="min-w-0">
+      <p className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{label}</p>
+      <ul className="mt-0.5">
+        {xs.map((x, i) => (
+          <li key={i} className="text-[12.5px] flex justify-between gap-3 tnum">
+            <span className="min-w-0 break-words">{x.description} <span style={{ color: 'var(--text-muted)' }}>{x.org}-{x.object}</span></span>
+            <span className="shrink-0">{x.amount_as_printed}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+  return (
+    <div className="mt-2">
+      <div className="grid gap-3 sm:grid-cols-2">{col('From', a.from)}{col('To', a.to)}</div>
+      {ties === false && <p className="text-[11.5px] mt-1" style={{ color: 'var(--status-warning)' }}>The lines as printed do not add up to the sheet&rsquo;s own total.</p>}
+    </div>
+  )
+}
+
+function Fig({ v, l, tone }: { v: string; l: string; tone?: string }) {
   return (
     <div className="min-w-0">
-      <p className="text-2xl font-bold">{v}</p>
+      <p className="text-2xl font-bold" style={tone ? { color: tone } : undefined}>{v}</p>
       <p className="text-[12.5px] max-w-[16rem]" style={{ color: 'var(--text-secondary)' }}>{l}</p>
     </div>
   )
@@ -208,6 +270,12 @@ function Row({ it }: { it: Item }) {
           ? <span className="font-semibold">{it.from_line} <span aria-label="to">&rarr;</span> {it.to_line}</span>
           : <span className="font-semibold">{it.description}</span>}
         {moved && <span className="block text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>{it.description}</span>}
+        {it.accounts && (
+          <details className="mt-1">
+            <summary className="cursor-pointer text-[12px]" style={{ color: 'var(--series-cost)' }}>Accounts, from the district&rsquo;s sheet</summary>
+            <Accounts a={it.accounts} ties={it.ties} />
+          </details>
+        )}
         <span className="block text-[11.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
           {it.quote && <>&ldquo;{it.quote.length > 140 ? it.quote.slice(0, 140) + '…' : it.quote}&rdquo; · </>}
           {it.our_copy && <a className="underline" href={it.our_copy}>minutes</a>}

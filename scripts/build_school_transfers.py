@@ -64,9 +64,15 @@ OFFICIAL = os.path.join(ROOT, 'sources', 'data', 'official-votes', BOARD)
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes', BOARD)
 OUT = os.path.join(ROOT, 'sources', 'data', 'school-committee-transfers.csv')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-committee-transfers.json')
+# THE ACCOUNTS ON EACH DISTRICT SHEET, transcribed by eye from the page images and tied to each
+# side's printed total (the OCR of these scans scrambles columns and drops lines). Optional:
+# without it the sheets still give their totals, and no account is ever inferred.
+SHEET_LINES = os.path.join(ROOT, 'sources', 'data', 'school-transfer-sheet-lines.csv')
+# How long before a meeting the district's sheet may be dated and still be the one it voted.
+SHEET_WINDOW_DAYS = 14
 SITE = 'https://lunenburgbudgetproject.org'
 
-COLS = ['fy', 'fy_basis', 'meeting_date', 'source', 'counted', 'why_not', 'description',
+COLS = ['fy', 'fy_basis', 'meeting_date', 'source', 'status', 'counted', 'why_not', 'description',
         'from_line', 'to_line', 'amount_as_printed', 'amount', 'amount_basis', 'outcome',
         'quote', 'minutes_url', 'our_copy', 'video_url']
 
@@ -228,8 +234,35 @@ SHEET_DATE = [re.compile(r'DATE:\s*(?:\d{4}\s+)?(\d{1,2}/\d{1,2}/\d{4})'),
               re.compile(r'presented on \w+, ([A-Z][a-z]+ \d{1,2}, \d{4})')]
 
 
+def sheet_pages():
+    """{sheet path: [page dict]} from the transcription, each page with its from and to
+    accounts. A page whose sides do not sum to its printed totals is kept and FLAGGED --
+    the transcription says what is printed; this says whether it adds up."""
+    if not os.path.exists(SHEET_LINES):
+        return {}
+    pages = {}
+    for r in csv.DictReader(open(SHEET_LINES, encoding='utf-8')):
+        key = (r['sheet'], r['page'])
+        pg = pages.setdefault(key, {'page': r['page'], 'form': r['form'], 'explanation': r['explanation'],
+                                    'from': [], 'to': [], 'totals': {}})
+        pg[r['side']].append({'org': r['org'], 'object': r['object'], 'description': r['description'],
+                              'amount_as_printed': r['amount_as_printed']})
+        pg['totals'][r['side']] = r['total_as_printed']
+    out = {}
+    for (sheet, _), pg in sorted(pages.items(), key=lambda kv: (kv[0][0], int(kv[0][1] or 0))):
+        for side in ('from', 'to'):
+            got = sum(float(amount_of(x['amount_as_printed'])[0] or 0) for x in pg[side])
+            want = amount_of(pg['totals'].get(side, ''))[0]
+            pg['ties_' + side] = bool(want) and abs(got - float(want)) < 0.005
+        pg['total'] = amount_of(pg['totals'].get('from') or pg['totals'].get('to') or '')[0]
+        del pg['totals']
+        out.setdefault(sheet, []).append(pg)
+    return out
+
+
 def sheets():
     out, seen = [], set()
+    lines = sheet_pages()
     for idx in sorted(glob.glob(os.path.join(ROOT, 'sources', '*', 'index.csv'))):
         for r in csv.DictReader(open(idx, encoding='utf-8', errors='replace')):
             local, text = r.get('local') or '', r.get('text') or ''
@@ -269,7 +302,15 @@ def sheets():
             # showed $18,703.94 of $41,560.06. TJ found it by reading the meeting.
             totals = re.findall(r'TOTAL AMOUNT FROM\s*-?\$\s?([\d,]+\.\d{2})', body)
             reclass = re.findall(r'Reclassification of expenses.*?AMOUNT\s*\n?\s*\$?\s*([\d,]+\.\d{2})', body, re.S)
+            when_iso = ''
+            for fmt in ('%m/%d/%Y', '%B %d, %Y'):
+                try:
+                    when_iso = datetime.datetime.strptime(dated, fmt).date().isoformat()
+                    break
+                except ValueError:
+                    pass
             out.append({'fy': fy, 'label': r['label'], 'dated_as_printed': dated, 'note': note,
+                        'dated': when_iso, 'pages': lines.get(local, []),
                         'transfers_as_printed': ['$' + t for t in totals],
                         'reclassifications_as_printed': ['$' + t for t in reclass],
                         'url': '/docs/' + local[len('sources/'):],
@@ -277,29 +318,102 @@ def sheets():
     return sorted(out, key=lambda x: (x['fy'], x['url']))
 
 
+def sheet_for(fy, meeting_date, sh):
+    """The district sheet a meeting most plausibly voted: same fiscal year, dated on or up to
+    SHEET_WINDOW_DAYS before the meeting. Ours, a match by date; said so on every row."""
+    m = datetime.date.fromisoformat(meeting_date)
+    hits = [x for x in sh if x['fy'] == fy and x['dated']
+            and 0 <= (m - datetime.date.fromisoformat(x['dated'])).days <= SHEET_WINDOW_DAYS]
+    return max(hits, key=lambda x: x['dated']) if hits else None
+
+
+def tentative_rows(rec, sh):
+    """TENTATIVE: a transfer vote heard in a RECORDING, at a meeting whose minutes the town
+    has not posted, with the amounts and accounts taken from the district's sheet for it. TJ,
+    10 October 2026: *"we should show these transfers as 'tentative' ... interpreted from the
+    transcript, until we get the official minutes report."* Each row says all three: the vote
+    is interpreted, the figures are the sheet's, the minutes are awaited. A reclassification
+    page on the sheet is listed but not totalled -- the motion named the transfers."""
+    out, used = [], set()
+    for r in rec:
+        s_ = sheet_for(r['fy'], r['meeting_date'], sh)
+        if not s_:
+            continue
+        used.add(id(r))
+        pages = s_['pages'] or [{'page': '', 'form': 'budget transfer', 'explanation': '', 'from': [], 'to': [],
+                                 'total': amount_of(t)[0], 'ties_from': False, 'ties_to': False}
+                                for t in s_['transfers_as_printed']]
+        for pg in pages:
+            reclass = pg['form'] == 'reclassification'
+            out.append(dict(r, status='tentative', counted='no',
+                            why_not=('a reclassification on the sheet, not in the motion' if reclass else
+                                     'tentative: vote heard in the recording; amounts and accounts from the '
+                                     'district\u2019s sheet; awaiting the town\u2019s minutes'),
+                            source='recording + district sheet',
+                            description=pg['explanation'] or r['description'],
+                            from_line='; '.join(x['description'] for x in pg['from']),
+                            to_line='; '.join(x['description'] for x in pg['to']),
+                            amount_as_printed=('$' + '{:,.2f}'.format(float(pg['total']))) if pg['total'] else '',
+                            amount='' if reclass else pg['total'],
+                            amount_basis='the district sheet\u2019s printed total',
+                            sheet=s_['url'], sheet_page=pg['page'], form=pg['form'],
+                            accounts={'from': pg['from'], 'to': pg['to']},
+                            ties=pg['ties_from'] and pg['ties_to']))
+    return out, [r for r in rec if id(r) not in used]
+
+
+def attach_accounts(rows, sh):
+    """A transfer in the MINUTES whose amount equals a sheet page's total, from a sheet dated
+    in the window before the meeting, gets that page's accounts. Equal to the cent, or nothing."""
+    for r in rows:
+        if r['counted'] != 'yes' or not r['amount']:
+            continue
+        s_ = sheet_for(r['fy'], r['meeting_date'], sh)
+        for pg in (s_ or {}).get('pages', []):
+            if pg['total'] and abs(float(pg['total']) - float(r['amount'])) < 0.005:
+                r['accounts'] = {'from': pg['from'], 'to': pg['to']}
+                r['sheet'] = s_['url']
+                r['sheet_page'] = pg['page']
+                break
+
+
 def build():
     off = official_rows()
     have = {r['meeting_date'] for r in off} | {
         json.load(open(f, encoding='utf-8'))['meeting_date'] for f in glob.glob(os.path.join(OFFICIAL, '*.json'))}
-    rows = off + recording_rows(have)
+    sh = sheets()
+    for r in off:
+        r['status'] = 'confirmed' if r['counted'] == 'yes' else 'not counted'
+    attach_accounts(off, sh)
+    rec = recording_rows(have)
+    for r in rec:
+        r['status'] = 'heard only'
+    tent, rec = tentative_rows(rec, sh)
+    rows = off + tent + rec
     rows.sort(key=lambda r: (r['fy'], r['meeting_date'], r['source'] != 'town minutes'))
     return rows, sorted(have)
 
 
 def payload(rows, read_dates):
     years = {}
-    for sh in sheets():
-        years.setdefault(sh['fy'], {'fy': int(sh['fy']), 'counted': [], 'awaiting': [], 'not_counted': [],
-                                    'sheets': []}).setdefault('sheets', []).append(sh)
+    for sh in [dict(x) for x in sheets()]:
+        sh.pop('pages', None); sh.pop('dated', None)
+        years.setdefault(sh['fy'], {'fy': int(sh['fy']), 'counted': [], 'tentative': [], 'awaiting': [],
+                                    'not_counted': [], 'sheets': []}).setdefault('sheets', []).append(sh)
     for r in rows:
-        y = years.setdefault(r['fy'], {'fy': int(r['fy']), 'counted': [], 'awaiting': [], 'not_counted': [],
-                                       'sheets': []})
+        y = years.setdefault(r['fy'], {'fy': int(r['fy']), 'counted': [], 'tentative': [], 'awaiting': [],
+                                       'not_counted': [], 'sheets': []})
         item = {k: r[k] for k in ('meeting_date', 'description', 'from_line', 'to_line',
                                   'amount_as_printed', 'amount', 'amount_basis', 'outcome',
                                   'quote', 'minutes_url', 'our_copy', 'video_url', 'fy_basis', 'why_not')}
         item['fy_ours'] = r['fy_basis'].startswith('the fiscal year the meeting')
+        for k in ('accounts', 'sheet', 'sheet_page', 'form', 'ties'):
+            if k in r:
+                item[k] = r[k]
         if r['counted'] == 'yes':
             y['counted'].append(item)
+        elif r['status'] == 'tentative':
+            y.setdefault('tentative', []).append(item)
         elif r['source'] != 'town minutes':
             y['awaiting'].append(item)
         else:
@@ -308,6 +422,8 @@ def payload(rows, read_dates):
     for fy in sorted(years, reverse=True):
         y = years[fy]
         y.setdefault('sheets', [])
+        y.setdefault('tentative', [])
+        y['tentative_total'] = '%.2f' % sum(float(t['amount']) for t in y['tentative'] if t['amount'])
         running = 0.0
         for it in y['counted']:
             if it['amount']:
@@ -316,7 +432,7 @@ def payload(rows, read_dates):
         y['total'] = '%.2f' % running
         # NEWEST FIRST ON THE PAGE (TJ, 10 October 2026). The running total is still summed
         # in date order, so each row's figure is the year's total THROUGH that meeting.
-        for k in ('counted', 'awaiting', 'not_counted'):
+        for k in ('counted', 'tentative', 'awaiting', 'not_counted'):
             y[k] = list(reversed(y[k]))
         y['n'] = len(y['counted'])
         y['n_no_amount'] = sum(1 for it in y['counted'] if not it['amount'])
@@ -348,7 +464,7 @@ def main():
     a = ap.parse_args()
     rows, read = build()
     buf = io.StringIO()
-    w = csv.DictWriter(buf, fieldnames=COLS, lineterminator='\n')
+    w = csv.DictWriter(buf, fieldnames=COLS, lineterminator='\n', extrasaction='ignore')
     w.writeheader()
     w.writerows(rows)
     p = payload(rows, read)

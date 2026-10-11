@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
@@ -87,6 +88,25 @@ export default defineConfig({
   base: single ? './' : '/',
   plugins: [react(), tailwindcss(), devOnlyBlogPreview(), devApiSearch(),
             ...(single ? [viteSingleFile()] : [])],
+  // /docs/ IN DEV, FROM THE LIVE SITE. Most archive documents are not in `public/docs/` --
+  // they live in the R2 bucket and production streams them through
+  // `functions/docs/_bucket.js`, a Pages Function the dev server does not run. So locally a
+  // document link fell through to the SPA and landed on the home page (TJ, 10 October 2026,
+  // clicking the 7 October transfer sheet). A file the working copy holds is served from it,
+  // so a document being edited shows the edit; anything else is fetched from production,
+  // which is the same published copy a reader gets. Dev only: `server` never reaches a build.
+  server: {
+    proxy: {
+      '/docs/': {
+        target: 'https://lunenburgbudgetproject.org',
+        changeOrigin: true,
+        bypass: (req) => {
+          const path = decodeURIComponent((req.url ?? '').split('?')[0])
+          return existsSync(join(__dirname, 'public', path)) ? req.url : undefined
+        },
+      },
+    },
+  },
   build: single
     ? { outDir: 'dist-single', assetsInlineLimit: 100_000_000, cssCodeSplit: false,
         rollupOptions: { output: { inlineDynamicImports: true } } }

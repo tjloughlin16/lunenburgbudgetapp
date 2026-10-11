@@ -2747,6 +2747,18 @@
      "textUrl": "/docs/data/staff-directory.csv"
     },
     {
+     "path": "data/school-committee-transfers.csv",
+     "title": "Every line item transfer in the School Committee’s minutes, by fiscal year",
+     "stars": 2,
+     "what": "Written by us, by `build_school_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT -- a line, a batch total, or only the vote. `counted` and `why_not` keep what is not a voted line item transfer (tabled, pending, class accounts, none recorded). `fy` is the year the minutes state, else the year the meeting fell in, and `fy_basis` says which. Rows from a RECORDING are captions, a finding aid, and never counted.",
+     "kind": "Data",
+     "bytes": 37473,
+     "url": "/docs/data/school-committee-transfers.csv",
+     "count": 66,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-committee-transfers.csv"
+    },
+    {
      "path": "data/staffing-coverage.csv",
      "title": "Where a department publishes and we still have no number",
      "stars": 2,
@@ -2757,18 +2769,6 @@
      "count": 600,
      "unit": "rows",
      "textUrl": "/docs/data/staffing-coverage.csv"
-    },
-    {
-     "path": "data/school-committee-transfers.csv",
-     "title": "Every line item transfer in the School Committee’s minutes, by fiscal year",
-     "stars": 2,
-     "what": "Written by us, by `build_school_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT -- a line, a batch total, or only the vote. `counted` and `why_not` keep what is not a voted line item transfer (tabled, pending, class accounts, none recorded). `fy` is the year the minutes state, else the year the meeting fell in, and `fy_basis` says which. Rows from a RECORDING are captions, a finding aid, and never counted.",
-     "kind": "Data",
-     "bytes": 35540,
-     "url": "/docs/data/school-committee-transfers.csv",
-     "count": 64,
-     "unit": "rows",
-     "textUrl": "/docs/data/school-committee-transfers.csv"
     },
     {
      "path": "analyses/budget-vs-actual.md",
@@ -2865,6 +2865,18 @@
      "count": 200,
      "unit": "rows",
      "textUrl": "/docs/data/board-chairs.csv"
+    },
+    {
+     "path": "data/school-transfer-sheet-lines.csv",
+     "title": "Every account line on the district’s budget transfer sheets",
+     "stars": 2,
+     "what": "Written by us: transcribed BY EYE from the page images of the district’s transfer forms (two are scans with no text layer, checked with pdf_kind.py; their OCR scrambles columns and dropped a $284.30 line), one row per account line with org and object code as printed. Every side of every page sums to the total the form itself prints, to the cent, and build_school_transfers.py rechecks that on every build.",
+     "kind": "Data",
+     "bytes": 20379,
+     "url": "/docs/data/school-transfer-sheet-lines.csv",
+     "count": 53,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-transfer-sheet-lines.csv"
     },
     {
      "path": "analyses/spent-with-no-budget.md",
@@ -3105,18 +3117,6 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/threads-declined.csv"
-    },
-    {
-     "path": "data/name-variants.csv",
-     "title": "The common short forms of a first name, for search",
-     "stars": 2,
-     "what": "Written by us, by hand: a formal first name and the short forms people use for it (Kimberly: kim, kimmy; Robert: bob, rob, bobby). `build_search_index.py` adds them to each person’s search row as `Also known as`, so a search for \"kim gauvin\" finds Kimberly Gauvin. A convention, not a fact about anybody: it says what a name is often shortened to, not what any one person is called.",
-     "kind": "Data",
-     "bytes": 1667,
-     "url": "/docs/data/name-variants.csv",
-     "count": 85,
-     "unit": "rows",
-     "textUrl": "/docs/data/name-variants.csv"
     },
     {
      "path": "data/town-job-postings.csv",
@@ -55119,7 +55119,7 @@
  "totals": {
   "documents": 4937,
   "groups": 25,
-  "bytes": 6401399395,
+  "bytes": 6401420040,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
