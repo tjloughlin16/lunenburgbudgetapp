@@ -232,6 +232,9 @@ PLANS = re.compile(r'\b(study|design|schematic|estimate|proposal|draft|plan|repo
                    r'recommendation|options|scope)\w*\b', re.I)
 
 
+HOT_MEETINGS, HOT_BOARDS, HOT_WINDOW, HOT_LATEST = 3, 2, 30, 14
+
+
 def temperature(t, chron, today, record):
     """HOW ALIVE A MATTER IS — derived, never typed.
 
@@ -316,6 +319,21 @@ def temperature(t, chron, today, record):
 
     tangled = (t['status'] != 'resolved' and boards >= 3 and span >= 180 and n >= 6)
 
+    # HOT -- TJ, 10 October 2026: *"a HOT indicator for threads with a fire emoji when it shows
+    # up in many meetings in a short and RECENT period of time"*, *"esp across different
+    # committees/boards"*. All four, because each alone lies: a busy board raising one item
+    # at three of its own meetings is not the town catching fire, and a burst last spring is
+    # not hot now. OPEN; at least HOT_MEETINGS meetings in the last HOT_WINDOW days; those
+    # spanning at least HOT_BOARDS boards; the latest within HOT_LATEST days. The counts go
+    # to the page with the badge, so the emoji is a reading of the numbers, never instead
+    # of them.
+    win = [c for c in chron
+           if (dt.date.fromisoformat(today) - dt.date.fromisoformat(c['date'])).days <= HOT_WINDOW]
+    hot_meetings = len({(c['date'], c['board_slug']) for c in win})
+    hot_boards = len({c['board_slug'] for c in win})
+    hot = (t['status'] == 'open' and hot_meetings >= HOT_MEETINGS and hot_boards >= HOT_BOARDS
+           and days <= HOT_LATEST)
+
     if t['status'] == 'resolved':
         stage = 'decided'
     elif votes:
@@ -328,8 +346,9 @@ def temperature(t, chron, today, record):
         stage = 'talked about only'
 
     return {
-        'heat': heat, 'stage': stage, 'tangled': tangled,
+        'heat': heat, 'stage': stage, 'tangled': tangled, 'hot': hot,
         'basis': {
+            'meetings_last_30': hot_meetings, 'boards_last_30': hot_boards,
             'meetings': n, 'boards': boards, 'votes': votes,
             'days_since_last': days, 'span_days': span, 'meetings_last_90': recent,
             'board_meetings_since': passed_over,
@@ -423,7 +442,7 @@ def build():
             # registry's `pin` column; blank is unpinned, and unpinned threads keep the
             # newest-first order below the pinned ones.
             pin=int(t['pin']) if (t.get('pin') or '').strip().isdigit() else None,
-            heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'],
+            heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'], hot=temp['hot'],
             momentum=temp['basis'],
             weight=(len({c['board_slug'] for c in chron}) * 100
                     + int((mts[-1] if mts else '0000-00-00').replace('-', '')[2:6] or 0) // 100

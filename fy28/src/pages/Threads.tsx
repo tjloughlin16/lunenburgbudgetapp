@@ -6,7 +6,7 @@ import { Note } from '../components/primitives'
 import { ThreadRibbons } from '../components/ThreadRibbons'
 import { ThreadsHero } from '../components/ThreadsHero'
 import { ThreadKind, KINDS, KIND_LABEL } from '../components/ThreadKind'
-import { ThreadHeat, Tangled, type Heat } from '../components/ThreadHeat'
+import { HotBadge, ThreadHeat, Tangled, type Heat } from '../components/ThreadHeat'
 import { DynamicThread } from '../components/DynamicThread'
 
 const TAB: Tab = 'threads'
@@ -40,8 +40,9 @@ type Thread = {
   id: string; label: string; question: string; kind: string; groups: string; tags: string
   boards: string; started: string; closes: string; status: string; resolved_on: string; caveat: string
   heat: Heat; stage: string; tangled: boolean; is_new: boolean; registered_on: string
+  hot?: boolean
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
-  momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number }
+  momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number; meetings_last_30?: number; boards_last_30?: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
   first_seen: string; last_moved: string; weight: number
   /** A person's call that this leads the page, in this order (threads.csv `pin`). */
@@ -190,6 +191,7 @@ function Card({ t, onGo, ours }: { t: Thread; onGo: (id: string) => void; ours: 
           <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded shrink-0"
             style={{ background: toneOf(t), color: 'var(--surface-1)' }}>New</span>
         ) : null}
+        <HotBadge hot={t.hot} momentum={t.momentum} />
         <ThreadHeat heat={t.heat} tone={toneOf(t)} momentum={t.momentum} />
         {t.closure ? <ClosureBasis c={t.closure} ours={ours} /> : null}
       </div>
@@ -426,6 +428,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           <ThreadKind kind={t.kind} size={18} tone={toneOf(t)} />
           {(t.kind || '').split(';').filter(Boolean).map(k => KIND_LABEL[k] ?? k).join(' · ')}
         </span>
+        <HotBadge hot={t.hot} momentum={t.momentum} />
         <ThreadHeat heat={t.heat} tone={toneOf(t)} momentum={t.momentum} />
       </div>
       {/* WHERE IT HAS GOT TO, in the counts rather than an adjective. */}

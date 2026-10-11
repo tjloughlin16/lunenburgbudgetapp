@@ -28,6 +28,24 @@ const WHY: Record<Heat, string> = {
   settled: 'decided',
 }
 
+/** 🔥 HOT -- many meetings, across boards, recently (scripts/build_threads.py, `hot`). The
+ *  counts are in the label and the tooltip: the emoji is a reading of them. */
+export function HotBadge({ hot, momentum }: {
+  hot?: boolean
+  momentum: { meetings_last_30?: number; boards_last_30?: number; days_since_last: number }
+}) {
+  if (!hot) return null
+  const why = `${momentum.meetings_last_30} meetings across ${momentum.boards_last_30} boards in the last 30 days, `
+    + `the latest ${momentum.days_since_last} day${momentum.days_since_last === 1 ? '' : 's'} ago`
+  return (
+    <span title={`Hot: ${why}`} aria-label={`Hot: ${why}`}
+      className="text-[10.5px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded shrink-0"
+      style={{ background: 'var(--status-critical)', color: '#fff' }}>
+      <span aria-hidden="true">🔥</span> Hot · {momentum.meetings_last_30} meetings, {momentum.boards_last_30} boards, 30 days
+    </span>
+  )
+}
+
 export function ThreadHeat({ heat, tone, momentum }: {
   heat: Heat; tone: string
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; meetings_last_90: number; board_meetings_since: number }
