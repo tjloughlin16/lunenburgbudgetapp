@@ -86,9 +86,29 @@ const HEADERS = {
 const json = (obj, status = 200, extra = {}) =>
   new Response(JSON.stringify(obj, null, 1) + '\n', { status, headers: { ...HEADERS, ...extra } })
 
-/** A user's words, as an FTS5 expression that cannot throw. */
-export function ftsExpression(q, { prefix = false } = {}) {
-  const terms = []
+/** A user's words, as an FTS5 expression that cannot throw -- and that finds what a person
+ *  means rather than only what they typed.
+ *
+ *  TJ, 10 October 2026, after `kim gauvin` found nothing because the name is Kimberly: *"i
+ *  wanted a more flexible non-full word search match"* and *"the ability to combine words and
+ *  check combinations together as a more direct match"*. Three things, in one expression:
+ *
+ *  1. STARTS-WITH MATCHING, ALWAYS. Every typed word of three letters or more is a PREFIX:
+ *     `kim` -> `"kim"*`, which reaches Kimberly; `transp` reaches transportation. One- and
+ *     two-letter words and numbers stay exact: `"ab"*` would match half the index and read it
+ *     all, which is what D1 bills. A quoted phrase stays exactly as typed.
+ *  2. ALL THE WORDS MUST APPEAR -- in any order, anywhere in the row. That is the match.
+ *  3. WORDS TOGETHER RANK FIRST. The same words are also offered as an EXACT PHRASE and as a
+ *     NEAR group (within three words of each other), OR'd with the plain match. A row matching
+ *     only the plain group still qualifies; a row where the words sit together matches the
+ *     NEAR group too, and FTS5's bm25 scores every phrase it matched, so it rises -- measured
+ *     on the local index: for `line item transfer` the Finance Committee agenda with the words
+ *     scattered dropped out of the top six and School Committee minutes rose. The term for
+ *     this is PROXIMITY RANKING. It costs no second query.
+ */
+export function ftsExpression(q) {
+  const terms = [], words = []
+  let quoted = false
   const re = /"([^"]+)"|(\S+)/g
   let m
   while ((m = re.exec(q)) !== null) {
@@ -99,13 +119,18 @@ export function ftsExpression(q, { prefix = false } = {}) {
     const clean = raw.replace(/[’']s\b/g, '').replace(/[^\p{L}\p{N}\s$%.,-]/gu, ' ')
       .replace(/[.,]+(\s|$)/g, '$1').replace(/\s+/g, ' ').trim()
     if (!clean) continue
-    if (m[1] !== undefined) terms.push('"' + clean + '"')
-    // PREFIX, only when asked and only for a word of three letters or more that is not a
-    // number: `kim` -> `"kim"*` reaches Kimberly. A one- or two-letter prefix would match
-    // half the index and read it all, which is what D1 bills.
-    else for (const w of clean.split(' ')) if (w) terms.push('"' + w + '"' + (prefix && /^\p{L}{3,}$/u.test(w) ? '*' : ''))
+    if (m[1] !== undefined) { terms.push('"' + clean + '"'); quoted = true; continue }
+    for (const w of clean.split(' ')) {
+      if (!w) continue
+      words.push(w)
+      terms.push('"' + w + '"' + (/^\p{L}{3,}$/u.test(w) ? '*' : ''))
+    }
   }
-  return terms.join(' ')
+  if (!terms.length) return ''
+  const all = terms.join(' ')
+  // One word, or a reader who quoted something: they said exactly what they meant.
+  if (terms.length < 2 || terms.length > 6 || quoted) return all
+  return `"${words.join(' ')}" OR NEAR(${all}, 3) OR (${all})`
 }
 
 export async function onRequest(context) {
@@ -153,9 +178,9 @@ export async function onRequest(context) {
 
   const started = Date.now()
   let rowsRead = 0
-  let results = {}
-  let counts = {}
-  let sortedBy = {}
+  const results = {}
+  const counts = {}
+  const sortedBy = {}
   const filters = []
   const binds = []
   if (board) { filters.push('board_slug = ?'); binds.push(board) }
@@ -166,10 +191,6 @@ export async function onRequest(context) {
   // words hit more with certain pages ... even if the words don't show up as much". A
   // page matched here is pinned to the top of its corpus and marked as matched by
   // topic, so curation reads as curation and never as the text having said it.
-  // ONE PASS OVER EVERY CORPUS FOR AN EXPRESSION. A function so a search that finds nothing
-  // can be run once more, widened -- see below.
-  const run = async (expr) => {
-  results = {}; counts = {}; sortedBy = {}
   const pinned = {}
   try {
     const a = await db.prepare(
@@ -181,6 +202,7 @@ export async function onRequest(context) {
     // No affinity table yet, or a bad expression: the text search still answers.
   }
 
+  try {
     for (const c of corpora) {
       // The outer ORDER BY, over rows the subselect has already read. A row whose date is
       // missing, empty OR NOT AN ISO DATE goes LAST, and the test is the shape of the
@@ -235,24 +257,6 @@ export async function onRequest(context) {
       })))
       if (byTopic.length) counts[c].hits += byTopic.filter(t => !(r.results || []).some(x => x.cite_url === t.cite_url)).length
     }
-  }
-
-  // WIDENED, ONLY WHEN THE EXACT WORDS FIND NOTHING ANYWHERE. TJ, 10 October 2026: *"i
-  // searched for 'kim gauvin' and it showed nothing, because its kimberly gauvin."* The index
-  // matches whole words, so a shortened word finds nothing. A second pass treats each word of
-  // three letters or more as the START of a word -- `kim` finds Kimberly -- and the response
-  // says so (`widened`), so the page can tell the reader these are not exact matches. Only on
-  // a total of zero: a prefix scan reads more rows than a word does, and a search that found
-  // something has already answered.
-  let widened = null
-  try {
-    await run(expr)
-    const total = Object.values(counts).reduce((n, x) => n + (x.hits || 0), 0)
-    const wide = ftsExpression(q, { prefix: true })
-    if (total === 0 && wide && wide !== expr) {
-      await run(wide)
-      widened = { from: expr, to: wide }
-    }
   } catch (e) {
     return json({
       error: 'query_failed',
@@ -267,8 +271,7 @@ export async function onRequest(context) {
   const payload = {
     resource: 'search',
     q,
-    expression: widened ? widened.to : expr,
-    widened,
+    expression: expr,
     corpora,
     board: board || null,
     since: since || null,

@@ -264,7 +264,9 @@ def sheets():
                     note = ('the sheet prints FY%s and is dated %s, which falls in FY%d; listed under '
                             'the year it prints' % (fy, dated, school_fy(when)))
                 break
+            tot = re.search(r'TOTAL AMOUNT FROM\s*-?\$\s?([\d,]+\.\d{2})', body)
             out.append({'fy': fy, 'label': r['label'], 'dated_as_printed': dated, 'note': note,
+                        'moved_as_printed': ('$' + tot.group(1)) if tot else '',
                         'url': '/docs/' + local[len('sources/'):],
                         'publisher_url': r.get('upstream') or ''})
     return sorted(out, key=lambda x: (x['fy'], x['url']))
@@ -307,6 +309,10 @@ def payload(rows, read_dates):
                 running += float(it['amount'])
             it['running_total'] = '%.2f' % running
         y['total'] = '%.2f' % running
+        # NEWEST FIRST ON THE PAGE (TJ, 10 October 2026). The running total is still summed
+        # in date order, so each row's figure is the year's total THROUGH that meeting.
+        for k in ('counted', 'awaiting', 'not_counted'):
+            y[k] = list(reversed(y[k]))
         y['n'] = len(y['counted'])
         y['n_no_amount'] = sum(1 for it in y['counted'] if not it['amount'])
         y['meetings'] = len({it['meeting_date'] for it in y['counted']})

@@ -26,7 +26,7 @@ type Item = {
   quote: string; minutes_url: string; our_copy: string; video_url: string
   fy_basis: string; fy_ours: boolean; why_not: string; running_total?: string
 }
-type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; url: string; publisher_url: string }
+type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; moved_as_printed: string; url: string; publisher_url: string }
 type Year = {
   fy: number; n: number; total: string; n_no_amount: number; meetings: number; n_fy_ours: number
   counted: Item[]; awaiting: Item[]; not_counted: Item[]; sheets: Sheet[]
@@ -49,10 +49,12 @@ function fyFromUrl() {
 export function SchoolTransfers() {
   const { d: p, err } = useReport<Payload>(FILE)
   const [fy, setFy] = useState(fyFromUrl())
-  // The latest year with a COUNTED transfer is the default: a year holding only a transfer
-  // heard in a recording would open the page on an empty table.
+  // THE NEWEST YEAR IS THE DEFAULT, even when the town's minutes have not reached it yet --
+  // TJ, 10 October 2026: *"are you sure there havent been any transfers for school committee
+  // so far for FY27?!"* There had: voted 7 October 2026, in no minutes the town had posted.
+  // Opening on the last complete year hid exactly the transfers a reader came for.
   const years = p?.years ?? []
-  const pick = years.find(y => y.fy === fy) ?? years.find(y => y.n > 0) ?? years[0]
+  const pick = years.find(y => y.fy === fy) ?? years[0]
   useEffect(() => {
     if (!pick) return
     const u = new URL(window.location.href)
@@ -85,7 +87,10 @@ export function SchoolTransfers() {
             <Fig v={String(pick.meetings)} l={`meeting${pick.meetings === 1 ? '' : 's'} with a transfer vote`} />
           </div>
           {pick.counted.length === 0
-            ? <p className="text-[14px] mt-4" style={{ color: 'var(--text-muted)' }}>No transfer for FY{pick.fy} is in the minutes read so far.</p>
+            ? <p className="text-[14px] mt-4 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+                None in the town&rsquo;s minutes yet &mdash; the last School Committee minutes the town has posted are from {d(p.minutes_to)}.
+                {(pick.awaiting.length > 0 || pick.sheets.length > 0) && <> What is known so far is below: {pick.awaiting.length > 0 && <>{pick.awaiting.length} vote{pick.awaiting.length === 1 ? '' : 's'} heard in the recording</>}{pick.awaiting.length > 0 && pick.sheets.length > 0 && ' and '}{pick.sheets.length > 0 && <>the district&rsquo;s own transfer sheet{pick.sheets.length === 1 ? '' : 's'}</>}.</>}
+              </p>
             : <div className="mt-4 overflow-x-auto">
               <table className="w-full text-[13.5px] border-collapse">
                 <thead>
@@ -93,7 +98,7 @@ export function SchoolTransfers() {
                     <th className="py-1.5 pr-3 font-semibold">Meeting</th>
                     <th className="py-1.5 pr-3 font-semibold">What moved</th>
                     <th className="py-1.5 pr-3 font-semibold text-right">Amount</th>
-                    <th className="py-1.5 font-semibold text-right hidden sm:table-cell">Running total</th>
+                    <th className="py-1.5 font-semibold text-right hidden sm:table-cell">Year&rsquo;s total through then</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -118,6 +123,7 @@ export function SchoolTransfers() {
                 <li key={s.url} className="text-[13.5px]">
                   <a className="underline" href={s.url} style={{ color: 'var(--series-cost)' }}>{s.label}</a>
                   {s.dated_as_printed && <span style={{ color: 'var(--text-muted)' }}> · dated {s.dated_as_printed}</span>}
+                  {s.moved_as_printed && <span className="tnum" style={{ color: 'var(--text-muted)' }}> · moves {s.moved_as_printed}, as the sheet prints it</span>}
                   {s.publisher_url && <> · <a className="underline text-[12px]" href={s.publisher_url} target="_blank" rel="noreferrer">district&rsquo;s copy</a></>}
                   {s.note && <span className="block text-[12px]" style={{ color: 'var(--status-warning)' }}>{s.note}.</span>}
                 </li>

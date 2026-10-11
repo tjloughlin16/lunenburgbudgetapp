@@ -535,31 +535,12 @@ def job_rows(entry):
 # chart shows and nothing more.
 
 ORG_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
-# THE SHORT FORMS OF A FIRST NAME. TJ, 10 October 2026: *"i searched for 'kim gauvin' and it
-# showed nothing, because its kimberly gauvin."* A search engine matches tokens, and `kim`
-# is not a token of `Kimberly`; nor is `bob` of `Robert`, which no prefix rule could reach.
-# So a person's row also carries the common short forms of their first name, from a list
-# curated by hand -- OURS, and in the row as `also known as`, so a match through it reads as
-# one. The search term for this is QUERY EXPANSION done at index time: synonyms.
-NAME_VARIANTS = os.path.join(ROOT, 'sources', 'data', 'name-variants.csv')
 
 
 def person_files():
     if not os.path.exists(ORG_JSON):
         return []
-    # The variants file is part of what a person row is made of, so it is part of the
-    # fingerprint: a nickname added re-reads every person without the org chart changing.
-    out = {'file': ORG_JSON, 'file_key': rel(ORG_JSON), 'corpus': 'person'}
-    if os.path.exists(NAME_VARIANTS):
-        out['key_stem'] = 'variants=' + M.sha256_of(NAME_VARIANTS)[:16]
-    return [out]
-
-
-def name_variants():
-    if not os.path.exists(NAME_VARIANTS):
-        return {}
-    return {r['formal'].lower(): r['variants'].split()
-            for r in csv.DictReader(open(NAME_VARIANTS, encoding='utf-8'))}
+    return [{'file': ORG_JSON, 'file_key': rel(ORG_JSON), 'corpus': 'person'}]
 
 
 def _fy_span(fys):
@@ -579,11 +560,8 @@ def person_rows(entry):
         people[name.lower()]['names'].append(name)
         people[name.lower()]['rows'].append(r)
     out = []
-    nick = name_variants()
     for key, p in sorted(people.items()):
         name = max(set(p['names']), key=p['names'].count)
-        first = name.split()[0].lower().strip('.,') if name.split() else ''
-        aka = nick.get(first, [])
         held = {}
         for r in p['rows']:
             where = r['unit'] + (' — ' + r['subunit'] if r.get('subunit') else '')
@@ -591,9 +569,8 @@ def person_rows(entry):
         # Most recent first, so the snippet a reader sees is what they hold now.
         lines = sorted(held.items(), key=lambda kv: max(kv[1]), reverse=True)
         latest = max(p['rows'], key=lambda r: (r['fy'], -int(r.get('tier') or 0)))
-        body = name + '. ' + ('Also known as: %s. ' % ', '.join(
-            '%s %s' % (v.capitalize(), ' '.join(name.split()[1:])) for v in aka) if aka else '') \
-            + ' '.join('%s, %s, %s.' % (role, where, _fy_span(fys)) for (role, where), fys in lines)
+        body = name + '. ' + ' '.join('%s, %s, %s.' % (role, where, _fy_span(fys))
+                                      for (role, where), fys in lines)
         out.append(({
             'corpus': 'person',
             'doc_key': 'person:' + re.sub(r'[^a-z0-9]+', '-', key).strip('-'),
