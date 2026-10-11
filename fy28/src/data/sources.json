@@ -2500,9 +2500,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 953287,
+     "bytes": 962248,
      "url": "/docs/data/org-chart.csv",
-     "count": 7154,
+     "count": 7185,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -2572,9 +2572,9 @@
      "stars": 2,
      "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
      "kind": "Data",
-     "bytes": 172198,
+     "bytes": 174136,
      "url": "/docs/data/tenure.csv",
-     "count": 1958,
+     "count": 1975,
      "unit": "rows",
      "textUrl": "/docs/data/tenure.csv"
     },
@@ -55119,7 +55119,7 @@
  "totals": {
   "documents": 4937,
   "groups": 25,
-  "bytes": 6401633312,
+  "bytes": 6401644211,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
