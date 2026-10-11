@@ -264,9 +264,14 @@ def sheets():
                     note = ('the sheet prints FY%s and is dated %s, which falls in FY%d; listed under '
                             'the year it prints' % (fy, dated, school_fy(when)))
                 break
-            tot = re.search(r'TOTAL AMOUNT FROM\s*-?\$\s?([\d,]+\.\d{2})', body)
+            # EVERY transfer on the sheet, not the first: the 7 October 2026 sheet carries two
+            # (pages 2 and 3) and a reclassification (page 1), and reading only the first total
+            # showed $18,703.94 of $41,560.06. TJ found it by reading the meeting.
+            totals = re.findall(r'TOTAL AMOUNT FROM\s*-?\$\s?([\d,]+\.\d{2})', body)
+            reclass = re.findall(r'Reclassification of expenses.*?AMOUNT\s*\n?\s*\$?\s*([\d,]+\.\d{2})', body, re.S)
             out.append({'fy': fy, 'label': r['label'], 'dated_as_printed': dated, 'note': note,
-                        'moved_as_printed': ('$' + tot.group(1)) if tot else '',
+                        'transfers_as_printed': ['$' + t for t in totals],
+                        'reclassifications_as_printed': ['$' + t for t in reclass],
                         'url': '/docs/' + local[len('sources/'):],
                         'publisher_url': r.get('upstream') or ''})
     return sorted(out, key=lambda x: (x['fy'], x['url']))

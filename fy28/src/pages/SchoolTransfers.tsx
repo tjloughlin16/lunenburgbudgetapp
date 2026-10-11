@@ -26,7 +26,7 @@ type Item = {
   quote: string; minutes_url: string; our_copy: string; video_url: string
   fy_basis: string; fy_ours: boolean; why_not: string; running_total?: string
 }
-type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; moved_as_printed: string; url: string; publisher_url: string }
+type Sheet = { fy: string; label: string; dated_as_printed: string; note: string; transfers_as_printed: string[]; reclassifications_as_printed: string[]; url: string; publisher_url: string }
 type Year = {
   fy: number; n: number; total: string; n_no_amount: number; meetings: number; n_fy_ours: number
   counted: Item[]; awaiting: Item[]; not_counted: Item[]; sheets: Sheet[]
@@ -123,7 +123,13 @@ export function SchoolTransfers() {
                 <li key={s.url} className="text-[13.5px]">
                   <a className="underline" href={s.url} style={{ color: 'var(--series-cost)' }}>{s.label}</a>
                   {s.dated_as_printed && <span style={{ color: 'var(--text-muted)' }}> · dated {s.dated_as_printed}</span>}
-                  {s.moved_as_printed && <span className="tnum" style={{ color: 'var(--text-muted)' }}> · moves {s.moved_as_printed}, as the sheet prints it</span>}
+                  {(s.transfers_as_printed.length > 0 || s.reclassifications_as_printed.length > 0) && (
+                    <span className="block text-[12.5px] tnum" style={{ color: 'var(--text-secondary)' }}>
+                      {s.transfers_as_printed.length > 0 && <>{s.transfers_as_printed.length} transfer{s.transfers_as_printed.length === 1 ? '' : 's'} on the sheet: {s.transfers_as_printed.join(' and ')}</>}
+                      {s.transfers_as_printed.length > 0 && s.reclassifications_as_printed.length > 0 && '; '}
+                      {s.reclassifications_as_printed.length > 0 && <>reclassification{s.reclassifications_as_printed.length === 1 ? '' : 's'} of {s.reclassifications_as_printed.join(' and ')} (moving a cost already booked to the right line)</>}
+                    </span>
+                  )}
                   {s.publisher_url && <> · <a className="underline text-[12px]" href={s.publisher_url} target="_blank" rel="noreferrer">district&rsquo;s copy</a></>}
                   {s.note && <span className="block text-[12px]" style={{ color: 'var(--status-warning)' }}>{s.note}.</span>}
                 </li>
