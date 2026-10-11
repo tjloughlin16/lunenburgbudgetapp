@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4929 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4938 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4313 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4322 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -221,6 +221,7 @@ Listed so this view cannot look more complete than it is.
 - `data/board-chairs.csv` — Who chaired each board, from the body’s own report
 - `data/board-goals.csv` — What each board adopted as its goals, and when
 - `data/board-pages.csv` — Every board’s own page on the town’s site, extracted
+- `data/board-transfers.csv` — Every transfer in every board’s minutes, by fiscal year, with its evidence
 - `data/body-crosswalk.csv` — Every body, its org chart and its money page — the join between the two
 - `data/budget-cycles.csv` — When each budget season opens and closes: the day after one annual election to the next
 - `data/budget-episodes.csv` — The episodes of a budget season: the regular cycle and the special ones
@@ -305,6 +306,7 @@ Listed so this view cannot look more complete than it is.
 - `data/ingest-pending.csv` — Documents in flight: fetched, not yet in the bucket
 - `data/ingest-plan.csv` — The plan for the annual-report backlog, in batches
 - `data/j1-unreadable.csv` — Trust fund pages that could not be read reliably
+- `data/job-posting-owners.csv` — Which board or department each job posting is linked from, and why
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
 - `data/line-history-disagreements.csv` — Where two documents state the same budget line differently
 - `data/line-history.csv` — Every budget line, budget and actual, year by year
@@ -391,6 +393,7 @@ Listed so this view cannot look more complete than it is.
 - `data/school-staff-directory.csv` — Who works for the DISTRICT today, off the six sheets the schools publish
 - `data/school-staff-fte.csv` — District staff FTE by DESE job code, FY2016–FY2025
 - `data/school-staff-shared.csv` — The people more than one Lunenburg school lists as its own
+- `data/school-transfer-sheet-lines.csv` — Every account line on the district’s budget transfer sheets
 - `data/search-affinity.csv` — Which words pin which page or document at the top of a search
 - `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
 - `data/ski-coop.csv` — The ski co-op invoice, line by line and town by town
@@ -422,6 +425,8 @@ Listed so this view cannot look more complete than it is.
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
 - `data/town-budget-versions.csv` — Town Manager line-item budgets FY2024-FY2025, every version
+- `data/town-job-posting-changes.csv` — Every change we saw to a town job posting, one row per event
+- `data/town-job-postings.csv` — The town’s job postings, as a history: what was listed, and when it left
 - `data/town-meeting-votes.csv` — Every Town Meeting article and how it was voted
 - `data/town-personnel.csv` — Every town post and who held it, FY2022 to FY2025
 - `data/treasurers-cash.csv` — What the town held in cash, by bank and by fund, every year
@@ -456,8 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
 - `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced budget slide deck, 23 March 2026
 - `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
-- `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — Multi-Scenario Financial Analysis
-- `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
-- `district-budget/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
-- `district-budget/docs/budget-sandbox-embed.html` — District budget page: Budget Proposal & FAQ
-- `district-budget/docs/budget-sandbox-site.html` — Budget Proposal & FAQ site (Google Sites page, as fetched)

@@ -110,19 +110,19 @@ A person’s tenure here is the number of years their name appears under a depar
 
 | department | people | years published | median | median, uncensored | longest | still there | names not reappearing |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Lunenburg Public Schools | 968 | 15 | 2.0 | 1 | 15 — Alexis Pukaite | 233 | 33% a year |
-| Fire Department | 122 | 16 | 4.0 | 2 | 16 — Austin Flagg | 44 | 25% a year |
-| Police Department | 90 | 15 | 2.0 | 1 | 15 — Jeffrey Thibodeau | 27 | 29% a year |
-| Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 — Susan Doherty | 11 | 20% a year |
+| Lunenburg Public Schools | 1030 | 16 | 2.0 | 1.0 | 16 — Alexis Pukaite | 280 | 32% a year |
+| Fire Department | 121 | 16 | 4 | 2.0 | 16 — Austin Flagg | 44 | 25% a year |
+| Police Department | 91 | 15 | 2 | 1 | 15 — Jeffrey Thibodeau | 28 | 29% a year |
+| Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 — Susan Doherty | 11 | 13% a year |
 | Department of Public Works | 22 | 11 | 1.0 | 2 | 10 — Richard Patry | 13 | 24% a year |
-| Building Department | 20 | 11 | 2.5 | 2.5 | 10 — Gary Williams | 7 | 25% a year |
-| Town Manager | 17 | 11 | 1 | 5 | 9 — Heather R. Lemieux | 4 | 23% a year |
+| Building Department | 20 | 11 | 3.0 | 3.0 | 10 — Gary Williams | 7 | 19% a year |
+| Town Manager | 19 | 11 | 1 | 4 | 9 — Heather R. Lemieux | 4 | 28% a year |
 | Montachusett Regional Vocational Technical School | 8 | 10 | 1.0 | 1.0 | 7 — Thomas R. Browne | 1 | 53% a year |
 | Information Technology | 6 | 5 | 3.0 | 1 | 4 — Daniel Nadareski | 1 | 33% a year |
 | Town Clerk | 6 | 11 | 2.0 | 2.0 | 11 — Kathyrn M. Herrick | 2 | 16% a year |
 | Facilities, Grounds & Recreation | 5 | 3 | 1 | — | 2 — Angela Clement | 4 | 50% a year |
 
-**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 579 of 1290 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
+**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 625 of 1354 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
 
 **A name leaving a roster is a name leaving a roster.** It is not a resignation, a retirement or a cut post. Somebody may have moved between departments, been left off a page, or held a post the town stopped printing. The last column is the rate at which names stop appearing, and it is not a separation rate.
 

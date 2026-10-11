@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10",
+ "generated": "2026-10-11",
  "origins": [
   {
    "id": "school",
@@ -59,7 +59,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4368 of these 4384 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4369 of these 4385 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2236,7 +2236,7 @@
      "stars": 3,
      "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
      "kind": "Notes",
-     "bytes": 13551,
+     "bytes": 13552,
      "url": "/docs/analyses/town-personnel.md",
      "count": 144,
      "unit": "lines",
@@ -2939,6 +2939,18 @@
      "textUrl": "/docs/data/pipeline-state.csv"
     },
     {
+     "path": "data/threads.csv",
+     "title": "The matters this project tracks across boards",
+     "stars": 2,
+     "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
+     "kind": "Data",
+     "bytes": 14626,
+     "url": "/docs/data/threads.csv",
+     "count": 21,
+     "unit": "rows",
+     "textUrl": "/docs/data/threads.csv"
+    },
+    {
      "path": "data/report-filing.csv",
      "title": "Which bodies file an annual report, and which say they did not",
      "stars": 2,
@@ -2961,18 +2973,6 @@
      "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/report-appropriations-supplement.csv"
-    },
-    {
-     "path": "data/threads.csv",
-     "title": "The matters this project tracks across boards",
-     "stars": 2,
-     "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
-     "kind": "Data",
-     "bytes": 13317,
-     "url": "/docs/data/threads.csv",
-     "count": 20,
-     "unit": "rows",
-     "textUrl": "/docs/data/threads.csv"
     },
     {
      "path": "data/PROVENANCE-debt-tables.md",
@@ -3004,7 +3004,7 @@
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 8419,
+     "bytes": 8432,
      "url": "/docs/data/school-job-postings.csv",
      "count": 17,
      "unit": "rows",
@@ -3052,9 +3052,9 @@
      "stars": 2,
      "what": "Written by us, from the same snapshots as the row above: `posted` (first listed), `edited` (one row per field that differs between two looks, with the before and after -- descriptions compared as text, whitespace ignored), `relisted` and `removed`. `date` IS THE LOOK THAT SAW IT and `prev_look` the one before; the district made the change somewhere between the two, and the data cannot narrow it further. Pay is compared as SchoolSpring displays it, so a change to a figure the district hides is not an event here.",
      "kind": "Data",
-     "bytes": 5094,
+     "bytes": 5295,
      "url": "/docs/data/school-job-posting-changes.csv",
-     "count": 24,
+     "count": 25,
      "unit": "rows",
      "textUrl": "/docs/data/school-job-posting-changes.csv"
     },
@@ -6389,6 +6389,18 @@
      "textUrl": "/docs/data/feed-sources.csv"
     },
     {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 924,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 27,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/recording-minutes-policy.csv",
      "title": "Which boards TJ has approved minutes for, from when, in what order",
      "stars": 2,
@@ -6399,18 +6411,6 @@
      "count": 5,
      "unit": "rows",
      "textUrl": "/docs/data/recording-minutes-policy.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 893,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 26,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/feed-watch-events.csv",
@@ -6779,7 +6779,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 862 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 863 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -11644,6 +11644,16 @@
      "kind": "JSON",
      "bytes": 3041,
      "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-10/listing.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-11/listing.json",
+     "title": "Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-11",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 2853,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-11/listing.json",
      "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
     },
     {
@@ -55117,9 +55127,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4937,
+  "documents": 4938,
   "groups": 25,
-  "bytes": 6401644211,
+  "bytes": 6401648619,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
