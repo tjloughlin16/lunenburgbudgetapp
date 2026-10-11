@@ -5,9 +5,10 @@ after a reset. The earlier workstream from the same session (the transportation 
 FY26 surplus audit) is `notes/HANDOFF-CITIZEN-FIRST-REPORTS.md`; its open decisions still stand
 and are repeated at the bottom.
 
-**State:** everything is committed and pushed (`main` = `origin/main`). The last deploy was
-started at the end of the session (build + `wrangler pages deploy`, with retries). **First thing
-tomorrow, check it landed:** `curl -s https://lunenburgbudgetproject.org/data/threads.json | grep -c '"hot"'`
+**State:** everything is committed and pushed (`main` = `origin/main`). **Deployed and verified**
+at the end of the session (deployment b87bc507): production `threads.json` matches the build byte
+for byte and carries 6 hot threads; search answers in under a second for "turf field". If anything
+looks stale tomorrow, the check is: `curl -s https://lunenburgbudgetproject.org/data/threads.json | grep -c '"hot"'`
 should be non-zero. If not, run `npm run build:site` then `npx wrangler pages deploy` from `fy28/`
 (Node 22 via nvm). Uploads failed repeatedly tonight with `write EPIPE` while the machine was
 under load (load average 40+); the same files deployed fine once the machine was idle. **Never
