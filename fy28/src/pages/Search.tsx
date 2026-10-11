@@ -141,6 +141,10 @@ type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
   expression: string
+  /** Set when the exact words found nothing and the API searched again for words that
+   *  START with them -- `kim` reaching Kimberly. The page must say so: these are not
+   *  exact matches, and a reader quoting one should know. */
+  widened?: { from: string; to: string } | null
   index: { built: string | null; holds: Record<Corpus, number> }
   counts: Partial<Record<Corpus, Count>>
   sort?: Sort
@@ -656,6 +660,11 @@ export default function Search() {
                 ? <><strong>{fmt(groupCount(type).hits)}{groupCount(type).capped ? '+' : ''}</strong> of {fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''} hits for <strong>{asked}</strong> are {GROUPS.find(g => g.id === type)!.label.toLowerCase()}.</>
                 : <><strong>{fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}</strong> hits for <strong>{asked}</strong>.</>}
           </p>
+          {data.widened && total > 0 && !busy && (
+            <p className="text-xs mt-1 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+              No exact match for every word, so these are words that <strong>start with</strong> what you typed &mdash; <em>kim</em> finds Kimberly. Check the highlighted word before quoting a result.
+            </p>
+          )}
 
           {/* THE TOWN'S WORD FOR YOURS, WHETHER OR NOT ANYTHING WAS FOUND. A search for
               "landscaping" returns 2,189 hits and not one of them is the grounds

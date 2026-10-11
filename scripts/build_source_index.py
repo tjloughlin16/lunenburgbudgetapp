@@ -1447,6 +1447,13 @@ GROUPS = [
              'line item transfer (tabled, pending, class accounts, none recorded). `fy` is the '
              'year the minutes state, else the year the meeting fell in, and `fy_basis` says '
              'which. Rows from a RECORDING are captions, a finding aid, and never counted.'),
+            ('data/name-variants.csv',
+             'The common short forms of a first name, for search', 2,
+             'Written by us, by hand: a formal first name and the short forms people use for it '
+             '(Kimberly: kim, kimmy; Robert: bob, rob, bobby). `build_search_index.py` adds them '
+             'to each person\u2019s search row as `Also known as`, so a search for "kim gauvin" '
+             'finds Kimberly Gauvin. A convention, not a fact about anybody: it says what a name '
+             'is often shortened to, not what any one person is called.'),
             ('data/job-posting-owners.csv',
              'Which board or department each job posting is linked from, and why', 2,
              'Written by us, by hand. The town prints a department name on a posting and the '

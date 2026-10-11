@@ -3107,6 +3107,18 @@
      "textUrl": "/docs/data/threads-declined.csv"
     },
     {
+     "path": "data/name-variants.csv",
+     "title": "The common short forms of a first name, for search",
+     "stars": 2,
+     "what": "Written by us, by hand: a formal first name and the short forms people use for it (Kimberly: kim, kimmy; Robert: bob, rob, bobby). `build_search_index.py` adds them to each person’s search row as `Also known as`, so a search for \"kim gauvin\" finds Kimberly Gauvin. A convention, not a fact about anybody: it says what a name is often shortened to, not what any one person is called.",
+     "kind": "Data",
+     "bytes": 1667,
+     "url": "/docs/data/name-variants.csv",
+     "count": 85,
+     "unit": "rows",
+     "textUrl": "/docs/data/name-variants.csv"
+    },
+    {
      "path": "data/town-job-postings.csv",
      "title": "The town’s job postings, as a history: what was listed, and when it left",
      "stars": 2,
@@ -55105,9 +55117,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4936,
+  "documents": 4937,
   "groups": 25,
-  "bytes": 6401397728,
+  "bytes": 6401399395,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
