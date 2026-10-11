@@ -135,7 +135,9 @@ def not_line_item(board):
 # only recommends -- town meeting votes it. Both are kept in the table with the reason and
 # kept out of the board's total. Ours, by the minutes' own words; a row that matches nothing
 # is `other` and counted, because the minutes recorded a transfer vote.
-NOT_MONEY = re.compile(r'licen[cs]e|ownership|deed|easement', re.I)
+NOT_MONEY = re.compile(r'licen[cs]e|ownership|deed|easement|\bstock\b|application|change of officer|'
+                       r'declaration|restriction|consent document|trust to the', re.I)
+SPENT = re.compile(r'\brefund|\breimburse|\bpayment\b|\bpay\b|\ballocat|\bpurchase|\bhire\b|\bcommit', re.I)
 ARTICLE = re.compile(r'\barticle\b|\bwarrant\b|town meeting|recommend', re.I)
 KINDS = [(re.compile(r'reserve fund', re.I), 'reserve fund'),
          (re.compile(r'stabili[sz]ation', re.I), 'stabilization fund'),
@@ -236,6 +238,12 @@ def official_rows(board):
                 why = 'not a transfer of money (a licence or property transfer)'
             if not why and board != SCHOOL and ARTICLE.search(desc + ' ' + t.get('outcome', '')):
                 why = 'a town meeting article the board acted on; town meeting votes the transfer'
+            # A refund, a payment out of a fund, an allocation: money spent, not moved between
+            # budget lines -- the minutes reader files them under transfers. TJ, 10 October 2026,
+            # asking whether other boards approve transfers at all. Only the minutes' own word
+            # `transfer` qualifies a row from another board.
+            if not why and board != SCHOOL and (SPENT.search(desc) or not re.search(r'\btransfer', desc + ' ' + quote, re.I)):
+                why = 'a payment, refund or allocation, not a transfer between budget lines'
             if not why and (t.get('amount_as_printed') or '').strip().lower() in ('none', 'none printed') \
                     and not PASSED.search(outcome):
                 why = 'the minutes record no transfer'

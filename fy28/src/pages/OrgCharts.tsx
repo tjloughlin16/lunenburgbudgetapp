@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { ReportShell, Body, Grain, H2, Stat } from '../components/report'
 
 /* TOWN-WIDE ORG CHARTS: who held which role, in every department, board and school.
@@ -41,7 +41,33 @@ type Unit = {
   // their org chart based on their structure."* See LAYOUTS there for what each means.
   layout?: 'buildings' | 'shifts' | 'board' | 'ranks'
 }
-type Payload = { years: string[]; units: Unit[]; rows: Row[] }
+type SourceDoc = { label: string; copy_url: string; publisher_url: string }
+type SetAside = { fy: string; person: string; role: string; school: string; fetched: string }
+type Payload = { years: string[]; units: Unit[]; rows: Row[]; sources?: Record<string, SourceDoc>; set_aside?: SetAside[] }
+
+/* WHERE EVERY NAME CAME FROM. TJ, 10 October 2026: *"I need to see the source listed (and
+ * this is true for EVERY page of the project, really). Like where did 'Melanie Roy' come
+ * from"*. Each row has always carried its source; the chart now numbers the sources it draws
+ * on, puts the number beside every name, and lists the documents under the chart -- our copy
+ * at the page, and the publisher's address. The numbering is per chart, in the order the
+ * sources first appear, and lives in a context so the three name renderers share it. */
+const SourceNum = createContext<(r: Row) => { n: number; doc?: SourceDoc } | null>(() => null)
+
+function Name({ r }: { r: Row }) {
+  const num = useContext(SourceNum)(r)
+  const masterOnly = r.source.includes("only on the district's master list")
+  return (
+    <>
+      {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+      {masterOnly && <span title="Only on the district’s master staff list, not on any school’s own sheet: unconfirmed"
+        style={{ color: 'var(--status-warning)' }}>{' '}&dagger;</span>}
+      {num && (num.doc?.copy_url
+        ? <sup className="ml-0.5"><a href={num.doc.copy_url} title={num.doc.label} className="no-underline"
+            style={{ color: 'var(--text-muted)' }}>{num.n}</a></sup>
+        : <sup className="ml-0.5" title={r.source} style={{ color: 'var(--text-muted)' }}>{num.n}</sup>)}
+    </>
+  )
+}
 // HOW MANY OF A BODY'S PEOPLE THIS CHART HOLDS, and how we know — from
 // `build_roster_completeness.py`. A shortfall is only a fact when something the town
 // itself said supplies the denominator, so every row carries the basis and the sentence
@@ -246,6 +272,19 @@ export function OrgCharts() {
     () => (d?.rows ?? []).filter(r => r.unit === unit && r.fy === shownFy
       && (!sub || r.subunit === sub)),
     [d, unit, shownFy, sub])
+  // This chart's sources, numbered in the order they first appear.
+  const srcKeys = useMemo(() => {
+    const keys: string[] = []
+    for (const r of rows) { const k = `${r.fy}|${r.source}`; if (!keys.includes(k)) keys.push(k) }
+    return keys
+  }, [rows])
+  const srcNum = (r: Row) => {
+    const k = `${r.fy}|${r.source}`
+    const i = srcKeys.indexOf(k)
+    return i < 0 ? null : { n: i + 1, doc: d?.sources?.[k] }
+  }
+  const setAside = (d?.set_aside ?? []).filter(x => unit === 'Lunenburg Public Schools' && x.fy === shownFy
+    && (!sub || x.school === sub))
 
   // ONE BLOCK PER BUILDING, AND BANDS INSIDE IT. TJ, 22 September 2026: *"i think the
   // org chart needs some hierarchy. flat lists are hard to read, and i know there's
@@ -458,6 +497,7 @@ export function OrgCharts() {
           reused above the chart: the checker truncated the page and reported `no bands
           rendered at all` for 51 of 63 bodies, none of which had anything wrong with it.
           An explicit marker cannot be broken by reusing a component elsewhere. */}
+      <SourceNum.Provider value={srcNum}>
       <div data-org-chart="">
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
@@ -477,7 +517,7 @@ export function OrgCharts() {
                     color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
                     fontWeight: Number(r.tier) === 0 ? 600 : 400,
                   }}>
-                    {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                    <Name r={r} />
                   </span>
                   <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                     style={{ color: 'var(--text-muted)' }}>{r.role}</span>
@@ -505,7 +545,7 @@ export function OrgCharts() {
                         color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
                         fontWeight: Number(r.tier) <= 2 ? 600 : 400,
                       }}>
-                        {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                        <Name r={r} />
                       </span>
                       <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                         style={{ color: 'var(--text-muted)' }}>{r.role}</span>
@@ -572,7 +612,7 @@ export function OrgCharts() {
                             color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
                             fontWeight: tier === '0' ? 600 : 400,
                           }}>
-                            {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                            <Name r={r} />
                           </span>
                           <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                             style={{ color: 'var(--text-muted)' }}>
@@ -629,6 +669,44 @@ export function OrgCharts() {
       ) : null}
 
       </div>{/* /data-org-chart -- the key and the caveats below are not the chart */}
+      </SourceNum.Provider>
+
+      {srcKeys.length > 0 && (
+        <section id="chart-sources" className="mt-6 max-w-3xl">
+          <h3 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+            Where these names come from
+          </h3>
+          <ol className="mt-2 space-y-1 text-[13px]">
+            {srcKeys.map((k, i) => {
+              const doc = d?.sources?.[k]
+              const raw = k.slice(k.indexOf('|') + 1)
+              return (
+                <li key={k} className="break-words">
+                  <span className="tnum" style={{ color: 'var(--text-muted)' }}>{i + 1}.</span>{' '}
+                  {doc?.label || raw}
+                  {doc?.copy_url && <> · <a className="underline" href={doc.copy_url}>our copy</a></>}
+                  {doc?.publisher_url && <> · <a className="underline" href={doc.publisher_url} target="_blank" rel="noreferrer">publisher&rsquo;s copy</a></>}
+                  {raw.includes("only on the district's master list") && <span style={{ color: 'var(--status-warning)' }}> &mdash; &dagger; on no school&rsquo;s own sheet; unconfirmed</span>}
+                </li>
+              )
+            })}
+          </ol>
+        </section>
+      )}
+
+      {setAside.length > 0 && (
+        <details className="mt-4 max-w-3xl">
+          <summary className="cursor-pointer text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+            {setAside.length} name{setAside.length === 1 ? '' : 's'} on the district&rsquo;s master list are left off this chart
+          </summary>
+          <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+            The master list places them at a school whose own staff sheet does not list them, and the school&rsquo;s own sheet is taken as the authority. Some have left the district; neither list says which.
+          </p>
+          <ul className="mt-1.5 text-[12.5px] grid sm:grid-cols-2 gap-x-6">
+            {setAside.map(x => <li key={x.school + x.person}>{x.person} <span style={{ color: 'var(--text-muted)' }}>&mdash; {x.role}, {x.school}</span></li>)}
+          </ul>
+        </details>
+      )}
 
       <Grain>
         A NAME is somebody the town printed in that role that year. A POST is an

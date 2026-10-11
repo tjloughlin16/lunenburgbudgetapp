@@ -147,7 +147,9 @@ function parse(html) {
       out.push(band)
       continue
     }
-    if (band && !/^\d+$/.test(cell)) band.rows.push(cell)
+    // A count, or a FOOTNOTE MARK beside a name -- the source number and the dagger the
+    // chart puts on a name (10 October 2026) -- is not a person.
+    if (band && !/^[\d\u2020]+$/.test(cell)) band.rows.push(cell)
   }
   return out
 }

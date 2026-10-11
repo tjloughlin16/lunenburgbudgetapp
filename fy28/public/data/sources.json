@@ -2500,9 +2500,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 953046,
+     "bytes": 953287,
      "url": "/docs/data/org-chart.csv",
-     "count": 7125,
+     "count": 7154,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -2536,9 +2536,9 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 233786,
+     "bytes": 236957,
      "url": "/docs/data/board-transfers.csv",
-     "count": 380,
+     "count": 379,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
     },
@@ -2572,9 +2572,9 @@
      "stars": 2,
      "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
      "kind": "Data",
-     "bytes": 164085,
+     "bytes": 172198,
      "url": "/docs/data/tenure.csv",
-     "count": 1903,
+     "count": 1958,
      "unit": "rows",
      "textUrl": "/docs/data/tenure.csv"
     },
@@ -2848,9 +2848,9 @@
      "stars": 2,
      "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
      "kind": "Data",
-     "bytes": 23504,
+     "bytes": 23839,
      "url": "/docs/data/turnover.csv",
-     "count": 449,
+     "count": 456,
      "unit": "rows",
      "textUrl": "/docs/data/turnover.csv"
     },
@@ -2939,6 +2939,18 @@
      "textUrl": "/docs/data/pipeline-state.csv"
     },
     {
+     "path": "data/report-filing.csv",
+     "title": "Which bodies file an annual report, and which say they did not",
+     "stars": 2,
+     "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
+     "kind": "Data",
+     "bytes": 14608,
+     "url": "/docs/data/report-filing.csv",
+     "count": 119,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-filing.csv"
+    },
+    {
      "path": "data/report-appropriations-supplement.csv",
      "title": "Appropriation lines from the pages the main extract could not take whole",
      "stars": 2,
@@ -2975,18 +2987,6 @@
      "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
     },
     {
-     "path": "data/report-filing.csv",
-     "title": "Which bodies file an annual report, and which say they did not",
-     "stars": 2,
-     "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
-     "kind": "Data",
-     "bytes": 11127,
-     "url": "/docs/data/report-filing.csv",
-     "count": 104,
-     "unit": "rows",
-     "textUrl": "/docs/data/report-filing.csv"
-    },
-    {
      "path": "analyses/peer-districts.md",
      "title": "What other districts did",
      "stars": 2,
@@ -3016,7 +3016,7 @@
      "stars": 2,
      "what": "A shortfall is only a fact when something the town SAID supplies the denominator, so every row carries its basis and the sentence it was read from: a stated headcount (the Library, FY2019 — *“we only employ ten total”*), a stated career-and-on-call strength (the Fire Department, low end always), or an establishment of posts with no names (the DPW, the Assessing office). The gross-wages list would be the best denominator here and is EXCLUDED: its department column is read for 156 rows of 2,866, and against it the Fire Department shows five paid and forty-five named — a statement about our extractor, not about the town.",
      "kind": "Data",
-     "bytes": 6125,
+     "bytes": 6122,
      "url": "/docs/data/roster-completeness.csv",
      "count": 38,
      "unit": "rows",
@@ -3222,9 +3222,9 @@
      "stars": 1,
      "what": "Written by us. 63 bodies; 34 reach a money page and 32 a board page, so /org-charts and /departments link both ways instead of a reader having to know the other exists. THE JOIN IS ON A NAME, which is the weakest kind there is, so every row states its `basis` and the generator FAILS if the match count falls — a join that silently matches less is indistinguishable from a body that stopped existing. Ten pairs are matched by hand and say so: the chart names the office (`Accounting Department`) and the finance registry names the officer who owns the account (`Town Accountant`), and no normalisation reaches from one to the other. A BODY WITH NO MONEY PAGE CARRIES THE REASON rather than a blank — most of the 23 are advisory committees the town votes nothing to, and which of them are that against a name spelled two ways is printed on every run and not guessed at.",
      "kind": "Data",
-     "bytes": 16516,
+     "bytes": 17114,
      "url": "/docs/data/body-crosswalk.csv",
-     "count": 63,
+     "count": 65,
      "unit": "rows",
      "textUrl": "/docs/data/body-crosswalk.csv"
     },
@@ -4343,9 +4343,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 240075,
+     "bytes": 241098,
      "url": "/docs/data/money-gaps.csv",
-     "count": 260,
+     "count": 261,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -55119,7 +55119,7 @@
  "totals": {
   "documents": 4937,
   "groups": 25,
-  "bytes": 6401616353,
+  "bytes": 6401633312,
   "loadBearing": 188
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

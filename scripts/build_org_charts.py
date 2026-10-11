@@ -818,6 +818,9 @@ DIRECTORY_SUBUNIT = {
 }
 
 
+SET_ASIDE = []
+
+
 def _rows_school_directory():
     """The district's people as the schools themselves list them, today.
 
@@ -833,11 +836,23 @@ def _rows_school_directory():
     groups by subunit so its DOUBLED test does not fire on the finding. That is the whole
     reason TJ gave the five per-school addresses, and it needed nothing added here to work.
 
-    THE ROLL-UP FILLS IN ONLY WHO THE BUILDINGS LEAVE OUT. It names 45 people no school
-    listing does -- Primary omits its own paraprofessionals from the sheet the school
-    keeps -- so dropping it would lose them, and using it for everybody would draw
-    everyone twice. Neither list is a superset of the other, which is a fact about the
-    district's record-keeping and is registered as a gap rather than resolved here.
+    THE ROLL-UP IS NOT AUTHORITATIVE FOR A BUILDING THAT KEEPS ITS OWN SHEET. TJ, 10 October
+    2026: *"the master school directory list is not fully accurate ... Melanie Roy hasnt worked
+    here for years"*, *"the primary, where she worked, has a specific directory which
+    accurately shows her not working there anymore"*, and *"on the master list, its likely it
+    contains ONLY people not associated to a particular school so we cant throw them all
+    out. its a data problem"*. So:
+
+      * a person the roll-up places at a building that publishes its OWN sheet, and whom that
+        sheet does not list, is SET ASIDE -- the building's own list wins. Counted, named in
+        `SET_ASIDE`, and printed on the chart; never silently dropped. (This note used to say
+        Primary leaves its paraprofessionals off its sheet; on 9 October 2026 it lists 18.)
+      * a person the roll-up places district-wide, or at a building with no sheet of its own,
+        is KEPT and marked `only on the district's master list` -- unconfirmed, and quite
+        possibly exactly the people the master list exists for.
+
+    Which of the set-aside people have truly left is not something either list says; it is
+    registered as a gap.
 
     AND NOBODY IS RANKED BY IT. A contact sheet publishes no reporting line, so every row
     arrives with its printed title and `tier_of` bands it exactly as it bands a roster --
@@ -850,13 +865,22 @@ def _rows_school_directory():
         return out
     rows = list(csv.DictReader(open(p, encoding='utf-8')))
     placed = {(r['fy'], r['person_key']) for r in rows if r['listing_kind'] == 'school'}
+    # The buildings that publish their own sheet, per fetch -- the ones whose list wins.
+    own_sheet = {(r['fy'], r['listing'].strip().lower()) for r in rows if r['listing_kind'] == 'school'}
     for r in rows:
+        master_only = False
         if r['listing_kind'] == 'school':
             named = r['listing']
         elif (r['fy'], r['person_key']) in placed:
             continue                    # a building already lists them; the roll-up repeats it
         else:
             named = r['school'] or r['school_as_printed']
+            if (r['fy'], named.strip().lower()) in own_sheet:
+                SET_ASIDE.append(dict(fy=r['fy'], person=re.sub(r'\s{2,}', ' ', r['person']).strip(),
+                                      role=(r['title'] or '').strip(), school=named.strip(),
+                                      fetched=r['fetched']))
+                continue
+            master_only = True
         sub = DIRECTORY_SUBUNIT.get(named.strip().lower(), named.strip())
         who = re.sub(r'\s{2,}', ' ', r['person']).strip()
         if not who:
@@ -864,8 +888,17 @@ def _rows_school_directory():
         out.append(dict(fy=r['fy'], unit='Lunenburg Public Schools', unit_kind='school',
                         subunit=sub, section=r['section'],
                         role=(r['title'] or '').strip(), person=who, status='filled',
-                        source='school staff directory (%s), fetched %s'
-                               % (r['listing'], r['fetched'])))
+                        source='school staff directory (%s), fetched %s%s'
+                               % (r['listing'], r['fetched'],
+                                  '; only on the district\'s master list' if master_only else '')))
+    # One entry per person and year, however many fetches named them.
+    seen, keep = set(), []
+    for x in SET_ASIDE:
+        k = (x['fy'], x['person'].lower())
+        if k not in seen:
+            seen.add(k)
+            keep.append(x)
+    SET_ASIDE[:] = keep
     return out
 
 
@@ -1684,6 +1717,60 @@ def crosswalk():
     return out
 
 
+# WHERE EACH NAME CAME FROM, AS A DOCUMENT A READER CAN OPEN. TJ, 10 October 2026: *"for
+# school dept, where are we pulling FY27 org chart from? I need to see the source listed ...
+# Like where did 'Melanie Roy' come from"*. Every row has always carried `source` -- `school
+# roster p32`, `school staff directory (Lunenburg Primary School), fetched 2026-09-25` -- and
+# none of it reached the page as anything a reader could follow. This resolves each distinct
+# (year, source) to the catalogued document: our copy, at the page, and the publisher's own
+# address. Read from the catalogues, never from a folder name. A `pN` is a PDF page of that
+# year's annual town report (checked: FY2011's School Committee roster is on PDF page 32, as
+# its rows say). A source that resolves to nothing is listed with no link, never guessed.
+def source_docs(rows):
+    def catalogue(folder):
+        p = os.path.join(ROOT, 'sources', folder, 'index.csv')
+        return list(csv.DictReader(open(p, encoding='utf-8', errors='replace'))) if os.path.exists(p) else []
+    reports = {}
+    for r in catalogue('town-annual-reports'):
+        m = re.match(r'"?FY ?(\d{4}) Annual Town Report', r['label'])
+        if m and r['local'].endswith('.pdf'):
+            reports.setdefault(m.group(1), r)
+    district = catalogue('district-budget')
+    town = catalogue('town-supplementary')
+    docs = lambda local: '/docs/' + local[len('sources/'):]
+    first = lambda up: (up or '').split()[0] if up else ''
+    out = {}
+    for r in rows:
+        key = '%s|%s' % (r['fy'], r['source'])
+        if key in out:
+            continue
+        src, hit = r['source'], None
+        m = re.match(r'school staff directory \((.+?)\), fetched (\d{4}-\d{2}-\d{2})', src)
+        if m:
+            want = [c for c in district if c['label'].startswith(m.group(1) + ' (school staff directory')
+                    and 'fetched ' + m.group(2) in c['label']]
+            want.sort(key=lambda c: (not c['local'].endswith('.csv'), c['local']))
+            if want:
+                hit = {'label': 'The district\u2019s staff directory: %s, as fetched %s' % (m.group(1), m.group(2)),
+                       'copy_url': docs(want[0]['local']), 'publisher_url': first(want[0]['upstream'])}
+        m = None if hit else re.match(r'town staff directory, did=(\d+)', src)
+        if m:
+            want = sorted((c for c in town if (c.get('upstream') or '').endswith('did=' + m.group(1))),
+                          key=lambda c: c['local'])
+            if want:
+                hit = {'label': 'The town\u2019s staff directory, department %s, as fetched %s'
+                                % (m.group(1), re.search(r'(\d{4}-\d{2}-\d{2})', want[-1]['local']).group(1)),
+                       'copy_url': docs(want[-1]['local']), 'publisher_url': first(want[-1]['upstream'])}
+        m = None if hit else re.search(r'\bp(\d+)\b', src)
+        if m and r['fy'] in reports:
+            rep = reports[r['fy']]
+            hit = {'label': 'FY%s Annual Town Report, PDF page %s (%s)' % (r['fy'], m.group(1), src),
+                   'copy_url': docs(rep['local']) + '#page=' + m.group(1),
+                   'publisher_url': first(rep['upstream'])}
+        out[key] = hit or {'label': src, 'copy_url': '', 'publisher_url': ''}
+    return out
+
+
 def payload(rows):
     # TIER TRAVELS AS A STRING, because the CSV has always carried it as one and the page
     # compares against `'0'`. Emitting an int here made two bugs at once in JavaScript:
@@ -1720,6 +1807,8 @@ def payload(rows):
                     links=link.get(k, {}),
                     layout=layout_of([r for r in rows if r['unit'] == k]))
                for k, v in sorted(units.items(), key=lambda kv: (-kv[1]['n'], kv[0]))],
+        sources=source_docs(rows),
+        set_aside=sorted(SET_ASIDE, key=lambda x: (x['fy'], x['school'], x['person'])),
         rows=rows)
 
 
