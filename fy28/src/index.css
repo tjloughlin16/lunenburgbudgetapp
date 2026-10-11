@@ -678,3 +678,10 @@ a:visited .door-title { color: var(--text-secondary); }
 @keyframes jobs-tray-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
 .jobs-tray-in { animation: jobs-tray-in 200ms ease-out; }
 @media (prefers-reduced-motion: reduce) { .jobs-tray-in { animation: none; } }
+
+/* The search spinner (pages/Search.tsx). Under reduced motion it pulses instead of turning:
+   still visibly working, without the rotation. */
+@keyframes search-spin { to { transform: rotate(360deg); } }
+@keyframes search-pulse { 50% { opacity: 0.4; } }
+.search-spinner { animation: search-spin 700ms linear infinite; }
+@media (prefers-reduced-motion: reduce) { .search-spinner { animation: search-pulse 1.2s ease-in-out infinite; } }

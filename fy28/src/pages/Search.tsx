@@ -505,9 +505,33 @@ export default function Search() {
           aria-label="Search"
           className="px-3 py-2 text-base rounded border flex-1 sm:flex-none sm:w-[26rem] min-w-0"
           style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)', color: 'var(--text-primary)' }} />
-        <button type="submit" className="px-4 py-2 text-sm font-semibold rounded shrink-0"
-          style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
+        <button type="submit" disabled={busy} aria-busy={busy}
+          className="px-4 py-2 text-sm font-semibold rounded shrink-0 inline-flex items-center gap-2 disabled:opacity-80"
+          style={{ background: 'var(--series-cost)', color: '#fff' }}>
+          {busy && <Spinner size={14} color="#fff" track="rgba(255,255,255,0.35)" />}
+          {busy ? 'Searching' : 'Search'}
+        </button>
       </form>
+
+      {/* SEARCHING, AND IMPOSSIBLE TO MISS. TJ, 10 October 2026: *"search is SLOW with partial.
+          can you update the 'searching' indicator with a spinner to make it super clear and
+          obvious"*. Matching the start of every word reads more of the index than matching
+          whole words, so a search can take a few seconds -- and the first search of a visit
+          drew NOTHING while it ran, because the results block waits for data. So: a card
+          with a spinner and the words being searched, on every search, first or not; the
+          button spins too; and the previous results fade so nobody reads them as the answer
+          to the new question. role=status announces it to a screen reader. */}
+      {busy && asked && (
+        <div role="status" aria-live="polite"
+          className="card mt-4 px-4 py-3 flex items-center gap-3 max-w-2xl"
+          style={{ borderLeft: '4px solid var(--series-cost)' }}>
+          <Spinner size={22} color="var(--series-cost)" />
+          <span className="text-[14.5px]">
+            <strong>Searching</strong> every document, set of minutes and recording for <strong>{asked}</strong>&hellip;
+            <span className="block text-[12px]" style={{ color: 'var(--text-muted)' }}>Matching the start of every word takes a few seconds.</span>
+          </span>
+        </div>
+      )}
 
       {/* WHAT KIND OF THING, AND HOW MANY OF EACH -- IN A GRID, BECAUSE THE COUNTS ARE THE
           POINT OF IT.
@@ -648,9 +672,9 @@ export default function Search() {
       )}
 
       {data && asked && !err && (
-        <>
+        <div style={busy ? { opacity: 0.35, transition: 'opacity 150ms', pointerEvents: 'none' } : { transition: 'opacity 150ms' }}>
           <p className="mt-4 sm:mt-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
-            {busy ? 'Searching…' : total === 0
+            {busy ? 'Results below are from your previous search.' : total === 0
               ? <>Nothing matched <strong>{asked}</strong>.</>
               : type
                 ? <><strong>{fmt(groupCount(type).hits)}{groupCount(type).capped ? '+' : ''}</strong> of {fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''} hits for <strong>{asked}</strong> are {GROUPS.find(g => g.id === type)!.label.toLowerCase()}.</>
@@ -769,7 +793,7 @@ export default function Search() {
             {ORDER.map((c, i) => <span key={c}>{i ? ' · ' : ''}{fmt(data.index.holds[c] || 0)} {UNIT[c][1]}</span>)}.
             {typeof data.rowsRead === 'number' && <> This search read {fmt(data.rowsRead)} rows in {data.ms} ms.</>}
           </p>
-        </>
+        </div>
       )}
 
       {!asked && (
@@ -849,5 +873,15 @@ function Result({ h }: { h: Hit }) {
       </p>
       <span className="sr-only">{g.label}</span>
     </li>
+  )
+}
+
+/** A SPINNER: a ring with one coloured quarter, turning. Pure CSS, no dependency; respects
+ *  reduced motion by slowing to a pulse rather than stopping, so it still says "working". */
+function Spinner({ size = 16, color = 'currentColor', track = 'var(--grid)' }: { size?: number; color?: string; track?: string }) {
+  return (
+    <span aria-hidden="true" className="search-spinner inline-block shrink-0 rounded-full"
+      style={{ width: size, height: size, border: `${Math.max(2, Math.round(size / 8))}px solid ${track}`,
+               borderTopColor: color }} />
   )
 }
