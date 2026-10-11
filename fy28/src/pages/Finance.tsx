@@ -1,4 +1,5 @@
 import { JobsLink } from '../components/JobPostings'
+import { BoardNav } from '../components/BoardNav'
 import { useState } from 'react'
 import type { Tab } from '../routes'
 import { boardFinanceSlugFromPath, departmentSlugFromPath } from '../routes'
@@ -75,6 +76,7 @@ export function SchoolFinance() {
     <ReportShell tab={TAB} title="The School Committee’s finances"
       standfirst={d ? <Standfirst d={d} slug="school-committee" /> : undefined}
       err={err} loading={!d && !err} dataUrl={DATA}>
+      <BoardNav slug="school-committee" current="finance" />
       {d && <OwnerPage d={d} slug="school-committee" conclusions={d.conclusions} />}
     </ReportShell>
   )
@@ -89,6 +91,7 @@ export function BoardFinance() {
     <ReportShell tab={BTAB} title={o ? `${o.name} — finances` : 'A board’s finances'}
       standfirst={d && o ? <Standfirst d={d} slug={slug} /> : d ? <>No account in any report we hold is owned by this board. <a className="underline" href="/accounts">Every account, once</a> lists who owns what.</> : undefined}
       err={err} loading={!d && !err} dataUrl={DATA}>
+      <BoardNav slug={slug} current="finance" />
       {d && o && <OwnerPage d={d} slug={slug} />}
     </ReportShell>
   )

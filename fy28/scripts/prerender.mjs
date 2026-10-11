@@ -180,6 +180,23 @@ async function readRoutes() {
     finance = all.filter(b => b.finance && b.slug !== 'school-committee').map(b => `/boards/${b.slug}/finance`).sort()
     console.log(`  ${finance.length} board finance pages at /boards/<slug>/finance`)
   }
+  // THE SPOKES pages/Boards.tsx renders itself -- meetings, votes, time, budget schedule,
+  // about -- for the boards that have each, read off boards-nav.json: the same file the tab
+  // bar reads, so a tab and its prerendered page cannot disagree.
+  const navFile = join(APP, 'public', 'data', 'boards-nav.json')
+  let spokes = []
+  if (existsSync(navFile)) {
+    for (const b of JSON.parse(await readFile(navFile, 'utf8')).boards) {
+      const base = `/boards/${b.slug}`
+      spokes.push(`${base}/meetings`)
+      if (b.votes > 0) spokes.push(`${base}/votes`)
+      if (b.time) spokes.push(`${base}/time`)
+      if (b.schedule) spokes.push(`${base}/schedule`)
+      if (b.about) spokes.push(`${base}/about`)
+    }
+    spokes.sort()
+    console.log(`  ${spokes.length} board spoke pages at /boards/<slug>/<meetings|votes|time|schedule|about>`)
+  }
   // THE RECORDS TAB, for every board the meeting register resolves a slug for --
   // build_board_records.py drops the rows with no resolved board_slug at all.
   const recordsFile = join(APP, 'public', 'data', 'board-records.json')
@@ -212,7 +229,7 @@ async function readRoutes() {
     departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
     console.log(`  ${departments.length} departments at /departments/<slug>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...records, ...transfers, ...departments, ...meetings]
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings]
 }
 
 /** Serve dist, falling back to the PRISTINE shell -- with the probe in it.

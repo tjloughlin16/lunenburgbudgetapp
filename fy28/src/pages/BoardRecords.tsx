@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BoardNav } from '../components/BoardNav'
 import type { Tab } from '../routes'
 import { boardRecordsSlugFromPath } from '../routes'
 import { Body, Grain, H2, ReportShell, Stat, useReport } from '../components/report'
@@ -75,6 +76,7 @@ export function BoardRecords() {
     <ReportShell tab={TAB} title={`${b.board} — missing records`}
       standfirst={<>{missing} of {b.meetings} meetings this board has held are missing a recording, its official minutes, or a transcript{waiting ? `; ${waiting} more are not available yet, still inside the window for approving minutes` : ''}. <a className="underline" href={`/boards/${slug}`}>&larr; the {b.board}&rsquo;s page</a>.</>}
       dataUrl={DATA}>
+      <BoardNav slug={slug} current="records" />
       <Grain>{d.grain}</Grain>
       <div className="mt-6 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={`${missing} of ${b.meetings}`} tone={missing ? 'var(--status-critical)' : 'var(--status-good)'}>

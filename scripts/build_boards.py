@@ -195,6 +195,7 @@ def about_itself(slug):
     return out
 CHARTER_URL = 'https://www.lunenburgma.gov/323/Charter-Town-Bylaws'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
+NAV_OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards-nav.json')
 SITE = 'https://lunenburgbudgetproject.org'
 # HOW MANY DATED MEETING ROWS TRAVEL PER BOARD. It has to cover the future ones AND enough
 # history for the page to show its recent list, because the page -- not this script -- now
@@ -661,6 +662,24 @@ def build(as_of=None):
         cycles=CYCLES, generated_by='scripts/build_boards.py')
 
 
+def nav(data):
+    """WHICH TABS EACH BOARD HAS, small enough for every board page to fetch.
+
+    The board pages became a hub and its spokes (TJ, 11 October 2026: "we've outgrown the
+    sidebar model ... pull those links out of the sidebar and create a main page for all
+    the boards"). The tab bar sits on every spoke -- including Finance, Records and
+    Transfers, which never loaded this payload -- and boards.json is ~15 MB. So the bar
+    reads this instead: the slug, the name, and which of the spokes built from boards.json
+    would have anything on them. Derived from `data`, so it cannot disagree with it."""
+    return dict(
+        generated_by='scripts/build_boards.py', as_of=data['as_of'],
+        boards=[dict(slug=b['slug'], name=b['name'],
+                     votes=len(b['votes']), time=len(b['time_by_tag']) > 0,
+                     schedule=len(b['calendar']) > 0, finance=bool(b.get('finance')),
+                     about=bool(b.get('page') or b.get('about_itself') or b.get('annual_report')))
+                for b in data['boards']])
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -672,11 +691,18 @@ def main():
         if have != data:
             print('STALE %s — run build_boards.py' % os.path.relpath(OUT, ROOT))
             return 1
+        nav_have = json.load(open(NAV_OUT, encoding='utf-8')) if os.path.exists(NAV_OUT) else None
+        if nav_have != nav(data):
+            print('STALE %s — run build_boards.py' % os.path.relpath(NAV_OUT, ROOT))
+            return 1
         print('ok — %s reproduces' % os.path.relpath(OUT, ROOT))
         return 0
     data = build(a.as_of)
     with open(OUT, 'w', encoding='utf-8') as fh:
         json.dump(data, fh, indent=1, sort_keys=True)
+        fh.write('\n')
+    with open(NAV_OUT, 'w', encoding='utf-8') as fh:
+        json.dump(nav(data), fh, indent=1, sort_keys=True)
         fh.write('\n')
     b = data['boards']
     print('%s: %d boards; %s' % (os.path.relpath(OUT, ROOT), len(b),

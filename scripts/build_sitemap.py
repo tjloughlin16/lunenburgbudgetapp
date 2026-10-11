@@ -136,6 +136,14 @@ def board_pages():
     # THE FINANCE TAB, for every board that owns an account (the registry decides which).
     # The School Committee's is a top-level route of its own and is already in `routes()`.
     out += ['/boards/%s/finance' % b['slug'] for b in boards if b.get('finance') and b['slug'] != 'school-committee']
+    # THE SPOKES pages/Boards.tsx renders -- from boards-nav.json, the file the tab bar reads.
+    np_ = os.path.join(PUB, 'data', 'boards-nav.json')
+    if os.path.exists(np_):
+        for b in json.load(io.open(np_, encoding='utf-8')).get('boards', []):
+            base = '/boards/' + b['slug']
+            out.append(base + '/meetings')
+            out += [base + '/' + k for k, on in (('votes', b['votes'] > 0), ('time', b['time']),
+                                                  ('schedule', b['schedule']), ('about', b['about'])) if on]
     # THE RECORDS TAB -- every board the meeting register resolves a slug for (board_records.py
     # drops the ~50 rows with no resolved board_slug at all; see its own build_board_records.py).
     rp = os.path.join(PUB, 'data', 'board-records.json')

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BoardNav } from '../components/BoardNav'
 import { Grain, ReportShell, Section, useReport } from '../components/report'
 import { boardTransfersSlugFromPath } from '../routes'
 
@@ -96,6 +97,7 @@ export function BoardTransfers() {
       standfirst={p && pick
         ? <>FY{pick.fy}: {pick.n} transfer{pick.n === 1 ? '' : 's'} approved at {pick.meetings} meeting{pick.meetings === 1 ? '' : 's'}, {usd(pick.total)} as the minutes print the amounts. Every vote by the {p.board} to move money, year by year. <a className="underline" href={`/boards/${p.slug}`}>The {p.board}&rsquo;s page</a>.</>
         : 'Every vote to move money, year by year.'}>
+      {p && <BoardNav slug={p.slug} current="transfers" />}
       {p && pick && <>
         <div className="flex flex-wrap gap-2 mt-6" role="group" aria-label="Fiscal year">
           {years.map(y => (

@@ -505,7 +505,7 @@ export function BudgetFeed() {
                 <td className="py-2 pr-3 tnum whitespace-nowrap" style={{ color: 'var(--text-secondary)' }}>{s.typical_first} → {s.typical_last}</td>
                 <td className="py-2 pr-3 tnum whitespace-nowrap">{dates.length ? <>{mmddyy(dates[0])}{dates.length > 1 ? ` → ${mmddyy(dates[dates.length - 1])}` : ''}<span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {dates.length} meeting{dates.length === 1 ? '' : 's'}</span></> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
                 <td className="py-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
-                  {s.windows.map((w, i) => <span key={w.board_slug}>{i > 0 ? ' · ' : ''}<a className="underline" href={`/boards/${w.board_slug}#calendar`}>{w.board}</a>{w.this_cycle.length ? <span className="tnum"> {w.this_cycle.length}</span> : ''}</span>)}
+                  {s.windows.map((w, i) => <span key={w.board_slug}>{i > 0 ? ' · ' : ''}<a className="underline" href={`/boards/${w.board_slug}/schedule`}>{w.board}</a>{w.this_cycle.length ? <span className="tnum"> {w.this_cycle.length}</span> : ''}</span>)}
                   {dates.length > 0 && <details className="mt-1"><summary className="cursor-pointer" style={{ color: 'var(--text-muted)' }}>the dates</summary>
                     <ul className="mt-1 space-y-0.5">{s.windows.filter(w => w.this_cycle.length).map(w => <li key={w.board_slug} className="tnum">{w.board}: {w.this_cycle.map(mmddyy).join(', ')}</li>)}</ul></details>}
                 </td>

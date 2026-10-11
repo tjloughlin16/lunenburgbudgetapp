@@ -971,6 +971,16 @@ export function boardSlugFromPath(pathname: string): string | null {
   return m && m[1] !== 'compared' ? m[1] : null
 }
 
+/** The spoke a `/boards/<slug>/<spoke>` address names, for the spokes pages/Boards.tsx
+ *  renders itself (Finance, Records and Transfers have pages of their own). Null for the
+ *  overview, an index, or anything else. */
+export const BOARD_SPOKES = ['meetings', 'votes', 'time', 'schedule', 'about'] as const
+export type BoardSpoke = typeof BOARD_SPOKES[number]
+export function boardSpokeFromPath(pathname: string): { slug: string; spoke: BoardSpoke } | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/([a-z]+)\/?$/.exec(pathname.toLowerCase())
+  return m && (BOARD_SPOKES as readonly string[]).includes(m[2]) ? { slug: m[1], spoke: m[2] as BoardSpoke } : null
+}
+
 /** The board a `/boards/<slug>/finance` address names, or null. */
 export function boardFinanceSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/finance\/?$/.exec(pathname.toLowerCase())
