@@ -662,8 +662,16 @@ def main():
     w.writerows(all_rows)
     outs += [(OUT, buf.getvalue()),
              (os.path.join(PAYLOAD_DIR, 'index.json'), render({'boards': index}))]
+    # A board that stops qualifying must not leave its page's payload behind: nothing links it,
+    # and a stale payload is a page that says something the data no longer does.
+    keep = {os.path.basename(p_) for p_, _ in outs if os.path.dirname(p_) == PAYLOAD_DIR}
+    stale = sorted(f for f in (os.listdir(PAYLOAD_DIR) if os.path.isdir(PAYLOAD_DIR) else [])
+                   if f.endswith('.json') and f not in keep)
     if a.check:
         bad = 0
+        for f in stale:
+            print('STALE -- %s is no longer built; run scripts/build_board_transfers.py' % f)
+            bad = 1
         for path, want in outs:
             have = open(path, encoding='utf-8', newline='').read() if os.path.exists(path) else None
             if have != want:
@@ -673,6 +681,9 @@ def main():
             print('ok -- %d transfer rows across %d boards reproduce' % (len(all_rows), len(index)))
         return bad
     os.makedirs(PAYLOAD_DIR, exist_ok=True)
+    for f in stale:
+        os.remove(os.path.join(PAYLOAD_DIR, f))
+        print('removed %s: the board no longer has a transfer to show' % f)
     for path, want in outs:
         tmp = path + '.tmp'
         open(tmp, 'w', encoding='utf-8', newline='').write(want)
