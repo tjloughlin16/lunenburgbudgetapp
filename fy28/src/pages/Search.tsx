@@ -419,6 +419,9 @@ export default function Search() {
   }, [asked, board, since, type, sort])
 
   useEffect(() => {
+    // NOTHING ASKED, NOTHING SEARCHED. Landing on /search fired an empty query and spun the
+    // button until it came back -- TJ: "why does 'searching' show on landing on the page".
+    if (!asked) { setBusy(false); setErr(null); return }
     let alive = true
     setErr(null)
     setBusy(true)
