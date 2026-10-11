@@ -208,6 +208,9 @@ function Card({ t, onGo, ours }: { t: Thread; onGo: (id: string) => void; ours: 
         {t.momentum.boards} {t.momentum.boards === 1 ? 'board' : 'boards'} ·{' '}
         {t.momentum.meetings} {t.momentum.meetings === 1 ? 'meeting' : 'meetings'} ·{' '}
         {t.momentum.votes} {t.momentum.votes === 1 ? 'vote' : 'votes'} · {t.stage}
+        {/* The groups, in words: the page lists a thread once, so the card says where else
+            it belongs rather than the page repeating it there. */}
+        {groupsOf(t).length ? <> · {groupsOf(t).map(groupLabel).join(', ')}</> : null}
       </div>
       {(t.heat === 'stale' || t.heat === 'slowing' || t.heat === 'raised once')
         && t.momentum.board_meetings_since >= 2 ? (
@@ -231,17 +234,20 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
   const resolved = d.threads.filter(t => t.status === 'resolved')
   const lapsed = d.threads.filter(t => t.status === 'lapsed')
 
-  /* EACH SECTION MEANS ONE THING, which the first cut did not manage. The groups listed
-     every thread including the settled ones, so a settled thread appeared under its group
-     AND under Settled, and the top band's four appeared a third time. Three sightings of
-     one row reads as a bug however deliberate it is.
-     The groups now browse the OPEN threads only -- what is live is what a group is for --
-     and Settled owns the archive. A thread in two groups still appears in both, because
-     that is what belonging to two groups means, and the chip counts say so. */
+  /* EVERY THREAD APPEARS ONCE. TJ, 11 October 2026: "threads page duplicates threads
+     multiple times." It did -- 41 cards for 21 threads. A pinned thread showed in Top AND
+     under each of its groups; a new one in Newly raised, What is moving now AND each group.
+     The earlier fix (open threads only in the groups) halved it and kept "a thread in two
+     groups appears in both, because that is what belonging means" -- which is true of a
+     FILTER and false of a list. So the groups are a filter now, never a second listing:
+     each open thread sits in exactly one of Top / Newly raised / Still open, and a chip
+     narrows all three at once. The card names its groups, so nothing is lost by listing it
+     once. "What is moving now" is gone because Still open is already ranked by recency --
+     its first four WERE that section, printed twice. */
   const groups = useMemo(() => {
-    const m = new Map<string, Thread[]>()
-    for (const t of open) for (const g of groupsOf(t)) m.set(g, [...(m.get(g) ?? []), t])
-    return [...m.entries()].sort((a, b) => b[1].length - a[1].length)
+    const m = new Map<string, number>()
+    for (const t of open) for (const g of groupsOf(t)) m.set(g, (m.get(g) ?? 0) + 1)
+    return [...m.entries()].sort((a, b) => b[1] - a[1])
   }, [d])
   const byFy = useMemo(() => {
     const m = new Map<number, Thread[]>()
@@ -251,53 +257,22 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
     }
     return [...m.entries()].sort((a, b) => b[0] - a[0])
   }, [d])
-  const filtered = group ? open.filter(t => groupsOf(t).includes(group)) : null
+  const inGroup = (t: Thread) => !group || groupsOf(t).includes(group)
   // PINNED LEAD, in pin order -- a person's call (threads.csv `pin`). TJ, 10 October 2026:
   // *"Track turf field is now the TOP thread ;) need to have a way to make them important
-  // and ordered"*. A pinned thread appears here and not again in Newly raised or Moving now.
-  const pinned = d.threads.filter(t => t.pin != null).sort((a, b) => (a.pin ?? 0) - (b.pin ?? 0))
-  const newly = d.threads.filter(t => t.is_new && t.pin == null)
+  // and ordered"*.
+  const pinned = open.filter(t => t.pin != null && inGroup(t)).sort((a, b) => (a.pin ?? 0) - (b.pin ?? 0))
+  const newly = open.filter(t => t.is_new && t.pin == null && inGroup(t))
+  const rest = open.filter(t => !t.is_new && t.pin == null && inGroup(t))
 
   return (
     <>
       <ThreadsHero />
 
-      {/* RANK FIRST, THEN GROUPS (§14c). A rank serves the reader who does not know what
-          they are looking for; a group serves the reader who does. Group first and the
-          most important matter in town sits third inside a collapsed section. */}
-      {/* NEWLY RAISED, ABOVE EVERYTHING. TJ: "when a NEW thread is identified, it should
-          show up at the top of the threads page with a big label as NEW" — and then, on
-          seeing the first cut: "'new' threads means new in existence. not new to us ;)".
-          What is new is the MATTER, not our filing of it. */}
-      {pinned.length ? (
-        <>
-          <H2>Top threads</H2>
-          <ul className="list-none p-0 m-0 mb-4">
-            {pinned.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
-          </ul>
-        </>
-      ) : null}
-
-      {newly.length ? (
-        <>
-          <H2>Newly raised</H2>
-          <Body>{newly.length === 1 ? 'This first came' : 'These first came'} up in the last two
-            months, and {newly.length === 1 ? 'is' : 'are'} still open.</Body>
-          <ul className="list-none p-0 m-0 mb-4">
-            {newly.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
-          </ul>
-        </>
-      ) : null}
-
-      <H2>What is moving now</H2>
-      <ul className="list-none p-0 m-0">
-        {open.filter(t => t.pin == null).slice(0, 4).map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
-      </ul>
-      <p className="text-[12px] mt-1.5" style={muted}>Ordered by {d.coverage.rank_basis}.</p>
-
-      <H2>Everything still open</H2>
+      {/* THE FILTER SITS ABOVE EVERYTHING IT FILTERS, so a reader who knows what they want
+          narrows the page before reading it, and one who does not reads it ranked (§14c). */}
       <div className="flex flex-wrap gap-1.5 mb-3">
-        {groups.map(([g, ts]) => {
+        {groups.map(([g, n]) => {
           const on = group === g
           return (
             <button key={g} type="button" aria-pressed={on}
@@ -310,22 +285,46 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
               }}>
               <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle"
                 style={{ background: on ? 'var(--surface-1)' : GROUP_TONE[g] ?? 'var(--text-muted)' }} />
-              {groupLabel(g)} <span className="opacity-60">{ts.length}</span></button>
+              {groupLabel(g)} <span className="opacity-60">{n}</span></button>
           )
         })}
       </div>
-      {filtered
-        ? <ul className="list-none p-0 m-0">
-            {filtered.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
+
+      {pinned.length ? (
+        <>
+          <H2>Top threads</H2>
+          <ul className="list-none p-0 m-0 mb-4">
+            {pinned.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
           </ul>
-        : groups.map(([g, ts]) => (
-            <div key={g} className="mb-3.5">
-              <H3>{groupLabel(g)}</H3>
-              <ul className="list-none p-0 m-0">
-                {ts.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
-              </ul>
-            </div>
-          ))}
+        </>
+      ) : null}
+
+      {/* NEWLY RAISED, ABOVE THE REST. TJ: "when a NEW thread is identified, it should
+          show up at the top of the threads page with a big label as NEW" — and then, on
+          seeing the first cut: "'new' threads means new in existence. not new to us ;)".
+          What is new is the MATTER, not our filing of it. */}
+      {newly.length ? (
+        <>
+          <H2>Newly raised</H2>
+          <Body>{newly.length === 1 ? 'This first came' : 'These first came'} up in the last two
+            months, and {newly.length === 1 ? 'is' : 'are'} still open.</Body>
+          <ul className="list-none p-0 m-0 mb-4">
+            {newly.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
+          </ul>
+        </>
+      ) : null}
+
+      {rest.length ? (
+        <>
+          <H2>{pinned.length || newly.length ? 'Everything else still open' : 'Still open'}</H2>
+          <ul className="list-none p-0 m-0">
+            {rest.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
+          </ul>
+          <p className="text-[12px] mt-1.5" style={muted}>Ordered by {d.coverage.rank_basis}.</p>
+        </>
+      ) : null}
+      {group && !pinned.length && !newly.length && !rest.length
+        ? <Body>Nothing open in {groupLabel(group)}.</Body> : null}
 
       {/* Resolved grows forever, so it is grouped by fiscal year first — "what did Town
           Meeting settle in FY26" is the question people bring to an archive (§14c). */}
@@ -383,7 +382,7 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
           twenty — the shape of the year rather than the way in. A reader who wants one
           thread has it before they reach this; a reader who wants the pattern finds it
           where patterns belong, after the particulars. */}
-      <H2>All twenty, across time</H2>
+      <H2>All {d.threads.length}, across time</H2>
       <ThreadRibbons
         rows={d.threads.map(t => ({
           id: t.id, label: t.label, status: t.status, kind: t.kind, tone: toneOf(t),
