@@ -72,7 +72,8 @@ const CORPORA = ['post', 'page', 'job', 'person', 'recorded', 'source', 'minutes
  *  the date SchoolSpring prints as posted; no `source`, `page` or `person` row does. A date
  *  sort is offered for these four and refused for the rest. */
 const DATED = ['job', 'minutes', 'recorded', 'transcript']
-const PER_CORPUS = 12          // hits returned per corpus
+const PER_CORPUS = 12          // hits returned per corpus, unless the caller asks for more
+const PER_CORPUS_MAX = 60      // `per=` -- a thread built from a search wants a timeline, not twelve
 const CANDIDATES = 2000        // rows a corpus search may read before ranking
 const CACHE_SECONDS = 600
 const MAX_Q = 200
@@ -106,7 +107,7 @@ const json = (obj, status = 200, extra = {}) =>
  *     scattered dropped out of the top six and School Committee minutes rose. The term for
  *     this is PROXIMITY RANKING. It costs no second query.
  */
-export function ftsExpression(q) {
+export function ftsExpression(q, { together = false } = {}) {
   const terms = [], words = []
   let quoted = false
   const re = /"([^"]+)"|(\S+)/g
@@ -130,6 +131,10 @@ export function ftsExpression(q) {
   const all = terms.join(' ')
   // One word, or a reader who quoted something: they said exactly what they meant.
   if (terms.length < 2 || terms.length > 6 || quoted) return all
+  // TOGETHER: only rows where the words sit within a few words of each other. A thread built
+  // from a search uses this -- `turkey hill roof` otherwise pulled in every set of minutes
+  // that said Turkey Hill on page one and roof on page four (measured, 10 October 2026).
+  if (together) return `"${words.join(' ')}" OR NEAR(${all}, 5)`
   return `"${words.join(' ')}" OR NEAR(${all}, 3) OR (${all})`
 }
 
@@ -148,7 +153,14 @@ export async function onRequest(context) {
   const since = (url.searchParams.get('since') || '').trim().slice(0, 10)
   // Default `relevance`, so a caller that does not ask gets exactly what it got before.
   const sort = (url.searchParams.get('sort') || '').trim() === 'newest' ? 'newest' : 'relevance'
-  const expr = ftsExpression(q)
+  // HOW MANY PER KIND. The search page wants the best twelve; a thread built from a search
+  // (pages/Threads, DynamicThread) wants every dated mention it can lay on a timeline. The
+  // rows READ are bounded by CANDIDATES either way -- this changes how many come back, not
+  // how many are scanned, which is what D1 bills.
+  const per = Math.max(1, Math.min(PER_CORPUS_MAX, parseInt(url.searchParams.get('per') || '', 10) || PER_CORPUS))
+  // `match=together` -- see ftsExpression. Default unchanged.
+  const together = (url.searchParams.get('match') || '').trim() === 'together'
+  const expr = ftsExpression(q, { together })
 
   // The index's own statement of what it holds, written by the push. Read, never counted
   // here: a COUNT(*) per corpus would read every row on every call.
@@ -170,7 +182,7 @@ export async function onRequest(context) {
   if (!expr) return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
 
   const cache = caches.default
-  const cacheKey = new Request(`https://search.invalid/${encodeURIComponent(expr)}|${corpora.join(',')}|${board}|${since}|${sort}`, { method: 'GET' })
+  const cacheKey = new Request(`https://search.invalid/${encodeURIComponent(expr)}|${corpora.join(',')}|${board}|${since}|${sort}|${per}`, { method: 'GET' })
   const hit = await cache.match(cacheKey)
   if (hit) {
     return new Response(await hit.text(), { headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`, 'x-query-cache': 'hit' } })
@@ -223,7 +235,7 @@ export async function onRequest(context) {
                  snippet(search, 0, '‹', '›', '…', 20) AS snippet
           FROM search WHERE search MATCH ?1 AND corpus = ?2${where}
           LIMIT ${CANDIDATES}
-        ) ${order} LIMIT ${PER_CORPUS}`
+        ) ${order} LIMIT ${per}`
       const countSql = `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${where} LIMIT ${CANDIDATES})`
       const [r, n] = await Promise.all([
         db.prepare(sql).bind(expr, c, ...binds).all(),
@@ -278,7 +290,7 @@ export async function onRequest(context) {
     sort,
     sortedBy,
     dated: DATED,
-    perCorpus: PER_CORPUS,
+    perCorpus: per,
     candidates: CANDIDATES,
     ranking: `${sort === 'newest' ? 'newest first in ' + DATED.join(', ') + ' and bm25 in the rest' : 'bm25'}, within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and the order is local to those rows`,
     index,

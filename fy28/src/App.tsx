@@ -426,6 +426,16 @@ export default function App() {
                 reader last looked, and a panel that slides out over the page. See
                 components/JobPostings.tsx, JobsTray. */}
             <JobsTray />
+            {/* THREADS IN THE HEADER. TJ, 10 October 2026: *"yes add a threads link in the
+                header"* -- it was reachable only from a card low on the front page and the
+                second tab of one area. */}
+            <Go to="threads" title="Threads: what the town is deciding, followed across every board"
+              aria-current={tab === 'threads' ? 'page' : undefined}
+              className="inline-flex text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
+              style={{ background: tab === 'threads' ? 'var(--surface-3)' : 'transparent',
+                       color: tab === 'threads' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+              Threads
+            </Go>
             <Go to="sources" title="Source documents — every one this site rests on"
               aria-current={tab === 'sources' ? 'page' : undefined}
               className="inline-flex text-xs font-semibold px-2 py-1 rounded

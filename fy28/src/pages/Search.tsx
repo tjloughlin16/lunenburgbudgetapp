@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Tab } from '../routes'
 import { track } from '../lib/track'
 import { ReportShell, Body } from '../components/report'
+import { threadSlug } from '../components/DynamicThread'
 
 const TAB: Tab = 'search'
 const API = '/api/search'
@@ -680,6 +681,20 @@ export default function Search() {
                 ? <><strong>{fmt(groupCount(type).hits)}{groupCount(type).capped ? '+' : ''}</strong> of {fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''} hits for <strong>{asked}</strong> are {GROUPS.find(g => g.id === type)!.label.toLowerCase()}.</>
                 : <><strong>{fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}</strong> hits for <strong>{asked}</strong>.</>}
           </p>
+          {/* BUILD A THREAD FROM THIS SEARCH. TJ, 10 October 2026: *"if a user searches for a
+              term, there should be a button that says 'create thread'"* -- every dated
+              mention, oldest first, grouped by meeting (components/DynamicThread). Offered
+              only when something dated matched: a thread of zero meetings is not one. */}
+          {!busy && ['minutes', 'recorded', 'transcript'].some(c => (data.counts[c as Corpus]?.hits ?? 0) > 0) && (
+            <a href={`/threads/${threadSlug(asked) || 'search'}?q=${encodeURIComponent(asked)}`}
+              className="inline-flex items-center gap-1.5 mt-2 px-3 py-1.5 text-[13px] font-semibold rounded border"
+              style={{ borderColor: 'var(--series-cost)', color: 'var(--series-cost)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
+                strokeLinecap="round" aria-hidden="true"><circle cx="5" cy="6" r="2" /><circle cx="5" cy="18" r="2" />
+                <path d="M5 8v8M10 6h9M10 12h9M10 18h9" /></svg>
+              Create a thread: every dated mention, oldest first &rarr;
+            </a>
+          )}
 
           {/* THE TOWN'S WORD FOR YOURS, WHETHER OR NOT ANYTHING WAS FOUND. A search for
               "landscaping" returns 2,189 hits and not one of them is the grounds

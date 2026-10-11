@@ -1305,6 +1305,10 @@ def run(a, notes, ctx):
         # 7c just wrote, so a transfer voted at a meeting reaches /boards/<slug>/transfers the
         # day its minutes are read (TJ, 10 Oct 2026).
         py('build_board_transfers.py', check=False)
+        # THE THREADS, FROM THE SAME MINUTES. Not in this run until 10 October 2026, so the
+        # threads page sat at 19 September for three weeks while the turf field came up at
+        # four more meetings -- a generator nothing ran, and nothing checked.
+        py('build_threads.py', check=False)
         py('build_budget_feed.py', '--as-of', a.as_of)
         py('build_feeds.py')
         # AND THE DATABASE, AND EVERYTHING THE SITE SERVES OFF IT. See SITE_PAYLOADS:

@@ -84,8 +84,9 @@ export function ThreadRibbons({ rows, onGo }: { rows: Row[]; onGo: (id: string) 
               </text>
               <line x1={x1} x2={x2} y1={y} y2={y} stroke={tone}
                 strokeWidth={on ? 3.5 : 2} strokeLinecap="round" opacity={on ? 1 : .85} />
-              {r.dates.map(d => (
-                <circle key={d} cx={x(d)} cy={y} r={on ? 2.6 : 2} fill={tone} opacity=".9" />
+              {/* Keyed by position too: two boards can meet on one date. */}
+              {r.dates.map((d, i) => (
+                <circle key={`${d}-${i}`} cx={x(d)} cy={y} r={on ? 2.6 : 2} fill={tone} opacity=".9" />
               ))}
               {/* SHAPE, not colour, says whether it ended: filled = settled, hollow = open */}
               <circle cx={x2} cy={y} r={done ? 4 : 3.6} fill={done ? tone : 'var(--surface-1)'}

@@ -60,6 +60,9 @@ CHECKS = [
     ('build_job_postings.py', ['--check']),
     # Every board's transfers, from the minutes the meeting process read, with the evidence.
     ('build_board_transfers.py', ['--check']),
+    # The threads, from the same minutes. Absent from this list until 10 October 2026, which
+    # is how threads.json went three weeks stale without a single check failing.
+    ('build_threads.py', ['--check']),
     # The printable decisions/questions sheet is EXTRACTED from the notes rather
     # than typed, so this fails the moment a decision is taken and struck from
     # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is

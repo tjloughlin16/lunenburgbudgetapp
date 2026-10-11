@@ -7,6 +7,7 @@ import { ThreadRibbons } from '../components/ThreadRibbons'
 import { ThreadsHero } from '../components/ThreadsHero'
 import { ThreadKind, KINDS, KIND_LABEL } from '../components/ThreadKind'
 import { ThreadHeat, Tangled, type Heat } from '../components/ThreadHeat'
+import { DynamicThread } from '../components/DynamicThread'
 
 const TAB: Tab = 'threads'
 const DATA = 'threads.json'
@@ -43,6 +44,8 @@ type Thread = {
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
   first_seen: string; last_moved: string; weight: number
+  /** A person's call that this leads the page, in this order (threads.csv `pin`). */
+  pin: number | null
 }
 type Declined = { candidate: string; declined_on: string; reason: string; revisit_if: string; note: string }
 type Payload = {
@@ -177,6 +180,11 @@ function Card({ t, onGo, ours }: { t: Thread; onGo: (id: string) => void; ours: 
           <ThreadKind kind={t.kind} tone={toneOf(t)} />
           <a href={`/threads/${t.id}`} onClick={e => { e.preventDefault(); onGo(t.id) }}
             style={{ fontWeight: 600, textDecoration: 'none' }}>{t.label}</a>
+          {t.pin != null && (
+            <span className="ml-2 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded align-middle"
+              title="Pinned: chosen to lead this page, whatever moved most recently"
+              style={{ background: 'var(--series-cost)', color: '#fff' }}>Top</span>
+          )}
         </span>
         {t.is_new ? (
           <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded shrink-0"
@@ -242,7 +250,11 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
     return [...m.entries()].sort((a, b) => b[0] - a[0])
   }, [d])
   const filtered = group ? open.filter(t => groupsOf(t).includes(group)) : null
-  const newly = d.threads.filter(t => t.is_new)
+  // PINNED LEAD, in pin order -- a person's call (threads.csv `pin`). TJ, 10 October 2026:
+  // *"Track turf field is now the TOP thread ;) need to have a way to make them important
+  // and ordered"*. A pinned thread appears here and not again in Newly raised or Moving now.
+  const pinned = d.threads.filter(t => t.pin != null).sort((a, b) => (a.pin ?? 0) - (b.pin ?? 0))
+  const newly = d.threads.filter(t => t.is_new && t.pin == null)
 
   return (
     <>
@@ -255,6 +267,15 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
           show up at the top of the threads page with a big label as NEW" — and then, on
           seeing the first cut: "'new' threads means new in existence. not new to us ;)".
           What is new is the MATTER, not our filing of it. */}
+      {pinned.length ? (
+        <>
+          <H2>Top threads</H2>
+          <ul className="list-none p-0 m-0 mb-4">
+            {pinned.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
+          </ul>
+        </>
+      ) : null}
+
       {newly.length ? (
         <>
           <H2>Newly raised</H2>
@@ -268,7 +289,7 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
 
       <H2>What is moving now</H2>
       <ul className="list-none p-0 m-0">
-        {open.slice(0, 4).map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
+        {open.filter(t => t.pin == null).slice(0, 4).map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
       </ul>
       <p className="text-[12px] mt-1.5" style={muted}>Ordered by {d.coverage.rank_basis}.</p>
 
@@ -540,6 +561,11 @@ export function Threads() {
   // landing page, so the URL claimed a thread that is not there — and a thread that was
   // renamed or never created looks identical to one that exists. Say which.
   const missing = !!(d && id && !t)
+  // ...UNLESS IT NAMES A SEARCH. `/threads/<slug>?q=<words>` is a thread built from a search
+  // (components/DynamicThread). The words travel in `q`, because a slug drops quotes and
+  // punctuation; without `q` the slug's own words are searched.
+  const q = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('q') : null
+  const dynamic = missing ? (q?.trim() || (id ?? '').replace(/-/g, ' ')) : ''
   // The meeting dates we hold a recording for, so a closure can say whether the Clerk's
   // record has anything to be set against.
   const ours = useMemo(
@@ -550,8 +576,8 @@ export function Threads() {
   return (
     <ReportShell
       tab={TAB}
-      title={t ? t.label : missing ? 'No such thread' : 'What the town is deciding now'}
-      standfirst={t ? t.question : missing ? undefined
+      title={t ? t.label : dynamic ? `${dynamic}: every dated mention` : 'What the town is deciding now'}
+      standfirst={t ? t.question : dynamic ? 'A thread built from a search, not one somebody curated.'
         : `${open} things still open, ${settled} settled. Each one tracked across every board that touched it.`}
       err={err}
       loading={!d}
@@ -561,13 +587,7 @@ export function Threads() {
         {t ? 'Follow this thread by feed' : 'Follow every thread by feed'}
       </a>}
     >
-      {d && missing ? (
-        <Body>
-          There is no thread at this address. It may have been renamed, or it may never
-          have been opened — <a href="/threads" onClick={e => { e.preventDefault(); go(null) }}>
-          see everything the town is deciding</a>.
-        </Body>
-      ) : null}
+      {d && missing ? <DynamicThread term={dynamic} /> : null}
       {d && !missing ? (t ? <One t={t} d={d} onGo={go} ours={ours} /> : <Landing d={d} onGo={go} ours={ours} />) : null}
     </ReportShell>
   )

@@ -94,6 +94,19 @@ def the_record():
             rec['items'].append({'kind': 'decision', 'text': x.get('decision') or '', 't': x.get('t')})
         for t in (m.get('topics') or []):
             rec['items'].append({'kind': 'topic', 'text': t.get('topic') or '', 't': t.get('t_start')})
+        # THE BUDGET DISCUSSION AND THE PUBLIC'S COMMENTS, READ TOO. Until 10 October 2026 a
+        # thread saw only votes, decisions and topic headings, so the Finance Committee's
+        # 24 September discussion of the track and turf engineering request -- recorded under
+        # budget items -- never reached the turf thread, and nothing a resident said at the
+        # microphone could reach any thread at all. TJ: *"The turf field one has now been
+        # discussed at 3 different meetings with inflammatory phrasing, and I dont think we
+        # detected that. we need to figure out why"*.
+        for b in (m.get('budget_items') or []):
+            txt = (b.get('topic') or '') + ('. ' + b['what_was_said'] if b.get('what_was_said') else '')
+            rec['items'].append({'kind': 'budget', 'text': txt, 't': b.get('t')})
+        for c in (m.get('public_comment') or []):
+            if not re.match(r'\s*no public comment', c.get('topic') or '', re.I):
+                rec['items'].append({'kind': 'comment', 'text': c.get('topic') or '', 't': c.get('t')})
     for r in by.values():
         r.pop('seen', None)
     return by, future
@@ -405,6 +418,11 @@ def build():
             # already over.
             is_new=bool(t['status'] != 'resolved' and mts
                         and (dt.date.today() - dt.date.fromisoformat(mts[0])).days <= 60),
+            # PINNED: a person's call that this matter leads the page, in this order. TJ, 10
+            # October 2026: *"need to have a way to make them important and ordered"*. The
+            # registry's `pin` column; blank is unpinned, and unpinned threads keep the
+            # newest-first order below the pinned ones.
+            pin=int(t['pin']) if (t.get('pin') or '').strip().isdigit() else None,
             heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'],
             momentum=temp['basis'],
             weight=(len({c['board_slug'] for c in chron}) * 100
@@ -415,6 +433,7 @@ def build():
     # went quiet because the RECORD went quiet is not a thread where nothing happened, and
     # the boards with the thinnest minutes are not the boards with the least happening.
     threads.sort(key=lambda t: (t['last_moved'] or '', t['weight']), reverse=True)
+    threads.sort(key=lambda t: (t['pin'] is None, t['pin'] or 0))     # stable: pinned lead
     cov = {'rank_note': 'newest first — by the date each thread last came up',
            'dated_in_the_future_and_excluded': [{'board': b, 'date': d, 'file': f} for b, d, f in future],
            'rank_basis': 'when each last came up, newest first',
