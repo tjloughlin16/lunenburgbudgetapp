@@ -521,6 +521,10 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
             {c.items.map((it, j) => (
               <li key={j} style={{ marginBottom: 3 }}>
                 {it.kind === 'vote' ? <strong>Vote: </strong> : null}
+                {/* CONTENTION -- open conflict or charged words, as our minutes of the
+                    recording read it (from 10 October 2026). The words are the captions'. */}
+                {it.kind === 'contention' ? <strong style={{ color: 'var(--status-critical)' }}>Contested: </strong> : null}
+                {it.kind === 'comment' ? <span style={secondary}>Public comment: </span> : null}
                 {it.text}
                 {it.outcome ? <span style={secondary}> → {it.outcome}</span> : null}
                 {it.video_url && it.t != null ? (

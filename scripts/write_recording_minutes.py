@@ -120,7 +120,7 @@ SCHEMA = {
     'type': 'object',
     'additionalProperties': False,
     'required': ['headline', 'summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
-                 'transfers', 'decisions', 'topics', 'not_audible', 'confidence'],
+                 'transfers', 'decisions', 'topics', 'not_audible', 'confidence', 'contention'],
     'properties': {
         'attendees': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
@@ -164,6 +164,23 @@ SCHEMA = {
                 'what_was_said': {'type': 'string', 'description': 'two sentences at most, paraphrased, no figures unless in figures_as_heard'},
                 'figures_as_heard': {'type': 'array', 'items': {'type': 'string'}, 'description': 'each figure exactly as the captions render it, e.g. "fifteen hundred", "$1.2 million"'},
             }}},
+        # CONTENTION -- added 10 October 2026, FORWARD ONLY. TJ: *"The turf field one has now
+        # been discussed at 3 different meetings with inflammatory phrasing, and I dont think
+        # we detected that"* and *"contention detection moving forward without backfill would
+        # be good too"*. Rides on the call already made for each meeting, so it costs no run.
+        # A file written before this date has no `contention` key, which means NOT READ FOR
+        # IT -- never "none": readers must treat a missing key as unknown.
+        'contention': {'type': 'array', 'items': {
+            'type': 'object', 'additionalProperties': False,
+            'required': ['t', 'about', 'sides', 'words_as_heard', 'kind'],
+            'properties': {
+                't': {'type': 'integer', 'description': 'second the exchange began'},
+                'about': {'type': 'string', 'description': 'what the conflict was over, in one plain sentence'},
+                'sides': {'type': 'string', 'description': 'who took which position, by role ("two members", "a resident against the board")'},
+                'words_as_heard': {'type': 'string', 'description': 'the most charged words, exactly as the captions render them, under 200 characters'},
+                'kind': {'type': 'string', 'enum': ['members disagree', 'public criticism', 'charged language', 'procedural fight']},
+            }},
+            'description': 'moments of open conflict or charged language; empty if none'},
         'transfers': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
             'required': ['t', 'description', 'outcome'],
@@ -221,6 +238,7 @@ Rules, none optional:
 13. tags (meeting-level): choose every tag from the controlled list that the meeting substantively touched; "turkey-hill" is Turkey Hill Elementary, "primary-school" is Lunenburg Primary School.
 15. headline: the one most consequential thing, first and plainly, under 120 characters -- what a resident who reads nothing else should know.
 14. topics[].tags: one to three tags from the same list for each topic, so time can be summed by subject. A procedural stretch (pledge, adjournment) gets none. "public-comment" means comment from the floor by residents only -- a public interview of a candidate is hiring; a board member speaking is not public comment.
+16. contention: each moment of real CONFLICT -- members openly disagreeing with each other, a speaker accusing or sharply criticising a board, an official or a decision, charged or inflammatory language, raised voices or interruptions the captions make evident, a point of order, a walkout. NOT an ordinary question, a request for clarification, or a split vote by itself. For each: the second it began, what it was about, who took which side BY ROLE (never a name unless stated for the record), and the most charged words EXACTLY as the captions render them. Describe; do not judge who was right. Empty if the meeting had none.
 
 Return only the JSON."""
 

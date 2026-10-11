@@ -104,6 +104,13 @@ def the_record():
         for b in (m.get('budget_items') or []):
             txt = (b.get('topic') or '') + ('. ' + b['what_was_said'] if b.get('what_was_said') else '')
             rec['items'].append({'kind': 'budget', 'text': txt, 't': b.get('t')})
+        # CONTENTION, where our minutes were read for it (10 October 2026 onward; an older
+        # file has no key and contributes nothing -- not "calm", just not read).
+        for c in (m.get('contention') or []):
+            rec['items'].append({'kind': 'contention',
+                                 'text': '%s (%s): "%s"' % (c.get('about') or '', c.get('sides') or '',
+                                                            c.get('words_as_heard') or ''),
+                                 't': c.get('t')})
         for c in (m.get('public_comment') or []):
             if not re.match(r'\s*no public comment', c.get('topic') or '', re.I):
                 rec['items'].append({'kind': 'comment', 'text': c.get('topic') or '', 't': c.get('t')})
