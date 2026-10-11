@@ -51,7 +51,7 @@ import { Boards } from './pages/Boards'
 import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
-import { JobsPage } from './components/JobPostings'
+import { JobsPage, JobsTray } from './components/JobPostings'
 import { SchoolTransfers } from './pages/SchoolTransfers'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
@@ -422,6 +422,10 @@ export default function App() {
               </svg>
               <span className="hidden sm:inline">Search</span>
             </Go>
+            {/* JOB POSTINGS, AS A NOTIFICATION TRAY -- a badge for what is new since this
+                reader last looked, and a panel that slides out over the page. See
+                components/JobPostings.tsx, JobsTray. */}
+            <JobsTray />
             <Go to="sources" title="Source documents — every one this site rests on"
               aria-current={tab === 'sources' ? 'page' : undefined}
               className="inline-flex text-xs font-semibold px-2 py-1 rounded

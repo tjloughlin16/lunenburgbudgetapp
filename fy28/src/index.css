@@ -672,3 +672,9 @@ a:visited .door-title { color: var(--text-secondary); }
 .toc-list > li { break-inside: avoid; }
 .toc-link { color: var(--text-secondary); text-decoration: none; }
 .toc-link:hover { color: var(--text-primary); text-decoration: underline; }
+
+/* The job postings tray slides in from the right (components/JobPostings.tsx, JobsTray).
+   200ms: long enough to read as coming FROM the header's edge, short enough not to wait on. */
+@keyframes jobs-tray-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.jobs-tray-in { animation: jobs-tray-in 200ms ease-out; }
+@media (prefers-reduced-motion: reduce) { .jobs-tray-in { animation: none; } }

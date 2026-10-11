@@ -11,7 +11,6 @@ import { LEVEL_SERVICE } from '../model/walk'
 import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
 import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
 import { RecentMeetings } from '../components/RecentMeetings'
-import { JobAlerts } from '../components/JobPostings'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -281,10 +280,6 @@ export function Home() {
           </svg>
           Join us on Facebook
         </a>
-
-        {/* NEW JOB POSTED / TAKEN DOWN -- only when the daily check saw one in the last
-            fortnight; otherwise nothing at all. See JobAlerts. */}
-        <JobAlerts />
 
         {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
             need to put an indicator on the home page that users can search." The

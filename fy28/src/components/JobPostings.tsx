@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Grain, H3, ReportShell, Section, useReport } from './report'
 
 /** JOB POSTINGS -- THE TOWN'S AND THE SCHOOL DISTRICT'S, open now and as a history.
@@ -259,59 +260,132 @@ export function JobsLink({ slug }: { slug: string }) {
   )
 }
 
-/* ------------------------------------------------------------- on the front page */
+/* ------------------------------------------------- the slide-out, top right, every page */
 
-/** NEW JOB POSTED / JOB TAKEN DOWN, ON THE FRONT PAGE. TJ, 10 October 2026: *"I also want a
+/** NEW JOB POSTED / JOB TAKEN DOWN, AS A NOTIFICATION. TJ, 10 October 2026: *"I also want a
  *  NEW JOB POSTED notification like thing on the main page when we detect a new job,
- *  clickable to details. And JOB FILLED when it's taken down."*
+ *  clickable to details. And JOB FILLED when it's taken down."* -- and then, on seeing it as a
+ *  strip of cards under the front page's title: *"the job posting 'notifications' are NOT
+ *  notifications.... you built it as a top section"* and *"it should probably be a tab on the
+ *  top right that can slide out"*.
  *
- *  IT SAYS TAKEN DOWN, NOT FILLED -- see the header of this file.
+ *  So it is a NOTIFICATION TRAY: a button in the header on every page, a badge only for what
+ *  arrived since the reader last opened it, and a panel that slides in from the right over
+ *  the page instead of pushing the page down. The page underneath does not move -- which is
+ *  the difference between a notification and a section.
  *
- *  ONLY WHAT WE DETECTED. A posting already listed on an employer's first check was there
- *  before we looked, so it is not news: those events carry no `prev_look` and are left out.
- *  The window counts from the reader's own today, not the build's, so a page that was not
- *  redeployed does not keep calling a fortnight-old posting new.
+ *  THE PANEL IS PORTALLED TO <body>. The header scrolls sideways on a phone (overflow-x) and
+ *  carries a backdrop blur, and either would clip or re-anchor a fixed panel drawn inside it:
+ *  `backdrop-filter` makes an element the containing block for its fixed descendants.
  *
- *  NOTHING WHEN THERE IS NOTHING. A notification that is always there stops being read. */
+ *  "SEEN" LIVES IN THIS BROWSER ONLY, and its absence is harmless: with no record every event
+ *  in the window counts as new, which is what a first visit should show. A private window or
+ *  blocked storage gets that, never an error.
+ *
+ *  IT SAYS TAKEN DOWN, NOT FILLED -- see the header of this file. And ONLY WHAT WE DETECTED:
+ *  postings already listed on an employer's first check have no `prev_look` and are left out.
+ *  The window counts from the reader's today, so a page nobody redeployed does not keep
+ *  calling a fortnight-old posting new. */
 const WINDOW_DAYS = 14
-const SHOW = 4
+const SEEN_KEY = 'jobs-seen-through'
 
-export function JobAlerts() {
+function readSeen(): string {
+  try { return window.localStorage.getItem(SEEN_KEY) || '' } catch { return '' }
+}
+function writeSeen(iso: string) {
+  try { window.localStorage.setItem(SEEN_KEY, iso) } catch { /* private window: harmless */ }
+}
+
+export function JobsTray() {
   const { d: p } = useReport<Payload>(FILE)
-  if (!p) return null
+  const [open, setOpen] = useState(false)
+  const [seen, setSeen] = useState('')
+  // What counted as seen WHEN THE PANEL OPENED: opening marks everything seen, and reading
+  // `seen` after that would strip the "new to you" marker off the very items it is for.
+  const [seenAtOpen, setSeenAtOpen] = useState('')
+  useEffect(() => { setSeen(readSeen()) }, [])
+  useEffect(() => {
+    if (!open) return
+    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', k)
+    return () => window.removeEventListener('keydown', k)
+  }, [open])
   const since = new Date(Date.now() - WINDOW_DAYS * 864e5).toISOString().slice(0, 10)
-  const open = new Set(p.active.map(a => `${a.employer}:${a.id}`))
-  const news = p.history.filter(e => e.date >= since && e.prev_look
+  const news = (p?.history ?? []).filter(e => e.date >= since && e.prev_look
     && (e.event === 'removed' || e.event === 'posted' || e.event === 'relisted'))
-  if (!news.length) return null
-  const name = (e: Event) => p.employers.find(x => x.id === e.employer)?.id === 'town' ? 'Town' : 'Schools'
+  const unseen = news.filter(e => !seen || e.date > seen).length
+  const openTray = () => {
+    setSeenAtOpen(seen)
+    setOpen(true)
+    const latest = news[0]?.date || ''
+    if (latest) { writeSeen(latest); setSeen(latest) }
+  }
+  const live = new Set((p?.active ?? []).map(a => `${a.employer}:${a.id}`))
+  const who = (e: Event) => e.employer === 'town' ? 'Town' : 'Schools'
   return (
-    <section aria-label="Job postings" className="mt-4 max-w-2xl">
-      <ul className="space-y-1.5">
-        {news.slice(0, SHOW).map((e, i) => {
-          const down = e.event === 'removed'
-          // A posting announced as new that has since come down links to where it went.
-          const href = `${JOBS_PAGE}#${jobAnchor(e.employer, e.id, down || !open.has(`${e.employer}:${e.id}`))}`
-          return (
-            <li key={`${e.employer}-${e.id}-${e.event}-${i}`}>
-              <a href={href}
-                className="card flex items-baseline gap-2 px-3 py-2 text-[13.5px] min-w-0 no-underline hover:underline"
-                style={{ borderLeft: `4px solid ${TONE[e.event]}` }}>
-                <span className="text-[10.5px] font-bold uppercase tracking-wider shrink-0" style={{ color: TONE[e.event] }}>
-                  {down ? 'Job taken down' : e.event === 'relisted' ? 'Job listed again' : 'New job posted'}
-                </span>
-                <span className="font-semibold truncate min-w-0">{e.title}</span>
-                <span className="text-[11.5px] shrink-0 tnum ml-auto" style={{ color: 'var(--text-muted)' }}>{name(e)} · {d(e.date)}</span>
-              </a>
-            </li>
-          )
-        })}
-      </ul>
-      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
-        {news.length > SHOW ? `${news.length - SHOW} more in the last ${WINDOW_DAYS} days · ` : ''}
-        Town and school openings, checked daily. Taken down is not the same as filled.{' '}
-        <a className="underline" href={JOBS_PAGE} style={{ color: 'var(--series-cost)' }}>all job postings &rarr;</a>
-      </p>
-    </section>
+    <>
+      <button type="button" onClick={openTray} aria-haspopup="dialog" aria-expanded={open}
+        title="Job postings: what is new"
+        aria-label={unseen ? `Jobs, ${unseen} new` : 'Jobs'}
+        className="relative inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
+        style={{ color: 'var(--text-secondary)' }}>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        </svg>
+        <span className="hidden sm:inline">Jobs</span>
+        {unseen > 0 && (
+          <span className="tnum text-[10px] leading-none font-bold rounded-full px-1.5 py-0.5"
+            style={{ background: 'var(--status-good)', color: '#fff' }}>{unseen}</span>
+        )}
+      </button>
+      {open && createPortal(
+        <div className="fixed inset-0 z-50 no-print" role="dialog" aria-modal="true" aria-label="Job postings: what is new">
+          <button type="button" aria-label="Close" onClick={() => setOpen(false)}
+            className="absolute inset-0 w-full h-full cursor-default" style={{ background: 'rgba(0,0,0,0.25)' }} />
+          <aside className="absolute right-0 top-0 h-full w-[min(24rem,100vw)] overflow-y-auto shadow-xl p-4 jobs-tray-in"
+            style={{ background: 'var(--surface-1)', borderLeft: '1px solid var(--grid)' }}>
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Job postings</h2>
+              <button type="button" onClick={() => setOpen(false)} aria-label="Close"
+                className="text-xl leading-none px-2" style={{ color: 'var(--text-secondary)' }}>&times;</button>
+            </div>
+            <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+              {p ? `${p.active.length} open at the town and the schools. ` : ''}What changed in the last {WINDOW_DAYS} days:
+            </p>
+            {news.length === 0
+              ? <p className="text-[13.5px] mt-4" style={{ color: 'var(--text-muted)' }}>Nothing posted or taken down in that time.</p>
+              : <ul className="mt-3 space-y-1.5">
+                {news.map((e, i) => {
+                  const down = e.event === 'removed'
+                  const href = `${JOBS_PAGE}#${jobAnchor(e.employer, e.id, down || !live.has(`${e.employer}:${e.id}`))}`
+                  return (
+                    <li key={`${e.employer}-${e.id}-${e.event}-${i}`}>
+                      <a href={href} onClick={() => setOpen(false)}
+                        className="block card px-3 py-2 no-underline hover:underline min-w-0"
+                        style={{ borderLeft: `4px solid ${TONE[e.event]}` }}>
+                        <span className="flex items-baseline justify-between gap-2">
+                          <span className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: TONE[e.event] }}>
+                            {down ? 'Taken down' : e.event === 'relisted' ? 'Listed again' : 'New'}
+                            {(!seenAtOpen || e.date > seenAtOpen) && <span className="ml-1.5 normal-case tracking-normal font-semibold" style={{ color: 'var(--text-muted)' }}>· new to you</span>}
+                          </span>
+                          <span className="text-[11px] tnum shrink-0" style={{ color: 'var(--text-muted)' }}>{who(e)} · {d(e.date)}</span>
+                        </span>
+                        <span className="block text-[13.5px] font-semibold mt-0.5 break-words">{e.title}</span>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>}
+            <p className="text-[11.5px] mt-3" style={{ color: 'var(--text-muted)' }}>
+              Checked daily. Taken down is not the same as filled &mdash; neither site says why a posting came down.
+            </p>
+            <a href={JOBS_PAGE} onClick={() => setOpen(false)} className="inline-block mt-3 text-[13px] font-semibold underline"
+              style={{ color: 'var(--series-cost)' }}>Every opening, and the full history &rarr;</a>
+          </aside>
+        </div>,
+        document.body,
+      )}
+    </>
   )
 }
