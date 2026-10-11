@@ -119,17 +119,40 @@ export function DynamicThread({ term }: { term: string }) {
               <li key={i} className="relative pl-5 pb-4" style={{ borderLeft: '2px solid var(--grid)' }}>
                 <span aria-hidden="true" className="absolute -left-[6px] top-1.5 w-[10px] h-[10px] rounded-full"
                   style={{ background: 'var(--series-cost)' }} />
-                <H3>{day(s.date)} <span className="font-normal" style={{ color: 'var(--text-muted)' }}>· {s.board}</span></H3>
+                {/* THE MEETING HEADING OPENS THE MEETING -- our page for it where we wrote one,
+                    else the town's own record. TJ: "every mention needs to be clickable to see
+                    the raw info.. i cant click a school committee meeting". */}
+                <H3>
+                  {(() => {
+                    const m = s.hits.find(h => h.corpus === 'recorded') ?? s.hits.find(h => h.corpus === 'minutes') ?? s.hits.find(h => h.corpus === 'transcript')
+                    return m
+                      ? <a href={m.cite_url} className="underline decoration-1 underline-offset-2"
+                          target={m.corpus !== 'recorded' ? '_blank' : undefined} rel="noreferrer">{day(s.date)}</a>
+                      : day(s.date)
+                  })()}{' '}
+                  <span className="font-normal" style={{ color: 'var(--text-muted)' }}>· {s.board}</span>
+                </H3>
                 <ul className="mt-1 space-y-1.5">
-                  {s.hits.map((h, j) => (
-                    <li key={j} className="text-[13.5px] leading-relaxed">
-                      <a href={h.corpus === 'transcript' && h.start_s != null ? `${h.cite_url}` : h.cite_url}
-                        target={h.corpus === 'minutes' || h.corpus === 'transcript' ? '_blank' : undefined} rel="noreferrer"
-                        className="text-[10.5px] font-bold uppercase tracking-wider mr-2 no-underline hover:underline"
-                        style={{ color: TONE[h.corpus] }}>{h.corpus === 'minutes' && h.kind ? h.kind : LABEL[h.corpus]}</a>
-                      <span style={{ color: 'var(--text-secondary)' }}><Snip s={h.snippet} /></span>
-                    </li>
-                  ))}
+                  {s.hits.map((h, j) => {
+                    const external = h.corpus === 'minutes' || h.corpus === 'transcript'
+                    const open = h.corpus === 'transcript' ? 'watch at this moment'
+                      : h.corpus === 'recorded' ? 'our notes on this meeting'
+                      : h.corpus === 'job' ? 'the posting' : `the ${h.kind || 'document'}`
+                    return (
+                      <li key={j}>
+                        {/* THE WHOLE MENTION IS THE LINK, to the record it was read from. */}
+                        <a href={h.cite_url} target={external ? '_blank' : undefined} rel="noreferrer"
+                          className="block rounded px-2 py-1 -mx-2 text-[13.5px] leading-relaxed no-underline hover:bg-[var(--surface-3)]">
+                          <span className="text-[10.5px] font-bold uppercase tracking-wider mr-2"
+                            style={{ color: TONE[h.corpus] }}>{h.corpus === 'minutes' && h.kind ? h.kind : LABEL[h.corpus]}</span>
+                          <span style={{ color: 'var(--text-secondary)' }}><Snip s={h.snippet} /></span>
+                          <span className="text-[12px] ml-1.5 underline whitespace-nowrap" style={{ color: 'var(--series-cost)' }}>
+                            {open}{external ? ' \u2197' : ' \u2192'}
+                          </span>
+                        </a>
+                      </li>
+                    )
+                  })}
                 </ul>
               </li>
             ))}
