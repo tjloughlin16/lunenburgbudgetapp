@@ -818,7 +818,7 @@ DIRECTORY_SUBUNIT = {
 }
 
 
-SET_ASIDE = []
+DOUBTFUL_BAND = 'Likely incorrect'
 
 
 def _rows_school_directory():
@@ -844,9 +844,12 @@ def _rows_school_directory():
     out. its a data problem"*. So:
 
       * a person the roll-up places at a building that publishes its OWN sheet, and whom that
-        sheet does not list, is SET ASIDE -- the building's own list wins. Counted, named in
-        `SET_ASIDE`, and printed on the chart; never silently dropped. (This note used to say
-        Primary leaves its paraprofessionals off its sheet; on 9 October 2026 it lists 18.)
+        sheet does not list, is drawn in that building under LIKELY INCORRECT -- status
+        `doubtful`, its own band, out of every headcount. TJ: *"lets put those on the ORG
+        chart in a category of 'LIKELY INCORRECT'... dont just filter them out"*. The
+        building's own list wins; the master list's claim stays visible as a claim. (This
+        note used to say Primary leaves its paraprofessionals off its sheet; on 9 October 2026
+        it lists 18.)
       * a person the roll-up places district-wide, or at a building with no sheet of its own,
         is KEPT and marked `only on the district's master list` -- unconfirmed, and quite
         possibly exactly the people the master list exists for.
@@ -868,18 +871,14 @@ def _rows_school_directory():
     # The buildings that publish their own sheet, per fetch -- the ones whose list wins.
     own_sheet = {(r['fy'], r['listing'].strip().lower()) for r in rows if r['listing_kind'] == 'school'}
     for r in rows:
-        master_only = False
+        master_only = doubtful = False
         if r['listing_kind'] == 'school':
             named = r['listing']
         elif (r['fy'], r['person_key']) in placed:
             continue                    # a building already lists them; the roll-up repeats it
         else:
             named = r['school'] or r['school_as_printed']
-            if (r['fy'], named.strip().lower()) in own_sheet:
-                SET_ASIDE.append(dict(fy=r['fy'], person=re.sub(r'\s{2,}', ' ', r['person']).strip(),
-                                      role=(r['title'] or '').strip(), school=named.strip(),
-                                      fetched=r['fetched']))
-                continue
+            doubtful = (r['fy'], named.strip().lower()) in own_sheet
             master_only = True
         sub = DIRECTORY_SUBUNIT.get(named.strip().lower(), named.strip())
         who = re.sub(r'\s{2,}', ' ', r['person']).strip()
@@ -887,18 +886,12 @@ def _rows_school_directory():
             continue
         out.append(dict(fy=r['fy'], unit='Lunenburg Public Schools', unit_kind='school',
                         subunit=sub, section=r['section'],
-                        role=(r['title'] or '').strip(), person=who, status='filled',
+                        role=(r['title'] or '').strip(), person=who,
+                        status='doubtful' if doubtful else 'filled',
                         source='school staff directory (%s), fetched %s%s'
                                % (r['listing'], r['fetched'],
+                                  '; not on %s\'s own sheet' % sub if doubtful else
                                   '; only on the district\'s master list' if master_only else '')))
-    # One entry per person and year, however many fetches named them.
-    seen, keep = set(), []
-    for x in SET_ASIDE:
-        k = (x['fy'], x['person'].lower())
-        if k not in seen:
-            seen.add(k)
-            keep.append(x)
-    SET_ASIDE[:] = keep
     return out
 
 
@@ -1633,6 +1626,13 @@ def build():
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
                              r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
+    # LIKELY INCORRECT IS ONE BAND, AT THE FOOT OF ITS BUILDING, whatever the title would
+    # rank: a principal the master list names and the school does not is no more a head of
+    # that school than anyone else it names.
+    for r in uniq:
+        if r['status'] == 'doubtful':
+            r['tier'] = '3'
+            r['section_group'] = DOUBTFUL_BAND
     return uniq, bad, lost_prose, unmatched, unmatched_dir
 
 
@@ -1808,7 +1808,6 @@ def payload(rows):
                     layout=layout_of([r for r in rows if r['unit'] == k]))
                for k, v in sorted(units.items(), key=lambda kv: (-kv[1]['n'], kv[0]))],
         sources=source_docs(rows),
-        set_aside=sorted(SET_ASIDE, key=lambda x: (x['fy'], x['school'], x['person'])),
         rows=rows)
 
 

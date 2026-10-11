@@ -42,8 +42,10 @@ type Unit = {
   layout?: 'buildings' | 'shifts' | 'board' | 'ranks'
 }
 type SourceDoc = { label: string; copy_url: string; publisher_url: string }
-type SetAside = { fy: string; person: string; role: string; school: string; fetched: string }
-type Payload = { years: string[]; units: Unit[]; rows: Row[]; sources?: Record<string, SourceDoc>; set_aside?: SetAside[] }
+type Payload = { years: string[]; units: Unit[]; rows: Row[]; sources?: Record<string, SourceDoc> }
+/** LIKELY INCORRECT: on the district's master staff list at a school whose own sheet does not
+ *  list them. Drawn, not dropped (TJ, 10 October 2026), in their own band, out of headcounts. */
+const DOUBTFUL = 'Likely incorrect'
 
 /* WHERE EVERY NAME CAME FROM. TJ, 10 October 2026: *"I need to see the source listed (and
  * this is true for EVERY page of the project, really). Like where did 'Melanie Roy' come
@@ -56,9 +58,13 @@ const SourceNum = createContext<(r: Row) => { n: number; doc?: SourceDoc } | nul
 function Name({ r }: { r: Row }) {
   const num = useContext(SourceNum)(r)
   const masterOnly = r.source.includes("only on the district's master list")
+  const doubtful = r.status === 'doubtful'
   return (
     <>
-      {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+      {doubtful
+        ? <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}
+            title="On the district’s master staff list, but not on this school’s own staff sheet. The school’s own list is taken as the authority.">{r.person}</span>
+        : r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
       {masterOnly && <span title="Only on the district’s master staff list, not on any school’s own sheet: unconfirmed"
         style={{ color: 'var(--status-warning)' }}>{' '}&dagger;</span>}
       {num && (num.doc?.copy_url
@@ -283,8 +289,6 @@ export function OrgCharts() {
     const i = srcKeys.indexOf(k)
     return i < 0 ? null : { n: i + 1, doc: d?.sources?.[k] }
   }
-  const setAside = (d?.set_aside ?? []).filter(x => unit === 'Lunenburg Public Schools' && x.fy === shownFy
-    && (!sub || x.school === sub))
 
   // ONE BLOCK PER BUILDING, AND BANDS INSIDE IT. TJ, 22 September 2026: *"i think the
   // org chart needs some hierarchy. flat lists are hard to read, and i know there's
@@ -377,7 +381,8 @@ export function OrgCharts() {
       if (!groups.has(sg)) groups.set(sg, [])
       groups.get(sg)!.push(r)
     }
-    const order = (x: string) => (x ? 1 : 0)   // the unlabelled rows lead each band
+    // The unlabelled rows lead each band, and LIKELY INCORRECT closes it.
+    const order = (x: string) => (x === DOUBTFUL ? 2 : x ? 1 : 0)
     return [...g.entries()]
       .map(([k, bands]) => [k, [...bands.entries()].sort()
         .map(([t, groups]) => [t, [...groups.entries()]
@@ -591,7 +596,7 @@ export function OrgCharts() {
                       <div className="flex items-center gap-2 mt-3 mb-1">
                         <span className="text-[10.5px] uppercase shrink-0"
                           style={{
-                            color: 'var(--text-muted)', letterSpacing: '0.09em',
+                            color: sg === DOUBTFUL ? 'var(--status-critical)' : 'var(--text-muted)', letterSpacing: '0.09em',
                             fontWeight: 600,
                           }}>
                           {sg}
@@ -603,6 +608,11 @@ export function OrgCharts() {
                         <span className="grow" style={{ borderTop: '1px solid var(--grid)' }} />
                       </div>
                     ) : null}
+                    {sg === DOUBTFUL && (
+                      <p className="text-[12px] mb-1.5 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+                        On the district&rsquo;s master staff list at this school, but not on the school&rsquo;s own staff sheet &mdash; and the school&rsquo;s own sheet is the one taken as right. Some of these people left years ago; neither list says which. Not counted in any total here.
+                      </p>
+                    )}
                     <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"
                       style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))' }}>
                       {rs.map((r, i) => (
@@ -687,6 +697,7 @@ export function OrgCharts() {
                   {doc?.copy_url && <> · <a className="underline" href={doc.copy_url}>our copy</a></>}
                   {doc?.publisher_url && <> · <a className="underline" href={doc.publisher_url} target="_blank" rel="noreferrer">publisher&rsquo;s copy</a></>}
                   {raw.includes("only on the district's master list") && <span style={{ color: 'var(--status-warning)' }}> &mdash; &dagger; on no school&rsquo;s own sheet; unconfirmed</span>}
+                  {/not on .+'s own sheet/.test(raw) && <span style={{ color: 'var(--status-critical)' }}> &mdash; LIKELY INCORRECT: the school&rsquo;s own sheet does not list them</span>}
                 </li>
               )
             })}
@@ -694,19 +705,7 @@ export function OrgCharts() {
         </section>
       )}
 
-      {setAside.length > 0 && (
-        <details className="mt-4 max-w-3xl">
-          <summary className="cursor-pointer text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-            {setAside.length} name{setAside.length === 1 ? '' : 's'} on the district&rsquo;s master list are left off this chart
-          </summary>
-          <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            The master list places them at a school whose own staff sheet does not list them, and the school&rsquo;s own sheet is taken as the authority. Some have left the district; neither list says which.
-          </p>
-          <ul className="mt-1.5 text-[12.5px] grid sm:grid-cols-2 gap-x-6">
-            {setAside.map(x => <li key={x.school + x.person}>{x.person} <span style={{ color: 'var(--text-muted)' }}>&mdash; {x.role}, {x.school}</span></li>)}
-          </ul>
-        </details>
-      )}
+
 
       <Grain>
         A NAME is somebody the town printed in that role that year. A POST is an
