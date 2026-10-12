@@ -92,6 +92,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
+import { SiteMenu, SiteMap } from './components/SiteMenu'
 import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
@@ -453,6 +454,9 @@ export default function App() {
                 under the crisis wedge, the foot of /solutions, and Go deeper. CTAS is kept
                 as BOARDS in routes.ts, the list of what they are. */}
           </div>
+          {/* THE SITE MENU sits OUTSIDE the scrolling group, so it can never be scrolled
+              off a phone screen: it is the one control that reaches everything else. */}
+          <SiteMenu tab={tab} />
         </nav>
         {tab === 'context' && (
           <div className="border-t" style={{ borderColor: 'var(--grid)' }}>
@@ -633,23 +637,18 @@ export default function App() {
               block adds six addresses on top — so the shortest page on the site had the
               longest tail. They stay on every other page, where the reader is inside
               something and a way out is worth the room. */}
+          {/* THE SITE MAP, ON EVERY PAGE INCLUDING THE FRONT. It replaced three links
+              (the walk-through, Sources, Go deeper) and was kept off the front page while
+              the front page's job was one decision between four doors. TJ, 11 October 2026,
+              on the front page: "There are many big hubs and some concepts that are
+              somewhat buried." A FAT FOOTER is where a reader who reached the end looks for
+              what else exists, and the front page is where that matters most. */}
+          <nav aria-label="Everything on this site" className="no-print mb-8 pb-8 border-b"
+            style={{ borderColor: 'var(--grid)' }}>
+            <SiteMap tab={tab} compact />
+          </nav>
           {tab !== 'home' && (
             <div className="no-print">
-              <Go to="walk"
-                className="text-xs font-semibold mb-2 block"
-                style={{ color: 'var(--series-cost)' }}>
-                Budget Crisis &mdash; why it keeps breaking, from the beginning &rarr;
-              </Go>
-              <Go to="sources"
-                className="text-xs font-semibold mb-2 block"
-                style={{ color: 'var(--series-cost)' }}>
-                Sources &mdash; every document this is built on &rarr;
-              </Go>
-              <Go to="deeper"
-                className="text-xs font-semibold mb-3 block"
-                style={{ color: 'var(--series-cost)' }}>
-                Go deeper &mdash; every other page &rarr;
-              </Go>
               <DataFooter />
             </div>
           )}
