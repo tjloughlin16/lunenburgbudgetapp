@@ -387,13 +387,28 @@ The district signed a three-year contract with Dee Bus Service for 1 July 2025 t
 
 Every rate below was read off the scanned bid form and checked two ways on every build: against the scan’s text layer where it is legible, and by recomputing every subtotal and footing it to the year totals and the Grand Total the form prints, $6,086,125.00.
 
-| year | 77-passenger, per bus per day | 83-passenger | regular routes: 8 + 3 buses × 180 days | trip rate (per mile) | waiting, per hour | year total as printed | bid form page |
-|---|---:|---:|---:|---:|---:|---:|---|
-| FY2026 | $485.00 | $515.00 | $976,500.00 | $6.50 | $130.00 | $1,922,250.00 | p1 (IFB p24) |
-| FY2027 | $523.00 | $556.00 | $1,053,360.00 | $6.65 | $140.00 | $2,023,735.00 | p2 (IFB p25) |
-| FY2028 | $565.00 | $588.50 | $1,131,390.00 | $6.90 | $150.00 | $2,140,140.00 | p3 (IFB p26) |
-| FY2029 (optional) | $590.00 | $630.00 | $1,189,800.00 | $7.00 | $175.00 | $2,222,300.00 | p5 (IFB p28) |
-| FY2030 (optional) | $637.20 | $680.40 | $1,284,984.00 | $7.25 | $190.00 | $2,357,859.00 | p6 (IFB p29) |
+**The unit prices.**
+
+| year | 77-passenger, per bus per day | 83-passenger | trip rate (per mile) | waiting, per hour | bid form page |
+|---|---:|---:|---:|---:|---|
+| FY2026 | $485.00 | $515.00 | $6.50 | $130.00 | p1 (IFB p24) |
+| FY2027 | $523.00 | $556.00 | $6.65 | $140.00 | p2 (IFB p25) |
+| FY2028 | $565.00 | $588.50 | $6.90 | $150.00 | p3 (IFB p26) |
+| FY2029 (optional) | $590.00 | $630.00 | $7.00 | $175.00 | p5 (IFB p28) |
+| FY2030 (optional) | $637.20 | $680.40 | $7.25 | $190.00 | p6 (IFB p29) |
+
+**What each year’s total is made of.** Three parts, recomputed from the prices above and footed to the total the form prints:
+
+| year | regular routes: 8 + 3 buses × 180 days | trip lines on the form | waiting on the form: 100 trips × 4 hours | year total as printed |
+|---|---:|---:|---:|---:|
+| FY2026 | $976,500.00 | $893,750.00 | $52,000.00 | $1,922,250.00 |
+| FY2027 | $1,053,360.00 | $914,375.00 | $56,000.00 | $2,023,735.00 |
+| FY2028 | $1,131,390.00 | $948,750.00 | $60,000.00 | $2,140,140.00 |
+| FY2029 (optional) | $1,189,800.00 | $962,500.00 | $70,000.00 | $2,222,300.00 |
+| FY2030 (optional) | $1,284,984.00 | $996,875.00 | $76,000.00 | $2,357,859.00 |
+
+**Only the first column is a budget.** The regular routes are the whole regular-route line, and the FY2027 budget carries that price exactly. The trip lines multiply a trip count by the rate by a mileage figure (35 × rate × 1,750, and so on), so $893,750 of the FY2026 total is a quantity for comparing bids, not spending anybody expects: the form’s own estimate is 100 trips and 6,500 miles, which at $6.50 a mile is $42,250. What athletics and field trips actually cost depends on the trips run, at the per-mile and per-hour rates above.
+
 
 The regular-route price rises 7.9% into FY2027 and 7.4% into FY2028, then 5.2% and 8.0% in the optional years. The form allows the fleet to move by up to two buses a year at the same unit prices. The FY2027 performance bond is $2,019,685.00.
 

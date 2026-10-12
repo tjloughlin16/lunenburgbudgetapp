@@ -2675,14 +2675,37 @@ def render_md(m, rows, brief):
       'against the scan’s text layer where it is legible, and by recomputing every subtotal '
       'and footing it to the year totals and the Grand Total the form prints, %s.\n\n'
       % usd2(k['grand']))
-    a('| year | 77-passenger, per bus per day | 83-passenger | regular routes: %s + %s buses × %s days | trip rate (per mile) | waiting, per hour | year total as printed | bid form page |\n'
-      % (C.num(N77), C.num(N83), C.num(DAYS)))
-    a('|---|---:|---:|---:|---:|---:|---:|---|\n')
+    # TWO TABLES: the unit prices, then what each year's printed total is MADE OF. TJ,
+    # 11 October 2026: "What's the cost breakdown in the transportation contract? I'm not
+    # sure I saw it on the report." The total was printed and its parts were not -- and
+    # nearly half of it is the form's trip arithmetic, which is not a forecast.
+    a('**The unit prices.**\n\n')
+    a('| year | 77-passenger, per bus per day | 83-passenger | trip rate (per mile) | waiting, per hour | bid form page |\n')
+    a('|---|---:|---:|---:|---:|---|\n')
     for c in k['years']:
-        a('| %s%s | %s | %s | %s | %s | %s | %s | p%d (IFB p%d) |\n' % (
+        a('| %s%s | %s | %s | %s | %s | p%d (IFB p%d) |\n' % (
             C.fy(c['fy']), ' (optional)' if c['optional'] else '', usd2(c['p77']),
-            usd2(c['p83']), usd2(c['regular']), usd2(c['trip_rate']), usd2(c['wait_rate']),
-            usd2(c['total']), c['pdf_page'], c['form_page']))
+            usd2(c['p83']), usd2(c['trip_rate']), usd2(c['wait_rate']),
+            c['pdf_page'], c['form_page']))
+    a('\n**What each year’s total is made of.** Three parts, recomputed from the prices above '
+      'and footed to the total the form prints:\n\n')
+    a('| year | regular routes: %s + %s buses × %s days | trip lines on the form | waiting on the form: %s trips × %s hours | year total as printed |\n'
+      % (C.num(N77), C.num(N83), C.num(DAYS), C.num(FORM_TRIPS), C.num(FORM_WAIT_HOURS)))
+    a('|---|---:|---:|---:|---:|\n')
+    for c in k['years']:
+        a('| %s%s | %s | %s | %s | %s |\n' % (
+            C.fy(c['fy']), ' (optional)' if c['optional'] else '', usd2(c['regular']),
+            usd2(c['trip_lines']), usd2(c['wait_line']), usd2(c['total'])))
+    y26 = [c for c in k['years'] if c['fy'] == 2026][0]
+    a('\n**Only the first column is a budget.** The regular routes are the whole regular-route '
+      'line, and the %s budget carries that price exactly. The trip lines multiply a trip count '
+      'by the rate by a mileage figure (%s × rate × %s, and so on), so %s of the %s total is a '
+      'quantity for comparing bids, not spending anybody expects: the form’s own estimate is '
+      '%s trips and %s miles, which at %s a mile is %s. What athletics and field trips '
+      'actually cost depends on the trips run, at the per-mile and per-hour rates above.\n\n'
+      % (C.fy(2027), C.num(TRIP_ROWS[0][0]), C.num(TRIP_ROWS[0][1]), C.usd(y26['trip_lines']),
+         C.fy(2026), C.num(FORM_TRIPS), C.num(FORM_MILES), usd2(y26['trip_rate']),
+         C.usd(FORM_MILES * y26['trip_rate'])))
     a('\nThe regular-route price rises %s into %s and %s into %s, then %s and %s in the '
       'optional years. The form allows the fleet to move by up to two buses a year at the same '
       'unit prices. The %s performance bond is %s.\n\n'
