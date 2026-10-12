@@ -3003,6 +3003,38 @@ GROUPS = [
              'handled, because whether a column ties is a property of the document and '
              'anyone resting a figure on one needs to know. The Spring 2024-25 '
              'transportation total is blank while the rows beneath it hold $18,242.50.'),
+            ('data/athletics-schedules.csv',
+             'Every game on the district’s athletic schedules, FY2022–FY2027', 3,
+             'One row per schedule row, extracted from ArbiterLive schedule pages for Lunenburg '
+             'Middle High School (entity 13354): date, @/vs as printed, opponent, venue, street '
+             'address from the game page, status, result and the bus departure the game page '
+             'prints. The pages themselves are not archived or republished; each row carries the publisher address it came from. '
+             'Contains no names. A schedule, not a record of what was played or what a bus cost. '
+             'Rebuild with scripts/extract_arbiter_schedules.py.'),
+            ('data/athletics-schedules-coverage.csv',
+             'Which teams’ schedules ArbiterLive prints, by year', 2,
+             'Sport x level x school year: how many rows the schedule lists, how many away, and '
+             'whether it looks complete, partial or missing, with the reason. Extracted from '
+             'ArbiterLive schedule pages, which are not archived or republished. Contains no names. `missing` means no row '
+             'is printed, never that a team played nothing.'),
+            ('data/athletics-roster-counts.csv',
+             'Players per team, where a coach made the roster public', 2,
+             'Counts only: players listed and the count per class year, per team per school '
+             'year, extracted from the roster tab of ArbiterLive schedule pages. The pages are '
+             'not archived or republished, and the roster names were removed from our copy before anything was counted or '
+             'kept, so this file contains no names. A count of rows on a published roster, not '
+             'of children who played or paid. Rebuild with scripts/extract_arbiter_schedules.py.'),
+            ('data/athletics-venue-distances.csv',
+             'Road distance to every away venue', 2,
+             'The street address of each away venue, as extracted from ArbiterLive game pages, '
+             'with its road distance from the high school. The pages are not archived or '
+             'republished. Contains no names. Distances are ours, computed by scripts/build_athletics_venue_distances.py.'),
+            ('data/athletics-venue-geocache.csv',
+             'Where each away venue address geocodes to', 1,
+             'The OpenStreetMap Nominatim responses behind the venue distances, one per street address '
+             'extracted from ArbiterLive game pages, which are not archived or republished. '
+             'Contains no names. Ours, '
+             'derived; kept so the distances rebuild without asking a geocoder again.'),
             ('data/school-special-revenue-fy26-q3.csv',
              'The school\u2019s funds outside the appropriation', 3,
              'All 62 grant and revolving accounts the school department holds, from the '

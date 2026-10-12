@@ -340,7 +340,7 @@ def main():
     check(c8 + ' sports compared', len(fin), fig(c8, 'n'))
     check(c8 + ' workbook total', float(sheet[2024]), fig(c8, 'all'))
 
-    # ---- trips, OUR estimate, from the form's own words and rates (payload, not a card) --
+    # ---- the bid form's average trip (kept: the field-trip sentence uses it) -----------
     est = re.search(r'(\d+) fild trips.*?([\d,]+) miles', at(32))
     trips_n, miles = int(est.group(1)), int(est.group(2).replace(',', ''))
     hours = 4 if 'four (4) hours' in at(33) else None
@@ -350,10 +350,133 @@ def main():
     nowait = D(miles) / trips_n * mrate
     check('trip price', float(r2(full)), pay['contract']['trip_full'])
     check('no-wait trip price', float(r2(nowait)), pay['contract']['trip_nowait'])
-    for s in pay['sports']:
-        if s['fy2025']:
-            check('trips %s' % s['label'], float((D(str(s['fy2025'])) / full).quantize(D('0.1'))),
-                  s['trips'])
+
+    # ---- the schedule bus model, OUR estimate, by a second route -----------------------
+    # The generator keys away games on its translated `home_away` column and sums in float;
+    # this keys on the publisher's own marker (`@`), reads the rates out of the bid form's
+    # text layer, and sums in Decimal. The FY2027 rates are the scan's lines 122 and 161.
+    m27 = money(re.search(r'\$([\d.]+)', at(122)).group(1))
+    w27 = money(re.search(r'\$ ([\d.]+)', at(161)).group(1))
+    rates = {fy: (mrate, wrate) for fy in range(2022, 2027)}
+    rates[2027] = (m27, w27)
+    sched = list(csv.DictReader(open(os.path.join(DATA, 'athletics-schedules.csv'), encoding='utf-8')))
+    gone = {'Canceled', 'Cancelled', 'Postponed', 'Rainout'}
+    vmiles = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'athletics-venue-distances.csv'), encoding='utf-8')):
+        vmiles[r['venue']] = D(r['round_trip_miles']) if r['round_trip_miles'].strip() else None
+    trips_at = {}
+    for r in sched:
+        if r['arbiter_marker'] == '@' and r['status'] not in gone:
+            trips_at.setdefault((r['fiscal_year'], r['date'], r['venue']), []).append(r)
+    mod = {}
+    for (fyl, _d, venue), g in trips_at.items():
+        fy = int(fyl[2:])
+        mr, wr = rates[fy]
+        one = (vmiles.get(venue) or D(0)) * mr + 4 * wr
+        for r in g:
+            a_ = mod.setdefault((fy, r['sport'], r['level']), [0, D(0), D(0)])
+            a_[0] += 1
+            a_[1] += one
+            a_[2] += one / len(g)
+    seen_t = set()
+    for t in pay['schedules']['teams']:
+        key = (t['fy'], t['sport'], t['level'])
+        if not t['away']:
+            continue
+        seen_t.add(key)
+        if key not in mod:
+            bad.append('schedule team %s has no away games by the second route' % (key,))
+            continue
+        a_ = mod[key]
+        check('away %s' % (key,), a_[0], t['away'])
+        if abs(float(a_[1]) - t['hi']) > 0.02 or abs(float(a_[2]) - t['lo']) > 0.02:
+            bad.append('model %s: recomputed %.2f-%.2f, payload says %.2f-%.2f'
+                       % (key, a_[2], a_[1], t['lo'], t['hi']))
+    for key in set(mod) - seen_t:
+        bad.append('second route finds away games for %s the payload does not' % (key,))
+    for b_ in pay['schedules']['by_fy']:
+        ks = [k_ for k_ in mod if k_[0] == b_['fy']]
+        if abs(float(sum(mod[k_][1] for k_ in ks)) - b_['hi']) > 0.05 \
+                or abs(float(sum(mod[k_][2] for k_ in ks)) - b_['lo']) > 0.05:
+            bad.append('model FY%d totals differ by the second route' % b_['fy'])
+        check('trips FY%d' % b_['fy'], len([g for g in trips_at if int(g[0][2:]) == b_['fy']]),
+              b_['trips'])
+
+    # The sheet's charges, counted a second way: split the formula on `+` once the
+    # parentheses and the divisor are gone. The sheet's dollars from the DATABASE.
+    import openpyxl
+    wbk = openpyxl.load_workbook(os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details',
+                                              'athletics-by-sport-fy2024-fy2026.xlsx'))
+    shv = {(fy, lv, re.sub(r'\s*\(?\$\d+\)?\s*$', '', sp_).strip()): (D(str(v)), se, cell)
+           for se, lv, sp_, fy, v, cell in db.execute(
+               "SELECT season, level, sport, fy, value, cell FROM athletics_by_sport WHERE "
+               "metric='Transportation' AND is_numeric=1")}
+    for c in pay['schedules']['sheet_compare']:
+        v, se, cell = shv[(c['fy'], c['level'], c['sport'])]
+        check('sheet %s %s' % (c['fy'], c['sport']), float(r2(v)), round(c['sheet'], 2))
+        f_ = wbk[se][cell].value
+        if isinstance(f_, str) and f_.startswith('='):
+            n_ = len([x for x in re.sub(r'/2\b', '', f_[1:]).replace('(', '').replace(')', '')
+                      .split('+') if x.strip()])
+        else:
+            n_ = 1 if f_ else 0
+        check('charges %s %s' % (c['fy'], c['sport']), n_, c['charges'])
+        if c['scheduled'] and c['below_miles'] != (v > 0 and v < D(str(c['lo_miles']))):
+            bad.append('flag %s %s disagrees' % (c['fy'], c['sport']))
+    flagged = [c for c in pay['schedules']['sheet_compare'] if c['below_miles']]
+
+    # The FY2027 test, a second route: home and away by the publisher's marker, the teams
+    # from the coverage file, the miles in Decimal.
+    cov = list(csv.DictReader(open(os.path.join(DATA, 'athletics-schedules-coverage.csv'),
+                                   encoding='utf-8')))
+    fall_teams = {(r['sport'], r['level']) for r in cov if r['fiscal_year'] == 'FY2027'
+                  and r['season'] == 'fall' and 'Middle School' not in r['level']
+                  and int(r['rows_listed']) > 0 and 'under half' not in r['basis']}
+    fall27 = {}
+    for fy in (2024, 2025, 2026, 2027):
+        g = [r for r in sched if r['fiscal_year'] == 'FY%d' % fy and r['season'] == 'fall'
+             and (r['sport'], r['level']) in fall_teams and r['status'] not in gone
+             and r['arbiter_marker'] in ('@', 'vs')]
+        h = sum(1 for r in g if r['arbiter_marker'] == 'vs')
+        ms = [vmiles[r['venue']] for r in g if r['arbiter_marker'] == '@'
+              and vmiles.get(r['venue']) is not None]
+        fall27[fy] = dict(games=len(g), home=h, pct=p1(h, len(g)),
+                          miles=float((sum(ms) / len(ms)).quantize(D('0.1'),
+                                                                    rounding=ROUND_HALF_EVEN)))
+    cy = 'fy27-schedule-against-the-estimate'
+    check(cy + ' home share FY2027', fall27[2027]['pct'], fig(cy, 'home27'))
+    check(cy + ' home share FY2026', fall27[2026]['pct'], fig(cy, 'home26'))
+    check(cy + ' home share FY2025', fall27[2025]['pct'], fig(cy, 'p25'))
+    check(cy + ' home share FY2024', fall27[2024]['pct'], fig(cy, 'p24'))
+    for fy, k_ in ((2027, 'mi27'), (2026, 'mi26'), (2025, 'mi25'), (2024, 'mi24')):
+        check(cy + ' miles FY%d' % fy, fall27[fy]['miles'], fig(cy, k_))
+    check(cy + ' teams', len(fall_teams), fig(cy, 'teams'))
+    for fy, h_, g_ in ((2027, 'h27', 'g27'), (2026, 'h26', 'g26')):
+        check(cy + ' home FY%d' % fy, fall27[fy]['home'], fig(cy, h_))
+        check(cy + ' games FY%d' % fy, fall27[fy]['games'], fig(cy, g_))
+    check(cy + ' estimate', r0(money(re.search(r'\$([\d,]+)', [q for q in pay['said']
+                                                             if q['key'] == 'restore'][0]['quote']).group(1))),
+          fig(cy, 'est'))
+    lo27 = hi27 = lm27 = hm27 = D(0)
+    for (fyl, _d, venue), g in trips_at.items():
+        if fyl != 'FY2027':
+            continue
+        mc = (vmiles.get(venue) or D(0)) * m27
+        for r in g:
+            if 'Middle School' in r['level'] or r['season'] != 'fall' \
+                    and not (r['level'] == 'Coed Unified' and r['date'][5:7] in ('08', '09', '10', '11')):
+                continue
+            if r['level'] == 'Coed Unified' and r['sport'] == 'Basketball' \
+                    and r['date'][5:7] not in ('08', '09', '10', '11'):
+                continue
+            hi27 += mc + 4 * w27
+            hm27 += mc
+            lo27 += (mc + 4 * w27) / len(g)
+            lm27 += mc / len(g)
+    check(cy + ' model lo', r0(lo27), r0(fig(cy, 'lo')))
+    check(cy + ' model hi', r0(hi27), r0(fig(cy, 'hi')))
+    check(cy + ' waiting lo', r0(lo27 - lm27), r0(fig(cy, 'wlo')))
+    check(cy + ' waiting hi', r0(hi27 - hm27), r0(fig(cy, 'whi')))
 
     # ---- the brief (notes/process/REPORT-FORMAT.md): every figure, a second route --------
     # The stat row is gone; the brief's sentences carry the figures now. Each figure the brief
@@ -405,6 +528,8 @@ def main():
     low = min(rows24)
     if rows24.count(low) != 1:
         bad.append('the cheapest FY2024 row is now one half of a pair')
+    itc_n = [c['charges'] for c in pay['schedules']['sheet_compare'] if c['fy'] == 2024
+             and c['sport'] == 'Indoor Track - Boys'][0]
     EXPECT = {
         ('sped/say', 'over'): r0(over26), ('sped/say', 'fy'): 2026,
         ('sped/step1', 'v'): r0(dz(s26['original_approp'])), ('sped/step1', 's'): r0(sp26),
@@ -465,18 +590,20 @@ def main():
         ('athletic-fund/step5', 'a'): 2026, ('athletic-fund/step5', 'b'): float(r2(pos[2026])),
         ('athletic-fund/step5', 'c'): spent(2026, 'athletic'),
         ('track/say', 'a'): float(it24), ('track/say', 'b'): 2024,
-        ('track/say', 't'): round(it24 / full), ('track/say', 'l'): round(low / full),
         ('track/step1', 'a'): float(tr[(2024, 'Indoor Track - Boys')]), ('track/step1', 'b'): 2024,
         ('track/step1', 'c'): float(it24), ('track/step1', 'd'): float(tr[(2024, 'Football')]),
         ('track/step1', 'e'): float(tr[(2024, 'Girls Soccer')]),
-        ('track/step2', 'a'): float(r2(full)), ('track/step2', 'b'): float(D(miles) / trips_n),
-        ('track/step2', 'c'): round(it24 / full),
-        ('track/step2', 'd'): round(tr[(2024, 'Girls Soccer')] / full),
-        ('track/step2', 'e'): float(low), ('track/step2', 'f'): round(low / full),
-        ('track/step2', 'g'): round(it24 / low),
-        ('track/step3', 'a'): trips_n, ('track/step3', 'b'): 2024,
-        ('track/step3', 'c'): round(sheet[2024] / full),
-        ('track/step5', 'a'): 2024, ('track/step5', 'b'): float(fin_it24),
+        ('track/step2', 'a'): itc_n, ('track/step2', 'b'): mod[(2024, 'Track & Field - Indoor', 'Boys Varsity')][0],
+        ('track/step2', 'c'): 2026,
+        ('track/step2', 'd'): float(r2(mod[(2024, 'Track & Field - Indoor', 'Boys Varsity')][1])),
+        ('track/step3', 'n'): len(flagged), ('track/step3', 'a'): 2025,
+        ('track/step3', 'b'): float(shv[(2025, 'HS', 'Unified Track')][0]),
+        ('track/step3', 'c'): mod[(2025, 'Track & Field - Outdoor', 'Coed Unified')][0],
+        ('track/step3', 'd'): float(r2(sum((vmiles.get(v_) or D(0)) * mrate / len(g)
+                                           for (fyl, _d, v_), g in trips_at.items()
+                                           if fyl == 'FY2025' for r in g
+                                           if (r['sport'], r['level']) == ('Track & Field - Outdoor', 'Coed Unified')))),
+        ('track/step3', 'e'): 2026,
     }
     # The table under the answer: every cell, from the DB+GL route and the sheet's DB table.
     rowcat = {'Regular routes': 'regular', 'Special education': 'sped',

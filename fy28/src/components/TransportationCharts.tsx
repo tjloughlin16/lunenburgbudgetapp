@@ -56,8 +56,12 @@ type AthRow = {
 }
 type SportRow = {
   season: string; level: string; sport: string; label: string
-  fy2024: number | null; fy2025: number | null; trips: number | null; trips_nowait: number | null
+  fy2024: number | null; fy2025: number | null
+  model2024: SportModel | null; model2025: SportModel | null
 }
+/** OUR bus model from the posted schedules: away games listed, the sheet's charges, and the
+ *  range from shared buses (lo) to one bus per team-game (hi), at FY2026 prices. */
+type SportModel = { away: number; charges: number; lo: number; hi: number; lo_miles: number }
 type ContractYear = {
   fy: number; optional: boolean; p77: number; p83: number; regular: number
   trip_rate: number; wait_rate: number; total: number
@@ -160,7 +164,7 @@ export function TransportationAthletics({ data }: ChartProps) {
   )
 }
 
-/** Per sport, both years, with OUR trip estimate in the tooltip. */
+/** Per sport, both years, with OUR schedule-based bus model in the tooltip. */
 export function TransportationSports({ data }: ChartProps) {
   const d = data as Payload
   const rows = d.sports.filter(r => (r.fy2024 ?? 0) > 0 || (r.fy2025 ?? 0) > 0)
@@ -179,8 +183,9 @@ export function TransportationSports({ data }: ChartProps) {
             labelFormatter={(_l, p) => {
               const r = (p?.[0] as { payload?: SportRow } | undefined)?.payload
               if (!r) return ''
-              const t = r.trips != null
-                ? ` · FY25 ≈ ${Math.round(r.trips)} trips (up to ${Math.round(r.trips_nowait ?? 0)} with no waiting) — our estimate`
+              const m = r.model2025
+              const t = m
+                ? ` · FY25 schedule: ${m.away} away games; our bus model ${short(m.lo)}–${short(m.hi)} at FY26 prices (our estimate)`
                 : ''
               return `${r.level} ${r.sport}, ${r.season}${t}`
             }} />

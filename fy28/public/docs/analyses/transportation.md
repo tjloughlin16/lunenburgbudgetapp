@@ -29,12 +29,12 @@ The town’s general fund at the year-end close, paid plus still owed. The last 
 - FY2027 budgets school-day buses 11.2% higher; cutting athletic buses, $127,550, made the total look like 2.4%. *(measured; [FY2027: the school-day rise under a flat-looking total](#fy2027-the-school-day-rise-under-a-flat-looking-total))*
 - The district put its FY2026 special education rise down to more vans and monitors. Nothing published counts either, so price and volume cannot be told apart. Would settle it: the special education van contract and a count of routes by year, from the district. *(not published)*
 
-**Mixed picture.** *Does state money or the bus fee offset the cost?* **Only a little. The state paid back $94,993 in FY2026, all of it for special education; the bus fee did not lower the town’s bus bill.**
+**Mixed picture.** *Does state money or the bus fee offset the cost?* **Only a little. The state repaid $94,993 in FY2026, all for special education. The bus fee did not cut what the town spends on buses.**
 
 - The state’s circuit breaker repays part of busing children placed out of district: $14,596 in FY2022, $111,560 at its FY2025 peak, $94,993 in FY2026. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
 - Set beside FY2026 spending, that is 15.0% of special education buses and 5.5% of all buses. It repays the year before’s claims, not that year’s buses. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
 - Regular routes and athletics get nothing from the state: Lunenburg is not a regional district, and the Cherry Sheet shows no regional busing aid in any year FY2010 to FY2027. *(measured; [5. What pays for it: the fee, the fee fund, the state](#5-what-pays-for-it-the-fee-the-fee-fund-the-state))*
-- The Finance Committee was told the new bus fee cut the line by $11,000. The line was voted $11,000 below the contract, then $11,000 was moved back in during the year. *(on the record; [Finance Committee minutes, 2025-03-20](/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt); [The bus fee and the general fund](#the-bus-fee-and-the-general-fund))*
+- The Finance Committee was told the new bus fee cut the line by $11,000. The line was voted $11,000 below the contract, then $11,000 was moved back in during the year, so the school budget still paid the whole contract. *(on the record; [Finance Committee minutes, 2025-03-20](/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt); [The bus fee and the general fund](#the-bus-fee-and-the-general-fund))*
 - Where the fees are booked is not established; the only account named for them, in the school choice fund, took in $52,717 in FY2026 and spent nothing on buses. Would settle it: the account the bus fee payments are deposited to, from the Town Accountant. *(not published)*
 
 **Does not match.** *Is special education busing budgeted right?* **Special education buses spent $67,555 more than their FY2026 budget, and no transfer covered it.**
@@ -60,13 +60,13 @@ The town’s general fund at the year-end close, paid plus still owed. The last 
 - FY2027 cut the town line to $0. On 26 August 2026 $10,000 was restored from the town and $50,000 put back on the fee fund. *(on the record; [School Committee minutes, 2026-08-26](/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt); [The FY2027 restoration: the plan against the sheet and the fund](#the-fy2027-restoration-the-plan-against-the-sheet-and-the-fund))*
 - In FY2026 that fee fund account spent $113,602 again while the town line paid $110,650 for athletic buses. What the fund paid for is not published. Would settle it: the fee fund’s purchase-of-service detail by vendor, and its balance at each 30 June, from the Town Accountant. *(not published)*
 
-**Can’t tell yet.** *Which sport’s buses cost most? Can we trust the figures?* **Track costs most to bus on the district’s sheet: $13,864 in FY2024, by our estimate 15 trips. The cheapest team, middle school softball, is about one.**
+**Can’t tell yet.** *Which sport’s buses cost most? Can we trust the figures?* **Track costs most on the district’s sheet, $13,864 in FY2024. Its posted schedule shows far fewer away meets than the sheet has charges.**
 
 - Boys’ and girls’ indoor track each print $6,931.75 for FY2024. Added, $13,863.50 is ahead of football’s $9,078.50 and girls’ soccer’s $7,662.00. *(measured; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
-- At the new contract’s average trip, $942.50 for 65 miles and four hours’ wait, track is about 15 trips, girls’ soccer 8, and middle school softball at $985.50 about one: track costs 14 times as much. *(our estimate; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
-- The bid form projects 100 trips a year for athletics, field trips and band together. At the same price, the FY2024 athletic sheet alone is about 125. *(our estimate; [Which sport’s buses cost most](#which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together))*
+- The sheet’s formula for it holds 14 charges; the schedule lists 5 away meets per team. Our model, one bus a meet with four hours’ waiting at FY2026 rates, puts each team’s at $3,042.00. *(our estimate; [The sheet against the schedules](#the-sheet-against-the-schedules))*
+- The other way: 5 sport-years print less than the miles alone would cost. Unified track’s FY2025 $355.00 covers 3 away meets, $1,008.15 of miles at FY2026 rates. *(our estimate; [The sheet against the schedules](#the-sheet-against-the-schedules))*
 - At the School Committee, members said the indoor track league meet had moved to the Reggie Lewis Center in Boston, and that the bus is billed in full while it waits there. *(machine captions — check the video; [School Committee, 2025-03-12, video at 1:48:16 (machine captions)](https://www.youtube.com/watch?v=b7caO9Kd7VA&t=6496s))*
-- The district’s second sheet prices FY2024 indoor track at $6,085.00. No trip-by-trip record exists to say which sheet is right, or what any one trip cost. Would settle it: Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office. *(not published)*
+- Whether a bus went, was shared, or waited four hours is not recorded, so neither the sheet nor our model can be checked trip by trip. Would settle it: Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office. *(not published)*
 
 ---
 
@@ -161,6 +161,38 @@ On 26 August 2026 the Superintendent told the School Committee *“the verified 
 
 **The estimate against the sheet.** She explained that *“the reduced cost resulted from scheduling more competitions closer to Lunenburg, increasing home competitions, and using actual schedules and prior-year spring costs to obtain a more accurate transportation estimate”* ([minutes](/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt)). The district’s own by-sport workbook puts FY2025 high school athletic buses at $81,067.32, and the contract’s rates rise from FY2026 to FY2027: $6.50 to $6.65 a mile, $130.00 to $140.00 an hour of waiting. If $58,880 is short, the difference lands on the fee fund or the town line. A comparison, not a forecast.
 
+### The FY2027 estimate against the posted schedules
+
+**FY2027’s autumn schedule puts 45.8% of high school games at home; FY2026’s put 53.9%.** The FY2027 estimate credits more home games. Away trips average 39.9 miles round trip, against 41.3 in FY2026.
+
+Her two reasons can be read off the schedules the district posts: the share of high school games played at home, and how far the away games are. Like for like: only the high school teams whose FY2027 schedule for the season is posted in full, the same teams in every year, canceled and postponed games left out. A season is compared only if it had begun when the schedules were read, 2026-10-11. Miles are round-trip driving miles from the high school, our measurement; an away game whose venue has no distance is left out of the average.
+
+| season | FY | teams compared | games | at home | home share | away | average round-trip miles per away game (games measured) |
+|---|---|---:|---:|---:|---:|---:|---:|
+| fall | FY2024 | 10 | 141 | 67 | 47.5% | 74 | 44.1 (67) |
+| fall | FY2025 | 10 | 125 | 59 | 47.2% | 66 | 41.0 (63) |
+| fall | FY2026 | 10 | 141 | 76 | 53.9% | 65 | 41.3 (58) |
+| fall | FY2027 | 10 | 131 | 60 | 45.8% | 71 | 39.9 (56) |
+| winter (not compared) | FY2024 | 5 | 63 | 31 | 49.2% | 32 | 41.3 (30) |
+| winter (not compared) | FY2025 | 5 | 72 | 38 | 52.8% | 34 | 49.6 (31) |
+| winter (not compared) | FY2026 | 5 | 69 | 30 | 43.5% | 39 | 43.0 (37) |
+| winter (not compared) | FY2027 | 5 | 61 | 33 | 54.1% | 28 | 40.5 (28) |
+| spring | FY2027 | — | — | — | — | — | not posted |
+
+Left out of the autumn comparison because its FY2027 schedule is posted short: golf (boys varsity). Winter had not begun at the reading, so it is shown and not compared; posted short and left out: basketball (boys junior varsity - jv2), hockey (boys varsity), track & field - indoor (boys varsity), track & field - indoor (girls varsity). As posted so far, the winter teams shown have 54.1% of games at home against 43.5% in FY2026 — the direction the estimate describes — but the season has not begun and its schedules can still change. Spring is not posted.
+
+**What the schedule so far would cost — OUR ESTIMATE, at FY2027 rates** ($6.65 a mile, $140.00 an hour waiting, four hours a trip):
+
+| high school, as scheduled | away team-games | shared buses | of which waiting | one bus per team-game | of which waiting |
+|---|---:|---:|---:|---:|---:|
+| FY2027 autumn, as posted | 73 | $37,111 | $26,320 | $56,186 | $40,880 |
+| FY2027 winter, posted so far | 39 | $17,164 | $11,760 | $31,991 | $21,840 |
+| FY2026 autumn | 77 | $46,640 | $31,733 | $61,872 | $43,120 |
+| FY2026 winter | 75 | $43,605 | $30,240 | $60,603 | $42,000 |
+| FY2026 spring | 61 | $39,580 | $27,440 | $48,843 | $34,160 |
+
+The FY2027 schedule posted so far — the autumn and part of the winter — is priced at $54,275 to $88,178. That is a **partial year**, set beside an estimate of $58,880 for the whole of it. To give a full year for scale only, OUR assembly: FY2027’s autumn as posted with FY2026’s winter and spring, all at FY2027 rates, comes to $120,296 with shared buses and $165,633 with one bus per team-game. Of that, the miles alone are $36,296 to $48,593; the rest is waiting, and the waiting is our four hours. **Read the other way:** on that assembled year, with buses shared, the estimate leaves room for about 1.1 hours of paid waiting a trip. Nothing here says what her estimate assumed — the minutes say it used actual schedules and prior-year spring costs, and the worksheet is not published (registered: *How the district built its FY2027 athletic transportation estimate*).
+
 ### Which sport’s buses cost most: track, once its two rows are added together
 
 **The district’s two athletic bus sheets price the same FY2024 sports at $113,766 and $81,553.** Both are above the $40,000 town line. Nothing published says which sheet is right.
@@ -177,7 +209,7 @@ On 26 August 2026 the Superintendent told the School Committee *“the verified 
 
 On the workbook, indoor track is first in both years. On the Finance Committee’s copy of the second district sheet, which prints indoor track as one row, it is first in FY2025 and number 4 in FY2024, at $8,169.50 and $6,085.00. Two hand-built sheets, $7,778.50 apart on the same team in FY2024; neither is an invoice, and this page picks neither (rule 13a).
 
-**In trips — OUR ESTIMATE, and what it cannot say.** Nobody publishes a trip count, so this page divides dollars by the bid form’s average trip at the new contract’s FY2026 prices: $942.50, or $422.50 with no waiting. In FY2024 that puts indoor track at about 15 trips (33 with no waiting), girls’ soccer at about 8, and the cheapest team that rode at all, MS Softball at $985.50, at about 1. The whole sheet, $117,555.00, is about 125 trips, against the 100 a year the bid form projects for athletics, field trips and band together. Two limits. **Every sport is priced at the same average trip, so a cost per trip by sport is not something this can give** — a golf match and a meet in Boston are not the same bus. And FY2024 was paid under the previous contract, whose rates have not been published; if they were lower, every count here is too low.
+**Against the schedules.** ArbiterLive lists 5 away meets for each indoor track team in FY2024, and 4 for the boys and 5 for the girls in FY2025. The sheet’s FY2024 formula holds 14 charges, halved between the two rows. Our bus model, one bus a meet with four hours of waiting at FY2026 rates, puts FY2024’s listed meets at $3,042.00 a team — **our estimate**, and less than half what the sheet prints. Either the schedule is short, or the waits were long, or both; the recordings below speak to the second, and nothing published measures either (section 3, *The sheet against the schedules*).
 
 **Why outdoor track looks cheapest.** Only in FY2025, and only on rows whose season total the workbook prints as $0.00: the spring rows sum to $18,242.50, -46.1% against FY2024’s $33,835.50. *A hypothesis:* the spring section was unfinished when the sheet was made; nothing here tests it (registered: *Whether the FY2025 spring section of the district’s by-sport athletics workbook is complete*).
 
@@ -205,7 +237,7 @@ The contract’s regular-route price rises 7.9% into FY2027 and 7.4% into FY2028
 
 ![Athletic transportation by year: the general fund line voted and spent, beside the full cost where a district document states one — the fee fund’s share FY2014 to FY2017 and the district’s by-sport sheet for FY2024 and FY2025.](charts/transportation-athletics.svg)
 
-![Athletic transportation by sport, FY2024 and FY2025, from the district’s by-sport workbook, grouped by season. Hover a bar for the trip estimate.](charts/transportation-sports.svg)
+![Athletic transportation by sport, FY2024 and FY2025: the district’s by-sport workbook as bars, and beside each bar our bus model from the posted schedules, from shared buses to one bus per team, at FY2026 prices.](charts/transportation-sports.svg)
 
 ![Regular-route buses: the general fund line voted each year, and the price the Dee Bus contract fixes for FY2026 to FY2028, with the two optional years.](charts/transportation-contract.svg)
 
@@ -285,55 +317,198 @@ The fee fund figures for FY2014 to FY2019 are the district’s FY19 athletics bu
 
 **FY2025, the year it moved.** The line was voted at $40,000 and $47,822 was transferred in during the year, to $87,822, all of it spent. The School Committee approved the transfer on 16 April 2025: *“A fourth transfer to move funds to the athletic transportation, special detail, dues and fees and the high school after school stipends, this is the first phase move making monies available in the athletic portion of the budget. We can go back and reclassify expenses that had been charged against the revolving account.”* ([minutes](/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt)).
 
-**FY2026, the new contract’s first athletic year**, the general fund line spent $87,126 and had $23,524 still committed at the close, $110,650 in all against $127,550 voted. At the contract’s prices the amount paid out is about 92 of the bid form’s average trips, or 117 counting what was still committed — our estimate (section 3).
+**FY2026, the new contract’s first athletic year**, the general fund line spent $87,126 and had $23,524 still committed at the close, $110,650 in all against $127,550 voted. Section 3 sets each sport beside its posted schedule.
 
 ### What this does not show
 
 - **Whether teams rode more or less.** Dollars moved between two payers; no trip count is published for any year (registered: *How many athletic bus trips each sport took, and what each trip cost*).
 - **That the sheet is right.** It is assembled by hand, and the district has not stood behind any per-sport figure (registered: *Which of the three published per-sport athletics cost figures is correct*).
 
-## 3. Sport by sport, and what the dollars buy in trips
+## 3. Sport by sport: the district’s sheet and the posted schedules
 
 ### In plain terms
 
-In FY2025 no single sport’s buses cost more than $7,850. The five biggest together were $33,942 of the $91,066 total. Priced at the new contract’s rates, the whole FY2025 total buys about 97 trips of the kind the bid form assumes — **our estimate**, not a count.
+In FY2025 no single sport’s buses cost more than $7,850 on the district’s sheet, and the five biggest together were $33,942 of its $91,066. The schedules the district posts list 246 away games that year, to 181 different places on different days. **Our bus model** — miles to each venue at the contract’s per-mile rate, plus four hours of waiting at its hourly rate, at FY2026 prices — puts that schedule at $140,719 if teams going to the same place on the same day shared a bus, and $189,118 if every team had its own. The waiting is $94,120 to $127,920 of it, and four hours is our assumption; the miles alone are $46,599 to $61,198. The sheet’s whole total is below even the shared figure. Nobody publishes which buses ran, so the truth is not known to be anywhere in that range.
 
-### The evidence
+### The schedules, year by year — OUR ESTIMATE in dollars
 
-From the district’s sport-by-sport workbook; the cell is the workbook’s own. **Trips are OUR ESTIMATE**: FY2025 dollars divided by $942.50, the bid form’s average trip at FY2026 prices (65 miles at $6.50 a mile plus 4 hours of waiting at $130.00 an hour). The second trip column assumes no waiting, $422.50 a trip, and is the ceiling.
+Every game ArbiterLive lists for a Lunenburg team, FY2022 to FY2027, with canceled, postponed and rained-out games left out. The counts are the schedules’; the miles are our measurement (driving routes on OpenStreetMap, from the high school and back); the dollars are our model. **Lower bound:** one bus for each distinct date and venue, its cost shared among every Lunenburg team there. **Upper bound:** one bus for every team-game. Whether buses were shared is not recorded anywhere. FY2022 to FY2025 are priced at FY2026 rates ($6.50 a mile, $130.00 an hour waiting), because the earlier contract’s rates are not held (registered: *What the Dee Bus rates and fleet were in FY2025, so the 7.6% FY2026 increase can be split into price and buses*); FY2027 at its own, $6.65 and $140.00.
 
-| season | level | sport | FY2024 | FY2025 | trips, FY2025 — OUR ESTIMATE | trips with no waiting — OUR ESTIMATE |
-|---|---|---|---:|---:|---:|---:|
-| Fall | HS | Girls Soccer | $7,662.00 | $7,849.50 | 8 | 19 |
-| Fall | HS | Football | $9,078.50 | $7,284.80 | 8 | 17 |
-| Fall | HS | Golf | $4,100.00 | $6,565.00 | 7 | 16 |
-| Fall | HS | Boys Soccer | $5,886.00 | $5,212.38 | 6 | 12 |
-| Fall | HS | Field Hockey | $4,338.00 | $4,634.38 | 5 | 11 |
-| Fall | HS | Cheer | $4,435.50 | $3,711.25 | 4 | 9 |
-| Fall | HS | Boys CC | $2,053.75 | $1,744.38 | 2 | 4 |
-| Fall | HS | Girls CC | $2,053.75 | $1,744.38 | 2 | 4 |
-| Fall | HS | Unified Basketball | $1,275.00 | $907.50 | 1 | 2 |
-| Fall | MS | Field Hockey | $2,150.00 | $2,559.00 | 3 | 6 |
-| Fall | MS | Cross Country | $1,595.00 | $1,233.50 | 1 | 3 |
-| Winter | HS | Ice Hockey - Boys | $6,681.50 | $6,215.00 | 7 | 15 |
-| Winter | HS | HS BasketBall - Boys | $7,817.50 | $6,027.50 | 6 | 14 |
-| Winter | HS | HS Basketball - Girls | $7,463.00 | $5,641.25 | 6 | 13 |
-| Winter | HS | Indoor Track - Boys | $6,931.75 | $4,267.50 | 4 | 10 |
-| Winter | HS | Indoor Track - Girls | $6,931.75 | $4,267.50 | 4 | 10 |
-| Winter | HS | Ice Hockey - Girls | $0.00 | — | — | — |
-| Winter | HS | Ski Team | $0.00 | — | — | — |
-| Winter | MS | Basketball - Boys | $1,893.25 | $1,479.38 | 2 | 4 |
-| Winter | MS | Basketball - Girls | $1,373.25 | $1,479.38 | 2 | 4 |
-| Spring | HS | Girls Lax | $5,635.50 | $4,222.50 | 4 | 10 |
-| Spring | HS | Baseball | $4,354.00 | $3,260.00 | 4 | 8 |
-| Spring | HS | Softball | $7,222.00 | $3,125.00 | 3 | 7 |
-| Spring | HS | Boys Lax | $4,130.50 | $1,462.50 | 2 | 4 |
-| Spring | HS | Boys Track | $3,837.00 | $1,285.00 | 1 | 3 |
-| Spring | HS | Girls Track | $3,837.00 | $1,285.00 | 1 | 3 |
-| Spring | HS | Unified Track | $1,030.00 | $355.00 | 0 | 1 |
-| Spring | MS | Track | $2,804.00 | $2,570.00 | 3 | 6 |
-| Spring | MS | Softball | $985.50 | $677.50 | 1 | 2 |
-| **all** | | | **$117,555.00** | **$91,066.06** | **97** | **216** |
+| FY | away team-games | distinct date-and-venue trips | away games with no distance | shared buses: miles | shared: waiting | **shared: total** | one bus per team: miles | per team: waiting | **per team: total** | priced at |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| FY2022 | 219 | 148 | 11 | $34,932 | $76,960 | **$111,892** | $50,239 | $113,880 | **$164,119** | FY2026 rates |
+| FY2023 | 232 | 164 | 10 | $40,597 | $85,280 | **$125,877** | $55,486 | $120,640 | **$176,126** | FY2026 rates |
+| FY2024 | 255 | 189 | 17 | $44,203 | $98,280 | **$142,483** | $57,153 | $132,600 | **$189,753** | FY2026 rates |
+| FY2025 | 246 | 181 | 14 | $46,599 | $94,120 | **$140,719** | $61,198 | $127,920 | **$189,118** | FY2026 rates |
+| FY2026 | 240 | 176 | 21 | $42,273 | $91,520 | **$133,793** | $55,660 | $124,800 | **$180,460** | FY2026 rates |
+| FY2027 | 126 | 75 | 16 | $17,142 | $42,000 | **$59,142** | $27,351 | $70,560 | **$97,911** | FY2027 rates, schedule still being posted |
+
+A game with no listed venue, or at one of the 11 venues OpenStreetMap could not place, carries its waiting and no miles, so the miles column is a floor for those games. Left out of both bounds: 77 home games played at a venue outside Lunenburg across the six years, most of them hockey at its home rink in Fitchburg — the district lists them as home, and whether a bus carried the team is not recorded. FY2027 is the autumn as posted and the winter as far as it is posted; spring is not posted at all.
+
+**Away games played, team by team** (counts from the schedules; a dash is a year with no away game listed):
+
+| sport | team | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 | FY2027 |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Baseball | Boys Junior Varsity | 9 | 6 | — | 7 | 8 | — |
+| Baseball | Boys Varsity | 10 | 11 | 12 | 12 | 9 | — |
+| Basketball | Boys Junior Varsity - JV | — | — | — | 6 | 5 | 1 |
+| Basketball | Boys Junior Varsity - JV2 | 11 | 7 | 10 | 4 | 1 | 6 |
+| Basketball | Boys Middle School | 7 | 7 | 7 | 7 | 7 | 7 |
+| Basketball | Boys Varsity | 12 | 12 | 13 | 11 | 12 | 9 |
+| Basketball | Coed Unified | 2 | 3 | 3 | 2 | 2 | 1 |
+| Basketball | Girls Junior Varsity | 9 | 12 | 8 | 6 | 9 | 9 |
+| Basketball | Girls Middle School | 7 | 7 | 7 | 7 | 7 | 7 |
+| Basketball | Girls Varsity | 9 | 12 | 11 | 11 | 13 | 9 |
+| Cross Country | Boys Middle School | 2 | 2 | 2 | 3 | 2 | — |
+| Cross Country | Boys Varsity | 4 | 3 | 5 | 3 | 4 | 8 |
+| Cross Country | Coed Middle School | — | — | 1 | — | — | — |
+| Cross Country | Girls Middle School | 2 | 2 | 2 | 3 | 2 | — |
+| Cross Country | Girls Varsity | 4 | 3 | 5 | 3 | 4 | 8 |
+| Field Hockey | Girls Junior Varsity | 5 | 6 | 4 | 3 | 7 | 5 |
+| Field Hockey | Girls Middle School | 5 | 5 | 5 | 6 | 5 | — |
+| Field Hockey | Girls Varsity | 8 | 7 | 6 | 10 | 7 | 8 |
+| Football | Boys Junior Varsity | 3 | 4 | 7 | 3 | 4 | 3 |
+| Football | Boys Varsity | 7 | 4 | 8 | 5 | 6 | 6 |
+| Golf | Boys Junior Varsity | — | 1 | 2 | 3 | 3 | — |
+| Golf | Boys Varsity | 9 | 7 | 7 | 7 | 7 | 1 |
+| Hockey | Boys Junior Varsity | 3 | 3 | 3 | 5 | 11 | — |
+| Hockey | Boys Varsity | 7 | 8 | 11 | 10 | 11 | 1 |
+| Lacrosse - Boys | Boys Junior Varsity | 5 | 5 | 4 | 6 | 4 | — |
+| Lacrosse - Boys | Boys Varsity | 9 | 11 | 9 | 8 | 8 | — |
+| Lacrosse - Girls | Girls Junior Varsity | 5 | 4 | 4 | 3 | — | — |
+| Lacrosse - Girls | Girls Varsity | 8 | 12 | 12 | 10 | 10 | — |
+| Ski | Coed Varsity | 1 | — | — | — | 1 | — |
+| Soccer | Boys Junior Varsity | 5 | 5 | 9 | 10 | 9 | 7 |
+| Soccer | Boys Varsity | 8 | 9 | 11 | 8 | 9 | 8 |
+| Soccer | Girls Junior Varsity | 5 | 7 | 8 | 8 | 7 | 8 |
+| Soccer | Girls Varsity | 8 | 14 | 11 | 13 | 8 | 10 |
+| Softball | Girls Junior Varsity | 7 | 7 | 8 | 5 | 5 | — |
+| Softball | Girls Middle School | — | — | 5 | 6 | 2 | — |
+| Softball | Girls Varsity | 11 | 12 | 13 | 10 | 13 | — |
+| Track & Field - Indoor | Boys Varsity | 3 | 3 | 5 | 4 | 6 | 2 |
+| Track & Field - Indoor | Girls Varsity | 3 | 3 | 5 | 5 | 6 | 2 |
+| Track & Field - Outdoor | Boys Middle School | 1 | — | 3 | 2 | 1 | — |
+| Track & Field - Outdoor | Boys Varsity | 1 | 4 | 1 | 3 | 2 | — |
+| Track & Field - Outdoor | Coed Unified | 2 | 1 | 4 | 3 | — | — |
+| Track & Field - Outdoor | Girls Middle School | 1 | — | 3 | 2 | 1 | — |
+| Track & Field - Outdoor | Girls Varsity | 1 | 3 | 1 | 3 | 2 | — |
+
+The dollars for each team and year, both bounds and the waiting part separately, are in the page’s data (`/data/transportation.json`, `schedules.teams`).
+
+### The sheet against the schedules
+
+The district’s sheet beside each sport’s posted schedule, for the two years the sheet carries transportation. A *charge* is one amount typed into the sheet’s formula for that cell: `=532.5+375` is two. A cell typed as a bare number is one figure, not a formula, and is marked so. Where the sheet halves a formula between two rows (`/2`), each row shows the whole formula’s charges. The model columns are **OUR ESTIMATE** at FY2026 prices.
+
+| FY | level | sport | sheet | charges in its formula | away games listed | distinct trips | model: miles alone, shared buses | model: shared, with waiting | model: one bus per team-game | reading |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| FY2024 | HS | Baseball | $4,354.00 | 12 | 12 | 12 | $1,879.80 | $6,299.80 | $8,843.25 | below the shared bound with waiting |
+| FY2024 | HS | Boys CC | $2,053.75 | 7, halved | 5 | 5 | $375.37 | $1,935.37 | $3,324.10 | inside the range |
+| FY2024 | HS | Boys Lax | $4,130.50 | 7 | 13 | 9 | $2,176.20 | $6,856.20 | $9,550.45 | below the shared bound with waiting |
+| FY2024 | HS | Boys Soccer | $5,886.00 | 13 | 20 | 14 | $2,958.48 | $9,198.48 | $14,894.75 | below the shared bound with waiting |
+| FY2024 | HS | Boys Track | $3,837.00 | 7, halved | 1 | 1 | $201.17 | $461.17 | $922.35 | above the upper bound |
+| FY2024 | HS | Cheer | $4,435.50 | 7 | — | — | — | — | — | no schedule posted |
+| FY2024 | HS | Field Hockey | $4,338.00 | 10 | 10 | 8 | $1,809.60 | $5,969.60 | $7,452.90 | below the shared bound with waiting |
+| FY2024 | HS | Football | $9,078.50 | 13 | 15 | 15 | $5,439.20 | $13,239.20 | $13,239.20 | below the shared bound with waiting |
+| FY2024 | HS | Girls CC | $2,053.75 | 7, halved | 5 | 5 | $348.72 | $1,908.72 | $3,297.45 | inside the range |
+| FY2024 | HS | Girls Lax | $5,635.50 | 11 | 16 | 13 | $3,525.60 | $10,285.60 | $12,279.15 | below the shared bound with waiting |
+| FY2024 | HS | Girls Soccer | $7,662.00 | 15 | 19 | 16 | $4,345.58 | $11,625.58 | $15,494.70 | below the shared bound with waiting |
+| FY2024 | HS | Girls Track | $3,837.00 | 7, halved | 1 | 1 | $201.17 | $461.17 | $922.35 | above the upper bound |
+| FY2024 | HS | Golf | $4,100.00 | 8 | 9 | 9 | $1,722.50 | $6,402.50 | $6,402.50 | below the shared bound with waiting |
+| FY2024 | HS | HS BasketBall - Boys | $7,817.50 | 15 | 23 | 15 | $3,248.70 | $11,048.70 | $16,911.70 | below the shared bound with waiting |
+| FY2024 | HS | HS Basketball - Girls | $7,463.00 | 13 | 19 | 12 | $3,575.64 | $9,815.64 | $15,104.70 | below the shared bound with waiting |
+| FY2024 | HS | Ice Hockey - Boys | $6,681.50 | 10 | 14 | 14 | $2,921.75 | $10,201.75 | $10,201.75 | below the shared bound with waiting |
+| FY2024 | HS | Ice Hockey - Girls | $0.00 | 0 | — | — | — | — | — | no schedule posted |
+| FY2024 | HS | Indoor Track - Boys | $6,931.75 | 14, halved | 5 | 5 | $221.00 | $1,521.00 | $3,042.00 | above the upper bound |
+| FY2024 | HS | Indoor Track - Girls | $6,931.75 | 14, halved | 5 | 5 | $221.00 | $1,521.00 | $3,042.00 | above the upper bound |
+| FY2024 | HS | Ski Team | $0.00 | 0 | — | — | — | — | — | no schedule posted |
+| FY2024 | HS | Softball | $7,222.00 | 1 typed figure | 21 | 21 | $3,313.05 | $12,413.05 | $14,956.50 | below the shared bound with waiting |
+| FY2024 | HS | Unified Basketball | $1,275.00 | 4 | 3 | 3 | $640.25 | $2,200.25 | $2,200.25 | below the shared bound with waiting |
+| FY2024 | HS | Unified Track | $1,030.00 | 3 | 4 | 4 | $627.90 | $2,707.90 | $2,707.90 | below the shared bound with waiting |
+| FY2024 | MS | Basketball - Boys | $1,893.25 | 7 | 7 | 7 | $744.25 | $2,564.25 | $5,128.50 | below the shared bound with waiting |
+| FY2024 | MS | Basketball - Girls | $1,373.25 | 6 | 7 | 7 | $744.25 | $2,564.25 | $5,128.50 | below the shared bound with waiting |
+| FY2024 | MS | Cross Country | $1,595.00 | 4 | 5 | 2 | $230.76 | $1,270.75 | $3,218.15 | inside the range |
+| FY2024 | MS | Field Hockey | $2,150.00 | 5 | 5 | 5 | $939.25 | $3,539.25 | $3,539.25 | below the shared bound with waiting |
+| FY2024 | MS | Softball | $985.50 | 1 typed figure | 5 | 5 | $1,233.05 | $3,833.05 | $3,833.05 | **below the miles alone** |
+| FY2024 | MS | Track | $2,804.00 | 4 | 6 | 4 | $559.00 | $2,639.00 | $4,115.80 | inside the range |
+| FY2025 | HS | Baseball | $3,260.00 | 6 | 19 | 18 | $4,917.57 | $13,237.57 | $15,527.85 | **below the miles alone** |
+| FY2025 | HS | Boys CC | $1,744.38 | 3, halved | 3 | 3 | $470.60 | $1,250.60 | $2,501.20 | inside the range |
+| FY2025 | HS | Boys Lax | $1,462.50 | 2 | 14 | 9 | $2,897.71 | $7,577.71 | $11,339.25 | **below the miles alone** |
+| FY2025 | HS | Boys Soccer | $5,212.38 | 3 | 18 | 13 | $2,250.74 | $8,404.07 | $12,839.45 | below the shared bound with waiting |
+| FY2025 | HS | Boys Track | $1,285.00 | 7, halved | 3 | 3 | $206.05 | $986.05 | $1,972.10 | inside the range |
+| FY2025 | HS | Cheer | $3,711.25 | 3 | — | — | — | — | — | no schedule posted |
+| FY2025 | HS | Field Hockey | $4,634.38 | 2 | 13 | 11 | $3,038.10 | $8,584.76 | $10,241.40 | below the shared bound with waiting |
+| FY2025 | HS | Football | $7,284.80 | 5 | 8 | 8 | $4,004.00 | $7,817.33 | $8,309.60 | below the shared bound with waiting |
+| FY2025 | HS | Girls CC | $1,744.38 | 3, halved | 3 | 3 | $470.60 | $1,250.60 | $2,501.20 | inside the range |
+| FY2025 | HS | Girls Lax | $4,222.50 | 5 | 13 | 10 | $3,791.44 | $8,991.44 | $11,386.70 | below the shared bound with waiting |
+| FY2025 | HS | Girls Soccer | $7,849.50 | 4 | 21 | 15 | $2,765.97 | $10,132.63 | $14,699.75 | below the shared bound with waiting |
+| FY2025 | HS | Girls Track | $1,285.00 | 7, halved | 3 | 3 | $206.05 | $986.05 | $1,972.10 | inside the range |
+| FY2025 | HS | Golf | $6,565.00 | 2 | 10 | 10 | $2,182.05 | $7,382.05 | $7,382.05 | below the shared bound with waiting |
+| FY2025 | HS | HS BasketBall - Boys | $6,027.50 | 3 | 21 | 12 | $4,121.00 | $10,361.00 | $17,364.75 | below the shared bound with waiting |
+| FY2025 | HS | HS Basketball - Girls | $5,641.25 | 3 | 17 | 12 | $2,916.55 | $9,156.55 | $13,342.55 | below the shared bound with waiting |
+| FY2025 | HS | Ice Hockey - Boys | $6,215.00 | 3 | 15 | 15 | $2,717.65 | $10,517.65 | $10,517.65 | below the shared bound with waiting |
+| FY2025 | HS | Indoor Track - Boys | $4,267.50 | 3, halved | 4 | 4 | $429.65 | $1,469.65 | $2,939.30 | above the upper bound |
+| FY2025 | HS | Indoor Track - Girls | $4,267.50 | 3, halved | 5 | 5 | $732.55 | $2,292.55 | $3,762.20 | above the upper bound |
+| FY2025 | HS | Softball | $3,125.00 | 8, halved | 15 | 15 | $2,572.38 | $9,332.38 | $10,914.15 | below the shared bound with waiting |
+| FY2025 | HS | Unified Basketball | $907.50 | 2 | 2 | 2 | $268.45 | $1,308.45 | $1,308.45 | below the shared bound with waiting |
+| FY2025 | HS | Unified Track | $355.00 | 1 | 3 | 3 | $1,008.15 | $2,568.15 | $2,568.15 | **below the miles alone** |
+| FY2025 | MS | Basketball - Boys | $1,479.38 | 3, halved | 7 | 7 | $806.98 | $2,626.98 | $5,253.95 | below the shared bound with waiting |
+| FY2025 | MS | Basketball - Girls | $1,479.38 | 3, halved | 7 | 7 | $806.98 | $2,626.98 | $5,253.95 | below the shared bound with waiting |
+| FY2025 | MS | Cross Country | $1,233.50 | 2 | 6 | 3 | $370.50 | $1,930.50 | $3,861.00 | below the shared bound with waiting |
+| FY2025 | MS | Field Hockey | $2,559.00 | 2 | 6 | 6 | $1,127.75 | $4,247.75 | $4,247.75 | below the shared bound with waiting |
+| FY2025 | MS | Softball | $677.50 | 1 typed figure | 6 | 6 | $1,127.75 | $4,247.75 | $4,247.75 | **below the miles alone** |
+| FY2025 | MS | Track | $2,570.00 | 7 | 4 | 2 | $391.94 | $1,431.94 | $2,863.90 | inside the range |
+
+**What the data shows.** 5 sport-years print less than the miles alone would cost on the lower bound — shared buses and no waiting at all, so the four-hour assumption plays no part: FY2025 HS Baseball, $3,260.00 against 19 away games and $4,917.57 of miles; FY2025 HS Boys Lax, $1,462.50 against 14 away games and $2,897.71 of miles; FY2025 HS Unified Track, $355.00 against 3 away games and $1,008.15 of miles; FY2024 MS Softball, $985.50 against 5 away games and $1,233.05 of miles; FY2025 MS Softball, $677.50 against 6 away games and $1,127.75 of miles. 4 of the 5 are in FY2025’s spring, the section already registered as possibly unfinished (*Whether the FY2025 spring section of the district’s by-sport athletics workbook is complete*). In the other direction, 6 sport-years print more than one bus for every listed game would cost: FY2024 HS Indoor Track - Boys, $6,931.75 against $3,042.00; FY2025 HS Indoor Track - Boys, $4,267.50 against $2,939.30; FY2024 HS Indoor Track - Girls, $6,931.75 against $3,042.00; FY2025 HS Indoor Track - Girls, $4,267.50 against $3,762.20; FY2024 HS Boys Track, $3,837.00 against $922.35; FY2024 HS Girls Track, $3,837.00 against $922.35. Indoor track’s FY2024 formula holds 14 charges against 5 meets listed per team. Across all 52 scheduled sport-years, 37 fall below the shared bound once four hours of waiting is counted — which says as much about that assumption, and about the old contract’s unknown prices, as about the sheet.
+
+**The charges themselves changed shape.** In FY2024 the sheet’s formulas hold 195 charges with a median of $485.00, a median of 7.5 to a cell; in FY2025, 79 charges with a median of $675.00, a median of 3 to a cell. *A hypothesis:* the FY2025 figures are monthly or seasonal invoice totals rather than trips; nothing here tests it, so a FY2025 charge count is not a trip count.
+
+**What it does not show** is which is wrong. Every one of these fits the same numbers, and the data cannot choose between them:
+
+- *the sheet is incomplete* — charges not yet entered when it was made;
+- *the schedule is incomplete* — ArbiterLive lists only what a coach posted, and track lists fewer meets than its formulas hold charges;
+- *buses were shared* more widely than one date and venue — teams going the same way, a single bus dropping two teams;
+- *no bus went* — a van, parents driving, or a team riding with another school;
+- *a charge is not a trip* — an invoice can cover a month, or several teams;
+- *waiting was not four hours* — a game is shorter, a meet in Boston longer.
+
+What would settle it is the same document for every row: Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting (registered: *How many athletic bus trips each sport took, and what each trip cost*).
+
+### The district’s sheet, sport by sport
+
+From the district’s sport-by-sport workbook; the cell is the workbook’s own.
+
+| season | level | sport | FY2024 | FY2025 |
+|---|---|---|---:|---:|
+| Fall | HS | Girls Soccer | $7,662.00 | $7,849.50 |
+| Fall | HS | Football | $9,078.50 | $7,284.80 |
+| Fall | HS | Golf | $4,100.00 | $6,565.00 |
+| Fall | HS | Boys Soccer | $5,886.00 | $5,212.38 |
+| Fall | HS | Field Hockey | $4,338.00 | $4,634.38 |
+| Fall | HS | Cheer | $4,435.50 | $3,711.25 |
+| Fall | HS | Boys CC | $2,053.75 | $1,744.38 |
+| Fall | HS | Girls CC | $2,053.75 | $1,744.38 |
+| Fall | HS | Unified Basketball | $1,275.00 | $907.50 |
+| Fall | MS | Field Hockey | $2,150.00 | $2,559.00 |
+| Fall | MS | Cross Country | $1,595.00 | $1,233.50 |
+| Winter | HS | Ice Hockey - Boys | $6,681.50 | $6,215.00 |
+| Winter | HS | HS BasketBall - Boys | $7,817.50 | $6,027.50 |
+| Winter | HS | HS Basketball - Girls | $7,463.00 | $5,641.25 |
+| Winter | HS | Indoor Track - Boys | $6,931.75 | $4,267.50 |
+| Winter | HS | Indoor Track - Girls | $6,931.75 | $4,267.50 |
+| Winter | HS | Ice Hockey - Girls | $0.00 | — |
+| Winter | HS | Ski Team | $0.00 | — |
+| Winter | MS | Basketball - Boys | $1,893.25 | $1,479.38 |
+| Winter | MS | Basketball - Girls | $1,373.25 | $1,479.38 |
+| Spring | HS | Girls Lax | $5,635.50 | $4,222.50 |
+| Spring | HS | Baseball | $4,354.00 | $3,260.00 |
+| Spring | HS | Softball | $7,222.00 | $3,125.00 |
+| Spring | HS | Boys Lax | $4,130.50 | $1,462.50 |
+| Spring | HS | Boys Track | $3,837.00 | $1,285.00 |
+| Spring | HS | Girls Track | $3,837.00 | $1,285.00 |
+| Spring | HS | Unified Track | $1,030.00 | $355.00 |
+| Spring | MS | Track | $2,804.00 | $2,570.00 |
+| Spring | MS | Softball | $985.50 | $677.50 |
+| **all** | | | **$117,555.00** | **$91,066.06** |
 
 **Season totals against the workbook’s own.** 5 of 6 season totals the workbook prints equal the sum of its own rows. Spring FY2025 prints $0.00 in cell AT25 while its rows sum to $18,242.50; this page uses the rows. 
 
@@ -369,13 +544,14 @@ On the 24 sports both sheets print for FY2024, the workbook totals $113,765.50 a
 
 **Spring FY2025.** Its rows sum to $18,242.50, -46.1% against FY2024’s $33,835.50, and spring is 58.9% of the whole decline from FY2024 to FY2025. The workbook prints $0.00 as the season total. *A hypothesis:* the spring section was unfinished when the sheet was made; nothing here tests it.
 
-**One trip, priced.** On 4 March 2026 a teacher told the School Committee a class field trip would cost *“$731.50”*: one Dee Bus trip under the new contract, between this page’s no-waiting and four-hour prices of $422.50 and $942.50 ([minutes](/docs/minutes/text/school-committee/2026-03-04-minutes-7687.txt)).
+**One trip, priced.** On 4 March 2026 a teacher told the School Committee a class field trip would cost *“$731.50”*: one Dee Bus trip under the new contract, between the bid form’s average trip of 65 miles priced with no waiting, $422.50, and with its four hours, $942.50 ([minutes](/docs/minutes/text/school-committee/2026-03-04-minutes-7687.txt)).
 
 ### What this does not show
 
-- **A count of trips.** The estimate assumes every trip is the bid form’s average: 65 miles and 4 hours of waiting. Trips differ — a golf match and a football game are not the same bus — so a sport’s estimate is a scale, not its schedule.
-- **The prices actually paid in FY2025.** Those dollars were paid under the previous contract, whose rates were requested on 9 October 2026 and not delivered. If they were lower than FY2026’s, every trip estimate here is too low.
-- **The bid form’s own arithmetic.** Its trip lines multiply a trip count by the rate by a mileage figure (35 × rate × 1,750 and so on); the mileage figures sum to 5,000, not the 6,500 its estimate states. The subtotal is a quantity for comparing bids, not a forecast, and this page uses only the stated average trip.
+- **A count of bus trips.** The schedules say where teams played, not whether a bus went, was shared, or how long it waited. The model gives a range and both ends are ours.
+- **The prices actually paid before FY2026.** FY2022 to FY2025 ran under the previous contract, whose rates were requested on 9 October 2026 and not delivered; every model figure for those years is at FY2026 prices.
+- **Teams with no schedule.** Cheer posts none, and some teams post none in some years (the coverage file says which); a sport with no listed games is not a sport with no buses (registered: *Which games Lunenburg’s athletic teams played in the seasons their posted schedules do not cover*).
+- **The bid form’s own arithmetic.** Its trip lines multiply a trip count by the rate by a mileage figure (35 × rate × 1,750 and so on); the mileage figures sum to 5,000, not the 6,500 its estimate states. The subtotal is a quantity for comparing bids, not a forecast; this page takes only its rates and its four hours.
 
 ## 4. The Dee Bus contract: what is fixed, and what the 7.6% was
 
@@ -387,13 +563,28 @@ The district signed a three-year contract with Dee Bus Service for 1 July 2025 t
 
 Every rate below was read off the scanned bid form and checked two ways on every build: against the scan’s text layer where it is legible, and by recomputing every subtotal and footing it to the year totals and the Grand Total the form prints, $6,086,125.00.
 
-| year | 77-passenger, per bus per day | 83-passenger | regular routes: 8 + 3 buses × 180 days | trip rate (per mile) | waiting, per hour | year total as printed | bid form page |
-|---|---:|---:|---:|---:|---:|---:|---|
-| FY2026 | $485.00 | $515.00 | $976,500.00 | $6.50 | $130.00 | $1,922,250.00 | p1 (IFB p24) |
-| FY2027 | $523.00 | $556.00 | $1,053,360.00 | $6.65 | $140.00 | $2,023,735.00 | p2 (IFB p25) |
-| FY2028 | $565.00 | $588.50 | $1,131,390.00 | $6.90 | $150.00 | $2,140,140.00 | p3 (IFB p26) |
-| FY2029 (optional) | $590.00 | $630.00 | $1,189,800.00 | $7.00 | $175.00 | $2,222,300.00 | p5 (IFB p28) |
-| FY2030 (optional) | $637.20 | $680.40 | $1,284,984.00 | $7.25 | $190.00 | $2,357,859.00 | p6 (IFB p29) |
+**The unit prices.**
+
+| year | 77-passenger, per bus per day | 83-passenger | trip rate (per mile) | waiting, per hour | bid form page |
+|---|---:|---:|---:|---:|---|
+| FY2026 | $485.00 | $515.00 | $6.50 | $130.00 | p1 (IFB p24) |
+| FY2027 | $523.00 | $556.00 | $6.65 | $140.00 | p2 (IFB p25) |
+| FY2028 | $565.00 | $588.50 | $6.90 | $150.00 | p3 (IFB p26) |
+| FY2029 (optional) | $590.00 | $630.00 | $7.00 | $175.00 | p5 (IFB p28) |
+| FY2030 (optional) | $637.20 | $680.40 | $7.25 | $190.00 | p6 (IFB p29) |
+
+**What each year’s total is made of.** Three parts, recomputed from the prices above and footed to the total the form prints:
+
+| year | regular routes: 8 + 3 buses × 180 days | trip lines on the form | waiting on the form: 100 trips × 4 hours | year total as printed |
+|---|---:|---:|---:|---:|
+| FY2026 | $976,500.00 | $893,750.00 | $52,000.00 | $1,922,250.00 |
+| FY2027 | $1,053,360.00 | $914,375.00 | $56,000.00 | $2,023,735.00 |
+| FY2028 | $1,131,390.00 | $948,750.00 | $60,000.00 | $2,140,140.00 |
+| FY2029 (optional) | $1,189,800.00 | $962,500.00 | $70,000.00 | $2,222,300.00 |
+| FY2030 (optional) | $1,284,984.00 | $996,875.00 | $76,000.00 | $2,357,859.00 |
+
+**Only the first column is a budget.** The regular routes are the whole regular-route line, and the FY2027 budget carries that price exactly. The trip lines multiply a trip count by the rate by a mileage figure (35 × rate × 1,750, and so on), so $893,750 of the FY2026 total is a quantity for comparing bids, not spending anybody expects: the form’s own estimate is 100 trips and 6,500 miles, which at $6.50 a mile is $42,250. What athletics and field trips actually cost depends on the trips run, at the per-mile and per-hour rates above.
+
 
 The regular-route price rises 7.9% into FY2027 and 7.4% into FY2028, then 5.2% and 8.0% in the optional years. The form allows the fleet to move by up to two buses a year at the same unit prices. The FY2027 performance bond is $2,019,685.00.
 
@@ -497,7 +688,7 @@ From the town’s published minutes, searched with `scripts/search_minutes.py` f
 - *“We have received 1,074 bus requests, and have 494 unpaid at this time.”* — School Committee, 2025-06-04 ([minutes](/docs/minutes/text/school-committee/2025-06-04-minutes-7251.txt)). The only count of riders in the record, taken before the first fee year began. A request is not a rider and an unpaid request is not a refusal.
 - *“Chris Menard asks for a copy of the bus contracts. The schools will be going out to bid for school buses in January.”* — Finance Committee, 2024-03-14 ([minutes](/docs/minutes/text/finance-committee/2024-03-14-minutes-6469.txt)). Said in FY2024, the year the regular-route line ran furthest over its budget, and ten months before the bid this page reads.
 - *“Chris Menard suggests the schools work on the contract as it is scheduled to be renewed in 2028.”* — Finance Committee, 2026-02-26 ([minutes](/docs/minutes/text/finance-committee/2026-02-26-minutes-7673.txt)). A Finance Committee member pointing at the one transportation decision the town controls on a schedule: the contract ends on 30 June 2028.
-- *“We will need to pay Dee Bus Company upfront and that cost is $731.50.”* — School Committee, 2026-03-04 ([minutes](/docs/minutes/text/school-committee/2026-03-04-minutes-7687.txt)). One trip, priced under the new contract: a class field trip. It sits inside the range this page’s per-trip estimate uses.
+- *“We will need to pay Dee Bus Company upfront and that cost is $731.50.”* — School Committee, 2026-03-04 ([minutes](/docs/minutes/text/school-committee/2026-03-04-minutes-7687.txt)). One trip, priced under the new contract: a class field trip. It sits between the bid form’s average trip priced with and without its four hours of waiting.
 - *“All athletic transportation would be cut saving: $127,550.”* — Finance Committee, 2026-03-26 ([minutes](/docs/minutes/text/finance-committee/2026-03-26-minutes-7737.txt)). The FY2027 balanced budget, as presented to the Finance Committee.
 - *“The transportation for Middle-High Band would be reduced to $5,000.”* — Finance Committee, 2026-03-26 ([minutes](/docs/minutes/text/finance-committee/2026-03-26-minutes-7737.txt)). The same presentation. The FY2027 balanced budget in the district’s book carries nothing for either band transportation line; the minute and the book differ, and the record here does not say which held.
 - *“a more creative avenue for further conversation needs to be had about the athletic transportation”* — School Committee, 2026-03-23 ([minutes](/docs/minutes/text/school-committee/2026-03-23-minutes-7732.txt)). A parent at public comment, on the cut. The same meeting heard a student ask why teachers were being cut while athletic transportation was not yet.
@@ -523,7 +714,7 @@ From the town’s published minutes, searched with `scripts/search_minutes.py` f
 - **Select Board.** Nothing here compares the town side with the school side; the Monty Tech buses, a town appropriation, are named and left out.
 - **The parent whose programme is on the list.** Every sport is findable by name in section 3, with both district sheets’ figures where they differ. Band trips are in section 1: the FY2027 balanced budget carries nothing for them while the Finance Committee was told they would be reduced.
 - **Somebody with one concrete thing (the meeting search).** Every recent line that ran over its revised budget was searched, and so were the fee fund and the bus fee. The regular-route line ran over in FY2023 and FY2024; a Finance Committee member asked for the bus contracts that spring — quoted. Athletic transportation came in under its revised budget in FY2026, the year before it was cut, while athletes were being driven privately under a signed waiver — quoted. Special education transportation ran over in FY2024 and FY2026; the search found the district’s account of the state’s reimbursement and the FY2027 figure shown to the Finance Committee — both quoted — and no discussion of the overrun in the minutes searched. The fee fund draw was voted on 26 August 2026 — quoted. Track buses were searched in both corpora: the town’s minutes do not record the discussion, and the recordings’ captions do — summarised and linked at the moment, never quoted.
-- **Grilled.** The first draft measured the special education rise from FY2020, its lowest year — a year of school closures. It now starts from FY2019 and says why. The audit pass then found the summary was an inventory: its first card was a share nobody would dispute. The window for the special education under-budget run is ours and is stated as a rule, and the overrun is computed from the year-end report’s own cents rather than from rounded figures.
+- **Grilled.** The first draft measured the special education rise from FY2020, its lowest year — a year of school closures. It now starts from FY2019 and says why. The audit pass then found the summary was an inventory: its first card was a share nobody would dispute. The window for the special education under-budget run is ours and is stated as a rule, and the overrun is computed from the year-end report’s own cents rather than from rounded figures. On 11 October 2026 the per-sport trip figure was withdrawn: it divided FY2025 dollars by a trip priced at FY2026 rates, and that trip was the bid form’s long hypothetical one, so small sports read as about one trip. The schedules replaced it.
 
 ## Method and classification
 
@@ -532,7 +723,7 @@ Analysis, October 2026. Every figure is computed by `scripts/build_transportatio
 - **Which accounts.** General fund school accounts, by function and object code: regular routes 3300/535025, special education 3300/535026, athletics 3510/535016, band and music 2440/535016. Every general fund school account whose description names transportation must be one of these, or the build stops. The grouping is ours.
 - **Two ledgers, tied.** FY2023 to FY2026 are the MUNIS year-end reports. Earlier years are the Finance Committee’s ledger history, used because its transportation rows equal the MUNIS reports to the dollar in FY2023 and FY2024; the build refuses if they stop.
 - **Budget** is the original appropriation; **spent** is expended plus still committed at the close. They are never added, and no rate here runs from one to the other.
-- **Trips** are OUR ESTIMATE wherever they appear.
+- **The bus model is OUR ESTIMATE wherever it appears.** Games are each team’s listings on ArbiterLive, the scheduling site the district links from its athletics page, read on 2026-10-11 by `scripts/fetch_arbiter_schedules.py` and extracted to `sources/data/athletics-schedules.csv`, with what each team-year’s listing covers in `athletics-schedules-coverage.csv`. **ArbiterLive’s pages are not archived or republished here**; the page cites the schedules as facts — date, team, opponent, venue, home or away — and takes nothing else from them. Venue miles are ours: each address geocoded on OpenStreetMap and driven from the high school and back by OSRM (`athletics-venue-distances.csv`); 11 venues could not be placed. A trip costs its miles at the contract’s per-mile rate plus 4 hours at its waiting rate — the bid form’s own four hours, adopted as our assumption, and always shown apart. Lower bound: one bus per date and venue, shared; upper: one per team-game. Years before FY2026 are at FY2026 prices. The crosswalk from a scheduled team to a row of the district’s sheet is ours (`SHEET_TEAMS`), and every scheduled team must land in one row or the build stops.
 - **Every line is net.** A general fund budget line is what the town raises after anything else that pays for the thing — bus fees, the athletic fee fund, state reimbursement — has been taken off (rule 11). None of those is netted into any figure here; each has its own column.
 
 ## Sources
@@ -553,5 +744,6 @@ Analysis, October 2026. Every figure is computed by `scripts/build_transportatio
 - **Massachusetts Department of Elementary and Secondary Education** — the circuit breaker reimbursement schedule, transportation column, by year of payment. `sources/state-dese/dese-circuit-breaker.xlsx` sha256 `b710ba4f88fb`
 - **Lunenburg Public Schools** — the Superintendent’s May 2025 bus fee email: the FY2026 fee schedule. `sources/correspondence/2025-05-bus-fees-superintendent.txt` sha256 `25a3dece3399`
 - **Lunenburg Public Schools** — the Superintendent’s August 2026 email: the FY2027 routes and fees; the route list excludes special education vans. `sources/correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt` sha256 `b08af7ae3500`
+- **ArbiterLive** (arbiterlive.com), the district’s linked athletic scheduling site — every game listed for Lunenburg’s teams, FY2022 to FY2027, read 2026-10-11. The pages are not archived or republished. Our extract: `sources/data/athletics-schedules.csv`; our venue distances: `sources/data/athletics-venue-distances.csv`.
 
 Generated by `scripts/build_transportation.py`; every figure in the summary is recomputed by `scripts/verify_transportation.py` by a different route.

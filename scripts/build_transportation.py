@@ -10,10 +10,12 @@ THE QUESTIONS, TJ's, 9 October 2026, the day the Dee Bus contract arrived by rec
      special education -- against athletic transportation, by year, budgeted and actually
      spent, side by side. Never combined in one calculation (rule 1): a budget is compared
      only with a budget and an actual only with an actual.
-  2. PER SPORT. Athletic transportation by sport and season -- and, because the bus contract
-     states a per-unit rate for athletic and field trips, an estimate of how many trips each
-     sport's dollars buy. That estimate is OURS and is labelled so everywhere it appears
-     (rule 3).
+  2. PER SPORT. Athletic transportation by sport and season, set beside what each team's
+     posted schedule implies: the away games ArbiterLive lists, the miles to each venue, and
+     the contract's per-mile and per-hour rates. That bus model is OURS and is labelled so
+     everywhere it appears (rule 3). It replaced, on 11 October 2026, a figure that divided
+     FY2025 dollars by the bid form's long hypothetical trip at FY2026 prices -- a different
+     year's price and a trip far longer than the district's own charges.
 
 WHERE EACH FIGURE COMES FROM, and which kind of thing it is (rule 13a):
 
@@ -44,8 +46,8 @@ WHAT THIS SCRIPT REFUSES TO DO:
   * net anything. Fees, the athletic revolving fund and the circuit breaker are each their
     own column. A budget line is NET (rule 11) and the page says so beside every rate.
   * add a budget to an actual, or difference one against the other to make a rate.
-  * call a trip estimate a count. Nobody publishes trips; the figure is dollars divided by
-    the bid form's own average trip, at FY2026 prices, and it says so.
+  * call the bus model a count. Nobody publishes trips; the schedules say where teams
+    played, not whether a bus went or was shared, and the page gives both bounds.
 """
 import argparse
 import csv
@@ -250,8 +252,8 @@ QUOTES = [
     dict(key='field-trip', path='sources/meetings/text/school-committee/2026-03-04-minutes-7687.txt',
          board='School Committee', date='2026-03-04',
          quote='We will need to pay Dee Bus Company upfront and that cost is $731.50.',
-         why='One trip, priced under the new contract: a class field trip. It sits inside the '
-             'range this page’s per-trip estimate uses.'),
+         why='One trip, priced under the new contract: a class field trip. It sits between the '
+             'bid form’s average trip priced with and without its four hours of waiting.'),
     dict(key='cut', path='sources/meetings/text/finance-committee/2026-03-26-minutes-7737.txt',
          board='Finance Committee', date='2026-03-26',
          quote='All athletic transportation would be cut saving: $127,550.',
@@ -404,6 +406,10 @@ GAP_ROWS = {
     # Registered 10 October 2026, with the brief: the reason outdoor track LOOKS cheapest.
     'spring25': 'Whether the FY2025 spring section of the district’s by-sport athletics '
                 'workbook is complete',
+    # Registered 11 October 2026, with the schedule-based bus model.
+    'schedules': 'Which games Lunenburg’s athletic teams played in the seasons their posted '
+                 'schedules do not cover',
+    'estimate27': 'How the district built its FY2027 athletic transportation estimate',
 }
 
 # THE AUDIT PASS (notes/process/AUDIT-PASS.md). These inputs exist only for the comparisons
@@ -704,8 +710,6 @@ def load_sports(contract):
             fy2024=round(fy24, 2) if fy24 is not None else None,
             fy2025=round(fy25, 2) if fy25 is not None else None,
             cell2024=v.get(2024, (None, None))[1], cell2025=v.get(2025, (None, None))[1],
-            trips=(round(fy25 / contract['trip_full'], 1) if fy25 else None),
-            trips_nowait=(round(fy25 / contract['trip_nowait'], 1) if fy25 else None),
             fincom_name=FINCOM_NAME.get(k)))
     order = {s: i for i, s in enumerate(SEASONS)}
     out.sort(key=lambda r: (order[r['season']], r['level'], -(r['fy2025'] or 0), r['sport']))
@@ -735,6 +739,352 @@ def load_sports(contract):
     ranked = sorted([r for r in out if r['fy2025']], key=lambda r: -r['fy2025'])
     return dict(rows=out, seasons=seasons, totals=totals, compare=compare, revolving=hist,
                 ranked=ranked)
+
+
+# --------------------------------------------------------------------- the schedules
+#
+# WHAT EACH TEAM PLAYED, AND WHERE. ArbiterLive is the scheduling site the district links
+# from its athletics page. `extract_arbiter_schedules.py` reads it into one row per game,
+# FY2022-FY2027; `build_athletics_venue_distances.py` gives each venue a round-trip driving
+# distance from the high school (OpenStreetMap geocode, OSRM route). The pages themselves are
+# NOT archived or republished here: the rows are cited
+# as facts -- date, opponent, venue, home or away -- and nothing else is taken from them.
+#
+# THE BUS MODEL IS OURS, every figure of it:
+#
+#   cost of one trip = round-trip miles x the contract's per-mile rate
+#                      + WAIT_HOURS x the contract's per-hour waiting rate
+#
+#   * WAIT_HOURS is the bid form's own four hours a trip, an assumption we adopt; a track
+#     meet runs longer than a game, so the waiting part is always reported separately.
+#   * UPPER bound: one bus for every team-game away. LOWER bound: one bus for every distinct
+#     date and venue any Lunenburg team travelled to, its cost shared equally among the teams
+#     there. Whether buses were in fact shared is NOT observed anywhere.
+#   * Prices: each year at the contract's own rates from FY2026; FY2022-FY2025 were under the
+#     previous contract, whose rates are not held (gap `rates`), so those years are priced
+#     AT FY2026 PRICES and say so. Nothing here feeds a projection (rule 1).
+#   * Played games only: a game marked canceled, postponed or rained out is dropped. A game
+#     with no listed venue (`TBA`, `Not Listed`) or a venue with no distance is counted, and
+#     carries its waiting but no miles -- so the miles part is a floor for those.
+#   * Home games at a venue outside Lunenburg (hockey's home rink is in Fitchburg) are
+#     counted and left OUT of both bounds: the district lists them as home, and whether a bus
+#     carried the team is not recorded.
+SCHED = os.path.join(D, 'athletics-schedules.csv')
+SCHED_COV = os.path.join(D, 'athletics-schedules-coverage.csv')
+VENUE_MILES = os.path.join(D, 'athletics-venue-distances.csv')
+SHEET_XLSX = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details',
+                          'athletics-by-sport-fy2024-fy2026.xlsx')
+NOT_PLAYED = ('Canceled', 'Cancelled', 'Postponed', 'Rainout')
+WAIT_HOURS = FORM_WAIT_HOURS
+SCHED_YEARS = list(range(2022, 2028))
+# OUR threshold for the flag, stated where it is used: a sheet figure BELOW the cost of the
+# miles alone, on the lower bound (shared buses, no waiting at all), cannot be explained by
+# the waiting assumption, because it assumes none.
+
+# The district's by-sport sheet names a row one way and ArbiterLive names a team another.
+# This crosswalk is OURS; every scheduled team must land in exactly one row or the build stops.
+SHEET_TEAMS = {
+    ('Fall', 'HS', 'Boys CC'): [('Cross Country', 'Boys Varsity')],
+    ('Fall', 'HS', 'Girls CC'): [('Cross Country', 'Girls Varsity')],
+    ('Fall', 'HS', 'Boys Soccer'): [('Soccer', 'Boys Varsity'), ('Soccer', 'Boys Junior Varsity')],
+    ('Fall', 'HS', 'Cheer'): [],
+    ('Fall', 'HS', 'Field Hockey'): [('Field Hockey', 'Girls Varsity'),
+                                     ('Field Hockey', 'Girls Junior Varsity')],
+    ('Fall', 'HS', 'Football'): [('Football', 'Boys Varsity'), ('Football', 'Boys Junior Varsity')],
+    ('Fall', 'HS', 'Girls Soccer'): [('Soccer', 'Girls Varsity'),
+                                     ('Soccer', 'Girls Junior Varsity')],
+    ('Fall', 'HS', 'Golf'): [('Golf', 'Boys Varsity'), ('Golf', 'Boys Junior Varsity')],
+    ('Fall', 'HS', 'Unified Basketball $100'): [('Basketball', 'Coed Unified')],
+    ('Fall', 'MS', 'Cross Country'): [('Cross Country', 'Boys Middle School'),
+                                      ('Cross Country', 'Girls Middle School'),
+                                      ('Cross Country', 'Coed Middle School')],
+    ('Fall', 'MS', 'Field Hockey'): [('Field Hockey', 'Girls Middle School')],
+    ('Winter', 'HS', 'HS BasketBall - Boys'): [('Basketball', 'Boys Varsity'),
+                                               ('Basketball', 'Boys Junior Varsity - JV'),
+                                               ('Basketball', 'Boys Junior Varsity - JV2')],
+    ('Winter', 'HS', 'HS Basketball - Girls'): [('Basketball', 'Girls Varsity'),
+                                                ('Basketball', 'Girls Junior Varsity')],
+    ('Winter', 'HS', 'Ice Hockey - Boys'): [('Hockey', 'Boys Varsity'),
+                                            ('Hockey', 'Boys Junior Varsity')],
+    ('Winter', 'HS', 'Ice Hockey - Girls'): [],
+    ('Winter', 'HS', 'Indoor Track - Boys'): [('Track & Field - Indoor', 'Boys Varsity')],
+    ('Winter', 'HS', 'Indoor Track - Girls'): [('Track & Field - Indoor', 'Girls Varsity')],
+    ('Winter', 'HS', 'Ski Team'): [('Ski', 'Coed Varsity')],
+    ('Winter', 'MS', 'Basketball - Boys'): [('Basketball', 'Boys Middle School')],
+    ('Winter', 'MS', 'Basketball - Girls'): [('Basketball', 'Girls Middle School')],
+    ('Spring', 'HS', 'Baseball'): [('Baseball', 'Boys Varsity'),
+                                   ('Baseball', 'Boys Junior Varsity'),
+                                   ('Baseball', 'Boys Freshman')],
+    ('Spring', 'HS', 'Boys Lax'): [('Lacrosse - Boys', 'Boys Varsity'),
+                                   ('Lacrosse - Boys', 'Boys Junior Varsity')],
+    ('Spring', 'HS', 'Girls Lax'): [('Lacrosse - Girls', 'Girls Varsity'),
+                                    ('Lacrosse - Girls', 'Girls Junior Varsity')],
+    ('Spring', 'HS', 'Boys Track'): [('Track & Field - Outdoor', 'Boys Varsity')],
+    ('Spring', 'HS', 'Girls Track'): [('Track & Field - Outdoor', 'Girls Varsity')],
+    ('Spring', 'HS', 'Softball'): [('Softball', 'Girls Varsity'),
+                                   ('Softball', 'Girls Junior Varsity')],
+    ('Spring', 'HS', 'Unified Track ($100)'): [('Track & Field - Outdoor', 'Coed Unified')],
+    ('Spring', 'MS', 'Softball'): [('Softball', 'Girls Middle School')],
+    ('Spring', 'MS', 'Track'): [('Track & Field - Outdoor', 'Boys Middle School'),
+                                ('Track & Field - Outdoor', 'Girls Middle School')],
+}
+
+
+def season_of(r):
+    """The extract's season is by sport name. Unified basketball plays in the autumn and the
+    spring as well as the winter, so for it alone the season is read off the month (ours)."""
+    if r['level'] == 'Coed Unified' and r['sport'] == 'Basketball':
+        mo = int(r['date'][5:7])
+        return 'fall' if 8 <= mo <= 11 else 'winter' if mo in (12, 1, 2) else 'spring'
+    return r['season']
+
+
+def sheet_charges(cells):
+    """Each figure the district typed into a by-sport transportation cell. A formula such as
+    `=532.5+375` is two charges; a divisor (`/2`, the sheet halving one bus between two
+    rows) is not a charge. A cell holding a bare number is one typed figure."""
+    import openpyxl
+    wb = openpyxl.load_workbook(SHEET_XLSX)
+    out = {}
+    for key, (season, cell) in cells.items():
+        v = wb[season][cell].value
+        if isinstance(v, str) and v.startswith('='):
+            body = v[1:]
+            nums = [float(x) for x in re.findall(r'(?<![/\d.])(\d+(?:\.\d+)?)', body)]
+            halved = bool(re.search(r'\)\s*/\s*2\s*$', body))
+            out[key] = dict(formula=v, charges=nums, halved=halved, typed=False)
+        else:
+            out[key] = dict(formula=None if v is None else str(v),
+                            charges=[float(v)] if v else [], halved=False, typed=True)
+    return out
+
+
+def load_schedules(k, sp):
+    y = {c['fy']: c for c in k['years']}
+    price_year = lambda fy: fy if fy in y else min(y)
+    per_trip = lambda fy, miles: ((miles or 0) * y[price_year(fy)]['trip_rate'],
+                                  WAIT_HOURS * y[price_year(fy)]['wait_rate'])
+    dist = {}
+    for r in csv.DictReader(open(VENUE_MILES, encoding='utf-8')):
+        dist[r['venue']] = float(r['round_trip_miles']) if r['round_trip_miles'].strip() else None
+    rows = list(csv.DictReader(open(SCHED, encoding='utf-8')))
+    fys = sorted({int(r['fiscal_year'][2:]) for r in rows})
+    if fys != SCHED_YEARS:
+        fail('the schedule extract covers %s, not FY2022-FY2027' % fys)
+    team_sheet = {}
+    for sk, teams in SHEET_TEAMS.items():
+        for t in teams:
+            if t in team_sheet:
+                fail('%s is crosswalked to two sheet rows' % (t,))
+            team_sheet[t] = sk
+    unmapped = sorted({(r['sport'], r['level']) for r in rows} - set(team_sheet))
+    if unmapped:
+        fail('scheduled teams the sheet crosswalk does not place: %s' % unmapped)
+
+    played = [r for r in rows if r['status'] not in NOT_PLAYED]
+    away = [r for r in played if r['home_away'] == 'away']
+    for r in away:
+        if r['venue'] not in dist and r['venue'] not in ('TBA', 'Not Listed'):
+            fail('away venue %r has no row in the distance file' % r['venue'])
+    miles_of = lambda r: dist.get(r['venue'])
+
+    # The lower bound's sharing: every distinct fiscal year, date and venue any team went to.
+    groups = {}
+    for r in away:
+        groups.setdefault((r['fiscal_year'], r['date'], r['venue']), []).append(r)
+    T = {}
+
+    def team(r):
+        key = (int(r['fiscal_year'][2:]), r['sport'], r['level'])
+        if key not in T:
+            T[key] = dict(fy=key[0], sport=r['sport'], level=r['level'],
+                          school='MS' if 'Middle School' in r['level'] else 'HS',
+                          sheet=team_sheet[(r['sport'], r['level'])][2],
+                          home=0, away=0, trips=set(), miles=0.0, no_distance=0,
+                          home_elsewhere=0, unplaced=0, hi_miles=0.0, hi_wait=0.0,
+                          lo_miles=0.0, lo_wait=0.0, price_year=price_year(key[0]))
+        return T[key]
+    for r in played:
+        t = team(r)
+        if r['home_away'] == 'home':
+            t['home'] += 1
+            if r['venue_in_lunenburg'] == 'no':
+                t['home_elsewhere'] += 1
+        elif r['home_away'] == 'unknown':
+            t['unplaced'] += 1
+    for gk, g in groups.items():
+        fy = int(gk[0][2:])
+        mc, wc = per_trip(fy, miles_of(g[0]))
+        for r in g:
+            t = team(r)
+            t['away'] += 1
+            t['trips'].add(gk)
+            if miles_of(r) is None:
+                t['no_distance'] += 1
+            else:
+                t['miles'] += miles_of(r)
+            t['hi_miles'] += mc
+            t['hi_wait'] += wc
+            t['lo_miles'] += mc / len(g)
+            t['lo_wait'] += wc / len(g)
+    teams = []
+    for key in sorted(T, key=lambda q: (q[0], q[1], q[2])):
+        t = T[key]
+        t['trips'] = len(t['trips'])
+        for f in ('miles', 'hi_miles', 'hi_wait', 'lo_miles', 'lo_wait'):
+            t[f] = round(t[f], 2)
+        t['lo'] = round(t['lo_miles'] + t['lo_wait'], 2)
+        t['hi'] = round(t['hi_miles'] + t['hi_wait'], 2)
+        teams.append(t)
+
+    def total(sel):
+        ts = [t for t in teams if sel(t)]
+        out = {f: round(sum(t[f] for t in ts), 2) for f in
+               ('away', 'miles', 'no_distance', 'home', 'home_elsewhere', 'unplaced', 'hi_miles',
+                'hi_wait', 'lo_miles', 'lo_wait', 'lo', 'hi')}
+        out['away'] = int(out['away'])
+        return out
+    by_fy = []
+    for fy in SCHED_YEARS:
+        d_ = total(lambda t: t['fy'] == fy)
+        d_.update(fy=fy, price_year=price_year(fy),
+                  trips=len({gk for gk in groups if int(gk[0][2:]) == fy}))
+        by_fy.append(d_)
+
+    # ---- the sheet against the schedules, sport by sport, the years the sheet covers.
+    cells = {}
+    for r in sp['rows']:
+        for fy in (2024, 2025):
+            c = r['cell%d' % fy]
+            if c:
+                cells[(r['season'], r['level'], r['printed_name'], fy)] = (r['season'], c)
+    ch = sheet_charges(cells)
+    compare = []
+    for r in sp['rows']:
+        sk = (r['season'], r['level'], r['printed_name'])
+        if sk not in SHEET_TEAMS:
+            fail('the by-sport sheet has a row the schedule crosswalk does not: %s' % (sk,))
+        for fy in (2024, 2025):
+            v = r['fy%d' % fy]
+            if v is None:
+                continue
+            mine = [t for t in teams if t['fy'] == fy
+                    and (t['sport'], t['level']) in SHEET_TEAMS[sk]]
+            c = ch.get(sk + (fy,), dict(charges=[], halved=False, typed=False, formula=None))
+            dist_trips = len({gk for gk, g in groups.items() if int(gk[0][2:]) == fy
+                              and any((x['sport'], x['level']) in SHEET_TEAMS[sk] for x in g)})
+            row = dict(season=r['season'], level=r['level'], sport=r['sport'], fy=fy,
+                       sheet=v, formula=c['formula'], charges=len(c['charges']),
+                       typed=c['typed'], halved=c['halved'], scheduled=bool(mine),
+                       away=sum(t['away'] for t in mine), trips=dist_trips,
+                       no_distance=sum(t['no_distance'] for t in mine),
+                       lo=round(sum(t['lo'] for t in mine), 2),
+                       hi=round(sum(t['hi'] for t in mine), 2),
+                       lo_miles=round(sum(t['lo_miles'] for t in mine), 2))
+            row['below_miles'] = bool(mine) and v > 0 and v < row['lo_miles']
+            row['zero_with_games'] = bool(mine) and not v and row['away'] > 0
+            compare.append(row)
+    flagged = [c for c in compare if c['below_miles']]
+    # The charges, pooled per year. Paired rows repeat one formula, so each distinct formula
+    # is counted once; a typed figure is not a formula and is left out.
+    med = {}
+    for fy in (2024, 2025):
+        seen, xs, per = set(), [], []
+        for key, c in ch.items():
+            if key[3] != fy or c['typed'] or c['formula'] in seen:
+                continue
+            seen.add(c['formula'])
+            xs.extend(c['charges'])
+            per.append(len(c['charges']))
+        med[fy] = dict(n=len(xs), median=round(statistics.median(xs), 2),
+                       per_cell=statistics.median(per), cells=len(per))
+    return dict(teams=teams, by_fy=by_fy, compare=compare, flagged=flagged, charges=med,
+                groups=groups, played=played, dist=dist, per_trip=per_trip,
+                price_year=price_year, wait_hours=WAIT_HOURS,
+                venues_without=sorted(v for v, m in dist.items() if m is None))
+
+
+def schedule_test(k, S, restore):
+    """The Superintendent's FY2027 reasons, against what the schedules show: the home share of
+    high school games and the round-trip miles per away game, season by season, FY2024 to
+    FY2027 -- like for like, on the teams whose FY2027 schedule is posted in full. Then what
+    our model makes of FY2027's high school schedule so far, beside her estimate."""
+    cov = list(csv.DictReader(open(SCHED_COV, encoding='utf-8')))
+    stamps = {m_ for r in cov for m_ in re.findall(r'fetch date \((\d{4}-\d\d-\d\d)\)', r['basis'])}
+    if len(stamps) != 1:
+        fail('the coverage file no longer names one fetch date: %s' % sorted(stamps))
+    fetched = stamps.pop()
+    posted = {}
+    for r in cov:
+        if r['fiscal_year'] != 'FY2027':
+            continue
+        posted.setdefault(r['season'], {})[(r['sport'], r['level'])] = r
+    seasons = []
+    for season in ('fall', 'winter', 'spring'):
+        cv = posted.get(season, {})
+        hs = {t: r for t, r in cv.items() if 'Middle School' not in t[1]}
+        full = sorted(t for t, r in hs.items() if r['assessment'] != 'missing'
+                      and 'under half' not in r['basis'] and int(r['rows_listed']) > 0)
+        short = sorted(t for t, r in hs.items() if t not in full and int(r['rows_listed']) > 0)
+        none = sorted(t for t, r in hs.items() if int(r['rows_listed']) == 0)
+        # A season is COMPARED only if it had begun by the date the schedules were read: one
+        # not yet under way is still being posted (FY2027 hockey lists one game of a usual
+        # twenty-one). Within it, only teams posted in full are compared, in every year.
+        begun = any(r['date'] <= fetched for r in S['played'] if r['fiscal_year'] == 'FY2027'
+                    and season_of(r) == season)
+        complete = bool(full) and begun
+        years = []
+        for fy in (2024, 2025, 2026, 2027):
+            g = [r for r in S['played'] if int(r['fiscal_year'][2:]) == fy
+                 and season_of(r) == season and 'Middle School' not in r['level']
+                 and (r['sport'], r['level']) in set(full)
+                 and r['home_away'] in ('home', 'away')]
+            h = sum(1 for r in g if r['home_away'] == 'home')
+            aw = [r for r in g if r['home_away'] == 'away']
+            ms = [S['dist'][r['venue']] for r in aw if S['dist'].get(r['venue']) is not None]
+            years.append(dict(fy=fy, games=len(g), home=h, away=len(aw),
+                              home_pct=pct1(h, len(g)) if g else None,
+                              miles_avg=round(sum(ms) / len(ms), 1) if ms else None,
+                              with_distance=len(ms)))
+        seasons.append(dict(season=season, complete=complete, teams=full, short=short,
+                            missing=none, years=years))
+    # (c) FY2027 high school, as scheduled so far, at FY2027 prices; and the same teams' FY2026
+    # spring and winter at FY2027 prices -- OUR assembly of a full year, for scale only.
+    y27 = {c['fy']: c for c in k['years']}[2027]
+
+    def priced(fy, season):
+        lo = hi = lo_m = hi_m = lo_n = 0.0
+        n = 0
+        for gk, g in S['groups'].items():
+            if int(gk[0][2:]) != fy:
+                continue
+            m_ = S['dist'].get(g[0]['venue'])
+            mc = (m_ or 0) * y27['trip_rate']
+            wc = WAIT_HOURS * y27['wait_rate']
+            for r in g:
+                if 'Middle School' in r['level'] or season_of(r) != season:
+                    continue
+                n += 1
+                hi += mc + wc
+                hi_m += mc
+                lo += (mc + wc) / len(g)
+                lo_m += mc / len(g)
+                lo_n += 1 / len(g)
+        return dict(fy=fy, season=season, away=n, lo=round(lo, 2), hi=round(hi, 2),
+                    lo_miles=round(lo_m, 2), hi_miles=round(hi_m, 2), lo_trips=lo_n)
+    so_far = [priced(2027, s) for s in ('fall', 'winter')]
+    year26 = [priced(2026, s) for s in ('fall', 'winter', 'spring')]
+    assembled = [so_far[0], year26[1], year26[2]]
+    asm = {f: round(sum(p[f] for p in assembled), 2) for f in ('lo', 'hi', 'lo_miles', 'hi_miles')}
+    # The waiting hours a trip that would make the assembled year, shared buses, equal her
+    # estimate: arithmetic on our model, not a measurement of anybody's waiting.
+    trips_lo = sum(p['lo_trips'] for p in assembled)
+    be_hours = round((restore - asm['lo_miles']) / (trips_lo * y27['wait_rate']), 1)
+    for p in so_far + year26:
+        p['lo_trips'] = round(p['lo_trips'], 1)
+    return dict(fetched=fetched, seasons=seasons, so_far=so_far, year26=year26, assembled=asm,
+                trips_lo=round(trips_lo, 1), be_hours=be_hours, estimate=restore,
+                rate=y27['trip_rate'], wait=y27['wait_rate'])
 
 
 # --------------------------------------------------------------------- the state, and the fee
@@ -982,11 +1332,6 @@ def measure():
 
     ath = sp['totals']
     fy27 = {c: book[c]['fy27_balanced'] for c in CAT_NAME}
-    trips_total = round(ath[2025] / k['trip_full'], 1)
-    trips_total_nowait = round(ath[2025] / k['trip_nowait'], 1)
-    ath26 = by[2026]['athletic']
-    trips26 = round(ath26['expended'] / k['trip_full'], 1)
-    trips26_all = round(ath26['spent'] / k['trip_full'], 1)
     # Figures STATED at meetings are read out of the verified quotation, never typed.
     qd = {q['key']: q['quote'] for q in quotes}
     money = lambda t: [float(x.replace(',', '')) for x in re.findall(r'\$([\d,]+(?:\.\d+)?)', t)]
@@ -997,10 +1342,8 @@ def measure():
     if not (k['trip_nowait'] <= field_trip <= k['trip_full']):
         fail('the quoted field trip price no longer sits inside the per-trip range')
     restore, _rounded, restore_town, restore_fund = money(qd['restore'])
-    p27 = y[2027]
-    restore_trip_price = round(k['per_trip_miles'] * p27['trip_rate']
-                               + k['wait_hours'] * p27['wait_rate'], 2)
-    restore_trips = round(restore / restore_trip_price)
+    sched = load_schedules(k, sp)
+    stest = schedule_test(k, sched, restore)
     top = sp['ranked'][:2]
     top5 = sum(r['fy2025'] for r in sp['ranked'][:5])
     spring25 = [s for s in sp['seasons'] if s['season'] == 'Spring' and s['fy'] == 2025][0]
@@ -1014,10 +1357,9 @@ def measure():
         hi_share=hi_share, lo_share=lo_share, sped_low=sped_low, sped_over=sped_over,
         recent_over=recent_over, sped_under_run=sped_under_run, step=step, reg25=reg25, fleet_a=fleet_a, fleet_b=fleet_b,
         fy26_avg=fy26_avg, rises=rises, netted=netted, moved_back=moved_back, fy27=fy27,
-        trips_total=trips_total, trips_total_nowait=trips_total_nowait, trips26=trips26,
-        trips26_all=trips26_all, field_trip=field_trip, restore=restore, requests=requests, unpaid=unpaid, reclass=reclass,
+        sched=sched, stest=stest, field_trip=field_trip, restore=restore, requests=requests, unpaid=unpaid, reclass=reclass,
         restore_town=restore_town, restore_fund=restore_fund,
-        restore_trip_price=restore_trip_price, restore_trips=restore_trips, top=top, top5=top5,
+        top=top, top5=top5,
         spring25=spring25, agree=agree, ystep=y)
 
 
@@ -1200,6 +1542,14 @@ def measure_audit(ledger, ml, book, k, sp, st, quotes, y, L, last, recent_over):
 
 def fyf(y):
     return figure(y, C.fy(y), 'fiscal year')
+
+
+def mi1(v):
+    return '%.1f' % v
+
+
+def nfmt(v):
+    return C.num(v) if float(v).is_integer() else '%.1f' % v
 
 
 def build_conclusions(m):
@@ -1385,6 +1735,71 @@ def build_conclusions(m):
                   'the plan is the same practice is the question, not a finding.',
     ))
 
+    # 5a. The FY2027 estimate's stated reasons, against the posted schedules. A comparison of
+    # two measured things -- this autumn's schedule and last autumn's -- and the reasons are
+    # hers, quoted; nothing here says the estimate is wrong (rule 8).
+    t = m['stest']
+    fall = [x for x in t['seasons'] if x['season'] == 'fall'][0]
+    if not fall['complete']:
+        fail('the FY2027 autumn schedule is no longer complete enough to compare')
+    fy_ = {x['fy']: x for x in fall['years']}
+    a27, a26 = fy_[2027], fy_[2026]
+    more = 'a larger share' if a27['home_pct'] > a26['home_pct'] else 'a smaller share'
+    nearer = a27['miles_avg'] < a26['miles_avg']
+    so = t['so_far'][0]
+    rows.append(conclusion(
+        id='fy27-schedule-against-the-estimate', bearing='lever', kind='measured',
+        figure='home27',
+        claim='%s’s autumn schedule puts %s of high school games at home; %s’s put %s.'
+              % (C.fy(2027), C.pct(a27['home_pct']), C.fy(2026), C.pct(a26['home_pct'])),
+        so_what='The %s estimate credits more home games. Away trips average %s miles round '
+                'trip, against %s in %s.' % (C.fy(2027), mi1(a27['miles_avg']),
+                                             mi1(a26['miles_avg']), C.fy(2026)),
+        detail='The Superintendent attributed the %s estimate, %s, partly to scheduling '
+               'competitions closer to Lunenburg and increasing home competitions. On the %s '
+               'high school teams whose %s autumn schedule is posted in full, %s schedules %s '
+               'home games of %s, %s than %s’s %s of %s; %s had %s and %s %s. Away trips, '
+               'measured as driving miles from the high school to each venue, average %s miles '
+               'round trip against %s, %s and %s%s. Our bus model prices the %s autumn '
+               'high school schedule at %s to %s at %s rates, %s to %s of it waiting at '
+               'four hours a trip; winter is partly posted and spring not at all, so no '
+               'full-year figure for %s exists to set beside %s.'
+               % (C.fy(2027), C.usd(t['estimate']), C.num(len(fall['teams'])), C.fy(2027),
+                  C.fy(2027), C.num(a27['home']), C.num(a27['games']), more, C.fy(2026),
+                  C.num(a26['home']), C.num(a26['games']), C.fy(2025), C.pct(fy_[2025]['home_pct']),
+                  C.fy(2024), C.pct(fy_[2024]['home_pct']), mi1(a27['miles_avg']),
+                  mi1(a26['miles_avg']), mi1(fy_[2025]['miles_avg']), mi1(fy_[2024]['miles_avg']),
+                  '' if nearer else ', not shorter', C.fy(2027), C.usd(so['lo']),
+                  C.usd(so['hi']), C.fy(2027), C.usd(so['lo'] - so['lo_miles']),
+                  C.usd(so['hi'] - so['hi_miles']), C.fy(2027), C.usd(t['estimate'])),
+        figures={'home27': figure(a27['home_pct'], C.pct(a27['home_pct'])),
+                 'home26': figure(a26['home_pct'], C.pct(a26['home_pct'])),
+                 'fy27': fyf(2027), 'fy26': fyf(2026), 'fy25': fyf(2025), 'fy24': fyf(2024),
+                 'mi27': figure(a27['miles_avg'], mi1(a27['miles_avg']), 'miles'),
+                 'mi26': figure(a26['miles_avg'], mi1(a26['miles_avg']), 'miles'),
+                 'mi25': figure(fy_[2025]['miles_avg'], mi1(fy_[2025]['miles_avg']), 'miles'),
+                 'mi24': figure(fy_[2024]['miles_avg'], mi1(fy_[2024]['miles_avg']), 'miles'),
+                 'est': U(t['estimate']), 'teams': figure(len(fall['teams']),
+                                                          C.num(len(fall['teams'])), 'teams'),
+                 'h27': figure(a27['home'], C.num(a27['home']), 'games'),
+                 'g27': figure(a27['games'], C.num(a27['games']), 'games'),
+                 'h26': figure(a26['home'], C.num(a26['home']), 'games'),
+                 'g26': figure(a26['games'], C.num(a26['games']), 'games'),
+                 'p25': figure(fy_[2025]['home_pct'], C.pct(fy_[2025]['home_pct'])),
+                 'p24': figure(fy_[2024]['home_pct'], C.pct(fy_[2024]['home_pct'])),
+                 'lo': U(so['lo']), 'hi': U(so['hi']), 'wlo': U(so['lo'] - so['lo_miles']),
+                 'whi': U(so['hi'] - so['hi_miles'])},
+        basis='Every high school game ArbiterLive lists for the teams whose %s autumn schedule '
+              'is posted in full, canceled and postponed games left out, read on %s; venue '
+              'distances are OUR measurement, driving routes on OpenStreetMap. The quotation is '
+              'the School Committee minutes of 26 August 2026, re-read on every build. The bus '
+              'model is OUR ESTIMATE.' % (C.fy(2027), t['fetched']),
+        not_shown='The autumn is not over: games can still be added. Whether a bus went to any '
+                  'game, or was shared, is not recorded; how the district built its estimate '
+                  'is not published.',
+        allow=('26 August 2026', t['fetched']),
+    ))
+
     # 6. The fee fund: receipts against spending, and the reclassification in the same card.
     ff = A['fund']['by']
     rows.append(conclusion(
@@ -1505,6 +1920,8 @@ H = {
     'fund': 'The athletic fee fund: receipts against spending',
     'restore': 'The FY2027 restoration: the plan against the sheet and the fund',
     'track': 'Which sport’s buses cost most: track, once its two rows are added together',
+    'sheet': 'The sheet against the schedules',
+    'sched27': 'The FY2027 estimate against the posted schedules',
     'model': 'The contract against this site’s model',
     'contract': '4. The Dee Bus contract: what is fixed, and what the 7.6% was',
     'sec2': '2. Athletic transportation: what it costs and who has paid',
@@ -1773,29 +2190,25 @@ def build_brief(m):
                    allow=('30 June',)),
         ])
 
-    # ---- which sport, in trips. Trips are OUR estimate: dollars over the bid form's average
-    # trip at the new contract's prices. The bid form's own projection is 100 trips a year
-    # for athletics, field trips and band together -- a figure the DISTRICT wrote.
-    trip = k['trip_full']
-    teams = A['track']['teams'][2024]
-    low = min((t for t in teams if t['cost'] > 0), key=lambda t: t['cost'])
-    if len(low['sports']) != 1:
-        fail('the cheapest FY2024 team is now a paired row; the track chain names one sport')
-    low_name = '%s %s' % ({'MS': 'middle school', 'HS': 'high school'}[low['level']],
-                          low['sports'][0].lower())
-    tt = lambda v: int(round(v / trip))
-    WORD = {1: 'one', 2: 'two', 3: 'three'}
-    t_it, t_so, t_lo, t_all = tt(tr['it24']), tt(tr['soccer24']), tt(low['cost']), tt(tot24)
-    if t_lo not in WORD:
-        fail('the cheapest team is no longer a handful of trips; the say spells it as a word')
-    times = int(round(tr['it24'] / low['cost']))
+    # ---- which sport, and can the sheet be trusted. The schedules are the second witness:
+    # where each team played, how far away, and a bus model that is OURS (load_schedules).
+    S = m['sched']
+    cmp_ = {(c['fy'], c['level'], c['sport']): c for c in S['compare']}
+    it = cmp_[(2024, 'HS', 'Indoor Track - Boys')]
+    if not (it['halved'] and it['sheet'] > it['hi']):
+        fail('indoor track no longer prints above the upper bound of its schedule, halved')
+    ut = cmp_.get((2025, 'HS', 'Unified Track'))
+    if not (ut and ut['below_miles']):
+        fail('unified track FY2025 is no longer below the miles alone; the track chain names it')
+    fl = S['flagged']
+    itg = cmp_[(2024, 'HS', 'Indoor Track - Girls')]
+    if not (itg['away'] == it['away'] and it['charges'] >= 2 * it['away']):
+        fail('indoor track’s charges are no longer at least twice its away meets, per team')
     track = B.chain(
         'track', 'Which sport’s buses cost most? Can we trust the figures?', 'unknown',
-        'Track costs most to bus on the district’s sheet: %s in %s, by our estimate %s trips. '
-        'The cheapest team, %s, is about %s.'
-        % (C.usd(tr['it24']), C.fy(2024), C.num(t_it), low_name, WORD[t_lo]),
-        figures={'a': U(tr['it24']), 'b': F(2024), 't': figure(t_it, C.num(t_it), 'trips'),
-                 'l': figure(t_lo, WORD[t_lo], 'trips')},
+        'Track costs most on the district’s sheet, %s in %s. Its posted schedule shows far '
+        'fewer away meets than the sheet has charges.' % (C.usd(tr['it24']), C.fy(2024)),
+        figures={'a': U(tr['it24']), 'b': F(2024)},
         steps=[
             B.step('Boys’ and girls’ indoor track each print %s for %s. Added, %s is ahead of '
                    'football’s %s and girls’ soccer’s %s.'
@@ -1804,31 +2217,28 @@ def build_brief(m):
                    'measured', {'a': U2(tr['it24_row']), 'b': F(2024), 'c': U2(tr['it24']),
                                 'd': U2(tr['second24']['cost']), 'e': U2(tr['soccer24'])},
                    link=ln('track', 'Which sport’s buses cost most')),
-            B.step('At the new contract’s average trip, %s for %s miles and four hours’ wait, '
-                   'track is about %s trips, girls’ soccer %s, and %s at %s about %s: track '
-                   'costs %s times as much.'
-                   % (usd2(trip), C.num(k['per_trip_miles']), C.num(t_it), C.num(t_so),
-                      low_name, usd2(low['cost']), WORD[t_lo], C.num(times)),
-                   'estimate', {'a': U2(trip), 'b': figure(k['per_trip_miles'],
-                                                           C.num(k['per_trip_miles']), 'miles'),
-                                'c': figure(t_it, C.num(t_it), 'trips'),
-                                'd': figure(t_so, C.num(t_so), 'trips'),
-                                'e': U2(low['cost']), 'f': figure(t_lo, WORD[t_lo], 'trips'),
-                                'g': figure(times, C.num(times), 'times')},
-                   link=ln('track', 'Which sport’s buses cost most')),
-            B.step('The bid form projects %s trips a year for athletics, field trips and band '
-                   'together. At the same price, the %s athletic sheet alone is about %s.'
-                   % (C.num(k['form_trips']), C.fy(2024), C.num(t_all)),
-                   'estimate', {'a': figure(k['form_trips'], C.num(k['form_trips']), 'trips'),
-                                'b': F(2024), 'c': figure(t_all, C.num(t_all), 'trips')},
-                   link=ln('track', 'Which sport’s buses cost most')),
+            B.step('The sheet’s formula for it holds %s charges; the schedule lists %s away meets '
+                   'per team. Our model, one bus a meet with four hours’ waiting at %s rates, puts each '
+                   'team’s at %s.'
+                   % (C.num(it['charges']), C.num(it['away']), C.fy(2026), usd2(it['hi'])),
+                   'estimate', {'a': figure(it['charges'], C.num(it['charges']), 'charges'),
+                                'b': figure(it['away'], C.num(it['away']), 'meets'),
+                                'c': F(2026), 'd': U2(it['hi'])},
+                   link=ln('sheet', 'The sheet against the schedules')),
+            B.step('The other way: %s sport-years print less than the miles alone would cost. '
+                   'Unified track’s %s %s covers %s away meets, %s of miles at %s rates.'
+                   % (C.num(len(fl)), C.fy(2025), usd2(ut['sheet']), C.num(ut['away']),
+                      usd2(ut['lo_miles']), C.fy(2026)),
+                   'estimate', {'n': figure(len(fl), C.num(len(fl)), 'sport-years'),
+                                'a': F(2025), 'b': U2(ut['sheet']),
+                                'c': figure(ut['away'], C.num(ut['away']), 'meets'),
+                                'd': U2(ut['lo_miles']), 'e': F(2026)},
+                   link=ln('sheet', 'The sheet against the schedules')),
             B.step('At the School Committee, members said the indoor track league meet had '
                    'moved to the Reggie Lewis Center in Boston, and that the bus is billed in '
                    'full while it waits there.', 'caption', cite=video('reggie')),
-            B.step('The district’s second sheet prices %s indoor track at %s. No trip-by-trip '
-                   'record exists to say which sheet is right, or what any one trip cost.'
-                   % (C.fy(2024), usd2(tr['fin24'])), 'gap',
-                   {'a': F(2024), 'b': U2(tr['fin24'])},
+            B.step('Whether a bus went, was shared, or waited four hours is not recorded, so '
+                   'neither the sheet nor our model can be checked trip by trip.', 'gap',
                    closes='Dee Bus’s athletic invoices, each trip’s date, team, miles and '
                           'hours waiting, from the Business Office'),
         ])
@@ -1993,10 +2403,32 @@ def payload(m, rows, brief):
                  cb_transport=cbm.get(r['fy'])) for r in m['ledger']]
     sped.append(dict(fy=2027, budget=b['sped']['fy27_balanced'], spent=None, cb_transport=None))
 
+    S, T_ = m['sched'], m['stest']
+    cmp_ = {(c['fy'], c['level'], c['sport']): c for c in S['compare']}
+
+    def model(r, fy):
+        c = cmp_.get((fy, r['level'], r['sport']))
+        return (dict(away=c['away'], charges=c['charges'], lo=c['lo'], hi=c['hi'],
+                     lo_miles=c['lo_miles']) if c and c['scheduled'] else None)
     sports = [dict(season=r['season'], level=r['level'], sport=r['sport'],
                    label='%s %s · %s' % (r['level'], r['sport'], r['season']),
-                   fy2024=r['fy2024'], fy2025=r['fy2025'], trips=r['trips'],
-                   trips_nowait=r['trips_nowait']) for r in sp['rows']]
+                   fy2024=r['fy2024'], fy2025=r['fy2025'], model2024=model(r, 2024),
+                   model2025=model(r, 2025)) for r in sp['rows']]
+    schedules = dict(
+        about='OUR ESTIMATE. Each team’s away games as ArbiterLive lists them (canceled, '
+              'postponed and rained-out games left out), each venue’s round-trip driving miles '
+              'from the high school, priced at the Dee Bus contract’s per-mile rate plus %s '
+              'hours’ waiting a trip at its hourly rate. FY2022 to FY2025 are AT FY2026 '
+              'PRICES; the earlier contract’s rates are not held. Upper bound: one bus per '
+              'team-game. Lower bound: one bus per date and venue, shared by every Lunenburg '
+              'team there. Whether buses were shared is not observed.' % C.num(WAIT_HOURS),
+        source='ArbiterLive (arbiterlive.com), the scheduling site the district links; read '
+               '%s. The pages are not archived or republished; the rows are cited as facts only.' % T_['fetched'],
+        wait_hours=WAIT_HOURS, by_fy=S['by_fy'],
+        teams=[dict((k_, v) for k_, v in t.items()) for t in S['teams']],
+        sheet_compare=S['compare'], charges=S['charges'],
+        venues_without_distance=S['venues_without'],
+        fy2027_test=T_)
 
     return dict(
         generated_by='scripts/build_transportation.py',
@@ -2005,8 +2437,9 @@ def payload(m, rows, brief):
               'fixes through %s.' % (C.fy(m['first']), C.fy(2028)),
         grain='DOLLARS, school general fund, the budget voted before the year beside what was '
               'spent at its close (expended plus still committed), %s; never added together. '
-              'Per-sport dollars are the district’s hand-assembled sheets (stated). Every trip '
-              'count is OUR ESTIMATE.' % C.fyspan(m['first'], last),
+              'Per-sport dollars are the district’s hand-assembled sheets (stated). Games are '
+              'counted off the posted schedules; every bus cost built from them is OUR '
+              'ESTIMATE.' % C.fyspan(m['first'], last),
         # NO STAT ROW. Residents told TJ a big number with a paragraph under it leaves them
         # nothing to say; the brief's sentences carry the figures instead, each inside the
         # sentence a reader would repeat (notes/process/REPORT-FORMAT.md).
@@ -2037,6 +2470,7 @@ def payload(m, rows, brief):
         sports=sports,
         sport_seasons=sp['seasons'],
         sport_compare=sp['compare'],
+        schedules=schedules,
         contract=dict(years=k['years'], regular_line=sorted(reg_line, key=lambda x: x['fy']),
                       grand_total=k['grand'], buses=dict(p77=N77, p83=N83), days=DAYS,
                       trip_full=k['trip_full'], trip_nowait=k['trip_nowait'],
@@ -2049,8 +2483,11 @@ def payload(m, rows, brief):
         said=[dict(key=q['key'], board=q['board'], date=q['date'], quote=q['quote'],
                    why=q['why'], cite=q['cite']) for q in m['quotes']],
         not_established=[
-            'How many athletic bus trips any sport took, or what any one trip cost. Every trip '
-            'figure here is dollars divided by the bid form’s own average trip.',
+            'How many athletic bus trips any sport took, or what any one trip cost. The '
+            'schedules show where teams played, not whether a bus went, was shared, or how '
+            'long it waited; the bus model built from them is ours and gives a range.',
+            'How the district built its FY2027 athletic transportation estimate of %s.'
+            % C.usd(m['restore']),
             'The FY2025 Dee Bus rates and fleet, so whether FY2026’s 7.6% was price or a bus.',
             'Where the student bus fees are booked; the school choice fund account named for a '
             'bus fee is a candidate, not an established destination.',
@@ -2265,6 +2702,68 @@ def render_audit(m, rows=()):
          usd2(y[2026]['trip_rate']), usd2(y[2027]['trip_rate']), usd2(y[2026]['wait_rate']),
          usd2(y[2027]['wait_rate']), C.usd(r['estimate'])))
 
+    # ---- the FY2027 estimate's reasons, against the schedules
+    t = m['stest']
+    a('### %s\n\n' % H['sched27'])
+    a(lead('fy27-schedule-against-the-estimate'))
+    a('Her two reasons can be read off the schedules the district posts: the share of high '
+      'school games played at home, and how far the away games are. Like for like: only the '
+      'high school teams whose %s schedule for the season is posted in full, the same teams '
+      'in every year, canceled and postponed games left out. A season is compared only if it '
+      'had begun when the schedules were read, %s. Miles are round-trip driving miles from the '
+      'high school, our measurement; an away game whose venue has no distance is left out of '
+      'the average.\n\n' % (C.fy(2027), t['fetched']))
+    a('| season | FY | teams compared | games | at home | home share | away | average round-trip '
+      'miles per away game (games measured) |\n|---|---|---:|---:|---:|---:|---:|---:|\n')
+    for se in t['seasons']:
+        if not se['teams']:
+            a('| %s | %s | — | — | — | — | — | not posted |\n' % (se['season'], C.fy(2027)))
+            continue
+        for yr in se['years']:
+            a('| %s | %s | %s | %s | %s | %s | %s | %s |\n' % (
+                se['season'] + ('' if se['complete'] else ' (not compared)'), C.fy(yr['fy']),
+                C.num(len(se['teams'])), C.num(yr['games']), C.num(yr['home']),
+                C.pct(yr['home_pct']) if yr['home_pct'] is not None else '—', C.num(yr['away']),
+                '%s (%s)' % (mi1(yr['miles_avg']), C.num(yr['with_distance']))
+                if yr['miles_avg'] is not None else '—'))
+    fall = [se for se in t['seasons'] if se['season'] == 'fall'][0]
+    win = [se for se in t['seasons'] if se['season'] == 'winter'][0]
+    nm = lambda ts: ', '.join('%s (%s)' % (sp_.lower(), lv.lower()) for sp_, lv in ts)
+    wy = {yr['fy']: yr for yr in win['years']}
+    a('\nLeft out of the autumn comparison because its %s schedule is posted short: %s. '
+      'Winter had not begun at the reading, so it is shown and not compared; posted short '
+      'and left out: %s. As posted so far, the winter teams shown have %s of games at home '
+      'against %s in %s — the direction the estimate describes — but the season has not '
+      'begun and its schedules can still change. Spring is not posted.\n\n'
+      % (C.fy(2027), nm(fall['short']), nm(win['short']), C.pct(wy[2027]['home_pct']),
+         C.pct(wy[2026]['home_pct']), C.fy(2026)))
+    sf, y26, asm = t['so_far'], t['year26'], t['assembled']
+    a('**What the schedule so far would cost — OUR ESTIMATE, at %s rates** (%s a mile, %s an '
+      'hour waiting, four hours a trip):\n\n' % (C.fy(2027), usd2(t['rate']), usd2(t['wait'])))
+    a('| high school, as scheduled | away team-games | shared buses | of which waiting | one bus '
+      'per team-game | of which waiting |\n|---|---:|---:|---:|---:|---:|\n')
+    lab = {('fall', 2027): '%s autumn, as posted' % C.fy(2027),
+           ('winter', 2027): '%s winter, posted so far' % C.fy(2027),
+           ('fall', 2026): '%s autumn' % C.fy(2026), ('winter', 2026): '%s winter' % C.fy(2026),
+           ('spring', 2026): '%s spring' % C.fy(2026)}
+    for p_ in sf + y26:
+        a('| %s | %s | %s | %s | %s | %s |\n' % (
+            lab[(p_['season'], p_['fy'])], C.num(p_['away']), C.usd(p_['lo']),
+            C.usd(p_['lo'] - p_['lo_miles']), C.usd(p_['hi']), C.usd(p_['hi'] - p_['hi_miles'])))
+    a('\nThe %s schedule posted so far — the autumn and part of the winter — is priced at %s '
+      'to %s. That is a **partial year**, set beside an estimate of %s for the whole of it. To '
+      'give a full year for scale only, OUR assembly: %s’s autumn as posted with %s’s winter '
+      'and spring, all at %s rates, comes to %s with shared buses and %s with one bus per '
+      'team-game. Of that, the miles alone are %s to %s; the rest is waiting, and the waiting '
+      'is our four hours. **Read the other way:** on that assembled year, with buses shared, '
+      'the estimate leaves room for about %s hours of paid waiting a trip. Nothing here says what '
+      'her estimate assumed — the minutes say it used actual schedules and prior-year spring '
+      'costs, and the worksheet is not published (registered: *%s*).\n\n'
+      % (C.fy(2027), C.usd(sf[0]['lo'] + sf[1]['lo']), C.usd(sf[0]['hi'] + sf[1]['hi']),
+         C.usd(t['estimate']), C.fy(2027), C.fy(2026), C.fy(2027), C.usd(asm['lo']),
+         C.usd(asm['hi']), C.usd(asm['lo_miles']), C.usd(asm['hi_miles']),
+         '%.1f' % t['be_hours'], m['gaps']['estimate27']))
+
     # ---- the model
     mo = A['model']
     a(render_track(m, lead('two-sheets-one-cost')))
@@ -2329,24 +2828,22 @@ def render_track(m, lead_text=''):
       % ('first' if t['fin_rank25'] == 1 else 'number %d' % t['fin_rank25'], C.fy(2025),
          t['fin_rank24'], C.fy(2024), usd2(t['fin25']), usd2(t['fin24']),
          usd2(t['it24'] - t['fin24']), C.fy(2024)))
-    tm = [x for x in t['teams'][2024] if x['cost'] > 0]
-    lo_ = min(tm, key=lambda x: x['cost'])
-    a('**In trips — OUR ESTIMATE, and what it cannot say.** Nobody publishes a trip count, so '
-      'this page divides dollars by the bid form’s average trip at the new contract’s %s prices: '
-      '%s, or %s with no waiting. In %s that puts indoor track at about %s trips (%s with no '
-      'waiting), girls’ soccer at about %s, and the cheapest team that rode at all, %s %s at %s, '
-      'at about %s. The whole sheet, %s, is about %s trips, against the %s a year the bid form '
-      'projects for athletics, field trips and band together. Two limits. **Every sport is '
-      'priced at the same average trip, so a cost per trip by sport is not something this can '
-      'give** — a golf match and a meet in Boston are not the same bus. And %s was paid under '
-      'the previous contract, whose rates have not been published; if they were lower, every '
-      'count here is too low.\n\n'
-      % (C.fy(2026), usd2(k['trip_full']), usd2(k['trip_nowait']), C.fy(2024),
-         C.num(round(t['it24'] / k['trip_full'])), C.num(round(t['it24'] / k['trip_nowait'])),
-         C.num(round(t['soccer24'] / k['trip_full'])), lo_['level'], ' + '.join(lo_['sports']),
-         usd2(lo_['cost']), C.num(round(lo_['cost'] / k['trip_full'])),
-         usd2(sp['totals'][2024]), C.num(round(sp['totals'][2024] / k['trip_full'])),
-         C.num(k['form_trips']), C.fy(2024)))
+    S = m['sched']
+    itc = [c for c in S['compare'] if c['fy'] == 2024 and c['sport'] == 'Indoor Track - Boys'][0]
+    it5 = [c for c in S['compare'] if c['fy'] == 2025 and c['sport'] == 'Indoor Track - Boys'][0]
+    it5g = [c for c in S['compare'] if c['fy'] == 2025 and c['sport'] == 'Indoor Track - Girls'][0]
+    a('**Against the schedules.** ArbiterLive lists %s away meets for each indoor track team '
+      'in %s, and %s for the boys and %s for the girls in %s. The sheet’s %s formula holds %s charges, halved between the two '
+      'rows. Our bus model, one bus a meet with four hours of waiting at %s rates, puts %s’s '
+      'listed meets at %s a team — **our estimate**, and less than half what the sheet '
+      'prints. Either the schedule is short, or the waits were long, or both; the recordings '
+      'below speak to the second, and nothing published measures either (section 3, '
+      '*%s*).\n\n'
+      % (C.num(itc['away']), C.fy(2024), C.num(it5['away']), C.num(it5g['away']), C.fy(2025),
+         C.fy(2024),
+         C.num(itc['charges']), C.fy(2026), C.fy(2024), usd2(itc['hi']), H['sheet']))
+    if not itc['hi'] * 2 < itc['sheet']:
+        fail('indoor track FY2024 is no longer more than twice its modelled upper bound')
     a('**Why outdoor track looks cheapest.** Only in %s, and only on rows whose season total the '
       'workbook prints as %s: the spring rows sum to %s, %s against %s’s %s. *A hypothesis:* the '
       'spring section was unfinished when the sheet was made; nothing here tests it '
@@ -2366,6 +2863,231 @@ def render_track(m, lead_text=''):
       '— is published for any year (registered: *%s*).\n\n'
       % (usd2(y[2026]['wait_rate']), C.fy(2026), usd2(y[2027]['wait_rate']), C.fy(2027),
          m['gaps']['trips']))
+    return ''.join(w)
+
+
+def render_sec3(m):
+    """Section 3: the district's per-sport sheet, and the posted schedules beside it. The
+    schedule figures are counts; every dollar built from them is OUR ESTIMATE and says so."""
+    sp, k, S, au = m['sports'], m['contract'], m['sched'], m['audit']
+    y = m['ystep']
+    w = []
+    a = w.append
+    byfy = {b_['fy']: b_ for b_ in S['by_fy']}
+    f25 = byfy[2025]
+    ch = S['charges']
+    a('## 3. Sport by sport: the district’s sheet and the posted schedules\n\n')
+    a('### In plain terms\n\n')
+    a('In %s no single sport’s buses cost more than %s on the district’s sheet, and the five '
+      'biggest together were %s of its %s. The schedules the district posts list %s away '
+      'games that year, to %s different places on different days. **Our bus model** — miles to '
+      'each venue at the contract’s per-mile rate, plus four hours of waiting at its hourly '
+      'rate, at %s prices — puts that schedule at %s if teams going to the same place on the '
+      'same day shared a bus, and %s if every team had its own. The waiting is %s to %s of it, '
+      'and four hours is our assumption; the miles alone are %s to %s. The sheet’s whole total '
+      'is below even the shared figure. Nobody publishes which buses ran, so the truth is not '
+      'known to be anywhere in that range.\n\n'
+      % (C.fy(2025), C.usd(m['top'][0]['fy2025']), C.usd(m['top5']), C.usd(sp['totals'][2025]),
+         C.num(f25['away']), C.num(f25['trips']), C.fy(2026), C.usd(f25['lo']), C.usd(f25['hi']),
+         C.usd(f25['lo_wait']), C.usd(f25['hi_wait']), C.usd(f25['lo_miles']),
+         C.usd(f25['hi_miles'])))
+    if not sp['totals'][2025] < f25['lo']:
+        fail('the FY2025 sheet total is no longer below the shared-bus model')
+
+    # ---- the schedules, by year
+    a('### The schedules, year by year — OUR ESTIMATE in dollars\n\n')
+    a('Every game ArbiterLive lists for a Lunenburg team, %s, with canceled, postponed and '
+      'rained-out games left out. The counts are the schedules’; the miles are our measurement '
+      '(driving routes on OpenStreetMap, from the high school and back); the dollars are our '
+      'model. **Lower bound:** one bus for each distinct date and venue, its cost shared among '
+      'every Lunenburg team there. **Upper bound:** one bus for every team-game. Whether buses '
+      'were shared is not recorded anywhere. %s to %s are priced at %s rates (%s a mile, %s an '
+      'hour waiting), because the earlier contract’s rates are not held (registered: *%s*); '
+      '%s at its own, %s and %s.\n\n'
+      % (C.fyspan(SCHED_YEARS[0], SCHED_YEARS[-1]), C.fy(SCHED_YEARS[0]), C.fy(2025),
+         C.fy(2026), usd2(y[2026]['trip_rate']), usd2(y[2026]['wait_rate']), m['gaps']['rates'],
+         C.fy(2027), usd2(y[2027]['trip_rate']), usd2(y[2027]['wait_rate'])))
+    a('| FY | away team-games | distinct date-and-venue trips | away games with no distance | '
+      'shared buses: miles | shared: waiting | **shared: total** | one bus per team: miles | '
+      'per team: waiting | **per team: total** | priced at |\n'
+      '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|\n')
+    for b_ in S['by_fy']:
+        a('| %s | %s | %s | %s | %s | %s | **%s** | %s | %s | **%s** | %s rates%s |\n' % (
+            C.fy(b_['fy']), C.num(b_['away']), C.num(b_['trips']), C.num(b_['no_distance']),
+            C.usd(b_['lo_miles']), C.usd(b_['lo_wait']), C.usd(b_['lo']), C.usd(b_['hi_miles']),
+            C.usd(b_['hi_wait']), C.usd(b_['hi']), C.fy(b_['price_year']),
+            ', schedule still being posted' if b_['fy'] == 2027 else ''))
+    he = sum(b_['home_elsewhere'] for b_ in S['by_fy'])
+    a('\nA game with no listed venue, or at one of the %s venues OpenStreetMap could not place, '
+      'carries its waiting and no miles, so the miles column is a floor for those games. Left '
+      'out of both bounds: %s home games played at a venue outside Lunenburg across the six '
+      'years, most of them hockey at its home rink in Fitchburg — the district lists them as '
+      'home, and whether a bus carried the team is not recorded. %s is the autumn as posted '
+      'and the winter as far as it is posted; spring is not posted at all.\n\n'
+      % (C.num(len(S['venues_without'])), C.num(he), C.fy(2027)))
+
+    # ---- team by team
+    a('**Away games played, team by team** (counts from the schedules; a dash is a year with '
+      'no away game listed):\n\n')
+    a('| sport | team | %s |\n|---|---|%s\n' % (' | '.join(C.fy(f) for f in SCHED_YEARS),
+                                              '---:|' * len(SCHED_YEARS)))
+    tk = sorted({(t['sport'], t['level']) for t in S['teams']})
+    tv = {(t['fy'], t['sport'], t['level']): t for t in S['teams']}
+    for sport_, lvl in tk:
+        cells_ = []
+        for f in SCHED_YEARS:
+            t = tv.get((f, sport_, lvl))
+            cells_.append(C.num(t['away']) if t and t['away'] else '—')
+        a('| %s | %s | %s |\n' % (sport_, lvl, ' | '.join(cells_)))
+    a('\nThe dollars for each team and year, both bounds and the waiting part separately, are '
+      'in the page’s data (`/data/transportation.json`, `schedules.teams`).\n\n')
+
+    # ---- the sheet against the schedules
+    cmp_ = [c for c in S['compare'] if c['scheduled']]
+    fl = S['flagged']
+    below_lo = [c for c in cmp_ if c['sheet'] and c['sheet'] < c['lo']]
+    above = [c for c in cmp_ if c['sheet'] > c['hi']]
+    a('### %s\n\n' % H['sheet'])
+    a('The district’s sheet beside each sport’s posted schedule, for the two years the sheet '
+      'carries transportation. A *charge* is one amount typed into the sheet’s formula for '
+      'that cell: `=532.5+375` is two. A cell typed as a bare number is one figure, not a '
+      'formula, and is marked so. Where the sheet halves a formula between two rows (`/2`), '
+      'each row shows the whole formula’s charges. The model columns are **OUR ESTIMATE** at '
+      '%s prices.\n\n' % C.fy(2026))
+    a('| FY | level | sport | sheet | charges in its formula | away games listed | distinct trips '
+      '| model: miles alone, shared buses | model: shared, with waiting | model: one bus per '
+      'team-game | reading |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|\n')
+    for c in sorted(S['compare'], key=lambda c: (c['fy'], c['level'], c['sport'])):
+        if not c['scheduled']:
+            read = 'no schedule posted'
+        elif c['below_miles']:
+            read = '**below the miles alone**'
+        elif c['sheet'] > c['hi']:
+            read = 'above the upper bound'
+        elif c['sheet'] < c['lo']:
+            read = 'below the shared bound with waiting'
+        else:
+            read = 'inside the range'
+        nch = ('1 typed figure' if c['typed'] and c['charges'] else C.num(c['charges'])
+               + (', halved' if c['halved'] else ''))
+        a('| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |\n' % (
+            C.fy(c['fy']), c['level'], c['sport'], usd2(c['sheet']), nch,
+            C.num(c['away']) if c['scheduled'] else '—', C.num(c['trips']) if c['scheduled'] else '—',
+            usd2(c['lo_miles']) if c['scheduled'] else '—', usd2(c['lo']) if c['scheduled'] else '—',
+            usd2(c['hi']) if c['scheduled'] else '—', read))
+    a('\n**What the data shows.** ')
+    a('%s sport-years print less than the miles alone would cost on the lower bound — shared '
+      'buses and no waiting at all, so the four-hour assumption plays no part: %s. %s of the %s '
+      'are in %s’s spring, the section already registered as possibly unfinished (*%s*). '
+      % (C.num(len(fl)), '; '.join('%s %s %s, %s against %s away %s and %s of miles'
+                                   % (C.fy(c['fy']), c['level'], c['sport'], usd2(c['sheet']),
+                                      C.num(c['away']), 'game' if c['away'] == 1 else 'games',
+                                      usd2(c['lo_miles'])) for c in fl),
+         C.num(sum(1 for c in fl if c['fy'] == 2025 and c['season'] == 'Spring')), C.num(len(fl)),
+         C.fy(2025), m['gaps']['spring25']))
+    a('In the other direction, %s sport-years print more than one bus for every listed game '
+      'would cost: %s. Indoor track’s %s formula holds %s charges against %s meets listed per '
+      'team. Across all %s scheduled sport-years, %s fall below the shared bound once four '
+      'hours of waiting is counted — which says as much about that assumption, and about the '
+      'old contract’s unknown prices, as about the sheet.\n\n'
+      % (C.num(len(above)), '; '.join('%s %s %s, %s against %s' % (
+          C.fy(c['fy']), c['level'], c['sport'], usd2(c['sheet']), usd2(c['hi'])) for c in above),
+         C.fy(2024), C.num([c for c in cmp_ if c['fy'] == 2024 and c['sport'] == 'Indoor Track - Boys'][0]['charges']),
+         C.num([c for c in cmp_ if c['fy'] == 2024 and c['sport'] == 'Indoor Track - Boys'][0]['away']),
+         C.num(len(cmp_)), C.num(len(below_lo))))
+    a('**The charges themselves changed shape.** In %s the sheet’s formulas hold %s charges '
+      'with a median of %s, a median of %s to a cell; in %s, %s charges with a median of %s, '
+      'a median of %s to a cell. *A hypothesis:* the %s figures are monthly or seasonal '
+      'invoice totals rather than trips; nothing here tests it, so a %s charge count is not a '
+      'trip count.\n\n'
+      % (C.fy(2024), C.num(ch[2024]['n']), usd2(ch[2024]['median']), nfmt(ch[2024]['per_cell']),
+         C.fy(2025), C.num(ch[2025]['n']), usd2(ch[2025]['median']), nfmt(ch[2025]['per_cell']),
+         C.fy(2025), C.fy(2025)))
+    a('**What it does not show** is which is wrong. Every one of these fits the same numbers, '
+      'and the data cannot choose between them:\n\n')
+    a('- *the sheet is incomplete* — charges not yet entered when it was made;\n'
+      '- *the schedule is incomplete* — ArbiterLive lists only what a coach posted, and track '
+      'lists fewer meets than its formulas hold charges;\n'
+      '- *buses were shared* more widely than one date and venue — teams going the same way, a '
+      'single bus dropping two teams;\n'
+      '- *no bus went* — a van, parents driving, or a team riding with another school;\n'
+      '- *a charge is not a trip* — an invoice can cover a month, or several teams;\n'
+      '- *waiting was not four hours* — a game is shorter, a meet in Boston longer.\n\n')
+    a('What would settle it is the same document for every row: Dee Bus’s athletic invoices, '
+      'each trip’s date, team, miles and hours waiting (registered: *%s*).\n\n'
+      % m['gaps']['trips'])
+
+    # ---- the sheet's own numbers, kept
+    a('### The district’s sheet, sport by sport\n\n')
+    a('From the district’s sport-by-sport workbook; the cell is the workbook’s own.\n\n')
+    a('| season | level | sport | %s | %s |\n|---|---|---|---:|---:|\n'
+      % (C.fy(2024), C.fy(2025)))
+    for r in sp['rows']:
+        a('| %s | %s | %s | %s | %s |\n' % (
+            r['season'], r['level'], r['sport'],
+            usd2(r['fy2024']) if r['fy2024'] is not None else '—',
+            usd2(r['fy2025']) if r['fy2025'] is not None else '—'))
+    a('| **all** | | | **%s** | **%s** |\n\n'
+      % (usd2(sp['totals'][2024]), usd2(sp['totals'][2025])))
+    a('**Season totals against the workbook’s own.** ')
+    bad = [s_ for s_ in sp['seasons'] if not s_['ties']]
+    good = [s_ for s_ in sp['seasons'] if s_['ties']]
+    a('%s of %s season totals the workbook prints equal the sum of its own rows. ' %
+      (C.num(len(good)), C.num(len(sp['seasons']))))
+    for s_ in bad:
+        a('%s %s prints %s in cell %s while its rows sum to %s; this page uses the rows. '
+          % (s_['season'], C.fy(s_['fy']),
+             usd2(s_['printed']) if s_['printed'] is not None else 'nothing',
+             s_['cell'], usd2(s_['rows'])))
+    a('\n\n**A second district sheet disagrees.** The Finance Committee’s copy of *Athletics '
+      'Costs (1).xlsx* prints transportation for %s sport-years that can be matched to the '
+      'workbook; %s agree to the cent and %s do not. Both are hand-built; neither is a '
+      'ledger (rule 13a). The ones that differ:\n\n'
+      % (C.num(len(sp['compare'])), C.num(m['agree']), C.num(len(sp['compare']) - m['agree'])))
+    a('| FY | sport | by-sport workbook | Finance Committee copy |\n|---|---|---:|---:|\n')
+    for c in sp['compare']:
+        if not c['agree']:
+            a('| %s | %s | %s | %s |\n' % (C.fy(c['fy']), c['name'], usd2(c['workbook']),
+                                          usd2(c['fincom'])))
+    a('\nOn the %s sports both sheets print for %s, the workbook totals %s and the Finance '
+      'Committee copy %s, %s lower. This page publishes both and picks neither.\n\n'
+      % (C.num(au['sheets']['n']), C.fy(2024), usd2(au['sheets']['workbook']),
+         usd2(au['sheets']['fincom']), C.pct(au['sheets']['lower_pct'])))
+    a('**Paired sports carry identical figures**, so a per-sport amount is an allocation, not '
+      'a measurement — one bus split between two teams would print this way (a hypothesis): '
+      '%s.\n\n' % '; '.join('%s %s %s, %s each' % (
+          C.fy(p['fy']), p['level'], ' and '.join(p['sports']), usd2(p['value']))
+          for p in au['paired']))
+    spr = au['spring']
+    a('**Spring %s.** Its rows sum to %s, %s against %s’s %s, and spring is %s of the whole '
+      'decline from %s to %s. The workbook prints %s as the season total. *A hypothesis:* the '
+      'spring section was unfinished when the sheet was made; nothing here tests it.\n'
+      % (C.fy(2025), usd2(spr['rows25']), C.pct(spr['fall_pct']), C.fy(2024),
+         usd2(spr['rows24']), C.pct(spr['share_of_drop']), C.fy(2024), C.fy(2025),
+         usd2(spr['printed25'])))
+    a('\n**One trip, priced.** On 4 March 2026 a teacher told the School Committee a class '
+      'field trip would cost *“%s”*: one Dee Bus trip under the new contract, between the bid '
+      'form’s average trip of %s miles priced with no waiting, %s, and with its four hours, %s '
+      '([minutes](%s)).\n\n'
+      % (usd2(m['field_trip']), C.num(k['per_trip_miles']), usd2(k['trip_nowait']),
+         usd2(k['trip_full']), [q for q in m['quotes'] if q['key'] == 'field-trip'][0]['cite']))
+    a('### What this does not show\n\n')
+    a('- **A count of bus trips.** The schedules say where teams played, not whether a bus '
+      'went, was shared, or how long it waited. The model gives a range and both ends are '
+      'ours.\n')
+    a('- **The prices actually paid before %s.** %s to %s ran under the previous contract, '
+      'whose rates were requested on 9 October 2026 and not delivered; every model figure for '
+      'those years is at %s prices.\n' % (C.fy(2026), C.fy(SCHED_YEARS[0]), C.fy(2025),
+                                         C.fy(2026)))
+    a('- **Teams with no schedule.** Cheer posts none, and some teams post none in some years '
+      '(the coverage file says which); a sport with no listed games is not a sport with no '
+      'buses (registered: *%s*).\n' % m['gaps']['schedules'])
+    a('- **The bid form’s own arithmetic.** Its trip lines multiply a trip count by the rate by '
+      'a mileage figure (%s × rate × %s and so on); the mileage figures sum to %s, not the '
+      '%s its estimate states. The subtotal is a quantity for comparing bids, not a forecast; '
+      'this page takes only its rates and its four hours.\n\n'
+      % (C.num(TRIP_ROWS[0][0]), C.num(TRIP_ROWS[0][1]), C.num(k['form_mile_rows']),
+         C.num(k['form_miles'])))
     return ''.join(w)
 
 
@@ -2432,8 +3154,9 @@ def render_md(m, rows, brief):
     a('![Athletic transportation by year: the general fund line voted and spent, beside the '
       'full cost where a district document states one — the fee fund’s share FY2014 to FY2017 '
       'and the district’s by-sport sheet for FY2024 and FY2025.](charts/transportation-athletics.svg)\n\n')
-    a('![Athletic transportation by sport, FY2024 and FY2025, from the district’s by-sport '
-      'workbook, grouped by season. Hover a bar for the trip estimate.](charts/transportation-sports.svg)\n\n')
+    a('![Athletic transportation by sport, FY2024 and FY2025: the district’s by-sport workbook '
+      'as bars, and beside each bar our bus model from the posted schedules, from shared buses '
+      'to one bus per team, at FY2026 prices.](charts/transportation-sports.svg)\n\n')
     a('![Regular-route buses: the general fund line voted each year, and the price the Dee Bus '
       'contract fixes for FY2026 to FY2028, with the two optional years.](charts/transportation-contract.svg)\n\n')
     a('![Special education transportation: voted and spent each year, with the circuit '
@@ -2562,103 +3285,18 @@ def render_md(m, rows, brief):
       % (C.fy(2025), C.usd(a25['budget']), C.usd(m['reclass']), C.usd(a25['revised']),
          rq['quote'], rq['cite']))
     a('**%s, the new contract’s first athletic year**, the general fund line spent %s and had '
-      '%s still committed at the close, %s in all against %s voted. At the contract’s prices '
-      'the amount paid out is about %s of the bid form’s average trips, or %s counting what '
-      'was still committed — our estimate (section 3).\n\n'
+      '%s still committed at the close, %s in all against %s voted. Section 3 sets each sport '
+      'beside its posted schedule.\n\n'
       % (C.fy(2026), C.usd(L['athletic']['expended']), C.usd(L['athletic']['committed']),
-         C.usd(L['athletic']['spent']), C.usd(L['athletic']['budget']),
-         C.num(m['trips26']), C.num(m['trips26_all'])))
+         C.usd(L['athletic']['spent']), C.usd(L['athletic']['budget'])))
     a('### What this does not show\n\n')
     a('- **Whether teams rode more or less.** Dollars moved between two payers; no trip count '
       'is published for any year (registered: *%s*).\n' % m['gaps']['trips'])
     a('- **That the sheet is right.** It is assembled by hand, and the district has not stood '
       'behind any per-sport figure (registered: *%s*).\n\n' % m['gaps']['sport-cost'])
 
-    # ---- 3. per sport
-    a('## 3. Sport by sport, and what the dollars buy in trips\n\n')
-    a('### In plain terms\n\n')
-    a('In %s no single sport’s buses cost more than %s. The five biggest together were %s of '
-      'the %s total. Priced at the new contract’s rates, the whole %s total buys about %s '
-      'trips of the kind the bid form assumes — **our estimate**, not a count.\n\n'
-      % (C.fy(2025), C.usd(m['top'][0]['fy2025']), C.usd(m['top5']), C.usd(sp['totals'][2025]),
-         C.fy(2025), C.num(m['trips_total'])))
-    a('### The evidence\n\n')
-    a('From the district’s sport-by-sport workbook; the cell is the workbook’s own. **Trips are '
-      'OUR ESTIMATE**: %s dollars divided by %s, the bid form’s average trip at %s prices '
-      '(%s miles at %s a mile plus %s hours of waiting at %s an hour). The second trip column '
-      'assumes no waiting, %s a trip, and is the ceiling.\n\n'
-      % (C.fy(2025), usd2(k['trip_full']), C.fy(2026), C.num(k['per_trip_miles']),
-         usd2(k['years'][0]['trip_rate']), C.num(k['wait_hours']),
-         usd2(k['years'][0]['wait_rate']), usd2(k['trip_nowait'])))
-    a('| season | level | sport | %s | %s | trips, %s — OUR ESTIMATE | trips with no waiting — OUR ESTIMATE |\n'
-      % (C.fy(2024), C.fy(2025), C.fy(2025)))
-    a('|---|---|---|---:|---:|---:|---:|\n')
-    for r in sp['rows']:
-        a('| %s | %s | %s | %s | %s | %s | %s |\n' % (
-            r['season'], r['level'], r['sport'],
-            usd2(r['fy2024']) if r['fy2024'] is not None else '—',
-            usd2(r['fy2025']) if r['fy2025'] is not None else '—',
-            C.num(r['trips']) if r['trips'] else '—',
-            C.num(r['trips_nowait']) if r['trips_nowait'] else '—'))
-    a('| **all** | | | **%s** | **%s** | **%s** | **%s** |\n\n'
-      % (usd2(sp['totals'][2024]), usd2(sp['totals'][2025]), C.num(m['trips_total']),
-         C.num(m['trips_total_nowait'])))
-    a('**Season totals against the workbook’s own.** ')
-    bad = [s for s in sp['seasons'] if not s['ties']]
-    good = [s for s in sp['seasons'] if s['ties']]
-    a('%s of %s season totals the workbook prints equal the sum of its own rows. ' %
-      (C.num(len(good)), C.num(len(sp['seasons']))))
-    for s in bad:
-        a('%s %s prints %s in cell %s while its rows sum to %s; this page uses the rows. '
-          % (s['season'], C.fy(s['fy']),
-             usd2(s['printed']) if s['printed'] is not None else 'nothing',
-             s['cell'], usd2(s['rows'])))
-    a('\n\n**A second district sheet disagrees.** The Finance Committee’s copy of *Athletics '
-      'Costs (1).xlsx* prints transportation for %s sport-years that can be matched to the '
-      'workbook; %s agree to the cent and %s do not. Both are hand-built; neither is a '
-      'ledger (rule 13a). The ones that differ:\n\n'
-      % (C.num(len(sp['compare'])), C.num(m['agree']), C.num(len(sp['compare']) - m['agree'])))
-    a('| FY | sport | by-sport workbook | Finance Committee copy |\n|---|---|---:|---:|\n')
-    for c in sp['compare']:
-        if not c['agree']:
-            a('| %s | %s | %s | %s |\n' % (C.fy(c['fy']), c['name'], usd2(c['workbook']),
-                                          usd2(c['fincom'])))
-    au = m['audit']
-    a('\nOn the %s sports both sheets print for %s, the workbook totals %s and the Finance '
-      'Committee copy %s, %s lower. This page publishes both and picks neither.\n\n'
-      % (C.num(au['sheets']['n']), C.fy(2024), usd2(au['sheets']['workbook']),
-         usd2(au['sheets']['fincom']), C.pct(au['sheets']['lower_pct'])))
-    a('**Paired sports carry identical figures**, so a per-sport amount is an allocation, not '
-      'a measurement — one bus split between two teams would print this way (a hypothesis): '
-      '%s.\n\n' % '; '.join('%s %s %s, %s each' % (
-          C.fy(p['fy']), p['level'], ' and '.join(p['sports']), usd2(p['value']))
-          for p in au['paired']))
-    spr = au['spring']
-    a('**Spring %s.** Its rows sum to %s, %s against %s’s %s, and spring is %s of the whole '
-      'decline from %s to %s. The workbook prints %s as the season total. *A hypothesis:* the '
-      'spring section was unfinished when the sheet was made; nothing here tests it.\n'
-      % (C.fy(2025), usd2(spr['rows25']), C.pct(spr['fall_pct']), C.fy(2024),
-         usd2(spr['rows24']), C.pct(spr['share_of_drop']), C.fy(2024), C.fy(2025),
-         usd2(spr['printed25'])))
-    a('\n**One trip, priced.** On 4 March 2026 a teacher told the School Committee a class '
-      'field trip would cost *“%s”*: one Dee Bus trip under the new contract, between this '
-      'page’s no-waiting and four-hour prices of %s and %s ([minutes](%s)).\n\n'
-      % (usd2(m['field_trip']), usd2(k['trip_nowait']), usd2(k['trip_full']),
-         [q for q in m['quotes'] if q['key'] == 'field-trip'][0]['cite']))
-    a('### What this does not show\n\n')
-    a('- **A count of trips.** The estimate assumes every trip is the bid form’s average: %s '
-      'miles and %s hours of waiting. Trips differ — a golf match and a football game are not '
-      'the same bus — so a sport’s estimate is a scale, not its schedule.\n'
-      % (C.num(k['per_trip_miles']), C.num(k['wait_hours'])))
-    a('- **The prices actually paid in %s.** Those dollars were paid under the previous '
-      'contract, whose rates were requested on 9 October 2026 and not delivered. If they were '
-      'lower than %s’s, every trip estimate here is too low.\n' % (C.fy(2025), C.fy(2026)))
-    a('- **The bid form’s own arithmetic.** Its trip lines multiply a trip count by the rate by '
-      'a mileage figure (%s × rate × %s and so on); the mileage figures sum to %s, not the '
-      '%s its estimate states. The subtotal is a quantity for comparing bids, not a forecast, '
-      'and this page uses only the stated average trip.\n\n'
-      % (C.num(TRIP_ROWS[0][0]), C.num(TRIP_ROWS[0][1]), C.num(k['form_mile_rows']),
-         C.num(k['form_miles'])))
+    # ---- 3. per sport, and the schedules beside it
+    a(render_sec3(m))
 
     # ---- 4. the contract
     a('## 4. The Dee Bus contract: what is fixed, and what the 7.6% was\n\n')
@@ -2898,8 +3536,10 @@ def render_md(m, rows, brief):
       'then found the summary was an inventory: its first card was a share nobody would '
       'dispute. The window for the special education under-budget run is ours and is stated '
       'as a rule, and the overrun is computed from the year-end report’s own cents rather than '
-      'from rounded figures.\n\n'
-      % (C.fy(2020), C.fy(m['sped_low']['fy'])))
+      'from rounded figures. On 11 October 2026 the per-sport trip figure was withdrawn: it '
+      'divided %s dollars by a trip priced at %s rates, and that trip was the bid form’s long '
+      'hypothetical one, so small sports read as about one trip. The schedules replaced it.\n\n'
+      % (C.fy(2020), C.fy(m['sped_low']['fy']), C.fy(2025), C.fy(2026)))
 
     # ---- method
     a('## Method and classification\n\n')
@@ -2915,7 +3555,22 @@ def render_md(m, rows, brief):
       % (C.fyspan(2023, last), ' and '.join(C.fy(x) for x in m['tie_years'])))
     a('- **Budget** is the original appropriation; **spent** is expended plus still committed '
       'at the close. They are never added, and no rate here runs from one to the other.\n')
-    a('- **Trips** are OUR ESTIMATE wherever they appear.\n')
+    a('- **The bus model is OUR ESTIMATE wherever it appears.** Games are each team’s listings '
+      'on ArbiterLive, the scheduling site the district links from its athletics page, read '
+      'on %s by `scripts/fetch_arbiter_schedules.py` and extracted to '
+      '`sources/data/athletics-schedules.csv`, with what each team-year’s listing covers in '
+      '`athletics-schedules-coverage.csv`. **ArbiterLive’s pages are not archived or '
+      'republished here**; the page cites the schedules as facts — '
+      'date, team, opponent, venue, home or away — and takes nothing else from them. Venue '
+      'miles are ours: each address geocoded on OpenStreetMap and driven from the high school '
+      'and back by OSRM (`athletics-venue-distances.csv`); %s venues could not be placed. A '
+      'trip costs its miles at the contract’s per-mile rate plus %s hours at its waiting rate '
+      '— the bid form’s own four hours, adopted as our assumption, and always shown apart. '
+      'Lower bound: one bus per date and venue, shared; upper: one per team-game. Years before '
+      '%s are at %s prices. The crosswalk from a scheduled team to a row of the district’s '
+      'sheet is ours (`SHEET_TEAMS`), and every scheduled team must land in one row or the '
+      'build stops.\n' % (m['stest']['fetched'], C.num(len(m['sched']['venues_without'])),
+                          C.num(WAIT_HOURS), C.fy(2026), C.fy(2026)))
     a('- **Every line is net.** A general fund budget line is what the town raises after '
       'anything else that pays for the thing — bus fees, the athletic fee fund, state '
       'reimbursement — has been taken off (rule 11). None of those is netted into any figure '
@@ -2926,6 +3581,11 @@ def render_md(m, rows, brief):
     for s in sources():
         a('- **%s** — %s. `%s` sha256 `%s`\n' % (s['publisher'], s['note'], s['path'],
                                                 s['sha256'][:12]))
+    a('- **ArbiterLive** (arbiterlive.com), the district’s linked athletic scheduling site — '
+      'every game listed for Lunenburg’s teams, %s, read %s. The pages are not archived or '
+      'republished. Our extract: `sources/data/athletics-schedules.csv`; our '
+      'venue distances: `sources/data/athletics-venue-distances.csv`.\n'
+      % (C.fyspan(SCHED_YEARS[0], SCHED_YEARS[-1]), m['stest']['fetched']))
     a('\nGenerated by `scripts/build_transportation.py`; every figure in the summary is '
       'recomputed by `scripts/verify_transportation.py` by a different route.\n')
     return ''.join(w)
@@ -3053,10 +3713,15 @@ def svg_athletics(pay):
 
 
 def svg_sports(pay):
+    """The sheet's dollars as bars, and OUR bus model for the same sport-year as a thin line
+    from the shared-bus bound to the one-bus-per-team bound, at FY2026 prices."""
     rows = [r for r in pay['sports'] if (r['fy2024'] or r['fy2025'])]
-    W, L, R, T, rowh = 780, 230, 20, 36, 18
+    W, L, R, T, rowh = 780, 230, 20, 52, 18
     H = T + rowh * len(rows) + 30
-    hi = nice_top(max(max(r['fy2024'] or 0, r['fy2025'] or 0) for r in rows), 2000)
+    top = max(max(r['fy2024'] or 0, r['fy2025'] or 0,
+                  (r['model2024'] or {}).get('hi', 0), (r['model2025'] or {}).get('hi', 0))
+              for r in rows)
+    hi = nice_top(top, 2000)
     x = lambda v: L + (W - L - R) * v / hi
     o = [HEAD % (W, H)]
     v = 0
@@ -3065,18 +3730,28 @@ def svg_sports(pay):
                  'text-anchor="middle" fill="%s">%s</text>'
                  % (x(v), x(v), T - 4, H - 26, COL['grid'], x(v), H - 12, COL['muted'],
                     html.escape(C.usd(v))))
-        v += 2000
+        v += 4000 if hi > 12000 else 2000
     for i, r in enumerate(rows):
         yy = T + i * rowh
         o.append('<text x="%d" y="%d" text-anchor="end" fill="%s">%s</text>'
                  % (L - 6, yy + 12, COL['ink'], html.escape(r['label'])))
-        if r['fy2024']:
-            o.append('<rect x="%d" y="%d" width="%.1f" height="7" fill="%s" fill-opacity="0.4"/>'
-                     % (L, yy + 2, x(r['fy2024']) - L, COL['athletic']))
-        if r['fy2025']:
-            o.append('<rect x="%d" y="%d" width="%.1f" height="7" fill="%s"/>'
-                     % (L, yy + 9, x(r['fy2025']) - L, COL['athletic']))
-    legend(o, [('FY2024', COL['athletic'], 'pale'), ('FY2025', COL['athletic'], 'box')], L, 10)
+        for fy, dy, op in ((2024, 2, '0.4'), (2025, 9, '1')):
+            v_ = r['fy%d' % fy]
+            if v_:
+                o.append('<rect x="%d" y="%d" width="%.1f" height="7" fill="%s" fill-opacity="%s"/>'
+                         % (L, yy + dy, x(v_) - L, COL['athletic'], op))
+            md = r['model%d' % fy]
+            if md:
+                o.append('<line x1="%.1f" x2="%.1f" y1="%.1f" y2="%.1f" stroke="%s" '
+                         'stroke-width="1.5" stroke-opacity="%s"/>'
+                         % (x(md['lo']), x(md['hi']), yy + dy + 3.5, yy + dy + 3.5, COL['ink'],
+                            '0.45' if fy == 2024 else '1'))
+    legend(o, [('FY2024 sheet', COL['athletic'], 'pale'), ('FY2025 sheet', COL['athletic'], 'box')],
+           L, 10)
+    o.append('<line x1="%d" x2="%d" y1="34" y2="34" stroke="%s" stroke-width="1.5"/>'
+             '<text x="%d" y="38" fill="%s">our bus model from the schedules, shared buses to '
+             'one per team, at FY2026 prices (our estimate)</text>'
+             % (L, L + 24, COL['ink'], L + 30, COL['muted']))
     o.append('</svg>\n')
     return ''.join(o)
 
