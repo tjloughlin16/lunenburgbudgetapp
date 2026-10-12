@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4938 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4944 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4322 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4328 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -214,6 +214,11 @@ Listed so this view cannot look more complete than it is.
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
 - `data/athletics-fincom.csv` — Athletics costs, participation and peer staffing from the Finance Committee’s files
+- `data/athletics-roster-counts.csv` — Players per team, where a coach made the roster public
+- `data/athletics-schedules-coverage.csv` — Which teams’ schedules ArbiterLive prints, by year
+- `data/athletics-schedules.csv` — Every game on the district’s athletic schedules, FY2022–FY2027
+- `data/athletics-venue-distances.csv` — Road distance to every away venue
+- `data/athletics-venue-geocache.csv` — Where each away venue address geocodes to
 - `data/balance-sheet-printed-totals.csv` — The TOTAL rows each balance sheet prints
 - `data/balance-sheet-refused.csv` — Combined balance sheets that would not publish, and what each failed
 - `data/balance-sheet.csv` — The combined balance sheet, read from the page
@@ -456,8 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/youtube-videos.csv` — Every video on the town’s PEG access channel
 - `data/youtube-watch-events.csv` — What appeared on the town’s YouTube channel between one check and the next
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
-- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
-- `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
-- `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
-- `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced budget slide deck, 23 March 2026
-- `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
