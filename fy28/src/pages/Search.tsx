@@ -137,7 +137,7 @@ type Hit = {
   matched: string[]
   via?: 'text' | 'topic'
 }
-type Corpus = 'post' | 'page' | 'job' | 'person' | 'recorded' | 'source' | 'minutes' | 'transcript'
+type Corpus = 'report' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
@@ -157,7 +157,12 @@ type Vocab = Record<string, { try: string[]; note: string }>
 /** DOCUMENTS AND MINUTES FIRST, RECORDINGS LAST. The order this page renders in, and the
  *  reason it changed: `post, page, recorded, source, minutes, transcript` put the
  *  archive's own documents FOURTH, under three sections of things we wrote. */
-const ORDER: Corpus[] = ['job', 'person', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+const ORDER: Corpus[] = ['report', 'job', 'person', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+/* REPORTS GO FIRST OF ALL. TJ, 11 October 2026: *"Does search not have a REPORTS
+ * category? I'm looking for a particular report but it's buried under all the minutes and
+ * documents."* They were `page` rows, fifth, ranked against every board and meeting page.
+ * The API now splits them out (functions/api/search.js, SPLIT_FROM_PAGE): eighty-odd
+ * reports, so a word that names one finds it at the top. */
 /* JOBS AND PEOPLE GO FIRST, and that is not a ranking of importance. Both are small and
  * exact: a name or a job title matches a handful of rows that ARE the answer, where the same
  * word in the minutes is a mention. TJ, 10 October 2026: *"I'm looking for a job posting for
@@ -184,6 +189,8 @@ const ORDER: Corpus[] = ['job', 'person', 'source', 'minutes', 'page', 'post', '
  *  results, the screen-reader line on every card. Shortening the label everywhere would
  *  have cost `agendas`, and an agenda is not a set of minutes. */
 const GROUPS: { id: string; label: string; short: string; hint: string; corpora: Corpus[] }[] = [
+  { id: 'reports', label: 'Reports', short: 'Reports', corpora: ['report'],
+    hint: 'The analyses this project has written, school and town — every one listed on /reports.' },
   { id: 'documents', label: 'Documents', short: 'Documents', corpora: ['source'],
     hint: 'Budgets, contracts, purchase orders, annual reports and state files, cited to the page. Not minutes.' },
   { id: 'minutes', label: 'Minutes & agendas', short: 'Minutes', corpora: ['minutes'],
@@ -191,7 +198,7 @@ const GROUPS: { id: string; label: string; short: string; hint: string; corpora:
   { id: 'recordings', label: 'Meeting recordings', short: 'Recordings', corpora: ['recorded', 'transcript'],
     hint: 'Machine captions of the videos, and our own notes written from them. A finding aid, never the record.' },
   { id: 'site', label: 'On this site', short: 'This site', corpora: ['page', 'post'],
-    hint: 'The analyses, the board and meeting pages, and the posts written by this project.' },
+    hint: 'The board and meeting pages, the other pages here, and the posts written by this project. Reports have their own chip.' },
   { id: 'jobs', label: 'Job postings', short: 'Jobs', corpora: ['job'],
     hint: 'Openings at the town (its own job board) and the school district (SchoolSpring), checked daily since October 2026. Ones no longer listed stay here and say so. All of them: /jobs.' },
   { id: 'people', label: 'People', short: 'People', corpora: ['person'],
@@ -250,6 +257,7 @@ function Order({ dated, by, set }: {
 const groupOf = (c: Corpus) => GROUPS.find(g => g.corpora.includes(c))!
 
 const NAME: Record<Corpus, string> = {
+  report: 'Reports',
   post: 'Blog posts',
   page: 'Pages on this site',
   job: 'Job postings — the town and the schools',
@@ -260,6 +268,7 @@ const NAME: Record<Corpus, string> = {
   transcript: 'Meeting recordings — machine captions',
 }
 const UNIT: Record<Corpus, [string, string]> = {
+  report: ['report', 'reports'],
   post: ['post', 'posts'],
   page: ['page', 'pages'],
   job: ['posting', 'postings'],
@@ -284,8 +293,9 @@ const UNIT: Record<Corpus, [string, string]> = {
  *  Every other kind shows it when that kind is the one being looked at. */
 const WHAT_ALWAYS: Corpus[] = ['recorded', 'transcript']
 const WHAT: Record<Corpus, string> = {
+  report: 'The analyses this project has written, each listed on /reports.',
   post: 'What this project has published, one finding at a time.',
-  page: 'The analyses and reference pages here.',
+  page: 'Board, meeting and reference pages here. Reports are above.',
   job: 'The town’s and the school district’s postings. An open one links to the employer’s page, to apply; one no longer listed links to its history on /jobs. Leaving the listing is not the same as being filled.',
   person: 'A name as the org charts print it, with every role and year. The same name in two decades may be two people.',
   recorded: 'Our notes on recorded meetings, written from the captions: votes, transfers, topics. Each links to the video by the second.',

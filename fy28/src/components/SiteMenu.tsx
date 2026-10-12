@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Go } from '../lib/nav'
+import { useReport } from './report'
+import { todayIso } from '../lib/meetings'
 import type { Tab } from '../routes'
 
 /** THE SITE MENU -- every hub on the site, one button away, from every page.
@@ -101,13 +103,13 @@ export const GROUPS: Group[] = [
   ] },
 ]
 
-function ItemLink({ it, tab, onPick, compact }: { it: Item; tab: Tab; onPick?: () => void; compact?: boolean }) {
+function ItemLink({ it, tab, onPick, compact, n }: { it: Item; tab: Tab; onPick?: () => void; compact?: boolean; n: number }) {
   const here = it.to !== undefined && tab === it.to && !it.anchor
   const cls = 'block rounded px-2 -mx-2 no-underline hover:bg-[var(--surface-3)] ' + (compact ? 'py-0.5' : 'py-1')
   const body = (
     <>
       <span className={'block font-semibold ' + (compact ? 'text-[13px]' : 'text-[14px]')}
-        style={{ color: here ? 'var(--series-cost)' : 'var(--text-primary)' }}>{it.label}</span>
+        style={{ color: here ? 'var(--series-cost)' : 'var(--text-primary)' }}>{it.label}{n > 0 && <Pill n={n} />}</span>
       {!compact && <span className="hidden sm:block text-[12px] leading-snug" style={{ color: 'var(--text-secondary)' }}>{it.sub}</span>}
     </>
   )
@@ -117,27 +119,135 @@ function ItemLink({ it, tab, onPick, compact }: { it: Item; tab: Tab; onPick?: (
         aria-current={here ? 'page' : undefined} className={cls}>{body}</Go>
 }
 
+/** WHAT IS NEW, and it DECAYS on its own. TJ, 11 October 2026: *"a NEW section ... that
+ *  lists all the new reports we've built, and automatically updates and decays"*.
+ *  `reports-recent.json` carries only each report's birthday -- the commit that added it
+ *  (build_reports_index.py) -- and the age is computed here against today, so a report
+ *  leaves this list after NEW_DAYS with nothing regenerated. */
+export const NEW_DAYS = 21
+const FRESH_DAYS = 7
+type Recent = { reports: { title: string; url: string; first_published: string; about: string }[] }
+
+export function useNewReports() {
+  const { d } = useReport<Recent>('reports-recent.json')
+  const today = Date.parse(todayIso())
+  return (d?.reports ?? [])
+    .map(r => ({ ...r, age: Math.round((today - Date.parse(r.first_published)) / 864e5) }))
+    .filter(r => r.age >= 0 && r.age <= NEW_DAYS)
+}
+
+export const ago = (n: number) => n === 0 ? 'today' : n === 1 ? 'yesterday' : `${n} days ago`
+
+/** The badge fades with age: solid in the first week, an outline after, gone at NEW_DAYS. */
+export function NewBadge({ age }: { age: number }) {
+  const fresh = age <= FRESH_DAYS
+  return (
+    <span className="inline-block shrink-0 whitespace-nowrap text-[10px] font-bold uppercase tracking-wider px-1.5 rounded-full align-middle"
+      style={fresh ? { background: 'var(--series-cost)', color: 'var(--surface-2)' }
+                   : { border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>
+      {fresh ? 'new' : ago(age)}
+    </span>
+  )
+}
+
+/** A strip across the top of the map: newest first, at most `max`, then the way to all of them. */
+function NewStrip({ onPick, max = 5 }: { onPick?: () => void; max?: number }) {
+  const rows = useNewReports()
+  if (!rows.length) return null
+  return (
+    <section className="mb-5 pb-4 border-b" style={{ borderColor: 'var(--grid)' }}>
+      <h2 className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: 'var(--text-muted)' }}>
+        New reports <span className="font-normal normal-case tracking-normal">· last {NEW_DAYS} days</span>
+      </h2>
+      <ul className="m-0 p-0 list-none flex flex-wrap gap-x-5 gap-y-1">
+        {rows.slice(0, max).map(r => (
+          <li key={r.url}>
+            <a href={r.url} onClick={onPick} title={r.about}
+              className="text-[13.5px] font-semibold no-underline hover:underline" style={{ color: 'var(--text-primary)' }}>
+              {r.title}
+            </a>{' '}<NewBadge age={r.age} />
+          </li>
+        ))}
+        <li>
+          <Go to="reports" anchor="new" onClick={onPick} className="text-[13px] font-semibold"
+            style={{ color: 'var(--series-cost)' }}>
+            {rows.length > max ? `All ${rows.length} new →` : 'All reports →'}
+          </Go>
+        </li>
+      </ul>
+    </section>
+  )
+}
+
+/** WHAT CHANGED SINCE THIS READER LAST LOOKED, per menu item. `site-changes.json`
+ *  (scripts/build_site_changes.py) carries dated changes; an item counts those inside
+ *  CHANGE_DAYS of today and newer than the last time this reader opened that page. Visiting
+ *  the page clears it -- the same model as an unread count. Stored per browser and nowhere
+ *  else; a private window simply sees the last fortnight. */
+const CHANGE_DAYS = 14
+const SEEN_KEY = 'menu-seen'
+type Changes = { items: Record<string, { d: string; id: string }[]> }
+function readSeen(): Record<string, string> {
+  try { return JSON.parse(window.localStorage.getItem(SEEN_KEY) || '{}') } catch { return {} }
+}
+export function useChanges(tab: Tab) {
+  const { d } = useReport<Changes>('site-changes.json')
+  const [seen, setSeen] = useState<Record<string, string>>({})
+  useEffect(() => {
+    const s = readSeen()
+    const latest = d?.items[tab]?.[0]?.d
+    if (latest && s[tab] !== latest) {
+      s[tab] = latest
+      try { window.localStorage.setItem(SEEN_KEY, JSON.stringify(s)) } catch { /* harmless */ }
+    }
+    setSeen(s)
+  }, [d, tab])
+  const since = new Date(Date.parse(todayIso()) - CHANGE_DAYS * 864e5).toISOString().slice(0, 10)
+  const count = (key: string) => {
+    const all = d?.items[key] ?? []
+    const n = all.filter(c => c.d >= since && (!seen[key] || c.d > seen[key])).length
+    // The file keeps at most KEEP per item (build_site_changes.py); a count at it is a floor.
+    return n && n === all.length && all.length >= 200 ? n + 0.5 : n
+  }
+  const total = d ? Object.keys(d.items).reduce((n, k) => n + count(k), 0) : 0
+  return { count, total }
+}
+
+function Pill({ n }: { n: number }) {
+  return (
+    <span className="ml-1.5 inline-block text-[10px] font-bold tnum leading-none px-1.5 py-[3px] rounded-full align-[2px]"
+      style={{ background: 'var(--status-good)', color: '#fff' }}
+      title={`${Math.floor(n)}${n % 1 ? ' or more' : ''} new since you last looked`}>{n > 99 ? '99+' : n % 1 ? `${Math.floor(n)}+` : n}</span>
+  )
+}
+
 /** The same eight groups, drawn as a SITE MAP -- the panel's body, and the FAT FOOTER on
  *  every page. A menu behind a button is found only by people who think to press it; a
  *  footer map is where a reader who has scrolled to the end looks for "what else is here". */
 export function SiteMap({ tab, onPick, compact }: { tab: Tab; onPick?: () => void; compact?: boolean }) {
+  const { count } = useChanges(tab)
   return (
+    <>
+    <NewStrip onPick={onPick} />
     <div className={'grid gap-x-6 grid-cols-2 lg:grid-cols-4 ' + (compact ? 'gap-y-5' : 'gap-y-6')}>
       {GROUPS.map(g => (
         <section key={g.title}>
           <h2 className="text-[11px] font-bold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>{g.title}</h2>
           <ul className="m-0 p-0 list-none">
-            {g.items.map(it => <li key={it.label}><ItemLink it={it} tab={tab} onPick={onPick} compact={compact} /></li>)}
+            {g.items.map(it => <li key={it.label}><ItemLink it={it} tab={tab} onPick={onPick} compact={compact}
+              n={it.to && !it.anchor ? count(it.to) : 0} /></li>)}
           </ul>
         </section>
       ))}
     </div>
+    </>
   )
 }
 
 export function SiteMenu({ tab }: { tab: Tab }) {
   const [open, setOpen] = useState(false)
+  const { total } = useChanges(tab)
   const btn = useRef<HTMLButtonElement>(null)
   const panel = useRef<HTMLDivElement>(null)
 
@@ -172,6 +282,12 @@ export function SiteMenu({ tab }: { tab: Tab }) {
           {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
         </svg>
         Menu
+        {/* One dot, not a number: the button says THAT something changed, and the panel
+            says where. A sum across unlike things (jobs + minutes + threads) is not a quantity. */}
+        {total > 0 && !open && (
+          <span aria-label="new since your last visit" className="inline-block w-2 h-2 rounded-full -ml-0.5"
+            style={{ background: 'var(--status-good)' }} />
+        )}
       </button>
       {/* PORTALLED to <body>. The header has `backdrop-blur`, and a backdrop-filter makes
           an element the CONTAINING BLOCK for its `position: fixed` descendants -- so inside

@@ -66,7 +66,26 @@
  */
 
 const SITE = 'https://lunenburgbudgetproject.org'
-const CORPORA = ['post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript']
+const CORPORA = ['report', 'post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript']
+/** `report` IS NOT IN THE INDEX. It is the `page` rows whose address is a report in
+ *  /data/reports.json, split out at query time. TJ, 11 October 2026: *"Does search not
+ *  have a REPORTS category? I'm looking for a particular report but it's buried under all
+ *  the minutes and documents."* Reports were `page` rows, ranked against two thousand
+ *  board and meeting pages and drawn fifth. Splitting here needs no index rebuild and no
+ *  D1 writes; `page` then means every OTHER page on the site. */
+const SPLIT_FROM_PAGE = 'report'
+let reportUrls = null
+async function loadReportUrls(env, request) {
+  if (reportUrls) return reportUrls
+  try {
+    const res = await (env.ASSETS ? env.ASSETS.fetch(new URL('/data/reports.json', request.url))
+                                  : fetch(new URL('/data/reports.json', request.url)))
+    const d = await res.json()
+    reportUrls = [...(d.reports || []), ...(d.pages || [])].map(r => SITE + r.url)
+  } catch (e) { reportUrls = [] }
+  return reportUrls
+}
+const sqlList = urls => urls.map(u => "'" + u.replace(/'/g, "''") + "'").join(',') || "''"
 /** The only corpora whose rows carry a date. Measured on the index, not assumed:
  *  every `minutes`, `recorded` and `transcript` row has one, and every `job` row carries
  *  the date SchoolSpring prints as posted; no `source`, `page` or `person` row does. A date
@@ -166,7 +185,10 @@ export async function onRequest(context) {
   // here: a COUNT(*) per corpus would read every row on every call.
   const metaRows = (await db.prepare('SELECT k, v FROM build_meta').all()).results || []
   const meta = Object.fromEntries(metaRows.map(r => [r.k, r.v]))
+  const reports = await loadReportUrls(env, request)
+  const inReports = new Set(reports)
   const holds = Object.fromEntries(CORPORA.map(c => [c, Number(meta['rows:' + c] || 0)]))
+  holds[SPLIT_FROM_PAGE] = reports.length   // reports, not rows: a long one is indexed in parts
   const index = {
     built: meta.built || null,
     holds,
@@ -209,7 +231,10 @@ export async function onRequest(context) {
       `SELECT doc_key, corpus, title, cite_url, snippet(affinity, 0, '‹', '›', ' · ', 12) AS snippet
        FROM affinity WHERE affinity MATCH ?1 ORDER BY bm25(affinity) LIMIT 8`).bind(expr).all()
     rowsRead += (a.meta && a.meta.rows_read) || 0
-    for (const row of a.results || []) (pinned[row.corpus] ||= []).push(row)
+    for (const row of a.results || []) {
+      const c = row.corpus === 'page' && inReports.has(row.cite_url) ? SPLIT_FROM_PAGE : row.corpus
+      ;(pinned[c] ||= []).push(row)
+    }
   } catch (e) {
     // No affinity table yet, or a bad expression: the text search still answers.
   }
@@ -233,18 +258,25 @@ export async function onRequest(context) {
       const order = byDate
         ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, rank"
         : 'ORDER BY rank'
+      // `report` and `page` both read the page rows; the address list decides which side.
+      const real = c === SPLIT_FROM_PAGE ? 'page' : c
+      const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
+        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)})` : ''
       const sql = `
         SELECT * FROM (
           SELECT corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
                  start_s, chars, bm25(search) AS rank,
                  snippet(search, 0, '‹', '›', '…', 20) AS snippet
-          FROM search WHERE search MATCH ?1 AND corpus = ?2${where}
+          FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where}
           LIMIT ${CANDIDATES}
         ) ${order} LIMIT ${per}`
-      const countSql = `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${where} LIMIT ${CANDIDATES})`
+      // A report indexed in parts would count once per part; count ADDRESSES for reports.
+      const countSql = c === SPLIT_FROM_PAGE
+        ? `SELECT COUNT(DISTINCT cite_url) AS n FROM (SELECT cite_url FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
+        : `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
       const [r, n] = await Promise.all([
-        db.prepare(sql).bind(expr, c, ...binds).all(),
-        db.prepare(countSql).bind(expr, c, ...binds).all(),
+        db.prepare(sql).bind(expr, real, ...binds).all(),
+        db.prepare(countSql).bind(expr, real, ...binds).all(),
       ])
       rowsRead += (r.meta && r.meta.rows_read || 0) + (n.meta && n.meta.rows_read || 0)
       const count = (n.results && n.results[0] && n.results[0].n) || 0

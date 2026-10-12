@@ -131,11 +131,19 @@ function ChainRow({ c }: { c: Chain }) {
       {/* `data-short`: the question, the verdict and the sentence are the short version.
           The layers under them are not -- they are the next depth down. */}
       <div data-short="">
-        <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <Tag v={c.verdict} label={c.label} />
-          <span className="text-[13.5px]" style={{ color: 'var(--text-muted)' }}>{c.question}</span>
-        </p>
-        <p className="text-[17px] font-semibold leading-snug mt-1.5" data-point="">
+        {/* THE QUESTION IS THE HEADING. It was a 13.5px muted line after the verdict tag,
+            with the answer at 17px semibold under it -- the question had the least weight in
+            the row. TJ, 11 October 2026: *"I can't easily find the question and the answers
+            are all big and bold. A bit overwhelming."* That is VISUAL HIERARCHY: the eye reads
+            size and weight first, so the styles have to rank in the order the row is read --
+            question, then the verdict, then the answer in body weight with only its figures
+            bold. */}
+        <h3 className="text-[17px] font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
+          {c.question}
+        </h3>
+        <p className="text-[15.5px] leading-relaxed mt-1.5" data-point=""
+          style={{ color: 'var(--text-secondary)' }}>
+          <span className="mr-2 align-[1px]"><Tag v={c.verdict} label={c.label} /></span>
           <Said u={c.say} />
         </p>
       </div>

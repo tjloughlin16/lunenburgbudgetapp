@@ -51,7 +51,7 @@ import { Boards } from './pages/Boards'
 import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
-import { JobsPage, JobsTray } from './components/JobPostings'
+import { JobsPage } from './components/JobPostings'
 import { BoardTransfers } from './pages/BoardTransfers'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
@@ -423,30 +423,10 @@ export default function App() {
               </svg>
               <span className="hidden sm:inline">Search</span>
             </Go>
-            {/* JOB POSTINGS, AS A NOTIFICATION TRAY -- a badge for what is new since this
-                reader last looked, and a panel that slides out over the page. See
-                components/JobPostings.tsx, JobsTray. */}
-            <JobsTray />
-            {/* THREADS IN THE HEADER. TJ, 10 October 2026: *"yes add a threads link in the
-                header"* -- it was reachable only from a card low on the front page and the
-                second tab of one area. */}
-            <Go to="threads" title="Threads: what the town is deciding, followed across every board"
-              aria-current={tab === 'threads' ? 'page' : undefined}
-              className="inline-flex text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
-              style={{ background: tab === 'threads' ? 'var(--surface-3)' : 'transparent',
-                       color: tab === 'threads' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-              Threads
-            </Go>
-            <Go to="sources" title="Source documents — every one this site rests on"
-              aria-current={tab === 'sources' ? 'page' : undefined}
-              className="inline-flex text-xs font-semibold px-2 py-1 rounded
-                         whitespace-nowrap shrink-0"
-              style={{ background: tab === 'sources' ? 'var(--surface-3)' : 'transparent',
-                       color: tab === 'sources' ? 'var(--text-primary)'
-                                                : 'var(--text-secondary)' }}>
-              Sources
-            </Go>
-
+            {/* JOBS, THREADS AND SOURCES LEFT THE HEADER on 11 October 2026, the day the
+                site menu arrived. TJ: "Remove threads sources and jobs from the top header
+                now." Each is in the menu, and the menu's change counts replace the jobs tray's
+                badge -- one place that says what is new, for everything that changes. */}
             {/* THE THREE BOARDS ARE NOT IN THE HEADER ANY MORE. With four area tabs, Search
                 and Sources they made nine items in one strip, scrolling sideways on a
                 laptop. TJ, 16 September 2026: "there are a LOT of links on the header. its

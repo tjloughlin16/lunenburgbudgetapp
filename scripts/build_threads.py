@@ -49,6 +49,28 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THREADS = os.path.join(ROOT, 'sources', 'data', 'threads.csv')
+REPORTS = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports.json')
+
+
+def report_links(t, catalogue):
+    """THE REPORTS FOR FURTHER READING, from the registry's curated `reports` column.
+
+    TJ, 11 October 2026: *"threads need to automatically pull in any related full reports,
+    as links for more detailed reading."* Curated, not matched: each thread's own `match`
+    pattern run against report titles found a report for four threads of twenty-one, and
+    one of those was a budget line that happened to mention veterans. Empty is allowed --
+    six threads have no report and saying so is better than linking a near miss. An id
+    that does not resolve REFUSES, because a join that matches nothing looks like a thread
+    with no reading."""
+    out = []
+    for rid in [x.strip() for x in (t.get('reports') or '').split(';') if x.strip()]:
+        rid = catalogue['superseded'].get(rid, rid)
+        r = catalogue['by_id'].get(rid)
+        if not r:
+            raise SystemExit('threads.csv: %s lists report %r, which is not in reports.json '
+                             '(unlisted, renamed, or a typo)' % (t['id'], rid))
+        out.append({'title': r['title'], 'url': r['url']})
+    return out
 DECLINED = os.path.join(ROOT, 'sources', 'data', 'threads-declined.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 TMVOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
@@ -391,6 +413,9 @@ def where_it_stands(chron):
 def build():
     (record, future), official = the_record(), official_votes()
     threads, problems = [], []
+    rj = json.load(open(REPORTS, encoding='utf-8'))
+    catalogue = {'superseded': rj.get('superseded', {}),
+                 'by_id': {r['id']: r for r in rj['reports'] + rj['pages']}}
     for t in read_csv(THREADS):
         chron = chronology(t, record)
         temp = temperature(t, chron, dt.date.today().isoformat(), record)
@@ -418,6 +443,7 @@ def build():
             {k: t[k] for k in ('id', 'label', 'question', 'kind', 'groups', 'tags', 'boards',
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
+            reports=report_links(t, catalogue),
             chronology=chron,
             meetings=len(chron),
             boards_touched=len({c['board_slug'] for c in chron}),

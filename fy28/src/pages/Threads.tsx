@@ -39,6 +39,7 @@ type Stop = { board: string; board_slug: string; date: string; items: Item[] }
 type Thread = {
   id: string; label: string; question: string; kind: string; groups: string; tags: string
   boards: string; started: string; closes: string; status: string; resolved_on: string; caveat: string
+  reports: { title: string; url: string }[]
   heat: Heat; stage: string; tangled: boolean; is_new: boolean; registered_on: string
   hot?: boolean
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
@@ -496,6 +497,24 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           </Body>
         </>
       )}
+
+      {/* READ FURTHER: the full reports behind this matter, curated in threads.csv
+          (`reports`) and resolved by build_threads.py. Placed after where it stands and
+          before the meeting-by-meeting record: the reader who wants depth on the SUBJECT
+          finds it before the long chronology. */}
+      {t.reports?.length ? (
+        <>
+          <H2>Read further</H2>
+          <ul className="m-0 mb-2 p-0 list-none">
+            {t.reports.map(r => (
+              <li key={r.url} className="mb-1">
+                <a href={r.url} className="font-semibold text-[15px]" style={{ color: 'var(--series-cost)' }}>
+                  {r.title} &rarr;</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
 
       {t.caveat ? (
         <>

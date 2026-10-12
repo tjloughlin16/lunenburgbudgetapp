@@ -1689,8 +1689,11 @@ def build_brief(m):
     of_all = pct1(cb_last['transport'], b1['all_spent'])
     offsets = B.chain(
         'offsets', 'Does state money or the bus fee offset the cost?', 'concern',
-        'Only a little. The state paid back %s in %s, all of it for special education; the '
-        'bus fee did not lower the town’s bus bill.' % (C.usd(cb_last['transport']), C.fy(last)),
+        # "the town's bus bill" was too short to read. TJ, 11 October 2026: it needs to say
+        # the fee did not reduce what the town budgets and pays. NOT "it only changed the
+        # source of funding": where the fee money lands is a registered gap (last step).
+        'Only a little. The state repaid %s in %s, all for special education. The bus fee '
+        'did not cut what the town spends on buses.' % (C.usd(cb_last['transport']), C.fy(last)),
         figures={'a': U(cb_last['transport']), 'b': F(last)},
         steps=[
             B.step('The state’s circuit breaker repays part of busing children placed out of '
@@ -1712,7 +1715,8 @@ def build_brief(m):
                    'measured', {'a': F(st['cherry_years'][0]), 'b': F(st['cherry_years'][-1])},
                    link=ln('sec5')),
             B.step('The Finance Committee was told the new bus fee cut the line by %s. The line '
-                   'was voted %s below the contract, then %s was moved back in during the year.'
+                   'was voted %s below the contract, then %s was moved back in during the year, '
+                   'so the school budget still paid the whole contract.'
                    % (C.usd(m['netted']), C.usd(m['netted']), C.usd(f['transfer'])),
                    'quote', {'a': U(m['netted']), 'c': U(f['transfer'])},
                    cite=minute('fee-11000'), link=ln('fee')),

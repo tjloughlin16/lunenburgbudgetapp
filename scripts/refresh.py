@@ -1317,6 +1317,9 @@ def run(a, notes, ctx):
         # deployed anyway.
         for gen in SITE_PAYLOADS:
             py(gen, check=False)
+        # THE MENU'S CHANGE INDICATORS, last: it reads jobs, threads, minutes, the budget
+        # feed, the meeting feed and the reports index, all written above.
+        py('build_site_changes.py', check=False)
         # A new budget episode the feed thinks it sees -- a Special Town Meeting date, an
         # override, the Governor's budget, the season opening -- is PROPOSED here, with its
         # evidence, for TJ or the agent to confirm by adding a row to budget-episodes.csv.

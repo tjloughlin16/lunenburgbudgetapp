@@ -1,3 +1,4 @@
+import { useNewReports, NewBadge, NEW_DAYS } from '../components/SiteMenu'
 import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
 import { Section, Note } from '../components/primitives'
@@ -341,6 +342,8 @@ export function Reports() {
         </div>
       )}
 
+      <NewReports />
+
       {/* GROUPED BY SUBJECT, ONE ENTRY PER SUBJECT.
           Every report — page or document — is drawn the same way, because to a reader
           they are the same kind of thing: something this project wrote about the town's
@@ -555,5 +558,44 @@ export function Reports() {
         </Note>
       </Section>
     </>
+  )
+}
+
+/** NEW IN THE LAST NEW_DAYS -- the same list as the menu's strip, in full, with the line
+ *  that says what each report is. It empties itself: see SiteMenu.useNewReports. */
+function NewReports() {
+  const rows = useNewReports()
+  if (!rows.length) return null
+  return (
+    <Section id="new" eyebrow={`First published in the last ${NEW_DAYS} days`} title="New reports">
+      {/* SIX, then the rest folded. A month of building can be two dozen reports, and the
+          subjects below are what most readers came to /reports for. */}
+      <NewGrid rows={rows.slice(0, 6)} />
+      {rows.length > 6 && (
+        <details className="mt-3">
+          <summary className="cursor-pointer text-[13.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+            Show all {rows.length} new reports</summary>
+          <div className="mt-3"><NewGrid rows={rows.slice(6)} /></div>
+        </details>
+      )}
+    </Section>
+  )
+}
+
+function NewGrid({ rows }: { rows: ReturnType<typeof useNewReports> }) {
+  return (
+      <ul className="m-0 p-0 list-none grid gap-3 sm:grid-cols-2">
+        {rows.map(r => (
+          <li key={r.url}>
+            <a href={r.url} className="card block p-4 h-full transition-opacity hover:opacity-90 no-underline">
+              <span className="flex items-baseline justify-between gap-3">
+                <span className="text-[15.5px] font-bold leading-tight" style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</span>
+                <NewBadge age={r.age} />
+              </span>
+              <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>{r.about}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
   )
 }
