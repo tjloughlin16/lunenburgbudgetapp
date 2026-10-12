@@ -334,7 +334,10 @@ def decide(plan, hist, now, in_flight=0):
                             note='weekly line: %g%% used against %.1f%% -- waiting for it' % (u7, line))
 
     # A NEW WINDOW re-anchors the line where it starts.
-    if plan.window != reset and not (reset is None and plan.window and now <= plan.window):
+    # AN IDLE WINDOW HAS NO RESET TIME, and on a run's first reading that left `window` and
+    # `reset` both None, so this never anchored and the line below subtracted from None. 12
+    # October 2026: fifteen paced starts crashed that way, every one at 5h 0%.
+    if plan.t0 is None or (plan.window != reset and not (reset is None and plan.window and now <= plan.window)):
         if plan.window is not None:
             plan.windows_seen += 1
             plan.session_cap = plan.caps[min(plan.windows_seen, len(plan.caps) - 1)]
