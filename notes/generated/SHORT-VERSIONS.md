@@ -17,7 +17,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [The cost of closing the gap](/what-solved-requires) | page | 3.8 / 38.3 min | 1. There is no arrangement of the other five lines that reaches the bar while salaries go on rising 4%. |
 | [Overrides](/override) | page | 1.1 / 15.7 min | 1. A $1.25M school-only override funds 1 year, then the same gap is back<br>2. Five years of stability costs $3.40M — $707 a year on the average home, for ever<br>3. Written townwide, the question has to be $2.35M to do the work of $1.25M for the schools |
 | [The budget gap](/the-situation) | page | 2.6 / 47.0 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
-| [The money](/the-money) | reference | — / 21.2 min | *(none declared)* |
+| [The money](/the-money) | reference | — / 12.2 min | *(none declared)* |
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
 | [The annual town reports](/analysis/annual-reports) | page | 1.9 / 14.1 min | 1. All 477 pages holding a financial table have been read.<br>2. 208 of 477 pages tie to a total the page itself prints.<br>3. Appropriations is the least checked: 77 of its 95 pages have no check at all. |
 | [Athletics: what it costs, who pays, and what the budget line does not say](/analysis/athletics) | page | 4.4 / 40.0 min | 1. $602,285 left the town’s accounts for athletics in FY2024, more than any document totals.<br>2. The town’s books code $518,334 to athletics in FY2026, director and trainer included.<br>3. $87,822 budgeted for athletic buses in FY2025, more than double the year before. |
@@ -58,20 +58,70 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Employee benefits &amp; reserves: what the town votes for it](/analysis/town-budget-unclassified) | page | 0.9 / 11.6 min | 1. $604,237 the largest move of any line in Employee benefits &amp; reserves — Group Health Insurance is the line that moved most inside Employee benefits &amp; reserves |
 | [Budgets across town](/analysis/town-budgets) | page | 2.3 / 15.8 min | 1. 57.1% of the voted budget, the school line — More than half the town budget is the schools, and four departments are five sixths of it<br>2. 10 of 12 departments — Ten of the twelve departments grew faster than the levy cap, not one of them<br>3. 3.6% a year, the school line — The schools are the biggest line in the budget and not the fastest growing one |
 | [Who works for the town](/analysis/town-personnel) | page | 2.0 / 20.9 min | 1. 232 school staff, named — The schools employ more than twice as many people as the rest of the town put together<br>2. One department has fewer people than when it first published. The rest are flat or larger |
-| [School transportation: what the buses cost, and who pays](/analysis/transportation) | page | 1.0 / 66.7 min | 1. Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from families’ fees onto the town.<br>2. Mixed pictureYes, in two places. Since FY2019 special education buses rose 97% and regular routes 40%, both faster than the 2.5% a levy may grow.<br>3. Mixed pictureOnly a little. The state repaid $94,993 in FY2026, all for special education. The bus fee did not cut what the town spends on buses.<br>4. Does not matchSpecial education buses spent $67,555 more than their FY2026 budget, and no transfer covered it.<br>5. MatchesRegular bus routes now cost exactly what the Dee Bus contract says, and the FY2027 budget carries its price, $1,053,360, to the dollar.<br>6. Mixed pictureIn FY2024 the town paid $40,000 of athletic buses and the families’ fee fund the rest. From FY2025 the district moved that cost to the town.<br>7. Can’t tell yetTrack costs most on the district’s sheet, $13,864 in FY2024. Its posted schedule shows far fewer away meets than the sheet has charges. |
+| [School transportation: what the buses cost, and who pays](/analysis/transportation) | page | 0.2 / 64.3 min | 1. Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 15.6 min | *(none declared)* |
 | [AP exams — who sits them, in what, and how they score](/ap-exams) | page | 2.4 / 11.9 min | 1. 89 students sat at least one AP exam in SY2025 — about 39% of the 11th and 12th grades.<br>2. 88.3% of AP tests scored 3 or better in SY2025, the best of 19 years; the low: 62.1% in SY2009.<br>3. 117 of 154 AP sittings in SY2025 were English or history; science and math were 31. |
-| [Athletics, both sides of the money](/athletics) | page | — / 8.2 min | *(none declared)* |
+| [Athletics costs](/athletics) | page | — / 8.8 min | *(none declared)* |
+| [Athletic fee](/athletics/athletic-fee) | page | — / 6.9 min | *(none declared)* |
+| [Cost per sport](/athletics/cost-per-sport) | page | — / 7.7 min | *(none declared)* |
+| [Fee fund ledger](/athletics/fee-fund-ledger) | page | — / 6.9 min | *(none declared)* |
+| [FY2026 athletics underspend](/athletics/fy2026-athletics-underspend) | page | — / 6.9 min | *(none declared)* |
+| [Participation](/athletics/participation) | page | — / 6.5 min | *(none declared)* |
+| [Spending by category](/athletics/spending-by-category) | page | — / 6.6 min | *(none declared)* |
+| [Total athletics cost](/athletics/total-athletics-cost) | page | — / 6.7 min | *(none declared)* |
+| [Town budget and fee fund](/athletics/town-budget-and-fee-fund) | page | — / 7.1 min | *(none declared)* |
 | [The boards, compared](/boards/compared) | page | 2.8 / 16.5 min | 1. 97.7% of the Library Board of Trustees’s meetings have posted minutes — The Library Board of Trustees: minutes posted for 43 of 44 meetings, the best of any board.<br>2. The School Committee posted minutes for 66% of its FY2026 meetings (23 of 35); none in FY2023.<br>3. 33 points, FY2023 to FY2026 — The Select Board went from 97% of meetings with minutes in FY2023 to 64% in FY2026. |
 | [The School Committee’s finances — every fund and line it owns](/boards/school-committee/finance) | page | 2.1 / 19.2 min | 1. The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.<br>2. The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.<br>3. 13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together. |
 | [Budget against reported spending](/budget-vs-actual) | page | 4.3 / 24.6 min | 1. 198 of 576 budget rows landed within two per cent of their own plan.<br>2. 7 of 98 school budget rows miss the same way every year, all by small amounts.<br>3. Out-of-district tuition landed 51.5% below plan in its worst measured year. |
 | [The circuit breaker — what the state reimburses for the costliest placements](/circuit-breaker) | page | 2.6 / 12.7 min | 1. 29 children in the state’s program in FY2013, 9 in FY2026; each cost $67,111, now $139,692.<br>2. The state paid 42.3% of the claim in FY2010 and 75.0% in FY2023; the statute allows up to 75%.<br>3. In FY2026 the state deducted $52,419 per child before reimbursing anything — $471,771 in all. |
 | [Classroom positions and class size](/classrooms) | page | 1.5 / 11.2 min | 1. 10.4 FTE — Cutting classrooms closes the gap only by cutting again every year: 10.4 positions next year, 52.3 by FY33, because the gap grows 3.2% a year.<br>2. 2 yr — Everything else that can be cut — $1.50M — buys 2 years. After that, classrooms are the only line big enough.<br>3. The budget in force already cut 9.2 FTE and $1.17M — four classroom teachers, an interventionist and a half, an assistant principal — and the projection reopens on top of it. |
 | [The cut register — what was announced, and what shows](/cut-register) | page | 3.7 / 68.5 min | 1. The May 2024 override took 13 school positions off the cut list.<br>2. 48 of 60 adopted school cuts cannot be seen in any published series.<br>3. 3 of the 8 positions on the FY2020 cut list were gone from it four weeks later. |
+| [Town departments](/department-budgets) | page | — / 8.6 min | *(none declared)* |
+| [Growth above the cap](/department-budgets/town-budget-growth) | page | — / 7.2 min | *(none declared)* |
+| [Budget by department](/department-budgets/town-budget-shares) | page | — / 6.9 min | *(none declared)* |
+| [Debt service](/department-budgets/town-debt-service) | page | — / 6.5 min | *(none declared)* |
+| [Employee benefits](/department-budgets/town-employee-benefits) | page | — / 6.7 min | *(none declared)* |
+| [Facilities and grounds](/department-budgets/town-facilities-grounds) | page | — / 6.6 min | *(none declared)* |
+| [General government](/department-budgets/town-general-government) | page | — / 6.8 min | *(none declared)* |
+| [Budgets without headcounts](/department-budgets/town-headcount-coverage) | page | — / 6.6 min | *(none declared)* |
+| [Library budget](/department-budgets/town-library) | page | — / 6.2 min | *(none declared)* |
+| [Police, fire and inspectors](/department-budgets/town-public-safety) | page | — / 6.7 min | *(none declared)* |
+| [Public works](/department-budgets/town-public-works) | page | — / 6.5 min | *(none declared)* |
+| [Schools in the omnibus](/department-budgets/town-schools-line) | page | — / 6.4 min | *(none declared)* |
+| [Smaller departments](/department-budgets/town-smaller-departments) | page | — / 6.6 min | *(none declared)* |
+| [Trash and recycling](/department-budgets/town-solid-waste) | page | — / 6.1 min | *(none declared)* |
+| [Town staff counts](/department-budgets/town-staff-counts) | page | — / 7.2 min | *(none declared)* |
+| [Voted budget total](/department-budgets/town-voted-total) | page | — / 6.9 min | *(none declared)* |
+| [Students and schools](/enrolment) | page | — / 8.6 min | *(none declared)* |
+| [Children schooled elsewhere](/enrolment/children-schooled-elsewhere) | page | — / 6.6 min | *(none declared)* |
+| [Departure scenario](/enrolment/departure-scenario) | page | — / 6.6 min | *(none declared)* |
+| [Enrolment by grade band](/enrolment/enrolment-by-grade-band) | page | — / 6.2 min | *(none declared)* |
+| [Enrolment by year](/enrolment/enrolment-by-year) | page | — / 6.9 min | *(none declared)* |
+| [Grade 8 loss trend](/enrolment/grade-8-loss-trend) | page | — / 6.6 min | *(none declared)* |
+| [Grade-to-grade loss](/enrolment/grade-to-grade-loss) | page | — / 6.8 min | *(none declared)* |
+| [High-needs students](/enrolment/high-needs-students) | page | — / 6.6 min | *(none declared)* |
+| [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.0 min | *(none declared)* |
+| [Monty Tech assessment](/enrolment/monty-tech-assessment) | page | — / 7.0 min | *(none declared)* |
+| [Monty Tech enrolment](/enrolment/monty-tech-enrolment) | page | — / 6.6 min | *(none declared)* |
+| [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.0 min | *(none declared)* |
+| [School choice flows](/enrolment/school-choice-flows) | page | — / 6.7 min | *(none declared)* |
 | [Extracurriculars — sports, music and clubs](/extras) | page | 1.2 / 10.4 min | 1. Every extra still funded, gone, saves $376k — 40% of next year’s gap, once.<br>2. not 1 yr — It does not buy even one year: $554k short in FY28, with nothing left outside the classroom to cut.<br>3. It is 2.9 FTE of people — coaches, advisors, a music teacher — and 6 lines, every one of which has a room of parents. |
 | [School user and athletic fees](/fees) | page | 1.7 / 11.9 min | 1. Every fee at its peak adds $346k: 37% of the gap, and none of the programmes cut.<br>2. 2 of 3 — A fee has a peak. Raise it past that and it raises less, because families stop paying — 2 of the three programmes can pay for themselves before their peak.<br>3. not 1 yr — The whole fee package does not cover even next year: $584k short in FY28, and further behind every year after. |
 | [Free cash — how much is actually spendable](/free-cash) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
 | [Free cash — can it fill the gap?](/free-cash-for-schools) | page | 1.3 / 11.3 min | 1. Yes, once: about $795k of this year’s $3.35M could go to the schools inside the town’s own guideline, and it covers the FY28 gap of $930k.<br>2. 0 yr — It covers 0 years. The gap is a rate, and by FY28 it is $135k past what the same $795k can reach.<br>3. It is the capital plan’s money: $795k is 1.2× what free cash gave capital last year, and more than that whole share in 7 of the 10 years the plan publishes. |
+| [FY2026 year end](/fy2026-closeout) | page | — / 8.3 min | *(none declared)* |
+| [FY2025 school surplus](/fy2026-closeout/fy2025-school-surplus) | page | — / 6.5 min | *(none declared)* |
+| [Lines over budget](/fy2026-closeout/fy2026-lines-over-budget) | page | — / 6.8 min | *(none declared)* |
+| [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 6.9 min | *(none declared)* |
+| [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 6.6 min | *(none declared)* |
+| [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 6.6 min | *(none declared)* |
+| [FY2026 school surplus](/fy2026-closeout/fy2026-school-surplus) | page | — / 7.1 min | *(none declared)* |
+| [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.0 min | *(none declared)* |
+| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 6.5 min | *(none declared)* |
+| [Surplus and FY2027 budget](/fy2026-closeout/fy2026-surplus-and-fy2027) | page | — / 6.3 min | *(none declared)* |
+| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 7.1 min | *(none declared)* |
+| [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 6.7 min | *(none declared)* |
+| [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 6.6 min | *(none declared)* |
 | [Commercial development and new growth](/growth) | page | 2.8 / 17.1 min | 1. Growth alone is not a solution: holding the gap for just five years takes $121.56M of new commercial value a year — about 40 developments a year, 202 over the five.<br>2. The schools keep 53¢ of each new-growth dollar, so against the school gap a development is worth about half what it looks.<br>3. To hold the whole projection by building alone, the town would have to build 5.4× as fast as today, for ever — and a decade passes before it shows.<br>4. Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024–FY2026. |
 | [Health insurance](/health-insurance) | page | 3.4 / 23.2 min | 1. The health plan is the largest single lever and not a solution on its own: 28% of next year’s gap is this one line, from 15% of the budget.<br>2. Four per cent is not a wish: 45% of Massachusetts municipalities held health insurance under it for the decade — and Lunenburg did in 11 of its own 14 ten-year windows, the last ending FY2023.<br>3. 2.8× — Every town’s premium turned after FY2022 — the median went 1.8% to 7.7% — but Lunenburg’s FY2023 and FY2024 came in about three times the median.<br>4. What 4% would be worth if it held: $16.37M out of the next ten years’ gaps, and the FY33 gap 38% smaller.<br>5. 7 routes — There are 7 lawful routes and 4 things the town cannot do at any price — and the one everyone proposes, cutting the town’s 75% share, is among the latter.<br>6. Lunenburg’s health insurance grew 6.8% a year for a decade while the median town grew 4.2% — 301 of 343.<br>7. Moving one person off the broadest plan keeps the town $5,172 a year, and 85 are on it — bargained, not voted. |
 | [Health insurance — the cost outside the school budget](/health-insurance-what-it-costs) | page | 2.6 / 19.8 min | 1. $1,521,536 of the schools’ health insurance is not in the school budget at all.<br>2. The town’s insurance department grows 4.3% a year. |
@@ -87,14 +137,99 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [The paraprofessionals](/paras) | page | 3.9 / 22.2 min | 1. Paraprofessionals for each hundred pupils rose 352.7%, the biggest change in staffing.<br>2. Paraprofessional FTE the state does not code to special education rose 34.0, FY2020 to FY2025.<br>3. What the schools budget for special education paraprofessionals rose 108.4%. |
 | [Parks &amp; Recreation — the department, its fund, its sales, its grounds](/parks-and-recreation) | page | 2.9 / 15.1 min | 1. The parks’ own fee fund held $84,818 at 31 March 2026 — 60% of the $140,759 voted for the year.<br>2. The fund stood at $10,019 in FY2011, fell to $0 in FY2015, and was $91,726 by 30 June 2025.<br>3. The registration system recorded $47,784 in FY2025: 650 programme places and 164 beach passes. |
 | [Teacher contracts](/salaries) | page | 1.7 / 11.8 min | 1. The contract is the biggest lever the town has not yet pulled: each half a point off the next settlement is $66,741 off the FY28 gap, every year after too.<br>2. 2.2 FTE — Held to the cap by attrition instead of at the table, the line sheds 2.2 positions a year — 14% of the staff in ten.<br>3. A settlement at the cap shrinks the gap and does not close it: raises of 2.5% instead of 3.4% would have made next year’s gap $619k rather than $930k, and FY32’s $3.39M rather than $3.76M. |
-| [School staffing — did it go up, and over which years](/school-staffing) | page | 2.9 / 23.2 min | 1. In 95 of 171 pairs of published years the state counts fewer teachers at the end.<br>2. 6.70 teaching staff for every hundred pupils, near the bottom of the state’s comparison group. |
+| [Programs and cuts](/school-programs) | page | — / 8.3 min | *(none declared)* |
+| [Announced cuts](/school-programs/announced-cuts) | page | — / 7.5 min | *(none declared)* |
+| [AP participation](/school-programs/ap-participation) | page | — / 7.0 min | *(none declared)* |
+| [AP scores](/school-programs/ap-scores) | page | — / 6.7 min | *(none declared)* |
+| [AP subjects](/school-programs/ap-subjects) | page | — / 6.6 min | *(none declared)* |
+| [Computer science](/school-programs/computer-science-courses) | page | — / 6.7 min | *(none declared)* |
+| [Cuts against state counts](/school-programs/cuts-against-state-counts) | page | — / 6.7 min | *(none declared)* |
+| [Grant endings](/school-programs/grant-endings) | page | — / 7.1 min | *(none declared)* |
+| [High school sections](/school-programs/high-school-sections) | page | — / 7.0 min | *(none declared)* |
+| [History courses](/school-programs/history-courses) | page | — / 6.6 min | *(none declared)* |
+| [Lines cut to zero](/school-programs/lines-cut-to-zero) | page | — / 7.2 min | *(none declared)* |
+| [Outside money share](/school-programs/outside-money-share) | page | — / 6.8 min | *(none declared)* |
+| [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.1 min | *(none declared)* |
+| [World languages](/school-programs/world-languages) | page | — / 7.2 min | *(none declared)* |
+| [Spending compared](/school-spending) | page | — / 8.6 min | *(none declared)* |
+| [Average teacher salary](/school-spending/average-teacher-salary) | page | — / 6.4 min | *(none declared)* |
+| [Comparison districts](/school-spending/comparison-districts) | page | — / 6.5 min | *(none declared)* |
+| [Reaching the state median](/school-spending/cost-of-the-median) | page | — / 6.3 min | *(none declared)* |
+| [Destination districts](/school-spending/destination-district-spending) | page | — / 6.8 min | *(none declared)* |
+| [Gap by function](/school-spending/gap-by-function) | page | — / 6.6 min | *(none declared)* |
+| [Grants and revolving funds](/school-spending/grants-in-school-spending) | page | — / 6.6 min | *(none declared)* |
+| [Line-level misses](/school-spending/line-level-misses) | page | — / 6.7 min | *(none declared)* |
+| [Spending per pupil](/school-spending/per-pupil-spending) | page | — / 7.3 min | *(none declared)* |
+| [Regional districts](/school-spending/regional-district-spending) | page | — / 6.6 min | *(none declared)* |
+| [Budget against actual](/school-spending/school-budget-against-actual) | page | — / 6.8 min | *(none declared)* |
+| [Spending and pupils](/school-spending/spending-and-pupils) | page | — / 6.4 min | *(none declared)* |
+| [Spending by function](/school-spending/spending-by-function) | page | — / 7.1 min | *(none declared)* |
+| [School staff](/school-staffing) | page | — / 8.0 min | *(none declared)* |
+| [District staff directory](/school-staffing/district-staff-directory) | page | — / 6.5 min | *(none declared)* |
+| [People and posts](/school-staffing/headcount-and-fte) | page | — / 6.4 min | *(none declared)* |
+| [Paraprofessional counts compared](/school-staffing/paraprofessional-counts) | page | — / 6.8 min | *(none declared)* |
+| [Paraprofessionals over time](/school-staffing/paraprofessional-fte) | page | — / 7.0 min | *(none declared)* |
+| [Printed school rosters](/school-staffing/printed-school-rosters) | page | — / 6.8 min | *(none declared)* |
+| [Support staff](/school-staffing/school-support-staff) | page | — / 7.0 min | *(none declared)* |
+| [Staff by programme](/school-staffing/staff-by-programme) | page | — / 6.6 min | *(none declared)* |
+| [Staff retention](/school-staffing/staff-retention) | page | — / 6.5 min | *(none declared)* |
+| [Teachers over time](/school-staffing/teacher-fte-over-time) | page | — / 7.2 min | *(none declared)* |
+| [Teachers by school](/school-staffing/teachers-by-school) | page | — / 6.9 min | *(none declared)* |
+| [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 7.2 min | *(none declared)* |
+| [Teachers per pupil](/school-staffing/teachers-per-pupil) | page | — / 6.9 min | *(none declared)* |
+| [Special education costs](/special-education) | page | — / 8.3 min | *(none declared)* |
 | [How many students one special education group may have](/special-education-class-size) | page | 2.9 / 40.8 min | 1. A substantially separate group may not exceed 8 students to one certified special educator.<br>2. The rule sets 0 limits on adults in a room; it is a minimum, and IEPs add on top.<br>3. DESE reports 41 of Lunenburg’s 258 students with disabilities as substantially separate. |
-| [State aid — the part nobody here votes on](/state-aid) | page | 2.6 / 59.9 min | 1. Roughly a third of the school budget is not Lunenburg’s decision, and the budget book never says so.<br>2. Over five years the aid Lunenburg actually received differed from the aid its tax rate was set on by $245,751 in an average year.<br>3. In 4 of 5 years the state-aid surprise was in the town’s favour — the direction is far steadier than the size.<br>4. The state decides both halves of the minimum: what it pays, and what Lunenburg must.<br>5. Where it can be measured, Chapter 70 grew +4.47% a year — more than double what the projection assumes. |
+| [Circuit breaker](/special-education/circuit-breaker) | page | — / 7.4 min | *(none declared)* |
+| [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 7.1 min | *(none declared)* |
+| [Class size limits](/special-education/class-size-limits) | page | — / 7.3 min | *(none declared)* |
+| [Cost per placement](/special-education/cost-per-placement) | page | — / 6.0 min | *(none declared)* |
+| [Hiring versus placing](/special-education/hiring-versus-placing) | page | — / 6.2 min | *(none declared)* |
+| [In-district special education](/special-education/in-district-special-education) | page | — / 7.2 min | *(none declared)* |
+| [Out-of-district placements](/special-education/out-of-district-placements) | page | — / 7.3 min | *(none declared)* |
+| [Out-of-district tuition](/special-education/out-of-district-tuition) | page | — / 7.2 min | *(none declared)* |
+| [Special education overruns](/special-education/special-education-overruns) | page | — / 6.7 min | *(none declared)* |
+| [Students with an IEP](/special-education/students-with-an-iep) | page | — / 6.6 min | *(none declared)* |
+| [Tuition budget](/special-education/tuition-budget) | page | — / 6.8 min | *(none declared)* |
+| [Chapter 70 aid](/state-aid) | page | — / 7.9 min | *(none declared)* |
+| [Aid per pupil](/state-aid/aid-per-pupil) | page | — / 6.3 min | *(none declared)* |
+| [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.1 min | *(none declared)* |
+| [Share of the school budget](/state-aid/chapter-70-school-budget-share) | page | — / 6.4 min | *(none declared)* |
+| [Cherry sheet assessments](/state-aid/cherry-sheet-assessments) | page | — / 6.8 min | *(none declared)* |
+| [Cherry sheet variance](/state-aid/cherry-sheet-variance) | page | — / 6.4 min | *(none declared)* |
+| [Foundation budget](/state-aid/foundation-budget) | page | — / 6.2 min | *(none declared)* |
+| [Minimum aid](/state-aid/minimum-aid) | page | — / 6.6 min | *(none declared)* |
+| [Net school spending](/state-aid/net-school-spending) | page | — / 7.0 min | *(none declared)* |
+| [Spending against the median](/state-aid/net-school-spending-rank) | page | — / 6.4 min | *(none declared)* |
+| [Required local contribution](/state-aid/required-local-contribution) | page | — / 6.3 min | *(none declared)* |
+| [State aid growth](/state-aid/state-aid-growth) | page | — / 6.4 min | *(none declared)* |
+| [Total state aid](/state-aid/total-state-aid) | page | — / 6.8 min | *(none declared)* |
+| [Free cash and stabilization](/town-reserves) | page | — / 8.5 min | *(none declared)* |
+| [Free cash and capital](/town-reserves/free-cash-and-capital) | page | — / 6.6 min | *(none declared)* |
+| [Free cash balance](/town-reserves/free-cash-balance) | page | — / 6.9 min | *(none declared)* |
+| [Free cash guideline](/town-reserves/free-cash-guideline) | page | — / 7.0 min | *(none declared)* |
+| [Free cash for schools](/town-reserves/free-cash-redirect) | page | — / 6.8 min | *(none declared)* |
+| [Free cash sources](/town-reserves/free-cash-sources) | page | — / 6.8 min | *(none declared)* |
+| [General stabilization fund](/town-reserves/general-stabilization-fund) | page | — / 7.2 min | *(none declared)* |
+| [Reserves against the gap](/town-reserves/reserves-and-the-gap) | page | — / 6.5 min | *(none declared)* |
+| [Stabilization fund balances](/town-reserves/stabilization-balances) | page | — / 6.9 min | *(none declared)* |
+| [Stabilization deposits](/town-reserves/stabilization-deposits) | page | — / 7.0 min | *(none declared)* |
+| [Stabilization withdrawals](/town-reserves/stabilization-withdrawals) | page | — / 6.8 min | *(none declared)* |
+| [Who may spend it](/town-reserves/who-may-spend-it) | page | — / 6.4 min | *(none declared)* |
+| [School bus costs](/transportation) | page | — / 10.6 min | *(none declared)* |
+| [Athletic bus funding](/transportation/athletic-bus-funding) | page | — / 6.5 min | *(none declared)* |
+| [Away trips by sport](/transportation/away-trips-by-sport) | page | — / 6.5 min | *(none declared)* |
+| [Bus cost by sport](/transportation/bus-cost-by-sport) | page | — / 6.3 min | *(none declared)* |
+| [Bus fee](/transportation/bus-fee) | page | — / 6.2 min | *(none declared)* |
+| [Dee Bus contract](/transportation/dee-bus-contract) | page | — / 6.8 min | *(none declared)* |
+| [FY2027 athletic bus cut](/transportation/fy2027-athletic-bus-cut) | page | — / 6.7 min | *(none declared)* |
+| [FY2027 bus budget](/transportation/fy2027-bus-budget) | page | — / 6.2 min | *(none declared)* |
+| [Special education transportation](/transportation/special-education-transportation) | page | — / 6.9 min | *(none declared)* |
+| [State reimbursement](/transportation/state-reimbursement) | page | — / 6.1 min | *(none declared)* |
 | [What courses actually ran, subject by subject](/what-courses-actually-ran) | page | 3.0 / 62.5 min | 1. Lunenburg High ran 247 sections in SY2025 against 225 in SY2017, on flat enrolment.<br>2. 57.8% of Lunenburg High students took a foreign language in SY2025, against 70.1% in SY2017.<br>3. 29.3% of Lunenburg Middle School took a world language in SY2025, against 61.0% in SY2023. |
 | [What a family actually pays](/what-families-pay) | page | 4.0 / 37.2 min | 1. Two high schoolers, one sport each, the bus and a club: $1,110 a year.<br>2. Three children playing one sport each pay $812.50 a year at the full rate.<br>3. A second child adds $460 to a family’s school bill. |
 | [What other districts spend, for each pupil](/what-other-districts-spend) | page | 4.1 / 42.0 min | 1. Lunenburg spends $18,027 for each pupil, all funds — $5,493 below the state median of $23,520.<br>2. Lunenburg’s average teacher salary is $97,233, near the top of the neighbouring districts.<br>3. Monty Tech spends $25,827 a pupil to Lunenburg’s $18,027 — $7,800 more. |
 | [What out-of-district special education costs, and what comes back](/what-special-education-costs) | page | 2.9 / 19.3 min | 1. 39.3% of what Lunenburg spent teaching children at other schools came from outside the budget.<br>2. $471,771 came off the bill in FY2026 before the state reimbursed anything.<br>3. $1,205,949 was spent teaching children at other schools in FY2025. |
-| [What sports cost, and who pays](/what-sports-cost) | page | 4.3 / 73.1 min | 1. $602,285 left the town’s accounts for athletics in FY2024, more than any document totals.<br>2. The town’s books code $518,334 to athletics in FY2026, director and trainer included.<br>3. $87,822 budgeted for athletic buses in FY2025, more than double the year before. |
+| [What sports cost, and who pays](/what-sports-cost) | page | 4.3 / 74.2 min | 1. $602,285 left the town’s accounts for athletics in FY2024, more than any document totals.<br>2. The town’s books code $518,334 to athletics in FY2026, director and trainer included.<br>3. $87,822 budgeted for athletic buses in FY2025, more than double the year before. |
 | [Funding that stopped](/what-stopped-being-funded) | page | 3.3 / 43.8 min | 1. 93 of 132 things cut to zero in the school budget were funded again later.<br>2. Everything the schools cut and never funded again carried $181,180.<br>3. The two biggest lasting falls in the school budget sit $789,633 a year below their peaks. |
 | [What the state requires us to spend — and where that puts us](/what-the-state-requires-us-to-spend) | page | 3.4 / 28.6 min | 1. The state minimum rose 25.2% since FY2018; spending rose 11.9%.<br>2. Matching the middle district in the state would take $2,534,627 more than Lunenburg spent.<br>3. Lunenburg spent at or above the middle district in 14 of 31 years measured. |
 | [When a grant ends — who picks up the bill](/when-grants-end) | page | 3.5 / 27.6 min | 1. 42.2% of the grant money that ran out in FY2025 was replaced by the town’s own money.<br>2. Employee insurance: $485,010 reported in FY2024; $3,286,872 the year before, $3,511,566 after.<br>3. The town now carries $2,520,227 a year that outside money used to, at today’s spending. |
@@ -206,7 +341,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Conservation Commission Public Hearing — meetings](/boards/conservation-commission-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
 | [Conservation Commission — about](/boards/conservation-commission/about) | reference | — / 6.6 min | *(none declared)* |
 | [Conservation Commission — finances](/boards/conservation-commission/finance) | reference | — / 11.7 min | *(none declared)* |
-| [Conservation Commission — meetings](/boards/conservation-commission/meetings) | reference | — / 10.1 min | *(none declared)* |
+| [Conservation Commission — meetings](/boards/conservation-commission/meetings) | reference | — / 10.0 min | *(none declared)* |
 | [Conservation Commission — missing records](/boards/conservation-commission/records) | reference | — / 13.0 min | *(none declared)* |
 | [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -1629,10 +1764,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.2 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 29.3 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 33.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 18.2 min | *(none declared)* |
-| [Special education — four reports](/special-education) | reference | — / 7.9 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.8 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 14.3 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
