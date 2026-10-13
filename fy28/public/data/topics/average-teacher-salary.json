@@ -1,0 +1,309 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$97,233",
+     "unit": "",
+     "value": 97233.0
+    },
+    "b": {
+     "text": "$99,136",
+     "unit": "",
+     "value": 99136.0
+    },
+    "r": {
+     "text": "2nd",
+     "unit": "rank",
+     "value": 2
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sal",
+    "salr",
+    "hi",
+    "lo"
+   ],
+   "text": "The average salary, $97,233, was 2nd of six; Harvard’s $99,136 was first."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$6,513",
+     "unit": "",
+     "value": 6513.0
+    },
+    "r": {
+     "text": "5th",
+     "unit": "rank",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tchr",
+    "tchrr",
+    "fte"
+   ],
+   "text": "Spending on the Teachers function was $6,513 a pupil, 5th of the six."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "0.52%",
+     "unit": "",
+     "value": 0.52
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the teachers’ contract salary schedule and the count of teachers on each step and lane, by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "An average is not a pay scale: it moves with the mix of steps and lanes as well as with raises, and the figures here cannot tell which."
+    }
+   ],
+   "rests_on": [
+    "sal",
+    "tchr",
+    "fte"
+   ],
+   "text": "In all six, Teachers spending over teacher FTE is DESE’s average salary within 0.52%."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sal",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "average teacher salary, FY2025, DESE"
+   },
+   "value": {
+    "text": "$97,233",
+    "unit": "",
+    "value": 97233.0
+   }
+  },
+  {
+   "id": "salr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its place, highest first"
+   },
+   "value": {
+    "text": "2 of 6",
+    "unit": "districts",
+    "value": 2
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard, the highest"
+   },
+   "value": {
+    "text": "$99,136",
+    "unit": "",
+    "value": 99136.0
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Ashburnham-Westminster, the lowest"
+   },
+   "value": {
+    "text": "$84,724",
+    "unit": "",
+    "value": 84724.0
+   }
+  },
+  {
+   "id": "fte",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE, FY2025"
+   },
+   "value": {
+    "text": "105.1",
+    "unit": "FTE",
+    "value": 105.1
+   }
+  },
+  {
+   "id": "tchr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Teachers function, a pupil"
+   },
+   "value": {
+    "text": "$6,513",
+    "unit": "",
+    "value": 6513.0
+   }
+  },
+  {
+   "id": "tchrr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its place on that, highest first"
+   },
+   "value": {
+    "text": "5 of 6",
+    "unit": "districts",
+    "value": 5
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$97,233",
+    "unit": "",
+    "value": 97233.0
+   },
+   "r": {
+    "text": "2nd",
+    "unit": "rank",
+    "value": 2
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg’s average teacher salary was $97,233 in FY2025, 2nd of the six districts this project compares."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "average-teacher-salary",
+ "kind": "topic",
+ "path": "/school-spending/average-teacher-salary",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/radar-district-comparison.xlsx",
+   "label": "Massachusetts DESE, RADAR district comparison — radar-district-comparison.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-radar.csv",
+   "label": "Lunenburg Budget Project — dese-radar.csv (DESE’s RADAR rows for the compared districts)"
+  }
+ ],
+ "table": {
+  "caption": "Teachers, FY2025",
+  "views": [
+   {
+    "columns": [
+     "Average salary",
+     "Teacher FTE",
+     "Teachers a pupil"
+    ],
+    "key": "teachers",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The six districts this project compares",
+    "note": "DESE’s RADAR file and end-of-year finance collection. Teachers a pupil is the Teachers function over in-district FTE pupils, DESE’s own figure.",
+    "rows": [
+     {
+      "cells": [
+       "$99,136",
+       "86.9",
+       "$8,475"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$97,233",
+       "105.1",
+       "$6,513"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "$97,140",
+       "170.8",
+       "$7,196"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "$88,781",
+       "228.6",
+       "$6,989"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$86,091",
+       "143.1",
+       "$7,167"
+      ],
+      "label": "Ayer Shirley School District"
+     },
+     {
+      "cells": [
+       "$84,724",
+       "166.4",
+       "$6,318"
+      ],
+      "label": "Ashburnham-Westminster"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Average teacher salary"
+}

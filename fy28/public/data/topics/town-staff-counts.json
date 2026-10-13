@@ -1,0 +1,342 @@
+{
+ "category": "department-budgets",
+ "chart": {
+  "id": "town-personnel-counts",
+  "source": "/data/town-personnel.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    },
+    "b": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "each department’s establishment of posts, with FTE",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A count is people present, not funded posts; a post can be vacant and still printed, or cut and its holder moved."
+    }
+   ],
+   "rests_on": [
+    "fire-department",
+    "police-department",
+    "public-works",
+    "council-on-aging",
+    "library",
+    "building-department",
+    "board-of-assessors",
+    "information-technology",
+    "total"
+   ],
+   "text": "The 8 counts come in 7 forms: named rosters, posts, ranges and a stated number."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "b": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    }
+   },
+   "literals": [
+    "FY2023"
+   ],
+   "rests_on": [
+    "library",
+    "building-department",
+    "information-technology"
+   ],
+   "text": "3 of the 8 last printed a count before FY2023."
+  }
+ ],
+ "facts": [
+  {
+   "id": "fire-department",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Fire, people, FY2025"
+   },
+   "value": {
+    "text": "40",
+    "unit": "people",
+    "value": 40
+   }
+  },
+  {
+   "id": "police-department",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Police, people, FY2025"
+   },
+   "value": {
+    "text": "29",
+    "unit": "people",
+    "value": 29
+   }
+  },
+  {
+   "id": "public-works",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Public Works, posts, FY2025"
+   },
+   "value": {
+    "text": "14",
+    "unit": "posts",
+    "value": 14
+   }
+  },
+  {
+   "id": "council-on-aging",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Council on Aging, people, FY2025"
+   },
+   "value": {
+    "text": "11",
+    "unit": "people",
+    "value": 11
+   }
+  },
+  {
+   "id": "library",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2019"
+    ],
+    "text": "Library, people, FY2019"
+   },
+   "value": {
+    "text": "10",
+    "unit": "people",
+    "value": 10
+   }
+  },
+  {
+   "id": "building-department",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "Building, people, FY2022"
+   },
+   "value": {
+    "text": "4",
+    "unit": "people",
+    "value": 4
+   }
+  },
+  {
+   "id": "board-of-assessors",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Board of Assessors, posts, FY2025"
+   },
+   "value": {
+    "text": "3",
+    "unit": "posts",
+    "value": 3
+   }
+  },
+  {
+   "id": "information-technology",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2020"
+    ],
+    "text": "Information Technology, people, FY2020"
+   },
+   "value": {
+    "text": "3",
+    "unit": "people",
+    "value": 3
+   }
+  },
+  {
+   "closes": "a payroll listing by department; the gross wages list stopped naming departments after FY2016",
+   "id": "total",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one town-wide headcount by department"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "8",
+    "unit": "",
+    "value": 8
+   },
+   "b": {
+    "text": "7",
+    "unit": "",
+    "value": 7
+   }
+  },
+  "literals": [],
+  "text": "8 town departments print a staff count, in 7 different forms that cannot be added up."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-staff-counts",
+ "kind": "topic",
+ "path": "/department-budgets/town-staff-counts",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/department-staffing.csv",
+   "label": "Lunenburg Budget Project — department-staffing.csv (what each department says it employs, as printed)"
+  },
+  {
+   "href": "/data/town-personnel.json",
+   "label": "Lunenburg Budget Project — town-personnel.json (staff counts as each department prints them)"
+  }
+ ],
+ "table": {
+  "caption": "Each department’s own count",
+  "views": [
+   {
+    "columns": [
+     "Count",
+     "Year",
+     "What it counts"
+    ],
+    "key": "counts",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Latest",
+    "note": "As each department prints it in its own annual report. School staff are on the School staffing shelf.",
+    "rows": [
+     {
+      "cells": [
+       "40",
+       "FY2025",
+       "career staff plus the low end of the on-call range"
+      ],
+      "label": "Fire Department"
+     },
+     {
+      "cells": [
+       "29",
+       "FY2025",
+       "every member of staff, named on its roster"
+      ],
+      "label": "Police Department"
+     },
+     {
+      "cells": [
+       "14",
+       "FY2025",
+       "an establishment, post by post"
+      ],
+      "label": "Department of Public Works"
+     },
+     {
+      "cells": [
+       "11",
+       "FY2025",
+       "a named staff list"
+      ],
+      "label": "Council on Aging"
+     },
+     {
+      "cells": [
+       "10",
+       "FY2019",
+       "a stated headcount"
+      ],
+      "label": "Library"
+     },
+     {
+      "cells": [
+       "4",
+       "FY2022",
+       "a named staff list"
+      ],
+      "label": "Building Department"
+     },
+     {
+      "cells": [
+       "3",
+       "FY2025",
+       "an establishment, one post at a time"
+      ],
+      "label": "Board of Assessors"
+     },
+     {
+      "cells": [
+       "3",
+       "FY2020",
+       "a named roster, one biography per person"
+      ],
+      "label": "Information Technology"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Town staff counts"
+}

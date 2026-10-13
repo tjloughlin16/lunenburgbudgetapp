@@ -1,0 +1,333 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$44,024,349",
+    "unit": "",
+    "value": 44024349.190000005
+   },
+   "b": {
+    "text": "57.1%",
+    "unit": "",
+    "value": 57.076491674083954
+   },
+   "c": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  "literals": [
+   "FY2025"
+  ],
+  "text": "Town Meeting voted $44,024,349 across twelve groups for FY2025; the schools are 57.1%. Ranked by dollars past the 2.5% levy cap, employee benefits push the budget hardest, then the schools."
+ },
+ "category": "department-budgets",
+ "chains": [],
+ "chart": {
+  "id": "town-budgets-share",
+  "source": "/data/town-budgets.json"
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "department-budgets",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "57.1%",
+      "unit": "",
+      "value": 57.076491674083954
+     },
+     "b": {
+      "text": "84.1%",
+      "unit": "",
+      "value": 84.05738245054111
+     }
+    },
+    "literals": [
+     "FY2025"
+    ],
+    "rests_on": [
+     "h-sch",
+     "h-top4",
+     "h-total"
+    ],
+    "text": "Schools are 57.1% of the FY2025 voted budget; four groups are 84.1% of it."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$438,870",
+      "unit": "",
+      "value": 438870.34197444736
+     },
+     "b": {
+      "text": "$284,306",
+      "unit": "",
+      "value": 284305.8260677269
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-ben",
+     "h-sch-ex",
+     "h-cap"
+    ],
+    "text": "By dollars past the cap, benefits push hardest ($438,870 a year), then the schools ($284,306)."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "10 of 12",
+      "unit": "",
+      "value": 10
+     }
+    },
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "rests_on": [
+     "h-above",
+     "h-cap"
+    ],
+    "text": "10 of 12 groups grew faster than the cap from FY2023 to FY2025."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$1,556,402",
+      "unit": "",
+      "value": 1556401.8499999996
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-debt"
+    ],
+    "text": "Debt service fell $1,556,402 while the total still rose."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-asked",
+     "h-service"
+    ],
+    "text": "A voted budget is already balanced: requests and service levels are not in it."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "8",
+      "unit": "",
+      "value": 8
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-forms"
+    ],
+    "text": "8 town departments print a staff count, in forms that cannot be added."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-total",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2025"
+       ],
+       "text": "voted for twelve groups, FY2025"
+      },
+      "value": {
+       "text": "$44,024,349",
+       "unit": "",
+       "value": 44024349.190000005
+      }
+     },
+     {
+      "id": "h-sch",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of it to the schools"
+      },
+      "value": {
+       "text": "57.1%",
+       "unit": "",
+       "value": 57.076491674083954
+      }
+     },
+     {
+      "id": "h-top4",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "in the four largest groups"
+      },
+      "value": {
+       "text": "84.1%",
+       "unit": "",
+       "value": 84.05738245054111
+      }
+     },
+     {
+      "id": "h-26",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2026"
+       ],
+       "text": "voted for FY2026; the report prints no department table"
+      },
+      "value": {
+       "text": "$49,374,465",
+       "unit": "",
+       "value": 49374465.0
+      }
+     }
+    ],
+    "title": "What is voted"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-cap",
+      "kind": "statute",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "a year the levy may rise, before new growth"
+      },
+      "value": {
+       "text": "2.5%",
+       "unit": "",
+       "value": 2.5
+      }
+     },
+     {
+      "id": "h-above",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "groups growing faster than the cap"
+      },
+      "value": {
+       "text": "10 of 12",
+       "unit": "groups",
+       "value": 10
+      }
+     },
+     {
+      "id": "h-ben",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "benefits, a year above the cap (ours)"
+      },
+      "value": {
+       "text": "$438,870",
+       "unit": "",
+       "value": 438870.34197444736
+      }
+     },
+     {
+      "id": "h-sch-ex",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "schools, a year above the cap (ours)"
+      },
+      "value": {
+       "text": "$284,306",
+       "unit": "",
+       "value": 284305.8260677269
+      }
+     },
+     {
+      "id": "h-debt",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2025",
+        "FY2023"
+       ],
+       "text": "less for debt service, FY2025 than FY2023"
+      },
+      "value": {
+       "text": "$1,556,402",
+       "unit": "",
+       "value": 1556401.8499999996
+      }
+     }
+    ],
+    "title": "How it grows"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-forms",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "town departments printing a staff count"
+      },
+      "value": {
+       "text": "8",
+       "unit": "departments",
+       "value": 8
+      }
+     },
+     {
+      "closes": "department budget requests to the Finance Committee",
+      "id": "h-asked",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "each department’s budget request"
+      },
+      "value": null
+     },
+     {
+      "closes": "each department’s activity figures, year by year",
+      "id": "h-service",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "whether any service was reduced"
+      },
+      "value": null
+     }
+    ],
+    "title": "What is not shown"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/department-budgets",
+ "shelves": [
+  "department-budgets"
+ ],
+ "table": null,
+ "title": "Town departments"
+}

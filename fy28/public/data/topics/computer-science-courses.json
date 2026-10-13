@@ -1,0 +1,393 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    },
+    "s": {
+     "text": "1",
+     "unit": "",
+     "value": 1
+    }
+   },
+   "literals": [
+    "9–12"
+   ],
+   "rests_on": [
+    "hs-sec",
+    "hs-one"
+   ],
+   "text": "In 11 years holding only grades 9–12, the high school ran 1 computer science section."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    },
+    "s": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "y": {
+     "text": "SY2025",
+     "unit": "school year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "ms-years",
+    "ms-last"
+   ],
+   "text": "The middle school ran it in every one of its 9 years: 5 sections in SY2025."
+  },
+  {
+   "figures": {
+    "r": {
+     "text": "5 to 8",
+     "unit": "",
+     "value": 8
+    }
+   },
+   "literals": [
+    "grade 8"
+   ],
+   "rests_on": [
+    "g8-ran"
+   ],
+   "text": "The high school ran 5 to 8 sections a year only while grade 8 was in its building."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A fifth of the high school’s sections are filed as Miscellaneous, with no course name."
+    }
+   ],
+   "rests_on": [
+    "heading-gap"
+   ],
+   "text": "This counts one DESE subject heading, so computing taught under another would not show."
+  }
+ ],
+ "facts": [
+  {
+   "id": "hs-sec",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "11",
+      "unit": "",
+      "value": 11
+     }
+    },
+    "literals": [
+     "9–12"
+    ],
+    "text": "high school sections in 11 years of grades 9–12"
+   },
+   "value": {
+    "text": "1",
+    "unit": "course sections",
+    "value": 1
+   }
+  },
+  {
+   "id": "hs-one",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2023",
+      "unit": "school year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "students in that section, SY2023"
+   },
+   "value": {
+    "text": "8",
+    "unit": "students",
+    "value": 8
+   }
+  },
+  {
+   "id": "ms-years",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "9",
+      "unit": "",
+      "value": 9
+     }
+    },
+    "literals": [],
+    "text": "years the middle school ran it, of 9"
+   },
+   "value": {
+    "text": "9",
+    "unit": "school years",
+    "value": 9
+   }
+  },
+  {
+   "id": "ms-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "middle school sections, SY2025"
+   },
+   "value": {
+    "text": "5",
+    "unit": "course sections",
+    "value": 5
+   }
+  },
+  {
+   "id": "g8-ran",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2013",
+      "unit": "school year",
+      "value": 2013
+     },
+     "b": {
+      "text": "SY2016",
+      "unit": "school year",
+      "value": 2016
+     }
+    },
+    "literals": [],
+    "text": "high school sections a year, SY2013 to SY2016"
+   },
+   "value": {
+    "text": "5 to 8",
+    "unit": "course sections",
+    "value": 8
+   }
+  },
+  {
+   "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+   "id": "heading-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "computing taught under another subject heading"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n": {
+    "text": "11",
+    "unit": "",
+    "value": 11
+   },
+   "s": {
+    "text": "1",
+    "unit": "",
+    "value": 1
+   }
+  },
+  "literals": [
+   "9–12"
+  ],
+  "text": "In 11 school years holding grades 9–12, Lunenburg High recorded 1 computer science section."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "computer-science-courses",
+ "kind": "topic",
+ "path": "/school-programs/computer-science-courses",
+ "said": [],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-class-size.xlsx",
+   "label": "Massachusetts DESE — dese-class-size.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
+   "href": "/data/course-offerings.json",
+   "label": "Lunenburg Budget Project — course-offerings.json (sections by school and subject, generated)"
+  }
+ ],
+ "table": {
+  "caption": "Computer science sections, by school year",
+  "views": [
+   {
+    "columns": [
+     "High school",
+     "High school students",
+     "Middle school"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Computer and Information Sciences",
+    "note": "DESE’s class-size file. From SY2013 to SY2016 grade 8 was taught in the high school building. A blank is a year before Lunenburg Middle School existed.",
+    "rows": [
+     {
+      "cells": [
+       "0",
+       "0",
+       "5"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "6"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "1",
+       "8",
+       "6"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "8"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "6"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "6"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "6"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "7"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       "8"
+      ],
+      "label": "SY2017"
+     },
+     {
+      "cells": [
+       "8",
+       "119",
+       null
+      ],
+      "label": "SY2016"
+     },
+     {
+      "cells": [
+       "6",
+       "121",
+       null
+      ],
+      "label": "SY2015"
+     },
+     {
+      "cells": [
+       "8",
+       "134",
+       null
+      ],
+      "label": "SY2014"
+     },
+     {
+      "cells": [
+       "5",
+       "119",
+       null
+      ],
+      "label": "SY2013"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       null
+      ],
+      "label": "SY2012"
+     },
+     {
+      "cells": [
+       "0",
+       "0",
+       null
+      ],
+      "label": "SY2011"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Computer science"
+}

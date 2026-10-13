@@ -1,0 +1,421 @@
+{
+ "answer": {
+  "figures": {
+   "y": {
+    "text": "SY2025",
+    "unit": "school year",
+    "value": 2025
+   },
+   "y0": {
+    "text": "SY2017",
+    "unit": "school year",
+    "value": 2017
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg High ran more classes in SY2025 than in SY2017, but a smaller share takes a language or history. Most announced cuts cannot be checked against any published count, and most budget lines cut to zero came back."
+ },
+ "category": "school-programs",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-programs",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "247",
+      "unit": "",
+      "value": 247
+     },
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     },
+     "y0": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-sec"
+    ],
+    "text": "The high school ran 247 sections in SY2025, more than in SY2017, on flat enrolment."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-lang",
+     "h-hist"
+    ],
+    "text": "Languages and history are taken by a smaller share of the school than before."
+   },
+   {
+    "figures": {
+     "p": {
+      "text": "88.3%",
+      "unit": "",
+      "value": 88.3
+     },
+     "t": {
+      "text": "89",
+      "unit": "",
+      "value": 89
+     },
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "3"
+    ],
+    "rests_on": [
+     "h-ap",
+     "h-pass"
+    ],
+    "text": "89 students sat an AP exam in SY2025, and 88.3% of tests scored 3 or better."
+   },
+   {
+    "figures": {
+     "b": {
+      "text": "48",
+      "unit": "",
+      "value": 48
+     },
+     "m": {
+      "text": "60",
+      "unit": "",
+      "value": 60
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-named",
+     "h-blind",
+     "h-saved",
+     "h-outcome"
+    ],
+    "text": "A cut list is intent: 48 of 60 adopted cuts name a job no series counts."
+   },
+   {
+    "figures": {
+     "e": {
+      "text": "132",
+      "unit": "",
+      "value": 132
+     },
+     "r": {
+      "text": "93",
+      "unit": "",
+      "value": 93
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-zero"
+    ],
+    "text": "Most school lines cut to zero came back: 93 of 132."
+   },
+   {
+    "figures": {
+     "s": {
+      "text": "42.2%",
+      "unit": "",
+      "value": 42.23147094666308
+     },
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-replaced",
+     "h-town"
+    ],
+    "text": "When grants fell in FY2025, the general fund replaced 42.2% of the fall."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-sec",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "225",
+         "unit": "",
+         "value": 225
+        },
+        "y": {
+         "text": "SY2025",
+         "unit": "school year",
+         "value": 2025
+        },
+        "y0": {
+         "text": "SY2017",
+         "unit": "school year",
+         "value": 2017
+        }
+       },
+       "literals": [],
+       "text": "high school sections, SY2025; 225 in SY2017"
+      },
+      "value": {
+       "text": "247",
+       "unit": "course sections",
+       "value": 247
+      }
+     },
+     {
+      "id": "h-lang",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "SY2025",
+         "unit": "school year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "of the high school took a language, SY2025"
+      },
+      "value": {
+       "text": "57.8%",
+       "unit": "",
+       "value": 57.76
+      }
+     },
+     {
+      "id": "h-hist",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "SY2023",
+         "unit": "school year",
+         "value": 2023
+        },
+        "b": {
+         "text": "SY2025",
+         "unit": "school year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "took history, average SY2023 to SY2025"
+      },
+      "value": {
+       "text": "60.4%",
+       "unit": "",
+       "value": 60.38
+      }
+     },
+     {
+      "id": "h-ap",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "SY2025",
+         "unit": "school year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "sat at least one AP exam, SY2025"
+      },
+      "value": {
+       "text": "89",
+       "unit": "students",
+       "value": 89
+      }
+     },
+     {
+      "id": "h-pass",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "SY2025",
+         "unit": "school year",
+         "value": 2025
+        }
+       },
+       "literals": [
+        "3",
+        "5"
+       ],
+       "text": "of AP tests scored 3 to 5, SY2025"
+      },
+      "value": {
+       "text": "88.3%",
+       "unit": "",
+       "value": 88.3
+      }
+     }
+    ],
+    "title": "What ran"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-named",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "c": {
+         "text": "5",
+         "unit": "",
+         "value": 5
+        }
+       },
+       "literals": [],
+       "text": "reductions the district named, 5 cycles"
+      },
+      "value": {
+       "text": "158",
+       "unit": "reductions named",
+       "value": 158
+      }
+     },
+     {
+      "id": "h-blind",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "m": {
+         "text": "60",
+         "unit": "",
+         "value": 60
+        }
+       },
+       "literals": [],
+       "text": "of 60 adopted cuts no series can test"
+      },
+      "value": {
+       "text": "48",
+       "unit": "adopted cuts",
+       "value": 48
+      }
+     },
+     {
+      "id": "h-saved",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "May 2024"
+       ],
+       "text": "posts the May 2024 override took off the list"
+      },
+      "value": {
+       "text": "13",
+       "unit": "positions",
+       "value": 13
+      }
+     },
+     {
+      "id": "h-zero",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "e": {
+         "text": "132",
+         "unit": "",
+         "value": 132
+        }
+       },
+       "literals": [],
+       "text": "of 132 lines cut to zero funded again"
+      },
+      "value": {
+       "text": "93",
+       "unit": "budget lines",
+       "value": 93
+      }
+     },
+     {
+      "closes": "the district’s year-end position control report: filled posts by FTE, school and funding source",
+      "id": "h-outcome",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "which posts named for cutting were removed"
+      },
+      "value": null
+     }
+    ],
+    "title": "What was cut"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-replaced",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "of the FY2025 grant fall replaced from the general fund"
+      },
+      "value": {
+       "text": "42.2%",
+       "unit": "",
+       "value": 42.23147094666308
+      }
+     },
+     {
+      "id": "h-town",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "of school spending from the general fund, FY2025"
+      },
+      "value": {
+       "text": "89.9%",
+       "unit": "",
+       "value": 89.86
+      }
+     }
+    ],
+    "title": "When grants end"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/school-programs",
+ "shelves": [
+  "school-programs"
+ ],
+ "table": null,
+ "title": "Programs and cuts"
+}

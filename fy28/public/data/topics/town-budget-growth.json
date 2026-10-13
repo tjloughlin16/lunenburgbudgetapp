@@ -1,0 +1,431 @@
+{
+ "category": "department-budgets",
+ "chart": {
+  "id": "town-budgets-pull",
+  "source": "/data/town-budgets.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "9.8%",
+     "unit": "",
+     "value": 9.751701158537896
+    },
+    "b": {
+     "text": "$438,870",
+     "unit": "",
+     "value": 438870.34197444736
+    },
+    "c": {
+     "text": "57.1%",
+     "unit": "",
+     "value": 57.076491674083954
+    },
+    "d": {
+     "text": "$284,306",
+     "unit": "",
+     "value": 284305.8260677269
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "ben",
+    "sch"
+   ],
+   "text": "Benefits are 9.8% of the budget and push $438,870 a year past the cap; the schools, 57.1%, push $284,306."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "22.6%",
+     "unit": "",
+     "value": 22.582040683975357
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sw-rate",
+    "sw"
+   ],
+   "text": "Trash and recycling grew fastest, 22.6% a year, and ranks fifth by dollars above the cap."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "8.0%",
+     "unit": "",
+     "value": 8.022100316658044
+    },
+    "b": {
+     "text": "3.6%",
+     "unit": "",
+     "value": 3.6314504629767264
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rest",
+    "sch"
+   ],
+   "text": "Outside the schools and debt, the groups grew 8.0% a year; the schools grew 3.6%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$571,540",
+     "unit": "",
+     "value": 571539.8163639731
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Division of Local Services tax rate recapitulation for each year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The cap limits the levy, not the budget. State aid, local receipts and new growth also pay for these lines."
+    }
+   ],
+   "rests_on": [
+    "debt",
+    "sum"
+   ],
+   "text": "Debt service falling offsets much of the rest: all twelve net to $571,540 a year above the cap."
+  }
+ ],
+ "facts": [
+  {
+   "id": "cap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year the levy may rise, before new growth"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "all",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, the whole voted budget, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "2.9%",
+    "unit": "",
+    "value": 2.911288965581438
+   }
+  },
+  {
+   "id": "above",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "groups growing faster than the cap"
+   },
+   "value": {
+    "text": "10 of 12",
+    "unit": "groups",
+    "value": 10
+   }
+  },
+  {
+   "id": "ben",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "benefits, a year above the cap (ours)"
+   },
+   "value": {
+    "text": "$438,870",
+    "unit": "",
+    "value": 438870.34197444736
+   }
+  },
+  {
+   "id": "sch",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "schools, a year above the cap (ours)"
+   },
+   "value": {
+    "text": "$284,306",
+    "unit": "",
+    "value": 284305.8260677269
+   }
+  },
+  {
+   "id": "gg",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "general government, a year above the cap (ours)"
+   },
+   "value": {
+    "text": "$168,340",
+    "unit": "",
+    "value": 168339.80699548218
+   }
+  },
+  {
+   "id": "sw-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, trash and recycling, the fastest"
+   },
+   "value": {
+    "text": "22.6%",
+    "unit": "",
+    "value": 22.582040683975357
+   }
+  },
+  {
+   "id": "sw",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "trash and recycling, above the cap (ours)"
+   },
+   "value": {
+    "text": "$94,340",
+    "unit": "",
+    "value": 94340.40662314523
+   }
+  },
+  {
+   "id": "debt",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "debt service, against the cap (ours)"
+   },
+   "value": {
+    "text": "-$636,277",
+    "unit": "",
+    "value": -636276.6520567131
+   }
+  },
+  {
+   "id": "sum",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "all twelve, a year above the cap (ours)"
+   },
+   "value": {
+    "text": "$571,540",
+    "unit": "",
+    "value": 571539.8163639731
+   }
+  },
+  {
+   "id": "rest",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, all but schools and debt"
+   },
+   "value": {
+    "text": "8.0%",
+    "unit": "",
+    "value": 8.022100316658044
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  "literals": [],
+  "text": "Ranked by dollars above the 2.5% levy cap, employee benefits push the budget hardest, then the schools."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-budget-growth",
+ "kind": "topic",
+ "path": "/department-budgets/town-budget-growth",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  }
+ ],
+ "table": {
+  "caption": "Each group against the levy cap",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "A year",
+     "Above the cap, a year (ours)"
+    ],
+    "key": "growth",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2023 to FY2025",
+    "note": "Ranked by the last column: the group’s own dollars times how far its compound growth ran past the cap. Neither its size nor its rate alone ranks it.",
+    "rows": [
+     {
+      "cells": [
+       "$3,378,711",
+       "$4,293,123",
+       "12.7%",
+       "$438,870"
+      ],
+      "label": "Employee benefits & reserves"
+     },
+     {
+      "cells": [
+       "$23,397,371",
+       "$25,127,554",
+       "3.6%",
+       "$284,306"
+      ],
+      "label": "Schools"
+     },
+     {
+      "cells": [
+       "$1,792,492",
+       "$2,177,964",
+       "10.2%",
+       "$168,340"
+      ],
+      "label": "General Government"
+     },
+     {
+      "cells": [
+       "$4,239,355",
+       "$4,643,717",
+       "4.7%",
+       "$100,330"
+      ],
+      "label": "Protection of persons & property"
+     },
+     {
+      "cells": [
+       "$312,634",
+       "$469,775",
+       "22.6%",
+       "$94,340"
+      ],
+      "label": "Solid Waste & Recycling"
+     },
+     {
+      "cells": [
+       "$884,566",
+       "$1,022,711",
+       "7.5%",
+       "$51,396"
+      ],
+      "label": "Facilities & Grounds"
+     },
+     {
+      "cells": [
+       "$492,984",
+       "$583,890",
+       "8.8%",
+       "$36,961"
+      ],
+      "label": "Library"
+     },
+     {
+      "cells": [
+       "$294,404",
+       "$340,898",
+       "7.6%",
+       "$17,409"
+      ],
+      "label": "Assistance"
+     },
+     {
+      "cells": [
+       "$2,101,445",
+       "$2,225,277",
+       "2.9%",
+       "$8,994"
+      ],
+      "label": "Public Works"
+     },
+     {
+      "cells": [
+       "$99,260",
+       "$117,819",
+       "8.9%",
+       "$7,597"
+      ],
+      "label": "Health & Sanitation"
+     },
+     {
+      "cells": [
+       "$77,800",
+       "$80,300",
+       "1.6%",
+       "-$728"
+      ],
+      "label": "Central Purchasing"
+     },
+     {
+      "cells": [
+       "$4,497,723",
+       "$2,941,322",
+       "-19.1%",
+       "-$636,277"
+      ],
+      "label": "Maturing Debt & Interest"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Growth above the cap"
+}

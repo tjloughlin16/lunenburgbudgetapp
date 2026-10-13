@@ -1,0 +1,303 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "3.5%",
+     "unit": "",
+     "value": 3.4707378201555006
+    },
+    "b": {
+     "text": "7.8%",
+     "unit": "",
+     "value": 7.816385994509423
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sd-rate",
+    "mt-rate",
+    "sd",
+    "mt"
+   ],
+   "text": "The School Department line grew 3.5% a year; the Monty Tech assessment beside it, 7.8%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3.6%",
+     "unit": "",
+     "value": 3.6314504629767264
+    },
+    "b": {
+     "text": "$284,306",
+     "unit": "",
+     "value": 284305.8260677269
+    },
+    "m": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    },
+    "n": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s grant and revolving fund reports, by department",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A voted line is net: what the town raises after grants, fees and other receipts pay their part. It is not what the service costs."
+    },
+    {
+     "closes": "the Chapter 70 summary for the year, on the State aid shelf",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "70"
+     ],
+     "text": "Part of the school appropriation is Chapter 70 aid, set by the state rather than the town; the State aid shelf has its share."
+    }
+   ],
+   "rests_on": [
+    "rate",
+    "excess",
+    "share"
+   ],
+   "text": "The largest group grew slower than 8 of the other 11: 3.6% a year, $284,306 past the cap."
+  }
+ ],
+ "facts": [
+  {
+   "id": "voted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$25,127,554",
+    "unit": "",
+    "value": 25127554.0
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "57.1%",
+    "unit": "",
+    "value": 57.076491674083954
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "3.6%",
+    "unit": "",
+    "value": 3.6314504629767264
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "$284,306",
+    "unit": "",
+    "value": 284305.8260677269
+   }
+  },
+  {
+   "id": "sd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "School Department line, FY2025"
+   },
+   "value": {
+    "text": "$23,901,908",
+    "unit": "",
+    "value": 23901908.0
+   }
+  },
+  {
+   "id": "sd-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, the School Department line"
+   },
+   "value": {
+    "text": "3.5%",
+    "unit": "",
+    "value": 3.4707378201555006
+   }
+  },
+  {
+   "id": "mt",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Monty Tech assessment, FY2025"
+   },
+   "value": {
+    "text": "$1,225,646",
+    "unit": "",
+    "value": 1225646.0
+   }
+  },
+  {
+   "id": "mt-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, the Monty Tech assessment"
+   },
+   "value": {
+    "text": "7.8%",
+    "unit": "",
+    "value": 7.816385994509423
+   }
+  },
+  {
+   "closes": "DESE’s End of Year Financial Report, which separates spending by fund",
+   "id": "all-in",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what the schools cost with grants and receipts"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "57.1%",
+    "unit": "",
+    "value": 57.076491674083954
+   },
+   "b": {
+    "text": "3.6%",
+    "unit": "",
+    "value": 3.6314504629767264
+   }
+  },
+  "literals": [
+   "FY2023",
+   "FY2025"
+  ],
+  "text": "The schools are 57.1% of the voted budget and grew 3.6% a year, FY2023 to FY2025."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-schools-line",
+ "kind": "topic",
+ "path": "/department-budgets/town-schools-line",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-schools.json",
+   "label": "Lunenburg Budget Project — town-budget-schools.json (its printed lines)"
+  }
+ ],
+ "table": {
+  "caption": "The school group’s lines",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "Change"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lines, as printed",
+    "note": "Lines that appear in both omnibus budgets under the same printed label. A line whose label changed is not joined.",
+    "rows": [
+     {
+      "cells": [
+       "$22,325,309",
+       "$23,901,908",
+       "+$1,576,599"
+      ],
+      "label": "School Department"
+     },
+     {
+      "cells": [
+       "$1,054,376",
+       "$1,225,646",
+       "+$171,270"
+      ],
+      "label": "Monty Tech Assessment"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Schools in the omnibus"
+}

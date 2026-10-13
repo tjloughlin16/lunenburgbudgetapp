@@ -1,0 +1,427 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "75.8%",
+     "unit": "",
+     "value": 75.81
+    },
+    "b": {
+     "text": "60.4%",
+     "unit": "",
+     "value": 60.38
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "SY2020",
+       "unit": "school year",
+       "value": 2020
+      },
+      "b": {
+       "text": "SY2022",
+       "unit": "school year",
+       "value": 2022
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The era from SY2020 to SY2022 is set aside as the pandemic. That boundary is our judgement; the file records nothing about it."
+    }
+   ],
+   "rests_on": [
+    "p-pre",
+    "p-now"
+   ],
+   "text": "The share taking history fell from 75.8% to 60.4%, comparing the eras either side of the pandemic."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3.17",
+     "unit": "",
+     "value": 3.17
+    },
+    "b": {
+     "text": "2.4",
+     "unit": "",
+     "value": 2.4
+    },
+    "c": {
+     "text": "341",
+     "unit": "",
+     "value": 341
+    },
+    "e": {
+     "text": "271",
+     "unit": "",
+     "value": 271
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fte-pre",
+    "fte-now",
+    "seats-pre",
+    "seats-now"
+   ],
+   "text": "Teacher FTE went from 3.17 to 2.4 and places that ran from 341 to 271."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s course-request tallies for each year: what students asked for beside what ran",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The state files nothing that separates them."
+    }
+   ],
+   "rests_on": [
+    "why-gap",
+    "fte-now",
+    "p-now"
+   ],
+   "text": "Fewer posts, a tighter timetable and different choices all fit the same three numbers."
+  }
+ ],
+ "facts": [
+  {
+   "id": "p-now",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2023",
+      "unit": "school year",
+      "value": 2023
+     },
+     "b": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "took history, average SY2023 to SY2025"
+   },
+   "value": {
+    "text": "60.4%",
+    "unit": "",
+    "value": 60.38
+   }
+  },
+  {
+   "id": "p-pre",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     },
+     "b": {
+      "text": "SY2019",
+      "unit": "school year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "took history, average SY2017 to SY2019"
+   },
+   "value": {
+    "text": "75.8%",
+    "unit": "",
+    "value": 75.81
+   }
+  },
+  {
+   "id": "fte-now",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2023",
+      "unit": "school year",
+      "value": 2023
+     },
+     "b": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "history teacher FTE, average SY2023 to SY2025"
+   },
+   "value": {
+    "text": "2.4",
+    "unit": "full-time equivalents",
+    "value": 2.4
+   }
+  },
+  {
+   "id": "fte-pre",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     },
+     "b": {
+      "text": "SY2019",
+      "unit": "school year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "history teacher FTE, average SY2017 to SY2019"
+   },
+   "value": {
+    "text": "3.17",
+    "unit": "full-time equivalents",
+    "value": 3.17
+   }
+  },
+  {
+   "id": "seats-now",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2023",
+      "unit": "school year",
+      "value": 2023
+     },
+     "b": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "history places that ran, average SY2023 to SY2025"
+   },
+   "value": {
+    "text": "271",
+    "unit": "student places",
+    "value": 271
+   }
+  },
+  {
+   "id": "seats-pre",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     },
+     "b": {
+      "text": "SY2019",
+      "unit": "school year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "history places that ran, average SY2017 to SY2019"
+   },
+   "value": {
+    "text": "341",
+    "unit": "student places",
+    "value": 341
+   }
+  },
+  {
+   "closes": "the district’s course-request tallies for each year: what students asked for beside what ran",
+   "id": "why-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why fewer students take history"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a0": {
+    "text": "SY2017",
+    "unit": "school year",
+    "value": 2017
+   },
+   "a1": {
+    "text": "SY2023",
+    "unit": "school year",
+    "value": 2023
+   },
+   "b0": {
+    "text": "SY2019",
+    "unit": "school year",
+    "value": 2019
+   },
+   "b1": {
+    "text": "SY2025",
+    "unit": "school year",
+    "value": 2025
+   },
+   "p0": {
+    "text": "75.8%",
+    "unit": "",
+    "value": 75.81
+   },
+   "p1": {
+    "text": "60.4%",
+    "unit": "",
+    "value": 60.38
+   }
+  },
+  "literals": [],
+  "text": "60.4% of Lunenburg High took a history course in SY2023 to SY2025, against 75.8% in SY2017 to SY2019."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "history-courses",
+ "kind": "topic",
+ "path": "/school-programs/history-courses",
+ "said": [],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-class-size.xlsx",
+   "label": "Massachusetts DESE — dese-class-size.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-teacher-data.xlsx",
+   "label": "Massachusetts DESE — dese-teacher-data.xlsx"
+  },
+  {
+   "href": "/data/course-offerings.json",
+   "label": "Lunenburg Budget Project — course-offerings.json (sections by school and subject, generated)"
+  }
+ ],
+ "table": {
+  "caption": "History at Lunenburg High, by school year",
+  "views": [
+   {
+    "columns": [
+     "Sections",
+     "Places",
+     "Share taking it",
+     "Teacher FTE"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "History",
+    "note": "DESE’s class-size and teacher files. Places are sections times average class size. Single years swing; the page compares averages over eras.",
+    "rows": [
+     {
+      "cells": [
+       "15",
+       "260",
+       "59.1%",
+       "2.7"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "16",
+       "261",
+       "58.0%",
+       "2.5"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "16",
+       "293",
+       "64.0%",
+       "2.0"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "15",
+       "302",
+       "63.5%",
+       "2.0"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "15",
+       "240",
+       "52.0%",
+       "1.2"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "22",
+       "398",
+       "80.6%",
+       "2.2"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "20",
+       "356",
+       "76.0%",
+       "2.5"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "19",
+       "340",
+       "76.5%",
+       "3.7"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "17",
+       "326",
+       "74.9%",
+       "3.3"
+      ],
+      "label": "SY2017"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "History courses"
+}

@@ -1,0 +1,246 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "b": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "c": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "spend",
+    "bought",
+    "counted"
+   ],
+   "text": "Of the 6 uncounted groups, 3 are categories of spending and 2 are bought services."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "each office’s establishment of posts",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A group with a count is not a group that is counted: General Government prints two offices’ staff and none for the rest."
+    }
+   ],
+   "rests_on": [
+    "fac",
+    "fac-gap"
+   ],
+   "text": "Facilities and grounds is the one department voted money with no staff count anywhere."
+  }
+ ],
+ "facts": [
+  {
+   "id": "counted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "groups with at least one staff count"
+   },
+   "value": {
+    "text": "6 of 12",
+    "unit": "groups",
+    "value": 6
+   }
+  },
+  {
+   "id": "spend",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "3",
+      "unit": "",
+      "value": 3
+     }
+    },
+    "literals": [],
+    "text": "in 3 groups that employ nobody: debt, benefits, purchasing"
+   },
+   "value": {
+    "text": "$7,314,744",
+    "unit": "",
+    "value": 7314744.47
+   }
+  },
+  {
+   "id": "bought",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "2",
+      "unit": "",
+      "value": 2
+     }
+    },
+    "literals": [],
+    "text": "in 2 groups bought as a service"
+   },
+   "value": {
+    "text": "$587,594",
+    "unit": "",
+    "value": 587593.74
+   }
+  },
+  {
+   "id": "fac",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Facilities and grounds, FY2025, with no count"
+   },
+   "value": {
+    "text": "$1,022,711",
+    "unit": "",
+    "value": 1022711.12
+   }
+  },
+  {
+   "closes": "a Facilities staff listing or establishment of posts",
+   "id": "fac-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the people behind Facilities and grounds"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "6",
+    "unit": "",
+    "value": 6
+   },
+   "b": {
+    "text": "12",
+    "unit": "",
+    "value": 12
+   }
+  },
+  "literals": [],
+  "text": "6 of the 12 budget groups have a published staff count behind them; one department with a budget has none."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-headcount-coverage",
+ "kind": "topic",
+ "path": "/department-budgets/town-headcount-coverage",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-personnel.json",
+   "label": "Lunenburg Budget Project — town-personnel.json (staff counts as each department prints them)"
+  },
+  {
+   "href": "/docs/data/department-staffing.csv",
+   "label": "Lunenburg Budget Project — department-staffing.csv (what each department says it employs, as printed)"
+  }
+ ],
+ "table": {
+  "caption": "Groups with no staff count",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Why there is no count"
+    ],
+    "key": "none",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2025",
+    "note": "Why: our reading of each group’s printed lines and of the annual report’s department pages.",
+    "rows": [
+     {
+      "cells": [
+       "$4,293,123",
+       "a category of spending"
+      ],
+      "label": "Employee benefits & reserves"
+     },
+     {
+      "cells": [
+       "$2,941,322",
+       "a category of spending"
+      ],
+      "label": "Maturing Debt & Interest"
+     },
+     {
+      "cells": [
+       "$1,022,711",
+       "a department; no report or count printed"
+      ],
+      "label": "Facilities & Grounds"
+     },
+     {
+      "cells": [
+       "$469,775",
+       "bought as a service"
+      ],
+      "label": "Solid Waste & Recycling"
+     },
+     {
+      "cells": [
+       "$117,819",
+       "bought as a service"
+      ],
+      "label": "Health & Sanitation"
+     },
+     {
+      "cells": [
+       "$80,300",
+       "a category of spending"
+      ],
+      "label": "Central Purchasing"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Budgets without headcounts"
+}

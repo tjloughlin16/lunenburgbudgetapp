@@ -1,0 +1,310 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$142,750",
+     "unit": "",
+     "value": 142750.0
+    },
+    "b": {
+     "text": "$123,832",
+     "unit": "",
+     "value": 123832.15999999968
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the department’s budget request and narrative to the Finance Committee for that year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The omnibus states amounts and no reasons, so why the highway line moved is not shown here."
+    }
+   ],
+   "rests_on": [
+    "ghm0",
+    "ghm1",
+    "change"
+   ],
+   "text": "General Highway Maintenance rose $142,750 while the group rose $123,832, so other lines fell."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$355,000",
+     "unit": "",
+     "value": 355000.16
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "snow"
+   ],
+   "text": "Snow removal is voted at $355,000; state law lets a town spend past its snow budget."
+  }
+ ],
+ "facts": [
+  {
+   "id": "voted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$2,225,277",
+    "unit": "",
+    "value": 2225277.09
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "5.1%",
+    "unit": "",
+    "value": 5.0546507352014745
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "2.9%",
+    "unit": "",
+    "value": 2.9041860038367284
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "$8,994",
+    "unit": "",
+    "value": 8994.258544365237
+   }
+  },
+  {
+   "id": "change",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "the group’s rise, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "$123,832",
+    "unit": "",
+    "value": 123832.15999999968
+   }
+  },
+  {
+   "id": "ghm0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "General Highway Maintenance, FY2023"
+   },
+   "value": {
+    "text": "$745,500",
+    "unit": "",
+    "value": 745500.0
+   }
+  },
+  {
+   "id": "ghm1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "General Highway Maintenance, FY2025"
+   },
+   "value": {
+    "text": "$888,250",
+    "unit": "",
+    "value": 888250.0
+   }
+  },
+  {
+   "id": "snow",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Snow Removal Expense voted, FY2025"
+   },
+   "value": {
+    "text": "$355,000",
+    "unit": "",
+    "value": 355000.16
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2.9%",
+    "unit": "",
+    "value": 2.9041860038367284
+   }
+  },
+  "literals": [],
+  "text": "Public works grew 2.9% a year, close to the cap; one line rose more than the whole group."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-public-works",
+ "kind": "topic",
+ "path": "/department-budgets/town-public-works",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-public-works.json",
+   "label": "Lunenburg Budget Project — town-budget-public-works.json (its printed lines)"
+  }
+ ],
+ "table": {
+  "caption": "Public works’ lines",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "Change"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lines, as printed",
+    "note": "Lines that appear in both omnibus budgets under the same printed label. A line whose label changed is not joined.",
+    "rows": [
+     {
+      "cells": [
+       "$745,500",
+       "$888,250",
+       "+$142,750"
+      ],
+      "label": "General Highway Maintenance"
+     },
+     {
+      "cells": [
+       "$556,921",
+       "$609,066",
+       "+$52,146"
+      ],
+      "label": "Highway Labor"
+     },
+     {
+      "cells": [
+       "$100,116",
+       "$118,110",
+       "+$17,995"
+      ],
+      "label": "Cemetery Department"
+     },
+     {
+      "cells": [
+       "$73,480",
+       "$62,750",
+       "-$10,730"
+      ],
+      "label": "Vehicle Mtc. - Highway"
+     },
+     {
+      "cells": [
+       "$29,143",
+       "$38,500",
+       "+$9,357"
+      ],
+      "label": "Tree Removal"
+     },
+     {
+      "cells": [
+       "$350,000",
+       "$355,000",
+       "+$5,000"
+      ],
+      "label": "Snow Removal Expense"
+     },
+     {
+      "cells": [
+       "$10,513",
+       "$12,000",
+       "+$1,487"
+      ],
+      "label": "Highway OT"
+     },
+     {
+      "cells": [
+       "$1,040",
+       "$1,100",
+       "+$60"
+      ],
+      "label": "Town Highway Garage"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Public works"
+}

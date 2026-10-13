@@ -1131,7 +1131,10 @@ export function FigureTable({ t }: { t: FigureTableData }) {
           <thead>
             <tr style={{ background: 'var(--surface-1)', color: 'var(--text-secondary)' }}>
               <th scope="col" className="sticky left-0 text-left font-semibold px-2.5 py-2 align-bottom"
-                style={{ background: 'var(--surface-1)', borderBottom: '2px solid var(--axis)' }}>Year</th>
+                style={{ background: 'var(--surface-1)', borderBottom: '2px solid var(--axis)' }}>
+                {/* "Year" only when the rows ARE years; a table of departments or teams
+                    leaves the corner blank rather than mislabel its rows. */}
+                {v.rows.every(r => /^(FY|SY)\d{4}/.test(r.label)) ? 'Year' : ''}</th>
               {v.columns.map((c, i) => (
                 <th key={c} scope="col" className="text-right font-semibold px-2.5 py-2 align-bottom leading-snug"
                   style={{
@@ -1139,7 +1142,7 @@ export function FigureTable({ t }: { t: FigureTableData }) {
                     borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
                     fontStyle: stated(i) ? 'italic' : undefined,
                   }}>
-                  {c}{stated(i) ? <span className="block text-[10.5px] font-normal">district sheet</span> : null}
+                  {c}{stated(i) ? <span className="block text-[10.5px] font-normal">not from the books</span> : null}
                 </th>
               ))}
             </tr>

@@ -1,0 +1,523 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "d": {
+     "text": "22",
+     "unit": "",
+     "value": 22
+    },
+    "m": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "y0": {
+     "text": "SY2017",
+     "unit": "school year",
+     "value": 2017
+    },
+    "y1": {
+     "text": "SY2025",
+     "unit": "school year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "s-last",
+    "s-first",
+    "n-last",
+    "n-first"
+   ],
+   "text": "The high school ran 22 more sections in SY2025 than in SY2017, with 3 more students."
+  },
+  {
+   "figures": {
+    "a0": {
+     "text": "14.7",
+     "unit": "",
+     "value": 14.7
+    },
+    "a1": {
+     "text": "13.5",
+     "unit": "",
+     "value": 13.5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "avg-first",
+    "avg-last"
+   ],
+   "text": "The average section fell from 14.7 students to 13.5."
+  },
+  {
+   "figures": {
+    "m0": {
+     "text": "35",
+     "unit": "",
+     "value": 35
+    },
+    "m1": {
+     "text": "51",
+     "unit": "",
+     "value": 51
+    },
+    "v": {
+     "text": "4.9",
+     "unit": "",
+     "value": 4.9
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Groups this small fit academic support, electives or directed study alike. DESE files no course name, so nothing here separates them."
+    }
+   ],
+   "rests_on": [
+    "misc-first",
+    "misc-last",
+    "misc-avg"
+   ],
+   "text": "Miscellaneous went from 35 sections to 51, averaging 4.9 students; nothing published names them."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "DESE files sections by subject area, never by course, so an elective ending inside a subject whose total rose cannot be seen."
+    }
+   ],
+   "rests_on": [
+    "courses-gap",
+    "s-last"
+   ],
+   "text": "A section counts a class that ran: what the schedule offered and what students chose, together."
+  }
+ ],
+ "facts": [
+  {
+   "id": "s-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "sections that ran at the high school, SY2025"
+   },
+   "value": {
+    "text": "247",
+    "unit": "course sections",
+    "value": 247
+   }
+  },
+  {
+   "id": "s-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "sections that ran, SY2017"
+   },
+   "value": {
+    "text": "225",
+    "unit": "course sections",
+    "value": 225
+   }
+  },
+  {
+   "id": "n-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "students at the high school, SY2025"
+   },
+   "value": {
+    "text": "438",
+    "unit": "students",
+    "value": 438
+   }
+  },
+  {
+   "id": "n-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "students at the high school, SY2017"
+   },
+   "value": {
+    "text": "435",
+    "unit": "students",
+    "value": 435
+   }
+  },
+  {
+   "id": "avg-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "average students per section, SY2025"
+   },
+   "value": {
+    "text": "13.5",
+    "unit": "students per section",
+    "value": 13.5
+   }
+  },
+  {
+   "id": "avg-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "average students per section, SY2017"
+   },
+   "value": {
+    "text": "14.7",
+    "unit": "students per section",
+    "value": 14.7
+   }
+  },
+  {
+   "id": "misc-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "sections DESE files as Miscellaneous, SY2025"
+   },
+   "value": {
+    "text": "51",
+    "unit": "course sections",
+    "value": 51
+   }
+  },
+  {
+   "id": "misc-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2017",
+      "unit": "school year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "Miscellaneous sections, SY2017"
+   },
+   "value": {
+    "text": "35",
+    "unit": "course sections",
+    "value": 35
+   }
+  },
+  {
+   "id": "misc-avg",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "average Miscellaneous section, SY2025"
+   },
+   "value": {
+    "text": "4.9",
+    "unit": "students per section",
+    "value": 4.9
+   }
+  },
+  {
+   "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+   "id": "courses-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which courses those sections were"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n0": {
+    "text": "435",
+    "unit": "",
+    "value": 435
+   },
+   "n1": {
+    "text": "438",
+    "unit": "",
+    "value": 438
+   },
+   "s0": {
+    "text": "225",
+    "unit": "",
+    "value": 225
+   },
+   "s1": {
+    "text": "247",
+    "unit": "",
+    "value": 247
+   },
+   "y0": {
+    "text": "SY2017",
+    "unit": "school year",
+    "value": 2017
+   },
+   "y1": {
+    "text": "SY2025",
+    "unit": "school year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg High ran 247 course sections in SY2025 against 225 in SY2017, with 438 students against 435."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "high-school-sections",
+ "kind": "topic",
+ "path": "/school-programs/high-school-sections",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-03-06",
+   "href": "/docs/meetings/text/school-committee/2024-03-06-minutes-6449.txt",
+   "label": "School Committee minutes, 2024-03-06",
+   "quote": "Our strategy moving forward is allowing the students choices to dictate our courses and electives. We will whittle away at courses once we have recommendations and students choices entered."
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-02-26",
+   "href": "/docs/meetings/text/school-committee/2025-02-26-minutes-7076.txt",
+   "label": "School Committee minutes, 2025-02-26",
+   "quote": "No we expect that there will be an increased number of kids in study halls, all classes will be larger."
+  }
+ ],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-class-size.xlsx",
+   "label": "Massachusetts DESE — dese-class-size.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
+   "href": "/data/course-offerings.json",
+   "label": "Lunenburg Budget Project — course-offerings.json (sections by school and subject, generated)"
+  }
+ ],
+ "table": {
+  "caption": "Lunenburg High, sections that ran, by school year",
+  "views": [
+   {
+    "columns": [
+     "Sections",
+     "Students",
+     "Average class"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "All subjects",
+    "note": "DESE’s class-size file. From SY2013 to SY2016 grade 8 was taught in the high school building, so those years count a different school and are not compared with the rest.",
+    "rows": [
+     {
+      "cells": [
+       "247",
+       "438",
+       "13.5"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "252",
+       "448",
+       "13.2"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "244",
+       "444",
+       "13.9"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "235",
+       "460",
+       "15.3"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "230",
+       "458",
+       "13.4"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "242",
+       "459",
+       "14.6"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "240",
+       "463",
+       "15.0"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "220",
+       "446",
+       "15.5"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "225",
+       "435",
+       "14.7"
+      ],
+      "label": "SY2017"
+     },
+     {
+      "cells": [
+       "287",
+       "538",
+       "15.3"
+      ],
+      "label": "SY2016"
+     },
+     {
+      "cells": [
+       "287",
+       "545",
+       "15.3"
+      ],
+      "label": "SY2015"
+     },
+     {
+      "cells": [
+       "298",
+       "577",
+       "15.8"
+      ],
+      "label": "SY2014"
+     },
+     {
+      "cells": [
+       "281",
+       "576",
+       "17.0"
+      ],
+      "label": "SY2013"
+     },
+     {
+      "cells": [
+       "181",
+       "507",
+       "17.7"
+      ],
+      "label": "SY2012"
+     },
+     {
+      "cells": [
+       "176",
+       "529",
+       "18.8"
+      ],
+      "label": "SY2011"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "High school sections"
+}

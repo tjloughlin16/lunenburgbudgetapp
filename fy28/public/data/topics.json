@@ -316,6 +316,124 @@
    "title": "Chapter 70 aid"
   },
   {
+   "answer": "Lunenburg spent $18,027 a pupil in FY2025, all funds, against a state median of $23,520, and has sat in the state’s bottom quarter for 17 years. Its school general fund spent under its revised budget every year from FY2010 to FY2026.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "Against the state",
+     "topics": [
+      "per-pupil-spending",
+      "spending-by-function",
+      "grants-in-school-spending",
+      "cost-of-the-median"
+     ]
+    },
+    {
+     "title": "Against other districts",
+     "topics": [
+      "comparison-districts",
+      "spending-and-pupils",
+      "gap-by-function",
+      "average-teacher-salary",
+      "destination-district-spending",
+      "regional-district-spending"
+     ]
+    },
+    {
+     "title": "Budget against actual",
+     "topics": [
+      "school-budget-against-actual",
+      "line-level-misses"
+     ]
+    },
+    {
+     "title": "Elsewhere on the site",
+     "topics": [
+      "net-school-spending",
+      "net-school-spending-rank",
+      "required-local-contribution",
+      "teachers-per-pupil",
+      "children-schooled-elsewhere",
+      "special-education-overruns",
+      "fy2025-school-surplus",
+      "fy2026-school-surplus"
+     ]
+    }
+   ],
+   "id": "school-spending",
+   "minutes": 1,
+   "order": 24,
+   "path": "/school-spending",
+   "ready": true,
+   "shelf": "School spending",
+   "title": "Spending compared"
+  },
+  {
+   "answer": "Lunenburg High ran more classes in SY2025 than in SY2017, but a smaller share takes a language or history. Most announced cuts cannot be checked against any published count, and most budget lines cut to zero came back.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "What ran",
+     "topics": [
+      "high-school-sections",
+      "world-languages",
+      "history-courses",
+      "computer-science-courses"
+     ]
+    },
+    {
+     "title": "Advanced Placement",
+     "topics": [
+      "ap-participation",
+      "ap-scores",
+      "ap-subjects"
+     ]
+    },
+    {
+     "title": "What was cut",
+     "topics": [
+      "announced-cuts",
+      "override-cut-lists",
+      "cuts-against-state-counts",
+      "lines-cut-to-zero"
+     ]
+    },
+    {
+     "title": "When grants end",
+     "topics": [
+      "grant-endings",
+      "outside-money-share"
+     ]
+    },
+    {
+     "title": "On other shelves",
+     "topics": [
+      "teachers-by-subject",
+      "out-of-district-tuition"
+     ]
+    }
+   ],
+   "id": "school-programs",
+   "minutes": 2,
+   "order": 25,
+   "path": "/school-programs",
+   "ready": true,
+   "shelf": "School programs",
+   "title": "Programs and cuts"
+  },
+  {
    "answer": "The town keeps two kinds of reserve: free cash, $3,354,370 as of 1 July 2025, and nine stabilization accounts holding $9,061,421. Only the general fund’s $3,147,179 may be spent on anything lawful.",
    "area": "town",
    "elsewhere": [],
@@ -392,6 +510,64 @@
    "ready": true,
    "shelf": "FY2026 closeout",
    "title": "FY2026 year end"
+  },
+  {
+   "answer": "Town Meeting voted $44,024,349 across twelve groups for FY2025; the schools are 57.1%. Ranked by dollars past the 2.5% levy cap, employee benefits push the budget hardest, then the schools.",
+   "area": "town",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": "The whole budget",
+     "topics": [
+      "town-budget-shares",
+      "town-budget-growth",
+      "town-voted-total"
+     ]
+    },
+    {
+     "title": "The four largest",
+     "topics": [
+      "town-schools-line",
+      "town-public-safety",
+      "town-employee-benefits",
+      "town-debt-service"
+     ]
+    },
+    {
+     "title": "The other departments",
+     "topics": [
+      "town-general-government",
+      "town-public-works",
+      "town-facilities-grounds",
+      "town-solid-waste",
+      "town-library",
+      "town-smaller-departments"
+     ]
+    },
+    {
+     "title": "People",
+     "topics": [
+      "town-staff-counts",
+      "town-headcount-coverage"
+     ]
+    },
+    {
+     "title": "Related pages",
+     "topics": [
+      "fy2026-town-unspent",
+      "fy2026-snow-and-reserve-fund",
+      "fy2026-school-retiree-insurance",
+      "monty-tech-assessment"
+     ]
+    }
+   ],
+   "id": "department-budgets",
+   "minutes": 1,
+   "order": 52,
+   "path": "/department-budgets",
+   "ready": true,
+   "shelf": "Department budgets",
+   "title": "Town departments"
   }
  ],
  "generated_by": "scripts/build_topics_index.py",
@@ -408,6 +584,58 @@
     "state-aid"
    ],
    "title": "Aid per pupil"
+  },
+  "announced-cuts": {
+   "finding": "The district named 158 reductions in 9 budget documents across 5 cycles; none records what became of a post.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "announced-cuts",
+   "minutes": 2,
+   "path": "/school-programs/announced-cuts",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Announced cuts"
+  },
+  "ap-participation": {
+   "finding": "89 students sat at least one AP exam in SY2025, 154 sittings between them; the count peaked at 122 in SY2018.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "ap-participation",
+   "minutes": 2,
+   "path": "/school-programs/ap-participation",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "AP participation"
+  },
+  "ap-scores": {
+   "finding": "88.3% of AP tests scored 3 or better in SY2025, the highest of 19 years; the lowest was 62.1% in SY2009.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "ap-scores",
+   "minutes": 1,
+   "path": "/school-programs/ap-scores",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "AP scores"
+  },
+  "ap-subjects": {
+   "finding": "117 of 154 AP exams in SY2025 were English or history; science and math were 31.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "ap-subjects",
+   "minutes": 1,
+   "path": "/school-programs/ap-subjects",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "AP subjects"
   },
   "athletic-bus-funding": {
    "finding": "From FY2025, athletic buses moved from player fees to the town budget, mostly taxes.",
@@ -435,6 +663,19 @@
     "athletics"
    ],
    "title": "Athletic fee"
+  },
+  "average-teacher-salary": {
+   "finding": "Lunenburg’s average teacher salary was $97,233 in FY2025, 2nd of the six districts this project compares.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "average-teacher-salary",
+   "minutes": 1,
+   "path": "/school-spending/average-teacher-salary",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Average teacher salary"
   },
   "away-trips-by-sport": {
    "finding": "The posted schedules list 240 away games in FY2026, about 176 bus trips by our estimate.",
@@ -538,7 +779,8 @@
    "path": "/enrolment/children-schooled-elsewhere",
    "ready": true,
    "shelves": [
-    "enrolment"
+    "enrolment",
+    "school-spending"
    ],
    "title": "Children schooled elsewhere"
   },
@@ -582,6 +824,45 @@
    ],
    "title": "Class size limits"
   },
+  "comparison-districts": {
+   "finding": "Of six districts this project chose to compare, Lunenburg spent the least a pupil in FY2025.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "comparison-districts",
+   "minutes": 1,
+   "path": "/school-spending/comparison-districts",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Comparison districts"
+  },
+  "computer-science-courses": {
+   "finding": "In 11 school years holding grades 9–12, Lunenburg High recorded 1 computer science section.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "computer-science-courses",
+   "minutes": 1,
+   "path": "/school-programs/computer-science-courses",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Computer science"
+  },
+  "cost-of-the-median": {
+   "finding": "At the FY2025 state median a pupil, Lunenburg would have spent $39,181,968, by our arithmetic.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "cost-of-the-median",
+   "minutes": 1,
+   "path": "/school-spending/cost-of-the-median",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Reaching the state median"
+  },
   "cost-per-placement": {
    "finding": "No published document says what one out-of-district placement costs.",
    "generator": "scripts/build_special_education_topics.py",
@@ -608,6 +889,19 @@
    ],
    "title": "Cost per sport"
   },
+  "cuts-against-state-counts": {
+   "finding": "Of 60 adopted school cuts, 48 name a job no series counts; of the other 12, the state’s count fell with 6.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "cuts-against-state-counts",
+   "minutes": 1,
+   "path": "/school-programs/cuts-against-state-counts",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Cuts against state counts"
+  },
   "dee-bus-contract": {
    "finding": "Regular routes cost exactly the contract price, which is fixed through FY2028.",
    "generator": "scripts/build_transportation.py",
@@ -633,6 +927,19 @@
     "enrolment"
    ],
    "title": "Departure scenario"
+  },
+  "destination-district-spending": {
+   "finding": "145 of the 177 children schooled elsewhere in FY2026 went to districts that spend more a pupil.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "destination-district-spending",
+   "minutes": 1,
+   "path": "/school-spending/destination-district-spending",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Destination districts"
   },
   "district-staff-directory": {
    "finding": "The district’s staff directory listed 259 people on 9 October 2026; it carries no FTE and no fund.",
@@ -773,7 +1080,8 @@
    "path": "/fy2026-closeout/fy2025-school-surplus",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "school-spending"
    ],
    "title": "FY2025 school surplus"
   },
@@ -840,7 +1148,8 @@
    "path": "/fy2026-closeout/fy2026-school-retiree-insurance",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "department-budgets"
    ],
    "title": "School retiree insurance"
   },
@@ -853,7 +1162,8 @@
    "path": "/fy2026-closeout/fy2026-school-surplus",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "school-spending"
    ],
    "title": "FY2026 school surplus"
   },
@@ -879,7 +1189,8 @@
    "path": "/fy2026-closeout/fy2026-snow-and-reserve-fund",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "department-budgets"
    ],
    "title": "Snow and Reserve Fund"
   },
@@ -918,7 +1229,8 @@
    "path": "/fy2026-closeout/fy2026-town-unspent",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "department-budgets"
    ],
    "title": "Town unspent balance"
   },
@@ -962,6 +1274,19 @@
    ],
    "title": "FY2027 bus budget"
   },
+  "gap-by-function": {
+   "finding": "In-district, Lunenburg spent $2,103 a pupil less than Ayer Shirley, the middle of the six this project chose.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "gap-by-function",
+   "minutes": 1,
+   "path": "/school-spending/gap-by-function",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Gap by function"
+  },
   "general-stabilization-fund": {
    "finding": "The general fund’s cash rose every year from FY2012 to FY2025, to $3,147,179.",
    "generator": "scripts/build_town_reserves_topics.py",
@@ -1001,6 +1326,32 @@
    ],
    "title": "Grade-to-grade loss"
   },
+  "grant-endings": {
+   "finding": "42.2% of the grant money that ran out in FY2025 was replaced from the general fund; the rest was not.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "grant-endings",
+   "minutes": 2,
+   "path": "/school-programs/grant-endings",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Grant endings"
+  },
+  "grants-in-school-spending": {
+   "finding": "Of $30,031,242 DESE counts for FY2025, grants and revolving funds paid $3,044,898: 10.1%.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "grants-in-school-spending",
+   "minutes": 1,
+   "path": "/school-spending/grants-in-school-spending",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Grants and revolving funds"
+  },
   "headcount-and-fte": {
    "finding": "The state counted 123 teachers in FY2023, holding 112.8 full-time equivalent posts between them.",
    "generator": "scripts/build_school_staffing_topics.py",
@@ -1027,6 +1378,19 @@
    ],
    "title": "High-needs students"
   },
+  "high-school-sections": {
+   "finding": "Lunenburg High ran 247 course sections in SY2025 against 225 in SY2017, with 438 students against 435.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "high-school-sections",
+   "minutes": 2,
+   "path": "/school-programs/high-school-sections",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "High school sections"
+  },
   "hiring-versus-placing": {
    "finding": "Placements fell while in-district budgets rose; nothing published shows one caused the other.",
    "generator": "scripts/build_special_education_topics.py",
@@ -1039,6 +1403,19 @@
     "special-education"
    ],
    "title": "Hiring versus placing"
+  },
+  "history-courses": {
+   "finding": "60.4% of Lunenburg High took a history course in SY2023 to SY2025, against 75.8% in SY2017 to SY2019.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "history-courses",
+   "minutes": 1,
+   "path": "/school-programs/history-courses",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "History courses"
   },
   "in-district-special-education": {
    "finding": "The paraprofessional budget line grew 12.78% a year over 10 budgets; the state’s FTE fell 63.3%.",
@@ -1067,6 +1444,32 @@
    ],
    "title": "Leaving and arriving"
   },
+  "line-level-misses": {
+   "finding": "Of 576 budget lines and years the district restated, 198 landed within 2% of the line’s budget.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "line-level-misses",
+   "minutes": 1,
+   "path": "/school-spending/line-level-misses",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Line-level misses"
+  },
+  "lines-cut-to-zero": {
+   "finding": "93 of 132 school lines cut to zero were funded again later; the 39 that never were carried $181,180.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "lines-cut-to-zero",
+   "minutes": 1,
+   "path": "/school-programs/lines-cut-to-zero",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Lines cut to zero"
+  },
   "minimum-aid": {
    "finding": "All of FY2026’s $240,450 increase was the Legislature’s minimum: $150 for each of 1,603 pupils.",
    "generator": "scripts/build_state_aid_topics.py",
@@ -1089,7 +1492,8 @@
    "path": "/enrolment/monty-tech-assessment",
    "ready": true,
    "shelves": [
-    "enrolment"
+    "enrolment",
+    "department-budgets"
    ],
    "title": "Monty Tech assessment"
   },
@@ -1128,7 +1532,8 @@
    "path": "/state-aid/net-school-spending",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "school-spending"
    ],
    "title": "Net school spending"
   },
@@ -1141,7 +1546,8 @@
    "path": "/state-aid/net-school-spending-rank",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "school-spending"
    ],
    "title": "Spending against the median"
   },
@@ -1168,9 +1574,36 @@
    "path": "/special-education/out-of-district-tuition",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "school-programs"
    ],
    "title": "Out-of-district tuition"
+  },
+  "outside-money-share": {
+   "finding": "The general fund paid 81.5% of school spending in FY2009 and 89.9% in FY2025; grants and other funds the rest.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "outside-money-share",
+   "minutes": 1,
+   "path": "/school-programs/outside-money-share",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Outside money share"
+  },
+  "override-cut-lists": {
+   "finding": "The May 2024 override took 13 posts off the cut list; the 9 left match posts listed as cut for loss of ESSER.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "override-cut-lists",
+   "minutes": 2,
+   "path": "/school-programs/override-cut-lists",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "Override cut lists"
   },
   "paraprofessional-counts": {
    "finding": "For FY2025 the state counts 67.0 paraprofessional FTE; the town printed 52 paraprofessional names.",
@@ -1211,6 +1644,19 @@
    ],
    "title": "Participation"
   },
+  "per-pupil-spending": {
+   "finding": "Lunenburg spent $18,027 a pupil in FY2025, all funds, against a state median of $23,520.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "per-pupil-spending",
+   "minutes": 2,
+   "path": "/school-spending/per-pupil-spending",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Spending per pupil"
+  },
   "printed-school-rosters": {
    "finding": "The town printed 250 names on its school rosters in FY2025, against 194 in FY2011.",
    "generator": "scripts/build_school_staffing_topics.py",
@@ -1224,6 +1670,19 @@
    ],
    "title": "Printed school rosters"
   },
+  "regional-district-spending": {
+   "finding": "Five nearby regional districts spent $18,142 to $25,827 a pupil in FY2025; Lunenburg spent $18,027.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "regional-district-spending",
+   "minutes": 1,
+   "path": "/school-spending/regional-district-spending",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Regional districts"
+  },
   "required-local-contribution": {
    "finding": "What the state requires the town to put in rose 37.8% from FY2019 to FY2026; Chapter 70 rose 22.4%.",
    "generator": "scripts/build_state_aid_topics.py",
@@ -1233,7 +1692,8 @@
    "path": "/state-aid/required-local-contribution",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "school-spending"
    ],
    "title": "Required local contribution"
   },
@@ -1249,6 +1709,19 @@
     "town-reserves"
    ],
    "title": "Reserves against the gap"
+  },
+  "school-budget-against-actual": {
+   "finding": "The school general fund spent less than its revised budget in all 17 years, FY2010 to FY2026.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "school-budget-against-actual",
+   "minutes": 1,
+   "path": "/school-spending/school-budget-against-actual",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Budget against actual"
   },
   "school-choice-flows": {
    "finding": "58 residents left under school choice in FY2026 and 11 arrived; arrivals were 44 in FY2014.",
@@ -1285,7 +1758,8 @@
    "path": "/special-education/special-education-overruns",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "school-spending"
    ],
    "title": "Special education overruns"
   },
@@ -1304,6 +1778,19 @@
    ],
    "title": "Special education transportation"
   },
+  "spending-and-pupils": {
+   "finding": "From FY2012 to FY2025 Lunenburg’s spending rose 48.7% and its pupils fell 5.6%; North Middlesex lost 23.5%.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "spending-and-pupils",
+   "minutes": 1,
+   "path": "/school-spending/spending-and-pupils",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Spending and pupils"
+  },
   "spending-by-category": {
    "finding": "Coaches and buses cost most on the district’s sheet; the town’s officials account held $0 in FY2026.",
    "generator": "scripts/build_athletics_topics.py",
@@ -1316,6 +1803,19 @@
     "athletics"
    ],
    "title": "Spending by category"
+  },
+  "spending-by-function": {
+   "finding": "Lunenburg was in the state’s bottom quarter on 7 of 10 spending functions in FY2025.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "spending-by-function",
+   "minutes": 2,
+   "path": "/school-spending/spending-by-function",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Spending by function"
   },
   "stabilization-balances": {
    "finding": "The town’s ledger files $9,061,421 under its nine stabilization accounts, at the start of FY2026.",
@@ -1458,7 +1958,8 @@
    "path": "/school-staffing/teachers-by-subject",
    "ready": true,
    "shelves": [
-    "school-staffing"
+    "school-staffing",
+    "school-programs"
    ],
    "title": "Teachers by subject"
   },
@@ -1471,7 +1972,8 @@
    "path": "/school-staffing/teachers-per-pupil",
    "ready": true,
    "shelves": [
-    "school-staffing"
+    "school-staffing",
+    "school-spending"
    ],
    "title": "Teachers per pupil"
   },
@@ -1514,6 +2016,201 @@
    ],
    "title": "Town budget and fee fund"
   },
+  "town-budget-growth": {
+   "finding": "Ranked by dollars above the 2.5% levy cap, employee benefits push the budget hardest, then the schools.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-budget-growth",
+   "minutes": 2,
+   "path": "/department-budgets/town-budget-growth",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Growth above the cap"
+  },
+  "town-budget-shares": {
+   "finding": "Schools are 57.1% of the $44,024,349 Town Meeting voted for FY2025; the next three groups together are 27.0%.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-budget-shares",
+   "minutes": 1,
+   "path": "/department-budgets/town-budget-shares",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Budget by department"
+  },
+  "town-debt-service": {
+   "finding": "Debt service fell from $4,497,723 to $2,941,322, FY2023 to FY2025, the only one of the twelve groups to fall.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-debt-service",
+   "minutes": 1,
+   "path": "/department-budgets/town-debt-service",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Debt service"
+  },
+  "town-employee-benefits": {
+   "finding": "Employee benefits grew 12.7% a year, the most dollars past the cap of any group; group health is 71% of it.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-employee-benefits",
+   "minutes": 1,
+   "path": "/department-budgets/town-employee-benefits",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Employee benefits"
+  },
+  "town-facilities-grounds": {
+   "finding": "Facilities and grounds were voted $1,022,711 for FY2025 and grew 7.5% a year.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-facilities-grounds",
+   "minutes": 1,
+   "path": "/department-budgets/town-facilities-grounds",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Facilities and grounds"
+  },
+  "town-general-government": {
+   "finding": "The town’s own administration grew 10.2% a year, $168,340 past the cap in dollars, third of the twelve.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-general-government",
+   "minutes": 1,
+   "path": "/department-budgets/town-general-government",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "General government"
+  },
+  "town-headcount-coverage": {
+   "finding": "6 of the 12 budget groups have a published staff count behind them; one department with a budget has none.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-headcount-coverage",
+   "minutes": 1,
+   "path": "/department-budgets/town-headcount-coverage",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Budgets without headcounts"
+  },
+  "town-library": {
+   "finding": "The library was voted $583,890 for FY2025, 1.3% of the budget, growing 8.8% a year.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-library",
+   "minutes": 1,
+   "path": "/department-budgets/town-library",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Library budget"
+  },
+  "town-public-safety": {
+   "finding": "Police, fire and the inspectors were voted $4,643,717 for FY2025, 10.5% of the budget.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-public-safety",
+   "minutes": 1,
+   "path": "/department-budgets/town-public-safety",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Police, fire and inspectors"
+  },
+  "town-public-works": {
+   "finding": "Public works grew 2.9% a year, close to the cap; one line rose more than the whole group.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-public-works",
+   "minutes": 1,
+   "path": "/department-budgets/town-public-works",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Public works"
+  },
+  "town-schools-line": {
+   "finding": "The schools are 57.1% of the voted budget and grew 3.6% a year, FY2023 to FY2025.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-schools-line",
+   "minutes": 1,
+   "path": "/department-budgets/town-schools-line",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Schools in the omnibus"
+  },
+  "town-smaller-departments": {
+   "finding": "Veterans and elder services, health, and central purchasing are 1.2% of the budget together.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-smaller-departments",
+   "minutes": 1,
+   "path": "/department-budgets/town-smaller-departments",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Smaller departments"
+  },
+  "town-solid-waste": {
+   "finding": "Trash and recycling grew 22.6% a year, the fastest of the twelve, from $312,634 to $469,775.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-solid-waste",
+   "minutes": 1,
+   "path": "/department-budgets/town-solid-waste",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Trash and recycling"
+  },
+  "town-staff-counts": {
+   "finding": "8 town departments print a staff count, in 7 different forms that cannot be added up.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-staff-counts",
+   "minutes": 1,
+   "path": "/department-budgets/town-staff-counts",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Town staff counts"
+  },
+  "town-voted-total": {
+   "finding": "The voted total was $44,024,349 for FY2025 and $49,374,465 for FY2026, a 12.2% rise.",
+   "generator": "scripts/build_department_budgets_topics.py",
+   "home": "department-budgets",
+   "id": "town-voted-total",
+   "minutes": 1,
+   "path": "/department-budgets/town-voted-total",
+   "ready": true,
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Voted budget total"
+  },
   "tuition-budget": {
    "finding": "FY2027 budgets out-of-district tuition at $700,142, $591,151 below FY2026, a 46% cut.",
    "generator": "scripts/build_special_education_topics.py",
@@ -1539,6 +2236,19 @@
     "town-reserves"
    ],
    "title": "Who may spend it"
+  },
+  "world-languages": {
+   "finding": "57.8% of Lunenburg High took a language in SY2025, against 70.1% in SY2017; the middle school fell further.",
+   "generator": "scripts/build_school_programs_topics.py",
+   "home": "school-programs",
+   "id": "world-languages",
+   "minutes": 2,
+   "path": "/school-programs/world-languages",
+   "ready": true,
+   "shelves": [
+    "school-programs"
+   ],
+   "title": "World languages"
   }
  }
 }

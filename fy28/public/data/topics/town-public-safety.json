@@ -1,0 +1,382 @@
+{
+ "category": "department-budgets",
+ "chart": {
+  "id": "town-personnel-fire",
+  "source": "/data/town-personnel.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "4.7%",
+     "unit": "",
+     "value": 4.6605432958565896
+    },
+    "b": {
+     "text": "$100,330",
+     "unit": "",
+     "value": 100329.51848259603
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the department’s budget request and narrative to the Finance Committee for that year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The omnibus states amounts and no reasons, so why the group moved is not shown here."
+    }
+   ],
+   "rests_on": [
+    "rate",
+    "excess",
+    "voted"
+   ],
+   "text": "The group grew 4.7% a year, $100,330 past the cap in dollars."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "b": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    },
+    "c": {
+     "text": "40–45",
+     "unit": "on-call firefighters",
+     "value": 40
+    },
+    "d": {
+     "text": "30–35",
+     "unit": "on-call firefighters",
+     "value": 30
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Fire Department’s establishment of posts, with FTE",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A count is people present, not funded posts, and a career post and an on-call post are not the same job."
+    }
+   ],
+   "rests_on": [
+    "c0",
+    "c1",
+    "o0",
+    "o1"
+   ],
+   "text": "Career firefighters went from 5 to 10 while the on-call roll fell from 40–45 to 30–35."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "split"
+   ],
+   "text": "Which part of the group moved is not read yet: the omnibus prints its subtotals."
+  }
+ ],
+ "facts": [
+  {
+   "id": "voted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$4,643,717",
+    "unit": "",
+    "value": 4643717.1
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "10.5%",
+    "unit": "",
+    "value": 10.548065298952348
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "4.7%",
+    "unit": "",
+    "value": 4.6605432958565896
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "$100,330",
+    "unit": "",
+    "value": 100329.51848259603
+   }
+  },
+  {
+   "id": "c0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2017"
+    ],
+    "text": "career firefighters, FY2017"
+   },
+   "value": {
+    "text": "5",
+    "unit": "firefighters",
+    "value": 5
+   }
+  },
+  {
+   "id": "c1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "career firefighters, FY2025"
+   },
+   "value": {
+    "text": "10",
+    "unit": "firefighters",
+    "value": 10
+   }
+  },
+  {
+   "id": "o0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2017"
+    ],
+    "text": "on call, as the department states it, FY2017"
+   },
+   "value": {
+    "text": "40–45",
+    "unit": "on-call firefighters",
+    "value": 40
+   }
+  },
+  {
+   "id": "o1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "on call, FY2025"
+   },
+   "value": {
+    "text": "30–35",
+    "unit": "on-call firefighters",
+    "value": 30
+   }
+  },
+  {
+   "id": "police",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "named on the Police roster, FY2025"
+   },
+   "value": {
+    "text": "29",
+    "unit": "people",
+    "value": 29
+   }
+  },
+  {
+   "closes": "the Police, Fire and Radio Watch subtotals the omnibus prints, not yet read into a dataset",
+   "id": "split",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the group split into police, fire and the rest"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$4,643,717",
+    "unit": "",
+    "value": 4643717.1
+   },
+   "b": {
+    "text": "10.5%",
+    "unit": "",
+    "value": 10.548065298952348
+   }
+  },
+  "literals": [
+   "FY2025"
+  ],
+  "text": "Police, fire and the inspectors were voted $4,643,717 for FY2025, 10.5% of the budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-public-safety",
+ "kind": "topic",
+ "path": "/department-budgets/town-public-safety",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/docs/data/department-staffing.csv",
+   "label": "Lunenburg Budget Project — department-staffing.csv (what each department says it employs, as printed)"
+  },
+  {
+   "href": "/data/town-personnel.json",
+   "label": "Lunenburg Budget Project — town-personnel.json (staff counts as each department prints them)"
+  }
+ ],
+ "table": {
+  "caption": "The Fire Department, as it states its strength",
+  "views": [
+   {
+    "columns": [
+     "Career",
+     "On call"
+    ],
+    "key": "fire",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Fire",
+    "note": "Printed in the prose of the department’s own annual report; the on-call roll is stated as a range.",
+    "rows": [
+     {
+      "cells": [
+       "10",
+       "30–35"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "10",
+       "30–35"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "10",
+       "30–35"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "10",
+       "30–35"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "8",
+       "40–45"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "7",
+       "40–45"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "7",
+       "40–45"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "7",
+       "40–45"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "5",
+       "40–45"
+      ],
+      "label": "FY2017"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Police, fire and inspectors"
+}

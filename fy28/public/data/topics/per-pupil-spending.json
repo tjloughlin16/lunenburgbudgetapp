@@ -1,0 +1,509 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$18,027",
+     "unit": "",
+     "value": 18027.0
+    },
+    "b": {
+     "text": "$23,520",
+     "unit": "",
+     "value": 23520.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pp",
+    "med",
+    "below"
+   ],
+   "text": "DESE counts every fund and every pupil: $18,027 a pupil against a median of $23,520."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    },
+    "r": {
+     "text": "310 of 318",
+     "unit": "",
+     "value": 310
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rank",
+    "bq",
+    "p25"
+   ],
+   "text": "It ranked 310 of 318 in FY2025, below the first quartile in all 17 years DESE publishes."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$10,605",
+     "unit": "",
+     "value": 10605.0
+    },
+    "b": {
+     "text": "270 of 324",
+     "unit": "",
+     "value": 270
+    },
+    "r": {
+     "text": "279 of 328",
+     "unit": "",
+     "value": 279
+    },
+    "y": {
+     "text": "FY2009",
+     "unit": "fiscal year",
+     "value": 2009
+    },
+    "z": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "nothing published settles it; the nearest is the district’s level-service request against the appropriation voted, by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether spending less is a choice or a constraint is not in any of these figures: the levy limit, the district’s request and Town Meeting’s vote all land in one number."
+    }
+   ],
+   "rests_on": [
+    "pp0",
+    "rank0",
+    "best"
+   ],
+   "text": "In FY2009 it spent $10,605 a pupil and ranked 279 of 328; its highest standing was 270 of 324 in FY2013."
+  }
+ ],
+ "facts": [
+  {
+   "id": "pp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "a pupil, all funds, FY2025, DESE"
+   },
+   "value": {
+    "text": "$18,027",
+    "unit": "",
+    "value": 18027.0
+   }
+  },
+  {
+   "id": "med",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "318",
+      "unit": "",
+      "value": 318
+     }
+    },
+    "literals": [],
+    "text": "the median of 318 districts"
+   },
+   "value": {
+    "text": "$23,520",
+    "unit": "",
+    "value": 23520.0
+   }
+  },
+  {
+   "id": "p25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the first quartile, the same districts"
+   },
+   "value": {
+    "text": "$21,179",
+    "unit": "",
+    "value": 21179.2
+   }
+  },
+  {
+   "id": "below",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "below the median (our arithmetic)"
+   },
+   "value": {
+    "text": "$5,493",
+    "unit": "",
+    "value": 5493.0
+   }
+  },
+  {
+   "id": "rank",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "districts, highest spending first, FY2025"
+   },
+   "value": {
+    "text": "310 of 318",
+    "unit": "",
+    "value": 310
+   }
+  },
+  {
+   "id": "bq",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "years below the first quartile, FY2009 to FY2025"
+   },
+   "value": {
+    "text": "17 of 17",
+    "unit": "years",
+    "value": 17
+   }
+  },
+  {
+   "id": "pp0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "a pupil, all funds, FY2009"
+   },
+   "value": {
+    "text": "$10,605",
+    "unit": "",
+    "value": 10605.0
+   }
+  },
+  {
+   "id": "rank0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "rank, FY2009"
+   },
+   "value": {
+    "text": "279 of 328",
+    "unit": "",
+    "value": 279
+   }
+  },
+  {
+   "id": "best",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "its highest standing, FY2013"
+   },
+   "value": {
+    "text": "270 of 324",
+    "unit": "",
+    "value": 270
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$18,027",
+    "unit": "",
+    "value": 18027.0
+   },
+   "b": {
+    "text": "$23,520",
+    "unit": "",
+    "value": 23520.0
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg spent $18,027 a pupil in FY2025, all funds, against a state median of $23,520."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "per-pupil-spending",
+ "kind": "topic",
+ "path": "/school-spending/per-pupil-spending",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-01-24",
+   "href": "/docs/meetings/text/school-committee/2024-01-24-minutes-6375.txt",
+   "label": "School Committee minutes, 2024-01-24",
+   "quote": "According to Massachusetts State reports Lunenburg per pupil expenditure is listed 361 out of 401 districts in Massachusetts. This means that we're in the top 20% for school performance while being in the bottom 10% for spending"
+  },
+  {
+   "board": "School Committee",
+   "date": "2024-01-24",
+   "href": "/docs/meetings/text/school-committee/2024-01-24-minutes-6375.txt",
+   "label": "School Committee minutes, 2024-01-24",
+   "quote": "Lunenburg has a long and well established history of spending little per pupil and still having an amazing school district"
+  }
+ ],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-statewide.csv",
+   "label": "Lunenburg Budget Project — dese-function-statewide.csv (DESE’s statewide distribution, by function)"
+  }
+ ],
+ "table": {
+  "caption": "Spending a pupil, all funds, against every district",
+  "views": [
+   {
+    "columns": [
+     "Lunenburg",
+     "State median",
+     "First quartile",
+     "Rank"
+    ],
+    "key": "statewide",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "DESE, every district",
+    "note": "DESE’s end-of-year finance collection: all funds, over total FTE pupils, reported after each year closed. Not a budget and not the appropriation.",
+    "rows": [
+     {
+      "cells": [
+       "$18,027",
+       "$23,520",
+       "$21,179",
+       "310 of 318"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$17,601",
+       "$22,227",
+       "$20,106",
+       "303 of 320"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$17,684",
+       "$20,866",
+       "$18,876",
+       "282 of 320"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$15,864",
+       "$19,552",
+       "$17,637",
+       "301 of 318"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$15,201",
+       "$18,902",
+       "$16,978",
+       "302 of 318"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$13,797",
+       "$17,308",
+       "$15,611",
+       "302 of 320"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$13,783",
+       "$16,952",
+       "$15,166",
+       "301 of 320"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$13,828",
+       "$16,270",
+       "$14,626",
+       "286 of 322"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$13,209",
+       "$15,581",
+       "$14,223",
+       "296 of 322"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$12,982",
+       "$15,018",
+       "$13,946",
+       "291 of 322"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$12,424",
+       "$14,461",
+       "$13,353",
+       "295 of 321"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$12,384",
+       "$13,984",
+       "$12,978",
+       "277 of 324"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$12,027",
+       "$13,463",
+       "$12,452",
+       "270 of 324"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$11,448",
+       "$13,080",
+       "$12,022",
+       "282 of 326"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$11,080",
+       "$12,728",
+       "$11,585",
+       "283 of 328"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$10,720",
+       "$12,450",
+       "$11,267",
+       "280 of 328"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$10,605",
+       "$12,242",
+       "$11,156",
+       "279 of 328"
+      ],
+      "label": "FY2009"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Spending per pupil"
+}

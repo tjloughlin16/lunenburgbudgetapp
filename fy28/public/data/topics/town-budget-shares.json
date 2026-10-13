@@ -1,0 +1,350 @@
+{
+ "category": "department-budgets",
+ "chart": {
+  "id": "town-budgets-share",
+  "source": "/data/town-budgets.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "84.1%",
+     "unit": "",
+     "value": 84.05738245054111
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s grant and revolving fund reports, by department",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A voted line is net: what the town raises after grants, fees and other receipts pay their part. It is not what the service costs."
+    }
+   ],
+   "rests_on": [
+    "top4",
+    "schools",
+    "protection",
+    "benefits",
+    "debt"
+   ],
+   "text": "Four groups — schools, police and fire, benefits and debt — are 84.1% of the voted budget."
+  },
+  {
+   "figures": {
+    "b": {
+     "text": "3.6%",
+     "unit": "",
+     "value": 3.6177286872006107
+    },
+    "n": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "literals": [
+    "2%"
+   ],
+   "rests_on": [
+    "small",
+    "smallest"
+   ],
+   "text": "5 groups are each under 2%; together they are 3.6%."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "asked",
+    "total"
+   ],
+   "text": "The omnibus is what was voted, already balanced; a cut lives in the difference from the request."
+  }
+ ],
+ "facts": [
+  {
+   "id": "total",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted for twelve groups, FY2025"
+   },
+   "value": {
+    "text": "$44,024,349",
+    "unit": "",
+    "value": 44024349.190000005
+   }
+  },
+  {
+   "id": "schools",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it to the schools"
+   },
+   "value": {
+    "text": "57.1%",
+    "unit": "",
+    "value": 57.076491674083954
+   }
+  },
+  {
+   "id": "protection",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "to police, fire and inspectors"
+   },
+   "value": {
+    "text": "10.5%",
+    "unit": "",
+    "value": 10.548065298952348
+   }
+  },
+  {
+   "id": "benefits",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "to employee benefits and reserves"
+   },
+   "value": {
+    "text": "9.8%",
+    "unit": "",
+    "value": 9.751701158537896
+   }
+  },
+  {
+   "id": "debt",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "to debt service"
+   },
+   "value": {
+    "text": "6.7%",
+    "unit": "",
+    "value": 6.681124318966905
+   }
+  },
+  {
+   "id": "top4",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "in those four groups together"
+   },
+   "value": {
+    "text": "84.1%",
+    "unit": "",
+    "value": 84.05738245054111
+   }
+  },
+  {
+   "id": "small",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2%"
+    ],
+    "text": "each under 2% of the budget"
+   },
+   "value": {
+    "text": "5",
+    "unit": "groups",
+    "value": 5
+   }
+  },
+  {
+   "id": "smallest",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Central Purchasing, the smallest group"
+   },
+   "value": {
+    "text": "$80,300",
+    "unit": "",
+    "value": 80300.0
+   }
+  },
+  {
+   "closes": "each department’s budget request to the Finance Committee, FY2025",
+   "id": "asked",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "each department’s budget request"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "57.1%",
+    "unit": "",
+    "value": 57.076491674083954
+   },
+   "b": {
+    "text": "$44,024,349",
+    "unit": "",
+    "value": 44024349.190000005
+   },
+   "c": {
+    "text": "27.0%",
+    "unit": "",
+    "value": 26.98089077645716
+   }
+  },
+  "literals": [
+   "FY2025"
+  ],
+  "text": "Schools are 57.1% of the $44,024,349 Town Meeting voted for FY2025; the next three groups together are 27.0%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-budget-shares",
+ "kind": "topic",
+ "path": "/department-budgets/town-budget-shares",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/report-appropriations.csv",
+   "label": "Lunenburg Budget Project — report-appropriations.csv (the omnibus budgets, read line by line)"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  }
+ ],
+ "table": {
+  "caption": "The voted budget, by group",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Share"
+    ],
+    "key": "share",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2025",
+    "note": "The twelve group totals the omnibus prints, which foot to its printed grand total. Share is ours, of that total.",
+    "rows": [
+     {
+      "cells": [
+       "$25,127,554",
+       "57.1%"
+      ],
+      "label": "Schools"
+     },
+     {
+      "cells": [
+       "$4,643,717",
+       "10.5%"
+      ],
+      "label": "Protection of persons & property"
+     },
+     {
+      "cells": [
+       "$4,293,123",
+       "9.8%"
+      ],
+      "label": "Employee benefits & reserves"
+     },
+     {
+      "cells": [
+       "$2,941,322",
+       "6.7%"
+      ],
+      "label": "Maturing Debt & Interest"
+     },
+     {
+      "cells": [
+       "$2,225,277",
+       "5.1%"
+      ],
+      "label": "Public Works"
+     },
+     {
+      "cells": [
+       "$2,177,964",
+       "4.9%"
+      ],
+      "label": "General Government"
+     },
+     {
+      "cells": [
+       "$1,022,711",
+       "2.3%"
+      ],
+      "label": "Facilities & Grounds"
+     },
+     {
+      "cells": [
+       "$583,890",
+       "1.3%"
+      ],
+      "label": "Library"
+     },
+     {
+      "cells": [
+       "$469,775",
+       "1.1%"
+      ],
+      "label": "Solid Waste & Recycling"
+     },
+     {
+      "cells": [
+       "$340,898",
+       "0.8%"
+      ],
+      "label": "Assistance"
+     },
+     {
+      "cells": [
+       "$117,819",
+       "0.3%"
+      ],
+      "label": "Health & Sanitation"
+     },
+     {
+      "cells": [
+       "$80,300",
+       "0.2%"
+      ],
+      "label": "Central Purchasing"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Budget by department"
+}

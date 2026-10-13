@@ -1,0 +1,528 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "p": {
+     "text": "122",
+     "unit": "",
+     "value": 122
+    },
+    "s": {
+     "text": "154",
+     "unit": "",
+     "value": 154
+    },
+    "t": {
+     "text": "89",
+     "unit": "",
+     "value": 89
+    },
+    "t0": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    },
+    "y": {
+     "text": "SY2025",
+     "unit": "school year",
+     "value": 2025
+    },
+    "y0": {
+     "text": "SY2007",
+     "unit": "school year",
+     "value": 2007
+    },
+    "yp": {
+     "text": "SY2018",
+     "unit": "school year",
+     "value": 2018
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "takers",
+    "sittings",
+    "takers-first",
+    "peak"
+   ],
+   "text": "89 students sat 154 exams in SY2025, against 58 students in SY2007 and 122 in SY2018."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "39%",
+     "unit": "",
+     "value": 39.207
+    },
+    "b": {
+     "text": "58%",
+     "unit": "",
+     "value": 57.8199
+    },
+    "yb": {
+     "text": "SY2018",
+     "unit": "school year",
+     "value": 2018
+    }
+   },
+   "literals": [
+    "11",
+    "12"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The ratio is ours and approximate: a tenth grader can sit an exam, and the two DESE files count on different days."
+    }
+   ],
+   "rests_on": [
+    "share",
+    "g1112",
+    "share-peak"
+   ],
+   "text": "That is about 39% of grades 11 and 12, against 58% in SY2018."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "DESE counts exams sat, not courses taught."
+    }
+   ],
+   "rests_on": [
+    "offered-gap",
+    "takers"
+   ],
+   "text": "A count of exams sat cannot tell a course not offered from one not chosen."
+  }
+ ],
+ "facts": [
+  {
+   "id": "takers",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "students who sat at least one exam, SY2025"
+   },
+   "value": {
+    "text": "89",
+    "unit": "students",
+    "value": 89
+   }
+  },
+  {
+   "id": "sittings",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "exams sat, SY2025"
+   },
+   "value": {
+    "text": "154",
+    "unit": "exams",
+    "value": 154
+   }
+  },
+  {
+   "id": "g1112",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "11",
+     "12"
+    ],
+    "text": "students in grades 11 and 12, SY2025"
+   },
+   "value": {
+    "text": "227",
+    "unit": "students",
+    "value": 227
+   }
+  },
+  {
+   "id": "share",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "11",
+     "12"
+    ],
+    "text": "takers over grades 11 and 12, SY2025"
+   },
+   "value": {
+    "text": "39%",
+    "unit": "",
+    "value": 39.207
+   }
+  },
+  {
+   "id": "share-peak",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2018",
+      "unit": "school year",
+      "value": 2018
+     }
+    },
+    "literals": [],
+    "text": "the same ratio at its highest, SY2018"
+   },
+   "value": {
+    "text": "58%",
+    "unit": "",
+    "value": 57.8199
+   }
+  },
+  {
+   "id": "takers-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2007",
+      "unit": "school year",
+      "value": 2007
+     }
+    },
+    "literals": [],
+    "text": "students who sat an exam, SY2007"
+   },
+   "value": {
+    "text": "58",
+    "unit": "students",
+    "value": 58
+   }
+  },
+  {
+   "id": "peak",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2018",
+      "unit": "school year",
+      "value": 2018
+     }
+    },
+    "literals": [],
+    "text": "students who sat an exam, SY2018, the most"
+   },
+   "value": {
+    "text": "122",
+    "unit": "students",
+    "value": 122
+   }
+  },
+  {
+   "closes": "the district’s Program of Studies for each year and the LHS master schedule; both were shown to the School Committee and neither is published",
+   "id": "offered-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which AP courses the high school offered each year"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "p": {
+    "text": "122",
+    "unit": "",
+    "value": 122
+   },
+   "s": {
+    "text": "154",
+    "unit": "",
+    "value": 154
+   },
+   "t": {
+    "text": "89",
+    "unit": "",
+    "value": 89
+   },
+   "y": {
+    "text": "SY2025",
+    "unit": "school year",
+    "value": 2025
+   },
+   "yp": {
+    "text": "SY2018",
+    "unit": "school year",
+    "value": 2018
+   }
+  },
+  "literals": [],
+  "text": "89 students sat at least one AP exam in SY2025, 154 sittings between them; the count peaked at 122 in SY2018."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "ap-participation",
+ "kind": "topic",
+ "path": "/school-programs/ap-participation",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2023-12-20",
+   "href": "/docs/meetings/text/school-committee/2023-12-20-minutes-6145.txt",
+   "label": "School Committee minutes, 2023-12-20",
+   "quote": "we need to make sure we are continuing to challenge our students and options specifically for students that are on an AP track and getting the kids the classes they want/need to take"
+  }
+ ],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-ap-participation.xlsx",
+   "label": "Massachusetts DESE — dese-ap-participation.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
+   "href": "/data/ap.json",
+   "label": "Lunenburg Budget Project — ap.json (AP participation and scores, generated)"
+  }
+ ],
+ "table": {
+  "caption": "AP exams at Lunenburg High, by school year",
+  "views": [
+   {
+    "columns": [
+     "Students",
+     "Exams",
+     "Grades 11–12",
+     "Ratio"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "Participation",
+    "note": "DESE’s AP participation file and its enrolment by grade. The ratio is our division of one by the other, an approximation.",
+    "rows": [
+     {
+      "cells": [
+       "89",
+       "154",
+       "227",
+       "39%"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "83",
+       "162",
+       "210",
+       "40%"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "97",
+       "165",
+       "211",
+       "46%"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "75",
+       "152",
+       "224",
+       "33%"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "92",
+       "169",
+       "239",
+       "38%"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "80",
+       "150",
+       "219",
+       "37%"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "99",
+       "189",
+       "210",
+       "47%"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "122",
+       "214",
+       "211",
+       "58%"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "99",
+       "187",
+       "207",
+       "48%"
+      ],
+      "label": "SY2017"
+     },
+     {
+      "cells": [
+       "89",
+       "195",
+       "202",
+       "44%"
+      ],
+      "label": "SY2016"
+     },
+     {
+      "cells": [
+       "100",
+       "211",
+       "206",
+       "49%"
+      ],
+      "label": "SY2015"
+     },
+     {
+      "cells": [
+       "101",
+       "203",
+       "221",
+       "46%"
+      ],
+      "label": "SY2014"
+     },
+     {
+      "cells": [
+       "94",
+       "184",
+       "238",
+       "39%"
+      ],
+      "label": "SY2013"
+     },
+     {
+      "cells": [
+       "85",
+       "174",
+       "261",
+       "33%"
+      ],
+      "label": "SY2012"
+     },
+     {
+      "cells": [
+       "83",
+       "157",
+       "268",
+       "31%"
+      ],
+      "label": "SY2011"
+     },
+     {
+      "cells": [
+       "67",
+       "131",
+       "260",
+       "26%"
+      ],
+      "label": "SY2010"
+     },
+     {
+      "cells": [
+       "62",
+       "103",
+       "278",
+       "22%"
+      ],
+      "label": "SY2009"
+     },
+     {
+      "cells": [
+       "58",
+       "100",
+       "326",
+       "18%"
+      ],
+      "label": "SY2008"
+     },
+     {
+      "cells": [
+       "58",
+       "91",
+       "322",
+       "18%"
+      ],
+      "label": "SY2007"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "AP participation"
+}

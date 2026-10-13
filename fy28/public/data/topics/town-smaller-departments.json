@@ -1,0 +1,295 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "1.2%",
+     "unit": "",
+     "value": 1.2243604957650027
+    },
+    "b": {
+     "text": "$24,279",
+     "unit": "",
+     "value": 24279.394260835237
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "asst",
+    "hs",
+    "cp",
+    "ex"
+   ],
+   "text": "Together they are 1.2% of the budget and $24,279 a year past the cap in dollars."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$63,392",
+     "unit": "",
+     "value": 63391.58
+    },
+    "b": {
+     "text": "54%",
+     "unit": "",
+     "value": 53.80432688382171
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "nash",
+    "hs"
+   ],
+   "text": "Of health and sanitation, $63,392, or 54%, goes to the regional Nashoba board and nursing."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "1.6%",
+     "unit": "",
+     "value": 1.5939799443128955
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cp-rate",
+    "cp"
+   ],
+   "text": "Central Purchasing grew 1.6% a year, under the cap."
+  }
+ ],
+ "facts": [
+  {
+   "id": "asst",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Council on Aging and veterans, FY2025"
+   },
+   "value": {
+    "text": "$340,898",
+    "unit": "",
+    "value": 340898.0
+   }
+  },
+  {
+   "id": "asst-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, Council on Aging and veterans"
+   },
+   "value": {
+    "text": "7.6%",
+    "unit": "",
+    "value": 7.606948137630298
+   }
+  },
+  {
+   "id": "hs",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "health and sanitation, FY2025"
+   },
+   "value": {
+    "text": "$117,819",
+    "unit": "",
+    "value": 117818.74
+   }
+  },
+  {
+   "id": "hs-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, health and sanitation"
+   },
+   "value": {
+    "text": "8.9%",
+    "unit": "",
+    "value": 8.948417546591525
+   }
+  },
+  {
+   "id": "nash",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it to the Nashoba board and nursing"
+   },
+   "value": {
+    "text": "$63,392",
+    "unit": "",
+    "value": 63391.58
+   }
+  },
+  {
+   "id": "cp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Central Purchasing, FY2025"
+   },
+   "value": {
+    "text": "$80,300",
+    "unit": "",
+    "value": 80300.0
+   }
+  },
+  {
+   "id": "cp-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, Central Purchasing, under the cap"
+   },
+   "value": {
+    "text": "1.6%",
+    "unit": "",
+    "value": 1.5939799443128955
+   }
+  },
+  {
+   "id": "ex",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the three, a year above the cap (ours)"
+   },
+   "value": {
+    "text": "$24,279",
+    "unit": "",
+    "value": 24279.394260835237
+   }
+  },
+  {
+   "closes": "the Council on Aging and Veterans subtotals the omnibus prints, not yet read",
+   "id": "asst-lines",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Council on Aging and veterans, line by line"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "1.2%",
+    "unit": "",
+    "value": 1.2243604957650027
+   }
+  },
+  "literals": [],
+  "text": "Veterans and elder services, health, and central purchasing are 1.2% of the budget together."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-smaller-departments",
+ "kind": "topic",
+ "path": "/department-budgets/town-smaller-departments",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-assistance.json",
+   "label": "Lunenburg Budget Project — town-budget-assistance.json (its printed lines)"
+  },
+  {
+   "href": "/data/town-budget-health-sanitation.json",
+   "label": "Lunenburg Budget Project — town-budget-health-sanitation.json (its printed lines)"
+  },
+  {
+   "href": "/data/town-budget-central-purchasing.json",
+   "label": "Lunenburg Budget Project — town-budget-central-purchasing.json (its printed lines)"
+  }
+ ],
+ "table": {
+  "caption": "The three smaller groups",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "A year",
+     "Above the cap (ours)"
+    ],
+    "key": "small",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2023 to FY2025",
+    "note": "Group totals as the omnibus prints them. The Council on Aging and Veterans lines are not yet read into a dataset.",
+    "rows": [
+     {
+      "cells": [
+       "$294,404",
+       "$340,898",
+       "7.6%",
+       "$17,409"
+      ],
+      "label": "Assistance"
+     },
+     {
+      "cells": [
+       "$99,260",
+       "$117,819",
+       "8.9%",
+       "$7,597"
+      ],
+      "label": "Health & Sanitation"
+     },
+     {
+      "cells": [
+       "$77,800",
+       "$80,300",
+       "1.6%",
+       "-$728"
+      ],
+      "label": "Central Purchasing"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Smaller departments"
+}

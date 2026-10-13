@@ -1,0 +1,191 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "1.1%",
+     "unit": "",
+     "value": 1.0670799424485482
+    },
+    "b": {
+     "text": "$94,340",
+     "unit": "",
+     "value": 94340.40662314523
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rate",
+    "share",
+    "excess"
+   ],
+   "text": "It grew fastest and is 1.1% of the budget: $94,340 a year past the cap in dollars."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A step in a collection contract’s price would produce this shape; nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "v0",
+    "v1",
+    "contract"
+   ],
+   "text": "The group is one line, Recycling Program, so the omnibus cannot show what in it rose."
+  }
+ ],
+ "facts": [
+  {
+   "id": "v0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "voted, FY2023"
+   },
+   "value": {
+    "text": "$312,634",
+    "unit": "",
+    "value": 312634.0
+   }
+  },
+  {
+   "id": "v1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$469,775",
+    "unit": "",
+    "value": 469775.0
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "22.6%",
+    "unit": "",
+    "value": 22.582040683975357
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "1.1%",
+    "unit": "",
+    "value": 1.0670799424485482
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "$94,340",
+    "unit": "",
+    "value": 94340.40662314523
+   }
+  },
+  {
+   "closes": "the town’s collection contract and its annual price terms",
+   "id": "contract",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the hauling contract’s price schedule"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "22.6%",
+    "unit": "",
+    "value": 22.582040683975357
+   },
+   "b": {
+    "text": "$312,634",
+    "unit": "",
+    "value": 312634.0
+   },
+   "c": {
+    "text": "$469,775",
+    "unit": "",
+    "value": 469775.0
+   }
+  },
+  "literals": [],
+  "text": "Trash and recycling grew 22.6% a year, the fastest of the twelve, from $312,634 to $469,775."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-solid-waste",
+ "kind": "topic",
+ "path": "/department-budgets/town-solid-waste",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-solid-waste.json",
+   "label": "Lunenburg Budget Project — town-budget-solid-waste.json (its printed lines)"
+  }
+ ],
+ "table": null,
+ "title": "Trash and recycling"
+}

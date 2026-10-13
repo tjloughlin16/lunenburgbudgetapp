@@ -1,0 +1,519 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "81.5%",
+     "unit": "",
+     "value": 81.47
+    },
+    "b": {
+     "text": "89.9%",
+     "unit": "",
+     "value": 89.86
+    },
+    "h": {
+     "text": "94.1%",
+     "unit": "",
+     "value": 94.06
+    },
+    "y0": {
+     "text": "FY2009",
+     "unit": "fiscal year",
+     "value": 2009
+    },
+    "y1": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "yh": {
+     "text": "FY2020",
+     "unit": "fiscal year",
+     "value": 2020
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Grant programmes starting and ending, state payments and town appropriations all move it, and nothing here separates them."
+    },
+    {
+     "closes": "DESE’s net school spending report, which separates Chapter 70 from the required local contribution",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "The general fund holds Chapter 70 state aid as well as local taxes, so its share is not the share local taxpayers paid."
+    }
+   ],
+   "rests_on": [
+    "share-first",
+    "share-last",
+    "points",
+    "share-hi"
+   ],
+   "text": "The general fund paid 81.5% in FY2009 and 89.9% in FY2025, after a high of 94.1% in FY2020."
+  },
+  {
+   "figures": {
+    "d": {
+     "text": "$2,520,227",
+     "unit": "",
+     "value": 2520227
+    },
+    "p": {
+     "text": "8.4 points",
+     "unit": "",
+     "value": 8.39
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "points",
+    "counterfactual"
+   ],
+   "text": "At FY2025 spending, 8.4 points is $2,520,227 a year: our arithmetic, not a forecast."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,697,071",
+     "unit": "",
+     "value": 1697071.0
+    },
+    "b": {
+     "text": "$1,242,714",
+     "unit": "",
+     "value": 1242714.0
+    },
+    "c": {
+     "text": "$454,357",
+     "unit": "",
+     "value": 454357.0
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "gf-rise",
+    "gr-fall",
+    "tot-rise"
+   ],
+   "text": "In FY2025 the general fund rose $1,697,071 and grants fell $1,242,714; all funds rose $454,357."
+  }
+ ],
+ "facts": [
+  {
+   "id": "share-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "general fund share of spending, FY2009"
+   },
+   "value": {
+    "text": "81.5%",
+    "unit": "",
+    "value": 81.47
+   }
+  },
+  {
+   "id": "share-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "general fund share of spending, FY2025"
+   },
+   "value": {
+    "text": "89.9%",
+    "unit": "",
+    "value": 89.86
+   }
+  },
+  {
+   "id": "share-hi",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "the highest share, FY2020"
+   },
+   "value": {
+    "text": "94.1%",
+    "unit": "",
+    "value": 94.06
+   }
+  },
+  {
+   "id": "points",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     },
+     "b": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "change in the share, FY2009 to FY2025"
+   },
+   "value": {
+    "text": "8.4 points",
+    "unit": "",
+    "value": 8.39
+   }
+  },
+  {
+   "id": "counterfactual",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "y0": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "a year, at FY2025 spending, if the FY2009 split held"
+   },
+   "value": {
+    "text": "$2,520,227",
+    "unit": "",
+    "value": 2520227
+   }
+  },
+  {
+   "id": "gf-rise",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "general fund rise, FY2025"
+   },
+   "value": {
+    "text": "$1,697,071",
+    "unit": "",
+    "value": 1697071.0
+   }
+  },
+  {
+   "id": "gr-fall",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "grant and revolving fall, FY2025"
+   },
+   "value": {
+    "text": "$1,242,714",
+    "unit": "",
+    "value": 1242714.0
+   }
+  },
+  {
+   "id": "tot-rise",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "rise across all funds, FY2025"
+   },
+   "value": {
+    "text": "$454,357",
+    "unit": "",
+    "value": 454357.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "81.5%",
+    "unit": "",
+    "value": 81.47
+   },
+   "b": {
+    "text": "89.9%",
+    "unit": "",
+    "value": 89.86
+   },
+   "y0": {
+    "text": "FY2009",
+    "unit": "fiscal year",
+    "value": 2009
+   },
+   "y1": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The general fund paid 81.5% of school spending in FY2009 and 89.9% in FY2025; grants and other funds the rest."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "outside-money-share",
+ "kind": "topic",
+ "path": "/school-programs/outside-money-share",
+ "said": [],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, End of Year Financial Report — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/data/grant-unwinding.json",
+   "label": "Lunenburg Budget Project — grant-unwinding.json (school spending by fund, generated)"
+  }
+ ],
+ "table": {
+  "caption": "Lunenburg school spending by fund, by year",
+  "views": [
+   {
+    "columns": [
+     "General fund",
+     "Grants and revolving",
+     "All funds",
+     "General fund share"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By fiscal year",
+    "note": "DESE’s End of Year Financial Report, district totals: what was spent, by the fund that paid it. Actual spending, not budgets.",
+    "rows": [
+     {
+      "cells": [
+       "$26,986,344",
+       "$3,044,898",
+       "$30,031,242",
+       "89.9%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$25,289,273",
+       "$4,287,612",
+       "$29,576,885",
+       "85.5%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$25,613,575",
+       "$3,945,897",
+       "$29,559,472",
+       "86.7%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$24,980,292",
+       "$2,384,081",
+       "$27,364,372",
+       "91.3%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$23,599,163",
+       "$2,237,805",
+       "$25,836,968",
+       "91.3%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$23,005,734",
+       "$1,453,893",
+       "$24,459,626",
+       "94.1%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$22,971,644",
+       "$1,623,462",
+       "$24,595,106",
+       "93.4%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$22,586,382",
+       "$1,805,429",
+       "$24,391,811",
+       "92.6%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$21,032,539",
+       "$2,493,775",
+       "$23,526,313",
+       "89.4%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$20,088,618",
+       "$2,108,544",
+       "$22,197,162",
+       "90.5%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$19,400,624",
+       "$2,019,663",
+       "$21,420,287",
+       "90.6%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$18,782,388",
+       "$2,333,940",
+       "$21,116,328",
+       "89.0%"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$18,199,750",
+       "$2,476,542",
+       "$20,676,292",
+       "88.0%"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$17,152,190",
+       "$3,041,224",
+       "$20,193,414",
+       "84.9%"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$16,387,213",
+       "$3,060,525",
+       "$19,447,738",
+       "84.3%"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$16,287,750",
+       "$3,104,025",
+       "$19,391,775",
+       "84.0%"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$15,842,808",
+       "$3,603,645",
+       "$19,446,453",
+       "81.5%"
+      ],
+      "label": "FY2009"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Outside money share"
+}

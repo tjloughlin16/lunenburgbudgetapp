@@ -1,0 +1,407 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$604,237",
+     "unit": "",
+     "value": 604237.0199999996
+    },
+    "b": {
+     "text": "66%",
+     "unit": "",
+     "value": 66.07930408604696
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the department’s budget request and narrative to the Finance Committee for that year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The omnibus states amounts and no reasons, so why group health moved is not shown here."
+    }
+   ],
+   "rests_on": [
+    "gh0",
+    "gh1",
+    "voted"
+   ],
+   "text": "Group Health Insurance rose $604,237, 66% of the group’s whole rise."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$169,000",
+     "unit": "",
+     "value": 169000.0
+    },
+    "b": {
+     "text": "$385,000",
+     "unit": "",
+     "value": 385000.0
+    }
+   },
+   "literals": [
+    "FY2023",
+    "FY2025"
+   ],
+   "notes": [
+    {
+     "closes": "the Finance Committee’s Reserve Fund transfer votes for the year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A reserve is voted here and, if used, transferred to other lines during the year."
+    }
+   ],
+   "rests_on": [
+    "rf",
+    "sr"
+   ],
+   "text": "The two reserve funds went from $169,000 to $385,000 together, FY2023 to FY2025."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "whose"
+   ],
+   "text": "Which employees and retirees the group health line covers is not printed in the omnibus."
+  }
+ ],
+ "facts": [
+  {
+   "id": "voted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$4,293,123",
+    "unit": "",
+    "value": 4293122.97
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "9.8%",
+    "unit": "",
+    "value": 9.751701158537896
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2025"
+    ],
+    "text": "a year, FY2023 to FY2025"
+   },
+   "value": {
+    "text": "12.7%",
+    "unit": "",
+    "value": 12.722636179798208
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "$438,870",
+    "unit": "",
+    "value": 438870.34197444736
+   }
+  },
+  {
+   "id": "gh0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "Group Health Insurance, FY2023"
+   },
+   "value": {
+    "text": "$2,455,675",
+    "unit": "",
+    "value": 2455674.99
+   }
+  },
+  {
+   "id": "gh1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Group Health Insurance, FY2025"
+   },
+   "value": {
+    "text": "$3,059,912",
+    "unit": "",
+    "value": 3059912.01
+   }
+  },
+  {
+   "id": "gh-share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the group, group health, FY2025"
+   },
+   "value": {
+    "text": "71%",
+    "unit": "",
+    "value": 71.274734764935
+   }
+  },
+  {
+   "id": "rf",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Reserve Fund, FY2025"
+   },
+   "value": {
+    "text": "$200,000",
+    "unit": "",
+    "value": 200000.0
+   }
+  },
+  {
+   "id": "sr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "Salary Reserve Fund, FY2025"
+   },
+   "value": {
+    "text": "$185,000",
+    "unit": "",
+    "value": 185000.0
+   }
+  },
+  {
+   "closes": "the insurance accounts by object: town staff, town retirees and school retirees",
+   "id": "whose",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whose insurance the group health line pays"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "12.7%",
+    "unit": "",
+    "value": 12.722636179798208
+   },
+   "b": {
+    "text": "71%",
+    "unit": "",
+    "value": 71.274734764935
+   }
+  },
+  "literals": [],
+  "text": "Employee benefits grew 12.7% a year, the most dollars past the cap of any group; group health is 71% of it."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-employee-benefits",
+ "kind": "topic",
+ "path": "/department-budgets/town-employee-benefits",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-unclassified.json",
+   "label": "Lunenburg Budget Project — town-budget-unclassified.json (its printed lines)"
+  }
+ ],
+ "table": {
+  "caption": "The benefits group’s lines",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "Change"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lines, as printed",
+    "note": "Lines that appear in both omnibus budgets under the same printed label. A line whose label changed is not joined.",
+    "rows": [
+     {
+      "cells": [
+       "$2,455,675",
+       "$3,059,912",
+       "+$604,237"
+      ],
+      "label": "Group Health Insurance"
+     },
+     {
+      "cells": [
+       "$75,000",
+       "$200,000",
+       "+$125,000"
+      ],
+      "label": "Reserve Fund"
+     },
+     {
+      "cells": [
+       "$94,000",
+       "$185,000",
+       "+$91,000"
+      ],
+      "label": "Salary Reserve Fund"
+     },
+     {
+      "cells": [
+       "$320,560",
+       "$375,177",
+       "+$54,617"
+      ],
+      "label": "Medicare - Town's Share"
+     },
+     {
+      "cells": [
+       "$225,644",
+       "$249,189",
+       "+$23,545"
+      ],
+      "label": "Liability Insurance"
+     },
+     {
+      "cells": [
+       "$154,174",
+       "$169,976",
+       "+$15,803"
+      ],
+      "label": "Workers Compensation"
+     },
+     {
+      "cells": [
+       "$4,158",
+       "$4,369",
+       "+$211"
+      ],
+      "label": "Mont Reg Planning Assess"
+     },
+     {
+      "cells": [
+       "$15,000",
+       "$15,000",
+       "+$0"
+      ],
+      "label": "Group Life Insurance"
+     },
+     {
+      "cells": [
+       "$3,500",
+       "$3,500",
+       "+$0"
+      ],
+      "label": "Physicals"
+     },
+     {
+      "cells": [
+       "$12,000",
+       "$12,000",
+       "+$0"
+      ],
+      "label": "Print Town Reports"
+     },
+     {
+      "cells": [
+       "$3,000",
+       "$3,000",
+       "+$0"
+      ],
+      "label": "Historical Commission"
+     },
+     {
+      "cells": [
+       "$6,000",
+       "$6,000",
+       "+$0"
+      ],
+      "label": "Band Concerts"
+     },
+     {
+      "cells": [
+       "$10,000",
+       "$10,000",
+       "+$0"
+      ],
+      "label": "Unemployment Expense"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Employee benefits"
+}

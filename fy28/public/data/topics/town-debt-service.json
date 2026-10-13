@@ -1,0 +1,302 @@
+{
+ "category": "department-budgets",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,388,326",
+     "unit": "",
+     "value": 1388326.1
+    },
+    "b": {
+     "text": "$1,556,402",
+     "unit": "",
+     "value": 1556401.8499999996
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pfall",
+    "fall",
+    "p1",
+    "i1"
+   ],
+   "text": "Principal fell $1,388,326 of the $1,556,402; interest fell less."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Bonds finishing with none issued to replace them would produce this shape; the schedule that would show it is not read."
+    }
+   ],
+   "rests_on": [
+    "fall",
+    "excess"
+   ],
+   "text": "The total budget still rose while debt fell; the omnibus does not say where the room went."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "excl",
+    "which"
+   ],
+   "text": "How much of it is paid outside the levy limit, by exclusion vote, is not shown here."
+  }
+ ],
+ "facts": [
+  {
+   "id": "d0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "voted, FY2023"
+   },
+   "value": {
+    "text": "$4,497,723",
+    "unit": "",
+    "value": 4497723.35
+   }
+  },
+  {
+   "id": "d1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted, FY2025"
+   },
+   "value": {
+    "text": "$2,941,322",
+    "unit": "",
+    "value": 2941321.5
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "of the voted budget, FY2025"
+   },
+   "value": {
+    "text": "6.7%",
+    "unit": "",
+    "value": 6.681124318966905
+   }
+  },
+  {
+   "id": "fall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "less a year by FY2025"
+   },
+   "value": {
+    "text": "$1,556,402",
+    "unit": "",
+    "value": 1556401.8499999996
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "principal, FY2025"
+   },
+   "value": {
+    "text": "$1,832,253",
+    "unit": "",
+    "value": 1832252.62
+   }
+  },
+  {
+   "id": "pfall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "less principal than in FY2023"
+   },
+   "value": {
+    "text": "$1,388,326",
+    "unit": "",
+    "value": 1388326.1
+   }
+  },
+  {
+   "id": "i1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "interest, FY2025"
+   },
+   "value": {
+    "text": "$1,101,717",
+    "unit": "",
+    "value": 1101717.02
+   }
+  },
+  {
+   "id": "excess",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2.5%"
+    ],
+    "text": "a year above what 2.5% growth carries (ours)"
+   },
+   "value": {
+    "text": "-$636,277",
+    "unit": "",
+    "value": -636276.6520567131
+   }
+  },
+  {
+   "closes": "the debt repayment schedule in the annual town report, not yet read",
+   "id": "which",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which bonds finished"
+   },
+   "value": null
+  },
+  {
+   "closes": "the debt exclusions voted, as the tax rate recapitulation lists them",
+   "id": "excl",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how much is paid outside the levy limit"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$4,497,723",
+    "unit": "",
+    "value": 4497723.35
+   },
+   "b": {
+    "text": "$2,941,322",
+    "unit": "",
+    "value": 2941321.5
+   }
+  },
+  "literals": [
+   "FY2023",
+   "FY2025"
+  ],
+  "text": "Debt service fell from $4,497,723 to $2,941,322, FY2023 to FY2025, the only one of the twelve groups to fall."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-debt-service",
+ "kind": "topic",
+ "path": "/department-budgets/town-debt-service",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  },
+  {
+   "href": "/data/town-budget-maturing-debt.json",
+   "label": "Lunenburg Budget Project — town-budget-maturing-debt.json (its printed lines)"
+  }
+ ],
+ "table": {
+  "caption": "The debt group’s lines",
+  "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2025",
+     "Change"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lines, as printed",
+    "note": "Lines that appear in both omnibus budgets under the same printed label. A line whose label changed is not joined.",
+    "rows": [
+     {
+      "cells": [
+       "$3,220,579",
+       "$1,832,253",
+       "-$1,388,326"
+      ],
+      "label": "Principal-Loans"
+     },
+     {
+      "cells": [
+       "$1,272,701",
+       "$1,101,717",
+       "-$170,984"
+      ],
+      "label": "Interest-Loans"
+     },
+     {
+      "cells": [
+       "$2,619",
+       "$1,365",
+       "-$1,254"
+      ],
+      "label": "ЗА Admin Fees-Loans"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Debt service"
+}

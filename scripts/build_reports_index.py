@@ -135,7 +135,7 @@ CATEGORIES = [
     # `show-your-work` because those two are about the reports; this is a way IN to them.
     ('school', 'The schools', [
         ('what the money buys', [
-            'courses', 'ap', 'cuts', 'stopped', 'unwind',
+            # courses, AP, cuts, stopped and grant endings are the School programs shelf now.
             'insurance',
             # Transportation and athletics are SHELVES OF THEIR OWN now, drawn from
             # scripts/topics.py by the reports page itself (TJ, 12 October 2026). Their long
@@ -154,9 +154,8 @@ CATEGORIES = [
         ('the students', [
             'families',
         ]),
-        ('where the money comes from, and how it compares', [
-            'peers', 'spending-compared', 'variance',
-        ]),
+        # 'where the money comes from, and how it compares' is the State aid and School
+        # spending shelves now.
         # THE RULES EVERYONE ARGUES UNDER, as a subsection here rather than a shelf of
         # their own. TJ, 17 September 2026: "should go under the schools as a subsection".
         # The note that used to introduce a fourth shelf still holds for what these ARE
@@ -230,17 +229,8 @@ CATEGORIES = [
     # The departments are listed in the town's own printed order rather than by size or by
     # pull. Ranking them here would make the shelf an argument, and the ranking already
     # has a page of its own directly above it.
-    ('townbudgets', 'Budgets across town', [
-        ('', ['town-budgets']),
-        # PERSONNEL SITS ON THIS SHELF and not on a shelf of its own, because it is here
-        # to answer a question the budget pages raise and cannot answer: a line that falls
-        # is not a cut, and a cut is a service reduction. Filed anywhere else, a reader who
-        # has just seen twelve departments' dollars would never meet the one page that
-        # says what those departments are made of.
-        ('', ['town-personnel']),
-        ('Department by department, as Town Meeting voted it',
-         ['town-budget-maturing-debt', 'town-budget-unclassified', 'town-budget-general-government', 'town-budget-central-purchasing', 'town-budget-protection', 'town-budget-health-sanitation', 'town-budget-public-works', 'town-budget-facilities-grounds', 'town-budget-solid-waste', 'town-budget-assistance', 'town-budget-schools', 'town-budget-library']),
-    ]),
+    # 'Budgets across town' is the Department budgets shelf now (scripts/topic_registry/
+    # department_budgets.py): one topic page per group, and the town's workforce beside them.
     ('live', 'Not reports — the pages that change every day', [
         ('', ['blog', 'budgetfeed', 'thisweek', 'boards', 'recorded']),
     ]),
@@ -302,7 +292,17 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
                  'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'monty-tech',
                  'staffing', 'schoolstaff', 'parastaff',
                  # ...and State aid.
-                 'minaid', 'required', 'formula'}
+                 'minaid', 'required', 'formula',
+                 # Wave 3: School programs, Department budgets.
+                 'courses', 'ap', 'cuts', 'stopped', 'unwind',
+                 'town-budgets', 'town-personnel', 'town-budget-maturing-debt',
+                 'town-budget-unclassified', 'town-budget-general-government',
+                 'town-budget-central-purchasing', 'town-budget-protection',
+                 'town-budget-health-sanitation', 'town-budget-public-works',
+                 'town-budget-facilities-grounds', 'town-budget-solid-waste',
+                 'town-budget-assistance', 'town-budget-schools', 'town-budget-library',
+                 # ...and School spending.
+                 'peers', 'variance'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

@@ -1,0 +1,364 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "198 of 576",
+     "unit": "",
+     "value": 198
+    },
+    "b": {
+     "text": "125",
+     "unit": "",
+     "value": 125
+    },
+    "p": {
+     "text": "2%",
+     "unit": "",
+     "value": 2
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "ly",
+    "w2",
+    "q"
+   ],
+   "text": "Only 198 of 576 line-years landed within 2%; 125 missed by more than a quarter."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "7 of 98",
+     "unit": "",
+     "value": 7
+    },
+    "b": {
+     "text": "$42,878",
+     "unit": "",
+     "value": 42878.25
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "same",
+    "big"
+   ],
+   "text": "Just 7 of 98 lines missed the same way every year; the largest averaged $42,878 a year under."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "0.8%",
+     "unit": "",
+     "value": 0.802751830691173
+    },
+    "b": {
+     "text": "0.2%",
+     "unit": "",
+     "value": 0.22604089048128273
+    },
+    "n": {
+     "text": "346",
+     "unit": "",
+     "value": 346
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sal",
+    "rest"
+   ],
+   "text": "Salaries came in 0.8% under across 346 line-years; everything else 0.2% over."
+  },
+  {
+   "figures": {
+    "y": {
+     "text": "FY2021",
+     "unit": "fiscal year",
+     "value": 2021
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the MUNIS year-end expense report for the school department for each year wanted, as held for FY2023 to FY2026",
+     "figures": {
+      "n": {
+       "text": "16",
+       "unit": "",
+       "value": 16
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "FY2023",
+      "FY2026"
+     ],
+     "text": "None of the 16 budget books behind it is a ledger, so money moved between lines during a year cannot be seen here."
+    }
+   ],
+   "rests_on": [
+    "fy21"
+   ],
+   "text": "The spent column is the district restating its own books; in FY2021 it repeats the budget."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ly",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2018",
+      "unit": "fiscal year",
+      "value": 2018
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "measured, FY2018 to FY2025"
+   },
+   "value": {
+    "text": "576",
+    "unit": "line-years",
+    "value": 576
+   }
+  },
+  {
+   "id": "w2",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "p": {
+      "text": "2%",
+      "unit": "",
+      "value": 2
+     }
+    },
+    "literals": [],
+    "text": "within 2% of their budget"
+   },
+   "value": {
+    "text": "198 of 576",
+    "unit": "line-years",
+    "value": 198
+   }
+  },
+  {
+   "id": "q",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "missed by more than a quarter, either way"
+   },
+   "value": {
+    "text": "125",
+    "unit": "line-years",
+    "value": 125
+   }
+  },
+  {
+   "id": "same",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "missed the same way in every year"
+   },
+   "value": {
+    "text": "7 of 98",
+    "unit": "lines",
+    "value": 7
+   }
+  },
+  {
+   "id": "big",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the largest of those, under, a year"
+   },
+   "value": {
+    "text": "$42,878",
+    "unit": "",
+    "value": 42878.25
+   }
+  },
+  {
+   "id": "sal",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries under budget, measured years"
+   },
+   "value": {
+    "text": "0.8%",
+    "unit": "",
+    "value": 0.802751830691173
+   }
+  },
+  {
+   "id": "rest",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "everything else over budget"
+   },
+   "value": {
+    "text": "0.2%",
+    "unit": "",
+    "value": 0.22604089048128273
+   }
+  },
+  {
+   "id": "fy21",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2021",
+      "unit": "fiscal year",
+      "value": 2021
+     }
+    },
+    "literals": [],
+    "text": "FY2021 lines whose spent figure is the budget"
+   },
+   "value": {
+    "text": "116 of 117",
+    "unit": "lines",
+    "value": 116
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "576",
+    "unit": "",
+    "value": 576
+   },
+   "b": {
+    "text": "198",
+    "unit": "",
+    "value": 198
+   },
+   "p": {
+    "text": "2%",
+    "unit": "",
+    "value": 2
+   }
+  },
+  "literals": [],
+  "text": "Of 576 budget lines and years the district restated, 198 landed within 2% of the line’s budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "line-level-misses",
+ "kind": "topic",
+ "path": "/school-spending/line-level-misses",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/line-history.csv",
+   "label": "Lunenburg Budget Project — line-history.csv (every district budget line, budget and restated)"
+  }
+ ],
+ "table": {
+  "caption": "Lines that missed the same way every year",
+  "views": [
+   {
+    "columns": [
+     "Direction",
+     "Years",
+     "Average a year"
+    ],
+    "key": "same",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Four or more measured years",
+    "note": "Each year’s budget against the same year’s restated figure, out of the district’s own budget books. A line counts only if it was more than 2% off in every year.",
+    "rows": [
+     {
+      "cells": [
+       "under",
+       "4",
+       "-$42,878"
+      ],
+      "label": "Special Education Transportation - System"
+     },
+     {
+      "cells": [
+       "under",
+       "5",
+       "-$20,754"
+      ],
+      "label": "Maintenance/System Salaries"
+     },
+     {
+      "cells": [
+       "under",
+       "4",
+       "-$12,324"
+      ],
+      "label": "Kindergarten Paraprofessionals"
+     },
+     {
+      "cells": [
+       "under",
+       "4",
+       "-$5,021"
+      ],
+      "label": "Athletic Equipment/Reconditioning"
+     },
+     {
+      "cells": [
+       "under",
+       "5",
+       "-$2,952"
+      ],
+      "label": "H.S. General School Supplies"
+     },
+     {
+      "cells": [
+       "under",
+       "4",
+       "-$1,782"
+      ],
+      "label": "Special Ed Home/Hospital Tutoring"
+     },
+     {
+      "cells": [
+       "over",
+       "5",
+       "$6,642"
+      ],
+      "label": "M..S. Regular Substitutes"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Line-level misses"
+}

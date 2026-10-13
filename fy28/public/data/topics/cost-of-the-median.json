@@ -1,0 +1,270 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$23,520",
+     "unit": "",
+     "value": 23520.0
+    },
+    "b": {
+     "text": "$39,181,968",
+     "unit": "",
+     "value": 39181968.0
+    },
+    "n": {
+     "text": "1,665.9",
+     "unit": "FTE pupils",
+     "value": 1665.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "med",
+    "pupils",
+    "need"
+   ],
+   "text": "The median’s $23,520 for each of 1,665.9 pupils comes to $39,181,968."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$9,150,726",
+     "unit": "",
+     "value": 9150726.0
+    },
+    "b": {
+     "text": "$30,031,242",
+     "unit": "",
+     "value": 30031242.0
+    },
+    "p": {
+     "text": "30.5%",
+     "unit": "",
+     "value": 30.470687825698327
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s grant awards by year, set against DESE’s all-funds total for the same years",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "It is a figure for all funds, not for the appropriation, and how much of the distance grants nobody in town votes on could cover is not established."
+    }
+   ],
+   "rests_on": [
+    "more",
+    "spent",
+    "mpct"
+   ],
+   "text": "That is $9,150,726 more than the $30,031,242 spent, or 30.5% more."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$35,282,429",
+     "unit": "",
+     "value": 35282429.28
+    },
+    "b": {
+     "text": "$5,251,187",
+     "unit": "",
+     "value": 5251187.280000001
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "need25",
+    "more25"
+   ],
+   "text": "The first quartile would have taken $35,282,429, or $5,251,187 more."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "med"
+   ],
+   "text": "No document sets the median as a target; it is a place in the distribution."
+  }
+ ],
+ "facts": [
+  {
+   "id": "med",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the state median a pupil, FY2025"
+   },
+   "value": {
+    "text": "$23,520",
+    "unit": "",
+    "value": 23520.0
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FTE pupils DESE divides by, FY2025"
+   },
+   "value": {
+    "text": "1,665.9",
+    "unit": "FTE pupils",
+    "value": 1665.9
+   }
+  },
+  {
+   "id": "spent",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "spent, all funds, FY2025"
+   },
+   "value": {
+    "text": "$30,031,242",
+    "unit": "",
+    "value": 30031242.0
+   }
+  },
+  {
+   "id": "need",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "at the median, all funds (ours)"
+   },
+   "value": {
+    "text": "$39,181,968",
+    "unit": "",
+    "value": 39181968.0
+   }
+  },
+  {
+   "id": "more",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more than was spent (ours)"
+   },
+   "value": {
+    "text": "$9,150,726",
+    "unit": "",
+    "value": 9150726.0
+   }
+  },
+  {
+   "id": "mpct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more, as a share (ours)"
+   },
+   "value": {
+    "text": "30.5%",
+    "unit": "",
+    "value": 30.470687825698327
+   }
+  },
+  {
+   "id": "need25",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "at the first quartile (ours)"
+   },
+   "value": {
+    "text": "$35,282,429",
+    "unit": "",
+    "value": 35282429.28
+   }
+  },
+  {
+   "id": "more25",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more than was spent (ours)"
+   },
+   "value": {
+    "text": "$5,251,187",
+    "unit": "",
+    "value": 5251187.280000001
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$39,181,968",
+    "unit": "",
+    "value": 39181968.0
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "At the FY2025 state median a pupil, Lunenburg would have spent $39,181,968, by our arithmetic."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "cost-of-the-median",
+ "kind": "topic",
+ "path": "/school-spending/cost-of-the-median",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-statewide.csv",
+   "label": "Lunenburg Budget Project — dese-function-statewide.csv (DESE’s statewide distribution, by function)"
+  },
+  {
+   "href": "/docs/data/dese-function-expenditure.csv",
+   "label": "Lunenburg Budget Project — dese-function-expenditure.csv (DESE’s spending by district and function)"
+  }
+ ],
+ "table": null,
+ "title": "Reaching the state median"
+}

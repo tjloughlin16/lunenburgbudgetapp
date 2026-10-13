@@ -1,0 +1,467 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "19",
+     "unit": "",
+     "value": 19
+    },
+    "p": {
+     "text": "88.3%",
+     "unit": "",
+     "value": 88.3
+    },
+    "y": {
+     "text": "SY2025",
+     "unit": "school year",
+     "value": 2025
+    }
+   },
+   "literals": [
+    "3"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Better teaching, different students choosing to sit, or a shift toward subjects that score higher all fit. The file separates none of them."
+    }
+   ],
+   "rests_on": [
+    "pass",
+    "tests"
+   ],
+   "text": "88.3% of tests scored 3 or better in SY2025, the highest of 19 published years."
+  },
+  {
+   "figures": {
+    "t": {
+     "text": "75.8%",
+     "unit": "",
+     "value": 75.8
+    },
+    "w": {
+     "text": "62.1%",
+     "unit": "",
+     "value": 62.1
+    },
+    "y": {
+     "text": "SY2025",
+     "unit": "school year",
+     "value": 2025
+    },
+    "yw": {
+     "text": "SY2009",
+     "unit": "school year",
+     "value": 2009
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "worst",
+    "two-ago"
+   ],
+   "text": "The lowest was 62.1% in SY2009; two years before SY2025 it was 75.8%."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "tests",
+    "fives",
+    "ones"
+   ],
+   "text": "It is a share of tests, not students: one who sits three exams counts three times."
+  }
+ ],
+ "facts": [
+  {
+   "id": "pass",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "3",
+     "5"
+    ],
+    "text": "of tests scored 3 to 5, SY2025"
+   },
+   "value": {
+    "text": "88.3%",
+    "unit": "",
+    "value": 88.3
+   }
+  },
+  {
+   "id": "two-ago",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2023",
+      "unit": "school year",
+      "value": 2023
+     }
+    },
+    "literals": [
+     "3",
+     "5"
+    ],
+    "text": "of tests scored 3 to 5, SY2023"
+   },
+   "value": {
+    "text": "75.8%",
+    "unit": "",
+    "value": 75.8
+   }
+  },
+  {
+   "id": "worst",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2009",
+      "unit": "school year",
+      "value": 2009
+     }
+    },
+    "literals": [
+     "3",
+     "5"
+    ],
+    "text": "of tests scored 3 to 5, SY2009, the lowest"
+   },
+   "value": {
+    "text": "62.1%",
+    "unit": "",
+    "value": 62.1
+   }
+  },
+  {
+   "id": "tests",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "tests scored, SY2025"
+   },
+   "value": {
+    "text": "154",
+    "unit": "tests",
+    "value": 154
+   }
+  },
+  {
+   "id": "fives",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "5"
+    ],
+    "text": "tests scoring 5, SY2025"
+   },
+   "value": {
+    "text": "28",
+    "unit": "tests",
+    "value": 28
+   }
+  },
+  {
+   "id": "ones",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2025",
+      "unit": "school year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "1"
+    ],
+    "text": "tests scoring 1, SY2025"
+   },
+   "value": {
+    "text": "2",
+    "unit": "tests",
+    "value": 2
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n": {
+    "text": "19",
+    "unit": "",
+    "value": 19
+   },
+   "p": {
+    "text": "88.3%",
+    "unit": "",
+    "value": 88.3
+   },
+   "w": {
+    "text": "62.1%",
+    "unit": "",
+    "value": 62.1
+   },
+   "y": {
+    "text": "SY2025",
+    "unit": "school year",
+    "value": 2025
+   },
+   "yw": {
+    "text": "SY2009",
+    "unit": "school year",
+    "value": 2009
+   }
+  },
+  "literals": [
+   "3"
+  ],
+  "text": "88.3% of AP tests scored 3 or better in SY2025, the highest of 19 years; the lowest was 62.1% in SY2009."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "ap-scores",
+ "kind": "topic",
+ "path": "/school-programs/ap-scores",
+ "said": [],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-ap-performance.xlsx",
+   "label": "Massachusetts DESE — dese-ap-performance.xlsx"
+  },
+  {
+   "href": "/data/ap.json",
+   "label": "Lunenburg Budget Project — ap.json (AP participation and scores, generated)"
+  }
+ ],
+ "table": {
+  "caption": "AP test scores at Lunenburg High, by school year",
+  "views": [
+   {
+    "columns": [
+     "Tests",
+     "Scored 5",
+     "Scored 1",
+     "3 or better"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Scores",
+    "note": "DESE’s AP performance file, all subjects. A score of 3 is the usual threshold for college credit.",
+    "rows": [
+     {
+      "cells": [
+       "154",
+       "28",
+       "2",
+       "88.3%"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "162",
+       "36",
+       "2",
+       "87.0%"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "165",
+       "19",
+       "8",
+       "75.8%"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "152",
+       "30",
+       "11",
+       "78.9%"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "169",
+       "24",
+       "7",
+       "76.3%"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "150",
+       "35",
+       "5",
+       "80.0%"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "189",
+       "33",
+       "3",
+       "78.8%"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "214",
+       "21",
+       "14",
+       "67.8%"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "187",
+       "20",
+       "20",
+       "64.7%"
+      ],
+      "label": "SY2017"
+     },
+     {
+      "cells": [
+       "195",
+       "27",
+       "8",
+       "66.7%"
+      ],
+      "label": "SY2016"
+     },
+     {
+      "cells": [
+       "211",
+       "29",
+       "9",
+       "77.3%"
+      ],
+      "label": "SY2015"
+     },
+     {
+      "cells": [
+       "203",
+       "36",
+       "3",
+       "76.8%"
+      ],
+      "label": "SY2014"
+     },
+     {
+      "cells": [
+       "184",
+       "20",
+       "4",
+       "74.5%"
+      ],
+      "label": "SY2013"
+     },
+     {
+      "cells": [
+       "174",
+       "34",
+       "5",
+       "74.1%"
+      ],
+      "label": "SY2012"
+     },
+     {
+      "cells": [
+       "157",
+       "36",
+       "8",
+       "83.4%"
+      ],
+      "label": "SY2011"
+     },
+     {
+      "cells": [
+       "131",
+       "22",
+       "22",
+       "69.5%"
+      ],
+      "label": "SY2010"
+     },
+     {
+      "cells": [
+       "103",
+       "17",
+       "11",
+       "62.1%"
+      ],
+      "label": "SY2009"
+     },
+     {
+      "cells": [
+       "100",
+       "16",
+       "4",
+       "79.0%"
+      ],
+      "label": "SY2008"
+     },
+     {
+      "cells": [
+       "91",
+       "16",
+       "4",
+       "76.9%"
+      ],
+      "label": "SY2007"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "AP scores"
+}

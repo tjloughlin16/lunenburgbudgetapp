@@ -1,0 +1,331 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "22",
+     "unit": "",
+     "value": 22
+    },
+    "b": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    }
+   },
+   "literals": [
+    "May 2024"
+   ],
+   "rests_on": [
+    "without",
+    "with"
+   ],
+   "text": "Before the May 2024 vote the committee published two lists: 22 posts without an override, 9 with."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "664",
+     "unit": "",
+     "value": 664
+    },
+    "s": {
+     "text": "13",
+     "unit": "",
+     "value": 13
+    },
+    "y": {
+     "text": "753",
+     "unit": "",
+     "value": 753
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "yes",
+    "no",
+    "saved"
+   ],
+   "text": "The override passed 753 to 664, so 13 posts came off the list that applied."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The pairing of the two documents’ job titles is our reading; both wordings are in the table."
+    }
+   ],
+   "rests_on": [
+    "paired",
+    "with"
+   ],
+   "text": "Each of the 9 that stayed matches a post the budget update lists as cut for loss of ESSER."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s year-end position control report: filled posts by FTE, school and funding source",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Nothing published records which posts were filled after the vote."
+    }
+   ],
+   "rests_on": [
+    "post-gap"
+   ],
+   "text": "Two lists and a ballot show which list applied, not what happened to any post."
+  }
+ ],
+ "facts": [
+  {
+   "id": "without",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "posts to be cut without an override"
+   },
+   "value": {
+    "text": "22",
+    "unit": "positions",
+    "value": 22
+   }
+  },
+  {
+   "id": "with",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "posts to be cut with one"
+   },
+   "value": {
+    "text": "9",
+    "unit": "positions",
+    "value": 9
+   }
+  },
+  {
+   "id": "yes",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2024"
+    ],
+    "text": "votes for the override, May 2024"
+   },
+   "value": {
+    "text": "753",
+    "unit": "votes",
+    "value": 753
+   }
+  },
+  {
+   "id": "no",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "votes against"
+   },
+   "value": {
+    "text": "664",
+    "unit": "votes",
+    "value": 664
+   }
+  },
+  {
+   "id": "saved",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "posts off the operative list"
+   },
+   "value": {
+    "text": "13",
+    "unit": "positions",
+    "value": 13
+   }
+  },
+  {
+   "id": "paired",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "w": {
+      "text": "9",
+      "unit": "",
+      "value": 9
+     }
+    },
+    "literals": [],
+    "text": "of the 9 that stayed pair to a post cut for loss of ESSER"
+   },
+   "value": {
+    "text": "9",
+    "unit": "positions",
+    "value": 9
+   }
+  },
+  {
+   "closes": "the district’s year-end position control report: filled posts by FTE, school and funding source",
+   "id": "post-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what became of any post on either list"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "s": {
+    "text": "13",
+    "unit": "",
+    "value": 13
+   },
+   "w": {
+    "text": "9",
+    "unit": "",
+    "value": 9
+   }
+  },
+  "literals": [
+   "May 2024"
+  ],
+  "text": "The May 2024 override took 13 posts off the cut list; the 9 left match posts listed as cut for loss of ESSER."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "override-cut-lists",
+ "kind": "topic",
+ "path": "/school-programs/override-cut-lists",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-05-22",
+   "href": "/docs/meetings/text/school-committee/2024-05-22-minutes-6581.txt",
+   "label": "School Committee minutes, 2024-05-22",
+   "quote": "I personally did not feel it appropriate to transfer the burden of that money from the federal government grants on to the backs of Lunenburg taxpayers."
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-09-03",
+   "href": "/docs/meetings/text/school-committee/2025-09-03-minutes-7385.txt",
+   "label": "School Committee minutes, 2025-09-03",
+   "quote": "So we didn ’t cut beyond ESSER, which is a really important thing to remember"
+  }
+ ],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/fy25-superintendent-39-s-budget-update.pdf",
+   "label": "Lunenburg Public Schools — FY25 Superintendent’s Budget Update"
+  },
+  {
+   "href": "/docs/district-budget/docs/lunenburg-school-committee-override-statement.pdf",
+   "label": "Lunenburg Public Schools — Lunenburg School Committee Override Statement"
+  },
+  {
+   "href": "/data/cut-register.json",
+   "label": "Lunenburg Budget Project — cut-register.json (every named cut, quoted at its page, generated)"
+  }
+ ],
+ "table": {
+  "caption": "The posts still cut with the override, as each document prints them",
+  "views": [
+   {
+    "columns": [
+     "As the budget update lists it, cut for loss of ESSER"
+    ],
+    "key": "pairs",
+    "kinds": [
+     "stated"
+    ],
+    "label": "Paired wordings",
+    "note": "Left: the School Committee’s override statement. Right: the FY25 Superintendent’s Budget Update. The pairing is ours.",
+    "rows": [
+     {
+      "cells": [
+       "Instructional Coach (district)"
+      ],
+      "label": "Instructional Coach Districtwide"
+     },
+     {
+      "cells": [
+       "Intervention Teacher (LHS)"
+      ],
+      "label": "Intervention Teacher LHS"
+     },
+     {
+      "cells": [
+       "Classroom Teacher (LMS-grade 8)"
+      ],
+      "label": "Classroom Teacher LMS"
+     },
+     {
+      "cells": [
+       "Classroom Teacher (LHS-history)"
+      ],
+      "label": "Humanities Teacher LHS"
+     },
+     {
+      "cells": [
+       "Guidance Counselor (LMS)"
+      ],
+      "label": "Counselor LMS"
+     },
+     {
+      "cells": [
+       "Classroom Teacher (THES-grade 5)"
+      ],
+      "label": "Classroom Teacher THES"
+     },
+     {
+      "cells": [
+       "Wilson Reading Teacher (THES)"
+      ],
+      "label": "Wilson Reading Teacher THES"
+     },
+     {
+      "cells": [
+       "Social Worker (PS-second SW position)"
+      ],
+      "label": "Social Worker PS"
+     },
+     {
+      "cells": [
+       "PE Teacher (PS/THES)"
+      ],
+      "label": "PE Teacher PS/THES"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Override cut lists"
+}

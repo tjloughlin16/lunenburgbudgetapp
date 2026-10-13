@@ -1,0 +1,294 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$26,986,344",
+     "unit": "",
+     "value": 26986344.0
+    },
+    "b": {
+     "text": "$30,031,242",
+     "unit": "",
+     "value": 30031242.0
+    },
+    "c": {
+     "text": "$3,044,898",
+     "unit": "",
+     "value": 3044898.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s End of Year Financial Report to DESE, schedule by schedule, for the same year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "How DESE’s general fund figure reconciles to the school appropriation Town Meeting votes has not been worked out; they are two definitions."
+    }
+   ],
+   "rests_on": [
+    "total",
+    "gf",
+    "gr"
+   ],
+   "text": "The general fund was $26,986,344 of the $30,031,242; grants and revolving funds the other $3,044,898."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "10.1%",
+     "unit": "",
+     "value": 10.14
+    },
+    "b": {
+     "text": "24.0%",
+     "unit": "",
+     "value": 24.04
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "share",
+    "top"
+   ],
+   "text": "At 10.1% the share was the smallest of the six districts this project compares; Harvard’s was 24.0%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,459",
+     "unit": "",
+     "value": 3459.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bene"
+   ],
+   "text": "DESE’s total also counts insurance, retirement and other at $3,459 a pupil."
+  }
+ ],
+ "facts": [
+  {
+   "id": "total",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "all funds, FY2025, DESE"
+   },
+   "value": {
+    "text": "$30,031,242",
+    "unit": "",
+    "value": 30031242.0
+   }
+  },
+  {
+   "id": "gf",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it the general fund"
+   },
+   "value": {
+    "text": "$26,986,344",
+    "unit": "",
+    "value": 26986344.0
+   }
+  },
+  {
+   "id": "gr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it grants and revolving funds"
+   },
+   "value": {
+    "text": "$3,044,898",
+    "unit": "",
+    "value": 3044898.0
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the grants’ share (our division)"
+   },
+   "value": {
+    "text": "10.1%",
+    "unit": "",
+    "value": 10.14
+   }
+  },
+  {
+   "id": "top",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard, the largest share of the six"
+   },
+   "value": {
+    "text": "24.0%",
+    "unit": "",
+    "value": 24.04
+   }
+  },
+  {
+   "id": "bene",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "insurance, retirement and other, a pupil"
+   },
+   "value": {
+    "text": "$3,459",
+    "unit": "",
+    "value": 3459.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$30,031,242",
+    "unit": "",
+    "value": 30031242.0
+   },
+   "b": {
+    "text": "$3,044,898",
+    "unit": "",
+    "value": 3044898.0
+   },
+   "p": {
+    "text": "10.1%",
+    "unit": "",
+    "value": 10.14
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Of $30,031,242 DESE counts for FY2025, grants and revolving funds paid $3,044,898: 10.1%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grants-in-school-spending",
+ "kind": "topic",
+ "path": "/school-spending/grants-in-school-spending",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-02-04",
+   "href": "/docs/meetings/text/school-committee/2026-02-04-minutes-7634.txt",
+   "label": "School Committee minutes, 2026-02-04",
+   "quote": "the remaining $17,000 will be dedicated to contracted professional development. This week our legislators have approved one-time earmarked funds, $36,000 is going toward touch view screens at the Primary School, $7,000 will fund IXL for our middle school students"
+  }
+ ],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-expenditure.csv",
+   "label": "Lunenburg Budget Project — dese-function-expenditure.csv (DESE’s spending by district and function)"
+  }
+ ],
+ "table": {
+  "caption": "All funds and the general fund, FY2025",
+  "views": [
+   {
+    "columns": [
+     "All funds",
+     "General fund",
+     "Grants’ share"
+    ],
+    "key": "funds",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The six districts this project compares",
+    "note": "DESE’s end-of-year finance collection. The six are this project’s choice; no document records the criterion.",
+    "rows": [
+     {
+      "cells": [
+       "$27,236,238",
+       "$20,688,436",
+       "24.0%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$54,106,517",
+       "$47,883,498",
+       "11.5%"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "$65,728,795",
+       "$58,828,904",
+       "10.5%"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$38,561,581",
+       "$32,386,190",
+       "16.0%"
+      ],
+      "label": "Ayer Shirley School District"
+     },
+     {
+      "cells": [
+       "$41,432,696",
+       "$37,110,284",
+       "10.4%"
+      ],
+      "label": "Ashburnham-Westminster"
+     },
+     {
+      "cells": [
+       "$30,031,242",
+       "$26,986,344",
+       "10.1%"
+      ],
+      "label": "Lunenburg"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Grants and revolving funds"
+}

@@ -1,0 +1,367 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$17,785",
+     "unit": "",
+     "value": 17785.0
+    },
+    "b": {
+     "text": "$19,888",
+     "unit": "",
+     "value": 19888.0
+    },
+    "c": {
+     "text": "$2,103",
+     "unit": "",
+     "value": 2103.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s DART comparison group for Lunenburg, with its criteria",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The comparison district is the middle of a set this project chose; no document records why these six."
+    }
+   ],
+   "rests_on": [
+    "lun",
+    "mid",
+    "gap"
+   ],
+   "text": "Lunenburg’s in-district figure was $17,785 against Ayer Shirley’s $19,888: $2,103 less."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "-$654",
+     "unit": "",
+     "value": -654.0
+    },
+    "b": {
+     "text": "-$614",
+     "unit": "",
+     "value": -614.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tchr",
+    "serv"
+   ],
+   "text": "Teachers (-$654) and pupil services (-$614) were the two largest parts of the difference."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$158",
+     "unit": "",
+     "value": 158.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tser"
+   ],
+   "text": "Other teaching services ran the other way, $158 above Ayer Shirley."
+  }
+ ],
+ "facts": [
+  {
+   "id": "lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, in-district, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$17,785",
+    "unit": "",
+    "value": 17785.0
+   }
+  },
+  {
+   "id": "mid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Ayer Shirley, the middle of the other five"
+   },
+   "value": {
+    "text": "$19,888",
+    "unit": "",
+    "value": 19888.0
+   }
+  },
+  {
+   "id": "gap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "less a pupil (our arithmetic)"
+   },
+   "value": {
+    "text": "$2,103",
+    "unit": "",
+    "value": 2103.0
+   }
+  },
+  {
+   "id": "tchr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "teachers, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$654",
+    "unit": "",
+    "value": -654.0
+   }
+  },
+  {
+   "id": "serv",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "pupil services, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$614",
+    "unit": "",
+    "value": -614.0
+   }
+  },
+  {
+   "id": "ldrs",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "instructional leadership, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$415",
+    "unit": "",
+    "value": -415.0
+   }
+  },
+  {
+   "id": "opmn",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "operations and maintenance, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$235",
+    "unit": "",
+    "value": -235.0
+   }
+  },
+  {
+   "id": "matl",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "materials and technology, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$205",
+    "unit": "",
+    "value": -205.0
+   }
+  },
+  {
+   "id": "pdev",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "professional development, against Ayer Shirley"
+   },
+   "value": {
+    "text": "-$154",
+    "unit": "",
+    "value": -154.0
+   }
+  },
+  {
+   "id": "tser",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "other teaching services, against Ayer Shirley"
+   },
+   "value": {
+    "text": "$158",
+    "unit": "",
+    "value": 158.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,103",
+    "unit": "",
+    "value": 2103.0
+   }
+  },
+  "literals": [],
+  "text": "In-district, Lunenburg spent $2,103 a pupil less than Ayer Shirley, the middle of the six this project chose."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "gap-by-function",
+ "kind": "topic",
+ "path": "/school-spending/gap-by-function",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-expenditure.csv",
+   "label": "Lunenburg Budget Project — dese-function-expenditure.csv (DESE’s spending by district and function)"
+  }
+ ],
+ "table": {
+  "caption": "In-district spending a pupil, by function, FY2025",
+  "views": [
+   {
+    "columns": [
+     "Lunenburg",
+     "Ayer Shirley",
+     "Difference"
+    ],
+    "key": "gap",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lunenburg against Ayer Shirley",
+    "note": "DESE’s figures over in-district FTE pupils. Measured against one district, not a median of each function, because medians of parts do not add up.",
+    "rows": [
+     {
+      "cells": [
+       "$6,513",
+       "$7,167",
+       "-$654"
+      ],
+      "label": "Teachers"
+     },
+     {
+      "cells": [
+       "$1,908",
+       "$2,522",
+       "-$614"
+      ],
+      "label": "Pupil Services"
+     },
+     {
+      "cells": [
+       "$1,109",
+       "$1,524",
+       "-$415"
+      ],
+      "label": "Instructional Leadership"
+     },
+     {
+      "cells": [
+       "$1,253",
+       "$1,488",
+       "-$235"
+      ],
+      "label": "Operations and Maintenance"
+     },
+     {
+      "cells": [
+       "$226",
+       "$431",
+       "-$205"
+      ],
+      "label": "Instructional Materials, Equipment and Technology"
+     },
+     {
+      "cells": [
+       "$48",
+       "$202",
+       "-$154"
+      ],
+      "label": "Professional Development"
+     },
+     {
+      "cells": [
+       "$3,459",
+       "$3,462",
+       "-$3"
+      ],
+      "label": "Insurance, Retirement Programs and Other"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "Out-of-district Transportation"
+     },
+     {
+      "cells": [
+       "$581",
+       "$579",
+       "$2"
+      ],
+      "label": "Administration"
+     },
+     {
+      "cells": [
+       "$677",
+       "$660",
+       "$17"
+      ],
+      "label": "Guidance, Counseling and Testing"
+     },
+     {
+      "cells": [
+       "$2,010",
+       "$1,852",
+       "$158"
+      ],
+      "label": "Other Teaching Services"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Gap by function"
+}

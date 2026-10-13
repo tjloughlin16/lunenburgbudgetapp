@@ -1,0 +1,395 @@
+{
+ "category": "department-budgets",
+ "chart": {
+  "id": "town-budgets-total",
+  "source": "/data/town-budgets.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "12.2%",
+     "unit": "",
+     "value": 12.152628962009192
+    }
+   },
+   "literals": [
+    "FY2026",
+    "FY2025"
+   ],
+   "notes": [
+    {
+     "closes": "the funding sources of the FY2025 omnibus vote, set beside Article 10 of 2025",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2025",
+      "FY2026",
+      "10",
+      "2025"
+     ],
+     "text": "Whether the FY2025 and FY2026 totals cover the same funds is not checked; the FY2026 vote names other funds as sources."
+    }
+   ],
+   "rests_on": [
+    "t25",
+    "t26",
+    "step26",
+    "other"
+   ],
+   "text": "The FY2026 voted total is 12.2% above FY2025’s."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3.4%",
+     "unit": "",
+     "value": 3.3635522604449575
+    }
+   },
+   "literals": [
+    "FY2022",
+    "FY2025"
+   ],
+   "rests_on": [
+    "t22",
+    "t25",
+    "rate",
+    "unchecked"
+   ],
+   "text": "Between the two totals that tie to their parts, FY2022 and FY2025, it grew 3.4% a year."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "FY2026"
+   ],
+   "rests_on": [
+    "t26",
+    "detail"
+   ],
+   "text": "The annual report prints FY2026 as prose: no department table sits beneath it."
+  }
+ ],
+ "facts": [
+  {
+   "id": "t22",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "voted total, FY2022, ties to its parts"
+   },
+   "value": {
+    "text": "$39,864,899",
+    "unit": "",
+    "value": 39864898.81
+   }
+  },
+  {
+   "id": "t25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted total, FY2025, ties to its parts"
+   },
+   "value": {
+    "text": "$44,024,349",
+    "unit": "",
+    "value": 44024349.19
+   }
+  },
+  {
+   "id": "t26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "10"
+    ],
+    "text": "voted total, FY2026, Article 10, printed as prose"
+   },
+   "value": {
+    "text": "$49,374,465",
+    "unit": "",
+    "value": 49374465.0
+   }
+  },
+  {
+   "id": "step26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "rise into FY2026"
+   },
+   "value": {
+    "text": "12.2%",
+    "unit": "",
+    "value": 12.152628962009192
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022",
+     "FY2025"
+    ],
+    "text": "a year, FY2022 to FY2025"
+   },
+   "value": {
+    "text": "3.4%",
+    "unit": "",
+    "value": 3.3635522604449575
+   }
+  },
+  {
+   "id": "other",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "of FY2026 not ‘raised and appropriated’"
+   },
+   "value": {
+    "text": "$431,938",
+    "unit": "",
+    "value": 431938.47000000003
+   }
+  },
+  {
+   "closes": "a reading of each year’s omnibus table that foots to the total it prints",
+   "id": "unchecked",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the other years’ totals, tied to their parts"
+   },
+   "value": null
+  },
+  {
+   "closes": "the Town’s FY26 omnibus budget workbook, which this archive holds and no page has yet read",
+   "id": "detail",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "FY2026 by department"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$44,024,349",
+    "unit": "",
+    "value": 44024349.19
+   },
+   "b": {
+    "text": "$49,374,465",
+    "unit": "",
+    "value": 49374465.0
+   },
+   "c": {
+    "text": "12.2%",
+    "unit": "",
+    "value": 12.152628962009192
+   }
+  },
+  "literals": [
+   "FY2026",
+   "FY2025"
+  ],
+  "text": "The voted total was $44,024,349 for FY2025 and $49,374,465 for FY2026, a 12.2% rise."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-voted-total",
+ "kind": "topic",
+ "path": "/department-budgets/town-voted-total",
+ "said": [],
+ "shelves": [
+  "department-budgets"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/report-appropriations.csv",
+   "label": "Lunenburg Budget Project — report-appropriations.csv (the omnibus budgets, read line by line)"
+  },
+  {
+   "href": "/data/town-budgets.json",
+   "label": "Lunenburg Budget Project — town-budgets.json (the twelve groups, footed to each printed total)"
+  }
+ ],
+ "table": {
+  "caption": "The voted total, by year",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Change",
+     "Ties to its parts"
+    ],
+    "key": "total",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Voted",
+    "note": "The grand total each annual report prints at the foot of its omnibus, for the year ahead. Only a year that ties to its parts is compared on this page. The last year is Article 10 of the May 2025 Annual Town Meeting.",
+    "rows": [
+     {
+      "cells": [
+       "$49,374,465",
+       "12.2%",
+       "printed as prose"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$44,024,349",
+       "3.4%",
+       "yes"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$42,584,049",
+       "2.4%",
+       "not checked"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$41,568,745",
+       "4.3%",
+       "not checked"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$39,864,899",
+       "3.1%",
+       "yes"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$38,658,115",
+       "1.6%",
+       "not checked"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$38,058,164",
+       "3.4%",
+       "not checked"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$36,804,409",
+       "3.1%",
+       "not checked"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$35,690,394",
+       "5.6%",
+       "not checked"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$33,802,328",
+       "5.5%",
+       "not checked"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$32,025,895",
+       "10.1%",
+       "not checked"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$29,079,384",
+       "3.2%",
+       "not checked"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$28,177,263",
+       "2.5%",
+       "not checked"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$27,489,441",
+       "3.4%",
+       "not checked"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$26,582,152",
+       null,
+       "not checked"
+      ],
+      "label": "FY2012"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Voted budget total"
+}

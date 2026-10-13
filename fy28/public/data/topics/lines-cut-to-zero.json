@@ -1,0 +1,488 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2015",
+     "unit": "fiscal year",
+     "value": 2015
+    },
+    "b": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    },
+    "e": {
+     "text": "132",
+     "unit": "",
+     "value": 132
+    },
+    "r": {
+     "text": "93",
+     "unit": "",
+     "value": 93
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "events",
+    "returned",
+    "was",
+    "back"
+   ],
+   "text": "93 of 132 lines cut to zero from FY2015 to FY2022 were funded again in a later year."
+  },
+  {
+   "figures": {
+    "d": {
+     "text": "$181,180",
+     "unit": "",
+     "value": 181180.0
+    },
+    "p": {
+     "text": "39",
+     "unit": "",
+     "value": 39
+    },
+    "s": {
+     "text": "0.8%",
+     "unit": "",
+     "value": 0.765034438372756
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A line at zero is not a post removed: the money can have moved to another line, a grant, or a differently spelled line."
+    }
+   ],
+   "rests_on": [
+    "permanent",
+    "perm-dollars",
+    "book",
+    "staff"
+   ],
+   "text": "The 39 never funded again carried $181,180 when last funded, 0.8% of the FY2025 book total."
+  },
+  {
+   "figures": {
+    "v": {
+     "text": "164",
+     "unit": "",
+     "value": 164
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a crosswalk between the two books’ line lists",
+     "figures": {
+      "a": {
+       "text": "FY2022",
+       "unit": "fiscal year",
+       "value": 2022
+      },
+      "b": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "Between FY2022 and FY2023 the book dropped about a third of its lines while its total rose."
+    }
+   ],
+   "rests_on": [
+    "vanished",
+    "book-gap"
+   ],
+   "text": "164 lines left the book altogether; for any one of them, absence is a fact about the document."
+  }
+ ],
+ "facts": [
+  {
+   "id": "events",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     },
+     "b": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "lines cut to a printed zero, FY2015 to FY2022"
+   },
+   "value": {
+    "text": "132",
+    "unit": "budget lines",
+    "value": 132
+   }
+  },
+  {
+   "id": "returned",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "funded again later"
+   },
+   "value": {
+    "text": "93",
+    "unit": "budget lines",
+    "value": 93
+   }
+  },
+  {
+   "id": "was",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "those lines carried the year before"
+   },
+   "value": {
+    "text": "$734,469",
+    "unit": "",
+    "value": 734469.0
+   }
+  },
+  {
+   "id": "back",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it came back on the same line"
+   },
+   "value": {
+    "text": "$553,289",
+    "unit": "",
+    "value": 553289.0
+   }
+  },
+  {
+   "id": "permanent",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "never funded again"
+   },
+   "value": {
+    "text": "39",
+    "unit": "budget lines",
+    "value": 39
+   }
+  },
+  {
+   "id": "perm-dollars",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "those carried when last funded"
+   },
+   "value": {
+    "text": "$181,180",
+    "unit": "",
+    "value": 181180.0
+   }
+  },
+  {
+   "id": "book",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "school budget book total, FY2025"
+   },
+   "value": {
+    "text": "$23,682,594",
+    "unit": "",
+    "value": 23682594.0
+   }
+  },
+  {
+   "id": "staff",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "",
+      "value": 5
+     }
+    },
+    "literals": [],
+    "text": "of it on 5 staff lines, by our grouping"
+   },
+   "value": {
+    "text": "$125,505",
+    "unit": "",
+    "value": 125505.0
+   }
+  },
+  {
+   "id": "vanished",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "lines that left the book altogether"
+   },
+   "value": {
+    "text": "164",
+    "unit": "budget lines",
+    "value": 164
+   }
+  },
+  {
+   "closes": "a crosswalk from the FY2022 budget-book line list to FY2023’s, or the MUNIS year-end expense report for the school department",
+   "id": "book-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether a line that left the book stopped being funded"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "d": {
+    "text": "$181,180",
+    "unit": "",
+    "value": 181180.0
+   },
+   "e": {
+    "text": "132",
+    "unit": "",
+    "value": 132
+   },
+   "p": {
+    "text": "39",
+    "unit": "",
+    "value": 39
+   },
+   "r": {
+    "text": "93",
+    "unit": "",
+    "value": 93
+   }
+  },
+  "literals": [],
+  "text": "93 of 132 school lines cut to zero were funded again later; the 39 that never were carried $181,180."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "lines-cut-to-zero",
+ "kind": "topic",
+ "path": "/school-programs/lines-cut-to-zero",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2021-03-18",
+   "href": "/docs/meetings/text/finance-committee/2021-03-18-minutes-2083.txt",
+   "label": "Finance Committee minutes, 2021-03-18",
+   "quote": "Covid relief money was used to hire a part- time school psychologist."
+  }
+ ],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/budget-hearing-fy20-proposed-lps-budget.pdf",
+   "label": "Lunenburg Public Schools — budget-hearing-fy20-proposed-lps-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/budget-hearing-fy22-superintendent-39-s-recommended-budget.pdf",
+   "label": "Lunenburg Public Schools — budget-hearing-fy22-superintendent-39-s-recommended-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/final-fy26-town-manager-39-s-target-budget-approved-3-12-25.pdf",
+   "label": "Lunenburg Public Schools — final-fy26-town-manager-39-s-target-budget-approved-3-12-25"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy18-non-personnel-supt-recommended-budget-revised-6-6-17.pdf",
+   "label": "Lunenburg Public Schools — fy18-non-personnel-supt-recommended-budget-revised-6-6-17"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-final-report.pdf",
+   "label": "Lunenburg Public Schools — fy19-final-report"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-proposed-athletics-budget.pdf",
+   "label": "Lunenburg Public Schools — fy19-proposed-athletics-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-proposed-maintenance-budget.pdf",
+   "label": "Lunenburg Public Schools — fy19-proposed-maintenance-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-school-level-service-budget-3.pdf",
+   "label": "Lunenburg Public Schools — fy19-school-level-service-budget-3"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-supt-proposed-expense-budget.pdf",
+   "label": "Lunenburg Public Schools — fy19-supt-proposed-expense-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-supt-proposed-personnel-budget.pdf",
+   "label": "Lunenburg Public Schools — fy19-supt-proposed-personnel-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy21-approved-school-budget-6-13-20.pdf",
+   "label": "Lunenburg Public Schools — fy21-approved-school-budget-6-13-20"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy23-approved-budget.pdf",
+   "label": "Lunenburg Public Schools — fy23-approved-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy23-superintendent-recommended-budget.pdf",
+   "label": "Lunenburg Public Schools — fy23-superintendent-recommended-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy24-approved-budget.pdf",
+   "label": "Lunenburg Public Schools — fy24-approved-budget"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy27-budget-projections-as-of-2-24-26-with-restorations.pdf",
+   "label": "Lunenburg Public Schools — fy27-budget-projections-as-of-2-24-26-with-restorations"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy27-budget-projections-as-of-3-16-26-with-restorations.pdf",
+   "label": "Lunenburg Public Schools — fy27-budget-projections-as-of-3-16-26-with-restorations"
+  },
+  {
+   "href": "/data/stopped-funding.json",
+   "label": "Lunenburg Budget Project — stopped-funding.json (every school line at zero, generated)"
+  }
+ ],
+ "table": {
+  "caption": "School budget lines cut to a printed zero, by year",
+  "views": [
+   {
+    "columns": [
+     "Cut to zero",
+     "Came back",
+     "Never again",
+     "Carried the year before"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By year the line went to zero",
+    "note": "The district’s own budget books, restating each closed year. A line is net of grants and fees, and a budget line is not a programme.",
+    "rows": [
+     {
+      "cells": [
+       "20",
+       "5",
+       "15",
+       "$92,727"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "13",
+       "6",
+       "7",
+       "$111,640"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "13",
+       "9",
+       "4",
+       "$31,490"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "19",
+       "14",
+       "5",
+       "$27,278"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "18",
+       "16",
+       "2",
+       "$59,739"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "26",
+       "22",
+       "4",
+       "$208,039"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "12",
+       "10",
+       "2",
+       "$88,217"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "11",
+       "11",
+       "0",
+       "$115,339"
+      ],
+      "label": "FY2015"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Lines cut to zero"
+}

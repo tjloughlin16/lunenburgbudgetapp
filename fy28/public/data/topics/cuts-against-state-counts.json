@@ -1,0 +1,327 @@
+{
+ "category": "school-programs",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "b": {
+     "text": "48",
+     "unit": "",
+     "value": 48
+    },
+    "m": {
+     "text": "60",
+     "unit": "",
+     "value": 60
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "blind",
+    "measurable",
+    "blind-share"
+   ],
+   "text": "48 of 60 adopted cuts name a job no published series counts by school."
+  },
+  {
+   "figures": {
+    "o": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "t": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "u": {
+     "text": "4",
+     "unit": "",
+     "value": 4
+    },
+    "w": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tested",
+    "with",
+    "other",
+    "unresolved"
+   ],
+   "text": "Of the 12 the state’s teacher count reaches, it fell with 6, rose against 2 and moved too little in 4."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s year-end position control report: filled posts by FTE, school and funding source",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A post cut in June and filled again in November is invisible to it."
+    }
+   ],
+   "rests_on": [
+    "with",
+    "staff-gap"
+   ],
+   "text": "A matching move is consistency, not proof: the state counts one October day a year."
+  }
+ ],
+ "facts": [
+  {
+   "id": "measurable",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "adopted cuts old enough to test"
+   },
+   "value": {
+    "text": "60",
+    "unit": "adopted cuts",
+    "value": 60
+   }
+  },
+  {
+   "id": "blind",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "name a job no series counts by school"
+   },
+   "value": {
+    "text": "48",
+    "unit": "adopted cuts",
+    "value": 48
+   }
+  },
+  {
+   "id": "blind-share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of adopted cuts untestable"
+   },
+   "value": {
+    "text": "80.0%",
+    "unit": "",
+    "value": 80.0
+   }
+  },
+  {
+   "id": "tested",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "that the state’s teacher count reaches"
+   },
+   "value": {
+    "text": "12",
+    "unit": "adopted cuts",
+    "value": 12
+   }
+  },
+  {
+   "id": "with",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "where the count fell with the cut"
+   },
+   "value": {
+    "text": "6",
+    "unit": "adopted cuts",
+    "value": 6
+   }
+  },
+  {
+   "id": "other",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "where it moved the other way"
+   },
+   "value": {
+    "text": "2",
+    "unit": "adopted cuts",
+    "value": 2
+   }
+  },
+  {
+   "id": "unresolved",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "where it moved by less than stated"
+   },
+   "value": {
+    "text": "4",
+    "unit": "adopted cuts",
+    "value": 4
+   }
+  },
+  {
+   "id": "not-yet",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "too recent to test"
+   },
+   "value": {
+    "text": "15",
+    "unit": "adopted cuts",
+    "value": 15
+   }
+  },
+  {
+   "closes": "the district’s year-end position control report: filled posts by FTE, school and funding source",
+   "id": "staff-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether a non-teaching post named on a list went"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "b": {
+    "text": "48",
+    "unit": "",
+    "value": 48
+   },
+   "m": {
+    "text": "60",
+    "unit": "",
+    "value": 60
+   },
+   "t": {
+    "text": "12",
+    "unit": "",
+    "value": 12
+   },
+   "w": {
+    "text": "6",
+    "unit": "",
+    "value": 6
+   }
+  },
+  "literals": [],
+  "text": "Of 60 adopted school cuts, 48 name a job no series counts; of the other 12, the state’s count fell with 6."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "cuts-against-state-counts",
+ "kind": "topic",
+ "path": "/school-programs/cuts-against-state-counts",
+ "said": [],
+ "shelves": [
+  "school-programs"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-teacher-data.xlsx",
+   "label": "Massachusetts DESE — dese-teacher-data.xlsx"
+  },
+  {
+   "href": "/data/cut-register.json",
+   "label": "Lunenburg Budget Project — cut-register.json (every named cut, quoted at its page, generated)"
+  }
+ ],
+ "table": {
+  "caption": "Adopted cuts tested against DESE teacher counts, by budget year",
+  "views": [
+   {
+    "columns": [
+     "Adopted",
+     "No series",
+     "Fell with it",
+     "Other way",
+     "Too little"
+    ],
+    "key": "years",
+    "kinds": [
+     "stated",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By budget year",
+    "note": "Adopted counts are the district’s own lists; the tests are against DESE teacher FTE. The tolerance and the mapping of titles to subjects are ours.",
+    "rows": [
+     {
+      "cells": [
+       "15",
+       "0",
+       "0",
+       "0",
+       "0"
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "39",
+       "33",
+       "3",
+       "1",
+       "2"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "9",
+       "5",
+       "2",
+       "1",
+       "1"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "7",
+       "7",
+       "0",
+       "0",
+       "0"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "5",
+       "3",
+       "1",
+       "0",
+       "1"
+      ],
+      "label": "FY2020"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Cuts against state counts"
+}

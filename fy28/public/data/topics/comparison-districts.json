@@ -1,0 +1,295 @@
+{
+ "category": "school-spending",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$18,027",
+     "unit": "",
+     "value": 18027.0
+    },
+    "b": {
+     "text": "$115",
+     "unit": "",
+     "value": 115.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "lun",
+    "next",
+    "diff",
+    "rank"
+   ],
+   "text": "Lunenburg spent $18,027 a pupil, sixth of six; Ashburnham-Westminster spent $115 more."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    },
+    "r": {
+     "text": "5th",
+     "unit": "rank",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "best"
+   ],
+   "text": "In 17 years its place among the six was never better than 5th."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$25,565",
+     "unit": "",
+     "value": 25565.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s DART comparison group for Lunenburg, which names the districts DESE considers similar and its criteria",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The six are this project’s choice and no document records the criterion; a different six would give a different place."
+    }
+   ],
+   "rests_on": [
+    "hi"
+   ],
+   "text": "Harvard spent the most, $25,565; the statewide rank does not depend on this set."
+  }
+ ],
+ "facts": [
+  {
+   "id": "lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, a pupil, all funds, FY2025"
+   },
+   "value": {
+    "text": "$18,027",
+    "unit": "",
+    "value": 18027.0
+   }
+  },
+  {
+   "id": "next",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Ashburnham-Westminster, next above"
+   },
+   "value": {
+    "text": "$18,142",
+    "unit": "",
+    "value": 18142.0
+   }
+  },
+  {
+   "id": "diff",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between the two (our arithmetic)"
+   },
+   "value": {
+    "text": "$115",
+    "unit": "",
+    "value": 115.0
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard, the highest of the six"
+   },
+   "value": {
+    "text": "$25,565",
+    "unit": "",
+    "value": 25565.0
+   }
+  },
+  {
+   "id": "rank",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg’s place, FY2025"
+   },
+   "value": {
+    "text": "6 of 6",
+    "unit": "districts",
+    "value": 6
+   }
+  },
+  {
+   "id": "best",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "its best place among the six, FY2009 to FY2025"
+   },
+   "value": {
+    "text": "5th",
+    "unit": "rank",
+    "value": 5
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Of six districts this project chose to compare, Lunenburg spent the least a pupil in FY2025."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "comparison-districts",
+ "kind": "topic",
+ "path": "/school-spending/comparison-districts",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-06-24",
+   "href": "/docs/meetings/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "School Committee minutes, 2026-06-24",
+   "quote": "neighboring districts such as Lancaster, Ayer/Shirley, Groton, Pepperell, Townsend, Leominster, and Fitchburg have faced similar challenges while achieving stronger outcomes"
+  }
+ ],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/radar-district-comparison.xlsx",
+   "label": "Massachusetts DESE, RADAR district comparison — radar-district-comparison.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-expenditure.csv",
+   "label": "Lunenburg Budget Project — dese-function-expenditure.csv (DESE’s spending by district and function)"
+  }
+ ],
+ "table": {
+  "caption": "The six districts, FY2025",
+  "views": [
+   {
+    "columns": [
+     "A pupil",
+     "All funds",
+     "FTE pupils"
+    ],
+    "key": "six",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Chosen by this project",
+    "note": "DESE’s end-of-year finance collection and RADAR. Ayer stands in for Ayer Shirley before the two regionalised for FY2012.",
+    "rows": [
+     {
+      "cells": [
+       "$25,565",
+       "$27,236,238",
+       "1,065.4"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$22,664",
+       "$54,106,517",
+       "2,387.4"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "$21,528",
+       "$65,728,795",
+       "3,053.2"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$20,428",
+       "$38,561,581",
+       "1,887.6"
+      ],
+      "label": "Ayer Shirley School District"
+     },
+     {
+      "cells": [
+       "$18,142",
+       "$41,432,696",
+       "2,283.8"
+      ],
+      "label": "Ashburnham-Westminster"
+     },
+     {
+      "cells": [
+       "$18,027",
+       "$30,031,242",
+       "1,665.9"
+      ],
+      "label": "Lunenburg"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Comparison districts"
+}
