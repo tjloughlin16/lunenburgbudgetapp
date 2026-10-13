@@ -1,6 +1,58 @@
 {
  "category": "school-staffing",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "text": "FY2023: people from DESE’s workforce file, FTE from its comparison sheet."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "People",
+    "texts": [
+     "123",
+     "59"
+    ],
+    "values": [
+     123.0,
+     59.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "FTE",
+    "texts": [
+     "112.8",
+     "59"
+    ],
+    "values": [
+     112.8,
+     59.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "People and FTE, the state’s files",
+  "type": "series",
+  "unit": "count",
+  "x": [
+   "Teachers",
+   "Paraprofessionals"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

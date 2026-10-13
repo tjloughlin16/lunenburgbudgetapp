@@ -1,6 +1,57 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "One student playing three seasons counts three times. From the district’s by-sport workbook."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "High school",
+    "texts": [
+     "560 participations",
+     "532 participations",
+     "533 participations"
+    ],
+    "values": [
+     560.0,
+     532.0,
+     533.0
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Middle school",
+    "texts": [
+     "115 participations",
+     "137 participations",
+     "116 participations"
+    ],
+    "values": [
+     115.0,
+     137.0,
+     116.0
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Sport participations by school",
+  "type": "series",
+  "unit": "participations",
+  "x": [
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -253,7 +304,7 @@
   "text": "The district counted 649 sport participations in FY2026, against 675 in FY2024."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "participation",

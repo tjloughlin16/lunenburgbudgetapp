@@ -1,6 +1,78 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Every sport and season summed on a sheet the district assembled. It carries no director, trainer or insurance."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Coaches",
+    "texts": [
+     "$127,088",
+     "$91,589"
+    ],
+    "values": [
+     127088.4,
+     91589.0
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Transportation",
+    "texts": [
+     "$117,555",
+     "$91,066"
+    ],
+    "values": [
+     117555.0,
+     91066.06
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Officials",
+    "texts": [
+     "$51,570",
+     "$50,696"
+    ],
+    "values": [
+     51570.04,
+     50695.5
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Everything else",
+    "texts": [
+     "$55,429",
+     "$50,371"
+    ],
+    "values": [
+     55429.45,
+     50370.59
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Athletics by category, district workbook",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -293,7 +365,7 @@
   "text": "Coaches and buses cost most on the district’s sheet; the town’s officials account held $0 in FY2026."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "spending-by-category",

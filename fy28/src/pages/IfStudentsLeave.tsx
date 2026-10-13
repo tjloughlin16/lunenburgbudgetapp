@@ -62,6 +62,7 @@ type Payload = {
     status: string; status_means: string; checks: string[]
     hs_resident: number; hs_choice_in: number; hs_total: number
     district_resident: number; district_choice_in: number; district_total: number
+    resident_column?: { note: string }
     grades: { grade: string; resident: number; choice_in: number; total: number }[]
     schools: { school: string; resident: number; choice_in: number; total: number }[]
     choice_in_outside_hs: number
@@ -185,7 +186,7 @@ type Payload = {
   said: { key: string; board: string; date: string; who: string; quote: string; why: string
     cite: string; town: string }[]
   gaps: { side: string; what: string; why: string; closes: string | null }[]
-  related: { id: string; title: string; why: string; words: number; updated: string
+  related: { id: string; title: string; why: string; words: number | null; updated: string | null
     url: string; pdf: string | null }[]
 }
 
@@ -602,7 +603,7 @@ function Page({ d }: { d: Payload }) {
       </NotShown>
       <p className="text-[13.5px] mt-4">
         <a className="underline font-semibold" style={{ color: 'var(--series-cost)' }}
-          href={abs('/where-students-go-instead')}>
+          href={abs('/enrolment/children-schooled-elsewhere')}>
           The outward half, decomposed &mdash; who receives these children, and by which route
         </a>
       </p>
@@ -814,6 +815,7 @@ function Page({ d }: { d: Payload }) {
         note={<>Extract status <code>{E.status}</code>. {E.status_means} What is established
           instead is the table&rsquo;s own arithmetic, asserted by the generator before this
           page will build: {E.checks.join('; ')}.</>} />
+      {E.resident_column && <Body>{E.resident_column.note}</Body>}
       <Body>
         Every one of the {E.district_choice_in} school choice students the town counted is
         in the high school &mdash; {E.choice_in_outside_hs} anywhere else. Lunenburg is a
@@ -1186,7 +1188,7 @@ function Page({ d }: { d: Payload }) {
         the two must not be added: the fund also stops incurring some of the cost of those
         athletes, and{' '}
         <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href={abs('/what-sports-cost')}>what a sport actually costs</a> is not
+          href={abs('/athletics/cost-per-sport')}>what a sport actually costs</a> is not
         established. The fee is from {S.fee.source}.
       </Body>
 
@@ -1198,10 +1200,11 @@ function Page({ d }: { d: Payload }) {
             <span className="flex items-baseline gap-2 flex-wrap">
               <span className="text-[15px] font-bold leading-tight"
                 style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</span>
-              <span className="text-[10.5px] font-semibold uppercase tracking-wider tnum"
+              {/* A topic page carries no word count or date of its own. */}
+              {r.words ? <span className="text-[10.5px] font-semibold uppercase tracking-wider tnum"
                 style={{ color: 'var(--text-muted)' }}>
                 {r.words.toLocaleString()} words &middot; {r.updated}
-              </span>
+              </span> : null}
             </span>
             <span className="block text-[13.5px] mt-1.5 leading-snug"
               style={{ color: 'var(--text-secondary)' }}>{r.why}</span>

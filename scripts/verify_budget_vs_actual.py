@@ -184,9 +184,35 @@ present('as first reported, 3 September 2025', '$582,115.44')
 present('as revised, 17 September 2025', '$603,885.97')
 present('inside the derived range', money(LO - ACT))
 
+# THE LEDGER BESIDE THE BOOKS. The Finance Committee's MUNIS workbook, school rows summed,
+# for the years the document quotes it -- and the period-13 report for FY23, which it must
+# equal. Recomputed here, a different route from the budget books the rest of this checks.
+print('\nThe ledger beside the books')
+_gl = collections.defaultdict(lambda: [0.0, 0.0])
+for r in csv.DictReader(open(os.path.join(ROOT, 'sources/data/gl-history.csv'),
+                             encoding='utf-8')):
+    if r['sheet'] == 'school_only':
+        _gl[int(r['fiscal_year'])][0] += float(r['original'] or 0)
+        _gl[int(r['fiscal_year'])][1] += float(r['actual'] or 0)
+_p13 = sum(float(r['ytd_expended'] or 0) for r in csv.DictReader(open(
+    os.path.join(ROOT, 'sources/data/munis-school-ytd.csv'), encoding='utf-8'))
+    if r['report'] == 'gf-school' and r['period'] == '13' and r['type'] == 'E'
+    and r['fiscal_year'] == '2023')
+if abs(_p13 - _gl[2023][1]) > 1:
+    FAILS.append('the workbook FY23 school actual no longer equals the period-13 report')
+for fy in (2020, 2021, 2023):
+    o, a = _gl[fy]
+    present(f'ledger FY{fy % 100} spent', money(a))
+    present(f'ledger FY{fy % 100} against voted', f'{100 * (a / o - 1):+.2f}%'.replace('-', '−'))
+_bv = __import__('json').load(open(os.path.join(ROOT, 'fy28/public/data/budget-vs-actual.json'),
+                                   encoding='utf-8'))
+_big = max(_bv['same_way'], key=lambda r: abs(r['mean_dollars']))
+present('largest same-way miss', money(abs(_big['mean_dollars'])))
+
 print('\nFigures the document must NOT still contain')
 for r in ['13% a year while the rest of the budget grew 3.4%',
-          'roughly three-quarters of a million']:
+          'roughly three-quarters of a million', 'largest averages $20,754',
+          'never more than 0.9% off', 'FY26 year-end.** Nothing here reaches it']:
     n = TEXT.count(r)
     ok = n == 0
     if not ok:

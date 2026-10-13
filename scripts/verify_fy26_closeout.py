@@ -226,6 +226,60 @@ def main():
         FAILS.append('§1a says the group is within 58,646 of budget; it is %.0f'
                      % (grp[0] - grp[1]))
 
+    # §1a  The helmet paragraph. It went unverified and carried two errors for a month:
+    # athletics was totalled as "14 accounts ... $51,905 under", which folded in HS ADVISOR
+    # (function 3520, not athletics), and `519104` UNIFSPORTS was tabled as sports uniforms
+    # when MUNIS's full name is P/R UNIFIED SPORTS COACH. So the athletics total is keyed on
+    # the FUNCTION CODE the ledger carries, and the equipment table on the two 555 objects.
+    print('\n§1a  Athletics, beside the helmet request')
+    ath = one("""SELECT COUNT(*) n, SUM(l.available) av FROM ledger_snapshot l
+                 JOIN account a USING (account_id)
+                 WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND a.function='3510'""")
+    present('athletics (function 3510) accounts', ath['n'])
+    present('athletics (function 3510) left', float(ath['av']), dp=0)
+    sec = one("""SELECT l.revised, l.expended FROM ledger_snapshot l
+                 JOIN account a USING (account_id)
+                 WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND a.function='3510'
+                   AND a.object='511032'""")
+    present('athletics secretary, budget', float(sec['revised']), dp=0)
+    if float(sec['expended']) != 0:
+        FAILS.append('§1a says the athletics secretary post paid nobody; it paid %.2f'
+                     % float(sec['expended']))
+    eq = {r['object']: r for r in db.execute(
+        """SELECT a.object, l.revised, l.expended, l.available FROM ledger_snapshot l
+           JOIN account a USING (account_id)
+           WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND a.function='3510'
+             AND a.object IN ('555048','555050')""")}
+    for o in ('555048', '555050'):
+        present(f'{o} budget', float(eq[o]['revised']), dp=0)
+        present(f'{o} spent', float(eq[o]['expended']), dp=0)
+        present(f'{o} left', float(eq[o]['available']), dp=0)
+        present(f'{o} share spent',
+                f"{float(eq[o]['expended']) / float(eq[o]['revised']) * 100:.0f}%")
+    eb = sum(float(r['revised']) for r in eq.values())
+    es = sum(float(r['expended']) for r in eq.values())
+    present('the two equipment lines, budget', eb, dp=0)
+    present('the two equipment lines, spent', es, dp=0)
+    present('the two equipment lines, left',
+            sum(float(r['available']) for r in eq.values()), dp=0)
+    present('the two equipment lines, share spent', f'{es / eb * 100:.0f}%')
+    # The uniform line, off the published period-13 workbooks (munis-school-ytd.csv),
+    # because the period-12 PDF prints no row for an account budgeted at zero.
+    import csv as _csv
+    # The ORIGINAL appropriation, which is what "budgeted at" means in the prose: FY2024's
+    # revised figure is $961 higher after a transfer, and a first draft of this paragraph
+    # said "budgeted at $10,000 in each year" off the original alone -- this check caught it.
+    uni = {int(r['fiscal_year']): float(r['original_approp'])
+           for r in _csv.DictReader(open(os.path.join(
+               ROOT, 'sources', 'data', 'munis-school-ytd.csv'), encoding='utf-8'))
+           if r['obj'] == '555049' and r['period'] == '13' and r['fund'] == '0100'}
+    for y in (2023, 2024, 2025, 2026):
+        present(f'555049 voted budget FY{y}', uni[y], dp=0)
+    if not (uni[2023] == uni[2024] == uni[2025] and uni[2026] == 0):
+        FAILS.append('§1a says the uniform line was level FY2023-FY2025 and zero in FY2026')
+    if re.search(r'`519104`[^\n]*\|', TEXT):
+        FAILS.append('519104 is back in a table; it is a payroll line, not uniforms')
+
     print('\n§2  The biggest movers')
     # An org holds SEVERAL accounts -- S3991742 alone carries six, from ELEC CHGS to
     # TELE MTC -- so a lookup keyed on org returns whichever comes first and silently

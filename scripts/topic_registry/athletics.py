@@ -9,9 +9,10 @@ CATEGORY = dict(
         ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
                                      'bus-cost-by-sport', 'away-trips-by-sport']),
     ],
-    elsewhere=[('/youth-sports', 'Youth sports and town fields'),
-               ('/fees', 'Raising school fees'),
-               ('/extras', 'Cutting the extras')])
+    # The three long pages these pointed at are UNLISTED now; each question has a topic page.
+    elsewhere=[('/parks/youth-league-payments', 'Youth league field payments'),
+               ('/budget-options/school-user-fees', 'School user fees'),
+               ('/budget-options/extracurricular-cuts', 'Extracurricular cuts')])
 GENERATOR = 'build_athletics_topics.py'
 TOPICS = {
     'total-athletics-cost': 'Total athletics cost',

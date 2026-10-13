@@ -38,15 +38,17 @@ that should agree do not:
   fy28/public/data/stabilization-option.json
                                         the burndown, recomputed here and asserted equal.
 
-THREE THINGS THE OLD PAGES GOT WRONG, AND WHAT THIS DOES INSTEAD (each is in the hand-off):
+THREE THINGS THE OLD PAGES GOT WRONG -- all three now fixed at the source, 13 October 2026:
 
-  * build_stabilization.flows() classifies articles by subject and never reads the RESULT, so
-    its deposit total includes an article that was PASSED OVER (FY2012, $277,432) and its
-    "voted back out" figure includes the $986,000 article Town Meeting DEFEATED 29-92. Here a
-    vote counts only if it passed.
-  * town-meeting-votes.csv has no row for the May 2024 annual meeting's two stabilization
-    deposits, which the FY2024 annual report prints (articles 12 and 13). Rule 13c: they are
-    read off the report here, each asserted verbatim, and used only while the CSV lacks them.
+  * build_stabilization.flows() classified articles by subject and never read the RESULT, so
+    its deposit total included an article that was PASSED OVER (FY2012, $277,432) and its
+    "voted back out" figure the $986,000 article Town Meeting DEFEATED 29-92. flows() now
+    files anything that did not pass under `not_passed`, and the FY2019 "$08,222." amount
+    under `garbled`; this file reads both buckets rather than re-deriving them.
+  * town-meeting-votes.csv had no row for the May 2024 annual meeting's articles 8-13, which
+    the FY2024 annual report prints on pages 144-145. The rows are now in the CSV, quoted
+    verbatim and passing extract_town_meeting_votes.py --check. The fallback below still reads
+    articles 12 and 13 off the report, asserted verbatim, if the CSV ever loses them again.
   * $3,147,178.96 is the general fund's OPENING balance on 1 July 2025 (the ledger's
     `beginning`), not its balance at 31 March 2026, which is $3,244,478.12. Labelled as such.
 
@@ -204,16 +206,15 @@ def deposits():
     quotes = {}
     for r in rows('town-meeting-votes.csv'):
         quotes[(int(r['fy']), r['meeting'], r['article'])] = norm(r['quote'])
-    out, garbled = [], []
+    out = []
+    # FY2019 special article 2 prints "$08,222." -- a digit is missing from the page's own
+    # text layer. flows() sets it aside as `garbled`; it is shown here by name, never summed.
+    garbled = [dict(d, quote=quotes[(d['fy'], d['meeting'], d['article'])])
+               for d in fl['garbled'] if d['fund'] in keep]
     for d in fl['deposits']:
-        if d['fund'] not in keep or d['result'] not in ('passed', 'amended_and_passed'):
+        if d['fund'] not in keep or d['result'] not in BS.PASSED:
             continue
         q = quotes[(d['fy'], d['meeting'], d['article'])]
-        # FY2019 special article 2 prints "$08,222." -- a digit is missing from the page's
-        # own text layer. It is not a figure anybody can add up; it is set aside, by name.
-        if '$08,222' in q:
-            garbled.append(dict(d, quote=q))
-            continue
         out.append(dict(fy=d['fy'], meeting=d['meeting'], article=d['article'],
                         fund='general' if d['fund'].endswith('(general)') else 'special',
                         amount=d['amount'], free_cash='free cash' in q.lower(), quote=q,
@@ -239,7 +240,7 @@ def deposits():
                         free_cash=True, quote=words, source='4132-fy-2024-annual-town-report'))
     if len(garbled) != 1:
         fail('expected one garbled deposit amount, found %d' % len(garbled))
-    passed_over = [u for u in fl['unpriced'] if u['fy'] == 2025 and u['fund'] in keep]
+    passed_over = [u for u in fl['not_passed'] if u['fy'] == 2025 and u['fund'] in keep]
     if sorted(u['result'] for u in passed_over) != ['passed_over', 'passed_over']:
         fail('the May 2025 stabilization articles are no longer both passed over')
     return sorted(out, key=lambda r: (r['fy'], r['fund'])), garbled[0], fl
@@ -256,7 +257,10 @@ def withdrawals(fl):
         if s['result'] == 'passed':
             out.append(dict(fy=s['fy'], fund=s['fund'], amount=s['amount'], what='article',
                             document='town-meeting-votes.csv'))
-    failed = [s for s in fl['spends'] if s['result'] != 'passed']
+    # Defeated draws are in flows()'s `not_passed`, not among the spends. Only a PRICED
+    # draw OUT of a fund counts as a failed withdrawal here.
+    failed = [s for s in fl['not_passed']
+              if s['amount'] is not None and BS.SPEND.search(s['subject'])]
     return sorted(out, key=lambda r: (-r['fy'], -r['amount'])), failed
 
 
@@ -348,6 +352,19 @@ def build():
              notes=[step('Checked, not assumed: each of the Town’s fiscal-year figures equals '
                          'the state’s certification for the year before, in all %s years the '
                          'two share.' % 'five', 'measured')])],
+        # The signature: the record and the dip before it. One bar a fiscal year (the Town's
+        # label, the year the money can be spent); the state's proof where it reaches, the
+        # Town's fact sheet for the years before it -- the two are equal where they overlap.
+        chart=TP.series(
+            'Certified free cash by year', [C.fy(fy) for fy in sorted(sheet)],
+            [TP.track('The state’s proof', [dls[fy - 1]['certified'] if fy - 1 in dls else None
+                                            for fy in sorted(sheet)], 'published', 'bar'),
+             TP.track('The Town’s fact sheet only', [None if fy - 1 in dls else
+                                                     sheet[fy]['certified']
+                                                     for fy in sorted(sheet)], 'stated', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='By the fiscal year the money can be spent in. Where both publish a year, '
+                 'they agree to the dollar.'),
         table=dict(caption='Certified free cash, two publishers', views=[
             dict(key='dls', label='The state’s proof', total_col=1, kinds=['ledger'] * 3,
                  columns=['Identified', 'Certified', 'Spent in'],
@@ -416,6 +433,19 @@ def build():
              notes=[step('Whether the town was short in most of the last ten years depends on '
                          'where that line sits, and the line rests on one paraphrase.', 'gap',
                          closes='the Division of Local Services’ own published guidance')])],
+        # Drawn in dollars, not as the share: the bars are what was certified, the lines are
+        # where the cited range sits against each year's budget. The lines are our arithmetic.
+        chart=TP.series(
+            'Free cash against the cited range', [C.fy(fy) for fy in last10],
+            [TP.track('Certified, the Town’s fact sheet', [sheet[fy]['certified'] for fy in last10],
+                      'stated', 'bar'),
+             TP.track('Low end of the range (ours)', [lo / 100 * sheet[fy]['base'] for fy in last10],
+                      'estimate', 'line'),
+             TP.track('High end of the range (ours)', [hi / 100 * sheet[fy]['base']
+                                                       for fy in last10], 'estimate', 'line')],
+            '$', kind='bar',
+            note='The range is the %s to %s the Town cites, times the prior-year budget its own '
+                 'fact sheet divides by.' % (C.pct(lo, 0), C.pct(hi, 0)), note_figures=BAND()),
         table=dict(caption='Free cash against the budget, the Town’s figures', views=[dict(
             key='sheet', label='The Town’s fact sheet', total_col=2, kinds=['stated'] * 3,
             columns=['Certified', 'Operating budget', 'Share'], rows=sheet_rows,
@@ -478,6 +508,16 @@ def build():
                          'vacant posts and to salaries newly covered by grants. That is its '
                          'account; nothing here tests it.', 'hypothesis',
                          allow=('FY27', 'FY25'))])],
+        chart=TP.series(
+            'Unspent money inside free cash', [str(y) for y in sorted(comp)],
+            [TP.track('Free cash identified', [comp[y]['identified'] for y in sorted(comp)],
+                      'published', 'bar'),
+             TP.track('Of it, appropriated and not spent', [comp[y]['underspend']
+                                                            for y in sorted(comp)],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='The state’s proof, by the year of the 1 July balance. The other parts net to '
+                 'the rest, and in some years run below zero.', note_allow=('1 July',)),
         table=dict(caption='What Lunenburg’s free cash was made of', views=[dict(
             key='parts', label='The state’s proof', total_col=4, kinds=['ledger'] * 5,
             columns=['Not spent', 'Receipts above estimate', 'State aid against estimate',
@@ -545,6 +585,18 @@ def build():
                          'amount its funding page shows for it.', 'measured')]),
          con('Ranked projects worth %s already sit below the %s funding line.'
              % (C.usd(queue), C.fy(2027)), ['queue', 'p27'], {'a': U(queue), 'y': F(2027)})],
+        chart=TP.series(
+            'How capital was paid for', [C.fy(fy) for fy in sorted(cap)],
+            [TP.track('Free cash', [float(cap[fy]['free_cash']) for fy in sorted(cap)],
+                      'stated', 'bar'),
+             TP.track('Taxation', [float(cap[fy]['taxation']) for fy in sorted(cap)],
+                      'stated', 'bar'),
+             TP.track('Other sources', [float(cap[fy]['unexpended_prior_year_capital'])
+                                        + float(cap[fy]['other']) for fy in sorted(cap)],
+                      'stated', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='The capital plan’s own funding table. Other sources is unspent prior-year '
+                 'capital and anything else it prints.'),
         table=dict(caption='How capital was paid for, by year', views=[dict(
             key='cap', label='The capital plan’s table', total_col=3, kinds=['stated'] * 4,
             columns=['Free cash', 'Taxation', 'Other sources', 'Total'],
@@ -613,6 +665,14 @@ def build():
          con('Had unspent money sat at its %s average, free cash would be %s of the budget: '
              'under the floor.' % ('2021-2024', C.pct(nshare)), ['normal', 'nshare'],
              {'p': P(nshare)}, allow=('2021-2024',))],
+        chart=TP.series(
+            'The redirect against the gap',
+            ['Certified, July 2025', 'Above the floor', 'Gap, %s' % C.fy(2028)],
+            [TP.track('Certified by the state', [c25, None, None], 'published', 'bar'),
+             TP.track('Our arithmetic', [None, redirect, gaps[28]], 'estimate', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Above the floor is what stays after keeping %s of the budget; the gap is the '
+                 'model’s projection.' % C.pct(lo, 0), note_figures={'lo': P(lo, 0)}),
         said=[said_file('select-board/2025-03-11-minutes-7096.txt',
                         'The options discussed included a multi-year override or utilizing '
                         'one-time funds specifically free cash as a stopgap, however these funds '
@@ -737,7 +797,13 @@ def build():
                          'else, and the record here starts in %s.' % C.fy(2011), 'gap',
                          {'y': F(2011)},
                          closes='the MUNIS trust fund report of expenditures by year')])],
-        chart=dict(id='stabilization-all', source='/data/stabilization-funds.json'),
+        chart=TP.series(
+            'The general Stabilization Fund', [C.fy(fy) for fy in sorted(cash)],
+            [TP.track('Cash at the year’s close', [cash[fy] for fy in sorted(cash)],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='Each year off the annual report’s trust table, published only where its own '
+                 'arithmetic closes; the last is the ledger’s opening balance.'),
         table=dict(caption='The general Stabilization Fund at each year’s close', views=[dict(
             key='series', label='Trust tables and the ledger', total_col=0,
             kinds=['ledger'] * 2, columns=['Ending cash', 'Ending market value'],
@@ -800,6 +866,19 @@ def build():
                          'adopted document.', 'gap',
                          closes='the Town’s adopted financial policies, Section 3.03',
                          allow=('3.03',))])],
+        chart=TP.parts(
+            'Who may spend the stabilization money',
+            [('General fund, any lawful use', gen),
+             ('Vehicle and equipment', float(acct['8136']['held'])),
+             ('OPEB trust', float(acct['8137']['held'])),
+             ('Conservation trust', float(acct['8125']['held'])),
+             ('The other funds, each for a purpose',
+              held - gen - float(acct['8136']['held']) - float(acct['8137']['held'])
+              - float(acct['8125']['held']))],
+            '$',
+            note='Opening balances, 1 July 2025, as the ledger prints them. Which purpose each '
+                 'fund serves is read from its name; that reading is ours.',
+            note_allow=('1 July 2025',)),
         sources=[src['trust'], src['sheet'], src['d-votes'], src['d-trust']],
         finding_figures={'a': U(gen), 'b': U(held)})
 
@@ -855,6 +934,21 @@ def build():
          con('The same %s had gone in the May before: %s to the general fund, %s to special '
              'purpose.' % (C.usd(g24 + s24), C.usd(g24), C.usd(s24)),
              ['g24', 's24'], {'a': U(g24 + s24), 'b': U(g24), 'c': U(s24)})],
+        # Every fiscal year from the first deposit to the passed-over May 2025 articles. A
+        # year with no passed deposit in the votes read is a GAP, not a zero -- the record is
+        # a floor. FY2025 is a real zero: both articles were moved and passed over.
+        chart=TP.series(
+            'Deposits into the two town funds', [C.fy(y) for y in range(first, 2026)],
+            [TP.track('General Stabilization Fund',
+                      [0 if y == 2025 else (by[y]['general'] or None) if y in by else None
+                       for y in range(first, 2026)], 'published', 'bar'),
+             TP.track('Special purpose fund',
+                      [0 if y == 2025 else (by[y]['special'] or None) if y in by else None
+                       for y in range(first, 2026)], 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Passed votes only. %s is a true zero: both articles were passed over. A '
+                 'missing bar is a year with no passed deposit in the votes read.' % C.fy(2025),
+            note_figures={'y': F(2025)}),
         table=dict(caption='Deposits into the two town funds, as Town Meeting voted them',
                    views=[dict(
             key='votes', label='Town Meeting votes', total_col=2, kinds=['ledger'] * 4,
@@ -908,6 +1002,12 @@ def build():
          con('In November 2023 Town Meeting defeated a %s draw on the special purpose fund, '
              '%s to %s.' % (C.usd(failed[0]['amount']), '29', '92'), ['defeated'],
              {'a': U(failed[0]['amount'])}, allow=('November 2023', '29', '92'))],
+        chart=TP.ranking(
+            'Money withdrawn, by fund',
+            sorted({w['fund']: sum(x['amount'] for x in wd if x['fund'] == w['fund'])
+                    for w in wd}.items()), '$',
+            note='Passed votes this archive can read, summed by fund. None draws on the general '
+                 'Stabilization Fund.'),
         table=dict(caption='Money out of the stabilization funds, as printed', views=[dict(
             key='out', label='Votes that took money out', total_col=0, kinds=['ledger'],
             columns=['Amount'],
@@ -970,7 +1070,17 @@ def build():
              {'y': F(2026), 'a': U(ct['snow_over']), 'b': U(ct['reserve'])}),
          con('Nothing in this archive says what spending the fund would do to the town’s '
              'borrowing.', ['rating-gap'])],
-        chart=dict(id='stabilization-option-burndown', source='/data/stabilization-option.json'),
+        # Each year's projected gap, split into what the fund covers and what is still short.
+        # The registry burndown drew only the covered years, unlabelled as ours.
+        chart=TP.series(
+            'The school gap and the general fund', ['FY20%d' % b['fy'] for b in burn],
+            [TP.track('Covered by the general fund (ours)', [b['covered'] for b in burn],
+                      'estimate', 'bar'),
+             TP.track('Still short (ours)', [b['shortfall'] for b in burn], 'estimate', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Each bar is the model’s projected gap. The fund starts at its 1 July 2025 '
+                 'balance, earns nothing, and is spent whole on the schools.',
+            note_allow=('1 July 2025',)),
         said=[said_file('finance-committee/2025-03-13-minutes-7009.txt',
                         'if there is a direct impact on the town’s bond rating if the town does '
                         'not contribute to OPEB', 'Finance Committee')],

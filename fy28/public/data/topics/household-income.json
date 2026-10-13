@@ -1,6 +1,113 @@
 {
  "category": "homes-and-taxes",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "o": {
+     "text": "205 of 350",
+     "unit": "municipalities",
+     "value": 205
+    }
+   },
+   "literals": [],
+   "text": "Each bar counts municipalities whose sample median falls in a band of that width; 205 of 350 of them have intervals overlapping Lunenburg’s."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Municipalities in each band",
+    "texts": [
+     "0 municipalities",
+     "0 municipalities",
+     "12 municipalities",
+     "42 municipalities",
+     "85 municipalities",
+     null,
+     "54 municipalities",
+     "28 municipalities",
+     "16 municipalities",
+     "16 municipalities",
+     "9 municipalities",
+     "2 municipalities",
+     "5 municipalities"
+    ],
+    "values": [
+     0,
+     0,
+     12,
+     42,
+     85,
+     null,
+     54,
+     28,
+     16,
+     16,
+     9,
+     2,
+     5
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The band Lunenburg is in",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     "81 municipalities",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     81,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Massachusetts municipalities by median income",
+  "type": "series",
+  "unit": "municipalities",
+  "x": [
+   "$0k",
+   "$20k",
+   "$40k",
+   "$60k",
+   "$80k",
+   "$100k",
+   "$120k",
+   "$140k",
+   "$160k",
+   "$180k",
+   "$200k",
+   "$220k",
+   "$240k"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

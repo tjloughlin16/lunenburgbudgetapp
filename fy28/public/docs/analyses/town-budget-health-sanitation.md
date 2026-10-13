@@ -28,7 +28,7 @@ The Board of Health and the services the town buys in with it — the Nashoba As
 |  | Animal Inspector Salary | $1,000 |
 | | **total** | **$99,260** |
 
-The page prints **$99,260** for this department. The lines above come to $99,260, a difference of +0.30.
+The page prints **$99,260** for this department. The lines above come to $99,260, a difference of +$0.30.
 
 ### FY2024
 

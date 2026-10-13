@@ -1,6 +1,83 @@
 {
  "category": "school-spending",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2012",
+     "unit": "fiscal year",
+     "value": 2012
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "Each from FY2012 to FY2025: our arithmetic on DESE’s totals and pupil counts."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Spending",
+    "texts": [
+     "43.8%",
+     "48.6%",
+     "59.0%",
+     "48.7%",
+     "51.4%",
+     "46.5%"
+    ],
+    "values": [
+     43.75,
+     48.559999999999995,
+     58.98,
+     48.72,
+     51.44,
+     46.52
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "FTE pupils",
+    "texts": [
+     "-23.5%",
+     "-18.7%",
+     "-14.0%",
+     "-5.6%",
+     "-3.0%",
+     "-2.9%"
+    ],
+    "values": [
+     -23.47,
+     -18.73,
+     -14.000000000000002,
+     -5.56,
+     -3.04,
+     -2.87
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Spending and pupils, change by district",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "North Middlesex",
+   "Harvard",
+   "Groton-Dunst.",
+   "Lunenburg",
+   "Ayer Shirley",
+   "Ashburnham-W."
+  ]
+ },
  "conclusions": [
   {
    "figures": {

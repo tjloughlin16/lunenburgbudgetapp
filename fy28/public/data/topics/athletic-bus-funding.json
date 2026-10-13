@@ -1,8 +1,61 @@
 {
  "category": "transportation",
  "chart": {
-  "id": "transportation-athletics",
-  "source": "/data/transportation.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Both from the town’s ledger. The fee fund account also carries officials, uniforms and ice time; buses are not split out of it."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Town athletic bus line, spent",
+    "texts": [
+     "$39,880",
+     "$40,000",
+     "$87,822",
+     "$110,650"
+    ],
+    "values": [
+     39880,
+     40000,
+     87822,
+     110650
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Fee fund, purchase of service",
+    "texts": [
+     "$179,393",
+     "$115,994",
+     "$26,685",
+     "$113,602"
+    ],
+    "values": [
+     179392.94,
+     115993.84,
+     26685.06,
+     113602.4
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Athletic buses, town line and fee fund",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
@@ -202,7 +255,7 @@
   "text": "From FY2025, athletic buses moved from player fees to the town budget, mostly taxes."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "athletic-bus-funding",

@@ -1,6 +1,81 @@
 {
  "category": "board-records",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "13 October 2026"
+   ],
+   "text": "Every board, as the Agenda Center and the town’s channel stood on 13 October 2026."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "With a posted agenda",
+    "texts": [
+     "474 meetings",
+     "457 meetings",
+     "510 meetings",
+     "493 meetings"
+    ],
+    "values": [
+     474,
+     457,
+     510,
+     493
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "With a video matched",
+    "texts": [
+     "238 meetings",
+     "276 meetings",
+     "326 meetings",
+     "333 meetings"
+    ],
+    "values": [
+     238,
+     276,
+     326,
+     333
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "With minutes listed",
+    "texts": [
+     "300 meetings",
+     "325 meetings",
+     "337 meetings",
+     "322 meetings"
+    ],
+    "values": [
+     300,
+     325,
+     337,
+     322
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Meetings, videos and minutes by year",
+  "type": "series",
+  "unit": "meetings",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -354,7 +429,7 @@
      "ledger"
     ],
     "label": "By board",
-    "note": "Sorted by the share of meetings with a video. Read 12 October 2026.",
+    "note": "Sorted by the share of meetings with a video. Read 13 October 2026.",
     "rows": [
      {
       "cells": [

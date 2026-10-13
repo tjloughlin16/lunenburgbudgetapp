@@ -1,8 +1,73 @@
 {
  "category": "board-records",
  "chart": {
-  "id": "board-composition-fill",
-  "source": "/data/board-composition.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "a hundred"
+   ],
+   "text": "Above a hundred means more names than seats. The line’s boards differ year to year; the bars hold them fixed."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The same boards in both end years",
+    "texts": [
+     "111.0%",
+     null,
+     null,
+     null,
+     null,
+     "87.4%"
+    ],
+    "values": [
+     111.0091743119266,
+     null,
+     null,
+     null,
+     null,
+     87.38738738738739
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Every board stating a size",
+    "texts": [
+     "107.2%",
+     "102.6%",
+     "102.2%",
+     "105.1%",
+     "92.8%",
+     "87.1%"
+    ],
+    "values": [
+     107.2,
+     102.6,
+     102.2,
+     105.1,
+     92.8,
+     87.1
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Stated seats with a name printed",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
  },
  "conclusions": [
   {

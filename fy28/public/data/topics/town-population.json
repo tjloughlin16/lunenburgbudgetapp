@@ -1,6 +1,52 @@
 {
  "category": "homes-and-taxes",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Census Bureau five-year sample estimates; each carries a margin of error, given in the facts below."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Residents",
+    "texts": [
+     "11,271",
+     "11,804"
+    ],
+    "values": [
+     11271.0,
+     11804.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Households",
+    "texts": [
+     "4,203",
+     "4,529"
+    ],
+    "values": [
+     4203.0,
+     4529.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Residents and households, two samples",
+  "type": "series",
+  "unit": "count",
+  "x": [
+   "2014–2018",
+   "2019–2023"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

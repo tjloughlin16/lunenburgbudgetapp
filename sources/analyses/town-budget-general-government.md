@@ -43,7 +43,7 @@ The town’s own administration: the Select Board, the Town Manager, the Town Ac
 | 37 | Conservation Commission | $71,319 |
 | | **total** | **$1,792,492** |
 
-The page prints **$1,792,492** for this department. The lines above come to $1,792,492, a difference of +0.80.
+The page prints **$1,792,492** for this department. The lines above come to $1,792,492, a difference of +$0.80.
 
 ### FY2024
 
@@ -75,7 +75,7 @@ The page prints **$1,792,492** for this department. The lines above come to $1,7
 | 37 | Conservation Comm | $64,100 |
 | | **total** | **$1,974,323** |
 
-The page prints **$1,974,322** for this department. The lines above come to $1,974,323, a difference of +0.80.
+The page prints **$1,974,322** for this department. The lines above come to $1,974,323, a difference of +$0.80.
 
 ### FY2025
 

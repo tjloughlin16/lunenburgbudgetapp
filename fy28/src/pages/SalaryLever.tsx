@@ -42,7 +42,7 @@ export function SalaryLever() {
       <ShortVersion>
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={usd(SETTLEMENT.perHalfPoint)} tone="var(--status-critical)"
-            headline={<>The contract is the biggest lever the town has not yet pulled: each half a point off the next settlement is {usd(SETTLEMENT.perHalfPoint)} off the FY{GAPS[0].fy} gap, every year after too.</>}>
+            headline={<>The next teachers&rsquo; settlement is still open, and each half a point on it moves the FY{GAPS[0].fy} gap by {usd(SETTLEMENT.perHalfPoint)}, every year after too.</>}>
             The projection assumes {pct(SETTLEMENT.assumed, 1)}, which costs {usd(SETTLEMENT.assumedCost)} next year on its own. At {pct(0.025, 1)} the FY{GAPS[0].fy} gap is {usd(SETTLEMENT.rates.find(r => r.rate === 0.025)!.gap)}; at {pct(0.05, 1)} it is {usd(SETTLEMENT.rates.find(r => r.rate === 0.05)!.gap)}. The last agreement moved the scale {pct(CONTRACT.compound, 2)} over three years ({CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')}), with steps of about {pct(CONTRACT.avgStep, 1)} on top for anyone not at the maximum.
           </Insight>
           <Insight n={2} figure={`${SHRINK.positionsPerYear.toFixed(1)} FTE`}

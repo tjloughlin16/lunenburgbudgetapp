@@ -94,7 +94,7 @@ SAME_BODY = {
 NO_MONEY = [
     (re.compile(r'montachusett|monty'),
      'another district’s body. Lunenburg votes it an assessment and does not run it '
-     '— /analysis/monty-tech is where that money is.'),
+     '— /enrolment/monty-tech-assessment is where that money is.'),
     (re.compile(r'^officers in no'),
      'not a body. A holding unit for appointed posts that sit under no department, so the '
      'chart can draw them at all.'),

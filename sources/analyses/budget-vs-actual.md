@@ -100,6 +100,11 @@ printed under an "actual" heading — most likely because the books were not clo
 document went out. FY21 was the first full COVID year, which is the obvious candidate for
 why, though nothing published says so.
 
+That is true of the **budget books**, not of the ledger. The Finance Committee's MUNIS
+workbook records a real FY21 school actual: **$20,769,932** against $21,123,602 voted,
+**−1.67%**. FY21 is excluded below only because the line-by-line comparison in this
+document is built from the books, and the books do not carry it.
+
 **So FY21 is excluded from every comparison below.** It had been one of three years
 supporting §1, which is the sort of thing that only shows up when you go line by line.
 
@@ -124,8 +129,8 @@ real, ordinary and routine, and now they can be pointed at.
 What it does not do is settle which school LINES moved: the whole school department is a
 single row. And it is one snapshot of one year.
 
-**What we still do not have:** the individual payments, the school department's own
-line-level ledger, and any year but FY26. Most of what follows still compares columns in
+**What we still do not have:** the individual payments, and the school department's own
+line-level ledger before FY23 (FY23 to FY26 at period 13 is now held, `munis-school-ytd.csv`). Most of what follows still compares columns in
 budget documents. That is enough to see *that* a number moved. It is not enough to say
 *why*.
 
@@ -157,7 +162,21 @@ itself about either, and the year is a real one — see the note on FY21 above:
 
 One lands within a third of a percent and the other is **over**. Against FY25's −3.01%
 they are a different order of magnitude, and they do not point the same way. Read the
-line-by-line totals in §2 alongside them: five years there, never more than 0.9% off.
+line-by-line totals in §2 alongside them: six years there, five of them within 0.9%.
+
+**The ledger does not agree with the books on FY20.** The Finance Committee's general fund
+workbook (`gl-history.csv`, its school rows summed) is assembled from MUNIS and equals the
+school department's own period-13 MUNIS reports to the dollar in FY23 and FY24. It records
+FY20 school spending of **$20,357,948**, not $20,724,828 — **−2.11%** against the same
+$20,795,863, not −0.34%. Its FY23 is **$22,403,863**, the period-13 report's own figure,
+**+0.35%** rather than +0.50%.
+
+- *What the data shows:* two documents print different FY20 and FY23 spending, and the one
+  the accounting system produced puts FY20 two points under.
+- *What it does not show:* why. One possibility, untested here, is that the budget book's
+  "actual" column counts money encumbered at year end and the ledger's does not.
+- *What still holds:* FY23 is over in both, so "under every year" is not what the record
+  shows on either source.
 
 ### The FY25 budget is stated two ways, and one of them is explicable
 
@@ -283,7 +302,8 @@ individual lines miss by tens and hundreds of percent, in both directions, and c
 | FY23 | $20,804,700 | $20,917,634 | **+0.5%** |
 | FY25 | $7,662,709 | $7,462,928 | **-2.6%** |
 
-Five years, never more than 0.9% off. Now the lines inside those totals:
+Six years. Five land within 0.9%; FY25, on the lines its document reports, is 2.6% under.
+Now the lines inside those totals:
 
 | line | usable years | worst under | worst over |
 |---|---:|---:|---:|
@@ -296,7 +316,8 @@ Five years, never more than 0.9% off. Now the lines inside those totals:
 ### What is new, and it changes the reading
 
 **98 lines have four or more usable years. Seven of them miss the same way every
-year, and all seven are small** — the largest averages $20,754 on a $20 million budget.
+year, and all seven are small** against a $20 million budget — the largest, special
+education transportation, averages $42,878 under.
 
 So the misses are **noise, not padding.** Nobody is quietly over-providing a line year
 after year. Lines overshoot and undershoot and the total comes out flat because there are
@@ -383,7 +404,7 @@ Of every group with four or more measured years, **exactly one is over in every 
 education paraprofessionals, −$49,298). Both are small.
 
 At line level it is the same: **7 lines out of 141 miss the same way every year**, the
-largest averaging $20,754.
+largest — special education transportation — averaging $42,878 under.
 
 **There is no systematic padding in this budget.** That is the single most important
 finding in this section and it is a negative one.
@@ -694,9 +715,12 @@ $127,550. The app treats $127,550 as the cost of putting the buses back.
 2. **The town's accounting records.** Everything here compares columns in budget documents.
    It cannot see money moved between lines during the year — the normal, approved way a
    district covers an overspend, and the ordinary explanation for several findings above.
-3. **FY26 year-end.** Nothing here reaches it.
-4. **Why FY21's actual column is its budget.** Probably books not closed in a COVID year.
-   Probably. It is currently an inference from a pattern in the numbers.
+3. **FY26 year-end.** Now held: the school department's period-13 MUNIS report for FY23
+   to FY26 (`munis-school-ytd.csv`). It is read in the FY26 closeout analysis, not yet in
+   the line-by-line comparison here.
+4. **Why the budget books' FY21 actual column is its budget.** Probably books not closed in
+   a COVID year. Probably. The ledger has a real FY21 figure; the books do not say why
+   theirs is the budget.
 
 ## Still to do
 

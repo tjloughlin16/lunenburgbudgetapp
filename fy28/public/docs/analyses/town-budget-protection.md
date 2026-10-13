@@ -21,26 +21,23 @@ Police, Fire, Radio Watch and the inspectors — wiring, plumbing and gas, build
 
 | line | label | voted |
 |---|---|---:|
-| | **total** | **$0** |
 
-The page prints **$4,239,355** for this department. The lines above come to $0, a difference of -4239354.99.
+The page prints **$4,239,355** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ### FY2024
 
 | line | label | voted |
 |---|---|---:|
 |  | Protection | — |
-| | **total** | **$0** |
 
-The page prints **$4,478,848** for this department. The lines above come to $0, a difference of -4478848.28.
+The page prints **$4,478,848** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ### FY2025
 
 | line | label | voted |
 |---|---|---:|
-| | **total** | **$0** |
 
-The page prints **$4,643,717** for this department. The lines above come to $0, a difference of -4643717.10.
+The page prints **$4,643,717** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ## The people behind the money: the Fire Department
 
@@ -60,7 +57,7 @@ The Fire Department is the only part of this group that states its own strength,
 | FY2024 | 10 | 30–35 |
 | FY2025 | 10 | 30–35 |
 
-Career firefighters went from 5 to 10 while the on-call roll fell from 40–45 to 30–35: the department grew and shrank at once, in different kinds of staff. Police states no strength at all, so the other half of this budget group has no published headcount to set beside its money.
+Career firefighters went from 5 to 10 while the on-call roll fell from 40–45 to 30–35: the department grew and shrank at once, in different kinds of staff. The Police Department states no strength in its prose; its roster names 29 people in FY2025. That is a count of names printed, not an establishment or FTE (see [town personnel](/analysis/town-personnel)).
 
 ## What this cannot show
 

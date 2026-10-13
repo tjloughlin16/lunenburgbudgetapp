@@ -471,7 +471,17 @@ export const SLUG: Record<Tab, string> = {
 // `The One Big Report` promises a size rather than a subject, which is the one thing a
 // title on this site must not do. Unlisted rather than deleted: the address has been
 // shared and keeps resolving, which is the whole point of this mechanism.
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'addsup'])
+// THE LONG REPORTS THE HUB-AND-SPOKE SHELVES ABSORBED, from 13 October 2026. TJ: *"long
+// reports should be unlisted yes."* Every question each one answered has a page now at
+// /<category>/<topic> (scripts/topic_registry/), so these keep their addresses -- sources and
+// agents cite them -- and lose their doors: out of the bar, the menu, /reports, the sitemap
+// and the prerender. Not here: a page whose slug a hub now holds (`sped`, `staffing`,
+// `owners`, `healthlever`, `stateaid`), because that address IS the hub and is listed; and
+// `leaving`, the departure scenario's dials, which the Enrolment hub links on purpose.
+// The markdown reports absorbed the same way are in sources/analyses/UNLISTED.
+// KEEP THIS ON ONE LINE: prerender.mjs, check-agents.mjs and build_sitemap.py read it with a
+// single-line pattern.
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'addsup', 'ap', 'attrition', 'boardcompare', 'bythenumbers', 'circuitbreaker', 'classsize', 'courses', 'cuts', 'enrollment', 'extraslever', 'feelever', 'formula', 'freecashlever', 'growth', 'homestudents', 'insurance', 'minaid', 'montytech', 'outflow', 'override', 'parastaff', 'parks', 'peers', 'positionslever', 'required', 'salarylever', 'schoolstaff', 'sportsmoney', 'stopped', 'unwind', 'variance', 'youthsports', 'spedcount', 'spedcost', 'spedroute'])
 
 /** Pages that are INSTRUMENTS, not reads: an index, a register, a search box, a
  *  catalogue. Nobody reads a register top to bottom; they search it. So these carry no
@@ -1246,15 +1256,10 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['budgetfeed', 'threads', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'parks', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
-             'peers',
-             'required', 'minaid',
-             'formula',
-             'staffing', 'schoolstaff', 'parastaff', 'courses', 'ap', 'cuts',
-             'stopped',
-             'unwind', 'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
-             'sportsmoney',
-             'insurance', 'variance'],
+  // The absorbed long reports left this bar on 13 October 2026 -- they are UNLISTED above,
+  // and their subjects are shelves on /reports. What stays is the live pages, the index,
+  // the pages a hub now holds the address of, and the two with no shelf of their own.
+  analyses: ['budgetfeed', 'threads', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'owners', 'schoolfinance', 'healthlever', 'sped', 'staffing', 'leaving', 'families'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

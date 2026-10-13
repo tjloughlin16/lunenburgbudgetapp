@@ -1,8 +1,97 @@
 {
  "category": "transportation",
  "chart": {
-  "id": "transportation-athletics",
-  "source": "/data/transportation.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "The last bar is ours, high school only: FY2027’s fall as posted, with FY2026’s winter and spring, teams sharing buses, at FY2027 contract prices."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "From the town budget",
+    "texts": [
+     "$10,000",
+     null,
+     null
+    ],
+    "values": [
+     10000.0,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "From the fee fund",
+    "texts": [
+     "$50,000",
+     null,
+     null
+    ],
+    "values": [
+     50000.0,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The district’s estimate",
+    "texts": [
+     null,
+     "$58,880",
+     null
+    ],
+    "values": [
+     null,
+     58880.0,
+     null
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Shared buses, contract prices",
+    "texts": [
+     null,
+     null,
+     "$120,296"
+    ],
+    "values": [
+     null,
+     null,
+     120295.7
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "What was put back, against the estimates",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Put back",
+   "District estimate",
+   "Posted schedules"
+  ]
  },
  "conclusions": [
   {
@@ -167,7 +256,7 @@
   "text": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "fy2027-athletic-bus-cut",

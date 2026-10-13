@@ -75,7 +75,7 @@ export function Context({ onRecommend, onSources, onAthletics }: {
               could compute it (rule 2). */}
           <Stat label="Override vote, May 2026"
             value={`${Math.round(100 * f.overrideQ1.yes / (f.overrideQ1.yes + f.overrideQ1.no))}% yes`} tone="critical"
-            sub={`${f.overrideQ1.yes.toLocaleString()} for, ${f.overrideQ1.no.toLocaleString()} against`} />
+            sub={`${f.overrideQ1.yes.toLocaleString()} for, ${f.overrideQ1.no.toLocaleString()} against, on the Town's unofficial tally`} />
         </div>
       </div>
 
@@ -128,7 +128,10 @@ export function Context({ onRecommend, onSources, onAthletics }: {
             <Note>
               {f.ballotsCast.toLocaleString()} ballots cast of {f.registered.toLocaleString()}{' '}
               registered voters &mdash; {((f.ballotsCast / f.registered) * 100).toFixed(0)}%
-              turnout. Both questions failed in all four precincts.
+              turnout. Both questions failed in all four precincts. These are the Town&rsquo;s
+              unofficial tally sheet, which foots precinct by precinct to the ballots cast; the
+              state&rsquo;s record of the vote prints different counts, and the Town Clerk&rsquo;s
+              certified results are not in this archive.
             </Note>
           </div>
 

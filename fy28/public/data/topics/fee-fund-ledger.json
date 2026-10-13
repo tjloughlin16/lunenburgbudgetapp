@@ -1,6 +1,78 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "b": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "c": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "FY2023 is the cash the FY2024 cashbook opens with. FY2026 stops on the export’s last day."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Cash, the fund’s cashbook",
+    "texts": [
+     "$137,846",
+     "$33,993",
+     "$131,239",
+     "$131,333"
+    ],
+    "values": [
+     137845.84,
+     33993.31,
+     131239.09,
+     131332.94
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Without the four journal entries",
+    "texts": [
+     null,
+     null,
+     "-$122,882",
+     null
+    ],
+    "values": [
+     null,
+     null,
+     -122882.09,
+     null
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Fee fund cash at the year’s end",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -288,7 +360,7 @@
   "text": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "fee-fund-ledger",

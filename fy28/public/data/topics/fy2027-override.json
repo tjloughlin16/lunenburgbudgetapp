@@ -1,6 +1,68 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "2,638",
+     "unit": "",
+     "value": 2638
+    }
+   },
+   "literals": [],
+   "text": "Neither is the certified count. The state’s yes and no on each question sum to more than the tally sheet’s 2,638 ballots cast."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The state’s record",
+    "texts": [
+     "899 votes",
+     "1,748 votes",
+     "766 votes",
+     "1,883 votes"
+    ],
+    "values": [
+     899,
+     1748,
+     766,
+     1883
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The Town’s unofficial tally sheet",
+    "texts": [
+     "867 votes",
+     "1,753 votes",
+     "760 votes",
+     "1,862 votes"
+    ],
+    "values": [
+     867,
+     1753,
+     760,
+     1862
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The May vote, two counts",
+  "type": "series",
+  "unit": "votes",
+  "x": [
+   "Tier 1, yes",
+   "Tier 1, no",
+   "Tier 2, yes",
+   "Tier 2, no"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -99,6 +161,11 @@
        "text": "1,862",
        "unit": "",
        "value": 1862
+      },
+      "e": {
+       "text": "2,638",
+       "unit": "",
+       "value": 2638
       }
      },
      "kind": "gap",
@@ -107,7 +174,7 @@
       "Tier 2",
       "16 May 2026"
      ],
-     "text": "An unofficial tally quoted earlier on this site, 867 to 1,753 on Tier 1 and 760 to 1,862 on Tier 2, differs from the state’s record."
+     "text": "The Town’s unofficial tally sheet prints 867 to 1,753 on Tier 1 and 760 to 1,862 on Tier 2, footing to its 2,638 ballots cast; the state’s yes and no alone sum to more."
     }
    ],
    "rests_on": [
@@ -369,6 +436,10 @@
   {
    "href": "/docs/data/dls-override-votes.csv",
    "label": "Lunenburg Budget Project — dls-override-votes.csv (every question the state records)"
+  },
+  {
+   "href": "/docs/town-supplementary/docs/town-2026-election-unofficial-results.pdf",
+   "label": "Town of Lunenburg — unofficial tally sheet, Annual Town Election, 16 May 2026 — town-2026-election-unofficial-results.pdf"
   },
   {
    "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",

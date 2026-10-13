@@ -139,6 +139,16 @@ def sources(fetches):
     return out
 
 
+def span(*maps):
+    """Every year from the first any map holds to the last, so a year nobody printed is a
+    gap in a chart and never a zero."""
+    ys = sorted(set().union(*[set(m) for m in maps]))
+    return list(range(ys[0], ys[-1] + 1))
+
+
+FTE_UNIT = 'full-time equivalents'
+
+
 def build():
     SS = load('school-staffing.json')
     WW = load('who-works-in-each-school.json')
@@ -239,6 +249,13 @@ def build():
               'y': F(ylast_both)}),
          con('An FTE counts assignments: not people, not filled posts, not who pays.',
              ['t-last', 'filled-gap'])],
+        chart=(lambda ys: TP.series('Teacher FTE, two state files', [C.fy(y) for y in ys], [
+            TP.track('DESE teacher file', [dist[y]['fte'] if y in dist else None for y in ys],
+                     'published', 'bar'),
+            TP.track('DESE comparison sheet', [radar[y]['teacher_fte'] if y in radar else None
+                                               for y in ys], 'published', 'line')], FTE_UNIT,
+            note='Two counts from the same state, set side by side and not reconciled. An FTE '
+                 'counts assignments, not people.'))(span(dist, radar)),
         table=dict(caption='Teacher FTE by year, two state files', views=[dict(
             key='years', label='Teacher FTE', total_col=-1, kinds=['ledger'] * 3,
             columns=['Teacher file', 'Comparison sheet', 'Pupils enrolled'],
@@ -269,9 +286,28 @@ def build():
     virtual = sorted({p['district'] for p in PA['peers'] if 'Virtual' in p['district']})
     v_from = min(p['first_fy'] for p in PA['peers'] if p['district'] in virtual)
     of_first = ranks_t[rf]['of']
+    # The places within the districts the sheet carries in EVERY year -- the one list on
+    # which two years' ranks can be compared. Read off the payload, never chosen here.
+    stab = SS['state']['stable_ranks']
+    st_t = {r['fy']: r for r in stab['teachers']}
+    st_p = {r['fy']: r for r in stab['paras']}
+    n_stable = len(stab['members'])
     hn = ww['per_100_high_needs']
     ORD = lambda n: '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
     SP_ = lambda v: figure(v, '%+.1f%%' % v)
+    peer_rl = {p['district']: next((q['teachers_per_100'] for q in p['points'] if q['fy'] == rl), None)
+               for p in PA['peers'] if p['district'] in stab['members']}
+    peer_rl['Lunenburg'] = radar[rl]['teachers_per_100']
+    if sorted(peer_rl) != sorted(stab['members']) or None in peer_rl.values():
+        fail('a stable-list district has no %s ratio' % rl)
+    if sorted(peer_rl, key=lambda d: -peer_rl[d]).index('Lunenburg') + 1 != st_t[rl]['rank']:
+        fail('the stable-list order no longer puts Lunenburg at the payload’s rank')
+    tpp_chart = TP.ranking('Teachers per hundred pupils, the same districts',
+                           sorted(peer_rl.items()), 'per hundred pupils', highlight='Lunenburg',
+                           basis='estimate',
+                           note='%s: DESE’s FTE over its pupils (our division), for only the %s '
+                                'districts its sheet carries in every year.' % (C.fy(rl), C.num(n_stable)),
+                           note_figures={'y': F(rl), 'n': N(n_stable)})
     out['teachers-per-pupil'] = TP.page(
         'teachers-per-pupil',
         'Lunenburg had %s teacher FTE per hundred pupils in %s, %s of %s on the state’s sheet.'
@@ -284,6 +320,9 @@ def build():
            % (C.num(rt['of']), C.fy(rl)), 'published', {'n': N(rt['of']), 'y': F(rl)}),
          f('of-first', N(of_first, 'districts'), 'districts on the same sheet in %s' % C.fy(rf),
            'published', {'y': F(rf)}),
+         f('st-rank', figure(st_t[rl]['rank'], ORD(st_t[rl]['rank']), 'place'),
+           'of the %s on the sheet every year, %s' % (C.num(n_stable), C.fy(rl)), 'published',
+           {'n': N(n_stable), 'y': F(rl)}),
          f('t09', SP_(t09), 'teacher FTE change, %s to %s' % (C.fy(rf), C.fy(rl)), 'published',
            {'a': F(rf), 'b': F(rl)}),
          f('p09', SP_(p09), 'pupils in district, the same years', 'published'),
@@ -305,6 +344,10 @@ def build():
                             C.num(len(virtual)), C.fy(v_from)), 'gap',
                          {'a': N(of_first), 'y': F(rf), 'b': N(rt['of']), 'z': F(rl),
                           'v': N(len(virtual)), 'w': F(v_from)}, closes=MEMBERSHIP)]),
+         con('Among the %s districts on the sheet in every year, Lunenburg is %s in %s.'
+             % (C.num(n_stable), ORD(st_t[rl]['rank']), C.fy(rl)), ['st-rank'],
+             {'n': N(n_stable), 'r': figure(st_t[rl]['rank'], ORD(st_t[rl]['rank'])),
+              'y': F(rl)}),
          con('From %s teachers fell %s and pupils %s; from %s teachers rose %s as pupils fell %s.'
              % (C.fy(rf), C.pct(-t09), C.pct(-p09), C.fy(y11), C.pct(t11), C.pct(-p11)),
              ['t09', 'p09', 't11', 'p11'],
@@ -317,6 +360,10 @@ def build():
                          '%s and %s, so the series is not one measure throughout.'
                          % (C.fy(2014), C.fy(2022)), 'gap', {'a': F(2014), 'b': F(2022)},
                          closes='DESE’s definition of high needs for each year it is published')])],
+        # A RANK AMONG THE SAME DISTRICTS. The sheet's membership changes year to year, so the
+        # chart draws only the districts it carries in every year (stable_ranks), and asserts
+        # that its order puts Lunenburg where the payload's own rank does.
+        chart=tpp_chart,
         table=dict(caption='Teacher FTE per hundred pupils, the state’s comparison sheet',
                    views=[dict(
                        key='ranks', label='Lunenburg by year', total_col=-1, kinds=['ledger'] * 3,
@@ -393,6 +440,11 @@ def build():
              {'a': R2(per(s_era)), 'y': F(s_era), 'b': R2(per(last)), 'z': F(last)}),
          con('The schools sum to the district’s count within %s FTE in every year.'
              % ('%.1f' % abs(worst['difference'])), ['recon'], {'a': FTE(abs(worst['difference']))})],
+        chart=TP.series('Teacher FTE by school', [C.fy(y) for y in range(s_era, last + 1)],
+                        [TP.track(short[n], [pts[n][y]['fte'] for y in range(s_era, last + 1)])
+                         for n in order], FTE_UNIT,
+                        note='DESE’s teacher file, from %s, when the schools took their present '
+                             'grades.' % C.fy(s_era), note_figures={'y': F(s_era)}),
         table=dict(caption='Teacher FTE by school, %s to %s' % (C.fy(s_era), C.fy(last)), views=[dict(
             key='schools', label='DESE teacher FTE', total_col=-1, kinds=['ledger'] * 4,
             columns=[short[n] for n in order],
@@ -460,6 +512,21 @@ def build():
          con('The state’s two subject files agree in %s of %s subject-years.'
              % (C.num(ag['agree']), C.num(ag['compared'])), ['agree'],
              {'a': N(ag['agree']), 'n': N(ag['compared'])})],
+        chart=(lambda moved: TP.ranking(
+            'Teacher FTE change by subject', [(r['subject'], r['change']) for r in moved],
+            FTE_UNIT, highlight=fall_pk['subject'],
+            note=('%s to %s, DESE’s teachers by grade and subject: every subject that moved.'
+                  % (C.fy(wpk['first_fy']), C.fy(wpk['last_fy'])))
+            if len(moved) == sum(1 for r in wpk['rows'] if r['change']) else
+            ('%s to %s, DESE’s teachers by grade and subject: the %s subjects that moved most, '
+             'of %s.' % (C.fy(wpk['first_fy']), C.fy(wpk['last_fy']), C.num(len(moved)),
+                         C.num(sum(1 for r in wpk['rows'] if r['change'])))),
+            note_figures={'a': F(wpk['first_fy']), 'b': F(wpk['last_fy'])}
+            if len(moved) == sum(1 for r in wpk['rows'] if r['change']) else
+            {'a': F(wpk['first_fy']), 'b': F(wpk['last_fy']), 'n': N(len(moved)),
+             'm': N(sum(1 for r in wpk['rows'] if r['change']))}))(
+            sorted((r for r in wpk['rows'] if r['change']), key=lambda r: -abs(r['change']))
+            [:TP.ROWS_MAX]),
         table=dict(caption='Teacher FTE by subject', views=[
             dict(key=w['key'], label='%s to %s' % (C.fy(w['first_fy']), C.fy(w['last_fy'])),
                  total_col=-1, kinds=['ledger'] * 3,
@@ -505,6 +572,12 @@ def build():
            'published', {'y': F(rl)}),
          f('rank-low', N(rpt['of'], 'districts'), 'on the sheet in %s; Lunenburg lowest'
            % C.fy(trough['fy']), 'published', {'y': F(trough['fy'])}),
+         f('st-low', figure(st_p[trough['fy']]['rank'], ORD(st_p[trough['fy']]['rank']), 'place'),
+           'of the %s on the sheet every year, %s' % (C.num(n_stable), C.fy(trough['fy'])),
+           'published', {'n': N(n_stable), 'y': F(trough['fy'])}),
+         f('st-last', figure(st_p[rl]['rank'], ORD(st_p[rl]['rank']), 'place'),
+           'of the %s on the sheet every year, %s' % (C.num(n_stable), C.fy(rl)),
+           'published', {'n': N(n_stable), 'y': F(rl)}),
          f('rise-low', CHG(rise_t), 'FTE change, %s to %s' % (C.fy(trough['fy']), C.fy(rl)),
            'published', {'a': F(trough['fy']), 'b': F(rl)}),
          f('rise-first', CHG(rise_f), 'FTE change, %s to %s' % (C.fy(rf), C.fy(rl)), 'published',
@@ -528,7 +601,19 @@ def build():
              {'a': R2(pl['paras_per_100']), 'y': F(rl), 'n': N(rpl['of']),
               'b': R2(trough['paras_per_100']), 'z': F(trough['fy']), 'm': N(rpt['of'])},
              notes=[step('The sheet’s membership changed between those years, so the two places '
-                         'are not ranks among the same districts.', 'gap', closes=MEMBERSHIP)])],
+                         'are not ranks among the same districts.', 'gap', closes=MEMBERSHIP)]),
+         con('Among the %s districts on the sheet in every year, it was %s in %s and %s in %s.'
+             % (C.num(n_stable), ORD(st_p[trough['fy']]['rank']), C.fy(trough['fy']),
+                ORD(st_p[rl]['rank']), C.fy(rl)), ['st-low', 'st-last'],
+             {'n': N(n_stable), 'r': figure(st_p[trough['fy']]['rank'], ORD(st_p[trough['fy']]['rank'])),
+              'y': F(trough['fy']), 's': figure(st_p[rl]['rank'], ORD(st_p[rl]['rank'])),
+              'z': F(rl)})],
+        chart=TP.series('Paraprofessional FTE by year', [C.fy(y) for y in sorted(radar)],
+                        [TP.track('All programmes, DESE comparison sheet',
+                                  [radar[y]['para_fte'] for y in sorted(radar)])], FTE_UNIT,
+                        kind='bar',
+                        note='Staff paid from grants and revolving funds are counted alongside '
+                             'those the town appropriates for.'),
         table=dict(caption='Paraprofessional FTE by year, the state’s comparison sheet', views=[dict(
             key='years', label='All programmes', total_col=-1, kinds=['ledger'] * 3,
             columns=['FTE', 'Per hundred pupils', 'Place on the sheet'],
@@ -598,6 +683,15 @@ def build():
              {'a': N(titled_para), 'b': N(ss_only)},
              notes=[step('Some of those listed as Special Services may be paraprofessionals; the '
                          'titles do not say.', 'hypothesis')])],
+        chart=(lambda ys: TP.series('Paraprofessionals, three counts', [C.fy(y) for y in ys], [
+            TP.track('Names the town printed (our reading)', [rpara.get(y) for y in ys],
+                     'estimate'),
+            TP.track('FTE, DESE comparison sheet', [radar[y]['para_fte'] if y in radar else None
+                                                    for y in ys]),
+            TP.track('People, DESE workforce file', [vs[y]['para_headcount'] if y in vs else None
+                                                     for y in ys])], 'count',
+            note='Names, FTE and people are three different things, set side by side and never '
+                 'reconciled.'))(span(rpara, {y: 1 for y in radar if y >= min(rpara)})),
         table=dict(caption='Paraprofessionals, three counts by year', views=[dict(
             key='three', label='Side by side, not reconciled', total_col=-1,
             kinds=['stated', 'ledger', 'ledger'],
@@ -673,6 +767,13 @@ def build():
              {'a': FTE(im['first']), 'b': FTE(im['last'])},
              notes=[step('Nothing published says the special education file’s staff sit inside '
                          'the all-programmes count.', 'gap', closes=EPIMS)])],
+        chart=TP.series('Paraprofessional FTE, two state files', [C.fy(y) for y in sorted(sprow)], [
+            TP.track('All programmes, comparison sheet',
+                     [sprow[y]['all_programmes'] for y in sorted(sprow)]),
+            TP.track('Special education, program file',
+                     [sprow[y]['special_education'] for y in sorted(sprow)])], FTE_UNIT,
+            note='Two DESE files with two definitions. Nothing published says one sits inside '
+                 'the other.'),
         table=dict(caption='Staff by programme, as the state codes them', views=[
             dict(key='paras', label='Paraprofessionals', total_col=-1, kinds=['ledger', 'ledger', 'stated'],
                  columns=['All programmes', 'Special education', 'Difference (ours)'],
@@ -740,6 +841,11 @@ def build():
              {'a': N(people), 'n': N(len(classes))},
              notes=[step('The file does not list which jobs its two “Other” classes hold.', 'gap',
                          closes='DESE’s data dictionary for its educator workforce file')])],
+        chart=TP.series('People and FTE, the state’s files', ['Teachers', 'Paraprofessionals'], [
+            TP.track('People', [vs[hy]['teacher_headcount'], vs[hy]['para_headcount']]),
+            TP.track('FTE', [vs[hy]['teacher_fte'], vs[hy]['para_fte']])], 'count', kind='bar',
+            note='%s: people from DESE’s workforce file, FTE from its comparison sheet.' % C.fy(hy),
+            note_figures={'y': F(hy)}),
         table=dict(caption='People by job class, the state’s workforce file', views=[dict(
             key='classes', label='Headcount', total_col=-1, kinds=['ledger'] * 3,
             columns=[C.fy(y) for y in range(hy0, hy + 1)],
@@ -788,6 +894,10 @@ def build():
              {'a%d' % i: P(ret('Teacher', y)) for i, y in enumerate(ys)}),
          con('The state’s file covers only %s to %s, and says nothing about why anybody left.'
              % (C.fy(ys[0]), C.fy(ys[-1])), ['why-gap'], {'a': F(ys[0]), 'b': F(ys[-1])})],
+        chart=TP.series('Share retained from the year before', [C.fy(y) for y in ys], [
+            TP.track('Paraprofessionals', [ret('Paraprofessional', y) for y in ys]),
+            TP.track('Teachers', [ret('Teacher', y) for y in ys])], '%', kind='bar',
+            note='DESE’s own rate, the only years its file covers.'),
         table=dict(caption='Share retained from the year before, by job class', views=[dict(
             key='retained', label='The state’s rate', total_col=-1, kinds=['ledger'] * len(ys),
             columns=[C.fy(y) for y in ys],
@@ -845,6 +955,11 @@ def build():
              notes=[step('The district holds per-building social worker caseloads; they are not '
                          'published.', 'gap',
                          closes='the caseload breakdown the district gave the School Committee')])],
+        chart=TP.series('Support staff names printed', [C.fy(y) for y in range(r0, r1 + 1)],
+                        [TP.track(lab.capitalize(), [get(k, y) for y in range(r0, r1 + 1)], 'estimate')
+                         for k, lab in sup[:4]], 'names',
+                        note='Names on the annual town report rosters, classified by printed title '
+                             '(our reading). A name is not a post.'),
         table=dict(caption='Support staff names printed, by year (our classification)', views=[dict(
             key='roles', label='Annual town report rosters', total_col=-1, kinds=['stated'] * 4,
             columns=['Counsellors', 'Psychologists', 'Social workers', 'Nurses'],
@@ -902,6 +1017,12 @@ def build():
                          'hypothesis')]),
          con('A printed name has no FTE and no fund, so a count of names is not a staffing level.',
              ['n-last', 'level-gap'])],
+        chart=TP.series('Names printed on the school rosters', [C.fy(y) for y in range(r0, r1 + 1)],
+                        [TP.track('Names, every school roster', [years[y]['names']
+                                                                 for y in range(r0, r1 + 1)])],
+                        'names', kind='bar',
+                        note='The annual town reports, central office left out. A name has no FTE '
+                             'and no fund.'),
         table=dict(caption='Names printed on the school rosters, by year', views=[dict(
             key='years', label='Annual town reports', total_col=0, kinds=['stated'] * 2,
             columns=['Names', 'Schools printed'],
@@ -955,6 +1076,9 @@ def build():
                          'directory does not say how the week is split.', 'hypothesis')]),
          con('It is a contact list: %s people are titled only “Special Services”, and none has an '
              'FTE.' % C.num(ss_only), ['d-ss', 'd-gap'], {'a': N(ss_only)})],
+        chart=TP.ranking('Directory rows by listing', [(n, L['listings'][n]) for n in lnames],
+                         'rows', note='The district’s own sheets, fetched %s. A person on two '
+                                      'listings has two rows.' % dlast, note_allow=(dlast,)),
         table=dict(caption='Rows on each listing of the district directory', views=[dict(
             key='listings', label='By date fetched', total_col=-1, kinds=['ledger'] * len(fetches),
             columns=[day(d) for d in fetches],
@@ -1035,6 +1159,13 @@ def build():
         'the state’s sheet. Nothing published says which posts were filled.'
         % ('%.1f' % dist[last]['fte'], C.fy(last), '%.1f' % pl['para_fte'], C.fy(rl)),
         hub_ladder,
+        chart=(lambda ys: TP.series('Teachers and paraprofessionals, state FTE', [C.fy(y) for y in ys], [
+            TP.track('Teachers, DESE teacher file', [dist[y]['fte'] if y in dist else None
+                                                     for y in ys]),
+            TP.track('Paraprofessionals, comparison sheet',
+                     [radar[y]['para_fte'] if y in radar else None for y in ys])], FTE_UNIT,
+            note='Assignments, not people or filled posts; neither file says which fund pays.'))(
+            span(dist, radar)),
         answer_figures={'a': FTE(dist[last]['fte']), 'y': F(last), 'c': FTE(pl['para_fte']),
                         'x': F(rl)})
 

@@ -1,6 +1,80 @@
 {
  "category": "school-spending",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2018",
+     "unit": "fiscal year",
+     "value": 2018
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "Each bar is a range of percent over or under the same year’s budget. The district’s own budget books, FY2018 to FY2025."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Line-years, the district’s restated figures",
+    "texts": [
+     "17 line-years",
+     "48 line-years",
+     "69 line-years",
+     "40 line-years",
+     "45 line-years",
+     "198 line-years",
+     "36 line-years",
+     "32 line-years",
+     "31 line-years",
+     "28 line-years",
+     "16 line-years",
+     "16 line-years"
+    ],
+    "values": [
+     17,
+     48,
+     69,
+     40,
+     45,
+     198,
+     36,
+     32,
+     31,
+     28,
+     16,
+     16
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "How far each line landed from its budget",
+  "type": "series",
+  "unit": "line-years",
+  "x": [
+   "<−50",
+   "−50/−25",
+   "−25/−10",
+   "−10/−5",
+   "−5/−2",
+   "±2",
+   "+2/+5",
+   "+5/+10",
+   "+10/+25",
+   "+25/+50",
+   "+50/+100",
+   ">+100"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

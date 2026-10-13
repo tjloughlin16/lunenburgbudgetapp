@@ -1,6 +1,71 @@
 {
  "category": "transportation",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "$11,000",
+     "unit": "",
+     "value": 11000
+    },
+    "b": {
+     "text": "$11,000",
+     "unit": "",
+     "value": 11000
+    },
+    "c": {
+     "text": "$976,500",
+     "unit": "",
+     "value": 976500.0
+    },
+    "s": {
+     "text": "$976,500",
+     "unit": "",
+     "value": 976500
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Voted $11,000 under the $976,500 contract price, then $11,000 moved back in, and $976,500 spent: the whole contract. Town general fund, FY2026."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Regular routes, FY2026",
+    "texts": [
+     "$976,500",
+     "$965,500",
+     "$976,500",
+     "$976,500"
+    ],
+    "values": [
+     976500.0,
+     965500,
+     976500,
+     976500
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Regular routes against the contract",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Contract price",
+   "Voted",
+   "After transfers",
+   "Spent"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -171,7 +236,7 @@
   "text": "The new bus fee did not lower what the school budget paid for buses in FY2026."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "bus-fee",

@@ -113,7 +113,8 @@ export function Packages({ onLoad }: { onLoad?: LoadPackage } = {}) {
           shares the change. Lunenburg rejected a{' '}
           {usdShort(MODEL.facts.overrideQ1.amount)} override &mdash;{' '}
           {usd(Math.round(MODEL.facts.tier1TaxIncrease))} a year on the average home,{' '}
-          {MODEL.facts.overrideQ1.yes} to {MODEL.facts.overrideQ1.no}. Against that:
+          {MODEL.facts.overrideQ1.yes} to {MODEL.facts.overrideQ1.no} on the Town&rsquo;s unofficial
+          tally. Against that:
         </p>
         <ul className="grid gap-2 sm:grid-cols-3 mt-2">
           {SHOWCASE.map(p => (

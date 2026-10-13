@@ -1,6 +1,95 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "1996",
+    "2024"
+   ],
+   "text": "The amount each question asked, in the state’s record. Nothing was put between May 1996 and May 2024."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Passed",
+    "texts": [
+     null,
+     "$308,000",
+     null,
+     null,
+     null,
+     "$100,331",
+     "$654,408",
+     "$948,136",
+     null,
+     null
+    ],
+    "values": [
+     null,
+     308000,
+     null,
+     null,
+     null,
+     100331,
+     654408,
+     948136,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Failed",
+    "texts": [
+     "$489,199",
+     null,
+     "$14,350",
+     "$81,949",
+     "$236,447",
+     null,
+     null,
+     null,
+     "$2,400,000",
+     "$3,300,000"
+    ],
+    "values": [
+     489199,
+     null,
+     14350,
+     81949,
+     236447,
+     null,
+     null,
+     null,
+     2400000,
+     3300000
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Override questions on the ballot",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "May 1989",
+   "Jul 1989",
+   "May 1990",
+   "May 1991, school",
+   "May 1991, general",
+   "Nov 1993",
+   "May 1996",
+   "May 2024",
+   "May 2026, Tier 1",
+   "May 2026, Tier 2"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

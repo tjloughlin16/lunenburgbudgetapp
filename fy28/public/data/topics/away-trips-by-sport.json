@@ -1,8 +1,72 @@
 {
  "category": "transportation",
  "chart": {
-  "id": "transportation-sports",
-  "source": "/data/transportation.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "Trips are ours: one bus a date and venue, shared by every Lunenburg team there. FY2027 is left off; the year is not over."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Away games, posted schedules",
+    "texts": [
+     "219",
+     "232",
+     "255",
+     "246",
+     "240"
+    ],
+    "values": [
+     219,
+     232,
+     255,
+     246,
+     240
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Bus trips",
+    "texts": [
+     "148",
+     "164",
+     "189",
+     "181",
+     "176"
+    ],
+    "values": [
+     148,
+     164,
+     189,
+     181,
+     176
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Away games and bus trips by year",
+  "type": "series",
+  "unit": "count",
+  "x": [
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
@@ -171,7 +235,7 @@
   "text": "The posted schedules list 240 away games in FY2026, about 176 bus trips by our estimate."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "away-trips-by-sport",

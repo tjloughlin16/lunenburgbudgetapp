@@ -1,8 +1,155 @@
 {
  "category": "department-budgets",
  "chart": {
-  "id": "town-budgets-total",
-  "source": "/data/town-budgets.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Every bar is the grand total the report prints. Only the years that tie to their parts are compared on this page."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Ties to its parts",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$39,864,899",
+     null,
+     null,
+     "$44,024,349",
+     null
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     39864898.81,
+     null,
+     null,
+     44024349.19,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Printed, not tied to its parts",
+    "texts": [
+     "$26,582,152",
+     "$27,489,441",
+     "$28,177,263",
+     "$29,079,384",
+     "$32,025,895",
+     "$33,802,328",
+     "$35,690,394",
+     "$36,804,409",
+     "$38,058,164",
+     "$38,658,115",
+     null,
+     "$41,568,745",
+     "$42,584,049",
+     null,
+     null
+    ],
+    "values": [
+     26582151.74,
+     27489441.0,
+     28177263.0,
+     29079384.0,
+     32025895.0,
+     33802328.0,
+     35690393.7,
+     36804408.83,
+     38058164.3,
+     38658115.02,
+     null,
+     41568744.92,
+     42584048.95,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Printed as prose, no table",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$49,374,465"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     49374465.0
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "The voted total by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2012",
+   "FY2013",
+   "FY2014",
+   "FY2015",
+   "FY2016",
+   "FY2017",
+   "FY2018",
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {

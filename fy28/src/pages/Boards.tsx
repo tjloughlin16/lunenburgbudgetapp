@@ -134,14 +134,14 @@ function Index({ d }: { d: Payload }) {
           have to read sixty cards to find out they can. */}
       {openTotal > 0 && (
         <p className="text-[14px] mt-5 max-w-3xl">
-          <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/analysis/open-seats">
+          <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/board-records/board-open-seats">
             {openTotal === 1 ? 'One open seat on a town board' : `${openTotal} open seats across ${openBoards} town boards`} &rarr;
           </a>
           <span style={{ color: 'var(--text-secondary)' }}> &mdash; the boards with a chair going spare, and when the filled ones come up.</span>
         </p>
       )}
       <p className="text-[14px] mt-5 max-w-3xl">
-        <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/boards/compared">The boards, compared &rarr;</a>
+        <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/board-records">Board records &rarr;</a>
         <span style={{ color: 'var(--text-secondary)' }}> &mdash; every board beside the others on what the record measures, starting with which meetings got minutes.</span>
       </p>
       <Subscribe path="/feeds/all.xml" what="any board posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in — each board’s own page has a feed of its own" />
@@ -235,7 +235,7 @@ function SeatBanner({ b }: { b: Board }) {
   const n = j?.open_seats ?? 0
   if (!n) return null
   return (
-    <a href="/analysis/open-seats" className="card p-3 block no-underline" style={{ borderColor: 'var(--series-cost)', borderWidth: 2 }}>
+    <a href="/board-records/board-open-seats" className="card p-3 block no-underline" style={{ borderColor: 'var(--series-cost)', borderWidth: 2 }}>
       <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>
         {n === 1 ? 'One open board seat available' : `${n} open board seats available`}
       </p>
@@ -423,7 +423,7 @@ function RecordCard({ b }: { b: Board }) {
           {ar.said_none > 0 ? <>; &ldquo;No&nbsp;Report&nbsp;Submitted&rdquo; {ar.said_none} time{ar.said_none === 1 ? '' : 's'}</> : null}.
         </p>
       )}
-      <a className="block text-[12px] underline mt-2" style={kicker} href="/boards/compared">compared with every board &rarr;</a>
+      <a className="block text-[12px] underline mt-2" style={kicker} href="/board-records/board-minutes-posted">compared with every board &rarr;</a>
     </div>
   )
 }

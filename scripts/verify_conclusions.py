@@ -217,31 +217,61 @@ def main():
     # phrase that answered one persona, asserted against the page source and the payload
     # together -- the meeting quotes and the claims live in the JSON, so checking only the
     # .tsx would report a met test as unmet.
-    page = os.path.join(ROOT, 'fy28', 'src', 'pages', 'WhatItAllAddsUpTo.tsx')
-    hay = ' '.join((open(page, encoding='utf-8').read()
-                    + json.dumps(m, ensure_ascii=False)).split()).lower()
+    #
+    # THE HAYSTACK IS WHAT THE PAGE RENDERS. Until 13 October 2026 it was the .tsx plus
+    # what-it-all-adds-up-to.json -- but /what-it-all-adds-up-to has rendered ONLY its `DATA`
+    # payload, one-big-report.json, since 13 September 2026, so this was asserting text in a
+    # file no reader is shown (rule 13: check what a reader sees). It is read off the page's
+    # own `DATA` constant rather than named here.
+    #
+    # AND TWO NEEDLES MOVED PAGE. Tests 1 and 6 were satisfied by the health insurance
+    # report's conclusions, carried in the master payload while `healthlever` was a routed
+    # report. /health-insurance is a hub since 13 October 2026 and the fact has one page
+    # now, /health-insurance/school-health-insurance -- so they are asserted THERE, in that
+    # page's own words. That is a change of target, not a pass: the One Big Report no longer
+    # carries the fact, and nothing here says it does.
+    def rendered(tsx, payload):
+        src = open(os.path.join(ROOT, 'fy28', 'src', 'pages', tsx), encoding='utf-8').read()
+        if payload is None:
+            import re as _re
+            mm = _re.search(r"^const DATA = '/data/([^']+)'", src, _re.M)
+            if not mm:
+                FAILS.append('%s declares no DATA payload to check' % tsx)
+                return src
+            payload = mm.group(1)
+        with open(os.path.join(PUB, payload), encoding='utf-8') as fh:
+            data = json.load(fh)
+        return ' '.join((src + json.dumps(data, ensure_ascii=False)).split()).lower()
+
+    MASTER_PAGE = ('/what-it-all-adds-up-to', 'WhatItAllAddsUpTo.tsx', None)
+    HEALTH_TOPIC = ('/health-insurance/school-health-insurance', 'Topic.tsx',
+                    'topics/school-health-insurance.json')
     NEEDED = [
         ('1. the resident who thinks the schools are not straight with them: the worst '
          'fact is on the first screen',
-         'is not in the school budget at all'),
+         'of it sits outside the school budget', HEALTH_TOPIC),
         ('2. the second-hand reader: one sentence off the first screen that stays true '
          'when repeated',
-         'the share rose further than the count'),
+         'the share rose further than the count', MASTER_PAGE),
         ('3. the resident close to the boards: findings name mechanisms, not people',
-         'what would settle it'),
+         'what would settle it', MASTER_PAGE),
         ('4. the Finance Committee member: every limit is a named document to ask for',
-         'what we cannot answer'),
+         'what we cannot answer', MASTER_PAGE),
         ('5. the School Committee member: the written analyses are listed, not implied',
-         'reaching conclusions in prose rather than in a published payload'),
+         'reaching conclusions in prose rather than in a published payload', MASTER_PAGE),
         ('6. the Select Board member: a careless town-versus-school comparison is harder',
-         'understates what the town raises for the schools'),
+         'is appropriated to the town, not to the schools', HEALTH_TOPIC),
     ]
-    for label, needle in NEEDED:
+    hay = {}
+    for label, needle, (url, tsx, payload) in NEEDED:
         CHECKS[0] += 1
-        ok = ' '.join(needle.split()).lower() in hay
-        print('  %s  %s' % ('OK  ' if ok else 'GONE', label))
+        if url not in hay:
+            hay[url] = rendered(tsx, payload)
+        ok = ' '.join(needle.split()).lower() in hay[url]
+        print('  %s  %s  [%s]' % ('OK  ' if ok else 'GONE', label, url))
         if not ok:
-            FAILS.append('persona review: %s — the text that satisfied it is gone' % label)
+            FAILS.append('persona review: %s — the text that satisfied it is gone from %s'
+                         % (label, url))
 
     CHECKS[0] += 1
     t = m['totals']

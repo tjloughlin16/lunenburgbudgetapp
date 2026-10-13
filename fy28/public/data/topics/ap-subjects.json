@@ -1,6 +1,72 @@
 {
  "category": "school-programs",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Exams sat, from DESE’s participation file; where it suppresses a family, the performance file’s count."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "SY2015",
+    "texts": [
+     "65 exams",
+     "69 exams",
+     "21 exams",
+     "30 exams",
+     "4 exams",
+     "22 exams"
+    ],
+    "values": [
+     65,
+     69,
+     21,
+     30,
+     4,
+     22
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "SY2025",
+    "texts": [
+     "59 exams",
+     "58 exams",
+     "21 exams",
+     "10 exams",
+     "5 exams",
+     "1 exams"
+    ],
+    "values": [
+     59,
+     58,
+     21,
+     10,
+     5,
+     1
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "AP exams by subject family",
+  "type": "series",
+  "unit": "exams",
+  "x": [
+   "History",
+   "English",
+   "Math and CS",
+   "Science",
+   "Arts",
+   "Languages"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

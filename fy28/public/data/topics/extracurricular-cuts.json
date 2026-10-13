@@ -1,6 +1,38 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "text": "The FY2028 gap as our model projects it; the grouping into extras is ours."
+  },
+  "parts": [
+   {
+    "label": "Every extra still funded (ours)",
+    "share": "40%",
+    "text": "$376,207",
+    "value": 376207
+   },
+   {
+    "label": "Left open (ours)",
+    "share": "60%",
+    "text": "$553,863",
+    "value": 553863
+   }
+  ],
+  "title": "Extras against the projected gap",
+  "total": "$930,070",
+  "type": "parts",
+  "unit": "$"
+ },
  "conclusions": [
   {
    "figures": {
@@ -25,9 +57,9 @@
   {
    "figures": {
     "a": {
-     "text": "$554,066",
+     "text": "$553,863",
      "unit": "",
-     "value": 554066
+     "value": 553863
     },
     "y": {
      "text": "FY2028",
@@ -41,7 +73,7 @@
     "gap28",
     "share"
    ],
-   "text": "Cut entirely, they leave $554,066 of the FY2028 gap open (ours)."
+   "text": "Cut entirely, they leave $553,863 of the FY2028 gap open (ours)."
   },
   {
    "figures": {
@@ -162,9 +194,9 @@
     "text": "the projected gap, FY2028 (ours)"
    },
    "value": {
-    "text": "$930,273",
+    "text": "$930,070",
     "unit": "",
-    "value": 930273
+    "value": 930070
    }
   },
   {
@@ -178,7 +210,7 @@
    "value": {
     "text": "40.4%",
     "unit": "",
-    "value": 40.44049434950816
+    "value": 40.449321018848046
    }
   },
   {
@@ -196,9 +228,9 @@
     "text": "of the FY2028 gap left after (ours)"
    },
    "value": {
-    "text": "$554,066",
+    "text": "$553,863",
     "unit": "",
-    "value": 554066
+    "value": 553863
    }
   }
  ],
@@ -212,7 +244,7 @@
    "b": {
     "text": "40.4%",
     "unit": "",
-    "value": 40.44049434950816
+    "value": 40.449321018848046
    },
    "y": {
     "text": "FY2028",

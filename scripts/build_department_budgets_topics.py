@@ -196,6 +196,30 @@ def build():
             note='Lines that appear in both omnibus budgets under the same printed label. '
                  'A line whose label changed is not joined.')])
 
+    # ------------------------------------------------ charts (topic.py, CHARTS)
+    # Every value below is read from town-budgets.json or a group's own payload; nothing is
+    # typed. A line's year-by-year value is taken only where the printed label matches
+    # exactly (spacing aside): an unmatched year is a GAP, never a zero.
+    XY = [C.fy(y) for y in ys]
+    key = lambda s: ''.join(ch for ch in (s or '').lower() if ch.isalpha())
+
+    def line_by_year(s, label):
+        out_ = []
+        for y in ys:
+            hit = [l['amount'] for l in DP[s]['lines'][str(y)]
+                   if l['amount'] and key(l['label']) == key(label)]
+            out_.append(hit[0] if len(hit) == 1 else None)
+        return out_
+
+    def against_cap(s, title, name):
+        v = [D[s]['series'][str(y)] for y in ys]
+        path = [v[0] * (1 + CAP / 100) ** (y - ys[0]) for y in ys]
+        return TP.series(title, XY, [
+            TP.track(name, v, 'published', 'bar'),
+            TP.track('Growing at the levy cap from %s' % Y0, path, 'estimate', 'line')], '$',
+            note='The dashed line is ours: the %s figure grown at the cap each year.' % Y0,
+            note_allow=(Y0,))
+
     # ------------------------------------------------ the whole budget: shares
     top4 = sorted(D.values(), key=lambda d: -d['last'])[:4]
     top4_share = sum(d['share'] for d in top4)
@@ -323,6 +347,9 @@ def build():
     status = {t['fy']: t['status'] for t in TB['totals']}
     if sorted(tots) != list(range(2012, 2027)):
         fail('the voted totals no longer run FY2012-FY2026')
+    if {status[y] for y in tots if y != 2026} != {'checked', 'check failed'} or \
+            status[2026] in ('checked', 'check failed'):
+        fail('the voted totals carry a status this page does not chart')
     if not (status[2022] == status[2025] == 'checked'):
         fail('FY2022 and FY2025 are no longer the checked totals this page compares')
     steps = {y: (tots[y] / tots[y - 1] - 1) * 100 for y in range(2013, 2027)}
@@ -362,7 +389,17 @@ def build():
              allow=('FY2022', 'FY2025')),
          con('The annual report prints FY2026 as prose: no department table sits beneath it.',
              ['t26', 'detail'], allow=('FY2026',))],
-        chart=dict(id='town-budgets-total', source='/data/town-budgets.json'),
+        chart=TP.series('The voted total by year', [C.fy(y) for y in sorted(tots)], [
+            TP.track('Ties to its parts', [tots[y] if status[y] == 'checked' else None
+                                           for y in sorted(tots)], 'published', 'bar'),
+            TP.track('Printed, not tied to its parts',
+                     [tots[y] if status[y] == 'check failed' else None for y in sorted(tots)],
+                     'published', 'bar'),
+            TP.track('Printed as prose, no table', [tots[y] if y == 2026 else None
+                                                    for y in sorted(tots)], 'published', 'bar')],
+            '$', stacked=True,
+            note='Every bar is the grand total the report prints. Only the years that tie to '
+                 'their parts are compared on this page.'),
         table=dict(caption='The voted total, by year', views=[dict(
             key='total', label='Voted', total_col=0, kinds=['ledger', 'ledger', 'ledger'],
             columns=['Voted', 'Change', 'Ties to its parts'],
@@ -410,6 +447,7 @@ def build():
                          'rather than the town; the State aid shelf has its share.', 'gap',
                          allow=('70',),
                          closes='the Chapter 70 summary for the year, on the State aid shelf')])],
+        chart=against_cap('schools', 'The school group against the cap', 'Voted, the school group'),
         table=lines_table('schools', 'The school group’s lines'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('schools')],
         finding_figures={'a': P(sch['share']), 'b': P(sch['rate'])}, finding_allow=(Y0, Y1))
@@ -474,6 +512,9 @@ def build():
     if DP['unclassified']['movers'][0]['label'] != 'Group Health Insurance':
         fail('group health is no longer the line that moved most in benefits')
     gh_share = 100 * gh['last'] / bn['last']
+    gh_y = line_by_year('unclassified', 'Group Health Insurance')
+    if (gh_y[0], gh_y[-1]) != (gh['first'], gh['last']):
+        fail('group health by year no longer matches its mover row')
     out['town-employee-benefits'] = TP.page(
         'town-employee-benefits',
         'Employee benefits grew %s a year, the most dollars past the cap of any group; group '
@@ -504,6 +545,11 @@ def build():
                                 'year')]),
          con('Which employees and retirees the group health line covers is not printed in the '
              'omnibus.', ['whose'])],
+        chart=TP.series('Group health inside the benefits group', XY, [
+            TP.track('The whole group', [D['unclassified']['series'][str(y)] for y in ys],
+                     'published', 'bar'),
+            TP.track('Group Health Insurance', line_by_year('unclassified', 'Group Health Insurance'),
+                     'published', 'bar')], '$'),
         table=lines_table('unclassified', 'The benefits group’s lines'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('unclassified')],
         finding_figures={'a': P(bn['rate']), 'b': P(gh_share, 0)})
@@ -513,6 +559,10 @@ def build():
     mv = {m['label']: m for m in DP['maturing-debt']['movers']}
     pp, ii = mv['Principal-Loans'], mv['Interest-Loans']
     fall = db['first'] - db['last']
+    pr_y, in_y = line_by_year('maturing-debt', pp['label']), line_by_year('maturing-debt', ii['label'])
+    if (pr_y[0], pr_y[-1], in_y[0], in_y[-1]) != (pp['first'], pp['last'], ii['first'], ii['last']) \
+            or None in pr_y + in_y:
+        fail('principal and interest by year no longer match their mover rows')
     if [d['slug'] for d in D.values() if d['rate'] < 0] != ['maturing-debt']:
         fail('debt service is no longer the only group that fell')
     if not (-pp['change'] > fall * 0.8):
@@ -541,6 +591,12 @@ def build():
                          'shape; the schedule that would show it is not read.', 'hypothesis')]),
          con('How much of it is paid outside the levy limit, by exclusion vote, is not shown '
              'here.', ['excl', 'which'])],
+        chart=TP.series('Principal and interest by year', XY, [
+            TP.track('Principal', pr_y, 'published', 'bar'),
+            TP.track('Interest', in_y, 'published', 'bar'),
+            TP.track('The whole group', [db['series'][str(y)] for y in ys], 'published', 'line')],
+            '$', stacked=True,
+            note='The whole group also holds temporary-loan interest and fees, too small to see.'),
         table=lines_table('maturing-debt', 'The debt group’s lines'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('maturing-debt')],
         finding_figures={'a': U(db['first']), 'b': U(db['last'])}, finding_allow=(Y0, Y1))
@@ -583,6 +639,11 @@ def build():
              ['rate', 'share', 'excess'],
              {'a': P(gg['rate']), 'b': P(gg['share']), 'c': U(gg['excess'])},
              notes=[why_gap('each office')])],
+        chart=TP.ranking('Largest rises by line',
+                         [(m['label'].lstrip('| '), m['change']) for m in mvs[:10]], '$',
+                         highlight=a1['label'],
+                         note='The ten lines that rose most, %s to %s, under the same printed '
+                              'label in both years.' % (Y0, Y1), note_allow=(Y0, Y1)),
         table=lines_table('general-government', 'General government’s lines'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('general-government'),
                  src['d-staff']],
@@ -617,6 +678,12 @@ def build():
              notes=[why_gap('the highway line')]),
          con('Snow removal is voted at %s; state law lets a town spend past its snow budget.'
              % C.usd(snow['amount']), ['snow'], {'a': U(snow['amount'])})],
+        chart=TP.ranking('Rises by line and the whole group',
+                         [(m['label'], m['change']) for m in DP['public-works']['movers']]
+                         + [('The whole public works group', pw['change'])], '$',
+                         highlight=('General Highway Maintenance', 'The whole public works group'),
+                         note='Change %s to %s. A line that fell draws to the left of zero.'
+                              % (Y0, Y1), note_allow=(Y0, Y1)),
         table=lines_table('public-works', 'Public works’ lines'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('public-works')],
         finding_figures={'a': P(pw['rate'])})
@@ -624,6 +691,9 @@ def build():
     # ------------------------------------------------ facilities and grounds
     fg = D['facilities-grounds']
     fl = {l['label']: l['amount'] for l in DP['facilities-grounds']['lines']['2025'] if l['amount']}
+    if set(fl) != {'Facilities & Grounds', 'Public Buildings', 'Park Department'} or \
+            abs(sum(fl.values()) - fg['last']) > 0.5:
+        fail('the three facilities lines no longer foot to the group total')
     text22 = norm(open(os.path.join(AR, '4129-fy-2022-annual-town-report.txt'),
                        encoding='utf-8').read())
     a7 = ('ARTICLE 7. To see if the Town will vote to approve a reorganization of the Public '
@@ -659,6 +729,10 @@ def build():
              ['fgl', 'pb', 'park']),
          con('A group voted %s files no report of its own and prints no staff count.'
              % C.usd(fg['last']), ['report', 'staff'], {'a': U(fg['last'])})],
+        chart=TP.parts('Facilities and grounds by line',
+                       [(k, fl[k]) for k in ('Facilities & Grounds', 'Public Buildings',
+                                             'Park Department')], '$',
+                       note='%s, as voted.' % Y1, note_allow=(Y1,)),
         table=lines_table('facilities-grounds', 'Facilities and grounds’ lines'),
         sources=[src['ar22'], src['ar23'], src['ar24'], src['ar25'], src['tb'],
                  dept_src('facilities-grounds')],
@@ -684,6 +758,8 @@ def build():
              'rose.', ['v0', 'v1', 'contract'],
              notes=[step('A step in a collection contract’s price would produce this shape; '
                          'nothing here tests it.', 'hypothesis')])],
+        chart=against_cap('solid-waste', 'Trash and recycling against the cap',
+                          'Voted, Recycling Program'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('solid-waste')],
         finding_figures={'a': P(sw['rate']), 'b': U(sw['first']), 'c': U(sw['last'])})
 
@@ -705,6 +781,7 @@ def build():
              ['v0', 'v1'], notes=[why_gap('the library line')]),
          con('Its only printed staff count is from FY%s.' % lib['last_fy'], ['staff'],
              allow=('FY%s' % lib['last_fy'],))],
+        chart=against_cap('library', 'The library against the cap', 'Voted, the library'),
         sources=[src['ar22'], src['ar24'], src['tb'], dept_src('library'), src['d-staff']],
         finding_figures={'a': U(lb['last']), 'b': P(lb['share']), 'c': P(lb['rate'])},
         finding_allow=(Y1,))
@@ -739,6 +816,13 @@ def build():
              {'a': U(nash), 'b': P(100 * nash / hs['last'], 0)}),
          con('Central Purchasing grew %s a year, under the cap.' % C.pct(cp['rate']),
              ['cp-rate', 'cp'], {'a': P(cp['rate'])})],
+        chart=TP.series('The three smaller groups by year', XY, [
+            TP.track('Council on Aging and veterans', [asst['series'][str(y)] for y in ys],
+                     'published', 'bar'),
+            TP.track('Health and sanitation', [hs['series'][str(y)] for y in ys], 'published',
+                     'bar'),
+            TP.track('Central Purchasing', [cp['series'][str(y)] for y in ys], 'published',
+                     'bar')], '$'),
         table=dict(caption='The three smaller groups', views=[dict(
             key='small', label='%s to %s' % (Y0, Y1), total_col=1,
             kinds=['ledger'] * 4, columns=[Y0, Y1, 'A year', 'Above the cap (ours)'],
@@ -810,6 +894,9 @@ def build():
     # what was looked for and not found, which is all this page can stand behind (rule 8).
     SHOW = {'a department with a budget and no paper trail':
             'a department; no report or count printed'}
+    if abs(sum(names[n]['last'] for n in counted_groups) + sum(d['last'] for d in uncounted)
+           - total) > 0.01 or len(spend) + len(bought) + len(quiet) != len(uncounted):
+        fail('the counted and uncounted groups no longer make up the voted total')
     if [d['slug'] for d in quiet] != ['facilities-grounds']:
         fail('Facilities is no longer the one uncounted group that is a department')
     out['town-headcount-coverage'] = TP.page(
@@ -835,6 +922,13 @@ def build():
              notes=[step('A group with a count is not a group that is counted: General '
                          'Government prints two offices’ staff and none for the rest.', 'gap',
                          closes='each office’s establishment of posts')])],
+        chart=TP.parts('The voted budget by staff count',
+                       [('Groups with a staff count', sum(names[n]['last'] for n in counted_groups)),
+                        ('Spending categories, nobody employed', sum(d['last'] for d in spend)),
+                        ('Bought as a service', sum(d['last'] for d in bought)),
+                        ('Facilities and grounds, no count', quiet[0]['last'])], '$',
+                       note='Each group’s %s vote, placed by whether a staff count stands behind '
+                            'it. The placing is ours.' % Y1, note_allow=(Y1,)),
         table=dict(caption='Groups with no staff count', views=[dict(
             key='none', label=Y1, total_col=0, kinds=['ledger', 'ledger'],
             columns=['Voted', 'Why there is no count'],

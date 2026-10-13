@@ -194,16 +194,20 @@ QUOTES = [
 
 # The analyses this page rests on, quoted so a reader can go and read them.
 RELATED = [
-    ('fy27-and-the-override',
-     'Where the FY27 state aid figures come from — the Town Manager’s own revenue '
-     'arithmetic, including the enacted budget landing above the Governor’s proposal'),
+    # A path is a HUB OR TOPIC PAGE: the long reports those pages absorbed are UNLISTED
+    # (13 October 2026) and have no door, so the card goes to the page that answers the
+    # question now. fy27-and-the-override's state aid half is /state-aid/chapter-70-by-year,
+    # which carries the Governor's FY2027 figure beside the final state budget's.
+    ('/state-aid/chapter-70-by-year',
+     'Where the FY27 Chapter 70 figure comes from — the Governor’s proposal, and the '
+     'final state budget landing above it'),
     ('connecting-the-budget',
      'Why state aid cannot be traced to anything it paid for: the aid accounts share no '
      'organisation code with any expense account'),
     ('show-your-work',
      'Every rate the projection uses and what each one rests on — including the state '
      'aid growth rate, which is recorded there as having no stated source'),
-    ('free-cash',
+    ('/town-reserves/free-cash-sources',
      'The free cash proof these cherry sheet variances are one line of'),
 ]
 
@@ -440,7 +444,8 @@ def variance(c):
         line=CL8, town=lun, peers=peer_rows,
         years=sorted({r['year'] for r in rows}),
         rank=1 + ranked.index(lun), of=len(ranked),
-        source_file=rows[0]['source_file'], source_ref=towns[TOWN][0]['source_ref'],
+        # Lunenburg's own file. `rows[0]` is whichever town sorts first -- it was Ayer's.
+        source_file=towns[TOWN][0]['source_file'], source_ref=towns[TOWN][0]['source_ref'],
         peer_max_swing=max(r['swing'] for r in peer_rows),
         town_names=[r['town'] for r in ranked])
 
@@ -748,8 +753,20 @@ def build():
 
     with open(REPORTS, encoding='utf-8') as fh:
         by_id = {r['id']: r for r in json.load(fh)['reports']}
+    with open(os.path.join(os.path.dirname(REPORTS), 'topics.json'), encoding='utf-8') as fh:
+        tj = json.load(fh)
+    by_path = {x['path']: x for x in tj['categories'] + list(tj['topics'].values())
+               if x.get('ready')}
     related = []
     for rid, why in RELATED:
+        if rid.startswith('/'):
+            t = by_path.get(rid)
+            if t is None:
+                fail(f'topics.json has no ready page at {rid}, which this page is built from')
+            # A topic page carries no word count, revision date or PDF of its own.
+            related.append(dict(id=rid, title=t['title'], why=why, words=None,
+                                updated=None, url=rid, pdf=None))
+            continue
         r = by_id.get(rid)
         if r is None:
             fail(f'reports.json no longer carries {rid}, which this page is built from')

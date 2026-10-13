@@ -194,11 +194,14 @@ def build(as_of):
                      'fy0': figure(fys[0], 'FY%d' % fys[0]), 'fy1': figure(fys[-1], 'FY%d' % fys[-1]),
                      'all_k': figure(total_k, C.num(total_k)), 'all_n': figure(total_n, C.num(total_n)),
                      'all_share': figure(100 * total_k / total_n, C.pct(100 * total_k / total_n, 0)),
-                     'boards': figure(len(ranked), C.num(len(ranked)))},
+                     # THE TOTAL IS OVER EVERY BOARD WITH A MEETING (`table`), not the
+                     # ranked ones: this sentence said `all 30 boards with twenty or more
+                     # meetings` over a sum that covered all 39. Fixed 13 October 2026.
+                     'boards': figure(len(table), C.num(len(table)))},
             figure='share', kind='measured', bearing='sizes',
-            detail='Across all %s boards with twenty or more meetings, FY%d to FY%d, %s of %s meetings have minutes posted, %s. '
+            detail='Across all %s boards with a posted meeting, FY%d to FY%d, %s of %s meetings have minutes posted, %s. '
                    'The %s posted minutes for %s of %s of its own — %s — over the same four years.'
-                   % (C.num(len(ranked)), fys[0], fys[-1], C.num(total_k), C.num(total_n), C.pct(100 * total_k / total_n, 0),
+                   % (C.num(len(table)), fys[0], fys[-1], C.num(total_k), C.num(total_n), C.pct(100 * total_k / total_n, 0),
                       best['name'], C.num(best['with_minutes']), C.num(best['meetings']), C.pct(best['share'])),
             basis='The town’s Agenda Center, every agenda and every set of minutes it lists per board (sources/meetings/index.csv). '
                   'A meeting is a date with a posted agenda; it has minutes if minutes are listed for the same board and date. '
@@ -259,7 +262,7 @@ def build(as_of):
         about='How the boards post: for every board the town posts for, the share of its meetings that got minutes, by fiscal year, and how many were recorded.',
         grain='COUNTS of documents on the town’s Agenda Center — a meeting is a date with a posted agenda; minutes are minutes listed for that date. Not whether a meeting happened, and not what the minutes say.',
         as_of=as_of, lag_days=LAG_DAYS, fys=fys, min_meetings=MIN_MEETINGS,
-        totals=dict(meetings=total_n, with_minutes=total_k, share=round(100 * total_k / total_n, 1), boards_ranked=len(ranked)),
+        totals=dict(meetings=total_n, with_minutes=total_k, share=round(100 * total_k / total_n, 1), boards=len(table), boards_ranked=len(ranked)),
         boards=table,
         unmatched=[dict(board=b, documents=n) for b, n in unmatched.most_common()],
         # WHAT THE BOARD ITSELF SAYS ABOUT ITS OWN NUMBER. The Chair of the Select Board

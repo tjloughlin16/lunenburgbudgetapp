@@ -520,7 +520,7 @@ def build_students(db, mf):
                       'number did.'
                       % (C.num(last['swd']), C.fy(last['fy']), C.num(lowest['swd']),
                          C.fy(lowest['fy'])),
-                detail='%s more children, on an enrollment that went from %s to %s. The '
+                detail='%s more children, on a district count that went from %s to %s (the file\u2019s own total of students in and out of district, not DESE\u2019s October headcount). The '
                        'share therefore moved from %s to %s \u2014 %s. Both halves of '
                        'that matter to anyone reading a rising percentage as a rising '
                        'caseload: the caseload did rise, and had enrollment held where it '

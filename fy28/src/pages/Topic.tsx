@@ -21,6 +21,7 @@ import {
   type FigureTableData, type LadderData, type LadderEvidence, type LadderFact, type LadderUnit,
 } from '../components/report'
 import { ANALYSIS_CHARTS } from '../components/analysisCharts'
+import { InlineTopicChart, isInline, type InlineChart } from '../components/TopicCharts'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
 
 type IndexTopic = {
@@ -36,7 +37,9 @@ type IndexCategory = {
 type Index = { categories: IndexCategory[]; topics: Record<string, IndexTopic> }
 
 type Said = { quote: string; board: string; date: string; href: string; label: string; caption?: boolean }
-type ChartRef = { id: string; source: string } | null
+/** A bespoke component in ANALYSIS_CHARTS fed by a payload, or an inline spec written by
+ *  scripts/topic.py (series, ranking, parts, image) and drawn by TopicCharts. */
+type ChartRef = { id: string; source: string } | InlineChart | null
 type TopicPayload = {
   kind: 'topic'; id: string; title: string; category: string; path: string; shelves: string[]
   finding: LadderUnit; chart: ChartRef; facts: LadderFact[]
@@ -53,8 +56,13 @@ type HubPayload = {
 const link = { color: 'var(--series-cost)' }
 const eyebrow = 'text-[11px] font-semibold uppercase tracking-widest'
 
-/** A chart from the site's registry, fed by the payload it names. */
+/** The page's signature chart: inline, or from the site's registry. */
 function TopicChart({ chart, alt }: { chart: ChartRef; alt: string }) {
+  if (isInline(chart)) return <InlineTopicChart c={chart} />
+  return <RegistryChart chart={chart} alt={alt} />
+}
+
+function RegistryChart({ chart, alt }: { chart: { id: string; source: string } | null; alt: string }) {
   const [data, setData] = useState<unknown>(null)
   useEffect(() => {
     if (!chart) return

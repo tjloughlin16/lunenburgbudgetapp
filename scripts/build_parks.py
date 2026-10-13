@@ -146,7 +146,7 @@ def build():
             detail='The annual reports print the fund as “Park User Fees” under Parks & Recreation: balance forward, receipts, disbursements and balance carried, FY2011 to FY2023, every year tying to the report’s own totals. '
                    'FY2023 closed at %s. The FY2024 and FY2025 reports print a balance only, transcribed here; FY2025’s %s is not the %s the FY26 report opens with, and nothing in the archive says why — an audit adjustment, an encumbrance, or a misread digit all fit.'
                    % (C.usd(last['closing']), C.usd(fy25['closing']), C.usd(f['opening'])),
-            basis='sources/data/special-revenue-read.csv (fund “Park User Fees”, FY2011–FY2023); sources/data/special-revenue-funds.csv rows 1500 for FY2024 and FY2025, column v2; the FY26 report’s ACCOUNT BALANCE.',
+            basis='sources/data/special-revenue-read.csv (fund “Park User Fees”, FY2011–FY2023); sources/data/special-revenue-funds.csv rows 1500 for FY2024 and FY2025, the printed fund balance at 30 June; the FY26 report’s ACCOUNT BALANCE.',
             not_shown='Receipts and spending for FY2024 and FY2025: the reports for those years print a balance and no flow.',
             allow=('FY2011', 'FY2023', 'FY2024', 'FY2025', 'FY26', '2025', '30', '1500'),
         ),

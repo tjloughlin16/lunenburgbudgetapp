@@ -1,6 +1,99 @@
 {
  "category": "health-insurance",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2024",
+    "FY2025"
+   ],
+   "text": "FY2024’s health accounts alone are our subtraction from the ledger. Which accounts FY2025’s figure counts is not established."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Lunenburg, as filed",
+    "texts": [
+     "4.3%",
+     "15.4%",
+     null,
+     "5.0%"
+    ],
+    "values": [
+     4.32,
+     15.45,
+     null,
+     4.99
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Lunenburg FY2024, Medicare and life added",
+    "texts": [
+     null,
+     null,
+     "15.5%",
+     null
+    ],
+    "values": [
+     null,
+     null,
+     15.53,
+     null
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Lunenburg, health accounts alone",
+    "texts": [
+     null,
+     null,
+     "1.2%",
+     null
+    ],
+    "values": [
+     null,
+     null,
+     1.2468663686437287,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Median municipality",
+    "texts": [
+     "1.8%",
+     "5.6%",
+     "5.3%",
+     "7.7%"
+    ],
+    "values": [
+     1.81,
+     5.58,
+     5.27,
+     7.69
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Yearly rise in filed health spending",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

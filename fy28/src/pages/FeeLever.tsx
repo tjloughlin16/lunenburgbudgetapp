@@ -39,7 +39,7 @@ export function FeeLever() {
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={usdShort(FEES.total)} tone="var(--series-revenue)"
             headline={<>Every fee at its peak adds {usdShort(FEES.total)}: {pct(FEES.shareOfGap, 0)} of the gap, and none of the programmes cut.</>}>
-            {FEES.cases.map(c => `${c.label}: ${usd(Math.max(0, c.gain))} more than today${c.reachable ? ', at a fee that makes it pay for itself' : ', and it cannot reach self-funding at any price'}.`).join(' ')} Worth doing on the model&rsquo;s arithmetic; not a solution, because the gap grows {pct(GAPS[1].growthRate, 1)} a year and a fee does not.
+            {FEES.cases.map(c => `${c.label}: ${usd(Math.max(0, c.gain))} more than today${c.reachable ? ', at a fee that makes it pay for itself' : ', and it cannot reach self-funding at any price'}.`).join(' ')} On the model&rsquo;s arithmetic a fee is a sum, not a rate: the gap grows {pct(GAPS[1].growthRate, 1)} a year and a fee does not.
           </Insight>
           <Insight n={2} figure={`${FEES.cases.filter(c => c.reachable).length} of 3`}
             headline={<>A fee has a peak. Raise it past that and it raises less, because families stop paying &mdash; {FEES.cases.filter(c => c.reachable).length} of the three programmes can pay for themselves before their peak.</>}>
@@ -47,7 +47,7 @@ export function FeeLever() {
           </Insight>
           <Insight n={3} figure={YEARS ? `${YEARS} yr` : 'not 1 yr'} tone="var(--status-critical)"
             headline={YEARS ? <>The whole fee package covers {YEARS} year{YEARS === 1 ? '' : 's'} of the gap and is {usdShort(AFTER.short)} short by FY{AFTER.fy}.</> : <>The whole fee package does not cover even next year: {usdShort(AFTER.short)} short in FY{AFTER.fy}, and further behind every year after.</>}>
-            A fee is an amount; it grows, at best, with the programme it funds ({pct(DEFAULT_RATES.other, 0)} here). The gap is a rate. So the package that closes {pct(FEES.shareOfGap, 0)} of next year closes less of every year after, and never a whole one. It is the honest first thing to do, and it changes nothing about the direction.
+            A fee is an amount; it grows, at best, with the programme it funds ({pct(DEFAULT_RATES.other, 0)} here). The gap is a rate. So the package that closes {pct(FEES.shareOfGap, 0)} of next year closes less of every year after, and never a whole one. It changes the size of the gap, not its direction.
           </Insight>
         </div>
         <NotShown>
@@ -63,7 +63,7 @@ export function FeeLever() {
               <th className="text-left py-2 pr-4">programme</th><th className="text-right py-2 pr-4">costs</th><th className="text-right py-2 pr-4">fee now</th><th className="text-right py-2 pr-4">raises now</th><th className="text-right py-2 pr-4">self-funds at</th><th className="text-right py-2 pr-4">peak fee</th><th className="text-right py-2 pr-4">peak raises</th><th className="text-right py-2">adds</th></tr></thead>
             <tbody>{FEES.cases.map(c => (
               <tr key={c.id} style={{ borderTop: '1px solid var(--grid)' }}>
-                <td className="py-2 pr-4 align-top"><span className="font-semibold">{c.label}</span><span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{c.what}{c.payersKnown ? ` · ${n0(c.payers)} payers` : ''}</span></td>
+                <td className="py-2 pr-4 align-top"><span className="font-semibold">{c.label}</span><span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{c.what}{c.payersKnown ? ` · ${n0(c.payers)} payers` : ` · ${n0(c.payers)} payers is our assumption; the count is not published`}</span></td>
                 <td className="py-2 pr-4 text-right tnum align-top">{usd(c.cost)}</td><td className="py-2 pr-4 text-right tnum align-top">{usd(c.currentFee)}</td><td className="py-2 pr-4 text-right tnum align-top">{usd(c.currentYield)}</td>
                 <td className="py-2 pr-4 text-right tnum align-top">{c.selfFund === null ? <span style={{ color: 'var(--status-critical)' }}>never</span> : usd(c.selfFund)}</td>
                 <td className="py-2 pr-4 text-right tnum align-top">{usd(c.peakFee)}</td><td className="py-2 pr-4 text-right tnum align-top">{usd(c.peakYield)}</td><td className="py-2 text-right tnum align-top font-semibold">{usd(Math.max(0, c.gain))}</td>

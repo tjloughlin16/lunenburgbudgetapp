@@ -1219,13 +1219,14 @@ def build():
              'is registered there, and the join that reads them back matched nothing')
 
     # ----------------------------------------------------------------- the two analyses
-    with open(REPORTS, encoding='utf-8') as fh:
-        by_id = {r['id']: r for r in json.load(fh)['reports']}
+    # Both analyses are UNLISTED since 13 October 2026 (the Athletics hub replaced them), so
+    # they are no longer rows of reports.json. The page still cites their /docs copies --
+    # a serving format, not a door -- built by the same function the index uses.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from build_reports_index import document_entry
     related = []
     for rid, why in RELATED:
-        r = by_id.get(rid)
-        if r is None:
-            fail(f'reports.json no longer carries {rid}, which this page is built from')
+        r = document_entry(rid)
         related.append(dict(id=rid, title=r['title'], why=why, words=r['words'],
                             updated=r['updated'], url=r['markdown']['url'],
                             pdf=(r.get('pdf') or {}).get('url')))

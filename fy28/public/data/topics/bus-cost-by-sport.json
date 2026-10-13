@@ -1,8 +1,158 @@
 {
  "category": "transportation",
  "chart": {
-  "id": "transportation-sports",
-  "source": "/data/transportation.json"
+  "basis": "stated",
+  "decimals": null,
+  "highlight": [
+   "Indoor Track, boys and girls"
+  ],
+  "note": {
+   "figures": {
+    "k": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "n": {
+     "text": "24",
+     "unit": "",
+     "value": 24
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "The 15 most costly of 24 teams on the district’s sheet, FY2024. Teams that shared a row there share one here."
+  },
+  "rows": [
+   {
+    "label": "Indoor Track, boys and girls",
+    "texts": [
+     "$13,864"
+    ],
+    "total": "$13,864",
+    "value": 13863.5
+   },
+   {
+    "label": "Football",
+    "texts": [
+     "$9,078"
+    ],
+    "total": "$9,078",
+    "value": 9078.5
+   },
+   {
+    "label": "BasketBall - Boys",
+    "texts": [
+     "$7,818"
+    ],
+    "total": "$7,818",
+    "value": 7817.5
+   },
+   {
+    "label": "Boys Track and Girls Track",
+    "texts": [
+     "$7,674"
+    ],
+    "total": "$7,674",
+    "value": 7674.0
+   },
+   {
+    "label": "Girls Soccer",
+    "texts": [
+     "$7,662"
+    ],
+    "total": "$7,662",
+    "value": 7662.0
+   },
+   {
+    "label": "Basketball - Girls",
+    "texts": [
+     "$7,463"
+    ],
+    "total": "$7,463",
+    "value": 7463.0
+   },
+   {
+    "label": "Softball",
+    "texts": [
+     "$7,222"
+    ],
+    "total": "$7,222",
+    "value": 7222.0
+   },
+   {
+    "label": "Ice Hockey - Boys",
+    "texts": [
+     "$6,682"
+    ],
+    "total": "$6,682",
+    "value": 6681.5
+   },
+   {
+    "label": "Boys Soccer",
+    "texts": [
+     "$5,886"
+    ],
+    "total": "$5,886",
+    "value": 5886.0
+   },
+   {
+    "label": "Girls Lax",
+    "texts": [
+     "$5,636"
+    ],
+    "total": "$5,636",
+    "value": 5635.5
+   },
+   {
+    "label": "Cheer",
+    "texts": [
+     "$4,436"
+    ],
+    "total": "$4,436",
+    "value": 4435.5
+   },
+   {
+    "label": "Baseball",
+    "texts": [
+     "$4,354"
+    ],
+    "total": "$4,354",
+    "value": 4354.0
+   },
+   {
+    "label": "Field Hockey",
+    "texts": [
+     "$4,338"
+    ],
+    "total": "$4,338",
+    "value": 4338.0
+   },
+   {
+    "label": "Boys Lax",
+    "texts": [
+     "$4,130"
+    ],
+    "total": "$4,130",
+    "value": 4130.5
+   },
+   {
+    "label": "Boys CC and Girls CC",
+    "texts": [
+     "$4,108"
+    ],
+    "total": "$4,108",
+    "value": 4107.5
+   }
+  ],
+  "stack": null,
+  "title": "Athletic bus cost by team",
+  "type": "ranking",
+  "unit": "$"
  },
  "conclusions": [
   {
@@ -185,7 +335,7 @@
   "text": "Track costs most on the district’s sheet: $13,864 in FY2024, ahead of the next sport’s $9,078."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "bus-cost-by-sport",

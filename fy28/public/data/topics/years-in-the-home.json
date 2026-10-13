@@ -1,6 +1,54 @@
 {
  "category": "homes-and-taxes",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "2019–2023",
+    "2014–2018"
+   ],
+   "text": "Census Bureau sample, 2019–2023. Each band carries a margin of error, in the table."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Owner households",
+    "texts": [
+     "636 households",
+     "621 households",
+     "542 households",
+     "1,084 households",
+     "698 households",
+     "101 households"
+    ],
+    "values": [
+     636.0,
+     621.0,
+     542.0,
+     1084.0,
+     698.0,
+     101.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Owners by the year they moved in",
+  "type": "series",
+  "unit": "households",
+  "x": [
+   "1989 or earlier",
+   "1990–1999",
+   "2000–2009",
+   "2010–2017",
+   "2018–2020",
+   "2021 or later"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

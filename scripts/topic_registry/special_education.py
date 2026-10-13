@@ -17,7 +17,7 @@ CATEGORY = dict(
         ('Children and placements', ['students-with-an-iep', 'out-of-district-placements',
                                      'hiring-versus-placing', 'class-size-limits']),
     ],
-    elsewhere=[('/where-students-go-instead', 'Children educated elsewhere'),
+    elsewhere=[('/enrolment/children-schooled-elsewhere', 'Children schooled elsewhere'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
 TOPICS = {

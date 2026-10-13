@@ -23,11 +23,67 @@
  "category": "athletics",
  "chains": [],
  "chart": {
-  "id": "spending-what-comes-in-athletics",
-  "source": "/data/spending-what-comes-in.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "3510",
+    "1301"
+   ],
+   "text": "Spent at the close, from the town’s MUNIS year-end reports: function 3510 in the general fund, and fund 1301."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Town budget",
+    "texts": [
+     "$335,766",
+     "$295,979",
+     "$541,945",
+     "$439,510"
+    ],
+    "values": [
+     335765.67000000004,
+     295979.27,
+     541945.4199999999,
+     439510.25
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Fee fund",
+    "texts": [
+     "$314,864",
+     "$250,575",
+     "$32,796",
+     "$146,911"
+    ],
+    "values": [
+     314863.84,
+     250574.63,
+     32796.47,
+     146911.44
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Athletics spending, the two pots",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "athletics",

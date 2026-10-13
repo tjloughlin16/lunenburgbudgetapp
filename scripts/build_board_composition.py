@@ -189,7 +189,7 @@ def render(d):
                  % (f['fy'], num(f['seats']), num(f['filled']), pct(f['pct'], 0)))
     t.append('\nA board’s charter fixes how many seats it has, so the seat COUNT is not a '
              'trend — it is the charter. Whether the seats have anybody in them is the part '
-             'that moves, and it has moved a long way. Above 100%% is not an overfull '
+             'that moves, and it has moved a long way. Above 100% is not an overfull '
              'board: it is a mid-year replacement printed beside the person replaced.\n')
     t.append('\n| | %s |\n|---|%s\n'
              % (' | '.join('FY%s' % c['fy'] for c in d['churn']),

@@ -284,17 +284,18 @@ GAP_KEYS = [
 ]
 
 RELATED = [
-    ('fy27-and-the-override',
-     'Where the FY27 revenue figures come from, including the state aid arithmetic this '
-     'scenario runs against'),
-    ('athletics',
+    # Hub-and-spoke topic pages by address; the long reports they absorbed are UNLISTED.
+    # `peer-districts` (what comparable districts cut, and in what order) was dropped with
+    # them: no topic page answers that question, and an unlisted report gets no door.
+    ('/state-aid/total-state-aid',
+     'The state aid this scenario runs against: what the cherry sheet carries, and how '
+     'much of it is Chapter 70'),
+    ('/athletics/participation',
      'The participation counts this scenario’s 45% is tested against, and why a '
      'participation is not a child'),
     ('connecting-the-budget',
      'Why no state aid dollar can be followed to anything it paid for — 0 of 222 accounts '
      'share an organisation code'),
-    ('peer-districts',
-     'What comparable districts actually cut, and in what order, when they had to'),
 ]
 
 CENT = 0.005
@@ -1506,7 +1507,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
             detail='%s of that is sending tuition and %s is Chapter 70 aid at the margin '
                    'the formula is currently paying. Both go in year one. The students '
                    'come out of four grades, %s of them from the largest, which has %s '
-                   'residents in it — so the %s of appropriation they carry with them, at '
+                   'students in it — so the %s of appropriation they carry with them, at '
                    '%s a pupil, only stops being spent where somebody decides to stop '
                    'spending it. That decision is the whole of the difference between a '
                    'town that loses money and a town that does not.'
@@ -1543,8 +1544,8 @@ def the_conclusions(enr, fml, hist, flows, scn):
                       'that anything could be cut: nothing published says at what '
                       'enrolment a section is removed, so the break-even share is what '
                       'would have to happen and not what could.',
-            see=[('/where-students-go-instead', 'the children who actually leave, counted'),
-                 ('/what-other-districts-spend', 'what comparable districts spend')],
+            see=[('/enrolment/children-schooled-elsewhere', 'the children who actually leave, counted'),
+                 ('/school-spending/per-pupil-spending', 'what comparable districts spend')],
         ),
         conclusion(
             id='chapter-70-moves-a-fraction-of-the-foundation-rate',
@@ -1634,7 +1635,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
                       'happened is not a forecast. DESE’s own row also shows Lunenburg’s '
                       'aid sitting above foundation budget minus required contribution, '
                       'so that subtraction is not currently what sets it.',
-            see=[('/why-we-only-get-minimum-aid', 'why the aid lands where it does'),
+            see=[('/state-aid/minimum-aid', 'why the aid lands where it does'),
                  ('/state-aid', 'the whole state aid line, not Chapter 70 alone')],
         ),
         conclusion(
@@ -1686,8 +1687,8 @@ def the_conclusions(enr, fml, hist, flows, scn):
                       'The counts carry no dollars: not one document in this archive '
                       'states the tuition that follows a child in either direction, which '
                       'is why every dollar on this page rests on an assumed rate.',
-            see=[('/where-students-go-instead', 'where they go, measured'),
-                 ('/monty-tech', 'the largest destination outside Lunenburg — families '
+            see=[('/enrolment/children-schooled-elsewhere', 'where they go, measured'),
+                 ('/enrolment/monty-tech-enrolment', 'the largest destination outside Lunenburg — families '
                                  'choose it, and the bill follows a different rule')],
         ),
         conclusion(
@@ -1745,7 +1746,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
                       'any of it is worth — no document in this archive states what '
                       'Lunenburg receives for a child who chooses in, so the fall in '
                       'children cannot be turned into a fall in dollars here.',
-            see=[('/where-students-go-instead', 'the outward half, decomposed'),
+            see=[('/enrolment/children-schooled-elsewhere', 'the outward half, decomposed'),
                  ('/what-families-pay', 'what a family pays to stay')],
         ),
     ])
@@ -1769,6 +1770,29 @@ def build():
     factors = key_factors()
     scn = scenario(enr, prem, fml, fee, hist, flows)
     quotes = said()
+
+    # THE TOWN'S "RESIDENT" COLUMN IS DESE'S WHOLE HEADCOUNT, NOT ITS RESIDENTS. DESE's
+    # receiving file splits that headcount into children who live in Lunenburg and children
+    # from other towns, and the two halves sum to the column's All Schools Total exactly.
+    # So the column already holds the children who arrive from elsewhere, and the town's
+    # printed Total adds its school choice column on top of them. Asserted, so the sentence
+    # below cannot outlive the arithmetic behind it.
+    bw = flows['both_ways']['last']
+    if bw['at_lunenburg'] + bw['in_all'] != enr['district_resident']:
+        fail(f'DESE’s SY{bw["sy"]} residents ({bw["at_lunenburg"]}) plus arrivals '
+             f'({bw["in_all"]}) no longer equal the town table’s resident column '
+             f'({enr["district_resident"]}) — the note on that column is no longer true')
+    enr['resident_column'] = dict(
+        sy=bw['sy'], dese_total=enr['district_resident'], residents=bw['at_lunenburg'],
+        from_other_towns=bw['in_all'], choice=bw['in_choice'],
+        note=f'The column the report heads “resident” is DESE’s SY{bw["sy"]} headcount, '
+             f'{enr["district_resident"]:,}. DESE’s own receiving file counts '
+             f'{bw["at_lunenburg"]:,} of those children as Lunenburg residents and '
+             f'{bw["in_all"]} as living in other towns, {bw["in_choice"]} of them under school '
+             f'choice. So the column already includes children from other towns, and the '
+             f'printed total of {enr["district_total"]:,} adds {enr["district_choice_in"]} '
+             f'school choice students on top of them. The high school figures here are '
+             f'students in the school, not residents only.')
 
     # TWO ROUTES TO THE FY26 FOUNDATION BUDGET, from two different DESE workbooks. The
     # Chapter 70 profile and the key-factors summary are separate files with separate
@@ -1797,8 +1821,22 @@ def build():
 
     with open(REPORTS, encoding='utf-8') as fh:
         by_id = {r['id']: r for r in json.load(fh)['reports']}
+    # A HUB OR TOPIC PAGE, named by its address: the long reports those pages absorbed are
+    # UNLISTED (13 October 2026) and are not in reports.json, so the card goes to the page
+    # that answers the question now. It has no word count or revision date of its own.
+    with open(os.path.join(os.path.dirname(REPORTS), 'topics.json'), encoding='utf-8') as fh:
+        tj = json.load(fh)
+    by_path = {x['path']: x for x in tj['categories'] + list(tj['topics'].values())
+               if x.get('ready')}
     related = []
     for rid, why in RELATED:
+        if rid.startswith('/'):
+            t = by_path.get(rid)
+            if t is None:
+                fail(f'topics.json has no ready page at {rid}, which this page cites')
+            related.append(dict(id=rid, title=t['title'], why=why, words=None,
+                                updated=None, url=rid, pdf=None))
+            continue
         r = by_id.get(rid)
         if r is None:
             fail(f'reports.json no longer carries {rid}, which this page cites')

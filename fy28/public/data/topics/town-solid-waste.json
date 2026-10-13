@@ -1,6 +1,59 @@
 {
  "category": "department-budgets",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2023"
+   ],
+   "text": "The dashed line is ours: the FY2023 figure grown at the cap each year."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Voted, Recycling Program",
+    "texts": [
+     "$312,634",
+     "$352,775",
+     "$469,775"
+    ],
+    "values": [
+     312634.0,
+     352775.0,
+     469775.0
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "Growing at the levy cap from FY2023",
+    "texts": [
+     "$312,634",
+     "$320,450",
+     "$328,461"
+    ],
+    "values": [
+     312634.0,
+     320449.85,
+     328461.09625
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Trash and recycling against the cap",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

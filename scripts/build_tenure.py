@@ -17,7 +17,7 @@ measures how long anybody stays.
 
 FOUR THINGS MAKE THIS NUMBER WRONG IF THEY ARE NOT HANDLED, and each is handled here.
 
-1. A GAP YEAR IS NOT A DEPARTURE. 27 of 86 bodies skip at least one year inside their own
+1. A GAP YEAR IS NOT A DEPARTURE. About half the bodies skip at least one year inside their own
    span -- the Council on Aging board is missing four, the Public Library four, the DPW
    three -- because the department did not submit a report, or its page did not read.
    Measured naively, the whole staff leaves and comes back. So every span is counted in
@@ -46,6 +46,15 @@ AND THE EPISTEMIC LINE (rule 7). A name leaving a roster is a name leaving a ros
 is not a resignation, a retirement, a cut post or a person -- somebody may have moved
 between departments, been left off a page, or held a post the town stopped printing.
 Turnover here is the rate at which NAMES STOP APPEARING, and every figure says so.
+
+AND NO EMPLOYEE IS NAMED IN WHAT THIS WRITES (rule 13e, 13 October 2026). A town report
+printing a roster one year at a time is not the same document as a table holding each
+employee's whole career -- arrival, departure, years missing, whether they are still
+there -- and that second document is ours. So for EMPLOYEE bodies (`school`,
+`department`) the person and the role are blanked in tenure.csv and tenure.json, and no
+`longest_person` is named. Members of boards and appointed officers keep their names:
+they hold public office, and the town prints them as office-holders. The identity join
+still runs on the names, in memory; only the output is anonymous.
 """
 import argparse
 import collections
@@ -65,6 +74,8 @@ OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'tenure.json')
 TENURE_FIELDS = ['unit', 'unit_kind', 'person', 'first_fy', 'last_fy', 'appearances',
                  'published_years_spanned', 'missing_years_inside', 'left_censored',
                  'right_censored', 'roles']
+# Bodies whose people are EMPLOYEES, never named in the output (docstring, last section).
+EMPLOYEE_KINDS = ('school', 'department')
 TURNOVER_FIELDS = ['unit', 'unit_kind', 'fy', 'next_published_fy', 'people',
                    'names_not_reappearing', 'rate']
 
@@ -117,6 +128,10 @@ def build():
             roles=' / '.join(r for r, _ in s['roles'].most_common(3))))
     tenure.sort(key=lambda r: (r['unit'].lower(), -r['published_years_spanned'],
                                r['person'].lower()))
+    for t in tenure:
+        if t['unit_kind'] in EMPLOYEE_KINDS:
+            t['person'] = ''
+            t['roles'] = ''
 
     turnover = []
     by_unit_year = collections.defaultdict(set)
@@ -183,7 +198,9 @@ def payload(tenure, turnover, published):
             median_all=statistics.median(spans),
             median_settled=statistics.median(settled) if settled else None,
             settled=len(settled), longest=max(spans),
-            longest_person=max(people, key=lambda p: p['published_years_spanned'])['person'],
+            # Named only for a body of office-holders. See EMPLOYEE_KINDS.
+            longest_person=('' if people[0]['unit_kind'] in EMPLOYEE_KINDS else
+                            max(people, key=lambda p: p['published_years_spanned'])['person']),
             still_there=sum(1 for p in people if p['right_censored']),
             turnover=round(sum(t['names_not_reappearing'] for t in tr)
                            / sum(t['people'] for t in tr), 4) if tr else None))

@@ -280,6 +280,9 @@ def build():
                   for r in sorted(MA['series'], key=lambda r: -r['fy'])],
             note='DESE’s Chapter 70 Trends workbook, sheet dataAid: the aid as DESE ran it for '
                  'each year. Not a Governor’s proposal and not a receipt.')]),
+        chart=TP.series('Chapter 70 by year', [C.fy(y) for y in sorted(ser)], [
+            TP.track('Chapter 70, DESE’s calculation', [ser[y]['aid'] for y in sorted(ser)],
+                     'published', 'bar')], '$'),
         said=[said(SA, 'estimate')],
         sources=S('dese-ch70-key-factors.xlsx', 'ch70-fy27-summary.xlsx', rec27,
                   'dls-cherry-sheet.csv'),
@@ -296,6 +299,11 @@ def build():
     flo = next(x for x in MA['floor'] if x['fy'] == y26)
     early = [y for y in sorted(rates) if y != y26]
     rate_txt = ', '.join(C.usd(rates[y]) for y in early) + ' and ' + C.usd(rates[y26])
+    # The chart draws the last ten years as DESE splits each rise. It is only the whole rise
+    # where the two components are the only ones operating, so that is asserted, not assumed.
+    win = [y for y in sorted(ser) if y > y26 - 10]
+    if any(ser[y]['other_increments'] or ser[y]['reduction'] for y in win):
+        fail('minimum aid chart: another component paid in the last ten years; draw it too')
     out['minimum-aid'] = TP.page(
         'minimum-aid',
         'All of %s’s %s increase was the Legislature’s minimum: %s for each of %s pupils.'
@@ -340,6 +348,13 @@ def build():
              notes=[step('The Legislature votes the rate each year in the state budget, so '
                          'nothing published says what it will be next year.', 'gap',
                          closes='the enacted state budget for the year in question')])],
+        chart=TP.series('Where each year’s rise came from', [C.fy(y) for y in win], [
+            TP.track('Foundation aid, the formula', [ser[y]['foundation_aid'] for y in win],
+                     'published', 'bar'),
+            TP.track('Minimum aid, the Legislature', [ser[y]['minimum_aid'] for y in win],
+                     'published', 'bar')], '$', stacked=True,
+            note='DESE’s own split of each year’s rise; no other component paid anything in '
+                 'these years.'),
         said=[said(MA, 'house'), said(MA, 'passed')],
         sources=S('dese-ch70-key-factors.xlsx'),
         finding_figures={'y': F(y26), 'a': U(hd['increase']), 'b': U(hd['per_pupil']),
@@ -387,6 +402,9 @@ def build():
              ['share27', 'median27', 'rank27', 'fb27'],
              {'y': F(2027), 'a': P(100 * fm['aid_share']), 'b': P(100 * fm['median_aid_share'])},
              allow=(CH70,))],
+        chart=TP.series('Foundation budget against Chapter 70', [C.fy(y) for y in sorted(ser)], [
+            TP.track('Foundation budget', [ser[y]['foundation_budget'] for y in sorted(ser)]),
+            TP.track('Chapter 70', [ser[y]['aid'] for y in sorted(ser)])], '$'),
         sources=S('dese-ch70-key-factors.xlsx', 'ch70-fy27-summary.xlsx'),
         finding_figures={'a': U(hd['foundation_budget']), 'y': F(y26), 'p': P(sh26)},
         finding_allow=(CH70,))
@@ -438,6 +456,11 @@ def build():
              '%s.' % (C.pct(100 * wl['eqv_growth']), C.pct(100 * wl['eqv_median'])),
              ['eqv', 'eqvmed'],
              {'a': P(100 * wl['eqv_growth']), 'b': P(100 * wl['eqv_median'])})],
+        chart=TP.series('Required contribution against Chapter 70',
+                        [C.fy(y) for y in sorted(ser)], [
+            TP.track('Required local contribution',
+                     [ser[y]['required_local_contribution'] for y in sorted(ser)]),
+            TP.track('Chapter 70', [ser[y]['aid'] for y in sorted(ser)])], '$'),
         sources=S('dese-ch70-key-factors.xlsx'),
         finding_figures={'a': P(100 * sn['required_pct']), 'y': F(yA), 'z': F(yB),
                          'b': P(100 * sn['aid_pct'])}, finding_allow=(CH70,))
@@ -486,6 +509,16 @@ def build():
          con('Below about %s foundation pupils the formula’s need would turn negative; not in %s '
              'published years.' % (C.num(zero), C.num(th['years_checked'])), ['zero', 'rshare'],
              {'n': N(zero), 'm': N(th['years_checked'])})],
+        chart=TP.series('Average pupil against one more pupil',
+                        ['Average a pupil', 'One pupil more or fewer'], [
+            TP.track('Chapter 70 over foundation pupils', [avg['value'], None], 'published', 'bar'),
+            TP.track('What one pupil moves it by, ours', [None, marg['value']], 'estimate', 'bar')],
+            '$', stacked=True,
+            note='%s: %s on average, %s for one pupil. The first is our division of DESE’s '
+                 'figures, the second our reading of the formula.' % (C.fy(y26), avg['text'],
+                                                                     marg['text']),
+            note_figures={'y': F(y26), 'a': figure(avg['value'], avg['text']),
+                          'b': figure(marg['value'], marg['text'])}),
         sources=S('dese-ch70-key-factors.xlsx'),
         finding_figures={'a': figure(avg['value'], avg['text']), 'y': F(y26),
                          'b': figure(marg['value'], marg['text'])}, finding_allow=(CH70,))
@@ -516,6 +549,10 @@ def build():
                                                     C.pct(100 * r['ratio']), stage]))
         return rows
     split = 2009
+    nss_x = list(range(a0, y26 + 1))
+    if any(y not in act and y not in bud for y in nss_x):
+        fail('net school spending: a year between the first actual and %s is in neither stage'
+             % y26)
     out['net-school-spending'] = TP.page(
         'net-school-spending',
         'Lunenburg spent %s of the state’s minimum in %s, and met the minimum in all %s years.'
@@ -570,6 +607,13 @@ def build():
                  columns=['Required', 'Net school spending', 'Of the minimum', 'Stage'],
                  rows=nss_rows(a0, split),
                  note='DESE’s district profiles, actual spending.')]),
+        chart=TP.series('Spending against the state minimum', [C.fy(y) for y in nss_x], [
+            TP.track('Of the minimum, actual', [100 * act[y]['ratio'] if y in act else None
+                                                for y in nss_x]),
+            TP.track('Of the minimum, budgeted', [100 * bud[y]['ratio'] if y not in act else None
+                                                  for y in nss_x])], '%',
+            reference=(100, 'The state minimum'), from_zero=False,
+            note='Actual and budgeted years are two stages, drawn apart and never joined.'),
         said=[said(SR, 'definition')],
         sources=S('dese-ch70-district-profile.xlsx', 'dese-ch70-key-factors.xlsx'),
         finding_figures={'p': P(100 * la['ratio']), 'y': F(la['fy']), 'n': N(met)})
@@ -623,6 +667,11 @@ def build():
          con('It spent at or above the median district in %s years measured.'
              % OF(SR['years_at_or_above_median'], SR['years_measured'], '')['text'], ['atmed'],
              {'a': OF(SR['years_at_or_above_median'], SR['years_measured'], '')})],
+        chart=TP.series('Lunenburg against the median district', [C.fy(y) for y in sorted(act)], [
+            TP.track('Lunenburg, of its minimum', [100 * act[y]['ratio'] for y in sorted(act)]),
+            TP.track('The median district, of its own',
+                     [100 * act[y]['state_median'] for y in sorted(act)])], '%',
+            note='Actual spending only. Each district is measured against its own minimum.'),
         sources=S('dese-ch70-district-profile.xlsx'),
         finding_figures={'y': F(la['fy']), 'a': OF(la['rank'], la['districts'], ''),
                          'z': F(yb), 'b': OF(act[yb]['rank'], act[yb]['districts'], '')})
@@ -634,6 +683,15 @@ def build():
     oth26 = tot26 - ch26 - ug26
     tot27, ch27 = R(2027, 'Total Receipts'), R(2027, CH70)
     y0 = fys[0]
+    # Parts of one total each year, so stacked; the third is our subtraction and says so.
+    total_chart = TP.series('All cherry sheet aid by year', [C.fy(fy) for fy in fys], [
+        TP.track('Chapter 70', [R(fy, CH70) for fy in fys], 'published', 'bar'),
+        TP.track('General government aid', [R(fy, 'UGGA') for fy in fys], 'published', 'bar'),
+        TP.track('Every other line, our subtraction',
+                 [R(fy, 'Total Receipts') - R(fy, CH70) - R(fy, 'UGGA') for fy in fys],
+                 'published', 'bar')], '$', stacked=True,
+        note='The final state budget’s cherry sheet for each year: the state’s estimates, not '
+             'receipts.')
     out['total-state-aid'] = TP.page(
         'total-state-aid',
         'The state’s cherry sheet carries %s for Lunenburg for %s; Chapter 70 is %s of it.'
@@ -674,6 +732,7 @@ def build():
             note='Division of Local Services cherry sheets at the final state budget: the '
                  'state’s estimates for the year, not receipts. Every other line includes '
                  'school choice tuition received, charter reimbursement and library aid.')]),
+        chart=total_chart,
         sources=S(rec26, rec27, 'dls-cherry-sheet.csv'),
         finding_figures={'a': U(tot26), 'y': F(y26), 'p': P(100 * ch26 / tot26)},
         finding_allow=(CH70,))
@@ -713,6 +772,11 @@ def build():
          con('All state aid, %s, includes %s of general government aid that is not Chapter 70.'
              % (C.usd(tot26), C.usd(ug26)), ['tot26', 'ug26'],
              {'a': U(tot26), 'b': U(ug26)}, allow=(CH70,))],
+        chart=TP.parts('The school appropriation', [
+            ('Chapter 70', ch26), ('The rest, our subtraction', rest)], '$',
+            note='Departments %s and %s, original %s budget, against the cherry sheet’s Chapter 70.'
+                 % ('300', '301', C.fy(y26)), note_figures={'y': F(y26)},
+            note_allow=('300', '301', CH70)),
         said=[said(SA, 'share')],
         sources=S(rec26, 'town-ledger-fy26-q3.csv', 'dls-cherry-sheet.csv'),
         finding_figures={'p': P(shs), 'y': F(y26), 's': P(100 * sc['stated'], 0)},
@@ -770,6 +834,12 @@ def build():
                             C.fy(rg['last_fy'])), ['rcpt'],
              {'a': P(100 * rg['cagr'], 2), 'y': F(rg['first_fy']), 'z': F(rg['last_fy'])},
              allow=(CH70,))],
+        chart=TP.series('Yearly rise in all state aid', [C.fy(y) for y, _ in steps_] + ['Our rate'], [
+            TP.track('Cherry sheet, year on year', [100 * s for _, s in steps_] + [None],
+                     'published', 'bar'),
+            TP.track('Our projection, a year', [None] * len(steps_) + [100 * rate], 'estimate',
+                     'bar')], '%', stacked=True, decimals=2,
+            note='Each bar is a final state budget against the one before: budget against budget.'),
         sources=S('dls-cherry-sheet.csv', rec27, 'show-your-work.md'),
         finding_figures={'a': P(100 * rate, 2), 'b': P(med, 2)})
 
@@ -814,6 +884,12 @@ def build():
                   for r in reversed(ser8)],
             note='The Division of Local Services’ free cash proof for Lunenburg. A positive '
                  'figure is receipts above the cherry sheet estimate.')]),
+        chart=TP.series('Receipts against the cherry sheet estimate',
+                        [str(r['year']) for r in ser8], [
+            TP.track('Over or under, free cash proof', [r['amount'] for r in ser8], 'published',
+                     'bar')], '$',
+            note='Above the line, receipts beat the estimate; below it, they fell short. By the '
+                 'year of each proof.'),
         sources=S('free-cash-proof-lunenburg.xlsx', 'free-cash-proof.csv'),
         finding_figures={'a': U(-lo['amount']), 'y': Yr(lo['year']), 'b': U(hi['amount']),
                          'z': Yr(hi['year'])})
@@ -864,6 +940,11 @@ def build():
                 for fy in reversed(fys)],
             note='Division of Local Services cherry sheets at the final state budget. Charges '
                  'are deducted from the aid before the town receives it.')]),
+        chart=TP.parts('What the cherry sheet charged', [
+            ('School choice tuition', scs), ('Charter school tuition', chs),
+            ('Every other charge, our subtraction', at26 - scs - chs)], '$',
+            note='The %s final cherry sheet. Charges come off the aid before the town receives it.'
+                 % C.fy(y26), note_figures={'y': F(y26)}),
         said=[fq],
         sources=S(ass26, ass27, 'dls-cherry-sheet.csv'),
         finding_figures={'a': U(at26), 'y': F(y26), 'p': P(100 * (scs + chs) / at26)})
@@ -925,7 +1006,7 @@ def build():
         'year’s rise was the Legislature’s %s-a-pupil minimum; the formula itself added %s.'
         % (C.usd(hd['aid']), C.usd(tot26), C.fy(y26), C.usd(hd['per_pupil']),
            C.usd(hd['foundation_aid_increment'])),
-        hub_ladder,
+        hub_ladder, chart=total_chart,
         answer_figures={'a': U(hd['aid']), 'b': U(tot26), 'y': F(y26), 'c': U(hd['per_pupil']),
                         'd': U(hd['foundation_aid_increment'])},
         answer_allow=(CH70,))

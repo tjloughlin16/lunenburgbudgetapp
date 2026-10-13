@@ -28,7 +28,7 @@ These are not identical measures — a named roster, a career count plus the low
 
 **change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2019, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
-A year whose count reads under half the year before it is dropped as a short read rather than published as a cut: Police Department FY2014. The Police roster comes back as seven officers in FY2024 against twenty-five in FY2023, which is a page this reader did not find, not three quarters of a police force.
+A year whose count reads under half the year before it, or more than 40% above the years on both sides, is dropped as a misread rather than published as a cut or a hiring: Police Department FY2014, 26 between 17 and 14. The dropped year stays in the series, marked, and the change is measured between the years that remain.
 
 ## Headcount over time
 
@@ -106,21 +106,21 @@ The gross-wages list named a department beside each employee through FY2016 and 
 
 ## How long people stay, and how many leave
 
-A person’s tenure here is the number of years their name appears under a department **in the years that department published anything** — not calendar years, because 27 of 86 bodies skip at least one year inside their own span and a naive count reads a missed report as the whole staff leaving and coming back.
+A person’s tenure here is the number of years their name appears under a department **in the years that department published anything** — not calendar years, because 32 of 64 bodies skip at least one year inside their own span and a naive count reads a missed report as the whole staff leaving and coming back.
 
-| department | people | years published | median | median, uncensored | longest | still there | names not reappearing |
+| department | people | years published | median | median, uncensored | longest, in years | still there | names not reappearing |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Lunenburg Public Schools | 1030 | 16 | 2.0 | 1.0 | 16 — Alexis Pukaite | 280 | 32% a year |
-| Fire Department | 121 | 16 | 4 | 2.0 | 16 — Austin Flagg | 44 | 25% a year |
-| Police Department | 91 | 15 | 2 | 1 | 15 — Jeffrey Thibodeau | 28 | 29% a year |
-| Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 — Susan Doherty | 11 | 13% a year |
-| Department of Public Works | 22 | 11 | 1.0 | 2 | 10 — Richard Patry | 13 | 24% a year |
-| Building Department | 20 | 11 | 3.0 | 3.0 | 10 — Gary Williams | 7 | 19% a year |
-| Town Manager | 19 | 11 | 1 | 4 | 9 — Heather R. Lemieux | 4 | 28% a year |
-| Montachusett Regional Vocational Technical School | 8 | 10 | 1.0 | 1.0 | 7 — Thomas R. Browne | 1 | 53% a year |
-| Information Technology | 6 | 5 | 3.0 | 1 | 4 — Daniel Nadareski | 1 | 33% a year |
-| Town Clerk | 6 | 11 | 2.0 | 2.0 | 11 — Kathyrn M. Herrick | 2 | 16% a year |
-| Facilities, Grounds & Recreation | 5 | 3 | 1 | — | 2 — Angela Clement | 4 | 50% a year |
+| Lunenburg Public Schools | 1030 | 16 | 2.0 | 1.0 | 16 | 280 | 32% a year |
+| Fire Department | 121 | 16 | 4 | 2.0 | 16 | 44 | 25% a year |
+| Police Department | 91 | 15 | 2 | 1 | 15 | 28 | 29% a year |
+| Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 | 11 | 13% a year |
+| Department of Public Works | 22 | 11 | 1.0 | 2 | 10 | 13 | 24% a year |
+| Building Department | 20 | 11 | 3.0 | 3.0 | 10 | 7 | 19% a year |
+| Town Manager | 19 | 11 | 1 | 4 | 9 | 4 | 28% a year |
+| Montachusett Regional Vocational Technical School | 8 | 10 | 1.0 | 1.0 | 7 | 1 | 53% a year |
+| Information Technology | 6 | 5 | 3.0 | 1 | 4 | 1 | 33% a year |
+| Town Clerk | 6 | 11 | 2.0 | 2.0 | 11 | 2 | 16% a year |
+| Facilities, Grounds & Recreation | 5 | 3 | 1 | — | 2 | 4 | 50% a year |
 
 **Half of these people are CENSORED and their tenure is a lower bound, not a length.** 625 of 1354 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
 

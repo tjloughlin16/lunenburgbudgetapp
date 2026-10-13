@@ -1,6 +1,72 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Ours: the teachers’ payroll rebuilt as if each of the last three scale increases had been the rate shown."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "FY2028 gap (ours)",
+    "texts": [
+     "$930,070",
+     "$805,224",
+     "$618,406",
+     "$433,400",
+     "$68,796",
+     "-$288,659"
+    ],
+    "values": [
+     930070,
+     805224,
+     618406,
+     433400,
+     68796,
+     -288659
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "FY2032 gap (ours)",
+    "texts": [
+     "$3,755,739",
+     "$3,609,687",
+     "$3,391,135",
+     "$3,174,706",
+     "$2,748,170",
+     "$2,329,998"
+    ],
+    "values": [
+     3755739,
+     3609687,
+     3391135,
+     3174706,
+     2748170,
+     2329998
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The gap had raises been smaller",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "As settled",
+   "3.0% a year",
+   "2.5% a year",
+   "2.0% a year",
+   "1.0% a year",
+   "0.0% a year"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -41,14 +107,14 @@
      "value": 2.5
     },
     "b": {
-     "text": "$618,608",
+     "text": "$618,406",
      "unit": "",
-     "value": 618608
+     "value": 618406
     },
     "c": {
-     "text": "$930,273",
+     "text": "$930,070",
      "unit": "",
-     "value": 930273
+     "value": 930070
     },
     "y": {
      "text": "FY2028",
@@ -62,19 +128,19 @@
     "act28",
     "lea"
    ],
-   "text": "Had the last three raises been 2.5% a year, the FY2028 gap would be $618,608, not $930,273."
+   "text": "Had the last three raises been 2.5% a year, the FY2028 gap would be $618,406, not $930,070."
   },
   {
    "figures": {
     "a": {
-     "text": "$3,392,440",
+     "text": "$3,391,135",
      "unit": "",
-     "value": 3392440
+     "value": 3391135
     },
     "b": {
-     "text": "$3,757,043",
+     "text": "$3,755,739",
      "unit": "",
-     "value": 3757043
+     "value": 3755739
     },
     "y": {
      "text": "FY2032",
@@ -87,7 +153,7 @@
     "cf32",
     "act32"
    ],
-   "text": "By FY2032 that path gives $3,392,440 instead of $3,757,043: lower, and still growing."
+   "text": "By FY2032 that path gives $3,391,135 instead of $3,755,739: lower, and still growing."
   },
   {
    "figures": {
@@ -193,9 +259,9 @@
     "text": "FY2028 gap had raises been 2.5% (ours)"
    },
    "value": {
-    "text": "$618,608",
+    "text": "$618,406",
     "unit": "",
-    "value": 618608
+    "value": 618406
    }
   },
   {
@@ -213,9 +279,9 @@
     "text": "the FY2028 gap as projected (ours)"
    },
    "value": {
-    "text": "$930,273",
+    "text": "$930,070",
     "unit": "",
-    "value": 930273
+    "value": 930070
    }
   },
   {
@@ -233,9 +299,9 @@
     "text": "FY2032 gap on the same path (ours)"
    },
    "value": {
-    "text": "$3,392,440",
+    "text": "$3,391,135",
     "unit": "",
-    "value": 3392440
+    "value": 3391135
    }
   },
   {
@@ -253,9 +319,9 @@
     "text": "the FY2032 gap as projected (ours)"
    },
    "value": {
-    "text": "$3,757,043",
+    "text": "$3,755,739",
     "unit": "",
-    "value": 3757043
+    "value": 3755739
    }
   },
   {
@@ -346,48 +412,48 @@
      {
       "cells": [
        "—",
-       "$930,273",
-       "$3,757,043"
+       "$930,070",
+       "$3,755,739"
       ],
       "label": "as settled"
      },
      {
       "cells": [
        "$120,044",
-       "$805,427",
-       "$3,610,992"
+       "$805,224",
+       "$3,609,687"
       ],
       "label": "3.0% a year"
      },
      {
       "cells": [
        "$299,678",
-       "$618,608",
-       "$3,392,440"
+       "$618,406",
+       "$3,391,135"
       ],
       "label": "2.5% a year"
      },
      {
       "cells": [
        "$477,567",
-       "$433,603",
-       "$3,176,010"
+       "$433,400",
+       "$3,174,706"
       ],
       "label": "2.0% a year"
      },
      {
       "cells": [
        "$828,148",
-       "$68,999",
-       "$2,749,475"
+       "$68,796",
+       "$2,748,170"
       ],
       "label": "1.0% a year"
      },
      {
       "cells": [
        "$1,171,855",
-       "-$288,456",
-       "$2,331,302"
+       "-$288,659",
+       "$2,329,998"
       ],
       "label": "0.0% a year"
      }

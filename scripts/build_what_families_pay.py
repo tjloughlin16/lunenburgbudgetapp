@@ -223,10 +223,11 @@ GAP_KEYS = [
 ]
 
 RELATED = [
-    ('athletics',
+    # Hub-and-spoke topic pages by address; the two long reports are UNLISTED.
+    ('/athletics/town-budget-and-fee-fund',
      'Both sides of the athletics money — what the fees bring in against what the town '
      'appropriates, and why an appropriation is not a cost'),
-    ('athletics-ledger',
+    ('/athletics/fee-fund-ledger',
      'The revolving fund the athletic fees are paid into, at transaction level'),
     ('connecting-the-budget',
      'Why a fee paid cannot be followed to anything it bought'),
@@ -1021,7 +1022,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
                       'what the town is spared are two different questions and only the '
                       'first is answered here. It also does not say whether this is too '
                       'much: that is the argument, and this is the arithmetic under it.',
-            see=[('/what-sports-cost', 'both sides of the athletics money'),
+            see=[('/athletics/town-budget-and-fee-fund', 'both sides of the athletics money'),
                  ('/rate-register', 'every rate, with the document that set it')],
         ),
         conclusion(
@@ -1065,7 +1066,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
                       'the year now running the district publishes no reduced or waived '
                       'rate at all, so the cheaper half of the comparison cannot be drawn '
                       'for the current year.',
-            see=[('/what-sports-cost', 'what the fees bring in against what the town '
+            see=[('/athletics/town-budget-and-fee-fund', 'what the fees bring in against what the town '
                                        'appropriates'),
                  ('/what-we-cannot-answer', 'the rates nobody publishes')],
         ),
@@ -1350,8 +1351,22 @@ def build():
 
     with open(REPORTS, encoding='utf-8') as fh:
         by_id = {r['id']: r for r in json.load(fh)['reports']}
+    # A HUB OR TOPIC PAGE, named by its address: the long reports those pages absorbed are
+    # UNLISTED (13 October 2026) and are not in reports.json, so the card goes to the page
+    # that answers the question now. It has no word count or revision date of its own.
+    with open(os.path.join(os.path.dirname(REPORTS), 'topics.json'), encoding='utf-8') as fh:
+        tj = json.load(fh)
+    by_path = {x['path']: x for x in tj['categories'] + list(tj['topics'].values())
+               if x.get('ready')}
     related = []
     for rid, why in RELATED:
+        if rid.startswith('/'):
+            t = by_path.get(rid)
+            if t is None:
+                fail(f'topics.json has no ready page at {rid}, which this page cites')
+            related.append(dict(id=rid, title=t['title'], why=why, words=None,
+                                updated=None, url=rid, pdf=None))
+            continue
         r = by_id.get(rid)
         if r is None:
             fail(f'reports.json no longer carries {rid}, which this page cites')

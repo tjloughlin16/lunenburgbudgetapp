@@ -557,6 +557,25 @@ def conclusions_for_dept(data, row, moves):
     )])
 
 
+def police_note():
+    """The Police half of the group, from the same roster series `town-personnel` reads.
+
+    This sentence used to say `Police states no strength at all ... no published
+    headcount`, while town-personnel counted a Police roster of 29 names. The Police print
+    no strength in PROSE; they print a roster of names, which is a count of people named,
+    not an establishment or FTE. So say that, with the figure derived.
+    """
+    pol = next((e for e in P.load().get('employers') or []
+                if e['department'] == 'Police Department'), None)
+    if not pol:
+        return (' The Police Department states no strength in its prose, and no roster '
+                'of it was read here.')
+    return (' The Police Department states no strength in its prose; its roster names '
+            '%d people in FY%s. That is a count of names printed, not an establishment '
+            'or FTE (see [town personnel](/analysis/town-personnel)).'
+            % (pol['people'], pol['last_fy']))
+
+
 def render_dept(data, row, lines, moves):
     ys = data['detail_years']
     t = ['# %s: what the town votes for it\n' % row['name'],
@@ -583,15 +602,26 @@ def render_dept(data, row, lines, moves):
                      % (r['line_no'] or '', r['label'],
                         usd(r['amount']) if r['amount'] is not None else '—'))
         got = sum(r['amount'] or 0 for r in lines[y])
-        t.append('| | **total** | **%s** |\n' % usd(got))
+        # NO LINE READ IS NOT A LINE OF $0 (rule 13c). Protection and Assistance print their
+        # subtotals in a form the line extractor does not read, so their years held no
+        # amounts and this used to publish `come to $0, a difference of -4239354.99` -- a
+        # statement about our reader, printed as arithmetic about the town's page.
+        read = [r for r in lines[y] if r['amount'] is not None]
+        if read:
+            t.append('| | **total** | **%s** |\n' % usd(got))
         printed = row['series'].get(y)
-        if printed is not None:
+        if printed is not None and not read:
+            t.append('\nThe page prints **%s** for this department. Its lines were not '
+                     'read from that page, so nothing here checks the total against them.\n'
+                     % usd(printed))
+        elif printed is not None:
             d = round(got - printed, 2)
             t.append('\nThe page prints **%s** for this department. %s\n'
                      % (usd(printed),
                         'The lines above come to the same.' if not d
-                        else 'The lines above come to %s, a difference of %+.2f.'
-                             % (usd(got), d)))
+                        else 'The lines above come to %s, a difference of %s%s.'
+                             % (usd(got), '+' if d > 0 else '−',
+                                '${:,.2f}'.format(abs(d)))))
     # THE PEOPLE, BESIDE THE MONEY, on the department page rather than the aggregate one.
     # TJ: *"town-personnel is super focusd on the fire department ... I would expect some
     # of this fire-department focused charts on the fire deparmtnet page directly, not this
@@ -616,11 +646,9 @@ def render_dept(data, row, lines, moves):
                          % (r['fy'], r['career'], r['on_call_low'], r['on_call_high']))
             t.append('\nCareer firefighters went from %s to %s while the on-call roll fell '
                      'from %s–%s to %s–%s: the department grew and shrank at once, in '
-                     'different kinds of staff. Police states no strength at all, so the '
-                     'other half of this budget group has no published headcount to set '
-                     'beside its money.\n'
+                     'different kinds of staff.%s\n'
                      % (a['career'], b['career'], a['on_call_low'], a['on_call_high'],
-                        b['on_call_low'], b['on_call_high']))
+                        b['on_call_low'], b['on_call_high'], police_note()))
 
     if row['slug'] == 'maturing-debt' and moves:
         prin = next((m for m in moves if m['label'].lower().startswith('principal')), None)

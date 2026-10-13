@@ -424,7 +424,7 @@ def build():
             lede='Spending like the middle district in Massachusetts would have meant '
                   '%s more than Lunenburg spent in %s — %s more, on a state minimum '
                   'of %s.'
-                  % (C.fy(latest['fy']), C.usd(latest['short_of_median']),
+                  % (C.usd(latest['short_of_median']), C.fy(latest['fy']),
                      C.pct(median_gap_pct), C.usd(latest['required'])),
             detail='The median district spent %s times its required net school spending '
                    'that year; Lunenburg spent %s. Applying the median ratio to '

@@ -620,6 +620,14 @@ def analyses_area_tabs():
     # /analysis/<id>. It owns no single report, declares no `const TAB`, and has no
     # payload, so it is not a row anywhere reports are enumerated.
     tabs = [t for t in tabs if t != 'analysis']
+    # NOR THE HUBS. `topic` renders every hub and topic page (Topic.tsx) and `athletics` is
+    # now the Athletics hub's address; neither owns a report payload, and /reports draws the
+    # hubs as shelves of their own (topics.json). Read off the category list the router uses.
+    cats = set(json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data',
+                                           'topic-categories.json'), encoding='utf-8')))
+    slug = dict(re.findall(r"^\s*(\w+): '([^']*)',", re.search(
+        r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S).group(1), re.M))
+    tabs = [t for t in tabs if t != 'topic' and slug.get(t) not in cats]
     if not tabs:
         raise SystemExit('routes.ts: AREA_OF names no analyses tabs, which has never '
                          'been true')
@@ -645,7 +653,70 @@ def parents():
     return out
 
 
-def routed_reports(all_of_area=False):
+# reports.json group key -> the topics.py AREA whose shelves /reports draws after it.
+# Mirrors the three-way choice in Reports.tsx.
+GROUP_AREA = {'school': 'school', 'town': 'town', 'levers': 'options'}
+
+
+def topic_categories():
+    """The hub ids, which are also their addresses: /<category>. Read off the list the
+    router itself uses."""
+    return set(json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data',
+                                           'topic-categories.json'), encoding='utf-8')))
+
+
+def unlisted_tabs(src=None):
+    """routes.ts `UNLISTED`: the React pages that keep their address and have no door."""
+    src = src or open(ROUTES_TS, encoding='utf-8').read()
+    u = re.search(r"export const UNLISTED[^\n]*new Set<Tab>\(\[([^\]]*)\]", src)
+    if not u:
+        raise SystemExit('routes.ts: could not find UNLISTED')
+    return set(re.findall(r"'([a-z]+)'", u.group(1)))
+
+
+# WHERE EACH ABSORBED REACT REPORT'S QUESTIONS ARE ANSWERED NOW: tab -> the hub (category
+# id) that took it in, 13 October 2026. A generator that still cites one of these reports'
+# payloads links this hub, never the unlisted page (CLAUDE.md, "A report can be published
+# and linked from nowhere"). `answered_at()` refuses a tab missing from here and a hub
+# topics.json does not hold, so a new unlisting cannot quietly become a link to nowhere.
+ABSORBED_INTO = {
+    'ap': 'school-programs', 'courses': 'school-programs', 'cuts': 'school-programs',
+    'stopped': 'school-programs', 'unwind': 'school-programs',
+    'attrition': 'enrolment', 'enrollment': 'enrolment', 'outflow': 'enrolment',
+    'montytech': 'enrolment',
+    'circuitbreaker': 'special-education', 'classsize': 'special-education',
+    'spedcount': 'special-education', 'spedcost': 'special-education',
+    'spedroute': 'special-education',
+    'parastaff': 'school-staffing', 'schoolstaff': 'school-staffing',
+    'formula': 'state-aid', 'minaid': 'state-aid', 'required': 'state-aid',
+    'peers': 'school-spending', 'variance': 'school-spending',
+    'bythenumbers': 'homes-and-taxes', 'homestudents': 'homes-and-taxes',
+    'growth': 'homes-and-taxes',
+    'insurance': 'health-insurance',
+    'boardcompare': 'board-records',
+    'parks': 'parks', 'youthsports': 'parks',
+    'sportsmoney': 'athletics',
+    'override': 'budget-options', 'feelever': 'budget-options',
+    'extraslever': 'budget-options', 'positionslever': 'budget-options',
+    'salarylever': 'budget-options', 'freecashlever': 'budget-options',
+}
+
+
+def answered_at(tab):
+    """(title, url) of the hub that now answers an absorbed report's questions."""
+    cat = ABSORBED_INTO.get(tab)
+    if cat is None:
+        raise SystemExit('%s is UNLISTED and ABSORBED_INTO in build_reports_index.py does '
+                         'not say which hub answers it now' % tab)
+    tj = json.load(open(os.path.join(DATA_DIR, 'topics.json'), encoding='utf-8'))
+    hub = next((c for c in tj['categories'] if c['id'] == cat and c.get('ready')), None)
+    if hub is None:
+        raise SystemExit('ABSORBED_INTO sends %s to %s, which topics.json does not hold '
+                         'as a ready hub' % (tab, cat))
+    return hub['title'], hub['path']
+
+
+def routed_reports(all_of_area=False, include_unlisted=False):
     """Every report the app routes to, read off the table the app itself routes on.
 
     `all_of_area=True` covers the whole Analyses AREA rather than its tab bar -- see
@@ -686,8 +757,23 @@ def routed_reports(all_of_area=False):
                 at += 1
             tabs.insert(at, t)
 
+    # MINUS THE UNLISTED PAGES (routes.ts `UNLISTED`), in both modes. This list feeds /reports,
+    # the menu's NEW list and /what-it-all-adds-up-to, and each of those is a door; the
+    # absorbed long reports keep their addresses and have none (13 October 2026).
+    # `include_unlisted=True` is for a generator that CITES an absorbed report's payload
+    # (build_one_big_report.py) and links the hub that answers it instead -- see
+    # `answered_at()`. It never feeds a list a reader navigates.
+    if not include_unlisted:
+        tabs = [t for t in tabs if t not in unlisted_tabs(src)]
+
     block = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     slug = dict(re.findall(r"^\s*(\w+): '([^']*)',", block.group(1), re.M))
+    # MINUS A PAGE WHOSE ADDRESS A HUB NOW HOLDS (`sped`, `staffing`, `owners`,
+    # `healthlever`: /special-education, /school-staffing, /homes-and-taxes,
+    # /health-insurance), in both modes. The address renders the hub and /reports draws the
+    # hub from topics.json, so a row here was a second entry for the same door, under the
+    # long report's OLD title -- and its payload's conclusions are the absorbed report's.
+    tabs = [t for t in tabs if slug.get(t) not in topic_categories()]
     lab = re.search(r'export const LABEL: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     if not lab:
         raise SystemExit('routes.ts: could not find the LABEL table')
@@ -915,6 +1001,63 @@ def unlisted_ids(analyses_dir=None):
     return out
 
 
+def document_entry(n, hidden=None):
+    """One Markdown analysis as a row of reports.json -- title, size, dates, its /docs copy,
+    its PDF. Also called for an UNLISTED analysis by a generator that CITES it: the
+    `/docs/analyses/<id>.md` copy is a serving format, not a door, so a page may cite it
+    while /reports does not list it."""
+    if hidden is None:
+        hidden = unlisted_ids()
+    md = os.path.join(SRC, n + '.md')
+    if not os.path.exists(md):
+        raise SystemExit('sources/analyses/%s.md does not exist' % n)
+    text = open(md, encoding='utf-8').read()
+    title = text.split('\n', 1)[0].lstrip('# ').strip()
+
+    # The first real paragraph, skipping the working-state blockquote and the
+    # generated-by line. Used only as a fallback where ABOUT has no entry.
+    lede = ''
+    for para in re.split(r'\n\s*\n', text):
+        p = para.strip()
+        if (p.startswith('#') or p.startswith('>') or p.startswith('---')
+                or p.startswith('Analysis,') or not p):
+            continue
+        lede = re.sub(r'\s+', ' ', p)[:240]
+        break
+    verifier = 'scripts/verify_%s.py' % n.replace('-', '_')
+    has_verifier = os.path.exists(os.path.join(ROOT, verifier))
+    pdf = os.path.join(PDF, n + '.pdf')
+
+    # A chart belonging to an UNLISTED report is not this report's, even though it shares
+    # the fy26- prefix: fy26-school-surplus-waterfall.svg turned up on the listed
+    # fy26-closeout entry on 8 October 2026 -- a door to an unlisted page.
+    charts = sorted(
+        f for f in os.listdir(os.path.join(SRC, 'charts'))
+        if f.startswith('fy26-') and n.endswith(
+            'town' if '-town' in f else 'closeout')
+        and not any(f.startswith(h + '-') or f.startswith(h + '.') for h in hidden)) \
+        if os.path.isdir(os.path.join(SRC, 'charts')) and n.startswith('fy26') else []
+
+    return dict(
+        id=n, kind='document', title=title,
+        # The document, rendered on the site in the same shell as every other report.
+        # The .md stays the source of truth and stays published -- rule 12 -- and the
+        # page renders it rather than transcribing it. See fy28/src/pages/Analysis.tsx.
+        url=f'/analysis/{n}',
+        about=ABOUT.get(n) or lede,
+        words=len(text.split()),
+        updated=git_date(md),
+        first_published=git_first_date(md),
+        markdown=dict(url=f'/docs/analyses/{n}.md',
+                      bytes=os.path.getsize(md), sha256=sha256(md)),
+        pdf=(dict(url=f'/docs/analyses/{n}.pdf', bytes=os.path.getsize(pdf))
+             if os.path.exists(pdf) else None),
+        verifier=(dict(path=verifier,
+                       command=f'python3 {verifier}') if has_verifier else None),
+        charts=[f'/docs/analyses/charts/{c}' for c in charts],
+    )
+
+
 def main():
     hidden = unlisted_ids()
     names = sorted(f[:-3] for f in os.listdir(SRC)
@@ -923,55 +1066,9 @@ def main():
 
     reports, unlisted = [], []
     for n in ordered:
-        md = os.path.join(SRC, n + '.md')
-        text = open(md, encoding='utf-8').read()
-        title = text.split('\n', 1)[0].lstrip('# ').strip()
-
-        # The first real paragraph, skipping the working-state blockquote and the
-        # generated-by line. Used only as a fallback where ABOUT has no entry.
-        lede = ''
-        for para in re.split(r'\n\s*\n', text):
-            p = para.strip()
-            if (p.startswith('#') or p.startswith('>') or p.startswith('---')
-                    or p.startswith('Analysis,') or not p):
-                continue
-            lede = re.sub(r'\s+', ' ', p)[:240]
-            break
         if n not in ABOUT:
             unlisted.append(n)
-
-        verifier = 'scripts/verify_%s.py' % n.replace('-', '_')
-        has_verifier = os.path.exists(os.path.join(ROOT, verifier))
-        pdf = os.path.join(PDF, n + '.pdf')
-
-        # A chart belonging to an UNLISTED report is not this report's, even though it shares
-        # the fy26- prefix: fy26-school-surplus-waterfall.svg turned up on the listed
-        # fy26-closeout entry on 8 October 2026 -- a door to an unlisted page.
-        charts = sorted(
-            f for f in os.listdir(os.path.join(SRC, 'charts'))
-            if f.startswith('fy26-') and n.endswith(
-                'town' if '-town' in f else 'closeout')
-            and not any(f.startswith(h + '-') or f.startswith(h + '.') for h in hidden)) \
-            if os.path.isdir(os.path.join(SRC, 'charts')) and n.startswith('fy26') else []
-
-        reports.append(dict(
-            id=n, kind='document', title=title,
-            # The document, rendered on the site in the same shell as every other report.
-            # The .md stays the source of truth and stays published -- rule 12 -- and the
-            # page renders it rather than transcribing it. See fy28/src/pages/Analysis.tsx.
-            url=f'/analysis/{n}',
-            about=ABOUT.get(n) or lede,
-            words=len(text.split()),
-            updated=git_date(md),
-            first_published=git_first_date(md),
-            markdown=dict(url=f'/docs/analyses/{n}.md',
-                          bytes=os.path.getsize(md), sha256=sha256(md)),
-            pdf=(dict(url=f'/docs/analyses/{n}.pdf', bytes=os.path.getsize(pdf))
-                 if os.path.exists(pdf) else None),
-            verifier=(dict(path=verifier,
-                           command=f'python3 {verifier}') if has_verifier else None),
-            charts=[f'/docs/analyses/charts/{c}' for c in charts],
-        ))
+        reports.append(document_entry(n, hidden))
 
     pages, undescribed = routed_reports()
 
@@ -988,7 +1085,11 @@ def main():
                     placed.add(i)
             if rows:
                 out_subs.append(dict(title=sub_title, ids=rows))
-        if out_subs:
+        # A group whose reports have ALL moved to topic shelves is still emitted, empty,
+        # where its area has shelves: /reports draws an area's shelves after its group
+        # (Reports.tsx, TopicShelves), so dropping the group dropped every town and budget
+        # option hub from /reports on 13 October 2026, when the last report on each left.
+        if out_subs or key in GROUP_AREA:
             groups.append(dict(key=key, title=title, sections=out_subs))
 
     # AND THE SECOND TAXONOMY MUST COVER THE SAME REPORTS. `/what-it-all-adds-up-to`
@@ -1021,7 +1122,8 @@ def main():
 
     # And a supersession must point at something that exists, or the document it hides
     # would vanish while the page it points to was never built.
-    missing = sorted(v for v in SUPERSEDED.values() if v not in by_id)
+    # Only for a document still listed: one that is UNLISTED itself needs no page to point at.
+    missing = sorted(v for k, v in SUPERSEDED.items() if k in by_id and v not in by_id)
     if missing:
         raise SystemExit('SUPERSEDED points at reports that do not exist: %s. '
                          'Nothing written.' % missing)

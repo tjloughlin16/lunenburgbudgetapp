@@ -1,8 +1,117 @@
 {
  "category": "athletics",
  "chart": {
-  "id": "spending-what-comes-in-athletics",
-  "source": "/data/spending-what-comes-in.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "d": {
+     "text": "FY2019",
+     "unit": "fiscal year",
+     "value": 2019
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "text": "The district’s FY2019 budget document for the earlier years; the MUNIS year-end reports from FY2023."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "District budget document, restated",
+    "texts": [
+     "35.8%",
+     "33.2%",
+     "35.0%",
+     "41.3%",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "values": [
+     35.76,
+     33.239999999999995,
+     35.05,
+     41.28,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Town ledger",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "48.4%",
+     "45.8%",
+     "5.7%",
+     "25.1%"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     48.4,
+     45.8,
+     5.7,
+     25.1
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Fee fund’s share of athletics spending",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "FY2014",
+   "FY2015",
+   "FY2016",
+   "FY2017",
+   "FY2018",
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
@@ -284,7 +393,7 @@
   "text": "The fee fund paid 45.8% of athletics spending in FY2024 and 5.7% in FY2025, on the town’s books."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "town-budget-and-fee-fund",

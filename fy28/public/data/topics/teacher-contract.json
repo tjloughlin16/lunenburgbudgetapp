@@ -1,6 +1,78 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.0
+    }
+   },
+   "literals": [],
+   "text": "Ours: only the salary growth rate changes. Our model assumes 4.0%."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "FY2028 gap (ours)",
+    "texts": [
+     "$396,142",
+     "$729,847",
+     "$796,588",
+     "$863,329",
+     "$930,070",
+     "$1,063,552"
+    ],
+    "values": [
+     396142,
+     729847,
+     796588,
+     863329,
+     930070,
+     1063552
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "FY2032 gap (ours)",
+    "texts": [
+     "$863,809",
+     "$2,617,874",
+     "$2,989,834",
+     "$3,369,087",
+     "$3,755,739",
+     "$4,551,675"
+    ],
+    "values": [
+     863809,
+     2617874,
+     2989834,
+     3369087,
+     3755739,
+     4551675
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The gap at each settlement",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "0.0% a year",
+   "2.5% a year",
+   "3.0% a year",
+   "3.5% a year",
+   "4.0% a year",
+   "5.0% a year"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -46,14 +118,14 @@
   {
    "figures": {
     "a": {
-     "text": "$730,050",
+     "text": "$729,847",
      "unit": "",
-     "value": 730050
+     "value": 729847
     },
     "b": {
-     "text": "$1,063,755",
+     "text": "$1,063,552",
      "unit": "",
-     "value": 1063755
+     "value": 1063552
     },
     "y": {
      "text": "FY2028",
@@ -70,7 +142,7 @@
     "at5",
     "half"
    ],
-   "text": "At a 2.5% settlement the FY2028 gap would be $730,050; at 5.0%, $1,063,755 (ours)."
+   "text": "At a 2.5% settlement the FY2028 gap would be $729,847; at 5.0%, $1,063,552 (ours)."
   },
   {
    "figures": {},
@@ -262,9 +334,9 @@
     "text": "FY2028 gap at a 2.5% settlement (ours)"
    },
    "value": {
-    "text": "$730,050",
+    "text": "$729,847",
     "unit": "",
-    "value": 730050
+    "value": 729847
    }
   },
   {
@@ -284,9 +356,9 @@
     "text": "FY2028 gap at 5.0% (ours)"
    },
    "value": {
-    "text": "$1,063,755",
+    "text": "$1,063,552",
     "unit": "",
-    "value": 1063755
+    "value": 1063552
    }
   },
   {
@@ -362,43 +434,43 @@
     "rows": [
      {
       "cells": [
-       "$396,344",
-       "$865,114"
+       "$396,142",
+       "$863,809"
       ],
       "label": "0.0%"
      },
      {
       "cells": [
-       "$730,050",
-       "$2,619,179"
+       "$729,847",
+       "$2,617,874"
       ],
       "label": "2.5%"
      },
      {
       "cells": [
-       "$796,791",
-       "$2,991,139"
+       "$796,588",
+       "$2,989,834"
       ],
       "label": "3.0%"
      },
      {
       "cells": [
-       "$863,532",
-       "$3,370,391"
+       "$863,329",
+       "$3,369,087"
       ],
       "label": "3.5%"
      },
      {
       "cells": [
-       "$930,273",
-       "$3,757,043"
+       "$930,070",
+       "$3,755,739"
       ],
       "label": "4.0%"
      },
      {
       "cells": [
-       "$1,063,755",
-       "$4,552,980"
+       "$1,063,552",
+       "$4,551,675"
       ],
       "label": "5.0%"
      }

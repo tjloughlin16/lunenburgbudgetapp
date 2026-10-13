@@ -1,6 +1,85 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "FY2027 is empty: its fee schedule is not held, so no amount is drawn."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "High school, first child",
+    "texts": [
+     "$250",
+     "$250",
+     "$325",
+     null
+    ],
+    "values": [
+     250.0,
+     250.0,
+     325.0,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Middle school, first child",
+    "texts": [
+     "$200",
+     "$200",
+     "$275",
+     null
+    ],
+    "values": [
+     200.0,
+     200.0,
+     275.0,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "High school, reduced fee",
+    "texts": [
+     "$32",
+     "$32",
+     "$50",
+     null
+    ],
+    "values": [
+     32.5,
+     32.5,
+     50.0,
+     null
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Athletic fee a season, by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2024",
+   "FY2025",
+   "FY2026",
+   "FY2027"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -342,7 +421,7 @@
   "text": "The high school fee for a first child, a season, went from $250 in FY2025 to $325 in FY2026."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "athletic-fee",

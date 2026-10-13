@@ -60,7 +60,6 @@ OUT_DIR = os.path.join(PUB, 'topics')
 MUNIS = os.path.join(D, 'munis-school-ytd.csv')
 MANIFEST = os.path.join(D, 'archive-manifest.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text')
-CHART_SOURCE = '/data/spending-what-comes-in.json'
 
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
         if home == 'athletics' and gen == 'build_athletics_topics.py']
@@ -308,6 +307,19 @@ def build():
                          {'u': U(unmatched), 'y': F(2024)})]),
          con('None of these figures includes the buildings, and no published allocation says '
              'what they add.', ['facility', 'bldg-gap'])],
+        # THE SPREAD, NOT A CHOSEN VALUE (13a): three hand-built totals side by side, and the
+        # ledger's two funds stacked as the fourth bar. One year, four answers.
+        chart=TP.series(
+            'One year of athletics, four totals',
+            ['Deck', 'Costs by Sport', 'Workbook', 'Town ledger'],
+            [TP.track('District sheets', [tot['deck'], tot['costsBySport'], tot['workbook'],
+                                          None], 'stated', 'bar'),
+             TP.track('Town budget, ledger', [None, None, None, t24], 'published', 'bar'),
+             TP.track('Fee fund, ledger', [None, None, None, f24], 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='All four are %s. The ledger bar is both funds’ spending, which also covers '
+                 'the director, trainer and insurance the workbook leaves out.' % C.fy(2024),
+            note_figures={'y': F(2024)}),
         sources=[src['bysport'], src['costs1'], src['workbook'], src['gf24'], src['sp24'],
                  src['gf26'], src['sp26'], src['d-munis']],
         said=[said_from(A['disclaimer'], 0)],
@@ -368,7 +380,21 @@ def build():
                          'budget. It fits the timing; nothing here tests it.', 'hypothesis')]),
          con('A town athletics line that rises may be a change in which fund pays, not in '
              'what athletics costs.', ['share24', 'share25', 'share17'])],
-        chart=dict(id='spending-what-comes-in-athletics', source=CHART_SOURCE),
+        # The finding is a SHARE that moved, so the share is drawn: the district's restated
+        # years beside the ledger's, one bar a year, the years nothing prints both sides left
+        # as gaps rather than zeros.
+        chart=TP.series(
+            'Fee fund’s share of athletics spending',
+            [C.fy(y) for y in range(2014, max(L) + 1)],
+            [TP.track('District budget document, restated',
+                      [100 * hist[y]['fund_share'] if y in (2014, 2015, 2016, 2017)
+                       else None for y in range(2014, max(L) + 1)], 'stated', 'bar'),
+             TP.track('Town ledger', [share[y] if y in share else None
+                                      for y in range(2014, max(L) + 1)], 'published', 'bar')],
+            '%', kind='bar', stacked=True,
+            note='The district’s %s budget document for the earlier years; the MUNIS year-end '
+                 'reports from %s.' % (C.fy(2019), C.fy(min(L))),
+            note_figures={'d': F(2019), 'y': F(min(L))}),
         table=table_pots,
         said=[said_file('school-committee/2025-03-12-minutes-7098.txt',
                         'Splitting everything into revolving funds is not a good way to manage '
@@ -389,9 +415,18 @@ def build():
              % agree)
     if att['sport_mentions'] != 0:
         fail('a fee-fund disbursement now names a sport; the cost-per-sport page says none does')
-    sport_rows = [dict(label=s['name'] + (' (MS)' if s['level'] == 'MS' else ''), cells=[
+    # The workbook's middle-school names already begin "MS"; say the level once.
+    team = lambda s: s['name'] + (' (MS)' if s['level'] == 'MS'
+                                  and not s['name'].startswith('MS ') else '')
+    sport_rows = [dict(label=team(s), cells=[
         usd2(s['columns']['deck']), usd2(s['columns']['costsBySport']),
         usd2(s['columns']['workbook'])]) for s in CS['sports']]
+    widest = sorted(CS['sports'], key=lambda s: -s['spread'])[:TP.ROWS_MAX]
+    for s in CS['sports']:
+        if abs(s['high'] - s['low'] - s['spread']) > 0.01 or not (
+                s['low'] <= min(s['columns'].values()) + 0.01
+                and s['high'] >= max(s['columns'].values()) - 0.01):
+            fail('%s: low, high and spread no longer describe its three sheet figures' % s['name'])
     sport_rows.append(dict(label='All %s teams' % C.num(teams), cells=[
         usd2(tot['deck']), usd2(tot['costsBySport']), usd2(tot['workbook'])]))
     out['cost-per-sport'] = TP.page(
@@ -437,6 +472,18 @@ def build():
                                rows=sport_rows,
                                note='Every column is a sheet somebody assembled, not the '
                                     'ledger. They are set side by side and never averaged.')]),
+        # THE SPREAD, PER TEAM (13a). Each bar runs to the highest of the three sheets, its
+        # solid part the lowest; the gap between is the disagreement. The widest gaps are drawn.
+        chart=TP.ranking(
+            'Each team’s cost, lowest sheet to highest',
+            [(team(s), [s['low'], s['spread']]) for s in widest],
+            '$', stack=['Lowest sheet', 'Up to the highest sheet'], basis='stated',
+            highlight=[s['name'] for s in widest if s['name'] in (CS['widest'], 'Outdoor Track')
+                       and s['level'] == 'HS'],
+            note='Of %s teams, the %s whose sheets differ most, %s. The third sheet’s figure '
+                 'falls between the two ends.' % (C.num(teams), C.num(min(TP.ROWS_MAX, teams)),
+                                                  C.fy(2024)),
+            note_figures={'k': N(min(TP.ROWS_MAX, teams)), 'n': N(teams), 'y': F(2024)}),
         said=[said_from(A['by_sport_said'], 0), said_from(A['by_sport_said'], 1),
               said_from(A['by_sport_said'], 2)],
         sources=[src['bysport'], src['costs1'], src['workbook'], src['cash26'], src['d-sport'],
@@ -499,6 +546,14 @@ def build():
              'workbook.' % (C.usd(director26 + trainer26), C.fy(2026)),
              ['gf-director', 'gf-trainer'],
              {'a': U(director26 + trainer26), 'y': F(2026)})],
+        chart=TP.series(
+            'Athletics by category, district workbook',
+            [C.fy(r['fy']) for r in sorted(A['categories'], key=lambda r: r['fy'])],
+            [TP.track(k, [r[k] for r in sorted(A['categories'], key=lambda r: r['fy'])],
+                      'stated', 'bar') for k in cats],
+            '$', kind='bar',
+            note='Every sport and season summed on a sheet the district assembled. It carries no '
+                 'director, trainer or insurance.'),
         table=dict(caption='Athletics by category, on the district’s workbook', views=[dict(
             key='categories', label='District by-sport workbook', total_col=len(cats),
             kinds=['stated'] * (len(cats) + 1), columns=cats + ['Total'],
@@ -559,6 +614,14 @@ def build():
                 C.fy(2025)), ['waive24', 'waive25'],
              {'a': N(mix[2024]['Full Waiver']), 'y': F(2024), 'b': N(mix[2025]['Full Waiver']),
               'z': F(2025)})],
+        chart=TP.series(
+            'Sport participations by school',
+            [C.fy(y) for y in sorted(pt)],
+            [TP.track('High school', [pt[y]['hs'] for y in sorted(pt)], 'stated', 'bar'),
+             TP.track('Middle school', [pt[y]['ms'] for y in sorted(pt)], 'stated', 'bar')],
+            'participations', kind='bar', stacked=True,
+            note='One student playing three seasons counts three times. From the district’s '
+                 'by-sport workbook.'),
         table=dict(caption='Participations by season and school', views=[dict(
             key='seasons', label='District by-sport workbook', total_col=6, kinds=['stated'] * 7,
             columns=['High school, fall', 'High school, winter', 'High school, spring',
@@ -648,6 +711,23 @@ def build():
                          'participations. Net means after the payment processor’s charge.',
                          'gap', closes='the fee receipts by family and by fee category from '
                                        'the district’s payment system')])],
+        # FY2027 IS A GAP ON THE CHART TOO: its schedule is not held, so the year is drawn
+        # empty rather than carried forward or left off.
+        chart=TP.series(
+            'Athletic fee a season, by year',
+            [C.fy(y) for y in (2024, 2025, 2026, 2027)],
+            [TP.track('High school, first child',
+                      [sched.get((y, 'HS', 'full_pay')) for y in (2024, 2025, 2026)] + [None],
+                      'published', 'bar'),
+             TP.track('Middle school, first child',
+                      [sched.get((y, 'MS', 'full_pay')) for y in (2024, 2025, 2026)] + [None],
+                      'published', 'bar'),
+             TP.track('High school, reduced fee',
+                      [sched.get((y, 'HS', 'reduced_fee')) for y in (2024, 2025, 2026)] + [None],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='%s is empty: its fee schedule is not held, so no amount is drawn.' % C.fy(2027),
+            note_figures={'y': F(2027)}),
         table=dict(caption='The athletic fee, a season, by year', views=[dict(
             key='fees', label='As set or stated', total_col=-1, kinds=['stated'] * 5,
             columns=['High school, first child', 'Second child', 'Middle school, first child',
@@ -704,6 +784,21 @@ def build():
              {'y': F(2025), 'a': U(flow[2025]['without_journals'])},
              notes=[step('A resident told the School Committee the fund ran a deficit. These '
                          'figures fit that account; nothing here tests it.', 'hypothesis')])],
+        # A STOCK, alone (HUB-AND-SPOKE: never a balance and its receipts on one axis). The
+        # first bar is the cash the earliest cashbook opens with; the dashed bar is ours.
+        chart=TP.series(
+            'Fee fund cash at the year’s end',
+            [C.fy(min(flow) - 1)] + [C.fy(y) for y in sorted(flow)],
+            [TP.track('Cash, the fund’s cashbook',
+                      [flow[min(flow)]['opening']] + [flow[y]['closing'] for y in sorted(flow)],
+                      'published', 'bar'),
+             TP.track('Without the four journal entries',
+                      [None] + [flow[y]['without_journals'] if y == 2025 else None
+                                for y in sorted(flow)], 'estimate', 'bar')],
+            '$', kind='bar',
+            note='%s is the cash the %s cashbook opens with. %s stops on the export’s last day.'
+                 % (C.fy(min(flow) - 1), C.fy(min(flow)), C.fy(max(flow))),
+            note_figures={'a': F(min(flow) - 1), 'b': F(min(flow)), 'c': F(max(flow))}),
         table=dict(caption='The fee fund’s cash, by year', views=[dict(
             key='cash', label='The fund’s cashbook', total_col=4, kinds=['ledger'] * 5,
             columns=['Opening cash', 'Money in', 'Paid out', 'Of money in: journal entries',
@@ -778,6 +873,14 @@ def build():
                          'the request against any decision on it.', 'gap',
                          closes='the athletic department’s equipment requests and purchase '
                                 'orders for the year')])],
+        chart=TP.ranking(
+            'Left unspent, account by account',
+            [(r['description'].capitalize(), float(r['available_budget']))
+             for r in t26['rows'] if float(r['available_budget']) >= 1],
+            '$', highlight=[r['description'].capitalize() for r in (sec, rec, new)],
+            note='%s left of a %s budget after transfers, %s. Accounts with at least a dollar '
+                 'left.' % (C.usd(t26['left']), C.usd(t26['revised']), C.fy(2026)),
+            note_figures={'a': U(t26['left']), 'b': U(t26['revised']), 'y': F(2026)}),
         table=dict(caption='Athletics accounts at the close', views=[dict(
             key='accounts', label='Town general fund, function 3510', total_col=3,
             kinds=['ledger'] * 4, columns=['Budget after transfers', 'Spent', 'Still owed',
@@ -843,7 +946,14 @@ def build():
         '%s paid in %s and the fee fund %s; the district’s own sheets disagree on what each team '
         'costs, by a multiple.' % (C.usd(town[2026]['spent']), C.fy(2026),
                                    C.usd(fund[2026]['spent'])),
-        hub_ladder, chart=dict(id='spending-what-comes-in-athletics', source=CHART_SOURCE),
+        hub_ladder, chart=TP.series(
+            'Athletics spending, the two pots',
+            [C.fy(y) for y in sorted(L)],
+            [TP.track('Town budget', [town[y]['spent'] for y in sorted(L)], 'published', 'bar'),
+             TP.track('Fee fund', [fund[y]['spent'] for y in sorted(L)], 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Spent at the close, from the town’s MUNIS year-end reports: function 3510 in '
+                 'the general fund, and fund 1301.', note_allow=('3510', '1301')),
         table=table_pots,
         answer_figures={'a': U(town[2026]['spent']), 'y': F(2026), 'b': U(fund[2026]['spent'])})
 

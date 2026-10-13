@@ -21,7 +21,7 @@ COUNCIL ON AGING is the biggest body in the town at 11 seats. 26 posts have a si
 | FY2024 | 111 | 103 | 93% |
 | FY2025 | 116 | 101 | 87% |
 
-A board’s charter fixes how many seats it has, so the seat COUNT is not a trend — it is the charter. Whether the seats have anybody in them is the part that moves, and it has moved a long way. Above 100%% is not an overfull board: it is a mid-year replacement printed beside the person replaced.
+A board’s charter fixes how many seats it has, so the seat COUNT is not a trend — it is the charter. Whether the seats have anybody in them is the part that moves, and it has moved a long way. Above 100% is not an overfull board: it is a mid-year replacement printed beside the person replaced.
 
 | | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|

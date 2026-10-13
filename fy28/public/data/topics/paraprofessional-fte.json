@@ -1,6 +1,84 @@
 {
  "category": "school-staffing",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Staff paid from grants and revolving funds are counted alongside those the town appropriates for."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "All programmes, DESE comparison sheet",
+    "texts": [
+     "46.4 full-time equivalents",
+     "39.9 full-time equivalents",
+     "24.1 full-time equivalents",
+     "24.1 full-time equivalents",
+     "14.8 full-time equivalents",
+     "16.2 full-time equivalents",
+     "31 full-time equivalents",
+     "51 full-time equivalents",
+     "59.5 full-time equivalents",
+     "51 full-time equivalents",
+     "53 full-time equivalents",
+     "57 full-time equivalents",
+     "59.5 full-time equivalents",
+     "55.5 full-time equivalents",
+     "59 full-time equivalents",
+     "66 full-time equivalents",
+     "67 full-time equivalents"
+    ],
+    "values": [
+     46.4,
+     39.9,
+     24.1,
+     24.1,
+     14.8,
+     16.2,
+     31.0,
+     51.0,
+     59.5,
+     51.0,
+     53.0,
+     57.0,
+     59.5,
+     55.5,
+     59.0,
+     66.0,
+     67.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Paraprofessional FTE by year",
+  "type": "series",
+  "unit": "full-time equivalents",
+  "x": [
+   "FY2009",
+   "FY2010",
+   "FY2011",
+   "FY2012",
+   "FY2013",
+   "FY2014",
+   "FY2015",
+   "FY2016",
+   "FY2017",
+   "FY2018",
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -138,6 +216,41 @@
     "rank-low"
    ],
    "text": "Per hundred pupils that is 4.27 in FY2025, highest of 13, from 0.94 in FY2013, lowest of 9."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    },
+    "r": {
+     "text": "8th",
+     "unit": "",
+     "value": 8
+    },
+    "s": {
+     "text": "1st",
+     "unit": "",
+     "value": 1
+    },
+    "y": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "st-low",
+    "st-last"
+   ],
+   "text": "Among the 8 districts on the sheet in every year, it was 8th in FY2013 and 1st in FY2025."
   }
  ],
  "facts": [
@@ -279,6 +392,56 @@
     "text": "9",
     "unit": "districts",
     "value": 9
+   }
+  },
+  {
+   "id": "st-low",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "8",
+      "unit": "",
+      "value": 8
+     },
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "of the 8 on the sheet every year, FY2013"
+   },
+   "value": {
+    "text": "8th",
+    "unit": "place",
+    "value": 8
+   }
+  },
+  {
+   "id": "st-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "8",
+      "unit": "",
+      "value": 8
+     },
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of the 8 on the sheet every year, FY2025"
+   },
+   "value": {
+    "text": "1st",
+    "unit": "place",
+    "value": 1
    }
   },
   {

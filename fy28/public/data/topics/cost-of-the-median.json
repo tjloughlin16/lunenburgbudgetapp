@@ -1,6 +1,63 @@
 {
  "category": "school-spending",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "FY2025, all funds. The two right-hand bars are our multiplication, not a target."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Spent, all funds, DESE",
+    "texts": [
+     "$30,031,242",
+     null,
+     null
+    ],
+    "values": [
+     30031242.0,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Ours, DESE’s rate times its pupils",
+    "texts": [
+     null,
+     "$35,282,429",
+     "$39,181,968"
+    ],
+    "values": [
+     null,
+     35282429.28,
+     39181968.0
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Spent against the state median",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Spent",
+   "At the first quartile",
+   "At the median"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

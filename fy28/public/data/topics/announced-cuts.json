@@ -1,6 +1,67 @@
 {
  "category": "school-programs",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Rows the district printed, by budget year. A row is a claim it published, not an event."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Reductions",
+    "texts": [
+     "25 items named",
+     "7 items named",
+     "62 items named",
+     "39 items named",
+     "25 items named"
+    ],
+    "values": [
+     25,
+     7,
+     62,
+     39,
+     25
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Restorations and additions",
+    "texts": [
+     "10 items named",
+     "0 items named",
+     "0 items named",
+     "0 items named",
+     "22 items named"
+    ],
+    "values": [
+     10,
+     0,
+     0,
+     0,
+     22
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "What the district’s budget documents named",
+  "type": "series",
+  "unit": "items named",
+  "x": [
+   "FY2020",
+   "FY2021",
+   "FY2025",
+   "FY2026",
+   "FY2027"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

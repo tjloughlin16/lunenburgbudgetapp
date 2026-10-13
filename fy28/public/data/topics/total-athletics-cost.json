@@ -1,6 +1,85 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "All four are FY2024. The ledger bar is both funds’ spending, which also covers the director, trainer and insurance the workbook leaves out."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "District sheets",
+    "texts": [
+     "$185,356",
+     "$275,948",
+     "$349,145",
+     null
+    ],
+    "values": [
+     185355.62,
+     275947.63,
+     349145.39,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Town budget, ledger",
+    "texts": [
+     null,
+     null,
+     null,
+     "$295,979"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     295979.27
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Fee fund, ledger",
+    "texts": [
+     null,
+     null,
+     null,
+     "$250,575"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     250574.63
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "One year of athletics, four totals",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Deck",
+   "Costs by Sport",
+   "Workbook",
+   "Town ledger"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -303,7 +382,7 @@
   "text": "No document states one total: three sheets give $185,356 to $349,145 for the same teams in FY2024."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "total-athletics-cost",

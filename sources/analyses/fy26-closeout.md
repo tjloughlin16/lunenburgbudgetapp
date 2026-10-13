@@ -337,17 +337,23 @@ Committee:
 > "Casey, the head coach put in a request to the athletic department to purchase five new
 > helmets earlier this spring, we currently have more heads than we have helmets."
 
-In the same fiscal year, the athletics equipment and uniform lines stood at:
+In the same fiscal year, the athletics equipment lines stood at:
 
 | account | | budget | spent | | left |
 |---|---|---:|---:|---:|---:|
 | `555048` | EQUIP RECO — equipment reconditioning | $8,292 | $3,649 | **44%** | +$4,643 |
-| `519104` | UNIFSPORTS — sports uniforms | $3,812 | $1,103 | **29%** | +$2,709 |
 | `555050` | NEW EQUIP — new equipment | $7,708 | $6,391 | 83% | +$1,317 |
-| | **the three together** | **$19,812** | **$11,143** | **56%** | **+$8,669** |
+| | **the two together** | **$16,000** | **$10,040** | **63%** | **+$5,960** |
 
-Athletics as a whole — 14 accounts — finished $51,905 under, including $20,407 for an
-athletics secretary post that paid nobody.
+The uniform account, `555049` REPLACEMENT OF UNIFORMS, had a voted budget of $10,000 in
+each of FY2023, FY2024 and FY2025, and of $0 in FY2026.
+
+*Corrected 13 October 2026.* This table used to list `519104` UNIFSPORTS as sports
+uniforms. MUNIS's full name for that account is P/R UNIFIED SPORTS COACH. It is a payroll
+line, so it has been taken out of the table.
+
+Athletics as a whole, the 12 accounts coded to function 3510, finished $55,300 under. That
+includes $20,407 for an athletics secretary post that paid nobody.
 
 **This is adjacency, and it is not an allegation.** Reconditioning a helmet is not buying
 one; the request was made "earlier this spring" and nothing here dates the decision on it;

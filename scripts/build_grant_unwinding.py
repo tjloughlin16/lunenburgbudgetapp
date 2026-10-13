@@ -390,7 +390,17 @@ def build():
         'at_first': round(last['total'] * first['gen_fund'] / first['total']),
         'difference': round(last['gen_fund'] - last['total'] * first['gen_fund'] / first['total']),
     }
-    total_change = ly['aggregate']['d_total']
+    # THE YEAR'S MOVEMENT IS READ OFF THE DISTRICT TOTALS, NOT THE PER-FUNCTION AGGREGATE.
+    # The aggregate covers only functions printed in BOTH years (an inner join), so a
+    # function that appears or disappears drops out of it: for FY2025 it read the general
+    # fund +1,999,627 and all funds -23,561, where DESE's own district totals read
+    # +1,697,071 and +454,357. A sentence about the year must use the year's totals.
+    prev = next(r for r in series if r['fy'] == latest - 1)
+    if last['fy'] != latest:
+        raise SystemExit('the district totals end in FY%d and the function steps in FY%d. '
+                         'Nothing written.' % (last['fy'], latest))
+    gen_change = round(last['gen_fund'] - prev['gen_fund'])
+    total_change = round(last['total'] - prev['total'])
 
     return {
         'about': 'Every dollar of Lunenburg school spending, split by the fund that paid '
@@ -434,11 +444,11 @@ def build():
             conclusion(
                 id='half-of-it-was-replaced-and-half-just-stopped',
                 bearing='sizes',
-                claim='%s of the grant money that ran out in FY2025 was replaced by the town’s own money.' % C.pct(replaced_share),
+                claim='%s of the grant money that ran out in FY2025 was replaced from the general fund.' % C.pct(replaced_share),
                 so_what='The rest simply stopped. It was a handover and a reduction happening at the same time.',
                 lede='When the grant money ran out in %s the town replaced under half of '
                       'it: of %s of grant funding that fell, across %s areas of school '
-                      'spending, %s fell where the town’s own money rose to meet it and '
+                      'spending, %s fell where the general fund rose to meet it and '
                       '%s fell where nothing did.'
                       % (C.fy(latest), C.usd(grant_fall), C.num(fell_n),
                          C.usd(replaced), C.usd(not_replaced)),
@@ -448,7 +458,9 @@ def build():
                        'reduction happening at once, and “the town picked up the bill for '
                        'the grants” describes %s of the money. A function where the '
                        'general fund rose is also not a function that was made whole: the '
-                       'rise is what the town raised, not what the work cost.'
+                       'rise is what the general fund carried, not what the work cost. And '
+                       'the general fund is not only local taxes: Chapter 70 aid pays into '
+                       'it too.'
                        % (C.num(ly['swap']['n']), C.usd(ly['swap']['d_gen_fund']),
                           C.num(ly['reduction']['n']),
                           C.usd(-ly['reduction']['d_gen_fund']), C.pct(replaced_share)),
@@ -468,6 +480,7 @@ def build():
                     'replaced_share': figure(replaced_share, C.pct(replaced_share)),
                 },
                 figure='replaced_share',
+                allow=('Chapter 70',),
                 kind='measured',
                 basis='DESE’s End of Year Financial Report for Lunenburg, function by '
                       'function, FY%d against FY%d: the general fund column set against '
@@ -489,7 +502,7 @@ def build():
                       % (C.usd(levels['before']), C.fy(latest - 1), C.usd(levels['before2']), C.usd(levels['now'])),
                 so_what='The %s “rise” of %s is that gap closing, not a cost; over two years the line moved %s.'
                         % (C.fy(latest), C.usd(top_rise['d_gen_fund']), C.usd(levels['two_year'])),
-                lede='The largest rise in the town’s own school spending in %s on paper was %s, up %s '
+                lede='The largest rise in general fund school spending in %s on paper was %s, up %s '
                       '— more than the whole year’s net fall in grant funding of %s. It is not a rise.'
                       % (C.fy(latest), levels['func'], C.usd(top_rise['d_gen_fund']), C.usd(net_grant_fall)),
                 detail='The general fund column for that function reads %s in %s, %s in %s and %s in %s. '
@@ -526,11 +539,11 @@ def build():
             conclusion(
                 id='the-town-carries-more-of-it-than-it-used-to',
                 bearing='sizes',
-                claim='The town now carries %s a year that outside money used to, at today’s spending.' % C.usd(cf['difference']),
+                claim='The general fund now carries %s a year that outside money used to, at today’s spending.' % C.usd(cf['difference']),
                 so_what='Outside money paid nearly a dollar in five of school spending and now pays about one in ten.',
                 lede='Money from outside the town’s budget — grants and the like — used '
                       'to pay nearly one dollar in five of what Lunenburg schools spend, '
-                      'and now pays about one in ten. The town’s own share went from %s in '
+                      'and now pays about one in ten. The general fund’s share went from %s in '
                       '%s to %s in %s.'
                       % (C.pct(first['town_share']), C.fy(first['fy']),
                          C.pct(last['town_share']), C.fy(last['fy'])),
@@ -538,13 +551,15 @@ def build():
                        'split stayed where it was in %s the general fund would have '
                        'carried %s rather than %s. That last figure is arithmetic of ours '
                        'and a counterfactual, not a forecast — but it is the size of the '
-                       'shift a household is paying for, and it is why the town’s bill can '
-                       'rise in a year when the schools spend less. In %s the general fund '
-                       'rose %s while spending across both funds fell %s.'
+                       'shift onto the general fund, which local taxes and Chapter 70 aid '
+                       'pay together, and it is why that fund can rise faster than what the '
+                       'schools spend. In %s, on DESE’s district totals, the general fund '
+                       'rose %s while spending across both funds %s %s.'
                        % (C.points(last['town_share'] - first['town_share']),
                           C.fy(last['fy']), C.usd(cf['difference']), C.fy(first['fy']),
                           C.usd(cf['at_first']), C.usd(cf['actual']), C.fy(latest),
-                          C.usd(ly['aggregate']['d_gen_fund']), C.usd(-total_change)),
+                          C.usd(gen_change), 'rose' if total_change >= 0 else 'fell',
+                          C.usd(abs(total_change))),
                 figures={
                     'share_first': figure(first['town_share'], C.pct(first['town_share'])),
                     'share_last': figure(last['town_share'], C.pct(last['town_share'])),
@@ -555,11 +570,11 @@ def build():
                     'counterfactual': figure(cf['difference'], C.usd(cf['difference'])),
                     'at_first_share': figure(cf['at_first'], C.usd(cf['at_first'])),
                     'actual': figure(cf['actual'], C.usd(cf['actual'])),
-                    'latest_gen_fund_rise': figure(ly['aggregate']['d_gen_fund'],
-                                                   C.usd(ly['aggregate']['d_gen_fund'])),
-                    'latest_total_fall': figure(-total_change, C.usd(-total_change)),
+                    'latest_gen_fund_rise': figure(gen_change, C.usd(gen_change)),
+                    'latest_total_change': figure(abs(total_change), C.usd(abs(total_change))),
                 },
                 figure='counterfactual',
+                allow=('Chapter 70',),
                 kind='measured',
                 basis='DESE’s End of Year Financial Report, district totals, every year '
                       'from FY%d to FY%d: the general fund column as a share of the '

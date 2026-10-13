@@ -21,13 +21,23 @@ throughout, out of the town's own revenue/expenditure worksheets. That is the se
 2.0% has to be argued against, and until now nothing in this project held it.
 
 **The 2.0% is below every long-run measurement of that series and above the most recent
-short one.** Median annual step over all 22 steps: **2.7277%**. Over the last ten:
-**2.6218%**. Compound FY2005→FY2027: **3.5724%**. Compound FY2019→FY2027: **2.8112%**.
-Compound FY2023→FY2027: **1.9144%**.
+short one.** Median annual step over all 22 steps: **2.7110%**. Over the last ten:
+**2.4858%**. Compound FY2005→FY2027: **3.6045%**. Compound FY2019→FY2027: **2.8986%**.
+Compound FY2023→FY2027: **2.0879%**.
+
+> **Corrected 13 October 2026.** This note first read the town's older `Subtotal State Aid`
+> line as EXCLUDING school choice tuition and subtracted school choice from FY2025–FY2027 to
+> match. It was the other way round: the older line equals DLS's own cherry sheet `Total
+> Receipts` for Lunenburg — school choice included — to the dollar in twelve years
+> (FY2010–FY2011, FY2013–FY2020, FY2022–FY2023; `sources/data/dls-cherry-sheet.csv`). So the
+> series changed definition at FY2025 and its −1.0% FY2025 step was partly definitional.
+> FY2025–FY2027 are now the booklet's whole `Total Receipts`, and every rate below is
+> recomputed. The median moved from 2.7277% to 2.7110%; the model's 2.75% is unchanged —
+> see §5.
 
 **The recommendation is 2.75% a year, with moderate confidence, and it is a smaller change
-than it looks.** It is the median annual step of the town's own budgeted aid, it is within
-0.1 point of both the ten-year median and the FY2019→FY2027 compound rate, and moving the
+than it looks.** It is the median annual step of the town's own budgeted aid (2.7110%),
+rounded to the quarter point, and moving the
 model from 2.0% to 2.75% narrows the FY2033 gap by **$323,838** and the six-year cumulative
 gap by **$1,090,588** — about 7%. State aid is 23.8% of the FY27 omnibus, so a
 three-quarter-point change on it moves whole-town revenue growth by 0.18 points.
@@ -44,7 +54,7 @@ The FY2027 Town Meeting booklet says *"From FY13-FY23 state aid increased at an 
 of 5.3%, but in the last four years, it has slowed to approximately 1.4%"*
 (`sources/town-budget/text/3765-town-meeting-booklet-including-warrant.txt`, line 338).
 The same town's `Subtotal State Aid` line gives **4.5660%** for FY2013→FY2023 and
-**1.9144%** for FY2023→FY2027. The booklet does not say which quantity it measured.
+**2.0879%** for FY2023→FY2027. The booklet does not say which quantity it measured.
 Registered in `money-gaps.csv`.
 
 **What none of this establishes** is in §6, and it is the important half.
@@ -55,7 +65,7 @@ Registered in `money-gaps.csv`.
 
 | # | series | span | stage | quantity | rate it implies |
 |---|---|---|---|---|---|
-| A | Town's `Subtotal State Aid` | FY2005–FY2027, 23 yrs | **budget** | all cherry sheet receipts | median step **2.7277%**; CAGR **3.5724%** |
+| A | Town's `Subtotal State Aid` = cherry sheet `Total Receipts` | FY2005–FY2027, 23 yrs | **budget** | all cherry sheet receipts, school choice included | median step **2.7110%**; CAGR **3.6045%** |
 | B | `annual_report_receipts`, `status='checked'` | FY2014–FY2022, 5 points | **actual** | Chapter 70 only | **4.4653%** compound |
 | C | `free_cash_proof` CL#8 | 2021–2025, 5 yrs | actual **minus** estimate | all cherry sheet receipts | not a rate — an error band |
 | D | `v_state_aid` (FY2026 ledger, p09) | one year | budget, revised **and** received | 45xx general fund objects | not a rate — a within-year pair |
@@ -82,7 +92,8 @@ Chapter 70 per district per year; this archive does not hold it.
 ## 3. Series A, in full — and read year by year (rule 6)
 
 `notes/findings/state-aid-budget-series.csv`. Amounts are the `Subtotal State Aid` line of
-the town's own worksheets; the CSV carries the document, the sheet or line number, and the
+the town's own worksheets to FY2024 and the FY2027 booklet's `Total Receipts` from FY2025 —
+one quantity, school choice included; the CSV carries the document, the sheet or line number, and the
 printed column heading for every row.
 
 | FY | budgeted aid | step | FY | budgeted aid | step |
@@ -95,35 +106,35 @@ printed column heading for every row.
 | 2010 | 6,015,508 | **−9.4%** | 2022 | 9,440,371 | +1.4% |
 | 2011 | 5,982,319 | −0.6% | 2023 | 10,500,128 | **+11.2%** |
 | 2012 | 6,001,062 | +0.3% | 2024 | 10,793,838 | +2.8% |
-| 2013 | 6,718,759 | **+12.0%** | 2025 | 10,682,086 | **−1.0%** |
-| 2014 | 6,855,401 | +2.0% | 2026 | 11,034,268 | +3.3% |
-| 2015 | 7,194,650 | +4.9% | 2027 | 11,327,588 | +2.7% |
+| 2013 | 6,718,759 | **+12.0%** | 2025 | 10,776,998 | −0.2% |
+| 2014 | 6,855,401 | +2.0% | 2026 | 11,139,103 | +3.4% |
+| 2015 | 7,194,650 | +4.9% | 2027 | 11,404,917 | +2.4% |
 | 2016 | 7,518,492 | +4.5% | | | |
 
 **This is not a smooth line and no single compound rate describes it.** Four of the
 twenty-two steps are double digits (FY2007, FY2013, FY2018, FY2023); one is −9.4%
 (FY2010); one is exactly zero (FY2021). Between the steps the series moves 0–4% a year.
 **A compound rate is therefore hostage to whether its window contains a step**, which is
-why every window that starts on FY2023 lands near 1.7–1.9% and every window that contains
+why every window that starts on FY2023 lands near 2.0–2.1% and every window that contains
 FY2018 or FY2023 lands near 3.5–4%:
 
 | window | compound rate | contains a step year? |
 |---|---:|---|
-| FY2005→FY2027 (22y) | 3.5724% | four |
+| FY2005→FY2027 (22y) | 3.6045% | four |
 | FY2005→FY2019 (14y) | 4.0100% | three |
 | FY2013→FY2023 (10y) | 4.5660% | two |
-| FY2017→FY2027 (10y) | 3.5405% | two |
-| FY2019→FY2027 (8y) | 2.8112% | one |
-| FY2019→FY2026 (7y) | 2.8330% | one |
-| FY2022→FY2026 (4y) | 3.9773% | one |
-| **FY2023→FY2026 (3y)** | **1.6677%** | **none** |
-| **FY2023→FY2027 (4y)** | **1.9144%** | **none** |
-| FY2025→FY2027 (2y) | 2.9771% | none |
+| FY2017→FY2027 (10y) | 3.6110% | two |
+| FY2019→FY2027 (8y) | 2.8986% | one |
+| FY2019→FY2026 (7y) | 2.9720% | one |
+| FY2022→FY2026 (4y) | 4.2234% | one |
+| **FY2023→FY2026 (3y)** | **1.9887%** | **none** |
+| **FY2023→FY2027 (4y)** | **2.0879%** | **none** |
+| FY2025→FY2027 (2y) | 2.8720% | none |
 
 **The median annual step is the robust statistic here**, because it is not moved by whether
-a window happens to straddle a policy event: **2.7277%** over all 22 steps, **2.6218%**
+a window happens to straddle a policy event: **2.7110%** over all 22 steps, **2.4858%**
 over the last ten, **2.7972%** over the last five. Three windows of very different length
-agree to within 0.18 of a point, which none of the compound rates do.
+agree to within 0.32 of a point, which none of the compound rates do.
 
 ### The two stage seams, stated rather than smoothed
 
@@ -139,11 +150,13 @@ assumed:
   says 9,034,019; the FY2020 worksheet's `FY19 FINAL BUDGET` column says 9,074,334 — 0.45%
   apart, the state budget having been enacted in between. The series uses the later stage.
 
-### The definitional break, and the source's own proof of it
+### The definitional break — and which side of it the series is on
 
 The FY2027 Town Meeting booklet counts `School Choice Receiving` tuition inside its cherry
-sheet `Total Receipts`; every earlier worksheet's `Subtotal State Aid` does not. **The
-booklet prints both, so the bridge is arithmetic and not judgement**
+sheet `Total Receipts`, and so do the earlier worksheets' `Subtotal State Aid` figures in
+their final-budget years: those equal DLS's `Total Receipts`, school choice included, to the
+dollar in twelve of the fifteen years DLS publishes before FY2025. **What does not is the
+2024 booklet's FY2025 projection**
 (`3765-town-meeting-booklet-including-warrant.txt`, lines 2436–2448):
 
 ```
@@ -155,15 +168,17 @@ Exemp: VBS and Elderly                   56,888          92,232         102,040
 State Owned Land                         48,606          48,606          49,237
 Library                                  34,386          34,448          34,818
                                      ----------      ----------      ----------
-  = the older Subtotal State Aid     10,682,086      11,034,268      11,327,588
+  = less school choice               10,682,086      11,034,268      11,327,588
 School Choice Receiving                  94,912         104,835          77,329
 Total Receipts                       10,776,998      11,139,103      11,404,917
 ```
 
 `10,776,998 − 94,912 = 10,682,086`, and **10,682,086 is exactly what the 2024 Annual Town
 Meeting booklet prints as `Subtotal State Aid` for FY2025** in an entirely different
-document. The generator asserts that equality and refuses to write without it. The
-published series uses the older, school-choice-excluding definition throughout.
+document. So that one projection left school choice out. The series reads the whole `Total
+Receipts` for FY2025–FY2027, which is the quantity the earlier years carry and the one
+`model/finance.py` starts from (11,404,917 plus the enacted increment). The generator
+asserts both the twelve DLS ties and this equality, and refuses to write without them.
 
 ### Where the growth is, FY2025→FY2027
 
@@ -243,16 +258,21 @@ rate.
 > **2.75% a year, moderate confidence.** Range for scenario work: **1.5% to 3.5%**.
 
 **Why 2.75%.** It is the median annual step of the town's own budgeted aid over 22 years
-(2.7277%), it is within 0.11 of a point of the same median over the last ten steps
-(2.6218%), within 0.07 of the last five (2.7972%), and within 0.09 of a point of the
-FY2019→FY2027 compound rate (2.8112%). Five different ways of asking the question over three different
-spans land between 2.62% and 2.81%. Nothing else in this investigation converges like that.
+(2.7110%), rounded to the quarter point. The same median over the last five steps is
+2.7972% and the FY2019→FY2027 compound rate 2.8986%; the last ten steps give 2.4858%. Five
+ways of asking the question over three spans land between 2.49% and 2.90%.
 
-**Why not the compound rate.** 3.5724% over 22 years is real and it is the wrong statistic
+The rounding is ours. Before the definitional correction of 13 October 2026 the median was
+2.7277% and the ten-step median 2.6218%, and this paragraph said the measures converged
+more tightly than they do. The quarter-point figure was kept because 2.71% and 2.75% are
+inside the same rounding the original recommendation made, and the CL#8 band in §4 is
+roughly seventy times the difference between them.
+
+**Why not the compound rate.** 3.6045% over 22 years is real and it is the wrong statistic
 for a five-year forward projection, because it is carried by four policy step-years and a
 projection that assumes one arrives on schedule is assuming a legislature.
 
-**Why not 1.9%.** FY2023→FY2027 is four years that happen to contain no step. Rule 6:
+**Why not 2.1%.** FY2023→FY2027 is four years that happen to contain no step. Rule 6:
 *a three-year rate off a small base is not a trend*, and the same applies to a four-year
 rate that starts the year after a 11.2% jump. It is the right number for *"what has
 happened lately"* and the wrong one for *"what happens next"*.
@@ -272,7 +292,9 @@ happened lately"* and the wrong one for *"what happens next"*.
    document that would speak to it is DESE's Chapter 70 district summary, and it is only
    ever published one year ahead.
 
-**What it is worth.** Running `finance.project(years=6, assumptions=dict(state_aid_growth=r))`:
+**What it is worth.** Running `finance.project(years=6, assumptions=dict(state_aid_growth=r))`
+against the model as it stood when this was written (its FY2028 gap was then $680,870; the
+model has moved since and this table was not recomputed):
 
 | rate | FY2028 gap | FY2033 gap | six-year cumulative |
 |---:|---:|---:|---:|
@@ -291,8 +313,8 @@ calculation off the town's published series, not a figure anybody published.
 - **That aid will grow at any rate.** §5, point 3. This is a measurement of 23 budgets, and
   Chapter 70 is a formula whose inputs are not modelled here.
 - **That the growth measured is growth in aid rather than in what aid is defined to
-  include.** The school-choice bridge caught one definitional change *because the booklet
-  printed both sides of it*. There is no reason to think it is the only one in 23 years,
+  include.** One definitional change was caught *because the booklet printed both sides
+  of it* — and was first read backwards, which is what a DLS cross-check corrected. There is no reason to think it is the only one in 23 years,
   and the older worksheets print one line where the newer ones print seven.
 - **That any of this is money for schools.** Rule 11. `Education` is a cherry sheet
   category, not an appropriation to the district, and `connecting-the-budget.md` establishes

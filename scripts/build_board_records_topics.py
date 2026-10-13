@@ -43,12 +43,12 @@ IT COMPUTES ONLY WHAT IT CANNOT READ, and says where:
                                            board medians are not used; build_tenure.py's own
                                            identity rule and censoring are, on the clean rows.
 
-DEFECTS FOUND IN THE SOURCES, not fixed here (this script may not edit them):
-  - board-composition.json `stats` and its third conclusion state 60 distinct people hold the
-    182 posts listed in FY2025. 60 is a stale loop variable in town_personnel_data.py (`who`
-    is rebound by the school-roster loop); the listing holds 173 distinct names. Not used.
-  - board-posting.json's first conclusion says its 1,284 of 1,934 is over the 30 ranked
-    boards; it is over all 39. These pages say 39.
+DEFECTS FOUND IN THE SOURCES, FIXED AT THEIR GENERATORS on 13 October 2026:
+  - board-composition's distinct-people count read a stale loop variable in
+    town_personnel_data.py (`who`, rebound by the school-roster loop). It now counts the
+    listing's own holders.
+  - board-posting's first conclusion named the ranked-board count beside a total taken over
+    every board; it now names every board, as these pages do.
 """
 import argparse
 import collections
@@ -160,7 +160,7 @@ def board_tenure():
     years = sorted({int(r['fy']) for r in rows})
     return dict(memberships=len(mem), settled=len(settled), censored=censored,
                 median=statistics.median(settled), single=sum(1 for s in settled if s == 1),
-                first=years[0], last=years[-1])
+                first=years[0], last=years[-1], lengths=sorted(settled))
 
 
 def like_for_like(a, b):
@@ -243,6 +243,21 @@ def build():
     pf = lambda: [f('pf-gap', None, 'which posted agendas were for meetings later cancelled',
                     'gap', closes=CANCELLED)]
 
+    # ---------------------------------------------------------------- charts (topic.py, CHARTS)
+    # Counted here from the same rows the facts read; no figure is typed. Boards are named,
+    # people never are (rule 13e and NAMES above).
+    BANDS = (('90% or more', 90, 101), ('75% to under 90%', 75, 90), ('50% to under 75%', 50, 75),
+             ('Under half', 0, 50))
+    band_n = [sum(1 for b in ranked if lo <= b['share'] < hi) for _, lo, hi in BANDS]
+    if sum(band_n) != len(ranked) or band_n[0] != hi90 or band_n[-1] != lo50:
+        fail('the minutes bands no longer partition the ranked boards')
+    minutes_chart = TP.series('Ranked boards by share with minutes', [n for n, _, _ in BANDS],
+                              [TP.track('Ranked boards', band_n, 'published', 'bar')], 'boards',
+                              kind='bar',
+                              note='Each board’s share of its own meetings, %s to %s, with minutes '
+                                   'listed on the Agenda Center.' % (C.fy(f0), C.fy(f1)),
+                              note_figures={'a': F(f0), 'b': F(f1)})
+
     # ================================================================ minutes posted
     out['board-minutes-posted'] = TP.page(
         'board-minutes-posted',
@@ -284,6 +299,7 @@ def build():
                     step('Why a board’s minutes are not listed -- a vacancy, a policy, minutes '
                          'approved and not uploaded -- is not in this record.', 'gap',
                          closes=UNPOSTED)])],
+        chart=minutes_chart,
         table=dict(caption='Meetings with minutes listed, %s to %s, ranked boards'
                    % (C.fy(f0), C.fy(f1)), views=[dict(
                        key='boards', label='By board', total_col=2, kinds=['ledger'] * 3,
@@ -338,6 +354,14 @@ def build():
                          'this project on %s. They are not counted: this page counts what the '
                          'town posted.' % (C.num(dlv['n']), dlv['when']), 'gap',
                          {'n': N(dlv['n'])}, allow=(dlv['when'],), closes=UNPOSTED)])],
+        chart=TP.series('Meetings with minutes listed, by year', [C.fy(fy) for fy in fys], [
+            TP.track('Every board', [ys[fy] for fy in fys]),
+            TP.track('School Committee', [100 * yr(sc, fy)['with_minutes'] / yr(sc, fy)['meetings']
+                                          for fy in fys]),
+            TP.track('Select Board', [100 * yr(sb, fy)['with_minutes'] / yr(sb, fy)['meetings']
+                                      for fy in fys]),
+            TP.track('Finance Committee', [100 * yr(fc, fy)['with_minutes'] / yr(fc, fy)['meetings']
+                                           for fy in fys])], '%'),
         table=dict(caption='Meetings with minutes listed, by fiscal year', views=[dict(
             key='years', label='By year', total_col=0, kinds=['ledger'] * 4,
             columns=['Every board', 'School Committee', 'Select Board', 'Finance Committee'],
@@ -388,6 +412,13 @@ def build():
                          closes=VIDEO_MAP),
                     step('A recording and a set of minutes are different records; neither '
                          'count says what was decided.', 'gap', closes=UNPOSTED)])],
+        chart=TP.series('Meetings, videos and minutes by year', [C.fy(fy) for fy in fys], [
+            TP.track('With a posted agenda', [per_fy[fy][0] for fy in fys], 'published', 'bar'),
+            TP.track('With a video matched', [per_fy[fy][2] for fy in fys], 'published', 'line'),
+            TP.track('With minutes listed', [per_fy[fy][1] for fy in fys], 'published', 'line')],
+            'meetings',
+            note='Every board, as the Agenda Center and the town’s channel stood on %s.' % asof,
+            note_allow=(asof,)),
         table=dict(caption='Meetings with a video and with minutes, %s to %s, ranked boards'
                    % (C.fy(f0), C.fy(f1)), views=[dict(
                        key='boards', label='By board', total_col=-1, kinds=['ledger'] * 3,
@@ -451,7 +482,14 @@ def build():
              ['later', 'z-bodies'],
              notes=[step('Why a seat is empty -- nobody applied, an appointment not yet made, a '
                          'board winding down -- is not in the listing.', 'gap', closes=DATED)])],
-        chart=dict(id='board-composition-fill', source='/data/board-composition.json'),
+        chart=TP.series('Stated seats with a name printed', [C.fy(y) for y in sorted(fill)], [
+            TP.track('The same boards in both end years',
+                     [lla if y == fa else llz if y == fz else None for y in sorted(fill)],
+                     'published', 'bar'),
+            TP.track('Every board stating a size', [fill[y]['pct'] for y in sorted(fill)],
+                     'published', 'line')], '%',
+            note='Above a hundred means more names than seats. The line’s boards differ '
+                 'year to year; the bars hold them fixed.', note_allow=('a hundred',)),
         table=dict(caption='Stated seats and names printed, boards stating a plain size',
                    views=[dict(
                        key='years', label='By year', total_col=3, kinds=['ledger'] * 4,
@@ -479,6 +517,8 @@ def build():
     exp = {int(e['year']): len(e['seats']) for e in OS['expiring']}
     ahead = sorted(y for y in exp if y > fy_os)[:3]
     e1, e2, e3 = ahead
+    if pers['filled_by'] != 'appointed':
+        fail('the Personnel Committee is no longer an appointed heading')
     out['board-open-seats'] = TP.page(
         'board-open-seats',
         'The %s annual report prints %s seats empty under %s headings: %s appointed, %s elected.'
@@ -506,6 +546,12 @@ def build():
               'z': YR(e3)}),
          con('The %s terms have come up since the report was printed; it cannot say who holds '
              'those seats now.' % e1, ['e1', 'today'], {'x': YR(e1)})],
+        chart=TP.parts('Seats printed empty', [
+            ('Personnel Committee', pers['seats']),
+            ('Other appointed headings', napp - pers['seats']),
+            ('Elected headings', nele)], 'seats',
+            note='Under the appointed and the elected officials of the %s listing.' % C.fy(fy_os),
+            note_figures={'y': F(fy_os)}),
         table=dict(caption='Seats printed empty, %s annual report' % C.fy(fy_os), views=[dict(
             key='vacancies', label='By heading', total_col=-1, kinds=['ledger', 'stated'],
             columns=['Seats empty', 'Section'],
@@ -550,7 +596,14 @@ def build():
              % (C.num(top['people']), C.num(sz['finance committee']), C.num(sz['select board'])),
              ['coa', 'fc', 'sb', 'sc', 'held'],
              {'a': N(top['people']), 'b': N(sz['finance committee']), 'c': N(sz['select board'])})],
-        chart=dict(id='board-composition-where', source='/data/board-composition.json'),
+        chart=TP.series('Headings by number of holders',
+                        [('%d holder' if k == 1 else '%d holders') % k
+                         for k in range(1, top['people'] + 1)],
+                        [TP.track('Headings', [sum(1 for s in sizes if s['people'] == k)
+                                               for k in range(1, top['people'] + 1)],
+                                  'published', 'bar')], 'headings', kind='bar',
+                        note='Filled seats printed under each heading, %s.' % C.fy(fz),
+                        note_figures={'y': F(fz)}),
         table=dict(caption='Holders printed per heading, %s' % C.fy(fz), views=[dict(
             key='sizes', label='Headings with four or more', total_col=-1, kinds=['ledger'],
             columns=['Holders printed'],
@@ -573,6 +626,11 @@ def build():
             fail('%r is no longer in body_churn' % k)
     Pc = lambda b: P0(b['churn'])
     measured = [b for b in churn_rows if b['pairs'] >= 4]
+    CH_BANDS = (('Under 20%', 0, 20), ('20% to under 30%', 20, 30), ('30% to under 40%', 30, 40),
+                ('40% to under 50%', 40, 50), ('50% or more', 50, 101))
+    ch_n = [sum(1 for b in churn_rows if lo <= b['churn'] < hi) for _, lo, hi in CH_BANDS]
+    if sum(ch_n) != len(churn_rows):
+        fail('the turnover bands no longer partition the bodies')
     out['board-turnover'] = TP.page(
         'board-turnover',
         'Across %s bodies of three or more seats, the median sees %s of its seats change hands a year.'
@@ -601,6 +659,11 @@ def build():
                          closes=RENAMES)]),
          con('A name leaving the listing is not a resignation: a term ending and a move look '
              'the same.', ['why', 'med'])],
+        chart=TP.series('Bodies by share of seats changing hands',
+                        [lbl for lbl, _, _ in CH_BANDS],
+                        [TP.track('Bodies', ch_n, 'published', 'bar')], 'bodies', kind='bar',
+                        note='Each body’s average a year, names matched between consecutive '
+                             'listings.'),
         table=dict(caption='Seats changing hands a year, bodies measured four or more times',
                    views=[dict(
                        key='bodies', label='By body', total_col=2, kinds=['ledger'] * 3,
@@ -655,6 +718,14 @@ def build():
              % (C.fy(last_ch['fy']), C.num(last_ch['arrived']), C.num(last_ch['left'])),
              ['new', 'gone', 'ever', 'all'],
              {'y': F(last_ch['fy']), 'a': N(last_ch['arrived']), 'b': N(last_ch['left'])})],
+        chart=TP.series('Finished board memberships by length',
+                        [('%d listing' if k == 1 else '%d listings') % k
+                         for k in range(1, max(T['lengths']) + 1)],
+                        [TP.track('Memberships', [T['lengths'].count(k)
+                                                  for k in range(1, max(T['lengths']) + 1)],
+                                  'published', 'bar')], 'memberships', kind='bar',
+                        note='Only memberships that began and ended inside the record; those '
+                             'under way at either end are left out.'),
         table=dict(caption='Names in the listing, year on year', views=[dict(
             key='churn', label='By year', total_col=-1, kinds=['ledger'] * 3,
             columns=['Stayed', 'New', 'Gone'],
@@ -718,7 +789,7 @@ def build():
         'changes %s of its seats a year.'
         % (C.pct(share, 0), C.fy(f0), C.fy(f1), C.fy(fz), C.pct(Z['pct'], 0), C.pct(med, 0)),
         hub_ladder,
-        chart=dict(id='board-composition-fill', source='/data/board-composition.json'),
+        chart=minutes_chart,
         answer_figures={'s': P0(share), 'a': F(f0), 'b': F(f1), 'y': F(fz), 'p': P0(Z['pct']),
                         'm': P0(med)})
 

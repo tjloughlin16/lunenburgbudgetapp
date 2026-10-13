@@ -1,6 +1,59 @@
 {
  "category": "department-budgets",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2023"
+   ],
+   "text": "The dashed line is ours: the FY2023 figure grown at the cap each year."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Voted, the library",
+    "texts": [
+     "$492,984",
+     "$539,126",
+     "$583,890"
+    ],
+    "values": [
+     492983.92,
+     539126.28,
+     583889.77
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "Growing at the levy cap from FY2023",
+    "texts": [
+     "$492,984",
+     "$505,309",
+     "$517,941"
+    ],
+    "values": [
+     492983.92,
+     505308.5179999999,
+     517941.23094999994
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The library against the cap",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

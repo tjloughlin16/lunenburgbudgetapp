@@ -28,7 +28,7 @@
   "value": 69492703
  },
  "drivers": {
-  "blended": 0.05181,
+  "blended": 0.0518,
   "cap": 0.025,
   "note": "A line matters in proportion to its share of spending times how far its growth exceeds the 2.5% levy cap (rule 4). Neither number alone means anything: the biggest line is not the biggest driver.",
   "rows": [
@@ -46,7 +46,7 @@
     "key": "sped",
     "label": "Special education, in district",
     "pull": 0.00808,
-    "rate": 0.06487743183668555,
+    "rate": 0.064840310824972,
     "share": 0.2027,
     "who": "each child\u2019s plan, and the law"
    },
@@ -96,7 +96,7 @@
     "who": "state rates and which children enrol"
    }
   ],
-  "spread_over_cap": 0.02681,
+  "spread_over_cap": 0.0268,
   "top2_share": 0.647
  },
  "facts": {
@@ -202,7 +202,7 @@
  "generated_by": "scripts/build_big_picture.py",
  "grain": "Dollars from the model the rest of this site runs on; people and children from DESE\u2019s own district files, ten years apart; residents from the Census Bureau\u2019s five-year survey, with its margins.",
  "hole": {
-  "average": 660910,
+  "average": 660188,
   "note": "Each year\u2019s shortfall after the year before\u2019s cuts stay cut, in the order the School Committee has said it would cut. Level service means the same people, the same programs, the same buildings, one year older.",
   "order": [
    "sped",
@@ -217,14 +217,14 @@
    "arts",
    "athletics"
   ],
-  "total": 3304552,
+  "total": 3300942,
   "years": [
    {
     "cum_fte": 2.9,
     "cut": 939180,
     "fte": 2.9,
     "fy": 2028,
-    "short": 930273,
+    "short": 930070,
     "takes": [
      "Student Device Refresh & Computer Leases",
      "Remaining Athletics Program (all sports)",
@@ -237,7 +237,7 @@
     "cut": 624436,
     "fte": 7.0,
     "fy": 2029,
-    "short": 553726,
+    "short": 553294,
     "takes": [
      "Building Maintenance Contracted Services",
      "Library Staff & Materials \u2014 all four schools",
@@ -250,7 +250,7 @@
     "cut": 595400,
     "fte": 5.3,
     "fy": 2030,
-    "short": 532715,
+    "short": 532024,
     "takes": [
      "Advanced Placement & Upper-Level Electives",
      "Middle School Exploratory & Elective Block",
@@ -263,7 +263,7 @@
     "cut": 587709,
     "fte": 4.0,
     "fy": 2031,
-    "short": 587110,
+    "short": 586130,
     "takes": [
      "52 Ignite Tutoring Seats \u2014 Primary",
      "Guidance Counselors (1.0 reduction)",
@@ -276,7 +276,7 @@
     "cut": 707727,
     "fte": 5.0,
     "fy": 2032,
-    "short": 700728,
+    "short": 699424,
     "takes": [
      "Classroom Instructional Materials & Workbooks",
      "Additional Classroom Teachers #1",
@@ -292,7 +292,7 @@
   "Which fund pays which teacher. DESE\u2019s FTE counts every assignment whatever pays for it; a grant ending and a position ending look the same in the town\u2019s budget and different here, and nothing joins the two."
  ],
  "overrides": {
-  "first_gap": 930273,
+  "first_gap": 930070,
   "note": "A school-only override: the levy base rises once by this amount, all of it to the schools, and grows 2.5% a year after. It holds while the level-service gap stays under it. A general override has to be larger, because the schools take only their share of the town budget.",
   "rows": [
    {
@@ -388,14 +388,14 @@
   "horizons": [
    {
     "every_year": {
-     "cut": 894493,
+     "cut": 894298,
      "positions": 10.0,
      "share": 0.335,
      "total_positions": 50.2
     },
     "once": {
-     "cut": 3088015,
-     "positions": 34.7,
+     "cut": 3086943,
+     "positions": 34.6,
      "share": 0.231
     },
     "through_fy": 2032,
@@ -403,13 +403,13 @@
    },
    {
     "every_year": {
-     "cut": 894493,
+     "cut": 894298,
      "positions": 10.0,
      "share": 0.67,
      "total_positions": 100.4
     },
     "once": {
-     "cut": 6264481,
+     "cut": 6262068,
      "positions": 70.3,
      "share": 0.469
     },

@@ -1,6 +1,74 @@
 {
  "category": "fy2026-closeout",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "12"
+   ],
+   "text": "Period 12, books still open. The Reserve Fund’s paid bar is a true zero."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Voted",
+    "texts": [
+     "$355,571",
+     "$23,420",
+     "$185,000"
+    ],
+    "values": [
+     355571.39,
+     23420.39,
+     185000.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "After transfers",
+    "texts": [
+     "$875,571",
+     "$23,420",
+     "$185,000"
+    ],
+    "values": [
+     875571.39,
+     23420.39,
+     185000.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Paid by June",
+    "texts": [
+     "$1,038,092",
+     "$126,286",
+     "$0"
+    ],
+    "values": [
+     1038092.46,
+     126286.35,
+     0.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Snow removal and the Reserve Fund",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Snow removal",
+   "Snow wages",
+   "Reserve Fund"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

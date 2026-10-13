@@ -82,8 +82,13 @@ CHERRY_NAME = {'Montachusett Regional Vocational Technical': 'Montachusett',
 FN = {'TCHR': 'teachers', 'SERV': 'pupil services', 'LDRS': 'instructional leadership',
       'OPMN': 'operations and maintenance', 'MATL': 'materials and technology',
       'PDEV': 'professional development', 'TSER': 'other teaching services'}
+# The same, for the three functions only the chart names. A chart row is a label, not prose.
+FN_CHART = dict(FN, ADMN='administration', GUID='guidance, counselling and testing',
+                BENE='insurance, retirement and other', ODTR='out-of-district transportation')
 SHORT = {'Montachusett Regional Vocational Technical': 'Monty Tech',
          'Ayer Shirley School District': 'Ayer Shirley'}
+# Shorter still, for a chart's category axis, where six names share one line.
+AXIS = {'Ashburnham-Westminster': 'Ashburnham-W.', 'Groton-Dunstable': 'Groton-Dunst.'}
 
 # Two quotations this page carries that no payload verified. Each is re-read from our copy of
 # the minutes on every build and refused if it is not there verbatim.
@@ -228,6 +233,28 @@ def school_ledger():
     return out, tied
 
 
+def binlabel(b):
+    """A spread bin as a short axis label, from its edges rather than its printed name:
+    '-50/-25' reads in the width a bar has. The edges are fractions; 99 is open-ended."""
+    pc = lambda v: ('%+d' % round(100 * v)).replace('-', '\u2212')
+    if b['lo'] <= -1:
+        return '<%s' % pc(b['hi'])
+    if b['hi'] >= 99:
+        return '>%s' % pc(b['lo'])
+    if b['centred']:
+        return '\u00b1%d' % round(100 * b['hi'])
+    return '%s/%s' % (pc(b['lo']), pc(b['hi']))
+
+
+def short(d):
+    """A district's name short enough for a chart row; refused rather than cut mid-word."""
+    n = SHORT.get(d, d).replace(' (District)', '').replace(
+        ' Commonwealth Virtual School District', ', virtual')
+    if len(n) > TP.LABEL_MAX:
+        fail('no short chart name for %r' % d)
+    return n
+
+
 def build():
     PS = load('peer-spending.json')
     BV = load('budget-vs-actual.json')
@@ -270,6 +297,12 @@ def build():
     r0 = sw[y0]
     best = max(PS['statewide'], key=lambda r: r['spend_less'] / r['districts'])
     RK = lambda r: OF(r['rank'], r['districts'])
+    swy = sorted(sw)
+    pp_chart = TP.series('Spending a pupil against the state', [C.fy(y) for y in swy], [
+        TP.track('Lunenburg', [sw[y]['lunenburg'] for y in swy]),
+        TP.track('State median', [sw[y]['median'] for y in swy]),
+        TP.track('First quartile', [sw[y]['p25'] for y in swy])], '$',
+        note='All funds, over total FTE pupils, as DESE reports each closed year.')
     out['per-pupil-spending'] = TP.page(
         'per-pupil-spending',
         'Lunenburg spent %s a pupil in %s, all funds, against a state median of %s.'
@@ -315,6 +348,7 @@ def build():
                   for r in sorted(PS['statewide'], key=lambda r: -r['fy'])],
             note='DESE’s end-of-year finance collection: all funds, over total FTE pupils, '
                  'reported after each year closed. Not a budget and not the appropriation.')]),
+        chart=pp_chart,
         said=[said(PS, 'bottom-ten'), said(PS, 'little-per-pupil')],
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-statewide.csv'),
         finding_figures={'a': U(hd['per_pupil']), 'y': F(fy), 'b': U(hd['statewide_median'])})
@@ -370,6 +404,12 @@ def build():
                   for c in sorted(cats.values(), key=lambda c: c['share_of_median'])],
             note='Each function over in-district FTE pupils, as DESE computes it; rank is highest '
                  'spending first. All funds, reported after the year closed.')]),
+        chart=TP.ranking('Each function against its state median', [
+            (FN_CHART[c['code']].capitalize(), 100 * c['share_of_median']) for c in cats.values()],
+            '%', highlight=[FN_CHART[c['code']].capitalize() for c in cats.values()
+                            if c['in_bottom_quarter']],
+            note='Lunenburg’s figure a pupil as a share of each function’s state median, our '
+                 'division of DESE’s figures. Marked: in the state’s bottom quarter.'),
         said=[said(PS, 'materials'), said(PS, 'sharing-pd')],
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-statewide.csv'),
         finding_figures={'n': OF(nbq, len(cats)), 'y': F(fy)})
@@ -413,6 +453,11 @@ def build():
                                                    C.pct(100 * r['grant_share'])]) for r in six],
             note='DESE’s end-of-year finance collection. The six are this project’s choice; no '
                  'document records the criterion.')]),
+        chart=TP.ranking('Grants and revolving funds, share of all funds',
+                         [(short(r['district']), 100 * r['grant_share']) for r in six], '%',
+                         highlight='Lunenburg',
+                         note='DESE’s all-funds total for %s. The six districts are this project’s '
+                              'choice.' % C.fy(fy), note_figures={'y': F(fy)}),
         said=[said(PS, 'grant-pd')],
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-expenditure.csv'),
         finding_figures={'a': U(hd['total']), 'y': F(fy), 'b': U(hd['grants_revolving']),
@@ -453,6 +498,13 @@ def build():
              ['need25', 'more25'], {'a': U(need25), 'b': U(more25)}),
          con('No document sets the median as a target; it is a place in the distribution.',
              ['med'])],
+        chart=TP.series('Spent against the state median',
+                        ['Spent', 'At the first quartile', 'At the median'], [
+            TP.track('Spent, all funds, DESE', [hd['total'], None, None], 'published', 'bar'),
+            TP.track('Ours, DESE’s rate times its pupils', [None, need25, need], 'estimate',
+                     'bar')], '$', stacked=True,
+            note='%s, all funds. The two right-hand bars are our multiplication, not a target.'
+                 % C.fy(fy), note_figures={'y': F(fy)}),
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-statewide.csv',
                   'dese-function-expenditure.csv'),
         finding_figures={'y': F(fy), 'a': U(need)})
@@ -504,6 +556,11 @@ def build():
                   for r in six],
             note='DESE’s end-of-year finance collection and RADAR. Ayer stands in for Ayer '
                  'Shirley before the two regionalised for %s.' % C.fy(PS['first_comparable_fy']))]),
+        chart=TP.ranking('Spending a pupil, six districts',
+                         [(short(r['district']), r['per_pupil']) for r in six], '$',
+                         highlight='Lunenburg',
+                         note='All funds, %s. The six are this project’s choice; no document '
+                              'records why.' % C.fy(fy), note_figures={'y': F(fy)}),
         said=[said(PS, 'outcomes')],
         sources=S('district-expenditures-by-function.xlsx', 'radar-district-comparison.xlsx',
                   'dese-function-expenditure.csv'),
@@ -522,6 +579,7 @@ def build():
         fail('North Middlesex is no longer the district that lost the most pupils')
     yA = PS['first_comparable_fy']
     SP = lambda v: P(100 * v)
+    dorder = sorted(dec, key=lambda d: dec[d]['pupils_pct'])
     out['spending-and-pupils'] = TP.page(
         'spending-and-pupils',
         'From %s to %s Lunenburg’s spending rose %s and its pupils fell %s; North Middlesex lost %s.'
@@ -560,6 +618,13 @@ def build():
                   for r in sorted(dec.values(), key=lambda r: -r['per_pupil_pct'])],
             note='Changes are our arithmetic on DESE’s totals, total FTE pupils and per-pupil '
                  'figures. %s is the first year Ayer Shirley exists as one district.' % C.fy(yA))]),
+        chart=TP.series('Spending and pupils, change by district',
+                        [AXIS.get(d, short(d)) for d in dorder], [
+            TP.track('Spending', [100 * dec[d]['spend_pct'] for d in dorder], 'published', 'bar'),
+            TP.track('FTE pupils', [100 * dec[d]['pupils_pct'] for d in dorder], 'published',
+                     'bar')], '%',
+            note='Each from %s to %s: our arithmetic on DESE’s totals and pupil counts.'
+                 % (C.fy(yA), C.fy(fy)), note_figures={'y': F(yA), 'z': F(fy)}),
         sources=S('district-expenditures-by-function.xlsx', 'radar-district-comparison.xlsx',
                   'dese-function-expenditure.csv'),
         finding_figures={'y': F(yA), 'z': F(fy), 'a': SP(ld['spend_pct']),
@@ -613,6 +678,11 @@ def build():
                   for c in sorted(PS['categories'], key=lambda c: c['gap'])],
             note='DESE’s figures over in-district FTE pupils. Measured against one district, not '
                  'a median of each function, because medians of parts do not add up.')]),
+        chart=TP.ranking('Difference a pupil, by function',
+                         [(FN_CHART[c['code']].capitalize(), c['gap']) for c in PS['categories']],
+                         '$', note='Lunenburg less %s, in-district, a pupil, %s. Below zero, '
+                                   'Lunenburg spent less.' % (mn, C.fy(fy)),
+                         note_figures={'y': F(fy)}),
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-expenditure.csv'),
         finding_figures={'a': G(ch['gap'])})
     if gc['TCHR'] not in big2:
@@ -666,6 +736,11 @@ def build():
                                                    C.usd(r['per_pupil'])]) for r in T],
             note='DESE’s RADAR file and end-of-year finance collection. Teachers a pupil is the '
                  'Teachers function over in-district FTE pupils, DESE’s own figure.')]),
+        chart=TP.ranking('Average teacher salary, six districts',
+                         [(short(r['district']), r['average_salary']) for r in T], '$',
+                         highlight='Lunenburg',
+                         note='DESE’s RADAR file, %s. The six are this project’s choice.' % C.fy(fy),
+                         note_figures={'y': F(fy)}),
         sources=S('radar-district-comparison.xlsx', 'district-expenditures-by-function.xlsx',
                   'dese-radar.csv'),
         finding_figures={'a': U(tl['average_salary']), 'y': F(fy), 'r': Ord(srank)})
@@ -733,6 +808,12 @@ def build():
             note='DESE’s residents-sending and enrolment files for the children; its end-of-year '
                  'finance collection for spending, a year earlier. Kind is our reading of each '
                  'district.')]),
+        chart=TP.ranking('Where children went, spending a pupil',
+                         [(short(r['district']), r['per_pupil']) for r in rows]
+                         + [('Lunenburg', de['lunenburg'])], '$', highlight='Lunenburg',
+                         note='All funds, %s, for every district taking at least %s Lunenburg '
+                              'children.' % (C.fy(ffy), C.num(de['threshold'])),
+                         note_figures={'y': F(ffy), 'n': N(de['threshold'])}),
         said=[said(PS, 'vocational')],
         sources=S('district-expenditures-by-function.xlsx', 'dese-town-enrollment.csv',
                   'dese-function-expenditure.csv'),
@@ -798,6 +879,11 @@ def build():
             + [dict(label='Lunenburg', cells=[C.usd(hd['per_pupil']), C.usd(lun_rt)])],
             note='Spending is DESE’s, all funds; aid is the DLS cherry sheet at the final state '
                  'budget. Which districts are regional is our reading of each.')]),
+        chart=TP.ranking('Regional districts, spending a pupil',
+                         [(short(d), v) for d, v in reg] + [('Lunenburg', hd['per_pupil'])], '$',
+                         highlight='Lunenburg',
+                         note='All funds, %s. Which districts are regional is our reading of each.'
+                              % C.fy(fy), note_figures={'y': F(fy)}),
         said=[quote('transport-bill'), quote('not-regionalize')],
         sources=S('district-expenditures-by-function.xlsx', 'dls-cherry-sheet.csv',
                   next(n for n in src if n.startswith('CherrySheet-2026-RegionalSchools'))),
@@ -867,6 +953,19 @@ def build():
                 ('workbook', 'Finance Committee workbook', 'stated', 'workbook',
                  'Assembled from MUNIS by the Finance Committee; its school account rows, summed. '
                  'It prints no encumbrance column.'))]),
+        chart=TP.series('School general fund, budget beside spending', [C.fy(y) for y in yrs], [
+            TP.track('Spent or committed, MUNIS', [SL[y]['spent'] + SL[y]['committed']
+                                                   if SL[y]['source'] == 'ledger' else None
+                                                   for y in yrs], 'published', 'bar'),
+            TP.track('Spent, Finance Committee workbook', [SL[y]['spent']
+                                                           if SL[y]['source'] == 'workbook'
+                                                           else None for y in yrs], 'stated', 'bar'),
+            TP.track('Revised budget, MUNIS', [SL[y]['revised'] if SL[y]['source'] == 'ledger'
+                                               else None for y in yrs], 'published', 'line'),
+            TP.track('Revised budget, workbook', [SL[y]['revised'] if SL[y]['source'] == 'workbook'
+                                                  else None for y in yrs], 'stated', 'line')],
+            '$', stacked=True,
+            note='Each year’s spending beside that year’s own budget; nothing is subtracted.'),
         sources=S('glytdbud-expense-fy2026-p13-gf-school.xlsx',
                   'glytdbud-expense-fy2025-p13-gf-school.xlsx',
                   'glytdbud-expense-fy2024-p13-gf-school.xlsx',
@@ -939,6 +1038,13 @@ def build():
             note='Each year’s budget against the same year’s restated figure, out of the '
                  'district’s own budget books. A line counts only if it was more than %s off '
                  'in every year.' % C.pct(100 * cv['same_way_threshold'], 0))]),
+        chart=TP.series('How far each line landed from its budget',
+                        [binlabel(b) for b in BV['spread']], [
+            TP.track('Line-years, the district’s restated figures',
+                     [b['count'] for b in BV['spread']], 'stated', 'bar')], 'line-years',
+            note='Each bar is a range of percent over or under the same year’s budget. The '
+                 'district’s own budget books, %s to %s.' % (C.fy(y1), C.fy(y2)),
+            note_figures={'y': F(y1), 'z': F(y2)}),
         sources=S('line-history.csv'),
         finding_figures={'a': N(cv['line_years']), 'b': N(within), 'p': P(2, 0)})
 
@@ -994,7 +1100,7 @@ def build():
         'budget every year from %s to %s.'
         % (C.usd(hd['per_pupil']), C.fy(fy), C.usd(hd['statewide_median']), C.num(len(bq_years)),
            C.fy(yrs[0]), C.fy(yl)),
-        hub_ladder,
+        hub_ladder, chart=pp_chart,
         answer_figures={'a': U(hd['per_pupil']), 'y': F(fy), 'b': U(hd['statewide_median']),
                         'n': N(len(bq_years)), 'c': F(yrs[0]), 'd': F(yl)})
 

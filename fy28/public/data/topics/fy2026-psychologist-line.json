@@ -1,6 +1,65 @@
 {
  "category": "fy2026-closeout",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "511023",
+    "13"
+   ],
+   "text": "Object 511023, one account per building, period 13. None received a transfer."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Budget",
+    "texts": [
+     "$98,784",
+     "$45,106",
+     "$45,106",
+     "$98,784"
+    ],
+    "values": [
+     98784.0,
+     45106.0,
+     45106.0,
+     98784.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Paid",
+    "texts": [
+     "$101,510",
+     "$45,306",
+     "$45,306",
+     "$0"
+    ],
+    "values": [
+     101510.0,
+     45305.97,
+     45306.03,
+     0.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "School psychologist accounts",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Psychologist, S2044061",
+   "Psychologist, S2055061",
+   "Psychologist, S2066061",
+   "Psychologist, S2072061"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

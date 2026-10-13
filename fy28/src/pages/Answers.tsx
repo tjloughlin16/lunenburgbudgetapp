@@ -1586,9 +1586,9 @@ function WhatWorks() {
         <ol className="space-y-3 mb-3">
           <Lever n={1} name="Move people to cheaper plans" href="#q8"
             head={`About ${usd(hl.migration.kept)} a year for each person who moves`}>
-            {hl.migration.onBroadest} employees are on {hl.migration.from} &mdash; the{' '}
-            {hl.migration.fromNetwork.toLowerCase()}. {hl.migration.to} costs{' '}
-            {usd(hl.migration.familyGap)} a year less at the family tier. Move everyone on
+            The model places {hl.migration.onBroadest} employees on {hl.migration.from} &mdash; the{' '}
+            {hl.migration.fromNetwork.toLowerCase()} &mdash; a placeholder of ours, because enrolment by plan is not published. {hl.migration.to} costs{' '}
+            {usd(hl.migration.familyGap)} a year less at the family tier. Move everyone the model places on
             the broadest plan and it is about {usd(hl.migration.ifAll)} a year.{' '}
             <strong>What it costs:</strong> a narrower network &mdash; the saving <em>is</em>{' '}
             the narrower network. Your doctor may not be in it. Push it further and the

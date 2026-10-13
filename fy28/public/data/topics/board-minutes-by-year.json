@@ -1,6 +1,92 @@
 {
  "category": "board-records",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": null,
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Every board",
+    "texts": [
+     "63.3%",
+     "71.1%",
+     "66.1%",
+     "65.3%"
+    ],
+    "values": [
+     63.29113924050633,
+     71.1159737417943,
+     66.07843137254902,
+     65.31440162271805
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "School Committee",
+    "texts": [
+     "0%",
+     "73.5%",
+     "69.6%",
+     "65.7%"
+    ],
+    "values": [
+     0.0,
+     73.52941176470588,
+     69.56521739130434,
+     65.71428571428571
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Select Board",
+    "texts": [
+     "97.4%",
+     "91.1%",
+     "57.1%",
+     "64.4%"
+    ],
+    "values": [
+     97.43589743589743,
+     91.11111111111111,
+     57.142857142857146,
+     64.40677966101696
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Finance Committee",
+    "texts": [
+     "95.8%",
+     "100%",
+     "100%",
+     "89.3%"
+    ],
+    "values": [
+     95.83333333333333,
+     100.0,
+     100.0,
+     89.28571428571429
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Meetings with minutes listed, by year",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -383,7 +469,7 @@
      "ledger"
     ],
     "label": "By year",
-    "note": "As listed on the Agenda Center on 12 October 2026. Meetings in the last 60 days are left out.",
+    "note": "As listed on the Agenda Center on 13 October 2026. Meetings in the last 60 days are left out.",
     "rows": [
      {
       "cells": [

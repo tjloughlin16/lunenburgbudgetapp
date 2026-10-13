@@ -21,17 +21,19 @@ district's own 3.98% is wrong.
 Decompose the two years and the whole thing is one line moving once:
 
     whole line          4,865,038 -> 4,964,329 -> 5,442,383    +2.0%, +9.6%
-    paraprofessionals   1,376,893 -> 1,344,373 -> 1,874,411    -2.4%, +39.4%
-    everything else     3,488,145 -> 3,619,956 -> 3,567,972    +3.8%, -1.4%
+    paraprofessionals   1,366,893 -> 1,342,373 -> 1,872,411    -1.8%, +39.5%
+    everything else     3,498,145 -> 3,621,956 -> 3,569,972    +3.5%, -1.4%
 
 (These figures moved once already, and the change was not in the district's budget. They
 were first written before English Language Learner lines were excluded from this
 classification, so the whole line read about $207,000 higher and the rate 5.89%. The
 paraprofessional row was unaffected either way, which is why the argument survived the
-correction unchanged. Recompute rather than quote: `python3 model/sped.py`.)
+correction unchanged. They moved a second time, by $10,000/$2,000/$2,000, when tutoring and
+contracted services filed under 2330 were moved out of the paraprofessional row to match
+the five lines the documents itemise. Recompute rather than quote: `python3 model/sped.py`.)
 
 The paraprofessional increase is 111% of the FY27 rise -- every other part of special
-education fell that year. Strip it out and the rest of the line grew 1.14% a year across
+education fell that year. Strip it out and the rest of the line grew 1.02% a year across
 the two budgets, below the levy cap.
 
 So 5.77% is not a growth rate. It is one hiring decision, averaged over two years and
@@ -143,8 +145,15 @@ def total(col, pred=lambda r: True, rs=None):
 _g = lambda r: (r['function_group'] or '').strip()
 _item = lambda r: (r['line_item'] or '').lower()
 
+# The paraprofessional part is the school paraprofessional LINES in 2330, not the whole
+# 2330 group. The workbook also files Home/Hospital Tutoring and contracted services under
+# 2330 -- $10,000, $2,000 and $2,000 across FY25-FY27 -- and those are purchased services,
+# not paras. Taking the whole group made this row differ from PARA_SERIES, the series the
+# paras' rate is measured on, so a rate measured on one basis was applied to another and
+# the row read $2,000 above the documents' own five-line total. They fall to `other`.
 PARTS = [
-    ('paras', 'Paraprofessionals', lambda r: '2330' in _g(r)),
+    ('paras', 'Paraprofessionals',
+     lambda r: '2330' in _g(r) and 'paraprofessional' in _item(r)),
     ('transport', 'Special education transport',
      lambda r: '3300' in _g(r) or 'transport' in _item(r)),
     ('therapy', 'Speech, OT and summer services',
@@ -285,15 +294,10 @@ def _workbook(pred):
             2027: total(FY27LS, pred, rs)}
 
 
-# The five school paraprofessional lines only, which is what the documents itemise. The
-# workbook's 2330 group carries $2,000 more in contracted services; matching the basis is
-# what makes the two agree to the dollar where they overlap.
-def _para_schools(r):
-    return ('2330' in _g(r) and is_sped(r)
-            and 'paraprofessional' in (r['line_item'] or '').lower())
-
-
-PARA_SERIES = history('paras', _workbook(_para_schools))
+# The five school paraprofessional lines only, which is what the documents itemise --
+# the same basis as the `paras` part above, so the series the rate is measured on and the
+# base it is applied to are one set of lines.
+PARA_SERIES = history('paras', _workbook(_part_pred('paras')))
 PARA_TREND = trend(PARA_SERIES)
 TRANSPORT_SERIES = history('transport', _workbook(_part_pred('transport')))
 TRANSPORT_TREND = trend(TRANSPORT_SERIES)
@@ -416,7 +420,7 @@ _paras = _series(_part_pred('paras'))
 _nopara = _series(lambda r: is_sped(r) and not _part_pred('paras')(r))
 
 WHOLE_LINE_RATE = _cagr(_whole)          # 5.77% -- what the line did, step included
-EX_PARAS_RATE = _cagr(_nopara)           # 1.14% -- the line apart from the hiring
+EX_PARAS_RATE = _cagr(_nopara)           # ~1.0% -- the line apart from the hiring
 FY27_ALONE_RATE = _whole[2] / _whole[1] - 1   # 9.63%
 
 # What the FY27 year actually was: one line moving, and moving by more than the whole

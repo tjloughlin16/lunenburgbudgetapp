@@ -42,8 +42,8 @@ budget. On the school side it is 57 of 259 — one account in five, against fewe
 twenty. That difference is a fact with at least four explanations and this document does
 not choose between them.
 
-**Snow removal is the year's outstanding number.** Budgeted at $355,571, given $520,319
-more during the year, and it still finished $162,521 over — **$1,038,092 spent, 292% of
+**Snow removal is the year's outstanding number.** Budgeted at $355,571, given a net
+$520,000 more during the year, and it still finished $162,521 over — **$1,038,092 spent, 292% of
 the appropriation.** The wages line alone spent 539% of its budget with no transfer at all.
 
 **The Reserve Fund was never touched.** $185,000 of declared contingency, $0 spent, in the
@@ -58,8 +58,9 @@ books.
 
 **And $1,262,376 of school retiree health insurance sits in a town department** — a real
 cost of running the schools, invisible in the school budget the School Committee votes on.
-An unknown share of the town's remaining $2,336,409 of insurance is for serving school
-staff; the accounts do not separate town from school. This is the first time this project
+Serving school staff are insured on the school side: the school ledger's own HEALTH
+INSURANCE account paid $3,622,882 by June. Whether the town's $1,376,557 HEALTH INS line
+also covers any school employee, the accounts do not say. This is the first time this project
 has been able to point in the ledger at any of the gap between the state's all-funds
 figure for Lunenburg and the appropriation.
 
@@ -125,8 +126,8 @@ controllable. The ratio is a fact. The explanation is not.
 
 ### In plain terms
 
-Snow was budgeted at **$355,571**. It was given **$520,319** more during the year. It
-still finished **$162,521 over** — total spending of **$1,038,092**, which is **292% of
+Snow was budgeted at **$355,571**. It was given a net **$520,000** more during the year:
+$520,319 moved into two lines and $319 out of a third. It still finished **$162,521 over** — total spending of **$1,038,092**, which is **292% of
 what the town appropriated.**
 
 It is the single largest budget miss in the FY26 town books, and it is bigger than the
@@ -235,8 +236,11 @@ The town's insurance department spent **$3,598,785** in FY26. Of that, **$1,262,
 explicitly school retiree health insurance** — a real cost of running the schools, sitting
 in a town department, appearing nowhere in the school budget the School Committee votes on.
 
-An unknown share of the remaining $2,336,409 is health insurance for **serving** school
-employees. The account names do not separate town from school, so it cannot be measured.
+Health insurance for **serving** school employees is in the school budget, not here. The
+school ledger carries its own `HEALTH INSURANCE` account, coded to function 5200, which
+DESE's chart of accounts names *Insurance for Active Employees*. It was budgeted at
+$3,701,195 and paid $3,622,882 by June. What the town's accounts cannot show is whether
+any of the remaining $2,336,409 here is also for school staff.
 
 ### The evidence
 
@@ -249,6 +253,16 @@ employees. The account names do not separate town from school, so it cannot be m
 | `570002` | LIFE INS | $15,000 | $12,864.84 | +$2,135 |
 | | four smaller accounts | | $8,049.98 | |
 | | **department 914** | | **$3,598,785.44** | |
+
+And on the school side of the same ledger, for comparison:
+
+| account | | function | revised | spent | left |
+|---|---|---|---:|---:|---:|
+| `S5991992` `570001` | **HEALTH INSURANCE**, school department | 5200 | $3,701,195 | $3,622,881.65 | +$78,313 |
+
+*Corrected 13 October 2026.* An earlier version of this section did not mention this
+account. It said that health insurance for serving school staff might be any share of the
+town's lines.
 
 Elsewhere, department 210 carries `SCHRESSTIP` at **$6,800** — a school resource stipend
 in the police budget.
@@ -271,8 +285,10 @@ this project able to point at any of it in the ledger.
 
 ### What this does not show
 
-**How much active school employee insurance is in the $1,315,270 `HEALTH INS` line.** The
-account does not split town from school. It could be most of it or little of it.
+**Whether any school employee is insured from the town's $1,315,270 `HEALTH INS` line.**
+The school department has its own active-employee account, which points to the town's
+line being for town staff. Nothing in the ledger says so, though. The account name does
+not split town from school, and no enrolment count by employer group is held here.
 
 ---
 
@@ -478,7 +494,8 @@ mechanism exists for. It does mean that when the town budgets $355,571 for snow,
 figure is a placeholder rather than a forecast.
 
 **Part of what the schools cost is on the town's side of the ledger.** $1,262,376 of
-school retiree health insurance, plus an unmeasured share of active employee insurance.
+school retiree health insurance. Active school staff are insured from the school's own
+$3,622,882 account; whether any are also on the town's line is not shown.
 Anyone comparing the school budget to what the state says Lunenburg spends on schools is
 looking at that difference, and this is where some of it lives.
 
@@ -496,9 +513,11 @@ capital and stabilization. The ledger records that a budget changed; only the sc
 records what it changed against. It was tabled at Finance Committee on 11 June for want of
 documents and has not surfaced since.
 
-**Health insurance should be split between town and school employees in the accounts.**
-It is the single largest unmeasured school cost in the town books, and the split is not a
-new report — it is a coding question about accounts that already exist.
+**The town's insurance lines should say whose they are.** The school's active-employee
+insurance already sits in a school account, and school retirees have their own town
+account. The town's `HEALTH INS`, `MEDI` and `LIFE INS` lines do not say whether they
+cover town staff only. That is a coding question about accounts that already exist, not a
+new report.
 
 ### For a department head
 
@@ -521,8 +540,9 @@ over-budgeted, and three years at this grain is the only thing that would.
 1. **The FY26 period 13 report.** Every figure here is a position, not a result.
 2. **The year-end transfer schedule.** Settles §2, §4 and §6 — every "transferred in"
    figure above has an unknown counterparty.
-3. **A split of health insurance between town and school employees.** Settles the open
-   half of §5, and is the largest single unmeasured school cost in the town books.
+3. **Enrolment in the town's health plans by employer group, town and school.** Settles
+   whether any school employee is insured from the town's `HEALTH INS` line, the open
+   half of §5.
 4. **Finance Committee minutes from 14 July 2026.**
 5. **Budgeted positions with their fill dates, or the payroll register by account.**
    Turns §7's ceiling into a measurement.

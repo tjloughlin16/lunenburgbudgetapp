@@ -122,7 +122,7 @@ type Payload = {
     by_year: { fy: number; stage: string; cells: number }[]
     widest: { line: string; fy: number; stage: string; readings: number; lo: number; hi: number }[]
   }
-  related: { id: string; title: string; why: string; url: string; words: number }[]
+  related: { id: string; title: string; why: string; url: string; words: number | null }[]
   analysis: {
     title: string; about: string; words: number; updated: string
     markdown: string; pdf: string | null

@@ -1,6 +1,67 @@
 {
  "category": "enrolment",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "The district’s budget books, and for one year the Town’s appropriation; the minimum is DESE’s. A gap is a year it was not published."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "The assessment",
+    "texts": [
+     "$1,054,376",
+     "$1,181,390",
+     "$1,225,646",
+     "$1,334,521",
+     "$1,452,379"
+    ],
+    "values": [
+     1054376,
+     1181390,
+     1225646.0,
+     1334521,
+     1452379
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "State-required minimum",
+    "texts": [
+     null,
+     "$1,127,113",
+     "$1,172,254",
+     "$1,270,711",
+     "$1,378,183"
+    ],
+    "values": [
+     null,
+     1127113,
+     1172254.0,
+     1270711,
+     1378183
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Monty Tech assessment and its minimum",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026",
+   "FY2027"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

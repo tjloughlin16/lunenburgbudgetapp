@@ -1327,8 +1327,11 @@ GROUPS = [
              'report inside Lunenburg\u2019s book and is a different district\u2019s '
              'superintendent.'),
             ('data/tenure.csv',
-             'How long each named person stayed, by body and year', 2,
-             'One row per person per body: the first and last year their name appears, '
+             'How long each person stayed, by body and year', 2,
+             'One row per person per body. Named only for boards and appointed officers; '
+             'for school and department EMPLOYEES the name and role are blank, because a '
+             'career history per employee is ours to withhold. Each row: the first and '
+             'last year the name appears, '
              'how many years the BODY published in between, the years inside that span '
              'it published nothing, and whether they are CENSORED at either edge of the '
              'archive. Half of them are: somebody in a body\u2019s first published year '
@@ -1342,7 +1345,7 @@ GROUPS = [
              'How many names stop appearing, by body and year', 2,
              'One row per body per published year: the people in it, how many of them '
              'are absent from the NEXT year the body published, and the rate. '
-             'MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 '
+             'MEASURED ACROSS PUBLISHED YEARS, never calendar years, because half the '
              'bodies skip a year inside their own span and a naive count reads a missed '
              'report as the whole staff leaving and returning. A NAME LEAVING A ROSTER '
              'IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut '

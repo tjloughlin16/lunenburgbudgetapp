@@ -1,6 +1,72 @@
 {
  "category": "department-budgets",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "The whole group also holds temporary-loan interest and fees, too small to see."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Principal",
+    "texts": [
+     "$3,220,579",
+     "$2,335,200",
+     "$1,832,253"
+    ],
+    "values": [
+     3220578.72,
+     2335199.75,
+     1832252.62
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Interest",
+    "texts": [
+     "$1,272,701",
+     "$1,169,577",
+     "$1,101,717"
+    ],
+    "values": [
+     1272700.6,
+     1169576.83,
+     1101717.02
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "The whole group",
+    "texts": [
+     "$4,497,723",
+     "$3,518,013",
+     "$2,941,322"
+    ],
+    "values": [
+     4497723.35,
+     3518012.81,
+     2941321.5
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Principal and interest by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

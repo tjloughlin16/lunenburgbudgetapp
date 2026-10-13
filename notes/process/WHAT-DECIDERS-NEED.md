@@ -419,7 +419,7 @@ offered"* is a testable claim about this town.
 paraprofessional headcount with retention rates. `money_gaps` already registers *"Why DESE
 special education teacher FTE falls from 18.5 to 2.0 while total teacher FTE holds flat"* —
 the anomaly was seen, registered, and then nothing was built on the series. The model's
-6.49% special-education escalator rests on a paraprofessional budget line that rule 11 says
+6.48% special-education escalator rests on a paraprofessional budget line that rule 11 says
 cannot be distinguished from grant money; here is nineteen years of a differently-sourced
 count sitting beside it.
 

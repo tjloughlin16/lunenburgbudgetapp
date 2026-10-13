@@ -36,7 +36,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from build_reports_index import routed_reports          # noqa: E402
+from build_reports_index import routed_reports, unlisted_tabs, answered_at   # noqa: E402
 from build_master_report import payload_of              # noqa: E402
 
 SPEC = os.path.join(ROOT, 'sources', 'data', 'one-big-report-story.csv')
@@ -122,13 +122,23 @@ def bigpicture_item(b, ref):
 
 
 def load_conclusions():
-    """Every routed report's conclusions, keyed report/id, with title and URL."""
+    """Every routed report's conclusions, keyed report/id, with title and URL.
+
+    INCLUDING THE UNLISTED ONES, whose payloads are still generated and published: the
+    long reports the hubs absorbed on 13 October 2026 still carry the conclusions this
+    story quotes verbatim. What changes is the LINK beside each one -- it names the hub that
+    answers that question now (`answered_at`), never the unlisted page, which has no door.
+    """
     out = {}
-    reports, _undescribed = routed_reports(all_of_area=True)
+    hidden = unlisted_tabs()
+    reports, _undescribed = routed_reports(all_of_area=True, include_unlisted=True)
     for r in reports:
-        d = payload_of(r) or {}
-        for c in d.get('conclusions') or []:
-            out['%s/%s' % (r['id'], c['id'])] = dict(c, report=r['id'], report_title=r['title'], report_url=r['url'])
+        cs = (payload_of(r) or {}).get('conclusions') or []
+        if not cs:
+            continue
+        title, url = answered_at(r['id']) if r['id'] in hidden else (r['title'], r['url'])
+        for c in cs:
+            out['%s/%s' % (r['id'], c['id'])] = dict(c, report=r['id'], report_title=title, report_url=url)
     return out
 
 
@@ -152,7 +162,7 @@ def build():
         elif row['kind'] == 'conclusion':
             c = concl.get(row['ref'])
             if not c:
-                fail('row %s: conclusion %r is not in any routed report’s payload' % (row['story_order'], row['ref']))
+                fail('row %s: conclusion %r is not in any report’s payload, listed or unlisted' % (row['story_order'], row['ref']))
             item = dict(kind='conclusion', ref=row['ref'], conclusion=c)
         else:
             fail('row %s: kind %r' % (row['story_order'], row['kind']))

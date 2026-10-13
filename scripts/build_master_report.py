@@ -135,6 +135,12 @@ def written_analyses():
 
 def build():
     reports, _undescribed = routed_reports(all_of_area=True)
+    # MINUS A PAGE WHOSE ADDRESS A HUB NOW HOLDS (/special-education, /school-staffing...).
+    # Its payload's conclusions are the long report's, linking long reports that are UNLISTED
+    # since 13 October 2026, and the address they would be filed under shows the hub.
+    cats = set(json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'topic-categories.json'),
+                              encoding='utf-8')))
+    reports = [r for r in reports if r['url'].strip('/').split('/')[0] not in cats]
 
     rows, headlines, holes = [], [], []
     measured = hypothesis = 0

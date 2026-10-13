@@ -31,10 +31,14 @@ RULE 3. Everything the projection yields is OUR estimate and is kinded `estimate
 it runs on -- salaries at 4%, everything else as model.json `assumptions` -- are assumptions
 we chose, and the pages say so.
 
-RULE 13a, AND A DISAGREEMENT THIS PAGE DOES NOT RESOLVE. model.json `facts` carries an
-unofficial tally of the May 2026 vote (867 to 1,753; 760 to 1,862). The state's record prints
-899 to 1,748 and 766 to 1,883. The state's figures are shown; the difference is a gap, closed
-by the Town Clerk's certified results, which the archive does not hold.
+RULE 13a, AND A DISAGREEMENT THIS PAGE DOES NOT RESOLVE. model.json `facts` carries the
+Town's UNOFFICIAL TALLY SHEET of the May 2026 vote
+(town-supplementary/docs/town-2026-election-unofficial-results.pdf), which foots precinct by
+precinct to its own ballots-cast total. The state's record prints different counts, and its
+yes plus no alone exceed that ballots-cast total (asserted below). Neither is the certified
+count. The state's figures are shown, the Town's sheet is named beside them, and the
+difference is a gap closed by the Town Clerk's certified results, which the archive does not
+hold.
 """
 import argparse
 import csv
@@ -129,6 +133,8 @@ def sources():
                     'School Committee minutes, 4 June 2025'),
         'sb-0311': ('meetings/select-board/2025-03-11-minutes-7096.pdf',
                     'Select Board minutes, 11 March 2025'),
+        'tally': ('town-supplementary/docs/town-2026-election-unofficial-results.pdf',
+                  town + ' — unofficial tally sheet, Annual Town Election, 16 May 2026'),
     }
     out = {}
     for k, (key, pub) in spec.items():
@@ -249,6 +255,25 @@ def build():
         fail('the last question before 2024 is no longer May 1996')
     lull = 2024 - 1996
     sw = [r for r in allrows if r['vote_date'].startswith('2026') and r['vote_type'] == 'Override']
+    MON = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()
+
+    def qlabel(r):
+        # Two questions share a date twice; the state's own department column tells them apart.
+        d = '%s %s' % (MON[int(r['vote_date'][5:7]) - 1], r['vote_date'][:4])
+        if sum(x['vote_date'] == r['vote_date'] for x in L) == 1:
+            return d
+        if r['vote_date'] == '2026-05-16':
+            return '%s, %s' % (d, TIER[0] if int(r['amount']) == 2_400_000 else TIER[1])
+        return '%s, %s' % (d, r['department'].split()[0].lower())
+    LC = sorted(L, key=lambda r: (r['vote_date'], int(r['amount'])))   # Tier 1 before Tier 2
+    hist_chart = TP.series(
+        'Override questions on the ballot', [qlabel(r) for r in LC], [
+            TP.track('Passed', [int(r['amount']) if r['result'] == 'WIN' else None for r in LC],
+                     'published', 'bar'),
+            TP.track('Failed', [int(r['amount']) if r['result'] == 'LOSS' else None for r in LC],
+                     'published', 'bar')], '$', stacked=True,
+        note='The amount each question asked, in the state’s record. Nothing was put between '
+             'May %s and May %s.' % ('1996', '2024'), note_allow=('1996', '2024'))
     sw_won = sum(r['result'] == 'WIN' for r in sw)
     out['override-history'] = TP.page(
         'override-history',
@@ -294,6 +319,7 @@ def build():
             note='The Division of Local Services’ record, by vote date. Its fiscal-year column '
                  'dates the May 2026 questions FY2026, though both describe FY27 budgets. Debt '
                  'and capital exclusions are not in it.')]),
+        chart=hist_chart,
         sources=[src['dls'], src['d-dls']],
         finding_figures={'n': N(len(L)), 'w': N(len(won)), 'a': U(int(w24['amount']))},
         finding_allow=('1989', '2024'))
@@ -319,6 +345,9 @@ def build():
     uq1, uq2 = M['facts']['overrideQ1'], M['facts']['overrideQ2']
     if (uq1['yes'], uq1['no']) == (y1, n1):
         fail('the unofficial tally now matches the state’s record; the gap note is stale')
+    cast = M['facts']['ballotsCast']
+    if not (y1 + n1 > cast and y2 + n2 > cast):
+        fail('the state’s yes plus no no longer exceed the tally sheet’s ballots cast')
     out['fy2027-override'] = TP.page(
         'fy2027-override',
         'Both FY2027 override questions failed on 16 May 2026: %s by %s to %s, %s by %s to %s.'
@@ -348,15 +377,26 @@ def build():
              {'a': U2(tax2), 'b': U2(levy_only)}, allow=TIER),
          con('The state’s tally is shown; the Town’s certified count is not in this archive.',
              ['count-gap', 'y1'],
-             notes=[step('An unofficial tally quoted earlier on this site, %s to %s on Tier 1 '
-                         'and %s to %s on Tier 2, differs from the state’s record.'
+             notes=[step('The Town’s unofficial tally sheet prints %s to %s on Tier 1 and %s to '
+                         '%s on Tier 2, footing to its %s ballots cast; the state’s yes and no '
+                         'alone sum to more.'
                          % (C.num(uq1['yes']), C.num(uq1['no']), C.num(uq2['yes']),
-                            C.num(uq2['no'])), 'gap',
+                            C.num(uq2['no']), C.num(cast)), 'gap',
                          {'a': N(uq1['yes']), 'b': N(uq1['no']), 'c': N(uq2['yes']),
-                          'd': N(uq2['no'])}, allow=TIER + ('16 May 2026',),
+                          'd': N(uq2['no']), 'e': N(cast)}, allow=TIER + ('16 May 2026',),
                          closes='the Town Clerk’s certified results of the 16 May 2026 '
                                 'election')])],
-        sources=[src['dls'], src['d-dls'], src['release']],
+        chart=TP.series(
+            'The May vote, two counts',
+            ['%s, yes' % TIER[0], '%s, no' % TIER[0], '%s, yes' % TIER[1], '%s, no' % TIER[1]], [
+                TP.track('The state’s record', [y1, n1, y2, n2], 'published', 'bar'),
+                TP.track('The Town’s unofficial tally sheet',
+                         [uq1['yes'], uq1['no'], uq2['yes'], uq2['no']], 'published', 'bar')],
+            'votes',
+            note='Neither is the certified count. The state’s yes and no on each question sum to '
+                 'more than the tally sheet’s %s ballots cast.' % C.num(cast),
+            note_figures={'a': N(cast)}),
+        sources=[src['dls'], src['d-dls'], src['tally'], src['release']],
         finding_figures={'a': U(t1), 'b': N(y1), 'c': N(n1), 'd': U(t2), 'e': N(y2),
                          'g': N(n2), 'y': F(2027)},
         finding_allow=('16 May 2026',))
@@ -415,6 +455,12 @@ def build():
                         'one-time funds specifically free cash as a stopgap, however these funds '
                         'should not be used in an operating budget, but as a one-time '
                         'appropriation.', 'Select Board')],
+        chart=TP.series('Override size by years covered',
+                        ['%s year%s' % (C.num(n), '' if n == 1 else 's') for n in sorted(ov)],
+                        [TP.track('School-only override (ours)', [ov[n]['levy'] for n in sorted(ov)],
+                                  'estimate', 'bar')], '$',
+                        note='Ours: the smallest override added in FY2028 that covers each run of '
+                             'years, grown at the levy cap.', note_allow=('FY2028',)),
         sources=[src['model'], src['sb-0311']],
         finding_figures={'a': U(o5['levy']), 'b': U(o10['levy'])})
 
@@ -450,6 +496,13 @@ def build():
              {'a': P(share), 'b': U(tw), 'c': U(two)}),
          con('Either way the levy is raised on every taxpayer; only the use of it differs.',
              ['t1', 'w24'])],
+        chart=TP.ranking('What each question was for', [
+            ('%s, May 2026' % TIER[0], [t1s, t1 - t1s]),
+            ('%s, May 2026' % TIER[1], [t2s, t2 - t2s]),
+            ('May 2024 question', [int(w24['amount']), None])], '$',
+            stack=['For the schools', 'The rest (our subtraction)'],
+            note='The Town’s release gives the schools’ part of each tier. The May %s question '
+                 'named only the schools.' % '2024', note_allow=('2024',)),
         sources=[src['release'], src['dls'], src['d-dls'], src['model']],
         finding_figures={'a': U(t1), 'b': U(t1s)}, finding_allow=('2024',) + TIER)
 
@@ -518,6 +571,11 @@ def build():
         said=[said_file('school-committee/2025-06-04-minutes-7251.txt',
                         'We have received 1,074 bus requests, and have 494 unpaid at this time.',
                         'School Committee')],
+        chart=TP.parts('Fees against the projected gap', [
+            ('Bus fee at its peak (ours)', bus_gain), ('Activity fee at its cap (ours)', act_gain),
+            ('Left open (ours)', g28 - both)], '$', basis='estimate',
+            note='The %s gap as our model projects it; each fee’s part is what it adds over '
+                 'today, on participation we assumed.' % C.fy(2028), note_figures={'y': F(2028)}),
         sources=[src['model'], src['sc-0604']],
         finding_figures={'a': U(both), 'b': P(bshare), 'y': F(2028)})
 
@@ -567,6 +625,11 @@ def build():
             rows=[dict(label=p['name'], cells=[C.usd(p['cost'])]) for p in extra],
             note='Our programme catalogue, built from the FY27 budget lines and the September '
                  '2026 spending plan. The grouping into extras is ours.')]),
+        chart=TP.parts('Extras against the projected gap', [
+            ('Every extra still funded (ours)', etot), ('Left open (ours)', eshort)], '$',
+            basis='estimate',
+            note='The %s gap as our model projects it; the grouping into extras is ours.'
+                 % C.fy(2028), note_figures={'y': F(2028)}),
         sources=[src['workbook'], src['model']],
         finding_figures={'a': U(etot), 'b': P(eshare), 'y': F(2028)})
 
@@ -605,6 +668,12 @@ def build():
              'measured here.', ['size-gap']),
          con('The cut falls on the students in larger classes and the staff whose posts go.',
              ['cut4'])],
+        chart=TP.series('The gap counted in positions', [C.fy(2000 + y) for y in sorted(gaps)],
+                        [TP.track('Projected gap in average positions (ours)',
+                                  [gaps[y] / cpf for y in sorted(gaps)], 'estimate', 'bar')],
+                        'positions',
+                        note='Ours: each year’s projected gap divided by %s, our catalogue’s '
+                             'average cost of a position.' % C.usd(cpf), note_figures={'a': U(cpf)}),
         sources=[src['addendum'], src['model']],
         finding_figures={'a': U(cpf), 'y': F(2028), 'p': figure(p28, '%.1f' % p28, 'positions'),
                          'z': F(2027), 'c': N(d['classroom'])})
@@ -653,6 +722,13 @@ def build():
              notes=[step('The documents do not say which of the three variances the School '
                          'Committee voted against.', 'gap', allow=('March 2026',),
                          closes='the School Committee’s minutes of its March 2026 budget vote')])],
+        chart=TP.ranking('One cut, measured four ways', [
+            ('Workbook: Level Service less Balanced', diff),
+            ('Addendum: variance for Balanced', var_d),
+            ('Addendum: Level Service deficit', def7),
+            ('Addendum: priced reductions (our sum)', d['dollars'])], '$',
+            note='The district printed three of these; the fourth is our sum of the reductions '
+                 'the addendum prices. Nothing published reconciles them.'),
         sources=[src['workbook'], src['addendum'], src['model']],
         finding_figures={'y': F(2027), 'a': U(diff), 'b': U(var_d)})
 
@@ -718,6 +794,14 @@ def build():
                   for r in S['rates']],
             note='Ours: the projection with only the salary growth rate changed. The rate '
                  'applies to the whole salary line, not only the teachers’ scale.')]),
+        chart=TP.series('The gap at each settlement',
+                        ['%s a year' % C.pct(100 * r['rate'], 1) for r in S['rates']], [
+                            TP.track('%s gap (ours)' % C.fy(2028), [r['gap'] for r in S['rates']],
+                                     'estimate', 'bar'),
+                            TP.track('%s gap (ours)' % C.fy(2032), [r['fy32'] for r in S['rates']],
+                                     'estimate', 'bar')], '$',
+                        note='Ours: only the salary growth rate changes. Our model assumes %s.'
+                             % C.pct(sal), note_figures={'a': P(sal)}),
         sources=[src['contract'], src['scale'], src['model']],
         finding_figures={'y': F(2028), 'a': U(S['perHalfPoint'])},
         finding_allow=('30 June 2027',))
@@ -779,6 +863,17 @@ def build():
             note='Ours: the teachers’ payroll in the FY27 budget lines, rebuilt as if each of '
                  'the three scale increases had been the rate shown. Steps and lanes are left '
                  'as they are.')]),
+        chart=TP.series('The gap had raises been smaller',
+                        ['As settled'] + ['%s a year' % C.pct(100 * s['rate'], 1)
+                                          for s in CF['scenarios']], [
+                            TP.track('%s gap (ours)' % C.fy(2028),
+                                     [CF['actual']['fy28']] + [s['fy28'] for s in CF['scenarios']],
+                                     'estimate', 'bar'),
+                            TP.track('%s gap (ours)' % C.fy(2032),
+                                     [CF['actual']['fy32']] + [s['fy32'] for s in CF['scenarios']],
+                                     'estimate', 'bar')], '$',
+                        note='Ours: the teachers’ payroll rebuilt as if each of the last three '
+                             'scale increases had been the rate shown.'),
         sources=[src['contract'], src['scale'], src['workbook'], src['model']],
         finding_figures={'a': P(100 * LEVY), 'b': P(sal),
                          'c': figure(sh['positionsPerYear'], '%.1f' % sh['positionsPerYear'],
@@ -846,6 +941,13 @@ def build():
         'override, fees, cuts to programmes or positions, reserves, or the next teachers’ settlement.'
         % (C.fy(2028), C.usd(g28)),
         hub_ladder,
+        chart=TP.ranking('Each option against the gap', [
+            ('Projected gap (ours)', g28), ('Every extra still funded', etot),
+            ('Bus and activity fees at their limits', both),
+            ('Each half point on the next settlement', S['perHalfPoint'])], '$',
+            highlight='Projected gap (ours)', basis='estimate',
+            note='All ours, for %s: our projection, our grouping of extras, our fee arithmetic.'
+                 % C.fy(2028), note_figures={'y': F(2028)}),
         answer_figures={'y': F(2028), 'a': U(g28)})
 
     if sorted(k for k in out if k != 'budget-options') != sorted(MINE):

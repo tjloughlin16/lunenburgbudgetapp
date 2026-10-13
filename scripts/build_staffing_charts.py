@@ -83,6 +83,13 @@ MINUTES = 'sources/meetings/text'
 LEA = '01620000'                      # Lunenburg, in DESE's own org code
 DISTRICT = 'Lunenburg'
 
+
+def ORD(n):
+    """1st, 2nd, 3rd, 4th ... 11th, 12th, 13th."""
+    n = int(n)
+    suf = 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return '%d%s' % (n, suf)
+
 # NOT Lunenburg staff. Six administrators of the regional vocational school the town SENDS
 # students to, printed in the FY2019 report beside the district's own rosters.
 NOT_OURS = 'monty-tech'
@@ -219,14 +226,17 @@ def peer_series(db):
     return out
 
 
-def rank_in_year(peers, fy, field):
+def rank_in_year(peers, fy, field, members=None):
     """Where Lunenburg sits among the districts REPORTING THAT YEAR, and how many that is.
 
     A rank without its denominator is the shape of error this project keeps finding: the
-    comparison set has six members in some years and five in others.
+    comparison set has six members in some years and five in others. `members`, when
+    given, restricts the ranking to a fixed set of districts, which is the only way two
+    years' ranks can be set side by side.
     """
     vals = [(p['district'], q[field]) for p in peers for q in p['points']
-            if q['fy'] == fy and q[field] is not None]
+            if q['fy'] == fy and q[field] is not None
+            and (members is None or p['district'] in members)]
     if not any(d == DISTRICT for d, _ in vals):
         return None
     vals.sort(key=lambda t: -t[1])
@@ -1468,7 +1478,10 @@ def headcount(db):
 
     # CHURN, which is the second thing a headcount can say and an FTE count cannot.
     # `retained` is DESE's own measure of how many of last year's staff in that class are
-    # still there; `hires` is how many are new. Both are people, not posts.
+    # still there; `hires` is how many are new. Both are people, not posts. DESE's printed
+    # `retained_pct` equals retained over last year's headcount for every class and year
+    # EXCEPT administrators in FY2022, where the file prints 81.3% (FY2021's figure again)
+    # against 13 of 14 -- so a rate is quoted as DESE's, never recomputed or defined here.
     churn = [dict(fy=r['fy'], job_class=r['job_class'],
                   headcount=r['educators_headcount'], hires=r['hires_headcount'],
                   retained=r['retained_headcount'], retained_pct=r['retained_pct'],
@@ -2478,14 +2491,40 @@ def build():
     if not para_ranks or not teacher_ranks:
         sys.exit('the comparison sheet produced no ranks -- refusing to write.')
 
+    # THE SHEET'S MEMBERSHIP CHANGES: nine districts at first, thirteen by the end, four of
+    # them (two virtual schools among them) entering in one year. A rank of 9 of 9 and a
+    # rank of 1 of 13 are places in two different lists. So every claim that compares a
+    # place across years is made against the districts the sheet carries in EVERY year of
+    # the span -- a fixed list, read off the data, never chosen.
+    stable = sorted(
+        p['district'] for p in peers
+        if all(any(q['fy'] == fy and q['paras_per_100'] is not None
+                   and q['teachers_per_100'] is not None for q in p['points'])
+               for fy in range(s_lo, s_hi + 1)))
+    if DISTRICT not in stable or len(stable) < 3:
+        sys.exit('the fixed comparison set is %r -- refusing to rank across years.' % stable)
+    stable_para = {r['fy']: r for r in (rank_in_year(peers, fy, 'paras_per_100', stable)
+                                        for fy in range(s_lo, s_hi + 1)) if r}
+    stable_teach = {r['fy']: r for r in (rank_in_year(peers, fy, 'teachers_per_100', stable)
+                                         for fy in range(s_lo, s_hi + 1)) if r}
+    entrants = sorted({p['district'] for p in peers if p['district'] not in stable
+                       and p['first_fy'] > s_lo})
+
     # ---- the figures the conclusions rest on, each one derived here and nowhere else.
     lowest_para = min(para_ranks, key=lambda r: r['value'])   # the trough, WITH its rank
     latest_para = para_ranks[-1]
     latest_teach = teacher_ranks[-1]
+    # The same two years, ranked within the fixed list.
+    sp_lo, sp_hi = stable_para[lowest_para['fy']], stable_para[latest_para['fy']]
+    st_hi = stable_teach[latest_teach['fy']]
+    para_last_to_first = sp_lo['rank'] == sp_lo['of'] and sp_hi['rank'] == 1
     # How long Lunenburg has been last of its group without a break, counted back from
     # the most recent year rather than asserted.
+    # Counted within the FIXED list: "last" in a list that gained four members is not the
+    # same "last" as before they arrived.
+    stable_teach_ranks = [stable_teach[r['fy']] for r in teacher_ranks]
     teach_streak = 0
-    for r in reversed(teacher_ranks):
+    for r in reversed(stable_teach_ranks):
         if r['rank'] != r['of']:
             break
         teach_streak += 1
@@ -2499,8 +2538,8 @@ def build():
     para_rise = 100.0 * (by_fy[s_hi]['para_fte'] / trough['para_fte'] - 1)
     pupils_same_years = 100.0 * (by_fy[s_hi]['pupils_in_district']
                                  / by_fy[trough['fy']]['pupils_in_district'] - 1)
-    teach_last_years = sum(1 for r in teacher_ranks if r['rank'] == r['of'])
-    streak_from = teacher_ranks[-teach_streak]['fy'] if teach_streak else None
+    teach_last_years = sum(1 for r in stable_teach_ranks if r['rank'] == r['of'])
+    streak_from = stable_teach_ranks[-teach_streak]['fy'] if teach_streak else None
     # THE CLAIM BELOW USED TO ASSERT LUNENBURG IS LAST IN THIS GROUP, and the group is not
     # ours: DESE decides who is on its comparison sheet, and it changed underneath this
     # file mid-build -- charter districts entered the set and the unbroken run went to
@@ -2580,6 +2619,11 @@ def build():
             first_fy=s_lo, last_fy=s_hi, points=state,
             change=fte_change, change_over_roster_years=roster_window, trough=trough,
             ranks=dict(paras=para_ranks, teachers=teacher_ranks),
+            # The same ranks within the districts the sheet carries in EVERY year, the only
+            # list two years' places can be compared on.
+            stable_ranks=dict(members=stable, entrants=entrants,
+                              paras=[stable_para[fy] for fy in sorted(stable_para)],
+                              teachers=[stable_teach[fy] for fy in sorted(stable_teach)]),
             latest=by_fy[s_hi]),
         peers=peers,
         composition=comp,
@@ -2800,15 +2844,22 @@ def build():
                 id='the-change-is-paraprofessionals',
                 bearing='sizes',
                 claim='Paraprofessionals for each hundred pupils rose %s, the biggest change in staffing.' % C.pct(para_rise),
-                so_what='Lunenburg went from the lowest on the state’s comparison sheet to the highest.',
+                so_what=('Among the districts the state compares it with in every year, it went from last to first.'
+                         if para_last_to_first else
+                         'Its place among the districts the state compares it with in every year moved; the detail gives both ends.'),
                 lede='Paraprofessionals are the biggest change in who Lunenburg’s '
                       'schools employ: the state’s count went from %s per hundred '
-                      'pupils in %s, the lowest of the %s districts on the state’s own '
-                      'sheet, to %s in '
-                      '%s, the highest.'
+                      'pupils in %s, %s of the %s districts on the state’s own '
+                      'sheet that year, to %s in %s, %s of %s. The sheet’s list changed '
+                      'in between, so the like-for-like reading is the %s districts it '
+                      'carries in every year: %s of them in %s, %s in %s.'
                       % (per100(lowest_para['value']), C.fy(lowest_para['fy']),
-                         C.num(latest_para['of']), per100(latest_para['value']),
-                         C.fy(latest_para['fy'])),
+                         ORD(lowest_para['rank']), C.num(lowest_para['of']),
+                         per100(latest_para['value']), C.fy(latest_para['fy']),
+                         ORD(latest_para['rank']), C.num(latest_para['of']),
+                         C.num(len(stable)),
+                         ORD(sp_lo['rank']), C.fy(sp_lo['fy']),
+                         ORD(sp_hi['rank']), C.fy(sp_hi['fy'])),
                 detail='%s full-time equivalents in %s and %s in %s — a rise of %s '
                        'over years in which in-district enrolment %s %s. Nothing else '
                        'in this archive could have told a resident that: the town prints '
@@ -2827,6 +2878,12 @@ def build():
                     'last_ratio': figure(latest_para['value'], per100(latest_para['value'])),
                     'last_fy': figure(latest_para['fy'], C.fy(latest_para['fy'])),
                     'districts': figure(latest_para['of'], C.num(latest_para['of'])),
+                    'districts_low': figure(lowest_para['of'], C.num(lowest_para['of'])),
+                    'rank_low': figure(lowest_para['rank'], ORD(lowest_para['rank'])),
+                    'rank_last': figure(latest_para['rank'], ORD(latest_para['rank'])),
+                    'stable_n': figure(len(stable), C.num(len(stable))),
+                    'stable_rank_low': figure(sp_lo['rank'], ORD(sp_lo['rank'])),
+                    'stable_rank_last': figure(sp_hi['rank'], ORD(sp_hi['rank'])),
                     'low_fte': figure(trough['para_fte'], fte(trough['para_fte'])),
                     'last_fte': figure(by_fy[s_hi]['para_fte'],
                                        fte(by_fy[s_hi]['para_fte'])),
@@ -2859,15 +2916,18 @@ def build():
                 claim='%s teaching staff for every hundred pupils, near the bottom of the state’s comparison group.' % per100(latest_teach['value']),
                 so_what='Teaching fell faster than enrollment did, so falling rolls do not explain it.',
                 lede='Lunenburg ranks %s of the %s districts on the state’s '
-                      'comparison sheet for teachers per pupil — and falling '
+                      'comparison sheet for teachers per pupil, and %s of the %s the sheet '
+                      'carries in every year — and falling '
                       'enrolment is not the explanation: teacher FTE fell %s since %s '
                       'while in-district enrolment fell %s.'
                       % (C.num(latest_teach['rank']), C.num(latest_teach['of']),
+                         C.num(st_hi['rank']), C.num(st_hi['of']),
                          C.pct(abs(fte_change['teacher_fte']['pct']) * 100), C.fy(s_lo),
                          C.pct(abs(fte_change['pupils_in_district']['pct']) * 100)),
                 detail='%s teacher FTE per hundred in-district pupils in %s, down from '
-                       '%s in %s: teaching fell faster than the roll did. It has been '
-                       'last in the group in %s of the %s years the state has published, '
+                       '%s in %s: teaching fell faster than the roll did. Among the '
+                       'districts the sheet carries in every year it has been last in '
+                       '%s of the %s years the state has published, '
                        '%s. The two things a reader hears '
                        'as contradictory are both true here — measured from %s '
                        'instead, the ratio has RISEN, from %s, because over those years '
@@ -2883,6 +2943,8 @@ def build():
                 figures={
                     'rank': figure(latest_teach['rank'], C.num(latest_teach['rank'])),
                     'districts': figure(latest_teach['of'], C.num(latest_teach['of'])),
+                    'stable_rank': figure(st_hi['rank'], C.num(st_hi['rank'])),
+                    'stable_n': figure(st_hi['of'], C.num(st_hi['of'])),
                     'teacher_fall': figure(
                         abs(fte_change['teacher_fte']['pct']) * 100,
                         C.pct(abs(fte_change['teacher_fte']['pct']) * 100)),

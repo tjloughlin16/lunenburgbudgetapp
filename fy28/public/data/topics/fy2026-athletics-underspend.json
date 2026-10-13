@@ -1,6 +1,105 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [
+   "Athletic secretary",
+   "Equipment reconditioning",
+   "New equipment"
+  ],
+  "note": {
+   "figures": {
+    "a": {
+     "text": "$55,300",
+     "unit": "",
+     "value": 55300.25000000001
+    },
+    "b": {
+     "text": "$518,334",
+     "unit": "",
+     "value": 518334.00000000006
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "$55,300 left of a $518,334 budget after transfers, FY2026. Accounts with at least a dollar left."
+  },
+  "rows": [
+   {
+    "label": "Athletic secretary",
+    "texts": [
+     "$20,407"
+    ],
+    "total": "$20,407",
+    "value": 20407.0
+   },
+   {
+    "label": "Athletic coaches",
+    "texts": [
+     "$13,562"
+    ],
+    "total": "$13,562",
+    "value": 13562.0
+   },
+   {
+    "label": "Dues and fees",
+    "texts": [
+     "$8,484"
+    ],
+    "total": "$8,484",
+    "value": 8484.45
+   },
+   {
+    "label": "Equipment reconditioning",
+    "texts": [
+     "$4,643"
+    ],
+    "total": "$4,643",
+    "value": 4642.76
+   },
+   {
+    "label": "Transportation",
+    "texts": [
+     "$4,421"
+    ],
+    "total": "$4,421",
+    "value": 4421.01
+   },
+   {
+    "label": "P/r unified sports coach",
+    "texts": [
+     "$2,709"
+    ],
+    "total": "$2,709",
+    "value": 2709.0
+   },
+   {
+    "label": "New equipment",
+    "texts": [
+     "$1,317"
+    ],
+    "total": "$1,317",
+    "value": 1316.94
+   },
+   {
+    "label": "Athletic insurance",
+    "texts": [
+     "$20"
+    ],
+    "total": "$20",
+    "value": 20.0
+   }
+  ],
+  "stack": null,
+  "title": "Left unspent, account by account",
+  "type": "ranking",
+  "unit": "$"
+ },
  "conclusions": [
   {
    "figures": {
@@ -240,7 +339,7 @@
   "text": "Athletics closed FY2026 with $55,300 of its $518,334 town budget unspent, on the town’s ledger."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "fy2026-athletics-underspend",

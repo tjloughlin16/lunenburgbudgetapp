@@ -1,18 +1,69 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "$89,096",
+     "unit": "",
+     "value": 89096
+    }
+   },
+   "literals": [],
+   "text": "Ours: each year’s projected gap divided by $89,096, our catalogue’s average cost of a position."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Projected gap in average positions (ours)",
+    "texts": [
+     "10.4 positions",
+     "17.2 positions",
+     "24.7 positions",
+     "33.0 positions",
+     "42.2 positions",
+     "52.3 positions"
+    ],
+    "values": [
+     10.438964712220526,
+     17.17294828050642,
+     24.661657088982672,
+     32.96651926012391,
+     42.1538452904732,
+     52.295142318398135
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The gap counted in positions",
+  "type": "series",
+  "unit": "positions",
+  "x": [
+   "FY2028",
+   "FY2029",
+   "FY2030",
+   "FY2031",
+   "FY2032",
+   "FY2033"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
     "a": {
      "text": "10.4",
      "unit": "positions",
-     "value": 10.441243153452456
+     "value": 10.438964712220526
     },
     "b": {
      "text": "52.3",
      "unit": "positions",
-     "value": 52.3138524737362
+     "value": 52.295142318398135
     },
     "y": {
      "text": "FY2028",
@@ -104,7 +155,7 @@
    "value": {
     "text": "10.4 positions",
     "unit": "positions",
-    "value": 10.441243153452456
+    "value": 10.438964712220526
    }
   },
   {
@@ -124,7 +175,7 @@
    "value": {
     "text": "52.3 positions",
     "unit": "positions",
-    "value": 52.3138524737362
+    "value": 52.295142318398135
    }
   },
   {
@@ -202,7 +253,7 @@
    "p": {
     "text": "10.4",
     "unit": "positions",
-    "value": 10.441243153452456
+    "value": 10.438964712220526
    },
    "y": {
     "text": "FY2028",

@@ -1,6 +1,64 @@
 {
  "category": "fy2026-closeout",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "13"
+   ],
+   "text": "Paid and committed, period 13. A general fund line is the town’s share, not the cost."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "General fund",
+    "texts": [
+     "$304,748",
+     "$588,508",
+     "$732,298",
+     "$1,202,771"
+    ],
+    "values": [
+     304747.5,
+     588508.04,
+     732298.26,
+     1202770.94
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Circuit breaker",
+    "texts": [
+     "$494,968",
+     "$466,296",
+     "$473,650",
+     "$333,495"
+    ],
+    "values": [
+     494967.72,
+     466295.98,
+     473650.35,
+     333494.89
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Out-of-district tuition, by who paid",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

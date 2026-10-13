@@ -124,7 +124,7 @@ type Payload = {
   }
   recomputed: { what: string; where: string; ours: string; why: string }[]
   gaps: { side: string; what: string; why: string; closes: string | null }[]
-  related: { id: string; title: string; why: string; words: number; updated: string
+  related: { id: string; title: string; why: string; words: number | null; updated: string | null
     url: string; pdf: string | null }[]
 }
 
@@ -756,7 +756,7 @@ export function StateAid() {
         </ul>
       </div>
 
-      <H2 id="related">The written analyses behind this</H2>
+      <H2 id="related">The pages behind this</H2>
       <div className="grid gap-4 mt-5"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))' }}>
         {d.related.map(r => (
@@ -768,7 +768,8 @@ export function StateAid() {
             </p>
             <p className="text-[13.5px] leading-relaxed mt-2"
               style={{ color: 'var(--text-secondary)' }}>{r.why}</p>
-            <p className="text-[12px] mt-2 tnum" style={{ color: 'var(--text-muted)' }}>
+            {/* A topic page carries no word count, date or PDF of its own. */}
+            {r.words ? <p className="text-[12px] mt-2 tnum" style={{ color: 'var(--text-muted)' }}>
               {r.words.toLocaleString()} words &middot; updated {r.updated}
               {r.pdf && (
                 <>
@@ -777,7 +778,7 @@ export function StateAid() {
                     href={abs(r.pdf)}>PDF</a>
                 </>
               )}
-            </p>
+            </p> : null}
           </div>
         ))}
       </div>

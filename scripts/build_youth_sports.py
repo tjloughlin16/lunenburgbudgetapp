@@ -141,7 +141,15 @@ def series():
     # header, which is the mistake rule 13 names). Carried as a balance only.
     fy24 = [r for r in csv.DictReader(open(SERIES, encoding='utf-8')) if r['fy'] == '2024' and r['fund'].strip().startswith('1306')]
     if fy24:
-        out.append(dict(fy=2024, forward=None, receipts=None, disbursed=None, carried=num(fy24[0]['v2']),
+        # THE BALANCE IS NOW A NAMED COLUMN. The extract was re-read with `column_meaning`
+        # named off the printed heading, so `fund_balance` holds the $3,010.67 and `v2` is
+        # empty. Reading `v2` gave None, `or 0` turned that into a zero balance, and the
+        # FY2025 card published a rise of the whole opening balance ($65,242) instead of
+        # the rise from $3,010.67. Read the named column; refuse if neither holds it.
+        bal = num(fy24[0].get('fund_balance') or fy24[0]['v2'])
+        if bal is None:
+            fail('fund 1306 FY2024 balance not found in %s' % os.path.relpath(SERIES, ROOT))
+        out.append(dict(fy=2024, forward=None, receipts=None, disbursed=None, carried=bal,
                         status='balance only, as printed', page=int(fy24[0]['page']) if fy24[0]['page'] else None))
     out.sort(key=lambda x: x['fy'])
     if len(out) < 8:
@@ -191,7 +199,9 @@ def build():
     funds_total_held = sum(funds[k]['available'] for k in (1306, 1545, 1500, 1301))
     funds_total_out = sum(funds[k]['expenditure'] for k in (1306, 1545, 1500, 1301))
     maint = [r for r in csv.DictReader(open(MAINT, encoding='utf-8'))]
-    fy24_close = latest['carried'] or 0
+    if latest['carried'] is None:
+        fail('no closing balance for FY%d; a missing balance is not a zero one' % latest['fy'])
+    fy24_close = latest['carried']
     jump = f1306['opening'] - fy24_close
     best_receipts = max(y['receipts'] or 0 for y in ser)
     maint_total = next(float(r['amount']) for r in maint if r['item'].startswith('All fields'))
@@ -263,9 +273,11 @@ def build():
         conclusion(
             id='what-the-fund-pays-for',
             claim='The schools mow the grass fields from the same fund the rent goes into.',
-            so_what='%s of landscaping in FY2024, about %s of all grounds work — her figures, not the ledger’s.'
+            # NOT `in FY2024`: the total includes the summer-2023 repair, which the
+            # Superintendent dates by season and the extract files under fy 2023.
+            so_what='%s on the landscaper, the summer 2023 repair included; grounds work was about %s — her figures.'
                     % (C.usd(maint_landscaper), C.usd(maint_total)),
-            figures={'landscaper': figure(maint_landscaper, C.usd(maint_landscaper), 'of outsourced mowing and field repair the Superintendent states for FY2024'),
+            figures={'landscaper': figure(maint_landscaper, C.usd(maint_landscaper), 'of outsourced mowing (autumn, spring) and summer 2023 field repair, as the Superintendent states it'),
                      'total': figure(maint_total, C.usd(maint_total)),
                      'fall': figure(9500, C.usd(9500)), 'spring': figure(9200, C.usd(9200)), 'summer': figure(19400, C.usd(19400))},
             figure='landscaper', kind='measured', bearing='sizes',

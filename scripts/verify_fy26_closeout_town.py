@@ -116,6 +116,17 @@ def main():
         FAILS.append('CONTR SERV no longer spends its revised budget exactly; §2 says it '
                      'does, and that is the point of the paragraph')
     present('snow contracted services', float(cs['expended']))
+    # GROSS AND NET ARE DIFFERENT FIGURES, AND THE PROSE USED TO STATE THE GROSS AS IF IT
+    # WERE THE NET: "given $520,319 more" beside a table whose transfers sum to $520,000.
+    # $520,319 is what moved INTO two lines; $319 moved OUT of PURCH SERV. Both asserted.
+    g = one(f"""SELECT SUM(CASE WHEN transfers > 0 THEN transfers ELSE 0 END) i,
+                      SUM(CASE WHEN transfers < 0 THEN transfers ELSE 0 END) o
+               FROM ledger_snapshot l JOIN account a USING (account_id)
+               WHERE {AT} AND a.dept='423'""")
+    present('snow transferred in, gross', float(g['i']), dp=0)
+    present('snow transferred out of one line', float(g['o']), dp=0)
+    if re.search(r'given \*?\*?\$' + re.escape(f"{float(g['i']):,.0f}"), PLAIN):
+        FAILS.append('the gross transfer is stated as what snow was "given"; the net is')
 
     print('\n§3  The reserve funds')
     for dept, obj, lbl in (('132', None, 'Reserve Fund'),
@@ -162,6 +173,27 @@ def main():
             float(sch['expended']) + float(stip['expended']), dp=0)
     present('the rest of the insurance department',
             float(ins['e']) - float(sch['expended']), dp=0)
+    hi = one(f"""SELECT expended FROM ledger_snapshot l JOIN account a USING (account_id)
+                   WHERE {AT} AND a.dept='914' AND a.object='570001'""")
+    present('town HEALTH INS spent', float(hi['expended']), dp=0)
+    # THE SCHOOL'S OWN ACTIVE-EMPLOYEE ACCOUNT. §5 once said serving school staff might be
+    # any share of the town's lines without mentioning that the school ledger insures them
+    # on its own account. Its function code, 5200, is DESE's "Insurance for Active
+    # Employees" -- asserted against DESE's own workbook extract, not typed.
+    shi = one("""SELECT a.function, l.revised, l.expended, l.available
+                  FROM ledger_snapshot l JOIN account a USING (account_id)
+                  WHERE l.fy=2026 AND l.period=12 AND a.dept='300'
+                    AND a.org='S5991992' AND a.object='570001'""")
+    present('school HEALTH INSURANCE budgeted', float(shi['revised']), dp=0)
+    present('school HEALTH INSURANCE spent', float(shi['expended']))
+    present('school HEALTH INSURANCE spent, rounded', float(shi['expended']), dp=0)
+    present('school HEALTH INSURANCE left', float(shi['available']), dp=0)
+    present('school HEALTH INSURANCE function', str(shi['function']))
+    import csv as _csv
+    fn = {r['func_code']: r['func_desc'] for r in _csv.DictReader(open(
+        os.path.join(ROOT, 'sources', 'data', 'dese-function-expenditure.csv'),
+        encoding='utf-8')) if r.get('func_code')}
+    present('DESE name for that function', fn.get(str(shi['function']), '(not found)'))
     # The false friends must stay excluded. If one ever gets counted, the total moves.
     ff = one(f"""SELECT COUNT(*) n, SUM(expended) e FROM ledger_snapshot l
                  JOIN account a USING (account_id)

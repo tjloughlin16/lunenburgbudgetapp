@@ -430,27 +430,41 @@ def build():
     # ------------------------------------------- the analysis this page stands on
     reports = json.load(open(REPORTS, encoding='utf-8'))
     by_id = {r['id']: r for r in reports['reports']}
-    doc = by_id.get('budget-vs-actual')
-    if doc is None:
-        sys.exit('reports.json no longer carries budget-vs-actual. The page links to the '
-                 'analysis by id; a missing id is a broken link, not an absent document.')
+    # The written analysis is UNLISTED since 13 October 2026, so reports.json no longer
+    # carries it. The page cites its /docs/analyses copy -- a serving format, not a door --
+    # read off the document itself by the same function that builds a reports.json row.
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    from build_reports_index import document_entry
+    doc = document_entry('budget-vs-actual')
 
     # The two questions this sweep is structurally unable to answer, each of which HAS
     # been answered somewhere else. Resolved through reports.json rather than typed as
     # URLs, so a renamed analysis breaks the build here instead of shipping a dead link.
     RELATED = [
-        ('athletics-ledger',
+        # A path is a HUB OR TOPIC PAGE: the long reports those pages absorbed are
+        # UNLISTED (13 October 2026), so the card goes to the page that answers now.
+        ('/athletics/town-budget-and-fee-fund',
          'Where a general-fund line is net of what fees already paid for, read against the '
          'revolving fund that paid it.'),
-        ('fy26-closeout',
+        ('/fy2026-closeout',
          'The one year the town\'s own ledger can be read line by line — including the '
          'transfers a budget document cannot show.'),
         ('connecting-the-budget',
          'What can be followed from what was budgeted to what was spent, and the level at '
          'which it stops.'),
     ]
+    tj = json.load(open(os.path.join(os.path.dirname(REPORTS), 'topics.json'),
+                        encoding='utf-8'))
+    by_path = {x['path']: x for x in tj['categories'] + list(tj['topics'].values())
+               if x.get('ready')}
     related = []
     for rid, why in RELATED:
+        if rid.startswith('/'):
+            t = by_path.get(rid)
+            if t is None:
+                sys.exit(f'topics.json has no ready page at {rid}, which this page links to.')
+            related.append(dict(id=rid, title=t['title'], why=why, url=rid, words=None))
+            continue
         r = by_id.get(rid)
         if r is None:
             sys.exit(f'reports.json no longer carries {rid}, which this page links to.')

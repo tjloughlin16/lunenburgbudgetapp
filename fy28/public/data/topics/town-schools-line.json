@@ -1,6 +1,59 @@
 {
  "category": "department-budgets",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2023"
+   ],
+   "text": "The dashed line is ours: the FY2023 figure grown at the cap each year."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Voted, the school group",
+    "texts": [
+     "$23,397,371",
+     "$24,082,518",
+     "$25,127,554"
+    ],
+    "values": [
+     23397371.0,
+     24082518.0,
+     25127554.0
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "Growing at the levy cap from FY2023",
+    "texts": [
+     "$23,397,371",
+     "$23,982,305",
+     "$24,581,863"
+    ],
+    "values": [
+     23397371.0,
+     23982305.275,
+     24581862.906875
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "The school group against the cap",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

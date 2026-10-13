@@ -224,6 +224,9 @@ def build():
                                                'named-subject', 'share') * 100, 1), 'misc share')
     eras = CO['eras']
     g8 = next(e for e in eras if e['span'].startswith('8'))
+    e9 = next(e['span'] for e in eras if e is not g8)
+    if any(e['span'] != e9 for e in eras if e is not g8):
+        fail('more than two grade spans in the high school’s eras; the sections chart draws two')
     courses_gap = gap('courses-gap', 'which courses those sections were', PROGRAM_OF_STUDIES)
     out['high-school-sections'] = TP.page(
         'high-school-sections',
@@ -276,6 +279,14 @@ def build():
             note='DESE’s class-size file. From SY%d to SY%d grade 8 was taught in the high '
                  'school building, so those years count a different school and are not compared '
                  'with the rest.' % (g8['first_sy'], g8['last_sy']))]),
+        chart=TP.series('High school sections that ran', ['SY%d' % y for y in sorted(hs)], [
+            TP.track('Grades %s' % e9, [hs[y]['sections'] if not g8['first_sy'] <= y <= g8['last_sy']
+                                       else None for y in sorted(hs)], 'published', 'bar'),
+            TP.track('Grades %s, a different school' % g8['span'],
+                     [hs[y]['sections'] if g8['first_sy'] <= y <= g8['last_sy'] else None
+                      for y in sorted(hs)], 'published', 'bar')], 'course sections', stacked=True,
+            note='DESE’s class-size file. While grade eight sat in the building the count is of a '
+                 'different school, so it is drawn apart.'),
         said=[said(CO, 'whittle'), said(CO, 'studyhalls')],
         sources=S('class-size', 'enrolment', 'p-courses'),
         finding_figures=d)
@@ -297,6 +308,13 @@ def build():
     wl_fy = CR['fy2026']['district']['after_fy']
     hi_rows = {r['sy']: r for r in L['high']}
     yrs = sorted(set(hi_rows) | set(mid), reverse=True)
+    lang_chart = TP.series('Share of each school taking a language', ['SY%d' % y for y in yrs[::-1]], [
+        TP.track('High school', [100 * hi_rows[y]['share'] if y in hi_rows else None
+                                 for y in yrs[::-1]]),
+        TP.track('Middle school', [100 * mid[y]['share'] if y in mid else None
+                                   for y in yrs[::-1]])], '%',
+        note='DESE’s class-size file: distinct students taking a language over the school’s own '
+             'count.')
     out['world-languages'] = TP.page(
         'world-languages',
         _fmt('{h1} of Lunenburg High took a language in {y1}, against {h0} in {y0}; the '
@@ -353,6 +371,7 @@ def build():
                 C.pct(mid[y]['share'] * 100) if y in mid else None]) for y in yrs],
             note='DESE’s class-size file, Foreign Language. A share is distinct students taking '
                  'one over the school’s own count. A section is a class that ran.')]),
+        chart=lang_chart,
         said=[said(CO, 'largest31'), said(CO, 'french'), said(CO, 'restoration')],
         sources=S('class-size', 'teacher-data', 'p-courses', 'p-cuts'),
         finding_figures=d)
@@ -366,7 +385,7 @@ def build():
     same(round(now['participation'], 4), round(cfig(CO, 'history-lost-staff-seats-and-takers-'
                                                     'together', 'now'), 4), 'history share')
     covid = next(bd for bd in CO['era_series']['bands'] if bd['covid'])
-    hy = [y for y in hist['years'] if y['sy'] >= win['first_sy']]
+    hy = sorted((y for y in hist['years'] if y['sy'] >= win['first_sy']), key=lambda y: y['sy'])
     E = lambda e: dict(a=SY(e['first_sy']), b=SY(e['last_sy']))
     out['history-courses'] = TP.page(
         'history-courses',
@@ -408,6 +427,11 @@ def build():
                 '%.1f' % y['fte']]) for y in sorted(hy, key=lambda r: -r['sy'])],
             note='DESE’s class-size and teacher files. Places are sections times average class '
                  'size. Single years swing; the page compares averages over eras.')]),
+        chart=TP.series('Share of the high school taking history',
+                        ['SY%d' % y['sy'] for y in hy], [
+            TP.track('Took a history course', [100 * y['participation'] for y in hy])], '%',
+            note='Single years swing; the page compares averages either side of the pandemic '
+                 'years, a boundary that is ours.'),
         sources=S('class-size', 'teacher-data', 'p-courses'),
         finding_figures=d)
 
@@ -463,11 +487,20 @@ def build():
             note='DESE’s class-size file. From SY%d to SY%d grade 8 was taught in the high school '
                  'building. A blank is a year before Lunenburg Middle School existed.'
                  % (g8['first_sy'], g8['last_sy']))]),
+        chart=TP.series('Computer science sections', ['SY%d' % y for y in sorted(allr)], [
+            TP.track('High school', [allr[y]['sections'] for y in sorted(allr)], 'published', 'bar'),
+            TP.track('Middle school', [mrow[y]['sections'] if y in mrow else None
+                                       for y in sorted(allr)], 'published', 'bar')],
+            'course sections',
+            note='DESE’s class-size file. The high school’s early sections fall in the years grade '
+                 'eight was taught in its building.'),
         sources=S('class-size', 'enrolment', 'p-courses'),
         finding_figures=d, finding_allow=('9–12',))
 
     # ================================================================ AP participation
     Y = {r['sy']: r for r in AP['years']}
+    APY = sorted(AP['years'], key=lambda r: r['sy'])
+    SYL = lambda r: 'SY%d' % r['sy']
     y1, y0 = AP['last_sy'], AP['first_sy']
     r1, r0 = Y[y1], Y[y0]
     peak = max(AP['years'], key=lambda r: r['takers'])
@@ -516,6 +549,10 @@ def build():
                 C.pct(r['share_1112'] * 100, 0)]) for r in sorted(AP['years'], key=lambda r: -r['sy'])],
             note='DESE’s AP participation file and its enrolment by grade. The ratio is our '
                  'division of one by the other, an approximation.')]),
+        chart=TP.series('Students who sat an AP exam', [SYL(r) for r in APY], [
+            TP.track('Sat at least one exam', [r['takers'] for r in APY], 'published', 'bar')],
+            'students', note='DESE’s AP participation file. A student is counted once however many '
+                             'exams they sat.'),
         said=[said(CO, 'options')],
         sources=S('ap-part', 'enrolment', 'p-ap'),
         finding_figures=d)
@@ -566,6 +603,9 @@ def build():
                 C.pct(r['pass_share'] * 100)]) for r in sorted(AP['years'], key=lambda r: -r['sy'])],
             note='DESE’s AP performance file, all subjects. A score of 3 is the usual threshold '
                  'for college credit.')]),
+        chart=TP.series('AP tests scoring three or better', [SYL(r) for r in APY], [
+            TP.track('Share of tests', [100 * r['pass_share'] for r in APY])], '%',
+            note='DESE’s AP performance file, all subjects: a share of tests, not of students.'),
         sources=S('ap-perf', 'p-ap'),
         finding_figures=d, finding_allow=('3',))
 
@@ -582,6 +622,12 @@ def build():
         fail('the subject families no longer sum to the SY%d sittings' % ys)
     same(hum, cfig(AP, 'the-exams-are-english-and-history', 'humanities'), 'AP humanities')
     suppressed = [f['family'] for f in AP['families'] if 'suppressed' in f['basis_now']]
+    # Axis labels only; the table beside the chart carries DESE's own family names.
+    FAM_SHORT = {'History and Social Science': 'History', 'English Language Arts': 'English',
+                 'Math and Computer Science': 'Math and CS', 'Science and Technology': 'Science',
+                 'Arts': 'Arts', 'Foreign Languages': 'Languages'}
+    if set(FAM_SHORT) != set(fam):
+        fail('the AP subject families changed; name the new one for the chart')
     out['ap-subjects'] = TP.page(
         'ap-subjects',
         _fmt('{h} of {s} AP exams in {y} were English or history; science and math were {m}.',
@@ -616,6 +662,11 @@ def build():
                               else None]) for f in AP['families']],
             note='DESE’s AP participation file; where it suppresses a family, the performance '
                  'file’s test count. A blank share is one DESE suppresses.')]),
+        chart=TP.series('AP exams by subject family', [FAM_SHORT[f['family']] for f in AP['families']], [
+            TP.track('SY%d' % ys, [f['then'] for f in AP['families']], 'published', 'bar'),
+            TP.track('SY%d' % y1, [f['now'] for f in AP['families']], 'published', 'bar')], 'exams',
+            note='Exams sat, from DESE’s participation file; where it suppresses a family, the '
+                 'performance file’s count.'),
         said=[said(CO, 'apstats')],
         sources=S('ap-part', 'ap-perf', 'p-ap'),
         finding_figures=d)
@@ -628,6 +679,7 @@ def build():
     if sum(p['reductions'] for p in CR['per_year']) != tot['reductions']:
         fail('the cut register’s years no longer sum to its total')
     lhs, lms = f20['lhs_foreign'], f20['lms_foreign']
+    CRY = sorted(CR['per_year'], key=lambda p: p['fy'])
     outcome_gap = gap('outcome-gap', 'whether any named post was removed', POSITIONS)
     dm, dl = '6 March 2019', '3 April 2019'
     out['announced-cuts'] = TP.page(
@@ -677,6 +729,12 @@ def build():
                 C.num(p['operative'])]) for p in sorted(CR['per_year'], key=lambda p: -p['fy'])],
             note='Counts of rows the district printed, quoted at their pages in the register. A '
                  'row is a claim the district published, not an event.')]),
+        chart=TP.series('What the district’s budget documents named', [C.fy(p['fy']) for p in CRY], [
+            TP.track('Reductions', [p['reductions'] for p in CRY], 'stated', 'bar'),
+            TP.track('Restorations and additions', [p['restorations'] for p in CRY], 'stated',
+                     'bar')], 'items named',
+            note='Rows the district printed, by budget year. A row is a claim it published, not an '
+                 'event.'),
         said=[said(CR, 'layoffs'), said(CR, 'staffing-dispute')],
         sources=doc_sources([(x['path'], x['title']) for x in CR['documents']]) + S('p-cuts'),
         finding_figures=d)
@@ -725,6 +783,11 @@ def build():
             rows=[dict(label=p['with_override'], cells=[p['esser']]) for p in f25['pairs']],
             note='Left: the School Committee’s override statement. Right: the FY25 '
                  'Superintendent’s Budget Update. The pairing is ours.')]),
+        chart=TP.parts('Posts on the list without an override', [
+            ('Still cut with the override', f25['with_override']),
+            ('Off the list once it passed', f25['saved'])], 'positions', basis='stated',
+            note='The School Committee’s two published lists, %s. Which posts went is not '
+                 'published.' % vote_day, note_allow=(vote_day,)),
         said=[said(GU, 'burden'), said(GU, 'beyond')],
         sources=doc_sources([(x['path'], x['title']) for x in CR['documents']
                              if x['fy'] == 2025]) + S('p-cuts'),
@@ -775,6 +838,13 @@ def build():
                   for p in sorted(CR['per_year'], key=lambda p: -p['fy'])],
             note='Adopted counts are the district’s own lists; the tests are against DESE teacher '
                  'FTE. The tolerance and the mapping of titles to subjects are ours.')]),
+        chart=TP.parts('Adopted cuts old enough to test', [(l, v) for l, v in (
+            ('No series counts the job', tot['blind']),
+            ('State count fell with the cut', tot['moved_with']),
+            ('Moved by less than stated', tot['unresolved']),
+            ('Moved the other way', tot['moved_other'])) if v], 'adopted cuts', basis='stated',
+            note='The district’s adopted lists, tested against DESE teacher counts; the tolerance '
+                 'and the title mapping are ours.'),
         sources=S('teacher-data', 'p-cuts'),
         finding_figures=d)
 
@@ -784,6 +854,9 @@ def build():
     if len(ev) != T['events'] or sum(1 for e in ev if e['returned']) != T['returned']:
         fail('the stopped-funding events no longer reconcile to its totals')
     py = [p for p in SF['per_year'] if p['n']]
+    pya = sorted(py, key=lambda p: p['fy'])
+    if any(p['returned_n'] + p['stayed_n'] != p['n'] for p in py):
+        fail('a year’s lines cut to zero no longer split into came back and never again')
     ef, el = min(p['fy'] for p in py), max(p['fy'] for p in py)
     book_fy = SF['span']['last_fy']
     book = next(c['total'] for c in SF['coverage'] if c['fy'] == book_fy)
@@ -841,6 +914,12 @@ def build():
                   for p in sorted(py, key=lambda p: -p['fy'])],
             note='The district’s own budget books, restating each closed year. A line is net of '
                  'grants and fees, and a budget line is not a programme.')]),
+        chart=TP.series('School lines cut to a printed zero', [C.fy(p['fy']) for p in pya], [
+            TP.track('Funded again later', [p['returned_n'] for p in pya], 'published', 'bar'),
+            TP.track('Never funded again', [p['stayed_n'] for p in pya], 'published', 'bar')],
+            'budget lines', stacked=True,
+            note='By the year the line went to zero, in the district’s own budget books. A line '
+                 'at zero is not a programme ended.'),
         said=[said(SF, 'psychologist')],
         sources=doc_sources([(next(k for k in man if k.startswith('district-budget/docs/') and
                                    os.path.splitext(os.path.basename(k))[0] ==
@@ -851,6 +930,7 @@ def build():
     # ================================================================ grant endings
     ly = GU['latest_year']
     by = {r['fy']: r for r in GU['by_year']}
+    GUY = sorted(GU['by_year'], key=lambda r: r['fy'])
     cur = by[ly]
     sw, rd = cur['swap'], cur['reduction']
     fall = -(sw['d_grants'] + rd['d_grants'])
@@ -905,6 +985,14 @@ def build():
                   for r in sorted(GU['by_year'], key=lambda r: -r['fy'])],
             note='DESE’s End of Year Financial Report, each function compared with the year '
                  'before. Sorting functions by the two signs is ours.')]),
+        chart=TP.series('Grant spending that fell, and the town',
+                        [C.fy(r['fy']) for r in GUY], [
+            TP.track('General fund rose in the same area', [-r['swap']['d_grants'] for r in GUY],
+                     'published', 'bar'),
+            TP.track('General fund did not', [-r['reduction']['d_grants'] for r in GUY],
+                     'published', 'bar')], '$', stacked=True,
+            note='DESE’s End of Year Financial Report, each area of spending against the year '
+                 'before. The sorting by sign is ours.'),
         said=[said(GU, 'loss'), said(GU, 'paras')],
         sources=S('eoyr', 'p-grants'),
         finding_figures=d)
@@ -972,6 +1060,10 @@ def build():
                 C.pct(ser[y]['town_share'])]) for y in sorted(ser, reverse=True)],
             note='DESE’s End of Year Financial Report, district totals: what was spent, by the '
                  'fund that paid it. Actual spending, not budgets.')]),
+        chart=TP.series('General fund share of school spending', [C.fy(y) for y in sorted(ser)], [
+            TP.track('Paid by the general fund', [ser[y]['town_share'] for y in sorted(ser)])], '%',
+            note='DESE’s End of Year Financial Report: what was spent, by the fund that paid it. '
+                 'The rest is grants and revolving funds.'),
         sources=S('eoyr', 'p-grants'),
         finding_figures=d)
     if lo_sh['town_share'] > ser[f0]['town_share'] + 1e-9:
@@ -1030,7 +1122,7 @@ def build():
              'language or history. Most announced cuts cannot be checked against any published '
              'count, and most budget lines cut to zero came back.', hd := dict(
                  y=SY(b['sy']), y0=SY(a['sy']))),
-        hub_ladder, answer_figures=hd)
+        hub_ladder, chart=lang_chart, answer_figures=hd)
 
     if sorted(k for k in out if k != HUB) != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'

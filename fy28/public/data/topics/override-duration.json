@@ -1,6 +1,65 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2028"
+   ],
+   "text": "Ours: the smallest override added in FY2028 that covers each run of years, grown at the levy cap."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "School-only override (ours)",
+    "texts": [
+     "$930,070",
+     "$1,492,723",
+     "$2,091,378",
+     "$2,727,468",
+     "$3,402,514",
+     "$4,118,131",
+     "$4,876,037",
+     "$5,678,053",
+     "$6,526,111",
+     "$7,422,264"
+    ],
+    "values": [
+     930070,
+     1492723,
+     2091378,
+     2727468,
+     3402514,
+     4118131,
+     4876037,
+     5678053,
+     6526111,
+     7422264
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Override size by years covered",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "1 year",
+   "2 years",
+   "3 years",
+   "4 years",
+   "5 years",
+   "6 years",
+   "7 years",
+   "8 years",
+   "9 years",
+   "10 years"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -21,7 +80,7 @@
     "a": {
      "text": "5.18%",
      "unit": "",
-     "value": 5.180567268740877
+     "value": 5.179814758927022
     }
    },
    "literals": [],
@@ -52,9 +111,9 @@
   {
    "figures": {
     "a": {
-     "text": "$3,403,695",
+     "text": "$3,402,514",
      "unit": "",
-     "value": 3403695
+     "value": 3402514
     },
     "b": {
      "text": "$707",
@@ -62,9 +121,9 @@
      "value": 707
     },
     "c": {
-     "text": "$7,425,124",
+     "text": "$7,422,264",
      "unit": "",
-     "value": 7425124
+     "value": 7422264
     }
    },
    "literals": [],
@@ -74,21 +133,21 @@
     "o10",
     "o10h"
    ],
-   "text": "Five years takes $3,403,695, $707 a year on the average home; ten takes $7,425,124."
+   "text": "Five years takes $3,402,514, $707 a year on the average home; ten takes $7,422,264."
   },
   {
    "figures": {
     "a": {
-     "text": "$1,543",
+     "text": "$1,542",
      "unit": "",
-     "value": 1543
+     "value": 1542
     }
    },
    "literals": [],
    "rests_on": [
     "o10h"
    ],
-   "text": "The cost falls on every taxpayer, at $1,543 a year on the average home for ten years."
+   "text": "The cost falls on every taxpayer, at $1,542 a year on the average home for ten years."
   }
  ],
  "facts": [
@@ -107,9 +166,9 @@
     "text": "the projected school gap, FY2028 (ours)"
    },
    "value": {
-    "text": "$930,273",
+    "text": "$930,070",
     "unit": "",
-    "value": 930273
+    "value": 930070
    }
   },
   {
@@ -139,7 +198,7 @@
    "value": {
     "text": "5.18%",
     "unit": "",
-    "value": 5.180567268740877
+    "value": 5.179814758927022
    }
   },
   {
@@ -151,9 +210,9 @@
     "text": "school-only override that covers one year (ours)"
    },
    "value": {
-    "text": "$930,273",
+    "text": "$930,070",
     "unit": "",
-    "value": 930273
+    "value": 930070
    }
   },
   {
@@ -165,9 +224,9 @@
     "text": "one that covers five years (ours)"
    },
    "value": {
-    "text": "$3,403,695",
+    "text": "$3,402,514",
     "unit": "",
-    "value": 3403695
+    "value": 3402514
    }
   },
   {
@@ -193,9 +252,9 @@
     "text": "one that covers ten years (ours)"
    },
    "value": {
-    "text": "$7,425,124",
+    "text": "$7,422,264",
     "unit": "",
-    "value": 7425124
+    "value": 7422264
    }
   },
   {
@@ -207,27 +266,27 @@
     "text": "a year on the average home, for ten (ours)"
    },
    "value": {
-    "text": "$1,543",
+    "text": "$1,542",
     "unit": "",
-    "value": 1543
+    "value": 1542
    }
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "$3,403,695",
+    "text": "$3,402,514",
     "unit": "",
-    "value": 3403695
+    "value": 3402514
    },
    "b": {
-    "text": "$7,425,124",
+    "text": "$7,422,264",
     "unit": "",
-    "value": 7425124
+    "value": 7422264
    }
   },
   "literals": [],
-  "text": "A school-only override that held five years would be $3,403,695 by our arithmetic; ten years, $7,425,124."
+  "text": "A school-only override that held five years would be $3,402,514 by our arithmetic; ten years, $7,422,264."
  },
  "full_report": {
   "href": "",
@@ -276,71 +335,71 @@
     "rows": [
      {
       "cells": [
-       "$930,273",
+       "$930,070",
        "$193"
       ],
       "label": "1 year"
      },
      {
       "cells": [
-       "$1,493,145",
+       "$1,492,723",
        "$310"
       ],
       "label": "2 years"
      },
      {
       "cells": [
-       "$2,092,035",
+       "$2,091,378",
        "$435"
       ],
       "label": "3 years"
      },
      {
       "cells": [
-       "$2,728,378",
+       "$2,727,468",
        "$567"
       ],
       "label": "4 years"
      },
      {
       "cells": [
-       "$3,403,695",
+       "$3,402,514",
        "$707"
       ],
       "label": "5 years"
      },
      {
       "cells": [
-       "$4,119,605",
+       "$4,118,131",
        "$856"
       ],
       "label": "6 years"
      },
      {
       "cells": [
-       "$4,877,823",
-       "$1,014"
+       "$4,876,037",
+       "$1,013"
       ],
       "label": "7 years"
      },
      {
       "cells": [
-       "$5,680,173",
+       "$5,678,053",
        "$1,180"
       ],
       "label": "8 years"
      },
      {
       "cells": [
-       "$6,528,589",
-       "$1,357"
+       "$6,526,111",
+       "$1,356"
       ],
       "label": "9 years"
      },
      {
       "cells": [
-       "$7,425,124",
-       "$1,543"
+       "$7,422,264",
+       "$1,542"
       ],
       "label": "10 years"
      }

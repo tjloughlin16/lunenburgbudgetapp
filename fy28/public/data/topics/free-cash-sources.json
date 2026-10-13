@@ -1,6 +1,69 @@
 {
  "category": "town-reserves",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "1 July"
+   ],
+   "text": "The state’s proof, by the year of the 1 July balance. The other parts net to the rest, and in some years run below zero."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Free cash identified",
+    "texts": [
+     "$2,687,134",
+     "$3,155,919",
+     "$1,923,784",
+     "$2,032,579",
+     "$3,716,282"
+    ],
+    "values": [
+     2687134.0,
+     3155919.0,
+     1923784.0,
+     2032579.0,
+     3716282.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Of it, appropriated and not spent",
+    "texts": [
+     "$1,377,642",
+     "$754,201",
+     "$588,680",
+     "$1,224,836",
+     "$2,457,761"
+    ],
+    "values": [
+     1377642.0,
+     754201.0,
+     588680.0,
+     1224836.0,
+     2457761.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Unspent money inside free cash",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

@@ -21,25 +21,22 @@ The Council on Aging and Veterans’ services — veterans’ benefits, the vete
 
 | line | label | voted |
 |---|---|---:|
-| | **total** | **$0** |
 
-The page prints **$294,404** for this department. The lines above come to $0, a difference of -294404.08.
+The page prints **$294,404** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ### FY2024
 
 | line | label | voted |
 |---|---|---:|
-| | **total** | **$0** |
 
-The page prints **$335,082** for this department. The lines above come to $0, a difference of -335081.85.
+The page prints **$335,082** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ### FY2025
 
 | line | label | voted |
 |---|---|---:|
-| | **total** | **$0** |
 
-The page prints **$340,898** for this department. The lines above come to $0, a difference of -340898.00.
+The page prints **$340,898** for this department. Its lines were not read from that page, so nothing here checks the total against them.
 
 ## What this cannot show
 

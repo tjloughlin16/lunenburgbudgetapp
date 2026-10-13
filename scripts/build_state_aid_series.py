@@ -37,13 +37,20 @@ RULE 13 -- WHAT IS QUOTED. Every figure is read from a named column of a named d
     which prints the components. They are asserted to sum to the `Total Receipts` line
     the booklet prints -- the source's own identity, recomputed.
 
-RULE 13 -- THE DEFINITION MOVED, AND THE SOURCE PROVES IT. The FY2027 booklet's
-`Total Receipts` includes `School Choice Receiving` tuition; every earlier worksheet's
-`Subtotal State Aid` does not. The booklet prints both, so the bridge is not an
-assumption: 10,776,998.00 - 94,912.00 = 10,682,086.00, and 10,682,086.00 is exactly what
-the 2024 Annual Town Meeting booklet prints for the same year. That equality is asserted
-here. The published series uses the OLDER, school-choice-excluding definition throughout
-and states the school-choice column separately.
+RULE 13 -- ONE DEFINITION, AND IT INCLUDES SCHOOL CHOICE. The older worksheets'
+`Subtotal State Aid` is the cherry sheet's whole `Total Receipts`, school choice receiving
+tuition included: it equals DLS's own Total Receipts for Lunenburg to the dollar in most
+years DLS publishes (asserted below, against `sources/data/dls-cherry-sheet.csv`). The
+FY2027 booklet's `Total Receipts` is the same quantity, so FY2025-FY2027 are read from it
+whole.
+
+This file used to read the opposite: that the older line EXCLUDED school choice, and so
+it subtracted school choice from FY2025-FY2027. That made the series change definition at
+FY2025 and put a definitional -1.0% step into it. What misled it is real and is still
+asserted, as a fact about one projection rather than about the series: the 2024 Annual
+Town Meeting booklet's FY2025 `Subtotal State Aid` (10,682,086.00) is the FY2027 booklet's
+FY2025 total less its school choice line (10,776,998.00 - 94,912.00). The town's FY2025
+projection left school choice out; its final-budget columns for earlier years did not.
 
 RULE 11. This is aid. It is what the town does NOT have to raise. A rate measured on it
 is not a rate on any cost, and nothing here says what any of it paid for.
@@ -58,7 +65,8 @@ WHAT IT REFUSES TO WRITE ON:
   1. a workbook heading that is not the heading it expects, in the cell it expects;
   2. two documents restating the same fiscal year's budget with different figures;
   3. the booklet's cherry sheet components not summing to its own printed total;
-  4. the school-choice bridge not tying to the cent;
+  4. the school-choice bridge not tying to the cent, or the older line no longer equal
+     to DLS's Total Receipts in the years it was found to be;
   5. a hole in the fiscal year sequence;
   6. `model/finance.py`'s FY27 state aid base no longer being the Governor's figure this
      series ends on, plus the enacted increment `model/export.py` publishes.
@@ -169,8 +177,14 @@ BOOKLET_ROWS = [('Education ', 'Education'),
                 ('ibrary ', 'Library'),
                 ('chool Choice Receiving ', 'School Choice Receiving')]
 BOOKLET_TOTAL = 'otal Receipts '
-# The one component the older `Subtotal State Aid` line does not contain.
+# The component the 2024 booklet's FY2025 projection left out (see the docstring).
 NEW_IN_BOOKLET = 'School Choice Receiving'
+# DLS's cherry sheet, every line, every town -- the check on what the older line contains.
+DLS_CHERRY = os.path.join(ROOT, 'sources/data/dls-cherry-sheet.csv')
+# The years the older `Subtotal State Aid` equals DLS Total Receipts to the dollar, found
+# 13 October 2026. FY2012, FY2021 and FY2024 differ (by 64,672.40, -118,690 and 52) and
+# are not claimed. Asserted, so a re-extraction that breaks the finding stops the build.
+DLS_TIES = [2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2023]
 
 FY27_ENACTED_INCREMENT = 471_121     # model/export.py: enactedStateAid
 
@@ -182,18 +196,18 @@ FY27_ENACTED_INCREMENT = 471_121     # model/export.py: enactedStateAid
 # ('median', n, percent) for the median of the last n annual steps ('median', 0, ...) for
 # all of them.
 RATE_CLAIMS = [
-    (2005, 2027, 3.5724),
+    (2005, 2027, 3.6045),
     (2005, 2019, 4.0100),
     (2013, 2023, 4.5660),
-    (2017, 2027, 3.5405),
-    (2019, 2027, 2.8112),
-    (2019, 2026, 2.8330),
-    (2022, 2026, 3.9773),
-    (2023, 2026, 1.6677),
-    (2023, 2027, 1.9144),
-    (2025, 2027, 2.9771),
-    ('median', 0, 2.7277),
-    ('median', 10, 2.6218),
+    (2017, 2027, 3.6110),
+    (2019, 2027, 2.8986),
+    (2019, 2026, 2.9720),
+    (2022, 2026, 4.2234),
+    (2023, 2026, 1.9887),
+    (2023, 2027, 2.0879),
+    (2025, 2027, 2.8720),
+    ('median', 0, 2.7110),
+    ('median', 10, 2.4858),
     ('median', 5, 2.7972),
 ]
 RATE_TOLERANCE = 0.0002              # percentage points
@@ -331,14 +345,11 @@ def read_booklet():
         if abs(parts - totals[fy]) > CENT:
             fail(f'{BOOKLET}: FY{fy} components sum to {parts:,.2f}, the booklet prints '
                  f'{totals[fy]:,.2f} on line {total_line}')
-        older = totals[fy] - comps[NEW_IN_BOOKLET][fy]
-        rows.append(dict(fy=fy, amount=older, stage='town meeting',
-                         definition='Subtotal State Aid',
+        rows.append(dict(fy=fy, amount=totals[fy], stage='town meeting',
+                         definition='Total Receipts',
                          document=f'{TEXT}/{BOOKLET}',
                          reference=f'line {total_line} "Total Receipts", column '
-                                   f'"FY{fy % 100:02d} BUDGETED/PROJECTED", less line '
-                                   f'{comps[NEW_IN_BOOKLET]["line"]} '
-                                   f'"{NEW_IN_BOOKLET}"'))
+                                   f'"FY{fy % 100:02d} BUDGETED/PROJECTED"'))
     return rows, comps, totals
 
 
@@ -348,12 +359,28 @@ def build():
     sheets = read_sheets()
     booklet, comps, totals = read_booklet()
 
-    # THE BRIDGE. The booklet's FY2025 total less its school choice line must equal what
-    # the 2024 Annual Town Meeting booklet printed as FY2025 on the OLD definition. That
-    # equality is what licenses one series across a definitional change.
+    # WHAT THE OLDER LINE CONTAINS. It is DLS's Total Receipts, school choice included,
+    # in the years listed. If that stops being true the definition this series claims to
+    # hold constant is not established, and nothing is written.
+    dls = {}
+    for r in csv.DictReader(open(DLS_CHERRY, encoding='utf-8')):
+        if r['name'] == 'Lunenburg' and r['flow'] == 'Receipts' and r['line'] == 'Total Receipts':
+            dls[int(r['fy'])] = float(r['amount'])
+    for fy in DLS_TIES:
+        best_older = max((r for r in workbook + sheets if r['fy'] == fy),
+                         key=lambda r: {'town manager recommended': 0, 'recap': 1,
+                                        'final': 2}[r['stage']])['amount']
+        if fy not in dls or abs(best_older - dls[fy]) > 0.5:
+            fail(f'FY{fy}: the town\'s Subtotal State Aid ({best_older:,.2f}) no longer '
+                 f'equals DLS Total Receipts ({dls.get(fy, 0):,.2f}) -- the claim that the '
+                 'older line includes school choice is not established')
+
+    # THE 2024 BOOKLET'S FY2025 PROJECTION left school choice out: its figure is the FY2027
+    # booklet's FY2025 total less the school choice line. Asserted as a fact about that one
+    # projection; the series reads the FY2027 booklet's total instead, which wins on stage.
     bridge_fy = 2025
     old = next((r['amount'] for r in sheets if r['fy'] == bridge_fy), None)
-    new = next(r['amount'] for r in booklet if r['fy'] == bridge_fy)
+    new = totals[bridge_fy] - comps[NEW_IN_BOOKLET][bridge_fy]
     if old is None:
         fail(f'no worksheet states FY{bridge_fy} on the old definition -- the bridge '
              'cannot be checked, so the series cannot be published')

@@ -1,6 +1,93 @@
 {
  "category": "special-education",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "The movement file’s FY2025 row repeats FY2024’s exactly; neither file states its census date or who it includes."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Program file",
+    "texts": [
+     null,
+     null,
+     "261 children",
+     "227 children",
+     "234 children",
+     "233 children",
+     "248 children",
+     "258 children"
+    ],
+    "values": [
+     null,
+     null,
+     261,
+     227,
+     234,
+     233,
+     248,
+     258
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Movement file",
+    "texts": [
+     "254 children",
+     "242 children",
+     "241 children",
+     "207 children",
+     "224 children",
+     "222 children",
+     "222 children",
+     null
+    ],
+    "values": [
+     254,
+     242,
+     241,
+     207,
+     224,
+     222,
+     222,
+     null
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Children with a plan, two DESE files",
+  "type": "series",
+  "unit": "children",
+  "x": [
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -213,7 +300,7 @@
      }
     },
     "literals": [],
-    "text": "enrolled, FY2026"
+    "text": "in and out of district, FY2026"
    },
    "value": {
     "text": "1,581",
@@ -233,7 +320,7 @@
      }
     },
     "literals": [],
-    "text": "enrolled, FY2022"
+    "text": "in and out of district, FY2022"
    },
    "value": {
     "text": "1,608",

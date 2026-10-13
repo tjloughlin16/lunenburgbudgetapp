@@ -1,6 +1,48 @@
 {
  "category": "state-aid",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Above the line, receipts beat the estimate; below it, they fell short. By the year of each proof."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Over or under, free cash proof",
+    "texts": [
+     "$240,260",
+     "$120,947",
+     "$327,281",
+     "-$390,814",
+     "$149,455"
+    ],
+    "values": [
+     240260.0,
+     120947.0,
+     327281.0,
+     -390814.0,
+     149455.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Receipts against the cherry sheet estimate",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

@@ -1,6 +1,48 @@
 {
  "category": "fy2026-closeout",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "300",
+    "13"
+   ],
+   "text": "Department 300, period 13 of each year: accounts whose own available column closed below zero."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Accounts past budget",
+    "texts": [
+     "70 accounts",
+     "52 accounts",
+     "4 accounts",
+     "57 accounts"
+    ],
+    "values": [
+     70,
+     52,
+     4,
+     57
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "School accounts past budget at the close",
+  "type": "series",
+  "unit": "accounts",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

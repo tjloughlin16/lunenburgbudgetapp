@@ -250,6 +250,13 @@ SPEND = re.compile(r'\bfrom the\b[^.]{0,40}stabiliz|stabilization funds?\s+for\b
                    r'|\bsettlement funds?\s+for\b', re.I)
 
 
+# The results that put a vote into effect. `amended_and_passed` passed; everything else in
+# the extract's vocabulary -- passed_over, failed, indefinitely_postponed, withdrawn,
+# no_action, unclear -- moved no money, or cannot be shown to have.
+PASSED = ('passed', 'amended_and_passed')
+GARBLED = re.compile(r'^\s*\$\s*0\d')
+
+
 def money(s):
     s = (s or '').replace('$', '').replace(',', '').strip().rstrip('.')
     try:
@@ -281,11 +288,21 @@ def flows():
     """Town Meeting articles that put money into a stabilization fund, or take it out.
 
     Returns dict(deposits=[...], spends=[...], unpriced=[...], not_about=[...],
-                 unclear=[...]) -- every one of the 53 articles lands in exactly one, so
-    the buckets can be counted against the whole and nothing goes missing quietly.
+                 unclear=[...], not_passed=[...], garbled=[...]) -- every article lands
+    in exactly one,
+    so the buckets can be counted against the whole and nothing goes missing quietly.
+
+    A VOTE COUNTS ONLY IF IT PASSED. This read the subject line and never the RESULT, so the
+    deposit total carried FY2012's $277,432 article -- PASSED OVER, contingent on an override
+    -- and the money "voted back out" carried the $986,000 draw Town Meeting DEFEATED 29 to
+    92 in November 2023. And the passed-over articles that print no amount were filed as
+    `unpriced`, which marked FY2011, FY2012, FY2022 and FY2025 as *understated* when nothing
+    was voted into those funds at all. Anything that did not pass goes to `not_passed`,
+    priced or not, and is counted nowhere else.
     """
     f = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
-    out = dict(deposits=[], spends=[], unpriced=[], not_about=[], unclear=[])
+    out = dict(deposits=[], spends=[], unpriced=[], not_about=[], unclear=[],
+               not_passed=[], garbled=[])
     if not os.path.exists(f):
         return out
     for r in csv.DictReader(open(f, encoding='utf-8')):
@@ -311,6 +328,14 @@ def flows():
                    fund=fund, meeting=r.get('meeting', ''), result=r.get('result', ''))
         if NOT_ABOUT.match(sub):
             out['not_about'].append(row)
+        elif row['result'] not in PASSED:
+            out['not_passed'].append(row)
+        # A DIGIT LOST FROM THE PAGE. FY2019 special article 2 prints "$08,222." -- no
+        # dollar amount is written with a leading zero, so a digit is missing from the
+        # report's own text layer, and `money()` would read it as $8,222. It is not a
+        # figure anybody can add up, so it is set aside by name rather than summed.
+        elif GARBLED.match(r.get('amount_as_printed') or ''):
+            out['garbled'].append(row)
         elif amt is None:
             out['unpriced'].append(row)
         elif DEPOSIT.search(sub):
@@ -443,7 +468,13 @@ def render(rows):
     # balances are now the general ledger's, tied to the subtotal MUNIS prints for them,
     # so the honest sentence is the opposite one. Rule 3: say which numbers are ours, and
     # these are not.
-    w('Analysis, September 2026. Balances are the town\u2019s own general ledger at %s, '
+    # THE BALANCE IS THE YEAR'S OPENING, NOT THE REPORT'S DATE. The ledger column read as
+    # `held` is MUNIS's BEGINNING balance -- what each fund held on 1 July 2025 -- printed on
+    # a report run at 31 March 2026. Saying "the ledger at 31 March" beside it put the wrong
+    # date on $3,147,179; the general fund's remaining balance on that report is a
+    # different figure, and the table below prints the movement since.
+    w('Analysis, September 2026. Balances are what each fund held at the start of FY2026, '
+      'as the town\u2019s own general ledger prints them on its report at %s, '
       'reconciled to the total the accounting system prints for them.\n' % LEDGER_AS_OF)
     mark('short')
     w('---\n')
@@ -480,8 +511,13 @@ def render(rows):
                 _best = list(_run)
         w('**%s voted in since FY%d \u2014 an average of %s a year.** This is the money '
           'going IN, one Town Meeting article at a time, and it is the figure the '
-          'cheaper question turns on. It is a FLOOR: %d of the articles print no amount.\n'
-          % (usd0(dep_total), _lo, usd0(_avg), len(fl['unpriced'])))
+          'cheaper question turns on. It is a FLOOR: %s print%s no amount, and %s '
+          'print%s an amount with a digit missing. Only votes that passed are counted; %s '
+          'passed over or defeated %s in none of it.\n'
+          % (usd0(dep_total), _lo, usd0(_avg), plural_articles(len(fl['unpriced'])),
+             's' if len(fl['unpriced']) == 1 else '', plural_articles(len(fl['garbled'])),
+             's' if len(fl['garbled']) == 1 else '', plural_articles(len(fl['not_passed'])),
+             'is' if len(fl['not_passed']) == 1 else 'are'))
         if len(_best) >= 3:
             w('**%s to %s a year in FY%d\u2013FY%d**, the %d straight years that ran above '
               'that average. Reducing a deposit is RECURRING money where spending a '
@@ -524,16 +560,16 @@ def render(rows):
         # amount -- including BOTH of FY2025's appropriations -- so a mean across all
         # years would report a collapse in deposits that is really a gap in what the
         # warrant printed.
-        short_years = {r['fy'] for r in fl['unpriced']}
+        short_years = {r['fy'] for r in fl['unpriced'] + fl['garbled']}
         full = sorted(y for y in byfy if y not in short_years)
         depd = sum(d['amount'] for d in dep)
         mark('goesin')
         w('---\n')
         w('## What goes in each year\n')
-        w('Town Meeting has voted **%s into the stabilization funds** across %d articles, '
-          'FY%d to FY%d \u2014 and **%s back out**, in %d articles.\n'
-          % (usd0(depd), len(dep), min(byfy), max(byfy),
-             usd0(sum(x['amount'] for x in spd)), len(spd)))
+        w('Town Meeting has voted **%s into the stabilization funds** across %s, '
+          'FY%d to FY%d \u2014 and **%s back out**, in %s.\n'
+          % (usd0(depd), plural_articles(len(dep)), min(byfy), max(byfy),
+             usd0(sum(x['amount'] for x in spd)), plural_articles(len(spd))))
         if len(full) >= 3:
             lo, hi = min(byfy[y] for y in full), max(byfy[y] for y in full)
             mid = sorted(byfy[y] for y in full)
@@ -607,14 +643,36 @@ def render(rows):
             for u in sorted(fl['unpriced'], key=lambda r: -r['fy']):
                 w('- FY%d, article %s \u2014 %s' % (u['fy'], u['article'], u['subject']))
             w('')
-        w('*How solid is this.* Of the %d articles mentioning a stabilization fund, %d '
-          'are deposits, %d are withdrawals, %d print no amount (marked *understated* '
-          'above), and %d are sewer enterprise operating budgets that name a fund only '
-          'in passing \u2014 those five total %s and counting them as deposits would '
-          'overstate the money going in by more than the deposits themselves.\n'
-          % (len(dep) + len(spd) + len(fl['unpriced']) + len(fl['not_about'])
-             + len(fl['unclear']), len(dep), len(spd), len(fl['unpriced']),
-             len(fl['not_about']),
+        # WHAT TOWN MEETING DID NOT DO, named, because a priced article that was passed
+        # over looks exactly like a deposit to anything that reads the subject line.
+        if fl['not_passed']:
+            w('And %s Town Meeting did not pass, so they are in none of the figures above '
+              'whatever amount they print:\n' % plural_articles(len(fl['not_passed'])))
+            for u in sorted(fl['not_passed'], key=lambda r: -r['fy']):
+                w('- FY%d, %s article %s \u2014 %s, **%s**%s'
+                  % (u['fy'], (u.get('meeting') or '').strip(), u['article'], u['subject'],
+                     u['result'].replace('_', ' '),
+                     ' (%s)' % usd(u['amount']) if u['amount'] else ''))
+            w('')
+        for g in fl['garbled']:
+            w('FY%d, %s article %s \u2014 %s \u2014 passed, and its amount is printed '
+              '`%s`: a digit is missing from the report\u2019s text, so it is in none of '
+              'the figures above and its year is marked *understated*.\n'
+              % (g['fy'], (g.get('meeting') or '').strip(), g['article'], g['subject'],
+                 next((r['amount_as_printed'] for r in csv.DictReader(open(os.path.join(
+                     ROOT, 'sources', 'data', 'town-meeting-votes.csv'), encoding='utf-8'))
+                     if int(r['fy']) == g['fy'] and r['meeting'] == g['meeting']
+                     and r['article'] == g['article']), '')))
+        n_all = (len(dep) + len(spd) + len(fl['unpriced']) + len(fl['not_about'])
+                 + len(fl['unclear']) + len(fl['not_passed']) + len(fl['garbled']))
+        w('*How solid is this.* Of the %d articles mentioning a stabilization fund: '
+          'deposits, %d; withdrawals, %d; no amount printed, %d; an amount with a digit '
+          'missing, %d (those two marked *understated* above); did not pass, %d; and '
+          'sewer enterprise operating budgets that name a fund only in passing, %d '
+          '\u2014 those total %s and counting them as deposits would overstate the money '
+          'going in by more than the deposits themselves.\n'
+          % (n_all, len(dep), len(spd), len(fl['unpriced']), len(fl['garbled']),
+             len(fl['not_passed']), len(fl['not_about']),
              usd0(sum(x['amount'] for x in fl['not_about'] if x['amount']))))
 
     # ---- WHAT HAS COME BACK OUT, on its own ----------------------------------------
@@ -1236,7 +1294,7 @@ def payload(rows):
     lo, hi = min(byfy), max(byfy)
     span = hi - lo + 1
     avg = dep_total / span
-    short_years = {r['fy'] for r in fl['unpriced']}
+    short_years = {r['fy'] for r in fl['unpriced'] + fl['garbled']}
 
     # The longest run of consecutive years above that average, derived rather than
     # chosen -- naming a window by hand is rule 2 wearing a date range.
@@ -1324,21 +1382,22 @@ def payload(rows):
                                   'voted in since FY%d' % lo),
                      'avg': figure(avg, C.usd(avg), 'a year, on average'),
                      'fy': figure(lo, 'FY%d' % lo),
-                     'last': figure(FY, 'FY%d' % FY),
                      'out': figure(spd_total, C.usd(spd_total), 'voted back out'),
                      'unp': figure(len(fl['unpriced']), C.num(len(fl['unpriced'])),
                                    'articles print no amount')},
             figure='avg', kind='measured', bearing='lever',
             detail='%s in total since FY%d, and it is a FLOOR: %s of the articles '
-                   'print no amount, including both of FY%d’s appropriations. %s has '
-                   'been voted back out, and that is a floor too — money also leaves '
-                   'inside articles about something else.'
-                   % (C.usd(dep_total), lo, C.num(len(fl['unpriced'])), FY,
+                   'print no amount. %s has been voted back out, and that is a floor '
+                   'too — money also leaves inside articles about something else.'
+                   % (C.usd(dep_total), lo, C.num(len(fl['unpriced'])),
                       C.usd(spd_total)),
             basis='`town_meeting_votes`, classified from each article’s own subject '
-                  'line. Five sewer enterprise operating budgets mention a fund in '
-                  'passing and are excluded; counting them would overstate the money '
-                  'going in by more than the deposits themselves.',
+                  'line, counting only votes that passed: %s articles were passed '
+                  'over or defeated and are excluded, as is one deposit whose printed '
+                  'amount has lost a digit. Five sewer enterprise operating '
+                  'budgets mention a fund in passing and are excluded too; counting '
+                  'them would overstate the money going in by more than the deposits '
+                  'themselves.' % C.num(len(fl['not_passed'])),
             not_shown='How much of any balance’s rise is a deposit and how much is '
                       'interest. The two cannot be separated here.',
         ),
@@ -1447,6 +1506,11 @@ def payload(rows):
             deposits_total=dep_total, deposits_avg=avg, spends_total=spd_total,
             first_fy=lo, last_fy=hi, run=best,
             unpriced=len(fl['unpriced']), not_about=len(fl['not_about']),
+            garbled=[dict(fy=x['fy'], meeting=x['meeting'], article=x['article'],
+                          subject=x['subject']) for x in fl['garbled']],
+            not_passed=[dict(fy=x['fy'], meeting=x['meeting'], article=x['article'],
+                             subject=x['subject'], amount=x['amount'], result=x['result'])
+                        for x in sorted(fl['not_passed'], key=lambda r: r['fy'])],
             not_about_total=sum(x['amount'] for x in fl['not_about'] if x['amount']),
             by_year=[dict(fy=y, amount=byfy[y],
                           articles=sum(1 for d in dep if d['fy'] == y),

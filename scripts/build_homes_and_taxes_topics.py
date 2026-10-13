@@ -208,6 +208,13 @@ def build():
                          'the same as one that did not happen.', 'gap',
                          closes='the town census, compiled each year by the Town Clerk, which '
                                 'counts every resident rather than sampling')])],
+        chart=TP.series(
+            'Residents and households, two samples', [W0, W],
+            [TP.track('Residents', [pop0['estimate'], pop['estimate']], 'published', 'bar'),
+             TP.track('Households', [hh0['estimate'], hh['estimate']], 'published', 'bar')],
+            'count', kind='bar',
+            note='Census Bureau five-year sample estimates; each carries a margin of error, '
+                 'given in the facts below.'),
         table=dict(caption='Fifteen Census measures, two five-year samples', views=[dict(
             key='tests', label='%s against %s' % (W0, W), total_col=-1,
             kinds=['ledger', 'ledger', 'stated', 'stated'],
@@ -263,6 +270,16 @@ def build():
          con('The 65-and-over share went from %s to %s, a move inside the survey’s margin.'
              % (C.pct(ages0['senior']['share']), C.pct(sen['share'])), ['sensh0', 'sensh'],
              {'a': P(ages0['senior']['share']), 'b': P(sen['share'])})],
+        chart=TP.series(
+            'Residents by age, two samples',
+            [ages[k]['label'] for k in ('children', 'young', 'early', 'middle', 'senior')],
+            [TP.track(W0, [ages0[k]['estimate'] for k in ('children', 'young', 'early', 'middle',
+                                                         'senior')], 'published', 'bar'),
+             TP.track(W, [ages[k]['estimate'] for k in ('children', 'young', 'early', 'middle',
+                                                       'senior')], 'published', 'bar')],
+            'residents', kind='bar',
+            note='Census Bureau sample estimates. Each band carries a margin of error, in the '
+                 'table; two whose intervals overlap are not different.'),
         table=dict(caption='Residents by age, two five-year samples', views=[dict(
             key='ages', label='%s and %s' % (W0, W), total_col=-1,
             kinds=['ledger', 'ledger', 'ledger'],
@@ -310,6 +327,12 @@ def build():
          con('The share was %s in %s; the difference is inside the margin.' % (C.pct(sh0), W0),
              ['wcsh0', 'wcsh'], {'p': P(sh0)}, allow=CEN),
          con('No published record joins a child to a household to a school.', ['lps', 'enrol'])],
+        chart=TP.parts(
+            'Households with and without children',
+            [('With a child under 18', wc['estimate']), ('With no child under 18', wo['estimate'])],
+            'households',
+            note='Census Bureau sample, %s. Each part carries a margin of error; a child under '
+                 '18 may be in any school, or none.' % W, note_allow=CEN + ('18',)),
         sources=S('acs5-2023-B11005-lunenburg.json', 'acs5-2018-B11005-lunenburg.json',
                   'dese-enrollment-by-grade.xlsx'),
         finding_figures={'a': PM(wc['estimate'], wc['moe']), 'b': N(hh['estimate'])},
@@ -349,6 +372,19 @@ def build():
                          'the two ranks are drawn over different sets.', 'gap',
                          closes='nothing published sets income beside spending per pupil for '
                                 'one set of places')])],
+        chart=TP.series(
+            'Massachusetts municipalities by median income',
+            [d['label'] for d in R['distribution']],
+            [TP.track('Municipalities in each band',
+                      [None if d['is_lunenburg'] else d['count'] for d in R['distribution']],
+                      'published', 'bar'),
+             TP.track('The band Lunenburg is in',
+                      [d['count'] if d['is_lunenburg'] else None for d in R['distribution']],
+                      'published', 'bar')],
+            'municipalities', kind='bar', stacked=True,
+            note='Each bar counts municipalities whose sample median falls in a band of that '
+                 'width; %s of them have intervals overlapping Lunenburg’s.' % R['overlap_text'],
+            note_figures={'o': OVER}),
         sources=S('acs5-2023-B19013-massachusetts-lunenburg.json',
                   'acs5-2018-B19013-massachusetts-lunenburg.json'),
         finding_figures={'a': U(inc['estimate']), 'm': U(inc['moe']), 'r': RANK})
@@ -394,6 +430,13 @@ def build():
                          'survey does not say which.', 'hypothesis')]),
          con('How much of the levy households headed by someone 65 or over pay is not published.',
              ['levy'], allow=('65',))],
+        chart=TP.series(
+            'Median income by age of householder', [b['label'] for b in I['bands']],
+            [TP.track(W0, [bands0[b['label']]['estimate'] for b in I['bands']], 'published', 'bar'),
+             TP.track(W, [b['estimate'] for b in I['bands']], 'published', 'bar')],
+            '$', kind='bar',
+            note='Census Bureau sample medians; each carries a margin of error, given in the '
+                 'facts below.'),
         said=[said(BN, 'fixed-incomes')],
         sources=S('acs5-2023-B19049-lunenburg.json', 'acs5-2018-B19049-lunenburg.json'),
         finding_figures={'a': U(sn['estimate']), 'p': P(ratio)}, finding_allow=('65', '45', '64'))
@@ -434,6 +477,12 @@ def build():
              notes=[step('Neither counts condominiums, two- and three-family homes or apartments, '
                          'and neither is a count of households.', 'gap',
                          closes='the assessors’ parcel counts by use code, every class')])],
+        chart=TP.parts(
+            'Owned and rented homes', [('Owner-occupied', TN['owner']['estimate']),
+                                       ('Renter-occupied', TN['renter']['estimate'])],
+            'households',
+            note='Census Bureau sample, %s, occupied homes only. Each part carries a margin of '
+                 'error.' % W, note_allow=CEN),
         sources=S('acs5-2023-B25003-lunenburg.json', 'acs5-2018-B25003-lunenburg.json',
                   'AvgSingleFamTaxBill.xlsx', 'L3_SHP_M162_LUNENBURG.zip'),
         finding_figures={'p': P(TN['owner_share']),
@@ -479,6 +528,20 @@ def build():
              notes=[step('This is the town-wide average home. Any one household’s bill depends on '
                          'its own value and any exemption or abatement it holds.', 'gap',
                          closes='the Assessors’ commitment list, by parcel, with exemptions')])],
+        # The argument is three movements against one start year: value up, bill up by less,
+        # rate down. Drawn as each one's change since the first year of the ten.
+        chart=TP.series(
+            'Value, bill and rate since ten years ago',
+            [C.fy(y) for y in range(y0, y1 + 1)],
+            [TP.track('Average value', [100 * (bills[y]['value'] / b0['value'] - 1)
+                                        for y in range(y0, y1 + 1)], 'published', 'line'),
+             TP.track('Average bill', [100 * (bills[y]['bill'] / b0['bill'] - 1)
+                                       for y in range(y0, y1 + 1)], 'published', 'line'),
+             TP.track('Tax rate', [100 * (bills[y]['rate'] / b0['rate'] - 1)
+                                   for y in range(y0, y1 + 1)], 'published', 'line')],
+            '%', kind='line',
+            note='Change from %s, our arithmetic on the DLS Average Single-Family Tax Bill. The '
+                 'rate is the bill over the value.' % C.fy(y0), note_figures={'y': YA}),
         table=dict(caption='The average single-family home and its bill, by year', views=[dict(
             key='bills', label='Last twenty years', total_col=2, kinds=['ledger', 'stated', 'ledger'],
             columns=['Average value', 'Tax rate', 'Average bill'],
@@ -527,6 +590,11 @@ def build():
                          'in this file, so a lower bill is not a cheaper town.', 'gap',
                          closes='each town’s spending by function as filed with DLS, set beside '
                                 'its bill')])],
+        chart=TP.ranking(
+            'Average single-family bill, nearby towns', [(r['town'], r['bill']) for r in nb], '$',
+            highlight='Lunenburg',
+            note='DLS Average Single-Family Tax Bill, %s. What each town buys with its bill is '
+                 'not in the file.' % C.fy(y1), note_figures={'y': YB}),
         table=dict(caption='The average single-family bill, %s, nearby towns' % C.fy(y1), views=[dict(
             key='towns', label='Highest bill first', total_col=0, kinds=['ledger', 'ledger', 'ledger'],
             columns=['Average bill', 'Average value', 'Bill / income per capita'],
@@ -574,6 +642,13 @@ def build():
              notes=[step('The Census publishes the median without a margin, so whether the move '
                          'is larger than the survey’s noise is not known.', 'gap',
                          closes='the town census, which records when each household arrived')])],
+        chart=TP.series(
+            'Owners by the year they moved in', [r['label'] for r in reversed(c23['bands'])],
+            [TP.track('Owner households', [r['households'] for r in reversed(c23['bands'])],
+                      'published', 'bar')],
+            'households', kind='bar',
+            note='Census Bureau sample, %s. Each band carries a margin of error, in the table.'
+                 % W, note_allow=CEN),
         table=dict(caption='Owner households by the year they moved in, %s' % W, views=[dict(
             key='moved', label='Census table B25038, owners', total_col=-1,
             kinds=['ledger', 'ledger', 'stated'], columns=['Households', 'Margin', 'Share'],
@@ -626,6 +701,14 @@ def build():
              notes=[step('A transfer into a trust or within a family resets the date without '
                          'anybody moving.', 'gap',
                          closes='the town census, which records when each household arrived')])],
+        chart=TP.series(
+            'Median bill by year of last deed', [b['label'] for b in reversed(db)],
+            [TP.track('Median bill, before exemptions (ours)',
+                      [b['median_bill'] for b in reversed(db)], 'estimate', 'bar')],
+            '$', kind='bar',
+            note='The assessor’s value times the %s rate, no exemption or abatement applied: '
+                 'our estimate, not anybody’s bill.' % C.fy(pc['fy']),
+            note_figures={'y': F(pc['fy'])}),
         table=dict(caption='Single-family homes by the year of their last deed, %s' % C.fy(pc['fy']),
                    views=[dict(
             key='deeds', label='The assessor’s parcel file', total_col=-1,
@@ -658,6 +741,19 @@ def build():
         if abs(round(100.0 * r['students'] / r['homes'], 1) - r['students_per_100_homes']) > 1e-9:
             fail('students per hundred homes no longer recomputes for %s' % C.fy(r['fy']))
     D = lambda v: figure(v, '%.1f' % v, 'students per 100 homes')
+    # Only the years both files hold: an isolated point between two gaps draws nothing on a
+    # line, and FY1994 is the page's own starting point. The axis says so in the note.
+    yrs = [r['fy'] for r in ser]
+    even = next(y for y in yrs if all(b == a + 1 for a, b in zip(yrs[yrs.index(y):],
+                                                                  yrs[yrs.index(y) + 1:])))
+    homes_chart = TP.series(
+        'Single-family homes and enrolled children', [C.fy(y) for y in yrs],
+        [TP.track('Single-family homes', [r['homes'] for r in ser], 'published', 'line'),
+         TP.track('Enrolled children', [r['students'] for r in ser], 'published', 'line')],
+        'count', kind='line',
+        note='DLS single-family parcels and DESE’s 1 October enrolment. Before %s a year '
+             'missing from either file is left out, so the axis is not evenly spaced there.'
+             % C.fy(even), note_figures={'y': F(even)}, note_allow=('1 October',))
     out['homes-and-enrolment'] = TP.page(
         'homes-and-enrolment',
         '%s more single-family homes since %s; enrolment is %s below its %s peak.'
@@ -695,6 +791,7 @@ def build():
                          'apartments added in the same years are not in it.', 'gap',
                          closes='the assessors’ parcel counts by use code for every year, '
                                 'including condominiums and multi-family')])],
+        chart=homes_chart,
         table=dict(caption='Single-family homes and enrolled children, by year', views=[dict(
             key='series', label='%s to %s' % (C.fy(s0['fy']), C.fy(s1['fy'])), total_col=-1,
             kinds=['ledger', 'ledger', 'stated'],
@@ -752,6 +849,12 @@ def build():
                          'any year is not in the state’s file.', 'gap',
                          closes='the assessors’ new-growth worksheets, which list the parcels '
                                 'behind each year’s figure')])],
+        chart=TP.series(
+            'Levy added by new growth', [C.fy(r['fy']) for r in ng],
+            [TP.track('Added to the levy limit', [r['total_levy'] for r in ng], 'published', 'bar')],
+            '$', kind='bar',
+            note='DLS new growth file, certified each year. Each year’s addition then grows with '
+                 'the limit.'),
         table=dict(caption='Certified new growth, by year', views=[dict(
             key='ng', label='%s to %s' % (C.fy(ng[0]['fy']), C.fy(n1['fy'])), total_col=0,
             kinds=['ledger', 'ledger', 'ledger', 'ledger'],
@@ -810,6 +913,13 @@ def build():
                                        'publishes it')]),
          con('What was built, and where, is not in the state’s file: it certifies dollars, not buildings.',
              ['what'])],
+        chart=TP.series(
+            'Non-residential new value by year', [C.fy(r['fy']) for r in ng],
+            [TP.track('Non-residential new value', [r['non_residential_value'] for r in ng],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='DLS new growth file: new value certified, every class but residential. '
+                 'Equipment and utility plant are inside it with buildings.'),
         sources=S('new_growth.xlsx'),
         finding_figures=dict({'avg': U(st['avg_non_residential']), 'm': M}, **RF))
 
@@ -874,6 +984,12 @@ def build():
              notes=[step('A share compares towns of different size; it says nothing about what any '
                          'of them collects.', 'gap',
                          closes='each town’s levy by class, which DLS publishes separately')])],
+        chart=TP.series(
+            'Business share of the tax base', [C.fy(r['fy']) for r in CB['values']],
+            [TP.track('Commercial, industrial and personal', [r['cip_share'] for r in CB['values']],
+                      'published', 'line')],
+            '%', kind='line',
+            note='DLS assessed values by class, the share as certified each year.'),
         table=dict(caption='Business share of assessed value', views=[
             dict(key='towns', label='Compared towns, %s' % C.fy(v1['fy']), total_col=-1,
                  kinds=['ledger'], columns=['Business share'],
@@ -949,7 +1065,7 @@ def build():
         'than in %s while enrolment fell.'
         % (C.num(pop['estimate']), C.num(hh['estimate']), C.pct(TN['owner_share']), C.usd(b1['bill']), C.fy(y1),
            C.num(s1['homes'] - s0['homes']), C.fy(s0['fy'])),
-        hub_ladder,
+        hub_ladder, chart=homes_chart,
         answer_figures={'a': N(pop['estimate']), 'b': N(hh['estimate']), 'o': P(TN['owner_share']),
                         'c': U(b1['bill']), 'y': YB,
                         'h': N(s1['homes'] - s0['homes']), 'z': F(s0['fy'])})

@@ -232,6 +232,24 @@ def build():
     named = SR['original'] + TR['original']
     unnamed = dept26 - named
     rev = {y: sum(r['revised'] for r in G[y].values()) for y in G}
+    # THE SIGNATURE: the department's budget each year, printed where the town printed it and
+    # the Finance Committee's workbook between, against FY2011 grown at the levy cap -- the
+    # comparison the finding makes. Stacked so one bar stands per year; the tracks never share one.
+    dyrs = list(range(2011, 2027))
+    dept_chart = TP.series(
+        'Insurance department budget by year', [C.fy(y) for y in dyrs], [
+            TP.track('Annual report or MUNIS ledger',
+                     [years[y]['printed_total'] if y in checked else dept26 if y == 2026 else None
+                      for y in dyrs], 'published', 'bar'),
+            TP.track('Finance Committee workbook, revised',
+                     [rev[y] if y not in checked and y != 2026 else None for y in dyrs],
+                     'stated', 'bar'),
+            TP.track('FY2011 grown at the levy cap',
+                     [tc['first'] * (1 + CAP / 100) ** (y - 2011) for y in dyrs], 'estimate',
+                     'line')],
+        '$', stacked=True,
+        note='The dashed line is arithmetic, not a forecast: FY2011’s figure grown %s a year.'
+             % C.pct(CAP), note_figures={'a': P(CAP)}, note_allow=('FY2011',))
     out['health-insurance-department'] = TP.page(
         'health-insurance-department',
         'The town’s insurance department grew %s a year, FY2011 to FY2026, against a %s levy '
@@ -271,6 +289,7 @@ def build():
             note='The ledger history is the Finance Committee’s workbook, assembled from MUNIS '
                  'exports; it equals the annual report in every year the report’s insurance '
                  'rows tie. FY2026 is the MUNIS ledger at period 12.')]),
+        chart=dept_chart,
         sources=[src['hi'], src['ar23'], src['p12'], src['gl'], src['glx']],
         finding_figures={'a': P(rate_dept), 'b': P(CAP)},
         finding_allow=('FY2011', 'FY2026'))
@@ -323,6 +342,11 @@ def build():
                   dict(label='Together', cells=[C.usd(tot), None])],
             note='Budgets as the MUNIS ledger prints them at period 12. Accounts not named for '
                  'either side are left out, not assigned.')]),
+        chart=TP.parts('Where school health money sits', [
+            ('School department HEALTH INS', act),
+            ('School retirees, town insurance department', SR['original'])], '$',
+            note='The two accounts named for the schools, FY2026 budget, MUNIS ledger at period '
+                 '12. The town’s own HEALTH INS line is not split.', note_allow=('FY2026', '12')),
         sources=[src['hi'], src['p12'], src['book']],
         finding_figures={'a': U(tot), 'b': U(SR['original'])}, finding_allow=('FY2026',))
 
@@ -380,6 +404,15 @@ def build():
                  'workbook; its FY2023 school retiree figure equals the annual report’s to the '
                  'cent. FY2026 is the MUNIS ledger at period 12. Original budgets differ: the '
                  'FY2022 original for school retirees was ' + C.usd(sr_orig[2022]) + '.')]),
+        chart=TP.series('Retiree health accounts by year',
+                        [C.fy(y) for y in sorted(sr_rev)], [
+                            TP.track('School retirees', [sr_rev[y] for y in sorted(sr_rev)],
+                                     'stated'),
+                            TP.track('Town retirees', [tr_rev[y] for y in sorted(tr_rev)],
+                                     'stated')], '$',
+                        note='Revised budgets. FY2022-FY2025 from the Finance Committee’s '
+                             'workbook; FY2026 from the MUNIS ledger. No split exists before.',
+                        note_allow=('FY2022-FY2025', 'FY2026')),
         sources=[src['gl'], src['glx'], src['ar23'], src['p12'], src['hi']],
         finding_figures={'a': U(sr_rev[2022]), 'b': U(sr_rev[2026]), 'c': P(r_sr)},
         finding_allow=('FY2022', 'FY2026'))
@@ -438,6 +471,14 @@ def build():
                        for y in sorted(actual, reverse=True)],
                  note='What the district reports spending. A different document from the '
                       'adopted budget; the two are never subtracted here.')]),
+        chart=TP.series('District health line by year', [C.fy(y) for y in range(2018, 2028)], [
+            TP.track('Adopted', [settled.get(y) for y in range(2018, 2028)], 'published', 'bar'),
+            TP.track('Balanced scenario, proposed',
+                     [var27['Balanced'] if y == 2027 else None for y in range(2018, 2028)],
+                     'published', 'bar')], '$', stacked=True,
+            note='No adopted FY2024 figure is in the series. FY2027 is the lowest of four '
+                 'scenarios; the highest is %s.' % C.usd(hi), note_figures={'a': U(hi)},
+            note_allow=('FY2024', 'FY2027')),
         sources=[src['hi'], src['book'], src['p12']],
         finding_figures={'a': U(settled[2018]), 'b': U(settled[2026]), 'c': P(r_set)},
         finding_allow=('FY2018', 'FY2026'))
@@ -487,6 +528,11 @@ def build():
             note='The total premium, before the town and employee shares. The letter prints '
                  'Access Blue Saver’s family and individual rows the other way round; they are '
                  'shown here as every other plan’s ratio implies.')]),
+        chart=TP.ranking('Family premium by plan', [(p['name'], p['family'])
+                                                    for p in MODEL['health']['plans']], '$',
+                         highlight=bce['name'],
+                         note='The whole monthly premium from 1 July 2026, rounded to the dollar; '
+                              'the table prints cents.', note_allow=('1 July 2026',)),
         sources=[src['rates'], src['moa']],
         finding_figures={'a': P(rise, 2), 'b': M2(bce['family']), 'c': P(share, 0)},
         finding_allow=('1 July 2026',))
@@ -544,6 +590,21 @@ def build():
             note='Health accounts: the insurance department’s actual spending less Medicare and '
                  'life insurance, from the Finance Committee’s ledger history. FY2025 is left '
                  'out: the history’s FY2025 actuals are part-year.')]),
+        # THE BREAK IS THE PICTURE: the state's bars sit on the health line through FY2023 and
+        # on the whole-department line in FY2024. Drawn as two reference lines, never one.
+        chart=TP.series('The state’s figure against the ledger',
+                        [C.fy(y) for y in range(2010, 2026)], [
+                            TP.track('State figure, Schedule A',
+                                     [DL.get(y) for y in range(2010, 2026)], 'published', 'bar'),
+                            TP.track('Health accounts, less Medicare and life',
+                                     [tie[y]['health'] if y in tie else None
+                                      for y in range(2010, 2026)], 'stated', 'line'),
+                            TP.track('Whole insurance department',
+                                     [tie[y]['whole'] if y in tie else None
+                                      for y in range(2010, 2026)], 'stated', 'line')], '$',
+                        note='Spending. To FY2023 the bars meet the health line; in FY2024 they '
+                             'meet the whole department. FY2025’s ledger actuals are part-year.',
+                        note_allow=('FY2023', 'FY2024', 'FY2025')),
         sources=[src['dls'], src['dlsweb'], src['gl'], src['glx']],
         finding_allow=('FY2024',))
 
@@ -592,6 +653,13 @@ def build():
                   for p in sorted(nb, key=lambda p: -p['growth'])],
             note='Health insurance spending as each town filed it on Schedule A. Compare the '
                  'rate, not the level; what each town’s figure contains differs.')]),
+        chart=TP.ranking('Health spending growth, nearby towns',
+                         [(p['municipality'], p['growth']) for p in nb]
+                         + [('Median municipality', T['median_growth'])], '%', decimals=2,
+                         highlight=['Lunenburg', 'Median municipality'],
+                         note='A year, FY2015-FY2025, as filed. Lunenburg’s FY2024 figure added '
+                              'Medicare and life. A fall draws to the left of zero.',
+                         note_allow=('FY2015-FY2025', 'FY2024')),
         sources=[src['dls'], src['dlsweb'], src['ho']],
         finding_figures={'a': P(T['growth'], 2)},
         finding_allow=('FY2015', 'FY2024'))
@@ -647,6 +715,24 @@ def build():
                             cells=[C.pct(r['growth'], 2)]) for r in reversed(roll)],
                  note='Compound growth over each ten years of Lunenburg’s filed figure. Windows '
                       'ending FY2024 or FY2025 span the change in what the FY2024 figure counts.')]),
+        # FY2024 IS ITS OWN TRACK: its rise compares a figure with Medicare and life to one
+        # without, so it never shares a colour, or a line, with the years either side of it.
+        chart=TP.series('Yearly rise in filed health spending',
+                        [C.fy(y) for y in sorted(ry)], [
+                            TP.track('Lunenburg, as filed',
+                                     [None if y == 2024 else ry[y]['town'] for y in sorted(ry)],
+                                     'published', 'bar'),
+                            TP.track('Lunenburg FY2024, Medicare and life added',
+                                     [ry[y]['town'] if y == 2024 else None for y in sorted(ry)],
+                                     'published', 'bar'),
+                            TP.track('Lunenburg, health accounts alone',
+                                     [lfl if y == 2024 else None for y in sorted(ry)],
+                                     'estimate', 'bar'),
+                            TP.track('Median municipality', [ry[y]['median'] for y in sorted(ry)],
+                                     'published', 'bar')], '%',
+                        note='FY2024’s health accounts alone are our subtraction from the ledger. '
+                             'Which accounts FY2025’s figure counts is not established.',
+                        note_allow=('FY2024', 'FY2025')),
         sources=[src['dls'], src['dlsweb'], src['ho'], src['gl']],
         finding_figures={'a': yr(2023), 'c': md(2023)},
         finding_allow=('FY2023', 'FY2024'))
@@ -656,6 +742,8 @@ def build():
     can = [o for o in opts if o['available_to_lunenburg'] != 'no']
     cannot = [o for o in opts if o['available_to_lunenburg'] == 'no']
     held = [o for o in opts if o.get('held_until')]
+    if any(o in cannot for o in held):
+        fail('a route the PEC agreement holds is now also barred; the parts would overlap')
     if {o['held_until'] for o in held} != {'2029-06-30'}:
         fail('the PEC hold no longer ends on 30 June 2029 for every held option')
     if sorted(o['id'] for o in held) != ['join-gic-agreement', 'join-gic-unilateral', 'plan-design']:
@@ -696,6 +784,11 @@ def build():
                                                  o['who_decides']]) for o in opts],
             note='From our reading of each section, linked on /docs/data/health-insurance-law.csv '
                  'to malegislature.gov. A route the PEC agreement holds is open after it ends.')]),
+        chart=TP.parts('What the statute leaves the town', [
+            ('Open now', len(can) - len(held)), ('Held by the PEC agreement', len(held)),
+            ('Barred by the statute', len(cannot))], 'routes',
+            note='Our reading of each section of Chapter 32B. A held route opens when the '
+                 'agreement ends, 30 June 2029.', note_allow=('32B', '30 June 2029')),
         sources=[src['law'], src['mgl'], src['moa'], src['ho']],
         finding_figures={'a': N(len(can)), 'b': N(len(cannot)), 'c': N(len(held))},
         finding_allow=('32B', '30 June 2029'))
@@ -716,6 +809,9 @@ def build():
     if 'from July 1, 2026 through June 30, 2029' not in moa:
         fail('the memorandum’s term has changed')
     medex, partb = int(m_medex.group(1)), int(m_b.group(1))
+    emp = int(m_act.group(2))
+    if int(m_act.group(1)) + emp != 100:
+        fail('the memorandum’s active shares no longer sum to the whole premium')
     PH = list(csv.DictReader(open(os.path.join(DATA, 'pec-history.csv'), encoding='utf-8')))
     if not any(r['on'] == '2008-06-16' for r in PH):
         fail('pec-history.csv no longer dates the agreement 16 June 2008')
@@ -751,6 +847,11 @@ def build():
                         'The new agreement starts July 1 and provides another health insurance '
                         'plan option (Blue Cross Select). It provides a smaller network of '
                         'providers and a lower cost.', 'Select Board')],
+        chart=TP.parts('Who pays a family premium', [
+            ('The town', bce['family'] * share / 100), ('The employee', bce['family'] * emp / 100)],
+            '$', note='Blue Care Elect, family, a month from 1 July 2026: the memorandum’s shares '
+                      'applied to the rate letter’s premium, by us.',
+            note_allow=('1 July 2026',)),
         sources=[src['moa'], src['pec'], src['ho']],
         finding_figures={'a': P(share, 0)}, finding_allow=('30 June 2029',))
 
@@ -801,7 +902,7 @@ def build():
         'The town budgeted %s for its insurance department in FY2026, and the schools %s on '
         'their own health line. The department grew %s a year from FY2011, against a %s levy cap.'
         % (C.usd(dept26), C.usd(act), C.pct(rate_dept), C.pct(CAP)),
-        hub_ladder,
+        hub_ladder, chart=dept_chart,
         answer_figures={'a': U(dept26), 'b': U(act), 'c': P(rate_dept), 'd': P(CAP)},
         answer_allow=('FY2026', 'FY2011'))
 

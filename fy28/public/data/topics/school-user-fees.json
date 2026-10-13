@@ -1,6 +1,44 @@
 {
  "category": "budget-options",
- "chart": null,
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "text": "The FY2028 gap as our model projects it; each fee’s part is what it adds over today, on participation we assumed."
+  },
+  "parts": [
+   {
+    "label": "Bus fee at its peak (ours)",
+    "share": "9%",
+    "text": "$81,746",
+    "value": 81746
+   },
+   {
+    "label": "Activity fee at its cap (ours)",
+    "share": "11%",
+    "text": "$106,244",
+    "value": 106244
+   },
+   {
+    "label": "Left open (ours)",
+    "share": "80%",
+    "text": "$742,080",
+    "value": 742080
+   }
+  ],
+  "title": "Fees against the projected gap",
+  "total": "$930,070",
+  "type": "parts",
+  "unit": "$"
+ },
  "conclusions": [
   {
    "figures": {
@@ -127,7 +165,7 @@
    "value": {
     "text": "20.2%",
     "unit": "",
-    "value": 20.208046455180362
+    "value": 20.212457126882924
    }
   },
   {
@@ -298,7 +336,7 @@
    "b": {
     "text": "20.2%",
     "unit": "",
-    "value": 20.208046455180362
+    "value": 20.212457126882924
    },
    "y": {
     "text": "FY2028",

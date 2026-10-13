@@ -1,6 +1,223 @@
 {
  "category": "athletics",
- "chart": null,
+ "chart": {
+  "basis": "stated",
+  "decimals": null,
+  "highlight": [
+   "Outdoor Track",
+   "Boys' Lacrosse"
+  ],
+  "note": {
+   "figures": {
+    "k": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "n": {
+     "text": "25",
+     "unit": "",
+     "value": 25
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "Of 25 teams, the 15 whose sheets differ most, FY2024. The third sheet’s figure falls between the two ends."
+  },
+  "rows": [
+   {
+    "label": "Indoor Track",
+    "texts": [
+     "$17,532",
+     "$14,924"
+    ],
+    "total": "$32,456",
+    "values": [
+     17532.5,
+     14923.5
+    ]
+   },
+   {
+    "label": "Football",
+    "texts": [
+     "$19,805",
+     "$10,309"
+    ],
+    "total": "$30,114",
+    "values": [
+     19805.28,
+     10308.96
+    ]
+   },
+   {
+    "label": "Boys' Basketball",
+    "texts": [
+     "$13,518",
+     "$14,509"
+    ],
+    "total": "$28,027",
+    "values": [
+     13518.0,
+     14509.46
+    ]
+   },
+   {
+    "label": "Boys' Ice Hockey",
+    "texts": [
+     "$11,994",
+     "$11,706"
+    ],
+    "total": "$23,701",
+    "values": [
+     11994.27,
+     11706.43
+    ]
+   },
+   {
+    "label": "Outdoor Track",
+    "texts": [
+     "$1,146",
+     "$21,694"
+    ],
+    "total": "$22,840",
+    "values": [
+     1146.0,
+     21694.0
+    ]
+   },
+   {
+    "label": "Softball",
+    "texts": [
+     "$4,895",
+     "$17,790"
+    ],
+    "total": "$22,684",
+    "values": [
+     4895.0,
+     17789.5
+    ]
+   },
+   {
+    "label": "Girls' Basketball",
+    "texts": [
+     "$9,881",
+     "$11,415"
+    ],
+    "total": "$21,296",
+    "values": [
+     9881.0,
+     11415.0
+    ]
+   },
+   {
+    "label": "Girls' Soccer",
+    "texts": [
+     "$14,984",
+     "$4,676"
+    ],
+    "total": "$19,660",
+    "values": [
+     14983.5,
+     4676.31
+    ]
+   },
+   {
+    "label": "Baseball",
+    "texts": [
+     "$2,574",
+     "$16,722"
+    ],
+    "total": "$19,295",
+    "values": [
+     2573.5,
+     16721.86
+    ]
+   },
+   {
+    "label": "Boys' Soccer",
+    "texts": [
+     "$9,336",
+     "$9,614"
+    ],
+    "total": "$18,950",
+    "values": [
+     9336.5,
+     9613.83
+    ]
+   },
+   {
+    "label": "Boys' Lacrosse",
+    "texts": [
+     "$613",
+     "$13,576"
+    ],
+    "total": "$14,189",
+    "values": [
+     612.79,
+     13576.39
+    ]
+   },
+   {
+    "label": "Girls' Lacrosse",
+    "texts": [
+     "$1,492",
+     "$12,569"
+    ],
+    "total": "$14,061",
+    "values": [
+     1492.29,
+     12568.87
+    ]
+   },
+   {
+    "label": "MS Boys' Basketball",
+    "texts": [
+     "$3,299",
+     "$4,490"
+    ],
+    "total": "$7,788",
+    "values": [
+     3298.75,
+     4489.5
+    ]
+   },
+   {
+    "label": "MS Girls' Basketball",
+    "texts": [
+     "$2,366",
+     "$4,902"
+    ],
+    "total": "$7,268",
+    "values": [
+     2365.75,
+     4902.5
+    ]
+   },
+   {
+    "label": "MS Cross Country",
+    "texts": [
+     "$2,429",
+     "$4,377"
+    ],
+    "total": "$6,805",
+    "values": [
+     2428.65,
+     4376.55
+    ]
+   }
+  ],
+  "stack": [
+   "Lowest sheet",
+   "Up to the highest sheet"
+  ],
+  "title": "Each team’s cost, lowest sheet to highest",
+  "type": "ranking",
+  "unit": "$"
+ },
  "conclusions": [
   {
    "figures": {
@@ -244,7 +461,7 @@
   "text": "Not one of 25 teams carries the same FY2024 cost in all three district sheets."
  },
  "full_report": {
-  "href": "/analysis/athletics",
+  "href": "/docs/analyses/athletics.md",
   "label": "Athletics, the full report"
  },
  "id": "cost-per-sport",
@@ -490,7 +707,7 @@
        "$6,134.85",
        "$6,805.20"
       ],
-      "label": "MS Cross Country (MS)"
+      "label": "MS Cross Country"
      },
      {
       "cells": [
@@ -498,7 +715,7 @@
        "$7,180.25",
        "$7,229.53"
       ],
-      "label": "MS Field Hockey (MS)"
+      "label": "MS Field Hockey"
      },
      {
       "cells": [
@@ -506,7 +723,7 @@
        "$4,000.00",
        "$4,316.00"
       ],
-      "label": "MS Track (MS)"
+      "label": "MS Track"
      },
      {
       "cells": [
@@ -514,7 +731,7 @@
        "$6,764.25",
        "$7,268.25"
       ],
-      "label": "MS Girls' Basketball (MS)"
+      "label": "MS Girls' Basketball"
      },
      {
       "cells": [
@@ -522,7 +739,7 @@
        "$6,373.25",
        "$7,788.25"
       ],
-      "label": "MS Boys' Basketball (MS)"
+      "label": "MS Boys' Basketball"
      },
      {
       "cells": [

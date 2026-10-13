@@ -1,6 +1,53 @@
 {
  "category": "department-budgets",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": null,
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The whole group",
+    "texts": [
+     "$3,378,711",
+     "$3,968,170",
+     "$4,293,123"
+    ],
+    "values": [
+     3378711.07,
+     3968170.45,
+     4293122.97
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Group Health Insurance",
+    "texts": [
+     "$2,455,675",
+     "$2,957,470",
+     "$3,059,912"
+    ],
+    "values": [
+     2455674.99,
+     2957469.53,
+     3059912.01
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Group health inside the benefits group",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

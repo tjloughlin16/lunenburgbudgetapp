@@ -1,21 +1,71 @@
 {
  "category": "town-reserves",
  "chart": {
-  "id": "stabilization-option-burndown",
-  "source": "/data/stabilization-option.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "1 July 2025"
+   ],
+   "text": "Each bar is the model’s projected gap. The fund starts at its 1 July 2025 balance, earns nothing, and is spent whole on the schools."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Covered by the general fund (ours)",
+    "texts": [
+     "$930,070",
+     "$1,530,041",
+     "$687,068"
+    ],
+    "values": [
+     930070.0,
+     1530041.0,
+     687067.96
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Still short (ours)",
+    "texts": [
+     "$0",
+     "$0",
+     "$1,510,187"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     1510187.04
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "The school gap and the general fund",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2028",
+   "FY2029",
+   "FY2030"
+  ]
  },
  "conclusions": [
   {
    "figures": {
     "a": {
-     "text": "$686,432",
+     "text": "$687,068",
      "unit": "",
-     "value": 686431.96
+     "value": 687067.96
     },
     "b": {
-     "text": "$2,197,945",
+     "text": "$2,197,255",
      "unit": "",
-     "value": 2197945.0
+     "value": 2197255.0
     },
     "y": {
      "text": "FY2030",
@@ -38,7 +88,7 @@
     "g30",
     "short30"
    ],
-   "text": "The fund enters FY2030 with $686,432 against a $2,197,945 gap, and is empty that year."
+   "text": "The fund enters FY2030 with $687,068 against a $2,197,255 gap, and is empty that year."
   },
   {
    "figures": {
@@ -107,9 +157,9 @@
     "text": "projected gap, FY2028 (ours)"
    },
    "value": {
-    "text": "$930,273",
+    "text": "$930,070",
     "unit": "",
-    "value": 930273.0
+    "value": 930070.0
    }
   },
   {
@@ -127,9 +177,9 @@
     "text": "projected gap, FY2029 (ours)"
    },
    "value": {
-    "text": "$1,530,474",
+    "text": "$1,530,041",
     "unit": "",
-    "value": 1530474.0
+    "value": 1530041.0
    }
   },
   {
@@ -147,9 +197,9 @@
     "text": "projected gap, FY2030 (ours)"
    },
    "value": {
-    "text": "$2,197,945",
+    "text": "$2,197,255",
     "unit": "",
-    "value": 2197945.0
+    "value": 2197255.0
    }
   },
   {
@@ -167,9 +217,9 @@
     "text": "left in the fund entering FY2030 (ours)"
    },
    "value": {
-    "text": "$686,432",
+    "text": "$687,068",
     "unit": "",
-    "value": 686431.96
+    "value": 687067.96
    }
   },
   {
@@ -187,9 +237,9 @@
     "text": "still short in FY2030 (ours)"
    },
    "value": {
-    "text": "$1,511,513",
+    "text": "$1,510,187",
     "unit": "",
-    "value": 1511513.04
+    "value": 1510187.04
    }
   },
   {

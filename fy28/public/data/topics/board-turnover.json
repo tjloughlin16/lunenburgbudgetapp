@@ -1,6 +1,48 @@
 {
  "category": "board-records",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Each body’s average a year, names matched between consecutive listings."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Bodies",
+    "texts": [
+     "10 bodies",
+     "6 bodies",
+     "11 bodies",
+     "4 bodies",
+     "6 bodies"
+    ],
+    "values": [
+     10,
+     6,
+     11,
+     4,
+     6
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Bodies by share of seats changing hands",
+  "type": "series",
+  "unit": "bodies",
+  "x": [
+   "Under 20%",
+   "20% to under 30%",
+   "30% to under 40%",
+   "40% to under 50%",
+   "50% or more"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

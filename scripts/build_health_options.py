@@ -242,9 +242,12 @@ def build():
             'DLS prints two warnings on this report and both bite. For a SELF-INSURED town the figure '
             'includes the employee share, and a town accounting through a trust may have workers’ '
             'compensation and OPEB inside it — and nothing in the file says which town is which. So the '
-            'LEVEL is not comparable across towns; the GROWTH is, because whatever a town’s figure '
-            'contains it contains in both years. Lunenburg is fully insured through the MIIA joint '
-            'purchase group, so its figure is the town’s premium share alone.'),
+            'LEVEL is not comparable across towns; the GROWTH is closer, as long as a town’s figure '
+            'contains the same accounts in both years — and Lunenburg’s does not. Its figure is the '
+            'town insurance department only, not the school department’s own health line; through '
+            'FY2023 it equals that department less Medicare and life insurance, and from FY2024 the '
+            'whole department (asserted in scripts/build_health_insurance_topics.py). Lunenburg is '
+            'fully insured through the MIIA joint purchase group.'),
         sources=[
             dict(title='Health Insurance Expenditures, every municipality, FY2002 onward',
                  publisher='Massachusetts Division of Local Services',

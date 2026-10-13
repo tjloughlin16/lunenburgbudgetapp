@@ -306,7 +306,7 @@
    "basis": "The scenario as a member of the Select Board put it to this site, evaluated at its own defaults. High school enrolment is the FY2025 annual town report\u2019s enrolment table, read off the printed page and reconciled to the totals the page prints. The appropriation per pupil is the school appropriation over DESE\u2019s foundation enrolment in the FY27 Chapter 70 district summary. Sending tuition is the base rate set by M.G.L. c.76 \u00a712B, and no document in this archive states it for Lunenburg.",
    "bearing": "sizes",
    "claim": "If 78 high school students transferred out, $401,700 would leave the town in year one.",
-   "detail": "If 78 high school students transferred out under school choice \u2014 the scenario as it was put to this site \u2014 $401,700 leaves the town in the first year, and the town would have to stop spending 31.0% of what it appropriates per pupil just to break even. $390,000 of that is sending tuition and $11,700 is Chapter 70 aid at the margin the formula is currently paying. Both go in year one. The students come out of four grades, 21.3 of them from the largest, which has 118 residents in it \u2014 so the $1,296,209 of appropriation they carry with them, at $16,618 a pupil, only stops being spent where somebody decides to stop spending it. That decision is the whole of the difference between a town that loses money and a town that does not.",
+   "detail": "If 78 high school students transferred out under school choice \u2014 the scenario as it was put to this site \u2014 $401,700 leaves the town in the first year, and the town would have to stop spending 31.0% of what it appropriates per pupil just to break even. $390,000 of that is sending tuition and $11,700 is Chapter 70 aid at the margin the formula is currently paying. Both go in year one. The students come out of four grades, 21.3 of them from the largest, which has 118 students in it \u2014 so the $1,296,209 of appropriation they carry with them, at $16,618 a pupil, only stops being spent where somebody decides to stop spending it. That decision is the whole of the difference between a town that loses money and a town that does not.",
    "figure": "year_one",
    "figures": {
     "aid_loss": {
@@ -364,11 +364,11 @@
    "see": [
     {
      "label": "the children who actually leave, counted",
-     "slug": "/where-students-go-instead"
+     "slug": "/enrolment/children-schooled-elsewhere"
     },
     {
      "label": "what comparable districts spend",
-     "slug": "/what-other-districts-spend"
+     "slug": "/school-spending/per-pupil-spending"
     }
    ],
    "so_what": "A scenario put to this site, not something that happened."
@@ -460,7 +460,7 @@
    "see": [
     {
      "label": "why the aid lands where it does",
-     "slug": "/why-we-only-get-minimum-aid"
+     "slug": "/state-aid/minimum-aid"
     },
     {
      "label": "the whole state aid line, not Chapter 70 alone",
@@ -534,11 +534,11 @@
    "see": [
     {
      "label": "where they go, measured",
-     "slug": "/where-students-go-instead"
+     "slug": "/enrolment/children-schooled-elsewhere"
     },
     {
      "label": "the largest destination outside Lunenburg \u2014 families choose it, and the bill follows a different rule",
-     "slug": "/monty-tech"
+     "slug": "/enrolment/monty-tech-enrolment"
     }
    ],
    "so_what": "Children already leave. The question the scenario puts is how fast that moves, not whether it happens."
@@ -618,7 +618,7 @@
    "see": [
     {
      "label": "the outward half, decomposed",
-     "slug": "/where-students-go-instead"
+     "slug": "/enrolment/children-schooled-elsewhere"
     },
     {
      "label": "what a family pays to stay",
@@ -678,6 +678,14 @@
   "hs_resident": 433,
   "hs_total": 450,
   "page": "89",
+  "resident_column": {
+   "choice": 11,
+   "dese_total": 1568,
+   "from_other_towns": 15,
+   "note": "The column the report heads \u201cresident\u201d is DESE\u2019s SY2026 headcount, 1,568. DESE\u2019s own receiving file counts 1,553 of those children as Lunenburg residents and 15 as living in other towns, 11 of them under school choice. So the column already includes children from other towns, and the printed total of 1,585 adds 17 school choice students on top of them. The high school figures here are students in the school, not residents only.",
+   "residents": 1553,
+   "sy": 2026
+  },
   "schools": [
    {
     "choice_in": 0,
@@ -2520,22 +2528,22 @@
  },
  "related": [
   {
-   "id": "fy27-and-the-override",
-   "pdf": "/docs/analyses/fy27-and-the-override.pdf",
-   "title": "Lunenburg FY28 \u2014 What the source data says (research notes, Aug 2026)",
-   "updated": "2026-08-28",
-   "url": "/docs/analyses/fy27-and-the-override.md",
-   "why": "Where the FY27 revenue figures come from, including the state aid arithmetic this scenario runs against",
-   "words": 1413
+   "id": "/state-aid/total-state-aid",
+   "pdf": null,
+   "title": "Total state aid",
+   "updated": null,
+   "url": "/state-aid/total-state-aid",
+   "why": "The state aid this scenario runs against: what the cherry sheet carries, and how much of it is Chapter 70",
+   "words": null
   },
   {
-   "id": "athletics",
-   "pdf": "/docs/analyses/athletics.pdf",
-   "title": "Athletics: what it costs, who pays, and what the budget line does not say",
-   "updated": "2026-09-20",
-   "url": "/docs/analyses/athletics.md",
+   "id": "/athletics/participation",
+   "pdf": null,
+   "title": "Participation",
+   "updated": null,
+   "url": "/athletics/participation",
    "why": "The participation counts this scenario\u2019s 45% is tested against, and why a participation is not a child",
-   "words": 7267
+   "words": null
   },
   {
    "id": "connecting-the-budget",
@@ -2545,15 +2553,6 @@
    "url": "/docs/analyses/connecting-the-budget.md",
    "why": "Why no state aid dollar can be followed to anything it paid for \u2014 0 of 222 accounts share an organisation code",
    "words": 938
-  },
-  {
-   "id": "peer-districts",
-   "pdf": "/docs/analyses/peer-districts.pdf",
-   "title": "What comparable districts actually cut, and in what order",
-   "updated": "2026-08-29",
-   "url": "/docs/analyses/peer-districts.md",
-   "why": "What comparable districts actually cut, and in what order, when they had to",
-   "words": 1274
   }
  ],
  "said": [

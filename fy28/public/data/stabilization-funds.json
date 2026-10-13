@@ -44,41 +44,36 @@
    "so_what": "The other $5,914,242 is restricted to the purpose each fund was created for."
   },
   {
-   "basis": "`town_meeting_votes`, classified from each article’s own subject line. Five sewer enterprise operating budgets mention a fund in passing and are excluded; counting them would overstate the money going in by more than the deposits themselves.",
+   "basis": "`town_meeting_votes`, classified from each article’s own subject line, counting only votes that passed: 8 articles were passed over or defeated and are excluded, as is one deposit whose printed amount has lost a digit. Five sewer enterprise operating budgets mention a fund in passing and are excluded too; counting them would overstate the money going in by more than the deposits themselves.",
    "bearing": "lever",
-   "claim": "Town Meeting votes an average of $289,395 a year into these funds.",
-   "detail": "$4,051,527 in total since FY2012, and it is a FLOOR: 7 of the articles print no amount, including both of FY2025’s appropriations. $1,066,000 has been voted back out, and that is a floor too — money also leaves inside articles about something else.",
+   "claim": "Town Meeting votes an average of $342,989 a year into these funds.",
+   "detail": "$4,115,873 in total since FY2014, and it is a FLOOR: 1 of the articles print no amount. $80,000 has been voted back out, and that is a floor too — money also leaves inside articles about something else.",
    "figure": "avg",
    "figures": {
     "avg": {
-     "text": "$289,395",
+     "text": "$342,989",
      "unit": "a year, on average",
-     "value": 289394.76071428566
+     "value": 342989.38749999995
     },
     "fy": {
-     "text": "FY2012",
+     "text": "FY2014",
      "unit": "",
-     "value": 2012
+     "value": 2014
     },
     "in": {
-     "text": "$4,051,527",
-     "unit": "voted in since FY2012",
-     "value": 4051526.6499999994
-    },
-    "last": {
-     "text": "FY2025",
-     "unit": "",
-     "value": 2025
+     "text": "$4,115,873",
+     "unit": "voted in since FY2014",
+     "value": 4115872.6499999994
     },
     "out": {
-     "text": "$1,066,000",
+     "text": "$80,000",
      "unit": "voted back out",
-     "value": 1066000.0
+     "value": 80000.0
     },
     "unp": {
-     "text": "7",
+     "text": "1",
      "unit": "articles print no amount",
-     "value": 7
+     "value": 1
     }
    },
    "id": "the-recurring-question-is-the-deposit-not-the-balance",
@@ -123,19 +118,19 @@
   {
    "basis": "`town_meeting_votes`, deposits summed per fiscal year.",
    "bearing": "sizes",
-   "claim": "For 6 straight years deposits ran between $308,222 and $770,350.",
-   "detail": "FY2018 to FY2023: the consecutive years whose deposits exceeded the long-run average, found by walking the series rather than by choosing a window.",
+   "claim": "For 5 straight years deposits ran between $385,000 and $770,350.",
+   "detail": "FY2020 to FY2024: the consecutive years whose deposits exceeded the long-run average, found by walking the series rather than by choosing a window.",
    "figure": "hi",
    "figures": {
     "a": {
-     "text": "FY2018",
+     "text": "FY2020",
      "unit": "",
-     "value": 2018
+     "value": 2020
     },
     "b": {
-     "text": "FY2023",
+     "text": "FY2024",
      "unit": "",
-     "value": 2023
+     "value": 2024
     },
     "hi": {
      "text": "$770,350",
@@ -143,14 +138,14 @@
      "value": 770349.59
     },
     "lo": {
-     "text": "$308,222",
+     "text": "$385,000",
      "unit": "in the leanest year",
-     "value": 308222.0
+     "value": 385000.0
     },
     "n": {
-     "text": "6",
+     "text": "5",
      "unit": "straight years",
-     "value": 6
+     "value": 5
     }
    },
    "id": "the-deposits-ran-well-above-average-for-six-straight-years",
@@ -238,15 +233,15 @@
    {
     "fund": "Special Purpose Stabilization",
     "last_amount": 250000.0,
-    "last_fy": 2023,
-    "total": 1807449.0,
-    "years": 6
+    "last_fy": 2024,
+    "total": 2049227.0,
+    "years": 7
    },
    {
     "fund": "Stabilization Fund (general)",
     "last_amount": 100000.0,
-    "last_fy": 2023,
-    "total": 1466631.0,
+    "last_fy": 2024,
+    "total": 1289199.0,
     "years": 10
    },
    {
@@ -287,12 +282,6 @@
   ],
   "by_year": [
    {
-    "amount": 277432.0,
-    "articles": 1,
-    "fy": 2012,
-    "understated": true
-   },
-   {
     "amount": 74729.0,
     "articles": 1,
     "fy": 2014,
@@ -317,10 +306,10 @@
     "understated": false
    },
    {
-    "amount": 308222.0,
-    "articles": 3,
+    "amount": 300000.0,
+    "articles": 2,
     "fy": 2019,
-    "understated": false
+    "understated": true
    },
    {
     "amount": 770349.59,
@@ -338,7 +327,7 @@
     "amount": 597094.46,
     "articles": 5,
     "fy": 2022,
-    "understated": true
+    "understated": false
    },
    {
     "amount": 478552.92,
@@ -347,8 +336,8 @@
     "understated": false
    },
    {
-    "amount": 35000.0,
-    "articles": 1,
+    "amount": 385000.0,
+    "articles": 3,
     "fy": 2024,
     "understated": false
    },
@@ -356,30 +345,97 @@
     "amount": 24237.550000000003,
     "articles": 2,
     "fy": 2025,
-    "understated": true
+    "understated": false
    }
   ],
-  "deposits_avg": 289394.76071428566,
-  "deposits_total": 4051526.6499999994,
-  "first_fy": 2012,
+  "deposits_avg": 342989.38749999995,
+  "deposits_total": 4115872.6499999994,
+  "first_fy": 2014,
+  "garbled": [
+   {
+    "article": "2",
+    "fy": 2019,
+    "meeting": "special",
+    "subject": "Appropriate funds to the Special Purpose Stabilization Fund"
+   }
+  ],
   "last_fy": 2025,
   "not_about": 5,
   "not_about_total": 3706189.49,
-  "run": [
-   2018,
-   2019,
-   2020,
-   2021,
-   2022,
-   2023
-  ],
-  "spends": [
+  "not_passed": [
+   {
+    "amount": null,
+    "article": "18",
+    "fy": 2011,
+    "meeting": "annual",
+    "result": "passed_over",
+    "subject": "Appropriate to or from the Stabilization Fund"
+   },
+   {
+    "amount": null,
+    "article": "2",
+    "fy": 2011,
+    "meeting": "special",
+    "result": "passed_over",
+    "subject": "Appropriate to or from the Stabilization Fund"
+   },
+   {
+    "amount": 277432.0,
+    "article": "10",
+    "fy": 2012,
+    "meeting": "annual",
+    "result": "passed_over",
+    "subject": "Appropriate to Stabilization Fund contingent on Article 9's override passing"
+   },
+   {
+    "amount": null,
+    "article": "2",
+    "fy": 2012,
+    "meeting": "special",
+    "result": "passed_over",
+    "subject": "Appropriate to/from the Stabilization Fund"
+   },
+   {
+    "amount": null,
+    "article": "5",
+    "fy": 2022,
+    "meeting": "special",
+    "result": "passed_over",
+    "subject": "Transfer funds to the Special Purpose Stabilization Fund"
+   },
    {
     "amount": 986000.0,
     "article": "4",
     "fy": 2023,
+    "meeting": "special",
+    "result": "failed",
     "subject": "Transfer Special Purpose Stabilization funds for a new ambulance and two dump trucks"
    },
+   {
+    "amount": null,
+    "article": "16",
+    "fy": 2025,
+    "meeting": "annual",
+    "result": "passed_over",
+    "subject": "Appropriation to the Stabilization Fund"
+   },
+   {
+    "amount": null,
+    "article": "17",
+    "fy": 2025,
+    "meeting": "annual",
+    "result": "passed_over",
+    "subject": "Appropriation to the Special Purpose Stabilization Fund"
+   }
+  ],
+  "run": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "spends": [
    {
     "amount": 80000.0,
     "article": "5",
@@ -387,8 +443,8 @@
     "subject": "Transfer Opioid Settlement funds for the Police Department's Mental Health Co-Response program"
    }
   ],
-  "spends_total": 1066000.0,
-  "unpriced": 7
+  "spends_total": 80000.0,
+  "unpriced": 1
  },
  "funds": [
   {
@@ -814,6 +870,17 @@
     "subject": "Transfer Special Purpose Stabilization funds for a new ambulance and two dump trucks"
    },
    {
+    "amount": "$250,000",
+    "article": "13",
+    "date": "2024-05-04",
+    "fincom": "Approval",
+    "fy": "2024",
+    "meeting": "annual",
+    "quote": "VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $250,000 to the Special Purpose Stabilization Fund.",
+    "result": "passed",
+    "subject": "Transfer funds to the Special Purpose Stabilization Fund"
+   },
+   {
     "amount": "",
     "article": "17",
     "date": "2025-05-03",
@@ -997,6 +1064,17 @@
     "date": "2023-05-06",
     "fincom": "Approval",
     "fy": "2023",
+    "meeting": "annual",
+    "quote": "VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $100,000 to the Stabilization Fund.",
+    "result": "passed",
+    "subject": "Transfer funds to the Stabilization Fund"
+   },
+   {
+    "amount": "$100,000",
+    "article": "12",
+    "date": "2024-05-04",
+    "fincom": "Approval",
+    "fy": "2024",
     "meeting": "annual",
     "quote": "VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $100,000 to the Stabilization Fund.",
     "result": "passed",
@@ -1385,12 +1463,12 @@
    "value": "$3,147,179"
   },
   {
-   "label": "voted IN per year on average since FY2012 — $4,051,527 in total",
-   "value": "$289,395"
+   "label": "voted IN per year on average since FY2014 — $4,115,873 in total",
+   "value": "$342,989"
   },
   {
    "label": "voted back out, in the articles that say so plainly — a floor",
-   "value": "$1,066,000"
+   "value": "$80,000"
   }
  ],
  "totals": {

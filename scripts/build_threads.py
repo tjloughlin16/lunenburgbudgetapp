@@ -50,6 +50,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THREADS = os.path.join(ROOT, 'sources', 'data', 'threads.csv')
 REPORTS = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports.json')
+TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics.json')
 
 
 def report_links(t, catalogue):
@@ -65,7 +66,10 @@ def report_links(t, catalogue):
     out = []
     for rid in [x.strip() for x in (t.get('reports') or '').split(';') if x.strip()]:
         rid = catalogue['superseded'].get(rid, rid)
-        r = catalogue['by_id'].get(rid)
+        # A HUB OR TOPIC PAGE, by its address (`/athletics`, `/parks/artificial-turf-fund`),
+        # resolved against topics.json -- the long reports those pages absorbed are UNLISTED
+        # and are not in reports.json, so a thread reads on from the page that answers now.
+        r = catalogue['by_path'].get(rid) if rid.startswith('/') else catalogue['by_id'].get(rid)
         if not r:
             raise SystemExit('threads.csv: %s lists report %r, which is not in reports.json '
                              '(unlisted, renamed, or a typo)' % (t['id'], rid))
@@ -414,8 +418,12 @@ def build():
     (record, future), official = the_record(), official_votes()
     threads, problems = [], []
     rj = json.load(open(REPORTS, encoding='utf-8'))
+    tj = json.load(open(TOPICS, encoding='utf-8'))
     catalogue = {'superseded': rj.get('superseded', {}),
-                 'by_id': {r['id']: r for r in rj['reports'] + rj['pages']}}
+                 'by_id': {r['id']: r for r in rj['reports'] + rj['pages']},
+                 'by_path': {x['path']: {'title': x['title'], 'url': x['path']}
+                             for x in tj['categories'] + list(tj['topics'].values())
+                             if x.get('ready')}}
     for t in read_csv(THREADS):
         chron = chronology(t, record)
         temp = temperature(t, chron, dt.date.today().isoformat(), record)

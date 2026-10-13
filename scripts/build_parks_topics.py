@@ -82,6 +82,13 @@ def cell(x):
     return None if x is None else C.usd(x)
 
 
+def day(iso):
+    """'2026-03-31' -> '31 March 2026': a chart's x label read off the payload's own date."""
+    import datetime
+    d = datetime.date.fromisoformat(iso)
+    return '%d %s %d' % (d.day, d.strftime('%B'), d.year)
+
+
 # --------------------------------------------------------------------- the data
 
 def gl_parks():
@@ -238,6 +245,21 @@ def build():
     big = max(steps, key=steps.get)
     if big != 2020:
         fail('the largest one-year step in the Parks vote is no longer FY2020: FY%d' % big)
+    CAP = 2.5
+    yrs = list(range(2010, 2027))
+    vote_chart = TP.series(
+        'Parks vote by year', [C.fy(y) for y in yrs], [
+            TP.track('Finance Committee workbook', [voted[y] if y < 2026 else None for y in yrs],
+                     'stated', 'bar'),
+            TP.track('MUNIS ledger', [v26 if y == 2026 else None for y in yrs], 'published',
+                     'bar'),
+            TP.track('Had it grown %s a year' % C.pct(CAP, 1),
+                     [round(v10 * (1 + CAP / 100) ** (y - 2010), 2) for y in yrs], 'estimate',
+                     'line')],
+        '$', kind='bar', stacked=True,
+        note='Votes, not spending. The dashed line is ours: the %s levy-limit rate applied to '
+             'the FY2010 vote.' % C.pct(CAP, 1),
+        note_figures={'c': figure(CAP, C.pct(CAP, 1))}, note_allow=('FY2010',))
     budget_rows = []
     for fy in range(2026, 2009, -1):
         budget_rows.append(dict(label=C.fy(fy), cells=[
@@ -300,6 +322,7 @@ def build():
             note='The workbook’s original budget for department 650, summed over its 16 '
                  'accounts; the annual report’s omnibus line where it was read and cited; '
                  'FY2026 from the MUNIS period-12 report. Votes, not spending.')]),
+        chart=vote_chart,
         sources=[src['glwb'], src['d-gl'], src['ar22'], src['ar23'], src['ar24'],
                  src['d-approp'], src['gf26']],
         finding_figures={'a': U(v26), 'b': U(v10)}, finding_allow=('FY2026', 'FY2010'))
@@ -315,6 +338,14 @@ def build():
     cut12 = round(gl[2012]['original'] - gl[2012]['revised'], 2)
     if not gl[2025]['partial']:
         fail('the workbook’s FY2025 actual is no longer partial; widen the spending range')
+    spend_chart = TP.series(
+        'Parks budget against spending', [C.fy(y) for y in full], [
+            TP.track('Voted', [gl[y]['original'] for y in full], 'stated', 'line'),
+            TP.track('Final budget', [gl[y]['revised'] for y in full], 'stated', 'line'),
+            TP.track('Spent', [gl[y]['actual'] for y in full], 'stated', 'bar')],
+        '$', kind='line',
+        note='The Finance Committee workbook, department 650. %s is left out: its actual is '
+             'marked partial.' % C.fy(2025), note_allow=('650', C.fy(2025)))
     spend_rows = [dict(label=C.fy(fy), cells=[
         C.usd(gl[fy]['original']), C.usd(gl[fy]['revised']), C.usd(gl[fy]['actual']),
         C.usd(left[fy])]) for fy in sorted(full, reverse=True)]
@@ -371,6 +402,7 @@ def build():
             note='Department 650, summed over its accounts. Left is the final budget less '
                  'the actual, our subtraction. FY2025’s actual is marked partial in the '
                  'workbook and is left out.')]),
+        chart=spend_chart,
         sources=[src['gf26'], src['glwb'], src['d-gl'], src['sr26']],
         finding_figures={'a': U(a26['expended']), 'b': U(a26['revised']),
                          'c': U(a26['available'])}, finding_allow=('FY2026',))
@@ -391,6 +423,16 @@ def build():
     zero = sorted(fy for fy in pser if pser[fy]['carried'] == 0)
     if zero != [2015, 2016]:
         fail('the fund no longer ended at zero in exactly FY2015 and FY2016: %s' % zero)
+    pyrs = list(range(2011, 2026))
+    fund_chart = TP.series(
+        'Park Revolving Fund balance', [C.fy(y) for y in pyrs],
+        [TP.track('Balance at year end',
+                  [pser[y]['carried'] if y in pser else pbal[y] for y in pyrs], 'published',
+                  'bar')],
+        '$', kind='bar',
+        note='The annual town reports. %s and %s print a balance only.' % (C.fy(2024),
+                                                                            C.fy(2025)),
+        note_allow=(C.fy(2024), C.fy(2025)))
     prow = []
     for fy in range(2025, 2010, -1):
         if fy in pser:
@@ -442,6 +484,7 @@ def build():
             columns=['Taken in', 'Spent', 'Balance'], rows=prow,
             note='FY2011–FY2023 printed as Park User Fees, each row tying forward + receipts '
                  '− disbursements = carried. FY2024 and FY2025 print a balance only.')]),
+        chart=fund_chart,
         sources=[src['sr26'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
                  src['d-read'], src['d-funds']],
         finding_figures={'a': U(f26['closing'])},
@@ -458,6 +501,12 @@ def build():
     small = [other['sr-1529'], other['sr-1532'], other['tr-8126']]
     small_sum = round(sum(o['current']['closing'] for o in small), 2)
     cap = other['cp-3108']
+    gyrs = sorted(ghist)
+    gift_chart = TP.series(
+        'Park Gift Fund balance', [C.fy(y) for y in gyrs],
+        [TP.track('Balance at year end', [ghist[y]['closing'] for y in gyrs], 'published',
+                  'line')],
+        '$', kind='line', note='The annual town reports, at each 30 June.', note_allow=('30',))
     out['other-parks-funds'] = TP.page(
         'other-parks-funds',
         'The Park Gift Fund took in %s in FY2011 and stood at %s from FY2016 to FY2025.'
@@ -489,6 +538,7 @@ def build():
                          closes='the receipt detail for fund 1523')]),
          con('Three smaller parks funds hold %s between them at 31 March 2026.'
              % usd2(small_sum), ['small'], {'a': U2(small_sum)}, allow=('31', '2026'))],
+        chart=gift_chart,
         sources=[src['sr26'], src['trust26'], src['ar11'], src['ar23'], src['d-read']],
         finding_figures={'a': U(ghist[2011]['revenue']), 'b': U(flat_bal)},
         finding_allow=('FY2011', 'FY2016', 'FY2025'))
@@ -508,6 +558,14 @@ def build():
     nothing = [r for r in prog if abs(r['total']) < 0.005]
     neg = [r for r in prog if r['total'] < 0]
     beach = [r for r in mem if r['program'] == '2025 BEACH PASSES'][0]
+    drawn = [r for r in sales if r['total'] > 0]
+    sales_chart = TP.ranking(
+        'Registration sales by programme',
+        [(r['program'], [r['res_total'], r['nonres_total']]) for r in drawn], '$',
+        stack=['Residents', 'Non-residents'],
+        note='Both MyRec reports. %s programmes that recorded nothing or net refunds are not '
+             'drawn.' % C.num(len(sales) - len(drawn)).capitalize(),
+        note_figures={'n': N(len(sales) - len(drawn))})
     out['registration-sales'] = TP.page(
         'registration-sales',
         'The registration system recorded %s in FY2025, and non-residents paid %s of it.'
@@ -556,6 +614,7 @@ def build():
                   for r in sorted(sales, key=lambda r: -r['total'])],
             note='Two printouts from the registration system, 1 July 2024 to 30 June 2025, '
                  'each footed to the totals it prints. Negative figures are refunds.')]),
+        chart=sales_chart,
         sources=[src['myprog'], src['mymem'], src['d-myrec']],
         finding_figures={'a': U(tot), 'b': PC(100 * nonres / tot)}, finding_allow=('FY2025',))
 
@@ -595,6 +654,10 @@ def build():
                   for r in bid_rows],
             note='The sheet’s own Location Total line, read from its text layer. A bid, not '
                  'a payment.')]),
+        chart=TP.ranking('Grounds bid by park', [(r['park'], r['year_one']) for r in bid_rows],
+                         '$', highlight=mar['park'], basis='stated',
+                         note='Year one, all work, as the bid sheet totals each location. A '
+                              'vendor’s offer, not a payment.'),
         sources=[src['bid'], src['glwb'], src['d-gl']],
         finding_figures={'a': U(bid_total)}, finding_allow=('1', '2024', 'six'))
 
@@ -617,6 +680,15 @@ def build():
                                                     cell(r['carried'])]))
         else:
             srow.append(dict(label=C.fy(fy), cells=[None, None, C.usd(sbal[fy])]))
+    syrs = list(range(2011, 2026))
+    rental_chart = TP.series(
+        'School Facilities Use balance', [C.fy(y) for y in syrs],
+        [TP.track('Balance at year end',
+                  [sser[y]['carried'] if y in sser else sbal[y] for y in syrs], 'published',
+                  'bar')],
+        '$', kind='bar',
+        note='Fund %s, the annual town reports. %s and %s print a balance only.'
+             % ('1306', C.fy(2024), C.fy(2025)), note_allow=('1306', C.fy(2024), C.fy(2025)))
     out['school-facilities-fund'] = TP.page(
         'school-facilities-fund',
         'The schools’ rental fund rose %s in FY2025, more than its receipts in any year '
@@ -655,6 +727,7 @@ def build():
             columns=['Taken in', 'Spent', 'Balance'], rows=srow,
             note='FY2011–FY2023 each row ties forward + receipts − disbursements = carried; '
                  'FY2018 closed in deficit. FY2024 and FY2025 print a balance only.')]),
+        chart=rental_chart,
         sources=[src['sr26'], src['email'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
                  src['d-read'], src['d-funds']],
         finding_figures={'a': U(jump)}, finding_allow=('FY2025', 'FY2011', 'FY2023'))
@@ -691,6 +764,13 @@ def build():
                          'the books.', 'gap', allow=('1306', 'FY2024'),
                          closes='fund 1306’s expenditure detail and the grounds accounts, '
                                 'FY2024')])],
+        chart=TP.parts('Fields and grounds work',
+                       [('Vehicles and equipment, which also plough', veh),
+                        ('Everything else in the stated total', round(allg - veh, 2))], '$',
+                       basis='stated',
+                       note='The Superintendent’s approximate %s figures, by email. The second '
+                            'part is the stated total less the first, our subtraction.'
+                            % C.fy(2024), note_allow=(C.fy(2024),)),
         sources=[src['email'], src['d-maint']])
 
     # ================================================================ Youth league payments
@@ -733,6 +813,11 @@ def build():
             note='Typed into a workbook by the district’s business office. The fiscal year is '
                  'as the workbook lists it; one receipt dated July 2024 is listed under FY2024.'
                  )]),
+        chart=TP.series('Field payments by year', sorted(byfy),
+                        [TP.track('Paid by the soccer association',
+                                  [round(byfy[k], 2) for k in sorted(byfy)], 'stated', 'bar')],
+                        '$', kind='bar',
+                        note='The district’s receipts workbook, by fiscal year as it lists them.'),
         sources=[src['receipts'], src['d-receipts'], src['parkspage']],
         finding_figures={'a': U2(rtot), 'n': N(len(rec))},
         finding_allow=('FY2024', 'FY2026'))
@@ -778,6 +863,12 @@ def build():
              % (C.usd(tbal[2024]), C.usd(t26['available'])), ['b24', 'b25', 'held', 'split'],
              {'a': U(tbal[2024]), 'b': U(t26['available'])},
              allow=('30', '2024', '31', '2026'))],
+        chart=TP.series('Artificial Turf fund balance',
+                        [day('2024-06-30'), day('2025-06-30'), day(f26['as_of'])],
+                        [TP.track('Balance', [tbal[2024], tbal[2025], t26['available']],
+                                  'published', 'bar')], '$', kind='bar',
+                        note='Fund %s: the annual town reports, then the MUNIS fund report.'
+                             % '1545', note_allow=('1545',)),
         sources=[src['sr26'], src['ar24'], src['ar25'], src['d-funds']],
         finding_figures={'a': U(t26['revenue']), 'b': U(t26['available'])},
         finding_allow=('FY2026', '31', '2026'))
@@ -829,7 +920,7 @@ def build():
         'Town Meeting voted the Parks department %s for FY2026. Beside it, a fee fund held %s '
         'at 31 March 2026, and rent for school fields goes to a school fund. Neither fund is '
         'part of the vote.' % (C.usd(v26), C.usd(f26['closing'])),
-        hub_ladder,
+        hub_ladder, chart=vote_chart,
         answer_figures={'a': U(v26), 'b': U(f26['closing'])},
         answer_allow=('FY2026', '31', '2026'))
 

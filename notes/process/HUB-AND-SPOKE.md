@@ -39,6 +39,55 @@ title names the subject in two to four words: *Bus fee*, *School bus costs*, *Tr
 The claim goes on the line under it -- the payload's `finding`. `scripts/topics.py` refuses a
 title that ends in `?` or `.`, runs past five words, or repeats another topic's title.
 
+## Charts
+
+TJ, 13 October 2026: *"Every topic page should have some defining chart OR image if the data
+doesnt represent well by a chart."* Every topic and hub carries a **signature** (CLAUDE.md 7f):
+the one picture a reader remembers the page by. It is a few lines of Python in the generator,
+passed as `chart=` to `page()` or `hub()`; no React. The full brief is the docstring of
+`scripts/topic.py`; `scripts/build_parks_topics.py` is the worked example (eleven charts).
+
+| helper | draws | use it when the finding compares |
+|---|---|---|
+| `series(title, x, [track(...)], unit)` | lines or bars over years or categories | a thing over TIME, or two measures of one thing (voted, final budget, spent) |
+| `ranking(title, rows, unit, highlight=)` | horizontal bars, largest first | one thing AGAINST OTHERS -- Lunenburg among towns, one park among six |
+| `parts(title, items, unit)` | one bar split into its parts | shares of ONE WHOLE -- residents and non-residents, 9 of 16 boards |
+| `image(src, alt, caption)` | a picture the site serves | the subject IS a document, or there are fewer than two numbers to draw |
+
+**Picking it.** Draw the page's ARGUMENT, not its first table column. Read the finding and ask
+what it compares; that comparison is the chart. The parks spending page could have drawn
+FY2026's period-12 split; it draws voted, final budget and spent on one axis since FY2010,
+because the gap between them is what a reader takes away. A hub's signature may be its
+strongest topic's chart.
+
+**What the helpers enforce, so you do not have to remember it.** A 2-8 word noun-phrase title
+with no digits; a declared unit (`$`, `%`, `count`, or a plural noun); at least two numbers;
+`None` drawn as a gap and never as zero (and a real zero drawn as a stub, so the two differ);
+every display string formatted in Python by the same formatter as the prose, so a bar cannot
+round a figure differently from the sentence beside it; the note under the chart held to
+rule 2. Rule 3 rides on each track as `basis`: `published`, `stated` (13a, marked *not from the
+books*) or `estimate` (ours: dashed, amber-edged, labelled).
+
+**Do not** put a stock and a flow on one axis (a fund's balance and its receipts are two
+charts, or one is the chart and the other the table); do not compute a remainder to make
+`parts` add up unless the page says it is our subtraction; do not reach for `image` to avoid
+drawing numbers you have -- 7f forbids a picture of a chart.
+
+**Options worth knowing** (added after the first pass hit them): `decimals=` on any chart, so a
+bar reads 6.84% when the prose does; `reference=(value, label)` on `series` for the line a reader
+measures against (100% of the state minimum); `from_zero=False` on a LINE series whose values
+move within a few points -- refused with bars, because a bar's length is its value; units may
+be an initialism (`FTE`); a title may name `Chapter 70` (`TITLE_NAMES`). Rankings draw a
+negative value as a bar left of zero (a diverging bar chart).
+
+`CHART_REQUIRED` in `scripts/topic.py` is `True` since 13 October 2026: every topic and every
+hub carries a chart (195 of 195 that day), and `page()` and `hub()` refuse one without.
+
+Limits not yet solved, each met by a category agent: no margin-of-error bands (Census
+figures); a track or ranking carries one `basis`, so a series that is workbook in some years
+and ledger in others is two tracks; no highlight inside a series; no range bar (a low-to-high
+spread is drawn as a two-part stack).
+
 ## The machinery (read these before building)
 
 | file | what it is |
@@ -117,3 +166,11 @@ reports with findings; they stay as they are.
 | special-education | 12 Oct | 12 Oct (cost per placement rewritten: no proxy divisions; circuit breaker per-child column removed) | 12 Oct |
 | town-reserves | 12 Oct | 12 Oct (free cash against the DLS proof; balance dates) | 12 Oct |
 | fy2026-closeout | 12 Oct | 12 Oct (surplus, overrun counts, FY2025 recomputed from period 13) | 12 Oct |
+| enrolment, school-staffing, state-aid | 12 Oct | 12 Oct (DESE enrolment and FTE; Chapter 70 and cherry sheet against DLS) | 12 Oct |
+| school-spending, school-programs, department-budgets | 12 Oct | 12 Oct (MUNIS school YTD; AP counts; voted totals compared only where checked) | 12 Oct |
+| homes-and-taxes, health-insurance, board-records, parks, budget-options | 12 Oct | 13 Oct (tax bill and override votes against DLS; board minutes 1,284 of 1,934) | 13 Oct |
+
+**13 October 2026:** every topic and hub given a chart; the absorbed long reports UNLISTED
+(`sources/analyses/UNLISTED`, `UNLISTED` in `fy28/src/routes.ts`) -- still served, linked from
+nowhere, out of the sitemap and the prerender; links that pointed at them retargeted to the hub
+or topic that now answers the question.

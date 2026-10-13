@@ -1,8 +1,85 @@
 {
  "category": "transportation",
  "chart": {
-  "id": "transportation-sped",
-  "source": "/data/transportation.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Spent is the town general fund at the close. The circuit breaker is what the state paid that year, for the year before’s claims."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "All buses, spent",
+    "texts": [
+     "$1,026,002",
+     "$1,205,589",
+     "$1,363,132",
+     "$1,435,149",
+     "$1,724,343"
+    ],
+    "values": [
+     1026002,
+     1205589,
+     1363132,
+     1435149,
+     1724343
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Special education buses, spent",
+    "texts": [
+     "$241,390",
+     "$320,244",
+     "$401,402",
+     "$434,922",
+     "$633,291"
+    ],
+    "values": [
+     241390,
+     320244,
+     401402,
+     434922,
+     633291
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Circuit breaker, transportation",
+    "texts": [
+     "$14,596",
+     "$52,671",
+     "$81,519",
+     "$111,560",
+     "$94,993"
+    ],
+    "values": [
+     14596,
+     52671,
+     81519,
+     111560,
+     94993
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "What the state repays, beside the bus bill",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
@@ -151,7 +228,7 @@
   "text": "The state repays 5.5% of what the town spends on buses, all of it for special education."
  },
  "full_report": {
-  "href": "/analysis/transportation",
+  "href": "/docs/analyses/transportation.md",
   "label": "School transportation, the full report"
  },
  "id": "state-reimbursement",

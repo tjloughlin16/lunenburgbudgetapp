@@ -2014,8 +2014,8 @@ ASSUMPTIONS = [
     ('health', 'Health insurance', 0.01, 'given',
      'The district’s own stated assumption for FY27'),
     ('state_aid_growth', 'State aid growth', 0.01, 'derived',
-     'The median annual step in the town’s own Subtotal State Aid line across 23 '
-     'consecutive budget years, FY2005–FY2027 — see below'),
+     'The median annual step in the town’s own budgeted cherry sheet total across 23 '
+     'consecutive budget years, FY2005–FY2027, rounded to the quarter point — see below'),
     ('other', 'Everything else', 0.01, 'given',
      'The district’s own stated assumption for FY27'),
     ('new_growth', 'New growth per year', 100_000, 'given',
@@ -2089,8 +2089,9 @@ def s_register():
       '**State aid used to sit here beside it, and no longer does.** It was 2.0% with',
       'nothing behind it. It is now',
       f'{pct(A["state_aid_growth"], 2)} — the MEDIAN annual step in the town’s own',
-      '`Subtotal State Aid` line across twenty-three consecutive budget years, FY2005 to',
-      'FY2027. That series is like for like with what this rate is: a forward estimate of',
+      'budgeted cherry sheet total across twenty-three consecutive budget years, FY2005 to',
+      'FY2027, rounded to the quarter point, school choice tuition included in every year',
+      '(`notes/findings/state-aid-budget-series.csv`). That series is like for like with what this rate is: a forward estimate of',
       'the whole cherry sheet, not of Chapter 70 alone. Mixing those two is rule 1’s error',
       'and it is the reason the rate went unexamined for so long — the only measured',
       'series anybody had was Chapter 70 receipts, actual to actual, which may not be',

@@ -1,6 +1,64 @@
 {
  "category": "fy2026-closeout",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "13"
+   ],
+   "text": "Gross, summed account by account from the period-13 reports. The ledger names no counterparty for any of it."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Moved into accounts",
+    "texts": [
+     "$590,339",
+     "$486,257",
+     "$1,463,210",
+     "$394,929"
+    ],
+    "values": [
+     590338.73,
+     486256.95,
+     1463210.09,
+     394928.82
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Moved out of accounts",
+    "texts": [
+     "$404,958",
+     "$410,463",
+     "$1,585,713",
+     "$309,839"
+    ],
+    "values": [
+     404957.54,
+     410463.12,
+     1585712.53,
+     309838.58
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "School transfers in and out",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

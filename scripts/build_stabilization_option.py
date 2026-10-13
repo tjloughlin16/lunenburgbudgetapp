@@ -367,7 +367,7 @@ def render():
         w('| One snow year over its appropriation, FY2026 | %s |' % usd(cg['snow_over']))
         w('| The Reserve Fund, the town’s declared contingency, FY2026 | %s |'
           % usd(cg['reserve']))
-        w('| The general Stabilization Fund today | %s |' % usd(general))
+        w('| The general Stabilization Fund at the start of FY2026 | %s |' % usd(general))
         w('| The same fund after the burndown above | %s |' % usd(0))
         w('')
         w('**The Reserve Fund covers %.0f%% of one snow year’s overrun.** It held %s in '
@@ -462,11 +462,20 @@ def render():
     w('## Where the figures come from\n')
     w('- The gap, year by year: `model/finance.py`, the same projection the rest of the '
       'site uses.\n')
-    w('- The balances: the town\u2019s general ledger at 31 March 2026, reconciled to the '
+    # THE OPENING BALANCE, AND SAID SO. `held` is MUNIS's BEGINNING balance -- 1 July 2025
+    # -- on a report run at 31 March 2026. This line, the payload's grain and a conclusion's
+    # basis all called it the balance AT 31 March, which is a different and larger figure
+    # on the same report.
+    w('- The balances: what each fund held at the start of FY2026, as the town\u2019s '
+      'general ledger prints them on its report at 31 March 2026, reconciled to the '
       'total the accounting system prints for them.\n')
     w('- The deposits: every Town Meeting article that put money into one of these funds, '
-      'FY%d to FY%d. %s of those articles print no amount, so the totals are a floor.\n'
-      % (years[0], years[-1], len(fl['unpriced'])))
+      'FY%d to FY%d, counting only votes that passed. %s print%s no amount and %s '
+      'print%s an amount with a digit missing, so the totals are a floor.\n'
+      % (years[0], years[-1],
+         ('%d of those articles' % len(fl['unpriced'])) if len(fl['unpriced']) != 1
+         else 'One of those articles', '' if len(fl['unpriced']) != 1 else 's',
+         len(fl['garbled']), '' if len(fl['garbled']) != 1 else 's'))
     w('- The restricted/divertible split is OURS, read off which fund each deposit went '
       'to and where that fund\u2019s money comes from.\n')
     return '\n'.join(b) + '\n', dict(
@@ -490,7 +499,8 @@ def _sources():
              filename='trust-agency-fy2026-p09.xlsx', table='trust_agency_balances',
              publisher='Town of Lunenburg \u2014 Town Accountant',
              note='The town\u2019s MUNIS trust and agency report at 31 March 2026. Every '
-                  'balance on this page is the remaining balance this report prints, and '
+                  'balance on this page is the BEGINNING balance this report prints, what '
+                  'each fund held at the start of FY2026, and '
                   'the extract refuses to write unless it foots to the system\u2019s own '
                   'subtotals. Obtained by a public records request; the chain is in '
                   'sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
@@ -557,9 +567,9 @@ def conclusions_for(data):
                    'nothing back for a roof, a fire engine or a snow season, which is '
                    'what the fund is for.'
                    % (exhausted['fy'], C.usd(entering), C.usd(exhausted['gap'])),
-            basis='The balance is the remaining balance the town\u2019s MUNIS trust and '
-                  'agency report prints for the general Stabilization Fund at 31 March '
-                  '2026. The gaps are `model/finance.py`. The burndown is arithmetic '
+            basis='The balance is the beginning balance, the start of FY2026, that the '
+                  'town\u2019s MUNIS trust and agency report at 31 March 2026 prints for '
+                  'the general Stabilization Fund. The gaps are `model/finance.py`. The burndown is arithmetic '
                   'over the two and models no interest.',
             not_shown='What a rating agency would make of a town that spent its '
                       'stabilization fund, or what the balance was being held against.',
@@ -693,7 +703,7 @@ def payload(data):
               'how long.',
         grain='DOLLARS. The gap is the projection’s level-service shortfall by fiscal '
               'year. The balance is what the general ledger says the general Stabilization '
-              'Fund held at 31 March 2026. The deposits are what Town Meeting VOTED in, '
+              'Fund held at the start of FY2026, on its report at 31 March 2026. The deposits are what Town Meeting VOTED in, '
               'which is not the same quantity as what the balances moved.',
         stats=[
             dict(value=usd(data['general']), tone='var(--series-cost)',

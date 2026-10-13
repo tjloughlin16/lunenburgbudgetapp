@@ -1,6 +1,70 @@
 {
  "category": "health-insurance",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [
+    "FY2022-FY2025",
+    "FY2026"
+   ],
+   "text": "Revised budgets. FY2022-FY2025 from the Finance Committee’s workbook; FY2026 from the MUNIS ledger. No split exists before."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "line",
+    "name": "School retirees",
+    "texts": [
+     "$1,119,925",
+     "$1,213,618",
+     "$1,357,882",
+     "$1,411,181",
+     "$1,521,536"
+    ],
+    "values": [
+     1119925.23,
+     1213617.67,
+     1357882.44,
+     1411181.22,
+     1521535.59
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "line",
+    "name": "Town retirees",
+    "texts": [
+     "$376,426",
+     "$366,847",
+     "$432,251",
+     "$420,344",
+     "$453,215"
+    ],
+    "values": [
+     376425.9,
+     366846.66,
+     432251.47,
+     420343.79,
+     453214.67
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Retiree health accounts by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

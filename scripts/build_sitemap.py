@@ -206,7 +206,26 @@ def feed_pages():
 def unlisted_payloads():
     src = open(ROUTES_TS, encoding='utf-8').read()
     m = re.search(r"export const UNLISTED[^\n]*new Set<Tab>\(\[([^\]]*)\]", src)
-    out = {'%s.json' % t.strip().strip("'\"") for t in (m.group(1).split(',') if m else []) if t.strip()}
+    hidden_tabs = {t.strip().strip("'\"") for t in (m.group(1).split(',') if m else []) if t.strip()}
+    out = {'%s.json' % t for t in hidden_tabs}
+    # ...AND THE PAYLOAD EACH UNLISTED PAGE ACTUALLY DRAWS, which is rarely `<tab>.json`:
+    # /circuit-breaker reads circuit-breaker.json, /paras reads the-paraprofessionals.json.
+    # Read off the page component that declares the tab, the way build_reports_index.py
+    # finds it -- minus any payload a LISTED page also draws, which stays indexed.
+    drawn, listed = {}, set()
+    pages = os.path.join(ROOT, 'fy28', 'src', 'pages')
+    for f in sorted(os.listdir(pages)):
+        if not f.endswith('.tsx'):
+            continue
+        text = open(os.path.join(pages, f), encoding='utf-8').read()
+        t = re.search(r"^const TAB: Tab = '([a-z]+)'", text, re.M)
+        names = set(re.findall(r"^const DATA = '/data/([^'/]+)'", text, re.M)
+                    + re.findall(r"useReport<[^>]*>\('([^'/]+)'\)", text))
+        if t and t.group(1) in hidden_tabs:
+            drawn[t.group(1)] = names
+        else:
+            listed |= names
+    out |= {n for names in drawn.values() for n in names} - listed
     # AND THE UNLISTED ANALYSES. The page was already excluded above and its PAYLOAD was
     # not, so /data/<id>.json was offered to crawlers and pushed to IndexNow -- the same
     # `indexed by another door` this function exists to close, through a door nobody had

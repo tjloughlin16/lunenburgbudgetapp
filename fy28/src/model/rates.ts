@@ -409,7 +409,8 @@ export function consequenceOf(key: Bucket, rate: number): Consequence | null {
           + `(${HEALTH_LEVERS.migration.fromNetwork.toLowerCase()}) onto `
           + `${HEALTH_LEVERS.migration.to} (${HEALTH_LEVERS.migration.toNetwork.toLowerCase()}) `
           + `— every year, not once.`,
-        limit: `Only ${onBroadest} people are on the broadest plan, so that runs out in `
+        limit: `The model places ${onBroadest} people on the broadest plan (a placeholder; `
+          + `enrolment by plan is not published), so on that figure it runs out in `
           + `about ${runsOut.toFixed(1)} years. After it does, holding the rate means `
           + `higher deductibles — the cheapest plan on offer is `
           + `${HEALTH_LEVERS.highDeductible} — or a different insurer. The Town buys the `

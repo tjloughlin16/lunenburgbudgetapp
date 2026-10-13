@@ -63,6 +63,8 @@ OUT_DIR = os.path.join(PUB, 'topics')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 COSTS = '/data/special-education-costs.json'
 
+AIDES = {0: 'no aide', 1: 'one aide', 2: 'two aides'}
+
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
         if home == 'special-education' and gen == 'build_special_education_topics.py']
 
@@ -127,6 +129,41 @@ def sources():
 
 def pct1(a, b):
     return round(100.0 * a / b, 1)
+
+
+# --------------------------------------------------------------------- the charts
+# Each page's signature (CLAUDE.md 7f; the brief is scripts/topic.py). Values are read from
+# the payloads build() already reads; nothing is typed.
+
+def _span(*maps):
+    """Every year from the first any map holds to the last, so a missing year is a gap."""
+    ys = sorted(set().union(*[set(m) for m in maps]))
+    return list(range(ys[0], ys[-1] + 1))
+
+
+def _two_child_counts(RT, CB):
+    town = {r['fy']: r['total'] for r in RT['counts']}
+    claim = {r['fy']: r['children'] for r in CB['series']}
+    ys = _span(town, claim)
+    return TP.series('Two counts of children, neither a price', [C.fy(y) for y in ys], [
+        TP.track('Placed out of district, the town’s count', [town.get(y) for y in ys], 'stated'),
+        TP.track('In the circuit breaker claim, DESE', [claim.get(y) for y in ys], 'published')],
+        'children',
+        note='The town counts placements on one day in March. The state’s claim counts children '
+             'whose costs passed its threshold, in district or out, by year of payment.')
+
+
+def _indexed(title, tracks, base, note):
+    """Two series that are not one quantity, each as a percent of its own value in `base`.
+    The division is ours, so every track is an estimate; the note says what was divided."""
+    for _, m in tracks:
+        if base not in m:
+            fail('%s: no %s value to index on' % (title, C.fy(base)))
+    ys = _span(*[m for _, m in tracks])
+    return TP.series(title, [C.fy(y) for y in ys],
+                     [TP.track(name, [100.0 * m[y] / m[base] if y in m else None
+                                      for y in ys], 'estimate') for name, m in tracks],
+                     '%', note=note, note_figures={'y': figure(base, C.fy(base), 'fiscal year')})
 
 
 # --------------------------------------------------------------------- the pages
@@ -236,7 +273,14 @@ def build():
                          {'y': F(2024), 'p': U(af[2024]['dese_paid'])},
                          closes='a reconciliation by the district of its End of Year Financial '
                                 'Report to the town’s ledger, fund by fund')])],
-        chart=dict(id='special-education-costs-trend', source=COSTS),
+        # THE SIGNATURE: the finding is a split of one total by who paid it, so the two funds
+        # stack into every-fund tuition, year by year, as the state's return prints them.
+        chart=TP.series('Out-of-district tuition by fund', [C.fy(y) for y in sorted(spend)], [
+            TP.track('General fund', [spend[y]['gen_fund'] for y in sorted(spend)], 'published'),
+            TP.track('Grants and revolving funds', [spend[y]['grants'] for y in sorted(spend)],
+                     'published')], '$', kind='bar', stacked=True,
+            note='DESE’s End of Year Financial Report, closed years. Each bar is every fund, '
+                 'split into the general fund and everything else.'),
         table=tuition_table,
         said=[said(CO, 'skyrocket')],
         sources=S('district-expenditures-by-function.xlsx', 'glytdbud-expense-fy2026-p13-gf-school.xlsx',
@@ -288,6 +332,11 @@ def build():
                          'or out.', 'gap',
                          closes='the district’s circuit breaker claim, child by child, with names '
                                 'removed')])],
+        # TWO COUNTS OF CHILDREN, COUNTING DIFFERENT THINGS (rule 13a): the town's 1 March
+        # placements and the children in the state's reimbursement claim. Two tracks, never
+        # merged -- and no dollars on this axis, because the page's point is that no division
+        # of the one by the other is a price (rule 7).
+        chart=_two_child_counts(RT, CB),
         sources=S('district-expenditures-by-function.xlsx', 'placement-counts.csv',
                   'dese-circuit-breaker.xlsx'))
 
@@ -360,6 +409,16 @@ def build():
                          'lines count is our classification.', 'gap',
                          closes='a chart of accounts from the district marking every special '
                                 'education line')])],
+        # The finding sets a rising budget line against a falling count of staff. Dollars and
+        # FTE cannot share an axis, so each is drawn against its own value in the first year
+        # both exist -- our division, and drawn as an estimate.
+        chart=_indexed('Paraprofessional budget line and staff count', [
+            ('Budget line, budget columns only', {r['fy']: r['total'] for r in SP.PARA_SERIES}),
+            ('FTE, the state’s count', {r['fy']: r['fte'] for r in ST['paras']})],
+            min(set(r['fy'] for r in SP.PARA_SERIES) & set(paras)),
+            'Each as a percent of its own %s value (ours). One is dollars and one is staff, so '
+            'only the directions compare.' % C.fy(min(set(r['fy'] for r in SP.PARA_SERIES)
+                                                       & set(paras)))),
         table=dict(caption='Special education paraprofessionals, by year', views=[dict(
             key='paras', label='Budget line beside the state’s count', total_col=-1,
             kinds=['stated', 'stated', 'ledger'],
@@ -436,7 +495,15 @@ def build():
          con('Since %s the state also repays transport: %s of the %s payment.'
              % (C.fy(tr0), C.usd(c26['transport']), C.fy(c26['fy'])), ['transport'],
              {'y': F(tr0), 'a': U(c26['transport']), 'z': F(c26['fy'])})],
-        chart=dict(id='special-education-costs-circuit-breaker', source=COSTS),
+        # The finding is what the state paid against what was eligible, after the threshold
+        # comes off: three flows from one file, by year of payment.
+        chart=TP.series('Circuit breaker, eligible and paid', [C.fy(r['fy']) for r in CB['series']], [
+            TP.track('Eligible costs', [r['eligible'] for r in CB['series']], 'published', 'line'),
+            TP.track('Threshold taken off first', [r['threshold'] for r in CB['series']],
+                     'published', 'line'),
+            TP.track('Paid by the state', [r['paid'] for r in CB['series']], 'published', 'bar')],
+            '$', note='DESE’s reimbursement file, by year of payment; each payment is for the costs '
+                      'of the year before.'),
         table=dict(caption='The circuit breaker, by year of payment', views=[
             dict(key='years', label='Lunenburg', total_col=-1, kinds=['ledger'] * 5,
                  columns=['Children claimed', 'Eligible costs', 'Threshold', 'Paid',
@@ -526,6 +593,15 @@ def build():
                          'year later. Nothing here tests it.'
                          % (C.fy(2024), C.fy(2025), C.usd(rt['total'])), 'hypothesis',
                          {'y': F(2024), 'z': F(2025), 't': U(rt['total'])})])],
+        # A stock: the balance at each year's close, the bars below zero drawn as such.
+        chart=TP.series('Circuit breaker account at year end',
+                        [C.fy(y) for y in _span(yrs)],
+                        [TP.track('Balance at the close', [yrs[y]['closing'] if y in yrs else None
+                                                           for y in _span(yrs)], 'published')],
+                        '$', kind='bar',
+                        note='Fund 2640: the annual town reports to %s, the town’s year-end ledgers '
+                             'after.' % C.fy(2023), note_figures={'y': F(2023)},
+                        note_allow=('2640',)),
         table=dict(caption='The circuit breaker account, by year', views=[dict(
             key='account', label='Fund 2640', total_col=3, kinds=['ledger'] * 4,
             columns=['Opening', 'Received', 'Spent', 'Closing'],
@@ -584,6 +660,14 @@ def build():
                 C.pct(100 * ly['published'], 2)), ['pub', 'held'],
              {'y': F(2026), 'z': F(2027), 'a': P(100 * ly['underlying'], 2),
               'b': P(100 * ly['published'], 2)})],
+        # Budgets only (rule 1), as the district printed them: the two kinds of placement
+        # stack into the line the finding is about.
+        chart=TP.series('Out-of-district tuition, as budgeted', [C.fy(r['fy']) for r in th], [
+            TP.track('Private schools', [r['private'] for r in th], 'stated'),
+            TP.track('Collaboratives', [r['collaborative'] for r in th], 'stated')],
+            '$', kind='bar', stacked=True,
+            note='The district’s budgets: a settled figure where a later document reports one, '
+                 'otherwise the proposal. Never what was spent.'),
         table=dict(caption='Out-of-district tuition, as budgeted', views=[dict(
             key='budgets', label='Budget columns only', total_col=2,
             kinds=['stated', 'stated', 'stated', 'stated'],
@@ -676,10 +760,13 @@ def build():
            'published', {'y': F(s0['fy'])}),
          f('share0', P(s0['share_pct']), 'of enrolment, %s' % C.fy(s0['fy']), 'published',
            {'y': F(s0['fy'])}),
-         f('enr1', N(s1['enrolled'], 'children'), 'enrolled, %s' % C.fy(s1['fy']), 'published',
-           {'y': F(s1['fy'])}),
-         f('enr0', N(s0['enrolled'], 'children'), 'enrolled, %s' % C.fy(s0['fy']), 'published',
-           {'y': F(s0['fy'])}),
+         # NOT the headcount. The file's denominator is its own "Total In- and
+         # Out-of-District Students" row, which reads 1,581 for FY2026 where DESE's
+         # 1 October headcount reads 1,568. Labelled as what it is.
+         f('enr1', N(s1['enrolled'], 'children'), 'in and out of district, %s' % C.fy(s1['fy']),
+           'published', {'y': F(s1['fy'])}),
+         f('enr0', N(s0['enrolled'], 'children'), 'in and out of district, %s' % C.fy(s0['fy']),
+           'published', {'y': F(s0['fy'])}),
          f('held', P(held_share), 'the %s share at %s enrolment (ours)'
            % (C.fy(s1['fy']), C.fy(s0['fy'])), 'estimate', {'y': F(s1['fy']), 'z': F(s0['fy'])}),
          f('prog25', N(gap3[2025]['program'], 'children'), 'with a plan, %s, DESE program file'
@@ -708,6 +795,17 @@ def build():
                                 'date and inclusion rule behind each count')]),
          con('A count of children with a plan is not established to be a measure of need.',
              ['swd1', 'need-gap'])],
+        # Two DESE files count children with a plan and disagree every year they overlap
+        # (rule 13a): two tracks, neither chosen.
+        chart=(lambda prog, mov: TP.series(
+            'Children with a plan, two DESE files', [C.fy(y) for y in _span(prog, mov)], [
+                TP.track('Program file', [prog.get(y) for y in _span(prog, mov)], 'published'),
+                TP.track('Movement file', [mov.get(y) for y in _span(prog, mov)], 'published')],
+            'children',
+            note='The movement file’s %s row repeats %s’s exactly; neither file states its census '
+                 'date or who it includes.' % (C.fy(2025), C.fy(2024)),
+            note_figures={'y': F(2025), 'z': F(2024)}))(
+            {r['fy']: r['swd'] for r in ST['counts']}, {r['fy']: r['on_iep'] for r in ST['third_count']}),
         table=dict(caption='Children with a special education plan, by year', views=[dict(
             key='counts', label='DESE program file', total_col=-1, kinds=['ledger'] * 5,
             columns=['Enrolled', 'With a plan', 'Share', 'In district', 'Out of district'],
@@ -777,6 +875,19 @@ def build():
              notes=[step('Selection fits it equally: children placed in a separate room were not '
                          'like the others to begin with. Nothing here separates the two.',
                          'hypothesis')])],
+        # The town's count over fifteen years, and the state's beside it where it exists: two
+        # counts of the same children on two different days (rule 13a), never merged.
+        chart=(lambda town, dese: TP.series(
+            'Children placed out of district', [C.fy(y) for y in _span(town, dese)], [
+                TP.track('The town’s count, 1 March', [town.get(y) for y in _span(town, dese)],
+                         'stated'),
+                TP.track('DESE’s special education program file',
+                         [dese.get(y) for y in _span(town, dese)], 'published')],
+            'children',
+            note='The town’s count is the Special Services report in each annual town report, '
+                 'taken on 1 March. The two are set side by side and not reconciled.',
+            note_allow=('1 March',)))(
+            {r['fy']: r['total'] for r in RT['counts']}, {r['fy']: r['dese'] for r in RT['two_counts']}),
         table=dict(caption='Children placed out of district, by year', views=[
             dict(key='town', label='The town’s 1 March count', total_col=3, kinds=['stated'] * 4,
                  columns=['Collaborative', 'Day', 'Residential', 'All'],
@@ -833,6 +944,15 @@ def build():
                          'placements. That is stated intent; nothing published tests it, and '
                          'fewer referrals or families moving fit the same numbers.',
                          'hypothesis')])],
+        # The two series the page sets side by side, each against its own value in the first
+        # year both exist. Children and dollars are never one axis, and the chart says so.
+        chart=_indexed('Placements and the paraprofessional line', [
+            ('Children placed, the town’s count', {r['fy']: r['total'] for r in RT['counts']}),
+            ('Paraprofessional budget line', {r['fy']: r['total'] for r in SP.PARA_SERIES})],
+            min(set(r['fy'] for r in RT['counts']) & set(r['fy'] for r in SP.PARA_SERIES)),
+            'Each as a percent of its own %s value (ours). Nothing here links the two, and a '
+            'child is not a dollar.' % C.fy(min(set(r['fy'] for r in RT['counts'])
+                                               & set(r['fy'] for r in SP.PARA_SERIES)))),
         sources=S('placement-counts.csv', 'fy27-proposals.xlsx', 'lps-budget-lines.csv'),
     )
 
@@ -885,6 +1005,16 @@ def build():
                          'number follows from anything published.', 'gap',
                          closes='the district’s list of special education groups, with the '
                                 'students and staff assigned to each')])],
+        # The rule itself, drawn: the most students each school-age tier allows. The separate
+        # tiers are the finding, so they carry the highlight.
+        chart=TP.ranking('School-age group-size limits', [
+            ('%s, %s' % ('Separate' if t['separateness_rank'] == 2 else t['short'],
+                         AIDES[t['aides']]), t['students'])
+            for t in RG['tiers'] if t['band'] == 'School age'], 'students',
+            highlight=['Separate, %s' % AIDES[t['aides']] for t in RG['tiers']
+                       if t['band'] == 'School age' and t['separateness_rank'] == 2],
+            note='603 CMR 28.06, school-age tiers. Every tier names one educator; an aide is what '
+                 'raises the ceiling.', note_allow=('603 CMR 28.06',)),
         table=dict(caption='Group-size limits in 603 CMR 28.06', views=[dict(
             key='tiers', label='The regulation, tier by tier', total_col=-1,
             kinds=['statute'] * 4, columns=['Most students', 'Educators', 'Aides', 'Clause'],
@@ -951,7 +1081,9 @@ def build():
         'The state repaid %s in %s through the circuit breaker, a year after the costs.'
         % (C.usd(last['total']), C.fy(y25), C.pct(last['outside_share_pct']), C.usd(c26['paid']),
            C.fy(c26['fy'])),
-        hub_ladder, chart=dict(id='special-education-costs-trend', source=COSTS),
+        # The hub's answer is tuition by who paid it and the circuit breaker coming back: the
+        # registry chart that draws exactly that, by fund, with the state's payments beside.
+        hub_ladder, chart=dict(id='special-education-costs-circuit-breaker', source=COSTS),
         table=tuition_table,
         answer_figures={'a': U(last['total']), 'y': F(y25), 'p': P(last['outside_share_pct']),
                         'b': U(c26['paid']), 'z': F(c26['fy'])})

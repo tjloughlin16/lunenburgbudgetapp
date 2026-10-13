@@ -26,7 +26,7 @@ it at all. So the fall is a **level** change rather than a slower rate of growth
 happen again, but it cannot keep happening, and the published 3.98% describes a year
 whose arithmetic does not carry forward.
 
-Underneath it, in-district special education escalates at **6.49%** — and the reason is
+Underneath it, in-district special education escalates at **6.48%** — and the reason is
 not pay. The paras are on a contract giving 2.0%; their budget line has grown **12.78% a
 year across 10 budgets**, up in 8 of 9. The teachers are on a contract giving 3.5% and
 theirs has grown 2.67%. **A contract sets what one person is paid. It says nothing
@@ -144,7 +144,7 @@ entries moving in opposite directions:
 
 | part | FY25 budget | FY26 budget | FY27 level service | change | rate |
 |---|---:|---:|---:|---:|---:|
-| **Paraprofessionals** | 1,376,893 | 1,344,373 | **1,874,411** | **+530,038** | **+39.4%** |
+| **Paraprofessionals** | 1,366,893 | 1,342,373 | **1,872,411** | **+530,038** | **+39.5%** |
 | Special education transport | 445,328 | 565,734 | 649,953 | +84,219 | +14.9% |
 | Speech, OT and summer services | 768,573 | 753,555 | 784,444 | +30,889 | +4.1% |
 | Substitutes | 52,500 | 52,500 | 52,500 | 0 | 0% |
@@ -199,10 +199,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $680,870 | — |
-| Midway back, $1,000,000 | $980,728 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,145,552 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,272,021 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $930,070 | — |
+| Midway back, $1,000,000 | $1,229,928 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,394,752 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,521,221 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -247,7 +247,7 @@ steepest year of a trend running since FY18, not a departure from one.
 **And it is the paras, not the rest of the line, that make special education a driver.**
 In FY27 the paraprofessional increase was **111% of the whole year's rise** in in-district
 special education — every other part of the line fell. Take the paras out and the
-remainder grew **1.14% a year** across the two most recent budgets, below the levy cap. One
+remainder grew **1.02% a year** across the two most recent budgets, below the levy cap. One
 part of this line is climbing and the rest is close to flat, which is precisely why a
 single blended rate taken from the settlements gets it wrong.
 
@@ -330,7 +330,7 @@ months. Only four funds paid any:
 
 Extended day and lunch are self-funding programs, not substitutes for an appropriation.
 **The special education grant paid $89,184 of salaries in nine months — annualised about
-$119,000, against a para line of $1,874,411.** Roughly six percent.
+$119,000, against a para line of $1,872,411.** Roughly six percent.
 
 **So grants are not paying for the paras, and the general fund is.** The hypothesis that
 this line grows because a grant stopped paying is answered, from the town's own books
@@ -440,9 +440,9 @@ But a reader should know the alternative and what it is worth, so here it is:
 
 | para component | blended rate | FY28 gap |
 |---|---:|---:|
-| What the budget line did — **used** | 12.78% | $680,870 |
-| Headcount growth plus their contract | 5.98% | $552,922 |
-| Their contract alone | 2.00% | $477,994 |
+| What the budget line did — **used** | 12.78% | $930,070 |
+| Headcount growth plus their contract | 5.98% | $802,259 |
+| Their contract alone | 2.00% | $727,410 |
 
 **What would settle it** is unchanged and now more valuable: DESE's End of Year Financial
 Report separates spending by fund. See `notes/findings/DATA-WANTED.md`.
@@ -551,7 +551,7 @@ argument that FY27's increase in paras was a step already sitting in the base. *
 argument was sound and its premise was false.** With two budget years there is no way to
 tell a step from a climb; with ten there is, and it is a climb.
 
-The rate is now **6.49%**, and the projected gap went up rather than down. That is what
+The rate is now **6.48%**, and the projected gap went up rather than down. That is what
 the evidence says, and the direction it moves the answer is not a reason to prefer the
 other one.
 
@@ -689,7 +689,7 @@ That gap is the whole question, and it is answered in *Is the increase in paras 
 a climb?* above: the paras' line has grown 12.8% a year across 10 budgets while their
 contract gives 2.0%. So the model escalates
 every part of it at what its own budgets show it doing, measured across eight to ten
-years of them, which comes to **6.49%**.
+years of them, which comes to **6.48%**.
 
 > **Correction, 28 August 2026.** This file has carried five different rates for this line
 > in one day. The sequence is kept because each step was a real error and the last one is
@@ -710,6 +710,11 @@ years of them, which comes to **6.49%**.
 >
 > **6.49%** measures all three. The teachers turn out to have grown 2.67% against a
 > 3.5% agreement, so the contract rate had been overstating them.
+>
+> **6.48%**, 13 October 2026, is the same measurement on a corrected base. The paras' row had
+> taken the whole of function 2330, which also files $10,000, $2,000 and $2,000 of tutoring
+> and contracted services in FY25 to FY27; the paras' rate is measured on the five school
+> paraprofessional lines alone, so it is now applied to those lines alone.
 >
 > The lesson is not about any of the five numbers. It is that a contract sets what one
 > person is paid and says nothing about how many people are employed, and that on this

@@ -1,6 +1,56 @@
 {
  "category": "board-records",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "b": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Each board’s share of its own meetings, FY2023 to FY2026, with minutes listed on the Agenda Center."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Ranked boards",
+    "texts": [
+     "7 boards",
+     "7 boards",
+     "6 boards",
+     "10 boards"
+    ],
+    "values": [
+     7,
+     7,
+     6,
+     10
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Ranked boards by share with minutes",
+  "type": "series",
+  "unit": "boards",
+  "x": [
+   "90% or more",
+   "75% to under 90%",
+   "50% to under 75%",
+   "Under half"
+  ]
+ },
  "conclusions": [
   {
    "figures": {
@@ -57,7 +107,7 @@
   {
    "figures": {},
    "literals": [
-    "12 October 2026"
+    "13 October 2026"
    ],
    "notes": [
     {
@@ -86,7 +136,7 @@
     "all-n",
     "pf-gap"
    ],
-   "text": "This counts what the Agenda Center listed on 12 October 2026, not what each board wrote."
+   "text": "This counts what the Agenda Center listed on 13 October 2026, not what each board wrote."
   }
  ],
  "facts": [
@@ -337,7 +387,7 @@
      "ledger"
     ],
     "label": "By board",
-    "note": "A meeting is a date with a posted agenda. Boards with fewer than 20 meetings are counted in the totals and not ranked. Read 12 October 2026.",
+    "note": "A meeting is a date with a posted agenda. Boards with fewer than 20 meetings are counted in the totals and not ranked. Read 13 October 2026.",
     "rows": [
      {
       "cells": [

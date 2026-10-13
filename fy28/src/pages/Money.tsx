@@ -198,7 +198,10 @@ export function Money() {
   const secondary = pages.filter(p => p.tier !== 'primary')
   const byId: Record<string, { title: string; about: string; url: string }> =
     Object.fromEntries([...(reports?.reports ?? []), ...(reports?.pages ?? [])].map(r => [r.id, r]))
-  const groups = (reports?.groups ?? []).filter(g => !NOT_MONEY.has(g.key))
+  // A group can be EMPTY -- every report on it moved to a topic shelf (13 October 2026);
+  // reports.json keeps it so /reports can draw that area's shelves in its place.
+  const groups = (reports?.groups ?? []).filter(g => !NOT_MONEY.has(g.key)
+    && g.sections.some(sec => sec.ids.length))
 
   return (
     <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">

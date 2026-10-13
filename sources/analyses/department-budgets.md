@@ -278,7 +278,7 @@ On 859 of 16,992 account-years — every one of the sixteen years has some — t
 
 [Finance Committee, 12 February 2026](/docs/minutes/text/finance-committee/2026-02-12-minutes-7645.txt) · [Select Board, 16 March 2026](/docs/minutes/text/select-board/2026-03-16-minutes-7716.txt)
 
-The one place a town department’s level-service figure might exist is its budget request to the Town Manager. For FY2027 those requests are being extracted separately; for every earlier year none is in this archive, and the gap is registered.
+The FY2027 requested-against-balanced figures for the town’s departments are now in `sources/data/town-budget-fy26-fy27.csv`; they are not yet read by this report.
 
 ## What could explain the difference — hypotheses, each with its test
 

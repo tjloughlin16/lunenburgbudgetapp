@@ -47,6 +47,7 @@ $39M" without that sentence would be the same error this project has documented 
 times already, in the direction that flatters the argument.
 """
 import argparse
+import csv
 import os
 import sqlite3
 import sys
@@ -121,7 +122,39 @@ def gather():
     pupils = lun['total'] / lun['per_pupil']
     ch70_fy, burden, ch70_state = local_burden(db)
     return dict(lun=lun, state=state, peers=peers, pupils=pupils,
-                ch70_fy=ch70_fy, burden=burden, ch70_state=ch70_state)
+                ch70_fy=ch70_fy, burden=burden, ch70_state=ch70_state,
+                regional_transport=regional_transport())
+
+
+# THE REGIONAL TRANSPORTATION REIMBURSEMENT IS PRICED, by the state, on its own cherry
+# sheet. This page used to say the archive held no dollar figure for it for any district,
+# which contradicted `money-gaps.csv` (the registry wins, rule 7c) and the DLS file this
+# project already holds. What is still not held is the NET: the busing a regional district
+# incurs against the reimbursement it draws.
+CHERRY = os.path.join(ROOT, 'sources', 'data', 'dls-cherry-sheet.csv')
+CHERRY_FY = 2026
+NEIGHBOURS = ('North Middlesex', 'Ashburnham Westminster', 'Groton Dunstable')
+
+
+def regional_transport():
+    rows = [r for r in csv.DictReader(open(CHERRY, encoding='utf-8'))
+            if r['fy'] == str(CHERRY_FY) and r['line'] == 'Regional Transportation'
+            and r['flow'] == 'Receipts']
+    if not rows:
+        sys.exit('no FY%d Regional Transportation rows in %s -- a join that matches '
+                 'nothing looks exactly like a reimbursement nobody receives.'
+                 % (CHERRY_FY, os.path.relpath(CHERRY, ROOT)))
+    reg = [r for r in rows if r['population'] == 'Regional Schools' and float(r['amount']) > 0]
+    lun = [float(r['amount']) for r in rows if r['name'] == 'Lunenburg']
+    if lun != [0.0]:
+        sys.exit('Lunenburg\'s FY%d Regional Transportation line is %r, not one zero'
+                 % (CHERRY_FY, lun))
+    by = {r['name']: float(r['amount']) for r in reg}
+    missing = [n for n in NEIGHBOURS if n not in by]
+    if missing:
+        sys.exit('no FY%d Regional Transportation for %s' % (CHERRY_FY, ', '.join(missing)))
+    return dict(fy=CHERRY_FY, total=sum(by.values()), districts=len(reg),
+                neighbours=[(n, by[n]) for n in NEIGHBOURS])
 
 
 # WHICH OF THESE ARE REGIONAL, and this classification is OURS -- read off each
@@ -265,12 +298,21 @@ def render(d):
     w('**Regional districts are reimbursed for transportation under c.71 \u00a716C and '
       'single-town districts are not.** At 82% rising to 100% that is not a rounding '
       'error, and it is money Lunenburg cannot receive in its present form.\n')
-    w('**This archive holds no dollar figure for it, for any district.** So the honest '
-      'position is: the largest term in the comparison \u2014 the required local '
-      'contribution \u2014 is set by a town\u2019s wealth and not by its structure, and '
-      'at least one further term exists that favours regional districts and cannot be '
-      'sized from anything held here. Anyone claiming to know the net is claiming more '
-      'than the record supports, in either direction. Registered in `money-gaps.csv`.\n')
+    rt = d['regional_transport']
+    w('**The state prices the reimbursement on its own cherry sheet.** In FY%d it paid '
+      '%s in Regional Transportation to %d regional school districts and nothing to '
+      'Lunenburg; %s (DLS cherry sheets, `sources/data/dls-cherry-sheet.csv`). What no '
+      'file here holds is the other half: a regional district also incurs the busing it '
+      'is reimbursed for, and no published figure nets the two. So the honest position '
+      'is: the largest term in the comparison \u2014 the required local contribution '
+      '\u2014 is set by a town\u2019s wealth and not by its structure, and at least one '
+      'further term exists that favours regional districts and whose NET cannot be sized '
+      'from anything held here. Anyone claiming to know the net is claiming more than the '
+      'record supports, in either direction. Registered in `money-gaps.csv`.\n'
+      % (rt['fy'], usd(rt['total']), rt['districts'],
+         '; '.join('%s drew %s' % (n.replace('Ashburnham Westminster', 'Ashburnham-Westminster')
+                                    .replace('Groton Dunstable', 'Groton-Dunstable'), usd(v))
+                   for n, v in rt['neighbours'])))
     w('The decision itself is on the record too. A School Committee member, '
       '24 January 2024: \u201cLunenburg decided to not regionalize and to stay a small '
       'school, so scheduling in our middle high school is so hard and there isn\u2019t '

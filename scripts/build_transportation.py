@@ -4203,12 +4203,31 @@ def build_topics(m, brief, pay):
         [con('The state repays a small share, and nothing for regular routes or athletics.',
              ['state', 'state-share', 'no-aid'], notes=link1('offsets')),
          con('What it repays is last year’s claims, not this year’s buses.', ['cb-sped'])],
-        chart=chart('sped'), said=said('cb-75'),
+        # THE SMALL SHARE, DRAWN: what the state repaid beside what the buses cost, never
+        # netted (rule 11). The circuit breaker pays a year's claims the year after.
+        chart=TP.series(
+            'What the state repays, beside the bus bill',
+            [C.fy(y) for y in sorted(cb) if y <= last],
+            [TP.track('All buses, spent', [by[y]['all_spent'] for y in sorted(cb) if y <= last],
+                      'published', 'bar'),
+             TP.track('Special education buses, spent',
+                      [by[y]['sped']['spent'] for y in sorted(cb) if y <= last], 'published', 'bar'),
+             TP.track('Circuit breaker, transportation',
+                      [cb[y]['transport'] for y in sorted(cb) if y <= last], 'published', 'bar')],
+            '$', kind='bar',
+            note='Spent is the town general fund at the close. The circuit breaker is what the '
+                 'state paid that year, for the year before’s claims.'),
+        said=said('cb-75'),
         sources=src('circuit-breaker', 'district-expenditures'),
         finding_figures={'s': P(pct1(cb[last]['transport'], by[last]['all_spent']))})
 
     # ---- Bus fee
     fee_acct = st['fee'][last]
+    kp = {c['fy']: c for c in k['years']}
+    if round(kp[last]['regular'] - by[last]['regular']['budget']) != m['netted']:
+        fail('the bus-fee chart’s contract and voted bars no longer differ by the netted amount')
+    if abs(by[last]['regular']['spent'] - kp[last]['regular']) > 0.5:
+        fail('regular routes no longer spent exactly the contract price; the bus-fee note says so')
     out['bus-fee'] = TP.page(
         'bus-fee',
         'The new bus fee did not lower what the school budget paid for buses in %s.' % C.fy(last),
@@ -4225,11 +4244,32 @@ def build_topics(m, brief, pay):
              {'a': U(m['netted']), 'b': U(m['moved_back'])}),
          con('Where the fee money is booked is not established.', ['fee-acct'],
              notes=steps('offsets', 'gap'))],
+        chart=TP.series(
+            'Regular routes against the contract',
+            ['Contract price', 'Voted', 'After transfers', 'Spent'],
+            [TP.track('Regular routes, %s' % C.fy(last),
+                      [kp[last]['regular'], by[last]['regular']['budget'],
+                       by[last]['regular']['revised'], by[last]['regular']['spent']],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='Voted %s under the %s contract price, then %s moved back in, and %s spent: the '
+                 'whole contract. Town general fund, %s.'
+                 % (C.usd(m['netted']), C.usd(kp[last]['regular']), C.usd(m['moved_back']),
+                    C.usd(by[last]['regular']['spent']), C.fy(last)),
+            note_figures={'a': U(m['netted']), 'c': U(kp[last]['regular']),
+                          'b': U(m['moved_back']), 's': U(by[last]['regular']['spent']),
+                          'y': F(last)}),
         said=said('fee-11000', 'requests'),
         sources=src('glytdbud-expense', 'school-choice', 'fee'),
         finding_figures={'y': F(last)})
 
     # ---- FY2027 bus budget
+    bud = [r_ for r_ in pay['by_year'] if r_['fy'] >= 2022]
+    for r_ in bud:
+        if r_['school_budget'] + r_['athletic_budget'] + r_['band_budget'] != r_['all_budget']:
+            fail('FY%d: school-day, athletic and band budgets no longer sum to all buses' % r_['fy'])
+    if (bud[-1]['fy'], bud[-1]['school_budget'], bud[-2]['school_budget']) != (2027, x['sd27'], x['sd26']):
+        fail('the FY2027 bus-budget chart no longer ends on the school-day figures its finding states')
     out['fy2027-bus-budget'] = TP.page(
         'fy2027-bus-budget',
         'School-day buses rise %s in %s; the total shows %s because athletic buses were cut.'
@@ -4241,7 +4281,17 @@ def build_topics(m, brief, pay):
            {'y': F(2027)})],
         [con('The %s total looks flat because athletic buses were cut, not because buses got '
              'cheaper.' % C.fy(2027), ['sd27', 'all27', 'cut27'], {'y': F(2027)})],
-        chart=chart('schools-athletics'), said=said('cut', 'band'),
+        chart=TP.series(
+            'Bus budgets as voted, by kind',
+            [C.fy(r_['fy']) for r_ in bud],
+            [TP.track('School-day buses', [r_['school_budget'] for r_ in bud], 'published', 'bar'),
+             TP.track('Athletic buses', [r_['athletic_budget'] for r_ in bud], 'published', 'bar'),
+             TP.track('Band and music', [r_['band_budget'] for r_ in bud], 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Budgets voted before each year, never spending (rule 1). %s is the balanced '
+                 'budget book, with athletic buses at %s.' % (C.fy(2027), C.usd(0)),
+            note_figures={'y': F(2027), 'z': U(0)}, note_allow=('rule 1',)),
+        said=said('cut', 'band'),
         sources=src('budget', 'glytdbud-expense'),
         finding_figures={'a': P(x['sd_pct']), 'y': F(2027), 'b': P(x['all_pct'])})
 
@@ -4264,11 +4314,24 @@ def build_topics(m, brief, pay):
              'mostly pay for.', ['athletic', 'ath24', 'ath-sheet', 'levy-share', 'reclass']),
          con('The fee fund account that carried buses fell by more than three quarters the '
              'same year.', ['pos24', 'pos25'], notes=steps('athletic-fund', 'gap'))],
-        chart=chart('athletics'), said=said('reclass'),
+        chart=TP.series(
+            'Athletic buses, town line and fee fund',
+            [C.fy(y) for y in sorted(fb) if y <= last],
+            [TP.track('Town athletic bus line, spent',
+                      [by[y]['athletic']['spent'] for y in sorted(fb) if y <= last],
+                      'published', 'bar'),
+             TP.track('Fee fund, purchase of service',
+                      [fb[y]['hs_pos'] for y in sorted(fb) if y <= last], 'published', 'bar')],
+            '$', kind='bar',
+            note='Both from the town’s ledger. The fee fund account also carries officials, '
+                 'uniforms and ice time; buses are not split out of it.'),
+        said=said('reclass'),
         sources=src('glytdbud', 'athletic') + REVDIST,
         finding_figures={'y': F(2025)})
 
     # ---- FY2027 athletic bus cut
+    if r['town'] + r['fund'] != r['rounded']:
+        fail('the town and fee fund shares no longer sum to what was put back')
     out['fy2027-athletic-bus-cut'] = TP.page(
         'fy2027-athletic-bus-cut',
         '%s cut athletic buses from the town budget, then put %s back, most on the fee fund.'
@@ -4288,12 +4351,37 @@ def build_topics(m, brief, pay):
          con('The district’s %s estimate is below what the posted schedules would cost, by our '
              'estimate.' % C.usd(r['estimate']), ['estimate', 'sched27'], {'e': U(r['estimate'])},
              notes=steps('track', 'gap'))],
-        chart=chart('athletics'), said=said('restore', 'restore-vote', 'restore-why', 'waiver'),
+        chart=TP.series(
+            'What was put back, against the estimates',
+            ['Put back', 'District estimate', 'Posted schedules'],
+            [TP.track('From the town budget', [r['town'], None, None], 'published', 'bar'),
+             TP.track('From the fee fund', [r['fund'], None, None], 'published', 'bar'),
+             TP.track('The district’s estimate', [None, r['estimate'], None], 'published', 'bar'),
+             TP.track('Shared buses, contract prices',
+                      [None, None, m['stest']['assembled']['lo']], 'estimate', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='The last bar is ours, high school only: %s’s fall as posted, with %s’s winter '
+                 'and spring, teams sharing buses, at %s contract prices.'
+                 % (C.fy(2027), C.fy(2026), C.fy(2027)),
+            note_figures={'y': F(2027), 'z': F(2026)}),
+        said=said('restore', 'restore-vote', 'restore-why', 'waiver'),
         sources=src('athletic', 'bus-routes'),
         finding_figures={'y': F(2027), 'r': U(r['rounded'])})
 
     # ---- Bus cost by sport
     tr = A['track']
+    teams24 = sorted(tr['teams'][2024] if 2024 in tr['teams'] else tr['teams']['2024'],
+                     key=lambda t_: -t_['cost'])
+    if abs(teams24[0]['cost'] - tr['it24']) > 0.01:
+        fail('indoor track is no longer the top row of the FY2024 sheet')
+
+    def team_label(t_):
+        names = [re.sub(r'^(HS|MS)\s+', '', n_) for n_ in t_['sports']]
+        heads = {n_.split(' - ')[0] for n_ in names}
+        name = (names[0].split(' - ')[0] + ', boys and girls'
+                if len(names) == 2 and len(heads) == 1 and ' - ' in names[0]
+                else ' and '.join(names))
+        return name + (' (MS)' if t_['level'] == 'MS' else '')
     out['bus-cost-by-sport'] = TP.page(
         'bus-cost-by-sport',
         'Track costs most on the district’s sheet: %s in %s, ahead of the next sport’s %s.'
@@ -4309,7 +4397,16 @@ def build_topics(m, brief, pay):
            % C.fy(2025), 'published', {'y': F(2025)})],
         [con('Indoor track costs most on the district’s sheet, ahead of every other sport.',
              ['track', 'football', 'soccer'], notes=steps('track', 'gap') + link1('track'))],
-        chart=chart('sports'), said=[heard('reggie')],
+        chart=TP.ranking(
+            'Athletic bus cost by team',
+            [(team_label(t_), t_['cost']) for t_ in teams24[:TP.ROWS_MAX]], '$',
+            highlight=[team_label(t_) for t_ in teams24[:1]], basis='stated',
+            note='The %s most costly of %s teams on the district’s sheet, %s. Teams that shared '
+                 'a row there share one here.' % (C.num(min(TP.ROWS_MAX, len(teams24))),
+                                                    C.num(len(teams24)), C.fy(2024)),
+            note_figures={'k': N(min(TP.ROWS_MAX, len(teams24))), 'n': N(len(teams24)),
+                          'y': F(2024)}),
+        said=[heard('reggie')],
         sources=src('athletic', 'sport') + SCHED,
         finding_figures={'t': U(round(tr['it24'])), 'y': F(2024),
                          'n': U(round(tr['second24']['cost']))})
@@ -4335,7 +4432,17 @@ def build_topics(m, brief, pay):
              % (C.usd(round(s_['lo'])), C.usd(round(s_['hi']))), ['lo', 'hi', 'mile', 'hour'],
              {'a': U(round(s_['lo'])), 'b': U(round(s_['hi']))},
              notes=steps('track', 'gap'))],
-        chart=chart('sports'),
+        chart=TP.series(
+            'Away games and bus trips by year',
+            [C.fy(row['fy']) for row in m['sched']['by_fy'] if row['fy'] <= last],
+            [TP.track('Away games, posted schedules',
+                      [row['away'] for row in m['sched']['by_fy'] if row['fy'] <= last],
+                      'published', 'bar'),
+             TP.track('Bus trips', [row['trips'] for row in m['sched']['by_fy'] if row['fy'] <= last],
+                      'estimate', 'bar')],
+            'count', kind='bar',
+            note='Trips are ours: one bus a date and venue, shared by every Lunenburg team '
+                 'there. %s is left off; the year is not over.' % C.fy(2027), note_figures={'y': F(2027)}),
         table=dict(caption='Away games and bus trips by year', views=[dict(
             key='trips', label='From the posted schedules', total_col=4,
             kinds=['ledger', 'stated', 'stated', 'stated', 'stated'],

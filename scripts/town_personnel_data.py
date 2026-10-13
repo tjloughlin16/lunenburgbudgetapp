@@ -118,8 +118,12 @@ def load():
     ahead = sorted(y for y in terms if y.isdigit() and int(y) > int(last))
 
     # 3. HOW CONCENTRATED. Distinct people against posts held.
-    who = collections.Counter(r['person'].strip() for r in named)
-    multi = sorted(((n, c) for n, c in who.items() if c > 1), key=lambda a: (-a[1], a[0]))
+    # `holders`, not `who`: the school-roster loop below reused `who` as its loop variable,
+    # so `distinct=len(holders)` measured one school's names in one year (60) rather than the
+    # people holding posts in the listing. Fixed 13 October 2026.
+    holders = collections.Counter(r['person'].strip() for r in named)
+    multi = sorted(((n, c) for n, c in holders.items() if c > 1),
+                   key=lambda a: (-a[1], a[0]))
 
     # 4. DOES ANYBODY STAY. Names carried over, arrived and gone, year to year.
     names = {y: {r['person'].strip() for r in rows
@@ -397,7 +401,7 @@ def load():
                 ahead=ahead,
                 body_churn=body, body_big=big, staffing=staff, fire=fire_series,
                 fill=fill,
-                distinct=len(who), held=len(named), multi=multi, churn=churn,
+                distinct=len(holders), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)
 
 

@@ -119,6 +119,13 @@ def p100(x):
     return 100.0 * x
 
 
+def span(*maps):
+    """Every year from the first any map holds to the last, so a year nobody printed is a
+    gap in the chart and never a zero."""
+    ys = sorted(set().union(*[set(m) for m in maps]))
+    return list(range(ys[0], ys[-1] + 1))
+
+
 # --------------------------------------------------------------------- the pages
 
 def build():
@@ -206,6 +213,14 @@ def build():
               for r in sorted(EN['district'], key=lambda r: -r['fy'])],
         note='DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to '
              'the total by the few students DESE counts beyond grade 12.')])
+    # THE SIGNATURE of the page and of the hub: the headcount every year DESE prints it, so
+    # the peak, the fall and the plateau the finding names are one picture.
+    tot = {y: r['total'] for y, r in dist.items()}
+    year_chart = TP.series('Children enrolled, every year', [C.fy(y) for y in span(tot)],
+                           [TP.track('Enrolled, DESE headcount', [tot.get(y) for y in span(tot)],
+                                     'published')], 'children', kind='bar',
+                           note='DESE’s 1 October headcount. A gap is a year the file does not '
+                                'print.', note_allow=('1 October',))
     out['enrolment-by-year'] = TP.page(
         'enrolment-by-year',
         '%s children in %s: %s fewer than the %s peak, and close to where the count has sat since %s.'
@@ -226,9 +241,12 @@ def build():
            {'y': F(tr['fy'])}),
          f('town-choice', N(tr['district_choice_in'], 'children'),
            'of them listed as school choice students', 'published'),
+         f('dese-in', N(fl1['in_all'], 'children'),
+           'of DESE’s %s count, resident in another town' % C.fy(last_fy), 'published',
+           {'y': F(last_fy)}),
          f('spfile', N(sp_enr['enrolled'], 'children'),
-           'enrolled, %s, DESE’s special education file' % C.fy(last_fy), 'published',
-           {'y': F(last_fy)})],
+           'in and out of district, %s, DESE special education file' % C.fy(last_fy),
+           'published', {'y': F(last_fy)})],
         [con('Enrolment fell %s from %s to %s, then stopped falling.'
              % (C.pct(fall), C.fy(pk['fy']), C.fy(tr0['fy'])), ['peak', 'trough', 'fall'],
              {'p': P(fall), 'a': F(pk['fy']), 'b': F(tr0['fy'])},
@@ -242,15 +260,26 @@ def build():
              % (C.num(d26['total']), C.num(sp_enr['enrolled']), C.num(tr['district_total'])),
              ['now', 'spfile', 'town', 'town-choice'],
              {'a': N(d26['total']), 'b': N(sp_enr['enrolled']), 'c': N(tr['district_total'])},
-             notes=[step('The town’s table prints DESE’s %s school totals as residents, then '
-                         'adds %s school choice students. DESE’s totals already include them, '
-                         'so they may be counted twice; nothing here confirms it.'
-                         % (C.fy(last_fy), C.num(tr['district_choice_in'])), 'hypothesis',
-                         {'y': YL0, 'n': N(tr['district_choice_in'])}),
-                    step('What DESE’s special education file counts as enrolled is not stated '
-                         'beside it, and nothing published reconciles it to the headcount.',
+             notes=[step('DESE’s special education file heads its count “Total In- and '
+                         'Out-of-District Students”; nothing published reconciles it to the '
+                         'headcount.',
                          'gap', closes='DESE’s definition of the enrolment column in its '
-                                       'special education program file, for the same year')])],
+                                       'special education program file, for the same year')]),
+         # MEASURED, not a hypothesis: DESE's receiving file splits the headcount into
+         # residents and children from other towns, and the assert above ties the two
+         # halves to the headcount. So the town's "Resident" column, which IS the headcount,
+         # already holds those children, and its total adds school choice again on top.
+         con('DESE’s %s includes %s children from other towns; the town’s table adds %s more.'
+             % (C.num(d26['total']), C.num(fl1['in_all']), C.num(tr['district_choice_in'])),
+             ['now', 'dese-in', 'town', 'town-choice'],
+             {'a': N(d26['total']), 'b': N(fl1['in_all']), 'c': N(tr['district_choice_in'])},
+             notes=[step('DESE counts %s of those children under school choice and the town '
+                         'counts %s; nothing here matches the two lists child by child.'
+                         % (C.num(fl1['in_choice']), C.num(tr['district_choice_in'])), 'gap',
+                         {'a': N(fl1['in_choice']), 'b': N(tr['district_choice_in'])},
+                         closes='the district’s 1 October school choice roster for the same year',
+                         allow=('1 October',))])],
+        chart=year_chart,
         table=year_table,
         sources=S('dese-enrollment-by-grade.xlsx', '4130-fy-2025-annual-town-report.pdf',
                   'dese-sped-program-characteristics.xlsx'),
@@ -299,6 +328,13 @@ def build():
          con('The younger bands fell far less: %s for pre-K to grade 5, %s for grades 6–8.'
              % (C.pct(k5P), C.pct(mdP)), ['k50', 'k51', 'md0', 'md1'],
              {'a': P(k5P), 'b': P(mdP)}, allow=('grade 5', '6–8'))],
+        # The three bands over the same years: the finding is that one fell much further.
+        chart=(lambda ys: TP.series('Enrolment by grade band', [C.fy(y) for y in ys], [
+            TP.track('Pre-K to grade 5', [dist[y]['k5'] if y in dist else None for y in ys]),
+            TP.track('Grades 6–8', [dist[y]['g68'] if y in dist else None for y in ys]),
+            TP.track('Grades 9–12', [dist[y]['g912'] if y in dist else None for y in ys])],
+            'children', note='DESE’s 1 October headcount, Lunenburg district rows.',
+            note_allow=('1 October',)))([y for y in span(dist) if y >= b0]),
         table=dict(caption='Enrolment by grade band and by school', views=[
             dict(key='bands', label='Grade bands, %s and %s' % (C.fy(b0), C.fy(last_fy)),
                  total_col=-1, kinds=['ledger', 'ledger', 'stated'],
@@ -387,6 +423,19 @@ def build():
                          'learner, low income and on a plan at once, so the groups are never '
                          'added.', 'gap', closes='nothing; it is the definition. DESE '
                                                  'publishes the union, not the overlaps')])],
+        # Low income as three tracks because it IS three definitions (rule 13a): the steps
+        # where one hands over to the next are definition changes, not measurements.
+        chart=(lambda ys, o, e, n, el: TP.series(
+            'English learners and low income', [C.fy(y) for y in ys], [
+                TP.track('Low income, free or reduced lunch', [o.get(y) for y in ys]),
+                TP.track('Economically disadvantaged', [e.get(y) for y in ys]),
+                TP.track('Low income, broader definition', [n.get(y) for y in ys]),
+                TP.track('English learners', [el.get(y) for y in ys])],
+            'children', note='DESE’s counts. The three low-income lines are three definitions '
+                             'and never one series.'))(
+            [y for y in span(dist) if y >= b0], {r['fy']: r['n'] for r in li['old']},
+            {r['fy']: r['n'] for r in li['econ']}, {r['fy']: r['n'] for r in li['new']},
+            {y: r['el'] for y, r in dist.items() if r['el'] is not None}),
         table=dict(caption='Groups within enrolment, by year', views=[
             dict(key='groups', label='English learners, disabilities, high needs', total_col=-1,
                  kinds=['ledger'] * 3,
@@ -432,6 +481,15 @@ def build():
                                 'region formed'),
                     step('Births and housing are outside this file, so why the region fell is '
                          'not tested here.', 'hypothesis')])],
+        # Drawn as the FALL, the same positive figure the facts print, so a bar and its tile
+        # cannot round one number two ways.
+        chart=TP.ranking('Enrolment fall, nearby districts',
+                         [(p['district'], -p100(p['pct'])) for p in EN['peers']], '%',
+                         highlight='Lunenburg',
+                         basis='estimate',
+                         note='%s to %s, DESE’s 1 October headcount for each district (the fall '
+                              'is our arithmetic).' % (C.fy(b0), C.fy(last_fy)),
+                         note_figures={'a': YB, 'b': YL}, note_allow=('1 October',)),
         table=dict(caption='Enrolment in nearby districts and Lunenburg', views=[dict(
             key='peers', label='%s and %s' % (C.fy(b0), C.fy(last_fy)), total_col=-1,
             kinds=['ledger', 'ledger', 'stated'], columns=[C.fy(b0), C.fy(last_fy), 'Change'],
@@ -499,6 +557,17 @@ def build():
                          'hypothesis', {'a': P(p100(swd['min'])), 'b': P(p100(swd['max']))})]),
          con('No published record says where a departing eighth grader went.', ['where'],
              allow=G8)],
+        # The latest year's own rates, read off DESE's file -- no mean taken -- with grade 8,
+        # the grade the finding is about, marked. It was the highest in every year.
+        chart=TP.ranking('Leaving rate by grade, the latest year',
+                         [('Kindergarten' if g['grade'] == 'K' else 'Grade %s' % g['grade'],
+                           p100(g['rate'])) for g in AT['district'][-1]['grades']], '%',
+                         highlight='Grade 8',
+                         note='SY%d, DESE’s attrition rate. Grade 8 was the highest grade in all '
+                              '%s years the file covers.' % (AT['district'][-1]['sy'],
+                                                            C.num(ot['years'])),
+                         note_figures={'y': SY(AT['district'][-1]['sy']), 'n': N(ot['years'])},
+                         note_allow=('Grade 8',)),
         table=dict(caption='Leaving rate by grade', views=[dict(
             key='grades', label='Every grade, %s years' % C.num(ot['years']), total_col=-1,
             kinds=['ledger', 'ledger', 'ledger'], columns=['Mean', 'Lowest year', 'Highest year'],
@@ -549,6 +618,11 @@ def build():
              {'s': figure(p100(er['spread']), C.points(p100(er['spread'])))}),
          con('In a grade of %s children, each child who leaves moves the rate almost a point.'
              % C.num(lt['cohort']), ['cohort'], {'n': N(lt['cohort'])})],
+        chart=TP.series('Eighth-grade leaving rate by year', ['SY%d' % r['sy'] for r in ot['series']],
+                        [TP.track('Grade 8, share not back the next autumn',
+                                  [p100(r['rate']) for r in ot['series']])], '%',
+                        note='DESE’s attrition rate for grade 8, every school year it publishes.',
+                        note_allow=('grade 8',)),
         table=dict(caption='Grade 8 leaving rate by year', views=[dict(
             key='g8', label='Seventeen years', total_col=-1, kinds=['ledger', 'ledger', 'stated'],
             columns=['Rate', 'Grade 8 the year before', 'Implied children'], rows=g8_rows,
@@ -589,6 +663,16 @@ def build():
              'measures.', ['per', 'rate', 'who'],
              notes=[step('Births, families moving in and children returning from private '
                          'schools all fit the residual equally.', 'hypothesis')])],
+        # Two flows a year: the departures DESE's rate implies (ours, so an estimate) and the
+        # headcount's own change. The distance between them is the arrivals nobody counts.
+        chart=TP.series('Implied departures and the net change', ['SY%d' % r['sy'] for r in ch['years']], [
+            TP.track('Departures, rate times enrolment', [r['implied'] for r in ch['years']],
+                     'estimate', 'bar'),
+            TP.track('Net change in enrolment',
+                     [dist[r['sy']]['total'] - dist[r['sy'] - 1]['total'] for r in ch['years']],
+                     'published', 'bar')], 'children',
+            note='Departures are DESE’s rate times its enrolment (ours). The net change is each '
+                 'headcount less the year before.'),
         sources=S('dese-student-attrition.xlsx', 'dese-enrollment-by-grade.xlsx'),
         finding_figures={'a': N(ch['per_year_whole']), 'b': N(-ch['enrol_change']),
                          'n': N(ch['transitions'])})
@@ -637,6 +721,13 @@ def build():
              notes=[step('The file carries no disability flag either, so none of these is a '
                          'special education count.', 'gap',
                          closes='DESE’s residents-by-district file with disability status')])],
+        chart=TP.series('Resident children in other districts', [C.fy(r['fy']) for r in OF['routes']], [
+            TP.track('All public districts elsewhere', [r['elsewhere'] for r in OF['routes']]),
+            TP.track('Monty Tech', [r['monty_tech'] for r in OF['routes']]),
+            TP.track('School choice', [r['school_choice'] for r in OF['routes']]),
+            TP.track('Charter schools', [r['charter'] for r in OF['routes']])], 'children',
+            note='DESE’s enrolment of town residents by district. Private schools are not in it, '
+                 'so the total is a floor.'),
         table=dict(caption='Resident children schooled outside Lunenburg, by route', views=[dict(
             key='routes', label='Thirteen years', total_col=3, kinds=['ledger'] * 4,
             columns=['Monty Tech', 'School choice', 'Charter', 'All elsewhere'],
@@ -688,6 +779,10 @@ def build():
                          'separates them.', 'hypothesis')]),
          con('No document in the archive states the tuition that follows a child either way.',
              ['tuition', 'net1'])],
+        chart=TP.series('School choice, both directions', [C.fy(r['fy']) for r in net], [
+            TP.track('Residents leaving', [r['out'] for r in net]),
+            TP.track('Children arriving', [r['in'] for r in net])], 'children', kind='bar',
+            note='DESE’s two enrolment files, school choice rows only.'),
         table=dict(caption='School choice, both directions', views=[dict(
             key='net', label='Thirteen years', total_col=-1, kinds=['ledger'] * 3,
             columns=['Out', 'In', 'Net'],
@@ -760,6 +855,13 @@ def build():
              notes=[step('Nothing published says at what enrolment a section is removed.', 'gap',
                          closes='the district’s staffing rule for when a section is added or '
                                 'removed')])],
+        # The scenario's year-one figure IS these two parts (asserted above); every part is
+        # on assumed rates, so the whole is an estimate.
+        chart=TP.parts('Year one of the scenario', [('Sending tuition', sc['tuition_out']),
+                                                    ('Chapter 70 aid lost', sc['aid_loss'])],
+                       '$', basis='estimate',
+                       note='Assumed rates, not a forecast: the statutory base tuition and the '
+                            'minimum aid increment.'),
         said=[said(OF, 'fivethousand')],
         sources=S('dese-residents-sending.xlsx', 'dese-ch70-district-profile.xlsx',
                   'ch70-fy27-summary.xlsx'),
@@ -824,6 +926,11 @@ def build():
                          'pupil. That is the formula’s assumption, not a measured cost.',
                          'gap', closes='Monty Tech’s spending attributed to member towns, which '
                                        'no published document gives')])],
+        chart=TP.series('Monty Tech pupils, two DESE counts', [C.fy(r['fy']) for r in MT['counts']], [
+            TP.track('Headcount, 1 October', [r['headcount'] for r in MT['counts']]),
+            TP.track('Foundation enrolment, Chapter 70', [r['foundation'] for r in MT['counts']])],
+            'children', note='Two counts of the same residents that differ every year. Neither is '
+                             'chosen or averaged.'),
         table=dict(caption='Lunenburg residents at Monty Tech, two DESE counts', views=[dict(
             key='counts', label='Thirteen years', total_col=-1, kinds=['ledger'] * 3,
             columns=['Headcount', 'Foundation enrolment', 'Difference'],
@@ -890,6 +997,12 @@ def build():
                                                   C.pct(share_from), C.pct(fb)), 'gap',
                          {'a': P(p100(fc['required_cagr'])), 'b': P(share_from), 'c': P(fb)},
                          closes='the method behind the projection in the Select Board packet')])],
+        chart=(lambda ys: TP.series('Monty Tech assessment and its minimum', [C.fy(y) for y in ys], [
+            TP.track('The assessment', [asm[y]['total'] for y in ys], 'stated', 'bar'),
+            TP.track('State-required minimum', [asm[y]['required'] for y in ys], 'published',
+                     'line')], '$',
+            note='The district’s budget books, and for one year the Town’s appropriation; the '
+                 'minimum is DESE’s. A gap is a year it was not published.'))(sorted(asm)),
         table=dict(caption='The Monty Tech assessment, by year and part', views=[dict(
             key='parts', label='Five years', total_col=0,
             kinds=['stated', 'ledger', 'stated', 'stated'],
@@ -958,7 +1071,7 @@ def build():
         'Another %s residents were schooled in other public districts, %s of them at Monty Tech.'
         % (C.num(d26['total']), C.fy(last_fy), C.fy(tr0['fy']), C.num(ol['elsewhere']),
            C.num(rlast['monty_tech'])),
-        hub_ladder, table=year_table,
+        hub_ladder, chart=year_chart, table=year_table,
         answer_figures={'a': N(d26['total']), 'y': YL, 'z': F(tr0['fy']),
                         'b': N(ol['elsewhere']), 'c': N(rlast['monty_tech'])})
 

@@ -422,12 +422,28 @@ def render(d):
                 word(len(stopped))))
     susp = [e for e in emp if e['suspect']]
     if susp:
-        t.append('\nA year whose count reads under half the year before it is dropped as a '
-                 'short read rather than published as a cut: %s. The Police roster comes '
-                 'back as seven officers in FY2024 against twenty-five in FY2023, which is '
-                 'a page this reader did not find, not three quarters of a police force.\n'
-                 % '; '.join('%s FY%s' % (e['department'], ', FY'.join(e['suspect']))
-                             for e in susp))
+        # THE REASON IS DERIVED, PER YEAR, from the same two tests `town_personnel_data`
+        # applies. This paragraph used to say every dropped year was a collapse and quoted
+        # a Police FY2024 count of seven typed into the sentence; by 13 October 2026 FY2024
+        # read 25 and the year dropped was FY2014, which is a SPIKE (26 between 17 and 14).
+        def why(e, fy):
+            ser = {p_['fy']: p_['people'] for p_ in e['series']}
+            ys = sorted(ser)
+            i = ys.index(fy)
+            before = ser[ys[i - 1]] if i else None
+            after = ser[ys[i + 1]] if i + 1 < len(ys) else None
+            if before is not None and ser[fy] < before * 0.5:
+                return ('%s FY%s, %s against %s the year before'
+                        % (e['department'], fy, num(ser[fy]), num(before)))
+            if before is not None and after is not None:
+                return ('%s FY%s, %s between %s and %s'
+                        % (e['department'], fy, num(ser[fy]), num(before), num(after)))
+            return '%s FY%s' % (e['department'], fy)
+        t.append('\nA year whose count reads under half the year before it, or more than '
+                 '40%% above the years on both sides, is dropped as a misread rather than '
+                 'published as a cut or a hiring: %s. The dropped year stays in the series, '
+                 'marked, and the change is measured between the years that remain.\n'
+                 % '; '.join(why(e, fy) for e in susp for fy in e['suspect']))
 
     t.append('\n## Headcount over time\n')
     t.append('\n![Every department that publishes a headcount, drawn on one people axis '
@@ -551,18 +567,20 @@ def render(d):
         t.append('\n## How long people stay, and how many leave\n\n')
         t.append('A person’s tenure here is the number of years their name appears under '
                  'a department **in the years that department published anything** — not '
-                 'calendar years, because 27 of 86 bodies skip at least one year inside '
+                 'calendar years, because %s of %s bodies skip at least one year inside '
                  'their own span and a naive count reads a missed report as the whole '
-                 'staff leaving and coming back.\n\n')
+                 'staff leaving and coming back.\n\n' % _gap_bodies())
+        # No employee is named here (rule 13e): `build_tenure.py` blanks the person for
+        # every school and department body, so the longest record is a length only.
         t.append('| department | people | years published | median | median, uncensored | '
-                 'longest | still there | names not reappearing |\n')
+                 'longest, in years | still there | names not reappearing |\n')
         t.append('|---|---:|---:|---:|---:|---:|---:|---:|\n')
         for u in ten:
-            t.append('| %s | %d | %d | %s | %s | %d — %s | %d | %.0f%% a year |\n'
+            t.append('| %s | %d | %d | %s | %s | %d | %d | %.0f%% a year |\n'
                      % (u['unit'], u['people'], u['published_years'],
                         u['median_all'],
                         u['median_settled'] if u['median_settled'] is not None else '—',
-                        u['longest'], u['longest_person'], u['still_there'],
+                        u['longest'], u['still_there'],
                         100 * (u['turnover'] or 0)))
         cens = sum(u['people'] - u['settled'] for u in ten)
         tot = sum(u['people'] for u in ten)
@@ -589,6 +607,17 @@ def render(d):
     for s_ in _sources(d):
         t.append('- **%s** — %s. %s\n' % (s_['what'], s_['where'], s_['note']))
     return ''.join(t)
+
+
+def _gap_bodies():
+    """How many bodies skip a year inside their own span, of how many -- derived, because
+    the typed `27 of 86` this replaced had gone stale against `tenure.json`."""
+    import json as _json
+    units = _json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'tenure.json'),
+                            encoding='utf-8'))['units']
+    gap = sum(1 for u in units
+              if u['published_years'] < int(u['last_fy']) - int(u['first_fy']) + 1)
+    return num(gap), num(len(units))
 
 
 def _tenure():

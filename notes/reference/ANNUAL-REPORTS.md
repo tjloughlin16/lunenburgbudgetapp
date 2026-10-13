@@ -47,7 +47,7 @@ Read `column_meaning` before reading a value.
 | `report-dept-activity.csv` | 515 | 2011–2025 | 0 checked / 0 failed / 515 no check | yes | shared | yes |
 | `report-elections.csv` | 2,012 | 2011–2025 | 323 checked / 1,688 failed / 1 no check | yes | shared | yes |
 | `report-enrollment-mcas.csv` | 338 | 2011–2025 | 0 checked / 0 failed / 338 no check | yes | shared | yes |
-| `report-filing.csv` | 104 | — | — | **no** | shared | yes |
+| `report-filing.csv` | 119 | — | — | **no** | shared | yes |
 | `report-gross-wages.csv` | 3,547 | 2011–2025 | 0 checked / 0 failed / 3,547 no check | yes | shared | yes |
 | `report-index.csv` | 698 | 2011–2025 | — | **no** | shared | yes |
 | `report-monty-tech.csv` | 70 | 2017–2017 | 0 checked / 0 failed / 70 no check | yes | shared | yes |

@@ -47,15 +47,18 @@ DEFAULT_ASSUMPTIONS = dict(
     # revenue
     levy_growth=0.025,     # Proposition 2 1/2 -- statutory
     new_growth=400_000,    # town's own FY27 estimate
-    # 2.75% -- the MEDIAN annual step in the town's own `Subtotal State Aid` line,
-    # FY2005-FY2027, twenty-three consecutive BUDGET years. Like for like with what this
-    # field is: a forward estimate of the whole cherry sheet, not of Chapter 70 alone.
+    # 2.75% -- the MEDIAN annual step in the town's own budgeted cherry sheet total
+    # (2.7110% since the 13 October 2026 correction, which read FY2025-FY2027 with school
+    # choice included, as the earlier years and this field's base are), rounded to the
+    # quarter point. FY2005-FY2027, twenty-three consecutive BUDGET years. Like for like
+    # with what this field is: a forward estimate of the whole cherry sheet, not of
+    # Chapter 70 alone.
     # See notes/findings/STATE-AID-RATE.md and notes/findings/state-aid-budget-series.csv,
     # which is generated and --checked.
     #
-    # The median rather than the 3.5724% CAGR, because the CAGR is carried by four policy
+    # The median rather than the 3.6045% CAGR, because the CAGR is carried by four policy
     # step-years -- FY2007 +10.1%, FY2013 +12.0%, FY2018 +12.2%, FY2023 +11.2% -- and
-    # projecting it forward assumes a legislature. Not the 1.9% of the last four years
+    # projecting it forward assumes a legislature. Not the ~2.1% of the last four years
     # either: that window opens the year AFTER an 11.2% jump, which is rule 6's warning
     # about reading a rate without reading the year-by-year.
     #

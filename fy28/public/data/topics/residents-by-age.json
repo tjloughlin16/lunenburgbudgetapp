@@ -1,6 +1,67 @@
 {
  "category": "homes-and-taxes",
- "chart": null,
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Census Bureau sample estimates. Each band carries a margin of error, in the table; two whose intervals overlap are not different."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "2014–2018",
+    "texts": [
+     "2,578 residents",
+     "709 residents",
+     "2,336 residents",
+     "3,838 residents",
+     "1,810 residents"
+    ],
+    "values": [
+     2578.0,
+     709.0,
+     2336.0,
+     3838.0,
+     1810.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "2019–2023",
+    "texts": [
+     "2,736 residents",
+     "653 residents",
+     "2,983 residents",
+     "3,453 residents",
+     "1,979 residents"
+    ],
+    "values": [
+     2736.0,
+     653.0,
+     2983.0,
+     3453.0,
+     1979.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Residents by age, two samples",
+  "type": "series",
+  "unit": "residents",
+  "x": [
+   "Under 18",
+   "18 to 24",
+   "25 to 44",
+   "45 to 64",
+   "65 and over"
+  ]
+ },
  "conclusions": [
   {
    "figures": {

@@ -458,6 +458,13 @@ def build():
              notes=[step('Buildings moving load from gas to electricity, rates, and the solar '
                          'arrangement all fit the electricity line; none is tested here.',
                          'hypothesis')])],
+        chart=TP.series(
+            'School accounts past budget at the close', [C.fy(fy) for fy in sorted(over)],
+            [TP.track('Accounts past budget', [over[fy][0] for fy in sorted(over)],
+                      'published', 'bar')],
+            'accounts', kind='bar',
+            note='Department 300, period 13 of each year: accounts whose own available column '
+                 'closed below zero.', note_allow=('300', '13')),
         table=dict(caption='School accounts past their budgets at the close, by year', views=[
             dict(key='years', label='Department 300, period 13', total_col=-1,
                  kinds=['ledger'] * 3,
@@ -540,6 +547,15 @@ def build():
              notes=[step('Whatever paid the search invoice, this line shows no payment of it. '
                          'Nothing held reconciles the two.', 'gap',
                          closes='the superintendent search invoice and the entry that paid it')])],
+        chart=TP.series(
+            'School transfers in and out', [C.fy(fy) for fy in sorted(by_year)],
+            [TP.track('Moved into accounts', [by_year[fy]['transfers_in'] for fy in sorted(by_year)],
+                      'published', 'bar'),
+             TP.track('Moved out of accounts', [-by_year[fy]['transfers_out']
+                                                for fy in sorted(by_year)], 'published', 'bar')],
+            '$', kind='bar',
+            note='Gross, summed account by account from the period-13 reports. The ledger names '
+                 'no counterparty for any of it.', note_allow=('13',)),
         table=dict(caption='Accounts given money in %s that closed with money left'
                    % C.fy(2026), views=[dict(
                        key='given', label='Department 300, period 13', total_col=-1,
@@ -592,6 +608,13 @@ def build():
                          'decision, and none is recorded here.', 'gap',
                          closes='the state’s FY2026 free cash certification for Lunenburg, and '
                                 'the Town Meeting votes that appropriate it')])],
+        chart=TP.ranking(
+            'The cut beside the surplus',
+            [('%s, below level service' % C.fy(2027), cut['gap']),
+             ('%s, left unspent' % C.fy(2026), left26),
+             ('%s, if every order is released' % C.fy(2026), ceiling)], '$',
+            note='A budget and a ledger, set side by side and never subtracted: the budget was '
+                 'drawn up months before the close.'),
         sources=[src['wb27'], src['p13-26'], src['d-wb'], src['d-munis']],
         finding_figures={'y': F(2027), 'g': U(cut['gap']), 'z': F(2026), 'a': U(left26)})
 
@@ -714,6 +737,15 @@ def build():
                          'is not held.', 'gap',
                          closes='the circuit breaker fund’s balance and claims by year, from '
                                 'the district')])],
+        chart=TP.series(
+            'Out-of-district tuition, by who paid', [C.fy(r['fy']) for r in tu['by_year']],
+            [TP.track('General fund', [r['general_fund'] for r in tu['by_year']], 'published',
+                      'bar'),
+             TP.track('Circuit breaker', [r['circuit_breaker'] for r in tu['by_year']],
+                      'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Paid and committed, period 13. A general fund line is the town’s share, not '
+                 'the cost.', note_allow=('13',)),
         table=dict(caption='Out-of-district tuition, by who paid', views=[dict(
             key='funds', label='General fund and circuit breaker, spent', total_col=2,
             kinds=['ledger'] * 4,
@@ -742,6 +774,12 @@ def build():
     if len(sped) != 5 or len(sped_over) != 5 or not near(sped_paid, cr['sped_paras_paid_fy26']) \
             or not near(sped_net, cr['sped_paras_over_fy26']):
         fail('the special-education paraprofessional lines no longer match the payload')
+    para_rows = sorted([r for r in L[2026] if r['function'] == 2330 and r['ytd_expended']],
+                       key=lambda r: r['available_budget'])
+    if any(r['available_budget'] >= 0 for r in para_rows) or len(kinder) != 2 \
+            or not all(r in para_rows for r in kinder):
+        fail('the paraprofessional chart note no longer holds: every paying account over, '
+             'two kindergarten accounts among them')
     out['fy2026-paraprofessional-overrun'] = TP.page(
         'fy2026-paraprofessional-overrun',
         'Paraprofessional accounts ran %s over in %s; %s of it was paid against no budget.'
@@ -779,6 +817,12 @@ def build():
              % (C.fy(2027), C.usd(cr['sped_paras_fy27']), C.fy(2026), C.usd(sped_paid)),
              ['sp-27', 'sp-paid'],
              {'y': F(2027), 'a': U(cr['sped_paras_fy27']), 'z': F(2026), 'b': U(sped_paid)})],
+        chart=TP.ranking(
+            'Paraprofessional accounts past budget',
+            [(r['description'].capitalize(), -r['available_budget']) for r in para_rows], '$',
+            highlight=[r['description'].capitalize() for r in kinder],
+            note='Function 2330, period 13: every account that paid anything closed over. The '
+                 'two kindergarten accounts had no budget at all.', note_allow=('2330', '13')),
         table=dict(caption='Paraprofessional accounts that paid anything, %s' % C.fy(2026),
                    views=[dict(
                        key='paras', label='Function 2330, period 13', total_col=-1,
@@ -847,6 +891,16 @@ def build():
              notes=[step('That one paid for the other is a hypothesis. Late hires, contract '
                          'steps and hours fit the same two numbers, and no headcount is '
                          'published.', 'hypothesis')])],
+        chart=TP.series(
+            'School psychologist accounts', ['Psychologist, %s' % r['org']
+                                             for r in sorted(psy, key=lambda r: r['org'])],
+            [TP.track('Budget', [r['revised_budget'] for r in sorted(psy, key=lambda r: r['org'])],
+                      'published', 'bar'),
+             TP.track('Paid', [r['ytd_expended'] for r in sorted(psy, key=lambda r: r['org'])],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='Object 511023, one account per building, period 13. None received a transfer.',
+            note_allow=('511023', '13')),
         table=dict(caption='Psychologist and social worker accounts, %s' % C.fy(2026),
                    views=[dict(
                        key='support', label='Objects 511023 and 511024, period 13',
@@ -875,6 +929,8 @@ def build():
         fail('the two transfer accounts no longer spend their revised budgets exactly')
     tr_o = round(sum(r['original'] for r in tr), 2)
     tr_e = round(sum(r['expended'] for r in tr), 2)
+    if not near(t['expended'] + t['encumbered'] + t['available'], t['revised'], 0.05):
+        fail('the town report no longer foots: paid + committed + left != budget')
     out['fy2026-town-unspent'] = TP.page(
         'fy2026-town-unspent',
         'In June, before the close, town departments stood %s under a %s budget.'
@@ -917,6 +973,14 @@ def build():
          con('%s was still committed in June; released in full, the figure reaches %s.'
              % (C.usd(t['encumbered']), C.usd(t_ceiling)), ['t-enc', 't-ceil', 'p13'],
              {'e': U(t['encumbered']), 'c': U(t_ceiling)})],
+        chart=TP.ranking(
+            'Town accounts under and over in June',
+            [('Left on accounts under budget', t_under_amt),
+             ('Spent past budget on the others', t_over_amt),
+             ('Net left unspent', t['available'])], '$', highlight='Net left unspent',
+            note='Town departments, period 12, before the close: %s accounts under, %s over.'
+                 % (C.num(len(t_under)), C.num(len(t_over))),
+            note_figures={'n': N(len(t_under)), 'm': N(len(t_over))}, note_allow=('12',)),
         table=dict(caption='The town general fund, %s, as of June' % C.fy(2026), views=[dict(
             key='town', label='67 departments, period 12', total_col=-1, kinds=['ledger'],
             columns=['Town departments'],
@@ -970,6 +1034,18 @@ def build():
              notes=[step('A contingency nobody needed, a policy of leaving it, or a reserve '
                          'nobody asked to use all fit; nothing here separates them.',
                          'hypothesis')])],
+        chart=TP.series(
+            'Snow removal and the Reserve Fund',
+            ['Snow removal', 'Snow wages', 'Reserve Fund'],
+            [TP.track('Voted', [sn['original'], wages['original'], rf['original']], 'published',
+                      'bar'),
+             TP.track('After transfers', [sn['revised'], wages['revised'], rf['revised']],
+                      'published', 'bar'),
+             TP.track('Paid by June', [sn['expended'], wages['expended'], rf['expended']],
+                      'published', 'bar')],
+            '$', kind='bar',
+            note='Period 12, books still open. The Reserve Fund’s paid bar is a true zero.',
+            note_allow=('12',)),
         table=dict(caption='Snow removal, department 423, as of June', views=[dict(
             key='snow', label='Period 12', total_col=-1, kinds=['ledger'] * 4,
             columns=['Voted', 'Moved in, net', 'Paid', 'Left'],
@@ -1023,6 +1099,12 @@ def build():
              {'s': U(shi_paid), 'y': F(2026)}),
          con('Whether any of the town’s other %s covers school staff is not split out.'
              % C.usd(rest), ['rest', 'hi', 'split'], {'r': U(rest)})],
+        chart=TP.ranking(
+            'The insurance department, paid by June',
+            [(r['name'], r['expended']) for r in ins], '$', highlight='SCHRETHLTH',
+            note='Department 914, period 12, account names as MUNIS prints them. The school '
+                 'ledger’s own insurance account is a different report and is not drawn here.',
+            note_allow=('914', '12')),
         table=dict(caption='Department 914, insurance, as of June', views=[dict(
             key='ins', label='Period 12', total_col=-1, kinds=['ledger'] * 3,
             columns=['Budget', 'Paid', 'Left'],
