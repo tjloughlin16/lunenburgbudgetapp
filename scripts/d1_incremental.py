@@ -252,6 +252,18 @@ def _prune_children(sch, table, doomed, out, touched, depth=0):
         touched.add(child)
 
 
+def _descendants(sch, table, depth=0):
+    """Every table referencing `table`, at any depth, deepest first."""
+    if depth > 8:
+        raise SystemExit('foreign keys nest deeper than 8 below %s; refusing' % table)
+    out = []
+    for child, _c, _p in sch.get(table, ((), []))[1]:
+        for d in _descendants(sch, child, depth + 1) + [child]:
+            if d not in out:
+                out.append(d)
+    return out
+
+
 def batch_sql(local, send, drop, sch=None):
     """One transaction's worth of SQL: defer the keys, then replace only what changed.
 
@@ -312,6 +324,27 @@ def batch_sql(local, send, drop, sch=None):
             out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
                        % (SYNC_TABLE, _q(t), _q(sha), rows))
             continue
+        # A RESHAPED PARENT TAKES ITS CHILDREN WITH IT. 13 October 2026: `document` gained a
+        # column, so it was dropped and rebuilt -- and `ledger_snapshot` and `crosswalk`, not
+        # in the push, still pointed at its rows. D1 enforced the key at the DROP (the
+        # deferral does not span the import's batches, as above) and rolled everything back,
+        # four times. So: empty every descendant NOT already in this push (deepest first),
+        # rebuild the parent, then reload those descendants whole (parents first), all here.
+        # The children are usually small; `document`'s two were 11 rows between them.
+        # A descendant that IS in this push still holds its OLD rows on the remote until its
+        # own block runs, later -- so it is cleared here too (the second failure the same day:
+        # the trial-balance tables were in the push, after `document`, and still orphaned).
+        # DROP IF EXISTS, not DELETE: a table new to the remote may not be there to empty.
+        tail_reload = []
+        if reason != 'rows' and children:
+            how = {x: r for x, r, _ in send}
+            desc = _descendants(sch, t)
+            for c in desc:
+                if how.get(c) == 'rows':
+                    out.append('DELETE FROM "%s";' % c)
+                else:
+                    out.append('DROP TABLE IF EXISTS "%s";' % c)
+            tail_reload = [c for c in reversed(desc) if c not in how and c in local]
         if reason == 'rows':
             # Same shape, and nothing references it: keep the table, replace its contents.
             out.append('DELETE FROM "%s";' % t)
@@ -322,6 +355,14 @@ def batch_sql(local, send, drop, sch=None):
         out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(t)))
         out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
                    % (SYNC_TABLE, _q(t), _q(sha), rows))
+        for c in tail_reload:
+            csha, crows, ccreate, cinserts = local[c]
+            out.append('DROP TABLE IF EXISTS "%s";' % c)
+            out.append(ccreate.rstrip(';') + ';')
+            out.extend(cinserts)
+            out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(c)))
+            out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
+                       % (SYNC_TABLE, _q(c), _q(csha), crows))
     sent = {t for t, _, _ in send}
     for c in sorted(stale_children - sent):
         out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(c)))
