@@ -1,0 +1,438 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-sped",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "o": {
+     "text": "$67,555",
+     "unit": "",
+     "value": 67555
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "link": {
+      "anchor": "special-education-budgeted-above-its-spending-for-years-then-below-it",
+      "label": "Special education: budgeted above its spending for years, then below it"
+     },
+     "literals": [],
+     "text": "A budget set from last year’s spending would miss in just this way; so would children’s placements changing after the budget is set. Nothing here tests either."
+    },
+    {
+     "figures": {
+      "f": {
+       "text": "FY2010",
+       "unit": "fiscal year",
+       "value": 2010
+      },
+      "s": {
+       "text": "$633,291",
+       "unit": "",
+       "value": 633291
+      },
+      "v": {
+       "text": "$565,734",
+       "unit": "",
+       "value": 565734
+      }
+     },
+     "kind": "measured",
+     "link": {
+      "anchor": "lines-that-closed-the-year-past-their-revised-budget",
+      "label": "Lines that closed the year past their revised budget"
+     },
+     "literals": [],
+     "text": "Voted $565,734; $633,291 spent by the close of the year. No school bus line has run further past its budget in any year back to FY2010."
+    }
+   ],
+   "rests_on": [
+    "over",
+    "sped"
+   ],
+   "text": "Special education buses spent $67,555 more than their FY2026 budget, and no transfer covered it."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the special education van contract and a count of routes by year, from the district",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "How many vans, monitors and routes the line pays for is not published, so a higher price cannot be told from more children carried."
+    }
+   ],
+   "rests_on": [
+    "sped-rate",
+    "vans",
+    "van-rate"
+   ],
+   "text": "It grows fastest of any bus line, and nothing published counts what it buys."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sped",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "special education vans, not the Dee Bus contract"
+   },
+   "value": {
+    "text": "$633,291",
+    "unit": "",
+    "value": 633291
+   }
+  },
+  {
+   "id": "sped-rate",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "a year, special education, since FY2019"
+   },
+   "value": {
+    "text": "+10.1%",
+    "unit": "",
+    "value": 10.1
+   }
+  },
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "special education past its FY2026 budget"
+   },
+   "value": {
+    "text": "$67,555",
+    "unit": "",
+    "value": 67555
+   }
+  },
+  {
+   "id": "sped27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "budgeted for FY2027"
+   },
+   "value": {
+    "text": "$649,953",
+    "unit": "",
+    "value": 649953
+   }
+  },
+  {
+   "id": "state",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "repaid by the state, special education only"
+   },
+   "value": {
+    "text": "$94,993",
+    "unit": "",
+    "value": 94993
+   }
+  },
+  {
+   "closes": "the special education van contract and a count of routes by year",
+   "id": "vans",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "special education vans and monitors"
+   },
+   "value": null
+  },
+  {
+   "closes": "the special education van contract, from the district",
+   "id": "van-rate",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one van, one school day"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "o": {
+    "text": "$67,555",
+    "unit": "",
+    "value": 67555
+   },
+   "r": {
+    "text": "10.1%",
+    "unit": "",
+    "value": 10.1
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The fastest-growing bus line: 10.1% a year, and $67,555 past its FY2026 budget."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "special-education-transportation",
+ "kind": "topic",
+ "path": "/transportation/special-education-transportation",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-02-26",
+   "href": "/docs/minutes/text/finance-committee/2026-02-26-minutes-7673.txt",
+   "label": "Finance Committee minutes, 2026-02-26",
+   "quote": "Budgeted for Special Education Transportation: $649,953"
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/minutes/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "75% reimbursement for FY25 out of district special education transportation costs through the circuit breaker program increased from 44%"
+  }
+ ],
+ "shelves": [
+  "transportation"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — district-expenditures-by-function.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Special education transportation by year",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Revised",
+     "Spent",
+     "Spent past the revised budget"
+    ],
+    "key": "sped",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Voted and spent",
+    "note": "Town general fund. Voted before the year; revised is the budget at the close, after any transfer; spent is paid plus still owed. A negative last column is money left unspent.",
+    "rows": [
+     {
+      "cells": [
+       "$565,734",
+       "$565,735",
+       "$633,291",
+       "$67,556"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$445,328",
+       "$445,328",
+       "$434,922",
+       "-$10,406"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$335,947",
+       "$338,837",
+       "$401,402",
+       "$62,565"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$329,360",
+       "$326,360",
+       "$320,244",
+       "-$6,116"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$297,843",
+       "$253,343",
+       "$241,390",
+       "-$11,953"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$380,409",
+       "$421,521",
+       "$260,921",
+       "-$160,600"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$446,658",
+       "$446,658",
+       "$223,350",
+       "-$223,308"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$417,585",
+       "$414,808",
+       "$322,047",
+       "-$92,761"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$490,000",
+       "$425,000",
+       "$366,184",
+       "-$58,816"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$489,250",
+       "$489,250",
+       "$360,537",
+       "-$128,713"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$469,046",
+       "$473,371",
+       "$460,508",
+       "-$12,863"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$415,488",
+       "$415,770",
+       "$480,819",
+       "$65,049"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$395,702",
+       "$395,702",
+       "$444,752",
+       "$49,050"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$348,060",
+       "$418,814",
+       "$440,499",
+       "$21,685"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$270,000",
+       "$270,660",
+       "$309,766",
+       "$39,106"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$300,000",
+       "$328,259",
+       "$267,248",
+       "-$61,011"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$300,000",
+       "$249,837",
+       "$226,876",
+       "-$22,961"
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Special education transportation"
+}

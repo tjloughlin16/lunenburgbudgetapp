@@ -229,7 +229,16 @@ async function readRoutes() {
     departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
     console.log(`  ${departments.length} departments at /departments/<slug>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings]
+  // TOPIC PAGES: every /<category>/<topic> whose payload exists, off the index the shelves
+  // read (scripts/build_topics_index.py). The two hubs are SLUG routes already.
+  const topicsFile = join(APP, 'public', 'data', 'topics.json')
+  let topicPages = []
+  if (existsSync(topicsFile)) {
+    topicPages = Object.values(JSON.parse(await readFile(topicsFile, 'utf8')).topics)
+      .filter(t => t.ready).map(t => t.path).sort()
+    console.log(`  ${topicPages.length} topic pages at /<category>/<topic>`)
+  }
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings, ...topicPages]
 }
 
 /** Serve dist, falling back to the PRISTINE shell -- with the probe in it.

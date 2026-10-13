@@ -1,0 +1,457 @@
+{
+ "category": "athletics",
+ "chart": {
+  "id": "spending-what-comes-in-athletics",
+  "source": "/data/spending-what-comes-in.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "45.8%",
+     "unit": "",
+     "value": 45.8
+    },
+    "b": {
+     "text": "5.7%",
+     "unit": "",
+     "value": 5.7
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the memos the town ledger names beside those entries",
+     "figures": {
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The fund’s FY2025 spending is net of four journal entries labelled expense adjustments, and what they moved is not published."
+    }
+   ],
+   "rests_on": [
+    "share24",
+    "share25",
+    "share26"
+   ],
+   "text": "The fee fund’s share of athletics spending fell from 45.8% in FY2024 to 5.7% in FY2025."
+  },
+  {
+   "figures": {
+    "m": {
+     "text": "$296,516",
+     "unit": "",
+     "value": 296515.76
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "One reading is that charges moved from the fee fund to the town budget. It fits the timing; nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "moved25",
+    "memo25"
+   ],
+   "text": "In FY2025 the town’s athletics budget rose $296,516 during the year, by transfers."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "share24",
+    "share25",
+    "share17"
+   ],
+   "text": "A town athletics line that rises may be a change in which fund pays, not in what athletics costs."
+  }
+ ],
+ "facts": [
+  {
+   "id": "town26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "town budget, paid for athletics, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$439,510",
+    "unit": "",
+    "value": 439510.25
+   }
+  },
+  {
+   "id": "fund26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "fee fund, paid for athletics, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$146,911",
+    "unit": "",
+    "value": 146911.44
+   }
+  },
+  {
+   "id": "share24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "fee fund’s share of athletics spending, FY2024"
+   },
+   "value": {
+    "text": "45.8%",
+    "unit": "",
+    "value": 45.8
+   }
+  },
+  {
+   "id": "share25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the same share, FY2025"
+   },
+   "value": {
+    "text": "5.7%",
+    "unit": "",
+    "value": 5.7
+   }
+  },
+  {
+   "id": "share26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same share, FY2026"
+   },
+   "value": {
+    "text": "25.1%",
+    "unit": "",
+    "value": 25.1
+   }
+  },
+  {
+   "id": "share17",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "d": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     },
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "fee fund’s share, FY2017, district FY2019 document"
+   },
+   "value": {
+    "text": "41.3%",
+    "unit": "",
+    "value": 41.28
+   }
+  },
+  {
+   "id": "moved25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "added to the town’s athletics budget during FY2025"
+   },
+   "value": {
+    "text": "$296,516",
+    "unit": "",
+    "value": 296515.76
+   }
+  },
+  {
+   "id": "memo25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "into the fee fund on four journal entries, FY2025"
+   },
+   "value": {
+    "text": "$254,121",
+    "unit": "",
+    "value": 254121.18
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "45.8%",
+    "unit": "",
+    "value": 45.8
+   },
+   "b": {
+    "text": "5.7%",
+    "unit": "",
+    "value": 5.7
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   },
+   "z": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The fee fund paid 45.8% of athletics spending in FY2024 and 5.7% in FY2025, on the town’s books."
+ },
+ "full_report": {
+  "href": "/analysis/athletics",
+  "label": "Athletics, the full report"
+ },
+ "id": "town-budget-and-fee-fund",
+ "kind": "topic",
+ "path": "/athletics/town-budget-and-fee-fund",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-03-12",
+   "href": "/docs/minutes/text/school-committee/2025-03-12-minutes-7098.txt",
+   "label": "School Committee minutes, 2025-03-12",
+   "quote": "Splitting everything into revolving funds is not a good way to manage finances. We need to lay out all revenues and all expenses."
+  }
+ ],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2025-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2024-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2025-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2024-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/fy19-proposed-athletics-budget.pdf",
+   "label": "Lunenburg Public Schools — fy19-proposed-athletics-budget.pdf"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the MUNIS year-end reports, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Athletics spending by fund, by year",
+  "views": [
+   {
+    "columns": [
+     "Town budget, spent",
+     "Fee fund, spent",
+     "The two",
+     "Fee fund’s share"
+    ],
+    "key": "ledger",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The town’s ledger",
+    "note": "MUNIS year-end (period 13) reports, function 3510 in the general fund and fund 1301. Spent is what the ledger records as expended at the close. The fee fund’s FY2025 figure is net of four journal entries marked expense adjustments.",
+    "rows": [
+     {
+      "cells": [
+       "$439,510",
+       "$146,911",
+       "$586,422",
+       "25.1%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$541,945",
+       "$32,796",
+       "$574,742",
+       "5.7%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$295,979",
+       "$250,575",
+       "$546,554",
+       "45.8%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$335,766",
+       "$314,864",
+       "$650,630",
+       "48.4%"
+      ],
+      "label": "FY2023"
+     }
+    ],
+    "total_col": 2
+   },
+   {
+    "columns": [
+     "Town budget",
+     "Fee fund",
+     "The two",
+     "Fee fund’s share"
+    ],
+    "key": "fy19doc",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "The district’s FY2019 budget document",
+    "note": "The only document that ever printed both sides line by line. These are the years it marks as actual; it is a district restatement, not the ledger.",
+    "rows": [
+     {
+      "cells": [
+       "$222,695",
+       "$156,551",
+       "$379,246",
+       "41.3%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$210,913",
+       "$113,819",
+       "$324,732",
+       "35.0%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$224,799",
+       "$111,938",
+       "$336,737",
+       "33.2%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$194,316",
+       "$108,147",
+       "$302,463",
+       "35.8%"
+      ],
+      "label": "FY2014"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Town budget and fee fund"
+}

@@ -135,13 +135,12 @@ CATEGORIES = [
     # `show-your-work` because those two are about the reports; this is a way IN to them.
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'stopped', 'unwind',
             'insurance',
-            'athletics-ledger',
-            # SCHOOL BUSES, beside the two athletics entries because half its question is
-            # athletic transportation -- and under "what the money buys" because the other
-            # half is the school day's buses, the larger cost by far.
-            'transportation',
+            # Transportation and athletics are SHELVES OF THEIR OWN now, drawn from
+            # scripts/topics.py by the reports page itself (TJ, 12 October 2026). Their long
+            # reports -- `transportation`, `athletics-ledger`, `sportsmoney` -- are reached
+            # from those hubs as "the full report", not from a shelf.
         ]),
         # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
         # students'". It had been a top-level shelf of its own, and the correction is
@@ -295,7 +294,12 @@ SUPERSEDED = {
 # argued across the boards, not a conclusion about one subject. Filing it under a category
 # would claim the town has settled something it has not, and filing it under all of them
 # is what a tracker already does.
-UNCATEGORISED = {'show-your-work', 'addsup', 'threads'}
+# The three long transportation and athletics reports are OFF the shelves: those subjects are
+# shelves of their own now, split into topic pages (scripts/topics.py), and each hub links
+# its full report. Uncategorised rather than superseded because what replaces them is a
+# shelf of pages, not one report this list could name.
+UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
+                 'transportation', 'athletics-ledger', 'sportsmoney'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

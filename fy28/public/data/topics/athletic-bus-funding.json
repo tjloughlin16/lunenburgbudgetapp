@@ -1,0 +1,248 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-athletics",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "athletic",
+    "ath24",
+    "ath-sheet",
+    "levy-share",
+    "reclass"
+   ],
+   "text": "Athletic buses moved from player fees to the town budget, which property taxes mostly pay for."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the fee fund’s purchase-of-service detail by vendor, and its balance at each 30 June, from the Town Accountant",
+     "figures": {
+      "a": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      },
+      "b": {
+       "text": "$113,602",
+       "unit": "",
+       "value": 113602.4
+      },
+      "c": {
+       "text": "$110,650",
+       "unit": "",
+       "value": 110650
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "30 June"
+     ],
+     "text": "In FY2026 that fee fund account spent $113,602 again while the town line paid $110,650 for athletic buses. What the fund paid for is not published."
+    }
+   ],
+   "rests_on": [
+    "pos24",
+    "pos25"
+   ],
+   "text": "The fee fund account that carried buses fell by more than three quarters the same year."
+  }
+ ],
+ "facts": [
+  {
+   "id": "athletic",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "athletics, on the town budget"
+   },
+   "value": {
+    "text": "$110,650",
+    "unit": "",
+    "value": 110650
+   }
+  },
+  {
+   "id": "ath24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "athletics on the town budget, FY2024"
+   },
+   "value": {
+    "text": "$40,000",
+    "unit": "",
+    "value": 40000
+   }
+  },
+  {
+   "id": "ath-sheet",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "athletic buses, all payers, FY2024: district sheet"
+   },
+   "value": {
+    "text": "$117,555",
+    "unit": "",
+    "value": 117555.0
+   }
+  },
+  {
+   "id": "levy-share",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of town budget revenue is property tax, FY2026 projection"
+   },
+   "value": {
+    "text": "71%",
+    "unit": "",
+    "value": 71.0
+   }
+  },
+  {
+   "id": "reclass",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "moved onto the town line in FY2025"
+   },
+   "value": {
+    "text": "$47,822",
+    "unit": "",
+    "value": 47822
+   }
+  },
+  {
+   "id": "pos24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "fee fund purchase of service, FY2024"
+   },
+   "value": {
+    "text": "$115,994",
+    "unit": "",
+    "value": 115993.84
+   }
+  },
+  {
+   "id": "pos25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the same account, FY2025"
+   },
+   "value": {
+    "text": "$26,685",
+    "unit": "",
+    "value": 26685.06
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "From FY2025, athletic buses moved from player fees to the town budget, mostly taxes."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "athletic-bus-funding",
+ "kind": "topic",
+ "path": "/transportation/athletic-bus-funding",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-04-16",
+   "href": "/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt",
+   "label": "School Committee minutes, 2025-04-16",
+   "quote": "A fourth transfer to move funds to the athletic transportation, special detail, dues and fees and the high school after school stipends, this is the first phase move making monies available in the athletic portion of the budget. We can go back and reclassify expenses that had been charged against the revolving account."
+  }
+ ],
+ "shelves": [
+  "transportation",
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/draft-rev-dist.-proj-fy26-update-2.27.25.xlsx",
+   "label": "Town of Lunenburg — draft-rev-dist.-proj-fy26-update-2.27.25.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Athletic bus funding"
+}

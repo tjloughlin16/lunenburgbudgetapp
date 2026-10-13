@@ -1,0 +1,184 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-sped",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$14,596",
+       "unit": "",
+       "value": 14596
+      },
+      "b": {
+       "text": "FY2022",
+       "unit": "fiscal year",
+       "value": 2022
+      },
+      "c": {
+       "text": "$111,560",
+       "unit": "",
+       "value": 111560
+      },
+      "d": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "e": {
+       "text": "$94,993",
+       "unit": "",
+       "value": 94993
+      },
+      "f": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "measured",
+     "link": {
+      "anchor": "5-what-pays-for-it-the-fee-the-fee-fund-the-state",
+      "label": "5. What pays for it: the fee, the fee fund, the state"
+     },
+     "literals": [],
+     "text": "The state’s circuit breaker repays part of busing children placed out of district: $14,596 in FY2022, $111,560 at its FY2025 peak, $94,993 in FY2026."
+    }
+   ],
+   "rests_on": [
+    "state",
+    "state-share",
+    "no-aid"
+   ],
+   "text": "The state repays a small share, and nothing for regular routes or athletics."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "cb-sped"
+   ],
+   "text": "What it repays is last year’s claims, not this year’s buses."
+  }
+ ],
+ "facts": [
+  {
+   "id": "state",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "repaid by the state, special education only"
+   },
+   "value": {
+    "text": "$94,993",
+    "unit": "",
+    "value": 94993
+   }
+  },
+  {
+   "id": "state-share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of all buses repaid by the state"
+   },
+   "value": {
+    "text": "5.5%",
+    "unit": "",
+    "value": 5.5
+   }
+  },
+  {
+   "id": "cb-sped",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of special education buses repaid"
+   },
+   "value": {
+    "text": "15.0%",
+    "unit": "",
+    "value": 15.0
+   }
+  },
+  {
+   "id": "no-aid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "state aid for regular routes and athletics"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "sped",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "special education vans, not the Dee Bus contract"
+   },
+   "value": {
+    "text": "$633,291",
+    "unit": "",
+    "value": 633291
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "s": {
+    "text": "5.5%",
+    "unit": "",
+    "value": 5.5
+   }
+  },
+  "literals": [],
+  "text": "The state repays 5.5% of what the town spends on buses, all of it for special education."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "state-reimbursement",
+ "kind": "topic",
+ "path": "/transportation/state-reimbursement",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/minutes/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "75% reimbursement for FY25 out of district special education transportation costs through the circuit breaker program increased from 44%"
+  }
+ ],
+ "shelves": [
+  "transportation"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-circuit-breaker.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "State reimbursement"
+}

@@ -19,6 +19,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'parastaff'
   | 'insurance'
   | 'sportsmoney'
+  | 'topic'
   | 'stateaid'
   | 'stopped'
   | 'cuts'
@@ -193,6 +194,10 @@ export const SLUG: Record<Tab, string> = {
   // QUESTION a resident asks out loud -- "what do sports actually cost?" -- rather than
   // the accounting shape of the answer.
   sportsmoney: 'what-sports-cost',
+  // TOPIC PAGES: /transportation and every /transportation/<id> and /athletics/<id> under
+  // it -- one component, the id in the path (scripts/topics.py is the registry). The
+  // athletics hub is the `athletics` tab's own address, which now renders it too.
+  topic: 'transportation',
   // The share of the school budget nobody in Lunenburg votes on. The slug is the THING a
   // resident says out loud -- "state aid" -- rather than `chapter-70`, which is the
   // accounting name for only the largest part of it and would promise less than the page
@@ -782,7 +787,7 @@ export const LABEL: Record<Tab, string> = {
   boards: 'The boards — each one, in one place',
   budgetfeed: 'The budget feed — every board, everything about money',
   thisweek: 'This week in town — meetings coming up, minutes and recordings just posted',
-  athletics: 'Athletics, both sides of the money',
+  athletics: 'Athletics costs',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
   reports: 'Reports and analyses',
@@ -859,9 +864,13 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // budget crisis." Overrides was a chapter behind Go deeper; it is a report on the
   // town's shelf now, and the crisis page keeps the high level and links here.
   override: 'reports',
-  athletics: 'context',
+  // The athletics HUB now (scripts/topics.py), a report shelf rather than a chapter of the
+  // budget-gap walk-through -- so its trail runs back to /reports, as every topic's does.
+  athletics: 'reports', topic: 'reports',
   rates: 'deeper',
-  reports: 'themoney',
+  // `reports` has NO parent: it sits directly under Home. TJ, 12 October 2026, "Home ->
+  // reports -> hub -> etc" -- every report's trail starts Home > Reports, the same as the
+  // subject shelves' own (App.tsx useTopicCrumbs).
   gaps: 'themoney',
   variance: 'themoney',
   funds: 'themoney',
@@ -932,6 +941,8 @@ export function tabFromPath(pathname: string): Tab {
   // page component, so the document id travels in the path rather than in a Tab of its
   // own -- see `analysis` in the union above.
   if (seg.startsWith('analysis/')) return 'analysis'
+  // Topic pages: /transportation/<id>, and /athletics/<id> under the athletics hub.
+  if (seg.startsWith('transportation/') || seg.startsWith('athletics/')) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
   // The third. Every thread shares one page component; the id is in the path.
@@ -943,6 +954,13 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('departments/')) return 'departments'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
   return BY_SLUG[seg] ?? ROOT
+}
+
+/** The topic page or hub a `/transportation[/<id>]` or `/athletics[/<id>]` address names:
+ *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
+export function topicIdFromPath(pathname: string): string | null {
+  const m = /^\/(transportation|athletics)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  return m ? (m[2] ?? m[1]) : null
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.
@@ -1111,7 +1129,7 @@ export const AREA_HOME: Record<Area, Tab> = {
 const AREA_OF: Partial<Record<Tab, Area>> = {
   walk: 'crisis', deeper: 'crisis', answers: 'crisis', money: 'crisis', context: 'crisis',
   why: 'crisis', curve: 'crisis', priorities: 'crisis',
-  adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
+  adjust: 'crisis', development: 'crisis', solved: 'crisis',
   solutions: 'crisis',
   override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses', youthsports: 'analyses',
   schoolfinance: 'analyses', accounts: 'money', departments: 'money', parks: 'analyses',
@@ -1128,6 +1146,8 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   schoolstaff: 'analyses', parastaff: 'analyses',
   cuts: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
+  // The subject hubs and their topic pages (scripts/topics.py) are reports: no crisis bar.
+  athletics: 'analyses', topic: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses', formula: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',

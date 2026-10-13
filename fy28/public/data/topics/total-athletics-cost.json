@@ -1,0 +1,360 @@
+{
+ "category": "athletics",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$185,356",
+     "unit": "",
+     "value": 185355.62
+    },
+    "b": {
+     "text": "$275,948",
+     "unit": "",
+     "value": 275947.63
+    },
+    "c": {
+     "text": "$349,145",
+     "unit": "",
+     "value": 349145.39
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a reconciliation by the district of its own per-sport cost statements, naming what each column counts",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "All three were assembled by hand, and no document says which question each column answers."
+    }
+   ],
+   "rests_on": [
+    "deck24",
+    "bysport24",
+    "wb24"
+   ],
+   "text": "Three district sheets put the same teams’ FY2024 cost at $185,356, $275,948 and $349,145."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$546,554",
+     "unit": "",
+     "value": 546553.9
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "u": {
+       "text": "$160,980",
+       "unit": "",
+       "value": 160980.0
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Part of the gap may be scope: the workbook carries no athletic director, trainer or insurance, $160,980 of the FY2024 budget. Nothing here tests how much of the gap that explains."
+    }
+   ],
+   "rests_on": [
+    "town24",
+    "fund24",
+    "both24",
+    "wb24"
+   ],
+   "text": "The town’s ledger shows $546,554 spent from both funds in FY2024, more than any sheet’s total."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "facility",
+    "bldg-gap"
+   ],
+   "text": "None of these figures includes the buildings, and no published allocation says what they add."
+  }
+ ],
+ "facts": [
+  {
+   "id": "deck24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "25",
+      "unit": "",
+      "value": 25
+     },
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [
+     "May 2024"
+    ],
+    "text": "25 teams, FY2024, the district’s May 2024 deck"
+   },
+   "value": {
+    "text": "$185,356",
+    "unit": "",
+    "value": 185355.62
+   }
+  },
+  {
+   "id": "bysport24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same teams, “Costs by Sport” sheet"
+   },
+   "value": {
+    "text": "$275,948",
+    "unit": "",
+    "value": 275947.63
+   }
+  },
+  {
+   "id": "wb24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same teams, district by-sport workbook"
+   },
+   "value": {
+    "text": "$349,145",
+    "unit": "",
+    "value": 349145.39
+   }
+  },
+  {
+   "id": "town24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "town budget, spent on athletics, FY2024 (ledger)"
+   },
+   "value": {
+    "text": "$295,979",
+    "unit": "",
+    "value": 295979.27
+   }
+  },
+  {
+   "id": "fund24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "fee fund, spent on athletics, FY2024 (ledger)"
+   },
+   "value": {
+    "text": "$250,575",
+    "unit": "",
+    "value": 250574.63
+   }
+  },
+  {
+   "id": "both24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "the two together, FY2024 (our sum)"
+   },
+   "value": {
+    "text": "$546,554",
+    "unit": "",
+    "value": 546553.9
+   }
+  },
+  {
+   "id": "town26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "town budget, paid for athletics, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$439,510",
+    "unit": "",
+    "value": 439510.25
+   }
+  },
+  {
+   "id": "fund26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "fee fund, paid for athletics, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$146,911",
+    "unit": "",
+    "value": 146911.44
+   }
+  },
+  {
+   "id": "facility",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "custodians, heat, utilities, grounds, all schools, FY2026"
+   },
+   "value": {
+    "text": "$2,035,523",
+    "unit": "",
+    "value": 2035522.98
+   }
+  },
+  {
+   "closes": "an allocation by the district of custodial, utility and grounds spending to its programmes",
+   "id": "bldg-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "athletics’ share of buildings and grounds"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$185,356",
+    "unit": "",
+    "value": 185355.62
+   },
+   "b": {
+    "text": "$349,145",
+    "unit": "",
+    "value": 349145.39
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   }
+  },
+  "literals": [],
+  "text": "No document states one total: three sheets give $185,356 to $349,145 for the same teams in FY2024."
+ },
+ "full_report": {
+  "href": "/analysis/athletics",
+  "label": "Athletics, the full report"
+ },
+ "id": "total-athletics-cost",
+ "kind": "topic",
+ "path": "/athletics/total-athletics-cost",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-06-24",
+   "href": "/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "School Committee minutes, 2026-06-24",
+   "quote": "Community members have asked straightforward questions regarding the actual cost of middle school athletics and the process required to apply community raised funds towards these programs. Yet the answers have been inconsistent."
+  }
+ ],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/athletic-program-costs-by-sport.pdf",
+   "label": "Lunenburg Public Schools — athletic-program-costs-by-sport.pdf"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2024-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2024-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the MUNIS year-end reports, one row an account)"
+  }
+ ],
+ "table": null,
+ "title": "Total athletics cost"
+}

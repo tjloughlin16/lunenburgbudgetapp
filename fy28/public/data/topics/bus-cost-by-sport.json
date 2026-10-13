@@ -1,0 +1,236 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-sports",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether a bus went, was shared, or waited four hours is not recorded, so neither the sheet nor our model can be checked trip by trip."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$6,931.75",
+       "unit": "",
+       "value": 6931.75
+      },
+      "b": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "c": {
+       "text": "$13,863.50",
+       "unit": "",
+       "value": 13863.5
+      },
+      "d": {
+       "text": "$9,078.50",
+       "unit": "",
+       "value": 9078.5
+      },
+      "e": {
+       "text": "$7,662.00",
+       "unit": "",
+       "value": 7662.0
+      }
+     },
+     "kind": "measured",
+     "link": {
+      "anchor": "which-sport-s-buses-cost-most-track-once-its-two-rows-are-added-together",
+      "label": "Which sport’s buses cost most"
+     },
+     "literals": [],
+     "text": "Boys’ and girls’ indoor track each print $6,931.75 for FY2024. Added, $13,863.50 is ahead of football’s $9,078.50 and girls’ soccer’s $7,662.00."
+    }
+   ],
+   "rests_on": [
+    "track",
+    "football",
+    "soccer"
+   ],
+   "text": "Indoor track costs most on the district’s sheet, ahead of every other sport."
+  }
+ ],
+ "facts": [
+  {
+   "id": "track",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "indoor track, both teams, FY2024"
+   },
+   "value": {
+    "text": "$13,863.50",
+    "unit": "",
+    "value": 13863.5
+   }
+  },
+  {
+   "id": "football",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "the next sport down, FY2024"
+   },
+   "value": {
+    "text": "$9,078.50",
+    "unit": "",
+    "value": 9078.5
+   }
+  },
+  {
+   "id": "soccer",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "girls’ soccer, FY2024"
+   },
+   "value": {
+    "text": "$7,662.00",
+    "unit": "",
+    "value": 7662.0
+   }
+  },
+  {
+   "id": "ath-sheet",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "athletic buses, all payers, FY2024: district sheet"
+   },
+   "value": {
+    "text": "$117,555",
+    "unit": "",
+    "value": 117555.0
+   }
+  },
+  {
+   "id": "sheet25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "athletic buses, all payers, FY2025"
+   },
+   "value": {
+    "text": "$91,066",
+    "unit": "",
+    "value": 91066
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n": {
+    "text": "$9,078",
+    "unit": "",
+    "value": 9078
+   },
+   "t": {
+    "text": "$13,864",
+    "unit": "",
+    "value": 13864
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   }
+  },
+  "literals": [],
+  "text": "Track costs most on the district’s sheet: $13,864 in FY2024, ahead of the next sport’s $9,078."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "bus-cost-by-sport",
+ "kind": "topic",
+ "path": "/transportation/bus-cost-by-sport",
+ "said": [
+  {
+   "board": "School Committee",
+   "caption": true,
+   "date": "2025-03-12",
+   "href": "https://www.youtube.com/watch?v=b7caO9Kd7VA&t=6496s",
+   "label": "School Committee, 2025-03-12, video at 1:48:16 (machine captions)",
+   "quote": "Members discussed indoor track: the league meet had moved to the Reggie Lewis Center in Boston, Lunenburg has no indoor facility of its own, and the bus is billed in full while it waits."
+  }
+ ],
+ "shelves": [
+  "transportation",
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/contracts/pdf/dee-bus-transportation-agreement-fy26-fy28.pdf",
+   "label": "Lunenburg Public Schools / Dee Bus Service, Inc. — dee-bus-transportation-agreement-fy26-fy28.pdf"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2024-2025-transportation-fee-proposal.pdf",
+   "label": "Lunenburg Public Schools — 2024-2025-transportation-fee-proposal.pdf"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  },
+  {
+   "href": "/docs/data/athletics-schedules.csv",
+   "label": "Lunenburg Budget Project — every game on the district’s posted athletic schedules (ArbiterLive), FY2022–FY2027"
+  },
+  {
+   "href": "/docs/data/athletics-venue-distances.csv",
+   "label": "Lunenburg Budget Project — road distance to every away venue"
+  }
+ ],
+ "table": null,
+ "title": "Bus cost by sport"
+}

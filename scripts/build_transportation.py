@@ -4033,7 +4033,11 @@ def outputs():
                    if st_.get('link')} - heads)
     if dead:
         fail('the brief links to headings the markdown does not write: %s' % dead)
+    topics = build_topics(m, brief, pay)
     return {
+        **{os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % t):
+           json.dumps(p_, indent=1, ensure_ascii=False, sort_keys=True) + '\n'
+           for t, p_ in topics.items()},
         OUT_JSON: json.dumps(pay, indent=1, ensure_ascii=False, sort_keys=True) + '\n',
         OUT_MD: md,
         os.path.join(CHART_DIR, '%s-schools-athletics.svg' % ID): svg_schools(pay),
@@ -4066,6 +4070,291 @@ def main():
             fh.write(text)
         print('wrote %s' % os.path.relpath(p, ROOT))
     return 0
+
+
+
+# --------------------------------------------------------------------- topic pages
+#
+# THE REPORT, SPLIT INTO PAGES (scripts/topics.py has the model and the registry). TJ, 12
+# October 2026: "nobody will ever read these full reports". The hub and nine topic pages are
+# written HERE, from the same measurements and the same verified chain layers as the report,
+# in the same pass -- so a page and the report cannot disagree. Facts are the ladder's own,
+# looked up by id; a page adds only what the ladder does not hold.
+
+def build_topics(m, brief, pay):
+    import topic as TP
+    import ladder as LD
+    A, last, k, st = m['audit'], m['last'], m['contract'], m['state']
+    by = {r['fy']: r for r in m['ledger']}
+    U = lambda v: figure(v, C.usd(v))
+    U2 = lambda v: figure(v, usd2(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=1: figure(v, C.pct(v, dp))
+    N = lambda v: figure(v, C.num(v))
+    fact = {f['id']: f for t in brief['ladder']['tiers'] for f in t['facts']}
+    chains = {c['id']: c for c in brief['chains']}
+    steps = lambda cid, *kinds: [s_ for s_ in chains[cid]['steps'] if s_['kind'] in kinds]
+    link1 = lambda cid: [s_ for s_ in chains[cid]['steps'] if s_.get('link')][:1]
+    qs = {q['key']: q for q in m['quotes']}
+    cap = {c['key']: c for c in m['captions']}
+    said = lambda *keys: [dict(quote=qs[q]['quote'], board=qs[q]['board'], date=qs[q]['date'],
+                               href=qs[q]['cite'], label='%s minutes, %s'
+                               % (qs[q]['board'], qs[q]['date'])) for q in keys]
+    heard = lambda key: dict(quote=cap[key]['said'], board=cap[key]['board'],
+                             date=cap[key]['date'], href=cap[key]['url'], caption=True,
+                             label='%s, %s, video at %s (machine captions)'
+                             % (cap[key]['board'], cap[key]['date'], cap[key]['at']))
+    srcs = sources()
+    src = lambda *parts: [dict(label='%s — %s' % (s_['publisher'], s_['filename']),
+                               href=s_['docs_url'])
+                          for s_ in srcs if any(p_ in s_['path'] for p_ in parts)]
+    chart = lambda cid: dict(id='transportation-' + cid, source='/data/transportation.json')
+    # Sources this report's list does not carry, because the report cites them in prose:
+    # our schedule datasets, and the town's revenue projection behind "mostly taxes".
+    SCHED = [dict(label='Lunenburg Budget Project — every game on the district’s posted '
+                        'athletic schedules (ArbiterLive), FY2022–FY2027',
+                  href='/docs/data/athletics-schedules.csv'),
+             dict(label='Lunenburg Budget Project — road distance to every away venue',
+                  href='/docs/data/athletics-venue-distances.csv')]
+    REVDIST = [dict(label='Town of Lunenburg — draft-rev-dist.-proj-fy26-update-2.27.25.xlsx',
+                    href='/docs/budget-workbooks/finance-committee/fy26-budget/'
+                         'draft-rev-dist.-proj-fy26-update-2.27.25.xlsx')]
+    f, con = LD.fact, TP.conclusion
+    x, s26, fb, r = A['mask'], A['sped26'], A['fund']['by'], A['restore']
+    sch = {row['fy']: row for row in m['sched']['by_fy']}
+    out = {}
+
+    # ---- the hub: the report's own top, unchanged -- answer, chart, matrix, conclusions.
+    out['transportation'] = TP.hub(
+        'transportation', brief['answer']['text'], brief['ladder'], brief['chains'],
+        chart=chart('schools-athletics'),
+        table=pay['tables']['transportation-schools-athletics'],
+        answer_figures=brief['answer']['figures'], answer_allow=brief['answer']['literals'])
+
+    # ---- Dee Bus contract
+    yrs = k['years']
+    contract_table = dict(caption='The Dee Bus contract, year by year', views=[dict(
+        key='contract', label='As bid', total_col=4, kinds=['ledger'] * 5,
+        columns=['77-passenger, a day', '83-passenger, a day', 'A trip mile', 'An hour waiting',
+                 'Regular routes, the year'],
+        rows=[dict(label=C.fy(c['fy']) + (' (option)' if c['optional'] else ''),
+                   cells=[usd2(c['p77']), usd2(c['p83']), usd2(c['trip_rate']),
+                          C.usd(c['wait_rate']), C.usd(c['regular'])]) for c in yrs],
+        note='The bid form Dee Bus signed on 27 December 2024. The last two years are '
+             'optional extensions.')])
+    out['dee-bus-contract'] = TP.page(
+        'dee-bus-contract',
+        'Regular routes cost exactly the contract price, which is fixed through %s.' % C.fy(2028),
+        [fact['regular'], fact['buses'], fact['days'], fact['bus-day'], fact['rise27'],
+         fact['rise28'], fact['fixed28'], fact['levy']],
+        [con('Regular routes now cost exactly what the Dee Bus contract says.',
+             ['regular', 'bus-day'], notes=steps('regular', 'gap') + link1('regular')),
+         con('The price rises faster than the levy may grow, in every year of the contract.',
+             ['rise27', 'rise28', 'levy', 'fixed28'])],
+        chart=chart('contract'), table=contract_table,
+        said=said('contract', 'renewal', 'contracts-asked'),
+        sources=src('dee-bus', 'glytdbud-expense-fy2026-p13-gf-school'),
+        finding_figures={'y': F(2028)})
+
+    # ---- Special education transportation
+    # VOTED AND REVISED, BOTH SHOWN. The page's conclusion measures against the REVISED
+    # budget ($67,555); against the vote it is $2 more. Side by side with only one budget
+    # column, the two read as an error. Revised is the budget at the close, after transfers.
+    sped_rows = [dict(label=C.fy(fy), cells=[
+        C.usd(by[fy]['sped']['budget']), C.usd(by[fy]['sped']['revised']),
+        C.usd(by[fy]['sped']['spent']),
+        C.usd(by[fy]['sped']['spent'] - by[fy]['sped']['revised'])])
+        for fy in sorted(by, reverse=True)]
+    out['special-education-transportation'] = TP.page(
+        'special-education-transportation',
+        'The fastest-growing bus line: %s a year, and %s past its %s budget.'
+        % (C.pct(A_rate(m, 'sped')), C.usd(s26['over']), C.fy(last)),
+        [fact['sped'], fact['sped-rate'], fact['over'],
+         f('sped27', U(A['sped27']), 'budgeted for %s' % C.fy(2027), 'published', {'y': F(2027)}),
+         fact['state'], fact['vans'], fact['van-rate']],
+        [con('Special education buses spent %s more than their %s budget, and no transfer '
+             'covered it.' % (C.usd(s26['over']), C.fy(last)), ['over', 'sped'],
+             {'o': U(s26['over']), 'y': F(last)},
+             notes=steps('sped', 'hypothesis') + link1('sped')),
+         con('It grows fastest of any bus line, and nothing published counts what it buys.',
+             ['sped-rate', 'vans', 'van-rate'], notes=steps('sped', 'gap'))],
+        chart=chart('sped'),
+        table=dict(caption='Special education transportation by year', views=[dict(
+            key='sped', label='Voted and spent', total_col=3, kinds=['ledger'] * 4,
+            columns=['Voted', 'Revised', 'Spent', 'Spent past the revised budget'],
+            rows=sped_rows,
+            note='Town general fund. Voted before the year; revised is the budget at the close, '
+                 'after any transfer; spent is paid plus still owed. A negative last column is '
+                 'money left unspent.')]),
+        said=said('fincom-sped27', 'cb-75'),
+        sources=src('glytdbud-expense', 'district-expenditures-by-function'),
+        finding_figures={'r': P(A_rate(m, 'sped')), 'o': U(s26['over']), 'y': F(last)})
+
+    # ---- State reimbursement
+    cb = {c['fy']: c for c in st['cb']}
+    of_sped = pct1(cb[last]['transport'], by[last]['sped']['spent'])
+    out['state-reimbursement'] = TP.page(
+        'state-reimbursement',
+        'The state repays %s of what the town spends on buses, all of it for special education.'
+        % C.pct(pct1(cb[last]['transport'], by[last]['all_spent'])),
+        [fact['state'], fact['state-share'],
+         f('cb-sped', P(of_sped), 'of special education buses repaid', 'published'),
+         fact['no-aid'], fact['sped']],
+        [con('The state repays a small share, and nothing for regular routes or athletics.',
+             ['state', 'state-share', 'no-aid'], notes=link1('offsets')),
+         con('What it repays is last year’s claims, not this year’s buses.', ['cb-sped'])],
+        chart=chart('sped'), said=said('cb-75'),
+        sources=src('circuit-breaker', 'district-expenditures'),
+        finding_figures={'s': P(pct1(cb[last]['transport'], by[last]['all_spent']))})
+
+    # ---- Bus fee
+    fee_acct = st['fee'][last]
+    out['bus-fee'] = TP.page(
+        'bus-fee',
+        'The new bus fee did not lower what the school budget paid for buses in %s.' % C.fy(last),
+        [f('fee-one', U(m['fees']['one']), 'a year, one child', 'published'),
+         f('fee-family', U(m['fees']['family']), 'a year, two or more children', 'published'),
+         f('requests', N(m['requests']), 'bus requests, June 2025', 'published', allow=('June 2025',)),
+         f('unpaid', N(m['unpaid']), 'of them unpaid at the time', 'published'),
+         f('netted', U(m['netted']), 'the budget was voted below the contract', 'published'),
+         f('moved', U(m['moved_back']), 'moved back in during the year', 'published'),
+         f('fee-acct', U(fee_acct), 'into the only account named for fees, %s' % C.fy(last),
+           'published', {'y': F(last)})],
+        [con('The line was voted %s below the contract, and %s was moved back in during the year.'
+             % (C.usd(m['netted']), C.usd(m['moved_back'])), ['netted', 'moved'],
+             {'a': U(m['netted']), 'b': U(m['moved_back'])}),
+         con('Where the fee money is booked is not established.', ['fee-acct'],
+             notes=steps('offsets', 'gap'))],
+        said=said('fee-11000', 'requests'),
+        sources=src('glytdbud-expense', 'school-choice', 'fee'),
+        finding_figures={'y': F(last)})
+
+    # ---- FY2027 bus budget
+    out['fy2027-bus-budget'] = TP.page(
+        'fy2027-bus-budget',
+        'School-day buses rise %s in %s; the total shows %s because athletic buses were cut.'
+        % (C.pct(x['sd_pct']), C.fy(2027), C.pct(x['all_pct'])),
+        [fact['sd27'], fact['all27'], fact['cut27'],
+         f('sd26', U(x['sd26']), 'school-day buses, %s budget' % C.fy(last), 'published',
+           {'y': F(last)}),
+         f('sd27v', U(x['sd27']), 'school-day buses, %s budget' % C.fy(2027), 'published',
+           {'y': F(2027)})],
+        [con('The %s total looks flat because athletic buses were cut, not because buses got '
+             'cheaper.' % C.fy(2027), ['sd27', 'all27', 'cut27'], {'y': F(2027)})],
+        chart=chart('schools-athletics'), said=said('cut', 'band'),
+        sources=src('budget', 'glytdbud-expense'),
+        finding_figures={'a': P(x['sd_pct']), 'y': F(2027), 'b': P(x['all_pct'])})
+
+    # ---- Athletic bus funding
+    if not fb[2025]['hs_pos'] < fb[2024]['hs_pos'] / 4:
+        fail('the fee fund purchase-of-service account no longer fell by more than three '
+             'quarters in FY2025; the athletic-bus-funding page says it did')
+    out['athletic-bus-funding'] = TP.page(
+        'athletic-bus-funding',
+        'From %s, athletic buses moved from player fees to the town budget, mostly taxes.'
+        % C.fy(2025),
+        [fact['athletic'], fact['ath24'], fact['ath-sheet'], fact['levy-share'],
+         f('reclass', U(A['reclass25']), 'moved onto the town line in %s' % C.fy(2025),
+           'published', {'y': F(2025)}),
+         f('pos24', U(fb[2024]['hs_pos']), 'fee fund purchase of service, %s' % C.fy(2024),
+           'published', {'y': F(2024)}),
+         f('pos25', U(fb[2025]['hs_pos']), 'the same account, %s' % C.fy(2025), 'published',
+           {'y': F(2025)})],
+        [con('Athletic buses moved from player fees to the town budget, which property taxes '
+             'mostly pay for.', ['athletic', 'ath24', 'ath-sheet', 'levy-share', 'reclass']),
+         con('The fee fund account that carried buses fell by more than three quarters the '
+             'same year.', ['pos24', 'pos25'], notes=steps('athletic-fund', 'gap'))],
+        chart=chart('athletics'), said=said('reclass'),
+        sources=src('glytdbud', 'athletic') + REVDIST,
+        finding_figures={'y': F(2025)})
+
+    # ---- FY2027 athletic bus cut
+    out['fy2027-athletic-bus-cut'] = TP.page(
+        'fy2027-athletic-bus-cut',
+        '%s cut athletic buses from the town budget, then put %s back, most on the fee fund.'
+        % (C.fy(2027), C.usd(r['rounded'])),
+        [fact['cut27'], f('restored', U(r['rounded']), 'put back, August 2026', 'published',
+           allow=('August 2026',)),
+         f('from-town', U(r['town']), 'of it from the town', 'published'),
+         f('from-fund', U(r['fund']), 'of it from the fee fund', 'published'),
+         f('estimate', U(r['estimate']), 'the district’s estimate of the year’s buses',
+           'published'),
+         f('sched27', U(round(m['stest']['assembled']['lo'])),
+           'the posted schedules, shared buses, %s prices' % C.fy(2027), 'estimate',
+           {'y': F(2027)})],
+        [con('Most of what was put back is on the fee fund: %s of %s.'
+             % (C.usd(r['fund']), C.usd(r['rounded'])), ['from-fund', 'restored'],
+             {'a': U(r['fund']), 'b': U(r['rounded'])}),
+         con('The district’s %s estimate is below what the posted schedules would cost, by our '
+             'estimate.' % C.usd(r['estimate']), ['estimate', 'sched27'], {'e': U(r['estimate'])},
+             notes=steps('track', 'gap'))],
+        chart=chart('athletics'), said=said('restore', 'restore-vote', 'restore-why', 'waiver'),
+        sources=src('athletic', 'bus-routes'),
+        finding_figures={'y': F(2027), 'r': U(r['rounded'])})
+
+    # ---- Bus cost by sport
+    tr = A['track']
+    out['bus-cost-by-sport'] = TP.page(
+        'bus-cost-by-sport',
+        'Track costs most on the district’s sheet: %s in %s, ahead of the next sport’s %s.'
+        % (C.usd(round(tr['it24'])), C.fy(2024), C.usd(round(tr['second24']['cost']))),
+        [f('track', U2(tr['it24']), 'indoor track, both teams, %s' % C.fy(2024), 'published',
+           {'y': F(2024)}),
+         f('football', U2(tr['second24']['cost']), 'the next sport down, %s' % C.fy(2024),
+           'published', {'y': F(2024)}),
+         f('soccer', U2(tr['soccer24']), 'girls’ soccer, %s' % C.fy(2024), 'published',
+           {'y': F(2024)}),
+         fact['ath-sheet'],
+         f('sheet25', U(round(m['sports']['totals'][2025])), 'athletic buses, all payers, %s'
+           % C.fy(2025), 'published', {'y': F(2025)})],
+        [con('Indoor track costs most on the district’s sheet, ahead of every other sport.',
+             ['track', 'football', 'soccer'], notes=steps('track', 'gap') + link1('track'))],
+        chart=chart('sports'), said=[heard('reggie')],
+        sources=src('athletic', 'sport') + SCHED,
+        finding_figures={'t': U(round(tr['it24'])), 'y': F(2024),
+                         'n': U(round(tr['second24']['cost']))})
+
+    # ---- Away trips by sport
+    s_ = sch[last]
+    trip_rows = [dict(label=C.fy(row['fy']), cells=[
+        C.num(row['away']), C.num(row['trips']), C.num(round(row['miles'])),
+        C.usd(round(row['lo'])), C.usd(round(row['hi']))]) for row in reversed(m['sched']['by_fy'])]
+    out['away-trips-by-sport'] = TP.page(
+        'away-trips-by-sport',
+        'The posted schedules list %s away games in %s, about %s bus trips by our estimate.'
+        % (C.num(s_['away']), C.fy(last), C.num(s_['trips'])),
+        [f('away', N(s_['away']), 'away games on the posted schedules', 'published'),
+         fact['trips'],
+         f('miles', N(round(s_['miles'])), 'road miles, round trips', 'estimate'),
+         f('lo', U(round(s_['lo'])), 'if teams share buses, at %s prices' % C.fy(last),
+           'estimate', {'y': F(last)}),
+         f('hi', U(round(s_['hi'])), 'one bus per team, at %s prices' % C.fy(last),
+           'estimate', {'y': F(last)}),
+         fact['mile'], fact['hour']],
+        [con('At contract prices the scheduled trips would cost %s to %s, by our estimate.'
+             % (C.usd(round(s_['lo'])), C.usd(round(s_['hi']))), ['lo', 'hi', 'mile', 'hour'],
+             {'a': U(round(s_['lo'])), 'b': U(round(s_['hi']))},
+             notes=steps('track', 'gap'))],
+        chart=chart('sports'),
+        table=dict(caption='Away games and bus trips by year', views=[dict(
+            key='trips', label='From the posted schedules', total_col=4,
+            kinds=['ledger', 'stated', 'stated', 'stated', 'stated'],
+            columns=['Away games', 'Bus trips (our estimate)', 'Miles (our estimate)',
+                     'Shared buses (our estimate)', 'Bus per team (our estimate)'],
+            rows=trip_rows,
+            note='Games are scheduled, not played, for the teams ArbiterLive lists. Every '
+                 'cost is our estimate at FY2026 contract prices.')]),
+        sources=SCHED + src('dee-bus-bid'),
+        finding_figures={'a': N(s_['away']), 'y': F(last), 't': N(s_['trips'])})
+    return out
+
+
+def A_rate(m, cat):
+    """A line's compound annual rate, spent to spent, FY2019 to the last closed year -- the
+    same base the trend chain uses (FY2019, the last year before the 2020 closures)."""
+    by = {r['fy']: r for r in m['ledger']}
+    last = m['last']
+    return round(100 * ((by[last][cat]['spent'] / by[2019][cat]['spent']) ** (1 / (last - 2019)) - 1), 1)
 
 
 if __name__ == '__main__':

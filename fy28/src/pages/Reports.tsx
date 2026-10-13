@@ -198,6 +198,74 @@ function Row({ o, extra }: { o: Owner; extra: React.ReactNode }) {
   )
 }
 
+/* SHELVES OF TOPIC PAGES. Transportation and Athletics are subjects of their own now, split
+ * from their long reports into one page per question (scripts/topics.py; TJ, 12 October
+ * 2026: "consider TRANSPORTATION and ATHLETICS two HUGE categories, full sections on the
+ * reports page"). A shelf leads with its hub -- the subject on one page -- then every topic
+ * by its descriptive title and the one line it finds. A topic on two shelves is listed on
+ * both and says so; it has one address. */
+type TopicIndex = {
+  categories: { id: string; shelf: string; title: string; path: string; answer: string | null
+    groups: { title: string | null; topics: string[] }[]
+    elsewhere: { href: string; title: string }[]; full_report: { href: string; label: string } }[]
+  topics: Record<string, { id: string; title: string; path: string; finding: string | null
+    shelves: string[]; ready: boolean }>
+}
+
+function TopicShelves() {
+  const [ix, setIx] = useState<TopicIndex | null>(null)
+  useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
+  if (!ix) return null
+  const shelfName = (id: string) => ix.categories.find(c => c.id === id)?.shelf
+  return (
+    <>
+      {ix.categories.map(c => (
+        <Section key={c.id} id={c.id} eyebrow="A subject, page by page" title={c.shelf} href={c.path}>
+          <a href={c.path} className="card block p-4 transition-opacity hover:opacity-90"
+            style={{ borderLeft: '4px solid var(--series-cost)' }}>
+            <h3 className="text-[17px] font-bold leading-tight" style={{ color: 'var(--series-cost)' }}>
+              {c.title} &rarr;</h3>
+            {c.answer ? <p className="text-[13.5px] leading-relaxed mt-1.5"
+              style={{ color: 'var(--text-secondary)' }}>{c.answer}</p> : null}
+          </a>
+          {c.groups.map((g, gi) => (
+            <div key={gi} className="mt-5">
+              {g.title ? (
+                <h3 className="text-[12px] font-semibold uppercase tracking-widest mb-2"
+                  style={{ color: 'var(--text-muted)' }}>{g.title}</h3>
+              ) : null}
+              <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => {
+                  const also = t.shelves.filter(s => s !== c.id)
+                  return (
+                    <li key={t.id} style={{ opacity: t.ready ? 1 : 0.55 }}>
+                      <a href={t.path} className="text-[15px] font-semibold underline"
+                        style={{ color: 'var(--series-cost)' }}>{t.title}</a>
+                      <p className="text-[13px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                        {t.finding ?? 'Being written.'}
+                        {also.length ? <span style={{ color: 'var(--text-muted)' }}>
+                          {' '}· also under {also.map(shelfName).join(', ')}</span> : null}
+                      </p>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          ))}
+          {c.elsewhere.length ? (
+            <p className="text-[13px] mt-5" style={{ color: 'var(--text-muted)' }}>Also on this subject:{' '}
+              {c.elsewhere.map((e, i) => <span key={e.href}>{i ? ' · ' : ''}<a href={e.href}
+                className="underline" style={{ color: 'var(--series-cost)' }}>{e.title}</a></span>)}</p>
+          ) : null}
+          <p className="text-[12.5px] mt-3" style={{ color: 'var(--text-muted)' }}>
+            All of it in one document: <a href={c.full_report.href} className="underline"
+              style={{ color: 'var(--series-cost)' }}>{c.full_report.label}</a></p>
+        </Section>
+      ))}
+    </>
+  )
+}
+
 export function Reports() {
   const [d, setD] = useState<Payload | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -349,8 +417,8 @@ export function Reports() {
           they are the same kind of thing: something this project wrote about the town's
           money. Which of them is computed on every build and which is prose with a
           verifier beside it is a fact about the report, and it belongs ON the report. */}
-      {d.groups.map(g => (
-        <Section key={g.key} id={g.key}
+      {d.groups.map(g => (<div key={g.key}>
+        <Section id={g.key}
           eyebrow={g.key === 'school' ? 'Where most of the money goes'
                  : g.key === 'town' ? 'The other side of the ledger' : 'Method'}
           title={g.title}>
@@ -385,7 +453,10 @@ export function Reports() {
             </div>
           ))}
         </Section>
-      ))}
+        {/* The two subject shelves follow the schools: most of what they cover is school
+            money, and a reader looking for buses or sports has just passed the schools. */}
+        {g.key === 'school' ? <TopicShelves /> : null}
+      </div>))}
 
       {/* SHOW YOUR WORK GETS A SECTION TO ITSELF, AND IT GOES LAST.
           TJ: "its a critical report". It is, and in the middle of a list of eighteen it

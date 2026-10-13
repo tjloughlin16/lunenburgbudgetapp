@@ -1,0 +1,223 @@
+{
+ "category": "transportation",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$11,000",
+     "unit": "",
+     "value": 11000
+    },
+    "b": {
+     "text": "$11,000",
+     "unit": "",
+     "value": 11000
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "netted",
+    "moved"
+   ],
+   "text": "The line was voted $11,000 below the contract, and $11,000 was moved back in during the year."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the account the bus fee payments are deposited to, from the Town Accountant",
+     "figures": {
+      "a": {
+       "text": "$52,717",
+       "unit": "",
+       "value": 52717.04
+      },
+      "b": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "Where the fees are booked is not established; the only account named for them, in the school choice fund, took in $52,717 in FY2026 and spent nothing on buses."
+    }
+   ],
+   "rests_on": [
+    "fee-acct"
+   ],
+   "text": "Where the fee money is booked is not established."
+  }
+ ],
+ "facts": [
+  {
+   "id": "fee-one",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, one child"
+   },
+   "value": {
+    "text": "$180",
+    "unit": "",
+    "value": 180
+   }
+  },
+  {
+   "id": "fee-family",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, two or more children"
+   },
+   "value": {
+    "text": "$270",
+    "unit": "",
+    "value": 270
+   }
+  },
+  {
+   "id": "requests",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "June 2025"
+    ],
+    "text": "bus requests, June 2025"
+   },
+   "value": {
+    "text": "1,074",
+    "unit": "",
+    "value": 1074
+   }
+  },
+  {
+   "id": "unpaid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them unpaid at the time"
+   },
+   "value": {
+    "text": "494",
+    "unit": "",
+    "value": 494
+   }
+  },
+  {
+   "id": "netted",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the budget was voted below the contract"
+   },
+   "value": {
+    "text": "$11,000",
+    "unit": "",
+    "value": 11000
+   }
+  },
+  {
+   "id": "moved",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "moved back in during the year"
+   },
+   "value": {
+    "text": "$11,000",
+    "unit": "",
+    "value": 11000
+   }
+  },
+  {
+   "id": "fee-acct",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "into the only account named for fees, FY2026"
+   },
+   "value": {
+    "text": "$52,717",
+    "unit": "",
+    "value": 52717.04
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The new bus fee did not lower what the school budget paid for buses in FY2026."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "bus-fee",
+ "kind": "topic",
+ "path": "/transportation/bus-fee",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2025-03-20",
+   "href": "/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt",
+   "label": "Finance Committee minutes, 2025-03-20",
+   "quote": "The implementation of transportation fee reduced the student transportation line by $11,000."
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-06-04",
+   "href": "/docs/minutes/text/school-committee/2025-06-04-minutes-7251.txt",
+   "label": "School Committee minutes, 2025-06-04",
+   "quote": "We have received 1,074 bus requests, and have 494 unpaid at this time."
+  }
+ ],
+ "shelves": [
+  "transportation"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2024-2025-transportation-fee-proposal.pdf",
+   "label": "Lunenburg Public Schools — 2024-2025-transportation-fee-proposal.pdf"
+  },
+  {
+   "href": "/docs/correspondence/2025-05-bus-fees-superintendent.txt",
+   "label": "Lunenburg Public Schools — 2025-05-bus-fees-superintendent.txt"
+  },
+  {
+   "href": "/docs/correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+   "label": "Lunenburg Public Schools — 2026-08-17-bus-routes-and-fees-superintendent.txt"
+  }
+ ],
+ "table": null,
+ "title": "Bus fee"
+}

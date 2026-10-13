@@ -1,0 +1,226 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-athletics",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$50,000",
+     "unit": "",
+     "value": 50000.0
+    },
+    "b": {
+     "text": "$60,000",
+     "unit": "",
+     "value": 60000.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "from-fund",
+    "restored"
+   ],
+   "text": "Most of what was put back is on the fee fund: $50,000 of $60,000."
+  },
+  {
+   "figures": {
+    "e": {
+     "text": "$58,880",
+     "unit": "",
+     "value": 58880.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether a bus went, was shared, or waited four hours is not recorded, so neither the sheet nor our model can be checked trip by trip."
+    }
+   ],
+   "rests_on": [
+    "estimate",
+    "sched27"
+   ],
+   "text": "The district’s $58,880 estimate is below what the posted schedules would cost, by our estimate."
+  }
+ ],
+ "facts": [
+  {
+   "id": "cut27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "athletic buses cut from FY2027"
+   },
+   "value": {
+    "text": "$127,550",
+    "unit": "",
+    "value": 127550
+   }
+  },
+  {
+   "id": "restored",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "August 2026"
+    ],
+    "text": "put back, August 2026"
+   },
+   "value": {
+    "text": "$60,000",
+    "unit": "",
+    "value": 60000.0
+   }
+  },
+  {
+   "id": "from-town",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it from the town"
+   },
+   "value": {
+    "text": "$10,000",
+    "unit": "",
+    "value": 10000.0
+   }
+  },
+  {
+   "id": "from-fund",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it from the fee fund"
+   },
+   "value": {
+    "text": "$50,000",
+    "unit": "",
+    "value": 50000.0
+   }
+  },
+  {
+   "id": "estimate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the district’s estimate of the year’s buses"
+   },
+   "value": {
+    "text": "$58,880",
+    "unit": "",
+    "value": 58880.0
+   }
+  },
+  {
+   "id": "sched27",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the posted schedules, shared buses, FY2027 prices"
+   },
+   "value": {
+    "text": "$120,296",
+    "unit": "",
+    "value": 120296
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "r": {
+    "text": "$60,000",
+    "unit": "",
+    "value": 60000.0
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [],
+  "text": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "fy2027-athletic-bus-cut",
+ "kind": "topic",
+ "path": "/transportation/fy2027-athletic-bus-cut",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-08-26",
+   "href": "/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
+   "label": "School Committee minutes, 2026-08-26",
+   "quote": "the verified transportation cost was approximately $58,880, which she rounded to $60,000. Of that amount, $10,000 would come from the additional appropriation and $50,000 from the athletic revolving account."
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-08-26",
+   "href": "/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
+   "label": "School Committee minutes, 2026-08-26",
+   "quote": "$10,000 toward the restoration of high school athletic transportation, with additional transportation funding to come from the athletic revolving fund. Ms. Young seconded the motion. The motion passed, 3-0-1"
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-08-26",
+   "href": "/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
+   "label": "School Committee minutes, 2026-08-26",
+   "quote": "the reduced cost resulted from scheduling more competitions closer to Lunenburg, increasing home competitions, and using actual schedules and prior-year spring costs to obtain a more accurate transportation estimate"
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-08-26",
+   "href": "/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
+   "label": "School Committee minutes, 2026-08-26",
+   "quote": "the private transportation waiver currently included in FinalForms, which allowed student-athletes to be transported privately while district transportation was unavailable"
+  }
+ ],
+ "shelves": [
+  "transportation",
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  },
+  {
+   "href": "/docs/correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+   "label": "Lunenburg Public Schools — 2026-08-17-bus-routes-and-fees-superintendent.txt"
+  }
+ ],
+ "table": null,
+ "title": "FY2027 athletic bus cut"
+}

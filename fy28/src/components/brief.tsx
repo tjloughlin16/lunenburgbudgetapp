@@ -69,7 +69,7 @@ function Said({ u }: { u: Unit }) {
   return <>{parts.map((p, i) => (texts.includes(p) ? <strong key={i}>{p}</strong> : p))}</>
 }
 
-function Tag({ v, label }: { v: Verdict; label: string }) {
+export function Tag({ v, label }: { v: Verdict; label: string }) {
   return (
     <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase
                      tracking-wider whitespace-nowrap" style={{ color: 'var(--text-primary)' }}>
@@ -131,7 +131,8 @@ function Layers({ steps }: { steps: Step[] }) {
  *  and what would settle it, a possible explanation if one is offered, and one link down to
  *  the full evidence -- measured layers, quotations and captions -- in the document. Flat,
  *  no indent, one line each. */
-function Brief({ steps }: { steps: Step[] }) {
+/** `base`: where a step's evidence link points -- this page (empty) or the full report. */
+export function Brief({ steps, base = '' }: { steps: Step[]; base?: string }) {
   const gap = steps.find(s => s.kind === 'gap')
   const hyp = steps.find(s => s.kind === 'hypothesis')
   const link = steps.find(s => s.link)?.link
@@ -149,7 +150,7 @@ function Brief({ steps }: { steps: Step[] }) {
       {hyp ? line('Possible explanation, untested:', 'var(--axis)', hyp.text) : null}
       {link ? (
         <p className="text-[13px] mt-2 no-print">
-          <a className="underline" style={linkStyle} href={`#${link.anchor}`}>
+          <a className="underline" style={linkStyle} href={`${base}#${link.anchor}`}>
             The full evidence: {link.label} &darr;</a>
         </p>
       ) : null}
@@ -245,14 +246,17 @@ function CostTable({ t }: { t: Costs }) {
  *  table's place under the answer -- the picture a reader remembers and, by hover or tap,
  *  every figure the table held -- and the table folds beneath it, because its last row is
  *  the district's sheet, which the chart does not draw, and a table is what gets quoted. */
-export function BriefTop({ brief, hero, ladder, table }: {
+export function BriefTop({ brief, hero, ladder, table, contents }: {
   brief: Brief; hero?: React.ReactNode; ladder?: LadderData; table?: FigureTableData
+  contents?: React.ReactNode
 }) {
   return (
-    <section data-section="brief" className="mt-6 max-w-3xl">
+    <section data-section="brief" id="the-answer"
+      className="mt-6 max-w-3xl scroll-mt-[calc(var(--header-h)+1rem)]">
       <p data-short="" data-point="" className="text-[19px] leading-snug font-semibold">
         {brief.answer.text}
       </p>
+      {contents}
 
       {hero ? (
         <>
@@ -280,7 +284,7 @@ export function BriefTop({ brief, hero, ladder, table }: {
       )}
 
       {table ? (
-        <div className="mt-10">
+        <div id="every-year" className="mt-10 scroll-mt-[calc(var(--header-h)+1rem)]">
           <h2 className="text-[11px] font-semibold uppercase tracking-widest"
             style={{ color: 'var(--text-muted)' }}>Every year, in figures</h2>
           <FigureTable t={table} />

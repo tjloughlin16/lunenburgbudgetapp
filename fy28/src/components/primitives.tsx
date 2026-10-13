@@ -1,7 +1,10 @@
 import { useState, type ReactNode } from 'react'
 
-export function Section({ id, eyebrow, title, lede, point, children }: {
+export function Section({ id, eyebrow, title, lede, point, href, children }: {
   id: string; eyebrow?: string; title: string; lede?: ReactNode; children: ReactNode
+  /** Where the heading itself goes, when the section is a doorway to a page of its own --
+   *  a subject shelf on /reports, whose title is its hub. */
+  href?: string
   /** The title is itself a claim a reader should leave with ("Costs grow 5.18%. Revenue
    *  grows 3.23%."), not a heading over one. Marks it for the short-version table. */
   point?: boolean
@@ -14,7 +17,9 @@ export function Section({ id, eyebrow, title, lede, point, children }: {
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
         )}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-point={point ? '' : undefined}>{title}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-point={point ? '' : undefined}>
+          {href ? <a href={href} className="hover:underline underline-offset-4"
+            style={{ color: 'var(--series-cost)' }}>{title} &rarr;</a> : title}</h2>
         {lede && (
           <div className="max-w-3xl text-[15px] leading-relaxed mb-8"
             style={{ color: 'var(--text-secondary)' }}>{lede}</div>

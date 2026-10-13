@@ -1,0 +1,541 @@
+{
+ "category": "athletics",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "25",
+     "unit": "",
+     "value": 25
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a reconciliation by the district of its own per-sport cost statements, naming what each column counts",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "All three sheets were assembled by hand; none is the ledger."
+    }
+   ],
+   "rests_on": [
+    "agree"
+   ],
+   "text": "Not one of the 25 teams carries the same FY2024 cost in all three district sheets."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$612.79",
+     "unit": "",
+     "value": 612.79
+    },
+    "b": {
+     "text": "$14,189.18",
+     "unit": "",
+     "value": 14189.18
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The columns may answer different questions, a season’s direct cost against an all-in one. Nothing published tests that."
+    }
+   ],
+   "rests_on": [
+    "lax-lo",
+    "lax-hi"
+   ],
+   "text": "Boys’ lacrosse is stated at $612.79 in one sheet and $14,189.18 in another, for the same year."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "173",
+     "unit": "payments",
+     "value": 173
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "payments",
+    "named",
+    "sport-gap"
+   ],
+   "text": "The town’s books cannot settle it: none of the fee fund’s 173 payments names a sport."
+  }
+ ],
+ "facts": [
+  {
+   "id": "agree",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "teams with one cost in all three sheets"
+   },
+   "value": {
+    "text": "0",
+    "unit": "teams",
+    "value": 0
+   }
+  },
+  {
+   "id": "lax-lo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [
+     "May 2024"
+    ],
+    "text": "boys’ lacrosse, FY2024, the May 2024 deck"
+   },
+   "value": {
+    "text": "$612.79",
+    "unit": "",
+    "value": 612.79
+   }
+  },
+  {
+   "id": "lax-hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "boys’ lacrosse, the by-sport workbook"
+   },
+   "value": {
+    "text": "$14,189.18",
+    "unit": "",
+    "value": 14189.18
+   }
+  },
+  {
+   "id": "track-lo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [
+     "May 2024"
+    ],
+    "text": "outdoor track, FY2024, the May 2024 deck"
+   },
+   "value": {
+    "text": "$1,146.00",
+    "unit": "",
+    "value": 1146.0
+   }
+  },
+  {
+   "id": "track-mid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "outdoor track, the “Costs by Sport” sheet"
+   },
+   "value": {
+    "text": "$15,221.50",
+    "unit": "",
+    "value": 15221.5
+   }
+  },
+  {
+   "id": "track-hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "outdoor track, the by-sport workbook"
+   },
+   "value": {
+    "text": "$22,840.00",
+    "unit": "",
+    "value": 22840.0
+   }
+  },
+  {
+   "id": "payments",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "fee fund disbursements, FY2024 to FY2026"
+   },
+   "value": {
+    "text": "173",
+    "unit": "payments",
+    "value": 173
+   }
+  },
+  {
+   "id": "named",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them naming a sport"
+   },
+   "value": {
+    "text": "0",
+    "unit": "payments",
+    "value": 0
+   }
+  },
+  {
+   "closes": "the accounts-payable detail behind the fee fund’s warrants, coded by sport",
+   "id": "sport-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what any one sport costs, on the books"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n": {
+    "text": "25",
+    "unit": "",
+    "value": 25
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   }
+  },
+  "literals": [],
+  "text": "Not one of 25 teams carries the same FY2024 cost in all three district sheets."
+ },
+ "full_report": {
+  "href": "/analysis/athletics",
+  "label": "Athletics, the full report"
+ },
+ "id": "cost-per-sport",
+ "kind": "topic",
+ "path": "/athletics/cost-per-sport",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-06-24",
+   "href": "/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "School Committee minutes, 2026-06-24",
+   "quote": "Field hockey and track, they are using hand me down jerseys, field hockey had 11 games last year and one official per game at $50 per official. Track had zero officials, the coaches were the officials and they are using hand me down jerseys from varsity."
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-06-24",
+   "href": "/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "School Committee minutes, 2026-06-24",
+   "quote": "I don’t know how track costs anything other than overhead allocations, which I would call programmatic cost."
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-06-24",
+   "href": "/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "School Committee minutes, 2026-06-24",
+   "quote": "I have put in a formal request records to Dr. Fortuna and the school to help out, I would like the actuals for this."
+  }
+ ],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/athletic-program-costs-by-sport.pdf",
+   "label": "Lunenburg Public Schools — athletic-program-costs-by-sport.pdf"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — account-details-fy2026-fund1301.xlsx"
+  },
+  {
+   "href": "/docs/data/athletics-by-sport.csv",
+   "label": "Lunenburg Budget Project — athletics-by-sport.csv (the by-sport workbook, cell by cell)"
+  },
+  {
+   "href": "/docs/data/athletics-fincom.csv",
+   "label": "Lunenburg Budget Project — athletics-fincom.csv (the second per-sport sheet, cell by cell)"
+  },
+  {
+   "href": "/docs/data/fund-1301-cash-journal.csv",
+   "label": "Lunenburg Budget Project — fund-1301-cash-journal.csv (the fund’s cashbook, every posting)"
+  }
+ ],
+ "table": {
+  "caption": "FY2024 cost per team, as three district sheets state it",
+  "views": [
+   {
+    "columns": [
+     "May 2024 deck",
+     "“Costs by Sport”",
+     "By-sport workbook"
+    ],
+    "key": "teams",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Three sheets, side by side",
+    "note": "Every column is a sheet somebody assembled, not the ledger. They are set side by side and never averaged.",
+    "rows": [
+     {
+      "cells": [
+       "$25,774.45",
+       "$19,805.28",
+       "$30,114.24"
+      ],
+      "label": "Football"
+     },
+     {
+      "cells": [
+       "$4,960.50",
+       "$5,909.00",
+       "$5,906.00"
+      ],
+      "label": "Cheer"
+     },
+     {
+      "cells": [
+       "$9,865.99",
+       "$10,458.50",
+       "$12,004.28"
+      ],
+      "label": "Field Hockey"
+     },
+     {
+      "cells": [
+       "$6,818.50",
+       "$10,585.90",
+       "$11,000.90"
+      ],
+      "label": "Cross Country"
+     },
+     {
+      "cells": [
+       "$5,930.97",
+       "$7,859.40",
+       "$7,936.97"
+      ],
+      "label": "Golf"
+     },
+     {
+      "cells": [
+       "$9,336.50",
+       "$18,950.33",
+       "$14,637.80"
+      ],
+      "label": "Boys' Soccer"
+     },
+     {
+      "cells": [
+       "$14,983.50",
+       "$15,250.33",
+       "$19,659.81"
+      ],
+      "label": "Girls' Soccer"
+     },
+     {
+      "cells": [
+       "$1,907.82",
+       "$3,032.82",
+       "$3,122.82"
+      ],
+      "label": "Unified Basketball"
+     },
+     {
+      "cells": [
+       "$4,895.00",
+       "$17,431.00",
+       "$22,684.50"
+      ],
+      "label": "Softball"
+     },
+     {
+      "cells": [
+       "$1,492.29",
+       "$12,350.16",
+       "$14,061.16"
+      ],
+      "label": "Girls' Lacrosse"
+     },
+     {
+      "cells": [
+       "$612.79",
+       "$10,496.18",
+       "$14,189.18"
+      ],
+      "label": "Boys' Lacrosse"
+     },
+     {
+      "cells": [
+       "$2,573.50",
+       "$17,777.36",
+       "$19,295.36"
+      ],
+      "label": "Baseball"
+     },
+     {
+      "cells": [
+       "$1,146.00",
+       "$15,221.50",
+       "$22,840.00"
+      ],
+      "label": "Outdoor Track"
+     },
+     {
+      "cells": [
+       "$17,532.50",
+       "$32,456.00",
+       "$29,600.50"
+      ],
+      "label": "Indoor Track"
+     },
+     {
+      "cells": [
+       "$353.00",
+       "$1,593.00",
+       "$2,583.00"
+      ],
+      "label": "Unified Track"
+     },
+     {
+      "cells": [
+       "$14,959.00",
+       "$9,881.00",
+       "$21,296.00"
+      ],
+      "label": "Girls' Basketball"
+     },
+     {
+      "cells": [
+       "$20,717.96",
+       "$13,518.00",
+       "$28,027.46"
+      ],
+      "label": "Boys' Basketball"
+     },
+     {
+      "cells": [
+       "$15,069.70",
+       "$11,994.27",
+       "$23,700.70"
+      ],
+      "label": "Boys' Ice Hockey"
+     },
+     {
+      "cells": [
+       "$1,100.00",
+       "$1,100.00",
+       "$2,117.48"
+      ],
+      "label": "Girls' Ice Hockey"
+     },
+     {
+      "cells": [
+       "$9,825.00",
+       "$9,825.00",
+       "$10,960.00"
+      ],
+      "label": "Alpine Skiing"
+     },
+     {
+      "cells": [
+       "$2,428.65",
+       "$6,134.85",
+       "$6,805.20"
+      ],
+      "label": "MS Cross Country (MS)"
+     },
+     {
+      "cells": [
+       "$3,407.50",
+       "$7,180.25",
+       "$7,229.53"
+      ],
+      "label": "MS Field Hockey (MS)"
+     },
+     {
+      "cells": [
+       "$4,000.00",
+       "$4,000.00",
+       "$4,316.00"
+      ],
+      "label": "MS Track (MS)"
+     },
+     {
+      "cells": [
+       "$2,365.75",
+       "$6,764.25",
+       "$7,268.25"
+      ],
+      "label": "MS Girls' Basketball (MS)"
+     },
+     {
+      "cells": [
+       "$3,298.75",
+       "$6,373.25",
+       "$7,788.25"
+      ],
+      "label": "MS Boys' Basketball (MS)"
+     },
+     {
+      "cells": [
+       "$185,355.62",
+       "$275,947.63",
+       "$349,145.39"
+      ],
+      "label": "All 25 teams"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Cost per sport"
+}

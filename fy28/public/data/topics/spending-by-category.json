@@ -1,0 +1,380 @@
+{
+ "category": "athletics",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "wb-coaches",
+    "wb-bus",
+    "wb-officials",
+    "wb-else"
+   ],
+   "text": "On the district’s FY2024 sheet, coaches and buses were the two largest costs."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "$113,602",
+     "unit": "",
+     "value": 113602.4
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "$0",
+     "unit": "",
+     "value": 0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the fee fund’s purchase-of-service detail by vendor, from the Town Accountant",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "What those services were, vendor by vendor, is not published."
+    }
+   ],
+   "rests_on": [
+    "gf-officials",
+    "fund-pos"
+   ],
+   "text": "The town’s officials account held $0 in FY2026; the fee fund bought $113,602 of services."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$140,606",
+     "unit": "",
+     "value": 140605.91
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "gf-director",
+    "gf-trainer"
+   ],
+   "text": "The athletic director and trainer, $140,606 in FY2026, are not on the district’s by-sport workbook."
+  }
+ ],
+ "facts": [
+  {
+   "id": "wb-coaches",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "coaches, FY2024, district workbook"
+   },
+   "value": {
+    "text": "$127,088",
+    "unit": "",
+    "value": 127088.4
+   }
+  },
+  {
+   "id": "wb-bus",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "buses, FY2024, district workbook"
+   },
+   "value": {
+    "text": "$117,555",
+    "unit": "",
+    "value": 117555.0
+   }
+  },
+  {
+   "id": "wb-officials",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "officials, FY2024, district workbook"
+   },
+   "value": {
+    "text": "$51,570",
+    "unit": "",
+    "value": 51570.04
+   }
+  },
+  {
+   "id": "wb-else",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "everything else, FY2024, district workbook"
+   },
+   "value": {
+    "text": "$55,429",
+    "unit": "",
+    "value": 55429.45
+   }
+  },
+  {
+   "id": "gf-coaches",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "coaches, town budget, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$145,882",
+    "unit": "",
+    "value": 145882.0
+   }
+  },
+  {
+   "id": "gf-director",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "athletic director, town budget, FY2026"
+   },
+   "value": {
+    "text": "$74,406",
+    "unit": "",
+    "value": 74406.0
+   }
+  },
+  {
+   "id": "gf-trainer",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "athletic trainer, town budget, FY2026"
+   },
+   "value": {
+    "text": "$66,200",
+    "unit": "",
+    "value": 66199.91
+   }
+  },
+  {
+   "id": "gf-officials",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "officials account, town budget, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0.0
+   }
+  },
+  {
+   "id": "fund-pos",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "fee fund, purchased services, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$113,602",
+    "unit": "",
+    "value": 113602.4
+   }
+  },
+  {
+   "id": "fund-sal",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "fee fund, salaries, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$30,514",
+    "unit": "",
+    "value": 30513.84
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  "literals": [],
+  "text": "Coaches and buses cost most on the district’s sheet; the town’s officials account held $0 in FY2026."
+ },
+ "full_report": {
+  "href": "/analysis/athletics",
+  "label": "Athletics, the full report"
+ },
+ "id": "spending-by-category",
+ "kind": "topic",
+ "path": "/athletics/spending-by-category",
+ "said": [],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "label": "Lunenburg Public Schools — athletics-by-sport-fy2024-fy2026.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/school-funds-fy26.xlsx",
+   "label": "Lunenburg Public Schools — school-funds-fy26.xlsx"
+  },
+  {
+   "href": "/docs/data/athletics-by-sport.csv",
+   "label": "Lunenburg Budget Project — athletics-by-sport.csv (the by-sport workbook, cell by cell)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the MUNIS year-end reports, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Athletics by category, on the district’s workbook",
+  "views": [
+   {
+    "columns": [
+     "Coaches",
+     "Transportation",
+     "Officials",
+     "Everything else",
+     "Total"
+    ],
+    "key": "categories",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "District by-sport workbook",
+    "note": "A sheet the district assembled, every sport and season summed. It is not the ledger and it carries no director, trainer or insurance.",
+    "rows": [
+     {
+      "cells": [
+       "$91,589",
+       "$91,066",
+       "$50,696",
+       "$50,371",
+       "$283,721"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$127,088",
+       "$117,555",
+       "$51,570",
+       "$55,429",
+       "$351,643"
+      ],
+      "label": "FY2024"
+     }
+    ],
+    "total_col": 4
+   }
+  ]
+ },
+ "title": "Spending by category"
+}

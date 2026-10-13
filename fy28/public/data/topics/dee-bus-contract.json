@@ -1,0 +1,369 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-contract",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Dee Bus contract that ran to June 2025, requested 9 October 2026",
+     "figures": {
+      "a": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "b": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "c": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      },
+      "d": {
+       "text": "7.6%",
+       "unit": "",
+       "value": 7.6
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "June 2025",
+      "9 October 2026"
+     ],
+     "text": "The contract before this one has not been published, so neither why FY2024 cost more than FY2025 nor whether FY2026’s 7.6% rise was price or an extra bus can be told."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "b": {
+       "text": "$907,200",
+       "unit": "",
+       "value": 907200
+      },
+      "c": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      },
+      "d": {
+       "text": "$976,500",
+       "unit": "",
+       "value": 976500
+      }
+     },
+     "kind": "measured",
+     "link": {
+      "anchor": "regular-routes-the-budget-against-the-contract",
+      "label": "Regular routes: the budget against the contract"
+     },
+     "literals": [],
+     "text": "FY2025 spent its budget exactly, $907,200. FY2026 spent the contract’s first-year price exactly, $976,500."
+    }
+   ],
+   "rests_on": [
+    "regular",
+    "bus-day"
+   ],
+   "text": "Regular routes now cost exactly what the Dee Bus contract says."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "rise27",
+    "rise28",
+    "levy",
+    "fixed28"
+   ],
+   "text": "The price rises faster than the levy may grow, in every year of the contract."
+  }
+ ],
+ "facts": [
+  {
+   "id": "regular",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "regular routes"
+   },
+   "value": {
+    "text": "$976,500",
+    "unit": "",
+    "value": 976500
+   }
+  },
+  {
+   "id": "buses",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "buses on regular routes"
+   },
+   "value": {
+    "text": "11",
+    "unit": "",
+    "value": 11
+   }
+  },
+  {
+   "id": "days",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "school days a bus is paid for"
+   },
+   "value": {
+    "text": "180",
+    "unit": "",
+    "value": 180
+   }
+  },
+  {
+   "id": "bus-day",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one bus, one school day"
+   },
+   "value": {
+    "text": "$485–$515",
+    "unit": "",
+    "value": 485.0
+   }
+  },
+  {
+   "id": "rise27",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "contract price, into FY2027"
+   },
+   "value": {
+    "text": "+7.9%",
+    "unit": "",
+    "value": 7.9
+   }
+  },
+  {
+   "id": "rise28",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "contract price, into FY2028"
+   },
+   "value": {
+    "text": "+7.4%",
+    "unit": "",
+    "value": 7.4
+   }
+  },
+  {
+   "id": "fixed28",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "regular routes in FY2028, already fixed"
+   },
+   "value": {
+    "text": "$1,131,390",
+    "unit": "",
+    "value": 1131390.0
+   }
+  },
+  {
+   "id": "levy",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year: the most the levy may grow, no override"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Regular routes cost exactly the contract price, which is fixed through FY2028."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "dee-bus-contract",
+ "kind": "topic",
+ "path": "/transportation/dee-bus-contract",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-01-08",
+   "href": "/docs/minutes/text/school-committee/2025-01-08-minutes-6948.txt",
+   "label": "School Committee minutes, 2025-01-08",
+   "quote": "it is a 3 year contract with tentative increases over the 3 years"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2026-02-26",
+   "href": "/docs/minutes/text/finance-committee/2026-02-26-minutes-7673.txt",
+   "label": "Finance Committee minutes, 2026-02-26",
+   "quote": "Chris Menard suggests the schools work on the contract as it is scheduled to be renewed in 2028."
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2024-03-14",
+   "href": "/docs/minutes/text/finance-committee/2024-03-14-minutes-6469.txt",
+   "label": "Finance Committee minutes, 2024-03-14",
+   "quote": "Chris Menard asks for a copy of the bus contracts. The schools will be going out to bid for school buses in January."
+  }
+ ],
+ "shelves": [
+  "transportation"
+ ],
+ "sources": [
+  {
+   "href": "/docs/contracts/pdf/dee-bus-bid-proposal-rates-fy26-fy30.pdf",
+   "label": "Lunenburg Public Schools / Dee Bus Service, Inc. — dee-bus-bid-proposal-rates-fy26-fy30.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/dee-bus-transportation-agreement-fy26-fy28.pdf",
+   "label": "Lunenburg Public Schools / Dee Bus Service, Inc. — dee-bus-transportation-agreement-fy26-fy28.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/dee-bus-first-amendment-2025.pdf",
+   "label": "Lunenburg Public Schools / Dee Bus Service, Inc. — dee-bus-first-amendment-2025.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/dee-bus-performance-and-payment-bond-fy27.pdf",
+   "label": "United Casualty and Surety Insurance Company — dee-bus-performance-and-payment-bond-fy27.pdf"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "The Dee Bus contract, year by year",
+  "views": [
+   {
+    "columns": [
+     "77-passenger, a day",
+     "83-passenger, a day",
+     "A trip mile",
+     "An hour waiting",
+     "Regular routes, the year"
+    ],
+    "key": "contract",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "As bid",
+    "note": "The bid form Dee Bus signed on 27 December 2024. The last two years are optional extensions.",
+    "rows": [
+     {
+      "cells": [
+       "$485.00",
+       "$515.00",
+       "$6.50",
+       "$130",
+       "$976,500"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$523.00",
+       "$556.00",
+       "$6.65",
+       "$140",
+       "$1,053,360"
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "$565.00",
+       "$588.50",
+       "$6.90",
+       "$150",
+       "$1,131,390"
+      ],
+      "label": "FY2028"
+     },
+     {
+      "cells": [
+       "$590.00",
+       "$630.00",
+       "$7.00",
+       "$175",
+       "$1,189,800"
+      ],
+      "label": "FY2029 (option)"
+     },
+     {
+      "cells": [
+       "$637.20",
+       "$680.40",
+       "$7.25",
+       "$190",
+       "$1,284,984"
+      ],
+      "label": "FY2030 (option)"
+     }
+    ],
+    "total_col": 4
+   }
+  ]
+ },
+ "title": "Dee Bus contract"
+}

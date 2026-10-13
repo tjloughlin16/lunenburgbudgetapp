@@ -15,7 +15,7 @@ import { Home } from './pages/Home'
 import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
-import { Athletics } from './pages/Athletics'
+import { Topic } from './pages/Topic'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
 import { AgentsIndex } from './components/AgentsIndex'
@@ -93,7 +93,7 @@ import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
 import { SiteMenu, SiteMap } from './components/SiteMenu'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -493,7 +493,9 @@ export default function App() {
       {tab === 'deeper' && <GoDeeper />}
 
       {tab === 'sources' && <Sources />}
-      {tab === 'athletics' && <Athletics />}
+      {/* /athletics is now the athletics HUB (scripts/topics.py); the both-sides page it
+          showed became the `town-budget-and-fee-fund` topic. */}
+      {(tab === 'athletics' || tab === 'topic') && <Topic fallback={tab === 'athletics' ? 'athletics' : 'transportation'} />}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
       {tab === 'themoney' && <Money />}
@@ -667,7 +669,34 @@ export default function App() {
  *
  *  Not sticky. The header above it already is, and two stacked bars would push every
  *  page's own pinned content down for the sake of a line that is only read on arrival. */
+/** THE SUBJECT SHELVES' OWN TRAIL. TJ, 12 October 2026: "i expect the nav bar and
+ *  breadcrumbs to be Home -> reports -> hub -> etc". A hub or topic page (scripts/topics.py)
+ *  sits on a shelf of /reports, so its trail is Home > Reports > the shelf > the page -- not
+ *  the parent chain, which runs /reports up through "How the money moves" for every report.
+ *  Titles come from the same index the shelves read, so a crumb cannot disagree with them. */
+type TopicCrumbIndex = {
+  categories: { id: string; shelf: string; path: string }[]
+  topics: Record<string, { title: string; home: string }>
+}
+function useTopicCrumbs(tab: Tab) {
+  const [ix, setIx] = useState<TopicCrumbIndex | null>(null)
+  const on = tab === 'topic' || tab === 'athletics'
+  useEffect(() => {
+    if (on && !ix) fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {})
+  }, [on])
+  if (!on || !ix) return null
+  const id = topicIdFromPath(window.location.pathname) ?? (tab === 'athletics' ? 'athletics' : 'transportation')
+  const t = ix.topics[id]
+  const cat = ix.categories.find(c => c.id === (t ? t.home : id))
+  if (!cat) return null
+  const crumbs = [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
+                  { href: pathFor('reports'), label: LABEL.reports, tab: 'reports' as Tab | null }]
+  if (t) crumbs.push({ href: cat.path, label: cat.shelf, tab: null })
+  return { crumbs, current: t ? t.title : cat.shelf }
+}
+
 function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
+  const topic = useTopicCrumbs(tab)
   const trail: Tab[] = []
   for (let up = PARENT[tab]; up; up = PARENT[up]) trail.unshift(up)
   // Whichever tab owns the root, read from the table rather than named. It was hardcoded
@@ -685,6 +714,18 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
         {/* ON A PHONE, ONLY THE PARENT. TJ, 17 September 2026, on a three-line breadcrumb
             over a title: "we have to lose some of this space. It's too much on mobile".
             The full trail from the root is desktop furniture; a phone shows where up goes. */}
+        {topic ? (<>
+          {topic.crumbs.map((c, i) => (
+            <li key={c.href} className={`${i < topic.crumbs.length - 1 ? 'hidden sm:flex' : 'flex'} items-center gap-1.5`}>
+              <a href={c.href}
+                onClick={e => { if (!c.tab || !plainClick(e)) return; e.preventDefault(); goUp(c.tab) }}
+                className="font-semibold hover:underline"
+                style={{ color: 'var(--series-cost)' }}>{c.label}</a>
+              <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
+            </li>
+          ))}
+          <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{topic.current}</li>
+        </>) : (<>
         {trail.map((t, i) => (
           <li key={t} className={`${i < trail.length - 1 ? 'hidden sm:flex' : 'flex'} items-center gap-1.5`}>
             <a href={pathFor(t)}
@@ -695,6 +736,7 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
           </li>
         ))}
         <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
+        </>)}
       </ol>
       <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />
       </div>

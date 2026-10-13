@@ -1009,7 +1009,8 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
   return (
     <section data-section="ladder" className="mt-6 max-w-3xl">
       {!tiers && l.matrix ? (
-        <div className="mt-6"><LadderMatrixView m={l.matrix} byId={byId} lit={lit} /></div>
+        <div id="the-facts" className="mt-6 scroll-mt-[calc(var(--header-h)+1rem)]">
+          <LadderMatrixView m={l.matrix} byId={byId} lit={lit} /></div>
       ) : null}
       {tiers && l.tiers.map((t, i) => (
         <div key={t.title}>
@@ -1022,10 +1023,12 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
           </ul>
         </div>
       ))}
-      {tiers ? rung(l.tiers.length + 1, l.title) : (
-        <h2 className="text-[11px] font-semibold uppercase tracking-widest mb-2 mt-8"
-          style={{ color: 'var(--text-muted)' }}>{l.title}</h2>
-      )}
+      <div id="what-it-adds-up-to" className="scroll-mt-[calc(var(--header-h)+1rem)]">
+        {tiers ? rung(l.tiers.length + 1, l.title) : (
+          <h2 className="text-[11px] font-semibold uppercase tracking-widest mb-2 mt-8"
+            style={{ color: 'var(--text-muted)' }}>{l.title}</h2>
+        )}
+      </div>
       {/* ONE LIST, THREE DEPTHS. The conclusions and the brief's questions were the same
           layer said twice (TJ, 12 October 2026), so each conclusion now carries its
           question: the sentence to repeat; under it the verdict and the resident's question;
@@ -1046,7 +1049,7 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
                 <div className="flex-1 min-w-0">
                   <p className="text-[16px] leading-snug font-semibold"
                     style={{ color: 'var(--text-primary)' }}>{c.text}</p>
-                  {ev ? (
+                  {ev?.question ? (
                     <p className="text-[13px] leading-snug mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5"
                       style={{ color: 'var(--text-secondary)' }}>
                       {ev.tag}<span>{ev.question}</span>
@@ -1165,5 +1168,94 @@ export function FigureTable({ t }: { t: FigureTableData }) {
       </div>
       <p className="text-[12.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>{v.note}</p>
     </figure>
+  )
+}
+
+/* ---------------------------------------------------------------- on this page
+ * A TABLE OF CONTENTS, tried on /analysis/transportation (TJ, 12 October 2026: "can you put
+ * a table of contents on this page? I want to see if that helps"). On a wide screen it sits
+ * in the empty right margin and stays there, marking the section in view -- a SCROLL-SPY --
+ * so it costs the reading column nothing. Narrower than that there is no margin, and it is
+ * a short list in the flow instead. Template furniture: any page passes its own items. */
+export type PageContentsItem = { id: string; label: string; group?: string }
+
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState<string | null>(null)
+  useEffect(() => {
+    const on = () => {
+      // The section in view is the last one whose top has passed just under the header.
+      const line = 41 + 90
+      let cur: string | null = null
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= line) cur = id
+      }
+      setActive(cur)
+    }
+    on()
+    window.addEventListener('scroll', on, { passive: true })
+    return () => window.removeEventListener('scroll', on)
+  }, [ids.join('|')])
+  return active
+}
+
+export function PageContents({ items, variant }: { items: PageContentsItem[]; variant: 'rail' | 'inline' }) {
+  const active = useActiveSection(items.map(i => i.id))
+  const groups: { group?: string; items: PageContentsItem[] }[] = []
+  for (const it of items) {
+    const g = groups[groups.length - 1]
+    if (g && g.group === it.group) g.items.push(it)
+    else groups.push({ group: it.group, items: [it] })
+  }
+  const title = (
+    <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+      style={{ color: 'var(--text-muted)' }}>On this page</p>
+  )
+  if (variant === 'inline') {
+    return (
+      <nav aria-label="On this page" className="no-print mt-5 py-3 border-y"
+        style={{ borderColor: 'var(--grid)' }}>
+        {title}
+        {/* SHORT ON A PHONE. All sixteen entries filled a whole screen before the chart --
+            the preface rule 7a bans. So the top's own sections, and one door into each
+            further group at its first entry; the wide-screen rail lists them all. */}
+        <ol className="text-[14px] leading-snug flex flex-wrap gap-x-4 gap-y-1.5">
+          {groups.flatMap(g => g.group ? [{ ...g.items[0], label: `${g.group} ↓` }] : g.items)
+            .map(it => (
+              <li key={it.id}><a href={`#${it.id}`} className="underline"
+                style={{ color: 'var(--series-cost)' }}>{it.label}</a></li>
+            ))}
+        </ol>
+      </nav>
+    )
+  }
+  return (
+    <nav aria-label="On this page" className="no-print">
+      {title}
+      {groups.map((g, gi) => (
+        <div key={gi} className={gi ? 'mt-3' : undefined}>
+          {g.group ? (
+            <p className="text-[10.5px] font-semibold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>{g.group}</p>
+          ) : null}
+          <ol className="border-l" style={{ borderColor: 'var(--grid)' }}>
+            {g.items.map(it => {
+              const on = it.id === active
+              return (
+                <li key={it.id}>
+                  <a href={`#${it.id}`} aria-current={on ? 'location' : undefined}
+                    className="block text-[13px] leading-snug py-1 pl-3 -ml-px border-l-2"
+                    style={{
+                      borderColor: on ? 'var(--series-cost)' : 'transparent',
+                      color: on ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      fontWeight: on ? 600 : undefined,
+                    }}>{it.label}</a>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      ))}
+    </nav>
   )
 }

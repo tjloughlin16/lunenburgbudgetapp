@@ -1,0 +1,206 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-schools-athletics",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sd27",
+    "all27",
+    "cut27"
+   ],
+   "text": "The FY2027 total looks flat because athletic buses were cut, not because buses got cheaper."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sd27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "school-day buses, FY2027 budget"
+   },
+   "value": {
+    "text": "+11.2%",
+    "unit": "",
+    "value": 11.2
+   }
+  },
+  {
+   "id": "all27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "all buses together, FY2027 budget"
+   },
+   "value": {
+    "text": "+2.4%",
+    "unit": "",
+    "value": 2.4
+   }
+  },
+  {
+   "id": "cut27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "athletic buses cut from FY2027"
+   },
+   "value": {
+    "text": "$127,550",
+    "unit": "",
+    "value": 127550
+   }
+  },
+  {
+   "id": "sd26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "school-day buses, FY2026 budget"
+   },
+   "value": {
+    "text": "$1,531,234",
+    "unit": "",
+    "value": 1531234
+   }
+  },
+  {
+   "id": "sd27v",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "school-day buses, FY2027 budget"
+   },
+   "value": {
+    "text": "$1,703,313",
+    "unit": "",
+    "value": 1703313
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "11.2%",
+    "unit": "",
+    "value": 11.2
+   },
+   "b": {
+    "text": "2.4%",
+    "unit": "",
+    "value": 2.4
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [],
+  "text": "School-day buses rise 11.2% in FY2027; the total shows 2.4% because athletic buses were cut."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "fy2027-bus-budget",
+ "kind": "topic",
+ "path": "/transportation/fy2027-bus-budget",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-03-26",
+   "href": "/docs/minutes/text/finance-committee/2026-03-26-minutes-7737.txt",
+   "label": "Finance Committee minutes, 2026-03-26",
+   "quote": "All athletic transportation would be cut saving: $127,550."
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2026-03-26",
+   "href": "/docs/minutes/text/finance-committee/2026-03-26-minutes-7737.txt",
+   "label": "Finance Committee minutes, 2026-03-26",
+   "quote": "The transportation for Middle-High Band would be reduced to $5,000."
+  }
+ ],
+ "shelves": [
+  "transportation"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/school-department-fy26-budget-overview.pdf",
+   "label": "Lunenburg Public Schools — school-department-fy26-budget-overview.pdf"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2024-2025-transportation-fee-proposal.pdf",
+   "label": "Lunenburg Public Schools — 2024-2025-transportation-fee-proposal.pdf"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/athletics-costs-1.xlsx",
+   "label": "Lunenburg Public Schools — athletics-costs-1.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "FY2027 bus budget"
+}

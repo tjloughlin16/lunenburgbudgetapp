@@ -8,7 +8,7 @@ import { FullVersion } from '../components/FullVersion'
  *  context, and the document keeps its full length until it is edited. */
 const SHORT_HEADING = /^(the short version|what this establishes|in plain terms|what we now hold|where things stand)/i
 import { analysisIdFromPath } from '../routes'
-import { Body, Conclusions, Grain, H2, MoreReports, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
+import { Body, Conclusions, Grain, H2, MoreReports, PageContents, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
 import type { Conclusion, FigureTableData, LadderData } from '../components/report'
 import { BriefTop, type Brief } from '../components/brief'
 
@@ -237,29 +237,34 @@ export function Analysis() {
           document itself, evidence first, inventory after, sources last. No stat row, no
           cards, no fold: the top is complete on its own, and everything under it is one
           scroll or one link away for the reader who doubts it. */}
-      {brief ? (
-        <>
-          <BriefTop brief={brief} hero={heroFigures.length ? heroFigures : undefined}
-            ladder={model?.ladder} table={heroTable} />
-          {deeper.length ? (
-            <nav aria-label="Further down this page" className="no-print mt-10 max-w-3xl">
-              <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-                style={{ color: 'var(--text-muted)' }}>Further down this page</p>
-              <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
-                {deeper.map((h: Heading) => (
-                  <li key={h.id}>
-                    <a href={`#${h.id}`} className="text-[13.5px] leading-snug underline"
-                      style={{ color: 'var(--series-cost)' }}>{h.text}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ) : null}
-          <div className="report-body mt-6">
-            {(split ? split.rest : body ?? []).filter(n => !isHero(n))}
+      {brief ? (() => {
+        // ON THIS PAGE: the top's own sections, then the document's. One list; it replaces
+        // the "Further down this page" links, which said the second half of it.
+        const toc = [
+          { id: 'the-answer', label: 'The answer and the chart' },
+          ...(model?.ladder ? [{ id: 'the-facts', label: 'The facts' },
+                                { id: 'what-it-adds-up-to', label: model.ladder.title }] : []),
+          ...(heroTable ? [{ id: 'every-year', label: 'Every year, in figures' }] : []),
+          ...deeper.map((h: Heading) => ({ id: h.id, label: h.text, group: 'The full report' })),
+        ]
+        return (
+          <div className="xl:grid xl:grid-cols-[minmax(0,48rem)_14rem] xl:gap-12">
+            <div className="min-w-0">
+              <BriefTop brief={brief} hero={heroFigures.length ? heroFigures : undefined}
+                ladder={model?.ladder} table={heroTable}
+                contents={<div className="xl:hidden"><PageContents items={toc} variant="inline" /></div>} />
+              <div className="report-body mt-6">
+                {(split ? split.rest : body ?? []).filter(n => !isHero(n))}
+              </div>
+            </div>
+            <aside className="hidden xl:block">
+              <div className="sticky top-[calc(var(--header-h)+1.5rem)] max-h-[calc(100vh-var(--header-h)-3rem)] overflow-y-auto pt-6">
+                <PageContents items={toc} variant="rail" />
+              </div>
+            </aside>
           </div>
-        </>
-      ) : (<>
+        )
+      })() : (<>
       {/* The contents list draws only where there is no fold; the fold carries its own. */}
       {contents.length > 2 && !split && (
         <nav aria-label="Contents" className="no-print card p-4 mt-8 max-w-2xl">

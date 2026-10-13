@@ -1,0 +1,396 @@
+{
+ "category": "athletics",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$103,853",
+     "unit": "",
+     "value": 103852.53
+    },
+    "b": {
+     "text": "$33,993",
+     "unit": "",
+     "value": 33993.31
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "open24",
+    "net24",
+    "close24"
+   ],
+   "text": "The fund’s cash fell by $103,853 in FY2024, to $33,993 at the year’s end."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "65.1%",
+     "unit": "",
+     "value": 65.1
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the memos the ledger names beside each entry",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "An entry like this fits a charge moved to another fund, a transfer in, or a correction. The ledger cannot tell them apart."
+    }
+   ],
+   "rests_on": [
+    "receipts25",
+    "memo25",
+    "jshare",
+    "memo-gap"
+   ],
+   "text": "In FY2025, 65.1% of the money into the fund came on four entries labelled expense adjustments."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "-$122,882",
+     "unit": "",
+     "value": -122882.09
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A resident told the School Committee the fund ran a deficit. These figures fit that account; nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "without25",
+    "memo25"
+   ],
+   "text": "Take those entries away and the fund closes FY2025 at -$122,882, by our arithmetic."
+  }
+ ],
+ "facts": [
+  {
+   "id": "open24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "cash at the start of FY2024"
+   },
+   "value": {
+    "text": "$137,846",
+    "unit": "",
+    "value": 137845.84
+   }
+  },
+  {
+   "id": "net24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "net change in cash, FY2024"
+   },
+   "value": {
+    "text": "-$103,853",
+    "unit": "",
+    "value": -103852.53
+   }
+  },
+  {
+   "id": "close24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "cash at the end of FY2024"
+   },
+   "value": {
+    "text": "$33,993",
+    "unit": "",
+    "value": 33993.31
+   }
+  },
+  {
+   "id": "receipts25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "all money in, FY2025"
+   },
+   "value": {
+    "text": "$390,300",
+    "unit": "",
+    "value": 390299.87
+   }
+  },
+  {
+   "id": "memo25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "into the fee fund on four journal entries, FY2025"
+   },
+   "value": {
+    "text": "$254,121",
+    "unit": "",
+    "value": 254121.18
+   }
+  },
+  {
+   "id": "jshare",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of the money in, FY2025, from those entries"
+   },
+   "value": {
+    "text": "65.1%",
+    "unit": "",
+    "value": 65.1
+   }
+  },
+  {
+   "id": "without25",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FY2025 close without them (our arithmetic)"
+   },
+   "value": {
+    "text": "-$122,882",
+    "unit": "",
+    "value": -122882.09
+   }
+  },
+  {
+   "id": "close26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "cash on the export’s last day, FY2026"
+   },
+   "value": {
+    "text": "$131,333",
+    "unit": "",
+    "value": 131332.94
+   }
+  },
+  {
+   "closes": "the memos the ledger names beside each entry, from the Town Accountant",
+   "id": "memo-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what the journal entries moved, and from where"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$103,853",
+    "unit": "",
+    "value": 103852.53
+   },
+   "b": {
+    "text": "$254,121",
+    "unit": "",
+    "value": 254121.18
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   },
+   "z": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025."
+ },
+ "full_report": {
+  "href": "/analysis/athletics",
+  "label": "Athletics, the full report"
+ },
+ "id": "fee-fund-ledger",
+ "kind": "topic",
+ "path": "/athletics/fee-fund-ledger",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-09-03",
+   "href": "/docs/minutes/text/school-committee/2025-09-03-minutes-7385.txt",
+   "label": "School Committee minutes, 2025-09-03",
+   "quote": "in the past 6 months or so there have been things that have come up, athletic revolving fund was running in a deficit, I was told over $100,000"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2025-07-08",
+   "href": "/docs/minutes/text/finance-committee/2025-07-08-minutes-7295.txt",
+   "label": "Finance Committee minutes, 2025-07-08",
+   "quote": "She emphasized the need for all revolving accounts to have a budget, even if they are not town meeting revolving accounts, to prevent negative balances from going unnoticed."
+  }
+ ],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — account-details-fy2024-fund1301.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — account-details-fy2025-fund1301.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — account-details-fy2026-fund1301.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/school-funds-fy26.xlsx",
+   "label": "Lunenburg Public Schools — school-funds-fy26.xlsx"
+  },
+  {
+   "href": "/docs/data/fund-1301-cash-journal.csv",
+   "label": "Lunenburg Budget Project — fund-1301-cash-journal.csv (the fund’s cashbook, every posting)"
+  }
+ ],
+ "table": {
+  "caption": "The fee fund’s cash, by year",
+  "views": [
+   {
+    "columns": [
+     "Opening cash",
+     "Money in",
+     "Paid out",
+     "Of money in: journal entries",
+     "Closing cash"
+    ],
+    "key": "cash",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The fund’s cashbook",
+    "note": "MUNIS journal exports for fund 1301. Each year’s close ties to the next year’s printed opening. The latest year stops on 12 June 2026.",
+    "rows": [
+     {
+      "cells": [
+       "$131,239",
+       "$171,248",
+       "-$171,154",
+       "$0",
+       "$131,333"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$33,993",
+       "$390,300",
+       "-$293,054",
+       "$254,121",
+       "$131,239"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$137,846",
+       "$213,151",
+       "-$317,004",
+       "$49,925",
+       "$33,993"
+      ],
+      "label": "FY2024"
+     }
+    ],
+    "total_col": 4
+   }
+  ]
+ },
+ "title": "Fee fund ledger"
+}

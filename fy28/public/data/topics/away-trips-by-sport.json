@@ -1,0 +1,287 @@
+{
+ "category": "transportation",
+ "chart": {
+  "id": "transportation-sports",
+  "source": "/data/transportation.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$133,793",
+     "unit": "",
+     "value": 133793
+    },
+    "b": {
+     "text": "$180,460",
+     "unit": "",
+     "value": 180460
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Dee Bus’s athletic invoices, each trip’s date, team, miles and hours waiting, from the Business Office",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether a bus went, was shared, or waited four hours is not recorded, so neither the sheet nor our model can be checked trip by trip."
+    }
+   ],
+   "rests_on": [
+    "lo",
+    "hi",
+    "mile",
+    "hour"
+   ],
+   "text": "At contract prices the scheduled trips would cost $133,793 to $180,460, by our estimate."
+  }
+ ],
+ "facts": [
+  {
+   "id": "away",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "away games on the posted schedules"
+   },
+   "value": {
+    "text": "240",
+    "unit": "",
+    "value": 240
+   }
+  },
+  {
+   "id": "trips",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "athletic bus trips, from the posted schedules"
+   },
+   "value": {
+    "text": "176",
+    "unit": "",
+    "value": 176
+   }
+  },
+  {
+   "id": "miles",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "road miles, round trips"
+   },
+   "value": {
+    "text": "8,563",
+    "unit": "",
+    "value": 8563
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "if teams share buses, at FY2026 prices"
+   },
+   "value": {
+    "text": "$133,793",
+    "unit": "",
+    "value": 133793
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "one bus per team, at FY2026 prices"
+   },
+   "value": {
+    "text": "$180,460",
+    "unit": "",
+    "value": 180460
+   }
+  },
+  {
+   "id": "mile",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a mile, field and athletic trips"
+   },
+   "value": {
+    "text": "$6.50",
+    "unit": "",
+    "value": 6.5
+   }
+  },
+  {
+   "id": "hour",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "an hour of the driver waiting"
+   },
+   "value": {
+    "text": "$130",
+    "unit": "",
+    "value": 130.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "240",
+    "unit": "",
+    "value": 240
+   },
+   "t": {
+    "text": "176",
+    "unit": "",
+    "value": 176
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The posted schedules list 240 away games in FY2026, about 176 bus trips by our estimate."
+ },
+ "full_report": {
+  "href": "/analysis/transportation",
+  "label": "School transportation, the full report"
+ },
+ "id": "away-trips-by-sport",
+ "kind": "topic",
+ "path": "/transportation/away-trips-by-sport",
+ "said": [],
+ "shelves": [
+  "transportation",
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/athletics-schedules.csv",
+   "label": "Lunenburg Budget Project — every game on the district’s posted athletic schedules (ArbiterLive), FY2022–FY2027"
+  },
+  {
+   "href": "/docs/data/athletics-venue-distances.csv",
+   "label": "Lunenburg Budget Project — road distance to every away venue"
+  },
+  {
+   "href": "/docs/contracts/pdf/dee-bus-bid-proposal-rates-fy26-fy30.pdf",
+   "label": "Lunenburg Public Schools / Dee Bus Service, Inc. — dee-bus-bid-proposal-rates-fy26-fy30.pdf"
+  }
+ ],
+ "table": {
+  "caption": "Away games and bus trips by year",
+  "views": [
+   {
+    "columns": [
+     "Away games",
+     "Bus trips (our estimate)",
+     "Miles (our estimate)",
+     "Shared buses (our estimate)",
+     "Bus per team (our estimate)"
+    ],
+    "key": "trips",
+    "kinds": [
+     "ledger",
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "From the posted schedules",
+    "note": "Games are scheduled, not played, for the teams ArbiterLive lists. Every cost is our estimate at FY2026 contract prices.",
+    "rows": [
+     {
+      "cells": [
+       "126",
+       "75",
+       "4,113",
+       "$59,142",
+       "$97,911"
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "240",
+       "176",
+       "8,563",
+       "$133,793",
+       "$180,460"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "246",
+       "181",
+       "9,415",
+       "$140,719",
+       "$189,118"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "255",
+       "189",
+       "8,793",
+       "$142,483",
+       "$189,753"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "232",
+       "164",
+       "8,536",
+       "$125,877",
+       "$176,126"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "219",
+       "148",
+       "7,729",
+       "$111,892",
+       "$164,119"
+      ],
+      "label": "FY2022"
+     }
+    ],
+    "total_col": 4
+   }
+  ]
+ },
+ "title": "Away trips by sport"
+}

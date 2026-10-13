@@ -1,0 +1,318 @@
+{
+ "categories": [
+  {
+   "answer": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes.",
+   "elsewhere": [],
+   "full_report": {
+    "href": "/analysis/transportation",
+    "label": "School transportation, the full report"
+   },
+   "groups": [
+    {
+     "title": null,
+     "topics": [
+      "dee-bus-contract",
+      "special-education-transportation",
+      "state-reimbursement",
+      "bus-fee",
+      "fy2027-bus-budget"
+     ]
+    },
+    {
+     "title": "Athletic transportation",
+     "topics": [
+      "athletic-bus-funding",
+      "fy2027-athletic-bus-cut",
+      "bus-cost-by-sport",
+      "away-trips-by-sport"
+     ]
+    }
+   ],
+   "id": "transportation",
+   "minutes": 2,
+   "path": "/transportation",
+   "ready": true,
+   "shelf": "Transportation",
+   "title": "School bus costs"
+  },
+  {
+   "answer": "Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows $439,510 paid in FY2026 and the fee fund $146,911; the district’s own sheets disagree on what each team costs, by a multiple.",
+   "elsewhere": [
+    {
+     "href": "/youth-sports",
+     "title": "Youth sports and town fields"
+    },
+    {
+     "href": "/fees",
+     "title": "Raising school fees"
+    },
+    {
+     "href": "/extras",
+     "title": "Cutting the extras"
+    }
+   ],
+   "full_report": {
+    "href": "/analysis/athletics",
+    "label": "Athletics, the full report"
+   },
+   "groups": [
+    {
+     "title": null,
+     "topics": [
+      "total-athletics-cost",
+      "town-budget-and-fee-fund",
+      "cost-per-sport",
+      "spending-by-category",
+      "participation",
+      "athletic-fee",
+      "fee-fund-ledger",
+      "fy2026-athletics-underspend"
+     ]
+    },
+    {
+     "title": "Athletic transportation",
+     "topics": [
+      "athletic-bus-funding",
+      "fy2027-athletic-bus-cut",
+      "bus-cost-by-sport",
+      "away-trips-by-sport"
+     ]
+    }
+   ],
+   "id": "athletics",
+   "minutes": 2,
+   "path": "/athletics",
+   "ready": true,
+   "shelf": "Athletics",
+   "title": "Athletics costs"
+  }
+ ],
+ "generated_by": "scripts/build_topics_index.py",
+ "topics": {
+  "athletic-bus-funding": {
+   "finding": "From FY2025, athletic buses moved from player fees to the town budget, mostly taxes.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "athletic-bus-funding",
+   "minutes": 1,
+   "path": "/transportation/athletic-bus-funding",
+   "ready": true,
+   "shelves": [
+    "transportation",
+    "athletics"
+   ],
+   "title": "Athletic bus funding"
+  },
+  "athletic-fee": {
+   "finding": "The high school fee for a first child, a season, went from $250 in FY2025 to $325 in FY2026.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "athletic-fee",
+   "minutes": 2,
+   "path": "/athletics/athletic-fee",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Athletic fee"
+  },
+  "away-trips-by-sport": {
+   "finding": "The posted schedules list 240 away games in FY2026, about 176 bus trips by our estimate.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "away-trips-by-sport",
+   "minutes": 1,
+   "path": "/transportation/away-trips-by-sport",
+   "ready": true,
+   "shelves": [
+    "transportation",
+    "athletics"
+   ],
+   "title": "Away trips by sport"
+  },
+  "bus-cost-by-sport": {
+   "finding": "Track costs most on the district’s sheet: $13,864 in FY2024, ahead of the next sport’s $9,078.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "bus-cost-by-sport",
+   "minutes": 1,
+   "path": "/transportation/bus-cost-by-sport",
+   "ready": true,
+   "shelves": [
+    "transportation",
+    "athletics"
+   ],
+   "title": "Bus cost by sport"
+  },
+  "bus-fee": {
+   "finding": "The new bus fee did not lower what the school budget paid for buses in FY2026.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "bus-fee",
+   "minutes": 1,
+   "path": "/transportation/bus-fee",
+   "ready": true,
+   "shelves": [
+    "transportation"
+   ],
+   "title": "Bus fee"
+  },
+  "cost-per-sport": {
+   "finding": "Not one of 25 teams carries the same FY2024 cost in all three district sheets.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "cost-per-sport",
+   "minutes": 2,
+   "path": "/athletics/cost-per-sport",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Cost per sport"
+  },
+  "dee-bus-contract": {
+   "finding": "Regular routes cost exactly the contract price, which is fixed through FY2028.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "dee-bus-contract",
+   "minutes": 1,
+   "path": "/transportation/dee-bus-contract",
+   "ready": true,
+   "shelves": [
+    "transportation"
+   ],
+   "title": "Dee Bus contract"
+  },
+  "fee-fund-ledger": {
+   "finding": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "fee-fund-ledger",
+   "minutes": 2,
+   "path": "/athletics/fee-fund-ledger",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Fee fund ledger"
+  },
+  "fy2026-athletics-underspend": {
+   "finding": "Athletics closed FY2026 with $55,300 of its $518,334 town budget unspent, on the town’s ledger.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "fy2026-athletics-underspend",
+   "minutes": 1,
+   "path": "/athletics/fy2026-athletics-underspend",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "FY2026 athletics underspend"
+  },
+  "fy2027-athletic-bus-cut": {
+   "finding": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "fy2027-athletic-bus-cut",
+   "minutes": 2,
+   "path": "/transportation/fy2027-athletic-bus-cut",
+   "ready": true,
+   "shelves": [
+    "transportation",
+    "athletics"
+   ],
+   "title": "FY2027 athletic bus cut"
+  },
+  "fy2027-bus-budget": {
+   "finding": "School-day buses rise 11.2% in FY2027; the total shows 2.4% because athletic buses were cut.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "fy2027-bus-budget",
+   "minutes": 1,
+   "path": "/transportation/fy2027-bus-budget",
+   "ready": true,
+   "shelves": [
+    "transportation"
+   ],
+   "title": "FY2027 bus budget"
+  },
+  "participation": {
+   "finding": "The district counted 649 sport participations in FY2026, against 675 in FY2024.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "participation",
+   "minutes": 1,
+   "path": "/athletics/participation",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Participation"
+  },
+  "special-education-transportation": {
+   "finding": "The fastest-growing bus line: 10.1% a year, and $67,555 past its FY2026 budget.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "special-education-transportation",
+   "minutes": 2,
+   "path": "/transportation/special-education-transportation",
+   "ready": true,
+   "shelves": [
+    "transportation"
+   ],
+   "title": "Special education transportation"
+  },
+  "spending-by-category": {
+   "finding": "Coaches and buses cost most on the district’s sheet; the town’s officials account held $0 in FY2026.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "spending-by-category",
+   "minutes": 1,
+   "path": "/athletics/spending-by-category",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Spending by category"
+  },
+  "state-reimbursement": {
+   "finding": "The state repays 5.5% of what the town spends on buses, all of it for special education.",
+   "generator": "scripts/build_transportation.py",
+   "home": "transportation",
+   "id": "state-reimbursement",
+   "minutes": 1,
+   "path": "/transportation/state-reimbursement",
+   "ready": true,
+   "shelves": [
+    "transportation"
+   ],
+   "title": "State reimbursement"
+  },
+  "total-athletics-cost": {
+   "finding": "No document states one total: three sheets give $185,356 to $349,145 for the same teams in FY2024.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "total-athletics-cost",
+   "minutes": 2,
+   "path": "/athletics/total-athletics-cost",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Total athletics cost"
+  },
+  "town-budget-and-fee-fund": {
+   "finding": "The fee fund paid 45.8% of athletics spending in FY2024 and 5.7% in FY2025, on the town’s books.",
+   "generator": "scripts/build_athletics_topics.py",
+   "home": "athletics",
+   "id": "town-budget-and-fee-fund",
+   "minutes": 1,
+   "path": "/athletics/town-budget-and-fee-fund",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Town budget and fee fund"
+  }
+ }
+}
