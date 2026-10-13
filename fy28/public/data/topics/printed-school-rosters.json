@@ -1,0 +1,478 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "250",
+     "unit": "",
+     "value": 250
+    },
+    "b": {
+     "text": "194",
+     "unit": "",
+     "value": 194
+    },
+    "p": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2011",
+     "unit": "fiscal year",
+     "value": 2011
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a dated staff roster, or the district’s October EPIMS submission",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A roster carries no date, so which school year it describes is not established."
+    }
+   ],
+   "rests_on": [
+    "n-last",
+    "n-first",
+    "n-peak",
+    "n-primary",
+    "n-turkey-hill",
+    "n-middle",
+    "n-high",
+    "co"
+   ],
+   "text": "The town printed 250 names in FY2025 and 194 in FY2011, most in FY2024."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "25",
+     "unit": "",
+     "value": 25
+    },
+    "n": {
+     "text": "55",
+     "unit": "",
+     "value": 55
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Our reading of a scanned page, what the town chose to print, and staff shared between two schools all fit. Nothing here separates them."
+    }
+   ],
+   "rests_on": [
+    "short",
+    "uns"
+   ],
+   "text": "In 25 of 55 school-years a school printed fewer teaching names than the state counts FTE."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "n-last",
+    "level-gap"
+   ],
+   "text": "A printed name has no FTE and no fund, so a count of names is not a staffing level."
+  }
+ ],
+ "facts": [
+  {
+   "id": "n-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names on the school rosters, FY2025"
+   },
+   "value": {
+    "text": "250",
+    "unit": "names",
+    "value": 250
+   }
+  },
+  {
+   "id": "n-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "names on the school rosters, FY2011"
+   },
+   "value": {
+    "text": "194",
+    "unit": "names",
+    "value": 194
+   }
+  },
+  {
+   "id": "n-peak",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "names, FY2024, the most printed"
+   },
+   "value": {
+    "text": "279",
+    "unit": "names",
+    "value": 279
+   }
+  },
+  {
+   "id": "n-primary",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names, Primary, FY2025"
+   },
+   "value": {
+    "text": "73",
+    "unit": "names",
+    "value": 73
+   }
+  },
+  {
+   "id": "n-turkey-hill",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names, Turkey Hill, FY2025"
+   },
+   "value": {
+    "text": "64",
+    "unit": "names",
+    "value": 64
+   }
+  },
+  {
+   "id": "n-middle",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names, Middle, FY2025"
+   },
+   "value": {
+    "text": "49",
+    "unit": "names",
+    "value": 49
+   }
+  },
+  {
+   "id": "n-high",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names, High, FY2025"
+   },
+   "value": {
+    "text": "64",
+    "unit": "names",
+    "value": 64
+   }
+  },
+  {
+   "id": "co",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "15",
+      "unit": "",
+      "value": 15
+     }
+    },
+    "literals": [],
+    "text": "of 15 with a central office roster (left out here)"
+   },
+   "value": {
+    "text": "8",
+    "unit": "years",
+    "value": 8
+   }
+  },
+  {
+   "id": "short",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "55",
+      "unit": "",
+      "value": 55
+     }
+    },
+    "literals": [],
+    "text": "of 55 with fewer teaching names than teaching FTE"
+   },
+   "value": {
+    "text": "25",
+    "unit": "school-years",
+    "value": 25
+   }
+  },
+  {
+   "id": "uns",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of printed titles we could not classify"
+   },
+   "value": {
+    "text": "7.4%",
+    "unit": "",
+    "value": 7.415667688876498
+   }
+  },
+  {
+   "closes": "the district’s position control report: each post with its FTE, school, funding source and whether it was filled",
+   "id": "level-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how many posts a roster’s names fill"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "250",
+    "unit": "",
+    "value": 250
+   },
+   "b": {
+    "text": "194",
+    "unit": "",
+    "value": 194
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   },
+   "z": {
+    "text": "FY2011",
+    "unit": "fiscal year",
+    "value": 2011
+   }
+  },
+  "literals": [],
+  "text": "The town printed 250 names on its school rosters in FY2025, against 194 in FY2011."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "printed-school-rosters",
+ "kind": "topic",
+ "path": "/school-staffing/printed-school-rosters",
+ "said": [],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/staff-roster-counts.csv",
+   "label": "Lunenburg Budget Project — staff-roster-counts.csv (names printed on each school roster, by title and year)"
+  },
+  {
+   "href": "/docs/data/PROVENANCE-staff-rosters.md",
+   "label": "Lunenburg Budget Project — PROVENANCE-staff-rosters.md (where each annual-report roster was read from)"
+  },
+  {
+   "href": "/docs/state-dese/dese-teacher-data.xlsx",
+   "label": "Massachusetts DESE — dese-teacher-data.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Names printed on the school rosters, by year",
+  "views": [
+   {
+    "columns": [
+     "Names",
+     "Schools printed"
+    ],
+    "key": "years",
+    "kinds": [
+     "stated",
+     "stated"
+    ],
+    "label": "Annual town reports",
+    "note": "One row per printed name, per school. A central office roster, printed in some years and not others, is left out so its comings and goings are not read as staffing.",
+    "rows": [
+     {
+      "cells": [
+       "250",
+       "4"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "279",
+       "4"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "265",
+       "4"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "272",
+       "4"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "233",
+       "4"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "249",
+       "4"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "251",
+       "4"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "277",
+       "4"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "276",
+       "4"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "252",
+       "4"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "230",
+       "3"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "210",
+       "3"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "172",
+       "3"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "177",
+       "3"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "194",
+       "4"
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Printed school rosters"
+}

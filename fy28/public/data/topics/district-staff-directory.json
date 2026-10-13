@@ -1,0 +1,270 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "259",
+     "unit": "",
+     "value": 259
+    },
+    "b": {
+     "text": "257",
+     "unit": "",
+     "value": 257
+    }
+   },
+   "literals": [
+    "9 October 2026",
+    "25 September 2026"
+   ],
+   "rests_on": [
+    "d-last",
+    "d-first"
+   ],
+   "text": "The district-wide list named 259 people on 9 October 2026 and 257 on 25 September 2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "273",
+     "unit": "",
+     "value": 273
+    },
+    "b": {
+     "text": "29",
+     "unit": "",
+     "value": 29
+    },
+    "n": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A person on two schools’ lists fits a post shared between buildings; the directory does not say how the week is split."
+    }
+   ],
+   "rests_on": [
+    "d-rows",
+    "d-multi"
+   ],
+   "text": "Its 5 separate listings print 273 rows; 29 people appear on two or more."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "51",
+     "unit": "",
+     "value": 51
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "d-ss",
+    "d-gap"
+   ],
+   "text": "It is a contact list: 51 people are titled only “Special Services”, and none has an FTE."
+  }
+ ],
+ "facts": [
+  {
+   "id": "d-last",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "9 October 2026"
+    ],
+    "text": "on the district-wide list, 9 October 2026"
+   },
+   "value": {
+    "text": "259",
+    "unit": "people",
+    "value": 259
+   }
+  },
+  {
+   "id": "d-first",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "25 September 2026"
+    ],
+    "text": "on the same list, 25 September 2026"
+   },
+   "value": {
+    "text": "257",
+    "unit": "people",
+    "value": 257
+   }
+  },
+  {
+   "id": "d-rows",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "",
+      "value": 5
+     }
+    },
+    "literals": [
+     "9 October 2026"
+    ],
+    "text": "on the 5 separate listings, 9 October 2026"
+   },
+   "value": {
+    "text": "273",
+    "unit": "rows",
+    "value": 273
+   }
+  },
+  {
+   "id": "d-multi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "on two or more of those listings"
+   },
+   "value": {
+    "text": "29",
+    "unit": "people",
+    "value": 29
+   }
+  },
+  {
+   "id": "d-ss",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "titled only “Special Services”"
+   },
+   "value": {
+    "text": "51",
+    "unit": "people",
+    "value": 51
+   }
+  },
+  {
+   "closes": "the district’s position control report: each post with its FTE, school, funding source and whether it was filled",
+   "id": "d-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "FTE, fund and start date for anyone listed"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "259",
+    "unit": "",
+    "value": 259
+   }
+  },
+  "literals": [
+   "9 October 2026"
+  ],
+  "text": "The district’s staff directory listed 259 people on 9 October 2026; it carries no FTE and no fund."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "district-staff-directory",
+ "kind": "topic",
+ "path": "/school-staffing/district-staff-directory",
+ "said": [],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/personnel/staff-directory/2026-10-09/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+   "label": "Lunenburg Public Schools, staff directory, 9 October 2026 — directory-of-staff-all-lunenburg-public-schools-staff.csv"
+  },
+  {
+   "href": "/docs/data/school-staff-directory.csv",
+   "label": "Lunenburg Budget Project — school-staff-directory.csv (the district directory as each listing prints it)"
+  }
+ ],
+ "table": {
+  "caption": "Rows on each listing of the district directory",
+  "views": [
+   {
+    "columns": [
+     "25 September 2026",
+     "9 October 2026"
+    ],
+    "key": "listings",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "By date fetched",
+    "note": "The district’s own sheets, read as printed. A person on two school listings has two rows. Names are not published here.",
+    "rows": [
+     {
+      "cells": [
+       "19",
+       "19"
+      ],
+      "label": "District Office"
+     },
+     {
+      "cells": [
+       "71",
+       "73"
+      ],
+      "label": "Lunenburg High School"
+     },
+     {
+      "cells": [
+       "64",
+       "65"
+      ],
+      "label": "Lunenburg Middle School"
+     },
+     {
+      "cells": [
+       "61",
+       "61"
+      ],
+      "label": "Lunenburg Primary School"
+     },
+     {
+      "cells": [
+       "55",
+       "55"
+      ],
+      "label": "Turkey Hill Elementary School"
+     },
+     {
+      "cells": [
+       "257",
+       "259"
+      ],
+      "label": "District-wide list"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "District staff directory"
+}

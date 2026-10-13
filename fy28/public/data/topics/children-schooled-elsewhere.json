@@ -1,0 +1,479 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "186",
+     "unit": "",
+     "value": 186
+    },
+    "b": {
+     "text": "177",
+     "unit": "",
+     "value": 177
+    },
+    "c": {
+     "text": "70",
+     "unit": "",
+     "value": 70
+    },
+    "d": {
+     "text": "97",
+     "unit": "",
+     "value": 97
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "el0",
+    "el1",
+    "mt0",
+    "mt1"
+   ],
+   "text": "The total moved from 186 to 177 while Monty Tech rose from 70 to 97."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "69",
+     "unit": "",
+     "value": 69
+    },
+    "b": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    },
+    "c": {
+     "text": "44",
+     "unit": "",
+     "value": 44
+    },
+    "d": {
+     "text": "22",
+     "unit": "",
+     "value": 22
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A count of departures is not a reason for them; nothing here or in the meeting record surveys the households."
+    }
+   ],
+   "rests_on": [
+    "ch0",
+    "ch1",
+    "cs0",
+    "cs1"
+   ],
+   "text": "School choice went from 69 to 58 and charter schools from 44 to 22."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s residents-by-district file with disability status",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The file carries no disability flag either, so none of these is a special education count."
+    }
+   ],
+   "rests_on": [
+    "private",
+    "share"
+   ],
+   "text": "These are public districts only, so the total is a floor."
+  }
+ ],
+ "facts": [
+  {
+   "id": "el0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "schooled in other districts, FY2014"
+   },
+   "value": {
+    "text": "186",
+    "unit": "children",
+    "value": 186
+   }
+  },
+  {
+   "id": "el1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "schooled in other districts, FY2026"
+   },
+   "value": {
+    "text": "177",
+    "unit": "children",
+    "value": 177
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of resident children, FY2026"
+   },
+   "value": {
+    "text": "10.2%",
+    "unit": "",
+    "value": 10.23
+   }
+  },
+  {
+   "id": "mt0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "at Monty Tech, FY2014"
+   },
+   "value": {
+    "text": "70",
+    "unit": "children",
+    "value": 70
+   }
+  },
+  {
+   "id": "mt1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "at Monty Tech, FY2026"
+   },
+   "value": {
+    "text": "97",
+    "unit": "children",
+    "value": 97
+   }
+  },
+  {
+   "id": "ch0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "school choice out, FY2014"
+   },
+   "value": {
+    "text": "69",
+    "unit": "children",
+    "value": 69
+   }
+  },
+  {
+   "id": "ch1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "school choice out, FY2026"
+   },
+   "value": {
+    "text": "58",
+    "unit": "children",
+    "value": 58
+   }
+  },
+  {
+   "id": "cs0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "at charter schools, FY2014"
+   },
+   "value": {
+    "text": "44",
+    "unit": "children",
+    "value": 44
+   }
+  },
+  {
+   "id": "cs1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "at charter schools, FY2026"
+   },
+   "value": {
+    "text": "22",
+    "unit": "children",
+    "value": 22
+   }
+  },
+  {
+   "closes": "nothing the state publishes; private schools do not report enrolment by town of residence",
+   "id": "private",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "children at private or parochial schools"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "177",
+    "unit": "",
+    "value": 177
+   },
+   "b": {
+    "text": "186",
+    "unit": "",
+    "value": 186
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "FY2014",
+    "unit": "fiscal year",
+    "value": 2014
+   }
+  },
+  "literals": [],
+  "text": "177 resident children were in other public districts in FY2026, against 186 in FY2014; the mix changed."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "children-schooled-elsewhere",
+ "kind": "topic",
+ "path": "/enrolment/children-schooled-elsewhere",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-residents-sending.xlsx",
+   "label": "Massachusetts DESE — dese-residents-sending.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-receiving.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-receiving.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Resident children schooled outside Lunenburg, by route",
+  "views": [
+   {
+    "columns": [
+     "Monty Tech",
+     "School choice",
+     "Charter",
+     "All elsewhere"
+    ],
+    "key": "routes",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Thirteen years",
+    "note": "DESE’s enrolment of town residents by district. All elsewhere includes a few children under other programmes, such as another vocational district.",
+    "rows": [
+     {
+      "cells": [
+       "97",
+       "58",
+       "22",
+       "177"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "96",
+       "58",
+       "29",
+       "184"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "97",
+       "56",
+       "26",
+       "181"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "92",
+       "67",
+       "25",
+       "191"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "90",
+       "77",
+       "28",
+       "203"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "77",
+       "68",
+       "30",
+       "179"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "75",
+       "84",
+       "27",
+       "191"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "72",
+       "74",
+       "26",
+       "176"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "77",
+       "99",
+       "30",
+       "213"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "87",
+       "106",
+       "40",
+       "237"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "86",
+       "80",
+       "40",
+       "211"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "76",
+       "89",
+       "42",
+       "209"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "70",
+       "69",
+       "44",
+       "186"
+      ],
+      "label": "FY2014"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Children schooled elsewhere"
+}

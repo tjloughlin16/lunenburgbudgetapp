@@ -1,0 +1,619 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "18.5",
+     "unit": "full-time equivalents",
+     "value": 18.5
+    },
+    "b": {
+     "text": "2.0",
+     "unit": "full-time equivalents",
+     "value": 2.0
+    },
+    "y": {
+     "text": "FY2008",
+     "unit": "fiscal year",
+     "value": 2008
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Lunenburg’s EPIMS work assignment detail by school, job classification and program area, year by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether the same teachers were reported under another code is not published."
+    }
+   ],
+   "rests_on": [
+    "tsp-first",
+    "tsp-last",
+    "tge-first",
+    "tge-last"
+   ],
+   "text": "Teacher FTE coded to special education fell from 18.5 in FY2008 to 2.0 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "44.0",
+     "unit": "full-time equivalents",
+     "value": 44.0
+    },
+    "b": {
+     "text": "20.0",
+     "unit": "full-time equivalents",
+     "value": 20.0
+    },
+    "y": {
+     "text": "FY2020",
+     "unit": "fiscal year",
+     "value": 2020
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "psp-first",
+    "psp-last"
+   ],
+   "text": "Paraprofessional FTE coded to special education fell from 44.0 in FY2020 to 20.0 in FY2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "57.0",
+     "unit": "full-time equivalents",
+     "value": 57.0
+    },
+    "b": {
+     "text": "67.0",
+     "unit": "full-time equivalents",
+     "value": 67.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A reassignment, a recoding and a change in what one file counts all fit. The two files have different definitions."
+    }
+   ],
+   "rests_on": [
+    "pall-first",
+    "pall-last"
+   ],
+   "text": "Over the same years the all-programmes count rose from 57.0 to 67.0."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "13.0",
+     "unit": "full-time equivalents",
+     "value": 13.0
+    },
+    "b": {
+     "text": "47.0",
+     "unit": "full-time equivalents",
+     "value": 47.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Lunenburg’s EPIMS work assignment detail by school, job classification and program area, year by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Nothing published says the special education file’s staff sit inside the all-programmes count."
+    }
+   ],
+   "rests_on": [
+    "imp-first",
+    "imp-last"
+   ],
+   "text": "The difference between the files went from 13.0 to 47.0; nothing says it is general education."
+  }
+ ],
+ "facts": [
+  {
+   "id": "tsp-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE coded special education, FY2008"
+   },
+   "value": {
+    "text": "18.5",
+    "unit": "full-time equivalents",
+    "value": 18.5
+   }
+  },
+  {
+   "id": "tsp-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same, FY2026"
+   },
+   "value": {
+    "text": "2.0",
+    "unit": "full-time equivalents",
+    "value": 2.0
+   }
+  },
+  {
+   "id": "tge-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE coded general education, FY2008"
+   },
+   "value": {
+    "text": "101.0",
+    "unit": "full-time equivalents",
+    "value": 101.0
+   }
+  },
+  {
+   "id": "tge-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same, FY2026"
+   },
+   "value": {
+    "text": "101.4",
+    "unit": "full-time equivalents",
+    "value": 101.4
+   }
+  },
+  {
+   "id": "psp-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, special education, FY2020"
+   },
+   "value": {
+    "text": "44.0",
+    "unit": "full-time equivalents",
+    "value": 44.0
+   }
+  },
+  {
+   "id": "psp-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the same file, FY2025"
+   },
+   "value": {
+    "text": "20.0",
+    "unit": "full-time equivalents",
+    "value": 20.0
+   }
+  },
+  {
+   "id": "pall-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, all programmes, FY2020"
+   },
+   "value": {
+    "text": "57.0",
+    "unit": "full-time equivalents",
+    "value": 57.0
+   }
+  },
+  {
+   "id": "pall-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the other file, FY2025"
+   },
+   "value": {
+    "text": "67.0",
+    "unit": "full-time equivalents",
+    "value": 67.0
+   }
+  },
+  {
+   "id": "imp-first",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "difference between the two files, FY2020 (ours)"
+   },
+   "value": {
+    "text": "13.0",
+    "unit": "full-time equivalents",
+    "value": 13.0
+   }
+  },
+  {
+   "id": "imp-last",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the same difference, FY2025 (ours)"
+   },
+   "value": {
+    "text": "47.0",
+    "unit": "full-time equivalents",
+    "value": 47.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "44.0",
+    "unit": "full-time equivalents",
+    "value": 44.0
+   },
+   "b": {
+    "text": "20.0",
+    "unit": "full-time equivalents",
+    "value": 20.0
+   }
+  },
+  "literals": [],
+  "text": "Paraprofessional FTE coded to special education fell from 44.0 to 20.0 while the all-programmes count rose."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "staff-by-programme",
+ "kind": "topic",
+ "path": "/school-staffing/staff-by-programme",
+ "said": [],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-teachers-by-program-area.xlsx",
+   "label": "Massachusetts DESE — dese-teachers-by-program-area.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/radar-district-comparison.xlsx",
+   "label": "Massachusetts DESE, district comparison — radar-district-comparison.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-sped-program-characteristics.xlsx",
+   "label": "Massachusetts DESE — dese-sped-program-characteristics.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Staff by programme, as the state codes them",
+  "views": [
+   {
+    "columns": [
+     "All programmes",
+     "Special education",
+     "Difference (ours)"
+    ],
+    "key": "paras",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "Paraprofessionals",
+    "note": "Two DESE files with two definitions: the comparison sheet, and special education program characteristics.",
+    "rows": [
+     {
+      "cells": [
+       "67.0",
+       "20.0",
+       "47.0"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "66.0",
+       "23.0",
+       "43.0"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "59.0",
+       "24.0",
+       "35.0"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "55.5",
+       "32.5",
+       "23.0"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "59.5",
+       "41.5",
+       "18.0"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "57.0",
+       "44.0",
+       "13.0"
+      ],
+      "label": "FY2020"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "General education",
+     "Special education",
+     "All teachers"
+    ],
+    "key": "teachers",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Teachers",
+    "note": "DESE’s teachers by program area. Career and technical and English learner FTE, small in every year, are in the total.",
+    "rows": [
+     {
+      "cells": [
+       "101.4",
+       "2.0",
+       "103.4"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "102.9",
+       "2.2",
+       "105.0"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "113.0",
+       "1.0",
+       "114.0"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "110.6",
+       "2.2",
+       "112.8"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "106.8",
+       "4.5",
+       "111.3"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "103.7",
+       "5.0",
+       "108.7"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "101.9",
+       "5.5",
+       "107.4"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "104.0",
+       "6.5",
+       "110.5"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "108.6",
+       "6.5",
+       "115.1"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "106.6",
+       "5.5",
+       "112.1"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "92.8",
+       "10.8",
+       "104.7"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "92.7",
+       "8.5",
+       "101.6"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "92.0",
+       "8.0",
+       "100.6"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "93.3",
+       "9.2",
+       "103.0"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "99.8",
+       "13.8",
+       "114.4"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "86.8",
+       "13.7",
+       "102.3"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "100.4",
+       "20.0",
+       "120.4"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "103.2",
+       "17.0",
+       "120.2"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "101.0",
+       "18.5",
+       "119.5"
+      ],
+      "label": "FY2008"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Staff by programme"
+}

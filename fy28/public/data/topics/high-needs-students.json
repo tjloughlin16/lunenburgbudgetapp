@@ -1,0 +1,703 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "b": {
+     "text": "70",
+     "unit": "",
+     "value": 70
+    },
+    "y": {
+     "text": "FY2008",
+     "unit": "fiscal year",
+     "value": 2008
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s English learner roster by school and its EL staffing budget",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Which languages, which schools and what it costs to teach them are not in DESE’s file."
+    }
+   ],
+   "rests_on": [
+    "el0",
+    "el1"
+   ],
+   "text": "English learners rose from 3 children in FY2008 to 70 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "15.5%",
+     "unit": "",
+     "value": 15.5
+    },
+    "b": {
+     "text": "25.2%",
+     "unit": "",
+     "value": 25.2
+    },
+    "y": {
+     "text": "FY2014",
+     "unit": "fiscal year",
+     "value": 2014
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "one low-income definition applied to every year, which DESE does not publish",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Each definition is a proxy for household income and the proxies differ, so the rise across a definition change is not a measurement of poverty."
+    }
+   ],
+   "rests_on": [
+    "li14",
+    "ec15",
+    "ec21",
+    "li22",
+    "li26"
+   ],
+   "text": "Low income is three series, not one: 15.5% in FY2014, 25.2% in FY2026, under three definitions."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "584",
+     "unit": "",
+     "value": 584
+    },
+    "p": {
+     "text": "37.2%",
+     "unit": "",
+     "value": 37.244897959183675
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "nothing; it is the definition. DESE publishes the union, not the overlaps",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "High needs is DESE’s union of the groups: a child can be an English learner, low income and on a plan at once, so the groups are never added."
+    }
+   ],
+   "rests_on": [
+    "hn26",
+    "hnshare",
+    "swd26"
+   ],
+   "text": "584 children were high needs in FY2026, 37.2% of enrolment."
+  }
+ ],
+ "facts": [
+  {
+   "id": "el0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     }
+    },
+    "literals": [],
+    "text": "English learners, FY2008"
+   },
+   "value": {
+    "text": "3",
+    "unit": "children",
+    "value": 3
+   }
+  },
+  {
+   "id": "el1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "English learners, FY2026"
+   },
+   "value": {
+    "text": "70",
+    "unit": "children",
+    "value": 70
+   }
+  },
+  {
+   "id": "li14",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "low income, free or reduced lunch, FY2014"
+   },
+   "value": {
+    "text": "15.5%",
+    "unit": "",
+    "value": 15.5
+   }
+  },
+  {
+   "id": "ec15",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "economically disadvantaged, FY2015"
+   },
+   "value": {
+    "text": "187",
+    "unit": "children",
+    "value": 187
+   }
+  },
+  {
+   "id": "ec21",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2021",
+      "unit": "fiscal year",
+      "value": 2021
+     }
+    },
+    "literals": [],
+    "text": "economically disadvantaged, FY2021"
+   },
+   "value": {
+    "text": "329",
+    "unit": "children",
+    "value": 329
+   }
+  },
+  {
+   "id": "li22",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "low income, broader definition, FY2022"
+   },
+   "value": {
+    "text": "25.6%",
+    "unit": "",
+    "value": 25.6
+   }
+  },
+  {
+   "id": "li26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "low income, broader definition, FY2026"
+   },
+   "value": {
+    "text": "25.2%",
+    "unit": "",
+    "value": 25.2
+   }
+  },
+  {
+   "id": "hn26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "high needs, FY2026"
+   },
+   "value": {
+    "text": "584",
+    "unit": "children",
+    "value": 584
+   }
+  },
+  {
+   "id": "hnshare",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of enrolment, FY2026 (our arithmetic)"
+   },
+   "value": {
+    "text": "37.2%",
+    "unit": "",
+    "value": 37.244897959183675
+   }
+  },
+  {
+   "id": "swd26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "students with disabilities, FY2026"
+   },
+   "value": {
+    "text": "258",
+    "unit": "children",
+    "value": 258
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "3",
+    "unit": "",
+    "value": 3
+   },
+   "b": {
+    "text": "70",
+    "unit": "",
+    "value": 70
+   }
+  },
+  "literals": [],
+  "text": "English learners went from 3 to 70; low income was measured three ways and is not one series."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "high-needs-students",
+ "kind": "topic",
+ "path": "/enrolment/high-needs-students",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Groups within enrolment, by year",
+  "views": [
+   {
+    "columns": [
+     "English learners",
+     "With disabilities",
+     "High needs"
+    ],
+    "key": "groups",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "English learners, disabilities, high needs",
+    "note": "DESE’s counts. High needs is published from FY2013; a blank is a year DESE did not publish it.",
+    "rows": [
+     {
+      "cells": [
+       "70",
+       "258",
+       "584"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "55",
+       "248",
+       "550"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "47",
+       "233",
+       "549"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "35",
+       "234",
+       "548"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "22",
+       "227",
+       "556"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "17",
+       "261",
+       "516"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "18",
+       "255",
+       "467"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "24",
+       "277",
+       "490"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "35",
+       "268",
+       "478"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "26",
+       "283",
+       "476"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "23",
+       "299",
+       "472"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "17",
+       "288",
+       "430"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "27",
+       "283",
+       "472"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "18",
+       "295",
+       "458"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "10",
+       "294",
+       null
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "8",
+       "262",
+       null
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "10",
+       "259",
+       null
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "7",
+       "256",
+       null
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "3",
+       "258",
+       null
+      ],
+      "label": "FY2008"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Free or reduced lunch",
+     "Economically disadvantaged",
+     "Low income, broader"
+    ],
+    "key": "income",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Low income, three definitions",
+    "note": "Three definitions, never one series. A blank is a year the definition was not in use.",
+    "rows": [
+     {
+      "cells": [
+       null,
+       null,
+       "395"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "364"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "391"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "389"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "409"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       null,
+       "329",
+       null
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       null,
+       "278",
+       null
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       null,
+       "276",
+       null
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       null,
+       "264",
+       null
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       null,
+       "263",
+       null
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       null,
+       "230",
+       null
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       null,
+       "187",
+       null
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "243",
+       null,
+       null
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "221",
+       null,
+       null
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "145",
+       null,
+       null
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "167",
+       null,
+       null
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "156",
+       null,
+       null
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "142",
+       null,
+       null
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "183",
+       null,
+       null
+      ],
+      "label": "FY2008"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "High-needs students"
+}

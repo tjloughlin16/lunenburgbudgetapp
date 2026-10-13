@@ -1,0 +1,420 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "27.7%",
+     "unit": "",
+     "value": 27.700000000000003
+    },
+    "b": {
+     "text": "13.2%",
+     "unit": "",
+     "value": 13.200000000000001
+    },
+    "c": {
+     "text": "28.7%",
+     "unit": "",
+     "value": 28.7
+    },
+    "y": {
+     "text": "SY2026",
+     "unit": "school year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "latest",
+    "min",
+    "max"
+   ],
+   "text": "27.7% in SY2026 sits between the 13.2% low and the 28.7% high of the series."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "b": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Whether it continues is not something three points can say."
+    }
+   ],
+   "rests_on": [
+    "run",
+    "prior"
+   ],
+   "text": "The rise has run 3 years; an earlier run was also 3."
+  },
+  {
+   "figures": {
+    "s": {
+     "text": "4.9 points",
+     "unit": "",
+     "value": 4.93
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "spread"
+   ],
+   "text": "Split at each school reorganisation, the eras’ averages sit within 4.9 points of each other."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "122",
+     "unit": "",
+     "value": 122
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cohort"
+   ],
+   "text": "In a grade of 122 children, each child who leaves moves the rate almost a point."
+  }
+ ],
+ "facts": [
+  {
+   "id": "latest",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2026",
+      "unit": "school year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "grade 8"
+    ],
+    "text": "grade 8 leaving rate, SY2026"
+   },
+   "value": {
+    "text": "27.7%",
+    "unit": "",
+    "value": 27.700000000000003
+   }
+  },
+  {
+   "id": "max",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2013",
+      "unit": "school year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "the highest year, SY2013"
+   },
+   "value": {
+    "text": "28.7%",
+    "unit": "",
+    "value": 28.7
+   }
+  },
+  {
+   "id": "min",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2016",
+      "unit": "school year",
+      "value": 2016
+     }
+    },
+    "literals": [],
+    "text": "the lowest year, SY2016"
+   },
+   "value": {
+    "text": "13.2%",
+    "unit": "",
+    "value": 13.200000000000001
+   }
+  },
+  {
+   "id": "cohort",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "grade 8"
+    ],
+    "text": "in that grade 8, FY2025"
+   },
+   "value": {
+    "text": "122",
+    "unit": "children",
+    "value": 122
+   }
+  },
+  {
+   "id": "run",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the current run of rises"
+   },
+   "value": {
+    "text": "3",
+    "unit": "years",
+    "value": 3
+   }
+  },
+  {
+   "id": "prior",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the longest earlier run"
+   },
+   "value": {
+    "text": "3",
+    "unit": "years",
+    "value": 3
+   }
+  },
+  {
+   "id": "spread",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between the five eras’ averages"
+   },
+   "value": {
+    "text": "4.9 points",
+    "unit": "",
+    "value": 4.93
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "27.7%",
+    "unit": "",
+    "value": 27.700000000000003
+   },
+   "n": {
+    "text": "17",
+    "unit": "",
+    "value": 17
+   }
+  },
+  "literals": [
+   "grade 8"
+  ],
+  "text": "The latest grade 8 rate, 27.7%, is the second-highest of 17 years, inside a range the town has always been in."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grade-8-loss-trend",
+ "kind": "topic",
+ "path": "/enrolment/grade-8-loss-trend",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-student-attrition.xlsx",
+   "label": "Massachusetts DESE — dese-student-attrition.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Grade 8 leaving rate by year",
+  "views": [
+   {
+    "columns": [
+     "Rate",
+     "Grade 8 the year before",
+     "Implied children"
+    ],
+    "key": "g8",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "Seventeen years",
+    "note": "DESE’s rate and DESE’s enrolment. The implied column multiplies them and is ours, not a headcount anybody published.",
+    "rows": [
+     {
+      "cells": [
+       "27.7%",
+       "122",
+       "33.8"
+      ],
+      "label": "SY2026"
+     },
+     {
+      "cells": [
+       "23.8%",
+       "132",
+       "31.4"
+      ],
+      "label": "SY2025"
+     },
+     {
+      "cells": [
+       "18.6%",
+       "129",
+       "24.0"
+      ],
+      "label": "SY2024"
+     },
+     {
+      "cells": [
+       "19.1%",
+       "142",
+       "27.1"
+      ],
+      "label": "SY2023"
+     },
+     {
+      "cells": [
+       "19.7%",
+       "120",
+       "23.6"
+      ],
+      "label": "SY2022"
+     },
+     {
+      "cells": [
+       "18.2%",
+       "141",
+       "25.7"
+      ],
+      "label": "SY2021"
+     },
+     {
+      "cells": [
+       "23.0%",
+       "126",
+       "29.0"
+      ],
+      "label": "SY2020"
+     },
+     {
+      "cells": [
+       "17.7%",
+       "147",
+       "26.0"
+      ],
+      "label": "SY2019"
+     },
+     {
+      "cells": [
+       "15.3%",
+       "123",
+       "18.8"
+      ],
+      "label": "SY2018"
+     },
+     {
+      "cells": [
+       "19.1%",
+       "115",
+       "22.0"
+      ],
+      "label": "SY2017"
+     },
+     {
+      "cells": [
+       "13.2%",
+       "127",
+       "16.8"
+      ],
+      "label": "SY2016"
+     },
+     {
+      "cells": [
+       "23.4%",
+       "144",
+       "33.7"
+      ],
+      "label": "SY2015"
+     },
+     {
+      "cells": [
+       "20.5%",
+       "122",
+       "25.0"
+      ],
+      "label": "SY2014"
+     },
+     {
+      "cells": [
+       "28.7%",
+       "124",
+       "35.6"
+      ],
+      "label": "SY2013"
+     },
+     {
+      "cells": [
+       "19.4%",
+       "128",
+       "24.8"
+      ],
+      "label": "SY2012"
+     },
+     {
+      "cells": [
+       "20.7%",
+       "135",
+       "27.9"
+      ],
+      "label": "SY2011"
+     },
+     {
+      "cells": [
+       "20.0%",
+       "134",
+       "26.8"
+      ],
+      "label": "SY2010"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Grade 8 loss trend"
+}

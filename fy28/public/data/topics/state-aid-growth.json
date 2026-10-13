@@ -1,0 +1,369 @@
+{
+ "category": "state-aid",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "2.75%",
+     "unit": "",
+     "value": 2.75
+    },
+    "b": {
+     "text": "2.80%",
+     "unit": "",
+     "value": 2.796708763931255
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s Chapter 70 district summary, which is published one year ahead",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "Chapter 70 is most of the total and is a formula, not a trend; nothing here tests whether its next years resemble its last."
+    }
+   ],
+   "rests_on": [
+    "rate",
+    "med",
+    "nfall"
+   ],
+   "text": "Our 2.75% a year sits beside the cherry sheet’s median yearly rise of 2.80%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4.09%",
+     "unit": "",
+     "value": 4.092940159703584
+    },
+    "s2013": {
+     "text": "13.2%",
+     "unit": "",
+     "value": 13.179212496430504
+    },
+    "s2018": {
+     "text": "12.2%",
+     "unit": "",
+     "value": 12.174677491924868
+    },
+    "s2023": {
+     "text": "11.2%",
+     "unit": "",
+     "value": 11.225798223396088
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cagr",
+    "s2013",
+    "s2018",
+    "s2023"
+   ],
+   "text": "The compound rate is 4.09%; single years rose 13.2%, 12.2% and 11.2%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$11,876,038",
+     "unit": "",
+     "value": 11876038
+    },
+    "b": {
+     "text": "$11,896,905",
+     "unit": "",
+     "value": 11896905.0
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the line-by-line change between the Governor’s cherry sheet and the final one for the year in question",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Ours adds an enacted change recorded as net to the Governor’s gross total, so the two are not the same quantity."
+    }
+   ],
+   "rests_on": [
+    "base",
+    "fin27"
+   ],
+   "text": "Our FY2027 starting figure is $11,876,038; the final state budget’s cherry sheet is $11,896,905."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4.47%",
+     "unit": "",
+     "value": 4.4653
+    },
+    "y": {
+     "text": "FY2014",
+     "unit": "fiscal year",
+     "value": 2014
+    },
+    "z": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "rcpt"
+   ],
+   "text": "Chapter 70 receipts rose 4.47% a year from FY2014 to FY2022; an actual is never set against a budget."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, our projection, all state aid"
+   },
+   "value": {
+    "text": "2.75%",
+    "unit": "",
+    "value": 2.75
+   }
+  },
+  {
+   "id": "med",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2010",
+      "unit": "fiscal year",
+      "value": 2010
+     },
+     "z": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "median yearly rise, cherry sheet, FY2010 to FY2027"
+   },
+   "value": {
+    "text": "2.80%",
+    "unit": "",
+    "value": 2.796708763931255
+   }
+  },
+  {
+   "id": "cagr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "compound a year, the same years"
+   },
+   "value": {
+    "text": "4.09%",
+    "unit": "",
+    "value": 4.092940159703584
+   }
+  },
+  {
+   "id": "s2013",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "rise in FY2013"
+   },
+   "value": {
+    "text": "13.2%",
+    "unit": "",
+    "value": 13.179212496430504
+   }
+  },
+  {
+   "id": "s2018",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2018",
+      "unit": "fiscal year",
+      "value": 2018
+     }
+    },
+    "literals": [],
+    "text": "rise in FY2018"
+   },
+   "value": {
+    "text": "12.2%",
+    "unit": "",
+    "value": 12.174677491924868
+   }
+  },
+  {
+   "id": "s2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "rise in FY2023"
+   },
+   "value": {
+    "text": "11.2%",
+    "unit": "",
+    "value": 11.225798223396088
+   }
+  },
+  {
+   "id": "nfall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "years in which the total fell"
+   },
+   "value": {
+    "text": "3 of 17",
+    "unit": "years",
+    "value": 3
+   }
+  },
+  {
+   "id": "base",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "our FY2027 starting figure"
+   },
+   "value": {
+    "text": "$11,876,038",
+    "unit": "",
+    "value": 11876038
+   }
+  },
+  {
+   "id": "fin27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "FY2027, the final state budget"
+   },
+   "value": {
+    "text": "$11,896,905",
+    "unit": "",
+    "value": 11896905.0
+   }
+  },
+  {
+   "id": "rcpt",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     },
+     "z": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "a year, Chapter 70 RECEIPTS, FY2014 to FY2022"
+   },
+   "value": {
+    "text": "4.47%",
+    "unit": "",
+    "value": 4.4653
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2.75%",
+    "unit": "",
+    "value": 2.75
+   },
+   "b": {
+    "text": "2.80%",
+    "unit": "",
+    "value": 2.796708763931255
+   }
+  },
+  "literals": [],
+  "text": "Our projection grows all state aid 2.75% a year; the cherry sheet’s median yearly rise was 2.80%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "state-aid-growth",
+ "kind": "topic",
+ "path": "/state-aid/state-aid-growth",
+ "said": [],
+ "shelves": [
+  "state-aid"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/dls-cherry-sheet.csv",
+   "label": "Lunenburg Budget Project — dls-cherry-sheet.csv (every cherry sheet line, FY2010 to FY2027)"
+  },
+  {
+   "href": "/docs/state-dls/CherrySheet-2027-Municipalities-Receipts-2026-09-26-c1376b5a8331.xlsx",
+   "label": "Massachusetts DLS, cherry sheet receipts, FY2027 — CherrySheet-2027-Municipalities-Receipts-2026-09-26-c1376b5a8331.xlsx"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  }
+ ],
+ "table": null,
+ "title": "State aid growth"
+}

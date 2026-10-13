@@ -1,0 +1,433 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "123",
+     "unit": "",
+     "value": 123.0
+    },
+    "b": {
+     "text": "112.8",
+     "unit": "full-time equivalents",
+     "value": 112.8
+    },
+    "c": {
+     "text": "114",
+     "unit": "",
+     "value": 114.0
+    },
+    "d": {
+     "text": "108.7",
+     "unit": "full-time equivalents",
+     "value": 108.7
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "z": {
+     "text": "FY2021",
+     "unit": "fiscal year",
+     "value": 2021
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Lunenburg’s EPIMS work assignment detail by school, job classification and program area, year by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Together they give an average share of a post for the whole class and nothing about any one person’s hours."
+    }
+   ],
+   "rests_on": [
+    "h-t",
+    "h-tf",
+    "h-t0",
+    "h-tf0"
+   ],
+   "text": "The state counted 123 teachers in FY2023 holding 112.8 FTE; in FY2021, 114 holding 108.7."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "59",
+     "unit": "",
+     "value": 59.0
+    },
+    "b": {
+     "text": "59.0",
+     "unit": "full-time equivalents",
+     "value": 59.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "h-p",
+    "h-pf"
+   ],
+   "text": "Paraprofessionals were 59 people and 59.0 FTE that year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "253",
+     "unit": "",
+     "value": 253.0
+    },
+    "n": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s data dictionary for its educator workforce file",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The file does not list which jobs its two “Other” classes hold."
+    }
+   ],
+   "rests_on": [
+    "h-all",
+    "fte-gap",
+    "h-0",
+    "h-1",
+    "h-2"
+   ],
+   "text": "The file counts 253 people in 5 job classes and publishes no FTE for three of them."
+  }
+ ],
+ "facts": [
+  {
+   "id": "h-t",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "teachers as people, FY2023"
+   },
+   "value": {
+    "text": "123",
+    "unit": "people",
+    "value": 123.0
+   }
+  },
+  {
+   "id": "h-tf",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE, FY2023"
+   },
+   "value": {
+    "text": "112.8",
+    "unit": "full-time equivalents",
+    "value": 112.8
+   }
+  },
+  {
+   "id": "h-t0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2021",
+      "unit": "fiscal year",
+      "value": 2021
+     }
+    },
+    "literals": [],
+    "text": "teachers as people, FY2021"
+   },
+   "value": {
+    "text": "114",
+    "unit": "people",
+    "value": 114.0
+   }
+  },
+  {
+   "id": "h-tf0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2021",
+      "unit": "fiscal year",
+      "value": 2021
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE, FY2021"
+   },
+   "value": {
+    "text": "108.7",
+    "unit": "full-time equivalents",
+    "value": 108.7
+   }
+  },
+  {
+   "id": "h-p",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "paraprofessionals as people, FY2023"
+   },
+   "value": {
+    "text": "59",
+    "unit": "people",
+    "value": 59.0
+   }
+  },
+  {
+   "id": "h-pf",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, FY2023"
+   },
+   "value": {
+    "text": "59.0",
+    "unit": "full-time equivalents",
+    "value": 59.0
+   }
+  },
+  {
+   "id": "h-0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "administrators, people, FY2023"
+   },
+   "value": {
+    "text": "19",
+    "unit": "people",
+    "value": 19.0
+   }
+  },
+  {
+   "id": "h-1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "“other, licensed” staff, people, FY2023"
+   },
+   "value": {
+    "text": "14",
+    "unit": "people",
+    "value": 14.0
+   }
+  },
+  {
+   "id": "h-2",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "“other, non-licensed” staff, people, FY2023"
+   },
+   "value": {
+    "text": "38",
+    "unit": "people",
+    "value": 38.0
+   }
+  },
+  {
+   "id": "h-all",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "",
+      "value": 5
+     },
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "people in all 5 job classes, FY2023"
+   },
+   "value": {
+    "text": "253",
+    "unit": "people",
+    "value": 253.0
+   }
+  },
+  {
+   "closes": "Lunenburg’s EPIMS work assignment detail by school, job classification and program area, year by year",
+   "id": "fte-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "FTE for anyone but teachers and paraprofessionals"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "123",
+    "unit": "",
+    "value": 123.0
+   },
+   "b": {
+    "text": "112.8",
+    "unit": "full-time equivalents",
+    "value": 112.8
+   },
+   "y": {
+    "text": "FY2023",
+    "unit": "fiscal year",
+    "value": 2023
+   }
+  },
+  "literals": [],
+  "text": "The state counted 123 teachers in FY2023, holding 112.8 full-time equivalent posts between them."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "headcount-and-fte",
+ "kind": "topic",
+ "path": "/school-staffing/headcount-and-fte",
+ "said": [],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-educators-retention.xlsx",
+   "label": "Massachusetts DESE — dese-educators-retention.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/radar-district-comparison.xlsx",
+   "label": "Massachusetts DESE, district comparison — radar-district-comparison.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "People by job class, the state’s workforce file",
+  "views": [
+   {
+    "columns": [
+     "FY2021",
+     "FY2022",
+     "FY2023"
+    ],
+    "key": "classes",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Headcount",
+    "note": "People, counted once each. The file prints every class beside a total row; reading both doubles every figure.",
+    "rows": [
+     {
+      "cells": [
+       "14",
+       "17",
+       "19"
+      ],
+      "label": "Administrator"
+     },
+     {
+      "cells": [
+       "14",
+       "16",
+       "14"
+      ],
+      "label": "Other - Licensed"
+     },
+     {
+      "cells": [
+       "37",
+       "39",
+       "38"
+      ],
+      "label": "Other - Non-Licensed"
+     },
+     {
+      "cells": [
+       "60",
+       "56",
+       "59"
+      ],
+      "label": "Paraprofessional"
+     },
+     {
+      "cells": [
+       "114",
+       "117",
+       "123"
+      ],
+      "label": "Teacher"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "People and posts"
+}

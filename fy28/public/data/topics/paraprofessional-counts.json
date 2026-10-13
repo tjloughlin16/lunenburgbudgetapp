@@ -1,0 +1,441 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "59",
+     "unit": "",
+     "value": 59.0
+    },
+    "b": {
+     "text": "59.0",
+     "unit": "full-time equivalents",
+     "value": 59.0
+    },
+    "c": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "c-fte-h",
+    "c-hc-h",
+    "c-ro-h"
+   ],
+   "text": "For FY2023 the state counts 59 paraprofessionals as people and 59.0 as FTE; the town printed 58."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "67.0",
+     "unit": "full-time equivalents",
+     "value": 67.0
+    },
+    "b": {
+     "text": "52",
+     "unit": "",
+     "value": 52
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a dated staff roster, or the district’s October EPIMS submission",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Which printed titles are paraprofessionals is our reading, and a roster carries no date, so the two may not describe the same year."
+    }
+   ],
+   "rests_on": [
+    "c-fte-l",
+    "c-ro-l",
+    "year-gap"
+   ],
+   "text": "For FY2025 the state counts 67.0 FTE and the town printed 52 names."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "b": {
+     "text": "51",
+     "unit": "",
+     "value": 51
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Some of those listed as Special Services may be paraprofessionals; the titles do not say."
+    }
+   ],
+   "rests_on": [
+    "c-dir",
+    "c-ss"
+   ],
+   "text": "The district’s directory titles 5 people paraprofessional and 51 only “Special Services”."
+  }
+ ],
+ "facts": [
+  {
+   "id": "c-fte-h",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, the state, FY2023"
+   },
+   "value": {
+    "text": "59.0",
+    "unit": "full-time equivalents",
+    "value": 59.0
+   }
+  },
+  {
+   "id": "c-hc-h",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "paraprofessionals as people, the state, FY2023"
+   },
+   "value": {
+    "text": "59",
+    "unit": "people",
+    "value": 59.0
+   }
+  },
+  {
+   "id": "c-ro-h",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional names the town printed, FY2023 (ours)"
+   },
+   "value": {
+    "text": "58",
+    "unit": "names",
+    "value": 58
+   }
+  },
+  {
+   "id": "c-fte-l",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, the state, FY2025"
+   },
+   "value": {
+    "text": "67.0",
+    "unit": "full-time equivalents",
+    "value": 67.0
+   }
+  },
+  {
+   "id": "c-ro-l",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional names printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "52",
+    "unit": "names",
+    "value": 52
+   }
+  },
+  {
+   "id": "c-dir",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "9 October 2026"
+    ],
+    "text": "titled paraprofessional, district directory, 9 October 2026"
+   },
+   "value": {
+    "text": "5",
+    "unit": "people",
+    "value": 5
+   }
+  },
+  {
+   "id": "c-ss",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "titled only “Special Services”, the same directory"
+   },
+   "value": {
+    "text": "51",
+    "unit": "people",
+    "value": 51
+   }
+  },
+  {
+   "closes": "a dated staff roster, or the district’s October EPIMS submission",
+   "id": "year-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which school year a printed roster describes"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "67.0",
+    "unit": "full-time equivalents",
+    "value": 67.0
+   },
+   "b": {
+    "text": "52",
+    "unit": "",
+    "value": 52
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "For FY2025 the state counts 67.0 paraprofessional FTE; the town printed 52 paraprofessional names."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "paraprofessional-counts",
+ "kind": "topic",
+ "path": "/school-staffing/paraprofessional-counts",
+ "said": [],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/radar-district-comparison.xlsx",
+   "label": "Massachusetts DESE, district comparison — radar-district-comparison.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-educators-retention.xlsx",
+   "label": "Massachusetts DESE — dese-educators-retention.xlsx"
+  },
+  {
+   "href": "/docs/data/staff-roster-counts.csv",
+   "label": "Lunenburg Budget Project — staff-roster-counts.csv (names printed on each school roster, by title and year)"
+  },
+  {
+   "href": "/docs/data/PROVENANCE-staff-rosters.md",
+   "label": "Lunenburg Budget Project — PROVENANCE-staff-rosters.md (where each annual-report roster was read from)"
+  },
+  {
+   "href": "/docs/district-budget/docs/personnel/staff-directory/2026-10-09/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+   "label": "Lunenburg Public Schools, staff directory, 9 October 2026 — directory-of-staff-all-lunenburg-public-schools-staff.csv"
+  }
+ ],
+ "table": {
+  "caption": "Paraprofessionals, three counts by year",
+  "views": [
+   {
+    "columns": [
+     "Names printed (ours)",
+     "State FTE",
+     "State headcount"
+    ],
+    "key": "three",
+    "kinds": [
+     "stated",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Side by side, not reconciled",
+    "note": "Names from the annual town reports, classified by printed title (our reading). FTE from DESE’s comparison sheet; headcount from DESE’s workforce file, which covers three years.",
+    "rows": [
+     {
+      "cells": [
+       "52",
+       "67.0",
+       null
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "66",
+       "66.0",
+       null
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "58",
+       "59.0",
+       "59"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "48",
+       "55.5",
+       "56"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "61",
+       "59.5",
+       "60"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "38",
+       "57.0",
+       null
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "53",
+       "53.0",
+       null
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "54",
+       "51.0",
+       null
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "46",
+       "59.5",
+       null
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "53",
+       "51.0",
+       null
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "35",
+       "31.0",
+       null
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "47",
+       "16.2",
+       null
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "21",
+       "14.8",
+       null
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "32",
+       "24.1",
+       null
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "42",
+       "24.1",
+       null
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Paraprofessional counts compared"
+}

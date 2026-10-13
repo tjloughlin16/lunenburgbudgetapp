@@ -1,0 +1,292 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "37.0%",
+     "unit": "",
+     "value": 37.024379129642284
+    },
+    "b": {
+     "text": "9.6%",
+     "unit": "",
+     "value": 9.645909645909647
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a combined Ayer and Shirley count for the years before the region formed",
+     "figures": {
+      "a": {
+       "text": "FY2012",
+       "unit": "fiscal year",
+       "value": 2012
+      },
+      "b": {
+       "text": "FY2008",
+       "unit": "fiscal year",
+       "value": 2008
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "Ayer Shirley regionalised in FY2012 and has no FY2008 row, so it is left out."
+    },
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Births and housing are outside this file, so why the region fell is not tested here."
+    }
+   ],
+   "rests_on": [
+    "p-north-middlesex",
+    "p-ashburnham-westminster",
+    "p-lunenburg"
+   ],
+   "text": "North Middlesex fell most, 37.0%; Ashburnham-Westminster fell least, 9.6%."
+  }
+ ],
+ "facts": [
+  {
+   "id": "p-north-middlesex",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "North Middlesex fall, FY2008 to FY2026"
+   },
+   "value": {
+    "text": "37.0%",
+    "unit": "",
+    "value": 37.024379129642284
+   }
+  },
+  {
+   "id": "p-harvard",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Harvard fall, FY2008 to FY2026"
+   },
+   "value": {
+    "text": "23.0%",
+    "unit": "",
+    "value": 22.97090352220521
+   }
+  },
+  {
+   "id": "p-groton-dunstable",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Groton-Dunstable fall, FY2008 to FY2026"
+   },
+   "value": {
+    "text": "22.2%",
+    "unit": "",
+    "value": 22.20303867403315
+   }
+  },
+  {
+   "id": "p-lunenburg",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg fall, FY2008 to FY2026"
+   },
+   "value": {
+    "text": "14.0%",
+    "unit": "",
+    "value": 14.035087719298245
+   }
+  },
+  {
+   "id": "p-ashburnham-westminster",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Ashburnham-Westminster fall, FY2008 to FY2026"
+   },
+   "value": {
+    "text": "9.6%",
+    "unit": "",
+    "value": 9.645909645909647
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2008",
+    "unit": "fiscal year",
+    "value": 2008
+   },
+   "b": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "m": {
+    "text": "4",
+    "unit": "",
+    "value": 4
+   },
+   "n": {
+    "text": "3",
+    "unit": "",
+    "value": 3
+   },
+   "p": {
+    "text": "14.0%",
+    "unit": "",
+    "value": 14.035087719298245
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg’s enrolment fell 14.0% from FY2008 to FY2026; 3 of 4 nearby districts fell further."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "nearby-district-enrolment",
+ "kind": "topic",
+ "path": "/enrolment/nearby-district-enrolment",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Enrolment in nearby districts and Lunenburg",
+  "views": [
+   {
+    "columns": [
+     "FY2008",
+     "FY2026",
+     "Change"
+    ],
+    "key": "peers",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "FY2008 and FY2026",
+    "note": "DESE’s 1 October headcount for each district. The change is our arithmetic.",
+    "rows": [
+     {
+      "cells": [
+       "4,389",
+       "2,764",
+       "-37.0%"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "1,306",
+       "1,006",
+       "-23.0%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "2,896",
+       "2,253",
+       "-22.2%"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "1,824",
+       "1,568",
+       "-14.0%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "2,457",
+       "2,220",
+       "-9.6%"
+      ],
+      "label": "Ashburnham-Westminster"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Nearby district enrolment"
+}

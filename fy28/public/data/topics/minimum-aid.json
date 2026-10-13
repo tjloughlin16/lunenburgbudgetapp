@@ -1,0 +1,406 @@
+{
+ "category": "state-aid",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$0",
+     "unit": "",
+     "value": 0
+    },
+    "b": {
+     "text": "$150",
+     "unit": "",
+     "value": 150.0
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "inc",
+    "rate",
+    "pupils",
+    "fa"
+   ],
+   "text": "The formula’s own foundation aid paid $0 for FY2026; the whole rise was $150 a pupil."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$8,739,315",
+     "unit": "",
+     "value": 8739314.75
+    },
+    "b": {
+     "text": "$8,988,960",
+     "unit": "",
+     "value": 8988960.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s preliminary Chapter 70 calculation for Lunenburg for the year in question",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "How large a rise in the foundation budget would take the town off the minimum is not modelled in any document held."
+    }
+   ],
+   "rests_on": [
+    "need",
+    "prior",
+    "head"
+   ],
+   "text": "The need was $8,739,315 against $8,988,960 already paid, so the formula added nothing."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "4 of 5",
+     "unit": "years",
+     "value": 4
+    },
+    "r2022": {
+     "text": "$30",
+     "unit": "",
+     "value": 30.0
+    },
+    "r2024": {
+     "text": "$60",
+     "unit": "",
+     "value": 60.0
+    },
+    "r2025": {
+     "text": "$104",
+     "unit": "",
+     "value": 104.0
+    },
+    "r2026": {
+     "text": "$150",
+     "unit": "",
+     "value": 150.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the enacted state budget for the year in question",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The Legislature votes the rate each year in the state budget, so nothing published says what it will be next year."
+    }
+   ],
+   "rests_on": [
+    "years",
+    "rate",
+    "r2022",
+    "r2024",
+    "r2025"
+   ],
+   "text": "Minimum aid was paid in 4 of 5 recent years, at $30, $60, $104 and $150 a pupil."
+  }
+ ],
+ "facts": [
+  {
+   "id": "inc",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "rise in Chapter 70, FY2026"
+   },
+   "value": {
+    "text": "$240,450",
+    "unit": "",
+    "value": 240450.0
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "statute",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "minimum aid a pupil, FY2026, set by the Legislature"
+   },
+   "value": {
+    "text": "$150",
+    "unit": "",
+    "value": 150.0
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "foundation pupils, FY2026"
+   },
+   "value": {
+    "text": "1,603",
+    "unit": "pupils",
+    "value": 1603.0
+   }
+  },
+  {
+   "id": "fa",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "from the formula’s foundation aid, FY2026"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "need",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "foundation budget less required contribution, FY2026"
+   },
+   "value": {
+    "text": "$8,739,315",
+    "unit": "",
+    "value": 8739314.75
+   }
+  },
+  {
+   "id": "prior",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 already paid, FY2025"
+   },
+   "value": {
+    "text": "$8,988,960",
+    "unit": "",
+    "value": 8988960.0
+   }
+  },
+  {
+   "id": "head",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "by which that exceeds the need (our arithmetic)"
+   },
+   "value": {
+    "text": "$249,645",
+    "unit": "",
+    "value": 249645.25
+   }
+  },
+  {
+   "id": "years",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "recent years in which minimum aid was paid"
+   },
+   "value": {
+    "text": "4 of 5",
+    "unit": "years",
+    "value": 4
+   }
+  },
+  {
+   "id": "r2022",
+   "kind": "statute",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "minimum aid a pupil, FY2022"
+   },
+   "value": {
+    "text": "$30",
+    "unit": "",
+    "value": 30.0
+   }
+  },
+  {
+   "id": "r2024",
+   "kind": "statute",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "minimum aid a pupil, FY2024"
+   },
+   "value": {
+    "text": "$60",
+    "unit": "",
+    "value": 60.0
+   }
+  },
+  {
+   "id": "r2025",
+   "kind": "statute",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "minimum aid a pupil, FY2025"
+   },
+   "value": {
+    "text": "$104",
+    "unit": "",
+    "value": 104.0
+   }
+  },
+  {
+   "id": "peers",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "compared districts at the same rate, FY2026"
+   },
+   "value": {
+    "text": "6 of 6",
+    "unit": "districts",
+    "value": 6
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$240,450",
+    "unit": "",
+    "value": 240450.0
+   },
+   "b": {
+    "text": "$150",
+    "unit": "",
+    "value": 150.0
+   },
+   "n": {
+    "text": "1,603",
+    "unit": "",
+    "value": 1603.0
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "All of FY2026’s $240,450 increase was the Legislature’s minimum: $150 for each of 1,603 pupils."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "minimum-aid",
+ "kind": "topic",
+ "path": "/state-aid/minimum-aid",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-04-16",
+   "href": "/docs/meetings/text/school-committee/2025-04-16-minutes-7171.txt",
+   "label": "School Committee minutes, 2025-04-16",
+   "quote": "Their budget has a minimum aid to school raising from the $75 per student to $150, however, this is a huge example of how you can’t count on anything because this has to"
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/meetings/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "The House budget passed including 150 per pupil minimum aid increase."
+  }
+ ],
+ "shelves": [
+  "state-aid"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+   "label": "Massachusetts DESE, Chapter 70 Trends workbook — dese-ch70-key-factors.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Minimum aid"
+}

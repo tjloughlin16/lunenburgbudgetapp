@@ -1,0 +1,607 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2003",
+     "unit": "fiscal year",
+     "value": 2003
+    },
+    "b": {
+     "text": "FY2015",
+     "unit": "fiscal year",
+     "value": 2015
+    },
+    "p": {
+     "text": "17.5%",
+     "unit": "",
+     "value": 17.488076311605724
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Births, families moving, school choice and Monty Tech all move this count. The file carries no reason, so nothing here says which did."
+    }
+   ],
+   "rests_on": [
+    "peak",
+    "trough",
+    "fall"
+   ],
+   "text": "Enrolment fell 17.5% from FY2003 to FY2015, then stopped falling."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "1,557",
+     "unit": "",
+     "value": 1557
+    },
+    "b": {
+     "text": "1,649",
+     "unit": "",
+     "value": 1649
+    },
+    "y": {
+     "text": "FY2015",
+     "unit": "fiscal year",
+     "value": 2015
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "trough",
+    "high",
+    "now"
+   ],
+   "text": "Every year since FY2015 has been between 1,557 and 1,649 children."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "1,568",
+     "unit": "",
+     "value": 1568
+    },
+    "b": {
+     "text": "1,581",
+     "unit": "",
+     "value": 1581
+    },
+    "c": {
+     "text": "1,585",
+     "unit": "",
+     "value": 1585
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "n": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The town’s table prints DESE’s FY2026 school totals as residents, then adds 17 school choice students. DESE’s totals already include them, so they may be counted twice; nothing here confirms it."
+    },
+    {
+     "closes": "DESE’s definition of the enrolment column in its special education program file, for the same year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "What DESE’s special education file counts as enrolled is not stated beside it, and nothing published reconciles it to the headcount."
+    }
+   ],
+   "rests_on": [
+    "now",
+    "spfile",
+    "town",
+    "town-choice"
+   ],
+   "text": "Three published counts of the same year’s children read 1,568, 1,581 and 1,585."
+  }
+ ],
+ "facts": [
+  {
+   "id": "now",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "1 October"
+    ],
+    "text": "enrolled, 1 October, FY2026"
+   },
+   "value": {
+    "text": "1,568",
+    "unit": "children",
+    "value": 1568
+   }
+  },
+  {
+   "id": "peak",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2003",
+      "unit": "fiscal year",
+      "value": 2003
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2003, the peak"
+   },
+   "value": {
+    "text": "1,887",
+    "unit": "children",
+    "value": 1887
+   }
+  },
+  {
+   "id": "trough",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2015, the low"
+   },
+   "value": {
+    "text": "1,557",
+    "unit": "children",
+    "value": 1557
+   }
+  },
+  {
+   "id": "high",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "the highest year since FY2015"
+   },
+   "value": {
+    "text": "1,649",
+    "unit": "children",
+    "value": 1649
+   }
+  },
+  {
+   "id": "fall",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2003",
+      "unit": "fiscal year",
+      "value": 2003
+     },
+     "b": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "fall from FY2003 to FY2015 (our arithmetic)"
+   },
+   "value": {
+    "text": "17.5%",
+    "unit": "",
+    "value": 17.488076311605724
+   }
+  },
+  {
+   "id": "town",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "in the FY2025 annual town report’s table"
+   },
+   "value": {
+    "text": "1,585",
+    "unit": "children",
+    "value": 1585
+   }
+  },
+  {
+   "id": "town-choice",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them listed as school choice students"
+   },
+   "value": {
+    "text": "17",
+    "unit": "children",
+    "value": 17
+   }
+  },
+  {
+   "id": "spfile",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2026, DESE’s special education file"
+   },
+   "value": {
+    "text": "1,581",
+    "unit": "children",
+    "value": 1581
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "1,568",
+    "unit": "",
+    "value": 1568
+   },
+   "b": {
+    "text": "319",
+    "unit": "",
+    "value": 319
+   },
+   "x": {
+    "text": "FY2015",
+    "unit": "fiscal year",
+    "value": 2015
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "FY2003",
+    "unit": "fiscal year",
+    "value": 2003
+   }
+  },
+  "literals": [],
+  "text": "1,568 children in FY2026: 319 fewer than the FY2003 peak, and close to where the count has sat since FY2015."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "enrolment-by-year",
+ "kind": "topic",
+ "path": "/enrolment/enrolment-by-year",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/state-dese/dese-sped-program-characteristics.xlsx",
+   "label": "Massachusetts DESE — dese-sped-program-characteristics.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "DESE enrolment by year, 1 October headcount",
+  "views": [
+   {
+    "columns": [
+     "All",
+     "Pre-K to 5",
+     "Grades 6–8",
+     "Grades 9–12"
+    ],
+    "key": "bands",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "District total and grade bands",
+    "note": "DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to the total by the few students DESE counts beyond grade 12.",
+    "rows": [
+     {
+      "cells": [
+       "1,568",
+       "745",
+       "382",
+       "433"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "1,563",
+       "719",
+       "382",
+       "452"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "1,580",
+       "761",
+       "363",
+       "449"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "1,562",
+       "737",
+       "380",
+       "440"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "1,597",
+       "740",
+       "402",
+       "450"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "1,593",
+       "729",
+       "386",
+       "474"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "1,641",
+       "777",
+       "406",
+       "452"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "1,649",
+       "790",
+       "393",
+       "458"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "1,641",
+       "767",
+       "423",
+       "442"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "1,613",
+       "786",
+       "388",
+       "433"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "1,567",
+       "759",
+       "374",
+       "429"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "1,557",
+       "771",
+       "359",
+       "425"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "1,564",
+       "756",
+       "375",
+       "430"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "1,587",
+       "741",
+       "386",
+       "456"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "1,637",
+       "741",
+       "386",
+       "504"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "1,650",
+       "733",
+       "381",
+       "535"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "1,702",
+       "759",
+       "402",
+       "541"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "1,739",
+       "773",
+       "395",
+       "566"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "1,824",
+       "791",
+       "413",
+       "619"
+      ],
+      "label": "FY2008"
+     },
+     {
+      "cells": [
+       "1,844",
+       "793",
+       "417",
+       "629"
+      ],
+      "label": "FY2007"
+     },
+     {
+      "cells": [
+       "1,836",
+       "788",
+       "429",
+       "615"
+      ],
+      "label": "FY2006"
+     },
+     {
+      "cells": [
+       "1,822",
+       "782",
+       "420",
+       "619"
+      ],
+      "label": "FY2005"
+     },
+     {
+      "cells": [
+       "1,830",
+       "792",
+       "449",
+       "589"
+      ],
+      "label": "FY2004"
+     },
+     {
+      "cells": [
+       "1,887",
+       "842",
+       "457",
+       "588"
+      ],
+      "label": "FY2003"
+     },
+     {
+      "cells": [
+       "1,851",
+       "832",
+       "457",
+       "561"
+      ],
+      "label": "FY2002"
+     },
+     {
+      "cells": [
+       "1,830",
+       "857",
+       "431",
+       "542"
+      ],
+      "label": "FY1999"
+     },
+     {
+      "cells": [
+       "1,758",
+       "872",
+       "403",
+       "483"
+      ],
+      "label": "FY1994"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Enrolment by year"
+}

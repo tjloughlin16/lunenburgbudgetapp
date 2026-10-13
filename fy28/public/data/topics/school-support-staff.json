@@ -1,0 +1,517 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "b": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "c": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "s-counselor",
+    "s-psychologist",
+    "s-social-worker",
+    "s-nurse",
+    "s-speech-therapist"
+   ],
+   "text": "The town printed 7 counsellors, 3 psychologists and 2 social workers in FY2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    },
+    "b": {
+     "text": "1",
+     "unit": "",
+     "value": 1
+    },
+    "y": {
+     "text": "FY2011",
+     "unit": "fiscal year",
+     "value": 2011
+    },
+    "z": {
+     "text": "FY2016",
+     "unit": "fiscal year",
+     "value": 2016
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a dated staff roster, or the district’s October EPIMS submission",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Which titles are which role is our reading of the printed page, and what each school chose to print changed year to year."
+    }
+   ],
+   "rests_on": [
+    "s0-counselor",
+    "s0-psychologist",
+    "s0-social-worker"
+   ],
+   "text": "In FY2011 it printed 9 counsellors and 1 psychologist; social workers first appear in FY2016."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the caseload breakdown the district gave the School Committee",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The district holds per-building social worker caseloads; they are not published."
+    }
+   ],
+   "rests_on": [
+    "s-olic",
+    "case-gap"
+   ],
+   "text": "The state publishes no FTE for any of these posts, and names no job class for them."
+  }
+ ],
+ "facts": [
+  {
+   "id": "s-counselor",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "counsellors printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "7",
+    "unit": "names",
+    "value": 7
+   }
+  },
+  {
+   "id": "s-psychologist",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "psychologists printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "3",
+    "unit": "names",
+    "value": 3
+   }
+  },
+  {
+   "id": "s-social-worker",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "social workers printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "2",
+    "unit": "names",
+    "value": 2
+   }
+  },
+  {
+   "id": "s-nurse",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "nurses printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "4",
+    "unit": "names",
+    "value": 4
+   }
+  },
+  {
+   "id": "s-speech-therapist",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "speech therapists printed, FY2025 (ours)"
+   },
+   "value": {
+    "text": "5",
+    "unit": "names",
+    "value": 5
+   }
+  },
+  {
+   "id": "s0-counselor",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "counsellors printed, FY2011 (ours)"
+   },
+   "value": {
+    "text": "9",
+    "unit": "names",
+    "value": 9
+   }
+  },
+  {
+   "id": "s0-psychologist",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "psychologists printed, FY2011 (ours)"
+   },
+   "value": {
+    "text": "1",
+    "unit": "names",
+    "value": 1
+   }
+  },
+  {
+   "id": "s0-social-worker",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "social workers printed, FY2011 (ours)"
+   },
+   "value": {
+    "text": "0",
+    "unit": "names",
+    "value": 0
+   }
+  },
+  {
+   "id": "s-olic",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "state headcount, “other licensed” staff, FY2023"
+   },
+   "value": {
+    "text": "14",
+    "unit": "people",
+    "value": 14.0
+   }
+  },
+  {
+   "closes": "the district’s per-building social worker and counsellor caseloads, with FTE and funding source",
+   "id": "case-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "caseloads, and FTE, for any of these posts"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "7",
+    "unit": "",
+    "value": 7
+   },
+   "b": {
+    "text": "3",
+    "unit": "",
+    "value": 3
+   },
+   "c": {
+    "text": "2",
+    "unit": "",
+    "value": 2
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The town printed 7 counsellors, 3 psychologists and 2 social workers on its FY2025 school rosters."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-support-staff",
+ "kind": "topic",
+ "path": "/school-staffing/school-support-staff",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2023-12-06",
+   "href": "/docs/meetings/text/school-committee/2023-12-06-minutes-6110.txt",
+   "label": "School Committee minutes, 2023-12-06",
+   "quote": "Information is broken out to social worker caseloads by bui lding"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2024-02-21",
+   "href": "/docs/meetings/text/finance-committee/2024-02-21-minutes-6417.txt",
+   "label": "Finance Committee minutes, 2024-02-21",
+   "quote": "kept 2 social worker positions while cutting 2 budget funded guidance"
+  }
+ ],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/staff-roster-counts.csv",
+   "label": "Lunenburg Budget Project — staff-roster-counts.csv (names printed on each school roster, by title and year)"
+  },
+  {
+   "href": "/docs/data/PROVENANCE-staff-rosters.md",
+   "label": "Lunenburg Budget Project — PROVENANCE-staff-rosters.md (where each annual-report roster was read from)"
+  },
+  {
+   "href": "/docs/state-dese/dese-educators-retention.xlsx",
+   "label": "Massachusetts DESE — dese-educators-retention.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Support staff names printed, by year (our classification)",
+  "views": [
+   {
+    "columns": [
+     "Counsellors",
+     "Psychologists",
+     "Social workers",
+     "Nurses"
+    ],
+    "key": "roles",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Annual town report rosters",
+    "note": "Names, not posts: a part-time post and a full-time one are one name each.",
+    "rows": [
+     {
+      "cells": [
+       "7",
+       "3",
+       "2",
+       "4"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "8",
+       "4",
+       "3",
+       "4"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "8",
+       "4",
+       "3",
+       "4"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "8",
+       "4",
+       "6",
+       "4"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "5",
+       "3",
+       "3",
+       "2"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "8",
+       "4",
+       "0",
+       "4"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "7",
+       "2",
+       "1",
+       "2"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "10",
+       "2",
+       "1",
+       "6"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "7",
+       "3",
+       "1",
+       "3"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "6",
+       "2",
+       "1",
+       "8"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "5",
+       "1",
+       "0",
+       "4"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "6",
+       "1",
+       "0",
+       "3"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "5",
+       "1",
+       "0",
+       "3"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "6",
+       "1",
+       "0",
+       "4"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "9",
+       "1",
+       "0",
+       "4"
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Support staff"
+}

@@ -1,0 +1,210 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "1,538",
+     "unit": "",
+     "value": 1538
+    },
+    "b": {
+     "text": "171",
+     "unit": "",
+     "value": 171
+    },
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s withdrawal records, counted by child",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Each implied figure is DESE’s rate times DESE’s enrolment. A child who leaves and returns is two events, so it is not a count of children."
+    }
+   ],
+   "rests_on": [
+    "total",
+    "e0",
+    "e1"
+   ],
+   "text": "Implied departures over 17 years total 1,538; enrolment fell 171."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Births, families moving in and children returning from private schools all fit the residual equally."
+    }
+   ],
+   "rests_on": [
+    "per",
+    "rate",
+    "who"
+   ],
+   "text": "So arrivals offset most departures; who arrives is a residual nothing here measures."
+  }
+ ],
+ "facts": [
+  {
+   "id": "per",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "leaving a year, implied (ours)"
+   },
+   "value": {
+    "text": "90",
+    "unit": "children",
+    "value": 90
+   }
+  },
+  {
+   "id": "total",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [],
+    "text": "implied over 17 years (ours)"
+   },
+   "value": {
+    "text": "1,538",
+    "unit": "departures",
+    "value": 1538
+   }
+  },
+  {
+   "id": "e0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2009"
+   },
+   "value": {
+    "text": "1,739",
+    "unit": "children",
+    "value": 1739
+   }
+  },
+  {
+   "id": "e1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2026"
+   },
+   "value": {
+    "text": "1,568",
+    "unit": "children",
+    "value": 1568
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "SY2026",
+      "unit": "school year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of all grades leaving, SY2026"
+   },
+   "value": {
+    "text": "6.2%",
+    "unit": "",
+    "value": 6.2
+   }
+  },
+  {
+   "closes": "the district’s enrolment records coded by entry reason: moved in, returned from private school, choice, repeat",
+   "id": "who",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "who arrives in place of those who leave"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "90",
+    "unit": "",
+    "value": 90
+   },
+   "b": {
+    "text": "171",
+    "unit": "",
+    "value": 171
+   },
+   "n": {
+    "text": "17",
+    "unit": "",
+    "value": 17
+   }
+  },
+  "literals": [],
+  "text": "DESE’s rates imply about 90 children leave each year; enrolment fell 171 in 17 years."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "leaving-and-arriving",
+ "kind": "topic",
+ "path": "/enrolment/leaving-and-arriving",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-student-attrition.xlsx",
+   "label": "Massachusetts DESE — dese-student-attrition.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Leaving and arriving"
+}

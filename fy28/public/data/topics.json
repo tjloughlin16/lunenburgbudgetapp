@@ -152,6 +152,170 @@
    "title": "Special education costs"
   },
   {
+   "answer": "1,568 children were in Lunenburg’s schools in FY2026, near where the count has sat since FY2015. Another 177 residents were schooled in other public districts, 97 of them at Monty Tech.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/if-students-leave",
+     "title": "The departure scenario, with its dials"
+    }
+   ],
+   "groups": [
+    {
+     "title": "How many",
+     "topics": [
+      "enrolment-by-year",
+      "enrolment-by-grade-band",
+      "high-needs-students",
+      "nearby-district-enrolment"
+     ]
+    },
+    {
+     "title": "Who leaves, and when",
+     "topics": [
+      "grade-to-grade-loss",
+      "grade-8-loss-trend",
+      "leaving-and-arriving"
+     ]
+    },
+    {
+     "title": "Where they go",
+     "topics": [
+      "children-schooled-elsewhere",
+      "school-choice-flows",
+      "departure-scenario"
+     ]
+    },
+    {
+     "title": "Monty Tech",
+     "topics": [
+      "monty-tech-enrolment",
+      "monty-tech-assessment"
+     ]
+    },
+    {
+     "title": "Students with plans",
+     "topics": [
+      "students-with-an-iep",
+      "out-of-district-placements"
+     ]
+    }
+   ],
+   "id": "enrolment",
+   "minutes": 1,
+   "order": 21,
+   "path": "/enrolment",
+   "ready": true,
+   "shelf": "Enrolment",
+   "title": "Students and schools"
+  },
+  {
+   "answer": "The state counted 103.4 teacher FTE in FY2026; whether that is a rise or a fall depends on the year it is measured from. Paraprofessional FTE was 67.0 in FY2025, the most per pupil on the state’s sheet. Nothing published says which posts were filled.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "Teachers",
+     "topics": [
+      "teacher-fte-over-time",
+      "teachers-per-pupil",
+      "teachers-by-school",
+      "teachers-by-subject"
+     ]
+    },
+    {
+     "title": "Paraprofessionals",
+     "topics": [
+      "paraprofessional-fte",
+      "paraprofessional-counts",
+      "staff-by-programme"
+     ]
+    },
+    {
+     "title": "People and records",
+     "topics": [
+      "headcount-and-fte",
+      "staff-retention",
+      "school-support-staff",
+      "printed-school-rosters",
+      "district-staff-directory"
+     ]
+    },
+    {
+     "title": "Paraprofessional money",
+     "topics": [
+      "in-district-special-education",
+      "fy2026-paraprofessional-overrun"
+     ]
+    }
+   ],
+   "id": "school-staffing",
+   "minutes": 1,
+   "order": 22,
+   "path": "/school-staffing",
+   "ready": true,
+   "shelf": "School staffing",
+   "title": "School staff"
+  },
+  {
+   "answer": "Chapter 70 was $9,229,410 of the $11,244,422 the state’s cherry sheet gave Lunenburg for FY2026. All of that year’s rise was the Legislature’s $150-a-pupil minimum; the formula itself added $0.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "Chapter 70",
+     "topics": [
+      "chapter-70-by-year",
+      "minimum-aid",
+      "foundation-budget",
+      "required-local-contribution",
+      "aid-per-pupil"
+     ]
+    },
+    {
+     "title": "The spending floor",
+     "topics": [
+      "net-school-spending",
+      "net-school-spending-rank"
+     ]
+    },
+    {
+     "title": "All state aid",
+     "topics": [
+      "total-state-aid",
+      "chapter-70-school-budget-share",
+      "state-aid-growth",
+      "cherry-sheet-variance",
+      "cherry-sheet-assessments"
+     ]
+    },
+    {
+     "title": "Other state money",
+     "topics": [
+      "circuit-breaker",
+      "state-reimbursement"
+     ]
+    }
+   ],
+   "id": "state-aid",
+   "minutes": 1,
+   "order": 23,
+   "path": "/state-aid",
+   "ready": true,
+   "shelf": "State aid",
+   "title": "Chapter 70 aid"
+  },
+  {
    "answer": "The town keeps two kinds of reserve: free cash, $3,354,370 as of 1 July 2025, and nine stabilization accounts holding $9,061,421. Only the general fund’s $3,147,179 may be spent on anything lawful.",
    "area": "town",
    "elsewhere": [],
@@ -232,6 +396,19 @@
  ],
  "generated_by": "scripts/build_topics_index.py",
  "topics": {
+  "aid-per-pupil": {
+   "finding": "Chapter 70 averaged $5,757.59 a pupil in FY2026, yet one pupil more or fewer moved it by $150.00.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "aid-per-pupil",
+   "minutes": 1,
+   "path": "/state-aid/aid-per-pupil",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Aid per pupil"
+  },
   "athletic-bus-funding": {
    "finding": "From FY2025, athletic buses moved from player fees to the town budget, mostly taxes.",
    "generator": "scripts/build_transportation.py",
@@ -300,6 +477,71 @@
    ],
    "title": "Bus fee"
   },
+  "chapter-70-by-year": {
+   "finding": "Chapter 70 was $9,229,410 in FY2026 and $3,921,700 in FY2007; it fell in 2 of 19 years.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "chapter-70-by-year",
+   "minutes": 1,
+   "path": "/state-aid/chapter-70-by-year",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Chapter 70 by year"
+  },
+  "chapter-70-school-budget-share": {
+   "finding": "Chapter 70 was 35.1% of the FY2026 school appropriation; the School Committee said 35%.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "chapter-70-school-budget-share",
+   "minutes": 1,
+   "path": "/state-aid/chapter-70-school-budget-share",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Share of the school budget"
+  },
+  "cherry-sheet-assessments": {
+   "finding": "The cherry sheet charged Lunenburg $1,003,251 for FY2026; 80.3% was tuition for pupils schooled elsewhere.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "cherry-sheet-assessments",
+   "minutes": 1,
+   "path": "/state-aid/cherry-sheet-assessments",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Cherry sheet assessments"
+  },
+  "cherry-sheet-variance": {
+   "finding": "Cherry sheet receipts came in $390,814 short of the estimate in 2024 and $327,281 over in 2023.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "cherry-sheet-variance",
+   "minutes": 1,
+   "path": "/state-aid/cherry-sheet-variance",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Cherry sheet variance"
+  },
+  "children-schooled-elsewhere": {
+   "finding": "177 resident children were in other public districts in FY2026, against 186 in FY2014; the mix changed.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "children-schooled-elsewhere",
+   "minutes": 1,
+   "path": "/enrolment/children-schooled-elsewhere",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Children schooled elsewhere"
+  },
   "circuit-breaker": {
    "finding": "The state paid $579,142 in FY2026 on $1,257,225 of eligible costs for 9 children: 46.1%.",
    "generator": "scripts/build_special_education_topics.py",
@@ -309,7 +551,8 @@
    "path": "/special-education/circuit-breaker",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "state-aid"
    ],
    "title": "Circuit breaker"
   },
@@ -378,6 +621,58 @@
    ],
    "title": "Dee Bus contract"
   },
+  "departure-scenario": {
+   "finding": "A scenario on assumed rates: 78 students choosing out would take $401,700 from the town in year one.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "departure-scenario",
+   "minutes": 2,
+   "path": "/enrolment/departure-scenario",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Departure scenario"
+  },
+  "district-staff-directory": {
+   "finding": "The district’s staff directory listed 259 people on 9 October 2026; it carries no FTE and no fund.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "district-staff-directory",
+   "minutes": 1,
+   "path": "/school-staffing/district-staff-directory",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "District staff directory"
+  },
+  "enrolment-by-grade-band": {
+   "finding": "Grades 9–12 lost 30.0% of their children from FY2008 to FY2026; pre-K to grade 5 lost 5.8%.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "enrolment-by-grade-band",
+   "minutes": 1,
+   "path": "/enrolment/enrolment-by-grade-band",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Enrolment by grade band"
+  },
+  "enrolment-by-year": {
+   "finding": "1,568 children in FY2026: 319 fewer than the FY2003 peak, and close to where the count has sat since FY2015.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "enrolment-by-year",
+   "minutes": 1,
+   "path": "/enrolment/enrolment-by-year",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Enrolment by year"
+  },
   "fee-fund-ledger": {
    "finding": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025.",
    "generator": "scripts/build_athletics_topics.py",
@@ -390,6 +685,19 @@
     "athletics"
    ],
    "title": "Fee fund ledger"
+  },
+  "foundation-budget": {
+   "finding": "The state priced Lunenburg’s schools at $22,073,946 for FY2026; Chapter 70 equals 41.8% of that.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "foundation-budget",
+   "minutes": 1,
+   "path": "/state-aid/foundation-budget",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Foundation budget"
   },
   "free-cash-and-capital": {
    "finding": "Free cash paid $655,424 of the $1,225,000 FY2026 capital programme; FY2027 plans $991,627 of $1,830,203.",
@@ -505,7 +813,8 @@
    "path": "/fy2026-closeout/fy2026-paraprofessional-overrun",
    "ready": true,
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "school-staffing"
    ],
    "title": "Paraprofessional overrun"
   },
@@ -666,6 +975,58 @@
    ],
    "title": "General stabilization fund"
   },
+  "grade-8-loss-trend": {
+   "finding": "The latest grade 8 rate, 27.7%, is the second-highest of 17 years, inside a range the town has always been in.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "grade-8-loss-trend",
+   "minutes": 1,
+   "path": "/enrolment/grade-8-loss-trend",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Grade 8 loss trend"
+  },
+  "grade-to-grade-loss": {
+   "finding": "On average 20.5% of eighth graders do not return for grade 9; other grades lose 3.0% to 6.4%.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "grade-to-grade-loss",
+   "minutes": 2,
+   "path": "/enrolment/grade-to-grade-loss",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Grade-to-grade loss"
+  },
+  "headcount-and-fte": {
+   "finding": "The state counted 123 teachers in FY2023, holding 112.8 full-time equivalent posts between them.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "headcount-and-fte",
+   "minutes": 1,
+   "path": "/school-staffing/headcount-and-fte",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "People and posts"
+  },
+  "high-needs-students": {
+   "finding": "English learners went from 3 to 70; low income was measured three ways and is not one series.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "high-needs-students",
+   "minutes": 1,
+   "path": "/enrolment/high-needs-students",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "High-needs students"
+  },
   "hiring-versus-placing": {
    "finding": "Placements fell while in-district budgets rose; nothing published shows one caused the other.",
    "generator": "scripts/build_special_education_topics.py",
@@ -688,9 +1049,101 @@
    "path": "/special-education/in-district-special-education",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "school-staffing"
    ],
    "title": "In-district special education"
+  },
+  "leaving-and-arriving": {
+   "finding": "DESE’s rates imply about 90 children leave each year; enrolment fell 171 in 17 years.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "leaving-and-arriving",
+   "minutes": 1,
+   "path": "/enrolment/leaving-and-arriving",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Leaving and arriving"
+  },
+  "minimum-aid": {
+   "finding": "All of FY2026’s $240,450 increase was the Legislature’s minimum: $150 for each of 1,603 pupils.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "minimum-aid",
+   "minutes": 2,
+   "path": "/state-aid/minimum-aid",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Minimum aid"
+  },
+  "monty-tech-assessment": {
+   "finding": "Lunenburg’s FY2026 Monty Tech bill was $1,334,521; 95.2% of it is a minimum the state sets.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "monty-tech-assessment",
+   "minutes": 2,
+   "path": "/enrolment/monty-tech-assessment",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Monty Tech assessment"
+  },
+  "monty-tech-enrolment": {
+   "finding": "97 residents attended Monty Tech in FY2026, up from 70 in FY2014: more than any other outside district.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "monty-tech-enrolment",
+   "minutes": 1,
+   "path": "/enrolment/monty-tech-enrolment",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Monty Tech enrolment"
+  },
+  "nearby-district-enrolment": {
+   "finding": "Lunenburg’s enrolment fell 14.0% from FY2008 to FY2026; 3 of 4 nearby districts fell further.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "nearby-district-enrolment",
+   "minutes": 1,
+   "path": "/enrolment/nearby-district-enrolment",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "Nearby district enrolment"
+  },
+  "net-school-spending": {
+   "finding": "Lunenburg spent 116.0% of the state’s minimum in FY2024, and met the minimum in all 31 years.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "net-school-spending",
+   "minutes": 1,
+   "path": "/state-aid/net-school-spending",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Net school spending"
+  },
+  "net-school-spending-rank": {
+   "finding": "In FY2024 Lunenburg ranked 238 of 362 districts on spending against its minimum; in FY2018 it was 181 of 361.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "net-school-spending-rank",
+   "minutes": 1,
+   "path": "/state-aid/net-school-spending-rank",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Spending against the median"
   },
   "out-of-district-placements": {
    "finding": "The town counted 10 children placed out of district in FY2025, against 30 in FY2015.",
@@ -701,7 +1154,8 @@
    "path": "/special-education/out-of-district-placements",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "enrolment"
    ],
    "title": "Out-of-district placements"
   },
@@ -718,6 +1172,32 @@
    ],
    "title": "Out-of-district tuition"
   },
+  "paraprofessional-counts": {
+   "finding": "For FY2025 the state counts 67.0 paraprofessional FTE; the town printed 52 paraprofessional names.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "paraprofessional-counts",
+   "minutes": 1,
+   "path": "/school-staffing/paraprofessional-counts",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Paraprofessional counts compared"
+  },
+  "paraprofessional-fte": {
+   "finding": "The state counted 67.0 paraprofessional FTE in FY2025, against 14.8 in FY2013 and 46.4 in FY2009.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "paraprofessional-fte",
+   "minutes": 1,
+   "path": "/school-staffing/paraprofessional-fte",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Paraprofessionals over time"
+  },
   "participation": {
    "finding": "The district counted 649 sport participations in FY2026, against 675 in FY2024.",
    "generator": "scripts/build_athletics_topics.py",
@@ -731,6 +1211,32 @@
    ],
    "title": "Participation"
   },
+  "printed-school-rosters": {
+   "finding": "The town printed 250 names on its school rosters in FY2025, against 194 in FY2011.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "printed-school-rosters",
+   "minutes": 1,
+   "path": "/school-staffing/printed-school-rosters",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Printed school rosters"
+  },
+  "required-local-contribution": {
+   "finding": "What the state requires the town to put in rose 37.8% from FY2019 to FY2026; Chapter 70 rose 22.4%.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "required-local-contribution",
+   "minutes": 1,
+   "path": "/state-aid/required-local-contribution",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Required local contribution"
+  },
   "reserves-and-the-gap": {
    "finding": "Spent on the school gap, the general fund covers FY2028 and FY2029 and runs out in FY2030, by our arithmetic.",
    "generator": "scripts/build_town_reserves_topics.py",
@@ -743,6 +1249,32 @@
     "town-reserves"
    ],
    "title": "Reserves against the gap"
+  },
+  "school-choice-flows": {
+   "finding": "58 residents left under school choice in FY2026 and 11 arrived; arrivals were 44 in FY2014.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "school-choice-flows",
+   "minutes": 1,
+   "path": "/enrolment/school-choice-flows",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "School choice flows"
+  },
+  "school-support-staff": {
+   "finding": "The town printed 7 counsellors, 3 psychologists and 2 social workers on its FY2025 school rosters.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "school-support-staff",
+   "minutes": 1,
+   "path": "/school-staffing/school-support-staff",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Support staff"
   },
   "special-education-overruns": {
    "finding": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget.",
@@ -824,6 +1356,45 @@
    ],
    "title": "Stabilization withdrawals"
   },
+  "staff-by-programme": {
+   "finding": "Paraprofessional FTE coded to special education fell from 44.0 to 20.0 while the all-programmes count rose.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "staff-by-programme",
+   "minutes": 1,
+   "path": "/school-staffing/staff-by-programme",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Staff by programme"
+  },
+  "staff-retention": {
+   "finding": "The state reports 58.3% of paraprofessionals retained in FY2022 and 66.1% in FY2023, against 93.0% in FY2021.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "staff-retention",
+   "minutes": 1,
+   "path": "/school-staffing/staff-retention",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Staff retention"
+  },
+  "state-aid-growth": {
+   "finding": "Our projection grows all state aid 2.75% a year; the cherry sheet’s median yearly rise was 2.80%.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "state-aid-growth",
+   "minutes": 1,
+   "path": "/state-aid/state-aid-growth",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "State aid growth"
+  },
   "state-reimbursement": {
    "finding": "The state repays 5.5% of what the town spends on buses, all of it for special education.",
    "generator": "scripts/build_transportation.py",
@@ -833,7 +1404,8 @@
    "path": "/transportation/state-reimbursement",
    "ready": true,
    "shelves": [
-    "transportation"
+    "transportation",
+    "state-aid"
    ],
    "title": "State reimbursement"
   },
@@ -846,9 +1418,62 @@
    "path": "/special-education/students-with-an-iep",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "enrolment"
    ],
    "title": "Students with an IEP"
+  },
+  "teacher-fte-over-time": {
+   "finding": "The state counted 103.4 teacher FTE in FY2026, 10.6 fewer than in FY2024; 95 of 171 year pairs end lower.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "teacher-fte-over-time",
+   "minutes": 2,
+   "path": "/school-staffing/teacher-fte-over-time",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Teachers over time"
+  },
+  "teachers-by-school": {
+   "finding": "Turkey Hill Elementary went from 27.0 to 18.4 teacher FTE, FY2017 to FY2026; the district fell 8.7.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "teachers-by-school",
+   "minutes": 2,
+   "path": "/school-staffing/teachers-by-school",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Teachers by school"
+  },
+  "teachers-by-subject": {
+   "finding": "From FY2024 to FY2026 subjects lost 12.3 teacher FTE and gained 2.2; science alone fell 4.2.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "teachers-by-subject",
+   "minutes": 2,
+   "path": "/school-staffing/teachers-by-subject",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Teachers by subject"
+  },
+  "teachers-per-pupil": {
+   "finding": "Lunenburg had 6.70 teacher FTE per hundred pupils in FY2025, 12th of 13 on the state’s sheet.",
+   "generator": "scripts/build_school_staffing_topics.py",
+   "home": "school-staffing",
+   "id": "teachers-per-pupil",
+   "minutes": 2,
+   "path": "/school-staffing/teachers-per-pupil",
+   "ready": true,
+   "shelves": [
+    "school-staffing"
+   ],
+   "title": "Teachers per pupil"
   },
   "total-athletics-cost": {
    "finding": "No document states one total: three sheets give $185,356 to $349,145 for the same teams in FY2024.",
@@ -862,6 +1487,19 @@
     "athletics"
    ],
    "title": "Total athletics cost"
+  },
+  "total-state-aid": {
+   "finding": "The state’s cherry sheet carries $11,244,422 for Lunenburg for FY2026; Chapter 70 is 82.1% of it.",
+   "generator": "scripts/build_state_aid_topics.py",
+   "home": "state-aid",
+   "id": "total-state-aid",
+   "minutes": 1,
+   "path": "/state-aid/total-state-aid",
+   "ready": true,
+   "shelves": [
+    "state-aid"
+   ],
+   "title": "Total state aid"
   },
   "town-budget-and-fee-fund": {
    "finding": "The fee fund paid 45.8% of athletics spending in FY2024 and 5.7% in FY2025, on the town’s books.",

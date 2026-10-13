@@ -1,0 +1,314 @@
+{
+ "category": "state-aid",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "-$390,814",
+     "unit": "",
+     "value": -390814.0
+    },
+    "b": {
+     "text": "$327,281",
+     "unit": "",
+     "value": 327281.0
+    },
+    "y": {
+     "text": "2024",
+     "unit": "year",
+     "value": 2024
+    },
+    "z": {
+     "text": "2023",
+     "unit": "year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "y2024",
+    "y2023",
+    "over"
+   ],
+   "text": "The line ran from -$390,814 in the 2024 proof to $327,281 in the 2023 proof."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$718,095",
+     "unit": "",
+     "value": 718095.0
+    },
+    "b": {
+     "text": "$663,551",
+     "unit": "",
+     "value": 663551.0
+    },
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s cherry sheet estimates and receipts, line by line, for each of those years",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether this is a fact about the aid or about how the town estimates it is not established."
+    }
+   ],
+   "rests_on": [
+    "swing",
+    "rank",
+    "next"
+   ],
+   "text": "That swing, $718,095, is the largest of 9 towns compared; the next is $663,551."
+  }
+ ],
+ "facts": [
+  {
+   "id": "y2021",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2021"
+    ],
+    "text": "over or under the estimate, 2021 proof"
+   },
+   "value": {
+    "text": "$240,260",
+    "unit": "",
+    "value": 240260.0
+   }
+  },
+  {
+   "id": "y2022",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2022"
+    ],
+    "text": "over or under the estimate, 2022 proof"
+   },
+   "value": {
+    "text": "$120,947",
+    "unit": "",
+    "value": 120947.0
+   }
+  },
+  {
+   "id": "y2023",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2023"
+    ],
+    "text": "over or under the estimate, 2023 proof"
+   },
+   "value": {
+    "text": "$327,281",
+    "unit": "",
+    "value": 327281.0
+   }
+  },
+  {
+   "id": "y2024",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2024"
+    ],
+    "text": "over or under the estimate, 2024 proof"
+   },
+   "value": {
+    "text": "-$390,814",
+    "unit": "",
+    "value": -390814.0
+   }
+  },
+  {
+   "id": "y2025",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2025"
+    ],
+    "text": "over or under the estimate, 2025 proof"
+   },
+   "value": {
+    "text": "$149,455",
+    "unit": "",
+    "value": 149455.0
+   }
+  },
+  {
+   "id": "swing",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from the worst year to the best"
+   },
+   "value": {
+    "text": "$718,095",
+    "unit": "",
+    "value": 718095.0
+   }
+  },
+  {
+   "id": "rank",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "by the size of that swing, largest first"
+   },
+   "value": {
+    "text": "1 of 9",
+    "unit": "towns",
+    "value": 1
+   }
+  },
+  {
+   "id": "next",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the next largest swing, Westford"
+   },
+   "value": {
+    "text": "$663,551",
+    "unit": "",
+    "value": 663551.0
+   }
+  },
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "years receipts beat the estimate"
+   },
+   "value": {
+    "text": "4 of 5",
+    "unit": "years",
+    "value": 4
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$390,814",
+    "unit": "",
+    "value": 390814.0
+   },
+   "b": {
+    "text": "$327,281",
+    "unit": "",
+    "value": 327281.0
+   },
+   "y": {
+    "text": "2024",
+    "unit": "year",
+    "value": 2024
+   },
+   "z": {
+    "text": "2023",
+    "unit": "year",
+    "value": 2023
+   }
+  },
+  "literals": [],
+  "text": "Cherry sheet receipts came in $390,814 short of the estimate in 2024 and $327,281 over in 2023."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "cherry-sheet-variance",
+ "kind": "topic",
+ "path": "/state-aid/cherry-sheet-variance",
+ "said": [],
+ "shelves": [
+  "state-aid"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "label": "Massachusetts DLS, free cash proof — free-cash-proof-lunenburg.xlsx"
+  },
+  {
+   "href": "/docs/data/free-cash-proof.csv",
+   "label": "Lunenburg Budget Project — free-cash-proof.csv (the free cash proofs, line by line)"
+  }
+ ],
+ "table": {
+  "caption": "Excess or shortfall of cherry sheet receipts",
+  "views": [
+   {
+    "columns": [
+     "Over or under the estimate",
+     "Free cash certified"
+    ],
+    "key": "cl8",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Free cash proof, line CL#8",
+    "note": "The Division of Local Services’ free cash proof for Lunenburg. A positive figure is receipts above the cherry sheet estimate.",
+    "rows": [
+     {
+      "cells": [
+       "$149,455",
+       "$3,354,370"
+      ],
+      "label": "2025"
+     },
+     {
+      "cells": [
+       "-$390,814",
+       "$2,270,060"
+      ],
+      "label": "2024"
+     },
+     {
+      "cells": [
+       "$327,281",
+       "$1,870,612"
+      ],
+      "label": "2023"
+     },
+     {
+      "cells": [
+       "$120,947",
+       "$2,923,290"
+      ],
+      "label": "2022"
+     },
+     {
+      "cells": [
+       "$240,260",
+       "$2,666,962"
+      ],
+      "label": "2021"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Cherry sheet variance"
+}

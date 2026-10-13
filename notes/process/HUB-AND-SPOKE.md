@@ -112,5 +112,8 @@ reports with findings; they stay as they are.
 
 | category | built | verified | deployed |
 |---|---|---|---|
-| transportation | 12 Oct | 12 Oct | 12 Oct (pending) |
-| athletics | 12 Oct | 12 Oct (3 figures recomputed; $400 fee and "paid" fixed) | 12 Oct (pending) |
+| transportation | 12 Oct | 12 Oct | 12 Oct |
+| athletics | 12 Oct | 12 Oct (3 figures recomputed; $400 fee and "paid" fixed) | 12 Oct |
+| special-education | 12 Oct | 12 Oct (cost per placement rewritten: no proxy divisions; circuit breaker per-child column removed) | 12 Oct |
+| town-reserves | 12 Oct | 12 Oct (free cash against the DLS proof; balance dates) | 12 Oct |
+| fy2026-closeout | 12 Oct | 12 Oct (surplus, overrun counts, FY2025 recomputed from period 13) | 12 Oct |

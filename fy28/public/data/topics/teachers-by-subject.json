@@ -1,0 +1,655 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "b": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "c": {
+     "text": "12.3",
+     "unit": "full-time equivalents",
+     "value": 12.3
+    },
+    "d": {
+     "text": "2.2",
+     "unit": "full-time equivalents",
+     "value": 2.2
+    },
+    "e": {
+     "text": "4.2",
+     "unit": "full-time equivalents",
+     "value": 4.2
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s master schedule by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A subject losing FTE may have lost a section, a course, or one teacher’s timetable moved across subjects; nothing published says which."
+    }
+   ],
+   "rests_on": [
+    "pk-down",
+    "pk-up",
+    "pk-fall"
+   ],
+   "text": "From FY2024 to FY2026 subjects lost 12.3 FTE and gained 2.2; science fell 4.2."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "b": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "c": {
+     "text": "11.5",
+     "unit": "full-time equivalents",
+     "value": 11.5
+    },
+    "d": {
+     "text": "9.5",
+     "unit": "full-time equivalents",
+     "value": 9.5
+    },
+    "e": {
+     "text": "3.8",
+     "unit": "full-time equivalents",
+     "value": 3.8
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "run-up",
+    "run-down",
+    "run-rise"
+   ],
+   "text": "From FY2013 to FY2026 subjects gained 11.5 and lost 9.5; mathematics rose 3.8."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "arts",
+    "music-gap"
+   ],
+   "text": "The state counts music and art as one subject, so what happened to music is not shown."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "698",
+     "unit": "",
+     "value": 698
+    },
+    "n": {
+     "text": "719",
+     "unit": "",
+     "value": 719
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "agree"
+   ],
+   "text": "The state’s two subject files agree in 698 of 719 subject-years."
+  }
+ ],
+ "facts": [
+  {
+   "id": "pk-down",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE lost by subjects, FY2024 to FY2026"
+   },
+   "value": {
+    "text": "12.3",
+    "unit": "full-time equivalents",
+    "value": 12.3
+   }
+  },
+  {
+   "id": "pk-up",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "teacher FTE gained by subjects, the same years"
+   },
+   "value": {
+    "text": "2.2",
+    "unit": "full-time equivalents",
+    "value": 2.2
+   }
+  },
+  {
+   "id": "pk-fall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "science FTE lost, the same years"
+   },
+   "value": {
+    "text": "4.2",
+    "unit": "full-time equivalents",
+    "value": 4.2
+   }
+  },
+  {
+   "id": "run-up",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "FTE gained by subjects, FY2013 to FY2026"
+   },
+   "value": {
+    "text": "11.5",
+    "unit": "full-time equivalents",
+    "value": 11.5
+   }
+  },
+  {
+   "id": "run-down",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "FTE lost by subjects, the same years"
+   },
+   "value": {
+    "text": "9.5",
+    "unit": "full-time equivalents",
+    "value": 9.5
+   }
+  },
+  {
+   "id": "run-rise",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "mathematics FTE gained, the same years"
+   },
+   "value": {
+    "text": "3.8",
+    "unit": "full-time equivalents",
+    "value": 3.8
+   }
+  },
+  {
+   "id": "arts",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Arts FTE, FY2026: music and art together"
+   },
+   "value": {
+    "text": "8.2",
+    "unit": "full-time equivalents",
+    "value": 8.2
+   }
+  },
+  {
+   "id": "agree",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "719",
+      "unit": "",
+      "value": 719
+     }
+    },
+    "literals": [],
+    "text": "of 719 where the state’s two subject files agree"
+   },
+   "value": {
+    "text": "698",
+    "unit": "subject-years",
+    "value": 698
+   }
+  },
+  {
+   "closes": "the district’s master schedule by year, or EPIMS assignments by course code",
+   "id": "music-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "music teacher FTE, apart from art"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   },
+   "b": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "c": {
+    "text": "12.3",
+    "unit": "full-time equivalents",
+    "value": 12.3
+   },
+   "d": {
+    "text": "2.2",
+    "unit": "full-time equivalents",
+    "value": 2.2
+   },
+   "e": {
+    "text": "4.2",
+    "unit": "full-time equivalents",
+    "value": 4.2
+   }
+  },
+  "literals": [],
+  "text": "From FY2024 to FY2026 subjects lost 12.3 teacher FTE and gained 2.2; science alone fell 4.2."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "teachers-by-subject",
+ "kind": "topic",
+ "path": "/school-staffing/teachers-by-subject",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-01-27",
+   "href": "/docs/meetings/text/finance-committee/2026-01-27-minutes-7619.txt",
+   "label": "Finance Committee minutes, 2026-01-27",
+   "quote": "the loss of the Bridge Program, the TLC and Transition programs, and cuts across special education, music, physical education, world language, math, and science"
+  },
+  {
+   "board": "School Advisory Councils Committees",
+   "date": "2026-03-26",
+   "href": "/docs/meetings/text/school-advisory-councils-committees/2026-03-26-minutes-7726.txt",
+   "label": "School Advisory Councils Committees minutes, 2026-03-26",
+   "quote": "cuts: 2 primary teachers; 2 elementary; CODA; .2 music; interventionist at primary; custodian; part time AD; band and atheltic transportation"
+  }
+ ],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-teachers-by-grade-subject.xlsx",
+   "label": "Massachusetts DESE — dese-teachers-by-grade-subject.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-teacher-data.xlsx",
+   "label": "Massachusetts DESE — dese-teacher-data.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Teacher FTE by subject",
+  "views": [
+   {
+    "columns": [
+     "FY2024",
+     "FY2026",
+     "Change"
+    ],
+    "key": "since-the-latest-peak",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2024 to FY2026",
+    "note": "DESE’s teachers by grade and subject. A subject the file does not print for a year is read as none. Teachers counted against every core subject are outside these rows.",
+    "rows": [
+     {
+      "cells": [
+       "16.9",
+       "12.7",
+       "-4.2"
+      ],
+      "label": "Science"
+     },
+     {
+      "cells": [
+       "2.0",
+       "0.0",
+       "-2.0"
+      ],
+      "label": "Human Services"
+     },
+     {
+      "cells": [
+       "6.4",
+       "4.5",
+       "-1.9"
+      ],
+      "label": "Physical, Health, and Safety Education"
+     },
+     {
+      "cells": [
+       "17.9",
+       "16.4",
+       "-1.5"
+      ],
+      "label": "English/Language Arts"
+     },
+     {
+      "cells": [
+       "4.9",
+       "3.9",
+       "-1.0"
+      ],
+      "label": "Foreign Language"
+     },
+     {
+      "cells": [
+       "8.7",
+       "8.0",
+       "-0.7"
+      ],
+      "label": "Miscellaneous"
+     },
+     {
+      "cells": [
+       "0.3",
+       "0.0",
+       "-0.3"
+      ],
+      "label": "Business and Marketing"
+     },
+     {
+      "cells": [
+       "2.2",
+       "1.9",
+       "-0.3"
+      ],
+      "label": "Civics/Government"
+     },
+     {
+      "cells": [
+       "5.1",
+       "4.8",
+       "-0.3"
+      ],
+      "label": "Reading"
+     },
+     {
+      "cells": [
+       "0.1",
+       "0.0",
+       "-0.1"
+      ],
+      "label": "Religious Education and Theology"
+     },
+     {
+      "cells": [
+       "0.3",
+       "0.3",
+       "+0.0"
+      ],
+      "label": "Agriculture, Food, and Natural Resources"
+     },
+     {
+      "cells": [
+       "8.2",
+       "8.2",
+       "+0.0"
+      ],
+      "label": "Arts"
+     },
+     {
+      "cells": [
+       "0.7",
+       "0.7",
+       "+0.0"
+      ],
+      "label": "Computer and Information Sciences"
+     },
+     {
+      "cells": [
+       "2.5",
+       "2.5",
+       "+0.0"
+      ],
+      "label": "History"
+     },
+     {
+      "cells": [
+       "0.0",
+       "0.1",
+       "+0.1"
+      ],
+      "label": "Economics"
+     },
+     {
+      "cells": [
+       "0.4",
+       "1.0",
+       "+0.6"
+      ],
+      "label": "Engineering and Technology"
+     },
+     {
+      "cells": [
+       "9.9",
+       "10.6",
+       "+0.7"
+      ],
+      "label": "Social Studies/Social Sciences"
+     },
+     {
+      "cells": [
+       "17.9",
+       "18.7",
+       "+0.8"
+      ],
+      "label": "Mathematics"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "FY2013",
+     "FY2026",
+     "Change"
+    ],
+    "key": "the-comparable-run",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2013 to FY2026",
+    "note": "DESE’s teachers by grade and subject. A subject the file does not print for a year is read as none. Teachers counted against every core subject are outside these rows.",
+    "rows": [
+     {
+      "cells": [
+       "6.7",
+       "4.5",
+       "-2.2"
+      ],
+      "label": "Physical, Health, and Safety Education"
+     },
+     {
+      "cells": [
+       "14.8",
+       "12.7",
+       "-2.1"
+      ],
+      "label": "Science"
+     },
+     {
+      "cells": [
+       "5.9",
+       "3.9",
+       "-2.0"
+      ],
+      "label": "Foreign Language"
+     },
+     {
+      "cells": [
+       "4.0",
+       "2.5",
+       "-1.5"
+      ],
+      "label": "History"
+     },
+     {
+      "cells": [
+       "8.9",
+       "8.0",
+       "-0.9"
+      ],
+      "label": "Miscellaneous"
+     },
+     {
+      "cells": [
+       "0.6",
+       "0.0",
+       "-0.6"
+      ],
+      "label": "Communications and Audio/Visual Technology"
+     },
+     {
+      "cells": [
+       "0.3",
+       "0.1",
+       "-0.2"
+      ],
+      "label": "Economics"
+     },
+     {
+      "cells": [
+       "0.2",
+       "0.3",
+       "+0.1"
+      ],
+      "label": "Agriculture, Food, and Natural Resources"
+     },
+     {
+      "cells": [
+       "4.6",
+       "4.8",
+       "+0.2"
+      ],
+      "label": "Reading"
+     },
+     {
+      "cells": [
+       "0.6",
+       "1.0",
+       "+0.4"
+      ],
+      "label": "Engineering and Technology"
+     },
+     {
+      "cells": [
+       "0.2",
+       "0.7",
+       "+0.5"
+      ],
+      "label": "Computer and Information Sciences"
+     },
+     {
+      "cells": [
+       "15.2",
+       "16.4",
+       "+1.2"
+      ],
+      "label": "English/Language Arts"
+     },
+     {
+      "cells": [
+       "9.4",
+       "10.6",
+       "+1.2"
+      ],
+      "label": "Social Studies/Social Sciences"
+     },
+     {
+      "cells": [
+       "0.2",
+       "1.9",
+       "+1.7"
+      ],
+      "label": "Civics/Government"
+     },
+     {
+      "cells": [
+       "5.8",
+       "8.2",
+       "+2.4"
+      ],
+      "label": "Arts"
+     },
+     {
+      "cells": [
+       "14.9",
+       "18.7",
+       "+3.8"
+      ],
+      "label": "Mathematics"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Teachers by subject"
+}

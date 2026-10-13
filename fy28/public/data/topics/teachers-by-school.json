@@ -1,0 +1,451 @@
+{
+ "category": "school-staffing",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "27.0",
+     "unit": "full-time equivalents",
+     "value": 27.0
+    },
+    "b": {
+     "text": "18.4",
+     "unit": "full-time equivalents",
+     "value": 18.4
+    },
+    "c": {
+     "text": "8.7",
+     "unit": "full-time equivalents",
+     "value": 8.7
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A fall in FTE fits a post cut, a post split between schools or an assignment recoded. Nothing here tests which."
+    }
+   ],
+   "rests_on": [
+    "th-first",
+    "th-last",
+    "d-move"
+   ],
+   "text": "Turkey Hill Elementary fell from 27.0 to 18.4 teacher FTE; the district fell 8.7."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "0.9",
+     "unit": "full-time equivalents",
+     "value": 0.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "others"
+   ],
+   "text": "No other school moved by more than 0.9 FTE over the same years."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "6.75",
+     "unit": "per hundred pupils",
+     "value": 6.75
+    },
+    "b": {
+     "text": "5.17",
+     "unit": "per hundred pupils",
+     "value": 5.168539325842696
+    },
+    "y": {
+     "text": "FY2017",
+     "unit": "fiscal year",
+     "value": 2017
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "thr-first",
+    "thr-last",
+    "thp-first",
+    "thp-last"
+   ],
+   "text": "Per hundred pupils Turkey Hill had 6.75 teacher FTE in FY2017 and 5.17 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "0.5",
+     "unit": "full-time equivalents",
+     "value": 0.5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "recon"
+   ],
+   "text": "The schools sum to the district’s count within 0.5 FTE in every year."
+  }
+ ],
+ "facts": [
+  {
+   "id": "th-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "teacher FTE, Turkey Hill Elementary, FY2017"
+   },
+   "value": {
+    "text": "27.0",
+    "unit": "full-time equivalents",
+    "value": 27.0
+   }
+  },
+  {
+   "id": "th-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same school, FY2026"
+   },
+   "value": {
+    "text": "18.4",
+    "unit": "full-time equivalents",
+    "value": 18.4
+   }
+  },
+  {
+   "id": "d-move",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "district teacher FTE change, FY2017 to FY2026"
+   },
+   "value": {
+    "text": "-8.7",
+    "unit": "full-time equivalents",
+    "value": -8.7
+   }
+  },
+  {
+   "id": "others",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "FTE, the largest move at any other school, same years"
+   },
+   "value": {
+    "text": "0.9",
+    "unit": "full-time equivalents",
+    "value": 0.9
+   }
+  },
+  {
+   "id": "thp-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "pupils at Turkey Hill, FY2017"
+   },
+   "value": {
+    "text": "400",
+    "unit": "pupils",
+    "value": 400.0
+   }
+  },
+  {
+   "id": "thp-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "pupils at Turkey Hill, FY2026"
+   },
+   "value": {
+    "text": "356",
+    "unit": "pupils",
+    "value": 356.0
+   }
+  },
+  {
+   "id": "thr-first",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "its teacher FTE per hundred pupils, FY2017"
+   },
+   "value": {
+    "text": "6.75",
+    "unit": "per hundred pupils",
+    "value": 6.75
+   }
+  },
+  {
+   "id": "thr-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same ratio, FY2026"
+   },
+   "value": {
+    "text": "5.17",
+    "unit": "per hundred pupils",
+    "value": 5.168539325842696
+   }
+  },
+  {
+   "id": "recon",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "FTE, the most the schools and district differ"
+   },
+   "value": {
+    "text": "0.5",
+    "unit": "full-time equivalents",
+    "value": 0.5
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "27.0",
+    "unit": "full-time equivalents",
+    "value": 27.0
+   },
+   "b": {
+    "text": "18.4",
+    "unit": "full-time equivalents",
+    "value": 18.4
+   },
+   "c": {
+    "text": "8.7",
+    "unit": "full-time equivalents",
+    "value": 8.7
+   },
+   "y": {
+    "text": "FY2017",
+    "unit": "fiscal year",
+    "value": 2017
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Turkey Hill Elementary went from 27.0 to 18.4 teacher FTE, FY2017 to FY2026; the district fell 8.7."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "teachers-by-school",
+ "kind": "topic",
+ "path": "/school-staffing/teachers-by-school",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-09-03",
+   "href": "/docs/meetings/text/school-committee/2025-09-03-minutes-7385.txt",
+   "label": "School Committee minutes, 2025-09-03",
+   "quote": "We have started this year with 357 students and an average class size of 23/24 for third grade with 113 students, 135 students in the fourth grade with an average class size of 27, and 109 students in the fifth grade with an average class size of 22/23"
+  }
+ ],
+ "shelves": [
+  "school-staffing"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-teacher-data.xlsx",
+   "label": "Massachusetts DESE — dese-teacher-data.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Teacher FTE by school, FY2017 to FY2026",
+  "views": [
+   {
+    "columns": [
+     "Primary",
+     "Turkey Hill",
+     "Middle",
+     "High"
+    ],
+    "key": "schools",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "DESE teacher FTE",
+    "note": "From FY2017, when the schools took their present grades. Earlier years count buildings that held different grades, so a series across that line would measure the reconfiguration.",
+    "rows": [
+     {
+      "cells": [
+       "23.1",
+       "18.4",
+       "25.0",
+       "35.8"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "23.5",
+       "19.0",
+       "25.1",
+       "36.5"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "26.5",
+       "21.9",
+       "27.7",
+       "37.0"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "26.7",
+       "22.0",
+       "27.1",
+       "35.8"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "23.9",
+       "23.6",
+       "29.2",
+       "33.5"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "25.2",
+       "23.9",
+       "27.3",
+       "30.8"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "24.0",
+       "22.6",
+       "27.7",
+       "32.2"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "23.5",
+       "25.5",
+       "28.5",
+       "32.0"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "25.0",
+       "24.5",
+       "28.9",
+       "34.6"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "23.5",
+       "27.0",
+       "25.9",
+       "35.7"
+      ],
+      "label": "FY2017"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Teachers by school"
+}

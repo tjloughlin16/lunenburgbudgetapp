@@ -1,0 +1,427 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "literals": [
+    "grade 8",
+    "Grade 8",
+    "grade 9",
+    "eighth"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A vocational admission, a private or charter school, school choice, a placement and a move all fit the rate. Nothing published separates them."
+    }
+   ],
+   "rests_on": [
+    "g8",
+    "top",
+    "lo",
+    "hi"
+   ],
+   "text": "Grade 8 was the highest-leaving grade in all 17 years DESE publishes."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "27",
+     "unit": "",
+     "value": 27
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "implied"
+   ],
+   "text": "That is about 27 children a year, an implied count rather than one anybody published."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "34.7%",
+     "unit": "",
+     "value": 34.74
+    },
+    "b": {
+     "text": "20.5%",
+     "unit": "",
+     "value": 20.48
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "19.0%",
+       "unit": "",
+       "value": 19.0
+      },
+      "b": {
+       "text": "54.5%",
+       "unit": "",
+       "value": 54.50000000000001
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The group is on the order of twenty children a grade, so it swings from 19.0% to 54.5% between years. A placement made at the transition fits it as well as a move does."
+    }
+   ],
+   "rests_on": [
+    "swd",
+    "g8",
+    "swdlo",
+    "swdhi"
+   ],
+   "text": "Eighth graders with disabilities leave at 34.7% against 20.5% for all students."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "grade 8",
+    "Grade 8",
+    "grade 9",
+    "eighth"
+   ],
+   "rests_on": [
+    "where"
+   ],
+   "text": "No published record says where a departing eighth grader went."
+  }
+ ],
+ "facts": [
+  {
+   "id": "g8",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [
+     "grade 8"
+    ],
+    "text": "grade 8 leaving rate, mean of 17 years"
+   },
+   "value": {
+    "text": "20.5%",
+    "unit": "",
+    "value": 20.48
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "grade 5"
+    ],
+    "text": "lowest other grade, mean (grade 5)"
+   },
+   "value": {
+    "text": "3.0%",
+    "unit": "",
+    "value": 3.0300000000000002
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "grade 6"
+    ],
+    "text": "highest other grade, mean (grade 6)"
+   },
+   "value": {
+    "text": "6.4%",
+    "unit": "",
+    "value": 6.43
+   }
+  },
+  {
+   "id": "top",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [
+     "grade 8"
+    ],
+    "text": "of 17 in which grade 8 lost the most"
+   },
+   "value": {
+    "text": "17",
+    "unit": "years",
+    "value": 17
+   }
+  },
+  {
+   "id": "implied",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "eighth graders a year, rate times enrolment (ours)"
+   },
+   "value": {
+    "text": "27",
+    "unit": "children",
+    "value": 27
+   }
+  },
+  {
+   "id": "swd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "grade 8"
+    ],
+    "text": "grade 8 rate, students with disabilities"
+   },
+   "value": {
+    "text": "34.7%",
+    "unit": "",
+    "value": 34.74
+   }
+  },
+  {
+   "id": "swdlo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "that group’s lowest year"
+   },
+   "value": {
+    "text": "19.0%",
+    "unit": "",
+    "value": 19.0
+   }
+  },
+  {
+   "id": "swdhi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "that group’s highest year"
+   },
+   "value": {
+    "text": "54.5%",
+    "unit": "",
+    "value": 54.50000000000001
+   }
+  },
+  {
+   "closes": "DESE’s residents-by-district file with a grade on each row, or the district’s October return broken out by exit grade and reason",
+   "id": "where",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which school each eighth grader went to"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "20.5%",
+    "unit": "",
+    "value": 20.48
+   },
+   "b": {
+    "text": "3.0%",
+    "unit": "",
+    "value": 3.0300000000000002
+   },
+   "c": {
+    "text": "6.4%",
+    "unit": "",
+    "value": 6.43
+   }
+  },
+  "literals": [
+   "grade 9"
+  ],
+  "text": "On average 20.5% of eighth graders do not return for grade 9; other grades lose 3.0% to 6.4%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grade-to-grade-loss",
+ "kind": "topic",
+ "path": "/enrolment/grade-to-grade-loss",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-02-07",
+   "href": "/docs/meetings/text/school-committee/2024-02-07-minutes-6395.txt",
+   "label": "School Committee minutes, 2024-02-07",
+   "quote": "When transitioning from 8th grade to 9th grade the numbers are reduced in the high school band."
+  }
+ ],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-student-attrition.xlsx",
+   "label": "Massachusetts DESE — dese-student-attrition.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-residents-sending.xlsx",
+   "label": "Massachusetts DESE — dese-residents-sending.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Leaving rate by grade",
+  "views": [
+   {
+    "columns": [
+     "Mean",
+     "Lowest year",
+     "Highest year"
+    ],
+    "key": "grades",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Every grade, 17 years",
+    "note": "DESE’s attrition rate: the share of a grade enrolled one year and not enrolled the next autumn. The mean of the yearly rates is our arithmetic.",
+    "rows": [
+     {
+      "cells": [
+       "6.2%",
+       "0.9%",
+       "16.3%"
+      ],
+      "label": "Kindergarten"
+     },
+     {
+      "cells": [
+       "5.3%",
+       "1.7%",
+       "11.0%"
+      ],
+      "label": "Grade 1"
+     },
+     {
+      "cells": [
+       "5.0%",
+       "1.6%",
+       "10.7%"
+      ],
+      "label": "Grade 2"
+     },
+     {
+      "cells": [
+       "4.2%",
+       "1.0%",
+       "8.4%"
+      ],
+      "label": "Grade 3"
+     },
+     {
+      "cells": [
+       "3.8%",
+       "0.9%",
+       "7.9%"
+      ],
+      "label": "Grade 4"
+     },
+     {
+      "cells": [
+       "3.0%",
+       "0.9%",
+       "4.8%"
+      ],
+      "label": "Grade 5"
+     },
+     {
+      "cells": [
+       "6.4%",
+       "3.5%",
+       "11.5%"
+      ],
+      "label": "Grade 6"
+     },
+     {
+      "cells": [
+       "4.2%",
+       "0.7%",
+       "7.5%"
+      ],
+      "label": "Grade 7"
+     },
+     {
+      "cells": [
+       "20.5%",
+       "13.2%",
+       "28.7%"
+      ],
+      "label": "Grade 8"
+     },
+     {
+      "cells": [
+       "4.9%",
+       "0.0%",
+       "8.3%"
+      ],
+      "label": "Grade 9"
+     },
+     {
+      "cells": [
+       "5.6%",
+       "1.0%",
+       "9.7%"
+      ],
+      "label": "Grade 10"
+     },
+     {
+      "cells": [
+       "4.3%",
+       "0.9%",
+       "7.9%"
+      ],
+      "label": "Grade 11"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Grade-to-grade loss"
+}

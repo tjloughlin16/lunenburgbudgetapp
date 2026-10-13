@@ -1,0 +1,642 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "1,568",
+    "unit": "",
+    "value": 1568
+   },
+   "b": {
+    "text": "177",
+    "unit": "",
+    "value": 177
+   },
+   "c": {
+    "text": "97",
+    "unit": "",
+    "value": 97
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "FY2015",
+    "unit": "fiscal year",
+    "value": 2015
+   }
+  },
+  "literals": [],
+  "text": "1,568 children were in Lunenburg’s schools in FY2026, near where the count has sat since FY2015. Another 177 residents were schooled in other public districts, 97 of them at Monty Tech."
+ },
+ "category": "enrolment",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "enrolment",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "1,887",
+      "unit": "",
+      "value": 1887
+     },
+     "b": {
+      "text": "1,568",
+      "unit": "",
+      "value": 1568
+     },
+     "y": {
+      "text": "FY2003",
+      "unit": "fiscal year",
+      "value": 2003
+     },
+     "z": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-peak",
+     "h-now"
+    ],
+    "text": "Enrolment peaked at 1,887 in FY2003 and has held near 1,568 since FY2015."
+   },
+   {
+    "figures": {
+     "p": {
+      "text": "30.0%",
+      "unit": "",
+      "value": 30.048465266558967
+     }
+    },
+    "literals": [
+     "9–12"
+    ],
+    "rests_on": [
+     "h-hs"
+    ],
+    "text": "The high school did most of the shrinking: grades 9–12 fell 30.0%."
+   },
+   {
+    "figures": {
+     "p": {
+      "text": "20.5%",
+      "unit": "",
+      "value": 20.48
+     }
+    },
+    "literals": [
+     "grade 9"
+    ],
+    "rests_on": [
+     "h-g8",
+     "h-per"
+    ],
+    "text": "One step loses children: 20.5% of eighth graders are not back for grade 9."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "177",
+      "unit": "",
+      "value": 177
+     },
+     "b": {
+      "text": "97",
+      "unit": "",
+      "value": 97
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-else",
+     "h-mt",
+     "h-ch",
+     "h-bill"
+    ],
+    "text": "Of 177 residents schooled elsewhere, 97 are at Monty Tech, a district the town belongs to."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-where",
+     "h-in"
+    ],
+    "text": "No published record says why any child left, or where an eighth grader went."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-now",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "enrolled, FY2026"
+      },
+      "value": {
+       "text": "1,568",
+       "unit": "children",
+       "value": 1568
+      }
+     },
+     {
+      "id": "h-peak",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2003",
+         "unit": "fiscal year",
+         "value": 2003
+        }
+       },
+       "literals": [],
+       "text": "enrolled, FY2003, the peak"
+      },
+      "value": {
+       "text": "1,887",
+       "unit": "children",
+       "value": 1887
+      }
+     },
+     {
+      "id": "h-hs",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2008",
+         "unit": "fiscal year",
+         "value": 2008
+        }
+       },
+       "literals": [
+        "9–12"
+       ],
+       "text": "fall in grades 9–12 since FY2008"
+      },
+      "value": {
+       "text": "30.0%",
+       "unit": "",
+       "value": 30.048465266558967
+      }
+     },
+     {
+      "id": "h-el",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "English learners, FY2026"
+      },
+      "value": {
+       "text": "70",
+       "unit": "children",
+       "value": 70
+      }
+     }
+    ],
+    "title": "How many"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-g8",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "grade 9"
+       ],
+       "text": "of eighth graders not back for grade 9"
+      },
+      "value": {
+       "text": "20.5%",
+       "unit": "",
+       "value": 20.48
+      }
+     },
+     {
+      "id": "h-per",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "leaving a year, implied (ours)"
+      },
+      "value": {
+       "text": "90",
+       "unit": "children",
+       "value": 90
+      }
+     },
+     {
+      "closes": "DESE’s residents-by-district file with a grade on each row",
+      "id": "h-where",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "where a departing eighth grader went"
+      },
+      "value": null
+     }
+    ],
+    "title": "Who leaves"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-else",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "schooled in other districts, FY2026"
+      },
+      "value": {
+       "text": "177",
+       "unit": "children",
+       "value": 177
+      }
+     },
+     {
+      "id": "h-mt",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of them at Monty Tech"
+      },
+      "value": {
+       "text": "97",
+       "unit": "children",
+       "value": 97
+      }
+     },
+     {
+      "id": "h-ch",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of them by school choice"
+      },
+      "value": {
+       "text": "58",
+       "unit": "children",
+       "value": 58
+      }
+     },
+     {
+      "id": "h-in",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "arriving by school choice, FY2026"
+      },
+      "value": {
+       "text": "11",
+       "unit": "children",
+       "value": 11
+      }
+     },
+     {
+      "id": "h-bill",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "Monty Tech assessment, FY2026"
+      },
+      "value": {
+       "text": "$1,334,521",
+       "unit": "",
+       "value": 1334521
+      }
+     }
+    ],
+    "title": "Where they go"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/enrolment",
+ "shelves": [
+  "enrolment"
+ ],
+ "table": {
+  "caption": "DESE enrolment by year, 1 October headcount",
+  "views": [
+   {
+    "columns": [
+     "All",
+     "Pre-K to 5",
+     "Grades 6–8",
+     "Grades 9–12"
+    ],
+    "key": "bands",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "District total and grade bands",
+    "note": "DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to the total by the few students DESE counts beyond grade 12.",
+    "rows": [
+     {
+      "cells": [
+       "1,568",
+       "745",
+       "382",
+       "433"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "1,563",
+       "719",
+       "382",
+       "452"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "1,580",
+       "761",
+       "363",
+       "449"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "1,562",
+       "737",
+       "380",
+       "440"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "1,597",
+       "740",
+       "402",
+       "450"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "1,593",
+       "729",
+       "386",
+       "474"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "1,641",
+       "777",
+       "406",
+       "452"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "1,649",
+       "790",
+       "393",
+       "458"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "1,641",
+       "767",
+       "423",
+       "442"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "1,613",
+       "786",
+       "388",
+       "433"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "1,567",
+       "759",
+       "374",
+       "429"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "1,557",
+       "771",
+       "359",
+       "425"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "1,564",
+       "756",
+       "375",
+       "430"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "1,587",
+       "741",
+       "386",
+       "456"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "1,637",
+       "741",
+       "386",
+       "504"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "1,650",
+       "733",
+       "381",
+       "535"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "1,702",
+       "759",
+       "402",
+       "541"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "1,739",
+       "773",
+       "395",
+       "566"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "1,824",
+       "791",
+       "413",
+       "619"
+      ],
+      "label": "FY2008"
+     },
+     {
+      "cells": [
+       "1,844",
+       "793",
+       "417",
+       "629"
+      ],
+      "label": "FY2007"
+     },
+     {
+      "cells": [
+       "1,836",
+       "788",
+       "429",
+       "615"
+      ],
+      "label": "FY2006"
+     },
+     {
+      "cells": [
+       "1,822",
+       "782",
+       "420",
+       "619"
+      ],
+      "label": "FY2005"
+     },
+     {
+      "cells": [
+       "1,830",
+       "792",
+       "449",
+       "589"
+      ],
+      "label": "FY2004"
+     },
+     {
+      "cells": [
+       "1,887",
+       "842",
+       "457",
+       "588"
+      ],
+      "label": "FY2003"
+     },
+     {
+      "cells": [
+       "1,851",
+       "832",
+       "457",
+       "561"
+      ],
+      "label": "FY2002"
+     },
+     {
+      "cells": [
+       "1,830",
+       "857",
+       "431",
+       "542"
+      ],
+      "label": "FY1999"
+     },
+     {
+      "cells": [
+       "1,758",
+       "872",
+       "403",
+       "483"
+      ],
+      "label": "FY1994"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Students and schools"
+}

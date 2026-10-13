@@ -1,0 +1,321 @@
+{
+ "category": "state-aid",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$22,073,946",
+     "unit": "",
+     "value": 22073945.75
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s foundation budget calculation for Lunenburg, by enrolment category and rate",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "It is built from per-pupil rates that differ by grade and category, and DESE’s workbook does not print Lunenburg’s rates, so the average is not the cost of any one pupil."
+    }
+   ],
+   "rests_on": [
+    "fb26",
+    "pupils",
+    "fpp"
+   ],
+   "text": "The foundation budget is the state’s estimate of an adequate budget for the schools: $22,073,946 for FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$12,276,374",
+     "unit": "",
+     "value": 12276374.15
+    },
+    "b": {
+     "text": "$22,073,946",
+     "unit": "",
+     "value": 22073945.75
+    },
+    "y": {
+     "text": "FY2007",
+     "unit": "fiscal year",
+     "value": 2007
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fb07",
+    "fb26"
+   ],
+   "text": "It rose from $12,276,374 in FY2007 to $22,073,946 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "40.5%",
+     "unit": "",
+     "value": 40.4916
+    },
+    "b": {
+     "text": "35.2%",
+     "unit": "",
+     "value": 35.198299999999996
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "share27",
+    "median27",
+    "rank27",
+    "fb27"
+   ],
+   "text": "For FY2027 Chapter 70 equals 40.5% of it, against 35.2% for the median operating district."
+  }
+ ],
+ "facts": [
+  {
+   "id": "fb26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "foundation budget, FY2026"
+   },
+   "value": {
+    "text": "$22,073,946",
+    "unit": "",
+    "value": 22073945.75
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "foundation pupils, FY2026"
+   },
+   "value": {
+    "text": "1,603",
+    "unit": "pupils",
+    "value": 1603.0
+   }
+  },
+  {
+   "id": "fpp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a pupil, on average (our division)"
+   },
+   "value": {
+    "text": "$13,770",
+    "unit": "",
+    "value": 13770.396600124766
+   }
+  },
+  {
+   "id": "share26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 as a share of it, FY2026"
+   },
+   "value": {
+    "text": "41.8%",
+    "unit": "",
+    "value": 41.8113286338941
+   }
+  },
+  {
+   "id": "fb07",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2007",
+      "unit": "fiscal year",
+      "value": 2007
+     }
+    },
+    "literals": [],
+    "text": "foundation budget, FY2007"
+   },
+   "value": {
+    "text": "$12,276,374",
+    "unit": "",
+    "value": 12276374.15
+   }
+  },
+  {
+   "id": "fb27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "foundation budget, FY2027, Governor’s figure"
+   },
+   "value": {
+    "text": "$23,089,580",
+    "unit": "",
+    "value": 23089579.619999997
+   }
+  },
+  {
+   "id": "share27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 as a share of it, FY2027"
+   },
+   "value": {
+    "text": "40.5%",
+    "unit": "",
+    "value": 40.4916
+   }
+  },
+  {
+   "id": "median27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the median operating district’s share, FY2027"
+   },
+   "value": {
+    "text": "35.2%",
+    "unit": "",
+    "value": 35.198299999999996
+   }
+  },
+  {
+   "id": "rank27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "by that share, highest first, FY2027"
+   },
+   "value": {
+    "text": "138 of 319",
+    "unit": "districts",
+    "value": 138
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$22,073,946",
+    "unit": "",
+    "value": 22073945.75
+   },
+   "p": {
+    "text": "41.8%",
+    "unit": "",
+    "value": 41.8113286338941
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [
+   "Chapter 70"
+  ],
+  "text": "The state priced Lunenburg’s schools at $22,073,946 for FY2026; Chapter 70 equals 41.8% of that."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "foundation-budget",
+ "kind": "topic",
+ "path": "/state-aid/foundation-budget",
+ "said": [],
+ "shelves": [
+  "state-aid"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+   "label": "Massachusetts DESE, Chapter 70 Trends workbook — dese-ch70-key-factors.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/ch70-fy27-summary.xlsx",
+   "label": "Massachusetts DESE, FY2027 Chapter 70 summary (Governor) — ch70-fy27-summary.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Foundation budget"
+}

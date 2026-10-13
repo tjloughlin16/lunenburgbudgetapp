@@ -149,14 +149,13 @@ CATEGORIES = [
         # A top-level shelf made it a peer of "The town", which it is not — it is one
         # aspect of the schools, and the order adults-then-children reads the way a
         # person would ask it.
-        ('who works in them', [
-            'staffing', 'schoolstaff', 'parastaff',
-        ]),
+        # 'who works in them' and most of 'the students' are shelves of their own now
+        # (School staffing, Enrolment); What a family pays stays until its category is built.
         ('the students', [
-            'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
+            'families',
         ]),
         ('where the money comes from, and how it compares', [
-            'minaid', 'required', 'peers', 'spending-compared', 'variance',
+            'peers', 'spending-compared', 'variance',
         ]),
         # THE RULES EVERYONE ARGUES UNDER, as a subsection here rather than a shelf of
         # their own. TJ, 17 September 2026: "should go under the schools as a subsection".
@@ -169,7 +168,6 @@ CATEGORIES = [
         # Parks and Recreation counterpart would be the town's.
         ('the fields, and the funds that run them', ['youthsports']),
         ('every fund and line the School Committee owns', ['schoolfinance']),
-        ('the rules everyone argues under', ['formula']),
     ]),
     ('town', 'The town', [
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
@@ -256,7 +254,6 @@ CATEGORIES = [
 
 # A page and a document covering the same subject. The page is what the index offers.
 SUPERSEDED = {
-    'monty-tech': 'montytech',
     'sped-and-the-curve': 'sped',
     'sped-and-funds': 'sped',
     'per-pupil-spending': 'peers',
@@ -300,7 +297,12 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
                  'sped', 'circuitbreaker', 'classsize',
                  'free-cash', 'stabilization-funds', 'stabilization-option', 'freecashlever',
                  'fy26-closeout', 'fy26-closeout-town', 'fy26-school-surplus',
-                 'fy25-school-surplus'}
+                 'fy25-school-surplus',
+                 # Wave 2: Enrolment, School staffing.
+                 'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'monty-tech',
+                 'staffing', 'schoolstaff', 'parastaff',
+                 # ...and State aid.
+                 'minaid', 'required', 'formula'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

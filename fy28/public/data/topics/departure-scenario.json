@@ -1,0 +1,361 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$401,700",
+     "unit": "",
+     "value": 401700.0
+    },
+    "b": {
+     "text": "$390,000",
+     "unit": "",
+     "value": 390000.0
+    },
+    "c": {
+     "text": "$11,700",
+     "unit": "",
+     "value": 11700.0
+    }
+   },
+   "literals": [
+    "70"
+   ],
+   "notes": [
+    {
+     "closes": "the DLS Cherry Sheet for Lunenburg, school choice sending line",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The tuition is the statutory base rate, which is higher for special education; no document here states what Lunenburg pays."
+    }
+   ],
+   "rests_on": [
+    "total",
+    "tuit",
+    "aid",
+    "rate",
+    "aidpp"
+   ],
+   "text": "Of the $401,700, $390,000 is sending tuition and $11,700 is Chapter 70 aid at the margin."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$14,440",
+     "unit": "",
+     "value": 14440.01
+    },
+    "b": {
+     "text": "$1,126,321",
+     "unit": "",
+     "value": 1126320.78
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s preliminary Chapter 70 calculation for the year in question",
+     "figures": {
+      "a": {
+       "text": "$150",
+       "unit": "",
+       "value": 150.0
+      },
+      "b": {
+       "text": "$240,450",
+       "unit": "",
+       "value": 240450.0
+      },
+      "n": {
+       "text": "1,603",
+       "unit": "",
+       "value": 1603
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "The $150 margin is FY2026’s minimum aid increment, $240,450, over 1,603 foundation pupils. The Legislature resets it every year."
+    }
+   ],
+   "rests_on": [
+    "fpp",
+    "upper"
+   ],
+   "text": "Priced at the formula’s $14,440 a pupil, the aid alone would be $1,126,321."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    },
+    "b": {
+     "text": "136",
+     "unit": "",
+     "value": 136
+    },
+    "m": {
+     "text": "2.34",
+     "unit": "",
+     "value": 2.34
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "base",
+    "after",
+    "leavers"
+   ],
+   "text": "It would take school choice out from 58 to 136, 2.34 times what DESE counts."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s staffing rule for when a section is added or removed",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Nothing published says at what enrolment a section is removed."
+    }
+   ],
+   "rests_on": [
+    "leavers",
+    "total"
+   ],
+   "text": "The scenario assumes no saving: the students come from four grades, so no classroom closes."
+  }
+ ],
+ "facts": [
+  {
+   "id": "leavers",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "high school students leaving, assumed"
+   },
+   "value": {
+    "text": "78",
+    "unit": "students",
+    "value": 78
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "c.76 §12B"
+    ],
+    "text": "school choice base tuition a child, c.76 §12B"
+   },
+   "value": {
+    "text": "$5,000",
+    "unit": "",
+    "value": 5000.0
+   }
+  },
+  {
+   "id": "tuit",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "sending tuition, year one (ours)"
+   },
+   "value": {
+    "text": "$390,000",
+    "unit": "",
+    "value": 390000.0
+   }
+  },
+  {
+   "id": "aidpp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "aid a foundation pupil at the margin, FY2026 (ours)"
+   },
+   "value": {
+    "text": "$150",
+    "unit": "",
+    "value": 150.0
+   }
+  },
+  {
+   "id": "aid",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "70"
+    ],
+    "text": "Chapter 70 aid lost, year one (ours)"
+   },
+   "value": {
+    "text": "$11,700",
+    "unit": "",
+    "value": 11700.0
+   }
+  },
+  {
+   "id": "total",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "leaving the town, year one (ours)"
+   },
+   "value": {
+    "text": "$401,700",
+    "unit": "",
+    "value": 401700.0
+   }
+  },
+  {
+   "id": "fpp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "foundation budget a pupil, the formula’s rate"
+   },
+   "value": {
+    "text": "$14,440",
+    "unit": "",
+    "value": 14440.01
+   }
+  },
+  {
+   "id": "upper",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "aid lost if priced at that rate (ours)"
+   },
+   "value": {
+    "text": "$1,126,321",
+    "unit": "",
+    "value": 1126320.78
+   }
+  },
+  {
+   "id": "base",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "out by school choice, FY2026"
+   },
+   "value": {
+    "text": "58",
+    "unit": "children",
+    "value": 58
+   }
+  },
+  {
+   "id": "after",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "out by school choice, with the scenario"
+   },
+   "value": {
+    "text": "136",
+    "unit": "children",
+    "value": 136
+   }
+  },
+  {
+   "closes": "the DLS Cherry Sheet for Lunenburg, school choice sending line",
+   "id": "rate-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the tuition Lunenburg actually pays a child"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$401,700",
+    "unit": "",
+    "value": 401700.0
+   },
+   "n": {
+    "text": "78",
+    "unit": "",
+    "value": 78
+   }
+  },
+  "literals": [],
+  "text": "A scenario on assumed rates: 78 students choosing out would take $401,700 from the town in year one."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "departure-scenario",
+ "kind": "topic",
+ "path": "/enrolment/departure-scenario",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-05-01",
+   "href": "/docs/meetings/text/school-committee/2024-05-01-minutes-6554.txt",
+   "label": "School Committee minutes, 2024-05-01",
+   "quote": "We receive $5000 per student, however the cost per student is more than that"
+  }
+ ],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-residents-sending.xlsx",
+   "label": "Massachusetts DESE — dese-residents-sending.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-ch70-district-profile.xlsx",
+   "label": "Massachusetts DESE — dese-ch70-district-profile.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/ch70-fy27-summary.xlsx",
+   "label": "Massachusetts DESE — ch70-fy27-summary.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Departure scenario"
+}

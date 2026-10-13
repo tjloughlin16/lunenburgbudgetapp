@@ -1,0 +1,307 @@
+{
+ "category": "state-aid",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$150.00",
+     "unit": "",
+     "value": 150.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s preliminary Chapter 70 calculation for Lunenburg for the year in question",
+     "figures": {
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "Measured at the margin with everything else held at its FY2026 value; it is not a rate to multiply by a fall in enrolment."
+    }
+   ],
+   "rests_on": [
+    "avg",
+    "marg"
+   ],
+   "text": "Aid is last year’s aid plus an increase, so a pupil moves only the increase: $150.00."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "prov"
+   ],
+   "text": "DESE’s definitions name 2 things that cut aid; fewer pupils at a district running schools is neither."
+  },
+  {
+   "figures": {
+    "a2009": {
+     "text": "-$485,942",
+     "unit": "",
+     "value": -485942.0
+    },
+    "a2010": {
+     "text": "-$92,416",
+     "unit": "",
+     "value": -92416.0
+    },
+    "a2011": {
+     "text": "-$279,101",
+     "unit": "",
+     "value": -279101.0
+    },
+    "y2009": {
+     "text": "FY2009",
+     "unit": "fiscal year",
+     "value": 2009
+    },
+    "y2010": {
+     "text": "FY2010",
+     "unit": "fiscal year",
+     "value": 2010
+    },
+    "y2011": {
+     "text": "FY2011",
+     "unit": "fiscal year",
+     "value": 2011
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cut2009",
+    "cut2010",
+    "cut2011"
+   ],
+   "text": "Aid was cut across the board in FY2009 (-$485,942), FY2010 (-$92,416), FY2011 (-$279,101), and never since."
+  },
+  {
+   "figures": {
+    "m": {
+     "text": "20",
+     "unit": "",
+     "value": 20
+    },
+    "n": {
+     "text": "968",
+     "unit": "",
+     "value": 968.3548983534129
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "zero",
+    "rshare"
+   ],
+   "text": "Below about 968 foundation pupils the formula’s need would turn negative; not in 20 published years."
+  }
+ ],
+ "facts": [
+  {
+   "id": "avg",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 a foundation pupil, FY2026 (our division)"
+   },
+   "value": {
+    "text": "$5,757.59",
+    "unit": "",
+    "value": 5757.585776668746
+   }
+  },
+  {
+   "id": "marg",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "what one pupil moves it by, FY2026 (ours)"
+   },
+   "value": {
+    "text": "$150.00",
+    "unit": "",
+    "value": 150.0
+   }
+  },
+  {
+   "id": "prov",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "provisions in DESE’s definitions that cut aid"
+   },
+   "value": {
+    "text": "2",
+    "unit": "provisions",
+    "value": 2
+   }
+  },
+  {
+   "id": "cut2009",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "across-the-board reduction, FY2009"
+   },
+   "value": {
+    "text": "-$485,942",
+    "unit": "",
+    "value": -485942.0
+   }
+  },
+  {
+   "id": "cut2010",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2010",
+      "unit": "fiscal year",
+      "value": 2010
+     }
+    },
+    "literals": [],
+    "text": "across-the-board reduction, FY2010"
+   },
+   "value": {
+    "text": "-$92,416",
+    "unit": "",
+    "value": -92416.0
+   }
+  },
+  {
+   "id": "cut2011",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "across-the-board reduction, FY2011"
+   },
+   "value": {
+    "text": "-$279,101",
+    "unit": "",
+    "value": -279101.0
+   }
+  },
+  {
+   "id": "zero",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "pupils at which the formula’s need turns negative (ours)"
+   },
+   "value": {
+    "text": "968",
+    "unit": "pupils",
+    "value": 968.3548983534129
+   }
+  },
+  {
+   "id": "rshare",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "required contribution against the foundation budget, FY2026"
+   },
+   "value": {
+    "text": "60.4%",
+    "unit": "",
+    "value": 60.40891443252732
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$5,757.59",
+    "unit": "",
+    "value": 5757.585776668746
+   },
+   "b": {
+    "text": "$150.00",
+    "unit": "",
+    "value": 150.0
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [
+   "Chapter 70"
+  ],
+  "text": "Chapter 70 averaged $5,757.59 a pupil in FY2026, yet one pupil more or fewer moved it by $150.00."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "aid-per-pupil",
+ "kind": "topic",
+ "path": "/state-aid/aid-per-pupil",
+ "said": [],
+ "shelves": [
+  "state-aid"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+   "label": "Massachusetts DESE, Chapter 70 Trends workbook — dese-ch70-key-factors.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Aid per pupil"
+}

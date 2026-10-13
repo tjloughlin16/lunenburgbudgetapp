@@ -1,0 +1,434 @@
+{
+ "category": "enrolment",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$47,577",
+     "unit": "",
+     "value": 47577
+    },
+    "b": {
+     "text": "$16,233",
+     "unit": "",
+     "value": 16233
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "trans",
+    "cap",
+    "req",
+    "share",
+    "bill"
+   ],
+   "text": "Transportation, $47,577, and capital, $16,233, are the only parts outside the formula."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$14,605,342",
+     "unit": "",
+     "value": 14605342.0
+    },
+    "b": {
+     "text": "$13,334,631",
+     "unit": "",
+     "value": 13334631.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the regional agreement itself, which is not in this archive",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The rest is Monty Tech’s share, split by each district’s share of the town’s foundation budget. Whether the agreement lets that change is not established."
+    }
+   ],
+   "rests_on": [
+    "town",
+    "lps",
+    "req"
+   ],
+   "text": "The state requires $14,605,342 from the town; $13,334,631 of it is for Lunenburg Public Schools."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,005,464",
+     "unit": "",
+     "value": 1005464.38
+    },
+    "b": {
+     "text": "$1,334,521",
+     "unit": "",
+     "value": 1334521.0
+    },
+    "r": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "2021"
+   ],
+   "notes": [
+    {
+     "closes": "the method behind the projection in the Select Board packet",
+     "figures": {
+      "a": {
+       "text": "9.3%",
+       "unit": "",
+       "value": 9.3034
+      },
+      "b": {
+       "text": "7.2%",
+       "unit": "",
+       "value": 7.180899999999999
+      },
+      "c": {
+       "text": "8.7%",
+       "unit": "",
+       "value": 8.7003
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The required minimum compounded at 9.3% a year and Monty Tech’s share of the foundation budget went from 7.2% to 8.7%. Why the projection used its rate is not stated."
+    }
+   ],
+   "rests_on": [
+    "proj",
+    "bill",
+    "cagr"
+   ],
+   "text": "A 2021 projection at 2.5% a year put FY2026 at $1,005,464; the bill was $1,334,521."
+  }
+ ],
+ "facts": [
+  {
+   "id": "bill",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech assessment, FY2026"
+   },
+   "value": {
+    "text": "$1,334,521",
+    "unit": "",
+    "value": 1334521
+   }
+  },
+  {
+   "id": "req",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "state-required minimum within it"
+   },
+   "value": {
+    "text": "$1,270,711",
+    "unit": "",
+    "value": 1270711
+   }
+  },
+  {
+   "id": "trans",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "transportation and other operating"
+   },
+   "value": {
+    "text": "$47,577",
+    "unit": "",
+    "value": 47577
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "capital"
+   },
+   "value": {
+    "text": "$16,233",
+    "unit": "",
+    "value": 16233
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the bill set by the state formula"
+   },
+   "value": {
+    "text": "95.2%",
+    "unit": "",
+    "value": 95.21849999999999
+   }
+  },
+  {
+   "id": "town",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "one town-wide requirement, FY2026"
+   },
+   "value": {
+    "text": "$14,605,342",
+    "unit": "",
+    "value": 14605342.0
+   }
+  },
+  {
+   "id": "lps",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it to Lunenburg Public Schools"
+   },
+   "value": {
+    "text": "$13,334,631",
+    "unit": "",
+    "value": 13334631.0
+   }
+  },
+  {
+   "id": "proj",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "r": {
+      "text": "2.5%",
+      "unit": "",
+      "value": 2.5
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "2021"
+    ],
+    "text": "2021 projection for FY2026, at 2.5% a year"
+   },
+   "value": {
+    "text": "$1,005,464",
+    "unit": "",
+    "value": 1005464.38
+   }
+  },
+  {
+   "id": "cagr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, the required minimum (our arithmetic)"
+   },
+   "value": {
+    "text": "9.3%",
+    "unit": "",
+    "value": 9.3034
+   }
+  },
+  {
+   "id": "next",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech assessment, FY2027"
+   },
+   "value": {
+    "text": "$1,452,379",
+    "unit": "",
+    "value": 1452379
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,334,521",
+    "unit": "",
+    "value": 1334521
+   },
+   "p": {
+    "text": "95.2%",
+    "unit": "",
+    "value": 95.21849999999999
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Lunenburg’s FY2026 Monty Tech bill was $1,334,521; 95.2% of it is a minimum the state sets."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "monty-tech-assessment",
+ "kind": "topic",
+ "path": "/enrolment/monty-tech-assessment",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2022-03-23",
+   "href": "/docs/meetings/text/finance-committee/2022-03-23-minutes-2056.txt",
+   "label": "Finance Committee minutes, 2022-03-23",
+   "quote": "96 percent of the Monty Tech assessment is governed by the state, which determines contribution by average income and property values in town"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2026-02-05",
+   "href": "/docs/meetings/text/finance-committee/2026-02-05-minutes-7631.txt",
+   "label": "Finance Committee minutes, 2026-02-05",
+   "quote": "what if anything can be done to reduce the contribution that Lunenburg needs to pay. Tom Brown states there is potential to change but that requires a change to the formula"
+  }
+ ],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "label": "Montachusett Regional Vocational Technical School District — 3583-fy27-monty-tech-budget-presentation-pdf.pdf"
+  },
+  {
+   "href": "/docs/town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf",
+   "label": "Montachusett Regional Vocational Technical School District — a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf"
+  },
+  {
+   "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+   "label": "Massachusetts DESE — dese-ch70-key-factors.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg, MUNIS (records request) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  },
+  {
+   "href": "/docs/town-budget/docs/3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf",
+   "label": "Town of Lunenburg — 3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf"
+  },
+  {
+   "href": "/docs/meetings/text/select-board/2021-01-19-minutes-5244.txt",
+   "label": "Select Board minutes, 19 January 2021 — 2021-01-19-minutes-5244.txt"
+  }
+ ],
+ "table": {
+  "caption": "The Monty Tech assessment, by year and part",
+  "views": [
+   {
+    "columns": [
+     "Total",
+     "Required minimum",
+     "Transportation",
+     "Capital"
+    ],
+    "key": "parts",
+    "kinds": [
+     "stated",
+     "ledger",
+     "stated",
+     "stated"
+    ],
+    "label": "Five years",
+    "note": "The district’s budget books, except one year that is the Town’s appropriation and one stated by the district as the prior year’s figure. The required minimum is DESE’s. A blank is a part not published for that year.",
+    "rows": [
+     {
+      "cells": [
+       "$1,452,379",
+       "$1,378,183",
+       "$74,196",
+       "$0"
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "$1,334,521",
+       "$1,270,711",
+       "$47,577",
+       "$16,233"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$1,225,646",
+       "$1,172,254",
+       null,
+       null
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$1,181,390",
+       "$1,127,113",
+       "$34,700",
+       "$19,577"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$1,054,376",
+       null,
+       null,
+       null
+      ],
+      "label": "FY2023"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Monty Tech assessment"
+}
