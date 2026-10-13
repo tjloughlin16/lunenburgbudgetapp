@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
 import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
 import { daysAway as daysFromToday, meetingBody, todayIso } from '../lib/meetings'
+import { ListSection, Row } from '../components/GroupedList'
 
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
@@ -113,6 +115,54 @@ function ActivityRow({ a }: { a: Recent }) {
   )
 }
 
+/** "Show all N", in place. The phone lists open at a handful of rows -- a grouped list
+ *  shows three to five and puts the rest one tap away -- and this is that tap. */
+function ShowAll({ n, shown, onClick }: { n: number; shown: number; onClick: () => void }) {
+  if (n <= shown) return null
+  return (
+    <button type="button" onClick={onClick} className="mt-1.5 block w-full text-right px-1 text-[13px] font-semibold"
+      style={{ color: 'var(--series-cost)' }}>Show all {n} <span aria-hidden>&rsaquo;</span></button>
+  )
+}
+
+/** RECENT ACTIVITY ON A PHONE. The desktop row draws five artifact chips per meeting so a
+ *  column can be read down the page; at 390px that is five buttons a meeting, sixty
+ *  meetings deep. Here the row is the meeting, it opens our minutes (or the board page
+ *  where we have none), and the record count stays in the eyebrow. The chips live on. */
+function PhoneActivity({ meetings, days }: { meetings: Recent[]; days: number }) {
+  const [n, setN] = useState(8)
+  return (
+    <div className="sm:hidden">
+      <ListSection title={`Last ${days} days`} label="Recent meetings"
+        footer={<ShowAll n={meetings.length} shown={n} onClick={() => setN(meetings.length)} />}>
+        {meetings.slice(0, n).map(a => {
+          const votes = a.official_votes ?? (a.our_minutes ? a.our_minutes.votes : null)
+          return (
+            <Row key={a.board_slug + a.date} href={a.our_minutes?.url ?? `/boards/${a.board_slug}`}
+              eyebrow={longDate(a.date) + (votes !== null ? ` · ${votes} vote${votes === 1 ? '' : 's'}` : '')
+                + ` · ${a.complete}/${a.complete_of} of the record`}
+              title={a.board}
+              sub={a.our_minutes?.headline ?? (a.agenda ? 'Agenda posted; no minutes yet' : null)} />
+          )
+        })}
+      </ListSection>
+    </div>
+  )
+}
+
+function OtherBoards({ rows, days }: { rows: Upcoming[]; days: number }) {
+  const [n, setN] = useState(6)
+  return (
+    <ListSection title={`Other boards, next ${days} days`} label="Other boards' upcoming meetings"
+      footer={<ShowAll n={rows.length} shown={n} onClick={() => setN(rows.length)} />}>
+      {rows.slice(0, n).map(m => (
+        <Row key={m.file_id} href={m.agenda_url} eyebrow={longDate(m.date)}
+          title={meetingBody(m.board, m.body_as_printed)} sub={m.via_note ?? null} />
+      ))}
+    </ListSection>
+  )
+}
+
 function longDate(iso: string) {
   const [y, m, d] = iso.split('-').map(Number)
   return new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
@@ -134,31 +184,20 @@ export function ThisWeek() {
       standfirst={`Meetings coming up, and what the town has posted for recent ones — as seen on ${f.as_of}.`}
       dataUrl={'/data/' + FEED}>
 
-      <H2>Select Board, Finance Committee, School Committee</H2>
+      <H2>The budget boards</H2>
       <BoardsThisWeek days={14} />
 
+      {/* EVERY OTHER BOARD, as one grouped list: the next seven days and then the rest of
+          the horizon, in date order, each row opening the agenda. It was a two-column
+          text list that broke on a phone, and a sentence listing the later ones. */}
       <H2>Upcoming meetings</H2>
       {(() => {
         const three = new Set(THE_THREE.map(t => t[0]))
-        const others = week.filter(m => !three.has(m.board_slug))
+        const others = [...week, ...later].filter(m => !three.has(m.board_slug))
         return others.length === 0
-          ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No other agenda posted for the next seven days.</p>
-          : <ul className="text-sm space-y-1">
-              {others.map(m => (
-                <li key={m.file_id} className="flex flex-wrap gap-x-3 items-baseline">
-                  <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{longDate(m.date)}</span>
-                  <span>{m.board}</span>
-                  <a className="text-xs underline" style={{ color: 'var(--text-muted)' }} href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>
-                  {m.via_note && <span className="text-xs italic" style={{ color: 'var(--text-muted)' }}>{m.via_note}</span>}
-                </li>
-              ))}
-            </ul>
+          ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No other agenda posted for the next {f.upcoming.horizon_days} days.</p>
+          : <div className="max-w-xl"><OtherBoards rows={others} days={f.upcoming.horizon_days} /></div>
       })()}
-      {later.length > 0 && (
-        <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
-          And within {f.upcoming.horizon_days} days: {later.map((m, i) => <span key={m.file_id}>{i ? '; ' : ''}{meetingBody(m.board, m.body_as_printed)} <a className="underline" href={m.agenda_url} target="_blank" rel="noreferrer">{longDate(m.date)}</a></span>)}.
-        </p>
-      )}
 
       {/* RECENT ACTIVITY, ONE ROW PER MEETING. TJ, 18 September 2026: "combine these 2
           sections, plus 'What happened — from the recordings' into one 'recent activity',
@@ -170,13 +209,14 @@ export function ThisWeek() {
       {f.recent.meetings.length === 0
         ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing posted for a recent meeting in the last {f.recent.window_days} days.</p>
         : <>
+            <PhoneActivity meetings={f.recent.meetings} days={f.recent.window_days} />
             {/* The column labels once, over the list, rather than on every row. */}
             <div className="hidden sm:flex justify-end mb-1 pr-3">
               <div className="grid grid-cols-5 gap-1 w-[21rem]">
                 {SLOTS.map(name => <span key={name} className="text-[9.5px] uppercase tracking-wide text-center" style={{ color: 'var(--text-muted)' }}>{name === 'our minutes' ? 'ours' : name}</span>)}
               </div>
             </div>
-            <ol className="space-y-2">
+            <ol className="hidden sm:block space-y-2">
               {f.recent.meetings.map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
             </ol>
           </>}
@@ -195,7 +235,13 @@ export function ThisWeek() {
           <H2>Notices from the town</H2>
           {(n.feeds || []).length === 0
             ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing new from the town&rsquo;s feeds in the last {n.window_days} days.</p>
-            : <ul className="space-y-1.5">
+            : <>
+              <div className="sm:hidden">
+                <ListSection title={`Last ${n.window_days} days`} label="Notices from the town">
+                  {(n.feeds || []).map(f => <Row key={f.link} href={f.link} eyebrow={`${f.published} · ${f.source}`} title={f.title} />)}
+                </ListSection>
+              </div>
+              <ul className="hidden sm:block space-y-1.5">
                 {(n.feeds || []).map(f => (
                   <li key={f.link} className="text-sm flex flex-wrap gap-x-3 items-baseline">
                     <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{f.published}</span>
@@ -203,11 +249,20 @@ export function ThisWeek() {
                     <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{f.source}</span>
                   </li>
                 ))}
-              </ul>}
+              </ul>
+            </>}
           {(n.documents || []).length > 0 && (
             <>
               <h3 className="text-sm font-semibold mt-4">New documents</h3>
-              <ul className="space-y-1.5 mt-1">
+              {/* On a phone, one row per document, opening our copy; the publisher's copy
+                  is one tap further, on the document's own page. */}
+              <div className="sm:hidden mt-2">
+                <ListSection title="Added to the archive" label="New documents">
+                  {(n.documents || []).map(d => <Row key={d.upstream} href={d.url}
+                    eyebrow={`${longDate(d.first_seen)} · ${d.folder.replace(/-/g, ' ')}`} title={d.label} />)}
+                </ListSection>
+              </div>
+              <ul className="hidden sm:block space-y-1.5 mt-1">
                 {(n.documents || []).map(d => (
                   <li key={d.upstream} className="text-sm flex flex-wrap gap-x-3 items-baseline">
                     <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{d.first_seen}</span>

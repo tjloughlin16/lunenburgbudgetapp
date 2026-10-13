@@ -9,8 +9,9 @@ import { AREA_HOME, AREA_LABEL } from '../routes'
 import { usdShort } from '../model/engine'
 import { LEVEL_SERVICE } from '../model/walk'
 import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
-import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
-import { RecentMeetings } from '../components/RecentMeetings'
+import { THE_THREE } from '../components/BoardsThisWeek'
+import { ListSection, Row } from '../components/GroupedList'
+import { todayIso, daysAway, dayLabel, meetingBody, splitMeetings } from '../lib/meetings'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -43,18 +44,128 @@ import { RecentMeetings } from '../components/RecentMeetings'
 /** RECENT MEETINGS -- what we have for each, whatever that is. Replaces "What was said",
  *  which drew only the meetings that had our minutes and so could not show last night's
  *  meeting until its minutes were written. See components/RecentMeetings.tsx. */
-function HomeRecentMeetings() {
-  const { d } = useReport<{ counts: { meetings: number } }>('recording-minutes.json')
+type HomeUpcoming = { board_slug: string; date: string; file_id: string; body_as_printed?: string | null }
+type HomeFeed = { as_of: string; upcoming: { meetings: HomeUpcoming[] } }
+type HomeNotices = { upcoming: { board_slug: string; date: string; time?: string; hook?: string; one_line: string }[] }
+
+/** One section of the live column, as data, so it can be drawn two ways: as its own
+ *  grouped list on a wide screen, and as one tab of a SEGMENTED CONTROL on a phone. */
+type Pane = { tab: string; title: string; all?: string; allHref?: string; label: string; rows: React.ReactNode }
+
+function useThisWeek(): Pane | null {
+  const feed = useReport<HomeFeed>('meeting-feed.json').d
+  const notices = useReport<HomeNotices>('notices.json').d
+  if (!feed) return null
+  const rows: { name: string; m: HomeUpcoming; time?: string; line?: string }[] = []
+  const quiet: string[] = []
+  for (const [slug, name] of THE_THREE) {
+    const ms = feed.upcoming.meetings
+      .filter(m => m.board_slug === slug && m.date >= todayIso() && daysAway(m.date) <= 7)
+      .sort((a, b) => a.date.localeCompare(b.date))
+    if (!ms.length) quiet.push(name)
+    for (const m of ms) {
+      const p = notices?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
+      rows.push({ name, m, time: p?.time && p.time !== 'not stated' ? p.time : undefined, line: p?.hook || p?.one_line })
+    }
+  }
+  rows.sort((a, b) => a.m.date.localeCompare(b.m.date))
+  return {
+    tab: 'This week', title: 'This week in town', all: 'Every board', allHref: '/this-week', label: 'Meetings this week',
+    rows: <>
+      {rows.map(({ name, m, time, line }) => (
+        <Row key={m.file_id} href={`/this-week#m-${m.board_slug}-${m.date}`} accent
+          eyebrow={dayLabel(m.date, feed.as_of) + (time ? ` · ${time}` : '')}
+          title={meetingBody(name, m.body_as_printed)} sub={line} />
+      ))}
+      {quiet.length > 0 && <Row title={`${quiet.join(' and ')}: nothing posted this week`} muted />}
+    </>,
+  }
+}
+
+function useThreads(): Pane | null {
+  const { d } = useReport<{ threads: { status: string; is_new: boolean; label: string; id: string }[] }>('threads.json')
+  if (!d) return null
+  const open = d.threads.filter(t => t.status === 'open')
+  return {
+    tab: 'Questions', title: 'Open questions', all: `All ${open.length}`, allHref: '/threads', label: 'Open threads',
+    rows: open.slice(0, 3).map(t => (
+      <Row key={t.id} href={`/threads/${t.id}`} title={t.label} tag={t.is_new ? 'new' : undefined} />
+    )),
+  }
+}
+
+type HomeRecent = { date: string; ours?: { slug: string; headline?: string; votes?: number } | null }
+type HomeBoards = { boards: { slug: string; name: string; the_three?: boolean; meetings: HomeRecent[] }[] }
+
+function useRecentMeetings(): Pane | null {
+  const { d } = useReport<HomeBoards>('boards.json')
+  const idx = useReport<{ counts: { meetings: number } }>('recording-minutes.json').d
+  if (!d) return null
+  const rows = d.boards.filter(b => b.the_three)
+    .flatMap(b => splitMeetings(b.meetings).past.map(r => ({ board: b.name, slug: b.slug, r })))
+    .sort((a, b) => b.r.date.localeCompare(a.r.date)).slice(0, 3)
+  const when = (iso: string) => {
+    const [y, m, dd] = iso.split('-').map(Number)
+    return new Date(y, m - 1, dd).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+  }
+  return {
+    tab: 'Past meetings', title: 'Recent meetings', all: idx ? `All ${idx.counts.meetings}` : 'All',
+    allHref: '/what-was-said', label: 'Recent meetings',
+    rows: rows.map(({ board, slug, r }) => (
+      <Row key={slug + r.date}
+        href={r.ours ? `/meeting-minutes/${r.ours.slug}` : `/boards/${slug}`}
+        eyebrow={when(r.date) + (r.ours && typeof r.ours.votes === 'number'
+          ? ` · ${r.ours.votes} vote${r.ours.votes === 1 ? '' : 's'}` : '')}
+        title={board} sub={r.ours?.headline ?? 'Our minutes follow once the recording is read'} />
+    )),
+  }
+}
+
+/** THE LIVE COLUMN: three sections, drawn two ways.
+ *
+ *  Wide screen: three grouped lists, stacked -- there is room, and a sidebar is scanned.
+ *  Phone: ONE card with a segmented control on top. TJ, 13 October 2026, on the stacked
+ *  version: "it's a lot of scrolling across different sections with big panels". Three
+ *  sections become one, the page gets shorter by two cards, and every row is still one
+ *  tap away. The first tab is the one that changes week to week. */
+function HomeLive() {
+  const panes = [useThisWeek(), useRecentMeetings(), useThreads()].filter((p): p is Pane => !!p)
+  const [i, setI] = useState(0)
+  if (!panes.length) return null
+  const cur = panes[Math.min(i, panes.length - 1)]
   return (
-    <section aria-label="Recent meetings">
-      <div className="flex items-baseline justify-between gap-3 mb-2">
-        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Recent meetings</h2>
-        <Go to="recorded" className="text-[12px] underline"
-          style={{ color: 'var(--series-cost)' }}>{d ? `all ${d.counts.meetings} with our minutes` : 'our minutes'} &rarr;</Go>
+    <>
+      <div className="hidden lg:block space-y-8">
+        {panes.map(p => (
+          <ListSection key={p.tab} title={p.title} all={p.all} allHref={p.allHref} label={p.label}>{p.rows}</ListSection>
+        ))}
       </div>
-      <RecentMeetings days={7} min={3} compact />
-      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>The last seven days of the three boards, with whatever exists for each: the recording, the agenda, the town&rsquo;s minutes, ours. A headline appears once our minutes are written.</p>
-    </section>
+      <section className="lg:hidden" aria-label="In town">
+        <div role="tablist" aria-label="In town" className="flex p-0.5 mb-2 rounded-lg"
+          style={{ background: 'var(--surface-3)' }}>
+          {panes.map((p, k) => {
+            const on = p === cur
+            return (
+              <button key={p.tab} role="tab" aria-selected={on} type="button"
+                onClick={() => setI(k)}
+                className="flex-1 min-h-[36px] rounded-md text-[13px] font-semibold transition-colors"
+                style={on
+                  ? { background: 'var(--surface-1)', color: 'var(--text-primary)', boxShadow: '0 1px 2px rgba(0,0,0,.12)' }
+                  : { color: 'var(--text-muted)' }}>
+                {p.tab}
+              </button>
+            )
+          })}
+        </div>
+        <ul role="tabpanel" className="card overflow-hidden" style={{ padding: 0 }}>{cur.rows}</ul>
+        {cur.all && cur.allHref && (
+          <a href={cur.allHref} className="mt-1.5 block text-right px-1 text-[13px] font-semibold"
+            style={{ color: 'var(--series-cost)' }}>
+            {cur.all} <span aria-hidden>&rsaquo;</span>
+          </a>
+        )}
+      </section>
+    </>
   )
 }
 
@@ -255,54 +366,13 @@ function Doors() {
  *  It sits in the live column under the budget feed, which is the right relation between
  *  them: the budget season is the one matter that always exists and is itemised every
  *  year, and these are the ones that come and go. */
-function ThreadsCard() {
-  const { d } = useReport<{ threads: { status: string; is_new: boolean; label: string; id: string }[] }>('threads.json')
-  if (!d) return null
-  const open = d.threads.filter(t => t.status === 'open')
-  const settled = d.threads.filter(t => t.status === 'resolved')
-  const fresh = d.threads.filter(t => t.is_new)
-  return (
-    <section aria-label="Open threads">
-      <div className="flex items-baseline justify-between gap-3 mb-2">
-        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Open threads</h2>
-        <Go to="threads" className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>all of it &rarr;</Go>
-      </div>
-      <p className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-        <strong>{open.length} things still open</strong>, {settled.length} settled — each one
-        followed across every board that touches it.
-        {fresh.length ? <> {fresh.length} newly picked up.</> : null}
-      </p>
-      <ul className="mt-2 space-y-1 text-[13px]">
-        {open.slice(0, 3).map(t => (
-          <li key={t.id}>
-            <a className="underline" href={`/threads/${t.id}`}>{t.label}</a>
-            {t.is_new ? <span className="ml-1.5 text-[10px] font-bold uppercase tracking-widest"
-              style={{ color: 'var(--series-cost)' }}>new</span> : null}
-          </li>
-        ))}
-      </ul>
-    </section>
-  )
-}
 
 function BudgetFeedCard() {
   return (
-    <section aria-label="The budget feed">
-      <div className="flex items-baseline justify-between gap-3 mb-2">
-        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This year&rsquo;s budget, as it is built</h2>
-        <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 &rarr;</a>
-      </div>
-      {/* A door, not a note: the same card the doors use, with an arrow, so it reads as
-          a place to go. TJ: "make sure it looks clickable to navigate to a page."
-          THE HEADING SAYS WHAT IT IS. It was "The budget feed", which is our name for
-          it and not a thing a resident has heard of -- no information scent. What it is:
-          this year's budget, followed as it is built. */}
-      <a href="/budget-feed" className="card px-4 py-4 block transition-opacity hover:opacity-90" style={{ borderLeft: '4px solid var(--series-cost)' }}>
-        <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>The FY28 budget feed <span aria-hidden="true">&rarr;</span></span>
-        <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>From the first deficit figure to Town Meeting: what is decided, what is still on the table, what has only been said.</span>
-      </a>
-      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
-    </section>
+    <ListSection title={"This year\u2019s budget"} all="Past years" allHref="/budget-feed/fy27" label="The budget feed">
+      <Row href="/budget-feed" accent eyebrow="Being built now" title="The FY28 budget feed"
+        sub="What is decided, what is still on the table, what has only been said." />
+    </ListSection>
   )
 }
 
@@ -414,23 +484,18 @@ export function Home() {
       </div>
 
       <div className="space-y-8">
-        <BudgetFeedCard />
-        <section aria-label="Meetings this week">
-          <div className="flex items-baseline justify-between gap-3 mb-2">
-            <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
-            <Go to="thisweek" className="text-[12px] underline"
-              style={{ color: 'var(--series-cost)' }}>every board &rarr;</Go>
-          </div>
-          <div className="lg:hidden"><BoardsStrip days={7} /></div>
-          <div className="hidden lg:block"><BoardsThisWeek days={7} compact /></div>
-          {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
-              Committee meets next is the one who wants everything about it. */}
-          <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
+        {/* A DIFFERENT KIND OF SECTION, AND IT SAYS SO. TJ, 13 October 2026: the doors are
+            things to read once; everything below is what changes week to week. Without a
+            heading of its own the column read as more doors. A rule and a bigger title
+            mark the change of register; the small labels under it stay as they were. */}
+        <header className="border-t pt-6 lg:border-t-0 lg:pt-0" style={{ borderColor: 'var(--grid)' }}>
+          <h2 className="text-[22px] font-bold tracking-tight leading-tight">Stay informed</h2>
+          <p className="text-[14px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+            What the boards are deciding, this week and lately.
           </p>
-        </section>
-        <ThreadsCard />
-        <HomeRecentMeetings />
+        </header>
+        <BudgetFeedCard />
+        <HomeLive />
         <HomeLatest />
       </div>
       </div>

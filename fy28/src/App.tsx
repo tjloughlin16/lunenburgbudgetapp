@@ -93,7 +93,7 @@ import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
 import { SiteMenu } from './components/SiteMenu'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, crumbLabel, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -686,9 +686,35 @@ function useTopicCrumbs(tab: Tab) {
   const cat = ix.categories.find(c => c.id === (t ? t.home : ix.categories.some(k => k.id === id) ? id : first))
   if (!cat) return null
   const crumbs = [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
-                  { href: pathFor('reports'), label: LABEL.reports, tab: 'reports' as Tab | null }]
+                  { href: pathFor('reports'), label: crumbLabel('reports'), tab: 'reports' as Tab | null }]
   if (t) crumbs.push({ href: cat.path, label: cat.shelf, tab: null })
   return { crumbs, current: t ? t.title : cat.shelf }
+}
+
+/** The heading of a page that sits BELOW its tab's address, or null on the tab's own page.
+ *  Read from the rendered <h1> rather than from the route, because the route only knows a
+ *  slug and the heading is the name the page actually gives itself. Watched until it
+ *  appears: most of these pages fetch their payload before they draw a title. */
+function useSubPageTitle(tab: Tab): string | null {
+  const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
+  const base = pathFor(tab)
+  const below = base !== '/' && path.startsWith(base + '/')
+  const [title, setTitle] = useState('')
+  useEffect(() => {
+    if (!below) return
+    // KEPT WATCHING, not read once: a page draws a placeholder heading ("A board") while
+    // its payload loads, and the first version took that and stopped -- 1,560 crumbs
+    // named the placeholder. setState with an unchanged string does not re-render.
+    const read = () => {
+      const h = document.querySelector('h1')?.textContent?.trim() ?? ''
+      if (h) setTitle(h.length > 60 ? h.slice(0, 57).trimEnd() + '\u2026' : h)
+    }
+    read()
+    const mo = new MutationObserver(read)
+    mo.observe(document.body, { childList: true, subtree: true, characterData: true })
+    return () => mo.disconnect()
+  }, [below, path])
+  return below ? title : null
 }
 
 function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
@@ -699,6 +725,13 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
   // to 'walk' and would have gone on claiming the walkthrough was the top of the site the
   // day the root became the chooser.
   trail.unshift(ROOT)
+  // A PAGE BELOW A TAB'S OWN ADDRESS -- /boards/<board>, /meeting-minutes/<meeting>,
+  // /departments/<dept> -- is not the tab's index. It said it was: 1,540 such pages named
+  // the index as the current page ("The boards -- each one, in one place" on the
+  // Agricultural Commission's). The index joins the trail, and the current page is the
+  // page's own heading, read once it has rendered.
+  const sub = useSubPageTitle(tab)
+  if (sub !== null) trail.push(tab)
 
   return (
     <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>
@@ -727,11 +760,11 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
             <a href={pathFor(t)}
               onClick={e => { if (!plainClick(e)) return; e.preventDefault(); goUp(t) }}
               className="font-semibold hover:underline"
-              style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</a>
+              style={{ color: 'var(--series-cost)' }}>{crumbLabel(t)}</a>
             <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
           </li>
         ))}
-        <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
+        <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{sub ?? crumbLabel(tab)}</li>
         </>)}
       </ol>
       <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />

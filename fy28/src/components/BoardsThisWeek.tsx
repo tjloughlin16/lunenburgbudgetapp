@@ -191,19 +191,10 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
     f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
   const previewFor = (m: Upcoming) => notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
   return (
+    <>
     <ol className="space-y-2">
-      {THE_THREE.map(([slug, name]) => {
+      {THE_THREE.filter(([slug]) => byBoard(slug).length > 0).map(([slug, name]) => {
         const ms = byBoard(slug)
-        if (ms.length === 0) {
-          return (
-            <li key={slug} className="flex flex-wrap items-baseline gap-x-3 px-3 py-2 rounded-lg"
-              style={{ border: '1px dashed var(--grid)' }}>
-              <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{name}</a>
-              <span className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>no meeting posted in the next {days} days</span>
-              <span className="ml-auto"><LastTime slug={slug} rec={recorded.d} /></span>
-            </li>
-          )
-        }
         return ms.map(m => {
           const p = previewFor(m)
           const hook = p?.hook || p?.one_line
@@ -261,9 +252,11 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                   </summary>
                   <ul className="mt-2 space-y-1.5">
                     {[...p.items].sort((a, b) => Number(!!b.important) - Number(!!a.important)).map((it, i) => (
-                      <li key={i} className="text-[13px] flex gap-2 items-baseline"
+                      <li key={i} className="text-[13px]"
                         style={it.important ? { borderLeft: '3px solid var(--series-revenue, #b5540f)', paddingLeft: 8 } : { paddingLeft: 11 }}>
-                        <span className="text-[10px] font-bold uppercase tracking-widest whitespace-nowrap w-16 shrink-0"
+                        {/* The kind is an EYEBROW above the line, not a fixed side column: at
+                            64px "PRESENTATION" overran into the title (TJ, 13 October 2026). */}
+                        <span className="block text-[10px] font-bold uppercase tracking-widest"
                           style={{ color: it.vote_expected ? 'var(--series-cost)' : 'var(--text-muted)' }}>{it.vote_expected ? 'vote' : it.kind}</span>
                         <span><span className={it.important ? 'font-semibold' : 'font-medium'}>{it.agenda_line.replace(/^[a-z0-9]+\.\s*/i, '')}</span>
                           <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}> — {it.why_it_matters}</span></span>
@@ -278,5 +271,25 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
         })
       })}
     </ol>
+    {/* THE QUIET BOARDS, TOGETHER, AFTER THE MEETINGS. They were a dashed card each, above
+        the meetings that are happening -- two boxes of "nothing" ahead of the something.
+        One grouped card, a hairline between boards (TJ, 13 October 2026). */}
+    {(() => {
+      const quiet = THE_THREE.filter(([slug]) => byBoard(slug).length === 0)
+      return quiet.length > 0 && (
+        <ul className="card overflow-hidden mt-2" style={{ padding: 0 }} aria-label="Boards with nothing posted">
+          {quiet.map(([slug, name]) => (
+            <li key={slug} className="border-t first:border-t-0 px-3 py-2" style={{ borderColor: 'var(--grid)' }}>
+              <div className="flex flex-wrap items-baseline gap-x-2">
+                <a href={`/boards/${slug}`} className="text-[13.5px] font-semibold" title={`Everything about the ${name}`}>{name}</a>
+                <span className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>nothing posted in the next {days} days</span>
+              </div>
+              <LastTime slug={slug} rec={recorded.d} />
+            </li>
+          ))}
+        </ul>
+      )
+    })()}
+    </>
   )
 }

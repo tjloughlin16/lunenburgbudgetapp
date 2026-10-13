@@ -872,6 +872,13 @@ export const LABEL: Record<Tab, string> = {
  *  rather than by clicking. The two boards hang off the walkthrough because they are in
  *  its header; everything else is behind the one door. */
 export const PARENT: Partial<Record<Tab, Tab>> = {
+  // THE LIVE PAGES HAVE NO PARENT. TJ, 13 October 2026: "'this week' breadcrumb is wrong.
+  // looks like breadcrumbs are very frequently wrong". This week, the budget feed, threads,
+  // the boards, our minutes and the articles were all filed under `reports`, so a phone --
+  // which shows only the parent -- told a reader the week's meetings were an analysis. They
+  // are destinations of their own (the Menu's "Lately" and "Who decides", the home page's
+  // "Stay informed"), and they sit under Home. `askus` and `gaps` likewise: they are the
+  // Menu's "Check it", not chapters of the money page.
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
   priorities: 'deeper', development: 'deeper', solved: 'deeper',
   // TJ, 16 September 2026: "we need individual reports for the big concepts in the
@@ -881,11 +888,10 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // The athletics HUB now (scripts/topics.py), a report shelf rather than a chapter of the
   // budget-gap walk-through -- so its trail runs back to /reports, as every topic's does.
   athletics: 'reports', topic: 'reports',
-  rates: 'deeper',
+  rates: 'themoney',
   // `reports` has NO parent: it sits directly under Home. TJ, 12 October 2026, "Home ->
   // reports -> hub -> etc" -- every report's trail starts Home > Reports, the same as the
   // subject shelves' own (App.tsx useTopicCrumbs).
-  gaps: 'themoney',
   variance: 'themoney',
   funds: 'themoney',
   staffing: 'themoney',
@@ -893,12 +899,11 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   parastaff: 'themoney',
   insurance: 'themoney',
   sportsmoney: 'themoney',
-  askus: 'themoney',
   stateaid: 'themoney',
   stopped: 'themoney',
   cuts: 'themoney',
-  leaving: 'themoney',
-  families: 'themoney',
+  leaving: 'reports',
+  families: 'reports',
   unwind: 'themoney',
   minaid: 'themoney',
   formula: 'minaid',
@@ -913,12 +918,6 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   peers: 'reports',
   bythenumbers: 'reports',
   owners: 'reports',
-  blog: 'reports',
-  threads: 'reports',
-  recorded: 'reports',
-  boards: 'reports',
-  budgetfeed: 'reports',
-  thisweek: 'reports',
   courses: 'reports',
   attrition: 'reports',
   enrollment: 'reports',
@@ -929,12 +928,22 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   homestudents: 'reports',
   boardcompare: 'boards',
   youthsports: 'reports',
-  schoolfinance: 'boards', accounts: 'themoney', departments: 'boards', parks: 'reports',
+  schoolfinance: 'boards', accounts: 'themoney', departments: 'themoney', parks: 'reports',
   healthlever: 'reports', freecashlever: 'reports', salarylever: 'reports', feelever: 'reports', extraslever: 'reports', positionslever: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
-  freecash: 'money',
+  freecash: 'reports',
+}
+
+/** THE NAME A TAB GOES BY IN A BREADCRUMB. LABEL carries the page's long form -- "The blog
+ *  -- one finding at a time, in two minutes" -- which is a subtitle, not a place. A crumb is
+ *  the part before the dash. `walk` is the one exception: its door on the home page and its
+ *  area are both "Budget Crisis", and a crumb reading "Start here" named a page nobody saw. */
+export function crumbLabel(t: Tab): string {
+  if (t === 'walk') return 'Budget Crisis'
+  if (t === 'reports') return 'Reports'
+  return LABEL[t].split(' \u2014 ')[0]
 }
 
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')
