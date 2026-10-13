@@ -148,11 +148,7 @@ def observe_live(fa, first, last, pause=0.35):
                 failed.append((name, year))
                 continue
             h = body.decode('utf-8', 'replace')
-            for kind, date, fid in re.findall(
-                    r'ViewFile/(Agenda|Minutes)/_(\d{8})-(\d+)', h):
-                if date[4:] != str(year):
-                    continue
-                kind = kind.lower()
+            for kind, date, fid, title in fa.parse_listing(h, year):
                 k = (kind, fid)
                 if k in seen:            # boards share files for joint meetings
                     continue
@@ -160,7 +156,7 @@ def observe_live(fa, first, last, pause=0.35):
                 out.append({
                     'board': name, 'board_slug': fa.slug(name),
                     'date': '%s-%s-%s' % (date[4:], date[:2], date[2:4]),
-                    'kind': kind, 'file_id': fid,
+                    'kind': kind, 'file_id': fid, 'title': title,
                     'url': '%s/AgendaCenter/ViewFile/%s/_%s-%s'
                            % (fa.BASE, kind.capitalize(), date, fid)})
             time.sleep(pause)

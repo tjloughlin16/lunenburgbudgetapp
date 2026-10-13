@@ -70,7 +70,7 @@ export const THE_THREE: [string, string][] = [
 // from here. A bare `export ... from` does NOT bring the names into this module's scope --
 // it only forwards them -- so the first attempt at this compiled to `Cannot find name
 // 'todayIso'` in six places inside this very file.
-import { todayIso, dayLabel, daysAway, meetingBody } from '../lib/meetings'
+import { todayIso, dayLabel, daysAway, meetingBody, isBoardsOwn } from '../lib/meetings'
 // `daysFromToday` is what three pages already import from here, so the old name is kept as
 // the exported one while the library owns the single implementation.
 const daysFromToday = daysAway
@@ -116,7 +116,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
   const rows: { name: string; m: Upcoming; p?: Notice }[] = []
   const quiet: string[] = []
   for (const [slug, name] of THE_THREE) {
-    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
+    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && isBoardsOwn(m.board, m.body_as_printed) && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
     if (ms.length === 0) quiet.push(name)
     for (const m of ms) rows.push({ name, m, p: notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date) })
   }
@@ -188,7 +188,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
   }, [compact, target, f])
   if (!f) return null
   const byBoard = (slug: string) =>
-    f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
+    f.upcoming.meetings.filter(m => m.board_slug === slug && isBoardsOwn(m.board, m.body_as_printed) && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
   const previewFor = (m: Upcoming) => notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
   return (
     <>

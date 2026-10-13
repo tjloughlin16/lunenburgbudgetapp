@@ -179,6 +179,7 @@ def build():
             continue
         recent.append({
             'board': r['board'], 'board_slug': r['board_slug'], 'date': r['date'], 'last_activity': r['last_activity'],
+            'body_as_printed': r.get('body_as_printed', ''),
             'agenda': {'url': r['agenda_url'], 'first_seen': r['agenda_first_seen']} if r['agenda'] == '1' else None,
             'minutes': {'url': r['minutes_url'], 'first_seen': r['minutes_first_seen'],
                         'days_after_meeting_upper_bound': int(r['minutes_lag_upper_bound']) if r['minutes_lag_upper_bound'] else None,

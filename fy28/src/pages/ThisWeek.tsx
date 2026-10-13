@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
 import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, meetingBody, todayIso } from '../lib/meetings'
+import { daysAway as daysFromToday, meetingBody, todayIso, isBoardsOwn } from '../lib/meetings'
 import { ListSection, Row } from '../components/GroupedList'
 
 const TAB: Tab = 'thisweek'
@@ -39,7 +39,7 @@ type Feed = {
 type Video = { first_seen: string; video_id: string; title: string; url: string; uploaded: string }
 type Ours = { written: string; board: string; board_slug: string; date: string; url: string; votes: number }
 type FeedItem = { first_seen: string; source: string; kind: string; published: string; title: string; link: string }
-type Recent = { board: string; board_slug: string; date: string; last_activity: string
+type Recent = { board: string; board_slug: string; date: string; last_activity: string; body_as_printed?: string
   agenda: { url: string; first_seen: string } | null
   minutes: { url: string; first_seen: string; days_after_meeting_upper_bound: number | null; ocr: boolean } | null
   recording: { url: string; uploaded: string; first_seen: string; captions_disabled: boolean } | null
@@ -86,7 +86,7 @@ function ActivityRow({ a }: { a: Recent }) {
       <div className="sm:flex sm:items-start sm:gap-4">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap gap-x-3 items-baseline">
-            <a className="font-semibold hover:underline" href={`/boards/${a.board_slug}`}>{a.board}</a>
+            <a className="font-semibold hover:underline" href={`/boards/${a.board_slug}`}>{meetingBody(a.board, a.body_as_printed)}</a>
             <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
             <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
               style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
@@ -141,7 +141,7 @@ function PhoneActivity({ meetings, days }: { meetings: Recent[]; days: number })
             <Row key={a.board_slug + a.date} href={a.our_minutes?.url ?? `/boards/${a.board_slug}`}
               eyebrow={longDate(a.date) + (votes !== null ? ` · ${votes} vote${votes === 1 ? '' : 's'}` : '')
                 + ` · ${a.complete}/${a.complete_of} of the record`}
-              title={a.board}
+              title={meetingBody(a.board, a.body_as_printed)}
               sub={a.our_minutes?.headline ?? (a.agenda ? 'Agenda posted; no minutes yet' : null)} />
           )
         })}
@@ -193,7 +193,9 @@ export function ThisWeek() {
       <H2>Upcoming meetings</H2>
       {(() => {
         const three = new Set(THE_THREE.map(t => t[0]))
-        const others = [...week, ...later].filter(m => !three.has(m.board_slug))
+        // A body the town filed in a budget board's folder (a school advisory council) is listed
+        // here, under its own name, not in that board's card.
+        const others = [...week, ...later].filter(m => !three.has(m.board_slug) || !isBoardsOwn(m.board, m.body_as_printed))
         return others.length === 0
           ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No other agenda posted for the next {f.upcoming.horizon_days} days.</p>
           : <div className="max-w-xl"><OtherBoards rows={others} days={f.upcoming.horizon_days} /></div>

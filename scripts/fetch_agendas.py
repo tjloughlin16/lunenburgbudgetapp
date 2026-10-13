@@ -11,12 +11,15 @@ own tab has 80), so this walks board x year directly instead.
 Resumable: a file already on disk with a non-zero size is skipped. --inventory lists what
 would be fetched without downloading anything.
 """
-import argparse, csv, datetime as dt, os, pathlib, re, sys, time, urllib.parse, urllib.request
+import argparse, csv, datetime as dt, html, os, pathlib, re, sys, time, urllib.parse, urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ingest          # noqa: E402 -- the one door every document arrives through
 
 BASE = 'https://www.lunenburgma.gov'
+# `title` is the town's own name for the meeting, as the listing prints it; `board` is the
+# CATEGORY it was filed under. They differ, and only `title` says which body met.
+COLS = ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url', 'title']
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / 'sources' / 'meetings'
 # Who this is, in a form somebody can look up.
@@ -88,16 +91,42 @@ def categories() -> dict[str, str]:
     return cats
 
 
-def listing(cat_id: str, year: int) -> list[tuple[str, str, str]]:
-    """(kind, date, file id) for one board-year."""
+# A LISTING ROW IS ONE MEETING, AND IT HAS A TITLE. The category a document is filed under
+# is not the body that met: on 13 October 2026 the School Committee category held
+# "School Advisory Council LMS" and "School Advisory Council LHS" beside "School Committee
+# Revised", and this parser kept only the category -- so the site announced two School
+# Committee meetings that were principals' advisory councils. TJ: "On the agenda center
+# it's listed as 'School Advisory Council LHS'. Do you not see it that way?" We did not;
+# we threw the title away. The row's title is the link text of its agenda, and it covers
+# the minutes posted in the same row.
+ROW = re.compile(r'<tr id="row\d+\w*" class="catAgendaRow">(.*?)</tr>', re.S)
+TITLE = re.compile(r'<p>\s*<a [^>]*href="/AgendaCenter/ViewFile/\w+/_\d{8}-\d+"[^>]*>(.*?)</a>', re.S)
+FILE = re.compile(r'ViewFile/(Agenda|Minutes)/_(\d{8})-(\d+)')
+
+
+def parse_listing(h: str, year: int) -> list[tuple[str, str, str, str]]:
+    """(kind, MMDDYYYY, file id, title) for every document one board-year page lists.
+
+    The one parser for the AgendaCenter's listing HTML -- watch_meetings.py calls it too,
+    so the two cannot disagree about what a page says. A document found outside any row
+    is still returned, with an empty title, so a markup change costs the title and never
+    the document."""
+    out: dict[tuple[str, str], tuple[str, str, str, str]] = {}
+    for row in ROW.findall(h):
+        t = TITLE.search(row)
+        title = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', t.group(1)))).strip() if t else ''
+        for kind, date, fid in FILE.findall(row):
+            out.setdefault((kind.lower(), fid), (kind.lower(), date, fid, title))
+    for kind, date, fid in FILE.findall(h):
+        out.setdefault((kind.lower(), fid), (kind.lower(), date, fid, ''))
+    return sorted(v for v in out.values() if v[1][4:] == str(year))
+
+
+def listing(cat_id: str, year: int) -> list[tuple[str, str, str, str]]:
+    """(kind, date, file id, title) for one board-year."""
     h = get(f'{BASE}/AgendaCenter/UpdateCategoryList',
             {'year': year, 'catID': cat_id}).decode('utf-8', 'replace')
-    out = set()
-    for kind, date, fid in re.findall(
-            r'ViewFile/(Agenda|Minutes)/_(\d{8})-(\d+)', h):
-        if date[4:] == str(year):
-            out.add((kind.lower(), date, fid))
-    return sorted(out)
+    return parse_listing(h, year)
 
 
 def backfill() -> int:
@@ -146,10 +175,44 @@ def backfill() -> int:
             else:
                 print(f'  in flight, path left blank: {rel}')
     with idx.open('w', newline='') as f:
-        w = csv.DictWriter(f, ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url'])
+        w = csv.DictWriter(f, COLS)
         w.writeheader()
         w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
     print(f'\nrecovered {got}; {len(still)} genuinely absent')
+    return 0
+
+
+def titles(start: int, end: int) -> int:
+    """Fill `title` on the rows the index already holds. Downloads no document.
+
+    Every row catalogued before 13 October 2026 was written without its title. This
+    walks the listings again and sets the title only; paths, files and the bucket are
+    untouched. A row whose listing did not answer keeps an empty title and says so."""
+    idx = OUT / 'index.csv'
+    rows = list(csv.DictReader(idx.open()))
+    by = {(r['board_id'], r['file_id'], r['kind']): r for r in rows}
+    cats = categories()
+    found, failed = 0, []
+    for cid, name in sorted(cats.items(), key=lambda x: int(x[0])):
+        for year in range(start, end + 1):
+            body = get(f'{BASE}/AgendaCenter/UpdateCategoryList', {'year': year, 'catID': cid})
+            if not body:
+                failed.append(f'{name} {year}')
+                continue
+            for kind, date, fid, title in parse_listing(body.decode('utf-8', 'replace'), year):
+                r = by.get((cid, fid, kind))
+                if r is not None and title:
+                    r['title'] = title
+                    found += 1
+            time.sleep(0.2)
+        print(f'  {name[:44]:<44} {sum(1 for r in rows if r["board_id"] == cid and r.get("title")):>5} titled')
+    with idx.open('w', newline='') as f:
+        w = csv.DictWriter(f, COLS)
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
+    untitled = sum(1 for r in rows if not r.get('title'))
+    print(f'\n{found} titles set; {untitled} of {len(rows)} rows still untitled; '
+          f'{len(failed)} board-years did not answer' + (f': {", ".join(failed[:8])}' if failed else ''))
     return 0
 
 
@@ -160,7 +223,12 @@ def main() -> None:
     ap.add_argument('--inventory', action='store_true')
     ap.add_argument('--backfill', action='store_true',
                     help='fetch only the index rows that have no local file, and stop')
+    ap.add_argument('--titles', action='store_true',
+                    help="fill the town's meeting title on rows already held; downloads nothing")
     a = ap.parse_args()
+
+    if a.titles:
+        return titles(a.start, a.end)
 
     if a.backfill:
         return backfill()
@@ -170,13 +238,13 @@ def main() -> None:
     rows, seen = [], set()
     for cid, name in sorted(cats.items(), key=lambda x: int(x[0])):
         for year in range(a.start, a.end + 1):
-            for kind, date, fid in listing(cid, year):
+            for kind, date, fid, title in listing(cid, year):
                 if (kind, fid) in seen:      # boards share files (joint meetings)
                     continue
                 seen.add((kind, fid))
                 iso = f'{date[4:]}-{date[:2]}-{date[2:4]}'
                 rows.append({'board': name, 'board_id': cid, 'date': iso, 'kind': kind,
-                             'file_id': fid,
+                             'file_id': fid, 'title': title,
                              'path': f'{slug(name)}/{iso}-{kind}-{fid}.pdf',
                              'url': f'{BASE}/AgendaCenter/ViewFile/'
                                     f'{kind.capitalize()}/_{date}-{fid}'})
@@ -252,14 +320,17 @@ def main() -> None:
     # then deleted every other year's minutes from the live database. The index is the
     # catalogue of everything held; a run that saw part of it may only add to it.
     idx = OUT / 'index.csv'
-    cols = ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url']
+    cols = COLS
     held = {}
     if idx.exists():
         for r in csv.DictReader(idx.open()):
             held[(r['board_id'], r['file_id'], r['kind'])] = r
     before = len(held)
     for r in rows:
-        held[(r['board_id'], r['file_id'], r['kind'])] = {c: r.get(c, '') for c in cols}
+        old = held.get((r['board_id'], r['file_id'], r['kind']), {})
+        new = {c: r.get(c, '') for c in cols}
+        new['title'] = new['title'] or old.get('title', '')   # a row seen without its title keeps the one it had
+        held[(r['board_id'], r['file_id'], r['kind'])] = new
     merged = sorted(held.values(), key=lambda r: (r['board'], r['date'], r['kind']))
     if before and len(merged) < before:
         raise SystemExit(f'refusing to write index.csv: would shrink from {before} to {len(merged)} rows')

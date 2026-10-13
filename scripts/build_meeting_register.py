@@ -154,6 +154,8 @@ def load_documents():
             if r['kind'] in ('agenda', 'minutes'):
                 m[r['kind']] = 1
                 m['paths'].setdefault(r['kind'], r['path'])
+                if r.get('title'):
+                    m.setdefault('titles', {}).setdefault(r['kind'], r['title'])
                 m['urls'].setdefault(r['kind'], r.get('url', ''))
             txt = os.path.join(TEXT_DIR, os.path.splitext(r['path'])[0] + '.txt')
             if os.path.exists(txt):
@@ -259,6 +261,59 @@ def _norm(s):
     return re.sub(r'[^a-z]', '', (s or '').lower())
 
 
+# WHAT THE TOWN'S LISTING CALLS A MEETING, when that names a DIFFERENT body from the
+# category it is filed under. TJ, 13 October 2026: "On the agenda center it's listed as
+# 'School Advisory Council LHS'. Do you not see it that way?" We did not: fetch_agendas.py
+# kept the category and threw the title away, and this week's two principals' advisory
+# councils were announced as School Committee meetings.
+#
+# A title is FOREIGN to its category when the town uses it more often under another one.
+# That is read off the town's own filing, not a list we wrote: across 11,326 titled
+# listings it fires on about ten -- the Superintendent Screening Committee, the school
+# advisory councils and one School Building Committee meeting under School Committee, and
+# a "Board of Assessors" filed under Board of Health. Abbreviations (PLBD, ZBA), typos and
+# hearing addresses only ever appear under their own category, so they never fire.
+_STATUS = re.compile(r'[\s\-\u2013]*\b(revised|amended|updated|cancell?ed|postponed|'
+                     r'rescheduled|meeting|agenda|minutes)\b\.?', re.I)
+
+
+def _title_key(t):
+    return _norm(_STATUS.sub(' ', t or ''))
+
+
+def title_homes(index_path):
+    """Normalised title -> the category the town most often files it under."""
+    seen = {}
+    with open(index_path, newline='', encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            k = _title_key(r.get('title'))
+            if k:
+                c = seen.setdefault(k, {})
+                c[r['board']] = c.get(r['board'], 0) + 1
+    # A home needs the town to have used the title there at least twice, and more often
+    # than anywhere else: a one-off ("delete", a placeholder the town left on three
+    # boards) has no home and never fires.
+    out = {}
+    for k, c in seen.items():
+        ranked = sorted(c.items(), key=lambda kv: -kv[1])
+        if ranked[0][1] >= 2 and (len(ranked) == 1 or ranked[0][1] > ranked[1][1]):
+            out[k] = ranked[0][0]
+    return out
+
+
+def body_from_title(title, board, homes):
+    """The listing title, tidied, when it belongs to another category; else ''."""
+    k, b = _title_key(title), _norm(board)
+    home = homes.get(k)
+    # A title that contains the category's own name, or is contained by it, is that body
+    # however the town files it: "Planning Board" under Planning Board Public Hearing.
+    if not home or home == board or not k or k in b or b in _norm(title):
+        return ''
+    t = re.sub(r'[\s\-\u2013]*\b(revised|amended|updated|cancell?ed|postponed)\b.*$',
+               '', title, flags=re.I).strip() or title.strip()
+    return re.sub(r'\s+meeting$', '', t, flags=re.I)
+
+
 def body_as_printed(agenda_path, board=None, _cache={}):
     """The body the agenda's OWN notice names, when that is not the board it is filed under.
 
@@ -304,6 +359,7 @@ def body_as_printed(agenda_path, board=None, _cache={}):
 
 def build():
     docs, names = load_documents()
+    homes = title_homes(MEET_INDEX)
     vids, nofolder, nodate = load_videos()
     if not docs:
         raise SystemExit('the meeting index yielded no documents. Nothing written.')
@@ -361,8 +417,13 @@ def build():
             # what stops the second being read as the first.
             'evidence': ('document+video' if have_doc and v
                          else 'document' if have_doc else 'video only'),
-            'body_as_printed': body_as_printed(d['paths'].get('agenda', ''),
-                                               names.get(slug, slug)),
+            # The town's listing title first, where it names another body; then the
+            # agenda's own notice, for a sub-committee filed under its parent.
+            'body_as_printed': (body_from_title((d.get('titles') or {}).get('agenda')
+                                                or (d.get('titles') or {}).get('minutes', ''),
+                                                names.get(slug, slug), homes)
+                                or body_as_printed(d['paths'].get('agenda', ''),
+                                                   names.get(slug, slug))),
             'agenda_path': d['paths'].get('agenda', ''), 'agenda_url': d['urls'].get('agenda', ''), 'agenda_first_seen': ea.get('first_seen', ''),
             'minutes_path': d['paths'].get('minutes', ''), 'minutes_url': d['urls'].get('minutes', ''), 'minutes_first_seen': em.get('first_seen', ''),
             'minutes_lag_upper_bound': em.get('days_after_meeting_upper_bound', ''), 'minutes_ocr': d['ocr'],

@@ -110,6 +110,18 @@ export function whenPhrase(date: string, now: Date = new Date()): string {
  *  error rather than as emphasis. The board's own name stays available as `board` for the
  *  link and the grouping; only the label changes.
  */
+/** Is this the board's OWN meeting -- the board itself, or a sub-committee of it -- rather
+ *  than another body the town filed in its folder? TJ, 13 October 2026: the AgendaCenter
+ *  listed "School Advisory Council LMS" and "School Advisory Council LHS" under School
+ *  Committee, and the budget boards' strip announced both as School Committee meetings. A
+ *  principals' advisory council is not the board that votes the budget. A printed name
+ *  that contains the board's own name is the board or a sub-committee of it, and stays. */
+export function isBoardsOwn(board: string, printed?: string | null): boolean {
+  if (!printed) return true
+  const n = (s: string) => s.toLowerCase().replace(/[^a-z]/g, '')
+  return n(printed).includes(n(board))
+}
+
 export function meetingBody(board: string, printed?: string | null): string {
   if (!printed) return board
   const t = printed.trim()
