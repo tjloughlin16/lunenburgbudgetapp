@@ -92,7 +92,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { SiteMenu, SiteMap } from './components/SiteMenu'
+import { SiteMenu } from './components/SiteMenu'
 import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
@@ -619,16 +619,10 @@ export default function App() {
               block adds six addresses on top — so the shortest page on the site had the
               longest tail. They stay on every other page, where the reader is inside
               something and a way out is worth the room. */}
-          {/* THE SITE MAP, ON EVERY PAGE INCLUDING THE FRONT. It replaced three links
-              (the walk-through, Sources, Go deeper) and was kept off the front page while
-              the front page's job was one decision between four doors. TJ, 11 October 2026,
-              on the front page: "There are many big hubs and some concepts that are
-              somewhat buried." A FAT FOOTER is where a reader who reached the end looks for
-              what else exists, and the front page is where that matters most. */}
-          <nav aria-label="Everything on this site" className="no-print mb-8 pb-8 border-b"
-            style={{ borderColor: 'var(--grid)' }}>
-            <SiteMap tab={tab} compact />
-          </nav>
+          {/* THE SITE MAP FOOTER IS GONE, from every page. It was added 11 October 2026 so
+              buried hubs could be found from the foot of a page; TJ, 13 October 2026: "That
+              doesnt need to be on every page....we have a menu now". The same map is the
+              header's Menu (SiteMenu.tsx), one tap away on every page. */}
           {tab !== 'home' && (
             <div className="no-print">
               <DataFooter />
