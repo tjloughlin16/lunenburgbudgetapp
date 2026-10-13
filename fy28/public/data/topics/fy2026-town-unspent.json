@@ -1,0 +1,404 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$858,462",
+     "unit": "",
+     "value": 858461.53
+    },
+    "m": {
+     "text": "18",
+     "unit": "",
+     "value": 18
+    },
+    "n": {
+     "text": "220",
+     "unit": "",
+     "value": 220
+    },
+    "o": {
+     "text": "$421,307",
+     "unit": "",
+     "value": 421307.31
+    },
+    "u": {
+     "text": "$1,279,769",
+     "unit": "",
+     "value": 1279768.6
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "t-rev",
+    "t-paid",
+    "t-enc",
+    "t-left",
+    "t-over",
+    "t-n"
+   ],
+   "text": "In June the town stood $858,462 under budget: $1,279,769 under on 220 accounts, $421,307 over on 18."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "18",
+     "unit": "",
+     "value": 18
+    },
+    "b": {
+     "text": "376",
+     "unit": "",
+     "value": 376
+    },
+    "c": {
+     "text": "56",
+     "unit": "",
+     "value": 56
+    },
+    "d": {
+     "text": "258",
+     "unit": "",
+     "value": 258
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Tighter school budgets, readier town transfers, and different coding all fit; nothing here separates them."
+    }
+   ],
+   "rests_on": [
+    "t-over",
+    "t-n",
+    "s-over"
+   ],
+   "text": "18 of 376 town accounts were over in June; 56 of 258 school accounts were."
+  },
+  {
+   "figures": {
+    "e": {
+     "text": "$3,321,257",
+     "unit": "",
+     "value": 3321257.32
+    },
+    "o": {
+     "text": "$1,285,000",
+     "unit": "",
+     "value": 1285000.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the FY2026 Town Meeting votes funding the capital and stabilization transfers",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "The ledger records that these budgets grew, not what vote funded the growth."
+    }
+   ],
+   "rests_on": [
+    "tr-o",
+    "tr-e"
+   ],
+   "text": "Two transfer accounts voted $1,285,000 moved $3,321,257 to capital and stabilization funds."
+  },
+  {
+   "figures": {
+    "c": {
+     "text": "$1,141,003",
+     "unit": "",
+     "value": 1141003.33
+    },
+    "e": {
+     "text": "$282,542",
+     "unit": "",
+     "value": 282541.8
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "t-enc",
+    "t-ceil",
+    "p13"
+   ],
+   "text": "$282,542 was still committed in June; released in full, the figure reaches $1,141,003."
+  }
+ ],
+ "facts": [
+  {
+   "id": "t-rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "12"
+    ],
+    "text": "town budget after transfers, FY2026, period 12"
+   },
+   "value": {
+    "text": "$27,647,670",
+    "unit": "",
+    "value": 27647669.87
+   }
+  },
+  {
+   "id": "t-paid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paid by June"
+   },
+   "value": {
+    "text": "$26,506,667",
+    "unit": "",
+    "value": 26506666.54
+   }
+  },
+  {
+   "id": "t-enc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "still committed in June"
+   },
+   "value": {
+    "text": "$282,542",
+    "unit": "",
+    "value": 282541.8
+   }
+  },
+  {
+   "id": "t-left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left unspent in June"
+   },
+   "value": {
+    "text": "$858,462",
+    "unit": "",
+    "value": 858461.53
+   }
+  },
+  {
+   "id": "t-ceil",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left if every open order is released (our sum)"
+   },
+   "value": {
+    "text": "$1,141,003",
+    "unit": "",
+    "value": 1141003.33
+   }
+  },
+  {
+   "id": "t-n",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "d": {
+      "text": "67",
+      "unit": "",
+      "value": 67
+     }
+    },
+    "literals": [],
+    "text": "town accounts, across 67 departments"
+   },
+   "value": {
+    "text": "376",
+    "unit": "accounts",
+    "value": 376
+   }
+  },
+  {
+   "id": "t-over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "town accounts over budget in June"
+   },
+   "value": {
+    "text": "18",
+    "unit": "accounts",
+    "value": 18
+   }
+  },
+  {
+   "id": "s-over",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "258",
+      "unit": "",
+      "value": 258
+     }
+    },
+    "literals": [],
+    "text": "school accounts over in June, of 258"
+   },
+   "value": {
+    "text": "56",
+    "unit": "accounts",
+    "value": 56
+   }
+  },
+  {
+   "id": "tr-o",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "voted for transfers to capital and stabilization"
+   },
+   "value": {
+    "text": "$1,285,000",
+    "unit": "",
+    "value": 1285000.0
+   }
+  },
+  {
+   "id": "tr-e",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "moved to capital and stabilization by June"
+   },
+   "value": {
+    "text": "$3,321,257",
+    "unit": "",
+    "value": 3321257.32
+   }
+  },
+  {
+   "closes": "the town general fund’s FY2026 period-13 budget report",
+   "id": "p13",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "13"
+    ],
+    "text": "the town general fund at the close (period 13)"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$858,462",
+    "unit": "",
+    "value": 858461.53
+   },
+   "r": {
+    "text": "$27,647,670",
+    "unit": "",
+    "value": 27647669.87
+   }
+  },
+  "literals": [],
+  "text": "In June, before the close, town departments stood $858,462 under a $27,647,670 budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-town-unspent",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-town-unspent",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-ledger.csv",
+   "label": "Lunenburg Budget Project — munis-ledger.csv (the period-12 general fund report, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "The town general fund, FY2026, as of June",
+  "views": [
+   {
+    "columns": [
+     "Town departments"
+    ],
+    "key": "town",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "67 departments, period 12",
+    "note": "MUNIS year-to-date report run 1 September 2026, every general fund department except the schools (300 and 301). Zero-balance accounts were suppressed. Books still open.",
+    "rows": [
+     {
+      "cells": [
+       "$24,902,491.10"
+      ],
+      "label": "Voted"
+     },
+     {
+      "cells": [
+       "$2,745,178.77"
+      ],
+      "label": "Moved by transfer, net"
+     },
+     {
+      "cells": [
+       "$27,647,669.87"
+      ],
+      "label": "Budget after transfers"
+     },
+     {
+      "cells": [
+       "$26,506,666.54"
+      ],
+      "label": "Paid"
+     },
+     {
+      "cells": [
+       "$282,541.80"
+      ],
+      "label": "Still committed"
+     },
+     {
+      "cells": [
+       "$858,461.53"
+      ],
+      "label": "Left unspent"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Town unspent balance"
+}

@@ -1,0 +1,447 @@
+{
+ "category": "fy2026-closeout",
+ "chart": {
+  "id": "fy26-school-surplus-causes",
+  "source": "/data/fy26-school-surplus.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$482,118",
+     "unit": "",
+     "value": 482118.07
+    },
+    "o": {
+     "text": "$1,201,434",
+     "unit": "",
+     "value": 1201433.81
+    },
+    "u": {
+     "text": "$1,683,552",
+     "unit": "",
+     "value": 1683551.88
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "under",
+    "over",
+    "paras"
+   ],
+   "text": "The $482,118 is a net: $1,683,552 left on some accounts, $1,201,434 spent past others."
+  },
+  {
+   "figures": {
+    "b": {
+     "text": "28.4%",
+     "unit": "",
+     "value": 28.4
+    },
+    "t": {
+     "text": "1.5%",
+     "unit": "",
+     "value": 1.5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bldg",
+    "bldg-pct",
+    "teach",
+    "teach-pct",
+    "couns"
+   ],
+   "text": "Building upkeep left the most, 28.4% of its budget; teachers left 1.5% of theirs."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "58.9%",
+     "unit": "",
+     "value": 58.9
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A hold on purchasing fits. So do orders slipping past year end, lines budgeted high, and other funds paying. The ledger cannot tell them apart."
+    },
+    {
+     "closes": "a statement by the district of which FY2026 purchases it held back, and when",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "Which lines count as discretionary is our judgement, not the district’s."
+    }
+   ],
+   "rests_on": [
+    "disc",
+    "disc-pct",
+    "why"
+   ],
+   "text": "By our grouping, 58.9% of the surplus sat in lines a decision to buy less moves."
+  }
+ ],
+ "facts": [
+  {
+   "id": "under",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on accounts that came in under"
+   },
+   "value": {
+    "text": "$1,683,552",
+    "unit": "",
+    "value": 1683551.88
+   }
+  },
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "spent past budget on the accounts that went over"
+   },
+   "value": {
+    "text": "$1,201,434",
+    "unit": "",
+    "value": 1201433.81
+   }
+  },
+  {
+   "id": "bldg",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on building and grounds upkeep"
+   },
+   "value": {
+    "text": "$195,934",
+    "unit": "",
+    "value": 195934.2
+   }
+  },
+  {
+   "id": "bldg-pct",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the upkeep budget left"
+   },
+   "value": {
+    "text": "28.4%",
+    "unit": "",
+    "value": 28.4
+   }
+  },
+  {
+   "id": "couns",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on counselors and psychologists, net"
+   },
+   "value": {
+    "text": "$191,162",
+    "unit": "",
+    "value": 191162.4
+   }
+  },
+  {
+   "id": "teach",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on teachers and substitutes, net"
+   },
+   "value": {
+    "text": "$167,992",
+    "unit": "",
+    "value": 167992.45
+   }
+  },
+  {
+   "id": "teach-pct",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the teacher budget left"
+   },
+   "value": {
+    "text": "1.5%",
+    "unit": "",
+    "value": 1.5
+   }
+  },
+  {
+   "id": "paras",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paraprofessionals, net (over budget)"
+   },
+   "value": {
+    "text": "-$208,082",
+    "unit": "",
+    "value": -208081.73
+   }
+  },
+  {
+   "id": "disc",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left in supplies, upkeep, equipment (our grouping)"
+   },
+   "value": {
+    "text": "$283,991",
+    "unit": "",
+    "value": 283991.32
+   }
+  },
+  {
+   "id": "disc-pct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the surplus in those lines (our grouping)"
+   },
+   "value": {
+    "text": "58.9%",
+    "unit": "",
+    "value": 58.9
+   }
+  },
+  {
+   "closes": "the school general fund journal by month, from the Town Accountant",
+   "id": "why",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what any dollar was bought, or when"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   },
+   "o": {
+    "text": "$1,201,434",
+    "unit": "",
+    "value": 1201433.81
+   },
+   "u": {
+    "text": "$1,683,552",
+    "unit": "",
+    "value": 1683551.88
+   }
+  },
+  "literals": [],
+  "text": "Accounts under budget left $1,683,552 and accounts over used $1,201,434 of it; the net is $482,118."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-surplus-by-category",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-surplus-by-category",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Where the FY2026 school surplus was left, by category",
+  "views": [
+   {
+    "columns": [
+     "Budget after transfers",
+     "Paid",
+     "Still committed",
+     "Left"
+    ],
+    "key": "categories",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Department 300, period 13",
+    "note": "Every account is placed in one category by its DESE function and object code. The categories are ours; the figures are the ledger’s.",
+    "rows": [
+     {
+      "cells": [
+       "$690,983",
+       "$476,979",
+       "$18,070",
+       "$195,934"
+      ],
+      "label": "Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$1,056,014",
+       "$864,852",
+       "$0",
+       "$191,162"
+      ],
+      "label": "Counselors & psychologists"
+     },
+     {
+      "cells": [
+       "$11,009,404",
+       "$10,841,411",
+       "$0",
+       "$167,992"
+      ],
+      "label": "Teachers & substitutes"
+     },
+     {
+      "cells": [
+       "$3,752,258",
+       "$3,645,255",
+       "$0",
+       "$107,003"
+      ],
+      "label": "Health insurance & benefits"
+     },
+     {
+      "cells": [
+       "$748,601",
+       "$606,165",
+       "$46,073",
+       "$96,363"
+      ],
+      "label": "Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$1,291,293",
+       "$1,144,063",
+       "$58,708",
+       "$88,522"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$664,889",
+       "$639,190",
+       "$0",
+       "$25,700"
+      ],
+      "label": "Nurses, coaches & other staff"
+     },
+     {
+      "cells": [
+       "$778,560",
+       "$767,208",
+       "$0",
+       "$11,352"
+      ],
+      "label": "Custodians"
+     },
+     {
+      "cells": [
+       "$2,194,387",
+       "$2,190,300",
+       "$0",
+       "$4,087"
+      ],
+      "label": "Administrators & office staff"
+     },
+     {
+      "cells": [
+       "$493,854",
+       "$496,723",
+       "$5,437",
+       "-$8,305"
+      ],
+      "label": "Equipment & technology"
+     },
+     {
+      "cells": [
+       "$565,980",
+       "$499,743",
+       "$88,029",
+       "-$21,792"
+      ],
+      "label": "Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$1,542,235",
+       "$1,596,525",
+       "$13,265",
+       "-$67,555"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$126,658",
+       "$219,734",
+       "$7,186",
+       "-$100,262"
+      ],
+      "label": "Special-ed contracted services"
+     },
+     {
+      "cells": [
+       "$1,417,449",
+       "$1,625,531",
+       "$0",
+       "-$208,082"
+      ],
+      "label": "Paraprofessionals"
+     },
+     {
+      "cells": [
+       "$26,332,564",
+       "$25,613,679",
+       "$236,767",
+       "$482,118"
+      ],
+      "label": "All categories"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Surplus by category"
+}

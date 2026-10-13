@@ -1,0 +1,432 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "i": {
+     "text": "$394,929",
+     "unit": "",
+     "value": 394928.82
+    },
+    "n": {
+     "text": "$85,090",
+     "unit": "",
+     "value": 85090.24
+    },
+    "o": {
+     "text": "$309,839",
+     "unit": "",
+     "value": 309838.58
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the FY2026 transfer schedule by account, with the counterparty and the vote for each",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "The ledger is net per account and names no counterparty, so it cannot say which transfer was which."
+    }
+   ],
+   "rests_on": [
+    "in",
+    "out",
+    "net",
+    "counterparty"
+   ],
+   "text": "Transfers moved $394,929 in and $309,839 out; the department ended $85,090 up, net."
+  },
+  {
+   "figures": {
+    "j": {
+     "text": "$148,364.31",
+     "unit": "",
+     "value": 148364.31
+    }
+   },
+   "literals": [
+    "29 July"
+   ],
+   "rests_on": [
+    "july"
+   ],
+   "text": "The 29 July minutes itemise ten transfers totalling $148,364.31, account by account."
+  },
+  {
+   "figures": {
+    "i": {
+     "text": "$117,626",
+     "unit": "",
+     "value": 117626.28
+    },
+    "l": {
+     "text": "$223,361",
+     "unit": "",
+     "value": 223360.98
+    },
+    "n": {
+     "text": "20",
+     "unit": "",
+     "value": 20
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "given-n",
+    "given-in",
+    "given-left"
+   ],
+   "text": "20 accounts were given $117,626 by transfer and still closed with $223,361 left."
+  },
+  {
+   "figures": {
+    "i": {
+     "text": "$13,500",
+     "unit": "",
+     "value": 13500.0
+    },
+    "l": {
+     "text": "$13,689",
+     "unit": "",
+     "value": 13689.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the superintendent search invoice and the entry that paid it",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whatever paid the search invoice, this line shows no payment of it. Nothing held reconciles the two."
+    }
+   ],
+   "rests_on": [
+    "dues-in",
+    "dues-left"
+   ],
+   "text": "School Committee dues got $13,500, minuted as for a search invoice, and closed with $13,689 left."
+  }
+ ],
+ "facts": [
+  {
+   "id": "in",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "moved into school accounts, FY2026"
+   },
+   "value": {
+    "text": "$394,929",
+    "unit": "",
+    "value": 394928.82
+   }
+  },
+  {
+   "id": "out",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "moved out of school accounts"
+   },
+   "value": {
+    "text": "$309,839",
+    "unit": "",
+    "value": 309838.58
+   }
+  },
+  {
+   "id": "net",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "net into the school department"
+   },
+   "value": {
+    "text": "$85,090",
+    "unit": "",
+    "value": 85090.24
+   }
+  },
+  {
+   "id": "july",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "29 July"
+    ],
+    "text": "ten transfers itemised in the 29 July minutes"
+   },
+   "value": {
+    "text": "$148,364.31",
+    "unit": "",
+    "value": 148364.31
+   }
+  },
+  {
+   "id": "given-n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "accounts given money that then ended under"
+   },
+   "value": {
+    "text": "20",
+    "unit": "accounts",
+    "value": 20
+   }
+  },
+  {
+   "id": "given-in",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what those accounts were given, net"
+   },
+   "value": {
+    "text": "$117,626",
+    "unit": "",
+    "value": 117626.28
+   }
+  },
+  {
+   "id": "given-left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what they still had left at the close"
+   },
+   "value": {
+    "text": "$223,361",
+    "unit": "",
+    "value": 223360.98
+   }
+  },
+  {
+   "id": "dues-in",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "moved into School Committee dues"
+   },
+   "value": {
+    "text": "$13,500",
+    "unit": "",
+    "value": 13500.0
+   }
+  },
+  {
+   "id": "dues-left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on that line at the close"
+   },
+   "value": {
+    "text": "$13,689",
+    "unit": "",
+    "value": 13689.0
+   }
+  },
+  {
+   "closes": "the FY2026 transfer schedule by account, with the counterparty and the vote for each",
+   "id": "counterparty",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "where the net came from, and by whose vote"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "i": {
+    "text": "$394,929",
+    "unit": "",
+    "value": 394928.82
+   },
+   "n": {
+    "text": "$85,090",
+    "unit": "",
+    "value": 85090.24
+   },
+   "o": {
+    "text": "$309,839",
+    "unit": "",
+    "value": 309838.58
+   }
+  },
+  "literals": [],
+  "text": "Transfers moved $394,929 into school accounts and $309,839 out; the department ended $85,090 up, net."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-school-transfers",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-school-transfers",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-07-29",
+   "href": "/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt",
+   "label": "School Committee minutes, 2026-07-29",
+   "quote": "a series of year-end line-item transfers needed to cover overages within the FY26 budget"
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-07-29",
+   "href": "/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt",
+   "label": "School Committee minutes, 2026-07-29",
+   "quote": "additional year-end transfers may still be forthcoming"
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-11-05",
+   "href": "/docs/minutes/text/school-committee/2025-11-05-minutes-7496.txt",
+   "label": "School Committee minutes, 2025-11-05",
+   "quote": "transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice"
+  }
+ ],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "label": "Lunenburg School Committee — 2026-07-29-minutes-7930.pdf"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2025-11-05-minutes-7496.docx",
+   "label": "Lunenburg School Committee — 2025-11-05-minutes-7496.docx"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Accounts given money in FY2026 that closed with money left",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Moved in, net",
+     "Paid",
+     "Left"
+    ],
+    "key": "given",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Department 300, period 13",
+    "note": "The eight largest of the accounts by what was left. Left is budget less paid less still committed.",
+    "rows": [
+     {
+      "cells": [
+       "$257,000",
+       "$31,291",
+       "$203,783",
+       "$75,660"
+      ],
+      "label": "Contracted services"
+     },
+     {
+      "cells": [
+       "$6,500",
+       "$13,500",
+       "$6,311",
+       "$13,689"
+      ],
+      "label": "Dues/meetings"
+     },
+     {
+      "cells": [
+       "$145,000",
+       "$11,024",
+       "$92,495",
+       "$45,560"
+      ],
+      "label": "Heating charges/natural gas"
+     },
+     {
+      "cells": [
+       "$0",
+       "$29,965",
+       "$21,481",
+       "$8,484"
+      ],
+      "label": "Dues and fees"
+     },
+     {
+      "cells": [
+       "$21,730",
+       "$16,598",
+       "$34,336",
+       "$3,992"
+      ],
+      "label": "Contracted services"
+     },
+     {
+      "cells": [
+       "$1,500",
+       "$3,655",
+       "$490",
+       "$4,515"
+      ],
+      "label": "General supplies"
+     },
+     {
+      "cells": [
+       "$15,500",
+       "$2,893",
+       "$10,697",
+       "$7,696"
+      ],
+      "label": "E.s. sped substitutes"
+     },
+     {
+      "cells": [
+       "$6,000",
+       "$1,708",
+       "$6,391",
+       "$1,317"
+      ],
+      "label": "New equipment"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Year-end transfers"
+}

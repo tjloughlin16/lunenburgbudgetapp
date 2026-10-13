@@ -1,0 +1,440 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,870,612",
+     "unit": "",
+     "value": 1870612.0
+    },
+    "b": {
+     "text": "$3,354,370",
+     "unit": "",
+     "value": 3354370.0
+    },
+    "y": {
+     "text": "2023",
+     "unit": "certification year",
+     "value": 2023
+    },
+    "z": {
+     "text": "2025",
+     "unit": "certification year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cert23",
+    "cert24",
+    "cert25"
+   ],
+   "text": "Free cash fell to $1,870,612 in July 2023 and has risen each year since, to $3,354,370 in July 2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,354,370",
+     "unit": "",
+     "value": 3354370.0
+    },
+    "b": {
+     "text": "$3,716,282",
+     "unit": "",
+     "value": 3716282.0
+    },
+    "c": {
+     "text": "$4,236,488",
+     "unit": "",
+     "value": 4236488.24
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DLS’s certification letter to the Town",
+     "figures": {
+      "m": {
+       "text": "45",
+       "unit": "",
+       "value": 45
+      },
+      "n": {
+       "text": "45",
+       "unit": "",
+       "value": 45
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The certified figure differs from the identified one in 45 of 45 town-years of the proof, and the workbook prints no line reconciling them."
+    }
+   ],
+   "rests_on": [
+    "cert25",
+    "ident25",
+    "ufb25",
+    "why-differ"
+   ],
+   "text": "One close, three published figures: $3,354,370 certified, $3,716,282 identified, $4,236,488 undesignated."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "1 July"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Checked, not assumed: each of the Town’s fiscal-year figures equals the state’s certification for the year before, in all five years the two share."
+    }
+   ],
+   "rests_on": [
+    "cert25",
+    "fs16"
+   ],
+   "text": "The state labels free cash by its 1 July balance; the Town by the year it can be spent, one later."
+  }
+ ],
+ "facts": [
+  {
+   "id": "cert25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2025"
+    ],
+    "text": "free cash certified as of 1 July 2025 (state)"
+   },
+   "value": {
+    "text": "$3,354,370",
+    "unit": "",
+    "value": 3354370.0
+   }
+  },
+  {
+   "id": "cert24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2024"
+    ],
+    "text": "certified as of 1 July 2024"
+   },
+   "value": {
+    "text": "$2,270,060",
+    "unit": "",
+    "value": 2270060.0
+   }
+  },
+  {
+   "id": "cert23",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2023"
+    ],
+    "text": "as of 1 July 2023, the low of five years"
+   },
+   "value": {
+    "text": "$1,870,612",
+    "unit": "",
+    "value": 1870612.0
+   }
+  },
+  {
+   "id": "fs16",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [],
+    "text": "certified for FY2016, the Town’s fact sheet"
+   },
+   "value": {
+    "text": "$263,188",
+    "unit": "",
+    "value": 263188.0
+   }
+  },
+  {
+   "id": "ident25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "July 2025"
+    ],
+    "text": "free cash the same proof identifies, July 2025"
+   },
+   "value": {
+    "text": "$3,716,282",
+    "unit": "",
+    "value": 3716282.0
+   }
+  },
+  {
+   "id": "ufb25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30 June 2025"
+    ],
+    "text": "the Town’s own undesignated fund balance, 30 June 2025"
+   },
+   "value": {
+    "text": "$4,236,488",
+    "unit": "",
+    "value": 4236488.24
+   }
+  },
+  {
+   "closes": "DLS’s free cash certification letter to the Town, stating its adjustments to the submitted balance sheet",
+   "id": "why-differ",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why the state certifies less than it identifies"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$3,354,370",
+    "unit": "",
+    "value": 3354370.0
+   }
+  },
+  "literals": [
+   "1 July 2025"
+  ],
+  "text": "The state certified $3,354,370 of free cash as of 1 July 2025, the most in any year the Town’s records list."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "free-cash-balance",
+ "kind": "topic",
+ "path": "/town-reserves/free-cash-balance",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-09-03",
+   "href": "/docs/minutes/text/school-committee/2025-09-03-minutes-7385.txt",
+   "label": "School Committee minutes, 2025-09-03",
+   "quote": "With respect to the unspent money, the money is not lost. The money is still there, it is free cash and it is going to roll over. It is going to be appropriated in one fashion or another."
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "label": "Massachusetts Division of Local Services, Free Cash Proof — free-cash-proof-lunenburg.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "label": "Town of Lunenburg — Free Cash Fact Sheet, FY27 warrant — free-cash-fact-sheet.docx"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/free-cash-proof.csv",
+   "label": "Lunenburg Budget Project — free-cash-proof.csv (the DLS proof, line by line, nine towns)"
+  },
+  {
+   "href": "/docs/data/free-cash-history-fincom.csv",
+   "label": "Lunenburg Budget Project — free-cash-history-fincom.csv (the Town’s free cash history table)"
+  }
+ ],
+ "table": {
+  "caption": "Certified free cash, two publishers",
+  "views": [
+   {
+    "columns": [
+     "Identified",
+     "Certified",
+     "Spent in"
+    ],
+    "key": "dls",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The state’s proof",
+    "note": "Division of Local Services free cash proof, labelled by the year of the 1 July balance it certifies. Spent in is the Town’s label for the same money.",
+    "rows": [
+     {
+      "cells": [
+       "$3,716,282",
+       "$3,354,370",
+       "FY2026"
+      ],
+      "label": "2025"
+     },
+     {
+      "cells": [
+       "$2,032,579",
+       "$2,270,060",
+       "FY2025"
+      ],
+      "label": "2024"
+     },
+     {
+      "cells": [
+       "$1,923,784",
+       "$1,870,612",
+       "FY2024"
+      ],
+      "label": "2023"
+     },
+     {
+      "cells": [
+       "$3,155,919",
+       "$2,923,290",
+       "FY2023"
+      ],
+      "label": "2022"
+     },
+     {
+      "cells": [
+       "$2,687,134",
+       "$2,666,962",
+       "FY2022"
+      ],
+      "label": "2021"
+     }
+    ],
+    "total_col": 1
+   },
+   {
+    "columns": [
+     "Certified",
+     "Operating budget it divides by",
+     "Share"
+    ],
+    "key": "sheet",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "The Town’s fact sheet",
+    "note": "The Free Cash Fact Sheet in the FY27 warrant packet, by the fiscal year the money can be spent in. Its figures equal the state’s proof, one year apart, wherever the two overlap.",
+    "rows": [
+     {
+      "cells": [
+       "$3,354,370",
+       "$50,420,663",
+       "6.65%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$2,270,060",
+       "$49,661,935",
+       "4.57%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$1,870,612",
+       "$47,551,576",
+       "3.93%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$2,923,290",
+       "$44,742,766",
+       "6.53%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,666,962",
+       "$42,743,616",
+       "6.24%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$1,804,185",
+       "$42,520,507",
+       "4.24%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$1,107,694",
+       "$40,482,685",
+       "2.74%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$1,512,483",
+       "$39,300,938",
+       "3.85%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$818,886",
+       "$36,762,549",
+       "2.23%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$888,944",
+       "$34,948,060",
+       "2.54%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$263,188",
+       "$32,452,875",
+       "0.81%"
+      ],
+      "label": "FY2016"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Free cash balance"
+}

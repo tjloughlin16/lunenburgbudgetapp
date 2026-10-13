@@ -1,0 +1,351 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "b": {
+     "text": "$98,784",
+     "unit": "",
+     "value": 98784.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the position-control roster by month, and payroll by account",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A line paying nothing fits a vacancy, a leave, a person paid from another account, or a coding change. The ledger shows dollars."
+    }
+   ],
+   "rests_on": [
+    "z-b",
+    "z-p",
+    "post"
+   ],
+   "text": "One of four psychologist lines, $98,784 budgeted, paid nothing all year."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "full"
+   ],
+   "text": "The other 3 psychologist lines paid their budgets in full or slightly over."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$102,227",
+     "unit": "",
+     "value": 102227.0
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "z-27"
+   ],
+   "text": "FY2027 budgets the same line at $102,227."
+  },
+  {
+   "figures": {
+    "c": {
+     "text": "$191,162",
+     "unit": "",
+     "value": 191162.4
+    },
+    "p": {
+     "text": "$208,082",
+     "unit": "",
+     "value": 208081.73
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That one paid for the other is a hypothesis. Late hires, contract steps and hours fit the same two numbers, and no headcount is published."
+    }
+   ],
+   "rests_on": [
+    "couns",
+    "paras",
+    "soc"
+   ],
+   "text": "Counselor and psychologist lines left $191,162 while paraprofessionals ran $208,082 over."
+  }
+ ],
+ "facts": [
+  {
+   "id": "z-b",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "S2072061"
+    ],
+    "text": "psychologist account S2072061, budget, FY2026"
+   },
+   "value": {
+    "text": "$98,784",
+    "unit": "",
+    "value": 98784.0
+   }
+  },
+  {
+   "id": "z-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paid on it all year"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "full",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "other psychologist lines paid in full or over"
+   },
+   "value": {
+    "text": "3",
+    "unit": "accounts",
+    "value": 3
+   }
+  },
+  {
+   "id": "z-27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the same line, FY2027 budget (district workbook)"
+   },
+   "value": {
+    "text": "$102,227",
+    "unit": "",
+    "value": 102227.0
+   }
+  },
+  {
+   "id": "soc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on the four social worker lines"
+   },
+   "value": {
+    "text": "$99,060",
+    "unit": "",
+    "value": 99060.26
+   }
+  },
+  {
+   "id": "couns",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on counselors and psychologists, net"
+   },
+   "value": {
+    "text": "$191,162",
+    "unit": "",
+    "value": 191162.4
+   }
+  },
+  {
+   "id": "paras",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paraprofessionals over budget, net, same year"
+   },
+   "value": {
+    "text": "$208,082",
+    "unit": "",
+    "value": 208081.73
+   }
+  },
+  {
+   "closes": "the position-control roster by month, and payroll by account",
+   "id": "post",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether the post was vacant, on leave, or paid elsewhere"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "b": {
+    "text": "$98,784",
+    "unit": "",
+    "value": 98784.0
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "One of four school psychologist accounts, $98,784 budgeted, paid nothing in FY2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-psychologist-line",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-psychologist-line",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
+  }
+ ],
+ "table": {
+  "caption": "Psychologist and social worker accounts, FY2026",
+  "views": [
+   {
+    "columns": [
+     "Budget",
+     "Paid",
+     "Left"
+    ],
+    "key": "support",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Objects 511023 and 511024, period 13",
+    "note": "One account per building. None received a transfer in.",
+    "rows": [
+     {
+      "cells": [
+       "$98,784",
+       "$101,510",
+       "-$2,726"
+      ],
+      "label": "Psychologists salaries (S2044061)"
+     },
+     {
+      "cells": [
+       "$45,106",
+       "$45,306",
+       "-$200"
+      ],
+      "label": "Psychologists salaries (S2055061)"
+     },
+     {
+      "cells": [
+       "$45,106",
+       "$45,306",
+       "-$200"
+      ],
+      "label": "Psychologists salaries (S2066061)"
+     },
+     {
+      "cells": [
+       "$98,784",
+       "$0",
+       "$98,784"
+      ],
+      "label": "Psychologists salaries (S2072061)"
+     },
+     {
+      "cells": [
+       "$92,939",
+       "$92,939",
+       "$0"
+      ],
+      "label": "Social workers salaries (S2044651)"
+     },
+     {
+      "cells": [
+       "$92,939",
+       "$63,214",
+       "$29,725"
+      ],
+      "label": "Social workers salaries (S2055651)"
+     },
+     {
+      "cells": [
+       "$90,212",
+       "$20,877",
+       "$69,335"
+      ],
+      "label": "Social workers salaries (S2066651)"
+     },
+     {
+      "cells": [
+       "$92,939",
+       "$92,939",
+       "$0"
+      ],
+      "label": "Social workers salaries (S2072651)"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Psychologist line"
+}

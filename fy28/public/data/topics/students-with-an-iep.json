@@ -1,0 +1,451 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "258",
+     "unit": "",
+     "value": 258
+    },
+    "b": {
+     "text": "227",
+     "unit": "",
+     "value": 227
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "swd1",
+    "swd0",
+    "enr1",
+    "enr0"
+   ],
+   "text": "258 children had a plan in FY2026 against 227 in FY2022, while enrolment fell."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "14.1%",
+     "unit": "",
+     "value": 14.12
+    },
+    "b": {
+     "text": "16.3%",
+     "unit": "",
+     "value": 16.32
+    },
+    "c": {
+     "text": "16.0%",
+     "unit": "",
+     "value": 16.044776119402986
+    },
+    "y": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "share0",
+    "share1",
+    "held"
+   ],
+   "text": "The share rose from 14.1% to 16.3%; at FY2022 enrolment it would read 16.0%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "248",
+     "unit": "",
+     "value": 248
+    },
+    "b": {
+     "text": "222",
+     "unit": "",
+     "value": 222
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s SIMS submission detail for Lunenburg, stating the census date and inclusion rule behind each count",
+     "figures": {
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "z": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The movement file’s FY2025 row repeats FY2024’s exactly, and neither file states its census date or who it includes."
+    }
+   ],
+   "rests_on": [
+    "prog25",
+    "mov25"
+   ],
+   "text": "Two DESE files count 248 and 222 children with a plan for FY2025."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "swd1",
+    "need-gap"
+   ],
+   "text": "A count of children with a plan is not established to be a measure of need."
+  }
+ ],
+ "facts": [
+  {
+   "id": "swd1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "with a plan, FY2026"
+   },
+   "value": {
+    "text": "258",
+    "unit": "children",
+    "value": 258
+   }
+  },
+  {
+   "id": "share1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of enrolment, FY2026"
+   },
+   "value": {
+    "text": "16.3%",
+    "unit": "",
+    "value": 16.32
+   }
+  },
+  {
+   "id": "swd0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "with a plan, FY2022, the lowest"
+   },
+   "value": {
+    "text": "227",
+    "unit": "children",
+    "value": 227
+   }
+  },
+  {
+   "id": "share0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "of enrolment, FY2022"
+   },
+   "value": {
+    "text": "14.1%",
+    "unit": "",
+    "value": 14.12
+   }
+  },
+  {
+   "id": "enr1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2026"
+   },
+   "value": {
+    "text": "1,581",
+    "unit": "children",
+    "value": 1581
+   }
+  },
+  {
+   "id": "enr0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "enrolled, FY2022"
+   },
+   "value": {
+    "text": "1,608",
+    "unit": "children",
+    "value": 1608
+   }
+  },
+  {
+   "id": "held",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "the FY2026 share at FY2022 enrolment (ours)"
+   },
+   "value": {
+    "text": "16.0%",
+    "unit": "",
+    "value": 16.044776119402986
+   }
+  },
+  {
+   "id": "prog25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "with a plan, FY2025, DESE program file"
+   },
+   "value": {
+    "text": "248",
+    "unit": "children",
+    "value": 248
+   }
+  },
+  {
+   "id": "mov25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "with a plan, FY2025, DESE movement file"
+   },
+   "value": {
+    "text": "222",
+    "unit": "children",
+    "value": 222
+   }
+  },
+  {
+   "closes": "the district’s referral, evaluation and eligibility counts by year",
+   "id": "need-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether more children need services, or more are found"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "n": {
+    "text": "258",
+    "unit": "",
+    "value": 258
+   },
+   "p": {
+    "text": "16.3%",
+    "unit": "",
+    "value": 16.32
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "258 Lunenburg children had a special education plan in FY2026, 16.3% of those enrolled."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "students-with-an-iep",
+ "kind": "topic",
+ "path": "/special-education/students-with-an-iep",
+ "said": [],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-sped-program-characteristics.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-sped-program-characteristics.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-sped-movement.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-sped-movement.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Children with a special education plan, by year",
+  "views": [
+   {
+    "columns": [
+     "Enrolled",
+     "With a plan",
+     "Share",
+     "In district",
+     "Out of district"
+    ],
+    "key": "counts",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "DESE program file",
+    "note": "Children, at DESE’s census date. Not dollars, not staff, not placements.",
+    "rows": [
+     {
+      "cells": [
+       "1,581",
+       "258",
+       "16.3%",
+       "246",
+       "12"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "1,573",
+       "248",
+       "15.8%",
+       "238",
+       "10"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "1,589",
+       "233",
+       "14.7%",
+       "224",
+       "9"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "1,567",
+       "234",
+       "14.9%",
+       "230",
+       "4"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "1,608",
+       "227",
+       "14.1%",
+       "217",
+       "10"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "1,605",
+       "261",
+       "16.3%",
+       "249",
+       "12"
+      ],
+      "label": "FY2021"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Students with an IEP"
+}

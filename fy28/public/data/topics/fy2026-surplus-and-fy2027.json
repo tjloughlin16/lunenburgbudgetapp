@@ -1,0 +1,239 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "g": {
+     "text": "$761,000",
+     "unit": "",
+     "value": 761000.5
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "level",
+    "balanced",
+    "gap"
+   ],
+   "text": "The FY2027 school budget was set $761,000 below level service."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$482,118",
+     "unit": "",
+     "value": 482118.07
+    },
+    "c": {
+     "text": "$718,885",
+     "unit": "",
+     "value": 718885.01
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "left26",
+    "ceiling"
+   ],
+   "text": "FY2026 then closed with $482,118 unspent, $718,885 if every open order is released."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "gap",
+    "left26"
+   ],
+   "text": "The budget was drawn up months before the close; set side by side, neither explains the other."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the state’s FY2026 free cash certification for Lunenburg, and the Town Meeting votes that appropriate it",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "Whether any of it reaches the schools again is a Town Meeting decision, and none is recorded here."
+    }
+   ],
+   "rests_on": [
+    "left26",
+    "free-cash"
+   ],
+   "text": "Unspent school money returns to the town; what is certified as free cash is not yet known."
+  }
+ ],
+ "facts": [
+  {
+   "id": "level",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "FY2027 school budget, level service"
+   },
+   "value": {
+    "text": "$27,333,288",
+    "unit": "",
+    "value": 27333288.0
+   }
+  },
+  {
+   "id": "balanced",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "FY2027 school budget, the no-override budget"
+   },
+   "value": {
+    "text": "$26,572,288",
+    "unit": "",
+    "value": 26572287.5
+   }
+  },
+  {
+   "id": "gap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the difference between the two"
+   },
+   "value": {
+    "text": "$761,000",
+    "unit": "",
+    "value": 761000.5
+   }
+  },
+  {
+   "id": "left26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "left unspent, school general fund, FY2026"
+   },
+   "value": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   }
+  },
+  {
+   "id": "ceiling",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left if every open order is released (our sum)"
+   },
+   "value": {
+    "text": "$718,885",
+    "unit": "",
+    "value": 718885.01
+   }
+  },
+  {
+   "closes": "the state’s FY2026 free cash certification for Lunenburg",
+   "id": "free-cash",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what reaches the town as certified free cash"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   },
+   "g": {
+    "text": "$761,000",
+    "unit": "",
+    "value": 761000.5
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The FY2027 school budget was set $761,000 below level service; FY2026 then closed $482,118 unspent."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-surplus-and-fy2027",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-surplus-and-fy2027",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  }
+ ],
+ "table": null,
+ "title": "Surplus and FY2027 budget"
+}

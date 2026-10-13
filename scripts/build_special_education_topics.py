@@ -1,0 +1,996 @@
+#!/usr/bin/env python3
+"""Special education, split into topic pages: eleven pages and the special education hub.
+
+    python3 scripts/build_special_education_topics.py           # write fy28/public/data/topics/*.json
+    python3 scripts/build_special_education_topics.py --check   # fail if any output would change
+
+WHY THIS EXISTS. scripts/topics.py has the model: one question per page, under five minutes,
+facts first, one to four conclusions resting on them. The special education shelf lists the
+eleven pages this script owns, and special education transportation, which
+build_transportation.py writes and which is listed here without being touched.
+
+IT COMPUTES NOTHING NEW THAT IT CAN READ INSTEAD. Every figure comes from a payload or a
+model already in the repository, and the script refuses to write if two of them stop agreeing
+where they are supposed to:
+
+  fy28/public/data/sped-cost.json            build_special_education.py: out-of-district
+                                             tuition by fund from DESE's End of Year
+                                             Financial Report, and the circuit breaker file.
+  fy28/public/data/special-education-costs.json
+                                             build_sped_costs.py: the voted budget against
+                                             spending at the close, the circuit breaker
+                                             account, per-child divisions (OUR ESTIMATE).
+  fy28/public/data/circuit-breaker.json      build_circuit_breaker.py: DESE's reimbursement
+                                             file, every year, and the neighbouring districts.
+  fy28/public/data/sped-students.json        DESE's counts of children with a plan.
+  fy28/public/data/sped-route.json           the town's 1 March placement counts and DESE's
+                                             placement-trajectory cohorts.
+  fy28/public/data/sped-regulation.json      603 CMR 28.06, parsed from the regulation itself.
+  model/sped.py                              BUDGET COLUMNS ONLY (rule 1): the in-district
+                                             classification (ours), the tuition budgets, the
+                                             paraprofessional and teacher lines.
+
+RULE 1. The budget pages (tuition budget, in-district) read budget columns only. The one page
+that sets a voted budget against spending at the close is the overruns page, where that step
+IS the quantity, as build_sped_costs.py argues; nothing here grows a budget from an actual.
+
+RULE 11. A budget line is the town's net share. The general fund column is called that, never
+"the cost", and the money paid from other funds is shown beside it, never netted.
+
+RULE 13a. Where two published counts or two of our own divisions disagree they are shown side
+by side as separate facts and never averaged.
+"""
+import argparse
+import csv
+import json
+import os
+import statistics
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(ROOT, 'model'))  # after scripts/: model/ has its own conclusions.py
+import conclusions as C  # noqa: E402
+from conclusions import figure  # noqa: E402
+import ladder as LD  # noqa: E402
+import topic as TP  # noqa: E402
+import topics as REG  # noqa: E402
+from brief import step  # noqa: E402
+import sped as SP  # noqa: E402
+
+PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
+OUT_DIR = os.path.join(PUB, 'topics')
+MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
+COSTS = '/data/special-education-costs.json'
+
+MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
+        if home == 'special-education' and gen == 'build_special_education_topics.py']
+
+
+def fail(msg):
+    raise SystemExit('build_special_education_topics: ' + msg)
+
+
+def load(name):
+    return json.load(open(os.path.join(PUB, name), encoding='utf-8'))
+
+
+def said(payload, key, kind='minutes'):
+    """One quotation a payload already verified against our copy of the minutes."""
+    s = next((x for x in payload['said'] if x['key'] == key), None)
+    if s is None:
+        fail('quotation %r is no longer in its payload' % key)
+    if not s['cite'].startswith('/docs/'):
+        fail('quotation %r does not cite our copy' % key)
+    return dict(quote=s['quote'], board=s['board'], date=s['date'], href=s['cite'],
+                label='%s %s, %s' % (s['board'], kind, s['date']))
+
+
+def psrc(payload):
+    """The sources a payload lists, as {filename: source}."""
+    out = {}
+    for s in payload['sources']:
+        href = s.get('docs_url') or s.get('url')
+        name = s.get('filename') or href.split('/')[-1]
+        out[name] = dict(label='%s — %s' % (s.get('publisher') or 'Source', name), href=href)
+    return out
+
+
+def sources():
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+    out = {}
+    for name in ('special-education-costs.json', 'sped-cost.json', 'circuit-breaker.json',
+                 'sped-students.json', 'sped-route.json', 'sped-regulation.json'):
+        out.update(psrc(load(name)))
+    for k, (key, pub) in {
+            'fy27-proposals.xlsx': ('budget-workbooks/fy27-proposals.xlsx',
+                                    'Lunenburg Public Schools'),
+            'paraprofessional-fy26-fy28.pdf': ('contracts/pdf/paraprofessional-fy26-fy28.pdf',
+                                               'Lunenburg Public Schools and AFSCME'),
+            'dese-teacher-contract.pdf': ('contracts/pdf/dese-teacher-contract.pdf',
+                                          'Massachusetts DESE, educator contracts'),
+    }.items():
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        out[k] = dict(label='%s — %s' % (pub, k), href='/docs/' + key)
+    for f, what in (('lps-budget-lines.csv', 'every district budget line, by column'),
+                    ('ood-tuition-history.csv', 'the tuition budgets, year by year'),
+                    ('sped-para-history.csv', 'the paraprofessional budget line, by year'),
+                    ('sped-teacher-history.csv', 'the special education teacher line, by year'),
+                    ('placement-counts.csv', 'the town’s 1 March placement counts')):
+        if not os.path.exists(os.path.join(ROOT, 'fy28', 'public', 'docs', 'data', f)):
+            fail('/docs/data/%s is not published' % f)
+        out[f] = dict(label='Lunenburg Budget Project — %s (%s)' % (f, what),
+                      href='/docs/data/' + f)
+    return out
+
+
+def pct1(a, b):
+    return round(100.0 * a / b, 1)
+
+
+# --------------------------------------------------------------------- the pages
+
+def build():
+    SC = load('special-education-costs.json')
+    CO = load('sped-cost.json')
+    CB = load('circuit-breaker.json')
+    ST = load('sped-students.json')
+    RT = load('sped-route.json')
+    RG = load('sped-regulation.json')
+    src = sources()
+    S = lambda *names: [src[n] for n in names]
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=1: figure(v, C.pct(v, dp))
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    f, con = LD.fact, TP.conclusion
+    out = {}
+
+    # ------------------------------------------------ out-of-district tuition, every fund
+    spend = {r['fy']: r for r in CO['spend']}
+    last = CO['last']
+    if spend[last['fy']] != last or abs(last['gen_fund'] + last['grants'] - last['total']) > 1:
+        fail('sped-cost.json: the last year no longer foots, general fund plus other funds')
+    peak = max(spend.values(), key=lambda r: r['total'])
+    low = min(spend.values(), key=lambda r: r['total'])
+    shi = max(spend.values(), key=lambda r: r['outside_share_pct'])
+    slo = min(spend.values(), key=lambda r: r['outside_share_pct'])
+    if CO['ties_count'] != len(CO['ties_years']):
+        fail('sped-cost.json: ties_count disagrees with ties_years')
+    # FY2024: the state's return and the town's ledger disagree, by exactly the circuit breaker
+    # payment the state lists for that year. Both are shown; neither is chosen.
+    af = {r['fy']: r for r in SC['all_funds']}
+    dese24, munis24 = spend[2024]['total'], af[2024]['all_spent']
+    if round(dese24 - munis24) != round(af[2024]['dese_paid']):
+        fail('FY2024: DESE less the ledger no longer equals the state’s circuit breaker payment')
+    if abs(spend[2025]['total'] - af[2025]['all_spent']) > 2:
+        fail('FY2025: DESE and the ledger no longer agree on tuition, every fund')
+    y25 = last['fy']
+    fx = {}
+    fx['total25'] = f('total25', U(last['total']),
+                      'out-of-district tuition, every fund, %s' % C.fy(y25), 'published',
+                      {'y': F(y25)})
+    fx['gf25'] = f('gf25', U(last['gen_fund']), 'of it from the general fund, %s' % C.fy(y25),
+                   'published', {'y': F(y25)})
+    fx['share25'] = f('share25', P(last['outside_share_pct']),
+                      'of it paid outside the general fund, %s' % C.fy(y25), 'published',
+                      {'y': F(y25)})
+    tuition_table = dict(caption='Out-of-district tuition by fund, by year', views=[dict(
+        key='funds', label='DESE End of Year Financial Report', total_col=2,
+        kinds=['ledger'] * 4,
+        columns=['General fund', 'Grants and revolving funds', 'Every fund',
+                 'Share outside the general fund'],
+        rows=[dict(label=C.fy(r['fy']), cells=[C.usd(r['gen_fund']), C.usd(r['grants']),
+                                                C.usd(r['total']), C.pct(r['outside_share_pct'])])
+              for r in sorted(spend.values(), key=lambda r: -r['fy'])],
+        note='Functions 9300 and 9400 on the district’s statutory return, closed years. The '
+             'general fund column equals the district’s own restated budget figure in most '
+             'years; the other column holds every non-general fund together.')])
+    out['out-of-district-tuition'] = TP.page(
+        'out-of-district-tuition',
+        '%s went to out-of-district tuition in %s; %s of it was paid outside the general fund.'
+        % (C.usd(last['total']), C.fy(y25), C.pct(last['outside_share_pct'])),
+        [fx['total25'], fx['gf25'],
+         f('out25', U(last['grants']), 'of it from grants and revolving funds, %s' % C.fy(y25),
+           'published', {'y': F(y25)}),
+         fx['share25'],
+         f('ties', N(CO['ties_count'], 'years'),
+           'years of %s the district’s restated figure is DESE’s' % C.num(CO['compared_count']),
+           'published', {'n': N(CO['compared_count'])}),
+         f('peak', U(peak['total']), 'every fund, %s, the highest year' % C.fy(peak['fy']),
+           'published', {'y': F(peak['fy'])}),
+         f('low', U(low['total']), 'every fund, %s, the lowest year' % C.fy(low['fy']),
+           'published', {'y': F(low['fy'])}),
+         f('sharehi', P(shi['outside_share_pct']), 'outside the general fund, %s' % C.fy(shi['fy']),
+           'published', {'y': F(shi['fy'])}),
+         f('sharelo', P(slo['outside_share_pct']), 'outside the general fund, %s' % C.fy(slo['fy']),
+           'published', {'y': F(slo['fy'])}),
+         f('dese24', U(dese24), 'every fund, %s, the state’s return' % C.fy(2024), 'published',
+           {'y': F(2024)}),
+         f('munis24', U(munis24), 'every fund, %s, the town’s ledger' % C.fy(2024), 'published',
+           {'y': F(2024)})],
+        [con('The general fund paid %s; another %s came from grants and revolving funds in %s.'
+             % (C.usd(last['gen_fund']), C.usd(last['grants']), C.fy(y25)),
+             ['gf25', 'out25', 'share25', 'ties'],
+             {'a': U(last['gen_fund']), 'b': U(last['grants']), 'y': F(y25)},
+             notes=[step('Which grant or revolving fund paid it is not split in the state’s '
+                         'return, so it is not established that it was the circuit breaker.',
+                         'gap', allow=('Schedule 19',), closes='Schedule 19 of the district’s End of Year Financial '
+                                       'Report as filed, listing each grant and revolving fund')]),
+         con('Every-fund tuition peaked at %s in %s and was %s at its lowest, in %s.'
+             % (C.usd(peak['total']), C.fy(peak['fy']), C.usd(low['total']), C.fy(low['fy'])),
+             ['peak', 'low', 'total25'],
+             {'a': U(peak['total']), 'y': F(peak['fy']), 'b': U(low['total']),
+              'z': F(low['fy'])}),
+         con('The share paid outside the general fund has run from %s to %s across the years.'
+             % (C.pct(slo['outside_share_pct']), C.pct(shi['outside_share_pct'])),
+             ['sharelo', 'sharehi'],
+             {'a': P(slo['outside_share_pct']), 'b': P(shi['outside_share_pct'])}),
+         con('For %s the state’s return says %s and the town’s ledger %s.'
+             % (C.fy(2024), C.usd(dese24), C.usd(munis24)), ['dese24', 'munis24'],
+             {'y': F(2024), 'a': U(dese24), 'b': U(munis24)},
+             notes=[step('The difference is exactly the circuit breaker payment the state lists '
+                         'for %s, %s. Why is not published.'
+                         % (C.fy(2024), C.usd(af[2024]['dese_paid'])), 'gap',
+                         {'y': F(2024), 'p': U(af[2024]['dese_paid'])},
+                         closes='a reconciliation by the district of its End of Year Financial '
+                                'Report to the town’s ledger, fund by fund')])],
+        chart=dict(id='special-education-costs-trend', source=COSTS),
+        table=tuition_table,
+        said=[said(CO, 'skyrocket')],
+        sources=S('district-expenditures-by-function.xlsx', 'glytdbud-expense-fy2026-p13-gf-school.xlsx',
+                  'glytdbud-expense-fy2026-p13-special-school.xlsx'),
+        finding_figures={'a': U(last['total']), 'y': F(y25), 'p': P(last['outside_share_pct'])})
+
+    # ------------------------------------------------ cost per placement (OUR divisions)
+    pc = SC['per_child']
+    placed = {r['fy']: r for r in pc['placed']}
+    recent = pc['placed'][-4:]
+    if round(statistics.median([r['per_child'] for r in recent])) != pc['recent_median']:
+        fail('the per-child median is no longer the median of the last four years')
+    r0, r1 = recent[0]['fy'], recent[-1]['fy']
+    cbl = CB['series'][-1]
+    if round(cbl['eligible'] / cbl['children']) != round(cbl['per_child']):
+        fail('circuit-breaker.json: per_child is no longer eligible over children claimed')
+    np_med = SC['request']['nonpublic_median']
+    bt = SC['request']['by_type']
+    # NO DIVISIONS. The first draft of this page divided tuition by a headcount and published
+    # the quotient as "our estimate" of a placement's price. CLAUDE.md rule 7: "Dollars are not
+    # students... If the actual quantity is not published, the honest sentence is that we
+    # cannot say -- not a number inferred from something adjacent to it." So the page states
+    # the two published quantities and why they do not divide into a price. (The reserve
+    # model's own per-child median is a modelling input, documented with the model.)
+    p25 = placed[2025]
+    out['cost-per-placement'] = TP.page(
+        'cost-per-placement',
+        'No published document says what one out-of-district placement costs.',
+        [f('tuition25', U(p25['all_funds']),
+           'out-of-district tuition, every fund, %s' % C.fy(2025), 'published', {'y': F(2025)}),
+         f('kids25', N(p25['children'], 'children'),
+           'children placed, 1 March, %s' % C.fy(2025), 'published', {'y': F(2025)},
+           allow=('1 March',)),
+         f('cbkids', N(cbl['children'], 'children'),
+           'children in the circuit breaker claim, %s' % C.fy(cbl['fy']), 'published',
+           {'y': F(cbl['fy'])}),
+         f('price-gap', None, 'what one placement costs, by type', 'gap',
+           closes='the district’s placement-level billing detail, gross of circuit breaker')],
+        [con('The tuition total and the count of children placed do not divide into a price.',
+             ['tuition25', 'kids25', 'price-gap'],
+             notes=[step('The tuition is a closed-year total across every fund; the count is one '
+                         'day in March. A child placed for part of a year is counted or missed '
+                         'by the date, and a total can include costs that are not tuition for '
+                         'one child.', 'gap', allow=('March',),
+                         closes='the district’s placement-level billing detail, gross of circuit '
+                                'breaker')]),
+         con('The circuit breaker claim is not a placement count either.', ['cbkids'],
+             notes=[step('It counts only children whose costs passed the threshold, in district '
+                         'or out.', 'gap',
+                         closes='the district’s circuit breaker claim, child by child, with names '
+                                'removed')])],
+        sources=S('district-expenditures-by-function.xlsx', 'placement-counts.csv',
+                  'dese-circuit-breaker.xlsx'))
+
+    # ------------------------------------------------ in-district, budget columns only
+    cls = SP.classified()
+    tot27 = SP.total(SP.FY27BAL, SP.is_sped)
+    tot25 = SP.total(SP.FY25, SP.is_sped)
+    if abs(cls['total'] - tot27) > 1:
+        fail('model/sped.py: the classified lines no longer sum to the FY2027 base')
+    PT, TT = SP.PARA_TREND, SP.TEACHER_TREND
+    paras = {r['fy']: r for r in ST['paras']}
+    p0, p1 = ST['para_first'], ST['para_last']
+    fall = round(100 * (1 - p1['fte'] / p0['fte']), 1)
+    para_cagr, teach_cagr = 100 * PT['cagr'], 100 * TT['cagr']
+    FTE = lambda v: figure(v, '%.1f' % v, 'full-time equivalents')
+    gap_fund = 'the district’s position list by fund, and the EPIMS work assignment records ' \
+               'behind DESE’s count'
+    para_rows = [dict(label=C.fy(r['fy']), cells=[C.usd(r['total']), r['stage'],
+                                                   ('%.1f' % paras[r['fy']]['fte'])
+                                                   if r['fy'] in paras else None])
+                 for r in sorted(SP.PARA_SERIES, key=lambda r: -r['fy'])]
+    out['in-district-special-education'] = TP.page(
+        'in-district-special-education',
+        'The paraprofessional budget line grew %s a year over %s budgets; the state’s FTE fell %s.'
+        % (C.pct(para_cagr, 2), C.num(PT['n']), C.pct(fall)),
+        [f('ind27', U(tot27), 'in district, %s balanced budget (our %s lines)'
+           % (C.fy(2027), C.num(len(cls['counted']))), 'estimate',
+           {'y': F(2027), 'n': N(len(cls['counted']))}),
+         f('ind25', U(tot25), 'the same lines, %s budget' % C.fy(2025), 'estimate',
+           {'y': F(2025)}),
+         f('para0', U(PT['first']), 'paraprofessional budget line, %s' % C.fy(PT['firstFy']),
+           'published', {'y': F(PT['firstFy'])}),
+         f('para1', U(PT['last']), 'the same line, %s' % C.fy(PT['lastFy']), 'published',
+           {'y': F(PT['lastFy'])}),
+         f('pararate', P(para_cagr, 2), 'a year, compounded (our arithmetic)', 'published'),
+         f('paracon', P(100 * SP.AFSCME_RATE), 'a year, paraprofessionals’ contract, %s to %s'
+           % (C.fy(2026), C.fy(2028)), 'contract', {'a': F(2026), 'b': F(2028)}),
+         f('teachrate', P(teach_cagr, 2), 'teacher line a year, %s budgets (ours)'
+           % C.num(TT['n']), 'published', {'n': N(TT['n'])}),
+         f('teachcon', P(100 * SP.LEA_RATE), 'a year, the teachers’ contract, %s' % C.fy(2027),
+           'contract', {'y': F(2027)}),
+         f('fte0', FTE(p0['fte']), 'paraprofessional FTE, state count, %s' % C.fy(p0['fy']),
+           'published', {'y': F(p0['fy'])}),
+         f('fte1', FTE(p1['fte']), 'the same count, %s' % C.fy(p1['fy']), 'published',
+           {'y': F(p1['fy'])}),
+         f('fund-gap', None, 'which fund pays which paraprofessional post', 'gap',
+           closes=gap_fund)],
+        [con('The paraprofessional line rose from %s to %s over %s budgets; the contract gives %s.'
+             % (C.usd(PT['first']), C.usd(PT['last']), C.num(PT['n']), C.pct(100 * SP.AFSCME_RATE)),
+             ['para0', 'para1', 'pararate', 'paracon'],
+             {'a': U(PT['first']), 'b': U(PT['last']), 'n': N(PT['n']),
+              'c': P(100 * SP.AFSCME_RATE)},
+             notes=[step('A contract sets what one person is paid, so the rest may be more posts, '
+                         'more hours, or lines recoded. Nothing here tests which.',
+                         'hypothesis')]),
+         con('The state counts %s paraprofessional FTE in %s and %s in %s.'
+             % ('%.1f' % p0['fte'], C.fy(p0['fy']), '%.1f' % p1['fte'], C.fy(p1['fy'])),
+             ['fte0', 'fte1', 'fund-gap'],
+             {'a': FTE(p0['fte']), 'y': F(p0['fy']), 'b': FTE(p1['fte']), 'z': F(p1['fy'])},
+             notes=[step('The documents do not explain how a rising budget line and a falling '
+                         'count describe the same people; neither publisher says what its figure '
+                         'counts.', 'gap', closes=gap_fund)]),
+         con('The special education teacher line grew %s a year, under the %s contract raise.'
+             % (C.pct(teach_cagr, 2), C.pct(100 * SP.LEA_RATE)), ['teachrate', 'teachcon'],
+             {'a': P(teach_cagr, 2), 'b': P(100 * SP.LEA_RATE)}),
+         con('Our in-district lines total %s for %s, against %s in %s.'
+             % (C.usd(tot27), C.fy(2027), C.usd(tot25), C.fy(2025)), ['ind27', 'ind25'],
+             {'a': U(tot27), 'y': F(2027), 'b': U(tot25), 'z': F(2025)},
+             notes=[step('The state’s account codes have no special education total, so which '
+                         'lines count is our classification.', 'gap',
+                         closes='a chart of accounts from the district marking every special '
+                                'education line')])],
+        table=dict(caption='Special education paraprofessionals, by year', views=[dict(
+            key='paras', label='Budget line beside the state’s count', total_col=-1,
+            kinds=['stated', 'stated', 'ledger'],
+            columns=['Budget line', 'Which budget', 'State FTE count'],
+            rows=para_rows,
+            note='The budget line is from the district’s workbooks, budget columns only. The FTE '
+                 'is DESE’s. They are set side by side and not reconciled; a blank is a year '
+                 'the state does not print.')]),
+        said=[said(ST, 'backbone'), said(ST, 'addtwo')],
+        sources=S('fy27-proposals.xlsx', 'lps-budget-lines.csv', 'sped-para-history.csv',
+                  'sped-teacher-history.csv', 'paraprofessional-fy26-fy28.pdf',
+                  'dese-teacher-contract.pdf', 'dese-sped-indicators.xlsx'),
+        finding_figures={'a': P(para_cagr, 2), 'n': N(PT['n']), 'b': P(fall)})
+
+    # ------------------------------------------------ the circuit breaker
+    cbs = {r['fy']: r for r in CB['series']}
+    c26 = cbs[CB['last_fy']]
+    kpeak = max(CB['series'], key=lambda r: r['children'])
+    if (kpeak['fy'], kpeak['children']) != (CO['cb_peak_students']['fy'],
+                                            CO['cb_peak_students']['students']):
+        fail('the two payloads disagree on the year most children were claimed')
+    ident = len(CO['cb_identity_years'])
+    nyears = len(CB['series'])
+    if ident + len(CO['cb_identity_breaks']) != nyears:
+        fail('the identity years and breaks no longer cover every year of the file')
+    s10 = 100 * cbs[2010]['paid_share_of_claim']
+    s23 = 100 * cbs[2023]['paid_share_of_claim']
+    s26 = 100 * c26['paid_share_of_claim']
+    se26 = 100 * c26['paid_share_of_eligible']
+    tr0 = CO['cb_transport_first_year']
+    out['circuit-breaker'] = TP.page(
+        'circuit-breaker',
+        'The state paid %s in %s on %s of eligible costs for %s children: %s.'
+        % (C.usd(c26['paid']), C.fy(c26['fy']), C.usd(c26['eligible']), C.num(c26['children']),
+           C.pct(se26)),
+        [f('paid26', U(c26['paid']), 'paid by the state in %s, for %s costs'
+           % (C.fy(c26['fy']), C.fy(c26['fy'] - 1)), 'published',
+           {'y': F(c26['fy']), 'z': F(c26['fy'] - 1)}),
+         f('elig26', U(c26['eligible']), 'eligible costs it was paid on', 'published'),
+         f('kids26', N(c26['children'], 'children'), 'children claimed, %s' % C.fy(c26['fy']),
+           'published', {'y': F(c26['fy'])}),
+         f('thresh26', U(c26['threshold']), 'threshold taken off first, %s' % C.fy(c26['fy']),
+           'published', {'y': F(c26['fy'])}),
+         f('perkid', U(c26['threshold_per_child']), 'of threshold per child claimed', 'published'),
+         f('se26', P(se26), 'of eligible costs paid (our division)', 'published'),
+         f('identity', N(ident, 'years'), 'of %s, eligible less threshold equals the claim'
+           % C.num(nyears), 'published', {'n': N(nyears)}),
+         f('s10', P(s10), 'of the net claim paid, %s' % C.fy(2010), 'published', {'y': F(2010)}),
+         f('s23', P(s23), 'of the net claim paid, %s' % C.fy(2023), 'published', {'y': F(2023)}),
+         f('kpeak', N(kpeak['children'], 'children'), 'children claimed, %s' % C.fy(kpeak['fy']),
+           'published', {'y': F(kpeak['fy'])}),
+         f('transport', U(c26['transport']), 'of the %s payment for transport' % C.fy(c26['fy']),
+           'published', {'y': F(c26['fy'])})],
+        [con('The threshold, %s in %s, comes off first; the state paid %s of eligible costs.'
+             % (C.usd(c26['threshold']), C.fy(c26['fy']), C.pct(se26)),
+             ['thresh26', 'perkid', 'elig26', 'paid26', 'se26', 'identity'],
+             {'a': U(c26['threshold']), 'y': F(c26['fy']), 'p': P(se26)}),
+         con('The share of the claim paid has moved: %s in %s, %s in %s.'
+             % (C.pct(s10), C.fy(2010), C.pct(s23), C.fy(2023)), ['s10', 's23'],
+             {'a': P(s10), 'y': F(2010), 'b': P(s23), 'z': F(2023)},
+             notes=[step('The statute is not in this archive; that the share follows the state’s '
+                         'appropriation is how the district describes it, not quoted law.', 'gap',
+                         closes='the circuit breaker statute as written, and each year’s state '
+                                'appropriation for it')]),
+         con('Children claimed fell from %s in %s to %s in %s.'
+             % (C.num(kpeak['children']), C.fy(kpeak['fy']), C.num(c26['children']),
+                C.fy(c26['fy'])), ['kpeak', 'kids26'],
+             {'a': N(kpeak['children']), 'y': F(kpeak['fy']), 'b': N(c26['children']),
+              'z': F(c26['fy'])},
+             notes=[step('Why the count fell is not published: the file counts children and '
+                         'sums dollars, and names no placement.', 'gap',
+                         closes='the district’s circuit breaker claims by year, child by child, '
+                                'with names removed')]),
+         con('Since %s the state also repays transport: %s of the %s payment.'
+             % (C.fy(tr0), C.usd(c26['transport']), C.fy(c26['fy'])), ['transport'],
+             {'y': F(tr0), 'a': U(c26['transport']), 'z': F(c26['fy'])})],
+        chart=dict(id='special-education-costs-circuit-breaker', source=COSTS),
+        table=dict(caption='The circuit breaker, by year of payment', views=[
+            dict(key='years', label='Lunenburg', total_col=-1, kinds=['ledger'] * 5,
+                 columns=['Children claimed', 'Eligible costs', 'Threshold', 'Paid',
+                          'Share of claim paid'],
+                 rows=[dict(label=C.fy(r['fy']), cells=[
+                     C.num(r['children']), C.usd(r['eligible']), C.usd(r['threshold']),
+                     C.usd(r['paid']), C.pct(100 * r['paid_share_of_claim'])])
+                     for r in sorted(CB['series'], key=lambda r: -r['fy'])],
+                 note='DESE’s reimbursement file. A payment reimburses the year before; '
+                      'transport is in the paid column from %s.' % C.fy(tr0)),
+            dict(key='peers', label='Neighbours, %s' % C.fy(CB['last_fy']), total_col=-1,
+                 # No per-child column: eligible dollars over children claimed is the proxy
+                 # rule 7 forbids (see cost-per-placement above).
+                 kinds=['ledger', 'ledger'],
+                 columns=['Children claimed', 'Share of claim paid'],
+                 rows=[dict(label=p['district'], cells=[
+                     C.num(p['children']), C.pct(100 * p['paid_share'])])
+                     for p in sorted(CB['peers'], key=lambda p: p['district'])],
+                 note='The same file, the same year.')]),
+        said=[said(CO, 'fortyfour'), said(CO, 'eightyk')],
+        sources=S('dese-circuit-breaker.xlsx', '2023-2024-circuit-breaker-presentation.pdf'),
+        finding_figures={'a': U(c26['paid']), 'y': F(c26['fy']), 'b': U(c26['eligible']),
+                         'n': N(c26['children']), 'p': P(se26)})
+
+    # ------------------------------------------------ the circuit breaker account
+    acct = SC['cb_account']
+    yrs = {r['fy']: r for r in acct['years']}
+    sm = acct['summary']
+    a26, apk = sm['last'], sm['peak']
+    if yrs[2026]['closing'] != a26['closing'] or yrs[apk['fy']]['closing'] != apk['closing']:
+        fail('the account summary no longer matches its years')
+    neg = [fy for fy in sorted(yrs) if yrs[fy]['closing'] < 0]
+    if neg != [2013, 2014, 2015]:
+        fail('the years the account closed below zero have changed: %s' % neg)
+    lowest = min(yrs.values(), key=lambda r: r['closing'])
+    if round(cbs[2024]['paid']) != round(af[2024]['dese_paid']):
+        fail('FY2024: the two payloads disagree on what the state paid')
+    rt = SC['receipts_timing'][0]
+    if (rt['fy_a'], rt['fy_b']) != (2024, 2025):
+        fail('the receipts-timing pair is no longer FY2024 and FY2025')
+    if round(af[2024]['dese_paid'] + af[2025]['dese_paid']) != round(rt['total']) or \
+            round(af[2024]['cb_fund_receipts'] + af[2025]['cb_fund_receipts']) != round(rt['total']):
+        fail('FY2024 and FY2025 no longer sum to the same total on both sides')
+    out['circuit-breaker-account'] = TP.page(
+        'circuit-breaker-account',
+        'The account closed %s at %s, down from %s at the close of %s.'
+        % (C.fy(2026), C.usd(a26['closing']), C.usd(apk['closing']), C.fy(apk['fy'])),
+        [f('close26', U(a26['closing']), 'balance at the close of %s' % C.fy(2026), 'published',
+           {'y': F(2026)}),
+         f('peak', U(apk['closing']), 'balance at the close of %s, the highest' % C.fy(apk['fy']),
+           'published', {'y': F(apk['fy'])}),
+         f('fell', N(sm['fell'], 'years'), 'of the last %s in which the balance fell'
+           % C.num(sm['of']), 'published', {'n': N(sm['of'])}),
+         f('low', U(lowest['closing']), 'balance at the close of %s, the lowest' % C.fy(lowest['fy']),
+           'published', {'y': F(lowest['fy'])}),
+         f('cbt23', U(af[2023]['cb_fund_spent']), 'tuition paid from it, %s' % C.fy(2023),
+           'published', {'y': F(2023)}),
+         f('cbt26', U(af[2026]['cb_fund_spent']), 'tuition paid from it, %s' % C.fy(2026),
+           'published', {'y': F(2026)}),
+         f('dese24', U(af[2024]['dese_paid']), 'paid by the state, %s, its file' % C.fy(2024),
+           'published', {'y': F(2024)}),
+         f('rec24', U(af[2024]['cb_fund_receipts']), 'received, %s, the town’s ledger' % C.fy(2024),
+           'published', {'y': F(2024)}),
+         f('earmark', None, 'how much of the balance is meant for next year', 'gap',
+           closes='the district’s circuit breaker spending plan for the year')],
+        [con('The account closed %s at %s, down from %s at the close of %s.'
+             % (C.fy(2026), C.usd(a26['closing']), C.usd(apk['closing']), C.fy(apk['fy'])),
+             ['close26', 'peak', 'fell', 'earmark'],
+             {'y': F(2026), 'a': U(a26['closing']), 'b': U(apk['closing']), 'z': F(apk['fy'])}),
+         con('It pays tuition every year, not only in a bad one: %s in %s and %s in %s.'
+             % (C.usd(af[2023]['cb_fund_spent']), C.fy(2023), C.usd(af[2026]['cb_fund_spent']),
+                C.fy(2026)), ['cbt23', 'cbt26'],
+             {'a': U(af[2023]['cb_fund_spent']), 'y': F(2023), 'b': U(af[2026]['cb_fund_spent']),
+              'z': F(2026)},
+             notes=[step('Whether the voted tuition line is set expecting this account to pay '
+                         'part of it is not published.', 'gap',
+                         closes='the district’s budget narrative for the tuition line')]),
+         con('It closed below zero from %s to %s, at %s in %s.'
+             % (C.fy(neg[0]), C.fy(neg[-1]), C.usd(lowest['closing']), C.fy(lowest['fy'])),
+             ['low'], {'a': F(neg[0]), 'b': F(neg[-1]), 'c': U(lowest['closing']),
+                       'y': F(lowest['fy'])}),
+         con('For %s the state lists %s paid; the town’s ledger records %s received.'
+             % (C.fy(2024), C.usd(af[2024]['dese_paid']), C.usd(af[2024]['cb_fund_receipts'])),
+             ['dese24', 'rec24'],
+             {'y': F(2024), 'a': U(af[2024]['dese_paid']), 'b': U(af[2024]['cb_fund_receipts'])},
+             notes=[step('Over %s and %s both sides sum to %s, which fits a payment recorded a '
+                         'year later. Nothing here tests it.'
+                         % (C.fy(2024), C.fy(2025), C.usd(rt['total'])), 'hypothesis',
+                         {'y': F(2024), 'z': F(2025), 't': U(rt['total'])})])],
+        table=dict(caption='The circuit breaker account, by year', views=[dict(
+            key='account', label='Fund 2640', total_col=3, kinds=['ledger'] * 4,
+            columns=['Opening', 'Received', 'Spent', 'Closing'],
+            rows=[dict(label=C.fy(r['fy']), cells=[C.usd(r['opening']), C.usd(r['received']),
+                                                    C.usd(r['spent']), C.usd(r['closing'])])
+                  for r in sorted(acct['years'], key=lambda r: -r['fy'])],
+            note='To %s, the Special Revenue schedule of each annual town report; after it, carried '
+                 'through the town’s year-end ledgers.' % C.fy(2023))]),
+        said=[said(SC, 'carryover')],
+        sources=S('glytdbud-expense-fy2026-p13-special-school.xlsx',
+                  '4130-fy-2025-annual-town-report.txt', 'dese-circuit-breaker.xlsx'),
+        finding_figures={'y': F(2026), 'a': U(a26['closing']), 'b': U(apk['closing']),
+                         'z': F(apk['fy'])})
+
+    # ------------------------------------------------ the tuition budget (budgets only)
+    ly = SP.level_service_year()
+    TR = SP.tuition_trend()
+    th = SP.tuition_history()
+    if (TR['high'], TR['highFy']) != (ly['tuition_fy26'], 2026) or th[-1]['total'] != ly['tuition_fy27']:
+        fail('the tuition budgets no longer have FY2026 as the high and FY2027 as the last')
+    cut = -ly['tuition_change']
+    cutp = -100 * ly['tuition_rate']
+    out['tuition-budget'] = TP.page(
+        'tuition-budget',
+        '%s budgets out-of-district tuition at %s, %s below %s, a %s cut.'
+        % (C.fy(2027), C.usd(ly['tuition_fy27']), C.usd(cut), C.fy(2026), C.pct(cutp, 0)),
+        [f('b26', U(ly['tuition_fy26']), 'tuition budgeted, %s, the highest' % C.fy(2026),
+           'published', {'y': F(2026)}),
+         f('b27', U(ly['tuition_fy27']), 'tuition budgeted, %s' % C.fy(2027), 'published',
+           {'y': F(2027)}),
+         f('cut', U(cut), 'less between the two budgets', 'published'),
+         f('cutp', P(cutp, 0), 'the same cut, as a share', 'published'),
+         f('blow', U(TR['low']), 'lowest of %s budgets, %s' % (C.num(TR['n']), C.fy(TR['lowFy'])),
+           'published', {'n': N(TR['n']), 'y': F(TR['lowFy'])}),
+         f('up', N(TR['up'], 'budgets'), 'that rose on the year before', 'published'),
+         f('down', N(TR['down'], 'budgets'), 'that fell on the year before', 'published'),
+         f('pub', P(100 * ly['published'], 2), '%s level-service rise (our arithmetic)'
+           % C.fy(2027), 'published', {'y': F(2027)}),
+         f('held', P(100 * ly['underlying'], 2), 'the same rise, tuition held at %s' % C.fy(2026),
+           'estimate', {'y': F(2026)})],
+        [con('Tuition is budgeted at %s for %s, %s below %s.'
+             % (C.usd(ly['tuition_fy27']), C.fy(2027), C.usd(cut), C.fy(2026)),
+             ['b26', 'b27', 'cut', 'cutp'],
+             {'a': U(ly['tuition_fy27']), 'y': F(2027), 'c': U(cut), 'z': F(2026)},
+             notes=[step('Whether the cut expects fewer placements or lower prices is not stated '
+                         'in the budget.', 'gap', allow=(C.fy(2027),),
+                         closes='the district’s budget narrative for the %s tuition line, '
+                                'placement by placement' % C.fy(2027))]),
+         con('Across %s budgets it ran from %s to %s, rising in %s and falling in %s.'
+             % (C.num(TR['n']), C.usd(TR['low']), C.usd(TR['high']), C.num(TR['up']),
+                C.num(TR['down'])), ['blow', 'b26', 'up', 'down'],
+             {'n': N(TR['n']), 'a': U(TR['low']), 'b': U(TR['high']), 'u': N(TR['up']),
+              'd': N(TR['down'])}),
+         con('Hold tuition at %s and the %s level-service rise is %s, not %s.'
+             % (C.fy(2026), C.fy(2027), C.pct(100 * ly['underlying'], 2),
+                C.pct(100 * ly['published'], 2)), ['pub', 'held'],
+             {'y': F(2026), 'z': F(2027), 'a': P(100 * ly['underlying'], 2),
+              'b': P(100 * ly['published'], 2)})],
+        table=dict(caption='Out-of-district tuition, as budgeted', views=[dict(
+            key='budgets', label='Budget columns only', total_col=2,
+            kinds=['stated', 'stated', 'stated', 'stated'],
+            columns=['Private schools', 'Collaboratives', 'Both', 'Which budget'],
+            rows=[dict(label=C.fy(r['fy']), cells=[C.usd(r['private']), C.usd(r['collaborative']),
+                                                    C.usd(r['total']), r['stage']])
+                  for r in sorted(th, key=lambda r: -r['fy'])],
+            note='Functions 9300 and 9400 in the district’s budgets: a settled figure where a later '
+                 'document reports one, otherwise the proposal. Never what was spent.')]),
+        said=[said(SC, 'nineteen')],
+        sources=S('fy27-proposals.xlsx', 'ood-tuition-history.csv', 'lps-budget-lines.csv'),
+        finding_figures={'y': F(2027), 'a': U(ly['tuition_fy27']), 'c': U(cut), 'z': F(2026),
+                         'p': P(cutp, 0)})
+
+    # ------------------------------------------------ overruns against the voted budget
+    need = SC['need']
+    pl = SC['per_line']
+    req = SC['request']
+    nyrs = SC['last_fy'] - SC['first_fy'] + 1
+    if len(SC['surprise']) != nyrs or pl['ood']['years'] != nyrs:
+        fail('the surprise series no longer covers every year from first_fy to last_fy')
+    worst_b = max(req['bases'], key=lambda b: b['before'])
+    rs = SC['reserve']
+    out['special-education-overruns'] = TP.page(
+        'special-education-overruns',
+        'In the worst of %s years, %s, special education needed %s beyond its voted budget.'
+        % (C.num(nyrs), C.fy(need['worst']['fy']), C.usd(need['worst']['gross'])),
+        [f('worst', U(need['worst']['gross']), 'needed beyond the voted budget, %s'
+           % C.fy(need['worst']['fy']), 'published', {'y': F(need['worst']['fy'])}),
+         f('needing', N(need['years_needing'], 'years'), 'of %s needing more than was voted'
+           % C.num(nyrs), 'published', {'n': N(nyrs)}),
+         f('median', U(need['median']), 'needed in the median year', 'published'),
+         f('oodover', N(pl['ood']['years_over'], 'years'), 'of %s tuition ran over its budget'
+           % C.num(nyrs), 'published', {'n': N(nyrs)}),
+         f('oodbest', U(-pl['ood']['best']), 'tuition under its budget, %s' % C.fy(pl['ood']['best_fy']),
+           'published', {'y': F(pl['ood']['best_fy'])}),
+         f('upper', U(worst_b['before']), '%s, with the account’s tuition put back (ours)'
+           % C.fy(worst_b['fy']), 'estimate', {'y': F(worst_b['fy'])}),
+         f('cap', U(rs['cap']), 'most the new reserve may hold, as described', 'published'),
+         f('yes', N(rs['vote']['yes'], 'votes'), 'for the reserve, Town Meeting, November '
+           '%s; %s against' % (rs['vote']['date'][:4], C.num(rs['vote']['no'])), 'published',
+           {'n': N(rs['vote']['no'])}, allow=('November %s' % rs['vote']['date'][:4],))],
+        [con('In the worst of %s years, %s, special education needed %s beyond its voted budget.'
+             % (C.num(nyrs), C.fy(need['worst']['fy']), C.usd(need['worst']['gross'])),
+             ['worst', 'needing', 'median'],
+             {'n': N(nyrs), 'y': F(need['worst']['fy']), 'a': U(need['worst']['gross'])},
+             notes=[step('These are general fund figures after whatever tuition the circuit '
+                         'breaker account paid, and which accounts count is our grouping.', 'gap',
+                         closes='a chart of accounts from the Town marking every special '
+                                'education account')]),
+         con('Tuition ran over its voted budget in %s of %s years, and under by as much as %s.'
+             % (C.num(pl['ood']['years_over']), C.num(nyrs), C.usd(-pl['ood']['best'])),
+             ['oodover', 'oodbest'],
+             {'a': N(pl['ood']['years_over']), 'n': N(nyrs), 'b': U(-pl['ood']['best'])}),
+         con('Put the account’s tuition back and %s needed %s; the reserve may hold %s.'
+             % (C.fy(worst_b['fy']), C.usd(worst_b['before']), C.usd(rs['cap'])),
+             ['upper', 'cap', 'yes'],
+             {'y': F(worst_b['fy']), 'a': U(worst_b['before']), 'c': U(rs['cap'])},
+             notes=[step('The reserve’s statute is not in this archive; its cap is as the Town '
+                         'Manager described it, and what it holds is not published.', 'gap',
+                         closes='the reserve statute as written, and the amount voted into the '
+                                'reserve')])],
+        chart=dict(id='special-education-costs-surprise', source=COSTS),
+        said=[said(SC, 'establish'), said(SC, 'urgency'), said(SC, 'fourteen')],
+        sources=S('glytdbud-expense-fy2026-p13-gf-school.xlsx',
+                  'glytdbud-expense-fy2026-p13-special-school.xlsx',
+                  'general-fund-budget-vs-actuals-history.xlsx',
+                  '4130-fy-2025-annual-town-report.txt'),
+        finding_figures={'n': N(nyrs), 'y': F(need['worst']['fy']), 'a': U(need['worst']['gross'])})
+
+    # ------------------------------------------------ children with a plan
+    cnt = {r['fy']: r for r in ST['counts']}
+    s1, s0 = ST['last'], ST['lowest']
+    if s1['swd'] - s0['swd'] != ST['change_count']:
+        fail('sped-students.json: change_count no longer matches the two years')
+    held_share = 100.0 * s1['swd'] / s0['enrolled']
+    gap3 = {r['fy']: r for r in ST['third_count_gap']}
+    mv = {r['fy']: r for r in ST['third_count']}
+    if not mv[2025]['repeats_prior_year']:
+        fail('the movement file’s FY2025 row no longer repeats FY2024')
+    out['students-with-an-iep'] = TP.page(
+        'students-with-an-iep',
+        '%s Lunenburg children had a special education plan in %s, %s of those enrolled.'
+        % (C.num(s1['swd']), C.fy(s1['fy']), C.pct(s1['share_pct'])),
+        [f('swd1', N(s1['swd'], 'children'), 'with a plan, %s' % C.fy(s1['fy']), 'published',
+           {'y': F(s1['fy'])}),
+         f('share1', P(s1['share_pct']), 'of enrolment, %s' % C.fy(s1['fy']), 'published',
+           {'y': F(s1['fy'])}),
+         f('swd0', N(s0['swd'], 'children'), 'with a plan, %s, the lowest' % C.fy(s0['fy']),
+           'published', {'y': F(s0['fy'])}),
+         f('share0', P(s0['share_pct']), 'of enrolment, %s' % C.fy(s0['fy']), 'published',
+           {'y': F(s0['fy'])}),
+         f('enr1', N(s1['enrolled'], 'children'), 'enrolled, %s' % C.fy(s1['fy']), 'published',
+           {'y': F(s1['fy'])}),
+         f('enr0', N(s0['enrolled'], 'children'), 'enrolled, %s' % C.fy(s0['fy']), 'published',
+           {'y': F(s0['fy'])}),
+         f('held', P(held_share), 'the %s share at %s enrolment (ours)'
+           % (C.fy(s1['fy']), C.fy(s0['fy'])), 'estimate', {'y': F(s1['fy']), 'z': F(s0['fy'])}),
+         f('prog25', N(gap3[2025]['program'], 'children'), 'with a plan, %s, DESE program file'
+           % C.fy(2025), 'published', {'y': F(2025)}),
+         f('mov25', N(gap3[2025]['movement'], 'children'), 'with a plan, %s, DESE movement file'
+           % C.fy(2025), 'published', {'y': F(2025)}),
+         f('need-gap', None, 'whether more children need services, or more are found', 'gap',
+           closes='the district’s referral, evaluation and eligibility counts by year')],
+        [con('%s children had a plan in %s against %s in %s, while enrolment fell.'
+             % (C.num(s1['swd']), C.fy(s1['fy']), C.num(s0['swd']), C.fy(s0['fy'])),
+             ['swd1', 'swd0', 'enr1', 'enr0'],
+             {'a': N(s1['swd']), 'y': F(s1['fy']), 'b': N(s0['swd']), 'z': F(s0['fy'])}),
+         con('The share rose from %s to %s; at %s enrolment it would read %s.'
+             % (C.pct(s0['share_pct']), C.pct(s1['share_pct']), C.fy(s0['fy']), C.pct(held_share)),
+             ['share0', 'share1', 'held'],
+             {'a': P(s0['share_pct']), 'b': P(s1['share_pct']), 'y': F(s0['fy']),
+              'c': P(held_share)}),
+         con('Two DESE files count %s and %s children with a plan for %s.'
+             % (C.num(gap3[2025]['program']), C.num(gap3[2025]['movement']), C.fy(2025)),
+             ['prog25', 'mov25'],
+             {'a': N(gap3[2025]['program']), 'b': N(gap3[2025]['movement']), 'y': F(2025)},
+             notes=[step('The movement file’s %s row repeats %s’s exactly, and neither file '
+                         'states its census date or who it includes.' % (C.fy(2025), C.fy(2024)),
+                         'gap', {'y': F(2025), 'z': F(2024)},
+                         closes='DESE’s SIMS submission detail for Lunenburg, stating the census '
+                                'date and inclusion rule behind each count')]),
+         con('A count of children with a plan is not established to be a measure of need.',
+             ['swd1', 'need-gap'])],
+        table=dict(caption='Children with a special education plan, by year', views=[dict(
+            key='counts', label='DESE program file', total_col=-1, kinds=['ledger'] * 5,
+            columns=['Enrolled', 'With a plan', 'Share', 'In district', 'Out of district'],
+            rows=[dict(label=C.fy(r['fy']), cells=[C.num(r['enrolled']), C.num(r['swd']),
+                                                    C.pct(r['share_pct']), C.num(r['in_district']),
+                                                    C.num(r['out_of_district'])])
+                  for r in sorted(ST['counts'], key=lambda r: -r['fy'])],
+            note='Children, at DESE’s census date. Not dollars, not staff, not placements.')]),
+        sources=S('dese-sped-program-characteristics.xlsx', 'dese-sped-movement.xlsx'),
+        finding_figures={'n': N(s1['swd']), 'y': F(s1['fy']), 'p': P(s1['share_pct'])})
+
+    # ------------------------------------------------ placements out of district
+    pk, lw, la = RT['count_peak'], RT['count_low'], RT['count_last']
+    tc = {r['fy']: r for r in RT['two_counts']}
+    pool = {p['start']: p for p in RT['pooled']}
+    sep, inc = pool['Substantially Separate Classroom'], pool['Inclusive Setting']
+    if la['collaborative'] + la['day'] + la['residential'] != la['total']:
+        fail('the latest placement count no longer ties to its parts')
+    out['out-of-district-placements'] = TP.page(
+        'out-of-district-placements',
+        'The town counted %s children placed out of district in %s, against %s in %s.'
+        % (C.num(la['total']), C.fy(la['fy']), C.num(pk['total']), C.fy(pk['fy'])),
+        [f('c1', N(la['total'], 'children'), 'placed out of district, 1 March, %s' % C.fy(la['fy']),
+           'published', {'y': F(la['fy'])}, allow=('1 March',)),
+         f('cpk', N(pk['total'], 'children'), 'placed, %s, the highest' % C.fy(pk['fy']),
+           'published', {'y': F(pk['fy'])}),
+         f('clw', N(lw['total'], 'children'), 'placed, %s, the lowest' % C.fy(lw['fy']),
+           'published', {'y': F(lw['fy'])}),
+         f('coll', N(la['collaborative'], 'children'), 'in collaboratives, %s' % C.fy(la['fy']),
+           'published', {'y': F(la['fy'])}),
+         f('day', N(la['day'], 'children'), 'in day schools, %s' % C.fy(la['fy']), 'published',
+           {'y': F(la['fy'])}),
+         f('res', N(la['residential'], 'children'), 'in residential schools, %s' % C.fy(la['fy']),
+           'published', {'y': F(la['fy'])}),
+         f('agree', N(RT['two_counts_agree'], 'years'), 'of %s the state and town counts agree'
+           % C.num(RT['two_counts_compared']), 'published', {'n': N(RT['two_counts_compared'])}),
+         f('dese23', N(tc[2023]['dese'], 'children'), 'placed, %s, DESE’s count' % C.fy(2023),
+           'published', {'y': F(2023)}),
+         f('town23', N(tc[2023]['town'], 'children'), 'placed, %s, the town’s count' % C.fy(2023),
+           'published', {'y': F(2023)}),
+         f('sep', P(sep['ood_pct']), 'from a separate classroom to out of district, %s cohorts'
+           % C.num(sep['years']), 'published', {'n': N(sep['years'])}),
+         f('inc', P(inc['ood_pct']), 'from an inclusive setting to out of district', 'published'),
+         f('span-gap', None, 'over how many years the state follows a child', 'gap',
+           closes='DESE’s methodology note for the placement trajectory file, stating its '
+                  'interval and cohort rule')],
+        [con('The town’s count ran from %s in %s to %s in %s, and stood at %s in %s.'
+             % (C.num(pk['total']), C.fy(pk['fy']), C.num(lw['total']), C.fy(lw['fy']),
+                C.num(la['total']), C.fy(la['fy'])), ['cpk', 'clw', 'c1', 'coll', 'day', 'res'],
+             {'a': N(pk['total']), 'y': F(pk['fy']), 'b': N(lw['total']), 'z': F(lw['fy']),
+              'c': N(la['total']), 'x': F(la['fy'])},
+             notes=[step('Fewer referrals, families moving, in-district programmes and children '
+                         'ageing out all fit the fall. Nothing here tests which.', 'hypothesis')]),
+         con('The state’s and the town’s counts agree in %s of %s years; %s read %s and %s.'
+             % (C.num(RT['two_counts_agree']), C.num(RT['two_counts_compared']), C.fy(2023),
+                C.num(tc[2023]['dese']), C.num(tc[2023]['town'])),
+             ['agree', 'dese23', 'town23'],
+             {'a': N(RT['two_counts_agree']), 'n': N(RT['two_counts_compared']), 'y': F(2023),
+              'd': N(tc[2023]['dese']), 't': N(tc[2023]['town'])},
+             notes=[step('The state counts in October and the town on 1 March, so a child '
+                         'placed between them is in one count and not the other. Nothing here '
+                         'tests whether that is all of it.', 'hypothesis', allow=('1 March',))]),
+         con('%s of children starting in a separate room ended out of district, against %s from '
+             'an inclusive one.' % (C.pct(sep['ood_pct']), C.pct(inc['ood_pct'])),
+             ['sep', 'inc', 'span-gap'],
+             {'a': P(sep['ood_pct']), 'b': P(inc['ood_pct'])},
+             notes=[step('Selection fits it equally: children placed in a separate room were not '
+                         'like the others to begin with. Nothing here separates the two.',
+                         'hypothesis')])],
+        table=dict(caption='Children placed out of district, by year', views=[
+            dict(key='town', label='The town’s 1 March count', total_col=3, kinds=['stated'] * 4,
+                 columns=['Collaborative', 'Day', 'Residential', 'All'],
+                 rows=[dict(label=C.fy(r['fy']), cells=[
+                     C.num(r['collaborative']) if r['collaborative'] is not None else None,
+                     C.num(r['day']) if r['day'] is not None else None,
+                     C.num(r['residential']) if r['residential'] is not None else None,
+                     C.num(r['total'])]) for r in sorted(RT['counts'], key=lambda r: -r['fy'])],
+                 note='The Special Services report in each annual town report, sourced to SIMS '
+                      'Report 7. Early years count collaboratives inside day placements.'),
+            dict(key='two', label='Two counts', total_col=-1, kinds=['stated', 'ledger', 'ledger'],
+                 columns=['The town, 1 March', 'DESE, October', 'Difference'],
+                 rows=[dict(label=C.fy(r['fy']), cells=[C.num(r['town']), C.num(r['dese']),
+                                                         C.num(r['difference'])])
+                       for r in sorted(RT['two_counts'], key=lambda r: -r['fy'])],
+                 note='Two counts of the same children on two different days, set side by side.')]),
+        said=[said(SC, 'nine'), said(RT, 'radar')],
+        sources=S('placement-counts.csv', 'dese-sped-placement-trajectory.xlsx',
+                  'dese-sped-program-characteristics.xlsx'),
+        finding_figures={'a': N(la['total']), 'y': F(la['fy']), 'b': N(pk['total']),
+                         'z': F(pk['fy'])})
+
+    # ------------------------------------------------ hiring here instead of placing there
+    out['hiring-versus-placing'] = TP.page(
+        'hiring-versus-placing',
+        'Placements fell while in-district budgets rose; nothing published shows one caused the '
+        'other.',
+        [f('h-pk', N(pk['total'], 'children'), 'placed out of district, %s' % C.fy(pk['fy']),
+           'published', {'y': F(pk['fy'])}),
+         f('h-last', N(la['total'], 'children'), 'placed out of district, %s' % C.fy(la['fy']),
+           'published', {'y': F(la['fy'])}),
+         f('h-ind25', U(tot25), 'in district, %s budget (our lines)' % C.fy(2025), 'estimate',
+           {'y': F(2025)}),
+         f('h-ind27', U(tot27), 'in district, %s balanced budget (our lines)' % C.fy(2027),
+           'estimate', {'y': F(2027)}),
+         f('h-tu26', U(ly['tuition_fy26']), 'tuition budgeted, %s' % C.fy(2026), 'published',
+           {'y': F(2026)}),
+         f('h-tu27', U(ly['tuition_fy27']), 'tuition budgeted, %s' % C.fy(2027), 'published',
+           {'y': F(2027)}),
+         f('avoid-gap', None, 'staff cost to keep one child in district', 'gap',
+           closes='the district’s written basis, if one exists, for its claim that in-district '
+                  'staff avoid placements')],
+        [con('Placements fell from %s in %s to %s in %s, on the town’s own count.'
+             % (C.num(pk['total']), C.fy(pk['fy']), C.num(la['total']), C.fy(la['fy'])),
+             ['h-pk', 'h-last'],
+             {'a': N(pk['total']), 'y': F(pk['fy']), 'b': N(la['total']), 'z': F(la['fy'])}),
+         con('Our in-district lines rose from %s in %s to %s in %s, as tuition was budgeted down.'
+             % (C.usd(tot25), C.fy(2025), C.usd(tot27), C.fy(2027)),
+             ['h-ind25', 'h-ind27', 'h-tu26', 'h-tu27'],
+             {'a': U(tot25), 'y': F(2025), 'b': U(tot27), 'z': F(2027)}),
+         con('The two series barely overlap in time, and neither shows that hiring kept a child '
+             'here.', ['h-last', 'h-ind25', 'avoid-gap'],
+             notes=[step('The district argues in-district behavioural staff avoid costly '
+                         'placements. That is stated intent; nothing published tests it, and '
+                         'fewer referrals or families moving fit the same numbers.',
+                         'hypothesis')])],
+        sources=S('placement-counts.csv', 'fy27-proposals.xlsx', 'lps-budget-lines.csv'),
+    )
+
+    # ------------------------------------------------ the class-size rule
+    pmt = RG['placement']
+    if pmt['sub']['count'] != next(r['count'] for r in pmt['rows'] if r['label'] == 'Substantially Separate'):
+        fail('sped-regulation.json: the substantially separate count disagrees with its row')
+    if RG['silent_total'] != 0:
+        fail('the regulation now names a limit on adults; the class-size page says it names none')
+    young = next(b for b in RG['bands'] if b['band'] == 'Young children')
+    tier_rows = [dict(label='%s, %s' % (t['band'], t['short'].lower()), cells=[
+        C.num(t['students']), C.num(t['educators']), C.num(t['aides']), t['cite']])
+        for t in sorted(RG['tiers'], key=lambda t: (t['band'], t['separateness_rank'], t['students']))]
+    out['class-size-limits'] = TP.page(
+        'class-size-limits',
+        'A separate special education group may hold %s students to one educator, or %s with an '
+        'aide.' % (C.num(RG['sub_cap']), C.num(RG['sub_aide_cap'])),
+        [f('subcap', N(RG['sub_cap'], 'students'), 'most in a separate group, one educator',
+           'statute'),
+         f('subaide', N(RG['sub_aide_cap'], 'students'), 'most with an educator and an aide',
+           'statute'),
+         f('partcap', N(RG['part_cap'], 'students'), 'most in a partly separate group, two aides',
+           'statute'),
+         f('young', N(young['top'], 'students'), 'most in an integrated preschool class',
+           'statute'),
+         f('thresh', P(RG['threshold_pct'], 0), 'outside general education, above which it is separate',
+           'statute'),
+         f('adults', N(RG['silent_total'], 'limits'), 'the rule sets on adults in a room',
+           'statute'),
+         f('sep26', N(pmt['sub']['count'], 'children'), 'counted substantially separate, %s'
+           % C.fy(pmt['fy']), 'published', {'y': F(pmt['fy'])}),
+         f('all26', N(pmt['total'], 'children'), 'with a plan, %s' % C.fy(pmt['fy']), 'published',
+           {'y': F(pmt['fy'])}),
+         f('groups-gap', None, 'how many groups Lunenburg runs, and how large', 'gap',
+           closes='the district’s list of special education groups by school and setting, with '
+                  'students and staff, kept for DESE’s program approval')],
+        [con('A separate group may not exceed %s students to one educator, or %s with an aide.'
+             % (C.num(RG['sub_cap']), C.num(RG['sub_aide_cap'])), ['subcap', 'subaide', 'thresh'],
+             {'a': N(RG['sub_cap']), 'b': N(RG['sub_aide_cap'])}),
+         con('The more separate the group, the lower the cap: %s partly separate, %s fully.'
+             % (C.num(RG['part_cap']), C.num(RG['sub_aide_cap'])), ['partcap', 'subaide', 'young'],
+             {'a': N(RG['part_cap']), 'b': N(RG['sub_aide_cap'])}),
+         con('The rule caps children, not adults: it sets %s limits on adults, and a plan can add '
+             'aides.' % C.num(RG['silent_total']), ['adults'], {'n': N(RG['silent_total'])}),
+         con('%s of %s children were counted substantially separate in %s; that is not a count '
+             'of groups.' % (C.num(pmt['sub']['count']), C.num(pmt['total']), C.fy(pmt['fy'])),
+             ['sep26', 'all26', 'groups-gap'],
+             {'a': N(pmt['sub']['count']), 'b': N(pmt['total']), 'y': F(pmt['fy'])},
+             notes=[step('The rule binds groups and the state counts children, so no staffing '
+                         'number follows from anything published.', 'gap',
+                         closes='the district’s list of special education groups, with the '
+                                'students and staff assigned to each')])],
+        table=dict(caption='Group-size limits in 603 CMR 28.06', views=[dict(
+            key='tiers', label='The regulation, tier by tier', total_col=-1,
+            kinds=['statute'] * 4, columns=['Most students', 'Educators', 'Aides', 'Clause'],
+            rows=tier_rows,
+            note='Parsed from the sentences that state them. Every tier names one educator; an '
+                 'aide is what raises the ceiling.')]),
+        said=[said(RG, 'noformula'), said(RG, 'pullout')],
+        sources=S('603cmr28-special-education-regulations.html', 'sims-datahandbook-current.docx',
+                  'dese-sped-program-characteristics.xlsx'),
+        finding_figures={'a': N(RG['sub_cap']), 'b': N(RG['sub_aide_cap'])})
+
+    # ------------------------------------------------ the hub
+    h = {}
+    h['h-total'] = f('h-total', U(last['total']), 'out-of-district tuition, every fund, %s'
+                     % C.fy(y25), 'published', {'y': F(y25)})
+    h['h-gf'] = f('h-gf', U(last['gen_fund']), 'of it from the general fund, %s' % C.fy(y25),
+                  'published', {'y': F(y25)})
+    h['h-ind'] = f('h-ind', U(tot27), 'in district, %s balanced budget (our lines)' % C.fy(2027),
+                   'estimate', {'y': F(2027)})
+    h['h-worst'] = f('h-worst', U(need['worst']['gross']), 'beyond the voted budget, worst year, %s'
+                     % C.fy(need['worst']['fy']), 'published', {'y': F(need['worst']['fy'])})
+    h['h-paid'] = f('h-paid', U(c26['paid']), 'circuit breaker paid by the state, %s'
+                    % C.fy(c26['fy']), 'published', {'y': F(c26['fy'])})
+    h['h-thresh'] = f('h-thresh', U(c26['threshold']), 'threshold taken off first, %s'
+                      % C.fy(c26['fy']), 'published', {'y': F(c26['fy'])})
+    h['h-acct'] = f('h-acct', U(a26['closing']), 'in the circuit breaker account, close of %s'
+                    % C.fy(2026), 'published', {'y': F(2026)})
+    h['h-swd'] = f('h-swd', N(s1['swd'], 'children'), 'with a special education plan, %s'
+                   % C.fy(s1['fy']), 'published', {'y': F(s1['fy'])})
+    h['h-placed'] = f('h-placed', N(la['total'], 'children'), 'placed out of district, %s'
+                      % C.fy(la['fy']), 'published', {'y': F(la['fy'])})
+    h['h-tu27'] = f('h-tu27', U(ly['tuition_fy27']), 'tuition budgeted, %s, down %s'
+                    % (C.fy(2027), C.pct(cutp, 0)), 'published', {'y': F(2027), 'p': P(cutp, 0)})
+    h['h-price'] = f('h-price', None, 'what one placement costs', 'gap',
+                     closes='the district’s placement-level billing detail, gross of circuit '
+                            'breaker')
+    tiers = [
+        LD.tier('What it costs', [h['h-total'], h['h-gf'], h['h-ind'], h['h-tu27'], h['h-price']]),
+        LD.tier('What comes back', [h['h-paid'], h['h-thresh'], h['h-acct']]),
+        LD.tier('Children and surprises', [h['h-swd'], h['h-placed'], h['h-worst']]),
+    ]
+    hub_ladder = LD.ladder(tiers, [
+        LD.conclusion('Out-of-district tuition was %s in %s; the general fund paid %s of it.'
+                      % (C.usd(last['total']), C.fy(y25), C.usd(last['gen_fund'])),
+                      ['h-total', 'h-gf'],
+                      {'a': U(last['total']), 'y': F(y25), 'b': U(last['gen_fund'])}),
+        LD.conclusion('The state repaid %s in %s, after taking %s off the top.'
+                      % (C.usd(c26['paid']), C.fy(c26['fy']), C.usd(c26['threshold'])),
+                      ['h-paid', 'h-thresh', 'h-acct'],
+                      {'a': U(c26['paid']), 'y': F(c26['fy']), 'b': U(c26['threshold'])}),
+        LD.conclusion('In the worst of %s years special education needed %s beyond its voted '
+                      'budget.' % (C.num(nyrs), C.usd(need['worst']['gross'])), ['h-worst'],
+                      {'n': N(nyrs), 'a': U(need['worst']['gross'])}),
+        LD.conclusion('%s children had a plan in %s; %s were placed out of district in %s.'
+                      % (C.num(s1['swd']), C.fy(s1['fy']), C.num(la['total']), C.fy(la['fy'])),
+                      ['h-swd', 'h-placed'],
+                      {'a': N(s1['swd']), 'y': F(s1['fy']), 'b': N(la['total']), 'z': F(la['fy'])}),
+        LD.conclusion('Nothing published says what one placement costs, so no per-child figure '
+                      'here is a price.', ['h-price', 'h-tu27', 'h-ind']),
+    ])
+    out['special-education'] = TP.hub(
+        'special-education',
+        'Out-of-district tuition was %s in %s, and %s of it was paid outside the general fund. '
+        'The state repaid %s in %s through the circuit breaker, a year after the costs.'
+        % (C.usd(last['total']), C.fy(y25), C.pct(last['outside_share_pct']), C.usd(c26['paid']),
+           C.fy(c26['fy'])),
+        hub_ladder, chart=dict(id='special-education-costs-trend', source=COSTS),
+        table=tuition_table,
+        answer_figures={'a': U(last['total']), 'y': F(y25), 'p': P(last['outside_share_pct']),
+                        'b': U(c26['paid']), 'z': F(c26['fy'])})
+
+    if sorted(k for k in out if k != 'special-education') != sorted(MINE):
+        fail('the pages built are not the pages the registry gives this script: %s'
+             % sorted(set(MINE) ^ set(out)))
+    return out
+
+
+def outputs():
+    return {os.path.join(OUT_DIR, '%s.json' % t):
+            json.dumps(p, indent=1, ensure_ascii=False, sort_keys=True) + '\n'
+            for t, p in build().items()}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    a = ap.parse_args()
+    outs = outputs()
+    if a.check:
+        stale = []
+        for p, text in outs.items():
+            cur = open(p, encoding='utf-8').read() if os.path.exists(p) else None
+            if cur != text:
+                stale.append(os.path.relpath(p, ROOT))
+        if stale:
+            print('STALE %s' % ', '.join(stale), file=sys.stderr)
+            return 1
+        print('special education topics: %d outputs current' % len(outs))
+        return 0
+    for p, text in outs.items():
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, 'w', encoding='utf-8', newline='\n') as fh:
+            fh.write(text)
+        print('wrote %s' % os.path.relpath(p, ROOT))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

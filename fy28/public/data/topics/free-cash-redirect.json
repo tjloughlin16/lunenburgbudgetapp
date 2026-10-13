@@ -1,0 +1,346 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$794,872",
+     "unit": "",
+     "value": 794872
+    },
+    "b": {
+     "text": "$135,401",
+     "unit": "",
+     "value": 135401
+    },
+    "lo": {
+     "text": "5%",
+     "unit": "",
+     "value": 5.0
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "redirect",
+    "gap28",
+    "short28"
+   ],
+   "text": "Kept to the 5% floor, $794,872 could be redirected; that is $135,401 short of the FY2028 gap."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,354,370",
+     "unit": "",
+     "value": 3354370.0
+    },
+    "g": {
+     "text": "$2,197,945",
+     "unit": "",
+     "value": 2197945
+    },
+    "w": {
+     "text": "FY2030",
+     "unit": "fiscal year",
+     "value": 2030
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    },
+    "z": {
+     "text": "FY2029",
+     "unit": "fiscal year",
+     "value": 2029
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "gap28",
+    "gap30"
+   ],
+   "text": "All $3,354,370, guideline ignored, covers FY2028 and FY2029; FY2030’s gap is $2,197,945."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$796,203",
+     "unit": "",
+     "value": 796203
+    },
+    "b": {
+     "text": "$817,576",
+     "unit": "",
+     "value": 817576
+    },
+    "m": {
+     "text": "1.21 times",
+     "unit": "",
+     "value": 1.2127599843765258
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "any prior year’s recommended capital list beside its funded list",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Which projects would stop depends on how the Capital Planning Committee re-ranks a shorter list; nothing published says."
+    }
+   ],
+   "rests_on": [
+    "mult26",
+    "strict",
+    "reseq"
+   ],
+   "text": "The redirect is 1.21 times what free cash gave capital in FY2026; $796,203 to $817,576 of work stops."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 3.9600000000000004
+    }
+   },
+   "literals": [
+    "2021-2024"
+   ],
+   "rests_on": [
+    "normal",
+    "nshare"
+   ],
+   "text": "Had unspent money sat at its 2021-2024 average, free cash would be 4.0% of the budget: under the floor."
+  }
+ ],
+ "facts": [
+  {
+   "id": "redirect",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "lo": {
+      "text": "5%",
+      "unit": "",
+      "value": 5.0
+     }
+    },
+    "literals": [],
+    "text": "free cash above 5% of the budget (ours)"
+   },
+   "value": {
+    "text": "$794,872",
+    "unit": "",
+    "value": 794872
+   }
+  },
+  {
+   "id": "gap28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the projected school gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   }
+  },
+  {
+   "id": "short28",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what the redirect leaves short that year (ours)"
+   },
+   "value": {
+    "text": "$135,401",
+    "unit": "",
+    "value": 135401
+   }
+  },
+  {
+   "id": "gap30",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2030",
+      "unit": "fiscal year",
+      "value": 2030
+     }
+    },
+    "literals": [],
+    "text": "the projected gap, FY2030 (ours)"
+   },
+   "value": {
+    "text": "$2,197,945",
+    "unit": "",
+    "value": 2197945
+   }
+  },
+  {
+   "id": "strict",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "capital work lost, plan’s ranking held (ours)"
+   },
+   "value": {
+    "text": "$817,576",
+    "unit": "",
+    "value": 817576
+   }
+  },
+  {
+   "id": "reseq",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "capital work lost, queue re-ranked (ours)"
+   },
+   "value": {
+    "text": "$796,203",
+    "unit": "",
+    "value": 796203
+   }
+  },
+  {
+   "id": "mult26",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the redirect, against free cash into capital, FY2026"
+   },
+   "value": {
+    "text": "1.21 times",
+    "unit": "",
+    "value": 1.2127599843765258
+   }
+  },
+  {
+   "id": "normal",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "certified if unspent money were at its average (ours)"
+   },
+   "value": {
+    "text": "$2,026,212",
+    "unit": "",
+    "value": 2026212
+   }
+  },
+  {
+   "id": "nshare",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget, in that case (ours)"
+   },
+   "value": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 3.9600000000000004
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$794,872",
+    "unit": "",
+    "value": 794872
+   },
+   "b": {
+    "text": "$135,401",
+    "unit": "",
+    "value": 135401
+   },
+   "lo": {
+    "text": "5%",
+    "unit": "",
+    "value": 5.0
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Kept above the 5% floor, $794,872 could be redirected, $135,401 short of the FY2028 gap (our arithmetic)."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "free-cash-redirect",
+ "kind": "topic",
+ "path": "/town-reserves/free-cash-redirect",
+ "said": [
+  {
+   "board": "Select Board",
+   "date": "2025-03-11",
+   "href": "/docs/minutes/text/select-board/2025-03-11-minutes-7096.txt",
+   "label": "Select Board minutes, 2025-03-11",
+   "quote": "The options discussed included a multi-year override or utilizing one-time funds specifically free cash as a stopgap, however these funds should not be used in an operating budget, but as a one-time appropriation."
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "label": "Massachusetts Division of Local Services, Free Cash Proof — free-cash-proof-lunenburg.xlsx"
+  },
+  {
+   "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "label": "Town of Lunenburg — FY27 budget release — 4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf"
+  },
+  {
+   "href": "/docs/town-budget/docs/4111-article-13-fy-2027-capital-plan.pdf",
+   "label": "Town of Lunenburg — FY2027 capital plan — 4111-article-13-fy-2027-capital-plan.pdf"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": null,
+ "title": "Free cash for schools"
+}

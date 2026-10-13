@@ -1,0 +1,712 @@
+{
+ "category": "special-education",
+ "chart": {
+  "id": "special-education-costs-circuit-breaker",
+  "source": "/data/special-education-costs.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$471,771",
+     "unit": "",
+     "value": 471771.0
+    },
+    "p": {
+     "text": "46.1%",
+     "unit": "",
+     "value": 46.06510370061047
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "thresh26",
+    "perkid",
+    "elig26",
+    "paid26",
+    "se26",
+    "identity"
+   ],
+   "text": "The threshold, $471,771 in FY2026, comes off first; the state paid 46.1% of eligible costs."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "42.3%",
+     "unit": "",
+     "value": 42.34193239290933
+    },
+    "b": {
+     "text": "75.0%",
+     "unit": "",
+     "value": 75.00058629442083
+    },
+    "y": {
+     "text": "FY2010",
+     "unit": "fiscal year",
+     "value": 2010
+    },
+    "z": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the circuit breaker statute as written, and each year’s state appropriation for it",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The statute is not in this archive; that the share follows the state’s appropriation is how the district describes it, not quoted law."
+    }
+   ],
+   "rests_on": [
+    "s10",
+    "s23"
+   ],
+   "text": "The share of the claim paid has moved: 42.3% in FY2010, 75.0% in FY2023."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "29",
+     "unit": "",
+     "value": 29
+    },
+    "b": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    },
+    "y": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s circuit breaker claims by year, child by child, with names removed",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Why the count fell is not published: the file counts children and sums dollars, and names no placement."
+    }
+   ],
+   "rests_on": [
+    "kpeak",
+    "kids26"
+   ],
+   "text": "Children claimed fell from 29 in FY2013 to 9 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$94,993",
+     "unit": "",
+     "value": 94993.0
+    },
+    "y": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "transport"
+   ],
+   "text": "Since FY2022 the state also repays transport: $94,993 of the FY2026 payment."
+  }
+ ],
+ "facts": [
+  {
+   "id": "paid26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "paid by the state in FY2026, for FY2025 costs"
+   },
+   "value": {
+    "text": "$579,142",
+    "unit": "",
+    "value": 579142.0
+   }
+  },
+  {
+   "id": "elig26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "eligible costs it was paid on"
+   },
+   "value": {
+    "text": "$1,257,225",
+    "unit": "",
+    "value": 1257225.0
+   }
+  },
+  {
+   "id": "kids26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "children claimed, FY2026"
+   },
+   "value": {
+    "text": "9",
+    "unit": "children",
+    "value": 9
+   }
+  },
+  {
+   "id": "thresh26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "threshold taken off first, FY2026"
+   },
+   "value": {
+    "text": "$471,771",
+    "unit": "",
+    "value": 471771.0
+   }
+  },
+  {
+   "id": "perkid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of threshold per child claimed"
+   },
+   "value": {
+    "text": "$52,419",
+    "unit": "",
+    "value": 52419.0
+   }
+  },
+  {
+   "id": "se26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of eligible costs paid (our division)"
+   },
+   "value": {
+    "text": "46.1%",
+    "unit": "",
+    "value": 46.06510370061047
+   }
+  },
+  {
+   "id": "identity",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "21",
+      "unit": "",
+      "value": 21
+     }
+    },
+    "literals": [],
+    "text": "of 21, eligible less threshold equals the claim"
+   },
+   "value": {
+    "text": "13",
+    "unit": "years",
+    "value": 13
+   }
+  },
+  {
+   "id": "s10",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2010",
+      "unit": "fiscal year",
+      "value": 2010
+     }
+    },
+    "literals": [],
+    "text": "of the net claim paid, FY2010"
+   },
+   "value": {
+    "text": "42.3%",
+    "unit": "",
+    "value": 42.34193239290933
+   }
+  },
+  {
+   "id": "s23",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "of the net claim paid, FY2023"
+   },
+   "value": {
+    "text": "75.0%",
+    "unit": "",
+    "value": 75.00058629442083
+   }
+  },
+  {
+   "id": "kpeak",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "children claimed, FY2013"
+   },
+   "value": {
+    "text": "29",
+    "unit": "children",
+    "value": 29
+   }
+  },
+  {
+   "id": "transport",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of the FY2026 payment for transport"
+   },
+   "value": {
+    "text": "$94,993",
+    "unit": "",
+    "value": 94993.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$579,142",
+    "unit": "",
+    "value": 579142.0
+   },
+   "b": {
+    "text": "$1,257,225",
+    "unit": "",
+    "value": 1257225.0
+   },
+   "n": {
+    "text": "9",
+    "unit": "",
+    "value": 9
+   },
+   "p": {
+    "text": "46.1%",
+    "unit": "",
+    "value": 46.06510370061047
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The state paid $579,142 in FY2026 on $1,257,225 of eligible costs for 9 children: 46.1%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "circuit-breaker",
+ "kind": "topic",
+ "path": "/special-education/circuit-breaker",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/meetings/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "75% reimbursement for FY25 out of district special education transportation costs through the circuit breaker program increased from 44%"
+  },
+  {
+   "board": "School Committee",
+   "date": "2024-01-24",
+   "href": "/docs/meetings/text/school-committee/2024-01-24-minutes-6375.txt",
+   "label": "School Committee minutes, 2024-01-24",
+   "quote": "We do get reimbu rsed for transportation through Circuit Breaker, for our Special Education transportation, last year that was about $80,000"
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-circuit-breaker.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2023-2024-circuit-breaker-presentation.pdf",
+   "label": "Lunenburg Public Schools — 2023-2024-circuit-breaker-presentation.pdf"
+  }
+ ],
+ "table": {
+  "caption": "The circuit breaker, by year of payment",
+  "views": [
+   {
+    "columns": [
+     "Children claimed",
+     "Eligible costs",
+     "Threshold",
+     "Paid",
+     "Share of claim paid"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lunenburg",
+    "note": "DESE’s reimbursement file. A payment reimburses the year before; transport is in the paid column from FY2022.",
+    "rows": [
+     {
+      "cells": [
+       "9",
+       "$1,257,225",
+       "$471,771",
+       "$579,142",
+       "73.7%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "9",
+       "$1,198,030",
+       "$465,489",
+       "$508,441",
+       "69.4%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "7",
+       "$914,865",
+       "$346,458",
+       "$401,966",
+       "70.7%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "6",
+       "$838,507",
+       "$284,178",
+       "$415,750",
+       "75.0%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "7",
+       "$1,061,557",
+       "$373,632",
+       "$519,394",
+       "75.0%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "9",
+       "$1,081,273",
+       "$435,168",
+       "$484,579",
+       "75.0%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "13",
+       "$1,233,945",
+       "$595,296",
+       "$478,987",
+       "75.0%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "12",
+       "$1,107,905",
+       "$529,272",
+       "$430,958",
+       "74.5%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "14",
+       "$1,112,072",
+       "$603,316",
+       "$366,790",
+       "72.1%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "20",
+       "$1,550,970",
+       "$856,800",
+       "$507,832",
+       "73.2%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "23",
+       "$2,010,177",
+       "$964,712",
+       "$784,099",
+       "75.0%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "28",
+       "$2,070,408",
+       "$1,159,424",
+       "$672,634",
+       "73.8%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "23",
+       "$1,698,959",
+       "$931,776",
+       "$575,389",
+       "75.0%"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "29",
+       "$1,946,230",
+       "$1,109,106",
+       "$615,317",
+       "73.5%"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "25",
+       "$1,542,888",
+       "$931,686",
+       "$419,945",
+       "68.7%"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "23",
+       "$1,368,309",
+       "$830,674",
+       "$201,165",
+       "43.7%"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "26",
+       "$1,491,707",
+       "$951,864",
+       "$211,224",
+       "42.3%"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "23",
+       "$1,495,433",
+       "$796,680",
+       "$474,301",
+       "72.0%"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "24",
+       "$1,291,577",
+       "$775,100",
+       "$305,393",
+       "75.0%"
+      ],
+      "label": "FY2008"
+     },
+     {
+      "cells": [
+       "18",
+       "$976,678",
+       "$553,280",
+       "$298,889",
+       "75.0%"
+      ],
+      "label": "FY2007"
+     },
+     {
+      "cells": [
+       "21",
+       "$1,003,928",
+       "$530,950",
+       "$293,705",
+       "75.0%"
+      ],
+      "label": "FY2006"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Children claimed",
+     "Share of claim paid"
+    ],
+    "key": "peers",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Neighbours, FY2026",
+    "note": "The same file, the same year.",
+    "rows": [
+     {
+      "cells": [
+       "17",
+       "73.8%"
+      ],
+      "label": "Ashburnham-Westminster"
+     },
+     {
+      "cells": [
+       "28",
+       "74.1%"
+      ],
+      "label": "Ayer Shirley School District"
+     },
+     {
+      "cells": [
+       "42",
+       "74.4%"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "25",
+       "72.7%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "9",
+       "73.7%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "59",
+       "72.0%"
+      ],
+      "label": "North Middlesex"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Circuit breaker"
+}

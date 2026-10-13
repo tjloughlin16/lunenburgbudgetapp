@@ -1,0 +1,367 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "30.6%",
+     "unit": "",
+     "value": 30.599999999999998
+    },
+    "b": {
+     "text": "66.1%",
+     "unit": "",
+     "value": 66.13
+    },
+    "y": {
+     "text": "2023",
+     "unit": "certification year",
+     "value": 2023
+    },
+    "z": {
+     "text": "2025",
+     "unit": "certification year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "us23",
+    "us25",
+    "under25"
+   ],
+   "text": "Unspent appropriations rose from 30.6% of free cash in 2023 to 66.1% in 2025."
+  },
+  {
+   "figures": {
+    "m": {
+     "text": "2.49 times",
+     "unit": "",
+     "value": 2.49
+    },
+    "y": {
+     "text": "2025",
+     "unit": "certification year",
+     "value": 2025
+    }
+   },
+   "literals": [
+    "2021-2024"
+   ],
+   "rests_on": [
+    "mult",
+    "ux"
+   ],
+   "text": "The 2025 unspent figure was 2.49 times its 2021-2024 average, the highest multiple of nine towns."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [
+      "FY27",
+      "FY25"
+     ],
+     "text": "The Town’s FY27 budget release attributes the FY25 school surplus to vacant posts and to salaries newly covered by grants. That is its account; nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "dept-gap",
+    "school-gap",
+    "under25"
+   ],
+   "text": "It is one town-wide figure; nothing published says which departments, or how much was the schools’."
+  }
+ ],
+ "facts": [
+  {
+   "id": "under25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "certification year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "appropriated and not spent, 2025"
+   },
+   "value": {
+    "text": "$2,457,761",
+    "unit": "",
+    "value": 2457761.0
+   }
+  },
+  {
+   "id": "us25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "certification year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of identified free cash, 2025"
+   },
+   "value": {
+    "text": "66.1%",
+    "unit": "",
+    "value": 66.13
+   }
+  },
+  {
+   "id": "rec25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "certification year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "local receipts above the estimate, 2025"
+   },
+   "value": {
+    "text": "$1,225,720",
+    "unit": "",
+    "value": 1225720.0
+   }
+  },
+  {
+   "id": "us23",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2023",
+      "unit": "certification year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "unspent share in 2023"
+   },
+   "value": {
+    "text": "30.6%",
+    "unit": "",
+    "value": 30.599999999999998
+   }
+  },
+  {
+   "id": "us5",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "unspent share across all five years"
+   },
+   "value": {
+    "text": "47.4%",
+    "unit": "",
+    "value": 47.37542966704346
+   }
+  },
+  {
+   "id": "mult",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "certification year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "2021-2024"
+    ],
+    "text": "2025’s unspent against the 2021-2024 average"
+   },
+   "value": {
+    "text": "2.49 times",
+    "unit": "",
+    "value": 2.49
+   }
+  },
+  {
+   "id": "ux",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "certification year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Uxbridge’s unspent share, 2025, the lowest"
+   },
+   "value": {
+    "text": "11.7%",
+    "unit": "",
+    "value": 11.72
+   }
+  },
+  {
+   "closes": "the period 13 general ledger: budget, spent and turned back, by department",
+   "id": "dept-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which departments left the money unspent"
+   },
+   "value": null
+  },
+  {
+   "closes": "a departmental turnback schedule for the year-end close",
+   "id": "school-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how much of it was the schools’"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,457,761",
+    "unit": "",
+    "value": 2457761.0
+   },
+   "y": {
+    "text": "2025",
+    "unit": "certification year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Two thirds of the free cash identified in July 2025, $2,457,761, was money appropriated and not spent."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "free-cash-sources",
+ "kind": "topic",
+ "path": "/town-reserves/free-cash-sources",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-05-28",
+   "href": "/docs/minutes/text/finance-committee/2026-05-28-minutes-7828.txt",
+   "label": "Finance Committee minutes, 2026-05-28",
+   "quote": "Ana Lockwood states for the last 10 years the town has not collected less than 4 million dollars in local receipts. This year’s estimate is 3.535 million. Ana Lockwood suggests not being so conservative based on the data."
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "label": "Massachusetts Division of Local Services, Free Cash Proof — free-cash-proof-lunenburg.xlsx"
+  },
+  {
+   "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "label": "Town of Lunenburg — FY27 budget release — 4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf"
+  },
+  {
+   "href": "/docs/data/free-cash-proof.csv",
+   "label": "Lunenburg Budget Project — free-cash-proof.csv (the DLS proof, line by line, nine towns)"
+  }
+ ],
+ "table": {
+  "caption": "What Lunenburg’s free cash was made of",
+  "views": [
+   {
+    "columns": [
+     "Not spent",
+     "Receipts above estimate",
+     "State aid against estimate",
+     "Everything else",
+     "Identified"
+    ],
+    "key": "parts",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The state’s proof",
+    "note": "Division of Local Services free cash proof, components grouped. Everything else is prior free cash not appropriated and the smaller adjustments, net.",
+    "rows": [
+     {
+      "cells": [
+       "$2,457,761",
+       "$1,225,720",
+       "$149,455",
+       "-$116,654",
+       "$3,716,282"
+      ],
+      "label": "2025"
+     },
+     {
+      "cells": [
+       "$1,224,836",
+       "$1,363,025",
+       "-$390,814",
+       "-$164,468",
+       "$2,032,579"
+      ],
+      "label": "2024"
+     },
+     {
+      "cells": [
+       "$588,680",
+       "$1,006,025",
+       "$327,281",
+       "$1,798",
+       "$1,923,784"
+      ],
+      "label": "2023"
+     },
+     {
+      "cells": [
+       "$754,201",
+       "$1,049,137",
+       "$120,947",
+       "$1,231,634",
+       "$3,155,919"
+      ],
+      "label": "2022"
+     },
+     {
+      "cells": [
+       "$1,377,642",
+       "$590,516",
+       "$240,260",
+       "$478,716",
+       "$2,687,134"
+      ],
+      "label": "2021"
+     }
+    ],
+    "total_col": 4
+   }
+  ]
+ },
+ "title": "Free cash sources"
+}

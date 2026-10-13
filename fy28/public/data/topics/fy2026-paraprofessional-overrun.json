@@ -1,0 +1,438 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "o": {
+     "text": "$208,082",
+     "unit": "",
+     "value": 208081.73
+    },
+    "p": {
+     "text": "$1,625,531",
+     "unit": "",
+     "value": 1625530.84
+    },
+    "r": {
+     "text": "$1,417,449",
+     "unit": "",
+     "value": 1417449.11
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rev",
+    "paid",
+    "over"
+   ],
+   "text": "Paraprofessional accounts paid $1,625,531 against $1,417,449 budgeted, $208,082 over."
+  },
+  {
+   "figures": {
+    "k": {
+     "text": "$99,064.15",
+     "unit": "",
+     "value": 99064.15
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A recoding, a grant expected to cover it, and an overrun awaiting a transfer all fit. Nothing here chooses between them."
+    },
+    {
+     "closes": "the FY2026 year-end transfer schedule by account, with the authority for each",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "No document held connects the spending to a decision."
+    }
+   ],
+   "rests_on": [
+    "k-budget",
+    "k-paid",
+    "k-27"
+   ],
+   "text": "Two kindergarten aide accounts with no budget and no transfer paid $99,064.15."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "o": {
+     "text": "$111,018",
+     "unit": "",
+     "value": 111017.58
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sp-n",
+    "sp-over"
+   ],
+   "text": "All 5 special-education aide lines closed over, by $111,018 together."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,823,788",
+     "unit": "",
+     "value": 1823788.0
+    },
+    "b": {
+     "text": "$1,526,467",
+     "unit": "",
+     "value": 1526466.69
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sp-27",
+    "sp-paid"
+   ],
+   "text": "FY2027 budgets those aides at $1,823,788; FY2026 paid them $1,526,467."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional budget after transfers, FY2026"
+   },
+   "value": {
+    "text": "$1,417,449",
+    "unit": "",
+    "value": 1417449.11
+   }
+  },
+  {
+   "id": "paid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paid on paraprofessionals"
+   },
+   "value": {
+    "text": "$1,625,531",
+    "unit": "",
+    "value": 1625530.84
+   }
+  },
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "over budget, net"
+   },
+   "value": {
+    "text": "$208,082",
+    "unit": "",
+    "value": 208081.73
+   }
+  },
+  {
+   "id": "k-budget",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "kindergarten aides, budget and transfers"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "k-paid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "kindergarten aides, paid"
+   },
+   "value": {
+    "text": "$99,064.15",
+    "unit": "",
+    "value": 99064.15
+   }
+  },
+  {
+   "id": "sp-n",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "",
+      "value": 5
+     }
+    },
+    "literals": [],
+    "text": "special-education aide lines over, of 5"
+   },
+   "value": {
+    "text": "5",
+    "unit": "accounts",
+    "value": 5
+   }
+  },
+  {
+   "id": "sp-over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "those lines over budget, together"
+   },
+   "value": {
+    "text": "$111,018",
+    "unit": "",
+    "value": 111017.58
+   }
+  },
+  {
+   "id": "sp-paid",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "special-education aides, paid, FY2026"
+   },
+   "value": {
+    "text": "$1,526,467",
+    "unit": "",
+    "value": 1526466.69
+   }
+  },
+  {
+   "id": "sp-27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the same aides, FY2027 budget (district workbook)"
+   },
+   "value": {
+    "text": "$1,823,788",
+    "unit": "",
+    "value": 1823788.0
+   }
+  },
+  {
+   "id": "k-27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "kindergarten aides, FY2027 budget"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "k": {
+    "text": "$99,064",
+    "unit": "",
+    "value": 99064.15
+   },
+   "o": {
+    "text": "$208,082",
+    "unit": "",
+    "value": 208081.73
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Paraprofessional accounts ran $208,082 over in FY2026; $99,064 of it was paid against no budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-paraprofessional-overrun",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-paraprofessional-overrun",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-07-29",
+   "href": "/docs/minutes/text/school-committee/2026-07-29-minutes-7930.txt",
+   "label": "School Committee minutes, 2026-07-29",
+   "quote": "$81,075.96 from the High School Special Education Resource Room Teacher account to Hospital Tutoring and the ACE, Primary School, Elementary School, Middle School and High School Special Education Paraprofessional accounts to cover overages in those areas"
+  }
+ ],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "label": "Lunenburg School Committee — 2026-07-29-minutes-7930.pdf"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
+  }
+ ],
+ "table": {
+  "caption": "Paraprofessional accounts that paid anything, FY2026",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Moved in, net",
+     "Paid",
+     "Left"
+    ],
+    "key": "paras",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Function 2330, period 13",
+    "note": "A budget line is dollars, not people: a line over budget does not say more aides were hired.",
+    "rows": [
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$93,691",
+       "-$93,691"
+      ],
+      "label": "Kindergarten aides/regular"
+     },
+     {
+      "cells": [
+       "$275,473",
+       "$7,562",
+       "$312,068",
+       "-$29,033"
+      ],
+      "label": "Hs spec ed paraprofessionals"
+     },
+     {
+      "cells": [
+       "$225,152",
+       "$33,623",
+       "$286,938",
+       "-$28,162"
+      ],
+      "label": "E.s. sped paraprofessionals"
+     },
+     {
+      "cells": [
+       "$373,590",
+       "-$4,220",
+       "$394,176",
+       "-$24,806"
+      ],
+      "label": "M.s. spec ed paraprofessionals"
+     },
+     {
+      "cells": [
+       "$424,416",
+       "$16,913",
+       "$464,971",
+       "-$23,643"
+      ],
+      "label": "P.s. sped paraprofessionals"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$5,373",
+       "-$5,373"
+      ],
+      "label": "Kind paraprofessionals/reg"
+     },
+     {
+      "cells": [
+       "$43,742",
+       "$19,199",
+       "$68,314",
+       "-$5,373"
+      ],
+      "label": "Paraprofessionals"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Paraprofessional overrun"
+}

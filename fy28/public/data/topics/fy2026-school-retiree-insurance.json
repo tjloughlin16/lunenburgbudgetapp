@@ -1,0 +1,304 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "i": {
+     "text": "$3,598,785",
+     "unit": "",
+     "value": 3598785.44
+    },
+    "s": {
+     "text": "$1,262,376",
+     "unit": "",
+     "value": 1262376.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town Accountant’s chart of accounts naming account 570018",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "570018"
+     ],
+     "text": "Reading SCHRETHLTH as school retiree health insurance is ours, from the account name."
+    }
+   ],
+   "rests_on": [
+    "ins",
+    "sr-b",
+    "sr-p"
+   ],
+   "text": "The town’s insurance department paid $3,598,785 by June; $1,262,376 was on SCHRETHLTH."
+  },
+  {
+   "figures": {
+    "s": {
+     "text": "$3,622,882",
+     "unit": "",
+     "value": 3622881.65
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "shi"
+   ],
+   "text": "The school ledger carries its own health insurance account: $3,622,882 paid in FY2026."
+  },
+  {
+   "figures": {
+    "r": {
+     "text": "$2,336,409",
+     "unit": "",
+     "value": 2336409.44
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rest",
+    "hi",
+    "split"
+   ],
+   "text": "Whether any of the town’s other $2,336,409 covers school staff is not split out."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ins",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "town insurance department, paid by June"
+   },
+   "value": {
+    "text": "$3,598,785",
+    "unit": "",
+    "value": 3598785.44
+   }
+  },
+  {
+   "id": "sr-b",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "SCHRETHLTH, budget, FY2026"
+   },
+   "value": {
+    "text": "$1,521,536",
+    "unit": "",
+    "value": 1521535.59
+   }
+  },
+  {
+   "id": "sr-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "12"
+    ],
+    "text": "SCHRETHLTH, paid by June (period 12)"
+   },
+   "value": {
+    "text": "$1,262,376",
+    "unit": "",
+    "value": 1262376.0
+   }
+  },
+  {
+   "id": "rest",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the rest of the insurance department, paid"
+   },
+   "value": {
+    "text": "$2,336,409",
+    "unit": "",
+    "value": 2336409.44
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "HEALTH INS, town department, paid by June"
+   },
+   "value": {
+    "text": "$1,376,557",
+    "unit": "",
+    "value": 1376557.17
+   }
+  },
+  {
+   "id": "shi",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "school ledger’s HEALTH INSURANCE account, paid, FY2026"
+   },
+   "value": {
+    "text": "$3,622,882",
+    "unit": "",
+    "value": 3622881.65
+   }
+  },
+  {
+   "closes": "the health insurance billing by employer group, town and school, from the Town",
+   "id": "split",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether any town HEALTH INS covers school staff"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "s": {
+    "text": "$1,262,376",
+    "unit": "",
+    "value": 1262376.0
+   }
+  },
+  "literals": [],
+  "text": "An account named for school retiree health paid $1,262,376 from the town’s insurance department."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-school-retiree-insurance",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-school-retiree-insurance",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-ledger.csv",
+   "label": "Lunenburg Budget Project — munis-ledger.csv (the period-12 general fund report, one row an account)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Department 914, insurance, as of June",
+  "views": [
+   {
+    "columns": [
+     "Budget",
+     "Paid",
+     "Left"
+    ],
+    "key": "ins",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Period 12",
+    "note": "Account names as MUNIS prints them. A school cost carried by the town is one reason the school budget is not what the schools cost.",
+    "rows": [
+     {
+      "cells": [
+       "$1,315,270",
+       "$1,376,557",
+       "-$61,287"
+      ],
+      "label": "HEALTH INS"
+     },
+     {
+      "cells": [
+       "$1,521,536",
+       "$1,262,376",
+       "$259,160"
+      ],
+      "label": "SCHRETHLTH"
+     },
+     {
+      "cells": [
+       "$453,215",
+       "$593,089",
+       "-$139,874"
+      ],
+      "label": "TNRETHLTHI"
+     },
+     {
+      "cells": [
+       "$400,000",
+       "$345,849",
+       "$54,151"
+      ],
+      "label": "MEDI"
+     },
+     {
+      "cells": [
+       "$15,000",
+       "$12,865",
+       "$2,135"
+      ],
+      "label": "LIFE INS"
+     },
+     {
+      "cells": [
+       "$8,000",
+       "$8,000",
+       "$0"
+      ],
+      "label": "INS COST C"
+     },
+     {
+      "cells": [
+       "$500",
+       "$50",
+       "$450"
+      ],
+      "label": "PEC EXPENS"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "School retiree insurance"
+}

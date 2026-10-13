@@ -1,0 +1,230 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$5,914,242",
+     "unit": "",
+     "value": 5914242.28
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "restricted",
+    "gen"
+   ],
+   "text": "The other $5,914,242 is held for stated purposes; that split is ours, read off each fund’s name."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "4",
+     "unit": "",
+     "value": 4
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the creating Town Meeting articles",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Where the article is missing, a fund’s purpose rests on its name, which is a reading and not a rule."
+    }
+   ],
+   "rests_on": [
+    "created",
+    "purpose-gap"
+   ],
+   "text": "For 4 funds, the general one among them, no creating article is in this archive."
+  },
+  {
+   "figures": {
+    "lo": {
+     "text": "5%",
+     "unit": "",
+     "value": 5.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town’s adopted financial policies, Section 3.03",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "3.03"
+     ],
+     "text": "This archive holds the policy as the fact sheet quotes it, not the adopted document."
+    }
+   ],
+   "rests_on": [
+    "policy1",
+    "policy2",
+    "gen"
+   ],
+   "text": "The Town’s free cash policy puts topping the general fund up to 5% of the budget first."
+  }
+ ],
+ "facts": [
+  {
+   "id": "gen",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "may be spent on any lawful purpose"
+   },
+   "value": {
+    "text": "$3,147,179",
+    "unit": "",
+    "value": 3147178.96
+   }
+  },
+  {
+   "id": "restricted",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "held for a stated purpose (our split)"
+   },
+   "value": {
+    "text": "$5,914,242",
+    "unit": "",
+    "value": 5914242.28
+   }
+  },
+  {
+   "id": "vote",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "c.40 §5B"
+    ],
+    "text": "of Town Meeting to spend from one, c.40 §5B"
+   },
+   "value": {
+    "text": "two-thirds",
+    "unit": "",
+    "value": 0.6666666666666666
+   }
+  },
+  {
+   "id": "created",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "9",
+      "unit": "",
+      "value": 9
+     }
+    },
+    "literals": [],
+    "text": "of 9 in the votes with a creating article here"
+   },
+   "value": {
+    "text": "5",
+    "unit": "funds",
+    "value": 5
+   }
+  },
+  {
+   "id": "policy1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget: free cash goes here first, by policy"
+   },
+   "value": {
+    "text": "5%",
+    "unit": "",
+    "value": 5.0
+   }
+  },
+  {
+   "id": "policy2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of last year’s free cash to the OPEB trust, second"
+   },
+   "value": {
+    "text": "10%",
+    "unit": "",
+    "value": 10
+   }
+  },
+  {
+   "closes": "the Town Meeting articles that created them, in warrants before FY2011",
+   "id": "purpose-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "what the funds created before FY2011 may be spent on"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$3,147,179",
+    "unit": "",
+    "value": 3147178.96
+   },
+   "b": {
+    "text": "$9,061,421",
+    "unit": "",
+    "value": 9061421.24
+   }
+  },
+  "literals": [],
+  "text": "Only the general fund, $3,147,179 of $9,061,421, may go to any lawful use, by a two-thirds vote."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "who-may-spend-it",
+ "kind": "topic",
+ "path": "/town-reserves/who-may-spend-it",
+ "said": [],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — trust-agency-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "label": "Town of Lunenburg — Free Cash Fact Sheet, FY27 warrant — free-cash-fact-sheet.docx"
+  },
+  {
+   "href": "/docs/data/town-meeting-votes.csv",
+   "label": "Lunenburg Budget Project — town-meeting-votes.csv (every Town Meeting article, quoted)"
+  },
+  {
+   "href": "/docs/data/trust-agency-balances.csv",
+   "label": "Lunenburg Budget Project — trust-agency-balances.csv (the MUNIS trust and agency report)"
+  }
+ ],
+ "table": null,
+ "title": "Who may spend it"
+}

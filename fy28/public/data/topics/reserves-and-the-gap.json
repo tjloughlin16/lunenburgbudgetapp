@@ -1,0 +1,303 @@
+{
+ "category": "town-reserves",
+ "chart": {
+  "id": "stabilization-option-burndown",
+  "source": "/data/stabilization-option.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$686,432",
+     "unit": "",
+     "value": 686431.96
+    },
+    "b": {
+     "text": "$2,197,945",
+     "unit": "",
+     "value": 2197945.0
+    },
+    "y": {
+     "text": "FY2030",
+     "unit": "fiscal year",
+     "value": 2030
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a Town Meeting vote; no document can settle it",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The arithmetic models no interest and assumes the whole balance is voted to the schools at once, keeping nothing back."
+    }
+   ],
+   "rests_on": [
+    "enter30",
+    "g30",
+    "short30"
+   ],
+   "text": "The fund enters FY2030 with $686,432 against a $2,197,945 gap, and is empty that year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$682,521",
+     "unit": "",
+     "value": 682521.0700000001
+    },
+    "b": {
+     "text": "$185,000",
+     "unit": "",
+     "value": 185000.0
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "snow",
+    "rf",
+    "gen"
+   ],
+   "text": "One snow year, FY2026, ran $682,521 over budget; the Reserve Fund behind it held $185,000."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "rating-gap"
+   ],
+   "text": "Nothing in this archive says what spending the fund would do to the town’s borrowing."
+  }
+ ],
+ "facts": [
+  {
+   "id": "gen",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2025"
+    ],
+    "text": "general fund at 1 July 2025, where the arithmetic starts"
+   },
+   "value": {
+    "text": "$3,147,179",
+    "unit": "",
+    "value": 3147178.96
+   }
+  },
+  {
+   "id": "g28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273.0
+   }
+  },
+  {
+   "id": "g29",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2029",
+      "unit": "fiscal year",
+      "value": 2029
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2029 (ours)"
+   },
+   "value": {
+    "text": "$1,530,474",
+    "unit": "",
+    "value": 1530474.0
+   }
+  },
+  {
+   "id": "g30",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2030",
+      "unit": "fiscal year",
+      "value": 2030
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2030 (ours)"
+   },
+   "value": {
+    "text": "$2,197,945",
+    "unit": "",
+    "value": 2197945.0
+   }
+  },
+  {
+   "id": "enter30",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2030",
+      "unit": "fiscal year",
+      "value": 2030
+     }
+    },
+    "literals": [],
+    "text": "left in the fund entering FY2030 (ours)"
+   },
+   "value": {
+    "text": "$686,432",
+    "unit": "",
+    "value": 686431.96
+   }
+  },
+  {
+   "id": "short30",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2030",
+      "unit": "fiscal year",
+      "value": 2030
+     }
+    },
+    "literals": [],
+    "text": "still short in FY2030 (ours)"
+   },
+   "value": {
+    "text": "$1,511,513",
+    "unit": "",
+    "value": 1511513.04
+   }
+  },
+  {
+   "id": "snow",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "snow spending over budget, FY2026, at June"
+   },
+   "value": {
+    "text": "$682,521",
+    "unit": "",
+    "value": 682521.0700000001
+   }
+  },
+  {
+   "id": "rf",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the Reserve Fund, FY2026"
+   },
+   "value": {
+    "text": "$185,000",
+    "unit": "",
+    "value": 185000.0
+   }
+  },
+  {
+   "closes": "the town’s bond rating report and most recent official statement",
+   "id": "rating-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what a rating agency would make of spending it"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   },
+   "b": {
+    "text": "FY2029",
+    "unit": "fiscal year",
+    "value": 2029
+   },
+   "c": {
+    "text": "FY2030",
+    "unit": "fiscal year",
+    "value": 2030
+   }
+  },
+  "literals": [],
+  "text": "Spent on the school gap, the general fund covers FY2028 and FY2029 and runs out in FY2030, by our arithmetic."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "reserves-and-the-gap",
+ "kind": "topic",
+ "path": "/town-reserves/reserves-and-the-gap",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2025-03-13",
+   "href": "/docs/minutes/text/finance-committee/2025-03-13-minutes-7009.txt",
+   "label": "Finance Committee minutes, 2025-03-13",
+   "quote": "if there is a direct impact on the town’s bond rating if the town does not contribute to OPEB"
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — trust-agency-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/data/trust-agency-balances.csv",
+   "label": "Lunenburg Budget Project — trust-agency-balances.csv (the MUNIS trust and agency report)"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": null,
+ "title": "Reserves against the gap"
+}

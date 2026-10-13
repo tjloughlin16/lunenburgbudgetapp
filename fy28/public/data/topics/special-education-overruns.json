@@ -1,0 +1,330 @@
+{
+ "category": "special-education",
+ "chart": {
+  "id": "special-education-costs-surprise",
+  "source": "/data/special-education-costs.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$223,774",
+     "unit": "",
+     "value": 223774
+    },
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    },
+    "y": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a chart of accounts from the Town marking every special education account",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "These are general fund figures after whatever tuition the circuit breaker account paid, and which accounts count is our grouping."
+    }
+   ],
+   "rests_on": [
+    "worst",
+    "needing",
+    "median"
+   ],
+   "text": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "b": {
+     "text": "$432,526",
+     "unit": "",
+     "value": 432526
+    },
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "oodover",
+    "oodbest"
+   ],
+   "text": "Tuition ran over its voted budget in 7 of 17 years, and under by as much as $432,526."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$619,020",
+     "unit": "",
+     "value": 619020
+    },
+    "c": {
+     "text": "$541,717",
+     "unit": "",
+     "value": 541717
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the reserve statute as written, and the amount voted into the reserve",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The reserve’s statute is not in this archive; its cap is as the Town Manager described it, and what it holds is not published."
+    }
+   ],
+   "rests_on": [
+    "upper",
+    "cap",
+    "yes"
+   ],
+   "text": "Put the account’s tuition back and FY2024 needed $619,020; the reserve may hold $541,717."
+  }
+ ],
+ "facts": [
+  {
+   "id": "worst",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "needed beyond the voted budget, FY2013"
+   },
+   "value": {
+    "text": "$223,774",
+    "unit": "",
+    "value": 223774
+   }
+  },
+  {
+   "id": "needing",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [],
+    "text": "of 17 needing more than was voted"
+   },
+   "value": {
+    "text": "12",
+    "unit": "years",
+    "value": 12
+   }
+  },
+  {
+   "id": "median",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "needed in the median year"
+   },
+   "value": {
+    "text": "$39,766",
+    "unit": "",
+    "value": 39766
+   }
+  },
+  {
+   "id": "oodover",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [],
+    "text": "of 17 tuition ran over its budget"
+   },
+   "value": {
+    "text": "7",
+    "unit": "years",
+    "value": 7
+   }
+  },
+  {
+   "id": "oodbest",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "tuition under its budget, FY2025"
+   },
+   "value": {
+    "text": "$432,526",
+    "unit": "",
+    "value": 432526
+   }
+  },
+  {
+   "id": "upper",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "FY2024, with the account’s tuition put back (ours)"
+   },
+   "value": {
+    "text": "$619,020",
+    "unit": "",
+    "value": 619020
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most the new reserve may hold, as described"
+   },
+   "value": {
+    "text": "$541,717",
+    "unit": "",
+    "value": 541717
+   }
+  },
+  {
+   "id": "yes",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "24",
+      "unit": "",
+      "value": 24
+     }
+    },
+    "literals": [
+     "November 2025"
+    ],
+    "text": "for the reserve, Town Meeting, November 2025; 24 against"
+   },
+   "value": {
+    "text": "65",
+    "unit": "votes",
+    "value": 65
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$223,774",
+    "unit": "",
+    "value": 223774
+   },
+   "n": {
+    "text": "17",
+    "unit": "",
+    "value": 17
+   },
+   "y": {
+    "text": "FY2013",
+    "unit": "fiscal year",
+    "value": 2013
+   }
+  },
+  "literals": [],
+  "text": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "special-education-overruns",
+ "kind": "topic",
+ "path": "/special-education/special-education-overruns",
+ "said": [
+  {
+   "board": "Select Board",
+   "date": "2025-10-07",
+   "href": "/docs/meetings/text/select-board/2025-10-07-minutes-7441.txt",
+   "label": "Select Board minutes, 2025-10-07",
+   "quote": "The fund requires a majority vote of both the School Committee and the Select Board to expend. The total balance cannot exceed 2% of annual net school spending."
+  },
+  {
+   "board": "Select Board",
+   "date": "2025-10-21",
+   "href": "/docs/meetings/text/select-board/2025-10-21-minutes-7466.txt",
+   "label": "Select Board minutes, 2025-10-21",
+   "quote": "Member McLeod expressed lingering concern about potential budget impacts if the reserve were to reduce urgency around special education line-item funding."
+  },
+  {
+   "board": "School Committee",
+   "date": "2024-02-28",
+   "href": "/docs/meetings/text/school-committee/2024-02-28-minutes-6439.txt",
+   "label": "School Committee minutes, 2024-02-28",
+   "quote": "Ms. Brzozoski regarding the 14% increase in tuition, when did we find out about this?"
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx"
+  },
+  {
+   "href": "/docs/town-annual-reports/text/4130-fy-2025-annual-town-report.txt",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.txt"
+  }
+ ],
+ "table": null,
+ "title": "Special education overruns"
+}

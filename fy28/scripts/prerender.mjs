@@ -234,8 +234,11 @@ async function readRoutes() {
   const topicsFile = join(APP, 'public', 'data', 'topics.json')
   let topicPages = []
   if (existsSync(topicsFile)) {
-    topicPages = Object.values(JSON.parse(await readFile(topicsFile, 'utf8')).topics)
-      .filter(t => t.ready).map(t => t.path).sort()
+    const ix = JSON.parse(await readFile(topicsFile, 'utf8'))
+    // Hubs too: only two of them are SLUG routes; the rest exist only as categories.
+    topicPages = [...new Set([...ix.categories.filter(c => c.ready).map(c => c.path),
+      ...Object.values(ix.topics).filter(t => t.ready).map(t => t.path)])]
+      .filter(p => !routes.includes(p)).sort()
     console.log(`  ${topicPages.length} topic pages at /<category>/<topic>`)
   }
   return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings, ...topicPages]

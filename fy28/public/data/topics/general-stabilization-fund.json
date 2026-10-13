@@ -1,0 +1,482 @@
+{
+ "category": "town-reserves",
+ "chart": {
+  "id": "stabilization-all",
+  "source": "/data/stabilization-funds.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2011",
+     "unit": "fiscal year",
+     "value": 2011
+    },
+    "b": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "c": {
+     "text": "FY2012",
+     "unit": "fiscal year",
+     "value": 2012
+    },
+    "r": {
+     "text": "7.2%",
+     "unit": "",
+     "value": 7.214553025373505
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fy11",
+    "fy12",
+    "fy25",
+    "rate",
+    "mix-gap"
+   ],
+   "text": "The fund grew 7.2% a year from FY2011 to FY2025, and rose in every year after FY2012."
+  },
+  {
+   "figures": {
+    "lo": {
+     "text": "5%",
+     "unit": "",
+     "value": 5.0
+    },
+    "p": {
+     "text": "6.1%",
+     "unit": "",
+     "value": 6.148039378267939
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town’s adopted financial policies, which the fact sheet quotes",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The policy says the omnibus budget; we divide by the original appropriation, and the two may differ."
+    }
+   ],
+   "rests_on": [
+    "gshare",
+    "policy",
+    "fy25"
+   ],
+   "text": "At 6.1% of the FY2026 budget, by our arithmetic, it sits above the 5% the Town’s policy names."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the MUNIS trust fund report of expenditures by year",
+     "figures": {
+      "y": {
+       "text": "FY2011",
+       "unit": "fiscal year",
+       "value": 2011
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "That is a floor: money also leaves inside articles about something else, and the record here starts in FY2011."
+    }
+   ],
+   "rests_on": [
+    "fy23",
+    "fy25"
+   ],
+   "text": "No withdrawal from the general fund appears in any vote this archive has read."
+  }
+ ],
+ "facts": [
+  {
+   "id": "fy11",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "cash at the FY2011 close"
+   },
+   "value": {
+    "text": "$1,186,777",
+    "unit": "",
+    "value": 1186776.91
+   }
+  },
+  {
+   "id": "fy12",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2012",
+      "unit": "fiscal year",
+      "value": 2012
+     }
+    },
+    "literals": [],
+    "text": "at the FY2012 close, the low"
+   },
+   "value": {
+    "text": "$989,609",
+    "unit": "",
+    "value": 989608.54
+   }
+  },
+  {
+   "id": "fy23",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "at the FY2023 close"
+   },
+   "value": {
+    "text": "$2,730,601",
+    "unit": "",
+    "value": 2730600.73
+   }
+  },
+  {
+   "id": "fy25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "at the FY2025 close"
+   },
+   "value": {
+    "text": "$3,147,179",
+    "unit": "",
+    "value": 3147178.96
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     },
+     "b": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "a year, FY2011 to FY2025, compounded"
+   },
+   "value": {
+    "text": "7.2%",
+    "unit": "",
+    "value": 7.214553025373505
+   }
+  },
+  {
+   "id": "mar26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31 March 2026"
+    ],
+    "text": "held at 31 March 2026 (ledger)"
+   },
+   "value": {
+    "text": "$3,244,478",
+    "unit": "",
+    "value": 3244478.12
+   }
+  },
+  {
+   "id": "gin",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2025"
+    ],
+    "text": "come in since 1 July 2025"
+   },
+   "value": {
+    "text": "$97,299",
+    "unit": "",
+    "value": 97299.16
+   }
+  },
+  {
+   "id": "policy",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget: the level the Town’s policy names first"
+   },
+   "value": {
+    "text": "5%",
+    "unit": "",
+    "value": 5.0
+   }
+  },
+  {
+   "id": "gshare",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "what it holds, against the FY2026 budget (ours)"
+   },
+   "value": {
+    "text": "6.1%",
+    "unit": "",
+    "value": 6.148039378267939
+   }
+  },
+  {
+   "closes": "the MUNIS trust fund report for each year, with revenue split by source",
+   "id": "mix-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how much of the rise is deposits and how much interest"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2012",
+    "unit": "fiscal year",
+    "value": 2012
+   },
+   "b": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   },
+   "c": {
+    "text": "$3,147,179",
+    "unit": "",
+    "value": 3147178.96
+   }
+  },
+  "literals": [],
+  "text": "The general fund’s cash rose every year from FY2012 to FY2025, to $3,147,179."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "general-stabilization-fund",
+ "kind": "topic",
+ "path": "/town-reserves/general-stabilization-fund",
+ "said": [
+  {
+   "board": "Select Board",
+   "date": "2025-01-14",
+   "href": "/docs/minutes/text/select-board/2025-01-14-minutes-6957.txt",
+   "label": "Select Board minutes, 2025-01-14",
+   "quote": "She added that Lunenburg’s stabilization funds are looking good and that there is a strong commitment from the community to put away money into stabilization funds of various types and that should continue."
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — trust-agency-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "label": "Town of Lunenburg — Free Cash Fact Sheet, FY27 warrant — free-cash-fact-sheet.docx"
+  },
+  {
+   "href": "/docs/data/stabilization-balances.csv",
+   "label": "Lunenburg Budget Project — stabilization-balances.csv (year-end balances, each proven)"
+  },
+  {
+   "href": "/docs/data/trust-agency-balances.csv",
+   "label": "Lunenburg Budget Project — trust-agency-balances.csv (the MUNIS trust and agency report)"
+  }
+ ],
+ "table": {
+  "caption": "The general Stabilization Fund at each year’s close",
+  "views": [
+   {
+    "columns": [
+     "Ending cash",
+     "Ending market value"
+    ],
+    "key": "series",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Trust tables and the ledger",
+    "note": "Each year read off the annual report’s trust table and published only where the table’s own arithmetic closes; the latest year is the ledger’s opening balance. A dash is a market value the year does not print.",
+    "rows": [
+     {
+      "cells": [
+       "$3,147,178.96",
+       null
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$2,901,157.60",
+       "$2,967,682.91"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$2,730,600.73",
+       "$2,725,541.17"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,574,673.21",
+       "$2,572,737.97"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$2,447,755.21",
+       "$2,526,388.54"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$1,978,347.74",
+       "$2,041,061.72"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$1,848,802.86",
+       "$1,890,735.29"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$1,740,279.81",
+       "$1,732,690.98"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$1,631,430.63",
+       null
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$1,511,526.92",
+       "$1,551,001.18"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,388,105.33",
+       "$1,398,606.47"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,299,077.98",
+       "$1,312,062.64"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$999,548.94",
+       "$1,002,847.47"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$989,608.54",
+       "$1,005,630.47"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$1,186,776.91",
+       "$1,202,862.85"
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "General stabilization fund"
+}

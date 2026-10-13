@@ -1,0 +1,388 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "lo": {
+     "text": "5%",
+     "unit": "",
+     "value": 5.0
+    },
+    "m": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    },
+    "n": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "short",
+    "town-share"
+   ],
+   "text": "On the Town’s figures, free cash reached 5% in only 3 of the last 10 years."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "6.51%",
+     "unit": "",
+     "value": 6.51
+    },
+    "b": {
+     "text": "6.65%",
+     "unit": "",
+     "value": 6.65
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "town-share",
+    "town-base",
+    "ours-orig",
+    "ours-rev"
+   ],
+   "text": "Against three different budget figures, this year’s share is 6.51% to 6.65%: inside the range each time."
+  },
+  {
+   "figures": {
+    "hi": {
+     "text": "7%",
+     "unit": "",
+     "value": 7.000000000000001
+    },
+    "lo": {
+     "text": "5%",
+     "unit": "",
+     "value": 5.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Division of Local Services’ own published guidance",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether the town was short in most of the last ten years depends on where that line sits, and the line rests on one paraphrase."
+    }
+   ],
+   "rests_on": [
+    "band",
+    "dls-text"
+   ],
+   "text": "The 5% to 7% range reaches this archive only as the Town quoting the state."
+  }
+ ],
+ "facts": [
+  {
+   "id": "town-share",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "free cash as a share of budget, FY2026, Town’s figure"
+   },
+   "value": {
+    "text": "6.65%",
+    "unit": "",
+    "value": 6.65
+   }
+  },
+  {
+   "id": "town-base",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the prior-year budget the Town divides by"
+   },
+   "value": {
+    "text": "$50,420,663",
+    "unit": "",
+    "value": 50420663.0
+   }
+  },
+  {
+   "id": "band",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the range the Town says the state recommends"
+   },
+   "value": {
+    "text": "5% to 7%",
+    "unit": "",
+    "value": 5.0
+   }
+  },
+  {
+   "id": "short",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "lo": {
+      "text": "5%",
+      "unit": "",
+      "value": 5.0
+     },
+     "n": {
+      "text": "10",
+      "unit": "",
+      "value": 10
+     }
+    },
+    "literals": [],
+    "text": "of the last 10 below 5%, on the Town’s figures"
+   },
+   "value": {
+    "text": "7",
+    "unit": "years",
+    "value": 7
+   }
+  },
+  {
+   "id": "ours-orig",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same, against the FY2026 original budget (ours)"
+   },
+   "value": {
+    "text": "6.55%",
+    "unit": "",
+    "value": 6.55
+   }
+  },
+  {
+   "id": "ours-rev",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "March 2026"
+    ],
+    "text": "against the revised budget at March 2026 (ours)"
+   },
+   "value": {
+    "text": "6.51%",
+    "unit": "",
+    "value": 6.51
+   }
+  },
+  {
+   "closes": "the Division of Local Services publication the 5-7% recommendation comes from",
+   "id": "dls-text",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the state’s own guidance on free cash levels"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "6.65%",
+    "unit": "",
+    "value": 6.65
+   },
+   "hi": {
+    "text": "7%",
+    "unit": "",
+    "value": 7.000000000000001
+   },
+   "lo": {
+    "text": "5%",
+    "unit": "",
+    "value": 5.0
+   },
+   "m": {
+    "text": "10",
+    "unit": "",
+    "value": 10
+   },
+   "n": {
+    "text": "7",
+    "unit": "",
+    "value": 7
+   }
+  },
+  "literals": [],
+  "text": "Free cash is 6.65% of the budget, inside the 5% to 7% the Town cites; 7 of the last 10 years fell short."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "free-cash-guideline",
+ "kind": "topic",
+ "path": "/town-reserves/free-cash-guideline",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-05-28",
+   "href": "/docs/minutes/text/finance-committee/2026-05-28-minutes-7828.txt",
+   "label": "Finance Committee minutes, 2026-05-28",
+   "quote": "Chris Menard suggests having an analyst review all of the town’s policies on free cash and estimates."
+  }
+ ],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "label": "Town of Lunenburg — Free Cash Fact Sheet, FY27 warrant — free-cash-fact-sheet.docx"
+  },
+  {
+   "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "label": "Town of Lunenburg — FY27 budget release — 4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf"
+  },
+  {
+   "href": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "label": "Massachusetts Division of Local Services, Free Cash Proof — free-cash-proof-lunenburg.xlsx"
+  },
+  {
+   "href": "/docs/data/free-cash-history-fincom.csv",
+   "label": "Lunenburg Budget Project — free-cash-history-fincom.csv (the Town’s free cash history table)"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": {
+  "caption": "Free cash against the budget, the Town’s figures",
+  "views": [
+   {
+    "columns": [
+     "Certified",
+     "Operating budget",
+     "Share"
+    ],
+    "key": "sheet",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "The Town’s fact sheet",
+    "note": "As printed in the Free Cash Fact Sheet. Each share recomputes from the two figures beside it to the hundredth of a point.",
+    "rows": [
+     {
+      "cells": [
+       "$3,354,370",
+       "$50,420,663",
+       "6.65%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$2,270,060",
+       "$49,661,935",
+       "4.57%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$1,870,612",
+       "$47,551,576",
+       "3.93%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$2,923,290",
+       "$44,742,766",
+       "6.53%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,666,962",
+       "$42,743,616",
+       "6.24%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$1,804,185",
+       "$42,520,507",
+       "4.24%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$1,107,694",
+       "$40,482,685",
+       "2.74%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$1,512,483",
+       "$39,300,938",
+       "3.85%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$818,886",
+       "$36,762,549",
+       "2.23%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$888,944",
+       "$34,948,060",
+       "2.54%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$263,188",
+       "$32,452,875",
+       "0.81%"
+      ],
+      "label": "FY2016"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Free cash guideline"
+}

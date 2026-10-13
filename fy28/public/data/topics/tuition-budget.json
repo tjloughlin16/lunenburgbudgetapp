@@ -1,0 +1,468 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$700,142",
+     "unit": "",
+     "value": 700142.0
+    },
+    "c": {
+     "text": "$591,151",
+     "unit": "",
+     "value": 591151.0
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s budget narrative for the FY2027 tuition line, placement by placement",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2027"
+     ],
+     "text": "Whether the cut expects fewer placements or lower prices is not stated in the budget."
+    }
+   ],
+   "rests_on": [
+    "b26",
+    "b27",
+    "cut",
+    "cutp"
+   ],
+   "text": "Tuition is budgeted at $700,142 for FY2027, $591,151 below FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$489,918",
+     "unit": "",
+     "value": 489918.0
+    },
+    "b": {
+     "text": "$1,291,293",
+     "unit": "",
+     "value": 1291293.0
+    },
+    "d": {
+     "text": "4",
+     "unit": "",
+     "value": 4
+    },
+    "n": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    },
+    "u": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "blow",
+    "b26",
+    "up",
+    "down"
+   ],
+   "text": "Across 11 budgets it ran from $489,918 to $1,291,293, rising in 6 and falling in 4."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "6.23%",
+     "unit": "",
+     "value": 6.227163362351762
+    },
+    "b": {
+     "text": "3.98%",
+     "unit": "",
+     "value": 3.978370052662572
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pub",
+    "held"
+   ],
+   "text": "Hold tuition at FY2026 and the FY2027 level-service rise is 6.23%, not 3.98%."
+  }
+ ],
+ "facts": [
+  {
+   "id": "b26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "tuition budgeted, FY2026, the highest"
+   },
+   "value": {
+    "text": "$1,291,293",
+    "unit": "",
+    "value": 1291293.0
+   }
+  },
+  {
+   "id": "b27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "tuition budgeted, FY2027"
+   },
+   "value": {
+    "text": "$700,142",
+    "unit": "",
+    "value": 700142.0
+   }
+  },
+  {
+   "id": "cut",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "less between the two budgets"
+   },
+   "value": {
+    "text": "$591,151",
+    "unit": "",
+    "value": 591151.0
+   }
+  },
+  {
+   "id": "cutp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same cut, as a share"
+   },
+   "value": {
+    "text": "46%",
+    "unit": "",
+    "value": 45.77977267746359
+   }
+  },
+  {
+   "id": "blow",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "11",
+      "unit": "",
+      "value": 11
+     },
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "lowest of 11 budgets, FY2023"
+   },
+   "value": {
+    "text": "$489,918",
+    "unit": "",
+    "value": 489918.0
+   }
+  },
+  {
+   "id": "up",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "that rose on the year before"
+   },
+   "value": {
+    "text": "6",
+    "unit": "budgets",
+    "value": 6
+   }
+  },
+  {
+   "id": "down",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "that fell on the year before"
+   },
+   "value": {
+    "text": "4",
+    "unit": "budgets",
+    "value": 4
+   }
+  },
+  {
+   "id": "pub",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "FY2027 level-service rise (our arithmetic)"
+   },
+   "value": {
+    "text": "3.98%",
+    "unit": "",
+    "value": 3.978370052662572
+   }
+  },
+  {
+   "id": "held",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same rise, tuition held at FY2026"
+   },
+   "value": {
+    "text": "6.23%",
+    "unit": "",
+    "value": 6.227163362351762
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$700,142",
+    "unit": "",
+    "value": 700142.0
+   },
+   "c": {
+    "text": "$591,151",
+    "unit": "",
+    "value": 591151.0
+   },
+   "p": {
+    "text": "46%",
+    "unit": "",
+    "value": 45.77977267746359
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "FY2027 budgets out-of-district tuition at $700,142, $591,151 below FY2026, a 46% cut."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "tuition-budget",
+ "kind": "topic",
+ "path": "/special-education/tuition-budget",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-08-26",
+   "href": "/docs/meetings/text/school-committee/2026-08-26-minutes-7980.txt",
+   "label": "School Committee minutes, 2026-08-26",
+   "quote": "The administration reported that 19 out-of-district placements were then anticipated."
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/data/ood-tuition-history.csv",
+   "label": "Lunenburg Budget Project — ood-tuition-history.csv (the tuition budgets, year by year)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (every district budget line, by column)"
+  }
+ ],
+ "table": {
+  "caption": "Out-of-district tuition, as budgeted",
+  "views": [
+   {
+    "columns": [
+     "Private schools",
+     "Collaboratives",
+     "Both",
+     "Which budget"
+    ],
+    "key": "budgets",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Budget columns only",
+    "note": "Functions 9300 and 9400 in the district’s budgets: a settled figure where a later document reports one, otherwise the proposal. Never what was spent.",
+    "rows": [
+     {
+      "cells": [
+       "$536,400",
+       "$163,742",
+       "$700,142",
+       "proposed"
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "$988,630",
+       "$302,663",
+       "$1,291,293",
+       "settled"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$703,872",
+       "$460,952",
+       "$1,164,824",
+       "proposed"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$310,260",
+       "$190,979",
+       "$501,239",
+       "proposed"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$303,364",
+       "$186,554",
+       "$489,918",
+       "settled"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$639,156",
+       "$179,560",
+       "$818,716",
+       "settled"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$589,156",
+       "$130,113",
+       "$719,269",
+       "settled"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$600,016",
+       "$265,730",
+       "$865,746",
+       "settled"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$694,480",
+       "$60,000",
+       "$754,480",
+       "settled"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$700,270",
+       "$60,000",
+       "$760,270",
+       "settled"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$581,345",
+       "$74,189",
+       "$655,534",
+       "proposed"
+      ],
+      "label": "FY2017"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Tuition budget"
+}

@@ -1,0 +1,543 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$634,513",
+     "unit": "",
+     "value": 634513.0
+    },
+    "b": {
+     "text": "$1,872,411",
+     "unit": "",
+     "value": 1872411.0
+    },
+    "c": {
+     "text": "2.0%",
+     "unit": "",
+     "value": 2.0
+    },
+    "n": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A contract sets what one person is paid, so the rest may be more posts, more hours, or lines recoded. Nothing here tests which."
+    }
+   ],
+   "rests_on": [
+    "para0",
+    "para1",
+    "pararate",
+    "paracon"
+   ],
+   "text": "The paraprofessional line rose from $634,513 to $1,872,411 over 10 budgets; the contract gives 2.0%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "49.0",
+     "unit": "full-time equivalents",
+     "value": 49.0
+    },
+    "b": {
+     "text": "18.0",
+     "unit": "full-time equivalents",
+     "value": 18.0
+    },
+    "y": {
+     "text": "FY2019",
+     "unit": "fiscal year",
+     "value": 2019
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s position list by fund, and the EPIMS work assignment records behind DESE’s count",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The documents do not explain how a rising budget line and a falling count describe the same people; neither publisher says what its figure counts."
+    }
+   ],
+   "rests_on": [
+    "fte0",
+    "fte1",
+    "fund-gap"
+   ],
+   "text": "The state counts 49.0 paraprofessional FTE in FY2019 and 18.0 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "2.67%",
+     "unit": "",
+     "value": 2.6749641904463495
+    },
+    "b": {
+     "text": "3.5%",
+     "unit": "",
+     "value": 3.5000000000000004
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "teachrate",
+    "teachcon"
+   ],
+   "text": "The special education teacher line grew 2.67% a year, under the 3.5% contract raise."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$5,466,201",
+     "unit": "",
+     "value": 5466201.0
+    },
+    "b": {
+     "text": "$4,865,038",
+     "unit": "",
+     "value": 4865038.0
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a chart of accounts from the district marking every special education line",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The state’s account codes have no special education total, so which lines count is our classification."
+    }
+   ],
+   "rests_on": [
+    "ind27",
+    "ind25"
+   ],
+   "text": "Our in-district lines total $5,466,201 for FY2027, against $4,865,038 in FY2025."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ind27",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "54",
+      "unit": "",
+      "value": 54
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "in district, FY2027 balanced budget (our 54 lines)"
+   },
+   "value": {
+    "text": "$5,466,201",
+    "unit": "",
+    "value": 5466201.0
+   }
+  },
+  {
+   "id": "ind25",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the same lines, FY2025 budget"
+   },
+   "value": {
+    "text": "$4,865,038",
+    "unit": "",
+    "value": 4865038.0
+   }
+  },
+  {
+   "id": "para0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2018",
+      "unit": "fiscal year",
+      "value": 2018
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional budget line, FY2018"
+   },
+   "value": {
+    "text": "$634,513",
+    "unit": "",
+    "value": 634513.0
+   }
+  },
+  {
+   "id": "para1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the same line, FY2027"
+   },
+   "value": {
+    "text": "$1,872,411",
+    "unit": "",
+    "value": 1872411.0
+   }
+  },
+  {
+   "id": "pararate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, compounded (our arithmetic)"
+   },
+   "value": {
+    "text": "12.78%",
+    "unit": "",
+    "value": 12.776302345076008
+   }
+  },
+  {
+   "id": "paracon",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "b": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "a year, paraprofessionals’ contract, FY2026 to FY2028"
+   },
+   "value": {
+    "text": "2.0%",
+    "unit": "",
+    "value": 2.0
+   }
+  },
+  {
+   "id": "teachrate",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "8",
+      "unit": "",
+      "value": 8
+     }
+    },
+    "literals": [],
+    "text": "teacher line a year, 8 budgets (ours)"
+   },
+   "value": {
+    "text": "2.67%",
+    "unit": "",
+    "value": 2.6749641904463495
+   }
+  },
+  {
+   "id": "teachcon",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "a year, the teachers’ contract, FY2027"
+   },
+   "value": {
+    "text": "3.5%",
+    "unit": "",
+    "value": 3.5000000000000004
+   }
+  },
+  {
+   "id": "fte0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "paraprofessional FTE, state count, FY2019"
+   },
+   "value": {
+    "text": "49.0",
+    "unit": "full-time equivalents",
+    "value": 49.0
+   }
+  },
+  {
+   "id": "fte1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same count, FY2026"
+   },
+   "value": {
+    "text": "18.0",
+    "unit": "full-time equivalents",
+    "value": 18.0
+   }
+  },
+  {
+   "closes": "the district’s position list by fund, and the EPIMS work assignment records behind DESE’s count",
+   "id": "fund-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which fund pays which paraprofessional post"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "12.78%",
+    "unit": "",
+    "value": 12.776302345076008
+   },
+   "b": {
+    "text": "63.3%",
+    "unit": "",
+    "value": 63.3
+   },
+   "n": {
+    "text": "10",
+    "unit": "",
+    "value": 10
+   }
+  },
+  "literals": [],
+  "text": "The paraprofessional budget line grew 12.78% a year over 10 budgets; the state’s FTE fell 63.3%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "in-district-special-education",
+ "kind": "topic",
+ "path": "/special-education/in-district-special-education",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-01-24",
+   "href": "/docs/meetings/text/school-committee/2024-01-24-minutes-6375.txt",
+   "label": "School Committee minutes, 2024-01-24",
+   "quote": "they are the backbone of special education and without them the department cannot run"
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-10-01",
+   "href": "/docs/meetings/text/school-committee/2025-10-01-minutes-7432.txt",
+   "label": "School Committee minutes, 2025-10-01",
+   "quote": "Ms. Brzozoski makes a motion to add two paraprofessional positions where needed, Ms Young seconds the motion, all approve"
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (every district budget line, by column)"
+  },
+  {
+   "href": "/docs/data/sped-para-history.csv",
+   "label": "Lunenburg Budget Project — sped-para-history.csv (the paraprofessional budget line, by year)"
+  },
+  {
+   "href": "/docs/data/sped-teacher-history.csv",
+   "label": "Lunenburg Budget Project — sped-teacher-history.csv (the special education teacher line, by year)"
+  },
+  {
+   "href": "/docs/contracts/pdf/paraprofessional-fy26-fy28.pdf",
+   "label": "Lunenburg Public Schools and AFSCME — paraprofessional-fy26-fy28.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/dese-teacher-contract.pdf",
+   "label": "Massachusetts DESE, educator contracts — dese-teacher-contract.pdf"
+  },
+  {
+   "href": "/docs/state-dese/dese-sped-indicators.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-sped-indicators.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Special education paraprofessionals, by year",
+  "views": [
+   {
+    "columns": [
+     "Budget line",
+     "Which budget",
+     "State FTE count"
+    ],
+    "key": "paras",
+    "kinds": [
+     "stated",
+     "stated",
+     "ledger"
+    ],
+    "label": "Budget line beside the state’s count",
+    "note": "The budget line is from the district’s workbooks, budget columns only. The FTE is DESE’s. They are set side by side and not reconciled; a blank is a year the state does not print.",
+    "rows": [
+     {
+      "cells": [
+       "$1,872,411",
+       "workbook",
+       null
+      ],
+      "label": "FY2027"
+     },
+     {
+      "cells": [
+       "$1,342,373",
+       "workbook",
+       "18.0"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$1,366,893",
+       "workbook",
+       "20.0"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$1,170,941",
+       "proposed",
+       "23.0"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$1,014,759",
+       "settled",
+       "24.0"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$946,233",
+       "settled",
+       "32.5"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$920,345",
+       "settled",
+       "41.5"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$871,903",
+       "settled",
+       "44.0"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$657,492",
+       "settled",
+       "49.0"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$634,513",
+       "settled",
+       null
+      ],
+      "label": "FY2018"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "In-district special education"
+}

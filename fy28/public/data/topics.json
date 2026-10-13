@@ -1,12 +1,23 @@
 {
+ "areas": [
+  {
+   "id": "school",
+   "title": "The schools"
+  },
+  {
+   "id": "town",
+   "title": "The town"
+  },
+  {
+   "id": "options",
+   "title": "Budget options"
+  }
+ ],
  "categories": [
   {
    "answer": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes.",
+   "area": "school",
    "elsewhere": [],
-   "full_report": {
-    "href": "/analysis/transportation",
-    "label": "School transportation, the full report"
-   },
    "groups": [
     {
      "title": null,
@@ -30,6 +41,7 @@
    ],
    "id": "transportation",
    "minutes": 2,
+   "order": 10,
    "path": "/transportation",
    "ready": true,
    "shelf": "Transportation",
@@ -37,6 +49,7 @@
   },
   {
    "answer": "Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows $439,510 paid in FY2026 and the fee fund $146,911; the district’s own sheets disagree on what each team costs, by a multiple.",
+   "area": "school",
    "elsewhere": [
     {
      "href": "/youth-sports",
@@ -51,10 +64,6 @@
      "title": "Cutting the extras"
     }
    ],
-   "full_report": {
-    "href": "/analysis/athletics",
-    "label": "Athletics, the full report"
-   },
    "groups": [
     {
      "title": null,
@@ -81,10 +90,144 @@
    ],
    "id": "athletics",
    "minutes": 2,
+   "order": 11,
    "path": "/athletics",
    "ready": true,
    "shelf": "Athletics",
    "title": "Athletics costs"
+  },
+  {
+   "answer": "Out-of-district tuition was $1,205,949 in FY2025, and 39.3% of it was paid outside the general fund. The state repaid $579,142 in FY2026 through the circuit breaker, a year after the costs.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/where-students-go-instead",
+     "title": "Children educated elsewhere"
+    },
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "What it costs",
+     "topics": [
+      "out-of-district-tuition",
+      "cost-per-placement",
+      "in-district-special-education",
+      "special-education-transportation"
+     ]
+    },
+    {
+     "title": "What comes back",
+     "topics": [
+      "circuit-breaker",
+      "circuit-breaker-account"
+     ]
+    },
+    {
+     "title": "Budgets and surprises",
+     "topics": [
+      "tuition-budget",
+      "special-education-overruns"
+     ]
+    },
+    {
+     "title": "Children and placements",
+     "topics": [
+      "students-with-an-iep",
+      "out-of-district-placements",
+      "hiring-versus-placing",
+      "class-size-limits"
+     ]
+    }
+   ],
+   "id": "special-education",
+   "minutes": 1,
+   "order": 20,
+   "path": "/special-education",
+   "ready": true,
+   "shelf": "Special education",
+   "title": "Special education costs"
+  },
+  {
+   "answer": "The town keeps two kinds of reserve: free cash, $3,354,370 as of 1 July 2025, and nine stabilization accounts holding $9,061,421. Only the general fund’s $3,147,179 may be spent on anything lawful.",
+   "area": "town",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": "Free cash",
+     "topics": [
+      "free-cash-balance",
+      "free-cash-guideline",
+      "free-cash-sources",
+      "free-cash-and-capital",
+      "free-cash-redirect"
+     ]
+    },
+    {
+     "title": "Stabilization funds",
+     "topics": [
+      "stabilization-balances",
+      "general-stabilization-fund",
+      "who-may-spend-it",
+      "stabilization-deposits",
+      "stabilization-withdrawals",
+      "reserves-and-the-gap"
+     ]
+    }
+   ],
+   "id": "town-reserves",
+   "minutes": 1,
+   "order": 50,
+   "path": "/town-reserves",
+   "ready": true,
+   "shelf": "Town reserves",
+   "title": "Free cash and stabilization"
+  },
+  {
+   "answer": "The school general fund closed FY2026 with $482,118 unspent, 1.8% of its budget, at period 13. Town departments stood $858,462 under in June, before their close.",
+   "area": "town",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": null,
+     "topics": [
+      "fy2026-school-surplus",
+      "fy2026-surplus-by-category",
+      "fy2026-lines-over-budget",
+      "fy2026-school-transfers",
+      "fy2026-surplus-and-fy2027",
+      "fy2025-school-surplus"
+     ]
+    },
+    {
+     "title": "School lines",
+     "topics": [
+      "fy2026-tuition-lines",
+      "fy2026-paraprofessional-overrun",
+      "fy2026-psychologist-line",
+      "special-education-transportation",
+      "fy2026-athletics-underspend"
+     ]
+    },
+    {
+     "title": "Town side",
+     "topics": [
+      "fy2026-town-unspent",
+      "fy2026-snow-and-reserve-fund",
+      "fy2026-school-retiree-insurance"
+     ]
+    }
+   ],
+   "id": "fy2026-closeout",
+   "minutes": 1,
+   "order": 51,
+   "path": "/fy2026-closeout",
+   "ready": true,
+   "shelf": "FY2026 closeout",
+   "title": "FY2026 year end"
   }
  ],
  "generated_by": "scripts/build_topics_index.py",
@@ -157,6 +300,58 @@
    ],
    "title": "Bus fee"
   },
+  "circuit-breaker": {
+   "finding": "The state paid $579,142 in FY2026 on $1,257,225 of eligible costs for 9 children: 46.1%.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "circuit-breaker",
+   "minutes": 2,
+   "path": "/special-education/circuit-breaker",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Circuit breaker"
+  },
+  "circuit-breaker-account": {
+   "finding": "The account closed FY2026 at $281,806, down from $482,004 at the close of FY2020.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "circuit-breaker-account",
+   "minutes": 2,
+   "path": "/special-education/circuit-breaker-account",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Circuit breaker account"
+  },
+  "class-size-limits": {
+   "finding": "A separate special education group may hold 8 students to one educator, or 12 with an aide.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "class-size-limits",
+   "minutes": 2,
+   "path": "/special-education/class-size-limits",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Class size limits"
+  },
+  "cost-per-placement": {
+   "finding": "No published document says what one out-of-district placement costs.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "cost-per-placement",
+   "minutes": 1,
+   "path": "/special-education/cost-per-placement",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Cost per placement"
+  },
   "cost-per-sport": {
    "finding": "Not one of 25 teams carries the same FY2024 cost in all three district sheets.",
    "generator": "scripts/build_athletics_topics.py",
@@ -196,6 +391,84 @@
    ],
    "title": "Fee fund ledger"
   },
+  "free-cash-and-capital": {
+   "finding": "Free cash paid $655,424 of the $1,225,000 FY2026 capital programme; FY2027 plans $991,627 of $1,830,203.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "free-cash-and-capital",
+   "minutes": 1,
+   "path": "/town-reserves/free-cash-and-capital",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Free cash and capital"
+  },
+  "free-cash-balance": {
+   "finding": "The state certified $3,354,370 of free cash as of 1 July 2025, the most in any year the Town’s records list.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "free-cash-balance",
+   "minutes": 2,
+   "path": "/town-reserves/free-cash-balance",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Free cash balance"
+  },
+  "free-cash-guideline": {
+   "finding": "Free cash is 6.65% of the budget, inside the 5% to 7% the Town cites; 7 of the last 10 years fell short.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "free-cash-guideline",
+   "minutes": 1,
+   "path": "/town-reserves/free-cash-guideline",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Free cash guideline"
+  },
+  "free-cash-redirect": {
+   "finding": "Kept above the 5% floor, $794,872 could be redirected, $135,401 short of the FY2028 gap (our arithmetic).",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "free-cash-redirect",
+   "minutes": 1,
+   "path": "/town-reserves/free-cash-redirect",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Free cash for schools"
+  },
+  "free-cash-sources": {
+   "finding": "Two thirds of the free cash identified in July 2025, $2,457,761, was money appropriated and not spent.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "free-cash-sources",
+   "minutes": 1,
+   "path": "/town-reserves/free-cash-sources",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Free cash sources"
+  },
+  "fy2025-school-surplus": {
+   "finding": "FY2025 closed with $627,117 unspent, $23,231 more than the figure the School Committee was given.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2025-school-surplus",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2025-school-surplus",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "FY2025 school surplus"
+  },
   "fy2026-athletics-underspend": {
    "finding": "Athletics closed FY2026 with $55,300 of its $518,334 town budget unspent, on the town’s ledger.",
    "generator": "scripts/build_athletics_topics.py",
@@ -205,9 +478,153 @@
    "path": "/athletics/fy2026-athletics-underspend",
    "ready": true,
    "shelves": [
-    "athletics"
+    "athletics",
+    "fy2026-closeout"
    ],
    "title": "FY2026 athletics underspend"
+  },
+  "fy2026-lines-over-budget": {
+   "finding": "57 school accounts closed FY2026 past their budgets; in FY2025, 4 did.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-lines-over-budget",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-lines-over-budget",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Lines over budget"
+  },
+  "fy2026-paraprofessional-overrun": {
+   "finding": "Paraprofessional accounts ran $208,082 over in FY2026; $99,064 of it was paid against no budget.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-paraprofessional-overrun",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-paraprofessional-overrun",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Paraprofessional overrun"
+  },
+  "fy2026-psychologist-line": {
+   "finding": "One of four school psychologist accounts, $98,784 budgeted, paid nothing in FY2026.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-psychologist-line",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-psychologist-line",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Psychologist line"
+  },
+  "fy2026-school-retiree-insurance": {
+   "finding": "An account named for school retiree health paid $1,262,376 from the town’s insurance department.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-school-retiree-insurance",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-school-retiree-insurance",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "School retiree insurance"
+  },
+  "fy2026-school-surplus": {
+   "finding": "The school general fund closed FY2026 with $482,118 unspent and uncommitted, 1.8% of its budget.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-school-surplus",
+   "minutes": 2,
+   "path": "/fy2026-closeout/fy2026-school-surplus",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "FY2026 school surplus"
+  },
+  "fy2026-school-transfers": {
+   "finding": "Transfers moved $394,929 into school accounts and $309,839 out; the department ended $85,090 up, net.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-school-transfers",
+   "minutes": 2,
+   "path": "/fy2026-closeout/fy2026-school-transfers",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Year-end transfers"
+  },
+  "fy2026-snow-and-reserve-fund": {
+   "finding": "Snow removal paid $1,038,092 against $355,571 voted; the $185,000 Reserve Fund paid nothing.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-snow-and-reserve-fund",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-snow-and-reserve-fund",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Snow and Reserve Fund"
+  },
+  "fy2026-surplus-and-fy2027": {
+   "finding": "The FY2027 school budget was set $761,000 below level service; FY2026 then closed $482,118 unspent.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-surplus-and-fy2027",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-surplus-and-fy2027",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Surplus and FY2027 budget"
+  },
+  "fy2026-surplus-by-category": {
+   "finding": "Accounts under budget left $1,683,552 and accounts over used $1,201,434 of it; the net is $482,118.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-surplus-by-category",
+   "minutes": 2,
+   "path": "/fy2026-closeout/fy2026-surplus-by-category",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Surplus by category"
+  },
+  "fy2026-town-unspent": {
+   "finding": "In June, before the close, town departments stood $858,462 under a $27,647,670 budget.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-town-unspent",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-town-unspent",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Town unspent balance"
+  },
+  "fy2026-tuition-lines": {
+   "finding": "FY2027 budgets $700,142 for the two tuition lines on which FY2026 spent $1,202,771.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-tuition-lines",
+   "minutes": 1,
+   "path": "/fy2026-closeout/fy2026-tuition-lines",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Tuition at year end"
   },
   "fy2027-athletic-bus-cut": {
    "finding": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund.",
@@ -236,6 +653,71 @@
    ],
    "title": "FY2027 bus budget"
   },
+  "general-stabilization-fund": {
+   "finding": "The general fund’s cash rose every year from FY2012 to FY2025, to $3,147,179.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "general-stabilization-fund",
+   "minutes": 2,
+   "path": "/town-reserves/general-stabilization-fund",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "General stabilization fund"
+  },
+  "hiring-versus-placing": {
+   "finding": "Placements fell while in-district budgets rose; nothing published shows one caused the other.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "hiring-versus-placing",
+   "minutes": 1,
+   "path": "/special-education/hiring-versus-placing",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Hiring versus placing"
+  },
+  "in-district-special-education": {
+   "finding": "The paraprofessional budget line grew 12.78% a year over 10 budgets; the state’s FTE fell 63.3%.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "in-district-special-education",
+   "minutes": 2,
+   "path": "/special-education/in-district-special-education",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "In-district special education"
+  },
+  "out-of-district-placements": {
+   "finding": "The town counted 10 children placed out of district in FY2025, against 30 in FY2015.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "out-of-district-placements",
+   "minutes": 2,
+   "path": "/special-education/out-of-district-placements",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Out-of-district placements"
+  },
+  "out-of-district-tuition": {
+   "finding": "$1,205,949 went to out-of-district tuition in FY2025; 39.3% of it was paid outside the general fund.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "out-of-district-tuition",
+   "minutes": 2,
+   "path": "/special-education/out-of-district-tuition",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Out-of-district tuition"
+  },
   "participation": {
    "finding": "The district counted 649 sport participations in FY2026, against 675 in FY2024.",
    "generator": "scripts/build_athletics_topics.py",
@@ -249,6 +731,32 @@
    ],
    "title": "Participation"
   },
+  "reserves-and-the-gap": {
+   "finding": "Spent on the school gap, the general fund covers FY2028 and FY2029 and runs out in FY2030, by our arithmetic.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "reserves-and-the-gap",
+   "minutes": 1,
+   "path": "/town-reserves/reserves-and-the-gap",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Reserves against the gap"
+  },
+  "special-education-overruns": {
+   "finding": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "special-education-overruns",
+   "minutes": 2,
+   "path": "/special-education/special-education-overruns",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Special education overruns"
+  },
   "special-education-transportation": {
    "finding": "The fastest-growing bus line: 10.1% a year, and $67,555 past its FY2026 budget.",
    "generator": "scripts/build_transportation.py",
@@ -258,7 +766,9 @@
    "path": "/transportation/special-education-transportation",
    "ready": true,
    "shelves": [
-    "transportation"
+    "transportation",
+    "special-education",
+    "fy2026-closeout"
    ],
    "title": "Special education transportation"
   },
@@ -275,6 +785,45 @@
    ],
    "title": "Spending by category"
   },
+  "stabilization-balances": {
+   "finding": "The town’s ledger files $9,061,421 under its nine stabilization accounts, at the start of FY2026.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "stabilization-balances",
+   "minutes": 1,
+   "path": "/town-reserves/stabilization-balances",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Stabilization fund balances"
+  },
+  "stabilization-deposits": {
+   "finding": "Town Meeting put $350,000 into the two town funds in May 2024, and passed over both articles in May 2025.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "stabilization-deposits",
+   "minutes": 1,
+   "path": "/town-reserves/stabilization-deposits",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Stabilization deposits"
+  },
+  "stabilization-withdrawals": {
+   "finding": "The record shows $317,392 taken from stabilization funds in 9 votes, none from the general fund.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "stabilization-withdrawals",
+   "minutes": 1,
+   "path": "/town-reserves/stabilization-withdrawals",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Stabilization withdrawals"
+  },
   "state-reimbursement": {
    "finding": "The state repays 5.5% of what the town spends on buses, all of it for special education.",
    "generator": "scripts/build_transportation.py",
@@ -287,6 +836,19 @@
     "transportation"
    ],
    "title": "State reimbursement"
+  },
+  "students-with-an-iep": {
+   "finding": "258 Lunenburg children had a special education plan in FY2026, 16.3% of those enrolled.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "students-with-an-iep",
+   "minutes": 1,
+   "path": "/special-education/students-with-an-iep",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Students with an IEP"
   },
   "total-athletics-cost": {
    "finding": "No document states one total: three sheets give $185,356 to $349,145 for the same teams in FY2024.",
@@ -313,6 +875,32 @@
     "athletics"
    ],
    "title": "Town budget and fee fund"
+  },
+  "tuition-budget": {
+   "finding": "FY2027 budgets out-of-district tuition at $700,142, $591,151 below FY2026, a 46% cut.",
+   "generator": "scripts/build_special_education_topics.py",
+   "home": "special-education",
+   "id": "tuition-budget",
+   "minutes": 1,
+   "path": "/special-education/tuition-budget",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Tuition budget"
+  },
+  "who-may-spend-it": {
+   "finding": "Only the general fund, $3,147,179 of $9,061,421, may go to any lawful use, by a two-thirds vote.",
+   "generator": "scripts/build_town_reserves_topics.py",
+   "home": "town-reserves",
+   "id": "who-may-spend-it",
+   "minutes": 1,
+   "path": "/town-reserves/who-may-spend-it",
+   "ready": true,
+   "shelves": [
+    "town-reserves"
+   ],
+   "title": "Who may spend it"
   }
  }
 }

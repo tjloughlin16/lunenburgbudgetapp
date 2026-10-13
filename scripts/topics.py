@@ -25,57 +25,36 @@ A topic's address is /<home>/<id>; `home` is the category it belongs to first. A
 listed on another shelf keeps that one address.
 """
 
-CATEGORIES = [
-    dict(
-        id='transportation', shelf='Transportation', title='School bus costs',
-        full_report=('/analysis/transportation', 'School transportation, the full report'),
-        groups=[
-            (None, ['dee-bus-contract', 'special-education-transportation',
-                    'state-reimbursement', 'bus-fee', 'fy2027-bus-budget']),
-            ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
-                                         'bus-cost-by-sport', 'away-trips-by-sport']),
-        ]),
-    dict(
-        id='athletics', shelf='Athletics', title='Athletics costs',
-        full_report=('/analysis/athletics', 'Athletics, the full report'),
-        groups=[
-            (None, ['total-athletics-cost', 'town-budget-and-fee-fund', 'cost-per-sport',
-                    'spending-by-category', 'participation', 'athletic-fee',
-                    'fee-fund-ledger', 'fy2026-athletics-underspend']),
-            ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
-                                         'bus-cost-by-sport', 'away-trips-by-sport']),
-        ],
-        # Pages elsewhere on the site that belong on this shelf too, as they are.
-        elsewhere=[('/youth-sports', 'Youth sports and town fields'),
-                   ('/fees', 'Raising school fees'),
-                   ('/extras', 'Cutting the extras')]),
-]
+# ONE FILE PER CATEGORY, in scripts/topic_registry/. Each defines CATEGORY (id, shelf,
+# title, area, order, full_report, groups, optional elsewhere), GENERATOR (the script that
+# writes its pages) and TOPICS ({id: title}) for the topics it is HOME to. A group may list
+# a topic another category is home to: that is how one page sits on two shelves.
+#
+# Split from one list on 12 October 2026 so several authors -- people or agents -- can each
+# add a category without rewriting a shared file (CLAUDE.md: "a generated file with several
+# authors gets clobbered, not merged"). `area` groups the shelves on /reports:
+AREAS = [('school', 'The schools'), ('town', 'The town'), ('options', 'Budget options')]
 
-# id -> (title, home category, generator that writes its payload)
-TOPICS = {
-    'dee-bus-contract': ('Dee Bus contract', 'transportation', 'build_transportation.py'),
-    'special-education-transportation': ('Special education transportation', 'transportation',
-                                         'build_transportation.py'),
-    'state-reimbursement': ('State reimbursement', 'transportation', 'build_transportation.py'),
-    'bus-fee': ('Bus fee', 'transportation', 'build_transportation.py'),
-    'fy2027-bus-budget': ('FY2027 bus budget', 'transportation', 'build_transportation.py'),
-    'athletic-bus-funding': ('Athletic bus funding', 'transportation', 'build_transportation.py'),
-    'fy2027-athletic-bus-cut': ('FY2027 athletic bus cut', 'transportation',
-                                'build_transportation.py'),
-    'bus-cost-by-sport': ('Bus cost by sport', 'transportation', 'build_transportation.py'),
-    'away-trips-by-sport': ('Away trips by sport', 'transportation', 'build_transportation.py'),
+import importlib as _il
+import pkgutil as _pk
+import os as _os
+import sys as _sys
 
-    'total-athletics-cost': ('Total athletics cost', 'athletics', 'build_athletics_topics.py'),
-    'town-budget-and-fee-fund': ('Town budget and fee fund', 'athletics',
-                                 'build_athletics_topics.py'),
-    'cost-per-sport': ('Cost per sport', 'athletics', 'build_athletics_topics.py'),
-    'spending-by-category': ('Spending by category', 'athletics', 'build_athletics_topics.py'),
-    'participation': ('Participation', 'athletics', 'build_athletics_topics.py'),
-    'athletic-fee': ('Athletic fee', 'athletics', 'build_athletics_topics.py'),
-    'fee-fund-ledger': ('Fee fund ledger', 'athletics', 'build_athletics_topics.py'),
-    'fy2026-athletics-underspend': ('FY2026 athletics underspend', 'athletics',
-                                    'build_athletics_topics.py'),
-}
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import topic_registry as _reg  # noqa: E402
+
+CATEGORIES, TOPICS = [], {}
+for _m in sorted(_pk.iter_modules(_reg.__path__), key=lambda m: m.name):
+    _mod = _il.import_module('topic_registry.' + _m.name)
+    CATEGORIES.append(_mod.CATEGORY)
+    for _tid, _title in _mod.TOPICS.items():
+        if _tid in TOPICS:
+            raise SystemExit('topic %r is registered by two categories' % _tid)
+        # id -> (title, home category, generator that writes its payload)
+        TOPICS[_tid] = (_title, _mod.CATEGORY['id'], _mod.GENERATOR)
+CATEGORIES.sort(key=lambda c: (c.get('order', 99), c['id']))
+HUB_GENERATOR = {c['id']: _il.import_module('topic_registry.' + c['id'].replace('-', '_')).GENERATOR
+                 for c in CATEGORIES}
 
 
 def category(cid):
@@ -108,6 +87,20 @@ def check():
                 bad.append('%s lists %r, which is not registered' % (c['id'], t))
         if len(set(seen)) != len(seen):
             bad.append('%s lists a topic twice' % c['id'])
+    titles = {}
+    for c in CATEGORIES:
+        if c.get('area') not in dict(AREAS):
+            bad.append('%s: area %r is not one of %s' % (c['id'], c.get('area'), [a for a, _ in AREAS]))
+        for name in (c['title'], c['shelf']):
+            if name.rstrip().endswith(('?', '.')) or len(name.split()) > 5:
+                bad.append('%s: %r reads as a sentence -- a title is the subject in 2-4 words'
+                           % (c['id'], name))
+    for t, (title, _, _) in TOPICS.items():
+        if title.rstrip().endswith(('?', '.')) or len(title.split()) > 5:
+            bad.append('%s: %r reads as a sentence -- a title is the subject in 2-4 words'
+                       % (t, title))
+        titles.setdefault(title.lower(), []).append(t)
+    bad += ['two topics share the title %r: %s' % (k, v) for k, v in titles.items() if len(v) > 1]
     for t, (_, home, _) in TOPICS.items():
         if not any(t in ids for _, ids in category(home)['groups']):
             bad.append('%r is not listed on its home shelf %r' % (t, home))

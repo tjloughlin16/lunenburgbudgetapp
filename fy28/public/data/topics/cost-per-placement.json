@@ -1,0 +1,151 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s placement-level billing detail, gross of circuit breaker",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "March"
+     ],
+     "text": "The tuition is a closed-year total across every fund; the count is one day in March. A child placed for part of a year is counted or missed by the date, and a total can include costs that are not tuition for one child."
+    }
+   ],
+   "rests_on": [
+    "tuition25",
+    "kids25",
+    "price-gap"
+   ],
+   "text": "The tuition total and the count of children placed do not divide into a price."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s circuit breaker claim, child by child, with names removed",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "It counts only children whose costs passed the threshold, in district or out."
+    }
+   ],
+   "rests_on": [
+    "cbkids"
+   ],
+   "text": "The circuit breaker claim is not a placement count either."
+  }
+ ],
+ "facts": [
+  {
+   "id": "tuition25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "out-of-district tuition, every fund, FY2025"
+   },
+   "value": {
+    "text": "$1,205,949",
+    "unit": "",
+    "value": 1205949
+   }
+  },
+  {
+   "id": "kids25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "1 March"
+    ],
+    "text": "children placed, 1 March, FY2025"
+   },
+   "value": {
+    "text": "10",
+    "unit": "children",
+    "value": 10
+   }
+  },
+  {
+   "id": "cbkids",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "children in the circuit breaker claim, FY2026"
+   },
+   "value": {
+    "text": "9",
+    "unit": "children",
+    "value": 9
+   }
+  },
+  {
+   "closes": "the district’s placement-level billing detail, gross of circuit breaker",
+   "id": "price-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what one placement costs, by type"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "No published document says what one out-of-district placement costs."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "cost-per-placement",
+ "kind": "topic",
+ "path": "/special-education/cost-per-placement",
+ "said": [],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/placement-counts.csv",
+   "label": "Lunenburg Budget Project — placement-counts.csv (the town’s 1 March placement counts)"
+  },
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-circuit-breaker.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Cost per placement"
+}

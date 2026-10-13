@@ -118,8 +118,8 @@ CATEGORIES = [
         # the town's ledger beside the report it is the companion to -- which is
         # where it was WRITTEN, not where a reader looking for what can be done
         # would go, and this index exists to tell those two apart.
-        ('', ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever',
-              'stabilization-option', 'feelever', 'extraslever', 'positionslever']),
+        ('', ['override', 'growth', 'healthlever', 'salarylever',
+              'feelever', 'extraslever', 'positionslever']),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -135,7 +135,7 @@ CATEGORIES = [
     # `show-your-work` because those two are about the reports; this is a way IN to them.
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'stopped', 'unwind',
+            'courses', 'ap', 'cuts', 'stopped', 'unwind',
             'insurance',
             # Transportation and athletics are SHELVES OF THEIR OWN now, drawn from
             # scripts/topics.py by the reports page itself (TJ, 12 October 2026). Their long
@@ -169,7 +169,7 @@ CATEGORIES = [
         # Parks and Recreation counterpart would be the town's.
         ('the fields, and the funds that run them', ['youthsports']),
         ('every fund and line the School Committee owns', ['schoolfinance']),
-        ('the rules everyone argues under', ['classsize', 'formula']),
+        ('the rules everyone argues under', ['formula']),
     ]),
     ('town', 'The town', [
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
@@ -177,13 +177,8 @@ CATEGORIES = [
         # does not yet know the place cannot weigh anything below it, and it is the one
         # report in the index that needs no budget knowledge at all to read.
         ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
-        ('the ledger, read', [
-            'fy26-closeout', 'fy26-closeout-town',
-            # LISTED 11 October 2026. TJ: "You can list the surplus reports now" -- so the
-            # school-surplus threads can link to them (see build_threads.py, `reports`).
-            'fy26-school-surplus', 'fy25-school-surplus',
-            'free-cash', 'stabilization-funds',
-        ]),
+        # 'the ledger, read' is gone: FY2026 closeout and Town reserves are shelves of their
+        # own now (scripts/topic_registry/), and these reports are UNCATEGORISED below.
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
         ]),
@@ -299,7 +294,13 @@ SUPERSEDED = {
 # its full report. Uncategorised rather than superseded because what replaces them is a
 # shelf of pages, not one report this list could name.
 UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
-                 'transportation', 'athletics-ledger', 'sportsmoney'}
+                 'transportation', 'athletics-ledger', 'sportsmoney',
+                 # Wave 1 of the hub-and-spoke migration (notes/process/HUB-AND-SPOKE.md):
+                 # Special education, Town reserves, FY2026 closeout.
+                 'sped', 'circuitbreaker', 'classsize',
+                 'free-cash', 'stabilization-funds', 'stabilization-option', 'freecashlever',
+                 'fy26-closeout', 'fy26-closeout-town', 'fy26-school-surplus',
+                 'fy25-school-surplus'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

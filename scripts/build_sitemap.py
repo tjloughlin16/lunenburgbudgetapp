@@ -176,6 +176,19 @@ def department_pages():
     return ['/departments/' + x['slug'] for x in d.get('departments', []) if x['slug'] in d.get('owners', {})]
 
 
+def topic_pages():
+    """Every hub and topic page (scripts/topics.py) whose payload exists, off the index the
+    shelves read. TOPICS_INDEX may point at a BUILD's own copy (dist/data/topics.json), so a
+    deploy's sitemap lists exactly the pages that deploy carries -- categories written after
+    the build started are not in it, and must not be in its sitemap either."""
+    p = os.environ.get('TOPICS_INDEX') or os.path.join(PUB, 'data', 'topics.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    hubs = [c['path'] for c in d.get('categories', []) if c.get('ready')]
+    return hubs + sorted(t['path'] for t in d.get('topics', {}).values() if t.get('ready'))
+
+
 def feed_pages():
     """The budget feed and every finished year and episode it lists, from its own payload."""
     p = os.path.join(PUB, 'data', 'budget-feed.json')
@@ -267,7 +280,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + feed_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
               + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)

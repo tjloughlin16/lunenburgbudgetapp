@@ -1,0 +1,364 @@
+{
+ "category": "town-reserves",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "b": {
+     "text": "20",
+     "unit": "",
+     "value": 20
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "A deposit that would have come from free cash, if not made, leaves the money in free cash: it is not a second pot."
+    }
+   ],
+   "rests_on": [
+    "n-fc",
+    "total"
+   ],
+   "text": "15 of 20 deposits into the two funds name free cash as their source."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$350,000",
+     "unit": "",
+     "value": 350000.0
+    }
+   },
+   "literals": [
+    "February 2025"
+   ],
+   "rests_on": [
+    "planned",
+    "passed-over",
+    "why-gap"
+   ],
+   "text": "In February 2025, $350,000 was planned for the two funds; in May both articles were passed over."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$350,000",
+     "unit": "",
+     "value": 350000.0
+    },
+    "b": {
+     "text": "$100,000",
+     "unit": "",
+     "value": 100000.0
+    },
+    "c": {
+     "text": "$250,000",
+     "unit": "",
+     "value": 250000.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "g24",
+    "s24"
+   ],
+   "text": "The same $350,000 had gone in the May before: $100,000 to the general fund, $250,000 to special purpose."
+  }
+ ],
+ "facts": [
+  {
+   "id": "g24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2024"
+    ],
+    "text": "into the general fund, May 2024"
+   },
+   "value": {
+    "text": "$100,000",
+    "unit": "",
+    "value": 100000.0
+   }
+  },
+  {
+   "id": "s24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2024"
+    ],
+    "text": "into the special purpose fund, May 2024"
+   },
+   "value": {
+    "text": "$250,000",
+    "unit": "",
+    "value": 250000.0
+   }
+  },
+  {
+   "id": "passed-over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2025"
+    ],
+    "text": "for the same two funds, passed over, May 2025"
+   },
+   "value": {
+    "text": "2",
+    "unit": "articles",
+    "value": 2
+   }
+  },
+  {
+   "id": "planned",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "February 2025"
+    ],
+    "text": "planned for them in February 2025, from free cash"
+   },
+   "value": {
+    "text": "$350,000",
+    "unit": "",
+    "value": 350000.0
+   }
+  },
+  {
+   "id": "total",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     },
+     "b": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "voted into the two funds, FY2014 to FY2024, at least"
+   },
+   "value": {
+    "text": "$3,338,426",
+    "unit": "",
+    "value": 3338426.0
+   }
+  },
+  {
+   "id": "n-fc",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "20",
+      "unit": "",
+      "value": 20
+     }
+    },
+    "literals": [],
+    "text": "of 20 that name free cash as a source"
+   },
+   "value": {
+    "text": "15",
+    "unit": "articles",
+    "value": 15
+   }
+  },
+  {
+   "closes": "the 2025 Annual Town Meeting minutes or the motion made on articles 16 and 17",
+   "id": "why-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2025"
+    ],
+    "text": "why the May 2025 articles were passed over"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$350,000",
+    "unit": "",
+    "value": 350000.0
+   }
+  },
+  "literals": [
+   "May 2024",
+   "May 2025"
+  ],
+  "text": "Town Meeting put $350,000 into the two town funds in May 2024, and passed over both articles in May 2025."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "stabilization-deposits",
+ "kind": "topic",
+ "path": "/town-reserves/stabilization-deposits",
+ "said": [],
+ "shelves": [
+  "town-reserves"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/free-cash-appropriations-updated-2.27.25.xlsx",
+   "label": "Town of Lunenburg — Finance Committee free cash plan — free-cash-appropriations-updated-2.27.25.xlsx"
+  },
+  {
+   "href": "/docs/data/town-meeting-votes.csv",
+   "label": "Lunenburg Budget Project — town-meeting-votes.csv (every Town Meeting article, quoted)"
+  },
+  {
+   "href": "/docs/data/free-cash-fy26.csv",
+   "label": "Lunenburg Budget Project — free-cash-fy26.csv (the free cash plan for the May 2025 meeting)"
+  }
+ ],
+ "table": {
+  "caption": "Deposits into the two town funds, as Town Meeting voted them",
+  "views": [
+   {
+    "columns": [
+     "General fund",
+     "Special purpose fund",
+     "Both",
+     "Articles naming free cash"
+    ],
+    "key": "votes",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Town Meeting votes",
+    "note": "Passed votes only. The FY2019 special purpose article prints its amount as “$08,222.”, with a digit missing, and is left out. The special purpose fund is the one the ledger calls vehicle equipment.",
+    "rows": [
+     {
+      "cells": [
+       "$100,000",
+       "$250,000",
+       "$350,000",
+       "2 of 2"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$100,000",
+       "$250,000",
+       "$350,000",
+       "2 of 2"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$100,000",
+       "$450,000",
+       "$550,000",
+       "2 of 2"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$100,000",
+       "$250,000",
+       "$350,000",
+       "2 of 2"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$422,252",
+       "$250,000",
+       "$672,252",
+       "1 of 3"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$100,000",
+       "$200,000",
+       "$300,000",
+       "2 of 2"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$87,000",
+       "$399,227",
+       "$486,227",
+       "2 of 3"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$99,851",
+       null,
+       "$99,851",
+       "0 of 1"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$105,367",
+       null,
+       "$105,367",
+       "1 of 2"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$74,729",
+       null,
+       "$74,729",
+       "1 of 1"
+      ],
+      "label": "FY2014"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Stabilization deposits"
+}

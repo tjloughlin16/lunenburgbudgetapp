@@ -26,6 +26,13 @@ import ladder as LD
 import topics as REG
 
 FINDING_MAX = 110
+# A PAGE THAT IS TOO LONG IS TWO PAGES. TJ, 12 October 2026: "it's an indicator that we
+# didn't hub and spoke it enough if the final reports are still too long." So length is
+# not tuned by trimming prose: past these, the build refuses, and the remedy is to split the
+# topic in the registry. Set just above the longest page on the day they were written.
+TOPIC_WORDS_MAX = 320     # prose a reader meets: finding, labels, conclusions, notes, quotes
+HUB_WORDS_MAX = 400
+TABLE_ROWS_MAX = 30
 FACTS = (2, 12)
 CONCLUSIONS = (1, 4)
 SAID_MAX = 4
@@ -62,14 +69,26 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
             bad.append('%s conclusion %d tells the reader what to do' % (id, i + 1))
     if not sources:
         bad.append('%s: no sources -- rule 12' % id)
+    n = _words([f] + [x['label'] for x in facts] + list(conclusions)
+               + [nn for c in conclusions for nn in c.get('notes', [])]
+               + [dict(text=q['quote']) for q in said])
+    if n > TOPIC_WORDS_MAX:
+        bad.append('%s: %d words of prose, the limit is %d -- this is two topics; split it in '
+                   'the registry rather than trimming it' % (id, n, TOPIC_WORDS_MAX))
+    if table and any(len(v['rows']) > TABLE_ROWS_MAX for v in table['views']):
+        bad.append('%s: a table runs past %d rows -- split it by period or by group'
+                   % (id, TABLE_ROWS_MAX))
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     return dict(
         id=id, kind='topic', title=title, category=home, path=REG.path(id),
         shelves=REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
         conclusions=list(conclusions), table=table, said=list(said), sources=list(sources),
-        full_report=dict(href=REG.category(home)['full_report'][0],
-                         label=REG.category(home)['full_report'][1]))
+        full_report=_full(home))
+
+
+def _words(units):
+    return sum(len(u['text'].split()) for u in units)
 
 
 def conclusion(text, rests_on, figures=None, allow=(), notes=()):
@@ -87,9 +106,20 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     cat = REG.category(cid)
     a = _unit(answer, answer_figures, answer_allow, 260, '%s answer' % cid)
     bad = check_unit(a, '%s answer' % cid)
+    n = _words([a] + [f['label'] for t in ladder['tiers'] for f in t['facts']]
+               + ladder['conclusions'])
+    if n > HUB_WORDS_MAX:
+        bad.append('hub %s: %d words, the limit is %d -- move detail down to a topic'
+                   % (cid, n, HUB_WORDS_MAX))
     if bad:
         raise ConclusionError('hub %s did not pass:\n  %s' % (cid, '\n  '.join(bad)))
     return dict(id=cid, kind='hub', title=cat['title'], category=cid, path=REG.path(cid),
                 shelves=[cid], answer=a, chart=chart, ladder=ladder, chains=list(chains),
-                table=table, full_report=dict(href=cat['full_report'][0],
-                                              label=cat['full_report'][1]))
+                table=table, full_report=_full(cid))
+
+
+def _full(cid):
+    """The old long report a category came from, if it had one. Not promoted anywhere --
+    TJ: "we dont need FULL reports" -- but a note's evidence link may still land in it."""
+    fr = REG.category(cid).get('full_report')
+    return dict(href=fr[0], label=fr[1]) if fr else dict(href='', label='')

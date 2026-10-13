@@ -1,0 +1,365 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "o": {
+     "text": "$355,571",
+     "unit": "",
+     "value": 355571.39
+    },
+    "p": {
+     "text": "$1,038,092",
+     "unit": "",
+     "value": 1038092.46
+    },
+    "r": {
+     "text": "$875,571",
+     "unit": "",
+     "value": 875571.39
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sn-o",
+    "sn-t",
+    "sn-r",
+    "sn-p",
+    "sn-over"
+   ],
+   "text": "Snow removal paid $1,038,092 against $355,571 voted and $875,571 after transfers."
+  },
+  {
+   "figures": {
+    "b": {
+     "text": "$23,420",
+     "unit": "",
+     "value": 23420.39
+    },
+    "p": {
+     "text": "$126,286",
+     "unit": "",
+     "value": 126286.35
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "w-b",
+    "w-p",
+    "w-pct"
+   ],
+   "text": "The wages line, $23,420 budgeted, paid $126,286 with no transfer in."
+  },
+  {
+   "figures": {
+    "r": {
+     "text": "$185,000",
+     "unit": "",
+     "value": 185000.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A contingency nobody needed, a policy of leaving it, or a reserve nobody asked to use all fit; nothing here separates them."
+    }
+   ],
+   "rests_on": [
+    "rf",
+    "rf-p",
+    "rb"
+   ],
+   "text": "The $185,000 Reserve Fund paid nothing and moved nothing in the same year."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sn-o",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "snow removal, voted, FY2026"
+   },
+   "value": {
+    "text": "$355,571",
+    "unit": "",
+    "value": 355571.39
+   }
+  },
+  {
+   "id": "sn-t",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "added by transfer, net"
+   },
+   "value": {
+    "text": "$520,000",
+    "unit": "",
+    "value": 520000.0
+   }
+  },
+  {
+   "id": "sn-r",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "snow budget after transfers"
+   },
+   "value": {
+    "text": "$875,571",
+    "unit": "",
+    "value": 875571.39
+   }
+  },
+  {
+   "id": "sn-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "12"
+    ],
+    "text": "snow removal, paid by June (period 12)"
+   },
+   "value": {
+    "text": "$1,038,092",
+    "unit": "",
+    "value": 1038092.46
+   }
+  },
+  {
+   "id": "sn-over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "over its budget after transfers"
+   },
+   "value": {
+    "text": "$162,521",
+    "unit": "",
+    "value": 162521.07
+   }
+  },
+  {
+   "id": "w-b",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "snow wages, budget, no transfer in"
+   },
+   "value": {
+    "text": "$23,420",
+    "unit": "",
+    "value": 23420.39
+   }
+  },
+  {
+   "id": "w-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "snow wages, paid"
+   },
+   "value": {
+    "text": "$126,286",
+    "unit": "",
+    "value": 126286.35
+   }
+  },
+  {
+   "id": "w-pct",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the wages budget paid"
+   },
+   "value": {
+    "text": "539%",
+    "unit": "",
+    "value": 539
+   }
+  },
+  {
+   "id": "rf",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Reserve Fund, voted"
+   },
+   "value": {
+    "text": "$185,000",
+    "unit": "",
+    "value": 185000.0
+   }
+  },
+  {
+   "id": "rf-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Reserve Fund, paid or moved"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "rb",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "retirement buy-back reserve, unused"
+   },
+   "value": {
+    "text": "$30,000",
+    "unit": "",
+    "value": 30000.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "o": {
+    "text": "$355,571",
+    "unit": "",
+    "value": 355571.39
+   },
+   "p": {
+    "text": "$1,038,092",
+    "unit": "",
+    "value": 1038092.46
+   },
+   "r": {
+    "text": "$185,000",
+    "unit": "",
+    "value": 185000.0
+   }
+  },
+  "literals": [],
+  "text": "Snow removal paid $1,038,092 against $355,571 voted; the $185,000 Reserve Fund paid nothing."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-snow-and-reserve-fund",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-snow-and-reserve-fund",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-ledger.csv",
+   "label": "Lunenburg Budget Project — munis-ledger.csv (the period-12 general fund report, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "Snow removal, department 423, as of June",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Moved in, net",
+     "Paid",
+     "Left"
+    ],
+    "key": "snow",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Period 12",
+    "note": "Account names as MUNIS prints them. Books still open in June.",
+    "rows": [
+     {
+      "cells": [
+       "$23,420",
+       "$0",
+       "$126,286",
+       "-$102,866"
+      ],
+      "label": "SNOW REMOV"
+     },
+     {
+      "cells": [
+       "$205,151",
+       "$138,589",
+       "$402,040",
+       "-$58,300"
+      ],
+      "label": "SUPP SNOW"
+     },
+     {
+      "cells": [
+       "$7,500",
+       "$0",
+       "$9,174",
+       "-$1,674"
+      ],
+      "label": "HIRED SNOW"
+     },
+     {
+      "cells": [
+       "$114,500",
+       "$381,730",
+       "$496,230",
+       "$0"
+      ],
+      "label": "CONTR SERV"
+     },
+     {
+      "cells": [
+       "$5,000",
+       "-$319",
+       "$4,362",
+       "$319"
+      ],
+      "label": "PURCH SERV"
+     },
+     {
+      "cells": [
+       "$355,571",
+       "$520,000",
+       "$1,038,092",
+       "-$162,521"
+      ],
+      "label": "Department 423"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Snow and Reserve Fund"
+}

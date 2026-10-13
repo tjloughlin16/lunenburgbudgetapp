@@ -1,0 +1,408 @@
+{
+ "category": "fy2026-closeout",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "47%",
+     "unit": "",
+     "value": 47
+    },
+    "b": {
+     "text": "224%",
+     "unit": "",
+     "value": 224
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A shift from private to collaborative placements fits; so do rate changes, recoding, and budgets struck high or low. Placement counts by year are not published."
+    }
+   ],
+   "rests_on": [
+    "priv-b",
+    "priv-p",
+    "coll-b",
+    "coll-p"
+   ],
+   "text": "Private tuition paid 47% of its budget; collaborative tuition paid 224% of its."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$700,142",
+     "unit": "",
+     "value": 700142.0
+    },
+    "b": {
+     "text": "$1,202,771",
+     "unit": "",
+     "value": 1202770.94
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [
+      "FY2027",
+      "FY2026"
+     ],
+     "text": "Placements ending, more expected from the circuit breaker, and FY2027 tuition prepaid from FY2026 money all fit. None is tested here."
+    }
+   ],
+   "rests_on": [
+    "fy27",
+    "both",
+    "children"
+   ],
+   "text": "FY2027 budgets $700,142 for the two lines; FY2026 spent $1,202,771 on them."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "21.7%",
+     "unit": "",
+     "value": 21.71
+    },
+    "b": {
+     "text": "61.9%",
+     "unit": "",
+     "value": 61.89
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the circuit breaker fund’s balance and claims by year, from the district",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Why its share fell is not measured: the reimbursement follows the year of the cost at a rate the state sets, and the fund’s balance is not held."
+    }
+   ],
+   "rests_on": [
+    "cb26",
+    "cb-share26",
+    "cb-share23"
+   ],
+   "text": "The circuit breaker paid 21.7% of tuition in FY2026, against 61.9% in FY2023."
+  }
+ ],
+ "facts": [
+  {
+   "id": "priv-b",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "private tuition, FY2026 budget"
+   },
+   "value": {
+    "text": "$988,630",
+    "unit": "",
+    "value": 988630.0
+   }
+  },
+  {
+   "id": "priv-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "private tuition, paid"
+   },
+   "value": {
+    "text": "$466,001",
+    "unit": "",
+    "value": 466000.82
+   }
+  },
+  {
+   "id": "coll-b",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "collaborative tuition, budget"
+   },
+   "value": {
+    "text": "$302,663",
+    "unit": "",
+    "value": 302662.56
+   }
+  },
+  {
+   "id": "coll-p",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "collaborative tuition, paid"
+   },
+   "value": {
+    "text": "$678,062",
+    "unit": "",
+    "value": 678062.05
+   }
+  },
+  {
+   "id": "both",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "both lines, spent (paid and committed)"
+   },
+   "value": {
+    "text": "$1,202,771",
+    "unit": "",
+    "value": 1202770.94
+   }
+  },
+  {
+   "id": "fy27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "both lines, FY2027 budget (district workbook)"
+   },
+   "value": {
+    "text": "$700,142",
+    "unit": "",
+    "value": 700142.0
+   }
+  },
+  {
+   "id": "cb26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "tuition from the circuit breaker fund, FY2026"
+   },
+   "value": {
+    "text": "$333,495",
+    "unit": "",
+    "value": 333494.89
+   }
+  },
+  {
+   "id": "cb-share26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker’s share of tuition, FY2026"
+   },
+   "value": {
+    "text": "21.7%",
+    "unit": "",
+    "value": 21.71
+   }
+  },
+  {
+   "id": "cb-share23",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "the same share, FY2023"
+   },
+   "value": {
+    "text": "61.9%",
+    "unit": "",
+    "value": 61.89
+   }
+  },
+  {
+   "closes": "the tuition invoices by service period, and the FY2027 placement list with the fund expected to pay each",
+   "id": "children",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how many children either figure pays for"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$700,142",
+    "unit": "",
+    "value": 700142.0
+   },
+   "b": {
+    "text": "$1,202,771",
+    "unit": "",
+    "value": 1202770.94
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "FY2027 budgets $700,142 for the two tuition lines on which FY2026 spent $1,202,771."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-tuition-lines",
+ "kind": "topic",
+ "path": "/fy2026-closeout/fy2026-tuition-lines",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
+  }
+ ],
+ "table": {
+  "caption": "Out-of-district tuition, by who paid",
+  "views": [
+   {
+    "columns": [
+     "General fund",
+     "Circuit breaker",
+     "Both",
+     "Circuit breaker share"
+    ],
+    "key": "funds",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "General fund and circuit breaker, spent",
+    "note": "Period-13 reports, general fund functions 9000 and up and fund 2640, paid and committed. A general fund line is the town’s share, not the cost.",
+    "rows": [
+     {
+      "cells": [
+       "$1,202,771",
+       "$333,495",
+       "$1,536,266",
+       "21.7%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$732,298",
+       "$473,650",
+       "$1,205,949",
+       "39.3%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$588,508",
+       "$466,296",
+       "$1,054,804",
+       "44.2%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$304,748",
+       "$494,968",
+       "$799,715",
+       "61.9%"
+      ],
+      "label": "FY2023"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Tuition at year end"
+}

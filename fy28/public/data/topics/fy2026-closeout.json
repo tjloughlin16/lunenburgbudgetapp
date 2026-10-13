@@ -1,0 +1,476 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   },
+   "p": {
+    "text": "1.8%",
+    "unit": "",
+    "value": 1.8
+   },
+   "t": {
+    "text": "$858,462",
+    "unit": "",
+    "value": 858461.53
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [
+   "13"
+  ],
+  "text": "The school general fund closed FY2026 with $482,118 unspent, 1.8% of its budget, at period 13. Town departments stood $858,462 under in June, before their close."
+ },
+ "category": "fy2026-closeout",
+ "chains": [],
+ "chart": {
+  "id": "fy26-school-surplus-waterfall",
+  "source": "/data/fy26-school-surplus.json"
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-closeout",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$482,118",
+      "unit": "",
+      "value": 482118.07
+     },
+     "p": {
+      "text": "1.8%",
+      "unit": "",
+      "value": 1.8
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "left26",
+     "leftpct",
+     "enc26"
+    ],
+    "text": "The school general fund closed FY2026 with $482,118 left, 1.8% of its budget."
+   },
+   {
+    "figures": {
+     "o": {
+      "text": "$1,201,434",
+      "unit": "",
+      "value": 1201433.81
+     },
+     "u": {
+      "text": "$1,683,552",
+      "unit": "",
+      "value": 1683551.88
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-under",
+     "h-over"
+    ],
+    "text": "That is a net: $1,683,552 left on some accounts, $1,201,434 spent past others."
+   },
+   {
+    "figures": {
+     "m": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     },
+     "n": {
+      "text": "57",
+      "unit": "",
+      "value": 57
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-n26",
+     "h-n25"
+    ],
+    "text": "57 school accounts closed past budget; in FY2025, 4 did."
+   },
+   {
+    "figures": {
+     "k": {
+      "text": "$99,064",
+      "unit": "",
+      "value": 99064.15
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-kind"
+    ],
+    "text": "Kindergarten aides were paid $99,064 with no budget and no transfer."
+   },
+   {
+    "figures": {
+     "s": {
+      "text": "$1,038,092",
+      "unit": "",
+      "value": 1038092.46
+     },
+     "t": {
+      "text": "$858,462",
+      "unit": "",
+      "value": 858461.53
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-town",
+     "h-snow",
+     "h-tp13"
+    ],
+    "text": "In June the town stood $858,462 under; snow removal had paid $1,038,092."
+   }
+  ],
+  "matrix": {
+   "cells": [
+    {
+     "col": "school",
+     "facts": [
+      "left26",
+      "leftpct",
+      "enc26",
+      "h-left25"
+     ],
+     "row": "left"
+    },
+    {
+     "col": "town",
+     "facts": [
+      "h-town"
+     ],
+     "row": "left"
+    },
+    {
+     "col": "school",
+     "facts": [
+      "h-under",
+      "h-over",
+      "h-n26",
+      "h-n25",
+      "h-tuit",
+      "h-kind"
+     ],
+     "row": "moved"
+    },
+    {
+     "col": "town",
+     "facts": [
+      "h-snow"
+     ],
+     "row": "moved"
+    },
+    {
+     "col": "school",
+     "facts": [
+      "h-counter"
+     ],
+     "row": "open"
+    },
+    {
+     "col": "town",
+     "facts": [
+      "h-tp13"
+     ],
+     "row": "open"
+    }
+   ],
+   "columns": [
+    {
+     "id": "school",
+     "label": "School department",
+     "tone": null
+    },
+    {
+     "id": "town",
+     "label": "Town departments",
+     "tone": null
+    }
+   ],
+   "rows": [
+    {
+     "id": "left",
+     "label": "What was left"
+    },
+    {
+     "id": "moved",
+     "label": "What moved"
+    },
+    {
+     "id": "open",
+     "label": "Not settled"
+    }
+   ]
+  },
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "left26",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "left unspent, school general fund, FY2026"
+      },
+      "value": {
+       "text": "$482,118",
+       "unit": "",
+       "value": 482118.07
+      }
+     },
+     {
+      "id": "leftpct",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of the school budget left unspent"
+      },
+      "value": {
+       "text": "1.8%",
+       "unit": "",
+       "value": 1.8
+      }
+     },
+     {
+      "id": "enc26",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "still committed to open purchase orders"
+      },
+      "value": {
+       "text": "$236,767",
+       "unit": "",
+       "value": 236766.94
+      }
+     },
+     {
+      "id": "h-left25",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "left unspent at the FY2025 close"
+      },
+      "value": {
+       "text": "$627,117",
+       "unit": "",
+       "value": 627116.86
+      }
+     },
+     {
+      "id": "h-town",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "town departments under budget in June"
+      },
+      "value": {
+       "text": "$858,462",
+       "unit": "",
+       "value": 858461.53
+      }
+     }
+    ],
+    "title": "What was left"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-under",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "left on school accounts under budget"
+      },
+      "value": {
+       "text": "$1,683,552",
+       "unit": "",
+       "value": 1683551.88
+      }
+     },
+     {
+      "id": "h-over",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "spent past budget on the rest"
+      },
+      "value": {
+       "text": "$1,201,434",
+       "unit": "",
+       "value": 1201433.81
+      }
+     },
+     {
+      "id": "h-n26",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "school accounts past budget, FY2026"
+      },
+      "value": {
+       "text": "57",
+       "unit": "accounts",
+       "value": 57
+      }
+     },
+     {
+      "id": "h-n25",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "the same count, FY2025"
+      },
+      "value": {
+       "text": "4",
+       "unit": "accounts",
+       "value": 4
+      }
+     },
+     {
+      "id": "h-tuit",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "out-of-district tuition, spent, FY2026"
+      },
+      "value": {
+       "text": "$1,202,771",
+       "unit": "",
+       "value": 1202770.94
+      }
+     },
+     {
+      "id": "h-kind",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "kindergarten aides paid, with no budget"
+      },
+      "value": {
+       "text": "$99,064",
+       "unit": "",
+       "value": 99064.15
+      }
+     },
+     {
+      "id": "h-snow",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "snow removal, paid by June"
+      },
+      "value": {
+       "text": "$1,038,092",
+       "unit": "",
+       "value": 1038092.46
+      }
+     }
+    ],
+    "title": "What moved inside it"
+   },
+   {
+    "facts": [
+     {
+      "closes": "the FY2026 transfer schedule by account, with the counterparty and the vote for each",
+      "id": "h-counter",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "where the net transfers came from"
+      },
+      "value": null
+     },
+     {
+      "closes": "the town general fund’s FY2026 period-13 budget report",
+      "id": "h-tp13",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "the town general fund at the close"
+      },
+      "value": null
+     }
+    ],
+    "title": "What is not settled"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/fy2026-closeout",
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "table": null,
+ "title": "FY2026 year end"
+}

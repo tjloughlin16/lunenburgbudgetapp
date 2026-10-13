@@ -1,0 +1,576 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$1,205,949",
+    "unit": "",
+    "value": 1205949
+   },
+   "b": {
+    "text": "$579,142",
+    "unit": "",
+    "value": 579142.0
+   },
+   "p": {
+    "text": "39.3%",
+    "unit": "",
+    "value": 39.28
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Out-of-district tuition was $1,205,949 in FY2025, and 39.3% of it was paid outside the general fund. The state repaid $579,142 in FY2026 through the circuit breaker, a year after the costs."
+ },
+ "category": "special-education",
+ "chains": [],
+ "chart": {
+  "id": "special-education-costs-trend",
+  "source": "/data/special-education-costs.json"
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "special-education",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$1,205,949",
+      "unit": "",
+      "value": 1205949
+     },
+     "b": {
+      "text": "$732,298",
+      "unit": "",
+      "value": 732298
+     },
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-total",
+     "h-gf"
+    ],
+    "text": "Out-of-district tuition was $1,205,949 in FY2025; the general fund paid $732,298 of it."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$579,142",
+      "unit": "",
+      "value": 579142.0
+     },
+     "b": {
+      "text": "$471,771",
+      "unit": "",
+      "value": 471771.0
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-paid",
+     "h-thresh",
+     "h-acct"
+    ],
+    "text": "The state repaid $579,142 in FY2026, after taking $471,771 off the top."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$223,774",
+      "unit": "",
+      "value": 223774
+     },
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-worst"
+    ],
+    "text": "In the worst of 17 years special education needed $223,774 beyond its voted budget."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "258",
+      "unit": "",
+      "value": 258
+     },
+     "b": {
+      "text": "10",
+      "unit": "",
+      "value": 10
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-swd",
+     "h-placed"
+    ],
+    "text": "258 children had a plan in FY2026; 10 were placed out of district in FY2025."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-price",
+     "h-tu27",
+     "h-ind"
+    ],
+    "text": "Nothing published says what one placement costs, so no per-child figure here is a price."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-total",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "out-of-district tuition, every fund, FY2025"
+      },
+      "value": {
+       "text": "$1,205,949",
+       "unit": "",
+       "value": 1205949
+      }
+     },
+     {
+      "id": "h-gf",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "of it from the general fund, FY2025"
+      },
+      "value": {
+       "text": "$732,298",
+       "unit": "",
+       "value": 732298
+      }
+     },
+     {
+      "id": "h-ind",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "in district, FY2027 balanced budget (our lines)"
+      },
+      "value": {
+       "text": "$5,466,201",
+       "unit": "",
+       "value": 5466201.0
+      }
+     },
+     {
+      "id": "h-tu27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "p": {
+         "text": "46%",
+         "unit": "",
+         "value": 45.77977267746359
+        },
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "tuition budgeted, FY2027, down 46%"
+      },
+      "value": {
+       "text": "$700,142",
+       "unit": "",
+       "value": 700142.0
+      }
+     },
+     {
+      "closes": "the district’s placement-level billing detail, gross of circuit breaker",
+      "id": "h-price",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "what one placement costs"
+      },
+      "value": null
+     }
+    ],
+    "title": "What it costs"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-paid",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "circuit breaker paid by the state, FY2026"
+      },
+      "value": {
+       "text": "$579,142",
+       "unit": "",
+       "value": 579142.0
+      }
+     },
+     {
+      "id": "h-thresh",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "threshold taken off first, FY2026"
+      },
+      "value": {
+       "text": "$471,771",
+       "unit": "",
+       "value": 471771.0
+      }
+     },
+     {
+      "id": "h-acct",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "in the circuit breaker account, close of FY2026"
+      },
+      "value": {
+       "text": "$281,806",
+       "unit": "",
+       "value": 281805.77
+      }
+     }
+    ],
+    "title": "What comes back"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-swd",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "with a special education plan, FY2026"
+      },
+      "value": {
+       "text": "258",
+       "unit": "children",
+       "value": 258
+      }
+     },
+     {
+      "id": "h-placed",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "placed out of district, FY2025"
+      },
+      "value": {
+       "text": "10",
+       "unit": "children",
+       "value": 10
+      }
+     },
+     {
+      "id": "h-worst",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2013",
+         "unit": "fiscal year",
+         "value": 2013
+        }
+       },
+       "literals": [],
+       "text": "beyond the voted budget, worst year, FY2013"
+      },
+      "value": {
+       "text": "$223,774",
+       "unit": "",
+       "value": 223774
+      }
+     }
+    ],
+    "title": "Children and surprises"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/special-education",
+ "shelves": [
+  "special-education"
+ ],
+ "table": {
+  "caption": "Out-of-district tuition by fund, by year",
+  "views": [
+   {
+    "columns": [
+     "General fund",
+     "Grants and revolving funds",
+     "Every fund",
+     "Share outside the general fund"
+    ],
+    "key": "funds",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "DESE End of Year Financial Report",
+    "note": "Functions 9300 and 9400 on the district’s statutory return, closed years. The general fund column equals the district’s own restated budget figure in most years; the other column holds every non-general fund together.",
+    "rows": [
+     {
+      "cells": [
+       "$732,298",
+       "$473,651",
+       "$1,205,949",
+       "39.3%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$588,508",
+       "$868,262",
+       "$1,456,770",
+       "59.6%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$304,748",
+       "$523,806",
+       "$828,554",
+       "63.2%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$397,233",
+       "$548,062",
+       "$945,295",
+       "58.0%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$335,377",
+       "$536,052",
+       "$871,429",
+       "61.5%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$869,557",
+       "$445,610",
+       "$1,315,167",
+       "33.9%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$958,495",
+       "$208,206",
+       "$1,166,701",
+       "17.9%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$868,927",
+       "$271,230",
+       "$1,140,157",
+       "23.8%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$637,677",
+       "$532,720",
+       "$1,170,397",
+       "45.5%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$966,251",
+       "$586,891",
+       "$1,553,142",
+       "37.8%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,450,036",
+       "$644,777",
+       "$2,094,813",
+       "30.8%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,261,690",
+       "$590,702",
+       "$1,852,392",
+       "31.9%"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$949,835",
+       "$605,088",
+       "$1,554,923",
+       "38.9%"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$665,200",
+       "$567,150",
+       "$1,232,350",
+       "46.0%"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$630,620",
+       "$194,574",
+       "$825,194",
+       "23.6%"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$203,871",
+       "$335,638",
+       "$539,509",
+       "62.2%"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$200,000",
+       "$474,350",
+       "$674,350",
+       "70.3%"
+      ],
+      "label": "FY2009"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Special education costs"
+}

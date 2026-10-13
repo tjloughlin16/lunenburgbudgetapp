@@ -24,6 +24,10 @@ import topics as REG  # noqa: E402
 ROOT = os.path.dirname(HERE)
 DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics.json')
+# The ROUTER's list: which first path segments are category hubs. Bundled into the app (it is
+# read synchronously, before any fetch), and only categories whose hub payload exists -- so a
+# category routes the day its hub is built and not before.
+ROUTES_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'topic-categories.json')
 
 
 def words(p):
@@ -69,24 +73,28 @@ def build(strict):
             minutes=max(1, math.ceil(words(h) / 200)) if h else None, ready=bool(h),
             groups=[dict(title=g, topics=list(ids)) for g, ids in c['groups']],
             elsewhere=[dict(href=a, title=b) for a, b in c.get('elsewhere', [])],
-            full_report=dict(href=c['full_report'][0], label=c['full_report'][1])))
-    out = dict(generated_by='scripts/build_topics_index.py', categories=cats, topics=topics)
-    return json.dumps(out, indent=1, ensure_ascii=False, sort_keys=True) + '\n', bad
+            area=c.get('area'), order=c.get('order', 99)))
+    out = dict(generated_by='scripts/build_topics_index.py', categories=cats, topics=topics,
+               areas=[dict(id=a, title=t) for a, t in REG.AREAS])
+    routes = json.dumps(sorted(c['id'] for c in cats if c['ready']), indent=1) + '\n'
+    return json.dumps(out, indent=1, ensure_ascii=False, sort_keys=True) + '\n', routes, bad
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    text, bad = build(strict=a.check)
+    text, routes, bad = build(strict=a.check)
     if a.check:
-        cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else None
-        if cur != text:
-            bad.append('topics.json is stale')
+        for path, want in ((OUT, text), (ROUTES_OUT, routes)):
+            cur = open(path, encoding='utf-8').read() if os.path.exists(path) else None
+            if cur != want:
+                bad.append('%s is stale' % os.path.relpath(path, ROOT))
         print('\n'.join(bad) or 'topics.json current')
         return 1 if bad else 0
-    with open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
-        fh.write(text)
+    for path, body in ((OUT, text), (ROUTES_OUT, routes)):
+        with open(path, 'w', encoding='utf-8', newline='\n') as fh:
+            fh.write(body)
     print('wrote %s%s' % (os.path.relpath(OUT, ROOT), ('; ' + '; '.join(bad)) if bad else ''))
     return 0
 

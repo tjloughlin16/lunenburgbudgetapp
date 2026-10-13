@@ -1,0 +1,251 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "30",
+     "unit": "",
+     "value": 30
+    },
+    "b": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    },
+    "y": {
+     "text": "FY2015",
+     "unit": "fiscal year",
+     "value": 2015
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "h-pk",
+    "h-last"
+   ],
+   "text": "Placements fell from 30 in FY2015 to 10 in FY2025, on the town’s own count."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$4,865,038",
+     "unit": "",
+     "value": 4865038.0
+    },
+    "b": {
+     "text": "$5,466,201",
+     "unit": "",
+     "value": 5466201.0
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "h-ind25",
+    "h-ind27",
+    "h-tu26",
+    "h-tu27"
+   ],
+   "text": "Our in-district lines rose from $4,865,038 in FY2025 to $5,466,201 in FY2027, as tuition was budgeted down."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The district argues in-district behavioural staff avoid costly placements. That is stated intent; nothing published tests it, and fewer referrals or families moving fit the same numbers."
+    }
+   ],
+   "rests_on": [
+    "h-last",
+    "h-ind25",
+    "avoid-gap"
+   ],
+   "text": "The two series barely overlap in time, and neither shows that hiring kept a child here."
+  }
+ ],
+ "facts": [
+  {
+   "id": "h-pk",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "placed out of district, FY2015"
+   },
+   "value": {
+    "text": "30",
+    "unit": "children",
+    "value": 30
+   }
+  },
+  {
+   "id": "h-last",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "placed out of district, FY2025"
+   },
+   "value": {
+    "text": "10",
+    "unit": "children",
+    "value": 10
+   }
+  },
+  {
+   "id": "h-ind25",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "in district, FY2025 budget (our lines)"
+   },
+   "value": {
+    "text": "$4,865,038",
+    "unit": "",
+    "value": 4865038.0
+   }
+  },
+  {
+   "id": "h-ind27",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "in district, FY2027 balanced budget (our lines)"
+   },
+   "value": {
+    "text": "$5,466,201",
+    "unit": "",
+    "value": 5466201.0
+   }
+  },
+  {
+   "id": "h-tu26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "tuition budgeted, FY2026"
+   },
+   "value": {
+    "text": "$1,291,293",
+    "unit": "",
+    "value": 1291293.0
+   }
+  },
+  {
+   "id": "h-tu27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "tuition budgeted, FY2027"
+   },
+   "value": {
+    "text": "$700,142",
+    "unit": "",
+    "value": 700142.0
+   }
+  },
+  {
+   "closes": "the district’s written basis, if one exists, for its claim that in-district staff avoid placements",
+   "id": "avoid-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "staff cost to keep one child in district"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "Placements fell while in-district budgets rose; nothing published shows one caused the other."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "hiring-versus-placing",
+ "kind": "topic",
+ "path": "/special-education/hiring-versus-placing",
+ "said": [],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/placement-counts.csv",
+   "label": "Lunenburg Budget Project — placement-counts.csv (the town’s 1 March placement counts)"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (every district budget line, by column)"
+  }
+ ],
+ "table": null,
+ "title": "Hiring versus placing"
+}

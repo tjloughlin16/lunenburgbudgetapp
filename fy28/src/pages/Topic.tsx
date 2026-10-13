@@ -61,7 +61,7 @@ function TopicChart({ chart, alt }: { chart: ChartRef; alt: string }) {
     fetch(chart.source).then(r => r.json()).then(setData).catch(() => setData(null))
   }, [chart?.source])
   const entry = chart ? ANALYSIS_CHARTS[chart.id] : undefined
-  if (!chart || !entry || !data || !entry.needs(data)) return null
+  if (!chart || !entry || !data || !entry.needs(data as Record<string, unknown>)) return null
   return <figure className="report-body mt-5 [&>figure]:max-w-none">
     {createElement(entry.render as (p: { data: unknown; alt: string }) => React.ReactNode, { data, alt })}</figure>
 }
@@ -98,7 +98,9 @@ function SaidList({ said }: { said: Said[] }) {
   )
 }
 
-function Sources({ sources, full }: { sources: { label: string; href: string }[]; full: { href: string; label: string } }) {
+/* NO "FULL REPORT" LINE. TJ, 12 October 2026: "we dont need FULL reports.... we need all
+ * the smaller reports broken out". A page ends at its own sources. */
+function Sources({ sources }: { sources: { label: string; href: string }[] }) {
   return (
     <section className="mt-10 max-w-3xl">
       <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Sources</h2>
@@ -107,9 +109,6 @@ function Sources({ sources, full }: { sources: { label: string; href: string }[]
           <li key={s.href}><a href={abs(s.href)} className="underline" style={link}>{s.label}</a></li>
         ))}
       </ul>
-      <p className="text-[13px] mt-3" style={{ color: 'var(--text-muted)' }}>
-        Everything on this page, and more, in <a href={abs(full.href)} className="underline" style={link}>{full.label}</a>.
-      </p>
     </section>
   )
 }
@@ -213,9 +212,6 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           {ix.categories.find(c => c.id === p.id)
             ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
-          <p className="text-[13px] mt-10 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
-            Everything here, and more, in <a href={abs(p.full_report.href)} className="underline" style={link}>
-              {p.full_report.label}</a>.</p>
         </>
       ) : p && ix && p.kind === 'topic' ? (
         <>
@@ -230,7 +226,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
             } satisfies LadderEvidence]))} />
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
           <SaidList said={p.said} />
-          <Sources sources={p.sources} full={p.full_report} />
+          <Sources sources={p.sources} />
           <ShelfNav ix={ix} t={p} />
         </>
       ) : null}

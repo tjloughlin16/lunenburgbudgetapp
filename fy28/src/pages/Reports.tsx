@@ -207,19 +207,21 @@ function Row({ o, extra }: { o: Owner; extra: React.ReactNode }) {
 type TopicIndex = {
   categories: { id: string; shelf: string; title: string; path: string; answer: string | null
     groups: { title: string | null; topics: string[] }[]
-    elsewhere: { href: string; title: string }[]; full_report: { href: string; label: string } }[]
+    elsewhere: { href: string; title: string }[]; area: string | null }[]
   topics: Record<string, { id: string; title: string; path: string; finding: string | null
     shelves: string[]; ready: boolean }>
 }
 
-function TopicShelves() {
+/** The shelves of one AREA (scripts/topics.py AREAS), drawn after that area's group of
+ *  older reports -- so a subject lands under The schools, The town or Budget options. */
+function TopicShelves({ area }: { area: string }) {
   const [ix, setIx] = useState<TopicIndex | null>(null)
   useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
   if (!ix) return null
   const shelfName = (id: string) => ix.categories.find(c => c.id === id)?.shelf
   return (
     <>
-      {ix.categories.map(c => (
+      {ix.categories.filter(c => c.area === area).map(c => (
         <Section key={c.id} id={c.id} eyebrow="A subject, page by page" title={c.shelf} href={c.path}>
           <a href={c.path} className="card block p-4 transition-opacity hover:opacity-90"
             style={{ borderLeft: '4px solid var(--series-cost)' }}>
@@ -257,9 +259,6 @@ function TopicShelves() {
               {c.elsewhere.map((e, i) => <span key={e.href}>{i ? ' · ' : ''}<a href={e.href}
                 className="underline" style={{ color: 'var(--series-cost)' }}>{e.title}</a></span>)}</p>
           ) : null}
-          <p className="text-[12.5px] mt-3" style={{ color: 'var(--text-muted)' }}>
-            All of it in one document: <a href={c.full_report.href} className="underline"
-              style={{ color: 'var(--series-cost)' }}>{c.full_report.label}</a></p>
         </Section>
       ))}
     </>
@@ -455,7 +454,9 @@ export function Reports() {
         </Section>
         {/* The two subject shelves follow the schools: most of what they cover is school
             money, and a reader looking for buses or sports has just passed the schools. */}
-        {g.key === 'school' ? <TopicShelves /> : null}
+        {g.key === 'school' ? <TopicShelves area="school" />
+          : g.key === 'town' ? <TopicShelves area="town" />
+          : g.key === 'levers' ? <TopicShelves area="options" /> : null}
       </div>))}
 
       {/* SHOW YOUR WORK GETS A SECTION TO ITSELF, AND IT GOES LAST.

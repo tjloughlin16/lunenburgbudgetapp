@@ -1,0 +1,598 @@
+{
+ "category": "special-education",
+ "chart": {
+  "id": "special-education-costs-trend",
+  "source": "/data/special-education-costs.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$732,298",
+     "unit": "",
+     "value": 732298
+    },
+    "b": {
+     "text": "$473,651",
+     "unit": "",
+     "value": 473651
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Schedule 19 of the district’s End of Year Financial Report as filed, listing each grant and revolving fund",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "Schedule 19"
+     ],
+     "text": "Which grant or revolving fund paid it is not split in the state’s return, so it is not established that it was the circuit breaker."
+    }
+   ],
+   "rests_on": [
+    "gf25",
+    "out25",
+    "share25",
+    "ties"
+   ],
+   "text": "The general fund paid $732,298; another $473,651 came from grants and revolving funds in FY2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,094,813",
+     "unit": "",
+     "value": 2094813
+    },
+    "b": {
+     "text": "$539,509",
+     "unit": "",
+     "value": 539509
+    },
+    "y": {
+     "text": "FY2015",
+     "unit": "fiscal year",
+     "value": 2015
+    },
+    "z": {
+     "text": "FY2010",
+     "unit": "fiscal year",
+     "value": 2010
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "peak",
+    "low",
+    "total25"
+   ],
+   "text": "Every-fund tuition peaked at $2,094,813 in FY2015 and was $539,509 at its lowest, in FY2010."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "17.9%",
+     "unit": "",
+     "value": 17.85
+    },
+    "b": {
+     "text": "70.3%",
+     "unit": "",
+     "value": 70.34
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sharelo",
+    "sharehi"
+   ],
+   "text": "The share paid outside the general fund has run from 17.9% to 70.3% across the years."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,456,770",
+     "unit": "",
+     "value": 1456770
+    },
+    "b": {
+     "text": "$1,054,804",
+     "unit": "",
+     "value": 1054804
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a reconciliation by the district of its End of Year Financial Report to the town’s ledger, fund by fund",
+     "figures": {
+      "p": {
+       "text": "$401,966",
+       "unit": "",
+       "value": 401966
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The difference is exactly the circuit breaker payment the state lists for FY2024, $401,966. Why is not published."
+    }
+   ],
+   "rests_on": [
+    "dese24",
+    "munis24"
+   ],
+   "text": "For FY2024 the state’s return says $1,456,770 and the town’s ledger $1,054,804."
+  }
+ ],
+ "facts": [
+  {
+   "id": "total25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "out-of-district tuition, every fund, FY2025"
+   },
+   "value": {
+    "text": "$1,205,949",
+    "unit": "",
+    "value": 1205949
+   }
+  },
+  {
+   "id": "gf25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of it from the general fund, FY2025"
+   },
+   "value": {
+    "text": "$732,298",
+    "unit": "",
+    "value": 732298
+   }
+  },
+  {
+   "id": "out25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of it from grants and revolving funds, FY2025"
+   },
+   "value": {
+    "text": "$473,651",
+    "unit": "",
+    "value": 473651
+   }
+  },
+  {
+   "id": "share25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of it paid outside the general fund, FY2025"
+   },
+   "value": {
+    "text": "39.3%",
+    "unit": "",
+    "value": 39.28
+   }
+  },
+  {
+   "id": "ties",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "12",
+      "unit": "",
+      "value": 12
+     }
+    },
+    "literals": [],
+    "text": "years of 12 the district’s restated figure is DESE’s"
+   },
+   "value": {
+    "text": "11",
+    "unit": "years",
+    "value": 11
+   }
+  },
+  {
+   "id": "peak",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "every fund, FY2015, the highest year"
+   },
+   "value": {
+    "text": "$2,094,813",
+    "unit": "",
+    "value": 2094813
+   }
+  },
+  {
+   "id": "low",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2010",
+      "unit": "fiscal year",
+      "value": 2010
+     }
+    },
+    "literals": [],
+    "text": "every fund, FY2010, the lowest year"
+   },
+   "value": {
+    "text": "$539,509",
+    "unit": "",
+    "value": 539509
+   }
+  },
+  {
+   "id": "sharehi",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "outside the general fund, FY2009"
+   },
+   "value": {
+    "text": "70.3%",
+    "unit": "",
+    "value": 70.34
+   }
+  },
+  {
+   "id": "sharelo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "outside the general fund, FY2019"
+   },
+   "value": {
+    "text": "17.9%",
+    "unit": "",
+    "value": 17.85
+   }
+  },
+  {
+   "id": "dese24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "every fund, FY2024, the state’s return"
+   },
+   "value": {
+    "text": "$1,456,770",
+    "unit": "",
+    "value": 1456770
+   }
+  },
+  {
+   "id": "munis24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "every fund, FY2024, the town’s ledger"
+   },
+   "value": {
+    "text": "$1,054,804",
+    "unit": "",
+    "value": 1054804
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,205,949",
+    "unit": "",
+    "value": 1205949
+   },
+   "p": {
+    "text": "39.3%",
+    "unit": "",
+    "value": 39.28
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "$1,205,949 went to out-of-district tuition in FY2025; 39.3% of it was paid outside the general fund."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "out-of-district-tuition",
+ "kind": "topic",
+ "path": "/special-education/out-of-district-tuition",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-01-24",
+   "href": "/docs/meetings/text/school-committee/2024-01-24-minutes-6375.txt",
+   "label": "School Committee minutes, 2024-01-24",
+   "quote": "Our out of District placements have skyrocketed"
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Out-of-district tuition by fund, by year",
+  "views": [
+   {
+    "columns": [
+     "General fund",
+     "Grants and revolving funds",
+     "Every fund",
+     "Share outside the general fund"
+    ],
+    "key": "funds",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "DESE End of Year Financial Report",
+    "note": "Functions 9300 and 9400 on the district’s statutory return, closed years. The general fund column equals the district’s own restated budget figure in most years; the other column holds every non-general fund together.",
+    "rows": [
+     {
+      "cells": [
+       "$732,298",
+       "$473,651",
+       "$1,205,949",
+       "39.3%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$588,508",
+       "$868,262",
+       "$1,456,770",
+       "59.6%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$304,748",
+       "$523,806",
+       "$828,554",
+       "63.2%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$397,233",
+       "$548,062",
+       "$945,295",
+       "58.0%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$335,377",
+       "$536,052",
+       "$871,429",
+       "61.5%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$869,557",
+       "$445,610",
+       "$1,315,167",
+       "33.9%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$958,495",
+       "$208,206",
+       "$1,166,701",
+       "17.9%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$868,927",
+       "$271,230",
+       "$1,140,157",
+       "23.8%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$637,677",
+       "$532,720",
+       "$1,170,397",
+       "45.5%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$966,251",
+       "$586,891",
+       "$1,553,142",
+       "37.8%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,450,036",
+       "$644,777",
+       "$2,094,813",
+       "30.8%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,261,690",
+       "$590,702",
+       "$1,852,392",
+       "31.9%"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$949,835",
+       "$605,088",
+       "$1,554,923",
+       "38.9%"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$665,200",
+       "$567,150",
+       "$1,232,350",
+       "46.0%"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$630,620",
+       "$194,574",
+       "$825,194",
+       "23.6%"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$203,871",
+       "$335,638",
+       "$539,509",
+       "62.2%"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$200,000",
+       "$474,350",
+       "$674,350",
+       "70.3%"
+      ],
+      "label": "FY2009"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Out-of-district tuition"
+}

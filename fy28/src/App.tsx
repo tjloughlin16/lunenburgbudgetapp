@@ -687,7 +687,9 @@ function useTopicCrumbs(tab: Tab) {
   if (!on || !ix) return null
   const id = topicIdFromPath(window.location.pathname) ?? (tab === 'athletics' ? 'athletics' : 'transportation')
   const t = ix.topics[id]
-  const cat = ix.categories.find(c => c.id === (t ? t.home : id))
+  // An unknown topic still sits under the category its address names -- never the fallback.
+  const first = window.location.pathname.replace(/^\/+/, '').split('/')[0]
+  const cat = ix.categories.find(c => c.id === (t ? t.home : ix.categories.some(k => k.id === id) ? id : first))
   if (!cat) return null
   const crumbs = [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
                   { href: pathFor('reports'), label: LABEL.reports, tab: 'reports' as Tab | null }]

@@ -1,0 +1,388 @@
+{
+ "category": "special-education",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    },
+    "b": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "subcap",
+    "subaide",
+    "thresh"
+   ],
+   "text": "A separate group may not exceed 8 students to one educator, or 12 with an aide."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "16",
+     "unit": "",
+     "value": 16
+    },
+    "b": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "partcap",
+    "subaide",
+    "young"
+   ],
+   "text": "The more separate the group, the lower the cap: 16 partly separate, 12 fully."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "0",
+     "unit": "",
+     "value": 0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "adults"
+   ],
+   "text": "The rule caps children, not adults: it sets 0 limits on adults, and a plan can add aides."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "41",
+     "unit": "",
+     "value": 41
+    },
+    "b": {
+     "text": "258",
+     "unit": "",
+     "value": 258
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s list of special education groups, with the students and staff assigned to each",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The rule binds groups and the state counts children, so no staffing number follows from anything published."
+    }
+   ],
+   "rests_on": [
+    "sep26",
+    "all26",
+    "groups-gap"
+   ],
+   "text": "41 of 258 children were counted substantially separate in FY2026; that is not a count of groups."
+  }
+ ],
+ "facts": [
+  {
+   "id": "subcap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most in a separate group, one educator"
+   },
+   "value": {
+    "text": "8",
+    "unit": "students",
+    "value": 8
+   }
+  },
+  {
+   "id": "subaide",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most with an educator and an aide"
+   },
+   "value": {
+    "text": "12",
+    "unit": "students",
+    "value": 12
+   }
+  },
+  {
+   "id": "partcap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most in a partly separate group, two aides"
+   },
+   "value": {
+    "text": "16",
+    "unit": "students",
+    "value": 16
+   }
+  },
+  {
+   "id": "young",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most in an integrated preschool class"
+   },
+   "value": {
+    "text": "20",
+    "unit": "students",
+    "value": 20
+   }
+  },
+  {
+   "id": "thresh",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "outside general education, above which it is separate"
+   },
+   "value": {
+    "text": "60%",
+    "unit": "",
+    "value": 60
+   }
+  },
+  {
+   "id": "adults",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the rule sets on adults in a room"
+   },
+   "value": {
+    "text": "0",
+    "unit": "limits",
+    "value": 0
+   }
+  },
+  {
+   "id": "sep26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "counted substantially separate, FY2026"
+   },
+   "value": {
+    "text": "41",
+    "unit": "children",
+    "value": 41
+   }
+  },
+  {
+   "id": "all26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "with a plan, FY2026"
+   },
+   "value": {
+    "text": "258",
+    "unit": "children",
+    "value": 258
+   }
+  },
+  {
+   "closes": "the district’s list of special education groups by school and setting, with students and staff, kept for DESE’s program approval",
+   "id": "groups-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how many groups Lunenburg runs, and how large"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "8",
+    "unit": "",
+    "value": 8
+   },
+   "b": {
+    "text": "12",
+    "unit": "",
+    "value": 12
+   }
+  },
+  "literals": [],
+  "text": "A separate special education group may hold 8 students to one educator, or 12 with an aide."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "class-size-limits",
+ "kind": "topic",
+ "path": "/special-education/class-size-limits",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2024-03-14",
+   "href": "/docs/meetings/text/finance-committee/2024-03-14-minutes-6469.txt",
+   "label": "Finance Committee minutes, 2024-03-14",
+   "quote": "Julianna Hanscom states there is no formula. The school is aware of what students are in programs who will then go into a program next year. There hasn’t been a large or small caseload, and the inclusion of teachers is between 15 to 20 students"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2026-01-27",
+   "href": "/docs/meetings/text/finance-committee/2026-01-27-minutes-7619.txt",
+   "label": "Finance Committee minutes, 2026-01-27",
+   "quote": "seven of her IEP students with significant pull-out service needs were being seen by a paraprofessional rather than a certified special education teacher"
+  }
+ ],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/603cmr28-special-education-regulations.html",
+   "label": "Massachusetts Department of Elementary and Secondary Education, 603 CMR 28.00 — 603cmr28-special-education-regulations.html"
+  },
+  {
+   "href": "/docs/state-dese/sims-datahandbook-current.docx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — sims-datahandbook-current.docx"
+  },
+  {
+   "href": "/docs/state-dese/dese-sped-program-characteristics.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-sped-program-characteristics.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Group-size limits in 603 CMR 28.06",
+  "views": [
+   {
+    "columns": [
+     "Most students",
+     "Educators",
+     "Aides",
+     "Clause"
+    ],
+    "key": "tiers",
+    "kinds": [
+     "statute",
+     "statute",
+     "statute",
+     "statute"
+    ],
+    "label": "The regulation, tier by tier",
+    "note": "Parsed from the sentences that state them. Every tier names one educator; an aide is what raises the ceiling.",
+    "rows": [
+     {
+      "cells": [
+       "8",
+       "1",
+       "0",
+       "603 CMR 28.06(6)(c)"
+      ],
+      "label": "School age, partly separate"
+     },
+     {
+      "cells": [
+       "12",
+       "1",
+       "1",
+       "603 CMR 28.06(6)(c)"
+      ],
+      "label": "School age, partly separate"
+     },
+     {
+      "cells": [
+       "16",
+       "1",
+       "2",
+       "603 CMR 28.06(6)(c)"
+      ],
+      "label": "School age, partly separate"
+     },
+     {
+      "cells": [
+       "8",
+       "1",
+       "0",
+       "603 CMR 28.06(6)(d)"
+      ],
+      "label": "School age, substantially separate"
+     },
+     {
+      "cells": [
+       "12",
+       "1",
+       "1",
+       "603 CMR 28.06(6)(d)"
+      ],
+      "label": "School age, substantially separate"
+     },
+     {
+      "cells": [
+       "15",
+       "1",
+       "1",
+       "603 CMR 28.06(7)(e)"
+      ],
+      "label": "Young children, integrated preschool"
+     },
+     {
+      "cells": [
+       "20",
+       "1",
+       "1",
+       "603 CMR 28.06(7)(e)"
+      ],
+      "label": "Young children, integrated preschool"
+     },
+     {
+      "cells": [
+       "9",
+       "1",
+       "1",
+       "603 CMR 28.06(7)(f)"
+      ],
+      "label": "Young children, substantially separate preschool"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Class size limits"
+}

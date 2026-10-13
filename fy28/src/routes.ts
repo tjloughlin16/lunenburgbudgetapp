@@ -1,3 +1,4 @@
+import TOPIC_CATEGORIES from './data/topic-categories.json'
 /** Which tab a URL means, and which URL a tab has.
  *
  *  Split out of App so it can be tested without a browser: the whole point of shareable
@@ -802,6 +803,9 @@ export const LABEL: Record<Tab, string> = {
   parastaff: 'The paraprofessionals',
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
+  // The topic page type's own label is never shown -- its trail names the shelf and the
+  // page (App.tsx useTopicCrumbs) -- but every tab needs one.
+  topic: 'Reports and analyses',
   stateaid: 'State aid — the part nobody here votes on',
   stopped: 'Funding that stopped',
   cuts: 'The cut register — what was announced, and what shows',
@@ -941,8 +945,11 @@ export function tabFromPath(pathname: string): Tab {
   // page component, so the document id travels in the path rather than in a Tab of its
   // own -- see `analysis` in the union above.
   if (seg.startsWith('analysis/')) return 'analysis'
-  // Topic pages: /transportation/<id>, and /athletics/<id> under the athletics hub.
-  if (seg.startsWith('transportation/') || seg.startsWith('athletics/')) return 'topic'
+  // TOPIC PAGES AND HUBS: any address whose first segment is a built category
+  // (src/data/topic-categories.json, written by scripts/build_topics_index.py). A hub's own
+  // address wins over an older page that held the same slug -- that is the migration: the
+  // hub replaces the report it was built from.
+  if (TOPIC_CATEGORIES.includes(seg.split('/')[0])) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
   // The third. Every thread shares one page component; the id is in the path.
@@ -959,8 +966,8 @@ export function tabFromPath(pathname: string): Tab {
 /** The topic page or hub a `/transportation[/<id>]` or `/athletics[/<id>]` address names:
  *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
 export function topicIdFromPath(pathname: string): string | null {
-  const m = /^\/(transportation|athletics)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
-  return m ? (m[2] ?? m[1]) : null
+  const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  return m && TOPIC_CATEGORIES.includes(m[1]) ? (m[2] ?? m[1]) : null
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.
