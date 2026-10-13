@@ -879,6 +879,9 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // are destinations of their own (the Menu's "Lately" and "Who decides", the home page's
   // "Stay informed"), and they sit under Home. `askus` and `gaps` likewise: they are the
   // Menu's "Check it", not chapters of the money page.
+  // Go deeper and the two tools were Home-level while the Menu and AREA_TABS both put them in
+  // Budget Crisis; scripts/check-crumbs.mjs found them, 13 October 2026.
+  deeper: 'walk', adjust: 'walk', curve: 'walk',
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
   priorities: 'deeper', development: 'deeper', solved: 'deeper',
   // TJ, 16 September 2026: "we need individual reports for the big concepts in the
@@ -894,7 +897,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // subject shelves' own (App.tsx useTopicCrumbs).
   variance: 'themoney',
   funds: 'themoney',
-  staffing: 'themoney',
+  staffing: 'reports',
   schoolstaff: 'themoney',
   parastaff: 'themoney',
   insurance: 'themoney',

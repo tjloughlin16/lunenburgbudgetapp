@@ -23,7 +23,12 @@ import type { Tab } from '../routes'
  *  to check any of it. The areas in routes.ts are the build's grouping and are not
  *  repeated here. */
 type Item = { label: string; sub: string } & ({ to: Tab; anchor?: string; href?: never } | { href: string; to?: never; anchor?: never })
-type Group = { title: string; items: Item[] }
+/** `under` is where this group's pages sit in the BREADCRUMB: `null` means directly under
+ *  Home, a tab means every page here is that tab or below it in routes.PARENT. The Menu and
+ *  the breadcrumb are two maps of one site, and they drifted -- TJ, 13 October 2026:
+ *  *"looks like breadcrumbs are very frequently wrong"*. scripts/check-crumbs.mjs holds
+ *  PARENT to this field and fails the build when they disagree. */
+type Group = { title: string; under: Tab | null; items: Item[] }
 
 /* EIGHT GROUPS, AND THE FIRST CUT HAD FIVE. TJ, same day: *"I likely missed full
  * categories (which really is the reason I asked for this)."* He had: the first version
@@ -34,7 +39,7 @@ type Group = { title: string; items: Item[] }
  * (sources/analyses/UNLISTED and routes.UNLISTED), and the single reports, which /reports
  * indexes and which each subject group below links into. */
 export const GROUPS: Group[] = [
-  { title: 'Lately', items: [
+  { title: 'Lately', under: null, items: [
     { to: 'thisweek', label: 'This week in town', sub: 'Meetings ahead and what just happened' },
     { to: 'budgetfeed', label: 'Budget feed', sub: 'This season, every board, as it happens' },
     { href: '/budget-feed/fy27', label: 'Past budget seasons', sub: 'FY27 and FY26, replayed' },
@@ -42,14 +47,14 @@ export const GROUPS: Group[] = [
     { to: 'blog', label: 'Articles', sub: 'Written up, one question at a time' },
     { href: '/feeds/all.xml', label: 'Subscribe (feeds)', sub: 'Atom feeds: every board, or all' },
   ] },
-  { title: 'Who decides', items: [
+  { title: 'Who decides', under: null, items: [
     { to: 'threads', label: 'Threads', sub: 'Each matter, followed across boards' },
     { to: 'boards', label: 'Boards & committees', sub: 'Meetings, votes, finance, per board' },
     { href: '/board-records', label: 'Board records', sub: 'Who posts minutes, seats, turnover' },
     { to: 'orgcharts', label: 'Org charts', sub: 'Who works where, by year' },
     { to: 'jobs', label: 'Job postings', sub: 'Open positions, town and schools' },
   ] },
-  { title: 'The budget gap', items: [
+  { title: 'The budget gap', under: 'walk', items: [
     { to: 'walk', label: 'The walk-through', sub: 'Why the budget keeps breaking' },
     { to: 'answers', label: 'Straight answers', sub: 'The questions people actually ask' },
     { to: 'why', label: 'Why it repeats', sub: 'The gap returns each year' },
@@ -58,14 +63,14 @@ export const GROUPS: Group[] = [
     { to: 'solved', label: 'The cost of closing it', sub: 'What “solved” requires' },
     { to: 'deeper', label: 'Go deeper', sub: 'Every chapter of the argument' },
   ] },
-  { title: 'Try it yourself', items: [
+  { title: 'Try it yourself', under: 'walk', items: [
     { to: 'adjust', label: 'Build your own budget', sub: 'Move the levers, see the gap' },
     { to: 'priorities', label: 'Set priorities', sub: 'Rank what to protect' },
     { to: 'development', label: 'Commercial growth', sub: 'What new building would bring in' },
     { to: 'money', label: 'Find the money', sub: 'Where the money could come from' },
     { to: 'curve', label: 'Bend the curve', sub: 'Slow the growth, not just this year' },
   ] },
-  { title: 'The money', items: [
+  { title: 'The money', under: 'themoney', items: [
     { to: 'themoney', label: 'Where it comes from and goes', sub: 'In, out, and who decides' },
     { to: 'stateaid', label: 'State aid', sub: 'The part nobody here votes on' },
     { to: 'funds', label: 'Outside the budget', sub: 'Grants, revolving funds, gifts' },
@@ -74,7 +79,7 @@ export const GROUPS: Group[] = [
     { href: '/department-budgets', label: 'Department budgets', sub: 'As Town Meeting voted them' },
     { to: 'rates', label: 'Rates, fees and contracts', sub: 'The register' },
   ] },
-  { title: 'The schools', items: [
+  { title: 'The schools', under: 'reports', items: [
     { to: 'reports', anchor: 'school', label: 'All school reports', sub: 'Staff, students, money' },
     { to: 'sped', label: 'Special education', sub: 'Counts, costs, placements' },
     { to: 'staffing', label: 'Staffing', sub: 'Who works in each school' },
@@ -83,7 +88,7 @@ export const GROUPS: Group[] = [
     { href: '/state-aid/minimum-aid', label: 'Chapter 70', sub: 'Why we get the minimum' },
     { href: '/school-programs/announced-cuts', label: 'Announced cuts', sub: 'What was announced, what shows' },
   ] },
-  { title: 'The town', items: [
+  { title: 'The town', under: 'reports', items: [
     { to: 'reports', anchor: 'town', label: 'All town reports', sub: 'People, the ledger, the votes' },
     { href: '/homes-and-taxes/town-population', label: 'Population and households', sub: 'Who lives here' },
     { to: 'owners', label: 'Homes and taxes', sub: 'Who owns, and the tax bill' },
@@ -92,7 +97,7 @@ export const GROUPS: Group[] = [
     { href: '/parks', label: 'Parks & Recreation', sub: 'A department, whole' },
     { href: '/parks/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay' },
   ] },
-  { title: 'Check it', items: [
+  { title: 'Check it', under: null, items: [
     { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },
     { to: 'search', label: 'Search', sub: 'Pages, documents, minutes, video' },
     { to: 'gaps', label: 'What we cannot answer', sub: 'And what would settle it' },

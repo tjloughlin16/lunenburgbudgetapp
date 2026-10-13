@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node scripts/check-crumbs.mjs && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "prerender": "node scripts/prerender.mjs",
     "check:agents": "node scripts/check-agents.mjs",
     "check:interactive": "node scripts/check-interactive.mjs",
     "check:agent-view": "node scripts/agent-view.mjs",
+    "check:crumbs": "node scripts/check-crumbs.mjs",
     "build:site": "npm run build && npm run prerender"
   },
   "dependencies": {

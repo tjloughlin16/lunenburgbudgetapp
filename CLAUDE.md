@@ -1428,6 +1428,7 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/check_prerender.py      # is dist/ WHOLLY prerendered, or wholly not — a mixture is a killed
                                             #   build, and it looks exactly like a finished one
     bash scripts/check_phone_width.sh       # every route at a TRUE 400px viewport; fails if any page scrolls sideways
+    (cd fy28 && npm run check:crumbs)       # every Menu page's breadcrumb sits where the Menu files it; runs in npm run build
     python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
     python3 scripts/check_sitemap.py        # the live sitemap, and every URL in it, answers
     python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
