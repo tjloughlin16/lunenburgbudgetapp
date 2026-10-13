@@ -1,0 +1,266 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$3,701,195",
+     "unit": "",
+     "value": 3701195.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "act"
+   ],
+   "text": "The district’s book and the town ledger agree: $3,701,195 on the school HEALTH INS line."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,521,536",
+     "unit": "",
+     "value": 1521535.59
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the number of school retirees enrolled, by plan",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A budget line is dollars; it does not say how many retirees it covers or on which plans."
+    }
+   ],
+   "rests_on": [
+    "ret",
+    "app",
+    "share"
+   ],
+   "text": "School retiree health, $1,521,536, is appropriated to the town, not to the schools."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,315,270",
+     "unit": "",
+     "value": 1315270.06
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "town-act",
+    "med",
+    "whose"
+   ],
+   "text": "Whether any of the town’s $1,315,270 HEALTH INS line covers school staff is not split out."
+  }
+ ],
+ "facts": [
+  {
+   "id": "act",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "school department HEALTH INS, FY2026 budget"
+   },
+   "value": {
+    "text": "$3,701,195",
+    "unit": "",
+    "value": 3701195.0
+   }
+  },
+  {
+   "id": "ret",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "SCHRETHLTH, in the town’s insurance department"
+   },
+   "value": {
+    "text": "$1,521,536",
+    "unit": "",
+    "value": 1521535.59
+   }
+  },
+  {
+   "id": "tot",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the two accounts together"
+   },
+   "value": {
+    "text": "$5,222,731",
+    "unit": "",
+    "value": 5222730.59
+   }
+  },
+  {
+   "id": "app",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "the FY2026 school appropriation"
+   },
+   "value": {
+    "text": "$26,287,474",
+    "unit": "",
+    "value": 26287474.0
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the retiree account, set beside that appropriation"
+   },
+   "value": {
+    "text": "5.8%",
+    "unit": "",
+    "value": 5.788063128469476
+   }
+  },
+  {
+   "id": "town-act",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "the town’s own HEALTH INS line, FY2026"
+   },
+   "value": {
+    "text": "$1,315,270",
+    "unit": "",
+    "value": 1315270.06
+   }
+  },
+  {
+   "id": "med",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "Medicare, the employer’s share, FY2026"
+   },
+   "value": {
+    "text": "$400,000",
+    "unit": "",
+    "value": 400000.0
+   }
+  },
+  {
+   "closes": "the town’s Chapter 32B enrollment schedule, by department",
+   "id": "whose",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "school staff inside the town’s HEALTH INS or Medicare"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$5,222,731",
+    "unit": "",
+    "value": 5222730.59
+   },
+   "b": {
+    "text": "$1,521,536",
+    "unit": "",
+    "value": 1521535.59
+   }
+  },
+  "literals": [
+   "FY2026"
+  ],
+  "text": "Two school accounts hold $5,222,731 for FY2026; $1,521,536 of it sits outside the school budget."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-health-insurance",
+ "kind": "topic",
+ "path": "/health-insurance/school-health-insurance",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/data/health-insurance.json",
+   "label": "Lunenburg Budget Project — health-insurance.json (the insurance department and the district line, by stage)"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS), general fund, FY2026 period 12"
+  },
+  {
+   "href": "/docs/district-budget/docs/final-budget-document.pdf",
+   "label": "Lunenburg Public Schools — FY27 budget document, 25 March 2026"
+  }
+ ],
+ "table": {
+  "caption": "Health insurance accounts named for the schools",
+  "views": [
+   {
+    "columns": [
+     "Budget",
+     "Account"
+    ],
+    "key": "school",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2026",
+    "note": "Budgets as the MUNIS ledger prints them at period 12. Accounts not named for either side are left out, not assigned.",
+    "rows": [
+     {
+      "cells": [
+       "$3,701,195",
+       "0100-S5991992-570001"
+      ],
+      "label": "School department HEALTH INS"
+     },
+     {
+      "cells": [
+       "$1,521,536",
+       "0100-19142-570018"
+      ],
+      "label": "School retirees (town insurance department)"
+     },
+     {
+      "cells": [
+       "$5,222,731",
+       null
+      ],
+      "label": "Together"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "School health insurance"
+}

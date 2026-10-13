@@ -1,0 +1,575 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "11,804",
+    "unit": "",
+    "value": 11804.0
+   },
+   "b": {
+    "text": "4,529",
+    "unit": "",
+    "value": 4529.0
+   },
+   "c": {
+    "text": "$7,444",
+    "unit": "",
+    "value": 7444.0
+   },
+   "h": {
+    "text": "773",
+    "unit": "",
+    "value": 773
+   },
+   "o": {
+    "text": "81.3%",
+    "unit": "",
+    "value": 81.2982998454405
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "FY1994",
+    "unit": "fiscal year",
+    "value": 1994
+   }
+  },
+  "literals": [],
+  "text": "About 11,804 residents live in 4,529 households, 81.3% owner-occupied, on a Census sample. The average single-family bill was $7,444 in FY2026, and the town has 773 more single-family homes than in FY1994 while enrolment fell."
+ },
+ "category": "homes-and-taxes",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "homes-and-taxes",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "s": {
+      "text": "3 of 15",
+      "unit": "Census measures",
+      "value": 3
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-pop",
+     "h-surv"
+    ],
+    "text": "Every Census figure here is a sample; only 3 of 15 changed beyond its margin."
+   },
+   {
+    "figures": {
+     "p": {
+      "text": "16.8%",
+      "unit": "",
+      "value": 16.765503219247712
+     }
+    },
+    "literals": [
+     "18",
+     "65"
+    ],
+    "rests_on": [
+     "h-kid",
+     "h-sen"
+    ],
+    "text": "About a third of households have a child under 18; 16.8% of residents are 65 or over."
+   },
+   {
+    "figures": {
+     "b": {
+      "text": "47.7%",
+      "unit": "",
+      "value": 47.72772375471324
+     },
+     "r": {
+      "text": "26.6%",
+      "unit": "",
+      "value": 26.615621529018384
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-bill",
+     "h-bch",
+     "h-rch",
+     "h-pos"
+    ],
+    "text": "The average bill rose 47.7% in ten years while the tax rate fell 26.6%."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "319",
+      "unit": "",
+      "value": 319
+     },
+     "y": {
+      "text": "FY2003",
+      "unit": "fiscal year",
+      "value": 2003
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-homes",
+     "h-st"
+    ],
+    "text": "Single-family homes never fell in the record; enrolment is 319 below its FY2003 peak."
+   },
+   {
+    "figures": {
+     "c": {
+      "text": "8.7%",
+      "unit": "% of assessed value",
+      "value": 8.71
+     },
+     "p": {
+      "text": "1.64%",
+      "unit": "",
+      "value": 1.64
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-ng",
+     "h-cip"
+    ],
+    "text": "New growth added 1.64% to the FY2026 levy limit; business is 8.7% of the base."
+   },
+   {
+    "figures": {},
+    "literals": [
+     "65"
+    ],
+    "rests_on": [
+     "h-levy",
+     "h-inc",
+     "h-own"
+    ],
+    "text": "What households headed by someone 65 or over pay in property tax is not published."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-pop",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "2019–2023",
+        "2014–2018",
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "residents, 2019–2023 sample"
+      },
+      "value": {
+       "text": "11,804 ± 19",
+       "unit": "residents",
+       "value": 11804.0
+      }
+     },
+     {
+      "id": "h-sen",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "m": {
+         "text": "2.6 points",
+         "unit": "",
+         "value": 2.6208919905548558
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "of residents 65 or over, ± 2.6 points"
+      },
+      "value": {
+       "text": "16.8%",
+       "unit": "",
+       "value": 16.765503219247712
+      }
+     },
+     {
+      "id": "h-kid",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "18",
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "of households with a child under 18"
+      },
+      "value": {
+       "text": "32.6%",
+       "unit": "",
+       "value": 32.61205564142195
+      }
+     },
+     {
+      "id": "h-inc",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "65",
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "median income, householder 65 or over"
+      },
+      "value": {
+       "text": "$72,935",
+       "unit": "",
+       "value": 72935.0
+      }
+     },
+     {
+      "id": "h-surv",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "Census measures that changed beyond the margin"
+      },
+      "value": {
+       "text": "3 of 15",
+       "unit": "Census measures",
+       "value": 3
+      }
+     },
+     {
+      "closes": "the Assessors’ commitment list with exemptions, joined to the town census",
+      "id": "h-levy",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [
+        "65",
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "property tax paid by households 65 and over"
+      },
+      "value": null
+     }
+    ],
+    "title": "Who lives here"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-own",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "of occupied homes owner-occupied"
+      },
+      "value": {
+       "text": "81.3%",
+       "unit": "",
+       "value": 81.2982998454405
+      }
+     },
+     {
+      "id": "h-bill",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "average single-family bill, FY2026"
+      },
+      "value": {
+       "text": "$7,444",
+       "unit": "",
+       "value": 7444.0
+      }
+     },
+     {
+      "id": "h-bch",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "rise in that bill in ten years"
+      },
+      "value": {
+       "text": "47.7%",
+       "unit": "",
+       "value": 47.72772375471324
+      }
+     },
+     {
+      "id": "h-rch",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "fall in the tax rate in the same years"
+      },
+      "value": {
+       "text": "26.6%",
+       "unit": "",
+       "value": 26.615621529018384
+      }
+     },
+     {
+      "id": "h-pos",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "nearby towns, by average bill"
+      },
+      "value": {
+       "text": "6th of 11",
+       "unit": "towns",
+       "value": 6
+      }
+     }
+    ],
+    "title": "Homes and the bill"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-homes",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY1994",
+         "unit": "fiscal year",
+         "value": 1994
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "more single-family homes since FY1994"
+      },
+      "value": {
+       "text": "773",
+       "unit": "homes",
+       "value": 773
+      }
+     },
+     {
+      "id": "h-st",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2003",
+         "unit": "fiscal year",
+         "value": 2003
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "fewer enrolled than at the FY2003 peak"
+      },
+      "value": {
+       "text": "319",
+       "unit": "children",
+       "value": 319
+      }
+     },
+     {
+      "id": "h-ng",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "added to the levy limit by new growth, FY2026"
+      },
+      "value": {
+       "text": "1.64%",
+       "unit": "",
+       "value": 1.64
+      }
+     },
+     {
+      "id": "h-cip",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [
+        "45-to-64",
+        "45 to 64",
+        "25 to 44",
+        "18 to 24",
+        "65",
+        "18",
+        "45",
+        "64"
+       ],
+       "text": "business share of the tax base, FY2026"
+      },
+      "value": {
+       "text": "8.7%",
+       "unit": "% of assessed value",
+       "value": 8.71
+      }
+     }
+    ],
+    "title": "Growth"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/homes-and-taxes",
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "table": null,
+ "title": "Homes, taxes, growth"
+}

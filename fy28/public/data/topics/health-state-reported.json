@@ -1,0 +1,379 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [
+    "FY2023"
+   ],
+   "rests_on": [
+    "ties",
+    "d23"
+   ],
+   "text": "Through FY2023 the state’s figure equals the department’s spending less Medicare and life insurance."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,894,390",
+     "unit": "",
+     "value": 2894390.0
+    }
+   },
+   "literals": [
+    "FY2024"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A change in what the town reported on Schedule A would produce this; nothing here shows why it changed."
+    }
+   ],
+   "rests_on": [
+    "d24",
+    "w24"
+   ],
+   "text": "FY2024’s $2,894,390 equals the whole department, Medicare and life included."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "1.2%",
+     "unit": "",
+     "value": 1.2468663686437287
+    }
+   },
+   "literals": [
+    "FY2024",
+    "FY2023"
+   ],
+   "rests_on": [
+    "h24",
+    "lfl",
+    "d23"
+   ],
+   "text": "On the health accounts alone, FY2024 rose 1.2% on FY2023."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "ties",
+    "w24"
+   ],
+   "text": "The state’s figure is the town department only; the school department’s own health line is not in it."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ties",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2010",
+     "FY2023",
+     "$5"
+    ],
+    "text": "years FY2010-FY2023 within $5 of the health accounts"
+   },
+   "value": {
+    "text": "14 of 14",
+    "unit": "years",
+    "value": 14
+   }
+  },
+  {
+   "id": "d23",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "state figure, FY2023"
+   },
+   "value": {
+    "text": "$2,505,400",
+    "unit": "",
+    "value": 2505400.0
+   }
+  },
+  {
+   "id": "d24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "state figure, FY2024"
+   },
+   "value": {
+    "text": "$2,894,390",
+    "unit": "",
+    "value": 2894390.0
+   }
+  },
+  {
+   "id": "w24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "whole insurance department spent, FY2024"
+   },
+   "value": {
+    "text": "$2,894,390",
+    "unit": "",
+    "value": 2894389.69
+   }
+  },
+  {
+   "id": "h24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "FY2024, health accounts alone"
+   },
+   "value": {
+    "text": "$2,536,639",
+    "unit": "",
+    "value": 2536638.9899999998
+   }
+  },
+  {
+   "id": "lfl",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "FY2024 rise on the health accounts alone (ours)"
+   },
+   "value": {
+    "text": "1.2%",
+    "unit": "",
+    "value": 1.2468663686437287
+   }
+  },
+  {
+   "id": "d25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "state figure, FY2025"
+   },
+   "value": {
+    "text": "$3,038,832",
+    "unit": "",
+    "value": 3038832.0
+   }
+  },
+  {
+   "closes": "the town’s FY2025 Schedule A, health insurance, set against the year-end ledger",
+   "id": "c25",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "which accounts FY2025’s figure counts"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [
+   "FY2024"
+  ],
+  "text": "The state’s figure for Lunenburg counted Medicare and life insurance in FY2024, and in no year before."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-state-reported",
+ "kind": "topic",
+ "path": "/health-insurance/health-state-reported",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/dls-health-insurance.csv",
+   "label": "Lunenburg Budget Project — dls-health-insurance.csv (DLS Schedule A health insurance spending, every municipality)"
+  },
+  {
+   "href": "https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.HealthInsExpenditures",
+   "label": "Massachusetts Division of Local Services — Health Insurance Expenditures (Schedule A)"
+  },
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee’s ledger history, by account)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general fund budget vs actuals history, FY2010-FY2025 (assembled from MUNIS exports)"
+  }
+ ],
+ "table": {
+  "caption": "The state’s figure against the ledger history",
+  "views": [
+   {
+    "columns": [
+     "State figure",
+     "Health accounts",
+     "Whole department"
+    ],
+    "key": "tie",
+    "kinds": [
+     "ledger",
+     "stated",
+     "stated"
+    ],
+    "label": "Spent",
+    "note": "Health accounts: the insurance department’s actual spending less Medicare and life insurance, from the Finance Committee’s ledger history. FY2025 is left out: the history’s FY2025 actuals are part-year.",
+    "rows": [
+     {
+      "cells": [
+       "$2,894,390",
+       "$2,536,639",
+       "$2,894,390"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$2,505,400",
+       "$2,505,400",
+       "$2,850,203"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,170,119",
+       "$2,170,119",
+       "$2,497,171"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$2,080,165",
+       "$2,080,165",
+       "$2,382,567"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$2,103,154",
+       "$2,103,154",
+       "$2,390,459"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$2,108,353",
+       "$2,108,353",
+       "$2,385,536"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$1,969,483",
+       "$1,969,483",
+       "$2,240,724"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$1,805,969",
+       "$1,805,969",
+       "$2,060,815"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$1,670,770",
+       "$1,670,770",
+       "$1,919,999"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,568,744",
+       "$1,568,744",
+       "$1,797,805"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,680,215",
+       "$1,680,215",
+       "$1,897,889"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$1,834,821",
+       "$1,834,821",
+       "$2,047,359"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$1,759,840",
+       "$1,759,840",
+       "$1,975,286"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$1,728,021",
+       "$1,728,019",
+       "$1,896,544"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$1,614,213",
+       "$1,614,213",
+       "$1,751,684"
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "State-reported spending"
+}

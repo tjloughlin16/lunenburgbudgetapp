@@ -1,0 +1,288 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "o": {
+     "text": "205 of 350",
+     "unit": "municipalities",
+     "value": 205
+    },
+    "r": {
+     "text": "167 of 350",
+     "unit": "municipalities",
+     "value": 167
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "rank",
+    "over",
+    "inc"
+   ],
+   "text": "Lunenburg ranks 167 of 350 on income, but 205 of 350 have intervals overlapping its own."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$101,510",
+     "unit": "",
+     "value": 101510.0
+    },
+    "b": {
+     "text": "$109,753",
+     "unit": "",
+     "value": 109753.0
+    }
+   },
+   "literals": [
+    "2019–2023",
+    "2014–2018",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "inc0",
+    "inc"
+   ],
+   "text": "Median income was $101,510 in 2014–2018; the rise to $109,753 is inside the margin."
+  },
+  {
+   "figures": {
+    "r": {
+     "text": "310 of 318",
+     "unit": "districts",
+     "value": 310
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "nothing published sets income beside spending per pupil for one set of places",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Nothing here establishes what a town of this income spends per pupil; the two ranks are drawn over different sets."
+    }
+   ],
+   "rests_on": [
+    "pp",
+    "rank"
+   ],
+   "text": "On spending per pupil the district ranked 310 of 318 in FY2025, a different set and measure."
+  }
+ ],
+ "facts": [
+  {
+   "id": "inc",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$12,275",
+      "unit": "",
+      "value": 12275.0
+     }
+    },
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median household income, ± $12,275, 2019–2023"
+   },
+   "value": {
+    "text": "$109,753",
+    "unit": "",
+    "value": 109753.0
+   }
+  },
+  {
+   "id": "rank",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "Massachusetts municipalities, ranked on that median"
+   },
+   "value": {
+    "text": "167 of 350",
+    "unit": "municipalities",
+    "value": 167
+   }
+  },
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "municipalities whose interval overlaps (our test)"
+   },
+   "value": {
+    "text": "205 of 350",
+    "unit": "municipalities",
+    "value": 205
+   }
+  },
+  {
+   "id": "inc0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$6,813",
+      "unit": "",
+      "value": 6813.0
+     }
+    },
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median household income, ± $6,813, 2014–2018"
+   },
+   "value": {
+    "text": "$101,510",
+    "unit": "",
+    "value": 101510.0
+   }
+  },
+  {
+   "id": "pp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "school districts on spending per pupil, FY2025"
+   },
+   "value": {
+    "text": "310 of 318",
+    "unit": "districts",
+    "value": 310
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$109,753",
+    "unit": "",
+    "value": 109753.0
+   },
+   "m": {
+    "text": "$12,275",
+    "unit": "",
+    "value": 12275.0
+   },
+   "r": {
+    "text": "167 of 350",
+    "unit": "municipalities",
+    "value": 167
+   }
+  },
+  "literals": [],
+  "text": "Median household income is $109,753 ± $12,275 on a sample, ranking 167 of 350 Massachusetts municipalities."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "household-income",
+ "kind": "topic",
+ "path": "/homes-and-taxes/household-income",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/acs5-2023-B19013-massachusetts-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B19013-massachusetts-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B19013-massachusetts-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B19013-massachusetts-lunenburg.json"
+  }
+ ],
+ "table": null,
+ "title": "Household income"
+}

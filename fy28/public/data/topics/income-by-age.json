@@ -1,0 +1,321 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "p": {
+     "text": "56.5%",
+     "unit": "",
+     "value": 56.45866716208789
+    }
+   },
+   "literals": [
+    "65",
+    "45",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the Assessors’ exemption list joined to the town census by age of owner",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "These are two medians of two sets of households, not one household’s income falling with age. Income is not savings, equity or a tax bill."
+    }
+   ],
+   "rests_on": [
+    "sn",
+    "md",
+    "ratio"
+   ],
+   "text": "A 65-and-over household’s median income is 56.5% of a 45-to-64 household’s."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$42,742",
+     "unit": "",
+     "value": 42742.0
+    },
+    "b": {
+     "text": "$72,935",
+     "unit": "",
+     "value": 72935.0
+    }
+   },
+   "literals": [
+    "65",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Better-off retirees moving in, or people working longer, would fit; the survey does not say which."
+    }
+   ],
+   "rests_on": [
+    "sn0",
+    "sn"
+   ],
+   "text": "The 65-and-over median rose from $42,742 to $72,935, one of the few changes beyond the margin."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "65",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "levy"
+   ],
+   "text": "How much of the levy households headed by someone 65 or over pay is not published."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sn",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$8,677",
+      "unit": "",
+      "value": 8677.0
+     }
+    },
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "65",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "householder 65 or over, ± $8,677, 2019–2023"
+   },
+   "value": {
+    "text": "$72,935",
+    "unit": "",
+    "value": 72935.0
+   }
+  },
+  {
+   "id": "md",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$21,150",
+      "unit": "",
+      "value": 21150.0
+     }
+    },
+    "literals": [
+     "45 to 64",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "householder 45 to 64, ± $21,150"
+   },
+   "value": {
+    "text": "$129,183",
+    "unit": "",
+    "value": 129183.0
+   }
+  },
+  {
+   "id": "yg",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$20,747",
+      "unit": "",
+      "value": 20747.0
+     }
+    },
+    "literals": [
+     "25 to 44",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "householder 25 to 44, ± $20,747"
+   },
+   "value": {
+    "text": "$119,500",
+    "unit": "",
+    "value": 119500.0
+   }
+  },
+  {
+   "id": "ratio",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "65",
+     "45 to 64",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the 65-and-over median against 45 to 64 (ours)"
+   },
+   "value": {
+    "text": "56.5%",
+    "unit": "",
+    "value": 56.45866716208789
+   }
+  },
+  {
+   "id": "sn0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "$12,593",
+      "unit": "",
+      "value": 12593.0
+     }
+    },
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "65",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "householder 65 or over, ± $12,593, 2014–2018"
+   },
+   "value": {
+    "text": "$42,742",
+    "unit": "",
+    "value": 42742.0
+   }
+  },
+  {
+   "closes": "the Assessors’ commitment list with exemptions granted, joined to the town census by age of owner",
+   "id": "levy",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "65",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "property tax paid by households 65 and over"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$72,935",
+    "unit": "",
+    "value": 72935.0
+   },
+   "p": {
+    "text": "56.5%",
+    "unit": "",
+    "value": 56.45866716208789
+   }
+  },
+  "literals": [
+   "65",
+   "45",
+   "64"
+  ],
+  "text": "A household headed by someone 65 or over has a median income of $72,935, 56.5% of a 45-to-64 household’s."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "income-by-age",
+ "kind": "topic",
+ "path": "/homes-and-taxes/income-by-age",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-01-27",
+   "href": "/docs/meetings/text/finance-committee/2026-01-27-minutes-7619.txt",
+   "label": "Finance Committee minutes, 2026-01-27",
+   "quote": "particularly seniors on fixed incomes, a $3,000,000 override would translate to approximately $600 per year in additional taxes, a significant burden"
+  }
+ ],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/acs5-2023-B19049-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B19049-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B19049-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B19049-lunenburg.json"
+  }
+ ],
+ "table": null,
+ "title": "Income by age"
+}

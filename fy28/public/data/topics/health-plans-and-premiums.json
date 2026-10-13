@@ -1,0 +1,243 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "rise",
+    "plans"
+   ],
+   "text": "One rate letter, to all eligible town and school employees, lists the same plans."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,662.52",
+     "unit": "",
+     "value": 3662.52
+    },
+    "b": {
+     "text": "$2,599.92",
+     "unit": "",
+     "value": 2599.92
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bce",
+    "bs",
+    "share"
+   ],
+   "text": "A family on Blue Care Elect costs $3,662.52 a month; on Blue Select, $2,599.92."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "enrol"
+   ],
+   "text": "Without enrolment by plan, what moving people between plans would save is not shown."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rise",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2026"
+    ],
+    "text": "premium increase, plans from 1 July 2026"
+   },
+   "value": {
+    "text": "5.38%",
+    "unit": "",
+    "value": 5.38
+   }
+  },
+  {
+   "id": "bce",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a month, family, Blue Care Elect"
+   },
+   "value": {
+    "text": "$3,662.52",
+    "unit": "",
+    "value": 3662.52
+   }
+  },
+  {
+   "id": "bs",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a month, family, Blue Select"
+   },
+   "value": {
+    "text": "$2,599.92",
+    "unit": "",
+    "value": 2599.92
+   }
+  },
+  {
+   "id": "bce-i",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a month, individual, Blue Care Elect"
+   },
+   "value": {
+    "text": "$1,392.63",
+    "unit": "",
+    "value": 1392.63
+   }
+  },
+  {
+   "id": "plans",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "plans on the rate letter"
+   },
+   "value": {
+    "text": "4",
+    "unit": "plans",
+    "value": 4
+   }
+  },
+  {
+   "id": "share",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of an active plan’s premium paid by the town"
+   },
+   "value": {
+    "text": "75%",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  {
+   "closes": "the Town’s enrolment by plan and tier, town and school",
+   "id": "enrol",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "how many people are on each plan"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "5.38%",
+    "unit": "",
+    "value": 5.38
+   },
+   "b": {
+    "text": "$3,662.52",
+    "unit": "",
+    "value": 3662.52
+   },
+   "c": {
+    "text": "75%",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  "literals": [
+   "1 July 2026"
+  ],
+  "text": "Premiums rose 5.38% from 1 July 2026; a Blue Care Elect family plan is $3,662.52 a month, the town paying 75%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-plans-and-premiums",
+ "kind": "topic",
+ "path": "/health-insurance/health-plans-and-premiums",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-supplementary/docs/health-insurance-rates-2025.pdf",
+   "label": "Town of Lunenburg — Payroll & Benefits Coordinator, “Health Insurance / Open Enrollment - July 1, 2026”, 21 April 2026"
+  },
+  {
+   "href": "/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf",
+   "label": "Memorandum of Agreement, Town of Lunenburg and Lunenburg Public Employee Committee, 1 July 2026 to 30 June 2029 (records request)"
+  }
+ ],
+ "table": {
+  "caption": "Monthly premiums from 1 July 2026",
+  "views": [
+   {
+    "columns": [
+     "Family",
+     "Individual",
+     "Deductible"
+    ],
+    "key": "plans",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Monthly premium",
+    "note": "The total premium, before the town and employee shares. The letter prints Access Blue Saver’s family and individual rows the other way round; they are shown here as every other plan’s ratio implies.",
+    "rows": [
+     {
+      "cells": [
+       "$3,662.52",
+       "$1,392.63",
+       "$500"
+      ],
+      "label": "Blue Care Elect"
+     },
+     {
+      "cells": [
+       "$2,988.41",
+       "$1,136.28",
+       "$500"
+      ],
+      "label": "Network Blue New England"
+     },
+     {
+      "cells": [
+       "$2,599.92",
+       "$988.56",
+       "$500"
+      ],
+      "label": "Blue Select"
+     },
+     {
+      "cells": [
+       "$2,602.28",
+       "$989.46",
+       "$2,000 / $4,000"
+      ],
+      "label": "Access Blue Saver"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Plans and premiums"
+}

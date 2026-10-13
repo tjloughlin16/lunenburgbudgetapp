@@ -1,0 +1,377 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "4.3%",
+     "unit": "",
+     "value": 4.344025699147447
+    }
+   },
+   "literals": [
+    "FY2018",
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "closes": "enrolment by plan and tier for school employees",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The line is what the district appropriates; it does not say how many staff are enrolled or on which plans."
+    }
+   ],
+   "rests_on": [
+    "s18",
+    "s26",
+    "rate",
+    "s24"
+   ],
+   "text": "Adopted to adopted, the line grew 4.3% a year from FY2018 to FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,994,071",
+     "unit": "",
+     "value": 3994071.0
+    },
+    "b": {
+     "text": "$4,389,135",
+     "unit": "",
+     "value": 4389135.0
+    }
+   },
+   "literals": [
+    "FY2027"
+   ],
+   "rests_on": [
+    "lo",
+    "hi"
+   ],
+   "text": "The four FY2027 scenarios put the line between $3,994,071 and $4,389,135."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "a25"
+   ],
+   "text": "What was spent is a separate series and is not differenced against these budgets."
+  }
+ ],
+ "facts": [
+  {
+   "id": "s18",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2018"
+    ],
+    "text": "adopted, FY2018"
+   },
+   "value": {
+    "text": "$2,633,912",
+    "unit": "",
+    "value": 2633912.0
+   }
+  },
+  {
+   "id": "s26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "adopted, FY2026"
+   },
+   "value": {
+    "text": "$3,701,195",
+    "unit": "",
+    "value": 3701195.0
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, adopted to adopted"
+   },
+   "value": {
+    "text": "4.3%",
+    "unit": "",
+    "value": 4.344025699147447
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2027"
+    ],
+    "text": "lowest FY2027 scenario, the Balanced one"
+   },
+   "value": {
+    "text": "$3,994,071",
+    "unit": "",
+    "value": 3994071.0
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2027"
+    ],
+    "text": "highest FY2027 scenario"
+   },
+   "value": {
+    "text": "$4,389,135",
+    "unit": "",
+    "value": 4389135.0
+   }
+  },
+  {
+   "id": "a25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "spent, FY2025, a different document"
+   },
+   "value": {
+    "text": "$3,248,744",
+    "unit": "",
+    "value": 3248744.0
+   }
+  },
+  {
+   "closes": "the district’s FY2024 adopted budget book, health insurance line",
+   "id": "s24",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "the adopted FY2024 figure"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,633,912",
+    "unit": "",
+    "value": 2633912.0
+   },
+   "b": {
+    "text": "$3,701,195",
+    "unit": "",
+    "value": 3701195.0
+   },
+   "c": {
+    "text": "4.3%",
+    "unit": "",
+    "value": 4.344025699147447
+   }
+  },
+  "literals": [
+   "FY2018",
+   "FY2026"
+  ],
+  "text": "The district’s adopted health line rose from $2,633,912 in FY2018 to $3,701,195 in FY2026, 4.3% a year."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "district-health-line",
+ "kind": "topic",
+ "path": "/health-insurance/district-health-line",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/data/health-insurance.json",
+   "label": "Lunenburg Budget Project — health-insurance.json (the insurance department and the district line, by stage)"
+  },
+  {
+   "href": "/docs/district-budget/docs/final-budget-document.pdf",
+   "label": "Lunenburg Public Schools — FY27 budget document, 25 March 2026"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS), general fund, FY2026 period 12"
+  }
+ ],
+ "table": {
+  "caption": "The district’s health insurance line",
+  "views": [
+   {
+    "columns": [
+     "Adopted"
+    ],
+    "key": "adopted",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Adopted",
+    "note": "The district budget book’s adopted figure. No adopted FY2024 figure is in the series this page reads.",
+    "rows": [
+     {
+      "cells": [
+       "$3,701,195"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$3,140,838"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$2,843,344"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,507,129"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$2,706,450"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$2,826,122"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$2,850,678"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$2,633,912"
+      ],
+      "label": "FY2018"
+     }
+    ],
+    "total_col": 0
+   },
+   {
+    "columns": [
+     "Spent"
+    ],
+    "key": "actual",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Spent",
+    "note": "What the district reports spending. A different document from the adopted budget; the two are never subtracted here.",
+    "rows": [
+     {
+      "cells": [
+       "$3,248,744"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$3,212,078"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$3,041,341"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,593,020"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$2,706,450"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$2,793,142"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$2,854,285"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$2,672,420"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$2,376,697"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$2,027,585"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,766,882"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,739,772"
+      ],
+      "label": "FY2014"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "District health line"
+}

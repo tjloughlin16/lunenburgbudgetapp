@@ -1,0 +1,159 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$18,700",
+     "unit": "",
+     "value": 18700.0
+    }
+   },
+   "literals": [
+    "FY2024",
+    "1306"
+   ],
+   "rests_on": [
+    "mow",
+    "ledger"
+   ],
+   "text": "The district puts mowing at $18,700 for the autumn and spring of FY2024, paid from fund 1306."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$126,000",
+     "unit": "",
+     "value": 126000.0
+    }
+   },
+   "literals": [
+    "FY2024"
+   ],
+   "notes": [
+    {
+     "closes": "fund 1306’s expenditure detail and the grounds accounts, FY2024",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "1306",
+      "FY2024"
+     ],
+     "text": "These are the district’s figures in an email, not a printout from the books."
+    }
+   ],
+   "rests_on": [
+    "all",
+    "veh",
+    "repair"
+   ],
+   "text": "It puts all fields and grounds work at about $126,000 for FY2024, vehicles included."
+  }
+ ],
+ "facts": [
+  {
+   "id": "mow",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "mowing, autumn and spring, FY2024 (stated)"
+   },
+   "value": {
+    "text": "$18,700",
+    "unit": "",
+    "value": 18700.0
+   }
+  },
+  {
+   "id": "repair",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2023"
+    ],
+    "text": "summer field repair, 2023 (stated)"
+   },
+   "value": {
+    "text": "$19,400",
+    "unit": "",
+    "value": 19400.0
+   }
+  },
+  {
+   "id": "all",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "all fields and grounds work, FY2024, approximate (stated)"
+   },
+   "value": {
+    "text": "$126,000",
+    "unit": "",
+    "value": 126000.0
+   }
+  },
+  {
+   "id": "veh",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of that, vehicles and equipment, which also plough"
+   },
+   "value": {
+    "text": "$29,500",
+    "unit": "",
+    "value": 29500.0
+   }
+  },
+  {
+   "closes": "fund 1306’s FY2024 expenditure detail",
+   "id": "ledger",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1306"
+    ],
+    "text": "what fund 1306 actually paid for grounds"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "The district says it pays to mow its grass fields from the fund the field rent goes into."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-field-upkeep",
+ "kind": "topic",
+ "path": "/parks/school-field-upkeep",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/correspondence/2026-09-18-school-field-maintenance-superintendent.txt",
+   "label": "Lunenburg Public Schools — the Superintendent, by email — 2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "href": "/docs/data/school-field-maintenance.csv",
+   "label": "Lunenburg Budget Project — school-field-maintenance.csv (the email’s figures, all stated)"
+  }
+ ],
+ "table": null,
+ "title": "School field upkeep"
+}

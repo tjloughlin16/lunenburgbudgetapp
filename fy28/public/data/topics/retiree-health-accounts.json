@@ -1,0 +1,311 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "8.0%",
+     "unit": "",
+     "value": 7.962584287657171
+    },
+    "b": {
+     "text": "4.8%",
+     "unit": "",
+     "value": 4.750502593465922
+    }
+   },
+   "literals": [
+    "FY2022"
+   ],
+   "notes": [
+    {
+     "closes": "retiree enrolment by plan, year by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "More retirees, costlier plans and a changed premium share all raise this line; nothing published separates them."
+    }
+   ],
+   "rests_on": [
+    "sr22",
+    "sr26",
+    "sr-rate",
+    "tr-rate"
+   ],
+   "text": "School retiree health grew 8.0% a year from FY2022; town retiree health grew 4.8%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,198,218",
+     "unit": "",
+     "value": 2198217.85
+    }
+   },
+   "literals": [
+    "FY2022"
+   ],
+   "rests_on": [
+    "one",
+    "sr22",
+    "tr22"
+   ],
+   "text": "The FY2022 annual report printed the three accounts as one line of $2,198,218."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "FY2022"
+   ],
+   "rests_on": [
+    "before"
+   ],
+   "text": "Before FY2022 the health line is undivided, so the school retiree share of it is not shown."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sr22",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "school retirees, FY2022"
+   },
+   "value": {
+    "text": "$1,119,925",
+    "unit": "",
+    "value": 1119925.23
+   }
+  },
+  {
+   "id": "sr26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "school retirees, FY2026"
+   },
+   "value": {
+    "text": "$1,521,536",
+    "unit": "",
+    "value": 1521535.59
+   }
+  },
+  {
+   "id": "sr-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, school retirees"
+   },
+   "value": {
+    "text": "8.0%",
+    "unit": "",
+    "value": 7.962584287657171
+   }
+  },
+  {
+   "id": "tr22",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "town retirees, FY2022"
+   },
+   "value": {
+    "text": "$376,426",
+    "unit": "",
+    "value": 376425.9
+   }
+  },
+  {
+   "id": "tr26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "town retirees, FY2026"
+   },
+   "value": {
+    "text": "$453,215",
+    "unit": "",
+    "value": 453214.67
+   }
+  },
+  {
+   "id": "tr-rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, town retirees"
+   },
+   "value": {
+    "text": "4.8%",
+    "unit": "",
+    "value": 4.750502593465922
+   }
+  },
+  {
+   "id": "one",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "FY2022 report: one undivided line"
+   },
+   "value": {
+    "text": "$2,198,218",
+    "unit": "",
+    "value": 2198217.85
+   }
+  },
+  {
+   "closes": "the town’s Chapter 32B enrollment schedule, which counts retirees by side",
+   "id": "before",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2022"
+    ],
+    "text": "the school retiree share before FY2022"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,119,925",
+    "unit": "",
+    "value": 1119925.23
+   },
+   "b": {
+    "text": "$1,521,536",
+    "unit": "",
+    "value": 1521535.59
+   },
+   "c": {
+    "text": "8.0%",
+    "unit": "",
+    "value": 7.962584287657171
+   }
+  },
+  "literals": [
+   "FY2022",
+   "FY2026"
+  ],
+  "text": "School retiree health went from $1,119,925 in FY2022 to $1,521,536 in FY2026, 8.0% a year."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "retiree-health-accounts",
+ "kind": "topic",
+ "path": "/health-insurance/retiree-health-accounts",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee’s ledger history, by account)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general fund budget vs actuals history, FY2010-FY2025 (assembled from MUNIS exports)"
+  },
+  {
+   "href": "/docs/town-budget/pages/FY2023.txt",
+   "label": "Town of Lunenburg — FY2023 annual town report, budget pages (our text)"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS), general fund, FY2026 period 12"
+  },
+  {
+   "href": "/data/health-insurance.json",
+   "label": "Lunenburg Budget Project — health-insurance.json (the insurance department and the district line, by stage)"
+  }
+ ],
+ "table": {
+  "caption": "The three health accounts, revised budget",
+  "views": [
+   {
+    "columns": [
+     "School retirees",
+     "Town retirees",
+     "HEALTH INS line"
+    ],
+    "key": "split",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2022 to FY2026",
+    "note": "FY2022-FY2025 from the Finance Committee’s ledger history, an assembled workbook; its FY2023 school retiree figure equals the annual report’s to the cent. FY2026 is the MUNIS ledger at period 12. Original budgets differ: the FY2022 original for school retirees was $1,149,925.",
+    "rows": [
+     {
+      "cells": [
+       "$1,521,536",
+       "$453,215",
+       "$1,315,270"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$1,411,181",
+       "$420,344",
+       "$1,219,887"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$1,357,882",
+       "$432,251",
+       "$1,110,817"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$1,213,618",
+       "$366,847",
+       "$917,584"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$1,119,925",
+       "$376,426",
+       "$701,867"
+      ],
+      "label": "FY2022"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Retiree health accounts"
+}

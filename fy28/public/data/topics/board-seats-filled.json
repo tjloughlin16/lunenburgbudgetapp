@@ -1,0 +1,446 @@
+{
+ "category": "board-records",
+ "chart": {
+  "id": "board-composition-fill",
+  "source": "/data/board-composition.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "111%",
+     "unit": "percent",
+     "value": 111.0091743119266
+    },
+    "b": {
+     "text": "87%",
+     "unit": "percent",
+     "value": 87.38738738738739
+    },
+    "n": {
+     "text": "21",
+     "unit": "",
+     "value": 21
+    },
+    "y": {
+     "text": "FY2020",
+     "unit": "fiscal year",
+     "value": 2020
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "More names than seats is read here as a replacement printed beside the person replaced; the listing does not mark which."
+    }
+   ],
+   "rests_on": [
+    "ll-n",
+    "ll-a",
+    "ll-z",
+    "a-pct",
+    "z-pct"
+   ],
+   "text": "Over the 21 boards stating a size in both years, names fill 111% of seats in FY2020 and 87% in FY2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pers",
+    "z-seats",
+    "z-names"
+   ],
+   "text": "The Personnel Committee is printed with 5 seats empty in FY2025."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "dated appointment, oath and resignation records, by board",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Why a seat is empty -- nobody applied, an appointment not yet made, a board winding down -- is not in the listing."
+    }
+   ],
+   "rests_on": [
+    "later",
+    "z-bodies"
+   ],
+   "text": "The listing is printed once a year; it does not show a seat filled since."
+  }
+ ],
+ "facts": [
+  {
+   "id": "z-pct",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of stated seats with a name printed, FY2025"
+   },
+   "value": {
+    "text": "87%",
+    "unit": "percent",
+    "value": 87.1
+   }
+  },
+  {
+   "id": "z-names",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "names printed under those boards, FY2025"
+   },
+   "value": {
+    "text": "101",
+    "unit": "names",
+    "value": 101
+   }
+  },
+  {
+   "id": "z-seats",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "seats those boards state, FY2025"
+   },
+   "value": {
+    "text": "116",
+    "unit": "seats",
+    "value": 116
+   }
+  },
+  {
+   "id": "z-bodies",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "boards stating a plain size, FY2025"
+   },
+   "value": {
+    "text": "22",
+    "unit": "boards",
+    "value": 22
+   }
+  },
+  {
+   "id": "a-pct",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "26",
+      "unit": "",
+      "value": 26
+     },
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "the same measure, FY2020, over 26 boards"
+   },
+   "value": {
+    "text": "107%",
+    "unit": "percent",
+    "value": 107.2
+   }
+  },
+  {
+   "id": "ll-n",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     },
+     "b": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "boards stating a size in both FY2020 and FY2025"
+   },
+   "value": {
+    "text": "21",
+    "unit": "boards",
+    "value": 21
+   }
+  },
+  {
+   "id": "ll-a",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2020",
+      "unit": "fiscal year",
+      "value": 2020
+     }
+    },
+    "literals": [],
+    "text": "of their seats with a name printed, FY2020"
+   },
+   "value": {
+    "text": "111%",
+    "unit": "percent",
+    "value": 111.0091743119266
+   }
+  },
+  {
+   "id": "ll-z",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of their seats with a name printed, FY2025"
+   },
+   "value": {
+    "text": "87%",
+    "unit": "percent",
+    "value": 87.38738738738739
+   }
+  },
+  {
+   "id": "pers",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Personnel Committee seats printed empty, FY2025"
+   },
+   "value": {
+    "text": "5",
+    "unit": "seats",
+    "value": 5
+   }
+  },
+  {
+   "closes": "a current list of board vacancies from the town, dated",
+   "id": "later",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether a seat printed empty was filled later that year"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "101",
+    "unit": "",
+    "value": 101
+   },
+   "b": {
+    "text": "116",
+    "unit": "",
+    "value": 116
+   },
+   "p": {
+    "text": "87%",
+    "unit": "percent",
+    "value": 87.1
+   },
+   "q": {
+    "text": "107%",
+    "unit": "percent",
+    "value": 107.2
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   },
+   "z": {
+    "text": "FY2020",
+    "unit": "fiscal year",
+    "value": 2020
+   }
+  },
+  "literals": [],
+  "text": "The FY2025 listing prints 101 names against 116 seats its boards state, 87%; FY2020 read 107%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-seats-filled",
+ "kind": "topic",
+ "path": "/board-records/board-seats-filled",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4123-fy-2016-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/town-personnel.csv",
+   "label": "Lunenburg Budget Project — town-personnel.csv (the officials listing, row by row)"
+  },
+  {
+   "href": "/docs/analyses/board-composition.md",
+   "label": "Lunenburg Budget Project — board-composition.md (how the boards are made up)"
+  },
+  {
+   "href": "/data/board-composition.json",
+   "label": "Lunenburg Budget Project — board-composition.json (seats, sizes and turnover)"
+  }
+ ],
+ "table": {
+  "caption": "Stated seats and names printed, boards stating a plain size",
+  "views": [
+   {
+    "columns": [
+     "Boards",
+     "Seats stated",
+     "Names printed",
+     "Filled"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By year",
+    "note": "The set of boards differs year to year; the like-for-like figures above hold it fixed. A body stated as a range has no size to fill.",
+    "rows": [
+     {
+      "cells": [
+       "26",
+       "138",
+       "148",
+       "107%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "23",
+       "115",
+       "118",
+       "103%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "19",
+       "93",
+       "95",
+       "102%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "20",
+       "98",
+       "103",
+       "105%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "21",
+       "111",
+       "103",
+       "93%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "22",
+       "116",
+       "101",
+       "87%"
+      ],
+      "label": "FY2025"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Seats filled"
+}

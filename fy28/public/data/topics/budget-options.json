@@ -1,0 +1,446 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Against a projected FY2028 gap of $930,273 (ours), each option has a size and a payer: an override, fees, cuts to programmes or positions, reserves, or the next teachers’ settlement."
+ },
+ "category": "budget-options",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "budget-options",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$930,273",
+      "unit": "",
+      "value": 930273
+     },
+     "b": {
+      "text": "$4,660,955",
+      "unit": "",
+      "value": 4660955
+     },
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     },
+     "z": {
+      "text": "FY2033",
+      "unit": "fiscal year",
+      "value": 2033
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-gap",
+     "h-glast"
+    ],
+    "text": "Our model projects a FY2028 school gap of $930,273, growing to $4,660,955 by FY2033."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$3,403,695",
+      "unit": "",
+      "value": 3403695
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-o5",
+     "h-lost"
+    ],
+    "text": "An override covering five years is $3,403,695, paid by every taxpayer (ours)."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$187,990",
+      "unit": "",
+      "value": 187990
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-fees"
+    ],
+    "text": "Bus and activity fees add at most $187,990, paid by the families who use them."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$376,207",
+      "unit": "",
+      "value": 376207
+     },
+     "b": {
+      "text": "10.4",
+      "unit": "positions",
+      "value": 10.441243153452456
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-extras",
+     "h-pos",
+     "h-size-gap"
+    ],
+    "text": "Cutting every extra saves $376,207; the gap is 10.4 positions (ours)."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$66,741",
+      "unit": "",
+      "value": 66741
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-half",
+     "h-ends"
+    ],
+    "text": "Each half point on the next teachers’ agreement moves the gap $66,741 (ours)."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$761,001",
+      "unit": "",
+      "value": 761001
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-cut27"
+    ],
+    "text": "FY2027 was already $761,001 below Level Service."
+   }
+  ],
+  "matrix": {
+   "cells": [
+    {
+     "col": "gap",
+     "facts": [
+      "h-gap",
+      "h-glast"
+     ],
+     "row": "yields"
+    },
+    {
+     "col": "levy",
+     "facts": [
+      "h-o5"
+     ],
+     "row": "yields"
+    },
+    {
+     "col": "fees",
+     "facts": [
+      "h-fees"
+     ],
+     "row": "yields"
+    },
+    {
+     "col": "cuts",
+     "facts": [
+      "h-extras",
+      "h-pos"
+     ],
+     "row": "yields"
+    },
+    {
+     "col": "pay",
+     "facts": [
+      "h-half"
+     ],
+     "row": "yields"
+    },
+    {
+     "col": "levy",
+     "facts": [
+      "h-lost"
+     ],
+     "row": "record"
+    },
+    {
+     "col": "cuts",
+     "facts": [
+      "h-cut27",
+      "h-size-gap"
+     ],
+     "row": "record"
+    },
+    {
+     "col": "pay",
+     "facts": [
+      "h-ends"
+     ],
+     "row": "record"
+    }
+   ],
+   "columns": [
+    {
+     "id": "gap",
+     "label": "The gap",
+     "tone": null
+    },
+    {
+     "id": "levy",
+     "label": "Override",
+     "tone": null
+    },
+    {
+     "id": "fees",
+     "label": "Fees",
+     "tone": null
+    },
+    {
+     "id": "cuts",
+     "label": "Cuts",
+     "tone": null
+    },
+    {
+     "id": "pay",
+     "label": "Pay",
+     "tone": null
+    }
+   ],
+   "rows": [
+    {
+     "id": "yields",
+     "label": "What it is worth (ours)"
+    },
+    {
+     "id": "record",
+     "label": "What the record shows"
+    }
+   ]
+  },
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-gap",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "the projected school gap, FY2028 (ours)"
+      },
+      "value": {
+       "text": "$930,273",
+       "unit": "",
+       "value": 930273
+      }
+     },
+     {
+      "id": "h-glast",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2033",
+         "unit": "fiscal year",
+         "value": 2033
+        }
+       },
+       "literals": [],
+       "text": "the same gap by FY2033 (ours)"
+      },
+      "value": {
+       "text": "$4,660,955",
+       "unit": "",
+       "value": 4660955
+      }
+     }
+    ],
+    "title": "The gap"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-o5",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "override covering five years (ours)"
+      },
+      "value": {
+       "text": "$3,403,695",
+       "unit": "",
+       "value": 3403695
+      }
+     },
+     {
+      "id": "h-fees",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "bus and activity fees at their limits (ours)"
+      },
+      "value": {
+       "text": "$187,990",
+       "unit": "",
+       "value": 187990
+      }
+     },
+     {
+      "id": "h-extras",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "every extra still funded (ours)"
+      },
+      "value": {
+       "text": "$376,207",
+       "unit": "",
+       "value": 376207
+      }
+     },
+     {
+      "id": "h-pos",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "the FY2028 gap, in positions (ours)"
+      },
+      "value": {
+       "text": "10.4 positions",
+       "unit": "positions",
+       "value": 10.441243153452456
+      }
+     },
+     {
+      "id": "h-half",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "per half point on the next teachers’ settlement (ours)"
+      },
+      "value": {
+       "text": "$66,741",
+       "unit": "",
+       "value": 66741
+      }
+     }
+    ],
+    "title": "What each option yields"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-lost",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "16 May 2026"
+       ],
+       "text": "override questions lost, 16 May 2026"
+      },
+      "value": {
+       "text": "2",
+       "unit": "questions",
+       "value": 2
+      }
+     },
+     {
+      "id": "h-cut27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "FY2027 budget below Level Service"
+      },
+      "value": {
+       "text": "$761,001",
+       "unit": "",
+       "value": 761001
+      }
+     },
+     {
+      "id": "h-ends",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "the teachers’ agreement runs to"
+      },
+      "value": {
+       "text": "30 June 2027",
+       "unit": "date",
+       "value": 2027
+      }
+     },
+     {
+      "closes": "a class-size report by school and grade for FY2027",
+      "id": "h-size-gap",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "class sizes by school and grade"
+      },
+      "value": null
+     }
+    ],
+    "title": "What the record shows"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/budget-options",
+ "shelves": [
+  "budget-options"
+ ],
+ "table": null,
+ "title": "Closing the gap"
+}

@@ -1,0 +1,484 @@
+{
+ "category": "board-records",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "0%",
+     "unit": "percent",
+     "value": 0.0
+    },
+    "b": {
+     "text": "71%",
+     "unit": "percent",
+     "value": 71.4
+    },
+    "m": {
+     "text": "32%",
+     "unit": "percent",
+     "value": 31.7
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "med",
+    "hi",
+    "lo",
+    "n"
+   ],
+   "text": "The median body changes 32% of its seats a year; the range runs from 0% to 71%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "36%",
+     "unit": "percent",
+     "value": 35.6
+    },
+    "b": {
+     "text": "32%",
+     "unit": "percent",
+     "value": 31.7
+    },
+    "c": {
+     "text": "24%",
+     "unit": "percent",
+     "value": 23.8
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s record of when each board was renamed or re-formed",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A board renamed in the listing is measured as two: the Board of Selectmen and the Select Board are separate rows."
+    }
+   ],
+   "rests_on": [
+    "fc",
+    "sc",
+    "sb",
+    "bos"
+   ],
+   "text": "The Finance Committee changes 36% a year, the School Committee 32%, the Select Board 24%."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "why",
+    "med"
+   ],
+   "text": "A name leaving the listing is not a resignation: a term ending and a move look the same."
+  }
+ ],
+ "facts": [
+  {
+   "id": "n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bodies of three or more seats measured"
+   },
+   "value": {
+    "text": "37",
+    "unit": "bodies",
+    "value": 37
+   }
+  },
+  {
+   "id": "med",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of seats changing hands a year, median body"
+   },
+   "value": {
+    "text": "32%",
+    "unit": "percent",
+    "value": 31.7
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "GCTF ADVISORS, the highest"
+   },
+   "value": {
+    "text": "71%",
+    "unit": "percent",
+    "value": 71.4
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "CABLE ADVISORY COMMITTEE, the lowest"
+   },
+   "value": {
+    "text": "0%",
+    "unit": "percent",
+    "value": 0.0
+   }
+  },
+  {
+   "id": "sc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "School Committee, a year"
+   },
+   "value": {
+    "text": "32%",
+    "unit": "percent",
+    "value": 31.7
+   }
+  },
+  {
+   "id": "sb",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Select Board, a year"
+   },
+   "value": {
+    "text": "24%",
+    "unit": "percent",
+    "value": 23.8
+   }
+  },
+  {
+   "id": "fc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Finance Committee, a year"
+   },
+   "value": {
+    "text": "36%",
+    "unit": "percent",
+    "value": 35.6
+   }
+  },
+  {
+   "id": "bos",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Board of Selectmen, the earlier heading"
+   },
+   "value": {
+    "text": "33%",
+    "unit": "percent",
+    "value": 33.3
+   }
+  },
+  {
+   "closes": "dated appointment, oath and resignation records, by board",
+   "id": "why",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why any member left: a term ending, a resignation, a move"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "m": {
+    "text": "32%",
+    "unit": "percent",
+    "value": 31.7
+   },
+   "n": {
+    "text": "37",
+    "unit": "",
+    "value": 37
+   }
+  },
+  "literals": [],
+  "text": "Across 37 bodies of three or more seats, the median sees 32% of its seats change hands a year."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-turnover",
+ "kind": "topic",
+ "path": "/board-records/board-turnover",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4123-fy-2016-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/town-personnel.csv",
+   "label": "Lunenburg Budget Project — town-personnel.csv (the officials listing, row by row)"
+  },
+  {
+   "href": "/docs/analyses/board-composition.md",
+   "label": "Lunenburg Budget Project — board-composition.md (how the boards are made up)"
+  },
+  {
+   "href": "/data/board-composition.json",
+   "label": "Lunenburg Budget Project — board-composition.json (seats, sizes and turnover)"
+  }
+ ],
+ "table": {
+  "caption": "Seats changing hands a year, bodies measured four or more times",
+  "views": [
+   {
+    "columns": [
+     "Seats",
+     "Years compared",
+     "Changing hands"
+    ],
+    "key": "bodies",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By body",
+    "note": "Names matched between consecutive listings. Seats is the average printed. Bodies compared fewer times are in the median, not here.",
+    "rows": [
+     {
+      "cells": [
+       "3.3",
+       "9",
+       "63%"
+      ],
+      "label": "STORM WATER TASK FORCE"
+     },
+     {
+      "cells": [
+       "4.0",
+       "4",
+       "56%"
+      ],
+      "label": "ECONOMIC DEVELOPMENT COMMITTEE"
+     },
+     {
+      "cells": [
+       "8.8",
+       "8",
+       "49%"
+      ],
+      "label": "PUBLIC RECORDS ACCESS OFFICERS"
+     },
+     {
+      "cells": [
+       "4.1",
+       "9",
+       "42%"
+      ],
+      "label": "HISTORICAL COMMISSION"
+     },
+     {
+      "cells": [
+       "5.4",
+       "8",
+       "40%"
+      ],
+      "label": "Sewer Commission - 1/2"
+     },
+     {
+      "cells": [
+       "4.1",
+       "4",
+       "39%"
+      ],
+      "label": "Park Commission"
+     },
+     {
+      "cells": [
+       "6.2",
+       "9",
+       "39%"
+      ],
+      "label": "CAPITAL PLANNING COMMITTEE"
+     },
+     {
+      "cells": [
+       "4.8",
+       "4",
+       "37%"
+      ],
+      "label": "TAXATION AID COMMITTEE"
+     },
+     {
+      "cells": [
+       "5.6",
+       "9",
+       "37%"
+      ],
+      "label": "AGRICULTURAL COMMISSION"
+     },
+     {
+      "cells": [
+       "7.2",
+       "6",
+       "36%"
+      ],
+      "label": "FINANCE COMMITTEE"
+     },
+     {
+      "cells": [
+       "5.8",
+       "8",
+       "35%"
+      ],
+      "label": "Planning Board"
+     },
+     {
+      "cells": [
+       "5.6",
+       "8",
+       "35%"
+      ],
+      "label": "PERSONNEL COMMITTEE"
+     },
+     {
+      "cells": [
+       "5.1",
+       "8",
+       "32%"
+      ],
+      "label": "School Committee"
+     },
+     {
+      "cells": [
+       "4.3",
+       "8",
+       "30%"
+      ],
+      "label": "Housing Authority"
+     },
+     {
+      "cells": [
+       "8.2",
+       "7",
+       "30%"
+      ],
+      "label": "CULTURAL COUNCIL"
+     },
+     {
+      "cells": [
+       "3.3",
+       "8",
+       "24%"
+      ],
+      "label": "Cemetery Commission"
+     },
+     {
+      "cells": [
+       "5.2",
+       "4",
+       "24%"
+      ],
+      "label": "Select Board"
+     },
+     {
+      "cells": [
+       "7.1",
+       "9",
+       "23%"
+      ],
+      "label": "CONSERVATION COMMISSION"
+     },
+     {
+      "cells": [
+       "3.1",
+       "8",
+       "20%"
+      ],
+      "label": "Board of Assessors"
+     },
+     {
+      "cells": [
+       "5.2",
+       "8",
+       "19%"
+      ],
+      "label": "Board of Health"
+     },
+     {
+      "cells": [
+       "7.2",
+       "8",
+       "19%"
+      ],
+      "label": "Library Trustees"
+     },
+     {
+      "cells": [
+       "4.7",
+       "9",
+       "18%"
+      ],
+      "label": "PUBLIC ACCESS CABLE COMMITTEE"
+     },
+     {
+      "cells": [
+       "7.1",
+       "7",
+       "17%"
+      ],
+      "label": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC)"
+     },
+     {
+      "cells": [
+       "11.3",
+       "5",
+       "15%"
+      ],
+      "label": "COUNCIL ON AGING"
+     },
+     {
+      "cells": [
+       "4.9",
+       "9",
+       "15%"
+      ],
+      "label": "ZONING BOARD OF APPEALS"
+     },
+     {
+      "cells": [
+       "5.4",
+       "5",
+       "11%"
+      ],
+      "label": "TOWN CLOCKWINDERS"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Seats changing hands"
+}

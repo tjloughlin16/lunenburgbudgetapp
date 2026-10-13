@@ -1,0 +1,605 @@
+{
+ "category": "board-records",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "54 of 56",
+     "unit": "meetings",
+     "value": 0.9643
+    },
+    "b": {
+     "text": "1 of 56",
+     "unit": "meetings",
+     "value": 0.0179
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "zba-r",
+    "zba-m",
+    "cpc-r",
+    "cpc-m"
+   ],
+   "text": "The Zoning Board of Appeals has a video for 54 of 56 meetings and minutes listed for 1 of 56."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "43 of 44",
+     "unit": "meetings",
+     "value": 0.9773
+    },
+    "b": {
+     "text": "0 of 44",
+     "unit": "meetings",
+     "value": 0.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "lib-r",
+    "lib-m",
+    "none"
+   ],
+   "text": "The Library Board of Trustees has minutes for 43 of 44 and a video for 0 of 44."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "238",
+     "unit": "",
+     "value": 238
+    },
+    "b": {
+     "text": "333",
+     "unit": "",
+     "value": 333
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s own list of which recording is of which meeting",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A video is matched to a board and date by its title on the town’s channel, so a mislabelled video is missed or misplaced."
+    },
+    {
+     "closes": "each board’s approved minutes not yet posted to the Agenda Center",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A recording and a set of minutes are different records; neither count says what was decided."
+    }
+   ],
+   "rests_on": [
+    "r0",
+    "r1",
+    "rec",
+    "rec-n"
+   ],
+   "text": "Meetings with a video went from 238 in FY2023 to 333 in FY2026."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rec",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "meetings with a video matched, FY2023 to FY2026"
+   },
+   "value": {
+    "text": "1,173",
+    "unit": "meetings",
+    "value": 1173
+   }
+  },
+  {
+   "id": "rec-n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "meetings with a posted agenda, the same years"
+   },
+   "value": {
+    "text": "1,934",
+    "unit": "meetings",
+    "value": 1934
+   }
+  },
+  {
+   "id": "none",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "ranked boards with no video matched"
+   },
+   "value": {
+    "text": "10",
+    "unit": "boards",
+    "value": 10
+   }
+  },
+  {
+   "id": "r0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "meetings with a video, FY2023"
+   },
+   "value": {
+    "text": "238",
+    "unit": "meetings",
+    "value": 238
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "meetings with a video, FY2026"
+   },
+   "value": {
+    "text": "333",
+    "unit": "meetings",
+    "value": 333
+   }
+  },
+  {
+   "id": "zba-r",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Zoning Board of Appeals meetings with a video"
+   },
+   "value": {
+    "text": "54 of 56",
+    "unit": "meetings",
+    "value": 0.9643
+   }
+  },
+  {
+   "id": "zba-m",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same meetings with minutes listed"
+   },
+   "value": {
+    "text": "1 of 56",
+    "unit": "meetings",
+    "value": 0.0179
+   }
+  },
+  {
+   "id": "cpc-r",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Capital Planning Committee meetings with a video"
+   },
+   "value": {
+    "text": "39 of 41",
+    "unit": "meetings",
+    "value": 0.9512
+   }
+  },
+  {
+   "id": "cpc-m",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same meetings with minutes listed"
+   },
+   "value": {
+    "text": "9 of 41",
+    "unit": "meetings",
+    "value": 0.2195
+   }
+  },
+  {
+   "id": "lib-r",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Library Board of Trustees meetings with a video"
+   },
+   "value": {
+    "text": "0 of 44",
+    "unit": "meetings",
+    "value": 0.0
+   }
+  },
+  {
+   "id": "lib-m",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the same meetings with minutes listed"
+   },
+   "value": {
+    "text": "43 of 44",
+    "unit": "meetings",
+    "value": 0.9773
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2023",
+    "unit": "fiscal year",
+    "value": 2023
+   },
+   "b": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "m": {
+    "text": "30",
+    "unit": "",
+    "value": 30
+   },
+   "n": {
+    "text": "1,934",
+    "unit": "",
+    "value": 1934
+   },
+   "r": {
+    "text": "1,173",
+    "unit": "",
+    "value": 1173
+   },
+   "x": {
+    "text": "10",
+    "unit": "",
+    "value": 10
+   }
+  },
+  "literals": [],
+  "text": "1,173 of 1,934 meetings, FY2023 to FY2026, have a town video matched; 10 of 30 ranked boards have none."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-recordings",
+ "kind": "topic",
+ "path": "/board-records/board-recordings",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "https://www.lunenburgma.gov/AgendaCenter",
+   "label": "Town of Lunenburg — Agenda Center (agendas and minutes, by board)"
+  },
+  {
+   "href": "/docs/data/meeting-register.csv",
+   "label": "Lunenburg Budget Project — meeting-register.csv (one row per board and date, every artifact)"
+  },
+  {
+   "href": "/docs/data/youtube-video-boards.csv",
+   "label": "Lunenburg Budget Project — youtube-video-boards.csv (each town video matched to a board and date)"
+  },
+  {
+   "href": "/data/board-posting.json",
+   "label": "Lunenburg Budget Project — board-posting.json (minutes and recordings by board and year)"
+  }
+ ],
+ "table": {
+  "caption": "Meetings with a video and with minutes, FY2023 to FY2026, ranked boards",
+  "views": [
+   {
+    "columns": [
+     "Meetings",
+     "With a video",
+     "With minutes"
+    ],
+    "key": "boards",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By board",
+    "note": "Sorted by the share of meetings with a video. Read 12 October 2026.",
+    "rows": [
+     {
+      "cells": [
+       "98",
+       "95",
+       "94"
+      ],
+      "label": "Finance Committee"
+     },
+     {
+      "cells": [
+       "56",
+       "54",
+       "1"
+      ],
+      "label": "Zoning Board of Appeals"
+     },
+     {
+      "cells": [
+       "41",
+       "39",
+       "9"
+      ],
+      "label": "Capital Planning Committee"
+     },
+     {
+      "cells": [
+       "101",
+       "92",
+       "91"
+      ],
+      "label": "Conservation Commission"
+     },
+     {
+      "cells": [
+       "192",
+       "170",
+       "145"
+      ],
+      "label": "Select Board"
+     },
+     {
+      "cells": [
+       "91",
+       "80",
+       "73"
+      ],
+      "label": "Planning Board"
+     },
+     {
+      "cells": [
+       "88",
+       "77",
+       "79"
+      ],
+      "label": "Sewer Commission"
+     },
+     {
+      "cells": [
+       "52",
+       "45",
+       "42"
+      ],
+      "label": "Public Access Cable Committee (PACC)"
+     },
+     {
+      "cells": [
+       "57",
+       "49",
+       "49"
+      ],
+      "label": "Parks Commission"
+     },
+     {
+      "cells": [
+       "25",
+       "21",
+       "12"
+      ],
+      "label": "Master Plan Steering Committee"
+     },
+     {
+      "cells": [
+       "47",
+       "39",
+       "31"
+      ],
+      "label": "Lunenburg Municipal Building Design Committee"
+     },
+     {
+      "cells": [
+       "90",
+       "73",
+       "84"
+      ],
+      "label": "Board of Assessors"
+     },
+     {
+      "cells": [
+       "43",
+       "33",
+       "8"
+      ],
+      "label": "Stormwater Task Force"
+     },
+     {
+      "cells": [
+       "46",
+       "35",
+       "43"
+      ],
+      "label": "Architectural Preservation District Commission"
+     },
+     {
+      "cells": [
+       "155",
+       "113",
+       "80"
+      ],
+      "label": "School Committee"
+     },
+     {
+      "cells": [
+       "45",
+       "31",
+       "39"
+      ],
+      "label": "Personnel Committee"
+     },
+     {
+      "cells": [
+       "39",
+       "26",
+       "18"
+      ],
+      "label": "Open Space Committee"
+     },
+     {
+      "cells": [
+       "52",
+       "25",
+       "49"
+      ],
+      "label": "Cemetery Commission"
+     },
+     {
+      "cells": [
+       "50",
+       "21",
+       "45"
+      ],
+      "label": "Council on Aging"
+     },
+     {
+      "cells": [
+       "37",
+       "15",
+       "16"
+      ],
+      "label": "Economic Development Committee"
+     },
+     {
+      "cells": [
+       "58",
+       "0",
+       "42"
+      ],
+      "label": "Agricultural Commission"
+     },
+     {
+      "cells": [
+       "60",
+       "0",
+       "44"
+      ],
+      "label": "Board of Health"
+     },
+     {
+      "cells": [
+       "22",
+       "0",
+       "0"
+      ],
+      "label": "Board of Registrars"
+     },
+     {
+      "cells": [
+       "22",
+       "0",
+       "10"
+      ],
+      "label": "By-Law Committee"
+     },
+     {
+      "cells": [
+       "31",
+       "0",
+       "7"
+      ],
+      "label": "Cultural Council"
+     },
+     {
+      "cells": [
+       "32",
+       "0",
+       "19"
+      ],
+      "label": "Green Communities Committee"
+     },
+     {
+      "cells": [
+       "47",
+       "0",
+       "31"
+      ],
+      "label": "Historical Commission"
+     },
+     {
+      "cells": [
+       "44",
+       "0",
+       "43"
+      ],
+      "label": "Library Board of Trustees"
+     },
+     {
+      "cells": [
+       "35",
+       "0",
+       "28"
+      ],
+      "label": "Lunenburg Housing Authority"
+     },
+     {
+      "cells": [
+       "89",
+       "0",
+       "6"
+      ],
+      "label": "School Advisory Councils & Committees"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Meeting recordings"
+}

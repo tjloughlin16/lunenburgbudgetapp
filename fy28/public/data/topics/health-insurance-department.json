@@ -1,0 +1,386 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "4.3%",
+     "unit": "",
+     "value": 4.313975384697133
+    },
+    "b": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s Chapter 32B enrollment schedule, by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "32B"
+     ],
+     "text": "Premiums, who is enrolled and the number of retirees all move this line; none is printed beside it."
+    }
+   ],
+   "rests_on": [
+    "d11",
+    "d26",
+    "rate",
+    "cap"
+   ],
+   "text": "The department grew 4.3% a year for fifteen years, faster than the 2.5% the levy may rise."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "41.0%",
+     "unit": "",
+     "value": 40.972862914077176
+    }
+   },
+   "literals": [
+    "FY2026"
+   ],
+   "rests_on": [
+    "sr",
+    "unnamed"
+   ],
+   "text": "In FY2026, 41.0% of the department sat in the one account named for school retirees."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,738,770",
+     "unit": "",
+     "value": 1738770.0599999998
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "unnamed",
+    "why"
+   ],
+   "text": "Apart from the two retiree accounts, $1,738,770 carries no name saying town or school."
+  }
+ ],
+ "facts": [
+  {
+   "id": "d11",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2011"
+    ],
+    "text": "appropriated, FY2011, as the annual report prints"
+   },
+   "value": {
+    "text": "$1,970,826",
+    "unit": "",
+    "value": 1970826.33
+   }
+  },
+  {
+   "id": "d26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "budgeted, FY2026, the town ledger"
+   },
+   "value": {
+    "text": "$3,713,520",
+    "unit": "",
+    "value": 3713520.32
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2011",
+     "FY2026"
+    ],
+    "text": "a year, FY2011 to FY2026"
+   },
+   "value": {
+    "text": "4.3%",
+    "unit": "",
+    "value": 4.313975384697133
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year the levy may rise, before new growth"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "tied",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "reports whose insurance rows sum to their printed total"
+   },
+   "value": {
+    "text": "10 of 15",
+    "unit": "annual reports",
+    "value": 10
+   }
+  },
+  {
+   "id": "sr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "of FY2026 in one account named for school retirees"
+   },
+   "value": {
+    "text": "41.0%",
+    "unit": "",
+    "value": 40.972862914077176
+   }
+  },
+  {
+   "id": "unnamed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "FY2026 in accounts named for neither side"
+   },
+   "value": {
+    "text": "$1,738,770",
+    "unit": "",
+    "value": 1738770.0599999998
+   }
+  },
+  {
+   "closes": "premiums, enrolment by plan and the number of retirees, year by year",
+   "id": "why",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why the department grew"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "4.3%",
+    "unit": "",
+    "value": 4.313975384697133
+   },
+   "b": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  "literals": [
+   "FY2011",
+   "FY2026"
+  ],
+  "text": "The town’s insurance department grew 4.3% a year, FY2011 to FY2026, against a 2.5% levy cap."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-insurance-department",
+ "kind": "topic",
+ "path": "/health-insurance/health-insurance-department",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/data/health-insurance.json",
+   "label": "Lunenburg Budget Project — health-insurance.json (the insurance department and the district line, by stage)"
+  },
+  {
+   "href": "/docs/town-budget/pages/FY2023.txt",
+   "label": "Town of Lunenburg — FY2023 annual town report, budget pages (our text)"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS), general fund, FY2026 period 12"
+  },
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee’s ledger history, by account)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general fund budget vs actuals history, FY2010-FY2025 (assembled from MUNIS exports)"
+  }
+ ],
+ "table": {
+  "caption": "The insurance department, by year",
+  "views": [
+   {
+    "columns": [
+     "Ledger history",
+     "Annual report prints"
+    ],
+    "key": "dept",
+    "kinds": [
+     "stated",
+     "ledger"
+    ],
+    "label": "Revised budget",
+    "note": "The ledger history is the Finance Committee’s workbook, assembled from MUNIS exports; it equals the annual report in every year the report’s insurance rows tie. FY2026 is the MUNIS ledger at period 12.",
+    "rows": [
+     {
+      "cells": [
+       "$3,713,520",
+       null
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$3,450,089",
+       null
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$3,265,521",
+       null
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$2,852,642",
+       "$2,852,642"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$2,533,782",
+       "$2,533,782"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$2,633,155",
+       "$2,633,155"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$2,656,878",
+       "$2,656,878"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$2,604,860",
+       "$2,604,860"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$2,319,623",
+       "$2,319,623"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$2,105,919",
+       "$2,105,919"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$1,919,999",
+       "$1,919,999"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,804,659",
+       "$1,804,659"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,908,745",
+       null
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$2,053,509",
+       null
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$2,119,334",
+       null
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$1,970,826",
+       "$1,970,826"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$1,751,684",
+       null
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Insurance department"
+}

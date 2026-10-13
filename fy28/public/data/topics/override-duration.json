@@ -1,0 +1,353 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cap"
+   ],
+   "text": "An override lifts the levy limit once; the higher limit then grows 2.5% a year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "5.18%",
+     "unit": "",
+     "value": 5.180567268740877
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the successor teachers’ agreement and the FY2028 health insurance rates",
+     "figures": {
+      "a": {
+       "text": "4.0%",
+       "unit": "",
+       "value": 4.0
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "FY2028"
+     ],
+     "text": "The growth rate is ours: salaries at the 4.0% our model assumes and every other line at its own assumed rate."
+    }
+   ],
+   "rests_on": [
+    "growth",
+    "cap",
+    "o1"
+   ],
+   "text": "Our model has school costs growing 5.18% a year, so any fixed override is overtaken in time."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,403,695",
+     "unit": "",
+     "value": 3403695
+    },
+    "b": {
+     "text": "$707",
+     "unit": "",
+     "value": 707
+    },
+    "c": {
+     "text": "$7,425,124",
+     "unit": "",
+     "value": 7425124
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "o5",
+    "o5h",
+    "o10",
+    "o10h"
+   ],
+   "text": "Five years takes $3,403,695, $707 a year on the average home; ten takes $7,425,124."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,543",
+     "unit": "",
+     "value": 1543
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "o10h"
+   ],
+   "text": "The cost falls on every taxpayer, at $1,543 a year on the average home for ten years."
+  }
+ ],
+ "facts": [
+  {
+   "id": "gap28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the projected school gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2½"
+    ],
+    "text": "yearly rise in the levy limit, Proposition 2½"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "growth",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "yearly growth in what the schools buy (ours)"
+   },
+   "value": {
+    "text": "5.18%",
+    "unit": "",
+    "value": 5.180567268740877
+   }
+  },
+  {
+   "id": "o1",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "school-only override that covers one year (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   }
+  },
+  {
+   "id": "o5",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one that covers five years (ours)"
+   },
+   "value": {
+    "text": "$3,403,695",
+    "unit": "",
+    "value": 3403695
+   }
+  },
+  {
+   "id": "o5h",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year on the average home, for five (ours)"
+   },
+   "value": {
+    "text": "$707",
+    "unit": "",
+    "value": 707
+   }
+  },
+  {
+   "id": "o10",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one that covers ten years (ours)"
+   },
+   "value": {
+    "text": "$7,425,124",
+    "unit": "",
+    "value": 7425124
+   }
+  },
+  {
+   "id": "o10h",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year on the average home, for ten (ours)"
+   },
+   "value": {
+    "text": "$1,543",
+    "unit": "",
+    "value": 1543
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$3,403,695",
+    "unit": "",
+    "value": 3403695
+   },
+   "b": {
+    "text": "$7,425,124",
+    "unit": "",
+    "value": 7425124
+   }
+  },
+  "literals": [],
+  "text": "A school-only override that held five years would be $3,403,695 by our arithmetic; ten years, $7,425,124."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "override-duration",
+ "kind": "topic",
+ "path": "/budget-options/override-duration",
+ "said": [
+  {
+   "board": "Select Board",
+   "date": "2025-03-11",
+   "href": "/docs/minutes/text/select-board/2025-03-11-minutes-7096.txt",
+   "label": "Select Board minutes, 2025-03-11",
+   "quote": "The options discussed included a multi-year override or utilizing one-time funds specifically free cash as a stopgap, however these funds should not be used in an operating budget, but as a one-time appropriation."
+  }
+ ],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/meetings/select-board/2025-03-11-minutes-7096.pdf",
+   "label": "Select Board minutes, 11 March 2025 — 2025-03-11-minutes-7096.pdf"
+  }
+ ],
+ "table": {
+  "caption": "The smallest school-only override that covers each run of years",
+  "views": [
+   {
+    "columns": [
+     "Override",
+     "Average home, a year"
+    ],
+    "key": "size",
+    "kinds": [
+     "stated",
+     "stated"
+    ],
+    "label": "Our arithmetic",
+    "note": "Ours: the projection with one school-only override added in FY2028 and grown at the levy cap. The average-home figure spreads the levy over all FY2026 assessed value.",
+    "rows": [
+     {
+      "cells": [
+       "$930,273",
+       "$193"
+      ],
+      "label": "1 year"
+     },
+     {
+      "cells": [
+       "$1,493,145",
+       "$310"
+      ],
+      "label": "2 years"
+     },
+     {
+      "cells": [
+       "$2,092,035",
+       "$435"
+      ],
+      "label": "3 years"
+     },
+     {
+      "cells": [
+       "$2,728,378",
+       "$567"
+      ],
+      "label": "4 years"
+     },
+     {
+      "cells": [
+       "$3,403,695",
+       "$707"
+      ],
+      "label": "5 years"
+     },
+     {
+      "cells": [
+       "$4,119,605",
+       "$856"
+      ],
+      "label": "6 years"
+     },
+     {
+      "cells": [
+       "$4,877,823",
+       "$1,014"
+      ],
+      "label": "7 years"
+     },
+     {
+      "cells": [
+       "$5,680,173",
+       "$1,180"
+      ],
+      "label": "8 years"
+     },
+     {
+      "cells": [
+       "$6,528,589",
+       "$1,357"
+      ],
+      "label": "9 years"
+     },
+     {
+      "cells": [
+       "$7,425,124",
+       "$1,543"
+      ],
+      "label": "10 years"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Override duration"
+}

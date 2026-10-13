@@ -1,0 +1,400 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "1,979",
+     "unit": "",
+     "value": 1979.0
+    },
+    "b": {
+     "text": "1,568",
+     "unit": "",
+     "value": 1568
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the town census by age, held by the Town Clerk",
+     "figures": {
+      "m": {
+       "text": "309",
+       "unit": "",
+       "value": 309.38648968563575
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "The enrolment is a count; the age figure is a sample estimate with a margin of 309 either way, so the two are not measured alike."
+    }
+   ],
+   "rests_on": [
+    "sen",
+    "enrol",
+    "kid"
+   ],
+   "text": "About 1,979 residents are 65 or over, near the 1,568 children the district enrols."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "16.1%",
+     "unit": "",
+     "value": 16.05891225268388
+    },
+    "b": {
+     "text": "16.8%",
+     "unit": "",
+     "value": 16.765503219247712
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "sensh0",
+    "sensh"
+   ],
+   "text": "The 65-and-over share went from 16.1% to 16.8%, a move inside the survey’s margin."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sen",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents 65 or over, 2019–2023 sample"
+   },
+   "value": {
+    "text": "1,979 ± 309",
+    "unit": "residents",
+    "value": 1979.0
+   }
+  },
+  {
+   "id": "sensh",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "2.6 points",
+      "unit": "",
+      "value": 2.6208919905548558
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "of residents are 65 or over, ± 2.6 points"
+   },
+   "value": {
+    "text": "16.8%",
+    "unit": "",
+    "value": 16.765503219247712
+   }
+  },
+  {
+   "id": "sensh0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "of residents were 65 or over, 2014–2018"
+   },
+   "value": {
+    "text": "16.1%",
+    "unit": "",
+    "value": 16.05891225268388
+   }
+  },
+  {
+   "id": "kid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents under 18, 2019–2023 sample"
+   },
+   "value": {
+    "text": "2,736 ± 429",
+    "unit": "residents",
+    "value": 2736.0
+   }
+  },
+  {
+   "id": "mid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45 to 64",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents 45 to 64, the largest band"
+   },
+   "value": {
+    "text": "3,453 ± 471",
+    "unit": "residents",
+    "value": 3453.0
+   }
+  },
+  {
+   "id": "early",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "25 to 44",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents 25 to 44"
+   },
+   "value": {
+    "text": "2,983 ± 391",
+    "unit": "residents",
+    "value": 2983.0
+   }
+  },
+  {
+   "id": "young",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "18 to 24",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents 18 to 24"
+   },
+   "value": {
+    "text": "653 ± 247",
+    "unit": "residents",
+    "value": 653.0
+   }
+  },
+  {
+   "id": "enrol",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "enrolled in the district, FY2026, a DESE count"
+   },
+   "value": {
+    "text": "1,568",
+    "unit": "children",
+    "value": 1568
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "1,979 ± 309",
+    "unit": "",
+    "value": 1979.0
+   },
+   "b": {
+    "text": "2,736 ± 429",
+    "unit": "",
+    "value": 2736.0
+   },
+   "p": {
+    "text": "16.8%",
+    "unit": "",
+    "value": 16.765503219247712
+   }
+  },
+  "literals": [
+   "65",
+   "18"
+  ],
+  "text": "1,979 ± 309 residents are 65 or over, 16.8% of the town; 2,736 ± 429 are under 18. Both are sample estimates."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "residents-by-age",
+ "kind": "topic",
+ "path": "/homes-and-taxes/residents-by-age",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/acs5-2023-B01001-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B01001-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B01001-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Residents by age, two five-year samples",
+  "views": [
+   {
+    "columns": [
+     "2014–2018",
+     "2019–2023",
+     "Share, 2019–2023"
+    ],
+    "key": "ages",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "2014–2018 and 2019–2023",
+    "note": "Census Bureau ACS table B01001, each band a sum of age cells with its margin of error. Two estimates whose intervals overlap are not different.",
+    "rows": [
+     {
+      "cells": [
+       "2,578 ± 360",
+       "2,736 ± 429",
+       "23.2% ± 3.6%"
+      ],
+      "label": "Under 18"
+     },
+     {
+      "cells": [
+       "709 ± 172",
+       "653 ± 247",
+       "5.5% ± 2.1%"
+      ],
+      "label": "18 to 24"
+     },
+     {
+      "cells": [
+       "2,336 ± 300",
+       "2,983 ± 391",
+       "25.3% ± 3.3%"
+      ],
+      "label": "25 to 44"
+     },
+     {
+      "cells": [
+       "3,838 ± 380",
+       "3,453 ± 471",
+       "29.3% ± 4.0%"
+      ],
+      "label": "45 to 64"
+     },
+     {
+      "cells": [
+       "1,810 ± 262",
+       "1,979 ± 309",
+       "16.8% ± 2.6%"
+      ],
+      "label": "65 and over"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Residents by age"
+}

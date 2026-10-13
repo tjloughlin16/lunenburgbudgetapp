@@ -1,0 +1,440 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$91,726",
+     "unit": "",
+     "value": 91726.3
+    }
+   },
+   "literals": [
+    "FY2015",
+    "FY2016",
+    "30",
+    "2025"
+   ],
+   "rests_on": [
+    "zero",
+    "close25",
+    "close11"
+   ],
+   "text": "The fund ended FY2015 and FY2016 at zero, and held $91,726 by 30 June 2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$7,616",
+     "unit": "",
+     "value": 7615.97
+    },
+    "b": {
+     "text": "$9,766",
+     "unit": "",
+     "value": 9765.55
+    }
+   },
+   "literals": [
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "closes": "the department’s costs across the general fund and its own funds, in one statement",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Receipts are what users paid, not what the parks cost to run."
+    }
+   ],
+   "rests_on": [
+    "in26",
+    "out26",
+    "held"
+   ],
+   "text": "From July to March FY2026 it took in $7,616 and spent $9,766."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$4,759",
+     "unit": "",
+     "value": 4759.16
+    }
+   },
+   "literals": [
+    "30",
+    "2025",
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "closes": "the FY2025 special-revenue report and fund 1500’s journal",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2025",
+      "1500"
+     ],
+     "text": "An audit adjustment, an encumbrance or a misprint all fit; nothing here tests which."
+    }
+   ],
+   "rests_on": [
+    "close25",
+    "open26"
+   ],
+   "text": "The annual report’s 30 June 2025 balance is $4,759 more than the ledger’s FY2026 opening."
+  }
+ ],
+ "facts": [
+  {
+   "id": "held",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "text": "in the Park Revolving Fund, 31 March 2026"
+   },
+   "value": {
+    "text": "$84,818",
+    "unit": "",
+    "value": 84817.56
+   }
+  },
+  {
+   "id": "in26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "taken in, July–March FY2026"
+   },
+   "value": {
+    "text": "$7,616",
+    "unit": "",
+    "value": 7615.97
+   }
+  },
+  {
+   "id": "out26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "spent, July–March FY2026"
+   },
+   "value": {
+    "text": "$9,766",
+    "unit": "",
+    "value": 9765.55
+   }
+  },
+  {
+   "id": "open26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "opening balance, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$86,967",
+    "unit": "",
+    "value": 86967.14
+   }
+  },
+  {
+   "id": "close25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30",
+     "2025"
+    ],
+    "text": "balance at 30 June 2025, annual report"
+   },
+   "value": {
+    "text": "$91,726",
+    "unit": "",
+    "value": 91726.3
+   }
+  },
+  {
+   "id": "close11",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2011"
+    ],
+    "text": "balance at the end of FY2011"
+   },
+   "value": {
+    "text": "$10,019",
+    "unit": "",
+    "value": 10019.25
+   }
+  },
+  {
+   "id": "zero",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2011",
+     "FY2023"
+    ],
+    "text": "years ending at zero, FY2011–FY2023"
+   },
+   "value": {
+    "text": "2",
+    "unit": "years",
+    "value": 2
+   }
+  },
+  {
+   "id": "peak",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2021",
+     "FY2011",
+     "FY2023"
+    ],
+    "text": "taken in during FY2021, the most FY2011–FY2023"
+   },
+   "value": {
+    "text": "$48,797",
+    "unit": "",
+    "value": 48797.27
+   }
+  },
+  {
+   "closes": "the FY2024 and FY2025 special-revenue reports for fund 1500",
+   "id": "flows",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024",
+     "FY2025"
+    ],
+    "text": "receipts and spending, FY2024 and FY2025"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$84,818",
+    "unit": "",
+    "value": 84817.56
+   }
+  },
+  "literals": [
+   "31",
+   "2026",
+   "FY2015",
+   "FY2016"
+  ],
+  "text": "The parks’ fee fund held $84,818 at 31 March 2026; it ended FY2015 and FY2016 at zero."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "park-revolving-fund",
+ "kind": "topic",
+ "path": "/parks/park-revolving-fund",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4117-fy-2011-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/special-revenue-read.csv",
+   "label": "Lunenburg Budget Project — special-revenue-read.csv (the annual reports’ fund schedules, tied)"
+  },
+  {
+   "href": "/docs/data/special-revenue-funds.csv",
+   "label": "Lunenburg Budget Project — special-revenue-funds.csv (the same schedules, every edition)"
+  }
+ ],
+ "table": {
+  "caption": "The Park Revolving Fund by year",
+  "views": [
+   {
+    "columns": [
+     "Taken in",
+     "Spent",
+     "Balance"
+    ],
+    "key": "fund",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Annual town reports",
+    "note": "FY2011–FY2023 printed as Park User Fees, each row tying forward + receipts − disbursements = carried. FY2024 and FY2025 print a balance only.",
+    "rows": [
+     {
+      "cells": [
+       null,
+       null,
+       "$91,726"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "$72,564"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$36,915",
+       "$45,134",
+       "$58,200"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$21,152",
+       "$21,177",
+       "$66,419"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$48,797",
+       "$14,816",
+       "$66,444"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$8,516",
+       "$6,872",
+       "$32,463"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$19,180",
+       null,
+       "$30,818"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$12,811",
+       "$5,231",
+       "$11,638"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$11,899",
+       "$7,841",
+       "$4,058"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$11,721",
+       "$11,721",
+       "$0"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$13,068",
+       "$16,864",
+       "$0"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$16,343",
+       "$18,120",
+       "$3,795"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$10,453",
+       "$15,534",
+       "$5,573"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$22,380",
+       "$21,745",
+       "$10,654"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$16,024",
+       "$15,642",
+       "$10,019"
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Park revolving fund"
+}

@@ -1,0 +1,302 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "b": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "c": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "d": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "m": {
+     "text": "3.3 times",
+     "unit": "the earlier pace",
+     "value": 3.3466784396825076
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the assessors’ new-growth worksheets, by class and parcel",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Equipment and utility plant, taxed as personal property, are inside this figure with buildings; the file does not split them."
+    },
+    {
+     "closes": "the certified new growth for the years after, as DLS publishes it",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Three years is the whole of the step; whether the pace holds is not known."
+    }
+   ],
+   "rests_on": [
+    "rec",
+    "bef",
+    "mult",
+    "best",
+    "y23"
+   ],
+   "text": "Non-residential new growth ran 3.3 times its FY2013–FY2023 pace in FY2024–FY2026."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "what"
+   ],
+   "text": "What was built, and where, is not in the state’s file: it certifies dollars, not buildings."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rec",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "non-residential new value a year, FY2024–FY2026"
+   },
+   "value": {
+    "text": "$19,421,113",
+    "unit": "",
+    "value": 19421113
+   }
+  },
+  {
+   "id": "bef",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "c": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     },
+     "d": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "a year, FY2013–FY2023"
+   },
+   "value": {
+    "text": "$5,803,101",
+    "unit": "",
+    "value": 5803101
+   }
+  },
+  {
+   "id": "mult",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the recent pace against the earlier (our arithmetic)"
+   },
+   "value": {
+    "text": "3.3 times",
+    "unit": "the earlier pace",
+    "value": 3.3466784396825076
+   }
+  },
+  {
+   "id": "best",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "added in FY2024, the largest year"
+   },
+   "value": {
+    "text": "$23,162,670",
+    "unit": "",
+    "value": 23162670
+   }
+  },
+  {
+   "id": "y23",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "added in FY2023, the year before the step"
+   },
+   "value": {
+    "text": "$3,766,880",
+    "unit": "",
+    "value": 3766880
+   }
+  },
+  {
+   "closes": "the assessors’ new-growth worksheets for the step years, which list the parcels",
+   "id": "what",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "what was built, and where"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   },
+   "avg": {
+    "text": "$19,421,113",
+    "unit": "",
+    "value": 19421113
+   },
+   "b": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "m": {
+    "text": "3.3 times",
+    "unit": "the earlier pace",
+    "value": 3.3466784396825076
+   }
+  },
+  "literals": [],
+  "text": "Non-residential new growth averaged $19,421,113 a year in FY2024–FY2026, 3.3 times the pace before it."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "business-building-pace",
+ "kind": "topic",
+ "path": "/homes-and-taxes/business-building-pace",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/new_growth.xlsx",
+   "label": "Massachusetts DOR, Division of Local Services — new_growth.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Business building pace"
+}

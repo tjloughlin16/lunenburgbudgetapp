@@ -1,0 +1,429 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$71,559",
+     "unit": "",
+     "value": 71558.82
+    }
+   },
+   "literals": [
+    "1306",
+    "31",
+    "2026"
+   ],
+   "notes": [
+    {
+     "closes": "fund 1306’s receipt detail, by payer",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "1306"
+     ],
+     "text": "Who paid, and for what, is not in a balance report."
+    }
+   ],
+   "rests_on": [
+    "in26",
+    "out26",
+    "held26"
+   ],
+   "text": "Groups renting school buildings and fields pay into fund 1306; it held $71,559 at 31 March 2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,010.67",
+     "unit": "",
+     "value": 3010.67
+    },
+    "b": {
+     "text": "$65,241.82",
+     "unit": "",
+     "value": 65241.82
+    },
+    "c": {
+     "text": "$62,231",
+     "unit": "",
+     "value": 62231.15
+    }
+   },
+   "literals": [
+    "FY2025"
+   ],
+   "rests_on": [
+    "b24",
+    "b25",
+    "jump"
+   ],
+   "text": "It went from $3,010.67 to $65,241.82 in FY2025, a rise of $62,231."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$52,392",
+     "unit": "",
+     "value": 52392.5
+    }
+   },
+   "literals": [
+    "FY2011",
+    "FY2023"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A transfer in, less charged to the fund, or a year of high rent all fit the two balances; nothing here tests which."
+    }
+   ],
+   "rests_on": [
+    "best",
+    "jump",
+    "flows25"
+   ],
+   "text": "No year from FY2011 to FY2023 took in more than $52,392."
+  }
+ ],
+ "facts": [
+  {
+   "id": "in26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1306",
+     "FY2026"
+    ],
+    "text": "into fund 1306, July–March FY2026"
+   },
+   "value": {
+    "text": "$18,670",
+    "unit": "",
+    "value": 18670.5
+   }
+  },
+  {
+   "id": "out26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "spent from it, July–March FY2026"
+   },
+   "value": {
+    "text": "$12,354",
+    "unit": "",
+    "value": 12353.5
+   }
+  },
+  {
+   "id": "held26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "text": "held, 31 March 2026"
+   },
+   "value": {
+    "text": "$71,559",
+    "unit": "",
+    "value": 71558.82
+   }
+  },
+  {
+   "id": "b24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30",
+     "2024"
+    ],
+    "text": "balance at 30 June 2024, annual report"
+   },
+   "value": {
+    "text": "$3,010.67",
+    "unit": "",
+    "value": 3010.67
+   }
+  },
+  {
+   "id": "b25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30",
+     "2025"
+    ],
+    "text": "balance at 30 June 2025, annual report"
+   },
+   "value": {
+    "text": "$65,241.82",
+    "unit": "",
+    "value": 65241.82
+   }
+  },
+  {
+   "id": "jump",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "the rise in FY2025 (our subtraction)"
+   },
+   "value": {
+    "text": "$62,231",
+    "unit": "",
+    "value": 62231.15
+   }
+  },
+  {
+   "id": "best",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2015",
+     "FY2011",
+     "FY2023"
+    ],
+    "text": "taken in during FY2015, the most FY2011–FY2023"
+   },
+   "value": {
+    "text": "$52,392",
+    "unit": "",
+    "value": 52392.5
+   }
+  },
+  {
+   "closes": "the FY2025 special-revenue report, or fund 1306’s journal",
+   "id": "flows25",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "what went in and out in FY2025"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$62,231",
+    "unit": "",
+    "value": 62231.15
+   }
+  },
+  "literals": [
+   "FY2025",
+   "FY2011",
+   "FY2023"
+  ],
+  "text": "The schools’ rental fund rose $62,231 in FY2025, more than its receipts in any year FY2011–FY2023."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-facilities-fund",
+ "kind": "topic",
+ "path": "/parks/school-facilities-fund",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/correspondence/2026-09-18-school-field-maintenance-superintendent.txt",
+   "label": "Lunenburg Public Schools — the Superintendent, by email — 2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4117-fy-2011-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/special-revenue-read.csv",
+   "label": "Lunenburg Budget Project — special-revenue-read.csv (the annual reports’ fund schedules, tied)"
+  },
+  {
+   "href": "/docs/data/special-revenue-funds.csv",
+   "label": "Lunenburg Budget Project — special-revenue-funds.csv (the same schedules, every edition)"
+  }
+ ],
+ "table": {
+  "caption": "School Facilities Use, fund 1306, by year",
+  "views": [
+   {
+    "columns": [
+     "Taken in",
+     "Spent",
+     "Balance"
+    ],
+    "key": "fund",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Annual town reports",
+    "note": "FY2011–FY2023 each row ties forward + receipts − disbursements = carried; FY2018 closed in deficit. FY2024 and FY2025 print a balance only.",
+    "rows": [
+     {
+      "cells": [
+       null,
+       null,
+       "$65,242"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       null,
+       null,
+       "$3,011"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$15,116",
+       "$68,259",
+       "$7,522"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$8,685",
+       "$259",
+       "$60,666"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$10,381",
+       null,
+       "$52,239"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$18,633",
+       "$5,850",
+       "$41,858"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$39,944",
+       "$7,560",
+       "$29,076"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$20,362",
+       "$26,102",
+       "-$3,309"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$30,255",
+       "$42,298",
+       "$2,431"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$33,109",
+       "$19,490",
+       "$14,474"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$52,392",
+       "$52,542",
+       "$855"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$49,347",
+       "$64,038",
+       "$1,004"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$48,968",
+       "$53,252",
+       "$15,695"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$13,716",
+       "$3,015",
+       "$19,978"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$9,615",
+       "$8,647",
+       "$9,277"
+      ],
+      "label": "FY2011"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "School facilities fund"
+}

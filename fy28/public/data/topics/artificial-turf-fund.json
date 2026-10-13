@@ -1,0 +1,228 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$45,000",
+     "unit": "",
+     "value": 45000.0
+    },
+    "b": {
+     "text": "$38,454",
+     "unit": "",
+     "value": 38453.78
+    }
+   },
+   "literals": [
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$30,000",
+       "unit": "",
+       "value": 30000.0
+      },
+      "b": {
+       "text": "$15,000",
+       "unit": "",
+       "value": 15000.0
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [
+      "3",
+      "2016"
+     ],
+     "text": "Machine captions of the Select Board on 3 May 2016 describe $30,000 a year from a cell tower and $15,000 from a youth league; the two add to this year’s receipts. No ledger splits them."
+    }
+   ],
+   "rests_on": [
+    "in",
+    "out",
+    "held"
+   ],
+   "text": "The fund took in $45,000 and spent $38,454 from July to March FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$59,322",
+     "unit": "",
+     "value": 59321.73
+    },
+    "b": {
+     "text": "$69,390",
+     "unit": "",
+     "value": 69389.52
+    }
+   },
+   "literals": [
+    "30",
+    "2024",
+    "31",
+    "2026"
+   ],
+   "rests_on": [
+    "b24",
+    "b25",
+    "held",
+    "split"
+   ],
+   "text": "Its balance rose from $59,322 at 30 June 2024 to $69,390 at 31 March 2026."
+  }
+ ],
+ "facts": [
+  {
+   "id": "in",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1545",
+     "FY2026"
+    ],
+    "text": "into fund 1545, July–March FY2026"
+   },
+   "value": {
+    "text": "$45,000",
+    "unit": "",
+    "value": 45000.0
+   }
+  },
+  {
+   "id": "out",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "spent from it, July–March FY2026"
+   },
+   "value": {
+    "text": "$38,454",
+    "unit": "",
+    "value": 38453.78
+   }
+  },
+  {
+   "id": "held",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "text": "held, 31 March 2026"
+   },
+   "value": {
+    "text": "$69,390",
+    "unit": "",
+    "value": 69389.52
+   }
+  },
+  {
+   "id": "b24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30",
+     "2024"
+    ],
+    "text": "balance at 30 June 2024, annual report"
+   },
+   "value": {
+    "text": "$59,322",
+    "unit": "",
+    "value": 59321.73
+   }
+  },
+  {
+   "id": "b25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30",
+     "2025"
+    ],
+    "text": "balance at 30 June 2025, annual report"
+   },
+   "value": {
+    "text": "$62,843",
+    "unit": "",
+    "value": 62843.3
+   }
+  },
+  {
+   "closes": "the receipt detail for fund 1545",
+   "id": "split",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "who paid the FY2026 receipts"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$45,000",
+    "unit": "",
+    "value": 45000.0
+   },
+   "b": {
+    "text": "$69,390",
+    "unit": "",
+    "value": 69389.52
+   }
+  },
+  "literals": [
+   "FY2026",
+   "31",
+   "2026"
+  ],
+  "text": "The Artificial Turf fund took in $45,000 in FY2026 and held $69,390 at 31 March 2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "artificial-turf-fund",
+ "kind": "topic",
+ "path": "/parks/artificial-turf-fund",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/special-revenue-funds.csv",
+   "label": "Lunenburg Budget Project — special-revenue-funds.csv (the same schedules, every edition)"
+  }
+ ],
+ "table": null,
+ "title": "Artificial turf fund"
+}

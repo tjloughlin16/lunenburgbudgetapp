@@ -1,0 +1,291 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "m": {
+     "text": "4.0 points",
+     "unit": "",
+     "value": 4.031057799335084
+    },
+    "p": {
+     "text": "32.6%",
+     "unit": "",
+     "value": 32.61205564142195
+    }
+   },
+   "literals": [
+    "18",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "a count of distinct households with a child enrolled, from the district’s student information system",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "That is a ceiling on homes using the town’s schools: it counts children at Monty Tech, private and charter schools, and children too young for school."
+    }
+   ],
+   "rests_on": [
+    "wc",
+    "wcsh",
+    "wo"
+   ],
+   "text": "About a third of households have a child under 18: 32.6%, with a margin of 4.0 points."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "34.8%",
+     "unit": "",
+     "value": 34.808470140375924
+    }
+   },
+   "literals": [
+    "2019–2023",
+    "2014–2018",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "wcsh0",
+    "wcsh"
+   ],
+   "text": "The share was 34.8% in 2014–2018; the difference is inside the margin."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "lps",
+    "enrol"
+   ],
+   "text": "No published record joins a child to a household to a school."
+  }
+ ],
+ "facts": [
+  {
+   "id": "wc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "18",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "households with a child under 18, 2019–2023"
+   },
+   "value": {
+    "text": "1,477 ± 198",
+    "unit": "households",
+    "value": 1477.0
+   }
+  },
+  {
+   "id": "wcsh",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "4.0 points",
+      "unit": "",
+      "value": 4.031057799335084
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "of households, ± 4.0 points"
+   },
+   "value": {
+    "text": "32.6%",
+    "unit": "",
+    "value": 32.61205564142195
+   }
+  },
+  {
+   "id": "wo",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "18",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "households with no child under 18"
+   },
+   "value": {
+    "text": "3,052 ± 325",
+    "unit": "households",
+    "value": 3052.0
+   }
+  },
+  {
+   "id": "wcsh0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "18",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "of households had a child under 18, 2014–2018"
+   },
+   "value": {
+    "text": "34.8%",
+    "unit": "",
+    "value": 34.808470140375924
+   }
+  },
+  {
+   "id": "enrol",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "enrolled in the district, FY2026"
+   },
+   "value": {
+    "text": "1,568",
+    "unit": "children",
+    "value": 1568
+   }
+  },
+  {
+   "closes": "a count of distinct households with a child enrolled, from the district’s student information system",
+   "id": "lps",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "households with a child in the Lunenburg schools"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "1,477 ± 198",
+    "unit": "",
+    "value": 1477.0
+   },
+   "b": {
+    "text": "4,529",
+    "unit": "",
+    "value": 4529.0
+   }
+  },
+  "literals": [
+   "18"
+  ],
+  "text": "1,477 ± 198 of 4,529 households have a child under 18, about a third; how many use the schools is unpublished."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "households-with-children",
+ "kind": "topic",
+ "path": "/homes-and-taxes/households-with-children",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/acs5-2023-B11005-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B11005-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B11005-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B11005-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": null,
+ "title": "Households with children"
+}

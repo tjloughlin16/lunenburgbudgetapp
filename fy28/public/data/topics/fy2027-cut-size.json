@@ -1,0 +1,290 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$761,001",
+     "unit": "",
+     "value": 761001
+    },
+    "b": {
+     "text": "$868,918",
+     "unit": "",
+     "value": 868918
+    },
+    "c": {
+     "text": "$838,413",
+     "unit": "",
+     "value": 838413
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "diff",
+    "var",
+    "def7",
+    "ls",
+    "bal"
+   ],
+   "text": "The workbook gives $761,001; the addendum states $868,918 and, elsewhere, $838,413."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "8.7",
+     "unit": "FTE",
+     "value": 8.7
+    },
+    "b": {
+     "text": "3.5",
+     "unit": "FTE",
+     "value": 3.5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "listfte",
+    "heads",
+    "listed"
+   ],
+   "text": "The addendum lists 8.7 FTE of reductions; its two headcounts differ by 3.5 FTE."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,174,933",
+     "unit": "",
+     "value": 1174933
+    },
+    "b": {
+     "text": "$14,488",
+     "unit": "",
+     "value": 14488
+    },
+    "n": {
+     "text": "16",
+     "unit": "",
+     "value": 16
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the School Committee’s minutes of its March 2026 budget vote",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "March 2026"
+     ],
+     "text": "The documents do not say which of the three variances the School Committee voted against."
+    }
+   ],
+   "rests_on": [
+    "catalogue",
+    "music-gap"
+   ],
+   "text": "Our catalogue of 16 cuts sums to $1,174,933, including $14,488 we priced ourselves."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ls",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Level Service, the FY2027 workbook"
+   },
+   "value": {
+    "text": "$27,333,289",
+    "unit": "",
+    "value": 27333289
+   }
+  },
+  {
+   "id": "bal",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Balanced, as adopted"
+   },
+   "value": {
+    "text": "$26,572,288",
+    "unit": "",
+    "value": 26572288
+   }
+  },
+  {
+   "id": "diff",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between them (our subtraction)"
+   },
+   "value": {
+    "text": "$761,001",
+    "unit": "",
+    "value": 761001
+   }
+  },
+  {
+   "id": "var",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "variance the addendum states for Balanced"
+   },
+   "value": {
+    "text": "$868,918",
+    "unit": "",
+    "value": 868918
+   }
+  },
+  {
+   "id": "def7",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Level Service deficit, the addendum’s summary"
+   },
+   "value": {
+    "text": "$838,413",
+    "unit": "",
+    "value": 838413
+   }
+  },
+  {
+   "id": "listed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "priced staff reductions it lists (our sum)"
+   },
+   "value": {
+    "text": "$842,040",
+    "unit": "",
+    "value": 842040.0
+   }
+  },
+  {
+   "id": "listfte",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "staff reductions it lists"
+   },
+   "value": {
+    "text": "8.7 FTE",
+    "unit": "FTE",
+    "value": 8.7
+   }
+  },
+  {
+   "id": "heads",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between its own two headcounts"
+   },
+   "value": {
+    "text": "3.5 FTE",
+    "unit": "FTE",
+    "value": 3.5
+   }
+  },
+  {
+   "id": "catalogue",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "16",
+      "unit": "",
+      "value": 16
+     }
+    },
+    "literals": [],
+    "text": "our catalogue’s 16 cuts, all kinds"
+   },
+   "value": {
+    "text": "$1,174,933",
+    "unit": "",
+    "value": 1174933
+   }
+  },
+  {
+   "closes": "the district’s price for the 0.2 music post its addendum left blank",
+   "id": "music-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the price of the Turkey Hill music cut"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$761,001",
+    "unit": "",
+    "value": 761001
+   },
+   "b": {
+    "text": "$868,918",
+    "unit": "",
+    "value": 868918
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [],
+  "text": "The workbook puts the adopted FY2027 school budget $761,001 below Level Service; the addendum states $868,918."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2027-cut-size",
+ "kind": "topic",
+ "path": "/budget-options/fy2027-cut-size",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf",
+   "label": "Lunenburg Public Schools — Budget Addendum: Multi-Scenario Financial Analysis — budget-addendum-multi-scenario-financial-analysis.pdf"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": null,
+ "title": "FY2027 cut size"
+}

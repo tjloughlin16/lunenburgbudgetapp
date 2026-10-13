@@ -1,0 +1,492 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$113,350",
+     "unit": "",
+     "value": 113350.2
+    },
+    "b": {
+     "text": "$4,268",
+     "unit": "",
+     "value": 4268.4
+    },
+    "c": {
+     "text": "$140,759",
+     "unit": "",
+     "value": 140759.43
+    },
+    "d": {
+     "text": "$23,141",
+     "unit": "",
+     "value": 23140.83
+    }
+   },
+   "literals": [
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "closes": "the MUNIS period-13 report for the general fund, FY2026",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026",
+      "12",
+      "13"
+     ],
+     "text": "Period 12 is before the books close; the closed year may differ."
+    }
+   ],
+   "rests_on": [
+    "rev26",
+    "exp26",
+    "enc26",
+    "avl26"
+   ],
+   "text": "In FY2026 Parks paid $113,350 and owed $4,268 of a $140,759 budget; $23,141 was left."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    }
+   },
+   "literals": [
+    "FY2011",
+    "FY2018"
+   ],
+   "notes": [
+    {
+     "closes": "the transfer votes behind department 650’s mid-year adjustments",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "650"
+     ],
+     "text": "Where the money went, and why, is not in the workbook."
+    }
+   ],
+   "rests_on": [
+    "cuts",
+    "cut12"
+   ],
+   "text": "The budget was lowered during the year in all 8 years from FY2011 to FY2018."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    },
+    "b": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "c": {
+     "text": "$140,450",
+     "unit": "",
+     "value": 140449.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "under",
+    "leftsum"
+   ],
+   "text": "In 11 of 15 years Parks ended under its final budget, $140,450 in all."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$9,766",
+     "unit": "",
+     "value": 9765.55
+    }
+   },
+   "literals": [
+    "FY2026"
+   ],
+   "rests_on": [
+    "fund-out"
+   ],
+   "text": "None of this counts what the parks fee fund spends, $9,766 from July to March FY2026."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rev26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "12"
+    ],
+    "text": "revised Parks budget, FY2026, at period 12"
+   },
+   "value": {
+    "text": "$140,759",
+    "unit": "",
+    "value": 140759.43
+   }
+  },
+  {
+   "id": "exp26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "12"
+    ],
+    "text": "paid, FY2026 (ledger, period 12, unaudited)"
+   },
+   "value": {
+    "text": "$113,350",
+    "unit": "",
+    "value": 113350.2
+   }
+  },
+  {
+   "id": "enc26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "12"
+    ],
+    "text": "still owed at period 12, FY2026 (ledger)"
+   },
+   "value": {
+    "text": "$4,268",
+    "unit": "",
+    "value": 4268.4
+   }
+  },
+  {
+   "id": "avl26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "12"
+    ],
+    "text": "not yet used at period 12, FY2026 (ledger’s column)"
+   },
+   "value": {
+    "text": "$23,141",
+    "unit": "",
+    "value": 23140.83
+   }
+  },
+  {
+   "id": "cuts",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2011",
+     "FY2018"
+    ],
+    "text": "years, FY2011–FY2018, with the budget lowered mid-year"
+   },
+   "value": {
+    "text": "8",
+    "unit": "years",
+    "value": 8
+   }
+  },
+  {
+   "id": "cut12",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2012"
+    ],
+    "text": "taken off the Parks budget during FY2012 (workbook)"
+   },
+   "value": {
+    "text": "$25,054",
+    "unit": "",
+    "value": 25054.0
+   }
+  },
+  {
+   "id": "under",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "15",
+      "unit": "",
+      "value": 15
+     }
+    },
+    "literals": [],
+    "text": "years of 15 ending under the final budget"
+   },
+   "value": {
+    "text": "11",
+    "unit": "years",
+    "value": 11
+   }
+  },
+  {
+   "id": "leftsum",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2010",
+     "FY2024"
+    ],
+    "text": "left unspent, FY2010–FY2024 in all (our sum)"
+   },
+   "value": {
+    "text": "$140,450",
+    "unit": "",
+    "value": 140449.9
+   }
+  },
+  {
+   "id": "fund-out",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "spent from the parks fee fund, July–March FY2026"
+   },
+   "value": {
+    "text": "$9,766",
+    "unit": "",
+    "value": 9765.55
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$113,350",
+    "unit": "",
+    "value": 113350.2
+   },
+   "b": {
+    "text": "$140,759",
+    "unit": "",
+    "value": 140759.43
+   },
+   "c": {
+    "text": "$23,141",
+    "unit": "",
+    "value": 23140.83
+   }
+  },
+  "literals": [
+   "FY2026"
+  ],
+  "text": "By June, before the close, Parks had paid $113,350 of a $140,759 FY2026 budget; $23,141 was not yet used."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "parks-spending",
+ "kind": "topic",
+ "path": "/parks/parks-spending",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx"
+  },
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee workbook, one row an account)"
+  },
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "The Parks budget against spending, by year",
+  "views": [
+   {
+    "columns": [
+     "Voted",
+     "Final budget",
+     "Spent",
+     "Left"
+    ],
+    "key": "workbook",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Finance Committee workbook",
+    "note": "Department 650, summed over its accounts. Left is the final budget less the actual, our subtraction. FY2025’s actual is marked partial in the workbook and is left out.",
+    "rows": [
+     {
+      "cells": [
+       "$111,312",
+       "$116,076",
+       "$115,404",
+       "$671"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$99,826",
+       "$99,898",
+       "$82,334",
+       "$17,564"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$95,706",
+       "$96,164",
+       "$80,849",
+       "$15,315"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$95,690",
+       "$108,722",
+       "$82,656",
+       "$26,065"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$92,898",
+       "$92,898",
+       "$64,240",
+       "$28,658"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$72,898",
+       "$72,898",
+       "$71,756",
+       "$1,142"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$71,348",
+       "$62,077",
+       "$53,007",
+       "$9,070"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$71,348",
+       "$66,024",
+       "$48,685",
+       "$17,339"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$71,974",
+       "$67,364",
+       "$52,664",
+       "$14,700"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$70,900",
+       "$51,196",
+       "$51,196",
+       "$0"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$69,325",
+       "$61,272",
+       "$57,722",
+       "$3,550"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$69,355",
+       "$46,595",
+       "$46,595",
+       "$0"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$68,414",
+       "$43,360",
+       "$43,360",
+       "$0"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$67,524",
+       "$59,965",
+       "$53,590",
+       "$6,375"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$64,908",
+       "$66,136",
+       "$66,136",
+       "$0"
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": 3
+   }
+  ]
+ },
+ "title": "Parks spending"
+}

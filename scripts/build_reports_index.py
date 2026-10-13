@@ -118,8 +118,9 @@ CATEGORIES = [
         # the town's ledger beside the report it is the companion to -- which is
         # where it was WRITTEN, not where a reader looking for what can be done
         # would go, and this index exists to tell those two apart.
-        ('', ['override', 'growth', 'healthlever', 'salarylever',
-              'feelever', 'extraslever', 'positionslever']),
+        # Every lever is a topic on the Budget options shelf now (area 'options'); this
+        # group stays, empty, as the anchor the page draws that shelf after.
+        ('', []),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -134,57 +135,19 @@ CATEGORIES = [
     # exactly the reader it was built for. It is not in UNCATEGORISED with `addsup` and
     # `show-your-work` because those two are about the reports; this is a way IN to them.
     ('school', 'The schools', [
-        ('what the money buys', [
-            # courses, AP, cuts, stopped and grant endings are the School programs shelf now.
-            'insurance',
-            # Transportation and athletics are SHELVES OF THEIR OWN now, drawn from
-            # scripts/topics.py by the reports page itself (TJ, 12 October 2026). Their long
-            # reports -- `transportation`, `athletics-ledger`, `sportsmoney` -- are reached
-            # from those hubs as "the full report", not from a shelf.
-        ]),
-        # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
-        # students'". It had been a top-level shelf of its own, and the correction is
-        # right for a reason the shelf version missed: a reader browsing the schools is
-        # already in the place where "who works in them" is the obvious next question.
-        # A top-level shelf made it a peer of "The town", which it is not — it is one
-        # aspect of the schools, and the order adults-then-children reads the way a
-        # person would ask it.
-        # 'who works in them' and most of 'the students' are shelves of their own now
-        # (School staffing, Enrolment); What a family pays stays until its category is built.
-        ('the students', [
-            'families',
-        ]),
-        # 'where the money comes from, and how it compares' is the State aid and School
-        # spending shelves now.
-        # THE RULES EVERYONE ARGUES UNDER, as a subsection here rather than a shelf of
-        # their own. TJ, 17 September 2026: "should go under the schools as a subsection".
-        # The note that used to introduce a fourth shelf still holds for what these ARE
-        # -- a state rule quoted and explained, stopping before any Lunenburg finding --
-        # and the index now says so in the subsection title rather than by distance.
-        # THE FIELDS AND THE LEAGUES THAT PAY THE SCHOOLS. TJ, 17 September 2026: "it's
-        # not a town thing for this report ... the point of that report is the ones that
-        # pay the schools. others pay Parks and Rec." So it shelves with the schools; a
-        # Parks and Recreation counterpart would be the town's.
-        ('the fields, and the funds that run them', ['youthsports']),
-        ('every fund and line the School Committee owns', ['schoolfinance']),
+        # Every school subject is a shelf of its own now (scripts/topic_registry/, area
+        # 'school'), drawn after this group. What remains here has no category yet: what a
+        # family pays, and the School Committee's own finance page (the boards subsystem).
+        ('also on the schools', ['families', 'schoolfinance']),
     ]),
     ('town', 'The town', [
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
         # this shelf measures the town's money; this one measures the town. A reader who
         # does not yet know the place cannot weigh anything below it, and it is the one
         # report in the index that needs no budget knowledge at all to read.
-        ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
-        # 'the ledger, read' is gone: FY2026 closeout and Town reserves are shelves of their
-        # own now (scripts/topic_registry/), and these reports are UNCATEGORISED below.
-        ('what the votes decided', [
-            'fy27-and-the-override', 'fy27-cut-reconciliation',
-        ]),
-        # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
-        # analysis' page" -- what each board posts, measured on the town's own site.
-        ('the boards, compared', ['boardcompare', 'board-composition', 'open-seats']),
-        # A DEPARTMENT, READ WHOLE. TJ, 17 September 2026: "a report for parks, under 'the
-        # town' for whatever data you got."
-        ('a department, whole: parks and recreation', ['parks']),
+        # Homes and taxes, Budget options, Boards and Parks are shelves of their own now;
+        # this group stays, empty, as the anchor the page draws the town's shelves after.
+        ('', []),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
@@ -302,7 +265,12 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
                  'town-budget-facilities-grounds', 'town-budget-solid-waste',
                  'town-budget-assistance', 'town-budget-schools', 'town-budget-library',
                  # ...and School spending.
-                 'peers', 'variance'}
+                 'peers', 'variance',
+                 # Wave 4: Homes and taxes, Health insurance, Boards, Parks, Budget options.
+                 'bythenumbers', 'owners', 'homestudents', 'growth', 'insurance', 'healthlever',
+                 'boardcompare', 'board-composition', 'open-seats', 'parks', 'youthsports',
+                 'override', 'feelever', 'extraslever', 'positionslever', 'salarylever',
+                 'fy27-and-the-override', 'fy27-cut-reconciliation'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

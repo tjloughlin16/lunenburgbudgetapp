@@ -1,0 +1,250 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$20,975",
+     "unit": "",
+     "value": 20975
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "marshall",
+    "bid"
+   ],
+   "text": "The bid priced Marshall Park at $20,975, the most of the six."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "38%",
+     "unit": "",
+     "value": 38.0309405881482
+    },
+    "b": {
+     "text": "$117,247",
+     "unit": "",
+     "value": 117246.64
+    }
+   },
+   "literals": [
+    "FY2025"
+   ],
+   "notes": [
+    {
+     "closes": "the purchase order and the account it was charged to",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A bid is a vendor’s offer, and which account would pay it is not stated."
+    }
+   ],
+   "rests_on": [
+    "bid",
+    "v25",
+    "share"
+   ],
+   "text": "The year-one bid equals 38% of the $117,247 voted for Parks in FY2025."
+  }
+ ],
+ "facts": [
+  {
+   "id": "bid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2024"
+    ],
+    "text": "bid for year one, six parks, from July 2024"
+   },
+   "value": {
+    "text": "$44,590",
+    "unit": "",
+    "value": 44590
+   }
+  },
+  {
+   "id": "marshall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it for Marshall Park"
+   },
+   "value": {
+    "text": "$20,975",
+    "unit": "",
+    "value": 20975
+   }
+  },
+  {
+   "id": "mow",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     }
+    },
+    "literals": [],
+    "text": "of it for mowing, at 4 parks"
+   },
+   "value": {
+    "text": "$14,875",
+    "unit": "",
+    "value": 14875
+   }
+  },
+  {
+   "id": "v25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "voted for Parks, FY2025"
+   },
+   "value": {
+    "text": "$117,247",
+    "unit": "",
+    "value": 117246.64
+   }
+  },
+  {
+   "id": "share",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the bid as a share of that vote (ours)"
+   },
+   "value": {
+    "text": "38%",
+    "unit": "",
+    "value": 38.0309405881482
+   }
+  },
+  {
+   "closes": "the purchase order and the FY2025 payments against it",
+   "id": "taken",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether the bid was accepted, and what was paid"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$44,590",
+    "unit": "",
+    "value": 44590
+   }
+  },
+  "literals": [
+   "1",
+   "2024",
+   "six"
+  ],
+  "text": "A contractor bid $44,590 for one year of grounds work at six parks, from 1 July 2024."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grounds-maintenance-bid",
+ "kind": "topic",
+ "path": "/parks/grounds-maintenance-bid",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf",
+   "label": "a contractor, by records request — po-closed-fy2025-parks-grounds-bid.pdf"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx"
+  },
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee workbook, one row an account)"
+  }
+ ],
+ "table": {
+  "caption": "The grounds bid by park, year one",
+  "views": [
+   {
+    "columns": [
+     "Mowing",
+     "Year one, all work"
+    ],
+    "key": "bid",
+    "kinds": [
+     "stated",
+     "stated"
+    ],
+    "label": "The bid sheet",
+    "note": "The sheet’s own Location Total line, read from its text layer. A bid, not a payment.",
+    "rows": [
+     {
+      "cells": [
+       "$2,975",
+       "$9,875"
+      ],
+      "label": "Fitzgerald Field"
+     },
+     {
+      "cells": [
+       "$2,550",
+       "$7,500"
+      ],
+      "label": "McNally Field"
+     },
+     {
+      "cells": [
+       "$8,500",
+       "$20,975"
+      ],
+      "label": "Marshall Park"
+     },
+     {
+      "cells": [
+       "$850",
+       "$2,640"
+      ],
+      "label": "Memorial Park"
+     },
+     {
+      "cells": [
+       null,
+       "$2,300"
+      ],
+      "label": "Town Beach"
+     },
+     {
+      "cells": [
+       null,
+       "$1,300"
+      ],
+      "label": "Wallis Park"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Grounds maintenance bid"
+}

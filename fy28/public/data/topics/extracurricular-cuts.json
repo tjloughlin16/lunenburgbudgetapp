@@ -1,0 +1,303 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$376,207",
+     "unit": "",
+     "value": 376207
+    },
+    "b": {
+     "text": "2.9",
+     "unit": "positions",
+     "value": 2.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "total",
+    "fte"
+   ],
+   "text": "Every sport, band, club and art supply still funded comes to $376,207, 2.9 positions."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$554,066",
+     "unit": "",
+     "value": 554066
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "short",
+    "gap28",
+    "share"
+   ],
+   "text": "Cut entirely, they leave $554,066 of the FY2028 gap open (ours)."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$233,922",
+     "unit": "",
+     "value": 233922
+    },
+    "b": {
+     "text": "$217,908",
+     "unit": "",
+     "value": 217908
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "already",
+    "sports"
+   ],
+   "text": "The FY2027 budget already took $233,922 from athletics; $217,908 of sports remain."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "total",
+    "fte"
+   ],
+   "text": "The cut falls on the students in those programmes and the staff who run them."
+  }
+ ],
+ "facts": [
+  {
+   "id": "total",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "sports, music, art and clubs still funded (ours)"
+   },
+   "value": {
+    "text": "$376,207",
+    "unit": "",
+    "value": 376207
+   }
+  },
+  {
+   "id": "fte",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of staff in them"
+   },
+   "value": {
+    "text": "2.9 positions",
+    "unit": "positions",
+    "value": 2.9
+   }
+  },
+  {
+   "id": "sports",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "sports and coaches, FY2027 adopted budget"
+   },
+   "value": {
+    "text": "$217,908",
+    "unit": "",
+    "value": 217908
+   }
+  },
+  {
+   "id": "already",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "athletics, level service less adopted, FY2027"
+   },
+   "value": {
+    "text": "$233,922",
+    "unit": "",
+    "value": 233922
+   }
+  },
+  {
+   "id": "gap28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the projected gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   }
+  },
+  {
+   "id": "share",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it covered by cutting all of them (ours)"
+   },
+   "value": {
+    "text": "40.4%",
+    "unit": "",
+    "value": 40.44049434950816
+   }
+  },
+  {
+   "id": "short",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "of the FY2028 gap left after (ours)"
+   },
+   "value": {
+    "text": "$554,066",
+    "unit": "",
+    "value": 554066
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$376,207",
+    "unit": "",
+    "value": 376207
+   },
+   "b": {
+    "text": "40.4%",
+    "unit": "",
+    "value": 40.44049434950816
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Cutting every extra still funded saves $376,207 by our grouping, 40.4% of the FY2028 gap."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "extracurricular-cuts",
+ "kind": "topic",
+ "path": "/budget-options/extracurricular-cuts",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": {
+  "caption": "What is still funded outside the classroom",
+  "views": [
+   {
+    "columns": [
+     "Budgeted"
+    ],
+    "key": "lines",
+    "kinds": [
+     "stated"
+    ],
+    "label": "The catalogue",
+    "note": "Our programme catalogue, built from the FY27 budget lines and the September 2026 spending plan. The grouping into extras is ours.",
+    "rows": [
+     {
+      "cells": [
+       "$217,908"
+      ],
+      "label": "Remaining Athletics Program (all sports)"
+     },
+     {
+      "cells": [
+       "$72,440"
+      ],
+      "label": "High School Band & Chorus Program"
+     },
+     {
+      "cells": [
+       "$30,685"
+      ],
+      "label": "Art Supplies — all four schools"
+     },
+     {
+      "cells": [
+       "$26,370"
+      ],
+      "label": "0.6 -> 1.0 Music Teacher — High School"
+     },
+     {
+      "cells": [
+       "$17,073"
+      ],
+      "label": "Band & Music Supplies, Equipment, Repair"
+     },
+     {
+      "cells": [
+       "$11,731"
+      ],
+      "label": "High School Clubs & After-School Advisors"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Extracurricular cuts"
+}

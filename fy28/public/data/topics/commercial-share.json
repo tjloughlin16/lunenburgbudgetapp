@@ -1,0 +1,797 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "r": {
+     "text": "23.3%",
+     "unit": "",
+     "value": 23.330098282982583
+    },
+    "s": {
+     "text": "7.3%",
+     "unit": "% of assessed value",
+     "value": 7.29
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Rising home values alone would lower the share, since the base is mostly homes; the file does not separate revaluation from building."
+    }
+   ],
+   "rests_on": [
+    "reval",
+    "lo",
+    "sh"
+   ],
+   "text": "In FY2023 residential value rose 23.3% and the business share fell to 7.3%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "39.5%",
+     "unit": "",
+     "value": 39.52494343879953
+    },
+    "b": {
+     "text": "59.1%",
+     "unit": "",
+     "value": 59.14370149691717
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the assessors’ new-growth worksheets set against their revaluation reports",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "How much of the rise is construction and how much is revaluation of what stood is not split in this series."
+    }
+   ],
+   "rests_on": [
+    "cistep",
+    "cilong",
+    "cip",
+    "tot"
+   ],
+   "text": "Commercial and industrial value rose 39.5% in four years, after 59.1% over the twenty before."
+  },
+  {
+   "figures": {
+    "h": {
+     "text": "8 of 15",
+     "unit": "towns",
+     "value": 8
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "each town’s levy by class, which DLS publishes separately",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A share compares towns of different size; it says nothing about what any of them collects."
+    }
+   ],
+   "rests_on": [
+    "hi",
+    "sh"
+   ],
+   "text": "8 of 15 compared towns have a larger business share than Lunenburg."
+  }
+ ],
+ "facts": [
+  {
+   "id": "sh",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "business share of assessed value, FY2026"
+   },
+   "value": {
+    "text": "8.7%",
+    "unit": "% of assessed value",
+    "value": 8.71
+   }
+  },
+  {
+   "id": "pk",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2002",
+      "unit": "fiscal year",
+      "value": 2002
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the share in FY2002, the highest"
+   },
+   "value": {
+    "text": "10.6%",
+    "unit": "% of assessed value",
+    "value": 10.57
+   }
+  },
+  {
+   "id": "lo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the share in FY2023, the lowest"
+   },
+   "value": {
+    "text": "7.3%",
+    "unit": "% of assessed value",
+    "value": 7.29
+   }
+  },
+  {
+   "id": "cip",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "commercial, industrial and personal property"
+   },
+   "value": {
+    "text": "$212,343,140",
+    "unit": "",
+    "value": 212343140
+   }
+  },
+  {
+   "id": "tot",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "assessed value of every class, FY2026"
+   },
+   "value": {
+    "text": "$2,437,942,740",
+    "unit": "",
+    "value": 2437942740
+   }
+  },
+  {
+   "id": "reval",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "rise in residential value in FY2023 (our arithmetic)"
+   },
+   "value": {
+    "text": "23.3%",
+    "unit": "",
+    "value": 23.330098282982583
+   }
+  },
+  {
+   "id": "cistep",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "rise in commercial and industrial value, FY2022–FY2026"
+   },
+   "value": {
+    "text": "39.5%",
+    "unit": "",
+    "value": 39.52494343879953
+   }
+  },
+  {
+   "id": "cilong",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2002",
+      "unit": "fiscal year",
+      "value": 2002
+     },
+     "b": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the same, FY2002–FY2022"
+   },
+   "value": {
+    "text": "59.1%",
+    "unit": "",
+    "value": 59.14370149691717
+   }
+  },
+  {
+   "id": "hi",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "compared towns with a larger business share"
+   },
+   "value": {
+    "text": "8 of 15",
+    "unit": "towns",
+    "value": 8
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "8.7%",
+    "unit": "",
+    "value": 8.71
+   },
+   "b": {
+    "text": "10.6%",
+    "unit": "",
+    "value": 10.57
+   },
+   "c": {
+    "text": "7.3%",
+    "unit": "",
+    "value": 7.29
+   },
+   "x": {
+    "text": "FY2002",
+    "unit": "fiscal year",
+    "value": 2002
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "z": {
+    "text": "FY2023",
+    "unit": "fiscal year",
+    "value": 2023
+   }
+  },
+  "literals": [],
+  "text": "Business property is 8.7% of the FY2026 tax base, against 10.6% in FY2002 and 7.3% in FY2023."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "commercial-share",
+ "kind": "topic",
+ "path": "/homes-and-taxes/commercial-share",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/assessedvalues.xlsx",
+   "label": "Massachusetts DOR, Division of Local Services — assessedvalues.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Business share of assessed value",
+  "views": [
+   {
+    "columns": [
+     "Business share"
+    ],
+    "key": "towns",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Compared towns, FY2026",
+    "note": "DLS assessed values by class. The towns are the set this project compares Lunenburg with.",
+    "rows": [
+     {
+      "cells": [
+       "28.44%"
+      ],
+      "label": "Ayer"
+     },
+     {
+      "cells": [
+       "21.24%"
+      ],
+      "label": "Littleton"
+     },
+     {
+      "cells": [
+       "18.42%"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "17.06%"
+      ],
+      "label": "Leominster"
+     },
+     {
+      "cells": [
+       "15.15%"
+      ],
+      "label": "Gardner"
+     },
+     {
+      "cells": [
+       "12.34%"
+      ],
+      "label": "Lancaster"
+     },
+     {
+      "cells": [
+       "9.56%"
+      ],
+      "label": "Westford"
+     },
+     {
+      "cells": [
+       "9.50%"
+      ],
+      "label": "Shirley"
+     },
+     {
+      "cells": [
+       "8.71%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "6.93%"
+      ],
+      "label": "Townsend"
+     },
+     {
+      "cells": [
+       "5.74%"
+      ],
+      "label": "Ashby"
+     },
+     {
+      "cells": [
+       "5.29%"
+      ],
+      "label": "Stow"
+     },
+     {
+      "cells": [
+       "5.17%"
+      ],
+      "label": "Pepperell"
+     },
+     {
+      "cells": [
+       "4.67%"
+      ],
+      "label": "Bolton"
+     },
+     {
+      "cells": [
+       "4.45%"
+      ],
+      "label": "Groton"
+     },
+     {
+      "cells": [
+       "3.86%"
+      ],
+      "label": "Harvard"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Residential",
+     "Commercial and industrial",
+     "Personal property",
+     "Business share"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lunenburg, by year",
+    "note": "DLS assessed values by class, as certified each year.",
+    "rows": [
+     {
+      "cells": [
+       "$2,225,599,600",
+       "$139,227,200",
+       "$73,115,940",
+       "8.71%"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$2,161,060,074",
+       "$130,388,706",
+       "$69,258,000",
+       "8.46%"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$2,057,467,522",
+       "$120,304,428",
+       "$64,914,630",
+       "8.26%"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$1,957,462,820",
+       "$98,819,410",
+       "$55,152,710",
+       "7.29%"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$1,587,173,648",
+       "$99,786,602",
+       "$55,708,580",
+       "8.92%"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$1,481,848,704",
+       "$99,715,335",
+       "$47,079,550",
+       "9.01%"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$1,404,806,468",
+       "$99,009,432",
+       "$44,440,550",
+       "9.27%"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$1,304,701,251",
+       "$98,777,346",
+       "$38,770,080",
+       "9.54%"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$1,187,963,086",
+       "$86,857,478",
+       "$37,237,660",
+       "9.46%"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$1,120,428,704",
+       "$82,730,499",
+       "$36,566,467",
+       "9.62%"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$1,079,768,102",
+       "$84,757,998",
+       "$35,078,223",
+       "9.99%"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$1,027,856,023",
+       "$85,526,277",
+       "$33,119,236",
+       "10.35%"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$1,013,879,421",
+       "$83,809,079",
+       "$29,944,552",
+       "10.09%"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$1,016,139,357",
+       "$85,515,143",
+       "$29,375,244",
+       "10.16%"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$1,008,566,509",
+       "$83,966,191",
+       "$28,433,861",
+       "10.03%"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$1,000,004,500",
+       "$86,129,600",
+       "$28,148,789",
+       "10.26%"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$1,110,439,200",
+       "$93,849,700",
+       "$22,985,504",
+       "9.52%"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$1,177,626,000",
+       "$96,880,600",
+       "$22,670,064",
+       "9.22%"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "$1,217,975,700",
+       "$85,443,700",
+       "$19,252,440",
+       "7.92%"
+      ],
+      "label": "FY2008"
+     },
+     {
+      "cells": [
+       "$1,186,935,300",
+       "$81,254,700",
+       "$17,725,200",
+       "7.70%"
+      ],
+      "label": "FY2007"
+     },
+     {
+      "cells": [
+       "$1,172,156,400",
+       "$81,266,900",
+       "$17,031,900",
+       "7.74%"
+      ],
+      "label": "FY2006"
+     },
+     {
+      "cells": [
+       "$1,014,814,200",
+       "$73,174,900",
+       "$15,868,000",
+       "8.07%"
+      ],
+      "label": "FY2005"
+     },
+     {
+      "cells": [
+       "$908,570,200",
+       "$71,130,100",
+       "$16,455,400",
+       "8.79%"
+      ],
+      "label": "FY2004"
+     },
+     {
+      "cells": [
+       "$841,292,300",
+       "$68,510,400",
+       "$14,849,700",
+       "9.01%"
+      ],
+      "label": "FY2003"
+     },
+     {
+      "cells": [
+       "$661,373,500",
+       "$62,702,200",
+       "$15,492,500",
+       "10.57%"
+      ],
+      "label": "FY2002"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Commercial share"
+}

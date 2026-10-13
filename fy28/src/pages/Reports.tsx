@@ -416,8 +416,10 @@ export function Reports() {
           they are the same kind of thing: something this project wrote about the town's
           money. Which of them is computed on every build and which is prose with a
           verifier beside it is a fact about the report, and it belongs ON the report. */}
+      {/* A group whose reports have all moved to topic shelves is not drawn -- but the
+          shelves of its area still are, in its place. */}
       {d.groups.map(g => (<div key={g.key}>
-        <Section id={g.key}
+        {g.sections.some(sec => sec.ids.length) ? <Section id={g.key}
           eyebrow={g.key === 'school' ? 'Where most of the money goes'
                  : g.key === 'town' ? 'The other side of the ledger' : 'Method'}
           title={g.title}>
@@ -451,7 +453,7 @@ export function Reports() {
               </div>
             </div>
           ))}
-        </Section>
+        </Section> : null}
         {/* The two subject shelves follow the schools: most of what they cover is school
             money, and a reader looking for buses or sports has just passed the schools. */}
         {g.key === 'school' ? <TopicShelves area="school" />

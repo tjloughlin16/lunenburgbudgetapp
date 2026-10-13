@@ -1,0 +1,411 @@
+{
+ "category": "board-records",
+ "chart": {
+  "id": "board-composition-where",
+  "source": "/data/board-composition.json"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "26",
+     "unit": "",
+     "value": 26
+    },
+    "b": {
+     "text": "29",
+     "unit": "",
+     "value": 29
+    },
+    "n": {
+     "text": "60",
+     "unit": "",
+     "value": 60
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the town’s list of boards and committees, with each one’s charter size",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A heading is as the town prints it: some are single posts, and some, such as associate members, are parts of a board."
+    }
+   ],
+   "rests_on": [
+    "heads",
+    "single",
+    "three"
+   ],
+   "text": "Of 60 headings, 26 print a single holder and 29 print three or more."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    },
+    "b": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "c": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "coa",
+    "fc",
+    "sb",
+    "sc",
+    "held"
+   ],
+   "text": "The Council on Aging prints 11 holders; the Finance Committee 7, the Select Board 5."
+  }
+ ],
+ "facts": [
+  {
+   "id": "heads",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "headings with a name printed, FY2025"
+   },
+   "value": {
+    "text": "60",
+    "unit": "headings",
+    "value": 60
+   }
+  },
+  {
+   "id": "held",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "holders printed under them"
+   },
+   "value": {
+    "text": "182",
+    "unit": "holders",
+    "value": 182
+   }
+  },
+  {
+   "id": "coa",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Council on Aging, the largest"
+   },
+   "value": {
+    "text": "11",
+    "unit": "holders",
+    "value": 11
+   }
+  },
+  {
+   "id": "single",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "headings with a single holder"
+   },
+   "value": {
+    "text": "26",
+    "unit": "headings",
+    "value": 26
+   }
+  },
+  {
+   "id": "three",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "headings with three or more holders"
+   },
+   "value": {
+    "text": "29",
+    "unit": "headings",
+    "value": 29
+   }
+  },
+  {
+   "id": "sb",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Select Board"
+   },
+   "value": {
+    "text": "5",
+    "unit": "holders",
+    "value": 5
+   }
+  },
+  {
+   "id": "sc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "School Committee"
+   },
+   "value": {
+    "text": "4",
+    "unit": "holders",
+    "value": 4
+   }
+  },
+  {
+   "id": "fc",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Finance Committee"
+   },
+   "value": {
+    "text": "7",
+    "unit": "holders",
+    "value": 7
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "c": {
+    "text": "11",
+    "unit": "",
+    "value": 11
+   },
+   "h": {
+    "text": "182",
+    "unit": "",
+    "value": 182
+   },
+   "n": {
+    "text": "60",
+    "unit": "",
+    "value": 60
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The FY2025 listing prints 182 holders under 60 headings; the Council on Aging is largest, with 11."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-sizes",
+ "kind": "topic",
+ "path": "/board-records/board-sizes",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/town-personnel.csv",
+   "label": "Lunenburg Budget Project — town-personnel.csv (the officials listing, row by row)"
+  },
+  {
+   "href": "/docs/analyses/board-composition.md",
+   "label": "Lunenburg Budget Project — board-composition.md (how the boards are made up)"
+  },
+  {
+   "href": "/data/board-composition.json",
+   "label": "Lunenburg Budget Project — board-composition.json (seats, sizes and turnover)"
+  }
+ ],
+ "table": {
+  "caption": "Holders printed per heading, FY2025",
+  "views": [
+   {
+    "columns": [
+     "Holders printed"
+    ],
+    "key": "sizes",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Headings with four or more",
+    "note": "Filled seats only, as printed. Smaller headings are in the full listing.",
+    "rows": [
+     {
+      "cells": [
+       "11"
+      ],
+      "label": "COUNCIL ON AGING"
+     },
+     {
+      "cells": [
+       "8"
+      ],
+      "label": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC)"
+     },
+     {
+      "cells": [
+       "8"
+      ],
+      "label": "PUBLIC RECORDS ACCESS OFFICERS"
+     },
+     {
+      "cells": [
+       "7"
+      ],
+      "label": "CULTURAL COUNCIL"
+     },
+     {
+      "cells": [
+       "7"
+      ],
+      "label": "FINANCE COMMITTEE"
+     },
+     {
+      "cells": [
+       "7"
+      ],
+      "label": "LIBRARY TRUSTEES"
+     },
+     {
+      "cells": [
+       "7"
+      ],
+      "label": "LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "BOARD OF HEALTH"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "CONSERVATION COMMISSION"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "ECONOMIC DEVELOPMENT COMMITTEE"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "HOUSING AUTHORITY"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "SELECT BOARD"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "SEWER COMMISSION - 1/2"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "STORM WATER TASK FORCE"
+     },
+     {
+      "cells": [
+       "5"
+      ],
+      "label": "TOWN CLOCKWINDERS"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "AGRICULTURAL COMMISSION"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "ELECTION WORKERS"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "GREEN COMMUNITIES COMMITTEE"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "HISTORICAL COMMISSION"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "PARKS COMMISSION"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "PLANNING BOARD"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "PUBLIC ACCESS CABLE COMMITTEE"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "SCHOOL COMMITTEE"
+     },
+     {
+      "cells": [
+       "4"
+      ],
+      "label": "ZONING BOARD OF APPEALS"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Board sizes"
+}

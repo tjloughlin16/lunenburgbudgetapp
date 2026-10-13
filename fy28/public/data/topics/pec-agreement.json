@@ -1,0 +1,210 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "75%",
+     "unit": "",
+     "value": 75.0
+    },
+    "b": {
+     "text": "50%",
+     "unit": "",
+     "value": 50
+    }
+   },
+   "literals": [
+    "2026"
+   ],
+   "rests_on": [
+    "act",
+    "medex",
+    "end"
+   ],
+   "text": "The 2026 memorandum fixes the town’s share at 75% for active plans and 50% for Medex."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [
+      "2022"
+     ],
+     "text": "The agreement the Select Board approved in April 2022 is the likeliest candidate; nothing here states it."
+    }
+   ],
+   "rests_on": [
+    "base",
+    "first"
+   ],
+   "text": "It amends “the current in-force health insurance agreement”, which it does not attach."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "s21"
+   ],
+   "text": "No vote accepting the plan-design sections has been found in the record held."
+  }
+ ],
+ "facts": [
+  {
+   "id": "act",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "town share, active plans"
+   },
+   "value": {
+    "text": "75%",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  {
+   "id": "medex",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "town share, Medex"
+   },
+   "value": {
+    "text": "50%",
+    "unit": "",
+    "value": 50
+   }
+  },
+  {
+   "id": "partb",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a month toward a retiree’s Medicare Part B"
+   },
+   "value": {
+    "text": "$96",
+    "unit": "",
+    "value": 96
+   }
+  },
+  {
+   "id": "end",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the memorandum’s term ends"
+   },
+   "value": {
+    "text": "30 June 2029",
+    "unit": "",
+    "value": "2029-06-30"
+   }
+  },
+  {
+   "id": "first",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the earliest PEC agreement held"
+   },
+   "value": {
+    "text": "16 June 2008",
+    "unit": "",
+    "value": "2008-06-16"
+   }
+  },
+  {
+   "closes": "the health insurance agreement in force before July 2026, which the memorandum amends and does not attach",
+   "id": "base",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2026"
+    ],
+    "text": "the agreement the 2026 memorandum amends"
+   },
+   "value": null
+  },
+  {
+   "closes": "a Town Meeting or Select Board vote accepting c.32B §§21–23, if one exists",
+   "id": "s21",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "c.32B",
+     "§§21–23"
+    ],
+    "text": "a vote accepting c.32B §§21–23"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "75%",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  "literals": [
+   "30 June 2029"
+  ],
+  "text": "The town pays 75% of active premiums under a PEC agreement that runs to 30 June 2029."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "pec-agreement",
+ "kind": "topic",
+ "path": "/health-insurance/pec-agreement",
+ "said": [
+  {
+   "board": "Select Board",
+   "date": "2011-03-01",
+   "href": "/docs/minutes/text/select-board/2011-03-01-minutes-4777.txt",
+   "label": "Select Board minutes, 2011-03-01",
+   "quote": "as of July 1st we'll be going to 75/25 of cost sharing split between the town and employees"
+  },
+  {
+   "board": "Select Board",
+   "date": "2022-04-12",
+   "href": "/docs/minutes/text/select-board/2022-04-12-minutes-5316.txt",
+   "label": "Select Board minutes, 2022-04-12",
+   "quote": "The new agreement starts July 1 and provides another health insurance plan option (Blue Cross Select). It provides a smaller network of providers and a lower cost."
+  }
+ ],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf",
+   "label": "Memorandum of Agreement, Town of Lunenburg and Lunenburg Public Employee Committee, 1 July 2026 to 30 June 2029 (records request)"
+  },
+  {
+   "href": "/docs/data/pec-history.csv",
+   "label": "Lunenburg Budget Project — pec-history.csv (the PEC agreement’s history, quoted)"
+  },
+  {
+   "href": "/data/health-options.json",
+   "label": "Lunenburg Budget Project — health-options.json (the c.32B menu and every town’s spending)"
+  }
+ ],
+ "table": null,
+ "title": "PEC agreement"
+}

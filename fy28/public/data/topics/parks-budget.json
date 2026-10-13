@@ -1,0 +1,518 @@
+{
+ "category": "parks",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "c": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "r": {
+     "text": "4.7%",
+     "unit": "",
+     "value": 4.655751379990436
+    }
+   },
+   "literals": [
+    "FY2010",
+    "FY2026"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Fee funds also pay for the parks and are not in this line, so a rise may partly be cost moving off the fees. Nothing here tests that."
+    }
+   ],
+   "rests_on": [
+    "v10",
+    "v26",
+    "rate",
+    "cap"
+   ],
+   "text": "The Parks budget grew 4.7% a year from FY2010 to FY2026, against a 2.5% levy limit."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$92,898",
+     "unit": "",
+     "value": 92898.0
+    },
+    "b": {
+     "text": "$72,898",
+     "unit": "",
+     "value": 72898.0
+    }
+   },
+   "literals": [
+    "FY2020"
+   ],
+   "notes": [
+    {
+     "closes": "the FY2020 Parks budget request, or the Town Manager’s FY2020 budget message",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2020"
+     ],
+     "text": "What the added money was for is not stated beside the vote."
+    }
+   ],
+   "rests_on": [
+    "v19",
+    "v20"
+   ],
+   "text": "The largest one-year step was FY2020: $92,898, up from $72,898."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$99,826",
+     "unit": "",
+     "value": 99826.04
+    },
+    "b": {
+     "text": "$97,479",
+     "unit": "",
+     "value": 97479.44
+    },
+    "c": {
+     "text": "$111,312",
+     "unit": "",
+     "value": 111312.3
+    },
+    "d": {
+     "text": "$111,495",
+     "unit": "",
+     "value": 111495.2
+    }
+   },
+   "literals": [
+    "FY2023",
+    "FY2024"
+   ],
+   "notes": [
+    {
+     "closes": "the MUNIS original-budget report for department 650, FY2023 and FY2024",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2023",
+      "FY2024",
+      "650"
+     ],
+     "text": "Nothing here says which is right; the workbook was assembled by hand from MUNIS exports."
+    }
+   ],
+   "rests_on": [
+    "wb23",
+    "ar23",
+    "wb24",
+    "ar24"
+   ],
+   "text": "Workbook and printed vote differ: FY2023 $99,826 against $97,479; FY2024 $111,312 against $111,495."
+  }
+ ],
+ "facts": [
+  {
+   "id": "v26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "voted for Parks, FY2026 (ledger, original budget)"
+   },
+   "value": {
+    "text": "$134,434",
+    "unit": "",
+    "value": 134433.6
+   }
+  },
+  {
+   "id": "v10",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2010"
+    ],
+    "text": "voted for Parks, FY2010 (Finance Committee workbook)"
+   },
+   "value": {
+    "text": "$64,908",
+    "unit": "",
+    "value": 64908.0
+   }
+  },
+  {
+   "id": "grew",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026",
+     "FY2010"
+    ],
+    "text": "more in FY2026 than in FY2010 (ours)"
+   },
+   "value": {
+    "text": "107%",
+    "unit": "",
+    "value": 107.11406914401924
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2010",
+     "FY2026"
+    ],
+    "text": "a year, compounded, FY2010 to FY2026 (ours)"
+   },
+   "value": {
+    "text": "4.7%",
+    "unit": "",
+    "value": 4.655751379990436
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, the levy limit’s growth before new growth"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "v19",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2019"
+    ],
+    "text": "voted for Parks, FY2019 (workbook)"
+   },
+   "value": {
+    "text": "$72,898",
+    "unit": "",
+    "value": 72898.0
+   }
+  },
+  {
+   "id": "v20",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2020"
+    ],
+    "text": "voted for Parks, FY2020 (workbook)"
+   },
+   "value": {
+    "text": "$92,898",
+    "unit": "",
+    "value": 92898.0
+   }
+  },
+  {
+   "id": "wb23",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "FY2023 budget in the workbook"
+   },
+   "value": {
+    "text": "$99,826",
+    "unit": "",
+    "value": 99826.04
+   }
+  },
+  {
+   "id": "ar23",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "FY2023 vote as the annual report prints it"
+   },
+   "value": {
+    "text": "$97,479",
+    "unit": "",
+    "value": 97479.44
+   }
+  },
+  {
+   "id": "wb24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "FY2024 budget in the workbook"
+   },
+   "value": {
+    "text": "$111,312",
+    "unit": "",
+    "value": 111312.3
+   }
+  },
+  {
+   "id": "ar24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "FY2024 vote as the annual report prints it"
+   },
+   "value": {
+    "text": "$111,495",
+    "unit": "",
+    "value": 111495.2
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$134,434",
+    "unit": "",
+    "value": 134433.6
+   },
+   "b": {
+    "text": "$64,908",
+    "unit": "",
+    "value": 64908.0
+   }
+  },
+  "literals": [
+   "FY2026",
+   "FY2010"
+  ],
+  "text": "The Parks budget voted for FY2026 was $134,434, against $64,908 in FY2010."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "parks-budget",
+ "kind": "topic",
+ "path": "/parks/parks-budget",
+ "said": [],
+ "shelves": [
+  "parks"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx"
+  },
+  {
+   "href": "/docs/data/gl-history.csv",
+   "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee workbook, one row an account)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/data/report-appropriations.csv",
+   "label": "Lunenburg Budget Project — report-appropriations.csv (the omnibus budgets, line by line)"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "The Parks budget as voted, by year",
+  "views": [
+   {
+    "columns": [
+     "Finance Committee workbook",
+     "Annual report vote",
+     "MUNIS ledger"
+    ],
+    "key": "voted",
+    "kinds": [
+     "stated",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Voted",
+    "note": "The workbook’s original budget for department 650, summed over its 16 accounts; the annual report’s omnibus line where it was read and cited; FY2026 from the MUNIS period-12 report. Votes, not spending.",
+    "rows": [
+     {
+      "cells": [
+       null,
+       null,
+       "$134,434"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$117,247",
+       "$117,247",
+       null
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$111,312",
+       "$111,495",
+       null
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$99,826",
+       "$97,479",
+       null
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$95,706",
+       null,
+       null
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$95,690",
+       null,
+       null
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$92,898",
+       null,
+       null
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$72,898",
+       null,
+       null
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$71,348",
+       null,
+       null
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$71,348",
+       null,
+       null
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$71,974",
+       null,
+       null
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$70,900",
+       null,
+       null
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$69,325",
+       null,
+       null
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$69,355",
+       null,
+       null
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$68,414",
+       null,
+       null
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$67,524",
+       null,
+       null
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$64,908",
+       null,
+       null
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Parks budget"
+}

@@ -1,0 +1,296 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$3,713,520",
+    "unit": "",
+    "value": 3713520.32
+   },
+   "b": {
+    "text": "$3,701,195",
+    "unit": "",
+    "value": 3701195.0
+   },
+   "c": {
+    "text": "4.3%",
+    "unit": "",
+    "value": 4.313975384697133
+   },
+   "d": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  "literals": [
+   "FY2026",
+   "FY2011"
+  ],
+  "text": "The town budgeted $3,713,520 for its insurance department in FY2026, and the schools $3,701,195 on their own health line. The department grew 4.3% a year from FY2011, against a 2.5% levy cap."
+ },
+ "category": "health-insurance",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-insurance",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "4.3%",
+      "unit": "",
+      "value": 4.313975384697133
+     },
+     "b": {
+      "text": "2.5%",
+      "unit": "",
+      "value": 2.5
+     }
+    },
+    "literals": [
+     "FY2011"
+    ],
+    "rests_on": [
+     "h-rate",
+     "h-cap",
+     "h-dept"
+    ],
+    "text": "The town department grew 4.3% a year from FY2011, against a 2.5% levy cap."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$1,521,536",
+      "unit": "",
+      "value": 1521535.59
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-ret",
+     "h-act"
+    ],
+    "text": "School retiree health, $1,521,536, sits in the town’s budget, not the schools’."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-whose",
+     "h-dept"
+    ],
+    "text": "Whether the town’s own health lines cover school staff is not split out."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "301 of 343",
+      "unit": "",
+      "value": 301
+     }
+    },
+    "literals": [
+     "FY2024"
+    ],
+    "rests_on": [
+     "h-rank"
+    ],
+    "text": "By the state’s figures Lunenburg ranks 301 of 343; its FY2024 figure counted more accounts."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "7",
+      "unit": "",
+      "value": 7
+     }
+    },
+    "literals": [
+     "32B"
+    ],
+    "rests_on": [
+     "h-can",
+     "h-saves"
+    ],
+    "text": "Chapter 32B leaves 7 routes open; none is priced in any document held."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-dept",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2026"
+       ],
+       "text": "town insurance department, FY2026"
+      },
+      "value": {
+       "text": "$3,713,520",
+       "unit": "",
+       "value": 3713520.32
+      }
+     },
+     {
+      "id": "h-act",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2026"
+       ],
+       "text": "school department health line, FY2026"
+      },
+      "value": {
+       "text": "$3,701,195",
+       "unit": "",
+       "value": 3701195.0
+      }
+     },
+     {
+      "id": "h-ret",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "school retirees, in the town department"
+      },
+      "value": {
+       "text": "$1,521,536",
+       "unit": "",
+       "value": 1521535.59
+      }
+     },
+     {
+      "id": "h-rise",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "1 July 2026"
+       ],
+       "text": "premium increase from 1 July 2026"
+      },
+      "value": {
+       "text": "5.38%",
+       "unit": "",
+       "value": 5.38
+      }
+     }
+    ],
+    "title": "What is budgeted"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-rate",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2011",
+        "FY2026"
+       ],
+       "text": "a year, the town department, FY2011-FY2026"
+      },
+      "value": {
+       "text": "4.3%",
+       "unit": "",
+       "value": 4.313975384697133
+      }
+     },
+     {
+      "id": "h-cap",
+      "kind": "statute",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "a year the levy may rise, before new growth"
+      },
+      "value": {
+       "text": "2.5%",
+       "unit": "",
+       "value": 2.5
+      }
+     },
+     {
+      "id": "h-rank",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2015",
+        "FY2025"
+       ],
+       "text": "place by growth, FY2015-FY2025, slowest first"
+      },
+      "value": {
+       "text": "301 of 343",
+       "unit": "municipalities",
+       "value": 301
+      }
+     }
+    ],
+    "title": "How fast it grows"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-can",
+      "kind": "statute",
+      "label": {
+       "figures": {},
+       "literals": [
+        "32B"
+       ],
+       "text": "routes open under Chapter 32B"
+      },
+      "value": {
+       "text": "7",
+       "unit": "routes",
+       "value": 7
+      }
+     },
+     {
+      "closes": "the town’s Chapter 32B enrollment schedule, by department",
+      "id": "h-whose",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "school staff inside the town’s own lines"
+      },
+      "value": null
+     },
+     {
+      "closes": "a premium quote for Lunenburg’s enrolment, plan by plan",
+      "id": "h-saves",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "what any route would save"
+      },
+      "value": null
+     }
+    ],
+    "title": "What is not shown"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/health-insurance",
+ "shelves": [
+  "health-insurance"
+ ],
+ "table": null,
+ "title": "Health insurance costs"
+}

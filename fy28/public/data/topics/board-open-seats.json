@@ -1,0 +1,395 @@
+{
+ "category": "board-records",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "b": {
+     "text": "18",
+     "unit": "",
+     "value": 18
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pers-v",
+    "vac",
+    "app",
+    "ele"
+   ],
+   "text": "The Personnel Committee accounts for 5 of the 18 seats printed empty."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "35",
+     "unit": "",
+     "value": 35
+    },
+    "b": {
+     "text": "34",
+     "unit": "",
+     "value": 34
+    },
+    "c": {
+     "text": "33",
+     "unit": "",
+     "value": 33
+    },
+    "x": {
+     "text": "2026",
+     "unit": "year",
+     "value": 2026
+    },
+    "y": {
+     "text": "2027",
+     "unit": "year",
+     "value": 2027
+    },
+    "z": {
+     "text": "2028",
+     "unit": "year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "text": "The report prints 35 terms ending in 2026, 34 in 2027 and 33 in 2028."
+  },
+  {
+   "figures": {
+    "x": {
+     "text": "2026",
+     "unit": "year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "e1",
+    "today"
+   ],
+   "text": "The 2026 terms have come up since the report was printed; it cannot say who holds those seats now."
+  }
+ ],
+ "facts": [
+  {
+   "id": "vac",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "seats printed empty, FY2025 listing"
+   },
+   "value": {
+    "text": "18",
+    "unit": "seats",
+    "value": 18
+   }
+  },
+  {
+   "id": "heads",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "headings with a seat printed empty"
+   },
+   "value": {
+    "text": "12",
+    "unit": "headings",
+    "value": 12
+   }
+  },
+  {
+   "id": "app",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them under the appointed officials"
+   },
+   "value": {
+    "text": "15",
+    "unit": "seats",
+    "value": 15
+   }
+  },
+  {
+   "id": "ele",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them under the elected officials"
+   },
+   "value": {
+    "text": "3",
+    "unit": "seats",
+    "value": 3
+   }
+  },
+  {
+   "id": "pers-v",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "printed empty on the Personnel Committee"
+   },
+   "value": {
+    "text": "5",
+    "unit": "seats",
+    "value": 5
+   }
+  },
+  {
+   "id": "e1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2026",
+      "unit": "year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "filled seats whose term ends in 2026"
+   },
+   "value": {
+    "text": "35",
+    "unit": "seats",
+    "value": 35
+   }
+  },
+  {
+   "id": "e2",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2027",
+      "unit": "year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "filled seats whose term ends in 2027"
+   },
+   "value": {
+    "text": "34",
+    "unit": "seats",
+    "value": 34
+   }
+  },
+  {
+   "id": "e3",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "2028",
+      "unit": "year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "filled seats whose term ends in 2028"
+   },
+   "value": {
+    "text": "33",
+    "unit": "seats",
+    "value": 33
+   }
+  },
+  {
+   "closes": "a current list of board vacancies from the town, dated",
+   "id": "today",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which seats are open today"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "15",
+    "unit": "",
+    "value": 15
+   },
+   "e": {
+    "text": "3",
+    "unit": "",
+    "value": 3
+   },
+   "h": {
+    "text": "12",
+    "unit": "",
+    "value": 12
+   },
+   "v": {
+    "text": "18",
+    "unit": "",
+    "value": 18
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "The FY2025 annual report prints 18 seats empty under 12 headings: 15 appointed, 3 elected."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-open-seats",
+ "kind": "topic",
+ "path": "/board-records/board-open-seats",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — annual town report, officials listing — 4130-fy-2025-annual-town-report.pdf"
+  },
+  {
+   "href": "/docs/analyses/open-seats.md",
+   "label": "Lunenburg Budget Project — open-seats.md (seats empty and terms ending)"
+  },
+  {
+   "href": "/data/open-seats.json",
+   "label": "Lunenburg Budget Project — open-seats.json (seats printed empty, terms by year)"
+  }
+ ],
+ "table": {
+  "caption": "Seats printed empty, FY2025 annual report",
+  "views": [
+   {
+    "columns": [
+     "Seats empty",
+     "Section"
+    ],
+    "key": "vacancies",
+    "kinds": [
+     "ledger",
+     "stated"
+    ],
+    "label": "By heading",
+    "note": "Headings as the town prints them. Two are posts rather than boards. Names of seat holders are in the full list, not here.",
+    "rows": [
+     {
+      "cells": [
+       "5",
+       "appointed"
+      ],
+      "label": "PERSONNEL COMMITTEE"
+     },
+     {
+      "cells": [
+       "2",
+       "appointed"
+      ],
+      "label": "GREEN COMMUNITIES COMMITTEE"
+     },
+     {
+      "cells": [
+       "2",
+       "appointed"
+      ],
+      "label": "MONTACHUSETT JOINT TRANSPORTATION COMMITTEE"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC)"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "Associate Members"
+     },
+     {
+      "cells": [
+       "1",
+       "elected"
+      ],
+      "label": "PARKS COMMISSION"
+     },
+     {
+      "cells": [
+       "1",
+       "elected"
+      ],
+      "label": "PLANNING BOARD"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "POUND KEEPER"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "PUBLIC ACCESS CABLE COMMITTEE"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "RECREATION DIRECTOR"
+     },
+     {
+      "cells": [
+       "1",
+       "elected"
+      ],
+      "label": "TRUST FUND COMMISSION"
+     },
+     {
+      "cells": [
+       "1",
+       "appointed"
+      ],
+      "label": "ZONING BOARD OF APPEALS"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Open seats"
+}

@@ -1,0 +1,593 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "b": {
+     "text": "47.7%",
+     "unit": "",
+     "value": 47.72772375471324
+    },
+    "r": {
+     "text": "26.6%",
+     "unit": "",
+     "value": 26.615621529018384
+    },
+    "v": {
+     "text": "101.3%",
+     "unit": "",
+     "value": 101.30677241223651
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "v0",
+    "v1",
+    "b0",
+    "b1",
+    "vch",
+    "bch",
+    "r0",
+    "r1"
+   ],
+   "text": "In ten years the average home’s value rose 101.3% and its bill 47.7%; the rate fell 26.6%."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "2½",
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "rests_on": [
+    "r0",
+    "r1"
+   ],
+   "text": "Proposition 2½ caps the levy, not values: the rate is the levy spread over total value."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,179",
+     "unit": "",
+     "value": 1179.0
+    },
+    "b": {
+     "text": "$7,444",
+     "unit": "",
+     "value": 7444.0
+    },
+    "p": {
+     "text": "531%",
+     "unit": "",
+     "value": 531.3825275657337
+    },
+    "y": {
+     "text": "FY1988",
+     "unit": "fiscal year",
+     "value": 1988
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the Assessors’ commitment list, by parcel, with exemptions",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "This is the town-wide average home. Any one household’s bill depends on its own value and any exemption or abatement it holds."
+    }
+   ],
+   "rests_on": [
+    "bfirst",
+    "b1"
+   ],
+   "text": "Since FY1988 the average bill has risen 531%, from $1,179 to $7,444."
+  }
+ ],
+ "facts": [
+  {
+   "id": "b1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "average single-family bill, FY2026"
+   },
+   "value": {
+    "text": "$7,444",
+    "unit": "",
+    "value": 7444.0
+   }
+  },
+  {
+   "id": "v1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "average single-family value, FY2026"
+   },
+   "value": {
+    "text": "$517,296",
+    "unit": "",
+    "value": 517296.0
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "$1,000",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "tax rate per $1,000, FY2026 (derived)"
+   },
+   "value": {
+    "text": "$14.39",
+    "unit": "per $1,000 of value",
+    "value": 14.390213726763786
+   }
+  },
+  {
+   "id": "b0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "average single-family bill, FY2016"
+   },
+   "value": {
+    "text": "$5,039",
+    "unit": "",
+    "value": 5039.0
+   }
+  },
+  {
+   "id": "v0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "average single-family value, FY2016"
+   },
+   "value": {
+    "text": "$256,969",
+    "unit": "",
+    "value": 256969.0
+   }
+  },
+  {
+   "id": "r0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [
+     "$1,000",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "tax rate per $1,000, FY2016 (derived)"
+   },
+   "value": {
+    "text": "$19.61",
+    "unit": "per $1,000 of value",
+    "value": 19.609369223525015
+   }
+  },
+  {
+   "id": "bch",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "rise in the bill, ten years (our arithmetic)"
+   },
+   "value": {
+    "text": "47.7%",
+    "unit": "",
+    "value": 47.72772375471324
+   }
+  },
+  {
+   "id": "vch",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "rise in the value, ten years (our arithmetic)"
+   },
+   "value": {
+    "text": "101.3%",
+    "unit": "",
+    "value": 101.30677241223651
+   }
+  },
+  {
+   "id": "bfirst",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY1988",
+      "unit": "fiscal year",
+      "value": 1988
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "average bill, FY1988, the first year DLS publishes"
+   },
+   "value": {
+    "text": "$1,179",
+    "unit": "",
+    "value": 1179.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$7,444",
+    "unit": "",
+    "value": 7444.0
+   },
+   "b": {
+    "text": "47.7%",
+    "unit": "",
+    "value": 47.72772375471324
+   },
+   "r": {
+    "text": "26.6%",
+    "unit": "",
+    "value": 26.615621529018384
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The average single-family bill was $7,444 in FY2026, up 47.7% in ten years while the tax rate fell 26.6%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "average-tax-bill",
+ "kind": "topic",
+ "path": "/homes-and-taxes/average-tax-bill",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/AvgSingleFamTaxBill.xlsx",
+   "label": "Massachusetts DOR, Division of Local Services — AvgSingleFamTaxBill.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "The average single-family home and its bill, by year",
+  "views": [
+   {
+    "columns": [
+     "Average value",
+     "Tax rate",
+     "Average bill"
+    ],
+    "key": "bills",
+    "kinds": [
+     "ledger",
+     "stated",
+     "ledger"
+    ],
+    "label": "Last twenty years",
+    "note": "DLS Average Single-Family Tax Bill. The rate is derived, the bill divided by the average value, per thousand dollars.",
+    "rows": [
+     {
+      "cells": [
+       "$517,296",
+       "$14.39",
+       "$7,444"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$504,937",
+       "$14.36",
+       "$7,251"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$481,417",
+       "$14.10",
+       "$6,788"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$470,165",
+       "$14.62",
+       "$6,874"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$374,392",
+       "$17.19",
+       "$6,436"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$351,358",
+       "$17.74",
+       "$6,233"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$332,447",
+       "$18.12",
+       "$6,024"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$308,864",
+       "$18.68",
+       "$5,770"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "$282,996",
+       "$19.70",
+       "$5,575"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "$267,155",
+       "$19.98",
+       "$5,338"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$256,969",
+       "$19.61",
+       "$5,039"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$246,347",
+       "$18.32",
+       "$4,513"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$245,371",
+       "$17.99",
+       "$4,414"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$247,776",
+       "$17.30",
+       "$4,287"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$248,038",
+       "$16.83",
+       "$4,174"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$251,469",
+       "$16.16",
+       "$4,064"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$281,062",
+       "$14.20",
+       "$3,991"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "$298,662",
+       "$13.04",
+       "$3,895"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "$308,614",
+       "$12.23",
+       "$3,774"
+      ],
+      "label": "FY2008"
+     },
+     {
+      "cells": [
+       "$304,179",
+       "$12.13",
+       "$3,690"
+      ],
+      "label": "FY2007"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Average tax bill"
+}

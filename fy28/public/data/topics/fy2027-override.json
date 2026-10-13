@@ -1,0 +1,380 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "34.0%",
+     "unit": "",
+     "value": 33.962976955043445
+    },
+    "b": {
+     "text": "28.9%",
+     "unit": "",
+     "value": 28.91657229143073
+    }
+   },
+   "literals": [
+    "Tier 1",
+    "Tier 2"
+   ],
+   "rests_on": [
+    "y1",
+    "n1",
+    "y2",
+    "n2"
+   ],
+   "text": "Tier 1 drew 34.0% yes and Tier 2 28.9%, in the state’s record of the vote."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$506.95",
+     "unit": "",
+     "value": 506.95
+    },
+    "b": {
+     "text": "$7,444",
+     "unit": "",
+     "value": 7444
+    }
+   },
+   "literals": [
+    "Tier 1",
+    "Tier 2"
+   ],
+   "rests_on": [
+    "tax1",
+    "bill"
+   ],
+   "text": "The Town priced Tier 1 at $506.95 a year on the average home, on a $7,444 bill."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$689.35",
+     "unit": "",
+     "value": 689.35
+    },
+    "b": {
+     "text": "$175.88",
+     "unit": "",
+     "value": 175.88
+    }
+   },
+   "literals": [
+    "Tier 1",
+    "Tier 2"
+   ],
+   "rests_on": [
+    "tax2",
+    "levy"
+   ],
+   "text": "Tier 2 was priced at $689.35; both sit on top of the levy’s own $175.88 rise."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town Clerk’s certified results of the 16 May 2026 election",
+     "figures": {
+      "a": {
+       "text": "867",
+       "unit": "",
+       "value": 867
+      },
+      "b": {
+       "text": "1,753",
+       "unit": "",
+       "value": 1753
+      },
+      "c": {
+       "text": "760",
+       "unit": "",
+       "value": 760
+      },
+      "d": {
+       "text": "1,862",
+       "unit": "",
+       "value": 1862
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "Tier 1",
+      "Tier 2",
+      "16 May 2026"
+     ],
+     "text": "An unofficial tally quoted earlier on this site, 867 to 1,753 on Tier 1 and 760 to 1,862 on Tier 2, differs from the state’s record."
+    }
+   ],
+   "rests_on": [
+    "count-gap",
+    "y1"
+   ],
+   "text": "The state’s tally is shown; the Town’s certified count is not in this archive."
+  }
+ ],
+ "facts": [
+  {
+   "id": "t1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "16 May 2026",
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "Tier 1 question, 16 May 2026"
+   },
+   "value": {
+    "text": "$2,400,000",
+    "unit": "",
+    "value": 2400000
+   }
+  },
+  {
+   "id": "y1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "yes on Tier 1, the state’s record"
+   },
+   "value": {
+    "text": "899",
+    "unit": "votes",
+    "value": 899
+   }
+  },
+  {
+   "id": "n1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "no on Tier 1"
+   },
+   "value": {
+    "text": "1,748",
+    "unit": "votes",
+    "value": 1748
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "Tier 2 question, the same day"
+   },
+   "value": {
+    "text": "$3,300,000",
+    "unit": "",
+    "value": 3300000
+   }
+  },
+  {
+   "id": "y2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "yes on Tier 2"
+   },
+   "value": {
+    "text": "766",
+    "unit": "votes",
+    "value": 766
+   }
+  },
+  {
+   "id": "n2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "no on Tier 2"
+   },
+   "value": {
+    "text": "1,883",
+    "unit": "votes",
+    "value": 1883
+   }
+  },
+  {
+   "id": "tax1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "a year on the average home, Tier 1 (Town)"
+   },
+   "value": {
+    "text": "$506.95",
+    "unit": "",
+    "value": 506.95
+   }
+  },
+  {
+   "id": "tax2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "a year on the average home, Tier 2 (Town)"
+   },
+   "value": {
+    "text": "$689.35",
+    "unit": "",
+    "value": 689.35
+   }
+  },
+  {
+   "id": "levy",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the levy’s ordinary rise, same home, FY2027"
+   },
+   "value": {
+    "text": "$175.88",
+    "unit": "",
+    "value": 175.88
+   }
+  },
+  {
+   "id": "bill",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "average single-family tax bill, FY2026"
+   },
+   "value": {
+    "text": "$7,444",
+    "unit": "",
+    "value": 7444
+   }
+  },
+  {
+   "closes": "the Town Clerk’s certified results of the 16 May 2026 election",
+   "id": "count-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the Town’s certified count of the vote"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,400,000",
+    "unit": "",
+    "value": 2400000
+   },
+   "b": {
+    "text": "899",
+    "unit": "",
+    "value": 899
+   },
+   "c": {
+    "text": "1,748",
+    "unit": "",
+    "value": 1748
+   },
+   "d": {
+    "text": "$3,300,000",
+    "unit": "",
+    "value": 3300000
+   },
+   "e": {
+    "text": "766",
+    "unit": "",
+    "value": 766
+   },
+   "g": {
+    "text": "1,883",
+    "unit": "",
+    "value": 1883
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [
+   "16 May 2026"
+  ],
+  "text": "Both FY2027 override questions failed on 16 May 2026: $2,400,000 by 899 to 1,748, $3,300,000 by 766 to 1,883."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2027-override",
+ "kind": "topic",
+ "path": "/budget-options/fy2027-override",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dls/OverrideUnderrideVotes.xlsx",
+   "label": "Massachusetts Division of Local Services, Override and Underride Votes — OverrideUnderrideVotes.xlsx"
+  },
+  {
+   "href": "/docs/data/dls-override-votes.csv",
+   "label": "Lunenburg Budget Project — dls-override-votes.csv (every question the state records)"
+  },
+  {
+   "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "label": "Town of Lunenburg — FY27 budget release — 4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf"
+  }
+ ],
+ "table": null,
+ "title": "The FY2027 override"
+}

@@ -1,0 +1,400 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "b": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.0
+    },
+    "c": {
+     "text": "2.2",
+     "unit": "positions",
+     "value": 2.1924636237809825
+    },
+    "d": {
+     "text": "13.5%",
+     "unit": "",
+     "value": 13.522074887323743
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "pos",
+    "ten",
+    "head"
+   ],
+   "text": "Holding the line to 2.5% with 4.0% raises removes 2.2 positions a year; 13.5% in ten."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "b": {
+     "text": "$618,608",
+     "unit": "",
+     "value": 618608
+    },
+    "c": {
+     "text": "$930,273",
+     "unit": "",
+     "value": 930273
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cf28",
+    "act28",
+    "lea"
+   ],
+   "text": "Had the last three raises been 2.5% a year, the FY2028 gap would be $618,608, not $930,273."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,392,440",
+     "unit": "",
+     "value": 3392440
+    },
+    "b": {
+     "text": "$3,757,043",
+     "unit": "",
+     "value": 3757043
+    },
+    "y": {
+     "text": "FY2032",
+     "unit": "fiscal year",
+     "value": 2032
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cf32",
+    "act32"
+   ],
+   "text": "By FY2032 that path gives $3,392,440 instead of $3,757,043: lower, and still growing."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "2.4%",
+     "unit": "",
+     "value": 2.394555927164632
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "mid",
+    "pos"
+   ],
+   "text": "One path costs positions, the other pay: 2.4% less for a mid-scale teacher."
+  }
+ ],
+ "facts": [
+  {
+   "id": "pos",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "2.5%",
+      "unit": "",
+      "value": 2.5
+     },
+     "b": {
+      "text": "4.0%",
+      "unit": "",
+      "value": 4.0
+     }
+    },
+    "literals": [],
+    "text": "a year, line at 2.5%, pay at 4.0% (ours)"
+   },
+   "value": {
+    "text": "2.2 positions",
+    "unit": "positions",
+    "value": 2.1924636237809825
+   }
+  },
+  {
+   "id": "ten",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of positions gone in ten years, that way (ours)"
+   },
+   "value": {
+    "text": "13.5%",
+    "unit": "",
+    "value": 13.522074887323743
+   }
+  },
+  {
+   "id": "head",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "on the salary line, our average"
+   },
+   "value": {
+    "text": "150",
+    "unit": "positions",
+    "value": 150
+   }
+  },
+  {
+   "id": "lea",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "payroll under the teachers’ agreement (our sum)"
+   },
+   "value": {
+    "text": "$12,514,952",
+    "unit": "",
+    "value": 12514952
+   }
+  },
+  {
+   "id": "cf28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "2.5%",
+      "unit": "",
+      "value": 2.5
+     },
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "FY2028 gap had raises been 2.5% (ours)"
+   },
+   "value": {
+    "text": "$618,608",
+    "unit": "",
+    "value": 618608
+   }
+  },
+  {
+   "id": "act28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the FY2028 gap as projected (ours)"
+   },
+   "value": {
+    "text": "$930,273",
+    "unit": "",
+    "value": 930273
+   }
+  },
+  {
+   "id": "cf32",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2032",
+      "unit": "fiscal year",
+      "value": 2032
+     }
+    },
+    "literals": [],
+    "text": "FY2032 gap on the same path (ours)"
+   },
+   "value": {
+    "text": "$3,392,440",
+    "unit": "",
+    "value": 3392440
+   }
+  },
+  {
+   "id": "act32",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2032",
+      "unit": "fiscal year",
+      "value": 2032
+     }
+    },
+    "literals": [],
+    "text": "the FY2032 gap as projected (ours)"
+   },
+   "value": {
+    "text": "$3,757,043",
+    "unit": "",
+    "value": 3757043
+   }
+  },
+  {
+   "id": "mid",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "5"
+    ],
+    "text": "less pay, master’s step 5, on that path (ours)"
+   },
+   "value": {
+    "text": "2.4%",
+    "unit": "",
+    "value": 2.394555927164632
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   },
+   "b": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 4.0
+   },
+   "c": {
+    "text": "2.2",
+    "unit": "positions",
+    "value": 2.1924636237809825
+   }
+  },
+  "literals": [],
+  "text": "Held to 2.5% while pay rises 4.0%, the salary line loses 2.2 positions a year, by our arithmetic."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "salary-line-and-staffing",
+ "kind": "topic",
+ "path": "/budget-options/salary-line-and-staffing",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/contracts/txt/lea-teachers-2024-2027.txt",
+   "label": "Lunenburg Education Association agreement, 2024–2027 (text) — lea-teachers-2024-2027.txt"
+  },
+  {
+   "href": "/docs/contracts/data/lea-teacher-salary-schedule.csv",
+   "label": "Lunenburg Budget Project — the agreement’s salary scale, extracted — lea-teacher-salary-schedule.csv"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": {
+  "caption": "If the last three raises had been smaller",
+  "views": [
+   {
+    "columns": [
+     "Payroll lower by",
+     "FY2028 gap",
+     "FY2032 gap"
+    ],
+    "key": "cf",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Our arithmetic",
+    "note": "Ours: the teachers’ payroll in the FY27 budget lines, rebuilt as if each of the three scale increases had been the rate shown. Steps and lanes are left as they are.",
+    "rows": [
+     {
+      "cells": [
+       "—",
+       "$930,273",
+       "$3,757,043"
+      ],
+      "label": "as settled"
+     },
+     {
+      "cells": [
+       "$120,044",
+       "$805,427",
+       "$3,610,992"
+      ],
+      "label": "3.0% a year"
+     },
+     {
+      "cells": [
+       "$299,678",
+       "$618,608",
+       "$3,392,440"
+      ],
+      "label": "2.5% a year"
+     },
+     {
+      "cells": [
+       "$477,567",
+       "$433,603",
+       "$3,176,010"
+      ],
+      "label": "2.0% a year"
+     },
+     {
+      "cells": [
+       "$828,148",
+       "$68,999",
+       "$2,749,475"
+      ],
+      "label": "1.0% a year"
+     },
+     {
+      "cells": [
+       "$1,171,855",
+       "-$288,456",
+       "$2,331,302"
+      ],
+      "label": "0.0% a year"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Salary line and staffing"
+}

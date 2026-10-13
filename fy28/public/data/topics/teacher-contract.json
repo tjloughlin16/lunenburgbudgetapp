@@ -1,0 +1,411 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "10.33%",
+     "unit": "",
+     "value": 10.330999999999978
+    }
+   },
+   "literals": [
+    "2.5%",
+    "4%",
+    "3.5%"
+   ],
+   "rests_on": [
+    "c25",
+    "c26",
+    "c27",
+    "comp"
+   ],
+   "text": "The agreement raised the scale 2.5%, 4% and 3.5%: 10.33% compounded."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.0
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "assumed",
+    "next-gap"
+   ],
+   "text": "Our model assumes salaries grow 4.0% a year from FY2028; that is our assumption."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$730,050",
+     "unit": "",
+     "value": 730050
+    },
+    "b": {
+     "text": "$1,063,755",
+     "unit": "",
+     "value": 1063755
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [
+    "2.5%",
+    "5.0%"
+   ],
+   "rests_on": [
+    "at25",
+    "at5",
+    "half"
+   ],
+   "text": "At a 2.5% settlement the FY2028 gap would be $730,050; at 5.0%, $1,063,755 (ours)."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "low",
+    "high"
+   ],
+   "text": "A lower settlement is borne in pay by the people on the scale."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ends",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the teachers’ agreement runs to"
+   },
+   "value": {
+    "text": "30 June 2027",
+    "unit": "date",
+    "value": 2027
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "scale increase, FY2025"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "scale increase, FY2026"
+   },
+   "value": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 4.0
+   }
+  },
+  {
+   "id": "c27",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "scale increase, FY2027"
+   },
+   "value": {
+    "text": "3.5%",
+    "unit": "",
+    "value": 3.5
+   }
+  },
+  {
+   "id": "comp",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the three, compounded"
+   },
+   "value": {
+    "text": "10.33%",
+    "unit": "",
+    "value": 10.330999999999978
+   }
+  },
+  {
+   "id": "low",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "bachelor’s, first step, FY2027"
+   },
+   "value": {
+    "text": "$54,670",
+    "unit": "",
+    "value": 54670
+   }
+  },
+  {
+   "id": "high",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "doctorate, top step, FY2027"
+   },
+   "value": {
+    "text": "$110,287",
+    "unit": "",
+    "value": 110287
+   }
+  },
+  {
+   "id": "assumed",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "yearly salary growth our model assumes"
+   },
+   "value": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 4.0
+   }
+  },
+  {
+   "id": "half",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "FY2028 gap, per half point settled (ours)"
+   },
+   "value": {
+    "text": "$66,741",
+    "unit": "",
+    "value": 66741
+   }
+  },
+  {
+   "id": "at25",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [
+     "2.5%"
+    ],
+    "text": "FY2028 gap at a 2.5% settlement (ours)"
+   },
+   "value": {
+    "text": "$730,050",
+    "unit": "",
+    "value": 730050
+   }
+  },
+  {
+   "id": "at5",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [
+     "5.0%"
+    ],
+    "text": "FY2028 gap at 5.0% (ours)"
+   },
+   "value": {
+    "text": "$1,063,755",
+    "unit": "",
+    "value": 1063755
+   }
+  },
+  {
+   "closes": "the successor agreement, or bargaining parameters adopted in open session",
+   "id": "next-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the terms of the next agreement"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$66,741",
+    "unit": "",
+    "value": 66741
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [
+   "30 June 2027"
+  ],
+  "text": "The teachers’ agreement ends 30 June 2027; each half point on the next moves the FY2028 gap $66,741 (ours)."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "teacher-contract",
+ "kind": "topic",
+ "path": "/budget-options/teacher-contract",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/contracts/txt/lea-teachers-2024-2027.txt",
+   "label": "Lunenburg Education Association agreement, 2024–2027 (text) — lea-teachers-2024-2027.txt"
+  },
+  {
+   "href": "/docs/contracts/data/lea-teacher-salary-schedule.csv",
+   "label": "Lunenburg Budget Project — the agreement’s salary scale, extracted — lea-teacher-salary-schedule.csv"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": {
+  "caption": "The gap at each settlement, everything else held",
+  "views": [
+   {
+    "columns": [
+     "FY2028 gap",
+     "FY2032 gap"
+    ],
+    "key": "settle",
+    "kinds": [
+     "stated",
+     "stated"
+    ],
+    "label": "Our arithmetic",
+    "note": "Ours: the projection with only the salary growth rate changed. The rate applies to the whole salary line, not only the teachers’ scale.",
+    "rows": [
+     {
+      "cells": [
+       "$396,344",
+       "$865,114"
+      ],
+      "label": "0.0%"
+     },
+     {
+      "cells": [
+       "$730,050",
+       "$2,619,179"
+      ],
+      "label": "2.5%"
+     },
+     {
+      "cells": [
+       "$796,791",
+       "$2,991,139"
+      ],
+      "label": "3.0%"
+     },
+     {
+      "cells": [
+       "$863,532",
+       "$3,370,391"
+      ],
+      "label": "3.5%"
+     },
+     {
+      "cells": [
+       "$930,273",
+       "$3,757,043"
+      ],
+      "label": "4.0%"
+     },
+     {
+      "cells": [
+       "$1,063,755",
+       "$4,552,980"
+      ],
+      "label": "5.0%"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Teacher contract"
+}

@@ -1,0 +1,404 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "p": {
+     "text": "87.0%",
+     "unit": "",
+     "value": 86.96741854636592
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the Assessors’ commitment list, by parcel, with exemptions",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "These bills are value times the rate with no exemption or abatement applied, so they are our estimate, not anybody’s bill."
+    }
+   ],
+   "rests_on": [
+    "old",
+    "new",
+    "ratio",
+    "vold",
+    "vnew",
+    "rate"
+   ],
+   "text": "Long-held homes pay 87.0% of what recently bought ones do: the bill follows today’s value."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "1,213",
+     "unit": "",
+     "value": 1213
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the town census, which records when each household arrived",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A transfer into a trust or within a family resets the date without anybody moving."
+    }
+   ],
+   "rests_on": [
+    "nom",
+    "nomsh"
+   ],
+   "text": "A third of last deeds, 1,213, are nominal transfers, so a deed year is not an arrival year."
+  }
+ ],
+ "facts": [
+  {
+   "id": "old",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1986",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median bill, homes last deeded before 1986 (ours)"
+   },
+   "value": {
+    "text": "$5,992",
+    "unit": "",
+    "value": 5991.996
+   }
+  },
+  {
+   "id": "new",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2021",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median bill, homes deeded since 2021 (ours)"
+   },
+   "value": {
+    "text": "$6,890",
+    "unit": "",
+    "value": 6889.932
+   }
+  },
+  {
+   "id": "ratio",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "the first against the second (ours)"
+   },
+   "value": {
+    "text": "87.0%",
+    "unit": "",
+    "value": 86.96741854636592
+   }
+  },
+  {
+   "id": "vold",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1986",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median assessed value, deeded before 1986"
+   },
+   "value": {
+    "text": "$416,400",
+    "unit": "",
+    "value": 416400.0
+   }
+  },
+  {
+   "id": "vnew",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2021",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "median assessed value, deeded since 2021"
+   },
+   "value": {
+    "text": "$478,800",
+    "unit": "",
+    "value": 478800.0
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "$1,000",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "tax rate per $1,000, FY2026"
+   },
+   "value": {
+    "text": "$14.39",
+    "unit": "per $1,000 of value",
+    "value": 14.39
+   }
+  },
+  {
+   "id": "nom",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "last deeds that were nominal transfers"
+   },
+   "value": {
+    "text": "1,213",
+    "unit": "deeds",
+    "value": 1213
+   }
+  },
+  {
+   "id": "nomsh",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "3,649",
+      "unit": "",
+      "value": 3649
+     }
+    },
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "of 3,649 single-family homes (our arithmetic)"
+   },
+   "value": {
+    "text": "33.2%",
+    "unit": "",
+    "value": 33.24198410523431
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$5,992",
+    "unit": "",
+    "value": 5991.996
+   },
+   "b": {
+    "text": "$6,890",
+    "unit": "",
+    "value": 6889.932
+   }
+  },
+  "literals": [
+   "1986",
+   "2021"
+  ],
+  "text": "A home last deeded before 1986 would pay a median $5,992 before exemptions; one deeded since 2021, $6,890."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "bill-by-deed-year",
+ "kind": "topic",
+ "path": "/homes-and-taxes/bill-by-deed-year",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-massgis/L3_SHP_M162_LUNENBURG.zip",
+   "label": "MassGIS, Commonwealth of Massachusetts — L3_SHP_M162_LUNENBURG.zip"
+  }
+ ],
+ "table": {
+  "caption": "Single-family homes by the year of their last deed, FY2026",
+  "views": [
+   {
+    "columns": [
+     "Homes",
+     "Median value",
+     "Median bill",
+     "Median last sale"
+    ],
+    "key": "deeds",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated",
+     "ledger"
+    ],
+    "label": "The assessor’s parcel file",
+    "note": "MassGIS Level 3 parcels, single-family use codes. The bill is our estimate: value times the year’s rate, no exemption applied. The sale price leaves out nominal transfers.",
+    "rows": [
+     {
+      "cells": [
+       "1,093",
+       "$478,800",
+       "$6,890",
+       "$460,000"
+      ],
+      "label": "2021 or later"
+     },
+     {
+      "cells": [
+       "915",
+       "$472,400",
+       "$6,798",
+       "$320,000"
+      ],
+      "label": "2016–2020"
+     },
+     {
+      "cells": [
+       "422",
+       "$511,400",
+       "$7,359",
+       "$254,450"
+      ],
+      "label": "2011–2015"
+     },
+     {
+      "cells": [
+       "284",
+       "$465,450",
+       "$6,698",
+       "$253,000"
+      ],
+      "label": "2006–2010"
+     },
+     {
+      "cells": [
+       "528",
+       "$479,800",
+       "$6,904",
+       "$208,030"
+      ],
+      "label": "1996–2005"
+     },
+     {
+      "cells": [
+       "232",
+       "$463,850",
+       "$6,675",
+       "$125,000"
+      ],
+      "label": "1986–1995"
+     },
+     {
+      "cells": [
+       "175",
+       "$416,400",
+       "$5,992",
+       "$32,500"
+      ],
+      "label": "before 1986"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Bill by deed year"
+}

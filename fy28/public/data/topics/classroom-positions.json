@@ -1,0 +1,244 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "10.4",
+     "unit": "positions",
+     "value": 10.441243153452456
+    },
+    "b": {
+     "text": "52.3",
+     "unit": "positions",
+     "value": 52.3138524737362
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    },
+    "z": {
+     "text": "FY2033",
+     "unit": "fiscal year",
+     "value": 2033
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "p28",
+    "plast",
+    "cpf"
+   ],
+   "text": "The FY2028 gap equals 10.4 average positions; by FY2033 it equals 52.3 (ours)."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4",
+     "unit": "",
+     "value": 4.0
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [
+    "27-30"
+   ],
+   "rests_on": [
+    "cut4",
+    "size"
+   ],
+   "text": "FY2027 cut 4 classroom teachers; the district wrote that rooms would reach 27-30."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "size-gap"
+   ],
+   "text": "No class sizes by school and grade are published, so a cut’s effect is not measured here."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "cut4"
+   ],
+   "text": "The cut falls on the students in larger classes and the staff whose posts go."
+  }
+ ],
+ "facts": [
+  {
+   "id": "cpf",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a position, our catalogue’s average cost"
+   },
+   "value": {
+    "text": "$89,096",
+    "unit": "",
+    "value": 89096
+   }
+  },
+  {
+   "id": "p28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the FY2028 gap, in positions (ours)"
+   },
+   "value": {
+    "text": "10.4 positions",
+    "unit": "positions",
+    "value": 10.441243153452456
+   }
+  },
+  {
+   "id": "plast",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2033",
+      "unit": "fiscal year",
+      "value": 2033
+     }
+    },
+    "literals": [],
+    "text": "the FY2033 gap, in positions (ours)"
+   },
+   "value": {
+    "text": "52.3 positions",
+    "unit": "positions",
+    "value": 52.3138524737362
+   }
+  },
+  {
+   "id": "head",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "on the salary line at that average (ours)"
+   },
+   "value": {
+    "text": "150",
+    "unit": "positions",
+    "value": 150
+   }
+  },
+  {
+   "id": "cut4",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "classroom teachers cut, FY2027, Primary and Turkey Hill"
+   },
+   "value": {
+    "text": "4",
+    "unit": "teachers",
+    "value": 4.0
+   }
+  },
+  {
+   "id": "size",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "students a room, the district’s forecast"
+   },
+   "value": {
+    "text": "27-30",
+    "unit": "students",
+    "value": 27
+   }
+  },
+  {
+   "closes": "a class-size report by school and grade for FY2027",
+   "id": "size-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "class sizes by school and grade"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$89,096",
+    "unit": "",
+    "value": 89096
+   },
+   "c": {
+    "text": "4",
+    "unit": "",
+    "value": 4.0
+   },
+   "p": {
+    "text": "10.4",
+    "unit": "positions",
+    "value": 10.441243153452456
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   },
+   "z": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [],
+  "text": "At $89,096 a position (ours), the FY2028 gap is 10.4 positions; FY2027 already cut 4 classroom teachers."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "classroom-positions",
+ "kind": "topic",
+ "path": "/budget-options/classroom-positions",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf",
+   "label": "Lunenburg Public Schools — Budget Addendum: Multi-Scenario Financial Analysis — budget-addendum-multi-scenario-financial-analysis.pdf"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": null,
+ "title": "Classroom positions"
+}

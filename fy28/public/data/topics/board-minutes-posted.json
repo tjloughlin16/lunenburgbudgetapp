@@ -1,0 +1,588 @@
+{
+ "category": "board-records",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "b": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    },
+    "n": {
+     "text": "30",
+     "unit": "",
+     "value": 30
+    },
+    "p": {
+     "text": "90%",
+     "unit": "percent",
+     "value": 90
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "hi90",
+    "lo50",
+    "ranked"
+   ],
+   "text": "7 of 30 ranked boards list minutes for 90% or more of meetings; 10 list them for under half."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "43 of 44",
+     "unit": "meetings",
+     "value": 0.9773
+    },
+    "b": {
+     "text": "0 of 22",
+     "unit": "meetings",
+     "value": 0.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "lib",
+    "reg",
+    "zba"
+   ],
+   "text": "The Library Board of Trustees lists minutes for 43 of 44 meetings; the Board of Registrars for 0 of 22."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "12 October 2026"
+   ],
+   "notes": [
+    {
+     "closes": "each board’s approved minutes not yet posted to the Agenda Center",
+     "figures": {
+      "l": {
+       "text": "60",
+       "unit": "",
+       "value": 60
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "Meetings in the last 60 days are left out: minutes are approved at the next meeting and posted after it."
+    },
+    {
+     "closes": "each board’s approved minutes not yet posted to the Agenda Center",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Why a board’s minutes are not listed -- a vacancy, a policy, minutes approved and not uploaded -- is not in this record."
+    }
+   ],
+   "rests_on": [
+    "all-k",
+    "all-n",
+    "pf-gap"
+   ],
+   "text": "This counts what the Agenda Center listed on 12 October 2026, not what each board wrote."
+  }
+ ],
+ "facts": [
+  {
+   "id": "all-k",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "meetings with minutes listed, FY2023 to FY2026"
+   },
+   "value": {
+    "text": "1,284",
+    "unit": "meetings",
+    "value": 1284
+   }
+  },
+  {
+   "id": "all-n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "meetings with a posted agenda, the same years"
+   },
+   "value": {
+    "text": "1,934",
+    "unit": "meetings",
+    "value": 1934
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of those meetings with minutes listed"
+   },
+   "value": {
+    "text": "66%",
+    "unit": "percent",
+    "value": 66.39089968976215
+   }
+  },
+  {
+   "id": "boards",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "boards with a posted agenda in those years"
+   },
+   "value": {
+    "text": "39",
+    "unit": "boards",
+    "value": 39
+   }
+  },
+  {
+   "id": "ranked",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "m": {
+      "text": "20",
+      "unit": "",
+      "value": 20
+     }
+    },
+    "literals": [],
+    "text": "boards with 20 or more meetings, ranked"
+   },
+   "value": {
+    "text": "30",
+    "unit": "boards",
+    "value": 30
+   }
+  },
+  {
+   "id": "hi90",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "p": {
+      "text": "90%",
+      "unit": "percent",
+      "value": 90
+     }
+    },
+    "literals": [],
+    "text": "ranked boards listing minutes for 90% or more"
+   },
+   "value": {
+    "text": "7",
+    "unit": "boards",
+    "value": 7
+   }
+  },
+  {
+   "id": "lo50",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "ranked boards listing minutes for under half"
+   },
+   "value": {
+    "text": "10",
+    "unit": "boards",
+    "value": 10
+   }
+  },
+  {
+   "id": "lib",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Library Board of Trustees meetings with minutes"
+   },
+   "value": {
+    "text": "43 of 44",
+    "unit": "meetings",
+    "value": 0.9773
+   }
+  },
+  {
+   "id": "reg",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Board of Registrars meetings with minutes"
+   },
+   "value": {
+    "text": "0 of 22",
+    "unit": "meetings",
+    "value": 0.0
+   }
+  },
+  {
+   "id": "zba",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Zoning Board of Appeals meetings with minutes"
+   },
+   "value": {
+    "text": "1 of 56",
+    "unit": "meetings",
+    "value": 0.0179
+   }
+  },
+  {
+   "closes": "a list of each board’s cancelled meetings; the Agenda Center does not mark one",
+   "id": "pf-gap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which posted agendas were for meetings later cancelled"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "FY2023",
+    "unit": "fiscal year",
+    "value": 2023
+   },
+   "b": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   },
+   "k": {
+    "text": "1,284",
+    "unit": "",
+    "value": 1284
+   },
+   "n": {
+    "text": "1,934",
+    "unit": "",
+    "value": 1934
+   },
+   "s": {
+    "text": "66%",
+    "unit": "percent",
+    "value": 66.39089968976215
+   }
+  },
+  "literals": [],
+  "text": "On the town’s Agenda Center, 1,284 of 1,934 board meetings from FY2023 to FY2026 have minutes listed, 66%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "board-minutes-posted",
+ "kind": "topic",
+ "path": "/board-records/board-minutes-posted",
+ "said": [],
+ "shelves": [
+  "board-records"
+ ],
+ "sources": [
+  {
+   "href": "https://www.lunenburgma.gov/AgendaCenter",
+   "label": "Town of Lunenburg — Agenda Center (agendas and minutes, by board)"
+  },
+  {
+   "href": "/docs/data/meeting-register.csv",
+   "label": "Lunenburg Budget Project — meeting-register.csv (one row per board and date, every artifact)"
+  },
+  {
+   "href": "/data/board-posting.json",
+   "label": "Lunenburg Budget Project — board-posting.json (minutes and recordings by board and year)"
+  }
+ ],
+ "table": {
+  "caption": "Meetings with minutes listed, FY2023 to FY2026, ranked boards",
+  "views": [
+   {
+    "columns": [
+     "Meetings",
+     "With minutes",
+     "Share"
+    ],
+    "key": "boards",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By board",
+    "note": "A meeting is a date with a posted agenda. Boards with fewer than 20 meetings are counted in the totals and not ranked. Read 12 October 2026.",
+    "rows": [
+     {
+      "cells": [
+       "44",
+       "43",
+       "97.7%"
+      ],
+      "label": "Library Board of Trustees"
+     },
+     {
+      "cells": [
+       "98",
+       "94",
+       "95.9%"
+      ],
+      "label": "Finance Committee"
+     },
+     {
+      "cells": [
+       "52",
+       "49",
+       "94.2%"
+      ],
+      "label": "Cemetery Commission"
+     },
+     {
+      "cells": [
+       "46",
+       "43",
+       "93.5%"
+      ],
+      "label": "Architectural Preservation District Commission"
+     },
+     {
+      "cells": [
+       "90",
+       "84",
+       "93.3%"
+      ],
+      "label": "Board of Assessors"
+     },
+     {
+      "cells": [
+       "101",
+       "91",
+       "90.1%"
+      ],
+      "label": "Conservation Commission"
+     },
+     {
+      "cells": [
+       "50",
+       "45",
+       "90.0%"
+      ],
+      "label": "Council on Aging"
+     },
+     {
+      "cells": [
+       "88",
+       "79",
+       "89.8%"
+      ],
+      "label": "Sewer Commission"
+     },
+     {
+      "cells": [
+       "45",
+       "39",
+       "86.7%"
+      ],
+      "label": "Personnel Committee"
+     },
+     {
+      "cells": [
+       "57",
+       "49",
+       "86.0%"
+      ],
+      "label": "Parks Commission"
+     },
+     {
+      "cells": [
+       "52",
+       "42",
+       "80.8%"
+      ],
+      "label": "Public Access Cable Committee (PACC)"
+     },
+     {
+      "cells": [
+       "91",
+       "73",
+       "80.2%"
+      ],
+      "label": "Planning Board"
+     },
+     {
+      "cells": [
+       "35",
+       "28",
+       "80.0%"
+      ],
+      "label": "Lunenburg Housing Authority"
+     },
+     {
+      "cells": [
+       "192",
+       "145",
+       "75.5%"
+      ],
+      "label": "Select Board"
+     },
+     {
+      "cells": [
+       "60",
+       "44",
+       "73.3%"
+      ],
+      "label": "Board of Health"
+     },
+     {
+      "cells": [
+       "58",
+       "42",
+       "72.4%"
+      ],
+      "label": "Agricultural Commission"
+     },
+     {
+      "cells": [
+       "47",
+       "31",
+       "66.0%"
+      ],
+      "label": "Historical Commission"
+     },
+     {
+      "cells": [
+       "47",
+       "31",
+       "66.0%"
+      ],
+      "label": "Lunenburg Municipal Building Design Committee"
+     },
+     {
+      "cells": [
+       "32",
+       "19",
+       "59.4%"
+      ],
+      "label": "Green Communities Committee"
+     },
+     {
+      "cells": [
+       "155",
+       "80",
+       "51.6%"
+      ],
+      "label": "School Committee"
+     },
+     {
+      "cells": [
+       "25",
+       "12",
+       "48.0%"
+      ],
+      "label": "Master Plan Steering Committee"
+     },
+     {
+      "cells": [
+       "39",
+       "18",
+       "46.2%"
+      ],
+      "label": "Open Space Committee"
+     },
+     {
+      "cells": [
+       "22",
+       "10",
+       "45.5%"
+      ],
+      "label": "By-Law Committee"
+     },
+     {
+      "cells": [
+       "37",
+       "16",
+       "43.2%"
+      ],
+      "label": "Economic Development Committee"
+     },
+     {
+      "cells": [
+       "31",
+       "7",
+       "22.6%"
+      ],
+      "label": "Cultural Council"
+     },
+     {
+      "cells": [
+       "41",
+       "9",
+       "22.0%"
+      ],
+      "label": "Capital Planning Committee"
+     },
+     {
+      "cells": [
+       "43",
+       "8",
+       "18.6%"
+      ],
+      "label": "Stormwater Task Force"
+     },
+     {
+      "cells": [
+       "89",
+       "6",
+       "6.7%"
+      ],
+      "label": "School Advisory Councils & Committees"
+     },
+     {
+      "cells": [
+       "56",
+       "1",
+       "1.8%"
+      ],
+      "label": "Zoning Board of Appeals"
+     },
+     {
+      "cells": [
+       "22",
+       "0",
+       "0.0%"
+      ],
+      "label": "Board of Registrars"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Minutes posted"
+}

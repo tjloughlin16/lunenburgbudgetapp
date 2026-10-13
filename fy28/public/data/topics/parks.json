@@ -1,0 +1,303 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$134,434",
+    "unit": "",
+    "value": 134433.6
+   },
+   "b": {
+    "text": "$84,818",
+    "unit": "",
+    "value": 84817.56
+   }
+  },
+  "literals": [
+   "FY2026",
+   "31",
+   "2026"
+  ],
+  "text": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $84,818 at 31 March 2026, and rent for school fields goes to a school fund. Neither fund is part of the vote."
+ },
+ "category": "parks",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "parks",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$134,434",
+      "unit": "",
+      "value": 134433.6
+     },
+     "r": {
+      "text": "4.7%",
+      "unit": "",
+      "value": 4.655751379990436
+     }
+    },
+    "literals": [
+     "FY2026",
+     "FY2010"
+    ],
+    "rests_on": [
+     "h-v26",
+     "h-rate"
+    ],
+    "text": "Town Meeting voted Parks $134,434 for FY2026; its budget grew 4.7% a year since FY2010."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$84,818",
+      "unit": "",
+      "value": 84817.56
+     }
+    },
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "rests_on": [
+     "h-park",
+     "h-myrec"
+    ],
+    "text": "The parks’ own fee fund held $84,818 at 31 March 2026, outside the vote."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$71,559",
+      "unit": "",
+      "value": 71558.82
+     },
+     "b": {
+      "text": "$69,390",
+      "unit": "",
+      "value": 69389.52
+     }
+    },
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "rests_on": [
+     "h-1306",
+     "h-1545",
+     "h-payers"
+    ],
+    "text": "The schools’ rental fund held $71,559 and the turf fund $69,390 at 31 March 2026."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$62,231",
+      "unit": "",
+      "value": 62231.15
+     }
+    },
+    "literals": [
+     "FY2025"
+    ],
+    "rests_on": [
+     "h-jump"
+    ],
+    "text": "The schools’ rental fund rose $62,231 in FY2025, and no schedule shows why."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-myrec",
+     "h-books"
+    ],
+    "text": "What the registration money became on the town’s books is not published."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-v26",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2026"
+       ],
+       "text": "voted for Parks, FY2026"
+      },
+      "value": {
+       "text": "$134,434",
+       "unit": "",
+       "value": 134433.6
+      }
+     },
+     {
+      "id": "h-exp26",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2026",
+        "12"
+       ],
+       "text": "paid by period 12, FY2026"
+      },
+      "value": {
+       "text": "$113,350",
+       "unit": "",
+       "value": 113350.2
+      }
+     },
+     {
+      "id": "h-rate",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2010"
+       ],
+       "text": "a year, the vote’s growth since FY2010 (ours)"
+      },
+      "value": {
+       "text": "4.7%",
+       "unit": "",
+       "value": 4.655751379990436
+      }
+     }
+    ],
+    "title": "What the town votes"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-park",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "31",
+        "2026"
+       ],
+       "text": "in the parks fee fund, 31 March 2026"
+      },
+      "value": {
+       "text": "$84,818",
+       "unit": "",
+       "value": 84817.56
+      }
+     },
+     {
+      "id": "h-myrec",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2025"
+       ],
+       "text": "recorded by the registration system, FY2025"
+      },
+      "value": {
+       "text": "$47,784",
+       "unit": "",
+       "value": 47783.5
+      }
+     },
+     {
+      "id": "h-1306",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "31",
+        "2026"
+       ],
+       "text": "in the schools’ rental fund, 31 March 2026"
+      },
+      "value": {
+       "text": "$71,559",
+       "unit": "",
+       "value": 71558.82
+      }
+     },
+     {
+      "id": "h-1545",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "31",
+        "2026"
+       ],
+       "text": "in the turf fund, 31 March 2026"
+      },
+      "value": {
+       "text": "$69,390",
+       "unit": "",
+       "value": 69389.52
+      }
+     }
+    ],
+    "title": "The funds beside it"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-jump",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [
+        "FY2025"
+       ],
+       "text": "the rental fund’s unexplained FY2025 rise"
+      },
+      "value": {
+       "text": "$62,231",
+       "unit": "",
+       "value": 62231.15
+      }
+     },
+     {
+      "closes": "the FY2025 special-revenue report and fund 1500’s journal",
+      "id": "h-books",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "how much of the registration money reached the books"
+      },
+      "value": null
+     },
+     {
+      "closes": "the receipt detail for funds 1306, 1500 and 1545, by payer",
+      "id": "h-payers",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "who pays to use the fields"
+      },
+      "value": null
+     }
+    ],
+    "title": "What is not settled"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/parks",
+ "shelves": [
+  "parks"
+ ],
+ "table": null,
+ "title": "Parks department"
+}

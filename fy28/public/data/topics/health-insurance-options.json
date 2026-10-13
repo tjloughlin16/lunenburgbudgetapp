@@ -1,0 +1,307 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a signed amendment or side letter to the 2026-2029 memorandum",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "2026-2029"
+     ],
+     "text": "Whether the parties may reopen it early for any reason but federal changes is not stated."
+    }
+   ],
+   "rests_on": [
+    "held"
+   ],
+   "text": "Plan design and both routes into the state’s GIC are held by the PEC agreement."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "50%",
+     "unit": "",
+     "value": 50
+    },
+    "b": {
+     "text": "75%",
+     "unit": "",
+     "value": 75.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "floor",
+    "share",
+    "cannot"
+   ],
+   "text": "The town may never pay less than 50% of a premium; it pays 75%."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "saves",
+    "can"
+   ],
+   "text": "The statute says what is permitted, not what it would save; no document here prices a route."
+  }
+ ],
+ "facts": [
+  {
+   "id": "can",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "32B"
+    ],
+    "text": "routes open under Chapter 32B"
+   },
+   "value": {
+    "text": "7",
+    "unit": "routes",
+    "value": 7
+   }
+  },
+  {
+   "id": "cannot",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "barred at any threshold"
+   },
+   "value": {
+    "text": "4",
+    "unit": "routes",
+    "value": 4
+   }
+  },
+  {
+   "id": "held",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30 June 2029"
+    ],
+    "text": "held by the PEC agreement to 30 June 2029"
+   },
+   "value": {
+    "text": "3",
+    "unit": "routes",
+    "value": 3
+   }
+  },
+  {
+   "id": "floor",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "least the town may pay of a premium"
+   },
+   "value": {
+    "text": "50%",
+    "unit": "",
+    "value": 50
+   }
+  },
+  {
+   "id": "share",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what the town pays now, active plans"
+   },
+   "value": {
+    "text": "75%",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  {
+   "closes": "a premium quote for Lunenburg’s enrolment from MIIA or the GIC, plan by plan",
+   "id": "saves",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "what any route would save the town"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "7",
+    "unit": "",
+    "value": 7
+   },
+   "b": {
+    "text": "4",
+    "unit": "",
+    "value": 4
+   },
+   "c": {
+    "text": "3",
+    "unit": "",
+    "value": 3
+   }
+  },
+  "literals": [
+   "32B",
+   "30 June 2029"
+  ],
+  "text": "Chapter 32B leaves the town 7 routes and bars 4; the PEC agreement holds 3 of them until 30 June 2029."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-insurance-options",
+ "kind": "topic",
+ "path": "/health-insurance/health-insurance-options",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/health-insurance-law.csv",
+   "label": "Lunenburg Budget Project — health-insurance-law.csv (what Chapter 32B permits and forbids, one row a section)"
+  },
+  {
+   "href": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B",
+   "label": "M.G.L. Chapter 32B — municipal group insurance (malegislature.gov)"
+  },
+  {
+   "href": "/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf",
+   "label": "Memorandum of Agreement, Town of Lunenburg and Lunenburg Public Employee Committee, 1 July 2026 to 30 June 2029 (records request)"
+  },
+  {
+   "href": "/data/health-options.json",
+   "label": "Lunenburg Budget Project — health-options.json (the c.32B menu and every town’s spending)"
+  }
+ ],
+ "table": {
+  "caption": "Every route, and the section that governs it",
+  "views": [
+   {
+    "columns": [
+     "For Lunenburg",
+     "Section",
+     "Who decides"
+    ],
+    "key": "law",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Chapter 32B",
+    "note": "From our reading of each section, linked on /docs/data/health-insurance-law.csv to malegislature.gov. A route the PEC agreement holds is open after it ends.",
+    "rows": [
+     {
+      "cells": [
+       "yes",
+       "M.G.L. c.32B §§21–22",
+       "Select Board"
+      ],
+      "label": "Change copays, deductibles and tiers up to the state plan's level"
+     },
+     {
+      "cells": [
+       "yes",
+       "M.G.L. c.32B §19(e)",
+       "Select Board with the Public Employee Committee"
+      ],
+      "label": "Move everyone into the state's Group Insurance Commission by agreement"
+     },
+     {
+      "cells": [
+       "yes",
+       "M.G.L. c.32B §23",
+       "Select Board"
+      ],
+      "label": "Move everyone into the GIC without agreement"
+     },
+     {
+      "cells": [
+       "already done in part",
+       "M.G.L. c.32B §18A",
+       "Acceptance"
+      ],
+      "label": "Require Medicare-eligible retirees onto a Medicare plan"
+     },
+     {
+      "cells": [
+       "already running",
+       "M.G.L. c.32B §4",
+       "Bargained or employer discretion"
+      ],
+      "label": "Pay employees to decline coverage"
+     },
+     {
+      "cells": [
+       "yes, but",
+       "M.G.L. c.32B §3A",
+       "Town"
+      ],
+      "label": "Pay claims from a town trust instead of buying premiums"
+     },
+     {
+      "cells": [
+       "already accepted",
+       "M.G.L. c.32B §7A",
+       "Town Meeting or ballot"
+      ],
+      "label": "Pay more than half the premium"
+     },
+     {
+      "cells": [
+       "no",
+       "M.G.L. c.32B §7",
+       "Nobody"
+      ],
+      "label": "Pay less than half the premium"
+     },
+     {
+      "cells": [
+       "no",
+       "M.G.L. c.32B §21(f)",
+       "Nobody"
+      ],
+      "label": "Change the 75/25 split through the plan-design process"
+     },
+     {
+      "cells": [
+       "no",
+       "M.G.L. c.32B §10",
+       "Nobody"
+      ],
+      "label": "Stop offering health insurance"
+     },
+     {
+      "cells": [
+       "no",
+       "M.G.L. c.32B §9",
+       "Nobody"
+      ],
+      "label": "Drop retirees or require years of service for coverage"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Options under the law"
+}

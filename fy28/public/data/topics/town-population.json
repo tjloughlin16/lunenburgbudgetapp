@@ -1,0 +1,412 @@
+{
+ "category": "homes-and-taxes",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "533",
+     "unit": "",
+     "value": 533.0
+    },
+    "b": {
+     "text": "326",
+     "unit": "",
+     "value": 326.0
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "New homes, people moving in and smaller households all fit these counts; the survey carries no reason for the change."
+    }
+   ],
+   "rests_on": [
+    "pop",
+    "pop0",
+    "hh",
+    "hh0"
+   ],
+   "text": "Residents rose by 533 and households by 326 between the two samples, beyond the margin."
+  },
+  {
+   "figures": {
+    "s": {
+     "text": "3 of 15",
+     "unit": "Census measures",
+     "value": 3
+    }
+   },
+   "literals": [
+    "45-to-64",
+    "45 to 64",
+    "25 to 44",
+    "18 to 24",
+    "65",
+    "18",
+    "45",
+    "64"
+   ],
+   "notes": [
+    {
+     "closes": "the town census, compiled each year by the Town Clerk, which counts every resident rather than sampling",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "A change inside the margin is one this survey cannot see, which is not the same as one that did not happen."
+    }
+   ],
+   "rests_on": [
+    "surv"
+   ],
+   "text": "Only 3 of 15 things the Census measures here changed by more than its own noise."
+  }
+ ],
+ "facts": [
+  {
+   "id": "pop",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents, 2019–2023 sample estimate"
+   },
+   "value": {
+    "text": "11,804 ± 19",
+    "unit": "residents",
+    "value": 11804.0
+   }
+  },
+  {
+   "id": "pop0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "residents, 2014–2018 sample estimate"
+   },
+   "value": {
+    "text": "11,271 ± 25",
+    "unit": "residents",
+    "value": 11271.0
+   }
+  },
+  {
+   "id": "hh",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "households, 2019–2023 sample estimate"
+   },
+   "value": {
+    "text": "4,529 ± 235",
+    "unit": "households",
+    "value": 4529.0
+   }
+  },
+  {
+   "id": "hh0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2019–2023",
+     "2014–2018",
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "households, 2014–2018 sample estimate"
+   },
+   "value": {
+    "text": "4,203 ± 145",
+    "unit": "households",
+    "value": 4203.0
+   }
+  },
+  {
+   "id": "surv",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "45-to-64",
+     "45 to 64",
+     "25 to 44",
+     "18 to 24",
+     "65",
+     "18",
+     "45",
+     "64"
+    ],
+    "text": "measures that moved beyond the margin (our test)"
+   },
+   "value": {
+    "text": "3 of 15",
+    "unit": "Census measures",
+    "value": 3
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "11,804",
+    "unit": "",
+    "value": 11804.0
+   },
+   "b": {
+    "text": "4,529",
+    "unit": "",
+    "value": 4529.0
+   }
+  },
+  "literals": [],
+  "text": "About 11,804 residents in 4,529 households, on a sample; both grew by more than the survey’s margin."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "town-population",
+ "kind": "topic",
+ "path": "/homes-and-taxes/town-population",
+ "said": [],
+ "shelves": [
+  "homes-and-taxes"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/acs5-2023-B01001-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B01001-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B01001-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2023-B11005-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2023-B11005-lunenburg.json"
+  },
+  {
+   "href": "/docs/state-census/acs5-2018-B11005-lunenburg.json",
+   "label": "United States Census Bureau — acs5-2018-B11005-lunenburg.json"
+  },
+  {
+   "href": "/data/census-acs.csv",
+   "label": "Built by this project, from the responses above — census-acs.csv"
+  }
+ ],
+ "table": {
+  "caption": "Fifteen Census measures, two five-year samples",
+  "views": [
+   {
+    "columns": [
+     "2014–2018",
+     "2019–2023",
+     "Change",
+     "Beyond the margin"
+    ],
+    "key": "tests",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated",
+     "stated"
+    ],
+    "label": "2014–2018 against 2019–2023",
+    "note": "Census Bureau ACS five-year estimates, each with its margin of error. The two windows share no year. The last two columns are our arithmetic: a change is beyond the margin when it exceeds the combined margin of its two estimates.",
+    "rows": [
+     {
+      "cells": [
+       "11,271 ± 25",
+       "11,804 ± 19",
+       "+533",
+       "yes"
+      ],
+      "label": "Population"
+     },
+     {
+      "cells": [
+       "1,810 ± 262",
+       "1,979 ± 309",
+       "+169",
+       "no"
+      ],
+      "label": "Residents 65 and over"
+     },
+     {
+      "cells": [
+       "16.1% ± 2.3%",
+       "16.8% ± 2.6%",
+       "+0.7 points",
+       "no"
+      ],
+      "label": "Share of the town 65 and over"
+     },
+     {
+      "cells": [
+       "2,578 ± 360",
+       "2,736 ± 429",
+       "+158",
+       "no"
+      ],
+      "label": "Residents under 18"
+     },
+     {
+      "cells": [
+       "22.9% ± 3.2%",
+       "23.2% ± 3.6%",
+       "+0.3 points",
+       "no"
+      ],
+      "label": "Share of the town under 18"
+     },
+     {
+      "cells": [
+       "4,203 ± 145",
+       "4,529 ± 235",
+       "+326",
+       "yes"
+      ],
+      "label": "Households"
+     },
+     {
+      "cells": [
+       "1,463 ± 141",
+       "1,477 ± 198",
+       "+14",
+       "no"
+      ],
+      "label": "Households with a child under 18"
+     },
+     {
+      "cells": [
+       "34.8% ± 3.1%",
+       "32.6% ± 4.0%",
+       "−2.2 points",
+       "no"
+      ],
+      "label": "Share of households with a child under 18"
+     },
+     {
+      "cells": [
+       "$101,510 ± $6,813",
+       "$109,753 ± $12,275",
+       "+$8,243",
+       "no"
+      ],
+      "label": "Median household income"
+     },
+     {
+      "cells": [
+       "$111,569 ± $10,609",
+       "$119,500 ± $20,747",
+       "+$7,931",
+       "no"
+      ],
+      "label": "Median income, householder 25 to 44"
+     },
+     {
+      "cells": [
+       "$117,891 ± $14,396",
+       "$129,183 ± $21,150",
+       "+$11,292",
+       "no"
+      ],
+      "label": "Median income, householder 45 to 64"
+     },
+     {
+      "cells": [
+       "$42,742 ± $12,593",
+       "$72,935 ± $8,677",
+       "+$30,193",
+       "yes"
+      ],
+      "label": "Median income, householder 65 and over"
+     },
+     {
+      "cells": [
+       "3,475 ± 218",
+       "3,682 ± 321",
+       "+207",
+       "no"
+      ],
+      "label": "Owner-occupied homes"
+     },
+     {
+      "cells": [
+       "82.7% ± 4.3%",
+       "81.3% ± 5.7%",
+       "−1.4 points",
+       "no"
+      ],
+      "label": "Share of homes owner-occupied"
+     },
+     {
+      "cells": [
+       "728 ± 168",
+       "847 ± 189",
+       "+119",
+       "no"
+      ],
+      "label": "Renter-occupied homes"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Population and households"
+}

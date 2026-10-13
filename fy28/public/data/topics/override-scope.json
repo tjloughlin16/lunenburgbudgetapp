@@ -1,0 +1,267 @@
+{
+ "category": "budget-options",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,600,000",
+     "unit": "",
+     "value": 1600000
+    },
+    "b": {
+     "text": "$2,400,000",
+     "unit": "",
+     "value": 2400000
+    },
+    "c": {
+     "text": "$1,948,527",
+     "unit": "",
+     "value": 1948527
+    },
+    "d": {
+     "text": "$3,300,000",
+     "unit": "",
+     "value": 3300000
+    }
+   },
+   "literals": [
+    "Tier 1",
+    "Tier 2"
+   ],
+   "rests_on": [
+    "t1",
+    "t1s",
+    "t2",
+    "t2s"
+   ],
+   "text": "Tier 1 put $1,600,000 of $2,400,000 toward the schools; Tier 2, $1,948,527 of $3,300,000."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$948,136",
+     "unit": "",
+     "value": 948136
+    }
+   },
+   "literals": [
+    "2024"
+   ],
+   "rests_on": [
+    "w24"
+   ],
+   "text": "The May 2024 question, for $948,136, named the schools as its purpose."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "53.2%",
+     "unit": "",
+     "value": 53.1829
+    },
+    "b": {
+     "text": "$3,760,609",
+     "unit": "",
+     "value": 3760609
+    },
+    "c": {
+     "text": "$2,000,000",
+     "unit": "",
+     "value": 2000000
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "share",
+    "tw"
+   ],
+   "text": "Split at the schools’ 53.2% share (our assumption), $3,760,609 townwide gives them $2,000,000."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "t1",
+    "w24"
+   ],
+   "text": "Either way the levy is raised on every taxpayer; only the use of it differs."
+  }
+ ],
+ "facts": [
+  {
+   "id": "t1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2026",
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "Tier 1, May 2026, town and schools"
+   },
+   "value": {
+    "text": "$2,400,000",
+    "unit": "",
+    "value": 2400000
+   }
+  },
+  {
+   "id": "t1s",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it for the schools (Town)"
+   },
+   "value": {
+    "text": "$1,600,000",
+    "unit": "",
+    "value": 1600000
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2026",
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "Tier 2, May 2026"
+   },
+   "value": {
+    "text": "$3,300,000",
+    "unit": "",
+    "value": 3300000
+   }
+  },
+  {
+   "id": "t2s",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Tier 1",
+     "Tier 2"
+    ],
+    "text": "of Tier 2’s budget for the schools (Town)"
+   },
+   "value": {
+    "text": "$1,948,527",
+    "unit": "",
+    "value": 1948527
+   }
+  },
+  {
+   "id": "w24",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "May 2024"
+    ],
+    "text": "May 2024, “Fund Lunenburg Public Schools”"
+   },
+   "value": {
+    "text": "$948,136",
+    "unit": "",
+    "value": 948136
+   }
+  },
+  {
+   "id": "share",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "schools’ share of the FY2027 omnibus (ours)"
+   },
+   "value": {
+    "text": "53.2%",
+    "unit": "",
+    "value": 53.1829
+   }
+  },
+  {
+   "id": "tw",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "$2,000,000",
+      "unit": "",
+      "value": 2000000
+     }
+    },
+    "literals": [],
+    "text": "general override giving the schools $2,000,000 (ours)"
+   },
+   "value": {
+    "text": "$3,760,609",
+    "unit": "",
+    "value": 3760609
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,400,000",
+    "unit": "",
+    "value": 2400000
+   },
+   "b": {
+    "text": "$1,600,000",
+    "unit": "",
+    "value": 1600000
+   }
+  },
+  "literals": [
+   "2024",
+   "Tier 1",
+   "Tier 2"
+  ],
+  "text": "Of the $2,400,000 Tier 1 question, $1,600,000 was for the schools; the May 2024 one named only the schools."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "override-scope",
+ "kind": "topic",
+ "path": "/budget-options/override-scope",
+ "said": [],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "label": "Town of Lunenburg — FY27 budget release — 4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf"
+  },
+  {
+   "href": "/docs/state-dls/OverrideUnderrideVotes.xlsx",
+   "label": "Massachusetts Division of Local Services, Override and Underride Votes — OverrideUnderrideVotes.xlsx"
+  },
+  {
+   "href": "/docs/data/dls-override-votes.csv",
+   "label": "Lunenburg Budget Project — dls-override-votes.csv (every question the state records)"
+  },
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  }
+ ],
+ "table": null,
+ "title": "Townwide or school-only"
+}

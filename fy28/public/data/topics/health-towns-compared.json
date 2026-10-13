@@ -1,0 +1,324 @@
+{
+ "category": "health-insurance",
+ "chart": null,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "301 of 343",
+     "unit": "",
+     "value": 301
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [
+      "FY2024",
+      "FY2025"
+     ],
+     "text": "If FY2025, like FY2024, counts Medicare and life insurance, part of this rate is a change in what was counted."
+    }
+   ],
+   "rests_on": [
+    "rank",
+    "town",
+    "median"
+   ],
+   "text": "Lunenburg ranks 301 of 343 by growth, slowest first."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "155 of 343",
+     "unit": "",
+     "value": 155
+    }
+   },
+   "literals": [
+    "4%"
+   ],
+   "rests_on": [
+    "under4"
+   ],
+   "text": "155 of 343 municipalities held growth under 4% a year over the same decade."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "fi",
+    "si",
+    "content"
+   ],
+   "text": "Levels are not compared: a self-insured town’s figure includes the employee’s share."
+  }
+ ],
+ "facts": [
+  {
+   "id": "town",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2015",
+     "FY2025"
+    ],
+    "text": "a year, Lunenburg, FY2015-FY2025"
+   },
+   "value": {
+    "text": "6.84%",
+    "unit": "",
+    "value": 6.84
+   }
+  },
+  {
+   "id": "median",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, the median municipality"
+   },
+   "value": {
+    "text": "4.19%",
+    "unit": "",
+    "value": 4.19
+   }
+  },
+  {
+   "id": "rank",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "place, slowest growth first"
+   },
+   "value": {
+    "text": "301 of 343",
+    "unit": "municipalities",
+    "value": 301
+   }
+  },
+  {
+   "id": "under4",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "4%"
+    ],
+    "text": "grew under 4% a year over the decade"
+   },
+   "value": {
+    "text": "155 of 343",
+    "unit": "municipalities",
+    "value": 155
+   }
+  },
+  {
+   "id": "fi",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "259",
+      "unit": "",
+      "value": 259
+     }
+    },
+    "literals": [],
+    "text": "median, 259 fully insured towns, as Lunenburg is"
+   },
+   "value": {
+    "text": "4.11%",
+    "unit": "",
+    "value": 4.11
+   }
+  },
+  {
+   "id": "si",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "51",
+      "unit": "",
+      "value": 51
+     }
+    },
+    "literals": [],
+    "text": "median, 51 self-insured towns"
+   },
+   "value": {
+    "text": "4.86%",
+    "unit": "",
+    "value": 4.86
+   }
+  },
+  {
+   "closes": "each town’s Schedule A, health insurance, account by account",
+   "id": "content",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether every town counts the same accounts"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "6.84%",
+    "unit": "",
+    "value": 6.84
+   }
+  },
+  "literals": [
+   "FY2015",
+   "FY2024"
+  ],
+  "text": "On the state’s figure, which added Medicare and life in FY2024, spending grew 6.84% a year from FY2015."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "health-towns-compared",
+ "kind": "topic",
+ "path": "/health-insurance/health-towns-compared",
+ "said": [],
+ "shelves": [
+  "health-insurance"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/dls-health-insurance.csv",
+   "label": "Lunenburg Budget Project — dls-health-insurance.csv (DLS Schedule A health insurance spending, every municipality)"
+  },
+  {
+   "href": "https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.HealthInsExpenditures",
+   "label": "Massachusetts Division of Local Services — Health Insurance Expenditures (Schedule A)"
+  },
+  {
+   "href": "/data/health-options.json",
+   "label": "Lunenburg Budget Project — health-options.json (the c.32B menu and every town’s spending)"
+  }
+ ],
+ "table": {
+  "caption": "The towns this project compares against",
+  "views": [
+   {
+    "columns": [
+     "FY2015",
+     "FY2025",
+     "A year"
+    ],
+    "key": "nb",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2015 to FY2025",
+    "note": "Health insurance spending as each town filed it on Schedule A. Compare the rate, not the level; what each town’s figure contains differs.",
+    "rows": [
+     {
+      "cells": [
+       "$8,186,031",
+       "$17,239,556",
+       "7.73%"
+      ],
+      "label": "Westford"
+     },
+     {
+      "cells": [
+       "$1,568,744",
+       "$3,038,832",
+       "6.84%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "$19,308,192",
+       "$36,365,769",
+       "6.54%"
+      ],
+      "label": "Leominster"
+     },
+     {
+      "cells": [
+       "$16,973,461",
+       "$30,208,091",
+       "5.93%"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "$3,035,390",
+       "$5,148,716",
+       "5.43%"
+      ],
+      "label": "Littleton"
+     },
+     {
+      "cells": [
+       "$488,439",
+       "$744,845",
+       "4.31%"
+      ],
+      "label": "Lancaster"
+     },
+     {
+      "cells": [
+       "$2,046,430",
+       "$2,921,588",
+       "3.62%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$1,360,249",
+       "$1,876,928",
+       "3.27%"
+      ],
+      "label": "Groton"
+     },
+     {
+      "cells": [
+       "$846,681",
+       "$1,102,338",
+       "2.67%"
+      ],
+      "label": "Townsend"
+     },
+     {
+      "cells": [
+       "$1,264,714",
+       "$1,587,063",
+       "2.30%"
+      ],
+      "label": "Ayer"
+     },
+     {
+      "cells": [
+       "$505,948",
+       "$216,504",
+       "-8.14%"
+      ],
+      "label": "Shirley"
+     }
+    ],
+    "total_col": 2
+   }
+  ]
+ },
+ "title": "Towns compared"
+}
