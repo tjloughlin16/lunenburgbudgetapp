@@ -14,6 +14,7 @@
  *  already checked that every digit is a registered figure, every sentence fits its width
  *  budget, and every link lands on a heading the document writes. */
 import type React from 'react'
+import { FigureTable, Ladder, type FigureTableData, type LadderData, type LadderEvidence } from './report'
 
 export type Fig = { value: number | string; text: string; unit: string }
 export type Unit = { text: string; figures: Record<string, Fig>; literals: string[] }
@@ -124,6 +125,38 @@ function Layers({ steps }: { steps: Step[] }) {
   )
 }
 
+/** The evidence under a conclusion, kept SHORT. TJ, 12 October 2026: "the multi tiered
+ *  answers are SUPER overwhelming". The staircase restated, as sentences, the facts the tiles
+ *  had just shown. So under a conclusion only what the tiles cannot say: what is not known
+ *  and what would settle it, a possible explanation if one is offered, and one link down to
+ *  the full evidence -- measured layers, quotations and captions -- in the document. Flat,
+ *  no indent, one line each. */
+function Brief({ steps }: { steps: Step[] }) {
+  const gap = steps.find(s => s.kind === 'gap')
+  const hyp = steps.find(s => s.kind === 'hypothesis')
+  const link = steps.find(s => s.link)?.link
+  const line = (label: string, tone: string, body: React.ReactNode) => (
+    <p className="text-[13.5px] leading-snug mt-2 pl-2.5 border-l-2"
+      style={{ borderColor: tone, color: 'var(--text-secondary)' }}>
+      <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{label} </span>{body}
+    </p>
+  )
+  return (
+    <div className="mt-1">
+      {gap ? line('Not known:', 'var(--status-warning)', <>
+        {gap.text}{gap.closes ? <> <span style={{ color: 'var(--text-muted)' }}>
+          Would settle it: {gap.closes}.</span></> : null}</>) : null}
+      {hyp ? line('Possible explanation, untested:', 'var(--axis)', hyp.text) : null}
+      {link ? (
+        <p className="text-[13px] mt-2 no-print">
+          <a className="underline" style={linkStyle} href={`#${link.anchor}`}>
+            The full evidence: {link.label} &darr;</a>
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
 function ChainRow({ c }: { c: Chain }) {
   return (
     <li id={`q-${c.id}`} className="py-5 border-b scroll-mt-[calc(var(--header-h)+1rem)]"
@@ -208,18 +241,51 @@ function CostTable({ t }: { t: Costs }) {
   )
 }
 
-export function BriefTop({ brief }: { brief: Brief }) {
+/** `hero` is the page's signature chart (rule 7f). When there is one it takes the cost
+ *  table's place under the answer -- the picture a reader remembers and, by hover or tap,
+ *  every figure the table held -- and the table folds beneath it, because its last row is
+ *  the district's sheet, which the chart does not draw, and a table is what gets quoted. */
+export function BriefTop({ brief, hero, ladder, table }: {
+  brief: Brief; hero?: React.ReactNode; ladder?: LadderData; table?: FigureTableData
+}) {
   return (
     <section data-section="brief" className="mt-6 max-w-3xl">
       <p data-short="" data-point="" className="text-[19px] leading-snug font-semibold">
         {brief.answer.text}
       </p>
 
-      {brief.costs ? <CostTable t={brief.costs} /> : null}
+      {hero ? (
+        <>
+          <div className="report-body mt-5 [&>figure]:max-w-none">{hero}</div>
+          {/* The chart's figures, as a table, are NOT here: TJ, 12 October 2026, "too much
+              for the first tier... that detailed information goes way down below". They
+              close this section, after the questions -- rule 7b's third layer, the raw. */}
+          {!table && brief.costs ? <CostTable t={brief.costs} /> : null}
+        </>
+      ) : brief.costs ? <CostTable t={brief.costs} /> : null}
 
-      <ol className="mt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
-        {brief.chains.map(c => <ChainRow key={c.id} c={c} />)}
-      </ol>
+      {/* WITH A LADDER, THE QUESTIONS ARE NOT A SECOND LIST. Each opens under the
+          conclusion that names it; a question no conclusion names (here, which sport costs
+          most -- "can't tell yet") is left to the document, which covers it in full. */}
+      {ladder ? (
+        <Ladder l={ladder} evidence={Object.fromEntries(brief.chains.map(c => [c.id, {
+          tag: <Tag v={c.verdict} label={c.label} />,
+          question: c.question,
+          body: <Brief steps={c.steps} />,
+        } satisfies LadderEvidence]))} />
+      ) : (
+        <ol className="mt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
+          {brief.chains.map(c => <ChainRow key={c.id} c={c} />)}
+        </ol>
+      )}
+
+      {table ? (
+        <div className="mt-10">
+          <h2 className="text-[11px] font-semibold uppercase tracking-widest"
+            style={{ color: 'var(--text-muted)' }}>Every year, in figures</h2>
+          <FigureTable t={table} />
+        </div>
+      ) : null}
 
     </section>
   )

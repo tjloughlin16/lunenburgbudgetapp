@@ -9,7 +9,7 @@ import { FullVersion } from '../components/FullVersion'
 const SHORT_HEADING = /^(the short version|what this establishes|in plain terms|what we now hold|where things stand)/i
 import { analysisIdFromPath } from '../routes'
 import { Body, Conclusions, Grain, H2, MoreReports, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
-import type { Conclusion } from '../components/report'
+import type { Conclusion, FigureTableData, LadderData } from '../components/report'
 import { BriefTop, type Brief } from '../components/brief'
 
 /** THE MARKDOWN ANALYSES, IN THE SAME SHELL AS EVERY OTHER REPORT.
@@ -80,6 +80,10 @@ type Payload = {
    *  notes/process/REPORT-FORMAT.md. A payload that carries it gets that layout; every other
    *  report renders exactly as before. */
   brief?: Brief
+  /** The fact ladder (scripts/ladder.py; `Ladder` in components/report.tsx). */
+  ladder?: LadderData
+  /** A chart's figures as a table, keyed by the chart's id (`FigureTable`). */
+  tables?: Record<string, FigureTableData>
 }
 
 export function Analysis() {
@@ -193,6 +197,9 @@ export function Analysis() {
   const leadNodes = body ? (firstH2 < 0 ? body : body.slice(0, firstH2)) : []
   const heroFigures = [...leadNodes, ...(split?.short ?? [])].filter(isFigure)
   const isHero = (n: React.ReactNode) => heroFigures.includes(n)
+  // The signature chart's table: the first chart the document's lead draws, by its id.
+  const heroChart = src?.split(/\n## /)[0].match(/\]\(charts\/([\w-]+)\.svg\)/)?.[1]
+  const heroTable = heroChart ? model?.tables?.[heroChart] : undefined
 
   // THE GENERATOR OWNS THE OPENING WHEN IT SHIPPED CONCLUSIONS, not only when it shipped a
   // stat row. Gating on `stats` alone left /analysis/monty-tech rendering its short version
@@ -232,10 +239,8 @@ export function Analysis() {
           scroll or one link away for the reader who doubts it. */}
       {brief ? (
         <>
-          <BriefTop brief={brief} />
-          {heroFigures.length ? (
-            <div className="report-body mt-12 [&>figure]:max-w-none">{heroFigures}</div>
-          ) : null}
+          <BriefTop brief={brief} hero={heroFigures.length ? heroFigures : undefined}
+            ladder={model?.ladder} table={heroTable} />
           {deeper.length ? (
             <nav aria-label="Further down this page" className="no-print mt-10 max-w-3xl">
               <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"

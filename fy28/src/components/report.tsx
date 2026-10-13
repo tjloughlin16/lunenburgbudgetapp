@@ -829,3 +829,341 @@ export function ReportShell({
 /** The name the shell went by while it was only the four special education reports.
  *  Kept as an alias so those pages read the same as every other report page. */
 export const Shell = ReportShell
+
+/* ---------------------------------------------------------------- the fact ladder
+ * THE TOP OF A REPORT, BUILT BOTTOM-UP: bare facts, then how they change, then who pays,
+ * then the conclusions. A template, prototyped on /analysis/transportation; the payload is
+ * built and validated by scripts/ladder.py, so nothing here computes or words a figure.
+ *
+ * WHY TILES AND NOT SENTENCES. TJ, 12 October 2026: "simple facts. NOT long sentences or
+ * paragraphs of the basic facts." A tile is a value and a label carrying its unit, two to a
+ * row on a phone and four on a laptop, set in one hairline grid so thirteen facts are seven
+ * short rows rather than thirteen paragraphs.
+ *
+ * THE LADDER IS VISIBLE. Pointing at, focusing or tapping a conclusion lights the facts it
+ * rests on and dims the rest, and each conclusion also prints those figures under it, so
+ * the link survives on paper and for a reader who never hovers.
+ *
+ * WHAT KIND A FACT IS (rule 3) rides on the tile as a word, never colour alone: published
+ * figures carry nothing, a contract or a statute says so, our estimates carry the amber the
+ * citations use for `ours`, and a fact nobody publishes is a dash that says so. */
+export type LadderFig = { value: number | string; text: string; unit: string }
+export type LadderUnit = { text: string; figures: Record<string, LadderFig>; literals: string[] }
+export type LadderKind = 'published' | 'contract' | 'statute' | 'estimate' | 'gap'
+export type LadderFact = {
+  id: string; kind: LadderKind; value: LadderFig | null; label: LadderUnit; closes?: string
+}
+export type LadderMatrix = {
+  columns: { id: string; label: string; tone: string | null }[]
+  rows: { id: string; label: string }[]
+  cells: { col: string; row: string; facts: string[] }[]
+}
+export type LadderData = {
+  tiers: { title: string; facts: LadderFact[] }[]
+  conclusions: (LadderUnit & { rests_on: string[]; chain?: string })[]
+  title: string
+  matrix?: LadderMatrix
+}
+
+const LADDER_TAG: Partial<Record<LadderKind, string>> = {
+  contract: 'contract', statute: 'law', estimate: 'our estimate', gap: 'not published',
+}
+
+function LadderTile({ f, lit }: { f: LadderFact; lit: boolean | null }) {
+  const est = f.kind === 'estimate'
+  return (
+    <li className="p-2.5 sm:p-3 transition-opacity border-r border-b"
+      style={{
+        background: 'var(--surface-1)', borderColor: 'var(--grid)',
+        opacity: lit === false ? 0.3 : 1,
+        boxShadow: lit ? 'inset 0 0 0 2px var(--series-cost)'
+          : est ? 'inset 3px 0 0 var(--status-warning)' : undefined,
+      }}
+      title={f.closes ? `Would settle it: ${f.closes}` : undefined}>
+      <p className="text-[19px] leading-tight font-semibold tabular-nums"
+        style={{ color: f.value ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+        {f.value ? f.value.text : '—'}</p>
+      <p className="text-[12.5px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+        {f.label.text}</p>
+      {LADDER_TAG[f.kind] ? (
+        <p className="text-[10px] font-semibold uppercase tracking-widest mt-1"
+          style={{ color: 'var(--text-muted)' }}>{LADDER_TAG[f.kind]}</p>
+      ) : null}
+    </li>
+  )
+}
+
+/** One fact inside a matrix cell: the tile without its box, so a cell can hold two or
+ *  three and still read as one cell. */
+function MatrixFact({ f, lit }: { f: LadderFact; lit: boolean | null }) {
+  const est = f.kind === 'estimate'
+  return (
+    <div className="py-1 px-1.5 -mx-1.5 rounded transition-opacity"
+      style={{
+        opacity: lit === false ? 0.3 : 1,
+        boxShadow: lit ? 'inset 0 0 0 2px var(--series-cost)'
+          : est ? 'inset 3px 0 0 var(--status-warning)' : undefined,
+        paddingLeft: est ? 10 : undefined,
+      }}
+      title={f.closes ? `Would settle it: ${f.closes}` : undefined}>
+      <p className="text-[16px] leading-tight font-semibold tabular-nums"
+        style={{ color: f.value ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+        {f.value ? f.value.text : '—'}</p>
+      <p className="text-[12px] leading-snug" style={{ color: 'var(--text-secondary)' }}>
+        {f.label.text}</p>
+      {LADDER_TAG[f.kind] ? (
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest mt-0.5"
+          style={{ color: 'var(--text-muted)' }}>{LADDER_TAG[f.kind]}</p>
+      ) : null}
+    </div>
+  )
+}
+
+/* THE MATRIX: the same facts, a column per thing compared and a row per rung. Across a row
+ * compares; down a column is one thing's whole story; an empty cell is drawn empty because
+ * in a matrix the blank is part of the finding. On a phone the columns cannot sit side by
+ * side, so each becomes its own card, rows in the same order, empty rows left out. */
+function LadderMatrixView({ m, byId, lit }: {
+  m: LadderMatrix; byId: Map<string, LadderFact>; lit: Set<string> | null
+}) {
+  const at = new Map(m.cells.map(c => [`${c.col}|${c.row}`, c.facts]))
+  const facts = (col: string, row: string) =>
+    (at.get(`${col}|${row}`) ?? []).map(id => byId.get(id)).filter(Boolean) as LadderFact[]
+  const head = (c: LadderMatrix['columns'][number]) => (
+    <p className="text-[12px] font-bold uppercase tracking-wider pt-1.5 pb-1"
+      style={{ color: 'var(--text-primary)', borderTop: `3px solid ${c.tone ?? 'var(--axis)'}` }}>
+      {c.label}</p>
+  )
+  // THE HEADER STAYS while the rows scroll under it (TJ, 12 October 2026), pinned below
+  // the site header, on the page's own background so the rows do not show through.
+  const pin: React.CSSProperties = {
+    position: 'sticky', top: 'var(--header-h)', zIndex: 5, background: 'var(--surface-2)',
+  }
+  const rowLabel = (label: string) => (
+    <p className="text-[10.5px] font-semibold uppercase tracking-widest leading-snug"
+      style={{ color: 'var(--text-muted)' }}>{label}</p>
+  )
+  return (
+    <>
+      <div className="hidden sm:grid gap-x-4"
+        style={{ gridTemplateColumns: `7rem repeat(${m.columns.length}, minmax(0, 1fr))` }}>
+        <div style={pin} />
+        {m.columns.map(c => <div key={c.id} style={pin}>{head(c)}</div>)}
+        {m.rows.map(r => [
+          <div key={r.id} className="py-2 border-t" style={{ borderColor: 'var(--grid)' }}>
+            {rowLabel(r.label)}</div>,
+          ...m.columns.map(c => (
+            <div key={`${r.id}-${c.id}`} className="py-1 border-t" style={{ borderColor: 'var(--grid)' }}>
+              {facts(c.id, r.id).map(f => (
+                <MatrixFact key={f.id} f={f} lit={lit ? lit.has(f.id) : null} />))}
+            </div>
+          )),
+        ])}
+      </div>
+      <div className="sm:hidden space-y-5">
+        {m.columns.map(c => (
+          <div key={c.id}>
+            <div style={pin}>{head(c)}</div>
+            {m.rows.filter(r => facts(c.id, r.id).length).map(r => (
+              <div key={r.id} className="grid grid-cols-[6.5rem_1fr] gap-x-3 py-1.5 border-t"
+                style={{ borderColor: 'var(--grid)' }}>
+                <div className="pt-1">{rowLabel(r.label)}</div>
+                <div>{facts(c.id, r.id).map(f => (
+                  <MatrixFact key={f.id} f={f} lit={lit ? lit.has(f.id) : null} />))}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
+
+/** What a conclusion's question brings with it, rendered by the page that owns the
+ *  questions (components/brief.tsx), so this file stays free of the brief's types. */
+export type LadderEvidence = { tag: React.ReactNode; question: string; body: React.ReactNode }
+
+export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<string, LadderEvidence> }) {
+  const [active, setActive] = useState<number | null>(null)
+  const lit = active == null ? null : new Set(l.conclusions[active].rests_on)
+  const byId = new Map(l.tiers.flatMap(t => t.facts).map(f => [f.id, f]))
+  // ON TRIAL, 12 October 2026: the matrix is the default and `?ladder=tiers` shows the
+  // tiered grid over the same facts, so the two can be compared before one is chosen.
+  const tiers = !l.matrix || new URLSearchParams(window.location.search).get('ladder') === 'tiers'
+  // Where each fact sits, said beside it when a conclusion lays it out: the column and row
+  // of the grid, or the tier.
+  const where = new Map<string, string>()
+  l.tiers.forEach(t => t.facts.forEach(f => where.set(f.id, t.title)))
+  if (!tiers && l.matrix) {
+    const col = new Map(l.matrix.columns.map(c => [c.id, c.label]))
+    const row = new Map(l.matrix.rows.map(r => [r.id, r.label]))
+    l.matrix.cells.forEach(c => c.facts.forEach(id =>
+      where.set(id, `${col.get(c.col)} · ${row.get(c.row)}`)))
+  }
+  const rung = (n: number, title: string) => (
+    <h2 className="text-[11px] font-semibold uppercase tracking-widest mb-2 mt-6"
+      style={{ color: 'var(--text-muted)' }}>
+      <span className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{n}</span>
+      {'  ·  '}{title}</h2>
+  )
+  return (
+    <section data-section="ladder" className="mt-6 max-w-3xl">
+      {!tiers && l.matrix ? (
+        <div className="mt-6"><LadderMatrixView m={l.matrix} byId={byId} lit={lit} /></div>
+      ) : null}
+      {tiers && l.tiers.map((t, i) => (
+        <div key={t.title}>
+          {rung(i + 1, t.title)}
+          {/* Each tile draws its own right and bottom edge and the list draws the top and
+              left, so a short last row leaves blank space rather than a filled block. */}
+          <ul className="grid grid-cols-2 sm:grid-cols-4 border-t border-l"
+            style={{ borderColor: 'var(--grid)' }}>
+            {t.facts.map(f => <LadderTile key={f.id} f={f} lit={lit ? lit.has(f.id) : null} />)}
+          </ul>
+        </div>
+      ))}
+      {tiers ? rung(l.tiers.length + 1, l.title) : (
+        <h2 className="text-[11px] font-semibold uppercase tracking-widest mb-2 mt-8"
+          style={{ color: 'var(--text-muted)' }}>{l.title}</h2>
+      )}
+      {/* ONE LIST, THREE DEPTHS. The conclusions and the brief's questions were the same
+          layer said twice (TJ, 12 October 2026), so each conclusion now carries its
+          question: the sentence to repeat; under it the verdict and the resident's question;
+          and ONE fold, "How we know", that opens to the facts it rests on and then the
+          evidence -- one continuous climb down, not two folds whose boundary is ours. The
+          grid above still lights while one is open, for a screen tall enough to see both. */}
+      <ol className="border-t" style={{ borderColor: 'var(--grid)' }}>
+        {l.conclusions.map((c, i) => {
+          const open = active === i
+          const ev = c.chain ? evidence?.[c.chain] : undefined
+          return (
+            <li key={i} id={c.chain ? `q-${c.chain}` : undefined}
+              className="border-b py-3 scroll-mt-[calc(var(--header-h)+1rem)]"
+              style={{ borderColor: 'var(--grid)' }}>
+              <div className="flex gap-3">
+                <span className="text-[16px] font-semibold tabular-nums w-4 shrink-0"
+                  style={{ color: 'var(--text-muted)' }}>{i + 1}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[16px] leading-snug font-semibold"
+                    style={{ color: 'var(--text-primary)' }}>{c.text}</p>
+                  {ev ? (
+                    <p className="text-[13px] leading-snug mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5"
+                      style={{ color: 'var(--text-secondary)' }}>
+                      {ev.tag}<span>{ev.question}</span>
+                    </p>
+                  ) : null}
+                  <button type="button" aria-expanded={open}
+                    onClick={() => setActive(open ? null : i)}
+                    className="mt-1.5 inline-flex items-center gap-1.5 text-[12.5px] cursor-pointer text-left"
+                    style={{ color: 'var(--text-muted)' }}>
+                    <span aria-hidden className="inline-block transition-transform"
+                      style={{ transform: open ? 'rotate(90deg)' : undefined }}>▸</span>
+                    <span><span className="font-semibold">How we know</span>
+                      {open ? null : ` · ${c.rests_on
+                        .map(r => byId.get(r)?.value?.text ?? 'not published').join(' · ')}`}</span>
+                  </button>
+                  {open ? (
+                    <div className="mt-2">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+                        {c.rests_on.map(r => byId.get(r)).filter(Boolean).map(f => (
+                          <li key={f!.id}>
+                            <p className="text-[10px] font-semibold uppercase tracking-widest pt-1.5"
+                              style={{ color: 'var(--text-muted)' }}>{where.get(f!.id)}</p>
+                            <MatrixFact f={f!} lit={null} />
+                          </li>
+                        ))}
+                      </ul>
+                      {ev ? ev.body : null}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
+  )
+}
+
+/* ---------------------------------------------------------------- a chart's figures, as a table
+ * THE CHART'S OWN DATA, every year it draws, as a real table (TJ, 12 October 2026: "'figures
+ * as a table' probably needs a real table"). One per chart, keyed by the chart's id in the
+ * payload's `tables`, so any report can give any chart its table the same way. Formatted by
+ * the generator; nothing here computes. Rule 7f's other half: a chart is read by hover, and
+ * a table is what gets quoted, printed and read by a screen reader.
+ *
+ * VIEWS, NEVER MIXED COLUMNS. Budget and spending are separate views behind a switch, not
+ * side by side in one row, because rule 1 forbids reading one against the other by accident.
+ * A column from a sheet somebody assembled is set in italic and says so (rule 13a). */
+export type FigureTableView = {
+  key: string; label: string; columns: string[]; kinds: ('ledger' | 'stated')[]
+  total_col: number; rows: { label: string; cells: (string | null)[] }[]; note: string
+}
+export type FigureTableData = { caption: string; views: FigureTableView[] }
+
+export function FigureTable({ t }: { t: FigureTableData }) {
+  const [k, setK] = useState(0)
+  const v = t.views[k]
+  const stated = (i: number) => v.kinds[i] === 'stated'
+  return (
+    <figure className="mt-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <figcaption className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
+          {t.caption}</figcaption>
+        {t.views.length > 1 ? (
+          <div role="group" aria-label="Which figures" className="inline-flex rounded-md border overflow-hidden text-[12.5px]"
+            style={{ borderColor: 'var(--grid)' }}>
+            {t.views.map((x, i) => (
+              <button key={x.key} type="button" aria-pressed={i === k} onClick={() => setK(i)}
+                className="px-2.5 py-1 cursor-pointer"
+                style={i === k ? { background: 'var(--series-cost)', color: 'var(--surface-1)' }
+                  : { color: 'var(--text-secondary)' }}>{x.label}</button>
+            ))}
+          </div>
+        ) : null}
+      </div>
+      <div className="overflow-x-auto rounded-md border" style={{ borderColor: 'var(--grid)' }}>
+        <table className="w-full text-[13px] tabular-nums border-collapse min-w-[560px]">
+          <thead>
+            <tr style={{ background: 'var(--surface-1)', color: 'var(--text-secondary)' }}>
+              <th scope="col" className="sticky left-0 text-left font-semibold px-2.5 py-2 align-bottom"
+                style={{ background: 'var(--surface-1)', borderBottom: '2px solid var(--axis)' }}>Year</th>
+              {v.columns.map((c, i) => (
+                <th key={c} scope="col" className="text-right font-semibold px-2.5 py-2 align-bottom leading-snug"
+                  style={{
+                    borderBottom: '2px solid var(--axis)',
+                    borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
+                    fontStyle: stated(i) ? 'italic' : undefined,
+                  }}>
+                  {c}{stated(i) ? <span className="block text-[10.5px] font-normal">district sheet</span> : null}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {v.rows.map((r, j) => {
+              const bg = j % 2 ? 'var(--surface-1)' : 'var(--surface-2)'
+              return (
+                <tr key={r.label} style={{ background: bg }}>
+                  <th scope="row" className="sticky left-0 text-left font-semibold px-2.5 py-1.5"
+                    style={{ background: bg, color: 'var(--text-primary)' }}>{r.label}</th>
+                  {r.cells.map((c, i) => (
+                    <td key={i} className="text-right px-2.5 py-1.5 whitespace-nowrap"
+                      style={{
+                        color: c == null || stated(i) ? 'var(--text-muted)' : 'var(--text-primary)',
+                        fontWeight: i === v.total_col ? 600 : undefined,
+                        fontStyle: stated(i) ? 'italic' : undefined,
+                        borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
+                      }}>{c ?? '—'}</td>
+                  ))}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-[12.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>{v.note}</p>
+    </figure>
+  )
+}

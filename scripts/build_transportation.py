@@ -2079,8 +2079,8 @@ def build_brief(m):
                                 'c': P(pct1(y[2028]['regular'] - gr['b'], gr['b'])),
                                 'd': F(last)}, link=ln('contract', 'The Dee Bus contract')),
             B.step('Athletic buses on the town line went from %s to %s, but the district’s own '
-                   'sheet already put them at %s in %s and %s in %s: the town took over a bill '
-                   'families’ fees had paid.' % (C.usd(ga['a']), C.usd(ga['b']), C.usd(tot24),
+                   'sheet already put them at %s in %s and %s in %s: the town budget, mostly '
+                   'taxes, took over what player fees paid.' % (C.usd(ga['a']), C.usd(ga['b']), C.usd(tot24),
                                                 C.fy(2024), C.usd(tot25), C.fy(2025)),
                    'measured', {'a': U(ga['a']), 'b': U(ga['b']), 'c': U(tot24), 'd': F(2024),
                                 'e': U(tot25), 'f': F(2025)}, link=ln('sec2')),
@@ -2155,8 +2155,8 @@ def build_brief(m):
     ath25 = by[2025]['athletic']
     athletic = B.chain(
         'athletic-fund', 'How does the athletic fee fund play into bus costs?', 'concern',
-        'In %s the town paid %s of athletic buses and the families’ fee fund the rest. From %s '
-        'the district moved that cost to the town.'
+        'In %s the town paid %s of athletic buses and player fees the rest. From %s the '
+        'district moved that cost to the town budget, mostly taxes.'
         % (C.fy(2024), C.usd(line24), C.fy(2025)),
         figures={'a': F(2024), 'b': U(line24), 'c': F(2025)},
         steps=[
@@ -2261,11 +2261,162 @@ def build_brief(m):
         'a sheet the district built, not the ledger; it adds what the families’ fee fund paid.')
 
     chains = [trend, offsets] + chains + [athletic, track]
-    return B.brief(
+    out = B.brief(
         'Buses are getting more expensive, in special education and in the regular-route '
         'contract. The state repays only a slice of special education busing. The athletic '
-        'line rose because the district moved that cost from families’ fees onto the town.',
+        'line rose because the district moved that cost from player fees to the town budget, '
+        'mostly taxes.',
         chains, costs=costs)
+    out['ladder'] = build_ladder(m, by, gs, gr, cb_last, of_all, line24,
+                                 [c['id'] for c in chains])
+    return out
+
+
+def levy_share(fy):
+    """How much of the revenue behind the town budget is property tax: the town's own
+    revenue distribution, `Total Tax Levy` over `Total`, for the projected year. TJ, 12
+    October 2026: "people dont understand the implication of 'from player fees to town
+    budget'... we need the word 'taxes'". The town budget is not ONLY taxes -- state aid and
+    local receipts are the rest -- so the page says MOSTLY, and this is the figure behind it."""
+    path = os.path.join(ROOT, 'sources', 'data', 'revenue-distribution-fy26.csv')
+    want = {'levy': 'Revenues / Total Tax Levy: Total / %s PROJECTED' % C.fy(fy).replace('20', '', 1),
+            'total': 'Revenues / Total / %s PROJECTED' % C.fy(fy).replace('20', '', 1)}
+    got = {}
+    for r in csv.DictReader(open(path, encoding='utf-8')):
+        for k_, line in want.items():
+            if r['line'] == line:
+                got[k_] = float(r['fy26'])
+    if set(got) != set(want):
+        fail('revenue-distribution-fy26.csv no longer prints %s' % ', '.join(sorted(set(want) - set(got))))
+    share = round(100 * got['levy'] / got['total'], 1)
+    if not share > 50:
+        fail('property tax is no longer most of the town budget’s revenue (%s%%); the page says '
+             '"mostly"' % share)
+    return dict(levy=got['levy'], total=got['total'], share=share)
+
+
+def build_ladder(m, by, gs, gr, cb_last, of_all, line24, chain_ids=()):
+    """The fact ladder (scripts/ladder.py): bare facts, then how they change, then who
+    pays, then the conclusions -- each naming the facts it rests on. Nothing typed: every
+    value is a figure() off the same measurements the chains use."""
+    import ladder as LD
+    A, last, k, st = m['audit'], m['last'], m['contract'], m['state']
+    x, s26, y = A['mask'], A['sped26'], m['ystep']
+    b1 = by[last]
+    U = lambda v: figure(v, C.usd(v))
+    U2 = lambda v: figure(v, usd2(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=1: figure(v, C.pct(v, dp))
+    G = lambda v: figure(v, '+' + C.pct(v))          # a rise: the sign is the point
+    N = lambda v: figure(v, C.num(v))
+    k26 = next(c for c in k['years'] if c['fy'] == last)
+    lv = levy_share(last)
+    sched = next(r for r in m['sched']['by_fy'] if r['fy'] == last)
+    wait = k['trip_full'] - k['trip_nowait']
+    wait_pct = round(100 * wait / k['trip_full'], 1)
+    LEVY = 2.5          # Proposition 2.5, M.G.L. c.59 s.21C -- statute, not ours
+    if not b1['regular']['spent'] > max(b1['sped']['spent'], b1['athletic']['spent']):
+        fail('regular routes are no longer the largest piece; conclusion 2 says they are')
+
+    f = LD.fact
+    t1 = LD.tier('The facts, %s' % C.fy(last), [
+        f('all', U(b1['all_spent']), 'all school buses, spent, %s' % C.fy(last), 'published',
+          {'y': F(last)}),
+        f('regular', U(b1['regular']['spent']), 'regular routes', 'published'),
+        f('sped', U(b1['sped']['spent']), 'special education vans, not the Dee Bus contract',
+          'published'),
+        f('athletic', U(b1['athletic']['spent']), 'athletics, on the town budget', 'published'),
+        f('buses', N(k['n77'] + k['n83']), 'buses on regular routes', 'contract'),
+        f('days', N(k['days']), 'school days a bus is paid for', 'contract'),
+        f('bus-day', figure(k26['p77'], '%s–%s' % (C.usd(k26['p77']), C.usd(k26['p83']))),
+          'one bus, one school day', 'contract'),
+        f('mile', U2(k26['trip_rate']), 'a mile, field and athletic trips', 'contract'),
+        f('hour', U(k26['wait_rate']), 'an hour of the driver waiting', 'contract'),
+        f('trips', N(sched['trips']), 'athletic bus trips, from the posted schedules',
+          'estimate'),
+        f('state', U(cb_last['transport']), 'repaid by the state, special education only', 'published'),
+        f('riders', None, 'children who ride', 'gap',
+          closes='a count of riders by route, from the district'),
+        f('vans', None, 'special education vans and monitors', 'gap',
+          closes='the special education van contract and a count of routes by year'),
+        f('van-rate', None, 'one van, one school day', 'gap',
+          closes='the special education van contract, from the district'),
+    ])
+    t2 = LD.tier('How it is changing', [
+        f('sped-rate', G(gs['yr']), 'a year, special education, since %s' % C.fy(2019),
+          'published', {'y': F(2019)}),
+        f('reg-rate', G(gr['yr']), 'a year, regular routes, since %s' % C.fy(2019),
+          'published', {'y': F(2019)}),
+        f('levy', P(LEVY), 'a year: the most the levy may grow, no override', 'statute'),
+        f('rise27', G(m['rises'][2027]), 'contract price, into %s' % C.fy(2027),
+          'contract', {'y': F(2027)}),
+        f('rise28', G(m['rises'][2028]), 'contract price, into %s' % C.fy(2028),
+          'contract', {'y': F(2028)}),
+        f('fixed28', U(y[2028]['regular']), 'regular routes in %s, already fixed' % C.fy(2028),
+          'contract', {'y': F(2028)}),
+        f('over', U(s26['over']), 'special education past its %s budget' % C.fy(last),
+          'published', {'y': F(last)}),
+        f('wait', P(wait_pct, 0), 'of a bid-form trip is waiting: %s of %s'
+          % (C.usd(wait), usd2(k['trip_full'])), 'contract',
+          {'w': U(wait), 't': U2(k['trip_full'])}),
+    ])
+    t3 = LD.tier('Who pays, and what the budget shows', [
+        f('state-share', P(of_all), 'of all buses repaid by the state', 'published'),
+        f('levy-share', P(lv['share'], 0), 'of town budget revenue is property tax, %s projection' % C.fy(last), 'published', {'y': F(last)}),
+        f('no-aid', U(0), 'state aid for regular routes and athletics', 'published'),
+        f('ath24', U(line24), 'athletics on the town budget, %s' % C.fy(2024), 'published',
+          {'y': F(2024)}),
+        f('ath-sheet', U(m['sports']['totals'][2024]),
+          'athletic buses, all payers, %s: district sheet' % C.fy(2024), 'published',
+          {'y': F(2024)}),
+        f('sd27', G(x['sd_pct']), 'school-day buses, %s budget' % C.fy(2027), 'published',
+          {'y': F(2027)}),
+        f('all27', G(x['all_pct']), 'all buses together, %s budget' % C.fy(2027), 'published',
+          {'y': F(2027)}),
+        f('cut27', U(x['ath_cut']), 'athletic buses cut from %s' % C.fy(2027), 'published',
+          {'y': F(2027)}),
+    ])
+    lo, hi = round(gr['yr'] / LEVY), round(gs['yr'] / LEVY)
+    # THE SAME FACTS, AS A MATRIX: a column per kind of bus, coloured as the charts colour
+    # it, and a row per rung. Every fact is placed once; ladder.py refuses otherwise.
+    mx = LD.matrix(
+        [('all', 'All buses'), ('regular', 'Regular routes', 'var(--subj-1)'),
+         ('sped', 'Special education', 'var(--subj-4)'),
+         ('athletic', 'Athletics', 'var(--subj-2)')],
+        [('cost', 'Spent, %s' % C.fy(last)), ('unit', 'What one unit costs'),
+         ('volume', 'How much'), ('growth', 'Growth a year'),
+         ('fixed', 'Already fixed'), ('budget', 'Budget against spending'),
+         ('pays', 'Who pays')],
+        {('all', 'cost'): ['all'], ('regular', 'cost'): ['regular'],
+         ('sped', 'cost'): ['sped'], ('athletic', 'cost'): ['athletic'],
+         ('regular', 'unit'): ['bus-day'], ('sped', 'unit'): ['van-rate'],
+         ('athletic', 'unit'): ['mile', 'hour', 'wait'],
+         ('all', 'volume'): ['riders'], ('regular', 'volume'): ['buses', 'days'],
+         ('sped', 'volume'): ['vans'], ('athletic', 'volume'): ['trips'],
+         ('all', 'growth'): ['levy'], ('regular', 'growth'): ['reg-rate'],
+         ('sped', 'growth'): ['sped-rate'],
+         ('regular', 'fixed'): ['rise27', 'rise28', 'fixed28'],
+         ('all', 'budget'): ['sd27', 'all27'], ('sped', 'budget'): ['over'],
+         ('athletic', 'budget'): ['cut27'],
+         ('all', 'pays'): ['levy-share', 'state-share'], ('regular', 'pays'): ['no-aid'],
+         ('sped', 'pays'): ['state'], ('athletic', 'pays'): ['ath24', 'ath-sheet']})
+    con = LD.conclusion
+    return LD.ladder([t1, t2, t3], [
+        con('Buses are growing %s to %s times as fast as the levy may.' % (lo, hi),
+            ['sped-rate', 'reg-rate', 'levy'], {'lo': N(lo), 'hi': N(hi)}, chain='trend'),
+        con('The biggest piece, regular routes, is priced by contract through %s.' % C.fy(2028),
+            ['regular', 'bus-day', 'rise27', 'rise28', 'fixed28'], {'y': F(2028)},
+            chain='regular'),
+        con('Special education grows fastest, and nothing published counts what it buys.',
+            ['sped', 'sped-rate', 'over', 'vans'], chain='sped'),
+        con('The %s total looks flat because athletic buses were cut, not because buses got '
+            'cheaper.' % C.fy(2027), ['sd27', 'all27', 'cut27'], {'y': F(2027)}),
+        con('The state repays a small share, and nothing for regular routes or athletics.',
+            ['state', 'state-share', 'no-aid'], chain='offsets'),
+        con('Athletic buses moved from player fees to the town budget, which property taxes '
+            'mostly pay for.', ['athletic', 'ath24', 'ath-sheet', 'levy-share'],
+            chain='athletic-fund'),
+    ], matrix=mx, chains=chain_ids)
 
 
 # --------------------------------------------------------------------- sources
@@ -2346,6 +2497,41 @@ def sources():
 
 
 # --------------------------------------------------------------------- the payload
+
+def chart_table(by_year, sheet):
+    """The signature chart's figures as a table: every year it draws, one row a year, in two
+    views -- spent at the close and voted before the year -- never mixed in one column (rule
+    1). Formatted here so the page computes nothing. The district's by-sport sheet is its own
+    column, marked `stated` (rule 13a): a sheet somebody assembled, not the ledger."""
+    cols = [('regular', 'Regular routes'), ('sped', 'Special education'),
+            ('athletic', 'Athletics'), ('band', 'Band and music')]
+    cell = lambda v: None if v is None else C.usd(v)
+    views = []
+    for key, label, note in (
+            ('spent', 'Spent at the close',
+             'Town general fund, paid plus still owed at the year-end close. The last column is '
+             'a sheet the district built, not the ledger; it adds what the families’ fee fund '
+             'paid.'),
+            ('budget', 'Voted before the year',
+             'Town general fund, the budget voted before the year began.')):
+        rows = []
+        for r in sorted(by_year, key=lambda r: r['fy'], reverse=True):
+            cells = [cell(r['%s_%s' % (c, key)]) for c, _ in cols]
+            cells.append(cell(r['all_%s' % key]))
+            if key == 'spent':
+                cells.append(cell(sheet[r['fy']]) if r['fy'] in sheet else None)
+            if all(c is None for c in cells):
+                continue
+            rows.append(dict(label=C.fy(r['fy']), cells=cells))
+        head = [l for _, l in cols] + ['All buses']
+        kinds = ['ledger'] * len(head)
+        if key == 'spent':
+            head.append('Athletics, all payers')
+            kinds.append('stated')
+        views.append(dict(key=key, label=label, columns=head, kinds=kinds, total_col=len(cols),
+                          rows=rows, note=note))
+    return dict(caption='School transportation by year', views=views)
+
 
 def payload(m, rows, brief):
     L, last, k, sp, st = m['L'], m['last'], m['contract'], m['sports'], m['state']
@@ -2443,7 +2629,8 @@ def payload(m, rows, brief):
         # NO STAT ROW. Residents told TJ a big number with a paragraph under it leaves them
         # nothing to say; the brief's sentences carry the figures instead, each inside the
         # sentence a reader would repeat (notes/process/REPORT-FORMAT.md).
-        brief=brief,
+        brief={k: v for k, v in brief.items() if k != 'ladder'},
+        ladder=brief['ladder'],
         audit=dict(
             overdrawn=A['overdrawn'],
             fee_fund=A['fund']['fund'],
@@ -2466,6 +2653,7 @@ def payload(m, rows, brief):
         conclusions=rows,
         by_year=by_year,
         by_year_keys=[dict(key=c, name=CAT_NAME[c]) for c, _, _, _ in CATS],
+        tables={'transportation-schools-athletics': chart_table(by_year, m['sports']['totals'])},
         athletics=ath,
         sports=sports,
         sport_seasons=sp['seasons'],
@@ -3110,6 +3298,23 @@ def render_brief_md(b):
             lab = ('**%s**' % r['label']) if r['total'] else r['label']
             a('| %s | %s |\n' % (lab, ' | '.join(c['text'] if c else '—' for c in r['cells'])))
         a('\n%s\n\n' % t['note']['text'])
+    l = b.get('ladder')
+    if l:
+        TAG = {'contract': ' *(contract)*', 'statute': ' *(law)*', 'estimate': ' *(our estimate)*',
+               'gap': ' *(not published)*'}
+        for i, t in enumerate(l['tiers'], 1):
+            a('**%d. %s**\n\n| | |\n|---:|---|\n' % (i, t['title']))
+            for f in t['facts']:
+                a('| %s | %s%s |\n' % (f['value']['text'] if f['value'] else '—',
+                                        f['label']['text'], TAG.get(f['kind'], '')))
+            a('\n')
+        a('**%d. %s**\n\n' % (len(l['tiers']) + 1, l['title']))
+        ids = {f['id']: f for t in l['tiers'] for f in t['facts']}
+        for i, c in enumerate(l['conclusions'], 1):
+            a('%d. **%s** Rests on %s.\n' % (i, c['text'], ', '.join(
+                ids[r]['value']['text'] if ids[r]['value'] else 'not published'
+                for r in c['rests_on'])))
+        a('\n')
     for c in b['chains']:
         a('**%s.** *%s* **%s**\n\n' % (c['label'], c['question'], c['say']['text']))
         for st_ in c['steps']:

@@ -849,7 +849,7 @@
   "answer": {
    "figures": {},
    "literals": [],
-   "text": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from families’ fees onto the town."
+   "text": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes."
   },
   "chains": [
    {
@@ -1001,7 +1001,7 @@
        "label": "2. Athletic transportation: what it costs and who has paid"
       },
       "literals": [],
-      "text": "Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town took over a bill families’ fees had paid."
+      "text": "Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town budget, mostly taxes, took over what player fees paid."
      },
      {
       "figures": {
@@ -1520,7 +1520,7 @@
       }
      },
      "literals": [],
-     "text": "In FY2024 the town paid $40,000 of athletic buses and the families’ fee fund the rest. From FY2025 the district moved that cost to the town."
+     "text": "In FY2024 the town paid $40,000 of athletic buses and player fees the rest. From FY2025 the district moved that cost to the town budget, mostly taxes."
     },
     "steps": [
      {
@@ -3737,6 +3737,838 @@
  ],
  "generated_by": "scripts/build_transportation.py",
  "grain": "DOLLARS, school general fund, the budget voted before the year beside what was spent at its close (expended plus still committed), FY2010 to FY2026; never added together. Per-sport dollars are the district’s hand-assembled sheets (stated). Games are counted off the posted schedules; every bus cost built from them is OUR ESTIMATE.",
+ "ladder": {
+  "conclusions": [
+   {
+    "chain": "trend",
+    "figures": {
+     "hi": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     },
+     "lo": {
+      "text": "2",
+      "unit": "",
+      "value": 2
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "sped-rate",
+     "reg-rate",
+     "levy"
+    ],
+    "text": "Buses are growing 2 to 4 times as fast as the levy may."
+   },
+   {
+    "chain": "regular",
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "regular",
+     "bus-day",
+     "rise27",
+     "rise28",
+     "fixed28"
+    ],
+    "text": "The biggest piece, regular routes, is priced by contract through FY2028."
+   },
+   {
+    "chain": "sped",
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "sped",
+     "sped-rate",
+     "over",
+     "vans"
+    ],
+    "text": "Special education grows fastest, and nothing published counts what it buys."
+   },
+   {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "sd27",
+     "all27",
+     "cut27"
+    ],
+    "text": "The FY2027 total looks flat because athletic buses were cut, not because buses got cheaper."
+   },
+   {
+    "chain": "offsets",
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "state",
+     "state-share",
+     "no-aid"
+    ],
+    "text": "The state repays a small share, and nothing for regular routes or athletics."
+   },
+   {
+    "chain": "athletic-fund",
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "athletic",
+     "ath24",
+     "ath-sheet",
+     "levy-share"
+    ],
+    "text": "Athletic buses moved from player fees to the town budget, which property taxes mostly pay for."
+   }
+  ],
+  "matrix": {
+   "cells": [
+    {
+     "col": "all",
+     "facts": [
+      "all"
+     ],
+     "row": "cost"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "regular"
+     ],
+     "row": "cost"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "sped"
+     ],
+     "row": "cost"
+    },
+    {
+     "col": "athletic",
+     "facts": [
+      "athletic"
+     ],
+     "row": "cost"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "bus-day"
+     ],
+     "row": "unit"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "van-rate"
+     ],
+     "row": "unit"
+    },
+    {
+     "col": "athletic",
+     "facts": [
+      "mile",
+      "hour",
+      "wait"
+     ],
+     "row": "unit"
+    },
+    {
+     "col": "all",
+     "facts": [
+      "riders"
+     ],
+     "row": "volume"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "buses",
+      "days"
+     ],
+     "row": "volume"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "vans"
+     ],
+     "row": "volume"
+    },
+    {
+     "col": "athletic",
+     "facts": [
+      "trips"
+     ],
+     "row": "volume"
+    },
+    {
+     "col": "all",
+     "facts": [
+      "levy"
+     ],
+     "row": "growth"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "reg-rate"
+     ],
+     "row": "growth"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "sped-rate"
+     ],
+     "row": "growth"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "rise27",
+      "rise28",
+      "fixed28"
+     ],
+     "row": "fixed"
+    },
+    {
+     "col": "all",
+     "facts": [
+      "sd27",
+      "all27"
+     ],
+     "row": "budget"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "over"
+     ],
+     "row": "budget"
+    },
+    {
+     "col": "athletic",
+     "facts": [
+      "cut27"
+     ],
+     "row": "budget"
+    },
+    {
+     "col": "all",
+     "facts": [
+      "levy-share",
+      "state-share"
+     ],
+     "row": "pays"
+    },
+    {
+     "col": "regular",
+     "facts": [
+      "no-aid"
+     ],
+     "row": "pays"
+    },
+    {
+     "col": "sped",
+     "facts": [
+      "state"
+     ],
+     "row": "pays"
+    },
+    {
+     "col": "athletic",
+     "facts": [
+      "ath24",
+      "ath-sheet"
+     ],
+     "row": "pays"
+    }
+   ],
+   "columns": [
+    {
+     "id": "all",
+     "label": "All buses",
+     "tone": null
+    },
+    {
+     "id": "regular",
+     "label": "Regular routes",
+     "tone": "var(--subj-1)"
+    },
+    {
+     "id": "sped",
+     "label": "Special education",
+     "tone": "var(--subj-4)"
+    },
+    {
+     "id": "athletic",
+     "label": "Athletics",
+     "tone": "var(--subj-2)"
+    }
+   ],
+   "rows": [
+    {
+     "id": "cost",
+     "label": "Spent, FY2026"
+    },
+    {
+     "id": "unit",
+     "label": "What one unit costs"
+    },
+    {
+     "id": "volume",
+     "label": "How much"
+    },
+    {
+     "id": "growth",
+     "label": "Growth a year"
+    },
+    {
+     "id": "fixed",
+     "label": "Already fixed"
+    },
+    {
+     "id": "budget",
+     "label": "Budget against spending"
+    },
+    {
+     "id": "pays",
+     "label": "Who pays"
+    }
+   ]
+  },
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "all",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "all school buses, spent, FY2026"
+      },
+      "value": {
+       "text": "$1,724,343",
+       "unit": "",
+       "value": 1724343
+      }
+     },
+     {
+      "id": "regular",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "regular routes"
+      },
+      "value": {
+       "text": "$976,500",
+       "unit": "",
+       "value": 976500
+      }
+     },
+     {
+      "id": "sped",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "special education vans, not the Dee Bus contract"
+      },
+      "value": {
+       "text": "$633,291",
+       "unit": "",
+       "value": 633291
+      }
+     },
+     {
+      "id": "athletic",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "athletics, on the town budget"
+      },
+      "value": {
+       "text": "$110,650",
+       "unit": "",
+       "value": 110650
+      }
+     },
+     {
+      "id": "buses",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "buses on regular routes"
+      },
+      "value": {
+       "text": "11",
+       "unit": "",
+       "value": 11
+      }
+     },
+     {
+      "id": "days",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "school days a bus is paid for"
+      },
+      "value": {
+       "text": "180",
+       "unit": "",
+       "value": 180
+      }
+     },
+     {
+      "id": "bus-day",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "one bus, one school day"
+      },
+      "value": {
+       "text": "$485–$515",
+       "unit": "",
+       "value": 485.0
+      }
+     },
+     {
+      "id": "mile",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "a mile, field and athletic trips"
+      },
+      "value": {
+       "text": "$6.50",
+       "unit": "",
+       "value": 6.5
+      }
+     },
+     {
+      "id": "hour",
+      "kind": "contract",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "an hour of the driver waiting"
+      },
+      "value": {
+       "text": "$130",
+       "unit": "",
+       "value": 130.0
+      }
+     },
+     {
+      "id": "trips",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "athletic bus trips, from the posted schedules"
+      },
+      "value": {
+       "text": "176",
+       "unit": "",
+       "value": 176
+      }
+     },
+     {
+      "id": "state",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "repaid by the state, special education only"
+      },
+      "value": {
+       "text": "$94,993",
+       "unit": "",
+       "value": 94993
+      }
+     },
+     {
+      "closes": "a count of riders by route, from the district",
+      "id": "riders",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "children who ride"
+      },
+      "value": null
+     },
+     {
+      "closes": "the special education van contract and a count of routes by year",
+      "id": "vans",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "special education vans and monitors"
+      },
+      "value": null
+     },
+     {
+      "closes": "the special education van contract, from the district",
+      "id": "van-rate",
+      "kind": "gap",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "one van, one school day"
+      },
+      "value": null
+     }
+    ],
+    "title": "The facts, FY2026"
+   },
+   {
+    "facts": [
+     {
+      "id": "sped-rate",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2019",
+         "unit": "fiscal year",
+         "value": 2019
+        }
+       },
+       "literals": [],
+       "text": "a year, special education, since FY2019"
+      },
+      "value": {
+       "text": "+10.1%",
+       "unit": "",
+       "value": 10.1
+      }
+     },
+     {
+      "id": "reg-rate",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2019",
+         "unit": "fiscal year",
+         "value": 2019
+        }
+       },
+       "literals": [],
+       "text": "a year, regular routes, since FY2019"
+      },
+      "value": {
+       "text": "+4.9%",
+       "unit": "",
+       "value": 4.9
+      }
+     },
+     {
+      "id": "levy",
+      "kind": "statute",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "a year: the most the levy may grow, no override"
+      },
+      "value": {
+       "text": "2.5%",
+       "unit": "",
+       "value": 2.5
+      }
+     },
+     {
+      "id": "rise27",
+      "kind": "contract",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "contract price, into FY2027"
+      },
+      "value": {
+       "text": "+7.9%",
+       "unit": "",
+       "value": 7.9
+      }
+     },
+     {
+      "id": "rise28",
+      "kind": "contract",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "contract price, into FY2028"
+      },
+      "value": {
+       "text": "+7.4%",
+       "unit": "",
+       "value": 7.4
+      }
+     },
+     {
+      "id": "fixed28",
+      "kind": "contract",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "regular routes in FY2028, already fixed"
+      },
+      "value": {
+       "text": "$1,131,390",
+       "unit": "",
+       "value": 1131390.0
+      }
+     },
+     {
+      "id": "over",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "special education past its FY2026 budget"
+      },
+      "value": {
+       "text": "$67,555",
+       "unit": "",
+       "value": 67555
+      }
+     },
+     {
+      "id": "wait",
+      "kind": "contract",
+      "label": {
+       "figures": {
+        "t": {
+         "text": "$942.50",
+         "unit": "",
+         "value": 942.5
+        },
+        "w": {
+         "text": "$520",
+         "unit": "",
+         "value": 520.0
+        }
+       },
+       "literals": [],
+       "text": "of a bid-form trip is waiting: $520 of $942.50"
+      },
+      "value": {
+       "text": "55%",
+       "unit": "",
+       "value": 55.2
+      }
+     }
+    ],
+    "title": "How it is changing"
+   },
+   {
+    "facts": [
+     {
+      "id": "state-share",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of all buses repaid by the state"
+      },
+      "value": {
+       "text": "5.5%",
+       "unit": "",
+       "value": 5.5
+      }
+     },
+     {
+      "id": "levy-share",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "of town budget revenue is property tax, FY2026 projection"
+      },
+      "value": {
+       "text": "71%",
+       "unit": "",
+       "value": 71.0
+      }
+     },
+     {
+      "id": "no-aid",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "state aid for regular routes and athletics"
+      },
+      "value": {
+       "text": "$0",
+       "unit": "",
+       "value": 0
+      }
+     },
+     {
+      "id": "ath24",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2024",
+         "unit": "fiscal year",
+         "value": 2024
+        }
+       },
+       "literals": [],
+       "text": "athletics on the town budget, FY2024"
+      },
+      "value": {
+       "text": "$40,000",
+       "unit": "",
+       "value": 40000
+      }
+     },
+     {
+      "id": "ath-sheet",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2024",
+         "unit": "fiscal year",
+         "value": 2024
+        }
+       },
+       "literals": [],
+       "text": "athletic buses, all payers, FY2024: district sheet"
+      },
+      "value": {
+       "text": "$117,555",
+       "unit": "",
+       "value": 117555.0
+      }
+     },
+     {
+      "id": "sd27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "school-day buses, FY2027 budget"
+      },
+      "value": {
+       "text": "+11.2%",
+       "unit": "",
+       "value": 11.2
+      }
+     },
+     {
+      "id": "all27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "all buses together, FY2027 budget"
+      },
+      "value": {
+       "text": "+2.4%",
+       "unit": "",
+       "value": 2.4
+      }
+     },
+     {
+      "id": "cut27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "athletic buses cut from FY2027"
+      },
+      "value": {
+       "text": "$127,550",
+       "unit": "",
+       "value": 127550
+      }
+     }
+    ],
+    "title": "Who pays, and what the budget shows"
+   }
+  ],
+  "title": "What it adds up to"
+ },
  "not_established": [
   "How many athletic bus trips any sport took, or what any one trip cost. The schedules show where teams played, not whether a bus went, was shared, or how long it waited; the bus model built from them is ours and gives a range.",
   "How the district built its FY2027 athletic transportation estimate of $58,880.",
@@ -11426,5 +12258,425 @@
    "season": "Spring",
    "sport": "Softball"
   }
- ]
+ ],
+ "tables": {
+  "transportation-schools-athletics": {
+   "caption": "School transportation by year",
+   "views": [
+    {
+     "columns": [
+      "Regular routes",
+      "Special education",
+      "Athletics",
+      "Band and music",
+      "All buses",
+      "Athletics, all payers"
+     ],
+     "key": "spent",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "stated"
+     ],
+     "label": "Spent at the close",
+     "note": "Town general fund, paid plus still owed at the year-end close. The last column is a sheet the district built, not the ledger; it adds what the families’ fee fund paid.",
+     "rows": [
+      {
+       "cells": [
+        "$976,500",
+        "$633,291",
+        "$110,650",
+        "$3,902",
+        "$1,724,343",
+        null
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "$907,200",
+        "$434,922",
+        "$87,822",
+        "$5,205",
+        "$1,435,149",
+        "$91,066"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "$917,525",
+        "$401,402",
+        "$40,000",
+        "$4,205",
+        "$1,363,132",
+        "$117,555"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "$837,900",
+        "$320,244",
+        "$39,880",
+        "$7,565",
+        "$1,205,589",
+        null
+       ],
+       "label": "FY2023"
+      },
+      {
+       "cells": [
+        "$727,425",
+        "$241,390",
+        "$54,567",
+        "$2,620",
+        "$1,026,002",
+        null
+       ],
+       "label": "FY2022"
+      },
+      {
+       "cells": [
+        "$667,775",
+        "$260,921",
+        "$39,703",
+        "$0",
+        "$968,399",
+        null
+       ],
+       "label": "FY2021"
+      },
+      {
+       "cells": [
+        "$509,040",
+        "$223,350",
+        "$38,795",
+        "$2,900",
+        "$774,085",
+        null
+       ],
+       "label": "FY2020"
+      },
+      {
+       "cells": [
+        "$696,600",
+        "$322,047",
+        "$36,974",
+        "$6,075",
+        "$1,061,696",
+        null
+       ],
+       "label": "FY2019"
+      },
+      {
+       "cells": [
+        "$675,000",
+        "$366,184",
+        "$33,500",
+        "$2,740",
+        "$1,077,424",
+        null
+       ],
+       "label": "FY2018"
+      },
+      {
+       "cells": [
+        "$625,500",
+        "$360,537",
+        "$23,000",
+        "$1,927",
+        "$1,010,964",
+        null
+       ],
+       "label": "FY2017"
+      },
+      {
+       "cells": [
+        "$527,580",
+        "$460,508",
+        "$23,000",
+        "$2,471",
+        "$1,013,559",
+        null
+       ],
+       "label": "FY2016"
+      },
+      {
+       "cells": [
+        "$527,580",
+        "$480,819",
+        "$21,600",
+        "$2,168",
+        "$1,032,167",
+        null
+       ],
+       "label": "FY2015"
+      },
+      {
+       "cells": [
+        "$467,634",
+        "$444,752",
+        "$17,000",
+        "$4,417",
+        "$933,803",
+        null
+       ],
+       "label": "FY2014"
+      },
+      {
+       "cells": [
+        "$507,764",
+        "$440,499",
+        "$17,276",
+        "$3,498",
+        "$969,037",
+        null
+       ],
+       "label": "FY2013"
+      },
+      {
+       "cells": [
+        "$414,450",
+        "$309,766",
+        "$24,992",
+        "$2,214",
+        "$751,422",
+        null
+       ],
+       "label": "FY2012"
+      },
+      {
+       "cells": [
+        "$450,011",
+        "$267,248",
+        "$25,000",
+        "$3,545",
+        "$745,804",
+        null
+       ],
+       "label": "FY2011"
+      },
+      {
+       "cells": [
+        "$470,434",
+        "$226,876",
+        "$29,744",
+        "$3,350",
+        "$730,404",
+        null
+       ],
+       "label": "FY2010"
+      }
+     ],
+     "total_col": 4
+    },
+    {
+     "columns": [
+      "Regular routes",
+      "Special education",
+      "Athletics",
+      "Band and music",
+      "All buses"
+     ],
+     "key": "budget",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Voted before the year",
+     "note": "Town general fund, the budget voted before the year began.",
+     "rows": [
+      {
+       "cells": [
+        "$1,053,360",
+        "$649,953",
+        "$0",
+        "$0",
+        "$1,703,313"
+       ],
+       "label": "FY2027"
+      },
+      {
+       "cells": [
+        "$965,500",
+        "$565,734",
+        "$127,550",
+        "$4,000",
+        "$1,662,784"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "$907,200",
+        "$445,328",
+        "$40,000",
+        "$8,500",
+        "$1,401,028"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "$838,800",
+        "$335,947",
+        "$40,000",
+        "$6,700",
+        "$1,221,447"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "$807,975",
+        "$329,360",
+        "$40,000",
+        "$6,100",
+        "$1,183,435"
+       ],
+       "label": "FY2023"
+      },
+      {
+       "cells": [
+        "$769,500",
+        "$297,843",
+        "$45,000",
+        "$5,100",
+        "$1,117,443"
+       ],
+       "label": "FY2022"
+      },
+      {
+       "cells": [
+        "$739,800",
+        "$380,409",
+        "$45,000",
+        "$4,900",
+        "$1,170,109"
+       ],
+       "label": "FY2021"
+      },
+      {
+       "cells": [
+        "$720,000",
+        "$446,658",
+        "$38,801",
+        "$6,900",
+        "$1,212,359"
+       ],
+       "label": "FY2020"
+      },
+      {
+       "cells": [
+        "$696,600",
+        "$417,585",
+        "$24,975",
+        "$4,500",
+        "$1,143,660"
+       ],
+       "label": "FY2019"
+      },
+      {
+       "cells": [
+        "$706,500",
+        "$490,000",
+        "$33,500",
+        "$4,250",
+        "$1,234,250"
+       ],
+       "label": "FY2018"
+      },
+      {
+       "cells": [
+        "$612,000",
+        "$489,250",
+        "$23,000",
+        "$4,250",
+        "$1,128,500"
+       ],
+       "label": "FY2017"
+      },
+      {
+       "cells": [
+        "$527,580",
+        "$469,046",
+        "$23,000",
+        "$4,100",
+        "$1,023,726"
+       ],
+       "label": "FY2016"
+      },
+      {
+       "cells": [
+        "$507,920",
+        "$415,488",
+        "$21,600",
+        "$6,900",
+        "$951,908"
+       ],
+       "label": "FY2015"
+      },
+      {
+       "cells": [
+        "$476,600",
+        "$395,702",
+        "$17,000",
+        "$5,900",
+        "$895,202"
+       ],
+       "label": "FY2014"
+      },
+      {
+       "cells": [
+        "$476,600",
+        "$348,060",
+        "$14,500",
+        "$5,650",
+        "$844,810"
+       ],
+       "label": "FY2013"
+      },
+      {
+       "cells": [
+        "$403,200",
+        "$270,000",
+        "$21,400",
+        "$4,950",
+        "$699,550"
+       ],
+       "label": "FY2012"
+      },
+      {
+       "cells": [
+        "$424,380",
+        "$300,000",
+        "$25,000",
+        "$5,500",
+        "$754,880"
+       ],
+       "label": "FY2011"
+      },
+      {
+       "cells": [
+        "$493,020",
+        "$300,000",
+        "$30,000",
+        "$5,100",
+        "$828,120"
+       ],
+       "label": "FY2010"
+      }
+     ],
+     "total_col": 4
+    }
+   ]
+  }
+ }
 }

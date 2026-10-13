@@ -6,7 +6,7 @@
 
 ## The short version
 
-Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from families’ fees onto the town.
+Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes.
 
 **What the buses cost, spent at the close of each year**
 
@@ -21,11 +21,65 @@ Buses are getting more expensive, in special education and in the regular-route 
 
 The town’s general fund at the year-end close, paid plus still owed. The last row is a sheet the district built, not the ledger; it adds what the families’ fee fund paid.
 
+**1. The facts, FY2026**
+
+| | |
+|---:|---|
+| $1,724,343 | all school buses, spent, FY2026 |
+| $976,500 | regular routes |
+| $633,291 | special education vans, not the Dee Bus contract |
+| $110,650 | athletics, on the town budget |
+| 11 | buses on regular routes *(contract)* |
+| 180 | school days a bus is paid for *(contract)* |
+| $485–$515 | one bus, one school day *(contract)* |
+| $6.50 | a mile, field and athletic trips *(contract)* |
+| $130 | an hour of the driver waiting *(contract)* |
+| 176 | athletic bus trips, from the posted schedules *(our estimate)* |
+| $94,993 | repaid by the state, special education only |
+| — | children who ride *(not published)* |
+| — | special education vans and monitors *(not published)* |
+| — | one van, one school day *(not published)* |
+
+**2. How it is changing**
+
+| | |
+|---:|---|
+| +10.1% | a year, special education, since FY2019 |
+| +4.9% | a year, regular routes, since FY2019 |
+| 2.5% | a year: the most the levy may grow, no override *(law)* |
+| +7.9% | contract price, into FY2027 *(contract)* |
+| +7.4% | contract price, into FY2028 *(contract)* |
+| $1,131,390 | regular routes in FY2028, already fixed *(contract)* |
+| $67,555 | special education past its FY2026 budget |
+| 55% | of a bid-form trip is waiting: $520 of $942.50 *(contract)* |
+
+**3. Who pays, and what the budget shows**
+
+| | |
+|---:|---|
+| 5.5% | of all buses repaid by the state |
+| 71% | of town budget revenue is property tax, FY2026 projection |
+| $0 | state aid for regular routes and athletics |
+| $40,000 | athletics on the town budget, FY2024 |
+| $117,555 | athletic buses, all payers, FY2024: district sheet |
+| +11.2% | school-day buses, FY2027 budget |
+| +2.4% | all buses together, FY2027 budget |
+| $127,550 | athletic buses cut from FY2027 |
+
+**4. What it adds up to**
+
+1. **Buses are growing 2 to 4 times as fast as the levy may.** Rests on +10.1%, +4.9%, 2.5%.
+2. **The biggest piece, regular routes, is priced by contract through FY2028.** Rests on $976,500, $485–$515, +7.9%, +7.4%, $1,131,390.
+3. **Special education grows fastest, and nothing published counts what it buys.** Rests on $633,291, +10.1%, $67,555, not published.
+4. **The FY2027 total looks flat because athletic buses were cut, not because buses got cheaper.** Rests on +11.2%, +2.4%, $127,550.
+5. **The state repays a small share, and nothing for regular routes or athletics.** Rests on $94,993, 5.5%, $0.
+6. **Athletic buses moved from player fees to the town budget, which property taxes mostly pay for.** Rests on $110,650, $40,000, $117,555, 71%.
+
 **Mixed picture.** *Are buses getting more expensive, and where?* **Yes, in two places. Since FY2019 special education buses rose 97% and regular routes 40%, both faster than the 2.5% a levy may grow.**
 
 - Spent at the close of the year: special education $322,047 in FY2019 and $633,291 in FY2026, 10.1% a year; regular routes $696,600 and $976,500, 4.9% a year. *(measured; [6. Special education transportation](#6-special-education-transportation))*
 - Regular routes are priced in advance: the contract fixes $1,131,390 for FY2028, 15.9% more than FY2026 paid. *(measured; [The Dee Bus contract](#4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was))*
-- Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town took over a bill families’ fees had paid. *(measured; [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
+- Athletic buses on the town line went from $36,974 to $110,650, but the district’s own sheet already put them at $117,555 in FY2024 and $91,066 in FY2025: the town budget, mostly taxes, took over what player fees paid. *(measured; [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
 - FY2027 budgets school-day buses 11.2% higher; cutting athletic buses, $127,550, made the total look like 2.4%. *(measured; [FY2027: the school-day rise under a flat-looking total](#fy2027-the-school-day-rise-under-a-flat-looking-total))*
 - The district put its FY2026 special education rise down to more vans and monitors. Nothing published counts either, so price and volume cannot be told apart. Would settle it: the special education van contract and a count of routes by year, from the district. *(not published)*
 
@@ -52,7 +106,7 @@ The town’s general fund at the year-end close, paid plus still owed. The last 
 - The price is fixed but not flat: it rises 7.9% into FY2027 and 7.4% into FY2028, against the 2.5% a levy may grow in a year without an override. The contract ends on 30 June 2028. *(measured; [The Dee Bus contract](#4-the-dee-bus-contract-what-is-fixed-and-what-the-7-6-was))*
 - The contract before this one has not been published, so neither why FY2024 cost more than FY2025 nor whether FY2026’s 7.6% rise was price or an extra bus can be told. Would settle it: the Dee Bus contract that ran to June 2025, requested 9 October 2026. *(not published)*
 
-**Mixed picture.** *How does the athletic fee fund play into bus costs?* **In FY2024 the town paid $40,000 of athletic buses and the families’ fee fund the rest. From FY2025 the district moved that cost to the town.**
+**Mixed picture.** *How does the athletic fee fund play into bus costs?* **In FY2024 the town paid $40,000 of athletic buses and player fees the rest. From FY2025 the district moved that cost to the town budget, mostly taxes.**
 
 - The district’s by-sport sheet puts FY2024 athletic buses at $117,555; its second sheet prints $81,553 for the 24 sports both list. Either way, well above $40,000. *(measured; [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*
 - In FY2025 $47,822 was moved into the town line, to $87,822, to “reclassify expenses that had been charged against the revolving account”. *(on the record; [School Committee minutes, 2025-04-16](/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt); [2. Athletic transportation: what it costs and who has paid](#2-athletic-transportation-what-it-costs-and-who-has-paid))*

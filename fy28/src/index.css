@@ -322,10 +322,13 @@
 
 }
 
-/* Anything that pins itself below the header needs to know how tall the header is,
-   and that changed with the breakpoint at which the nav stops being two rows. */
-:root { --header-h: 85px; }
-@media (min-width: 1024px) { :root { --header-h: 49px; } }
+/* Anything that pins itself below the header needs to know how tall the header is.
+   It is ONE row at every width since the site menu replaced the two-row nav: `h-10` plus
+   its 1px border in App.tsx, 41px, measured at 400, 800 and 1280 on 12 October 2026. The
+   old values, 85px on a phone and 49px on a laptop, outlived that change and left a band
+   of scrolling page showing between the header and anything pinned under it. Change this
+   with the header's height, or measure it. */
+:root { --header-h: 41px; }
 
 html { scroll-behavior: smooth; }
 body {
