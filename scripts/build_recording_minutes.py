@@ -1,15 +1,38 @@
 #!/usr/bin/env python3
-"""The recording-minutes payload the site serves, generated from the minutes files.
+"""The recording-minutes payloads the site serves, generated from the minutes files.
 
-    python3 scripts/build_recording_minutes.py           # write fy28/public/data/recording-minutes.json
-    python3 scripts/build_recording_minutes.py --check   # fail if it no longer reproduces
+    python3 scripts/build_recording_minutes.py           # write the index and every shard
+    python3 scripts/build_recording_minutes.py --check   # fail if any no longer reproduces
 
-One file, every meeting for which `write_recording_minutes.py` has produced minutes,
-newest first, with the town's own documents for that meeting linked beside ours. The
-page /what-was-said renders it: an index by board, and one page per recording.
+Every meeting for which `write_recording_minutes.py` has produced minutes, newest first,
+with the town's own documents for that meeting linked beside ours. The page
+/meeting-minutes renders it: an index by board, and one page per recording.
 
-Counts here are derived from the files and never typed. The `warning` travels with every
-item because the payload is fetched by things other than the page.
+TWO KINDS OF FILE, NOT ONE. Until 13 October 2026 this was a single file holding every
+meeting in full; it reached 25.4 MiB indented, past the 25 MiB a Cloudflare Pages file may
+be, and a page showing ONE meeting downloaded all of them. So:
+
+    fy28/public/data/recording-minutes.json                     THE INDEX: every meeting's
+        metadata (board, date, headline, tags, counts, where its full minutes are), the
+        per-board time-by-subject and the counts. What the list pages, the sitemap and the
+        prerender read. Same address as the old combined file, so a link to it still
+        answers -- with the index rather than the minutes.
+    fy28/public/data/recording-minutes/<board>/<year>.json      ONE SHARD PER BOARD AND
+        CALENDAR YEAR: the same meeting entries, in full -- the minutes, the reconciliation
+        against the town's minutes, the digest. A meeting page fetches only its own shard,
+        whose address it derives from its own slug.
+
+Per board-year rather than per meeting because Cloudflare Pages also caps a deploy at
+20,000 files and the build already holds most of that; a shard per meeting would add one
+file per meeting, forever. Not served from R2 because the bucket is write-once: an object
+under a fixed key can never be replaced, and these change every day.
+
+AND NO FILE THIS WRITES MAY PASS MAX_BYTES. The generator refuses to write anything if one
+would -- all or nothing -- so the Pages limit can never again be found by a failed deploy.
+
+Counts here are derived from the files and never typed. The `warning` travels in the index
+and in every shard because the payloads are fetched by things other than the page.
+Python consumers call `payload()` and get the full combined shape, from the sources.
 """
 import argparse
 import glob
@@ -22,6 +45,16 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import write_recording_minutes as W  # noqa: E402
 
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json')
+SHARDS = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes')
+# Cloudflare Pages refuses a file over 25 MiB. Refuse well before it, so the warning comes
+# from this script and not from a deploy.
+MAX_BYTES = 15_000_000
+# What the index carries per meeting. Everything else -- the minutes themselves, the
+# reconciliation, the digest, the per-meeting time by subject, the transcript provenance --
+# is in the meeting's shard.
+INDEX_FIELDS = ('slug', 'board_slug', 'board', 'date', 'video_id', 'video_url', 'headline',
+                'confidence', 'tags', 'recording', 'counts', 'town_published',
+                'has_official_minutes', 'discrepancies', 'caption_errors', 'written')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
 
 # ----------------------------------------------------------------- names, as posted
@@ -258,32 +291,107 @@ def payload():
     }
 
 
+def shard_path(board_slug, date):
+    """Where a meeting's full entry is published, relative to /data/. The page derives the
+    same address from the meeting's slug (WhatWasSaid.tsx, shardFile)."""
+    return 'recording-minutes/%s/%s.json' % (board_slug, date[:4])
+
+
+def dump(obj):
+    return json.dumps(obj, separators=(',', ':'), ensure_ascii=False) + '\n'
+
+
 def render():
-    # NO INDENT: Cloudflare Pages refuses a file over 25 MiB, and on 13 October 2026 the
-    # indented file reached 25.4 MiB and would have failed the deploy. Compact JSON is
-    # 21.8 MB. A stopgap with a date on it -- the remedy is serving it from R2, as
-    # build_api.py says; check the size when the backlog grows.
-    return json.dumps(payload(), separators=(',', ':'), ensure_ascii=False) + '\n'
+    """{absolute path: text} for every file this generator owns."""
+    p = payload()
+    shards = {}
+    for m in p['meetings']:
+        shards.setdefault(shard_path(m['board_slug'], m['date']), []).append(m)
+    out = {}
+    for rel, items in sorted(shards.items()):
+        out[os.path.join(ROOT, 'fy28', 'public', 'data', rel)] = dump({
+            'warning': p['warning'],
+            'what': p['what'],
+            'board_slug': items[0]['board_slug'],
+            'board': items[0]['board'],
+            'year': items[0]['date'][:4],
+            'index': '/data/recording-minutes.json',
+            'counts': {'meetings': len(items)},
+            'meetings': items,
+        })
+    index = {k: v for k, v in p.items() if k != 'meetings'}
+    index['shards'] = ('The full minutes of each meeting -- votes, topics, the reconciliation '
+                       'against the town\'s minutes, the digest -- are in one file per board '
+                       'and calendar year, at the `data` address beside each meeting.')
+    index['meetings'] = []
+    for m in p['meetings']:
+        e = {k: m[k] for k in INDEX_FIELDS}
+        # The list shows the headline, or the summary where the model wrote no headline;
+        # the index carries whichever the list would show, not both.
+        e['headline'] = m['headline'] or m['summary']
+        e['reconciled'] = bool(m.get('reconciliation'))
+        e['data'] = '/data/' + shard_path(m['board_slug'], m['date'])
+        index['meetings'].append(e)
+    out[OUT] = dump(index)
+    return out
+
+
+def existing():
+    """Every file this generator owns that is on disk now."""
+    have = glob.glob(os.path.join(SHARDS, '*', '*.json'))
+    return set(have + ([OUT] if os.path.exists(OUT) else []))
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    text = render()
+    files = render()
+    big = [(f, len(t.encode('utf-8'))) for f, t in files.items() if len(t.encode('utf-8')) > MAX_BYTES]
+    if big:
+        for f, n in big:
+            print('REFUSED: %s would be %s bytes, past MAX_BYTES %s (Cloudflare Pages refuses a '
+                  'file over 25 MiB). Shard it finer.' % (os.path.relpath(f, ROOT), format(n, ','),
+                                                         format(MAX_BYTES, ',')))
+        return 2
+    stray = existing() - set(files)
     if a.check:
-        have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
-        if have != text:
-            print('STALE: %s — run build_recording_minutes.py' % os.path.relpath(OUT, ROOT))
+        bad = 0
+        for f, text in sorted(files.items()):
+            have = open(f, encoding='utf-8').read() if os.path.exists(f) else ''
+            if have != text:
+                print('STALE: %s — run build_recording_minutes.py' % os.path.relpath(f, ROOT))
+                bad += 1
+        for f in sorted(stray):
+            print('STRAY: %s is no longer generated — run build_recording_minutes.py' % os.path.relpath(f, ROOT))
+            bad += 1
+        if bad:
             return 1
-        print('ok: %s reproduces' % os.path.relpath(OUT, ROOT))
+        print('ok: %s and %d shard(s) reproduce' % (os.path.relpath(OUT, ROOT), len(files) - 1))
         return 0
-    with open(OUT, 'w', encoding='utf-8') as fh:
-        fh.write(text)
-    p = json.loads(text)
-    print('wrote %s — %d meeting(s), %d board(s), %d with no official minutes'
-          % (os.path.relpath(OUT, ROOT), p['counts']['meetings'], p['counts']['boards'],
-             p['counts']['without_official_minutes']))
+    # Shards first, the index last: a reader that sees the new index finds every shard it
+    # names. Each file atomically, so a crash never leaves a truncated one.
+    for f in sorted(files, key=lambda f: f == OUT):
+        os.makedirs(os.path.dirname(f), exist_ok=True)
+        have = open(f, encoding='utf-8').read() if os.path.exists(f) else None
+        if have == files[f]:
+            continue
+        tmp = f + '.tmp'
+        with open(tmp, 'w', encoding='utf-8') as fh:
+            fh.write(files[f])
+        os.replace(tmp, f)
+    for f in stray:
+        os.remove(f)
+    for d in glob.glob(os.path.join(SHARDS, '*')):
+        if os.path.isdir(d) and not os.listdir(d):
+            os.rmdir(d)
+    p = json.loads(files[OUT])
+    largest = max(files.items(), key=lambda kv: len(kv[1].encode('utf-8')))
+    print('wrote %s and %d shard(s) — %d meeting(s), %d board(s), %d with no official minutes; '
+          'largest file %s, %s bytes'
+          % (os.path.relpath(OUT, ROOT), len(files) - 1, p['counts']['meetings'], p['counts']['boards'],
+             p['counts']['without_official_minutes'], os.path.relpath(largest[0], ROOT),
+             format(len(largest[1].encode('utf-8')), ',')))
     return 0
 
 

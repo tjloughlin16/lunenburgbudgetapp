@@ -32,14 +32,15 @@ Compound FY2023→FY2027: **2.0879%**.
 > (FY2010–FY2011, FY2013–FY2020, FY2022–FY2023; `sources/data/dls-cherry-sheet.csv`). So the
 > series changed definition at FY2025 and its −1.0% FY2025 step was partly definitional.
 > FY2025–FY2027 are now the booklet's whole `Total Receipts`, and every rate below is
-> recomputed. The median moved from 2.7277% to 2.7110%; the model's 2.75% is unchanged —
-> see §5.
+> recomputed. The median moved from 2.7277% to 2.7110%. The same day the model stopped
+> rounding it: `model/finance.py` now reads the median off the generated series, unrounded,
+> where it had carried 2.75% — see §5.
 
-**The recommendation is 2.75% a year, with moderate confidence, and it is a smaller change
-than it looks.** It is the median annual step of the town's own budgeted aid (2.7110%),
-rounded to the quarter point, and moving the
-model from 2.0% to 2.75% narrows the FY2033 gap by **$323,838** and the six-year cumulative
-gap by **$1,090,588** — about 7%. State aid is 23.8% of the FY27 omnibus, so a
+**The rate is the median annual step of the town's own budgeted aid, 2.7110% a year, with
+moderate confidence, and it is a smaller change than it looks.** The model reads it off the
+generated series rather than carrying a typed constant. When this note was first written,
+moving the model from 2.0% to the then-recommended 2.75% narrowed the FY2033 gap by
+**$323,838** and the six-year cumulative gap by **$1,090,588** — about 7%. State aid is 23.8% of the FY27 omnibus, so a
 three-quarter-point change on it moves whole-town revenue growth by 0.18 points.
 
 **The single largest quantity that cannot be measured is not growth, it is error.** The
@@ -255,18 +256,24 @@ rate.
 
 ## 5. The recommendation
 
-> **2.75% a year, moderate confidence.** Range for scenario work: **1.5% to 3.5%**.
+> **2.7110% a year (shown as 2.71%), moderate confidence.** Range for scenario work:
+> **1.5% to 3.5%**.
 
-**Why 2.75%.** It is the median annual step of the town's own budgeted aid over 22 years
-(2.7110%), rounded to the quarter point. The same median over the last five steps is
+**Why this figure.** It is the median annual step of the town's own budgeted aid — the
+`Subtotal State Aid` line, budget to budget — over 22 steps, FY2005→FY2027.
+`model/finance.py` computes it from `state-aid-budget-series.csv` at import, and
+`build_state_aid_series.py --check` fails if the model's rate stops equalling the median of
+the series it rebuilds. The same median over the last five steps is
 2.7972% and the FY2019→FY2027 compound rate 2.8986%; the last ten steps give 2.4858%. Five
 ways of asking the question over three spans land between 2.49% and 2.90%.
 
-The rounding is ours. Before the definitional correction of 13 October 2026 the median was
-2.7277% and the ten-step median 2.6218%, and this paragraph said the measures converged
-more tightly than they do. The quarter-point figure was kept because 2.71% and 2.75% are
-inside the same rounding the original recommendation made, and the CL#8 band in §4 is
-roughly seventy times the difference between them.
+Until 13 October 2026 the model carried 2.75%: the median then measured (2.7277%) rounded
+to the quarter point. That rounding was a presentation choice, not a measurement, and the
+projection carried it as if it were one; after the definitional correction moved the median
+to 2.7110% the model was changed to use the median itself. Before that correction the
+ten-step median was 2.6218%, and this paragraph said the measures converged more tightly
+than they do. The difference is small beside the CL#8 band in §4, which is roughly seventy
+times it — which is a reason not to over-read the third decimal, not a reason to round.
 
 **Why not the compound rate.** 3.6045% over 22 years is real and it is the wrong statistic
 for a five-year forward projection, because it is carried by four policy step-years and a
@@ -300,10 +307,10 @@ model has moved since and this table was not recomputed):
 |---:|---:|---:|---:|
 | 1.40% (the town's own "last four years") | 719,266 | 4,890,895 | 16,034,779 |
 | **2.00% (current)** | **680,870** | **4,640,257** | **15,181,593** |
-| **2.75% (recommended)** | **632,876** | **4,316,419** | **14,091,005** |
+| **2.75% (recommended at the time; since replaced by the unrounded median)** | **632,876** | **4,316,419** | **14,091,005** |
 | 3.57% (FY2005→FY2027 compound) | 580,403 | 3,948,569 | 12,867,315 |
 
-**The grade should move from `BARE` to `derived`, not to `given`.** 2.75% is our
+**The grade should move from `BARE` to `derived`, not to `given`.** The rate is our
 calculation off the town's published series, not a figure anybody published.
 
 ---

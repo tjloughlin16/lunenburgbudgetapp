@@ -46,7 +46,9 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from budget_cycles import cycle_for, span as cycle_span   # noqa: E402
 DATA = os.path.join(ROOT, 'fy28', 'public', 'data')
 OUT = os.path.join(DATA, 'budget-feed.json')
-RECORDED = os.path.join(DATA, 'recording-minutes.json')
+# OUR MINUTES, in full, from the files under sources/ -- the published copy is an index plus
+# one shard per board and year (build_recording_minutes.py), and this needs every field.
+import build_recording_minutes as RECORDED_MINUTES   # noqa: E402
 FEED = os.path.join(DATA, 'meeting-feed.json')
 NOTICES = os.path.join(DATA, 'notices.json')
 BOARDS = os.path.join(DATA, 'boards.json')
@@ -778,7 +780,7 @@ def build(as_of=None, whole_cycle=False):
             slug = r['path'].split('/')[0]
             docs[slug][r['date']][r['kind']] = r
             names.setdefault(slug, r['board'])
-    rec = load(RECORDED)
+    rec = RECORDED_MINUTES.payload()
     notices = load(NOTICES)
     boards = {b['slug']: b for b in load(BOARDS).get('boards', [])}
     previews = {(n['board_slug'], n['date']): n for n in notices.get('upcoming', [])}

@@ -42,7 +42,9 @@ VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
 CLASS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-classification.csv')
 TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 NOCAP = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
-RECORDED = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json')
+# OUR MINUTES, in full, from the files under sources/ -- the published copy is an index plus
+# one shard per board and year (build_recording_minutes.py), and this needs every field.
+import build_recording_minutes as RECORDED_MINUTES   # noqa: E402
 FEED = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
 NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
@@ -384,7 +386,7 @@ def build(as_of=None):
             names.setdefault(r['board_slug'], r['board_name'])
     trans = {(r['board_slug'], r['meeting_date']): r for r in read_csv(TRANSCRIPTS)}
     nocap = {(r['board_slug'], r['meeting_date']) for r in read_csv(NOCAP)}
-    rec = json.load(open(RECORDED, encoding='utf-8'))
+    rec = RECORDED_MINUTES.payload()
     ours = collections.defaultdict(dict)
     official = collections.defaultdict(dict)
     for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'official-votes', '*', '*.json')):

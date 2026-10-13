@@ -109,22 +109,24 @@ const DOORS: Door[] = [
   // thirteen tabs behind it, which is a sitemap rather than an area. Named for the FORM
   // and not the subject -- it was `School analysis` for an hour, which would have made
   // the town-side reports homeless the moment one was written.
-  { to: AREA_HOME.analyses, label: AREA_LABEL.analyses,
-    who: 'The reports: staffing, athletics, fees, and what each one cannot say' },
+  // The reports door left this list on 13 October 2026 for a block of its own -- see
+  // <ReportsShelf />. TJ: "it doesnt look like a swath of info on the home page".
   { to: AREA_HOME.data, label: AREA_LABEL.data, who: 'Every table, and how to check a figure', quiet: true },
   { to: AREA_HOME.agents, label: AREA_LABEL.agents, who: 'Pointing an assistant at this, or you are one', quiet: true },
 ]
 
-function DoorCard({ d, lead }: { d: Door; lead?: boolean }) {
+function DoorCard({ d, lead, sub }: { d: Door; lead?: boolean; sub?: boolean }) {
   return (
     <Go to={d.to} onClick={() => track('door', d.to)}
       className={'card block transition-opacity hover:opacity-90 '
-        + (d.quiet ? 'px-4 py-3 min-h-[52px]' : lead ? 'px-5 py-5 min-h-[88px]' : 'px-4 py-4 min-h-[64px]')}
+        + (d.quiet ? 'px-4 py-3 min-h-[52px]' : lead ? 'px-5 py-5 min-h-[88px]'
+          : sub ? 'px-3.5 py-2.5 min-h-[44px]' : 'px-4 py-4 min-h-[64px]')}
       style={d.quiet ? { background: 'transparent' }
         : lead ? { borderLeft: '4px solid var(--status-critical)' } : undefined}>
       <span className="flex items-baseline justify-between gap-3 flex-wrap">
         <span className={d.quiet ? 'text-[14.5px] font-bold leading-tight'
-          : lead ? 'text-[20px] font-bold leading-tight' : 'text-[17px] font-bold leading-tight'}
+          : lead ? 'text-[20px] font-bold leading-tight'
+          : sub ? 'text-[15px] font-bold leading-tight' : 'text-[17px] font-bold leading-tight'}
           style={d.quiet ? { color: 'var(--text-secondary)' } : undefined}>
           {d.label} <span aria-hidden="true">&rarr;</span>
         </span>
@@ -132,12 +134,60 @@ function DoorCard({ d, lead }: { d: Door; lead?: boolean }) {
           <span className="text-[19px] font-bold tnum leading-none" style={{ color: 'var(--status-critical)' }}>{d.figure}</span>
         )}
       </span>
-      <span className={d.quiet ? 'block text-[12.5px] mt-0.5 leading-snug' : 'block text-[13.5px] mt-1 leading-snug'}
+      <span className={d.quiet || sub ? 'block text-[12.5px] mt-0.5 leading-snug' : 'block text-[13.5px] mt-1 leading-snug'}
         style={{ color: 'var(--text-muted)' }}>{d.who}</span>
       {d.figureNote && (
         <span className="block text-[11.5px] mt-1.5 tnum" style={{ color: 'var(--text-muted)' }}>{d.figureNote}</span>
       )}
     </Go>
+  )
+}
+
+type Shelf = { id: string; shelf: string; path: string; area: string; order: number; ready: boolean
+  groups: { topics: string[] }[] }
+type Shelves = { categories: Shelf[]; areas: { id: string; title: string }[]; topics: Record<string, { ready: boolean }> }
+
+/** REPORTS: TOWN AND SCHOOLS -- the largest thing this site holds, drawn as what it is.
+ *
+ *  It was one door among five ("Analysis: Town and Schools"), the same size as the door to
+ *  the database. TJ, 13 October 2026: "we probably need to call it 'Reports: Town and
+ *  Schools' or something that screams that there is a ton of data, and pull it out of the
+ *  inline list and make it sort of one of the main things people land in". So it is its
+ *  own block: the count first (the breadth IS the message), then every subject as a link,
+ *  grouped the way /reports groups them. Read from topics.json, the file /reports and every
+ *  hub read, so a new subject appears here the day it is built and the count cannot drift. */
+function ReportsShelf() {
+  const { d } = useReport<Shelves>('topics.json')
+  const cats = (d?.categories ?? []).filter(c => c.ready).length
+  const pages = d ? Object.values(d.topics).filter(t => t.ready).length : null
+  // ONE BUTTON, NOT A LIST. The first version drew all sixteen subjects as chips under the
+  // count; TJ, on a phone: "SUPER overwhelming... we need a Reports button that just
+  // suggests its a deeper page". The depth is said by the count and drawn by the two
+  // offset sheets behind the card -- a stack, the shape of "there is more under this".
+  return (
+    <div className="relative mb-2.5 mr-2" style={{ marginTop: 2 }}>
+      <span aria-hidden className="absolute inset-0 rounded-[10px]"
+        style={{ transform: 'translate(8px, 8px)', background: 'var(--surface-2)', border: '1px solid var(--grid)' }} />
+      <span aria-hidden className="absolute inset-0 rounded-[10px]"
+        style={{ transform: 'translate(4px, 4px)', background: 'var(--surface-2)', border: '1px solid var(--grid)' }} />
+      <Go to={AREA_HOME.analyses} onClick={() => track('door', AREA_HOME.analyses)}
+        className="card relative block px-5 py-5 min-h-[88px] transition-opacity hover:opacity-95"
+        style={{ borderLeft: '4px solid var(--brand)' }}>
+        <span className="flex items-baseline justify-between gap-3 flex-wrap">
+          <span className="text-[20px] font-bold leading-tight">
+            Reports: Town and Schools <span aria-hidden="true">&rarr;</span>
+          </span>
+          {pages != null && (
+            <span className="text-[19px] font-bold tnum leading-none" style={{ color: 'var(--brand)' }}>
+              {pages} reports
+            </span>
+          )}
+        </span>
+        <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>
+          {cats ? `${cats} subjects, schools and town. ` : ''}Each one a short page with its chart and its sources.
+        </span>
+      </Go>
+    </div>
   )
 }
 
@@ -152,8 +202,19 @@ function Doors() {
       <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Understand the budget</h2>
       <div className="grid gap-2.5">
         <DoorCard d={lead} lead />
-        <DoorCard d={second} />
-        {loud.map(d => <DoorCard key={d.to} d={d} />)}
+        {/* SOLUTIONS AND THE MONEY HANG FROM THE CRISIS. TJ, 13 October 2026: "put the
+            SOLUTIONS and the money as big sub bullets under 'budget crisis'". They are the
+            two follow-on questions to the gap -- what can be done, where the money goes --
+            so they are drawn as its children: indented under it, on a rule in its colour.
+            Reports is a different kind of door and stands on its own after them. */}
+        <div className="grid gap-2 ml-4 pl-3" style={{ borderLeft: '2px solid var(--status-critical)' }}>
+          <DoorCard d={second} sub />
+          {loud.map(d => <DoorCard key={d.to} d={d} sub />)}
+        </div>
+        <div className="mt-2"><ReportsShelf /></div>
+      </div>
+
+      <div className="grid gap-2.5 mt-3">
         {/* The plumbing, in one row and quieter, so the eye sorts it out of the set before
             reading it. Two doors in one row is the ranking made visible: half the width,
             half the weight. */}

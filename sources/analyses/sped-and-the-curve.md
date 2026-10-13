@@ -199,10 +199,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $930,070 | — |
-| Midway back, $1,000,000 | $1,229,928 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,394,752 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,521,221 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $932,531 | — |
+| Midway back, $1,000,000 | $1,232,389 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,397,213 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,523,682 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -440,9 +440,9 @@ But a reader should know the alternative and what it is worth, so here it is:
 
 | para component | blended rate | FY28 gap |
 |---|---:|---:|
-| What the budget line did — **used** | 12.78% | $930,070 |
-| Headcount growth plus their contract | 5.98% | $802,259 |
-| Their contract alone | 2.00% | $727,410 |
+| What the budget line did — **used** | 12.78% | $932,531 |
+| Headcount growth plus their contract | 5.98% | $804,719 |
+| Their contract alone | 2.00% | $729,871 |
 
 **What would settle it** is unchanged and now more valuable: DESE's End of Year Financial
 Report separates spending by fund. See `notes/findings/DATA-WANTED.md`.

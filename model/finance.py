@@ -8,7 +8,7 @@ Revenue is projected from the Town's own published FY27 formula (Town Manager pr
 release 4/17/26): Prop 2 1/2 levy limit growth + new growth + excluded debt, plus state
 aid and local receipts.
 """
-import csv, json
+import csv, json, os
 from collections import defaultdict
 
 # ---------------------------------------------------------------- expense base
@@ -25,6 +25,33 @@ ESCALATOR_GROUPS = {          # DESE function-code prefix -> escalator key
 # contract rate. That hid no money -- the total was always right -- but it averaged
 # together two lines that behave nothing alike.
 from sped import is_sped, RATE as SPED_RATE, TUITION_RATE
+
+# ---------------------------------------------------------------- state aid rate
+# The model's state aid growth rate, read off the generated like-for-like series rather
+# than typed (rule 2). The series is the town's own Subtotal State Aid line, one budget
+# figure per fiscal year; the rate is the median of its annual steps.
+STATE_AID_SERIES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..',
+                                'notes', 'findings', 'state-aid-budget-series.csv')
+
+
+def median_annual_step(amounts):
+    """Median of the year-on-year growth steps of consecutive budget figures."""
+    steps = sorted(amounts[i + 1] / amounts[i] - 1 for i in range(len(amounts) - 1))
+    n = len(steps)
+    return steps[n // 2] if n % 2 else (steps[n // 2 - 1] + steps[n // 2]) / 2
+
+
+def _state_aid_growth():
+    rows = list(csv.DictReader(open(STATE_AID_SERIES, encoding='utf-8')))
+    years = [int(r['fy']) for r in rows]
+    if years != list(range(years[0], years[-1] + 1)):
+        raise SystemExit(f'{STATE_AID_SERIES}: the series is not consecutive budget years; '
+                         'run python3 scripts/build_state_aid_series.py')
+    return median_annual_step([float(r['amount']) for r in rows])
+
+
+STATE_AID_GROWTH = _state_aid_growth()
+
 
 DEFAULT_ASSUMPTIONS = dict(
     salaries=0.040,        # contractual steps + lanes + COLA
@@ -47,25 +74,28 @@ DEFAULT_ASSUMPTIONS = dict(
     # revenue
     levy_growth=0.025,     # Proposition 2 1/2 -- statutory
     new_growth=400_000,    # town's own FY27 estimate
-    # 2.75% -- the MEDIAN annual step in the town's own budgeted cherry sheet total
-    # (2.7110% since the 13 October 2026 correction, which read FY2025-FY2027 with school
-    # choice included, as the earlier years and this field's base are), rounded to the
-    # quarter point. FY2005-FY2027, twenty-three consecutive BUDGET years. Like for like
-    # with what this field is: a forward estimate of the whole cherry sheet, not of
-    # Chapter 70 alone.
-    # See notes/findings/STATE-AID-RATE.md and notes/findings/state-aid-budget-series.csv,
-    # which is generated and --checked.
+    # The MEDIAN annual budget-to-budget step in the town's own Subtotal State Aid line --
+    # its budgeted cherry sheet total, FY2005-FY2027, twenty-three consecutive BUDGET
+    # years (FY2025-FY2027 read as the Town Meeting booklet's whole Total Receipts, school
+    # choice included, as the earlier years and this field's base are). DERIVED, not typed:
+    # STATE_AID_GROWTH below reads notes/findings/state-aid-budget-series.csv, which is
+    # generated and --checked by scripts/build_state_aid_series.py, and that check fails if
+    # this rate stops equalling the median of the series it rebuilds. Unrounded on purpose:
+    # it was once 2.75%, the median "rounded to the quarter point", and the rounding was a
+    # presentation choice the projection then carried as if it were the measurement.
+    # Like for like with what this field is: a forward estimate of the whole cherry sheet,
+    # not of Chapter 70 alone. See notes/findings/STATE-AID-RATE.md.
     #
-    # The median rather than the 3.6045% CAGR, because the CAGR is carried by four policy
-    # step-years -- FY2007 +10.1%, FY2013 +12.0%, FY2018 +12.2%, FY2023 +11.2% -- and
-    # projecting it forward assumes a legislature. Not the ~2.1% of the last four years
-    # either: that window opens the year AFTER an 11.2% jump, which is rule 6's warning
-    # about reading a rate without reading the year-by-year.
+    # The median rather than the CAGR, because the CAGR is carried by four policy
+    # step-years of +10% or more (FY2007, FY2013, FY2018, FY2023) and projecting it
+    # forward assumes a legislature. Not the rate of the last four years either: that
+    # window opens the year AFTER an 11.2% jump, which is rule 6's warning about reading a
+    # rate without reading the year-by-year.
     #
-    # Confidence is MODERATE, not high. Chapter 70 is 78.7% of this base and it is a
+    # Confidence is MODERATE, not high. Chapter 70 is most of this base and it is a
     # FORMULA whose inputs move independently, not a trend. Nothing tests whether its next
     # five years resemble its last five. Was 0.020, with no stated source or derivation.
-    state_aid_growth=0.0275,
+    state_aid_growth=STATE_AID_GROWTH,
     local_receipts_growth=0.010,
     school_share=0.562,    # Education as a share of the FY27 omnibus
     athletic_fee_revenue=0,       # lever: fee revenue ABOVE what the district already collects

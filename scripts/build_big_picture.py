@@ -80,7 +80,12 @@ HORIZON = 30
 # number either side of a rounding. What was stale was the SNAPSHOT, and a snapshot is
 # the only form this check can take -- a value derived at run time from the thing it is
 # checking cannot disagree with it.
-RATES_TS_FIVE_YEAR_OVERRIDE = 3_403_696
+#
+# Fired again 13 October 2026, again correctly: the state aid rate went from 2.75% (the
+# median rounded to the quarter point) to the unrounded median, 2.7110%. rates.ts
+# `overrideForYears(5)` now returns 3,414,929 and `years_held` here puts the minimum at
+# the same dollar (3,414,928 holds four years, 3,414,929 five). Was 3,403,696.
+RATES_TS_FIVE_YEAR_OVERRIDE = 3_414_929
 
 LINE_LABEL = dict(salaries='Salaries', health='Health insurance', transport='Transportation',
                   sped='Special education, in district', sped_tuition='Out-of-district special education',

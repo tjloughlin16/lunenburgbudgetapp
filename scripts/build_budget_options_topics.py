@@ -467,7 +467,11 @@ def build():
     # ------------------------------------------------ townwide or school-only
     share = 100 * TS['SHARE']
     sch_lps, omnibus = M['fy27']['lps_appropriation'], M['fy27']['omnibus']
-    if abs(TS['SHARE'] - round(sch_lps / omnibus, 6)) > 1e-6:
+    # SHARE is a difference of two deficits the engine ROUNDS to whole dollars, over a
+    # $1,000,000 step, so it carries up to two dollars of rounding: 2e-6. Compared with the
+    # exact ratio, not a rounded one -- rounding both sides let a state aid rate change
+    # move the comparison across the tolerance on rounding alone (13 October 2026).
+    if abs(TS['SHARE'] - sch_lps / omnibus) > 2e-6:
         fail('the schools’ share is no longer the FY27 appropriation over the omnibus')
     two = 2_000_000
     tw = round(two * omnibus / sch_lps)

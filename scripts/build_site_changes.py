@@ -4,7 +4,7 @@
 TJ, 11 October 2026: *"We probably need indicators on the menu items to show changes."*
 
 One small file the menu can fetch on every page, so it never loads the payloads themselves
-(recording-minutes.json alone is 25 MB). For each menu item that has a dated record, a list
+(recording-minutes.json alone was 22 MB before it was split into an index and shards). For each menu item that has a dated record, a list
 of CHANGES -- one per thing that moved, with the day it moved:
 
     jobs        a posting appeared, came down, or was relisted   job-postings.json history

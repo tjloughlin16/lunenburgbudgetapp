@@ -416,6 +416,15 @@ def build():
              f"{finance.FY27['state_aid']:,.2f}; the FY2027 Town Meeting booklet's "
              f"cherry sheet Total Receipts is {gov:,.2f} and the enacted increment is "
              f"{FY27_ENACTED_INCREMENT:,.2f}")
+    # The model's RATE must be the median step of the series this run builds. finance.py
+    # reads it off the written CSV, so a CSV that has gone stale shows up here as the two
+    # disagreeing, not as a projection quietly running on last week's rate.
+    built = finance.median_annual_step([r['amount'] for r in rows])
+    if abs(finance.DEFAULT_ASSUMPTIONS['state_aid_growth'] - built) > 1e-12:
+        fail(f"model/finance.py state_aid_growth is "
+             f"{finance.DEFAULT_ASSUMPTIONS['state_aid_growth']:.6%}; the median annual step "
+             f"of the series rebuilt now is {built:.6%}. Run "
+             'python3 scripts/build_state_aid_series.py, then model/export.py')
     check_rate_claims(rows)
     return rows
 

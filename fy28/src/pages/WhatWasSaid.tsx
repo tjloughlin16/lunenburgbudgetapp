@@ -8,6 +8,15 @@ const TAB: Tab = 'recorded'
 const DATA = '/data/recording-minutes.json'
 const FILE = 'recording-minutes.json'
 
+/** Where a meeting's full minutes are published: one file per board and calendar year
+ *  (scripts/build_recording_minutes.py, shard_path). Derived from the slug itself, so a
+ *  meeting page fetches its own board-year and never the index -- until 13 October 2026 it
+ *  fetched every meeting in one 22 MB file to show one. */
+function shardFile(slug: string) {
+  const [board, rest] = slug.split('/')
+  return `recording-minutes/${board}/${rest.slice(0, 4)}.json`
+}
+
 /** WHAT WAS SAID: our minutes of recorded meetings.
  *
  *  231 meetings in this town have no surviving record but the video, 162 of them School
@@ -78,6 +87,12 @@ type Meeting = {
   written: { by: string; model: string; at: string; cost_usd: number | null }
   minutes: Minutes
 }
+/** What the index carries per meeting. The minutes themselves, the reconciliation and the
+ *  digest are in the meeting's shard, at `data`. */
+type IndexMeeting = Pick<Meeting, 'slug' | 'board_slug' | 'board' | 'date' | 'video_id' | 'video_url' | 'headline'
+  | 'confidence' | 'tags' | 'recording' | 'counts' | 'town_published' | 'has_official_minutes'
+  | 'discrepancies' | 'caption_errors' | 'written'> & { reconciled: boolean; data: string }
+type Shard = { warning: string; board_slug: string; board: string; year: string; meetings: Meeting[] }
 type BoardTime = { board: string; meetings: number; topics_span_s: number; by_tag_s: Record<string, number> }
 type Payload = {
   warning: string
@@ -87,7 +102,7 @@ type Payload = {
   time_note: string
   counts: { meetings: number; boards: number; without_official_minutes: number }
   boards: Record<string, { board: string; meetings: number; without_official_minutes: number }>
-  meetings: Meeting[]
+  meetings: IndexMeeting[]
 }
 
 function hms(s: number) {
@@ -118,36 +133,50 @@ function Heard({ s }: { s: string }) {
 
 export function WhatWasSaid() {
   const slug = recordedSlugFromPath(window.location.pathname)
+  return slug ? <MeetingAt slug={slug} /> : <IndexAt />
+}
+
+function IndexAt() {
   const { d, err } = useReport<Payload>(FILE)
   if (!d) {
     return <ReportShell tab={TAB} title="What was said" err={err} loading={!err} dataUrl={DATA} />
   }
-  if (slug) {
-    // A date-only address: the one recording of that day, or the choice of them.
-    const byDay = /^([a-z0-9-]+)\/([0-9]{4}-[0-9]{2}-[0-9]{2})$/.exec(slug)
-    const sameDay = byDay ? d.meetings.filter(x => x.board_slug === byDay[1] && x.date === byDay[2]) : []
-    if (byDay && sameDay.length > 1) {
-      return (
-        <ReportShell tab={TAB} title={`${sameDay[0].board}, ${sameDay[0].date} — two recordings`} dataUrl={DATA}
-          standfirst="This meeting was recorded in parts. Each has its own minutes.">
-          <ul className="mt-6 space-y-2">{sameDay.map(x => (
-            <li key={x.slug}><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href={`/meeting-minutes/${x.slug}`}>{x.headline || x.slug}</a></li>))}</ul>
-        </ReportShell>
-      )
-    }
-    const m = d.meetings.find(x => x.slug === slug) ?? sameDay[0]
-    if (!m) {
-      return (
-        <ReportShell tab={TAB} title="No minutes at this address" dataUrl={DATA}
-          standfirst="Every recording with minutes is listed on the index.">
-          <Body>The address <code>/meeting-minutes/{slug}</code> names no meeting. The index is{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }} href="/meeting-minutes">here</a>.</Body>
-        </ReportShell>
-      )
-    }
-    return <MeetingPage m={m} warning={d.warning} />
-  }
   return <Index d={d} />
+}
+
+function MeetingAt({ slug }: { slug: string }) {
+  const file = shardFile(slug)
+  const { d, err } = useReport<Shard>(file)
+  // No shard for that board and year: the address names no meeting we hold. (A missing
+  // file is a 404 in production and the app shell, which does not parse, under vite.)
+  const missing = Boolean(err && /HTTP 404|JSON|Unexpected token/i.test(err))
+  if (!d && !missing) {
+    return <ReportShell tab={TAB} title="What was said" err={err} loading={!err} dataUrl={`/data/${file}`} />
+  }
+  // A date-only address: the one recording of that day, or the choice of them.
+  const meetings = d ? d.meetings : []
+  const byDay = /^([a-z0-9-]+)\/([0-9]{4}-[0-9]{2}-[0-9]{2})$/.exec(slug)
+  const sameDay = byDay ? meetings.filter(x => x.board_slug === byDay[1] && x.date === byDay[2]) : []
+  if (byDay && sameDay.length > 1) {
+    return (
+      <ReportShell tab={TAB} title={`${sameDay[0].board}, ${sameDay[0].date} — two recordings`} dataUrl={DATA}
+        standfirst="This meeting was recorded in parts. Each has its own minutes.">
+        <ul className="mt-6 space-y-2">{sameDay.map(x => (
+          <li key={x.slug}><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href={`/meeting-minutes/${x.slug}`}>{x.headline || x.slug}</a></li>))}</ul>
+      </ReportShell>
+    )
+  }
+  const m = meetings.find(x => x.slug === slug) ?? sameDay[0]
+  if (!m) {
+    return (
+      <ReportShell tab={TAB} title="No minutes at this address" dataUrl={DATA}
+        standfirst="Every recording with minutes is listed on the index.">
+        <Body>The address <code>/meeting-minutes/{slug}</code> names no meeting. The index is{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }} href="/meeting-minutes">here</a>.</Body>
+      </ReportShell>
+    )
+  }
+  return <MeetingPage m={m} warning={d!.warning} dataUrl={`/data/${file}`} />
 }
 
 function Index({ d }: { d: Payload }) {
@@ -247,10 +276,10 @@ function Index({ d }: { d: Payload }) {
                   <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
                     {m.recording ? `${m.recording.duration} long · ` : ''}{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'} · {m.counts.transfers} transfer{m.counts.transfers === 1 ? '' : 's'} · {m.counts.budget_items} budget item{m.counts.budget_items === 1 ? '' : 's'} · {m.counts.public_comment} public comment{m.counts.public_comment === 1 ? '' : 's'}
                     {!m.has_official_minutes && <> · <span style={{ color: 'var(--series-revenue, #b5540f)' }}>no official minutes</span></>}
-                    {m.reconciliation && <> · checked against the town&rsquo;s minutes{m.discrepancies ? <span style={{ color: 'var(--series-revenue, #b5540f)' }}>: {m.discrepancies} difference{m.discrepancies === 1 ? '' : 's'} flagged</span> : ', no substantive differences'}</>}
+                    {m.reconciled && <> · checked against the town&rsquo;s minutes{m.discrepancies ? <span style={{ color: 'var(--series-revenue, #b5540f)' }}>: {m.discrepancies} difference{m.discrepancies === 1 ? '' : 's'} flagged</span> : ', no substantive differences'}</>}
                   </span>
                 </div>
-                <p className="text-sm mt-1 font-medium">{m.headline || m.summary}</p>
+                <p className="text-sm mt-1 font-medium">{m.headline}</p>
                 <p className="mt-1.5 flex flex-wrap gap-1">
                   {m.tags.map(t => <a key={t} href={`/meeting-minutes?tag=${t}`} className="px-1.5 py-0.5 text-[10.5px] rounded"
                     style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}
@@ -276,7 +305,7 @@ function Caveat({ warning }: { warning: string }) {
   )
 }
 
-function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
+function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dataUrl: string }) {
   const mm = m.minutes
   // THE LINK PREVIEW: the headline and the summary, so a meeting shared on Facebook says
   // what happened at it rather than what the site is (lib/title.ts).
@@ -292,7 +321,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
   const money = mm.budget_items.filter(b => !transferAt.has(b.t))
   return (
     <ReportShell tab={TAB} kicker="What was said" title={`${m.board}, ${longDate(m.date)}`}
-      dataUrl={DATA}
+      dataUrl={dataUrl}
       meta={<span className="text-xs" style={{ color: 'var(--text-muted)' }}>
         <a className="underline" href={u} target="_blank" rel="noreferrer">the recording</a>
         {m.recording ? <>{' · '}{m.recording.duration} long, about {m.recording.words_approx.toLocaleString()} words spoken</> : null}
