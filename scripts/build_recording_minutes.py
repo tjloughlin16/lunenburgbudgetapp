@@ -259,7 +259,11 @@ def payload():
 
 
 def render():
-    return json.dumps(payload(), indent=1, ensure_ascii=False) + '\n'
+    # NO INDENT: Cloudflare Pages refuses a file over 25 MiB, and on 13 October 2026 the
+    # indented file reached 25.4 MiB and would have failed the deploy. Compact JSON is
+    # 21.8 MB. A stopgap with a date on it -- the remedy is serving it from R2, as
+    # build_api.py says; check the size when the backlog grows.
+    return json.dumps(payload(), separators=(',', ':'), ensure_ascii=False) + '\n'
 
 
 def main():
