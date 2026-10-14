@@ -10,7 +10,8 @@
     "g8": "topics/grade-to-grade-loss.json",
     "mt": "topics/regional-district-spending.json#table.views[key=regional].rows[label=Montachusett Regional Vocational Technical]",
     "mtk": "topics/destination-district-spending.json#table.views[key=destinations].rows[label=Montachusett Regional Vocational Technical]",
-    "w": "peer-spending.json#destinations.widest"
+    "w": "peer-spending.json#destinations.widest",
+    "me": "topics/monty-tech-enrolment.json"
   },
   "literal": [],
   "flare": {
@@ -23,7 +24,7 @@
     "headline": "Monty Tech spends ${w.gap|n} more on each student",
     "emphasis": "${w.gap|n} more",
     "headline_size": 60,
-    "sub": "Than Lunenburg’s own schools, on the state’s measure, {pp.finding.figures.y.text}. The state median: {pp.finding.figures.b.text}.",
+    "sub": "Than Lunenburg’s own schools, on the state’s measure for {pp.finding.figures.y.text}. {me.finding.figures.a.text} Lunenburg students went to Monty Tech in {me.finding.figures.y.text}.",
     "tiles": [
       {
         "eyebrow": "LUNENBURG’S SCHOOLS",
@@ -33,10 +34,10 @@
         "path": "/school-spending/per-pupil-spending"
       },
       {
-        "eyebrow": "MONTY TECH",
+        "eyebrow": "MONTY TECH · {me.finding.figures.a.text} LUNENBURG STUDENTS",
         "value": "{mt.cells[0]}",
         "label": "a student · +${w.gap|n}, {w.gap_pct|pct} more",
-        "text": "The vocational school {mtk.cells[1]} Lunenburg students attend. The state’s formula budgets more for a vocational student.",
+        "text": "A regional vocational school. The state’s formula budgets more for a vocational student.",
         "path": "/enrolment/monty-tech-enrolment"
       }
     ],
