@@ -38,3 +38,17 @@ posts look alike by accident.
 
 Set `"posted": "<date>"` in `post.json`. A posted post is frozen: the figures it quoted
 were true on that day, and `--check` stops rebuilding it against data that has moved.
+
+## The format that works
+
+TJ, 14 October 2026, after `2026-10-14-what-we-spend` drew a lot of discussion: *"this is the
+proper format ... in the future lets replicate what we did for FB posts."* Start from that
+post's `post.json`:
+
+- **The hook is something residents do not know**, with an emotional hit -- a measured fact
+  that contradicts what people assume. Not a metric for its own sake, not a site feature.
+- **The image carries a conflict**: a headline stating the gap with the figure in the accent
+  colour, two equal `tiles` side by side, and a `conclusion` line under them saying who it
+  affects. The caveat that keeps it fair goes on the image, because images travel alone.
+- **News about the site goes in its own follow-up post**, with its own hook.
+- Never a projection, never a count multiplied into a total, never "your" for an average.
