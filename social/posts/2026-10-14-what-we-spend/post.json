@@ -1,0 +1,50 @@
+{
+  "posted": null,
+  "about": "Something few residents know: Lunenburg spends less a student than almost every district in the state, and has for every year on record. Two more surprises behind it, then the reorganised site, where each one is a short page.",
+  "data": {
+    "m": "app-metrics.json",
+    "cats": "topics.json#categories",
+    "all": "topics.json#topics",
+    "pp": "topics/per-pupil-spending.json",
+    "tax": "topics/average-tax-bill.json",
+    "g8": "topics/grade-to-grade-loss.json"
+  },
+  "literal": [],
+  "flare": {
+    "accent": "royal",
+    "motif": "dots"
+  },
+  "image": {
+    "layout": "hero",
+    "size": "square",
+    "headline": "What Lunenburg spends on each student",
+    "emphasis": "each student",
+    "headline_size": 64,
+    "sub": "{pp.facts[1].label.figures.n.text} Massachusetts school districts, ranked from the most spent a student to the least.",
+    "hero": {
+      "value": "{pp.facts[4].value.text}",
+      "label": "Lunenburg’s place, {pp.finding.figures.y.text}",
+      "text": "{pp.finding.figures.a.text} a student. The state median: {pp.finding.figures.b.text}."
+    },
+    "path": "/school-spending/per-pupil-spending",
+    "as_of": "As of {m.as_of|short}"
+  },
+  "text": [
+    "Lunenburg spends less on each student than almost any school district in Massachusetts.",
+    "",
+    "In {pp.finding.figures.y.text} the town spent {pp.finding.figures.a.text} per student, counting every source of money. The state median was {pp.finding.figures.b.text}. Of the {pp.facts[1].label.figures.n.text} districts the state ranks, from the most spent per student to the least, Lunenburg placed {pp.facts[4].value.text}, and it has been in the state's bottom quarter in {pp.facts[5].value.text} years the state publishes.",
+    "👉 lburg.org/school-spending/per-pupil-spending",
+    "",
+    "Two more you may not have heard:",
+    "",
+    "🏠 The average single-family tax bill rose {tax.finding.figures.b.text} in ten years, while the tax rate fell {tax.finding.figures.r.text}. The bill went up because the average home's assessed value went from {tax.facts[4].value.text} to {tax.facts[1].value.text}.",
+    "👉 lburg.org/homes-and-taxes/average-tax-bill",
+    "",
+    "🎒 On average, {g8.finding.figures.a.text} of Lunenburg's eighth graders don't come back to Lunenburg's schools for ninth grade. No other grade loses more than {g8.finding.figures.c.text}.",
+    "👉 lburg.org/enrolment/grade-to-grade-loss",
+    "",
+    "Each of these is one short page. We've broken the whole site up that way: {all|len} pages across {cats|len} subjects, each answering one question, each showing where its figures come from and what they don't prove. lburg.org/reports lists every subject at the top.",
+    "",
+    "What's one thing about the town's money you've always wondered? Tell us in the comments and we'll point you to the page, or build it."
+  ]
+}
