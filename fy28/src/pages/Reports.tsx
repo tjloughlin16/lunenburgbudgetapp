@@ -222,14 +222,11 @@ function TopicShelves({ area }: { area: string }) {
   return (
     <>
       {ix.categories.filter(c => c.area === area).map(c => (
-        <Section key={c.id} id={c.id} eyebrow="A subject, page by page" title={c.shelf} href={c.path}>
-          <a href={c.path} className="card block p-4 transition-opacity hover:opacity-90"
-            style={{ borderLeft: '4px solid var(--series-cost)' }}>
-            <h3 className="text-[17px] font-bold leading-tight" style={{ color: 'var(--series-cost)' }}>
-              {c.title} &rarr;</h3>
-            {c.answer ? <p className="text-[13.5px] leading-relaxed mt-1.5"
-              style={{ color: 'var(--text-secondary)' }}>{c.answer}</p> : null}
-          </a>
+        // ONE DOOR TO THE HUB. The heading is the link; its answer sits under it. A boxed
+        // card for the hub used to follow, linking the same page under its other title --
+        // "Athletics ->" then "Athletics costs ->" -- two doors that looked like two places.
+        <Section key={c.id} id={c.id} eyebrow="A subject, page by page" title={c.shelf} href={c.path}
+          lede={c.answer ?? undefined}>
           {c.groups.map((g, gi) => (
             <div key={gi} className="mt-5">
               {g.title ? (

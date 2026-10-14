@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4944 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4948 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4328 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4332 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -424,7 +424,7 @@ Listed so this view cannot look more complete than it is.
 - `data/table-semantics.csv` — What each table in the database is
 - `data/tax-collection-unreconciled.csv` — The thirteen years it will not publish, and why each refuses
 - `data/tax-collection.csv` — The same Collector’s table, for the years read off a TEXT LAYER
-- `data/tenure.csv` — How long each named person stayed, by body and year
+- `data/tenure.csv` — How long each person stayed, by body and year
 - `data/threads-declined.csv` — Thread candidates that were rejected, and why
 - `data/threads.csv` — The matters this project tracks across boards
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
