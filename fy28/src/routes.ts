@@ -556,7 +556,9 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'money' -- taken, and by a page in a different area.
   'the-money': 'themoney', 'how-money-works': 'themoney', 'money-flow': 'themoney',
   'follow-the-money': 'themoney',
-  'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
+  // `free-cash`, `freecash`, `certified-free-cash` and `reserves` answered to the old Free cash
+  // page; since 14 October 2026 they land on the Free cash and Stabilization funds hubs --
+  // see TOPIC_ALIASES below.
   reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
   // NOT 'actuals' alone as the slug: the page is a COMPARISON, and a reader who lands on
   // something called "actuals" reasonably expects a spending ledger, which is a different
@@ -576,7 +578,7 @@ const ALIASES: Record<string, Tab> = {
   gaps: 'gaps', 'what-we-cannot-answer': 'gaps', 'data-gaps': 'gaps',
   'what-is-not-in-here': 'gaps', gap: 'gaps',
   // NOT 'funds' on its own -- what a reader means by that word here is free cash, and
-  // `freecash` already answers to `reserves`. This page is specifically the money that
+  // `reserves` already lands on the Stabilization funds hub. This page is specifically the money that
   // is NOT appropriated.
   'money-outside-the-budget': 'funds', 'special-revenue': 'funds',
   'special-revenue-funds': 'funds', 'revolving-funds': 'funds', grants: 'funds',
@@ -972,6 +974,7 @@ export function tabFromPath(pathname: string): Tab {
   // address wins over an older page that held the same slug -- that is the migration: the
   // hub replaces the report it was built from.
   if (TOPIC_CATEGORIES.includes(seg.split('/')[0])) return 'topic'
+  if (TOPIC_ALIASES[seg]) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
   // The third. Every thread shares one page component; the id is in the path.
@@ -989,7 +992,19 @@ export function tabFromPath(pathname: string): Tab {
  *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
 export function topicIdFromPath(pathname: string): string | null {
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]
   return m && TOPIC_CATEGORIES.includes(m[1]) ? (m[2] ?? m[1]) : null
+}
+
+/** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were
+ *  aliases of the old Free cash page (tab `freecash`), which the Free cash hub replaced on
+ *  14 October 2026; a stale link lands on the hub that answers it, and Topic.tsx moves the
+ *  address bar to the hub's own path. A topic page that changed shelf needs nothing here:
+ *  its old category still routes and the page is fetched by id, so
+ *  /town-reserves/free-cash-balance renders and is moved to /free-cash/free-cash-balance. */
+export const TOPIC_ALIASES: Record<string, string> = {
+  freecash: 'free-cash', 'certified-free-cash': 'free-cash',
+  reserves: 'town-reserves', 'stabilization-funds': 'town-reserves',
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.

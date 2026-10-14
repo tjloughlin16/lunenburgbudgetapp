@@ -444,26 +444,60 @@
    "title": "Programs and cuts"
   },
   {
-   "answer": "The town keeps two kinds of reserve: free cash, $3,354,370 as of 1 July 2025, and nine stabilization accounts holding $9,061,421. Only the general fund’s $3,147,179 may be spent on anything lawful.",
+   "answer": "The state certified $3,354,370 of free cash as of 1 July 2025, the most the Town’s records list; 66.1% of it was money appropriated and not spent.",
    "area": "town",
-   "elsewhere": [],
+   "elsewhere": [
+    {
+     "href": "/town-reserves",
+     "title": "Stabilization funds"
+    }
+   ],
    "groups": [
     {
-     "title": "Free cash",
+     "title": "The balance",
      "topics": [
       "free-cash-balance",
       "free-cash-guideline",
-      "free-cash-sources",
-      "free-cash-and-capital",
-      "free-cash-redirect"
+      "free-cash-sources"
      ]
     },
     {
-     "title": "Stabilization funds",
+     "title": "Where it goes",
+     "topics": [
+      "free-cash-and-capital",
+      "free-cash-redirect"
+     ]
+    }
+   ],
+   "id": "free-cash",
+   "minutes": 1,
+   "order": 49,
+   "path": "/free-cash",
+   "ready": true,
+   "shelf": "Free cash",
+   "title": "Free cash"
+  },
+  {
+   "answer": "The town holds $9,061,421 in nine stabilization accounts as of 1 July 2025. Only the general fund’s $3,147,179 may be spent on anything lawful.",
+   "area": "town",
+   "elsewhere": [
+    {
+     "href": "/free-cash",
+     "title": "Free cash"
+    }
+   ],
+   "groups": [
+    {
+     "title": "The funds",
      "topics": [
       "stabilization-balances",
       "general-stabilization-fund",
-      "who-may-spend-it",
+      "who-may-spend-it"
+     ]
+    },
+    {
+     "title": "Money in and out",
+     "topics": [
       "stabilization-deposits",
       "stabilization-withdrawals",
       "reserves-and-the-gap"
@@ -475,8 +509,8 @@
    "order": 50,
    "path": "/town-reserves",
    "ready": true,
-   "shelf": "Town reserves",
-   "title": "Free cash and stabilization"
+   "shelf": "Stabilization funds",
+   "title": "Stabilization funds"
   },
   {
    "answer": "The school general fund closed FY2026 with $482,118 unspent, 1.8% of its budget, at period 13. Town departments stood $858,462 under in June, before their close.",
@@ -1504,52 +1538,52 @@
   "free-cash-and-capital": {
    "finding": "Free cash paid $655,424 of the $1,225,000 FY2026 capital programme; FY2027 plans $991,627 of $1,830,203.",
    "generator": "scripts/build_town_reserves_topics.py",
-   "home": "town-reserves",
+   "home": "free-cash",
    "id": "free-cash-and-capital",
    "minutes": 1,
-   "path": "/town-reserves/free-cash-and-capital",
+   "path": "/free-cash/free-cash-and-capital",
    "ready": true,
    "shelves": [
-    "town-reserves"
+    "free-cash"
    ],
    "title": "Free cash and capital"
   },
   "free-cash-balance": {
    "finding": "The state certified $3,354,370 of free cash as of 1 July 2025, the most in any year the Town’s records list.",
    "generator": "scripts/build_town_reserves_topics.py",
-   "home": "town-reserves",
+   "home": "free-cash",
    "id": "free-cash-balance",
    "minutes": 2,
-   "path": "/town-reserves/free-cash-balance",
+   "path": "/free-cash/free-cash-balance",
    "ready": true,
    "shelves": [
-    "town-reserves"
+    "free-cash"
    ],
    "title": "Free cash balance"
   },
   "free-cash-guideline": {
    "finding": "Free cash is 6.65% of the budget, inside the 5% to 7% the Town cites; 7 of the last 10 years fell short.",
    "generator": "scripts/build_town_reserves_topics.py",
-   "home": "town-reserves",
+   "home": "free-cash",
    "id": "free-cash-guideline",
    "minutes": 1,
-   "path": "/town-reserves/free-cash-guideline",
+   "path": "/free-cash/free-cash-guideline",
    "ready": true,
    "shelves": [
-    "town-reserves"
+    "free-cash"
    ],
    "title": "Free cash guideline"
   },
   "free-cash-redirect": {
    "finding": "Kept above the 5% floor, $794,872 could be redirected, $137,659 short of the FY2028 gap (our arithmetic).",
    "generator": "scripts/build_town_reserves_topics.py",
-   "home": "town-reserves",
+   "home": "free-cash",
    "id": "free-cash-redirect",
    "minutes": 1,
-   "path": "/town-reserves/free-cash-redirect",
+   "path": "/free-cash/free-cash-redirect",
    "ready": true,
    "shelves": [
-    "town-reserves",
+    "free-cash",
     "budget-options"
    ],
    "title": "Free cash for schools"
@@ -1557,13 +1591,13 @@
   "free-cash-sources": {
    "finding": "Two thirds of the free cash identified in July 2025, $2,457,761, was money appropriated and not spent.",
    "generator": "scripts/build_town_reserves_topics.py",
-   "home": "town-reserves",
+   "home": "free-cash",
    "id": "free-cash-sources",
    "minutes": 1,
-   "path": "/town-reserves/free-cash-sources",
+   "path": "/free-cash/free-cash-sources",
    "ready": true,
    "shelves": [
-    "town-reserves"
+    "free-cash"
    ],
    "title": "Free cash sources"
   },

@@ -207,7 +207,7 @@ RELATED = [
     ('show-your-work',
      'Every rate the projection uses and what each one rests on — including the state '
      'aid growth rate, which is recorded there as having no stated source'),
-    ('/town-reserves/free-cash-sources',
+    ('/free-cash/free-cash-sources',
      'The free cash proof these cherry sheet variances are one line of'),
 ]
 

@@ -116,7 +116,8 @@ Built 12 October 2026: **Transportation**, **Athletics**.
 | school | `state-aid` | State aid / Chapter 70 aid | minaid, formula, required |
 | school | `school-spending` | School spending / Spending compared | peers, spending-compared, per-pupil-spending, peer-districts, variance (budget-vs-actual) |
 | school | `school-programs` | School programs / Programs and cuts | courses, ap, cuts, stopped, unwind |
-| town | `town-reserves` | Town reserves / Free cash and stabilization | free-cash, stabilization-funds, stabilization-option, freecashlever |
+| town | `free-cash` | Free cash / Free cash (split from Town reserves, 14 Oct; hub takes /free-cash, the old `freecash` page) | free-cash, freecash, freecashlever |
+| town | `town-reserves` | Stabilization funds / Stabilization funds (was Town reserves / Free cash and stabilization) | stabilization-funds, stabilization-option |
 | town | `fy2026-closeout` | FY2026 closeout / FY2026 year end | fy26-closeout, fy26-closeout-town, fy26-school-surplus, fy25-school-surplus |
 | town | `department-budgets` | Department budgets / Town departments | town-budgets, town-personnel, the 12 town-budget-* documents |
 | town | `homes-and-taxes` | Homes and taxes / Homes, taxes, growth | bythenumbers, owners, homestudents, growth |

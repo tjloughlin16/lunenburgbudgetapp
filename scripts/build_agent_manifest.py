@@ -64,7 +64,7 @@ ANSWERS = [
      '/data/athletic-fee-schedule.csv', 'FY24-FY27, most figures checked against a cell or a vote'),
     ('is the town hoarding free cash, or rebuilding it — and what it would buy',
      '/docs/analyses/free-cash.md', 'both claims are true of different windows; the page at '
-     '/free-cash models drawing the balance down to any level'),
+     '/free-cash/free-cash-redirect models redirecting what sits above the guideline’s floor'),
     ('free cash — how much the town can spend without raising taxes, and nine towns to '
      'compare it with',
      '/data/free-cash-proof.csv', '2021-2025; absolute dollars, no denominator, so compare '

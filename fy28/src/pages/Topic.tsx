@@ -50,7 +50,7 @@ type TopicPayload = {
   full_report: { href: string; label: string }
 }
 type HubPayload = {
-  kind: 'hub'; id: string; title: string; category: string; answer: LadderUnit; chart: ChartRef
+  kind: 'hub'; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
   ladder: LadderData; chains: Chain[]; table: FigureTableData | null
   full_report: { href: string; label: string }
 }
@@ -197,6 +197,11 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
   // title and its answer. The prerender captures them, so a scraper gets the same.
   useEffect(() => {
     if (!p) return
+    // A page reached by an older address -- a topic that changed shelf (/town-reserves/
+    // free-cash-balance), or a hub alias (/reserves) -- moves the address bar to its own
+    // path first, so the share link, og:url and a bookmark all carry the canonical one.
+    if (p.path && p.path !== window.location.pathname.replace(/\/+$/, ''))
+      window.history.replaceState(null, '', p.path + window.location.search + window.location.hash)
     const t = pageTitle(p.title)
     if (t) document.title = t
     setShareMeta({ title: t, description: p.kind === 'topic' ? p.finding.text : p.answer.text,

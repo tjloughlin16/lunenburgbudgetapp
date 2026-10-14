@@ -1,27 +1,25 @@
-"""The Town reserves shelf: free cash and the stabilization funds. See scripts/topics.py for
-the model and the title rule.
+"""The Stabilization funds shelf, at /town-reserves. See scripts/topics.py for the model and
+the title rule.
 
-Absorbs /analysis/free-cash, /analysis/stabilization-funds, /analysis/stabilization-option
-and the /free-cash-for-schools lever page. There is no full report: every question those four
-answered has one page here.
+Until 14 October 2026 this shelf was "Town reserves" and held free cash too; free cash is now
+its own shelf (topic_registry/free_cash.py, hub /free-cash), because a reader searching for it
+by name found nothing. The address stays /town-reserves so these six pages do not move.
+
+Absorbs /analysis/stabilization-funds and /analysis/stabilization-option. There is no full
+report: every question they answered has one page here.
 """
 CATEGORY = dict(
-    id='town-reserves', shelf='Town reserves', title='Free cash and stabilization', area='town',
+    id='town-reserves', shelf='Stabilization funds', title='Stabilization funds', area='town',
     order=50,
     groups=[
-        ('Free cash', ['free-cash-balance', 'free-cash-guideline', 'free-cash-sources',
-                       'free-cash-and-capital', 'free-cash-redirect']),
-        ('Stabilization funds', ['stabilization-balances', 'general-stabilization-fund',
-                                 'who-may-spend-it', 'stabilization-deposits',
-                                 'stabilization-withdrawals', 'reserves-and-the-gap']),
-    ])
+        ('The funds', ['stabilization-balances', 'general-stabilization-fund',
+                       'who-may-spend-it']),
+        ('Money in and out', ['stabilization-deposits', 'stabilization-withdrawals',
+                              'reserves-and-the-gap']),
+    ],
+    elsewhere=[('/free-cash', 'Free cash')])
 GENERATOR = 'build_town_reserves_topics.py'
 TOPICS = {
-    'free-cash-balance': 'Free cash balance',
-    'free-cash-guideline': 'Free cash guideline',
-    'free-cash-sources': 'Free cash sources',
-    'free-cash-and-capital': 'Free cash and capital',
-    'free-cash-redirect': 'Free cash for schools',
     'stabilization-balances': 'Stabilization fund balances',
     'general-stabilization-fund': 'General stabilization fund',
     'who-may-spend-it': 'Who may spend it',

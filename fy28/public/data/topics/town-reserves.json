@@ -1,11 +1,6 @@
 {
  "answer": {
   "figures": {
-   "a": {
-    "text": "$3,354,370",
-    "unit": "",
-    "value": 3354370.0
-   },
    "b": {
     "text": "$9,061,421",
     "unit": "",
@@ -25,7 +20,7 @@
   "literals": [
    "1 July"
   ],
-  "text": "The town keeps two kinds of reserve: free cash, $3,354,370 as of 1 July 2025, and nine stabilization accounts holding $9,061,421. Only the general fund’s $3,147,179 may be spent on anything lawful."
+  "text": "The town holds $9,061,421 in nine stabilization accounts as of 1 July 2025. Only the general fund’s $3,147,179 may be spent on anything lawful."
  },
  "category": "town-reserves",
  "chains": [],
@@ -41,31 +36,6 @@
  "kind": "hub",
  "ladder": {
   "conclusions": [
-   {
-    "figures": {
-     "a": {
-      "text": "$3,354,370",
-      "unit": "",
-      "value": 3354370.0
-     },
-     "p": {
-      "text": "66.1%",
-      "unit": "",
-      "value": 66.13
-     },
-     "y": {
-      "text": "2025",
-      "unit": "certification year",
-      "value": 2025
-     }
-    },
-    "literals": [],
-    "rests_on": [
-     "h-cert",
-     "h-under"
-    ],
-    "text": "Free cash reached a record $3,354,370 in July 2025; 66.1% of it was money appropriated and not spent."
-   },
    {
     "figures": {
      "a": {
@@ -86,25 +56,6 @@
      "h-restricted"
     ],
     "text": "Of $9,061,421 in stabilization accounts, only the general fund’s $3,147,179 may go to any lawful use."
-   },
-   {
-    "figures": {
-     "a": {
-      "text": "$655,424",
-      "unit": "",
-      "value": 655424.0
-     },
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "rests_on": [
-     "h-capital"
-    ],
-    "text": "Free cash is also the capital plan’s money: $655,424 of the FY2026 programme."
    },
    {
     "figures": {
@@ -149,109 +100,14 @@
     "figures": {},
     "literals": [],
     "rests_on": [
-     "h-band-gap",
-     "h-dept-gap",
      "h-out-gap"
     ],
-    "text": "The state’s guideline itself, and which departments left money unspent, are not published here."
+    "text": "Every withdrawal from the funds, year by year, is not published here."
    }
   ],
-  "matrix": {
-   "cells": [
-    {
-     "col": "fc",
-     "facts": [
-      "h-cert"
-     ],
-     "row": "held"
-    },
-    {
-     "col": "stab",
-     "facts": [
-      "h-held",
-      "h-gen",
-      "h-restricted"
-     ],
-     "row": "held"
-    },
-    {
-     "col": "fc",
-     "facts": [
-      "h-under",
-      "h-capital"
-     ],
-     "row": "moved"
-    },
-    {
-     "col": "stab",
-     "facts": [
-      "h-fromfc",
-      "h-years"
-     ],
-     "row": "moved"
-    },
-    {
-     "col": "fc",
-     "facts": [
-      "h-band-gap",
-      "h-dept-gap"
-     ],
-     "row": "open"
-    },
-    {
-     "col": "stab",
-     "facts": [
-      "h-out-gap"
-     ],
-     "row": "open"
-    }
-   ],
-   "columns": [
-    {
-     "id": "fc",
-     "label": "Free cash",
-     "tone": null
-    },
-    {
-     "id": "stab",
-     "label": "Stabilization funds",
-     "tone": null
-    }
-   ],
-   "rows": [
-    {
-     "id": "held",
-     "label": "What is held"
-    },
-    {
-     "id": "moved",
-     "label": "Comes from, goes to"
-    },
-    {
-     "id": "open",
-     "label": "Not settled"
-    }
-   ]
-  },
   "tiers": [
    {
     "facts": [
-     {
-      "id": "h-cert",
-      "kind": "published",
-      "label": {
-       "figures": {},
-       "literals": [
-        "1 July 2025"
-       ],
-       "text": "free cash certified as of 1 July 2025"
-      },
-      "value": {
-       "text": "$3,354,370",
-       "unit": "",
-       "value": 3354370.0
-      }
-     },
      {
       "id": "h-held",
       "kind": "published",
@@ -302,40 +158,6 @@
    {
     "facts": [
      {
-      "id": "h-under",
-      "kind": "published",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "of it appropriated and not spent"
-      },
-      "value": {
-       "text": "66.1%",
-       "unit": "",
-       "value": 66.13
-      }
-     },
-     {
-      "id": "h-capital",
-      "kind": "published",
-      "label": {
-       "figures": {
-        "y": {
-         "text": "FY2026",
-         "unit": "fiscal year",
-         "value": 2026
-        }
-       },
-       "literals": [],
-       "text": "free cash into capital, FY2026"
-      },
-      "value": {
-       "text": "$655,424",
-       "unit": "",
-       "value": 655424.0
-      }
-     },
-     {
       "id": "h-fromfc",
       "kind": "published",
       "label": {
@@ -368,33 +190,6 @@
        "unit": "years",
        "value": 2
       }
-     }
-    ],
-    "title": "Where it comes from and goes"
-   },
-   {
-    "facts": [
-     {
-      "closes": "the Division of Local Services publication the Town paraphrases",
-      "id": "h-band-gap",
-      "kind": "gap",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "the state’s own free cash guideline"
-      },
-      "value": null
-     },
-     {
-      "closes": "the period 13 general ledger, turnback by department",
-      "id": "h-dept-gap",
-      "kind": "gap",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "which departments left free cash unspent"
-      },
-      "value": null
      },
      {
       "closes": "the MUNIS trust fund reports of expenditure",
@@ -408,7 +203,7 @@
       "value": null
      }
     ],
-    "title": "What is not settled"
+    "title": "Money in and out"
    }
   ],
   "title": "What it adds up to"
@@ -418,5 +213,5 @@
   "town-reserves"
  ],
  "table": null,
- "title": "Free cash and stabilization"
+ "title": "Stabilization funds"
 }

@@ -85,7 +85,7 @@ MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text')
 AR = os.path.join(ROOT, 'sources', 'town-annual-reports', 'text')
 
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
-        if home == 'town-reserves' and gen == 'build_town_reserves_topics.py']
+        if home in ('free-cash', 'town-reserves') and gen == 'build_town_reserves_topics.py']
 
 
 def fail(msg):
@@ -328,6 +328,17 @@ def build():
     sheet_rows = [dict(label=C.fy(fy), cells=[C.usd(s['certified']), C.usd(s['base']),
                                               C.pct(s['pct'], 2)])
                   for fy, s in sorted(sheet.items(), reverse=True)]
+    # The signature of the balance topic AND of the Free cash hub: one chart, two pages.
+    fc_chart = TP.series(
+        'Certified free cash by year', [C.fy(fy) for fy in sorted(sheet)],
+        [TP.track('The state’s proof', [dls[fy - 1]['certified'] if fy - 1 in dls else None
+                                        for fy in sorted(sheet)], 'published', 'bar'),
+         TP.track('The Town’s fact sheet only', [None if fy - 1 in dls else
+                                                 sheet[fy]['certified']
+                                                 for fy in sorted(sheet)], 'stated', 'bar')],
+        '$', kind='bar', stacked=True,
+        note='By the fiscal year the money can be spent in. Where both publish a year, '
+             'they agree to the dollar.')
     out['free-cash-balance'] = TP.page(
         'free-cash-balance',
         'The state certified %s of free cash as of 1 July 2025, the most in any year the '
@@ -355,16 +366,7 @@ def build():
         # The signature: the record and the dip before it. One bar a fiscal year (the Town's
         # label, the year the money can be spent); the state's proof where it reaches, the
         # Town's fact sheet for the years before it -- the two are equal where they overlap.
-        chart=TP.series(
-            'Certified free cash by year', [C.fy(fy) for fy in sorted(sheet)],
-            [TP.track('The state’s proof', [dls[fy - 1]['certified'] if fy - 1 in dls else None
-                                            for fy in sorted(sheet)], 'published', 'bar'),
-             TP.track('The Town’s fact sheet only', [None if fy - 1 in dls else
-                                                     sheet[fy]['certified']
-                                                     for fy in sorted(sheet)], 'stated', 'bar')],
-            '$', kind='bar', stacked=True,
-            note='By the fiscal year the money can be spent in. Where both publish a year, '
-                 'they agree to the dollar.'),
+        chart=fc_chart,
         table=dict(caption='Certified free cash, two publishers', views=[
             dict(key='dls', label='The state’s proof', total_col=1, kinds=['ledger'] * 3,
                  columns=['Identified', 'Certified', 'Spent in'],
@@ -1087,73 +1089,102 @@ def build():
         sources=[src['trust'], src['d-trust'], src['model']],
         finding_figures={'a': F(2028), 'b': F(2029), 'c': F(2030)})
 
-    # ------------------------------------------------ the hub
+    # ------------------------------------------------ the two hubs
+    # Split 14 October 2026 (TJ: "Yes, split free cash and stabilization funds"): free cash is
+    # a subject a reader searches for by name, so it has its own shelf and hub at /free-cash.
+    # The stabilization funds keep /town-reserves. Every fact and conclusion below was on the
+    # single combined hub, or is a figure the topic pages under each hub already state.
+    if len(trust) != 9:
+        fail('the ledger no longer holds nine stabilization accounts; the hub answer says nine')
     h = {}
     h['h-cert'] = f('h-cert', U(c25), 'free cash certified as of 1 July 2025', 'published',
                     allow=('1 July 2025',))
     h['h-under'] = f('h-under', P(us25), 'of it appropriated and not spent', 'published')
+    h['h-share'] = f('h-share', P(fs['pct'], 2), 'free cash as a share of budget, %s, Town’s '
+                     'figure' % C.fy(2026), 'published', {'y': F(2026)})
+    h['h-short'] = f('h-short', N(len(last10) - len(met), 'years'),
+                     'of the last %s below %s, on the Town’s figures'
+                     % (C.num(len(last10)), C.pct(lo, 0)), 'published',
+                     {'n': N(len(last10)), 'lo': P(lo, 0)})
     h['h-capital'] = f('h-capital', U(fc26), 'free cash into capital, %s' % C.fy(2026),
                        'published', {'y': F(2026)})
-    h['h-held'] = f('h-held', U(held), 'in %s stabilization accounts, 1 July 2025' % 'nine',
-                    'published', allow=('1 July 2025',))
-    h['h-gen'] = f('h-gen', U(gen), 'of it in the general fund, any lawful use', 'published')
-    h['h-restricted'] = f('h-restricted', U(restricted), 'held for stated purposes (our split)',
-                          'estimate')
-    h['h-fromfc'] = f('h-fromfc', N(n_fc, 'articles'), 'of %s deposits naming free cash'
-                      % C.num(len(dep)), 'published', {'n': N(len(dep))})
-    h['h-years'] = f('h-years', N(2, 'years'), 'of the school gap the general fund covers (ours)',
-                     'estimate')
+    h['h-redirect'] = f('h-redirect', U(redirect), 'free cash above %s of the budget (ours)'
+                        % C.pct(lo, 0), 'estimate', {'lo': P(lo, 0)})
     h['h-band-gap'] = f('h-band-gap', None, 'the state’s own free cash guideline', 'gap',
                         closes='the Division of Local Services publication the Town paraphrases')
     h['h-dept-gap'] = f('h-dept-gap', None, 'which departments left free cash unspent', 'gap',
                         closes='the period 13 general ledger, turnback by department')
-    h['h-out-gap'] = f('h-out-gap', None, 'every withdrawal from the funds, by year', 'gap',
-                       closes='the MUNIS trust fund reports of expenditure')
+    s_ = {}
+    s_['h-held'] = f('h-held', U(held), 'in %s stabilization accounts, 1 July 2025' % 'nine',
+                     'published', allow=('1 July 2025',))
+    s_['h-gen'] = f('h-gen', U(gen), 'of it in the general fund, any lawful use', 'published')
+    s_['h-restricted'] = f('h-restricted', U(restricted), 'held for stated purposes (our split)',
+                           'estimate')
+    s_['h-fromfc'] = f('h-fromfc', N(n_fc, 'articles'), 'of %s deposits naming free cash'
+                       % C.num(len(dep)), 'published', {'n': N(len(dep))})
+    s_['h-years'] = f('h-years', N(2, 'years'), 'of the school gap the general fund covers (ours)',
+                      'estimate')
+    s_['h-out-gap'] = f('h-out-gap', None, 'every withdrawal from the funds, by year', 'gap',
+                        closes='the MUNIS trust fund reports of expenditure')
     if len([b for b in burn if b['shortfall'] == 0]) != 2:
         fail('the general fund no longer covers exactly two years of the gap')
-    tiers = [
-        LD.tier('What is held', [h['h-cert'], h['h-held'], h['h-gen'], h['h-restricted']]),
-        LD.tier('Where it comes from and goes', [h['h-under'], h['h-capital'], h['h-fromfc'],
-                                                 h['h-years']]),
-        LD.tier('What is not settled', [h['h-band-gap'], h['h-dept-gap'], h['h-out-gap']]),
-    ]
-    mx = LD.matrix(
-        [('fc', 'Free cash'), ('stab', 'Stabilization funds')],
-        [('held', 'What is held'), ('moved', 'Comes from, goes to'), ('open', 'Not settled')],
-        {('fc', 'held'): ['h-cert'], ('stab', 'held'): ['h-held', 'h-gen', 'h-restricted'],
-         ('fc', 'moved'): ['h-under', 'h-capital'], ('stab', 'moved'): ['h-fromfc', 'h-years'],
-         ('fc', 'open'): ['h-band-gap', 'h-dept-gap'], ('stab', 'open'): ['h-out-gap']})
-    hub_ladder = LD.ladder(tiers, [
+
+    fc_ladder = LD.ladder([
+        LD.tier('What is held', [h['h-cert'], h['h-under'], h['h-share'], h['h-short']]),
+        LD.tier('Where it goes', [h['h-capital'], h['h-redirect']]),
+        LD.tier('What is not settled', [h['h-band-gap'], h['h-dept-gap']]),
+    ], [
         LD.conclusion('Free cash reached a record %s in July %s; %s of it was money '
                       'appropriated and not spent.' % (C.usd(c25), '2025', C.pct(us25)),
                       ['h-cert', 'h-under'], {'a': U(c25), 'y': Y(2025), 'p': P(us25)}),
+        LD.conclusion('On the Town’s figures, free cash reached %s in only %s of the last %s '
+                      'years.' % (C.pct(lo, 0), C.num(len(met)), C.num(len(last10))),
+                      ['h-short', 'h-share'],
+                      {'lo': P(lo, 0), 'n': N(len(met)), 'm': N(len(last10))}),
+        LD.conclusion('Free cash is also the capital plan’s money: %s of the %s programme.'
+                      % (C.usd(fc26), C.fy(2026)), ['h-capital'], {'a': U(fc26), 'y': F(2026)}),
+        LD.conclusion('Kept to the %s floor, %s could be redirected to the school gap (our arithmetic).'
+                      % (C.pct(lo, 0), C.usd(redirect)), ['h-redirect', 'h-share'],
+                      {'lo': P(lo, 0), 'a': U(redirect)}),
+        LD.conclusion('The state’s guideline itself, and which departments left money unspent, '
+                      'are not published here.', ['h-band-gap', 'h-dept-gap']),
+    ])
+    out['free-cash'] = TP.hub(
+        'free-cash',
+        'The state certified %s of free cash as of 1 July %s, the most the Town’s records list; '
+        '%s of it was money appropriated and not spent.' % (C.usd(c25), '2025', C.pct(us25)),
+        fc_ladder, chart=fc_chart,
+        answer_figures={'a': U(c25), 'y': Y(2025), 'p': P(us25)}, answer_allow=('1 July',))
+
+    st_ladder = LD.ladder([
+        LD.tier('What is held', [s_['h-held'], s_['h-gen'], s_['h-restricted']]),
+        LD.tier('Money in and out', [s_['h-fromfc'], s_['h-years'], s_['h-out-gap']]),
+    ], [
         LD.conclusion('Of %s in stabilization accounts, only the general fund’s %s may go to any '
                       'lawful use.' % (C.usd(held), C.usd(gen)),
                       ['h-held', 'h-gen', 'h-restricted'], {'a': U(held), 'b': U(gen)}),
-        LD.conclusion('Free cash is also the capital plan’s money: %s of the %s programme.'
-                      % (C.usd(fc26), C.fy(2026)), ['h-capital'], {'a': U(fc26), 'y': F(2026)}),
         LD.conclusion('%s of %s deposits into the two town stabilization funds name free cash '
                       'as their source.' % (C.num(n_fc), C.num(len(dep))), ['h-fromfc'],
                       {'a': N(n_fc), 'b': N(len(dep))}),
         LD.conclusion('Spent on the school gap, the general fund covers %s and %s, by our '
                       'arithmetic.' % (C.fy(2028), C.fy(2029)), ['h-years', 'h-gen'],
                       {'a': F(2028), 'b': F(2029)}),
-        LD.conclusion('The state’s guideline itself, and which departments left money unspent, '
-                      'are not published here.', ['h-band-gap', 'h-dept-gap', 'h-out-gap']),
-    ], matrix=mx)
+        LD.conclusion('Every withdrawal from the funds, year by year, is not published here.',
+                      ['h-out-gap']),
+    ])
     out['town-reserves'] = TP.hub(
         'town-reserves',
-        'The town keeps two kinds of reserve: free cash, %s as of 1 July %s, and %s '
-        'stabilization accounts holding %s. Only the general fund’s %s may be spent on anything '
-        'lawful.' % (C.usd(c25), '2025', 'nine', C.usd(held), C.usd(gen)),
-        hub_ladder,
+        'The town holds %s in %s stabilization accounts as of 1 July %s. Only the general '
+        'fund’s %s may be spent on anything lawful.' % (C.usd(held), 'nine', '2025', C.usd(gen)),
+        st_ladder,
         chart=dict(id='stabilization-holdings', source='/data/stabilization-funds.json'),
-        answer_figures={'a': U(c25), 'y': Y(2025), 'b': U(held), 'c': U(gen)},
+        answer_figures={'b': U(held), 'y': Y(2025), 'c': U(gen)},
         answer_allow=('1 July',))
 
-    if sorted(k for k in out if k != 'town-reserves') != sorted(MINE):
+    HUBS = ('free-cash', 'town-reserves')
+    if sorted(k for k in out if k not in HUBS) != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'
-             % sorted(set(MINE) ^ set(out)))
+             % sorted(set(MINE) ^ (set(out) - set(HUBS))))
     return out
 
 
