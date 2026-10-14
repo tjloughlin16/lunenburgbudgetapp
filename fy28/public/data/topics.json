@@ -353,6 +353,15 @@
      ]
     },
     {
+     "title": "School Committee funds",
+     "topics": [
+      "school-committee-funds",
+      "school-revolving-funds",
+      "school-grant-balances",
+      "revolving-fund-history"
+     ]
+    },
+    {
      "title": "Elsewhere on the site",
      "topics": [
       "net-school-spending",
@@ -788,6 +797,9 @@
     {
      "title": "Fees",
      "topics": [
+      "family-fees",
+      "reduced-and-waived-fees",
+      "unpriced-school-charges",
       "school-user-fees",
       "athletic-fee",
       "bus-fee"
@@ -1448,6 +1460,19 @@
     "budget-options"
    ],
    "title": "Extracurricular cuts"
+  },
+  "family-fees": {
+   "finding": "Two high schoolers, one sport each, the bus and a club: $978.75 in FY2026.",
+   "generator": "scripts/build_budget_options_topics.py",
+   "home": "budget-options",
+   "id": "family-fees",
+   "minutes": 1,
+   "path": "/budget-options/family-fees",
+   "ready": true,
+   "shelves": [
+    "budget-options"
+   ],
+   "title": "Family fees"
   },
   "fee-fund-ledger": {
    "finding": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025.",
@@ -2442,6 +2467,19 @@
    ],
    "title": "Printed school rosters"
   },
+  "reduced-and-waived-fees": {
+   "finding": "Three high schoolers at one sport each: $812.50 a year at the full fee, $150 reduced, $0 waived.",
+   "generator": "scripts/build_budget_options_topics.py",
+   "home": "budget-options",
+   "id": "reduced-and-waived-fees",
+   "minutes": 1,
+   "path": "/budget-options/reduced-and-waived-fees",
+   "ready": true,
+   "shelves": [
+    "budget-options"
+   ],
+   "title": "Reduced and waived fees"
+  },
   "regional-district-spending": {
    "finding": "Five nearby regional districts spent $18,142 to $25,827 a pupil in FY2025; Lunenburg spent $18,027.",
    "generator": "scripts/build_school_spending_topics.py",
@@ -2522,6 +2560,19 @@
    ],
    "title": "Retiree health accounts"
   },
+  "revolving-fund-history": {
+   "finding": "The 9 school revolving funds closed FY2023 holding $1,074,431, against $306,471 at the close of FY2011.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "revolving-fund-history",
+   "minutes": 1,
+   "path": "/school-spending/revolving-fund-history",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "Revolving fund history"
+  },
   "salary-line-and-staffing": {
    "finding": "Held to 2.5% while pay rises 4.0%, the salary line loses 2.2 positions a year, by our arithmetic.",
    "generator": "scripts/build_budget_options_topics.py",
@@ -2561,6 +2612,19 @@
    ],
    "title": "School choice flows"
   },
+  "school-committee-funds": {
+   "finding": "The schools held $1,592,572 in 61 funds outside the appropriation at 31 March 2026.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "school-committee-funds",
+   "minutes": 1,
+   "path": "/school-spending/school-committee-funds",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "School Committee funds"
+  },
   "school-facilities-fund": {
    "finding": "The schools’ rental fund rose $62,231 in FY2025, more than its receipts in any year FY2011–FY2023.",
    "generator": "scripts/build_parks_topics.py",
@@ -2587,6 +2651,19 @@
    ],
    "title": "School field upkeep"
   },
+  "school-grant-balances": {
+   "finding": "13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "school-grant-balances",
+   "minutes": 1,
+   "path": "/school-spending/school-grant-balances",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "School grant balances"
+  },
   "school-health-insurance": {
    "finding": "Two school accounts hold $5,222,731 for FY2026; $1,521,536 of it sits outside the school budget.",
    "generator": "scripts/build_health_insurance_topics.py",
@@ -2599,6 +2676,19 @@
     "health-insurance"
    ],
    "title": "School health insurance"
+  },
+  "school-revolving-funds": {
+   "finding": "The 9 school revolving funds took in $1,031,126 and paid out $1,119,195 in nine months of FY2026.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "school-revolving-funds",
+   "minutes": 1,
+   "path": "/school-spending/school-revolving-funds",
+   "ready": true,
+   "shelves": [
+    "school-spending"
+   ],
+   "title": "School revolving funds"
   },
   "school-support-staff": {
    "finding": "The town printed 7 counsellors, 3 psychologists and 2 social workers on its FY2025 school rosters.",
@@ -3141,6 +3231,19 @@
     "special-education"
    ],
    "title": "Tuition budget"
+  },
+  "unpriced-school-charges": {
+   "finding": "Nine charges a Lunenburg family can meet have no published amount anywhere in this archive.",
+   "generator": "scripts/build_budget_options_topics.py",
+   "home": "budget-options",
+   "id": "unpriced-school-charges",
+   "minutes": 1,
+   "path": "/budget-options/unpriced-school-charges",
+   "ready": true,
+   "shelves": [
+    "budget-options"
+   ],
+   "title": "Unpriced school charges"
   },
   "who-may-spend-it": {
    "finding": "Only the general fund, $3,147,179 of $9,061,421, may go to any lawful use, by a two-thirds vote.",

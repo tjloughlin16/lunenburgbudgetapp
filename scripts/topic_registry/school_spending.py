@@ -1,8 +1,9 @@
 """The School spending shelf. See scripts/topics.py for the model and the title rule.
 
 Absorbs /what-other-districts-spend ('peers', per-pupil-spending.md), spending-compared.md,
-peer-districts.md and /budget-vs-actual ('variance'). Two different questions live here and are
-kept apart: what the schools spend for each pupil against other districts (DESE's all-funds
+peer-districts.md and /budget-vs-actual ('variance'), and the School Committee's own finance page
+(/boards/school-committee/finance, 'schoolfinance'), which stays served as the board's finance tab
+and leaves the /reports shelves. Two different questions live here and are kept apart: what the schools spend for each pupil against other districts (DESE's all-funds
 figures, reported after a year closes), and whether the school budget matched what was spent
 (budget and actual side by side, same year, never differenced across years -- rule 1).
 
@@ -25,6 +26,8 @@ CATEGORY = dict(
                                      'destination-district-spending',
                                      'regional-district-spending']),
         ('Budget against actual', ['school-budget-against-actual', 'line-level-misses']),
+        ('School Committee funds', ['school-committee-funds', 'school-revolving-funds',
+                                    'school-grant-balances', 'revolving-fund-history']),
         ('Elsewhere on the site', ['net-school-spending', 'net-school-spending-rank',
                                    'required-local-contribution', 'teachers-per-pupil',
                                    'children-schooled-elsewhere', 'special-education-overruns',
@@ -45,4 +48,8 @@ TOPICS = {
     'regional-district-spending': 'Regional districts',
     'school-budget-against-actual': 'Budget against actual',
     'line-level-misses': 'Line-level misses',
+    'school-committee-funds': 'School Committee funds',
+    'school-revolving-funds': 'School revolving funds',
+    'school-grant-balances': 'School grant balances',
+    'revolving-fund-history': 'Revolving fund history',
 }

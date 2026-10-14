@@ -1,0 +1,383 @@
+{
+ "category": "school-spending",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "note": {
+   "figures": {},
+   "literals": [
+    "31",
+    "2026"
+   ],
+   "text": "The Town Accountant’s special-revenue report, every fund carrying the schools’ department code, at 31 March 2026."
+  },
+  "parts": [
+   {
+    "label": "Revolving funds",
+    "share": "57%",
+    "text": "$900,325",
+    "value": 900325.25
+   },
+   {
+    "label": "Grant funds, net of overdrafts",
+    "share": "25%",
+    "text": "$404,007",
+    "value": 404006.8199999999
+   },
+   {
+    "label": "Other receipts funds",
+    "share": "11%",
+    "text": "$176,542",
+    "value": 176541.75999999998
+   },
+   {
+    "label": "Gift funds",
+    "share": "7%",
+    "text": "$111,698",
+    "value": 111698.46
+   }
+  ],
+  "title": "School fund balances, by kind of fund",
+  "total": "$1,592,572",
+  "type": "parts",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,592,572",
+     "unit": "",
+     "value": 1592572.2899999996
+    },
+    "n": {
+     "text": "61",
+     "unit": "",
+     "value": 61
+    },
+    "p": {
+     "text": "6.0%",
+     "unit": "",
+     "value": 6.047919509414248
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "31",
+    "2026"
+   ],
+   "notes": [
+    {
+     "closes": "the district’s fund-by-fund spending plan for FY2026",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "What any balance is committed to is not printed: the report gives balances, not obligations."
+    }
+   ],
+   "rests_on": [
+    "held",
+    "n",
+    "approp",
+    "share"
+   ],
+   "text": "$1,592,572 sat in 61 school funds at 31 March 2026: 6.0% of the FY2026 appropriation."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$900,325",
+     "unit": "",
+     "value": 900325.25
+    },
+    "b": {
+     "text": "$404,007",
+     "unit": "",
+     "value": 404006.8199999999
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "rev",
+    "grant"
+   ],
+   "text": "Revolving funds held $900,325 of it; the grant funds $404,007, net of the ones overdrawn."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$111,698",
+     "unit": "",
+     "value": 111698.46
+    },
+    "b": {
+     "text": "$176,542",
+     "unit": "",
+     "value": 176541.75999999998
+    },
+    "c": {
+     "text": "$16,200",
+     "unit": "",
+     "value": 16200.47
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "gift",
+    "other",
+    "trust"
+   ],
+   "text": "Gift funds held $111,698, other receipts funds $176,542 and the school trusts $16,200."
+  },
+  {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "close"
+   ],
+   "text": "The balances are nine months into FY2026; the year-end balances are not held."
+  }
+ ],
+ "facts": [
+  {
+   "id": "held",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31",
+     "2026"
+    ],
+    "text": "held in school funds, 31 March 2026"
+   },
+   "value": {
+    "text": "$1,592,572",
+    "unit": "",
+    "value": 1592572.2899999996
+   }
+  },
+  {
+   "id": "n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "special-revenue funds with the schools’ code"
+   },
+   "value": {
+    "text": "61",
+    "unit": "funds",
+    "value": 61
+   }
+  },
+  {
+   "id": "approp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "school appropriation, FY2026, revised"
+   },
+   "value": {
+    "text": "$26,332,564",
+    "unit": "",
+    "value": 26332564.24
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "held, against the appropriation (our division)"
+   },
+   "value": {
+    "text": "6.0%",
+    "unit": "",
+    "value": 6.047919509414248
+   }
+  },
+  {
+   "id": "rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "9",
+      "unit": "",
+      "value": 9
+     }
+    },
+    "literals": [],
+    "text": "in 9 revolving funds"
+   },
+   "value": {
+    "text": "$900,325",
+    "unit": "",
+    "value": 900325.25
+   }
+  },
+  {
+   "id": "grant",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "46",
+      "unit": "",
+      "value": 46
+     }
+    },
+    "literals": [],
+    "text": "in 46 grant funds, net of overdrafts"
+   },
+   "value": {
+    "text": "$404,007",
+    "unit": "",
+    "value": 404006.8199999999
+   }
+  },
+  {
+   "id": "gift",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "2",
+      "unit": "",
+      "value": 2
+     }
+    },
+    "literals": [],
+    "text": "in 2 gift funds"
+   },
+   "value": {
+    "text": "$111,698",
+    "unit": "",
+    "value": 111698.46
+   }
+  },
+  {
+   "id": "other",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     }
+    },
+    "literals": [],
+    "text": "in 4 other receipts funds"
+   },
+   "value": {
+    "text": "$176,542",
+    "unit": "",
+    "value": 176541.75999999998
+   }
+  },
+  {
+   "id": "trust",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "2",
+      "unit": "",
+      "value": 2
+     }
+    },
+    "literals": [],
+    "text": "in 2 school trusts"
+   },
+   "value": {
+    "text": "$16,200",
+    "unit": "",
+    "value": 16200.47
+   }
+  },
+  {
+   "closes": "the Town Accountant’s special-revenue report for FY2026 at period 13",
+   "id": "close",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "what these funds held at the close of FY2026"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,592,572",
+    "unit": "",
+    "value": 1592572.2899999996
+   },
+   "n": {
+    "text": "61",
+    "unit": "",
+    "value": 61
+   }
+  },
+  "literals": [
+   "31",
+   "2026"
+  ],
+  "text": "The schools held $1,592,572 in 61 funds outside the appropriation at 31 March 2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-committee-funds",
+ "kind": "topic",
+ "path": "/school-spending/school-committee-funds",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/school-special-revenue-fy26-q3.csv",
+   "label": "Lunenburg Budget Project — school-special-revenue-fy26-q3.csv (the school funds in the Town Accountant’s FY2026 special-revenue report, 31 March 2026)"
+  },
+  {
+   "href": "/docs/data/fund-owners.csv",
+   "label": "Lunenburg Budget Project — fund-owners.csv (which board or department owns each fund)"
+  },
+  {
+   "href": "/data/finance.json",
+   "label": "Lunenburg Budget Project — finance.json (every school fund, read off the reports below)"
+  }
+ ],
+ "table": null,
+ "title": "School Committee funds"
+}

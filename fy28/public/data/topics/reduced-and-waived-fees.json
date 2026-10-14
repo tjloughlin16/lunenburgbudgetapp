@@ -1,0 +1,348 @@
+{
+ "category": "budget-options",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [
+   "Reduced fee, every child"
+  ],
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "High school, FY2026, as the School Committee voted it and the athletics FAQ states the waiver."
+  },
+  "rows": [
+   {
+    "label": "Full fee, first child",
+    "texts": [
+     "$325"
+    ],
+    "total": "$325",
+    "value": 325.0
+   },
+   {
+    "label": "Reduced fee, every child",
+    "texts": [
+     "$50"
+    ],
+    "total": "$50",
+    "value": 50.0
+   },
+   {
+    "label": "Waived",
+    "texts": [
+     "$0"
+    ],
+    "total": "$0",
+    "value": 0
+   }
+  ],
+  "stack": null,
+  "title": "Athletic fee a season, by tier",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$812.50",
+     "unit": "",
+     "value": 812.5
+    },
+    "b": {
+     "text": "$150",
+     "unit": "",
+     "value": 150.0
+    },
+    "n": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "r": {
+     "text": "5.42",
+     "unit": "",
+     "value": 5.416666666666667
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "full",
+    "red",
+    "ratio",
+    "first",
+    "flat"
+   ],
+   "text": "The same 3 children cost one family $812.50 a year and another $150: 5.42 times."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$50",
+     "unit": "",
+     "value": 50.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "flat"
+   ],
+   "text": "The reduced fee is a flat $50 a child a season; no sibling discount is published for it."
+  },
+  {
+   "figures": {
+    "b": {
+     "text": "$0",
+     "unit": "",
+     "value": 0.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s current athletic fee schedule, with its waiver rule",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The FAQ that states the waiver states no year."
+    }
+   ],
+   "rests_on": [
+    "waived",
+    "busq",
+    "busr"
+   ],
+   "text": "The athletics FAQ waives the fee for the free lunch program; the bus is $0 for families who qualify."
+  },
+  {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fy27"
+   ],
+   "text": "No reduced or waived rate is published for FY2027."
+  }
+ ],
+ "facts": [
+  {
+   "id": "full",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "full fee, the year (our arithmetic)"
+   },
+   "value": {
+    "text": "$812.50",
+    "unit": "",
+    "value": 812.5
+   }
+  },
+  {
+   "id": "red",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "reduced fee, the year"
+   },
+   "value": {
+    "text": "$150",
+    "unit": "",
+    "value": 150.0
+   }
+  },
+  {
+   "id": "waived",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "fee waived, the year"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "ratio",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "full against reduced"
+   },
+   "value": {
+    "text": "5.42 times",
+    "unit": "",
+    "value": 5.416666666666667
+   }
+  },
+  {
+   "id": "first",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "full fee, first child, a season"
+   },
+   "value": {
+    "text": "$325",
+    "unit": "",
+    "value": 325.0
+   }
+  },
+  {
+   "id": "flat",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "reduced fee, every child, a season"
+   },
+   "value": {
+    "text": "$50",
+    "unit": "",
+    "value": 50.0
+   }
+  },
+  {
+   "id": "bus2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bus, two or more children, full"
+   },
+   "value": {
+    "text": "$270",
+    "unit": "",
+    "value": 270.0
+   }
+  },
+  {
+   "id": "busr",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bus, two or more children, reduced"
+   },
+   "value": {
+    "text": "$75",
+    "unit": "",
+    "value": 75.0
+   }
+  },
+  {
+   "id": "busq",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bus, families who qualify"
+   },
+   "value": {
+    "text": "$0",
+    "unit": "",
+    "value": 0.0
+   }
+  },
+  {
+   "closes": "the district’s FY2027 athletic fee schedule, including the reduced and waived tiers",
+   "id": "fy27",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "reduced and waived rates for FY2027"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$812.50",
+    "unit": "",
+    "value": 812.5
+   },
+   "b": {
+    "text": "$150",
+    "unit": "",
+    "value": 150.0
+   },
+   "c": {
+    "text": "$0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  "literals": [],
+  "text": "Three high schoolers at one sport each: $812.50 a year at the full fee, $150 reduced, $0 waived."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "reduced-and-waived-fees",
+ "kind": "topic",
+ "path": "/budget-options/reduced-and-waived-fees",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-02-26",
+   "href": "/docs/minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "label": "School Committee minutes, 2025-02-26",
+   "quote": "A 25% discount for siblings. Reduced fee for high school to $50 and $40 for middle school with a family cap of $1500."
+  }
+ ],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/meetings/school-committee/2025-02-26-minutes-7076.pdf",
+   "label": "School Committee minutes, 26 February 2025 — 2025-02-26-minutes-7076.pdf"
+  },
+  {
+   "href": "/docs/district-budget/docs/lhs-athletics-faq.pdf",
+   "label": "LHS Athletics FAQ — lhs-athletics-faq.pdf"
+  },
+  {
+   "href": "/docs/correspondence/2025-05-bus-fees-superintendent.txt",
+   "label": "Superintendent’s email to families on bus fees, May 2025 — 2025-05-bus-fees-superintendent.txt"
+  },
+  {
+   "href": "/docs/data/athletic-fee-schedule.csv",
+   "label": "Lunenburg Budget Project — athletic-fee-schedule.csv (the athletic rates, year by year)"
+  },
+  {
+   "href": "/data/what-families-pay.json",
+   "label": "Lunenburg Budget Project — what-families-pay.json (every household priced)"
+  }
+ ],
+ "table": null,
+ "title": "Reduced and waived fees"
+}

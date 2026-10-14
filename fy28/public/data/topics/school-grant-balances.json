@@ -1,0 +1,367 @@
+{
+ "category": "school-spending",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [
+   "FY26 #240"
+  ],
+  "note": {
+   "figures": {
+    "n": {
+     "text": "1",
+     "unit": "",
+     "value": 1
+    }
+   },
+   "literals": [
+    "31",
+    "2026"
+   ],
+   "text": "How far below zero each stood at 31 March 2026. 1 more was overdrawn by under a dollar."
+  },
+  "rows": [
+   {
+    "label": "FY26 #240",
+    "texts": [
+     "$179,637"
+    ],
+    "total": "$179,637",
+    "value": 179636.83
+   },
+   {
+    "label": "FY25 117 SOA EVIDENCE BASE",
+    "texts": [
+     "$91,220"
+    ],
+    "total": "$91,220",
+    "value": 91220.0
+   },
+   {
+    "label": "FY25 #240",
+    "texts": [
+     "$88,503"
+    ],
+    "total": "$88,503",
+    "value": 88502.82
+   },
+   {
+    "label": "FY23 240",
+    "texts": [
+     "$8,167"
+    ],
+    "total": "$8,167",
+    "value": 8166.51
+   },
+   {
+    "label": "FY23 TITLE II #140",
+    "texts": [
+     "$5,680"
+    ],
+    "total": "$5,680",
+    "value": 5680.42
+   },
+   {
+    "label": "FY26 #309 TITLE IV PART A",
+    "texts": [
+     "$3,240"
+    ],
+    "total": "$3,240",
+    "value": 3240.0
+   },
+   {
+    "label": "FY22 119 ESSER III FRINGE BENEFIT",
+    "texts": [
+     "$1,408"
+    ],
+    "total": "$1,408",
+    "value": 1408.46
+   },
+   {
+    "label": "FY20 TITLE IIA #140",
+    "texts": [
+     "$502"
+    ],
+    "total": "$502",
+    "value": 502.0
+   },
+   {
+    "label": "FY20 TITLE IV #309",
+    "texts": [
+     "$267"
+    ],
+    "total": "$267",
+    "value": 267.0
+   },
+   {
+    "label": "FY20 TITLE I #305",
+    "texts": [
+     "$200"
+    ],
+    "total": "$200",
+    "value": 200.0
+   },
+   {
+    "label": "FY21 ESSER FUND CODE 113",
+    "texts": [
+     "$100"
+    ],
+    "total": "$100",
+    "value": 99.78
+   },
+   {
+    "label": "FY24 TITLE IV-PART A #309",
+    "texts": [
+     "$18"
+    ],
+    "total": "$18",
+    "value": 18.5
+   }
+  ],
+  "stack": null,
+  "title": "Overdrawn school grant funds",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$378,942",
+     "unit": "",
+     "value": 378942.44
+    },
+    "b": {
+     "text": "$179,637",
+     "unit": "",
+     "value": 179636.83
+    },
+    "n": {
+     "text": "13 of 46",
+     "unit": "",
+     "value": 13
+    }
+   },
+   "literals": [
+    "FY26 #240"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Many school grants pay out as reimbursements after the spending, so an overdrawn fund may be waiting on one. Nothing here tests that."
+    },
+    {
+     "closes": "the Town Accountant’s special-revenue report for FY2026 at period 13",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026",
+      "period 13"
+     ],
+     "text": "Whether each was repaid, or any grant closed short, is not in a March report."
+    }
+   ],
+   "rests_on": [
+    "over",
+    "deficit",
+    "top"
+   ],
+   "text": "13 of 46 grant funds were overdrawn by $378,942; the largest, FY26 #240, by $179,637."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$615,301",
+     "unit": "",
+     "value": 615300.66
+    },
+    "b": {
+     "text": "$325,970",
+     "unit": "",
+     "value": 325970.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "cb",
+    "cbin"
+   ],
+   "text": "The circuit breaker fund held $615,301, after $325,970 came in from July to March."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$404,007",
+     "unit": "",
+     "value": 404006.8199999999
+    },
+    "n": {
+     "text": "46",
+     "unit": "",
+     "value": 46
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "net",
+    "cb",
+    "deficit"
+   ],
+   "text": "Netted together, the 46 grant funds held $404,007."
+  }
+ ],
+ "facts": [
+  {
+   "id": "over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31 March 2026"
+    ],
+    "text": "grant funds overdrawn, 31 March 2026"
+   },
+   "value": {
+    "text": "13 of 46",
+    "unit": "funds",
+    "value": 13
+   }
+  },
+  {
+   "id": "deficit",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "overdrawn, together"
+   },
+   "value": {
+    "text": "$378,942",
+    "unit": "",
+    "value": 378942.44
+   }
+  },
+  {
+   "id": "top",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY26 #240"
+    ],
+    "text": "the largest, FY26 #240"
+   },
+   "value": {
+    "text": "$179,637",
+    "unit": "",
+    "value": 179636.83
+   }
+  },
+  {
+   "id": "net",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "all grant funds, net"
+   },
+   "value": {
+    "text": "$404,007",
+    "unit": "",
+    "value": 404006.8199999999
+   }
+  },
+  {
+   "id": "cb",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "held by the circuit breaker fund"
+   },
+   "value": {
+    "text": "$615,301",
+    "unit": "",
+    "value": 615300.66
+   }
+  },
+  {
+   "id": "cbin",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "into it, July to March"
+   },
+   "value": {
+    "text": "$325,970",
+    "unit": "",
+    "value": 325970.0
+   }
+  },
+  {
+   "closes": "the Town Accountant’s special-revenue report for FY2026 at period 13",
+   "id": "closed",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether each overdrawn grant was repaid"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$378,942",
+    "unit": "",
+    "value": 378942.44
+   },
+   "m": {
+    "text": "46",
+    "unit": "",
+    "value": 46
+   },
+   "n": {
+    "text": "13",
+    "unit": "",
+    "value": 13
+   }
+  },
+  "literals": [
+   "31",
+   "2026"
+  ],
+  "text": "13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-grant-balances",
+ "kind": "topic",
+ "path": "/school-spending/school-grant-balances",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/school-special-revenue-fy26-q3.csv",
+   "label": "Lunenburg Budget Project — school-special-revenue-fy26-q3.csv (the school funds in the Town Accountant’s FY2026 special-revenue report, 31 March 2026)"
+  },
+  {
+   "href": "/docs/data/fund-owners.csv",
+   "label": "Lunenburg Budget Project — fund-owners.csv (which board or department owns each fund)"
+  },
+  {
+   "href": "/data/finance.json",
+   "label": "Lunenburg Budget Project — finance.json (every school fund, read off the reports below)"
+  }
+ ],
+ "table": null,
+ "title": "School grant balances"
+}

@@ -2,7 +2,8 @@
 See scripts/topics.py for the model and the title rule.
 
 Absorbs /override, /fees (feelever), /extras (extraslever), /classrooms (positionslever),
-/salaries (salarylever), /analysis/fy27-and-the-override and /analysis/fy27-cut-reconciliation.
+/salaries (salarylever), /analysis/fy27-and-the-override and /analysis/fy27-cut-reconciliation,
+and /what-families-pay (families): what a household is charged, by tier, and what has no price.
 There is no full report: every question those answered has one page here.
 
 Options answered on other shelves are LISTED here, one page on two shelves, never rebuilt:
@@ -15,7 +16,8 @@ CATEGORY = dict(
     groups=[
         ('Overrides', ['override-history', 'fy2027-override', 'override-duration',
                        'override-scope']),
-        ('Fees', ['school-user-fees', 'athletic-fee', 'bus-fee']),
+        ('Fees', ['family-fees', 'reduced-and-waived-fees', 'unpriced-school-charges',
+                  'school-user-fees', 'athletic-fee', 'bus-fee']),
         ('Cuts', ['extracurricular-cuts', 'classroom-positions', 'fy2027-cut-size',
                   'announced-cuts', 'override-cut-lists']),
         ('Pay', ['teacher-contract', 'salary-line-and-staffing']),
@@ -28,6 +30,9 @@ TOPICS = {
     'fy2027-override': 'The FY2027 override',
     'override-duration': 'Override duration',
     'override-scope': 'Townwide or school-only',
+    'family-fees': 'Family fees',
+    'reduced-and-waived-fees': 'Reduced and waived fees',
+    'unpriced-school-charges': 'Unpriced school charges',
     'school-user-fees': 'School user fees',
     'extracurricular-cuts': 'Extracurricular cuts',
     'classroom-positions': 'Classroom positions',

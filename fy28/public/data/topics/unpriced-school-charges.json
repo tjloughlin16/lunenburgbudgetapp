@@ -1,0 +1,293 @@
+{
+ "category": "budget-options",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "The charges a high school family can meet in FY2026, counted from the rate register. Nothing here is estimated."
+  },
+  "parts": [
+   {
+    "label": "Priced by a document we hold",
+    "share": "23%",
+    "text": "3",
+    "value": 3
+   },
+   {
+    "label": "Charged, no amount published",
+    "share": "69%",
+    "text": "9",
+    "value": 9
+   },
+   {
+    "label": "No charge",
+    "share": "8%",
+    "text": "1",
+    "value": 1
+   }
+  ],
+  "title": "What a family can be charged, by evidence",
+  "total": "13",
+  "type": "parts",
+  "unit": "count"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "unpriced",
+    "priced"
+   ],
+   "text": "9 charges have no amount in any document here, so any total a family is given is a floor."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s published schedule of student fees, with every amount the portal charges",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Preschool, extended day, field trips, parking and device repair are among them."
+    }
+   ],
+   "rests_on": [
+    "portal"
+   ],
+   "text": "6 are sold on the district’s payment portal, which shows no amount to a plain fetch."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "proc"
+   ],
+   "text": "Paying online adds a processing fee; the Superintendent’s email calls it small and states no rate."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "free"
+   ],
+   "text": "The standard school meal is free to every student, under the state’s universal meals funding."
+  }
+ ],
+ "facts": [
+  {
+   "id": "unpriced",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "charged, with no amount published"
+   },
+   "value": {
+    "text": "9",
+    "unit": "charges",
+    "value": 9
+   }
+  },
+  {
+   "id": "portal",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them sold on the district’s payment portal"
+   },
+   "value": {
+    "text": "6",
+    "unit": "charges",
+    "value": 6
+   }
+  },
+  {
+   "id": "priced",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "priced by a document we hold, FY2026"
+   },
+   "value": {
+    "text": "3",
+    "unit": "charges",
+    "value": 3
+   }
+  },
+  {
+   "id": "free",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "no charge: the standard school meal"
+   },
+   "value": {
+    "text": "1",
+    "unit": "charge",
+    "value": 1
+   }
+  },
+  {
+   "closes": "the RevTrak merchant agreement or the portal’s own fee disclosure",
+   "id": "proc",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the online payment processing fee"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "Nine charges a Lunenburg family can meet have no published amount anywhere in this archive."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "unpriced-school-charges",
+ "kind": "topic",
+ "path": "/budget-options/unpriced-school-charges",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2024-06-26",
+   "href": "/docs/minutes/text/school-committee/2024-06-26-minutes-6632.txt",
+   "label": "School Committee minutes, 2024-06-26",
+   "quote": "Our students would not see any difference"
+  }
+ ],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+   "label": "Superintendent’s email to families, 17 August 2026 — 2026-08-17-bus-routes-and-fees-superintendent.txt"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2024-06-26-minutes-6632.pdf",
+   "label": "School Committee minutes, 26 June 2024 — 2024-06-26-minutes-6632.pdf"
+  },
+  {
+   "href": "/docs/data/rate-register.csv",
+   "label": "Lunenburg Budget Project — rate-register.csv (every school fee and its source)"
+  },
+  {
+   "href": "/docs/data/money-gaps.csv",
+   "label": "Lunenburg Budget Project — money-gaps.csv (what cannot be answered, and what would settle it)"
+  },
+  {
+   "href": "/data/what-families-pay.json",
+   "label": "Lunenburg Budget Project — what-families-pay.json (every household priced)"
+  }
+ ],
+ "table": {
+  "caption": "Charged, with no amount published",
+  "views": [
+   {
+    "columns": [
+     "Where it is named"
+    ],
+    "key": "unpriced",
+    "kinds": [
+     "stated"
+    ],
+    "label": "Each charge",
+    "note": "Each is offered by the district or named in its own email; none has an amount in a budget book, a warrant, a set of minutes or a fee schedule held here.",
+    "rows": [
+     {
+      "cells": [
+       "the cafeteria, no price list held"
+      ],
+      "label": "a la carte and second meals"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "Afterschool Activity Fee"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "Chromebook Repair Fee"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "Extended Day & ELC"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "Field Trips"
+     },
+     {
+      "cells": [
+       "public comment; paid to shops"
+      ],
+      "label": "instruments, reeds and supplies"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "LHS Parking Permit"
+     },
+     {
+      "cells": [
+       "the Superintendent’s email"
+      ],
+      "label": "online payment processing fee"
+     },
+     {
+      "cells": [
+       "the district’s payment portal"
+      ],
+      "label": "Primary Preschool Program"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Unpriced school charges"
+}

@@ -1,0 +1,391 @@
+{
+ "category": "budget-options",
+ "chart": {
+  "decimals": 2,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "High school, FY2026, full fee, one sport each, riding the bus and in a club."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Athletics",
+    "texts": [
+     "$325.00",
+     "$568.75",
+     "$812.50"
+    ],
+    "values": [
+     325.0,
+     568.75,
+     812.5
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Bus",
+    "texts": [
+     "$180.00",
+     "$270.00",
+     "$270.00"
+    ],
+    "values": [
+     180.0,
+     270.0,
+     270.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Activity fee",
+    "texts": [
+     "$70.00",
+     "$140.00",
+     "$210.00"
+    ],
+    "values": [
+     70.0,
+     140.0,
+     210.0
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "A year of school fees, by family size",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "One child",
+   "Two children",
+   "Three children"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$568.75",
+     "unit": "",
+     "value": 568.75
+    },
+    "b": {
+     "text": "$270",
+     "unit": "",
+     "value": 270.0
+    },
+    "c": {
+     "text": "$140",
+     "unit": "",
+     "value": 140.0
+    },
+    "t": {
+     "text": "$978.75",
+     "unit": "",
+     "value": 978.75
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the adopted student activity fee schedule, stating its period",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether the activity fee is charged once a year, a term or an activity is not stated; the vote names an amount only."
+    }
+   ],
+   "rests_on": [
+    "two",
+    "ath",
+    "sib",
+    "bus2",
+    "act"
+   ],
+   "text": "Of the $978.75: $568.75 athletics, $270 bus and $140 activity fees."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$575",
+     "unit": "",
+     "value": 575.0
+    },
+    "b": {
+     "text": "$403.75",
+     "unit": "",
+     "value": 403.75
+    },
+    "c": {
+     "text": "$313.75",
+     "unit": "",
+     "value": 313.75
+    },
+    "p": {
+     "text": "25%",
+     "unit": "",
+     "value": 25.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "one",
+    "two",
+    "three",
+    "bus1",
+    "bus2",
+    "sib"
+   ],
+   "text": "One child is $575; a second adds $403.75 and a third $313.75: one bus charge, and 25% off a sibling."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "unpriced"
+   ],
+   "text": "It is a floor: 9 more charges a family can meet have no published amount."
+  },
+  {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fy27"
+   ],
+   "text": "These are FY2026 rates; the FY2027 athletic rates are in an email this archive does not hold."
+  }
+ ],
+ "facts": [
+  {
+   "id": "two",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "two children, one sport each, bus, a club"
+   },
+   "value": {
+    "text": "$978.75",
+    "unit": "",
+    "value": 978.75
+   }
+  },
+  {
+   "id": "one",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "one child, the same"
+   },
+   "value": {
+    "text": "$575",
+    "unit": "",
+    "value": 575.0
+   }
+  },
+  {
+   "id": "three",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "three children, the same"
+   },
+   "value": {
+    "text": "$1,292.50",
+    "unit": "",
+    "value": 1292.5
+   }
+  },
+  {
+   "id": "ath",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "athletic fee, first child, a season"
+   },
+   "value": {
+    "text": "$325",
+    "unit": "",
+    "value": 325.0
+   }
+  },
+  {
+   "id": "sib",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "off for each sibling who plays"
+   },
+   "value": {
+    "text": "25%",
+    "unit": "",
+    "value": 25.0
+   }
+  },
+  {
+   "id": "bus1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bus, one child, a year"
+   },
+   "value": {
+    "text": "$180",
+    "unit": "",
+    "value": 180.0
+   }
+  },
+  {
+   "id": "bus2",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "bus, two or more children, a year"
+   },
+   "value": {
+    "text": "$270",
+    "unit": "",
+    "value": 270.0
+   }
+  },
+  {
+   "id": "act",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "activity fee, a child; no period stated"
+   },
+   "value": {
+    "text": "$70",
+    "unit": "",
+    "value": 70.0
+   }
+  },
+  {
+   "id": "unpriced",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "further charges with no published amount"
+   },
+   "value": {
+    "text": "9",
+    "unit": "charges",
+    "value": 9
+   }
+  },
+  {
+   "closes": "the Superintendent’s August 2026 fee schedule to families, which this archive does not hold",
+   "id": "fy27",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the FY2027 athletic rates, in a document we hold"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$978.75",
+    "unit": "",
+    "value": 978.75
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Two high schoolers, one sport each, the bus and a club: $978.75 in FY2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "family-fees",
+ "kind": "topic",
+ "path": "/budget-options/family-fees",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/minutes/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "the committee ultimately decides for a universal increase from $55 to $70"
+  }
+ ],
+ "shelves": [
+  "budget-options"
+ ],
+ "sources": [
+  {
+   "href": "/docs/meetings/school-committee/2025-02-26-minutes-7076.pdf",
+   "label": "School Committee minutes, 26 February 2025 — 2025-02-26-minutes-7076.pdf"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2025-05-07-minutes-7207.pdf",
+   "label": "School Committee minutes, 7 May 2025 — 2025-05-07-minutes-7207.pdf"
+  },
+  {
+   "href": "/docs/correspondence/2025-05-bus-fees-superintendent.txt",
+   "label": "Superintendent’s email to families on bus fees, May 2025 — 2025-05-bus-fees-superintendent.txt"
+  },
+  {
+   "href": "/docs/data/rate-register.csv",
+   "label": "Lunenburg Budget Project — rate-register.csv (every school fee and its source)"
+  },
+  {
+   "href": "/data/what-families-pay.json",
+   "label": "Lunenburg Budget Project — what-families-pay.json (every household priced)"
+  }
+ ],
+ "table": null,
+ "title": "Family fees"
+}

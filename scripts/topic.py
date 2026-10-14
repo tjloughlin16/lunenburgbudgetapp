@@ -304,7 +304,11 @@ def fmt(unit, v, decimals=None):
     if v is None:
         return None
     if unit == '$':
-        return _C.usd(v)
+        # Whole dollars unless the chart declares `decimals`: a fee of $568.75 drawn as "$569"
+        # beside a sentence that says $568.75 is one figure rounded two ways.
+        if decimals is None:
+            return _C.usd(v)
+        return ('-$' if v < 0 else '$') + format(abs(v), ',.%df' % decimals)
     # `decimals` is the chart's own declaration (series/ranking/parts take it), so a bar
     # can read 6.84% or 1.0 FTE exactly as the prose beside it does. Without it: whole
     # numbers bare, anything else to one place.

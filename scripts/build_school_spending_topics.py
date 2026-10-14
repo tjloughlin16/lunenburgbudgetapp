@@ -6,8 +6,9 @@
 
 WHY THIS EXISTS. scripts/topics.py has the model: one question per page, under five minutes,
 facts first, one to four conclusions resting on them. The School spending shelf absorbs
-/what-other-districts-spend (per-pupil-spending.md), spending-compared.md, peer-districts.md and
-/budget-vs-actual. The Chapter 70 floor, the teacher ratio, children schooled elsewhere, the
+/what-other-districts-spend (per-pupil-spending.md), spending-compared.md, peer-districts.md,
+/budget-vs-actual and the School Committee's finance page (school_committee_fund_pages, below,
+read off fy28/public/data/finance.json). The Chapter 70 floor, the teacher ratio, children schooled elsewhere, the
 special education overruns and the two school surpluses already have pages on other shelves and
 are only LISTED here.
 
@@ -45,6 +46,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 
@@ -1104,9 +1106,346 @@ def build():
         answer_figures={'a': U(hd['per_pupil']), 'y': F(fy), 'b': U(hd['statewide_median']),
                         'n': N(len(bq_years)), 'c': F(yrs[0]), 'd': F(yl)})
 
+    out.update(school_committee_fund_pages())
+
     if sorted(k for k in out if k != 'school-spending') != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'
              % sorted(set(MINE) ^ set(out)))
+    return out
+
+# --------------------------------------------------------------------- the School Committee's funds
+# Absorbs the School Committee's finance page (/boards/school-committee/finance, `schoolfinance`),
+# 14 October 2026, off the /reports shelves; the page stays the board's finance tab. Every figure
+# is read off its payload, fy28/public/data/finance.json (build_finance.py, from the registry
+# sources/data/fund-owners.csv), and every total the payload's own conclusions state is
+# recomputed here from the per-fund rows, or nothing is written.
+#
+# THREE GRADES, KEPT APART (rule 13a, as finance.json keeps them). `evidence` is the Town
+# Accountant's FY2026 special-revenue report at 31 March 2026, a MUNIS printout. `read` is the
+# annual reports' special-revenue schedule, FY2011-FY2023, read off the page and tied to its
+# printed totals. `transcribed` is OCR of the FY2024-FY2025 balance tables, which these pages
+# do NOT draw: where it can be checked -- a FY2025 close against the FY2026 opening the ledger
+# prints -- it fails for some funds, and that count is stated instead.
+
+SC = 'school-committee'
+HIST_YEARS = range(2011, 2024)       # the `read` grade: tied to the printed totals
+
+
+def _fund_label(name):
+    """A fund's MUNIS name as a chart row: its own words, without the fund-type suffix."""
+    n = re.sub(r'\s+(REVOLVING FUND|REVOLVING|REVOLV|FUND)$', '', ' '.join(name.split()))
+    return n[:1] + n[1:].lower() if not n[:1].isdigit() else n
+
+
+def school_committee_fund_pages():
+    FIN = load('finance.json')
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+    src = {'payload': dict(label='Lunenburg Budget Project — finance.json (every school fund, '
+                                 'read off the reports below)', href='/data/finance.json')}
+    for name, what in (('school-special-revenue-fy26-q3.csv',
+                        'the school funds in the Town Accountant’s FY2026 special-revenue report, '
+                        '31 March 2026'),
+                       ('fund-owners.csv', 'which board or department owns each fund'),
+                       ('special-revenue-read.csv', 'the annual reports’ special-revenue '
+                                                    'schedule, read and tied, FY2011–FY2023')):
+        if not os.path.exists(os.path.join(DOCS_DATA, name)):
+            fail('/docs/data/%s is not published' % name)
+        src[name] = dict(label='Lunenburg Budget Project — %s (%s)' % (name, what),
+                         href='/docs/data/' + name)
+    for fy, key in ((2011, 'town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf'),
+                    (2023, 'town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf')):
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        src['atr%d' % fy] = dict(label='Town of Lunenburg — annual town report, %s — %s'
+                                       % (C.fy(fy), key.split('/')[-1]), href='/docs/' + key)
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=1: figure(v, C.pct(v, dp))
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    OF_ = lambda a, b, unit=None: figure(a, '%s of %s' % (C.num(a), C.num(b)), unit)
+    f, con = LD.fact, TP.conclusion
+    out = {}
+
+    owner = FIN['owners'][SC]
+    ms = [FIN['measures'][m] for m in owner['owns']]
+    sr = [m for m in ms if m['kind'] == 'special-revenue']
+    if any(m['current']['grade'] != 'evidence' or m['current'].get('as_of') != '2026-03-31'
+           for m in sr):
+        fail('a school special-revenue fund is no longer read off the 31 March 2026 report')
+    cf = {c['id']: c['figures'] for c in FIN['conclusions_by_owner'][SC]}
+    # The appropriation. ONE line, department 300, as the payload's own conclusion takes it.
+    gf = FIN['measures']['gf-300']['current']
+    approp = gf['revised']
+    held = sum(m['current']['closing'] for m in sr)
+    by = {}
+    for m in sr:
+        by.setdefault(m['subkind'], []).append(m)
+    tot = {k: sum(m['current']['closing'] for m in v) for k, v in by.items()}
+    for k, want in (('held', held), ('appropriation', approp), ('n', len(sr)),
+                    ('share', 100 * held / approp)):
+        if abs(cf['outside-the-appropriation'][k]['value'] - want) > 0.01:
+            fail('finance.json’s %s no longer recomputes from its own fund rows' % k)
+    if set(by) != {'revolving', 'grant', 'gift', 'other'} or any(v <= 0 for v in tot.values()):
+        fail('the school funds are no longer four kinds, each holding a positive balance')
+    tr = [m for m in ms if m['kind'] == 'trust']
+    trust = sum(m['current']['closing'] for m in tr)
+    if abs(trust - owner['totals']['trust_held']) > 0.01:
+        fail('the school trusts no longer sum to the owner total')
+    share = 100 * held / approp
+    KIND = (('revolving', 'Revolving funds'), ('grant', 'Grant funds, net of overdrafts'),
+            ('other', 'Other receipts funds'), ('gift', 'Gift funds'))
+    out['school-committee-funds'] = TP.page(
+        'school-committee-funds',
+        'The schools held %s in %s funds outside the appropriation at 31 March 2026.'
+        % (C.usd(held), C.num(len(sr))),
+        [f('held', U(held), 'held in school funds, 31 March 2026', 'published', allow=('31',
+                                                                                    '2026')),
+         f('n', N(len(sr), 'funds'), 'special-revenue funds with the schools’ code', 'published'),
+         f('approp', U(approp), 'school appropriation, %s, revised' % C.fy(2026), 'published',
+           {'y': F(2026)}),
+         f('share', P(share), 'held, against the appropriation (our division)', 'published'),
+         f('rev', U(tot['revolving']), 'in %s revolving funds' % C.num(len(by['revolving'])),
+           'published', {'n': N(len(by['revolving']))}),
+         f('grant', U(tot['grant']), 'in %s grant funds, net of overdrafts'
+           % C.num(len(by['grant'])), 'published', {'n': N(len(by['grant']))}),
+         f('gift', U(tot['gift']), 'in %s gift funds' % C.num(len(by['gift'])), 'published',
+           {'n': N(len(by['gift']))}),
+         f('other', U(tot['other']), 'in %s other receipts funds' % C.num(len(by['other'])),
+           'published', {'n': N(len(by['other']))}),
+         f('trust', U(trust), 'in %s school trusts' % C.num(len(tr)), 'published',
+           {'n': N(len(tr))}),
+         f('close', None, 'what these funds held at the close of %s' % C.fy(2026), 'gap',
+           {'y': F(2026)},
+           closes='the Town Accountant’s special-revenue report for %s at period 13'
+                  % C.fy(2026))],
+        [con('%s sat in %s school funds at 31 March 2026: %s of the %s appropriation.'
+             % (C.usd(held), C.num(len(sr)), C.pct(share), C.fy(2026)),
+             ['held', 'n', 'approp', 'share'],
+             {'a': U(held), 'n': N(len(sr)), 'p': P(share), 'y': F(2026)}, allow=('31', '2026'),
+             notes=[step('What any balance is committed to is not printed: the report gives '
+                         'balances, not obligations.', 'gap',
+                         closes='the district’s fund-by-fund spending plan for %s' % C.fy(2026),
+                         allow=(C.fy(2026),))]),
+         con('Revolving funds held %s of it; the grant funds %s, net of the ones overdrawn.'
+             % (C.usd(tot['revolving']), C.usd(tot['grant'])), ['rev', 'grant'],
+             {'a': U(tot['revolving']), 'b': U(tot['grant'])}),
+         con('Gift funds held %s, other receipts funds %s and the school trusts %s.'
+             % (C.usd(tot['gift']), C.usd(tot['other']), C.usd(trust)),
+             ['gift', 'other', 'trust'],
+             {'a': U(tot['gift']), 'b': U(tot['other']), 'c': U(trust)}),
+         con('The balances are nine months into %s; the year-end balances are not held.'
+             % C.fy(2026), ['close'], {'y': F(2026)})],
+        chart=TP.parts('School fund balances, by kind of fund',
+                       [(lab, tot[k]) for k, lab in KIND], '$',
+                       note='The Town Accountant’s special-revenue report, every fund carrying '
+                            'the schools’ department code, at 31 March 2026.',
+                       note_allow=('31', '2026')),
+        sources=[src['school-special-revenue-fy26-q3.csv'], src['fund-owners.csv'],
+                 src['payload']],
+        finding_figures={'a': U(held), 'n': N(len(sr))}, finding_allow=('31', '2026'))
+
+    # ---- the revolving funds, nine months of FY2026
+    rv = sorted(by['revolving'], key=lambda m: m['code'])
+    cur = {m['code']: m['current'] for m in rv}
+    rin = sum(c['revenue'] for c in cur.values())
+    rout = sum(c['spent'] for c in cur.values())
+    rf = cf['the-revolving-funds']
+    for k, want in (('in', rin), ('out', rout), ('held', tot['revolving']), ('n', len(rv))):
+        if abs(rf[k]['value'] - want) > 0.01:
+            fail('the revolving funds’ %s no longer recomputes' % k)
+    for m in rv:
+        c = m['current']
+        if not c.get('foots') or abs(c['opening'] + c['revenue'] - c['spent'] - c['closing']) > 0.01:
+            fail('revolving fund %s no longer foots: opening, in, out, closing' % m['code'])
+    big_in = max(rv, key=lambda m: m['current']['revenue'])
+    big_held = max(rv, key=lambda m: m['current']['closing'])
+    paid = sorted([m for m in rv if m['current']['salaries'] > 0],
+                  key=lambda m: -m['current']['salaries'])
+    if (big_in['code'], big_held['code']) != ('2200', '1308') or \
+            [m['code'] for m in paid] != ['1312', '2200', '1301']:
+        fail('the largest revolving flow, the largest balance or the funds paying salaries moved; '
+             'the prose names them')
+    lab = {m['code']: _fund_label(m['name']) for m in rv}
+    lab['1301'] = 'Chapter 658: athletics and activities'
+    out['school-revolving-funds'] = TP.page(
+        'school-revolving-funds',
+        'The %s school revolving funds took in %s and paid out %s in nine months of %s.'
+        % (C.num(len(rv)), C.usd(rin), C.usd(rout), C.fy(2026)),
+        [f('in', U(rin), 'in, 1 July 2025 to 31 March 2026', 'published',
+           allow=('1 July 2025', '31 March 2026')),
+         f('out', U(rout), 'out, the same nine months', 'published'),
+         f('held', U(tot['revolving']), 'held at 31 March 2026', 'published',
+           allow=('31 March 2026',)),
+         f('lunch', U(big_in['current']['revenue']), 'into school lunch', 'published'),
+         f('choice', U(big_held['current']['closing']), 'held by school choice', 'published'),
+         f('cin', U(big_held['current']['revenue']), 'into school choice', 'published'),
+         f('paid', OF_(len(paid), len(rv), 'funds'), 'funds paying salaries directly', 'published'),
+         f('s1312', U(paid[0]['current']['salaries']), 'salaries from extended day', 'published'),
+         f('s2200', U(paid[1]['current']['salaries']), 'salaries from school lunch', 'published'),
+         f('s1301', U(paid[2]['current']['salaries']), 'salaries from athletics and activities',
+           'published')],
+        [con('From July to March they took in %s and paid out %s; they held %s at the end.'
+             % (C.usd(rin), C.usd(rout), C.usd(tot['revolving'])), ['in', 'out', 'held'],
+             {'a': U(rin), 'b': U(rout), 'c': U(tot['revolving'])},
+             notes=[step('What each fund bought is not in the report, which prints totals in '
+                         'and out.', 'gap',
+                         closes='the Town Accountant’s year-to-date expense report run for the '
+                                'school revolving funds, %s' % C.fy(2026),
+                         allow=(C.fy(2026),))]),
+         con('School lunch was the largest flow, %s in; school choice held the most, %s.'
+             % (C.usd(big_in['current']['revenue']), C.usd(big_held['current']['closing'])),
+             ['lunch', 'choice', 'cin'],
+             {'a': U(big_in['current']['revenue']), 'b': U(big_held['current']['closing'])}),
+         con('%s paid salaries from the fund: extended day %s, lunch %s, athletics and '
+             'activities %s.'
+             % (OF_(len(paid), len(rv))['text'], C.usd(paid[0]['current']['salaries']),
+                C.usd(paid[1]['current']['salaries']), C.usd(paid[2]['current']['salaries'])),
+             ['paid', 's1312', 's2200', 's1301'],
+             {'n': OF_(len(paid), len(rv)), 'a': U(paid[0]['current']['salaries']),
+              'b': U(paid[1]['current']['salaries']), 'c': U(paid[2]['current']['salaries'])})],
+        chart=TP.ranking('Money into each school revolving fund',
+                         [(lab[c], cur[c]['revenue']) for c in cur], '$',
+                         highlight=lab[big_in['code']],
+                         note='1 July 2025 to 31 March 2026, as the Town Accountant’s '
+                              'special-revenue report prints it.',
+                         note_allow=('1 July 2025', '31 March 2026')),
+        sources=[src['school-special-revenue-fy26-q3.csv'], src['fund-owners.csv'],
+                 src['payload']],
+        finding_figures={'n': N(len(rv)), 'a': U(rin), 'b': U(rout), 'y': F(2026)})
+
+    # ---- the grant funds at 31 March 2026
+    gr = by['grant']
+    over = sorted([m for m in gr if m['current']['closing'] < 0],
+                  key=lambda m: m['current']['closing'])
+    deficit = -sum(m['current']['closing'] for m in over)
+    gfz = cf['grants-in-deficit']
+    for k, want in (('deficit', deficit), ('deficit_n', len(over)), ('grants_n', len(gr))):
+        if abs(gfz[k]['value'] - want) > 0.01:
+            fail('the grant funds’ %s no longer recomputes' % k)
+    cb = next(m for m in gr if m['code'] == '2640')
+    if abs(gfz['cb_held']['value'] - cb['current']['closing']) > 0.01 or \
+            cb['current']['closing'] != max(m['current']['closing'] for m in gr):
+        fail('the circuit breaker fund is no longer the largest grant balance')
+    top = over[0]
+    tiny = [m for m in over if -m['current']['closing'] < 1]
+    glab = lambda m: ' '.join(m['name'].split())
+    out['school-grant-balances'] = TP.page(
+        'school-grant-balances',
+        '%s of the %s school grant funds were overdrawn at 31 March 2026, by %s together.'
+        % (C.num(len(over)), C.num(len(gr)), C.usd(deficit)),
+        [f('over', OF_(len(over), len(gr), 'funds'), 'grant funds overdrawn, 31 March 2026',
+           'published', allow=('31 March 2026',)),
+         f('deficit', U(deficit), 'overdrawn, together', 'published'),
+         f('top', U(-top['current']['closing']), 'the largest, %s' % glab(top), 'published',
+           allow=(glab(top),)),
+         f('net', U(tot['grant']), 'all grant funds, net', 'published'),
+         f('cb', U(cb['current']['closing']), 'held by the circuit breaker fund', 'published'),
+         f('cbin', U(cb['current']['revenue']), 'into it, July to March', 'published'),
+         f('closed', None, 'whether each overdrawn grant was repaid', 'gap',
+           closes='the Town Accountant’s special-revenue report for %s at period 13'
+                  % C.fy(2026))],
+        [con('%s grant funds were overdrawn by %s; the largest, %s, by %s.'
+             % (OF_(len(over), len(gr))['text'], C.usd(deficit), glab(top),
+                C.usd(-top['current']['closing'])), ['over', 'deficit', 'top'],
+             {'n': OF_(len(over), len(gr)), 'a': U(deficit), 'b': U(-top['current']['closing'])},
+             allow=(glab(top),),
+             notes=[step('Many school grants pay out as reimbursements after the spending, so '
+                         'an overdrawn fund may be waiting on one. Nothing here tests that.',
+                         'hypothesis'),
+                    step('Whether each was repaid, or any grant closed short, is not in a March '
+                         'report.', 'gap',
+                         closes='the Town Accountant’s special-revenue report for %s at period 13'
+                                % C.fy(2026), allow=(C.fy(2026), 'period 13'))]),
+         con('The circuit breaker fund held %s, after %s came in from July to March.'
+             % (C.usd(cb['current']['closing']), C.usd(cb['current']['revenue'])),
+             ['cb', 'cbin'], {'a': U(cb['current']['closing']), 'b': U(cb['current']['revenue'])}),
+         con('Netted together, the %s grant funds held %s.' % (C.num(len(gr)), C.usd(tot['grant'])),
+             ['net', 'cb', 'deficit'], {'n': N(len(gr)), 'a': U(tot['grant'])})],
+        chart=TP.ranking('Overdrawn school grant funds',
+                         [(glab(m), -m['current']['closing']) for m in over
+                          if -m['current']['closing'] >= 1], '$', highlight=glab(top),
+                         note='How far below zero each stood at 31 March 2026. %s more was '
+                              'overdrawn by under a dollar.' % C.num(len(tiny)),
+                         note_figures={'n': N(len(tiny))}, note_allow=('31', '2026')),
+        sources=[src['school-special-revenue-fy26-q3.csv'], src['fund-owners.csv'],
+                 src['payload']],
+        finding_figures={'n': N(len(over)), 'm': N(len(gr)), 'a': U(deficit)},
+        finding_allow=('31', '2026'))
+
+    # ---- the revolving funds since FY2011
+    hist = {}
+    for m in rv:
+        h = {x['fy']: x for x in m['history']}
+        for y in HIST_YEARS:
+            if y not in h or h[y]['grade'] != 'read':
+                fail('revolving fund %s has no read, tied close for FY%d' % (m['code'], y))
+            hist.setdefault(y, 0.0)
+            hist[y] += h[y]['closing']
+    open26 = sum(c['opening'] for c in cur.values())
+    unchained = [m for m in rv if any(x['fy'] == 2025 and x['grade'] == 'transcribed'
+                                      and x.get('chains') is False for x in m['history'])]
+    ys = list(HIST_YEARS)
+    y0, yl = ys[0], ys[-1]
+    hi = max(ys, key=lambda y: hist[y])
+    lo = min(ys, key=lambda y: hist[y])
+    lunch = next(m for m in rv if m['code'] == '2200')
+    lh = {x['fy']: x['closing'] for x in lunch['history'] if x['grade'] == 'read'}
+    llo = min(ys, key=lambda y: lh[y])
+    # The low is $730.50: whole dollars would round it to $730 (round half to even), a figure no
+    # report prints. Cents where there are cents.
+    U2 = lambda v: figure(v, C.usd(v) if round(v, 2) == int(v) else '$' + format(v, ',.2f'))
+    x = [C.fy(y) for y in ys] + [C.fy(2024), C.fy(2025)]
+    out['revolving-fund-history'] = TP.page(
+        'revolving-fund-history',
+        'The %s school revolving funds closed %s holding %s, against %s at the close of %s.'
+        % (C.num(len(rv)), C.fy(yl), C.usd(hist[yl]), C.usd(hist[y0]), C.fy(y0)),
+        [f('first', U(hist[y0]), 'held at the close of %s' % C.fy(y0), 'published',
+           {'y': F(y0)}),
+         f('last', U(hist[yl]), 'held at the close of %s' % C.fy(yl), 'published', {'y': F(yl)}),
+         f('hi', U(hist[hi]), 'the highest close, %s' % C.fy(hi), 'published', {'y': F(hi)}),
+         f('lo', U(hist[lo]), 'the lowest close, %s' % C.fy(lo), 'published', {'y': F(lo)}),
+         f('open', U(open26), 'opening %s, the Town Accountant’s report' % C.fy(2026),
+           'published', {'y': F(2026)}),
+         f('llo', U2(lh[llo]), 'school lunch at the close of %s' % C.fy(llo), 'published',
+           {'y': F(llo)}),
+         f('lopen', U(lunch['current']['opening']), 'school lunch, opening %s' % C.fy(2026),
+           'published', {'y': F(2026)}),
+         f('chain', OF_(len(unchained), len(rv), 'funds'), '%s closes, by OCR, that miss the '
+           'ledger' % C.fy(2025), 'published', {'y': F(2025)}),
+         f('fy24', None, 'each fund’s close of %s, read and tied' % C.fy(2024), 'gap',
+           {'y': F(2024)},
+           closes='the Town Accountant’s special-revenue reports for %s and %s'
+                  % (C.fy(2024), C.fy(2025)))],
+        [con('They held %s at the close of %s and %s at the close of %s.'
+             % (C.usd(hist[y0]), C.fy(y0), C.usd(hist[yl]), C.fy(yl)), ['first', 'last'],
+             {'a': U(hist[y0]), 'y': F(y0), 'b': U(hist[yl]), 'z': F(yl)}),
+         con('The highest close was %s, %s; the lowest %s, %s.'
+             % (C.fy(hi), C.usd(hist[hi]), C.fy(lo), C.usd(hist[lo])), ['hi', 'lo'],
+             {'y': F(hi), 'a': U(hist[hi]), 'z': F(lo), 'b': U(hist[lo])}),
+         con('School lunch closed %s at %s and opened %s at %s.'
+             % (C.fy(llo), U2(lh[llo])['text'], C.fy(2026), C.usd(lunch['current']['opening'])),
+             ['llo', 'lopen'],
+             {'y': F(llo), 'a': U2(lh[llo]), 'z': F(2026), 'b': U(lunch['current']['opening'])},
+             notes=[step('Why the lunch balance moved is not in the schedule, which prints '
+                         'receipts and payments, not meals or prices.', 'gap',
+                         closes='the school food service’s annual financial report for each '
+                                'year')]),
+         con('%s and %s are read only by OCR, and %s %s closes miss the ledger’s opening.'
+             % (C.fy(2024), C.fy(2025), OF_(len(unchained), len(rv))['text'], C.fy(2025)),
+             ['fy24', 'chain', 'open'],
+             {'y': F(2024), 'z': F(2025), 'n': OF_(len(unchained), len(rv))})],
+        chart=TP.series('School revolving fund balances at each year end', x, [
+            TP.track('Annual reports, read and tied', [hist[y] for y in ys] + [None, None],
+                     'published', 'bar'),
+            TP.track('Opening of %s, the ledger' % C.fy(2026), [None] * (len(ys) + 1) + [open26],
+                     'published', 'bar')], '$', stacked=True,
+            note='The %s revolving funds together. %s is left open: only an OCR reading of it is '
+                 'held.' % (C.num(len(rv)), C.fy(2024)),
+            note_figures={'n': N(len(rv)), 'y': F(2024)}),
+        sources=[src['special-revenue-read.csv'], src['atr2011'], src['atr2023'],
+                 src['school-special-revenue-fy26-q3.csv'], src['payload']],
+        finding_figures={'n': N(len(rv)), 'y': F(yl), 'a': U(hist[yl]), 'b': U(hist[y0]),
+                         'z': F(y0)})
     return out
 
 

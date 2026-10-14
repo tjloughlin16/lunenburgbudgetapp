@@ -6,7 +6,8 @@ and who bears it.
     python3 scripts/build_budget_options_topics.py --check   # fail if any output would change
 
 WHAT THIS ABSORBS. The /override, /fees, /extras, /classrooms and /salaries lever pages and the
-two analyses fy27-and-the-override.md and fy27-cut-reconciliation.md. Options another shelf
+two analyses fy27-and-the-override.md and fy27-cut-reconciliation.md, and /what-families-pay:
+three pages read off its own payload (family_fee_pages, below). Options another shelf
 already answers (free cash, the stabilization fund, the athletic fee, the bus fee, the cut
 lists) are listed on this shelf by the registry, not rebuilt.
 
@@ -954,9 +955,297 @@ def build():
                  % C.fy(2028), note_figures={'y': F(2028)}),
         answer_figures={'y': F(2028), 'a': U(g28)})
 
+    out.update(family_fee_pages())
+
     if sorted(k for k in out if k != 'budget-options') != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'
              % sorted(set(MINE) ^ set(out)))
+    return out
+
+# --------------------------------------------------------------------- what a family pays
+# Absorbs /what-families-pay (`families`), 14 October 2026. Every figure is read off that
+# report's own payload, fy28/public/data/what-families-pay.json (build_what_families_pay.py),
+# whose household bills are priced there -- nothing here prices a household. What is checked
+# here is that the bill's parts still add up, and that every rate still stands verbatim in the
+# document it came from.
+#
+# FY2026, NOT THE YEAR NOW RUNNING. The payload's own headline household is FY2027, and its
+# athletic rates come from an email to families this archive does not hold
+# (athletic-fee-schedule.csv: `source not held`). The Athletics shelf states that year's rate as
+# a gap, and two pages on one shelf must not disagree, so these pages price the last year whose
+# every rate is in a document we hold, and say so.
+
+FAM_FY = 2026
+# A count that opens a sentence is spelled; it is still the count, indexed rather than typed.
+WORDS = ('No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
+         'Eleven', 'Twelve')
+# Where each unpriced charge is NAMED, read off the start of its rate-register source. A charge
+# whose source matches none of these refuses the build rather than landing in a wrong row.
+NAMED_IN = (('RevTrak payment portal', 'the district’s payment portal'),
+            ('Outside the universal meal', 'the cafeteria, no price list held'),
+            ('School Committee minutes', 'public comment; paid to shops'),
+            ('Superintendent\'s email', 'the Superintendent’s email'))
+CORR = os.path.join(ROOT, 'sources', 'correspondence')
+
+
+def money(v):
+    """A household amount as the documents would print it: cents only where there are cents."""
+    v = round(float(v), 2)
+    return C.usd(v) if v == int(v) else '$' + format(v, ',.2f')
+
+
+def family_fee_pages():
+    W = load('what-families-pay.json')
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+    spec = {
+        'sc-0226': ('meetings/school-committee/2025-02-26-minutes-7076.pdf',
+                    'School Committee minutes, 26 February 2025'),
+        'sc-0507': ('meetings/school-committee/2025-05-07-minutes-7207.pdf',
+                    'School Committee minutes, 7 May 2025'),
+        'sc-0626': ('meetings/school-committee/2024-06-26-minutes-6632.pdf',
+                    'School Committee minutes, 26 June 2024'),
+        'bus26': ('correspondence/2025-05-bus-fees-superintendent.txt',
+                  'Superintendent’s email to families on bus fees, May 2025'),
+        'bus27': ('correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt',
+                  'Superintendent’s email to families, 17 August 2026'),
+        'faq': ('district-budget/docs/lhs-athletics-faq.pdf', 'LHS Athletics FAQ'),
+    }
+    src = {}
+    for k, (key, label) in spec.items():
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        src[k] = dict(label='%s — %s' % (label, key.split('/')[-1]), href='/docs/' + key)
+    for name, what in (('rate-register.csv', 'every school fee and its source'),
+                       ('athletic-fee-schedule.csv', 'the athletic rates, year by year'),
+                       ('money-gaps.csv', 'what cannot be answered, and what would settle it')):
+        if not os.path.exists(os.path.join(ROOT, 'fy28', 'public', 'docs', 'data', name)):
+            fail('/docs/data/%s is not published' % name)
+        src[name] = dict(label='Lunenburg Budget Project — %s (%s)' % (name, what),
+                         href='/docs/data/' + name)
+    src['payload'] = dict(label='Lunenburg Budget Project — what-families-pay.json (every '
+                                'household priced)', href='/data/what-families-pay.json')
+
+    M = lambda v: figure(v, money(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=0: figure(v, C.pct(v, dp))
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    f, con = LD.fact, TP.conclusion
+    out = {}
+
+    # ---- the rates, each asserted against the document it came from
+    sc0226 = text_of(os.path.join(MINUTES, 'school-committee', '2025-02-26-minutes-7076.txt'))
+    sc0507 = text_of(os.path.join(MINUTES, 'school-committee', '2025-05-07-minutes-7207.txt'))
+    bus26t = text_of(os.path.join(CORR, '2025-05-bus-fees-superintendent.txt'))
+    yr = next(y for y in W['years'] if y['fy'] == FAM_FY)
+    hs = yr['levels']['HS']
+    if hs['ladder']['kind'] != 'percentage' or len(hs['ladder']['rates']) != 1:
+        fail('the %s high school schedule is no longer one rate and a sibling percentage' % FAM_FY)
+    first, sib = hs['ladder']['rates'][0], hs['ladder']['pct']
+    reduced = hs['tiers']['reduced']['flat']
+    verbatim(sc0226, 'increase fee for high school up to %s' % C.usd(first),
+             'A %s discount for siblings' % C.pct(sib, 0),
+             'Reduced fee for high school to %s' % C.usd(reduced),
+             where='School Committee minutes of 26 February 2025')
+    bus = {k: b['amount'] for k, b in yr['bus'].items()}
+    for k, b in yr['bus'].items():
+        verbatim(bus26t, b['source_ref'], where='bus fee email of May 2025')
+    act = W['household']['charge_defs']['activity:%d' % FAM_FY]
+    verbatim(sc0507, act['quote'], where='School Committee minutes of 7 May 2025')
+    act_each = float(re.search(r'to \$(\d+)$', act['quote']).group(1))
+
+    # ---- the households, looked up and re-added
+    def bill(n, tier='full', on=True):
+        b = W['household']['bills']['%d|HS|%d|1|%s|%d|%d|0' % (FAM_FY, n, tier, int(on), int(on))]
+        parts = {r['id'].split(':')[0]: r['amount'] for r in b['rows']}
+        if abs(sum(parts.values()) - b['floor']) > 0.005 or b['unpriced_in_bill']:
+            fail('the %d-child %s bill no longer adds up to its own floor' % (n, tier))
+        if any(r['band'] != 'priced' for r in b['rows']):
+            fail('a %s rate is no longer priced by a document' % FAM_FY)
+        return b['floor'], parts
+    hh = {n: bill(n) for n in (1, 2, 3)}
+    for n, (tot, p) in hh.items():
+        want = first * (1 + (n - 1) * (1 - sib / 100))
+        if abs(p['athletics'] - want) > 0.005 or abs(p['activity'] - act_each * n) > 0.005:
+            fail('the %d-child athletic or activity fee no longer recomputes' % n)
+        if p['bus'] != (bus['one student'] if n == 1 else bus['two or more students']):
+            fail('the %d-child bus fee is not the published tier' % n)
+    t1, t2, t3 = hh[1][0], hh[2][0], hh[3][0]
+    p2 = hh[2][1]
+    unpriced = [r for r in W['household']['standing'] if r['band'] == 'unpriced']
+    free = [r for r in W['household']['standing'] if r['band'] == 'no charge']
+
+    out['family-fees'] = TP.page(
+        'family-fees',
+        'Two high schoolers, one sport each, the bus and a club: %s in %s.' % (money(t2),
+                                                                              C.fy(FAM_FY)),
+        [f('two', M(t2), 'two children, one sport each, bus, a club', 'published'),
+         f('one', M(t1), 'one child, the same', 'published'),
+         f('three', M(t3), 'three children, the same', 'published'),
+         f('ath', M(first), 'athletic fee, first child, a season', 'published'),
+         f('sib', P(sib), 'off for each sibling who plays', 'published'),
+         f('bus1', M(bus['one student']), 'bus, one child, a year', 'published'),
+         f('bus2', M(bus['two or more students']), 'bus, two or more children, a year',
+           'published'),
+         f('act', M(act_each), 'activity fee, a child; no period stated', 'published'),
+         f('unpriced', N(len(unpriced), 'charges'), 'further charges with no published amount',
+           'published'),
+         f('fy27', None, 'the %s athletic rates, in a document we hold' % C.fy(FAM_FY + 1),
+           'gap', {'y': F(FAM_FY + 1)},
+           closes='the Superintendent’s August 2026 fee schedule to families, which this '
+                  'archive does not hold')],
+        [con('Of the %s: %s athletics, %s bus and %s activity fees.'
+             % (money(t2), money(p2['athletics']), money(p2['bus']), money(p2['activity'])),
+             ['two', 'ath', 'sib', 'bus2', 'act'],
+             {'t': M(t2), 'a': M(p2['athletics']), 'b': M(p2['bus']), 'c': M(p2['activity'])},
+             notes=[step('Whether the activity fee is charged once a year, a term or an activity '
+                         'is not stated; the vote names an amount only.', 'gap',
+                         closes='the adopted student activity fee schedule, stating its period')]),
+         con('One child is %s; a second adds %s and a third %s: one bus charge, and %s off a '
+             'sibling.' % (money(t1), money(t2 - t1), money(t3 - t2), C.pct(sib, 0)),
+             ['one', 'two', 'three', 'bus1', 'bus2', 'sib'],
+             {'a': M(t1), 'b': M(t2 - t1), 'c': M(t3 - t2), 'p': P(sib)}),
+         con('It is a floor: %s more charges a family can meet have no published amount.'
+             % C.num(len(unpriced)), ['unpriced'], {'n': N(len(unpriced))}),
+         con('These are %s rates; the %s athletic rates are in an email this archive does not '
+             'hold.' % (C.fy(FAM_FY), C.fy(FAM_FY + 1)), ['fy27'],
+             {'y': F(FAM_FY), 'z': F(FAM_FY + 1)})],
+        chart=TP.series('A year of school fees, by family size',
+                        ['One child', 'Two children', 'Three children'], [
+            TP.track('Athletics', [hh[n][1]['athletics'] for n in (1, 2, 3)], 'published', 'bar'),
+            TP.track('Bus', [hh[n][1]['bus'] for n in (1, 2, 3)], 'published', 'bar'),
+            TP.track('Activity fee', [hh[n][1]['activity'] for n in (1, 2, 3)], 'published',
+                     'bar')], '$', stacked=True, decimals=2,
+            note='High school, %s, full fee, one sport each, riding the bus and in a club.'
+                 % C.fy(FAM_FY), note_figures={'y': F(FAM_FY)}),
+        said=[said_file('school-committee/2025-05-07-minutes-7207.txt',
+                        'the committee ultimately decides for a universal increase from $55 to $70',
+                        'School Committee')],
+        sources=[src['sc-0226'], src['sc-0507'], src['bus26'], src['rate-register.csv'],
+                 src['payload']],
+        finding_figures={'a': M(t2), 'y': F(FAM_FY)})
+
+    # ---- the same children, three bills
+    tc = W['tier_contrast']
+    if tc['fy'] != FAM_FY or tc['level'] != 'HS' or tc['sports'] != 1:
+        fail('the tier contrast is no longer high school, %s, one sport each' % FAM_FY)
+    n = tc['children']
+    full_t = hs['tiers']['full']
+    grid = {(g['children'], g['sports']): g['per_year'] for g in full_t['grid']}
+    red_grid = {(g['children'], g['sports']): g['per_year'] for g in hs['tiers']['reduced']['grid']}
+    if abs(grid[(n, 1)] - tc['full']) > 0.005 or abs(red_grid[(n, 1)] - tc['reduced']) > 0.005 \
+            or abs(reduced * n - tc['reduced']) > 0.005 or tc['waived'] != 0:
+        fail('the three bills for the same children no longer recompute')
+    ratio = tc['full'] / tc['reduced']
+    if round(ratio, 2) != tc['ratio']:
+        fail('the full-to-reduced ratio no longer recomputes')
+    faq = text_of(os.path.join(ROOT, 'sources', 'district-budget', 'text', 'lhs-athletics-faq.txt'))
+    waived_q = 'Students that are on the free lunch program have the athletic fee waived'
+    verbatim(faq, waived_q, where='LHS Athletics FAQ')
+    out['reduced-and-waived-fees'] = TP.page(
+        'reduced-and-waived-fees',
+        '%s high schoolers at one sport each: %s a year at the full fee, %s reduced, %s waived.'
+        % (WORDS[n], money(tc['full']), money(tc['reduced']), money(0)),
+        [f('full', M(tc['full']), 'full fee, the year (our arithmetic)', 'published'),
+         f('red', M(tc['reduced']), 'reduced fee, the year', 'published'),
+         f('waived', M(0), 'fee waived, the year', 'published'),
+         f('ratio', figure(ratio, '%.2f times' % ratio), 'full against reduced', 'published'),
+         f('first', M(first), 'full fee, first child, a season', 'published'),
+         f('flat', M(reduced), 'reduced fee, every child, a season', 'published'),
+         f('bus2', M(bus['two or more students']), 'bus, two or more children, full', 'published'),
+         f('busr', M(bus['two or more, reduced']), 'bus, two or more children, reduced',
+           'published'),
+         f('busq', M(bus['qualifying families']), 'bus, families who qualify', 'published'),
+         f('fy27', None, 'reduced and waived rates for %s' % C.fy(FAM_FY + 1), 'gap',
+           {'y': F(FAM_FY + 1)},
+           closes='the district’s %s athletic fee schedule, including the reduced and waived '
+                  'tiers' % C.fy(FAM_FY + 1))],
+        [con('The same %s children cost one family %s a year and another %s: %.2f times.'
+             % (C.num(n), money(tc['full']), money(tc['reduced']), ratio),
+             ['full', 'red', 'ratio', 'first', 'flat'],
+             {'n': N(n), 'a': M(tc['full']), 'b': M(tc['reduced']),
+              'r': figure(ratio, '%.2f' % ratio)}),
+         con('The reduced fee is a flat %s a child a season; no sibling discount is published '
+             'for it.'
+             % money(reduced), ['flat'], {'a': M(reduced)}),
+         con('The athletics FAQ waives the fee for the free lunch program; the bus is %s for '
+             'families who qualify.' % money(bus['qualifying families']),
+             ['waived', 'busq', 'busr'], {'b': M(bus['qualifying families'])},
+             notes=[step('The FAQ that states the waiver states no year.', 'gap',
+                         closes='the district’s current athletic fee schedule, with its '
+                                'waiver rule')]),
+         con('No reduced or waived rate is published for %s.' % C.fy(FAM_FY + 1), ['fy27'],
+             {'y': F(FAM_FY + 1)})],
+        chart=TP.ranking('Athletic fee a season, by tier', [
+            ('Full fee, first child', first), ('Reduced fee, every child', reduced),
+            ('Waived', 0)], '$', highlight='Reduced fee, every child',
+            note='High school, %s, as the School Committee voted it and the athletics FAQ states '
+                 'the waiver.' % C.fy(FAM_FY), note_figures={'y': F(FAM_FY)}),
+        said=[said_file('school-committee/2025-02-26-minutes-7076.txt',
+                        'A 25% discount for siblings. Reduced fee for high school to $50 and $40 '
+                        'for middle school with a family cap of $1500.', 'School Committee')],
+        sources=[src['sc-0226'], src['faq'], src['bus26'], src['athletic-fee-schedule.csv'],
+                 src['payload']],
+        finding_figures={'a': M(tc['full']), 'b': M(tc['reduced']), 'c': M(0)})
+
+    # ---- what has no price
+    gaps = {g['what']: g for g in W['gaps']}
+    reg = {x['item']: x for x in W['unpriced']}
+    where = {}
+    for r in unpriced:
+        name = r['id'].split(':', 1)[1]
+        s_ = reg.get(name, {}).get('source', '')
+        hit = [lab for pre, lab in NAMED_IN if s_.startswith(pre)]
+        if len(hit) != 1:
+            fail('unpriced charge %r: its source %r names no known place' % (name, s_))
+        where[name] = hit[0]
+    portal = sum(1 for v in where.values() if v == NAMED_IN[0][1])
+    if not free or free[0]['id'] != 'meals':
+        fail('the standard school meal is no longer the no-charge row')
+    bus27t = text_of(os.path.join(CORR, '2026-08-17-bus-routes-and-fees-superintendent.txt'))
+    proc_q = 'RevTrak charges a small processing fee'
+    verbatim(bus27t, proc_q, where='Superintendent’s email of 17 August 2026')
+    out['unpriced-school-charges'] = TP.page(
+        'unpriced-school-charges',
+        '%s charges a Lunenburg family can meet have no published amount anywhere in this '
+        'archive.' % WORDS[len(unpriced)],
+        [f('unpriced', N(len(unpriced), 'charges'), 'charged, with no amount published',
+           'published'),
+         f('portal', N(portal, 'charges'), 'of them sold on the district’s payment portal',
+           'published'),
+         f('priced', N(len(hh[2][1]), 'charges'), 'priced by a document we hold, %s'
+           % C.fy(FAM_FY), 'published', {'y': F(FAM_FY)}),
+         f('free', N(len(free), 'charge'), 'no charge: the standard school meal', 'published'),
+         f('proc', None, 'the online payment processing fee', 'gap',
+           closes='the RevTrak merchant agreement or the portal’s own fee disclosure')],
+        [con('%s charges have no amount in any document here, so any total a family is given is '
+             'a floor.' % C.num(len(unpriced)), ['unpriced', 'priced'], {'n': N(len(unpriced))}),
+         con('%s are sold on the district’s payment portal, which shows no amount to a plain fetch.'
+             % C.num(portal), ['portal'], {'n': N(portal)},
+             notes=[step('Preschool, extended day, field trips, parking and device repair are '
+                         'among them.', 'gap',
+                         closes='the district’s published schedule of student fees, with every '
+                                'amount the portal charges')]),
+         con('Paying online adds a processing fee; the Superintendent’s email calls it small and '
+             'states no rate.', ['proc']),
+         con('The standard school meal is free to every student, under the state’s universal '
+             'meals funding.', ['free'])],
+        chart=TP.parts('What a family can be charged, by evidence', [
+            ('Priced by a document we hold', len(hh[2][1])),
+            ('Charged, no amount published', len(unpriced)),
+            ('No charge', len(free))], 'count',
+            note='The charges a high school family can meet in %s, counted from the rate '
+                 'register. Nothing here is estimated.' % C.fy(FAM_FY),
+            note_figures={'y': F(FAM_FY)}),
+        table=dict(caption='Charged, with no amount published', views=[dict(
+            key='unpriced', label='Each charge', total_col=-1, kinds=['stated'],
+            columns=['Where it is named'],
+            rows=[dict(label=x, cells=[where[x]]) for x in sorted(where, key=str.lower)],
+            note='Each is offered by the district or named in its own email; none has an amount '
+                 'in a budget book, a warrant, a set of minutes or a fee schedule held here.')]),
+        said=[said_file('school-committee/2024-06-26-minutes-6632.txt',
+                        'Our students would not see any difference', 'School Committee')],
+        sources=[src['bus27'], src['sc-0626'], src['rate-register.csv'], src['money-gaps.csv'],
+                 src['payload']])
     return out
 
 

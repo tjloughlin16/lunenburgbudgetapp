@@ -1,0 +1,388 @@
+{
+ "category": "school-spending",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [
+   "School lunch"
+  ],
+  "note": {
+   "figures": {},
+   "literals": [
+    "1 July 2025",
+    "31 March 2026"
+   ],
+   "text": "1 July 2025 to 31 March 2026, as the Town Accountant’s special-revenue report prints it."
+  },
+  "rows": [
+   {
+    "label": "School lunch",
+    "texts": [
+     "$572,231"
+    ],
+    "total": "$572,231",
+    "value": 572231.32
+   },
+   {
+    "label": "Extended day",
+    "texts": [
+     "$192,943"
+    ],
+    "total": "$192,943",
+    "value": 192943.21
+   },
+   {
+    "label": "Chapter 658: athletics and activities",
+    "texts": [
+     "$160,164"
+    ],
+    "total": "$160,164",
+    "value": 160164.09
+   },
+   {
+    "label": "School choice",
+    "texts": [
+     "$83,116"
+    ],
+    "total": "$83,116",
+    "value": 83116.5
+   },
+   {
+    "label": "School facilities use",
+    "texts": [
+     "$18,670"
+    ],
+    "total": "$18,670",
+    "value": 18670.5
+   },
+   {
+    "label": "Adult education",
+    "texts": [
+     "$4,000"
+    ],
+    "total": "$4,000",
+    "value": 4000.0
+   },
+   {
+    "label": "Summer school",
+    "texts": [
+     "$0"
+    ],
+    "total": "$0",
+    "value": 0
+   },
+   {
+    "label": "Greenthumb",
+    "texts": [
+     "$0"
+    ],
+    "total": "$0",
+    "value": 0
+   },
+   {
+    "label": "Vending",
+    "texts": [
+     "$0"
+    ],
+    "total": "$0",
+    "value": 0
+   }
+  ],
+  "stack": null,
+  "title": "Money into each school revolving fund",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,031,126",
+     "unit": "",
+     "value": 1031125.6199999999
+    },
+    "b": {
+     "text": "$1,119,195",
+     "unit": "",
+     "value": 1119194.76
+    },
+    "c": {
+     "text": "$900,325",
+     "unit": "",
+     "value": 900325.25
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town Accountant’s year-to-date expense report run for the school revolving funds, FY2026",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026"
+     ],
+     "text": "What each fund bought is not in the report, which prints totals in and out."
+    }
+   ],
+   "rests_on": [
+    "in",
+    "out",
+    "held"
+   ],
+   "text": "From July to March they took in $1,031,126 and paid out $1,119,195; they held $900,325 at the end."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$572,231",
+     "unit": "",
+     "value": 572231.32
+    },
+    "b": {
+     "text": "$299,461",
+     "unit": "",
+     "value": 299460.97
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "lunch",
+    "choice",
+    "cin"
+   ],
+   "text": "School lunch was the largest flow, $572,231 in; school choice held the most, $299,461."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$227,221",
+     "unit": "",
+     "value": 227220.93
+    },
+    "b": {
+     "text": "$217,676",
+     "unit": "",
+     "value": 217676.1
+    },
+    "c": {
+     "text": "$24,490",
+     "unit": "",
+     "value": 24490.19
+    },
+    "n": {
+     "text": "3 of 9",
+     "unit": "",
+     "value": 3
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "paid",
+    "s1312",
+    "s2200",
+    "s1301"
+   ],
+   "text": "3 of 9 paid salaries from the fund: extended day $227,221, lunch $217,676, athletics and activities $24,490."
+  }
+ ],
+ "facts": [
+  {
+   "id": "in",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2025",
+     "31 March 2026"
+    ],
+    "text": "in, 1 July 2025 to 31 March 2026"
+   },
+   "value": {
+    "text": "$1,031,126",
+    "unit": "",
+    "value": 1031125.6199999999
+   }
+  },
+  {
+   "id": "out",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "out, the same nine months"
+   },
+   "value": {
+    "text": "$1,119,195",
+    "unit": "",
+    "value": 1119194.76
+   }
+  },
+  {
+   "id": "held",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31 March 2026"
+    ],
+    "text": "held at 31 March 2026"
+   },
+   "value": {
+    "text": "$900,325",
+    "unit": "",
+    "value": 900325.25
+   }
+  },
+  {
+   "id": "lunch",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "into school lunch"
+   },
+   "value": {
+    "text": "$572,231",
+    "unit": "",
+    "value": 572231.32
+   }
+  },
+  {
+   "id": "choice",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "held by school choice"
+   },
+   "value": {
+    "text": "$299,461",
+    "unit": "",
+    "value": 299460.97
+   }
+  },
+  {
+   "id": "cin",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "into school choice"
+   },
+   "value": {
+    "text": "$83,116",
+    "unit": "",
+    "value": 83116.5
+   }
+  },
+  {
+   "id": "paid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "funds paying salaries directly"
+   },
+   "value": {
+    "text": "3 of 9",
+    "unit": "funds",
+    "value": 3
+   }
+  },
+  {
+   "id": "s1312",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries from extended day"
+   },
+   "value": {
+    "text": "$227,221",
+    "unit": "",
+    "value": 227220.93
+   }
+  },
+  {
+   "id": "s2200",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries from school lunch"
+   },
+   "value": {
+    "text": "$217,676",
+    "unit": "",
+    "value": 217676.1
+   }
+  },
+  {
+   "id": "s1301",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries from athletics and activities"
+   },
+   "value": {
+    "text": "$24,490",
+    "unit": "",
+    "value": 24490.19
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,031,126",
+    "unit": "",
+    "value": 1031125.6199999999
+   },
+   "b": {
+    "text": "$1,119,195",
+    "unit": "",
+    "value": 1119194.76
+   },
+   "n": {
+    "text": "9",
+    "unit": "",
+    "value": 9
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The 9 school revolving funds took in $1,031,126 and paid out $1,119,195 in nine months of FY2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-revolving-funds",
+ "kind": "topic",
+ "path": "/school-spending/school-revolving-funds",
+ "said": [],
+ "shelves": [
+  "school-spending"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/school-special-revenue-fy26-q3.csv",
+   "label": "Lunenburg Budget Project — school-special-revenue-fy26-q3.csv (the school funds in the Town Accountant’s FY2026 special-revenue report, 31 March 2026)"
+  },
+  {
+   "href": "/docs/data/fund-owners.csv",
+   "label": "Lunenburg Budget Project — fund-owners.csv (which board or department owns each fund)"
+  },
+  {
+   "href": "/data/finance.json",
+   "label": "Lunenburg Budget Project — finance.json (every school fund, read off the reports below)"
+  }
+ ],
+ "table": null,
+ "title": "School revolving funds"
+}

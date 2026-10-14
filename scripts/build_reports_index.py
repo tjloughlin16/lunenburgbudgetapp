@@ -136,9 +136,11 @@ CATEGORIES = [
     # `show-your-work` because those two are about the reports; this is a way IN to them.
     ('school', 'The schools', [
         # Every school subject is a shelf of its own now (scripts/topic_registry/, area
-        # 'school'), drawn after this group. What remains here has no category yet: what a
-        # family pays, and the School Committee's own finance page (the boards subsystem).
-        ('also on the schools', ['families', 'schoolfinance']),
+        # 'school'), drawn after this group. The last two reports here went on 14 October
+        # 2026: what a family pays is three topics on Budget options, and the School
+        # Committee's finance page is four on School spending. The group stays, empty, as the
+        # anchor the page draws the school shelves after.
+        ('', []),
     ]),
     ('town', 'The town', [
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
@@ -270,7 +272,12 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
                  'bythenumbers', 'owners', 'homestudents', 'growth', 'insurance', 'healthlever',
                  'boardcompare', 'board-composition', 'open-seats', 'parks', 'youthsports',
                  'override', 'feelever', 'extraslever', 'positionslever', 'salarylever',
-                 'fy27-and-the-override', 'fy27-cut-reconciliation'}
+                 'fy27-and-the-override', 'fy27-cut-reconciliation',
+                 # The last two: what a family pays (Budget options) and the School Committee's
+                 # finance page (School spending). Both stay served -- /what-families-pay is
+                 # cited, and the finance page is the board's own finance tab -- with no row
+                 # on /reports.
+                 'families', 'schoolfinance'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
