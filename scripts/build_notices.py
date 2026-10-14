@@ -81,6 +81,20 @@ def retro_text(m):
 URL_RE = re.compile(r'https?://[^\s<>"\')\]]+')
 
 
+# A DIAL-IN IS A NUMBER THE AGENDA SAYS TO CALL TO JOIN. NOT ANY NUMBER AFTER "Phone:".
+# TJ, 14 October 2026, on the School Committee page: the 15 October advisory council was
+# shown as "by phone (978) 582-4115" -- the high school's main line, off the letterhead. The
+# bare `Phone:` label this used to accept matched 108 agendas since 2023 and every one was
+# an office number (Town Hall 582-4146, 537-5300, the high school 582-4115); the 19 real
+# dial-ins said "Join by Phone". Meanwhile the wordings the town actually uses most were
+# never matched at all: "dial the toll free number" (745 agendas), "by phone at", "call the
+# conference line at", Zoom's "One tap mobile". So the label must be a JOINING verb.
+DIAL_IN = re.compile(
+    r'(?i)(?:join by phone|dial(?:-in)?(?: the toll[- ]?free number)?|by phone at|'
+    r'conference line at|call[- ]in(?: number)?|one tap mobile)\s*:?\s*'
+    r'(\+?\s?1?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})')   # "+ 1305..." prints a space
+
+
 def join_links(text_path):
     """The ways to join, AS PRINTED ON THE AGENDA -- nothing inferred.
 
@@ -114,8 +128,8 @@ def join_links(text_path):
     out['meeting_id'] = m.group(1).strip() if m else None
     m = re.search(r'Passcode:?\s*([^\s]{3,20})', flat)
     out['passcode'] = m.group(1) if m else None
-    m = re.search(r'(?:Join by Phone|Dial(?:-in)?|Phone):?\s*(\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})', flat)
-    out['phone'] = m.group(1) if m else None
+    m = DIAL_IN.search(flat)
+    out['phone'] = m.group(1).strip() if m else None
     m = re.search(r'((?:This meeting|The meeting)[^.]*Facebook Live[^.]*\.)', flat)
     out['facebook_live'] = m.group(1).strip() if m else None
     # The agenda names the Lunenburg Public Access Facebook page without an address; the
