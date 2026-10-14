@@ -1,0 +1,537 @@
+{
+ "category": "enrolment",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "The district’s own Budget Summary, a sheet it assembled: FY2026 approved, FY2027 proposed. Operating budget only; grants and revolving funds are outside it."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "State Chapter 70 aid",
+    "texts": [
+     "$18,762,805",
+     "$18,872,680"
+    ],
+    "values": [
+     18762805,
+     18872680
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Member towns’ assessments",
+    "texts": [
+     "$13,178,539",
+     "$13,968,980"
+    ],
+    "values": [
+     13178539,
+     13968980
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "State transportation aid",
+    "texts": [
+     "$2,000,000",
+     "$2,075,000"
+    ],
+    "values": [
+     2000000,
+     2075000
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Excess & Deficiency (reserves)",
+    "texts": [
+     "$500,000",
+     "$500,000"
+    ],
+    "values": [
+     500000,
+     500000
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Regional Transportation Fund",
+    "texts": [
+     "$200,000",
+     "$100,000"
+    ],
+    "values": [
+     200000,
+     100000
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Monty Tech operating budget by source",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2026",
+   "FY2027"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "54.2%",
+     "unit": "",
+     "value": 54.163
+    },
+    "b": {
+     "text": "38.0%",
+     "unit": "",
+     "value": 38.0428
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "ch70",
+    "towns",
+    "budget"
+   ],
+   "text": "The state’s Chapter 70 aid paid 54.2% of the FY2026 budget; the towns’ assessments 38.0%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,334,521",
+     "unit": "",
+     "value": 1334521
+    },
+    "p": {
+     "text": "10.1%",
+     "unit": "",
+     "value": 10.1265
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "lun",
+    "towns",
+    "ch70"
+   ],
+   "text": "Lunenburg’s $1,334,521 was 10.1% of the towns’ assessments; it pays none of the Chapter 70."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,700,000",
+     "unit": "",
+     "value": 2700000
+    },
+    "p": {
+     "text": "7.8%",
+     "unit": "",
+     "value": 7.794099999999999
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "aid",
+    "ed",
+    "rtf"
+   ],
+   "text": "The other 7.8%, $2,700,000, is state transportation aid and the district’s own funds."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$25,827",
+     "unit": "",
+     "value": 25827.0
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$3,681,900",
+       "unit": "",
+       "value": 3681900
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That the difference between them is grants and other funds is a hypothesis. The $3,681,900 of FY2025 awards is an award total, not a year’s spending."
+    },
+    {
+     "closes": "DESE’s End of Year Financial Report for LEA 08320000, which splits spending by fund",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "08320000"
+     ],
+     "text": "Monty Tech’s spending split by fund is not in this archive."
+    }
+   ],
+   "rests_on": [
+    "pp",
+    "grants",
+    "funds",
+    "budget"
+   ],
+   "text": "This is the operating budget only; DESE’s $25,827 a pupil for FY2025 counts every fund."
+  }
+ ],
+ "facts": [
+  {
+   "id": "budget",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech operating budget, FY2026"
+   },
+   "value": {
+    "text": "$34,641,344",
+    "unit": "",
+    "value": 34641344
+   }
+  },
+  {
+   "id": "ch70",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "state Chapter 70 aid, paid by the state"
+   },
+   "value": {
+    "text": "$18,762,805",
+    "unit": "",
+    "value": 18762805
+   }
+  },
+  {
+   "id": "towns",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "assessed on the member towns"
+   },
+   "value": {
+    "text": "$13,178,539",
+    "unit": "",
+    "value": 13178539
+   }
+  },
+  {
+   "id": "aid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "state transportation aid"
+   },
+   "value": {
+    "text": "$2,000,000",
+    "unit": "",
+    "value": 2000000
+   }
+  },
+  {
+   "id": "ed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from Excess & Deficiency, the district’s reserve"
+   },
+   "value": {
+    "text": "$500,000",
+    "unit": "",
+    "value": 500000
+   }
+  },
+  {
+   "id": "rtf",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from its Regional Transportation Fund"
+   },
+   "value": {
+    "text": "$200,000",
+    "unit": "",
+    "value": 200000
+   }
+  },
+  {
+   "id": "lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of it assessed on Lunenburg, FY2026"
+   },
+   "value": {
+    "text": "$1,334,521",
+    "unit": "",
+    "value": 1334521
+   }
+  },
+  {
+   "id": "next",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "operating budget proposed, FY2027"
+   },
+   "value": {
+    "text": "$35,516,660",
+    "unit": "",
+    "value": 35516660
+   }
+  },
+  {
+   "id": "pp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "a pupil, all funds (DESE), FY2025: another measure"
+   },
+   "value": {
+    "text": "$25,827",
+    "unit": "",
+    "value": 25827.0
+   }
+  },
+  {
+   "id": "grants",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "grant awards the district charts for FY2025"
+   },
+   "value": {
+    "text": "$3,681,900",
+    "unit": "",
+    "value": 3681900
+   }
+  },
+  {
+   "closes": "DESE’s End of Year Financial Report for LEA 08320000, which splits spending by fund",
+   "id": "funds",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech’s spending by fund, in dollars"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "54.2%",
+    "unit": "",
+    "value": 54.163
+   },
+   "b": {
+    "text": "38.0%",
+    "unit": "",
+    "value": 38.0428
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [
+   "Chapter 70"
+  ],
+  "text": "State Chapter 70 aid paid 54.2% of Monty Tech’s FY2026 operating budget; the member towns paid 38.0%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "monty-tech-funding",
+ "kind": "topic",
+ "path": "/enrolment/monty-tech-funding",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf#page=25",
+   "label": "Montachusett Regional Vocational Technical School District — FY27 Monty Tech Budget Presentation, FY 2027 Budget Summary, PDF page 25"
+  },
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf#page=5",
+   "label": "The same presentation — Update of Annual Grant Awards, PDF page 5"
+  },
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "Monty Tech’s operating budget, by source",
+  "views": [
+   {
+    "columns": [
+     "FY2026 approved",
+     "Share",
+     "FY2027 proposed",
+     "Share"
+    ],
+    "key": "sources",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Two years",
+    "note": "The FY 2027 Budget Summary, PDF page 25. Excess & Deficiency is the sum of what it applies to operating and to capital. The five sum to the printed Total Budget in both years, checked by the generator.",
+    "rows": [
+     {
+      "cells": [
+       "$18,762,805",
+       "54.2%",
+       "$18,872,680",
+       "53.1%"
+      ],
+      "label": "State Chapter 70 aid"
+     },
+     {
+      "cells": [
+       "$13,178,539",
+       "38.0%",
+       "$13,968,980",
+       "39.3%"
+      ],
+      "label": "Member towns’ assessments"
+     },
+     {
+      "cells": [
+       "$2,000,000",
+       "5.8%",
+       "$2,075,000",
+       "5.8%"
+      ],
+      "label": "State transportation aid"
+     },
+     {
+      "cells": [
+       "$500,000",
+       "1.4%",
+       "$500,000",
+       "1.4%"
+      ],
+      "label": "Excess & Deficiency (reserves)"
+     },
+     {
+      "cells": [
+       "$200,000",
+       "0.6%",
+       "$100,000",
+       "0.3%"
+      ],
+      "label": "Regional Transportation Fund"
+     },
+     {
+      "cells": [
+       "$34,641,344",
+       "100.0%",
+       "$35,516,660",
+       "100.0%"
+      ],
+      "label": "Total Budget"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "Monty Tech funding"
+}

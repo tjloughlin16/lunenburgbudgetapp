@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Enrolment, split into topic pages: twelve pages and the Students and schools hub.
+"""Enrolment, split into topic pages: thirteen pages and the Students and schools hub.
 
     python3 scripts/build_enrolment_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_enrolment_topics.py --check   # fail if any output would change
@@ -27,6 +27,9 @@ are supposed to:
   fy28/public/data/monty-tech.json        DESE's Chapter 70 workbook, the district's budget
                                           books and the town's ledger line.
   fy28/public/data/sped-students.json     only for the third FY2026 enrolment count.
+  fy28/public/data/peer-spending.json     only for DESE's all-funds spending a pupil at
+                                          Monty Tech, set beside the operating budget on
+                                          /enrolment/monty-tech-funding as NOT the same measure.
 
 RULE 7. A count of children is a fact. Why any of them left, or arrived, is a hypothesis and
 every page says so in a `hypothesis` note, or names the record that would settle it.
@@ -103,6 +106,8 @@ def sources():
              'Montachusett Regional Vocational Technical School District'),
             ('town-budget/docs/3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf',
              'Town of Lunenburg'),
+            ('state-dese/district-expenditures-by-function.xlsx',
+             'Massachusetts DESE, expenditures by function, all funds'),
             ('town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
              'Town of Lunenburg, MUNIS (records request)'),
             ('meetings/text/select-board/2021-01-19-minutes-5244.txt',
@@ -135,6 +140,7 @@ def build():
     LV = load('if-students-leave.json')
     MT = load('monty-tech.json')
     SS = load('sped-students.json')
+    PS = load('peer-spending.json')
     src = sources()
     S = lambda *names: [src[n] for n in names]
     U = lambda v: figure(v, C.usd(v))
@@ -1017,6 +1023,125 @@ def build():
                   '3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf',
                   '2021-01-19-minutes-5244.txt'),
         finding_figures={'y': F(2026), 'a': U(a26['total']), 'p': P(rqp)})
+
+    # ------------------------------------------------ Monty Tech funding
+    # WHERE THE DISTRICT'S OPERATING BUDGET COMES FROM, off the Budget Summary (PDF page 25)
+    # as build_monty_tech.py read it: every figure anchored in the document text, every
+    # identity the page prints checked there, and the five sources footing to the printed
+    # Total Budget. Re-checked here, because this page is the one that publishes the split.
+    dv = {r['fy']: r for r in MT['district']}
+    if sorted(dv) != [2026, 2027]:
+        fail('monty-tech.json: the district budget is no longer FY2026 and FY2027')
+    NAMES = dict(ch70='State Chapter 70 aid', assessments='Member towns’ assessments',
+                 transport_aid='State transportation aid',
+                 excess_deficiency='Excess & Deficiency (reserves)',
+                 regional_transport_fund='Regional Transportation Fund')
+    for y, r in dv.items():
+        ps = r['revenue']['parts']
+        if [p['key'] for p in ps] != list(NAMES):
+            fail('monty-tech.json: FY%d revenue sources are not the five this page names' % y)
+        if sum(p['amount'] for p in ps) != r['budget'] or not r['revenue']['ties']:
+            fail('FY%d: the five revenue sources no longer sum to the printed Total Budget' % y)
+        if ps[0]['amount'] != r['ch70'] or ps[1]['amount'] != r['all_assessments']:
+            fail('FY%d: Chapter 70 or the assessments disagree with the district summary' % y)
+    d6, d7 = dv[2026], dv[2027]
+    rv6 = {p['key']: p for p in d6['revenue']['parts']}
+    rv7 = {p['key']: p for p in d7['revenue']['parts']}
+    if d6['lunenburg'] != a26['total']:
+        fail('Lunenburg’s FY2026 assessment differs between the summary and the parts table')
+    sh = lambda p: p100(p['share'])
+    rest6 = sum(sh(rv6[k]) for k in ('transport_aid', 'excess_deficiency',
+                                     'regional_transport_fund'))
+    rest6_amt = sum(rv6[k]['amount'] for k in ('transport_aid', 'excess_deficiency',
+                                               'regional_transport_fund'))
+    lun6 = p100(d6['lunenburg_of_assessments'])
+    mtpp = PS['destinations']['widest']
+    if mtpp['lea'] != '08320000':
+        fail('peer-spending.json: the widest destination is no longer Monty Tech (LEA 08320000)')
+    pp_fy = PS['destinations']['fin_fy']
+    ga = MT['figures']['grant-awards']
+    gr = ga['values']['fy25_grant_awards']
+    PG = MT['figures']['district-budget']
+    if PG['docs_url'] != src['3583-fy27-monty-tech-budget-presentation-pdf.pdf']['href']:
+        fail('the Budget Summary is no longer read off the presentation this page cites')
+    summary_src = dict(label='Montachusett Regional Vocational Technical School District — '
+                             'FY27 Monty Tech Budget Presentation, FY 2027 Budget Summary, PDF '
+                             'page 25', href=PG['docs_url'] + '#page=25')
+    grants_src = dict(label='The same presentation — Update of Annual Grant Awards, PDF page 5',
+                      href=ga['docs_url'] + '#page=5')
+    yrs = [2026, 2027]
+    CH70 = ('Chapter 70',)
+    out['monty-tech-funding'] = TP.page(
+        'monty-tech-funding',
+        'State Chapter 70 aid paid %s of Monty Tech’s %s operating budget; the member towns paid %s.'
+        % (C.pct(sh(rv6['ch70'])), C.fy(2026), C.pct(sh(rv6['assessments']))),
+        [f('budget', U(d6['budget']), 'Monty Tech operating budget, %s' % C.fy(2026),
+           'published', {'y': F(2026)}),
+         f('ch70', U(rv6['ch70']['amount']), 'state Chapter 70 aid, paid by the state', 'published',
+           allow=CH70),
+         f('towns', U(rv6['assessments']['amount']), 'assessed on the member towns',
+           'published'),
+         f('aid', U(rv6['transport_aid']['amount']), 'state transportation aid', 'published'),
+         f('ed', U(rv6['excess_deficiency']['amount']),
+           'from Excess & Deficiency, the district’s reserve', 'published'),
+         f('rtf', U(rv6['regional_transport_fund']['amount']), 'from its Regional Transportation Fund',
+           'published'),
+         f('lun', U(d6['lunenburg']), 'of it assessed on Lunenburg, %s' % C.fy(2026), 'published',
+           {'y': F(2026)}),
+         f('next', U(d7['budget']), 'operating budget proposed, %s' % C.fy(2027), 'published',
+           {'y': F(2027)}),
+         f('pp', U(mtpp['per_pupil']), 'a pupil, all funds (DESE), %s: another measure'
+           % C.fy(pp_fy), 'published',
+           {'y': F(pp_fy)}),
+         f('grants', U(gr), 'grant awards the district charts for %s' % C.fy(2025), 'published',
+           {'y': F(2025)}),
+         f('funds', None, 'Monty Tech’s spending by fund, in dollars', 'gap',
+           closes='DESE’s End of Year Financial Report for LEA 08320000, which splits '
+                  'spending by fund')],
+        [con('The state’s Chapter 70 aid paid %s of the %s budget; the towns’ assessments %s.'
+             % (C.pct(sh(rv6['ch70'])), C.fy(2026), C.pct(sh(rv6['assessments']))),
+             ['ch70', 'towns', 'budget'],
+             {'a': P(sh(rv6['ch70'])), 'y': F(2026), 'b': P(sh(rv6['assessments']))}, allow=CH70),
+         con('Lunenburg’s %s was %s of the towns’ assessments; it pays none of the Chapter 70.'
+             % (C.usd(d6['lunenburg']), C.pct(lun6)), ['lun', 'towns', 'ch70'],
+             {'a': U(d6['lunenburg']), 'p': P(lun6)}, allow=CH70),
+         con('The other %s, %s, is state transportation aid and the district’s own funds.'
+             % (C.pct(rest6), C.usd(rest6_amt)), ['aid', 'ed', 'rtf'],
+             {'p': P(rest6), 'a': U(rest6_amt)}),
+         con('This is the operating budget only; DESE’s %s a pupil for %s counts every fund.'
+             % (C.usd(mtpp['per_pupil']), C.fy(pp_fy)), ['pp', 'grants', 'funds', 'budget'],
+             {'a': U(mtpp['per_pupil']), 'y': F(pp_fy)},
+             notes=[step('That the difference between them is grants and other funds is a '
+                         'hypothesis. The %s of %s awards is an award total, not a year’s '
+                         'spending.' % (C.usd(gr), C.fy(2025)), 'hypothesis',
+                         {'a': U(gr), 'y': F(2025)}),
+                    step('Monty Tech’s spending split by fund is not in this archive.', 'gap',
+                         allow=('08320000',),
+                         closes='DESE’s End of Year Financial Report for LEA 08320000, which '
+                                'splits spending by fund')])],
+        chart=TP.series('Monty Tech operating budget by source', [C.fy(y) for y in yrs], [
+            TP.track(NAMES[k], [{p['key']: p for p in dv[y]['revenue']['parts']}[k]['amount']
+                                for y in yrs], 'stated', 'bar') for k in NAMES],
+            '$', kind='bar', stacked=True,
+            note='The district’s own Budget Summary, a sheet it assembled: %s approved, %s '
+                 'proposed. Operating budget only; grants and revolving funds are outside it.'
+                 % (C.fy(2026), C.fy(2027)),
+            note_figures={'y': F(2026), 'z': F(2027)}),
+        table=dict(caption='Monty Tech’s operating budget, by source', views=[dict(
+            key='sources', label='Two years', total_col=-1,
+            kinds=['stated'] * 4,
+            columns=['%s approved' % C.fy(2026), 'Share', '%s proposed' % C.fy(2027), 'Share'],
+            rows=[dict(label=NAMES[k], cells=[C.usd(rv6[k]['amount']), C.pct(sh(rv6[k])),
+                                              C.usd(rv7[k]['amount']), C.pct(sh(rv7[k]))])
+                  for k in NAMES]
+                 + [dict(label='Total Budget', cells=[C.usd(d6['budget']), C.pct(100.0),
+                                                      C.usd(d7['budget']), C.pct(100.0)])],
+            note='The FY 2027 Budget Summary, PDF page 25. Excess & Deficiency is the sum of '
+                 'what it applies to operating and to capital. The five sum to the printed '
+                 'Total Budget in both years, checked by the generator.')]),
+        sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx']],
+        finding_figures={'a': P(sh(rv6['ch70'])), 'y': F(2026), 'b': P(sh(rv6['assessments']))},
+        finding_allow=CH70)
 
     # ------------------------------------------------ the hub
     h = {}

@@ -17,7 +17,7 @@ CATEGORY = dict(
                                   'leaving-and-arriving']),
         ('Where they go', ['children-schooled-elsewhere', 'school-choice-flows',
                            'departure-scenario']),
-        ('Monty Tech', ['monty-tech-enrolment', 'monty-tech-assessment']),
+        ('Monty Tech', ['monty-tech-enrolment', 'monty-tech-assessment', 'monty-tech-funding']),
         ('Students with plans', ['students-with-an-iep', 'out-of-district-placements']),
     ],
     elsewhere=[('/if-students-leave', 'The departure scenario, with its dials')])
@@ -35,4 +35,5 @@ TOPICS = {
     'departure-scenario': 'Departure scenario',
     'monty-tech-enrolment': 'Monty Tech enrolment',
     'monty-tech-assessment': 'Monty Tech assessment',
+    'monty-tech-funding': 'Monty Tech funding',
 }

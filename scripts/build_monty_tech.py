@@ -308,6 +308,52 @@ FIGURES = [
              fy26_all_transport=700930, fy27_all_transport=1045165,
              fy26_all_capital=250000,
              fy26_all_assessments=13178539, fy27_all_assessments=13968980)),
+    dict(key='district-revenue',
+         doc='town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf',
+         text='town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt',
+         title='FY27 Monty Tech Budget Presentation',
+         what='The same “FY 2027 Budget Summary”, its lower half — the transportation and '
+              'other operating budget and the capital budget, each less the revenues the '
+              'district applies to it before assessing the towns: state transportation aid, '
+              'its Regional Transportation Fund, and its Excess & Deficiency reserve.',
+         basis='the district’s own budget book. A sheet somebody assembled.',
+         anchor='Transportation & Other Operating Budget$3,150,930$3,520,165$369,23511.72%'
+                'Less:Estimated Transportation Aid2,000,0002,075,00075,0003.8%Regional '
+                'Transportation Fund200,000100,000(100,000)-50.0%Excess & Deficiency 250,000 '
+                '300,000 50,00020.0% (2)NET TRANSPORTATION & OTHER OPERATING$700,930 '
+                '$1,045,165 $344,23549.11%Capital Budget ~ (Equipment & '
+                'Vehicles)$500,000$200,000($300,000)-60.00%Less:Excess & Deficiency 250,000 '
+                '200,000 (50,000)-20.0% (3)NET CAPITAL ASSESSMENT$250,000 $0',
+         row='Transportation & Other Operating Budget$3,150,930$3,520,165 … '
+             'Less:Estimated Transportation Aid2,000,0002,075,000 … Regional Transportation '
+             'Fund200,000100,000 … Excess & Deficiency 250,000 300,000 … (2)NET '
+             'TRANSPORTATION & OTHER OPERATING$700,930 $1,045,165 … Capital Budget ~ '
+             '(Equipment & Vehicles)$500,000$200,000 … Less:Excess & Deficiency 250,000 '
+             '200,000 … (3)NET CAPITAL ASSESSMENT$250,000 $0',
+         values=dict(
+             fy26_transport_budget=3150930, fy27_transport_budget=3520165,
+             fy26_transport_aid=2000000, fy27_transport_aid=2075000,
+             fy26_rtf=200000, fy27_rtf=100000,
+             fy26_ed_operating=250000, fy27_ed_operating=300000,
+             fy26_capital_budget=500000, fy27_capital_budget=200000,
+             fy26_ed_capital=250000, fy27_ed_capital=200000)),
+    dict(key='grant-awards',
+         doc='town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf',
+         text='town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt',
+         title='FY27 Monty Tech Budget Presentation',
+         what='“Update of Annual Grant Awards”, PDF page 5 — a chart of the grants the '
+              'district was awarded, fourteen bars for FY12 to FY25, the last of them '
+              'itemised beside it and totalled. Awards, not spending in the year, and '
+              'outside the operating budget the Budget Summary sets out.',
+         basis='the district’s own budget book. A chart somebody assembled.',
+         anchor='Update of Annual Grant Awards $125,875$360,775$525,000$25,000$210,412'
+                '$645,054$537,715$489,257$323,160$701,588$1,815,850$1,934,702$1,684,000'
+                '$3,681,900 $0 $500,000 $1,000,000 $1,500,000 $2,000,000 $2,500,000 '
+                '$3,000,000 $3,500,000 $4,000,000FY12FY13FY14FY15FY16FY17FY18FY19FY20FY21'
+                'FY22FY23FY24FY25',
+         row='Update of Annual Grant Awards · $125,875 … $1,684,000$3,681,900 · '
+             'FY12 … FY24FY25 · … Career Technical Initiative Round 10$3,681,900.00Total',
+         values=dict(fy25_grant_awards=3681900)),
     dict(key='members',
          doc='town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf',
          text='town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt',
@@ -709,8 +755,44 @@ def district(fig, led):
             lunenburg=lun, lunenburg_of_assessments=round(lun / tot, 6),
             lunenburg_of_budget=round(lun / budget, 6),
             lunenburg_fe=lun_fe, members_fe=members,
-            lunenburg_fe_share=round(lun_fe / members, 6)))
+            lunenburg_fe_share=round(lun_fe / members, 6),
+            revenue=revenue(fig, fy, budget, ch70, req_all, tr, cap, tot)))
     return out
+
+
+def revenue(fig, fy, budget, ch70, req_all, tr, cap, tot):
+    """WHERE THE OPERATING BUDGET'S MONEY COMES FROM, as the Budget Summary sets it out.
+
+    Five sources: Chapter 70, the member towns' assessments, state transportation aid, the
+    Regional Transportation Fund and Excess & Deficiency (the district's certified
+    reserve, applied to operating and to capital). Every intermediate identity the page
+    prints is checked, and the five must sum to the printed Total Budget to the dollar, or
+    nothing is written. The general fund only: grants and revolving funds are not in it."""
+    r = fig['district-revenue']['values']
+    d = fig['district-budget']['values']
+    k = 'fy%d_' % (fy - 2000)
+    tb, aid, rtf = r[k + 'transport_budget'], r[k + 'transport_aid'], r[k + 'rtf']
+    edo, cb, edc = r[k + 'ed_operating'], r[k + 'capital_budget'], r[k + 'ed_capital']
+    checks = [
+        ('Chapter 70 plus the required minimum contribution equals net school spending',
+         ch70 + req_all, d[k + 'nss']),
+        ('net school spending plus transportation and other operating plus capital equals '
+         'the Total Budget', d[k + 'nss'] + tb + cb, budget),
+        ('transportation and other operating, less its three revenues, equals its net '
+         'assessment', tb - aid - rtf - edo, tr),
+        ('capital, less Excess & Deficiency, equals the net capital assessment', cb - edc, cap),
+    ]
+    parts = [('ch70', ch70), ('assessments', tot), ('transport_aid', aid),
+             ('excess_deficiency', edo + edc), ('regional_transport_fund', rtf)]
+    checks.append(('the five revenue sources sum to the Total Budget',
+                   sum(v for _, v in parts), budget))
+    for what, got, printed in checks:
+        if got != printed:
+            fail('FY%d: %s -- it comes to %s and the Budget Summary prints %s.'
+                 % (fy, what, got, printed))
+    return dict(transport_budget=tb, capital_budget=cb, ed_operating=edo, ed_capital=edc,
+                parts=[dict(key=key, amount=v, share=round(v / budget, 6)) for key, v in parts],
+                ties=True)
 
 
 def documents():

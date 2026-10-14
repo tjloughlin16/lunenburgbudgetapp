@@ -918,7 +918,41 @@
    "lunenburg_of_assessments": 0.101265,
    "lunenburg_of_budget": 0.038524,
    "members_fe": 1488,
-   "other_share": 0.077942
+   "other_share": 0.077942,
+   "revenue": {
+    "capital_budget": 500000,
+    "ed_capital": 250000,
+    "ed_operating": 250000,
+    "parts": [
+     {
+      "amount": 18762805,
+      "key": "ch70",
+      "share": 0.54163
+     },
+     {
+      "amount": 13178539,
+      "key": "assessments",
+      "share": 0.380428
+     },
+     {
+      "amount": 2000000,
+      "key": "transport_aid",
+      "share": 0.057734
+     },
+     {
+      "amount": 500000,
+      "key": "excess_deficiency",
+      "share": 0.014434
+     },
+     {
+      "amount": 200000,
+      "key": "regional_transport_fund",
+      "share": 0.005773
+     }
+    ],
+    "ties": true,
+    "transport_budget": 3150930
+   }
   },
   {
    "all_assessments": 13968980,
@@ -936,7 +970,41 @@
    "lunenburg_of_assessments": 0.103972,
    "lunenburg_of_budget": 0.040893,
    "members_fe": 1465,
-   "other_share": 0.075317
+   "other_share": 0.075317,
+   "revenue": {
+    "capital_budget": 200000,
+    "ed_capital": 200000,
+    "ed_operating": 300000,
+    "parts": [
+     {
+      "amount": 18872680,
+      "key": "ch70",
+      "share": 0.531375
+     },
+     {
+      "amount": 13968980,
+      "key": "assessments",
+      "share": 0.393308
+     },
+     {
+      "amount": 2075000,
+      "key": "transport_aid",
+      "share": 0.058423
+     },
+     {
+      "amount": 500000,
+      "key": "excess_deficiency",
+      "share": 0.014078
+     },
+     {
+      "amount": 100000,
+      "key": "regional_transport_fund",
+      "share": 0.002816
+     }
+    ],
+    "ties": true,
+    "transport_budget": 3520165
+   }
   }
  ],
  "documents": [
@@ -1037,6 +1105,57 @@
     "fy27_nss": 31796495
    },
    "what": "\u201cFY 2027 Budget Summary\u201d \u2014 the whole district\u2019s budget, its Chapter 70 aid, and what all eighteen member towns are assessed between them. The rule 11 page: what Lunenburg is billed against what the district spends."
+  },
+  "district-revenue": {
+   "basis": "the district\u2019s own budget book. A sheet somebody assembled.",
+   "bytes": 4906445,
+   "docs_url": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "filename": "3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "key": "district-revenue",
+   "line": 82,
+   "lines": 1,
+   "path": "sources/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "row": "Transportation & Other Operating Budget$3,150,930$3,520,165 \u2026 Less:Estimated Transportation Aid2,000,0002,075,000 \u2026 Regional Transportation Fund200,000100,000 \u2026 Excess & Deficiency 250,000 300,000 \u2026 (2)NET TRANSPORTATION & OTHER OPERATING$700,930 $1,045,165 \u2026 Capital Budget ~ (Equipment & Vehicles)$500,000$200,000 \u2026 Less:Excess & Deficiency 250,000 200,000 \u2026 (3)NET CAPITAL ASSESSMENT$250,000 $0",
+   "sha256": "edc51fdd8b8a54d4adccacdcff1099ed40b2a3a905dc6dd4fe5f601517c5097a",
+   "text": "sources/town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt",
+   "text_url": "/docs/town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt",
+   "title": "FY27 Monty Tech Budget Presentation",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/3583",
+   "values": {
+    "fy26_capital_budget": 500000,
+    "fy26_ed_capital": 250000,
+    "fy26_ed_operating": 250000,
+    "fy26_rtf": 200000,
+    "fy26_transport_aid": 2000000,
+    "fy26_transport_budget": 3150930,
+    "fy27_capital_budget": 200000,
+    "fy27_ed_capital": 200000,
+    "fy27_ed_operating": 300000,
+    "fy27_rtf": 100000,
+    "fy27_transport_aid": 2075000,
+    "fy27_transport_budget": 3520165
+   },
+   "what": "The same \u201cFY 2027 Budget Summary\u201d, its lower half \u2014 the transportation and other operating budget and the capital budget, each less the revenues the district applies to it before assessing the towns: state transportation aid, its Regional Transportation Fund, and its Excess & Deficiency reserve."
+  },
+  "grant-awards": {
+   "basis": "the district\u2019s own budget book. A chart somebody assembled.",
+   "bytes": 4906445,
+   "docs_url": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "filename": "3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "key": "grant-awards",
+   "line": 15,
+   "lines": 3,
+   "path": "sources/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "row": "Update of Annual Grant Awards \u00b7 $125,875 \u2026 $1,684,000$3,681,900 \u00b7 FY12 \u2026 FY24FY25 \u00b7 \u2026 Career Technical Initiative Round 10$3,681,900.00Total",
+   "sha256": "edc51fdd8b8a54d4adccacdcff1099ed40b2a3a905dc6dd4fe5f601517c5097a",
+   "text": "sources/town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt",
+   "text_url": "/docs/town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt",
+   "title": "FY27 Monty Tech Budget Presentation",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/3583",
+   "values": {
+    "fy25_grant_awards": 3681900
+   },
+   "what": "\u201cUpdate of Annual Grant Awards\u201d, PDF page 5 \u2014 a chart of the grants the district was awarded, fourteen bars for FY12 to FY25, the last of them itemised beside it and totalled. Awards, not spending in the year, and outside the operating budget the Budget Summary sets out."
   },
   "lunenburg-member": {
    "basis": "DESE\u2019s Chapter 70 calculation, reprinted inside the district\u2019s budget book.",
