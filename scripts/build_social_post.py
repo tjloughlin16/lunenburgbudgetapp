@@ -243,8 +243,12 @@ body{width:%(w)spx;height:%(h)spx;background:#fcfcfb;color:#0b0b0b;position:rela
   font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;padding:64px 60px 0}
 .motif{position:absolute;left:0;top:0;z-index:0}
 .frame{position:relative;z-index:1;height:100%%;display:flex;flex-direction:column}
-.k{font-weight:700;font-size:22px;letter-spacing:.14em;color:%(a)s;display:flex;align-items:center;gap:16px}
-.k svg{width:52px;height:52px;flex:none}
+.k{font-weight:700;font-size:22px;letter-spacing:.14em;color:%(a)s}
+.logo{display:flex;align-items:center;gap:22px}
+.logo .lm{width:96px;height:96px;flex:none}
+.logo .lt{font-size:17px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#565044}
+.logo .ln{font-size:40px;line-height:1.05;letter-spacing:-.02em;color:#181713;margin-top:2px}
+.logo .lhl{background:linear-gradient(transparent 68%%,rgba(201,145,28,.5) 68%%,rgba(201,145,28,.5) 90%%,transparent 90%%)}
 h1{margin:18px 0 0;font-weight:800;font-size:%(hs)spx;line-height:1.06;letter-spacing:-.02em;max-width:1080px;text-wrap:balance}
 h1 em{font-style:normal;color:%(a)s}
 .sub{font-size:28px;line-height:1.35;color:#52514e;margin:16px 0 0;max-width:980px}
@@ -305,7 +309,7 @@ def build_html(spec, slug, data):
 <style>{css}</style></head><body>
 {motif_svg(motif, color, w, h, seed)}
 <div class="frame">
-<div class="k">{logo_html(img)}<span>LUNENBURG BUDGET PROJECT</span></div>
+{logo_html(img)}
 <h1>{head}</h1>
 {f'<p class="sub">{R(img["sub"])}</p>' if img.get('sub') else ''}
 <div class="body">{body}</div>
@@ -315,19 +319,34 @@ def build_html(spec, slug, data):
 
 
 
-# THE MARK, beside the name. TJ, 14 October 2026: "make sure you put the logo of budget
-# project into every image" -- every SOCIAL image, from 2026-10-15-every-subject on. Read
-# from the brand file, never redrawn here, so a change to the mark reaches every post.
-# A post made before it carries "logo": false, so its image stays the one that was
-# attached; a posted post is frozen and never rebuilt anyway.
+# THE LOGO, as the cover draws it. TJ, 14 October 2026: "make sure you put the logo of
+# budget project into every image" -- the L-mark AND the wordmark ("The / Lunenburg Budget
+# Project", in the serif, with the ochre highlighter), not the favicon beside a kicker in
+# capitals. Every social image from 2026-10-15-every-subject on.
+#
+# ONE DRAWING. The mark's rects come from sources/data/brand/favicon.svg (its paper tile
+# dropped, cropped as the cover crops it), and the name, the "The" and the serif from
+# scripts/build_brand_assets.py, which drew the cover -- so the logo on a post and the
+# logo on the group's cover cannot drift apart. A post made before this carries
+# "logo": false and keeps the plain kicker, so the image already attached stays the same.
+import build_brand_assets as _brand  # noqa: E402
+
 LOGO_SVG = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources', 'data', 'brand', 'favicon.svg')
 
 
 def logo_html(img):
     if img.get('logo') is False:
-        return ''
+        return '<div class="k">LUNENBURG BUDGET PROJECT</div>'
     svg = open(LOGO_SVG, encoding='utf-8').read()
-    return re.sub(r'<title>.*?</title>', '', svg, flags=re.S).strip()
+    rects = [r for r in re.findall(r'<rect[^>]*/>', svg) if 'width="32"' not in r]
+    mark = '<svg class="lm" viewBox="4 3 26 26">%s</svg>' % ''.join(rects)
+    name = html.escape(_brand.NAME)
+    hl = 'Budget'
+    if hl in name:
+        name = name.replace(hl, '<span class="lhl">%s</span>' % hl, 1)
+    return ('<div class="logo">%s<div class="lw"><div class="lt">%s</div>'
+            '<div class="ln" style="font-family:%s">%s</div></div></div>'
+            % (mark, html.escape(_brand.NAME_THE), html.escape(_brand.SERIF, quote=True), name))
 
 def shoot(html_path, png_path, size):
     w, h = SIZES[size]
