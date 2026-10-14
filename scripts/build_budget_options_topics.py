@@ -132,6 +132,8 @@ def sources():
                   'Lunenburg Budget Project — the agreement’s salary scale, extracted'),
         'sc-0604': ('meetings/school-committee/2025-06-04-minutes-7251.pdf',
                     'School Committee minutes, 4 June 2025'),
+        'sc-0507': ('meetings/school-committee/2025-05-07-minutes-7207.pdf',
+                    'School Committee minutes, 7 May 2025'),
         'sb-0311': ('meetings/select-board/2025-03-11-minutes-7096.pdf',
                     'Select Board minutes, 11 March 2025'),
         'tally': ('town-supplementary/docs/town-2026-election-unofficial-results.pdf',
@@ -529,6 +531,12 @@ def build():
     requests = next(x for x in bf['facts'] if x['id'] == 'requests')['value']['value']
     if pub_fee != bus['current']:
         fail('the bus-fee topic and the lever disagree on the fee')
+    # THE ACTIVITY FEE THAT IS CHARGED. This page said "whether any activity fee is charged
+    # today" was unknown, while the Family fees page cited the School Committee's 7 May 2025
+    # vote "for a universal increase from $55 to $70" -- two pages on one shelf disagreeing
+    # (found 14 October 2026). Read from the same payload, the same quote, checked verbatim.
+    act_def = load('what-families-pay.json')['household']['charge_defs']['activity:%d' % FAM_FY]
+    act_now = float(re.search(r'to \$(\d+)$', act_def['quote']).group(1))
     act_gain = min(act['cap'], act['peakYield']) - act['currentYield']
     bus_gain = bus['peakYield'] - bus['currentYield']
     both = act_gain + bus_gain
@@ -556,15 +564,20 @@ def build():
            'estimate'),
          f('actn', N(act['basis'], 'students'), 'activity participants the model assumes (ours)',
            'estimate'),
-         f('act-gap', None, 'whether any activity fee is charged today', 'gap',
-           closes='the district’s current fee schedule for band, music and clubs')],
+         f('actnow', U(act_now), 'student activity fee, a child, voted 7 May 2025', 'published',
+           allow=('7 May 2025',))],   # what it pays for is the note on the activity conclusion
         [con('No bus fee covers general transport: our model peaks at %s against %s.'
              % (C.usd(bus['peakYield']), C.usd(bus['cap'])), ['buspeak', 'buscost'],
              {'a': U(bus['peakYield']), 'b': U(bus['cap'])}),
          con('An activity fee of %s would cover %s of programmes, on %s students we assumed.'
              % (C.usd(act['selfFunding']), C.usd(act['cap']), C.num(act['basis'])),
-             ['actfee', 'actcost', 'actn', 'act-gap'],
-             {'a': U(act['selfFunding']), 'b': U(act['cap']), 'c': N(act['basis'])}),
+             ['actfee', 'actcost', 'actn', 'actnow'],
+             {'a': U(act['selfFunding']), 'b': U(act['cap']), 'c': N(act['basis'])},
+             notes=[step('Our model counts from no fee. The %s fee voted in May 2025 is not in it, '
+                         'so what a higher fee adds is overstated by what %s raises, unless it pays '
+                         'for other things.' % (C.usd(act_now), C.usd(act_now)), 'gap',
+                         figures={'a': U(act_now)}, allow=('May 2025',),
+                         closes='the district’s activity fee schedule and the fund its receipts go to')]),
          con('The model assumes %s paying riders; the district reported %s bus requests.'
              % (C.num(bus['basis']), C.num(requests)), ['riders', 'requests', 'busnow'],
              {'a': N(bus['basis']), 'b': N(requests)},
@@ -575,13 +588,16 @@ def build():
              % C.usd(both), ['both', 'share'], {'a': U(both)})],
         said=[said_file('school-committee/2025-06-04-minutes-7251.txt',
                         'We have received 1,074 bus requests, and have 494 unpaid at this time.',
+                        'School Committee'),
+              said_file('school-committee/2025-05-07-minutes-7207.txt',
+                        'the committee ultimately decides for a universal increase from $55 to $70',
                         'School Committee')],
         chart=TP.parts('Fees against the projected gap', [
             ('Bus fee at its peak (ours)', bus_gain), ('Activity fee at its cap (ours)', act_gain),
             ('Left open (ours)', g28 - both)], '$', basis='estimate',
             note='The %s gap as our model projects it; each fee’s part is what it adds over '
                  'today, on participation we assumed.' % C.fy(2028), note_figures={'y': F(2028)}),
-        sources=[src['model'], src['sc-0604']],
+        sources=[src['model'], src['sc-0604'], src['sc-0507']],
         finding_figures={'a': U(both), 'b': P(bshare), 'y': F(2028)})
 
     # ------------------------------------------------ cutting the extras

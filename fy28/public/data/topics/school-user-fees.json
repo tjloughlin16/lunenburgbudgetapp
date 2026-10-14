@@ -79,11 +79,28 @@
     }
    },
    "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s activity fee schedule and the fund its receipts go to",
+     "figures": {
+      "a": {
+       "text": "$70",
+       "unit": "",
+       "value": 70.0
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "May 2025"
+     ],
+     "text": "Our model counts from no fee. The $70 fee voted in May 2025 is not in it, so what a higher fee adds is overstated by what $70 raises, unless it pays for other things."
+    }
+   ],
    "rests_on": [
     "actfee",
     "actcost",
     "actn",
-    "act-gap"
+    "actnow"
    ],
    "text": "An activity fee of $465 would cover $106,244 of programmes, on 375 students we assumed."
   },
@@ -315,15 +332,20 @@
    }
   },
   {
-   "closes": "the district’s current fee schedule for band, music and clubs",
-   "id": "act-gap",
-   "kind": "gap",
+   "id": "actnow",
+   "kind": "published",
    "label": {
     "figures": {},
-    "literals": [],
-    "text": "whether any activity fee is charged today"
+    "literals": [
+     "7 May 2025"
+    ],
+    "text": "student activity fee, a child, voted 7 May 2025"
    },
-   "value": null
+   "value": {
+    "text": "$70",
+    "unit": "",
+    "value": 70.0
+   }
   }
  ],
  "finding": {
@@ -361,6 +383,13 @@
    "href": "/docs/minutes/text/school-committee/2025-06-04-minutes-7251.txt",
    "label": "School Committee minutes, 2025-06-04",
    "quote": "We have received 1,074 bus requests, and have 494 unpaid at this time."
+  },
+  {
+   "board": "School Committee",
+   "date": "2025-05-07",
+   "href": "/docs/minutes/text/school-committee/2025-05-07-minutes-7207.txt",
+   "label": "School Committee minutes, 2025-05-07",
+   "quote": "the committee ultimately decides for a universal increase from $55 to $70"
   }
  ],
  "shelves": [
@@ -374,6 +403,10 @@
   {
    "href": "/docs/meetings/school-committee/2025-06-04-minutes-7251.pdf",
    "label": "School Committee minutes, 4 June 2025 — 2025-06-04-minutes-7251.pdf"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2025-05-07-minutes-7207.pdf",
+   "label": "School Committee minutes, 7 May 2025 — 2025-05-07-minutes-7207.pdf"
   }
  ],
  "table": null,
