@@ -1,134 +1,175 @@
 {
  "category": "enrolment",
  "chart": {
+  "basis": "published",
   "decimals": null,
-  "from_zero": true,
-  "kind": "bar",
+  "highlight": [
+   "Lunenburg"
+  ],
   "note": {
-   "figures": {},
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
    "literals": [
     "Chapter 70",
     "1 October"
    ],
-   "text": "DESE’s Chapter 70 count by member town, as the district prints it. Not the 1 October headcount."
+   "text": "FY2027. DESE’s Chapter 70 foundation count by member town, as the district prints it. Not the 1 October headcount."
   },
-  "reference": null,
-  "series": [
+  "rows": [
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "Foundation enrolment, FY2026",
+    "label": "Fitchburg",
     "texts": [
-     "396 pupils",
-     "158 pupils",
-     "157 pupils",
-     "109 pupils",
-     "101 pupils",
-     "86 pupils",
-     "70 pupils",
-     "83 pupils",
-     "64 pupils",
-     "63 pupils",
-     "47 pupils",
-     "35 pupils",
-     "33 pupils",
-     "27 pupils",
-     "28 pupils",
-     "10 pupils",
-     "10 pupils",
-     "11 pupils"
+     "391 pupils"
     ],
-    "values": [
-     396,
-     158,
-     157,
-     109,
-     101,
-     86,
-     70,
-     83,
-     64,
-     63,
-     47,
-     35,
-     33,
-     27,
-     28,
-     10,
-     10,
-     11
-    ]
+    "total": "391 pupils",
+    "value": 391
    },
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "Foundation enrolment, FY2027",
+    "label": "Holden",
     "texts": [
-     "391 pupils",
-     "170 pupils",
-     "147 pupils",
-     "106 pupils",
-     "104 pupils",
-     "80 pupils",
-     "79 pupils",
-     "77 pupils",
-     "62 pupils",
-     "60 pupils",
-     "44 pupils",
-     "35 pupils",
-     "33 pupils",
-     "28 pupils",
-     "22 pupils",
-     "10 pupils",
-     "9 pupils",
+     "170 pupils"
+    ],
+    "total": "170 pupils",
+    "value": 170
+   },
+   {
+    "label": "Gardner",
+    "texts": [
+     "147 pupils"
+    ],
+    "total": "147 pupils",
+    "value": 147
+   },
+   {
+    "label": "Athol",
+    "texts": [
+     "106 pupils"
+    ],
+    "total": "106 pupils",
+    "value": 106
+   },
+   {
+    "label": "Lunenburg",
+    "texts": [
+     "104 pupils"
+    ],
+    "total": "104 pupils",
+    "value": 104
+   },
+   {
+    "label": "Winchendon",
+    "texts": [
+     "80 pupils"
+    ],
+    "total": "80 pupils",
+    "value": 80
+   },
+   {
+    "label": "Westminster",
+    "texts": [
+     "79 pupils"
+    ],
+    "total": "79 pupils",
+    "value": 79
+   },
+   {
+    "label": "Templeton",
+    "texts": [
+     "77 pupils"
+    ],
+    "total": "77 pupils",
+    "value": 77
+   },
+   {
+    "label": "Ashburnham",
+    "texts": [
+     "62 pupils"
+    ],
+    "total": "62 pupils",
+    "value": 62
+   },
+   {
+    "label": "Sterling",
+    "texts": [
+     "60 pupils"
+    ],
+    "total": "60 pupils",
+    "value": 60
+   },
+   {
+    "label": "Barre",
+    "texts": [
+     "44 pupils"
+    ],
+    "total": "44 pupils",
+    "value": 44
+   },
+   {
+    "label": "Hubbardston",
+    "texts": [
+     "35 pupils"
+    ],
+    "total": "35 pupils",
+    "value": 35
+   },
+   {
+    "label": "Ashby",
+    "texts": [
+     "33 pupils"
+    ],
+    "total": "33 pupils",
+    "value": 33
+   },
+   {
+    "label": "Princeton",
+    "texts": [
+     "28 pupils"
+    ],
+    "total": "28 pupils",
+    "value": 28
+   },
+   {
+    "label": "Phillipston",
+    "texts": [
+     "22 pupils"
+    ],
+    "total": "22 pupils",
+    "value": 22
+   },
+   {
+    "label": "Royalston",
+    "texts": [
+     "10 pupils"
+    ],
+    "total": "10 pupils",
+    "value": 10
+   },
+   {
+    "label": "Harvard",
+    "texts": [
+     "9 pupils"
+    ],
+    "total": "9 pupils",
+    "value": 9
+   },
+   {
+    "label": "Petersham",
+    "texts": [
      "8 pupils"
     ],
-    "values": [
-     391,
-     170,
-     147,
-     106,
-     104,
-     80,
-     79,
-     77,
-     62,
-     60,
-     44,
-     35,
-     33,
-     28,
-     22,
-     10,
-     9,
-     8
-    ]
+    "total": "8 pupils",
+    "value": 8
    }
   ],
-  "stacked": false,
+  "stack": null,
   "title": "Monty Tech foundation enrolment by member town",
-  "type": "series",
-  "unit": "pupils",
-  "x": [
-   "Fitchburg",
-   "Holden",
-   "Gardner",
-   "Athol",
-   "Lunenburg",
-   "Winchendon",
-   "Westminster",
-   "Templeton",
-   "Ashburnham",
-   "Sterling",
-   "Barre",
-   "Hubbardston",
-   "Ashby",
-   "Princeton",
-   "Phillipston",
-   "Royalston",
-   "Harvard",
-   "Petersham"
-  ]
+  "type": "ranking",
+  "unit": "pupils"
  },
  "conclusions": [
   {

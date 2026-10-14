@@ -981,13 +981,11 @@ def build():
                           'c': N(hl['count_gap_max'])},
                          closes='DESE’s definition of foundation enrolment for a regional '
                                 'vocational member, beside its October headcount')])],
-        chart=TP.series('Monty Tech foundation enrolment by member town',
-                        [t['town'] for t in towns], [
-            TP.track('Foundation enrolment, %s' % C.fy(2026), [t['fe26'] for t in towns], 'published', 'bar'),
-            TP.track('Foundation enrolment, %s' % C.fy(2027), [t['fe27'] for t in towns], 'published', 'bar')],
-            'pupils', kind='bar',
-            note='DESE’s Chapter 70 count by member town, as the district prints it. Not the '
-                 '1 October headcount.', note_allow=('Chapter 70', '1 October')),
+        chart=TP.ranking('Monty Tech foundation enrolment by member town',
+                         [(t['town'], t['fe27']) for t in towns], 'pupils', highlight='Lunenburg',
+                         note='%s. DESE’s Chapter 70 foundation count by member town, as the '
+                              'district prints it. Not the 1 October headcount.' % C.fy(2027),
+                         note_figures={'y': F(2027)}, note_allow=('Chapter 70', '1 October')),
         table=dict(caption='Monty Tech enrolment: the district, its towns, Lunenburg', views=[
             dict(key='district', label='The whole district', total_col=-1, kinds=['ledger'],
                  columns=['1 October headcount'],

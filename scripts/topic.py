@@ -175,7 +175,8 @@ CAPTION_MAX = 220
 ALT = (20, 300)
 TRACKS_MAX = 5            # the site's validated categorical set has five hues; never cycle
 POINTS_MAX = 40
-ROWS_MAX = 15             # a ranking past fifteen is a table
+ROWS_MAX = 20             # a ranking past twenty is a table. Was 15; raised 14 Oct 2026 so the
+                          # 18 Monty Tech member towns can be ranked with Lunenburg highlighted
 PARTS = (2, 6)
 LABEL_MAX = 48
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
