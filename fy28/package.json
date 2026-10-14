@@ -13,7 +13,8 @@
     "check:interactive": "node scripts/check-interactive.mjs",
     "check:agent-view": "node scripts/agent-view.mjs",
     "check:crumbs": "node scripts/check-crumbs.mjs",
-    "build:site": "npm run build && npm run prerender"
+    "build:site": "python3 ../scripts/with_build_lock.py npm run build:site:unlocked",
+    "build:site:unlocked": "npm run build && npm run prerender"
   },
   "dependencies": {
     "papaparse": "^5.5.3",

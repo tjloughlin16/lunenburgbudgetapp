@@ -365,6 +365,7 @@ def record_run(a, delta, deployed, state, notes=()):
 def sh(args, check=True, quiet=False, **kw):
     import time
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    env.update(kw.pop('extra_env', None) or {})
     name = os.path.basename(args[1] if args[0].endswith('python3') or 'python' in args[0] else args[0])
     if len(args) > 2 and not args[2].startswith('-'):
         name += ' ' + ' '.join(a for a in args[2:] if not a.startswith('-'))[:40]
@@ -1339,9 +1340,18 @@ def run(a, notes, ctx):
         for fy, closes in (('fy26', '2025-05-17'), ('fy27', '2026-05-16')):
             py('build_budget_feed.py', '--as-of', closes, '--out', 'fy28/public/data/budget-feed-%s.json' % fy)
         metered('tag_document_affinity.py', notes=notes)     # only documents not yet tagged; cents
-        py('build_search_index.py', '--quiet')
-        py('build_app_metrics.py')
-        py('build_sitemap.py')
+        # THESE THREE READ fy28/dist, so they hold the site-build lock while they do: a build
+        # started by hand empties dist/ and refills it page by page, and on 14 October 2026
+        # one did exactly that under build_search_index.py, which died on a deleted page.
+        # Hand builds take the same lock (scripts/with_build_lock.py, via npm run build:site).
+        dist_lock = acquire_build_lock(notes)
+        try:
+            py('build_search_index.py', '--quiet')
+            py('build_app_metrics.py')
+            py('build_sitemap.py')
+        finally:
+            if dist_lock is not None:
+                dist_lock.close()
         # WHAT READERS HAVE ASKED, pulled off the questions database so an unanswered
         # question cannot sit with no sign of it anywhere a person looks. Counts only --
         # no bodies, no email addresses. check=False because a courtesy must not fail the
@@ -1446,7 +1456,8 @@ def run(a, notes, ctx):
         lock = acquire_build_lock(notes)
         if lock is not None:
             try:
-                sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
+                sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'),
+                   extra_env={'SITE_BUILD_LOCK_HELD': '1'})
                 # `--branch main`, NAMED. Wrangler takes production-or-preview from the git
                 # branch; on 9 October 2026 a hand deploy from a tree on another branch went
                 # to `refresh.lunenburg-fy28.pages.dev` while production kept the old site.
