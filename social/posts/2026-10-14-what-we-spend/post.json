@@ -24,7 +24,7 @@
     "headline": "Monty Tech spends ${w.gap|n} more on each student",
     "emphasis": "${w.gap|n} more",
     "headline_size": 60,
-    "sub": "Than Lunenburg’s own schools, on the state’s measure for {pp.finding.figures.y.text}. {me.finding.figures.a.text} Lunenburg students went to Monty Tech in {me.finding.figures.y.text}.",
+    "sub": "Than Lunenburg’s own schools, on the state’s measure for {pp.finding.figures.y.text}. The state median: {pp.finding.figures.b.text}.",
     "tiles": [
       {
         "eyebrow": "LUNENBURG’S SCHOOLS",
@@ -34,7 +34,7 @@
         "path": "/school-spending/per-pupil-spending"
       },
       {
-        "eyebrow": "MONTY TECH · {me.finding.figures.a.text} LUNENBURG STUDENTS",
+        "eyebrow": "MONTY TECH",
         "value": "{mt.cells[0]}",
         "label": "a student · +${w.gap|n}, {w.gap_pct|pct} more",
         "text": "A regional vocational school. The state’s formula budgets more for a vocational student.",
@@ -42,7 +42,10 @@
       }
     ],
     "path": "/school-spending/per-pupil-spending",
-    "as_of": "As of {m.as_of|short}"
+    "as_of": "As of {m.as_of|short}",
+    "conclusion": "{me.finding.figures.a.text} Lunenburg students go to Monty Tech, more than to any other school outside town.",
+    "conclusion_em": "{me.finding.figures.a.text} Lunenburg students",
+    "conclusion_size": 44
   },
   "text": [
     "Lunenburg spends less on each student than almost any school district in Massachusetts.",
