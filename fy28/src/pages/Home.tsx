@@ -87,7 +87,7 @@ function useThreads(): Pane | null {
   if (!d) return null
   const open = d.threads.filter(t => t.status === 'open')
   return {
-    tab: 'Questions', title: 'Open questions', all: `All ${open.length}`, allHref: '/threads', label: 'Open threads',
+    tab: 'Threads', title: 'Open threads', all: `All ${open.length}`, allHref: '/threads', label: 'Open threads',
     rows: open.slice(0, 3).map(t => (
       <Row key={t.id} href={`/threads/${t.id}`} title={t.label} tag={t.is_new ? 'new' : undefined} />
     )),
