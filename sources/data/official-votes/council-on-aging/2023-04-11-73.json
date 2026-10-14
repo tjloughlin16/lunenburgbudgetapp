@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-04-11",
  "docid": "73",
@@ -12,23 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the March 22, 2023 meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Betty DiGiacomo",
+   "motion": "Approve the minutes of the March 22, 2023 meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. lincoln motioned to approve the minutes from the march 22, 2023 meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Betty DiGiacomo",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0933815
+ "note": "Plain-text extraction, not a scan; all content was readable. Two procedural votes recorded, both 'carried unanimously' with no count printed. The motions are attributed to 'Mr. Lincoln', but the roster lists both Deb Lincoln (Chairperson, referred to as Ms.) and Pete Lincoln; the minutes do not say which, so moved_by is kept as printed. Public comment heading appears with no content. Dollar figures are as the minutes print them and are not totalled. The Senior Tax Relief figures are presenter descriptions of a proposed article, not adopted amounts.",
+ "cost_usd": 0.01618821,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln, vice-chairperson jane rabbitt, susan"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "vice-chairperson jane rabbitt, susan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "susan o'sullivan, jim mcguigan, george martin, cathy beale, judy tarbell"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "susan o'sullivan, jim mcguigan, george martin, cathy beale, judy tarbell"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "susan o'sullivan, jim mcguigan, george martin, cathy beale, judy tarbell"
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "susan o'sullivan, jim mcguigan, george martin, cathy beale, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "judy tarbell, deb lincoln, pete lincoln, betty digiacomo"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "judy tarbell, deb lincoln, pete lincoln, betty digiacomo"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "judy tarbell, deb lincoln, pete lincoln, betty digiacomo"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "absent",
+   "quote": "cheryl moisan, diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "absent",
+   "quote": "cheryl moisan, diane nowd"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux, facilities manager chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux, facilities manager chris ruth"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board member lou franco, coa liaison to the eagle house supporters marilyn talley"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "COA Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "coa liaison to the eagle house supporters marilyn talley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board asked for a new draft of the COA Board Member Orientation Packet to be printed reflecting the changes it made.",
+   "quote": "the board made several changes to the latest document, and asked for a new draft to be printed reflecting those changes."
+  },
+  {
+   "decision": "Staff (Mr. Ruth) to contact engineers to draw up new plans for additional parking; a new parking lot to be requested for a future capital plan.",
+   "quote": "mr. ruth will be in contact with engineers to draw up new plans for additional parking."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior tax relief: circuit breaker match cap",
+   "what_was_recorded": "The town would match the circuit breaker tax credit, capped at no more than $1,200 per the article as described.",
+   "figures_as_printed": [
+    "$1,200"
+   ],
+   "quote": "the town will match the amount of the circuit breaker tax credit, which should be no more than $1,200."
+  },
+  {
+   "topic": "Senior tax relief: maximum relief amount",
+   "what_was_recorded": "Relief would max out at $300,000, described as 1 percent of the levy.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "mr. franco went on to explain that the relief will max out at $300,000 (1 percent of the levy)."
+  },
+  {
+   "topic": "Senior tax relief: cost per household",
+   "what_was_recorded": "The relief is estimated to cost approximately $50-$60 per household per year, funded from property taxes of those not eligible.",
+   "figures_as_printed": [
+    "$50-$60"
+   ],
+   "quote": "which has been estimated to cost approximately $50-$60 per household per year."
+  },
+  {
+   "topic": "Lunenburg 300th Celebration funding",
+   "what_was_recorded": "A town warrant article would spend $5,000 on the 300th celebration.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "there is an article on the town warrant to spend $5,000 on the celebration."
+  },
+  {
+   "topic": "Eagle House Supporters June raffle calendar",
+   "what_was_recorded": "The goal is to sell 300 calendars, which would bring in $3,000 if achieved.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "the goal has been set to sell 300 calendars, which would bring in $3,000 if achieved."
+  },
+  {
+   "topic": "Capital plan: patio project bid",
+   "what_was_recorded": "A bid package for the patio project will be published; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. ruth reported that a bid package for the patio project will soon be published."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of March 22, 2023 minutes",
+   "resolution": "approved unanimously",
+   "quote": "mr. lincoln motioned to approve the minutes from the march 22, 2023 meeting. ms. digiacomo seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Announcements: terms, new Facilities Manager, senior tax relief article",
+   "resolution": "informational, no action",
+   "quote": "ms. lincoln introduced new facilities manager chris ruth.",
+   "tags": [
+    "board membership",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Communication with Lunenburg residents (postcard)",
+   "resolution": "discussed; draft postcard prepared",
+   "quote": "ms. doherty has drafted an informational post card with the new lunenburg adult activity center logo to send out to residents.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Warrant article for May Town Meeting: senior tax relief",
+   "resolution": "discussed, no action",
+   "quote": "ms. lincoln wants the board to be informed about the senior tax relief article so they can help people understand.",
+   "tags": [
+    "senior tax relief",
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "COA board member orientation packet",
+   "resolution": "continued; new draft to be printed",
+   "quote": "the board made several changes to the latest document, and asked for a new draft to be printed reflecting those changes.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "COA board member email accounts",
+   "resolution": "status noted, no action",
+   "quote": "all but one have established their new town email accounts.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300th Celebration",
+   "resolution": "discussed; committee to brainstorm",
+   "quote": "ms. lincoln informed the board that the 300th celebration committee will be meeting soon to brainstorm ideas.",
+   "tags": [
+    "celebration",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan, building and grounds",
+   "resolution": "reported, no action",
+   "quote": "mr. ruth reported that a bid package for the patio project will soon be published.",
+   "tags": [
+    "capital plan",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported, no action",
+   "quote": "ms. talley reported that the supporters have collected 792 bags for their clothing drive fundraiser.",
+   "tags": [
+    "fundraising",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Board comment: upcoming vacancy",
+   "resolution": "informational",
+   "quote": "ms. lincoln reminded the board that there will be one vacancy on the board come july 1.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior tax relief",
+  "town meeting warrant",
+  "capital plan",
+  "facilities",
+  "board membership",
+  "fundraising",
+  "300th celebration",
+  "eagle house",
+  "circuit breaker"
+ ],
+ "dropped_unquoted_by_field": {}
 }

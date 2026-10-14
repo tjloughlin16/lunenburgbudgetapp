@@ -1,0 +1,184 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee",
+ "meeting_date": "2023-03-13",
+ "video_id": "Ehb4ap4uipw",
+ "video_url": "https://www.youtube.com/watch?v=Ehb4ap4uipw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2023-03-13-Ehb4ap4uipw.json",
+  "sha256": "763e0b3d1d238103414f571e7f8397e0aac5b02c745eff7adab6e02e6824d4ec",
+  "caption_lines": 22,
+  "segments": 158
+ },
+ "recording": {
+  "duration_s": 448,
+  "duration": "0:07",
+  "spoken_chars": 4945,
+  "words_approx": 824
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03132023-218",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2023-03-13-agenda-218.txt",
+   "path": "sources/meetings/school-committee/2023-03-13-agenda-218.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T00:43:26Z",
+  "cost_usd": 0.2323915
+ },
+ "minutes": {
+  "headline": "School Committee waived the second reading of transportation policy 3601, then went into executive session on security.",
+  "summary": "A short special meeting held remotely. The committee waived the second reading of the transportation policy after no public comments were received, with a third reading set for Wednesday. It then voted by roll call to enter executive session on security deployment, not returning to public session.",
+  "attendees": [
+   {
+    "name_as_heard": "Dr Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mrs Carol ashambo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Brian Leighton",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Mrs Laura Kelly",
+    "role": "secretary"
+   },
+   {
+    "name_as_heard": "Mr Peter beardmore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Courtney Fuller",
+    "role": "recording secretary"
+   },
+   {
+    "name_as_heard": "miss Peterson",
+    "role": "staff (checked LPS account for comments)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 312,
+    "topic": "Public comment invited; a member of the public (miss algarin) was asked if she had comments on the transportation policy, and none were made."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 270,
+    "motion": "Waive the second reading of policy 3601, the transportation policy",
+    "moved_by": "Mr Leighton",
+    "outcome": "passed (roll call: Kelly, Leighton, beardmore yes; the chair's vote not captioned)",
+    "procedural": false
+   },
+   {
+    "t": 376,
+    "motion": "Go into executive session on security personnel/devices strategy and adjourn following it, not returning to public session",
+    "moved_by": "Mr Leighton",
+    "outcome": "passed (roll call: Kelly, Leighton, beardmore, chair yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 333,
+    "decision": "A third reading of the transportation policy will be held at the Wednesday meeting, read in full."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 229,
+    "topic": "Call to order, roll call and open meeting law remote-meeting statement",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 229,
+    "t_end": 312,
+    "topic": "Transportation policy 3601 second reading waived",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 312,
+    "t_end": 376,
+    "topic": "Public comment",
+    "resolution": "no comments",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 376,
+    "t_end": 441,
+    "topic": "Executive session on security deployment",
+    "resolution": "voted to enter and adjourn after",
+    "tags": [
+     "executive-session",
+     "public-safety"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The chair's own vote on the waiver is not captioned (three yes votes heard)",
+   "Mr scholumbrini was absent"
+  ],
+  "confidence": "high",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee waived the second reading of transportation policy 3601 by roll call vote at a short remote special meeting.",
+    "t": 270
+   },
+   {
+    "line": "A third reading of the transportation policy is set for the Wednesday meeting, to be read in full.",
+    "t": 333
+   },
+   {
+    "line": "Public comment was invited on the policy and none was made.",
+    "t": 312
+   },
+   {
+    "line": "The committee voted to enter executive session on security deployment and did not return to public session.",
+    "t": 376
+   }
+  ],
+  "why_it_matters": [
+   "Policy 3601 governs school transportation, so the third reading is the last public step before the committee can adopt it, and the second reading drew no public comment.",
+   "The security discussion took place in closed session, so no public record shows what was decided about it."
+  ],
+  "watch_next": [
+   "Third reading of transportation policy 3601 at the Wednesday meeting, read in full."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T00:43:35Z",
+   "cost_usd": 0.21795689999999998
+  }
+ }
+}

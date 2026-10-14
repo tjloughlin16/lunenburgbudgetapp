@@ -1,0 +1,84 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2023-02-01",
+ "source": {
+  "sha256": "88704c585a97c3b85db110021746778bc369a2309f290edbb9efb86f7abd7419",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2023-02-01-XbNndKEfgho.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "522 729",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Business manager reported ESSER SR2/SR3 projected spending totals, leaving a surplus.",
+    "status": "announced",
+    "t": 3246,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": "66 106 dollars",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Projected surplus in ESSER grants.",
+    "status": "announced",
+    "t": 3246,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2024,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Governor's budget expected around March 1st, later than usual, so local aid figures come later.",
+    "status": "announced",
+    "t": 732,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "ESSER-funded positions",
+    "condition": "when ESSER funds are no longer available",
+    "fiscal_year": null,
+    "prediction": "When ESSER funds end, key positions will have to be incorporated into the local budget and some difficult decisions and staffing cuts may be needed.",
+    "scope": "school",
+    "t": 1114,
+    "who": "the superintendent"
+   },
+   {
+    "about": "staffing levels",
+    "condition": "as ESSER funds expire",
+    "fiscal_year": null,
+    "prediction": "Current staffing levels targeting needs may not be maintainable; a Plan B minus the staffing.",
+    "scope": "school",
+    "t": 1887,
+    "who": "the superintendent"
+   },
+   {
+    "about": "school choice account",
+    "condition": "if the district did not participate in school choice",
+    "fiscal_year": null,
+    "prediction": "Without school choice the account would dwindle to zero and contractual benefits would have to be covered by the local budget.",
+    "scope": "school",
+    "t": 10349,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "XbNndKEfgho",
+ "video_url": "https://www.youtube.com/watch?v=XbNndKEfgho",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T03:24:48Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

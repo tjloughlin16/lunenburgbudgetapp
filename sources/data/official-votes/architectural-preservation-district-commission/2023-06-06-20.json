@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-06-06",
  "docid": "20",
@@ -12,31 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve May meeting minutes",
+   "motion": "Approve the May 2023 meeting minutes.",
    "moved_by": "Sculimbrene",
    "seconded_by": "Lloyd",
-   "outcome": "passed 3-0-2",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "sculimbrene voted to approve, seconded by mbr lloyd; approved by dwyer, sculimbrene, lloyd; lockwood & mcgrath abstained"
+   "quote": "meeting minutes for may, sculimbrene voted to approve, seconded by mbr lloyd; approved by dwyer, sculimbrene, lloyd; lockwood & mcgrath abstained"
   },
   {
-   "motion": "Approve CTA 993 Massachusetts Ave",
+   "motion": "Approve CTA 993 Massachusetts Ave.",
    "moved_by": "Sculimbrene",
    "seconded_by": "Lockwood",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve cta 993 massachusetts ave by member sculimbrene, seconded by lockwood, approved by all present (lloyd, sculimbrene, lockwood, and dwyer)"
+   "quote": "motion to approve cta 993 massachusetts ave by member sculimbrene, seconded by lockwood, approved by all present"
   },
   {
-   "motion": "Elect Sculimbrene as chair and Lloyd to continue as clerk",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Elect Member Sculimbrene as chair and continue Lloyd as clerk.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "voted member sculimbrene as new chair, and lloyd to continue as clerk, voted yay by all members present."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Vote 1 records abstentions by Lockwood and McGrath, though McGrath is not listed in the meeting attendance (only Dwyer, Sculimbrene, Lloyd, and Lockwood are listed as present). Vote 3 does not explicitly state who moved or seconded the motion; only the result is recorded.",
- "cost_usd": 0.1089005
+ "note": "Plain text extract of a single-page-pair set of minutes; no scan. Richard McGrath is absent from the \"Present:\" line but is recorded as abstaining on the May minutes, so his attendance is not stated. No vote is recorded for adjournment (only the time, 9:11 PM), so none is listed. The minutes print no dollar figures; the budget items capture only the percentages in the CPA and tax-credit discussions. \"CTA 993\" is not expanded in the minutes. The vote count on the May minutes is not printed as a tally; the 3 approving and 2 abstaining are read from the names listed.",
+ "cost_usd": 0.01407071,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman dwyer, sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairman dwyer, sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman dwyer, sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman dwyer, sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "not stated",
+   "quote": "lockwood & mcgrath abstained"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "community preservation act - briefed by rebecca lantry - - signed into state law in 2000"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "New Facility Manager",
+   "status": "not stated",
+   "quote": "new facility manager chris ruth"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff-level follow-up: the board will pass information on the National Historical Tax Credit to the condo owner to help with repairs.",
+   "quote": "will pass on information to the condo owner to help assist with repairs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act matching funds",
+   "what_was_recorded": "Public comment described the Community Preservation Act as providing state matching funds based on property tax, and noted Lunenburg had no vote on it in 2002 and an effort to put it back on the ballot in 2024. No dollar figures were printed.",
+   "figures_as_printed": [
+    "0.5- 3%"
+   ],
+   "quote": "signed into state law in 2000, 0.5- 3% matching funds from state based off of taxes on property tax."
+  },
+  {
+   "topic": "National Historical Tax Credit for facility rehabs",
+   "what_was_recorded": "Old Business described a federal historic rehabilitation tax credit for facility rehabs, with possible additional state credit. No dollar figures were printed.",
+   "figures_as_printed": [
+    "up to 20%"
+   ],
+   "quote": "national historical tax credit program for facility rehabs, up to 20% federally"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "not stated",
+   "topic": "Community Preservation Act briefing",
+   "quote": "community preservation act - briefed by rebecca lantry - - signed into state law in 2000, 0.5- 3% matching funds from state based off of taxes on property tax."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Community Preservation Act",
+   "resolution": "briefing only, no action",
+   "quote": "community preservation act - briefed by rebecca lantry - - signed into state law in 2000"
+  },
+  {
+   "topic": "Review of minutes (May)",
+   "resolution": "approved, two abstentions",
+   "quote": "meeting minutes for may, sculimbrene voted to approve, seconded by mbr lloyd"
+  },
+  {
+   "topic": "Correspondence: website pictures request",
+   "resolution": "no action",
+   "quote": "looking for pictures to associate with the apdc for the new website."
+  },
+  {
+   "topic": "Old Business: National Historical Tax Credit",
+   "resolution": "information to be passed to the condo owner",
+   "quote": "national historical tax credit program for facility rehabs, up to 20% federally"
+  },
+  {
+   "topic": "New Business: new Facility Manager and Ritter building",
+   "resolution": "discussed, no action recorded",
+   "quote": "looking forward to the new working relationship with him."
+  },
+  {
+   "topic": "New Business: CTA 993 Massachusetts Ave",
+   "resolution": "approved",
+   "quote": "motion to approve cta 993 massachusetts ave by member sculimbrene, seconded by lockwood, approved by all present"
+  },
+  {
+   "topic": "New Business: election of chair and clerk",
+   "resolution": "Sculimbrene elected chair; Lloyd continues as clerk",
+   "quote": "voted member sculimbrene as new chair, and lloyd to continue as clerk, voted yay by all members present."
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "none",
+   "quote": "other business: 1) none"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "Ritter building",
+  "facility management",
+  "Community Preservation Act",
+  "historic tax credit",
+  "CTA 993 Massachusetts Ave",
+  "chair election",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,547 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2023-02-09",
+ "video_id": "olcG99iRSew",
+ "video_url": "https://www.youtube.com/watch?v=olcG99iRSew",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2023-02-09-olcG99iRSew.json",
+  "sha256": "79ea1c57b49c470b5ddd4bc9330d4e04544537ca3555c9043acc2112c6fa271e",
+  "caption_lines": 208,
+  "segments": 1688
+ },
+ "recording": {
+  "duration_s": 4361,
+  "duration": "1:12",
+  "spoken_chars": 51142,
+  "words_approx": 8523
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02092023-86",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-02-09-agenda-86.txt",
+   "path": "sources/meetings/finance-committee/2023-02-09-agenda-86.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02092023-86",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-02-09-minutes-86.txt",
+   "path": "sources/meetings/finance-committee/2023-02-09-minutes-86.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T02:35:42Z",
+  "cost_usd": 0.3692767
+ },
+ "minutes": {
+  "headline": "Finance Committee heard tax abatement and overlay risk (427 requests) and an ARPA option for trucks; no substantive votes.",
+  "summary": "The committee heard the town manager report a snow and ice overage and a health insurance deficit, then discussed the capital plan and whether ARPA funds could buy DPW trucks and an ambulance. Most of the meeting covered the overlay account, the roughly 427 abatement requests, and a Proposition 2.5 presentation by the chair. The only vote was adjournment; January 26 minutes were deferred.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr Menard",
+    "role": "member (to run next week's meeting)"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member / minutes taker"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director (referred to; possibly off the call)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 150,
+    "speaker_as_heard": "Peter beardmore 282 Pleasant Street",
+    "stated_role": "resident",
+    "topic": "Corrected his earlier capital plan remarks on DPW trucks: two already ordered and back-ordered, FY24 plan adds two more; noted town manager's reprioritization of items seven through 29 and the overlay backfill from free cash."
+   },
+   {
+    "t": 3985,
+    "speaker_as_heard": "Ron delacio 181 Reservoir Road",
+    "stated_role": "resident",
+    "topic": "Opposed using the pavement management plan line to cover the snow and ice deficit; said ARPA funds should pay for trucks instead."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "free-cash",
+   "health-insurance",
+   "public-comment",
+   "roads-and-dpw",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "transfers"
+  ],
+  "votes": [
+   {
+    "t": 4339,
+    "motion": "Adjourn the meeting",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 297,
+    "topic": "Health insurance line",
+    "what_was_said": "A projected deficit this year from enrollment changes; the town manager and finance director identified surpluses elsewhere to cover it."
+   },
+   {
+    "t": 317,
+    "topic": "FY23 snow and ice budget",
+    "what_was_said": "Currently over budget mainly from contractor dependence with four of seven trucks out of commission, higher contractor rates and salt costs.",
+    "figures_as_heard": [
+     "170 000",
+     "12 percent"
+    ]
+   },
+   {
+    "t": 362,
+    "topic": "Pavement management plan line",
+    "what_was_said": "The plan is to cover the snow deficit mainly from this operating line, plus a DPW salary surplus; the line has funds left this year.",
+    "figures_as_heard": [
+     "400 000",
+     "60 000"
+    ]
+   },
+   {
+    "t": 613,
+    "topic": "ARPA for DPW trucks and ambulance",
+    "what_was_said": "The select board suggested using ARPA to buy the trucks and ambulance, which would not free up other cash and would later be repaid via town meeting appropriation."
+   },
+   {
+    "t": 704,
+    "topic": "Special purpose stabilization fund",
+    "what_was_said": "The capital plan recommends using this fund for large vehicles; changing its purpose or using it to refund ARPA needs a two-thirds town meeting vote.",
+    "figures_as_heard": [
+     "986 000"
+    ]
+   },
+   {
+    "t": 1000,
+    "topic": "Overlay account",
+    "what_was_said": "The overlay budgeted this year was slightly exceeded by what the assessors raised; a deficit must be funded at town meeting or on the recap.",
+    "figures_as_heard": [
+     "120 000",
+     "116 000"
+    ]
+   },
+   {
+    "t": 1376,
+    "topic": "Abatement requests and overlay exposure",
+    "what_was_said": "About 427 abatement requests have been filed; a member roughly estimated the total exposure, and the town manager said she will recommend a conservative overlay amount and is reserving free cash.",
+    "figures_as_heard": [
+     "427",
+     "850 000",
+     "half a million dollars"
+    ]
+   },
+   {
+    "t": 1903,
+    "topic": "ARPA requests",
+    "what_was_said": "Requests exceed the ARPA funding available, with some already spent on covid items.",
+    "figures_as_heard": [
+     "5.2 million",
+     "3.5",
+     "4.8 million",
+     "480 000"
+    ]
+   },
+   {
+    "t": 2093,
+    "topic": "FY22 town revenue",
+    "what_was_said": "The chair presented revenue shares, with the tax levy about two-thirds of the total.",
+    "figures_as_heard": [
+     "47 million",
+     "63 and a quarter",
+     "9.4 million",
+     "3 million",
+     "2.3 million",
+     "two and a half million"
+    ]
+   },
+   {
+    "t": 2442,
+    "topic": "Tax rate",
+    "what_was_said": "The rate fell as valuations rose to stay within the levy limit.",
+    "figures_as_heard": [
+     "17.10",
+     "14.62"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 362,
+    "description": "Proposed interdepartmental transfer from the DPW pavement management plan line and DPW salary surplus to cover the snow and ice deficit",
+    "amount_as_heard": "400 000 left in line; 60 000 salary surplus",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 82,
+    "decision": "The March 7 meeting with the select board, school committee and local legislators was confirmed as involving the full finance committee."
+   },
+   {
+    "t": 3726,
+    "decision": "Approval of the January 26 minutes was deferred to the next meeting because of a correction."
+   },
+   {
+    "t": 4255,
+    "decision": "Upcoming budget-season meetings were scheduled with department presentations over the following weeks."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 150,
+    "topic": "Opening and announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 150,
+    "t_end": 275,
+    "topic": "Public comment on capital plan trucks",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 297,
+    "t_end": 571,
+    "topic": "Town manager report: health insurance and snow and ice deficit",
+    "resolution": "informational",
+    "tags": [
+     "transfers",
+     "roads-and-dpw",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 593,
+    "t_end": 1000,
+    "topic": "Capital plan and ARPA for vehicles",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 1000,
+    "t_end": 2000,
+    "topic": "Overlay account and abatement exposure",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 2008,
+    "t_end": 3705,
+    "topic": "Proposition 2.5 presentation and assessment discussion",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate",
+     "override"
+    ]
+   },
+   {
+    "t_start": 3705,
+    "t_end": 3769,
+    "topic": "Minutes",
+    "resolution": "tabled to next meeting",
+    "tags": []
+   },
+   {
+    "t_start": 3769,
+    "t_end": 3959,
+    "topic": "Committee reports and future topics",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 3985,
+    "t_end": 4250,
+    "topic": "Public comment and discussion on pavement management plan",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 4255,
+    "t_end": 4359,
+    "topic": "Upcoming meetings and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The adjournment vote result was not captured beyond the first 'aye'.",
+   "Several speakers are not identified and some exchanges are garbled.",
+   "Figures such as the ARPA and abatement amounts are inconsistent in the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3985,
+    "about": "A resident objected to using the pavement management plan line to cover the snow and ice deficit.",
+    "sides": "a resident against the town manager's proposed funding source",
+    "words_as_heard": "I disagree with this completely",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee took no substantive votes; the only vote was to adjourn, and approval of the January 26 minutes was deferred because of a correction.",
+    "t": 3726
+   },
+   {
+    "line": "The town manager reported a projected health insurance deficit and a snow and ice overage, to be covered mainly from other lines with surpluses.",
+    "t": 297
+   },
+   {
+    "line": "The committee discussed whether federal pandemic relief (ARPA) money could buy DPW trucks and an ambulance, to be repaid later by a town meeting appropriation.",
+    "t": 613
+   },
+   {
+    "line": "The committee reviewed the overlay account and the abatement requests filed, with the town manager planning a conservative overlay recommendation and reserving free cash.",
+    "t": 1376
+   },
+   {
+    "line": "Budget-season meetings with department presentations were scheduled over the following weeks.",
+    "t": 4255
+   }
+  ],
+  "why_it_matters": [
+   "Covering the snow and ice overage from the pavement management line could mean less road work, and the overlay and truck financing choices bear on the tax rate and on what town meeting is asked to vote.",
+   "Changing the special purpose stabilization fund's purpose, or using it to repay ARPA, would need a two-thirds vote at town meeting."
+  ],
+  "watch_next": [
+   "The next committee meeting, where approval of the January 26 minutes returns.",
+   "The department budget presentations scheduled in the weeks after this meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T02:35:50Z",
+   "cost_usd": 0.2233309
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02092023-86",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-02-09-minutes-86.txt",
+   "path": "sources/meetings/finance-committee/2023-02-09-minutes-86.pdf"
+  },
+  "official_sha256": "4a902a8e70ce09b54295fe88aa2eb93dd4f3ffdfe69fa828b0777c9d0961f108",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree that no votes were taken and that the snow and ice shortfall would be covered mainly from the DPW pavement management line, with a $60,000 salary surplus mentioned. Our minutes have many more figures (stabilization, ARPA, revenue, tax rate), while the official minutes add the public comment, the health insurance item and the Beardmore correction.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Snow and ice deficit transfer: source of funds",
+    "ours": "Proposed interdepartmental transfer from the DPW pavement management plan line and DPW salary surplus to cover the snow and ice deficit — 400 000 left in line; 60 000 salary surplus (discussed only)",
+    "official": "money to cover the increased cost of the snow and ice line will come from the pavement management line in the dpw's budget.",
+    "note": "Ours names two sources (pavement line and salary surplus); the official transfer names only the pavement line and mentions the salary surplus separately as 'could also go toward'. Both say no vote. Check the video near t=362 for which sources were actually proposed.",
+    "t": 362
+   },
+   {
+    "kind": "agree",
+    "about": "DPW salary surplus of $60,000",
+    "ours": "60 000 salary surplus",
+    "official": "there also appears to be a $60,000 surplus in the salary line for the dpw that could also go toward snow and ice.",
+    "note": "Same $60,000 figure, framed as a possible source in both.",
+    "t": 362
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Snow and ice overspend amount",
+    "ours": "FY23 snow and ice budget: 170 000, 12 percent",
+    "official": "snow and ice has gone over budget by $170,000 due to the increase in cost of salt, as well as the",
+    "note": "Ours labels 170,000 as the budget (with 12 percent); the official says it is the overspend. Check the recording at t=317 to see whether 170,000 is the overrun or the budget.",
+    "t": 317
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pavement management line balance of $400,000",
+    "ours": "Pavement management plan line: 400 000, 60 000",
+    "official": "",
+    "note": "The $400,000 remaining in the pavement line is not in the official minutes.",
+    "t": 362
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Special purpose stabilization fund $986,000",
+    "ours": "Special purpose stabilization fund: 986 000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 704
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay account figures 120,000 and 116,000",
+    "ours": "Overlay account: 120 000, 116 000",
+    "official": "",
+    "note": "Official gives no overlay dollar figures.",
+    "t": 1000
+   },
+   {
+    "kind": "agree",
+    "about": "Abatements: 427 requests and reserving free cash for overlay",
+    "ours": "Abatement requests and overlay exposure: 427, 850 000, half a million dollars",
+    "official": "ms. lemieux has recommended to reserve all free cash in order to fund the overlay account which covers abatements.",
+    "note": "Both record the overlay and abatement discussion with 427 abatements; the dollar exposure figures (850,000, half a million) are only in ours.",
+    "t": 1376
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA requests",
+    "ours": "ARPA requests: 5.2 million, 3.5, 4.8 million, 480 000",
+    "official": "",
+    "note": "ARPA discussion is not in the official minutes.",
+    "t": 1903
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY22 town revenue figures",
+    "ours": "FY22 town revenue: 47 million, 63 and a quarter, 9.4 million, 3 million, 2.3 million, two and a half million",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2093
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax rate 17.10 and 14.62",
+    "ours": "Tax rate: 17.10, 14.62",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2442
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Health insurance projected deficit",
+    "ours": "",
+    "official": "ms. lemieux reported the town accountant discovered a projected deficit regarding health insurance, but they've found surpluses in other areas of the budget to cover the deficit.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of prior minutes",
+    "ours": "Approval of the January 26 minutes was deferred to the next meeting because of a correction.",
+    "official": "",
+    "note": "Official minutes record no decisions and no deferral of the January 26 minutes. Check the official minutes for approval-of-minutes text and the recording at t=3726.",
+    "t": 3726
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "March 7 joint meeting confirmed",
+    "ours": "The March 7 meeting with the select board, school committee and local legislators was confirmed as involving the full finance committee.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 82
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming budget-season meetings scheduled",
+    "ours": "Upcoming budget-season meetings were scheduled with department presentations over the following weeks.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4255
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: who chaired and who was present",
+    "ours": "Chair (unnamed) (chair); Mr Menard (member (to run next week's meeting)); Amanda (member / minutes taker)",
+    "official": "present: chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo",
+    "note": "Official lists five members; none is named Amanda, so 'Amanda' may be a misheard name or a non-member. Check the roll in the video.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mr Menard",
+    "ours": "Mr Menard (member (to run next week's meeting))",
+    "official": "chris menard",
+    "note": "Same person; ours omits first name and role (vice-chair).",
+    "official_reading": "Chris Menard",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Town Manager present",
+    "ours": "Town Manager (town manager)",
+    "official": "guests: town manager heather lemieux, town accountant karen brochu, school committee and",
+    "note": "Both record the Town Manager attending.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Karen's role and attendance",
+    "ours": "Karen (finance director (referred to; possibly off the call))",
+    "official": "guests: town manager heather lemieux, town accountant karen brochu, school committee and",
+    "note": "Ours calls Karen finance director and possibly absent; the official lists Karen Brochu as town accountant guest. Check her title and whether she attended.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: Rhonda Lissio opposed pavement line use",
+    "ours": "",
+    "official": "rhonda lissio informed the committee that she is against using money from the pavement management line to fund the snow and ice deficit.",
+    "note": "Public comment opposing the transfer is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Beardmore dump truck correction",
+    "ours": "",
+    "official": "mr. beardmore corrected a statement he made about the fy24 capital plan requests for two dump trucks for the dpw at the last finance committee meeting.",
+    "note": "Not in our minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T02:36:36Z",
+   "cost_usd": 0.2465369
+  }
+ }
+}

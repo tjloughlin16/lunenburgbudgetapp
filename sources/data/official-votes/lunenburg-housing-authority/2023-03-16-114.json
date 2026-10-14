@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2023-03-16",
  "docid": "114",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of February 15, 2023",
+   "motion": "Approve the minutes of February 15, 2023.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tenant board member made a motion to approve the minutes; vice chair seconded, with all in favor."
+   "quote": "with no discussion, tenant board member made a motion to approve the minutes; vice chair seconded, with all in favor."
   },
   {
-   "motion": "approve the 2023 financials as presented",
+   "motion": "Approve the 2023 financials (January and February, 2023) as presented.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "tenant board member made a motion to approve the 2023 financials as presented; vice chair seconded, with all in favor."
   },
   {
-   "motion": "approve FY2023 Budget (Resolution 2023-5)",
+   "motion": "Approve FY23 Budget (Resolution 2023-5). Recorded under New Business as a February vote, reported in these March minutes.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "tenant board member motioned to approve fy23 budget; treasurer seconded the motion, with all in favor."
+   "quote": "in february, tenant board member motioned to approve fy23 budget; treasurer seconded the motion, with all in favor."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:37p.m.",
    "moved_by": "Vice Chair",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
@@ -45,6 +45,208 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; all votes are readable. Note: Resolution 2023-4 (Unrecoverable Quarterly Debt Write-off) was tabled to April, not voted on.",
- "cost_usd": 0.0799735
+ "note": "Text is macOS Vision OCR of a scanned document; some words may be misread (e.g. 'Administrative Assistance', occupancy percentages). Page 2 begins mid-sentence ('and approved the low bidder'), and items 4c through 5 do not appear, so the opening of the maintenance/capital item is missing from this text. The Vice Chair is never named and the Tenant Board Member is not tied to a name in the votes. Votes are recorded as 'all in favor' with no count, so outcome is 'passed'. The FY23 budget vote is recorded as taken in February and is reported here as a prior vote. No dollar figures appear anywhere in the text.",
+ "cost_usd": 0.01598561,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah Christen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair deborah christen asked for a roll call of members present: linda mcdonald-present, deborah christen-present"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "member (roll call)",
+   "status": "present",
+   "quote": "chair deborah christen asked for a roll call of members present: linda mcdonald-present, deborah christen-present"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "dale proulx, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie,"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie,"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "administrative assistance/special projects jade tavares, and off-site housing manager"
+  },
+  {
+   "name": "Moises Ramos",
+   "role": "Off-Site Housing Manager",
+   "status": "present",
+   "quote": "and off-site housing manager moises ramos. the chair declared a quorum present and opened the meeting at 2:01p.m."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Resolution 2023-4 (Unrecoverable Quarterly Debt Write-off) is tabled until April.",
+   "quote": "resolution 2023-4 unrecoverable quarterly debt write-off. this has been tabled until april."
+  },
+  {
+   "decision": "Administrative Assistance/Special Projects to register the Treasurer for MassNAHRO Virtual Legislative Day and email the information.",
+   "quote": "treasurer stated he would like to attend. administrative assistance/special projects to register treasurer and email the information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 budget (Resolution 2023-5)",
+   "what_was_recorded": "The FY23 budget, approved in February, is listed as Resolution 2023-5 and includes the Management Agreement/Fees; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "fy23 budget, which was approved last month by the board members, is now listed as resolution 2023-5. the budget includes the management agreement/fees."
+  },
+  {
+   "topic": "Financial review and Extraordinary Maintenance",
+   "what_was_recorded": "January and February 2023 financials were reviewed and a discussion was held on Extraordinary Maintenance; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the financials of january and february, 2023 were reviewed. a discussion was held regarding extraordinary maintenance."
+  },
+  {
+   "topic": "Unrecoverable quarterly debt write-off (Resolution 2023-4)",
+   "what_was_recorded": "The write-off resolution was tabled until April; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "resolution 2023-4 unrecoverable quarterly debt write-off. this has been tabled until april."
+  },
+  {
+   "topic": "Capital projects 667-1 (tree removal, electric panel)",
+   "what_was_recorded": "DHCD approval is pending for the electric panel bid and a designer is to be selected for tree removal; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "667-1 tree removal (fish# 162043) dhcd completed the scope of services to hire a designer."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opportunity for Public Comments",
+   "resolution": "no action (none offered)",
+   "quote": "1. opportunity for public comments - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting called to order and minutes",
+   "resolution": "minutes of February 15, 2023 approved",
+   "quote": "the chair declared a quorum present and opened the meeting at 2:01p.m.",
+   "tags": [
+    "quorum",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action (items reported)",
+   "quote": "treasurer stated he would like to attend. administrative assistance/special projects to register treasurer and email the information.",
+   "tags": [
+    "conferences",
+    "legislative day",
+    "snow storm",
+    "IT conference call"
+   ]
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "2023 financials approved",
+   "quote": "the financials of january and february, 2023 were reviewed.",
+   "tags": [
+    "financials",
+    "extraordinary maintenance"
+   ]
+  },
+  {
+   "topic": "Maintenance and capital projects",
+   "resolution": "reported, no action",
+   "quote": "667-1 tree removal (fish# 162043) dhcd completed the scope of services to hire a designer.",
+   "tags": [
+    "capital projects",
+    "DHCD",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Work order report",
+   "resolution": "reported, no action",
+   "quote": "for 667: there was a total of 25 with 20 completed and 5 open.",
+   "tags": [
+    "work orders",
+    "emergencies"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "reported, no action",
+   "quote": "we received 6 standard applications (5 elderly/young disabled and 1 family).",
+   "tags": [
+    "applications",
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action (none)",
+   "quote": "6. unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New business: debt write-off and FY23 budget",
+   "resolution": "Resolution 2023-4 tabled until April; FY23 budget (Resolution 2023-5) noted as approved in February",
+   "quote": "resolution 2023-4 unrecoverable quarterly debt write-off. this has been tabled until april.",
+   "tags": [
+    "debt write-off",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "no action (none)",
+   "quote": "8. other correspondence - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:37p.m.",
+   "quote": "there being no further business, vice chair made a motion to adjourn the meeting 2:37p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public housing",
+  "housing authority",
+  "budget",
+  "FY23 budget",
+  "financial report",
+  "debt write-off",
+  "capital projects",
+  "occupancy",
+  "waiting list",
+  "conferences",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

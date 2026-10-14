@@ -1,0 +1,428 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-03-28",
+ "video_id": "erYAto7Ja2w",
+ "video_url": "https://www.youtube.com/watch?v=erYAto7Ja2w",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-03-28-erYAto7Ja2w.json",
+  "sha256": "94574317e888ab704e4b48ab05eb1016f57fb3980e0b0cd474d08642656ccc3f",
+  "caption_lines": 204,
+  "segments": 1566
+ },
+ "recording": {
+  "duration_s": 4284,
+  "duration": "1:11",
+  "spoken_chars": 48223,
+  "words_approx": 8037
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03282023-24",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-03-28-agenda-24.txt",
+   "path": "sources/meetings/board-of-assessors/2023-03-28-agenda-24.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03282023-24",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-03-28-minutes-24.txt",
+   "path": "sources/meetings/board-of-assessors/2023-03-28-minutes-24.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T23:41:48Z",
+  "cost_usd": 0.3009141
+ },
+ "minutes": {
+  "headline": "Assessors voted 2-0 to appoint Select Board member Lou Franco as temporary meeting moderator, then went to executive session.",
+  "summary": "Most of the meeting was a dispute over whether and how a Select Board member could moderate the Board of Assessors during the lakefront property tax controversy. A motion to appoint Lou Franco was moved, seconded, amended (deleting a sentence limiting his speaking) and passed. Two residents spoke in public comment about executive session access and the land value increase calculation, and the board then entered executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "Lou Franco",
+    "role": "Select Board member serving as facilitator/proposed moderator",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Rich latarte / letart",
+    "role": "chair, Board of Assessors",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member, Board of Assessors",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Kevin Hassan",
+    "role": "member, Board of Assessors",
+    "remote": false
+   },
+   {
+    "name_as_heard": "CJ",
+    "role": "principal assessor",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Sheila",
+    "role": "minute taker",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1199,
+    "topic": "Asked about whether the moderator motion could be taken up when not on the agenda; said it was not reasonably anticipated so a vote was fair.",
+    "speaker_as_heard": "Carl luck 50 Sunset Lane"
+   },
+   {
+    "t": 1369,
+    "topic": "A resident objected to the moderator arrangement departing from the board's usual Robert's Rules practice and asked to hear the duties again."
+   },
+   {
+    "t": 3340,
+    "topic": "Asked when the board would publicly decide whether abatement applicants may attend discussion of their applications, and who is directing the process; urged letting residents into executive session.",
+    "speaker_as_heard": "Phyllis luck 50 Sunset Lane"
+   },
+   {
+    "t": 3595,
+    "topic": "Thanked board for correcting executive session wording; asked that motion include property addresses; formally requested the principal assessor explain the calculation of the land assessment increase for lake properties.",
+    "speaker_as_heard": "Carl"
+   },
+   {
+    "t": 3800,
+    "topic": "Prospective candidate suggested a formal liaison with the Select Board and Finance Committee and clearer communication and authority lines.",
+    "speaker_as_heard": "Jack rabbit"
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 248,
+    "motion": "Chair asked whether he would entertain a motion to approve minutes from February 22nd (not taken up then)",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 943,
+    "motion": "Move that Lou Franco be appointed temporary moderator for meetings dealing with the lakefront tax situation, role as outlined in his opening statement",
+    "moved_by": "Kevin",
+    "outcome": "passed 2-0 (as heard, with amendment; chair's vote count was confused)",
+    "procedural": false
+   },
+   {
+    "t": 1760,
+    "motion": "Amendment to delete the sentence limiting the moderator to responding only with the chair's permission",
+    "moved_by": "Chris",
+    "outcome": "passed 2-1",
+    "procedural": false
+   },
+   {
+    "t": 3276,
+    "motion": "Approve minutes of the February 22nd meeting",
+    "outcome": "passed (moved, seconded, all in favor aye)",
+    "procedural": true
+   },
+   {
+    "t": 4194,
+    "motion": "Enter executive session and not return to open session",
+    "outcome": "passed by roll call; all three members voted aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3658,
+    "topic": "Land assessment increase for lake properties",
+    "what_was_said": "A resident said the percentage increase in land value for all lake properties could not be explained to him and asked the board to direct the principal assessor to provide the calculation.",
+    "figures_as_heard": [
+     "135",
+     "135 percent"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3003,
+    "decision": "Lou Franco serves as moderator, and with the amendment he may respond directly to public questions without asking the chair each time."
+   },
+   {
+    "t": 3296,
+    "decision": "Public comment limited to the Lucks and Jack Rabbit, with about five minutes each."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 248,
+    "topic": "Open meeting law notice and Lou Franco's statement of moderator role",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 269,
+    "t_end": 940,
+    "topic": "Dispute over authority of an outside moderator and Robert's Rules",
+    "resolution": "referred to a motion",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 943,
+    "t_end": 3295,
+    "topic": "Motion to appoint Lou Franco as temporary moderator, amendment, and votes",
+    "resolution": "voted; amendment and motion passed",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3276,
+    "t_end": 3296,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 3296,
+    "t_end": 4194,
+    "topic": "Public comment: abatements, executive session access, land value calculation, liaison",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4194,
+    "t_end": 4290,
+    "topic": "Vote to enter executive session",
+    "resolution": "voted by roll call",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the moderator motion passed 2-0 or 3-0 is confused; the chair's count was garbled",
+   "Whether the February minutes date was 2023 or 2017 as heard",
+   "Exact wording of the executive session purpose was not captured",
+   "Identity of the resident speaker at around 1369"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 291,
+    "about": "A member challenged the authority of the outside moderator and where Robert's Rules allows one, after he called the meeting to order.",
+    "sides": "a board member against the moderator and chair's arrangement",
+    "words_as_heard": "a moderator who has elected himself to moderate",
+    "kind": "procedural fight"
+   },
+   {
+    "t": 497,
+    "about": "Member argued the board was already ignoring Robert's Rules by not having a motion, second and discussion.",
+    "sides": "a board member against the moderator",
+    "words_as_heard": "off the bat you're going against Robert's Rules of Order",
+    "kind": "procedural fight"
+   },
+   {
+    "t": 858,
+    "about": "A member objected to being told he had not stepped up to make the motion.",
+    "sides": "a board member against another member",
+    "words_as_heard": "I am not happy about being told I haven't stepped up to the plate",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1760,
+    "about": "A member proposed an amendment removing the sentence limiting the moderator, and members disagreed about the moderator's role.",
+    "sides": "one member for amendment; the chair and moderator against",
+    "words_as_heard": "I don't see that as the position of a moderator",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2202,
+    "about": "Dispute over whether the moderator's speaking is limited by the chair or the amendment frees him.",
+    "sides": "moderator and member for deleting vs. motion maker in favour of keeping",
+    "words_as_heard": "I'm putting the gag order on myself",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3403,
+    "about": "A resident criticised the board for no open meetings since December and a gag order on the assessor.",
+    "sides": "a resident against the board",
+    "words_as_heard": "who's driving this bus",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors passed a motion, 2-0 as heard, appointing Select Board member Lou Franco temporary moderator for meetings on the lakefront tax situation.",
+    "t": 943
+   },
+   {
+    "line": "The board amended the motion 2-1 to delete a sentence limiting the moderator to responding only with the chair's permission.",
+    "t": 1760
+   },
+   {
+    "line": "With the amendment, the moderator may answer public questions directly; public comment was limited to two named speakers at about five minutes each.",
+    "t": 3003
+   },
+   {
+    "line": "A resident formally asked the board to direct the principal assessor to explain how the land value increase for lake properties was calculated.",
+    "t": 3658
+   },
+   {
+    "line": "The board approved prior minutes, then entered executive session by roll call.",
+    "t": 4194
+   }
+  ],
+  "why_it_matters": [
+   "The lakefront assessment dispute affects the property tax bills of lake homeowners, and who runs the meeting shapes how residents can question the assessors.",
+   "Residents asked how the land value increase for lake properties was calculated and whether abatement applicants may attend discussion of their cases, and the minutes record no answer to either."
+  ],
+  "watch_next": [
+   "Whether the board directs the principal assessor to publish the calculation of the lake property land value increase.",
+   "When the board decides in public whether abatement applicants may attend discussion of their applications."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T23:41:56Z",
+   "cost_usd": 0.2218349
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03282023-24",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-03-28-minutes-24.txt",
+   "path": "sources/meetings/board-of-assessors/2023-03-28-minutes-24.pdf"
+  },
+  "official_sha256": "7701623a461114035c0757c3a45bb50125403b7d29529dcb9e71a7601fc04691",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on who was there and that Lou Franco was appointed moderator for the lakefront matter, but they differ on the vote count. Our minutes say 2-0 and then a separate 2-1 amendment vote. The official minutes record one re-vote at 2-1 and print no figures.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote appointing Lou Franco as temporary moderator",
+    "ours": "[t=943] Move that Lou Franco be appointed temporary moderator for meetings dealing with the lakefront tax situation... — passed 2-0 (as heard, with amendment; chair's vote count was confused)",
+    "official": "a new vote ensued with the outcome of 2 (two) in favor and 1 (one) opposed to appoint lou franco as a temporary moderator with an amendment to the agreement.",
+    "note": "Our minutes give 2-0 (and say the chair's count was confused); the official minutes record a re-vote at 2-1. Check the recording around t=943 to t=1760 to see how many votes were taken and the final tally.",
+    "t": 943
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Separate amendment vote on the moderator's limit",
+    "ours": "[t=1760] Amendment to delete the sentence limiting the moderator to responding only with the chair's permission — passed 2-1",
+    "official": "",
+    "note": "Our minutes record the amendment as its own 2-1 vote. The official minutes show only a 2-1 vote on the appointment 'with an amendment' and no separate amendment vote. Check whether there were two votes or one.",
+    "t": 1760
+   },
+   {
+    "kind": "agree",
+    "about": "Lou Franco as moderator for the lakefront matter",
+    "ours": "Lou Franco serves as moderator, and with the amendment he may respond directly to public questions without asking the chair each time.",
+    "official": "relative to the lakefront tax situation. lou explained his limited functions working with the boa chairman.",
+    "note": "Both tie Franco's role to the lakefront tax situation. Only ours spells out the amendment's content.",
+    "t": 3003
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Land assessment increase for lake properties",
+    "ours": "[t=3658] Land assessment increase for lake properties: 135, 135 percent",
+    "official": "",
+    "note": "The official minutes print no dollar figure or percentage. The figure comes from captions and is unconfirmed.",
+    "t": 3658
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public comment limited to the Lucks and Jack Rabbit, about five minutes each",
+    "ours": "Public comment limited to the Lucks and Jack Rabbit, with about five minutes each.",
+    "official": "",
+    "note": "The official minutes record what the three speakers said but not the limit on their comment. The name 'Jack Rabbit' is probably the caption reading of John Rabbit.",
+    "t": 3296
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session minutes will not be released",
+    "ours": "",
+    "official": "executive session minutes will not be released.",
+    "note": "This is a decision recorded only in the official minutes. Our minutes have no matching item.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Kevin Hassan vs Kevin Fish",
+    "ours": "Kevin Hassan (member, Board of Assessors)",
+    "official": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish.",
+    "note": "Same member, with the name misheard by the captions.",
+    "official_reading": "Kevin Fish"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chris vs Christine Higdon",
+    "ours": "Chris (member, Board of Assessors)",
+    "official": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish.",
+    "note": "Our minutes give only a first name for the same member.",
+    "official_reading": "Christine Higdon"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair's name",
+    "ours": "Rich latarte / letart (chair, Board of Assessors)",
+    "official": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish.",
+    "note": "Same chair, with the name spelled variously in the captions.",
+    "official_reading": "Richard H. Letarte"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: principal assessor, minute taker, Lou Franco",
+    "ours": "CJ (principal assessor); Sheila (minute taker); Lou Franco (Select Board member)",
+    "official": "also present principal assessor cj carroll, rena swezey and administrative assessing assistant, sheila craigen",
+    "note": "Same people, though ours give first names only and describe Sheila as the minute taker."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Rena Swezey attendee",
+    "ours": "",
+    "official": "also present principal assessor cj carroll, rena swezey and administrative assessing assistant, sheila craigen",
+    "note": "The official minutes list Rena Swezey as present, and ours do not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T23:42:43Z",
+   "cost_usd": 0.23619289999999998
+  }
+ }
+}

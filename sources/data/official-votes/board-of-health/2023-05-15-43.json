@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-05-15",
  "docid": "43",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve prior meeting minutes from May 1, 2023",
+   "motion": "Approve the minutes of May 1, 2023.",
    "moved_by": "Normandin",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "on motion by normandin and second by fortin, the above minutes were approved. all in favor."
   },
   {
-   "motion": "Approve variances for 131 Cove Road: groundwater offset from 4 feet to 3 feet, offset to cellar wall from 10 feet to 5 feet, and 1000 gallon plastic tank",
+   "motion": "Approve the variances requested at 131 Cove Road (groundwater offset from 4 feet to 3 feet; offset to cellar wall from 10 feet to 5 feet).",
    "moved_by": "Normandin",
    "seconded_by": "Watters",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "after discussion and on motion by normandin and second by watters, the variances were approved. all in favor."
   },
   {
-   "motion": "Allow property addition with conditions: no further expansion, loft cannot be used as bedroom, deeded restriction limiting structure to four rooms and one bedroom",
+   "motion": "Allow the addition to the property (not named in the minutes) with conditions: no further expansion, no change to the loft layout and no use as a bedroom, and a deeded restriction limiting the structure to four rooms and one bedroom.",
    "moved_by": "Emond",
    "seconded_by": "Normandin",
    "outcome": "passed 4-1",
@@ -36,7 +36,7 @@
    "quote": "after discussion and on motion by emond and second by normandin, the board voted to allow the addition with the following conditions:"
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting at 8:20 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Normandin",
    "outcome": "passed",
@@ -45,6 +45,143 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. Roll call vote details provided for motion 3: Emond (Yes), Fortin (Yes), Watters (Yes), Normandin (Yes), Jewell (No).",
- "cost_usd": 0.0745555
+ "note": "Text is macOS Vision OCR of the minutes, so quotes are copied as the OCR rendered them (e.g. \\\"board of behalf\\\"). Page 2's addition is not tied to a street address in the text; the property is unnamed, so the vote is recorded against the addition as described. Attendance is not stated anywhere; attendee status 'present' for the five board members is inferred from the roll call and the presenters from their own statements. The minutes print no dollar figures (the 1000 gallon tank is a capacity, not a cost), so budget_items and transfers are empty. No public comment section is printed; Perry Jewell appears in the roll call, so his role as board member versus member of the public cannot be confirmed from the text. The 77 Peninsula Drive item records no motion. The minutes do not print a date; 2023-05-15 comes from the meeting metadata supplied with the request.",
+ "cost_usd": 0.013936110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emond",
+   "role": "Chairman (as printed: \"Chairman Emond\")",
+   "status": "present",
+   "quote": "roll call vote: emond - yes fortin - yes watters - yes normandin - yes jewell - no"
+  },
+  {
+   "name": "Fortin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: emond - yes fortin - yes watters - yes normandin - yes jewell - no"
+  },
+  {
+   "name": "Watters",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: emond - yes fortin - yes watters - yes normandin - yes jewell - no"
+  },
+  {
+   "name": "Normandin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: emond - yes fortin - yes watters - yes normandin - yes jewell - no"
+  },
+  {
+   "name": "Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: emond - yes fortin - yes watters - yes normandin - yes jewell - no"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "engineer that designed the plan for the replacement septic system; met with the board on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board of behalf of the owner. the owner of this property advised that the"
+  },
+  {
+   "name": "Rob Novella",
+   "role": "prospective purchaser",
+   "status": "present",
+   "quote": "rob and lisa novella met with the board to discuss retaining the drilled well for irrigation purposes."
+  },
+  {
+   "name": "Lisa Novella",
+   "role": "prospective purchaser",
+   "status": "present",
+   "quote": "rob and lisa novella met with the board to discuss retaining the drilled well for irrigation purposes."
+  },
+  {
+   "name": "Mr. Roy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. roy stated that the upstairs loft area has not been designed as a bedroom."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "perry jewell stated that the size of the livable area will double and he believes is outside of what can be"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "At 77 Peninsula Drive, the dug well is to be destroyed and the drilled well fully disconnected from the house, with the drilled well kept as an irrigation well; the current owner will hire a contractor and submit the paperwork. No vote was recorded.",
+   "quote": "the current owner will hire a contractor and the necessary paperwork will be submitted to accomplish this."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval, May 1, 2023",
+   "resolution": "approved",
+   "quote": "on motion by normandin and second by fortin, the above minutes were approved. all in favor.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "131 Cove Road septic replacement variances",
+   "resolution": "approved (variances for groundwater and cellar wall offsets)",
+   "quote": "doug smith met with the board of behalf of the owner. the owner of this property advised that the system on this site is in failure.",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "77 Peninsula Drive: retaining drilled well for irrigation",
+   "resolution": "no action; well conditions stated by chair, no vote recorded",
+   "quote": "rob and lisa novella met with the board to discuss retaining the drilled well for irrigation purposes.",
+   "tags": [
+    "well",
+    "irrigation",
+    "septic",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Home addition on an unnamed property (purchased October 2022)",
+   "resolution": "approved with conditions, 4-1",
+   "quote": "what is being proposed is adding additional living space to the property.",
+   "tags": [
+    "addition",
+    "deed restriction",
+    "bedrooms",
+    "lot size"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 pm",
+   "quote": "having no further matters before the board and on motion by fortin and seconded by normandin, the meeting was adjourned at 8:20 pm, all in favor:",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic systems",
+  "variances",
+  "private wells",
+  "irrigation",
+  "home addition",
+  "deed restriction",
+  "Lunenburg",
+  "2023"
+ ],
+ "dropped_unquoted_by_field": {}
 }

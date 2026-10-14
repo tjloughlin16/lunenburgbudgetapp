@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee-appointing-committee",
  "meeting_date": "2023-06-27",
  "docid": "809",
@@ -12,15 +12,82 @@
  },
  "votes": [
   {
-   "motion": "Appoint Chris Menard to the committee",
-   "moved_by": "Carol Archambault",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "unanimously passed",
+   "motion": "Appoint Chris Menard (current member, seeking re-appointment).",
+   "moved_by": "Ms. Archambault",
+   "seconded_by": "Mr Alonzo",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms. archambault made a motion to appoint mr. menard, mr alonzo seconded. the vote was unanimous."
+   "quote": "at the conclusion of the interviews ms. archambault made a motion to appoint mr. menard, mr alonzo seconded. the vote was unanimous."
+  },
+  {
+   "motion": "Appoint Jean Russell (new applicant for a term).",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Archambault",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "appoint ms. russell, and ms. archambault seconded. the vote was unanimous."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR extraction from macOS Vision. Some garbled text at end of page (term expiration dates) but the two votes on appointments are clearly legible.",
- "cost_usd": 0.09161749999999999
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with garbled lines. The second motion's opening words are interrupted by stray OCR text (\"Thereafter Mr. Alonzo made a motion to\" is followed by noise before \"appoint Ms. Russell\"), so its quote starts at \"appoint\". Name spellings in the OCR noise (\"Mevard's\", \"Mr, MeNard'S\") are misreadings; the clean lines print Mr. Menard. The term-expiry line is unreadable and was not recorded. The closing line (\"The meeting concluded at\") has no time and no adjournment vote is printed. Both votes are recorded as unanimous with no tally printed, so the outcome is \"passed\" rather than a count. Attendance for the two interviewees is implied by the interviews, not stated outright.",
+ "cost_usd": 0.012705210000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Murphy",
+   "role": "Moderator, Chair",
+   "status": "present",
+   "quote": "tim murphy moderator, tom alonzo select board, carol archambault school committee"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "tim murphy moderator, tom alonzo select board, carol archambault school committee"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "tim murphy moderator, tom alonzo select board, carol archambault school committee"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "current member, seeking re-appointment",
+   "status": "present",
+   "quote": "chris menard, current member, seeking re-appointment"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "new applicant for a term",
+   "status": "present",
+   "quote": "jean russell new applicant for a term"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Interviews and appointments: Chris Menard and Jean Russell",
+   "resolution": "appointed both; each motion passed unanimously",
+   "quote": "the only business of the committee was to interview, and consider the follow:",
+   "tags": [
+    "appointments",
+    "interviews",
+    "board membership",
+    "reappointment"
+   ]
+  }
+ ],
+ "tags": [
+  "appointments",
+  "interviews",
+  "board membership",
+  "reappointment",
+  "Finance Committee Appointing Committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-02-15",
  "docid": "68",
@@ -12,39 +12,304 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of February 1, 2023",
-   "moved_by": "Richard Tremblay",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
+   "motion": "Approve the minutes of the February 1, 2023 meeting.",
+   "moved_by": "RT",
+   "seconded_by": "ML",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "minutes of previous meetings - february 1st, 2023 rt/ml m/s to approve. roll call vote, unanimous to approve."
+   "quote": "rt/ml m/s to approve. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve authorization to hire beaver consultant for viewing platform at Cowdry Conservation Area",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed",
+   "motion": "Authorize hiring a beaver consultant for the viewing platform at Cowdry Conservation Area.",
+   "moved_by": "ML",
+   "seconded_by": "RT",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ml/rt m/s to approve authorization of hiring beaver consultant for viewing platform at cowdry conservation area. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve purchase order for Voss Signs boundary markers for no more than $400 for Lunenburg Conservation Land boundaries",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Authorize a purchase order to Voss Signs for boundary markers for no more than $400 for Lunenburg Conservation Land boundaries.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "jv/cc m/s to approve authorization on po for voss signs boundary markers for no more than $400 in regards to lunenburg conservation land boundaries. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "rb/cc m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0763225
+ "note": "Plain extracted text, not a scan. Four motions are recorded, each as a roll-call vote recorded only as 'unanimous' with no per-member tally, so counts are not printed. Meeting held via Zoom. Public comment is recorded only as 'None'. Anna Petrie's presence is inferred from her reporting ('AP states'), not from an attendance line. Quotes with double spaces or line breaks were collapsed to single spaces.",
+ "cost_usd": 0.01673611,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, rb, ml, jv, cc, rt absent: mw"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "ap states that the trailer has been moved."
+  },
+  {
+   "name": "Robert Galloni",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "robert galloni is in attendance to represent himself."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Enforcement Order for 23 Cove Road stays open until the Galloni family has taken down the greenhouse and informed the Conservation Administrator.",
+   "quote": "bp states that the enforcement order will stay open until the galloni's have taken down the greenhouse and informed the conservation administrator."
+  },
+  {
+   "decision": "Enforcement order EO 48 Oak Ridge is to be on the agenda for the March 1st meeting.",
+   "quote": "eo 48 oak ridge: will be on for march 1st meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beaver consultant for Cowdry Conservation Area viewing platform",
+   "what_was_recorded": "Authorization to hire a beaver specialist or consultant was approved; the minutes print no fee or price.",
+   "figures_as_printed": [],
+   "quote": "bp would like to have authorization to hire a beaver specialist/consultant for the wildlife viewing area for cowdry conservation area."
+  },
+  {
+   "topic": "Timber Rights Fund balance",
+   "what_was_recorded": "The chair presented the Timber Rights Fund balance together with anticipated dues and surplus; no action was recorded.",
+   "figures_as_printed": [
+    "$20,639.00"
+   ],
+   "quote": "bp presents timber rights fund balance of $20,639.00 and future anticipated dues and surplus from the beaver solutions, trails grant, and rayno timber harvesting."
+  },
+  {
+   "topic": "Boundary markers purchase, Voss Signs",
+   "what_was_recorded": "A purchase order to Voss Signs for boundary markers was approved for no more than this amount.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "jv/cc m/s to approve authorization on po for voss signs boundary markers for no more than $400"
+  },
+  {
+   "topic": "Hollis Road residence carpet replacement",
+   "what_was_recorded": "Two quotes were received for replacing carpet, with a third awaited; sub floors are reported rotted. No decision recorded.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "ml has received two quotes estimating around $2000 for replacing carpet and waiting on a third quote."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "approved",
+   "quote": "rt/ml m/s to approve. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment: 23 Cove Road enforcement",
+   "resolution": "enforcement order stays open pending greenhouse removal",
+   "quote": "bp states that the enforcement order will stay open until the galloni's have taken down the greenhouse and informed the conservation administrator.",
+   "tags": [
+    "enforcement",
+    "greenhouse",
+    "Cove Road"
+   ]
+  },
+  {
+   "topic": "New public hearings",
+   "resolution": "no action; none scheduled",
+   "quote": "new public hearings no new hearings",
+   "tags": [
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Continued public hearings",
+   "resolution": "no action; none continued",
+   "quote": "continued public hearings no continued hearings",
+   "tags": [
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Beaver site assessment authorization",
+   "resolution": "approved",
+   "quote": "bp would like to have authorization to hire a beaver specialist/consultant for the wildlife viewing area for cowdry conservation area.",
+   "tags": [
+    "beaver",
+    "Cowdry Conservation Area",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Timber Rights Fund balance",
+   "resolution": "presented; no action recorded",
+   "quote": "bp presents timber rights fund balance of $20,639.00 and future anticipated dues and surplus from the beaver solutions, trails grant, and rayno timber harvesting.",
+   "tags": [
+    "timber rights fund",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Boundary markers purchase",
+   "resolution": "approved up to $400",
+   "quote": "bp would like authorization for boundary markers purchases for property boundaries on conservation land.",
+   "tags": [
+    "boundary markers",
+    "land boundaries"
+   ]
+  },
+  {
+   "topic": "Encroachment list update",
+   "resolution": "123 Old Farm Road requested off list; 26 Mulpus Road kept on until shed removed",
+   "quote": "ap states that the trailer has been moved. bp requests to have property taken off encroachment list.",
+   "tags": [
+    "encroachment",
+    "Old Farm Road",
+    "Mulpus Road"
+   ]
+  },
+  {
+   "topic": "Grant updates",
+   "resolution": "no updates",
+   "quote": "grant updates: no updates.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "no updates",
+   "quote": "budget update no updates.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "no action; quotes pending; tractor removal email sent",
+   "quote": "ml has received two quotes estimating around $2000 for replacing carpet and waiting on a third quote.",
+   "tags": [
+    "Hollis Road",
+    "maintenance",
+    "carpet"
+   ]
+  },
+  {
+   "topic": "Administrative determinations, permits, compliance, project changes",
+   "resolution": "none, all N/A",
+   "quote": "administrative determination: n/a",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Enforcement actions and hearings",
+   "resolution": "status reported; EO 48 Oak Ridge set for March 1",
+   "quote": "eo 54 pine grove: still submitting.",
+   "tags": [
+    "enforcement",
+    "Oak Ridge",
+    "Pine Grove",
+    "Sunset Ave"
+   ]
+  },
+  {
+   "topic": "Open space and land use: Howard Street driveway, timber sales, conservation land improvements",
+   "resolution": "no action; DPW quote pending; volunteers responded for signs",
+   "quote": "bp states that he is getting a quote from the dpw.",
+   "tags": [
+    "open space",
+    "Howard Street",
+    "volunteers",
+    "signs"
+   ]
+  },
+  {
+   "topic": "Committee reports: Lake Shirley parcel",
+   "resolution": "reported; no action recorded",
+   "quote": "bp continues to state that surrounding property owners have come forward with complaints in response to this proposal.",
+   "tags": [
+    "Lake Shirley",
+    "Parks and Recreation",
+    "boat launch",
+    "open space transfer"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "enforcement orders",
+  "encroachment",
+  "beaver management",
+  "Cowdry Conservation Area",
+  "boundary markers",
+  "timber rights fund",
+  "Lake Shirley boat launch",
+  "Hollis Road residence",
+  "open space",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

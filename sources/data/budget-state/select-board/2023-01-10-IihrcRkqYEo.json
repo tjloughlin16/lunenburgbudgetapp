@@ -1,0 +1,65 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2023-01-10",
+ "source": {
+  "sha256": "ae5f5b1d3f161f2361fb7d5b41b3cef061da0544b10d53e32fc76c235e79a2d0",
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-01-10-IihrcRkqYEo.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "116 thousand dollars",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "town",
+    "statement": "A resident said the amount set aside for abatements was this figure.",
+    "status": "announced",
+    "t": 2866,
+    "who": "a resident"
+   },
+   {
+    "amount_as_heard": "14.62",
+    "fiscal_year": 2023,
+    "kind": "levy",
+    "scope": "town",
+    "statement": "Tax rate was set at this figure per thousand for FY2023.",
+    "status": "announced",
+    "t": 84,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "abatement funding",
+    "condition": "if that is what is needed",
+    "fiscal_year": 2023,
+    "prediction": "A town meeting before the May town meeting may be called to reallocate funds if needed.",
+    "scope": "town",
+    "t": 7839,
+    "who": "the chair"
+   },
+   {
+    "about": "overlay for abatements",
+    "condition": "as people get abatements",
+    "fiscal_year": 2023,
+    "prediction": "Partial abatements could result if the overlay lacks money.",
+    "scope": "town",
+    "t": 7322,
+    "who": "the vice chair"
+   }
+  ]
+ },
+ "video_id": "IihrcRkqYEo",
+ "video_url": "https://www.youtube.com/watch?v=IihrcRkqYEo",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T03:38:16Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

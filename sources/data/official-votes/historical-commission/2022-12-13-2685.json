@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2022-12-13",
  "docid": "2685",
@@ -12,19 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the November meeting",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the November meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes of november meeting by richard mcgrath were read and approved."
   },
   {
-   "motion": "Hold a public hearing for demo delay application by Dan and Jean Proctor for property at 1325 Mass Ave",
+   "motion": "Hold a public hearing on the demo delay application from Dan and Jean Proctor for 1325 Mass Ave.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "vote taken, all in favor for a public hearing."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0916565
+ "note": "Single-page plain-text extraction, no scan indicated. No vote counts, movers or seconders are printed for any motion. The November minutes approval and the demo-delay public hearing vote are recorded as passed with no count. Adjournment at 7:55 is recorded without a vote. No public comment section is printed; Becky Lantry takes part in discussion as a former chair, not as public comment. Jennifer Sanderson's role is not printed; she appears only as the signatory. Heather is named as taking action but her role and attendance are not stated.",
+ "cost_usd": 0.013942610000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard mcgrath called the meeting to order at 7:04 with a quorum present."
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "Former Chair",
+   "status": "present",
+   "quote": "former chair becky lantry was also present."
+  },
+  {
+   "name": "Dan and Jean Proctor",
+   "role": "applicant (demo delay, 1325 Mass Ave.)",
+   "status": "not stated",
+   "quote": "application for demo delay from dan and jean proctor for property located at 1325 mass ave."
+  },
+  {
+   "name": "Heather",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather is looking into it."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "meeting adjourned at 7:55. next meeting 1/10/2023 jennifer sanderson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Remaining funds to be used for signage.",
+   "quote": "use remaining funds for signage."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "K-House survey matching funds",
+   "what_was_recorded": "The commission says the town needs to raise a matching amount for the K-House survey grant; a Ledger article on the grant is noted and Heather is looking into it.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "we need the town to come up with $25,000."
+  },
+  {
+   "topic": "Remaining funds for signage",
+   "what_was_recorded": "Under the budget item, the commission directs that remaining funds be used for signage; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "use remaining funds for signage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of November minutes",
+   "resolution": "approved",
+   "quote": "minutes of november meeting by richard mcgrath were read and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Demo delay application, 1325 Mass Ave.",
+   "resolution": "approved for public hearing",
+   "quote": "vote taken, all in favor for a public hearing.",
+   "tags": [
+    "demolition delay",
+    "public hearing",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Town census and slavery records",
+   "resolution": "discussed; no action recorded",
+   "quote": "denotes slaves in its records.",
+   "tags": [
+    "town census",
+    "history"
+   ]
+  },
+  {
+   "topic": "K-House survey grant matching funds",
+   "resolution": "discussed; Heather looking into it",
+   "quote": "we need the town to come up with $25,000.",
+   "tags": [
+    "K-House survey",
+    "grant",
+    "matching funds"
+   ]
+  },
+  {
+   "topic": "68 Elm St. owner search",
+   "resolution": "in progress; looking for owner",
+   "quote": "68 elm st. looking into finding owner.",
+   "tags": [
+    "68 Elm St",
+    "property owner"
+   ]
+  },
+  {
+   "topic": "Permits and policing of activities",
+   "resolution": "discussed; suggested contacting other APDC communities",
+   "quote": "discussion with becky lantry regarding whether people are pulling permits, and how we can better police activities.",
+   "tags": [
+    "permits",
+    "enforcement",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Budget: signage",
+   "resolution": "remaining funds to go to signage",
+   "quote": "use remaining funds for signage.",
+   "tags": [
+    "budget",
+    "signage"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "public hearing",
+  "historic preservation",
+  "K-House survey",
+  "grant matching funds",
+  "budget",
+  "signage",
+  "town census",
+  "permits",
+  "1325 Mass Ave",
+  "68 Elm St"
+ ],
+ "dropped_unquoted_by_field": {}
 }

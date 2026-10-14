@@ -1,0 +1,66 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2023-02-09",
+ "source": {
+  "sha256": "79ea1c57b49c470b5ddd4bc9330d4e04544537ca3555c9043acc2112c6fa271e",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2023-02-09-olcG99iRSew.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "170 000",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Snow and ice budget is over by about this amount this year.",
+    "status": "announced",
+    "t": 317,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2023,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash is being reserved for a possible overlay deficit pending the abatement picture.",
+    "status": "announced",
+    "t": 1167,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "986 000",
+    "fiscal_year": 2024,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Capital plan recommends using this from the special purpose stabilization fund for vehicles.",
+    "status": "proposed",
+    "t": 704,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "overlay deficit",
+    "condition": "if abatements approved exceed available free cash",
+    "fiscal_year": 2024,
+    "prediction": "Abatements could exceed free cash and require stabilization money at town meeting.",
+    "scope": "town",
+    "t": 1753,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "olcG99iRSew",
+ "video_url": "https://www.youtube.com/watch?v=olcG99iRSew",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T02:35:50Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

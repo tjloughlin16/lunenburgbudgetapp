@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-04-10",
  "docid": "178",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the March 13th, 2023 minutes",
+   "motion": "Approve the minutes of March 13th, 2023.",
    "moved_by": "P.Lincoln",
    "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "march 13th, 2023 minutes approved • motion - p.lincoln, 2nd f.beall, passed"
+   "quote": "motion - p.lincoln, 2nd f.beall, passed"
   },
   {
-   "motion": "create a policy authorizing the use of appropriate equipment for recording events to ensure quality control",
+   "motion": "Create a policy that PAAC will use appropriate equipment, in their technical judgment, to record an event, so as to insure quality control.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "not stated",
@@ -28,15 +28,138 @@
    "quote": "motion to create said policy (f.beall, 2nd p.lincoln)"
   },
   {
-   "motion": "adopt the personal use policy pending town council review",
+   "motion": "Adopt the personal use policy (PAAC employees and volunteers use PAC equipment for PAC assignments, with managerial-approved exceptions and a liability waiver), pending town council review.",
    "moved_by": "P.Sarapas",
    "seconded_by": "P.Lincoln",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion to adopt the policy, pending town council review, p.sarapas, 2nd p.lincoln"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P.Sarapas",
+   "seconded_by": "F.Beall",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion - p.sarapas, 2nd f.beall - passed"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.11423549999999999
+ "dropped_unquoted": 0,
+ "note": "Text extracted from a single page pair; no scan issues. Vote outcomes are not recorded for the table-mic policy motion or the personal use policy motion, so both are 'not stated' rather than passed. No roll-call tallies are printed for any motion. The chair is not named. Spelling varies within the minutes (PACC/PAAC/PAC; Suldonik/Sudolnik), recorded here as printed. Public comments, committee comments and communications are each recorded as 'None'. The budget balance is the only dollar figure printed. Eric Foster and Nathan (CASTUS) are mentioned but did not take part in this meeting, so they are not listed as attendees.",
+ "cost_usd": 0.01368481,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "P.Sarapas to check copyright guidelines for the new 'Movie Talk' show; J.McLaughlin to check via the Public Access Board for information.",
+   "quote": "p.sarapas will check copyright guidelines"
+  },
+  {
+   "decision": "Schedule a dry run at HS/MS later in the month, after the auditorium simulation at TCP.",
+   "quote": "later in the month schedule a dry run at hs/ms"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget balance",
+   "what_was_recorded": "The manager reported the current budget balance.",
+   "quote": "budget balance $954,291.60",
+   "figures_as_printed": [
+    "$954,291.60"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "march 13th, 2023 minutes approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; table-mic policy motion made; Movie Talk checks assigned",
+   "quote": "hired eric foster as the production technician.",
+   "tags": [
+    "staffing",
+    "programming",
+    "equipment",
+    "budget",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Personal use policy update",
+   "resolution": "motion to adopt, pending town council review; outcome not recorded",
+   "quote": "was presented by f.beall and discussed.",
+   "tags": [
+    "policy",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:13 pm; next meeting May 8th, 6:00 pm",
+   "quote": "meeting adjourned at 7:13 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "cable committee",
+  "policy",
+  "equipment",
+  "programming",
+  "staffing",
+  "budget",
+  "Water District meeting audio",
+  "personal use policy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

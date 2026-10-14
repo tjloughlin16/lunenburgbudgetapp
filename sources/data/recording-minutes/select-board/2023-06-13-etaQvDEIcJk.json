@@ -1,0 +1,681 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-06-13",
+ "video_id": "etaQvDEIcJk",
+ "video_url": "https://www.youtube.com/watch?v=etaQvDEIcJk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-06-13-etaQvDEIcJk.json",
+  "sha256": "53d25df1dead73bc0b579c58ddf28b7b1fefec6c3a56b0e8e0640a69627ad039",
+  "caption_lines": 588,
+  "segments": 5252
+ },
+ "recording": {
+  "duration_s": 12233,
+  "duration": "3:23",
+  "spoken_chars": 175367,
+  "words_approx": 29227
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06132023-231",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-06-13-agenda-231.txt",
+   "path": "sources/meetings/select-board/2023-06-13-agenda-231.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06132023-231",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-06-13-minutes-231.txt",
+   "path": "sources/meetings/select-board/2023-06-13-minutes-231.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-12T23:11:07Z",
+  "cost_usd": 0.4681415
+ },
+ "minutes": {
+  "headline": "Board heard ARPA requests from library, food pantry and Boys & Girls Club, made annual appointments, and deferred the retiree COLA vote to next week.",
+  "summary": "The Select Board interviewed appointment candidates, then heard ARPA funding presentations from the Library, the Lunenburg food pantry and the Boys and Girls Club, followed by a board discussion of the overall ARPA list. The board voted on the annual board appointments, town manager ratifications and police reappointments, took no action on Sunset Lane parking, and put the Worcester County retirement COLA vote on next week's agenda.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (Mr Jeffries)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Franco / Lou",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Alonso / Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Select woman M Key",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Caesar",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr Pease",
+    "role": "Conservation Commission chair"
+   },
+   {
+    "name_as_heard": "Muir Hammond",
+    "role": "library director (presenter)"
+   },
+   {
+    "name_as_heard": "Harry kubets",
+    "role": "library trustees chair (presenter)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 212,
+    "topic": "Resident thanked the DPW for painting center lines on town roads.",
+    "speaker_as_heard": "Pete Lincoln",
+    "stated_role": "resident"
+   },
+   {
+    "t": 8656,
+    "topic": "Green committee chair urged that ARPA and capital requesters consult the green committee; said state funds could cut HVAC cost and favoured solar over a generator.",
+    "speaker_as_heard": "Dave flat",
+    "stated_role": "chair of green committee"
+   },
+   {
+    "t": 11194,
+    "topic": "Resident urged the board to vote yes on the extra retiree COLA for municipal retirees.",
+    "speaker_as_heard": "Peggy Stewart"
+   },
+   {
+    "t": 11418,
+    "topic": "Resident asked for the same evidence standards for ARPA requests, questioned the Flat Hill project and opposed ARPA money for private wells.",
+    "speaker_as_heard": "Anna Lockwood",
+    "stated_role": "resident, 91 Main Street"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "economic-development",
+   "facilities",
+   "grants",
+   "library",
+   "personnel",
+   "public-comment",
+   "retirement",
+   "seniors",
+   "town-departments",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 605,
+    "motion": "Appoint Helen Balcom to the Council on Aging for a term to expire June 30, 2026",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6981,
+    "motion": "Annual select board appointments to multiple boards, read as one motion",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7168,
+    "motion": "Appoint Richard Burch and Chris St Germain to the Conservation Commission to June 30, 2026",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7248,
+    "motion": "Ratify town manager's appointments (animal control, building commissioner, inspectors, clock winders, etc.)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7498,
+    "motion": "Reappoint Lunenburg Police Department full-time, reserve and civilian members",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 12185,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1413,
+    "topic": "Library ARPA requests",
+    "what_was_said": "The library presented seven requests adding up to roughly the stated total, with HVAC redesign and construction the top priority.",
+    "figures_as_heard": [
+     "seven hundred and sixty thousand dollars"
+    ]
+   },
+   {
+    "t": 2581,
+    "topic": "Library HVAC cost",
+    "what_was_said": "Capital plan phases were stated, but the ARPA request was raised to a larger figure based on an older estimate.",
+    "figures_as_heard": [
+     "50 000",
+     "150",
+     "300 000"
+    ]
+   },
+   {
+    "t": 2902,
+    "topic": "Library other funding sources",
+    "what_was_said": "Director listed operating budget, revolving fund, state aid, gifts, an LSTA grant and Friends of the Library support.",
+    "figures_as_heard": [
+     "two to three thousand dollars",
+     "fifteen and twenty thousand dollars",
+     "thirteen thousand dollar",
+     "fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 3919,
+    "topic": "Food pantry equipment request",
+    "what_was_said": "Pantry president estimated refrigerators, freezers and shelving total for ARPA capital equipment.",
+    "figures_as_heard": [
+     "15 to 20 thousand dollars"
+    ]
+   },
+   {
+    "t": 4757,
+    "topic": "Boys and Girls Club request",
+    "what_was_said": "Club cited a shortfall in the after-school program and an overall deficit; request is for payroll and program support over two years.",
+    "figures_as_heard": [
+     "32 000",
+     "thirteen thousand percent deficit",
+     "eighty thousand dollars",
+     "40 000",
+     "10 000"
+    ]
+   },
+   {
+    "t": 5320,
+    "topic": "ARPA allocation overview",
+    "what_was_said": "Chair summarized remaining requests; board noted the town received a total ARPA award and substantial funds for vehicles not yet ordered.",
+    "figures_as_heard": [
+     "3.4 million dollars",
+     "400 000",
+     "369 thousand dollars",
+     "1.1 million dollars"
+    ]
+   },
+   {
+    "t": 5940,
+    "topic": "Sewer manhole ARPA request",
+    "what_was_said": "A member opposed the sewer request, citing the department's reserves and alternate funding.",
+    "figures_as_heard": [
+     "2.2 million dollars",
+     "750 to 1.5 million dollars",
+     "200 000"
+    ]
+   },
+   {
+    "t": 6581,
+    "topic": "Water district ARPA request",
+    "what_was_said": "A member said a portion could be supported but not the full request, wanting justification and exhausted alternatives.",
+    "figures_as_heard": [
+     "485"
+    ]
+   },
+   {
+    "t": 8101,
+    "topic": "Worcester County Retirement COLA",
+    "what_was_said": "Extra COLA adds two percent to a three percent adjustment; cost impact begins in fiscal 26 and is retroactive.",
+    "figures_as_heard": [
+     "five percent",
+     "two percent",
+     "four percent"
+    ]
+   },
+   {
+    "t": 9173,
+    "topic": "State green funding for library HVAC",
+    "what_was_said": "Green committee chair said state funding could cover much of the library HVAC cost, capped per period.",
+    "figures_as_heard": [
+     "150k",
+     "300"
+    ]
+   },
+   {
+    "t": 9441,
+    "topic": "Bids and contracts",
+    "what_was_said": "Town manager reported guardrail repair and Page Street culvert low bids and bid deadlines.",
+    "figures_as_heard": [
+     "80 886 dollars",
+     "86 913.16"
+    ]
+   },
+   {
+    "t": 9551,
+    "topic": "FY23 tax assessments and abatements",
+    "what_was_said": "Contract cost rose for added inspections; abatements approved and refunds totalled as stated.",
+    "figures_as_heard": [
+     "2 400",
+     "82 400",
+     "21 410.39",
+     "1 million two hundred and eleven thousand three hundred and eighty six dollars"
+    ]
+   },
+   {
+    "t": 9862,
+    "topic": "925 Mass Ave grant application",
+    "what_was_said": "Town applied for real estate technical assistance funding for reuse planning.",
+    "figures_as_heard": [
+     "fifty thousand"
+    ]
+   },
+   {
+    "t": 9719,
+    "topic": "Facilities",
+    "what_was_said": "ADA patio change order and library HVAC repair cost estimated.",
+    "figures_as_heard": [
+     "5000",
+     "eight thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8045,
+    "decision": "Board took no action on Sunset Lane no-parking request; town manager to ask police about a stop sign."
+   },
+   {
+    "t": 8572,
+    "decision": "Retiree COLA vote deferred to next week's agenda; must be decided by June 30."
+   },
+   {
+    "t": 6196,
+    "decision": "Town manager to seek clarifying information from sewer and water districts (alternative funding, RFP) before ARPA allocation."
+   },
+   {
+    "t": 8901,
+    "decision": "Green committee chair to review ARPA requests for alternative state funding and report back."
+   },
+   {
+    "t": 6856,
+    "decision": "Board generally agreed to allocate some ARPA funds to most pending requests."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 457,
+    "topic": "Opening, announcements, public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 457,
+    "t_end": 1143,
+    "topic": "Appointment interviews: Council on Aging and Conservation Commission",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1143,
+    "t_end": 3794,
+    "topic": "Library ARPA presentation",
+    "resolution": "informational",
+    "tags": [
+     "library",
+     "grants",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3794,
+    "t_end": 4315,
+    "topic": "Food pantry ARPA request",
+    "resolution": "informational",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 4315,
+    "t_end": 5298,
+    "topic": "Boys and Girls Club ARPA request",
+    "resolution": "informational",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 5298,
+    "t_end": 6877,
+    "topic": "ARPA allocation discussion",
+    "resolution": "no resolution",
+    "tags": [
+     "grants",
+     "water-sewer",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6877,
+    "t_end": 7603,
+    "topic": "Annual appointments and ratifications",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 7603,
+    "t_end": 8066,
+    "topic": "Sunset Lane parking",
+    "resolution": "no action",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 8066,
+    "t_end": 8656,
+    "topic": "Worcester County Retirement COLA",
+    "resolution": "deferred",
+    "tags": [
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 8656,
+    "t_end": 9256,
+    "topic": "Green committee comment on ARPA and savings",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9256,
+    "t_end": 9925,
+    "topic": "Warrants, action items, town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 9925,
+    "t_end": 11173,
+    "topic": "Committee reports, goals, liaison assignments",
+    "resolution": "deferred",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 11173,
+    "t_end": 12226,
+    "topic": "Public comment, closing, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Some appointment motion text, dates, and vote counts are not given; voice votes only.",
+   "Exact ARPA request totals and the Boys and Girls Club figures are garbled.",
+   "Library HVAC capital plan figures are inconsistently rendered.",
+   "Zoom speakers during public comment were hard to hear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 7393,
+    "about": "Procedural confusion over whether a member with a conflict could vote on the clock winders bulk motion.",
+    "sides": "A member proposed abstaining; the chair said it passes anyway",
+    "words_as_heard": "are you being serious yeah why I mean if as long as I think as long as I can get three votes",
+    "kind": "procedural fight"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to make its annual board appointments, ratify the town manager's appointments, and reappoint Police Department members.",
+    "t": 6981
+   },
+   {
+    "line": "The board put the Worcester County retirement cost-of-living adjustment on next week's agenda; it must be decided by June 30.",
+    "t": 8572
+   },
+   {
+    "line": "The board heard ARPA requests from the Library, the food pantry and the Boys and Girls Club, then agreed generally to allocate some ARPA funds to most pending requests.",
+    "t": 6856
+   },
+   {
+    "line": "The town manager is to seek information from the sewer and water districts on alternative funding before any ARPA allocation to them.",
+    "t": 6196
+   },
+   {
+    "line": "The board took no action on the Sunset Lane no-parking request; the town manager is to ask police about a stop sign.",
+    "t": 8045
+   }
+  ],
+  "why_it_matters": [
+   "ARPA money is a one-time pot, and the requests heard here from the library, food pantry, youth club and water and sewer districts compete for it, so each allocation leaves less for the others.",
+   "The extra retiree cost-of-living adjustment adds to the town's retirement costs from fiscal 26 and is retroactive, so the vote next week affects future town budgets."
+  ],
+  "watch_next": [
+   "Select Board vote on the Worcester County retirement cost-of-living adjustment at next week's meeting, before the June 30 deadline.",
+   "Green committee chair's report on alternative state funding for the ARPA requests, including library HVAC."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-12T23:11:15Z",
+   "cost_usd": 0.2247089
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06132023-231",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-06-13-minutes-231.txt",
+   "path": "sources/meetings/select-board/2023-06-13-minutes-231.pdf"
+  },
+  "official_sha256": "a5b14990423fb30a49923e828e9df18f02aeeba9c3ae0206a106e3ba80e5a9f3",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on most items: the library ARPA total, the guardrail and culvert bids, the tax contract, the food pantry range, the grant application and the COLA deferral. They differ on votes: the official extract prints no outcome for the Council on Aging and Town Manager ratification motions, and it records no action on the ARPA list where ours records a general agreement to fund most requests.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "about": "Helen Balcom Council on Aging appointment vote",
+    "kind": "discrepancy",
+    "ours": "Appoint Helen Balcom to the Council on Aging for a term to expire June 30, 2026 — passed",
+    "official": "motion: l. franco 2': c. nuzzolo",
+    "note": "Ours records a passed outcome; the official extract gives only the mover and seconder and no outcome or motion text, so check the full official minutes for the result and term.",
+    "t": 605
+   },
+   {
+    "about": "Annual Select Board appointments (one motion)",
+    "kind": "agree",
+    "ours": "Annual select board appointments to multiple boards, read as one motion — passed",
+    "official": "to appoint the listed select board appointments and ratify the town manager's appointment of:",
+    "note": "Both record a combined appointment motion that passed.",
+    "t": 6981
+   },
+   {
+    "about": "Conservation Commission appointments",
+    "kind": "caption_error",
+    "ours": "Appoint Richard Burch and Chris St Germain to the Conservation Commission to June 30, 2026 — passed",
+    "official": "to appoint richard bursch and chris st. germain to the conservation commission with a term to",
+    "note": "Same vote and outcome; the captions misheard the surname Bursch as Burch.",
+    "official_reading": "Richard Bursch",
+    "t": 7168
+   },
+   {
+    "about": "Ratification of Town Manager's appointments",
+    "kind": "discrepancy",
+    "ours": "Ratify town manager's appointments (animal control, building commissioner, inspectors, clock winders, etc.) — passed",
+    "official": "i move to ratify the town manager's appointments of:",
+    "note": "Ours says passed; the official extract states no outcome for this motion, so check the official minutes for the result.",
+    "t": 7248
+   },
+   {
+    "about": "Police Department reappointments",
+    "kind": "agree",
+    "ours": "Reappoint Lunenburg Police Department full-time, reserve and civilian members — passed",
+    "official": "motion: m. jeffreys to reappoint the following: full-time officers:",
+    "note": "Both record the reappointment of full-time, reserve and civilian officers; the official one is passed.",
+    "t": 7498
+   },
+   {
+    "about": "Library ARPA requests total",
+    "kind": "agree",
+    "ours": "Library ARPA requests: seven hundred and sixty thousand dollars",
+    "official": "summary of requests (total $760,000)",
+    "note": "Same $760,000 total.",
+    "t": 1413
+   },
+   {
+    "about": "Food pantry equipment request",
+    "kind": "agree",
+    "ours": "Food pantry equipment request: 15 to 20 thousand dollars",
+    "official": "turkey hill lions club food pantry $15,000- $20,000",
+    "note": "Same range.",
+    "t": 3919
+   },
+   {
+    "about": "Library HVAC repair estimate (children's section)",
+    "kind": "agree",
+    "ours": "Facilities: 5000, eight thousand dollars",
+    "official": "the facilities director is working on getting costs for repair, which is estimated around $8,000.",
+    "note": "Our $8,000 matches the library HVAC repair estimate. Our $5,000 matches the ADA patio change order, which is separate.",
+    "t": 9719
+   },
+   {
+    "about": "Library HVAC cost and state green funding",
+    "kind": "discrepancy",
+    "ours": "Library HVAC cost: 50 000, 150, 300 000",
+    "official": "we've already gotten $500,000+.",
+    "note": "Ours gives 150k/300 for HVAC and state green funding, and the official gives $300,000 and $500,000+ received. Check whether the official $500,000+ was received funding, and whether ours conflates the HVAC and generator items.",
+    "t": 2581
+   },
+   {
+    "about": "Guardrail repair bid",
+    "kind": "agree",
+    "ours": "Bids and contracts: 80 886 dollars, 86 913.16",
+    "official": "the lowest, eligible, responsible bidder was premier fence, llc out of canton in the amount of $80,886.",
+    "note": "The $80,886 guardrail bid and the $86,913.16 culvert bid both match.",
+    "t": 9441
+   },
+   {
+    "about": "Municipal Finance Services contract and abatements",
+    "kind": "agree",
+    "ours": "FY23 tax assessments and abatements: 2 400, 82 400, 21 410.39, 1 million two hundred and eleven thousand three hundred and eighty six dollars",
+    "official": "the total cost increased by $2,400 for a total cost of $82,400.",
+    "note": "The $2,400, $82,400, $21,410.39 and $1,211,386 figures all match.",
+    "t": 9551
+   },
+   {
+    "about": "925 Mass Ave grant application",
+    "kind": "agree",
+    "ours": "925 Mass Ave grant application: fifty thousand",
+    "official": "for the real estate technical assistance funding in the amount of $50,000.",
+    "note": "Same $50,000.",
+    "t": 9862
+   },
+   {
+    "about": "Retiree COLA deferral",
+    "kind": "agree",
+    "ours": "Retiree COLA vote deferred to next week's agenda; must be decided by June 30.",
+    "official": "the board discussed and decided to wait one week to vote.",
+    "note": "Both record a one-week deferral. The June 30 deadline appears only in ours.",
+    "t": 8572
+   },
+   {
+    "about": "Worcester County retirement COLA percentages",
+    "kind": "discrepancy",
+    "ours": "Worcester County Retirement COLA: five percent, two percent, four percent",
+    "official": "which was a 3% adjustment. this change in law allowed",
+    "note": "Ours hears 5, 2 and 4 percent, and the official says the earlier adjustment was 3%, plus 2% for up to 5%. Check the 4% and the 3% against the recording.",
+    "t": 8101
+   },
+   {
+    "about": "ARPA allocation decision",
+    "kind": "discrepancy",
+    "ours": "Board generally agreed to allocate some ARPA funds to most pending requests.",
+    "official": "the board reviewed and discussed the prioritized list of requests. no action was taken.",
+    "note": "Ours reads as a general agreement to fund most requests, and the official records only review and no action. Check the recording for whether any consensus or direction was given.",
+    "t": 6856
+   },
+   {
+    "about": "Sunset Lane no-parking request",
+    "kind": "only_in_ours",
+    "ours": "Board took no action on Sunset Lane no-parking request; town manager to ask police about a stop sign.",
+    "official": "",
+    "note": "The official extract lists Sunset Lane only as public comment and records no board decision.",
+    "t": 8045
+   },
+   {
+    "about": "Clarifying information from sewer and water districts",
+    "kind": "only_in_ours",
+    "ours": "Town manager to seek clarifying information from sewer and water districts (alternative funding, RFP) before ARPA allocation.",
+    "official": "",
+    "note": "The official extract has no such direction.",
+    "t": 6196
+   },
+   {
+    "about": "Green committee review of ARPA requests",
+    "kind": "only_in_ours",
+    "ours": "Green committee chair to review ARPA requests for alternative state funding and report back.",
+    "official": "",
+    "note": "The official extract has no such assignment; Blatt's comment appears only as public comment.",
+    "t": 8901
+   },
+   {
+    "about": "Sewer and water district ARPA requests; Boys and Girls Club figures",
+    "kind": "only_in_ours",
+    "ours": "Sewer manhole ARPA request: 2.2 million dollars, 750 to 1.5 million dollars, 200 000",
+    "official": "",
+    "note": "The official extract has no sewer or water ARPA figures. The BGCL figures in the two records differ and cannot be matched from the legible extract.",
+    "t": 5940
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-12T23:13:08Z",
+   "cost_usd": 0.2635929
+  }
+ }
+}

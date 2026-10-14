@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2023-02-08",
  "docid": "77",
@@ -10,8 +10,270 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02082023-77",
   "doc_url": "/docs/meetings/cultural-council/2023-02-08-minutes-77.txt"
  },
- "votes": [],
- "dropped_unquoted": 4,
- "note": "Four procedural votes recorded: the annual election of four officer positions (Chair, Vice Chair, Treasurer, Secretary). All passed unanimously. Approval of prior minutes was deferred to the next meeting and was not voted on at this meeting.",
- "cost_usd": 0.0875475
+ "votes": [
+  {
+   "motion": "Elect Elise Wiley as Chair (nominated by Dan Burns).",
+   "moved_by": "Dan Burns",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "chair-danburnsnominateselisewiley, secondedbydonnasaiia,allinfavor, approved"
+  },
+  {
+   "motion": "Elect Dan Burns as Vice Chair (nominated by Diane Beaudoin).",
+   "moved_by": "Diane Beaudoin",
+   "seconded_by": "Judit Ernst",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vicechair-dianebeaudoinnominateddanburns,secondedbyjuditernst,allinfavor,approvedt",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Elect Donna Saiia as Treasurer (nominated by Elise Wiley).",
+   "moved_by": "Elise Wiley",
+   "seconded_by": "Karen Kemp",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "treasurer-elisenominatesdonnasaiia,secondedbykarenkemp,allinfavor, approved"
+  },
+  {
+   "motion": "Elect Karen Kemp as Secretary (nominated by Elise Wiley).",
+   "moved_by": "Elise Wiley",
+   "seconded_by": "Diane Beaudoin",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "secretary-elisenominatedkarenkemp,secondedbydianebeaudoin,allinfavor, approved"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The minutes text as extracted has its words run together (spaces collapsed), so quotes reproduce it exactly as printed. Four officer elections are recorded as 'all in favor, approved' with no vote count; they are recorded as passed without a count. The deferral of prior minutes and the 7:53 adjournment have no recorded motion or vote, so none is recorded for them. No vote counts are printed anywhere. Dan Burns appears only as a nominator and as the elected Vice Chair; his attendance is not stated. Roles for members are not printed beyond the officer positions. Figures are as printed; the $1000 transfer is contingent and no outcome is recorded.",
+ "cost_usd": 0.01710341,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elise Wiley",
+   "status": "present",
+   "quote": "attendeeselisewileydonnasaiiakarenkempdianebeaudoinjuditernst"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attendeeselisewileydonnasaiiakarenkempdianebeaudoinjuditernst"
+  },
+  {
+   "name": "Karen Kemp",
+   "status": "present",
+   "quote": "attendeeselisewileydonnasaiiakarenkempdianebeaudoinjuditernst"
+  },
+  {
+   "name": "Diane Beaudoin",
+   "status": "present",
+   "quote": "attendeeselisewileydonnasaiiakarenkempdianebeaudoinjuditernst"
+  },
+  {
+   "name": "Judit Ernst",
+   "status": "present",
+   "quote": "attendeeselisewileydonnasaiiakarenkempdianebeaudoinjuditernst"
+  },
+  {
+   "name": "Dan Burns",
+   "status": "not stated",
+   "quote": "chair-danburnsnominateselisewiley, secondedbydonnasaiia,allinfavor, approved"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the 11/21/22 and 1/13/23 draft minutes was deferred to the next meeting.",
+   "quote": "deferredapprovalof11/21/22and1/13/23draftminutestonextmeeting"
+  },
+  {
+   "decision": "Elise Wiley will update the contact list and send it to all members.",
+   "quote": "elisewillupdatethecontactlistandsendtoallmembers"
+  },
+  {
+   "decision": "Donna will check with Hana to see whether funds from events that did not occur can be used.",
+   "quote": "donnawillcheckwithhanakotoseeifwecanusethefundsfromeventsthatdidnotoccur."
+  },
+  {
+   "decision": "Diane will check with Donna Bulger of the Cannon Theater on the outstanding $450 grant.",
+   "quote": "dianewillbetheretomorrowandwillcheckwithdonnabulgercannontheater, $450,willbeusedforastudentinjanuary2023."
+  },
+  {
+   "decision": "Dan will look into logistics for a small outdoor craft fair near Ritter; Donna will look into logistics for the fundraising booth.",
+   "quote": "danwilllookintologistics."
+  },
+  {
+   "decision": "Send Dan two new CC applicants (old business).",
+   "quote": "oldbusinesssenddantwonewccapplicants"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unencumbered grant balances (FY21 move and FY22 possible total)",
+   "what_was_recorded": "The minutes give the total available to unencumbered from FY21 if MACC approves a move, and a possible FY22 unencumbered total.",
+   "figures_as_printed": [
+    "$1000",
+    "$1150"
+   ],
+   "quote": "totalavailabletounencumberedfromfy21ifmaccapprovesthatmove:$1000."
+  },
+  {
+   "topic": "Outstanding 2021 grants",
+   "what_was_recorded": "Outstanding 2021 grants listed by project, including one marked not performed.",
+   "figures_as_printed": [
+    "$250",
+    "$500",
+    "$250"
+   ],
+   "quote": "outstanding2021:st.bernard'shighschoolvideo,$250expressiveartstherapy, $500"
+  },
+  {
+   "topic": "Outstanding 2022 grant (Tai Chi for Veterans)",
+   "what_was_recorded": "A 2022 grant still outstanding; the recipient has not responded to repeated contact.",
+   "figures_as_printed": [
+    "$750"
+   ],
+   "quote": "outstanding2022:clearpathforveteranstaichiforveteransprogram,$750"
+  },
+  {
+   "topic": "FY22 Cycle of Memory grant allocation",
+   "what_was_recorded": "A grant allocation for an event that had not occurred, recorded with a second figure of $250 after the note.",
+   "figures_as_printed": [
+    "$150",
+    "$250"
+   ],
+   "quote": "grantallocation$150cycleofmemory-didnotgetseniorcenterendorsementbeforeapplying.eventhasnotoccurred.$250"
+  },
+  {
+   "topic": "Cannon Theater grant",
+   "what_was_recorded": "A $450 grant to be used for a student in January 2023.",
+   "figures_as_printed": [
+    "$450"
+   ],
+   "quote": "dianewillbetheretomorrowandwillcheckwithdonnabulgercannontheater, $450,willbeusedforastudentinjanuary2023."
+  },
+  {
+   "topic": "Program funds available",
+   "what_was_recorded": "Funds available for program ideas, to be spent on ornament and craft items.",
+   "figures_as_printed": [
+    "$680"
+   ],
+   "quote": "fundsavailable$680ornament-5x7canvases,characters,nutcrackers"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed move of FY21 funds to unencumbered, contingent on MACC approval.",
+   "amount_as_printed": "$1000",
+   "outcome": "Not stated as approved; the minutes make the total contingent on MACC approving the move.",
+   "quote": "totalavailabletounencumberedfromfy21ifmaccapprovesthatmove:$1000."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 6:45PM",
+   "quote": "meetingcalledtoorderat6:45pm",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "publiccommentnopubliccomment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approve previous minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "deferredapprovalof11/21/22and1/13/23draftminutestonextmeeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Treasurer's report",
+   "resolution": "noted; annual report filed January 16, 2023",
+   "quote": "annualreporttomassachusettsculturalcouncilwasfiledonjanuary16,2023.",
+   "tags": [
+    "treasurer",
+    "annual report",
+    "state filing"
+   ]
+  },
+  {
+   "topic": "Grant updates",
+   "resolution": "reviewed outstanding 2021 and 2022 grants and FY22/FY23 notes; follow-up assigned",
+   "quote": "most2022grantapprovalshavebeeneitherpaidoreventdidnotoccur.",
+   "tags": [
+    "grants",
+    "fund balances",
+    "MACC"
+   ]
+  },
+  {
+   "topic": "Officer positions",
+   "resolution": "approved: Chair Elise Wiley, Vice Chair Dan Burns, Treasurer Donna Saiia, Secretary Karen Kemp",
+   "quote": "chair-danburnsnominateselisewiley, secondedbydonnasaiia,allinfavor, approved",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Program ideas",
+   "resolution": "ideas listed; logistics assigned to Dan and Donna",
+   "quote": "fundsavailable$680ornament-5x7canvases,characters,nutcrackers",
+   "tags": [
+    "programs",
+    "craft fair",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Promotional ideas",
+   "resolution": "listed; no decision recorded",
+   "quote": "promotionalideascardsprintedandavailableatthelccevents",
+   "tags": [
+    "promotion",
+    "social media",
+    "press"
+   ]
+  },
+  {
+   "topic": "Old business: new applicants",
+   "resolution": "action item: send Dan two new CC applicants",
+   "quote": "oldbusinesssenddantwonewccapplicants",
+   "tags": [
+    "applicants"
+   ]
+  },
+  {
+   "topic": "New business: town event and applicants",
+   "resolution": "review whether town needs to host an event; follow up on applicants",
+   "quote": "newbusinessreviewtownneedtohosteventfollowuponnewculturalcouncilapplicants",
+   "tags": [
+    "events",
+    "applicants"
+   ]
+  }
+ ],
+ "tags": [
+  "cultural council",
+  "grants",
+  "fund balances",
+  "officer elections",
+  "MACC",
+  "programs and events",
+  "promotion",
+  "public comment",
+  "minutes approval",
+  "annual report"
+ ],
+ "dropped_unquoted_by_field": {}
 }

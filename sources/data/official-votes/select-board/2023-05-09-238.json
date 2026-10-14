@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-05-09",
  "docid": "238",
@@ -12,48 +12,436 @@
  },
  "votes": [
   {
-   "motion": "Find that J K Waterfront, Inc. d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.07",
+   "motion": "To find that J K Waterfront, Inc. d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.07 (Alcoholic Beverage Sales and Laws).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2n: l. franco to find that j k waterfront, inc. d/b/a on the rocks, violated article iv, regulatory, section 4.01; subsection 1.07 [alcoholic beverage sales and laws (f.) vote: all in favor"
+   "quote": "motion: m. jeffreys 2n: l. franco to find that j k waterfront, inc. d/b/a on the rocks, violated article iv, regulatory, section 4.01; subsection 1.07"
   },
   {
-   "motion": "Find that J K Waterfront, Inc. d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.08",
+   "motion": "To find that J K Waterfront, Inc. d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.08 (Environs of Licensed Premises).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "failed 2-2",
+   "outcome": "failed, 2 in favor, 2 against",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: l. franco to find that j k waterfront, inc. d/b/a on the rocks, violated article iv, regulatory, section 4.01; subsection 1.08; environs of licensed premises discussion: mr. alonzo stated these are overlappin",
-   "quote_taken_from_text": true
+   "quote": "motion: m. jeffreys 2nd: l. franco to find that j k waterfront, inc. d/b/a on the rocks, violated article iv, regulatory, section 4.01; subsection 1.08; environs of licensed premises"
   },
   {
-   "motion": "Find that J K Waterfront d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.10",
+   "motion": "To find that J K Waterfront d/b/a On The Rocks violated Article IV, Regulatory, Section 4.01, subsection 1.10 (Standards of Conduct on the Premises (c), no service to anyone under twenty-one).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\"d: l. franco to find that j k waterfront d/b/a on the rocks violated article iv, regulatory, section 4.01, subsection 1.10 [standards of conduct on the premises (c) no alcoholic beverages shall be sold to anyone under twenty-one years of age. no service of alcoholic, wine/malt beverages shall be made to anyone under the twenty-one years of age.] vote: all in favor"
+   "quote": "to find that j k waterfront d/b/a on the rocks violated article iv, regulatory, section 4.01, subsection 1.10"
   },
   {
-   "motion": "Find that J K Waterfront d/b/a On The Rocks violated M.G.L. c 138, §34",
+   "motion": "To find that J K Waterfront d/b/a On The Rocks violated M.G.L. c 138, §34 (sale, delivery or furnishing alcoholic beverages to persons under twenty-one).",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2n': m. jeffreys to find that j k waterfront d/b/a on the rocks violated m.g.l. c 138, §34: sale, delivery or furnishing alcoholic beverages to persons under twenty-one years of age. vote: all in favor"
+   "quote": "to find that j k waterfront d/b/a on the rocks violated m.g.l. c 138, §34: sale, delivery or furnishing alcoholic beverages to persons under twenty-one years of age."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting 2': t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting 2': t. alonzo vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR from macOS Vision scan. All five votes are from the liquor license violation hearing for JK Waterfront d/b/a On The Rocks. OCR artifacts in seconding notation (rendered variously as 2n:, 2nd:, 2\"d:, 2n':, 2': across the five motions) are preserved as scanned. Motion 2 failed on a 2-2 tie with selectman Alonzo voting against, calling subsection 1.08 redundant with 1.07.",
- "cost_usd": 0.16241909999999998
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision), not a clean scan: several garbled tokens, so quotes were copied as printed (e.g. \"2n:\" for the seconder line, \"Chiet\" and \"Class Il\" left as OCR gives them). Gaps: the page 5-to-6 break is mid-sentence and the page 6-to-7 break is mid-sentence, and page 7 opens mid-sentence with the license-return directive. The suspension length and the penalty motion are not in the text, so no vote is recorded for the penalty. Page 8 opens with a garbled line. Page 9 has no text. Mr. Allison asked for a Select Board vote on a directive for the review engineer; no such vote is recorded. The Mr. Franco and Mr. Alonzo roles are not printed, and the transcription has no role for Ms. Lemieux or Ms. Sroka. Seconder for the 2-2 motion and the first three findings is printed as \"2n:\"/\"2nd:\"/\"2\"d:\" and read here as L. Franco.",
+ "cost_usd": 0.02236401,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Mr. Franco",
+   "status": "present",
+   "quote": "mr. franco announced the pancake breakfast scheduled for tomorrow is canceled."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo echoed mr. franco and thanked the town moderator, town manager, finance director"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux reported she received the certified vote from the town clerk regarding the home rule petition."
+  },
+  {
+   "name": "Ms. Sroka",
+   "status": "present",
+   "quote": "ms. sroka asked chief gammel if the bouncer asked the 20 year old for an id."
+  },
+  {
+   "name": "Chief Gammel",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief gammel stated he brought the officers that were involved in the call to answer any questions or provide any testimony."
+  },
+  {
+   "name": "Kenneth Ricker",
+   "role": "owner of On The Rocks",
+   "status": "present",
+   "quote": "kenneth ricker, owner of on the rocks, stated whatever the chief determined from the tapes he fully agreed"
+  },
+  {
+   "name": "Officer Hill",
+   "role": "Officer",
+   "status": "present",
+   "quote": "officer hill stated all three of us work night shift patrol so the early hours of our shift are normally involving"
+  },
+  {
+   "name": "Sergeant John Morreale",
+   "role": "Sergeant",
+   "status": "present",
+   "quote": "sergeant john morreale stated he has worked for the department for nine years."
+  },
+  {
+   "name": "Officer Jesse Reed",
+   "role": "Officer",
+   "status": "present",
+   "quote": "officer jesse reed stated we conduct routine patrols at on the rocks, especially on friday or saturday nights"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "carol archambault, school committee chair, regarding the sidewalks request, explained the idea was to go"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commission Chair",
+   "status": "present",
+   "quote": "ana lockwood, parks commission chair, thanked the board and assured the board they would put the funding"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "matthew allison, 188 flat hill road, regarding the flat hill road drainage discussion a couple of weeks ago,"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, regarding the previous comment, stated she believed the engineering firm is"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, stated one of the downsides of painting crosswalks in the fall is that they get"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager Performance Evaluation tabled until the next meeting.",
+   "quote": "this was tabled until the next meeting."
+  },
+  {
+   "decision": "Class II Auto Dealer License public hearing for J & E Realty Enterprises (383 Whalom Road) postponed due to failure to notify abutters.",
+   "quote": "383 whalom road-postponed due to failure to notify abutters"
+  },
+  {
+   "decision": "Liquor license holder (On The Rocks) to turn the alcohol license over to the Police Department once the appeal period is over; license returned at end of suspension period. Suspension length not in the text provided.",
+   "quote": "ricker to turn over the alcohol license to the police department once the appeal period is over."
+  },
+  {
+   "decision": "Board decided to do more research on the 243 Summer Street handicapped parking request.",
+   "quote": "it was decided to do some more research on the matter."
+  },
+  {
+   "decision": "ARPA requests that need more information will be sent back; the groups will be asked to explain further.",
+   "quote": "of the requests require more information and the groups will be asked back to explain further."
+  },
+  {
+   "decision": "Ms. Lemieux to speak with the Land Use Director regarding the drainage easement mentioned in public comment.",
+   "quote": "ms. lemieux will speak with the land use director regarding the easement mentioned earlier in public comment."
+  },
+  {
+   "decision": "Mr. Jeffreys to touch base with Mr. Allison about the engineering on Flat Hill Road for more clarity.",
+   "quote": "mr. jeffreys will touch base with mr. allison about the engineering on flat hill road for more clarity."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA request: Water District",
+   "what_was_recorded": "The Water District requested ARPA funds for public education, a PFAS Master Plan, and pilot testing at two well sites.",
+   "figures_as_printed": [
+    "$485,000",
+    "$35,000",
+    "$50,000",
+    "$400,000"
+   ],
+   "quote": "the water district is requesting $485,000 for public education ($35,000), pfas master plan ($50,000)"
+  },
+  {
+   "topic": "ARPA request: North Central Chamber of Commerce",
+   "what_was_recorded": "The North Central Chamber of Commerce requested $50,000 for a proposed Regional Business Investment Fund.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the north central chamber of commerce is requesting $50,000 for a proposed regional business investment fund"
+  },
+  {
+   "topic": "243 Summer Street handicapped parking paving",
+   "what_was_recorded": "Ms. Cosme provided a quote to pave the area and asked the Town to assist with funding.",
+   "figures_as_printed": [
+    "83400"
+   ],
+   "quote": "a quote to pave the area in the amount of 83400 was provided by ms. cosme and she is asking the town to assist with the funding."
+  },
+  {
+   "topic": "Flat Hill Road drainage",
+   "what_was_recorded": "Discussed as a possible large expense not on the ARPA request list; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. alonzo noted the flat hill drainage issue was not on the list of requests, but could potentially be a big expense."
+  },
+  {
+   "topic": "ARPA funding for ambulance and two dump trucks",
+   "what_was_recorded": "Town Manager reported ARPA funds were committed to the ambulance and two dump trucks, and that the trucks remain critical to snow operations; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the arpa funding allocated towards the two trucks is critical to snow operations"
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$1,898,130.24",
+    "$967,747.09",
+    "$678,110.05"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $1,898,130.24; a payroll warrant in the amount"
+  },
+  {
+   "topic": "Statutory fine read into liquor violation hearing",
+   "what_was_recorded": "The chair read the M.G.L. c. 138 §34 penalty into the record: a maximum fine for furnishing alcohol to under-21s.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "shall be punished by a fine of not more than $2,000 or by imprisonment for not more than one year or both."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "topic": "pancake breakfast canceled; thanks for town meeting",
+   "quote": "mr. franco announced the pancake breakfast scheduled for tomorrow is canceled. it will resume next month."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "thanks for town meeting preparation",
+   "quote": "mr. alonzo echoed mr. franco and thanked the town moderator, town manager, finance director and everyone else who helped with its preparation."
+  },
+  {
+   "speaker": "Matthew Allison",
+   "stated_role": "188 Flat Hill Road",
+   "topic": "Flat Hill Road drainage",
+   "quote": "matthew allison, 188 flat hill road, regarding the flat hill road drainage discussion a couple of weeks ago, stated he was glad there is finally some interest in doing something."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "Flat Hill drainage; engineering firm responsibility",
+   "quote": "rhonda lisio, 181 reservoir road, regarding the previous comment, stated she believed the engineering firm is responsible for design, not installation"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "crosswalk painting and Capital Planning",
+   "quote": "dave passios, 56 whiting street, stated one of the downsides of painting crosswalks in the fall is that they get beat up by the snow plows in the winter."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "prior ARPA consultant; Parks Commission presentation",
+   "quote": "rhonda lisio, 181 reservoir road, asked about a previous consultant that provided a presentation on managing arpa funding for the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting notice",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "open meeting law",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "heard; no action",
+   "quote": "mr. franco announced the pancake breakfast scheduled for tomorrow is canceled.",
+   "tags": [
+    "public comment",
+    "Flat Hill drainage"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced",
+   "quote": "the annual town election is saturday, may 20, 2023 7 am-5 pm at tcp.",
+   "tags": [
+    "election",
+    "events"
+   ]
+  },
+  {
+   "topic": "Public hearing: Class II Auto Dealer License, J & E Realty (383 Whalom Road)",
+   "resolution": "postponed",
+   "quote": "383 whalom road-postponed due to failure to notify abutters",
+   "tags": [
+    "licensing",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received",
+   "quote": "on february 21st the select board voted to use arpa funds for purchasing the two large dump trucks",
+   "tags": [
+    "town manager report",
+    "ARPA",
+    "DPW trucks",
+    "ambulance",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Town Manager Performance Evaluation",
+   "resolution": "tabled",
+   "quote": "this was tabled until the next meeting.",
+   "tags": [
+    "personnel",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Follow-up from Annual Town Meeting (home rule petition)",
+   "resolution": "discussed; petition sent to legislators",
+   "quote": "today i emailed senator cronin, representatives kushmerek and scarsdale to notify them",
+   "tags": [
+    "annual town meeting",
+    "home rule petition",
+    "senior tax relief"
+   ]
+  },
+  {
+   "topic": "Alcohol license violation hearing, JK Waterfront d/b/a On The Rocks",
+   "resolution": "three findings passed, one failed; license suspension",
+   "quote": "mr. jeffreys read the violation hearing sent to the owner/manager ken ricker.",
+   "tags": [
+    "alcohol license",
+    "liquor violation",
+    "hearing",
+    "minors"
+   ]
+  },
+  {
+   "topic": "Request for handicapped parking at 243 Summer Street",
+   "resolution": "more research",
+   "quote": "it was decided to do some more research on the matter.",
+   "tags": [
+    "handicapped parking",
+    "right of way",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "ARPA evaluation criteria and requests",
+   "resolution": "requests referred back for more information",
+   "quote": "of the requests require more information and the groups will be asked back to explain further.",
+   "tags": [
+    "ARPA",
+    "American Rescue Plan Act",
+    "funding requests",
+    "Water District",
+    "Parks"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,898,130.24",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "assigned",
+   "quote": "ms. lemieux will speak with the land use director regarding the easement mentioned earlier in public comment.",
+   "tags": [
+    "Flat Hill drainage",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. franco announced the council on aging meeting was canceled.",
+   "tags": [
+    "committees",
+    "Municipal Building Design Committee"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "quote": "mr. jeffreys announced upcoming meetings are may 16 and may 23.",
+   "tags": [
+    "schedule",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "heard; no action",
+   "quote": "dave passios, 56 whiting street, stated one of the downsides of painting crosswalks in the fall",
+   "tags": [
+    "public comment",
+    "crosswalks",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "to adjourn the meeting 2': t. alonzo vote: all in favor",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "open meeting law",
+  "public comment",
+  "alcohol license",
+  "liquor violation",
+  "minors",
+  "ARPA",
+  "American Rescue Plan Act",
+  "Flat Hill drainage",
+  "DPW trucks",
+  "town manager report",
+  "handicapped parking",
+  "warrants",
+  "annual town meeting follow-up",
+  "crosswalks"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

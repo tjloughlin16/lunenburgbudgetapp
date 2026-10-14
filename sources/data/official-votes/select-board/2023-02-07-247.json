@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-02-07",
  "docid": "247",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "appoint Nathan Lockwood to the APDC with a term to expire June 30, 2023",
+   "motion": "To appoint Nathan Lockwood to the Architectural Preservation District Commission with a term to expire June 30, 2023.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: l. franco 2nd: t. dwyer to appoint nathan lockwood to the apdc with a term to expire june 30, 2023 vote: all in favor"
   },
   {
-   "motion": "continue the public hearing until February 21st at 7:15 p.m.",
+   "motion": "To continue the public hearing on the Jaxx alcohol license transfer until February 21 at 7:15 p.m.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "failed 2-2",
+   "outcome": "2 in favor, 2 opposed (Dwyer, Sroka)",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2\": l. franco to continue the public hearing until february 21s at 7:15 p.m. vote: 2 in favor, 2 opposed (dwyer, sroka)"
+   "quote": "to continue the public hearing until february 21s at 7:15 p.m. vote: 2 in favor, 2 opposed (dwyer, sroka)"
   },
   {
-   "motion": "continue the public hearing until February 21 at 7:15 p.m.",
+   "motion": "To continue the public hearing on the Jaxx alcohol license transfer until February 21 at 7:15 p.m.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion: m. jeffreys 2nd. l. franco to continue the public hearing until february 21 at 7:15 p.m. vote: all in favor"
   },
   {
-   "motion": "approve the minutes of January 10, 2023 with the noted correction from Selectman Franco",
+   "motion": "To approve the minutes of January 10, 2023 with the noted correction from Selectman Franco.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
@@ -44,16 +44,356 @@
    "quote": "motion: t. dwyer 2ml: h. sroka to approve the minutes of january 10, 2023 with the noted correction from selectman franco vote: all in favor"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: h. sroka to adjourn the meeting the meeting adjour",
-   "quote_taken_from_text": true
+   "quote": "motion: h. sroka to adjourn the meeting the meeting adjourned at 9:36 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned document with minor formatting artifacts (e.g., \"2\\\":\" for \"2nd:\", \"2ml:\" for \"2nd:\"). All votes are clearly recorded and readable.",
- "cost_usd": 0.1458015
+ "note": "Scanned minutes read by OCR (macOS Vision); several passages are garbled and quotes were copied as printed. Examples: the snow and ice figure prints as \"$1 70,000\" (recorded as printed, likely $170,000), the hearing date as \"February 215\" in some places, and the motion seconders as \"2\"d\", \"2ml\" and \"2\"\". Prita Patel is spelled \"Prita\" in the attendance line and \"Priti\" in the hearing text. Lou Franco and Tom Alonzo are both labelled Vice Chairman in the minutes. The first continuance vote was 2-2 (Dwyer and Sroka opposed) and the minutes do not say it failed; a second motion to the same effect then passed with \"All in Favor\". The minutes print no vote counts for the other \"All in Favor\" votes. The recording secretary (Elaine M. Peterson) is not recorded as an attendee. Public commenters are marked present because the meeting was held in person, except Nicole Waters, who spoke via ZOOM; the minutes do not state attendance for them directly.",
+ "cost_usd": 0.02467341,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, clerk via zoom; vice"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk via ZOOM; Vice Chairman",
+   "status": "remote",
+   "quote": "members present: michael-ray jeffreys, chairman; lou franco, clerk via zoom; vice"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "vice chairman; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "vice chairman; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, vice chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; mark esposito, prita patel"
+  },
+  {
+   "name": "Mark Esposito",
+   "role": "Attorney, representative for Priha, Inc.",
+   "status": "present",
+   "quote": "attorney mark esposito introduced himself as the representative for priha, inc. and introduced ms. priti patel"
+  },
+  {
+   "name": "Prita Patel",
+   "role": "owner/applicant/manager on record",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; mark esposito, prita patel"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "candidate for Architectural Preservation District Commission, 91 Main Street",
+   "status": "present",
+   "quote": "nathan lockwood stated he was part of the planning board that drafted and proposed the original"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "48 Hemlock Drive",
+   "status": "present",
+   "quote": "debbie lincoln, 48 hemlock drive, asked even though it is early in the tax assessment"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, expressed concern in the investigation process; the first is the town"
+  },
+  {
+   "name": "John Fortune",
+   "role": "50 Hemlock Drive",
+   "status": "present",
+   "quote": "john fortune, 50 hemlock drive asked if they brought in more assessors, who would they report"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "45 Hemlock Drive",
+   "status": "present",
+   "quote": "pete lincoln, 45 hemlock drive, stated the reason we are all here is the land was highly assessed"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "80 Horizon Island Road, via ZOOM",
+   "status": "remote",
+   "quote": "nicole waters, 80 horizon island road, via zoom, asked if during the investigation you are"
+  },
+  {
+   "name": "Alex Yawor",
+   "role": "226 Sunset Lane",
+   "status": "present",
+   "quote": "alex yawor, 226 sunset lane, asked if the investigation is going to look at the certification"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck, 50 sunset lane, asked for further information but mr. jeffreys stated providing"
+  },
+  {
+   "name": "Carol Hatch",
+   "role": "41 Hilltop Lane",
+   "status": "present",
+   "quote": "carol hatch, 41 hilltop lane, spoke about the differences between the different lakes in town."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Jeffreys to contact the School Committee Chair to ask whether they could provide a liaison to the Select Board, after Ms. Sroka confirmed she would not continue as liaison.",
+   "quote": "mr. jeffreys stated he would reach out the school committee chair and see if they could provide one to the select board."
+  },
+  {
+   "decision": "Mr. Franco to revisit the proposed Sewer bylaw wording change with the Sewer Commission.",
+   "quote": "mr. franco had discussed changing some sewer bylaw wording with the sewer commission last year, but they had not wanted it to go on the special town meeting in november, so he will revisit the discussion with them."
+  },
+  {
+   "decision": "The tax assessment investigation committee committed to another public update on February 21.",
+   "quote": "will provide another update on february 21st."
+  },
+  {
+   "decision": "Residents directed to email further questions on the tax assessment investigation, which will be logged and answered.",
+   "quote": "mr. jeffreys advised if there are any more questions, to email them and they will be logged and they are working to answer them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2023 town budget and residential share",
+   "what_was_recorded": "The Select Board's February 7 press release states the FY2023 town budget total and the portion raised from residential property owners.",
+   "figures_as_printed": [
+    "$50,144,851.65",
+    "$28,618,106.43"
+   ],
+   "quote": "for fiscal year 2023, the town's budget is $50,144,851.65, of which, $28,618,106.43 is to be raised and appropriated from residential property owners."
+  },
+  {
+   "topic": "Health insurance deficit",
+   "what_was_recorded": "A projected deficit in the Health Insurance line from enrollment changes for active employees and retirees; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "there will be a projected deficit in the health insurance line this year due to changes in enrollment for both active and retirees."
+  },
+  {
+   "topic": "Snow and ice overage",
+   "what_was_recorded": "The FY23 Snow and Ice budget is over by about $170,000 (printed as '$1 70,000'), which the minutes attribute largely to contractor rates and a salt cost increase of more than 12%; the projected deficit would be covered from the Pavement Management line.",
+   "figures_as_printed": [
+    "$1 70,000"
+   ],
+   "quote": "the f y 23 snow and ice budget is currently over by approximately $1 70,000."
+  },
+  {
+   "topic": "Proposition 2 1/2 levy limit",
+   "what_was_recorded": "Chair clarified that the overall budget can only increase by 2½ percent under Proposition 2½; no dollar figure printed.",
+   "figures_as_printed": [
+    "2½ percent"
+   ],
+   "quote": "discussion ensued about how proposition 2 ½ works. mr. jeffreys clarified the overall budget can only go up 2½ percent."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "End-of-year transfers from projected surplus accounts to cover the Health Insurance shortfall, identified by the Finance Director and the Town Manager.",
+   "amount_as_printed": "not printed",
+   "outcome": "planned; no vote recorded",
+   "quote": "the finance director and i have identified accounts within the budget that there are projected surpluses to do end of the year transfers to cover the shortage."
+  },
+  {
+   "description": "Snow and ice deficit to be covered within the Pavement Management line, per the Finance Director, DPW Director and Town Manager.",
+   "amount_as_printed": "not printed",
+   "outcome": "described; no vote recorded",
+   "quote": "would be ableto cover the projected deficit within the pavement management line."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Debbie Lincoln",
+   "stated_role": "48 Hemlock Drive",
+   "topic": "repeal and replace if wrongdoing is found in assessment investigation",
+   "quote": "debbie lincoln, 48 hemlock drive, asked even though it is early in the tax assessment"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "conflict of interest and Open Meeting Law in investigation",
+   "quote": "carl luck, 50 sunset lane, expressed concern in the investigation process; the first is the town"
+  },
+  {
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Drive",
+   "topic": "reporting line for outside assessors and future assessing services",
+   "quote": "john fortune, 50 hemlock drive asked if they brought in more assessors, who would they report"
+  },
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "45 Hemlock Drive",
+   "topic": "land assessment and abatement process",
+   "quote": "pete lincoln, 45 hemlock drive, stated the reason we are all here is the land was highly assessed"
+  },
+  {
+   "speaker": "Nicole Waters",
+   "stated_role": "80 Horizon Island Road, via ZOOM",
+   "topic": "valuations of non-lake properties",
+   "quote": "nicole waters, 80 horizon island road, via zoom, asked if during the investigation you are"
+  },
+  {
+   "speaker": "Alex Yawor",
+   "stated_role": "226 Sunset Lane",
+   "topic": "certification standards versus interpretation in assessment",
+   "quote": "alex yawor, 226 sunset lane, asked if the investigation is going to look at the certification"
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "details of assessment inspections",
+   "quote": "phyllis luck, 50 sunset lane, asked for further information but mr. jeffreys stated providing"
+  },
+  {
+   "speaker": "Carol Hatch",
+   "stated_role": "41 Hilltop Lane",
+   "topic": "differences between lakes in town",
+   "quote": "carol hatch, 41 hilltop lane, spoke about the differences between the different lakes in town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening announcements and public comment",
+   "resolution": "no action; February 14 meeting cancelled",
+   "quote": "mi. jeffreys announced the board would not be meeting on february 14",
+   "tags": [
+    "public comment",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Appointment to Architectural Preservation District Commission",
+   "resolution": "appointed Nathan Lockwood, term to June 30, 2023",
+   "quote": "nathan lockwood stated he was part of the planning board that drafted and proposed the original",
+   "tags": [
+    "appointments",
+    "APDC",
+    "historic district"
+   ]
+  },
+  {
+   "topic": "Hearing on alcohol license transfer, Jaxx Country Variety",
+   "resolution": "continued to February 21 at 7:15 p.m.",
+   "quote": "mr. jeffreys opened the hearing for the license transfer application.",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Status update on tax assessment investigation",
+   "resolution": "update received; no action",
+   "quote": "status update on tax assessment investigation mr. jeffreys read the following aloud:",
+   "tags": [
+    "tax assessment",
+    "investigation",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Review committee assignments: School Committee liaison",
+   "resolution": "Sroka not continuing; chair to seek a replacement",
+   "quote": "ms. sroka confirmed she would not be the liaison to the school committee going forward.",
+   "tags": [
+    "committee assignments",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "Sewer bylaw wording",
+   "resolution": "no vote; Franco to revisit with Sewer Commission",
+   "quote": "mr. franco had discussed changing some sewer bylaw wording with the sewer commission last year",
+   "tags": [
+    "sewer bylaw",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Proposed warrant article to override APDC denial of Ritter Building renovation",
+   "resolution": "discussed; no action recorded",
+   "quote": "mr. jeffreys suggested adding a warrant article to vote to override the apdc's denial of the",
+   "tags": [
+    "APDC",
+    "Ritter Building",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of January 10, 2023",
+   "resolution": "approved with one correction",
+   "quote": "mr. franco stated he would like to amend one line before approving them.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, FY23 budget, bids, events",
+   "resolution": "informational; no action",
+   "quote": "the following is a list of current vacancies on the following",
+   "tags": [
+    "town budget",
+    "snow and ice",
+    "health insurance",
+    "vacancies",
+    "bids",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "announced; board meets February 21 and 28",
+   "quote": "mr. jeffieys reminded all that this board meets again on february 21 and 28.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:36 PM",
+   "quote": "motion: h. sroka to adjourn the meeting the meeting adjourned at 9:36 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "tax assessment investigation",
+  "property assessment",
+  "abatements",
+  "Architectural Preservation District Commission",
+  "liquor license transfer",
+  "town budget",
+  "Proposition 2 1/2",
+  "snow and ice",
+  "health insurance",
+  "transfers",
+  "sewer bylaw",
+  "town meeting",
+  "public comment",
+  "appointments"
+ ],
+ "dropped_unquoted_by_field": {}
 }

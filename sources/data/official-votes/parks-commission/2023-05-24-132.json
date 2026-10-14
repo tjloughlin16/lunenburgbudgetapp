@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-05-24",
  "docid": "132",
@@ -12,40 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Accept the donation gift of a native tree as a memorial to Gen Ness, Cheryl Shaw, and Katie Kiefer to be installed at the town beach by Lakeview Nurseries, with location to be determined by the Facilities Director and the donating group",
+   "motion": "Accept the donation of a native tree as a memorial to Gen Ness, Cheryl Shaw, and Katie Kiefer, to be installed at the town beach by Lakeview Nurseries; location to be set by the Facilities Director, his group and the donating group (amendment by K. Menard).",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to accept the donation gift of the native tree as a memorial to gen ness, cheryl shaw, and katie kiefer to be installed at the town beach by lakeview nurseries. k. menard amended to include the location be determined by the facilities director, his group and the group donating the tree. c. sullivan seconded. roll call vote. motion carried (4-0)."
+   "quote": "k. menard made a motion to accept the donation gift of the native tree as a memorial to gen ness, cheryl shaw, and katie kiefer to be installed at the town beach by lakeview nurseries."
   },
   {
-   "motion": "Nominate A. Lockwood for Chair",
+   "motion": "Nominate A. Lockwood for Chair.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "k. menard made a motion to nominate a. lockwood for chair. c. sullivan seconded. ===page 5=== park commission meeting",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "k. menard made a motion to nominate a. lockwood for chair. c. sullivan seconded."
   },
   {
-   "motion": "Nominate C. Sullivan for Vice-Chair",
+   "motion": "Nominate C. Sullivan for Vice-Chair.",
    "moved_by": "C. Shapiro",
    "seconded_by": "K. Menard",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "c. shapiro made a motion to nominate c. sullivan for vice-chair. k. menard seconded. roll call vote.motion carried (4-0)."
   },
   {
-   "motion": "Nominate K. Menard for Clerk",
+   "motion": "Nominate K. Menard for Clerk.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. lockwood made a motion to nominate k. menard for clerk. c. sullivan seconded. roll call vote.motion carried (4-0)."
   },
   {
-   "motion": "Designate K. Menard to represent the Parks Commission on the Master Plan Steering Committee",
+   "motion": "Designate K. Menard to represent the Parks Commission on the Master Plan Steering Committee.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
@@ -53,15 +52,291 @@
    "quote": "a. lockwood made a motion to designate k. menard to represent the parks commission on the steering committee. c. shapiro seconded. roll call vote.motion carried (4-0)."
   },
   {
-   "motion": "Add the construction end date of June 30, 2024 to the upcoming contract between the Park Commission and the Lunenburg Skate Park Organization",
+   "motion": "Add the construction end date of June 30, 2024 to the upcoming contract between the Park Commission and the Lunenburg Skate Park Organization.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. sullivan made a motion to add the construction end date of june 30, 2024 to the up coming contract that will be drafted between the park commission and the lunenburg skate park organization. c. shapiro seconded. roll call vote.motion carried (4-0)."
+   "quote": "c. sullivan made a motion to add the construction end date of june 30, 2024 to the up coming contract that will be drafted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are complete and readable. Two items were tabled without votes: the Naming Policy Review Draft and Approval of Minutes.",
- "cost_usd": 0.07384740000000001
+ "note": "Text extraction of the minutes, not a scan; all votes are readable. Six motions carried 4-0 by roll call (no motion to adjourn or approve minutes; adjournment at 9:42 pm is recorded with no motion; minutes approval and the naming policy draft were tabled without a vote). Name variants as printed: \"T. Laford\" and \"T. Lanford\"; \"Gen Ness\" and \"Gen Nass\"; \"Christopher Sullivan\" in attendance and \"Chris Sullivan\" in the header; \"Patrick Hakey\" and \"Pat Hakey\". Roles for K. Ostermier, N. Betts, C. Ruth, A. Clement, A. Caiozzo and Lynn Major are not printed. The amendment to the tree motion is folded into the motion text. Page headers print \"Page  of 61\" with no page number, so page-based locators are not reliable.",
+ "cost_usd": 0.01997101,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: patrick hakey"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  },
+  {
+   "name": "K. Ostermier",
+   "role": "presenter, WOLA & Meridian Schematic Design",
+   "status": "present",
+   "quote": "k. ostermier briefly discussed the diagrammatic overall plan"
+  },
+  {
+   "name": "N. Betts",
+   "role": "not stated",
+   "status": "present",
+   "quote": "n. betts explained the gravel lot has to meet with massdep stormwater standards."
+  },
+  {
+   "name": "C. Ruth",
+   "role": "not stated",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "A. Clement",
+   "role": "not stated",
+   "status": "present",
+   "quote": "a. clement gave the following updates:"
+  },
+  {
+   "name": "T. Laford",
+   "role": "not stated (member of the public in public comment)",
+   "status": "present",
+   "quote": "t. laford asked about security cameras."
+  },
+  {
+   "name": "A. Caiozzo",
+   "role": "not stated (skatepark construction)",
+   "status": "present",
+   "quote": "a. caiozzo stated ground breaking will take place this year."
+  },
+  {
+   "name": "Kalyn, Gwen, Caroline, Teresa, Molly and Lacey",
+   "role": "Girl Scout Cadets, Troop 30638",
+   "status": "present",
+   "quote": "kalyn, gwen, caroline, teresa, molly and lacey, girl scout cadets, troop 30638 spoke about gen nass and her importance to them."
+  },
+  {
+   "name": "Lynn Major",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lynn major indicated a group has raised some fund to purchase a tree in honor of gen ness to be planted on the beach."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Naming Policy Review Draft was tabled (no vote recorded).",
+   "quote": "next item on the agenda, naming policy review draft, discussion, and possible vote tabled"
+  },
+  {
+   "decision": "Approval of Minutes was tabled (no vote recorded).",
+   "quote": "next item on the agenda, approval of minutes tabled"
+  },
+  {
+   "decision": "A. Lockwood directed C. Ruth to make a stock list of materials needed for the Beach House workday; community outreach for volunteers and donations to start once the list is received.",
+   "quote": "a. lockwood suggested that c. ruth make a stock list of materials needed."
+  },
+  {
+   "decision": "A. Clement to send a message to Isaiah to clarify the Basketball Camp registration deadline.",
+   "quote": "a. clement will send a message to isaiah for clarification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chair update: funding received",
+   "what_was_recorded": "The chair stated the Commission received funding of one million dollars; no source or fund was named in the minutes.",
+   "figures_as_printed": [
+    "one million dollars"
+   ],
+   "quote": "a. lockwood stated the commission received one million dollars in funding."
+  },
+  {
+   "topic": "Beach water and sewer / septic options",
+   "what_was_recorded": "Bringing water and sewer in through the Massachusetts Ave entrance was discussed; the engineer said it could be an expense because of the ledge. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "n. betts stated it could be an expense because of all the ledge but we can look into the possibility."
+  },
+  {
+   "topic": "Memorial tree funding",
+   "what_was_recorded": "A group has raised some funds to purchase a tree for the beach; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "lynn major indicated a group has raised some fund to purchase a tree in honor of gen ness to be planted on the beach."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kalyn, Gwen, Caroline, Teresa, Molly and Lacey",
+   "stated_role": "Girl Scout Cadets, Troop 30638",
+   "topic": "renaming the town beach for Gen Ness",
+   "quote": "kalyn, gwen, caroline, teresa, molly and lacey, girl scout cadets, troop 30638 spoke about gen nass and her importance to them."
+  },
+  {
+   "speaker": "T. Laford",
+   "topic": "supporting the Troop's naming proposal",
+   "quote": "t. laford supports thetroops proposal and suggested the beach house also be named after gen ness."
+  },
+  {
+   "speaker": "Lynn Major",
+   "topic": "memorial tree donation",
+   "quote": "lynn major indicated a group has raised some fund to purchase a tree in honor of gen ness to be planted on the beach."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "WOLA & Meridian Schematic Design presentation",
+   "resolution": "presented; questions raised; no vote",
+   "quote": "first item on the agenda, wola & meridian schematic design presentation",
+   "tags": [
+    "design",
+    "parks",
+    "stormwater",
+    "skatepark"
+   ]
+  },
+  {
+   "topic": "Facilities Director and Recreation Director updates",
+   "resolution": "updates received; no action",
+   "quote": "next item on the agenda, facilities director and recreation director updates",
+   "tags": [
+    "facilities",
+    "recreation",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Gen Ness Celebration",
+   "resolution": "memorial tree donation accepted 4-0; beach renaming discussed, repairs first per chair; public comment taken",
+   "quote": "next item on the agenda, gen ness celebration",
+   "tags": [
+    "memorial",
+    "beach",
+    "donations",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Reorganization of the Board",
+   "resolution": "Lockwood nominated Chair, Sullivan Vice-Chair, Menard Clerk, each 4-0",
+   "quote": "next item on the agenda, reorganization of the board",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "K. Menard designated to represent the Commission, 4-0",
+   "quote": "next item on the agenda, master plan steering committee",
+   "tags": [
+    "master plan",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Skatepark construction timeline",
+   "resolution": "June 30, 2024 end date to be added to the skatepark contract, 4-0",
+   "quote": "next item on the agenda, skatepark construction timeline",
+   "tags": [
+    "skatepark",
+    "contract",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Naming Policy Review Draft",
+   "resolution": "tabled",
+   "quote": "next item on the agenda, naming policy review draft, discussion, and possible vote",
+   "tags": [
+    "naming policy"
+   ]
+  },
+  {
+   "topic": "Beach House Workday",
+   "resolution": "stock list of materials requested; no vote",
+   "quote": "next item on the agenda, beach house workday",
+   "tags": [
+    "beach",
+    "volunteers",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Earth Day Celebration Wrap Up",
+   "resolution": "chair reviewed slide presentation; no action",
+   "quote": "next item on the agenda, earth day celebration wrap up",
+   "tags": [
+    "events",
+    "earth day"
+   ]
+  },
+  {
+   "topic": "Chair Update",
+   "resolution": "one million dollars in funding reported; no action",
+   "quote": "next item on the agenda, chair update",
+   "tags": [
+    "funding"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "tabled",
+   "quote": "next item on the agenda, approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "new member welcomed; former member thanked; no action",
+   "quote": "c. sullivan welcomed c. shapiro and thanked dave passios for his years on the commission.",
+   "tags": [
+    "membership"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach",
+  "Gen Ness memorial",
+  "skatepark",
+  "WOLA & Meridian design",
+  "reorganization",
+  "officer nominations",
+  "master plan",
+  "naming policy",
+  "donations",
+  "public comment",
+  "stormwater",
+  "funding"
+ ],
+ "dropped_unquoted_by_field": {}
 }

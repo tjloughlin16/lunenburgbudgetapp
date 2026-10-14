@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-02-16",
  "docid": "87",
@@ -12,23 +12,300 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 26, 2023 meeting",
+   "motion": "Approve the minutes of the January 26, 2023 meeting.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Nuzzolo",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to approve the minutes from the january 26, 2023 meeting. mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:24 p.m.",
    "moved_by": "Mr. Balish",
    "seconded_by": "Mr. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. balish motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
+   "quote": "at 8:24 p.m., mr. balish motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Finance Committee meeting, 2023-02-16. Note: Page 1 carries a stamp \"Unanimously Approved by Finance Committee at February 23, 2023 meeting\" — this approval is from the LATER meeting on Feb 23, not from today's Feb 16 meeting, so it is not included.",
- "cost_usd": 0.0693811
+ "note": "Single extracted text; page 2 is blank. Only two motions are recorded (minutes approval and adjournment), both carried unanimously; neither is a count. A stray line on page 1 reads \"Unanimously Approved by Finance Committee at February 23, 2023 meeting.\" It refers to a later meeting, so it is not recorded here as a vote. Item 2 says \"Public Comment: none\"; the two residents who spoke appear in item 4 as guests and are listed as public_comment, and that is a judgement call. Item 8 \"Public Comment\" is a member's board comment, not public comment. Dollar figures are as printed, including \"$10, 500,128\" with a space. The 77 and 135 percent figures are as spoken by residents, not verified by the minutes. No decisions without a vote were recorded.",
+ "cost_usd": 0.016573710000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson (arrived late)",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Member (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Member (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson evan watters (arrived late), vice-chair chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg residents john fortune, and joanna bilotta"
+  },
+  {
+   "name": "John Fortune",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg residents john fortune, and joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg residents john fortune, and joanna bilotta"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2024 projected revenues",
+   "what_was_recorded": "Ms. Lemieux reported total projected FY24 revenues and their split by source: property tax, State Aid, local receipts and other available funds.",
+   "quote": "projected revenues totaling $47,321,389 for fy24 include: $31,422,519 in property tax (66%), $10, 500,128 in state aid (22%), $3,160,153 in local receipts (7%), and $2,238,588 in other available funds (5%).",
+   "figures_as_printed": [
+    "$47,321,389",
+    "$31,422,519",
+    "$10, 500,128",
+    "$3,160,153",
+    "$2,238,588"
+   ]
+  },
+  {
+   "topic": "Property tax levy and new growth",
+   "what_was_recorded": "The FY2024 target budget adds 2 ½ percent to the prior year's levy and includes $200,000 for New Growth.",
+   "quote": "the fy2024 target budget includes revenues for property taxes included adding 2 ½ percent to the previous year's levy",
+   "figures_as_printed": [
+    "2 ½ percent",
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "State Aid",
+   "what_was_recorded": "State Aid is level funded at the FY23 figures approved in July of the prior year; no dollar figure printed.",
+   "quote": "state aid was level funded based on fy23 state aid figures approved in july of last year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Local receipts: Motor Vehicle Excise",
+   "what_was_recorded": "Local receipts include a $50,000 increase over last year's estimate for Motor Vehicle Excise; other receipts are level funded.",
+   "quote": "local receipts included a $50,000 increase over last fiscal year's estimate for motor vehicle excise tax",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Health insurance and retiree costs",
+   "what_was_recorded": "FY24 will use stabilization funds to offset an 8.5 percent increase in health insurance and a 5 percent retiree rate increase.",
+   "quote": "fy24 will use stabilization funds to offset the 8.5 percent increase in health insurance, as well as a 5 percent rate increase for retirees.",
+   "figures_as_printed": [
+    "8.5 percent",
+    "5 percent"
+   ]
+  },
+  {
+   "topic": "Pavement management",
+   "what_was_recorded": "Expenditures include an additional $50,000 for pavement management.",
+   "quote": "expenditures also include an additional $50,000 for pavement management",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Worcester County Retirement",
+   "what_was_recorded": "Expenditures include a 13.55 percent increase for Worcester County Retirement.",
+   "quote": "a 13.55 percent increase for worcester county retirement",
+   "figures_as_printed": [
+    "13.55 percent"
+   ]
+  },
+  {
+   "topic": "Schools and Monty Tech",
+   "what_was_recorded": "Expenditures include a 2.5 percent increase for Lunenburg Public Schools and Monty Tech.",
+   "quote": "a 2.5 percent increase for lunenburg public schools and monty tech",
+   "figures_as_printed": [
+    "2.5 percent"
+   ]
+  },
+  {
+   "topic": "General insurance, police and fire",
+   "what_was_recorded": "Expenditures include a 5 percent increase for general insurances for the police and fire departments.",
+   "quote": "a 5 percent increase for general insurances for the police and fire departments",
+   "figures_as_printed": [
+    "5 percent"
+   ]
+  },
+  {
+   "topic": "Overlay account and free cash",
+   "what_was_recorded": "Unknown Overlay Account expenditures (abatements) will affect how certified free cash is spent for FY24; no amount printed.",
+   "quote": "unknown expenditures for the overlay account, which covers abatements, will affect how certified free cash is spent for fy24.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Waterfront property values and abatements",
+   "what_was_recorded": "Speakers said waterfront property values rose 77 percent on average and that a resident faces a 135 percent increase in taxes; the figures are as stated by speakers, not verified by the minutes.",
+   "quote": "their property values have gone up 77 percent on average",
+   "figures_as_printed": [
+    "77 percent",
+    "135 percent"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Waterfront abatements, Lunenburg Lakes Action Committee",
+   "speaker": "John Fortune",
+   "stated_role": "Lunenburg resident",
+   "quote": "mr. fortune informed the committee that those with waterfront property have formed the lunenburg lakes action committee"
+  },
+  {
+   "topic": "Assessments, fixed-income residents, Town Meeting votes",
+   "speaker": "Joanna Bilotta",
+   "stated_role": "Lunenburg resident",
+   "quote": "ms. bilotta added that she has spoken with four other assessors in the area, and all explained that when property values increase, taxes should increase incrementall."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; read Open Meeting Law statement, meeting recorded",
+   "quote": "mr. menard called the meeting to order at 7p.m. and read a statement concerning the open meeting",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 2)",
+   "resolution": "no action; none offered",
+   "quote": "2. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager Preliminary Budget Presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "3. town manager preliminary budget presentation: in her presentation, ms. lemieux explained that the fy2024",
+   "tags": [
+    "FY2024 budget",
+    "revenue",
+    "expenditures",
+    "state aid",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Tax Abatement/Assessment Discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "mr. menard explained that the finance committee is the only legislative body in town",
+   "tags": [
+    "abatements",
+    "assessments",
+    "waterfront property",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "State Representative Meeting Preparation",
+   "resolution": "discussed; Mr. Watters suggested sending questions to the delegation in advance",
+   "quote": "mr. watters suggested sending questions out to the delegation before the meeting so they can prepare responses.",
+   "tags": [
+    "state delegation",
+    "Chapter 70",
+    "vocational schools"
+   ]
+  },
+  {
+   "topic": "Minutes of January 26, 2023",
+   "resolution": "approved",
+   "quote": "mr. watters motioned to approve the minutes from the january 26, 2023 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future Meetings",
+   "resolution": "noted: March 30 public hearing on FY2024 budget",
+   "quote": "7. future meetings: march 30 public hearing on fy2024 budget.",
+   "tags": [
+    "hearing schedule",
+    "FY2024 budget"
+   ]
+  },
+  {
+   "topic": "Board Comment (item 8a)",
+   "resolution": "no action; member comment on Town Meeting",
+   "quote": "mr. gray commented that he hopes 420 people don't show up to town meeting to",
+   "tags": [
+    "Town Meeting",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "noted: budget presentations scheduled 2/23 to 3/9",
+   "quote": "9. upcoming meetings: 2/23: coa, land use, and library budget presentations.",
+   "tags": [
+    "budget presentations",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved, adjourned 8:24 p.m.",
+   "quote": "at 8:24 p.m., mr. balish motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "FY2024 budget",
+  "preliminary budget",
+  "town manager presentation",
+  "tax abatements",
+  "waterfront property",
+  "assessments",
+  "state aid",
+  "health insurance",
+  "retirement",
+  "overlay and free cash",
+  "state delegation",
+  "Town Meeting",
+  "schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-05-16",
  "docid": "239",
@@ -12,31 +12,422 @@
  },
  "votes": [
   {
-   "motion": "Approve the request for the tollbooth on Saturday, June 3 from 9 am to 1 pm in the town center",
+   "motion": "Approve the Boys & Girls Club tollbooth request for Saturday, June 3, 9 am to 1 pm, in the town center.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: h. sroka to approve the request for the tollbooth on saturday, june 3d from 9 am to 1 pm in the town center vote: all in favor"
+   "quote": "to approve the request for the tollbooth on saturday, june 3d from 9 am to 1 pm in the town center"
   },
   {
-   "motion": "Commit the FY23 4th Quarter Water Commitment in the amount of $10,066.11",
+   "motion": "Commit the 4th Quarter Water Commitment in the amount of $10,066.11.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to commit the 4' quarter water commitment in the amount of $10,066.11"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to commit the 4' quarter water commitment in the amount of $10,066.11 2''': l. franco vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2\"d: l. franco vote: all in favor"
+   "quote": "motion: t. alonzo to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision; all votes readable.",
- "cost_usd": 0.1141151
+ "note": "Scanned minutes read by macOS Vision OCR; several passages are garbled (page 2 email opening and funding source, page 6 sign text, page 1 public comment line breaks), and quotes reproduce the OCR text as printed. Only three votes are recorded, each printed as \"All in Favor\" with no count, so outcomes read \"passed\". Mr. Alonzo's remarks sit inside the PUBLIC COMMENT block on page 1 and may be board comment rather than public comment; a speaker on page 1 (\"these are my words\") and the year-in-review speaker on page 8 are not named in the text. Mr. Lincoln's remarks concern a committee meeting, not this one, and were left out.",
+ "cost_usd": 0.022544510000000004,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. alonzo stated those seem like reasonable requests"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. franco reported the economic development committee is meeting thursday at 6 p.m. at the ritter"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. sroka thanked the people that have supported her over the last nine years that she has been in public office"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "not stated (presented for the Municipal Building Design Committee)",
+   "status": "present",
+   "quote": "greg roy provided a powerpoint presentation of what the committee has arrived at:"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave blatt, 411 goodrich street, added one of the things that the committee looked at was to provide multiple"
+  },
+  {
+   "name": "Andrew woods",
+   "role": "presenter, Boys & Girls Club tollbooth request",
+   "status": "present",
+   "quote": "andrew woods, 94/ flat hill koad, and madelyn dame, 612 mass. ave., presented for the tollbooth request."
+  },
+  {
+   "name": "Madelyn Dame",
+   "role": "presenter, Boys & Girls Club tollbooth request",
+   "status": "present",
+   "quote": "and madelyn dame, 612 mass. ave., presented for the tollbooth request."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "not stated (address printed as 155 Island Road)",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, thanked mr. cramer."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "not stated (Reservoir Road)",
+   "status": "present",
+   "quote": "rhonda lisio, reservoir road, offered some alternatives to providing community space."
+  },
+  {
+   "name": "Mr. Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mr. lemieux stated she was aware of a complaint and was looking into it."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus, without a recorded vote, not to pay for or allow paving of the town easement at 243 Summer Street, and not to license it to an individual homeowner, to avoid setting precedent.",
+   "quote": "they did not want to set precedent by allowing the paving in the easement or licensing to an individual homeowner."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sidewalk project estimate",
+   "what_was_recorded": "Correspondence reports a sidewalk-project estimate that includes Turkey Hill Road, and suggests setting aside a further amount for material-cost instability.",
+   "figures_as_printed": [
+    "$101,500",
+    "$100,000"
+   ],
+   "quote": "the estimate of $101,500 includes turkey hill road."
+  },
+  {
+   "topic": "Athletic Facility feasibility study funding",
+   "what_was_recorded": "Correspondence thanks the board for funding for the Athletic Facility feasibility side study; the source and amount are garbled in the scan.",
+   "figures_as_printed": [],
+   "quote": "for the athletic facility feasibility side study"
+  },
+  {
+   "topic": "Municipal building cost per square foot",
+   "what_was_recorded": "The committee's preliminary costs use a square-footage cost taken from a previous TCP study, presented as relative project costs, not final.",
+   "figures_as_printed": [
+    "$545/sq.ft."
+   ],
+   "quote": "using square footage costs from a previous tcp study with acceleration - $545/sq.ft."
+  },
+  {
+   "topic": "Ritter building renovation and addition cost",
+   "what_was_recorded": "Preliminary cost estimate for the Ritter renovation and a separate addition.",
+   "figures_as_printed": [
+    "~ $3.27 Million",
+    "~ $2.18 Million"
+   ],
+   "quote": "renovation ~ $3.27 million"
+  },
+  {
+   "topic": "Town Hall (Meeting House) cost",
+   "what_was_recorded": "Preliminary cost estimate for the Town Hall renovation as the Meeting House.",
+   "figures_as_printed": [
+    "~ $3.53 Million"
+   ],
+   "quote": "town hall (meeting house)~ $3.53 million"
+  },
+  {
+   "topic": "TC Passios community center cost",
+   "what_was_recorded": "Preliminary cost estimate for converting TC Passios to a community center.",
+   "figures_as_printed": [
+    "~ $13.63 Million"
+   ],
+   "quote": "tc passios (community center) ~ $13.63 million"
+  },
+  {
+   "topic": "Boys & Girls Club space request",
+   "what_was_recorded": "The Club requested 6,000-10,000 square feet; the chair said at the printed cost per square foot this is millions of dollars.",
+   "figures_as_printed": [
+    "6,000-10,000 square feet",
+    "$545/sq.ft."
+   ],
+   "quote": "the club had requested between 6,000-10,000 square feet and at $545/sq.ft., you are looking at millions of dollars"
+  },
+  {
+   "topic": "Water commitment",
+   "what_was_recorded": "Fourth-quarter FY23 water commitment voted by the board.",
+   "figures_as_printed": [
+    "$10,066.11"
+   ],
+   "quote": "to commit the 4' quarter water commitment in the amount of $10,066.11"
+  },
+  {
+   "topic": "Escrow tax payments and mortgage bills",
+   "what_was_recorded": "Public comment says homeowners' escrow-paid property tax increases raised mortgage payments; a request for a letter for banks was rejected at the Board of Assessors.",
+   "figures_as_printed": [],
+   "quote": "their mortgage payments have gone up because the banks that pay their property taxes through an escrow account"
+  },
+  {
+   "topic": "Waterfront land valuation (MFS report)",
+   "what_was_recorded": "The MFS report describes a land-value increase of around 135% in some cases and recommends a further around 17% for waterfront average land.",
+   "figures_as_printed": [],
+   "quote": "this was done, which created an increase in land values in some cases of around 135%."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Sroka",
+   "topic": "thanks supporters; urges voting Saturday",
+   "quote": "ms. sroka thanked the people that have supported her over the last nine years that she has been in public office"
+  },
+  {
+   "speaker": "Mr. Franco",
+   "topic": "BOA escrow letter, abatement hearing access and notice",
+   "quote": "mr. franco commented about his attendance at the board of assessors (boa) meeting today."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "abatement hearing notice; MFS waterfront ratings; refunds",
+   "quote": "mr. alonzo stated those seem like reasonable requests; and not knowing when your abatement application"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "topic": "escrow taxes increasing",
+   "quote": "dave macdonald, 155 island road, thanked mr. cramer. he repeated what was mentioned in public comment about escrow taxes increasing."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Reservoir Road",
+   "topic": "alternatives to providing community space",
+   "quote": "rhonda lisio, reservoir road, offered some alternatives to providing community space."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, recording and remote-access notice",
+   "resolution": "opened; notices given",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; no action recorded",
+   "quote": "ms. sroka thanked the people that have supported her over the last nine years",
+   "tags": [
+    "public comment",
+    "abatements",
+    "escrow taxes"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "to approve the request for the tollbooth on saturday, june 3d from 9 am to 1 pm in the town center",
+   "tags": [
+    "tollbooth",
+    "fundraiser",
+    "boys and girls club"
+   ]
+  },
+  {
+   "topic": "Correspondence: sidewalk project map and estimate",
+   "resolution": "received; no action recorded",
+   "quote": "the estimate of $101,500 includes turkey hill road.",
+   "tags": [
+    "sidewalk",
+    "estimate"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee presentation",
+   "resolution": "presented; feedback sought; no action recorded",
+   "quote": "greg roy provided a powerpoint presentation of what the committee has arrived at:",
+   "tags": [
+    "municipal building",
+    "town hall",
+    "ritter building",
+    "community center",
+    "cost"
+   ]
+  },
+  {
+   "topic": "FY23 4th Quarter water commitment",
+   "resolution": "approved",
+   "quote": "to commit the 4' quarter water commitment in the amount of $10,066.11",
+   "tags": [
+    "water",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Waterfront land valuation (MFS report)",
+   "resolution": "reviewed; no action recorded",
+   "quote": "mfs feels the waterfront land tables should be brought back to fy22 levels.",
+   "tags": [
+    "assessing",
+    "waterfront",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, job postings, bids",
+   "resolution": "received",
+   "quote": "interested persons can find volunteer applications on the town website",
+   "tags": [
+    "vacancies",
+    "employment",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Safe passing signage (vulnerable road users)",
+   "resolution": "reported; DPW to determine sign count",
+   "quote": "the massachusetts department of transportation is responsible for",
+   "tags": [
+    "roads",
+    "signage",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave EPA update",
+   "resolution": "reported",
+   "quote": "the epa provided an update this week that the contractor that was hired by the epa will be on site tomorrow",
+   "tags": [
+    "925 mass ave",
+    "environmental"
+   ]
+  },
+  {
+   "topic": "30 School Street update",
+   "resolution": "reported",
+   "quote": "the hazardous materials abatement and demolition of the old primary school",
+   "tags": [
+    "30 school street",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "Old business: inspectors and private windows complaint",
+   "resolution": "Mr. Lemieux looking into complaint; no action recorded",
+   "quote": "mr. alonzo asked about posts on social media about inspectors peering into private homes' windows without",
+   "tags": [
+    "inspections",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. franco reported the economic development committee is meeting thursday at 6 p.m.",
+   "tags": [
+    "economic development",
+    "council on aging",
+    "300th anniversary"
+   ]
+  },
+  {
+   "topic": "Request to pave 243 Summer Street easement",
+   "resolution": "discussed; board did not want to set precedent; no vote",
+   "quote": "none of the board members thought the town should have to pay for paving even if allowed.",
+   "tags": [
+    "243 summer street",
+    "easement",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Select Board goals: status review",
+   "resolution": "status reviewed; some actions marked completed or incomplete",
+   "quote": "objective 2: work with town manager and finance director to establish a means-tested senior citizen",
+   "tags": [
+    "goals",
+    "30 school street",
+    "senior tax exemption",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Chair's year-in-review remarks",
+   "resolution": "remarks; no action recorded",
+   "quote": "we had a calendar that mapped out the whole year's agendas from may 2022 to this may 2023.",
+   "tags": [
+    "year in review",
+    "workshops"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "quote": "mr. jeffreys announced their next meeting is may 23.",
+   "tags": [
+    "schedule",
+    "election",
+    "memorial day"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard; no action recorded",
+   "quote": "rhonda lisio, reservoir road, offered some alternatives to providing community space.",
+   "tags": [
+    "public comment",
+    "community space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:23 p.m.",
+   "quote": "motion: t. alonzo to adjourn the meeting",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "tollbooth fundraiser",
+  "municipal building",
+  "sidewalk",
+  "water commitment",
+  "waterfront assessments",
+  "abatements",
+  "escrow taxes",
+  "30 School Street",
+  "925 Mass Ave",
+  "road safety signage",
+  "Select Board goals",
+  "vacancies"
+ ],
+ "dropped_unquoted_by_field": {}
 }

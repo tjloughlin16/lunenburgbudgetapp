@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-03-09",
  "docid": "91",
@@ -12,23 +12,322 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the March 2, 2023 meeting",
-   "moved_by": "Mr. Nuzzolo",
-   "seconded_by": "Mr. Balish",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the March 2, 2023 meeting.",
+   "moved_by": "Caesar Nuzzolo",
+   "seconded_by": "Tom Balish",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. nuzzolo motioned to approve the minutes of the march 2, 2023 meeting, mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Nuzzolo",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 8:43 p.m.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Caesar Nuzzolo",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 8:43 p.m. mr. menard motioned to adjourn. mr. nuzzolo seconded. on vote, motion carried unanimously."
+   "quote": "mr. menard motioned to adjourn. mr. nuzzolo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Sections 3 and 5 contain budget presentations and discussions but record no motions or votes. All votes found are procedural.",
- "cost_usd": 0.0675941
+ "note": "Text extraction, not a scan; no readable vote is missing. Two votes are recorded (minutes approval and adjournment), both \"motion carried unanimously\" with no printed count. Page 2 ends at \"Mr. Ruth outlined what's been spent out of the FY23 budget so far:\" followed by blank lines, so the list of FY23 spending the minutes refer to is absent from this text. Page 3 \"Town Manager/Finance Director Report\" has a heading with no content beneath it. The minutes carry a note that they were approved at the 3/22/2023 meeting, which is not a vote recorded at this meeting. The millionaires' tax and ESSER/free cash items print no dollar figures.",
+ "cost_usd": 0.01603401,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, dpw director bill bernard, facilities director christopher ruth"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, dpw director bill bernard, facilities director christopher ruth"
+  },
+  {
+   "name": "Christopher Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, dpw director bill bernard, facilities director christopher ruth"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Former Finance Committee member",
+   "status": "present",
+   "quote": "former finance committee member dave passios first agreed with mr. menard, and also opined that oftentimes opinions"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee will address ESSER funds and free cash in relation to the overlay account in its report this year.",
+   "quote": "committee will address esser funds and free cash in relation to the overlay account in their report this year."
+  },
+  {
+   "decision": "Emergency Shelter at Turkey Hill Elementary placed on the items for future meetings list.",
+   "quote": "8. items for future meetings: emergency shelter -turkey hill elementary"
+  },
+  {
+   "decision": "Next meetings scheduled: March 16 (Fire, Lunenburg Public Schools), March 22 (Administration, Unclassified, Debt Service, Monty Tech), March 23 (PACC, Sewer, Other Moneyed Articles), March 30 (Public Hearing).",
+   "quote": "a. march 16 -fire, lunenburg public schools"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 DPW budget request",
+   "what_was_recorded": "The DPW requested a total budget that is higher than FY23 by a stated amount and percentage.",
+   "quote": "the dpw is requesting $2,168,287.64, which is $158,138 more (7.8 percent) than fy23.",
+   "figures_as_printed": [
+    "$2,168,287.64",
+    "$158,138",
+    "7.8 percent"
+   ]
+  },
+  {
+   "topic": "Streetlight electricity",
+   "what_was_recorded": "A new streetlights line item was added; the DPW estimates electricity will cost the town a stated amount.",
+   "quote": "a new line item for streetlights has been added, mr. bernard has estimated the electricity will cost the town $30,000.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Snow and ice overspending in FY23",
+   "what_was_recorded": "Snow and ice spending in FY23 is almost twice its budget amount and has reached a stated total.",
+   "quote": "mr. bernard has already had to spend almost twice the budget amount for snow and ice in fy23, and is up to $684,650.",
+   "figures_as_printed": [
+    "$684,650"
+   ]
+  },
+  {
+   "topic": "Cemetery shrubs and services",
+   "what_was_recorded": "An increase is sought for cemetery shrubs and services.",
+   "quote": "a $12,911 increase is sought to purchase shrubs, and services for the cemetery department.",
+   "figures_as_printed": [
+    "$12,911"
+   ]
+  },
+  {
+   "topic": "Tree removal cost",
+   "what_was_recorded": "Tree removal is estimated at a stated FY24 cost, up a stated amount from FY23.",
+   "quote": "tree removal is estimated to cost $33,500 in fy24, which is up $4,357 from fy23.",
+   "figures_as_printed": [
+    "$33,500",
+    "$4,357"
+   ]
+  },
+  {
+   "topic": "FY24 Facilities budget requests",
+   "what_was_recorded": "The new facilities department seeks increases for contracted services and parks salaries and contracted services.",
+   "quote": "the newly created facilities department will seek a $15,000 increase for contracted services, $5,000 for salaries for parks, and another $8,500 for contracted services exclusively for parks.",
+   "figures_as_printed": [
+    "$15,000",
+    "$5,000",
+    "$8,500"
+   ]
+  },
+  {
+   "topic": "Capital plan addition",
+   "what_was_recorded": "The Town Manager said it is possible a stated amount may be added to the capital plan.",
+   "quote": "it's possible $500,000 may be added to the plan.",
+   "figures_as_printed": [
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "State millionaires' tax impact on budget",
+   "what_was_recorded": "The committee discussed how the state's new tax may affect the town budget; no figure printed.",
+   "quote": "how the town's budget may be impacted by the new \"millionaires' tax\" imposed by the state",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ESSER funds, free cash and overlay account",
+   "what_was_recorded": "The committee's report will address ESSER funds and free cash in relation to the overlay account; no figure printed.",
+   "quote": "committee will address esser funds and free cash in relation to the overlay account in their report this year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Parks budget public discussion",
+   "what_was_recorded": "A public speaker said the parks budget had not been publicly discussed before the meeting; no figure printed.",
+   "quote": "no public discussion of the parks budget ever took place before tonight's finance committee meeting.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Menard",
+   "topic": "Anonymous letter and public voice",
+   "quote": "mr. menard addressed the recent anonymous letter brought up at a select board meeting, and urged members of the public who may be afraid to share their thoughts publicly"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Former Finance Committee member",
+   "topic": "Emergency shelter and parks budget",
+   "quote": "mr. passios also asked why the turkey hill elementary school is not being used as a shelter for people in town in emergency situations."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mr. watters called the meeting to order at 7p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "FY24 DPW budget request",
+   "resolution": "presented; no action recorded",
+   "quote": "a. fy24 dpw budget request: the dpw is requesting $2,168,287.64, which is $158,138 more (7.8 percent) than fy23.",
+   "tags": [
+    "DPW",
+    "budget",
+    "snow and ice",
+    "streetlights"
+   ]
+  },
+  {
+   "topic": "FY24 Facilities budget request",
+   "resolution": "presented; no action recorded",
+   "quote": "b. fy24 facilities budget request: new facilities director christopher ruth, who has been on the job for about five weeks, presented his budget requests.",
+   "tags": [
+    "facilities",
+    "parks",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "no action",
+   "quote": "4. town manager/finance director report:",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Finance Committee report (old business)",
+   "resolution": "noted; committee to address topics in its report",
+   "quote": "a. finance committee report: committee will address esser funds and free cash in relation to the overlay account in their report this year.",
+   "tags": [
+    "ESSER",
+    "free cash",
+    "overlay",
+    "property assessment"
+   ]
+  },
+  {
+   "topic": "Capital plan",
+   "resolution": "Town Manager to update when information is available",
+   "quote": "b. capital plan: town manager will update when more information is available.",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Tax assessment and abatement",
+   "resolution": "discussed; no action recorded",
+   "quote": "c. tax assessment/abatement: mr. watters urged members of the public to work civilly with town government",
+   "tags": [
+    "property tax",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Minutes of March 2, 2023",
+   "resolution": "approved",
+   "quote": "mr. nuzzolo motioned to approve the minutes of the march 2, 2023 meeting, mr. balish seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action recorded",
+   "quote": "a. board comment: mr. menard addressed the recent anonymous letter brought up at a select board meeting",
+   "tags": [
+    "public comment",
+    "emergency shelter"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "emergency shelter added to future list",
+   "quote": "8. items for future meetings: emergency shelter -turkey hill elementary",
+   "tags": [
+    "emergency shelter"
+   ]
+  },
+  {
+   "topic": "Next meetings schedule",
+   "resolution": "noted",
+   "quote": "a. march 16 -fire, lunenburg public schools",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:43 p.m., approved",
+   "quote": "10. adjourn at 8:43 p.m. mr. menard motioned to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY24 budget",
+  "DPW",
+  "facilities",
+  "parks",
+  "snow and ice",
+  "streetlights",
+  "capital plan",
+  "ESSER",
+  "free cash",
+  "overlay",
+  "property tax",
+  "emergency shelter",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

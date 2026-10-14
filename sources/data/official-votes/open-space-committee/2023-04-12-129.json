@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2023-04-12",
  "docid": "129",
@@ -12,15 +12,233 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mary Wilson",
    "seconded_by": "Ana Lockwood",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion by mary wilson, second by ana lockwood, unanimous vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0875695
+ "note": "Minutes are a narrative extract with no recorded motion except adjournment. The minutes approval item was not voted (no quorum-style result was printed; the text says no vote could be taken). The Chairman is never named outright; he is identified as 'The Chairman' and the schedule says Mike Toohill cannot attend and Ana Lockwood will chair, so Michael Toohill is treated as the Chairman by inference only. Brandon Kibbe is mentioned as having researched the 110 Burrage site, but the minutes do not say he attended. The 'Reservoir Rd' preference line prints '-0-' as found in the source. No dollar figures were voted on. Public comment: none, per the minutes.",
+ "cost_usd": 0.014917610000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Toohill",
+   "role": "member (referred to as 'The Chairman' throughout; the minutes never state the title outright)",
+   "status": "present",
+   "quote": "following members were present: michael toohill, ana lockwood, eric hinds, and mary wilson"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "member; Parks Commission Chair (as printed)",
+   "status": "present",
+   "quote": "following members were present: michael toohill, ana lockwood, eric hinds, and mary wilson"
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "member",
+   "status": "present",
+   "quote": "following members were present: michael toohill, ana lockwood, eric hinds, and mary wilson"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "member; Conservation Commission (as printed); volunteered to take minutes",
+   "status": "present",
+   "quote": "mary wilson volunteered to take meeting minutes for this evening."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the chairman and brandon kibbe researched this to confirm, or dispute, the claim that the parcel, or portions of the parcel, are contaminated."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No vote was taken on the 9/8/22 and 2/8/23 meeting minutes because they had not yet been distributed; the minutes were deferred.",
+   "quote": "no vote could be taken on meeting minutes, as they have not yet been distributed."
+  },
+  {
+   "decision": "The Chairman will distribute the draft minutes to members by email after the meeting.",
+   "quote": "the chairman will distribute to members via email afterwards."
+  },
+  {
+   "decision": "Mary Wilson volunteered to take the minutes for this meeting.",
+   "quote": "mary wilson volunteered to take meeting minutes for this evening."
+  },
+  {
+   "decision": "Ana Lockwood will talk to the Town Manager about the apparent encroachment by an abutter on the Reservoir Rd parcel.",
+   "quote": "ana also noticed the encroachment, and will talk to the town manager."
+  },
+  {
+   "decision": "Mary Wilson volunteered to post the Open Space Committee community-member opening on Facebook (Stewards of Lunenburg Trails and other Lunenburg pages).",
+   "quote": "mary wilson volunteered to post the opportunity on fb, stewards of lunenburg trails and misc lunenburg fb pages."
+  },
+  {
+   "decision": "The draft meeting minutes are to be emailed to all committee members for review.",
+   "quote": "the chairman advised that the draft meeting minutes should be emailed to all committee members for review."
+  },
+  {
+   "decision": "Meeting schedule set for 5/1 and June 14th; Mike Toohill cannot attend either, so Ana Lockwood will chair.",
+   "quote": "5/1 (mike toohill cannot attend, ana lockwood to chair),"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lake Shirley Dam maintenance line item",
+   "what_was_recorded": "Ana Lockwood reported the town budget carries a Lake Shirley Dam Maintenance line of $10000 a year, which she said is large compared with other town budget items.",
+   "figures_as_printed": [
+    "$10000/annual"
+   ],
+   "quote": "the town carries a lake shirley dam maintenance budget 2023 line item of $10000/annual"
+  },
+  {
+   "topic": "Parks Budget comparison",
+   "what_was_recorded": "Ana Lockwood compared the Lake Shirley dam line with the Parks Budget, which she put at approximately $35k for maintenance of all town parks.",
+   "figures_as_printed": [
+    "$35k"
+   ],
+   "quote": "as example the parks budget is appx $35k for the maintenance of all parks in town."
+  },
+  {
+   "topic": "Lake residents' taxes",
+   "what_was_recorded": "The Chairman said lake residents pay more dollars in tax because their properties are valued higher, though the tax rate is the same for all town residents. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the lake residents pay more dollar amount in tax, as their properties are valued higher."
+  },
+  {
+   "topic": "Marshall Park project funding",
+   "what_was_recorded": "The Parks Commission aims to have the Marshall Park project fully funded by the 2024 Town Meeting, with ARPA funds and grants as hoped-for sources. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the goal is to have the marshall park project fully funded by the 2024 town meeting, and able to break ground."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:32pm",
+   "quote": "the chairman called the meeting to order at 7:32pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes review (9/8/22 and 2/8/23)",
+   "resolution": "continued; no vote possible because minutes not yet distributed",
+   "quote": "no vote could be taken on meeting minutes, as they have not yet been distributed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Parmenter Road and Reservoir Road parcels",
+   "resolution": "discussed; no action taken; Ana Lockwood to talk to Town Manager about encroachment",
+   "quote": "the chairman advocated a preference for the -0- reservoir rd over 51 parmenter rd. for public access.",
+   "tags": [
+    "lake access",
+    "Reservoir Road",
+    "Parmenter Road",
+    "public access",
+    "Lake Shirley",
+    "encroachment",
+    "parking"
+   ]
+  },
+  {
+   "topic": "110 Burrage potential development",
+   "resolution": "discussed; no action; parcel reported no longer on market",
+   "quote": "the chairman related information that a resident (77 burrage) spoke to him regarding a concern for a proposed development on 110 burrage.",
+   "tags": [
+    "contamination",
+    "conservation",
+    "Burrage",
+    "septic",
+    "hazardous waste"
+   ]
+  },
+  {
+   "topic": "Parks Commission update (Marshall Park)",
+   "resolution": "reported; no action",
+   "quote": "parks commissions is very excited that this is moving forward.",
+   "tags": [
+    "parks",
+    "Marshall Park",
+    "ARPA",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Conservation Commission report",
+   "resolution": "reported; no action",
+   "quote": "conservation meetings recently have only had 1 or 2 hearings each.",
+   "tags": [
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Lunenburg Earth Days (with Parks)",
+   "resolution": "reported; no action",
+   "quote": "there have already been approximately 130 volunteer man-hours accumulated",
+   "tags": [
+    "volunteers",
+    "Earth Days",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Open Space Committee community-member opening",
+   "resolution": "still open; Mary Wilson to post on Facebook",
+   "quote": "still have an opening on the open space committee for community member.",
+   "tags": [
+    "membership",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment; no members of the public present",
+   "quote": "n/a (no members of the public were present)",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set 5/1 and June 14th; Ana Lockwood to chair both",
+   "quote": "5/1 (mike toohill cannot attend, ana lockwood to chair),",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13 pm, unanimous",
+   "quote": "meeting adjourned at 8:13 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Open Space Committee",
+  "Lake Shirley",
+  "public lake access",
+  "Parmenter Road",
+  "Reservoir Road",
+  "encroachment",
+  "Lake Shirley dam budget",
+  "110 Burrage contamination",
+  "Marshall Park",
+  "Earth Days volunteers",
+  "committee vacancy",
+  "meeting schedule",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

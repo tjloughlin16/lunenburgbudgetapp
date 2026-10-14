@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-02-06",
  "docid": "179",
@@ -12,39 +12,232 @@
  },
  "votes": [
   {
-   "motion": "Approve the January 6, 2023 minutes",
-   "moved_by": "F. Beall",
-   "seconded_by": "P. Lincoln",
+   "motion": "Approve the January 6, 2023 minutes.",
+   "moved_by": "F.Beall",
+   "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": true,
    "quote": "january 6, 2023 minutes approved (f.beall, 2nd p.lincoln), passed"
   },
   {
-   "motion": "Accept the proposed PAC warrant",
-   "moved_by": "P. Lincoln",
-   "seconded_by": "F. Beall",
+   "motion": "Accept the PAC warrant.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to accept (p.lincoln, f.beall), passed"
+   "quote": "discussed and motion to accept (p.lincoln, f.beall), passed"
   },
   {
-   "motion": "Accept the PAC drone policy",
-   "moved_by": "P. Lincoln",
-   "seconded_by": "S. Archambault",
+   "motion": "Accept the PAC drone policy.",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion to accept (p.lincoln, s.archambault), passed"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "S. Archambault",
-   "seconded_by": "F. Beall",
+   "motion": "Adjourn the meeting at 8:17 pm.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 8:17 pm o (motion - s.archambault, 2nd f.beall - passed)"
+   "quote": "(motion - s.archambault, 2nd f.beall - passed)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in the minutes were extracted. One item—the PAC staff use of personal equipment policy—was tabled and therefore not voted on and is excluded.",
- "cost_usd": 0.0987335
+ "note": "Text extraction, not a scan; all content readable. Four votes recorded, each with its printed result; no tally is printed for any vote. The warrant and drone-policy motions print only a pair of names in parentheses, without saying which was mover and which seconder, so no mover/seconder is recorded for them. The adjournment motion is printed with a parenthetical rather than the usual \"moved/seconded\" wording; I read S.Archambault as mover and F.Beall as second from \"motion – S.Archambault, 2nd F.Beall\". The public comment section prints \"None\", so no speakers are listed. The manager's attendance is not marked present or absent in the minutes.",
+ "cost_usd": 0.01491551,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "PAC staff use of personal equipment policy was tabled.",
+   "quote": "pac staff use of personal equipment policy; - tabled"
+  },
+  {
+   "decision": "Committee members were asked to send comments, suggestions or questions on the PAC budget to S. Walker or J. McLaughlin.",
+   "quote": "committee members were asked to review the information and send comments, suggestions or questions to s.walker"
+  },
+  {
+   "decision": "Committee asked to review the PAAC Town Report submission and email J. McLaughlin with suggestions or comments.",
+   "quote": "committee asked to review submission and email j. mclaughlin with suggestions/comments."
+  },
+  {
+   "decision": "J. McLaughlin will investigate the January 17 Select Board broadcast issues, covering three areas: PAC-to-Town Hall interface, PAC equipment, and outside inputs.",
+   "quote": "three areas will need to be address in order to fully understand the event and create a solution. j. mclaughlin will investigate."
+  },
+  {
+   "decision": "J. McLaughlin is to meet with the town manager and IT to flesh out details of the CASTUS failure.",
+   "quote": "j.mclaughlin is meeting with town manager and it to flush out details."
+  },
+  {
+   "decision": "S. Archambault will coordinate with the Library on rescheduling PAC meetings to the 2nd Monday of each month; the next meeting is March 13th, 6:00 pm.",
+   "quote": "s.archambault will coordinate with the library to see if pac meetings can be rescheduled for the 2nd monday of each month."
+  },
+  {
+   "decision": "Next meeting set for March 13th, 6:00 pm, at the Sudolnik Conference Room, Lunenburg Town Library.",
+   "quote": "next meeting is march 13th, 6:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget balance",
+   "what_was_recorded": "The manager's update reported the budget balance.",
+   "figures_as_printed": [
+    "$919,624.90"
+   ],
+   "quote": "budget balance: $919,624.90"
+  },
+  {
+   "topic": "PAC budget review",
+   "what_was_recorded": "The PAC budget was presented and discussed; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the pac budget was presented and discussed."
+  },
+  {
+   "topic": "CASTUS additional memory",
+   "what_was_recorded": "CASTUS is sending additional memory at no charge to test whether it fixes the frozen-system failure.",
+   "figures_as_printed": [],
+   "quote": "castus is sending additional memory, at no charge, to see if this fixes the issue."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no action; studio location and Passios still fluid",
+   "quote": "p.lincoln, s.walker - status of new studio location & passios still fluid",
+   "tags": [
+    "studio",
+    "Passios"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved January 6, 2023 minutes",
+   "quote": "january 6, 2023 minutes approved (f.beall, 2nd p.lincoln), passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "no action; basketball recording, budget balance, PAAC Town Report due April 16",
+   "quote": "recording basketball but still unable to live stream, working on a solution",
+   "tags": [
+    "basketball",
+    "live stream",
+    "town report",
+    "budget"
+   ]
+  },
+  {
+   "topic": "January 17 Select Board broadcast issues at LMHS",
+   "resolution": "discussed; manager to investigate, no vote",
+   "quote": "report of issues concerning jan. 17th select board meeting broadcast at lhms.",
+   "tags": [
+    "CASTUS",
+    "broadcast",
+    "LMHS",
+    "outage"
+   ]
+  },
+  {
+   "topic": "PAC budget review",
+   "resolution": "presented and discussed; members asked to send comments",
+   "quote": "the pac budget was presented and discussed.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Proposed PAC warrant",
+   "resolution": "accepted, passed",
+   "quote": "the pac warrant was presented, discussed and motion to accept (p.lincoln, f.beall), passed.",
+   "tags": [
+    "warrant"
+   ]
+  },
+  {
+   "topic": "PAC drone policy",
+   "resolution": "accepted, passed",
+   "quote": "pac drone policy was presented and read by p. sarapas",
+   "tags": [
+    "drone policy"
+   ]
+  },
+  {
+   "topic": "PAC staff use of personal equipment policy",
+   "resolution": "tabled",
+   "quote": "pac staff use of personal equipment policy; - tabled",
+   "tags": [
+    "equipment policy"
+   ]
+  },
+  {
+   "topic": "Adjournment and meeting schedule",
+   "resolution": "next meeting March 13th; moved to 2nd Monday; adjourned 8:17 pm",
+   "quote": "next meeting is march 13th, 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PAC",
+  "cable committee",
+  "CASTUS",
+  "live broadcast",
+  "Select Board broadcast",
+  "budget",
+  "warrant",
+  "drone policy",
+  "equipment policy",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

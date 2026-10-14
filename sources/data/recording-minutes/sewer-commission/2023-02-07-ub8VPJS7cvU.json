@@ -1,0 +1,787 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2023-02-07",
+ "video_id": "ub8VPJS7cvU",
+ "video_url": "https://www.youtube.com/watch?v=ub8VPJS7cvU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2023-02-07-ub8VPJS7cvU.json",
+  "sha256": "87b1f468deff4f9d3ef7ac1e2ed1728397f10b3a3c0e5d7bff60cafdccfa7e6c",
+  "caption_lines": 253,
+  "segments": 2016
+ },
+ "recording": {
+  "duration_s": 5331,
+  "duration": "1:28",
+  "spoken_chars": 56546,
+  "words_approx": 9424
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02072023-289",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-agenda-289.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-agenda-289.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02072023-290",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-agenda-290.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-agenda-290.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02072023-294",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-agenda-294.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-agenda-294.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072023-289",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-minutes-289.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-minutes-289.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072023-294",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-minutes-294.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-minutes-294.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T02:41:46Z",
+  "cost_usd": 0.4064297
+ },
+ "minutes": {
+  "headline": "Sewer Commission walked through the FY24 operating budget line by line; it shows a deficit and no rate decision was made.",
+  "summary": "A special budget workshop where the Sewer Commission reviewed the preliminary FY24 operating budget with the departing staff member. Revenue, payroll, purchase of service, utilities, capital, debt and town meeting transfers were covered. Members raised pump station safety and manhole inspection concerns and agreed to a new consulting line, but left rate and retained-earnings choices for later meetings.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynolds",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brett Ramson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike noltz",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member (absent)"
+   },
+   {
+    "name_as_heard": "Mike to Vegas",
+    "role": "member (absent)"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "staff (DPW director)"
+   },
+   {
+    "name_as_heard": "Barbara Lafave",
+    "role": "staff (sewer department administrator, retiring)"
+   },
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Gene Rayleigh",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 216,
+    "topic": "A member of the public who installed a deduct/irrigation meter said requiring the plumbing permit be submitted to the Sewer Department with the plumbing inspector sign-off makes no sense, and asked the commission to review it at a future meeting.",
+    "stated_role": "resident who had a meter installed"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "fees",
+   "public-comment",
+   "retirement",
+   "staffing",
+   "transfers",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 5274,
+    "motion": "Adjourn the meeting",
+    "moved_by": "Brett",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 454,
+    "topic": "User charges revenue",
+    "what_was_said": "User charges projected from current customers plus growth, with rate increase left at zero for now.",
+    "figures_as_heard": [
+     "1.2 million",
+     "zero"
+    ]
+   },
+   {
+    "t": 580,
+    "topic": "Deduct meter fee",
+    "what_was_said": "Revenue based on existing deduct meters plus two for growth.",
+    "figures_as_heard": [
+     "2800",
+     "fifty dollars a year",
+     "54"
+    ]
+   },
+   {
+    "t": 644,
+    "topic": "Connection fees",
+    "what_was_said": "Assumes one new Fitchburg and five new Leominster connections.",
+    "figures_as_heard": [
+     "927 customers",
+     "13 new connects"
+    ]
+   },
+   {
+    "t": 751,
+    "topic": "Drain layer and grease trap permit fees",
+    "what_was_said": "Drain layer fees assume six licensees; proposal to charge compliant grease trap customers a permit fee and non-compliant more.",
+    "figures_as_heard": [
+     "600",
+     "a hundred dollar license fee",
+     "50",
+     "100"
+    ]
+   },
+   {
+    "t": 879,
+    "topic": "Investment income",
+    "what_was_said": "Budgeted slightly up from prior year based on current projections.",
+    "figures_as_heard": [
+     "6000"
+    ]
+   },
+   {
+    "t": 1045,
+    "topic": "Reserve capacity transfer for Fitchburg John Fitch Highway",
+    "what_was_said": "Offsetting in-and-out entry; Highfield money is nearly used up so future years draw on the fund.",
+    "figures_as_heard": [
+     "twenty thousand nine sixty two forty",
+     "seven thousand"
+    ]
+   },
+   {
+    "t": 1108,
+    "topic": "Sewer bank / I&I remediation",
+    "what_was_said": "Money required to be spent on I&I each year; offsetting entry in expenses.",
+    "figures_as_heard": [
+     "9900",
+     "10 000"
+    ]
+   },
+   {
+    "t": 1171,
+    "topic": "ARPA funding requests",
+    "what_was_said": "Three ARPA requests carried as revenue with matching capital expense as a wash, pending talks with town manager and accountant.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1278,
+    "topic": "Capital planned and unplanned expenditures",
+    "what_was_said": "Unplanned capital funded by capital reserve; planned capital explained later as pump station upgrades and manhole maintenance.",
+    "figures_as_heard": [
+     "96 000",
+     "35 000"
+    ]
+   },
+   {
+    "t": 1402,
+    "topic": "Payroll and COLA",
+    "what_was_said": "Payroll based on accountant figures with a COLA estimate pending a salary study; described as conservative.",
+    "figures_as_heard": [
+     "three and a half percent"
+    ]
+   },
+   {
+    "t": 1645,
+    "topic": "Pump station general repairs",
+    "what_was_said": "Increased because systems are aging, citing past spending.",
+    "figures_as_heard": [
+     "ten thousand",
+     "20 000",
+     "47 000"
+    ]
+   },
+   {
+    "t": 2522,
+    "topic": "Sewer lines, manholes, stubs, flow meters",
+    "what_was_said": "Sewer line jetting raised; manhole repairs and several other lines level funded.",
+    "figures_as_heard": [
+     "fifteen thousand",
+     "ten thousand"
+    ]
+   },
+   {
+    "t": 2754,
+    "topic": "Outsourcing O&M contract",
+    "what_was_said": "Pump station O&M contract line raised because the contract goes out to bid with unknown pricing.",
+    "figures_as_heard": [
+     "85 000",
+     "120"
+    ]
+   },
+   {
+    "t": 2817,
+    "topic": "Generator coverage contract",
+    "what_was_said": "Maintenance contract level funded pending an amount.",
+    "figures_as_heard": [
+     "68 25",
+     "7 000"
+    ]
+   },
+   {
+    "t": 2966,
+    "topic": "Administrative consulting services",
+    "what_was_said": "New line so the retiring administrator can be consulted; members supported including it.",
+    "figures_as_heard": [
+     "twelve thousand dollars",
+     "200 hours"
+    ]
+   },
+   {
+    "t": 3430,
+    "topic": "Legal counsel and legal/engineering services",
+    "what_was_said": "Legal level for possible Leominster IMA renewal work; engineering raised for 40B questions and pump station upgrades.",
+    "figures_as_heard": [
+     "five thousand",
+     "thirty thousand",
+     "35 000"
+    ]
+   },
+   {
+    "t": 3517,
+    "topic": "Utilities",
+    "what_was_said": "Utility lines increased on projections.",
+    "figures_as_heard": [
+     "2300",
+     "35 000",
+     "five thousand",
+     "four thousand",
+     "400"
+    ]
+   },
+   {
+    "t": 3665,
+    "topic": "Capital plan",
+    "what_was_said": "Planned capital split between pump station upgrades and manhole maintenance.",
+    "figures_as_heard": [
+     "96 000",
+     "56 000",
+     "40 000"
+    ]
+   },
+   {
+    "t": 4063,
+    "topic": "Leominster and Fitchburg debt service and usage",
+    "what_was_said": "Leominster debt rising on its schedule; Fitchburg debt a wash against reserve capacity; Leominster usage budgeted same as last year.",
+    "figures_as_heard": [
+     "55038",
+     "40",
+     "29 62 40",
+     "five hundred and twenty thousand",
+     "220"
+    ]
+   },
+   {
+    "t": 4253,
+    "topic": "Indirect costs",
+    "what_was_said": "Indirects supplied by the accountant, estimated given unknowns in benefits.",
+    "figures_as_heard": [
+     "87 000"
+    ]
+   },
+   {
+    "t": 4395,
+    "topic": "Town meeting transfers to capital reserve",
+    "what_was_said": "Historically three percent of revenue transferred to capital reserve stabilization.",
+    "figures_as_heard": [
+     "three percent",
+     "57 000"
+    ]
+   },
+   {
+    "t": 4415,
+    "topic": "OPEB funding",
+    "what_was_said": "Prior placeholder replaced with a smaller placeholder while awaiting guidance from the accountant.",
+    "figures_as_heard": [
+     "656",
+     "a thousand"
+    ]
+   },
+   {
+    "t": 4748,
+    "topic": "Reserve capacity stabilization transfer",
+    "what_was_said": "Plan to transfer a share of stabilization balance toward John Fitch Highway costs.",
+    "figures_as_heard": [
+     "20 of the balance",
+     "8 000",
+     "27 963"
+    ]
+   },
+   {
+    "t": 4877,
+    "topic": "Bottom line deficit",
+    "what_was_said": "Revenues fall short of line expenses, leaving a deficit before betterments and debt service are finished.",
+    "figures_as_heard": [
+     "1.9 million",
+     "2.1",
+     "183 746.81"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1045,
+    "description": "Reserve capacity fund transfer to cover Fitchburg John Fitch Highway payment",
+    "amount_as_heard": "twenty thousand nine sixty two forty",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 4395,
+    "description": "Town meeting transfer of a percentage of revenue to capital reserve stabilization",
+    "amount_as_heard": "57 000",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 4415,
+    "description": "Town meeting transfer to OPEB",
+    "amount_as_heard": "a thousand",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 4769,
+    "description": "Transfer of share of stabilization fund balance to reserve capacity",
+    "amount_as_heard": "8 000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2169,
+    "decision": "DPW director to review pump station safety findings from the 2020 report with the contractor and report back on whether the budget needs more."
+   },
+   {
+    "t": 2500,
+    "decision": "Hold off on adding a separate safety line until the DPW director talks with the contractor."
+   },
+   {
+    "t": 3030,
+    "decision": "Members agreed to keep the new administrative consulting line in the preliminary budget."
+   },
+   {
+    "t": 4560,
+    "decision": "OPEB line to stay at the placeholder pending word from the accountant."
+   },
+   {
+    "t": 4940,
+    "decision": "Preliminary operating budget goes to the town manager as is; rate increase and use of retained earnings deferred to later meetings."
+   },
+   {
+    "t": 278,
+    "decision": "Plumbing permit and meter sign-off procedure to come up at the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 194,
+    "topic": "Call to order, pledge, open meeting notice, roll call",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 194,
+    "t_end": 300,
+    "topic": "Public comment on meter permit process",
+    "resolution": "to be taken up at a future meeting",
+    "tags": [
+     "public-comment",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 300,
+    "t_end": 1341,
+    "topic": "Budget revenues",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1361,
+    "t_end": 1563,
+    "topic": "Payroll and COLA",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1584,
+    "t_end": 2522,
+    "topic": "Pump station repairs, safety and maintenance tracking",
+    "resolution": "referred to DPW director",
+    "tags": [
+     "water-sewer",
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2522,
+    "t_end": 3517,
+    "topic": "Purchase of service lines including consulting, legal, billing system",
+    "resolution": "informational; consulting line kept",
+    "tags": [
+     "budget",
+     "contracts-and-unions",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 3517,
+    "t_end": 4063,
+    "topic": "Utilities, other expenses, capital plan and manhole inspections",
+    "resolution": "informational, further discussion expected",
+    "tags": [
+     "budget",
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4063,
+    "t_end": 4395,
+    "topic": "Debt service, Leominster and Fitchburg charges, indirects",
+    "resolution": "informational",
+    "tags": [
+     "debt",
+     "budget",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4395,
+    "t_end": 4877,
+    "topic": "Town meeting transfers, OPEB, reserve capacity",
+    "resolution": "informational",
+    "tags": [
+     "transfers",
+     "retirement",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 4877,
+    "t_end": 5254,
+    "topic": "Bottom line deficit and next steps",
+    "resolution": "balancing deferred",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5254,
+    "t_end": 5318,
+    "topic": "Public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote count not stated; only the motion and second were heard.",
+   "Many figures were rendered inconsistently, such as the OPEB placeholder, the Leominster debt and the planned versus unplanned capital totals.",
+   "Stretches around 1444-1500 and 2440-2500 were disrupted by audio dropouts and members stepping away."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "watch_next": [
+   "The plumbing permit and meter sign-off procedure is due at the Sewer Commission's next meeting.",
+   "The preliminary FY24 operating budget goes to the town manager as is; the rate increase and use of retained earnings come back at later meetings."
+  ],
+  "what_happened": [
+   {
+    "line": "The Sewer Commission sent its preliminary FY24 operating budget to the town manager as is, showing a deficit. It deferred the rate increase and retained-earnings use.",
+    "t": 4940
+   },
+   {
+    "line": "Members kept a new administrative consulting line in the preliminary budget.",
+    "t": 3030
+   },
+   {
+    "line": "The DPW director will review the 2020 pump station safety findings with the contractor and report back on whether the budget needs more.",
+    "t": 2169
+   },
+   {
+    "line": "Members held off on a separate safety line until that conversation, and left the OPEB line at a placeholder pending word from the accountant.",
+    "t": 2500
+   },
+   {
+    "line": "A resident who installed a deduct meter objected to the plumbing permit and sign-off requirement. The procedure goes on the next agenda.",
+    "t": 216
+   }
+  ],
+  "why_it_matters": [
+   "Sewer rates are what customers pay, and the draft budget has the rate increase at zero while still showing a deficit. Closing that gap will take a rate increase, a draw on retained earnings, or cuts, and the commission has not chosen among them.",
+   "Pump station safety and manhole inspection costs could add to the budget once the DPW director reports back, so the final figures may differ from this draft."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T02:41:55Z",
+   "cost_usd": 0.2242349
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072023-289",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-02-07-minutes-289.txt",
+   "path": "sources/meetings/sewer-commission/2023-02-07-minutes-289.pdf"
+  },
+  "official_sha256": "912e4a9f297a8fe2a0a61a3a99e89d8e3c101cb3b2530eb377a6074d575034ab",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely: no votes in either, and the budget figures and decisions line up. They differ on the number of new sewer connections, the Leominster debt service figure, the Fitchburg transfer amount, and who was present, where the captions garbled several names.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record shows a non-procedural vote; every transfer was discussed only.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "New connections assumed for connection fees",
+    "ours": "Connection fees: 927 customers, 13 new connects",
+    "official": "connection fees - $17k (assuming 6 new connections)",
+    "t": 644,
+    "note": "13 versus 6 new connections is not a digit-grouping error; check the recording at this point and the budget worksheet for the assumed count."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Leominster debt service figure",
+    "ours": "Leominster and Fitchburg debt service and usage: 55038, 40, 29 62 40, five hundred and twenty thousand, 220",
+    "official": "leominster debt service (increased to $56k for fy24 for additional debt coming due)",
+    "t": 4063,
+    "note": "Our 55038 does not round to the official $56K; check the printed budget line for the exact Leominster debt service."
+   },
+   {
+    "kind": "agree",
+    "about": "Reserve capacity: 20% of stabilization fund balance",
+    "ours": "Transfer of share of stabilization fund balance to reserve capacity — 8 000 (discussed only)",
+    "official": "the plan was to transfer 20% of the stabilization fund balance for the next 5 years to defray the jf highway",
+    "t": 4748,
+    "note": "Both record the 20% transfer as discussed with no vote; the dollar amounts (8,000, 27,963) appear only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Town Meeting transfer of 3% of revenue to capital reserve",
+    "ours": "Town meeting transfer of a percentage of revenue to capital reserve stabilization — 57 000 (discussed only)",
+    "official": "they historically transfer 3% of revenue to capital reserve/stabilization fund for emergencies of substantial nature.",
+    "t": 4395,
+    "note": "Same discussion-only transfer; the $57,000 amount is only in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fitchburg John Fitch Highway transfer amount",
+    "ours": "Reserve capacity fund transfer to cover Fitchburg John Fitch Highway payment — twenty thousand nine sixty two forty (discussed only)",
+    "official": "the reserve capacity fund transfer for the john fitch highway debt is fully-funded this year but will need to pull from funds for next year.",
+    "t": 1045,
+    "note": "Official gives no dollar amount, so the heard figure cannot be confirmed; the captions are garbled."
+   },
+   {
+    "kind": "agree",
+    "about": "OPEB funding",
+    "ours": "OPEB funding: 656, a thousand",
+    "official": "opeb funding- usually put $656 since fy19 but barb suggested increasing to $1k",
+    "t": 4415,
+    "note": "Same $656 baseline and $1K proposal."
+   },
+   {
+    "kind": "agree",
+    "about": "OPEB decision",
+    "ours": "OPEB line to stay at the placeholder pending word from the accountant.",
+    "official": "barb suggested increasing to $1k and will discuss with the town accountant.",
+    "t": 4560,
+    "note": "Both leave the OPEB amount pending a discussion with the accountant."
+   },
+   {
+    "kind": "agree",
+    "about": "Pump station repairs",
+    "ours": "Pump station general repairs: ten thousand, 20 000, 47 000",
+    "official": "in 2020, they spent $47k, so he bumped it up to $20k from $10k",
+    "t": 1645,
+    "note": "Same figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan",
+    "ours": "Capital plan: 96 000, 56 000, 40 000",
+    "official": "capital plan -was set at $96k in case the arpa funds are not received ($56k for planned pump station upgrades and $40k manhole maintenance).",
+    "t": 3665,
+    "note": "Same figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Totals and deficit",
+    "ours": "Bottom line deficit: 1.9 million, 2.1, 183 746.81",
+    "official": "total expenses- $2.1 million and total revenues- $ 1.9 million.",
+    "t": 4877,
+    "note": "Same totals and a $183K deficit; the exact cents appear only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Preliminary budget goes to town manager unbalanced",
+    "ours": "Preliminary operating budget goes to the town manager as is; rate increase and use of retained earnings deferred to later meetings.",
+    "official": "the commission does not need to balance it now as this is just a preliminary operating budget draft for the town manager.",
+    "t": 4940,
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "New administrative consulting line",
+    "ours": "Members agreed to keep the new administrative consulting line in the preliminary budget.",
+    "official": "john pointed out it is a new line for $12k and all agreed.",
+    "t": 3030,
+    "note": "Both record agreement on the $12K line."
+   },
+   {
+    "kind": "agree",
+    "about": "Pump station safety follow-up",
+    "ours": "DPW director to review pump station safety findings from the 2020 report with the contractor and report back on whether the budget needs more.",
+    "official": "bill said the safety issues would be for laypersons entering the station and he will discuss this with al.",
+    "t": 2169,
+    "note": "Both assign the DPW director to discuss safety with the contractor."
+   },
+   {
+    "kind": "agree",
+    "about": "Plumbing permit discussion at next meeting",
+    "ours": "Plumbing permit and meter sign-off procedure to come up at the next meeting.",
+    "official": "he suggested the commission discuss it at the next meeting.",
+    "t": 278,
+    "note": "Same deferral."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hold off on a separate safety line",
+    "ours": "Hold off on adding a separate safety line until the DPW director talks with the contractor.",
+    "official": "",
+    "t": 2500,
+    "note": "Official minutes do not record a decision about a safety budget line."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ARPA funds follow-up",
+    "ours": "",
+    "official": "barb will talk with the town manager regarding having these funds included in this budget.",
+    "note": "Our minutes do not record the Business Manager's action on ARPA funding."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on deduct/irrigation meter",
+    "ours": "",
+    "official": "public comment- john stated that he'd put in a deduct/irrigation meter this week. he noted that the commission",
+    "note": "Our minutes have no public-comment item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Brett Ramson (member)",
+    "official": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,",
+    "note": "Misheard surname; the official minutes also give his role as vice-chair.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Mike noltz (member)",
+    "official": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,",
+    "note": "Misheard surname.",
+    "official_reading": "Mike Nault"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager name",
+    "ours": "Barbara Lafave (staff (sewer department administrator, retiring))",
+    "official": "business manager-barb lefebvre, assistant business manager- paula bertram and minutes clerk- jane ranley",
+    "note": "Misheard surname; the official title is Business Manager.",
+    "official_reading": "Barb Lefebvre"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent member",
+    "ours": "Mike to Vegas (member (absent))",
+    "official": "absent: mike deveikis and dave macdonald",
+    "note": "Misheard name for the absent member.",
+    "official_reading": "Mike Deveikis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent member surname",
+    "ours": "Dave McDonald (member (absent))",
+    "official": "absent: mike deveikis and dave macdonald",
+    "note": "Spelling variant only.",
+    "official_reading": "Dave MacDonald"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Gene Rayleigh",
+    "ours": "Gene Rayleigh (staff)",
+    "official": "",
+    "note": "Not on the official attendee list; may be the pump station contractor, referred to as 'Al' in the official minutes. Check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes clerk",
+    "ours": "",
+    "official": "business manager-barb lefebvre, assistant business manager- paula bertram and minutes clerk- jane ranley",
+    "note": "Jane Ranley, minutes clerk, is not in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T02:44:20Z",
+   "cost_usd": 0.2739269
+  }
+ }
+}

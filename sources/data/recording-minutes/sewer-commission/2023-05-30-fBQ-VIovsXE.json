@@ -1,0 +1,730 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2023-05-30",
+ "video_id": "fBQ-VIovsXE",
+ "video_url": "https://www.youtube.com/watch?v=fBQ-VIovsXE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2023-05-30-fBQ-VIovsXE.json",
+  "sha256": "b6de4c932521ef7879b72389f832ddea9e4b3d094790442c151bfc4a3030f9e8",
+  "caption_lines": 294,
+  "segments": 2350
+ },
+ "recording": {
+  "duration_s": 6215,
+  "duration": "1:43",
+  "spoken_chars": 68237,
+  "words_approx": 11372
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05302023-282",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-05-30-agenda-282.txt",
+   "path": "sources/meetings/sewer-commission/2023-05-30-agenda-282.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05302023-282",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-05-30-minutes-282.txt",
+   "path": "sources/meetings/sewer-commission/2023-05-30-minutes-282.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T00:02:00Z",
+  "cost_usd": 0.3382461
+ },
+ "minutes": {
+  "headline": "Sewer Commission cut the A&G Crossroads non-compliance fine to a lower paid-now amount and sent its ARPA package to Selectmen.",
+  "summary": "The commission voted to forward its ARPA funding request (manholes and pump stations) to the Select Board for a June 6 presentation, and reduced the A&G Crossroads grease-interceptor fine after a hearing with the owner's representative. It also voted to cut the assistant business manager position to under 24 hours and non-benefited. Other items were informational: the Woodard & Curran I&I report, IMA negotiations with Leominster, capital planning and SCADA, and a jetting truck rental.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynolds",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mike nalt / Mike Nault",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Brett Ramsden",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "staff (DPW director)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "business manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jane rainley",
+    "role": "staff",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr Brambilla / Mr rumbia",
+    "role": "presenter (A&G Crossroads representative)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "visitor interested in joining",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 215,
+    "topic": "No public comment at the opening; announcements were thanks to Jane for working the polls and introduction of visitor Mike Mackin."
+   },
+   {
+    "t": 5991,
+    "topic": "Visitor Mike Mackin said he enjoyed the discussions and is interested in infrastructure and the environment; the chair said appointment would require the Select Board."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "grants",
+   "hiring",
+   "legal",
+   "personnel",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 319,
+    "motion": "Approve minutes from 4/11 through 4/30 (as heard '4 11 till 8 30')",
+    "moved_by": "unnamed member",
+    "outcome": "passed (roll call, members voting aye)",
+    "procedural": true
+   },
+   {
+    "t": 361,
+    "motion": "Approve minutes of May 9",
+    "moved_by": "unnamed member",
+    "outcome": "passed (roll call)",
+    "procedural": true
+   },
+   {
+    "t": 1902,
+    "motion": "Send the ARPA proposal to the Select Board as soon as possible for review",
+    "moved_by": "unnamed member",
+    "outcome": "passed (roll call, approved to forward)",
+    "procedural": false
+   },
+   {
+    "t": 3554,
+    "motion": "Reduce the A&G Crossroads non-compliance fine to 750 from 2525, paid immediately and in full",
+    "moved_by": "Dave McDonald",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5441,
+    "motion": "Change assistant business manager position from 24 hours benefited to 20 hours or less",
+    "moved_by": "unnamed member",
+    "outcome": "passed (roll call)",
+    "procedural": false
+   },
+   {
+    "t": 6161,
+    "motion": "Adjourn the meeting",
+    "moved_by": "unnamed member",
+    "outcome": "passed (roll call; chair declared adjourned)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 569,
+    "topic": "ARPA request: manholes",
+    "what_was_said": "Business manager said the request is for manhole repairs in the Electric Ave, Mass Ave and other areas, with itemized costs from 2015 inflated by an escalator.",
+    "figures_as_heard": [
+     "200 000",
+     "195 320 dollars",
+     "47 420",
+     "95 410",
+     "26 percent",
+     "168 manholds",
+     "84 man goals"
+    ]
+   },
+   {
+    "t": 734,
+    "topic": "ARPA request: pump stations",
+    "what_was_said": "A second component requests funding for pump replacements, panel upgrades, motor shafts and generators at several stations.",
+    "figures_as_heard": [
+     "300 000",
+     "305 thousand dollars"
+    ]
+   },
+   {
+    "t": 1198,
+    "topic": "A&G Crossroads non-compliance fine",
+    "what_was_said": "Fee stood at the initial non-compliance fee plus daily fines for missing pump-out reports; the commission discussed reducing it.",
+    "figures_as_heard": [
+     "2 525 dollars",
+     "25 per day",
+     "two thousand four hundred and seventy five dollars",
+     "50 initial non-compliance fee"
+    ]
+   },
+   {
+    "t": 3368,
+    "topic": "Reduced fine amount",
+    "what_was_said": "Members settled around an amount meant to cover the manager's staff time and send a message.",
+    "figures_as_heard": [
+     "750 bucks",
+     "seven or eight hundred dollars"
+    ]
+   },
+   {
+    "t": 4513,
+    "topic": "FY capital plan",
+    "what_was_said": "Estimated current-year capital expenditures for cranes, block heaters, panels and a dialer are covered by the existing budget; SCADA at two stations was floated for next year.",
+    "figures_as_heard": [
+     "45 237.80",
+     "sixteen thousand dollars each"
+    ]
+   },
+   {
+    "t": 5547,
+    "topic": "Jetting cost / truck rental",
+    "what_was_said": "Budget adds money for jetting; DPW director found renting a jetter truck far cheaper than hiring a contractor, though labor and consultant hours add cost.",
+    "figures_as_heard": [
+     "28 000",
+     "4 800 for the week",
+     "2500 and 2800 a day",
+     "forty eight hundred dollars"
+    ]
+   },
+   {
+    "t": 5002,
+    "topic": "Assistant business manager position",
+    "what_was_said": "Position reduced from a benefited 24-hour post to under 20 hours non-benefited; change requires collective bargaining.",
+    "figures_as_heard": [
+     "24 hours",
+     "20 and minus"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1612,
+    "decision": "Add to the ARPA presentation that funds may be used to eliminate/line manholes where possible; presentation set for Tuesday June 6, 7:30-8:30."
+   },
+   {
+    "t": 4389,
+    "decision": "Commission gave a green light (no vote) for the manager to draft a letter supporting removal of the testing component from the draft NPDES permit, due June 5."
+   },
+   {
+    "t": 4282,
+    "decision": "Dave McDonald to meet with town counsel about whether IMA negotiations can be discussed in executive session; negotiations to proceed via a non-quorum group."
+   },
+   {
+    "t": 4936,
+    "decision": "Manager to ask to be involved in the Select Board's grant application for the Leominster-Shirley corridor development; members voiced support."
+   },
+   {
+    "t": 4894,
+    "decision": "Manager to contact Jake Fleming for manhole lining information; idea of a joint session with Leominster by Zoom was agreed."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 300,
+    "topic": "Opening, pledge, roll call, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 298,
+    "t_end": 425,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 425,
+    "t_end": 1114,
+    "topic": "ARPA funding update and request details",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1114,
+    "t_end": 1485,
+    "topic": "A&G Crossroads hearing begins; audio trouble",
+    "resolution": "deferred while audio fixed",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1485,
+    "t_end": 1960,
+    "topic": "Vote to forward ARPA package to Select Board; manhole elimination idea",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2185,
+    "t_end": 2442,
+    "topic": "Woodard & Curran I&I review summary",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2442,
+    "t_end": 3786,
+    "topic": "A&G Crossroads non-compliance hearing and fine reduction",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "legal",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3786,
+    "t_end": 3970,
+    "topic": "I&I report follow-up and pump station reports",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3970,
+    "t_end": 4327,
+    "topic": "IMA negotiations with Leominster",
+    "resolution": "referred to member meeting with counsel",
+    "tags": [
+     "contracts-and-unions",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4327,
+    "t_end": 4440,
+    "topic": "Draft NPDES permit comment letter",
+    "resolution": "green light",
+    "tags": [
+     "legal",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4452,
+    "t_end": 4920,
+    "topic": "Capital planning and SCADA",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4920,
+    "t_end": 5000,
+    "topic": "Leominster-Shirley corridor development",
+    "resolution": "informational",
+    "tags": [
+     "economic-development",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 5002,
+    "t_end": 5507,
+    "topic": "Assistant business manager position",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "staffing",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5507,
+    "t_end": 5926,
+    "topic": "Business manager report: budget, jetting, maintenance, grease trap compliance",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 5926,
+    "t_end": 5991,
+    "topic": "Manager vacation schedule",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5991,
+    "t_end": 6204,
+    "topic": "Public comment, congratulations, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact vote counts for several roll calls were not stated; names were read but results often not itemized.",
+   "Minutes date range was heard as '4 11 till 8 30', which appears garbled.",
+   "Several dollar figures (manhole totals, 750/2525) are caption-rendered and unreliable.",
+   "Audio from the A&G Crossroads representative was inaudible for roughly five minutes at the start of the hearing.",
+   "The roll call for the ARPA forward vote and the assistant manager vote did not clearly include every member."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2825,
+    "about": "Members criticised the A&G Crossroads owner's representatives for months of non-response about pump-out reports before agreeing on a fine.",
+    "sides": "Commissioners against the property owner's representative, who said the pumping company failed to send reports",
+    "words_as_heard": "you blew us off that's what I think this commission's upset about",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to send its ARPA funding request, covering manhole repairs and pump station work, to the Select Board for review.",
+    "t": 1902
+   },
+   {
+    "line": "After a hearing with the owner's representative, the commission voted to reduce the A&G Crossroads non-compliance fine, payable immediately and in full.",
+    "t": 3554
+   },
+   {
+    "line": "The commission voted to change the assistant business manager post from a benefited 24-hour job to 20 hours or less.",
+    "t": 5441
+   },
+   {
+    "line": "Members gave a no-vote green light for a letter supporting removal of the testing component from the draft NPDES permit.",
+    "t": 4389
+   },
+   {
+    "line": "Leominster IMA negotiations were referred to a member meeting with town counsel on whether they can be discussed in executive session.",
+    "t": 4282
+   }
+  ],
+  "why_it_matters": [
+   "The ARPA request, if the Select Board takes it up, would put federal pandemic-relief money toward sewer repairs that would otherwise fall on sewer rates.",
+   "The position change touches the sewer department's payroll and benefits costs, and the minutes say it requires collective bargaining.",
+   "The IMA negotiations with Leominster and the draft permit's testing component both bear on future treatment costs and permit terms, though no figures were settled here."
+  ],
+  "watch_next": [
+   "Tuesday June 6, 7:30-8:30: the ARPA presentation to the Select Board.",
+   "June 5: the deadline for comments on the draft NPDES permit."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T00:02:09Z",
+   "cost_usd": 0.2242169
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05302023-282",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2023-05-30-minutes-282.txt",
+   "path": "sources/meetings/sewer-commission/2023-05-30-minutes-282.pdf"
+  },
+  "official_sha256": "4d66e51a2bd7af15b73a90097399350796a3cf633363564b0bd6dea4ad9468ab",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all three votes in substance and on nearly every dollar figure; the differences are mostly caption misspellings of names. The one point to check is the Assistant Business Manager vote, where ours says \"20 hours or less\" and the town's says \"under 20 hours\".",
+  "counts": {
+   "agree": 17,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: send ARPA proposal to Select Board",
+    "ours": "Send the ARPA proposal to the Select Board as soon as possible for review — passed (roll call, approved to forward)",
+    "official": "to recommend sending the arpa proposal to the board of selectmen as soon as possible for their review,",
+    "note": "Same motion and outcome; the town calls the body Board of Selectmen.",
+    "t": 1902
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: reduce Crossroads fine to $750",
+    "ours": "Reduce the A&G Crossroads non-compliance fine to 750 from 2525, paid immediately and in full — passed",
+    "official": "to reduce the fine for a & d crossroads to $750 towards his $2,525 fine, to be paid immediately.",
+    "note": "Same amounts and outcome; the official says \"towards\" the fine, ours says \"in full\", which is a wording difference only.",
+    "t": 3554
+   },
+   {
+    "kind": "caption_error",
+    "about": "Company name: A&G vs A&D Crossroads",
+    "ours": "A&G Crossroads",
+    "official": "to reduce the fine for a & d crossroads to $750 towards his $2,525 fine, to be paid immediately.",
+    "official_reading": "A&D Crossroads",
+    "note": "Same company; captions misheard D as G.",
+    "t": 3554
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: assistant business manager hours",
+    "ours": "Change assistant business manager position from 24 hours benefited to 20 hours or less — passed (roll call)",
+    "official": "to change the hours for the assistant business manager position from 24 hours benefited to under 20 hours",
+    "note": "\"20 hours or less\" and \"under 20 hours\" differ at exactly 20 hours, which may matter for benefit eligibility. Check the recording near t=5441 for the exact wording, and note that the official record doesn't mention a roll call.",
+    "t": 5441
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA manhole request totals",
+    "ours": "ARPA request: manholes: 200 000, 195 320 dollars, 47 420, 95 410, 26 percent, 168 manholds, 84 man goals",
+    "official": "the repairs to these 84 manholes would cost $195,320.",
+    "note": "$200K request, $195,320 total, 84 manholes, 168 in need, and the per-location amounts match. \"manholds\" and \"man goals\" are caption noise.",
+    "t": 569
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA pump station request",
+    "ours": "ARPA request: pump stations: 300 000, 305 thousand dollars",
+    "official": "paula noted the 2nd component of the request is for $300k for the pump stations.",
+    "note": "$300K request and $305K list total match.",
+    "t": 734
+   },
+   {
+    "kind": "agree",
+    "about": "Original fine amounts",
+    "ours": "A&G Crossroads non-compliance fine: 2 525 dollars, 25 per day, two thousand four hundred and seventy five dollars, 50 initial non-compliance fee",
+    "official": "the commission voted to implement the fine of $25/day, plus the $50 non-compliance fee.",
+    "note": "$2,525 invoice, $25 per day and $50 fee agree. The \"$2,475\" in our figures looks like $2,525 minus $50 spoken aloud and is not in the official text.",
+    "t": 1198
+   },
+   {
+    "kind": "agree",
+    "about": "Reduced fine figure",
+    "ours": "Reduced fine amount: 750 bucks, seven or eight hundred dollars",
+    "official": "dave suggested reducing the fine to $750, with more severe fines, if it happens again.",
+    "note": "$750 matches. \"Seven or eight hundred\" was a spoken aside.",
+    "t": 3368
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan list total",
+    "ours": "FY capital plan: 45 237.80, sixteen thousand dollars each",
+    "official": "the revised list is: 3 cranes, block heaters, a panel and a dialer at meadowwoods for a total of $45,237.80.",
+    "note": "$45,237.80 matches. The $16K each is the SKADA estimate for Dana and Mass 1.",
+    "t": 4513
+   },
+   {
+    "kind": "agree",
+    "about": "Jetting budget and truck rental",
+    "ours": "Jetting cost / truck rental: 28 000, 4 800 for the week, 2500 and 2800 a day, forty eight hundred dollars",
+    "official": "bill noted he obtained an estimate of $4,800 per week to rent a jetting truck.",
+    "note": "$28K added for jetting, $4,800 per week and $2,500-2,800 per day all match.",
+    "t": 5547
+   },
+   {
+    "kind": "agree",
+    "about": "Assistant business manager hours figures",
+    "ours": "Assistant business manager position: 24 hours, 20 and minus",
+    "official": "to change the hours for the assistant business manager position from 24 hours benefited to under 20 hours",
+    "note": "The 24-hour starting point is the same. See the vote finding for the 20-hour boundary.",
+    "t": 5002
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA presentation date",
+    "ours": "presentation set for Tuesday June 6, 7:30-8:30",
+    "official": "the presentation will be 6/6 and john will be able to attend.",
+    "note": "Both give June 6. The time slot is only in ours.",
+    "t": 1612
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA presentation: lining manholes",
+    "ours": "Add to the ARPA presentation that funds may be used to eliminate/line manholes where possible",
+    "official": "",
+    "note": "The official minutes do not record this addition. They record Paula including 5 maps of the highlighted manholes instead.",
+    "t": 1612
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Maps for ARPA presentation",
+    "ours": "",
+    "official": "paula will also include 5 maps of the highlighted manholes.",
+    "note": "Our minutes do not mention the five maps."
+   },
+   {
+    "kind": "agree",
+    "about": "Letter on NPDES permit testing",
+    "ours": "Commission gave a green light (no vote) for the manager to draft a letter supporting removal of the testing component from the draft NPDES permit, due June 5.",
+    "official": "paula asked for commission approval to send a letter in support of eliminating those requirements, based on jake fleming's comments. the commission agreed.",
+    "note": "Same informal approval with no vote. The June 5 due date is only in ours.",
+    "t": 4389
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dave and Town Counsel",
+    "ours": "Dave McDonald to meet with town counsel about whether IMA negotiations can be discussed in executive session; negotiations to proceed via a non-quorum group.",
+    "official": "the commission gave dave permission to talk to town counsel during open hours on 6/21.",
+    "note": "The two records give different purposes for the conversation. Ours says IMA negotiations and executive session, while the town's gives only permission and a 6/21 open-hours date. Check the recording near t=4282.",
+    "t": 4282
+   },
+   {
+    "kind": "agree",
+    "about": "Jake Fleming and manhole lining",
+    "ours": "Manager to contact Jake Fleming for manhole lining information; idea of a joint session with Leominster by Zoom was agreed.",
+    "official": "paula said she would reach out to jake fleming regarding the manhole lining and skada.",
+    "note": "The Fleming outreach matches. The Leominster joint session is only in ours.",
+    "t": 4894
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint session with Leominster",
+    "ours": "idea of a joint session with Leominster by Zoom was agreed",
+    "official": "",
+    "note": "The official minutes do not mention a joint Zoom session with Leominster.",
+    "t": 4894
+   },
+   {
+    "kind": "agree",
+    "about": "Grant for corridor development",
+    "ours": "Manager to ask to be involved in the Select Board's grant application for the Leominster-Shirley corridor development; members voiced support.",
+    "official": "paula reported the selectmen are working on a grant for next year due to the possible construction of 5 large commercial buildings",
+    "note": "Both record the Selectmen's grant. The official text shown does not state the request for involvement, though the structured summary says the Commission wants input.",
+    "t": 4936
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Wind River pump-out report",
+    "ours": "",
+    "official": "paula asked mr. brambila to have wind river send the correctly filled-out report to the office within a week in order to be compliant.",
+    "note": "Our minutes do not record this request to the guest."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jetting truck rental for two weeks",
+    "ours": "",
+    "official": "he will rent the truck for 2 weeks and start jetting lines.",
+    "note": "Our minutes have the cost figures but not this plan to rent for two weeks and start jetting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conrad's grease trap report",
+    "ours": "",
+    "official": "all reports are in except conrad's and paula will follow up with them.",
+    "note": "Our minutes do not record this follow-up."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: John Reynolds",
+    "ours": "John Reynolds (chair)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Brett Ramsden",
+    "ours": "Brett Ramsden (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw",
+    "note": "Same person. The official lists him as vice-chair and ours as member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dave McDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw",
+    "official_reading": "Dave MacDonald",
+    "note": "Spelling differs."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mike Nault",
+    "ours": "Mike nalt / Mike Nault (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw",
+    "official_reading": "Mike Nault",
+    "note": "Captions heard \"nalt\"; the official spelling is Nault."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Bill Bernard and Paula Bertram",
+    "ours": "Bill Bernard (staff (DPW director)); Paula Bertram (business manager)",
+    "official": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "note": "Names and roles match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jane Ranley",
+    "ours": "Jane rainley (staff)",
+    "official": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misspelled in captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Brambila of A&D Crossroads",
+    "ours": "Mr Brambilla / Mr rumbia (presenter (A&G Crossroads representative))",
+    "official": "guest: mr. brambila (a&d crossroads), mike mackin",
+    "official_reading": "Mr. Brambila",
+    "note": "Name and company misheard."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mike Mackin",
+    "ours": "Mike Mackin (visitor interested in joining)",
+    "official": "guest: mr. brambila (a&d crossroads), mike mackin",
+    "note": "Same person, a guest interested in joining."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T00:03:53Z",
+   "cost_usd": 0.2820929
+  }
+ }
+}

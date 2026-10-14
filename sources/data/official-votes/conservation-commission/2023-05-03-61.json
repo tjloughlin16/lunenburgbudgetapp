@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-05-03",
  "docid": "61",
@@ -12,88 +12,422 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 19, 2023",
+   "motion": "Approve the minutes of the April 19, 2023 meeting.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "rb/mw m/s to approve. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Require submission of RDA for pilot study at Hickory Hills well site",
+   "motion": "Require submission of a Request for Determination of Applicability (RDA) for the Hickory Hills well site pilot study.",
    "moved_by": "RB",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "rb/ml m/s to require submission of rda for pilot study at hickory hills well site. roll call vote, ===page 3=== unanimou",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Issue a negative determination under the conditions of a submission of a diagram showing the cement pad outside the 50 foot no structure and subject to a maximum addition of 100 cubic yards of sand over the next 3 years at 1 Lakefront Ave",
+   "motion": "Issue a negative determination for the Arrive Lunenburg RDA (1 Lakefront Ave), conditioned on a diagram showing the concrete pad outside the 50-foot no-structure zone and a maximum addition of 100 cubic yards of sand over 3 years.",
    "moved_by": "MW",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "mw/ml m/s to issue a negative determination under the conditions of a submission of a diagram showing the cement pad outside the 50 foot no structure and subject to a maximum addition of 100 cubic"
+   "quote": "mw/ml m/s to issue a negative determination under the conditions of a submission of a diagram showing the cement pad outside the 50 foot no structure"
   },
   {
-   "motion": "Approve with standard conditions the Notice of Intent by Thomas and Melanie Payne at 649 Reservoir Road (DEP #208-1288)",
+   "motion": "Approve the Notice of Intent for 649 Reservoir Road (Payne) with standard conditions.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "rb/cc m/s to approve with standard conditions at 649 reservoir road. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue NOI for 647 Reservoir Road to May 17th meeting",
+   "motion": "Continue the Notice of Intent for 647 Reservoir Road (Payne) to the May 17th meeting.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "rb/mw m/s to continue noi for 647 reservoir road to may 17th meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve with standard conditions the Notice of Intent by Christopher and Andrea Oldham at 32 Pine Grove Road (DEP #208-1292)",
+   "motion": "Approve the Notice of Intent for 32 Pine Grove Road (Oldham) with standard conditions.",
    "moved_by": "ML",
    "seconded_by": "RT",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "ml/rt m/s to approve with standard conditions for 32 pine grove road. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue RDA for 52 Spring Street Extension to May 17th meeting",
+   "motion": "Continue the RDA for 52 Spring Street Extension (Richard) to the May 17th meeting.",
    "moved_by": "ML",
    "seconded_by": "RT",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "ml/rt m/s to continue rda to may 17th meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue NOI for Lunenburg Skate Park, Inc. at 100 Chestnut Street to May 17th meeting",
+   "motion": "Continue the Notice of Intent for 100 Chestnut Street (Lunenburg Skate Park, Inc.) to the May 17th meeting.",
    "moved_by": "MW",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "mw/ml m/s to continue noi to may 17th meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve with standard conditions the Notice of Intent by Robert Shapiro at 39 Main Street (DEP #208-1291)",
+   "motion": "Approve the Notice of Intent for 39 Main Street (Shapiro) with standard conditions.",
    "moved_by": "ML",
    "seconded_by": "RT",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "ml/rt m/s to approve with standard conditions at 39 main street. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "CC",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "cc/mw m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12416050000000001
+ "note": "Text extracted from an 8-page PDF with no scan flag; all pages readable. Votes are recorded only as 'unanimous' with no numeric tally, so outcomes are given as 'passed (unanimous)'. Attendance mode is not stated per member; the header says ZOOM REMOTE but the roll call does not mark anyone remote, so members are marked present. The minutes print no dollar figures, so budget_items and transfers are empty; the 'Budget Update' line reads 'No Updates.' Mark Bursch (applicant representative) and Richard Bursch (member, who recused from the Arrive Lunenburg hearing) are different people. Minutes contain printed typos (e.g., 'Luneburg Water District', 'matcaerial photographs', '49-foot wall', 'May 17rd'); quotes reproduce them as printed. Applicants Lisa and Jeffrey Richard, Christopher and Andrea Oldham, and Robert Shapiro are named but did not speak, so they are not listed as attendees. The 647 Reservoir continuance vote is marked non-procedural as a hearing action.",
+ "cost_usd": 0.02115691,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "mary wilson, vice chair"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "richard tremblay, clerk"
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "present",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb"
+  },
+  {
+   "name": "Michael Larouche",
+   "status": "present",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "status": "present",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "absent",
+   "quote": "roll call: bp, cc, jv mw, rt, ml, rb absent: ap"
+  },
+  {
+   "name": "Louis Soracco",
+   "role": "from Tighe & Bond to represent the Water District",
+   "status": "present",
+   "quote": "louis soracco from tighe & bond to represent the water district."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "to represent the property",
+   "status": "present",
+   "quote": "mark bursch to represent the property."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "to represent the applicants",
+   "status": "present",
+   "quote": "matt marro to represent the applicants."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "to represent",
+   "status": "present",
+   "quote": "ryan proctor to represent."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "to represent",
+   "status": "present",
+   "quote": "greg roy to represent."
+  },
+  {
+   "name": "Carl Strathmeyer",
+   "status": "present",
+   "quote": "carl strathmeyer asks, that according to the agenda, the water district is presenting under a notice and not"
+  },
+  {
+   "name": "Gwen Moss",
+   "status": "present",
+   "quote": "gwen moss states that he has questions about the water district study itself."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Straw poll on the Payne NOIs: members wanted updated diagrams, a pervious patio outside the 30-foot no-touch zone, and a wall of no more than one foot before a vote on 647 Reservoir Road.",
+   "quote": "rb would like to continue with better diagrams, the patio structure to be pervious with no favor in the 30 foot"
+  },
+  {
+   "decision": "Chair suggested that future submissions include calculations of removed impervious area (Oldham).",
+   "quote": "bp suggests adding calculations of removed impervious area to future submissions."
+  },
+  {
+   "decision": "Certificate of Compliance for 12 Alder Way held: more clarification and plans required before approval.",
+   "quote": "bp states there needs to be more clarification and plans before approving."
+  },
+  {
+   "decision": "EO 23 Cove Road enforcement to remain open until the greenhouse is removed.",
+   "quote": "eo 23 cove road: will remain open until greenhouse is removed."
+  },
+  {
+   "decision": "A letter is to be drafted and sent to the property owners on the 950 Chase Road shed findings (encroachment).",
+   "quote": "a letter is to be drafted and sent to the property owners in regard to these findings."
+  },
+  {
+   "decision": "ML assigned to meet Chris Ruth and view the Hollis Road property.",
+   "quote": "ml will be meeting with chris ruth to view the property."
+  },
+  {
+   "decision": "BP assigned to draft a letter to the Hollis Road tenant regarding the maintenance contract.",
+   "quote": "and will draft a letter to send to the tenant."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Strathmeyer",
+   "topic": "Water District presentation under a notice rather than a hearing",
+   "quote": "carl strathmeyer asks, that according to the agenda, the water district is presenting under a notice and not"
+  },
+  {
+   "speaker": "Gwen Moss",
+   "topic": "questions about the Water District study",
+   "quote": "gwen moss states that he has questions about the water district study itself."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; chair said questions were not yet in order",
+   "quote": "carl strathmeyer asks, that according to the agenda, the water district is presenting under a notice and not",
+   "tags": [
+    "public comment",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Minutes of April 19, 2023",
+   "resolution": "approved unanimously",
+   "quote": "rb/mw m/s to approve. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notice of utility maintenance, Hickory Hills Well Pilot Study (Luneburg Water District)",
+   "resolution": "Commission required an RDA submission for the pilot study",
+   "quote": "notice of utility maintenance activities, hickory hills well pilot study, luneburg water district",
+   "tags": [
+    "water district",
+    "pilot study",
+    "wetlands",
+    "RDA",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "RDA: Arrive Lunenburg, sand and concrete pad at 1 Lakefront Ave",
+   "resolution": "negative determination with conditions, approved",
+   "quote": "for the proposed addition of sand at the beach front area and installation of a concrete pad at 1 lakefront ave.",
+   "tags": [
+    "RDA",
+    "beach",
+    "shoreline",
+    "negative determination"
+   ]
+  },
+  {
+   "topic": "NOI: Thomas and Melanie Payne, 647 and 649 Reservoir Road",
+   "resolution": "649 approved with standard conditions; 647 continued to May 17",
+   "quote": "a public hearing on a notice of intent by thomas and melanie payne for the proposed construction of",
+   "tags": [
+    "NOI",
+    "retaining walls",
+    "shoreline",
+    "lake",
+    "continued"
+   ]
+  },
+  {
+   "topic": "NOI: Christopher and Andrea Oldham, 32 Pine Grove Road",
+   "resolution": "approved with standard conditions",
+   "quote": "a public hearing on a notice of intent by christopher and andrea oldham for the proposed construction of a deck",
+   "tags": [
+    "NOI",
+    "deck",
+    "landscaping",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "RDA: Lisa and Jeffrey Richard, 52 Spring Street Extension",
+   "resolution": "continued to May 17 (applicants not present)",
+   "quote": "by lisa and jeffrey richard for the proposed installation of a deck at 52 spring street extension.",
+   "tags": [
+    "RDA",
+    "deck",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued NOI: Lunenburg Skate Park, Inc., 100 Chestnut Street",
+   "resolution": "continued to May 17 at applicant's request",
+   "quote": "a notice of intent by lunenburg skate park, inc. for the proposed construction of",
+   "tags": [
+    "NOI",
+    "skate park",
+    "drainage basin",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued NOI: Robert Shapiro, 39 Main Street",
+   "resolution": "approved with standard conditions",
+   "quote": "by robert shapiro for the proposed construction of a parking lot",
+   "tags": [
+    "NOI",
+    "parking lot",
+    "playground",
+    "detention basin"
+   ]
+  },
+  {
+   "topic": "New business: Timber Rights Fund, Earth Day 2023, Master Plan Committee",
+   "resolution": "Earth Day wrap-up presented; no other action recorded",
+   "quote": "update on timber rights fund",
+   "tags": [
+    "earth day",
+    "timber rights",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment issues (950 Chase Road, 315 Lancaster Ave, 26 Mulpus Road)",
+   "resolution": "letter to be drafted to owners",
+   "quote": "update on encroachment issues at:",
+   "tags": [
+    "encroachment",
+    "enforcement",
+    "shed"
+   ]
+  },
+  {
+   "topic": "Grant and budget updates",
+   "resolution": "no updates",
+   "quote": "grant updates: no updates.",
+   "tags": [
+    "grants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "site visit assigned; tenant letter assigned",
+   "quote": "and will draft a letter to send to the tenant.",
+   "tags": [
+    "tenant",
+    "maintenance contract"
+   ]
+  },
+  {
+   "topic": "Administrative determinations: certificates of compliance (12 Alder Way)",
+   "resolution": "held pending plans and clarification",
+   "quote": "bp states there needs to be more clarification and plans before approving.",
+   "tags": [
+    "certificate of compliance",
+    "administrative"
+   ]
+  },
+  {
+   "topic": "Enforcement: EO 23 Cove Road, NON 205 Sunset",
+   "resolution": "EO 23 remains open until greenhouse removed",
+   "quote": "eo 23 cove road: will remain open until greenhouse is removed.",
+   "tags": [
+    "enforcement",
+    "greenhouse"
+   ]
+  },
+  {
+   "topic": "Conservation land improvements (Table Rock trails, beaver dams, boundary markers)",
+   "resolution": "reported; beaver dam recommendation made; no vote",
+   "quote": "bp met with an abutting volunteer at table rock who is in the process of cutting connecting trails.",
+   "tags": [
+    "conservation land",
+    "trails",
+    "beavers",
+    "boundary markers"
+   ]
+  },
+  {
+   "topic": "Committee reports: Stormwater",
+   "resolution": "reported; town hired contractor for mapping stormwater lines",
+   "quote": "rt updates from the stormwater meetings and that the town has hired a contractor for mapping out",
+   "tags": [
+    "stormwater",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:42 pm",
+   "quote": "cc/mw m/s to adjourn meeting. roll call vote, unanimous to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection act",
+  "notice of intent",
+  "request for determination of applicability",
+  "water district pilot study",
+  "shoreline erosion",
+  "enforcement",
+  "minutes approval",
+  "zoom meeting",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

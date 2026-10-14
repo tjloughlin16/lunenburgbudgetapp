@@ -1,0 +1,419 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2022-11-29",
+ "video_id": "ymumPEdVnbs",
+ "video_url": "https://www.youtube.com/watch?v=ymumPEdVnbs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2022-11-29-ymumPEdVnbs.json",
+  "sha256": "b1d95544e556772009b9b15b0e65c9e7075ddc74edc7bcc10b08af8afef56cc8",
+  "caption_lines": 265,
+  "segments": 2221
+ },
+ "recording": {
+  "duration_s": 5542,
+  "duration": "1:32",
+  "spoken_chars": 64903,
+  "words_approx": 10817
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11292022-5708",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2022-11-29-agenda-5708.txt",
+   "path": "sources/meetings/sewer-commission/2022-11-29-agenda-5708.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11292022-5708",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2022-11-29-minutes-5708.txt",
+   "path": "sources/meetings/sewer-commission/2022-11-29-minutes-5708.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T12:38:16Z",
+  "cost_usd": 0.3888422
+ },
+ "minutes": {
+  "headline": "Sewer Commission approved a change of use, two billing credits and the Q2 commitment, and heard a 40B sewer-extension proposal.",
+  "summary": "The Vice Chair ran the meeting in place of the chair. The commission approved a change of use for 7 Harris Ave, two billing credits (99 Leominster Road and 47 Whalen Road), the Q2 billing commitment and prior minutes. A developer previewed a 40B project's sewer route and the commission pressed for a more detailed plan and a legal answer on the ZBA's authority. The director also gave a maintenance update.",
+  "attendees": [
+   {
+    "name_as_heard": "Brett Branston",
+    "role": "vice chair (presiding)"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Naughton",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike devakis",
+    "role": "member (not present at roll call)"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "director / DPW"
+   },
+   {
+    "name_as_heard": "Barbara LaFarge",
+    "role": "manager / staff"
+   },
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Jane randlee",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Kevin O'Brien",
+    "role": "presenter (40B applicant)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Bob",
+    "role": "commissioner/staff (referred to as Bob)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 193,
+    "topic": "Chair asked for public comment; none audible."
+   },
+   {
+    "t": 741,
+    "stated_role": "applicant",
+    "topic": "Applicant for 7 Harris Ave asked why the calculated gallons rose so much; explained by staff."
+   }
+  ],
+  "tags": [
+   "capital",
+   "fees",
+   "housing",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 656,
+    "motion": "Accept the change of use for 7 Harris Ave",
+    "moved_by": "Dave",
+    "outcome": "passed (roll call, ayes heard; approved)",
+    "procedural": false
+   },
+   {
+    "t": 1381,
+    "motion": "Reduce the bill for 99 Leominster Road to 2,000 cubic feet",
+    "moved_by": "Dave",
+    "outcome": "passed (roll call; ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 1886,
+    "motion": "Reduce the 47 Whalen Road bill to a one-month charge (prorate)",
+    "moved_by": "Dave",
+    "outcome": "passed (roll call; ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4927,
+    "motion": "Approve the Q2 billing commitment",
+    "moved_by": "Mike",
+    "outcome": "passed (roll call; ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4989,
+    "motion": "Approve minutes of 11/8/22",
+    "moved_by": "Dave",
+    "outcome": "passed (roll call; ayes heard)",
+    "procedural": true
+   },
+   {
+    "t": 5490,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call; ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 484,
+    "topic": "Privilege fee / design flow, 7 Harris Ave",
+    "what_was_said": "Expansion raises estimated design flow and triggers an additional privilege fee under the bylaw.",
+    "figures_as_heard": [
+     "157 gallons per day",
+     "550",
+     "393 gallons per day"
+    ]
+   },
+   {
+    "t": 992,
+    "topic": "Credit, 99 Leominster Road irrigation",
+    "what_was_said": "Owner billed full rate for irrigation use because not enrolled in deduct meter program; asked for reduction to prior quarter usage.",
+    "figures_as_heard": [
+     "1974 cubic feet",
+     "269.65",
+     "1176.54",
+     "2000 cubic feet"
+    ]
+   },
+   {
+    "t": 1339,
+    "topic": "Credit amount, 99 Leominster Road",
+    "what_was_said": "Reduced bill and credit calculated by staff.",
+    "figures_as_heard": [
+     "273.20",
+     "903.34",
+     "273.26"
+    ]
+   },
+   {
+    "t": 1534,
+    "topic": "Minimum quarterly charge, 47 Whalen Road",
+    "what_was_said": "New owners billed a full quarter minimum after a mid-quarter purchase; commission voted to prorate to one month, pending a policy update.",
+    "figures_as_heard": [
+     "115 dollars"
+    ]
+   },
+   {
+    "t": 4299,
+    "topic": "Sewer jetting/cleaning quotes and budget",
+    "what_was_said": "Two contractors quoted daily rates for a vector and jet truck; a budget exists for the work.",
+    "figures_as_heard": [
+     "twenty eight hundred dollars per day",
+     "twenty five hundred dollars a day",
+     "64 000"
+    ]
+   },
+   {
+    "t": 4841,
+    "topic": "Q2 billing commitment",
+    "what_was_said": "Net Q2 billing commitment approved for signature.",
+    "figures_as_heard": [
+     "246 000 15.25",
+     "246.015 25"
+    ]
+   },
+   {
+    "t": 5134,
+    "topic": "Invoices acknowledged",
+    "what_was_said": "Fitchburg, Leominster quarterly and engineering invoices acknowledged verbally; no vote.",
+    "figures_as_heard": [
+     "eighteen thousand eight hundred seventy two dollars and sixty nine cents",
+     "85 000. 404.49",
+     "76 dollars and 43 cents"
+    ]
+   },
+   {
+    "t": 3175,
+    "topic": "Receiving-city capacity",
+    "what_was_said": "Applicant cited available capacity at Fitchburg and Leominster.",
+    "figures_as_heard": [
+     "83 000 gallons",
+     "222 500 gallons"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1298,
+    "decision": "Staff to put a policy safeguard for irrigation-meter enrollment on a future agenda."
+   },
+   {
+    "t": 1824,
+    "decision": "Proration policy for final/mid-quarter billing to be put on the next agenda."
+   },
+   {
+    "t": 4111,
+    "decision": "Applicant Kevin O'Brien to be put on the next meeting agenda; commission to seek counsel's view on ZBA authority."
+   },
+   {
+    "t": 4758,
+    "decision": "Staff to copy Fitchburg's pipe-maintenance language into a draft for discussion."
+   },
+   {
+    "t": 5428,
+    "decision": "Next meetings Dec 13 via Zoom and Dec 27 (format TBD); commissioners asked to attend the Dec 14 ZBA hearing."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 193,
+    "topic": "Call to order, pledge, open meeting notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 193,
+    "t_end": 296,
+    "topic": "Public and commissioner comments, billing reminder",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 296,
+    "t_end": 871,
+    "topic": "7 Harris Ave change of use",
+    "resolution": "voted, approved",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 871,
+    "t_end": 1425,
+    "topic": "99 Leominster Road irrigation credit",
+    "resolution": "voted, approved",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1534,
+    "t_end": 2216,
+    "topic": "47 Whalen Road prorated credit",
+    "resolution": "voted, approved",
+    "tags": [
+     "fees",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2216,
+    "t_end": 4153,
+    "topic": "Kevin O'Brien 40B project sewer route and ZBA authority",
+    "resolution": "informational; counsel question to be pursued",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4175,
+    "t_end": 4570,
+    "topic": "Sewer maintenance plan update",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "roads-and-dpw",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4570,
+    "t_end": 4841,
+    "topic": "ARPA status and I&I investigation / right of entry",
+    "resolution": "no resolution",
+    "tags": [
+     "grants",
+     "policy",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4841,
+    "t_end": 5031,
+    "topic": "Q2 billing commitment and minutes",
+    "resolution": "voted",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 5031,
+    "t_end": 5240,
+    "topic": "Manager's report and invoices",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5240,
+    "t_end": 5530,
+    "topic": "Public comment, billing automation, schedule, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment",
+     "technology"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call vote counts were not stated; only individual ayes were audible.",
+   "Chair not present; the Vice Chair presided, and the status of Mike devakis is unclear.",
+   "Some speaker identities in the 40B discussion are unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2236,
+    "about": "Whether the ZBA can approve the 40B sewer extension outside the service area without a town meeting vote.",
+    "sides": "The commission members said it is outside the service area and needs town meeting; the applicant said the 40B process allows the ZBA to act.",
+    "words_as_heard": "we don't believe that the zba has the authority to overrule the town meeting",
+    "kind": "members disagree"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission approved a change of use for 7 Harris Ave, where the expansion raises the estimated design flow and triggers an additional privilege fee.",
+    "t": 656
+   },
+   {
+    "line": "The commission voted to reduce the bill for 99 Leominster Road, an irrigation-use bill for an owner not enrolled in the deduct meter program.",
+    "t": 1381
+   },
+   {
+    "line": "The commission voted to prorate the 47 Whalen Road bill to a one-month charge after new owners were billed a full-quarter minimum.",
+    "t": 1886
+   },
+   {
+    "line": "A developer previewed a 40B project's sewer route; the commission asked for a more detailed plan and will seek counsel's view on the ZBA's authority.",
+    "t": 4111
+   },
+   {
+    "line": "The commission approved the Q2 billing commitment by roll call.",
+    "t": 4927
+   }
+  ],
+  "why_it_matters": [
+   "Two billing credits were granted case by case, and staff will bring proration and irrigation-meter enrollment policies to future agendas, which would set how other ratepayers are billed after a mid-quarter purchase or for irrigation use.",
+   "A 40B project can add connections to the sewer system, and the commission has not yet established whether the ZBA can bind it on the sewer route, a question that bears on system capacity and on what ratepayers share."
+  ],
+  "watch_next": [
+   "Next commission meetings on Dec 13 (Zoom) and Dec 27 (format to be decided); the proration policy and the 40B applicant are due on the next agenda.",
+   "The Dec 14 ZBA hearing, which commissioners were asked to attend, and counsel's answer on ZBA authority."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T12:38:26Z",
+   "cost_usd": 0.2247649
+  }
+ }
+}

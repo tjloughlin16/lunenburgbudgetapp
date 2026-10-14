@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-05-02",
  "docid": "450",
@@ -12,47 +12,421 @@
  },
  "votes": [
   {
-   "motion": "Transfer the all alcohol license and approve the common victualler license for Lakefront Beverage Inc. d/b/a On the Rocks, 96 Lakefront Ave.",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "H. Sroka",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2nd. h. sroka to transfer the all alcohol license and approve the common victualler license for lakefront beverage inc. d/b/a on the rocks, 96 lakefront ave. vote: all in favor"
-  },
-  {
-   "motion": "Ratify the Town Manager's appointment of Gail Kemp as Police Part-time Administrative Assistant",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2^°: l. franco to ratify the town manager's appointment of gail kemp as police part-time administrative assistant vote: all in favor"
-  },
-  {
-   "motion": "Recommend approval of Article #8 which is the Fire Union Bargaining Agreement",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2nd: m. jeffreys to recommend approval of article #8 which is the fire union bargaining agreement vote: all in favor"
-  },
-  {
-   "motion": "Approve the minutes of February 28, 2023 as presented",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to approve the minutes of february 28, 2023 as presented 2nd: l. franco vote: all in favor"
-  },
-  {
-   "motion": "Enter into Executive Session and adjourn immediately after to discuss strategy with respect to collective bargaining",
+   "motion": "To enter executive session under MGL c. 30, s. 21(3) to discuss collective bargaining strategy (Public Employee Agreement), and to adjourn immediately after exiting executive session.",
    "moved_by": "L. Franco",
    "seconded_by": "H. Sroka",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: l. franco 2nd: h. sroka to enter into executive session and to adjourn immediately after exiting executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining, where an open meeting may have a detrimental effect on the government's bargaining position and the chair so declares. (public employee agreement). vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "to enter into executive session and to adjourn immediately after exiting executive session: pursuant to mgl c. 30, section 21, paragraph 3"
+  },
+  {
+   "motion": "To recommend approval of Article #8, the Fire Union Bargaining Agreement (first year of FY 24-FY 26 agreement with the Lunenburg Professional Firefighters).",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to recommend approval of article #8 which is the fire union bargaining agreement vote: all in favor"
+  },
+  {
+   "motion": "To approve the minutes of February 28, 2023 as presented.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to approve the minutes of february 28, 2023 as presented"
+  },
+  {
+   "motion": "To transfer the all alcohol license and approve the common victualler license for Lakefront Beverage Inc. d/b/a On the Rocks, 96 Lakefront Ave.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "H. Sroka",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to transfer the all alcohol license and approve the common victualler license for lakefront beverage inc."
+  },
+  {
+   "motion": "To ratify the Town Manager's appointment of Gail Kemp as Police Part-time Administrative Assistant.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the town manager's appointment of gail kemp as police part-time administrative assistant"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, all votes recorded with outcomes. No pages reported missing; all readable.",
- "cost_usd": 0.1109471
+ "note": "Text is macOS Vision OCR of the minutes. Several regions are garbled, notably the top of PAGE 5 (the traffic paragraph before 'MassDOT installed traffic counters'), the Earth Day table on PAGE 2, and the seconder line for the Kemp vote (read as '2^°: L. Franco'). Quotes were taken from lines that read cleanly. Four of five motions show only 'All in Favor' with no numeric count; the executive session motion has a roll call (four ayes, read as 4-0). No separate adjournment motion is recorded; the meeting ends at 9:12 p.m. after the executive session motion. The Gingras ratification is an agenda item with no vote recorded. The attendance roll is not printed, so status is inferred from the vote line and from speaking. No transfers are recorded. Non-speaking people named only as subjects (Brian Gingras, Gail Kemp, Lori Shattuck, Ann Sullivan, Sewer Commission representatives, Rep. Margaret Scarsdale) are not listed as attendees.",
+ "cost_usd": 0.02264911,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Ms. Sroka",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Mr. Franco",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux stated we advertised and got six applicants."
+  },
+  {
+   "name": "Jonathan Dickhaut",
+   "role": "owner/manager",
+   "status": "present",
+   "quote": "jonathan dickhaut, owner/manager, was present for the application."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland Street (public comment)",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stated his wife's mother and father lived next door to the townsend house"
+  },
+  {
+   "name": "George Burden",
+   "role": "resident, 39 Cortland Circle (public comment)",
+   "status": "present",
+   "quote": "george burden, 39 cortland circle, asked mr. jeffreys about a statement made at the january 17 meeting about"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Conservation Commissioner",
+   "status": "present",
+   "quote": "mary wilson (conservation commissioner) and ana lockwood (parks commissioner) reported on the earth day 2023 activities"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commissioner",
+   "status": "present",
+   "quote": "mary wilson (conservation commissioner) and ana lockwood (parks commissioner) reported on the earth day 2023 activities"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The peddler's license hearing for Sun Run Solar, which was not on the agenda, will be rescheduled to the next meeting.",
+   "quote": "he will be rescheduled for the next meeting."
+  },
+  {
+   "decision": "Ms. Lemieux to follow up with the DPW Director on the request for road line painting on town roads.",
+   "quote": "ms. lemieux will follow up with the dpw director."
+  },
+  {
+   "decision": "The Police Chief to set up traffic monitors to study the implications of no-parking signs north or south of Sunset Lane and Robb's Hill Road.",
+   "quote": "the police chief will setting up some traffic monitors to study implications of doing so."
+  },
+  {
+   "decision": "Chair to review the video of the January 17 meeting to answer the resident's question on tax changes in different areas of town.",
+   "quote": "mr. jeffreys informed him he would have to review the video."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House clothing drive proceeds",
+   "what_was_recorded": "The clothing drive raised a sum for the Lunenburg Adult Activity Center.",
+   "figures_as_printed": [
+    "$2557"
+   ],
+   "quote": "this raised $2557 for the lunenburg adult activity center."
+  },
+  {
+   "topic": "Earth Day 2023 equivalent value and volunteer hours",
+   "what_was_recorded": "The Earth Day summary report states an equivalent value back to Lunenburg, computed at a stated hourly rate.",
+   "figures_as_printed": [
+    "$11,180.00",
+    "$31/hr"
+   ],
+   "quote": "equivalent value back to lunenburg metrics 13 122 361 $11,180.00"
+  },
+  {
+   "topic": "Library burglary loss",
+   "what_was_recorded": "The Library reported a March 25th burglary in which cash was taken.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "library: march 25th burglary $400 in cash;"
+  },
+  {
+   "topic": "Fire union bargaining agreement cost impact",
+   "what_was_recorded": "Town Manager's staff reported the overall fiscal impact of the three-year Fire union agreement by year, plus a $1000 SAFE Coordinator stipend and a $2/hr out-of-grade pay increase. Article 8 seeks to raise and appropriate or transfer from available funds for year one.",
+   "figures_as_printed": [
+    "$26,043.04",
+    "$36,022.18",
+    "$25,320.14",
+    "$1000",
+    "$2/hr"
+   ],
+   "quote": "the overall impact for fiscal 24 would be $26,043.04; for fiscal year 25 the impact will be $36,022.18 and for fiscal year 26 is $25,320.14."
+  },
+  {
+   "topic": "ARPA expenditure report",
+   "what_was_recorded": "The Finance Director will complete the next ARPA expenditure report, due April 30th. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the finance director will complete the next expenditure report for arpa that is due april 30th."
+  },
+  {
+   "topic": "Municipal Building Design Committee phasing and costs",
+   "what_was_recorded": "The committee is to review rough estimates for phasing and costs with the Select Board. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "review the hybrid plan as well as some rough estimates for phasing and costs."
+  },
+  {
+   "topic": "Town Meeting budget and stabilization",
+   "what_was_recorded": "A board member urged residents to support the budget and stabilization-fund articles at Annual Town Meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "this is the time to come and support the budget that serves the needs of the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Boys & Girls Club fundraiser thanks",
+   "quote": "mr. alonzo thanked everyone who attended the lunenburg boys & girls club fundraiser last friday."
+  },
+  {
+   "speaker": "George Burden",
+   "stated_role": "39 Cortland Circle",
+   "topic": "January 17 tax statement",
+   "quote": "george burden, 39 cortland circle, asked mr. jeffreys about a statement made at the january 17 meeting about"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "Liquor license transfer, On the Rocks",
+   "quote": "dave rodgers, 82 highland street, stated his wife's mother and father lived next door to the townsend house"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting notice",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of",
+   "tags": [
+    "open meeting law",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "mr. alonzo thanked everyone who attended the lunenburg boys & girls club fundraiser last friday.",
+   "tags": [
+    "public comment",
+    "tax"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "ms. lemieux noted the eagle house supporters clothing drive collected 1200 bags of clothing totaling",
+   "tags": [
+    "announcements",
+    "clothing drive",
+    "town meeting",
+    "election",
+    "memorial day"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: Planning Board and Sewer Commission",
+   "resolution": "no action recorded",
+   "quote": "the planning board has begun their master planning process and they are seeking a representative from the select board to serve on the steering committee.",
+   "tags": [
+    "planning",
+    "sewer",
+    "Leominster agreement"
+   ]
+  },
+  {
+   "topic": "Earth Day 2023 activities report",
+   "resolution": "reported; no action",
+   "quote": "mary wilson (conservation commissioner) and ana lockwood (parks commissioner) reported on the earth day 2023 activities",
+   "tags": [
+    "Earth Day",
+    "volunteers",
+    "conservation",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Liquor license transfer hearing: On the Rocks, 96 Lakefront Ave",
+   "resolution": "approved (license transfer and common victualler license)",
+   "quote": "to transfer the all alcohol license and approve the common victualler license for lakefront beverage inc.",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "special permit",
+    "Lakefront Ave"
+   ]
+  },
+  {
+   "topic": "Ratification of Building Commissioner appointment (Brian Gingras)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "ms. lemieux stated we advertised and got six applicants.",
+   "tags": [
+    "appointments",
+    "building commissioner",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Ratification of Police part-time Administrative Assistant (Gail Kemp)",
+   "resolution": "approved",
+   "quote": "to ratify the town manager's appointment of gail kemp as police part-time administrative assistant",
+   "tags": [
+    "appointments",
+    "police",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, employment, bids, department updates",
+   "resolution": "reported; no action",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "town manager report",
+    "vacancies",
+    "bids",
+    "30 School Street",
+    "police",
+    "library",
+    "DPW",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Route 2A / Chase Road traffic safety",
+   "resolution": "reported; no action",
+   "quote": "she is going to find out if a road safety audit can be started.",
+   "tags": [
+    "traffic safety",
+    "MassDOT",
+    "Route 2A",
+    "Chase Road",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Fire union bargaining agreement, Article 8 (Annual Town Meeting)",
+   "resolution": "approved recommendation to Town Meeting",
+   "quote": "to recommend approval of article #8 which is the fire union bargaining agreement vote: all in favor",
+   "tags": [
+    "town meeting",
+    "fire union",
+    "collective bargaining",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting motion sheet, Article 21 typo",
+   "resolution": "noted; amendment to be made on the floor",
+   "quote": "mr. alonzo noted there was a typo on article 21 and there will be an amendment made on the meeting floor to",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of February 28, 2023",
+   "resolution": "approved",
+   "quote": "to approve the minutes of february 28, 2023 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action items: parking, Summer Street, road line painting, abatement reports",
+   "resolution": "follow-up assigned",
+   "quote": "the police chief will setting up some traffic monitors to study implications of doing so.",
+   "tags": [
+    "parking",
+    "traffic",
+    "assessors",
+    "abatements",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and Town Manager evaluation schedule",
+   "resolution": "reviewed",
+   "quote": "mr. jeffreys reviewed the schedule for the town manager evaluation process.",
+   "tags": [
+    "town manager evaluation",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Committee reports: Municipal Building Design Committee",
+   "resolution": "reported; joint meeting planned for the 16th",
+   "quote": "mr. jeffreys reported the municipal building design committee met",
+   "tags": [
+    "municipal building",
+    "design",
+    "hybrid plan",
+    "costs"
+   ]
+  },
+  {
+   "topic": "Remarks on Annual Town Meeting and the budget",
+   "resolution": "discussed; no action",
+   "quote": "this is the time to come and support the budget that serves the needs of the town.",
+   "tags": [
+    "town meeting",
+    "budget",
+    "stabilization",
+    "audit"
+   ]
+  },
+  {
+   "topic": "Executive session (collective bargaining) and adjournment",
+   "resolution": "entered executive session; adjourned at 9:12 p.m.",
+   "quote": "the meeting adjourned at 9:12 p.m.",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "Earth Day",
+  "fire union contract",
+  "collective bargaining",
+  "Annual Town Meeting",
+  "town election",
+  "appointments",
+  "police staffing",
+  "Building Commissioner",
+  "traffic safety",
+  "Route 2A",
+  "parking",
+  "town manager report",
+  "municipal building",
+  "budget",
+  "public comment",
+  "minutes",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

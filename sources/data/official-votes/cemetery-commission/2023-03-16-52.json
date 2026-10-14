@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-03-16",
  "docid": "52",
@@ -12,29 +12,157 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of January 10 and February 14, 2023 meetings",
+   "motion": "Accept the minutes of the January 10 and February 14, 2023 meetings.",
    "moved_by": "David Dorren",
    "seconded_by": "Vice Chair Yasko",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "david dorren made a motion to accept the minutes of both january 10 and february 14, 2023 meetings; vice chair yasko seconded the motion. motion passed 3-0."
+   "quote": "david dorren made a motion to accept the minutes of both january 10 and february 14, 2023 meetings; vice chair yasko seconded the motion."
   },
   {
-   "motion": "change the Flowers budget to $500",
+   "motion": "Change the Flowers budget to $500 in the FY24 annual budget.",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "the commission unanimously voted 3-0 to change the flowers budget to $500."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "VP Yasko",
-   "seconded_by": "Chairman Tyler",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Nancy Foss-Yasko",
+   "seconded_by": "Bill Tyler",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion to adjourned by vp yasko at 2:22pm. chairman tyler 2nd the motion. passed 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10034449999999999
+ "note": "Text is a clean typed transcript, not a scan. Three recorded votes (minutes approval, Flowers budget change, adjournment). The Flowers motion's mover and seconder are not printed, so they are left blank. The dog, niche wall and rules items are tabled or postponed with no vote recorded, so they are decisions, not votes. The minutes print no public comment section. The minutes name the Vice Chair as both \"Vice Chair\" and \"Vice President\" and the DPW Director as \"Bill Bernard\" without a separate title line. The meeting-time line reads \"Thursday April 27, 2023\" though 2023-03-16 is a Thursday; the minutes header says Friday, March 16, 2023, which is inconsistent with the date.",
+ "cost_usd": 0.01388331,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bill Tyler",
+   "role": "Chairman (header: William Tyler, Chairperson)",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard"
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice Chair (header: Vice-Chairperson)",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Action on the dog loose at the North Cemetery was tabled, pending Vice President Yasko looking into it with the Police Dept. and the Lunenburg Animal Control Officer; no action taken at this time.",
+   "quote": "motion tabled till vice president yasko looks into this more with the police dept."
+  },
+  {
+   "decision": "Niche wall plaque inscriptions at the North Cemetery were tabled until the April meeting, to contact Leominster Monument.",
+   "quote": "this was tabled until april meeting to contact leominster monument, since they did most of the plaques on the niche wall."
+  },
+  {
+   "decision": "Review of the Cemetery Rules and Regulations was postponed to April so DPW Director Bill Bernard can talk to the Town Attorneys on wording of the Regulation.",
+   "quote": "was postponed till april so bill bernard can talk to the town attorneys on wording of regulation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual FY24 budget",
+   "what_was_recorded": "The Flowers line was changed to $500, the whole budget total therefore changed to $14,100, and the town will ask for $10,000 from the Sales Lots for FY24.",
+   "figures_as_printed": [
+    "$500",
+    "$14,100",
+    "$10,000"
+   ],
+   "quote": "the total for the whole budget therefore changed to $14,100."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, January 10 and February 14, 2023",
+   "resolution": "approved 3-0",
+   "quote": "david dorren made a motion to accept the minutes of both january 10 and february 14, 2023 meetings; vice chair yasko seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Annual FY24 budget",
+   "resolution": "Flowers budget changed to $500; $10,000 to be requested from Sales Lots",
+   "quote": "vice chair yasko suggested a change to the flowers budget to $500 for the year.",
+   "tags": [
+    "budget",
+    "FY24",
+    "flowers",
+    "sales lots"
+   ]
+  },
+  {
+   "topic": "Dogs at the North Cemetery",
+   "resolution": "tabled; no action taken",
+   "quote": "motion tabled till vice president yasko looks into this more with the police dept.",
+   "tags": [
+    "dogs",
+    "animal control",
+    "police",
+    "north cemetery"
+   ]
+  },
+  {
+   "topic": "Niche wall plaques, North Cemetery",
+   "resolution": "tabled to April",
+   "quote": "this was tabled until april meeting to contact leominster monument, since they did most of the plaques on the niche wall.",
+   "tags": [
+    "niche wall",
+    "plaques",
+    "north cemetery"
+   ]
+  },
+  {
+   "topic": "Cemetery Rules and Regulations",
+   "resolution": "postponed to April",
+   "quote": "was postponed till april so bill bernard can talk to the town attorneys on wording of regulation.",
+   "tags": [
+    "rules and regulations",
+    "town attorney"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:22pm, passed 3-0",
+   "quote": "motion to adjourned by vp yasko at 2:22pm. chairman tyler 2nd the motion. passed 3-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "FY24 budget",
+  "flowers",
+  "North Cemetery",
+  "niche wall",
+  "plaques",
+  "dogs",
+  "animal control",
+  "rules and regulations",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

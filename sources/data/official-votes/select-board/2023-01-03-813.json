@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-01-03",
  "docid": "813",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Allow each board or committee to use remote technology and have hybrid meetings but not as a requirement",
+   "motion": "Permit each board or committee to use remote technology and hold hybrid meetings, not as a requirement (Open Meeting Law permanent changes).",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: l. franco 2': t. alonzo to allow each board or a committee to use remote technology and have hybrid meetings but not as a requirement that has to be enabled vote: all in favor"
   },
   {
-   "motion": "Open the Annual Town Meeting warrant on January 10, 2023 and close the warrant on March 20, 2023 at 4:00 p.m.",
+   "motion": "Open the Annual Town Meeting warrant on January 10, 2023 and close it on March 20, 2023 at 4:00 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: t. alonzo 2nd: l. franco to open the annual town meeting warrant on january 10, 2023 and close the warrant on march 20, 2023 at 4:00 p.m. vote: all in favor"
   },
   {
-   "motion": "Accept the new sign donated to the Park Commissioners for McNally Field",
+   "motion": "Accept the new sign donated to the Park Commissioners for McNally Field.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: m. jeffreys 2nd: t. alonzo to accept the new sign donated to the park commissioners for mcnally field vote: all in favor"
   },
   {
-   "motion": "Approve the December 13 and December 20, 2022 minutes as submitted",
+   "motion": "Approve the December 13 and December 20, 2022 minutes as submitted.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"°: l. franco to approve the december 13 and december 20, 2022 minutes as submitted vote: all in favor"
+   "quote": "to approve the december 13 and december 20, 2022 minutes as submitted vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -53,6 +53,329 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via OCR macOS Vision from scan; minor OCR artifacts in seconded-by formatting (2':/2\"°: for 2nd:) do not impair vote identification. All votes clearly recorded.",
- "cost_usd": 0.0952985
+ "note": "OCR of a scanned Select Board minutes document (macOS Vision). Several passages are cut at page breaks and begin mid-sentence (pages 3, 4, 5 and 6), so the context for the 'continue the discussion' item and the TC Passios property-line discussion is partial. A suggestion to take an item to the tax relief group is not attributed to a speaker in the readable text, so it was not recorded as a decision. The minutes print no roll call, so attendance is inferred from participation and marked 'present' only where a person spoke, moved or seconded. Votes are recorded as 'All in Favor' with no counts printed, so outcome is 'passed'. Some OCR artifacts were kept in quotes as printed: \"2'\" and \"2\"°\" for '2nd', and \"February 1s!\" was not quoted. Ms. Lemieux's title is not printed in the text.",
+ "cost_usd": 0.02175261,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "not stated (printed as 'T. Alonzo' in motions)",
+   "status": "present",
+   "quote": "mr. alonzo reported after our final capital planning meeting"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "not stated (printed as 'L. Franco' in motions)",
+   "status": "present",
+   "quote": "mr. franco reported economic development committee was canceled due to lack of a quorum."
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "not stated (printed as 'T. Dwyer' in the adjournment second)",
+   "status": "present",
+   "quote": "mr. dwyer announced the lunenburg water district will be meeting tomorrow"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. sroka presented a photo of the mcnally field sign to the board."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated (speaks in the Town Manager Report)",
+   "status": "present",
+   "quote": "ms. lemieux reported communication from the parks commission that they voted to accept"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident, 155 Island Road",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, thanked the police and fire chiefs who came out"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board requested a photo of the McNally Field sign before voting on its acceptance; the photo was then presented.",
+   "quote": "the board requested a photo of the sign be provided before voting."
+  },
+  {
+   "decision": "Bylaw review workshop: the board agreed to look over all Select Board bylaws and continue the discussion at another time, to be prepared for changes at the next workshop.",
+   "quote": "it was suggested to look over everything and continue the discussion another time."
+  },
+  {
+   "decision": "The board agreed to continue an unnamed discussion at a later time. The topic is not identifiable from the excerpt, which begins mid-item.",
+   "quote": "the board will continue the discussion at a later time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 budget revenue assumptions",
+   "what_was_recorded": "The Town Manager described the FY24 target budget's revenue assumptions: a 2½ percent levy increase, estimated new growth, a local receipts increase, and level-funded state aid.",
+   "figures_as_printed": [
+    "2½ percent",
+    "$200,000",
+    "$50,000"
+   ],
+   "quote": "an estimated new growth figure of $200,000, the debt exclusion amount for fy 24, level funds state aid, and includes a $50,000 increase to local receipts."
+  },
+  {
+   "topic": "Non-discretionary cost increases (health, liability, retirement)",
+   "what_was_recorded": "The FY24 target budget assumes an 8.5% health insurance renewal increase, about 5% for liability and workers compensation, and a 13% increase in the retirement assessment; the health renewal rate is still unknown.",
+   "figures_as_printed": [
+    "8.5%",
+    "5%",
+    "13%"
+   ],
+   "quote": "liability and workers compensation are estimated to increase 5%, and our retirement assessment will increase 13% next fiscal year."
+  },
+  {
+   "topic": "Health insurance stabilization account",
+   "what_was_recorded": "The Town Manager said a health insurance stabilization account exists that could be tapped if the health cost needs stabilizing. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we created a health insurance stabilization account that we could tap into to stabilize this cost if required"
+  },
+  {
+   "topic": "FY24 Salary Reserve appropriation",
+   "what_was_recorded": "The Town Manager said the clerical union contract and the compensation study costs will be borne through the FY 2024 Salary Reserve appropriation. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the impact of both will need to be borne through the fy 2024 salary reserve appropriation."
+  },
+  {
+   "topic": "Operational budget requests expected from departments",
+   "what_was_recorded": "The Town Manager listed operational funding requests she expects, including a cemetery item below the $20,000 capital threshold. Only that one amount is printed.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "cemetery improvements that were below the $20,000 capital project threshold"
+  },
+  {
+   "topic": "Staff training budget and outsourcing",
+   "what_was_recorded": "The Town Manager said the staff training budget is very limited and that outsourced services such as grant writing are a need. No amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "we currently have a very limited budget for staff training"
+  },
+  {
+   "topic": "Pending ARPA funding requests",
+   "what_was_recorded": "The Town Manager said pending ARPA funding requests, once approved, will add federal reporting and procurement work. No amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "once the board approves the pending arpa funding requests"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant, and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$1,737,128.07",
+    "$956,240.90",
+    "$61,236.91"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $1,737,128.07; a payroll warrant in the amount of $956,240.90 and a payroll deductions warrant in the amount of $61,236.91."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Sroka",
+   "stated_role": "not stated",
+   "topic": "Unofficial Facebook page and resident complaints",
+   "quote": "ms. sroka noted a facebook page independent of the town sponsored facebook page generated resident complaints about trash pickup, taxes going up, etc., but is not a town sponsored forum."
+  },
+  {
+   "speaker": "Mr. Dwyer",
+   "stated_role": "not stated",
+   "topic": "Lunenburg Water District meeting and Hickory Hills well study",
+   "quote": "mr. dwyer announced the lunenburg water district will be meeting tomorrow and they are going to address some of the concerns that have been raised regarding the hickory hills well study."
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Chairman",
+   "topic": "Governor transition remarks",
+   "quote": "mr. jeffreys noted governor baker will be ending his term tomorrow."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "not stated",
+   "topic": "Governor transition remarks",
+   "quote": "mr. alonzo echoed mr. jeffreys and added governor baker and lt. governor polito have done an excellent job in staying engaged"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "resident, 155 Island Road",
+   "topic": "Police and Fire Chiefs' Salvation Army bell ringing; tax abatement deadline",
+   "quote": "dave macdonald, 155 island road, thanked the police and fire chiefs who came out and rang the bell for the salvation army on christmas eve."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "remarks recorded; no action",
+   "quote": "ms. sroka noted a facebook page independent of the town sponsored facebook page",
+   "tags": [
+    "public comment",
+    "trash pickup",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, FY24 budget calendar, announcements",
+   "resolution": "reported; no action",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "vacancies",
+    "committees",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: Cowdry encroachments",
+   "resolution": "noted; no action",
+   "quote": "mr. jeffreys reported he received an email from conservation commission chair bob pease",
+   "tags": [
+    "conservation",
+    "encroachment",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Old Business 1: status update on Town Manager and Select Board goals (925 Mass Ave)",
+   "resolution": "reported; no action",
+   "quote": "ms. lemieux reported the land use director and i met with mass development representatives regarding 925 mass ave.",
+   "tags": [
+    "goals",
+    "925 Mass Ave",
+    "Mass Development"
+   ]
+  },
+  {
+   "topic": "Goal: Select Board bylaws; Open Meeting Law permanent changes",
+   "resolution": "approved (motion to allow remote and hybrid meetings as an option)",
+   "quote": "mr. jeffreys stated this is a placeholder, i don't realistically expect that we'll have much discussion on this.",
+   "tags": [
+    "open meeting law",
+    "remote meetings",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Town Manager report on FY24 budget priorities",
+   "resolution": "presented and discussed; no vote",
+   "quote": "ms. lemieux read from her memo to the board:",
+   "tags": [
+    "FY2024 budget",
+    "staffing",
+    "health insurance",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Acceptance of gift: new sign at McNally Field",
+   "resolution": "approved after photo presented",
+   "quote": "ms. lemieux reported communication from the parks commission that they voted to accept",
+   "tags": [
+    "gift",
+    "McNally Field",
+    "Parks Commission"
+   ]
+  },
+  {
+   "topic": "Workshop: Select Board bylaw review",
+   "resolution": "continued to next workshop",
+   "quote": "mr. jeffreys directed the board members to their meeting materials.",
+   "tags": [
+    "bylaws",
+    "Charter",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant open and close dates",
+   "resolution": "approved",
+   "quote": "vote to open the annual town meeting warrant on january 10, 2023 and close the warrant",
+   "tags": [
+    "annual town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Approval of December 13 and 20, 2022 minutes",
+   "resolution": "approved",
+   "quote": "approval of december 13 and 20, 2022 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed; no vote recorded",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,737,128.07;",
+   "tags": [
+    "warrants",
+    "payables",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items: TC Passios building property lines",
+   "resolution": "discussed; no action recorded (excerpt begins mid-item)",
+   "quote": "mr. alonzo reported there has been a back and forth discussion between the town manager",
+   "tags": [
+    "property lines",
+    "TC Passios",
+    "Capital Planning"
+   ]
+  },
+  {
+   "topic": "Committee reports: Capital Planning, Economic Development, School Committee",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported after our final capital planning meeting while there's no requirement",
+   "tags": [
+    "Capital Planning",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "reported; no action",
+   "quote": "mr. jeffreys reported their next meetings are on january 10, 17, and 24.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:19 P.M.",
+   "quote": "the meeting adjourned at 8:19 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "annual town meeting warrant",
+  "FY2024 budget",
+  "open meeting law",
+  "remote meetings",
+  "bylaws",
+  "public comment",
+  "McNally Field",
+  "gift acceptance",
+  "minutes",
+  "warrants",
+  "vacancies",
+  "conservation encroachment",
+  "925 Mass Ave",
+  "TC Passios building",
+  "capital planning",
+  "health insurance",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

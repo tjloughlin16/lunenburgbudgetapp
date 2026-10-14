@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-02-01",
  "docid": "65",
@@ -12,55 +12,306 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of January 18, 2023",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of January 18, 2023.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "rb/ml m/s to approve. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve Order of Conditions Extension Request for house addition at 168 West Street for three years",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Order of Conditions extension request for house addition at 168 West Street for three years.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/ml m/s to approve order of conditions extension request for house addition at 168 west street for three years. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve with standard Order of Conditions and specified conditions for retaining wall replacement at 189 Hemlock Drive",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Notice of Intent for the 189 Hemlock Drive retaining wall (DEP #208-1282) with a standard Order of Conditions and special conditions.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "rb/jv m/s to approve with a standard order of conditions, special conditions being: tie-in wall no closer to the waterfront, the stop work with equipment when soil rutting happens and repair ruts"
+   "quote": "rb/jv m/s to approve with a standard order of conditions, special conditions being: tie-in wall no closer to the waterfront"
   },
   {
-   "motion": "Issue negative determination for replacement of sewage disposal system at 113 Cove Road",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for replacement of the sewage disposal system at 113 Cove Road.",
+   "moved_by": "RB",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/rt m/s to issue negative determination for replacement of sewage disposal system for 113 cove road. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Decline Amended Order of Conditions for 42 Pearl Street (DEP #208-1277)",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Decline the Amended Order of Conditions for 42 Pearl Street (DEP #208-1277).",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/ml m/s to decline amended order of conditions for 42 pearl street dep #208-1277. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
-   "quote": "rb/jv m/s to adjourn meeting. roll call vote, unanimous to adjourn."
+   "quote": "rb/jv m/s to adjourn meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is readable; six votes recorded, all passed unanimously.",
- "cost_usd": 0.0955515
+ "note": "Text is digital extraction, not a scan; all votes read from printed M/S and roll-call lines. Motions are attributed by the initials as printed (RB, ML, JV, RT); the mapping of initials to members (RB = Richard Bursch, ML = Michael Larouche, JV = Jeffrey Viviano, RT = Richard Tremblay, MW = Mary Wilson) is inferred from the roll call and header, not printed as a key. The 42 Pearl Street motion is to decline, but the minutes print \"unanimous to approve\" for it. The applicant is spelled \"Matthew Proctor\" in the hearing notice and \"Protector\" in the body. The header places \"Conservation Administrator\" beside Anna Petrie's name only by layout. No dollar figures appear anywhere in the minutes. Public comment: \"None.\" Presence of Sam Welch and Paul Cadaret is not stated. The straw poll on 42 Pearl Street is not a recorded motion and is not counted as a vote.",
+ "cost_usd": 0.021754410000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "roll call: mw, rt, rb, jv, ml absent: bp, cc"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: mw, rt, rb, jv, ml"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: mw, rt, rb, jv, ml"
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "roll call: mw, rt, rb, jv, ml"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "absent",
+   "quote": "roll call: mw, rt, rb, jv, ml absent: bp, cc"
+  },
+  {
+   "name": "Michael Larouche",
+   "status": "present",
+   "quote": "roll call: mw, rt, rb, jv, ml"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "status": "present",
+   "quote": "roll call: mw, rt, rb, jv, ml"
+  },
+  {
+   "name": "Sam Welch",
+   "role": "Associate Member",
+   "status": "not stated",
+   "quote": "sam welch, associate member"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "ap provides pictures from the site as well as site drawings."
+  },
+  {
+   "name": "Michael and Barbara Battle",
+   "role": "representing themselves",
+   "status": "present",
+   "quote": "michael and barbara battle are present to represent themselves."
+  },
+  {
+   "name": "Robert and Tracee Galloni",
+   "status": "absent",
+   "quote": "robert and tracee galloni were not present, will attend next meeting in regards to enforcement order."
+  },
+  {
+   "name": "Matthew Proctor",
+   "role": "representing himself (body spells the name Protector)",
+   "status": "present",
+   "quote": "matthew protector to represent himself. mp explains that the existing timber wall will be removed"
+  },
+  {
+   "name": "Kevin Ritchie",
+   "role": "of Civil Solutions, representing the applicant",
+   "status": "present",
+   "quote": "kevin ritchie of civil solutions to represent."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "of Hannigan Engineering, representing the homeowner",
+   "status": "present",
+   "quote": "chris anderson of hannigan engineering to represent the homeowner."
+  },
+  {
+   "name": "Paul Cadaret",
+   "role": "applicant, Amended Order of Conditions",
+   "status": "not stated",
+   "quote": "request for amended order of conditions by paul cadaret for the proposed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 23 Cove Road enforcement order matter is carried to the next meeting, because the owners were not present.",
+   "quote": "robert and tracee galloni were not present, will attend next meeting in regards to enforcement order."
+  },
+  {
+   "decision": "The beaver site assessment authorization is continued to the next meeting for discussion.",
+   "quote": "mw stated that this topic is more for bp, so it will be continued to the next meeting for discussion."
+  },
+  {
+   "decision": "A straw poll was taken on the 42 Pearl Street proposal and all members voted in agreement; the question put is not stated in the minutes.",
+   "quote": "mw agrees and asks for a straw poll; all straw poll vote in agreement."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant proposals",
+   "what_was_recorded": "Grant proposals were submitted and a response is hoped for by June; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "mw confirms that grant proposals were submitted and hopefully to hear back by june."
+  },
+  {
+   "topic": "Hollis Road residence carpeting",
+   "what_was_recorded": "A tenant requested bedroom carpets be replaced and the rest of the house carpeting shampooed; quotes are being obtained, and no price is printed.",
+   "figures_as_printed": [],
+   "quote": "ml says that the room will be measured and quoted for new carpeting on february 4th."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of January 18, 2023",
+   "resolution": "approved, unanimous",
+   "quote": "minutes of previous meetings - january 18th, 2023 rb/ml m/s to approve. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "23 Cove Road enforcement order",
+   "resolution": "continued to next meeting; owners absent",
+   "quote": "robert and tracee galloni were not present, will attend next meeting in regards to enforcement order.",
+   "tags": [
+    "enforcement",
+    "cove road"
+   ]
+  },
+  {
+   "topic": "168 West Street extension request",
+   "resolution": "approved, three-year extension",
+   "quote": "rb/ml m/s to approve order of conditions extension request for house addition at 168 west street for three years.",
+   "tags": [
+    "extension",
+    "order of conditions",
+    "west street"
+   ]
+  },
+  {
+   "topic": "189 Hemlock Drive retaining wall, Notice of Intent",
+   "resolution": "approved with special conditions",
+   "quote": "rb/jv m/s to approve with a standard order of conditions, special conditions being: tie-in wall no closer to the waterfront",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "retaining wall",
+    "tree replacement"
+   ]
+  },
+  {
+   "topic": "113 Cove Road sewage system replacement, Request for Determination",
+   "resolution": "negative determination issued",
+   "quote": "rb/rt m/s to issue negative determination for replacement of sewage disposal system for 113 cove road.",
+   "tags": [
+    "determination",
+    "septic",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "42 Pearl Street amended Order of Conditions",
+   "resolution": "declined; applicant to file under a new DEP number",
+   "quote": "rb/ml m/s to decline amended order of conditions for 42 pearl street dep #208-1277.",
+   "tags": [
+    "amended order of conditions",
+    "retaining wall",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "Beaver site assessment authorization",
+   "resolution": "continued to next meeting",
+   "quote": "mw stated that this topic is more for bp, so it will be continued to the next meeting for discussion.",
+   "tags": [
+    "beaver",
+    "new business"
+   ]
+  },
+  {
+   "topic": "Grant updates",
+   "resolution": "no action; response expected by June",
+   "quote": "mw confirms that grant proposals were submitted and hopefully to hear back by june.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "no action; carpet quotes in progress",
+   "quote": "ml says that the room will be measured and quoted for new carpeting on february 4th.",
+   "tags": [
+    "property",
+    "carpet"
+   ]
+  },
+  {
+   "topic": "1325 Mass Ave notice of project change",
+   "resolution": "noted; minor plan changes and possible amended filing",
+   "quote": "ap notifies the commission that the office has been receiving notification that changes have been made to the stormwater plan in regards to this permit",
+   "tags": [
+    "stormwater",
+    "project change"
+   ]
+  },
+  {
+   "topic": "Enforcement actions",
+   "resolution": "status reported; no votes",
+   "quote": "eo 336 arbor st: no longer active; forgot to remove from agenda",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "no action; none recorded",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:29 pm, unanimous",
+   "quote": "rb/jv m/s to adjourn meeting.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "order of conditions",
+  "notice of intent",
+  "enforcement",
+  "septic",
+  "retaining wall",
+  "grants",
+  "zoom meeting",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

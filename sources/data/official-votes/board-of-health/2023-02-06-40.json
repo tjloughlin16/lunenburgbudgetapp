@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-02-06",
  "docid": "40",
@@ -12,48 +12,143 @@
  },
  "votes": [
   {
-   "motion": "Approve December 22, 2022 minutes",
+   "motion": "Approve the minutes of December 22, 2022.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by jewell and second by watters, the above minutes were approved. all in favor."
+   "quote": "on motion by jewell and second by watters, the above minutes were approved."
   },
   {
-   "motion": "Approve requested variances for 77 Peninsula Drive",
+   "motion": "Approve the requested variances for 77 Peninsula Drive, including the groundwater offset from 5 feet to 4 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by watters, the board unanimously approved the requested variances. all in favor."
+   "quote": "on motion by jewell and second by watters, the board unanimously approved the requested variances."
   },
   {
-   "motion": "Approve variances for 493 West Street",
+   "motion": "Approve the variances requested for 493 West Street (sieve analysis and 12-inch reduction on inlet and outlet tees).",
    "moved_by": "Watters",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by watters and second by jewell the board voted to approve the variances. all in favor."
+   "quote": "the board voted to approve the variances."
   },
   {
-   "motion": "Approve one year extension until February 14, 2023 for 733 West Street",
+   "motion": "Approve a one-year extension for 733 West Street until February 14, 2023.",
    "moved_by": "Jewell",
    "seconded_by": "Emond",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by jewell and sec ond by emond, the board voted to approve the request for a one year extension until february 14, 2023. all in favor",
-   "quote_taken_from_text": true
+   "quote": "the board voted to approve the request for a one year extension until february 14, 2023."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Watters",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no further matters before the board and on motion watters and seconded by jewell, the meeting was adjourned at 7:45 pm, all in favor."
+   "quote": "the meeting was adjourned at 7:45 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0798479
+ "note": "Text is a two-page extract with no printed vote counts; each motion's result is recorded as 'All in favor' or 'unanimously', so outcomes are 'passed' rather than a count. No dollar figures appear, so budget_items and transfers are empty. Doug Smith and Dan Proctor appeared as representatives of owners on agenda items, not as public comment, so public_comment is empty. The minutes name no Chair and do not state the members' roles. Minor OCR-style spacing artifacts ('sec ond', 'w ater') exist in the source; quotes avoid them.",
+ "cost_usd": 0.013564910000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, and evan watters."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, and evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, and evan watters."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved, December 22, 2022",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "on motion by jewell and second by watters, the above minutes were approved."
+  },
+  {
+   "topic": "77 Peninsula Drive septic variances",
+   "resolution": "variances approved",
+   "tags": [
+    "septic systems",
+    "variances",
+    "groundwater offset",
+    "wells"
+   ],
+   "quote": "groundwater offset from 5 feet to 4 feet."
+  },
+  {
+   "topic": "493 West Street septic variances",
+   "resolution": "variances approved",
+   "tags": [
+    "septic systems",
+    "variances",
+    "wells"
+   ],
+   "quote": "the lot has shallow depth of soil and very high groundwater."
+  },
+  {
+   "topic": "733 West Street septic extension",
+   "resolution": "one-year extension approved",
+   "tags": [
+    "septic systems",
+    "extensions",
+    "groundwater offset"
+   ],
+   "quote": "groundwater offset from 4 feet to 3 feet is requested."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting was adjourned at 7:45 pm, all in favor."
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "variances",
+  "groundwater",
+  "private wells",
+  "extensions",
+  "board of health"
+ ],
+ "dropped_unquoted_by_field": {}
 }

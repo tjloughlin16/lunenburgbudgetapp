@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-03-02",
  "docid": "89",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the February 23, 2023 meeting",
+   "motion": "Approve the minutes of the February 23, 2023 meeting.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Nuzzolo",
    "outcome": "passed",
@@ -20,15 +20,398 @@
    "quote": "mr. menard motioned to approve the minutes from the february 23, 2023 meeting. mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:33 p.m.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Nuzzolo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "at 9:33 p.m. mr. menard motioned to adjourn, mr. nuzzolo seconded. on vote, motion carried unanimously."
+   "quote": "mr. menard motioned to adjourn, mr. nuzzolo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only procedural votes (minutes and adjournment) are recorded. Budget presentations for IT and Police departments, while discussed at length, show no motions voted on—they are informational reports to the committee.",
- "cost_usd": 0.06905610000000001
+ "note": "Text is a plain extraction of the minutes, with no scan. The minutes carry a line stating they were approved at the March 9, 2023 meeting. Only two motions appear, both procedural (minutes approval and adjournment), each recorded as carried unanimously with no count. No substantive vote is recorded in the text. The overlay free cash reservation is a request by the Town Manager, not a vote. Quotes are copied as printed, including the typo \"Heath insurance\". Amanda Moore is listed as a guest with no attendance status stated.",
+ "cost_usd": 0.01738961,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice chairperson chris menard, tom gray, tom balish, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice chairperson chris menard, tom gray, tom balish, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice chairperson chris menard, tom gray, tom balish, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice chairperson chris menard, tom gray, tom balish, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice chairperson chris menard, tom gray, tom balish, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu (remote), suzor it casey chisholm"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "remote",
+   "quote": "town accountant karen brochu (remote)"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "Suzor IT",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu (remote), suzor it casey chisholm"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Lunenburg Chief of Police",
+   "status": "present",
+   "quote": "chief gammel explained that his 10-year hiring plan has been put on hold for fy24"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Public Safety Coordinator",
+   "status": "not stated",
+   "quote": "chief of police thomas gammel, public safety coordinator amanda moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager will revise her recommendation for the rest of certified free cash and inform the committee at its next meeting.",
+   "quote": "ms. lemieux will revise her recommendation for the rest of certified free cash, and inform the committee at their next meeting."
+  },
+  {
+   "decision": "The Town Manager will request that $1.5 million in free cash be reserved for the overlay account, to fund filed abatements at Annual Town Meeting.",
+   "quote": "ms. lemieux will request $1.5 million in free cash be reserved for the overlay account in order to be prepared to"
+  },
+  {
+   "decision": "The committee deferred discussion of its Town Meeting report to its next regular meeting.",
+   "quote": "the committee can discuss their report at their next regular meeting."
+  },
+  {
+   "decision": "For the joint meeting with the state representatives, the committee will focus on how state financial formulas are developed and how they affect the town.",
+   "quote": "the committee will focus on how the financial formulas are developed on the state level, and how those formulas affect"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 IT budget increase",
+   "what_was_recorded": "The IT department seeks an $83,545 increase, including an administrative assistant and a remote meeting coordinator.",
+   "figures_as_printed": [
+    "$83,545",
+    "$23,545",
+    "$5,000"
+   ],
+   "quote": "the it department is seeking a $83,545 increase, which entails $23,545 for a non-benefited administrative assistant"
+  },
+  {
+   "topic": "IT hardware maintenance upgrades",
+   "what_was_recorded": "Hardware upgrades for phones, computers and a library camera system were listed with their costs.",
+   "figures_as_printed": [
+    "$12,000",
+    "$30,000",
+    "$13,000"
+   ],
+   "quote": "$30,000 to upgrade computers, and $13,000 for an updated camera system at the library."
+  },
+  {
+   "topic": "IT internet and email hosting",
+   "what_was_recorded": "Fiber internet upgrade at three town buildings and email cloud hosting were listed with their costs.",
+   "figures_as_printed": [
+    "$17,172",
+    "$7,526"
+   ],
+   "quote": "which will cost $17,172, and $7,526 for email cloud hosting."
+  },
+  {
+   "topic": "IT software maintenance",
+   "what_was_recorded": "Software maintenance rose 2 percent from last year, totaling approximately the figure printed.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "software maintenance increased 2 percent (totaling approximately $15,000) from last year"
+  },
+  {
+   "topic": "FY24 police budget request",
+   "what_was_recorded": "The police department requested one figure and the Town Manager recommended a lower one.",
+   "figures_as_printed": [
+    "$2,843,973",
+    "$2,757,597"
+   ],
+   "quote": "for fy24 the police department is requesting $2,843,973. the town manager has requested $2,757,597 for the department."
+  },
+  {
+   "topic": "30 School Street demolition bid",
+   "what_was_recorded": "The lowest of five bids, from Costello Dismantling Company, was selected.",
+   "figures_as_printed": [
+    "$216,649"
+   ],
+   "quote": "went with the lowest bid at $216,649 from costello dismantling company"
+  },
+  {
+   "topic": "Town Hall building envelope bid",
+   "what_was_recorded": "The single bid far exceeded the amount appropriated for the project.",
+   "figures_as_printed": [
+    "$258,800",
+    "$75,000"
+   ],
+   "quote": "the town hall building envelope project only received one bid in the amount of $258,800, which far exceeded the $75,000 that was appropriated."
+  },
+  {
+   "topic": "Cherry sheet local aid",
+   "what_was_recorded": "Released local aid numbers add revenue to the town.",
+   "figures_as_printed": [
+    "$40,659"
+   ],
+   "quote": "the town will receive an additional $40,659 in revenue."
+  },
+  {
+   "topic": "School choice and charter assessment",
+   "what_was_recorded": "A decrease in school choice and charter assessments was recorded as an expenditure change.",
+   "figures_as_printed": [
+    "$194,537"
+   ],
+   "quote": "a decrease in assessments regarding school choice and charter at $194,537 (expenditure)."
+  },
+  {
+   "topic": "ARPA funds for vehicles",
+   "what_was_recorded": "The Select Board committed ARPA funds to two dump trucks and an ambulance, recorded as revenue because special purpose stabilization funds are not being used.",
+   "figures_as_printed": [
+    "$986,000"
+   ],
+   "quote": "the select board took action to spend $986,000 in arpa funds on two dump trucks and an ambulance"
+  },
+  {
+   "topic": "Health insurance increase",
+   "what_was_recorded": "Health insurance is rising 6.2 percent rather than the anticipated 8.5 percent, producing revenue; the school committee will vote on adjusting its budget.",
+   "figures_as_printed": [
+    "6.2 percent",
+    "8.5 percent",
+    "$39,214"
+   ],
+   "quote": "heath insurance is coming in at a 6.2 percent increase as opposed to the previously anticipated 8.5 percent increase, which comes out to $39,214 in revenue."
+  },
+  {
+   "topic": "Police patrolmen line",
+   "what_was_recorded": "A difference in the patrolmen line for the police budget has been accounted for.",
+   "figures_as_printed": [
+    "$2,971"
+   ],
+   "quote": "a $2,971 difference in the patrolmen line for the police budget has now been accounted for."
+  },
+  {
+   "topic": "Capital Plan ARPA expenditure",
+   "what_was_recorded": "Capital Plan figures reflect a $986,000 expenditure of ARPA funds for the ambulance and two dump trucks.",
+   "figures_as_printed": [
+    "$986,000"
+   ],
+   "quote": "the change in capital plan figures reflect an expenditure of $986,000 from the usage of arpa funds for the ambulance and two dump trucks."
+  },
+  {
+   "topic": "Monty Tech Chapter 70",
+   "what_was_recorded": "Monty Tech Chapter 70 aid came in above the anticipated amount, reflecting enrollment and the state mandate.",
+   "figures_as_printed": [
+    "$100,654",
+    "12 percent",
+    "2 percent"
+   ],
+   "quote": "monty tech chapter 70 came in at $100,654, which is a 12 percent increase as opposed to the anticipated 2 percent increase"
+  },
+  {
+   "topic": "Overlay account free cash reserve",
+   "what_was_recorded": "The Town Manager will request that free cash be reserved for the overlay account to fund filed abatements.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ],
+   "quote": "ms. lemieux will request $1.5 million in free cash be reserved for the overlay account in order to be prepared to"
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "The snow and ice account is operating in a deficit.",
+   "figures_as_printed": [
+    "$291,493"
+   ],
+   "quote": "snow and ice is operating in a deficit of $291,493."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reservation of certified free cash for the overlay account to fund filed abatements at Annual Town Meeting.",
+   "amount_as_printed": "$1.5 million",
+   "outcome": "Requested by the Town Manager; no committee vote or reservation recorded in these minutes.",
+   "quote": "ms. lemieux will request $1.5 million in free cash be reserved for the overlay account in order to be prepared to"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting statement",
+   "resolution": "called to order at 7 p.m.; recorded on YouTube",
+   "quote": "mr. watters called the meeting to order at 7p.m. and read a statement concerning the open meeting",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements: SNAP emergency allotments",
+   "resolution": "announced; no action",
+   "quote": "mr. watters announced that it is the last day snap emergency allotments, which included an additional $177 per month, were dispersed.",
+   "tags": [
+    "snap",
+    "food pantry"
+   ]
+  },
+  {
+   "topic": "FY24 IT budget presentation",
+   "resolution": "presented; no vote",
+   "quote": "ms. chisholm presented the fy24 it budget requests.",
+   "tags": [
+    "it budget",
+    "fy24",
+    "broadcasting"
+   ]
+  },
+  {
+   "topic": "FY24 police budget presentation",
+   "resolution": "presented; no vote",
+   "quote": "chief gammel informed the committee that police services have increased as the town has grown.",
+   "tags": [
+    "police budget",
+    "fy24",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director report",
+   "resolution": "reported; overlay free cash request to be made; revised free cash recommendation to follow",
+   "quote": "ms. lemieux reported the town has received five bids for the 30 school street hazardous materials/demolition project",
+   "tags": [
+    "free cash",
+    "budget adjustments",
+    "bids",
+    "arpa",
+    "health insurance",
+    "cherry sheet"
+   ]
+  },
+  {
+   "topic": "Town Meeting Finance Committee report",
+   "resolution": "deferred to next regular meeting",
+   "quote": "mr. watters reported that the town manager has put out the first draft of warrant articles",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Capital plan",
+   "resolution": "no new report",
+   "quote": "b. capital plan: no new report",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Tax assessment and abatement",
+   "resolution": "no update",
+   "quote": "c. tax assessment and abatement: no update",
+   "tags": [
+    "abatement"
+   ]
+  },
+  {
+   "topic": "State representative meeting preparation",
+   "resolution": "preparation discussed; focus agreed",
+   "quote": "the committee will only have ten minutes with the representatives during their joint meeting",
+   "tags": [
+    "state aid",
+    "state formulas"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved February 23, 2023 minutes",
+   "quote": "mr. menard motioned to approve the minutes from the february 23, 2023 meeting. mr. nuzzolo seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "members updated each other on liaison assignments",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "10. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "schedule listed",
+   "quote": "a. march 7 -joint meeting with select board and school committee",
+   "tags": [
+    "schedule",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:33 p.m.",
+   "quote": "mr. menard motioned to adjourn, mr. nuzzolo seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "fy24 budget",
+  "it budget",
+  "police budget",
+  "free cash",
+  "overlay",
+  "arpa",
+  "health insurance",
+  "cherry sheet",
+  "chapter 70",
+  "snow and ice",
+  "town meeting",
+  "capital plan",
+  "state aid"
+ ],
+ "dropped_unquoted_by_field": {}
 }

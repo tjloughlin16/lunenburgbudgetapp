@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-04-13",
  "docid": "12",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from March 22, 2023",
+   "motion": "Approve the minutes of the March 22, 2023 meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
    "outcome": "passed",
@@ -20,16 +20,15 @@
    "quote": "maryrae made a motion to approve the minutes from the following meetings: march 22, 2023 jackie seconded commission unanimously approved"
   },
   {
-   "motion": "approve reviewed vendor applications for Farmers' Market",
+   "motion": "Approve the reviewed vendor applications for the Farmers' Market.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
    "outcome": "passed",
    "procedural": false,
-   "quote": "maryrae made a motion to approve reviewed vendor applications for farmers' market; jackie seconded, ===page 2=== commission unanimou",
-   "quote_taken_from_text": true
+   "quote": "maryrae made a motion to approve reviewed vendor applications for farmers' market; jackie seconded,"
   },
   {
-   "motion": "move the next meeting to May 11, 2023 at 7:00 pm",
+   "motion": "Move the next meeting to May 11, 7:00pm.",
    "moved_by": "Maryrae",
    "seconded_by": "Jen",
    "outcome": "passed",
@@ -37,15 +36,179 @@
    "quote": "maryrae made a motion to move the next meeting to may 11, 7:00pm jen seconded commission unanimously approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
    "outcome": "passed",
    "procedural": true,
-   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved"
+   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved 8:36pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1012745
+ "note": "Meeting date mismatch: the request gives 2023-04-13, but the minutes print \"April 14, 2023\" in the heading. Recorded as printed. Attendance is shown by checkmarks only; Jorge Marzuca and Kira McClellan have blank marks, so status is recorded as \"not stated\" rather than absent. The minutes print \"unanimously approved\" without tallies, so outcomes are \"passed\". The items \"Jen\" and \"Jackie\" are first names as printed. No dollar figures appear. Public comment was \"No public comment\" twice with no speakers. The Farmers' Market vote quote spans a page break at \"Jackie seconded,\" and is taken from page 1.",
+ "cost_usd": 0.01431751,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member jorge marzuca"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate ashley york ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Vendors for the Farmers' Market will be notified of the review of their applications.",
+   "quote": "commission unanimously approved. vendors will be notified"
+  },
+  {
+   "decision": "Continue advertising for vendors for the Farmers' Market.",
+   "quote": "continue to advertise for vendors for farmers' market"
+  },
+  {
+   "decision": "Outreach for market manager(s) and/or farm vendors, with paperwork for a town account, listed as action items.",
+   "quote": "outreach for market manager(s) and/or farm vendors"
+  },
+  {
+   "decision": "Tote bag design to be ordered for the next meeting.",
+   "quote": "tote bag design to be ordered for next meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened at 7:11 pm; no action",
+   "quote": "call to order meeting commencement time: 7:11 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "quote": "public comment/open discussion no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no action; no complaints",
+   "quote": "farm complaints no complaints",
+   "tags": [
+    "farms",
+    "complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of March 22, 2023",
+   "quote": "review/approve minutes maryrae made a motion to approve the minutes from the",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update (seasonal)",
+   "resolution": "approved vendor applications; vendors to be notified; outreach and advertising continue",
+   "quote": "farmers market update -seasonal reviewed received applications for farmers' market;",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "New Business: welcome new members",
+   "resolution": "no action; welcomed members",
+   "quote": "welcome new members member jackie chabot",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "tote bag design to be ordered next meeting; other items no new information",
+   "quote": "tote bag design to be ordered for next meeting",
+   "tags": [
+    "marketing",
+    "farms",
+    "bylaws",
+    "land"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; no new information",
+   "quote": "committee reports: economic development",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "next meeting set for May 11, 2023, 7:00pm",
+   "quote": "set next meeting date maryrae made a motion to move the next meeting to",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:36pm",
+   "quote": "adjourn meeting adjournment time:",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "vendors",
+  "farm regulation",
+  "tote bags marketing",
+  "minutes approval",
+  "scheduling"
+ ],
+ "dropped_unquoted_by_field": {}
 }

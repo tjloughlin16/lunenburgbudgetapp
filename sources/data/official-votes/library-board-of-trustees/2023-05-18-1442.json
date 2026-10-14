@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-05-18",
  "docid": "1442",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Invest 40% in a one-year CD, 2% in a liquid account, and 58% in an Advisory Solution fund",
+   "motion": "Invest 40% in a one-year CD, 2% in a liquid account, and the remaining 58% in an Advisory Solution fund.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "dick made a motion, seconded by laura, to invest 40% in a one-year cd, 2% in some liquid account, and the remaining 58% in an advisory solution fund. the motion passed unanimously."
   },
   {
-   "motion": "Accept the minutes of April 20, 2023 as amended",
+   "motion": "Accept the minutes of April 20, 2023 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "dick made a motion to accept the minutes of april 20, 2023 as amended, seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed",
@@ -37,6 +37,254 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are readable and three votes are clearly recorded.",
- "cost_usd": 0.0714321
+ "note": "Text is a single typed page (page 1 and the top of page 2) plus blank pages 3-10; no scan artifacts. Attendance is a list with no present/absent split, so status is 'present' as printed. Votes are recorded only as 'passed unanimously' with no tally. Public comment is printed as 'No public comment.' so no speakers. Attached documents list (agenda, director's and services reports) is not a topic and is not reproduced. Dollar figures are as printed; the trust-fund split percentages are not dollar amounts.",
+ "cost_usd": 0.01627311,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:51 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup, nicole groskreutz"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup,"
+  },
+  {
+   "name": "Nicole Groskreutz",
+   "role": "Edward Jones",
+   "status": "present",
+   "quote": "nicole and kristen from edward jones attended the meeting."
+  },
+  {
+   "name": "Kristen Munroe",
+   "role": "Edward Jones",
+   "status": "present",
+   "quote": "nicole and kristen from edward jones attended the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair asked that the library's ARPA funding request be submitted to the Select Board the following day (no vote recorded).",
+   "quote": "harry asked that a request be submitted tomorrow."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trust fund investment split",
+   "what_was_recorded": "The board's motion divides the trust fund 40% one-year CD, 2% liquid account, 58% Advisory Solution fund; no dollar amounts are printed.",
+   "figures_as_printed": [
+    "40%",
+    "2%",
+    "58%"
+   ],
+   "quote": "dick made a motion, seconded by laura, to invest 40% in a one-year cd, 2% in some liquid account, and the remaining 58% in an advisory solution fund."
+  },
+  {
+   "topic": "CD return and liquid funds",
+   "what_was_recorded": "Edward Jones said a CD was currently returning around 5%; Muir estimated the library needs around 2k to 3k in liquid funds.",
+   "figures_as_printed": [
+    "5%",
+    "2k to 3k"
+   ],
+   "quote": "donna asked what the library might need in liquid funds. muir said around 2k to 3k."
+  },
+  {
+   "topic": "Trust fund CD return",
+   "what_was_recorded": "Edward Jones reported the current CD return.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "they are currently getting around 5% return."
+  },
+  {
+   "topic": "FY23 budget status",
+   "what_was_recorded": "The FY23 budget is reported 75% expended with 92% of the fiscal year elapsed; a surplus is noted in the staff salary line and a gap in heating costs.",
+   "figures_as_printed": [
+    "75%",
+    "92%"
+   ],
+   "quote": "the fy23 budget is 75% expended and we are 92% through the fiscal year."
+  },
+  {
+   "topic": "Heating costs",
+   "what_was_recorded": "A fairly large gap in heating costs is noted because costs were lower this year; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "there is a fairly large gap in the heating costs as they have been less this year."
+  },
+  {
+   "topic": "Staff salary surplus",
+   "what_was_recorded": "A surplus in the staff salary line is noted; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we have a surplus in the staff salary line."
+  },
+  {
+   "topic": "Preliminary library budget",
+   "what_was_recorded": "The preliminary library budget was passed at Town Meeting.",
+   "figures_as_printed": [
+    "$539,126.28"
+   ],
+   "quote": "the preliminary library budget of $539,126.28 was passed at town meeting."
+  },
+  {
+   "topic": "NE Subaru music series sponsorship",
+   "what_was_recorded": "An agreement with NE Subaru, arranged with the Friends, provides an annual sponsorship for a monthly music series starting in June.",
+   "figures_as_printed": [
+    "$3600"
+   ],
+   "quote": "muir worked with jane crook and gail kerr from the friends on an agreement with ne subaru to do an annual sponsorship of $3600 for a monthly music series that will begin in june."
+  },
+  {
+   "topic": "Proctor Memorial Garden upkeep",
+   "what_was_recorded": "A stipend for someone to maintain the garden was suggested, with State Aid funds possibly available; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "muir suggested a stipend for someone to maintain it. state aid funds might be available."
+  },
+  {
+   "topic": "ARPA funding request",
+   "what_was_recorded": "The ARPA funding request for the library had not yet been submitted to the Select Board; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "harry expressed his frustration that the arpa funding request for the library was not yet submitted to the select board."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "approved investment split (vote)",
+   "quote": "nicole asked for some clarity on our investment goals and what our timelines are.",
+   "tags": [
+    "trust fund",
+    "investments",
+    "Edward Jones"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (vote)",
+   "quote": "dick made a motion to accept the minutes of april 20, 2023 as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "the fy23 budget is 75% expended and we are 92% through the fiscal year.",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "no action",
+   "quote": "no current update. muir is trying to connect with some vendors.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Proctor Memorial Garden Discussion",
+   "resolution": "no action",
+   "quote": "kate expressed concern about the maintenance and asked who will be responsible for the upkeep.",
+   "tags": [
+    "Proctor Memorial Garden",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "dues have been increased.",
+   "tags": [
+    "Friends of the library",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Master Plan Committee Discussion",
+   "resolution": "no action",
+   "quote": "the town is updating the master plan and a committee will be appointed to work on this.",
+   "tags": [
+    "master plan",
+    "town committees"
+   ]
+  },
+  {
+   "topic": "Board Reorg in June Reminder",
+   "resolution": "no action; reminder",
+   "quote": "the board will appoint a chair, vice-chair and secretary at the june meeting.",
+   "tags": [
+    "board organization"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "chair asked request be submitted; no vote",
+   "quote": "harry expressed his frustration that the arpa funding request for the library was not yet submitted to the select board.",
+   "tags": [
+    "ARPA",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:07 p.m. (vote)",
+   "quote": "motion to adjourn by dick. seconded by kate. meeting was adjourned at 9:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trust fund",
+  "investments",
+  "budget",
+  "Friends of the library",
+  "Proctor Memorial Garden",
+  "master plan",
+  "ARPA",
+  "board organization",
+  "programs"
+ ],
+ "dropped_unquoted_by_field": {}
 }

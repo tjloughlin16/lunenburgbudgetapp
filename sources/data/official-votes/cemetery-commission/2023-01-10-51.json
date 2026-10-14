@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-01-10",
  "docid": "51",
@@ -12,23 +12,169 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the December 20, 2022 meeting",
-   "moved_by": "Nancy Foss-Yasko",
+   "motion": "Accept the minutes of Tuesday 12/20/22.",
+   "moved_by": "Vice Chairperson Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "vice chairperson yasko made a motion to accept the minutes of tuesday 12/20/22. david dorren 2nd the motion. passed 3-0"
   },
   {
-   "motion": "Adjourn the meeting at 2:30pm",
-   "moved_by": "Nancy Foss-Yasko",
-   "seconded_by": "David Dorren",
+   "motion": "Adjourn the meeting at 2:30pm.",
+   "moved_by": "Vice Chairperson Yasko",
+   "seconded_by": "Clerk Dorren",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion made by vice chairperson yasko to adjourn meeting at 2:30pm; seconded by clerk dorren. motion passed 3-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09755449999999999
+ "note": "Text is complete for both pages but has no public comment section and no dollar figures anywhere. Page 2's header reads \"Tuesday, January 10, 2022\" while the meeting is dated 2023-01-10; the body's next-meeting date is 2023. Outcome of the Capital Funding and Community Project Funding submissions is not recorded. Votes: two motions recorded, both procedural, both 3-0 as printed.",
+ "cost_usd": 0.014226810000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bill Tyler",
+   "role": "Chairman (header: Chairperson, William Tyler)",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw superintendent todd holman."
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw superintendent todd holman."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren and dpw superintendent todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "DPW Superintendent",
+   "status": "present",
+   "quote": "superintendent holman started the meeting by bringing up the following topics."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Helen Balcom will continue planting the flowers at the entrance of the North and South Cemeteries for FY2023, but will not do the watering.",
+   "quote": "helen balcom will continue to plant the flowers at the entrance of the north and south cemeteries for the 2023 fiscal year."
+  },
+  {
+   "decision": "Danielle Peterson will do the watering for the flowers at the North and South Cemeteries.",
+   "quote": "danielle peterson will do the watering for the flowers at the north and south cemeteries."
+  },
+  {
+   "decision": "DPW will pay the outhouse expenses at the North Cemetery.",
+   "quote": "the outhouse expenses at the north cemetery will be paid for by the dpw."
+  },
+  {
+   "decision": "Remaining hedge trimming at the North Cemetery will be contracted out by the DPW and paid from the DPW budget.",
+   "quote": "remaining hedge trimming at the north cemetery will be contracted out by the dpw and come out of the dpw budget."
+  },
+  {
+   "decision": "The Headstones and Turf projects will be submitted to both Capital Funding and State Community Project Funding; Fixing the Walls will be submitted to State Community Project Funding.",
+   "quote": "the headstones and turf projects will be submitted to both the capital funding and the state community project funding."
+  },
+  {
+   "decision": "Richard McGrath will do the Cherry Hill Cemetery stone wall.",
+   "quote": "chairman tyler discussed the cherry hill cemetery stone wall will be done by richard mcgrath."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW paying North Cemetery outhouse expenses",
+   "what_was_recorded": "The DPW will pay the outhouse expenses at the North Cemetery. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the outhouse expenses at the north cemetery will be paid for by the dpw."
+  },
+  {
+   "topic": "Hedge trimming paid from DPW budget",
+   "what_was_recorded": "Remaining hedge trimming at the North Cemetery will be contracted out and paid from the DPW budget. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "remaining hedge trimming at the north cemetery will be contracted out by the dpw and come out of the dpw budget."
+  },
+  {
+   "topic": "Capital Funding and State Community Project Funding requests",
+   "what_was_recorded": "Headstones and Turf projects go to both Capital Funding and State Community Project Funding; Fixing the Walls goes to State Community Project Funding. No amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the headstones and turf projects will be submitted to both the capital funding and the state community project funding."
+  },
+  {
+   "topic": "Wall rebuilding proposal",
+   "what_was_recorded": "A Central Mass Gardens proposal for rebuilding and reconstructing the North and South Cemetery walls was submitted. No price is printed.",
+   "figures_as_printed": [],
+   "quote": "vice chairperson yasko submitted a proposal from central mass gardens on rebuilding and reconstructing the walls at the north and south cemeteries."
+  },
+  {
+   "topic": "Community Project Funding earmarks",
+   "what_was_recorded": "A letter to Representative Michael Kushmerek about earmarks for Community Project Funding was submitted. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "vice chairperson yasko also submitted a letter to go to representative michael kushmerek regarding the earmarks for the community project funding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Flower planting and watering assignments",
+   "resolution": "assigned",
+   "quote": "helen balcom will continue to plant the flowers at the entrance of the north and south cemeteries for the 2023 fiscal year."
+  },
+  {
+   "topic": "Cemetery maintenance: outhouse and hedge trimming",
+   "resolution": "assigned to DPW",
+   "quote": "remaining hedge trimming at the north cemetery will be contracted out by the dpw and come out of the dpw budget."
+  },
+  {
+   "topic": "Remaining plot counts",
+   "resolution": "no action",
+   "quote": "there are 60-80 plots left in the north cemetery and 34 plots left in the south cemetery"
+  },
+  {
+   "topic": "Capital and State Community Project Funding",
+   "resolution": "submissions directed",
+   "quote": "the headstones and turf projects will be submitted to both the capital funding and the state community project funding."
+  },
+  {
+   "topic": "Wall rebuilding proposal from Central Mass Gardens",
+   "resolution": "submitted",
+   "quote": "vice chairperson yasko submitted a proposal from central mass gardens on rebuilding and reconstructing the walls at the north and south cemeteries."
+  },
+  {
+   "topic": "Earmark letter to Representative Kushmerek",
+   "resolution": "submitted",
+   "quote": "vice chairperson yasko also submitted a letter to go to representative michael kushmerek regarding the earmarks for the community project funding."
+  },
+  {
+   "topic": "Cherry Hill Cemetery stone wall",
+   "resolution": "assigned to contractor",
+   "quote": "chairman tyler discussed the cherry hill cemetery stone wall will be done by richard mcgrath."
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved 3-0",
+   "quote": "vice chairperson yasko made a motion to accept the minutes of tuesday 12/20/22. david dorren 2nd the motion. passed 3-0"
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "adjourned 3-0; next meeting February 14, 2023",
+   "quote": "next meeting set for february 14, 2023 at 1pm."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "DPW",
+  "flowers and grounds",
+  "stone walls",
+  "capital funding",
+  "state community project funding",
+  "plots",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

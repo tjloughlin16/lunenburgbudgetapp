@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2022-12-20",
  "docid": "1421",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Go through both Capital Funding and State Rep. Michael Kushmerek's Office for funding",
+   "motion": "Go through both Capital Funding and State Rep Michael Kushmerek's Office for funding.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 3-0",
+   "outcome": "3-0",
    "procedural": false,
    "quote": "motion made to go through both capital funding and state rep michael kushmerek's office. 3-0"
   },
   {
-   "motion": "Approve the November 29, 2022 minutes",
+   "motion": "Approve the November 29, 2022 minutes.",
    "moved_by": "David Dorren",
-   "seconded_by": "William Tyler",
-   "outcome": "approved 3-0",
+   "seconded_by": "Chairman Tyler",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion was made by david dorren to approve the november 29, 2022 minutes. chairman tyler 2nd the motion. motion approved 3-0"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:30pm.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
@@ -37,6 +37,118 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. The first motion lacks attribution (moved_by/seconded_by not named). The third motion lacks an explicit vote outcome in the minutes, though the meeting's adjournment and scheduling of the next meeting imply passage.",
- "cost_usd": 0.0879605
+ "note": "Single-page text extract, not a scan; no public comment section printed. Vote on the capital-funding motion records no mover or seconder. The adjournment motion records no vote count, so its outcome is not stated. The header names the Chairperson \"William Tyler\" while the body uses \"Chairman Bill Tyler\" (same person, treated as one). Todd Holman and State Rep. Michael Kushmerek are mentioned but do not appear as attendees. Hedges and stone wall items print no approval or vote.",
+ "cost_usd": 0.01315051,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bill Tyler",
+   "role": "Chairperson (\"Chairman Bill Tyler\")",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chair person nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairperson (\"Vice Chair person Nancy Foss-Yasko\")",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chair person nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chair person nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chair person nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The pavement for the DPW Building Driveway at the North Cemetery will be earmarked by DPW for State Funding.",
+   "quote": "the pavement for the dpw building driveway at the north cemetery will be earmarked by dpw for state funding."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stone wall for both cemeteries",
+   "what_was_recorded": "DPW reported a quote for the stone wall at both cemeteries, received by Todd Holman.",
+   "figures_as_printed": [
+    "$375,000"
+   ],
+   "quote": "quote was $375,000 for both."
+  },
+  {
+   "topic": "Hedges at the North Cemetery",
+   "what_was_recorded": "DPW Director said the hedges were put in the budget, to be done after July 1, 2023. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "bill also said he put in the budget for the hedges at the north cemetery to be done after july 1, 2023."
+  },
+  {
+   "topic": "Capital funds ranking",
+   "what_was_recorded": "Chairman reviewed the Town's capital funds list; the Turf Project and Headstone Project ranked #17 and #20 of 29 projects. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the turf project was #17 and the headstone project was #20 out of a total of 29 projects."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Capital funding ranking and state funding",
+   "resolution": "approved: pursue both Capital Funding and State Rep office, 3-0",
+   "quote": "the turf project was #17 and the headstone project was #20 out of a total of 29 projects.",
+   "tags": [
+    "capital funding",
+    "turf",
+    "headstones",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Stone wall, pavement and hedges",
+   "resolution": "no action; pavement earmarked by DPW for state funding",
+   "quote": "bill bernard stated todd holman received a quote for the stone wall for both cemeteries.",
+   "tags": [
+    "stone wall",
+    "DPW",
+    "hedges",
+    "pavement",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Approval of November 29, 2022 minutes",
+   "resolution": "approved 3-0",
+   "quote": "motion was made by david dorren to approve the november 29, 2022 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "adjourned at 2:30pm; next meeting January 10, 2023 at 1pm",
+   "quote": "next meeting set for january 10, 2023 at 1pm.",
+   "tags": [
+    "adjournment",
+    "next meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "capital funding",
+  "state funding",
+  "stone wall",
+  "headstones",
+  "turf",
+  "DPW",
+  "hedges",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

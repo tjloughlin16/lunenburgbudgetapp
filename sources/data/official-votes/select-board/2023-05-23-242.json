@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-05-23",
  "docid": "242",
@@ -12,65 +12,449 @@
  },
  "votes": [
   {
-   "motion": "Accept the gift from Marcellus Thorsun of a food drop-off box for the food pantry",
+   "motion": "Accept the gift from Marcellus Thorson of a food drop-off box for the food pantry.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: t. alonzo 2'd: c. nuzzolo to accept the gift from marcellus thorsun of a food drop off box for the food pantry vote: mr. nuzzolo-aye, ms. emkey-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "to accept the gift from marcellus thorsun of a food drop off box for the food pantry"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Anne Aubrey as Planning Board Administrative Assistant",
+   "motion": "Ratify the Town Manager's appointment of Anne Aubrey as Planning Board Administrative Assistant.",
    "moved_by": "C. Nuzzolo",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: c. nuzzolo 2'': m. jeffreys to ratify the town manager's appointment is anne aubrey as planning board administrative assistant vote: mr. nuzzolo-aye, ms. emkey-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "to ratify the town manager's appointment is anne aubrey as planning board administrative assistant"
   },
   {
-   "motion": "Nominate Michael-Ray Jeffreys as Select Board Chair",
+   "motion": "Nominate Michael-Ray Jeffreys as Select Board Chair.",
    "moved_by": "L. Franco",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed 3-1-1",
-   "procedural": true,
-   "quote": "motion: l. franco 2\"d: c. nuzzolo to nominate michael-ray jeffreys as select board chair discussion: mr. franco clarified his nomination of mr. jeffieys is in no way a negat",
-   "quote_taken_from_text": true
+   "outcome": "3-1-1 as printed (Nuzzolo, Franco, Jeffreys aye; Alonzo no; Emkey present); result not stated",
+   "procedural": false,
+   "quote": "to nominate michael-ray jeffreys as select board chair"
   },
   {
-   "motion": "Nominate Lou Franco for Vice Chair",
+   "motion": "Nominate Lou Franco for Vice Chair.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: c. nuzzolo to nominate lou franco for vice chair discussion: mr. franco stated he would accept the vice chair as long as mr. alon",
-   "quote_taken_from_text": true
+   "outcome": "not stated (no tally recorded against this nomination)",
+   "procedural": false,
+   "quote": "to nominate lou franco for vice chair"
   },
   {
-   "motion": "Nominate Caesar Nuzzolo as Clerk",
+   "motion": "Nominate Tom Alonzo for Vice Chair (nomination refused; withdrawn).",
+   "moved_by": "R. Emkey",
+   "seconded_by": "L. Franco",
+   "outcome": "not stated (nomination refused and withdrawn)",
+   "procedural": false,
+   "quote": "to nominate tom alonzo for vice chair"
+  },
+  {
+   "motion": "Tally recorded after the Vice Chair nominations; the minutes do not name the motion it decides.",
+   "outcome": "5-0 as printed by name (all aye); result not stated",
+   "procedural": false,
+   "quote": "mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, mr. jeffreys-aye"
+  },
+  {
+   "motion": "Nominate Caesar Nuzzolo as Clerk.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: t. alonzo to nominate caesar nuzzolo as clerk mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo- aye, mr. franco-aye, mr. jeffreys-aye 2'd: l. franco"
+   "outcome": "5-0 as printed by name (all aye); result not stated",
+   "procedural": false,
+   "quote": "to nominate caesar nuzzolo as clerk"
   },
   {
-   "motion": "Accept the Public Employee Committee amendments as presented",
+   "motion": "Accept the Public Employee Committee amendments as presented.",
    "moved_by": "C. Nuzzolo",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: c. nuzzolo 2\"d: t. alonzo to accept the public employee committee amendments as presented mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo- aye, mr. franco-aye, mr. jeffreys-aye"
+   "quote": "to accept the public employee committee amendments as presented"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "C. Nuzzolo",
-   "outcome": "passed unanimously",
+   "outcome": "passed (all in favor; count not printed)",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2': c. nuzzolo vote: all in favor"
+   "quote": "to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from scanned meeting minutes dated 2023-05-23. One motion to nominate Tom Alonzo for Vice Chair was made by R. Emkey and seconded by L. Franco but was withdrawn without a vote when Mr. Alonzo refused the nomination.",
- "cost_usd": 0.1375231
+ "note": "Text is macOS Vision OCR with visible errors: 'Jeffieys' for Jeffreys, 'Thorsun' in the motion against 'Thorson' in the presentation, and garbled seconder marks such as \"2'd\" and \"2'':\". The closing public comment is largely illegible, so its speaker is unknown. Page 11 begins mid-sentence in the insurance discussion, so the Public Employee Committee discussion that precedes the amendments motion is not in the text. No result is printed for the Chair nomination (3-1-1 tally only), the Vice Chair nominations (no tally tied to a motion), or the Clerk nomination (tally with the seconder printed after it). The Town Manager evaluation is titled \"Review and Approve\" but no vote on it is recorded. The Clerk motion's seconder appears after the tally. Ms. Lemieux's title is not printed in the minutes. Votes are recorded as individual names, so counts are read from the printed tallies.",
+ "cost_usd": 0.025398610000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair (Chairman)",
+   "status": "present",
+   "quote": "chairman jeffieys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board member (newly elected)",
+   "status": "present",
+   "quote": "they welcomed new board members renee emkey and caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board member (newly elected)",
+   "status": "present",
+   "quote": "to nominate caesar nuzzolo as clerk"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "to nominate tom alonzo for vice chair"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "to nominate lou franco for vice chair"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated in the minutes; presented the Town Manager report",
+   "status": "present",
+   "quote": "ms. lemieux informed the board that dpw worker/heavy equipment operator matt lubao will be going to"
+  },
+  {
+   "name": "Dr. Burnham",
+   "role": "not stated (presented School Committee request)",
+   "status": "present",
+   "quote": "dr. burnham referred the board to a letter dated april 24, 2023;"
+  },
+  {
+   "name": "Mr. Cassidy",
+   "role": "not stated (School Committee request presenter)",
+   "status": "present",
+   "quote": "mr. cassidy stated the alternative phase 2 funding has not yet been identified."
+  },
+  {
+   "name": "Mr. Pusateri",
+   "role": "not stated (School Committee request presenter)",
+   "status": "present",
+   "quote": "mr. pusateri clarified only the classrooms would be affected by the mini-splits; common areas will not be addressed."
+  },
+  {
+   "name": "Marcellus Thorson",
+   "role": "Eagle Scout project; of Carlisle",
+   "status": "present",
+   "quote": "marcellus thorson of carlisle is working on his eagle scout project"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Lions Club President",
+   "status": "present",
+   "quote": "he was contacted by lions club president corinne scouten about a need for a food drop off box"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "91 Main Street",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, spoke about the arpa funding process"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, noted that with the original plan"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "245 Sunny Hill Road, Finance Committee Chair",
+   "status": "present",
+   "quote": "evan watters, 245 sunny hill road, finance committee chair, expressed concerns about the proposal as well"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board decided to request five people named in the minutes to present for interview for appointment, under the Per Appointment Policy.",
+   "quote": "it was decided to request sam welch, chris st. germaine, helen balcom dr: robin chandler and steve dubois to present for an interview for appointment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 Capital Plan Primary School AC project: approved and reduced budget",
+   "what_was_recorded": "The 2023 Capital Plan approved funds for Primary School air conditioning, first budgeted at $290,000 and then reduced to $238,000.",
+   "quote": "the original budgeted amount was $290,000, and then reduced to $238,000.",
+   "figures_as_printed": [
+    "$238,000.00",
+    "$290,000",
+    "$238,000"
+   ]
+  },
+  {
+   "topic": "Consultant estimate for full AC replacement",
+   "what_was_recorded": "The letter reports a consultant's full AC upgrade or replacement estimate, which it describes as not viable.",
+   "quote": "project was $7,984.035. this was not viable.",
+   "figures_as_printed": [
+    "$7,984.035"
+   ]
+  },
+  {
+   "topic": "Phase 1 funding for ductless split systems",
+   "what_was_recorded": "Phase 1 is listed as funded from the FY23 Capital Plan.",
+   "quote": "phase 1-fy23 capital plan funding $238,000.00",
+   "figures_as_printed": [
+    "$238,000.00"
+   ]
+  },
+  {
+   "topic": "Phase 2 alternative funding (not yet identified)",
+   "what_was_recorded": "Phase 2 is listed at an amount whose funding source has not been identified; the district will seek grants or budget it locally.",
+   "quote": "phase 2 - alternative funding $119,000.00",
+   "figures_as_printed": [
+    "$119,000.00"
+   ]
+  },
+  {
+   "topic": "Engineering firm's initial quote and expected cost of the modified plan",
+   "what_was_recorded": "Mr. Pusateri said the initial engineering-firm quote was $7 M and the modified plan is about $350,000 over the next year, a planned capital expense every 10 to 15 years.",
+   "quote": "the initial cost quoted was $7 m. with this plan we're looking at about $350,000 over the course of the next year or so",
+   "figures_as_printed": [
+    "$7 M",
+    "$350,000"
+   ]
+  },
+  {
+   "topic": "Phase 2 cost per two classrooms",
+   "what_was_recorded": "Mr. Pusateri said Phase 2 would cost about $27,000 for every two classrooms.",
+   "quote": "so the budget is about $27,000 for every two classrooms.",
+   "figures_as_printed": [
+    "$27,000"
+   ]
+  },
+  {
+   "topic": "Cost concern raised by Mr. Jeffreys on the AC proposal",
+   "what_was_recorded": "Mr. Jeffreys warned against spending the $238,000 on equipment the building may not be able to use.",
+   "quote": "you're not going to spend $238,000 to have items that you're not",
+   "figures_as_printed": [
+    "$238,000"
+   ]
+  },
+  {
+   "topic": "Employee health insurance opt-out incentive",
+   "what_was_recorded": "The minutes record an individual-coverage opt-out incentive payment, paid at fiscal year end. The surrounding discussion is missing from the text provided.",
+   "quote": "individual coverage - $2,000; opt-out incentive payments will be paid at the end of the fiscal year.",
+   "figures_as_printed": [
+    "$2,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrant signed",
+   "what_was_recorded": "The board signed an accounts payable warrant.",
+   "quote": "the board signed an accounts payable warrant in the amount of $322,016.08, a payroll warrant in the amount of",
+   "figures_as_printed": [
+    "$322,016.08"
+   ]
+  },
+  {
+   "topic": "Payroll and payroll deductions warrants signed",
+   "what_was_recorded": "The board signed a payroll warrant and a payroll deductions warrant.",
+   "quote": "$954, 616.74 and a payroll deductions warrant in the amount of $209,605.15.",
+   "figures_as_printed": [
+    "$954, 616.74",
+    "$209,605.15"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "topic": "Water District ARPA funding request",
+   "quote": "mr. franco stated he had been getting phone calls and emails regarding the water district's request for arpa"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "ARPA funding process and Flat Hill Road drainage",
+   "quote": "ana lockwood, 91 main street, spoke about the arpa funding process and how there were three questions"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Primary School AC: electrical capacity and grant eligibility",
+   "quote": "dave passios, 56 whiting street, noted that with the original plan, the current electrical system in the building"
+  },
+  {
+   "speaker": "Evan Watters",
+   "stated_role": "245 Sunny Hill Road, Finance Committee Chair",
+   "topic": "Primary School AC proposal concerns",
+   "quote": "evan watters, 245 sunny hill road, finance committee chair, expressed concerns about the proposal as well"
+  },
+  {
+   "speaker": "not legible in the OCR text",
+   "stated_role": "",
+   "topic": "Closing public comment on abatements and the Board of Assessors (garbled)",
+   "quote": "m: me. alone dauered town angres proside a aly aly of shandants alted by marine on the decisions by the board of assessors."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; no action",
+   "quote": "the board members thanked outgoing member heather for her service to the town.",
+   "tags": [
+    "public comment",
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Acceptance of gift: Eagle Scout food donation box",
+   "resolution": "accepted 5-0",
+   "quote": "to accept the gift from marcellus thorsun of a food drop off box for the food pantry",
+   "tags": [
+    "gift",
+    "food pantry",
+    "Eagle Scout"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational",
+   "quote": "the memorial day ceremony will be on monday, may 29 at 10 am at veterans park.",
+   "tags": [
+    "events",
+    "beach"
+   ]
+  },
+  {
+   "topic": "School Committee request: modified scope, FY23 Capital Plan Primary School AC project",
+   "resolution": "discussed; no vote recorded",
+   "quote": "mr. jeffreys encouraged the school committee to take the additional time to enlist a consultant to confirm the",
+   "tags": [
+    "school",
+    "capital plan",
+    "air conditioning",
+    "Primary School"
+   ]
+  },
+  {
+   "topic": "Ratification of Planning Board administrative assistant appointment",
+   "resolution": "ratified 5-0",
+   "quote": "to ratify the town manager's appointment is anne aubrey as planning board administrative assistant",
+   "tags": [
+    "appointments",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, openings, environmental notice, training, welcome sign",
+   "resolution": "informational",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "employment",
+    "training",
+    "environment"
+   ]
+  },
+  {
+   "topic": "Old business: Town Manager evaluation",
+   "resolution": "discussed; no vote recorded",
+   "quote": "ms. lemieux stated obviously the public lens on this is not the most comfortable position to be put in",
+   "tags": [
+    "personnel",
+    "town manager evaluation"
+   ]
+  },
+  {
+   "topic": "Current business: reorganization of the Select Board (chair, vice chair, clerk)",
+   "resolution": "nominations made; see votes",
+   "quote": "ms. emkey asked to postpone nominations until the next meeting as she is so new to the board.",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Public Employee Committee insurance amendments",
+   "resolution": "accepted 5-0",
+   "quote": "to accept the public employee committee amendments as presented",
+   "tags": [
+    "health insurance",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Per Appointment Policy: boards for in-person interviews",
+   "resolution": "requested five applicants to present",
+   "quote": "it was decided to request sam welch, chris st. germaine, helen balcom",
+   "tags": [
+    "appointments",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Accounts payable, payroll and payroll deductions warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $322,016.08",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee reports: Finance Committee and Municipal Building Committee",
+   "resolution": "informational",
+   "quote": "mr. jeffreys reported the municipal building committee met and realized that the arpa funding request",
+   "tags": [
+    "committees",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "informational",
+   "quote": "this board meets again on june 6, june 13 and june 20.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing public comment (speaker not legible)",
+   "resolution": "heard; no action",
+   "quote": "m: me. alone dauered town angres proside a aly aly of shandants alted by marine on the decisions by the board of assessors",
+   "tags": [
+    "public comment",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:17 p.m.",
+   "quote": "the meeting adjourned at 9:17 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "reorganization",
+  "officers",
+  "ARPA funding",
+  "school air conditioning",
+  "capital plan",
+  "Primary School",
+  "town manager evaluation",
+  "appointments",
+  "health insurance",
+  "warrants",
+  "gift acceptance",
+  "Eagle Scout",
+  "public comment",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2023-04-13",
  "docid": "106",
@@ -12,15 +12,180 @@
  },
  "votes": [
   {
-   "motion": "approve February minutes",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the February minutes.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "amotionwasmovedtoapprovethem, whichpassedunanimously"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "februaryminuteswerereviewedandamotionwasmovedtoapprovethem, whichpassedunanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text with missing spaces throughout; one procedural vote recorded. Adjournment mentioned but not voted on formally.",
- "cost_usd": 0.0816985
+ "note": "The minutes text has its spaces stripped, so quotes reproduce the text as extracted (words run together). The minutes say the meeting was 'on the 14th' while the meeting date given is 2023-04-13; the date was not reconciled. Four members are named as present; no chair is named, and the quorum is stated without naming who was present beyond those four. The February-minutes motion records 'passed unanimously' with no mover or seconder named. No public comment was recorded. The adjournment at 7:29 is recorded without a motion, so it is not listed as a vote. Only one dollar figure ($25,000) is printed.",
+ "cost_usd": 0.01426521,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwereinattendance."
+  },
+  {
+   "name": "Lakso",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwereinattendance."
+  },
+  {
+   "name": "Sanderson",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwereinattendance."
+  },
+  {
+   "name": "Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwereinattendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission decided to pass on researching LGBTQ history and African American history in Lunenburg, as they did not go along with the mission of the preservation of structures.",
+   "quote": "thecommissiondecidedtopassonresearchingbothastheydidn't goalongwiththemissionof thepreservationof structures."
+  },
+  {
+   "decision": "A note was made to check the Eagle house for any veterans who may want to be a part of the Hometown Heroes program.",
+   "quote": "anotewasmadetochecktheeaglehousefor anyveteranswhomaywant"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town survey grant",
+   "what_was_recorded": "The project to complete the town survey would require $25,000, and the grant would reimburse the town with half of that at completion of the survey.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "$25,000wouldberequiredtocompletetheproject"
+  },
+  {
+   "topic": "Hometown Heroes funding",
+   "what_was_recorded": "Some of the Historical Commission's budget could be used to fund veterans who might not have enough to join the project.",
+   "figures_as_printed": [],
+   "quote": "someof thehistorical commission'sbudget couldbeusedtofundthosewhomight not haveenough.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Community Preservation Act",
+   "what_was_recorded": "The APDC is promoting the Community Preservation Act, which takes a percentage of real estate sales in town to put toward historic preservation; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "apdcisattemptingtopromotethecommunitypreservationact, whichtakesapercentageofreal estatesalesintowntoput"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "February minutes",
+   "resolution": "approved",
+   "quote": "februaryminuteswerereviewedandamotionwasmovedtoapprovethem, whichpassedunanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "LGBTQ and African American history research",
+   "resolution": "passed on research (decided by commission)",
+   "quote": "newbusinessincludedlgbtqhistoryinlunenburgandafricanamericanhistoryinlunenburg",
+   "tags": [
+    "history",
+    "research",
+    "mission"
+   ]
+  },
+  {
+   "topic": "68 Elm Street update",
+   "resolution": "no action (update only)",
+   "quote": "anupdateon68elmstreet onlyshowedthat thepropertyhasfallenintoevenworserepair",
+   "tags": [
+    "property",
+    "preservation",
+    "demolition by neglect"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes project",
+   "resolution": "update; meeting set with program consultant",
+   "quote": "anupdateonthehometownheroesproject",
+   "tags": [
+    "veterans",
+    "program",
+    "utility company"
+   ]
+  },
+  {
+   "topic": "Joint meeting with APDC",
+   "resolution": "scheduled for May 2 to approve the project",
+   "quote": "ajoint meetingwiththeapdcisset tobeheldonmay2ndtoapprovetheproject.",
+   "tags": [
+    "APDC",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Town survey grant article",
+   "resolution": "approved for town meeting warrant",
+   "quote": "thearticletoapplyfor fundingfor thetownsurveyhasbeenapprovedandwill beinthewarrantfor townmeeting.",
+   "tags": [
+    "town survey",
+    "grant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "discussed; no action recorded",
+   "quote": "apdcisattemptingtopromotethecommunitypreservationact",
+   "tags": [
+    "community preservation act",
+    "APDC",
+    "funding"
+   ]
+  },
+  {
+   "topic": "30 School Street update",
+   "resolution": "no action (update only)",
+   "quote": "anupdateon30school street: contractorsarepresent anddemolitionisset tobeginapril 10th.",
+   "tags": [
+    "demolition",
+    "property"
+   ]
+  },
+  {
+   "topic": "Arnold Litch and Goodrich cemeteries",
+   "resolution": "no action (update only)",
+   "quote": "arnoldlitchandgoodrichcemeteriesareset toundergoworkstartingthissummer.",
+   "tags": [
+    "cemeteries",
+    "work"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "minutes",
+  "preservation",
+  "town survey",
+  "Hometown Heroes",
+  "Community Preservation Act",
+  "APDC",
+  "cemeteries",
+  "demolition",
+  "veterans",
+  "LGBTQ history",
+  "African American history"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-01-10",
  "docid": "244",
@@ -12,39 +12,699 @@
  },
  "votes": [
   {
-   "motion": "Approve Deb Lincoln to the 300th Anniversary Committee",
+   "motion": "Approve Deb Lincoln, 46 Hemlock Drive, as a member of the 300th Anniversary Committee",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: h. sroka to approve deb lincoln, 46 hemlock drive, to be a member of the 300th anniversary committee vote: mis. sroka-aye, mr. dwyer-aye, mr. franco-aye, mir. alonzo-aye, mr. jeffreys- aye"
+   "quote": "to approve deb lincoln, 46 hemlock drive, to be a member of the 300th anniversary committee"
   },
   {
-   "motion": "Appoint Cathy Clark to the 300th Anniversary Committee",
+   "motion": "Appoint Cathy Clark, 275 Cross Road, to the 300th Anniversary Committee",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: h. sroka 2n°: t. dwyer to appoint cathy clark, 275 cross road, to the 300# anniversary committee vote: ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys - aye"
+   "quote": "to appoint cathy clark, 275 cross road, to the 300# anniversary committee"
   },
   {
-   "motion": "Appoint Anthony Sculimbrene to the 300th Anniversary Committee",
+   "motion": "Appoint Anthony Sculimbrene, 5 Valley Road, to the 300th Anniversary Committee",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to appoint anthony sculimbrene, 5 valley road, to the 300t anniversary committee vote: ms. sroka-aye, mr. dwyer-aye, mir. franco-aye, mr. alonzo-aye, mr. jeffreys - aye"
+   "quote": "to appoint anthony sculimbrene, 5 valley road, to the 300t anniversary committee"
   },
   {
    "motion": "Adjourn the meeting",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2nd: h. sroka to adjourn the meeting vote: ms. sroka- aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys - aye"
+   "quote": "to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Typos preserved as scanned: \"2\\\"d\" and \"2n°\" for \"2nd\", \"Mis.\" and \"Mir.\" for \"Mr./Ms.\", \"300#\" and \"300t\" for \"300th\".",
- "cost_usd": 0.1528365
+ "note": "OCR text, not a clean transcript. Reading order is scrambled: page 2 (the Assessor's notice and the Town Manager lead-in) sits between page 1 and page 3, and page 3 opens mid-sentence (\"single tax rate...\") that continues from page 1. Pages 4 and 5 also cut off mid-speaker. Page 9 is blank. Several names and words are garbled by OCR and were read as printed in context: \"Mr. Jettreys\" (Jeffreys), \"Mis. Sroka\" and \"Mir. Alonzo\", \"2\"d\", \"300#\" and \"300t\" (300th), \"Sculimbrene\" as a page-1 header. The vote lines print individual aye votes but no tallies; outcomes are recorded as \"passed\" rather than a count. Only four motions were recorded (three appointments and adjournment); no vote was taken on the tax matter, the abatements, or the bylaw. Attendance is inferred from speaking and voting, since the minutes give no roll call. The Principal Assessor is mentioned but not named, so is not listed. The Town Manager is referenced but not named. \"Deb Lincoln\" in the motion and \"Debbie Lincoln\" in public comment share the address 46 Hemlock Drive; I treated them as one person. The Select Board's $17.19 and $14.62 figures are rates per thousand, and the minutes print \"cents\" beside them, which is their wording.",
+ "cost_usd": 0.02468601,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "Select Board member (printed as Mr. Alonzo)",
+   "status": "present",
+   "quote": "mr. alonzo stated tax assessments are public record so we could find out about them."
+  },
+  {
+   "name": "H. Sroka",
+   "role": "Select Board member (printed as Ms. Sroka)",
+   "status": "present",
+   "quote": "ms. sroka asked if there's any way to know if this situation happened in other towns"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member (printed as Mr. Dwyer)",
+   "status": "present",
+   "quote": "mr. dwyer to mr. jeffreys stated one question that i think we should look into moving forward"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member (printed as Mr. Franco)",
+   "status": "present",
+   "quote": "mr. franco announced the pancake breakfast tomorrow morning at the senior center on"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux read the notice aloud:"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Assessor",
+   "status": "present",
+   "quote": "assessor richard letarte, 262 lancaster avenue, appreciated everyone's comments and"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "public comment; owns 17 Page Street and 265 Sunset Lane",
+   "status": "present",
+   "quote": "ken chenis owns two properties located at 17 page street and 265 sunset lane."
+  },
+  {
+   "name": "Mary Perkins",
+   "role": "public comment; 62 Ruth Street",
+   "status": "present",
+   "quote": "mary perkins, 62 ruth street, has lived in lunenburg for 30 years, building my forever home"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "public comment; 362 Sunset Lane",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, 362 sunset lane, stated her taxes increased as well."
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "public comment; 32 Sandy Cove Road",
+   "status": "present",
+   "quote": "donna saiia, 32 sandy cove road, stated the assessment on her property is a 135% increase."
+  },
+  {
+   "name": "Joe Gaunt",
+   "role": "public comment; 761 Flat Hill Road",
+   "status": "present",
+   "quote": "joe gaunt, 761 flat hill road, asked if he was going to be billed the same amount in each"
+  },
+  {
+   "name": "Malin Scott Foreman",
+   "role": "public comment; 9 Fire Road 15A",
+   "status": "present",
+   "quote": "malin scott foreman, 9 fire road 15a, stated he does not receive any town services,"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "public comment; 97 Island Road",
+   "status": "present",
+   "quote": "tim murphy, 97 island road, stated his last quarterly bill paid was $1500, the bill received"
+  },
+  {
+   "name": "Katie Kissel",
+   "role": "public comment; 82 Peninsula Drive",
+   "status": "present",
+   "quote": "katie kissel, 82 peninsula drive, asked if you successfully get an abatement you don't get"
+  },
+  {
+   "name": "Joel Swenson",
+   "role": "public comment; 17 Ruth Street",
+   "status": "present",
+   "quote": "joel swenson, 17 ruth street, stated when you actually look at the sales data there were"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public comment; Island Road",
+   "status": "present",
+   "quote": "dave macdonald, island road, asked where the common sense is and asked the select board"
+  },
+  {
+   "name": "Carol Hatch",
+   "role": "public comment; 41 Hilltop Lane",
+   "status": "present",
+   "quote": "carol hatch, 41 hilltop lane, stated many people have lived on these properties for a very long time"
+  },
+  {
+   "name": "Eric Pettis",
+   "role": "public comment; 43 Hemlock Terrace",
+   "status": "present",
+   "quote": "eric pettis, 43 hemlock terrace, bought his 1400 square foot home in 2007 and it has never"
+  },
+  {
+   "name": "Michael Bartnowski",
+   "role": "public comment; 85 Island Road",
+   "status": "present",
+   "quote": "michael bartnowski, 85 island road, asked if the board had ever seen a tax increase of"
+  },
+  {
+   "name": "Derek Fairchild",
+   "role": "public comment; 21 Birch Island Way",
+   "status": "present",
+   "quote": "derek fairchild, 21 birch island way, stated he could understand this more if the increase"
+  },
+  {
+   "name": "Bill Hudson",
+   "role": "public comment; 90 Hemlock Drive",
+   "status": "present",
+   "quote": "bill hudson, 90 hemlock drive, stated his land and his mother's property values went up"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "public comment; 214 Townsend Harbor Road",
+   "status": "present",
+   "quote": "john rabbitt, 214 townsend harbor road, stated with regard to having only 12 to 14 pieces"
+  },
+  {
+   "name": "Nathan Katiesch",
+   "role": "public comment; 605 Reservoir Road",
+   "status": "present",
+   "quote": "nathan katiesch, 605 reservoir road, asked what are the standard operating procedures"
+  },
+  {
+   "name": "Alex Yawer",
+   "role": "public comment; 226 Sunset Lane",
+   "status": "present",
+   "quote": "alex yawer, 226 sunset lane, noted if even 250 out of 500 file for an abatement"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "public comment; 46 Hemlock Drive (printed as Deb Lincoln in the appointment motion)",
+   "status": "present",
+   "quote": "debbie lincoln, 46 hemlock drive, stated you cannot put a price tag on good will"
+  },
+  {
+   "name": "Gina Leone",
+   "role": "public comment; 52 Pearl Street",
+   "status": "present",
+   "quote": "gina leone, 52 pearl street, stated she was not from here but her fiancé grew up here"
+  },
+  {
+   "name": "J. Senja Morgan",
+   "role": "public comment; 22 May Street",
+   "status": "remote",
+   "quote": "j. senja morgan, 22 may street, via zoom, stated she owns a summer home that cannot be"
+  },
+  {
+   "name": "Martin Thomas",
+   "role": "public comment; 30 Peninsula Drive",
+   "status": "present",
+   "quote": "martin thomas, 30 peninsula drive, stated it's been said that the principal assessor"
+  },
+  {
+   "name": "Debra Yawor",
+   "role": "public comment; 226 Sunset Lane",
+   "status": "present",
+   "quote": "debra yawor, 226 sunset lane, stated in the information that i saw there was a notation"
+  },
+  {
+   "name": "Carl Derner",
+   "role": "public comment; 291 Sunset Lane",
+   "status": "present",
+   "quote": "carl derner, 291 sunset lane, asked the following questions:"
+  },
+  {
+   "name": "Kathleen Oliver",
+   "role": "public comment; 15 Crescent Terrace",
+   "status": "present",
+   "quote": "asked if the town could appeal to the state to overrule this"
+  },
+  {
+   "name": "Sandra Perko",
+   "role": "public comment; 64 Spring St. Ext.",
+   "status": "present",
+   "quote": "stated if you're under two acres in lunenburg, you're not given the freedom to build"
+  },
+  {
+   "name": "Betty Macdonald",
+   "role": "public comment; 155 Island Road",
+   "status": "present",
+   "quote": "betty macdonald, 155 island road, asked what steps are you going to take to financially"
+  },
+  {
+   "name": "Mr. Fortune",
+   "role": "public comment (returned to the podium)",
+   "status": "present",
+   "quote": "mr. fortune returned to the podium to ask how long does it take for any one abatement to go"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "pete lincoln stated this could have been a volatile situation; you handled it incredibly well."
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "applicant, 300th Anniversary Committee; 275 Cross Road",
+   "status": "remote",
+   "quote": "cathy clark, 275 cross road, via zoom, stated i've been living in town for 30 years and raised my children here"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "applicant, 300th Anniversary Committee; 5 Valley Road",
+   "status": "remote",
+   "quote": "mr. sculimbrene via zoom, stating he has always been interested in history"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board said it would look into the assessment situation and do what it could to find answers to residents' questions (no vote recorded).",
+   "quote": "the board members stated they would look into this situation and do what they could to find the answers to the questions."
+  },
+  {
+   "decision": "The Chair said the Principal Assessor would attend the board's meeting the following week to answer the questions raised that night (scheduling statement, no vote recorded).",
+   "quote": "mr. jeffreys stated the principal assessor will be at their meeting next week to answer the questions asked tonight."
+  },
+  {
+   "decision": "The Chair stated the Select Board intends to bring forward a bylaw at the spring Annual Town Meeting to give tax relief to seniors (statement of intent, no vote recorded).",
+   "quote": "this is why the select board intends to bring forth a bylaw at this spring's annual town meeting that will"
+  },
+  {
+   "decision": "The Chair asked the board to let him and Mr. Alonzo work with the Town Manager over the next week or so on a plan; the minutes record no board action on this request.",
+   "quote": "i would ask the board to allow mr. alonzo and me to work with the town manager over the next week or so."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax rate change for FY2023",
+   "what_was_recorded": "The Chair said the Select Board voted on November 8, 2022 to effectively lower the tax rate from the prior year's rate to the new rate for FY2023.",
+   "figures_as_printed": [
+    "$17.19",
+    "$14.62"
+   ],
+   "quote": "the select board voted to effectively decrease the tax rate from $17.19 to $14.62 cents per one thousand dollars of value"
+  },
+  {
+   "topic": "Average single-family tax bill",
+   "what_was_recorded": "The average single-family home was valued at $470,164 and the average single-family tax bill is stated as $6,873.80 per year, about $438 more than the prior fiscal year.",
+   "figures_as_printed": [
+    "$470,164",
+    "$6,873.80",
+    "$438"
+   ],
+   "quote": "is $6,873.80 per year and is approximately $438 per household more than the last fiscal year."
+  },
+  {
+   "topic": "Valuation and tax increases over five years",
+   "what_was_recorded": "The Chair said the average single-family home's value rose 52% over five years and its property tax rose about 19% over the same period; residents reported increases of 30%, 50%, and more.",
+   "figures_as_printed": [
+    "52%",
+    "19%",
+    "30%",
+    "50%"
+   ],
+   "quote": "the average single family home has realized a 52% increase in value over the past five"
+  },
+  {
+   "topic": "Abatement set-aside",
+   "what_was_recorded": "A resident said $116,000 had been set aside by the Assessors for possible abatements and argued it was insufficient for about 500 affected houses.",
+   "figures_as_printed": [
+    "$116,000",
+    "500"
+   ],
+   "quote": "$116,000 was set aside, so if all 500 people got relief"
+  },
+  {
+   "topic": "Per-household share of abatement set-aside",
+   "what_was_recorded": "A resident calculated that the $116,000 set-aside would come to about $230 per household if spread across 500 houses.",
+   "figures_as_printed": [
+    "$230",
+    "$116,000"
+   ],
+   "quote": "there are probably other places in town where people deserve abatements other than these people, everybody gets $230."
+  },
+  {
+   "topic": "Quarterly bills in one household",
+   "what_was_recorded": "A resident said his last quarterly bill paid was $1500 and the current quarter's bill was over $3200.",
+   "figures_as_printed": [
+    "$1500",
+    "$3200.00"
+   ],
+   "quote": "his last quarterly bill paid was $1500, the bill received for this quarter was over $3200.00"
+  },
+  {
+   "topic": "Quarterly taxes on a 1400 sq ft home",
+   "what_was_recorded": "A resident said quarterly taxes rose from $1800 to $3900.",
+   "figures_as_printed": [
+    "$1800",
+    "$3900"
+   ],
+   "quote": "my taxes went from $1800 to $3900 quarterly."
+  },
+  {
+   "topic": "Lake association dues and assessments",
+   "what_was_recorded": "A resident said her lake association charges voluntary dues and fundraises for weed control and lake upkeep, and her land and vacant-lot valuations rose sharply.",
+   "figures_as_printed": [
+    "$300",
+    "$35,000 - $40,000",
+    "$250,000",
+    "$600,000",
+    "$232,000",
+    "$545,000"
+   ],
+   "quote": "the land my house sits on went from $250,000 in 2021 to almost $600,000"
+  },
+  {
+   "topic": "Assessed value of a 480 sq ft home",
+   "what_was_recorded": "A resident said his 480 square foot house was assessed at almost $500,000 and he receives no town services.",
+   "figures_as_printed": [
+    "$500,000",
+    "480"
+   ],
+   "quote": "he was assessed at almost $500,000."
+  },
+  {
+   "topic": "Property sale offer",
+   "what_was_recorded": "An unnamed resident said his family's properties' taxes rose 137% and offered a figure for sale.",
+   "figures_as_printed": [
+    "137%",
+    "$1.2 M"
+   ],
+   "quote": "if anyone wants to buy our property for a $1.2 m, come talk to me."
+  },
+  {
+   "topic": "Free Cash use",
+   "what_was_recorded": "Residents urged the board to reallocate or reduce Free Cash to address the tax increases; no dollar amount was set.",
+   "figures_as_printed": [],
+   "quote": "maybe not have so much money in free cash"
+  },
+  {
+   "topic": "Lake and waterfront land valuations",
+   "what_was_recorded": "Residents cited a 135% land-value increase on lake properties and a 136% increase on one property's land, and asked for the criteria behind it.",
+   "figures_as_printed": [
+    "135%",
+    "136%",
+    "66%"
+   ],
+   "quote": "possibly applying a blanket 135% increase to all land values"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ken Chenis",
+   "stated_role": "owns two properties at 17 Page Street and 265 Sunset Lane",
+   "topic": "lake property assessments and abatement",
+   "quote": "ken chenis owns two properties located at 17 page street and 265 sunset lane."
+  },
+  {
+   "speaker": "Mary Perkins",
+   "stated_role": "62 Ruth Street",
+   "topic": "land valuation on Lake Shirley; priced out",
+   "quote": "mary perkins, 62 ruth street, has lived in lunenburg for 30 years, building my forever home"
+  },
+  {
+   "speaker": "Joanna Bilotta-Simeone",
+   "stated_role": "362 Sunset Lane",
+   "topic": "taxes increased; no advance notice",
+   "quote": "joanna bilotta-simeone, 362 sunset lane, stated her taxes increased as well."
+  },
+  {
+   "speaker": "Donna Saiia",
+   "stated_role": "32 Sandy Cove Road",
+   "topic": "135% assessment increase",
+   "quote": "donna saiia, 32 sandy cove road, stated the assessment on her property is a 135% increase."
+  },
+  {
+   "speaker": "Joe Gaunt",
+   "stated_role": "761 Flat Hill Road",
+   "topic": "quarterly billing and abatement",
+   "quote": "joe gaunt, 761 flat hill road, asked if he was going to be billed the same amount in each"
+  },
+  {
+   "speaker": "Malin Scott Foreman",
+   "stated_role": "9 Fire Road 15A",
+   "topic": "fixed income; assessed value of small home",
+   "quote": "malin scott foreman, 9 fire road 15a, stated he does not receive any town services,"
+  },
+  {
+   "speaker": "Tim Murphy",
+   "stated_role": "97 Island Road",
+   "topic": "abatement process and set-aside amount",
+   "quote": "tim murphy, 97 island road, stated his last quarterly bill paid was $1500, the bill received"
+  },
+  {
+   "speaker": "Katie Kissel",
+   "stated_role": "82 Peninsula Drive",
+   "topic": "abatement timing",
+   "quote": "katie kissel, 82 peninsula drive, asked if you successfully get an abatement you don't get"
+  },
+  {
+   "speaker": "Joel Swenson",
+   "stated_role": "17 Ruth Street",
+   "topic": "sales sample used for lake assessments",
+   "quote": "joel swenson, 17 ruth street, stated when you actually look at the sales data there were"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Road",
+   "topic": "asked the board to help",
+   "quote": "dave macdonald, island road, asked where the common sense is and asked the select board"
+  },
+  {
+   "speaker": "Carol Hatch",
+   "stated_role": "41 Hilltop Lane",
+   "topic": "long-time residents hoping to retire here",
+   "quote": "carol hatch, 41 hilltop lane, stated many people have lived on these properties for a very long time"
+  },
+  {
+   "speaker": "Eric Pettis",
+   "stated_role": "43 Hemlock Terrace",
+   "topic": "quarterly taxes doubled; asked for accountability",
+   "quote": "eric pettis, 43 hemlock terrace, bought his 1400 square foot home in 2007 and it has never"
+  },
+  {
+   "speaker": "Michael Bartnowski",
+   "stated_role": "85 Island Road",
+   "topic": "asked whether a 100% increase had been seen",
+   "quote": "michael bartnowski, 85 island road, asked if the board had ever seen a tax increase of"
+  },
+  {
+   "speaker": "Derek Fairchild",
+   "stated_role": "21 Birch Island Way",
+   "topic": "increase seemed a mistake",
+   "quote": "derek fairchild, 21 birch island way, stated he could understand this more if the increase"
+  },
+  {
+   "speaker": "Richard Letarte",
+   "stated_role": "Assessor, 262 Lancaster Avenue",
+   "topic": "Department of Revenue standards; encouraged abatements",
+   "quote": "assessor richard letarte, 262 lancaster avenue, appreciated everyone's comments and"
+  },
+  {
+   "speaker": "Bill Hudson",
+   "stated_role": "90 Hemlock Drive",
+   "topic": "land and mother's property values",
+   "quote": "bill hudson, 90 hemlock drive, stated his land and his mother's property values went up"
+  },
+  {
+   "speaker": "John Rabbitt",
+   "stated_role": "214 Townsend Harbor Road",
+   "topic": "methodology based on 12 to 14 properties",
+   "quote": "john rabbitt, 214 townsend harbor road, stated with regard to having only 12 to 14 pieces"
+  },
+  {
+   "speaker": "Nathan Katiesch",
+   "stated_role": "605 Reservoir Road",
+   "topic": "Assessors' procedures and waterfront definition",
+   "quote": "nathan katiesch, 605 reservoir road, asked what are the standard operating procedures"
+  },
+  {
+   "speaker": "Alex Yawer",
+   "stated_role": "226 Sunset Lane",
+   "topic": "abatement volume within 90 days",
+   "quote": "alex yawer, 226 sunset lane, noted if even 250 out of 500 file for an abatement"
+  },
+  {
+   "speaker": "Debbie Lincoln",
+   "stated_role": "46 Hemlock Drive",
+   "topic": "trust and community",
+   "quote": "debbie lincoln, 46 hemlock drive, stated you cannot put a price tag on good will"
+  },
+  {
+   "speaker": "Gina Leone",
+   "stated_role": "52 Pearl Street",
+   "topic": "Lake Shirley fees and public services",
+   "quote": "gina leone, 52 pearl street, stated she was not from here but her fiancé grew up here"
+  },
+  {
+   "speaker": "Another resident, name unknown",
+   "stated_role": "family owns 56 and 68 Pine Acres Road",
+   "topic": "137% tax increase",
+   "quote": "another resident, name unknown, stated his family owns 56 and 68 pine acres road and"
+  },
+  {
+   "speaker": "J. Senja Morgan",
+   "stated_role": "22 May Street, via ZOOM",
+   "topic": "summer home taxes",
+   "quote": "j. senja morgan, 22 may street, via zoom, stated she owns a summer home that cannot be"
+  },
+  {
+   "speaker": "Martin Thomas",
+   "stated_role": "30 Peninsula Drive",
+   "topic": "whether DOR rules require a lakefront distinction",
+   "quote": "martin thomas, 30 peninsula drive, stated it's been said that the principal assessor"
+  },
+  {
+   "speaker": "Debra Yawor",
+   "stated_role": "226 Sunset Lane",
+   "topic": "a formal state assessment next year",
+   "quote": "debra yawor, 226 sunset lane, stated in the information that i saw there was a notation"
+  },
+  {
+   "speaker": "Carl Derner",
+   "stated_role": "291 Sunset Lane",
+   "topic": "list of questions on sales, criteria, and senior relief",
+   "quote": "carl derner, 291 sunset lane, asked the following questions:"
+  },
+  {
+   "speaker": "Kathleen Oliver",
+   "stated_role": "15 Crescent Terrace",
+   "topic": "appeal to the state",
+   "quote": "asked if the town could appeal to the state to overrule this"
+  },
+  {
+   "speaker": "Sandra Perko",
+   "stated_role": "64 Spring St. Ext.",
+   "topic": "building restrictions under two acres",
+   "quote": "stated if you're under two acres in lunenburg, you're not given the freedom to build"
+  },
+  {
+   "speaker": "Betty Macdonald",
+   "stated_role": "155 Island Road",
+   "topic": "financial preparation and budget review",
+   "quote": "betty macdonald, 155 island road, asked what steps are you going to take to financially"
+  },
+  {
+   "speaker": "Mr. Fortune",
+   "stated_role": "not stated",
+   "topic": "length of time for one abatement",
+   "quote": "mr. fortune returned to the podium to ask how long does it take for any one abatement to go"
+  },
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "not stated",
+   "topic": "praise for handling of the meeting",
+   "quote": "pete lincoln stated this could have been a volatile situation; you handled it incredibly well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening statement",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "meeting procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Chair's statement on tax bills and Select Board role",
+   "resolution": "no action; Chair said assessments are the Board of Assessors' authority",
+   "quote": "the meeting room was filled to capacity with residents concerned about the increases in",
+   "tags": [
+    "property tax",
+    "Board of Assessors",
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Principal Assessor statement read by Town Manager's office",
+   "resolution": "read into the record; no action",
+   "quote": "ms. lemieux read the notice aloud:",
+   "tags": [
+    "assessments",
+    "abatement",
+    "Department of Revenue"
+   ]
+  },
+  {
+   "topic": "Public comment on property tax increases",
+   "resolution": "taken; board to look into it and work with the Assessors and Town Manager; no vote",
+   "quote": "ken chenis owns two properties located at 17 page street and 265 sunset lane.",
+   "tags": [
+    "public comment",
+    "lake properties",
+    "abatements",
+    "tax bills",
+    "Hickory Hills",
+    "Lake Shirley",
+    "Whalom Lake"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. franco announced the pancake breakfast tomorrow morning at the senior center on",
+   "tags": [
+    "announcements",
+    "Senior Center"
+   ]
+  },
+  {
+   "topic": "Appointments to the 300th Anniversary Committee",
+   "resolution": "approved three appointments (Lincoln, Clark, Sculimbrene)",
+   "quote": "to approve deb lincoln, 46 hemlock drive, to be a member of the 300th anniversary committee",
+   "tags": [
+    "appointments",
+    "300th Anniversary Committee"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "none reviewed; the meeting was atypical due to public comment",
+   "quote": "as such we do not have communications from other boards this evening to review and we do not",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Next steps: working with the Town Manager and the Assessors",
+   "resolution": "no vote; Chair and Alonzo to work with Town Manager; Principal Assessor to attend next week",
+   "quote": "i would ask the board to allow mr. alonzo and me to work with the town manager over the next week or so.",
+   "tags": [
+    "Town Manager",
+    "Board of Assessors",
+    "free cash",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "to adjourn the meeting",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "property tax",
+  "tax bills",
+  "assessments",
+  "Board of Assessors",
+  "abatements",
+  "lake properties",
+  "waterfront valuation",
+  "free cash",
+  "public comment",
+  "300th Anniversary Committee",
+  "appointments",
+  "tax rate",
+  "seniors tax relief"
+ ],
+ "dropped_unquoted_by_field": {}
 }

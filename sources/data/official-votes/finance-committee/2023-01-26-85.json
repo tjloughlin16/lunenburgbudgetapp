@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-01-26",
  "docid": "85",
@@ -12,23 +12,266 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 12, 2023 meeting",
-   "moved_by": "Mr. Balish",
-   "seconded_by": "Mr. Gray",
+   "motion": "Approve the minutes of the January 12, 2023 meeting.",
+   "moved_by": "Tom Balish",
+   "seconded_by": "Tom Gray",
    "outcome": "passed 4-0-1",
    "procedural": true,
    "quote": "mr. balish motioned to approve the minutes from the january 12, 2023 meeting, mr. gray seconded. on vote, motion carried 4-0-1 (mr. simeone abstained)."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Simeone",
-   "seconded_by": "Mr. Gray",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jay Simeone",
+   "seconded_by": "Tom Gray",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. simeone motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0697561
+ "note": "Extracted text, not a scan; both recorded votes are in the text. Page 1 ends with a line 'Unanimously approved by Finance Committee at February 16, 2023 meeting.' This is an approval note for these minutes made at a later meeting, not a motion at this one, so it is not recorded as a vote. Attendance is taken from the Present and Guests lines; Carol Archambault is listed as a guest with no recorded remarks, so her status is not stated. No dollar figures were printed for the tax abatement or MMA items.",
+ "cost_usd": 0.01605621,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, tom balish, tom gray, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, tom balish, tom gray, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, tom balish, tom gray, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, tom balish, tom gray, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "remote",
+   "quote": "present: chairperson evan watters, tom balish, tom gray, caesar nuzzolo, jay simeone (remote)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, chairperson of the lunenburg school committee carol archambault"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Chairperson of the Lunenburg School Committee",
+   "status": "not stated",
+   "quote": "chairperson of the lunenburg school committee carol archambault"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "School Committee and Capital Planning Committee member",
+   "status": "present",
+   "quote": "school committee and capital planning committee member peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Watters will write a report on the MMA trade show and distribute it to committee members.",
+   "quote": "mr. watters will write up a report on the show and distribute it amongst committee members."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 capital plan requests and free cash",
+   "what_was_recorded": "The Town Manager cut FY24 Capital Plan requests from 29 items to 6, and the $2,860,000 in free cash that would normally fund capital requests will be reserved for abatements.",
+   "figures_as_printed": [
+    "$2,860,000"
+   ],
+   "quote": "the $2,860,000 in free cash, which would normally fund capital plan requests, will be reserved to fund abatements."
+  },
+  {
+   "topic": "Ambulance and dump trucks in the capital plan",
+   "what_was_recorded": "The capital plan would use $986,000 from the Special Purpose Stabilization Fund to buy a fire ambulance and a pair of DPW dump trucks.",
+   "figures_as_printed": [
+    "$986,000"
+   ],
+   "quote": "the capital plan will use $986,000 out of the special purpose stabilization fund to purchase the very much needed ambulance for the fire department"
+  },
+  {
+   "topic": "School security upgrades funding",
+   "what_was_recorded": "School security upgrades in the capital plan will be funded by unexpended capital and tax revenue; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "security upgrades for the schools, which will be funded by unexpended capital and tax revenue."
+  },
+  {
+   "topic": "Waterfront property tax bills and overlay",
+   "what_was_recorded": "Waterfront owners received much higher real estate tax bills; the overlay account will probably need to be increased at Town Meeting to cover abatements. No dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "will probably need to be increased at town meeting in order to cover abatements."
+  },
+  {
+   "topic": "State aid and circuit breaker funding",
+   "what_was_recorded": "At the MMA trade show the Governor said she aims to fully fund the circuit breaker and look at Chapter 70 treatment of small towns; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "governor healy aims to fully fund the circuit breaker, and take a closer look at how small towns are treated regarding chapter 70 funds."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Use of the Special Purpose Stabilization Fund for an ambulance and dump trucks in the FY24 capital plan",
+   "amount_as_printed": "$986,000",
+   "outcome": "Described as planned in the capital plan; no transfer vote recorded at this meeting.",
+   "quote": "the capital plan will use $986,000 out of the special purpose stabilization fund to purchase the very much needed ambulance for the fire department"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Property value assessments, Town Meeting time, Proposition 2½ presentation",
+   "speaker": "Peter Beardmore",
+   "stated_role": "resident",
+   "quote": "mr. beardmore made clear he was commenting as a resident and not representing any board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7p.m.; recorded on YouTube",
+   "quote": "mr. watters called the meeting to order at 7p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; none given",
+   "quote": "3. announcements: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no action; none given",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "no action; none given",
+   "quote": "5. town manager/finance director report: none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Capital Plan Presentation",
+   "resolution": "presented; Town Manager will keep re-evaluating the FY24 plan until Town Meeting",
+   "quote": "ms. lemieux explained the capital planning process, and also explained that without knowing the amount of money needed to fund abatements",
+   "tags": [
+    "capital plan",
+    "free cash",
+    "stabilization fund",
+    "fire department",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Tax Abatement/Assessment Discussion",
+   "resolution": "discussed; no action",
+   "quote": "the select board has opened an investigation to find how waterfront property taxes could suddenly rise so high.",
+   "tags": [
+    "tax abatement",
+    "property assessment",
+    "overlay",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "MMA Trade Show Re-Cap",
+   "resolution": "reported; Watters to write a report for members",
+   "quote": "mr. watters attended the tradeshow, and learned about economic and fiscal outlook",
+   "tags": [
+    "state aid",
+    "Chapter 70",
+    "circuit breaker",
+    "MMA"
+   ]
+  },
+  {
+   "topic": "Minutes of January 12, 2023",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. balish motioned to approve the minutes from the january 12, 2023 meeting, mr. gray seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "members updated each other on liaison assignments",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action; resident comment on assessments and Proposition 2½",
+   "quote": "mr. beardmore expressed his concern over how the latest property value assessments will affect the town in its entirety.",
+   "tags": [
+    "public comment",
+    "proposition 2½",
+    "assessments"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "dates set: February 9, February 16 preliminary budget, February 23 presentations",
+   "quote": "february 9, february 16 -preliminary budget presentation, february 23 -coa, land use, library presentations.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:20 p.m., passed unanimously",
+   "quote": "mr. simeone motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "free cash",
+  "special purpose stabilization fund",
+  "tax abatements",
+  "property assessments",
+  "overlay",
+  "Town Meeting",
+  "state aid",
+  "circuit breaker",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

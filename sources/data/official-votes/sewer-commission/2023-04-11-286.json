@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-04-11",
  "docid": "286",
@@ -12,47 +12,523 @@
  },
  "votes": [
   {
-   "motion": "Approve the use change at Il Forno on Electric Ave., pending approval from the Plumbing Inspector",
+   "motion": "Approve the use change at Il Forno on Electric Ave., pending the approval from the Plumbing Inspector.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the use change at il forno on electric ave., pending the approval from the plumbing inspector. roll call vote: dave- aye, mike n.- aye, brett-aye and john-aye."
+   "quote": "to approve the use change at il forno on electric ave., pending the approval from the plumbing inspector. roll call vote: dave- aye, mike n.- aye, brett-aye and john-aye."
   },
   {
-   "motion": "Approve the RFP as adjusted at the 4/11 meeting to be sent out for review by the Chair and Vice-Chair",
+   "motion": "Approve the RFP for pumping station and generator O&M contracts as adjusted at the 4/11 meeting, to be sent out for review by the Chair and Vice-Chair.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the rfp as adjusted at the 4/11 meeting to be sent out for review by the chair and vice-chair. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
+   "quote": "to approve the rfp as adjusted at the 4/11 meeting to be sent out for review by the chair and vice-chair. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
   },
   {
-   "motion": "Accept the minutes of the 3/21/23 meeting",
+   "motion": "Accept the minutes of 3/21/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: dave m. to accept minutes for 3/21/23. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
+   "quote": "to accept minutes for 3/21/23. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
   },
   {
-   "motion": "Revise the FY24 Budget by reducing Capital Expenditures to $80,760.07, increasing Fitchburg Usage to $226,600, increasing Fringe Benefits to $62,323.59, not transferring $8,000 from Reserve Capacity, with an anticipated draw on Retained Earnings of $419,718.07",
+   "motion": "Revise the FY24 Budget: reduce Capital Expenditures to $80,760.07, increase Fitchburg Usage to $226,600, increase Fringe Benefits to $62,323.59, not transfer $8,000 from Reserve Capacity, with an anticipated draw on Retained Earnings of $419,718.07.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to revise the fy24 budget by reducing capital expenditures to $80,760.07, increase fitchburg usage to $226,600, increase fringe benefits to $62,323.59, not transfer $8,000 from reserve capacity, with an anticipated draw on retained earnings of $419,718.07. roll call vote: brett - aye, mike n.-aye, dave- aye and john-aye."
+   "quote": "to revise the fy24 budget by reducing capital expenditures to $80,760.07, increase fitchburg usage to $226,600, increase fringe benefits to $62,323.59,"
   },
   {
-   "motion": "Adjourn at 8:35pm",
+   "motion": "Adjourn the meeting at 8:35pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: dave m. to adjourn at 8:35pm. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
+   "quote": "to adjourn at 8:35pm. roll call vote: mike n.- aye, brett-aye, dave- aye and john-aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1023691
+ "dropped_unquoted": 1,
+ "note": "Text is complete (pages 1-4) and legible; no scan issues. Five roll-call votes, all 4-0 with Mike Deveikis absent; no abstentions. The meeting was held via Zoom. The section headed PUBLIC COMMENT records only Commission members' remarks; no member of the public is recorded as speaking. The minutes label the revised budget 'FY24' in the motion but refer to 'FY23' in several discussion sentences; recorded as printed. The Il Forno motion's roll call lists 'Dave- aye, Mike N.- aye, Brett-aye and John-aye'. Some mentioned people (Al Packard, Gary Williams, Chad Empey, Jacob Fleming, Julie, Barb) are referred to but did not take part and are not listed as attendees. Only the Il Forno guests were recorded as appearing before the board.",
+ "cost_usd": 0.02331551,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis"
+  },
+  {
+   "name": "Carlene Baily",
+   "role": "Guest, Il Forno",
+   "status": "present",
+   "quote": "guests: carlene baily and mike mohammed - il forno"
+  },
+  {
+   "name": "Mike Mohammed",
+   "role": "Guest, Il Forno",
+   "status": "present",
+   "quote": "guests: carlene baily and mike mohammed - il forno"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to consider a one-time expansion (privilege) fee for added bedrooms; Paula to meet Town Counsel on 4/26 and the vote is deferred until then.",
+   "quote": "the commission discussed and agreed to consider the expansion fee."
+  },
+  {
+   "decision": "Paula will meet Town Counsel on 4/26 about the expansion fee.",
+   "quote": "paula will be meeting with town counsel on 4/26 to discuss the fee."
+  },
+  {
+   "decision": "Commission agreed to combine into one contract (Bill's idea) rather than two.",
+   "quote": "the commission discussed doing 1 or 2 contracts and agreed to go with bill's idea."
+  },
+  {
+   "decision": "Chad Empey (CTE) to be placed on the next agenda.",
+   "quote": "paula will add cte to the next agenda but they need to do the rfp now."
+  },
+  {
+   "decision": "Rates for 2nd and 3rd contract years to be identified during contract discussion.",
+   "quote": "paula suggested rates for 2nd and 3rd year will be identified during contract discussion and the commission agreed."
+  },
+  {
+   "decision": "Commission to obtain the generator/pump station reports from Al by talking to his boss.",
+   "quote": "the commission discussed obtaining the reports and will talk to al's boss."
+  },
+  {
+   "decision": "Paula to check the generator models in the RFP against those listed by Weld Generator with AL; Bill and Paula to finalize RFP wording and generator information.",
+   "quote": "paula noted the generator list in the rfp was different than the models listed by weld generator and she will check with al."
+  },
+  {
+   "decision": "Bill and Paula to work on the RFP wording and confirm generator information.",
+   "quote": "bill and paula will work on the wording and confirm the generator information."
+  },
+  {
+   "decision": "Commission will wait for Gary Williams' report and the reports when the interceptor is pumped before acting on the Il Forno grease trap.",
+   "quote": "the commission will wait to see gary's report and the reports when the interceptor is pumped."
+  },
+  {
+   "decision": "Dave requested a letter from Grease Trappers for Il Forno's records.",
+   "quote": "dave requested they get a letter from gary (grease trappers) for their records."
+  },
+  {
+   "decision": "Next meeting to focus on the FY24 budget, capital expenditures and a rate increase.",
+   "quote": "john suggested making the next meeting about the budget and capital expenditures."
+  },
+  {
+   "decision": "Paula to send the rate increase worksheet to Commissioners for review.",
+   "quote": "paula screen shared the spreadsheet and will send it out to commissioners to review."
+  },
+  {
+   "decision": "Generator testing under load to be done by Al during normal hours; block heaters to be discussed by Al with Bill.",
+   "quote": "john suggested testing the generators under load and bill said al could do that during normal hours."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State earmark request for pump stations",
+   "what_was_recorded": "The $300K sewer pump station upgrade request is on the State Earmark list; the list's other items are also printed.",
+   "quote": "the list consists of security upgrades at turkey hill elementary and the primary schools ($374.5k), marshall park ($250k), library exterior painting ($36k) and $300k for sewer pump stations.",
+   "figures_as_printed": [
+    "$300K",
+    "$374.5K",
+    "$250K",
+    "$36K"
+   ]
+  },
+  {
+   "topic": "Leominster connection fees",
+   "what_was_recorded": "Leominster charges $1,000 per connection versus $750 for Lunenburg; Leominster wants to raise its charge to $1,250.",
+   "quote": "currently, leominster charges $1,000 for connections, but only $750 to lunenburg. they want to increase the charge to $1,250.",
+   "figures_as_printed": [
+    "$1,000",
+    "$750",
+    "$1,250"
+   ]
+  },
+  {
+   "topic": "FY24 revised budget totals",
+   "what_was_recorded": "Budget changes as presented: expenditures and indirect costs, deficit, and retained earnings transfers to OPEB and Capital Reserve.",
+   "quote": "changes to the budget are as follows: expenditures & indirect costs- $1,439,402.82, deficit-$218,690.42, retained earnings transfers- $1,000 to opeb and $36,621.37 to capital reserve.",
+   "figures_as_printed": [
+    "$1,439,402.82",
+    "$218,690.42",
+    "$1,000",
+    "$36,621.37"
+   ]
+  },
+  {
+   "topic": "Fitchburg usage and fringe benefit increases",
+   "what_was_recorded": "Fitchburg usage added $6,600 and health insurance/retirement benefits added $8,631.53, funded by moving $15,231.53 out of Capital Expenditures.",
+   "quote": "paula added $6,600 to fitchburg usage and $8,631.53 for health insurance/retirement benefits for barb.",
+   "figures_as_printed": [
+    "$6,600",
+    "$8,631.53",
+    "$15,231.53"
+   ]
+  },
+  {
+   "topic": "Fitchburg rate increases",
+   "what_was_recorded": "The budgeted 4% Fitchburg usage increase is expected to be replaced by rate increases of 7% per year for the next 5 years.",
+   "quote": "she said barb had budgeted 4% increase for fitchburg usage but they will probably be increasing rates",
+   "figures_as_printed": [
+    "4%",
+    "7%"
+   ]
+  },
+  {
+   "topic": "Retained Earnings appropriation",
+   "what_was_recorded": "Retained Earnings appropriation needed, matching the figure published in the warrant.",
+   "quote": "they will need to appropriate $419,718.07 from retained earnings, which is the figure published in the warrant.",
+   "figures_as_printed": [
+    "$419,718.07"
+   ]
+  },
+  {
+   "topic": "Reserve fund balances",
+   "what_was_recorded": "Balances as stated by the Business Manager for the reserve accounts.",
+   "quote": "paula replied the following: retained earnings - $2,329,780, reserve capacity-$ 28,023.32, i/i fund- $9,943.73 and capital reserves- $ 141,210.66.",
+   "figures_as_printed": [
+    "$2,329,780",
+    "$28,023.32",
+    "$9,943.73",
+    "$141,210.66"
+   ]
+  },
+  {
+   "topic": "ARPA funding request",
+   "what_was_recorded": "A $300K ARPA request was submitted; the Town Manager did not want it listed in the FY23 budget and the Town may not receive ARPA funds.",
+   "quote": "the commission submitted a request for $300k from arpa funds.",
+   "figures_as_printed": [
+    "$300K"
+   ]
+  },
+  {
+   "topic": "Capital expenditure plan",
+   "what_was_recorded": "Planned FY22 capital was $78K with $15K spent so far; the capital estimate is $35K for the current year, $96K next year, and about $1.2 million total through FY38.",
+   "quote": "his estimate is $35k for the current year, $96k for next year, etc. up to fy38 with a projection of $1.2 million total.",
+   "figures_as_printed": [
+    "$78K",
+    "$15K",
+    "$35K",
+    "$96K",
+    "$1.2 million"
+   ]
+  },
+  {
+   "topic": "Average capital spend proposal",
+   "what_was_recorded": "A proposal shows an average capital spend of $100K per year.",
+   "quote": "paula screen-shared a proposal for the commissioners to discuss at the next meeting, which shows an average spent of $100k per year.",
+   "figures_as_printed": [
+    "$100K"
+   ]
+  },
+  {
+   "topic": "Average user bills",
+   "what_was_recorded": "Average residential unit bill and average business unit bill from the rate worksheet.",
+   "quote": "the average residential unit bill is $181 and for a business unit - $1,786.",
+   "figures_as_printed": [
+    "$181",
+    "$1,786"
+   ]
+  },
+  {
+   "topic": "Contractor markup and rental rates in RFP",
+   "what_was_recorded": "Parts markup limited to 10%; rental equipment at cost plus 10%.",
+   "quote": "bill suggested rental equipment would be cost plus 10%, the contractor would need to get 3 quotes and get approval from dpw director.",
+   "figures_as_printed": [
+    "10%"
+   ]
+  },
+  {
+   "topic": "Contract rate escalation cap",
+   "what_was_recorded": "Suggestion that contract rates not increase more than 2% per year.",
+   "quote": "dave suggested rates not increase more that 2% per year.",
+   "figures_as_printed": [
+    "2%"
+   ]
+  },
+  {
+   "topic": "Manhole funding source",
+   "what_was_recorded": "Chapter 90 funding cannot be used for manhole work, especially if manhole levels on 2A are raised. No dollar figure printed.",
+   "quote": "manhole funding- bill stated they cannot use chapter 90 funding, especially if they want to raise the level of the manholes on 2a.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Rate increase",
+   "what_was_recorded": "Rate increase needed due to Fitchburg and possible Leominster increases plus capital expenditures; a scenario worksheet was prepared.",
+   "quote": "rate increase- with rate increases from fitchburg and potentially in leominster, along with capital expenditures, paula stated they will need to look at a rate increase.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Reserve transfer not made",
+   "what_was_recorded": "An $8K transfer to a Reserve Fund was not submitted as an Article, so it cannot be made.",
+   "quote": "also, barb did not submit an article for $8k transfer to one of the reserve funds, so they cannot do that.",
+   "figures_as_printed": [
+    "$8K"
+   ]
+  },
+  {
+   "topic": "Capital Expenditures reduced in revised budget",
+   "what_was_recorded": "Capital Expenditures reduced to $80,760.07 in the revised FY24 budget motion.",
+   "quote": "to revise the fy24 budget by reducing capital expenditures to $80,760.07, increase fitchburg usage to $226,600, increase fringe benefits to $62,323.59,",
+   "figures_as_printed": [
+    "$80,760.07",
+    "$226,600",
+    "$62,323.59",
+    "$8,000",
+    "$419,718.07"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Moved from Capital Expenditures to cover Fitchburg Usage and Fringe Benefit line items.",
+   "amount_as_printed": "$15,231.53",
+   "outcome": "Reflected in the revised FY24 budget motion, which passed 4-0.",
+   "quote": "she had to take $15,231.53 from capital expenditures to plug into the fitchburg usage and fringe benefit line items."
+  },
+  {
+   "description": "Retained Earnings transfers to OPEB and to Capital Reserve listed in the budget changes.",
+   "amount_as_printed": "$1,000 and $36,621.37",
+   "outcome": "Listed in the budget changes; not separately voted.",
+   "quote": "retained earnings transfers- $1,000 to opeb and $36,621.37 to capital reserve."
+  },
+  {
+   "description": "$8,000 transfer from Reserve Capacity that was not submitted as an Article.",
+   "amount_as_printed": "$8,000",
+   "outcome": "Not made; the revised budget motion says not to transfer $8,000 from Reserve Capacity.",
+   "quote": "also, barb did not submit an article for $8k transfer to one of the reserve funds, so they cannot do that."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Thanks to caucus attendees and candidates",
+   "speaker": "Dave",
+   "quote": "public comment- dave thanked all who attended the town caucus and those who are running for a position."
+  },
+  {
+   "topic": "Thanks to staff for input on the meeting",
+   "speaker": "Dave",
+   "quote": "public comment - dave thanked bill and paula for their input and it was very good meeting, although long."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; announcements none",
+   "quote": "public comment- dave thanked all who attended the town caucus and those who are running for a position.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "State earmark request",
+   "resolution": "discussed; no action",
+   "quote": "state earmark request- paula noted the sewer pump station upgrade request for $300k is on the state earmark list",
+   "tags": [
+    "state earmark",
+    "pump stations",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Change/expansion of use fees",
+   "resolution": "discussed; agreed to consider; vote deferred until after Town Counsel meeting",
+   "quote": "change/expansion of use fees- paula said they will be considering a request for expanding the number of bedrooms at an existing property.",
+   "tags": [
+    "expansion fee",
+    "privilege fee",
+    "bedrooms",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Il Forno use change (appointment)",
+   "resolution": "approved 4-0, pending plumbing inspector approval",
+   "quote": "carlene baily and mike mohammed (il forno)- mike m. reported they are replacing the tent with a 30 x 50 3-bay building",
+   "tags": [
+    "Il Forno",
+    "grease trap",
+    "use change",
+    "seating",
+    "FOG"
+   ]
+  },
+  {
+   "topic": "RFP for pumping station and generator O&M contracts",
+   "resolution": "approved as adjusted, 4-0; to be sent out for review by Chair and Vice-Chair",
+   "quote": "rfp-o&m contract for pumping stations & generators- paula screen-shared the rfp and noted both contracts expire on 6/30/23.",
+   "tags": [
+    "RFP",
+    "pumping stations",
+    "generators",
+    "contract",
+    "CTE"
+   ]
+  },
+  {
+   "topic": "Leominster inter-municipal agreement",
+   "resolution": "discussed; meeting to be set up",
+   "quote": "leominster inter-municipal agreement- dave asked paula to set up a meeting with leominster, mike n. and himself.",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Assistant Business Manager position",
+   "resolution": "no action; no final candidate yet",
+   "quote": "assistant business manager position- paula reported they have done 3 interviews and have 1 more later in the week.",
+   "tags": [
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Manhole funding",
+   "resolution": "no action",
+   "quote": "manhole funding- bill stated they cannot use chapter 90 funding, especially if they want to raise the level of the manholes on 2a.",
+   "tags": [
+    "manholes",
+    "Chapter 90"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/21/23",
+   "resolution": "accepted 4-0",
+   "quote": "to accept minutes for 3/21/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY24 budget revision",
+   "resolution": "revised 4-0",
+   "quote": "fy24 budget- paula screen-shared the fy24 revised budget and stated the commission will need to vote to revise the budget.",
+   "tags": [
+    "FY24 budget",
+    "Fitchburg usage",
+    "fringe benefits",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "discussed; deferred to next meeting",
+   "quote": "capital planning - paula asked al packard for a list of what they would need for future capital planning",
+   "tags": [
+    "capital planning",
+    "cranes",
+    "panels"
+   ]
+  },
+  {
+   "topic": "Rate increase",
+   "resolution": "discussed; worksheet to be circulated",
+   "quote": "rate increase- with rate increases from fitchburg and potentially in leominster, along with capital expenditures, paula stated they will need to look at a rate increase.",
+   "tags": [
+    "rates",
+    "rate increase"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "received; updated FY23 budget due next meeting",
+   "quote": "business manager report-paula reported she will have a more updated fy23 budget for the next meeting.",
+   "tags": [
+    "business manager",
+    "generator inspections"
+   ]
+  },
+  {
+   "topic": "Action items (SKADA, treatment plant)",
+   "resolution": "discussed; no vote",
+   "quote": "action items- dave asked paula about the skada program and she replied al uses it quite a bit.",
+   "tags": [
+    "SCADA",
+    "wastewater treatment plant"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled meetings",
+   "resolution": "noted",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "wastewater",
+  "budget FY24",
+  "revised budget",
+  "rate increase",
+  "capital planning",
+  "RFP pumping stations and generators",
+  "Il Forno grease trap",
+  "Leominster IMA",
+  "connection fees",
+  "ARPA",
+  "state earmark",
+  "Fitchburg usage",
+  "retained earnings",
+  "reserve funds"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

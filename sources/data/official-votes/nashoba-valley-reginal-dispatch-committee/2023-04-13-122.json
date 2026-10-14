@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "nashoba-valley-reginal-dispatch-committee",
  "meeting_date": "2023-04-13",
  "docid": "122",
@@ -12,23 +12,202 @@
  },
  "votes": [
   {
-   "motion": "accept the meeting minutes for February 16th 2023 and March 16, 2023",
+   "motion": "Accept the meeting minutes of the February 16, 2023 and March 16, 2023 meetings.",
    "moved_by": "Don Lowe",
    "seconded_by": "Marie Sobalvarro",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion made to accept the meeting minutes for february 16th 2023 meeting and march 16, 2023 by don lowe, seconded by marie sobalvarro, approved after roll call vote. roll call vote: berlin: yes, devens: yes, harvard: yes, bolton: yes, lunenburg: yes."
+   "quote": "motion made to accept the meeting minutes for february 16th 2023 meeting and march 16, 2023 by don lowe, seconded by marie sobalvarro, approved after roll call vote."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Don Lowe",
    "seconded_by": "Marie Sobalvarro",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion adjourn made by don lowe, seconded by marie sobalvarro. adjourned at 2:59p.m. roll call vote: berlin: yes, devens: yes, harvard: yes, bolton: yes, lunenburg: yes."
+   "quote": "motion adjourn made by don lowe, seconded by marie sobalvarro. adjourned at 2:59p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1058705
+ "note": "Text is extracted, not a scan; all pages were read. Header reads \"Nashoba Valley Regional Dispatch District Administration Board\", not the \"Committee\" name requested. The minutes print no dollar figure anywhere, so every budget item has an empty figures list. No public comment section appears. Roll-call votes are recorded per member (Berlin, Devens, Harvard, Bolton, Lunenburg, all YES), with no printed tally, so outcome is \"passed\" rather than a count. The minutes spell the lease follow-up name \"Meg Deorier\" in one place and \"Meg Delorier\" elsewhere; both kept as printed. Status for board members and other participants is inferred from their listing and from the roll call, not from an explicit \"present\" line.",
+ "cost_usd": 0.015434409999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kristen Rubin",
+   "role": "Chair, Berlin",
+   "status": "present",
+   "quote": "chair kristen rubin, berlin; vice chair meg delorier, interim evp-devens ops; heather lemieux, lunenburg; don lowe, bolton; and marie sobalvarro, harvard;"
+  },
+  {
+   "name": "Meg Delorier",
+   "role": "Vice Chair, Interim EVP-Devens Ops",
+   "status": "present",
+   "quote": "chair kristen rubin, berlin; vice chair meg delorier, interim evp-devens ops; heather lemieux, lunenburg; don lowe, bolton; and marie sobalvarro, harvard;"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Lunenburg",
+   "status": "present",
+   "quote": "chair kristen rubin, berlin; vice chair meg delorier, interim evp-devens ops; heather lemieux, lunenburg; don lowe, bolton; and marie sobalvarro, harvard;"
+  },
+  {
+   "name": "Don Lowe",
+   "role": "Bolton",
+   "status": "present",
+   "quote": "chair kristen rubin, berlin; vice chair meg delorier, interim evp-devens ops; heather lemieux, lunenburg; don lowe, bolton; and marie sobalvarro, harvard;"
+  },
+  {
+   "name": "Marie Sobalvarro",
+   "role": "Harvard",
+   "status": "present",
+   "quote": "chair kristen rubin, berlin; vice chair meg delorier, interim evp-devens ops; heather lemieux, lunenburg; don lowe, bolton; and marie sobalvarro, harvard;"
+  },
+  {
+   "name": "Kate Hodges",
+   "role": "Lancaster",
+   "status": "absent",
+   "quote": "not present: kate hodges, lancaster"
+  },
+  {
+   "name": "Anne Camaro",
+   "role": "NVRDD Executive Director",
+   "status": "present",
+   "quote": "other participants: anne camaro, nvrdd executive director, and glenn casey, nvrdd"
+  },
+  {
+   "name": "Glenn Casey",
+   "role": "NVRDD",
+   "status": "present",
+   "quote": "other participants: anne camaro, nvrdd executive director, and glenn casey, nvrdd"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meg Deorier (as printed) will follow up on the status of the lease agreement with Mass Development.",
+   "quote": "status of lease agreement with mass development: no updates. meg deorier will follow up."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 year-to-date report",
+   "what_was_recorded": "The FY23 YTD Report was sent to the Admin Board earlier that week.",
+   "figures_as_printed": [],
+   "quote": "fy23 ytd report sent to admin board earlier this week."
+  },
+  {
+   "topic": "5-year capital budget plan",
+   "what_was_recorded": "The 5-year Capital Budget Plan was presented to the Finance Committee on April 5 and a copy sent to the board.",
+   "figures_as_printed": [],
+   "quote": "5-year capital budget plan presented to the finance committee at the april 5th meeting."
+  },
+  {
+   "topic": "FY23 budget status",
+   "what_was_recorded": "The FY23 budget was reported as continuing to be on par with the year; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "fy23 budget - continues to be on par with the year."
+  },
+  {
+   "topic": "Cash rolled over year to year",
+   "what_was_recorded": "The District Accountant is preparing a report of what cash was rolled over from year to year; auditors are expected after year end.",
+   "figures_as_printed": [],
+   "quote": "the district accountant is working on a report of what cash was rolled over from year to year"
+  },
+  {
+   "topic": "FY23 grant reimbursements",
+   "what_was_recorded": "The Executive Director reported FY23 grant reimbursements are caught up and funds are expected within 30-60 days; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "i am all caught up on fy23 grant reimbursements, and we should be receiving the funds within the next 30-60 days."
+  },
+  {
+   "topic": "FY24 development grant application",
+   "what_was_recorded": "The FY24 Development Grant Application was sent to the State 911 Department in early March; other FY24 grant applications were being worked on. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "fy24 development grant application was sent to state 911 department in early march."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 2:37pm with a quorum",
+   "quote": "with a quorum present and acting, the meeting was called to order by the chair at 2:37pm.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Executive Director updates (personnel, budget, projects, grants)",
+   "resolution": "reported, no action taken",
+   "quote": "total staffing: 3 supervisors, and 9 dispatchers, with three openings 2 dispatcher opening and 1 supervisor opening.",
+   "tags": [
+    "staffing",
+    "budget",
+    "grants",
+    "capital plan",
+    "dispatch desks"
+   ]
+  },
+  {
+   "topic": "Ops & Finance Committee updates",
+   "resolution": "none present, no report",
+   "quote": "iii. ops & finance committee updates 1. none present",
+   "tags": [
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "New business: minutes and National Telecommunications Week",
+   "resolution": "minutes of Feb 16 and Mar 16, 2023 accepted; proclamations reported",
+   "quote": "the towns of berlin and lunenburg issued proclamations thanking nvrdd dispatchers.",
+   "tags": [
+    "minutes",
+    "proclamations",
+    "dispatchers"
+   ]
+  },
+  {
+   "topic": "Old business: PS Building, lease, FY23 budget, intermunicipal agreement, adding towns",
+   "resolution": "reported; lease follow-up assigned; intermunicipal agreement signed by Harvard, Berlin and Lunenburg",
+   "quote": "intermunicipal agreement / district agreement: voted on and signed by harvard select board on 02/07, by berlin on 03/20, and by lunenburg on 03/28.",
+   "tags": [
+    "intermunicipal agreement",
+    "lease",
+    "PS building",
+    "adding towns"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May 18, 2023 at 2:30pm",
+   "quote": "1. may 18th, 2023 @ 2:30pm",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:59p.m.",
+   "quote": "motion adjourn made by don lowe, seconded by marie sobalvarro. adjourned at 2:59p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "NVRDD",
+  "emergency dispatch",
+  "911",
+  "staffing",
+  "grants",
+  "FY23 budget",
+  "capital plan",
+  "intermunicipal agreement",
+  "minutes approval",
+  "lease"
+ ],
+ "dropped_unquoted_by_field": {}
 }

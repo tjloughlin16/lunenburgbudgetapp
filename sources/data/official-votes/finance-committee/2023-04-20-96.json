@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-04-20",
  "docid": "96",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to open the public hearing",
+   "motion": "Open the public hearing.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Nuzzolo",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mr. menard motioned to open the public hearing, mr. nuzzolo seconded. on vote, motion carried."
   },
   {
-   "motion": "to recommend approval of Article 14 (Sewer Enterprise Fund)",
+   "motion": "Recommend approval of Article 14 (Sewer Enterprise Fund), as the Sewer Commission updated it.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Nuzzolo",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "mr. menard motioned to recommend approval, mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "to close the public hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mr. Balish",
    "outcome": "passed unanimously",
@@ -36,23 +36,23 @@
    "quote": "mr. nuzzolo motioned to close the public hearing. mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "to accept the FY24 Finance Committee Annual Town Meeting report as presented, allowing for syntax and grammatical updates up until Annual Town Meeting on May 6, 2023",
+   "motion": "Accept the FY24 Finance Committee Annual Town Meeting report as presented, allowing syntax and grammatical updates until Annual Town Meeting on May 6, 2023.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mr. Balish",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. nuzzolo motioned to accept the fy24 finance committee annual town meeting report as presented, allowing for syntax and grammatical updates up until annual town meeting on may 6, 2023, mr. balish seconded. on vote, motion carried unanimously."
+   "quote": "mr. nuzzolo motioned to accept the fy24 finance committee annual town meeting report as presented, allowing for syntax and grammatical updates up until annual town meeting on may 6, 2023,"
   },
   {
-   "motion": "to accept the minutes of the March 22, 2023 and March 23, 2023 meetings",
+   "motion": "Accept the minutes of the March 22, 2023 and March 23, 2023 meetings.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mr. Menard",
-   "outcome": "passed 3-0-1",
+   "outcome": "3-0-1",
    "procedural": true,
    "quote": "mr. nuzzolo motioned to accept the minutes of the march 22, 2023 and march 23, 2023 meetings. mr. menard seconded. on vote, motion carried. 3-0-1 (mr. balish abstained.)"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Simeone",
    "outcome": "passed unanimously",
@@ -60,7 +60,309 @@
    "quote": "mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0244348
+ "dropped_unquoted": 1,
+ "note": "Extracted text, not a scan; all pages present (pages 1-4, with Appendix A as the FY24 report). Several motions are recorded as \"motion carried\" without a count, so their outcome reads as passed. Tom Gray is listed as \"Intermittently remote\"; I recorded status as present because the minutes do not say when he was remote. The signature block spells the member \"Jay Simone\" while the attendance line says \"Jay Simeone\"; I used the attendance spelling. The public comment item contains no named speaker; the waterfront-tax comment refers to an earlier meeting and is not recorded as made at this one. The levy table quote reproduces the printed spacing. The Free Cash to Overlay transfer is a Town Manager recommendation with no committee vote recorded.",
+ "cost_usd": 0.019055410000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Finance Committee member (signed as Clerk)",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, tom gray (intermittently remote), caesar nuzzolo"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed it does not anticipate a need for a last-minute meeting before Annual Town Meeting on May 6.",
+   "quote": "the committee agreed they do not anticipate a need for a last minute meeting before annual town meeting on may 6."
+  },
+  {
+   "decision": "Committee members agreed to edit the bullet point that responded to a prior public comment about the recent hike in waterfront property real estate taxes.",
+   "quote": "committee members agreed to edit that bullet point."
+  },
+  {
+   "decision": "Mr. Balish volunteered to edit the style and phraseology of the Finance Committee report.",
+   "quote": "mr. balish volunteered to edit the style and phraseology of the report."
+  },
+  {
+   "decision": "Committee members agreed on wording: though procedures have been followed, the outcome of the appellate process is not known, and the report was to say so.",
+   "quote": "agreed that though procedures have been followed, no one knows the outcome of the appellate process, and what that will reveal"
+  },
+  {
+   "decision": "Mr. Menard recommended that committee members watch the Select Board meeting regarding ARPA funds.",
+   "quote": "mr. menard recommended committee members watch the select board meeting regarding arpa funds."
+  },
+  {
+   "decision": "Next meeting set for May 18, 2023.",
+   "quote": "next meetings may 18, 2023"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 14 Sewer Enterprise Fund amount",
+   "what_was_recorded": "The Sewer Commission updated the Article 14 amount for a decrease in capital costs, covering a Fitchburg sewer rate increase and an unbudgeted retiree cost; $8,000 was removed from the warrant article and retained earnings are now stated.",
+   "quote": "the sewer commission has met and updated the amount to account for the decrease in capital costs by $15,231.55, which covers an increase in fitchburg sewer rates ($6,600), and an unbudgeted retiree cost of $8,631.53.",
+   "figures_as_printed": [
+    "$15,231.55",
+    "$6,600",
+    "$8,631.53",
+    "$8,000",
+    "$419,718.07"
+   ]
+  },
+  {
+   "topic": "Proposed Capital Plan funding, with and without ARPA",
+   "what_was_recorded": "Without ARPA funds the proposed Capital Plan would fund $1,039,010, a 52% decrease from FY23; with ARPA funds it funds $2,025,010, a 6.4% decrease from FY23. Free cash for FY24 is lower because the overlay account must be filled.",
+   "quote": "without the use of arpa funds, the proposed capital plan would fund $1,039,010, a 52% decrease from fy23.",
+   "figures_as_printed": [
+    "$1,039,010",
+    "52%",
+    "$2,025,010",
+    "6.4%"
+   ]
+  },
+  {
+   "topic": "Overlay account and abatement exposure",
+   "what_was_recorded": "The Town would under-levy about $1,500,000 if all abatements were granted; the Town Manager recommended transferring $1,500,000 from Free Cash to the Overlay Account.",
+   "quote": "the town manager has recommended the transfer of $1,500,000 from free cash to the overlay account.",
+   "figures_as_printed": [
+    "$1,500,000"
+   ]
+  },
+  {
+   "topic": "Tax levy table (FY22 to FY24)",
+   "what_was_recorded": "The report prints a table of levy limit, new growth, debt exclusion and total taxes; total taxes are shown as $29,959,875.61 (FY22 Final), $30,875,655.64 (FY23 Final) and $31,477,704.00 (FY24 Budgeted), with year-over-year changes of 3.06% and 1.95%.",
+   "quote": "taxes: total $ 29,959,875.61 $ 30,875,655.64 $ 31,477,704.00 3.06% 1.95%",
+   "figures_as_printed": [
+    "$26,049,570.00",
+    "$27,131,063.00",
+    "$28,043,722.60",
+    "$651,239.25",
+    "$678,276.58",
+    "$701,093.07",
+    "$430,254.00",
+    "$234,383.77",
+    "$200,000.00",
+    "$2,828,812.36",
+    "$2,831,932.29",
+    "$2,477,704.00",
+    "$29,959,875.61",
+    "$30,875,655.64",
+    "$31,477,704.00",
+    "4.15%",
+    "3.36%",
+    "-45.52%",
+    "-14.67%",
+    "0.11%",
+    "-12.51%",
+    "3.06%",
+    "1.95%"
+   ]
+  },
+  {
+   "topic": "Debt service and excludible debt reduction",
+   "what_was_recorded": "Debt Service and Excludible Debt is to fall 14.6% from FY23 to FY24 as Public Safety Building and Primary School debt retires and an MSBA reimbursement completes, freeing debt capacity.",
+   "quote": "the end of fy23 will see a 14.6% reduction of our debt service and excludible debt, from $3,174,257.53 (fy23)",
+   "figures_as_printed": [
+    "14.6%",
+    "$3,174,257.53",
+    "$2,712,069.90"
+   ]
+  },
+  {
+   "topic": "Debt capacity under the limits",
+   "what_was_recorded": "An analysis by Unibank projected debt capacity scenarios; the Town has $42,000,000 usable while staying under debt capacity limits.",
+   "quote": "in total, the town has $42,000,000 that will be useable while remaining under debt capacity limits.",
+   "figures_as_printed": [
+    "$42,000,000"
+   ]
+  },
+  {
+   "topic": "Federal ARPA and ESSER relief",
+   "what_was_recorded": "Federal relief provided $3,500,000 in ARPA funds and $1,900,000 in ESSER funds; ESSER allowed the School Department to hire 13 new positions and the last ESSER funds must be spent by end of September 2024.",
+   "quote": "federal relief, during the covid-19 pandemic, provided lunenburg with $3,500,000 in arpa funds and $1,900,000 in esser funds.",
+   "figures_as_printed": [
+    "$3,500,000",
+    "$1,900,000"
+   ]
+  },
+  {
+   "topic": "Select Board ARPA spending",
+   "what_was_recorded": "The Select Board voted to spend $986,000 of ARPA funds on three Capital Plan items (a Rescue Ambulance at $506,000 and two dump trucks at $240,000 each); $2,514,000 remains unallocated.",
+   "quote": "the select board voted to spend $986,000 in arpa funds to order three items from the capital plan",
+   "figures_as_printed": [
+    "$986,000",
+    "$506,000",
+    "$240,000",
+    "$2,514,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 and Monty Tech assessment",
+   "what_was_recorded": "Chapter 70 rose 11.5% in FY23 against a 20.4% Monty Tech assessment increase; FY24 Chapter 70 is likely to rise 0.6% against a 12% Monty Tech increase, which will not offset it. The committee met the State Delegation about formulas for small municipalities.",
+   "quote": "while fy23 did see a larger than expected increase (11.5%) in chapter 70 (public school funding) funds, the outlook for fy24 is the likely mandatory minimum increase resulting in a 0.6% increase.",
+   "figures_as_printed": [
+    "11.5%",
+    "0.6%",
+    "20.4%",
+    "12%"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Recommended transfer of Free Cash to the Overlay Account to cover potential abatements.",
+   "amount_as_printed": "$1,500,000",
+   "outcome": "recommended by the Town Manager; the minutes record no committee vote on it",
+   "quote": "the town manager has recommended the transfer of $1,500,000 from free cash to the overlay account."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action; meeting recorded",
+   "quote": "mr. watters called the meeting to order at 7p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements: passing of John Henshaw",
+   "resolution": "no action; condolences offered",
+   "quote": "mr. menard informed the board of the passing of former finance committee member john henshaw, and offered his condolences to the henshaw family.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: Article 14 Sewer Enterprise Fund",
+   "resolution": "recommended approval; hearing closed",
+   "quote": "article 14 (sewer enterprise fund) the sewer commission has met and updated the amount to account",
+   "tags": [
+    "sewer",
+    "enterprise fund",
+    "warrant article",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting timing",
+   "resolution": "no last-minute meeting planned",
+   "quote": "the committee agreed they do not anticipate a need for a last minute meeting before annual town meeting on may 6.",
+   "tags": [
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "FY24 Finance Committee report (draft)",
+   "resolution": "accepted as presented, with grammar and syntax edits allowed until Annual Town Meeting",
+   "quote": "mr. watters read the latest draft of the report. (see appendix a)",
+   "tags": [
+    "finance committee report",
+    "assessments",
+    "abatements",
+    "ARPA",
+    "overlay",
+    "debt",
+    "chapter 70"
+   ]
+  },
+  {
+   "topic": "Minutes of March 22 and March 23, 2023",
+   "resolution": "approved 3-0-1",
+   "quote": "mr. nuzzolo motioned to accept the minutes of the march 22, 2023 and march 23, 2023 meetings.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports: ARPA funds",
+   "resolution": "members advised to watch Select Board meeting",
+   "quote": "mr. menard recommended committee members watch the select board meeting regarding arpa funds.",
+   "tags": [
+    "ARPA",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Public comment and board clerk",
+   "resolution": "no public speaker recorded; clerk's last day noted",
+   "quote": "mr. watters informed the committee that the board clerk's last day will be may 4, 2023.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May 18, 2023",
+   "quote": "next meetings may 18, 2023",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:03 p.m.",
+   "quote": "at 8:03 p.m. mr. menard motioned to adjourn, mr. simeone seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Annual Town Meeting",
+  "FY24 budget",
+  "Article 14",
+  "sewer enterprise fund",
+  "ARPA",
+  "ESSER",
+  "overlay account",
+  "free cash",
+  "abatements",
+  "tax levy",
+  "Proposition 2½",
+  "debt service",
+  "Chapter 70",
+  "Monty Tech",
+  "capital plan",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

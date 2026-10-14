@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2022-11-30",
  "docid": "1510",
@@ -12,15 +12,196 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore motioned to adjourn, mr. passios seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document header identifies this as \"Lunenburg Capital Planning Committee\" meeting on November 30, 2022, not a By Law Committee meeting as indicated in metadata. One procedural vote to adjourn found.",
- "cost_usd": 0.08104449999999999
+ "note": "Board mismatch: the request names the By Law Committee, but the minutes are headed \"Lunenburg Capital Planning Committee\" (chaired by Tom Alonzo, with \"CPC\" used throughout). Extracted as the text is written. The only recorded vote is the adjournment motion, which is procedural. Committee members discussed the ranking but no ranking vote is recorded. The minutes print \"Approved by Capital Planning Committee at Dec. 28, 2022 meeting,\" but no vote on that approval appears in this text. Public comment was recorded as \"none\" at the opening; the later \"Public Comment\" heading contains the chair's remarks, not a public speaker. The minutes name a Town Manager and McCarthy Engineering, but neither appears as a participant. The text contains no transfers. No dollar figures are printed for the safety film, Brooks House phasing, or the stabilization funds.",
+ "cost_usd": 0.01511501,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, and peter beardmore."
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, and peter beardmore."
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, and peter beardmore."
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, and peter beardmore."
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg Resident (listed as guest)",
+   "status": "not stated",
+   "quote": "guests: lunenburg resident rhonda lissio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members agreed headstone restoration is needed, to be done in phases, with a maintenance plan once all headstones are restored.",
+   "quote": "committee members agreed that headstone restoration is needed, but could be done in phases, and once all headstones are restored a plan can be put in place for maintenance."
+  },
+  {
+   "decision": "Brooks House requests, the senior center parking lot, and protective window film were set aside as needing more information before a proper ranking.",
+   "quote": "brooks house requests, the senior center parking lot, and protective window film, are items that require more information in order to receive a proper ranking/"
+  },
+  {
+   "decision": "Mr. Alonzo to distribute the list so each committee member can rank the items as they deem fit.",
+   "quote": "mr. alonzo will distribute the list to the rest of the committee so everyone can rank the items as they deem fit."
+  },
+  {
+   "decision": "Subsequent meetings confirmed for December 5, 2022 and December 14, 2022, each at 6:00 p.m. at the Ritter Building; next-meeting action is prioritization of the list.",
+   "quote": "confirm subsequent cpc meetings: monday, december 5, 2022, 6:00 p.m. at the ritter building, december 14, 2022, 6:00 p.m. at the ritter building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flat Hill Road drainage project engineering and plans",
+   "what_was_recorded": "Engineering for the Flat Hill Road drainage request is $10,000 out of a $240,000 request, and the plans will be paid from FY23 capital funds.",
+   "figures_as_printed": [
+    "$10,000",
+    "$240,000"
+   ],
+   "quote": "cost of engineering will be $10,000 (out of $240,000 request), cost of plans will come out of fy23 capital funds."
+  },
+  {
+   "topic": "Updated school project cost estimates",
+   "what_was_recorded": "Three school projects had updated estimated costs: THES Exterior Door Replacement, THES Security upgrade, and the Primary School Security upgrade.",
+   "figures_as_printed": [
+    "$160,000",
+    "$131,000",
+    "$83,500"
+   ],
+   "quote": "thes exterior door replacement is now estimated to cost $160,000, thes security upgrade is now estimated to cost $131,000, and the primary school security upgrade is now estimated to cost $83,500."
+  },
+  {
+   "topic": "ARPA and Special Purpose Stabilization Fund as funding sources",
+   "what_was_recorded": "A member raised concern about using ARPA funds and the Special Purpose Stabilization Fund to pay for plan items such as an ambulance, and said the Town Manager should explain how the stabilization funds will be spent. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. beardmore expressed his concern over arpa funding, and the special purpose stabilization fund, and how those sources could be used to fund items on the plan, i.e., the request for an ambulance."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and remote-meeting statement",
+   "resolution": "noted; statement read on Open Meeting Law and remote participation",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ],
+   "quote": "chairperson tom alonzo called meeting to order at 6:04 p.m., and read a statement regarding the open meeting law"
+  },
+  {
+   "topic": "Capital requests and preliminary prioritization",
+   "resolution": "discussed; no ranking adopted; some items set aside for more information",
+   "tags": [
+    "capital plan",
+    "prioritization",
+    "DPW",
+    "Brooks House",
+    "cemetery"
+   ],
+   "quote": "mr. alonzo shared an updated plan from the town manager concerning projects with the brooks house, and dpw cemetery projects, as well as some school department requests."
+  },
+  {
+   "topic": "Flat Hill Road drainage project request",
+   "resolution": "information received; no action recorded",
+   "tags": [
+    "drainage",
+    "Flat Hill Road",
+    "engineering"
+   ],
+   "quote": "committee members received more information on the flat hill road drainage project request via email on the day of the meeting."
+  },
+  {
+   "topic": "School project cost updates",
+   "resolution": "costs noted; no action recorded",
+   "tags": [
+    "school buildings",
+    "security",
+    "doors",
+    "cost estimates"
+   ],
+   "quote": "costs of some school projects have been updated."
+  },
+  {
+   "topic": "Funding sources for plan items (ARPA, Special Purpose Stabilization Fund)",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "ARPA",
+    "stabilization fund",
+    "funding sources"
+   ],
+   "quote": "mr. beardmore expressed his concern over arpa funding, and the special purpose stabilization fund"
+  },
+  {
+   "topic": "Age of the Vertex study and scoring of its projects",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "Vertex study",
+    "Municipal Building Design Committee",
+    "scoring"
+   ],
+   "quote": "mr. beardmore also expressed his concern over the age of the vertex study"
+  },
+  {
+   "topic": "Ranking of all requests on the plan",
+   "resolution": "some items deferred for more information; list to be distributed for individual ranking",
+   "tags": [
+    "ranking",
+    "prioritization"
+   ],
+   "quote": "committee members discussed all the requests on the plan."
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "confirmed",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "confirm subsequent cpc meetings: monday, december 5, 2022, 6:00 p.m. at the ritter building"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:52 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mr. beardmore motioned to adjourn, mr. passios seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital plan prioritization",
+  "school buildings",
+  "Brooks House",
+  "DPW cemetery",
+  "drainage",
+  "ARPA",
+  "stabilization fund",
+  "Vertex study",
+  "remote meeting",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-02-22",
  "docid": "23",
@@ -12,24 +12,24 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of December 7, 2022",
-   "moved_by": "Kevin",
+   "motion": "Approve the December 7, 2022 minutes.",
+   "moved_by": "Kevin Fish",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "kevin made a motion to approve the december 7, 2022. all in favor."
   },
   {
-   "motion": "approve the minutes of January 31, 2023, as amended",
-   "moved_by": "Kevin",
+   "motion": "Approve the January 31, 2023 minutes, as amended.",
+   "moved_by": "Kevin Fish",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "kevin made a motion to approve the january 31, 2023 minutes, as amended. all in favor."
   },
   {
-   "motion": "enter into executive session",
-   "moved_by": "Kevin",
+   "motion": "Enter into executive session (motion made at 3:24 pm).",
+   "moved_by": "Kevin Fish",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
@@ -37,6 +37,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. All three votes are procedural (approving prior minutes and entering executive session). No specific vote counts printed; \"All in Favor\" indicates unanimous passage.",
- "cost_usd": 0.0848515
+ "note": "Text is a macOS Vision OCR of a scanned page (single page, page-1 only). Three motions are recorded with 'All in Favor' and no count, so outcomes are recorded as 'passed' without a tally; no seconder is printed for any motion. The minutes record no adjournment vote and no closing time. The sentence 'Sheila Rich opened the meeting at 2:35 pm' is ambiguous as printed (the line break may have displaced the chair's name), so no one is recorded as opening the meeting. The signature block names 'Sheila Craigen, Administrative Assessing Assistant' while the attendance line names 'Sheila Rich' in the same role; the signer is not counted as an attendee. Public commenters' attendance mode is stated only for Dave MacDonald and John Rabbit ('called'); the other two are 'not stated'. No dollar figures appear in the text. OCR garbles the closing ('respect ly suit i fe').",
+ "cost_usd": 0.014150510000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard H. Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "also present principal assessor cj carroll, rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present principal assessor cj carroll, rena swezey."
+  },
+  {
+   "name": "Sheila Rich",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "and administrative assessing assistant, sheila rich opened the meeting at 2:35 pm."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "public comment",
+   "status": "not stated",
+   "quote": "phyllis luck had questions and stated concerns regarding the abatement process."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public comment",
+   "status": "not stated",
+   "quote": "carl luck made comments to the boa regarding the handling of the investigation."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public comment",
+   "status": "remote",
+   "quote": "dave macdonald called with questions and comments directed to the members of the boa."
+  },
+  {
+   "name": "John Rabbit",
+   "role": "public comment",
+   "status": "remote",
+   "quote": "john rabbit called with comments to the boa and their handling of the investigation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Questions about the investigation are to be directed to the investigation committee by email, not to the Principal Assessor; the public commenter agreed and will copy CJ and the BOA members.",
+   "quote": "cj stated questions regarding the investigation should be directed to the investigation committee via email."
+  },
+  {
+   "decision": "Executive session minutes will not be released.",
+   "quote": "executive session minutes will not be released"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "",
+   "topic": "abatement process",
+   "quote": "phyllis luck had questions and stated concerns regarding the abatement process."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "handling of the investigation; agenda; abatement process",
+   "quote": "carl luck made comments to the boa regarding the handling of the investigation."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "",
+   "topic": "questions and comments to the BOA",
+   "quote": "dave macdonald called with questions and comments directed to the members of the boa."
+  },
+  {
+   "speaker": "John Rabbit",
+   "stated_role": "",
+   "topic": "investigation; 40-page analysis for the Principal Assessor",
+   "quote": "john rabbit called with comments to the boa and their handling of the investigation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved (December 7, 2022 and January 31, 2023, the latter as amended)",
+   "quote": "kevin made a motion to approve the january 31, 2023 minutes, as amended. all in favor.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public comment on abatement process and investigation",
+   "resolution": "no action; questions on the investigation redirected to the investigation committee by email",
+   "quote": "cj stated questions regarding the investigation should be directed to the investigation committee via email.",
+   "tags": [
+    "public comment",
+    "abatement",
+    "investigation"
+   ]
+  },
+  {
+   "topic": "Entry into executive session",
+   "resolution": "motion passed to enter executive session at 3:24 pm; executive session minutes not to be released",
+   "quote": "kevin made a motion at 3:24 to enter into executive session. all in favor.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatement",
+  "property assessment",
+  "investigation",
+  "public comment",
+  "executive session",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

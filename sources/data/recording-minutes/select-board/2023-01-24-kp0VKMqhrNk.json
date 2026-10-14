@@ -1,0 +1,378 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-01-24",
+ "video_id": "kp0VKMqhrNk",
+ "video_url": "https://www.youtube.com/watch?v=kp0VKMqhrNk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-01-24-kp0VKMqhrNk.json",
+  "sha256": "6d833617d46d15fcf88769bd20ee8998bb355a477530e35ad3a4fbe20fed9d6e",
+  "caption_lines": 41,
+  "segments": 371
+ },
+ "recording": {
+  "duration_s": 857,
+  "duration": "0:14",
+  "spoken_chars": 12383,
+  "words_approx": 2063
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01242023-224",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-24-agenda-224.txt",
+   "path": "sources/meetings/select-board/2023-01-24-agenda-224.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01242023-224",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-24-minutes-224.txt",
+   "path": "sources/meetings/select-board/2023-01-24-minutes-224.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T03:30:38Z",
+  "cost_usd": 0.2453415
+ },
+ "minutes": {
+  "headline": "Select Board voted to commit $150,000 of ARPA funds for the tax assessment investigation and abatement staffing.",
+  "summary": "A short special meeting. The board ratified a new public safety desk clerk and signed the police union contract. It then voted to allocate funds to bring in outside help for the FY23 property valuation investigation and a surge of abatement applications. The chair read the public statement on the investigation.",
+  "attendees": [
+   {
+    "name_as_heard": "Mike Jeffries",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather Lemieux",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Tom Alonso",
+    "role": "vice chair (absent, under the weather)"
+   },
+   {
+    "name_as_heard": "selectman Franco",
+    "role": "member (absent, under the weather)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 0,
+    "topic": "Chair asked for public comment at start; none offered."
+   },
+   {
+    "t": 815,
+    "topic": "Public comment invited again near close; none offered."
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "executive-session",
+   "grants",
+   "hiring",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "tax-rate",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 295,
+    "motion": "Ratify the town manager's appointment of Kennedy Jackson as full-time public safety desk clerk",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 725,
+    "motion": "Allocate $150,000 (as heard) from board funds to augment town staff for abatement applications, amended to include tax assessment investigations",
+    "moved_by": "chair",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 815,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 503,
+    "topic": "Funding for tax assessment investigation and abatement support",
+    "what_was_said": "The chair asked the board to commit funds for outside assessors, administrative support and extra abatement processing, with itemized spending to be reported later. The ceiling was based on the town manager's inquiries to vendors.",
+    "figures_as_heard": [
+     "a hundred and fifty thousand dollars",
+     "150 000"
+    ]
+   },
+   {
+    "t": 583,
+    "topic": "Funding source",
+    "what_was_said": "The funds were confirmed as coming from ARPA.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 481,
+    "topic": "Abatement volume",
+    "what_was_said": "A high-volume year is about 50 abatements; 500 are projected. About 50 had been received by Thursday, with many more expected after a Saturday workshop.",
+    "figures_as_heard": [
+     "50",
+     "500",
+     "80",
+     "100"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 395,
+    "decision": "Investigation framework and supporting documents are to be held confidential until the investigation is complete, with board members able to review them in the office."
+   },
+   {
+    "t": 106,
+    "decision": "Board will give public updates twice a month on the investigation; next update February 7, 2023."
+   },
+   {
+    "t": 645,
+    "decision": "RFP for independent assessors can be published now that funding is secured; itemized cost lists will be given to the board."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 127,
+    "topic": "Public comment, announcements, and statement on the tax assessment investigation",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 127,
+    "t_end": 335,
+    "topic": "Ratification of public safety desk clerk appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 335,
+    "t_end": 375,
+    "topic": "Signing police union collective bargaining agreement",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 375,
+    "t_end": 774,
+    "topic": "Funding for tax assessment investigation and abatement staffing",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "grants",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 774,
+    "t_end": 870,
+    "topic": "Scheduling and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not stated beyond 'aye' responses.",
+   "Exact abatement counts were uncertain (estimates of 80 to 100 versus 50 received).",
+   "Whether the mover of the main motion was the chair is inferred from context."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to allocate a sum from ARPA funds, as heard, for outside help on the tax assessment investigation and for abatement applications.",
+    "t": 725
+   },
+   {
+    "line": "The board ratified the town manager's appointment of a full-time public safety desk clerk.",
+    "t": 295
+   },
+   {
+    "line": "Investigation framework and supporting documents will stay confidential until the investigation ends; board members may review them in the office.",
+    "t": 395
+   },
+   {
+    "line": "The board will give public updates twice a month on the investigation, with the next on February 7, 2023.",
+    "t": 106
+   },
+   {
+    "line": "An RFP for independent assessors can now be published because funding is secured.",
+    "t": 645
+   }
+  ],
+  "why_it_matters": [
+   "The money comes from federal ARPA funds on the board's own authority, so the investigation and the surge of abatement applications are paid for without a new tax levy or a town meeting vote.",
+   "Residents with an FY23 assessment who file an abatement application will be handled by added outside staff, since about ten times the usual volume of applications is projected.",
+   "The investigation's working documents stay closed until it finishes, so the twice-monthly public updates are the main way to follow it."
+  ],
+  "watch_next": [
+   "Public update on the investigation on February 7, 2023.",
+   "Publication of the RFP for independent assessors, and the itemized cost lists the board is to receive."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T03:30:46Z",
+   "cost_usd": 0.2209009
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01242023-224",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-24-minutes-224.txt",
+   "path": "sources/meetings/select-board/2023-01-24-minutes-224.pdf"
+  },
+  "official_sha256": "d6378fb0ea59713c1645d2307bffc58582b95bd3b1da7d893f2a0949e2947134",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the Kennedy Jackson ratification, the $150,000 figure, the confidentiality of the investigation documents and the twice-monthly updates. They differ on where the $150,000 comes from: ours says board funds, the official minutes say ARPA funds.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Kennedy Jackson as public safety desk clerk",
+    "ours": "Ratify the town manager's appointment of Kennedy Jackson as full-time public safety desk clerk — passed",
+    "official": "motion: t. dwyer to ratify the town manager appointment of kennedy jackson to public safety desk clerk",
+    "note": "Same appointment, same passed outcome.",
+    "t": 295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: $150,000 allocation, funding source and scope",
+    "ours": "Allocate $150,000 (as heard) from board funds to augment town staff for abatement applications, amended to include tax assessment investigations — passed",
+    "official": "motion: t. dwyer 2nd; h. sroka to allocate $150,000 from arpa funds for the tax assessment investigation and staffing for the assessment office",
+    "note": "Ours says board funds and records an amendment; the official minutes say ARPA funds and record no amendment. Check the recording near t=725 and the signed minutes for the source of the funds.",
+    "t": 725
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: $150,000 for tax assessment investigation",
+    "ours": "Funding for tax assessment investigation and abatement support: a hundred and fifty thousand dollars, 150 000",
+    "official": "what we asking for at this point is for the select board to commit $150,000 for these needs.",
+    "note": "Same amount.",
+    "t": 503
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement volume figures",
+    "ours": "Abatement volume: 50, 500, 80, 100",
+    "official": "",
+    "note": "The official minutes give no abatement counts. The captions are ambiguous, so check the recording at t=481 before using them.",
+    "t": 481
+   },
+   {
+    "kind": "agree",
+    "about": "Confidentiality of investigation documents",
+    "ours": "Investigation framework and supporting documents are to be held confidential until the investigation is complete, with board members able to review them in the office.",
+    "official": "all the supporting documents are confidential and not available for public release until the actual investigation is complete.",
+    "note": "Same decision. Ours says the framework is also confidential, while the official minutes say the framework is available to the board routinely.",
+    "t": 395
+   },
+   {
+    "kind": "agree",
+    "about": "Public updates twice a month, next February 7, 2023",
+    "ours": "Board will give public updates twice a month on the investigation; next update February 7, 2023.",
+    "official": "the select board will provide regular updates to the public twice a month on the investigative process and will provide its next update on february 7, 2023.",
+    "note": "Same cadence and date.",
+    "t": 106
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "RFP for independent assessors",
+    "ours": "RFP for independent assessors can be published now that funding is secured; itemized cost lists will be given to the board.",
+    "official": "",
+    "note": "The official minutes do not mention the RFP. Check whether this was a decision or only a remark.",
+    "t": 645
+   },
+   {
+    "kind": "only_in_official",
+    "about": "NEPBA Local 353 collective bargaining agreement signing",
+    "ours": "",
+    "official": "mr. jeffreys stated the board had previously approved the collective bargaining agreement and would be signing it tonight.",
+    "note": "Our minutes do not mention the contract signing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Mike Jeffries (chair)",
+    "official": "members present: michael-ray jeffreys, chairman; todd dwyer, heather sroka",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Same person; the captions misheard the name.",
+    "t": 295
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Tom Alonso (vice chair (absent, under the weather))",
+    "official": "members not present: tom alonzo, vice chairman; lou franco, clerk",
+    "official_reading": "Tom Alonzo",
+    "note": "Spelling differs; both records have him absent.",
+    "t": 295
+   },
+   {
+    "kind": "agree",
+    "about": "Lou Franco absent",
+    "ours": "selectman Franco (member (absent, under the weather))",
+    "official": "members not present: tom alonzo, vice chairman; lou franco, clerk",
+    "note": "Both have Franco absent. The official minutes give his role as clerk.",
+    "t": 295
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members Todd Dwyer and Heather Sroka present",
+    "ours": "",
+    "official": "members present: michael-ray jeffreys, chairman; todd dwyer, heather sroka",
+    "note": "Our attendee list omits both members who moved and seconded the motions. Check the recording to confirm they attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Town Manager Heather Lemieux",
+    "ours": "Heather Lemieux (town manager)",
+    "official": "also present: heather lemieux, town manager; via zoom",
+    "note": "Same attendee; the official minutes add that she attended remotely.",
+    "t": 295
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T03:31:37Z",
+   "cost_usd": 0.2401149
+  }
+ }
+}

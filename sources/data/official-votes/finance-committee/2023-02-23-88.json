@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-02-23",
  "docid": "88",
@@ -12,23 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the February 9, 2023 and February 16, 2023 meetings",
-   "moved_by": "Caesar Nuzzolo",
-   "seconded_by": "Tom Gray",
+   "motion": "Approve the minutes of the February 9, 2023 and February 16, 2023 meetings.",
+   "moved_by": "Mr. Nuzzolo",
+   "seconded_by": "Mr. Gray",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. nuzzolo motioned to approve the minutes from the february 9, 2023 and february 16, 2023 meetings. mr. gray seconded. on vote, motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Tom Balish",
-   "seconded_by": "Tom Gray",
-   "outcome": "motion carried unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Balish",
+   "seconded_by": "Mr. Gray",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. balish motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record budget presentations for COA, Land Use, and Library, with discussion but no votes on those items during this meeting. A note on page 2 indicates the Land Use Department budget was \"Unanimously approved by Finance Committee at March 2, 2023 meeting,\" but that was a subsequent meeting, not this one.",
- "cost_usd": 0.0699941
+ "note": "Two motions are recorded, both procedural (minutes approval and adjournment), each with a result. No vote is recorded on any FY24 budget request, the Land Use budget, or the Conservation Commission advertising transfer; those are presentations or discussion only. The page 1 footer 'Unanimously approved by Finance Committee at March 2, 2023 meeting.' sits beneath the Land Use section and is not attributed to a motion at this meeting, so it is not recorded as a vote. The text is extracted, not visibly scanned; the Zoom remote attendance of Watters and Simeone is as printed. Guests' in-person or remote status is not stated and they are recorded as present because they presented.",
+ "cost_usd": 0.01720411,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: in person: vice-chairperson chris menard, tom gray, tom balish, and caesar nuzzolo."
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: in person: vice-chairperson chris menard, tom gray, tom balish, and caesar nuzzolo."
+  },
+  {
+   "name": "Tom Balish",
+   "status": "present",
+   "quote": "present: in person: vice-chairperson chris menard, tom gray, tom balish, and caesar nuzzolo."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "status": "present",
+   "quote": "present: in person: vice-chairperson chris menard, tom gray, tom balish, and caesar nuzzolo."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "attending remotely: chairperson evan watters, and jay simeone."
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "remote",
+   "quote": "attending remotely: chairperson evan watters, and jay simeone."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "guests: council on aging director susan doherty, land use director adam burney, library director muir haman"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "guests: council on aging director susan doherty, land use director adam burney, library director muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "guests: council on aging director susan doherty, land use director adam burney, library director muir haman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Burney will cover the FY23 Conservation Commission advertising cost by using other underspent line items (no vote recorded).",
+   "quote": "mr. burney will use other underspent line items to cover the cost."
+  },
+  {
+   "decision": "Mr. Watters intends to send topics of discussion to the State Reps before the March 7 meeting (stated intention, no vote recorded).",
+   "quote": "mr. watters intends to send topics of discussion to the state reps before the meeting on march 7."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging FY24 budget request",
+   "what_was_recorded": "Council on Aging requested $29,338.53 more than last year to add a part-time outreach assistant, extra outreach coordinator hours and a funding-source shift; the entire FY24 request is stated as $224,306.85.",
+   "figures_as_printed": [
+    "$29, 338.53",
+    "$224,306.85"
+   ],
+   "quote": "ms. doherty is requesting $29, 338.53 more than last year in order to hire a part time outreach assistant"
+  },
+  {
+   "topic": "Land Use Department budget",
+   "what_was_recorded": "Mr. Burney described the Land Use Department budget as mostly salaries and pointed out FY23 to FY24 changes; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "b. land use department: mr. burney explained that the land use department budget is mostly comprised"
+  },
+  {
+   "topic": "Conservation Commission advertising line",
+   "what_was_recorded": "The FY23 Conservation Commission advertising line was confused over who pays; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. burney also drew attention to the advertising line in the fy23 conservation commission budget, and explained"
+  },
+  {
+   "topic": "Storm water staffing funding source",
+   "what_was_recorded": "Possible future part-time planner for storm water could be funded from the planning budget, DPW, or a future storm water fund; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it may require hiring a part-time planner to monitor storm water drainage systems, which could come from the planning budget"
+  },
+  {
+   "topic": "Library FY24 budget request",
+   "what_was_recorded": "Library requested $561,626 for FY24; the Town Manager recommended $539,126, which is $35,171 more than FY23. The request includes a new Assistant Director position accounting for $8,000.",
+   "figures_as_printed": [
+    "$561,626",
+    "$539,126",
+    "$35,171",
+    "$8,000"
+   ],
+   "quote": "mr. haman has requested $561,626 for fy24. the town manager has recommended $539,126"
+  },
+  {
+   "topic": "Library copy machine and outside funding",
+   "what_was_recorded": "Friends of the Lunenburg Public Library currently pay for the copy machine and supplies; the library asks that the municipal budget fund the copy machine; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "friends of the lunenburg public library pay for the cost associated with owning and operating the copy machine"
+  },
+  {
+   "topic": "Excludable debt and debt ceiling for Town Meeting report",
+   "what_was_recorded": "Committee discussed including excludable debt and the actual debt ceiling in the Town Meeting Finance Committee report; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "excludable debt, as well as the actual debt ceiling and how that money can be spent, should also be included in the report."
+  },
+  {
+   "topic": "ARPA funds for vehicles",
+   "what_was_recorded": "The Select Board approved spending ARPA funds on an ambulance and 2 dump trucks from the FY24 Capital Plan requests; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the select board approved the request to spend arpa funds on the ambulance and 2 dump trucks that were in the fy24 capital plan requests."
+  },
+  {
+   "topic": "Free cash reserved for abatements",
+   "what_was_recorded": "Free cash is being reserved to process at least 420 abatements; the minutes print a count of abatements, not a dollar figure.",
+   "figures_as_printed": [],
+   "quote": "mr. menard expressed concern over the timeline regarding the use of free cash as it's being reserved to process at least 420 abatements"
+  },
+  {
+   "topic": "State funding formulas",
+   "what_was_recorded": "Committee discussion of the formulas for state funding of the Commonwealth's towns in preparation for the State Representative meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. menard prefers the committee discuss the formulas regarding funding for this portion of the commonwealth."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Conservation Commission FY23 advertising cost to be covered by other underspent line items in the Conservation Commission and related budgets.",
+   "outcome": "Proposed by Mr. Burney; no vote recorded.",
+   "amount_as_printed": "not stated",
+   "quote": "mr. burney will use other underspent line items to cover the cost."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7 p.m.; Open Meeting Law statement read",
+   "quote": "mr. menard called the meeting to order at 7p.m. and read a statement concerning the open meeting law"
+  },
+  {
+   "topic": "Council on Aging FY24 budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "a. coa budget presentation: ms. doherty is requesting $29, 338.53 more than last year in order to hire a"
+  },
+  {
+   "topic": "Land Use Department budget",
+   "resolution": "presented; no action recorded",
+   "quote": "b. land use department: mr. burney explained that the land use department budget is mostly comprised"
+  },
+  {
+   "topic": "Library FY24 budget request",
+   "resolution": "presented; no action recorded",
+   "quote": "c. library: mr. haman has requested $561,626 for fy24. the town manager has recommended $539,126"
+  },
+  {
+   "topic": "Town Meeting Finance Committee report",
+   "resolution": "discussed; letter deadline April 4, 2023; no vote",
+   "quote": "d. town meeting finance committee report: deadline for the letter is april 4, 2023."
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "none",
+   "quote": "town manager/finance director report: none"
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "reported Select Board ARPA approval; no committee action",
+   "quote": "a. capital planning: the select board approved the request to spend arpa funds on the ambulance and 2 dump trucks"
+  },
+  {
+   "topic": "Tax abatement and assessment",
+   "resolution": "discussed; no action recorded",
+   "quote": "b. tax abatement/assessment: mr. menard expressed concern over the timeline regarding the use of free cash"
+  },
+  {
+   "topic": "State Representative meeting preparation",
+   "resolution": "discussed; topics to be sent to State Reps before March 7",
+   "quote": "c. state representative meeting preparation: mr. menard prefers the committee discuss the formulas"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved unanimously",
+   "quote": "mr. nuzzolo motioned to approve the minutes from the february 9, 2023 and february 16, 2023 meetings."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "members updated each other on liaison assignments; no action",
+   "quote": "8. committee reports committee members updated each other on their respective liaison assignments."
+  },
+  {
+   "topic": "Future meetings",
+   "resolution": "listed; no action",
+   "quote": "9. future meetings: 3/2 it, and police department, 3/7 joint meeting with select board and school committee"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "10. public comment: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:32 p.m.",
+   "quote": "11. adjourn at 9:32 p.m. mr. balish motioned to adjourn, mr. gray seconded."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY24 budget",
+  "council on aging",
+  "library",
+  "land use",
+  "town meeting",
+  "tax abatement",
+  "free cash",
+  "ARPA",
+  "capital planning",
+  "state delegation",
+  "remote participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

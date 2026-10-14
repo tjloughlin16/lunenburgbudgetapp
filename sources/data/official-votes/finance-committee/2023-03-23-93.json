@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-03-23",
  "docid": "93",
@@ -12,15 +12,271 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Simeone",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Jay Simeone",
    "outcome": "passed",
    "procedural": true,
-   "quote": "at 9:28 p.m. mr. menard motioned to adjourn. mr. simeone seconded. on vote, motion carried."
+   "quote": "mr. menard motioned to adjourn. mr. simeone seconded. on vote, motion carried."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One procedural vote recorded: adjournment. Note: The sewer department budget section contains a notation \"Approved by Finance Committee at April 20, 2023 meeting,\" but that vote occurred at a separate meeting and is not part of this March 23, 2023 record.",
- "cost_usd": 0.0716411
+ "dropped_unquoted": 1,
+ "note": "Text is extracted and readable; no scan. The only recorded motion is the adjournment, and the minutes print no vote count, so outcome is recorded as passed. No votes were recorded on the PACC, sewer or fire budget items. Page 1 carries a stray line, 'Approved by Finance Committee at April 20, 2023 meeting.', placed after the sewer item; it appears to be an approval stamp for these minutes or that item, not a vote at this meeting, so it was not recorded as one. Attendance for members is from the 'Present' line; the minutes do not say whether anyone attended remotely, and guests are marked present because the minutes list them as guests without noting absence.",
+ "cost_usd": 0.016106710000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Department Chief",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC Chairperson",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "PACC Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dpw director bill bernard, fire department chief patrick sullivan, pacc chairperson steve walker, pacc director jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Those sponsoring the Annual Town Meeting warrant articles will attend the next meeting to explain them.",
+   "quote": "those sponsoring the articles will attend the next meeting to give further explanation."
+  },
+  {
+   "decision": "Trust funds and investment are placed on the items for future meetings.",
+   "quote": "9. items for future meetings: trust funds, investment"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PACC operating income and enterprise fund",
+   "what_was_recorded": "PACC expects Comcast income that its operations will not exceed, and any surplus goes to an enterprise fund projected to reach a stated balance by the end of FY23.",
+   "figures_as_printed": [
+    "$211,670",
+    "$1,009,205.91"
+   ],
+   "quote": "pacc anticipates $211,670 of income from comcast, and annual operations will not exceed that income."
+  },
+  {
+   "topic": "Sewer retained earnings transfer for FY24",
+   "what_was_recorded": "The sewer commission would need to transfer a stated sum out of retained earnings to fund the FY24 operating budget, for pump station upgrades, debt service and capital expenses.",
+   "figures_as_printed": [
+    "$427,718"
+   ],
+   "quote": "the sewer commission would need to transfer $427,718 out of retained earnings for the fy24 operating budget"
+  },
+  {
+   "topic": "Sewer ARPA funding request",
+   "what_was_recorded": "ARPA funds were requested for sewer infrastructure projects.",
+   "figures_as_printed": [
+    "$590,000"
+   ],
+   "quote": "$590,000 in arpa funds have been requested for manholes, sewer pump station upgrades, and a sewer mobile generator."
+  },
+  {
+   "topic": "Fire Department grants",
+   "what_was_recorded": "The department will receive grants for hoses, nozzles and helmets, and for senior sidewalk sand and smoke detector checks; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the department will receive grant funding for hoses and nozzles, as well as a grant to replace helmets"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Sewer commission transfer out of retained earnings for the FY24 operating budget",
+   "amount_as_printed": "$427,718",
+   "outcome": "discussed; no vote recorded",
+   "quote": "the sewer commission would need to transfer $427,718 out of retained earnings for the fy24 operating budget"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "called to order at 7 p.m.; meeting recorded",
+   "quote": "mr. watters called the meeting to order at 7p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "3. announcements: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "PACC budget presentation",
+   "resolution": "presented; no vote recorded",
+   "quote": "public access budget presentation: pacc anticipates $211,670 of income from comcast",
+   "tags": [
+    "PACC",
+    "budget",
+    "cable access",
+    "state legislation"
+   ]
+  },
+  {
+   "topic": "Sewer Department budget",
+   "resolution": "presented; ARPA request noted; no vote recorded",
+   "quote": "sewer department budget: mr. bernard explained that the sewer commission would need to transfer $427,718",
+   "tags": [
+    "sewer",
+    "budget",
+    "transfers",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Fire Department budget",
+   "resolution": "presented; no vote recorded",
+   "quote": "fire department budget: chief sullivan highlighted increases in hydrant rental",
+   "tags": [
+    "fire department",
+    "budget",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Other monied articles (warrant articles)",
+   "resolution": "draft warrant articles reviewed; sponsors to attend next meeting",
+   "quote": "other monied articles: ms. lemieux briefly went over the draft of warrant articles for annual town meeting.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "no report",
+   "quote": "5. town manager/finance director report: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Town Meeting Finance Committee report",
+   "resolution": "in progress",
+   "quote": "a. town meeting finance committee report: mr. watters is working on the report.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Capital plan and tax assessment/abatement",
+   "resolution": "no discussion",
+   "quote": "b. capital plan: no discussion",
+   "tags": [
+    "capital plan",
+    "tax abatement"
+   ]
+  },
+  {
+   "topic": "Committee reports and public comment",
+   "resolution": "no reports; no public comment",
+   "quote": "8. public comment none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "trust funds and investment added",
+   "quote": "9. items for future meetings: trust funds, investment",
+   "tags": [
+    "trust funds",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "public hearings scheduled March 30, April 6 (if needed), April 13 (if needed)",
+   "quote": "b. april 6 - public hearing (if needed)",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:28 p.m.",
+   "quote": "11. adjourn at 9:28 p.m. mr. menard motioned to adjourn. mr. simeone seconded. on vote, motion carried.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "PACC",
+  "public access cable",
+  "sewer department",
+  "fire department",
+  "FY24 budget",
+  "ARPA",
+  "town meeting warrant articles",
+  "capital plan",
+  "trust funds",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

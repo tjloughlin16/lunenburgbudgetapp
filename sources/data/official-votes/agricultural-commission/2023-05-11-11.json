@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-05-11",
  "docid": "11",
@@ -12,48 +12,220 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from April 13, 2023",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Jackie Chabot",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of the April 13, 2023 meeting.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Jackie",
+   "outcome": "passed",
    "procedural": true,
    "quote": "maryrae made a motion to approve the minutes from the following meetings: april 13, 2023 jackie seconded commission unanimously approved"
   },
   {
-   "motion": "Approve reviewed vendor applications for Farmers' Market",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Jackie Chabot",
-   "outcome": "unanimously approved",
+   "motion": "Approve the reviewed vendor applications for the Farmers' Market.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Jackie",
+   "outcome": "passed",
    "procedural": false,
    "quote": "maryrae made a motion to approve reviewed vendor applications for farmers' market; jackie seconded, commission unanimously approved."
   },
   {
-   "motion": "Approve running an advertisement in the Lunenburg Ledger for two weeks prior to market start",
-   "moved_by": "Jennifer Duffy",
-   "seconded_by": "Maryrae Holman",
-   "outcome": "unanimously approved",
+   "motion": "Approve running an advertisement in the Lunenburg Ledger for two weeks prior to the start of the market.",
+   "moved_by": "Jen",
+   "seconded_by": "Maryrae",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jen made a motion to approve running an advertisement in the lunenburg ledger for two weeks prior to the start of the market. maryrae seconded. commission ===page 2=== unanimou",
-   "quote_taken_from_text": true
+   "quote": "jen made a motion to approve running an advertisement in the lunenburg ledger for two weeks prior to the start of the market. maryrae seconded."
   },
   {
-   "motion": "Move the next meeting to June 1 and June 15, 2023 at 7:00 pm",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Jennifer Duffy",
-   "outcome": "unanimously approved",
+   "motion": "Move the next meeting to June 1, 7:00pm and June 15th, 7:00pm.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Jen",
+   "outcome": "passed",
    "procedural": true,
    "quote": "maryrae made a motion to move the next meeting to june 1, 7:00pm and june 15th, 7:00pm jen seconded commission unanimously approved"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Jackie Chabot",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Jackie",
+   "outcome": "passed",
    "procedural": true,
    "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08143349999999999
+ "note": "Text-extracted minutes, not a scan; all votes are readable. Votes were recorded as \"unanimously approved\" with no count printed, so outcome is \"passed\". The Ledger advertisement vote's quote is cut at the page break; its outcome sentence (\"unanimously approved\") falls on the next page. The \"Set Next Meeting Date\" and adjournment motions are marked procedural; the scheduling vote is a judgement call. No dollar figures appear anywhere, so budget_items and transfers are empty. Public comment was received as \"No public comment\" twice; no speaker is named. The agenda numbers \"8\" twice (Unfinished Business and Committee reports). Jorge Marzuca, Kira McClellan and Ashley York have no check mark; the minutes do not state they were absent, so their status is \"not stated\". The \"Vendors will be notified\" line was not recorded as a decision.",
+ "cost_usd": 0.014488710000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jackie chabot ✔"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member jorge marzuca"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate ashley york"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 7:17 pm",
+   "quote": "call to order meeting commencement time: 7:17 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "quote": "public comment/open discussion no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints reported",
+   "quote": "farm complaints no complaints",
+   "tags": [
+    "farms",
+    "complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of April 13, 2023",
+   "quote": "maryrae made a motion to approve the minutes from the following meetings: april 13, 2023 jackie seconded commission unanimously approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update (seasonal)",
+   "resolution": "approved vendor applications and Ledger advertisement",
+   "quote": "reviewed received applications for farmers' market;",
+   "tags": [
+    "farmers market",
+    "vendors",
+    "advertising"
+   ]
+  },
+  {
+   "topic": "Action items from previous meeting",
+   "resolution": "reviewed; bag order completed and bylaw history looked up",
+   "quote": "farmers' market actions completed to order bags, bylaw history information looked up",
+   "tags": [
+    "farmers market",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "reviewed past discussions on farm-size bylaw references and Article 41 (2016)",
+   "quote": "bylaw references to farm size, review past discussions",
+   "tags": [
+    "bylaws",
+    "farm size",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "each item reported no new information",
+   "quote": "lufa farms, new interest in brightfarm permit/location no new information",
+   "tags": [
+    "farms",
+    "permits",
+    "community gardens",
+    "inspections",
+    "marketing",
+    "bylaws",
+    "land"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no new information",
+   "quote": "committee reports: economic development comm., planning board, building reuse no new information",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no public comment",
+   "quote": "public comment/open discussion no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "moved to June 1 and June 15, 2023 at 7:00pm",
+   "quote": "maryrae made a motion to move the next meeting to june 1, 7:00pm and june 15th, 7:00pm jen seconded",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:30pm",
+   "quote": "motion to adjourn; jackie seconds. commission unanimously approved",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "farmers market",
+  "vendor applications",
+  "minutes approval",
+  "farm regulation",
+  "bylaws",
+  "farm size",
+  "community gardens",
+  "farm inspections",
+  "meeting scheduling",
+  "agricultural commission"
+ ],
+ "dropped_unquoted_by_field": {}
 }

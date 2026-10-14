@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-01-09",
  "docid": "149",
@@ -12,39 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of December 5, 2022",
+   "motion": "Accept and approve the minutes of the December 5, 2022 meeting as presented.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. fortune to accept and approve the minutes of the december 5, 2022 meeting as presented second: s. andrews roll call vote: all in favor"
+   "quote": "motion by d. fortune to accept and approve the minutes of the december 5, 2022 meeting as presented"
   },
   {
-   "motion": "Accept the HR Director's recommendation to update the Civilian Traffic Member job description and submit at next town meeting",
+   "motion": "Accept the HR Director's recommendation to update the Civilian Traffic Member job description and submit it to the next available town meeting for final approval.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by d. fortune to accept the recommendation of the hr director for the update of the civilian traffic member job description, and for it then to be submitted at the next available town meeting for final approval. second: s. andrews roll call vote: all in favor"
+   "quote": "motion by d. fortune to accept the recommendation of the hr director for the update of the civilian traffic member job description"
   },
   {
-   "motion": "Approve the HR Director's recommendation to offer the Facility Director position at Grade 16 step 5",
+   "motion": "Approve the HR Director's recommendation to offer the Facility Director role at Grade 16 step 5.",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to approve the recom mendation of the hr director to offer this role of facility director at grade 16 step 5. second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by s. andrews to approve the recom mendation of the hr director to offer this role of facility director at grade 16 step 5."
   },
   {
-   "motion": "Adjourn the meeting at 6:45pm",
+   "motion": "Adjourn the meeting at 6:45pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:45pm by j. bilotta second: d. fortune roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:45pm by j. bilotta"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0848585
+ "note": "Text extraction, not a scan. Attendance line is garbled in the source (\"Susan Andrew Eric Arnold, s, Donna Fortune, Wendy Bertrand\"); the attendee name printed there is \"Susan Andrew\" but motion lines say \"S. Andrews\", so the two are treated as likely the same person and the name is kept as printed. Votes are recorded only as \"All in Favor\" with no per-member tally or count. The adjournment motion reads \"Motion by to adjourn meeting at 6:45pm by J. Bilotta\" so the mover is ambiguous. Chief Gammel's internet trouble is noted, so his remote status is not stated. No dollar figures appear anywhere in the minutes; the budget items are pay grade and pay-plan timing only.",
+ "cost_usd": 0.01680761,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "presiding (opened the meeting; no title printed)",
+   "status": "present",
+   "quote": "wendy bertrand opened the meeting at 6:07pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrew",
+   "role": "committee member (printed as S. Andrews in motion lines)",
+   "status": "present",
+   "quote": "susan andrew eric arnold, s, donna fortune, wendy bertrand,"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "committee member (later arrival, 6:15pm)",
+   "status": "present",
+   "quote": "later arrivals joanna bilotta (6:13pm), eric arnold (6:15pm)"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "committee member (printed as D. Fortune in motion lines)",
+   "status": "present",
+   "quote": "susan andrew eric arnold, s, donna fortune, wendy bertrand,"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "committee member (later arrival, 6:13pm; printed as J. Bilotta in motion lines)",
+   "status": "present",
+   "quote": "later arrivals joanna bilotta (6:13pm), eric arnold (6:15pm)"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director; thomas gammel, police chief, bill bernard, dpw director, pauline roy, coa, nancy o'rourke, payroll and benefits coordinator/risk manager, barbara lefebvre, sewer business manager, mary beth bernard, hr consultant"
+  },
+  {
+   "name": "Mary Beth Bernard",
+   "role": "HR Consultant",
+   "status": "present",
+   "quote": "mary beth bernard brought the committee up to date on the job description/job classification project"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Facility Director pay grade and step",
+   "what_was_recorded": "The Facility Director role is a Grade 16, with the pay step targeted at step 5 given the candidate's background; the committee approved the offer. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the role will be a grade 16, and with this candidate's background, the pay step is targeted at step 5."
+  },
+  {
+   "topic": "Pay plan proposal timeline",
+   "what_was_recorded": "The HR Consultant reported the pay plan proposal review and final draft dates within the job classification project. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the pay plan proposal will be completed for review by february 8, 2023 and final drafts of proposal will be february 15, 2023."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comment opening: no public comments; Recreation Director update requested",
+   "quote": "there were no comments from the public, w. bertrand wanted to be sure to get an update on the recreation directors position."
+  },
+  {
+   "topic": "Public comment closing: no additional comments",
+   "quote": "there were no additional comments from committee, or from the public"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comments from the public; Recreation Director update requested by chair",
+   "quote": "there were no comments from the public, w. bertrand wanted to be sure to get an update on the recreation directors position.",
+   "tags": [
+    "public comment",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (December 5, 2022 meeting)",
+   "quote": "minutes of the december 5, 2022 meeting were presented and reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Job Description Revision: Civilian Traffic Member",
+   "resolution": "approved; to be submitted to next available town meeting",
+   "quote": "j. belliveau presented the updated civilian traffic member job description",
+   "tags": [
+    "job description",
+    "civilian traffic member",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "HR Consultant update: job description and classification project",
+   "resolution": "no action (progress report)",
+   "quote": "mary beth bernard brought the committee up to date on the job description/job classification project",
+   "tags": [
+    "job classification",
+    "HR consultant",
+    "pay plan"
+   ]
+  },
+  {
+   "topic": "Facility Director opening",
+   "resolution": "approved offer at Grade 16 step 5",
+   "quote": "j. belliveau updated the group on this opening.",
+   "tags": [
+    "hiring",
+    "facility director",
+    "pay grade"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "no action (scheduled)",
+   "quote": "as needed and regular meeting february 6, 2023 6pm",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "job classification",
+  "pay plan",
+  "facility director hiring",
+  "civilian traffic member",
+  "HR",
+  "town meeting",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

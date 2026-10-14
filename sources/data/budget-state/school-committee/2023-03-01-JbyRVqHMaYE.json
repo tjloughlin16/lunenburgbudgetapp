@@ -1,0 +1,75 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2023-03-01",
+ "source": {
+  "sha256": "af6a9154969e1693c86fad189aa5da11812a41b46557d0a7b8e6b5bde1d9fdd8",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2023-03-01-JbyRVqHMaYE.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "22 million 887 932 dollars",
+    "fiscal_year": 2024,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "Business manager gave the FY24 school budget total as it stood, a 2.52 percent increase.",
+    "status": "announced",
+    "t": 1347,
+    "who": "business manager"
+   },
+   {
+    "amount_as_heard": "6.2",
+    "fiscal_year": 2024,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Health insurance increase came in at 6.2 versus 8 percent in the January budget.",
+    "status": "announced",
+    "t": 1285,
+    "who": "business manager"
+   },
+   {
+    "amount_as_heard": "48 000",
+    "fiscal_year": 2024,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "Chapter 70 released as about a 48,000 increase.",
+    "status": "announced",
+    "t": 1389,
+    "who": "business manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "FY24 budget increase",
+    "condition": null,
+    "fiscal_year": 2024,
+    "prediction": "IT security cost could push the percent increase up slightly, though not to three percent",
+    "scope": "school",
+    "t": 2251,
+    "who": "business manager"
+   },
+   {
+    "about": "ESSER-funded positions",
+    "condition": "after next school year",
+    "fiscal_year": 2025,
+    "prediction": "Federal ESSER funds end, leaving a dead end for programs funded by them",
+    "scope": "school",
+    "t": 5860,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "JbyRVqHMaYE",
+ "video_url": "https://www.youtube.com/watch?v=JbyRVqHMaYE",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T01:18:27Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

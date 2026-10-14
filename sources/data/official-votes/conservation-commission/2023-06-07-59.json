@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-06-07",
  "docid": "59",
@@ -12,87 +12,803 @@
  },
  "votes": [
   {
-   "motion": "Approve pre-treatment plan at Hickory Hills Lake",
+   "motion": "Approve the pre-treatment plan at Hickory Hills Lake.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: rb, second: cc to approve the pre-treatment plan at hickory hills lake. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve application for reconstruction of single-family home and new sewage disposal system at 20 Fire Road 19",
+   "motion": "Approve the Notice of Intent application at 20 Fire Road 19 (Kenneth Bunting).",
    "moved_by": "RB",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: rb, second: ml to approve the application at 20 fire road 19. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Issue negative determination for septic system repair at 131 Cove Road",
+   "motion": "Issue a negative determination for the request for determination of applicability for a septic repair at 131 Cove Rd.",
    "moved_by": "ML",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: ml, second: mw for negative determination for this application of determination of applicability for a septic repair at 131 cove rd."
   },
   {
-   "motion": "Continue hearing on Hickory Hills Well Site pilot study to June 21",
+   "motion": "Continue the Hickory Hills Well pilot study hearing (Lunenburg Water District) to June 21st.",
    "moved_by": "ML",
    "seconded_by": "RT",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": true,
    "quote": "motion: ml, second: rt to continue the hearing to june 21st. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue hearing on Lunenburg Skate Park at 100 Chestnut Street to June 21",
+   "motion": "Continue the Lunenburg Skate Park, Inc. Notice of Intent hearing at 100 Chestnut Street to June 21st.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": true,
    "quote": "motion: rb, second: cc to continue the hearing to june 21st. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue hearing on proposed retaining walls and stairs at 647 Reservoir Road to June 21",
+   "motion": "Continue the Payne Notice of Intent hearing at 647 Reservoir Road to June 21st.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": true,
    "quote": "motion: rb, second: mw to continue the hearing to june 21st. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Approve removal of three trees at 17 Crocker Ave",
+   "motion": "Approve removal of the 3 trees at 17 Crocker Ave.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: rb, second: cc to approve removal of the 3 trees. roll call was unanimous to approve."
   },
   {
-   "motion": "Approve Certificate of Compliance for File # 208-619 at 611 Reservoir Road",
+   "motion": "Approve the Certificate of Compliance for File # 208-619 at 611 Reservoir Road.",
    "moved_by": "ML",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: ml, second: cc to approve the certificate of compliance for file # 208-619 at 611 reservoir road. roll call was unanimous to approve."
   },
   {
-   "motion": "Approve Certificate of Compliance for 147 Robbs Hill Road",
+   "motion": "Approve the Certificate of Compliance for File # 208-1141 at 611 Reservoir Road.",
+   "moved_by": "MW",
+   "seconded_by": "RB",
+   "outcome": "passed, roll call unanimous",
+   "procedural": false,
+   "quote": "to approve the certificate of compliance for file # 208-1141 at 611 reservoir road. roll call was unanimous to approve."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 147 Robbs Hill Road.",
    "moved_by": "RB",
-   "seconded_by": "MT",
-   "outcome": "passed unanimously",
+   "seconded_by": "MT (as printed; likely a typo, not a listed commissioner)",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "motion: rb, second: mt to approve the certificate of compliance for 147 robbs hill road. roll call was unanimous to approve."
   },
   {
-   "motion": "Adjourn at 11:00 PM",
+   "motion": "Adjourn the meeting at 11:00pm.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": true,
    "quote": "motion: rb, second: cc to adjourn at 11:00pm. roll call vote was unanimous to approve."
   }
  ],
- "dropped_unquoted": 2,
- "note": "All votes recorded in these minutes. Note: one motion lists \"MT\" as seconder (vote 11); this does not match any listed commission members (BP, RB, CC, MW, ML, RT, and Anna Petrie were present; JV was absent). This may be a typographical error in the original minutes.",
- "cost_usd": 0.10459349999999999
+ "dropped_unquoted": 1,
+ "note": "Text is an extraction of the minutes: line breaks and runs of spaces are collapsed in the quotes, and the source has dashes and curly apostrophes that were copied as printed where needed. Board members are recorded as printed (initials in roll call and motions); the header says ZOOM REMOTE, and the roll call lists them as present, so I did not mark them remote. Every vote except the minutes approval (none, tabled) is recorded with a stated result; two continuance motions and the 147 Robbs Hill second (\"MT\") are printed as written and the MT is probably a typo. The sand motion (MW/RB, continue to 6/21) is followed by \"Roll Call Vote was unanimous to approve,\" which reads oddly for a continuance; I recorded it as printed. Public comment at the opening reads \"none\", but the Hickory Hills hearing contains extensive public comment, which I recorded under public_comment. The minutes name \"Fran\" as LWD in most places and once as DPW; I kept \"Fran McNamara (LWD)\" as the attendee. The attendee \"Don LaBell\" is also printed as \"Don LaBelle.\" The minutes show no dollar amounts voted on; all figures are discussion or purchases reported by staff. Some board members are referred to by first initial with surname initial only, so their full names come from the header.",
+ "cost_usd": 0.03088531,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "bob p. resumed as chair for the meeting."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "mary wilson, vice chair"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "richard tremblay, clerk"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commissioner (referred to as Rich B.)",
+   "status": "present",
+   "quote": "rich b. asked if they would prevent the water from going over the dam during treatment."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commissioner",
+   "status": "absent",
+   "quote": "roll call: bp, rb, cc, mw, ml, rt, and anna petrie absent: jv"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "mike l. and catie agreed."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commissioner (referred to as Mike L.)",
+   "status": "present",
+   "quote": "mike l. spoke with christopher ruth about painting of the exterior first"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "roll call: bp, rb, cc, mw, ml, rt, and anna petrie absent: jv"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "Project Manager for Solitude Lake Management (for Hickory Hills Landowners)",
+   "status": "present",
+   "quote": "dominic meringolo, project manager for solitude lake management stated he was presenting"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "Dillis & Roy, representing the applicant (40 Laurel Lane)",
+   "status": "present",
+   "quote": "jack maloney (dillis & roy), on behalf of dennis and laura mcdonald"
+  },
+  {
+   "name": "Laura M.",
+   "role": "owner, 40 Laurel Lane (as named in the minutes)",
+   "status": "present",
+   "quote": "laura m. confirmed there is no lake access and they will not be removing any trees."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "karin menard (parks) stated they did not know this would be on the agenda and asked to table it."
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "chris ruth (facilities director) said he wanted the commission to see the early design."
+  },
+  {
+   "name": "Corrine Howard",
+   "role": "tenant, Hollis Road custodian license",
+   "status": "present",
+   "quote": "bob noted the tenant, corrine howard, received a letter from town counsel"
+  },
+  {
+   "name": "Dan Wolfe",
+   "role": "David Ross Associates, representing the applicant (20 Fire Road 19)",
+   "status": "present",
+   "quote": "dan wolfe (david ross associates) stated he was representing kenneth bunting"
+  },
+  {
+   "name": "Kenneth Bunting",
+   "role": "applicant (20 Fire Road 19)",
+   "status": "present",
+   "quote": "kenneth bunting clarified it is a slab, not a cellar hole."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the Jewells (131 Cove Road)",
+   "status": "present",
+   "quote": "doug smith, representing the jewells, stated this is an existing house in need of a new septic system."
+  },
+  {
+   "name": "Tom Mahanna",
+   "role": "VP, Tighe & Bond, representing Lunenburg Water District",
+   "status": "present",
+   "quote": "representing tighe & bond: tom mahanna, derek belanger, and rick canavan"
+  },
+  {
+   "name": "Derek Belanger",
+   "role": "Tighe & Bond, representing Lunenburg Water District",
+   "status": "present",
+   "quote": "representing tighe & bond: tom mahanna, derek belanger, and rick canavan"
+  },
+  {
+   "name": "Rick Canavan",
+   "role": "Tighe & Bond, representing Lunenburg Water District",
+   "status": "present",
+   "quote": "representing tighe & bond: tom mahanna, derek belanger, and rick canavan"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "LWD",
+   "status": "present",
+   "quote": "stated they go to every well site every day and will check the pilot study site daily or twice a day, if necessary."
+  },
+  {
+   "name": "Christine Schwinger",
+   "role": "LWD",
+   "status": "present",
+   "quote": "stated that the lwd would have liked to be there for that site visit, but they were not aware of it ===page 8=",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Joan Pease",
+   "role": "on behalf of the Woodlands Trustees; 11 Wintergreen Court",
+   "status": "present",
+   "quote": "joan pease, on behalf of the woodlands trustees, read a statement about communication of contact information with lunenburg water district (lwd)"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "as named in the minutes",
+   "status": "present",
+   "quote": "mark bursch asked for a list of all of the things the commission requested to share with tighe & bond"
+  },
+  {
+   "name": "Anna Wilkins",
+   "role": "North County land trust",
+   "status": "present",
+   "quote": "anna wilkins, north county land trust said they are planning to get 5 house lots."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "resident, Iris Court",
+   "status": "present",
+   "quote": "renee emkey (iris court) asked to confirm the length of the pilot study"
+  },
+  {
+   "name": "Andy Starvaski",
+   "role": "abutter, 8 Wintergreen Court",
+   "status": "present",
+   "quote": "stated that tighe & bond did not notify 60% of the abutters to the project and they were made aware of that fact."
+  },
+  {
+   "name": "Don LaBell",
+   "role": "resident, 102 Royal Fern Dr. (spelled LaBelle later in the minutes)",
+   "status": "present",
+   "quote": "don labell commented that he liked the application and asked about enforcement."
+  },
+  {
+   "name": "Jack Denny-Brown",
+   "role": "resident, 15 Wintergreen Court (with Ann Denny-Brown)",
+   "status": "present",
+   "quote": "asked about an alarm system for alerting engineers if there are issues."
+  },
+  {
+   "name": "Ann Denny-Brown",
+   "role": "resident, 15 Wintergreen Court (with Jack Denny-Brown)",
+   "status": "present",
+   "quote": "asked about an alarm system for alerting engineers if there are issues."
+  },
+  {
+   "name": "Donald Monro",
+   "role": "resident, 12 Wintergreen Court",
+   "status": "present",
+   "quote": "asked about the noise from pumping"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident",
+   "status": "present",
+   "quote": "asked tom m. how many of these studies they have conducted."
+  },
+  {
+   "name": "Iris Single",
+   "role": "resident, 13 Wintergreen Court",
+   "status": "present",
+   "quote": "asked how this project would impact the lives of the residents"
+  },
+  {
+   "name": "Rich Lodder",
+   "role": "resident, 130 Royal Fern Dr. (with Michelle Lodder)",
+   "status": "present",
+   "quote": "asked if something caused problems at the site, who would be liable"
+  },
+  {
+   "name": "Michelle Lodder",
+   "role": "resident, 130 Royal Fern Dr. (with Rich Lodder)",
+   "status": "present",
+   "quote": "asked if something caused problems at the site, who would be liable"
+  },
+  {
+   "name": "Debby Ricci",
+   "role": "resident, 10 Wintergreen Court",
+   "status": "present",
+   "quote": "asked how large truck traffic will impact the wetlands in the area."
+  },
+  {
+   "name": "John Fortune",
+   "role": "resident, 50 Hemlock Dr.",
+   "status": "present",
+   "quote": "asked for the location of the drywell and tom m. replied behind the pump station."
+  },
+  {
+   "name": "Bobbi Turkington",
+   "role": "resident, 110 Royal Fern Dr.",
+   "status": "present",
+   "quote": "stated concerns about the erosion/runoff so close to the lake"
+  },
+  {
+   "name": "Robin Sharra",
+   "role": "resident, 22 Wintergreen Court (with Shirley, Bill and Diane Sharra)",
+   "status": "present",
+   "quote": "asked about noise at the study site and derek replied he did not believe there would be any significant noise pollution."
+  },
+  {
+   "name": "Fred & Roberta Jewell",
+   "role": "applicants, 131 Cove Road (named in the agenda item; did not speak)",
+   "status": "not stated",
+   "quote": "request for determination of applicability by fred & roberta jewell for septic system repair, at 131 cove road."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the May 17, 2023 meeting tabled to the next meeting (no vote recorded).",
+   "quote": "minutes of previous meetings - may 17, 2023 - tabled to next meeting."
+  },
+  {
+   "decision": "Marshall Park Trail Plans discussion tabled at the Parks request.",
+   "quote": "the discussion was tabled."
+  },
+  {
+   "decision": "Hickory Hills: Rich B. asked Dominic to forward the acidifier label to the office.",
+   "quote": "rich b. asked dominic to forward the acidifier label to the office."
+  },
+  {
+   "decision": "Hickory Hills: Mary to work with Anna to give the LWD a complete list of corrective actions.",
+   "quote": "mary said she will work with anna to give them a complete list of corrective actions."
+  },
+  {
+   "decision": "Hickory Hills: Rich B. asked to be sent testing results and receipts for material hauled away.",
+   "quote": "rich b. asked to be sent testing results and receipts for material hauled away."
+  },
+  {
+   "decision": "Hickory Hills: Fran (LWD) to provide a history of PFAS data to the Commission; LWD to have someone address the hose discharge.",
+   "quote": "mary asked fran if he could provide a history of the data to share with the commission and he said he would."
+  },
+  {
+   "decision": "LWD to have someone address the water coming from the hoses at the well site.",
+   "quote": "he will have someone go and take care of it."
+  },
+  {
+   "decision": "Definition of Rivers moved to the next meeting for discussion.",
+   "quote": "the commission agreed they want to discuss the topic but do so at the next meeting."
+  },
+  {
+   "decision": "Timing of election of officers placed on the next agenda by Bob.",
+   "quote": "bob will add it to the next agenda."
+  },
+  {
+   "decision": "Hay Rights: Bob to contact the haying tenant at Laurelbank to verify interest.",
+   "quote": "he will contact him to verify he is still interested."
+  },
+  {
+   "decision": "950 Chase Road: after no response to Town Counsel letter, staff to go to the Select Board to seek authorization for litigation.",
+   "quote": "so they will be going to the select board to ask for authorization for litigation."
+  },
+  {
+   "decision": "Skate Park hearing: Anna to contact Greg for an update.",
+   "quote": "bob asked anna to contact greg to get an update."
+  },
+  {
+   "decision": "Howard Street driveway: answer on FY23 or FY24 timing expected by the next meeting.",
+   "quote": "they should know by the next meeting if it will be done in fy23 or fy24."
+  },
+  {
+   "decision": "Timber sales: Bob to contact the forester about when King Associates will log the Rayno property.",
+   "quote": "bob will contact the forester to see when king associates will be out to log the rayno property."
+  },
+  {
+   "decision": "Title searches: Bob to ask Town Counsel for an update on the title searches for the three properties.",
+   "quote": "bob will ask town counsel for an update on the title searches."
+  },
+  {
+   "decision": "Sunset Road parcel (Elaine Peterson letter): discussion tabled; Rich B. to send Bob the questions to research for the next agenda.",
+   "quote": "bob asked rich to send him what they needed to find out and put it on the agenda for the next meeting."
+  },
+  {
+   "decision": "Bob to send pole specifications to Unitil.",
+   "quote": "he will send the specs to unitil"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road tenant painting and kitchen",
+   "what_was_recorded": "The exterior painting is doable but the kitchen was estimated at about $40K, so the method needs work.",
+   "quote": "but the kitchen will cost about $40k, so they will need to work on how to do it.",
+   "figures_as_printed": [
+    "$40K"
+   ]
+  },
+  {
+   "topic": "Conservation land tools and supplies",
+   "what_was_recorded": "Bob bought saw blades, bits and chain for conservation land work.",
+   "quote": "saw blades, bits, and pieces of chain for $137.",
+   "figures_as_printed": [
+    "$137"
+   ]
+  },
+  {
+   "topic": "Footbridge railing lumber",
+   "what_was_recorded": "Bob ordered lumber for railings on the footbridges by Mulpus Brook.",
+   "quote": "he also ordered $700 of lumber for railings on the footbridges next to the mulpus brook",
+   "figures_as_printed": [
+    "$700"
+   ]
+  },
+  {
+   "topic": "Howard Street driveway funding",
+   "what_was_recorded": "Whether the Howard Street driveway is funded depends on the FY23 DPW budget; no dollar figure was printed.",
+   "quote": "bob wrote a letter to bill bernard (dpw) to see if he had money in the fy23 budget to do the driveway.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Title searches for acquisitions",
+   "what_was_recorded": "Title searches on three properties will proceed one at a time until the money runs out; no dollar figure printed.",
+   "quote": "they will do them one at a time until they run out of money.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Hickory Hills pilot study holding-tank cost",
+   "what_was_recorded": "The pilot study duration was shortened from one year to 6-9 months to reduce the LWD's cost of renting the holding tank; no dollar figure printed.",
+   "quote": "they reduced the time from 1 year to 6-9 months to lessen the costs to the lwd of renting the holding tank.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Hickory Hills pilot study hearing: Woodlands procedural objection",
+   "speaker": "Joan Pease",
+   "stated_role": "on behalf of the Woodlands Trustees",
+   "quote": "joan pease, on behalf of the woodlands trustees, read a statement about communication of contact information with lunenburg water district (lwd)"
+  },
+  {
+   "topic": "Pilot study length and results turnaround",
+   "speaker": "Renee Emkey",
+   "stated_role": "Iris Court",
+   "quote": "renee emkey (iris court) asked to confirm the length of the pilot study"
+  },
+  {
+   "topic": "Abutter notification",
+   "speaker": "Andy Starvaski",
+   "stated_role": "8 Wintergreen Court, abutter",
+   "quote": "stated that tighe & bond did not notify 60% of the abutters to the project and they were made aware of that fact."
+  },
+  {
+   "topic": "Whether the NOI would be updated before approval",
+   "speaker": "Don LaBell",
+   "stated_role": "102 Royal Fern Dr.",
+   "quote": "asked if the noi would be updated with specifics before it is approved."
+  },
+  {
+   "topic": "Alarm system for overflow or leaks",
+   "speaker": "Jack Denny-Brown",
+   "stated_role": "15 Wintergreen Court",
+   "quote": "asked about an alarm system for alerting engineers if there are issues."
+  },
+  {
+   "topic": "Noise from pumping",
+   "speaker": "Donald Monro",
+   "stated_role": "12 Wintergreen Court",
+   "quote": "asked about the noise from pumping"
+  },
+  {
+   "topic": "Number of similar studies by the engineer",
+   "speaker": "Dave MacDonald",
+   "stated_role": "not stated",
+   "quote": "asked tom m. how many of these studies they have conducted."
+  },
+  {
+   "topic": "Safeguards against tank leaks and freezing",
+   "speaker": "Renee Emkey",
+   "stated_role": "6 Iris Court",
+   "quote": "asked what safeguards are in place if there are leaks in the holding tank"
+  },
+  {
+   "topic": "Past well operation and soil PFAS",
+   "speaker": "Joan Pease",
+   "stated_role": "11 Wintergreen Court",
+   "quote": "noted in the past the lwd has run this well, at full force"
+  },
+  {
+   "topic": "Impact on residents and downstream lakes",
+   "speaker": "Iris Single",
+   "stated_role": "13 Wintergreen Court",
+   "quote": "asked how this project would impact the lives of the residents"
+  },
+  {
+   "topic": "Liability if something goes wrong",
+   "speaker": "Rich Lodder",
+   "stated_role": "130 Royal Fern Dr.",
+   "quote": "asked if something caused problems at the site, who would be liable"
+  },
+  {
+   "topic": "Truck traffic and wetlands",
+   "speaker": "Debby Ricci",
+   "stated_role": "10 Wintergreen Court",
+   "quote": "asked how large truck traffic will impact the wetlands in the area."
+  },
+  {
+   "topic": "Drywell location and ground indentation",
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Dr.",
+   "quote": "asked for the location of the drywell and tom m. replied behind the pump station."
+  },
+  {
+   "topic": "Erosion and runoff near the lake",
+   "speaker": "Bobbi Turkington",
+   "stated_role": "110 Royal Fern Dr.",
+   "quote": "stated concerns about the erosion/runoff so close to the lake"
+  },
+  {
+   "topic": "Noise at the study site",
+   "speaker": "Robin Sharra",
+   "stated_role": "22 Wintergreen Court (with Shirley, Bill and Diane Sharra)",
+   "quote": "asked about noise at the study site and derek replied he did not believe there would be any significant noise pollution."
+  },
+  {
+   "topic": "Walk-through of the site",
+   "speaker": "Don LaBelle",
+   "stated_role": "102 Royal Fern Dr.",
+   "quote": "asked if the commission had been to the site for a walk-through"
+  },
+  {
+   "topic": "Notification of LWD and Woodlands for site visits",
+   "speaker": "Mark Bursch",
+   "stated_role": "not stated",
+   "quote": "mark bursch asked for a list of all of the things the commission requested to share with tighe & bond"
+  },
+  {
+   "topic": "Land acquisition and house lots near Catacoonamug Brook",
+   "speaker": "Anna Wilkins",
+   "stated_role": "North County land trust",
+   "quote": "anna wilkins, north county land trust said they are planning to get 5 house lots."
+  },
+  {
+   "topic": "Fire Road NOI enforcement",
+   "speaker": "Don LaBell",
+   "stated_role": "102 Royal Fern Dr.",
+   "quote": "don labell commented that he liked the application and asked about enforcement."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of May 17, 2023",
+   "resolution": "tabled to next meeting",
+   "quote": "tabled to next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Lake pretreatment plan (DEP 209-1266)",
+   "resolution": "approved",
+   "quote": "to approve the pre-treatment plan at hickory hills lake.",
+   "tags": [
+    "aquatic weeds",
+    "herbicide",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "40 Laurel Lane preliminary discussion (Lake Whalom dock and deck)",
+   "resolution": "no action; preliminary discussion",
+   "quote": "the owners want to put in a 25x10 wooden deck at the top of the slope and a set of stairs",
+   "tags": [
+    "Lake Whalom",
+    "dock",
+    "stairs"
+   ]
+  },
+  {
+   "topic": "Marshall Park trail plans",
+   "resolution": "tabled",
+   "quote": "the discussion was tabled.",
+   "tags": [
+    "trails",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Hollis Road tenant custodian license agreement",
+   "resolution": "no action; reporting arrangement discussed",
+   "quote": "corrine stated she had talked to anna and will set it up in google docs to share reports and hours.",
+   "tags": [
+    "Hollis Road",
+    "tenant",
+    "painting"
+   ]
+  },
+  {
+   "topic": "Sand addition at town beach, 265 Prospect Street (RDA)",
+   "resolution": "continued to 6/21",
+   "quote": "to continue to 6/21 and have the town facilities try to reclaim as much sand as they can.",
+   "tags": [
+    "beach",
+    "sand",
+    "erosion",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "NOI, 20 Fire Road 19 (Kenneth Bunting)",
+   "resolution": "approved",
+   "quote": "to approve the application at 20 fire road 19.",
+   "tags": [
+    "house reconstruction",
+    "septic",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "RDA, septic repair at 131 Cove Road",
+   "resolution": "negative determination",
+   "quote": "for negative determination for this application of determination of applicability for a septic repair",
+   "tags": [
+    "septic",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "NOI, Hickory Hills Well pilot study (Lunenburg Water District, DEP 208-1294)",
+   "resolution": "continued to June 21st",
+   "quote": "to continue the hearing to june 21st.",
+   "tags": [
+    "PFAS",
+    "water treatment",
+    "well",
+    "Hickory Hills",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "NOI, Lunenburg Skate Park, 100 Chestnut Street (DEP 208-1290)",
+   "resolution": "continued to June 21st (no applicant present)",
+   "quote": "bob stated no one from the skate park or dillis & roy were present and asked for a motion to continue.",
+   "tags": [
+    "skate park",
+    "drainage",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "NOI, retaining walls, patio and stairs at 647 Reservoir Road (DEP 208-1289)",
+   "resolution": "continued to June 21st",
+   "quote": "anna reported the applicants requested a continuance to june 21st.",
+   "tags": [
+    "retaining wall",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Definition of rivers",
+   "resolution": "deferred to next meeting",
+   "quote": "the commission agreed they want to discuss the topic but do so at the next meeting.",
+   "tags": [
+    "rivers",
+    "definitions"
+   ]
+  },
+  {
+   "topic": "Timing of election of officers",
+   "resolution": "placed on next agenda",
+   "quote": "bob will add it to the next agenda.",
+   "tags": [
+    "officers",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Old business: grant applications, timber rights, hay rights, Hollis Road fuel, 950 Chase Road",
+   "resolution": "updates given; litigation authorization to be sought",
+   "quote": "so they will be going to the select board to ask for authorization for litigation.",
+   "tags": [
+    "encroachment",
+    "litigation",
+    "hay rights",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Administrative determination, 17 Crocker Ave tree removal",
+   "resolution": "approved",
+   "quote": "to approve removal of the 3 trees.",
+   "tags": [
+    "trees",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance (611 Reservoir Road, 147 Robbs Hill Road)",
+   "resolution": "approved",
+   "quote": "to approve the certificate of compliance for 147 robbs hill road.",
+   "tags": [
+    "certificate of compliance",
+    "open orders"
+   ]
+  },
+  {
+   "topic": "Enforcement: EO 23 Cove Road and NON 205 Sunset",
+   "resolution": "no update; NON 205 Sunset scheduled for the 21st",
+   "quote": "anna reported they are scheduled for the 21st.",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space: Howard Street driveway",
+   "resolution": "awaiting DPW budget answer",
+   "quote": "they should know by the next meeting if it will be done in fy23 or fy24.",
+   "tags": [
+    "Howard Street",
+    "DPW",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Timber sales and conservation land improvements",
+   "resolution": "no update on timber; purchases reported",
+   "quote": "saw blades, bits, and pieces of chain for $137.",
+   "tags": [
+    "timber",
+    "conservation land",
+    "purchases"
+   ]
+  },
+  {
+   "topic": "Open space: title searches and acquisitions",
+   "resolution": "title searches to be requested from Town Counsel",
+   "quote": "bob will ask town counsel for an update on the title searches.",
+   "tags": [
+    "land acquisition",
+    "title searches",
+    "Cowdrey",
+    "Page St"
+   ]
+  },
+  {
+   "topic": "Communications: Sunset parcel (Elaine Peterson letter) and Chapter 61",
+   "resolution": "tabled to next meeting",
+   "quote": "he suggested tabling the discussion to another meeting.",
+   "tags": [
+    "Chapter 61",
+    "greenway",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:00pm",
+   "quote": "motion: rb, second: cc to adjourn at 11:00pm. roll call vote was unanimous to approve.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "Hickory Hills Lake",
+  "Lunenburg Water District",
+  "PFAS",
+  "Hickory Hills well pilot study",
+  "certificates of compliance",
+  "conservation land",
+  "land acquisition",
+  "Chapter 61",
+  "officer elections",
+  "continuances"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-12-05",
  "docid": "3497",
@@ -12,31 +12,145 @@
  },
  "votes": [
   {
-   "motion": "To accept and approve the minutes of the November 7, 2022 meeting",
+   "motion": "Accept and approve the minutes of the November 7, 2022 meeting as presented.",
    "moved_by": "D. Fortune",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. fortune to accept and approve the minutes of the november 7, 2022 meeting as presented second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by d. fortune to accept and approve the minutes of the november 7, 2022 meeting as presented"
   },
   {
-   "motion": "To accept the recommendation of the HR Director to hire a new videographer as Grade 3, Step 3",
+   "motion": "Accept the recommendation of the HR Director to hire a new videographer as a Grade 3, Step 3.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by w. bertrand to accept the recommendation of the hr director to hire this new videographer as a grade 3, step 3. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by w. bertrand to accept the recommendation of the hr director to hire this new videographer as a grade 3, step 3."
   },
   {
-   "motion": "To adjourn the meeting",
-   "moved_by": "E. Arnold",
+   "motion": "Adjourn the meeting at 6:10 pm.",
+   "moved_by": "",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:10 pm by e. arnold second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:10 pm by e. arnold"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1031405
+ "note": "Text is clean extracted text (one page), not a scan. Votes are recorded only as \"All in Favor\" with no vote counts and no individual roll-call names. The adjournment motion names no mover in the text (\"Motion by to adjourn ... by E. Arnold\"); moved_by is left blank rather than inferred. The videographer pay placement is discussed in grade and step terms only; no dollar figure appears in the minutes. Public comment was recorded as none.",
+ "cost_usd": 0.013258510000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Arnold",
+   "role": "not stated (opened the meeting)",
+   "status": "present",
+   "quote": "e. arnold opened the meeting at 6:00 pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member (as listed under Attendees)",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, wendy bertrand"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member (as listed under Attendees)",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, wendy bertrand"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member (as listed under Attendees)",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, wendy bertrand"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "j. belliveau presented a new hire request from the pac for a videographer."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "PAC Manager",
+   "status": "present",
+   "quote": "j. mclaughlin the pac manager outlined the broad experience of the candidate"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: joanna bilotta"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Pay placement for new videographer hire (PAC)",
+   "what_was_recorded": "The PAC Manager asked that the candidate be placed in Grade 3, Step 3 because of experience above the job description; the minutes record no dollar figure, and state there would be no adverse impact on current employees.",
+   "figures_as_printed": [],
+   "quote": "she requested that the candidate be place in grade 3, step 3. general discussion on any adverse"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, November 7, 2022",
+   "resolution": "approved",
+   "quote": "minutes of the november 7, 2022 meeting were presented and reviewed.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "New hire request: PAC videographer",
+   "resolution": "approved hire at Grade 3, Step 3",
+   "quote": "j. belliveau presented a new hire request from the pac for a videographer.",
+   "tags": [
+    "hiring",
+    "pay grade",
+    "PAC"
+   ]
+  },
+  {
+   "topic": "Reclassification Project update",
+   "resolution": "no action; on target, onsite interviews set for 12/19/22",
+   "quote": "j. belliveau gave an update on the reclassification project, which, as of this date, is on target as outlined in the original proposal timeline.",
+   "tags": [
+    "reclassification",
+    "job descriptions"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; no comments",
+   "quote": "there were no comments from committee, nor from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:10 pm",
+   "quote": "motion by to adjourn meeting at 6:10 pm by e. arnold",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "hiring",
+  "pay grade",
+  "reclassification",
+  "Personnel Committee",
+  "PAC",
+  "minutes approval",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-02-07",
  "docid": "289",
@@ -12,15 +12,397 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
-   "outcome": "passed 3-0",
+   "motion": "To adjourn the meeting at 7:30pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: brett r. to adjourn at 7:30pm second: mike n. roll call vote: brett-aye, mike n.-aye, and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is a scanned document (OCR by macOS Vision). The meeting consisted of a budget workshop with discussion of the FY24 preliminary operating budget draft, but no votes were taken on any budget items or proposals. Only the motion to adjourn was voted on.",
- "cost_usd": 0.0095913
+ "note": "Text is macOS Vision OCR of the minutes; several OCR errors are visible (e.g. \"I/l\" for I/I, \"Bil's\" for Bill's, \"$2OK\" in the source for $20K, \"Mass Ave #1\" and \"Dana St.\" as read). Quotes are copied as they appear in the OCR text. The meeting was held via Zoom; the minutes list attendees but do not state per-person mode, so presence is recorded as the minutes list it. Only one motion is recorded (adjournment, roll call 3 ayes, count not printed so outcome is \"passed\"). No vote on the budget itself. Al Packard is named as the pump station contractor but is not recorded as taking part, so he is omitted from attendees. Budget figures are preliminary draft estimates as the minutes print them; the minutes do not say which were adopted.",
+ "cost_usd": 0.00786639,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, member: mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, assistant business manager- paula bertram and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Assistant Business Manager",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, assistant business manager- paula bertram and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, assistant business manager- paula bertram and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "member (as listed)",
+   "status": "absent",
+   "quote": "absent: mike deveikis and dave macdonald"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "member (as listed)",
+   "status": "absent",
+   "quote": "absent: mike deveikis and dave macdonald"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Operating budget draft left unbalanced; it goes to the Town Manager as a preliminary draft and the Commission will discuss it at future meetings.",
+   "quote": "the commission does not need to balance it now as this is just a preliminary operating budget draft for the town manager."
+  },
+  {
+   "decision": "The new $12K administration consulting services line was agreed by all members present.",
+   "quote": "john pointed out it is a new line for $12k and all agreed."
+  },
+  {
+   "decision": "Business Manager to raise with the Town Manager whether the ARPA funding requests are included in this budget.",
+   "quote": "barb will talk with the town manager regarding having these funds included in this budget."
+  },
+  {
+   "decision": "Business Manager to discuss increasing the OPEB funding with the Town Accountant.",
+   "quote": "barb suggested increasing to $1k and will discuss with the town accountant."
+  },
+  {
+   "decision": "DPW Director to discuss pump station safety issues with the pump station contractor.",
+   "quote": "bill said the safety issues would be for laypersons entering the station and he will discuss this with al."
+  },
+  {
+   "decision": "Commission to discuss the requirement for a copy of the plumbing permit at its next meeting.",
+   "quote": "he suggested the commission discuss it at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Expected user charges and deduct meters",
+   "what_was_recorded": "Revenue estimate for user charges and deduct meter fees, with user counts.",
+   "figures_as_printed": [
+    "$1.2M",
+    "927 users",
+    "$2,800",
+    "54 users"
+   ],
+   "quote": "expected user charges are $1.2m. (927 users), deduct meters - $2,800 for 54 users, connection fees - $17k"
+  },
+  {
+   "topic": "Connection fees",
+   "what_was_recorded": "Connection fee revenue estimate, assuming six new connections.",
+   "figures_as_printed": [
+    "$17K"
+   ],
+   "quote": "connection fees - $17k (assuming 6 new connections)"
+  },
+  {
+   "topic": "Grease trap permit fees",
+   "what_was_recorded": "Proposed fees for compliant grease trap accounts; non-compliant fees may not be budgeted.",
+   "figures_as_printed": [
+    "$50",
+    "$100"
+   ],
+   "quote": "she proposed charging $50 for internal traps and $100 for external interceptors if compliant."
+  },
+  {
+   "topic": "Sewer bank and I/I remediation",
+   "what_was_recorded": "Sewer bank money collected last year went to stabilization; I/I remediation is required annually and is estimated at this amount.",
+   "figures_as_printed": [
+    "$9,900",
+    "$10K"
+   ],
+   "quote": "we are required to spend money every year on i/l remediation and for this budget we've estimated spending $10k."
+  },
+  {
+   "topic": "Payroll and COLA",
+   "what_was_recorded": "Payroll is largely estimated; a cost of living increase is included.",
+   "figures_as_printed": [
+    "3.5%"
+   ],
+   "quote": "there is also a cost of living (cola) increase of 3.5%."
+  },
+  {
+   "topic": "Pump station repairs",
+   "what_was_recorded": "Pump station repairs line increased from last year, compared with the amount spent in 2020.",
+   "figures_as_printed": [
+    "$20K",
+    "$47K",
+    "$10K"
+   ],
+   "quote": "in 2020, they spent $47k, so he bumped it up to $20k from $10k"
+  },
+  {
+   "topic": "Sewer line jetting, manhole repairs, meter pits",
+   "what_was_recorded": "Line items for jetting, manhole repairs and meter lease.",
+   "figures_as_printed": [
+    "$15K",
+    "$10K",
+    "$5,400"
+   ],
+   "quote": "sewer lines-jetting increased to $15k. manhole repairs - $10k. meter pits/flow meters - $5,400 for lease of the meters."
+  },
+  {
+   "topic": "Outsourcing for new O&M contract",
+   "what_was_recorded": "Outsourcing line increased for the new O&M contract, which is to be rebid.",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "outsourcing - was increased to $120k for the new o&m contract because it will be a new contract."
+  },
+  {
+   "topic": "Generator maintenance contract",
+   "what_was_recorded": "Generator maintenance contract with Weld.",
+   "figures_as_printed": [
+    "$7K"
+   ],
+   "quote": "generator maintenance contract with weld- $7k."
+  },
+  {
+   "topic": "Administration consulting services",
+   "what_was_recorded": "New line to fund consulting or office cover after the Business Manager retires; agreed.",
+   "figures_as_printed": [
+    "$12K"
+   ],
+   "quote": "john pointed out it is a new line for $12k and all agreed."
+  },
+  {
+   "topic": "Legal",
+   "what_was_recorded": "Legal budgeted yearly; may rise if the IMA with Leominster is taken to Town Counsel.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "legal - budgeted yearly at $5k."
+  },
+  {
+   "topic": "Engineering services",
+   "what_was_recorded": "Engineering line increased for 40B questions and pump station upgrades, plus flow meter data work.",
+   "figures_as_printed": [
+    "$30K",
+    "$5K",
+    "$35k"
+   ],
+   "quote": "plus $5k for flow meter data and calibration, for a total of $35k."
+  },
+  {
+   "topic": "Capital plan",
+   "what_was_recorded": "Capital set at a figure in case ARPA funds are not received, split between pump stations and manholes.",
+   "figures_as_printed": [
+    "$96K",
+    "$56K",
+    "$40K"
+   ],
+   "quote": "capital plan -was set at $96k in case the arpa funds are not received ($56k for planned pump station upgrades and $40k manhole maintenance)."
+  },
+  {
+   "topic": "Leominster debt service",
+   "what_was_recorded": "Debt service increased for additional debt coming due in FY24.",
+   "figures_as_printed": [
+    "$56K"
+   ],
+   "quote": "leominster debt service (increased to $56k for fy24 for additional debt coming due)"
+  },
+  {
+   "topic": "Leominster and Fitchburg usage",
+   "what_was_recorded": "Projected usage payments to Leominster and Fitchburg.",
+   "figures_as_printed": [
+    "$520K",
+    "$220K"
+   ],
+   "quote": "leominster usage is projected as $520k and fitchburg usage as $220k."
+  },
+  {
+   "topic": "Leominster and Fitchburg connection charges",
+   "what_was_recorded": "Per-connection payments to Leominster and the Fitchburg connection estimate.",
+   "figures_as_printed": [
+    "$750",
+    "$2000"
+   ],
+   "quote": "barb noted they pay $750 for every connection and is based on 5 residential connections."
+  },
+  {
+   "topic": "Indirect costs transfer",
+   "what_was_recorded": "Indirect cost transfer from the town accountant, including 15% of the DPW Director's time.",
+   "figures_as_printed": [
+    "$87K",
+    "15%"
+   ],
+   "quote": "barb noted the transfer is $87k and includes 15% of bil's time."
+  },
+  {
+   "topic": "OPEB funding",
+   "what_was_recorded": "OPEB funding usually set at a fixed amount since FY19; increase to $1K proposed.",
+   "figures_as_printed": [
+    "$656",
+    "$1K"
+   ],
+   "quote": "opeb funding- usually put $656 since fy19 but barb suggested increasing to $1k"
+  },
+  {
+   "topic": "Total expenses, revenues and deficit",
+   "what_was_recorded": "Preliminary totals: expenses about $2.1 million, revenues about $1.9 million, deficit to be adjusted.",
+   "figures_as_printed": [
+    "$2.1 million",
+    "$1.9 million",
+    "$183K"
+   ],
+   "quote": "total expenses- $2.1 million and total revenues- $ 1.9 million."
+  },
+  {
+   "topic": "Deficit to be adjusted",
+   "what_was_recorded": "The $183K deficit will be adjusted after betterments and debt service are worked through.",
+   "figures_as_printed": [
+    "$183K"
+   ],
+   "quote": "barb added the deficit of $183k will be adjusted after she works through the betterments and debt service."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Town Meeting transfer to Capital Reserve/Stabilization Fund for emergencies, historically 3% of revenue.",
+   "amount_as_printed": "3% of revenue",
+   "outcome": "discussed; no vote recorded",
+   "quote": "they historically transfer 3% of revenue to capital reserve/stabilization fund for emergencies of substantial nature."
+  },
+  {
+   "description": "Reserve Capacity transfer: 20% of Stabilization Fund balance for the next 5 years to defray JF Highway costs and Leominster debt service.",
+   "amount_as_printed": "20%",
+   "outcome": "discussed; no vote recorded",
+   "quote": "the plan was to transfer 20% of the stabilization fund balance for the next 5 years to defray the jf highway"
+  },
+  {
+   "description": "Indirect cost transfer from the town accountant, including 15% of the DPW Director's time.",
+   "amount_as_printed": "$87K",
+   "outcome": "discussed; no vote recorded",
+   "quote": "barb noted the transfer is $87k and includes 15% of bil's time."
+  },
+  {
+   "description": "Reserve Capacity Fund transfer for the John Fitch Highway debt: fully funded this year, will need funds pulled next year.",
+   "amount_as_printed": "not stated",
+   "outcome": "discussed; no vote recorded",
+   "quote": "the reserve capacity fund transfer for the john fitch highway debt is fully-funded this year but will need to pull from funds for next year."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John",
+   "stated_role": "Chair",
+   "topic": "deduct/irrigation meter and plumbing permit requirement",
+   "quote": "public comment- john stated that he'd put in a deduct/irrigation meter this week. he noted that the commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: plumbing permit copy requirement",
+   "resolution": "referred to next meeting",
+   "tags": [
+    "plumbing permit",
+    "public comment"
+   ],
+   "quote": "he suggested the commission discuss it at the next meeting."
+  },
+  {
+   "topic": "FY24 Budget discussion",
+   "resolution": "reviewed line by line; left unbalanced as preliminary draft for Town Manager",
+   "tags": [
+    "FY24 budget",
+    "operating budget",
+    "revenue",
+    "expenses"
+   ],
+   "quote": "fy24 budget discussion- barb screen-shared the fy24 budget draft and john clarified they will be reviewing the"
+  },
+  {
+   "topic": "Grease trap permit fees",
+   "resolution": "discussed; fee proposal of $50 and $100 noted; no vote",
+   "tags": [
+    "grease trap",
+    "fees"
+   ],
+   "quote": "she proposed charging $50 for internal traps and $100 for external interceptors if compliant."
+  },
+  {
+   "topic": "Capital plan and ARPA funding",
+   "resolution": "discussed; ARPA inclusion to be raised with Town Manager",
+   "tags": [
+    "capital plan",
+    "ARPA",
+    "pump stations",
+    "manholes"
+   ],
+   "quote": "capital plan -was set at $96k in case the arpa funds are not received"
+  },
+  {
+   "topic": "Pump station safety and tracking",
+   "resolution": "discussed; follow-ups assigned",
+   "tags": [
+    "pump stations",
+    "safety",
+    "tracking"
+   ],
+   "quote": "john suggested looking into formalizing it and consider adding it to the cte contract."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "february 14, 2023 @ 6pm - regular meeting, remote participation"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: brett r. to adjourn at 7:30pm second: mike n. roll call vote: brett-aye, mike n.-aye, and john-aye."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "FY24 budget",
+  "operating budget",
+  "capital plan",
+  "pump stations",
+  "I/I remediation",
+  "Leominster IMA",
+  "Fitchburg",
+  "OPEB",
+  "grease trap",
+  "ARPA",
+  "budget workshop"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-03-06",
  "docid": "142",
@@ -12,39 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Move the Consultants presentation to the beginning of the agenda",
+   "motion": "Move the consultant's presentation to the beginning of the meeting to accommodate her call-in during vacation.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to move the consultants presentation on the agenda to the beginning of meeting, to accommodate her agreement to call in during her vacation. seconded: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to move the consultants presentation on the agenda to the beginning of meeting, to accommodate her agreement to call in during her vacation."
   },
   {
-   "motion": "Accept and approve the minutes of the March 6, 2023 meeting",
+   "motion": "Accept and approve the minutes of the March 6, 2023 meeting as presented.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to accept and approve the minutes of the march 6, 2023 meeting as presented second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept and approve the minutes of the march 6, 2023 meeting as presented"
   },
   {
-   "motion": "Accept the recommendation with one minor clarification for the submission of the committee's Town Meeting Article",
+   "motion": "Accept the HR Director's recommendation, with one minor clarification, for the committee's Town Meeting article submission.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation, with one minor clarification, that had been proposed by the hr director for the submission of the committees town meeting article. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation, with one minor clarification, that had been proposed by the hr director for the submission of the committees town meeting article."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:55pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:55pm by j. bilotta second: d. fortune roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:55pm by j. bilotta"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1115965
+ "note": "Text is a clean extraction; no scan. No dollar figures appear anywhere; the only money reference is a discussion of town spending with no amount. Votes are printed as 'All in Favor' with no numeric count, so outcome is recorded as 'passed'. The minutes approve the March 6, 2023 minutes, which is the meeting these minutes record; recorded as printed. The mover is printed 'S. Andrews' in motions and 'Susan Andrew' in the attendance list. Per-person attendance mode (in person or Zoom) is not stated; the meeting itself is listed as Zoom. The first public comment does not name its speaker. Mary Beth Bernard attended 6:03pm to 6:23pm only.",
+ "cost_usd": 0.01550801,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrew",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "joanna bilotta opened the meeting at 6:03pm with members noted in attendance"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, barbara lefebvre, sewer business manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, barbara lefebvre, sewer business manager"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits/risk manager, pauline roy, coa outreach coordinator,"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits/risk manager, pauline roy, coa outreach coordinator,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager; mary beth bernard, hr consultant (6:03pm - 6:23pm)"
+  },
+  {
+   "name": "Mary Beth Bernard",
+   "role": "HR Consultant",
+   "status": "present",
+   "quote": "heather lemieux, town manager; mary beth bernard, hr consultant (6:03pm - 6:23pm)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Bilotta requested that J. Belliveau make the consultant's HR proposal material available to others (no vote recorded).",
+   "quote": "j. bilotta requested that j. belliveau make the material available to others."
+  },
+  {
+   "decision": "The entire committee agreed that a great deal of analysis was needed before deciding how to proceed on the HR proposal (no vote recorded).",
+   "quote": "the entire committee agreed that a great deal of analysis was needed to determine how to proceed."
+  },
+  {
+   "decision": "The group agreed to meet again the following Monday (March 13, 2023) to see whether additional analysis was available (no vote recorded).",
+   "quote": "the group agreed to meet again the following monday, hoping that additional analysis would become available"
+  },
+  {
+   "decision": "J. Belliveau and H. Lemieux would go back to IT to research the job-description comment problem (no vote recorded).",
+   "quote": "j. belliveau/h. lemieux would go back to it to research this issue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town spending impact of the proposed SAP salary grid change",
+   "what_was_recorded": "The committee said it would need to learn what the grid change would mean for actual town spending, for 2023 or spread into 2024; no amount is printed.",
+   "quote": "the committee would also need to understand what the change would be in actual town spending, either for 2023 or if spaced unto 2024.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Lack of access to the consultant's proposal",
+   "quote": "the public comment was regarding the lack of receiving the above mentioned consultants proposal."
+  },
+  {
+   "topic": "Job description comments not showing in drop box",
+   "speaker": "D. Fortune",
+   "stated_role": "",
+   "quote": "d. fortune noted that she had gone back to the job descriptions in the drop box, that she had commented on"
+  },
+  {
+   "topic": "Appreciation for the committee's work",
+   "speaker": "B. Lefebvre",
+   "stated_role": "Sewer Business Manager",
+   "quote": "b. lefebvre acknowledged her appreciation for the extensive work that the committee was doing on this"
+  },
+  {
+   "topic": "Chair vacancy and committee membership",
+   "speaker": "J. Bilotta",
+   "stated_role": "",
+   "quote": "committee comments were from j. bilotta regarding the loss of the chairperson e. arnold and the diminished committee membership"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "HR consultant's proposal and SAP salary grid",
+   "resolution": "presented; no opinions offered; analysis needed",
+   "quote": "mary beth bernard outlined the hr projects goals and current status covering the formal proposal she had prepared for the committee.",
+   "tags": [
+    "HR",
+    "salary grid",
+    "consultant",
+    "Prop 2 1/2"
+   ]
+  },
+  {
+   "topic": "Public comment on access to the proposal",
+   "resolution": "addressed; IT research assigned",
+   "quote": "the public comment was regarding the lack of receiving the above mentioned consultants proposal.",
+   "tags": [
+    "public comment",
+    "job descriptions"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "minutes of the march 6, 2023 meeting were presented and reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Ongoing business: project timeline",
+   "resolution": "continued; reconvene Monday",
+   "quote": "the committee explored the issue of our limited timeline to complete this project and present our proposal",
+   "tags": [
+    "timeline",
+    "Finance Committee",
+    "Select Board",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Town Meeting article",
+   "resolution": "approved with one minor clarification",
+   "quote": "j. belliveau presented a proposed article for that submission.",
+   "tags": [
+    "Town Meeting",
+    "article",
+    "submission deadline"
+   ]
+  },
+  {
+   "topic": "Public comment: committee membership",
+   "resolution": "noted; need to recruit a member",
+   "quote": "committee comments were from j. bilotta regarding the loss of the chairperson e. arnold and the diminished committee membership",
+   "tags": [
+    "membership",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:55pm",
+   "quote": "motion by to adjourn meeting at 6:55pm by j. bilotta",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "HR",
+  "salary grid",
+  "consultant proposal",
+  "Town Meeting article",
+  "Prop 2 1/2",
+  "job descriptions",
+  "committee membership",
+  "public comment",
+  "Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

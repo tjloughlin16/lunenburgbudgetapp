@@ -1,0 +1,435 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "lunenburg-water-district",
+ "board": "Lunenburg Water District",
+ "video_title": "Water District",
+ "meeting_date": "2023-01-25",
+ "video_id": "1x9uu7lGIts",
+ "video_url": "https://www.youtube.com/watch?v=1x9uu7lGIts",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/lunenburg-water-district/2023-01-25-1x9uu7lGIts.json",
+  "sha256": "0bf69930419b97d0adbcb5bfeae652329b1adf04c7a970ecbb575a028ba69e41",
+  "caption_lines": 217,
+  "segments": 1837
+ },
+ "recording": {
+  "duration_s": 4526,
+  "duration": "1:15",
+  "spoken_chars": 60865,
+  "words_approx": 10144
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T03:30:23Z",
+  "cost_usd": 0.3874821
+ },
+ "minutes": {
+  "headline": "Water commissioners heard a clean FY21-22 audit, told the Howard Street developer no, and voted to only acknowledge the Woodlands letter.",
+  "summary": "The CPA reviewed the FY21-22 audit and reported the district in a good financial position. A developer pressed the board about water service for his Howard Street project and was told the board would wait on the ZBA and a district vote. The board also debated sending the Woodlands road letter to counsel, settled on a bare acknowledgment, and heard superintendent updates on the Mass Ave project, a new well, tank inspection and lead service line funding.",
+  "attendees": [
+   {
+    "name_as_heard": "Mark Mueller",
+    "role": "presenter (CPA)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Christy",
+    "role": "member (treasurer/office, addressed)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Lisa",
+    "role": "treasurer's office (mentioned)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Fran",
+    "role": "member (addressed)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member (addressed)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Kevin O'Brien",
+    "role": "presenter (Howard Street developer)",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1158,
+    "topic": "Developer of the Howard Street project asked whether the district would let him run a main and meter pit at the district line and sell water to himself via a water company; discussed ZBA/HAC authority and attorney letters.",
+    "stated_role": "project developer"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "executive-session",
+   "facilities",
+   "grants",
+   "health-insurance",
+   "housing",
+   "legal",
+   "planning-and-zoning",
+   "retirement",
+   "superintendent-report",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2748,
+    "motion": "Accept the minutes of January 11th",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3582,
+    "motion": "File the Woodlands letter (then softened to having Fran send an acknowledgment only)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4501,
+    "motion": "Adjourn the meeting",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 127,
+    "topic": "Water revenue",
+    "what_was_said": "Sales were down from the prior year, which the CPA attributed to pandemic-era higher home water use fading.",
+    "figures_as_heard": [
+     "1.414 million",
+     "175 000",
+     "11 percent"
+    ]
+   },
+   {
+    "t": 169,
+    "topic": "Other revenue",
+    "what_was_said": "Other revenue such as service connections rose, consistent with more building.",
+    "figures_as_heard": [
+     "a hundred and nineteen thousand dollars",
+     "56 000"
+    ]
+   },
+   {
+    "t": 214,
+    "topic": "Depreciation",
+    "what_was_said": "Depreciation rose because the new district building was capitalized and is now depreciated.",
+    "figures_as_heard": [
+     "forty six thousand dollars"
+    ]
+   },
+   {
+    "t": 295,
+    "topic": "Group insurance and OPEB",
+    "what_was_said": "Group insurance fell partly because some of the expense lands in the OPEB line.",
+    "figures_as_heard": [
+     "forty four thousand dollars"
+    ]
+   },
+   {
+    "t": 340,
+    "topic": "Supplies vs repairs and maintenance",
+    "what_was_said": "Supplies fell as a new repairs and maintenance line absorbed some items.",
+    "figures_as_heard": [
+     "24 000",
+     "33 000"
+    ]
+   },
+   {
+    "t": 466,
+    "topic": "Operating expenses and income",
+    "what_was_said": "Total operating expenses rose modestly and income from operations dropped.",
+    "figures_as_heard": [
+     "44 000",
+     "a hundred thousand"
+    ]
+   },
+   {
+    "t": 506,
+    "topic": "Rental income",
+    "what_was_said": "Rental income declined but a tenant (T-Mobile) renewed and rent is expected to return toward earlier levels.",
+    "figures_as_heard": [
+     "14 000",
+     "hundred and seventy thousand"
+    ]
+   },
+   {
+    "t": 566,
+    "topic": "Interest expense and net position",
+    "what_was_said": "Interest expense rose with new bonds, driving the decrease in net position, which the CPA expects to partly reverse.",
+    "figures_as_heard": [
+     "154 000"
+    ]
+   },
+   {
+    "t": 646,
+    "topic": "Balance sheet",
+    "what_was_said": "Cash rose and receivables and accounts payable shifted; short-term notes were refinanced to long term.",
+    "figures_as_heard": [
+     "390 000",
+     "48 000"
+    ]
+   },
+   {
+    "t": 860,
+    "topic": "Debt service schedule",
+    "what_was_said": "Upcoming annual debt and interest payments were read out and decline over the next years.",
+    "figures_as_heard": [
+     "360 000",
+     "306",
+     "234 247",
+     "250"
+    ]
+   },
+   {
+    "t": 904,
+    "topic": "OPEB and pension liabilities",
+    "what_was_said": "Both retiree health and pension liabilities declined.",
+    "figures_as_heard": [
+     "a hundred and thirteen thousand dollars",
+     "a hundred and seventeen thousand"
+    ]
+   },
+   {
+    "t": 2871,
+    "topic": "Mass Ave project estimate",
+    "what_was_said": "New budget numbers were requested because the original estimate from three years ago is outdated; an increase may need annual or special meeting action.",
+    "figures_as_heard": [
+     "eight hundred thousand"
+    ]
+   },
+   {
+    "t": 3422,
+    "topic": "Legal costs",
+    "what_was_said": "Members worried more attorney spending could force higher water prices.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3902,
+    "topic": "Lead service line SRF funding",
+    "what_was_said": "A warrant article must appropriate money first and principal forgiveness would return it later; deadline for DEP submittal was stated.",
+    "figures_as_heard": [
+     "October 16th of 2024"
+    ]
+   },
+   {
+    "t": 4169,
+    "topic": "GIS mapping",
+    "what_was_said": "A separate appropriation for GIS may be needed if the program does not cover it.",
+    "figures_as_heard": [
+     "17 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1598,
+    "decision": "Board's stance to the developer: it would not enter agreements on outside-district service without another district vote and will await the ZBA/HAC outcome."
+   },
+   {
+    "t": 3671,
+    "decision": "Fran to send a simple acknowledgment of receipt of the Woodlands attorney letter; no referral to district counsel for now."
+   },
+   {
+    "t": 3608,
+    "decision": "Woodlands matter to go at the bottom of a future agenda as unresolved discussion."
+   },
+   {
+    "t": 2703,
+    "decision": "H2 Properties (110 Bird Street area) deferred to the next meeting in February."
+   },
+   {
+    "t": 4315,
+    "decision": "Lead service line proposals to be brought back in about two weeks, with warrant articles drafted by end of February."
+   },
+   {
+    "t": 2726,
+    "decision": "FY23-24 budget finalization held to the end, in executive session."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 40,
+    "topic": "Call to order and Pledge",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 40,
+    "t_end": 1158,
+    "topic": "CPA review of FY21-22 audit",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "debt",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 1158,
+    "t_end": 2455,
+    "topic": "Howard Street project, ZBA authority and water service",
+    "resolution": "no resolution; board awaits ZBA and a district vote",
+    "tags": [
+     "water-sewer",
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2455,
+    "t_end": 2726,
+    "topic": "H2 Properties water main extension",
+    "resolution": "postponed to February",
+    "tags": [
+     "water-sewer",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2726,
+    "t_end": 2788,
+    "topic": "FY23-24 budget deferral, minutes, warrants",
+    "resolution": "minutes approved",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2788,
+    "t_end": 3100,
+    "topic": "Superintendent report: Mass Ave project, conservation, new well",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3100,
+    "t_end": 3696,
+    "topic": "Woodlands letter regarding road use",
+    "resolution": "acknowledge only",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3696,
+    "t_end": 3842,
+    "topic": "Tank inspection and Pope Road easement",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 3842,
+    "t_end": 4460,
+    "topic": "Lead service line program, SRF funding and GIS",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "warrant-article",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4460,
+    "t_end": 4530,
+    "topic": "Public records and adjournment",
+    "resolution": "adjourned to executive session (reopen later)",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts and outcome for the motion to file the Woodlands letter.",
+   "Adjournment vote not captured.",
+   "Exact debt schedule figures are garbled.",
+   "Speaker identities are mostly unidentified.",
+   "Whether the draft attorney letter was sent to the ZBA."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3432,
+    "about": "Whether to send the Woodlands letter to district counsel, with members split and a deadlock noted.",
+    "sides": "One or two members against spending on an attorney; others in favor of sending it to counsel",
+    "words_as_heard": "I'm dead set against getting an attorney involved in this right now",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3538,
+    "about": "Members acknowledged a deadlock over referring the letter to counsel.",
+    "sides": "One member would vote to send; another would not",
+    "words_as_heard": "we'd be in a deadlock is that where we're at",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1873,
+    "about": "A member challenged the developer's claim of permission to speak to the board.",
+    "sides": "A member against the developer",
+    "words_as_heard": "nobody gave you permission",
+    "kind": "charged language"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board gave the Howard Street developer no commitment on water service outside the district, saying it would await the ZBA outcome and another district vote.",
+    "t": 1598
+   },
+   {
+    "line": "The board agreed only to have Fran send an acknowledgment of receipt of the Woodlands attorney letter, with no referral to district counsel for now.",
+    "t": 3671
+   },
+   {
+    "line": "The CPA's review of the FY21-22 audit reported the district in a good financial position, with interest on new bonds the main driver of a lower net position.",
+    "t": 566
+   },
+   {
+    "line": "The H2 Properties water main extension was postponed to the February meeting, and finalizing the FY23-24 budget was held to the end, in executive session.",
+    "t": 2703
+   },
+   {
+    "line": "Lead service line proposals are to return in about two weeks, with warrant articles drafted by the end of February.",
+    "t": 4315
+   }
+  ],
+  "why_it_matters": [
+   "Whether the district sells water outside its boundaries, as the Howard Street developer asked, would need another district vote, so residents who vote at district meetings may be asked to decide it.",
+   "Lead service line funding and possible warrant articles, along with a Mass Ave project estimate now out of date, could bring spending and borrowing questions to a district meeting that affect water rates."
+  ],
+  "watch_next": [
+   "The February meeting, where H2 Properties is scheduled and the FY23-24 budget is to be finalized.",
+   "Lead service line proposals due back in about two weeks, with warrant articles drafted by the end of February."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T03:30:32Z",
+   "cost_usd": 0.22414889999999998
+  }
+ }
+}

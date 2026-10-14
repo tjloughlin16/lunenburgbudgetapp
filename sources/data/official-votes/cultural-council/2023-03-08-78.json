@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2023-03-08",
  "docid": "78",
@@ -12,15 +12,182 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting at 7:30.",
    "moved_by": "Kirsten",
    "seconded_by": "Dan",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kirstenmotionedtoadjournthemeetingat7:30,secondedbydan- unanimouslyapproved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.150224
+ "note": "Scanned text is not a scan; it is extracted text with all spaces collapsed, so quotes reproduce that collapsed form (line breaks and bullets are not reproduced). Attendee names are split by me from a single run-together line, and the spelling 'Donna Saiia' is the printed 'DonnaSaiia'. Attendance is a list under 'Attendees' with no individual present/absent marks, so status is 'present' by listing. The minutes record no vote on approving prior minutes and no vote on the call to order, so neither is recorded as a vote. Only the adjournment motion is recorded as a vote; the count is not printed beyond 'unanimously approved', so outcome is 'passed'. Public comment reads 'None'. The Treasurer's report contains no dollar figures.",
+ "cost_usd": 0.014141110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elise Wiley",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Dan Burns",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Karen Kemp",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Judit Ernst",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Donna Beaudoin",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Robin Chandler",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  },
+  {
+   "name": "Kirsten Snape",
+   "status": "present",
+   "quote": "elisewileydanburnsdonnasaiiakarenkempjuditernstdonnabeaudoinrobinchandlerkirstensnape",
+   "role": "not stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kirsten and Dan volunteered to staff a table at the Farmers Market if the council gets one.",
+   "quote": "kirstenanddanvolunteeredtomanthetableifwehaveone"
+  },
+  {
+   "decision": "Donna will check whether funds are available to run a program.",
+   "quote": "donnalwillchecktoseeiftherearefundsavailabletorunaprogram"
+  },
+  {
+   "decision": "Members are to email Elise their agenda items for the next meeting.",
+   "quote": "emailelisewithagendaitems"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Treasurer's report",
+   "what_was_recorded": "Donna will check whether funds are available to run a program; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "donnalwillchecktoseeiftherearefundsavailabletorunaprogram"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call meeting to order",
+   "resolution": "called to order at 6:54",
+   "quote": "elisecalledthemeetingtoorderat6:54,secondedbydanburns",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approve previous meeting minutes",
+   "resolution": "no action recorded",
+   "quote": "approvepreviousmeetingminutes publiccomment none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment (None)",
+   "quote": "approvepreviousmeetingminutes publiccomment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old business: Talent Bank for new members",
+   "resolution": "no action recorded; Robin Chandler reported interested",
+   "quote": "dancheckedwiththetalentbankforanyinterestfornewmembers- robinchandlerisinterested",
+   "tags": [
+    "membership",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "New business: Farmers Market table",
+   "resolution": "explored; Kirsten and Dan volunteered to staff a table if one is available",
+   "quote": "explorehavingatableatthefarmersmarket- kirstenanddanvolunteeredtomanthetableifwehaveone",
+   "tags": [
+    "farmers market",
+    "volunteers",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New business: ideas for a table",
+   "resolution": "ideas listed; no decision recorded",
+   "quote": "artistoftheweek- sellingorjustdisplay?",
+   "tags": [
+    "farmers market",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Treasurer's report",
+   "resolution": "Donna to check whether funds are available to run a program",
+   "quote": "donnalwillchecktoseeiftherearefundsavailabletorunaprogram",
+   "tags": [
+    "treasurer",
+    "budget",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Set agenda for next meeting",
+   "resolution": "members to email agenda items to Elise",
+   "quote": "emailelisewithagendaitems",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjourn meeting",
+   "resolution": "adjourned at 7:30, unanimously approved",
+   "quote": "kirstenmotionedtoadjournthemeetingat7:30,secondedbydan- unanimouslyapproved",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Cultural Council",
+  "Farmers Market",
+  "table at market",
+  "volunteers",
+  "membership",
+  "treasurer report",
+  "program funding",
+  "agenda"
+ ],
+ "dropped_unquoted_by_field": {}
 }

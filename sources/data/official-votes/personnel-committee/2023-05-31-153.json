@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-05-31",
  "docid": "153",
@@ -12,39 +12,158 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the May 1, 2023 meeting",
+   "motion": "Approve the minutes of the May 1, 2023 meeting.",
    "moved_by": "J. Bilotta",
    "seconded_by": "S. Andrews",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed (D. Fortune abstained; all remaining members voted to approve)",
    "procedural": true,
-   "quote": "motion by j. bilotta to accept and approve the minutes of the may 1, 2023 meeting. second: s. andrews roll call vote: d. fortune abstained as she had not reviewed the documents, all remaining members voted to approve motion."
+   "quote": "motion by j. bilotta to accept and approve the minutes of the may 1, 2023 meeting."
   },
   {
-   "motion": "Adjust the meeting agenda to review the COA Outreach Assistant item first",
+   "motion": "Adjust the meeting agenda to review the COA Outreach Assistant job description first.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
-   "outcome": "passed 4-0",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "w. bertrand made a motion to adjust the meeting agenda to review this item first. seconded: s. andrews roll call vote: all in favor"
+   "quote": "w. bertrand made a motion to adjust the meeting agenda to review this item first."
   },
   {
-   "motion": "Accept the HR Director's recommendation for changes to the COA Outreach Assistant job description",
+   "motion": "Accept the HR Director's recommendation for the changes to the COA Outreach Assistant job description.",
    "moved_by": "S. Andrews",
    "seconded_by": "W. Bertrand",
-   "outcome": "passed 4-0",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the hr director for the changes to the coa outreach assistant job description second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the hr director for the changes to the coa outreach assistant job description"
   },
   {
-   "motion": "Adjourn the meeting at 8:22pm",
+   "motion": "Adjourn the meeting at 8:22pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
-   "outcome": "passed 4-0",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 8:22pm by j. bilotta second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 8:22pm by j. bilotta"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0828025
+ "note": "Text-extracted minutes, not a scan; no votes were taken by roll-call tallies beyond the printed outcomes, so counts are recorded as printed ('all in favor'). Only one money reference (budget approving the role), with no dollar figures. Point scores and SAP grade numbers are classifications, not money, and were not recorded as budget items. The minutes name Bernie Lynch of Community Paradigm Associates, LLC, who gave authorization to use the Winchendon classification system; he did not attend and is not listed as an attendee. The minutes end without a secretary or signature line.",
+ "cost_usd": 0.01380101,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member, in-person attendee (opened the meeting)",
+   "status": "present",
+   "quote": "w. bertrand opened the meeting at 6:15pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member, in-person attendee",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member, by phone",
+   "status": "remote",
+   "quote": "donna fortune, joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member, by phone",
+   "status": "remote",
+   "quote": "donna fortune, joanna bilotta"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, pauline roy coa;"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, pauline roy coa;"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "sue doherty coa director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee will ask the department head from the group being assessed to attend meetings to clarify specific roles identified in the job description.",
+   "quote": "the committee will ask the department head from the group to be assessed to come to the meetings to assist in clarification of specific roles identified in the job description."
+  },
+  {
+   "decision": "The group will continue to assess job descriptions group by group, validating each against the PCS system.",
+   "quote": "the group will continue to assess job descriptions group by group to validate each to the pcs system."
+  },
+  {
+   "decision": "The group agreed the Position Classification System method closely fit its needs after its first trial on four Council on Aging roles.",
+   "quote": "this was the group's first attempt as utilizing this methodology and all agreed that it closely fit our needs"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA Outreach Assistant role funding",
+   "what_was_recorded": "The minutes say the new fiscal budget approved adding the COA Outreach Assistant role, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "but the new fiscal budget approved the addition of the role in the coa."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of May 1, 2023 minutes",
+   "resolution": "approved (D. Fortune abstained)",
+   "quote": "minutes of the may 1, 2023 meeting were presented and reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "COA Outreach Assistant job description",
+   "resolution": "approved HR Director's recommended changes",
+   "quote": "j. belliveau presented a request to amend the current job description of coa outreach assistant.",
+   "tags": [
+    "job description",
+    "COA",
+    "HR"
+   ]
+  },
+  {
+   "topic": "Job description and SAP grade level project (Position Classification System)",
+   "resolution": "continued; four COA roles assessed, group to continue group by group",
+   "quote": "the group began a general discussion regarding the continuation of the job description and sap grade level project.",
+   "tags": [
+    "SAP grades",
+    "classification system",
+    "job descriptions"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "there were neither committee comments, nor public comments during this time.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "council on aging",
+  "job descriptions",
+  "position classification system",
+  "SAP grades",
+  "HR",
+  "minutes approval",
+  "job description amendment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

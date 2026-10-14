@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-02-28",
  "docid": "226",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Appoint Cathy Beale to the Council on Aging with a term to expire June 30, 2024",
+   "motion": "Appoint Cathy Beale to the Council on Aging, term to expire June 30, 2024.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: l. franco 2nd: t. dwyer to appoint cathy beale to the council on aging with a term to expire june 30, 2024 vote: ms. sroka- aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye"
   },
   {
-   "motion": "Approve the minutes of January 31, 2023",
+   "motion": "Approve the minutes of January 31, 2023.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 3-0",
@@ -29,6 +29,342 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. Ms. Sroka was absent from the final vote (having exited the meeting at page 20); the first vote shows her present. All other items (pavement plan presentation, trash/recycling presentation, bid awards, senior tax relief program discussion) were informational or discussion items with no recorded motions or votes.",
- "cost_usd": 0.1137485
+ "note": "Text is macOS Vision OCR of a scanned minutes packet. Several figures are garbled in the OCR (e.g. \"5600,000.00\", \"Ş1,524,327.28\", \"S1,367.26\") and the pavement and CIP tables have column values whose row labels are not reliably readable, so their figures are recorded as printed, not verified. Concatenated words (e.g. \"amountof$216,649\") are copied as they appear. The text shows no recorded vote for the IT position ratification, the presentations, or the Costello award; no adjournment motion or closing is in the text. Ms. Sroka exited mid-meeting; the minutes do not say when. The Chair's name appears once as \"Mr. Jeffieys\" (OCR or typo) and is recorded as Jeffreys. The name \"Lou\" is not identified in the text and is not listed as an attendee.",
+ "cost_usd": 0.02306401,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, vice chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; bill bernard, dpw director; jamie toale"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; bill bernard, dpw director; jamie toale"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Trash & Recycling Consultant",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; bill bernard, dpw director; jamie toale"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "member",
+   "status": "present",
+   "quote": "ms. sroka exited the meeting."
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "member",
+   "status": "present",
+   "quote": "mr. dwyer thanked mr. toale for his presentation and the information provided."
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "member",
+   "status": "present",
+   "quote": "mr. franco presented the first draft of the proposed senior tax relief program which he and select"
+  },
+  {
+   "name": "Carl and Phyllis Luck",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "carl and phyllis luck, 50 sunset lane, made public comments about the tax abatement process"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "Council on Aging appointee",
+   "status": "present",
+   "quote": "ms. beale stated her 91 year old mother lives with her so it is very important to her to provide"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "not stated",
+   "quote": "mr. jeffreys thanked mr. franco, mr. alonzo, ms. lemieux, finance director brochu and principal assessor carroll for their contributions to this work."
+  },
+  {
+   "name": "Carroll",
+   "role": "Principal Assessor",
+   "status": "not stated",
+   "quote": "mr. jeffreys thanked mr. franco, mr. alonzo, ms. lemieux, finance director brochu and principal assessor carroll for their contributions to this work."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Franco will draft proposed wording for the senior tax relief warrant article and obtain guidance from Town Counsel.",
+   "quote": "mr. franco will bring back some proposed wording and also get guidance from town counsel for a warrant article."
+  },
+  {
+   "decision": "Lou accepted responsibility for facilitating the public portion of Board of Assessors meetings and will not attend their executive sessions or discuss specific abatement applications; the minutes attribute the request to the Assessors' chair. No vote recorded.",
+   "quote": "going forward, the chair has asked, and lou has accepted responsibility for facilitating the public portion of the board of assessor's meetings."
+  },
+  {
+   "decision": "Minutes state the low bid for 30 School Street hazardous materials/demolition, from Costello Dismantling Company, will be awarded. No vote is recorded in the minutes.",
+   "quote": "costello wasdeterminedtobethe lowest, most responsible, responsive bidderand will beawarded the bid."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pavement management: 2015 plan debt exclusion",
+   "what_was_recorded": "The 2009 plan, updated in 2015, included a voter-authorized debt exclusion of $4,000,000.",
+   "figures_as_printed": [
+    "$4,000,000"
+   ],
+   "quote": "included a $4,000,000 voter authorized debt exclusion."
+  },
+  {
+   "topic": "Pavement repair backlog",
+   "what_was_recorded": "The BETA road survey presentation shows a backlog of $5.9M, with an inspection year of 2022.",
+   "figures_as_printed": [
+    "$5.9M"
+   ],
+   "quote": "inspection year 2022 last update 11/01/2022 since inspection 9 months backlog $5.9m"
+  },
+  {
+   "topic": "Pavement repair backlog summary total",
+   "what_was_recorded": "The repair backlog summary table prints an estimated cost total of $5,960,267.91; the no-maintenance row is printed as $0.00. The minutes do not state the table total in prose.",
+   "figures_as_printed": [
+    "$5,960,267.91",
+    "$296,398.00",
+    "$0.00"
+   ],
+   "quote": "33.27% $296,398.00 35.25% $0.00 100.00% $5,960,267.91"
+  },
+  {
+   "topic": "Pavement capital plan five-year total",
+   "what_was_recorded": "A capital improvement table in the presentation prints a CIP total of $2,617,705.12. The table is OCR-read and its row labels are not clearly printed.",
+   "figures_as_printed": [
+    "$2,617,705.12"
+   ],
+   "quote": "36,459.89 36,459.89 354,057.66 $583,358.22 $583,358.22 $2,617,705.12 |"
+  },
+  {
+   "topic": "Trash and recycling tonnage/cost table",
+   "what_was_recorded": "A table of six dollar figures sits beside the column headings Jul 21-Jun 22 and Jul 22 - Dec 22, with no row labels printed; the minutes do not say what each figure measures.",
+   "figures_as_printed": [
+    "$397,017",
+    "$216,339",
+    "$436,048",
+    "$200,913",
+    "$39,031",
+    "($15,626)"
+   ],
+   "quote": "$397,017 $216,339 $436,048 $200,913 $39,031 ($15,626)"
+  },
+  {
+   "topic": "Recycling fee per ton",
+   "what_was_recorded": "The E.L. Harvey recycling fee is reported at $105 per ton, rising to $220 per ton if contaminated.",
+   "figures_as_printed": [
+    "$105",
+    "$220"
+   ],
+   "quote": "recycling fee is $105 per ton - could go as high as $220/ton if contaminated"
+  },
+  {
+   "topic": "Townsend PAYT bag charge",
+   "what_was_recorded": "Townsend's PAYT program allows two free bags per week, with each further bag assessed $3.50.",
+   "figures_as_printed": [
+    "$3.50"
+   ],
+   "quote": "each household is allowed two bags per week for free and then each bag after that is assessed $3.50 each."
+  },
+  {
+   "topic": "30 School Street hazardous materials/demolition bid",
+   "what_was_recorded": "Five bids were received; the minutes print the low bid as $216,649 and the high bid as $398,845.",
+   "figures_as_printed": [
+    "$216,649",
+    "$398,845"
+   ],
+   "quote": "the low bid was from costello dismantling company of wareham in the amountof$216,649"
+  },
+  {
+   "topic": "Town Hall building envelope bid",
+   "what_was_recorded": "One bid was received at $258,800, plus alternate one for chimney replacement at $43,000; both exceed the $75,000 appropriation.",
+   "figures_as_printed": [
+    "$258,800",
+    "$43,000",
+    "$75,000"
+   ],
+   "quote": "this far exceeded our appropriation of $75,000."
+  },
+  {
+   "topic": "Senior tax relief aggregate cap",
+   "what_was_recorded": "Proposed cap: total relief granted in the aggregate would not exceed 1% of the real property tax levy. This is a proposal for discussion.",
+   "figures_as_printed": [
+    "1%"
+   ],
+   "quote": "suggesting that the total dollar value of relief granted in the aggregate not exceed 1% of the real property tax levy."
+  },
+  {
+   "topic": "Senior tax relief apportionment example",
+   "what_was_recorded": "An illustrative example assumes $5,000.00 in relief requests against $4,000.00 available, so each applicant would receive 80% of requested relief.",
+   "figures_as_printed": [
+    "$4,000.00",
+    "$5,000.00"
+   ],
+   "quote": "further assume now that the total value of the funds available for relief is $4,000.00, which is"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "tax abatement process and assessments",
+   "speaker": "Carl and Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "quote": "carl and phyllis luck, 50 sunset lane, made public comments about the tax abatement process"
+  },
+  {
+   "topic": "investigation into tax assessment",
+   "speaker": "Mr. Luck",
+   "quote": "mr. luck asked questions and made comments about the investigation into the tax assessment,"
+  },
+  {
+   "topic": "general public comment",
+   "speaker": "not named",
+   "quote": "there was no public comment at this time."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Chair's statement on assessments and abatements",
+   "resolution": "no action; statement read into the record",
+   "tags": [
+    "tax assessment",
+    "abatement"
+   ],
+   "quote": "the abatement process is the only process for anyone to see a change in their property valuation and tax assessment."
+  },
+  {
+   "topic": "Public comment on tax abatements",
+   "resolution": "heard; no action; residents asked to meet with the Board of Assessors",
+   "tags": [
+    "public comment",
+    "abatement",
+    "assessors"
+   ],
+   "quote": "carl and phyllis luck, 50 sunset lane, made public comments about the tax abatement process"
+  },
+  {
+   "topic": "Pavement Management Plan presentation (BETA Group)",
+   "resolution": "presented; no vote",
+   "tags": [
+    "roads",
+    "pavement",
+    "DPW",
+    "capital plan"
+   ],
+   "quote": "the board members agreed that it was a good presentation and thanked him for his presentation."
+  },
+  {
+   "topic": "PAYT trash and recycling program presentation",
+   "resolution": "presented; no vote",
+   "tags": [
+    "trash",
+    "recycling",
+    "PAYT",
+    "solid waste"
+   ],
+   "quote": "ms. lemieux reported jamie toale was hired as a consultant for trash and recycling coordination"
+  },
+  {
+   "topic": "Council on Aging appointment (Cathy Beale)",
+   "resolution": "appointed 4-0",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ],
+   "quote": "motion: l. franco 2nd: t. dwyer to appoint cathy beale to the council on aging with a term to expire june 30, 2024"
+  },
+  {
+   "topic": "Ratification of IT administrative assistant appointment",
+   "resolution": "presented; no vote recorded",
+   "tags": [
+    "appointments",
+    "IT",
+    "staffing"
+   ],
+   "quote": "ms. lemieux reported this is a newly created position in the fiscal year 2023 budget."
+  },
+  {
+   "topic": "Invitation for bids: 30 School Street and Town Hall envelope",
+   "resolution": "reported; low bid to be awarded per minutes; Town Hall bid exceeds appropriation",
+   "tags": [
+    "bids",
+    "town hall",
+    "demolition",
+    "procurement"
+   ],
+   "quote": "the low bid was from costello dismantling company of wareham in the amountof$216,649"
+  },
+  {
+   "topic": "Proposed senior property tax relief warrant article",
+   "resolution": "draft presented; Mr. Franco to bring back wording and seek counsel guidance",
+   "tags": [
+    "senior tax relief",
+    "warrant article",
+    "tax relief"
+   ],
+   "quote": "mr. franco presented the first draft of the proposed senior tax relief program which he and select"
+  },
+  {
+   "topic": "Legislative and budget priorities for state delegation",
+   "resolution": "presented; no vote",
+   "tags": [
+    "state delegation",
+    "capital projects",
+    "local aid"
+   ],
+   "quote": "ms. lemieux presented some projects that she would like to bring forward to the legislators next week."
+  },
+  {
+   "topic": "Minutes of January 31, 2023",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion: l. franco 2nd: t. dwyer to approve the minutes of january 31, 2023 vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye"
+  },
+  {
+   "topic": "Resignations and retirements reported",
+   "resolution": "reported; no action",
+   "tags": [
+    "personnel",
+    "retirements"
+   ],
+   "quote": "fire captain jim ricci retired on february 24"
+  }
+ ],
+ "tags": [
+  "select board",
+  "tax assessment",
+  "abatement",
+  "senior tax relief",
+  "pavement management",
+  "roads",
+  "trash and recycling",
+  "PAYT",
+  "appointments",
+  "bids",
+  "minutes approval",
+  "state delegation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

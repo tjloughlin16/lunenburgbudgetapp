@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-05-02",
  "docid": "19",
@@ -12,31 +12,149 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes for the April 11th meeting",
+   "motion": "Invite the new building commissioner to the next meeting to welcome him or her and garner input on the bylaw review process.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "the minutes for the april 11th meeting were read and approved."
-  },
-  {
-   "motion": "invite the new building commissioner to the next meeting to welcome him or her, and garner input on the bylaw review process",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the commission voted unanimously to invite the new building commissioner to the next meeting to welcome him or her, and garner input on the bylaw review process."
   },
   {
-   "motion": "apply for recognition of the Ritter Building by the National Register as part of the inventory of the Lunenburg Historic District",
+   "motion": "Apply for National Register recognition of the Ritter Building as part of the inventory of the Lunenburg Historic District.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was put forward to apply for its recognition by the national register as part of the inventory of the lunenburg historic district. all voted in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. No individual movers or seconders are identified in the minutes.",
- "cost_usd": 0.08646849999999999
+ "note": "Text is clean and readable; no scan. No roll-call counts are printed: the two recorded votes are 'voted unanimously' and 'All voted in favor', so outcomes are recorded as 'passed' without a count and no mover or seconder is printed. The approval of the April 11 minutes has no recorded motion, so it is treated as a decision, not a vote. Only one dollar figure appears ($5-6million, an estimate reported for a proposal). No public comment is recorded beyond 'Public Comment: None'. Attendance is read from the call to order; William Lloyd appears only in the letterhead, so his status is not stated.",
+ "cost_usd": 0.013813410000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "call to order: at 7:35 with mcgrath, dwyer, sculimbrene and lockwood present."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:35 with mcgrath, dwyer, sculimbrene and lockwood present."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:35 with mcgrath, dwyer, sculimbrene and lockwood present."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:35 with mcgrath, dwyer, sculimbrene and lockwood present."
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "william lloyd, clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The April 11th meeting minutes were read and approved (no motion or count recorded).",
+   "quote": "the minutes for the april 11th meeting were read and approved."
+  },
+  {
+   "decision": "The Banner Project presentation was tabled to a later meeting.",
+   "quote": "banner project: ms anderson of the historic commission has been unable to make progress on this project, and the presentation was tabled for a later meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Design Committee office building proposal (Ritter building annex)",
+   "what_was_recorded": "The Design Committee proposes renovating and building an annex to the Ritter building, with an estimated cost, to be discussed at the May 16th Select Board meeting.",
+   "figures_as_printed": [
+    "$5-6million"
+   ],
+   "quote": "the design committee is proposing renovation and construction of an annex to the ritter building, with an estimated cost of $5-6million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "quote": "the minutes for the april 11th meeting were read and approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Bylaw review (old business)",
+   "resolution": "invitation to new building commissioner voted unanimously",
+   "quote": "the commission voted unanimously to invite the new building commissioner to the next meeting to welcome him or her, and garner input on the bylaw review process.",
+   "tags": [
+    "bylaws",
+    "building commissioner"
+   ]
+  },
+  {
+   "topic": "Report of the Municipal Design Committee (office buildings, Ritter building)",
+   "resolution": "motion to apply for National Register recognition of Ritter Building passed; hybrid solution to be discussed at May 16 Select Board",
+   "quote": "the design committee is proposing renovation and construction of an annex to the ritter building, with an estimated cost of $5-6million.",
+   "tags": [
+    "Ritter Building",
+    "National Register",
+    "town offices",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "New facilities director (new business)",
+   "resolution": "proposed that he be invited to the next meeting for introduction; no vote recorded",
+   "quote": "it was proposed that he be invited to the next meeting for introduction.",
+   "tags": [
+    "facilities",
+    "town staff"
+   ]
+  },
+  {
+   "topic": "Banner Project (new business)",
+   "resolution": "tabled",
+   "quote": "the presentation was tabled for a later meeting.",
+   "tags": [
+    "banner project",
+    "historic commission"
+   ]
+  },
+  {
+   "topic": "Historic rehabilitation tax credits (new business)",
+   "resolution": "no action; member to learn more",
+   "quote": "sculimbrene brought up the topic of historic rehabilitation tax credits as a resource to encourage the maintenance of historic",
+   "tags": [
+    "tax credits",
+    "historic buildings"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Ritter Building",
+  "National Register",
+  "town office space",
+  "Municipal Design Committee",
+  "bylaw review",
+  "banner project",
+  "historic tax credits",
+  "facilities director"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2023-03-06",
  "docid": "2409",
@@ -12,15 +12,190 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Liz Murphy",
-   "seconded_by": "Matt Snyder",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn by liz murphy, second by matt snyder. 8:22pm"
+   "quote": "motion to adjourn by liz murphy, second by matt snyder.",
+   "seconded_by": "Matt Snyder"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded: adjournment. The outcome is not explicitly stated in the minutes (no \"passed\" or vote count), though the meeting's end at 8:22 PM implies passage.",
- "cost_usd": 0.0780295
+ "note": "Extracted text, not a scan. Only one motion is recorded: adjournment, with no result printed, so its outcome is 'not stated'. No public comment period is printed. Heather is named as having raised bidding concerns but is not listed as attending. 'David' is used without a surname for both David Blatt and David Passios, so speakers are not attributed to either. Figures are printed as they appear, including '65k', '15K', and 'both 15K a year'. 'Until' and 'Unitil' appear to be the same utility, and 'until' is printed as-is. The minutes do not state the chair or the members' roles. Liz Murphy submitted the minutes. Attendance is stated as 'present' for late arrivals who joined partway through.",
+ "cost_usd": 0.014272610000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance david blatt, chris holden, liz murphy, kim duffy via zoom"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance david blatt, chris holden, liz murphy, kim duffy via zoom"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance david blatt, chris holden, liz murphy, kim duffy via zoom"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "",
+   "status": "remote",
+   "quote": "in attendance david blatt, chris holden, liz murphy, kim duffy via zoom"
+  },
+  {
+   "name": "George Woodbury",
+   "role": "consultant",
+   "status": "present",
+   "quote": "george woodbury, consultant"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "",
+   "status": "present",
+   "quote": "matt snyder and david passios joined late, 7:20, 7:25."
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "matt snyder and david passios joined late, 7:20, 7:25."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "David to try to speak with Heather the next day about avoiding the central register route for bidding; members agreed and suggested he hear her concerns. If procurement requires the published bid, move it as quickly as possible.",
+   "quote": "david will try to have a convo with heather tomorrow to speak to her about trying to not go the central register route."
+  },
+  {
+   "decision": "Members support George working with the RFP to tighten qualifications and specifications so change orders are less likely.",
+   "quote": "we all support george working with the rfp to tighten up qualifications and specifications to ensure change orders are less likely to happen."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Expected state incentive",
+   "what_was_recorded": "The incentive from the utility is expected to be about 33K.",
+   "figures_as_printed": [
+    "33K"
+   ],
+   "quote": "the incentive is expected to be about 33k."
+  },
+  {
+   "topic": "Total cost of materials",
+   "what_was_recorded": "Total cost of materials is 65k, plus whatever is spent on mast arms.",
+   "figures_as_printed": [
+    "65k"
+   ],
+   "quote": "total cost of materials is 65k plus whatever we spend on mast arms."
+  },
+  {
+   "topic": "Mast arm order through Prism",
+   "what_was_recorded": "Twenty-five mast arms to be ordered through Prism at $135 per arm, adding another $3500.",
+   "figures_as_printed": [
+    "$135",
+    "$3500"
+   ],
+   "quote": "we are going to order 25 mast arms through prism, at $135 per arm so another $3500 for those."
+  },
+  {
+   "topic": "Annual lighting bill",
+   "what_was_recorded": "George estimated the new lighting bill will cost 15K a year (minutes print 'both 15K a year').",
+   "figures_as_printed": [
+    "15K"
+   ],
+   "quote": "george estimated the new bill will cost both 15k a year."
+  },
+  {
+   "topic": "Prism standard rate",
+   "what_was_recorded": "The minutes print that Prism operates on a standard of 12%, without saying what the 12% applies to.",
+   "figures_as_printed": [
+    "12%"
+   ],
+   "quote": "prism, a collaborative of 27 communities, which george is a part of, operates on a standard of 12%."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Project status and design",
+   "resolution": "no action; status reported",
+   "quote": "the meeting started with george discussing where we are today; the design is completed and the incentive paperwork has been forwarded to unitil.",
+   "tags": [
+    "lighting",
+    "design",
+    "incentive"
+   ]
+  },
+  {
+   "topic": "Public bid versus central register",
+   "resolution": "continued; David to speak with Heather",
+   "quote": "heather indicated they need to do a formal bid process and that will take a little time as they have to advertise through the central register.",
+   "tags": [
+    "procurement",
+    "public bid",
+    "bidding"
+   ]
+  },
+  {
+   "topic": "Lights purchase timing and Prism pricing",
+   "resolution": "no action; vendor price awaited",
+   "quote": "david asked if george is ordering the lights in april.",
+   "tags": [
+    "lighting",
+    "Prism",
+    "purchasing"
+   ]
+  },
+  {
+   "topic": "Use of savings and maintenance funding",
+   "resolution": "discussed; town may be asked",
+   "quote": "we can ask the town if they would fund an item in the general fund to pay for maintenance or upgrades as a result of the savings.",
+   "tags": [
+    "savings",
+    "maintenance",
+    "general fund"
+   ]
+  },
+  {
+   "topic": "Used mast arms and extra parts",
+   "resolution": "discussed",
+   "quote": "kim asked what the used arms from prism means?",
+   "tags": [
+    "mast arms",
+    "waste",
+    "Prism"
+   ]
+  },
+  {
+   "topic": "Next projects and grant round",
+   "resolution": "discussed; no decision recorded",
+   "quote": "we need the long term building use plan to decide our next projects.",
+   "tags": [
+    "grants",
+    "October grant round",
+    "future projects",
+    "building use"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "street lighting",
+  "mast arms",
+  "public bidding",
+  "Prism purchasing",
+  "Unitil incentive",
+  "grants",
+  "maintenance funding"
+ ],
+ "dropped_unquoted_by_field": {}
 }

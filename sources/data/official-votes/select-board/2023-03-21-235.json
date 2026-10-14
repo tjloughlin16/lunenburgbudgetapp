@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-03-21",
  "docid": "235",
@@ -12,58 +12,585 @@
  },
  "votes": [
   {
-   "motion": "approve the tollbooth request for May 27 from 10 am to 2 pm in Town Center",
+   "motion": "Approve the tollbooth request for the Lunenburg Skate Park on May 27 from 10 am to 2 pm in Town Center.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo to approve the tollbooth request for may 27 from 10 am to 2 pm in town center 2n: h. sroka vote: all in favor"
+   "quote": "to approve the tollbooth request for may 27 from 10 am to 2 pm in town center"
   },
   {
-   "motion": "appoint Stanley Barney, Kathy Comeau and Michelle Belleza to the 300th Anniversary Committee",
+   "motion": "Appoint Stanley Barney, Kathy Comeau and Michelle Belleza to the 300th Anniversary Committee.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2nd: l. franco to appoint stanley barney, kathy comeau and michelle belleza to the 300# anniversary committee vote: all in favor ",
-   "quote_taken_from_text": true
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "to appoint stanley barney, kathy comeau and michelle belleza to the 300# anniversary"
   },
   {
-   "motion": "appoint Karen Kemp as Registrar with a term to expire March 31, 2026",
+   "motion": "Appoint Karen Kemp as Registrar with a term to expire March 31, 2026.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to appoint karen kemp as registrar with a term to expire march 31, 2026 2\"': h. sroka vote: all in favo",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "approve the common victualler license for Priha, Inc. d/b/a Jaxx Country Variety",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo to approve the common victualler license for priha, inc. d/b/a jaxx country variety 2nd: l. franco vote: all in favor"
+   "quote": "to appoint karen kemp as registrar with a term to expire march 31, 2026"
   },
   {
-   "motion": "approve the minutes of January 17, 2023 (Session II) as presented",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to approve the minutes of january 17, 2023 (session il) as presented 2\"d: l. franco vote: all in favo",
-   "quote_taken_from_text": true
+   "motion": "Ratify the Town Manager's appointment of Angela Clement as Recreation Director.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Alonzo",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "so i'm asking you to ratify this appointment tonight. motion: l. franco"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Approve the minutes of January 17, 2023 (Session II) as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2'': l. franco vote: all in favor"
+   "quote": "to approve the minutes of january 17, 2023 (session il) as presented"
+  },
+  {
+   "motion": "Approve the common victualler license for Priha, Inc. d/b/a Jaxx Country Variety, 1353 Mass. Ave.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "to approve the common victualler license for priha, inc. d/b/a jaxx country variety"
+  },
+  {
+   "motion": "Recommend the ATM article to hear and/or accept the regular written reports of the Town Officers and Committees.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "committees; or take any other action relative thereto. (submitted by the town manager) select board recommendation: recommends 4-0"
+  },
+  {
+   "motion": "Recommend the ATM revolving funds article (Chapter 44, Section 53E ½) for FY2024 spending limits.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "$30,000 select board recommendation: recommends 4-0"
+  },
+  {
+   "motion": "Recommend the ATM article appropriating $10,000.00 from the Sale of Lots account for the Town Cemeteries.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "(submitted by the cemetery commission) select board recommendation: recommends 4-0"
+  },
+  {
+   "motion": "Recommend the ATM opioid litigation settlement article dedicating settlement funds to the Opioid Settlement Stabilization Fund.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "select board recommendation: recommends 4-0 warrants"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed (all in favor)",
+   "procedural": true,
+   "quote": "to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text; vote 4 (Recreation Director ratification) has no explicit motion statement or vote outcome recorded, likely due to page break in original document",
- "cost_usd": 0.1409605
+ "dropped_unquoted": 0,
+ "note": "The text is OCR (macOS Vision) of a scanned document, with garbled words and spacing. Quotes are copied from the OCR text, with line breaks collapsed. Several printed numbers are themselves garbled (\"$300,00\", \"$200 000\", \"300#\", \"300th\" printed as \"300t\"). The minutes open with \"Mr. Watters opened the Finance Committee meeting at 7:04 p.m.\", which does not fit a Select Board meeting; it is recorded as printed. Votes marked \"All in Favor\" have no numeric count. The ATM \"RECOMMENDS 4-0\" lines carry no mover or seconder, and the ratification motion has no printed result. The Overlay article has no printed recommendation, so it is not recorded as a vote. Attendance is not taken by roll call; status is inferred from speaking or moving. Dwyer's status is not stated, and the minutes do not say whether he attended.",
+ "cost_usd": 0.024502310000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. alonzo reminded the water district is holding their annual election this saturday"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. franco reported he attended the council on aging meeting"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "ms. sroka stated (in reference to a previous meeting public comment)"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "mr. jeffreys reported ms. lemieux, the finance director and he met with the library trustees"
+  },
+  {
+   "name": "Mr. Watters",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mr. watters opened the finance committee meeting at 7:04 p.m."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "former Select Board member (resignation letter read)",
+   "status": "not stated",
+   "quote": "mr. jeffreys read a letter from select board member todd dwyer."
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "public commenter, 275 Cross Road",
+   "status": "present",
+   "quote": "cathy clark, 275 cross road, commented on the snowstorm last week"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "public commenter, 46 Hemlock Drive",
+   "status": "present",
+   "quote": "debbie lincoln, 46 hemlock drive, commended mr. franco and mr. alonzo for their work on"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "pete lincoln, recommended the three candidates up for appointment tonight"
+  },
+  {
+   "name": "Aiden Swift",
+   "role": "representing the Lunenburg Skate Park group (tollbooth request)",
+   "status": "present",
+   "quote": "aiden swift presented the group's request and stated they were approximately"
+  },
+  {
+   "name": "Mr. Edmands",
+   "role": "tollbooth requester (Fitchburg/Leominster Shriners Club)",
+   "status": "present",
+   "quote": "mr. edmands thanked the board and exited the meeting."
+  },
+  {
+   "name": "Kathy Comeau",
+   "role": "300th Anniversary Committee appointee",
+   "status": "present",
+   "quote": "ms. comeau and mr. barney related that they had worked on the previous anniversary"
+  },
+  {
+   "name": "Stanley Barney",
+   "role": "300th Anniversary Committee appointee",
+   "status": "present",
+   "quote": "ms. comeau and mr. barney related that they had worked on the previous anniversary"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "300th Anniversary Committee appointee",
+   "status": "present",
+   "quote": "ms. belleza stated mrs. lincoln had reached out to her to get the kids involved."
+  },
+  {
+   "name": "Karen Kemp",
+   "role": "Registrar appointee",
+   "status": "present",
+   "quote": "karen kemp stated she has been a registrar for almost 40 years."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will ask Town Counsel about the expiration after three years (section 6) of the proposed senior citizen tax exemption; an amended draft to be presented at the next meeting.",
+   "quote": "after discussion, ms. lemieux will ask town counsel a question about expiration after three years"
+  },
+  {
+   "decision": "The board decided on the FY24 capital and legislative priorities to submit to legislators, as listed (Turkey Hill Elementary, Marshall Park, Library, sewer pump stations).",
+   "quote": "after discussion, the following was decided on:"
+  },
+  {
+   "decision": "Ms. Lemieux will research how a resident without power receives Unitil's storm communications.",
+   "quote": "ms. lemieux will research that."
+  },
+  {
+   "decision": "The board signed an Accounts Payable warrant (no motion recorded).",
+   "quote": "the board signed an accounts payable warrant in the amount of $366,747.26."
+  },
+  {
+   "decision": "Vacancies on the upcoming list will be advertised; interested people to submit volunteer forms to the Select Board office before the end of May.",
+   "quote": "mr. jeffreys noted these vacancies will be advertised and anyone interested should submit a"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Overlay account transfer for FY 2023 abatements",
+   "what_was_recorded": "Ms. Lemieux recommended $1.5M from Free Cash as worst case, net of $200,000 from the overlay, including interest if abatements went to the Appellate Tax Board.",
+   "figures_as_printed": [
+    "$1.5M",
+    "$200 000"
+   ],
+   "quote": "ms. lemieux stated she was recommending $1.5m from free cash."
+  },
+  {
+   "topic": "Public Safety Building security upgrades",
+   "what_was_recorded": "Security upgrades at the Public Safety Building were listed as a legislative priority, with cost TBD and estimated at $50,000; the amount was later finalized at $83,000.",
+   "figures_as_printed": [
+    "$50,000",
+    "$83,000"
+   ],
+   "quote": "security upgrades at the public safety building (cost tbd but estimated at $50,000)"
+  },
+  {
+   "topic": "FY24 Capital Plan security upgrades and fire alarm (THES and Primary School)",
+   "what_was_recorded": "Security upgrades on the FY24 Capital Plan for THES and Primary School and a fire alarm at THES were listed as priorities.",
+   "figures_as_printed": [
+    "$160,000",
+    "$131,000",
+    "$83,500",
+    "$287,000"
+   ],
+   "quote": "fire alarm at thes on fy24 capital plan ($287,000)"
+  },
+  {
+   "topic": "Legislative priorities as decided",
+   "what_was_recorded": "The board decided on Turkey Hill Elementary School, Marshall Park, Library and sewer pump station amounts for legislators.",
+   "figures_as_printed": [
+    "$374,000",
+    "$250,000",
+    "$36,000",
+    "$300,00"
+   ],
+   "quote": "turkey hill elementary school $374,000"
+  },
+  {
+   "topic": "Cemetery care appropriation",
+   "what_was_recorded": "Appropriation of $10,000.00 from the Sale of Lots account for the care of Town Cemeteries (Cemetery Commission).",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "to see if the town will vote to appropriate the sum of $10,000.00 from the"
+  },
+  {
+   "topic": "Revolving fund spending limits FY24",
+   "what_was_recorded": "Spending limits listed for revolving funds (Stormwater Task Force, Electrical, Gas, Plumbing Inspector, Technology).",
+   "figures_as_printed": [
+    "$5,000",
+    "$46,000",
+    "$30,000"
+   ],
+   "quote": "inspector technology $5,000 $46,000 $30,000"
+  },
+  {
+   "topic": "Estimated Unitil energy incentive",
+   "what_was_recorded": "Estimated energy incentive from Unitil, to be deposited into the general fund.",
+   "figures_as_printed": [
+    "$33,500"
+   ],
+   "quote": "our estimated incentive is $33,500."
+  },
+  {
+   "topic": "Master Plan consultant award",
+   "what_was_recorded": "The Planning Board's Master Plan award to Over Under of Boston.",
+   "figures_as_printed": [
+    "$153,000"
+   ],
+   "quote": "the award will be to a company called over under of boston for a total of $153,000"
+  },
+  {
+   "topic": "Surplus steam table sale on Municibid",
+   "what_was_recorded": "Council on Aging steam table auctioned on Municibid and sold.",
+   "figures_as_printed": [
+    "$525"
+   ],
+   "quote": "auctioned a 10 year old steam tableon municibid. thetablesold for $525."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The board signed an Accounts Payable warrant.",
+   "figures_as_printed": [
+    "$366,747.26"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $366,747.26."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from available funds (Free Cash) to the Overlay Account for FY 2023 abatements (article submitted by the Town Manager).",
+   "amount_as_printed": "$1.5M",
+   "outcome": "not stated (no vote printed; Ms. Lemieux's recommendation was discussed)",
+   "quote": "to see if the town will vote to transfer from available funds, all sums of money"
+  },
+  {
+   "description": "Appropriation from the Sale of Lots account for care and improvement of Town Cemeteries (Cemetery Commission).",
+   "amount_as_printed": "$10,000.00",
+   "outcome": "Select Board recommends 4-0 (no mover printed)",
+   "quote": "(submitted by the cemetery commission) select board recommendation: recommends 4-0"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Snowstorm and Unitil restoration communications",
+   "speaker": "Cathy Clark",
+   "stated_role": "275 Cross Road",
+   "quote": "cathy clark, 275 cross road, commented on the snowstorm last week and the restoration of"
+  },
+  {
+   "topic": "Senior tax relief legislation and 300th Anniversary Committee candidates",
+   "speaker": "Debbie Lincoln",
+   "stated_role": "46 Hemlock Drive",
+   "quote": "debbie lincoln, 46 hemlock drive, commended mr. franco and mr. alonzo for their work on"
+  },
+  {
+   "topic": "Appointment candidates for the 300th Anniversary Committee",
+   "speaker": "Pete Lincoln",
+   "stated_role": "",
+   "quote": "pete lincoln, recommended the three candidates up for appointment tonight"
+  },
+  {
+   "topic": "Reading of an unsigned email during a prior public comment",
+   "speaker": "Ms. Sroka",
+   "stated_role": "Select Board member",
+   "quote": "i'm not going to apologize for reading several lines of an unsigned email during my public comment"
+  },
+  {
+   "topic": "Publicizing a resident's email address",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Chair",
+   "quote": "it was in my view inappropriate to publicize that individual's"
+  },
+  {
+   "topic": "Resignation of Todd Dwyer",
+   "speaker": "Ms. Lemieux",
+   "stated_role": "",
+   "quote": "ms. lemieux reiterated she was sad to hear of mr. dwyer's resignation."
+  },
+  {
+   "topic": "Water District annual election",
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Select Board member",
+   "quote": "mr. alonzo reminded the water district is holding their annual election this saturday"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resignation letter of Todd Dwyer",
+   "resolution": "read into the record",
+   "quote": "mr. jeffreys read a letter from select board member todd dwyer.",
+   "tags": [
+    "resignation",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; Unitil storm communications referred to Ms. Lemieux; tax bill mailing date raised",
+   "quote": "cathy clark, 275 cross road, commented on the snowstorm last week and the restoration of",
+   "tags": [
+    "public comment",
+    "Unitil",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Communications with Other Boards: joint meeting request with Board of Assessors",
+   "resolution": "no action; awaiting response",
+   "quote": "we are waiting for a response.",
+   "tags": [
+    "assessors",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Tollbooth requests (Shriners Club; Lunenburg Skate Park)",
+   "resolution": "Skate Park approved; Shriners taken up without a recorded motion",
+   "quote": "to approve the tollbooth request for may 27 from 10 am to 2 pm in town center",
+   "tags": [
+    "tollbooth",
+    "events"
+   ]
+  },
+  {
+   "topic": "Appointments to the 300th Anniversary Committee",
+   "resolution": "approved (three appointees)",
+   "quote": "to appoint stanley barney, kathy comeau and michelle belleza to the 300# anniversary",
+   "tags": [
+    "300th anniversary",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Appointment to Board of Registrars (Karen Kemp)",
+   "resolution": "approved",
+   "quote": "to appoint karen kemp as registrar with a term to expire march 31, 2026",
+   "tags": [
+    "registrars",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Ratification of Recreation Director Angela Clement",
+   "resolution": "motion made; result not printed",
+   "quote": "so i'm asking you to ratify this appointment tonight. motion: l. franco",
+   "tags": [
+    "personnel",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Town Manager report and department updates",
+   "resolution": "received; no action printed",
+   "quote": "land use: the building commissioner needs to do a final inspection on this property",
+   "tags": [
+    "town manager",
+    "departments",
+    "beach",
+    "police",
+    "fire",
+    "library"
+   ]
+  },
+  {
+   "topic": "Public Employee Committee health insurance opt-out",
+   "resolution": "no action; meeting with committee planned for April",
+   "quote": "the idea behind a health insurance agreement is that employees that have been on the town's",
+   "tags": [
+    "health insurance",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "30 School Street hazardous materials abatement and demolition",
+   "resolution": "received; no action",
+   "quote": "the contractor awarded the hazardous materials abatement and demolition of 30 school street",
+   "tags": [
+    "school street",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "received",
+   "quote": "the annual town meeting is saturday, may 6, 2023 at 9 am at the lunenburg middle/high school.",
+   "tags": [
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "Common victualler license, Jaxx Country Variety",
+   "resolution": "approved",
+   "quote": "to approve the common victualler license for priha, inc. d/b/a jaxx country variety",
+   "tags": [
+    "licenses"
+   ]
+  },
+  {
+   "topic": "Upcoming board and committee vacancies for June",
+   "resolution": "read; to be advertised",
+   "quote": "mr. franco read the list of upcoming vacancies, including current vacancies and annual",
+   "tags": [
+    "vacancies",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of January 17, 2023 (Session II)",
+   "resolution": "approved",
+   "quote": "to approve the minutes of january 17, 2023 (session il) as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Finalize budget and legislative priorities submittal",
+   "resolution": "decided on four priorities",
+   "quote": "after discussion, the following was decided on:",
+   "tags": [
+    "budget",
+    "legislative priorities",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Senior citizen means-tested property tax exemption home rule petition",
+   "resolution": "continued; Town Counsel question and amended draft next meeting",
+   "quote": "after discussion, ms. lemieux will ask town counsel a question about expiration after three years",
+   "tags": [
+    "senior tax exemption",
+    "home rule",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "recommendations made on some articles; others passed over",
+   "quote": "the board moved on to the atm warrant and reviewed the articles and made recommendations",
+   "tags": [
+    "town meeting warrant",
+    "free cash",
+    "overlay",
+    "revolving funds",
+    "opioid settlement",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Unitil storm communications",
+   "resolution": "Ms. Lemieux to research",
+   "quote": "ms. lemieux will research that.",
+   "tags": [
+    "Unitil",
+    "storm",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "mr. franco reported he attended the council on aging meeting",
+   "tags": [
+    "committees",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "AP warrant signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $366,747.26.",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:41 PM",
+   "quote": "to adjourn the meeting",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting warrant",
+  "overlay and free cash",
+  "tax bill mailing date",
+  "appointments",
+  "tollbooth",
+  "Unitil storm",
+  "legislative priorities",
+  "senior tax exemption",
+  "revolving funds",
+  "opioid settlement",
+  "300th anniversary",
+  "vacancies",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

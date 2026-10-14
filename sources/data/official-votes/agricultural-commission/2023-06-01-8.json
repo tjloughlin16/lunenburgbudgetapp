@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-06-01",
  "docid": "8",
@@ -12,23 +12,172 @@
  },
  "votes": [
   {
-   "motion": "approve reviewed vendor applications for Farmers' Market",
+   "motion": "Approve the reviewed vendor applications for the Farmers' Market.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "maryrae made a motion to approve reviewed vendor applications for farmers' market; jackie seconded, commission unanimously approved."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Maryrae",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jackie motion to adjourn; maryrae seconds. commission unanimously approved"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd text.",
- "cost_usd": 0.0963735
+ "dropped_unquoted": 2,
+ "note": "OCR of a two-page scan (macOS Vision). The agenda table's columns are misaligned, so the mapping of Notes to agenda items 4 and 8-11 is inferred from order and is uncertain. Attendance marks are not printed: the members table lists names and functions only, so presence is \"not stated\" except where a person moved, seconded or was named in a vote. Scott Balak's function is printed as \"Public\" and is ambiguous. Votes were recorded as \"unanimously approved\" with no numeric count. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01456601,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "agricultural commission members and attendance function name chair vice-chair clerk"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "maryrae made a motion to approve reviewed vendor applications for farmers' market"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "agricultural commission members and attendance function name chair vice-chair clerk"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "agricultural commission members and attendance function name chair vice-chair clerk"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "jackie seconded, commission unanimously approved"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "kira mcclellan, alternate"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "ashley york, alternate"
+  },
+  {
+   "name": "Scott Balak",
+   "role": "Public (as printed in the attendance table)",
+   "status": "not stated",
+   "quote": "agricultural commission members and attendance function name chair vice-chair clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting was already approved for June 15th, 7:00pm; no new vote was recorded.",
+   "quote": "next meeting was already approved for june 15th, 7:00pm"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:08 pm",
+   "quote": "meeting commencement time: 7:08 pm",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "no action recorded in the minutes",
+   "quote": "farm complaints review/approve minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update - Seasonal",
+   "resolution": "approved vendor applications; vendors to be notified",
+   "quote": "reviewed received applications for farmers' market;",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Action Items from previous meeting",
+   "resolution": "tote bags ordered; Lunenburg Ledger ad ran; no new information on other items",
+   "quote": "tote bags were ordered",
+   "tags": [
+    "farmers market",
+    "marketing"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "items listed as no new information or as updates; see note",
+   "quote": "action items from previous meeting new business:",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Agenda items 8-11 (farming in Lunenburg, community gardens, farm inspections, marketing, bylaw references, map, committee reports)",
+   "resolution": "no new information recorded; committee reports noted as no new information",
+   "quote": "map of lunenburg farms committee reports: economic development",
+   "tags": [
+    "farming",
+    "community gardens",
+    "farm inspections",
+    "bylaw",
+    "town meeting article",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion (closing) and Set Next Meeting Date",
+   "resolution": "no public comment; next meeting already approved for June 15th, 7:00pm",
+   "quote": "no public comment next meeting was already approved for june 15th, 7:00pm",
+   "tags": [
+    "public comment",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:51pm",
+   "quote": "jackie motion to adjourn; maryrae seconds. commission unanimously approved",
+   "tags": [
+    "meeting procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "farmers market",
+  "vendor applications",
+  "farm complaints",
+  "public comment",
+  "agricultural commission",
+  "meeting minutes",
+  "town meeting article",
+  "community gardens",
+  "committee reports"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

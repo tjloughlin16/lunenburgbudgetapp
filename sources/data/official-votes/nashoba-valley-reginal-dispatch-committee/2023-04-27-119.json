@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "nashoba-valley-reginal-dispatch-committee",
  "meeting_date": "2023-04-27",
  "docid": "119",
@@ -12,41 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Accept the State 911 Proposal for NVRDD to answer and transfer 911 calls from Boxborough to Boxborough Police for 60 days",
+   "motion": "Accept the State 911 Proposal: NVRDD will answer and transfer 9-1-1 calls originating in Boxborough to the Boxborough Police Department for 60 days; referred to the Administration Board.",
    "moved_by": "Chief Sicard",
    "seconded_by": "Chief Kelly",
-   "outcome": "passed 10-2",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chief sicard made the motion and it was seconded by chief kelly. with no further discussion requested, a roll call vote was completed: chief hans",
-   "quote_taken_from_text": true
+   "quote": "chief sicard made the motion and it was seconded by chief kelly. with no further discussion requested, a roll call vote was completed:"
   },
   {
-   "motion": "Accept the State 911 Proposal for NVRDD to answer and transfer 911 calls from Boxborough for 60 days, with status reports every 30 days and a meeting 15 days before the 60-day period ends",
+   "motion": "Accept the State 911 Proposal for 60 days as amended by Heather Lemieux, adding status reports every 30 days and a meeting 15 days before the end of the 60 days to review Boxborough's staffing progress.",
    "moved_by": "Meg Delorier",
    "seconded_by": "Kristen Rubin",
-   "outcome": "passed 4-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "meg delorier made the motion and it was seconded by kristen rubin. with no further discussion requeste",
-   "quote_taken_from_text": true
+   "quote": "meg delorier made the motion and it was seconded by kristen rubin. with no further discussion requested, a roll call vote was completed:"
   },
   {
-   "motion": "Adjourn the Operations Committee meeting",
+   "motion": "Adjourn the meeting at 10:02am.",
    "moved_by": "Chief Moody",
    "seconded_by": "Chief Sullivan",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion was made by chief moody, and seconded by chief sullivan."
+   "quote": "with no other business chief gammel entertained a motion to adjourn the meeting at 10:02am. motion was made by chief moody, and seconded by chief sullivan."
   },
   {
-   "motion": "Adjourn the Administration Board meeting",
+   "motion": "Adjourn the meeting at 10:02am.",
    "moved_by": "Heather Lemieux",
    "seconded_by": "Meg Delorier",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion was made by heather lemieux, and seconded by meg delorier."
+   "quote": "with no other business kristen rubin entertained a motion to adjourn the meeting at 10:02am. motion was made by heather lemieux, and seconded by meg delorier."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Roll call vote details included separately in text. Both substantive votes (on Boxborough 911 proposal) recorded with named votes. Adjournment motions recorded but with no explicit vote outcome stated in the minutes.",
- "cost_usd": 0.1265345
+ "note": "Text is complete for a three-page document; page 4 is blank. Meeting was conducted via Webex, but the minutes do not say individually who attended remotely, so attendees are marked 'present' as printed under ATTENDEES PRESENT. The first roll call (10 Aye, 2 No, derived by counting the names listed) and the second (4 Aye/Yes, 1 No, derived) were tallied by me; the minutes print only 'With a majority, the motion passed', with no count. Two identical adjournment motions are recorded at 10:02am with no printed result. The minutes do not state which body each roll call belonged to; the second roll call lists Administration Board members. No public comment section appears in the minutes. No dollar figures are printed.",
+ "cost_usd": 0.016694510000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kristen Rubin",
+   "role": "Chair of Administration Board – Town of Berlin",
+   "status": "present",
+   "quote": "kristen rubin, chair of administration board - town of berlin"
+  },
+  {
+   "name": "Meg Delorier",
+   "role": "Vice Chair of Administration Board – Mass Development/Devens",
+   "status": "present",
+   "quote": "meg delorier, vice chair of administration board - mass development/devens"
+  },
+  {
+   "name": "Don Lowe",
+   "role": "Town of Bolton",
+   "status": "present",
+   "quote": "don lowe - town of bolton"
+  },
+  {
+   "name": "Kate Hodges",
+   "role": "Town of Lancaster",
+   "status": "present",
+   "quote": "kate hodges - town of lancaster"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town of Lunenburg",
+   "status": "present",
+   "quote": "heather lemieux - town of lunenburg"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Chair of Operations Committee – Town of Lunenburg PD",
+   "status": "present",
+   "quote": "chief thomas gammel, chair of operations committee - town of lunenburg pd"
+  },
+  {
+   "name": "Timothy Kelly",
+   "role": "Vice-Chair of Operations Committee – Mass Development/Devens FD",
+   "status": "present",
+   "quote": "chief timothy kelly, vice-chair of operations committee - mass development/devens fd"
+  },
+  {
+   "name": "Eric Schartner",
+   "role": "Town of Berlin PD",
+   "status": "present",
+   "quote": "chief eric schartner - town of berlin pd"
+  },
+  {
+   "name": "Michael McQuillen",
+   "role": "Town of Berlin FD",
+   "status": "present",
+   "quote": "chief michael mcquillen - town of berlin fd"
+  },
+  {
+   "name": "Warren Nelson",
+   "role": "Town of Bolton PD",
+   "status": "present",
+   "quote": "chief warren nelson - town of bolton pd"
+  },
+  {
+   "name": "Jeffrey Legendre",
+   "role": "Town of Bolton FD",
+   "status": "present",
+   "quote": "chief jeffrey legendre - town of bolton fd"
+  },
+  {
+   "name": "Reid Bagley",
+   "role": "MSP Devens",
+   "status": "present",
+   "quote": "lt. reid bagley - msp devens"
+  },
+  {
+   "name": "James Babu",
+   "role": "Town of Harvard PD",
+   "status": "present",
+   "quote": "chief james babu - town of harvard pd"
+  },
+  {
+   "name": "Richard Sicard",
+   "role": "Town of Harvard FD",
+   "status": "present",
+   "quote": "chief richard sicard - town of harvard fd"
+  },
+  {
+   "name": "Everett Moody",
+   "role": "Town of Lancaster PD",
+   "status": "present",
+   "quote": "chief everett moody - town of lancaster pd"
+  },
+  {
+   "name": "Michael Hanson",
+   "role": "Town of Lancaster FD",
+   "status": "present",
+   "quote": "chief michael hanson - town of lancaster fd"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Town of Lunenburg FD",
+   "status": "present",
+   "quote": "chief patrick sullivan - town of lunenburg fd"
+  },
+  {
+   "name": "Anne Camaro",
+   "role": "Director – NVRDD",
+   "status": "present",
+   "quote": "director anne camaro - nvrdd"
+  },
+  {
+   "name": "Peter Kinnas",
+   "role": "Supervisor – NVRDD",
+   "status": "present",
+   "quote": "supervisor peter kinnas - nvrdd"
+  },
+  {
+   "name": "Glenn Casey",
+   "role": "Supervisor – NVRDD (Union President)",
+   "status": "present",
+   "quote": "supervisor glenn casey - nvrdd"
+  },
+  {
+   "name": "Frank Pozniak",
+   "role": "Executive Director – State 911 Department",
+   "status": "present",
+   "quote": "executive director frank pozniak - state 911 department"
+  },
+  {
+   "name": "Monna Wallace",
+   "role": "Director of Programs – State 911 Department",
+   "status": "present",
+   "quote": "director of programs monna wallace - state 911 department"
+  },
+  {
+   "name": "Joseph Crean",
+   "role": "Director of Special Projects – State 911 Department",
+   "status": "present",
+   "quote": "director of special projects joseph crean - state 911 department"
+  },
+  {
+   "name": "Andrew Perry",
+   "role": "Lt. – Town of Harvard FD",
+   "status": "present",
+   "quote": "lt. andrew perry - town of harvard fd"
+  },
+  {
+   "name": "Marie Sobalvarro",
+   "role": "Town of Harvard",
+   "status": "absent",
+   "quote": "marie sobalvarro, town of harvard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director Camaro to finalize the procedure for the Boxborough 9-1-1 arrangement and distribute it to the Operations Committee for approval.",
+   "quote": "director camaro will finalize the procedure and will distribute to operations committee for approval."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Overtime reimbursement for the Boxborough 9-1-1 arrangement",
+   "what_was_recorded": "State 911 said it can reimburse NVRDD for overtime incurred under the arrangement; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "frank pozniak advised that state 911 can provide nvrdd with financial reimbursement for any overtime incurred as a result of this arrangement."
+  },
+  {
+   "topic": "Financial compensation concern for taking on Boxborough calls",
+   "what_was_recorded": "Chief Gammel raised that NVRDD communities pay assessments and are concerned about taking on a town with no financial compensation; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "nvrdd communities pay their assessments, and are concerned with taking on a town with no financial compensation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "I. Call to order",
+   "resolution": "no action; meeting called to order at 9:33am",
+   "quote": "the meeting was called to order by the administration board chair at 9:33am.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "II. Discussion of State 911 request re: Boxborough's 911 calls",
+   "resolution": "two roll-call motions passed to accept a 60-day arrangement; the first referred to the Administration Board",
+   "quote": "ii. discussion of state 911 request re: boxborough's 911 calls",
+   "tags": [
+    "911 dispatch",
+    "Boxborough",
+    "State 911 Department",
+    "staffing",
+    "mutual aid"
+   ]
+  }
+ ],
+ "tags": [
+  "911 dispatch",
+  "regional dispatch",
+  "Boxborough",
+  "State 911 Department",
+  "staffing",
+  "overtime",
+  "roll call vote",
+  "Webex",
+  "special meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2023-04-20",
  "docid": "264",
@@ -12,23 +12,204 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from February 16, 2023",
-   "outcome": "not stated",
+   "motion": "Approve the minutes of February 16, 2023.",
    "moved_by": "Matt Proctor",
    "seconded_by": "John Beale",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion by matt proctor to approve minutes from february 16, 2023, seconded by john beale."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "not stated",
+   "motion": "Adjourn the meeting at 7:34 PM.",
    "moved_by": "John Beale",
    "seconded_by": "Matt Proctor",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn at 7:34 pm by john beale, seconded by matt proctor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded; neither has an explicit outcome stated in the minutes, though the meeting's adjournment at 7:34 PM is consistent with the adjourn motion having passed.",
- "cost_usd": 0.0789865
+ "note": "Text is a clean digital extract, not a scan. Both recorded motions (approve February 16, 2023 minutes; adjourn at 7:34 PM) show no vote count or result, so outcome is \"not stated\". The roll call lists six people with no absence marks, so they are recorded as present. Amanda Reid appears only in the roll call. Money is discussed (spreadsheets of expenditures, rain garden cost, stormwater utility) but no dollar figure is printed anywhere. Both public comment sections say \"No public comment,\" so no speakers are recorded.",
+ "cost_usd": 0.0162499,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Beale",
+   "role": "Member",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "Member",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Chair",
+   "status": "present",
+   "quote": "john beale (member), bill bernard (dpw), adam burney (land use director), matt proctor (member), amanda reid (planning board), and richard tremblay (chair)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Adam Burney and Richard Tremblay will work on the next steps to create a Sharefile account for stormwater reading materials and files.",
+   "quote": "adam burney and richard tremblay will work on the next steps to get this created."
+  },
+  {
+   "decision": "Bill Bernard will bring estimated numbers for the rain garden to the next meeting.",
+   "quote": "bill bernard received an adjusted cost for the rain garden and will bring estimated numbers to the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Asset Management Grant: stormwater cost expenditures",
+   "what_was_recorded": "DPW has sent the task force spreadsheets of stormwater cost expenditures through the end of March; no amounts are printed in the minutes.",
+   "quote": "bill bernard has sent out numerous spreadsheets to the task force regarding cost expenditures related to stormwater through the end of march.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Demonstration Structural BMP Project: rain garden cost",
+   "what_was_recorded": "The DPW received an adjusted cost for the rain garden; the estimated figure was deferred to the next meeting and no amount is printed.",
+   "quote": "bill bernard received an adjusted cost for the rain garden and will bring estimated numbers to the next meeting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Stormwater utility spreadsheet (MS4 resources)",
+   "what_was_recorded": "An Excel spreadsheet on the MS4 website helps build a stormwater utility; no amounts are printed.",
+   "quote": "there is also an excel spreadsheet that helps build a stormwater utility available on the ms4 website.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Meeting & Roll Call",
+   "resolution": "called to order at 7:03 PM",
+   "quote": "call to order at 7:03 pm",
+   "tags": [
+    "roll call",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review & Approve Minutes",
+   "resolution": "motion made; result not recorded",
+   "quote": "motion by matt proctor to approve minutes from february 16, 2023, seconded by john beale.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Task Force Member Updates",
+   "resolution": "update received; Sharefile account to be set up",
+   "quote": "as discussed at a prior meeting richard tremblay has reviewed the central mass stormwater website",
+   "tags": [
+    "resources",
+    "Sharefile",
+    "MS4"
+   ]
+  },
+  {
+   "topic": "DPW Director Update on Data Collection",
+   "resolution": "update received; data collection began April 20, 2023",
+   "quote": "bill bernard has started data collection today, april 20, 2023, related to stormwater tasks being completed by the dpw.",
+   "tags": [
+    "DPW",
+    "data collection",
+    "drainage mapping",
+    "catch basins"
+   ]
+  },
+  {
+   "topic": "Ongoing Items: Asset Management Grant and Demonstration Structural BMP Project",
+   "resolution": "update received; rain garden estimate deferred to next meeting",
+   "quote": "cei has looked at the high school and found numerous location options for this structure.",
+   "tags": [
+    "asset management grant",
+    "street sweeping",
+    "rain garden",
+    "BMP",
+    "high school",
+    "horticulture students"
+   ]
+  },
+  {
+   "topic": "Items for Next Meeting",
+   "resolution": "noted; additional member to join after May 20 elections",
+   "quote": "after the elections on may 20th, the group will meet, and an additional member will take a spot on the stormwater task force board.",
+   "tags": [
+    "membership",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Next Meeting Dates",
+   "resolution": "next meeting set for May 18 at 7 PM",
+   "quote": "8. next meeting dates may 18, at 7 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comment",
+   "quote": "9. public comment no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:34 PM",
+   "quote": "motion to adjourn at 7:34 pm by john beale, seconded by matt proctor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "DPW",
+  "drainage mapping",
+  "catch basins",
+  "street sweeping",
+  "asset management grant",
+  "rain garden",
+  "structural BMP",
+  "MS4",
+  "task force membership",
+  "Sharefile",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

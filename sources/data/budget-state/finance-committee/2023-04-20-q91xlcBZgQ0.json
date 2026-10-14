@@ -1,0 +1,85 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2023-04-20",
+ "source": {
+  "sha256": "9329a3ab7f851fc841e1cfdc1c09ca1bf1d98837c3f1f7df4284c0d7d93f1dc0",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2023-04-20-q91xlcBZgQ0.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "one million five hundred thousand dollars",
+    "fiscal_year": 2024,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Town manager recommended transferring free cash to the overlay account to cover potential abatements.",
+    "status": "proposed",
+    "t": 1010,
+    "who": "chair, reading the report"
+   },
+   {
+    "amount_as_heard": "one million five hundred thousand dollars",
+    "fiscal_year": 2024,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash to the overlay account substantially lowers free cash available for the capital plan.",
+    "status": "announced",
+    "t": 827,
+    "who": "chair, reading the report"
+   },
+   {
+    "amount_as_heard": "one million thirty nine thousand and ten dollars",
+    "fiscal_year": 2024,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Capital plan funded without ARPA funds.",
+    "status": "announced",
+    "t": 847,
+    "who": "chair, reading the report"
+   },
+   {
+    "amount_as_heard": "0.6 percent",
+    "fiscal_year": 2024,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Chapter 70 expected to rise only the mandatory minimum for FY24.",
+    "status": "announced",
+    "t": 1179,
+    "who": "chair, reading the report"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "Chapter 70 and Monty Tech",
+    "condition": null,
+    "fiscal_year": 2024,
+    "prediction": "The Chapter 70 increase will not be enough to offset the Monty Tech assessment increase.",
+    "scope": "town",
+    "t": 1200,
+    "who": "chair, reading the report"
+   },
+   {
+    "about": "ESSER-funded positions",
+    "condition": "when ESSER ends",
+    "fiscal_year": 2025,
+    "prediction": "The school department will need other funding to maintain ESSER-funded staff once the funds expire.",
+    "scope": "school",
+    "t": 1158,
+    "who": "chair, reading the report"
+   }
+  ]
+ },
+ "video_id": "q91xlcBZgQ0",
+ "video_url": "https://www.youtube.com/watch?v=q91xlcBZgQ0",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-13T22:25:07Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

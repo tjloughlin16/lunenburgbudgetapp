@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-05-01",
  "docid": "146",
@@ -12,30 +12,174 @@
  },
  "votes": [
   {
-   "motion": "to accept and approve the minutes of the April 12, 2023 meeting",
+   "motion": "Approve the minutes of the April 12, 2023 meeting.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews to accept and approve the minutes of the april 12, 2023 meeting. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept and approve the minutes of the april 12, 2023 meeting."
   },
   {
-   "motion": "to accept the recommendation of the HR Director to offer the candidate for Building Commissioner a salary at step 3 of Grade 16",
+   "motion": "Accept the recommendation of the HR Director to offer the Building Commissioner candidate a salary at step 3 of Grade 16.",
    "moved_by": "S. A Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. a andrews to accept the recommendation of the hr director to offer the candidate for building commissioner a salary at step 3 of grade 16. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. a andrews to accept the recommendation of the hr director to offer the candidate for building commissioner a salary at step 3 of grade 16."
   },
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "D. Fortune",
+   "motion": "Adjourn the meeting at 5:33pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion by to adjourn meeting at 5:33pm by d. fortune"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; vote #3 has awkward phrasing where the mover's name appears at the end (\"by D. Fortune\") rather than after \"Motion by\"; no second or explicit outcome recorded for adjournment motion",
- "cost_usd": 0.08922250000000001
+ "note": "Scanned minutes read by OCR (macOS Vision); the text carries OCR-style errors (e.g. 'their' for 'there', 'S. A Andrews' printed as the mover). Roll-call votes are recorded only as 'All in Favor' with no count. The adjournment motion does not name a mover or seconder ('Motion by to adjourn meeting at 5:33pm by D. Fortune'), so moved_by is left blank and the outcome is not stated. Attendance is a single line ('members noted in attendance') with no individual member list beyond the absent member and those who spoke or moved. No dollar figures are printed in the minutes; the salary items are described only as grade and step.",
+ "cost_usd": 0.013706310000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Bilotta",
+   "role": "",
+   "status": "present",
+   "quote": "j.bilotta opened the meeting at 5:05pm with members noted in attendance"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: wendy bertrand"
+  },
+  {
+   "name": "S. Andrews",
+   "role": "",
+   "status": "present",
+   "quote": "motion by s. andrews to accept and approve the minutes of the april 12, 2023 meeting."
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "",
+   "status": "present",
+   "quote": "donna fortune outlined some analysis she did, comparing the job descriptions initially submitted, the updates requested"
+  },
+  {
+   "name": "J. Belliveau",
+   "role": "",
+   "status": "present",
+   "quote": "j. belliveau presented the recommended pay rate for building commissioner candidate step 3 of grade 16"
+  },
+  {
+   "name": "Nancy O'Rourke",
+   "role": "",
+   "status": "present",
+   "quote": "nancy o'rourke asked if the job description for her role had been submitted in the final consultant's submission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed to assess the outlier roles where the new grid's highest step came in below the current level, to ensure their proper placement in the potential new grid.",
+   "quote": "agreement was reached that we would assess the outliers this happened to insuring their proper placement in the potential new grid."
+  },
+  {
+   "decision": "Agreed that the next level of work on the Job Classification Project is to review final drafts of job descriptions and evaluate the spreadsheet for outliers or roles that appear incorrectly slotted.",
+   "quote": "the group agreed that the next level of work was to review final drafts of job descriptions and any potential"
+  },
+  {
+   "decision": "Donna Fortune asked Nancy O'Rourke to send her material so the job description could be noted in the project.",
+   "quote": "she asked nancy to send her whatever material she had so that the description could be correctly noted in the project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building Commissioner starting salary",
+   "what_was_recorded": "The committee was presented a recommended pay rate for the Building Commissioner candidate at step 3 of Grade 16; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "j. belliveau presented the recommended pay rate for building commissioner candidate step 3 of grade 16"
+  },
+  {
+   "topic": "Job classification salary impact grid",
+   "what_was_recorded": "Donna Fortune built a grid assessing the impact of level recommendations on employees' actual salary projections; a few roles appeared lower at the highest step than the current level. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "she also did work on a grid that assessed the impact the level recommendations had on employee's actual salary projections."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Nancy O'Rourke",
+   "stated_role": "",
+   "topic": "whether her role's job description was in the consultant's final submission",
+   "quote": "nancy o'rourke asked if the job description for her role had been submitted in the final consultant's submission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "there were neither committee comments, nor public comments during this time."
+  },
+  {
+   "topic": "Approval of April 12, 2023 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of the april 12, 2023 meeting were presented and reviewed."
+  },
+  {
+   "topic": "Ongoing Job Classification Project",
+   "resolution": "discussed; next steps agreed",
+   "tags": [
+    "job classification",
+    "job descriptions",
+    "salary grid"
+   ],
+   "quote": "general discussion took place on the ongoing job classification project."
+  },
+  {
+   "topic": "Building Commissioner salary offer",
+   "resolution": "approved",
+   "tags": [
+    "hiring",
+    "salary",
+    "Building Commissioner"
+   ],
+   "quote": "j. belliveau presented the recommended pay rate for building commissioner candidate step 3 of grade 16"
+  },
+  {
+   "topic": "Public comment on job description",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "job descriptions"
+   ],
+   "quote": "nancy o'rourke asked if the job description for her role had been submitted in the final consultant's submission"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "proposed",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "proposed next meeting wednesday, may 24, 2023."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job classification",
+  "salary",
+  "hiring",
+  "Building Commissioner",
+  "minutes approval",
+  "public comment",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-05-09",
  "docid": "288",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 4/25/23",
+   "motion": "To accept the minutes of 4/25/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: brett r. second: dave m. to accept the minutes of 4/25/23. roll call vote: dave-aye, brett-aye, mike n.-aye and john-aye."
   },
   {
-   "motion": "Adjourn at 7:15 pm",
+   "motion": "To adjourn at 7:15pm.",
    "moved_by": "Brett",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -29,6 +29,359 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0860735
+ "note": "Text extracted from a 3-page PDF; all three pages read, no scan or illegibility noted. Two formal motions are recorded, both with roll-call results (4-0). The A & D hearing and the Leominster attendance are recorded as Commission agreement without a motion, so they are decisions, not votes. The $24K engineering-to-infrastructure reallocation is a stated plan by the Business Manager, with no vote recorded. The 90-8 result is a Town Meeting vote, not a Commission vote. Mike Deveikis is listed as absent with no stated role. Dave MacDonald's two public comment entries are Commissioner remarks in the public comment section, not outside speakers. Some quotes collapse double spaces and line breaks from the source.",
+ "cost_usd": 0.01874251,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Deveikis",
+   "status": "absent",
+   "quote": "absent: mike deveikis"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Al Packard",
+   "role": "Guest, Chad T. Empey LLC (appeared before the board, Appointments)",
+   "status": "present",
+   "quote": "chad t. empey llc- al packard- al noted they have a new general manager, who was interested in the town"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Schedule a hearing on A & D Crossroads at the 5/30 meeting (after Town Counsel advised a hearing and notice to the property owner).",
+   "quote": "the commission discussed and agreed to schedule a hearing at the 5/30 meeting."
+  },
+  {
+   "decision": "Commission agreed that the Business Manager (Paula) will also attend the initial Leominster IMA meeting.",
+   "quote": "the commission agreed to have paula also attend."
+  },
+  {
+   "decision": "Bill will name priorities and the available money will be used to work on infiltration and inflow (I/I).",
+   "quote": "john said bill will name priorities and they will use available money to work on i/i."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pump station repairs remaining in FY23",
+   "what_was_recorded": "The total for the remaining FY23 pump station repairs is stated, including one Meadowwoods item.",
+   "figures_as_printed": [
+    "$46,141",
+    "$10,062"
+   ],
+   "quote": "the total for the remainder of fy23 is $46,141 for the following pump station repairs:"
+  },
+  {
+   "topic": "Infrastructure budget and spending",
+   "what_was_recorded": "The Infrastructure line was budgeted at $64,150 with $15K spent so far, which the minutes say covers the requested repairs.",
+   "figures_as_printed": [
+    "$64,150",
+    "$15K"
+   ],
+   "quote": "they have budgeted $64,150 for infrastructure and spent $15k so far, which leaves enough for all the requested repairs."
+  },
+  {
+   "topic": "Capital spending over several years",
+   "what_was_recorded": "The Capital Planning Worksheet shows spending of about $100K per year across several years.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "for about $100k per year."
+  },
+  {
+   "topic": "FY24 generator for Twin City",
+   "what_was_recorded": "A new generator for Twin City is planned for FY24 at a stated cost, and is the only capital item purchased that year.",
+   "figures_as_printed": [
+    "$80K"
+   ],
+   "quote": "paula noted in fy24, they will need a new generator for twin city for $80k, which will be the only item purchased next year."
+  },
+  {
+   "topic": "Infiltration and inflow (I/I) budget",
+   "what_was_recorded": "The I/I line is budgeted at $10K and the Business Manager proposes buying a float sensor to locate I/I problems.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "paula noted they have $10k budgeted for i/i and she would like to purchase the float sensor"
+  },
+  {
+   "topic": "Reallocation of engineering funds to manholes",
+   "what_was_recorded": "Excess engineering funds are to be moved to Infrastructure for priority manholes.",
+   "figures_as_printed": [
+    "$24K"
+   ],
+   "quote": "she will reallocate the remaining $24k to infrastructure to address the priority manholes."
+  },
+  {
+   "topic": "Priority manhole estimate from Wright Pierce",
+   "what_was_recorded": "Wright Pierce estimated in 2020 the cost of priority manhole repairs, and the Business Manager says all additional funding will be applied to them.",
+   "figures_as_printed": [
+    "$112K"
+   ],
+   "quote": "paula stated wright pierce estimated in 2020 the cost of $112k for priority manholes"
+  },
+  {
+   "topic": "Q4 FY23 sewer commitment",
+   "what_was_recorded": "The quarterly commitment (bills sent 5/2) total was reported.",
+   "figures_as_printed": [
+    "$255,388.23"
+   ],
+   "quote": "paula reported the quarterly bills went out on 5/2 and the commitment total was $255,388.23."
+  },
+  {
+   "topic": "Sewer budget at Town Meeting",
+   "what_was_recorded": "The Sewer budget presentation was given at Town Meeting and passed 90-8; a question about the large miscellaneous figure was raised and the format will change for FY25. This is a Town Meeting result, not a Commission vote.",
+   "figures_as_printed": [],
+   "quote": "bill gave the sewer budget presentation at town meeting and it passed 90-8."
+  },
+  {
+   "topic": "FY23 budget update: revenues and expenses",
+   "what_was_recorded": "Anticipated revenues are reported as up, user charges as down, and salary and utilities variances and a projected surplus are stated.",
+   "figures_as_printed": [
+    "$34,884.03",
+    "$10K",
+    "$62,697.31",
+    "$5K",
+    "$57K"
+   ],
+   "quote": "overall, there will be an increase in anticipated revenues of $34,884.03."
+  },
+  {
+   "topic": "Other Departmental Expenses balance",
+   "what_was_recorded": "Salary is projected over by $10K and $62,697.31 is projected to remain in Other Departmental Expenses.",
+   "figures_as_printed": [
+    "$10K",
+    "$62,697.31"
+   ],
+   "quote": "salary will be over by $10k, but paula anticipates having $62,697.31 left in other departmental expenses."
+  },
+  {
+   "topic": "Projected FY23 surplus for infrastructure",
+   "what_was_recorded": "A projected $57K surplus is stated as available for infrastructure such as manholes, alongside a $5K deficit for Utilities.",
+   "figures_as_printed": [
+    "$57K",
+    "$5K"
+   ],
+   "quote": "paula predicted they will have $57k surplus which could be used for infrastructure, such as manholes."
+  },
+  {
+   "topic": "A & D Crossroads balance",
+   "what_was_recorded": "The A & D Crossroads account balance after a notice of non-compliance is stated.",
+   "figures_as_printed": [
+    "$2,525"
+   ],
+   "quote": "their balance is now $2,525."
+  },
+  {
+   "topic": "FY25 budget format change",
+   "what_was_recorded": "The Business Manager will change the FY25 budget format and betterments income and outgo to remove the miscellaneous category.",
+   "figures_as_printed": [],
+   "quote": "paula said she will change the format for the budget for fy25 and also the way they do the betterments income and outgo"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reallocate remaining excess engineering funds to infrastructure to address priority manholes (stated as planned by the Business Manager; no vote recorded)",
+   "amount_as_printed": "$24K",
+   "outcome": "stated as planned; no vote recorded",
+   "quote": "there are excess funds in engineering and she will reallocate the remaining $24k to infrastructure to address the priority manholes."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "Town Election and open Commissioner seat",
+   "quote": "public comment- dave noted the town election will be on 5/20 and there is still an opening for a commissioner, as a write-in candidate."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "Urging voter turnout at Town Election",
+   "quote": "dave urged all to come out and vote at the town election."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Town Election and open seat",
+   "resolution": "noted; no action",
+   "quote": "public comment- dave noted the town election will be on 5/20 and there is still an opening for a commissioner,",
+   "tags": [
+    "election",
+    "commission vacancy"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; thanks recorded",
+   "quote": "paula read a thank you card from barb lefebvre for her 15-year award",
+   "tags": [
+    "announcements",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Appointments: Chad T. Empey LLC system status update",
+   "resolution": "status update received; pump station repair and upgrade plan discussed",
+   "quote": "al sent paula a list of repairs and upgrades for 3 of the pump houses.",
+   "tags": [
+    "pump stations",
+    "contractor",
+    "maintenance",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Capital Plan: earmarks and O&M RFP",
+   "resolution": "no action; status noted",
+   "quote": "paula has not heard any updates on the earmark requests and the o&m rfp is still in the queue.",
+   "tags": [
+    "capital plan",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Minutes of 4/25/23",
+   "resolution": "approved 4-0",
+   "quote": "to accept the minutes of 4/25/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Q4 FY23 Commitment",
+   "resolution": "reported; signing discussed",
+   "quote": "paula reported the quarterly bills went out on 5/2 and the commitment total was $255,388.23.",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Town Meeting update: Sewer budget",
+   "resolution": "reported",
+   "quote": "bill gave the sewer budget presentation at town meeting and it passed 90-8.",
+   "tags": [
+    "budget",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "A & D Crossroads non-compliance",
+   "resolution": "hearing scheduled for 5/30 meeting",
+   "quote": "the commission discussed and agreed to schedule a hearing at the 5/30 meeting.",
+   "tags": [
+    "grease",
+    "enforcement",
+    "restaurants"
+   ]
+  },
+  {
+   "topic": "Business Manager report: FY23 budget update",
+   "resolution": "reported; no action",
+   "quote": "overall, there will be an increase in anticipated revenues of $34,884.03.",
+   "tags": [
+    "budget",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Grease trap permit holders update",
+   "resolution": "discussed; school reports pending",
+   "quote": "paula reported all are up to date except for conrad",
+   "tags": [
+    "grease traps",
+    "schools",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Initial Leominster IMA meeting",
+   "resolution": "scheduled; attendance assigned",
+   "quote": "initial leominster ima meeting- is scheduled for 10am on 5/24 at 37 carter st, leominster.",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "NPDES"
+   ]
+  },
+  {
+   "topic": "Public comment: Town Election turnout",
+   "resolution": "noted; no action",
+   "quote": "dave urged all to come out and vote at the town election.",
+   "tags": [
+    "election"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "june 13, 2023 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15pm, passed 4-0",
+   "quote": "to adjourn at 7:15pm. roll call vote: mike- aye, dave-aye, brett-aye and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "pump stations",
+  "capital plan",
+  "infiltration and inflow",
+  "FY23 budget",
+  "grease traps",
+  "Leominster IMA",
+  "town election",
+  "Empey contract",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

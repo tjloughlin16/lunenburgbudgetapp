@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-03-22",
  "docid": "135",
@@ -12,24 +12,260 @@
  },
  "votes": [
   {
-   "motion": "Submit seasonal employees application to the state for Town Beach opening and closing dates of May 8 through September 22, 2023",
-   "moved_by": "K. Menard",
-   "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "motion": "Move that the seasonal employees application be submitted to the state with the dates of May 8 through September 22, 2023.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Christopher Sullivan",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "k. menard made a motion requesting the seasonal employees application be submitted to the state with the dates of may 8 through september 22, 2023. c. sullivan seconded. roll call v ote: k. menard - yes c. sullivan - yes p. hakey - yes d. passios - yes a. lockwood - ye",
-   "quote_taken_from_text": true
+   "quote": "k. menard made a motion requesting the seasonal employees application be submitted to the state with the dates of"
   },
   {
-   "motion": "Approve the minutes from January 2023",
-   "moved_by": "K. Menard",
-   "seconded_by": "D. Passios",
+   "motion": "Approve the minutes from January 2023.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Dave Passios",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "k. menard made a motion to approve the minutes from january 2023. d. passios seconded. roll call vote, (4-0-1) motion carried. d. passios abstained."
+   "quote": "k. menard made a motion to approve the minutes from january 2023. d. passios seconded. roll call vote, (4-0-1) motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Both votes were recorded with named roll calls or tallies. D. Passios abstained on the January 2023 minutes approval.",
- "cost_usd": 0.0791554
+ "note": "Text extraction, not a scan; all four pages print the header \"Page 4 of 4\", so the page numbering is unreliable. No public comment section appears in the minutes, so public_comment is empty. The adjournment at 9:04 pm is recorded with no motion. The minutes do not say whether these March minutes were approved. Name spellings vary within the text (Hakey/Hackey; Christopher/Chris Sullivan; \"Town Council\" for Town Counsel); names are given as printed in the attendance line. The Recreation Director hire, Angela Clement, is mentioned but did not attend. Votes: the seasonal-application motion has a roll call listing five yes votes, so it is recorded as passed rather than as a printed count.",
+ "cost_usd": 0.01574041,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, dave passios, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, dave passios, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, dave passios, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, dave passios, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, dave passios, christopher sullivan, and patrick hakey"
+  },
+  {
+   "name": "C. Ruth",
+   "role": "not stated (gave the Facilities Director Update)",
+   "status": "present",
+   "quote": "c. ruth gave the following updates to the commission:"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair asked the Facilities Director to have the fencing company look at the fence at the Marshall Park softball field.",
+   "quote": "a. lockwood asked c. ruth to have the fencing company look at the fence at the marshall park softball field."
+  },
+  {
+   "decision": "Facilities Director to reach out to the appropriate people about crack sealing the basketball court before resurfacing.",
+   "quote": "d. passios asked if the basketball court could be crack sealed before the resurfacing is done."
+  },
+  {
+   "decision": "Chair to check the April dates for the Select Board meeting on ARPA with the Town Manager.",
+   "quote": "the commission discussed dates that would work for them in april. a. lockwood will check those dates with the town manager."
+  },
+  {
+   "decision": "Naming rights discussion tabled.",
+   "quote": "next on the agenda, discussing on naming rights - tabled"
+  },
+  {
+   "decision": "Christopher Sullivan volunteered to represent the Commission on the 300th Anniversary Committee.",
+   "quote": "c. sullivan volunteered to represent the commission."
+  },
+  {
+   "decision": "Chair signed the Notice of Intent document for the skate park, placed in the meeting folder, to begin the Conservation Commission permitting process.",
+   "quote": "a. lockwood stated she has signed the document and it is in the meeting folder."
+  },
+  {
+   "decision": "Earth Day assignments: Passios contact for Wallace Park; Sullivan at Veterans Park April 8, 2023; Chair available April 2 or 9, 2023.",
+   "quote": "d. passios will be the contact for wallace park. the playground and the woods are to be done april 22, 2023 9 am - noon."
+  },
+  {
+   "decision": "Next meeting set for April 19, 2023 at 7 pm.",
+   "quote": "last item on the agenda: next meeting april 19, 2023 at 7 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Beach and recreation staffing and purchase of service budget update",
+   "what_was_recorded": "The Facilities Director reported additional amounts added to the budget for staffing for programming and for purchase of service accounts.",
+   "figures_as_printed": [
+    "$5,000",
+    "$10,000"
+   ],
+   "quote": "budget update, an additional $5,000 in staffing has been added for programming and $10,000 for the purchase of service accounts."
+  },
+  {
+   "topic": "Marshall Park renovation funding",
+   "what_was_recorded": "A Town Manager email, read into the record, said $250,000 was earmarked for the fiscal 2024 state budget; state grants and ARPA funds were said to be available.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "c. sullivan read an email received from the town manager indicating $250,000 was earmarked for the fiscal 2024 state budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director Update",
+   "resolution": "no action; updates received",
+   "quote": "first item on the agenda, facilities director update",
+   "tags": [
+    "facilities",
+    "town beach",
+    "recreation director",
+    "parks maintenance"
+   ]
+  },
+  {
+   "topic": "Set Town Beach Opening and Closing Dates",
+   "resolution": "approved: seasonal application submitted with May 8 to September 22, 2023 dates (passed)",
+   "quote": "next item on the agenda, set town beach opening and closing dates",
+   "tags": [
+    "town beach",
+    "seasonal staffing",
+    "swim lessons"
+   ]
+  },
+  {
+   "topic": "Earth Day Events with Conservation Commission",
+   "resolution": "no action; commissioner assignments noted",
+   "quote": "next on the agenda, earth day events with conservation commission: plans, dates, and commissioners availability",
+   "tags": [
+    "earth day",
+    "conservation commission",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Notice of Intent Filing and Site Plan for Lunenburg Skate Park",
+   "resolution": "no action; Chair signed Notice of Intent document",
+   "quote": "next on the agenda, notice of intent filing and site plan for lunenburg skate park",
+   "tags": [
+    "skate park",
+    "conservation commission",
+    "town counsel",
+    "right of entry"
+   ]
+  },
+  {
+   "topic": "Marshall Park renovation project funding update",
+   "resolution": "no action; funding options discussed",
+   "quote": "next on the agenda, marshall park renovation project funding update",
+   "tags": [
+    "marshall park",
+    "capital funding",
+    "arpa",
+    "state grants",
+    "federal funding"
+   ]
+  },
+  {
+   "topic": "Meeting with Select Board regarding ARPA",
+   "resolution": "continued: Chair to check April dates with Town Manager",
+   "quote": "next on the agenda, meeting with select board regarding arpa",
+   "tags": [
+    "arpa",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Discussion on naming rights",
+   "resolution": "tabled",
+   "quote": "next on the agenda, discussing on naming rights - tabled",
+   "tags": [
+    "naming rights"
+   ]
+  },
+  {
+   "topic": "Town Beach use by education institutions",
+   "resolution": "continued: rental form wording to be addressed; target date April 13, 2023",
+   "quote": "next on the agenda, discussion on town beach use by education institutions",
+   "tags": [
+    "town beach",
+    "rental form",
+    "schools",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Chair Updates (Fitzgerald Field)",
+   "resolution": "no action; Snow Riders offered help",
+   "quote": "next item on the agenda, chair updates",
+   "tags": [
+    "fitzgerald field",
+    "vandalism",
+    "snowmobiles"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (January 2023)",
+   "resolution": "approved 4-0-1",
+   "quote": "next on the agenda, approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for April 19, 2023 at 7 pm",
+   "quote": "last item on the agenda: next meeting april 19, 2023 at 7 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Other business: 300th Anniversary Committee, Recreation Director appointment, member resignation notice",
+   "resolution": "no action; Sullivan volunteered for 300th Anniversary Committee",
+   "quote": "last item on the agenda, other business that may come before the board.",
+   "tags": [
+    "300th anniversary",
+    "recreation director",
+    "appointments",
+    "board membership"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "town beach",
+  "recreation",
+  "marshall park",
+  "skate park",
+  "earth day",
+  "arpa",
+  "capital funding",
+  "facilities",
+  "fitzgerald field",
+  "appointments",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

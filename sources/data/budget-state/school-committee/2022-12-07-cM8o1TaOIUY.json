@@ -1,0 +1,102 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2022-12-07",
+ "source": {
+  "sha256": "613ac3c5e512baa250c195204dd0d76eda9e52d121914b747754e898a11b0146",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2022-12-07-cM8o1TaOIUY.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$650,000",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Chair said the committee will not present the community with a bill of this size to fund lost grant positions from the local budget.",
+    "status": "announced",
+    "t": 7203,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": "11%",
+    "fiscal_year": null,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "A member said schools got an increase in Chapter 70 last year that was not fully absorbed; expects only about 2% going forward.",
+    "status": "announced",
+    "t": 6933,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "20%",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Administration identified shifting about 20% of the Title I coordinator salary to the local budget.",
+    "status": "proposed",
+    "t": 6361,
+    "who": "the business administrator"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "ESSER-funded staff positions",
+    "condition": "when ESSER funds sunset",
+    "fiscal_year": 2025,
+    "prediction": "Local budget cannot absorb all grant-funded positions; not all will be funded when ESSER ends",
+    "scope": "school",
+    "t": 6256,
+    "who": "the business administrator"
+   },
+   {
+    "about": "grant-funded positions",
+    "condition": "when ESSER ends",
+    "fiscal_year": 2025,
+    "prediction": "Loss of ESSER revenue will be pretty impactful and the social-emotional needs will persist",
+    "scope": "school",
+    "t": 6588,
+    "who": "a member"
+   },
+   {
+    "about": "grant-funded staff",
+    "condition": "if elimination is announced early",
+    "fiscal_year": 2025,
+    "prediction": "Staff may leave the district if told now that their positions will be eliminated",
+    "scope": "school",
+    "t": 6825,
+    "who": "the superintendent"
+   },
+   {
+    "about": "dean or discipline programming staffing",
+    "condition": "depending on DESE guidance",
+    "fiscal_year": 2024,
+    "prediction": "Additional staff may be needed to comply with the new discipline law",
+    "scope": "school",
+    "t": 5489,
+    "who": "the superintendent"
+   },
+   {
+    "about": "capital planning",
+    "condition": "if stabilization or other funds are not accessed",
+    "fiscal_year": null,
+    "prediction": "Capital requests from the fire department could pull from lower-priority capital requests",
+    "scope": "town",
+    "t": 10373,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "cM8o1TaOIUY",
+ "video_url": "https://www.youtube.com/watch?v=cM8o1TaOIUY",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T05:27:45Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

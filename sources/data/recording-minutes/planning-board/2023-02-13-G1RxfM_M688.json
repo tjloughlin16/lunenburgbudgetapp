@@ -1,0 +1,534 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2023-02-13",
+ "video_id": "G1RxfM_M688",
+ "video_url": "https://www.youtube.com/watch?v=G1RxfM_M688",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2023-02-13-G1RxfM_M688.json",
+  "sha256": "412f08bd11b8b4662479c73e58bb99e803f59a0c2dec36c6f28514d557bc43ec",
+  "caption_lines": 353,
+  "segments": 2953
+ },
+ "recording": {
+  "duration_s": 7492,
+  "duration": "2:04",
+  "spoken_chars": 90459,
+  "words_approx": 15076
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02132023-176",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-02-13-agenda-176.txt",
+   "path": "sources/meetings/planning-board/2023-02-13-agenda-176.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132023-176",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-02-13-minutes-176.txt",
+   "path": "sources/meetings/planning-board/2023-02-13-minutes-176.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T02:24:36Z",
+  "cost_usd": 0.3545721
+ },
+ "minutes": {
+  "headline": "Planning Board approved an ANR and a site plan waiver, and continued the 1325 Mass Ave hearing to Feb 27 for a draft decision.",
+  "summary": "The Planning Board heard a stormwater update on Holman Street, endorsed an ANR for 100 Howard Street, and waived site plan approval for 1259 Mass Ave. It spent most of the evening on the 1325 Mass Ave public hearing (landscaping, lighting, sewer traps, parking, MEPA) and continued it to the next meeting. It also reviewed three master plan RFP responses, set interviews, and discussed using GIS hours for Conservation.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr wilsmer",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs Reed",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Land use director",
+    "role": "land use director"
+   },
+   {
+    "name_as_heard": "Mr Brenner",
+    "role": "member (absent)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 234,
+    "topic": "Attorney for buyers of 147 Holman Street asked the board to vote favorably on the stormwater issue on the 27th so the closing can occur; cited rising interest rates."
+   },
+   {
+    "t": 2401,
+    "topic": "Abutters at 1325 Mass Ave commented on landscaping plant size and building lighting; a written comment from abutters was noted."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "elections",
+   "grants",
+   "housing",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 530,
+    "motion": "Approve the ANR for 100 Howard Street",
+    "moved_by": "member",
+    "outcome": "passed 3-0 by roll call (Wilsmer, Reed, chair aye)",
+    "procedural": false
+   },
+   {
+    "t": 870,
+    "motion": "Accept waiver request from site plan approval for 1259 Massachusetts Avenue",
+    "outcome": "passed 3-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 4280,
+    "motion": "Continue the 1325 Massachusetts Avenue public hearing to February 27",
+    "outcome": "passed 3-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5482,
+    "motion": "Approve minutes of January 9 meetings (general, 1325 Mass Ave, 475 Leominster Shirley Road)",
+    "outcome": "passed 3-0 by roll call",
+    "procedural": true
+   },
+   {
+    "t": 7450,
+    "motion": "Adjourn",
+    "outcome": "passed 3-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 171,
+    "topic": "Holman Street stormwater BMP funds",
+    "what_was_said": "Cashier's checks were received from the builder for both properties to fund installation of the missing stormwater facilities.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4635,
+    "topic": "Pond View zoning board application fee",
+    "what_was_said": "A negotiated fee lower than the standard initial application fee was mentioned; whether it was received is unknown.",
+    "figures_as_heard": [
+     "one thousand dollar"
+    ]
+   },
+   {
+    "t": 5212,
+    "topic": "Master plan RFP price proposals",
+    "what_was_said": "Price proposals have not yet been seen by the board.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6838,
+    "topic": "MRPC GIS hours",
+    "what_was_said": "The hours come with the town's annual assessment to MRPC and refresh each fiscal year.",
+    "figures_as_heard": [
+     "eight hours"
+    ]
+   },
+   {
+    "t": 7005,
+    "topic": "GIS layer upload fee",
+    "what_was_said": "Uploading a layer outside the annual update cycle costs a nominal fee; during the update it is free.",
+    "figures_as_heard": [
+     "250 dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5232,
+    "decision": "Master plan RFP interviews of the three bidders to be scheduled at the next meeting at 7:30, 8 and 8:30."
+   },
+   {
+    "t": 7430,
+    "decision": "Putting the GIS hours to Conservation on the next meeting agenda for a vote."
+   },
+   {
+    "t": 4173,
+    "decision": "A draft decision for 1325 Mass Ave will be prepared for the next meeting, when the hearing could be closed."
+   },
+   {
+    "t": 4701,
+    "decision": "Solar bylaw discussion deferred to a separate item at a future meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 63,
+    "t_end": 214,
+    "topic": "Holman Street stormwater permit compliance update",
+    "resolution": "informational; on next agenda",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 214,
+    "t_end": 318,
+    "topic": "Public comment on 147 Holman closing",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 318,
+    "t_end": 570,
+    "topic": "ANR plan for 100 Howard Street",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 571,
+    "t_end": 918,
+    "topic": "Site plan waiver for 1259 Mass Ave",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 918,
+    "t_end": 4343,
+    "topic": "Public hearing continuation, 1325 Mass Ave",
+    "resolution": "continued to Feb 27",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 4343,
+    "t_end": 4430,
+    "topic": "Decision for 475 Leominster Shirley Road signed",
+    "resolution": "signed",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4430,
+    "t_end": 4681,
+    "topic": "Pond View comprehensive permit update",
+    "resolution": "informational",
+    "tags": [
+     "housing",
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4681,
+    "t_end": 5000,
+    "topic": "Solar bylaw, MBTA communities, DLTA, driveways",
+    "resolution": "deferred",
+    "tags": [
+     "planning-and-zoning",
+     "housing",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 5013,
+    "t_end": 5460,
+    "topic": "Master plan RFP responses",
+    "resolution": "interviews to be scheduled",
+    "tags": [
+     "planning-and-zoning",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5482,
+    "t_end": 5545,
+    "topic": "Minutes approval",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 5545,
+    "t_end": 6336,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6336,
+    "t_end": 6670,
+    "topic": "Director items: town meeting warrant, caucus, ongoing items",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 6691,
+    "t_end": 7450,
+    "topic": "GIS hours for Conservation Commission",
+    "resolution": "to next agenda",
+    "tags": [
+     "planning-and-zoning",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 7450,
+    "t_end": 7490,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Name of the chair not stated in captions",
+   "Public speaker names at 2401 not given",
+   "Stretch around 2506-2541 largely inaudible"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1961,
+    "about": "Whether building code requires floor drains and grease interceptors in the contractor garage bays, and whether the site plan can be approved with one MDC trap.",
+    "sides": "A board member questioned the sewer/trap approach; the applicant's engineer and land use director said it is the Sewer Commission's domain and does not change the site plan.",
+    "words_as_heard": "I don't think we can comfortably approve a site plan review for one MDC trap",
+    "kind": "members disagree"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board continued the 1325 Mass Ave public hearing to February 27; a draft decision is to be prepared for that meeting, when the hearing could be closed.",
+    "t": 4280
+   },
+   {
+    "line": "The board approved an ANR plan for 100 Howard Street, 3-0 by roll call.",
+    "t": 530
+   },
+   {
+    "line": "The board accepted a waiver from site plan approval for 1259 Mass Ave, 3-0 by roll call.",
+    "t": 870
+   },
+   {
+    "line": "The board reviewed three master plan RFP responses and will schedule interviews with the three bidders at its next meeting; price proposals have not yet been seen.",
+    "t": 5232
+   },
+   {
+    "line": "A vote on using the town's MRPC GIS hours for Conservation is to go on the next agenda.",
+    "t": 7430
+   }
+  ],
+  "why_it_matters": [
+   "The 1325 Mass Ave hearing is still open, so abutters' concerns about landscaping and lighting can still be raised before a decision is written and the hearing is closed.",
+   "The master plan consultant choice is made from three bids whose prices the board had not yet seen, so the cost of that planning work is still undetermined."
+  ],
+  "watch_next": [
+   "February 27 Planning Board meeting: draft decision on 1325 Mass Ave, possible close of the hearing, master plan RFP interviews, and the GIS hours vote for Conservation."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T02:24:44Z",
+   "cost_usd": 0.2233289
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132023-176",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2023-02-13-minutes-176.txt",
+   "path": "sources/meetings/planning-board/2023-02-13-minutes-176.pdf"
+  },
+  "official_sha256": "69f99dee452d752a92b97b0bfde1ee74433a4597dd7c7cb9b3ae3ae7d135fcaa",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two votes both contain (the 100 Howard Street ANR and the 1259 Mass Ave waiver), and on Brenner's absence and the GIS and master plan follow-ups. They differ mainly because the official minutes say nothing about the 1325 Massachusetts Avenue hearing or its continuance vote, which is the one thing to check. The official minutes also cover Holman Street, Lunenburg Central, Pond View HAC and other items that our minutes lack.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: approve ANR for 100 Howard Street",
+    "t": 530,
+    "ours": "Approve the ANR for 100 Howard Street — passed 3-0 by roll call (Wilsmer, Reed, chair aye)",
+    "official": "a. reid made motion to endorse the plan, t. willsmer seconded, roll call vote - t. willsmer, aye; a. reid, aye; m. allison, aye.",
+    "note": "Same motion, roll call and 3-0 unanimous outcome; only the member names are misheard in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: waiver from site plan approval, 1259 Massachusetts Avenue",
+    "t": 870,
+    "ours": "Accept waiver request from site plan approval for 1259 Massachusetts Avenue — passed 3-0 by roll call",
+    "official": "a. reid made motion to approve the waiver request from site plan approval, t. willsmer seconded, roll call vote- t. willsmer, aye; a. reid, aye; m. allison, aye.",
+    "note": "Same item, roll call, and 3-0 unanimous result."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to continue the 1325 Massachusetts Avenue public hearing to February 27",
+    "t": 4280,
+    "ours": "Continue the 1325 Massachusetts Avenue public hearing to February 27 — passed 3-0 by roll call",
+    "official": "",
+    "note": "The official minutes record no 1325 Mass Ave hearing or continuance vote; check the recording around t=4280 and whether the town omitted it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Draft decision for 1325 Mass Ave prepared for next meeting",
+    "t": 4173,
+    "ours": "A draft decision for 1325 Mass Ave will be prepared for the next meeting, when the hearing could be closed.",
+    "official": "",
+    "note": "Part of the 1325 Mass Ave hearing, which the official minutes do not mention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pond View zoning board application fee",
+    "t": 4635,
+    "ours": "Pond View zoning board application fee: one thousand dollar",
+    "official": "",
+    "note": "The official minutes print no dollar amount for Pond View; they record only a referral to HAC."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MRPC GIS hours: eight hours",
+    "t": 6838,
+    "ours": "MRPC GIS hours: eight hours",
+    "official": "",
+    "note": "The official minutes mention the GIS hours but give no number of hours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GIS layer upload fee",
+    "t": 7005,
+    "ours": "GIS layer upload fee: 250 dollars",
+    "official": "",
+    "note": "No upload fee appears in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan RFP interviews",
+    "t": 5232,
+    "ours": "Master plan RFP interviews of the three bidders to be scheduled at the next meeting at 7:30, 8 and 8:30.",
+    "official": "a. burney would prepare a ranking sheet for board members.",
+    "note": "Both put the interviews at the next meeting (February 27); the official minutes add the ranking sheet and give no interview times."
+   },
+   {
+    "kind": "agree",
+    "about": "GIS hours endorsement to Conservation on next agenda",
+    "t": 7430,
+    "ours": "Putting the GIS hours to Conservation on the next meeting agenda for a vote.",
+    "official": "would like endorsement of the board's gis hours",
+    "note": "Both record Conservation's request for endorsement of the GIS hours as a next-meeting agenda item."
+   },
+   {
+    "kind": "agree",
+    "about": "Solar bylaw deferred",
+    "t": 4701,
+    "ours": "Solar bylaw discussion deferred to a separate item at a future meeting.",
+    "official": "requested the topic be tabled until the board's february 27th meeting.",
+    "note": "Both defer the solar bylaw; the official minutes name February 27 and ours say only 'a future meeting'."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Holman Street stormwater agreements to be signed Feb 27",
+    "ours": "",
+    "official": "those agreements would be signed at the board's february 27th meeting.",
+    "note": "Holman Street stormwater discussion and 147 Holman closing delay are absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lunenburg Central decision filed with Town Clerk",
+    "ours": "",
+    "official": "decision w ould then be filed with the town clerk and enter into an appeal period.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pond View Commons permit determination referred to HAC",
+    "ours": "",
+    "official": "agreed to let hac (housing action committee) make the determination.",
+    "note": "Our minutes mention Pond View only through a fee figure; the HAC referral is not recorded."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Driveways & Entrances document, Section 250-6.4",
+    "ours": "",
+    "official": "section 250- 6.4., driveways & entrances- a. burney would prepare a document for board discussion.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Wilsmer",
+    "ours": "Mr wilsmer (member)",
+    "official": "timothy willsmer participated remotely under the oml simple extension legislation.",
+    "official_reading": "Timothy Willsmer",
+    "note": "Misspelled name; the official minutes also say he attended remotely."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mrs Reed",
+    "ours": "Mrs Reed (member)",
+    "official": "matthew allison, amanda reid, adam burney",
+    "official_reading": "Amanda Reid",
+    "note": "Misheard surname; the official minutes list her as Clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Brenner absent",
+    "ours": "Mr Brenner (member (absent))",
+    "official": "matthew brenner, erik torgersen",
+    "note": "Both record Brenner absent (Vice Chair in the official minutes)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Matthew Allison and Land Use Director Adam Burney named; Torgersen absent",
+    "ours": "Chair (unnamed) (chair)",
+    "official": "matthew allison, amanda reid, adam burney",
+    "note": "Ours leaves the chair unnamed and calls the director only 'Land use director'; Erik Torgersen's absence is only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T02:25:57Z",
+   "cost_usd": 0.2539029
+  }
+ }
+}

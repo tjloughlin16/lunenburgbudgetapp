@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-04-27",
  "docid": "48",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of March 16, 2023",
+   "motion": "Accept the minutes of March 16, 2023.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed 3-0",
@@ -20,27 +20,121 @@
    "quote": "vice chairperson nancy foss-yasko made the motion to accept the minutes of march 16, 2023. clerk david dorren seconded the motion. motion passed 3-0"
   },
   {
-   "motion": "approve changes to Cemetery Rules and Regulations Chapter 310-1",
+   "motion": "Approve changes to Cemetery Rules and Regulations Chapter 310-1 (Fee's and Charges) regarding lettering and symbols engraved on columbarium urns.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "the commission looked at the chapter and made changes. motion passed 3-0 to approve changes."
   },
   {
-   "motion": "table putting camera(s) in North Cemetery",
+   "motion": "Table putting camera(s) in North Cemetery.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "cemetery commission tabled putting camera(s) in north cemetery. motion passed 3-0"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 3:40pm.",
    "moved_by": "Nancy Foss-Yasko",
-   "seconded_by": "Bill Tyler",
+   "seconded_by": "Chairman Bill Tyler",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion made by vice chairperson nancy foss-yasko to adjourn the meeting at 3:40pm. seconded by chairman bill tyler. motion passed 3-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1120635
+ "note": "Plain digital text, not a scan; all four motions carry printed 3-0 counts. No dollar figures, transfers or public comment appear in the minutes. The chapter-revision motion has no printed mover or seconder. Fee and charge rules are named in the chapter title but no amount is printed. The minutes list the next meeting as May 25, 2023 but give no adjournment time apart from the 3:40pm motion.",
+ "cost_usd": 0.01334231,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bill Tyler",
+   "role": "Chairperson (header: William Tyler, Chairperson; text: Chairman Bill Tyler)",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren."
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "in attendance was chairman bill tyler, vice chairperson nancy foss-yasko, clerk david dorren."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director bill bernard attended this meeting."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of March 16, 2023",
+   "resolution": "approved 3-0",
+   "quote": "vice chairperson nancy foss-yasko made the motion to accept the minutes of march 16, 2023. clerk david dorren seconded the motion. motion passed 3-0",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "West Street land",
+   "resolution": "no action; still being worked on with the Town Attorney",
+   "quote": "bill bernard stated the land on west street is still being worked on with the town attorney's.",
+   "tags": [
+    "West Street",
+    "town attorney",
+    "land"
+   ]
+  },
+  {
+   "topic": "Cemetery Rules and Regulations Chapter 310-1, columbarium urn engraving",
+   "resolution": "revised, approved 3-0",
+   "quote": "should be looked at again and should be revised regarding the list of lettering and symbols engraved on the urns on the columbarium.",
+   "tags": [
+    "rules and regulations",
+    "fees and charges",
+    "columbarium"
+   ]
+  },
+  {
+   "topic": "Camera(s) in North Cemetery",
+   "resolution": "tabled 3-0",
+   "quote": "cemetery commission tabled putting camera(s) in north cemetery. motion passed 3-0",
+   "tags": [
+    "cameras",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 3:40pm, 3-0",
+   "quote": "motion made by vice chairperson nancy foss-yasko to adjourn the meeting at 3:40pm. seconded by chairman bill tyler. motion passed 3-0",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "rules and regulations",
+  "columbarium",
+  "North Cemetery cameras",
+  "West Street land",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

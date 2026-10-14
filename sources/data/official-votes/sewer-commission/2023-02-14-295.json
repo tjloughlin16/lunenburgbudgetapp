@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-02-14",
  "docid": "295",
@@ -12,47 +12,385 @@
  },
  "votes": [
   {
-   "motion": "Approve policy changes on 2/14/23",
+   "motion": "Approve the policy changes dated 2/14/23 (grease trap and oil/water separator regulations and the deduct meter policy).",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: mike n. second: brett r. to approve the policy changes on 2/14/23 roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
+   "quote": "to approve the policy changes on 2/14/23 roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
   },
   {
-   "motion": "Approve the Q3 FY23 Commitment of $249,280.14",
+   "motion": "Approve the Q3 FY23 Commitment of $249,280.14.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: brett r. second: mike n. to approve the q3 fy23 commitment of $249,280.14. roll call vote: brett-aye, mike n.-aye, dave-aye, and john-aye."
+   "quote": "to approve the q3 fy23 commitment of $249,280.14."
   },
   {
-   "motion": "Accept the minutes for 1/31/23",
+   "motion": "Accept the minutes for 1/31/23.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dave m. to accept the minutes for 1/31/23. second: mike n. roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
+   "quote": "to accept the minutes for 1/31/23."
   },
   {
-   "motion": "Accept the contract from Wright Pierce for $2,500",
+   "motion": "Accept the general engineering services contract from Wright Pierce for $2,500.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: brett r. second: mike n. to accept the contract from wright pierce for $2,500. roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
+   "quote": "to accept the contract from wright pierce for $2,500."
   },
   {
-   "motion": "Adjourn at 6:47pm",
+   "motion": "Adjourn the meeting at 6:47pm.",
    "moved_by": "Brett R.",
-   "seconded_by": "Mike N.",
+   "seconded_by": "Mike N",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. to adjourn at 6:47pm. second: mike n roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
+   "quote": "to adjourn at 6:47pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0829675
+ "note": "The text is macOS Vision OCR of a scanned minutes page (two pages), not a typed original, so words may be misread (e.g. \"I! Forno\", \"Committment\"). Quotes were copied as read from that OCR. Attendance says the meeting was via Zoom but does not mark anyone remote, so status is \"present\" from the attendee list and roll calls. \"Mike N.\" and \"Dave M.\" appear in motions without surnames; the attendee list gives Mike Nault and Dave MacDonald. Votes are roll calls with all four members recorded as aye; no dissent or abstention is printed. The Business Manager ratification was deferred to 2/28 and no vote was taken on it. The second \"Public Comment\" is a statement by member Dave, not a resident; the first period says \"none\". Only the minutes' printed dollar figures are recorded; no total for the FY24 budget is printed.",
+ "cost_usd": 0.01817471,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to discuss the FY24 budget again at the 2/28 meeting.",
+   "quote": "the commission agreed to discuss the budget again at the 2/28 meeting."
+  },
+  {
+   "decision": "Barb will check on whether rates are rising for Fitchburg and Leominster.",
+   "quote": "barb replied both increased last year, fitchburg having a big increase the last couple years. she will check on both."
+  },
+  {
+   "decision": "The Commission agreed to the deduct meter policy change removing the plumbing permit copy requirement.",
+   "quote": "barb noted that she removed the requirement of the applicant providing a copy of the plumbing permit, per john's suggestion. the commission agreed."
+  },
+  {
+   "decision": "The Assistant Business Manager opening will be posted after the new Business Manager is appointed.",
+   "quote": "assistant business manager opening- will be posted after the new business manager is appointed."
+  },
+  {
+   "decision": "Notice of the public hearing on the policy changes will run in the 2/17/23 Lunenburg Ledger, with tracked documents left at the sewer office and Town Clerk's office.",
+   "quote": "notice for the public hearing on the policy changes will be in the 2/17/23 lunenburg ledger"
+  },
+  {
+   "decision": "The Pond View Estates 40B item is kept on the agenda for visibility.",
+   "quote": "the commission agreed to keep it on the agenda for visibility."
+  },
+  {
+   "decision": "Staff will keep checking on the non-compliant grease trap site and will tell its owner he must meet all compliance.",
+   "quote": "they will keep checking on it and will let david brambila know that he needs to meet all compliance."
+  },
+  {
+   "decision": "Staff will check with Wind River on the recommended pumping frequency, since the site usually needs more frequent pumping.",
+   "quote": "they will check with wind river for more information because this site usually requires more frequent pumpings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 budget draft",
+   "what_was_recorded": "The FY24 budget draft was screen shared; it goes to the Town Manager first, returns for the 2/28 meeting, and must be final for the FinCom presentation on 3/23. No total is printed.",
+   "quote": "barb screen shared the budget draft and noted the draft goes to the town manager first.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Engineering services line and 40B",
+   "what_was_recorded": "The engineering services line was increased for questions about the 40B or others, and a member asked whether any line item carries the 40B project. No amount is printed.",
+   "quote": "john noted the engineering services line was increased for questions about the 40b or others.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA funds in the budget",
+   "what_was_recorded": "Potential ARPA funds appear as a placeholder, shown as revenue and expense as a wash, so they have no net effect if not received. No amount is printed.",
+   "quote": "potential arpa funds are shown as revenues and expenses as a wash, so if the arpa funds are not received, those lines will come out with no effect on the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grease trap and oil/water separator permit fees and penalties",
+   "what_was_recorded": "The proposed policy sets an annual permit fee, a $100 bill for non-compliance after 30 days, and a $25/day fine if still non-compliant.",
+   "quote": "$150/year for internal grease traps, external interceptor and oil/water separator.",
+   "figures_as_printed": [
+    "$150/year",
+    "$100",
+    "$25/day"
+   ]
+  },
+  {
+   "topic": "Unpaid grease trap non-compliance fees",
+   "what_was_recorded": "The Commission has not received any of the $25/day fees assessed since 11/11/22 for non-compliance.",
+   "quote": "received any of the $25/day fees that were assessed since 11/11/22 for non-compliance.",
+   "figures_as_printed": [
+    "$25/day",
+    "11/11/22"
+   ]
+  },
+  {
+   "topic": "Q3 FY23 commitment",
+   "what_was_recorded": "The Q3 FY23 commitment was approved; Q3 bills went out 2/1/23.",
+   "quote": "q3 fy23 commitment $249,280.14-barb stated the q3 bills went out on 2/1/23",
+   "figures_as_printed": [
+    "$249,280.14"
+   ]
+  },
+  {
+   "topic": "Wright Pierce general engineering contract",
+   "what_was_recorded": "The Commission accepted the Wright Pierce contract at the printed amount.",
+   "quote": "to accept the contract from wright pierce for $2,500.",
+   "figures_as_printed": [
+    "$2,500"
+   ]
+  },
+  {
+   "topic": "Planned capital expenditures (line 5a)",
+   "what_was_recorded": "Planned capital expenditures carry $96K: $56K for pump station upgrades and $40K for manhole repairs. Jetting is separate under purchase of service (line 1c).",
+   "quote": "bill confirmed that the planned capital expenditures(line 5a) has $96k for planned expenses $56k for pump station upgrades and $40k for manhole repairs.",
+   "figures_as_printed": [
+    "$96K",
+    "$56K",
+    "$40K"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comment, first period",
+   "speaker": "",
+   "quote": "public comment- none"
+  },
+  {
+   "topic": "Holiday greetings; Business Manager retirement countdown",
+   "speaker": "Dave",
+   "quote": "public comment - dave wished all a happy valentine's day."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "john opened the meeting at 6:02 pm. and did a roll call of attendees."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "public hearing"
+   ],
+   "quote": "announcements - barb wished everyone a happy valentine's day and announced that they will have a public hearing on 2/28 for policy updates."
+  },
+  {
+   "topic": "FY24 budget discussion",
+   "resolution": "discussed; continued to 2/28",
+   "tags": [
+    "FY24 budget",
+    "FinCom"
+   ],
+   "quote": "the commission agreed to discuss the budget again at the 2/28 meeting."
+  },
+  {
+   "topic": "Grease trap and oil/water separator regulations",
+   "resolution": "approved",
+   "tags": [
+    "grease trap",
+    "oil/water separator",
+    "permit fees",
+    "penalties"
+   ],
+   "quote": "to approve the policy changes on 2/14/23 roll call vote: brett-aye, mike n.-aye, dave-aye and john-aye."
+  },
+  {
+   "topic": "Deduct meter policy",
+   "resolution": "agreed; approved with the policy changes",
+   "tags": [
+    "deduct meter",
+    "plumbing permit"
+   ],
+   "quote": "barb noted that she removed the requirement of the applicant providing a copy of the plumbing permit, per john's suggestion. the commission agreed."
+  },
+  {
+   "topic": "Business Manager replacement",
+   "resolution": "pending Town Manager appointment 2/28; Commission to ratify",
+   "tags": [
+    "personnel",
+    "Business Manager"
+   ],
+   "quote": "business manager replacement - barb reported they are waiting for the town manager to make the appointment"
+  },
+  {
+   "topic": "Assistant Business Manager opening",
+   "resolution": "to be posted after appointment",
+   "tags": [
+    "personnel"
+   ],
+   "quote": "assistant business manager opening- will be posted after the new business manager is appointed."
+  },
+  {
+   "topic": "Annual report",
+   "resolution": "correction noted",
+   "tags": [
+    "annual report",
+    "elections"
+   ],
+   "quote": "annual report-barb noted a correction that john and mike n. were both elected to 3-year terms."
+  },
+  {
+   "topic": "Q3 FY23 commitment",
+   "resolution": "approved",
+   "tags": [
+    "commitment",
+    "billing"
+   ],
+   "quote": "q3 fy23 commitment $249,280.14-barb stated the q3 bills went out on 2/1/23"
+  },
+  {
+   "topic": "Pond View Estates 40B",
+   "resolution": "kept on agenda; no action",
+   "tags": [
+    "40B",
+    "Pond View Estates",
+    "housing appeal"
+   ],
+   "quote": "the commission agreed to keep it on the agenda for visibility."
+  },
+  {
+   "topic": "Minutes of 1/31/23",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes for 1/31/23."
+  },
+  {
+   "topic": "Business Manager report: grease trap program",
+   "resolution": "no action; monitoring",
+   "tags": [
+    "grease trap",
+    "pump-out",
+    "compliance",
+    "Board of Health"
+   ],
+   "quote": "business manager report - grease trap program- barb reported that i! forno will have a pump-out on 2/17/23 by"
+  },
+  {
+   "topic": "Wright Pierce engineering contract",
+   "resolution": "approved",
+   "tags": [
+    "contract",
+    "engineering"
+   ],
+   "quote": "to accept the contract from wright pierce for $2,500."
+  },
+  {
+   "topic": "Town caucus 3/27/23",
+   "resolution": "no action",
+   "tags": [
+    "election",
+    "caucus"
+   ],
+   "quote": "town caucus 3/27/23 - barb noted that mike deveikis will not be running again but brett is considering another run."
+  },
+  {
+   "topic": "Action items: maintenance plan and capital expenditures",
+   "resolution": "no action; information",
+   "tags": [
+    "maintenance plan",
+    "capital",
+    "budget"
+   ],
+   "quote": "action items- dave asked to review the maintenance plan again and inquired if the plan was in the budget as a"
+  },
+  {
+   "topic": "Public comment, second period",
+   "resolution": "no action",
+   "tags": [
+    "holiday",
+    "retirement"
+   ],
+   "quote": "public comment - dave wished all a happy valentine's day."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:47pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "to adjourn at 6:47pm."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY24 budget",
+  "grease trap regulations",
+  "oil/water separator",
+  "permit fees",
+  "40B housing",
+  "Pond View Estates",
+  "Business Manager",
+  "personnel",
+  "Q3 commitment",
+  "Wright Pierce contract",
+  "town caucus",
+  "Zoom meeting",
+  "Lunenburg",
+  "wastewater"
+ ],
+ "dropped_unquoted_by_field": {}
 }

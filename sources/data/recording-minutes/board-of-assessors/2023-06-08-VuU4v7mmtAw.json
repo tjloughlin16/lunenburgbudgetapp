@@ -1,0 +1,341 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-06-08",
+ "video_id": "VuU4v7mmtAw",
+ "video_url": "https://www.youtube.com/watch?v=VuU4v7mmtAw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-06-08-VuU4v7mmtAw.json",
+  "sha256": "8e0f4b8f18dc73d688d3e96cc8372b5852edce4759f52fc3a0a8eb6b998d0c7b",
+  "caption_lines": 32,
+  "segments": 272
+ },
+ "recording": {
+  "duration_s": 656,
+  "duration": "0:10",
+  "spoken_chars": 8519,
+  "words_approx": 1419
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06082023-37",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-06-08-agenda-37.txt",
+   "path": "sources/meetings/board-of-assessors/2023-06-08-agenda-37.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06082023-37",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-06-08-minutes-37.txt",
+   "path": "sources/meetings/board-of-assessors/2023-06-08-minutes-37.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-12T23:33:05Z",
+  "cost_usd": 0.2403001
+ },
+ "minutes": {
+  "headline": "Assessors heard a lakefront owner contest a \"good\" grade, discussed appeals, then went into executive session on abatements.",
+  "summary": "The Board of Assessors opened with a statement on abatement progress, then heard one resident argue that his Sunset Lane lakefront property was over-rated, citing site problems and nearby Shady Point Campground. Members discussed whether declined applicants must go to the Appellate Tax Board before talking further with the board, and scheduled remote abatement meetings. The board then went into executive session by roll call, not to return to open session.",
+  "attendees": [
+   {
+    "name_as_heard": "Kevin fish",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "John rabbit",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Richard",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Sheila",
+    "role": "staff (received the resident's packet)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Lou",
+    "role": "present, addressed at the start",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 87,
+    "topic": "A resident (addressed as Carl) disputed the rating of 392 Sunset Lane as good, citing a seasonal cottage with a dug well, small septic systems, a steep driveway, little flat buildable land, repair needs, and the Shady Point Campground across the channel. He asked the board to lower the rating to average.",
+    "speaker_as_heard": "Carl",
+    "stated_role": "resident, owner of 392 Sunset Lane"
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "public-comment",
+   "tax-rate",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 583,
+    "motion": "Enter executive session, not to return to open session, to consider abatement and exemption applications confidential under state law",
+    "moved_by": "",
+    "outcome": "Roll call: three members voted aye (Kevin fish, John rabbit, Richard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 42,
+    "topic": "Abatement applications and tax bill timing",
+    "what_was_said": "Over 250 applications were completed and the board aims to finish the abatement process by June 15th. The goal is to get tax bills out on time.",
+    "figures_as_heard": [
+     "over 250 applications",
+     "June 15th"
+    ]
+   },
+   {
+    "t": 147,
+    "topic": "Resident's claimed repair and infrastructure costs for 392 Sunset Lane",
+    "what_was_said": "The resident said the retaining walls need major repair and that further infrastructure work is required to make the lot buildable. He said these costs support an average rating.",
+    "figures_as_heard": [
+     "over one hundred thousand dollars",
+     "over two hundred thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 520,
+    "decision": "Remote abatement meetings tentatively scheduled for Tuesday June 13th at 3, Wednesday June 14th at 2 and Thursday June 15th at 3."
+   },
+   {
+    "t": 561,
+    "decision": "A member agreed to attend the master plan kickoff meeting in place of the member who was invited."
+   },
+   {
+    "t": 456,
+    "decision": "Board understood that declined applicants need not file at the Appellate Tax Board before continuing to bring data to the board for reconsideration, though the 90-day filing deadline from the decision still applies."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 87,
+    "topic": "Opening, open meeting law notice, abatement progress",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 87,
+    "t_end": 371,
+    "topic": "Public comment on rating of 392 Sunset Lane",
+    "resolution": "informational; no board action in open session",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 393,
+    "t_end": 520,
+    "topic": "Appellate Tax Board filing and continued reconsideration of declined abatements",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 520,
+    "t_end": 583,
+    "topic": "Remote meeting schedule and master plan kickoff",
+    "resolution": "decided informally",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 583,
+    "t_end": 650,
+    "topic": "Executive session on abatement applications and adjournment",
+    "resolution": "voted by roll call",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The roll call was captioned with three ayes but the captions do not state a formal tally.",
+   "The speaker named Carl gave his name only in how he was addressed.",
+   "The position of the chair on the ATB discussion is not clear from the captions."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors went into executive session on abatement applications by roll call and did not return to open session.",
+    "t": 583
+   },
+   {
+    "line": "A resident asked the board to lower the rating of 392 Sunset Lane from good to average, citing site conditions and a nearby campground; no action was taken in open session.",
+    "t": 87
+   },
+   {
+    "line": "The board understood that declined applicants need not file at the Appellate Tax Board before bringing more data for reconsideration, though the 90-day deadline still applies.",
+    "t": 456
+   },
+   {
+    "line": "Remote abatement meetings were tentatively set for June 13, 14 and 15, and a member agreed to attend the master plan kickoff.",
+    "t": 520
+   },
+   {
+    "line": "The board opened by saying it aimed to finish abatement applications by June 15 so tax bills go out on time.",
+    "t": 42
+   }
+  ],
+  "why_it_matters": [
+   "Abatement decisions set whether a homeowner's assessed value, and so the tax bill, is lowered, and the June 15 target ties them to when bills are mailed.",
+   "A homeowner whose abatement is declined keeps a 90-day window to appeal to the Appellate Tax Board, and the board's willingness to reconsider does not extend that window."
+  ],
+  "watch_next": [
+   "Remote abatement meetings tentatively set for June 13, 14 and 15.",
+   "The board's June 15 target for finishing abatement decisions."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-12T23:33:13Z",
+   "cost_usd": 0.2204509
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06082023-37",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-06-08-minutes-37.txt",
+   "path": "sources/meetings/board-of-assessors/2023-06-08-minutes-37.pdf"
+  },
+  "official_sha256": "704216d832720e7a6365c36c8143f9cf16fc05b49c576b9399f64f68428ff28e",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "Neither record has a vote or transfer, and the named board members match (with caption slips in names). Our minutes capture three decisions and two figures that the official minutes lack entirely, and 'Lou' in our attendee list has no match in the official attendance.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Decisions: remote abatement meeting schedule, master plan kickoff attendance, Appellate Tax Board understanding",
+    "ours": "Remote abatement meetings tentatively scheduled for Tuesday June 13th at 3, Wednesday June 14th at 2 and Thursday June 15th at 3. A member agreed to attend the master plan kickoff meeting. Board understood declined applicants need not file at the ATB first.",
+    "official": "",
+    "note": "Our minutes record three decisions that the official structured record lists as none; check the official minutes in full for the meeting schedule, the kickoff attendance and the ATB discussion, as they may be omitted or summarized.",
+    "t": 520
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement applications and tax bill timing (over 250 applications, June 15th)",
+    "ours": "Abatement applications and tax bill timing: over 250 applications, June 15th",
+    "official": "",
+    "note": "The official minutes list no budget figures, so this count and date appear only in our minutes.",
+    "t": 42
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Resident's claimed repair costs for 392 Sunset Lane",
+    "ours": "Resident's claimed repair and infrastructure costs for 392 Sunset Lane: over one hundred thousand dollars, over two hundred thousand dollars",
+    "official": "",
+    "note": "The official minutes mention the 392 Sunset Lane resident's disagreement but give no dollar figures; the amounts come from the captions only and may be misheard.",
+    "t": 147
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "",
+    "note": "Neither record lists any transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Kevin Fish",
+    "ours": "Kevin fish (member)",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Same person and name in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee John Rabbitt",
+    "ours": "John rabbit (member)",
+    "official": "board member john rabbitt",
+    "note": "Same board member; the captions dropped a letter from the surname.",
+    "official_reading": "John Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Richard (chairman)",
+    "ours": "Richard (member)",
+    "official": "chairman richard letarte",
+    "note": "Same person; our record has only the first name and calls him a member, not chairman.",
+    "official_reading": "Richard Letarte"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Sheila (staff)",
+    "ours": "Sheila (staff (received the resident's packet))",
+    "official": "administrative assessing assistant sheila craigen",
+    "note": "Same person; our record has only the first name.",
+    "official_reading": "Sheila Craigen"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Lou",
+    "ours": "Lou (present, addressed at the start)",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "No Lou appears in the official attendance; he may be a mishearing of another attendee (such as CJ Carroll) or a different person, so check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees CJ Carroll and Rena Swezey",
+    "ours": "",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish, chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Official minutes list these two as present; our minutes name neither."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from Carl Luck, 392 Sunset Lane",
+    "ours": "",
+    "official": "carl luck - 392 sunset lane - strongly disagrees with mfs assessment.",
+    "note": "Our attendee list omits the resident, though our figures cite a resident's claims at 392 Sunset Lane, which is plausibly the same item."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-12T23:33:48Z",
+   "cost_usd": 0.2330609
+  }
+ }
+}

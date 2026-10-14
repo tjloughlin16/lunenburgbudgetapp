@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-05-16",
  "docid": "76",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the April 11, 2023 meeting",
+   "motion": "Approve the minutes of the April 11, 2023 meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Mr. McGuigan",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "mr. lincoln motioned to approve the minutes from the april 11, 2023 meeting. mr. mcguigan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Nominate Ms. Lincoln as chairperson and Ms. Rabbit as Vice-Chairperson for FY24",
+   "motion": "Nominate Ms. Lincoln as chairperson and Ms. Rabbit as Vice-Chairperson of the COA board officers for FY24.",
    "moved_by": "Ms. Beale",
    "seconded_by": "Ms. O'Sullivan",
    "outcome": "passed",
@@ -28,15 +28,278 @@
    "quote": "ms. beale nominated ms. lincoln to serve as chairperson, and ms. rabbit to serve as vice-chairperson. ms. o'sullivan seconded. on vote, motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the COA New Board Member Orientation Packet (wording cut off at a page break in the scan).",
+   "moved_by": "Ms. O'Sullivan",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "ms. o'sullivan motioned to approve the coa"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. O'Sullivan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried."
+   "quote": "at 10:39 a.m. mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One motion at page break (\"Ms. O'Sullivan motioned to approve the COA\") is incomplete with no recorded outcome and is excluded.",
- "cost_usd": 0.0743365
+ "note": "OCR text (macOS Vision), no scan review. The attendance line has no heading in the scan; attendees named there are marked present on inference. Lincoln is styled both 'Ms.' and 'Mr.' in the text; treated as one person, and the chair role is not stated. The nomination vote ('motion carried') conflicts with the line saying the board will vote on officers June 13, 2023; both are recorded as printed. The motion by Ms. O'Sullivan on the orientation packet is cut off at a page break: no seconder, wording or result is printed, so it is recorded as 'not stated'. Public comment is recorded as 'None'. No transfers are printed. Ms. Rabbit and Adam Burney are named but are not recorded as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.01679151,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated (listed on the attendance line, which has no heading in the scan)",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, cheryl moisan, diane nowd, george martin"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, cheryl moisan, diane nowd, george martin"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, cheryl moisan, diane nowd, george martin"
+  },
+  {
+   "name": "George Martin",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, cheryl moisan, diane nowd, george martin"
+  },
+  {
+   "name": "Ms. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lincoln read a letter from land use director adam burney"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. doherty reported the informational post cards with new name and new hours will go out at the end of june."
+  },
+  {
+   "name": "Pat Kennedy",
+   "role": "Eagle House Supporters President",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, select board member lou franco, lunenburg resident helen balcom"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, select board member lou franco, lunenburg resident helen balcom"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, select board member lou franco, lunenburg resident helen balcom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln volunteered to serve on the Lunenburg Master Plan Steering Committee as the COA's representation.",
+   "quote": "ms. lincoln volunteered to serve on that committee."
+  },
+  {
+   "decision": "The board will vote on officers at its Annual Meeting on June 13, 2023, despite the nomination motion recorded under New Business.",
+   "quote": "the board will vote on officers at their annual meeting june 13, 2023."
+  },
+  {
+   "decision": "The July meeting is moved to Tuesday, July 18, 2023 at 9:30 a.m. at the Lunenburg Adult Activity Center.",
+   "quote": "the july meeting will be held on tuesday, july 18, 2023 at 9:30 a.m. at the lunenburg adult activity center."
+  },
+  {
+   "decision": "The board finalized changes to the New COA Board Member Orientation Packet; a new title page and edits to two pages will be handed out at the next meeting.",
+   "quote": "the board finalized changes to the last draft of the packet. a new title page, and edits to two other pages will be handed out at the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Supporters clothing drive proceeds",
+   "what_was_recorded": "A clothing drive for the Epilepsy Foundation brought money in for the Eagle House Supporters.",
+   "figures_as_printed": [
+    "$2,557.20"
+   ],
+   "quote": "the clothing drive for the epilepsy foundation brought in $2,557.20 for the eagle house supporters."
+  },
+  {
+   "topic": "Patio project bids and award",
+   "what_was_recorded": "The town received two bids on the patio project and the project was awarded to Diversified Construction; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the town received two bids on the patio project. the project was awarded to diversified construction out of amherst, mass."
+  },
+  {
+   "topic": "Lunenburg senior tax relief",
+   "what_was_recorded": "Senior tax relief approved at Annual Town Meeting gave the Select Board power to petition the state legislature; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the approval of senior tax relief at annual town meeting has given the power to the select board to petition the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (April 11, 2023 meeting)",
+   "resolution": "approved unanimously",
+   "quote": "mr. lincoln motioned to approve the minutes from the april 11, 2023 meeting. mr. mcguigan seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Announcements: Talent Bank form for open COA seat",
+   "resolution": "noted",
+   "quote": "ms. balcom submitted a talent bank form expressing interest in the open seat on the coa.",
+   "tags": [
+    "appointments",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan steering committee representation",
+   "resolution": "volunteer accepted (Ms. Lincoln)",
+   "quote": "ms. lincoln volunteered to serve on that committee.",
+   "tags": [
+    "master plan",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Nomination of COA board officers FY24",
+   "resolution": "nominations made and a motion carried; officer vote set for June 13, 2023",
+   "quote": "ms. beale nominated ms. lincoln to serve as chairperson, and ms. rabbit to serve as vice-chairperson. ms. o'sullivan seconded. on vote, motion carried.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "July meeting date change",
+   "resolution": "approved (moved to July 18, 2023)",
+   "quote": "the july meeting will be held on tuesday, july 18, 2023 at 9:30 a.m. at the lunenburg adult activity center.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Communication with Lunenburg residents (post cards)",
+   "resolution": "reported",
+   "quote": "ms. doherty reported the informational post cards with new name and new hours will go out at the end of june.",
+   "tags": [
+    "outreach",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Lunenburg senior tax relief",
+   "resolution": "reported (state petition process explained)",
+   "quote": "mr. franco explained that the approval of senior tax relief at annual town meeting has given the power to the select board to petition the",
+   "tags": [
+    "senior tax relief",
+    "state legislature"
+   ]
+  },
+  {
+   "topic": "New COA board member orientation packet",
+   "resolution": "changes finalized; pages to be handed out at next meeting",
+   "quote": "the board finalized changes to the last draft of the packet.",
+   "tags": [
+    "orientation",
+    "board members"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan (generator, kitchen, patio)",
+   "resolution": "reported; patio awarded",
+   "quote": "the project was awarded to diversified construction out of amherst, mass.",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "patio"
+   ]
+  },
+  {
+   "topic": "Director's report: upcoming events and evening hours",
+   "resolution": "reported",
+   "quote": "ms. doherty reminded board members of the mcoa board member training scheduled for may 18, 2023 at the fitchburg senior center.",
+   "tags": [
+    "training",
+    "evening programs"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported",
+   "quote": "the clothing drive for the epilepsy foundation brought in $2,557.20 for the eagle house supporters.",
+   "tags": [
+    "fundraising",
+    "eagle house supporters"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:39 a.m.",
+   "quote": "at 10:39 a.m. mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "officer nominations",
+  "master plan",
+  "senior tax relief",
+  "patio project",
+  "facilities",
+  "orientation packet",
+  "meeting schedule",
+  "fundraising",
+  "talent bank"
+ ],
+ "dropped_unquoted_by_field": {}
 }

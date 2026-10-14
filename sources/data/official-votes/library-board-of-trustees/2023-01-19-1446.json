@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-01-19",
  "docid": "1446",
@@ -12,23 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of December 15, 2022 as amended",
+   "motion": "Accept the minutes of December 15, 2022, as amended.",
    "moved_by": "Kate",
    "seconded_by": "Laura",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kate made a motion to accept the minutes of december 15, 2022 as amended, seconded by laura. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Laura",
    "seconded_by": "Kate",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by laura. seconded by kate. meeting was adjourned at 8:24 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0681365
+ "note": "Text covers pages 1-2 only; pages 3-10 are blank in the extract. The minutes record two motions (minutes approval, adjournment); the adjournment result is not stated. The Rules and Regulations agenda item is headed 'and vote' but no vote is recorded. No dollar figure on the trust fund account was printed beyond 'a little over $80k'. Several people named (Francesco, Michael-Ray Jeffreys, Jean Proctor) are mentioned but not recorded as attending, so they are not listed as attendees. Attendee roles other than Chairperson and Director are not printed in the minutes.",
+ "cost_usd": 0.01538961,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "board member (listed under Trustees heading)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux-remote, donna saiia,"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "board member (listed under Trustees heading)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux-remote, donna saiia,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:56 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "board member (listed under Trustees heading)",
+   "status": "remote",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux-remote, donna saiia,"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "board member (listed under Trustees heading)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux-remote, donna saiia,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup-remote"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "board member (listed under Trustees heading)",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup-remote"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "board member (listed under Trustees heading)",
+   "status": "remote",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup-remote"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board skipped the Outreach Ideas agenda item for this month.",
+   "quote": "the board decided to skip over this agenda item for this month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 spending to date",
+   "what_was_recorded": "The Director reported the FY23 budget was 48% expended with 58% of the fiscal year elapsed.",
+   "figures_as_printed": [
+    "48%",
+    "58%"
+   ],
+   "quote": "the fy23 budget is 48% expended and we are 58% through the fiscal year."
+  },
+  {
+   "topic": "FY24 target budget",
+   "what_was_recorded": "The Director received the FY24 target budget from the Town Manager, described as flat; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "muir received the fy24 target budget from the town manager. it's a flat budget, as usual."
+  },
+  {
+   "topic": "FY24 budget requests",
+   "what_was_recorded": "Budget items include the MBLC 16% materials requirement, small mileage and training increases, postage, and slight heating and electricity increases.",
+   "figures_as_printed": [
+    "16%"
+   ],
+   "quote": "some budget items include the mblc 16% materials requirement, small increases for mileage and training, and postage."
+  },
+  {
+   "topic": "Trust fund balance",
+   "what_was_recorded": "A little over $80k is in the current accounts of the trust fund.",
+   "figures_as_printed": [
+    "$80k"
+   ],
+   "quote": "there is a little over $80k in the current accounts."
+  },
+  {
+   "topic": "ARPA funds requests",
+   "what_was_recorded": "Requests under consideration under ARPA funds are HVAC redesign and construction (around $150k) and a backup generator (around $25k).",
+   "figures_as_printed": [
+    "$150k",
+    "$25k"
+   ],
+   "quote": "requests under consideration are the redesign and construction of the hvac system, estimated to be around $150k and a backup generator, estimated to be around $25k."
+  },
+  {
+   "topic": "Memorial garden idea (ARPA)",
+   "what_was_recorded": "An idea under consideration for ARPA funds is $50 for the memorial garden.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "some other ideas under consideration are $50 for the memorial garden, a possible expansion of the teen room into the director's office space."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Trust fund transfer of funds from the Town into the Edward Jones account, which has not yet been opened.",
+   "amount_as_printed": "not stated",
+   "outcome": "not yet requested; Chair expected to request it, the account is not yet opened",
+   "quote": "harry is just about ready to request the transfer of funds from the town."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (December 15, 2022 minutes)",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "kate made a motion to accept the minutes of december 15, 2022 as amended, seconded by laura. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no vote",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "HVAC",
+    "facilities",
+    "legislation"
+   ],
+   "quote": "the fy23 budget is 48% expended and we are 58% through the fiscal year."
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "no action; account opening and transfer pending",
+   "tags": [
+    "trust fund",
+    "investments",
+    "town finance"
+   ],
+   "quote": "the edward jones account hasn't been opened yet."
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "discussed; suggestion to add a Lunenburg line",
+   "tags": [
+    "signage",
+    "facilities"
+   ],
+   "quote": "a suggestion was made to add an additional 'lunenburg' line above."
+  },
+  {
+   "topic": "ARPA Funds Update",
+   "resolution": "discussed; requests under consideration",
+   "tags": [
+    "ARPA",
+    "HVAC",
+    "budget",
+    "memorial garden"
+   ],
+   "quote": "requests under consideration are the redesign and construction of the hvac system, estimated to be around $150k and a backup generator, estimated to be around $25k."
+  },
+  {
+   "topic": "Outreach Ideas",
+   "resolution": "skipped for this month",
+   "tags": [
+    "outreach"
+   ],
+   "quote": "the board decided to skip over this agenda item for this month."
+  },
+  {
+   "topic": "Rules and Regulations Review",
+   "resolution": "postponed; review suggested for February meeting",
+   "tags": [
+    "policy",
+    "rules and regulations"
+   ],
+   "quote": "dick suggested we move this up in the agenda and review during the february meeting."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no update; Friends on hiatus until March",
+   "tags": [
+    "Friends of LPL"
+   ],
+   "quote": "no update. the friends are on hiatus until march."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted; Jean Proctor to attend February meeting",
+   "tags": [
+    "memorial garden"
+   ],
+   "quote": "kate mentioned that jean proctor can come to the february meeting to discuss ideas for the memorial garden."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:24 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by laura. seconded by kate. meeting was adjourned at 8:24 p.m."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "ARPA",
+  "HVAC",
+  "trust fund",
+  "facilities",
+  "programs",
+  "staffing",
+  "signage",
+  "policy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

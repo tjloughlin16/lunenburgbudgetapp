@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-05-04",
  "docid": "28",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the report from MFS for the town of Lunenburg Massachusetts waterfront properties",
+   "motion": "Approve the report from MFS for the town of Lunenburg Massachusetts waterfront properties.",
    "moved_by": "Kevin Fish",
    "seconded_by": "Richard Letarte",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "kevin fish makes a motion to approve the report from mfs for the town of lunenburg massachusetts waterfront properties, seconded by richard letarte. the motion is approved."
   },
   {
-   "motion": "Adjourn and enter into executive session and not return to the open meeting",
+   "motion": "Adjourn, enter executive session, and not return to the open meeting.",
    "moved_by": "Kevin Fish",
    "seconded_by": "Richard Letarte",
    "outcome": "passed",
@@ -29,6 +29,191 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction via macOS Vision. Two votes recorded: one substantive (MFS report approval), one procedural (adjournment/executive session).",
- "cost_usd": 0.0722235
+ "note": "Text is macOS Vision OCR of a scanned document, so the quotes were checked against the OCR text rather than an original scan. Possible OCR errors, printed as read: 'Principal Access' (probably Principal Assessor), 'MES report' (the motion says MFS), and the leading word 'Channel.' Page 1 ends mid-sentence ('The options consist of'); the three abatement options Richard Letarte reviewed are not in the text. The minutes record no vote counts: the MFS approval is 'approved' and the executive-session motion is 'All in favor', so both outcomes are as printed and not counted. The signing of applications is recorded without a vote and is listed as a decision only because the minutes state it as an action taken. The minutes print no dollar figures; the circuit breaker discussion concerns an amount that is not printed.",
+ "cost_usd": 0.015144810000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member christine higdon, principal access cj carroll, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member christine higdon, principal access cj carroll, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member christine higdon, principal access cj carroll, interim principal assessor rena swezey."
+  },
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Access (as printed; likely an OCR misreading of Principal Assessor)",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member christine higdon, principal access cj carroll, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member christine higdon, principal access cj carroll, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Gina Marie Leone",
+   "role": "Public commenter, 52 Pearl Street (as printed)",
+   "status": "present",
+   "quote": "gina marie leone- 52 pearl street- inquiring to confirm that there is no private information available on the mfs report."
+  },
+  {
+   "name": "Phyllis & Carl Luck",
+   "role": "Public commenters, 55 Sunset Lane (as printed)",
+   "status": "present",
+   "quote": "phyllis & carl luck -55 sunset lane- wants to know what the effect of this report will be on the abatement process"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Public commenter, 155 Island Road (as printed)",
+   "status": "present",
+   "quote": "dave mcdonald - 155 island road - wants to know if the form will be available today in the assessors office."
+  },
+  {
+   "name": "Alex Yawer",
+   "role": "Public commenter, 226 Sunset Lane (as printed)",
+   "status": "present",
+   "quote": "alex yawer- 226 sunset lane- questioned whether the abatements will be done individually or across the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members signed the veterans' exemption applications and the motor vehicle applications; the veterans' applications were kept confidential.",
+   "quote": "veterans' exemption applications were signed by richard letarte and kevin fish but not shown"
+  },
+  {
+   "decision": "Every abatement will be discussed individually, using Nate Cramer's suggestions as the basis.",
+   "quote": "richard letarte confirms that there will be a discussion on every single abatement and will use nate cramer's suggestions as a basis."
+  },
+  {
+   "decision": "The form is to be posted online on the Assessors webpage, with physical copies to follow in the office.",
+   "quote": "kevin fish shares that it will be posted online on the assessors webpage but may take a little bit to get physical copies in the office."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Circuit breaker amount in the MFS report",
+   "what_was_recorded": "The board briefly discussed the amount listed for question 2 regarding the circuit breaker, and said additional information is needed from DOR; no figure is printed.",
+   "quote": "a brief discussion about the amount listed for question 2 regarding the circuit breaker.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Confidentiality of the MFS report and spreadsheet",
+   "speaker": "Gina Marie Leone",
+   "stated_role": "52 Pearl Street",
+   "quote": "gina marie leone- 52 pearl street- inquiring to confirm that there is no private information available on the mfs report."
+  },
+  {
+   "topic": "Effect of the MFS report on the abatement process",
+   "speaker": "Phyllis & Carl Luck",
+   "stated_role": "55 Sunset Lane",
+   "quote": "phyllis & carl luck -55 sunset lane- wants to know what the effect of this report will be on the abatement process"
+  },
+  {
+   "topic": "Availability of the form at the Assessors Office",
+   "speaker": "Dave McDonald",
+   "stated_role": "155 Island Road",
+   "quote": "dave mcdonald - 155 island road - wants to know if the form will be available today in the assessors office."
+  },
+  {
+   "topic": "Whether abatements are done individually or across the board",
+   "speaker": "Alex Yawer",
+   "stated_role": "226 Sunset Lane",
+   "quote": "alex yawer- 226 sunset lane- questioned whether the abatements will be done individually or across the board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "opened at 3:00 PM",
+   "quote": "the meeting was opened at 3:00 pm.",
+   "tags": [
+    "meeting open"
+   ]
+  },
+  {
+   "topic": "Signing of veterans' exemption and motor vehicle applications",
+   "resolution": "signed by Richard Letarte and Kevin Fish; veterans' applications kept confidential",
+   "quote": "veterans' exemption applications were signed by richard letarte and kevin fish but not shown",
+   "tags": [
+    "veterans exemption",
+    "motor vehicle",
+    "confidential"
+   ]
+  },
+  {
+   "topic": "Break to review the MFS report",
+   "resolution": "15-minute break held",
+   "quote": "a 15-minute break was held for the board members to review the mes report independently.",
+   "tags": [
+    "MFS report"
+   ]
+  },
+  {
+   "topic": "Report from MFS",
+   "resolution": "discussed; additional DOR information needed on the circuit breaker question",
+   "quote": "a brief discussion about the amount listed for question 2 regarding the circuit breaker.",
+   "tags": [
+    "MFS report",
+    "circuit breaker",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "four residents spoke on the MFS report, abatements and the form",
+   "quote": "kevin fish confirms there won't be any private information listed on the spreadsheet and the time frame for redated copies to become available is unknown.",
+   "tags": [
+    "public comment",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Motion to approve report from MFS",
+   "resolution": "approved",
+   "quote": "kevin fish makes a motion to approve the report from mfs for the town of lunenburg massachusetts waterfront properties, seconded by richard letarte. the motion is approved.",
+   "tags": [
+    "MFS report",
+    "waterfront properties"
+   ]
+  },
+  {
+   "topic": "Adjournment and executive session",
+   "resolution": "adjourned at 3:43 PM; executive session entered",
+   "quote": "the meeting adjourned at 3:43 pm.",
+   "tags": [
+    "adjournment",
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "MFS report",
+  "abatements",
+  "property assessment",
+  "public comment",
+  "veterans exemption",
+  "motor vehicle",
+  "circuit breaker",
+  "executive session",
+  "waterfront properties"
+ ],
+ "dropped_unquoted_by_field": {}
 }

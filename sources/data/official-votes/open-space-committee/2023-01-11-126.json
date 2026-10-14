@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2023-01-11",
  "docid": "126",
@@ -12,21 +12,237 @@
  },
  "votes": [
   {
-   "motion": "Elect Vice Chair Lockwood and Clerk Kibbe",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Lockwood as Vice Chair and Kibbe as Clerk.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed (unanimous; no count printed)",
+   "procedural": false,
    "quote": "vice chair: lockwood, clerk: kibbe. unanimously voted."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:51pm.",
    "moved_by": "Kibbe",
    "seconded_by": "Allison",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous; no count printed)",
    "procedural": true,
-   "quote": "kibbe motion, allison seconded. unanimously voted."
+   "quote": "kibbe motion, allison seconded. unanimously voted. meeting adjourned at 8:51pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0916205
+ "note": "Clerk's summary, not verbatim; no dollar figures appear anywhere in the text, so budget_items and transfers are empty. Two votes are recorded: the officer election (\"Unanimously voted\", no count and no mover printed) and adjournment. Tabling the 9/8/22 minutes is recorded without a motion or vote. Eric Hinds is listed only in the members-present line and makes no other statement. Public comment items a-h are listed; Matthew Allison (h) is a member, and his remarks are recorded here under public comment as the minutes print them. Items i and j are members' remarks and are not recorded as public comment. Speaker roles are as printed; blank where the minutes print none.",
+ "cost_usd": 0.01608681,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: brandon kibbe, ana lockwood, michael toohill (chair), eric hinds, matthew"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Member (later elected Clerk)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, ana lockwood, michael toohill (chair), eric hinds, matthew"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member (later elected Vice Chair)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, ana lockwood, michael toohill (chair), eric hinds, matthew"
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, ana lockwood, michael toohill (chair), eric hinds, matthew"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, ana lockwood, michael toohill (chair), eric hinds, matthew"
+  },
+  {
+   "name": "Joel Swenson",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "was under impression of a boat ramp not cartop access at parmenter road, but now understands."
+  },
+  {
+   "name": "Mary Perkins",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "concerned about trailer access, particularly for jetskis."
+  },
+  {
+   "name": "Tracy Casavecchia",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "concerned about trailer access at parmenter road parcel and on-street parking hindering resident and emergency access"
+  },
+  {
+   "name": "Gary & Maureen Stint",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "concerned about parking at parmenter road parcel that could encroach on neighboring properties"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Former Parks Commission chair and former member of Open Space Committee",
+   "status": "present",
+   "quote": "encourages the participation of the public with parks commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the 9/8/22 minutes was tabled because minutes were not available; Lockwood to revisit the meeting recording and provide minutes for the next meeting.",
+   "quote": "lockwood to revisit meeting recording and provide minutes for next meeting."
+  },
+  {
+   "decision": "Toohill to follow up with Town Counsel to review the title examination of 0 Lake Shirley Reservoir and discuss next steps.",
+   "quote": "toohill to follow up with town counsel to review title examination and discuss next steps."
+  },
+  {
+   "decision": "Toohill will file the FY'22 town report.",
+   "quote": "toohill will be filing fy'22 town report."
+  },
+  {
+   "decision": "Kibbe will share the former Saliba acquisition grant applications and review and advise on other Parks Commission grant applications.",
+   "quote": "kibbe wrote and will share those applications, as well as review and advise on other grant applications being pursued by parks commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joel Swenson",
+   "stated_role": "Neighbor",
+   "topic": "Parmenter Road cartop access; corner lot, bus turnaround, ADA and wetlands",
+   "quote": "was under impression of a boat ramp not cartop access at parmenter road, but now understands."
+  },
+  {
+   "speaker": "Mary Perkins",
+   "stated_role": "Neighbor",
+   "topic": "Parmenter Road trailer access, invasive species, safety, residency",
+   "quote": "concerned about trailer access, particularly for jetskis."
+  },
+  {
+   "speaker": "Tracy Casavecchia",
+   "stated_role": "Neighbor",
+   "topic": "Parmenter Road trailer access and on-street parking",
+   "quote": "concerned about trailer access at parmenter road parcel and on-street parking hindering resident and emergency access"
+  },
+  {
+   "speaker": "Gary & Maureen Stint",
+   "stated_role": "Neighbor",
+   "topic": "Parmenter Road parking and encroachment; no-parking posting",
+   "quote": "concerned about parking at parmenter road parcel that could encroach on neighboring properties"
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Former Parks Commission chair and former member of Open Space Committee",
+   "topic": "Public participation with Parks Commission; grant history",
+   "quote": "encourages the participation of the public with parks commission."
+  },
+  {
+   "speaker": "Joel Swenson",
+   "stated_role": "Neighbor",
+   "topic": "Town liability at former adjoining parcel; Reservoir Road access point",
+   "quote": "encouraged town to consider existing cartop access point on reservoir road."
+  },
+  {
+   "speaker": "Mary Perkins",
+   "stated_role": "",
+   "topic": "Grants for invasive species and lake management; Hickory Hills parcel",
+   "quote": "asked about grants for invasive species and lake management."
+  },
+  {
+   "speaker": "Matthew Allison",
+   "stated_role": "",
+   "topic": "Hickory Hills parcel ownership; support for limited cartop access at Parmenter Road",
+   "quote": "hickory hills parcel not owned by the town; the conservation commission will be the beneficiary of proceeds from the sale."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "chairman toohill called meeting to order at 7:32pm."
+  },
+  {
+   "topic": "Review and approve minutes of 9/8/22",
+   "resolution": "tabled; minutes not available",
+   "quote": "review and approve minutes, 9/8/22: tabled, minutes not available."
+  },
+  {
+   "topic": "Select Vice Chair and Clerk",
+   "resolution": "approved (Lockwood Vice Chair, Kibbe Clerk)",
+   "quote": "vice chair: lockwood, clerk: kibbe. unanimously voted."
+  },
+  {
+   "topic": "Title examination, 0 Lake Shirley Reservoir",
+   "resolution": "no action; title report inconclusive, Town Counsel follow-up",
+   "quote": "report on title examination of 0 lake shirley reservoir: title report inconclusive."
+  },
+  {
+   "topic": "Parmenter Road cartop access",
+   "resolution": "discussed; no vote; Parks Commission seeks advice on process",
+   "quote": "lockwood presented parks commission interest in development of cartop access for canoes and kayaks at parmenter road property"
+  },
+  {
+   "topic": "Annual Town Report",
+   "resolution": "no action; Toohill to file FY'22 report",
+   "quote": "toohill will be filing fy'22 town report."
+  },
+  {
+   "topic": "MA Open Space Conference notice",
+   "resolution": "no action; attendance recommended",
+   "quote": "toohill reports that the open space conference is coming up in february"
+  },
+  {
+   "topic": "Open Space Plan 2019-2026",
+   "resolution": "no action; link provided for public access",
+   "quote": "toohill reports that a link to the open space committee website provided on agenda for public information and access to the open space plan."
+  },
+  {
+   "topic": "MassTrails Grant",
+   "resolution": "discussed; no action",
+   "quote": "toohill announced availability of masstrails grant."
+  },
+  {
+   "topic": "Committee comments and concerns",
+   "resolution": "no action",
+   "quote": "committee comments/concerns: no comments"
+  },
+  {
+   "topic": "Public comment on Parmenter Road",
+   "resolution": "heard; no action",
+   "quote": "joel swenson - neighbor. was under impression of a boat ramp not cartop access at parmenter road"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "quote": "next meeting scheduled: 2/8/2023"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:51pm",
+   "quote": "kibbe motion, allison seconded. unanimously voted. meeting adjourned at 8:51pm."
+  }
+ ],
+ "tags": [
+  "open space",
+  "Parmenter Road",
+  "Lake Shirley",
+  "Parks Commission",
+  "Conservation Commission",
+  "MassTrails grant",
+  "public comment",
+  "officer election",
+  "title examination",
+  "annual town report"
+ ],
+ "dropped_unquoted_by_field": {}
 }

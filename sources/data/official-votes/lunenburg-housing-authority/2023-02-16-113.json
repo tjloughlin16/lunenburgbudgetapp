@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2023-02-16",
  "docid": "113",
@@ -13,54 +13,315 @@
  "votes": [
   {
    "motion": "Approve the minutes of January 19, 2023",
-   "moved_by": "Dale Proulx",
-   "seconded_by": "Wayne Caron",
+   "moved_by": "Treasurer",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "treasurer made a motion to approve the minutes; tenant board member seconded, with all in favor."
+   "quote": "with no discussion, treasurer made a motion to approve the minutes; tenant board member seconded, with all in favor."
   },
   {
-   "motion": "Approve the Year's End financials as presented",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Dale Proulx",
+   "motion": "Approve the Year's End financials as presented (Item 3a)",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
    "quote": "tenant board member made a motion to approve the year's end financials as presented; treasurer seconded, with all in favor."
   },
   {
    "motion": "Approve the Operating Budget for State-Aided Housing of Lunenburg Housing Authority (Chapter 200/667/705/689/MRVP) Program Number 400-1 for Fiscal Year Ending 12/31/2023",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Dale Proulx",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "tenant board member made a motion to approve the operating budget for state-aided housing of lunenburg housing authority (chapter 200/667/705/689/mrvp) program number 400-1 for fiscal year ending 12/31/2023; treasurer seconded, with all in favor."
+   "quote": "tenant board member made a motion to approve the operating budget for state-aided housing of lunenburg housing authority"
   },
   {
-   "motion": "Approve the Updated Tenant Personal Property Policy",
-   "moved_by": "Dale Proulx",
-   "seconded_by": "Wayne Caron",
+   "motion": "Resolution 2023-2: approve the Updated Tenant Personal Property Policy",
+   "moved_by": "Treasurer",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by treasurer to approve the updated tenant personal property policy; tenant board member seconded the motion, with all in favor."
+   "quote": "to approve the updated tenant personal property policy; tenant board member seconded the motion, with all in favor."
   },
   {
-   "motion": "Approve the Year-End Financials for DHCD required certifications (Fiscal Year Ending 12/31/2022)",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Dale Proulx",
+   "motion": "Resolution 2023-3: approve the Year-End Financials as presented (fiscal year ending 12/31/2022)",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "tenant board member made a motion to approve the year's end financials as presented; treasurer seconded, with all in favor."
+   "quote": "motion to approve the year's end financials as presented; treasurer seconded, with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Dale Proulx",
+   "motion": "Adjourn the meeting at 2:53p.m.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tenant board member made a motion to adjourn the meeting 2:53p.m. treasurer seconded and with all in favor the meeting was adjourned."
+   "quote": "tenant board member made a motion to adjourn the meeting 2:53p.m. treasurer seconded and with all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14458749999999998
+ "note": "Text is extracted from a document; the running header reads \"February 15, 2023\" while the body and the board date say February 16, 2023. The minutes say \"The Vice Chair declared a quorum present\" but list Vice Chair Linda McDonald as absent and the Chair ran the roll call. Movers and seconders are printed only by role (Treasurer, Tenant Board Member), so those fields carry roles, not names. Votes are recorded as \"all in favor\" with no tally, so each outcome is \"passed\" rather than a count. Sue Honeycutt's role is printed as \"from Fenton, Ewald and Associates PC\". Item 6b (Resolution 2023-3) is a separate vote on the year-end financials from item 3a. Dollar figures appear only in the Financial Report discussion; the operating budget and generator items have no printed amounts.",
+ "cost_usd": 0.0210822,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, chair"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "dale proulx, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Evelyn Perez",
+   "role": "Director of Housing Management Services",
+   "status": "present",
+   "quote": "evelyn perez, director of housing management services"
+  },
+  {
+   "name": "Suzanne Bonney",
+   "role": "Director of Finance",
+   "status": "present",
+   "quote": "suzanne bonney, director of finance"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "from Fenton, Ewald and Associates PC",
+   "status": "present",
+   "quote": "sue honeycutt from fenton, ewald and associates pc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting will be held on March 16, 2023.",
+   "quote": "next meeting will be held on march"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Contract costs and Maintenance Repair Line Item",
+   "what_was_recorded": "The Treasurer asked whether a Maintenance Repair Line Item could be added because contract costs have gone over $28,000.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "treasurer asked if there could be a maintenance repair line item, as contract costs have gone over $28,000."
+  },
+  {
+   "topic": "Management fee increase",
+   "what_was_recorded": "The auditor explained a 5% management fee increase, which the minutes say is still under DHCD Guidelines.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "sue honeycutt explained the management fee increase 5%, but it is still under dhcd guidelines."
+  },
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "The auditor reported the reserves are at 58%, described as in great shape.",
+   "figures_as_printed": [
+    "58%"
+   ],
+   "quote": "sue honeycutt explained the reserves are in great shape at 58%."
+  },
+  {
+   "topic": "Operating Budget for State-Aided Housing, Program 400-1, FY ending 12/31/2023",
+   "what_was_recorded": "The board approved the operating budget for the fiscal year ending 12/31/2023; no dollar figure is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "tenant board member made a motion to approve the operating budget for state-aided housing of lunenburg housing authority"
+  },
+  {
+   "topic": "Community Room Generator bids",
+   "what_was_recorded": "The generator project was tabled because bids received were excessively costly; no dollar figure is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "this project was tabled due to the excessive cost of bids received"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Zoom access to Board meetings",
+   "quote": "there was an opportunity for public comments. a discussion was held about having the board meeting available by zoom."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 2:00p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:00p.m.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of January 19, 2023 minutes",
+   "resolution": "approved",
+   "quote": "with no discussion, treasurer made a motion to approve the minutes;",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment and Zoom",
+   "resolution": "discussed; no action recorded",
+   "quote": "there was an opportunity for public comments. a discussion was held about having the board meeting available by zoom.",
+   "tags": [
+    "public comment",
+    "Zoom",
+    "remote access"
+   ]
+  },
+  {
+   "topic": "Executive Director report: smoking policy and new staff introduction",
+   "resolution": "discussed; new Director introduced",
+   "quote": "there was a discussion about the smoking area and possibility of going completely smoke free.",
+   "tags": [
+    "smoking policy",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Financial report: Year's End financials",
+   "resolution": "approved",
+   "quote": "tenant board member made a motion to approve the year's end financials as presented; treasurer seconded, with all in favor.",
+   "tags": [
+    "financials",
+    "year-end",
+    "reserves",
+    "management fee",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Operating Budget for State-Aided Housing (Program 400-1)",
+   "resolution": "approved",
+   "quote": "tenant board member made a motion to approve the operating budget for state-aided housing of lunenburg housing authority",
+   "tags": [
+    "operating budget",
+    "DHCD",
+    "state-aided housing"
+   ]
+  },
+  {
+   "topic": "Maintenance Floater Position advertising",
+   "resolution": "discussed; no action recorded",
+   "quote": "there was a discussion about advertising for a maintenance floater position for lunenburg, sterling and west boylston.",
+   "tags": [
+    "staffing",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "reported; generator tabled",
+   "quote": "this project was tabled due to the excessive cost of bids received",
+   "tags": [
+    "capital projects",
+    "modernization",
+    "work orders",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing report: waitlist and occupancy",
+   "resolution": "reported",
+   "quote": "overall occupancy is at 100%.",
+   "tags": [
+    "waitlist",
+    "occupancy",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "5. unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "Resolution 2023-2: Updated Tenant Personal Property Policy",
+   "resolution": "approved",
+   "quote": "to approve the updated tenant personal property policy; tenant board member seconded the motion, with all in favor.",
+   "tags": [
+    "tenant policy",
+    "resolution"
+   ]
+  },
+  {
+   "topic": "Resolution 2023-3: DHCD year-end financial and lead paint certifications",
+   "resolution": "approved; certifications signed",
+   "quote": "resolution 2023-3 for execution of dhcd required year-end financial and federal/state lead paint",
+   "tags": [
+    "DHCD",
+    "certification",
+    "lead paint",
+    "year-end"
+   ]
+  },
+  {
+   "topic": "Other correspondence: DHCD guidance on animals",
+   "resolution": "received; no action recorded",
+   "quote": "dhcd phn 2023- 1 guidance related to animals in the state-aided public housing",
+   "tags": [
+    "DHCD",
+    "animals",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 2:53p.m.",
+   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting 2:53p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "state-aided housing",
+  "DHCD",
+  "year-end financials",
+  "operating budget",
+  "reserves",
+  "management fee",
+  "maintenance",
+  "capital projects",
+  "modernization",
+  "tenant policy",
+  "smoking policy",
+  "waitlist and occupancy",
+  "Zoom",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

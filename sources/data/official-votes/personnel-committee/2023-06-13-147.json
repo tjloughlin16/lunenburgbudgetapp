@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-06-13",
  "docid": "147",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve hire of James Ricci as call Firefighter/EMT at grade 9, step 8 - $27.76",
+   "motion": "Rehire James \"Jim\" Ricci as a call Firefighter/EMT at grade 9, step 8, $27.76.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "motion by j. bilotta, secord by d. fortune. approved 3-0 vote."
   },
   {
-   "motion": "Approve hire of Ashleigh Denio as Administrative Assistant for Conservation department at grade 8, step 2 FY24 rate $21.86",
+   "motion": "Hire Ashleigh Denio as Administrative Assistant - Conservation at grade 8, step 2, FY24 rate $21.86.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed 3-0",
@@ -28,7 +28,7 @@
    "quote": "motion by w. bertrand, secord by d. fortune. approved 3-0 vote."
   },
   {
-   "motion": "Adjourn meeting at 8:12pm",
+   "motion": "Adjourn the meeting at 8:12pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -37,6 +37,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The third vote quote preserves the apparent typo in the original minutes (\"Motion by to adjourn\" lacks a name in the first clause, with the mover identified later). The two hiring votes both show \"Secord\" which appears to be the minutes' spelling of \"Seconded.\"",
- "cost_usd": 0.09726599999999999
+ "note": "Single-page-pair text extraction, no scan. Votes are recorded as totals only (\"Approved 3-0 vote\") with no roll call, so individual votes and whether Bill Bernard (remote, Via Teams) voted are not stated; four members were listed, 3-0 is printed. The minutes print \"Secord\" where \"Second\" is meant; recorded as printed in the motion text, seconder names taken as printed. Dollar figures ($27.76, $21.86) are printed without a unit, so the unit (e.g., hourly) is not stated. The adjournment motion is printed without a result count, only \"All in Favor\", recorded as passed. No public comment speakers are named. Job description scoring points were not recorded as numbers in the minutes.",
+ "cost_usd": 0.00453759,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "in person attendees: donna fortune, wendy bertrand, joanna bilotta-simeone"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "in person attendees: donna fortune, wendy bertrand, joanna bilotta-simeone"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Committee member; opened the meeting (title not stated)",
+   "status": "present",
+   "quote": "j.bilotta opened the meeting at 6:01pm with members noted in attendance"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "via teams: bill bernard"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, pauline roy coa outreach"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, pauline roy coa outreach"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits coordinator/risk manager, adam burney, land"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, sue doherty, coa director"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "adam burney, land use director, sue doherty, coa director"
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "absent: sue andrews"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Points assigned to the job descriptions reviewed will be looked at on the new grid during later meetings.",
+   "quote": "d. fortune and j. belliveau said the points sit on our new grid will be looked at during later meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pay rate for rehire of James \"Jim\" Ricci (call Firefighter/EMT)",
+   "what_was_recorded": "Recently retired Fire Captain suggested for rehire at grade 9, step 8, based on over 30 years of experience; approved 3-0.",
+   "figures_as_printed": [
+    "$27.76"
+   ],
+   "quote": "suggested rehiring at a grade 9, step 8 - $27.76"
+  },
+  {
+   "topic": "Pay rate for Administrative Assistant - Conservation candidate Ashleigh Denio",
+   "what_was_recorded": "Recommended grade 8, step 2 at the FY24 rate, starting after 7/1/23; approved 3-0.",
+   "figures_as_printed": [
+    "$21.86"
+   ],
+   "quote": "the recommendation is a grade 8, step 2 fy24 rate $21.86 (starting after"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; no public or committee comments",
+   "quote": "there were neither committee comments, nor public comments during this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "none to approve",
+   "quote": "approval of minutes: none to approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: rehire of James \"Jim\" Ricci",
+   "resolution": "approved 3-0 at grade 9, step 8, $27.76",
+   "quote": "james \"jim\" ricci is a recently retired fire captain returning as a call firefighter/emt.",
+   "tags": [
+    "hiring",
+    "pay rate",
+    "fire department"
+   ]
+  },
+  {
+   "topic": "New business: Administrative Assistant - Conservation hire (Ashleigh Denio)",
+   "resolution": "approved 3-0 at grade 8, step 2, FY24 rate $21.86",
+   "quote": "ashleigh denio is the candidate for the administrative assistant - conservation department.",
+   "tags": [
+    "hiring",
+    "pay rate",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Job description review (7 positions)",
+   "resolution": "reviewed; points to be looked at on the new grid in later meetings",
+   "quote": "j. belliveau reviewed rating system - all positions rated using new point/rubric system.",
+   "tags": [
+    "job descriptions",
+    "classification",
+    "rating system"
+   ]
+  },
+  {
+   "topic": "Committee comment: upcoming board and committee training",
+   "resolution": "information provided; no action",
+   "quote": "j. belliveau provided the committee with information regarding the upcoming",
+   "tags": [
+    "training",
+    "public records",
+    "open meeting law",
+    "conflict of interest"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "hiring",
+  "pay rates",
+  "job descriptions",
+  "job classification",
+  "rating system",
+  "Fire Department",
+  "Conservation",
+  "training",
+  "town board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

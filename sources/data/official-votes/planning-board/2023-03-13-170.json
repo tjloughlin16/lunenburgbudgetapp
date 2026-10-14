@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-03-13",
  "docid": "170",
@@ -12,39 +12,294 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 451 Mulpus Road",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
+   "motion": "Endorse the ANR Plan for 451 Mulpus Road, which eliminated a lot line, taking three lots to two (Lots B3 and 10A).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "t. willsmer made motion to endorse the anr plan for 451 mulpus road, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Direct the Land Use Director to prepare a warrant article for self-storage",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Direct the Land Use Director to prepare a warrant article for self-storage as discussed.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "m. brenner made motion for the land use director to prepare a warrant article for self -storage as discussed, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve all minutes from 2/27/23 and 2/27/23 (1325 Massachusetts Avenue)",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "Approve the minutes listed below (2/27/23 and 2/27/23, 1325 Massachusetts Avenue).",
+   "moved_by": "A. Reid",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed 3-0-1",
    "procedural": true,
    "quote": "a. reid made motion to approve all minutes listed below, t. willsmer seconded, passed 3-0-1."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0751411
+ "note": "Vote counts are as printed. The minutes approval reads 3-0-1 but five members are listed present and the abstention is not named. The ANR and warrant-article motions are recorded only as \"passed unanimously\" with no count. No dollar figures appear anywhere in the text, so budget_items records only discussion of money with no amounts. Master planning ranking results and the price proposals are not recorded. Marjorie J. Boggio is named only as the administrative assistant retiring and is not recorded as taking part. Page 1 and page 2 are plain text with no scan artifacts noted.",
+ "cost_usd": 0.01756821,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Stan Dillis",
+   "role": "presenter, Dillis and Roy",
+   "status": "present",
+   "quote": "plan presented by stan dillis, dillis and roy."
+  },
+  {
+   "name": "Charles Venezia",
+   "role": "presenter, 1402 Massachusetts Avenue",
+   "status": "present",
+   "quote": "proposed zoning bylaw change - charles venezia, 1402 massachusetts avenue made a presentation."
+  },
+  {
+   "name": "Shane Matson",
+   "role": "representing the developer, 360 Flat Hill Road",
+   "status": "present",
+   "quote": "the developer was represented by shane matson."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "member of the public, 82 Highland Street",
+   "status": "present",
+   "quote": "david rodgers, 82 highland street-"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus on a self-storage definition to be used in the warrant article.",
+   "quote": "board consensus was to go with"
+  },
+  {
+   "decision": "Board was amenable to tri-party agreements for four Watt Street and Flat Hill Road lots, with documents to be prepared for endorsement March 27.",
+   "quote": "the board was amenable to putting tri party agreements in place for the four lots."
+  },
+  {
+   "decision": "Board members handed ranking sheets for the three master planning firms to A. Burney, who will check references and price proposals with the Assistant Town Manager.",
+   "quote": "board members handed their ranking sheets to a. burney who would work with the assistant town manager to check references and price proposals."
+  },
+  {
+   "decision": "A. Burney to prepare a memo outlining the process for removing a non-participatory board member.",
+   "quote": "a. burney would prepare a memo for the board outlining the process."
+  },
+  {
+   "decision": "Board to meet at 5:30 p.m. on March 27 for hearings and then attend Town Caucus at 7:00 p.m.",
+   "quote": "the board would meet at 5:30 p.m. on the 27th in order to attend town caucus at 7:00 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master planning services consultant selection",
+   "what_was_recorded": "Board ranked three firms; the highest-ranked firm would be chosen only if its price proposal was within the allotted budget. No dollar figure is printed.",
+   "quote": "if the highest ranked firm was within the allotted budget, the board could choose that firm.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "360 Flat Hill Road stormwater bond",
+   "what_was_recorded": "Developer sought Board approval to post a bond for completion of stormwater facilities and provided a detailed estimate for review. No dollar figure is printed.",
+   "quote": "he was looking for board approval to put up a bond",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Master Plan consultant process and end product",
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "d. rodgers inquired as to what would be the end product."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan, 451 Mulpus Road",
+   "resolution": "endorsed",
+   "quote": "t. willsmer made motion to endorse the anr plan for 451 mulpus road, a. reid seconded, passed unanimously.",
+   "tags": [
+    "ANR plan",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Proposed zoning bylaw change, self-storage",
+   "resolution": "Land Use Director to prepare warrant article",
+   "quote": "proposed zoning bylaw change - charles venezia, 1402 massachusetts avenue made a presentation.",
+   "tags": [
+    "zoning bylaw",
+    "self-storage",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "360 Flat Hill Road stormwater bond",
+   "resolution": "Board amenable to tri-party agreements; no vote recorded",
+   "quote": "the developer was represented by shane matson.",
+   "tags": [
+    "stormwater",
+    "performance bond",
+    "tri-party agreement"
+   ]
+  },
+  {
+   "topic": "Master planning services",
+   "resolution": "Firms ranked; ranking sheets to Land Use Director for reference and price checks",
+   "quote": "board members handed their ranking sheets to a. burney who would work with the assistant town manager to check references and price proposals.",
+   "tags": [
+    "master plan",
+    "consultant selection"
+   ]
+  },
+  {
+   "topic": "Comprehensive permit, Pond View Commons",
+   "resolution": "no updates",
+   "quote": "pond view commons, llc, howard street",
+   "tags": [
+    "comprehensive permit",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Board discussions: Solar Bylaw, Section 250-6.4 driveways",
+   "resolution": "no report",
+   "quote": "solar bylaw- no report.",
+   "tags": [
+    "solar bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 2/27/23",
+   "resolution": "approved 3-0-1",
+   "quote": "a. reid made motion to approve all minutes listed below, t. willsmer seconded, passed 3-0-1.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; MJTC grant seeking noted",
+   "quote": "mjtc- the committee was seeking grant proposals for culvert replacement.",
+   "tags": [
+    "committee reports",
+    "culvert",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "informational",
+   "quote": "lunenburg central, status update - construction had been completed",
+   "tags": [
+    "Lunenburg Central",
+    "town meeting",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "hearings scheduled March 27",
+   "quote": "march 27- hearings were scheduled for change of use",
+   "tags": [
+    "hearings",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: MBTA Communities and others",
+   "resolution": "status noted",
+   "quote": "required paperwork was submitted.",
+   "tags": [
+    "MBTA Communities",
+    "master plan",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Public comment on Master Plan consultant",
+   "resolution": "no action; answered by Land Use Director",
+   "quote": "d. rodgers inquired as to what would be the end product.",
+   "tags": [
+    "master plan",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: member participation",
+   "resolution": "memo to be prepared",
+   "quote": "a. burney would prepare a memo for the board outlining the process.",
+   "tags": [
+    "board membership",
+    "recall",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:02 p.m.",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning bylaw",
+  "self-storage",
+  "ANR plan",
+  "stormwater bond",
+  "tri-party agreement",
+  "master plan",
+  "consultant selection",
+  "comprehensive permit",
+  "minutes approval",
+  "board attendance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

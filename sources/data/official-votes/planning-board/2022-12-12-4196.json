@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-12-12",
  "docid": "4196",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the ANR Plan for Parcel 3 at 255 Sunny Hill Road",
+   "motion": "Approve the ANR Plan for 255 Sunny Hill Road.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. allison made motion to approve the anr plan for 255 sunny hill road, t. willsmer seconded"
+   "quote": "m. allison made motion to approve the anr plan for 255 sunny hill road, t. willsmer seconded, roll call vote"
   },
   {
-   "motion": "accept the request for de minimis changes for Lunenburg Central, 475 Leominster Shirley Road",
+   "motion": "Accept the requested de minimis changes for Lunenburg Central, 475 Leominster Shirley Road.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
@@ -28,23 +28,246 @@
    "quote": "m. allison made motion to accept the request for de minimis changes for lunenburg central, 475 leominster shirley road, t. willsmer seconded"
   },
   {
-   "motion": "approve the minutes of 11/28/22 including those for 680 Reservoir Road and 319 Highland Street",
+   "motion": "Approve the minutes of 11/28/22; 11/28/22, 680 Reservoir Road; and 11/28/22, 319 Highland Street.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. allison made motion to approve the minutes of 11/28/22; 11/28/22, 680 reservoir road; and 11/28/22, 319 highland street ; a. reid seconded"
+   "quote": "m. allison made motion to approve the minutes of 11/28/22; 11/28/22, 680 reservoir road; and 11/28/22, 319 highland street"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote - m. allison, aye; a. reid, aye; t. willsmer, aye; m. brenner, aye, passed unanimously"
+   "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0851431
+ "note": "Text is extracted from a PDF with spacing artifacts (e.g. 'buy er', 'de  minimis', stray spaces before commas), so quotes are copied with those artifacts intact. No scan; the full minutes were readable. Four roll-call votes are recorded, each printed as 'Passed unanimously' rather than a count, though the roll call lists four ayes. No dollar figures appear in the minutes; the two budget_items record money-adjacent discussion only. Erik Torgersen is recorded absent; Allison and Reid participated remotely under the OML. Jeff Walsh and Lufa Farms are referenced but did not appear, so are not listed as attendees.",
+ "cost_usd": 0.01677851,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "matthew allison and amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "matthew allison and amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Ed McSweeney",
+   "role": "representing the buyer MN 122 Main, LLC",
+   "status": "present",
+   "quote": "ed mcsweeney, represented the buy er mn 122 main, llc."
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering (presenter)",
+   "status": "present",
+   "quote": "presentation made by bill hannigan, hannigan engineering."
+  },
+  {
+   "name": "Lynne Man",
+   "role": "Burrage Street",
+   "status": "present",
+   "quote": "lynne man , burrage street - she was interested in knowing the board 's viewpoint on land clearing for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to place the land-clearing-for-solar item on the January 23rd agenda for discussion.",
+   "quote": "board consensus was to place the item on the january 23rd agenda for discussion."
+  },
+  {
+   "decision": "Board reviewed and endorsed 680 Reservoir Road (Review & Endorsement).",
+   "quote": "680 reservoir road- review & endorsement- board reviewed and endorsed."
+  },
+  {
+   "decision": "Section 250-6.4, Driveways & Entrances, tabled.",
+   "quote": "section 250- 6.4., driveways & entrances- tabled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee",
+   "what_was_recorded": "The Capital Planning Committee was working to get final numbers to the Town Manager; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the committee continued to work through the process to get final numbers to the town manager."
+  },
+  {
+   "topic": "MRPC grants",
+   "what_was_recorded": "MRPC discussed grants for surrounding communities; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission talked about grants for surrounding communities."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lynne Man",
+   "stated_role": "Burrage Street",
+   "topic": "land clearing for solar development and permitting",
+   "quote": "lynne man , burrage street - she was interested in knowing the board 's viewpoint on land clearing for"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: land clearing for solar",
+   "resolution": "placed on January 23 agenda",
+   "tags": [
+    "solar",
+    "land clearing",
+    "public comment"
+   ],
+   "quote": "board consensus was to place the item on the january 23rd agenda for discussion."
+  },
+  {
+   "topic": "ANR Plan, 255 Sunny Hill Road",
+   "resolution": "approved",
+   "tags": [
+    "ANR plan",
+    "Chapter 61B",
+    "land division"
+   ],
+   "quote": "m. allison made motion to approve the anr plan for 255 sunny hill road, t. willsmer seconded"
+  },
+  {
+   "topic": "De minimis change, Lunenburg Central, 475 Leominster Shirley Road",
+   "resolution": "accepted",
+   "tags": [
+    "de minimis change",
+    "site plan",
+    "peer review"
+   ],
+   "quote": "the requested changes were provided to peer reviewer, jeff walsh, graves engineering, inc."
+  },
+  {
+   "topic": "Decisions & plans: 680 Reservoir Road, 319 Highland Street",
+   "resolution": "reviewed and endorsed",
+   "tags": [
+    "endorsement",
+    "decisions"
+   ],
+   "quote": "680 reservoir road- review & endorsement- board reviewed and endorsed."
+  },
+  {
+   "topic": "Comprehensive permit, Pond View Commons, LLC",
+   "resolution": "noted; ZBA continuation December 14",
+   "tags": [
+    "comprehensive permit",
+    "housing"
+   ],
+   "quote": "continuation set for december 14th."
+  },
+  {
+   "topic": "Master Plan RFP",
+   "resolution": "no action; bids expected early January",
+   "tags": [
+    "master plan",
+    "RFP"
+   ],
+   "quote": "the changes discussed at the last board meeting were incorporated and forwarded on to the assistant town manager."
+  },
+  {
+   "topic": "Section 250-6.4 Driveways & Entrances",
+   "resolution": "tabled",
+   "tags": [
+    "zoning bylaw",
+    "driveways"
+   ],
+   "quote": "section 250- 6.4., driveways & entrances- tabled"
+  },
+  {
+   "topic": "Minutes approval, 11/28/22 (three sets)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "m. allison made motion to approve the minutes of 11/28/22; 11/28/22, 680 reservoir road; and 11/28/22, 319 highland street"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Capital Planning and MRPC reported",
+   "tags": [
+    "committees",
+    "capital planning",
+    "MRPC"
+   ],
+   "quote": "the commission talked about grants for surrounding communities."
+  },
+  {
+   "topic": "Northfield Road, Parks Commission property",
+   "resolution": "discussed; access easement ongoing",
+   "tags": [
+    "Parks Commission",
+    "Lufa Farms",
+    "easement"
+   ],
+   "quote": "the parks commission hoped that lufa farms would allow an access easement to town property located on northfield road."
+  },
+  {
+   "topic": "Board comment: WalMart drop-off bins",
+   "resolution": "noted; cameras installed",
+   "tags": [
+    "board comment",
+    "drop-off bins"
+   ],
+   "quote": "m. allison noted that the area surrounding drop-off bins at walmart had been cleaned up."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:00 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned 7:00 p.m."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "de minimis change",
+  "solar development",
+  "land clearing",
+  "Chapter 61B",
+  "comprehensive permit",
+  "master plan RFP",
+  "driveways bylaw",
+  "Parks Commission",
+  "Lufa Farms",
+  "OML remote participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

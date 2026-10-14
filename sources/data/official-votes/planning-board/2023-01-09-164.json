@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-01-09",
  "docid": "164",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 68 Laurel Lane",
+   "motion": "Endorse the ANR Plan for 68 Laurel Lane.",
    "moved_by": "M. Brenner",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
@@ -20,23 +20,23 @@
    "quote": "m. brenner made motion to endorse the anr plan for 68 laurel lane, t. willsmer seconded, roll call vote - m. reid, aye; m. brenner, aye; t. willsmer, aye; m. allison, aye. passed unanimously."
   },
   {
-   "motion": "Approve the modification to site plan approval for Lunenburg Central, 475 Leominster Shirle y Road, with current existing conditions and no new conditions added",
+   "motion": "Approve the modification to site plan approval for Lunenburg Central, 475 Leominster Shirle y Road, with current existing conditions and no new conditions added.",
    "moved_by": "M. Brenner",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the modification to site plan approval for lunenburg central, 475 leominster shirle y road, with current existing conditions and no new conditions added, t. willsmer seconded, roll call vote - a. reid, aye; t. willsmer, aye; m. brenner, aye; m. allison, aye. passed unanimously."
+   "quote": "m. brenner made motion to approve the modification to site plan approval for lunenburg central, 475 leominster shirle y road, with current existing conditions and no new conditions added"
   },
   {
-   "motion": "Approve the minutes of 12/06/22 and 12/12/22",
+   "motion": "Approve the minutes of 12/06/22 and 12/12/22.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. allison made motion to approve the minutes of 12/06/22 and 12/12/22, a. reid seconded, roll call vote- m. allison, aye; a. reid, aye; t. willsmer, aye; m. brenner, aye. passed unanimously."
+   "quote": "m. allison made motion to approve the minutes of 12/06/22 and 12/12/22, a. reid seconded, roll call vote- m. allison, aye; a. reid, aye; t. willsmer, aye; m. brenner, aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
@@ -45,6 +45,197 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. Amanda Reid participated remotely; Erik Torgersen was absent.",
- "cost_usd": 0.0925091
+ "note": "Clean typed text, not a scan; no page is missing (two pages). Three votes are roll calls with printed results; the 'passed unanimously' outcomes are as printed. Lunenburg Central and 1325 Massachusetts Avenue have separate minutes not included here, so their outcomes are not in this text beyond the printed site plan motion. Public comment is not recorded in these minutes. Amanda Reid participated remotely per the minutes. No dollar figures are printed; the only money reference is 'free planning services'. The 'Passed unanimously' results are recorded as printed, not converted to counts.",
+ "cost_usd": 0.01584021,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen anr plan: 68 laurel lane - plan presented by kevin conover"
+  },
+  {
+   "name": "Kevin Conover",
+   "role": "presenter, David Ross Associates, on behalf of owner Schwowen s Properties, LLC",
+   "status": "present",
+   "quote": "plan presented by kevin conover, david ross associates, on behalf of owner schwowen s properties, llc."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair of both the Select Board and the Municipal Building Committee",
+   "status": "present",
+   "quote": "michael-ray jeffreys, chair of both the select board the municipal building committee was available for board discussion."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "In-depth discussion of the Section 250-6.4 driveways and entrances amendment was scheduled for the January 23 meeting.",
+   "quote": "section 250- 6.4., driveways & entrances- in-depth discussion would take place at the january 23 meeting."
+  },
+  {
+   "decision": "Board members took the municipal buildings information under advisement, and Michael-Ray Jeffreys was to return on January 23 for more discussion.",
+   "quote": "board members wanted to take some time to absorb the information provided."
+  },
+  {
+   "decision": "The Pond View Commons comprehensive permit hearing remains with the Zoning Board of Appeals; no Planning Board action recorded.",
+   "quote": "comprehensive permit application: pond view commons, llc, howard street - hearing ongoing with the zoning board of appeals."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DLTA Call for Proposals from MRPC",
+   "what_was_recorded": "Board members received an MRPC Call for Proposals for free planning services, with five categories and a Round #1 deadline; no dollar figure is printed.",
+   "figures_as_printed": [
+    "free planning services"
+   ],
+   "quote": "board members were in receipt of a call for proposals from mrpc for free planning services."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, 68 Laurel Lane",
+   "resolution": "endorsed (passed unanimously)",
+   "quote": "anr plan: 68 laurel lane - plan presented by kevin conover, david ross associates, on behalf of owner schwowen s properties, llc.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "nonconforming use",
+    "driveway easement"
+   ]
+  },
+  {
+   "topic": "Lunenburg Central site plan modification (public hearing)",
+   "resolution": "approved (passed unanimously); see separate minutes",
+   "quote": "lunenburg central, 475 leominster shirley road - see separate minutes.",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "modification"
+   ]
+  },
+  {
+   "topic": "1325 Massachusetts Avenue (public hearing)",
+   "resolution": "see separate minutes; no action recorded in these minutes",
+   "quote": "1325 massachusetts avenue- see separate minutes.",
+   "tags": [
+    "public hearing",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Pond View Commons comprehensive permit, Howard Street",
+   "resolution": "continued; hearing ongoing with Zoning Board of Appeals",
+   "quote": "comprehensive permit application: pond view commons, llc, howard street - hearing ongoing with the zoning board of appeals.",
+   "tags": [
+    "comprehensive permit",
+    "housing",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Minutes approval (12/06/22 and 12/12/22)",
+   "resolution": "approved (passed unanimously)",
+   "quote": "minutes approval: m. allison made motion to approve the minutes of 12/06/22 and 12/12/22, a. reid seconded, roll call vote- m. allison, aye; a. reid, aye; t. willsmer, aye; m. brenner, aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP",
+   "resolution": "continued; awaiting responses to the RFP",
+   "quote": "master plan rfp- awaiting responses to the rfp.",
+   "tags": [
+    "master plan",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4 driveways and entrances",
+   "resolution": "scheduled for in-depth discussion January 23",
+   "quote": "section 250- 6.4., driveways & entrances- in-depth discussion would take place at the january 23 meeting.",
+   "tags": [
+    "zoning bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no action",
+   "quote": "capital planning committee- the committee continued with its ranking.",
+   "tags": [
+    "committees",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "DLTA Call for Proposals (Director's item)",
+   "resolution": "no action; in-depth discussion possible at a later meeting",
+   "quote": "director's item: dlta call for proposals - board members were in receipt of a call for proposals from mrpc for free planning services.",
+   "tags": [
+    "MRPC",
+    "technical assistance",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Lunenburg Municipal Buildings",
+   "resolution": "continued; Jeffreys to return January 23",
+   "quote": "board members wanted to take some time to absorb the information provided.",
+   "tags": [
+    "municipal buildings",
+    "town hall",
+    "reuse",
+    "school administration"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "site plan",
+  "public hearing",
+  "comprehensive permit",
+  "zoning bylaw",
+  "driveways",
+  "municipal buildings",
+  "MRPC technical assistance",
+  "minutes approval",
+  "remote participation",
+  "Laurel Lane"
+ ],
+ "dropped_unquoted_by_field": {}
 }

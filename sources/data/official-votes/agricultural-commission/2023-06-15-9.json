@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-06-15",
  "docid": "9",
@@ -12,22 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 11, 2023",
+   "motion": "Approve the minutes of the May 11, 2023 meeting.",
+   "moved_by": "",
    "seconded_by": "Jorge",
    "outcome": "passed",
    "procedural": true,
    "quote": "lay 11, 2023. jorge seconded, unanimously approved"
   },
   {
-   "motion": "Approve reviewed vendor applications for Farmers' Market",
+   "motion": "Approve the reviewed vendor applications for the Farmers' Market.",
    "moved_by": "Jackie",
    "seconded_by": "Jorge",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jackie made a motion to approve reviewed vendor applications for farmers' market; jorge seconded, commission unanimously approved"
+   "quote": "jackie made a motion to approve reviewed vendor applications for farmers' market; jorge seconded, commission unanimously approved."
   },
   {
-   "motion": "Approve proposal to donate $3 per bag sold to Lunenburg 4H ($0.95 from profit and $2.05 from AgComm funds)",
+   "motion": "Approve the proposal to donate $3 from each bag sold to Lunenburg 4H.",
    "moved_by": "Jen",
    "seconded_by": "Jorge",
    "outcome": "passed",
@@ -35,16 +36,15 @@
    "quote": "jen made a motion to approve proposal, jorge seconded. unanimously approved."
   },
   {
-   "motion": "Move the next meeting to July 20th at 7:00pm",
+   "motion": "Move the next meeting to July 20th, 7:00pm.",
    "moved_by": "Maryrae",
    "seconded_by": "Jen",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "maryrae made a motion to move the next meeting to july 20th, 7:00pm jen seconded commission unanimously approved ju",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "maryrae made a motion to move the next meeting to july 20th, 7:00pm jen seconded commission unanimously approved"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Jorge",
    "outcome": "passed",
@@ -53,6 +53,173 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcribed via macOS Vision; all votes clearly readable. Minor OCR artifact: \"lay\" for \"May\" in vote 1, \"S\" for \"$\" in vote 3 motion description.",
- "cost_usd": 0.1249015
+ "note": "Scanned minutes read by macOS Vision OCR, so the wording is OCR output and may contain misreads. The first page's opening lines are cut off, so the mover of the minutes approval is not printed (the vote's moved_by is left blank). The member table is garbled, so the roster is read from the names listed in order under the function column; the minutes do not record attendance explicitly, so attendance status is \"not stated\" except for members shown making or seconding motions, marked \"present\" on that evidence alone. The 4-H figure prints as \"S0.95\", which is probably an OCR misread of \"$0.95\". All votes are recorded only as \"unanimously approved\", so outcomes are \"passed\" with no count printed. The agenda numbering is garbled, so topic order follows the notes. Public comment was recorded as \"No public comment\" twice, with no speaker named.",
+ "cost_usd": 0.01601131,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "matthew allison maryrae holman jennifer duffy jorge marzuca jackie chabot kira mcclellan ashley york"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "maryrae made a motion to move the next meeting to july 20th, 7:00pm"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk (printed as \"Jen\" in the notes)",
+   "status": "present",
+   "quote": "jen made a motion to approve proposal, jorge seconded."
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "present",
+   "quote": "jackie motion to adjourn; jorge seconds."
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member (printed as \"Jackie\" in the notes)",
+   "status": "present",
+   "quote": "jackie made a motion to approve reviewed vendor applications for farmers' market;"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "matthew allison maryrae holman jennifer duffy jorge marzuca jackie chabot kira mcclellan ashley york"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "matthew allison maryrae holman jennifer duffy jorge marzuca jackie chabot kira mcclellan ashley york"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Vendors to be notified of the approved Farmers' Market applications.",
+   "quote": "commission unanimously approved. vendors will be notified"
+  },
+  {
+   "decision": "A Lunenburg Ledger article to be included in that week's paper.",
+   "quote": "lunenburg ledger article to be included in this week's paper."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Proposed donation to Lunenburg 4H from bag sales",
+   "what_was_recorded": "A proposal to donate $3 from each bag sold to Lunenburg 4H, split between $0.95 from profit and $2.05 from AgComm funds, was approved.",
+   "figures_as_printed": [
+    "$3",
+    "S0.95",
+    "$2.05"
+   ],
+   "quote": "proposal made to donate $3 (s0.95 from profit and $2.05 from agcomm funds) from the sale of each bag to lunenburg 4h."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "meeting called to order at 7:06 pm",
+   "quote": "meeting commencement time: 7:06 pm",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "quote": "no public comment. no complaints",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints",
+   "quote": "no public comment. no complaints",
+   "tags": [
+    "farm complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of May 11, 2023",
+   "quote": "lay 11, 2023. jorge seconded, unanimously approved",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Farmers market update - Seasonal",
+   "resolution": "vendor applications approved; vendors to be notified; Ledger article to run",
+   "quote": "reviewed received applications for farmers' market; jackie made a motion to approve reviewed vendor applications for farmers' market;",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Proposed donation to Lunenburg 4H",
+   "resolution": "approved",
+   "quote": "proposal made to donate $3 (s0.95 from profit and $2.05 from agcomm funds) from the sale of each bag to lunenburg 4h.",
+   "tags": [
+    "4-H donation",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Permit/location, AgCom holding land, farm regulations, community gardens, farm inspections, merchandise, farm map, committee reports",
+   "resolution": "no new information reported",
+   "quote": "no new information no new information no new information",
+   "tags": [
+    "farm regulation",
+    "community gardens",
+    "farm inspections",
+    "marketing"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no public comment",
+   "quote": "no public comment maryrae made a motion to move the next meeting to",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "moved to July 20th, 7:00pm",
+   "quote": "maryrae made a motion to move the next meeting to july 20th, 7:00pm",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:43pm",
+   "quote": "meeting adjournment time: jackie motion to adjourn;",
+   "tags": [
+    "meeting procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "farm regulation",
+  "4-H donation",
+  "community gardens",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

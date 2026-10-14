@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-02-28",
  "docid": "293",
@@ -11,7 +11,491 @@
   "doc_url": "/docs/meetings/sewer-commission/2023-02-28-minutes-293.txt"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "This document is a draft FY24 budget spreadsheet and supporting materials prepared for the Sewer Commission meeting, not the meeting minutes. It contains no recorded votes, motions, or voting outcomes. No meeting minutes recording what was actually voted on are present in the text provided.",
- "cost_usd": 0.0908425
+ "dropped_unquoted": 1,
+ "note": "This is not a set of minutes. It is a printout of a four-page draft spreadsheet, 'Draft FY24 updtd budget for SC meeting 022823', with annotations, and it bears the header 'changes since 2/14/23 meeting'. It records no motions, no votes, no attendees, no public comment and no decisions, so votes, decisions, attendees and public_comment are empty. Nothing here is an official record of what the Commission did. Figures are draft proposals and some are internally inconsistent (for example, an 'ERROR?' note on user charges, and total revenues printed with and without ARPA). Line breaks and spacing were collapsed where a quote crossed them; quotes were otherwise copied from the printed text. Quotes that cross a line break are joined with a single space.",
+ "cost_usd": 0.02336211,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Sewer user charges (revenue)",
+   "what_was_recorded": "The draft proposes user charges of $1,130,000, a $28,400 increase, after a note that the earlier $1.2M estimate was a rounding error.",
+   "quote": "error? in estimate, we rounded 1.120m to 1.2m(98k) -would prefer to put user charges at $1,130,000 (28k increase)",
+   "figures_as_printed": [
+    "$1,130,000",
+    "$28,400.00",
+    "$1,120,635",
+    "$1,200,000",
+    "$1,098,662",
+    "$549331"
+   ]
+  },
+  {
+   "topic": "Total revenues with and without ARPA",
+   "what_was_recorded": "Total revenues are printed at $1,830,712.40 including ARPA lines and $1,240,712.40 without ARPA.",
+   "quote": "$1,240,712.40w/o arpa ^^doesn't include arpa",
+   "figures_as_printed": [
+    "$1,830,712.40",
+    "$1,240,712.40"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests",
+   "what_was_recorded": "Three ARPA-funded requests are listed as submitted to the Select Board in October 2022: pump station upgrades, manhole repairs and a mobile generator.",
+   "quote": "11) arpa funding - submitted to select board october 2022",
+   "figures_as_printed": [
+    "300,000.00",
+    "200,000.00",
+    "90,000.00"
+   ]
+  },
+  {
+   "topic": "Investment income",
+   "what_was_recorded": "Investment income is set at $6,000 after $3,443 was recorded as of 12/31/22.",
+   "quote": "7) investment income -at 3443 as of 12/31/22 - at approx same rate total $6886; assume market adjmt -set at $6000",
+   "figures_as_printed": [
+    "3443",
+    "$6886",
+    "$6000",
+    "6,000.00"
+   ]
+  },
+  {
+   "topic": "Sewer bank fee (I/I) revenue",
+   "what_was_recorded": "Sewer bank fee revenue is estimated from six new connections at $880 each, rounded to $5,300.",
+   "quote": "3) sewer bank fee -based on 4br home x 6 new cnxns ($880 x6)=$5280(rounded to 5300)",
+   "figures_as_printed": [
+    "$880",
+    "$5280",
+    "5300",
+    "$5,300"
+   ]
+  },
+  {
+   "topic": "Grease trap permit fees",
+   "what_was_recorded": "Grease trap permit fees are described as collected in earlier years, waived in FY21 and FY22, and budgeted at $3,650 for FY23; FY24 assumes a $150 annual permit fee for 19 establishments.",
+   "quote": "6) discuss proposed fee structure- grease trap permit fees -collected $5300 fy19, $7200 fy20; fees waived fy21, fy22",
+   "figures_as_printed": [
+    "$5300",
+    "$7200",
+    "$3650",
+    "$150",
+    "$2850"
+   ]
+  },
+  {
+   "topic": "Payroll: assistant business manager",
+   "what_was_recorded": "The part-time assistant business manager is estimated at $20.28 an hour in FY23 and $20.90 an hour in FY24.",
+   "quote": "assistant bus mgr- part-time 24 hrs/week(1248/yr) - tb hired at estimated $20.28/hr (step 1 of gr 5) fy23. then $20.90 (step 2 of gr 5) fy24",
+   "figures_as_printed": [
+    "$20.28/hr",
+    "$20.90",
+    "$13,056.00",
+    "90.67%"
+   ]
+  },
+  {
+   "topic": "Payroll total and salary study reserve",
+   "what_was_recorded": "Total payroll is printed at $93,015.27 against a FY24 draft of $102,001.00 (+$13,480.14), with a COLA and salary study reserve assumed at at least 3.5%.",
+   "quote": "cola reserve/salary study fy23 - assuming at least a 3.5% increase due to cola/salary study",
+   "figures_as_printed": [
+    "$13,480.14",
+    "$102,001.00",
+    "$93,015.27",
+    "3.5%"
+   ]
+  },
+  {
+   "topic": "Minutes clerk pay",
+   "what_was_recorded": "The Commission clerk line is printed at $3,123 for FY24.",
+   "quote": "minutes help - hired for 12.5hrs/mo(150/yr) 7/1/19 for $3123 for fy24",
+   "figures_as_printed": [
+    "$3123",
+    "$86.00"
+   ]
+  },
+  {
+   "topic": "Pump station contract",
+   "what_was_recorded": "The pump station coverage contract must be re-bid; prior years cost $82,160 and $85,443.44, with an estimate of $120,000 for the new contract.",
+   "quote": "3a) pump station coverage - new contract-need to go out for bid (previously $82,160 yrs 1 & 2",
+   "figures_as_printed": [
+    "$82,160",
+    "85,443.44",
+    "$120,000K",
+    "$34,556.00"
+   ]
+  },
+  {
+   "topic": "Unplanned major repairs (infrastructure)",
+   "what_was_recorded": "The unplanned major repairs line, funded from the Stabilization Fund, rises to $35K in the draft.",
+   "quote": "1b) unplanned/unexpected major part/repairs costs greater than $5k, funded by stabilization fund transfer(see above)-fy24 increase to $35k",
+   "figures_as_printed": [
+    "$5k",
+    "$35K",
+    "$35,000.00",
+    "$15,000.00",
+    "75.00%"
+   ]
+  },
+  {
+   "topic": "Administrative consulting services",
+   "what_was_recorded": "Proposed new administrative consulting from the prior business manager at $60 an hour for 200 hours.",
+   "quote": "available for consultation - $60/hr for 200 hours = $12k",
+   "figures_as_printed": [
+    "$60/hr",
+    "200 hours",
+    "$12K",
+    "$12,000.00"
+   ]
+  },
+  {
+   "topic": "Legal counsel",
+   "what_was_recorded": "Legal counsel is budgeted at $5,000 historically, against actuals of $10,570.30 (FY20) and 6410.56 (FY21); the draft asks whether to increase or level fund.",
+   "quote": "4) legal counsel - $5000 budgeted",
+   "figures_as_printed": [
+    "$5000",
+    "$10,570.30",
+    "6410.56"
+   ]
+  },
+  {
+   "topic": "Engineering consulting",
+   "what_was_recorded": "Engineering consulting is put up to $30,000 in the draft for projects needing engineering support.",
+   "quote": "-put up to $30k -with projects will need engineering support",
+   "figures_as_printed": [
+    "$30k",
+    "$30,000.00",
+    "$9960",
+    "$5,000.00"
+   ]
+  },
+  {
+   "topic": "Planned capital expenditures",
+   "what_was_recorded": "Planned capital expenditures are drafted at $96,000, described as covering a possible lack of ARPA funds.",
+   "quote": "5a capital expenditures - for planned capital projects; fy22-$100k, fy23-$50k- fy24 $96,000(in case no arpa funds recd-56k for pump station upgrades, $40k for manhole maintenance)",
+   "figures_as_printed": [
+    "$100K",
+    "$50K",
+    "$96,000",
+    "$56K",
+    "$40K",
+    "$46,150.00"
+   ]
+  },
+  {
+   "topic": "Leominster debt service",
+   "what_was_recorded": "Leominster debt service is drafted at $56,000, with a note that Leominster projects $55,038.12 for FY24.",
+   "quote": "6) debt service to leominster (1st pmt fy21-$34,360.29)",
+   "figures_as_printed": [
+    "$34,360.29",
+    "$40,583",
+    "$55038.12",
+    "$56K",
+    "$56,000",
+    "$15,000.00"
+   ]
+  },
+  {
+   "topic": "JF Highway capital cost (loan portion)",
+   "what_was_recorded": "The JF Highway loan-portion payment is $20,962.40 in FY24, covered by the Highfield Village payment received in 2020.",
+   "quote": "8b) reserve capacity transfer (hv funds) to pay jf hwy debt service fy23(20,962.40)-(balance remaining in res cap stab fund $7001.11.",
+   "figures_as_printed": [
+    "$20,962.40",
+    "$7001.11",
+    "$0.40"
+   ]
+  },
+  {
+   "topic": "Reserve capacity stabilization transfer",
+   "what_was_recorded": "A transfer of 20% of the Reserve Capacity Stabilization Fund balance of $27,963.51 is planned for the next five years to defray JF Highway costs, drafted at $5,593 plus $2,407 for $8,000 total.",
+   "quote": "stabilization fund balance (balance 1/31/23=$27,963.51) for the next 5 years (to defray jfhwy costs) = @",
+   "figures_as_printed": [
+    "$27,963.51",
+    "$5593",
+    "$8000",
+    "(8,000.00)"
+   ]
+  },
+  {
+   "topic": "Leominster usage (purchase of water)",
+   "what_was_recorded": "Leominster usage is drafted at $520,000 for FY24, up $7,923 from the FY23 budget, after FY23 is projected at $402,936 for the full year.",
+   "quote": "8) leominster usage-fy23 at $302,202(for 3 qtrs) projects to $402,936 for full year but it was a very dry year to date",
+   "figures_as_printed": [
+    "$302,202",
+    "$402,936",
+    "$512,077",
+    "$520K",
+    "$520,000.00",
+    "$7,923.00",
+    "$485,885",
+    "$495,602"
+   ]
+  },
+  {
+   "topic": "Fitchburg usage (purchase of water)",
+   "what_was_recorded": "Fitchburg usage is drafted at $220,000, level funded; a dry-year estimate of $206,381 with growth and a 4% rate increase gives $215,709.",
+   "quote": "even w/dry year estimate $206,381, add in .5% growth and 4% rate increase -still less (215,709) than fy23 budgeted $220,000-level fund fy24",
+   "figures_as_printed": [
+    "$120,389",
+    "$206,381",
+    "$215,709",
+    "$220,000"
+   ]
+  },
+  {
+   "topic": "Leominster and Fitchburg connection fees",
+   "what_was_recorded": "Leominster connection fees are $3,750 for five residential connections at $750 each; Fitchburg connection fees are $2,000 for one anticipated connection.",
+   "quote": "10) leom cxns - assuming 5 new conns in fy24 (5 res, @ 750ea =$3750",
+   "figures_as_printed": [
+    "$3750",
+    "$750",
+    "$2000",
+    "$9,300.00"
+   ]
+  },
+  {
+   "topic": "Sewer user charges rate increase",
+   "what_was_recorded": "The draft notes an 8% rate increase effective 7/1/22 and anticipated increases of 2-3% every other year after FY23.",
+   "quote": "1a) 10% rate increase processed for fy21 budget(eff 7/1/20; 8% rate increase for fy23 of 8%(eff 7/1/22)",
+   "figures_as_printed": [
+    "10%",
+    "8%",
+    "2-3%"
+   ]
+  },
+  {
+   "topic": "Utilities: postage, electricity, water, telephone",
+   "what_was_recorded": "Postage is projected to rise to $2,300; electricity is level funded at $35,000 against a $28,900 projection; water is raised to $5,000.",
+   "quote": "2) electricity at 14,450 projects out to $28900; level fund at $35,000",
+   "figures_as_printed": [
+    "$1157.56",
+    "$2300",
+    "$28900",
+    "$35,000",
+    "$4600",
+    "$5,000.00",
+    "$1,000.00"
+   ]
+  },
+  {
+   "topic": "Mileage",
+   "what_was_recorded": "Mileage for the business manager and assistant is level funded at $400.",
+   "quote": "current budget fy23 at $400-level fund",
+   "figures_as_printed": [
+    "$400",
+    "$400.00"
+   ]
+  },
+  {
+   "topic": "Total line-item expenses and revenues",
+   "what_was_recorded": "Total line-item expenses for FY24 are drafted at $2,027,814.17 against line-item revenues of $1,830,712.40.",
+   "quote": "total line item expenses 985,231.47 1,173,511.13 1,319,158.15 1,311,235.15",
+   "figures_as_printed": [
+    "$2,027,814.17",
+    "$1,830,712.40",
+    "(197,101.77)",
+    "$242,839.77"
+   ]
+  },
+  {
+   "topic": "Surplus or deficit before betterment and debt service",
+   "what_was_recorded": "The surplus before betterment and debt service is printed as $197,287.61 for FY20 and $26,492.64 for FY21, with deficits in FY22 and FY23.",
+   "quote": "surplus(deficit) before betterment/debt service197,287.61 26,492.64 (134,196.15) (126,273.15)",
+   "figures_as_printed": [
+    "197,287.61",
+    "26,492.64",
+    "(134,196.15)",
+    "(126,273.15)",
+    "(197,101.77)"
+   ]
+  },
+  {
+   "topic": "Sewer debt service and betterment revenue",
+   "what_was_recorded": "Sewer debt service is $687,992.32 and anticipated betterment revenues are $558,066.06 including the Town's portion, leaving a deficit of $129,926.26 against debt service.",
+   "quote": "deficit of betterment revenue vs debt service -184,911.32 (129,926.26)",
+   "figures_as_printed": [
+    "$687,992.32",
+    "430,042.00",
+    "485,026.06",
+    "73,040.00",
+    "558,066.06",
+    "-184,911.32",
+    "(129,926.26)"
+   ]
+  },
+  {
+   "topic": "Retained earnings appropriation",
+   "what_was_recorded": "Retained earnings to be appropriated are printed at $319,107.47 and $327,028.03 across the columns; the total retained earnings appropriation is shown as $355,312.33 and $372,642.28.",
+   "quote": "retained earnings to be appropriated -319,107.47 (327,028.03)",
+   "figures_as_printed": [
+    "(319,107.47)",
+    "(327,028.03)",
+    "(355,312.33)",
+    "(372,642.28)"
+   ]
+  },
+  {
+   "topic": "Retained earnings balance by year",
+   "what_was_recorded": "Retained earnings year-end balances are printed for FY14 through FY22, including FY22 at $2,232,978.00, and a current deficit of $242,716.02 is shown.",
+   "quote": "retained earnings balance year-end fy22 2,232,978.00",
+   "figures_as_printed": [
+    "2,232,978.00",
+    "546,838.00",
+    "1,239,995.00",
+    "2,023,242.00",
+    "(242,716.02)"
+   ]
+  },
+  {
+   "topic": "OPEB trust transfer",
+   "what_was_recorded": "OPEB funding for FY19 was $656, derived from 10% of a $6,559 annual cost; the draft asks whether to put in $1,000.",
+   "quote": "put in for $1000 at this time?",
+   "figures_as_printed": [
+    "$656",
+    "$6559",
+    "$1000",
+    "$1,000.00"
+   ]
+  },
+  {
+   "topic": "Capital reserve transfer (2% of revenues)",
+   "what_was_recorded": "The capital reserve transfer, formerly 3% of revenues, is changed to 2% for FY24; the draft prints transfer figures of $35,548.86, $36,614.25 and $37,221.37.",
+   "quote": "transfer to cap reserve(2% revenues)stabilization fund- (35,548.86)",
+   "figures_as_printed": [
+    "(35,548.86)",
+    "(36,614.25)",
+    "37,221.37"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Sewer Bank I/I transfer from the Stabilization Fund, $9,900 from FY22, to be transferred back at the 2024 STM if unused by year end.",
+   "amount_as_printed": "$9900",
+   "outcome": "not stated (proposed in draft budget; no vote recorded)",
+   "quote": "9) sewer bank i/i transfer from stability fund - $9900 from fy22 transfer at stm (if unused by eoy, transfer back at 2024 stm)"
+  },
+  {
+   "description": "Capital reserve transfer from the Stabilization Fund to cover unplanned capital expenses over $5K, drafted as revenue of $35,000.",
+   "amount_as_printed": "35,000.00",
+   "outcome": "not stated (proposed in draft budget; no vote recorded)",
+   "quote": "10) capital reserve transfer from stab fund to cover unplanned capital expenses(>$5k)-expense line purchase of services-1b"
+  },
+  {
+   "description": "Reserve Capacity Fund transfer to pay the JF Highway debt service (loan portion).",
+   "amount_as_printed": "20,962.40",
+   "outcome": "not stated (proposed in draft budget; no vote recorded)",
+   "quote": "8b) reserve capacity transfer (hv funds) to pay jf hwy debt service fy23(20,962.40)-(balance remaining in res cap stab fund $7001.11."
+  },
+  {
+   "description": "Reserve Capacity transfer from the Stabilization Fund at 20% of its balance, planned for five years to defray JF Highway costs.",
+   "amount_as_printed": "(8,000.00)",
+   "outcome": "not stated (proposed in draft budget; no vote recorded)",
+   "quote": "transfer to stabilization fund- reserve capacity(20% of res cap stab fund) (8,000.00)"
+  },
+  {
+   "description": "Transfer to capital reserve (Stabilization Fund) at 2% of revenues, changed from 3% for FY24.",
+   "amount_as_printed": "(35,548.86)",
+   "outcome": "not stated (proposed in draft budget; no vote recorded)",
+   "quote": "transfer to cap reserve(2% revenues)stabilization fund- (35,548.86)"
+  },
+  {
+   "description": "OPEB Trust transfer: $656 for FY19 at 10% of a $6,559 annual cost; the draft asks whether to put in $1,000.",
+   "amount_as_printed": "(1,000.00)",
+   "outcome": "not stated (draft question; no vote recorded)",
+   "quote": "put in for $1000 at this time?"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY24 draft budget: revenues",
+   "resolution": "no action recorded (draft worksheet, discussion points noted)",
+   "quote": "1) sewer user charges as of 1/12/23 -fy23 to date $549331 after 2 qtrs",
+   "tags": [
+    "revenue",
+    "user charges",
+    "rates",
+    "draft budget"
+   ]
+  },
+  {
+   "topic": "FY24 draft budget: payroll",
+   "resolution": "no action recorded (draft worksheet)",
+   "quote": "business manager - assuming step 2 of gr 11(27.64)(pb) w potential sal increases/cola",
+   "tags": [
+    "payroll",
+    "staffing",
+    "salary study"
+   ]
+  },
+  {
+   "topic": "FY24 draft budget: purchase of service",
+   "resolution": "no action recorded (draft worksheet, discussion points noted)",
+   "quote": "3a) pump station coverage - new contract-need to go out for bid (previously $82,160 yrs 1 & 2",
+   "tags": [
+    "contracts",
+    "pump stations",
+    "infrastructure",
+    "legal",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "FY24 draft budget: utilities",
+   "resolution": "no action recorded (draft worksheet)",
+   "quote": "1) postage at $1157.56 projects out to $2300",
+   "tags": [
+    "utilities",
+    "electricity",
+    "postage",
+    "water"
+   ]
+  },
+  {
+   "topic": "FY24 draft budget: other departmental expenses and capital",
+   "resolution": "no action recorded (draft worksheet, discussion points noted)",
+   "quote": "8) leominster usage-fy23 at $302,202(for 3 qtrs) projects to $402,936 for full year but it was a very dry year to date",
+   "tags": [
+    "capital",
+    "debt service",
+    "Leominster",
+    "Fitchburg",
+    "reserve funds",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Sewer debt service, betterment revenue and retained earnings",
+   "resolution": "no action recorded (draft worksheet)",
+   "quote": "deficit of betterment revenue vs debt service -184,911.32 (129,926.26)",
+   "tags": [
+    "debt service",
+    "betterments",
+    "retained earnings",
+    "deficit"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer enterprise",
+  "FY24 budget",
+  "draft budget",
+  "sewer user charges",
+  "ARPA funds",
+  "stabilization fund",
+  "capital reserve",
+  "Leominster",
+  "Fitchburg",
+  "debt service",
+  "retained earnings",
+  "payroll",
+  "utilities",
+  "pump stations"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2023-01-10",
  "docid": "107",
@@ -12,25 +12,161 @@
  },
  "votes": [
   {
-   "motion": "to approve demolition of 1325 Mass. Ave.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the commission unanimously approved the demolition with no delay."
-  },
-  {
-   "motion": "to approve demolition of 44 Pierce Ave.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "unanimous vote taken for demolition without delay."
-  },
-  {
-   "motion": "to accept the minutes from December's meeting",
+   "motion": "Approve the demolition of 1325 Mass. Ave., applied for by Jean and Dan Proctor, with no delay.",
+   "moved_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes from december's meeting were read by jennifer sanderson and accepted."
+   "procedural": false,
+   "quote": "the commission unanimously approved the demolition with no delay.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Approve the demolition of 44 Pierce Ave., applied for by Mr. Colamita, without delay.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "unanimous vote taken for demolition without delay.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09958449999999999
+ "note": "Short summary-form minutes. Motions are not printed: no mover, seconder or vote count, only 'unanimously approved' and 'unanimous vote taken'. Accepting the December minutes is recorded without a motion or vote, so it is listed as a decision. The adjournment at 7:30 has no recorded motion and is not listed as a vote. Attendance is not stated; statuses are 'present' only where a person is shown speaking or signing, and 'not stated' otherwise. No public comment section is recorded. The Commission budget item has no dollar figure printed.",
+ "cost_usd": 0.013398110000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "chair richard mcgrath has received a response from the mass. preservation society."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Acting Secretary",
+   "status": "present",
+   "quote": "minutes from december's meeting were read by jennifer sanderson and accepted."
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Commission member (as printed: no title)",
+   "status": "present",
+   "quote": "bill lakso read the site visit report, and a vote was taken."
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "applicant (1325 Mass. Ave.)",
+   "status": "not stated",
+   "quote": "jean and dan proctor have applied for demolition of 1325 mass. ave."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant (1325 Mass. Ave.)",
+   "status": "not stated",
+   "quote": "jean and dan proctor have applied for demolition of 1325 mass. ave."
+  },
+  {
+   "name": "Mr. Colamita",
+   "role": "applicant (44 Pierce Ave.)",
+   "status": "not stated",
+   "quote": "mr. colamita has applied for the demolition of 44 pierce ave."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "December 2022 minutes accepted; read by Jennifer Sanderson. No motion or vote is printed.",
+   "quote": "minutes from december's meeting were read by jennifer sanderson and accepted."
+  },
+  {
+   "decision": "Jennifer Sanderson to look into the Hometown Hero Program (assigned, no vote).",
+   "quote": "jennifer sanderson is going to look into the hometown hero program."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Commission budget balance for signage",
+   "what_was_recorded": "The minutes say the Commission still has money in its budget that could possibly go to signage or banners. No figure is printed and no decision is recorded.",
+   "figures_as_printed": [],
+   "quote": "the commission still has money in the budget, which could potentially be used for signage/banners."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: demolition of 1325 Mass. Ave.",
+   "resolution": "approved (demolition with no delay)",
+   "quote": "very little of the house is original, and would not be economically feasible to restore.",
+   "tags": [
+    "demolition",
+    "public hearing",
+    "historic house"
+   ]
+  },
+  {
+   "topic": "Public hearing: demolition of 44 Pierce Ave.",
+   "resolution": "approved (demolition without delay)",
+   "quote": "mr. colamita has applied for the demolition of 44 pierce ave.",
+   "tags": [
+    "demolition",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Approval of December minutes",
+   "resolution": "accepted (no vote recorded)",
+   "quote": "minutes from december's meeting were read by jennifer sanderson and accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business: none",
+   "resolution": "no action",
+   "quote": "no old business 68 elm st.",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "68 Elm St.: Mass. Preservation Society response",
+   "resolution": "no action (response received)",
+   "quote": "chair richard mcgrath has received a response from the mass. preservation society.",
+   "tags": [
+    "68 Elm St.",
+    "preservation society"
+   ]
+  },
+  {
+   "topic": "Commission budget for signage and Hometown Hero Program",
+   "resolution": "continued (follow-up assigned)",
+   "quote": "jennifer sanderson is going to look into the hometown hero program.",
+   "tags": [
+    "signage",
+    "budget",
+    "hometown hero"
+   ]
+  },
+  {
+   "topic": "APDC meeting on the Ritter Building windows",
+   "resolution": "no action (noted)",
+   "quote": "the architect hired to replace the windows has retired, and an incorrect count of the windows will require new plans, and a new architect.",
+   "tags": [
+    "Ritter Building",
+    "APDC",
+    "windows",
+    "architect"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "demolition",
+  "public hearing",
+  "Ritter Building",
+  "APDC",
+  "signage",
+  "budget",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

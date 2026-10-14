@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-01-24",
  "docid": "224",
@@ -12,33 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Enter into Executive Session to discuss strategy with respect to litigation (Pond View Commons, LLC)",
+   "motion": "Enter executive session to discuss litigation strategy (Pond View Commons, LLC), then return to open session.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
+   "outcome": "passed",
    "procedural": true,
-   "outcome": "passed 3-0",
-   "quote": "to enter into executive session and enter back into open session after exiting executive session pursuant to m.g.l. c. 30, section 21, paragraph 3, to discuss strategy with respect ot litigation, where an open meeting may",
-   "quote_taken_from_text": true
+   "quote": "motion: t. dwyer 2'd: h. sroka to enter into executive session and enter back into open session after exiting executive session"
   },
   {
-   "motion": "Ratify the Town Manager appointment of Kennedy Jackson to Public Safety Desk Clerk position",
+   "motion": "Ratify the Town Manager's appointment of Kennedy Jackson to the full-time Public Safety Desk Clerk position.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
-   "procedural": false,
    "outcome": "passed",
-   "quote": "to ratify the town manager appointment of kennedy jackson to public safety desk clerk 2'': h. sroka vote",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "motion: t. dwyer to ratify the town manager appointment of kennedy jackson to public safety desk clerk"
   },
   {
-   "motion": "Allocate $150,000 from ARPA funds for tax assessment investigation and assessment office staffing",
+   "motion": "Allocate $150,000 from ARPA funds for the tax assessment investigation and staffing for the assessment office.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
-   "procedural": false,
    "outcome": "passed",
-   "quote": "to allocate $150,000 from arpa funds for the tax assessment investigation and staffing for the assessment office vote: all in favor"
+   "procedural": false,
+   "quote": "motion: t. dwyer 2nd; h. sroka to allocate $150,000 from arpa funds for the tax assessment investigation and staffing for the assessment office"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "H. Sroka",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion: h. sroka to adjourn the meeting 2i'l: t. dwyer vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1283335
+ "dropped_unquoted": 0,
+ "note": "Scanned minutes read by OCR (macOS Vision), so the quotes carry OCR errors as printed (e.g. \"2'd\", \"2''\", \"2i'l\", \"Mi. Jeffreys\", \"ot litigation\"); the quotes were copied as the text reads, not corrected. The minutes print only \"All in Favor\" or named ayes, so no vote counts were recorded beyond the three named ayes on the executive session motion; outcomes are \"passed\" without a count. Public comment: the minutes say there was none. Elaine M. Peterson (recorder) and Police Chief Tom Gammel (letter author, not present) are not listed as attendees because neither took part in the meeting.",
+ "cost_usd": 0.01513001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "members not present: tom alonzo, vice chairman; lou franco, clerk"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "members not present: tom alonzo, vice chairman; lou franco, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager; via zoom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to sign the NEPBA, Local 353 collective bargaining agreement at this meeting, the agreement having been approved previously.",
+   "quote": "mr. jeffreys stated the board had previously approved the collective bargaining agreement and would be signing it tonight."
+  },
+  {
+   "decision": "Supporting documents for the tax assessment investigation are classified as confidential until the investigation is complete; the framework is to be available to the Select Board routinely.",
+   "quote": "all the supporting documents are confidential and not available for public release until the actual investigation is complete."
+  },
+  {
+   "decision": "Select Board to give the public updates on the investigation twice a month, next update February 7, 2023.",
+   "quote": "the select board will provide regular updates to the public twice a month on the investigative process and will provide its next update on february 7, 2023."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax assessment investigation funding",
+   "what_was_recorded": "The chair asked the Select Board to commit $150,000 for assessment assistance, administrative support and staffing; the minutes say the funding would come from ARPA and that itemized lists of spending would be provided.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "what we asking for at this point is for the select board to commit $150,000 for these needs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Pond View Commons litigation",
+   "resolution": "entered executive session",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Pond View Commons"
+   ],
+   "quote": "to discuss strategy with respect ot litigation, where an open meeting may have a detrimental effect on the government's"
+  },
+  {
+   "topic": "Announcement: FY23 tax assessment investigation",
+   "resolution": "read into the record, no action",
+   "tags": [
+    "tax assessment",
+    "FY23 valuation",
+    "investigation",
+    "abatements"
+   ],
+   "quote": "mr. jeffreys read the statement released earlier today regarding the investigation into the tax"
+  },
+  {
+   "topic": "Ratify Town Manager appointment, Public Safety Desk Clerk",
+   "resolution": "ratified",
+   "tags": [
+    "appointment",
+    "police",
+    "public safety"
+   ],
+   "quote": "to ratify the town manager appointment of kennedy jackson to public safety desk clerk"
+  },
+  {
+   "topic": "Sign NEPBA Local 353 collective bargaining agreement",
+   "resolution": "to be signed; previously approved",
+   "tags": [
+    "collective bargaining",
+    "police union",
+    "NEPBA"
+   ],
+   "quote": "mr. jeffreys stated the board had previously approved the collective bargaining agreement and would be signing it tonight."
+  },
+  {
+   "topic": "Funding for tax assessment investigation",
+   "resolution": "approved $150,000 from ARPA",
+   "tags": [
+    "ARPA",
+    "tax assessment",
+    "assessment office",
+    "budget"
+   ],
+   "quote": "motion: t. dwyer 2nd; h. sroka to allocate $150,000 from arpa funds for the tax assessment investigation and staffing for the assessment office"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:47 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 6:47 p.m."
+  }
+ ],
+ "tags": [
+  "select board",
+  "executive session",
+  "litigation",
+  "tax assessment",
+  "FY23 property valuation",
+  "abatements",
+  "ARPA",
+  "town manager appointment",
+  "police department",
+  "collective bargaining",
+  "budget",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-03-27",
  "docid": "144",
@@ -12,24 +12,169 @@
  },
  "votes": [
   {
-   "motion": "to amend the initial motion to propose a 2.5% Cola adjustment to the SAP salary grid for FY2024",
+   "motion": "Motion by J. Bilotta to recommend that the committee propose a 3% COLA adjustment to the SAP salary grid for FY2024.",
+   "moved_by": "J. Bilotta",
+   "seconded_by": "W. Bertrand",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "a motion by j. bilotta to recommend that we propose a 3% cola adjustment to the sap salary"
+  },
+  {
+   "motion": "Amendment by S. Andrews to amend the initial motion to propose a 2.5% COLA adjustment to the SAP salary grid for FY2024.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion by s. andrews to amend the initial motion to propose a 2.5% cola adjustment to the sap salary grid for fy2024 second: d. fortune roll call vote: all in favor ",
-   "quote_taken_from_text": true
+   "quote": "a motion by s. andrews to amend the initial motion to propose a 2.5% cola adjustment to the"
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion by S. Andrews to adjourn the meeting at 5:27pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at5:27pm by s. andrews second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at5:27pm by s. andrews"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12166350000000001
+ "note": "Text-only minutes, no scan. The roll-call results are printed as 'All in favor' without a count; the outcome of the original 3% motion is not stated because it was superseded by the amendment, and it is not clear whether the single roll call applied to the amendment or to the amended motion, so the amendment is recorded as passed and the main motion as not stated. The minutes spell the member variously as 'Susan Andrew' (attendance) and 'Sue Andrews' / 'S. Andrews' (elsewhere); they are recorded as printed. 'Approval of Minutes' records that no minutes were available, so no approval vote was taken. The HR consultant concerns section is headed Public Comment but records no public speaker, so public_comment is empty.",
+ "cost_usd": 0.01423101,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta",
+   "role": "Chair (opened the meeting)",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:03pm with members noted in attendance"
+  },
+  {
+   "name": "Susan Andrew",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrew, donna fortune, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director, Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, manager, nancy o'rourke"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Risk Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, manager, nancy o'rourke"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group agreed to make the COLA proposal to the upcoming Finance Committee review later that week.",
+   "quote": "the group agreed to make this proposal to the upcoming finance committee review later this"
+  },
+  {
+   "decision": "Joanna Bilotta agreed to organize the proposal, with Nancy O’Rourke estimating its cost, for presentation at the Finance Committee meeting.",
+   "quote": "joanna bilotta agreed to organize the proposal, with the help of nancy o'rourke to"
+  },
+  {
+   "decision": "Sue Andrews and Donna Fortune agreed to present the proposal to the Select Board the following week.",
+   "quote": "sue andrews and donna fortune agreed to do that presentation using the material"
+  },
+  {
+   "decision": "The committee agreed the final payment to the HR Consultant for the project not be made until all information agreed in the contract was provided.",
+   "quote": "they agreed that the final payment for this work not be made till we"
+  },
+  {
+   "decision": "Next meeting proposed for Wednesday, April 12, 2023.",
+   "quote": "proposed next meeting wednesday, april 12, 2023."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP salary grid COLA for FY2024",
+   "what_was_recorded": "The committee considered a COLA adjustment to the SAP salary grid for FY2024, first 3% then amended to 2.5%, with budget considerations discussed and cost to be estimated for the Finance Committee.",
+   "figures_as_printed": [
+    "3%",
+    "2.5%"
+   ],
+   "quote": "a motion by j. bilotta to recommend that we propose a 3% cola adjustment to the sap salary"
+  },
+  {
+   "topic": "HR Consultant final payment",
+   "what_was_recorded": "The committee agreed the final payment for the HR Consultant's work would be withheld until the agreed information was provided under the contract; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "they agreed that the final payment for this work not be made till we"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; no comments",
+   "quote": "there were neither committee comments, nor public comments during this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes available from last meeting",
+   "quote": "no minutes were available from the last meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "COLA recommendation for SAP salary grid",
+   "resolution": "amended to a 2.5% COLA for FY2024 and referred to Finance Committee and Select Board",
+   "quote": "the group discussed this and agreed that we might consider other options.",
+   "tags": [
+    "COLA",
+    "SAP salary grid",
+    "compensation",
+    "FY2024 budget"
+   ]
+  },
+  {
+   "topic": "HR Consultant project concerns",
+   "resolution": "committee expressed disappointment; final payment withheld pending information",
+   "quote": "the committee raised concerns of their disappointment that the hr",
+   "tags": [
+    "HR consultant",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:27pm",
+   "quote": "motion by to adjourn meeting at5:27pm by s. andrews",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "COLA",
+  "SAP salary grid",
+  "FY2024 budget",
+  "HR consultant",
+  "Finance Committee",
+  "Select Board",
+  "compensation",
+  "personnel"
+ ],
+ "dropped_unquoted_by_field": {}
 }

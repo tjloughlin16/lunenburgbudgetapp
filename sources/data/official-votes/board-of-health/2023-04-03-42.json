@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-04-03",
  "docid": "42",
@@ -12,48 +12,151 @@
  },
  "votes": [
   {
-   "motion": "Approve the Board of Health minutes from March 20, 2023",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of March 20, 2023.",
    "moved_by": "Fortin",
    "seconded_by": "Waters",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "on motion by fortin and second by waters, the above minutes were approved. all in favor."
   },
   {
-   "motion": "Approve requested variances at 493 West Street including reduction in groundwater from 4 feet to 3 feet and inlet/outlet tees reduction with conditions of three bedroom deed restriction and destruction of existing well",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the requested variances at 493 West Street, with a three bedroom deed restriction and destruction of the existing well as conditions.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
-   "quote": "after discussion, and on motion by jewell and second by watters, the board voted to approve t he requested variances with the condition of a three bedroom deed restriction and destruction of the existing well. all in favor",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the use of a tight tank on 134 Hollis Road property",
    "outcome": "passed",
    "procedural": false,
+   "quote": "on motion by jewell and second by watters, the board voted to approve t he requested variances with the condition of a three bedroom deed restriction and destruction of the existing well."
+  },
+  {
+   "motion": "Approve the use of a tight tank at 134 Hollis Road.",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "quote": "after discussion and on motion by watters and second by fortin, the board voted to approve the use of a tight tank on the above property. all in favor."
-  },
-  {
-   "motion": "Approve the use of the old point well for irrigation purposes at 398 Sunset Lane",
    "outcome": "passed",
    "procedural": false,
-   "moved_by": "Fortin",
-   "seconded_by": "Jewell",
-   "quote": "after discussion and on motion by fortin and seconded by jewell, the board voted to approve the use of the point well for irrigation purposes. all in favor."
+   "quote": "on motion by watters and second by fortin, the board voted to approve the use of a tight tank on the above property."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve use of the old point well at 398 Sunset Lane for irrigation purposes only.",
+   "moved_by": "Fortin",
+   "seconded_by": "Jewell",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
+   "quote": "on motion by fortin and seconded by jewell, the board voted to approve the use of the point well for irrigation purposes."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:10 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Watters",
-   "quote": "having no further matters before the board and on motion fortin and seconded by watters, the meeting was adjourned at 8:10 pm, all in favor."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "on motion fortin and seconded by watters, the meeting was adjourned at 8:10 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All five votes recorded in these minutes; all passed unanimously with no dissenting votes noted.",
- "cost_usd": 0.0841575
+ "note": "Text is extracted, not a scan; no page is missing (pages 1-2). No dollar figures appear, so budget_items and transfers are empty. No chair is named, and no vote counts are printed (only 'All in favor'), so outcomes are recorded as passed without a count. The minutes spell the member both 'Watters' (attendance) and 'Waters' (one motion); recorded as printed. The minutes contain no public comment section; Dan Proctor appeared on behalf of the owner of two properties and is listed as an applicant representative, not public comment. Agent Jim Garreffi is named only as the person who must approve a design plan; he is not recorded as attending, so he is excluded from attendees.",
+ "cost_usd": 0.013214610000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and evan watters"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner. this system is in failure and in the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "134 Hollis Road tight tank: once the design plan is approved by the agent, a maintenance plan and a deed restriction for the tight tank are required, plus a deed restriction for a three bedroom dwelling.",
+   "quote": "once the design plan is approved by agent jim garreffi, a maintenance plan needs to be i n place, and"
+  },
+  {
+   "decision": "398 Sunset Lane point well: a deed notation is required stating the point well is only for irrigation purposes.",
+   "quote": "the re will need to be a deed notation that the point well is only for irrigation purposes."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval, March 20, 2023",
+   "resolution": "approved",
+   "quote": "on motion by fortin and second by waters, the above minutes were approved. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "493 West Street septic variances",
+   "resolution": "approved with conditions",
+   "quote": "this matter has previously been before the board. what is being requested now is a reduction in",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater",
+    "deed restriction",
+    "well"
+   ]
+  },
+  {
+   "topic": "134 Hollis Road tight tank",
+   "resolution": "approved",
+   "quote": "title 5 regulations require the board to approve the use of a tight tank before they can move forward.",
+   "tags": [
+    "septic",
+    "Title 5",
+    "tight tank",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "398 Sunset Lane point well for irrigation",
+   "resolution": "approved with conditions",
+   "quote": "the old point well would need to be totally disconnected from the house.",
+   "tags": [
+    "well",
+    "irrigation",
+    "deed restriction",
+    "tear down rebuild"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic systems",
+  "Title 5",
+  "variances",
+  "tight tank",
+  "private wells",
+  "deed restrictions",
+  "groundwater",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

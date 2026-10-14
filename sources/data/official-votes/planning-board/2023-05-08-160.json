@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-05-08",
  "docid": "160",
@@ -12,41 +12,224 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 995 Reservoir Road",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Endorse the ANR Plan for 995 Reservoir Road.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "m. brenner made motion to endorse the anr plan for 995 reservoir road, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve the site plan for 39 Main Street with all Standard Conditions, the two additional Conditions, and construction hours of 7 a.m. to 5 p.m. Monday through Friday and 8 a.m. to 3 p.m. Saturdays; no construction on Sundays or state or federal holidays",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the site plan for 39 Main Street with all Standard Conditions, the two additional Conditions (#18 and #19), and the stated construction hours.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan for 39 main s treet with all standard conditions, the two additional conditions, and construction hours of 7 a.m. to 5 p.m., monday through friday and 8 a.m. to 3 p.m. saturdays. no construction on sunda ys or state or federal holidays, a. reid seconded, passed unanimousl",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the site plan for 39 main s treet with all standard conditions, the two additional conditions"
   },
   {
-   "motion": "Approve all minutes from 4/10/23, 759 & 763 Northfield Road; 4/10/23, 383 Whalom Road; 4/24/23, 39 Main Street; and 4/24/23",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the minutes listed below (4/10/23 x2, 4/24/23 x2).",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. All passed unanimously. All moved by Matthew Brenner and seconded by Amanda Reid.",
- "cost_usd": 0.07678009999999999
+ "note": "Text is OCR-like with split words (e.g. 'Boa rd', 'S treet', 'minute s', 'befor e'); quotes reproduce them as printed. The 39 Main Street public hearing is in separate minutes not included here, so no hearing speakers or hearing votes are recorded. No public comment section appears. No dollar figures or transfers appear. Votes are recorded as 'passed unanimously' with no roll-call counts. The consultant 'OverUnder' is named as printed and is not recorded as present. The Documents used list is not a vote or decision source.",
+ "cost_usd": 0.01627841,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "presented the plan, Dillis & Roy",
+   "status": "present",
+   "quote": "anr plan: 995 reservoir road - plan presented by greg roy, dillis & roy."
+  },
+  {
+   "name": "OverUnder",
+   "role": "consultant",
+   "status": "not stated",
+   "quote": "overunder (consultant) recommended the committee also contain younger business owners, non -staff, and non -board residents."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board set construction hours (7 a.m. to 5 p.m. Monday through Friday; 8 a.m. to 3 p.m. Saturdays; none on Sundays or state or federal holidays) and added two Special Conditions (#18 and #19) to the draft decision for 39 Main Street.",
+   "quote": "the boa rd determined construction hours of 7 a.m. to 5 p.m., monday through friday and 8 a.m. to 3 p.m. saturdays."
+  },
+  {
+   "decision": "A. Burney was directed to reach out to the Lunenburg Business Association about the Master Plan Committee composition.",
+   "quote": "a. burney would reach out to the lunenburg business association."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, 995 Reservoir Road",
+   "resolution": "endorsed (passed unanimously)",
+   "quote": "anr plan: 995 reservoir road - plan presented by greg roy, dillis & roy.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Reservoir Road"
+   ]
+  },
+  {
+   "topic": "Public hearing, 39 Main Street",
+   "resolution": "referred to separate minutes",
+   "quote": "public hearing: 39 main street- see separate minutes.",
+   "tags": [
+    "site plan",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Decision review and endorsement, 39 Main Street",
+   "resolution": "approved with standard and two added conditions (passed unanimously)",
+   "quote": "decision: review & endorsement - 39 main street - the board reviewed the draft decision.",
+   "tags": [
+    "site plan",
+    "construction hours",
+    "decision"
+   ]
+  },
+  {
+   "topic": "Master Plan Committee composition",
+   "resolution": "discussed; A. Burney to reach out to Lunenburg Business Association",
+   "quote": "a. burney suggested converting one of the a t-large seats to the library trustees.",
+   "tags": [
+    "master plan",
+    "committee composition"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw and Section 250-6.4 Driveways & Entrances",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "solar bylaw section 250- 6.4., driveways & entrances",
+   "tags": [
+    "solar bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (passed unanimously)",
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action recorded",
+   "quote": "there was discussion on lack of both parking and crosswalks in town center",
+   "tags": [
+    "committee reports",
+    "economic development",
+    "open space",
+    "agriculture",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Director's items: site plan approval for change of use",
+   "resolution": "discussed; Burney recommended waiting for new Building Commissioner",
+   "quote": "a. burney recommended the board wait for the new building commissioner to come on board later this month befor e proceeding.",
+   "tags": [
+    "site plan",
+    "change of use",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "may 20 - town election",
+   "tags": [
+    "schedule",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed; no action recorded",
+   "quote": "zoning for mbta communities - action plan",
+   "tags": [
+    "MBTA Communities",
+    "aquifer protection",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:20 p.m. (passed unanimously)",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "site plan",
+  "ANR",
+  "39 Main Street",
+  "minutes approval",
+  "master plan",
+  "solar bylaw",
+  "MBTA Communities",
+  "economic development",
+  "town election"
+ ],
+ "dropped_unquoted_by_field": {}
 }

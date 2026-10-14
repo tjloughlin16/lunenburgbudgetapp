@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-06-26",
  "docid": "175",
@@ -12,39 +12,212 @@
  },
  "votes": [
   {
-   "motion": "Approve modifications to Site Plan Approval and Stormwater Permit for Lot A 524 Northfield Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve modifications to the Site Plan Approval and Stormwater Permit for Lot A 524 Northfield Road (public hearing item; see separate minutes).",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "m. allison made motion to approve modifications to site plan approval and stormwater permit, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Table discussion on Parcel 4, Leominster Road pending recommendation from Open Space Committee",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Timothy Willsmer",
-   "outcome": "all aye",
+   "motion": "Table discussion of Parcel 4, Leominster Rd (right of first refusal) pending the Open Space Committee's recommendation.",
+   "moved_by": "Allison",
+   "seconded_by": "A. T. Willsmer",
+   "outcome": "passed",
    "procedural": false,
    "quote": "allison made motion to table discussion dependent on open space committee's recommendation, seconded by a. t. willsmer, all aye."
   },
   {
-   "motion": "Approve extension request for Site Plan Approval and Stormwater Permit for 757 Chase Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
-   "outcome": "all aye",
+   "motion": "Approve the 1-year extension of the Site Plan Approval and Stormwater Permit for 757 Chase Road.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison made a motion to approve extension request for the site plan approval and stormwater permit. seconded by a. reid, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the minutes of 6/12/23.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "m. allison made motion to appro ve minutes listed below, a. reid seconded, roll call vote - t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote- t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0739851
+ "dropped_unquoted": 0,
+ "note": "Extracted text, not a scan. Five motions are recorded with a result; the Parcel 4 and 757 Chase Road votes print 'all aye' with no numeric count, so outcome is recorded as 'passed'. The Lot A 524 Northfield Road public hearing is marked 'See Separate Minutes' and is not in this document; its motion appears here only as summarised. No dollar figures, no transfers, and no public comment section appear. Annie M. Aubrey appears only in the letterhead and is not recorded as taking part, so she is omitted. Some printed spacing in quotes was collapsed to single spaces.",
+ "cost_usd": 0.01706561,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Director will draft proposed modifications to the Scenic Road bylaw, to incorporate possible recourse for violations, for further discussion.",
+   "quote": "the director will draft proposed modifi cations to the bylaw for further discussion."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Hearing – Lot A 524 Northfield Road",
+   "resolution": "approved modifications to Site Plan Approval and Stormwater Permit (see separate minutes)",
+   "quote": "public hearing - lot a 524 northfield road - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal – Parcel 4, Leominster Rd",
+   "resolution": "tabled pending Open Space Committee recommendation",
+   "quote": "right of first refusal - parcel 4, leominster rd. - continued",
+   "tags": [
+    "open space",
+    "land acquisition",
+    "Chapter 61B"
+   ]
+  },
+  {
+   "topic": "Appointments – 757 Chase Road",
+   "resolution": "approved 1-year Site Plan and Stormwater Permit extension",
+   "quote": "request for 1-year site plan approval and stormwater permit extension for a car dealership.",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "car dealership"
+   ]
+  },
+  {
+   "topic": "Board discussions: Master Plan, Solar Bylaw, Driveway bylaw",
+   "resolution": "discussed; no action recorded",
+   "quote": "master plan - public forum took place june 15 th.",
+   "tags": [
+    "master plan",
+    "solar bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 6/12/23",
+   "quote": "m. allison made motion to appro ve minutes listed below, a. reid seconded, roll call vote - t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action recorded",
+   "quote": "mjtc- met 6/14. discussed ongoing bridge projects.",
+   "tags": [
+    "committee reports",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Director's items: 360 Flat Hill Rd scenic roads",
+   "resolution": "Director to draft scenic road bylaw modifications",
+   "quote": "360 flat hill rd - scenic roads - homeowner hired private contractors to cut approximately 5 trees along the road.",
+   "tags": [
+    "scenic roads",
+    "tree cutting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted July 10 and July 24 meeting dates",
+   "quote": "meeting schedule: july 10 july 24",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: Aquifer Protection District",
+   "resolution": "draft to be submitted to Building Commissioner; no vote",
+   "quote": "aquifer protection district - draft to be submitted to building commissioner",
+   "tags": [
+    "aquifer protection",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Board comments: right to farm",
+   "resolution": "noted; no action recorded",
+   "quote": "m. allison mentioned bylaws state that lunenburg is a \"right to farm\" town and new residents should be informed.",
+   "tags": [
+    "right to farm"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:35 p.m.",
+   "quote": "m. allison made motion to adjourn, a. reid seconded, roll call vote- t. willsmer, aye; m. brenner, aye; a. reid, aye; m. allison, aye. passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "stormwater permit",
+  "open space",
+  "right of first refusal",
+  "Chapter 61B",
+  "scenic roads",
+  "solar bylaw",
+  "master plan",
+  "zoning bylaw",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

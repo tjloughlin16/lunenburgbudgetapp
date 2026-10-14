@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2023-05-04",
  "docid": "109",
@@ -10,8 +10,138 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042023-109",
   "doc_url": "/docs/meetings/historical-commission/2023-05-04-minutes-109.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One vote recorded. The minutes do not state who moved or seconded the motion, or provide a formal vote count; the outcome is indicated by the phrase \"was voted to be paid.\"",
- "cost_usd": 0.0733535
+ "votes": [
+  {
+   "motion": "Pay a $25 bill from the Lunenburg Ledger for the public notice of the Proctor demolition.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a$25bill fromthelunenburgledger fromthepublicnoticeof theproctor demolitionwasvotedtobepaid.",
+   "seconded_by": ""
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Extracted text has words run together (spaces dropped), so quotes are copied as printed. The Proctor bill vote records no mover, seconder or count; outcome is recorded as passed from 'was voted to be paid'. Adjournment at 7:28 is stated with no motion recorded, so it is not listed as a vote. No chair is named. The minutes are one page and short; the annex and steeple items are discussion with no recorded action.",
+ "cost_usd": 0.01342721,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Members (as printed)",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwerepresent."
+  },
+  {
+   "name": "Lakso",
+   "role": "Members (as printed)",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwerepresent."
+  },
+  {
+   "name": "Boussom",
+   "role": "Members (as printed)",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, andboussomwerepresent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lakso to draft a summary of the Hometown Heroes project to be handed out at Town meeting for anyone who wanted to learn more.",
+   "quote": "mr. laksodraftedasummaryof theproject tobehandedout at townmeetingfor anyonewhowantedtolearnmore."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Proctor demolition public notice bill",
+   "what_was_recorded": "A $25 bill from the Lunenburg Ledger for the public notice of the Proctor demolition was voted to be paid.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "a$25bill fromthelunenburgledger fromthepublicnoticeof theproctor demolitionwasvotedtobepaid."
+  },
+  {
+   "topic": "Remaining commission budget",
+   "what_was_recorded": "The remainder of the commission's budget must be used by July or it will be lost; ideas for using it include historical markers. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "theremainder of thecommission'sbudget will havetobeusedbyjulyor it will belost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Hometown Heroes project",
+   "resolution": "continued; consultant contact delayed, more information expected at next APDC meeting",
+   "quote": "therehasbeensomedelayingettingincontact withtheconsultant for thehometownheroesproject",
+   "tags": [
+    "hometown heroes",
+    "consultant",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Town survey",
+   "resolution": "noted; set for Town meeting agenda on Saturday",
+   "quote": "thetownsurveyisset tobeontheagendafor thetownmeetingonsaturday.",
+   "tags": [
+    "town survey",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Use of remaining commission budget",
+   "resolution": "discussed; ideas raised, no action recorded",
+   "quote": "someideasfor projectstoutilizetheremainingbudget includehistorical markersfor important people,structures, sitesor events.",
+   "tags": [
+    "budget",
+    "historical markers"
+   ]
+  },
+  {
+   "topic": "Proctor demolition public notice bill",
+   "resolution": "approved for payment",
+   "quote": "a$25bill fromthelunenburgledger fromthepublicnoticeof theproctor demolitionwasvotedtobepaid.",
+   "tags": [
+    "bills",
+    "Proctor demolition",
+    "public notice"
+   ]
+  },
+  {
+   "topic": "30 School Street, Town Hall and Ritter building",
+   "resolution": "discussed; annex to Ritter building and National Register addition floated, no action recorded",
+   "quote": "withthedemiseof 30school street underway, attentionshiftedtothestateof thetownhall andtheritter building.",
+   "tags": [
+    "30 School Street",
+    "town hall",
+    "Ritter building",
+    "National Register"
+   ]
+  },
+  {
+   "topic": "Steeple at 50 Main Street",
+   "resolution": "noted; condition in disrepair, no action recorded",
+   "quote": "alsonotableistheconditionof thesteepleat 50mainst whichhasfallenintodisrepair.",
+   "tags": [
+    "50 Main Street",
+    "steeple",
+    "disrepair"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "Hometown Heroes",
+  "town survey",
+  "budget",
+  "Proctor demolition",
+  "Ritter building",
+  "town hall",
+  "30 School Street",
+  "50 Main Street",
+  "historic preservation",
+  "National Register"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-03-27",
  "docid": "156",
@@ -12,40 +12,257 @@
  },
  "votes": [
   {
-   "motion": "Endorse the sureties for 19 and 21 Watt Street",
+   "motion": "Endorse the sureties for 19 and 21 Watt Street (Flat Hill Road & Watt Street, Tri Party).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to endorse the sureties for 19 and 21 watt street, a. reid seconded, passed unanimously"
+   "quote": "m. brenner made motion to endorse the sureties for 19 and 21 watt street, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve the site plan approval for 5 Summer Street",
+   "motion": "Approve the site plan approval for 5 Summer Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan approval f or 5 summer street, a. reid seconded, passed unanimousl",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the site plan approval f or 5 summer street, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve the minutes of 3/1/23",
+   "motion": "Approve the minutes of 3/1/23.",
    "moved_by": "A. Reid",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 3-0-1",
    "procedural": true,
-   "quote": "a. reid made motion to approve the minutes of 3/1/23, t. willsmer seconded, passed 3-0-1"
+   "quote": "a. reid made motion to approve the minutes of 3/1/23, t. willsmer seconded, passed 3-0-1."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously"
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0732041
+ "note": "Text extracted from a typed minutes document (not a scan); spacing is irregular and quotes reproduce it as printed. No public comment section appears in the text, so none is recorded. Marjorie J. Boggio appears only in the letterhead, with no attendance line, so she is omitted. Ken Matson's attendance is not stated; he is named only as the developer who asked. The minutes give \"passed unanimously\" without a count for three motions. The Board comment on the Open Meeting Law remote-meeting extension and the \"Documents used\" list are not recorded as topics.",
+ "cost_usd": 0.01480911,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Ken Matson",
+   "role": "developer, Matson Homes",
+   "status": "not stated",
+   "quote": "the developer, matson homes ( ken matson) asked for lots 7 and 8"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney (staff) to set up the accounts with the bank for the Flat Hill Road tri-party funds.",
+   "quote": "a. burney would set up the accounts with the bank."
+  },
+  {
+   "decision": "Hearing for 383 Whalom Road continued to April 10, 2023.",
+   "quote": "hearing continued to april 10, 2023."
+  },
+  {
+   "decision": "Board Decision on 5 Summer Street prepared for the April 10th Board meeting.",
+   "quote": "board decision was prepared for the april 10th board meeting."
+  },
+  {
+   "decision": "No decision on the member recall process; the Board took no action.",
+   "quote": "no decision was made by the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flat Hill Road & Watt Street tri-party account",
+   "what_was_recorded": "The developer asked for a per-lot payment placed in a tri-party account to complete stormwater facilities later, so the two houses could be sold.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the funds, $10,000 per lot, would be put in a"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Flat Hill Road & Watt Street, Tri Party",
+   "resolution": "approved (sureties endorsed)",
+   "quote": "m. brenner made motion to endorse the sureties for 19 and 21 watt street, a. reid seconded, passed unanimously.",
+   "tags": [
+    "subdivision",
+    "surety",
+    "stormwater",
+    "Watt Street"
+   ]
+  },
+  {
+   "topic": "5 Summer Street site plan",
+   "resolution": "approved",
+   "quote": "board decision was prepared for the april 10th board meeting.",
+   "tags": [
+    "site plan",
+    "Summer Street"
+   ]
+  },
+  {
+   "topic": "383 Whalom Road",
+   "resolution": "continued to April 10, 2023",
+   "quote": "hearing continued to april 10, 2023.",
+   "tags": [
+    "public hearing",
+    "Whalom Road"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw",
+   "resolution": "no action",
+   "quote": "solar bylaw- no report.",
+   "tags": [
+    "zoning",
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Section 250 6.4 Driveways & Entrances",
+   "resolution": "no action",
+   "quote": "section 250- 6.4., driveways & entrances- no report.",
+   "tags": [
+    "zoning",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 3/1/23",
+   "resolution": "approved 3-0-1",
+   "quote": "a. reid made motion to approve the minutes of 3/1/23, t. willsmer seconded, passed 3-0-1.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lunenburg Municipal Building Design Committee",
+   "resolution": "reported; no action",
+   "quote": "the committee seemed to favor the hybrid option.",
+   "tags": [
+    "municipal building",
+    "committee report"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission",
+   "resolution": "reported; no action",
+   "quote": "the commission received two talent bank forms and made recommendations to the select board.",
+   "tags": [
+    "agriculture",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Master Planning Services",
+   "resolution": "reported; contract signed",
+   "quote": "a contract was signed with overunder.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "ATM May 6 zoning article",
+   "resolution": "reported; submitted to warrant",
+   "quote": "the article was submitted for the warrant.",
+   "tags": [
+    "zoning",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Member recall process",
+   "resolution": "no decision",
+   "quote": "no decision was made by the board.",
+   "tags": [
+    "charter",
+    "member recall",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "april 10- hearings for zoning warrant article and 759 & 763 northfield road (scenic road)",
+   "tags": [
+    "hearings",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Zoning for MBTA Communities",
+   "resolution": "ongoing; no action recorded",
+   "quote": "mrpc had commenced the gis process",
+   "tags": [
+    "MBTA communities",
+    "zoning",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision surety",
+  "stormwater",
+  "site plan",
+  "zoning bylaw",
+  "public hearing",
+  "MBTA communities",
+  "member recall",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

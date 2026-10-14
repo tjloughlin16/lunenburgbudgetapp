@@ -1,0 +1,524 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-01-03",
+ "video_id": "CYJr7pP6mpY",
+ "video_url": "https://www.youtube.com/watch?v=CYJr7pP6mpY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-01-03-CYJr7pP6mpY.json",
+  "sha256": "12c024f87d363fe9a8697b1145d1e39c2e5637092904ba2e2b41051c7f2aae2f",
+  "caption_lines": 230,
+  "segments": 2074
+ },
+ "recording": {
+  "duration_s": 4758,
+  "duration": "1:19",
+  "spoken_chars": 69750,
+  "words_approx": 11625
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01032023-813",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-03-agenda-813.txt",
+   "path": "sources/meetings/select-board/2023-01-03-agenda-813.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01032023-813",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-03-minutes-813.txt",
+   "path": "sources/meetings/select-board/2023-01-03-minutes-813.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T04:31:21Z",
+  "cost_usd": 0.39314639999999995
+ },
+ "minutes": {
+  "headline": "Select Board opened the town meeting warrant and backed permissive remote-meeting rules; residents raised steep tax bill jumps.",
+  "summary": "Public comment dominated, covering a lookalike Facebook page, trash pickup holiday confusion, and residents reporting very large assessment increases, especially waterfront homes. The town manager gave her budget priorities for the coming year. The board voted to open the annual town meeting warrant, accepted a sign gift for McNally Field, approved minutes, and began a bylaw review.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Alonso",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Franklin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Elaine",
+    "role": "assistant (minutes)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 792,
+    "topic": "Thanked the police and fire chiefs for helping with the Salvation Army bell ringing on Christmas Eve; then reported tax bills up 60 to 130 percent, urged residents to check bills and appeal, and asked about a senior tax credit.",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "grants",
+   "health-insurance",
+   "policy",
+   "public-comment",
+   "retirement",
+   "staffing",
+   "tax-rate",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 2087,
+    "motion": "Support state policy permitting boards to choose remote/hybrid meetings without a requirement to provide them",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3850,
+    "motion": "Open the annual town meeting warrant on January 10, 2023 and close it March 20, 2023 at 4 pm",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3933,
+    "motion": "Accept the new sign donated at McNally Field to the parks commissioners",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3974,
+    "motion": "Approve minutes of December 13 and 20, 2022 as submitted",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 4733,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2193,
+    "topic": "FY24 target budget revenue assumptions",
+    "what_was_said": "Target budget assumes a levy increase, estimated new growth, level-funded state aid and a local receipts increase.",
+    "figures_as_heard": [
+     "two and a half percent",
+     "two hundred thousand",
+     "50 000"
+    ]
+   },
+   {
+    "t": 2397,
+    "topic": "Non-discretionary increases",
+    "what_was_said": "Health insurance, liability/workers comp and retirement assessment are projected to rise; a health insurance stabilization account could be tapped.",
+    "figures_as_heard": [
+     "8.5 percent",
+     "five percent",
+     "13"
+    ]
+   },
+   {
+    "t": 2254,
+    "topic": "Police contract",
+    "what_was_said": "A new three-year police agreement has a market adjustment in FY24 that may limit funding an additional officer.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2438,
+    "topic": "Clerical union contract and compensation study",
+    "what_was_said": "Clerical contract negotiations and a classification study will be funded from the FY24 salary reserve.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2295,
+    "topic": "Outsourced services",
+    "what_was_said": "Trash/recycling coordinator, ARPA reporting oversight and grant writing may need to be outsourced due to lack of office space.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4015,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable, payroll deduction and payroll warrants read.",
+    "figures_as_heard": [
+     "one million seven hundred thirty seven thousand one hundred twenty eight dollars and seven cents",
+     "sixty one thousand 236.91",
+     "956 240 dollars and ninety cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1883,
+    "decision": "Senior means-tested tax relief proposal to go first to the tax relief group, aiming for a May warrant article."
+   },
+   {
+    "t": 3260,
+    "decision": "Legislative fiscal priorities list to be finished and sent by end of January; departments and elected bodies to be asked for requests."
+   },
+   {
+    "t": 4501,
+    "decision": "Capital planning committee re-ranked requests uniquely and resubmitted to town manager."
+   },
+   {
+    "t": 3640,
+    "decision": "Next week's meeting to focus on ARPA; bylaw review to resume later in January."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 41,
+    "t_end": 450,
+    "topic": "Public comment: lookalike Facebook page, water district meeting",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 457,
+    "t_end": 790,
+    "topic": "Trash schedule confusion; tax bill increases; thanks to Governor Baker",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 792,
+    "t_end": 1310,
+    "topic": "Resident comment on tax increases and word politician",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1331,
+    "t_end": 1620,
+    "topic": "Town manager report, vacancies, budget calendar, communications",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 1619,
+    "t_end": 1960,
+    "topic": "Select board and manager goals status",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1965,
+    "t_end": 2130,
+    "topic": "Open meeting law permanent changes position",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2132,
+    "t_end": 2660,
+    "topic": "FY24 budget priorities",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "health-insurance",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 2661,
+    "t_end": 3265,
+    "topic": "Legislative fiscal priority requests",
+    "resolution": "referred",
+    "tags": [
+     "grants",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3265,
+    "t_end": 3340,
+    "topic": "Gift of sign at McNally Field",
+    "resolution": "voted later",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 3347,
+    "t_end": 3830,
+    "topic": "Bylaw review workshop and scheduling",
+    "resolution": "continued",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3828,
+    "t_end": 4015,
+    "topic": "Open town meeting warrant; accept sign gift; minutes",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4015,
+    "t_end": 4520,
+    "topic": "Warrants, action items, property lines, committee reports",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4540,
+    "t_end": 4753,
+    "topic": "Next meeting prep and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Result of the open meeting law motion vote (t=2107) not captioned clearly",
+   "Adjournment vote result not captioned",
+   "Speaker identities mostly not captioned"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 873,
+    "about": "A resident criticised the board over steep tax bill increases and the board's approach, saying he wanted working men not politicians.",
+    "sides": "a resident against the board; members responded",
+    "words_as_heard": "I didn't hire a PO I didn't like the politician I liked the Working Man that worked for us",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted unanimously to open the annual town meeting warrant on January 10, 2023, to close March 20, 2023 at 4 pm.",
+    "t": 3850
+   },
+   {
+    "line": "The board accepted a donated sign at McNally Field to the parks commissioners, unanimously.",
+    "t": 3933
+   },
+   {
+    "line": "The board took a position supporting state policy that lets boards choose remote or hybrid meetings without being required to provide them; the vote result was not audible.",
+    "t": 2087
+   },
+   {
+    "line": "The town manager outlined FY24 target budget assumptions, including rising health insurance, liability and retirement costs and a new police contract.",
+    "t": 2193
+   },
+   {
+    "line": "Residents told the board their tax bills had risen sharply and urged others to check bills and appeal; one asked about a senior tax credit.",
+    "t": 792
+   }
+  ],
+  "why_it_matters": [
+   "The warrant is the list of articles residents will be asked to vote on at town meeting, and its open window is when a petition or request can be added.",
+   "The FY24 assumptions name the cost pressures (health insurance, retirement, contracts) that the next tax bill will reflect, and residents raised assessment increases and a senior tax relief idea now headed for a possible May article."
+  ],
+  "watch_next": [
+   "Warrant closes March 20, 2023 at 4 pm.",
+   "Senior means-tested tax relief goes first to the tax relief group, aimed at a May warrant article; legislative fiscal priorities due by end of January."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T04:31:29Z",
+   "cost_usd": 0.22345890000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01032023-813",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-01-03-minutes-813.txt",
+   "path": "sources/meetings/select-board/2023-01-03-minutes-813.pdf"
+  },
+  "official_sha256": "9dbdfef24357944e7884080eabfeda5842c0bfb410d10f73e894ecc262241aea",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the warrant and McNally sign votes and on the warrant and budget figures, with the dollar amounts differing only in how the captions rendered them. The main difference is the remote/hybrid vote, which ours records as 'not audible' while the official minutes record it as passing, and the attendee lists also differ.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Remote/hybrid meetings vote",
+    "ours": "Support state policy permitting boards to choose remote/hybrid meetings without a requirement to provide them — not audible",
+    "official": "motion: l. franco 2': t. alonzo to allow each board or a committee to use remote technology and have hybrid meetings but not as a requirement that has to be enabled vote: all in favor",
+    "note": "Ours records the outcome as 'not audible'; official records a motion by Franco, seconded by Alonzo, passing with all in favor. Check the recording near t=2087 for a vote.",
+    "t": 2087
+   },
+   {
+    "kind": "agree",
+    "about": "Open annual town meeting warrant Jan 10, close Mar 20 at 4 pm",
+    "ours": "Open the annual town meeting warrant on January 10, 2023 and close it March 20, 2023 at 4 pm — passed unanimously",
+    "official": "motion: t. alonzo 2nd: l. franco to open the annual town meeting warrant on january 10, 2023 and close the warrant on march 20, 2023 at 4:00 p.m. vote: all in favor",
+    "note": "Same motion, dates and outcome.",
+    "t": 3850
+   },
+   {
+    "kind": "agree",
+    "about": "McNally Field sign acceptance",
+    "ours": "Accept the new sign donated at McNally Field to the parks commissioners — passed unanimously",
+    "official": "motion: m. jeffreys 2nd: t. alonzo to accept the new sign donated to the park commissioners for mcnally field vote: all in favor",
+    "note": "Same vote and outcome.",
+    "t": 3933
+   },
+   {
+    "kind": "agree",
+    "about": "FY24 revenue assumptions",
+    "ours": "FY24 target budget revenue assumptions: two and a half percent, two hundred thousand, 50 000",
+    "official": "an estimated new growth figure of $200,000, the debt exclusion amount for fy 24, level funds state aid, and includes a $50,000 increase to local receipts.",
+    "note": "2.5%, $200,000 and $50,000 all match.",
+    "t": 2193
+   },
+   {
+    "kind": "agree",
+    "about": "Non-discretionary increases",
+    "ours": "Non-discretionary increases: 8.5 percent, five percent, 13",
+    "official": "liability and workers compensation are estimated to increase 5%, and our retirement assessment will increase 13% next fiscal year.",
+    "note": "5% and 13% match; the 8.5% health renewal appears in the official structured summary.",
+    "t": 2397
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "one million seven hundred thirty seven thousand one hundred twenty eight dollars and seven cents",
+    "official": "the board signed an accounts payable warrant in the amount of $1,737,128.07; a payroll warrant in the amount of $956,240.90 and a payroll deductions warrant in the amount of $61,236.91.",
+    "official_reading": "$1,737,128.07",
+    "note": "Same figure, spelled out by captions.",
+    "t": 4015
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll deductions warrant amount",
+    "ours": "sixty one thousand 236.91",
+    "official": "the board signed an accounts payable warrant in the amount of $1,737,128.07; a payroll warrant in the amount of $956,240.90 and a payroll deductions warrant in the amount of $61,236.91.",
+    "official_reading": "$61,236.91",
+    "note": "Same amount, rendered in words; the official figure is $61,236.91.",
+    "t": 4015
+   },
+   {
+    "kind": "agree",
+    "about": "Payroll warrant amount",
+    "ours": "956 240 dollars and ninety cents",
+    "official": "the board signed an accounts payable warrant in the amount of $1,737,128.07; a payroll warrant in the amount of $956,240.90 and a payroll deductions warrant in the amount of $61,236.91.",
+    "note": "Matches $956,240.90.",
+    "t": 4015
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested tax relief proposal",
+    "ours": "Senior means-tested tax relief proposal to go first to the tax relief group, aiming for a May warrant article.",
+    "official": "",
+    "note": "Not in the official structured extract; check the official minutes in full.",
+    "t": 1883
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legislative fiscal priorities list",
+    "ours": "Legislative fiscal priorities list to be finished and sent by end of January; departments and elected bodies to be asked for requests.",
+    "official": "",
+    "note": "Official extract has no matching decision.",
+    "t": 3260
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital planning committee re-ranking",
+    "ours": "Capital planning committee re-ranked requests uniquely and resubmitted to town manager.",
+    "official": "",
+    "note": "Official only quotes Mr. Alonzo reporting after the final capital planning meeting, with no re-ranking decision.",
+    "t": 4501
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting focus and bylaw review",
+    "ours": "Next week's meeting to focus on ARPA; bylaw review to resume later in January.",
+    "official": "it was suggested to look over everything and continue the discussion another time.",
+    "note": "Official gives no timing (later January or next-week ARPA focus); check the full official minutes for the follow-up schedule.",
+    "t": 3640
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Photo of sign requested before vote",
+    "ours": "",
+    "official": "the board requested a photo of the sign be provided before voting.",
+    "note": "Our minutes do not mention the photo request."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Health insurance stabilization account and salary reserve",
+    "ours": "",
+    "official": "we created a health insurance stabilization account that we could tap into to stabilize this cost if required",
+    "note": "Official records these Town Manager budget remarks; ours has no matching item."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Mr Alonso, Mr Franco, Mr Jeffries, Mr Franklin, Heather (town manager), Mr Dwyer, Elaine (assistant)",
+    "official": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+    "note": "Alonso/Jeffries are caption spellings of Alonzo/Jeffreys. 'Mr Franklin' has no official counterpart, and the official lists Ms. Sroka and Ms. Lemieux, who are absent from ours; check the roll."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T04:33:04Z",
+   "cost_usd": 0.24807289999999999
+  }
+ }
+}

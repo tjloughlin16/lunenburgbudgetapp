@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2023-04-11",
  "docid": "16",
@@ -12,19 +12,189 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the March 7th meeting with the noted alterations",
-   "outcome": "passed",
+   "motion": "Approve the minutes of the March 7th meeting, with alterations",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "the minutes for the march 7th meeting were read aloud and approved with the following alterations:"
-  },
-  {
-   "motion": "Approve the CTA application from Ted Gaudet for re-roofing at 876 Massachusetts Ave, provisionally pending further investigation",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "members present agreed to approve it provisionally, pending the outcome of mcgrath's further investigation."
+   "quote": "the minutes for the march 7th meeting were read aloud and approved with the following alterations"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12621749999999998
+ "note": "Text is a clean, readable typed transcript; no scan issues. Only one motion-like item is recorded: approval of the March 7 minutes, with no mover, seconder or count printed, so its outcome is 'not stated'. The Gaudet CTA provisional approval is recorded as members agreeing, not as a motion with a vote, so it is a decision, not a vote. No motion to adjourn is printed; the close is only a time (9:06PM). Lloyd and Sculimbrene are listed as members but the minutes do not say whether they attended. Rob Bowen and Ted Gaudet are discussed but the minutes do not say they appeared. No dollar figures are printed anywhere; the budget items are grant and CPA discussion only.",
+ "cost_usd": 0.01413511,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "call to order: at 7:44 with mcgrath, dwyer, and lockwood present."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:44 with mcgrath, dwyer, and lockwood present."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:44 with mcgrath, dwyer, and lockwood present."
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "william lloyd, clerk"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "member",
+   "status": "not stated",
+   "quote": "anthony sculimbrene, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "APDC agreed to take no action regarding the window replacement at the Phelps house without a CTA (recorded as a correction to the March minutes).",
+   "quote": "it should be included in the minutes that the apdc agreed to take no action regarding the window replacement at the phelps house without a cta"
+  },
+  {
+   "decision": "Board agreed that a community preservation act would be beneficial to the APDC's goals.",
+   "quote": "it was agreed that a cpa would be beneficial to the goals of the apdc as well"
+  },
+  {
+   "decision": "Lockwood offered to draft a revised APD bylaw for review at the July meeting.",
+   "quote": "lockwood offered to draft a revised bylaw for review at the july meeting."
+  },
+  {
+   "decision": "Dwyer agreed to contact Rob Bowen, owner of the Old Methodist Church at 50 Main Street, and answer his questions.",
+   "quote": "dwyer agreed to contact him and answer his questions."
+  },
+  {
+   "decision": "Dwyer will pursue setting up the next meeting in the Ritter basement with Zoom capability.",
+   "quote": "dwyer will pursue setting up the next meeting in the ritter basement where there is equipment that will enable the meeting to be on zoom."
+  },
+  {
+   "decision": "Members present agreed to approve the Ted Gaudet CTA application for re-roofing 876 Massachusetts Ave provisionally, pending McGrath's further investigation.",
+   "quote": "members present agreed to approve it provisionally, pending the outcome of mcgrath"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Historical Commission grant for K-houses inventory",
+   "what_was_recorded": "The Lunenburg Historical Commission is seeking a grant to update the town's inventory of K-houses, to be used to hire a professional; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the lunenburg historical commission is seeking a grant to update the town"
+  },
+  {
+   "topic": "Community preservation act",
+   "what_was_recorded": "Lockwood raised the benefits of a community preservation act for some APDC goals, and the board agreed it would be beneficial; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "lockwood mentioned the benefits of a community preservation act to achieve some of the goals therein."
+  },
+  {
+   "topic": "Grants for historic preservation at 50 Main Street",
+   "what_was_recorded": "Rob Bowen asked whether grants were available for historic preservation work; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "he also inquired if grants were available to historic preservation work, and if the apdc could recommend"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and review of minutes",
+   "resolution": "March 7 minutes approved with alterations",
+   "quote": "the minutes for the march 7th meeting were read aloud and approved with the following alterations",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Correspondence: Massachusetts historical commission seven-year plan",
+   "resolution": "read aloud; discussion of a community preservation act, agreed beneficial",
+   "quote": "lockwood mentioned the benefits of a community preservation act to achieve some of the goals therein.",
+   "tags": [
+    "correspondence",
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Ritter Building renovations",
+   "resolution": "no action; awaiting a new CTA application",
+   "quote": "the apdc awaits a new application for a cta, but there has been no reply so far.",
+   "tags": [
+    "Ritter Building",
+    "CTA",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Building Inspector process and enforcement",
+   "resolution": "no action; no reply yet",
+   "quote": "dwyer reached out to the building inspector to discuss a revised application",
+   "tags": [
+    "building inspector",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Bylaw review",
+   "resolution": "Lockwood to draft revised bylaw for July",
+   "quote": "lockwood offered to draft a revised bylaw for review at the july meeting.",
+   "tags": [
+    "bylaw",
+    "APD bylaw"
+   ]
+  },
+  {
+   "topic": "Old Methodist Church, 50 Main Street steeple",
+   "resolution": "Dwyer to contact owner; no vote",
+   "quote": "deterioration of the steeple remains a concern.",
+   "tags": [
+    "demolition by neglect",
+    "Main Street",
+    "steeple",
+    "owner correspondence"
+   ]
+  },
+  {
+   "topic": "Report from Historical Commission",
+   "resolution": "received; grant sought and banner project to be presented in May",
+   "quote": "the lunenburg historical commission is seeking a grant to update the town",
+   "tags": [
+    "Historical Commission",
+    "K-houses",
+    "veterans banner"
+   ]
+  },
+  {
+   "topic": "Other business: meeting location and CTA application at 876 Massachusetts Ave",
+   "resolution": "Zoom setup to be pursued; Gaudet CTA agreed provisionally",
+   "quote": "a cta application from ted gaudet was received at the meeting, regarding re-roofing the house at 876 massachusetts ave.",
+   "tags": [
+    "CTA",
+    "re-roofing",
+    "Zoom",
+    "876 Massachusetts Ave"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "CTA certificate",
+  "Ritter Building",
+  "community preservation act",
+  "bylaw review",
+  "Historical Commission",
+  "Old Methodist Church",
+  "building inspector"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-04-24",
  "docid": "159",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 10, 2023 and April 10, 2023 Zoning Article",
+   "motion": "Approve the minutes of 4/10/23 and 4/10/23, Zoning Article.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -30,6 +29,164 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The 759 & 763 Northfield Road item is noted as \"Decision endorsed by Board\" but contains no motion/second language or vote count, so it is not included.",
- "cost_usd": 0.0768875
+ "note": "Text extract of a typed minutes document, not a scan. Two procedural votes recorded, both unanimous; no vote recorded on the Northfield decision endorsement or the Master Plan consensus. Not recorded as board decisions: the Chair's recommendation to send the charge to all boards and the Land Use Director's recommendation to hold off on Aquifer Protection action; both are recommendations with no recorded adoption. Hearing on 39 Main Street is in separate minutes not included here. No dollar figures and no public comment recorded.",
+ "cost_usd": 0.01489101,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Decision for 759 & 763 Northfield Road endorsed by the Board (no vote recorded).",
+   "quote": "decision: review & endorsement - 759 & 763 northfield road - decision endorsed by board."
+  },
+  {
+   "decision": "Board consensus that Master Plan Committee membership be defined as representation from a board, committee or commission, not a named individual; an alternate representative may attend and vote.",
+   "quote": "board consensus was for membership to be defined as representation from a board/committee/commission and not a named individual."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearings: 39 Main Street",
+   "resolution": "referred to separate minutes",
+   "quote": "public hearings: 39 main street - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "39 Main Street"
+   ]
+  },
+  {
+   "topic": "Review and endorsement: 759 & 763 Northfield Road",
+   "resolution": "decision endorsed by Board",
+   "quote": "decision: review & endorsement - 759 & 763 northfield road - decision endorsed by board.",
+   "tags": [
+    "decision",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Master Plan Committee composition",
+   "resolution": "discussed; Board consensus on representation-based membership; Chair to send charge out for input",
+   "quote": "master plan committee - composition - there was board discussion regarding the number of voting members on the committee.",
+   "tags": [
+    "master plan",
+    "committee composition",
+    "housing element"
+   ]
+  },
+  {
+   "topic": "Solar Bylaw",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "solar bylaw section 2 50- 6.4., driveways & entrances",
+   "tags": [
+    "solar bylaw",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; Storm Water Task Force reorganization discussed",
+   "quote": "storm water task force - discussion of task force reorganization due to chair stepping down.",
+   "tags": [
+    "storm water",
+    "MS4",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's items: Aquifer Protection District",
+   "resolution": "continued; Board to await input from the new Building Commissioner",
+   "quote": "at the board meeting of april 10 th, the board discussed adoption of the 2011 dep bylaw",
+   "tags": [
+    "aquifer protection",
+    "zoning bylaw",
+    "building commissioner"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "listed; no discussion recorded",
+   "quote": "may 6, 9:00 a.m. - town meeting",
+   "tags": [
+    "town meeting",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed; no discussion recorded",
+   "quote": "zoning for mbta communities - action plan",
+   "tags": [
+    "MBTA communities",
+    "town environmental support policy",
+    "Pond View Commons"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan",
+  "solar bylaw",
+  "zoning",
+  "aquifer protection",
+  "MBTA communities",
+  "Northfield Road decision",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

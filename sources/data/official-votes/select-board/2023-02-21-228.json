@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-02-21",
  "docid": "228",
@@ -12,39 +12,347 @@
  },
  "votes": [
   {
-   "motion": "approve the transfer of the license and pledge of inventory for Priha, Inc.",
+   "motion": "Approve the transfer of the license and the pledge of the license and inventory for Priha, Inc. as presented.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: l. franco to approve the transfer of the license and the pledge of the license and inventory for priha, inc. as presented vote: all in favor"
+   "quote": "to approve the transfer of the license and the pledge of the license and inventory for priha, inc. as presented"
   },
   {
-   "motion": "approve the FY23 third quarter water commitment of $12,257.75",
+   "motion": "Approve the FY23 3rd Quarter Water Commitment of $12,257.75.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"°: l. franco to approve the fy23 3\" quarter water commitment of $12,257.75 vote: all in favor"
+   "quote": "to approve the fy23 3\" quarter water commitment of $12,257.75"
   },
   {
-   "motion": "approve the minutes of January 17, 2023 (Session I)",
+   "motion": "Approve the minutes of January 17, 2023 (Session I).",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to approve the minutes of january 17, 2023 (session i) 2nd: t. dwyer vote: all in favor"
+   "quote": "to approve the minutes of january 17, 2023 (session i)"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting 2\"d: l. franco vote: all in favor"
+   "quote": "to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted from scan via macOS Vision. Some superscript formatting misread as special characters: 2nd rendered with quote mark, 3rd rendered with quote mark, 2nd rendered with quote mark in the original.",
- "cost_usd": 0.12372050000000001
+ "note": "Scanned minutes read by OCR; several garbled characters (e.g., \"Jeffieys\", \"2\"°\", \"2\"d\", \"Mi. Franco\", \"Elainem.\"), so quotes were copied as the OCR prints them. Text breaks at page 5 to 6 before the ARPA vote: the motion and result for the $986,000 ambulance and dump-truck approval are NOT in the text, so no vote is recorded for it. The liquor-enforcement section's heading is missing from the text (it begins mid-sentence on page 5). The minutes-approval heading reads \"January 17, 2022\" but the motion says \"January 17, 2023\", so the motion's year is used. Votes are recorded as \"All in Favor\" with no count. No roll call is printed, so attendance for board members is taken from speaking or moving roles only. The tax-assessment discussion has no motion. The public-comment speaker Holly Sullivan is discussed but did not speak, and Ms. Lemieux is quoted but not shown as present.",
+ "cost_usd": 0.02035961,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffieys called the meeting to order at 7:02 p.m."
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. dwyer stated his personal opinion was that mr. alonzo was above reproach"
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. franco stated there was concern expressed about the board of assessors not"
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. alonzo noted he did not participate in any interviews except one with the dor."
+  },
+  {
+   "name": "Ms. Belliveau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. belliveau reported there was a resignation of a police officer who was moving on to work"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. sroka asked about an email sent that asked mr. alonzo to recuse himself from"
+  },
+  {
+   "name": "Attorney Esposito",
+   "role": "Attorney (for the license applicant)",
+   "status": "present",
+   "quote": "attorney esposito stated after hearing the comments at the last meeting they"
+  },
+  {
+   "name": "Christos Lekadıtıs",
+   "role": "President of the Lunenburg Professional Firetighters",
+   "status": "present",
+   "quote": "christos lekadıtıs, 49 maple parkway, president of the lunenburg professional firetighters,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "resident, 50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck, 50 sunset lane, stated many residents are concerned about the lack of access to the"
+  },
+  {
+   "name": "Bill Hudson",
+   "role": "on behalf of the Lunenburg Lake Action committee",
+   "status": "present",
+   "quote": "bill hudson, 90 hemlock drive, on behalf of the lunenburg lake action committee, asked if"
+  },
+  {
+   "name": "John Fortune",
+   "role": "resident, Hemlock Drive",
+   "status": "present",
+   "quote": "john fortune, hemlock drive, asked for confirmation that the town lacks digital data from the previous five years."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Police may conduct an investigation or inspection at any time, not only at the request of the Select Board, consistent with board policy; Mr. Dwyer preferred the status quo otherwise.",
+   "quote": "it was agreed that the police could conduct an investigation or inspection at any time, not at the request of the select board as it is the board's policy"
+  },
+  {
+   "decision": "Chair advised the license applicant to communicate who is trained in its employee policy.",
+   "quote": "advised them to communicate who is trained in that policy"
+  },
+  {
+   "decision": "The remaining (other) minutes will be approved after further review; not approved at this meeting.",
+   "quote": "the other minutes will be approved after further review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA ambulance request (public comment)",
+   "what_was_recorded": "A public commenter asked that ARPA funds pay for replacing Rescue 1 after Rescue 2 was damaged; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "requested using arpa funds to pay for ambulance replacement of rescue 1."
+  },
+  {
+   "topic": "ARPA funding vote for ambulance and dump",
+   "what_was_recorded": "The Chair said the board was to vote that night on approving $986,000 for an ambulance and two dump trucks; the result is not in the extracted text.",
+   "figures_as_printed": [
+    "$986,000"
+   ],
+   "quote": "tonight is a vote on approving $986,000 for an ambulance and two dump"
+  },
+  {
+   "topic": "FY23 3rd Quarter water commitment",
+   "what_was_recorded": "The board approved the FY23 3rd Quarter Water Commitment at the printed amount.",
+   "figures_as_printed": [
+    "$12,257.75"
+   ],
+   "quote": "fy23 3rd quarter water commitment of $12,257.75"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The board signed an accounts payable warrant of the printed amount.",
+   "figures_as_printed": [
+    "$380,227.89"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $380,227.89."
+  },
+  {
+   "topic": "Assessed vs sale values, index 1 (tax assessment investigation)",
+   "what_was_recorded": "The investigation read out sample index 1 properties with assessed values and sale prices, and a 15% increase in value for FY23; these are property values, not budget lines.",
+   "figures_as_printed": [
+    "$526k",
+    "$1.2 million",
+    "$407k",
+    "$887k",
+    "$381k",
+    "$780k",
+    "$543k",
+    "$1.29 million",
+    "$386k",
+    "$751k",
+    "$372k",
+    "$775k",
+    "$338k",
+    "$440k",
+    "$421k",
+    "$695k",
+    "$1.4 million"
+   ],
+   "quote": "a property was assessed at $526k that sold for $1.2 million; a property was assessed for $407k and sold for $887k"
+  },
+  {
+   "topic": "Town revenue at risk from assessments",
+   "what_was_recorded": "Mr. Alonzo said the Town looks to lose a lot of revenue; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the town looks to lose a lot of revenue"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "ARPA funds for ambulance replacement",
+   "speaker": "Christos Lekadıtıs",
+   "stated_role": "President of the Lunenburg Professional Firetighters",
+   "quote": "requested using arpa funds to pay for ambulance replacement of rescue 1."
+  },
+  {
+   "topic": "Board of Assessors access and executive session",
+   "speaker": "Phyllis Luck",
+   "stated_role": "resident, 50 Sunset Lane",
+   "quote": "suggested the select board and the assessors hold a joint meeting."
+  },
+  {
+   "topic": "Assessments and DOR redo questions",
+   "speaker": "Bill Hudson",
+   "stated_role": "on behalf of the Lunenburg Lake Action committee",
+   "quote": "bill hudson, 90 hemlock drive, on behalf of the lunenburg lake action committee, asked if"
+  },
+  {
+   "topic": "Missing digital town data from prior five years",
+   "speaker": "John Fortune",
+   "stated_role": "resident, Hemlock Drive",
+   "quote": "john fortune, hemlock drive, asked for confirmation that the town lacks digital data from the previous five years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard; ARPA ambulance request and assessor questions raised; no action",
+   "quote": "requested using arpa funds to pay for ambulance replacement of rescue 1.",
+   "tags": [
+    "public comment",
+    "ARPA funds",
+    "ambulance",
+    "Board of Assessors"
+   ]
+  },
+  {
+   "topic": "Liquor license transfer, Priha, Inc.",
+   "resolution": "approved transfer, pledge of license and inventory",
+   "quote": "to approve the transfer of the license and the pledge of the license and inventory for priha, inc. as presented",
+   "tags": [
+    "liquor license",
+    "licensing",
+    "TIPS training",
+    "employee policy"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments, resignations",
+   "resolution": "reported; resignations of a police officer and a staff librarian",
+   "quote": "ms. belliveau reported there was a resignation of a police officer who was moving on to work",
+   "tags": [
+    "resignations",
+    "police",
+    "library"
+   ]
+  },
+  {
+   "topic": "Tax assessment investigation status update",
+   "resolution": "status read aloud and discussed; no vote",
+   "quote": "the investigative team has concluded all initial interviews-this included meeting with all previous",
+   "tags": [
+    "tax assessment",
+    "Board of Assessors",
+    "DOR",
+    "lake properties"
+   ]
+  },
+  {
+   "topic": "Liquor enforcement and police compliance checks (heading not in extract)",
+   "resolution": "agreed police may inspect at any time; no vote recorded",
+   "quote": "he reported ms. lemieux had noted that previously the police had not done this and",
+   "tags": [
+    "liquor enforcement",
+    "police",
+    "compliance checks"
+   ]
+  },
+  {
+   "topic": "FY23 3rd Quarter Water Commitment",
+   "resolution": "approved, $12,257.75",
+   "quote": "to approve the fy23 3\" quarter water commitment of $12,257.75",
+   "tags": [
+    "water",
+    "commitment",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (January 17, 2023, Session I)",
+   "resolution": "approved; other minutes deferred for review",
+   "quote": "to approve the minutes of january 17, 2023 (session i)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action items",
+   "resolution": "accounts payable warrant signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $380,227.89.",
+   "tags": [
+    "warrant",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee reports (Personnel, Finance, Storm Water)",
+   "resolution": "reported; no action",
+   "quote": "ms. belliveau reported the personnel committee has been working with an hr consultant who",
+   "tags": [
+    "committee reports",
+    "personnel",
+    "ADA",
+    "finance committee",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "American Rescue Plan Act funding requests",
+   "resolution": "vote on $986,000 announced; result not in extracted text",
+   "quote": "tonight is a vote on approving $986,000 for an ambulance and two dump",
+   "tags": [
+    "ARPA funds",
+    "ambulance",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:56 PM",
+   "quote": "the meeting adjourned at 8:56 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "tax assessment",
+  "Board of Assessors",
+  "ARPA funds",
+  "ambulance",
+  "water commitment",
+  "public comment",
+  "police enforcement",
+  "warrant",
+  "committee reports",
+  "resignations",
+  "minutes approval",
+  "OCR source"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,407 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-05-16",
+ "video_id": "R4E1CUtCdFY",
+ "video_url": "https://www.youtube.com/watch?v=R4E1CUtCdFY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-05-16-R4E1CUtCdFY.json",
+  "sha256": "7e36185de737f2785f2a0ca3f7c698c1b35dac2b34771ed7aae461595a655a2a",
+  "caption_lines": 87,
+  "segments": 710
+ },
+ "recording": {
+  "duration_s": 1849,
+  "duration": "0:30",
+  "spoken_chars": 22287,
+  "words_approx": 3714
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05162023-21",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-16-agenda-21.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-16-agenda-21.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162023-21",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-16-minutes-21.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-16-minutes-21.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T00:52:32Z",
+  "cost_usd": 0.2638401
+ },
+ "minutes": {
+  "headline": "Assessors set one hour of new-information-only public comment before abatement reviews; residents angrily objected.",
+  "summary": "The Board of Assessors voted on a procedure for the first abatement hearings: a limited public comment period, then executive session review of applications. Residents pressed the board to release the consultant's individual property findings, publish a hearing schedule, and send a letter to mortgage banks; the board declined or said it was not feasible. The meeting ended with a motion to enter executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Kevin fish",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Richard attire",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "CJ",
+    "role": "board staff or member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 278,
+    "speaker_as_heard": "Lou Franco 250 Arbor Street",
+    "stated_role": "resident",
+    "topic": "Asked how applicants can comment publicly when abatements are confidential."
+   },
+   {
+    "t": 442,
+    "speaker_as_heard": "Bill Hudson 90 Hemlock Drive",
+    "stated_role": "resident",
+    "topic": "Asked how applicants will know when theirs is being worked on and warned of approvals made without applicants seeing the consultant's figures."
+   },
+   {
+    "t": 625,
+    "topic": "Renee asked what counts as new information, asked that homeowners see the consultant's individual site-visit notes before hearings, and asked how people will know when their abatements will be heard."
+   },
+   {
+    "t": 938,
+    "topic": "Dave McDonald asked whether the consultant gave individual recommendations, complained of delay and mortgage payment increases, and asked the board to write to banks about the error."
+   },
+   {
+    "t": 1149,
+    "speaker_as_heard": "Bill Hudson 90 Hemlock Drive",
+    "stated_role": "resident",
+    "topic": "Asked whether his property is rated good or average in the consultant's report and described his frustration over the assessment increase."
+   },
+   {
+    "t": 1325,
+    "topic": "Rich Pearson/Tom Alonso asked about individual reports, urged releasing the consultant's findings to homeowners before hearings, and asked for a hearing schedule."
+   },
+   {
+    "t": 1659,
+    "topic": "A resident asked about the hearing schedule, pressed for a letter to banks, and disputed that the town made no mistake."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "policy",
+   "public-comment",
+   "tax-rate"
+  ],
+  "votes": [
+   {
+    "t": 65,
+    "motion": "Approve minutes of the March 28 meeting.",
+    "outcome": "passed (all in favor, aye)",
+    "procedural": true
+   },
+   {
+    "t": 155,
+    "motion": "Allow two minutes per applicant for new information only on their abatement, limited to one hour per meeting.",
+    "outcome": "passed (all in favor, aye; count not stated)",
+    "procedural": false
+   },
+   {
+    "t": 1828,
+    "motion": "Enter executive session, not to return to public session.",
+    "outcome": "not audible (roll call began with ayes from Kevin fish and Richard attire; full count not clear)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 978,
+    "topic": "Mortgage/escrow increases for homeowners",
+    "what_was_said": "A resident said homeowners are seeing higher monthly payments tied to the assessment error and asked for a letter to banks.",
+    "figures_as_heard": [
+     "five six hundred dollars a month"
+    ]
+   },
+   {
+    "t": 1743,
+    "topic": "Tax rate and consultant's percentage increases",
+    "what_was_said": "A resident questioned how the town did not err given the stated tax rate and the consultant's projected increases.",
+    "figures_as_heard": [
+     "135",
+     "17 to 55"
+    ]
+   },
+   {
+    "t": 517,
+    "topic": "Example assessed value under abatement",
+    "what_was_said": "A resident gave a hypothetical about a house assessed at a higher figure being revised downward without the applicant knowing.",
+    "figures_as_heard": [
+     "a million dollars",
+     "eight hundred thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 195,
+    "decision": "Abatement reviews to start the following Tuesday: one hour public comment, then executive session until about 6 PM, with leftover speakers carried to the next meeting."
+   },
+   {
+    "t": 1066,
+    "decision": "Board declined to send individual homeowners the consultant's reports before hearings."
+   },
+   {
+    "t": 1806,
+    "decision": "Board declined to issue a letter to homeowners' banks about the assessment error."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 44,
+    "topic": "Opening and open meeting law notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 44,
+    "t_end": 89,
+    "topic": "Public comment call and approval of March 28 minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 89,
+    "t_end": 278,
+    "topic": "Procedure for abatement hearings and public comment",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 278,
+    "t_end": 1149,
+    "topic": "Public questions on confidentiality, consultant reports, scheduling, and delays",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1149,
+    "t_end": 1804,
+    "topic": "Further public comment on consultant findings, hearing schedule, and letter to banks",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1828,
+    "t_end": 1850,
+    "topic": "Executive session motion",
+    "resolution": "roll call begun; result not audible",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Full roll-call count for the executive session vote.",
+   "Who spoke at several points; speakers largely unidentified.",
+   "Exact figures quoted by residents are unreliable in the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 978,
+    "about": "A resident accused the board of inaction and delay as homeowners face higher payments.",
+    "sides": "a resident against the board",
+    "words_as_heard": "nothing's being done by this board and I I'm telling you people are getting upset",
+    "kind": "public criticism"
+   },
+   {
+    "t": 1722,
+    "about": "Residents and the chair disagreed over whether the town made an error and whether the board would write to banks.",
+    "sides": "a resident against the chair",
+    "words_as_heard": "I think it's your responsibility and let the banks know that the town messed up",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1764,
+    "about": "Resident disputed the chair's statement that the original assessments followed state standards.",
+    "sides": "a resident against the chair",
+    "words_as_heard": "Mr chair we know that's wrong",
+    "kind": "public criticism"
+   },
+   {
+    "t": 1806,
+    "about": "Chair refused a request for a letter to residents.",
+    "sides": "a resident against the chair",
+    "words_as_heard": "no we're not going to give you a letter",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors voted to allow two minutes per applicant, for new information only, capped at one hour per meeting, before abatement reviews.",
+    "t": 155
+   },
+   {
+    "line": "Abatement reviews were set to start the following Tuesday: public comment, then executive session until about 6 PM, with leftover speakers carried to the next meeting.",
+    "t": 195
+   },
+   {
+    "line": "The board declined to send homeowners the consultant's individual property reports before their hearings.",
+    "t": 1066
+   },
+   {
+    "line": "The board declined to send a letter to homeowners' banks about the assessment error.",
+    "t": 1806
+   },
+   {
+    "line": "Residents asked how they can comment on confidential abatements, how they will learn when theirs is heard, and for a hearing schedule.",
+    "t": 625
+   }
+  ],
+  "why_it_matters": [
+   "Homeowners who applied for an abatement will present without seeing the consultant's findings on their own property, and the procedure gives them two minutes for new information only.",
+   "Residents whose escrow payments rose because of the assessment error have no bank letter from the board and no published hearing schedule to plan around."
+  ],
+  "watch_next": [
+   "The first abatement review session on the Tuesday after this meeting, and whether a hearing schedule is published.",
+   "The minutes of that session, to see whether leftover speakers carried to later meetings."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T00:52:40Z",
+   "cost_usd": 0.2212549
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162023-21",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-16-minutes-21.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-16-minutes-21.pdf"
+  },
+  "official_sha256": "a988d75c0418e1f58f07e21a554097a25bd62b0297a24b00a0b2d68808a80050",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the bank-letter decision and the option 2 abatement motion, but differ on that motion's outcome and on several other points. The one thing to know: the official minutes give no outcome for the option 2 vote and record no board decision on sending individual reports to homeowners, which our recording shows as declined.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on abatement process option 2 (2-minute limit, one hour per meeting)",
+    "ours": "Allow two minutes per applicant for new information only on their abatement, limited to one hour per meeting. — passed (all in favor, aye; count not stated)",
+    "official": "motion to proceed with option 2 by kevin fish, seconded by richard letarte.",
+    "note": "Both record the same motion, but the official minutes give no outcome (\"not stated\") while ours records it passing by voice vote; check the official minutes or recording for the outcome and the mover and seconder.",
+    "t": 155
+   },
+   {
+    "kind": "agree",
+    "about": "Decision not to write letters to homeowners' banks about the assessment error",
+    "ours": "Board declined to issue a letter to homeowners' banks about the assessment error.",
+    "official": "this wasn't done and the board doesn't intend to write letters to homeowners to then give to their banks.",
+    "note": "Both records say the board will not write bank letters about the assessment error.",
+    "t": 1806
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision not to send individual consultant reports before hearings",
+    "ours": "Board declined to send individual homeowners the consultant's reports before hearings.",
+    "official": "tom alonzo - believes that the homeowners should get their individual reports before their",
+    "note": "The official minutes record only Tom Alonzo's comment that homeowners should get their reports, with no board decision. Check whether the board decided this.",
+    "t": 1066
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement review schedule: public comment for one hour, then executive session until about 6 PM",
+    "ours": "Abatement reviews to start the following Tuesday: one hour public comment, then executive session until about 6 PM, with leftover speakers carried to the next meeting.",
+    "official": "",
+    "note": "The official minutes as structured record no schedule decision; check whether the full official text contains it.",
+    "t": 195
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures heard: mortgage/escrow increase, tax rate and consultant percentages, example assessed value",
+    "ours": "Mortgage/escrow increases for homeowners: five six hundred dollars a month; Tax rate and consultant's percentage increases: 135, 17 to 55; Example assessed value under abatement: a million dollars, eight hundred thousand dollars",
+    "official": "",
+    "note": "The official minutes list no budget figures; these come from captions, which are unreliable for numbers.",
+    "t": 978
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair / member name: Richard Letarte",
+    "ours": "Richard attire (member)",
+    "official": "chairman richard letarte",
+    "note": "The captions misheard Letarte as 'attire'. The official minutes make him the chairman. Ours lists 'the chair' separately and Richard as a member.",
+    "official_reading": "Richard Letarte",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Kevin Fish",
+    "ours": "Kevin fish (member)",
+    "official": "board member kevin fish",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee CJ Carroll",
+    "ours": "CJ (board staff or member)",
+    "official": "members present: principal access cj. carroll, administrative assessing assistant sheila craigen, board member kevin fish",
+    "note": "Same person. The official minutes give the surname Carroll and the title Principal Assessor, printed as 'Principal Access' by OCR.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees not in our minutes: Christine Higdon, Rena Swezey, Sheila Craigen",
+    "ours": "",
+    "official": "board member christine higdon, chairman richard letarte, interim principal assessor rena swezey.",
+    "note": "Our minutes name none of these three; the official minutes list Higdon as a board member, Swezey as interim principal assessor, and Craigen as administrative assessing assistant.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters (Lou Franco, Bill Hudson, Renee, Dave McDonald, Rich Pearson, Tom Alonzo)",
+    "ours": "",
+    "official": "lou franco - 260 arbor street- inquired how public comments can be made during public meetings since abatements are confidential.",
+    "note": "The official minutes summarize six public commenters and their questions; our minutes do not name them.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T00:53:26Z",
+   "cost_usd": 0.2352649
+  }
+ }
+}

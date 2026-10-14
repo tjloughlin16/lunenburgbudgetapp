@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2023-06-05",
  "docid": "45",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve variances regarding groundwater offset from 4 to 3 feet, sieve analysis, and inlet/outlet tees at 55 West Street Terrace",
+   "motion": "Approve the variances requested for 55 West Street Terrace (groundwater offset from 4 feet to 3 feet, sieve analysis, less than 12 inch inlet and outlet tees).",
    "moved_by": "Normandin",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by normandin and second by fortin, the board voted to approve the variances. all in favor."
+   "quote": "after discussion and on motion by normandin and second by fortin, the board voted to approve the variances. all in favor."
   },
   {
-   "motion": "Approve variances with condition that a two bedroom deed restriction be placed on the property at 258 Pleasant Street",
+   "motion": "Approve the variances requested for 258 Pleasant Street, conditioned on a two-bedroom deed restriction on the property.",
    "moved_by": "Jewell",
    "seconded_by": "Normandin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by normandin the variances were approved with the condition that a two bedroom deed restriction be place on the property. all in favor."
+   "quote": "on motion by jewell and second by normandin the variances were approved with the condition that a two bedroom deed restriction be place on the property."
   },
   {
-   "motion": "Allow the addition based on the submitted plan, conditioned upon no further expansions or additions to living space, and house remaining a 5 room, 2 bedroom house",
+   "motion": "Allow the addition based on the plan submitted, conditioned on no further expansions or additions to the living space and the house remaining a 5 room, 2 bedroom house.",
    "moved_by": "Normandin",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by normandin and second by fortin, the board voted to allow the addition based on the plan submitted conditioned upon there be no further expansions or additions to the living space and the house will remain a 5 room, 2 bedroom house. all in favor."
+   "quote": "after discussion and on motion by normandin and second by fortin, the board voted to allow the addition based on the plan submitted conditioned upon there be no further expansions"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:55 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Normandin",
    "outcome": "passed",
@@ -45,6 +45,99 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0961209
+ "note": "Text is macOS Vision OCR of a scan and carries OCR-style spacing and line breaks; quotes were collapsed to single spaces. No roll call or attendance list appears, so no one is marked absent and the chair is not named. Board members Normandin, Fortin and Jewell are marked present only because they make and second motions; their attendance is not otherwise stated. Votes are recorded only as 'All in favor', so no vote counts are printed. The addition approved on page 2 is not named by address; it follows the 258 Pleasant Street item but the minutes do not say so. No dollar figures appear. No public comment is recorded; Dan Proctor's appearances are as applicant representative.",
+ "cost_usd": 0.01356561,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner (presenter for 55 West Street Terrace and 258 Pleasant Street)",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Normandin",
+   "role": "not stated (board member; made motions and seconds)",
+   "status": "present",
+   "quote": "after discussion and on motion by normandin and second by fortin, the board voted to approve the"
+  },
+  {
+   "name": "Fortin",
+   "role": "not stated (board member; made motions and seconds)",
+   "status": "present",
+   "quote": "on motion by fortin and seconded by normandin, the meeting was adjourned at 7:55 pm, all in favor."
+  },
+  {
+   "name": "Jewell",
+   "role": "not stated (board member; made a motion)",
+   "status": "present",
+   "quote": "after discussion and on motion by jewell and second by normandin the variances were approved"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing for 131 Island Road was continued to July 17, 2023 because the hearing notice was deficient.",
+   "quote": "hearing continued until july 17, 2023 due to a deficient hearing notice."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "131 Island Road",
+   "resolution": "hearing continued to July 17, 2023",
+   "quote": "hearing continued until july 17, 2023 due to a deficient hearing notice.",
+   "tags": [
+    "hearing continuance",
+    "hearing notice"
+   ]
+  },
+  {
+   "topic": "55 West Street Terrace (septic variances)",
+   "resolution": "variances approved",
+   "quote": "the system at this property would be considered a failure due to the high ground water table.",
+   "tags": [
+    "septic",
+    "Title 5 variances",
+    "groundwater offset",
+    "sieve analysis",
+    "Presby system"
+   ]
+  },
+  {
+   "topic": "258 Pleasant Street (septic variances)",
+   "resolution": "variances approved with two-bedroom deed restriction",
+   "quote": "this system is in failure. the house is connected to public water.",
+   "tags": [
+    "septic",
+    "variances",
+    "deed restriction",
+    "bedroom limit",
+    "sieve analysis"
+   ]
+  },
+  {
+   "topic": "Addition approval (property not named on page 2)",
+   "resolution": "approved with conditions",
+   "quote": "the board voted to allow the addition based on the plan submitted conditioned upon there be no further expansions",
+   "tags": [
+    "addition",
+    "living space",
+    "conditions"
+   ]
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "Title 5 variances",
+  "groundwater",
+  "sieve analysis",
+  "deed restriction",
+  "hearing continuance",
+  "house addition",
+  "Board of Health"
+ ],
+ "dropped_unquoted_by_field": {}
 }

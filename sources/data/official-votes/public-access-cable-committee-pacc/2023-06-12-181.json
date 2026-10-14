@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-06-12",
  "docid": "181",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve May 8th, 2023 minutes",
+   "motion": "Approve the May 8th, 2023 minutes.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "may 8th, 2023 minutes, motion - f.beall, 2nd p.lincoln, passed"
   },
   {
-   "motion": "Allow PACC to speak to Town Council concerning the legality of creating a prize using either PACC money or donations",
+   "motion": "Allow PACC to speak to Town Council concerning the legality of creating a prize using either PACC money or donations.",
    "moved_by": "S.Sarapas",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -28,23 +28,222 @@
    "quote": "motion s.sarapas, 2nd p.lincoln to allow pacc to speak to town council concerning the legality of creating a prize using either pacc money or donations (passed)."
   },
   {
-   "motion": "Accept Bartholomew recommendation to invest $240,000 each of the PEG Enterprise Fund in two month, four month, and six month Treasury Bonds with reinvestment provisions",
+   "motion": "Accept the Bartholomew recommendation to invest $240,000 each of the PEG Enterprise Fund in two-month, four-month and six-month Treasury Bonds, with the stated reinvestment schedule.",
    "moved_by": "S.Walker",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion s.walker, 2nd s.archambault - passed o \"to accept the bartholomew recommendation of investing $240,000"
+   "quote": "motion s.walker, 2nd s.archambault - passed"
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting at 7:23 pm.",
    "moved_by": "P.Sarapas",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion - p.sarapas, 2nd p.lincoln - passed"
+   "quote": "(motion - p.sarapas, 2nd p.lincoln - passed)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. No scanned pages or readability issues noted.",
- "cost_usd": 0.111733
+ "note": "Text is extracted from two pages with no scan or OCR markers; votes are printed with clear motion language. The Enterprise Fund motion is recorded as 'passed' with no count. The minutes print 'S.Sarapas' for the prize motion and 'S.Archambault' as printed; the member is listed as 'Paul Sarapas'; names kept as printed. No chair is named. Public comment is printed as 'None', so no speakers are recorded. The $2000 transfer is described as needed with no recorded approval, so its outcome is not stated. Non-attending people named in the minutes (Nate, Eric, Heather, Bartholomew Financial people) are not listed as attendees.",
+ "cost_usd": 0.01511181,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "PACC agreed, on Town Council's recommendation, to meet with the Water Dept. in advance to discuss equipment set-up (no vote recorded).",
+   "quote": "town council recommends and pacc agrees, that we should meet with the water dept. in advance to discuss set-up."
+  },
+  {
+   "decision": "S.Archambault to send the personal use policy to Heather and ask for Town Council review.",
+   "quote": "s.archambault will send it to heather and ask for town council review."
+  },
+  {
+   "decision": "J.McLaughlin to check into the muffled Selectboard broadcast audio.",
+   "quote": "j.mclaughlin will check into it."
+  },
+  {
+   "decision": "J.McLaughlin to check in with Town Hall about the Comcast deposit and interest not in the updated financials.",
+   "quote": "j.mclaughlin will check in with town hall."
+  },
+  {
+   "decision": "S.Walker to contact Bartholomew to set up new accounts.",
+   "quote": "s.walker with contact bartholomew to set up new accounts."
+  },
+  {
+   "decision": "The misspelled conference room name on the agenda to be corrected for future agendas.",
+   "quote": "it will be corrected for future agendas."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget balance",
+   "what_was_recorded": "The manager reported the budget balance.",
+   "figures_as_printed": [
+    "$948,396.51"
+   ],
+   "quote": "budget balance - $948,396.51"
+  },
+  {
+   "topic": "Payroll Videographers line item transfer",
+   "what_was_recorded": "A $2000 line item transfer into Payroll Videographers was described as needed because only $553.94 remains in the account for the last weeks of the year.",
+   "figures_as_printed": [
+    "$2000",
+    "$553.94"
+   ],
+   "quote": "need to do a $2000 line item transfer into payroll videographers as there is only $553.94 in the account"
+  },
+  {
+   "topic": "PEG Enterprise Fund investment",
+   "what_was_recorded": "Bartholomew Financial modified the proposal to maximize interest; the approved motion invests three $240,000 tranches in Treasury Bonds of differing maturities.",
+   "figures_as_printed": [
+    "$240,000"
+   ],
+   "quote": "to accept the bartholomew recommendation of investing $240,000 of the peg enterprise fund in a two month treasury bond"
+  },
+  {
+   "topic": "Comcast deposit and accrued interest",
+   "what_was_recorded": "Updated financials do not include the Comcast deposit or interest accrued since March; the manager will check with Town Hall. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "updated financials do not include comcast deposit or interest accrued since march."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer into Payroll Videographers to meet payroll for the last few weeks of the year.",
+   "amount_as_printed": "$2000",
+   "outcome": "not stated: described as needed; no vote or approval recorded in the minutes",
+   "quote": "need to do a $2000 line item transfer into payroll videographers as there is only $553.94 in the account"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and committee comments",
+   "resolution": "noted; agenda typo to be corrected; manager to check broadcast audio",
+   "quote": "p.lincoln mentioned that we have missed a typo on our agenda all year.",
+   "tags": [
+    "agenda",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved May 8th, 2023 minutes",
+   "quote": "may 8th, 2023 minutes, motion - f.beall, 2nd p.lincoln, passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "reported; motion to speak to Town Council on legality of a prize",
+   "quote": "working on priorities with new technical production person.",
+   "tags": [
+    "staffing",
+    "studio",
+    "budget",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "resolution": "approved investment plan in Treasury Bonds",
+   "quote": "s.walker met with bartholomew financial people.",
+   "tags": [
+    "investment",
+    "treasury bonds",
+    "enterprise fund"
+   ]
+  },
+  {
+   "topic": "PAC equipment set-up policy review",
+   "resolution": "agreed to meet Water Dept. in advance of set-up",
+   "quote": "town council recommends and pacc agrees, that we should meet with the water dept. in advance to discuss set-up.",
+   "tags": [
+    "equipment",
+    "water dept"
+   ]
+  },
+  {
+   "topic": "Personal use policy update",
+   "resolution": "reported as approved April 10; to Town Council for review",
+   "quote": "approved by pacc at our april 10th meeting.",
+   "tags": [
+    "policy",
+    "personal use"
+   ]
+  },
+  {
+   "topic": "Future meeting date",
+   "resolution": "noted; next meeting July 10th, 6:00 pm",
+   "quote": "next meeting is july 10th, 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:23 pm",
+   "quote": "meeting adjourned at 7:23 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "PEG enterprise fund",
+  "investment",
+  "treasury bonds",
+  "budget",
+  "payroll",
+  "studio",
+  "equipment set-up",
+  "personal use policy",
+  "Town Council",
+  "Comcast deposit",
+  "YouTube monetization",
+  "broadcast"
+ ],
+ "dropped_unquoted_by_field": {}
 }

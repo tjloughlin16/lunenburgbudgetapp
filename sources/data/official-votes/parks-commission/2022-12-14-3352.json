@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-12-14",
  "docid": "3352",
@@ -12,39 +12,321 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for November 16, 2022",
+   "motion": "Approve the minutes of November 16, 2022.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. menard made a motion to approve the minutes for november 16, 2022. c. sullivan seconded. roll call vote, c. sullivan - yes k. menard - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to approve the minutes for november 16, 2022. c. sullivan seconded."
   },
   {
-   "motion": "Accept the new sign at McNally Park as a gift to the Town of Lunenburg",
+   "motion": "Accept the new sign at McNally Park as a gift to the Town of Lunenburg.",
    "moved_by": "K. Menard",
    "seconded_by": "A. Lockwood",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "k. menard made a motion to accept the new sign at mcnally park as a gift to the town of lunenburg. a. lockwood seconded. roll call vote, c. sullivan - yes k. menard - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to accept the new sign at mcnally park as a gift to the town of lunenburg. a. lockwood seconded."
   },
   {
-   "motion": "For A. Lockwood to submit the request to the Town Manager and the Select Board on behalf of the Park Commission if Town funds are available to install sidewalks leading to the Town Beach from the rotary",
+   "motion": "For A. Lockwood to submit a request to the Town Manager and Select Board on behalf of the Park Commission, if Town funds are available, to install sidewalks from the rotary to the Town Beach.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "c. sullivan made a motion for a. lockwood to submit the request to the town manager and the select board on behalf of the park commission if town funds are available to install sidewalks leading to the town beach from the rotary. k. menard seconded. roll call vote, c. sullivan - yes k. menard - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "c. sullivan made a motion for a. lockwood to submit the request to the town manager and the select board on behalf of the park commission if town funds are available"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. menard made a motion to adjourn. c. sullivan seconded. roll call vote k. menard - yes c. sullivan - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "made a motion to adjourn. c. sullivan seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes from Park Commission meeting, December 14, 2022. Three members present (A. Lockwood, K. Menard, C. Sullivan); two absent (D. Passios, P. Hakey). All four votes recorded show unanimous passage with 3-0 roll call results.",
- "cost_usd": 0.0684664
+ "note": "Text is a legible extraction of a 5-page minutes document; no scan limitations noted. Three of four votes were roll calls with individual yes votes recorded; the printed result is 'All in favor, motion carried' with no count, so outcomes are 'passed'. The Town Beach repair item records no motion. The Public Comment entry is a remark by board member K. Menard, not a public speaker. Andrea Mastrototoro appears only as the signing Board Secretary, so her status is 'not stated'. The minutes do not print a Town Manager name and mention no outside presenters.",
+ "cost_usd": 0.01594561,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present:ana lockwood, karin menard and, christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present:ana lockwood, karin menard and, christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present:ana lockwood, karin menard and, christopher sullivan"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "dave passios and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "dave passios and patrick hakey"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will revisit the 2023 field and user fee schedule at a future meeting; no change to Little League fees at this time.",
+   "quote": "the commission will revisit this issue at a future meeting."
+  },
+  {
+   "decision": "A. Lockwood to obtain a quote for composite replacement of the Veterans Memorial Park benches.",
+   "quote": "a. lockwood will get a quote for the composite replacement."
+  },
+  {
+   "decision": "A. Lockwood to raise the McNally Park shrub removal with the Town Manager, after not being notified.",
+   "quote": "a. lockwood will reach out to the town manager."
+  },
+  {
+   "decision": "C. Sullivan to try to start the Marshall Park IFB draft over the holidays; one lead person to start the process.",
+   "quote": "c. sullivan will try to make some time over the holidays to start the process."
+  },
+  {
+   "decision": "K. Menard to reach out to the grant authorities to find out eligibility for the Marshall Park Water & Land Conservation Trust Grant application.",
+   "quote": "k. menard will reach out to the grant authorities."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Beach facilities repair",
+   "what_was_recorded": "Several contractor quotes were received for Town Beach repairs, and the Town Manager would like to use revolving funds for the work, to be done in winter.",
+   "figures_as_printed": [
+    "$32,000",
+    "$72,000"
+   ],
+   "quote": "several quotes have been received that range from $32,000 to $72,000."
+  },
+  {
+   "topic": "Capital Plan requests for Lake Whalom and Marshall Pond",
+   "what_was_recorded": "The Chair noted the approximate total of Capital Plan requests for Lake Whalom and Marshall Pond.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "there were approximately $80,000 in capital plan requests for lake whalom and marshall pond"
+  },
+  {
+   "topic": "ARPA funds and Marshall Park construction reimbursement",
+   "what_was_recorded": "The Chair discussed ARPA funds used to build Marshall Park and grant reimbursement toward construction; the Town Manager said the funds go into free cash. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the funds being used to build marshall park and the reimbursement going toward the construction."
+  },
+  {
+   "topic": "Marshall Park funding strategy",
+   "what_was_recorded": "Discussion of whether to seek Marshall Park funding from Town Meeting once or more than once. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager feels it would be more straightforward to go to town meeting once."
+  },
+  {
+   "topic": "Field and user fees for 2023",
+   "what_was_recorded": "Discussion of aligning field fees with the schools and of differentiating for-profit and non-profit fees, flat per-user fees for youth sports, and seasonal rates. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood would like to keep the fees in alignment with the schools to keep everything equitable and accessible."
+  },
+  {
+   "topic": "Marshall Park Water & Land Conservation Trust Grant application",
+   "what_was_recorded": "Discussion of who completes the grant application and its eligibility; the Town Manager must approve before submission. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood asked k. menard if she would complete the application for the water & land conservation trust grant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Loss of Town employee Gen Nass",
+   "speaker": "K. Menard",
+   "stated_role": "Clerk",
+   "quote": "k. menard noted the town lost gen nass who was with the town for 35 years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved minutes of November 16, 2022",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "k. menard made a motion to approve the minutes for november 16, 2022. c. sullivan seconded."
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "no action; updates noted",
+   "tags": [
+    "parks maintenance",
+    "vandalism"
+   ],
+   "quote": "the cleanings at the parks have been completed."
+  },
+  {
+   "topic": "Town Beach Facilities Repair",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "town beach",
+    "repairs",
+    "revolving funds"
+   ],
+   "quote": "the town manager would like to utilize the revolving funds for repairs"
+  },
+  {
+   "topic": "Marshall Park Survey Status",
+   "resolution": "survey responses reviewed; no action",
+   "tags": [
+    "marshall park",
+    "survey"
+   ],
+   "quote": "c. sullivan stated there have been 95 responses."
+  },
+  {
+   "topic": "Veterans Memorial Park Benches Update",
+   "resolution": "Chair to get composite replacement quote",
+   "tags": [
+    "veterans memorial park",
+    "benches"
+   ],
+   "quote": "a. lockwood will get a quote for the composite replacement."
+  },
+  {
+   "topic": "McNally Park Sign: accept donation",
+   "resolution": "approved (accepted as gift)",
+   "tags": [
+    "mcnally park",
+    "donation",
+    "signage"
+   ],
+   "quote": "k. menard made a motion to accept the new sign at mcnally park as a gift to the town of lunenburg."
+  },
+  {
+   "topic": "Little League Update",
+   "resolution": "no action; Chair attended Little League Board meeting",
+   "tags": [
+    "little league",
+    "youth sports"
+   ],
+   "quote": "a. lockwood attended the little league board meeting."
+  },
+  {
+   "topic": "Capital Plan Requests Update",
+   "resolution": "noted; no action",
+   "tags": [
+    "capital plan",
+    "lake whalom",
+    "marshall pond"
+   ],
+   "quote": "there were approximately $80,000 in capital plan requests for lake whalom and marshall pond"
+  },
+  {
+   "topic": "Marshall Park IFB Draft",
+   "resolution": "Sullivan to start draft over holidays; no vote",
+   "tags": [
+    "marshall park",
+    "invitation for bid"
+   ],
+   "quote": "a. lockwood would like one lead person to start the process."
+  },
+  {
+   "topic": "Marshall Park Grants",
+   "resolution": "Menard to check eligibility with grant authorities; no vote",
+   "tags": [
+    "marshall park",
+    "grants"
+   ],
+   "quote": "k. menard will reach out to the grant authorities."
+  },
+  {
+   "topic": "ARPA Updates: How to use Funds",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "arpa",
+    "free cash",
+    "marshall park"
+   ],
+   "quote": "the town manager stated no, the funds go into free cash."
+  },
+  {
+   "topic": "Marshall Park Funding Strategy",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "marshall park",
+    "town meeting",
+    "funding"
+   ],
+   "quote": "the town manager feels it would be more straightforward to go to town meeting once."
+  },
+  {
+   "topic": "2023 Field & User Fees",
+   "resolution": "continued to a future meeting",
+   "tags": [
+    "field fees",
+    "user fees",
+    "youth sports"
+   ],
+   "quote": "the commission will revisit this issue at a future meeting."
+  },
+  {
+   "topic": "Sidewalk to Town Beach request",
+   "resolution": "approved request to Select Board and Town Manager",
+   "tags": [
+    "sidewalks",
+    "town beach",
+    "complete streets"
+   ],
+   "quote": "c. sullivan made a motion for a. lockwood to submit the request to the town manager and the select board on behalf of the park commission if town funds are available"
+  },
+  {
+   "topic": "Other Business: TCP indoor soccer",
+   "resolution": "noted; registration active",
+   "tags": [
+    "tcp indoor soccer",
+    "registration"
+   ],
+   "quote": "a. lockwood indicated there are 8 participants registered and she will be working on advertising."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "noted; no action",
+   "tags": [
+    "personnel",
+    "memorial"
+   ],
+   "quote": "k. menard noted the town lost gen nass who was with the town for 35 years."
+  }
+ ],
+ "tags": [
+  "park commission",
+  "marshall park",
+  "town beach",
+  "field and user fees",
+  "arpa funds",
+  "capital plan",
+  "grants",
+  "sidewalks",
+  "little league",
+  "veterans memorial park",
+  "mcnally park",
+  "tcp indoor soccer"
+ ],
+ "dropped_unquoted_by_field": {}
 }

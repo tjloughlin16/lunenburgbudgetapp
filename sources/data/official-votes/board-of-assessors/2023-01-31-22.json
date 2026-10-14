@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-01-31",
  "docid": "22",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "approve the use of the Massachusetts Appellate Tax Board Three-Year Average Worksheet",
-   "moved_by": "Kevin",
-   "seconded_by": "Rich",
+   "motion": "Approve the use of the Massachusetts Appellate Tax Board Three-Year Average Worksheet.",
+   "moved_by": "Kevin Fish",
+   "seconded_by": "Rich Letarte",
    "outcome": "passed",
    "procedural": false,
    "quote": "kevin made a motion to approve the use of the massachusetts appellate tax board three-year average worksheet. rich seconded. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan; one vote recorded",
- "cost_usd": 0.0817865
+ "note": "Text is macOS Vision OCR of a scan (marked ===OCR macOS Vision===); check quotes against the original page. One motion is recorded, carried by \"All in favor\" with no tally printed, so the outcome is recorded as passed without a count. Christine Higdon and Kevin Fish are listed as \"Interim Chairperson, Christine Higdon, Board Member, Kevin Fish\", and the titles are read in that order; the text does not state them explicitly. Rich Letarte seconded a motion and gave a statement, but his role is not printed. Opening, the member introductions and the adjournment are not recorded as votes. Kevin Fish's statement is recorded as a topic, not as public comment, because he is a member. Resident speakers other than Lou Franco are not named. The minutes do not state whether the abatement and tax-bill discussion produced any decision.",
+ "cost_usd": 0.013928110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Christine Higdon",
+   "role": "Interim Chairperson",
+   "status": "present",
+   "quote": "members present: interim chairperson, christine higdon, board member, kevin fish. also present"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: interim chairperson, christine higdon, board member, kevin fish. also present"
+  },
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor cj carroll and rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "principal assessor cj carroll and rena swezey."
+  },
+  {
+   "name": "Rich Letarte",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "rich letarte in attendance by cell phone."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lou franco introduced himself and explained in advance that his statement to follow is entirely his own"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "not stated",
+   "quote": "sheila craigen administrative assessing assistant"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Tax bills and abatement concerns raised in public comment",
+   "what_was_recorded": "Residents voiced dissatisfaction with tax bills and the abatement process; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "several residents spoke stating their dissatisfaction, questions and concerns regarding tax bills and the abatement process."
+  },
+  {
+   "topic": "Motor vehicle abatement applications",
+   "what_was_recorded": "The board reviewed motor vehicle abatement applications; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the boa reviewed motor vehicle abatement applications."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Abatement process and social media misinformation",
+   "speaker": "Lou Franco",
+   "stated_role": "not stated",
+   "quote": "lou spoke of the abatement process and addressed recent incorrect information and innuendo that had appeared on various private town related social media pages."
+  },
+  {
+   "topic": "Tax bills and the abatement process",
+   "speaker": "Several residents",
+   "stated_role": "not stated",
+   "quote": "several residents spoke stating their dissatisfaction, questions and concerns regarding tax bills and the abatement process."
+  },
+  {
+   "topic": "Assessments under Department of Revenue rules",
+   "speaker": "Rich Letarte",
+   "stated_role": "not stated",
+   "quote": "rich letarte stated he does feel the assessments were done in accordance with the rules and regulations of the department of revenue."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment opening",
+   "resolution": "no action",
+   "quote": "christine opened the meeting at 2:42 pm and stated before addressing items on the agenda, she will open for public comment.",
+   "tags": [
+    "public comment",
+    "open meeting"
+   ]
+  },
+  {
+   "topic": "Member introductions",
+   "resolution": "no action",
+   "quote": "christine had members introduce themselves.",
+   "tags": [
+    "open meeting"
+   ]
+  },
+  {
+   "topic": "Abatement procedures and public communication",
+   "resolution": "no action; public comment taken",
+   "quote": "kevin fish made a statement in regards to abatement procedures and communication with the public.",
+   "tags": [
+    "abatements",
+    "public comment",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Massachusetts Appellate Tax Board Three-Year Average Worksheet",
+   "resolution": "approved",
+   "quote": "kevin made a motion to approve the use of the massachusetts appellate tax board three-year average worksheet. rich seconded. all in favor.",
+   "tags": [
+    "assessment",
+    "Appellate Tax Board",
+    "worksheet"
+   ]
+  },
+  {
+   "topic": "Motor vehicle abatement applications",
+   "resolution": "reviewed; no action recorded",
+   "quote": "the boa reviewed motor vehicle abatement applications.",
+   "tags": [
+    "abatements",
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 3:53 pm; no vote recorded",
+   "quote": "meeting adjourned at 3:53 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "abatements",
+  "tax bills",
+  "public comment",
+  "Appellate Tax Board",
+  "motor vehicle excise",
+  "Department of Revenue",
+  "social media"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "nashoba-valley-reginal-dispatch-committee",
  "meeting_date": "2023-03-21",
  "docid": "124",
@@ -12,47 +12,283 @@
  },
  "votes": [
   {
-   "motion": "accept the January 17, 2023 meeting minutes as presented",
+   "motion": "Accept the January 17, 2023 meeting minutes as presented.",
    "moved_by": "Chief Sullivan",
    "seconded_by": "Chief Moody",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made by chief sullivan to accept the january 17, 2023 meeting minutes as presented and seconded by chief moody. the motion carried unanimously."
   },
   {
-   "motion": "accept the February 21, 2023 meeting minutes as presented",
+   "motion": "Accept the February 21, 2023 meeting minutes as presented.",
    "moved_by": "Chief Sullivan",
    "seconded_by": "Chief Moody",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made by chief sullivan to accept the february 21, 2023 meeting minutes as presented and seconded by chief moody. the motion carried unanimously."
   },
   {
-   "motion": "accept the Executive Director's report as presented",
+   "motion": "Accept the Executive Director's report as presented.",
    "moved_by": "Chief Sullivan",
    "seconded_by": "Chief Moody",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made by chief sullivan to accept the directors report as presented and seconded by chief moody. the motion carried unanimously."
   },
   {
-   "motion": "accept the Liaison to the Committee from Dispatch report as presented",
+   "motion": "Accept the liaison report from dispatch (minutes print it as the 'Directors report').",
    "moved_by": "Chief Moody",
    "seconded_by": "Chief Sullivan",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made by chief moody to accept the directors report as presented and seconded by chief sullivan. the motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 14:44.",
    "moved_by": "Chief Moody",
    "seconded_by": "Chief Sullivan",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion was made by chief moody and seconded by chief sullivan to adjourn at 14:44. the motion carried unanimous."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0842945
+ "dropped_unquoted": 1,
+ "note": "Text is digital extracted text over 2 pages, not a scan; no vote counts are printed (only 'carried Unanimously' / 'carried unanimous'), so outcomes are recorded as unanimous. Ambiguities: the call to order names 'Chief Kelley' while Tim Kelley is listed as Devens Fire Vice-Chairman, so the presiding officer is not certain; 'Chief Shartner' in Old Business appears to refer to Eric Schartner (spelling differs) and is not separately attributed. The liaison report's motion is printed as accepting the 'Directors report'. Public comment reads 'PUBLIC: None'; the only speaker recorded is under BOARD/COMMITTEES. The minutes do not record absences. Board name is given by the requester as 'Nashoba Valley Reginal Dispatch Committee'; the minutes title it 'Nashoba Valley Regional Dispatch District Operations Committee'.",
+ "cost_usd": 0.01591691,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Schartner",
+   "role": "Berlin Police, Chief",
+   "status": "present",
+   "quote": "members present: berlin police, chief eric schartner berlin fire, chief michael mcquillen"
+  },
+  {
+   "name": "Michael McQuillen",
+   "role": "Berlin Fire, Chief (new; introduced himself)",
+   "status": "present",
+   "quote": "new berlin fire chief michael mcquillen introduced himself"
+  },
+  {
+   "name": "Jeff Legendre",
+   "role": "Bolton Fire, Chief",
+   "status": "present",
+   "quote": "bolton fire, chief jeff legendre"
+  },
+  {
+   "name": "Tim Kelley",
+   "role": "Devens Fire, Chief (Vice-Chairman)",
+   "status": "present",
+   "quote": "devens fire, chief tim kelley (vice-chairman)"
+  },
+  {
+   "name": "Jamie Desautels",
+   "role": "Devens Fire, Deputy",
+   "status": "present",
+   "quote": "devens fire, deputy jamie desautels"
+  },
+  {
+   "name": "James Babu",
+   "role": "Harvard Police, Chief",
+   "status": "present",
+   "quote": "harvard police, chief james babu"
+  },
+  {
+   "name": "Rick Sicard",
+   "role": "Harvard Fire, Chief",
+   "status": "present",
+   "quote": "harvard fire, chief rick sicard"
+  },
+  {
+   "name": "Mike Hanson",
+   "role": "Lancaster Fire, Chief",
+   "status": "present",
+   "quote": "lancaster fire, chief mike hanson"
+  },
+  {
+   "name": "Everett Moody",
+   "role": "Lancaster Police, Acting Chief",
+   "status": "present",
+   "quote": "lancaster police, acting chief everett moody"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Lunenburg Fire, Chief",
+   "status": "present",
+   "quote": "lunenburg fire, chief pat sullivan"
+  },
+  {
+   "name": "Reid Bagley",
+   "role": "Mass State Police, Lieutenant",
+   "status": "present",
+   "quote": "mass state police, lieutenant reid bagley"
+  },
+  {
+   "name": "Anne Camaro",
+   "role": "NVRDD, Executive Director",
+   "status": "present",
+   "quote": "nvrdd, executive director anne camaro"
+  },
+  {
+   "name": "Peter Kinnas",
+   "role": "NVRDD, Supervisor",
+   "status": "present",
+   "quote": "nvrdd, supervisor peter kinnas"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for April 18, 2023 at the Harvard Public Safety Building, 40 Ayer Road, Harvard, MA 01451 (scheduling, no vote recorded).",
+   "quote": "april 18,2023, harvard public safety building, 40 ayer road, harvard, ma 01451."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 budget spending to date",
+   "what_was_recorded": "The Executive Director reported about 68% of the FY23 budget spent, described as in line with the time of year; YTD report attached.",
+   "figures_as_printed": [
+    "68%"
+   ],
+   "quote": "we have spent approximately 68% of our fy23 budget, which is in line with the time of year. ytd report attached."
+  },
+  {
+   "topic": "FY23 grant reimbursements",
+   "what_was_recorded": "The Director reported FY23 grant reimbursements are caught up and funds are expected within 30-60 days; no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "i am all caught up on fy23 grant reimbursements, and we should be receiving the funds within the next 30-60 days."
+  },
+  {
+   "topic": "FY24 Development Grant",
+   "what_was_recorded": "The FY24 Development Grant application was filed 03/02, with an award expected by July 1; no dollar amount printed.",
+   "figures_as_printed": [
+    "03/02",
+    "July 1 st"
+   ],
+   "quote": "fy24 development grant application was filed on 03/02. we should have an award by july 1 st."
+  },
+  {
+   "topic": "Development grant upgrades including radios",
+   "what_was_recorded": "Director Camaro applied for many upgrades in this year's development grant, including radios; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "director camaro put in for a lot of upgrades in this years development grant including for radios."
+  },
+  {
+   "topic": "5-year capital budget plan",
+   "what_was_recorded": "The Director is preparing a 5-year Capital Budget Plan for the Finance Committee meeting on April 5th; no dollar amount printed.",
+   "figures_as_printed": [
+    "April 5th"
+   ],
+   "quote": "i am working on a 5-year capital budget plan to present to the finance committee at the next meeting (april 5th)."
+  },
+  {
+   "topic": "Historical dispatch cost by town",
+   "what_was_recorded": "The Director is seeking old budget documents on what each town used to pay for dispatch; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "director camaro is looking for old budget docs on what each town used to pay for dispatch."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Introduction of new Berlin Fire Chief",
+   "speaker": "Michael McQuillen",
+   "stated_role": "New Berlin Fire Chief",
+   "quote": "new berlin fire chief michael mcquillen introduced himself"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; new chief introduced himself",
+   "quote": "new berlin fire chief michael mcquillen introduced himself",
+   "tags": [
+    "introduction",
+    "berlin fire"
+   ]
+  },
+  {
+   "topic": "Approval of meeting minutes",
+   "resolution": "approved both sets unanimously (January 17 and February 21, 2023)",
+   "quote": "motion made by chief sullivan to accept the january 17, 2023 meeting minutes as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "accepted unanimously",
+   "quote": "executive director report",
+   "tags": [
+    "staffing",
+    "budget",
+    "grants",
+    "desk replacement",
+    "police details",
+    "harvard auto attendant"
+   ]
+  },
+  {
+   "topic": "Policy review",
+   "resolution": "no action; no new policies; police details policy covered in director's report",
+   "quote": "covered in directors report",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Liaison report from dispatch",
+   "resolution": "accepted unanimously",
+   "quote": "liaison to the committee from dispatch (supervisor kinnas)",
+   "tags": [
+    "training",
+    "apco survey",
+    "powerphone"
+   ]
+  },
+  {
+   "topic": "Old business: radio system",
+   "resolution": "discussed; placeholder, no action recorded",
+   "quote": "left in here for place holder.",
+   "tags": [
+    "radio system",
+    "clinton",
+    "budget history"
+   ]
+  },
+  {
+   "topic": "Set next meeting",
+   "resolution": "next meeting set for April 18, 2023",
+   "quote": "april 18,2023, harvard public safety building, 40 ayer road, harvard, ma 01451.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 14:44, unanimous",
+   "quote": "a motion was made by chief moody and seconded by chief sullivan to adjourn at 14:44.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "nvrdd",
+  "dispatch",
+  "police",
+  "fire",
+  "staffing",
+  "desk replacement",
+  "radio system",
+  "grants",
+  "FY23 budget",
+  "capital plan",
+  "policy review",
+  "minutes approval",
+  "next meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

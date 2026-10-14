@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-04-06",
  "docid": "95",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 6 (FY24 Capital Plan)",
+   "motion": "Recommend approval of Article 6 (FY24 Capital Plan).",
    "moved_by": "Chris Menard",
    "seconded_by": "Caesar Nuzzolo",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. menard motioned to recommend approval, mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Defer recommendation of Article 14 (Sewer Enterprises) to Annual Town Meeting",
+   "motion": "Defer recommendation on Article 14 (Sewer Enterprises) to Annual Town Meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Caesar Nuzzolo",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. menard motioned to defer recommendation to annual town meeting, mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 20 (Historical Commission edits)",
+   "motion": "Recommend approval of Article 20 (Historical Commission edits).",
    "moved_by": "Chris Menard",
    "seconded_by": "Caesar Nuzzolo",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. menard motioned to recommend approval. mr. nuzzolo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 21 (Senior Tax Relief)",
+   "motion": "Recommend approval of Article 21 (Senior Tax Relief).",
    "moved_by": "Chris Menard",
    "seconded_by": "Caesar Nuzzolo",
    "outcome": "passed 4-1",
@@ -44,15 +44,214 @@
    "quote": "mr. menard motioned to recommend approval, mr. nuzzolo seconded. on vote, motion carried (4-1 simeone -nay)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Caesar Nuzzolo",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. menard motioned to adjourn, mr. nuzzolo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0943751
+ "note": "Text is a clean digital extraction of two pages; no scan. Votes are recorded for Articles 6, 14, 20 and 21 and for adjournment. Article 8 is deferred by a statement that 'the vote stands' with no motion or result printed, so it is a decision, not a vote. Article 21's count is printed as '4-1 Simeone -nay'. The minutes print no dollar figures at all, so budget_items carry empty figure lists. Tom Balish 'arrived later' with no time given. Rogers and Lissio are not stated as in-person or remote. Quotes were collapsed across the source line breaks.",
+ "cost_usd": 0.01718751,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish (arrived later),"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish (arrived later),"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish (arrived later),"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: chairperson evan watters, vice-chairperson chris menard, jay simeone, tom gray, tom balish (arrived later),"
+  },
+  {
+   "name": "Tom Balish",
+   "status": "present",
+   "quote": "tom balish (arrived later), caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "status": "present",
+   "quote": "tom balish (arrived later), caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "guests: town manager heather lemieux (remote)"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "lunenburg resident dave rogers commented that he had trouble calling into the meeting from home, and came to town hall to inform the committee."
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg resident",
+   "status": "not stated",
+   "quote": "lunenburg resident rhonda lissio thanked the committee for not deferring the fy24 capital plan article to annual town meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 8 (Collective Bargaining Agreement for Firefighters) deferred to Annual Town Meeting, because the agreement is not finalized. No motion is recorded.",
+   "quote": "article 8 collective bargaining agreement for firefighters has not been finalized. the vote stands to defer to annual town meeting."
+  },
+  {
+   "decision": "Committee agreed that the Town Report would focus on factual information about the town's finances.",
+   "quote": "the committee agreed that focusing on factual information about the town"
+  },
+  {
+   "decision": "Directed that Select Board Chairperson Michael Ray Jeffries be invited to a future meeting to discuss potential issues going into next fiscal year.",
+   "quote": "invite select board chairperson michael ray jeffries to discuss potential issues going into next fiscal year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 Capital Plan (Article 6)",
+   "what_was_recorded": "The town manager said she added the next prioritized capital items to the plan when funds became available; the committee recommended approval of Article 6.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux explained that she added the next prioritized items on the plan when funds became available"
+  },
+  {
+   "topic": "Sewer Enterprise usage fees (Article 14)",
+   "what_was_recorded": "The Sewer Commission found its usage-fee budget numbers had risen, changing the article's dollar amount; the article was deferred.",
+   "figures_as_printed": [],
+   "quote": "the sewer commission realized that the numbers in their budget for usage fees has increased, and as a result, the dollar amount of the article has changed."
+  },
+  {
+   "topic": "Free cash, overlay account and ARPA funds",
+   "what_was_recorded": "Chair said free cash is funding the abatement overlay account, which took money away from the FY24 Capital Plan, and ARPA funds are being spent on capital items.",
+   "figures_as_printed": [],
+   "quote": "using free cash to fund the overlay account for abatements, which took money away from funding the fy24 capital plan"
+  },
+  {
+   "topic": "Senior Tax Relief (Article 21)",
+   "what_was_recorded": "Chair said the budget would not be affected, but the article would affect property owners' taxes.",
+   "figures_as_printed": [],
+   "quote": "mr. watters commented that the budget would not be impacted, but it would have an effect on the property owners"
+  },
+  {
+   "topic": "Property tax collection",
+   "what_was_recorded": "Third and fourth quarter tax payments due May 1 are accepted with no interest charged; abatement applications are still accepted.",
+   "figures_as_printed": [],
+   "quote": "third and fourth quarter taxes are due on may 1 and are being accepted with no interest charged."
+  },
+  {
+   "topic": "FY24 Capital Plan requests (public comment)",
+   "what_was_recorded": "A resident said the School Committee changed capital item priorities after the process ended, and read the FY24 requests.",
+   "figures_as_printed": [],
+   "quote": "ms. lissio read all the fy24 capital plan requests from the school committee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "Lunenburg resident",
+   "topic": "trouble calling into the meeting; when public comment on the Town Warrant is possible",
+   "quote": "lunenburg resident dave rogers commented that he had trouble calling into the meeting from home, and came to town hall to inform the committee."
+  },
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Lunenburg resident",
+   "topic": "FY24 Capital Plan prioritization and School Committee requests",
+   "quote": "lunenburg resident rhonda lissio thanked the committee for not deferring the fy24 capital plan article to annual town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "mr. menard called the meeting to order at 7:02 p.m. and read a statement concerning the open"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. watters announced that the annual fundraiser for the boys and girls"
+  },
+  {
+   "topic": "Public comment (Dave Rogers)",
+   "resolution": "no action",
+   "quote": "lunenburg resident dave rogers commented that he had trouble calling into the meeting from home"
+  },
+  {
+   "topic": "Update on budget numbers and warrant articles",
+   "resolution": "Articles 6, 20 and 21 recommended for approval; Articles 8 and 14 deferred to Annual Town Meeting",
+   "quote": "drafted warrant articles have been changed from letters to numbers, and committee members voted on updated articles"
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "no report",
+   "quote": "6. town manager/finance director report: none"
+  },
+  {
+   "topic": "Old Business: Town Meeting Finance Committee report",
+   "resolution": "continued; report still being drafted",
+   "quote": "mr. watters is still drafting the report, and pointed out that the town is facing a dilemma"
+  },
+  {
+   "topic": "Tax abatement and assessment",
+   "resolution": "no action",
+   "quote": "third and fourth quarter taxes are due on may 1 and are being accepted with no interest charged."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "committee members updated each other on their respective assignments."
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "invite Select Board chair to a future meeting",
+   "quote": "invite select board chairperson michael ray jeffries to discuss potential issues going into next fiscal year."
+  },
+  {
+   "topic": "Public comment (Rhonda Lissio)",
+   "resolution": "no action",
+   "quote": "lunenburg resident rhonda lissio thanked the committee for not deferring the fy24 capital plan article to annual town meeting."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "12. next meetings: april 20, 2023 (public hearing), may 6, 2023 (atm)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:24 p.m.",
+   "quote": "adjourn: at 8:24 p.m. mr. menard motioned to adjourn, mr. nuzzolo seconded."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "FY24 capital plan",
+  "annual town meeting",
+  "sewer enterprise",
+  "historical commission",
+  "senior tax relief",
+  "firefighter contract",
+  "tax abatement",
+  "free cash",
+  "ARPA",
+  "public comment",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-04-25",
  "docid": "227",
@@ -12,39 +12,508 @@
  },
  "votes": [
   {
-   "motion": "Appoint Laura Brzozoski to the 300th Anniversary Committee",
+   "motion": "Appoint Laura Brzozoski to the 300th Anniversary Committee.",
    "moved_by": "H. Sroka",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: h. sroka 2\"d: l. franco to appoint laura brzozoski to the 300t anniversary committee vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint laura brzozoski to the 300t anniversary committee vote: all in favor"
   },
   {
-   "motion": "Recommend approval of warrant article #14 with the information presented",
+   "motion": "Ratify the Town Manager's appointment of the seasonal beach director and seasonal lifeguards (the motion text is not printed; no result is recorded).",
+   "moved_by": "H. Sroka",
+   "seconded_by": "L. Franco",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "2'd: l. franco motion: h. sroka"
+  },
+  {
+   "motion": "Recommend approval of warrant article #14 with the information presented.",
+   "moved_by": "L. Franco",
+   "seconded_by": "H. Sroka",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to recommend approval of warrant article#14 with the information presented vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of February 21, 2023 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco 2\": h. sroka to recommend approval of warrant article#14 with the information presented vote: all in favor"
+   "quote": "to approve the minutes of february 21, 2023 as presented"
   },
   {
-   "motion": "Approve the minutes of February 21, 2023 as presented",
+   "motion": "Enter Executive Session under MGL c. 30, Section 21, Paragraph 3 to discuss collective bargaining (Fire Union; Public Employee Agreement), and adjourn the meeting after exiting Executive Session.",
    "moved_by": "L. Franco",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of february 21, 2023 as presented 2nd: h. sroka vote: all in favor"
-  },
-  {
-   "motion": "Enter into Executive Session and adjourn the meeting after exiting Executive Session to discuss strategy with respect to collective bargaining (Fire Union and Public Employee Agreement)",
-   "moved_by": "L. Franco",
-   "seconded_by": "H. Sroka",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion: l. franco 2\"d: h. sroka to enter into executive session and to adjourn the meeting after exiting executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining, where an open meeting may have a detrimental effect on the government's bargaining position and the chair so declares. i. (fire union); ii. (public employee agreement). vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to enter into executive session and to adjourn the meeting after exiting executive session: pursuant to mgl c. 30, section 21, paragraph 3"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned minutes via macOS Vision. One agenda item (ratification of Town Manager's appointment of seasonal lifeguards) lists movers and seconders but no vote outcome is recorded, so it was not included as a vote.",
- "cost_usd": 0.138099
+ "note": "Text is macOS Vision OCR with visible errors (e.g. '300t', 'Scasonal', '2\"d'); quotes were copied as printed. Attendance is not recorded by roll call; statuses are inferred from speaking or voting, and 'not stated' is used where the minutes do not say. The motion lines print 'H. Sroka' and 'L. Franco', while speaking and vote lines print 'Ms. Sroka' and 'Mr. Franco'; these are treated as the same members but kept as printed. Votes are recorded as 'All in Favor' with no count, except the executive session motion, which prints three aye names (Ms. Sroka, Mr. Franco, Mr. Alonzo); outcome is recorded as 'passed' without a count. The ratification of seasonal beach staff has a motion but no printed result; the page break splits it, so the mover and seconder are read from adjacent labels. The motion text for that ratification is not printed. Executive session minutes are separate and not in this text. The staffing table on the last page has no printed heading in the OCR, so its title is unknown. Ms. Lemieux's role is not printed.",
+ "cost_usd": 0.02361821,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Alonzo",
+   "role": "Vice Chairman (presided)",
+   "status": "present",
+   "quote": "vice chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux reported this is a follow-up item from previous ongoing discussions."
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "Select Board member (minutes also print H. Sroka)",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "Select Board member (minutes also print L. Franco)",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Frank Serretti",
+   "role": "auditor, Powers & Sullivan (Meeting with Auditors Powers & Sullivan)",
+   "status": "present",
+   "quote": "frank serretti began by thanking the town manager, finance director, treasurer/collector and the rest of the"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "consultant, McCarty Engineering",
+   "status": "present",
+   "quote": "our consultant, brian marchetti of mccarty engineering. he did a study for the"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Lunenburg Water District Chair",
+   "status": "present",
+   "quote": "mark bursch, lunenburg water district chair, provided an update on the pfas issue."
+  },
+  {
+   "name": "Thomas Laford",
+   "role": "not stated (53 Pleasant Street)",
+   "status": "present",
+   "quote": "thomas laford, 53 pleasant street, proposed naming the town beach house after long-time resident"
+  },
+  {
+   "name": "Ned Pratt",
+   "role": "trustee, Flat Hill Homeowner's Association",
+   "status": "present",
+   "quote": "ned pratt, paul sarapsas and sleu soukamnuth introduced themselves as trustees of the flat hill homeowner's"
+  },
+  {
+   "name": "Paul Sarapsas",
+   "role": "trustee, Flat Hill Homeowner's Association",
+   "status": "present",
+   "quote": "ned pratt, paul sarapsas and sleu soukamnuth introduced themselves as trustees of the flat hill homeowner's"
+  },
+  {
+   "name": "Sleu Soukamnuth",
+   "role": "trustee, Flat Hill Homeowner's Association",
+   "status": "present",
+   "quote": "ned pratt, paul sarapsas and sleu soukamnuth introduced themselves as trustees of the flat hill homeowner's"
+  },
+  {
+   "name": "Chris St. Germaine",
+   "role": "resident, 268 Flat Hill Road",
+   "status": "present",
+   "quote": "chris st. germaine, 268 flat hill road, stated he has a grandfathered buildable 2 acre lot"
+  },
+  {
+   "name": "Susan Whalen",
+   "role": "resident, 377 Flat Hill Road",
+   "status": "present",
+   "quote": "susan whalen, 377 flat hill road, asked if that lot could be used to detain water on it."
+  },
+  {
+   "name": "David Melvin",
+   "role": "resident, 655 Page Street",
+   "status": "present",
+   "quote": "david melvin, 655 page street, asked if a geological survey had been done."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "resident, 672 Page Street",
+   "status": "present",
+   "quote": "chris menard, 672 page street, stated taking no action causes the storm water to end up in beaver brook"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karin menard, stated the people on page street are being affected by a new development's drainage system"
+  },
+  {
+   "name": "Mr. Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. burney added there are other requirements as well."
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "appointee, 21 Francis Ave.",
+   "status": "present",
+   "quote": "laura brzozoski stated she had been on the cultural council and planned the arts festival"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes recorder)",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine m. peterson elaine m. peterson executive assistant ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board directed Thomas Laford's request to name the Town beach house after Genevieve Nass to the Parks Commission, the caretakers of the property.",
+   "quote": "he was directed to the parks commission who are the caretakers of the property."
+  },
+  {
+   "decision": "Board members were directed to submit their digital evaluations of the Town Manager and then make an appointment to review them with her.",
+   "quote": "mr. alonzo reminded the board that town manager has submitted her self evaluation to all of them, so you should start doing your digital evaluations of her."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stabilization funds at FY22 year end",
+   "what_was_recorded": "The auditor reported the general stabilization fund, zoning, vehicle and equipment, and health insurance stabilization balances.",
+   "figures_as_printed": [
+    "$2.6 million",
+    "$100,000",
+    "$231,000",
+    "$1.5 million",
+    "$300,000",
+    "$373,000"
+   ],
+   "quote": "the stabilization funds and your general stabilization fund totals $2.6 million; that's up about $100,000 from"
+  },
+  {
+   "topic": "General Fund results FY22",
+   "what_was_recorded": "The auditor reported the General Fund balance increase, revenues over budget, and expenditures under budget.",
+   "figures_as_printed": [
+    "$852,000",
+    "$1.6 million",
+    "$585,000",
+    "$307,000",
+    "$238,000",
+    "$151,000",
+    "$754,000",
+    "$1.5 million"
+   ],
+   "quote": "regarding the general fund, your operations resulted in an $852,000 increase in the fund balance"
+  },
+  {
+   "topic": "OPEB trust and liability",
+   "what_was_recorded": "The auditor reported the Town's OPEB contribution, trust net position, investment loss, and net OPEB liability change.",
+   "figures_as_printed": [
+    "$181,000",
+    "$652,000",
+    "$118,000",
+    "$50.8 million",
+    "$14.8 million"
+   ],
+   "quote": "the town contributed another $181,000 to the other post-employment benefits (opeb) trust fund in fy 22."
+  },
+  {
+   "topic": "Worcester County Regional Retirement System net pension liability",
+   "what_was_recorded": "The auditor reported the net pension liability and its decrease from the prior year.",
+   "figures_as_printed": [
+    "$17.4 million",
+    "$2.4 million"
+   ],
+   "quote": "the liability there was $17.4 million and that was a decrease of $2.4 million from the prior year."
+  },
+  {
+   "topic": "Federal awards expended in 2022",
+   "what_was_recorded": "The auditor reported federal expenditures above the audit threshold and their main components.",
+   "figures_as_printed": [
+    "$750,000",
+    "$1.9 million",
+    "$808,000",
+    "$556,000",
+    "$299,000",
+    "$282,000"
+   ],
+   "quote": "the town expended $1.9 million during 2022. $808,000 of that was for the school lunch program"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed accounts payable, payroll and deductions warrants.",
+   "figures_as_printed": [
+    "$301,536.34",
+    "$903,572.39",
+    "$207,088.54"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $301,536.34"
+  },
+  {
+   "topic": "Mass Development award size for 925 Mass Ave",
+   "what_was_recorded": "Town Manager reported that Mass Development typically awards no more than a set amount for this type of project.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "they typically award no more than $50,000 for this type of project"
+  },
+  {
+   "topic": "Air conditioner capital article over budget",
+   "what_was_recorded": "The school returned to the committees with a new proposal because last year's approved air conditioner article went over what was budgeted. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "capital article about air conditioners last year that got approved, but the amount went over what was budgeted"
+  },
+  {
+   "topic": "Opioid settlement stabilization fund",
+   "what_was_recorded": "The motion to create a stabilization fund and transfer the FY23 opioid settlement receipts to it was described for the Town Meeting warrant. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "so the motion will be to create the stabilization fund and to transfer the amount that we received in fiscal 23 from the opioid settlement to that stabilization fund."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed transfer of FY23 opioid settlement receipts into a newly created stabilization fund, to be voted as a Town Meeting warrant article.",
+   "amount_as_printed": "not printed",
+   "outcome": "proposed for Annual Town Meeting; not voted by the board in this meeting",
+   "quote": "so the motion will be to create the stabilization fund and to transfer the amount that we received in fiscal 23 from the opioid settlement to that stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Death of John Henshaw",
+   "speaker": "Ms. Lemieux",
+   "stated_role": "",
+   "quote": "it was noted by ms. lemieux that longtime resident john henshaw had passed away on april 11"
+  },
+  {
+   "topic": "Boys & Girls Club fundraiser",
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "quote": "mr. alonzo reminded all of the lunenburg boys & girls club fundraiser"
+  },
+  {
+   "topic": "Naming the Town beach house after Genevieve Nass",
+   "speaker": "Thomas Laford",
+   "stated_role": "",
+   "quote": "thomas laford, 53 pleasant street, proposed naming the town beach house after long-time resident"
+  },
+  {
+   "topic": "PFAS in water: EPA limits",
+   "speaker": "Mark Bursch",
+   "stated_role": "Lunenburg Water District Chair",
+   "quote": "mark bursch, lunenburg water district chair, provided an update on the pfas issue."
+  },
+  {
+   "topic": "Flat Hill Road drainage: history and solutions",
+   "speaker": "Ned Pratt, Paul Sarapsas and Sleu Soukamnuth",
+   "stated_role": "trustees of the Flat Hill Homeowner's Association",
+   "quote": "ned pratt, paul sarapsas and sleu soukamnuth introduced themselves as trustees of the flat hill homeowner's"
+  },
+  {
+   "topic": "Flat Hill Road drainage: buildable lot runoff",
+   "speaker": "Chris St. Germaine",
+   "stated_role": "268 Flat Hill Road",
+   "quote": "chris st. germaine, 268 flat hill road, stated he has a grandfathered buildable 2 acre lot"
+  },
+  {
+   "topic": "Flat Hill Road drainage: detaining water on neighboring lot",
+   "speaker": "Susan Whalen",
+   "stated_role": "377 Flat Hill Road",
+   "quote": "susan whalen, 377 flat hill road, asked if that lot could be used to detain water on it."
+  },
+  {
+   "topic": "Flat Hill Road drainage: geological survey and past studies",
+   "speaker": "David Melvin",
+   "stated_role": "655 Page Street",
+   "quote": "david melvin, 655 page street, asked if a geological survey had been done."
+  },
+  {
+   "topic": "Flat Hill Road drainage: storm water to Beaver Brook",
+   "speaker": "Chris Menard",
+   "stated_role": "672 Page Street",
+   "quote": "chris menard, 672 page street, stated taking no action causes the storm water to end up in beaver brook"
+  },
+  {
+   "topic": "Flat Hill Road drainage: new development drainage on Page Street",
+   "speaker": "Karin Menard",
+   "stated_role": "",
+   "quote": "karin menard, stated the people on page street are being affected by a new development's drainage system"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting notice",
+   "resolution": "opened; recording and broadcast notice given",
+   "quote": "vice chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of",
+   "tags": [
+    "open meeting law",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action recorded",
+   "quote": "thomas laford, 53 pleasant street, proposed naming the town beach house after long-time resident",
+   "tags": [
+    "public comment",
+    "beach",
+    "PFAS"
+   ]
+  },
+  {
+   "topic": "Meeting with auditors Powers & Sullivan, FY 2022 audit",
+   "resolution": "presented; board thanked auditors and staff",
+   "quote": "meeting with auditors powers & sullivan re: fy 2022 audit",
+   "tags": [
+    "audit",
+    "finance",
+    "FY2022"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road drainage",
+   "resolution": "discussed; no action recorded",
+   "quote": "further discussion ensued on different solutions to the flooding.",
+   "tags": [
+    "drainage",
+    "flooding",
+    "Flat Hill Road",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Appointment to 300th Anniversary Committee",
+   "resolution": "appointed (Laura Brzozoski)",
+   "quote": "to appoint laura brzozoski to the 300t anniversary committee",
+   "tags": [
+    "appointments",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Ratification of seasonal beach staff",
+   "resolution": "motion recorded; result not stated",
+   "quote": "ratification of town manager's appointment of seasonal beach director elizabeth simeone and",
+   "tags": [
+    "personnel",
+    "beach",
+    "lifeguards"
+   ]
+  },
+  {
+   "topic": "Resignations and employment openings",
+   "resolution": "noted; no action recorded",
+   "quote": "ms. lemieux reported we received recent resignations from the conservation administrative assistant",
+   "tags": [
+    "personnel",
+    "vacancies",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Announcements and 925 Mass Ave update",
+   "resolution": "noted; no action recorded",
+   "quote": "the annual town meeting will be on saturday, may 6' at 9:00 a.m. at the lunenburg",
+   "tags": [
+    "town meeting",
+    "election",
+    "925 Mass Ave"
+   ]
+  },
+  {
+   "topic": "FY2024 budget, FY2024 capital plan, and Annual Town Meeting warrant articles",
+   "resolution": "article 14 recommended for approval; opioid stabilization article described",
+   "quote": "to recommend approval of warrant article#14 with the information presented",
+   "tags": [
+    "budget",
+    "warrant articles",
+    "Town Meeting",
+    "opioid settlement"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of February 21, 2023",
+   "resolution": "approved",
+   "quote": "to approve the minutes of february 21, 2023 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $301,536.34",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Committee reports and upcoming meetings",
+   "resolution": "reported; no action recorded",
+   "quote": "mr. alonzo reported the finance committee met last thursday and approved their report for the",
+   "tags": [
+    "committees",
+    "schedule",
+    "tax abatement",
+    "school transportation"
+   ]
+  },
+  {
+   "topic": "Town Manager self-evaluation",
+   "resolution": "board members directed to complete digital evaluations",
+   "quote": "town manager has submitted her self evaluation to all of them, so you should start doing your digital evaluations of her.",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Staffing table by department",
+   "resolution": "listed; no action recorded",
+   "quote": "6 ft police, 6 ft fire, 2 ft facilities (one was a restored position cut in a previous fy)",
+   "tags": [
+    "staffing",
+    "positions",
+    "FTE"
+   ]
+  },
+  {
+   "topic": "Executive session: collective bargaining",
+   "resolution": "entered executive session; minutes separate; adjourned at 9:04 p.m.",
+   "quote": "mr. alonzo stated the board would entering executive session.",
+   "tags": [
+    "collective bargaining",
+    "executive session",
+    "Fire Union"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY2022 audit",
+  "FY2024 budget",
+  "Annual Town Meeting",
+  "warrant articles",
+  "Flat Hill Road drainage",
+  "stormwater",
+  "PFAS water",
+  "appointments",
+  "personnel",
+  "collective bargaining",
+  "executive session",
+  "reserves and stabilization funds",
+  "OPEB",
+  "pension liability",
+  "Town Manager evaluation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

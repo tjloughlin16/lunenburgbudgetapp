@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-02-14",
  "docid": "1921",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the January 10, 2023 COA meeting",
+   "motion": "Approve the minutes of the January 10, 2023 COA meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Mr. McGuigan",
    "outcome": "passed",
@@ -20,23 +20,283 @@
    "quote": "mr. lincoln motioned to approve the minutes from the january 10, 2023 coa meeting, mr. mcguigan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "allow the Chairperson to speak on behalf of the COA on the budget",
+   "motion": "Allow the Chairperson to speak on behalf of the COA on the budget.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "Ms. O'Sullivan",
+   "seconded_by": "Ms. O’Sullivan",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. lincoln motioned to allow the chairperson to speak on behalf of the coa on the budget. ms. o'sullivan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 10:43 a.m.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "at 10:43 a.m. mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0751515
+ "dropped_unquoted": 1,
+ "note": "Text is a clean two-page extract with no scan or missing pages. Three recorded motions, each with a stated result. Mr. Lincoln is printed without a first name, so moved_by keeps \"Mr. Lincoln\" as printed; the roster has both Pete Lincoln and Deb Lincoln, and the minutes do not say which one moved. The line \"Unanimously approved by COA at their March 21,2023 meeting\" is an approval stamp on these minutes, not a vote at this meeting, so it is not recorded as a vote. No dollar figures are printed anywhere in the text, so every budget item has an empty figures_as_printed list. Public comment is recorded as \"none\", so no speakers are listed.",
+ "cost_usd": 0.01626671,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-chairperson",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, vice-chairperson jane rabbitt, betty digiacomo, diane nowd, pete lincoln, judy tarbell, jim mcguigan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "susan o'sullivan, amanda koeck coa administrative assistant"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "COA Administrative Assistant",
+   "status": "present",
+   "quote": "susan o'sullivan, amanda koeck coa administrative assistant"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "absent",
+   "quote": "absent: director susan doherty, cheryl moisan"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: director susan doherty, cheryl moisan"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "COA Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: coa liaison to the eagle house supporters marilyn talley, select board member lou franco, lunenburg resident cathy beale"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "guests: coa liaison to the eagle house supporters marilyn talley, select board member lou franco, lunenburg resident cathy beale"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "guests: coa liaison to the eagle house supporters marilyn talley, select board member lou franco, lunenburg resident cathy beale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to host a workshop at the Lunenburg Adult Activity Center on how property owners can file an appeal if an abatement application is denied.",
+   "quote": "board members agreed they'd like to host a workshop at the lunenburg adult activity center informing property owners of how they could file an appeal if their abatement application is denied."
+  },
+  {
+   "decision": "Board agreed to create a float for the Lunenburg 300th Anniversary celebration and to feature something at the Lunenburg Adult Activity Center each month to commemorate the 300th anniversary.",
+   "quote": "board members agreed they'd like to create a float to display, and also would like to feature something at the lunenburg adult activity center each month to commemorate the 300th anniversary of the town."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA FY24 budget request",
+   "what_was_recorded": "The Town Manager asked the Director to scale back the FY24 budget request, then later said the original requests could stand; no dollar figures are printed.",
+   "quote": "ms. koeck reported that the town manager did ask ms. doherty to scale back her budget requests, and the director found several ways",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "COA budget level and funding",
+   "what_was_recorded": "Ms. Lincoln said the COA budget is low compared with other departments and that the COA relies heavily on grants and outside funding; she opined that all COA salaries should come from the municipal budget. No dollar figures are printed.",
+   "quote": "pointed out that the coa budget is low, compared to other departments in town, and that the coa relies heavily on grants and outside funding sources to operate.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Proposed parking lot plan (possible Town Meeting warrant article)",
+   "what_was_recorded": "The Capital Planning Committee asked for more information on the proposed parking lot before supporting it, and suggested the COA put the request forward as a warrant article. No dollar figure is printed.",
+   "quote": "the capital planning committee suggested the coa get more information on the plan and then to put the request in as a warrant article",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: volunteer application from Cathy Beale",
+   "resolution": "noted",
+   "tags": [
+    "volunteers",
+    "board membership"
+   ],
+   "quote": "ms. rabbitt introduced cathy beale, who filled out a volunteer application indicating her interest in serving on the council on aging"
+  },
+  {
+   "topic": "Minutes approval, January 10, 2023",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. lincoln motioned to approve the minutes from the january 10, 2023 coa meeting, mr. mcguigan seconded. on vote, motion carried unanimously."
+  },
+  {
+   "topic": "Communication with Lunenburg residents (abatements, senior tax relief)",
+   "resolution": "workshop agreed; discussed senior tax relief",
+   "tags": [
+    "property tax abatement",
+    "senior tax relief",
+    "outreach",
+    "workshops"
+   ],
+   "quote": "board members agreed they'd like to host a workshop at the lunenburg adult activity center informing property owners of how they could file an appeal"
+  },
+  {
+   "topic": "Possible warrant article for May Town Meeting (parking lot)",
+   "resolution": "discussed; Chairperson authorized to speak on COA budget",
+   "tags": [
+    "warrant article",
+    "capital planning",
+    "parking lot",
+    "budget"
+   ],
+   "quote": "the capital planning committee suggested the coa get more information on the plan and then to put the request in as a warrant article"
+  },
+  {
+   "topic": "Board member search",
+   "resolution": "discussed; one vacancy remains",
+   "tags": [
+    "board membership"
+   ],
+   "quote": "ms. lincoln reminded board members that there is still one more vacancy to be filled."
+  },
+  {
+   "topic": "COA orientation packet",
+   "resolution": "discussed",
+   "tags": [
+    "orientation",
+    "governance"
+   ],
+   "quote": "ms. lincoln suggested members go through their older information, and compare it to the draft packet."
+  },
+  {
+   "topic": "COA board members town email",
+   "resolution": "no action",
+   "tags": [
+    "governance"
+   ],
+   "quote": "coa board members town email: no report"
+  },
+  {
+   "topic": "Lunenburg 300th Celebration",
+   "resolution": "float and monthly feature agreed",
+   "tags": [
+    "300th anniversary",
+    "events"
+   ],
+   "quote": "board members agreed they'd like to create a float to display, and also would like to feature something at the lunenburg adult activity center each month"
+  },
+  {
+   "topic": "Director's report (in Director's absence, Ms. Koeck)",
+   "resolution": "received",
+   "tags": [
+    "director's report",
+    "budget",
+    "annual report",
+    "building",
+    "events"
+   ],
+   "quote": "in the director's absence, ms. koeck gave a report."
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "received",
+   "tags": [
+    "Eagle House",
+    "fundraising"
+   ],
+   "quote": "ms. talley reported that the board has found someone to assist the treasurer of their board."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board comment: burst pipe and furniture",
+   "resolution": "answered; no damage",
+   "tags": [
+    "building",
+    "facilities"
+   ],
+   "quote": "mr. lincoln asked if any furniture in bucky's corner was damaged due to the burst pipe."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:43 a.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "at 10:43 a.m. mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "senior services",
+  "property tax abatement",
+  "senior tax relief",
+  "warrant article",
+  "parking lot",
+  "capital planning",
+  "FY24 budget",
+  "grants and outside funding",
+  "300th anniversary",
+  "volunteer application",
+  "board vacancy",
+  "Eagle House Supporters",
+  "building damage"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

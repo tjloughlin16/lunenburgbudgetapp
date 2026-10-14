@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-01-09",
  "docid": "166",
@@ -12,16 +12,166 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing to January 23, 2023 at 6:05 p.m.",
+   "motion": "Continue the public hearing on 1325 Massachusetts Avenue to January 23, 2023, at 6:05 p.m.",
    "moved_by": "M. Brenner",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "m. brenner made motion to continue the hearing to january 23, 2023, 6:05 p.m. , t. willsmer seconded, roll call vote- a. reid, aye; m. brenner, aye; t. willsmer, aye; m. allison, aye. passed unanimously",
-   "quote_taken_from_text": true
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "m. brenner made motion to continue the hearing to january 23, 2023, 6:05 p.m. , t. willsmer seconded, roll call vote- a. reid, aye; m. brenner, aye; t. willsmer, aye; m. allison, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1199261
+ "note": "Text is complete for pages 1-2 of the minutes. One recorded vote (continuance, unanimous, roll call of 4 present members; Amanda Reid remote). No dollar figures appear, so budget_items and transfers are empty. The Erskine letter is 'on file in the Planning Office' and is not in this text. The hearing was recessed at 7:43 p.m. with no motion recorded. The floor-drain item is a noted arrangement, not a board vote.",
+ "cost_usd": 0.014926810000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the owners/applicants (Dillis & Roy)",
+   "status": "present",
+   "quote": "the owners/applicants were represented by greg roy, dillis & roy"
+  },
+  {
+   "name": "D. Proctor",
+   "role": "applicant (owner)",
+   "status": "present",
+   "quote": "d. proctor noted there would be fencing to the rear of each storage bay"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "applicant (owner, Trustee)",
+   "status": "not stated",
+   "quote": "applicants- daniel & jean proctor, 1529 massachusetts avenue, lunenburg, ma"
+  },
+  {
+   "name": "Mike Rash",
+   "role": "public, 74 Townsend Harbor Road",
+   "status": "present",
+   "quote": "mike rash, 74 townsend harbor road - he had concerns with the size of the building to the rear of the site"
+  },
+  {
+   "name": "Kathy McWilliams",
+   "role": "on behalf of abutters Gerry and Dale Erskine",
+   "status": "present",
+   "quote": "it was read into record by kathy mcwilliams."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of floor drains to take place between the owners and the Sewer Commission (an arrangement noted at the hearing, not a board vote).",
+   "quote": "discussion would take place between the owners and the sewer commission regarding floor drains."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike Rash",
+   "stated_role": "74 Townsend Harbor Road",
+   "topic": "building size to rear of site; hours of operation",
+   "quote": "mike rash, 74 townsend harbor road - he had concerns with the size of the building to the rear of the site"
+  },
+  {
+   "speaker": "Kathy McWilliams",
+   "stated_role": "on behalf of the Erskine's (abutters)",
+   "topic": "abutter letter read into record; request for architectural rendering",
+   "quote": "it was read into record by kathy mcwilliams."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: site plan approval and stormwater permit, 1325 Massachusetts Avenue",
+   "resolution": "opened; applicant presentation and abutter comment taken",
+   "quote": "for a contractor yard, personal improvement building, and office building at 1325 massachusetts avenue",
+   "tags": [
+    "site plan review",
+    "stormwater",
+    "public hearing",
+    "contractor yard",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Applicant plans: grading, drainage, landscaping, lighting",
+   "resolution": "plans reviewed; fencing, berm and lighting points discussed",
+   "quote": "a grading and drainage plan was reviewed",
+   "tags": [
+    "grading",
+    "drainage",
+    "landscaping",
+    "lighting",
+    "fencing"
+   ]
+  },
+  {
+   "topic": "Abutter and resident concerns: building size and hours",
+   "resolution": "hours noted as Zoning Board of Appeals jurisdiction; no board action recorded",
+   "quote": "mike rash, 74 townsend harbor road - he had concerns with the size of the building to the rear of the site",
+   "tags": [
+    "abutters",
+    "building size",
+    "hours of operation",
+    "jurisdiction"
+   ]
+  },
+  {
+   "topic": "Continuance of hearing",
+   "resolution": "continued to January 23, 2023, 6:05 p.m.",
+   "quote": "m. brenner made motion to continue the hearing to january 23, 2023, 6:05 p.m.",
+   "tags": [
+    "continuance",
+    "public hearing"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater permit",
+  "contractor yard",
+  "1325 Massachusetts Avenue",
+  "abutters",
+  "zoning",
+  "earth removal",
+  "remote participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2023-04-10",
  "docid": "158",
@@ -12,58 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 603 Massachusetts Avenue",
+   "motion": "Endorse the ANR Plan for 603 Massachusetts Avenue.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. brenner made motion to endorse the anr plan for 603 massachusetts avenue, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve the site plan approval for 383 Whalom Road with Standard Conditions and Special Conditions",
+   "motion": "Approve the site plan for 383 Whalom Road with Standard Conditions and the Special Conditions discussed.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan approval for 383 whalom road with standard conditions as well as special conditions discussed above , a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the site plan approval for 383 whalom road"
   },
   {
-   "motion": "Approve the tree removal request per the scenic road plan for 759 and 763 Northfield Road",
+   "motion": "Approve the tree removal request per the scenic road plan for 759 and 763 Northfield Road.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the tree removal request per the scenic road plan for 759 and 763 northfield road, a. reid seconded, passed unanimously ",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the tree removal request per the scenic road plan for 759 and 763 northfield road"
   },
   {
-   "motion": "Recommend approval of the zoning warrant article",
+   "motion": "Recommend approval of the zoning warrant article.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. brenner made motion to recommend approval of the article, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve all minutes from 3/27/23, 3/27/23 (5 Summer Street), and 3/27/23 (383 Whalom Road)",
+   "motion": "Approve the minutes of 3/27/23 (the three listed sets of minutes).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0749861
+ "note": "Digital text extraction of a typed minutes document, not a scan; no OCR caveat applies. Votes are recorded as \"passed unanimously\" with no tallies; outcome is recorded as \"passed\". Three items say \"See separate minutes\" (383 Whalom Road hearing, 759 & 763 Northfield Road, Zoning Warrant Article); those separate minutes are not in this text, so only the motions recorded here are captured. Marjorie J. Boggio appears only in the letterhead as Administrative Assistant and is not recorded as taking part, so she is omitted. No public comment section is recorded. No dollar figures appear in the text, so budget_items and transfers are empty.",
+ "cost_usd": 0.016556210000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, timothy willsmer, adam burney"
+  },
+  {
+   "name": "Stephen Xarras",
+   "role": "applicant, ANR plan, 603 Massachusetts Avenue",
+   "status": "not stated",
+   "quote": "the applicant stephen xarras, 21 beal street, was represented by greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Dillis and Roy)",
+   "status": "not stated",
+   "quote": "was represented by greg roy, dillis and roy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Two Flat Hill Road / Watt Street tri-party sureties (Lots 7 and 8) had to be re-signed with a different financial institution; the Board also signed a surety for 360 Flat Hill Road.",
+   "quote": "in addition to the two no ted sureties, the board also signed a surety for 360 flat hill road."
+  },
+  {
+   "decision": "5 Summer Street and 383 Whalom Road were reviewed and endorsed by the Board (no motion recorded).",
+   "quote": "5 summer street - reviewed and endorsed by board."
+  },
+  {
+   "decision": "Tree removal for 759 and 763 Northfield Road: a Decision is to be prepared for Board approval.",
+   "quote": "a decision would be prepared for board approval."
+  },
+  {
+   "decision": "The Board was in favor of forming a Master Planning Committee; A. Burney to bring a proposed structure of the Committee to the next Board meeting.",
+   "quote": "the board was in favor of the formation of a master planning committee."
+  },
+  {
+   "decision": "A. Burney to provide Board members with DEP's model aquifer bylaw and the Town's existing bylaw.",
+   "quote": "a. burney would provide board members with both"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Flat Hill Road & Watt Street tri-party sureties",
+   "resolution": "noted; sureties re-signed, one new surety signed",
+   "quote": "two sureties [lots 7 and 8 (21 and 19 watt street respectively)] were signed",
+   "tags": [
+    "sureties",
+    "tri-party",
+    "Flat Hill Road"
+   ]
+  },
+  {
+   "topic": "ANR plan, 603 Massachusetts Avenue",
+   "resolution": "endorsed",
+   "quote": "m. brenner made motion to endorse the anr plan for 603 massachusetts avenue",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "383 Whalom Road public hearing (site plan)",
+   "resolution": "approved with standard and special conditions",
+   "quote": "m. brenner made motion to approve the site plan approval for 383 whalom road",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "Whalom Road"
+   ]
+  },
+  {
+   "topic": "759 & 763 Northfield Road tree removal (scenic road)",
+   "resolution": "approved; decision to be prepared",
+   "quote": "m. brenner made motion to approve the tree removal request per the scenic road plan",
+   "tags": [
+    "scenic road",
+    "tree removal",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Zoning warrant article",
+   "resolution": "recommended for approval",
+   "quote": "m. brenner made motion to recommend approval of the article",
+   "tags": [
+    "zoning",
+    "warrant article",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Decisions: review and endorsement",
+   "resolution": "5 Summer Street and 383 Whalom Road endorsed",
+   "quote": "5 summer street - reviewed and endorsed by board.",
+   "tags": [
+    "decisions",
+    "5 Summer Street",
+    "383 Whalom Road"
+   ]
+  },
+  {
+   "topic": "Board discussions: solar bylaw, driveways and entrances",
+   "resolution": "listed; no action recorded",
+   "quote": "solar bylaw section 2 50- 6.4., driveways & entrances",
+   "tags": [
+    "solar bylaw",
+    "driveways",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval (3/27/23)",
+   "resolution": "approved",
+   "quote": "m. brenner made motion to approve all minute s listed below, a. reid seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Agricultural Commission recommended a new member and alternate",
+   "quote": "the commission recommended approval to the select board of a new member and an alternate.",
+   "tags": [
+    "committees",
+    "Agricultural Commission",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Master Planning services update",
+   "resolution": "Board in favor of forming a Master Planning Committee",
+   "quote": "the board was in favor of the formation of a master planning committee.",
+   "tags": [
+    "master plan",
+    "consultant",
+    "OverUnder",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Aquifer Protection District",
+   "resolution": "discussed; Burney to provide DEP and Town bylaws",
+   "quote": "aquifer protection district - at annual town meeting may 2022 the board had proposed some changes to the district",
+   "tags": [
+    "aquifer protection",
+    "Zone II",
+    "DEP",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; no action",
+   "quote": "april 24- hearing, 39 main street",
+   "tags": [
+    "schedule",
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "Ongoing items (MBTA Communities, master plan, growth)",
+   "resolution": "noted; no action",
+   "quote": "a. burney was working with mrpc regarding the mbta communities.",
+   "tags": [
+    "MBTA Communities",
+    "master plan",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Board comment: member attendance",
+   "resolution": "noted; no action",
+   "quote": "m. brenner reiterated his concern at the last board meeting regarding",
+   "tags": [
+    "attendance",
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:08 p.m.",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan",
+  "ANR",
+  "scenic road",
+  "tree removal",
+  "zoning warrant article",
+  "aquifer protection",
+  "master planning",
+  "sureties",
+  "minutes approval",
+  "land use"
+ ],
+ "dropped_unquoted_by_field": {}
 }

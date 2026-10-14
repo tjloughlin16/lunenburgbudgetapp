@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-03-22",
  "docid": "143",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the amended minutes of the March 14, 2023 meeting as presented",
+   "motion": "Approve the minutes of the March 14, 2023 meeting as presented.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -20,40 +20,187 @@
    "quote": "motion by w. bertrand to accept and approve the minutes of the march 14, 2023 meeting as presented second: s. andrews roll call vote: all in favor"
   },
   {
-   "motion": "Recommend J. Bilotta as the new chairperson",
+   "motion": "Recommend J. Bilotta as the new chairperson.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a motion by w. bertrand to recommend j. bilotta as the new chairperson. seconded: s. andrews roll call vote: all in favor"
   },
   {
-   "motion": "Recommend W. Bertrand as the new vice chairperson",
+   "motion": "Recommend W. Bertrand as the new vice chairperson.",
    "moved_by": "S. Andrews",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a motion by s. andrews to recommend w. bertrand as the new vice chairperson seconded: s. andrews roll call vote: all in favor"
   },
   {
-   "motion": "Push completion of the project to the fall and recommend a retroactive adjustment be made to employees impacted by the delay, back to July 2023",
+   "motion": "Push completion of the project to the fall and recommend a retroactive adjustment for employees impacted by the delay, upon completion and approval, back to July 2023.",
    "moved_by": "J. Bilotta",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion by j. bilotta to push completion of our project to the fall and recommend a retroactive adjustment be made to employees impacted by the delay, upon completion and approval of the project, back to july 2023. second: s. andrews discussion regarding this mo",
-   "quote_taken_from_text": true
+   "quote": "a motion by j. bilotta to push completion of our project to the fall and recommend a retroactive adjustment be made to employees impacted by the delay"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:53pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:53pm by w. bertrand second: s. andrews roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:53pm by w. bertrand"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes appear to be OCR-scanned text. One sentence formatting is unclear: \"Motion by to adjourn meeting at 6:53pm by W. Bertrand\" appears to have OCR error but the vote is clearly recorded.",
- "cost_usd": 0.0847725
+ "note": "Text is an OCR (macOS Vision) read of a scanned set of minutes, not the original; quotes are checked against this OCR text. Votes are recorded only as 'All in Favor' or 'All in favor' with no per-member tally, so no counts are stated. The first page reads 'joined meeting via phone 5:56pm' with no name given. The chair opened the meeting at 5:00pm, and the text does not say who the 'members noted in attendance' were. The vice-chair motion prints S. Andrews as both mover and seconder, recorded as printed. The adjournment motion reads 'Motion by to adjourn ... by W. Bertrand' with the mover name placed at the end, recorded as printed. Page 2 begins mid-sentence ('16 levels.'), so some text may be missing at the page break. No dollar amounts are printed; the only figures are percentages (2.5% and 3%). Mary Beth is named and is probably the HR consultant, but the minutes do not state that link.",
+ "cost_usd": 0.01579981,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Bilotta",
+   "role": "presided; opened the meeting and was recommended as new chairperson",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:00pm with members noted in attendance"
+  },
+  {
+   "name": "W. Bertrand",
+   "role": "committee member as printed by motion; recommended as vice chairperson",
+   "status": "present",
+   "quote": "motion by w. bertrand to accept and approve the minutes of the march 14, 2023 meeting as presented"
+  },
+  {
+   "name": "S. Andrews",
+   "role": "committee member as printed by seconds and motions",
+   "status": "present",
+   "quote": "second: s. andrews"
+  },
+  {
+   "name": "S. Dougherty",
+   "role": "public comment; role not stated",
+   "status": "present",
+   "quote": "s. dougherty asked if the proposed new sap grades would be discussed"
+  },
+  {
+   "name": "J. Belliveau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "j. belliveau reviewed the group of questions that had previously been sent to the consultant for review"
+  },
+  {
+   "name": "Mary Beth",
+   "role": "not stated; the minutes refer to the HR consultant without linking the name explicitly",
+   "status": "present",
+   "quote": "mary beth left meeting at 6:34pm"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group agreed to meet again with Mary Beth to resolve the remaining issues and complete project goals; no specific date was agreed.",
+   "quote": "the group agreed that we should meet again with mary beth to iron out the remaining issues and completion of project goals."
+  },
+  {
+   "decision": "The group determined not to propose a COLA, staying with the initial motion to push the project to the fall.",
+   "quote": "ultimately the group determined to stay with the initial motion and not propose a cola."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COLA benchmark from other municipal groups",
+   "what_was_recorded": "The group reviewed COLA figures targeted for other municipal groups; one had a 2.5% planned while other negotiations were not finalized.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "we found that not all contract negotiations had been finalized, but one had a 2.5% planned."
+  },
+  {
+   "topic": "3% COLA option to the current SAP grid",
+   "what_was_recorded": "The group discussed, and did not adopt, proposing a 3% COLA to the current grid alongside completing the project in the fall.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "this included just proposing a 3% cola to the current grid, and completing the project in the fall."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "S. Dougherty",
+   "stated_role": "not stated",
+   "topic": "whether proposed new SAP grades would be discussed",
+   "quote": "s. dougherty asked if the proposed new sap grades would be discussed, j. bilotta acknowledged that would happen during the meeting discussions."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "answered by the chair; SAP grades to be discussed later in the meeting",
+   "quote": "s. dougherty asked if the proposed new sap grades would be discussed, j. bilotta acknowledged that would happen during the meeting discussions.",
+   "tags": [
+    "public comment",
+    "SAP grades"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved as presented",
+   "quote": "amended minutes of the march 14, 2023 meeting were presented and reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reorganization",
+   "resolution": "approved recommendations of new chair and vice chair",
+   "quote": "j. bilotta raised the issue of the committee reorganization, needed due to the departure of our previous chairperson.",
+   "tags": [
+    "committee chair",
+    "vice chair",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Project timing and COLA",
+   "resolution": "project pushed to the fall with retroactive adjustment recommended; no COLA proposed",
+   "quote": "the group also discussed the timing of the project and the potential that we would not have enough time",
+   "tags": [
+    "timing",
+    "COLA",
+    "Town Meeting",
+    "Finance Committee",
+    "retroactive pay"
+   ]
+  },
+  {
+   "topic": "SAP grade review and benchmarks",
+   "resolution": "continued; meet again with the HR consultant, no date set",
+   "quote": "there were discussions on several positions that didn't seem to accurately be reflected in the proposed recommended grid.",
+   "tags": [
+    "SAP grades",
+    "benchmarking",
+    "HR consultant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:53pm",
+   "quote": "motion by to adjourn meeting at 6:53pm by w. bertrand",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "SAP salary grid",
+  "COLA",
+  "committee chair",
+  "HR consultant",
+  "project timing",
+  "retroactive pay",
+  "public comment",
+  "Town Meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

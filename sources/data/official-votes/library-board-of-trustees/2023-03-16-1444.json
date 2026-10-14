@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-03-16",
  "docid": "1444",
@@ -12,39 +12,310 @@
  },
  "votes": [
   {
-   "motion": "authorize the purchase of plants",
-   "moved_by": "Harry",
-   "seconded_by": "Dick",
+   "motion": "Authorize the purchase of plants for the Proctor Memorial Garden (unanimous).",
+   "moved_by": "Harry Kubetz",
+   "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "harry made a motion to authorize the purchase of plants. seconded by dick. the motion passed unanimously (and enthusiastically)."
+   "quote": "harry made a motion to authorize the purchase of plants. seconded by dick. the motion passed unanimously"
   },
   {
-   "motion": "accept the minutes of February 16, 2023 as amended",
-   "moved_by": "Kate",
-   "seconded_by": "Dick",
+   "motion": "Accept the minutes of February 16, 2023 as amended.",
+   "moved_by": "Kate McCarron",
+   "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "kate made a motion to accept the minutes of february 16, 2023 as amended, seconded by dick. the motion passed unanimously."
   },
   {
-   "motion": "accept the rules and regulations as amended",
-   "moved_by": "Dick",
-   "seconded_by": "Donna",
+   "motion": "Accept the rules and regulations as amended.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Donna Saiia",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "a motion to accept the rules and regulations as amended was made by dick. seconded by donna. the motion passed unanimously."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Dick",
-   "seconded_by": "Donna",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Donna Saiia",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by dick. seconded by donna. meeting was adjourned at 8:46 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are legible text, not a scan. Four votes recorded: one substantive (plant purchase), three procedural (prior minutes approval, rules adoption, adjournment).",
- "cost_usd": 0.0701181
+ "note": "Text is a readable extraction of pages 1-2 only; pages 3-11 are blank. The 'Attached Documents' list on page 2 names files that are not in the text. Votes were by voice and recorded only as 'passed unanimously' with no roll call or counts. The attendance line names people without marking absences, so status 'present' comes from the Attending list. Several quotes join lines broken by the extraction and are collapsed to single spaces. Apostrophes in one quote are curly as printed.",
+ "cost_usd": 0.01669011,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:47 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup, robin venezia - friends of the library assistant treasurer."
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup, robin venezia - friends of the library assistant treasurer."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup, robin venezia - friends of the library assistant treasurer."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Friends of the Library Assistant Treasurer",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom, maia wentrup, robin venezia - friends of the library assistant treasurer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry will email the town to reiterate what was agreed about the trust funds transfer.",
+   "quote": "harry will email the town and reiterate what was agreed to and what should happen."
+  },
+  {
+   "decision": "Harry said the ARPA request for the Proctor garden should include all three phases.",
+   "quote": "harry said the arpa request should include all three phases."
+  },
+  {
+   "decision": "Muir will look at the snow-closure date message on the library website.",
+   "quote": "muir said he would look at it."
+  },
+  {
+   "decision": "Dick will attend the town caucus meeting.",
+   "quote": "dick will attend the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 budget spending to date",
+   "what_was_recorded": "The Director reported the FY23 budget was 60% expended with 75% of the fiscal year elapsed, heating charges behind, and the program line up as expected.",
+   "figures_as_printed": [
+    "60%",
+    "75%"
+   ],
+   "quote": "the fy23 budget is 60% expended and we are 75% through the fiscal year."
+  },
+  {
+   "topic": "Upcoming materials costs",
+   "what_was_recorded": "Materials costs, mainly online materials and databases, were expected to come up.",
+   "figures_as_printed": [],
+   "quote": "a number of materials costs will be coming up, mainly online materials such as kanopy, mango, and online databases."
+  },
+  {
+   "topic": "Contracted services line",
+   "what_was_recorded": "The contracted services line was open and might be used for painting the community room.",
+   "figures_as_printed": [],
+   "quote": "muir said it is kind of open right now and may be used for painting the community room."
+  },
+  {
+   "topic": "FY24 preliminary budget",
+   "what_was_recorded": "The Director presented the FY24 budget to the finance committee; the preliminary budget was stated and most requests were funded.",
+   "figures_as_printed": [
+    "$539k"
+   ],
+   "quote": "the preliminary budget is $539k. most of the requests were funded."
+  },
+  {
+   "topic": "Copy machine lease and camera upgrades",
+   "what_was_recorded": "The copy machine lease and camera upgrades were funded in the town central purchasing and IT budgets rather than the library budget.",
+   "figures_as_printed": [],
+   "quote": "the copy machine lease and camera upgrades were funded in the town central purchasing and it budgets."
+  },
+  {
+   "topic": "Proctor garden construction and maintenance costs",
+   "what_was_recorded": "Jean was preparing numbers for the garden's construction and maintenance costs; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "jean is coming up with some numbers for construction and maintenance."
+  },
+  {
+   "topic": "Pay rates for library staff",
+   "what_was_recorded": "The town and HR, with a consultant, recommended increased pay rates for SAP library staff to reach market rates.",
+   "figures_as_printed": [],
+   "quote": "the town and hr are working with a consultant and are recommending increased pay rates for the sap library staff in order to come up to market rates."
+  },
+  {
+   "topic": "Heating charges",
+   "what_was_recorded": "Heating charges were reported as still a bit behind.",
+   "figures_as_printed": [],
+   "quote": "heating charges are still a bit behind."
+  },
+  {
+   "topic": "Trust fund interest and principal",
+   "what_was_recorded": "The trustees noted the principal of the trust funds cannot be touched, but interest remains a large share of the funds.",
+   "figures_as_printed": [],
+   "quote": "we can't touch the principle but the interest is still a large percentage of the funds."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of library trust funds: Touchstone funds can be transferred; the other listed funds must be transferred one item at a time.",
+   "amount_as_printed": "not stated",
+   "outcome": "To be transferred by Wednesday next week, per the minutes; no amount printed.",
+   "quote": "the funds should be transferred by wednesday next week."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Robin",
+   "stated_role": "Friends of the Library Assistant Treasurer",
+   "topic": "Thanks to Donna for art class grant",
+   "quote": "robin wanted to give a shout out to donna for the grant for the art class from the cultural council. it was a big success."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; shout-out recorded",
+   "quote": "robin wanted to give a shout out to donna for the grant for the art class from the cultural council.",
+   "tags": [
+    "public comment",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Proctor Memorial Garden Discussion",
+   "resolution": "motion to authorize purchase of plants passed unanimously; ARPA request to include all three phases",
+   "quote": "muir, robin and jean proctor met twice to discuss plans.",
+   "tags": [
+    "garden",
+    "grounds",
+    "ARPA",
+    "plants"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (February 16, 2023 minutes)",
+   "quote": "kate made a motion to accept the minutes of february 16, 2023 as amended, seconded by dick.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; budget status, FY24 preliminary budget, staffing and collaboration reported",
+   "quote": "the fy23 budget is 60% expended and we are 75% through the fiscal year.",
+   "tags": [
+    "budget",
+    "staffing",
+    "collaboration",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "transfers to proceed by Wednesday next week; Harry to email the town",
+   "quote": "harry and dick met today with heather.",
+   "tags": [
+    "trust funds",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "no action; no current update",
+   "quote": "o no current update.",
+   "tags": [
+    "library sign"
+   ]
+  },
+  {
+   "topic": "Rules and Regulations",
+   "resolution": "approved as amended",
+   "quote": "a motion to accept the rules and regulations as amended was made by dick.",
+   "tags": [
+    "policy",
+    "rules"
+   ]
+  },
+  {
+   "topic": "Town Caucus Discussion",
+   "resolution": "discussed; Dick to attend; Kate not running for reelection",
+   "quote": "kate will not be running for reelection this year.",
+   "tags": [
+    "town election",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; sponsorship ideas noted",
+   "quote": "the friends had four new people at the march meeting.",
+   "tags": [
+    "Friends of the Library",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "snow-closure website message to be reviewed by Muir; art class posting noted",
+   "quote": "harry tried to call on wednesday when there was a snow closure.",
+   "tags": [
+    "communications",
+    "website",
+    "Facebook"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:46 p.m.",
+   "quote": "meeting was adjourned at 8:46 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "Proctor Memorial Garden",
+  "FY23 budget",
+  "FY24 budget",
+  "trust funds",
+  "staffing",
+  "rules and regulations",
+  "Friends of the Library",
+  "town caucus",
+  "ARPA",
+  "communications"
+ ],
+ "dropped_unquoted_by_field": {}
 }

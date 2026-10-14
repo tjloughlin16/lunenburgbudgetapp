@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-01-19",
  "docid": "14",
@@ -12,31 +12,212 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from meetings on May 20, 2021, November 18, 2021, February 17, 2022, September 15, 2022, and October 20, 2022",
+   "motion": "Approve the minutes of May 20, 2021, November 18, 2021, February 17, 2022, September 15, 2022, and October 20, 2022.",
    "moved_by": "Maryrae",
    "seconded_by": "Jen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "maryrae made a motion to approve the minutes from the following meetings: may 20, 2021 november 18, 2021 february 17, 2022 september 15, 2022 october 20, 2022 seconded by jen commission unanimously approved"
+   "quote": "made a motion to approve the minutes from the following meetings: may 20, 2021 november 18, 2021 february 17, 2022 september 15, 2022 october 20, 2022 seconded by jen commission unanimously approved"
   },
   {
-   "motion": "Ask Select Board if TCP is an available space for the Farmers' Market this year",
+   "motion": "Ask the Select Board whether TCP is an available space for the Farmers' Market this year.",
    "moved_by": "Jen",
    "seconded_by": "Maryrae",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jen made motion to ask select board if tcp is an available space for the farmers' market this year; seconded maryrae. commission unanimously approved"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jen",
    "seconded_by": "Maryrae",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jen motion to adjourn; maryrae seconds. commission unanimously approved"
+   "quote": "adjournment time: jen motion to adjourn; maryrae seconds. commission unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed unanimously; no numeric vote counts recorded in the minutes.",
- "cost_usd": 0.10063449999999999
+ "note": "Single text of the minutes with no scan or missing pages. Two votes are procedural (minutes approval, adjournment); one substantive motion (asking the Select Board about TCP space). No vote counts are printed, only 'unanimously approved', so outcomes are recorded as 'passed'. Motions are attributed by first name as printed ('Jen', 'Maryrae'); the cover maps Jen to Jennifer Duffy only by the attendance table's Clerk line, which is inferred. The attendance table lists 'Michael Fontaine' while the cover lists 'Mike Fontaine'; these are not reconciled here. Marzuca, Burns, McClellan and Schofield are neither marked present nor absent, so status is 'not stated'. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01639371,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jorge marzuca, member greg burns, member"
+  },
+  {
+   "name": "Greg Burns",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jorge marzuca, member greg burns, member"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "greg burns, member kira mcclellan, alternate"
+  },
+  {
+   "name": "Stephanie Schofield",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "stephanie schofield, alternate"
+  },
+  {
+   "name": "Michael Fontaine",
+   "role": "Farmers' Market",
+   "status": "present",
+   "quote": "farmers' market michael fontaine ✔"
+  },
+  {
+   "name": "Yanina Fusaro",
+   "role": "Farmers' Market Managers",
+   "status": "not stated",
+   "quote": "managers: yanina fusaro"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 2023 AgCom goals were not voted on; they are to be finalized at the next meeting.",
+   "quote": "to be finalized during next meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:07pm",
+   "quote": "meeting commencement time: 7:07pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "quote": "public comment/open discussion no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints reported",
+   "quote": "farm complaints no complaints",
+   "tags": [
+    "farms",
+    "complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of five prior meetings",
+   "quote": "review/approve minutes maryrae made a motion",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update (seasonal)",
+   "resolution": "approved request to ask Select Board about TCP space",
+   "quote": "farmers market update -seasonal jen made motion",
+   "tags": [
+    "farmers market",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "New Business: 2023 AgCom goals",
+   "resolution": "draft goals; to be finalized next meeting",
+   "quote": "review and approve 2023 agcom goals",
+   "tags": [
+    "goals",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "no new information on listed items",
+   "quote": "lufa farms, new interest in brightfarm",
+   "tags": [
+    "regional conservation",
+    "farm permits",
+    "land",
+    "flyers",
+    "membership",
+    "regulations",
+    "social media",
+    "community gardens",
+    "farm inspections",
+    "marketing",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no new information",
+   "quote": "committee reports: economic development comm., planning board, building reuse",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no public comment",
+   "quote": "9 public comment/open discussion no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set next meeting date",
+   "resolution": "set for February 16, 2023 at 7:00pm",
+   "quote": "set next meeting date february 16, 2023 7:00pm",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:06pm",
+   "quote": "adjournment time: jen motion to adjourn; maryrae seconds.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "agricultural commission",
+  "2023 goals",
+  "minutes approval",
+  "Select Board",
+  "farm complaints",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

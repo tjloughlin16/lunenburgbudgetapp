@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-01-04",
  "docid": "56",
@@ -12,95 +12,449 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of December 7, 2022",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed",
+   "motion": "Approve minutes of December 7, 2022.",
+   "moved_by": "RB",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "rb/rt m/s to approve minutes. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve the minutes of December 21, 2022",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed",
+   "motion": "Approve minutes of December 21, 2022.",
+   "moved_by": "ML",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "ml/mw m/s to approve minutes. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue the Notice of Intent for 406 Sunset Lane to the January 18th meeting",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
+   "motion": "Continue the Notice of Intent for 406 Sunset Lane to the January 18th meeting.",
+   "moved_by": "CC",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "cc/ml m/s to continue noi for 406 sunset lane for january 18th meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Elect Bob Pease as Chairman of the Conservation Commission",
-   "moved_by": "Richard Tremblay",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Elect Bob Pease as Chairman of the Conservation Commission.",
+   "moved_by": "RT",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
    "quote": "rt/mw m/s to elect bob pease as chairman of the conservation commission. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Elect Mary Wilson as Vice Chairman of the Conservation Commission",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Elect Mary Wilson as Vice Chairman of the Conservation Commission.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
    "quote": "rb/ml m/s to elect mary wilson as vice chairman of the conservation commission. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Elect Richard Tremblay as Clerk of the Conservation Commission",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Elect Richard Tremblay as Clerk of the Conservation Commission.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
    "quote": "rb/ml m/s to elect richard tremblay as clerk of the conservation commission. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Have Town Attorney send encroachment letters to listed properties",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
+   "motion": "Have the Town Attorney send encroachment letters to the listed properties.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/ml m/s to have town attorney send out encroachment letters to the listed properties. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve Administrative Determination at 70 Pine Hill Road",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed",
+   "motion": "Approve Administrative Determination at 70 Pine Hill Road.",
+   "moved_by": "RB",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/rt m/s to approve administrative determination at 70 pine hill road. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve Administrative Determination at 338 Sunset Lane",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Approve Administrative Determination at 338 Sunset Lane (tree removal).",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous with JV recused (roll call)",
    "procedural": false,
    "quote": "rb/cc m/s to approve administrative determination at 338 sunset lane. roll call vote, unanimous to approve with jv recused."
   },
   {
-   "motion": "Amend the Forest Cutting Plan",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
+   "motion": "Amend the Forest Cutting Plan (new possible lot for harvest and landing area).",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
    "quote": "rb/ml m/s to amend forest cutting plan. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "CC",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "cc/ml m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. Straw polls on RDA submittal and NOI continuation viewpoints were not included as they lacked formal motion/second structure and vote counts.",
- "cost_usd": 0.0943305
+ "note": "Text extracted cleanly from two-page-plus scanned-free PDF; no scan limits. Roll-call votes are recorded as 'unanimous' with no per-member tally, so outcomes are 'passed, unanimous (roll call)' rather than counts. Member abbreviations (BP, RB, JV, CC, ML, MW, RT, AP, MB, GR, JF) are resolved from the header and roll call; 'AP' is inferred to be Anna Petrie, Conservation Administrator, from the header and context. Meeting was held via Zoom; whether members attended remotely is not stated beyond the 'ZOOM REMOTE' header. Straw polls are recorded as decisions, not votes, since they were not motions. Brett Ramsden's participation is only described through a chat comment, so his status is 'not stated'. Sam Welch appears only in the letterhead, so attendance is not stated.",
+ "cost_usd": 0.01825941,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call: bp, rb, jv, cc, ml, mw, rt"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "ap shares photos of the trees and their conditions."
+  },
+  {
+   "name": "Sam Welch",
+   "role": "Associate Member",
+   "status": "not stated",
+   "quote": "sam welch, associate member"
+  },
+  {
+   "name": "John Fortune",
+   "role": "of Hickory Hills Landowners Inc.",
+   "status": "present",
+   "quote": "john fortune of hickory hills landowners inc. states his presence in regards to the previous concerns of the well use controlled by lwd."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Chairman of the Board of Water Commissioners, representing LWD",
+   "status": "present",
+   "quote": "mark bursch, chairman of the board of water commissioners, is present to represent lwd in regards to this matter."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "public commenter",
+   "status": "not stated",
+   "quote": "paula bertram presented a comment that due to the duration of the upcoming project with tighe & bond, the recommendation of a filing is appropriate and lwd should be required just as any other public entity would."
+  },
+  {
+   "name": "Nancy Malady",
+   "role": "homeowner, 406 Sunset Lane applicant",
+   "status": "present",
+   "quote": "nancy malady, homeowner, states that they will not be removing docks, though repair one of the docks."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "of Dillis & Roy, representing the applicant",
+   "status": "present",
+   "quote": "greg roy of dillis & roy to represent them."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "installer of the wall (sent chat comment)",
+   "status": "not stated",
+   "quote": "bp informs the commission that he had received a chat comment from brett ramsden at the time"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "By straw poll, the commission expressed favor of an RDA submittal for the well pumping at LWD (not a formal motion).",
+   "quote": "rb, jv, cc, ml, rt, mw expressed favor of an rda submittal."
+  },
+  {
+   "decision": "Commission expressed favor of the 406 Sunset Lane proposal contingent on receiving and considering DEP comments (straw view, no motion).",
+   "quote": "rb, jv, cc, ml, rt, mw in favor of proposed plans contingent upon receivingand considering comments from dep."
+  },
+  {
+   "decision": "Chair set the changes required for the next continued hearing on 406 Sunset Lane: natural stone walls, dry wells, replanting plan and tree count, construction schedule.",
+   "quote": "bp restates the suggested changes to be done for next continued hearing being: plan showing that the wall will be natural stone rather than block, proposal of dry wells, replanting plan and number of trees taken down, and construction schedule."
+  },
+  {
+   "decision": "Picnic Area proposal at Small Town Forest is set aside as an abandoned idea for the time being.",
+   "quote": "bp asks if that is an abandoned idea for the time being? mw confirms."
+  },
+  {
+   "decision": "Chair asked Greg Roy to prepare a proposal for a foot bridge at Harold Harley Wildlife Viewing Platform and a trail, and a wetland crossing at Northfield Road frontage.",
+   "quote": "bp has asked greg roy to come up with this proposal."
+  },
+  {
+   "decision": "Chair asked the Conservation Administrator to confirm checks were received from the timber sales.",
+   "quote": "bp asks ap to check to make sure checks were received."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Timber Rights Fund balance and expected harvest receipts",
+   "what_was_recorded": "Chair reported a current Timber Rights Fund balance plus expected Hawes and Rayno harvest receipts, less Gary Goldrup's fees.",
+   "figures_as_printed": [
+    "$21,061",
+    "$6,000",
+    "$21,000"
+   ],
+   "quote": "he said there is currently $21,061 in the timber rights fund and an expected $6,000 from the hawes harvest and expected $21,000 from the rayno harvest, minus gary goldrups fees, will be coming in."
+  },
+  {
+   "topic": "Hollis Road revolving fund balance",
+   "what_was_recorded": "Chair reported the Hollis Road revolving fund balance.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "bp said the balance on the hollis road revolving fund is at $60,000."
+  },
+  {
+   "topic": "Howard Street driveway permit and engineered plans",
+   "what_was_recorded": "Chair's letter to the Select Board says the Commission spent money on driveway permit and engineered plans and asks the Select Board to identify funding for a contractor.",
+   "figures_as_printed": [
+    "$1800"
+   ],
+   "quote": "bp sent letter saying that the conservation commission had spent $1800 on the driveway permit/engineered plans and hope the select board could identify a source of funding"
+  },
+  {
+   "topic": "Timber sale product overrun at Northfield site",
+   "what_was_recorded": "Gary Goldrup stated there was an overrun of product at the Northfield site meeting with King Loggers.",
+   "figures_as_printed": [
+    "$2200"
+   ],
+   "quote": "gary goldrup stated at this meeting that there was a $2200 overrun of product."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Well pumping at LWD, Hickory Hills photos and water samples",
+   "speaker": "John Fortune",
+   "stated_role": "of Hickory Hills Landowners Inc.",
+   "quote": "jf continued to share updated photos of the site to the commission. photos consisted of hose placement, haybale placement, and possible erosion."
+  },
+  {
+   "topic": "LWD well pumping: past practice without filing",
+   "speaker": "Mark Bursch",
+   "stated_role": "Chairman of the Board of Water Commissioners, representing LWD",
+   "quote": "mb asks to continue past practices with the engineers, lwd superintendent, and conservation admin without having to file."
+  },
+  {
+   "topic": "Requiring LWD to file for the well pumping project",
+   "speaker": "Paula Bertram",
+   "stated_role": "not stated",
+   "quote": "paula bertram presented a comment that due to the duration of the upcoming project with tighe & bond, the recommendation of a filing is appropriate and lwd should be required just as any other public entity would."
+  },
+  {
+   "topic": "406 Sunset Lane Notice of Intent: homeowner comments on docks",
+   "speaker": "Nancy Malady",
+   "stated_role": "homeowner",
+   "quote": "nancy malady, homeowner, states that they will not be removing docks, though repair one of the docks."
+  },
+  {
+   "topic": "Communications and public comment",
+   "speaker": "not stated",
+   "stated_role": "not stated",
+   "quote": "communications /public comment none."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Well pumping at LWD (public comment)",
+   "resolution": "straw poll favored RDA submittal; no formal vote",
+   "quote": "rb suggests a straw poll for an rda submittal for the pumping of the well.",
+   "tags": [
+    "well pumping",
+    "LWD",
+    "Hickory Hills",
+    "RDA",
+    "straw poll",
+    "water"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "approved (Dec 7 and Dec 21, 2022)",
+   "quote": "rb/rt m/s to approve minutes. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearing: Notice of Intent, 406 Sunset Lane",
+   "resolution": "continued to January 18 meeting",
+   "quote": "cc/ml m/s to continue noi for 406 sunset lane for january 18th meeting.",
+   "tags": [
+    "Notice of Intent",
+    "wetlands",
+    "retaining wall",
+    "Lake",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Continued public hearings",
+   "resolution": "no action (none listed)",
+   "quote": "no continued hearings.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "approved: Pease Chair, Wilson Vice Chair, Tremblay Clerk",
+   "quote": "rt/mw m/s to elect bob pease as chairman of the conservation commission. roll call vote, unanimous to approve.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Encroachment issues",
+   "resolution": "approved Town Attorney encroachment letters; 104 Woodland Drive reported resolved",
+   "quote": "rb/ml m/s to have town attorney send out encroachment letters to the listed properties.",
+   "tags": [
+    "encroachment",
+    "enforcement",
+    "Woodland Drive"
+   ]
+  },
+  {
+   "topic": "Grant updates: parking, Small Town Forest, footbridge",
+   "resolution": "no vote; picnic area set aside; proposal quotes due next meeting",
+   "quote": "bp says that gr will have proposal quotes by next meeting.",
+   "tags": [
+    "grants",
+    "accessibility",
+    "Table Rock",
+    "Small Town Forest",
+    "Harold Harley"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "reported; no action",
+   "quote": "bp presented the budget report.",
+   "tags": [
+    "budget",
+    "Timber Rights Fund",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "reported; no action",
+   "quote": "ml stated jnr glass had finished and sealed the newly installed windows on december 29.",
+   "tags": [
+    "Hollis Road",
+    "property maintenance"
+   ]
+  },
+  {
+   "topic": "Administrative determinations: 70 Pine Hill Road and 338 Sunset Lane",
+   "resolution": "both approved",
+   "quote": "rb/cc m/s to approve administrative determination at 338 sunset lane. roll call vote, unanimous to approve with jv recused.",
+   "tags": [
+    "administrative determination",
+    "tree removal",
+    "Lake Whalom",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and enforcement orders",
+   "resolution": "reported; deadlines set for several orders",
+   "quote": "non 205 sunset, beers lot: commission requests to have timeline submittal by january 18 meeting.",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Open space: Howard Street driveway",
+   "resolution": "reported; letter sent to Select Board",
+   "quote": "bp sent letter saying that the conservation commission had spent $1800 on the driveway permit/engineered plans",
+   "tags": [
+    "Howard Street",
+    "Select Board",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Timber sales and Forest Cutting Plan amendment",
+   "resolution": "Forest Cutting Plan amended; checks to be confirmed",
+   "quote": "rb/ml m/s to amend forest cutting plan. roll call vote, unanimous to approve.",
+   "tags": [
+    "timber",
+    "harvest",
+    "Forest Cutting Plan",
+    "Northfield"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no items (topics not known 48 hours in advance)",
+   "quote": "topics not known 48 hours in advance of meeting",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "well pumping",
+  "LWD",
+  "Lake Whalom",
+  "notice of intent",
+  "public hearing",
+  "retaining wall",
+  "officer election",
+  "administrative determination",
+  "tree removal",
+  "encroachment",
+  "enforcement",
+  "timber harvest",
+  "forest cutting plan",
+  "budget",
+  "Timber Rights Fund",
+  "revolving fund",
+  "Hollis Road",
+  "Howard Street driveway"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-03-15",
  "docid": "67",
@@ -12,63 +12,318 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the previous meeting of March 1, 2023",
+   "motion": "Approve the minutes of the March 1, 2023 meeting.",
    "moved_by": "CC",
    "seconded_by": "MW",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes of previous meetings - march 1st ,2023 cc/mw m/s to approve. roll call vote, unanimous to approve."
+   "quote": "cc/mw m/s to approve. roll call vote, unanimous to approve."
   },
   {
-   "motion": "approve with a standard Order of Conditions with special conditions being an issuance date under the contingency of previous OOC (208-1277) being finished first, for the Notice of Intent by Paul Cadaret at 42 Pearl St (DEP #208-1286)",
+   "motion": "Approve the Notice of Intent by Paul Cadaret (42 Pearl St) with a standard Order of Conditions and the special condition that issuance is contingent on previous OOC (208-1277) being finished first.",
    "moved_by": "RT",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "rt/ml m/s to approve with a standard order of conditions with special conditions being an issuance date under the contingency of previous ooc (208-1277) being finished first. coc will be issued once the project is finished. roll call vote, unanimous to approve."
+   "quote": "rt/ml m/s to approve with a standard order of conditions with special conditions being an issuance date under the contingency of previous ooc (208-1277) being finished first."
   },
   {
-   "motion": "issue negative determination for tree removal at 50 Pine Grove Road",
+   "motion": "Issue a negative determination for the tree removal at 50 Pine Grove Road (Request for Determination of Applicability, Jamie Hotchkin).",
    "moved_by": "JV",
    "seconded_by": "RT",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jv/rt m/s to issue negative determination for tree removal at 50 pine grove road. roll call vote, unanimous to approve."
   },
   {
-   "motion": "approve with a standard Order of Conditions for the Notice of Intent by John and Debra Trainor at 105 Horizon Island Road (DEP #208-1287)",
+   "motion": "Approve the Notice of Intent by John and Debra Trainor (105 Horizon Island Road) with a standard Order of Conditions.",
    "moved_by": "JV",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jv/cc m/s to approve with a standard order of conditions. roll call vote, unanimous to approve."
   },
   {
-   "motion": "approve administrative determination for tree removal at 437 Townsend Harbor Road",
+   "motion": "Approve the administrative determination for 437 Townsend Harbor Road.",
    "moved_by": "CC",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "cc/jv m/s to approve administrative determination. roll call vote, unanimous to approve."
+   "quote": "cc/jv m/s to approve administrative determination."
   },
   {
-   "motion": "issue Certificate of Compliance for 1147 Massachusetts Ave",
+   "motion": "Issue a Certificate of Compliance for 1147 Massachusetts Ave.",
    "moved_by": "MW",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mw/cc m/s to issue certificate of compliance. roll call vote, unanimous to approve."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "JV",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jv/cc m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0815035
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan; all pages readable. Votes are recorded as roll-call votes marked \"unanimous\" with members named by initials, so no per-member tallies exist; outcomes are given as \"passed\". Mover and seconder are printed as initials in the M/S shorthand and are kept as printed. The minutes give the meeting as a Zoom remote session but do not mark each member as remote, so members are recorded as present. No dollar figures appear anywhere (Timber Rights Fund, Grant and Budget updates read N/A or No Updates), so budget_items and transfers are empty. Public comment reads N/A and \"None\", so no speakers are recorded. Seth Donahoe is named only in an enforcement update relayed through AP, with no indication he appeared, so status is not stated. Decision 5 (42 Pearl St COC) restates an earlier conditional outcome rather than a new decision.",
+ "cost_usd": 0.01822361,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, mw, rt, ml, cc, jv"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "mw recalls a tree being in the line of work for the shoreline wall and requests pictures."
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "rt asks how long until the existing project is finished?"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "ml states that the tenant has been away for school"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "cc asks if dep had any comments?"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "jv asks whether the tree stump in the background of the shown photos has been recently cut?"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Conservation Commission member",
+   "status": "absent",
+   "quote": "absent: rb call to order at 7pm"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "ap states outside the 50 ft, close to 70 ft."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "representing the property owner (Hannigan Engineering)",
+   "status": "present",
+   "quote": "chris anderson from hannigan engineering to represent the property owner."
+  },
+  {
+   "name": "Paul Cadaret",
+   "role": "homeowner, 42 Pearl St",
+   "status": "present",
+   "quote": "the homeowner, paul cadaret, states that the tree was removed prior to owning the property."
+  },
+  {
+   "name": "Jamie Hotchkin",
+   "role": "applicant, represents themselves",
+   "status": "present",
+   "quote": "jamie hotchkin to represent themselves, with ap to show photos of the property."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the property owner",
+   "status": "present",
+   "quote": "jack maloney to represent the property owner."
+  },
+  {
+   "name": "Seth Donahoe",
+   "role": "from Dillis & Roy (as printed); appearance before the board not stated",
+   "status": "not stated",
+   "quote": "seth donahoe from dillis & roy along with property owner updated ap"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will contact the Town assistant about applications for an associate member of the Conservation Commission.",
+   "quote": "bp states that they will be reaching out to the town assistant in regard to applications for an associate member"
+  },
+  {
+   "decision": "EO 54 Pine Grove (50 Pine Grove) is removed from the enforcement list following its negative determination.",
+   "quote": "eo 54 pine grove:(50 pine grove) negative determination- to be removed from list."
+  },
+  {
+   "decision": "Enforcement order EO 23 Cove Road remains open until the greenhouse is removed.",
+   "quote": "eo 23 cove road: will remain open until greenhouse is removed."
+  },
+  {
+   "decision": "The 42 Pearl St Certificate of Compliance will be issued upon completion of the earlier project, as stated in the record.",
+   "quote": "42 pearl st - will be issued upon completion as"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of previous meeting (March 1, 2023)",
+   "resolution": "approved",
+   "quote": "cc/mw m/s to approve. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "NOI, 42 Pearl St (Paul Cadaret), public hearing",
+   "resolution": "approved with standard Order of Conditions and contingency",
+   "quote": "a public hearing on a notice of intent by paul cadaret for the replacement of an existing timber retaining wall",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "RDA, 50 Pine Grove Road (Jamie Hotchkin), public meeting",
+   "resolution": "negative determination issued",
+   "quote": "a public meeting on a request for determination of applicability by jamie hotchkin for the removal of a tree at 50 pine grove road.",
+   "tags": [
+    "tree removal",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Continued NOI, 105 Horizon Island Road (John and Debra Trainor)",
+   "resolution": "approved with standard Order of Conditions",
+   "quote": "a public hearing on a notice of intent by john and debra trainor for the proposed installation of a septic system",
+   "tags": [
+    "wetlands",
+    "septic",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Earth Day 2023 (new business)",
+   "resolution": "no action; discussed",
+   "quote": "mw states that the goals are to spread out events",
+   "tags": [
+    "Earth Day",
+    "invasive species",
+    "pollinator garden"
+   ]
+  },
+  {
+   "topic": "Encroachment issues (old business)",
+   "resolution": "update; no action recorded; Chair to meet town counsel",
+   "quote": "bp states that there are two properties on the encroachment list that have not replied.",
+   "tags": [
+    "encroachment",
+    "enforcement",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Grant and budget updates",
+   "resolution": "no updates",
+   "quote": "grant updates: no updates.",
+   "tags": [
+    "grants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "update; follow-up pending",
+   "quote": "ml states that the tenant has been away for school",
+   "tags": [
+    "Hollis Road",
+    "carpets"
+   ]
+  },
+  {
+   "topic": "Administrative determination, 437 Townsend Harbor Road",
+   "resolution": "approved",
+   "quote": "ap presents photos of the property, which is",
+   "tags": [
+    "tree removal",
+    "administrative determination"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance",
+   "resolution": "1147 Massachusetts Ave issued; 42 Pearl St deferred to completion",
+   "quote": "1147 massachusetts ave - ap states that this property has an order of conditions from 1989",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Enforcement and violations",
+   "resolution": "EO 54 removed from list; EO 23 stays open; NON 205 Sunset in progress",
+   "quote": "eo 23 cove road: will remain open until greenhouse is removed.",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Conservation land improvements",
+   "resolution": "noted; no action",
+   "quote": "bp states that they may be putting in some railing",
+   "tags": [
+    "conservation land",
+    "Mulpus Brook"
+   ]
+  },
+  {
+   "topic": "Committee reports (associate member)",
+   "resolution": "Chair to contact Town assistant",
+   "quote": "bp states that they will be reaching out to the town assistant in regard to applications for an associate member",
+   "tags": [
+    "appointments",
+    "associate member"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:05 pm",
+   "quote": "jv/cc m/s to adjourn meeting. roll call vote, unanimous to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "certificate of compliance",
+  "determinations",
+  "enforcement",
+  "conservation land",
+  "Earth Day",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "nashoba-valley-reginal-dispatch-committee",
  "meeting_date": "2023-02-21",
  "docid": "120",
@@ -12,23 +12,332 @@
  },
  "votes": [
   {
-   "motion": "Accept the Executive Director's report as presented",
+   "motion": "Accept the Director's report as presented.",
    "moved_by": "Chief Sullivan",
    "seconded_by": "Chief Moody",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made by chief sullivan to accept the directors report as presented and seconded by chief moody. the motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 14:48.",
    "moved_by": "Chief Kelly",
    "seconded_by": "Chief Hanson",
-   "outcome": "passed unanimous",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by chief kelly and seconded by chief hanson to adjourn at 14:48. the motion carried unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09382750000000001
+ "note": "Plain extracted text of 3 pages; all pages present and readable, no scan. Only two motions are recorded with votes (accept director's report, adjourn); both printed as unanimous. The minutes record no vote on approving prior minutes (January 17, 2023 minutes 'not available'), and no vote on the policy items, which were tabled, held or revised by discussion. The header reads 'Operations Committee' under Nashoba Valley Regional Dispatch District. The adjournment motion names 'Chief Kelly' while attendance lists 'Chief Tim Kelley'; treated as the same person, not confirmed. The FY24 budget table has column headings FY23 / FY24 / % Change; the DOD row splits across a page break, and figures are read in that column order. Attendance is taken from the 'MEMBERS PRESENT' list; no absences are printed. Three named people (Kinnas, Legendre, Schartner) appear only in the RMS committee heading and are marked not stated.",
+ "cost_usd": 0.01728041,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael McQuillen",
+   "role": "Berlin Fire, Chief",
+   "status": "present",
+   "quote": "berlin fire, chief michael mcquillen bolton police, chief warren nelson"
+  },
+  {
+   "name": "Warren Nelson",
+   "role": "Bolton Police, Chief",
+   "status": "present",
+   "quote": "berlin fire, chief michael mcquillen bolton police, chief warren nelson"
+  },
+  {
+   "name": "Tim Kelley",
+   "role": "Devens Fire, Chief (Vice-Chairman)",
+   "status": "present",
+   "quote": "devens fire, chief tim kelley (vice-chairman) devens fire, deputy jamie desautels"
+  },
+  {
+   "name": "Jamie Desautels",
+   "role": "Devens Fire, Deputy",
+   "status": "present",
+   "quote": "devens fire, chief tim kelley (vice-chairman) devens fire, deputy jamie desautels"
+  },
+  {
+   "name": "James Babu",
+   "role": "Harvard Police, Chief",
+   "status": "present",
+   "quote": "harvard police, chief james babu harvard fire, chief rick sicard"
+  },
+  {
+   "name": "Rick Sicard",
+   "role": "Harvard Fire, Chief",
+   "status": "present",
+   "quote": "harvard police, chief james babu harvard fire, chief rick sicard"
+  },
+  {
+   "name": "Mike Hanson",
+   "role": "Lancaster Fire, Chief",
+   "status": "present",
+   "quote": "lancaster fire, chief mike hanson lancaster police, acting chief everett moody"
+  },
+  {
+   "name": "Everett Moody",
+   "role": "Lancaster Police, Acting Chief",
+   "status": "present",
+   "quote": "lancaster fire, chief mike hanson lancaster police, acting chief everett moody"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Lunenburg Fire, Chief",
+   "status": "present",
+   "quote": "lunenburg fire, chief pat sullivan lunenburg police, chief tom gammel (chairman)"
+  },
+  {
+   "name": "Tom Gammel",
+   "role": "Lunenburg Police, Chief (Chairman)",
+   "status": "present",
+   "quote": "lunenburg fire, chief pat sullivan lunenburg police, chief tom gammel (chairman)"
+  },
+  {
+   "name": "Reid Bagley",
+   "role": "Mass State Police, Lieutenant",
+   "status": "present",
+   "quote": "mass state police, lieutenant reid bagley nvrdd, executive director anne camaro"
+  },
+  {
+   "name": "Anne Camaro",
+   "role": "NVRDD, Executive Director",
+   "status": "present",
+   "quote": "mass state police, lieutenant reid bagley nvrdd, executive director anne camaro"
+  },
+  {
+   "name": "Kinnas",
+   "role": "Supervisor (dispatch liaison); named in RMS committee report",
+   "status": "not stated",
+   "quote": "rms (record management system) committee report (director camaro, supervisor kinnas, chief legendre, chief schartner)"
+  },
+  {
+   "name": "Legendre",
+   "role": "Chief; named in RMS committee report",
+   "status": "not stated",
+   "quote": "rms (record management system) committee report (director camaro, supervisor kinnas, chief legendre, chief schartner)"
+  },
+  {
+   "name": "Schartner",
+   "role": "Chief; named in RMS committee report",
+   "status": "not stated",
+   "quote": "rms (record management system) committee report (director camaro, supervisor kinnas, chief legendre, chief schartner)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Police Details Processing (Policy 323) revision held: wait to see how the alternative methods being tested through Berlin and Lancaster PD work before proceeding.",
+   "quote": "waiting to see how the alternative methods being tested through berling and lancaster pd's before proceeding."
+  },
+  {
+   "decision": "Emergency Radio Traffic (Policy 270) tabled to the next meeting.",
+   "quote": "emergency radio traffic (policy 270) • tabled to next meeting"
+  },
+  {
+   "decision": "Residential Fire Alarms (Policy 421): add pre-arrival instructions to the caller to the policy; clarify the definition of confirmation that a house has been checked.",
+   "quote": "will add pre-arrival instructions to the caller to the policy"
+  },
+  {
+   "decision": "Executive Director will not fill the one dispatcher opening and one supervisor opening until the trainee is released from training.",
+   "quote": "i will not be filling those positions until ashley is released from training."
+  },
+  {
+   "decision": "A policy for tone-out for the Harvard drone is to be created.",
+   "quote": "a policy for how to tone out for the harvard drone needs to be created."
+  },
+  {
+   "decision": "Future meeting dates and locations set: March 21, 2023 Berlin; April 18 Harvard; May Bolton; June NVRDD; no July or August meetings; Sept Lunenburg; Oct Lancaster; Nov 28 NVRDD.",
+   "quote": "set next meeting • february 21, 2023, 14:00 at lancaster fire department, main street, ma."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 total operating budget",
+   "what_was_recorded": "The FY24 total operating budget is printed as $2,330,646.87, up 2.46% from FY23's $2,274,644.10; the director reported it was adopted after Finance Committee and Administration Board review.",
+   "figures_as_printed": [
+    "$2,274,644.10",
+    "2,330,646.87",
+    "2.46%"
+   ],
+   "quote": "total budget $2,274,644.10 2,330,646.87 2.46%"
+  },
+  {
+   "topic": "FY24 State 911 Support Grant",
+   "what_was_recorded": "The FY24 State 911 Support Grant is printed flat at 794,020.00 with 0.00% change.",
+   "figures_as_printed": [
+    "794,020.00",
+    "0.00%"
+   ],
+   "quote": "fy24 state 911 support grant 794,020.00 794,020.00 0.00%"
+  },
+  {
+   "topic": "FY24 State 911 Support Addition",
+   "what_was_recorded": "The FY24 State 911 Support Addition is printed as 221,000.00, up 2.31% from 216,000.00.",
+   "figures_as_printed": [
+    "216,000.00",
+    "221,000.00",
+    "2.31%"
+   ],
+   "quote": "fy24 state 911 support addition 216,000.00 221,000.00 2.31%"
+  },
+  {
+   "topic": "FY24 DOD payment (Townsend)",
+   "what_was_recorded": "The FY24 DOD payment is printed as 38,098.35, up 3.00% from $36,988.69.",
+   "figures_as_printed": [
+    "$36,988.69",
+    "38,098.35",
+    "3.00%"
+   ],
+   "quote": "fy24 dod payment $36,988.69 38,098.35 3.00%"
+  },
+  {
+   "topic": "Total due from communities",
+   "what_was_recorded": "Total due from communities is printed as 1,277,528.52, up 4.06% from $1,227,635.41.",
+   "figures_as_printed": [
+    "$1,227,635.41",
+    "1,277,528.52",
+    "4.06%"
+   ],
+   "quote": "total due from communities $1,227,635.41 1,277,528.52 4.06%"
+  },
+  {
+   "topic": "Total due per community",
+   "what_was_recorded": "Total due per community is printed as 212,921.42, up 4.06% from $204,605.90.",
+   "figures_as_printed": [
+    "$204,605.90",
+    "212,921.42",
+    "4.06%"
+   ],
+   "quote": "total due per community $204,605.90 212,921.42 4.06%"
+  },
+  {
+   "topic": "FY23 grant reimbursements",
+   "what_was_recorded": "The director reported FY23 grant reimbursements are caught up and funds are expected within 30-60 days; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "i am all caught up on fy23 grant reimbursements, and we should be receiving the funds within the next 30-60 days."
+  },
+  {
+   "topic": "5-year capital budget plan",
+   "what_was_recorded": "The director is preparing a 5-year capital budget plan for the Finance Committee; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "i am working on a 5-year capital budget plan to present to the finance committee at the next meeting (april 5th)."
+  },
+  {
+   "topic": "Regional radio study",
+   "what_was_recorded": "Modular Communications gave a verbal price of around $75,000 for a regional radio study; no decision on commissioning it is recorded.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "modular communications gave anne a verbal of a price around $75,000 to do such a study."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public • none • board/committees • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of meeting minutes",
+   "resolution": "not available; no action",
+   "quote": "january 17, 2023 meeting minutes not available",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "accepted unanimously",
+   "quote": "executive director report",
+   "tags": [
+    "staffing",
+    "budget",
+    "grants",
+    "training"
+   ]
+  },
+  {
+   "topic": "Policy review",
+   "resolution": "one revision held, one tabled, one revised",
+   "quote": "police details processing (policy 323)",
+   "tags": [
+    "policy",
+    "police details",
+    "fire alarms"
+   ]
+  },
+  {
+   "topic": "RMS committee report",
+   "resolution": "reported; system update scheduled",
+   "quote": "imc published an update in september for everything that police departments need to be legal",
+   "tags": [
+    "RMS",
+    "records system"
+   ]
+  },
+  {
+   "topic": "Liaison to the committee from dispatch",
+   "resolution": "no report",
+   "quote": "liaison to the committee from dispatch (supervisor kinnas) • no report",
+   "tags": [
+    "dispatch"
+   ]
+  },
+  {
+   "topic": "Old business: radio system",
+   "resolution": "continued discussion; no action recorded",
+   "quote": "continued discussion on conducting a regional radio study",
+   "tags": [
+    "radio system",
+    "budget"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "Harvard drone tone-out policy to be created",
+   "quote": "harvard police had one incident today.",
+   "tags": [
+    "Harvard",
+    "policy",
+    "drone",
+    "radio"
+   ]
+  },
+  {
+   "topic": "Set next meeting",
+   "resolution": "meeting schedule set",
+   "quote": "set next meeting • february 21, 2023, 14:00 at lancaster fire department, main street, ma.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 14:48, passed unanimously",
+   "quote": "a motion was made by chief kelly and seconded by chief hanson to adjourn at 14:48.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "dispatch",
+  "911",
+  "budget",
+  "FY24 budget",
+  "radio system",
+  "policy",
+  "staffing",
+  "grants",
+  "RMS",
+  "Harvard",
+  "NVRDD"
+ ],
+ "dropped_unquoted_by_field": {}
 }

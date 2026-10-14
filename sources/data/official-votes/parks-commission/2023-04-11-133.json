@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-04-11",
  "docid": "133",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 8:14 p.m.",
+   "motion": "Adjourn the Parks Commission meeting at 8:14 p.m.",
    "moved_by": "K. Menard",
    "seconded_by": "D. Passios",
    "outcome": "passed 3-0",
@@ -21,6 +21,199 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn. The meeting consisted primarily of a joint presentation to the Select Board about the Marshall Park renovation project and ARPA funding opportunities, with discussion but no other votes.",
- "cost_usd": 0.061755399999999995
+ "note": "Scanned or OCR-style text: words run together and line breaks fall mid-phrase, so quotes were copied with line breaks collapsed to single spaces. The minutes record one motion (adjournment, passed 3-0) and no other votes. The minutes do not print the Select Board's members or any public comment section. Most dollar figures come from the attached presentation slides (pages 2-24), which are proposals and estimates shown to the Select Board, not adopted amounts. Chris Sullivan is listed in the header but not in the Present line, so attendance is not stated for him. The roles of Mr. Alonzo and Ms. Lemieux are not printed.",
+ "cost_usd": 0.01670011,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "ana lockwood called the parks commission meeting to order at 7:38 p.m. present - a. lockwood, k. menard, d. passios"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "ana lockwood called the parks commission meeting to order at 7:38 p.m. present - a. lockwood, k. menard, d. passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "ana lockwood called the parks commission meeting to order at 7:38 p.m. present - a. lockwood, k. menard, d. passios"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "chris sullivan, member"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "not printed (asked a question at the joint meeting)",
+   "status": "present",
+   "quote": "mr. alonzo asked what amount of arpa funding is uncommitted."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not printed (stated the uncommitted ARPA amount)",
+   "status": "present",
+   "quote": "ms. lemieux stated $2.3 million."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Uncommitted ARPA funds",
+   "what_was_recorded": "Ms. Lemieux stated the uncommitted ARPA amount and the ARPA commitment and spending deadlines.",
+   "figures_as_printed": [
+    "$2.3 million"
+   ],
+   "quote": "ms. lemieux stated $2.3 million. arpa funds must be committed by december 31, 2024 and spent by december 31, 2026."
+  },
+  {
+   "topic": "Debt policy caps and full-debt scenario for Marshall Park",
+   "what_was_recorded": "Presentation slides state that a fully town-debt-funded $5.2 million renovation would equal 1.68% of the levy and 1.53% of total levy, against policy caps of 4% and 14%.",
+   "figures_as_printed": [
+    "$5.2 mil",
+    "1.68%",
+    "1.53%",
+    "4%",
+    "14%"
+   ],
+   "quote": "by the town, $5.2 mil, it would represent1.68% of the levy"
+  },
+  {
+   "topic": "Cap on aggregate debt service",
+   "what_was_recorded": "Presentation slide states the town policy cap for aggregate debt service costs to total levy.",
+   "figures_as_printed": [
+    "14%"
+   ],
+   "quote": "cap of14% for aggregate debtservice costs to total"
+  },
+  {
+   "topic": "Marshall Park cost timeline by item",
+   "what_was_recorded": "Presentation slide lists conceptual design, survey, schematic design, construction and bid documents, and construction phases with their costs.",
+   "figures_as_printed": [
+    "$36K",
+    "$18K",
+    "$45K",
+    "$50K",
+    "$3.3M",
+    "$1.5M",
+    "$271K",
+    "$86K"
+   ],
+   "quote": "conceptual design: $36k property survey: $18k"
+  },
+  {
+   "topic": "Marshall Park phase costs",
+   "what_was_recorded": "Presentation phase slides print a cost for each of the four phases of the Marshall Park project.",
+   "figures_as_printed": [
+    "$3.3mil",
+    "$1.48mil",
+    "$270k",
+    "$86k"
+   ],
+   "quote": "phase 2 cost: $1.48mil"
+  },
+  {
+   "topic": "Funding scenarios for the town share",
+   "what_was_recorded": "Presentation slides show the town's total cost and the remaining borrowing under scenarios with $2M of ARPA plus $2M of grants, and $1M of ARPA plus $1M of grants.",
+   "figures_as_printed": [
+    "$2M",
+    "$1.1M",
+    "$1.3M",
+    "$1M",
+    "$3.1M",
+    "$3.3M"
+   ],
+   "quote": "t otal cost to t own = $1.3m"
+  },
+  {
+   "topic": "Borrowing target",
+   "what_was_recorded": "Presentation slide states the goal of minimizing borrowing to $1M rather than $5M, under a heading about $2 million in ARPA funds.",
+   "figures_as_printed": [
+    "$1M",
+    "$5M",
+    "$2 million"
+   ],
+   "quote": "minimizing borrowing to $1m, as opposed to $5m"
+  },
+  {
+   "topic": "Grant programs and amounts",
+   "what_was_recorded": "Presentation slides list available grant programs with their maximum or range amounts, including a total of up to $2 million in funding opportunities.",
+   "figures_as_printed": [
+    "Upto$2millioninfundingopportunities",
+    "Upto$250K",
+    "$15K - $50K",
+    "Upto$400K",
+    "Up to$1 million",
+    "$100K - $250K",
+    "Up to $60K",
+    "$50K - $1M",
+    "Upto$50K",
+    "No Max",
+    "No max Amount."
+   ],
+   "quote": "upto$2millioninfundingopportunities"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with Select Board: ARPA and Marshall Park renovation",
+   "resolution": "presented to Select Board; discussed",
+   "quote": "a.lockwood presented the attached power point presentation to the select board.",
+   "tags": [
+    "ARPA",
+    "Marshall Park",
+    "joint meeting",
+    "Select Board",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Community meeting schedule",
+   "resolution": "noted",
+   "quote": "k. menard noted that their april 19th meeting is a community meeting with wola via zoom",
+   "tags": [
+    "community meeting",
+    "schematic design"
+   ]
+  },
+  {
+   "topic": "Earth Day projects",
+   "resolution": "reported",
+   "quote": "the parks commission also reported they are continuing on with their earth day projects",
+   "tags": [
+    "Earth Day",
+    "volunteers",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:14 p.m., passed 3-0",
+   "quote": "k. menard motioned and d. passios seconded to adjourn at 8:14pm. passed 3-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "ARPA",
+  "joint meeting",
+  "Select Board",
+  "grants",
+  "debt policy",
+  "capital project",
+  "Earth Day"
+ ],
+ "dropped_unquoted_by_field": {}
 }

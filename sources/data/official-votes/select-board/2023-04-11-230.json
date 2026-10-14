@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-04-11",
  "docid": "230",
@@ -12,55 +12,481 @@
  },
  "votes": [
   {
-   "motion": "Amend Earth removal permit #16 by removing the land sold for the Lunenburg Central warehouse (~34 acres) and keeping the remainder under the permit",
+   "motion": "Amend Earth Removal Permit #16 by removing the ~34-acre parcel sold for the Lunenburg Central warehouse, keeping the rest under the permit.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to amend earth removal permit #16 as presented by removing the land that was sold for the lunenburg central warehouse"
+   "quote": "to amend earth removal permit #16 as presented by removing the land that was sold for the lunenburg central warehouse, ~34 acres"
   },
   {
-   "motion": "Accept the Comprehensive Emergency Management Plan as presented",
+   "motion": "Accept the Comprehensive Emergency Management Plan as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to accept the comprehensive emergency management plan as presented vote: all in favor"
+   "quote": "to accept the comprehensive emergency management plan as presented"
   },
   {
-   "motion": "Appoint Ashley York-Aronovich to the Agricultural Commission with term to expire June 30, 2023",
+   "motion": "Appoint Ashley York-Aronovich to the Agricultural Commission with a term to expire June 30, 2023.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to appoint ashley york-aronovich to the agricultural commission with a term to expire june 30, 2023"
+   "quote": "to appoint ashley york-aronovich to the agricultural commission with a term to expire june 30, 2023"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Alex Page as Heavy Equipment Operator",
+   "motion": "Ratify the Town Manager's appointment of Alex Page as Heavy Equipment Operator.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2nd: t. alonzo to ratify the town manager's appointment of alex page as heavy equipment operator vote: all in favor"
+   "quote": "to ratify the town manager's appointment of alex page as heavy equipment operator"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Eric Foster as Public Access Production Technician",
+   "motion": "Ratify the Town Manager's appointment of Eric Foster as Public Access Production Technician.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2nd: t. alonzo to ratify the town manager's appointment of eric foster as public access production technician"
+   "quote": "to ratify the town manager's appointment of eric foster as public access production technician"
   },
   {
-   "motion": "Enter into Executive Session and adjourn immediately to discuss strategy with respect to collective bargaining (Fire Union)",
+   "motion": "Enter into Executive Session under MGL c. 30, Section 21, Paragraph 3 to discuss collective bargaining strategy (Fire Union) and adjourn immediately following.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: t. alonzo to enter into executive session and adjourn immediately following pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining"
+   "quote": "to enter into executive session and adjourn immediately following pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes found and recorded. Vote 6 shows three recorded ayes in the minutes (Mr. Franco-aye, Mr. Alonzo-aye, Mr. Franco-aye), though Franco appears to be listed twice, likely a typographical error for Jeffreys.",
- "cost_usd": 0.1413875
+ "note": "Text extract, not a scan. Executive session vote line reads \"Mr. Franco-aye, Mr. Alonzo-aye, Mr. Franco- aye\": Mr. Franco appears twice, Mr. Jeffreys (the mover) is absent from the tally, so the outcome is recorded as not stated. Adjournment at 8:58 p.m. has no separate motion. Executive session minutes are separate and not in this text. Capital tables are garbled by line breaks in extraction; only the figures that read cleanly are itemized, and some rows (e.g. FY22 totals, records retention) are not itemized. Figures are printed as they appear, including \"50 000\" and \"$300 000\" without the dollar sign or comma.",
+ "cost_usd": 0.027113110000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member not present: heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob robinson, mark capedona; fire chief patrick sullivan,"
+  },
+  {
+   "name": "Rob Robinson",
+   "role": "VP of Aggregates at P J Keating, representing the applicant",
+   "status": "present",
+   "quote": "rob robinson, vp of aggregates at p j keating, stated the parcel was under keating land holdings"
+  },
+  {
+   "name": "Mark Capedona",
+   "role": "Colonial Power Group",
+   "status": "present",
+   "quote": "mark capedona of colonial power group was here to speak about a small increase coming to the program."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief/Emergency Management Director",
+   "status": "present",
+   "quote": "chief sullivan reported this plan was updated last may that you accepted."
+  },
+  {
+   "name": "Ashley York-Aronovich",
+   "role": "Agricultural Commission appointee (applicant)",
+   "status": "present",
+   "quote": "ms. york-aronovich stated she has already had an interest in agriculture."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "ana lockwood called the parks commission meeting to order at 7:38 p.m."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "fire chief patrick sullivan, ashley york-aronovich, ana lockwood, dave passios, karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "fire chief patrick sullivan, ashley york-aronovich, ana lockwood, dave passios, karin menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board signed the accounts payable warrant ($681,570.09) and the payroll deductions and payroll warrants ($975,455.36 each), with no vote recorded.",
+   "quote": "the board signed an accounts payable warrant in the amount of $681,570.09"
+  },
+  {
+   "decision": "Board members had no issues with the non-controversial articles being placed on the Consent Calendar for Annual Town Meeting.",
+   "quote": "the board members had no issues with these articles being in the consent calendar."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal aggregation rate increase",
+   "what_was_recorded": "Colonial Power Group reported the town's aggregation rate rises by $0.00128 per kWh from the May 2023 meter reads, fixed through November 2024.",
+   "figures_as_printed": [
+    "$0.00128 per kWh",
+    "$0.11740 per kWh",
+    "$0.11868 per kWh"
+   ],
+   "quote": "the new rate (increasing from $0.11740 per kwh to $0.11868 per kwh) will be fixed through the remainder of the term, ending november 2024."
+  },
+  {
+   "topic": "Household effect of aggregation increase",
+   "what_was_recorded": "At average usage of 600 kWh per month, the aggregation increase was stated as $0.77 per month per customer.",
+   "figures_as_printed": [
+    "600 kWh per month",
+    "$0.77 per month"
+   ],
+   "quote": "given the average usage of 600 kwh per month, the new aggregation rate represents an increase of $0.77 per month versus the current rate per customer."
+  },
+  {
+   "topic": "Marshall Park debt impact",
+   "what_was_recorded": "If the $5.2 M renovation were fully debt-funded by the town, it would be 1.68% of the levy under the 4% net regular debt cap and 1.53% of total levy under the 14% aggregate debt service cap; the minutes say ARPA and grants would lower these.",
+   "figures_as_printed": [
+    "$5.2 M",
+    "1.68%",
+    "1.53%",
+    "4%",
+    "14%"
+   ],
+   "quote": "if the marshall park renovation construction is fully debt funded by the town, $5.2 m, it would represent 1.68% of the levy"
+  },
+  {
+   "topic": "Marshall Park design costs to date",
+   "what_was_recorded": "Conceptual design paid ($36,000) and property survey (about $18,000) completed; schematic design costing $45,000 has begun and a next phase estimate of 50 000 was given.",
+   "figures_as_printed": [
+    "$36,000",
+    "$18,000",
+    "$45,000",
+    "50 000"
+   ],
+   "quote": "the schematic design, costing $45,000, has just begun and was funded at the last town meeting."
+  },
+  {
+   "topic": "Marshall Park construction phases",
+   "what_was_recorded": "Phase cost figures were presented: phase 1 about $3.3 million, phase 2 $1.5 million in narrative but $1.48 million on the slide, phase 3 $270,000 and phase 4 $86,000.",
+   "figures_as_printed": [
+    "$3.3 million",
+    "$1.5 million",
+    "$1.48 million",
+    "$270,000",
+    "$86,000"
+   ],
+   "quote": "the first phase would be cost about $3.3 million and that's the bulk of the construction"
+  },
+  {
+   "topic": "ARPA funds uncommitted",
+   "what_was_recorded": "Uncommitted ARPA funds were stated as $2.3 million; ARPA must be committed by December 31, 2024 and spent by December 31, 2026.",
+   "figures_as_printed": [
+    "$2.3 million"
+   ],
+   "quote": "ms. lemieux stated $2.3 million."
+  },
+  {
+   "topic": "Marshall Park grant options",
+   "what_was_recorded": "Grant programs listed with maximum amounts for the Marshall Park project, including LWCF, PARC, AARP, MAAB, MassTrails and Stanton Foundation.",
+   "figures_as_printed": [
+    "$1M",
+    "$400K",
+    "$15-$25K",
+    "$250K",
+    "$60K",
+    "$100K- $250K"
+   ],
+   "quote": "parkland acquisitions & renovations for communities (parc) grant- june 2023-up to $400k"
+  },
+  {
+   "topic": "Carport reconfiguration bid",
+   "what_was_recorded": "Prior FY21 low bid for the carport reconfiguration was $298,750 and the Town Manager said it came in at almost $300 000; the project is being rebid and $135,000 is budgeted.",
+   "figures_as_printed": [
+    "$298,750",
+    "$300 000",
+    "$135,000"
+   ],
+   "quote": "when bid in fy21 low bid was $298,750. decided to hold off due to market."
+  },
+  {
+   "topic": "FY21 capital plan closeout totals",
+   "what_was_recorded": "FY2005-FY21 capital projects total appropriation and remaining balance, with unexpended capital of $14,951.93 to be reappropriated.",
+   "figures_as_printed": [
+    "$ 1,793,925.00",
+    "$ 194,922.70",
+    "11%",
+    "$ 14,951.93"
+   ],
+   "quote": "$ 1,793,925.00 $ 194,922.70 11%"
+  },
+  {
+   "topic": "Town Hall repairs estimate",
+   "what_was_recorded": "One bid received on 2/23/23 for approximately $300K for Town Hall repairs; project on hold pending reassessment.",
+   "figures_as_printed": [
+    "$300K"
+   ],
+   "quote": "received 1 bid on 2/23/23 for approximately $300k"
+  },
+  {
+   "topic": "FY23 capital plan totals and Master Plan",
+   "what_was_recorded": "FY2023 capital plan appropriations total $2,162,849.00 with balance $1,312,168.91 (61%); Master Plan contract awarded for $153K using all but $90 of the $110K article.",
+   "figures_as_printed": [
+    "$ 2,162,849.00",
+    "$ 1,312,168.91",
+    "61%",
+    "$153K",
+    "$90",
+    "$110K"
+   ],
+   "quote": "contract awarded for $153k, using all but $90 of the $110k from this capital article"
+  },
+  {
+   "topic": "Old Primary School hazardous materials abatement",
+   "what_was_recorded": "Abatement awarded to Costello Dismantling; the FY23 capital table lists $371,000 appropriated and balance $371,000.",
+   "figures_as_printed": [
+    "$371,000"
+   ],
+   "quote": "awarded bid to costello dismantling; work expected to be complete by 5/8/23"
+  },
+  {
+   "topic": "Marshall Park remaining capital balance",
+   "what_was_recorded": "$13,377 remained from phase 1 of the Marshall Park conceptual design and was to be used on the schematic design.",
+   "figures_as_printed": [
+    "$13,377"
+   ],
+   "quote": "conceptual design complete; $13,377 left from phase 1 will be used on schematic"
+  },
+  {
+   "topic": "Unpaid storm water bill added to warrant",
+   "what_was_recorded": "An unpaid $4000 bill from the prior fiscal year from Central Mass Storm water Coalition was added to the warrant, funded from free cash.",
+   "figures_as_printed": [
+    "$4000"
+   ],
+   "quote": "ms. lemieux reported there was an unpaid bill of $4000 from last fiscal year received today from central mass"
+  },
+  {
+   "topic": "Public Safety building water heater",
+   "what_was_recorded": "Facilities Director obtaining quotes to replace a leaking water heater; total project to be under $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "he will be proceeding with a contractor and that total project will be under $10,000."
+  },
+  {
+   "topic": "Consent Calendar warrant articles",
+   "what_was_recorded": "Article 19 cemetery lot sales account of $10,000 and Article 20 Historical Commission historic homes survey of $25,000 were listed for the Consent Calendar.",
+   "figures_as_printed": [
+    "$10,000",
+    "$25,000"
+   ],
+   "quote": "article 20 - the historical commission's historic homes survey of $25,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "FY2023 property tax bill mailing date and abatement deadline",
+   "quote": "ms. lemieux read aloud a press release: important updates related to fy 2023 real estate taxes"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "Employee communications and Assessors' abatement process",
+   "quote": "ms. lemieux stated the goal of my public comment tonight is that i hope it will clear up some misinformation"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Vice Chairman",
+   "topic": "Boys and Girls Club fundraiser announcement",
+   "quote": "mr. alonzo announced on friday, april 28th at the lunenburg middle/high school auditorium it will be the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: FY2023 tax bills and abatements",
+   "resolution": "read into record; no action",
+   "quote": "ms. lemieux read aloud a press release: important updates related to fy 2023 real estate taxes",
+   "tags": [
+    "tax bills",
+    "abatements",
+    "FY2023",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "PJ Keating earth removal permit #16 amendment",
+   "resolution": "approved",
+   "quote": "to amend earth removal permit #16 as presented by removing the land that was sold for the lunenburg central warehouse, ~34 acres",
+   "tags": [
+    "earth removal",
+    "permit",
+    "aggregates"
+   ]
+  },
+  {
+   "topic": "Municipal aggregation rate amendment with Colonial Power Group",
+   "resolution": "no action; informational",
+   "quote": "mark capedona of colonial power group was here to speak about a small increase coming to the program.",
+   "tags": [
+    "electricity",
+    "municipal aggregation",
+    "renewables"
+   ]
+  },
+  {
+   "topic": "Comprehensive Emergency Management Plan update",
+   "resolution": "accepted",
+   "quote": "to accept the comprehensive emergency management plan as presented",
+   "tags": [
+    "emergency management",
+    "fire department",
+    "plan"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission associate appointment",
+   "resolution": "appointed",
+   "quote": "to appoint ashley york-aronovich to the agricultural commission with a term to expire june 30, 2023",
+   "tags": [
+    "appointments",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager appointments; Building Commissioner resignation",
+   "resolution": "two appointments ratified; resignation noted",
+   "quote": "to ratify the town manager's appointment of alex page as heavy equipment operator",
+   "tags": [
+    "personnel",
+    "appointments",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Warrants signed and committee reports",
+   "resolution": "warrants signed; reports received, no action",
+   "quote": "mr. alonzo reported the finance committee met last week and voted on the remaining warrant articles.",
+   "tags": [
+    "warrants",
+    "finance committee",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Parks Commission: Marshall Park funding plan and ARPA request",
+   "resolution": "presented and discussed; no action",
+   "quote": "ana lockwood called the parks commission meeting to order at 7:38 p.m.",
+   "tags": [
+    "parks",
+    "Marshall Park",
+    "ARPA",
+    "grants",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "ms. lemieux reported on the historical commission membership",
+   "tags": [
+    "vacancies",
+    "Historical Commission",
+    "employment",
+    "website",
+    "30 School Street",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Capital plan project status, FY21 to FY23",
+   "resolution": "reported; no action",
+   "quote": "status update on capital plan projects from fy23 and prior",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "projects"
+   ]
+  },
+  {
+   "topic": "FY2024 budget, capital plan, ATM warrant, consent calendar",
+   "resolution": "consent calendar articles listed; board had no issues",
+   "quote": "ms. lemieux noted she has put together a list of non-controversial articles for the consent calendar.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "consent calendar",
+    "FY2024 budget",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Public comment: employee communications and abatements; announcement",
+   "resolution": "no action",
+   "quote": "ms. lemieux stated the goal of my public comment tonight is that i hope it will clear up some misinformation",
+   "tags": [
+    "public comment",
+    "Assessors",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Executive session: Fire Union collective bargaining",
+   "resolution": "motion to enter executive session recorded; outcome not stated; executive session minutes separate",
+   "quote": "to enter into executive session and adjourn immediately following pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "fire union"
+   ]
+  }
+ ],
+ "tags": [
+  "tax bills",
+  "abatements",
+  "earth removal",
+  "electricity aggregation",
+  "emergency management",
+  "appointments",
+  "Marshall Park",
+  "ARPA",
+  "parks",
+  "capital plan",
+  "FY2024 budget",
+  "town meeting warrant",
+  "consent calendar",
+  "warrants",
+  "executive session",
+  "collective bargaining",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

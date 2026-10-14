@@ -1,0 +1,683 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2023-05-09",
+ "video_id": "1ZallDTx8pw",
+ "video_url": "https://www.youtube.com/watch?v=1ZallDTx8pw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2023-05-09-1ZallDTx8pw.json",
+  "sha256": "e2e17833dc428e81a66841df76e29dd540b842825a21ef8aa10ba75127123306",
+  "caption_lines": 502,
+  "segments": 4323
+ },
+ "recording": {
+  "duration_s": 10551,
+  "duration": "2:55",
+  "spoken_chars": 140476,
+  "words_approx": 23412
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05092023-238",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-05-09-agenda-238.txt",
+   "path": "sources/meetings/select-board/2023-05-09-agenda-238.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05092023-238",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-05-09-minutes-238.txt",
+   "path": "sources/meetings/select-board/2023-05-09-minutes-238.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T01:03:02Z",
+  "cost_usd": 0.4958214
+ },
+ "minutes": {
+  "headline": "Select Board committed about $1.1M of ARPA funds, mainly $1M for Marshall Park, and suspended On the Rocks' liquor license for 10 days.",
+  "summary": "The board held an alcohol violation hearing for On the Rocks, found violations involving a 20-year-old being served, and suspended the license for 10 days. It then worked through ARPA funding requests, agreeing in principle on several and committing some funds, and heard a request for a handicap parking spot/paving at 243 Summer Street, which it deferred. The town manager also gave updates on ARPA-funded vehicle purchases, vacancies and bids.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Alonso",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Jeffrey",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Roca",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Gamble",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Carol arshambo",
+    "role": "chair of the school committee"
+   },
+   {
+    "name_as_heard": "Elaine",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 127,
+    "speaker_as_heard": "Matthew Allison",
+    "stated_role": "resident, Flat Hill Road",
+    "topic": "Flat Hill drainage: says the basin is broken, urges the board to vote a directive to the review engineer and to consider a drainage easement rather than moving the basin downhill."
+   },
+   {
+    "t": 423,
+    "stated_role": "resident, Reservoir Road",
+    "topic": "Observed that an engineering firm designs a system but doesn't install it, so a failure may be an installation problem."
+   },
+   {
+    "t": 10162,
+    "stated_role": "painting contractor",
+    "topic": "Crosswalk paint near Town Hall has worn away; asked for repainting in warm weather. Also urged the board to list ARPA projects in a capital-plan style table."
+   },
+   {
+    "t": 10323,
+    "speaker_as_heard": "Rhonda",
+    "topic": "Asked about an earlier ARPA consultant and praised the Marshall Park presentation."
+   }
+  ],
+  "tags": [
+   "capital",
+   "grants",
+   "hiring",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "roads-and-dpw",
+   "seniors",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 740,
+    "motion": "Approve the Peddler's license application for Sun Run solar solicitor",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3244,
+    "motion": "Find On the Rocks violated section 1.07 alcohol beverage sales and laws",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3329,
+    "motion": "Find On the Rocks violated section 1.08 environs of licensed premises",
+    "outcome": "failed 2-2",
+    "procedural": false
+   },
+   {
+    "t": 3587,
+    "motion": "Find On the Rocks violated section 1.10 standards of conduct (selling to under 21)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3734,
+    "motion": "Find violation of Mass General Law chapter 138 section 34",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4867,
+    "motion": "Suspend On the Rocks license for 10 days, May 19 through May 28",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 10530,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 945,
+    "topic": "ARPA ambulance purchase",
+    "what_was_said": "Ambulance quoted via MAPC cooperative bid and ordered, with an extra upfit cost expected.",
+    "figures_as_heard": [
+     "452",
+     "693",
+     "ten thousand dollars"
+    ]
+   },
+   {
+    "t": 1280,
+    "topic": "Adult Activity Center outdoor patio bid",
+    "what_was_said": "Low bid plus alternate for pavilion, funded partly by donation and gift account and remaining state earmark and FY23 capital.",
+    "figures_as_heard": [
+     "176 thousand nine hundred and ten dollars",
+     "69 599 dollars",
+     "fifty eight thousand ninety nine dollars",
+     "11 500",
+     "177 thousand twenty dollars"
+    ]
+   },
+   {
+    "t": 5752,
+    "topic": "Summer Street paving request",
+    "what_was_said": "Resident provided a paving quote and asked whether the town would fund it.",
+    "figures_as_heard": [
+     "3400 dollars"
+    ]
+   },
+   {
+    "t": 7324,
+    "topic": "Water district ARPA request (PFAS)",
+    "what_was_said": "Water district requested funds for public education, PFAS master plan and pilot testing.",
+    "figures_as_heard": [
+     "485 thousand dollars",
+     "35 000",
+     "fifty thousand dollars",
+     "four hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 7447,
+    "topic": "School committee ARPA requests",
+    "what_was_said": "Pickup truck/plow/sander and athletic complex feasibility study requested; sidewalk request also listed.",
+    "figures_as_heard": [
+     "sixty eight thousand dollars",
+     "fifty thousand dollars",
+     "101 640"
+    ]
+   },
+   {
+    "t": 8002,
+    "topic": "Other ARPA requests",
+    "what_was_said": "Police mental health clinician, public access, sewer items, financial consulting, Covid expenses, Parks, communications tower and food pantry were reviewed.",
+    "figures_as_heard": [
+     "75-339",
+     "sixty seven thousand five hundred ninety dollars",
+     "sixty thousand dollars",
+     "fifty thousand dollars",
+     "500 000",
+     "two million dollars",
+     "three hundred thousand dollars",
+     "two hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 8680,
+    "topic": "Total ARPA requests under discussion",
+    "what_was_said": "Total of requests under discussion stated, with about 2.28 million available.",
+    "figures_as_heard": [
+     "3 million 139 569.79",
+     "2.28 million"
+    ]
+   },
+   {
+    "t": 9445,
+    "topic": "ARPA committed",
+    "what_was_said": "Chair stated the board committed funds tonight.",
+    "figures_as_heard": [
+     "1.1 million a hundred and ten thousand dollars"
+    ]
+   },
+   {
+    "t": 9928,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable, payroll and payroll deductions warrants read.",
+    "figures_as_heard": [
+     "one million 898 130 and 24 cents",
+     "967 747 and nine cents",
+     "678 110 dollars and five cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4867,
+    "decision": "Suspension to run May 19 through May 28, with 5 business days for the licensee to appeal to the ABCC."
+   },
+   {
+    "t": 7032,
+    "decision": "No decision on the 243 Summer Street request; members will research and follow up in a week or two."
+   },
+   {
+    "t": 9031,
+    "decision": "Agreed to commit ARPA funds for Marshall Park construction at about a million dollars, revisit more later."
+   },
+   {
+    "t": 8803,
+    "decision": "Agreed to commit ARPA funds for consulting/reporting."
+   },
+   {
+    "t": 9174,
+    "decision": "Will request more information from school, sewer, police and food pantry groups and invite the water district and regional business fund to present."
+   },
+   {
+    "t": 9678,
+    "decision": "Town manager to produce a consolidated list of ARPA commitments and open items."
+   },
+   {
+    "t": 1383,
+    "decision": "Town manager evaluation composite expected next week and vote the following week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 127,
+    "topic": "Opening, announcements and thanks for town meeting",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 127,
+    "t_end": 483,
+    "topic": "Public comment on Flat Hill drainage",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 483,
+    "t_end": 586,
+    "topic": "Announcements and communications",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 586,
+    "t_end": 796,
+    "topic": "Peddler's license for Sun Run",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 796,
+    "t_end": 1383,
+    "topic": "Town manager report: vacancies, ARPA vehicles, DPW, bids",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "roads-and-dpw",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 1383,
+    "t_end": 1734,
+    "topic": "Manager evaluation process and town meeting debrief",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1734,
+    "t_end": 5040,
+    "topic": "On the Rocks alcohol license violation hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5040,
+    "t_end": 7114,
+    "topic": "243 Summer Street parking/paving request",
+    "resolution": "deferred",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 7114,
+    "t_end": 9890,
+    "topic": "ARPA evaluation and funding requests",
+    "resolution": "partial commitments",
+    "tags": [
+     "grants",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9890,
+    "t_end": 10530,
+    "topic": "Warrants, action items, committee reports, public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 10530,
+    "t_end": 10560,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts on most motions not stated; 'passed' reflects the chair's announcement.",
+   "Some captions garbled around the Summer Street resident's remarks and the speaker names.",
+   "Exact ARPA commitment amounts are as heard and unreliable."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3329,
+    "about": "Whether to find a separate violation under section 1.08 overlapping 1.07.",
+    "sides": "two members for, two members against",
+    "words_as_heard": "I don't want overlapping violations",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3819,
+    "about": "Appropriate suspension length, from a warning to 21 days.",
+    "sides": "members ranged from five days to 21 days",
+    "words_as_heard": "I'm in favor of a 21 day suspension",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6060,
+    "about": "Whether to pave town land for parking for a blind resident.",
+    "sides": "a member leaning against vs the resident and others",
+    "words_as_heard": "I'm leaning toward not doing this",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2896,
+    "about": "Licensee said he felt slandered by a prior board comment about money.",
+    "sides": "licensee vs the board",
+    "words_as_heard": "I felt I was attacked a little bit",
+    "kind": "public criticism"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to suspend On the Rocks' liquor license for 10 days, May 19 through May 28, with five business days to appeal to the ABCC.",
+    "t": 4867
+   },
+   {
+    "line": "Before the suspension, the board found violations on alcohol sales law, standards of conduct (selling to under 21) and Mass General Law chapter 138 section 34; a finding on the environs of the premises failed 2-2.",
+    "t": 3587
+   },
+   {
+    "line": "The board agreed to commit ARPA funds for Marshall Park construction and for consulting and reporting, and said it would revisit further requests later.",
+    "t": 9031
+   },
+   {
+    "line": "A request about a handicap parking spot and paving at 243 Summer Street was deferred with no decision; members will research and follow up.",
+    "t": 7032
+   },
+   {
+    "line": "The board approved a peddler's license for a solar solicitor and heard the town manager on ARPA vehicle purchases, vacancies and bids.",
+    "t": 740
+   }
+  ],
+  "why_it_matters": [
+   "ARPA money is a one-time pot, so each commitment to a park, a consultant or a department request uses funds that cannot be spent twice and that no tax bill replaces.",
+   "The board still holds requests from the schools, the water district, sewer, police and the food pantry, so the order in which they are funded decides which of those projects go ahead."
+  ],
+  "watch_next": [
+   "The town manager's consolidated list of ARPA commitments and open items, and further information requested from the school, sewer, police and food pantry groups.",
+   "The town manager evaluation composite expected the following week, with the vote the week after that."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T01:03:12Z",
+   "cost_usd": 0.2244949
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05092023-238",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2023-05-09-minutes-238.txt",
+   "path": "sources/meetings/select-board/2023-05-09-minutes-238.pdf"
+  },
+  "official_sha256": "06996b25dc3ff17b886c81f3dac9c1feedc019f438dd6670700ed60d1c1871fe",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The four On The Rocks violation votes match in outcome, including the 2-2 failure on 1.08, and the warrant totals and Water District request agree. The records differ most on the Peddler's license vote, the suspension vote and length, the Marshall Park ARPA commitment, and the Town Manager evaluation timing, none of which the official minutes record the way ours do.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Peddler's license for Sun Run solar solicitor",
+    "ours": "Approve the Peddler's license application for Sun Run solar solicitor — passed",
+    "official": "",
+    "note": "Our minutes record a passed vote that the official minutes do not mention; check the recording at this time and the town clerk's record.",
+    "t": 740
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote and length of On the Rocks suspension",
+    "ours": "Suspend On the Rocks license for 10 days, May 19 through May 28 — passed; 5 business days for the licensee to appeal to the ABCC.",
+    "official": "ricker to turn over the alcohol license to the police department once the appeal period is over.",
+    "note": "Official minutes record no suspension vote and no length (the structured extract says it is not in the text provided); check the full official minutes and the video for the vote and dates.",
+    "t": 4867
+   },
+   {
+    "kind": "caption_error",
+    "about": "Summer Street paving quote",
+    "ours": "Summer Street paving request: 3400 dollars",
+    "official": "a quote to pave the area in the amount of 83400 was provided by ms. cosme and she is asking the town to assist with the funding.",
+    "note": "Same quote; the captions dropped the leading 8.",
+    "official_reading": "83400",
+    "t": 5752
+   },
+   {
+    "kind": "agree",
+    "about": "243 Summer Street request: no decision, more research",
+    "ours": "No decision on the 243 Summer Street request; members will research and follow up in a week or two.",
+    "official": "it was decided to do some more research on the matter.",
+    "note": "Both defer the request for research.",
+    "t": 7032
+   },
+   {
+    "kind": "agree",
+    "about": "Water District ARPA request (PFAS)",
+    "ours": "Water district ARPA request (PFAS): 485 thousand dollars, 35 000, fifty thousand dollars, four hundred thousand dollars",
+    "official": "the water district is requesting $485,000 for public education ($35,000), pfas master plan ($50,000)",
+    "note": "Same figures: $485,000, $35,000, $50,000 (and $400,000 per the structured extract).",
+    "t": 7324
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants",
+    "ours": "Warrants: one million 898 130 and 24 cents, 967 747 and nine cents, 678 110 dollars and five cents",
+    "official": "the board signed an accounts payable warrant in the amount of $1,898,130.24; a payroll warrant in the amount",
+    "note": "Amounts match: $1,898,130.24, $967,747.09, $678,110.05.",
+    "t": 9928
+   },
+   {
+    "kind": "agree",
+    "about": "Chamber of Commerce regional business fund, $50,000",
+    "ours": "invite the water district and regional business fund to present; Other ARPA requests include fifty thousand dollars",
+    "official": "the north central chamber of commerce is requesting $50,000 for a proposed regional business investment fund",
+    "note": "The $50,000 is consistent with our figure list, though ours does not name the Chamber with it.",
+    "t": 8002
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA ambulance purchase figures",
+    "ours": "ARPA ambulance purchase: 452, 693, ten thousand dollars",
+    "official": "",
+    "note": "Official says funds were committed to the ambulance and two dump trucks but prints no dollar figure.",
+    "t": 945
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Adult Activity Center patio bid figures",
+    "ours": "Adult Activity Center outdoor patio bid: 176 thousand nine hundred and ten dollars, 69 599 dollars, fifty eight thousand ninety nine dollars, 11 500, 177 thousand twenty dollars",
+    "official": "",
+    "note": "Official minutes print none of these patio bid figures.",
+    "t": 1280
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School committee and other ARPA request figures and totals",
+    "ours": "School committee ARPA requests: sixty eight thousand dollars, fifty thousand dollars, 101 640; Total ARPA requests under discussion: 3 million 139 569.79, 2.28 million",
+    "official": "",
+    "note": "Official minutes print no school request amounts or totals; the official only notes some requests need more information.",
+    "t": 7447
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA commitments",
+    "ours": "Agreed to commit ARPA funds for Marshall Park construction at about a million dollars, revisit more later.",
+    "official": "the arpa funding allocated towards the two trucks is critical to snow operations",
+    "note": "Our minutes record a Marshall Park commitment of about $1M; official mentions only the ambulance and two dump trucks; check the video for any vote or consensus.",
+    "t": 9031
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town manager evaluation timing",
+    "ours": "Town manager evaluation composite expected next week and vote the following week.",
+    "official": "this was tabled until the next meeting.",
+    "note": "Next week versus vote the week after; check the recording for the schedule actually stated.",
+    "t": 1383
+   },
+   {
+    "kind": "agree",
+    "about": "Seeking more information from ARPA requesters",
+    "ours": "Will request more information from school, sewer, police and food pantry groups and invite the water district and regional business fund to present.",
+    "official": "of the requests require more information and the groups will be asked back to explain further.",
+    "note": "Same decision; ours names the groups.",
+    "t": 9174
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA consulting/reporting commitment and consolidated list",
+    "ours": "Agreed to commit ARPA funds for consulting/reporting; Town manager to produce a consolidated list of ARPA commitments and open items.",
+    "official": "",
+    "note": "Neither decision appears in the official minutes.",
+    "t": 9678
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Postponed Class II Auto Dealer hearing",
+    "ours": "",
+    "official": "383 whalom road-postponed due to failure to notify abutters",
+    "note": "The official minutes record the postponement for J & E Realty; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Flat Hill Road drainage follow-up",
+    "ours": "",
+    "official": "mr. jeffreys will touch base with mr. allison about the engineering on flat hill road for more clarity.",
+    "note": "Official records this follow-up; ours has nothing on it.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Alonso",
+    "ours": "Mr Alonso (member)",
+    "official": "mr. alonzo echoed mr. franco and thanked the town moderator, town manager, finance director",
+    "note": "Same member, spelling differs.",
+    "official_reading": "Mr. Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Jeffrey",
+    "ours": "Mr Jeffrey (member)",
+    "official": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+    "note": "Same member; official shows him as chairman.",
+    "official_reading": "Mr. Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Miss Roca",
+    "ours": "Miss Roca (member)",
+    "official": "ms. sroka asked chief gammel if the bouncer asked the 20 year old for an id.",
+    "note": "Likely a mishearing of Sroka (inference from the fourth member's absence in ours).",
+    "official_reading": "Ms. Sroka"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chief Gamble",
+    "ours": "Chief Gamble (police chief)",
+    "official": "chief gammel stated he brought the officers that were involved in the call to answer any questions or provide any testimony.",
+    "note": "Same chief, misheard name.",
+    "official_reading": "Chief Gammel"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Carol arshambo",
+    "ours": "Carol arshambo (chair of the school committee)",
+    "official": "carol archambault, school committee chair, regarding the sidewalks request, explained the idea was to go",
+    "note": "Same person, misheard surname.",
+    "official_reading": "Carol Archambault"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr Franco",
+    "ours": "Mr Franco (member)",
+    "official": "mr. franco announced the pancake breakfast scheduled for tomorrow is canceled.",
+    "note": "Present in both.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees Heather (town manager) and Elaine (staff)",
+    "ours": "Heather (town manager); Elaine (staff)",
+    "official": "",
+    "note": "The official attendee list names neither of them.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Ms. Lemieux and other speakers",
+    "ours": "",
+    "official": "ms. lemieux reported she received the certified vote from the town clerk regarding the home rule petition.",
+    "note": "Official lists Lemieux, Ricker, three officers, Ana Lockwood and public commenters not in our list.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T01:04:54Z",
+   "cost_usd": 0.2752229
+  }
+ }
+}

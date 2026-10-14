@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2023-02-08",
  "docid": "127",
@@ -12,23 +12,291 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of 1/11/23",
+   "motion": "Approve the minutes of 1/11/23.",
    "moved_by": "Lockwood",
    "seconded_by": "Hinds",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "lockwood moved, seconded by hinds to approve minutes of 1/11/23; approved unanimously."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lockwood",
    "seconded_by": "Wilson",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "lockwood motion, wilson seconded. unanimously voted. meeting adjourned at 9:04pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0913755
+ "note": "Text is complete and readable; no scan. Two recorded votes, both procedural (approve 1/11/23 minutes; adjourn), both unanimous. No vote was recorded on the Parmenter Road or Reservoir Road recommendation, so none is listed; the committee's positions appear only as discussion and as the memo Toohill was to draft. The header reads \"Open Space Ad Hoc Committee\" while the board is recorded as Open Space Committee. Item 5 has a truncated sentence in the minutes (\"Need to start somewhere to\"). The $40 figure is a private owner's pass price reported by a speaker, not a town figure.",
+ "cost_usd": 0.01620481,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: brandon kibbe (clerk), ana lockwood (vice chair), michael toohill (chair), eric hinds, mary wilson (joined @ 7:34)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: brandon kibbe (clerk), ana lockwood (vice chair), michael toohill (chair), eric hinds, mary wilson (joined @ 7:34)"
+  },
+  {
+   "name": "Michael Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: brandon kibbe (clerk), ana lockwood (vice chair), michael toohill (chair), eric hinds, mary wilson (joined @ 7:34)"
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "",
+   "status": "present",
+   "quote": "members present: brandon kibbe (clerk), ana lockwood (vice chair), michael toohill (chair), eric hinds, mary wilson (joined @ 7:34)"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "",
+   "status": "present",
+   "quote": "mary wilson (joined @ 7:34)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member of Parks Commission",
+   "status": "present",
+   "quote": "karin menard - member of parks commission."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission Chair",
+   "status": "not stated",
+   "quote": "bob pease (conservation commission chair) believes that decision on parking should be made by parks and rec"
+  },
+  {
+   "name": "Joel Swenson",
+   "role": "",
+   "status": "present",
+   "quote": "hears that committee's power is limited to making recommendations."
+  },
+  {
+   "name": "Mary Perkins",
+   "role": "",
+   "status": "present",
+   "quote": "shady point owner offers an annual pass for $40 to launch there."
+  },
+  {
+   "name": "Rich Pearson",
+   "role": "",
+   "status": "present",
+   "quote": "does not support development at parmenter road location."
+  },
+  {
+   "name": "Fionna & David King",
+   "role": "",
+   "status": "present",
+   "quote": "strongly objects to parmenter road parcel for development for car top access."
+  },
+  {
+   "name": "Virginia Wolfram",
+   "role": "",
+   "status": "present",
+   "quote": "opposed to the use of the parmenter road parcel for cartop access."
+  },
+  {
+   "name": "Jerry Brown",
+   "role": "",
+   "status": "present",
+   "quote": "the parmenter road parcel is very small and very tight for the type of access."
+  },
+  {
+   "name": "Gary Spindt",
+   "role": "",
+   "status": "present",
+   "quote": "\"extreme anxiety\" about safety concerns, especially on-water safety for nonpowered boats due to powered boats."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the minutes of 9/8/22 tabled because the minutes were not available.",
+   "quote": "minutes not available for 9/8/22, approval tabled."
+  },
+  {
+   "decision": "Town Counsel to review title options with the Town Manager and Selectboard Chair.",
+   "quote": "3 potential ways to clear title; town counsel to review options with town manager and selectboard chair."
+  },
+  {
+   "decision": "Chair Toohill to draft a letter to the Town Manager and Board of Selectmen summarizing the discussions.",
+   "quote": "m. toohill will draft letter to town manager and board of selectmen to summarize what the discussions have been."
+  },
+  {
+   "decision": "Vice Chair Lockwood to start investigating answers on limitations; other members asked to outline their principal concerns.",
+   "quote": "a. lockwood will start investigating more answers on limitations, asks other committee members to outline the principle concerns."
+  },
+  {
+   "decision": "Public comments on the Parmenter Road parcel to be forwarded to Parks and Rec.",
+   "quote": "with information about public comments forwarded to parks and rec."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shady Point launch pass",
+   "what_was_recorded": "A speaker reported that the Shady Point owner offers an annual launch pass for $40, cited in the discussion of public access.",
+   "figures_as_printed": [
+    "$40"
+   ],
+   "quote": "shady point owner offers an annual pass for $40 to launch there."
+  },
+  {
+   "topic": "Town contribution to lake care",
+   "what_was_recorded": "A public speaker stated that the town does not contribute to the care of the lake; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the town doesn't contribute to the care of the lake."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Committee role and Parmenter Road development",
+   "speaker": "Joel Swenson",
+   "stated_role": "",
+   "quote": "hears that committee's power is limited to making recommendations."
+  },
+  {
+   "topic": "Shady Point pass and Parmenter Road access",
+   "speaker": "Mary Perkins",
+   "stated_role": "Shady Point owner",
+   "quote": "shady point owner offers an annual pass for $40 to launch there."
+  },
+  {
+   "topic": "Parmenter Road development and parking",
+   "speaker": "Rich Pearson",
+   "stated_role": "",
+   "quote": "does not support development at parmenter road location."
+  },
+  {
+   "topic": "Traffic and safety on Parmenter Road parcel",
+   "speaker": "Fionna & David King",
+   "stated_role": "",
+   "quote": "strongly objects to parmenter road parcel for development for car top access."
+  },
+  {
+   "topic": "Traffic, safety and storm drain easement",
+   "speaker": "Virginia Wolfram",
+   "stated_role": "",
+   "quote": "opposed to the use of the parmenter road parcel for cartop access."
+  },
+  {
+   "topic": "Parcel size for car-top access",
+   "speaker": "Jerry Brown",
+   "stated_role": "",
+   "quote": "the parmenter road parcel is very small and very tight for the type of access."
+  },
+  {
+   "topic": "On-water safety for nonpowered boats",
+   "speaker": "Gary Spindt",
+   "stated_role": "",
+   "quote": "\"extreme anxiety\" about safety concerns, especially on-water safety for nonpowered boats due to powered boats."
+  },
+  {
+   "topic": "Lily cove access for small watercraft",
+   "speaker": "Karin Menard",
+   "stated_role": "Member of Parks Commission",
+   "quote": "lily cove (aka stump cove) difficult to get into."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; called to order at 7:31pm",
+   "quote": "chairman toohill called meeting to order at 7:31pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved 1/11/23 minutes unanimously; 9/8/22 approval tabled",
+   "quote": "lockwood moved, seconded by hinds to approve minutes of 1/11/23; approved unanimously.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Open Space Conference",
+   "resolution": "no action; members encouraged to attend",
+   "quote": "toohill encouraged committee members to attend sessions in the next couple of weeks.",
+   "tags": [
+    "open space",
+    "training"
+   ]
+  },
+  {
+   "topic": "Title examination, 0 Lake Shirley Reservoir",
+   "resolution": "continued; Town Counsel to review options",
+   "quote": "toohill followed up with town counsel to review title examination and discuss next steps.",
+   "tags": [
+    "title",
+    "lake shirley",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Parmenter Road and Reservoir Road parcels",
+   "resolution": "discussed; draft memo presented; no recommendation voted; public comment taken; letter and further research assigned",
+   "quote": "toohill presented a draft memo summarizing potential recommendations.",
+   "tags": [
+    "parmenter road",
+    "reservoir road",
+    "boat access",
+    "parks commission",
+    "public comment",
+    "article 97",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled March 8, 2023 and April 12, 2023",
+   "quote": "next meetings: march 8, 2023 and april 12, 2023",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no action; no comments",
+   "quote": "committee comments/concerns: no comments",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:04pm",
+   "quote": "lockwood motion, wilson seconded. unanimously voted. meeting adjourned at 9:04pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "open space",
+  "Lake Shirley",
+  "Parmenter Road",
+  "Reservoir Road",
+  "car-top boat access",
+  "Parks Commission",
+  "public comment",
+  "title examination",
+  "Article 97",
+  "wetlands",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

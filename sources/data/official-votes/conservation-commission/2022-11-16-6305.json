@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-11-16",
  "docid": "6305",
@@ -12,95 +12,421 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of November 2, 2022 as drafted",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of November 2, 2022 as drafted.",
+   "moved_by": "ML",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "ml/rt m/s to approve as drafted. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue public meeting until later during the public hearing",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed unanimously",
+   "motion": "Continue the public meeting on the Blatt Request for Determination of Applicability until later in the public hearing.",
+   "moved_by": "ML",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "ml/mw m/s to continue public meeting until later during the public hearing. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Give a negative determination for 411 Goodrich Street with conditions that debris be removed, stumps be left, and 5 native replacement hardwood trees be planted",
-   "moved_by": "Mary Wilson",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Give David Blatt a negative determination for 411 Goodrich Street, with conditions that debris be removed, stumps be left, and 5 native replacement hardwood trees be planted.",
+   "moved_by": "MW",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "mw/rt m/s to give a negative determination with the condition that the debris be removed, the stumps be left, and 5 native replacement hardwood trees are planted. roll call vote, unanimous to approve."
+   "quote": "mw/rt m/s to give a negative determination with the condition that the debris be removed, the stumps be left, and 5 native replacement hardwood trees are planted."
   },
   {
-   "motion": "Approve Notice of Intent at 45 Parmenter Road with standard order of conditions including that rear tank cannot be accessed until permission is granted by the town",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Notice of Intent by Jason Martin at 45 Parmenter Road with a standard order of conditions and the condition that the rear tank cannot be accessed until permission is granted by the town.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "jv/ml m/s to approve with a standard order of conditions with the condition that the rear tank cannot be accessed until permission is granted by the town. roll call vote, unanimous to approve."
+   "quote": "jv/ml m/s to approve with a standard order of conditions with the condition that the rear tank cannot be accessed until permission is granted by the town."
   },
   {
-   "motion": "Continue Abbreviated Notice of Resource Area Delineation hearing for 400 Leominster-Shirley Road to December 7 meeting",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the hearing on the Abbreviated Notice of Resource Area Delineation for 400 Leominster-Shirley Road to the December 7 meeting.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
+   "procedural": true,
    "quote": "jv/ml m/s motion to continue hearing to the december 7 meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve Notice of Intent at 680 Reservoir Road with standard order of conditions",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Notice of Intent by David and Leigh Sarnoski at 680 Reservoir Road with a standard order of conditions.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "jv/ml m/s to approve with a standard order of conditions. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue Notice of Intent hearings by Elaine Normandin at 47 Round Road, Rene Rainville at 57 Round Road, and Marc Sprague at 73 Round Road to December 7 meeting",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "jv/mw m/s to continue the notice of intents by elaine normandin at 47 round road, rene rainville at 57 round road and marc sprague at 73 round road to the december 7 meeting. roll call vote, unanimous to approve"
+   "motion": "Continue the Notices of Intent by Elaine Normandin (47 Round Road), Rene Rainville (57 Round Road) and Marc Sprague (73 Round Road) to the December 7 meeting.",
+   "moved_by": "JV",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous",
+   "procedural": true,
+   "quote": "jv/mw m/s to continue the notice of intents by elaine normandin at 47 round road, rene rainville at 57 round road and marc sprague at 73 round road to the december 7 meeting."
   },
   {
-   "motion": "Approve Notice of Intent for Fitchburg Land property warehouse at 260 Fahlulah Road with standard order of conditions",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Notice of Intent (DEP # 208-1265) by Fitchburg Land property Owner LLC for 260 Fahlulah Road with a standard order of conditions.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/jv m/s to approve with a standard order of conditions. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve administrative determination for removal of pine tree at 242 Sunset Lane with condition that stump remain in place",
-   "moved_by": "Richard Tremblay",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve the administrative determination for removal of a pine tree at 242 Sunset Lane, with the condition that the stump remain in place.",
+   "moved_by": "RT",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "rt/jv m/s to approve the administrative determination for the removal of a pine tree at 242 sunset lane with the condition that the stump remain in place. roll call vote, unanimous to approve."
+   "quote": "rt/jv m/s to approve the administrative determination for the removal of a pine tree at 242 sunset lane with the condition that the stump remain in place."
   },
   {
-   "motion": "Approve purchase of 2 pieces of pressure treated plywood and fasteners for Hollis Road property",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed unanimously",
+   "motion": "Approve the purchase of 2 pieces of pressure treated plywood and fasteners for the Hollis Road property.",
+   "moved_by": "BP",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "bp/mw m/s to approve the purchase of 2 pieces of pressure treated plywood and fasteners for the hollis road property. roll call vote, unanimous to approve."
+   "quote": "bp/mw m/s to approve the purchase of 2 pieces of pressure treated plywood and fasteners for the hollis road property."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "JV",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "jv/mw m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0904485
+ "note": "Text extraction, not a scan; all four pages read. Every vote was a roll call recorded only as \"unanimous\", so no numeric count is printed and outcomes are given as \"passed, unanimous\". Continuances and the minutes approval and adjournment are marked procedural. Public comment: the minutes say \"No comments\" and \"None\", so no speakers are recorded. Sam Welch, Anna Petrie, Adam Burney and other people mentioned only in passing are not listed as attendees. Attendance status for members comes from the roll call line, which describes a Zoom meeting; the minutes do not separately say who was remote. Several applicants are listed as \"not stated\" because the minutes name them only as the subject of a hearing.",
+ "cost_usd": 0.02141821,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "absent",
+   "quote": "roll call: bp, jv, ml, mw, rt absent: rb, cc"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "applicant (Request for Determination of Applicability, 411 Goodrich Street)",
+   "status": "present",
+   "quote": "later during the meeting, dave blatt presented the plan."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "presenter, Dillis & Roy",
+   "status": "present",
+   "quote": "jack maloney from dillis & roy presented the proposed plans."
+  },
+  {
+   "name": "Jason Martin",
+   "role": "applicant (Notice of Intent, 45 Parmenter Road)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by jason martin on the proposed construction"
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "presenter, Hannigan Engineering",
+   "status": "present",
+   "quote": "chris anderson from hannigan engineering presented the plan."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "presenter, McCarty Engineering",
+   "status": "present",
+   "quote": "brian marchetti from mccarty engineering presented the proposed plan."
+  },
+  {
+   "name": "David and Leigh Sarnoski",
+   "role": "applicant (Notice of Intent, 680 Reservoir Road)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by david and leigh sarnoski for the construction of a"
+  },
+  {
+   "name": "Elaine Normandin",
+   "role": "applicant (Notice of Intent, 47 Round Road; continued)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by elaine normandin for a proposed replacement of a retaining wall at 47 round road."
+  },
+  {
+   "name": "Rene Rainville",
+   "role": "applicant (Notice of Intent, 57 Round Road; continued)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by rene rainville, for a proposed replacement of a retaining"
+  },
+  {
+   "name": "Marc Sprague",
+   "role": "applicant (Notice of Intent, 73 Round Road; continued)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by marc sprague, for a proposed replacement of a retaining"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair recommended that the applicant reach out to the new administrator for advice on where to plant the replacement trees.",
+   "quote": "bp recommended that db reach out to the new administrator for advice on where to plant the replacement trees."
+  },
+  {
+   "decision": "The chair will contact the BOH and the Board of Selectmen about funding for the Howard Street driveway.",
+   "quote": "bp will be in contact with boh and the board of selectman about funding for the driveway"
+  },
+  {
+   "decision": "The chair will visit 192 Townsend Harbor Road again; if the encroachment is not resolved it will be taken to court.",
+   "quote": "he said he will give it another couple times but if not, it will need to be taken to court."
+  },
+  {
+   "decision": "The chainsaw safety class will take place on the Rayo property.",
+   "quote": "bp said the class will take place on the rayo property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Timber Rights Fund and expected timber harvest revenue",
+   "what_was_recorded": "The chair reported the Timber Rights Fund balance and expected harvest receipts from the Hawes and Rayno harvests, the latter net of a fee to Gary Goldrups.",
+   "figures_as_printed": [
+    "$21,061",
+    "$6,000",
+    "$21,000"
+   ],
+   "quote": "currently $21,061 in the timber rights fund and an expected $6,000 from the hawes harvest and expected $21,000 from the rayno harvest"
+  },
+  {
+   "topic": "Hollis Road revolving fund balance",
+   "what_was_recorded": "The chair reported the balance on the Hollis Road revolving fund.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "bp said the balance on the hollis road revolving fund is at $60,000."
+  },
+  {
+   "topic": "Hollis Road shed flooring materials",
+   "what_was_recorded": "Materials (screws and plywood) to restore the shed floor were estimated at approximately $128; the purchase was approved.",
+   "figures_as_printed": [
+    "$128"
+   ],
+   "quote": "they would require screws and plywood to restore the shed flooring, the cost would be approximately $128 total."
+  },
+  {
+   "topic": "Hollis Road lawn mower repair",
+   "what_was_recorded": "A contractor would repair the riding lawn mower at no charge.",
+   "figures_as_printed": [],
+   "quote": "ml reported that np would do the lawn mower repair for free."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of November 2, 2022",
+   "resolution": "approved",
+   "quote": "ml/rt m/s to approve as drafted. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "RFD, David Blatt, 411 Goodrich Street tree removal",
+   "resolution": "negative determination with conditions",
+   "quote": "a public meeting on a request for determination of applicability by david blatt for the proposed removal of large pine trees within the buffer zone at 411 goodrich street.",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "NOI, Jason Martin, 45 Parmenter Road septic",
+   "resolution": "approved with conditions",
+   "quote": "a public hearing on a notice of intent by jason martin on the proposed construction of a replacement septic system at 45 parmenter road",
+   "tags": [
+    "wetlands",
+    "septic",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Abbreviated Notice of Resource Area Delineation, 400 Leominster-Shirley Road",
+   "resolution": "continued to December 7",
+   "quote": "a public hearing on an abbreviated notice of resource area delineation by jmc/tbg lunenburg ii, llc for 400 leominster-shirley road.",
+   "tags": [
+    "wetlands",
+    "delineation"
+   ]
+  },
+  {
+   "topic": "NOI, David and Leigh Sarnoski, 680 Reservoir Road home",
+   "resolution": "approved",
+   "quote": "a public hearing on a notice of intent by david and leigh sarnoski for the construction of a",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "residential"
+   ]
+  },
+  {
+   "topic": "NOIs, retaining walls at 47, 57 and 73 Round Road",
+   "resolution": "continued to December 7",
+   "quote": "a public hearing on a notice of intent by elaine normandin for a proposed replacement of a retaining wall at 47 round road.",
+   "tags": [
+    "wetlands",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "NOI, Fitchburg Land property Owner LLC, 260 Fahlulah Road warehouse",
+   "resolution": "approved",
+   "quote": "by fitchburg land property owner llc to construct a 367,000 square foot warehouse and distribution facility with parking and storm water controls at 260 fahlulah road.",
+   "tags": [
+    "wetlands",
+    "riverfront",
+    "commercial",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Conservation administrator start date",
+   "resolution": "no action; informational",
+   "quote": "bp gave a short bio of anna petrie, the new conservation agent, and mentioned she starts on",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Emergency tree removal, 242 Sunset Lane",
+   "resolution": "administrative determination approved",
+   "quote": "bp mentioned he received an emergency tree removal request through adam burney.",
+   "tags": [
+    "tree removal",
+    "administrative determination"
+   ]
+  },
+  {
+   "topic": "Encroachment, 192 Townsend Harbor Road",
+   "resolution": "continued; no action",
+   "quote": "bp said he has not stopped by again but he will.",
+   "tags": [
+    "enforcement",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "reported; no action",
+   "quote": "bp presented the budget report.",
+   "tags": [
+    "budget",
+    "timber rights"
+   ]
+  },
+  {
+   "topic": "Hollis Road Residence maintenance and equipment",
+   "resolution": "plywood purchase approved; other items reported",
+   "quote": "ml reported that he mostly completed an equipment list for hollis road.",
+   "tags": [
+    "Hollis Road",
+    "property maintenance"
+   ]
+  },
+  {
+   "topic": "Enforcement violations list",
+   "resolution": "updates reported; no action recorded",
+   "quote": "eo 48 oak ridge: bp said he received a letter",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space and land use: driveway, timber sales, Cowdrey bridge",
+   "resolution": "reported; chair to contact BOH and Selectmen",
+   "quote": "bp spoke with bill barnard. bp reported that bb said a contractor would need to be hired.",
+   "tags": [
+    "open space",
+    "timber sales",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no formal open space meeting",
+   "quote": "mw said there was no quorum for an open space meeting, so there was no formal meeting.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "December 7, 2022 at 7:00 PM by Zoom",
+   "quote": "meeting schedule: next meeting is december 7, 2022 at 7:00 pm by zoom platform",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notices of intent",
+  "requests for determination",
+  "tree removal",
+  "septic",
+  "retaining walls",
+  "warehouse riverfront",
+  "Hollis Road",
+  "timber sales",
+  "enforcement",
+  "budget",
+  "Zoom meeting",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-05-08",
  "docid": "184",
@@ -12,33 +12,248 @@
  },
  "votes": [
   {
-   "motion": "To have P. Sarapas look into the possibility of monetization of the PAC Youtube channel",
-   "moved_by": "P. Sarapas",
-   "seconded_by": "P. Lincoln",
+   "motion": "Have P.Sarapas look into the possibility of monetizing the PAC YouTube channel.",
+   "moved_by": "P.Sarapas",
+   "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion - to have p.sarapas look into the possibility of monetization of the pac youtube channel. (p.sarapas, 2nd p.lincoln, passed)"
   },
   {
-   "motion": "Approve April 10th, 2023 minutes as amended",
-   "moved_by": "P. Lincoln",
-   "seconded_by": "P. Sarapas",
+   "motion": "Approve the April 10th, 2023 minutes as amended.",
+   "moved_by": "P.Lincoln",
+   "seconded_by": "P.Sarapas",
    "outcome": "passed",
    "procedural": true,
-   "quote": "april 10th, 2023 minutes approved as amended • motion - p.lincoln, 2nd p.sarapas, pass",
-   "quote_taken_from_text": true
+   "quote": "motion - p.lincoln, 2nd p.sarapas, passed"
   },
   {
-   "motion": "Invest $720,000 of PAC reserve funds in 6 monthly laddered treasuries through the Town Treasurer's office with Bartholomew being the investment agent",
-   "moved_by": "F. Beall",
-   "seconded_by": "P. Lincoln",
+   "motion": "Invest $720,000 of PAC reserve funds in 6 monthly laddered treasuries through the Town Treasurer's office, with Bartholomew as investment agent.",
+   "moved_by": "F.Beall",
+   "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to invest $720,000 of pac reserve funds in 6 monthly laddered treasuries thru the town treasurer's office with bartholomew being the investment agent. o motion - f.beall, 2nd p.lincoln, pass",
-   "quote_taken_from_text": true
+   "quote": "motion - f.beall, 2nd p.lincoln, passed"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion - s.archambault, 2nd p.lincoln - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "No scanning issues or missing pages. All votes recorded in minutes.",
- "cost_usd": 0.0835355
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction of a typed minutes document, not a scan. Three motions are printed with a movant and seconder and a result of 'passed'; the minutes print no tally, so outcomes are recorded as 'passed'. Minutes approval and adjournment are marked procedural. Public comment reads 'None'. Internal inconsistency: the adjournment section says 'Next meeting is June 10th, 6:00 pm' while the future-dates section says 'June 12th set'; both are recorded as printed. The adjournment time is printed as '7:1 pm'. The 'Motion' for the investment is attributed to F.Beall in the vote line, while the investment proposal itself is attributed to S.Walker in the text.",
+ "cost_usd": 0.015104709999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Nomination of 23-24 officers tabled until the July meeting; Town Hall had not sent information.",
+   "quote": "tabled until the july meeting."
+  },
+  {
+   "decision": "Personal Use Policy update tabled; wording to be run by the Town lawyer.",
+   "quote": "need to run wording of policy by town lawyer."
+  },
+  {
+   "decision": "PAC Equipment set up policy review/update passed over (not taken up).",
+   "quote": "pac equipment set up policy review/update: passed over."
+  },
+  {
+   "decision": "Camera and video rules received from Lunenburg Water District were reviewed and sent to the Town lawyer for review.",
+   "quote": "document sent to town lawyer for review."
+  },
+  {
+   "decision": "Basic Fair Use guidelines to be included in all video project instruction.",
+   "quote": "information will be included in all video project instruction."
+  },
+  {
+   "decision": "June 12th meeting date set; library to be booked for July 10th; 2023-2024 calendar to be discussed at that time.",
+   "quote": "june 12th set, need to book library for july 10th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget balance",
+   "what_was_recorded": "The committee's budget balance was reported at a stated figure.",
+   "quote": "budget balance - $948,396.51",
+   "figures_as_printed": [
+    "$948,396.51"
+   ]
+  },
+  {
+   "topic": "Investment of PAC reserve funds",
+   "what_was_recorded": "A proposal to invest a set amount of PAC reserve funds in six monthly laddered treasuries through the Town Treasurer's office, which the committee passed.",
+   "quote": "invest $720,000 of pac reserve funds in 6 monthly laddered treasuries",
+   "figures_as_printed": [
+    "$720,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "meeting was called to order at 6:01 pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Committee comments: YouTube ads and monetization",
+   "resolution": "approved (motion passed for P.Sarapas to look into monetization)",
+   "quote": "suggested looking into the possibility of monetizing the adds on our channel.",
+   "tags": [
+    "YouTube",
+    "monetization"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "communications: none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved as amended",
+   "quote": "april 10th, 2023 minutes approved as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Nomination of 23-24 officers",
+   "resolution": "tabled until July meeting",
+   "quote": "tabled until the july meeting.",
+   "tags": [
+    "officers",
+    "nominations"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "no action (informational)",
+   "quote": "it installed new ram into castus - working well.",
+   "tags": [
+    "manager update",
+    "CASTUS",
+    "streaming",
+    "Town Meeting",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "Program analysis and local programming",
+   "resolution": "no action (informational)",
+   "quote": "program analysis has pac operating at 70% local programming.",
+   "tags": [
+    "local programming",
+    "shows"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "resolution": "approved (investment of reserve funds passed)",
+   "quote": "invest $720,000 of pac reserve funds in 6 monthly laddered treasuries",
+   "tags": [
+    "investment",
+    "reserve funds",
+    "Town Treasurer"
+   ]
+  },
+  {
+   "topic": "PAC equipment set-up policy review",
+   "resolution": "passed over",
+   "quote": "pac equipment set up policy review/update: passed over.",
+   "tags": [
+    "policy",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Personal Use Policy update",
+   "resolution": "tabled",
+   "quote": "need to run wording of policy by town lawyer.",
+   "tags": [
+    "policy",
+    "Town lawyer"
+   ]
+  },
+  {
+   "topic": "Future meeting dates",
+   "resolution": "June 12th set; July 10th library to be booked",
+   "quote": "june 12th set, need to book library for july 10th.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned (motion passed)",
+   "quote": "next meeting is june 10th, 6:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "Lunenburg Town Library",
+  "reserve funds investment",
+  "YouTube monetization",
+  "officer nominations",
+  "personal use policy",
+  "live streaming",
+  "CASTUS equipment",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

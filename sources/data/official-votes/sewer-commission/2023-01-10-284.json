@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-01-10",
  "docid": "284",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Set $2,500 aside to contract with Wright Pierce for consulting services",
+   "motion": "Set $2,500 aside to contract with Wright Pierce for consulting services.",
    "moved_by": "Mike N.",
    "seconded_by": "Mike D.",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "motion: mike n. second: mike d. to set $2,500 aside to contract with wright pierce for consulting services. roll call vote: mike n.-aye, mike d.-aye and john-aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:08.",
    "moved_by": "Mike N",
    "seconded_by": "Mike D.",
    "outcome": "passed 3-0",
@@ -28,7 +28,387 @@
    "quote": "motion: mike n to adjourn at 7:08 second: mike d. roll call vote: mike n.-aye, mike d.-aye and john- aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are OCR-extracted from a scan (macOS Vision). Two votes recorded: the Wright Pierce engineering consulting contract and adjournment.",
- "cost_usd": 0.0892715
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR of the minutes, not a clean transcript; quotes were taken from the OCR text with line breaks collapsed to single spaces and may carry OCR spelling (e.g. \"I! Forno\", \"Uniti's\"). Only two recorded votes: the $2,500 Wright Pierce set-aside (roll call 3-0, after Dave MacDonald and Paula Bertram left the meeting) and adjournment at 7:08 (3-0). The invoice approval, the Business Manager posting at 40 hours, and the Il Forno inspection assignment are recorded as agreed or decided without any motion or roll call, so they are decisions, not votes. Al Packard's attendance is not stated (he is named as speaking). The minutes are signed \"Your h. Pandey\", which is not a name on the attendance list. No transfers are recorded.",
+ "cost_usd": 0.02110641,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, clerk- mike deveikis, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, clerk- mike deveikis, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: dave macdonald and mike nault, dpw director- bill bernard, business manager-barb lefebvre"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: dave macdonald and mike nault, dpw director- bill bernard, business manager-barb lefebvre"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, asst. business manager-paula bertram, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Asst. Business Manager",
+   "status": "present",
+   "quote": "asst. business manager-paula bertram, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "asst. business manager-paula bertram, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: vice-chair- brett ramsden"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant (1325 Mass Ave Change of Use)",
+   "status": "present",
+   "quote": "dan proctor, 1325 mass ave change of use- dan stated he had submitted an application for change of use for the sewer"
+  },
+  {
+   "name": "Al Packard",
+   "role": "CTE",
+   "status": "not stated",
+   "quote": "al packard (cte) said the dana st. station would need a new"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula Bertram and Bill Bernard will inspect the Il Forno facility with Al Packard (CTE), checking internal traps and logs.",
+   "quote": "the commission discussed and it was decided paula and bill would do the inspecting with al packard (cte)."
+  },
+  {
+   "decision": "Staff will advise Il Forno to increase the frequency of external pumping; John suggested 4-week increments, so pumping within 8 weeks of the last pumpout.",
+   "quote": "we will advise the restaurant that they need to increase the frequency of external pumping."
+  },
+  {
+   "decision": "The Commission expressed a preference that the Pond View Estates flow go to Leominster rather than Fitchburg, due to Fitchburg capacity.",
+   "quote": "the commission prefers the flow go to leominster, due to fitchburg capacity."
+  },
+  {
+   "decision": "Commissioners are to review the policy updates and either vote at the next meeting or arrange a special meeting for discussion.",
+   "quote": "john asked the commissioners to review the updates and either vote on them at the next meeting or arrange a special meeting for discussion."
+  },
+  {
+   "decision": "John and Barb will discuss whether to hold a workshop meeting on the FY24 budget; Barb will involve Paula in budget planning.",
+   "quote": "john and barb will discuss whether to have a workshop meeting to discuss it."
+  },
+  {
+   "decision": "Paula asked Dan Proctor to email copies of the grease trap cleaning reports to the office.",
+   "quote": "paula asked dan to email copies to the office."
+  },
+  {
+   "decision": "Minutes of 12/10/22 tabled to the next meeting.",
+   "quote": "minutes of 12/10/22 - tabled to the next meeting."
+  },
+  {
+   "decision": "The Commission agreed to post the Business Manager job at 40 hours.",
+   "quote": "the commission discussed and agreed to have it posted at 40 hours."
+  },
+  {
+   "decision": "Jane Ranley volunteered to prepare the Annual Report again, due 2/16, after no commissioner took it on.",
+   "quote": "with no takers, jane volunteered to do the report again."
+  },
+  {
+   "decision": "The invoices (Fitchburg Monthly and Mead, Talerman) were reviewed and approved without a recorded motion.",
+   "quote": "invoices- fitchburg monthly - $18,262.14 and mead, talerman - $ 123.76 (for pond view consult were reviewed and approved."
+  },
+  {
+   "decision": "Bill Bernard will contact a couple of contractors for jetting in the maintenance plan areas.",
+   "quote": "bill will be contacting a couple contractors."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Engineering consulting question budget (Wright Pierce)",
+   "what_was_recorded": "John suggested setting aside a small amount for seeking answers to engineering questions.",
+   "figures_as_printed": [
+    "$1-2K"
+   ],
+   "quote": "john suggested setting aside $1-2k for seeking answers to engineering related questions."
+  },
+  {
+   "topic": "Engineering budget line",
+   "what_was_recorded": "Barb noted the budget has $30K for engineering and that a Purchase Order would be needed to pay the consultant.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "barb noted that we have $30k in the budget for engineering and she would need a purchase order to pay"
+  },
+  {
+   "topic": "Wright Pierce consulting set-aside",
+   "what_was_recorded": "The Commission voted to set aside $2,500 to contract with Wright Pierce for consulting services.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "to set $2,500 aside to contract with wright pierce for consulting services."
+  },
+  {
+   "topic": "Invoices approved",
+   "what_was_recorded": "Two invoices, Fitchburg Monthly and Mead, Talerman (Pond View consult), were reviewed and approved.",
+   "figures_as_printed": [
+    "$18,262.14",
+    "$ 123.76"
+   ],
+   "quote": "invoices- fitchburg monthly - $18,262.14 and mead, talerman - $ 123.76 (for pond view consult were reviewed and approved."
+  },
+  {
+   "topic": "Delinquent sewer charges on tax bills",
+   "what_was_recorded": "Tax delinquencies from the prior fiscal year will appear on tax bills labeled sewer lien; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "anyone owing from the prior fiscal year will see that amount on their tax bill, labeled \"sewer lien\"."
+  },
+  {
+   "topic": "FY24 budget preparation",
+   "what_was_recorded": "Budget submittal schedule not yet received; draft expected to the Town Manager in early February. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "fy24 budget preparation- barb has not received the budget submittal schedule"
+  },
+  {
+   "topic": "Billing adjustment policy",
+   "what_was_recorded": "Barb proposed a policy requirement limiting bill adjustments to going back only 6 months. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "in addition, she would like to add a requirement to go back only 6 months for adjustments to bills."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Select Board meeting on property tax increases",
+   "quote": "public comment-dave noted the select board meeting at 7pm on 1/10 will be addressing the increases on property tax bills and urged all to attend."
+  },
+  {
+   "speaker": "Bill",
+   "stated_role": "",
+   "topic": "Jetting in maintenance plan areas",
+   "quote": "public comment - bill reported, regarding the maintenance plan, they will be doing jetting soon in the following areas: main st."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (Select Board notice)",
+   "resolution": "noted; no action",
+   "quote": "public comment-dave noted the select board meeting at 7pm on 1/10 will be addressing the increases on property tax",
+   "tags": [
+    "public comment",
+    "property tax"
+   ]
+  },
+  {
+   "topic": "Announcements: tax delinquencies",
+   "resolution": "reported; no action",
+   "quote": "announcements - barb reported the tax delinquencies were processed on 12/21/22 and anyone owing from the prior fiscal",
+   "tags": [
+    "sewer lien",
+    "tax office"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "Al Packard (CTE) appointment moved to 1/31/23 meeting",
+   "quote": "appointments - appointment with al packard (cte) was moved to the 1/31/23 meeting.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Dan Proctor change of use, 1325 Mass Ave",
+   "resolution": "discussed; awaiting peer review; email copies requested",
+   "quote": "dan proctor, 1325 mass ave change of use- dan stated he had submitted an application for change of use for the sewer",
+   "tags": [
+    "change of use",
+    "flow rates",
+    "commercial sewer",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Il Forno FOG pumpouts",
+   "resolution": "inspection assigned to Paula and Bill; external pumping frequency to increase",
+   "quote": "il forno - pumpouts at maximum for fats, oil & grease (fog) -barb reported i! forno's last 3 pump out fog reports",
+   "tags": [
+    "FOG",
+    "grease traps",
+    "restaurant",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Pond View Estates 40B",
+   "resolution": "discussed; preference for Leominster flow; no vote",
+   "quote": "pond view estates 40b john stated stated memos were sent to the zoning board of appeals",
+   "tags": [
+    "40B",
+    "Pond View",
+    "Fitchburg",
+    "Leominster",
+    "pump stations",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Policy updates (Chapter 147)",
+   "resolution": "continued; vote at next meeting or special meeting",
+   "quote": "policy updates-barb reported the commission had reviewed the policy updates required by fitchburg for chapter 147",
+   "tags": [
+    "policy",
+    "Fitchburg",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "FY24 budget preparation",
+   "resolution": "discussed; possible workshop",
+   "quote": "fy24 budget preparation- barb has not received the budget submittal schedule",
+   "tags": [
+    "FY24 budget",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Umbrella contract with Wright Pierce",
+   "resolution": "approved $2,500 set-aside, passed 3-0",
+   "quote": "discussion on umbrella contract with engineering consulting firm, wright pierce - john suggested setting aside $1-2k",
+   "tags": [
+    "engineering",
+    "consultant",
+    "Wright Pierce",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Minutes of 12/10/22",
+   "resolution": "tabled to next meeting",
+   "quote": "minutes of 12/10/22 - tabled to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Caucus 3/27/23",
+   "resolution": "noted; Mike D. to advise on running",
+   "quote": "town caucus 3/27/23 - mike deveikis and brett ramsden have terms expiring.",
+   "tags": [
+    "elections",
+    "terms"
+   ]
+  },
+  {
+   "topic": "Business Manager replacement",
+   "resolution": "agreed to post job at 40 hours",
+   "quote": "business manager retirement replacement - barb requested the commission approve the posting of her job immediately",
+   "tags": [
+    "personnel",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "reported; Annual Report assigned to Jane; invoices approved",
+   "quote": "business manager report - grease trap program update- most of the 1st tuesday reports are in, with one still due.",
+   "tags": [
+    "grease traps",
+    "Town Meeting warrant",
+    "annual report",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Upcoming ZBA hearings",
+   "resolution": "noted; no sewer issues",
+   "quote": "upcoming zba hearings- on 1/25, 2 properties on sewer - 383 whalom (new",
+   "tags": [
+    "ZBA",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Leominster NDES permit",
+   "resolution": "reported; no action",
+   "quote": "leominster ndes permit- barb reported leominster is in the middle of getting their permit from epa",
+   "tags": [
+    "Leominster",
+    "EPA",
+    "NDES permit"
+   ]
+  },
+  {
+   "topic": "Public comment (DPW jetting)",
+   "resolution": "reported; contractors to be contacted",
+   "quote": "public comment - bill reported, regarding the maintenance plan, they will be doing jetting soon in the following areas",
+   "tags": [
+    "jetting",
+    "maintenance plan",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed; next meetings 1/31/23 and 2/14/23",
+   "quote": "upcoming scheduled sewer commission activities: january 31, 2023 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:08, passed 3-0",
+   "quote": "motion: mike n to adjourn at 7:08",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "Fitchburg sewer",
+  "Leominster",
+  "Pond View 40B",
+  "FOG grease traps",
+  "Il Forno",
+  "Wright Pierce",
+  "engineering consultant",
+  "FY24 budget",
+  "personnel hiring",
+  "zoning and ZBA",
+  "Town Meeting warrant",
+  "pump stations",
+  "sewer lien",
+  "Remote meeting via Zoom"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

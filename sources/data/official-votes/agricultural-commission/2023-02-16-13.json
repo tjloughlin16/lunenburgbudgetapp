@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2023-02-16",
  "docid": "13",
@@ -12,39 +12,225 @@
  },
  "votes": [
   {
-   "motion": "to approve the January 19, 2023 meeting minutes",
+   "motion": "Approve the minutes of January 19, 2023.",
    "moved_by": "Jen",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jen made a motion to approve the minutes from the following meetings: jan 19, 2023 maryrae seconded commission unanimously approved"
+   "quote": "jen made a motion to approve the minutes from the following meetings: jan 19, 2023"
   },
   {
-   "motion": "to approve the 2023 agricultural commission goals",
+   "motion": "Approve the agricultural commission 2023 goals presented on January 19, 2023.",
    "moved_by": "Jen",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jen made a motion to approve the agricultural commission goals presented on jan 19, 2023 maryrae seconded commission unanimously approved"
+   "quote": "jen made a motion to approve the agricultural commission goals presented on jan 19, 2023"
   },
   {
-   "motion": "to move the next meeting to Wednesday, March 15th",
+   "motion": "Move the next meeting to Wednesday, March 15th.",
    "moved_by": "Maryrae",
    "seconded_by": "Jen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "maryrae made a motion to move the next meeting to wednesday, march 15th jen seconded commission unanimously approved"
+   "quote": "maryrae made a motion to move the next meeting to wednesday, march 15th"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jen",
    "seconded_by": "Jorge",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jen motion to adjourn; jorge seconds. commission unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in these minutes.",
- "cost_usd": 0.0984455
+ "note": "Votes: the minutes print \"Commission unanimously approved\" with no count, so outcomes are recorded as \"passed\". Members are named only by first name (Jen, Maryrae, Jorge); attributed to Jennifer Duffy, Maryrae Holman and Jorge Marzuca from the roster. Kira McClellan's status is inferred as absent from the blank attendance mark, not stated outright. The next-meeting motion says March 15th, but the same item prints \"March 22, 2023 7:00pm\"; the minutes do not resolve which. No dollar figures appear in the text. Public comment item 2 names no speaker; item 9 records no public comment. Read from a text extraction, so layout and checkmarks may not match the original scan.",
+ "cost_usd": 0.01550741,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jennifer duffy, clerk"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jorge marzuca ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "absent",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Mike Fontaine",
+   "role": "Market Manager",
+   "status": "present",
+   "quote": "market manager mike fontaine ✔"
+  },
+  {
+   "name": "Ryan Boudreau",
+   "role": "Public",
+   "status": "present",
+   "quote": "public ryan boudreau ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ask the Select Board to advertise openings for market managers.",
+   "quote": "ask select board to advertise openings for market managers"
+  },
+  {
+   "decision": "Maryrae and Jen to start contacting farmers market vendors.",
+   "quote": "maryrae and jen to start contacting vendors"
+  },
+  {
+   "decision": "Tote bag design (cotton bags with print screening) deferred to a future meeting.",
+   "quote": "cotton bags with print screening to be decided at future meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Low Places Ranch licence to sell chicks",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "low places ranch obtained license to sell chicks. will be offering chicks this spring"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:05pm",
+   "quote": "call to order meeting commencement time: 7:05pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment/open discussion",
+   "resolution": "noted; no action recorded",
+   "quote": "low places ranch obtained license to sell chicks. will be offering chicks this spring",
+   "tags": [
+    "public comment",
+    "poultry"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "complaint noted; no action recorded",
+   "quote": "a. boudreau has a neighbor who has expressed displeasure with a rooster's",
+   "tags": [
+    "farm complaints",
+    "noise"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved January 19, 2023 minutes",
+   "quote": "jen made a motion to approve the minutes from the following meetings: jan 19, 2023",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Farmers market update",
+   "resolution": "survey and vendor outreach assigned",
+   "quote": "seasonal facebook survey preferred sundays 10am-1pm",
+   "tags": [
+    "farmers market",
+    "survey",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "New business: town caucus, warrant, vacancies, tote bags, market manager outreach",
+   "resolution": "discussed; tote bag deferred; Select Board asked to advertise market manager openings",
+   "quote": "ask select board to advertise openings for market managers",
+   "tags": [
+    "town meeting warrant",
+    "farm acreage",
+    "vacancies",
+    "marketing",
+    "market managers"
+   ]
+  },
+  {
+   "topic": "Unfinished business: 2023 goals and project updates",
+   "resolution": "2023 goals approved; other items no new information",
+   "quote": "jen made a motion to approve the agricultural commission goals presented on jan 19, 2023",
+   "tags": [
+    "goals",
+    "farm regulations",
+    "community gardens",
+    "farm inspections",
+    "land",
+    "map"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no new information",
+   "quote": "development comm., planning board, building reuse",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public comment/open discussion (second)",
+   "resolution": "no public comment",
+   "quote": "public comment/open discussion no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set next meeting date",
+   "resolution": "moved to March 15; printed date reads March 22, 2023",
+   "quote": "maryrae made a motion to move the next meeting to wednesday, march 15th",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:19pm",
+   "quote": "jen motion to adjourn; jorge seconds. commission unanimously approved",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "farm complaints",
+  "poultry",
+  "2023 goals",
+  "town meeting warrant",
+  "vacancies",
+  "tote bags",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

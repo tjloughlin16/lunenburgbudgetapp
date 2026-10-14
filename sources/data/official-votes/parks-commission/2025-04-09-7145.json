@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-04-09",
  "docid": "7145",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the donation of money to buy new park benches or the materials to repair the existing benches at Veterans Memorial Park",
+   "motion": "Approve a donation of money to buy new park benches or the materials to repair the existing benches at Veterans Memorial Park.",
    "moved_by": "C. Shapiro",
    "seconded_by": "T. Lawless",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "c. shapiro motioned to approve the donation of money to buy new park benches or the materials to repair the existing benches at veterans memorial park. t. lawless seconded. passed 5-0."
+   "quote": "c. shapiro motioned to approve the donation of money to buy new park benches or the materials to repair the existing benches at veterans memorial park. t. lawless seconded. passed 5-0"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:55pm.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
@@ -29,6 +29,177 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The presentation on the Marshall Park Master Plan (pages 2–25) was informational only; no vote was taken on it. Two votes recorded: one substantive motion on park benches, one procedural motion to adjourn.",
- "cost_usd": 0.07599539999999999
+ "note": "Minutes are two votes plus an attached Marshall Park slide deck. The slides are included in the extracted text, so their figures are recorded as printed in the minutes, not as votes; no vote on Marshall Park appears in these minutes. Several slide lines are run together in extraction (for example the page 11 cost table and the grant table), so only figures with clean quotable text are itemised; the cost table's line items (design fees, soft costs, hard costs) are not individually recorded. Presenters (Landscape Architect and Project Manager) are not named, so none are listed as attendees. The chair's name is printed both as \"Schiepers\" and \"Scheipers\"; the roll call and signature block use \"Scheipers\". Agenda item 4 is absent from the numbering. The stamp reads \"Approved 7/20/25\"; no approval vote for these minutes is recorded in this text. Public comment: no section is printed.",
+ "cost_usd": 0.023852599999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: a. scheipers, c. shapiro, k. menard, c. sullivan, t. lawless"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "colleen shapiro, vice chair"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "karin menard, clerk"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "chris sullivan, member"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "tim lawless, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Veterans Park bench donation",
+   "what_was_recorded": "A resident offered to donate money to repair the Veterans Park benches; no amount is printed, and Facilities staff would do the work.",
+   "figures_as_printed": [],
+   "quote": "a. scheipers informed the commission that a resident was interested in donating money to repair the benches at veterans park."
+  },
+  {
+   "topic": "Marshall Park master plan funding, 2021",
+   "what_was_recorded": "Town Meeting funding of the Marshall Park Master Plan in May 2021, as listed in the project timeline.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "may 2021: town meeting of $50,000 for the marshall park master plan."
+  },
+  {
+   "topic": "Marshall Park schematic design funding, 2022",
+   "what_was_recorded": "Town Meeting approval of schematic design funding in November 2022, as listed in the project timeline.",
+   "figures_as_printed": [
+    "$184,000"
+   ],
+   "quote": "november 2022: town meeting approves $184,000 for master plan schematic design."
+  },
+  {
+   "topic": "Marshall Park ARPA allocation",
+   "what_was_recorded": "The Select Board allocated ARPA funds to the project in January 2023, as listed in the project timeline.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "january 2023: select board allocates $1,000,000 arpa funds for the project."
+  },
+  {
+   "topic": "Marshall Park full-scope project total and borrowing",
+   "what_was_recorded": "The proposed full-scope project total is printed as $13,735,372, with a debt exclusion borrowing proposed to cover construction cost.",
+   "figures_as_printed": [
+    "$13,735,372"
+   ],
+   "quote": "$13,735,372 •based on feedback from the selectboard in nov 2024 and in consultation with the current and previous town managers"
+  },
+  {
+   "topic": "Marshall Park full-scope tax impact",
+   "what_was_recorded": "Slide estimates a tax impact of roughly $0.46 per thousand of assessed value, with a printed example of $231 a year on a $504,937 average single-family home; assumes an 18-year amortization.",
+   "figures_as_printed": [
+    "$0.46 per thousand",
+    "$504,937",
+    "$231"
+   ],
+   "quote": "roughly $0.46 per thousand of a home assessed value."
+  },
+  {
+   "topic": "Marshall Park reduced funding scope",
+   "what_was_recorded": "The reduced scope (Phase 1/2B) is printed at a total cost of $6,460,691 with a stated tax impact.",
+   "figures_as_printed": [
+    "$6,460,691",
+    "$0.22/thousand",
+    "$111/yr"
+   ],
+   "quote": "total cost: $6,460,691 tax impact: $0.22/thousand (avg $111/yr)"
+  },
+  {
+   "topic": "Marshall Park grants",
+   "what_was_recorded": "Slides list grants the project was selected for in 2024 but could not use in time, and grant programs with stated maximum amounts.",
+   "figures_as_printed": [
+    "$1m",
+    "$500K",
+    "$250K",
+    "$1 million",
+    "$50k",
+    "$25K",
+    "100k"
+   ],
+   "quote": "selected for $1m grant in 2024 but couldn't meet the requirements in time and notified the state."
+  },
+  {
+   "topic": "Marshall Park maintenance costs",
+   "what_was_recorded": "Slides print current park maintenance at 23,425.00 a year and a new maintenance expense total of 53,300 a year, described as budget estimates not dedicated to Marshall Park alone.",
+   "figures_as_printed": [
+    "23,425.00",
+    "53,300"
+   ],
+   "quote": "*please note that these totals are budget estimates and funds are not necessarily dedicated to marshall park or the line item shown"
+  },
+  {
+   "topic": "Marshall Park snow shoveling cost",
+   "what_was_recorded": "Slide lists a new snow shoveling cost of about 500 per storm.",
+   "figures_as_printed": [
+    "+- 500 per storm"
+   ],
+   "quote": "snow shoveling (new): +- 500 per storm"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Marshall Park master plan informational presentation",
+   "resolution": "presented, no action",
+   "quote": "2) marshall park project informational presentation with landscape architect and project manager - commission presented attached",
+   "tags": [
+    "Marshall Park",
+    "master plan",
+    "capital project"
+   ]
+  },
+  {
+   "topic": "Veterans Park bench status and donation",
+   "resolution": "donation approved 5-0",
+   "quote": "3) discussion on status of benches at veterans park - a. scheipers informed the commission that a resident was interested in donating money",
+   "tags": [
+    "Veterans Park",
+    "benches",
+    "donation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:55pm, passed 5-0",
+   "quote": "5) c. sullivan motioned to adjourn at 7:55pm. c. shapiro seconded. passed 5-0",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "Marshall Park",
+  "master plan",
+  "debt exclusion",
+  "grants",
+  "tax impact",
+  "Veterans Park",
+  "donations",
+  "benches",
+  "maintenance costs"
+ ],
+ "dropped_unquoted_by_field": {}
 }

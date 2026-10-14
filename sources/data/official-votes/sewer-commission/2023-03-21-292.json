@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-03-21",
  "docid": "292",
@@ -12,31 +12,478 @@
  },
  "votes": [
   {
-   "motion": "Accept the articles for this town meeting as written",
+   "motion": "Accept the articles for this town meeting as written (three standard articles).",
    "moved_by": "Dave M.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "to accept the articles for this town meeting as written. roll call vote: dave-aye, brett-aye and john-aye.",
-   "seconded_by": "Brett R."
+   "quote": "to accept the articles for this town meeting as written."
   },
   {
-   "motion": "Accept the minutes from the February 28 meeting",
+   "motion": "Accept the minutes from 2/28.",
    "moved_by": "Dave M.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "to accept the minutes from 2/28. roll call vote: brett-aye, dave-aye and john-aye.",
-   "seconded_by": "Brett R."
+   "quote": "to accept the minutes from 2/28."
   },
   {
-   "motion": "Adjourn at 7:24 pm",
+   "motion": "Adjourn the meeting at 7:24 pm.",
    "moved_by": "Dave M.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "to adjourn at 7:24 pm. roll call vote: dave-aye, brett-aye and john-aye.",
-   "seconded_by": "Brett R."
+   "quote": "to adjourn at 7:24 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1046895
+ "note": "Text is a typed-up minutes document, not a scan, and it has no page numbers. Three motions are recorded, all with roll-call tallies of 3 ayes; the procedural ones are the 2/28 minutes and the adjournment. Several items (invoices, the RFP, the budget) were discussed or listed with no motion, so they carry no vote. The FY24 transfers to Stabilization, Reserve Capacity and OPEB are budget draft lines, not executed transfers, so the transfers list is empty. The 'Public comment' sections are spoken by Commission members Dave MacDonald; no members of the public are recorded. Mike Nault's role is not printed, so role is empty.",
+ "cost_usd": 0.02177141,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, member: dave macdonald and dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis and mike nault"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis and mike nault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to add a monthly budget snapshot discussion to the next agenda (John to add it).",
+   "quote": "john will add it to the agenda for next meeting."
+  },
+  {
+   "decision": "Paula to update the FY24 figure on the IMA debt service slide of the FinCom presentation.",
+   "quote": "paula will update the fy24 figure."
+  },
+  {
+   "decision": "Bill to check whether Chapter 90 money covers sewer manholes.",
+   "quote": "but he will check if chapter 90 covers sewer manholes."
+  },
+  {
+   "decision": "Paula to insert the figure for Article 1 in the Town Meeting articles.",
+   "quote": "paula noted she will plug in the figure for article 1."
+  },
+  {
+   "decision": "Commissioners to review the draft RFP O&M contract for pumping stations; John asked Paula to send a reminder to all Commissioners; contract to be discussed at the next meeting.",
+   "quote": "john asked paula to send a reminder to all commissioners to review it."
+  },
+  {
+   "decision": "All Commissioners to go to the DPW to sign the form giving Paula signature authority for processing Purchase Orders and Accounts Payable.",
+   "quote": "all commissioners need to go to the dpw to sign the form giving paula signature authority"
+  },
+  {
+   "decision": "Paula and Bill to review the five Assistant Business Manager applicants and decide who to interview; Paula and Bill to conduct the interviews.",
+   "quote": "she and bill will review them and decide who to interview."
+  },
+  {
+   "decision": "Bill and Paula to work on a scope of work for a clerical position, based on the Assistant scope with items deleted; John to add the discussion to a future agenda.",
+   "quote": "bill and paula will work on it."
+  },
+  {
+   "decision": "Commission decided to let Il Forno go back to pumping every 3 months, while monitoring the FOG level.",
+   "quote": "they decided to let il forno go back to pumping every 3 months but monitor the fog level."
+  },
+  {
+   "decision": "A&D Crossroads non-payment to be added to the next agenda; Paula to talk to the Tax Collector and Town Counsel if needed.",
+   "quote": "brett agreed and john will add it to the next agenda."
+  },
+  {
+   "decision": "Commission agreed the Fluid Conservation I/I sensor product is worth further discussion; Bill and Paula to talk to Al about where it would be used.",
+   "quote": "commission discussed the product and agreed it is worth further discussion."
+  },
+  {
+   "decision": "Insert about the Mass Homeowners Assistance program to be added to the May 1st billing.",
+   "quote": "john suggested adding an insert in the may 1st billing and all agreed."
+  },
+  {
+   "decision": "Paula will talk to the Tax Collector and Town Counsel if needed about the A&D Crossroads invoice.",
+   "quote": "paula will talk to the tax collector and town counsel if needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State earmark request",
+   "what_was_recorded": "The commission submitted an earmark request for sewer manhole repairs and pump station upgrades after ARPA money was judged unlikely.",
+   "figures_as_printed": [
+    "$200K",
+    "$300K"
+   ],
+   "quote": "instead they have put in an earmark request for $200k for sewer manhole repairs and $300k for sewer pump station upgrades."
+  },
+  {
+   "topic": "FY24 budget revenue and expense lines",
+   "what_was_recorded": "Draft FY24 budget lines for payroll, purchase of service, utilities, departmental expenses and indirect costs, with revenues estimated at about $1.2 Million.",
+   "figures_as_printed": [
+    "$1.2 Million",
+    "$90, 965",
+    "$86,086",
+    "$46,700",
+    "$920,617",
+    "$90,920"
+   ],
+   "quote": "payroll - $90, 965 (decrease due to a change in personnel), purchase of service - $86,086"
+  },
+  {
+   "topic": "Other departmental expenses",
+   "what_was_recorded": "Other departmental expenses in the FY24 draft are capital costs for Leominster debt service and John Fitch improvements, plus usage fees.",
+   "figures_as_printed": [
+    "$920,617"
+   ],
+   "quote": "other departmental expenses - $920,617 (capital costs for leominster debt service and john fitch"
+  },
+  {
+   "topic": "Indirect costs",
+   "what_was_recorded": "FY24 draft indirect costs, shown as decreasing due to a personnel change.",
+   "figures_as_printed": [
+    "$90,920"
+   ],
+   "quote": "indirect costs - $90,920 (decrease due to personnel change)."
+  },
+  {
+   "topic": "FY24 projected deficits",
+   "what_was_recorded": "FY24 draft shows a revenue-versus-expense deficit and a debt-service-versus-betterments deficit.",
+   "figures_as_printed": [
+    "-$218,690",
+    "$163,406"
+   ],
+   "quote": "deficit for revenue vs expense -$218,690, deficit for debt service vs betterments - $163,406"
+  },
+  {
+   "topic": "FY24 proposed transfers",
+   "what_was_recorded": "FY24 draft budgets transfers to Stabilization (Capital Reserve), Reserve Capacity and OPEB; these are budget lines, not executed transfers.",
+   "figures_as_printed": [
+    "$36,621",
+    "$8,000",
+    "$1,000"
+   ],
+   "quote": "capital reserve-$36,621 and reserve capacity - $8,000 and transfer to opeb- $1,000."
+  },
+  {
+   "topic": "FY24 retained earnings appropriation",
+   "what_was_recorded": "The projected Retained Earnings appropriation in the FY24 draft.",
+   "figures_as_printed": [
+    "$427,718"
+   ],
+   "quote": "projected retained earnings appropriation would be $427,718."
+  },
+  {
+   "topic": "Penalties revenue",
+   "what_was_recorded": "Penalties received in FY23 and the amount budgeted for FY24.",
+   "figures_as_printed": [
+    "$8,674.18",
+    "$10,300"
+   ],
+   "quote": "they have received $8,674.18 in penalties in fy23 and have budgeted $10,300 for fy24."
+  },
+  {
+   "topic": "A&D Crossroads non-compliance invoices",
+   "what_was_recorded": "Three non-compliance invoices sent to A&D Crossroads; the first two amounts and the third are recorded, and the 3/1 invoice is unpaid.",
+   "figures_as_printed": [
+    "$2,057",
+    "$2400",
+    "$2,525"
+   ],
+   "quote": "the 1st invoice of $2,057 was sent at the end of january, the 2nd sent on 2/14 for $2400 and the 3rd on"
+  },
+  {
+   "topic": "A&D Crossroads 99-day invoice",
+   "what_was_recorded": "The 3/1 invoice for 99 days of non-compliance, not paid; Commission weighed how much to pursue.",
+   "figures_as_printed": [
+    "$2,525"
+   ],
+   "quote": "they sent an invoice of $2,525 for 99 days of non-"
+  },
+  {
+   "topic": "Fluid Conservation I/I sensor",
+   "what_was_recorded": "Cost of the SpillSens portable float sensor, against $9,900 remaining in the FY23 budget for I/I.",
+   "figures_as_printed": [
+    "$2K",
+    "$9,900"
+   ],
+   "quote": "it is portable and the cost is $2k. at present there is $9,900 in the fy23 budget to spend on i/i"
+  },
+  {
+   "topic": "Invoices for approval",
+   "what_was_recorded": "Invoices listed for signature: Mead, Talerman and Fitchburg Usage.",
+   "figures_as_printed": [
+    "$756",
+    "$19,383.93"
+   ],
+   "quote": "mead, talerman- $756 (1/30-2/17 for wright pierce contract, public hearings, policies & regulations)"
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "Fitchburg usage invoice listed for the chair to sign.",
+   "figures_as_printed": [
+    "$19,383.93"
+   ],
+   "quote": "fitchburg usage- $19,383.93. john will come in to sign."
+  },
+  {
+   "topic": "Mass Homeowners Assistance",
+   "what_was_recorded": "Homeowners may receive up to $50K of assistance, usable for water and sewer bills.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "homeowners are eligible for up to $50k of assistance, which can be used for water and sewer bills."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "thanks to Barbara and welcome to Paula",
+   "quote": "public comment- dave thanked barbara for all her years at the sewer commission."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "Todd Dwyer's resignation from Select Board",
+   "quote": "dave noted todd dwyer just resigned from the select board and he thanked him for his service."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (Barbara, Paula)",
+   "resolution": "noted",
+   "tags": [
+    "recognition",
+    "staffing"
+   ],
+   "quote": "public comment- dave thanked barbara for all her years at the sewer commission."
+  },
+  {
+   "topic": "Announcements: opening and Town Caucus",
+   "resolution": "noted",
+   "tags": [
+    "vacancy",
+    "Town Caucus",
+    "election"
+   ],
+   "quote": "dave announced they have an opening on the sewer commission and the town caucus will"
+  },
+  {
+   "topic": "State earmark request",
+   "resolution": "noted; request submitted to Town Manager",
+   "tags": [
+    "state earmark",
+    "ARPA"
+   ],
+   "quote": "paula reported the arpa money remains unknown; it appears unlikely they will get the money they have requested."
+  },
+  {
+   "topic": "FY24 budget discussion",
+   "resolution": "discussed; FinCom slide to be updated",
+   "tags": [
+    "FY24 budget",
+    "FinCom",
+    "retained earnings"
+   ],
+   "quote": "paula screen-shared the fy24 budget draft."
+  },
+  {
+   "topic": "Town Meeting articles",
+   "resolution": "approved",
+   "tags": [
+    "town meeting articles"
+   ],
+   "quote": "to accept the articles for this town meeting as written."
+  },
+  {
+   "topic": "RFP O&M contract for pumping stations",
+   "resolution": "continued to next meeting",
+   "tags": [
+    "RFP",
+    "pumping station contract"
+   ],
+   "quote": "paula sent the commissioners a draft and will need to have a contract"
+  },
+  {
+   "topic": "Business Manager and signature authority",
+   "resolution": "noted; Commissioners to sign DPW form",
+   "tags": [
+    "staffing",
+    "purchase orders",
+    "accounts payable"
+   ],
+   "quote": "john noted paula accepted the business manager position and all commissioners need to go"
+  },
+  {
+   "topic": "Assistant Business Manager position",
+   "resolution": "applicants under review; interviews pending",
+   "tags": [
+    "staffing",
+    "hiring"
+   ],
+   "quote": "paula reported they have had 5 applicants."
+  },
+  {
+   "topic": "Clerical position scope",
+   "resolution": "no action; scope of work to be drafted",
+   "tags": [
+    "staffing",
+    "clerical union"
+   ],
+   "quote": "dave suggested opening up a scope of work for a clerical position but they do not need to hire"
+  },
+  {
+   "topic": "Grease trap accounts status",
+   "resolution": "decided Il Forno pumping every 3 months; A&D pursuit continued",
+   "tags": [
+    "grease trap",
+    "FOG",
+    "enforcement",
+    "A&D Crossroads",
+    "Il Forno"
+   ],
+   "quote": "paula reported john and bill attended il forno"
+  },
+  {
+   "topic": "1st Tuesday reports",
+   "resolution": "noted",
+   "tags": [
+    "reports"
+   ],
+   "quote": "paula reported all are in on time"
+  },
+  {
+   "topic": "Minutes of 2/28 meeting",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes from 2/28."
+  },
+  {
+   "topic": "Business Manager report: Wright Pierce contract",
+   "resolution": "noted",
+   "tags": [
+    "engineering contract",
+    "Wright Pierce"
+   ],
+   "quote": "paula reported the contract for general engineering services was executed on 3/2/23."
+  },
+  {
+   "topic": "Town Caucus and vacancy",
+   "resolution": "noted",
+   "tags": [
+    "Town Caucus",
+    "election"
+   ],
+   "quote": "brett is up for re-election. mike deveikis is not running again, so there is an opening."
+  },
+  {
+   "topic": "Mass Homeowners Assistance",
+   "resolution": "agreed to billing insert",
+   "tags": [
+    "homeowner assistance",
+    "billing"
+   ],
+   "quote": "john suggested adding an insert in the may 1st billing and all agreed."
+  },
+  {
+   "topic": "Fluid Conservation I/I detection",
+   "resolution": "discussed; further discussion needed",
+   "tags": [
+    "inflow and infiltration",
+    "sensor",
+    "FY23 budget"
+   ],
+   "quote": "paula & bill met with representatives of fr mahoney and fluid conservation systems"
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "listed; chair to sign; no vote recorded",
+   "tags": [
+    "invoices"
+   ],
+   "quote": "fitchburg usage- $19,383.93. john will come in to sign."
+  },
+  {
+   "topic": "Action items: Zoom meetings",
+   "resolution": "noted; state decision pending",
+   "tags": [
+    "Zoom",
+    "remote meetings"
+   ],
+   "quote": "dave asked if they will be continuing zoom meetings and paula replied it is due to expire 3/31"
+  },
+  {
+   "topic": "Public comment (Todd Dwyer)",
+   "resolution": "noted",
+   "tags": [
+    "Select Board",
+    "vacancy"
+   ],
+   "quote": "dave noted todd dwyer just resigned from the select board and he thanked him for his service."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "FY24 budget",
+  "state earmark",
+  "ARPA",
+  "town meeting articles",
+  "pumping station contract",
+  "staffing",
+  "grease trap enforcement",
+  "inflow and infiltration",
+  "homeowner assistance",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

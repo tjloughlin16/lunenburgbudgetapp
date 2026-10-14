@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2023-04-27",
  "docid": "84",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Motion to adjourn the meeting at 8:12 PM.",
    "moved_by": "Anna Lockwood",
    "seconded_by": "Joeci Gilchrest",
    "outcome": "not stated",
@@ -21,6 +21,167 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0792395
+ "note": "The minutes are a flattened text with no page breaks or scan artifacts. The roll-call block lists seven members without marking each present or absent; I recorded them as present on the strength of that listing, so the status is inferred, not stated. The only motion is the adjournment at 8:12 PM, and no outcome or tally is printed, so it is recorded as 'not stated'. No other votes appear. The minutes spell the member's name 'Gilcreth' once and 'Gilchrest' elsewhere; I quoted each as printed. The second 'PUBLIC COMMENT' heading (VII) contains no speaker, only a staff item about a Zoom option, so I did not record it as public comment. The only money discussed is the planning grant, with no dollar figure printed.",
+ "cost_usd": 0.01444871,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Economic Development Chair",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Economic Development Member",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Lunenburg Business Association",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "Open Space Representative",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director), cathy clark (economic development chair), jeanne dupre (economic development member), lou franco (select board), joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Cathy Clark will get input from the DPW, Police, and the Selectboard on next steps for the proposed MassDOT sign and crosswalk to address center-of-town parking.",
+   "quote": "cathy clark will get input from the dpw, police, and the selectboard regarding the next steps."
+  },
+  {
+   "decision": "Joeci Gilchrest will meet with the Lunenburg Business Association to discuss plans for a business meet-and-greet and set a date.",
+   "quote": "joeci gilcreth will meet with the lba (lunenburg business association) to discuss plans and set a date in the near future."
+  },
+  {
+   "decision": "Email addresses will be added under Key Contacts on the Lunenburg page of the Business Development Guide.",
+   "quote": "email addresses will be added under key contacts in lunenburg page."
+  },
+  {
+   "decision": "Adam Burney will add a caveat to the Business Development Guide that not all listed materials apply to every business.",
+   "quote": "adam burney will add the caveat that not all materials apply to everyone's situation."
+  },
+  {
+   "decision": "Adam Burney will ensure all linkable items in the Business Development Guide are linked.",
+   "quote": "adam burney will ensure that all linkable items in the guide are linked."
+  },
+  {
+   "decision": "The introduction page of the Business Development Guide will be changed to name Adam Burney as the contact.",
+   "quote": "this will be changed to add adam burney as the contact info."
+  },
+  {
+   "decision": "Matt Brenner will send a PDF listing potential formatting issues in the Business Development Guide.",
+   "quote": "matt brenner will be sending a pdf with potential formatting issues."
+  },
+  {
+   "decision": "Adam Burney will create a Zoom option for upcoming meetings.",
+   "quote": "adam burney will be creating a zoom option for upcoming meetings."
+  },
+  {
+   "decision": "The committee will regroup in early fall on the Master Plan, after a public forum kicks off in June; the full plan is to be ready for Town Meeting in 2025.",
+   "quote": "the committee will regroup in early fall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Site Preparation Grant (Leominster-Shirley Road / Reservoir Road / Fort Pond Road)",
+   "what_was_recorded": "A planning grant is to fund designing a road and intersection to address site distance and intersection issues, and the design may later support mitigation requirements or a MassWorks construction funding application; the town will likely apply if the Select Board supports it. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a planning grant will be used to create a road and design an intersection to address some of the site distance issues"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "stated_role": "not stated",
+   "topic": "lack of parking in the center of town",
+   "quote": "there has been concern related to the lack of parking in the center of town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "call to order 6:05 pmi. roll call"
+  },
+  {
+   "topic": "Public comment: center-of-town parking and crosswalk sign",
+   "resolution": "referred for next steps (Cathy Clark to seek DPW, Police, Selectboard input)",
+   "quote": "cathy clark will get input from the dpw, police, and the selectboard regarding the next steps."
+  },
+  {
+   "topic": "Business meet-and-greet for local business owners",
+   "resolution": "continued (Joeci Gilchrest to meet with LBA and set a date)",
+   "quote": "joeci gilcreth will meet with the lba (lunenburg business association) to discuss plans and set a date in the near future."
+  },
+  {
+   "topic": "Business updates (LUFA Farms, Lunenburg Central, site preparation grant, and nine other sites)",
+   "resolution": "noted, no action",
+   "quote": "no additional updates and no additional filings."
+  },
+  {
+   "topic": "Master Plan update",
+   "resolution": "noted; public forum to begin in June, committee to regroup in early fall",
+   "quote": "a public forum will kick off in june. this will be used to get people's input and collect data."
+  },
+  {
+   "topic": "Feedback on Business Development Guide",
+   "resolution": "edits assigned to Adam Burney, Matt Brenner and staff",
+   "quote": "email addresses will be added under key contacts in lunenburg page."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted: next meeting May 18 at 6 PM",
+   "quote": "vi. meeting schedule may 18 at 6 pm."
+  },
+  {
+   "topic": "Zoom option for meetings",
+   "resolution": "assigned to Adam Burney",
+   "quote": "adam burney will be creating a zoom option for upcoming meetings."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:12 PM (outcome of motion not recorded)",
+   "quote": "motion to adjourn at 8:12 pm by anna lockwood, seconded by joeci gilchrest."
+  }
+ ],
+ "tags": [
+  "economic development",
+  "business development guide",
+  "parking",
+  "crosswalk",
+  "site preparation grant",
+  "master plan",
+  "business updates",
+  "Lunenburg Central",
+  "meeting schedule",
+  "Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

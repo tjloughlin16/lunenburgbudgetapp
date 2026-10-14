@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2023-03-13",
  "docid": "182",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve J.McLaughlin to research the possibility of an Earmark project (used van)",
+   "motion": "Approve the February 6th, 2023 minutes.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion - s.archambault, 2nd p.lincoln, passed"
+  },
+  {
+   "motion": "Approve J. McLaughlin to research the possibility of an Earmark project (used van).",
    "moved_by": "F.Beall",
    "seconded_by": "P.Sarapas",
    "outcome": "passed",
@@ -20,15 +28,159 @@
    "quote": "motion to approve j.mclaughlin to research the possibility of and earmark project (used van). f.beall, 2nd p.sarapas - passed"
   },
   {
-   "motion": "Approve the PAC budget and have S.Walker present the Budget Presentation packet to Fin Com and at Town Meeting",
+   "motion": "Approve and have S.Walker present the Budget Presentation packet to Fin Com and at Town Meeting.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Sarapas",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve and have s.walker present the budget presentation packet to fin com and at town meeting (f.beall, 2nd p.sarapas - passed)"
+  },
+  {
+   "motion": "Adjourn the meeting (adjourned at 7:01 pm).",
+   "moved_by": "S.Archambault",
+   "seconded_by": "F.Beall",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion - s.archambault, 2nd f.beall - passed"
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.1063585
+ "dropped_unquoted": 0,
+ "note": "Text extraction only, not a scan; all content read off the two pages. Tabs in the source were collapsed to single spaces in quotes. Public comment and committee comment were recorded as \"None\". No vote counts were printed, so outcomes are recorded as \"passed\" as the minutes state. The \"Motion to approve J.McLaughlin...\" line contains the minutes' own wording, including \"and Earmark project\". The Manager's attendance is listed under roll call but her presence is not stated explicitly, so her status is \"not stated\".",
+ "cost_usd": 0.013982310000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The PAC staff use of personal equipment policy was tabled.",
+   "quote": "pac staff use of personal equipment policy; - tabled"
+  },
+  {
+   "decision": "Adding APDC meetings to the monthly schedule (1st Tuesday of the month at 7:30) was reported as done by the Manager.",
+   "quote": "added apdc meetings to the monthly schedule (1st tues. of month @ 7:30)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PAC budget",
+   "what_was_recorded": "The PAC budget was listed at a stated amount, with a share attributed to local programming, and was presented and discussed.",
+   "figures_as_printed": [
+    "$961,566.40",
+    "68%"
+   ],
+   "quote": "budget $961,566.40 • 68% local programing"
+  },
+  {
+   "topic": "PAC budget review and Fin Com/Town Meeting packet",
+   "what_was_recorded": "The PAC budget was presented and discussed, and the committee approved presenting the Budget Presentation packet to Fin Com and Town Meeting.",
+   "figures_as_printed": [],
+   "quote": "the pac budget was presented and discussed."
+  },
+  {
+   "topic": "State earmark funds for a PAC van",
+   "what_was_recorded": "Earmark State funds may be available, and the Town asked the PAC to submit a proposal; the Manager will look into a used PAC van.",
+   "figures_as_printed": [],
+   "quote": "earmark state funds may be available. town requested pac submit a proposal."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved February 6th, 2023 minutes",
+   "quote": "motion - s.archambault, 2nd p.lincoln, passed",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "noted; Manager to look into a used PAC van via earmark funds",
+   "quote": "earmark state funds may be available. town requested pac submit a proposal.",
+   "tags": [
+    "staffing",
+    "programming",
+    "equipment",
+    "van"
+   ]
+  },
+  {
+   "topic": "Budget review",
+   "resolution": "approved presenting the budget packet to Fin Com and Town Meeting",
+   "quote": "motion to approve and have s.walker present the budget presentation packet to fin com and at town meeting",
+   "tags": [
+    "budget",
+    "fin com",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "PAC staff use of personal equipment policy",
+   "resolution": "tabled",
+   "quote": "pac staff use of personal equipment policy; - tabled",
+   "tags": [
+    "policy",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:01 pm; next meeting April 10th, 6:00 pm",
+   "quote": "meeting adjourned at 7:01 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "budget",
+  "Fin Com",
+  "town meeting",
+  "equipment policy",
+  "PAC van",
+  "programming",
+  "staffing",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

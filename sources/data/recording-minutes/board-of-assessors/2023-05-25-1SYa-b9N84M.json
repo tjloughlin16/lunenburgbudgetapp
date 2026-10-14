@@ -1,0 +1,312 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-05-25",
+ "video_id": "1SYa-b9N84M",
+ "video_url": "https://www.youtube.com/watch?v=1SYa-b9N84M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-05-25-1SYa-b9N84M.json",
+  "sha256": "d0823bdcc641112d306f5edf4fdf68e5a32f5366b9bebfc996ea4c215ff6d4ee",
+  "caption_lines": 14,
+  "segments": 105
+ },
+ "recording": {
+  "duration_s": 284,
+  "duration": "0:04",
+  "spoken_chars": 3370,
+  "words_approx": 561
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05252023-29",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-25-agenda-29.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-25-agenda-29.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05252023-29",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-25-minutes-29.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-25-minutes-29.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T00:10:06Z",
+  "cost_usd": 0.2557266
+ },
+ "minutes": {
+  "headline": "Assessors said abatement certificates mail out the day after this meeting, then voted to enter executive session.",
+  "summary": "The Board of Assessors gave a remote update on property tax abatement applications: over 50 were considered Tuesday and certificates for those go out in the mail next. Another meeting is set for May 30th if the first batch is not finished, and a final batch of nearly 250 applications is expected. Public comment was invited but no speaker could be heard, and the board voted by roll call to enter executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "John rabbit",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Kevin fish",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Maria",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Sheila",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "executive-session",
+   "public-comment",
+   "tax-rate",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 239,
+    "motion": "Enter executive session and not return to open session afterward, by roll call vote",
+    "outcome": "passed; roll call of two members heard, both aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 45,
+    "topic": "Property tax abatement applications",
+    "what_was_said": "The board considered over 50 abatement applications in executive session on Tuesday, with a first batch still to finish and a final batch expected later.",
+    "figures_as_heard": [
+     "over 50",
+     "first 160 applications",
+     "nearly 250"
+    ]
+   },
+   {
+    "t": 176,
+    "topic": "Abatement certificates",
+    "what_was_said": "Certificates show the old tax, new tax and the abatement, with a letter giving the new values. A copy goes to the Department of Revenue.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 66,
+    "decision": "A meeting is scheduled for Tuesday May 30th in case the first batch of applications cannot be completed today."
+   },
+   {
+    "t": 150,
+    "decision": "Certificates for applications reviewed Tuesday will be mailed the next day, with notices early the following week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 86,
+    "topic": "Opening, open meeting law notice, and abatement process update",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 86,
+    "t_end": 150,
+    "topic": "Public comment: attendees muted, no speaker heard",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 150,
+    "t_end": 239,
+    "topic": "Abatement certificates and mailing; thanks to staff",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 239,
+    "t_end": 282,
+    "topic": "Roll call vote to enter executive session",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Public comment: no speaker could be heard; a caller shown as phone may have wanted to speak.",
+   "Who made and seconded the executive session motion.",
+   "Roll call heard only for two members; the full count is not clear."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors gave a remote update on property tax abatement applications: a first batch was considered in executive session on Tuesday.",
+    "t": 45
+   },
+   {
+    "line": "The board scheduled a further meeting for Tuesday May 30th in case the first batch of applications cannot be completed.",
+    "t": 66
+   },
+   {
+    "line": "Certificates for applications reviewed Tuesday are to be mailed the next day, with notices early the following week.",
+    "t": 150
+   },
+   {
+    "line": "Public comment was invited, but no speaker was heard, and the board then voted by roll call to enter executive session.",
+    "t": 239
+   }
+  ],
+  "why_it_matters": [
+   "Abatement certificates state the old tax, the new tax and the abatement, so a homeowner who applied will learn the result of their application by mail within days.",
+   "A final, larger batch of applications is still to come, so some applicants will wait past this round."
+  ],
+  "watch_next": [
+   "Tuesday May 30th: the additional Board of Assessors meeting set in case the first batch is not finished."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T00:10:18Z",
+   "cost_usd": 0.2180689
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05252023-29",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-05-25-minutes-29.txt",
+   "path": "sources/meetings/board-of-assessors/2023-05-25-minutes-29.pdf"
+  },
+  "official_sha256": "c9f363180a39a8fc98e5995487cf0f56a26608ab497c2773d9d31d5bf5d37dc9",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The records agree that there were no votes or transfers. They differ on attendees and on the scheduling details our minutes caught. The official minutes name six people against our four, and 'Maria' in ours has no match there, so a person should check whether it is Rena Swezey misheard. The official record also leaves out the May 30 meeting, the mailing timeline and the application counts.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Attendee John Rabbitt (member)",
+    "ours": "John rabbit (member)",
+    "official": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "official_reading": "John Rabbitt",
+    "note": "Same person; captions misspelled the surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Kevin Fish",
+    "ours": "Kevin fish (member)",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish",
+    "note": "Same member in both records.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Sheila (staff)",
+    "ours": "Sheila (staff)",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish",
+    "note": "Our minutes give only the first name; the official gives Sheila Craigen, Administrative Assessing Assistant.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Maria (staff)",
+    "ours": "Maria (staff)",
+    "official": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Our minutes list a staff member 'Maria' and the official minutes list nobody by that name. The official lists Rena Swezey as interim principal assessor, so check whether 'Maria' is a mishearing of 'Rena' or a different person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Richard Letarte (Chairman)",
+    "ours": "",
+    "official": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Our minutes do not list the chairman as an attendee.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee CJ Carroll (Principal Assessor)",
+    "ours": "",
+    "official": "members present: principal access cj carroll, administrative assessing assistant sheila craigen, board member kevin fish",
+    "note": "Official lists CJ Carroll (printed 'principal access', probably an OCR error for Principal Assessor). Not in our attendee list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Rena Swezey (Interim Principal Assessor)",
+    "ours": "",
+    "official": "chairman richard letarte, board member john rabbitt, interim principal assessor rena swezey.",
+    "note": "Our minutes do not list this person; 'Maria' may be a mishearing of her name.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement application counts",
+    "ours": "Property tax abatement applications: over 50, first 160 applications, nearly 250",
+    "official": "",
+    "note": "Official minutes print no application counts. The counts are from captions and are unverified, so check them against the recording.",
+    "t": 45
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tuesday May 30th backup meeting",
+    "ours": "A meeting is scheduled for Tuesday May 30th in case the first batch of applications cannot be completed today.",
+    "official": "",
+    "note": "Official minutes record no meeting scheduled for May 30. They list no decisions at all.",
+    "t": 66
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Certificate and notice mailing timeline",
+    "ours": "Certificates for applications reviewed Tuesday will be mailed the next day, with notices early the following week.",
+    "official": "",
+    "note": "Official minutes have no mailing timeline.",
+    "t": 150
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abatement certificate contents",
+    "ours": "",
+    "official": "the certificate will include the old tax, the new tax, and the abatement amount.",
+    "note": "Official says what the certificate shows, and our minutes do not. This is a description, not a decision.",
+    "t": 150
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote. The official minutes have no transfers either, and our minutes list none.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T00:10:54Z",
+   "cost_usd": 0.26087699999999997
+  }
+ }
+}

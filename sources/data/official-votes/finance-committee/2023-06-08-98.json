@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-06-08",
  "docid": "98",
@@ -12,32 +12,30 @@
  },
  "votes": [
   {
-   "motion": "Support the modified plan for the Primary School air conditioning project as outlined in the letter from Lunenburg Public Schools",
+   "motion": "Motion to support the modified plan outlined in the letter from Lunenburg Public Schools (Primary School air conditioning project).",
    "moved_by": "Mr. Balish",
    "seconded_by": "Mr. Gray",
    "outcome": "failed 2-2",
    "procedural": false,
-   "quote": "mr. balish motioned to support the modified plan outlined in the letter from lunenburg public schools. mr. gray seconded. mr. menard asked for clarification as the le",
-   "quote_taken_from_text": true
+   "quote": "mr. balish motioned to support the modified plan outlined in the letter from lunenburg public schools. mr. gray seconded."
   },
   {
-   "motion": "Nominate Mr. Watters to the Master Plan Steering Committee",
-   "moved_by": "Mr. Gray",
-   "seconded_by": "",
+   "motion": "Nominate Mr. Watters to the Master Plan Steering Committee.",
+   "moved_by": "Mr Gray",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr gray motioned to nominate mr. watters to the master plan steering committee. on vote - motion passes unanimously."
   },
   {
-   "motion": "Nominate Mr. Menard to the Capital Planning Committee",
+   "motion": "Nominate Mr. Menard to the Capital Planning Committee.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Balish",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. watters motioned to nominate mr. menard to the capital planning committee. mr. balish seconded. on vote - motion passes unanimously."
   },
   {
-   "motion": "Approve the minutes of 10/27/2022, 11/10/2022, and 3/30/2023",
+   "motion": "Approve the minutes of 10/27/2022, 11/10/2022 and 3/30/2023.",
    "moved_by": "Mr. Gray",
    "seconded_by": "Mr. Balish",
    "outcome": "passed unanimously",
@@ -45,7 +43,7 @@
    "quote": "mr. gray motioned to approve the minutes of 10/27/2022, 11/10/2022, 3/30/2023. mr. balish seconded. on vote - motion passed unanimously"
   },
   {
-   "motion": "Adjourn the meeting at 8:53 pm",
+   "motion": "Adjourn the meeting at 8:53pm.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Gray",
    "outcome": "passed unanimously",
@@ -54,6 +52,271 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1050595
+ "note": "Text is extracted from a PDF with page headers (\"page of 17\" etc.) and some typos printed in the source; quotes are copied as printed with line breaks collapsed. Jay Simeone appears in the letterhead list but is not recorded as present or absent, so he is omitted from attendees (no quotable line). Mr. Jefferies (Selectboard Chair) is mentioned but not recorded as taking part, so omitted. The Master Plan nomination has no printed seconder. Votes are recorded with their printed tallies or \"passed unanimously\". The air conditioning vote's result line sits outside its quote, which is limited to the motion sentence and the seconder. Dollar figures in the AC discussion are the only dollar amounts printed; no transfers recorded.",
+ "cost_usd": 0.018852110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair (Chairperson)",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Thomas Balish",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "guests: dr. kate burnham, superintendent, michael cassidy, lunenburg public schools business manager"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Lunenburg Public Schools Business Manager",
+   "status": "present",
+   "quote": "guests: dr. kate burnham, superintendent, michael cassidy, lunenburg public schools business manager"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "liaison from the School Committee to the Finance Committee",
+   "status": "present",
+   "quote": "brian lehtinen introduced himself as the new liaison from the school committee to the"
+  },
+  {
+   "name": "Rhonda Lizzio",
+   "role": "resident, 181 Reservoir Rd.",
+   "status": "present",
+   "quote": "rhonda lizzio, 181 reservoir rd., said she recalled mr. jefferies mention there was heat damage occurring at the primary school"
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "Finance Committee representative to Capital Planning",
+   "status": "present",
+   "quote": "mr. passios (56 whiting street) thanked the committee for allowing him to finish off the capital planning season this last last budget season."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reorganization held off until there are additional members (recommended by the Chair, no vote recorded).",
+   "quote": "mr. watters recommended holding off until there were additional members."
+  },
+  {
+   "decision": "Interim liaison assignments: Mr. Gray takes School Committee; Mr. Menard takes Police and Fire; Mr. Watters takes Library (stated without a recorded vote).",
+   "quote": "mr. gray said he would take school committee. mr. menard offered to take the police and fire liaison assignment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Primary School air conditioning project: funding amount in the district letter versus the Town Meeting vote",
+   "what_was_recorded": "Mr. Menard noted the district letter states one figure while Annual Town Meeting voted another; Dr. Burnham apologized and said the project would be worked within the budget allocated.",
+   "figures_as_printed": [
+    "$238,000",
+    "$232,800"
+   ],
+   "quote": "mr. menard asked for clarification as the letter says $238,000 but at annual town meeting we voted for $232,800."
+  },
+  {
+   "topic": "Primary School air conditioning project: engineers' cost estimates",
+   "what_was_recorded": "Dr. Burnham said engineers' estimates after the Town Meeting vote were in the millions, so the approach was reassessed to fit available funding.",
+   "figures_as_printed": [],
+   "quote": "the engineers gave cost estimates that were in the millions and not the hundreds of thousands so they had to reassess"
+  },
+  {
+   "topic": "Primary School air conditioning project: budget correction",
+   "what_was_recorded": "Dr. Burnham apologized for the figure error and said the district would work within the budget allocated for the project.",
+   "figures_as_printed": [],
+   "quote": "dr. burnham apologized for the error and that they would work within the budget allocated for this project."
+  },
+  {
+   "topic": "Infrastructure repairs (Turkey Hill Elementary School) raised in public comment",
+   "what_was_recorded": "Mr. Passios said the town cannot keep saying it cannot afford infrastructure, citing Turkey Hill Elementary School repairs; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "sited turkey hill elementary school and the much needed repairs"
+  },
+  {
+   "topic": "Tax assessment and abatements (old business)",
+   "what_was_recorded": "Mr. Watters reported a decent number of abatements were expected to be granted; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. watters updated that the last he had heard there were going to be a decent number of abatements being granted."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lizzio",
+   "stated_role": "resident, 181 Reservoir Rd.",
+   "topic": "Primary School heat damage and fire alarms; whether the AC project addresses them",
+   "quote": "rhonda lizzio, 181 reservoir rd., said she recalled mr. jefferies mention there was heat damage occurring at the primary school"
+  },
+  {
+   "speaker": "Mr. Passios",
+   "stated_role": "Finance Committee representative to Capital Planning",
+   "topic": "Infrastructure needs, Turkey Hill Elementary School repairs",
+   "quote": "mr. passios (56 whiting street) thanked the committee for allowing him to finish off the capital planning season this last last budget season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and Public Comment",
+   "resolution": "introduced new School Committee liaison; public comment heard",
+   "quote": "brian lehtinen introduced himself as the new liaison from the school committee to the finance committee.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager / Finance Director Report",
+   "resolution": "no update",
+   "quote": "4. town manager / finance director report - no update",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Primary School air conditioning project",
+   "resolution": "motion to support the modified plan failed 2-2",
+   "quote": "a.primary school air conditioning project dr. burnham referenced the letter provided to the finance committee",
+   "tags": [
+    "schools",
+    "capital",
+    "air conditioning",
+    "primary school"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "Watters nominated; passed unanimously",
+   "quote": "b. master plan steering committee mr. watters said a master plan steering committee is being convened and charged by the planning board",
+   "tags": [
+    "appointments",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee assignment",
+   "resolution": "Menard nominated; passed unanimously",
+   "quote": "c. capital planning committee assignment mr. watters thanked mr. passios for serving as the finance committee representative for capital planning.",
+   "tags": [
+    "appointments",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Committee liaison assignments",
+   "resolution": "interim liaisons assigned: School Committee (Gray), Police and Fire (Menard), Library (Watters)",
+   "quote": "mr. gray said he would take school committee. mr. menard offered to take the police and fire liaison assignment.",
+   "tags": [
+    "liaisons",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Summer schedule",
+   "resolution": "topics listed; meeting dates discussed, no vote",
+   "quote": "e. summer schedule mr. watters went down a list of potential topics for the summer:",
+   "tags": [
+    "schedule",
+    "fiscal policy"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "held off until additional members join",
+   "quote": "f. committee reorganization mr. watters recommended holding off until there were additional members.",
+   "tags": [
+    "organization"
+   ]
+  },
+  {
+   "topic": "Tax Assessment/Abatement Discussion",
+   "resolution": "update; no action",
+   "quote": "tax assessment/abatement discussion mr. watters updated that the last he had heard there were going to be a decent number of abatements being granted.",
+   "tags": [
+    "abatements",
+    "tax"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "three sets of minutes approved; others in progress",
+   "quote": "mr. gray motioned to approve the minutes of 10/27/2022, 11/10/2022, 3/30/2023.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "8. committee reports - none",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "none other than the summer schedule",
+   "quote": "9. topics for future meetings - none other than the summer schedule.",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action recorded",
+   "quote": "10. public comment mr. passios (56 whiting street) thanked the committee for allowing him to finish off the capital planning season",
+   "tags": [
+    "public comment",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting",
+   "resolution": "next meeting set for June 22",
+   "quote": "11. upcoming meeting june 22nd",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:53pm",
+   "quote": "mr. menard motioned and mr. gray seconded to adjourn at 8:53pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Primary School",
+  "air conditioning",
+  "capital planning",
+  "Town Meeting appropriation",
+  "committee appointments",
+  "liaisons",
+  "minutes approval",
+  "public comment",
+  "abatements",
+  "school budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

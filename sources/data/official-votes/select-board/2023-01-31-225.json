@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-01-31",
  "docid": "225",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Daniel Bourgeois and Aaron Robichaud as civilian traffic members",
+   "motion": "Ratify the Town Manager's appointment of Daniel Bourgeois and Aaron Robichaud as civilian traffic members, effective February 1.",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd. m. jeffreys to ratify the appointment of daniel bourgeois and aaron robichaud as civilian traffic members vote: ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "motion: t. alonzo 2nd. m. jeffreys to ratify the appointment of daniel bourgeois and aaron robichaud as civilian traffic members"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
@@ -29,6 +29,464 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Apparent OCR artifact in second motion: '2\\\":' (likely intended as '2nd:'). All votes passed unanimously 5-0.",
- "cost_usd": 0.1194035
+ "note": "Text is macOS Vision OCR with many garbled characters. The two votes (ratification and adjournment) are legible and both show 5 ayes. No other motions or votes are recorded; the capital plan, ARPA items and AirBnB draft were handled by discussion, consensus or direction with no vote shown. Page 10 figures are OCR-garbled (e.g. \"$1.360.500.00\"), so budget figures were taken from clean printed passages where available. Page 14 and page 22 OCR carry OCR errors in some figures. Attendance is inferred from roll-call votes and speaking roles where no explicit present/absent line exists; Mr. Dwyer, Mr. Alonzo and Ms. Sroka have no stated role in the text. One unnamed speaker on page 2 is not attributed and is omitted. Ms. Sroka's status is inferred from the roll call. The Vice Chair is mentioned but not named.",
+ "cost_usd": 0.02647641,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chair (Chairman)",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Franco",
+   "role": "Selectman",
+   "status": "remote",
+   "quote": "he announced selectman franco was participating in the meeting tonight via zoom."
+  },
+  {
+   "name": "Sroka",
+   "status": "present",
+   "quote": "vote: ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "mr. dwyer reported the stormwater task force met in january and is trying to get an understanding of how dpw allocates personnel resources to stormwater."
+  },
+  {
+   "name": "Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo reported finance committee met and town manager presented the capital plan."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "ms. lemieux reported she had received two resignations, the first was the assistant town accountant"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "resident, 50 Sunset Lane",
+   "status": "not stated",
+   "quote": "carl luck, 50 sunset lane, asked who does the principal assessor work for?"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident, 155 Island Road, via ZOOM",
+   "status": "remote",
+   "quote": "dave macdonald, 155 island road, via zoom, stated some concerned citizens living on lunenburg lakes have banded together"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commissioner",
+   "status": "not stated",
+   "quote": "parks commissioner ana lockwood commented on the route 2a right turn lane situation discussed earlier"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Pandemic mitigation items were agreed to be removed from the draft ARPA funding plan, since the CARES Act already covers them.",
+   "quote": "when it came to pandemic mitigation noted in the draft there was agreement that it could be removed as it is already mentioned in the cares act."
+  },
+  {
+   "decision": "Funding for the Town Manager and Finance Director in the general administration budget was agreed to be removed from the draft ARPA plan.",
+   "quote": "there was funding allocated to the town manager and finance director in the general administration budget and there was agreement to remove that as well"
+  },
+  {
+   "decision": "Water and sewer departments were agreed to be moved out of the infrastructure allocation and combined into the general fund in the draft ARPA plan.",
+   "quote": "there was also agreement to remove the water and sewer departments out of the infrastructure allocation and combine that into the general fund."
+  },
+  {
+   "decision": "By general consensus, the board decided not to reimburse burials and cremations from ARPA funds.",
+   "quote": "discussion ensued and the general consensus was not to reimburse for burials and cremations."
+  },
+  {
+   "decision": "Town Manager Lemieux was directed to discuss using ARPA funds versus Capital Plan funds for the plow trucks and ambulance with the Finance Committee and Capital Planning Committee; the ARPA discussion to resume by February 21 at the latest.",
+   "quote": "it was decided to allow town manager lemieux to discuss using the arpa funds vs. capital plan funds for the purchase of the plow trucks and the ambulance with the finance committee and capital planning committee."
+  },
+  {
+   "decision": "The board asked the Parks Commission for a cost figure for Marshall Park.",
+   "quote": "it was also decided to ask parks commission for a number for marshall park."
+  },
+  {
+   "decision": "By general consensus, the board decided not to draft a bylaw prohibiting AirBnB-type rentals in residential zones; no action was taken.",
+   "quote": "the general consensus of the board was not to draft a bylaw, so no action was taken."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2024 capital plan recommendation",
+   "what_was_recorded": "The Town Manager's recommendation is six capital projects totaling $1,360,500.00 out of requests the minutes give as $2,941,010.00 in total.",
+   "figures_as_printed": [
+    "$1,360,500.00",
+    "$2,941,010.00"
+   ],
+   "quote": "the recommendation tonight is for six projects totaling $1,360,500.00."
+  },
+  {
+   "topic": "Capital projects not funded",
+   "what_was_recorded": "The total cost of capital projects not funded in the current recommendation is stated as $1,580,510.",
+   "figures_as_printed": [
+    "$1,580,510"
+   ],
+   "quote": "the total cost of projects not funded in the current recommendation is $1,580,510."
+  },
+  {
+   "topic": "Funding sources for the six recommended projects",
+   "what_was_recorded": "The six projects are funded from raise and appropriate, free cash, unexpended capital and special purpose stabilization, with stabilization the largest share.",
+   "figures_as_printed": [
+    "$356,789.09",
+    "$0.00",
+    "$17,710.91",
+    "$986,000.00"
+   ],
+   "quote": "raise & appropriate free cash unexpended capital special purpose stabilization $356,789.09 $0.00 $17,710.91 $986,000.00"
+  },
+  {
+   "topic": "Rescue 1 replacement",
+   "what_was_recorded": "Replacement of Rescue 1 is the first-priority capital project at a stated project cost.",
+   "figures_as_printed": [
+    "$506,000"
+   ],
+   "quote": "project title: fd17-03 replacement of rescue 1 project cost: $506,000"
+  },
+  {
+   "topic": "Six-wheel dump/spreader/plow truck",
+   "what_was_recorded": "A replacement six-wheel dump/spreader/plow truck is listed at a stated project cost.",
+   "figures_as_printed": [
+    "$240,000"
+   ],
+   "quote": "project title: dpw23-18 6 wheel dump/spreader/plow project cost: $240,000"
+  },
+  {
+   "topic": "Capital spending averages and unfunded requests",
+   "what_was_recorded": "Five-year and three-year average capital expenditures are stated, along with total 10-year capital requests and an estimated shortfall in funding.",
+   "figures_as_printed": [
+    "$1.62M",
+    "$1.63M",
+    "$35.47M",
+    "$19.5M"
+   ],
+   "quote": "our five-year average expenditure on capital is $1.62m and the three-year average is $1.63m."
+  },
+  {
+   "topic": "Shortfall in capital funding",
+   "what_was_recorded": "Capital requests for the next 10 years total $35.47M and, at current funding, about $19.5M would not be funded.",
+   "figures_as_printed": [
+    "$35.47M",
+    "$19.5M"
+   ],
+   "quote": "given there are capital project requests totaling $35.47m at this point in time for the next 10 years, and if our funding remains consistent, we will not be funding approx. $19.5m in capital"
+  },
+  {
+   "topic": "Special Purpose Stabilization Fund for vehicles and equipment",
+   "what_was_recorded": "Article 10 would fund the special purpose stabilization fund for vehicles and equipment; $986,000 is to cover Rescue 1 and the two dump trucks.",
+   "figures_as_printed": [
+    "$986,000"
+   ],
+   "quote": "(ms. lemieux noted the $986,000 would be used for the replacement of rescue 1 and the two dump trucks)"
+  },
+  {
+   "topic": "Public safety building chiller replacement",
+   "what_was_recorded": "Chiller replacement is complete with a remaining balance to close out.",
+   "figures_as_printed": [
+    "$5,954"
+   ],
+   "quote": "the public safety building chiller replacement is complete with a balance of $5,954 with some remaining invoices to be paid."
+  },
+  {
+   "topic": "Flat Hill Road culvert and state grant",
+   "what_was_recorded": "Flat Hill Road culvert construction is budgeted at a stated amount and a $500,000 grant is to be applied to it.",
+   "figures_as_printed": [
+    "$394,210.00",
+    "$500,000"
+   ],
+   "quote": "the flat hill road culvert construction project ($394,210.00) will be put out for bid in march 2023, with construction in the fall. we also have a grant for $500,000 that will be applied towards that project."
+  },
+  {
+   "topic": "Page Street culvert",
+   "what_was_recorded": "Page Street culvert construction has a stated project amount and is expected to go to bid in the spring.",
+   "figures_as_printed": [
+    "$146,289.37"
+   ],
+   "quote": "the page street culvert construction project ($146,289.37) is expected to be out to bid in the spring"
+  },
+  {
+   "topic": "Ten-wheel truck with plow and sander",
+   "what_was_recorded": "The ten-wheel truck with plow and sander is ordered at a stated cost, with delivery moved to March 2024.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "the replacement of the 10-wheel truck with plow and sander ($250,000) is ordered and delivery"
+  },
+  {
+   "topic": "Master Plan update",
+   "what_was_recorded": "Master Plan proposals were received against a stated budget amount and are under review.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "the master plan ($110,000) proposals were received on january 19' and non-price proposals are being reviewed."
+  },
+  {
+   "topic": "Marshall Park master plan balance",
+   "what_was_recorded": "Marshall Park master plan design is complete with a stated remaining balance.",
+   "figures_as_printed": [
+    "$13, 377"
+   ],
+   "quote": "the marshall park master plan design is complete; we are seeking an estimate for schematic design. $13, 377 remains."
+  },
+  {
+   "topic": "Police canine replacement",
+   "what_was_recorded": "Police canine replacement has a stated cost and the new K-9 handler will begin procurement.",
+   "figures_as_printed": [
+    "$24,250"
+   ],
+   "quote": "for the police dept. canine replacement ($24,250), newly appointed k-9 handler, officer jack wagner will begin the process of procuring the canine."
+  },
+  {
+   "topic": "Fire turnout gear",
+   "what_was_recorded": "Fire turnout gear funded at $100,000 has been fully expended.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "she reported the turnout gear ($100,000) for fire has been fully expended."
+  },
+  {
+   "topic": "Burial and cremation reimbursement cost",
+   "what_was_recorded": "Typical costs of burials and cremations are described when the board discussed reimbursing them; the board did not reimburse.",
+   "figures_as_printed": [
+    "five to seven thousand dollars",
+    "two to three thousand dollars"
+   ],
+   "quote": "most burials vary from five to seven thousand dollars and cremations are usually two to three thousand dollars."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed a payroll warrant, an accounts payable warrant and a payroll deductions warrant, each with a stated amount.",
+   "figures_as_printed": [
+    "$949,974.73",
+    "$570,230.79",
+    "$59,004.37"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $949,974.73; an accounts payable warrant in the amount of $570,230.79 and a payroll deductions warrant in the amount of $59,004.37."
+  },
+  {
+   "topic": "Marshall Park funding ask",
+   "what_was_recorded": "Parks Commissioner said a million dollars would achieve much of the Marshall Park work, and grants with matching funds are being considered.",
+   "figures_as_printed": [
+    "a million dollars"
+   ],
+   "quote": "she stated with a million dollars we can get a lot done."
+  },
+  {
+   "topic": "Past capital plan size",
+   "what_was_recorded": "Mr. Alonzo said past capital plans were about two million dollars before the tax situation.",
+   "figures_as_printed": [
+    "two million dollar"
+   ],
+   "quote": "he added in the past we have looked at two million dollar capital plans and we were poised to do the same until this tax situation happened."
+  },
+  {
+   "topic": "Transfer proposed to special purpose stabilization",
+   "what_was_recorded": "The Article 10 description lists a transfer from free cash into the special purpose stabilization fund.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "transfer of $200,000 from free cash"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 10 special purpose stabilization fund: transfer from Free Cash, as described in the capital plan materials.",
+   "amount_as_printed": "$200,000",
+   "outcome": "proposed in the Article 10 description; no vote recorded at this meeting",
+   "quote": "transfer of $200,000 from free cash"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Who oversees the Principal Assessor investigation",
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "quote": "carl luck, 50 sunset lane, asked who does the principal assessor work for? who is conducting the investigation; what is their charge and are they going to comply with the open meeting law?"
+  },
+  {
+   "topic": "Lunenburg Lake Action Committee and abatements",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road, via ZOOM",
+   "quote": "dave macdonald, 155 island road, via zoom, stated some concerned citizens living on lunenburg lakes have banded together to offer some coordinated assistance."
+  },
+  {
+   "topic": "Route 2A lane signage, ARPA use and Marshall Park",
+   "speaker": "Ana Lockwood",
+   "stated_role": "Parks Commissioner",
+   "quote": "parks commissioner ana lockwood commented on the route 2a right turn lane situation discussed earlier adding that it was confusing due to the many lanes there."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting notice",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "open meeting law",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Public comment on 2023 property assessments",
+   "resolution": "discussed; Select Board investigation described",
+   "quote": "ms. lemieux stated the principal assessor is appointed by town manager and ratified by the board of assessors.",
+   "tags": [
+    "tax assessments",
+    "abatements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Ratification of civilian traffic members",
+   "resolution": "ratified 5-0",
+   "quote": "ratification of the town manager's appointment of civilian traffic members -daniel bourgeois and aaron j. robichaud",
+   "tags": [
+    "appointments",
+    "police",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "reported; no action",
+   "quote": "mr. jeffreys reported the library trustees are reaching out to inquire about the status of approval",
+   "tags": [
+    "library trust funds",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "ms. lemieux reported she had received two resignations, the first was the assistant town accountant",
+   "tags": [
+    "staffing",
+    "vacancies",
+    "facilities",
+    "trash",
+    "stormwater grant",
+    "senior center",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "FY2024 capital plan presentation",
+   "resolution": "presented; no vote recorded",
+   "quote": "the recommendation tonight is for six projects totaling $1,360,500.00.",
+   "tags": [
+    "capital plan",
+    "budget",
+    "free cash",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Old business: capital project close-outs",
+   "resolution": "reported; no action",
+   "quote": "the public safety building chiller replacement is complete with a balance of $5,954 with some remaining invoices to be paid.",
+   "tags": [
+    "capital plan",
+    "unexpended capital",
+    "facilities",
+    "public works"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests review",
+   "resolution": "continued; discussion to resume by February 21",
+   "quote": "it was decided to allow town manager lemieux to discuss using the arpa funds vs. capital plan funds",
+   "tags": [
+    "ARPA",
+    "capital plan",
+    "non-profits",
+    "burial reimbursement"
+   ]
+  },
+  {
+   "topic": "Draft bylaw on short-term rentals",
+   "resolution": "no action; no bylaw drafted",
+   "quote": "discuss draft bylaw to explicitly prohibit airbnb like services in residential zones",
+   "tags": [
+    "short-term rentals",
+    "zoning",
+    "AirBnB"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "warrants signed; no minutes approved",
+   "quote": "there were no minutes scheduled for approval this evening.",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Route 2A right-turn lane signage and street line painting",
+   "resolution": "referred to MassDOT; no action",
+   "quote": "because it is a state road we have to go through massdot.",
+   "tags": [
+    "traffic",
+    "roads",
+    "route 2A",
+    "MassDOT"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. dwyer reported the stormwater task force met in january and is trying to get an understanding of how dpw allocates personnel resources to stormwater.",
+   "tags": [
+    "stormwater",
+    "finance committee",
+    "capital planning committee"
+   ]
+  },
+  {
+   "topic": "Public comments (second round)",
+   "resolution": "heard; no action",
+   "quote": "parks commissioner ana lockwood commented on the route 2a right turn lane situation discussed earlier",
+   "tags": [
+    "public comment",
+    "parks",
+    "ARPA",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:02 PM",
+   "quote": "the meeting adjourned at 10:02 pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "tax assessments",
+  "capital plan",
+  "ARPA funds",
+  "town manager",
+  "appointments",
+  "public comment",
+  "short-term rentals",
+  "traffic and roads",
+  "stormwater",
+  "warrants",
+  "open meeting law",
+  "stabilization fund"
+ ],
+ "dropped_unquoted_by_field": {}
 }

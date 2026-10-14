@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-01-10",
  "docid": "69",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the December 13, 2022 meeting as amended",
+   "motion": "Approve the minutes of the December 13, 2022 meeting, as amended.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Mr. McGuigan",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln motioned to approve the minutes from the december 13, 2022 meeting as amended, mr. mcguigan seconded. on vote motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:31 a.m.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
@@ -29,6 +29,266 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. Note: A third motion is referenced at the top of page 2 stating \"Unanimously approved by COA at their February 14, 2023 meeting\" but this refers to approval at a FUTURE meeting (February 14), not at this January 10 meeting, so it is not included here.",
- "cost_usd": 0.07518849999999999
+ "note": "Two motions are recorded with outcomes (minutes approval and adjournment); both are procedural. No roll-call tallies are printed, so the minutes-approval outcome is recorded as passed (carried unanimously) and the adjournment as passed (motion carried). The PUBLIC COMMENT headings appear twice with nothing under them, so no public comment is recorded. A stray line on page 1, 'Unanimously approved by COA at their February 14, 2023 meeting', sits beside the FY24 budget text; it refers to a later meeting and is not recorded as a vote here. Guests Heather Lemieux and Heather Sroka are listed without any stated participation, so their status is not stated. Member roles other than Director, Chairperson and Vice-Chair are not printed.",
+ "cost_usd": 0.016094110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "board member (listed under Present)",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, vice-chair jane rabbitt, cheryl moisan, betty digiacomo, diane nowd, pete lincoln, jim mcguigan, susan o'sullivan"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "board member",
+   "status": "absent",
+   "quote": "absent: judy tarbell"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, select board member heather sroka, eagle house supporters liaison marilyn talley."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Select Board member",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, select board member heather sroka, eagle house supporters liaison marilyn talley."
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "ms. talley reported that the supporters need someone to watch over the donation location on thursday mornings"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members chose purple font for the 'Live active. Live well.' portion of the Senior Center logo.",
+   "quote": "board members chose purple font for the"
+  },
+  {
+   "decision": "Board members were urged to encourage people to attend a meeting and fill out a Talent Bank form to fill the two vacancies.",
+   "quote": "members were urged to encourage people to attend a meeting, and fill out a talent bank form."
+  },
+  {
+   "decision": "Ms. Lincoln directed that all members bring their draft orientation packets to the next meeting for more editing.",
+   "quote": "ms. lincoln asked all members to bring their draft packets to the next meeting for more editing."
+  },
+  {
+   "decision": "The Capital Planning Committee advised the board to consider putting an article on the Town Warrant for Annual Town Meeting for the parking request.",
+   "quote": "consider putting an article on the town warrant for annual town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA FY24 budget request",
+   "what_was_recorded": "The COA budget, submitted to the Town Manager, seeks an increase, to be presented to the Finance Committee on February 23.",
+   "quote": "the coa budget, which has been submitted to the town manager, seeks a $29,338 increase.",
+   "figures_as_printed": [
+    "$29,338"
+   ]
+  },
+  {
+   "topic": "FY24 staffing and funding shifts",
+   "what_was_recorded": "Requested added hours for the outreach coordinator, a part-time outreach assistant, and the administrative assistant; the assistant meal site manager position would move to the municipal budget instead of Formula Grant funds. No dollar figure printed for these.",
+   "quote": "requesting to move the assistant meal site manager position over to the municipal side of the budget rather than depending on formula grant funds",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital plan parking request",
+   "what_was_recorded": "The Capital Planning Committee wants more information on a parking request at the Lunenburg Adult Activity Center.",
+   "quote": "wants more information on the $150,000 request for additional parking at the lunenburg adult activity center",
+   "figures_as_printed": [
+    "$150,000"
+   ]
+  },
+  {
+   "topic": "ADA Patio project costs",
+   "what_was_recorded": "Newly discovered additional costs led engineers to suggest bidding the ADA Patio project in phases. No dollar figure printed.",
+   "quote": "with newly discovered additional costs, engineers working on the project have suggested putting the project out to bid in phases.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "ms. doherty informed the board that former van driver jerry beloin passed away.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes approval, December 13, 2022",
+   "resolution": "approved as amended",
+   "quote": "mr. lincoln motioned to approve the minutes from the december 13, 2022 meeting as amended, mr. mcguigan seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300th Anniversary celebration",
+   "resolution": "no action; members asked to suggest ideas",
+   "quote": "encouraged board members to think about ideas on how the council on aging can be featured in the celebration.",
+   "tags": [
+    "anniversary",
+    "town events"
+   ]
+  },
+  {
+   "topic": "Vision for FY23 and Senior Center logo",
+   "resolution": "purple font chosen for logo tagline",
+   "quote": "board members chose purple font for the",
+   "tags": [
+    "logo",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Board member search",
+   "resolution": "no action; recruitment urged",
+   "quote": "there are two vacancies on the board.",
+   "tags": [
+    "board vacancies",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Board member orientation packet",
+   "resolution": "members to bring drafts to next meeting",
+   "quote": "ms. lincoln asked all members to bring their draft packets to the next meeting for more editing.",
+   "tags": [
+    "orientation"
+   ]
+  },
+  {
+   "topic": "Board member town email",
+   "resolution": "noted; new accounts set up",
+   "quote": "ms. lincoln worked with suzor it to find passwords",
+   "tags": [
+    "town email",
+    "IT"
+   ]
+  },
+  {
+   "topic": "COA FY24 budget",
+   "resolution": "reported; to Finance Committee February 23",
+   "quote": "the coa budget, which has been submitted to the town manager, seeks a $29,338 increase.",
+   "tags": [
+    "budget",
+    "fy24",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Capital plan",
+   "resolution": "reported; advised to consider Town Warrant article",
+   "quote": "the capital planning committee wants more information on the $150,000 request",
+   "tags": [
+    "capital plan",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Building and grounds: ADA Patio project",
+   "resolution": "reported; bid package being formulated",
+   "quote": "a bid package is being formulated for the ada patio project.",
+   "tags": [
+    "ADA",
+    "building and grounds"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; volunteer need noted",
+   "quote": "ms. talley reported that the supporters need someone to watch over the donation location on thursday mornings",
+   "tags": [
+    "eagle house",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; recruitment encouraged",
+   "quote": "mr. lincoln encouraged board members to think of people they know who would",
+   "tags": [
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:31 a.m.",
+   "quote": "mr. lincoln motioned to adjourn, ms. digiacomo seconded. on vote, motion carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "fy24 budget",
+  "capital plan",
+  "board vacancies",
+  "board orientation",
+  "town email",
+  "eagle house",
+  "lunenburg 300th",
+  "senior center logo"
+ ],
+ "dropped_unquoted_by_field": {}
 }

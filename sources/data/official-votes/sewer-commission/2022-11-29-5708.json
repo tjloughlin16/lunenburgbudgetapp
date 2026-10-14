@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-11-29",
  "docid": "5708",
@@ -12,56 +12,406 @@
  },
  "votes": [
   {
-   "motion": "Accept the Change of Use for 7 Harris Ave. for Jason Paquette",
+   "motion": "Accept the change of use for 7 Harris Ave. for Jason Paquette.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n to accept the change of use for 7 harris ave. for jason paquette. roll call vote: dave-aye, mike n.-aye and brett-aye."
+   "quote": "to accept the change of use for 7 harris ave. for jason paquette. roll call vote: dave-aye, mike n.-aye and brett-aye."
   },
   {
-   "motion": "Change the bill for 99 Leominster Road to 2,000 cu ft usage for $273.20",
+   "motion": "Change the bill for 99 Leominster Road to 2,000 cu ft usage for $273.20.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to change the bill for 99 leominster road to 2,000 cu ft usage for $273.20. roll call vote: mike n.-aye, dave-aye and brett-aye."
+   "quote": "to change the bill for 99 leominster road to 2,000 cu ft usage for $273.20. roll call vote: mike n.-aye, dave-aye and brett-aye."
   },
   {
-   "motion": "Prorate the bill for 47 Whalom Road to 1 month",
+   "motion": "Prorate the bill for 47 Whalom Road to 1 month.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to prorate the bill for 47 whalom road to 1 month. discussion: mike questioned if this approval would b",
-   "quote_taken_from_text": true
+   "quote": "to prorate the bill for 47 whalom road to 1 month."
   },
   {
-   "motion": "Approve the Q2 Commitment of $246,015.25",
+   "motion": "Approve the Q2 Commitment of $246,015.25.",
    "moved_by": "Mike N.",
    "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion: mike n. to approve the q2 commitment of $246,015.25. second: dave m. roll call vote: mike n.-aye, dave-aye and brett-aye."
+   "procedural": false,
+   "quote": "to approve the q2 commitment of $246,015.25."
   },
   {
-   "motion": "Approve the minutes for 11/8/22",
+   "motion": "Approve the minutes for 11/8/22.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: dave m. second: mike n to approve the minutes for 11/8/22. roll call vote: dave-aye, mike n.-aye and brett-aye."
+   "quote": "to approve the minutes for 11/8/22."
   },
   {
-   "motion": "Adjourn at 7:35pm",
+   "motion": "Adjourn at 7:35pm.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: dave m. to adjourn at 7:35pm. second: mike n roll call vote: dave-aye, mike n.-aye and brett-aye."
+   "quote": "to adjourn at 7:35pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Six votes recorded, all passed unanimously 3-0 with Brett Ramsden (Vice-Chair), Dave MacDonald, and Mike Nault voting.",
- "cost_usd": 0.1293985
+ "note": "Text is macOS Vision OCR of the town's minutes; quotes are taken from the OCR text and some characters (e.g. \"I/l\", \"Ra.\") may be OCR artifacts. Attendance is labelled \"remote\" because the header reads \"via Zoom (Video Conference)\"; the attendee list itself does not mark remote or present. The signature block names Tene F. Paney as Minutes Clerk, while the attendee list names Jane Ranley as Minutes Clerk; not reconciled, and Tene F. Paney is not listed as an attendee. Six motions are recorded with roll-call results, all 3-0. The Pond View 40B discussion has no motion or vote. The 7 Harris Ave privilege fee is discussed without a printed amount. Kristin Moffat's question came during the appointment, not in the Public Comment section, and is listed under public comment for completeness.",
+ "cost_usd": 0.02138371,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "vice-chair - brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "remote",
+   "quote": "vice-chair - brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "remote",
+   "quote": "vice-chair - brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Asst. Business Manager",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- john reynolds and clerk- mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: chair- john reynolds and clerk- mike deveikis"
+  },
+  {
+   "name": "Jason Paquette",
+   "role": "contractor for 7 Harris Ave.",
+   "status": "present",
+   "quote": "jason paquette, contractor for 7 harris ave. - barb stated this was a change of use approval"
+  },
+  {
+   "name": "Kristin Moffat",
+   "role": "resident (as printed: Kristin Moffat asked)",
+   "status": "present",
+   "quote": "kristin moffat asked why the estimated gallons went up so drastically"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "presenter, Pond View 40B (agenda heading)",
+   "status": "present",
+   "quote": "kevin o'brien- pond view 40b - brett began the discussion by stating"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Took the next agenda item out of order because the 3rd appointment was not yet due.",
+   "quote": "commission agreed to take the next agenda item out of order since it was not yet time for the 3rd appointment."
+  },
+  {
+   "decision": "Brett asked Barb to add a discussion of a new policy for 47 Whalom-type credit requests to a future agenda.",
+   "quote": "brett asked barb to add the discussion of a new policy on a future agenda."
+  },
+  {
+   "decision": "Agreed to put discussion of preventing the 99 Leominster irrigation-meter problem for future homeowners on a future agenda.",
+   "quote": "dave suggested discussing how to prevent this issue for future homeowners and brett suggested adding it to a future agenda."
+  },
+  {
+   "decision": "Agreed that the peer review cannot be requested until a final plan exists (Pond View 40B).",
+   "quote": "brett pointed out that they cannot request a peer review until they have a final plan and kevin agreed."
+  },
+  {
+   "decision": "Commission to talk with Town Counsel on the Pond View 40B sewer question and wants a far more detailed plan.",
+   "quote": "brett summarized that they need to talk to. town counsel, and they would appreciate a far more detailed plan."
+  },
+  {
+   "decision": "Commission agreed to the Business Manager's invoices (Fitchburg, Leominster, Mead Talerman).",
+   "quote": "the commission agreed to the invoices."
+  },
+  {
+   "decision": "DPW Director to check with the contractor (Chad Empey) about generator maintenance.",
+   "quote": "bill replied he will check with chad empey."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer maintenance funds",
+   "what_was_recorded": "DPW Director said $64K is in the budget for cleaning and jetting work and that I/I repairs and manholes are on hold pending ARPA funding.",
+   "quote": "bill noted there is $64k in the budget to use.",
+   "figures_as_printed": [
+    "$64K"
+   ]
+  },
+  {
+   "topic": "Jetting company quotes",
+   "what_was_recorded": "Day rates quoted by two jetting companies; the third had not responded.",
+   "quote": "he contacted 3 jetting companies for quotes -wayne's drains ($2,800/day), rapid flow ($2,500/day) and clean basins (no response yet).",
+   "figures_as_printed": [
+    "$2,800/day",
+    "$2,500/day"
+   ]
+  },
+  {
+   "topic": "Q2 sewer commitment",
+   "what_was_recorded": "Q2 commitment approved; bills sent 11/10.",
+   "quote": "q2 commitment $246,015.25 -barb reported the bills were sent out 11/10",
+   "figures_as_printed": [
+    "$246,015.25"
+   ]
+  },
+  {
+   "topic": "99 Leominster Rd irrigation credit",
+   "what_was_recorded": "Credit on the bill for a new owner who used the irrigation system; bill set to 2,000 cu ft usage for $273.20.",
+   "quote": "barb noted the credit on the bill would be for $903.34.",
+   "figures_as_printed": [
+    "$903.34",
+    "$273.20"
+   ]
+  },
+  {
+   "topic": "47 Whalom Rd minimum charge",
+   "what_was_recorded": "New owners billed a minimum charge; request to prorate to one month.",
+   "quote": "minimum charge bill of $115 and would like to prorate the bill to one month.",
+   "figures_as_printed": [
+    "$115"
+   ]
+  },
+  {
+   "topic": "Expansion-of-use privilege fee, 7 Harris Ave",
+   "what_was_recorded": "Expansion of use will require an additional privilege fee; no amount printed.",
+   "quote": "as an expansion of use and will require an additional privilege fee.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fitchburg and Leominster invoices",
+   "what_was_recorded": "Commission agreed to invoices; Leominster quarterly bill described as a big decrease from prior quarters, probably due to the dry summer.",
+   "quote": "invoices- fitchburg usage- $18,872.69, leominster quarterly (6/26-",
+   "figures_as_printed": [
+    "$18,872.69",
+    "$85,404.49"
+   ]
+  },
+  {
+   "topic": "Mead, Talerman invoice (Pond View Commons)",
+   "what_was_recorded": "Invoice for October for Pond View Commons; agreed.",
+   "quote": "mead, talerman - $76.43 for october (pond view commons).",
+   "figures_as_printed": [
+    "$76.43"
+   ]
+  },
+  {
+   "topic": "ARPA funding",
+   "what_was_recorded": "ARPA funding discussed at the Select Board; no amount printed.",
+   "quote": "arpa funding- barb reported the select board had arpa funding on their 11/8 agenda.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "Condolences and tree lighting invitation",
+   "quote": "dave passed on condolences to jamie towle and jo mclaughlin, for the loss of her father, george."
+  },
+  {
+   "speaker": "Kristin Moffat",
+   "topic": "Estimated gallons for 7 Harris Ave.",
+   "quote": "kristin moffat asked why the estimated gallons went up so drastically"
+  },
+  {
+   "speaker": "Dave",
+   "topic": "Thanks for chairing and billing program",
+   "quote": "public comment - dave remarked that brett did a good job chairing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "dave passed on condolences to jamie towle and jo mclaughlin, for the loss of her father, george."
+  },
+  {
+   "topic": "Announcements: unpaid sewer bills",
+   "resolution": "information only; no action",
+   "tags": [
+    "sewer billing",
+    "tax bills"
+   ],
+   "quote": "barb reminded anyone who still owes money from the last fiscal year, which closed 6/30/22,"
+  },
+  {
+   "topic": "Appointment: 7 Harris Ave change of use",
+   "resolution": "approved 3-0",
+   "tags": [
+    "expansion of use",
+    "privilege fee",
+    "building permit"
+   ],
+   "quote": "to accept the change of use for 7 harris ave. for jason paquette."
+  },
+  {
+   "topic": "Request for credit: 99 Leominster Rd",
+   "resolution": "bill changed to 2,000 cu ft usage, 3-0",
+   "tags": [
+    "irrigation meter",
+    "billing credit",
+    "deduct meter"
+   ],
+   "quote": "request for credit- 99 leominster rd."
+  },
+  {
+   "topic": "Request for credit: 47 Whalom Rd",
+   "resolution": "prorated to one month, 3-0",
+   "tags": [
+    "billing credit",
+    "prorating",
+    "house sales"
+   ],
+   "quote": "request for credit on invoice for new ownership for 47 whalom rd."
+  },
+  {
+   "topic": "Pond View 40B sewer and water",
+   "resolution": "discussed; no vote; Town Counsel to be consulted",
+   "tags": [
+    "Pond View 40B",
+    "sewer service area",
+    "Fitchburg",
+    "Leominster",
+    "ZBA"
+   ],
+   "quote": "kevin o'brien- pond view 40b - brett began the discussion by stating"
+  },
+  {
+   "topic": "DPW maintenance plan",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "sewer maintenance",
+    "jetting",
+    "gravity sewer"
+   ],
+   "quote": "dpw director update on maintenance plan - bill noted the nov. 2020 sewer maintenance plan recommended"
+  },
+  {
+   "topic": "Whalom area I/I investigations",
+   "resolution": "discussed; policy update pending",
+   "tags": [
+    "inflow and infiltration",
+    "right of entry",
+    "policy"
+   ],
+   "quote": "whalom area i/l investigations- brett noted they discussed investigating the pipes"
+  },
+  {
+   "topic": "ARPA funding",
+   "resolution": "reported; no action",
+   "tags": [
+    "ARPA",
+    "Select Board"
+   ],
+   "quote": "arpa funding- barb reported the select board had arpa funding on their 11/8 agenda."
+  },
+  {
+   "topic": "Q2 commitment",
+   "resolution": "approved 3-0",
+   "tags": [
+    "commitment",
+    "billing"
+   ],
+   "quote": "to approve the q2 commitment of $246,015.25."
+  },
+  {
+   "topic": "Minutes of 11/8/22",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes for 11/8/22."
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "received; invoices agreed",
+   "tags": [
+    "victuallers list",
+    "FY23 recap",
+    "invoices",
+    "CTE"
+   ],
+   "quote": "business manager report - victuallers list- barb noted the select board is working on the victuallers list"
+  },
+  {
+   "topic": "Public comment (closing) and billing program",
+   "resolution": "no action",
+   "tags": [
+    "billing program",
+    "public comment"
+   ],
+   "quote": "public comment - dave remarked that brett did a good job chairing."
+  },
+  {
+   "topic": "Upcoming activities and adjournment",
+   "resolution": "adjourned 7:35pm",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "zoom meeting",
+  "billing credits",
+  "irrigation meter",
+  "prorating",
+  "expansion of use",
+  "privilege fee",
+  "Pond View 40B",
+  "sewer district",
+  "sewer maintenance",
+  "I/I investigations",
+  "ARPA",
+  "Fitchburg and Leominster invoices",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

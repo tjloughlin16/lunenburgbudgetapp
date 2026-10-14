@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-12-15",
  "docid": "2894",
@@ -12,39 +12,292 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of November 17, 2022 as amended",
+   "motion": "Accept the minutes of November 17, 2022 as amended.",
    "moved_by": "Kate",
    "seconded_by": "Dick",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kate made a motion to accept the minutes of november 17, 2022 as amended. seconded by dick. the motion passed unanimously."
   },
   {
-   "motion": "Approve the investment policy",
+   "motion": "Approve the investment policy (Trust Fund, drafted with Town Counsel from the town investment policy).",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "approved unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dick made a motion to approve the investment policy. seconded by maia. the policy was approved unanimously."
   },
   {
-   "motion": "Accept the director's review as amended",
+   "motion": "Accept the director's review as amended.",
    "moved_by": "Kate",
    "seconded_by": "Dick",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kate made a motion to accept the director's review as amended. seconded by dick. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick. seconded by kate. meeting was adjourned at 9:14 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0754871
+ "note": "Pages 3-9 of the text are blank; the substance is on pages 1-2. The minutes record every motion as passed without a vote count (it says 'passed unanimously'), so outcomes are given as 'passed' and the unanimity is in the motion text. The adjournment motion records no result. Roles are printed only for the Director; other attendees' roles are not stated. The attendance line is split across two lines in the source, so quotes are taken from each line separately. No dollar figures were recorded as budget decisions; the $ figures are reported amounts only.",
+ "cost_usd": 0.01566261,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "not stated (called the meeting to order)",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl, maia wentrup, laura boussom-remote, michael-ray jeffreys"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "muir haman - director lpl, maia wentrup, laura boussom-remote, michael-ray jeffreys"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "muir haman - director lpl, maia wentrup, laura boussom-remote, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "muir haman - director lpl, maia wentrup, laura boussom-remote, michael-ray jeffreys"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry will schedule time for Edward Jones to attend the January meeting.",
+   "quote": "harry will schedule time for edward jones to come in for the january meeting."
+  },
+  {
+   "decision": "Muir will write up an ARPA funding proposal for January submittal, with the HVAC system as the highest priority.",
+   "quote": "muir will write up a proposal for january submittal. the hvac system is the highest priority."
+  },
+  {
+   "decision": "Library Sign Discussion, Outreach Ideas and By-Laws Review (discussion and vote) were postponed to the January meeting.",
+   "quote": "discussion was postponed until the january meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's Report: percent of budget expended",
+   "what_was_recorded": "The library reported it was 37% expended, one half through the fiscal year, with Kanopy and some Digital Services expenses coming up.",
+   "figures_as_printed": [
+    "37%"
+   ],
+   "quote": "we are 37% expended. one half through the fiscal year."
+  },
+  {
+   "topic": "Conference mileage reimbursement",
+   "what_was_recorded": "A staff member's two-day YALSA conference trip required a mileage reimbursement.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "susan attended a two-day yalsa conference in md, requiring a $500 mileage reimbursement."
+  },
+  {
+   "topic": "Office supply line at 82% expended",
+   "what_was_recorded": "The board asked about the 82% expended office supply figure; the director attributed it to a one-time laptop expense.",
+   "figures_as_printed": [
+    "82%"
+   ],
+   "quote": "harry asked about the 82% expended office supply figure. muir said there was a one-time expense for a laptop."
+  },
+  {
+   "topic": "Fine-free policy revenue impact",
+   "what_was_recorded": "The director estimated the fine-free policy has reduced revenue slightly, with some expenses incurred for tracking materials and notifications.",
+   "figures_as_printed": [
+    "a few hundred dollars"
+   ],
+   "quote": "muir said we are probably a few hundred dollars down."
+  },
+  {
+   "topic": "ARPA funds from the town",
+   "what_was_recorded": "The Select Board reported the town received ARPA funds from the federal government, with two grant rounds planned.",
+   "figures_as_printed": [
+    "$3.5 million"
+   ],
+   "quote": "the town received $3.5 million in arpa funds from the federal government."
+  },
+  {
+   "topic": "HVAC replacement and ARPA proposal",
+   "what_was_recorded": "The board discussed HVAC replacement as a capital need and the director was to write an ARPA proposal; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "capital needs: we should be looking at the replacement of the hvac system."
+  },
+  {
+   "topic": "Trust fund investment policy",
+   "what_was_recorded": "A draft investment policy based on the town investment policy was prepared with Town Counsel and approved by Edward Jones; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ben taylor came up with a draft policy to fit the library, based on the town investment policy."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment • no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "kate made a motion to accept the minutes of november 17, 2022 as amended. seconded by dick. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action recorded",
+   "quote": "we are 37% expended. one half through the fiscal year.",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "fine-free policy",
+    "CWMARS"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "investment policy approved",
+   "quote": "dick made a motion to approve the investment policy. seconded by maia. the policy was approved unanimously.",
+   "tags": [
+    "trust fund",
+    "investment policy",
+    "Edward Jones"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "continued to January",
+   "quote": "discussion was postponed until the january meeting.",
+   "tags": [
+    "facilities",
+    "signage"
+   ]
+  },
+  {
+   "topic": "ARPA Funds Follow-Up",
+   "resolution": "director to write proposal for January",
+   "quote": "muir will write up a proposal for january submittal. the hvac system is the highest priority.",
+   "tags": [
+    "ARPA funds",
+    "HVAC",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Outreach Ideas",
+   "resolution": "continued to January",
+   "quote": "discussion was postponed until the january meeting.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "By-Laws Review, Discussion, and vote",
+   "resolution": "continued to January",
+   "quote": "discussion was postponed until the january meeting.",
+   "tags": [
+    "by-laws",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; no action",
+   "quote": "the friends met in december and will have the next two months off.",
+   "tags": [
+    "Friends of LPL",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Director's Review",
+   "resolution": "accepted as amended",
+   "quote": "kate made a motion to accept the director's review as amended. seconded by dick. the motion passed unanimously.",
+   "tags": [
+    "director's review",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "board comments o no board comments.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:14 p.m.",
+   "quote": "motion to adjourn by dick. seconded by kate. meeting was adjourned at 9:14 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trust fund",
+  "investment policy",
+  "ARPA funds",
+  "HVAC",
+  "by-laws",
+  "director's report",
+  "director's review",
+  "Friends of LPL",
+  "fine-free policy",
+  "budget",
+  "remote attendance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

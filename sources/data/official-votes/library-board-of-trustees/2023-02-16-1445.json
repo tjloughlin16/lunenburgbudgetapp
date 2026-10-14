@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-02-16",
  "docid": "1445",
@@ -12,23 +12,301 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of January 19, 2023 as amended",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Accept the minutes of January 19, 2023 as amended.",
    "moved_by": "Laura",
    "seconded_by": "Donna",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "laura made a motion to accept the minutes of january 19, 2023 as amended, seconded by donna. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Bob",
    "seconded_by": "Dick",
+   "outcome": "not stated",
+   "procedural": true,
    "quote": "motion to adjourn by bob. seconded by dick. meeting was adjourned at 8:41 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The by-laws section mentions review and vote, but states \"It will be amended and voted on at the next meeting\"—no vote was taken at this meeting.",
- "cost_usd": 0.07478309999999999
+ "note": "Text extracted from a 9-page PDF; pages 3 to 9 carry no text, so any content there is unread. The attached documents listed at the end (agenda, Director's Report, Adult, Teen and Youth Services reports) are not in the text and were not read. Two motions are recorded: approval of the January 19, 2023 minutes passed unanimously by roll call, and the adjournment result is not stated beyond the time it closed at 8:41 p.m. No other votes were taken; the By-Laws were reviewed and deferred. The Trust Fund transfer amount is printed as approximate and was not voted on. Jana Balish is listed as a Guest with no role stated.",
+ "cost_usd": 0.01575781,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "Trustee (remote)",
+   "status": "remote",
+   "quote": "attending: kate mccarron-remote, bob conroy"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "bob conroy, harry kubetz"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:47 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee (remote)",
+   "status": "remote",
+   "quote": "dick mailloux-remote, donna saiia-remote"
+  },
+  {
+   "name": "Donna Saiia-Remote",
+   "role": "Trustee (remote)",
+   "status": "remote",
+   "quote": "dick mailloux-remote, donna saiia-remote"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee (remote)",
+   "status": "remote",
+   "quote": "maia wentrup-remote , jean proctor - guest"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "Guest",
+   "status": "present",
+   "quote": "maia wentrup-remote , jean proctor - guest"
+  },
+  {
+   "name": "Jana Balish",
+   "role": "Guest",
+   "status": "present",
+   "quote": "jana balish - guest , robin venezia"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Friends of the Library Assistant Treasurer",
+   "status": "present",
+   "quote": "robin venezia - friends of the library assistant treasurer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir Haman will discuss garden ideas with Jean Proctor and prepare proposals for the grants and funding required for the Proctor Memorial Garden.",
+   "quote": "muir said he will discuss some ideas with jean and put together proposals for grants/funding that will be required."
+  },
+  {
+   "decision": "Muir Haman will coordinate putting a proposal together for the Proctor Memorial Garden; no timeline was set in the minutes beyond the coordination itself.",
+   "quote": "muir said he would coordinate putting a proposal together."
+  },
+  {
+   "decision": "Muir Haman will make a mock-up of the sign letters to see onsite and will contact sign companies for quotes.",
+   "quote": "muir suggested we should do a mock up of the letters to see onsite. he will reach out to some sign companies for some quotes."
+  },
+  {
+   "decision": "The board will consider lighting options for the library sign.",
+   "quote": "we should consider lighting options."
+  },
+  {
+   "decision": "The By-Laws document will be amended and voted on at the next meeting; no vote was taken at this meeting.",
+   "quote": "we reviewed the document. it will be amended and voted on at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's Report: FY23 budget spending pace",
+   "what_was_recorded": "The FY23 budget was 53% expended with 66% of the fiscal year elapsed; salaries are on schedule, including two vacant positions, and utilities are expected to rise toward year end.",
+   "figures_as_printed": [
+    "53%",
+    "66%"
+   ],
+   "quote": "the fy23 budget is 53% expended and we are 66% through the fiscal year."
+  },
+  {
+   "topic": "Programs spending",
+   "what_was_recorded": "Programs spending stood at 34% of its budget, with more programs expected in spring.",
+   "figures_as_printed": [
+    "34%"
+   ],
+   "quote": "programs are only at 34% of the budget but a lot of programs will be coming up in the spring."
+  },
+  {
+   "topic": "Postage and CWMARS expenses",
+   "what_was_recorded": "Postage ran well over normal because of fine-free and overdue notifications; CWMARS Network expenses increased. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "postage expenses have been way over normal due to fine-free/overdue notifications."
+  },
+  {
+   "topic": "FY24 budget requests",
+   "what_was_recorded": "Most library requests were funded in the FY24 budget; electricity increases and the copy machine were not funded. The technology request was $18k and $15k was funded, including security camera replacement and $9k for three staff workstations.",
+   "figures_as_printed": [
+    "$18k",
+    "$15k",
+    "$9k"
+   ],
+   "quote": "$18k was requested for the technology budget and $15k was funded."
+  },
+  {
+   "topic": "Trust fund transfer to Edward Jones account",
+   "what_was_recorded": "The Edward Jones account is to be funded within a week, with approximately $80k to be transferred.",
+   "figures_as_printed": [
+    "$80k"
+   ],
+   "quote": "the edward jones account should be funded in the next week. approximately $80k will be transferred."
+  },
+  {
+   "topic": "ARPA funds under consideration",
+   "what_was_recorded": "Requests under consideration with the budget subcommittee were HVAC redesign and construction (estimated around $150k) and a backup generator (estimated around $25k), with $50k for the memorial garden and a possible teen room expansion also considered.",
+   "figures_as_printed": [
+    "$150k",
+    "$25k",
+    "$50k"
+   ],
+   "quote": "requests under consideration are the redesign and construction of the hvac system, estimated to be around $150k and a backup generator, estimated to be around $25k."
+  },
+  {
+   "topic": "Friends of the Library bequest for garden",
+   "what_was_recorded": "The Friends have $20k available from a bequest that could fund garden design and renovation.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "robin said they have $20k available from a bequest."
+  },
+  {
+   "topic": "Electricity increases not funded",
+   "what_was_recorded": "Electricity increases were among the library requests not funded in the FY24 budget. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "some requests that were not funded included electricity increases and the copy machine."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Trust fund transfer to the Edward Jones account",
+   "amount_as_printed": "Approximately $80k",
+   "outcome": "Stated as planned: the account is to be funded in the next week. No vote recorded.",
+   "quote": "the edward jones account should be funded in the next week. approximately $80k will be transferred."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Proctor Memorial Garden Discussion",
+   "resolution": "no action; Muir Haman to develop proposals and funding options",
+   "quote": "jean proctor joined us to give us some background on the development of the proctor memorial garden behind the library.",
+   "tags": [
+    "Proctor Memorial Garden",
+    "grants",
+    "Friends of the Library",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended, passed unanimously by roll call",
+   "quote": "laura made a motion to accept the minutes of january 19, 2023 as amended, seconded by donna.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; budget status reported",
+   "quote": "the fy23 budget is 53% expended and we are 66% through the fiscal year.",
+   "tags": [
+    "FY23 budget",
+    "FY24 budget",
+    "programs",
+    "postage"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "no action; account funding expected within a week",
+   "quote": "the edward jones account should be funded in the next week.",
+   "tags": [
+    "trust fund",
+    "investment account"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "no action; mock-up and sign company quotes to be obtained",
+   "quote": "muir suggested we should do a mock up of the letters to see onsite.",
+   "tags": [
+    "library sign",
+    "lighting",
+    "architect"
+   ]
+  },
+  {
+   "topic": "ARPA Funds Update",
+   "resolution": "no action; requests under consideration with budget subcommittee",
+   "quote": "muir discussed this with the budget subcommittee, laura and dick.",
+   "tags": [
+    "ARPA",
+    "HVAC",
+    "backup generator",
+    "memorial garden",
+    "teen room"
+   ]
+  },
+  {
+   "topic": "By-Laws Review, Discussion, and vote",
+   "resolution": "reviewed; vote deferred to next meeting",
+   "quote": "we reviewed the document. it will be amended and voted on at the next meeting.",
+   "tags": [
+    "by-laws",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted; next Friends meeting March 6, 2023",
+   "quote": "the next meeting will be held on march 6th, 2023.",
+   "tags": [
+    "Friends of the Library"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted; remote system worked well",
+   "quote": "dick noted that the remote system was working well for this meeting.",
+   "tags": [
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:41 p.m.",
+   "quote": "motion to adjourn by bob. seconded by dick. meeting was adjourned at 8:41 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "Proctor Memorial Garden",
+  "FY23 budget",
+  "FY24 budget",
+  "ARPA funds",
+  "by-laws",
+  "trust fund",
+  "library sign",
+  "remote participation",
+  "Friends of the Library"
+ ],
+ "dropped_unquoted_by_field": {}
 }

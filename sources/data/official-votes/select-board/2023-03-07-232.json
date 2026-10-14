@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2023-03-07",
  "docid": "232",
@@ -12,47 +12,591 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Andrew Field as Civilian Traffic Member",
+   "motion": "To ratify the Town Manager's appointment of Andrew Field as Civilian Traffic Member.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\": t. dwyer to ratify the town manager's appointment of andrew field as civilian traffic member vote: all in favor"
+   "outcome": "passed (all in favor; no count printed)",
+   "procedural": false,
+   "quote": "to ratify the town manager's appointment of andrew field as civilian traffic member vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Erin Mahoney as Tax Collector Principal Clerk",
+   "motion": "To ratify the Town Manager's appointment of Erin Mahoney as Tax Collector Principal Clerk.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: l. franco to ratify the town manager's appointment of erin mahoney as tax collector principal clerk vote: all in favor"
+   "outcome": "passed (all in favor; no count printed)",
+   "procedural": false,
+   "quote": "to ratify the town manager's appointment of erin mahoney as tax collector principal clerk vote: all in favor"
   },
   {
-   "motion": "Authorize $9,999.99 for tax assessment services",
+   "motion": "That the Select Board authorize $9999.99 for tax assessment services.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; no count printed)",
    "procedural": false,
-   "quote": "motion: l. franco 2nd: m. jeffreys that the select board authorize $9999.99 for tax assessment services vote: all in favor"
+   "quote": "that the select board authorize $9999.99 for tax assessment services vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of January 23, 2023 (Session II)",
-   "moved_by": "T. Dwyer",
+   "motion": "To approve the minutes of January 23, 2023 (Session II).",
+   "moved_by": "T.Dwyer",
    "seconded_by": "H. Sroka",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor, 1 abstention (Alonzo)",
    "procedural": true,
-   "quote": "motion: t.dwyer to approve the minutes of january 23, 2023 (session il) 2nd: h. sroka vote: 4 in favor, 1 abstention (alonzo)"
+   "quote": "to approve the minutes of january 23, 2023 (session il) 2nd: h. sroka vote: 4 in favor, 1 abstention (alonzo)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; no count printed)",
    "procedural": true,
    "quote": "motion: t. alonzo to adjourn the meeting 2nd: t. dwyer vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; minor rendering artifacts in first two votes (2\": and 2\"d: instead of 2nd:) do not impede vote identification.",
- "cost_usd": 0.1041975
+ "note": "OCR of a scanned minutes document (macOS Vision); some words are garbled (e.g. \"Kepresentative\", \"Il\" for \"II\", '2\"' for \"2nd\"), so quotes were copied from the OCR text as printed. Page 3 begins mid-sentence and pages 8-9 break mid-agenda with stray fragments (\"VAL.\", \"radar.\"), so the context of the $9999.99 motion and the Action Items section is incomplete. The minutes print a \"Mr. Watters opened the Finance Committee meeting\" line that the minutes do not otherwise explain. The Town Manager's role is not printed by name; she is identified only as \"Ms. Lemieux\". Votes for the appointments and the $9999.99 authorization say \"All in Favor\" with no count printed. Minutes say the 2023 minutes were approved June 6, 2023. No transfers recorded.",
+ "cost_usd": 0.02463701,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman (Select Board)",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair (Select Board)",
+   "status": "present",
+   "quote": "over the next few weeks vice chair tom alonzo will conduct historical data analysis on property evaluations in"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. dwyer stated based on my experience on other boards, whenever we stifle public comment,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. franco reported he sent a draft warrant article for objective 2 to town counsel today."
+  },
+  {
+   "name": "H. Sroka",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "ms. sroka clarified that she never read a letter aloud at a meeting as alleged by mr. macdonald"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "ms. lemieux thanked senator cronin and representatives kushmerek and scarsdale for coming"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "carol archambault, school committee chair; senator john cronin, kepresentative mike"
+  },
+  {
+   "name": "John Cronin",
+   "role": "Senator (state legislative delegation)",
+   "status": "present",
+   "quote": "senator cronin thanked the board for inviting him tonight and said it was a privilege to serve"
+  },
+  {
+   "name": "Mike Kushmerek",
+   "role": "Representative (state legislative delegation)",
+   "status": "present",
+   "quote": "representative kushmerek stated it is a pleasure to serve a second term and was looking forward"
+  },
+  {
+   "name": "Margaret Scarsdale",
+   "role": "Representative (state legislative delegation)",
+   "status": "present",
+   "quote": "representative scarsdale echoed the comments of senator cronin and rep. kushmerek."
+  },
+  {
+   "name": "June Hudson",
+   "role": "public commenter, 90 Hemlock Drive (on behalf of the Lunenburg Lakes Action Committee)",
+   "status": "present",
+   "quote": "june hudson, 90 hemlock drive, read a statement on behalf of the lunenburg lakes action"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "public commenter, 11 Wintergreen Court",
+   "status": "present",
+   "quote": "joan pease, 11 wintergreen court, expressed dissatisfaction about a previous select board"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "public commenter, 77 Burrage Street",
+   "status": "present",
+   "quote": "sharon jordan, 77 burrage street, heard at a water district meeting about a plan to develop 50"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public commenter, 155 Island Road",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, asked if there was a deadline for additional paperwork"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "public commenter, 672 Page Street",
+   "status": "present",
+   "quote": "chris menard, 672 page street, thanked the board for dealing with the difficult tax situation."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, stated he was not aware of nor would condone a lawsuit against the"
+  },
+  {
+   "name": "Mr. Watters",
+   "role": "not stated in minutes",
+   "status": "not stated",
+   "quote": "mr. watters opened the finance committee meeting at 7:04 p.m."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minute-taker)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the Town Manager Evaluation Process and Timeline was tabled to the next meeting.",
+   "quote": "this was tabled until the next meeting."
+  },
+  {
+   "decision": "Vice Chair Tom Alonzo to conduct historical data analysis on property evaluations in town over the next few weeks.",
+   "quote": "over the next few weeks vice chair tom alonzo will conduct historical data analysis on property evaluations in"
+  },
+  {
+   "decision": "The Town Manager to work to bring a vendor to begin the inspection and review of up to 49 parcels starting March 18.",
+   "quote": "the town manager will work to bring a vendor to begin the inspection and review process for up to 49 parcels starting on march 18."
+  },
+  {
+   "decision": "Chair asked the Town Manager to consider the costs of added human resources and FOIA/communications staffing, and whether to fund them in the budget or through an ARPA request.",
+   "quote": "i've asked the town manager to consider what those costs could be, if there's a way to build it into the budget"
+  },
+  {
+   "decision": "Board stated it is moving forward with the abatement and demolition of the Old Primary School.",
+   "quote": "mr. jeffreys noted we are moving forward with the abatement and demolition of the primary school"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State earmark priorities carried from last year",
+   "what_was_recorded": "The Town Manager listed six prior-year earmark requests, ranked by priority, for the state budget.",
+   "figures_as_printed": [
+    "$330,000",
+    "$371,000",
+    "$100,000",
+    "$232,800",
+    "$25,000",
+    "$150,000"
+   ],
+   "quote": "1. $330,000 for flat hill road culvert."
+  },
+  {
+   "topic": "FY 2024 state earmark requests",
+   "what_was_recorded": "Proposed FY2024 projects for state earmarks, including security upgrades, a fire alarm, and cemetery restoration.",
+   "figures_as_printed": [
+    "$50,000",
+    "$160,000",
+    "$131,000",
+    "$83,500",
+    "$287,000",
+    "$38,000"
+   ],
+   "quote": "1. security upgrades at the public safety building (cost tbd but estimated at $50,000)"
+  },
+  {
+   "topic": "Tax assessment investigation funding (ARPA)",
+   "what_was_recorded": "The Select Board had voted on January 24 to commit ARPA funds to assist the tax assessment investigation and support the BOA.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "commit $150,000 from available arpa funds to assist the investigation and provide additional"
+  },
+  {
+   "topic": "Tax assessment services authorization",
+   "what_was_recorded": "The Select Board authorized $9999.99 for tax assessment services, which the minutes say comes from the $150,000 already approved.",
+   "figures_as_printed": [
+    "$9999.99",
+    "$150,000"
+   ],
+   "quote": "that the select board authorize $9999.99 for tax assessment services vote: all in favor"
+  },
+  {
+   "topic": "Procurement thresholds",
+   "what_was_recorded": "The minutes state the direct-contracting threshold below $10,000 and the RFP requirement above $50,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$50,000",
+    "$150,000"
+   ],
+   "quote": "anything below $10,000 you can directly contract for. anything above $50,000 requires an rfp."
+  },
+  {
+   "topic": "Worst-case tax abatement exposure",
+   "what_was_recorded": "The Town Manager estimated the worst-case cost of all tax assessment abatements, net of overlay, and said it would need a Town Meeting warrant article drawing on Free Cash.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ],
+   "quote": "is $1.5 million. that would require a warrant article for town meeting and come out of free"
+  },
+  {
+   "topic": "Certified Free Cash and remaining balance",
+   "what_was_recorded": "Certified Free Cash was stated, and the balance left after the worst-case abatement figure was given.",
+   "figures_as_printed": [
+    "$2,838,550",
+    "$1.5 M",
+    "$1,338,855"
+   ],
+   "quote": "our certified free cash is $2,838,550, so reducing that by $1.5 m would leave available"
+  },
+  {
+   "topic": "Recommended Capital Plan addition from Free Cash",
+   "what_was_recorded": "The Town Manager recommended adding $500,000 to the Capital Plan from Free Cash, with the rest to stabilization, OPEB and monetary articles.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "add an additional $500,000 towards the capital plan from free cash"
+  },
+  {
+   "topic": "Governor's budget changes to local aid and expenditures",
+   "what_was_recorded": "The Governor's budget changes were summarised: a local aid increase on the revenue side and reductions on the expenditure side.",
+   "figures_as_printed": [
+    "$40,000",
+    "$235,000"
+   ],
+   "quote": "on the revenue side there was about a $40,000 local aid increase and on the expenditure"
+  },
+  {
+   "topic": "Monty Tech assessment increase",
+   "what_was_recorded": "The Monty Tech assessment was increased in the preliminary budget, from 2.5% to 12%.",
+   "figures_as_printed": [
+    "2.5%",
+    "12%"
+   ],
+   "quote": "the monty tech assessment was increased from 2.5% to 12%."
+  },
+  {
+   "topic": "Budget surplus after changes",
+   "what_was_recorded": "The adjusted preliminary budget was stated to leave a surplus.",
+   "figures_as_printed": [
+    "$171,520.19"
+   ],
+   "quote": "that leaves a surplus of $171,520.19."
+  },
+  {
+   "topic": "Historical Commission warrant article",
+   "what_was_recorded": "A draft Town Meeting warrant article requested $25,000 for a matching grant to inventory historical properties.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "there is an article from the historical commission for $25,000 in funding for a matching grant to do an inventory of"
+  },
+  {
+   "topic": "Bridge and culvert management plan estimate",
+   "what_was_recorded": "An estimate of $31,000 was reported for a bridge and culvert management plan; the DPW Director plans to seek a grant.",
+   "figures_as_printed": [
+    "$31,000"
+   ],
+   "quote": "we have an estimate of $31,000 from a company that"
+  },
+  {
+   "topic": "Unitil electric bills",
+   "what_was_recorded": "A board member asked about ongoing and increasing Unitil electric bills; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "inquired about the ongoing and increasing unitil electric bills"
+  },
+  {
+   "topic": "Esser federal funding sunset",
+   "what_was_recorded": "The School Committee Chair said the federal Esser money will be spent by September 2024; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "the money will be spent by september 2024."
+  },
+  {
+   "topic": "Chapter 70 and Chapter 90 state funding",
+   "what_was_recorded": "Discussion with legislators covered Chapter 70 and Chapter 90 state funding, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "and chapter 70 and chapter 90 funding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Valuations on homes based on sales",
+   "speaker": "June Hudson",
+   "stated_role": "90 Hemlock Drive, on behalf of the Lunenburg Lakes Action Committee",
+   "quote": "june hudson, 90 hemlock drive, read a statement on behalf of the lunenburg lakes action"
+  },
+  {
+   "topic": "Previous meeting and anonymous letter; public comment rules",
+   "speaker": "Joan Pease",
+   "stated_role": "11 Wintergreen Court",
+   "quote": "joan pease, 11 wintergreen court, expressed dissatisfaction about a previous select board"
+  },
+  {
+   "topic": "Water District plan at 110 Burrage Street",
+   "speaker": "Sharon Jordan",
+   "stated_role": "77 Burrage Street",
+   "quote": "sharon jordan, 77 burrage street, heard at a water district meeting about a plan to develop 50"
+  },
+  {
+   "topic": "Deadline for abatement paperwork; no lawsuit",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road",
+   "quote": "dave macdonald, 155 island road, asked if there was a deadline for additional paperwork"
+  },
+  {
+   "topic": "Thanks on tax situation; Flat Hill Road drainage",
+   "speaker": "Chris Menard",
+   "stated_role": "672 Page Street",
+   "quote": "chris menard, 672 page street, thanked the board for dealing with the difficult tax situation."
+  },
+  {
+   "topic": "Principal Assessor transparency and lake land valuations",
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "quote": "carl luck, 50 sunset lane, stated he was not aware of nor would condone a lawsuit against the"
+  },
+  {
+   "topic": "Apology and tax assessment dissatisfaction (second round)",
+   "speaker": "Dave MacDonald",
+   "stated_role": "not stated in second round",
+   "quote": "dave macdonald spoke about his earlier public comment and apologized for his behavior."
+  },
+  {
+   "topic": "135% lake property valuations (second round)",
+   "speaker": "Carl Luck",
+   "stated_role": "not stated in second round",
+   "quote": "carl luck expressed dissatisfaction about the tax assessment investigation, particularly the 135%"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and meeting notice",
+   "resolution": "opened; recording notice read",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m. and asked everyone to stand for the",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Welcome to state legislative delegation",
+   "resolution": "welcomed; delegation spoke",
+   "quote": "mr. jeffreys introduced and welcomed the state legislative delegation members present.",
+   "tags": [
+    "state legislators",
+    "earmarks"
+   ]
+  },
+  {
+   "topic": "Town grant priorities and state earmarks",
+   "resolution": "presented; no vote",
+   "quote": "mr. jeffreys requested ms. lemieux present the town's grant priorities.",
+   "tags": [
+    "state budget",
+    "earmarks",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Discussion with legislators: 40B, Unitil, Chapter 70/90, Esser, Pre-K, MSBA",
+   "resolution": "discussed; no action",
+   "quote": "much discussion ensued about 40b, unitil's high energy costs and the muni-choice bill,",
+   "tags": [
+    "40B",
+    "Unitil",
+    "Chapter 70",
+    "Chapter 90",
+    "schools",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Tax assessment investigation update",
+   "resolution": "update given; no vote",
+   "quote": "the fiscal year 2023 assessments were derived. on january 24th the select board voted to",
+   "tags": [
+    "tax assessment",
+    "abatements",
+    "Board of Assessors",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Public comment (first round)",
+   "resolution": "heard six speakers",
+   "quote": "june hudson, 90 hemlock drive, read a statement on behalf of the lunenburg lakes action",
+   "tags": [
+    "public comment",
+    "tax assessment"
+   ]
+  },
+  {
+   "topic": "Recess before agenda",
+   "resolution": "recessed five minutes",
+   "quote": "the board recessed for five minutes before proceeding into the agenda.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Ratify appointments (Civilian Traffic Member; Tax Collector Principal Clerk)",
+   "resolution": "ratified two appointments",
+   "quote": "to ratify the town manager's appointment of andrew field as civilian traffic member vote: all in favor",
+   "tags": [
+    "appointments",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "none this evening",
+   "quote": "there was no town manager report this evening.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Status update on Town Manager and Select Board goals",
+   "resolution": "presented; no vote",
+   "quote": "ms. lemieux presented an update on her goals:",
+   "tags": [
+    "goals",
+    "capital planning",
+    "staffing",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "FY2023 Select Board goals, 30 School Street and senior tax exemption",
+   "resolution": "discussed; draft warrant article sent to counsel",
+   "quote": "mr. jeffreys noted we are moving forward with the abatement and demolition of the primary school",
+   "tags": [
+    "goals",
+    "Old Primary School",
+    "senior tax exemption",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "FY2024 budget, Capital Plan and Town Meeting warrant articles",
+   "resolution": "presented; recommendation on Free Cash",
+   "quote": "ms. lemieux reported the governor's budget was released on february 23rd",
+   "tags": [
+    "FY2024 budget",
+    "Governor's budget",
+    "Free Cash",
+    "capital plan",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Draft Town Meeting warrant",
+   "resolution": "presented",
+   "quote": "ms. lemieux presented a draft warrant for articles for the town meeting.",
+   "tags": [
+    "warrant",
+    "Town Meeting",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Authorize tax assessment services",
+   "resolution": "passed",
+   "quote": "that the select board authorize $9999.99 for tax assessment services vote: all in favor",
+   "tags": [
+    "tax assessment",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluation process and timeline",
+   "resolution": "tabled to next meeting",
+   "quote": "this was tabled until the next meeting.",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Approve minutes of January 23, 2023",
+   "resolution": "approved, 4 in favor, 1 abstention",
+   "quote": "to approve the minutes of january 23, 2023 (session il) 2nd: h. sroka vote: 4 in favor, 1 abstention (alonzo)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action items: water district situation",
+   "resolution": "discussed; kept on radar",
+   "quote": "mr. alonzo advised keeping the water district situation presented at public comment on their",
+   "tags": [
+    "water district",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Warrants and committee reports",
+   "resolution": "none this evening",
+   "quote": "there were no warrants or committee reports this evening.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed",
+   "quote": "upcoming meeting/events schedule march 14', march 21st",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second round) and board response",
+   "resolution": "heard; board members responded",
+   "quote": "dave macdonald spoke about his earlier public comment and apologized for his behavior.",
+   "tags": [
+    "public comment",
+    "Principal Assessor",
+    "staffing",
+    "FOIA"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:13 PM",
+   "quote": "the meeting adjourned at 10:13 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "tax assessment",
+  "abatements",
+  "Board of Assessors",
+  "ARPA",
+  "Free Cash",
+  "FY2024 budget",
+  "state earmarks",
+  "state legislators",
+  "appointments",
+  "public comment",
+  "town goals",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

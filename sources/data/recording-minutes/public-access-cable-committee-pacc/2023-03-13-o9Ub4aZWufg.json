@@ -1,0 +1,479 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "public-access-cable-committee-pacc",
+ "board": "Public Access Cable Committee (PACC)",
+ "video_title": "PACC",
+ "meeting_date": "2023-03-13",
+ "video_id": "o9Ub4aZWufg",
+ "video_url": "https://www.youtube.com/watch?v=o9Ub4aZWufg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/public-access-cable-committee-pacc/2023-03-13-o9Ub4aZWufg.json",
+  "sha256": "c94bd3bf636446ee65de24c4ed9df9c6aa1fc36c8ffc5de864a4f01461482680",
+  "caption_lines": 162,
+  "segments": 1165
+ },
+ "recording": {
+  "duration_s": 3425,
+  "duration": "0:57",
+  "spoken_chars": 34168,
+  "words_approx": 5694
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03132023-182",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2023-03-13-agenda-182.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2023-03-13-agenda-182.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03132023-182",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2023-03-13-minutes-182.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2023-03-13-minutes-182.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T00:43:57Z",
+  "cost_usd": 0.2826101
+ },
+ "minutes": {
+  "headline": "PACC voted to request a used van through a town earmark and approved the FY24 budget presentation for FinCom.",
+  "summary": "The Public Access Cable Committee approved prior minutes, backed a request for a town earmark for a used van, and reviewed the enterprise fund budget presentation. It approved taking the presentation to the Finance Committee and town meeting, and discussed a possible interest-earning question for the town's finance staff. The manager also reported on a deleted video file, an auditorium equipment simulation, and hiring.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Lincoln",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr siracus / sarapas",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Steve Walker",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Berg president / Bill the president",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Joe",
+    "role": "manager"
+   },
+   {
+    "name_as_heard": "Paul",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 147,
+    "topic": "No members of the public were present; no public comment."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "fees",
+   "free-cash",
+   "grants",
+   "hiring",
+   "technology",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 189,
+    "motion": "Accept the minutes of the last meeting",
+    "outcome": "passed (roll call; ayes heard from Mr Lincoln and Mr siracus, full count not clear)",
+    "procedural": true
+   },
+   {
+    "t": 1021,
+    "motion": "Approve the suggestion of a used van for the town's earmark request",
+    "outcome": "passed (ayes heard from Mr Lincoln and Mr siracus; full count not clear)",
+    "procedural": false
+   },
+   {
+    "t": 3247,
+    "motion": "Present the budget summary to FinCom and, if needed, at town meeting",
+    "outcome": "passed (roll call ayes heard; full count not clear)",
+    "procedural": false
+   },
+   {
+    "t": 3357,
+    "motion": "Adjourn the meeting",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 722,
+    "topic": "Legislative earmark for used van",
+    "what_was_said": "The manager said legislators typically earmark in a range and the committee asked for a van for equipment transport, branding and liability.",
+    "figures_as_heard": [
+     "50 to 100 000 dollars",
+     "about twenty two thousand dollars"
+    ]
+   },
+   {
+    "t": 951,
+    "topic": "Van insurance and maintenance",
+    "what_was_said": "Who would pay insurance and maintenance is undetermined; the manager will check with the town. A member suggested Subaru sponsorship.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1115,
+    "topic": "Operations available budget",
+    "what_was_said": "Available operating budget remaining was reviewed; unused funds return to the enterprise fund rather than being taken back.",
+    "figures_as_heard": [
+     "961 566",
+     "83 000",
+     "two hundred eleven thousand"
+    ]
+   },
+   {
+    "t": 1298,
+    "topic": "Spreadsheet error",
+    "what_was_said": "A presenter found a spreadsheet error caused by counting capital twice.",
+    "figures_as_heard": [
+     "thirty thousand dollars"
+    ]
+   },
+   {
+    "t": 1404,
+    "topic": "Interest on enterprise fund",
+    "what_was_said": "Interest earned seems low; a member suggested a short-term treasury bill and the committee agreed to ask the town's finance staff about the rules.",
+    "figures_as_heard": [
+     "five thousand dollars",
+     "6700",
+     "five percent",
+     "forty five thousand dollars"
+    ]
+   },
+   {
+    "t": 1700,
+    "topic": "Benefits and return",
+    "what_was_said": "Benefits for a new employee are budgeted conservatively and a partial-year return was calculated.",
+    "figures_as_heard": [
+     "22 000"
+    ]
+   },
+   {
+    "t": 1848,
+    "topic": "Franchise fee and budget summary",
+    "what_was_said": "Franchise fee rose, and the budget showed salaries, expenses, capital and income with an excess of income over operations.",
+    "figures_as_heard": [
+     "two and a half percent",
+     "five percent",
+     "83 000",
+     "184 000",
+     "214 000",
+     "205"
+    ]
+   },
+   {
+    "t": 2330,
+    "topic": "Summary budget slide",
+    "what_was_said": "Salaries, benefits, operations and capital were summarized, with income exceeding budget compared with last year.",
+    "figures_as_heard": [
+     "51 500",
+     "22 300",
+     "a hundred and eighty five thousand dollars",
+     "two hundred and eleven thousand six hundred and seventy",
+     "214 000",
+     "27 000",
+     "three thousand dollars"
+    ]
+   },
+   {
+    "t": 2597,
+    "topic": "Comcast revenue trend",
+    "what_was_said": "Calendar-year Comcast receipts fell slightly and declined further, reflecting reduced video services.",
+    "figures_as_heard": [
+     "199 651",
+     "less than two percent",
+     "four percent"
+    ]
+   },
+   {
+    "t": 2808,
+    "topic": "Fund summary projection",
+    "what_was_said": "A projection suggested the fund could exceed a threshold, and the committee agreed to label it as enterprise reserved money for a new studio.",
+    "figures_as_heard": [
+     "just over a million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1596,
+    "decision": "Presenter to arrange a meeting with the town finance officer about the rules for investing the enterprise fund, rather than raising it first at a public committee."
+   },
+   {
+    "t": 2957,
+    "decision": "Add an asterisk and note to the fund slide stating it is enterprise money reserved toward a new studio, and rename it as the enterprise fund."
+   },
+   {
+    "t": 3378,
+    "decision": "Next meeting set for six o'clock on April 10th."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 147,
+    "topic": "Open meeting notice and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 147,
+    "t_end": 257,
+    "topic": "Public comment, communications and prior minutes",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 257,
+    "t_end": 722,
+    "topic": "Manager's report: deleted file, auditorium simulation, hiring, volunteer video",
+    "resolution": "informational",
+    "tags": [
+     "technology",
+     "hiring",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 722,
+    "t_end": 1115,
+    "topic": "Earmark request for a used van",
+    "resolution": "voted",
+    "tags": [
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1115,
+    "t_end": 1278,
+    "topic": "Financial sheets and operating budget",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 1278,
+    "t_end": 2808,
+    "topic": "FY24 enterprise fund budget review",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "budget-fy27",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2808,
+    "t_end": 3309,
+    "topic": "Fund summary, state act on community media funding, and approval to present",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "state-aid",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3309,
+    "t_end": 3420,
+    "topic": "Next meeting and adjournment",
+    "resolution": "next meeting set; adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Full roll call counts for each vote are not clear in the captions.",
+   "The adjournment vote and its count are not audible.",
+   "Several budget figures are unreliable as heard, including the operating and fund balances.",
+   "Parts of the discussion on insurance and finance rules are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "watch_next": [
+   "Next meeting of the Public Access Cable Committee: six o'clock on April 10th.",
+   "The budget summary is to go to the Finance Committee and, if needed, to town meeting."
+  ],
+  "what_happened": [
+   {
+    "line": "The committee voted to approve a used van as the item in its request for a town earmark; the full count was not clear in the recording.",
+    "t": 1021
+   },
+   {
+    "line": "The committee voted to take its FY24 budget summary to the Finance Committee and, if needed, to town meeting; the roll-call count was not clear.",
+    "t": 3247
+   },
+   {
+    "line": "The committee agreed to label the fund slide as enterprise money reserved toward a new studio, and to ask the town's finance staff about rules for investing the fund.",
+    "t": 2957
+   },
+   {
+    "line": "Who would pay for the van's insurance and maintenance was left undetermined; the manager will check with the town.",
+    "t": 951
+   }
+  ],
+  "why_it_matters": [
+   "The public access cable budget is an enterprise fund fed by cable franchise income rather than the general budget, so the FinCom and town meeting presentation is where residents can see how that money is held and used.",
+   "Ongoing van insurance and maintenance have no named payer yet, and the committee noted Comcast receipts declining, which bears on how far the fund's income can carry those costs."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T00:44:06Z",
+   "cost_usd": 0.2226649
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03132023-182",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2023-03-13-minutes-182.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2023-03-13-minutes-182.pdf"
+  },
+  "official_sha256": "d81e0e9405981d36281e32941bc8f576637f3e6438e697d3bae2a1cdf46fa67d",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two votes' outcomes and the headline $961,566 budget figure, but the official minutes are a thin summary that omits most figures, the enterprise fund discussion and the next-meeting date. The van vote is worded differently (approving a van suggestion vs. authorizing McLaughlin to research an earmark project) and should be checked against the recording.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on used van / earmark",
+    "ours": "Approve the suggestion of a used van for the town's earmark request — passed (ayes heard from Mr Lincoln and Mr siracus; full count not clear)",
+    "official": "motion to approve j.mclaughlin to research the possibility of and earmark project (used van). f.beall, 2nd p.sarapas - passed",
+    "note": "Both record a passed vote on the used van, but ours describes approving the van suggestion while the official motion only approves J. McLaughlin researching an earmark project; check the recording for the exact motion wording and the mover/seconder.",
+    "t": 1021
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to present budget to FinCom and Town Meeting",
+    "ours": "Present the budget summary to FinCom and, if needed, at town meeting — passed (roll call ayes heard; full count not clear)",
+    "official": "motion to approve and have s.walker present the budget presentation packet to fin com and at town meeting (f.beall, 2nd p.sarapas - passed)",
+    "note": "Same vote and outcome; ours adds 'if needed' and does not name the presenter, but substance matches.",
+    "t": 3247
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mover and seconder of both votes",
+    "ours": "",
+    "official": "f.beall, 2nd p.sarapas - passed",
+    "note": "Official minutes name Beall as mover and Sarapas as seconder; ours records no movers."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PAC budget figure",
+    "ours": "Operations available budget: 961 566, 83 000, two hundred eleven thousand",
+    "official": "budget $961,566.40 • 68% local programing",
+    "note": "Same $961,566 figure, heard without cents; the other heard figures are not in the official minutes.",
+    "official_reading": "$961,566.40",
+    "t": 1115
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other budget figures (earmark range, enterprise fund interest, franchise fee, Comcast trend, fund projection)",
+    "ours": "Legislative earmark for used van: 50 to 100 000 dollars, about twenty two thousand dollars",
+    "official": "",
+    "note": "The official minutes give no dollar figures for these items beyond the $961,566.40 budget and 68%.",
+    "t": 722
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Enterprise fund investing meeting and slide asterisk/rename",
+    "ours": "Presenter to arrange a meeting with the town finance officer about the rules for investing the enterprise fund, rather than raising it first at a public committee.",
+    "official": "",
+    "note": "Official minutes record neither the enterprise fund discussion nor the slide change.",
+    "t": 1596
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting set for April 10th at six o'clock",
+    "ours": "Next meeting set for six o'clock on April 10th.",
+    "official": "",
+    "note": "Official minutes quoted give no next-meeting date.",
+    "t": 3378
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Personal equipment policy tabled",
+    "ours": "",
+    "official": "pac staff use of personal equipment policy; - tabled",
+    "note": "A decision (tabling) in the official minutes that our minutes do not record; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "APDC meetings added to monthly schedule",
+    "ours": "",
+    "official": "added apdc meetings to the monthly schedule (1st tues. of month @ 7:30)",
+    "note": "Manager's report item absent from ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Paul Sarapas",
+    "ours": "Mr siracus / sarapas (member)",
+    "official": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)",
+    "note": "Misheard name for Paul Sarapas; ours lists Paul separately too.",
+    "official_reading": "Paul Sarapas"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Steve Archambault",
+    "ours": "Berg president / Bill the president (member)",
+    "official": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)",
+    "note": "Likely a misheard rendering of Faith Beall or Steve Archambault; check the recording to confirm which.",
+    "official_reading": "Steve Archambault / Faith Beall"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Steve Walker and Pete Lincoln",
+    "ours": "Steve Walker (chair)",
+    "official": "pacc members present: steve walker, pete lincoln, steve archambault, faith beall, paul sarapas (via zoom)",
+    "note": "Both list Walker and Lincoln as present."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager Jo McLaughlin",
+    "ours": "Joe (manager)",
+    "official": "manager: jo mclaughlin",
+    "note": "Name rendered as Joe; same person.",
+    "official_reading": "Jo McLaughlin"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T00:44:48Z",
+   "cost_usd": 0.2385709
+  }
+ }
+}

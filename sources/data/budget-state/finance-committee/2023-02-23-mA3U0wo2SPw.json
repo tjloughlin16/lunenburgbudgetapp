@@ -1,0 +1,75 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2023-02-23",
+ "source": {
+  "sha256": "1ab4dbd653c94b6260f9830afa8c0bdce83bd0a7ef6b31abd81a3e99558b6447",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2023-02-23-mA3U0wo2SPw.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "29 338 dollars and 53 cents",
+    "fiscal_year": 2024,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Council on Aging asked for an increase to its FY24 budget, mainly for staffing.",
+    "status": "proposed",
+    "t": 251,
+    "who": "the Council on Aging director"
+   },
+   {
+    "amount_as_heard": "539 126 dollars",
+    "fiscal_year": 2024,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "The town manager's preliminary FY24 library budget, against a higher request.",
+    "status": "announced",
+    "t": 5002,
+    "who": "the library director"
+   },
+   {
+    "amount_as_heard": "38 000 772 dollars",
+    "fiscal_year": 2023,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "COA state formula grant was set by a state per-elder rate and population count.",
+    "status": "announced",
+    "t": 695,
+    "who": "the Council on Aging director"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "COA formula grant",
+    "condition": "if the 2020 federal census count is used or the state changes the rate",
+    "fiscal_year": 2024,
+    "prediction": "The COA state formula grant may fall when the federal census count is used, or the state may cut the per-elder rate.",
+    "scope": "town",
+    "t": 717,
+    "who": "the Council on Aging director"
+   },
+   {
+    "about": "stormwater permit mandates",
+    "condition": "as more stormwater permits are issued",
+    "fiscal_year": null,
+    "prediction": "Stormwater work may need more staff or a separate enterprise fund budget.",
+    "scope": "town",
+    "t": 4240,
+    "who": "the land use director"
+   }
+  ]
+ },
+ "video_id": "mA3U0wo2SPw",
+ "video_url": "https://www.youtube.com/watch?v=mA3U0wo2SPw",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T01:40:47Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

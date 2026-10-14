@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2023-06-15",
  "docid": "49",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of May 23, 2023",
+   "motion": "Approve the minutes of May 23, 2023.",
    "moved_by": "David Dorren",
    "seconded_by": "Nancy Foss-Yasko",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "david dorren made the motion to approve the minutes of may 23, 2023. nancy foss- yasko seconded the motion. motion carried 2-",
-   "quote_taken_from_text": true
+   "quote": "david dorren made the motion to approve the minutes of may 23, 2023."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:43am.",
    "moved_by": "David Dorren",
    "seconded_by": "Nancy Foss-Yasko",
    "outcome": "passed 2-0",
@@ -30,6 +29,129 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text, clean and readable. Two procedural votes recorded.",
- "cost_usd": 0.0737185
+ "note": "Text is macOS Vision OCR of the minutes, not a scan with unreadable votes; both votes read clearly. The minutes print no dollar figures anywhere; budget items record discussion of money with no amount. \"Bill Barnard\" appears once and is read as the same DPW Director, Bill Bernard. Superintendent Todd is mentioned but did not take part, so is not listed as an attendee. The minutes say \"Motion carried 2-0\" and \"Motion passed 2-0\" for the two votes; both are recorded as passed 2-0. Quotes avoid the line-broken hyphenated name \"Foss-Yasko\" to keep them verbatim after collapsing line breaks.",
+ "cost_usd": 0.01430311,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "in attendance was vice-chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "in attendance was vice-chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "in attendance was vice-chairperson nancy foss-yasko, clerk david dorren and dpw director bill bernard."
+  },
+  {
+   "name": "Stanley Barney",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member stanley barney was absent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The family grave relocation from the left of the Columbarium was approved by the Cemetery Commission and the DPW Director, with no recorded vote.",
+   "quote": "this was approved by both the cemetery commission and dpw director - bill barnard."
+  },
+  {
+   "decision": "Reorganization and the Fisher Cemetery were tabled to the August meeting.",
+   "quote": "reorganization and the fisher cemetery were both tabled till our august meeting."
+  },
+  {
+   "decision": "The Final Draft of the Cemetery Rules and Regulations is to be voted on at the August/September meeting.",
+   "quote": "regulations were reviewed. final draft of regulations will be voted on at the august/september meeting."
+  },
+  {
+   "decision": "DPW Director Bernard is to clear the logs at the North Cemetery site, obtain an estimate, and contact the surveyor to survey the new burial site, starting around September 2023.",
+   "quote": "director bernard will also contact the surveyor to start surveying the site for the new burial location."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery staffing until new budget",
+   "what_was_recorded": "Only one person works the cemeteries until the new budget is released in July, when two part-time grounds crew will begin; no dollar figure printed.",
+   "quote": "until the new budget is released in july. then the two part-time grounds crew will begin to work."
+  },
+  {
+   "topic": "Grave relocation fee",
+   "what_was_recorded": "The family will be charged a fee for relocating the body; no amount printed.",
+   "quote": "they will be charged a fee for the relocation of the body."
+  },
+  {
+   "topic": "North Cemetery log clearing estimate",
+   "what_was_recorded": "The DPW Director will obtain an estimate for clearing the logs at the new burial site; no amount printed.",
+   "quote": "he needs to clear the logs and will get an estimate for doing that."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Cemetery staffing",
+   "resolution": "reported, no action",
+   "quote": "dpw director bill bernard reported that superintendent todd is the only person working",
+   "tags": [
+    "staffing",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Family grave relocation from Columbarium",
+   "resolution": "approved without recorded vote; one-year timeframe, relocation fee",
+   "quote": "this was approved by both the cemetery commission and dpw director - bill barnard.",
+   "tags": [
+    "grave relocation",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Cemetery Rules and Regulations",
+   "resolution": "reviewed; final vote deferred to August/September meeting",
+   "quote": "regulations were reviewed. final draft of regulations will be voted on at the august/september meeting.",
+   "tags": [
+    "regulations"
+   ]
+  },
+  {
+   "topic": "New burial site, North Cemetery",
+   "resolution": "reviewed; log clearing, estimate and survey directed",
+   "quote": "the new burial site in the back of north cemetery was reviewed.",
+   "tags": [
+    "burial site",
+    "surveying"
+   ]
+  },
+  {
+   "topic": "Reorganization and Fisher Cemetery",
+   "resolution": "tabled to August meeting",
+   "quote": "reorganization and the fisher cemetery were both tabled till our august meeting.",
+   "tags": [
+    "reorganization",
+    "Fisher Cemetery"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "DPW",
+  "burial sites",
+  "grave relocation",
+  "cemetery regulations",
+  "staffing",
+  "surveying",
+  "North Cemetery",
+  "Fisher Cemetery"
+ ],
+ "dropped_unquoted_by_field": {}
 }

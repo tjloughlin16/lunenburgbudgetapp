@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-12-21",
  "docid": "6307",
@@ -12,47 +12,330 @@
  },
  "votes": [
   {
-   "motion": "Authorize plans to apply for grants at Table Rock, Harold Harley Wildlife Viewing Platform, and Rayno Conservation Area",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "unanimous to approve",
+   "motion": "Authorize plans to apply for grants at Table Rock, Harold Harley Wildlife Viewing Platform, and Rayno Conservation Area.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed",
    "procedural": false,
    "quote": "rb/jv m/s to authorize plans to apply for grants at table rock, harold harley wildlife viewing platform, and rayno conservation area. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Authorize grant submittal for Picnic Area at Small Town Forest",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "unanimous to approve",
+   "motion": "Authorize grant submittal for the Picnic Area at Small Town Forest.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed",
    "procedural": false,
    "quote": "rb/ml m/s to authorize grant submittal for picnic area at small town forest. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve a Certificate of Compliance for 90 Hemlock Drive",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Bursch",
-   "outcome": "unanimous to approve",
+   "motion": "Approve a Certificate of Compliance for 90 Hemlock Drive.",
+   "moved_by": "ML",
+   "seconded_by": "RB",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ml/rb m/s to approve a coc for 90 hemlock drive. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve a Certificate of Compliance for 37 Spring Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "unanimous to approve",
+   "motion": "Approve a Certificate of Compliance for 37 Spring Street.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed",
    "procedural": false,
    "quote": "rb/ml m/s to approve a coc for 37 spring street. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "unanimous to adjourn",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "RB",
+   "seconded_by": "ML",
+   "outcome": "passed",
    "procedural": true,
    "quote": "rb/ml m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0810795
+ "dropped_unquoted": 2,
+ "note": "Minutes are a short text, not a scan; all five votes are recorded. Each is printed \"unanimous\" or \"Roll Call vote, unanimous\" with no tally, so outcome is recorded as \"passed\" rather than a count. The meeting location is printed as \"ZOOM REMOTE\", but the roll call does not say who attended remotely, so members are marked present. Catie Childs is marked absent. Sam Welch, Anna Petrie and John Fortune are named, but the minutes do not say whether they attended, so their status is \"not stated\". Several items are headings with no recorded content (Howard Street Driveway, Timber Sales, Conservation land improvements, Open Space and Land Use), and the minutes do not record any action on them. The Dec 7 minutes were not presented, so none were approved. No dollar figures for grant amounts are printed. Abbreviations (BP, JV, ML, MW, RT, RB, AP, LWD, CoC, EO, NON) are used without expansion except where the minutes spell them out.",
+ "cost_usd": 0.01850891,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Michael Larouche",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Mary Wilson",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Richard Tremblay",
+   "status": "present",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "absent",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb absent: cc"
+  },
+  {
+   "name": "Sam Welch",
+   "role": "Associate Member",
+   "status": "not stated",
+   "quote": "sam welch, associate member"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "ap had addressed the inaccurate posting of the agenda"
+  },
+  {
+   "name": "John Fortune",
+   "role": "of Hickory Hills Landowners Inc.",
+   "status": "not stated",
+   "quote": "john fortune of hickory hills landowners inc."
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant for extension request, 41 & 47 Reservoir Road",
+   "status": "not stated",
+   "quote": "extension request for 41 & 47 reservoir road by steve powell"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff (Anna Petrie, AP) will follow up with Lunenburg Water District (LWD) on the well-water discharge raised in public comment.",
+   "quote": "ap will follow up with lwd."
+  },
+  {
+   "decision": "The extension request for 41 & 47 Reservoir Road will not be heard at this meeting; the chair/staff position is that it is not required under the Covid-19 Order 42 extension.",
+   "quote": "this extension request will not be heard at tonight's meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Timber Rights Fund balance and expected harvest receipts",
+   "what_was_recorded": "BP reported the Timber Rights Fund balance and expected incoming harvest receipts from Hawes and Rayno, minus Gary Goldrups fees.",
+   "figures_as_printed": [
+    "$21,061",
+    "$6,000",
+    "$21,000"
+   ],
+   "quote": "currently $21,061 in the timber rights fund and an expected $6,000 from the hawes harvest"
+  },
+  {
+   "topic": "Hollis Road revolving fund balance",
+   "what_was_recorded": "BP said the balance on the Hollis Road revolving fund is at $60,000.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "the balance on the hollis road revolving fund is at $60,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Fortune",
+   "stated_role": "of Hickory Hills Landowners Inc.",
+   "topic": "Lunenburg Water District well-water dumping on shorefront",
+   "quote": "john fortune of hickory hills landowners inc. released a statement of concern to the board on how lunenburg water district is allowing dumping of well water on shorefront property"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted; no action",
+   "quote": "mw was presented on the list for certified conservation commissioner.",
+   "tags": [
+    "announcements",
+    "certification"
+   ]
+  },
+  {
+   "topic": "Public comment: well-water dumping (Hickory Hills)",
+   "resolution": "referred to staff follow-up",
+   "quote": "ap will follow up with lwd.",
+   "tags": [
+    "public comment",
+    "well water",
+    "Lunenburg Water District"
+   ]
+  },
+  {
+   "topic": "Minutes of December 7, 2022",
+   "resolution": "no draft presented; none approved",
+   "quote": "minutes of previous meetings - december 7, 2022- no draft presented to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Extension request, 41 & 47 Reservoir Road",
+   "resolution": "not heard at this meeting",
+   "quote": "this extension request will not be heard at tonight's meeting.",
+   "tags": [
+    "extension request",
+    "Reservoir Road",
+    "agenda posting"
+   ]
+  },
+  {
+   "topic": "Continued public hearings",
+   "resolution": "none",
+   "quote": "no continued hearings.",
+   "tags": [
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Grant proposals: Table Rock, Harold Harley Viewing Platform, Rayno",
+   "resolution": "authorized plans to apply for grants",
+   "quote": "bp to discuss grant proposals at 3 different",
+   "tags": [
+    "grants",
+    "Table Rock",
+    "Harold Harley Wildlife Viewing Platform",
+    "Rayno Conservation Area"
+   ]
+  },
+  {
+   "topic": "Picnic Area grant, Small Town Forest",
+   "resolution": "authorized grant submittal",
+   "quote": "mw proposed a separate project for small town forest in regards to a picnic area, making it ada accessible.",
+   "tags": [
+    "grants",
+    "Small Town Forest",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Switching from Google Drive to One Drive",
+   "resolution": "discussed; no decision recorded",
+   "quote": "bp brought up a discussion point on switching commissioners from using google drive to strictly",
+   "tags": [
+    "records",
+    "software"
+   ]
+  },
+  {
+   "topic": "Encroachment update, 104 Woodland Drive",
+   "resolution": "update; no action recorded",
+   "quote": "update on encroachment issues at:",
+   "tags": [
+    "encroachment",
+    "Woodland Drive"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "reported",
+   "quote": "bp presented the budget report.",
+   "tags": [
+    "budget",
+    "Timber Rights Fund",
+    "Hollis Road revolving fund"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "reported; no further updates",
+   "quote": "ml stated that the windows have been installed.",
+   "tags": [
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance",
+   "resolution": "approved 90 Hemlock Drive and 37 Spring Street",
+   "quote": "ml/rb m/s to approve a coc for 90 hemlock drive.",
+   "tags": [
+    "certificate of compliance",
+    "Hemlock",
+    "Spring Street"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "updates recorded; no action",
+   "quote": "eo 48 oak ridge: will have file submittal by january 16th",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Open space, timber sales, land improvements, committee reports",
+   "resolution": "headings listed; no discussion recorded",
+   "quote": "committee reports - any update",
+   "tags": [
+    "open space",
+    "timber sales",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:42pm",
+   "quote": "rb/ml m/s to adjourn meeting. roll call vote, unanimous to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled January 4, 2023 by Zoom",
+   "quote": "meeting schedule: next meeting is january 4, 2023 at 7:00 pm by zoom platform",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "grants",
+  "certificates of compliance",
+  "enforcement",
+  "timber rights fund",
+  "budget",
+  "public comment",
+  "well water",
+  "Lunenburg Water District",
+  "Hollis Road",
+  "Table Rock",
+  "Small Town Forest",
+  "Zoom meeting",
+  "extension request",
+  "encroachment",
+  "records software"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

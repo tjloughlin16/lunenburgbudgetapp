@@ -1,0 +1,790 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2023-03-22",
+ "video_id": "jEXTOz3-UvY",
+ "video_url": "https://www.youtube.com/watch?v=jEXTOz3-UvY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2023-03-22-jEXTOz3-UvY.json",
+  "sha256": "78c16455ad1d26b693131e7e7e2c064fe3cc45a974c298eded85d0a9908ae128",
+  "caption_lines": 506,
+  "segments": 3956
+ },
+ "recording": {
+  "duration_s": 10856,
+  "duration": "3:00",
+  "spoken_chars": 124418,
+  "words_approx": 20736
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03222023-92",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-03-22-agenda-92.txt",
+   "path": "sources/meetings/finance-committee/2023-03-22-agenda-92.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03222023-92",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-03-22-minutes-92.txt",
+   "path": "sources/meetings/finance-committee/2023-03-22-minutes-92.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T00:03:15Z",
+  "cost_usd": 0.517983
+ },
+ "minutes": {
+  "headline": "Finance Committee heard FY24 general government, debt and Monty Tech presentations and schools' recommended budget; no budget votes taken.",
+  "summary": "The committee heard the town manager's general government, health, unclassified and debt service budgets, then Monty Tech's assessment presentation, then the school department's School Committee-approved FY24 budget. Later it discussed the warrant report timeline, a possible second public hearing and the capital plan. The only vote was approving the March 9 minutes, plus adjournment.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Town manager (Heather)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "town accountant"
+   },
+   {
+    "name_as_heard": "Tom Brown",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Tammy Crockett",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Barbara Reynolds",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Dr Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mr Cassidy",
+    "role": "business manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "debt",
+   "esser",
+   "free-cash",
+   "grants",
+   "health-insurance",
+   "monty-tech",
+   "special-education",
+   "staffing",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "transportation",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 10632,
+    "motion": "Approve the March 9th meeting minutes",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 10822,
+    "motion": "Adjourn",
+    "outcome": "passed (voice vote, adjourned 10:01)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 442,
+    "topic": "Select board administration hours",
+    "what_was_said": "Assistant town manager and board clerk hours go up from 28 to 32 a week, but the line is reduced based on historical spending.",
+    "figures_as_heard": [
+     "28 to 32 hours",
+     "four thousand four hundred and thirty two dollars"
+    ]
+   },
+   {
+    "t": 486,
+    "topic": "Finance committee meetings and conferences line",
+    "what_was_said": "Line increased so more than one person can attend conferences.",
+    "figures_as_heard": [
+     "five hundred dollars"
+    ]
+   },
+   {
+    "t": 632,
+    "topic": "Treasurer/collector hours",
+    "what_was_said": "Combined role increases hours per week based on historical hours worked.",
+    "figures_as_heard": [
+     "36 to 40 hours"
+    ]
+   },
+   {
+    "t": 825,
+    "topic": "Health insurance FY24",
+    "what_was_said": "Actual rate increase came in below the estimate for actives; enrollment changes raise the overall increase, and a FY23 line deficit will be covered in the operating budget.",
+    "figures_as_heard": [
+     "8.5 percent",
+     "6.2 percent",
+     "five percent"
+    ]
+   },
+   {
+    "t": 912,
+    "topic": "Insurance and Medicare",
+    "what_was_said": "Workers comp/liability, injured-on-duty and Medicare estimated up.",
+    "figures_as_heard": [
+     "fifteen thousand one hundred and thirty seven dollars",
+     "three thousand ninety three dollars",
+     "6.4 percent",
+     "twenty thousand five hundred and ten dollars"
+    ]
+   },
+   {
+    "t": 933,
+    "topic": "Salary reserve and training",
+    "what_was_said": "Salary reserve rises for expiring clerical and fire contracts; training line rises.",
+    "figures_as_heard": [
+     "sixty four thousand to a hundred thousand",
+     "two thousand eight hundred to fifteen thousand"
+    ]
+   },
+   {
+    "t": 996,
+    "topic": "Debt service FY24",
+    "what_was_said": "Several debt issues retire, producing an overall decrease; no new borrowing.",
+    "figures_as_heard": [
+     "979 711"
+    ]
+   },
+   {
+    "t": 1383,
+    "topic": "Monty Tech foundation donation",
+    "what_was_said": "Corporate donation to the community foundation bought carpentry equipment.",
+    "figures_as_heard": [
+     "370 000"
+    ]
+   },
+   {
+    "t": 1465,
+    "topic": "Monty Tech grants",
+    "what_was_said": "Monty Tech reports grants received this year.",
+    "figures_as_heard": [
+     "3.8 million"
+    ]
+   },
+   {
+    "t": 1961,
+    "topic": "Monty Tech lab modernization grant",
+    "what_was_said": "Grant funds renovation of a leased warehouse; the program uses no Chapter 70 local money.",
+    "figures_as_heard": [
+     "1.8 million dollar Grant",
+     "30 percent"
+    ]
+   },
+   {
+    "t": 2276,
+    "topic": "Chapter 70 Governor's budget",
+    "what_was_said": "Governor's budget projects an increase to Chapter 70 and Student Opportunity Act funding.",
+    "figures_as_heard": [
+     "586 million dollar increase"
+    ]
+   },
+   {
+    "t": 2596,
+    "topic": "Monty Tech foundation budget",
+    "what_was_said": "Foundation budget equals required net school spending, with a per-pupil figure.",
+    "figures_as_heard": [
+     "29 million 486.021",
+     "twenty thousand one twenty seven",
+     "1.5 million dollar increase",
+     "5.55 percent"
+    ]
+   },
+   {
+    "t": 2849,
+    "topic": "Monty Tech FY24 total budget",
+    "what_was_said": "Total budget increase aligns with net school spending increase.",
+    "figures_as_heard": [
+     "32 million five hundred thirty five thousand one hundred and one dollars",
+     "five point six four percent"
+    ]
+   },
+   {
+    "t": 2870,
+    "topic": "Monty Tech Chapter 70 and minimum contribution",
+    "what_was_said": "Chapter 70 aid rises; remaining minimum contribution comes from member towns.",
+    "figures_as_heard": [
+     "18 318 704",
+     "6.38 increase",
+     "11 million 167 317"
+    ]
+   },
+   {
+    "t": 2894,
+    "topic": "Monty Tech transportation aid and E&D",
+    "what_was_said": "Anticipated transportation aid, regional transportation fund use and excess and deficiency use offset assessments.",
+    "figures_as_heard": [
+     "one million seven hundred thousand",
+     "75 000",
+     "250 000",
+     "200 000",
+     "one million six thousand five forty one",
+     "3.1 percent"
+    ]
+   },
+   {
+    "t": 3064,
+    "topic": "Monty Tech total assessment",
+    "what_was_said": "Total assessment to communities mirrors budget increase.",
+    "figures_as_heard": [
+     "11 million 991 397",
+     "5.63"
+    ]
+   },
+   {
+    "t": 3696,
+    "topic": "Lunenburg Monty Tech assessment",
+    "what_was_said": "Lunenburg required minimum rises with enrollment; total assessment and per-pupil figure given.",
+    "figures_as_heard": [
+     "one million twelve thousand two eighty two",
+     "one million one hundred twenty seven thousand one thirteen",
+     "one hundred fourteen thousand eight thirty one",
+     "181 390",
+     "twelve thousand one seventy nine per pupil"
+    ]
+   },
+   {
+    "t": 4134,
+    "topic": "State required local contribution calculation",
+    "what_was_said": "State calculates Lunenburg's FY24 required local contribution with a shortfall add-on.",
+    "figures_as_heard": [
+     "13 million thirty eight thousand ninety nine dollars",
+     "246 934",
+     "1 million 743 283",
+     "7.71 percent"
+    ]
+   },
+   {
+    "t": 5468,
+    "topic": "School department FY24 recommended budget",
+    "what_was_said": "School Committee approved the budget earlier that evening, with personnel and non-personnel increases and health insurance cost increase.",
+    "figures_as_heard": [
+     "two and a half percent",
+     "three quarters of a percentage point",
+     "almost seven percent",
+     "6.2 percent"
+    ]
+   },
+   {
+    "t": 5736,
+    "topic": "Positions moved to other funding",
+    "what_was_said": "Several five-year-plan year-one positions funded via SR3, special ed grant or possible DPH grant instead of local budget.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7092,
+    "topic": "Circuit breaker and grants outlook",
+    "what_was_said": "Anticipate near level funding for circuit breaker and federal/state grants; allocations not known until summer.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7198,
+    "topic": "School busing",
+    "what_was_said": "Budget assumes the existing contract for buses; transportation contract rises yearly.",
+    "figures_as_heard": [
+     "11 buses",
+     "three and a half percent"
+    ]
+   },
+   {
+    "t": 7770,
+    "topic": "Primary school cooling project",
+    "what_was_said": "Engineer estimate for original AC plan came back far higher; mini splits proposed to cool about two-thirds of classrooms with funds approved last town meeting.",
+    "figures_as_heard": [
+     "seven million dollars"
+    ]
+   },
+   {
+    "t": 8482,
+    "topic": "School capital request",
+    "what_was_said": "Committee support requested for capital project for primary AC.",
+    "figures_as_heard": [
+     "238"
+    ]
+   },
+   {
+    "t": 8524,
+    "topic": "School salary line growth",
+    "what_was_said": "Salary line grew under one percent due to moving positions to grants and lower-paid new hires.",
+    "figures_as_heard": [
+     "less than one percent"
+    ]
+   },
+   {
+    "t": 8758,
+    "topic": "Athletic coach salaries",
+    "what_was_said": "Coach stipends now paid from the fee-funded revolving account.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 8922,
+    "topic": "LED street light incentive",
+    "what_was_said": "Estimated incentive funds for the LED project.",
+    "figures_as_heard": [
+     "33 500"
+    ]
+   },
+   {
+    "t": 9090,
+    "topic": "Master plan award",
+    "what_was_said": "Master plan contract awarded, covered by two capital articles.",
+    "figures_as_heard": [
+     "153 000",
+     "43 000",
+     "110"
+    ]
+   },
+   {
+    "t": 9153,
+    "topic": "Police security system",
+    "what_was_said": "Select board to vote on using ARPA funds for the police security system.",
+    "figures_as_heard": [
+     "82 000 83 000"
+    ]
+   },
+   {
+    "t": 9193,
+    "topic": "Surplus auctions",
+    "what_was_said": "Steam table auction revenue goes to general fund.",
+    "figures_as_heard": [
+     "525 dollars"
+    ]
+   },
+   {
+    "t": 9635,
+    "topic": "Assessing services contract",
+    "what_was_said": "Agreement with a municipal finance firm for assessment inspections, with RFP for remainder.",
+    "figures_as_heard": [
+     "ten thousand"
+    ]
+   },
+   {
+    "t": 9697,
+    "topic": "Snow and ice deficit",
+    "what_was_said": "Deficit expected to be significant and not coverable by pavement management alone.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 10488,
+    "decision": "Committee agreed to schedule a meeting on April 6 and to decide next week whether to hold an additional public hearing later in April."
+   },
+   {
+    "t": 9762,
+    "decision": "Chair to work on the finance committee warrant report, which must be voted by the 30th."
+   },
+   {
+    "t": 6010,
+    "decision": "Schools withdrew the in-house IT position for now and will keep contracted IT management another year."
+   },
+   {
+    "t": 6950,
+    "decision": "Schools withdrew the high school dean position request."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 186,
+    "t_end": 356,
+    "topic": "Call to order and announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 356,
+    "t_end": 1213,
+    "topic": "General government, health, unclassified and debt service budgets",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-departments",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 1235,
+    "t_end": 4745,
+    "topic": "Monty Tech presentation and assessment",
+    "resolution": "informational",
+    "tags": [
+     "monty-tech",
+     "chapter-70",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5057,
+    "t_end": 8805,
+    "topic": "School department FY24 budget, staffing, busing and capital",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "staffing",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 8830,
+    "t_end": 9738,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9762,
+    "t_end": 10632,
+    "topic": "Finance committee report, capital plan and public hearing scheduling",
+    "resolution": "no resolution; revisit next week",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 10632,
+    "t_end": 10843,
+    "topic": "Minutes, upcoming meetings, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts are not stated beyond 'unanimous' for the minutes.",
+   "Caption figures throughout are unreliable.",
+   "Several opening minutes were garbled setup chatter."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee took no budget votes; it heard the FY24 general government, health, unclassified and debt service budgets, which show a decrease in debt service with no new borrowing.",
+    "t": 996
+   },
+   {
+    "line": "Schools presented their School Committee-approved FY24 budget and withdrew two requests: the in-house IT position and the high school dean position.",
+    "t": 6010
+   },
+   {
+    "line": "Monty Tech presented its assessment, including a statement that the Governor's budget projects an increase to Chapter 70 and Student Opportunity Act funding.",
+    "t": 2276
+   },
+   {
+    "line": "The chair is to work on the finance committee warrant report, which must be voted by the 30th.",
+    "t": 9762
+   },
+   {
+    "line": "The committee agreed to meet April 6 and to decide next week whether to hold an additional public hearing later in April.",
+    "t": 10488
+   }
+  ],
+  "why_it_matters": [
+   "The school and town budgets that will reach Town Meeting were presented here but not yet voted, so the amounts residents will be asked to approve are still open to change.",
+   "Withdrawing the IT and dean positions lowers the school request as presented, but the minutes give no figure for the effect on the tax bill."
+  ],
+  "watch_next": [
+   "The finance committee warrant report, which must be voted by the 30th.",
+   "The committee's decision next week on an additional public hearing in April, and the April 6 meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T00:03:24Z",
+   "cost_usd": 0.22239689999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03222023-92",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2023-03-22-minutes-92.txt",
+   "path": "sources/meetings/finance-committee/2023-03-22-minutes-92.pdf"
+  },
+  "official_sha256": "a52a90ee96afeb47b6dab32a31bdfbca0e36a4babbd99771f2eb18ed0d8edfb8",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a non-procedural vote or a transfer, and the figures they share (select board hours, insurance, salary reserve, Monty Tech Chapter 70, LED, Municibid, master plan) match. The one thing to know: our minutes record four decisions (two withdrawn school positions, an April 6 meeting, the warrant report) and the official minutes record none, and our minutes also carry much of the Monty Tech and school budget discussion that the official minutes leave out.",
+  "counts": {
+   "agree": 15,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Both records list no non-procedural votes."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "",
+    "note": "Neither record lists a transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "Select board administration hours and $4,432",
+    "t": 442,
+    "ours": "Select board administration hours: 28 to 32 hours, four thousand four hundred and thirty two dollars",
+    "official": "which will cost about $10,000 more than her fy24 target, but also will decrease the board/clerk",
+    "note": "Same item: hours rise from 28 to 32 and the $4,432 figure matches. The official minutes also give the $10,000 cost, which ours omits."
+   },
+   {
+    "kind": "agree",
+    "about": "Finance Committee conferences line $500",
+    "t": 486,
+    "ours": "Finance committee meetings and conferences line: five hundred dollars",
+    "official": "a $500 increase to the finance committee budget is requested to cover admission to conferences, and training.",
+    "note": "Same $500 request."
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance rates",
+    "t": 825,
+    "ours": "Health insurance FY24: 8.5 percent, 6.2 percent, five percent",
+    "official": "health insurance for active employees and retirees will cost $2,856,753.60, which reflects a 5 percent increase for retirees",
+    "note": "The 5 percent and 6.2 percent rates match. The 8.5 percent in ours and the $2,856,753.60 total in the official minutes each appear in only one record."
+   },
+   {
+    "kind": "agree",
+    "about": "Workers comp, injured on duty and Medicare",
+    "t": 912,
+    "ours": "Insurance and Medicare: fifteen thousand one hundred and thirty seven dollars, three thousand ninety three dollars, 6.4 percent, twenty thousand five hundred and ten dollars",
+    "official": "medicare costs estimated at a 6.4 percent increase($20,510 increase)",
+    "note": "$15,137, $3,093, 6.4 percent and $20,510 all match the official lines."
+   },
+   {
+    "kind": "agree",
+    "about": "Salary reserve and training line",
+    "t": 933,
+    "ours": "Salary reserve and training: sixty four thousand to a hundred thousand, two thousand eight hundred to fifteen thousand",
+    "official": "salary reserve estimate increased from $64,000 to $100,000",
+    "note": "The salary reserve matches. The training line ($2,800 to $15,000) also matches the official training line."
+   },
+   {
+    "kind": "agree",
+    "about": "Lunenburg Monty Tech assessment, Chapter 70 and per pupil",
+    "t": 3696,
+    "ours": "Lunenburg Monty Tech assessment: one million twelve thousand two eighty two, one million one hundred twenty seven thousand one thirteen, one hundred fourteen thousand eight thirty one, 181 390, twelve thousand one seventy nine per pupil",
+    "official": "will rise 9.8 percent, which will reflect a $114,831 increase from fy23, totaling $1,127,113 going to monty tech",
+    "note": "$1,127,113, $114,831 and $12,179 per pupil match. The $1,012,282 prior-year figure plus $114,831 equals $1,127,113."
+   },
+   {
+    "kind": "agree",
+    "about": "School department FY24 budget growth",
+    "t": 5468,
+    "ours": "School department FY24 recommended budget: two and a half percent, three quarters of a percentage point, almost seven percent, 6.2 percent",
+    "official": "the total budget for the schools for fy24 is $22,883,442, which reflects a 2.5 percent increase from fy23.",
+    "note": "The 2.5 percent increase matches. The $22,883,442 total is not in our figures."
+   },
+   {
+    "kind": "agree",
+    "about": "LED streetlight incentive $33,500",
+    "t": 8922,
+    "ours": "LED street light incentive: 33 500",
+    "official": "$33,500, which will be deposited into the general fund.",
+    "note": "Same amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan bid $153,000",
+    "t": 9090,
+    "ours": "Master plan award: 153 000, 43 000, 110",
+    "official": "over under for $153,000, which will account for",
+    "note": "The $153,000 matches. The 43,000 and 110 in ours are not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Police security system cost",
+    "t": 9153,
+    "ours": "Police security system: 82 000 83 000",
+    "official": "arpa funds to address the problem. project estimated to cost $83,000.",
+    "note": "Ours gives both 82,000 and 83,000. The official minutes say $83,000, so a person should confirm which figure was stated on the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus auction $525",
+    "t": 9193,
+    "ours": "Surplus auctions: 525 dollars",
+    "official": "$525.00, which will be deposited into the general fund.",
+    "note": "Same amount."
+   },
+   {
+    "kind": "agree",
+    "about": "$10,000 for assessing or inspections",
+    "t": 9635,
+    "ours": "Assessing services contract: ten thousand",
+    "official": "the select board has authorized spending $10,000 on property inspections regarding abatement applications.",
+    "note": "Same $10,000 figure, but ours calls it an assessing services contract and the official minutes call it property inspections for abatements. A person should check the recording to confirm it is the same item."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Schools withdrew the in-house IT position",
+    "t": 6010,
+    "ours": "Schools withdrew the in-house IT position for now and will keep contracted IT management another year.",
+    "official": "",
+    "note": "Our minutes record a decision on a school position that the official minutes do not mention. A person should check the recording near this point and the official text."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Schools withdrew the high school dean position",
+    "t": 6950,
+    "ours": "Schools withdrew the high school dean position request.",
+    "official": "",
+    "note": "Our minutes record a withdrawn request and the official minutes list no decisions. A person should check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Scheduling of April 6 meeting and additional public hearing",
+    "t": 10488,
+    "ours": "Committee agreed to schedule a meeting on April 6 and to decide next week whether to hold an additional public hearing later in April.",
+    "official": "",
+    "note": "Our minutes record a scheduling decision and the official minutes record no decisions. A person should check the recording and the committee's calendar."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrant report assignment",
+    "t": 9762,
+    "ours": "Chair to work on the finance committee warrant report, which must be voted by the 30th.",
+    "official": "",
+    "note": "Our minutes record an action item and a voting deadline that the official minutes do not mention. A person should check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Treasurer/collector hours",
+    "t": 632,
+    "ours": "Treasurer/collector hours: 36 to 40 hours",
+    "official": "",
+    "note": "The official minutes cover the treasurer's contracted services but not an hours increase."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt service FY24",
+    "t": 996,
+    "ours": "Debt service FY24: 979 711",
+    "official": "",
+    "note": "The official minutes give no debt service figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech budget and assessment totals",
+    "t": 2849,
+    "ours": "Monty Tech FY24 total budget: 32 million five hundred thirty five thousand one hundred and one dollars, five point six four percent",
+    "official": "",
+    "note": "The official minutes give only Monty Tech's Chapter 70 portion and the per-pupil amount, not the total budget, total assessment or grant figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School busing, cooling project and capital request",
+    "t": 7770,
+    "ours": "Primary school cooling project: seven million dollars",
+    "official": "",
+    "note": "The official minutes do not record the school busing, primary school cooling or school capital request figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager admin request $181,043",
+    "t": 0,
+    "ours": "",
+    "official": "the town manager admin budget seeks no changes, with total request coming in at $181,043.",
+    "note": "This is a budget figure that our minutes do not capture."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Annual town audit $40,000",
+    "t": 0,
+    "ours": "",
+    "official": "annual town audit estimate is $2,000 higher than originally anticipated, total: $40,000.",
+    "note": "This is a figure that our minutes do not capture. The other small departmental lines (accountant, legal, assessors, treasurer, clerk, elections, health, veterans) are also official-only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Total FY24 school budget $22,883,442",
+    "t": 0,
+    "ours": "",
+    "official": "the total budget for the schools for fy24 is $22,883,442, which reflects a 2.5 percent increase from fy23.",
+    "note": "Our minutes have only the 2.5 percent growth, not the dollar total."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Health insurance opt-out plan",
+    "t": 0,
+    "ours": "",
+    "official": "ms. lemieux will meet with the pec to investigate a health insurance opt out plan.",
+    "note": "This is a follow-up item that our minutes do not capture."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Monty Tech superintendent name",
+    "t": 0,
+    "ours": "Tom Brown (presenter)",
+    "official": "guests: town manager heather lemieux, finance director karen brochu, monty tech superintendent todd brown,",
+    "note": "The captions misheard the first name. The rest of the speaker list matches.",
+    "official_reading": "Todd Brown"
+   },
+   {
+    "kind": "agree",
+    "about": "Named attendees who spoke",
+    "t": 0,
+    "ours": "Town manager (Heather), Karen (town accountant), Tammy Crockett, Barbara Reynolds, Dr Burnham, Mr Cassidy",
+    "official": "public schools superintendent dr. katherine burnham, lunenburg public schools business manager michael cassidy,",
+    "note": "The same people appear in both. Our minutes give only first names for Heather and Karen, and call Karen the town accountant while the official minutes call her finance director."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee members and School Committee attendees",
+    "t": 0,
+    "ours": "Chair (unnamed) (chair)",
+    "official": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo",
+    "note": "Our minutes do not name the committee members. The official minutes also list School Committee chair Carol Archambault and member Peter Beardmore."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T00:05:00Z",
+   "cost_usd": 0.28485489999999997
+  }
+ }
+}

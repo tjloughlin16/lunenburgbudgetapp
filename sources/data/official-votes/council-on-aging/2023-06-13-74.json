@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2023-06-13",
  "docid": "74",
@@ -12,31 +12,276 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the May 16, 2023 meeting",
+   "motion": "Approve the minutes of the May 16, 2023 meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Mr. McGuigan",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln motioned to approve the minutes from the may 16, 2023 meeting. mr. mcguigan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "accept the nominations of Deb Lincoln as chairperson, and Jane Rabbitt as Vice-Chairperson",
+   "motion": "Accept the nominations of Deb Lincoln as chairperson and Jane Rabbitt as Vice-Chairperson for FY24 COA officers.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "mr. lincoln motioned to accept the nominations of deb lincoln as chairperson, and jane rabbitt as vice-chairperson. ms. digiacomo seconded the motion. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 11:04 a.m.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. O'Sullivan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried."
+   "quote": "at 11:04 a.m. mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scan; all votes are readable and clearly stated.",
- "cost_usd": 0.0878615
+ "note": "OCR text (macOS Vision), not a clean scan: the attendance block has no \"Present:\" label, so the names above \"Absent:\" are read as present; no absences are listed. Page 1 ends mid-sentence in the Director's Report and page 2 begins mid-sentence in the Eagle House Supporters item, so the start of that item is missing. The minutes print \"Mr. Lincoln\" and \"Ms. Lincoln\" in different places; they may be one person and are recorded separately. Ms. Doherty's role is never printed. Ms. Talley's resignation is recorded as \"from the board\" without saying which board. The minutes print no roll-call votes beyond the three motions listed; no dollar figures appear anywhere. Public comment reads \"None\".",
+ "cost_usd": 0.01761971,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. mcguigan seconded. on vote, motion carried unanimously."
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "at 11:04 a.m. mr. lincoln motioned to adjourn. ms. o'sullivan seconded. on vote, motion carried."
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "George Martin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "Diane Nowa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell, cathy beale, jim mcguigan, susan o'sullivan, helen balcom, cheryl moisan, george martin, diane nowa, betty digiacomo"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. digiacomo seconded the motion. on vote, motion carried unanimously."
+  },
+  {
+   "name": "Pat Kennedy",
+   "role": "Eagle House Supporters President",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, eagle house supporters liaison marilyn talley, select board member lou franco"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, eagle house supporters liaison marilyn talley, select board member lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "guests: eagle house supporters president pat kennedy, eagle house supporters liaison marilyn talley, select board member lou franco"
+  },
+  {
+   "name": "Mr. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. lincoln motioned to approve the minutes from the may 16, 2023 meeting."
+  },
+  {
+   "name": "Ms. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. doherty and ms. lincoln suggested the coa distance itself from the eagle house supporters"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. doherty informed the board of a transportation program offered by mart"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Manager",
+   "status": "present",
+   "quote": "facilities manager chris ruth explained that the old"
+  },
+  {
+   "name": "Ms. Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "board comment: ms. rabbitt expressed concern over the status of the eagle house supporters."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln said she would investigate any options the COA might have regarding the Eagle House Supporters (an individual undertaking, not a recorded board vote).",
+   "quote": "ms. lincoln said she'd investigate any options the coa might have regarding the supporters."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MART Connects livery program",
+   "what_was_recorded": "The MART transportation program available to Lunenburg, Sterling and Lancaster residents is funded by a year-long grant; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the program is funded by a year-long grant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (May 16, 2023)",
+   "resolution": "approved",
+   "quote": "minutes approval: mr. lincoln motioned to approve the minutes from the may 16, 2023 meeting.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "MART Connects",
+   "resolution": "informational; no action recorded",
+   "quote": "ms. doherty informed the board of a transportation program offered by mart",
+   "tags": [
+    "transportation",
+    "MART",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "FY24 COA officers",
+   "resolution": "approved: Deb Lincoln chairperson, Jane Rabbitt Vice-Chairperson",
+   "quote": "mr. lincoln motioned to accept the nominations of deb lincoln as chairperson, and jane rabbitt as vice-chairperson.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan",
+   "resolution": "no action; meeting with consultants scheduled",
+   "quote": "ms. doherty is scheduled to meet with consultants regarding the",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Senior Tax Relief",
+   "resolution": "reported; no action recorded",
+   "quote": "mr. franco reported that the legislation for senior tax relief",
+   "tags": [
+    "senior tax relief",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "COA Board Member Orientation Packet",
+   "resolution": "discussed; editing suggested; no action recorded",
+   "quote": "mr. lincoln suggested further editing the coa policies and procedures",
+   "tags": [
+    "policies",
+    "orientation"
+   ]
+  },
+  {
+   "topic": "COA town email",
+   "resolution": "reported; no action recorded",
+   "quote": "coa town email: some members are having trouble sending messages from their account.",
+   "tags": [
+    "technology"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300th Celebration",
+   "resolution": "discussed; no action recorded",
+   "quote": "board members discussed ways to display artwork so parents and grandparents could come to the eagle house to see.",
+   "tags": [
+    "300th celebration",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan and building and grounds",
+   "resolution": "reported; minutes text truncated mid-item",
+   "quote": "facilities manager chris ruth explained that the old",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters",
+   "resolution": "discussed; Ms. Kennedy asked for time; next Supporters meeting scheduled for September",
+   "quote": "ms. doherty and ms. lincoln suggested the coa distance itself from the eagle house supporters",
+   "tags": [
+    "Eagle House Supporters",
+    "resignations",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "discussed",
+   "quote": "board comment: ms. rabbitt expressed concern over the status of the eagle house supporters.",
+   "tags": [
+    "Eagle House Supporters"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:04 a.m.",
+   "quote": "at 11:04 a.m. mr. lincoln motioned to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "Eagle House Supporters",
+  "officers election",
+  "MART transportation",
+  "senior tax relief",
+  "master plan",
+  "capital plan",
+  "300th celebration",
+  "minutes approval",
+  "resignations"
+ ],
+ "dropped_unquoted_by_field": {}
 }

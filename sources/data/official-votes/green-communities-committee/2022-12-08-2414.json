@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2022-12-08",
  "docid": "2414",
@@ -12,23 +12,275 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 10.19.22",
+   "motion": "Approve the minutes of 10.19.22.",
    "moved_by": "DP",
    "seconded_by": "LM",
-   "outcome": "approved unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes from 10.19.22 - dp motion- lm second, approved unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "DP",
    "seconded_by": "MS",
-   "outcome": "approved unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn dp, second ms, approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0769585
+ "note": "Minutes are a single unsigned, informal text. Board members appear only as initials (DB, MS, LM, C.H, D.P) and no chair, roll call or quorum is printed. \"Matt\" and \"KD\" are named in discussion but not in the attendance line, so they are not listed as attendees. The two votes record \"approved unanimously\" with no tally. No dollar figure is printed for the consultant's proposal itself. Public comment is not recorded as a section. Public comment is not recorded as a section.",
+ "cost_usd": 0.01608241,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "DB",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "MS",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "LM",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "C.H",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "D.P",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "Kim",
+   "role": "guest",
+   "status": "present",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "Heather L",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "in attendance db, ms, lm, c.h, d.p guest- kim, heather l on zoom, guest george woodbury via phone."
+  },
+  {
+   "name": "George Woodbury",
+   "role": "Prospective consultant",
+   "status": "remote",
+   "quote": "prospective consultant, george woodbury gave us a proposal with a scope of work."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board leaning against the pilot of different lights in the consultant's proposal (item 3); preference to visit other communities to see diffusers rather than pilot here.",
+   "quote": "db reports we'd rather go look at other communities and check out how those diffusers look than pilot it here."
+  },
+  {
+   "decision": "Board suggests not doing the pilot (item 3).",
+   "quote": "we suggest we don't do the pilot."
+  },
+  {
+   "decision": "Next meeting set for the week between Christmas and New Year, if it works for George Woodbury.",
+   "quote": "next meeting, week between christmas and newyears if this still works for george."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Consultant proposal pricing and product cost spread",
+   "what_was_recorded": "The price difference between lighting products with different lead times was estimated at a range per fixture.",
+   "quote": "the difference in product price could be 60-80 per fixture.",
+   "figures_as_printed": [
+    "60-80"
+   ]
+  },
+  {
+   "topic": "Make-ready cost for added street lights",
+   "what_was_recorded": "Adding a light at a location PD may request would cost about $400, including arm, light and Unitil make-ready work.",
+   "quote": "this would be about $400.",
+   "figures_as_printed": [
+    "$400"
+   ]
+  },
+  {
+   "topic": "Available funds for flexibility",
+   "what_was_recorded": "George Woodbury reported the project has more than enough money to allow flexibility; no total is printed.",
+   "quote": "george reports we have more than enough money to be flexible.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant application scope",
+   "what_was_recorded": "The town applied for a grant assuming full scope including monitoring, so cost should not need to be penny-pinched; no grant amount printed.",
+   "quote": "dp reports, we applied for a grant assuming we would need to do soup to nuts including monitoring and we shouldn't have to penny pinch.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Additional lights found in final assessment",
+   "what_was_recorded": "Net effect of lights found versus lights billed was described as a net positive to the town; no dollar figure printed.",
+   "quote": "we found more lights we weren't paying for then lights we were being charged for that didn't exist.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Energy Efficiency Block Grant",
+   "what_was_recorded": "Information on an Energy Efficiency Block Grant opportunity was received for review; no amount printed.",
+   "quote": "karen chapman sent some info on an energy efficiency block grant opportunity for us to look at.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Consultant proposal (George Woodbury)",
+   "resolution": "discussed; item 3 pilot not recommended; item 7 to be clarified",
+   "quote": "prospective consultant, george woodbury gave us a proposal with a scope of work.",
+   "tags": [
+    "consultant",
+    "proposal",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Lights audit and project timeline",
+   "resolution": "discussed; audit to be scheduled, bid targeted January",
+   "quote": "george said he will send someone to come up to do an audit",
+   "tags": [
+    "audit",
+    "timeline",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Product lock-in and lead time",
+   "resolution": "discussed; product selection to be locked in quickly",
+   "quote": "george suggests the critical path is getting the product locked in so we can get it ordered as soon as possible to deal with lead time.",
+   "tags": [
+    "procurement",
+    "lead time"
+   ]
+  },
+  {
+   "topic": "Additional lights and make-ready cost",
+   "resolution": "discussed; flexibility to add lights noted",
+   "quote": "this would be about $400.",
+   "tags": [
+    "street lights",
+    "cost",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Fixture versus arm replacement",
+   "resolution": "discussed; to be raised with consultant",
+   "quote": "dp said he still believes we should replace the arms.",
+   "tags": [
+    "street lights",
+    "fixtures"
+   ]
+  },
+  {
+   "topic": "Maintenance contract term",
+   "resolution": "discussed; one-year contract with option to extend suggested",
+   "quote": "heather stated we could start with a one year contract with an option to extend for 3 if we like the contractor.",
+   "tags": [
+    "maintenance",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Broadband mesh devices on poles",
+   "resolution": "raised; no action recorded",
+   "quote": "lm mentioned that fitchburg had an opportunity to add a device to the light poles",
+   "tags": [
+    "broadband",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Energy Efficiency Block Grant",
+   "resolution": "information received; for review",
+   "quote": "karen chapman sent some info on an energy efficiency block grant opportunity for us to look at.",
+   "tags": [
+    "grant",
+    "energy efficiency"
+   ]
+  },
+  {
+   "topic": "Landfill solar farm",
+   "resolution": "referred to Selectboard member Jeffreys",
+   "quote": "lm asked about the landfill solar farm idea which was a topic raised by selectboard member jeffreys.",
+   "tags": [
+    "solar",
+    "landfill"
+   ]
+  },
+  {
+   "topic": "Green Communities projects in other departments",
+   "resolution": "discussed; departments to be reminded",
+   "quote": "need to continually remind them that green communities is an opportunity when they do projects.",
+   "tags": [
+    "school",
+    "sewer",
+    "facilities",
+    "projects"
+   ]
+  },
+  {
+   "topic": "Capital plan and window replacement",
+   "resolution": "discussed; no action recorded",
+   "quote": "lm asked if window replacement is an eligible green community use.",
+   "tags": [
+    "capital plan",
+    "windows"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set, week between Christmas and New Year",
+   "quote": "next meeting, week between christmas and newyears if this still works for george.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 10.19.22",
+   "resolution": "approved unanimously",
+   "quote": "motion to approve minutes from 10.19.22 - dp motion- lm second, approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved unanimously",
+   "quote": "motion to adjourn dp, second ms, approved unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "street lights",
+  "LED conversion",
+  "consultant proposal",
+  "green communities",
+  "grant",
+  "energy efficiency",
+  "solar",
+  "capital plan",
+  "maintenance contract"
+ ],
+ "dropped_unquoted_by_field": {}
 }

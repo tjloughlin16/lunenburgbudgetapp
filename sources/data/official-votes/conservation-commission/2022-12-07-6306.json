@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-12-07",
  "docid": "6306",
@@ -12,72 +12,367 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 16, 2022 as drafted",
+   "motion": "Approve the minutes of the November 16, 2022 meeting as drafted.",
    "moved_by": "ML",
    "seconded_by": "RT",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "ml/rt m/s to approve as drafted. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Remove the greenhouse or submit an RDA for relocation",
+   "motion": "Have the greenhouse at 23 Cove Rd removed, or the homeowner submit an RDA for its relocation.",
    "moved_by": "MW",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "mw/ml m/s to have the greenhouse removed or the homeowner to submit an rda for the relocation of the greenhouse. roll call vote, unanimous to approve."
+   "quote": "mw/ml m/s to have the greenhouse removed or the homeowner to submit an rda for the relocation of the greenhouse."
   },
   {
-   "motion": "Approve the project at 42 Pearl Street with a standard Order of Conditions",
+   "motion": "Approve the project at 42 Pearl Street with a standard Order of Conditions.",
    "moved_by": "RB",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "rb/ml m/s to approve the project at 42 pearl street with a standard order of conditions. roll call vote, unanimous to approve."
+   "quote": "rb/ml m/s to approve the project at 42 pearl street with a standard order of conditions."
   },
   {
-   "motion": "Approve project delineation by JMC/TBG Lunenburg II, LLC for 400 Leominster-Shirley Road with Order of Resource Area Delineation",
+   "motion": "Approve the project delineation by JMC/TBG Lunenburg II, LLC for 400 Leominster-Shirley Road with an accurate Order of Resource Area Delineation (minutes print the word in question marks).",
    "moved_by": "ML",
    "seconded_by": "MW",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "ml/mw m/s to approve project delineation by jmc/tbg lunenburg ii, llc for 400 leominster- shirley road with an ?accurate? order of resource area delineation",
-   "quote_taken_from_text": true
+   "quote": "ml/mw m/s to approve project delineation by jmc/tbg lunenburg ii, llc for 400"
   },
   {
-   "motion": "Approve the projects for Elaine Normandin at 47 Round Road, Rene Rainville at 57 Round Road and Marc Sprague at 73 Round Road with standard order of conditions",
+   "motion": "Approve the projects for Elaine Normandin at 47 Round Road, Rene Rainville at 57 Round Road and Marc Sprague at 73 Round Road with a standard order of conditions, with a revised plan and construction schedule.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "rb/mw m/s to approve the projects for elaine normandin at 47 round road, rene rainville at 57 round road and marc sprague at 73 round road with a standard order of conditions"
+   "quote": "rb/mw m/s to approve the projects for elaine normandin at 47 round road, rene rainville at"
   },
   {
-   "motion": "Approve Certificate of Compliance for 57 Cross Road",
+   "motion": "Approve a Certificate of Compliance for 57 Cross Road.",
    "moved_by": "ML",
    "seconded_by": "RB",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "ml/rb m/s to approve a coc for 57 cross road. roll call vote, unanimous to approve."
+   "quote": "ml/rb m/s to approve a coc for 57 cross"
   },
   {
-   "motion": "Approve Certificate of Compliance for 63 Cross Road",
+   "motion": "Approve a Certificate of Compliance for 63 Cross Road.",
    "moved_by": "RB",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "rb/ml m/s to approve a coc for 63 cross road. roll call vote, unanimous to approve."
+   "quote": "rb/ml m/s to approve a coc for 63 cross"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "RB",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
    "quote": "rb/ml m/s to adjourn meeting. roll call vote, unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Eight votes recorded. All motions that received votes passed unanimously. The vote on 400 Leominster-Shirley Road delineation was moved and seconded but no vote result is printed in the minutes.",
- "cost_usd": 0.11516850000000001
+ "note": "Typed transcript, not a scan; no OCR caveat. Roll call uses initials only; mapping initials to names (BP, JV, ML, MW, RT, RB, CC) is inferred from the letterhead, and member status is coded \"remote\" because the header reads \"ZOOM REMOTE\" and no per-member location is printed. Catie Childs is coded absent from the initials \"CC\". Anna Petrie and Sam Welch appear only in the letterhead, so attendance is not stated. \"RG\" appears once in the Galloni discussion and \"RB (RG?)\" is printed, so it is not attributed to Robert Galloni. The 400 Leominster-Shirley motion has no recorded roll call or result. The Round Road motion is recorded as unanimous. Public comment is recorded as none, so no speakers are listed. No dollar figures appear in the enforcement or CoC items.",
+ "cost_usd": 0.01863341,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Member",
+   "status": "remote",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member",
+   "status": "absent",
+   "quote": "roll call: bp, jv, ml, mw, rt, rb absent: cc"
+  },
+  {
+   "name": "Anna Petrie",
+   "role": "Member (listed in letterhead)",
+   "status": "not stated",
+   "quote": "anna petrie richard tremblay"
+  },
+  {
+   "name": "Sam Welch",
+   "role": "Associate Member",
+   "status": "not stated",
+   "quote": "sam welch, associate member"
+  },
+  {
+   "name": "Tracee Galloni",
+   "role": "applicant, representing themselves",
+   "status": "present",
+   "quote": "tracee & robert galloni were representing themselves for the hearing of the eo for the construction of a"
+  },
+  {
+   "name": "Robert Galloni",
+   "role": "applicant, representing themselves",
+   "status": "present",
+   "quote": "tracee & robert galloni were representing themselves for the hearing of the eo for the construction of a"
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "of Hannigan Engineering Inc., representing the homeowner of 42 Pearl Street; also presented at 400 Leominster-Shirley Road and 63 Cross Road",
+   "status": "present",
+   "quote": "chris anderson of hannigan engineering inc. represented the homeowner of 42 pearl street."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "representing the property owners at 47, 57 and 73 Round Road",
+   "status": "present",
+   "quote": "matt marro to represent the property owners for all three properties."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "BP will contact the Board of Health and the Board of Selectmen about funding for the Howard Street driveway; a contractor would need to be hired.",
+   "quote": "bp will be in contact with boh and the board of selectman about funding for the driveway"
+  },
+  {
+   "decision": "AP will follow up with the rest of the enforcement (EO) list.",
+   "quote": "ap will be following up with the rest of the eo list."
+  },
+  {
+   "decision": "BP suggested discussing with the tenant any removal of items from the Hollis Road property.",
+   "quote": "bp suggested to discuss with the tenant any removal of items off of the property."
+  },
+  {
+   "decision": "The chainsaw safety class will take place on the Rayo property.",
+   "quote": "bp said the class will take place on the rayo property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Timber Rights Fund balance",
+   "what_was_recorded": "BP reported the current balance in the Timber Rights Fund.",
+   "figures_as_printed": [
+    "$21,061"
+   ],
+   "quote": "currently $21,061 in the timber rights fund and"
+  },
+  {
+   "topic": "Expected timber harvest receipts (Hawes and Rayno)",
+   "what_was_recorded": "BP reported expected receipts from the Hawes and Rayno harvests; the Rayno figure is stated as minus Gary Goldrups fees.",
+   "figures_as_printed": [
+    "$6,000",
+    "$21,000"
+   ],
+   "quote": "an expected $6,000 from the hawes harvest and expected $21,000 from the rayno harvest, minus"
+  },
+  {
+   "topic": "Hollis Road revolving fund balance",
+   "what_was_recorded": "BP reported the balance of the Hollis Road revolving fund.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "the balance on the hollis road revolving fund is at $60,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of previous meeting",
+   "resolution": "approved as drafted",
+   "quote": "ml/rt m/s to approve as drafted. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Tracee Galloni EO, 23 Cove Rd (greenhouse in buffer)",
+   "resolution": "motion passed: remove greenhouse or submit RDA for relocation",
+   "quote": "tracee & robert galloni were representing themselves for the hearing of the eo for the construction of a",
+   "tags": [
+    "enforcement",
+    "wetlands",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "NOI, 42 Pearl St (retaining wall)",
+   "resolution": "approved with standard Order of Conditions",
+   "quote": "chris anderson of hannigan engineering inc. represented the homeowner of 42 pearl street.",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "Continued: Abbreviated Notice of Resource Area Delineation, 400 Leominster-Shirley Road",
+   "resolution": "motion to approve delineation made; no outcome recorded",
+   "quote": "chris anderson to present plans and delineation of wetlands at 400 leominster-shirly road.",
+   "tags": [
+    "public hearing",
+    "wetland delineation"
+   ]
+  },
+  {
+   "topic": "Continued: NOIs for retaining walls, 47, 57 and 73 Round Road",
+   "resolution": "approved with standard order of conditions, revised plan and schedule",
+   "quote": "matt marro to represent the property owners for all three properties.",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "retaining wall",
+    "lake"
+   ]
+  },
+  {
+   "topic": "Grant applications for access paths and parking lots",
+   "resolution": "proposed by BP; no action recorded",
+   "quote": "bp is proposing grant application possibilities and goals for access paths/parking lots for northwest",
+   "tags": [
+    "grants",
+    "trails",
+    "parking",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Encroachment at 104 Woodland Drive",
+   "resolution": "update; no action recorded",
+   "quote": "update on encroachment issues at: 104 woodland drive",
+   "tags": [
+    "enforcement",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "reported; no action recorded",
+   "quote": "currently $21,061 in the timber rights fund and",
+   "tags": [
+    "budget",
+    "timber rights fund",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "reported; no action recorded",
+   "quote": "ml stated that the floor of the shed has been finished.",
+   "tags": [
+    "property",
+    "tenant",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance, 57 and 63 Cross Road",
+   "resolution": "both approved",
+   "quote": "ml/rb m/s to approve a coc for 57 cross",
+   "tags": [
+    "certificate of compliance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations list",
+   "resolution": "AP to follow up on remaining EO list; EO 48 Oak Ridge given more time on request",
+   "quote": "ap will be following up with the rest of the eo list.",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space and land use: driveway, timber sales, chainsaw class",
+   "resolution": "reported; driveway funding to be pursued",
+   "quote": "bp spoke with bill barnard. bp reported that",
+   "tags": [
+    "open space",
+    "timber sales",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "Conservation land improvements (Cowdrey bridge)",
+   "resolution": "reported; repair completed by volunteers",
+   "quote": "mw presented updates on repairing the bridge",
+   "tags": [
+    "conservation land",
+    "volunteers",
+    "bridge"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no report recorded",
+   "quote": "committee reports - any update",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications /public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30pm, unanimous",
+   "quote": "rb/ml m/s to adjourn meeting. roll call vote, unanimous to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "notice of intent",
+  "order of conditions",
+  "certificate of compliance",
+  "enforcement",
+  "retaining wall",
+  "timber sales",
+  "conservation land",
+  "budget",
+  "timber rights fund",
+  "revolving fund",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

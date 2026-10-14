@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-12-20",
  "docid": "5299",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Appoint Kim Duffy to the Green Communities Committee as Associate with a term to expire June 30, 2024",
+   "motion": "Appoint Kim Duffy to the Green Communities Committee as Associate, term to expire June 30, 2024.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: l. franco 2nå: t. alonzo to appoint kim duffy to the green communities committee as associate with a term to expire june 30, 2024 vote: all in favor"
   },
   {
-   "motion": "Approve the documents for the Invitations for Bid on the 30 School Street Hazardous Materials Abatement and Demolition",
+   "motion": "Approve the documents as presented for the invitations for bid on the 30 School Street hazardous materials abatement and demolition.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -28,7 +28,31 @@
    "quote": "motion: t. alonzo 2n°: t. dwyer to approve the documents as presented for the invitations for bid on the 30 school street hazardous materials abatement and demolition vote: all in favor"
   },
   {
-   "motion": "Approve the November 8 and December 6, 2022 minutes as written and presented",
+   "motion": "Approve the remote work policy as presented by the Town Manager.",
+   "moved_by": "I. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: i. alonzo 2\"': l. franco to approve the remote work policy as presented by the town manager vote: all in favor"
+  },
+  {
+   "motion": "Approve the appointment policy as amended and presented that evening.",
+   "moved_by": "I. Alonzo",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: i. alonzo to approve the appointment policy as amended and presented this evening 211: t. dwyer vote: all in favor"
+  },
+  {
+   "motion": "Approve the volunteer and volunteer reappointment application forms as presented with one modification.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: t. alonzo 2\"d: l. franco to approve the volunteer and volunteer reappointment application forms as presented with one modification vote: all in favor"
+  },
+  {
+   "motion": "Approve the December 6 and November 8, 2022 minutes as written and presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -36,16 +60,364 @@
    "quote": "motion: t. alonzo 2nd: t. dwyer to approve the december 6 and november 8, 2022 minutes as written and presented vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2'': t. dwyer vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo to adjourn the meeting 2'': t. dwyer vote: all in favor"
   }
  ],
- "dropped_unquoted": 3,
- "note": "OCR text from scanned minutes. Some OCR artifacts in the seconded-by field display odd characters (å, °, and mismatched quote marks) where '2nd:' should appear; these are preserved as they appear in the scan. All votes show unanimous approval ('All in Favor').\"",
- "cost_usd": 0.1626118
+ "dropped_unquoted": 1,
+ "note": "OCR of a scanned minutes document (macOS Vision). Several names and motion lines are garbled and are recorded as printed: \"Jeffieys\" in the header and \"Jeffreys\" in the body; \"I. Alonzo\" on two motions, probably meaning T. Alonzo; \"2nå\", \"2n°\", \"2\"'\" and \"211\" for \"2nd\". Every vote is recorded only as \"All in Favor\" with no tally, so outcomes read \"passed\" without a count, and no roll call is printed. The Library Trustees' vote mentioned in the chair's committee report is another board's action and is not recorded as a vote here. Dollar figures were read from the OCR text and should be checked against the signed original.",
+ "cost_usd": 0.02050461,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffieys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk;"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk;"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "lou franco, clerk; todd dwyer, heather stoka"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member (role not printed)",
+   "status": "present",
+   "quote": "lou franco, clerk; todd dwyer, heather stoka"
+  },
+  {
+   "name": "Heather Stoka",
+   "role": "Member (role not printed)",
+   "status": "present",
+   "quote": "lou franco, clerk; todd dwyer, heather stoka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; muir haman, library director; kim duffy, ray dunetz,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "library director muir haman presented some of the programs that are available at the library and remotely."
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "applicant for appointment to the Green Communities Committee",
+   "status": "present",
+   "quote": "kim duffy stated she has always been trying to maintain a really sustainable lifestyle and looking for new"
+  },
+  {
+   "name": "Ray Dunetz",
+   "role": "presenter on the 30 School Street bid package",
+   "status": "present",
+   "quote": "meeting with ray dunetz to review invitation for bids for 30 school street hazardous materials"
+  },
+  {
+   "name": "Margaret Scarsdale",
+   "role": "Newly elected Middlesex 1st District Representative",
+   "status": "remote",
+   "quote": "newly elected middlesex 1st district representative margaret scarsdale introduced herself via zoom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members will send comments on the draft ARPA CLFRF policy directly to Mr. Jeffreys by January 4, for discussion on January 10.",
+   "quote": "they will review it and send comments directly to mr. jeffreys by january 4"
+  },
+  {
+   "decision": "Open Meeting Law permanent-changes discussion carried to the January 3 meeting.",
+   "quote": "this will be discussed further at the january 3rd meeting."
+  },
+  {
+   "decision": "The board signed the payroll deductions, accounts payable and payroll warrants listed.",
+   "quote": "the board signed a payroll deductions warrant in the amount of $855,407.13; an accounts payable warrant"
+  },
+  {
+   "decision": "Restoration of the Marshall Park Little League field is to be addressed through the budget.",
+   "quote": "any restoration of the field will need to be addressed through the budget."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA CLFRF draft allocation by category",
+   "what_was_recorded": "The chair presented proposed initial budgets for each CLFRF selection category in the draft policy, with percentages; discussed, no vote.",
+   "quote": "burials and cremations initial allocated budget: $60,000 / 1.7%",
+   "figures_as_printed": [
+    "$60,000 / 1.7%",
+    "$100,000 / 2.9%",
+    "$350,000 /10%",
+    "$750,000 21.4%",
+    "$150,000 / 4.2%",
+    "$184,000 / 5.2%",
+    "$1,913,971 / 54.6%"
+   ]
+  },
+  {
+   "topic": "30 School Street hazardous materials abatement and demolition estimate",
+   "what_was_recorded": "The project is estimated at about $350,000, including a $60,000 contingency for hazardous material removal, after further hazardous material was found.",
+   "quote": "the project right now is estimated to be about $350,000, but that includes a $60,000 contingency fund for the hazardous material removal.",
+   "figures_as_printed": [
+    "$350,000",
+    "$60,000"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed three warrants: payroll deductions, accounts payable and payroll.",
+   "quote": "the board signed a payroll deductions warrant in the amount of $855,407.13; an accounts payable warrant",
+   "figures_as_printed": [
+    "$855,407.13",
+    "$470,445.91",
+    "$1,074,115.18"
+   ]
+  },
+  {
+   "topic": "Little League field damage at Marshall Park",
+   "what_was_recorded": "Damage to the field from a vehicle is not covered by insurance, so restoration will come through the budget; no cost was stated.",
+   "quote": "any restoration of the field will need to be addressed through the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Green Communities grant spending deadline",
+   "what_was_recorded": "Grant-funded projects (LED street light, hybrid Police Cruiser, administrative expenses) must be spent by September 30; no dollar figure printed.",
+   "quote": "we have until september 30th to expend the led street light project, the hybrid police cruiser, and the administrative expenses",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Introduction as new state representative",
+   "speaker": "Margaret Scarsdale",
+   "stated_role": "Newly elected Middlesex 1st District Representative",
+   "quote": "newly elected middlesex 1st district representative margaret scarsdale introduced herself via zoom."
+  },
+  {
+   "topic": "Clogged storm drain on Lancaster Ave.",
+   "speaker": "Todd Dwyer",
+   "stated_role": "",
+   "quote": "mr. dwyer stated he received a communication from a lancaster ave. resident about a clogged storm drain."
+  },
+  {
+   "topic": "Holiday greetings",
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "quote": "mr. alonzo wished everyone a happy hanukah, christmas, or whatever it is you are celebrating."
+  },
+  {
+   "topic": "Holiday greetings and reaching out to people who have experienced loss",
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "Chairman",
+   "quote": "mr. jeffreys adding to that statement noted this is a season of love"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: new state representative",
+   "resolution": "no action; board welcomed her",
+   "tags": [
+    "public comment",
+    "state representative"
+   ],
+   "quote": "newly elected middlesex 1st district representative margaret scarsdale introduced herself via zoom."
+  },
+  {
+   "topic": "Announcements: office closures",
+   "resolution": "no action",
+   "tags": [
+    "town offices",
+    "holidays"
+   ],
+   "quote": "ms. lemieux reminded all that town offices will be closed on friday, december 23d and monday,"
+  },
+  {
+   "topic": "Library programs (communications from other boards)",
+   "resolution": "presented; no action",
+   "tags": [
+    "library",
+    "programs"
+   ],
+   "quote": "library director muir haman presented some of the programs that are available at the library and remotely."
+  },
+  {
+   "topic": "Green Communities Committee appointment",
+   "resolution": "appointed (Kim Duffy, Associate)",
+   "tags": [
+    "appointments",
+    "green communities"
+   ],
+   "quote": "to appoint kim duffy to the green communities committee as associate with a term to expire june"
+  },
+  {
+   "topic": "30 School Street bid documents",
+   "resolution": "approved invitations for bid documents",
+   "tags": [
+    "bids",
+    "30 School Street",
+    "demolition",
+    "hazardous materials"
+   ],
+   "quote": "to approve the documents as presented for the invitations for bid on the 30 school street hazardous"
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, Little League field",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "employment",
+    "Little League field",
+    "Marshall Park"
+   ],
+   "quote": "last week our interim facilities superintendent discovered damage to the little league field at marshall"
+  },
+  {
+   "topic": "Remote work policy",
+   "resolution": "approved",
+   "tags": [
+    "policy",
+    "remote work",
+    "workers compensation"
+   ],
+   "quote": "to approve the remote work policy as presented by the town manager"
+  },
+  {
+   "topic": "Appointment policy (Select Board Policies Article II, Section 2.07)",
+   "resolution": "approved as amended",
+   "tags": [
+    "policy",
+    "appointments"
+   ],
+   "quote": "to approve the appointment policy as amended and presented this evening"
+  },
+  {
+   "topic": "Volunteer and reappointment application forms",
+   "resolution": "approved with one modification",
+   "tags": [
+    "appointments",
+    "forms"
+   ],
+   "quote": "to approve the volunteer and volunteer reappointment application forms as presented with one"
+  },
+  {
+   "topic": "ARPA funding requests, evaluation criteria and process",
+   "resolution": "discussed; comments due January 4, next discussion January 10",
+   "tags": [
+    "ARPA",
+    "American Rescue Plan Act",
+    "CLFRF",
+    "grants",
+    "policy"
+   ],
+   "quote": "mr. jeffreys presented a draft lunenburg select board coronavirus local fiscal recovery fund (clfrf)"
+  },
+  {
+   "topic": "Open Meeting Law permanent changes",
+   "resolution": "continued to January 3 meeting",
+   "tags": [
+    "open meeting law",
+    "remote meetings"
+   ],
+   "quote": "this will be discussed further at the january 3rd meeting."
+  },
+  {
+   "topic": "Approval of November 8 and December 6, 2022 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the december 6 and november 8, 2022 minutes as written and presented"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ],
+   "quote": "the board signed a payroll deductions warrant in the amount of $855,407.13; an accounts payable warrant"
+  },
+  {
+   "topic": "Action items: town roads line painting",
+   "resolution": "no action; no update",
+   "tags": [
+    "roads",
+    "line painting"
+   ],
+   "quote": "ms. lemieux had no update on the town roads line painting."
+  },
+  {
+   "topic": "Finance Director retirement announcement",
+   "resolution": "no action; announced",
+   "tags": [
+    "personnel",
+    "retirement",
+    "finance"
+   ],
+   "quote": "ms. lemieux announced finance director/accountant karen brochu will be retiring july 7, 2023."
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "mr. jeffreys reported their next meetings are on january 3, 10, 17, and 24."
+  },
+  {
+   "topic": "Public comment: storm drain and holiday greetings",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "storm drain",
+    "DPW"
+   ],
+   "quote": "mr. dwyer stated he received a communication from a lancaster ave. resident about a clogged storm drain."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:57 P.M.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 8:57 p.m."
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "ARPA",
+  "American Rescue Plan Act",
+  "CLFRF",
+  "remote work policy",
+  "open meeting law",
+  "30 School Street",
+  "demolition",
+  "hazardous materials",
+  "warrants",
+  "library",
+  "Little League field",
+  "personnel retirement",
+  "committee reports",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

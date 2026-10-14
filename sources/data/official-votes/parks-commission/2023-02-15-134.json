@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2023-02-15",
  "docid": "134",
@@ -12,6 +12,194 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions, updates, and action items (e.g., K. Menard will work on wording, A. Lockwood will schedule meetings, C. Sullivan prepared a draft) but do not record any motions that were voted on. Previous minutes were tabled rather than voted on. Adjournment is noted as time only, with no recorded motion or vote.",
- "cost_usd": 0.0093564
+ "note": "OCR text (macOS Vision) of a scanned set; header reads 'approved 4/19/23'. No motions or votes are recorded in the text, so the votes list is empty; the Minutes item was tabled without a recorded vote. No dollar figures are printed; budget items are discussion of quotes, a price and an ARPA funding decision only. OCR errors are visible in places (e.g. 'The own Beach House'), so quotes were copied as read. No public comment section appears. Adjournment at 9:44 pm has no motion recorded.",
+ "cost_usd": 0.00432251,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan dave passios, and patrick hakey"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan dave passios, and patrick hakey"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan dave passios, and patrick hakey"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan dave passios, and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan dave passios, and patrick hakey"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Lunenburg Skate Park President",
+   "status": "present",
+   "quote": "anthony caiozzo, lunenburg skate park president: skate park project and design update"
+  },
+  {
+   "name": "Greg Roy",
+   "status": "present",
+   "quote": "greg roy reiterated the skate park designer has been hired and he is developing a site plan."
+  },
+  {
+   "name": "Greg LaFreniere",
+   "status": "present",
+   "quote": "next item on the agenda, greg lafreniere: lunenburg youth baseball league update"
+  },
+  {
+   "name": "C. Ruth",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Minutes item was tabled.",
+   "quote": "first item on the agenda, minutes. tabled"
+  },
+  {
+   "decision": "D. Passios will reach out to the Conservation Commission about assistance for Fitzgerald Field.",
+   "quote": "d. passios stated he will reach out to conservation commission."
+  },
+  {
+   "decision": "C. Ruth is to coordinate the baseball field work and the volunteers, as the Youth Baseball League offered.",
+   "quote": "a. lockwood indicated c. ruth would be the person responsible for coordinating the work and the volunteers."
+  },
+  {
+   "decision": "K. Menard will work on the parking enforcement wording with the Town Manager and Town Counsel.",
+   "quote": "k. menard will work on the wording with the town manager and town counsel."
+  },
+  {
+   "decision": "A. Lockwood will look into the process and requirements for forming a Marshall Park construction subcommittee.",
+   "quote": "a. lockwood will look into the process and requirements needed for the commission to form the subcommittee."
+  },
+  {
+   "decision": "A. Lockwood will try to schedule a date for the Marshall Park grants presentation requested by the Select Board.",
+   "quote": "a. lockwood will try to schedule a date that works for the commission."
+  },
+  {
+   "decision": "G. LaFreniere will share his calendar with the Commission.",
+   "quote": "g. lafreniere indicated he would share his calendar with the commission."
+  },
+  {
+   "decision": "C. Ruth is to make sure the gate is locked at Powell Field.",
+   "quote": "k. menard reminded c. ruth to make sure the gate gets locked. c. ruth agreed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Baseball field work offered by the league and quotes received",
+   "what_was_recorded": "The Youth Baseball League offered to do some work on the fields, and the town has received quotes; no dollar figure is printed.",
+   "quote": "a. lockwood stated the youth baseball league has offered to do some work, the town has received quotes."
+  },
+  {
+   "topic": "McNally snack shack contractor price",
+   "what_was_recorded": "The facilities director is seeking another contractor's price for the McNally snack shack; no dollar figure is printed.",
+   "quote": "and is reaching out to another contractor for a price."
+  },
+  {
+   "topic": "ARPA funds for Marshall Park",
+   "what_was_recorded": "The Select Board is deciding whether to use ARPA funds for Marshall Park; no dollar figure is printed.",
+   "quote": "the select board is deciding on using arpa funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "tabled",
+   "quote": "first item on the agenda, minutes. tabled",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Skate Park project and design update",
+   "resolution": "no action; update received",
+   "quote": "a. caiozzo opened the discussion with the update on the skate park project.",
+   "tags": [
+    "skate park",
+    "design",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Lunenburg Youth Baseball League update",
+   "resolution": "no action; update received",
+   "quote": "g. lafreniere discussed the lack of participation in the past and how he is looking forward to growing the program.",
+   "tags": [
+    "youth baseball",
+    "fields",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Town Manager Update / Facilities Director Updates",
+   "resolution": "no action; update received",
+   "quote": "c. ruth gave the following updates:",
+   "tags": [
+    "facilities",
+    "recreation director",
+    "beach house",
+    "landscaping",
+    "McNally snack shack"
+   ]
+  },
+  {
+   "topic": "Chair Updates (Fitzgerald Field, Open Space, Earth Day, Marshall Park, parking)",
+   "resolution": "discussed; assignments made, no vote",
+   "quote": "a. lockwood stated she and k. menard visited fitzgerald field and observed damage done to the field by",
+   "tags": [
+    "Fitzgerald Field",
+    "open space",
+    "Earth Day",
+    "Marshall Park",
+    "parking",
+    "subcommittee"
+   ]
+  },
+  {
+   "topic": "IF Marshall Park review of draft",
+   "resolution": "discussed; report to be prepared, no vote",
+   "quote": "c. sullivan prepared the first draft of the landscape and architectural services for the ifb.",
+   "tags": [
+    "Marshall Park",
+    "IFB",
+    "design",
+    "grants"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "skate park",
+  "youth baseball",
+  "Marshall Park",
+  "Fitzgerald Field",
+  "facilities",
+  "open space",
+  "parking policy",
+  "ARPA",
+  "recreation director"
+ ],
+ "dropped_unquoted_by_field": {}
 }

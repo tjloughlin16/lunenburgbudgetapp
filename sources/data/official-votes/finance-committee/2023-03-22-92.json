@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2023-03-22",
  "docid": "92",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the March 9, 2023 meeting",
+   "motion": "Approve the minutes of the March 9, 2023 meeting.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mr. Simeone",
    "outcome": "passed unanimously",
@@ -20,15 +20,478 @@
    "quote": "mr. nuzzolo motioned to approve the minutes from the march 9, 2023 meeting. mr. simeone seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Simeone",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
+   "quote": "at 10:00 p.m. mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0767771
+ "note": "Digital text, not a scan; all 5 pages read. Only two votes are recorded, both on procedural motions, and the minutes print only 'unanimously' with no tally. The minutes name no vote on any budget line, so every budget figure is a presented request or estimate, not an approved amount. The Monty Tech breakdown by municipality is referenced but its table is not in the extracted text. The Fiscal 2024 debt service heading on page 2 has no figures under it. Public comment is recorded as 'none'.",
+ "cost_usd": 0.02025221,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-chair",
+   "status": "present",
+   "quote": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chairperson evan watters, vice-chair chris menard, jay simeone, tom balish, caesar nuzzolo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, monty tech superintendent todd brown,"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, monty tech superintendent todd brown,"
+  },
+  {
+   "name": "Todd Brown",
+   "role": "Monty Tech Superintendent",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, monty tech superintendent todd brown,"
+  },
+  {
+   "name": "Tammy Crockett",
+   "role": "Monty Tech Business Director",
+   "status": "present",
+   "quote": "monty tech business director tammy crockett, monty tech school committee member barbara reynolds,"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Monty Tech School Committee member",
+   "status": "not stated",
+   "quote": "monty tech business director tammy crockett, monty tech school committee member barbara reynolds,"
+  },
+  {
+   "name": "Katherine Burnham",
+   "role": "Lunenburg Public Schools Superintendent (Dr.)",
+   "status": "present",
+   "quote": "public schools superintendent dr. katherine burnham, lunenburg public schools business manager michael cassidy,"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Lunenburg Public Schools Business manager",
+   "status": "not stated",
+   "quote": "lunenburg public schools business manager michael cassidy,"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Lunenburg School Committee Chairperson",
+   "status": "not stated",
+   "quote": "lunenburg school committee chairperson carol archambault, school committee member peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "School Committee member",
+   "status": "not stated",
+   "quote": "lunenburg school committee chairperson carol archambault, school committee member peter beardmore"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Select Board Admin: Assistant Town Manager hours",
+   "what_was_recorded": "Assistant Town Manager hours would rise from 28 to 32, costing about $10,000 more than the FY24 target, offset by a $4,432 decrease to the board/clerk line.",
+   "figures_as_printed": [
+    "$10,000",
+    "$4,432"
+   ],
+   "quote": "which will cost about $10,000 more than her fy24 target, but also will decrease the board/clerk"
+  },
+  {
+   "topic": "Town Manager Admin request",
+   "what_was_recorded": "Town Manager Admin request has no changes, with total request of $181,043.",
+   "figures_as_printed": [
+    "$181,043"
+   ],
+   "quote": "the town manager admin budget seeks no changes, with total request coming in at $181,043."
+  },
+  {
+   "topic": "Finance Committee budget",
+   "what_was_recorded": "A $500 increase to the Finance Committee budget is requested for conference admission and training.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "a $500 increase to the finance committee budget is requested to cover admission to conferences, and training."
+  },
+  {
+   "topic": "Town Accountant supplies",
+   "what_was_recorded": "Town Accountant budget seeks a $400 increase for supplies.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "the town accountant budget seeks a $400 increase for supplies."
+  },
+  {
+   "topic": "Annual Town Audit",
+   "what_was_recorded": "Annual Town Audit estimate is $2,000 higher than originally anticipated, for a total of $40,000.",
+   "figures_as_printed": [
+    "$2,000",
+    "$40,000"
+   ],
+   "quote": "annual town audit estimate is $2,000 higher than originally anticipated, total: $40,000."
+  },
+  {
+   "topic": "Legal expenses",
+   "what_was_recorded": "No change in the legal expenses budget, at $110,000.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "no change in budget for legal expenses at $110,000."
+  },
+  {
+   "topic": "Assessors Office",
+   "what_was_recorded": "Assessors Office seeks a $2,000 increase for contracted services and dues and memberships.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "assessor's office seeks a $2,000 increase to cover contracted services, as well as dues and memberships"
+  },
+  {
+   "topic": "Treasurer contracted services",
+   "what_was_recorded": "Treasurer contracted services increase by $4,500 for a fiscal advisory fee regarding unclaimed property.",
+   "figures_as_printed": [
+    "$4,500"
+   ],
+   "quote": "an increase in contracted services is up $4,500 to address a fiscal advisory fee regarding unclaimed property."
+  },
+  {
+   "topic": "Town Clerk Administration",
+   "what_was_recorded": "Town Clerk Administration request is $54,525.",
+   "figures_as_printed": [
+    "$54,525"
+   ],
+   "quote": "the town clerk administration budget request comes in at $54,525."
+  },
+  {
+   "topic": "Elections",
+   "what_was_recorded": "Elections request is $16,735, including a $400 increase in the salary line for election workers.",
+   "figures_as_printed": [
+    "$16,735",
+    "$400"
+   ],
+   "quote": "elections request is $16,735, which includes a $400 increase in the salary line for election workers."
+  },
+  {
+   "topic": "Health and Sanitation",
+   "what_was_recorded": "Health and Sanitation total FY24 request is $104,961.15, including a 7.5 percent increase to regional board of health and nursing lines.",
+   "figures_as_printed": [
+    "$104,961.15"
+   ],
+   "quote": "total fy24 request is $104,961.15."
+  },
+  {
+   "topic": "Veterans Admin and Benefits",
+   "what_was_recorded": "Veterans Admin and Benefits budget is level-funded at $110,775.",
+   "figures_as_printed": [
+    "$110,775"
+   ],
+   "quote": "veterans admin and benefits budget is level-funded, coming in at $110,775."
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "Health insurance for active employees and retirees will cost $2,856,753.60, reflecting a 5 percent retiree increase and a 6.2 percent active-employee increase.",
+   "figures_as_printed": [
+    "$2,856,753.60"
+   ],
+   "quote": "health insurance for active employees and retirees will cost $2,856,753.60, which reflects a 5 percent increase for retirees"
+  },
+  {
+   "topic": "Workers compensation and liability insurance",
+   "what_was_recorded": "Workers Compensation and Liability Insurances are estimated at a 5 percent increase, $15,137.",
+   "figures_as_printed": [
+    "$15,137"
+   ],
+   "quote": "workers compensation and liability insurances are estimated at a 5 percent increase ($15,137)"
+  },
+  {
+   "topic": "Police/Fire injured on duty insurance",
+   "what_was_recorded": "Police/Fire Injured on Duty insurance is estimated at a 5 percent increase, $3,093.",
+   "figures_as_printed": [
+    "$3,093"
+   ],
+   "quote": "police/fire injured on duty insurance is estimated at a 5 percent increase ($3,093)"
+  },
+  {
+   "topic": "Medicare costs",
+   "what_was_recorded": "Medicare costs are estimated at a 6.4 percent increase, printed as a $20,510 increase.",
+   "figures_as_printed": [
+    "$20,510"
+   ],
+   "quote": "medicare costs estimated at a 6.4 percent increase($20,510 increase)"
+  },
+  {
+   "topic": "Montachusett Planning Assessment",
+   "what_was_recorded": "Montachusett Planning Assessment increases by $104.",
+   "figures_as_printed": [
+    "$104"
+   ],
+   "quote": "montachusett planning assessment: $104 increase"
+  },
+  {
+   "topic": "Salary reserve",
+   "what_was_recorded": "Salary Reserve estimate increased from $64,000 to $100,000.",
+   "figures_as_printed": [
+    "$64,000",
+    "$100,000"
+   ],
+   "quote": "salary reserve estimate increased from $64,000 to $100,000"
+  },
+  {
+   "topic": "Training line",
+   "what_was_recorded": "Training Line increased from $2,800 to $15,000.",
+   "figures_as_printed": [
+    "$2,800",
+    "$15,000"
+   ],
+   "quote": "training line increased from $2,800 to $15,000"
+  },
+  {
+   "topic": "Chapter 70 funds to Monty Tech",
+   "what_was_recorded": "Chapter 70 funds to Monty Tech rise 9.8 percent, a $114,831 increase from FY23, totaling $1,127,113; the minutes say the state legislature decides these funds and that the town has no control over the amount spent.",
+   "figures_as_printed": [
+    "$114,831",
+    "$1,127,113"
+   ],
+   "quote": "will rise 9.8 percent, which will reflect a $114,831 increase from fy23, totaling $1,127,113 going to monty tech"
+  },
+  {
+   "topic": "Monty Tech per-pupil funding by Lunenburg",
+   "what_was_recorded": "The town will fund $12,179 per pupil for Lunenburg's 97 allotted Monty Tech spaces.",
+   "figures_as_printed": [
+    "$12,179"
+   ],
+   "quote": "the town will fund $12,179 per pupil."
+  },
+  {
+   "topic": "Lunenburg Public Schools FY24 budget",
+   "what_was_recorded": "Total FY24 school budget is $22,883,442, a 2.5 percent increase from FY23; 38.32 percent of it is built of Chapter 70 funds.",
+   "figures_as_printed": [
+    "$22,883,442"
+   ],
+   "quote": "the total budget for the schools for fy24 is $22,883,442, which reflects a 2.5 percent increase from fy23."
+  },
+  {
+   "topic": "ESSER funds",
+   "what_was_recorded": "Elementary and Secondary School Emergency Relief (ESSER) funds run out in FY23, and the schools anticipate grant and circuit breaker information.",
+   "figures_as_printed": [],
+   "quote": "elementary and secondary school emergency relief (esser) funds will run out in fy23."
+  },
+  {
+   "topic": "LED streetlight energy incentive",
+   "what_was_recorded": "Estimated energy incentive of $33,500 from the LED Streetlight Green Communities Project will be deposited into the general fund.",
+   "figures_as_printed": [
+    "$33,500"
+   ],
+   "quote": "$33,500, which will be deposited into the general fund."
+  },
+  {
+   "topic": "Municibid surplus sale",
+   "what_was_recorded": "Council on Aging steam table sold on Municibid for $525.00, deposited into the general fund.",
+   "figures_as_printed": [
+    "$525.00"
+   ],
+   "quote": "$525.00, which will be deposited into the general fund."
+  },
+  {
+   "topic": "Master Plan bid",
+   "what_was_recorded": "Master Plan bid awarded to Over Under for $153,000, which will account for two capital plan items.",
+   "figures_as_printed": [
+    "$153,000"
+   ],
+   "quote": "over under for $153,000, which will account for"
+  },
+  {
+   "topic": "Police security system",
+   "what_was_recorded": "Police Department security system repair estimated to cost $83,000; Select Board will vote on ARPA funds.",
+   "figures_as_printed": [
+    "$83,000"
+   ],
+   "quote": "arpa funds to address the problem. project estimated to cost $83,000."
+  },
+  {
+   "topic": "Public employee health insurance opt-out",
+   "what_was_recorded": "Town Manager will investigate a health insurance opt-out plan with a payment to employees, described as producing overall savings for the town; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux will meet with the pec to investigate a health insurance opt out plan."
+  },
+  {
+   "topic": "Tax assessment inspections",
+   "what_was_recorded": "Select Board authorized $10,000 for property inspections on abatement applications.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the select board has authorized spending $10,000 on property inspections regarding abatement applications."
+  },
+  {
+   "topic": "Capital plan funding from free cash",
+   "what_was_recorded": "After setting aside half the free cash for potential abatement applications, more money can go toward the capital plan; the amount has not been determined.",
+   "figures_as_printed": [],
+   "quote": "after putting aside half the free cash to address all potential abatement applications"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mr. watters called the meeting to order at 7:03 p.m. and read a statement concerning the open",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. watters announced that the association of town finance committees would meet april",
+   "tags": [
+    "conferences",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Admin, unclassified and debt service presentation",
+   "resolution": "presented",
+   "quote": "ms. lemieux presented her budget requests for",
+   "tags": [
+    "FY24 budget",
+    "town budget",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Monty Tech budget presentation",
+   "resolution": "presented",
+   "quote": "b. monty tech budget presentation: superintendent brown gave the committee an overview on how",
+   "tags": [
+    "Monty Tech",
+    "Chapter 70",
+    "regional assessment"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Schools budget presentation",
+   "resolution": "presented",
+   "quote": "c. lunenburg public schools budget presentation: dr. burnham informed the committee that the school",
+   "tags": [
+    "school budget",
+    "ESSER",
+    "staffing plan"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "received",
+   "quote": "5. town manager/finance director report:",
+   "tags": [
+    "grants",
+    "capital projects",
+    "ARPA",
+    "abatement",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Old business: Town Meeting report and capital plan",
+   "resolution": "no action",
+   "quote": "b. capital plan: after putting aside half the free cash to address all potential abatement applications",
+   "tags": [
+    "capital plan",
+    "free cash",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Minutes of March 9, 2023",
+   "resolution": "approved",
+   "quote": "mr. nuzzolo motioned to approve the minutes from the march 9, 2023 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "8. committee reports no reports",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "9. public comment none",
+   "tags": []
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "noted",
+   "quote": "10. items for future meetings second public hearing in april.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "11. next meetings april 6, april 20 (potential public hearing), april 27",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "at 10:00 p.m. mr. menard motioned to adjourn, mr. simeone seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "FY24 budget",
+  "town budget",
+  "school budget",
+  "Monty Tech",
+  "Chapter 70",
+  "health insurance",
+  "capital plan",
+  "free cash",
+  "abatement",
+  "ARPA",
+  "grants",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

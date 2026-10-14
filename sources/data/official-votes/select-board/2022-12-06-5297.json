@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-12-06",
  "docid": "5297",
@@ -12,15 +12,31 @@
  },
  "votes": [
   {
-   "motion": "To appoint Timothy Willsmer to the Planning Board until the next annual town election",
+   "motion": "Approve the minutes of October 18, 2022 as presented (the minutes also name November 1 and November 15, 2022 in the heading).",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "to approve the minutes of october 18, 2022 as presented"
+  },
+  {
+   "motion": "Appoint Timothy Willsmer to the Planning Board until the next annual town election.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: h. sroka 2\": t. dwyer to appoint timothy willsmer to the planning board until the next annual town election"
+   "quote": "to appoint timothy willsmer to the planning board until the next annual town election"
   },
   {
-   "motion": "To approve the miscellaneous license renewals",
+   "motion": "Approve the 2023 weekly entertainment licenses as presented.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to approve the weekly entertainment licenses as presented"
+  },
+  {
+   "motion": "Approve the 2023 miscellaneous and limousine license renewals (motion wording not printed; the object is inferred from the placement of the list).",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
@@ -28,16 +44,412 @@
    "quote": "motion: l. franco 2nd: t. dwyer aye"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Approve the 2023 Class I, II and III auto dealer license renewals (motion wording not printed; no result recorded).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: m. jeffreys north end subaru"
+  },
+  {
+   "motion": "Approve the alcohol licenses with the exception of JK Waterfront Inc.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to approve the alcohol licenses with the exception of jk waterfront inc."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting 2°°: l. franco vote: all in favor vote: ms. sroka-aye, mr. dwyer- aye, mr. franco-aye, mir. jeffreys-aye, mr. alonzo-",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 4,
- "note": "OCR text quality is good. Seven votes identified: two procedural (minutes approval and adjournment), five substantive (appointments and license approvals). Two votes show complete vote counts (passed 5-0), five show motions but incomplete or missing vote records.",
- "cost_usd": 0.1968376
+ "dropped_unquoted": 0,
+ "note": "Scanned text (macOS Vision OCR) with garbled header lines: the roll-call header is unreadable, so attendance is taken from the body text and vote lines only. Mr. Jeffreys is marked remote from the opening statement. Vote counts are given where the minutes print each member as aye (five names, so 5-0 is counted from those names). Two motions have no printed wording or result: the miscellaneous/limousine motion (L. Franco / T. Dwyer, \"aye\") and the auto dealer motion (M. Jeffreys / T. Dwyer). The minutes-approval motion has no recorded count. No motion is recorded for the common victualler renewals, so none is listed. Alcohol license fees ($1,450 and $700 entries) appear in a table whose OCR lines did not yield a reliable verbatim quote, so they are not listed as budget items. Ms. Sroka appears as \"H. Sroka\" in one motion and \"Ms. Sroka\" in the vote line. Board member remarks under the PUBLIC COMMENT heading on the last page are recorded as public comment as printed.",
+ "cost_usd": 0.024673109999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Alonzo",
+   "role": "Vice Chairman (presiding)",
+   "status": "present",
+   "quote": "vice chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "as mr. jeffreys was participating via zoom from home due to his not feeling well"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. sroka- aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. sroka- aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. sroka- aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux announced the passing away of resident genevieve nass."
+  },
+  {
+   "name": "Ms. Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "ms. brochu presented her report."
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "applicant for Planning Board appointment",
+   "status": "present",
+   "quote": "mr. willsmer stated i work as an engineer for mass dot doing materials engineering."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "mr. alonzo read executive assistant peterson's memorandum aloud:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board signed the previously agreed upon right of entry agreement for 45 Parmenter Road so the septic system could be installed by crossing abutting town property.",
+   "quote": "the board signed the previously agreed upon right of entry agreement for 45 parmenter road"
+  },
+  {
+   "decision": "The board signed the payroll deductions, accounts and payroll warrants listed in the minutes.",
+   "quote": "the board signed a payroll deductions warrant in the amount of $59,340.13; an accounts warrant in the amount of $651,569.04; a payroll warrant in the amount of $1256.00 and"
+  },
+  {
+   "decision": "Review of ARPA funding requests, evaluation criteria and process was tabled until another meeting.",
+   "quote": "process-this was tabled until another meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 revenue collections to date",
+   "what_was_recorded": "Finance Director reported total FY23 collections through 9/30/22 as a share of the FY23 estimates.",
+   "figures_as_printed": [
+    "$14,799,680.70",
+    "31.13%"
+   ],
+   "quote": "total collections to date are $14,799,680.70, or 31.13% of fy23 estimates through 9/30/22."
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipt estimate for FY23 and the amount collected through 9/30/2022.",
+   "figures_as_printed": [
+    "$3,168,990.50",
+    "$695,049.26",
+    "22%"
+   ],
+   "quote": "the local receipt estimate for fy23 is $3,168,990.50."
+  },
+  {
+   "topic": "Tax levy and collections",
+   "what_was_recorded": "Total FY23 tax levy net of overlay and the share collected to date.",
+   "figures_as_printed": [
+    "$30,548,749.95",
+    "$7,854,265.95",
+    "26%"
+   ],
+   "quote": "is $30,548,749.95. at this time we have collected $7,854,265.95 (26%) of the levy."
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "Tax lien revenue received to date.",
+   "figures_as_printed": [
+    "$33,225.29"
+   ],
+   "quote": "also received $33,225.29 in tax lien revenue."
+  },
+  {
+   "topic": "State aid (Cherry Sheet)",
+   "what_was_recorded": "State aid estimate based on the Governor's proposed FY2023 budget, and the share received to date.",
+   "figures_as_printed": [
+    "$10,258,395.00",
+    "$2,682,222.63",
+    "26%"
+   ],
+   "quote": "is $10,258,395.00, net of school choice and library state aid. we have received $2,682,222.63 (26%) of our state aid estimate."
+  },
+  {
+   "topic": "FY23 budgeted expenditures",
+   "what_was_recorded": "Total budgeted FY23 expenditures and the amount expended as of 9/30/22.",
+   "figures_as_printed": [
+    "$47,544,278.31",
+    "$12,789,627.75",
+    "26.9%"
+   ],
+   "quote": "we have expended $12,789,627.75 (26.9%) of budgeted expenditures as of 9/30/22."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Four warrants the board signed, with amounts.",
+   "figures_as_printed": [
+    "$59,340.13",
+    "$651,569.04",
+    "$1256.00",
+    "$991,696.03"
+   ],
+   "quote": "the board signed a payroll deductions warrant in the amount of $59,340.13; an accounts warrant in the amount of $651,569.04; a payroll warrant in the amount of $1256.00 and"
+  },
+  {
+   "topic": "Recycling Dividends Grant",
+   "what_was_recorded": "The Town received a state recycling grant, described as received annually.",
+   "figures_as_printed": [
+    "$7,800"
+   ],
+   "quote": "the town received $7,800 based on our efforts to reduce waste and increase recycling."
+  },
+  {
+   "topic": "Pathways Program funding",
+   "what_was_recorded": "State Pathways Program funding reported as expanded (a conversation with Senator Cronin, relayed by Mr. Jeffreys).",
+   "figures_as_printed": [
+    "$5 million"
+   ],
+   "quote": "the good news is that the program funding has been expanded to $5 million."
+  },
+  {
+   "topic": "Weekly entertainment license fees",
+   "what_was_recorded": "Fees paid for the weekly entertainment licenses on the list.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "motion: m. jeffreys fee paid $100.00"
+  },
+  {
+   "topic": "Auto dealer bond requirement",
+   "what_was_recorded": "Class II auto dealers must show a bond or credit line covering the required amount.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "all class ii auto dealers have provided proof of $25,000 bond or a line of sufficient credit to cover the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "not stated",
+   "topic": "passing of resident Genevieve Nass",
+   "quote": "public comment- ms. lemieux announced the passing away of resident genevieve nass."
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "not stated",
+   "topic": "thanks to Mr. Alonzo for chairing",
+   "quote": "mr. jeffreys thanked mr. alonzo for chairing the meeting this evening"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "not stated",
+   "topic": "Salvation Army toll booth fundraiser",
+   "quote": "mr. alonzo reminded all about the salvation army toll booth fundraiser happening in town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and recording notice",
+   "resolution": "opened",
+   "quote": "vice chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: passing of Genevieve Nass",
+   "resolution": "noted",
+   "quote": "public comment- ms. lemieux announced the passing away of resident genevieve nass.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Right of entry agreement, 45 Parmenter Road",
+   "resolution": "signed",
+   "quote": "the board signed the previously agreed upon right of entry agreement for 45 parmenter road",
+   "tags": [
+    "property",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Quarter FY23 financial report",
+   "resolution": "presented",
+   "quote": "ms. brochu presented her report.",
+   "tags": [
+    "budget FY23",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, Oct 18 2022",
+   "resolution": "motion; result not recorded",
+   "quote": "to approve the minutes of october 18, 2022 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed a payroll deductions warrant in the amount of $59,340.13; an accounts warrant in the amount of $651,569.04; a payroll warrant in the amount of $1256.00 and",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action items: road line painting",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo inquired about the status of the road line painting.",
+   "tags": [
+    "roads"
+   ]
+  },
+  {
+   "topic": "Town Manager goals: culture survey",
+   "resolution": "reported",
+   "quote": "status update on town manager goals",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Select Board goals",
+   "resolution": "reported",
+   "quote": "objective 3. review select board bylaws- mr. alonzo noted we have done many of these",
+   "tags": [
+    "select board goals",
+    "senior tax exemption",
+    "30 School Street"
+   ]
+  },
+  {
+   "topic": "Planning Board appointment: Timothy Willsmer",
+   "resolution": "motion; result not recorded",
+   "quote": "to appoint timothy willsmer to the planning board until the next annual town election",
+   "tags": [
+    "appointments",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, facilities",
+   "resolution": "reported",
+   "quote": "since paul visconti's last day, i have been handling any day to day oversight issues that are",
+   "tags": [
+    "town manager",
+    "facilities",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road drainage study",
+   "resolution": "reported",
+   "quote": "flat hill road drainage study",
+   "tags": [
+    "drainage",
+    "flat hill road"
+   ]
+  },
+  {
+   "topic": "Grants, employee highlights, announcements",
+   "resolution": "reported",
+   "quote": "the town was notified we received the recycling dividends grant",
+   "tags": [
+    "grants",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Old business: ARPA funding requests",
+   "resolution": "tabled",
+   "quote": "process-this was tabled until another meeting",
+   "tags": [
+    "ARPA",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Ritter Building windows and APDC",
+   "resolution": "discussed; meeting with APDC to be requested",
+   "quote": "mr. dwyer referring back to the upcoming meeting with the apdc wanted to know if other",
+   "tags": [
+    "ritter building",
+    "town center",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. dwyer reported the storm water task force met in november",
+   "tags": [
+    "committees",
+    "water",
+    "capital planning",
+    "pathways"
+   ]
+  },
+  {
+   "topic": "Annual license renewals",
+   "resolution": "approved in parts; one alcohol license excluded",
+   "quote": "tonight you have before you the first round of annual license renewals.",
+   "tags": [
+    "licenses"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "noted",
+   "quote": "mr. jeffreys thanked mr. alonzo for chairing the meeting this evening",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:36 P.M.",
+   "quote": "the meeting adjourned at 8:36 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY23 budget",
+  "licenses",
+  "alcohol licenses",
+  "appointments",
+  "Planning Board",
+  "ARPA",
+  "Town Manager report",
+  "facilities",
+  "public comment",
+  "warrants",
+  "town meeting",
+  "Ritter Building"
+ ],
+ "dropped_unquoted_by_field": {}
 }

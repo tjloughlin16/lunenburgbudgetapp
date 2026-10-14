@@ -1,0 +1,471 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2023-04-25",
+ "video_id": "DmA1kLQW8XY",
+ "video_url": "https://www.youtube.com/watch?v=DmA1kLQW8XY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2023-04-25-DmA1kLQW8XY.json",
+  "sha256": "580750a4580d4f475ad0b9bac81e7d3e1118365ae47f6bece9ba9e5fbc78cacb",
+  "caption_lines": 172,
+  "segments": 1387
+ },
+ "recording": {
+  "duration_s": 3816,
+  "duration": "1:03",
+  "spoken_chars": 41975,
+  "words_approx": 6995
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04252023-26",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-04-25-agenda-26.txt",
+   "path": "sources/meetings/board-of-assessors/2023-04-25-agenda-26.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04252023-26",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-04-25-minutes-26.txt",
+   "path": "sources/meetings/board-of-assessors/2023-04-25-minutes-26.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-13T02:37:33Z",
+  "cost_usd": 0.2918201
+ },
+ "minutes": {
+  "headline": "Assessors heard residents contest closed-door plans, voted to record the executive session, then entered it without returning.",
+  "summary": "The Board of Assessors took public comment from lakefront residents who asked for a transparent abatement process. Two residents argued the planned executive session would violate the open meeting law. The board then discussed the consultant's draft lakefront report in open session, handled routine vouchers and motor vehicle abatements, and went into executive session on non-lakefront abatements.",
+  "attendees": [
+   {
+    "name_as_heard": "Rich",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Kevin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Christine",
+    "role": "member (said to be leaving after this year)"
+   },
+   {
+    "name_as_heard": "Nate Kramer",
+    "role": "presenter (consultant on the lakefront abatement study)"
+   },
+   {
+    "name_as_heard": "Renita Swayze",
+    "role": "official (named by a resident; presence not confirmed)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 48,
+    "speaker_as_heard": "Phyllis luck, 50 Sunset Lane",
+    "topic": "Asked that inspection reports and suggested values be given to owners a week before the abatement hearing. Asked to be present or submit a summary at their hearing, and asked when residents will learn the process."
+   },
+   {
+    "t": 237,
+    "speaker_as_heard": "Carl luck, 50 Sunset Lane",
+    "topic": "Argued that discussing abatement process and the consultant's findings in executive session would violate the open meeting law. Asked that the session be recorded."
+   },
+   {
+    "t": 730,
+    "speaker_as_heard": "Mr rabbit",
+    "topic": "Supported openness and said process discussion would not expose personal data. Later questioned why the sales analysis did not use a longer period, citing the 2019 certification standards."
+   },
+   {
+    "t": 965,
+    "speaker_as_heard": "Mr Franco",
+    "topic": "Said procedure and deliberation on process must be public. Only specific abatement applications and addresses belong in executive session. Said the board cannot go beyond the scope stated on the agenda."
+   },
+   {
+    "t": 1717,
+    "speaker_as_heard": "Dave McDonald, 155 Island Road",
+    "topic": "Thanked the departing member and the consultant. Asked that one official recuse herself from his property. Suggested a three-minute limit on public speakers."
+   },
+   {
+    "t": 3687,
+    "speaker_as_heard": "Carl luck, 50 cents at Lane",
+    "topic": "Thanked the board for an open and productive meeting."
+   },
+   {
+    "t": 3747,
+    "topic": "Mr Franco said the board handled the open versus executive line properly."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "legal",
+   "personnel",
+   "public-comment",
+   "tax-rate"
+  ],
+  "votes": [
+   {
+    "t": 925,
+    "motion": "Record the executive session so it can be released to the public later.",
+    "outcome": "passed (aye called; no count audible)",
+    "procedural": false
+   },
+   {
+    "t": 3789,
+    "motion": "Enter executive session and not return to open meeting.",
+    "outcome": "not audible (aye called; no count)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 838,
+    "topic": "Redoing the town revaluation with the state",
+    "what_was_said": "A resident asked whether the whole town could be redone with the state, and said it could save a large sum. The consultant shook his head no.",
+    "figures_as_heard": [
+     "a million bucks"
+    ]
+   },
+   {
+    "t": 3420,
+    "topic": "Copying costs",
+    "what_was_said": "A passing remark in the clerical stretch about copies costing about the price of a lunch.",
+    "figures_as_heard": [
+     "32 dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 945,
+    "decision": "The executive session will be recorded and made available to the public later."
+   },
+   {
+    "t": 1939,
+    "decision": "The consultant will not share or read out pages with specific addresses in open session. Address-specific discussion is left to executive session."
+   },
+   {
+    "t": 2714,
+    "decision": "The consultant will make edits from the meeting, drop the draft watermark and issue the final report. He will also send his pivot tables to a board member."
+   },
+   {
+    "t": 3520,
+    "decision": "The motion to enter executive session would be changed to say the board will not return to open meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 48,
+    "topic": "Call to order and open meeting law notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 48,
+    "t_end": 930,
+    "topic": "Public comment on abatement process and whether the executive session is valid",
+    "resolution": "Board voted to record the executive session",
+    "tags": [
+     "public-comment",
+     "executive-session",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 930,
+    "t_end": 1960,
+    "topic": "Open versus closed session scope, and how to handle the draft report with addresses",
+    "resolution": "Agreed to discuss in open session, withholding addresses",
+    "tags": [
+     "executive-session",
+     "legal",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 1717,
+    "t_end": 1860,
+    "topic": "Resident comment from the floor on thanks, recusal request and speaker limits",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1960,
+    "t_end": 2985,
+    "topic": "Consultant's draft lakefront report: sales period, land tables, adjustments and timing of the final report",
+    "resolution": "informational; edits to follow",
+    "tags": [
+     "tax-rate",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2985,
+    "t_end": 3478,
+    "topic": "Routine business: expense vouchers, motor vehicle abatements, payroll",
+    "resolution": "informational; captions largely garbled",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3478,
+    "t_end": 3810,
+    "topic": "Closing comments and entering executive session without return",
+    "resolution": "voted to enter executive session",
+    "tags": [
+     "executive-session",
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The vote counts on both motions; only aye was heard.",
+   "Whether the voucher, motor vehicle abatement and payroll approvals were formally voted; the captions from about 2985 to 3478 are fragmentary.",
+   "Speaker identities are mostly unlabeled; names are as heard, and the chair is inferred.",
+   "The exact executive session purposes cited on the agenda are only referred to by speakers as the two purposes called out.",
+   "Whether the board member mentioned for recusal actually recused."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 257,
+    "about": "A resident argued that discussing abatement process and the consultant's work in executive session would violate the open meeting law. The chair said the board lacked answers and the matter was confidential.",
+    "sides": "A resident against the chair and board",
+    "words_as_heard": "I believe would violate open meeting law",
+    "kind": "public criticism"
+   },
+   {
+    "t": 339,
+    "about": "The resident warned the stated executive session purposes did not cover the planned discussion.",
+    "sides": "A resident against the board's planned executive session",
+    "words_as_heard": "otherwise we're all going to have a serious problem",
+    "kind": "public criticism"
+   },
+   {
+    "t": 585,
+    "about": "A resident told the board to take the question to Town Counsel. A board member said they would risk it.",
+    "sides": "A resident against board members",
+    "words_as_heard": "you could file a grievance if you wish",
+    "kind": "charged language"
+   },
+   {
+    "t": 626,
+    "about": "A resident said proceeding put the town at risk and asked that the full recording continue through executive session.",
+    "sides": "A resident against the board",
+    "words_as_heard": "putting the town at risk",
+    "kind": "public criticism"
+   },
+   {
+    "t": 2107,
+    "about": "Board members and the consultant differed on whether late 2022 sales were included in the analysis.",
+    "sides": "A board member and the consultant",
+    "words_as_heard": "this is what some of our disagreements with Nate right",
+    "kind": "members disagree"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors voted to record its executive session so the recording can be released to the public later; the vote was by voice and no count was audible.",
+    "t": 925
+   },
+   {
+    "line": "The board discussed the consultant's draft lakefront report in open session, with address-specific pages withheld and left to executive session.",
+    "t": 1939
+   },
+   {
+    "line": "The consultant will make edits from the meeting, remove the draft watermark, issue the final report and send his pivot tables to a board member.",
+    "t": 2714
+   },
+   {
+    "line": "The board then handled routine vouchers, motor vehicle abatements and payroll, and entered executive session on non-lakefront abatements without returning to open meeting.",
+    "t": 3520
+   },
+   {
+    "line": "Residents asked for a transparent abatement process and argued that closed-door discussion of process would violate the open meeting law.",
+    "t": 237
+   }
+  ],
+  "why_it_matters": [
+   "Lakefront property owners with pending abatement requests are affected by how the process is run and by the consultant's final report, which feeds the valuations the board relies on for those hearings.",
+   "The recording of the closed session, if released as the board said, is the only way residents could later check what was decided out of public view."
+  ],
+  "watch_next": [
+   "The consultant's final lakefront report, expected after the edits from this meeting.",
+   "Whether the recording of the executive session is released to the public, as the board stated."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-13T02:37:41Z",
+   "cost_usd": 0.2221149
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04252023-26",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2023-04-25-minutes-26.txt",
+   "path": "sources/meetings/board-of-assessors/2023-04-25-minutes-26.pdf"
+  },
+  "official_sha256": "dab3c70135bdeeb6234cc3b320a1ea284c38cc96227330edb4c988b5a114358c",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the one vote, to tape the executive session and release it later. They also agree on keeping address-specific talk to executive session and on the consultant's report being completed after edits. The main thing to know is that the two records give different speakers for the address commitment, and each has decisions the other lacks: ours has the executive-session motion change and two figures, the official has the open meeting law investigation and release of the report once finalized.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to record the executive session and release it later",
+    "ours": "Record the executive session so it can be released to the public later. — passed (aye called; no count audible)",
+    "official": "a motion to tape the executive session and be made available at a later point was approved by kevin fish, seconded by richard letarte.",
+    "note": "Same motion and outcome; the official minutes add the mover (Fish) and seconder (Letarte), which the captions did not capture.",
+    "t": 925
+   },
+   {
+    "kind": "agree",
+    "about": "Specific addresses only in executive session",
+    "ours": "The consultant will not share or read out pages with specific addresses in open session. Address-specific discussion is left to executive session.",
+    "official": "richard letarte agrees to discuss specific addresses only while they are in the executive session.",
+    "note": "Both put address-specific discussion in executive session. Ours credits the consultant and the official minutes credit Letarte, so check who made the commitment.",
+    "t": 1939
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who agreed to keep addresses to executive session",
+    "ours": "The consultant will not share or read out pages with specific addresses in open session.",
+    "official": "richard letarte agrees to discuss specific addresses only while they are in the executive session.",
+    "note": "Same commitment attributed to different people (consultant vs. the chairman); check the recording around t=1939 to see who spoke.",
+    "t": 1939
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Consultant's final report: edits and release",
+    "ours": "The consultant will make edits from the meeting, drop the draft watermark and issue the final report. He will also send his pivot tables to a board member.",
+    "official": "nate cramer states after the edits from today's meeting are updated then the report will be complete.",
+    "note": "Both say the report is completed after edits; ours also has the watermark removal and pivot tables, which the official minutes omit. The official minutes also have Kevin Fish saying the report becomes public once finalized, which ours does not record.",
+    "t": 2714
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Report to be made public once finalized",
+    "ours": "",
+    "official": "kevin fish states the report will be made public once it has been finalized.",
+    "note": "A decision in the official minutes that our minutes do not record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public's abatement questions to be addressed in executive session",
+    "ours": "",
+    "official": "the board members stated that these questions will be addressed during the executive session today.",
+    "note": "Our minutes do not record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board will investigate open meeting laws, no response until report is out",
+    "ours": "",
+    "official": "the board doesn't have any response to the raised questions as they are awaiting the report and will investigate the open meeting laws.",
+    "note": "Our minutes do not record this."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Motion to enter executive session amended to say the board will not return to open meeting",
+    "ours": "The motion to enter executive session would be changed to say the board will not return to open meeting.",
+    "official": "",
+    "note": "The official minutes do not mention this change to the motion, which is a decision about the meeting; check the recording near t=3520.",
+    "t": 3520
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revaluation cost figure",
+    "ours": "Redoing the town revaluation with the state: a million bucks",
+    "official": "",
+    "note": "The official minutes print no figures; the official budget item says explicitly 'no figures printed'. This figure is as heard and may be loose speech.",
+    "t": 838
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Copying costs figure",
+    "ours": "Copying costs: 32 dollars",
+    "official": "",
+    "note": "The official minutes print no copying cost.",
+    "t": 3420
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Revised tax bills and notice to homeowners",
+    "ours": "",
+    "official": "whether the homeowners be issued a revised tax bill, whether the homeowners be advised of",
+    "note": "The question about revised tax bills appears only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Rich (chair)",
+    "official": "members present: chairman richard letarte, board member kevin fish, board member",
+    "note": "Same person; ours gives only a first name, and it is the chair in both.",
+    "official_reading": "Richard Letarte"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant name",
+    "ours": "Nate Kramer (presenter (consultant on the lakefront abatement study))",
+    "official": "nate cramer states after the edits from today's meeting are updated then the report will be complete.",
+    "note": "Same person with the surname spelled differently by the captions.",
+    "official_reading": "Nate Cramer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Interim principal assessor name",
+    "ours": "Renita Swayze (official (named by a resident; presence not confirmed))",
+    "official": "interim principal assessor rena swezey,",
+    "note": "Same person with the name misheard; the official minutes list her as present.",
+    "official_reading": "Rena Swezey"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Kevin Fish",
+    "ours": "Kevin (member)",
+    "official": "members present: chairman richard letarte, board member kevin fish, board member",
+    "note": "Same person; ours gives the first name only."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Christine Higdon",
+    "ours": "Christine (member (said to be leaving after this year))",
+    "official": "christine higdon, principal access cj carroll, interim principal assessor rena swezey,",
+    "note": "Same person, listed as a board member present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: staff, Select Board member and public commenters",
+    "ours": "",
+    "official": "administrative assessing assistant sheila craigen.",
+    "note": "The official minutes list CJ Carroll, Sheila Craigen, Lou Franco, Phyllis Luck, Carl Luck, John Rabbitt and Dave McDonald, none of whom our minutes name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-13T02:38:31Z",
+   "cost_usd": 0.2412829
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-04-25",
  "docid": "26",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Tape the executive session and make it available at a later point",
+   "motion": "Move to tape the executive session and make the recording available at a later point.",
    "moved_by": "Kevin Fish",
    "seconded_by": "Richard Letarte",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion to tape the executive session and be made available at a later point was approved by kevin fish, seconded by richard letarte."
   },
   {
-   "motion": "Adjourn and enter into executive session and not return to the open meeting",
+   "motion": "Move to adjourn, enter executive session, and not return to the open meeting.",
    "moved_by": "Kevin Fish",
    "seconded_by": "Richard Letarte",
    "outcome": "passed",
@@ -29,6 +29,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. Two votes recorded, both with outcomes stated.",
- "cost_usd": 0.0720225
+ "note": "OCR text (macOS Vision), two pages; some words appear garbled (e.g. 'Principal Access' for what is likely 'Principal Assessor', 'patriciate', 'accound'); recorded as printed. Two votes recorded, both with 'approved' or 'All in favor' and no numeric count printed. No dollar figures appear in the minutes. The executive session content is not in the minutes. The 'tape' motion's wording is as OCR read it. John Rabbitt is named as speaking in discussion, with no stated role or status.",
+ "cost_usd": 0.01497511,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman richard letarte, board member kevin fish, board member"
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "christine higdon, principal access cj carroll, interim principal assessor rena swezey,"
+  },
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Access (as printed)",
+   "status": "present",
+   "quote": "christine higdon, principal access cj carroll, interim principal assessor rena swezey,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "interim principal assessor rena swezey,"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "administrative assessing assistant sheila craigen."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck - 50 sunset lane- shared that she sent a letter to the board on april 14th with"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck - 50 sunset lane - has raised concerns that the above questions are not appropriate"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "",
+   "status": "not stated",
+   "quote": "john rabbitt doesn't believe that discussing the abatement process would constitute or divulge any"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "lou franco - select board member - shares his information in relation to what should be"
+  },
+  {
+   "name": "Nate Cramer",
+   "role": "",
+   "status": "present",
+   "quote": "nate cramer states after the edits from today's meeting are updated then the report will be complete."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Public commenter, 155 Island Road",
+   "status": "present",
+   "quote": "dave mcdonald - 155 island road - agrees that more information can be made available to the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard Letarte agreed to discuss specific addresses only while they are in executive session.",
+   "quote": "richard letarte agrees to discuss specific addresses only while they are in the executive session."
+  },
+  {
+   "decision": "Board members said the public's abatement questions would be addressed during that day's executive session.",
+   "quote": "the board members stated that these questions will be addressed during the executive session today."
+  },
+  {
+   "decision": "Board said it would investigate the open meeting laws and has no response to the raised questions until the report is out.",
+   "quote": "the board doesn't have any response to the raised questions as they are awaiting the report and will investigate the open meeting laws."
+  },
+  {
+   "decision": "Kevin Fish stated the report will be made public once it has been finalized.",
+   "quote": "kevin fish states the report will be made public once it has been finalized."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revised tax bills and abatement notice for homeowners",
+   "what_was_recorded": "Chairman asked whether homeowners would be issued a revised tax bill and advised of the new value before the subsequent abatement issue; no figures printed.",
+   "quote": "whether the homeowners be issued a revised tax bill, whether the homeowners be advised of",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "abatement process suggestions and questions",
+   "quote": "phyllis luck - 50 sunset lane- shared that she sent a letter to the board on april 14th with"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "open meeting law and recording executive sessions",
+   "quote": "carl luck - 50 sunset lane - has raised concerns that the above questions are not appropriate"
+  },
+  {
+   "speaker": "Lou Franco",
+   "stated_role": "Select Board Member",
+   "topic": "open versus executive session content",
+   "quote": "lou franco - select board member - shares his information in relation to what should be"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "155 Island Road",
+   "topic": "public information and comment time limit",
+   "quote": "dave mcdonald - 155 island road - agrees that more information can be made available to the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on abatement process",
+   "resolution": "discussed; questions deferred to executive session",
+   "quote": "the board members stated that these questions will be addressed during the executive session today.",
+   "tags": [
+    "abatement",
+    "public comment",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Assessor report status (Nate Cramer)",
+   "resolution": "discussed; report to be completed after today's edits",
+   "quote": "nate cramer states after the edits from today's meeting are updated then the report will be complete.",
+   "tags": [
+    "assessment report",
+    "abatement",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Signing of vouchers, abatements and payroll",
+   "resolution": "signed by Chairman and Board Member",
+   "quote": "the signing of expense vouchers, motor vehicle abatements, and payroll by richard letarte and kevin fish.",
+   "tags": [
+    "signing",
+    "vouchers",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Adjournment to executive session",
+   "resolution": "adjourned to executive session at 4:05 PM",
+   "quote": "motion to adjourn and enter into executive session and not return to the open meeting by",
+   "tags": [
+    "adjournment",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "executive session minutes not released",
+   "quote": "executive session minutes will not be released.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "abatement",
+  "property assessment",
+  "lake properties",
+  "open meeting law",
+  "executive session",
+  "public comment",
+  "tax bills",
+  "assessor report",
+  "board of assessors"
+ ],
+ "dropped_unquoted_by_field": {}
 }

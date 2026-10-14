@@ -1,0 +1,175 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "Zoning Board of Appeals",
+ "meeting_date": "2023-02-22",
+ "video_id": "1CpChUJ_jAY",
+ "video_url": "https://www.youtube.com/watch?v=1CpChUJ_jAY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2023-02-22-1CpChUJ_jAY.json",
+  "sha256": "dd80fe2aaf6124ac8d43b76bf5c61cfc362fdd3dcfad5ce3901f3ef86f6e1116",
+  "caption_lines": 77,
+  "segments": 671
+ },
+ "recording": {
+  "duration_s": 1659,
+  "duration": "0:27",
+  "spoken_chars": 21612,
+  "words_approx": 3602
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02222023-277",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2023-02-22-agenda-277.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2023-02-22-agenda-277.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T01:42:17Z",
+  "cost_usd": 0.2821911
+ },
+ "minutes": {
+  "headline": "Zoning board granted a special permit for a dimensional variation to add on to a Sunset Lane home.",
+  "summary": "The Zoning Board of Appeals heard one petition, from the owners of 406 Sunset Lane, to raise part of an existing deck and build an addition within its footprint. The applicants' engineer presented plans and answered questions on dimensions, foundation, septic and views. A motion to grant was made and seconded, and the chair announced it passed. The board then read the post-decision instructions and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Alfred gravel",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "James bazikovski",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Patrick Callahan",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tony nacastro",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Lisa",
+    "role": "board secretary"
+   },
+   {
+    "name_as_heard": "Greg Roy",
+    "role": "presenter",
+    "remote": false
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "planning-and-zoning",
+   "policy"
+  ],
+  "votes": [
+   {
+    "t": 1510,
+    "motion": "Grant the special permit for dimensional variation to raise a portion of the existing deck and construct a new addition within a portion of the existing footprint.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1636,
+    "motion": "Adjourn the meeting.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1551,
+    "decision": "Special permit granted with the contingency of compliance with all applicable licenses and regulations; the chair read the filing, appeal and recording instructions."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 64,
+    "t_end": 230,
+    "topic": "Opening, open meeting law notice, hearing procedure",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 231,
+    "t_end": 557,
+    "topic": "Secretary reads application and correspondence for 406 Sunset Lane",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 558,
+    "t_end": 1500,
+    "topic": "Applicant's representative presents plans; board questions on dimensions, foundation, septic, height and views",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1510,
+    "t_end": 1635,
+    "topic": "Motion to grant special permit and post-decision instructions",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1636,
+    "t_end": 1650,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The individual votes on the special permit were spoken as 'bye hi hi and I'; the count is not clearly captioned.",
+   "The adjournment vote result is not captioned beyond 'all in favor'."
+  ],
+  "confidence": "moderate",
+  "contention": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals voted to grant a special permit for a dimensional variation at 406 Sunset Lane, and the chair announced it passed.",
+    "t": 1510
+   },
+   {
+    "line": "The permit lets the owners raise part of an existing deck and build an addition within part of the existing footprint.",
+    "t": 1510
+   },
+   {
+    "line": "The grant carries a contingency of compliance with all applicable licenses and regulations; the chair then read the filing, appeal and recording instructions.",
+    "t": 1551
+   },
+   {
+    "line": "The applicants' engineer presented plans and answered board questions on dimensions, foundation, septic, height and views.",
+    "t": 558
+   }
+  ],
+  "why_it_matters": [
+   "A neighbor of 406 Sunset Lane can still file an appeal under the post-decision instructions the chair read, so the permit is not final until that process runs its course; this item touches no town budget line."
+  ],
+  "watch_next": [
+   "The post-decision instructions on filing, appeal and recording, read at the end of the hearing, set the steps that follow the grant."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T01:42:25Z",
+   "cost_usd": 0.2188849
+  }
+ }
+}

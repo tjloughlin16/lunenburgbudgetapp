@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2023-05-30",
  "docid": "282",
@@ -12,55 +12,490 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 11, 2023",
+   "motion": "Approve the minutes of 4/11/23.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: dave m. to approve the minutes of 4/11/23. roll call: mike n.-aye, dave-aye, brett-aye and john-aye."
+   "quote": "to approve the minutes of 4/11/23."
   },
   {
-   "motion": "Approve the minutes of May 9, 2023",
+   "motion": "Approve the minutes of 5/9/23.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. second: brett r. to approve the minutes of 5/ 09/23. roll call: mike n.-aye, dave-aye, brett-aye and john-aye."
+   "quote": "to approve the minutes of 5/ 09/23."
   },
   {
-   "motion": "Recommend sending the ARPA proposal for manhole and pump station repairs to the Board of Selectmen for review",
+   "motion": "Recommend sending the ARPA manhole and pump station proposal to the Board of Selectmen as soon as possible for their review.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to recommend sending the arpa proposal to the board of selectmen as soon as possible for their review, considering today is tuesday and go from there as far as when they do the presentation. roll call vote: mike n.-aye, brett-aye, dave-aye and john -aye."
+   "quote": "to recommend sending the arpa proposal to the board of selectmen as soon as possible for their review,"
   },
   {
-   "motion": "Reduce the fine for A&D Crossroads from $2,525 to $750 to be paid immediately",
+   "motion": "Reduce the fine for A & D Crossroads to $750 towards its $2,525 fine, to be paid immediately.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to reduce the fine for a & d crossroads to $750 towards his $2,525 fine, to be paid immediately. roll call: mike n.-aye, dave-aye, brett-aye and john -aye."
+   "quote": "to reduce the fine for a & d crossroads to $750 towards his $2,525 fine, to be paid immediately."
   },
   {
-   "motion": "Change the Assistant Business Manager position from 24 hours benefited to under 20 hours unbenefited",
+   "motion": "Change the hours for the Assistant Business Manager position from 24 hours benefited to under 20 hours unbenefited.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: brett r. second: mike n. to change the hours for the assistant business manager position from 24 hours benefited to under 20 hours unbenefited. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye."
+   "quote": "to change the hours for the assistant business manager position from 24 hours benefited to under 20 hours"
   },
   {
-   "motion": "Adjourn the meeting at 7:44 p.m.",
+   "motion": "Adjourn the meeting at 7:44pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to adjourn at 7:44pm. roll call: mike n.-aye, dave-aye, brett-aye and john -aye."
+   "quote": "to adjourn at 7:44pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in this Sewer Commission meeting passed unanimously 4-0. The discussion of IMA Negotiations and the NFTS permit letter shows \"The Commission agreed\" but with no formal motion or roll call recorded, so those are not included as votes per the rules.",
- "cost_usd": 0.14825309999999997
+ "note": "Clean text extraction of a 4-page set of minutes with no scan issues. Votes are recorded as motions with roll calls listing four ayes (Mike N., Dave, Brett, John) but no printed tally, so outcome is 'passed' rather than a count. The minutes record no dissent. Joe Progen, Al Packard and Kevin Olsen are named in discussion and it is not clear they took part in the meeting; status is 'not stated'. Public comment headings include speeches by sitting members (Brett, Dave, John) as printed. No transfers or reserve fund movements are recorded.",
+ "cost_usd": 0.02097531,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mr. Brambila",
+   "role": "Guest (A&D Crossroads)",
+   "status": "present",
+   "quote": "guest: mr. brambila (a&d crossroads), mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest: mr. brambila (a&d crossroads), mike mackin"
+  },
+  {
+   "name": "Joe Progen",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "joe progen and jack welsh (dpw) visited the manholes on the initial list and agreed on all."
+  },
+  {
+   "name": "Al Packard",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "bill & paula met with al packard on 5/24 and things have changed."
+  },
+  {
+   "name": "Kevin Olsen",
+   "role": "Wright Pierce",
+   "status": "not stated",
+   "quote": "kevin olsen (wright pierce) said many communities are pushing back on the requirements."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission gave Dave permission to talk to Town Counsel during open hours on 6/21.",
+   "quote": "the commission gave dave permission to talk to town counsel during open hours on 6/21."
+  },
+  {
+   "decision": "The Commission agreed to Paula sending a letter in support of eliminating the testing requirements in the NFTS permit draft.",
+   "quote": "paula asked for commission approval to send a letter in support of eliminating those requirements, based on jake fleming's comments. the commission agreed."
+  },
+  {
+   "decision": "Paula and Bill will meet with Al to go over the pump station reports he submitted.",
+   "quote": "paula and bill will meet with al to go over the reports he submitted."
+  },
+  {
+   "decision": "Paula will reach out to Jake Fleming regarding the manhole lining and SKADA.",
+   "quote": "paula said she would reach out to jake fleming regarding the manhole lining and skada."
+  },
+  {
+   "decision": "Paula will include five maps of the highlighted manholes with the ARPA presentation.",
+   "quote": "paula will also include 5 maps of the highlighted manholes."
+  },
+  {
+   "decision": "The ARPA presentation was scheduled for 6/6, with John to attend.",
+   "quote": "the presentation will be 6/6 and john will be able to attend."
+  },
+  {
+   "decision": "Paula asked Mr. Brambila to have Wind River send the correctly filled-out pump-out report within a week; Mr. Brambila agreed.",
+   "quote": "paula asked mr. brambila to have wind river send the correctly filled-out report to the office within a week in order to be compliant."
+  },
+  {
+   "decision": "DPW would rent a jetting truck for two weeks and begin jetting lines, with the DPW crew doing the work and Al Packard assisting.",
+   "quote": "he will rent the truck for 2 weeks and start jetting lines."
+  },
+  {
+   "decision": "Paula will follow up with Conrad's on its grease trap report.",
+   "quote": "all reports are in except conrad's and paula will follow up with them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA request for manhole repairs",
+   "what_was_recorded": "The Commission requested $200K in ARPA funds for manhole repairs.",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "the commission is requesting $200k for manhole repairs."
+  },
+  {
+   "topic": "Manhole repair cost breakdown",
+   "what_was_recorded": "The ARPA request would repair 84 manholes at a printed total cost of $195,320, with per-location costs listed.",
+   "figures_as_printed": [
+    "$47,420",
+    "$1,890",
+    "$95,410",
+    "$6,930",
+    "$15,120",
+    "$28,550",
+    "$195,320"
+   ],
+   "quote": "the repairs to these 84 manholes would cost $195,320."
+  },
+  {
+   "topic": "Pump station component of ARPA request",
+   "what_was_recorded": "The second component of the ARPA request was $300K for pump stations, with a pump station list totalling $305K.",
+   "figures_as_printed": [
+    "$300K",
+    "$305K"
+   ],
+   "quote": "paula noted the 2nd component of the request is for $300k for the pump stations."
+  },
+  {
+   "topic": "Yearly manhole repair budget",
+   "what_was_recorded": "The yearly budget was described as limited, allowing 8-10 manholes a year against 168 in need of repair; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "paula stated the yearly budget is limited and they have only been able to fix 8-10 per year out of the 168 in need of repair."
+  },
+  {
+   "topic": "Possible clawback of ARPA funds",
+   "what_was_recorded": "Dave asked whether ARPA funds were being taken back as part of the debt ceiling discussion; no one had information. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave asked if the arpa funds were being taken back as part of the debt ceiling discussion, but no one had any information."
+  },
+  {
+   "topic": "Revised capital plan list",
+   "what_was_recorded": "The revised capital list (cranes, block heaters, a panel and a dialer at Meadowwoods) totals $45,237.80, which Paula said the budget would cover.",
+   "figures_as_printed": [
+    "$45,237.80"
+   ],
+   "quote": "the revised list is: 3 cranes, block heaters, a panel and a dialer at meadowwoods for a total of $45,237.80."
+  },
+  {
+   "topic": "SKADA system estimate",
+   "what_was_recorded": "Al Packard estimated the SKADA system for Dana and Mass 1 at $16K each.",
+   "figures_as_printed": [
+    "$16K"
+   ],
+   "quote": "al would like to put dana and mass 1 in the skada and estimates they will be $16k each."
+  },
+  {
+   "topic": "Non-compliance fine (A&D Crossroads)",
+   "what_was_recorded": "The earlier fine was $25/day plus a $50 non-compliance fee; the invoice sent on 3/1/23 was $2,525, and the Commission reduced it to $750 by vote.",
+   "figures_as_printed": [
+    "$25/day",
+    "$50",
+    "$2,525",
+    "$750"
+   ],
+   "quote": "the commission voted to implement the fine of $25/day, plus the $50 non-compliance fee."
+  },
+  {
+   "topic": "Fine invoice (A&D Crossroads)",
+   "what_was_recorded": "A fine invoice of $2,525 was sent to A&D Crossroads on 3/1/23 with no response.",
+   "figures_as_printed": [
+    "$2,525"
+   ],
+   "quote": "sent a&d crossroads a fine invoice of $2,525."
+  },
+  {
+   "topic": "Reduced fine",
+   "what_was_recorded": "Dave suggested reducing the fine to $750, with more severe fines if it happens again; the Commission agreed.",
+   "figures_as_printed": [
+    "$750"
+   ],
+   "quote": "dave suggested reducing the fine to $750, with more severe fines, if it happens again."
+  },
+  {
+   "topic": "Infiltration and inflow (I/I) jetting budget",
+   "what_was_recorded": "The FY23 budget was increased for I/I work, with $28K added for jetting.",
+   "figures_as_printed": [
+    "$28K"
+   ],
+   "quote": "they have added $28k for jetting."
+  },
+  {
+   "topic": "Jetting truck rental and contractor cost",
+   "what_was_recorded": "An estimate of $4,800 per week to rent a jetting truck was obtained; a contractor such as Clean Basins would cost $2,500-2,800/day.",
+   "figures_as_printed": [
+    "$4,800",
+    "$2,500-2,800/day"
+   ],
+   "quote": "bill noted he obtained an estimate of $4,800 per week to rent a jetting truck."
+  },
+  {
+   "topic": "DPW labor funding source",
+   "what_was_recorded": "Question of whether DPW labor for jetting comes from the Sewer or DPW budget; Bill will look into it. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "john asked if the dpw labor would come out of the sewer or dpw budget and bill will look into it."
+  },
+  {
+   "topic": "Grant for Shirley Corridor development",
+   "what_was_recorded": "The Selectmen are working on a grant for next year tied to possible commercial construction; the Commission wants input. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "paula reported the selectmen are working on a grant for next year due to the possible construction of 5 large commercial buildings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "topic": "swearing-in for new term",
+   "quote": "public comment- brett noted he was sworn in for his new term."
+  },
+  {
+   "speaker": "Dave",
+   "topic": "thanks for election work and check-in system",
+   "quote": "dave thanked jane for working at polls and said he liked the new check-in system."
+  },
+  {
+   "speaker": "Mike M.",
+   "stated_role": "Guest",
+   "topic": "interest in joining the Commission",
+   "quote": "mike m. said he enjoyed the discussions and he is interested."
+  },
+  {
+   "speaker": "John",
+   "topic": "thanks to observer Michael M.",
+   "quote": "john thanked michael m. for sitting in on the meeting and hoped he would join them."
+  },
+  {
+   "speaker": "Dave",
+   "topic": "appointment process and congratulations to Brett",
+   "quote": "dave also congratulated brett on getting 2nd place in number of votes at the town election"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "john opened the meeting at 6:00pm. and did a roll call of attendees.",
+   "tags": [
+    "procedure",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of 4/11/23",
+   "resolution": "approved",
+   "quote": "to approve the minutes of 4/11/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Minutes of 5/9/23",
+   "resolution": "approved",
+   "quote": "to approve the minutes of 5/ 09/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ARPA funding request for manholes and pump stations",
+   "resolution": "recommended to send to Board of Selectmen",
+   "quote": "arpa funding- dave asked if the arpa funds were being taken back as part of the debt ceiling discussion",
+   "tags": [
+    "ARPA",
+    "manholes",
+    "pump stations",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Non-compliance hearing, A&D Crossroads",
+   "resolution": "fine reduced to $750",
+   "quote": "appointments: a&d crossroads - non-compliance hearing - mr. brambila",
+   "tags": [
+    "grease trap",
+    "non-compliance",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Woodard & Curran infiltration and inflow review",
+   "resolution": "discussed; no action recorded",
+   "quote": "woodard & curran sewer system infiltration review- paula screen-shared her notes from the woodard & curran 2020 report.",
+   "tags": [
+    "I/I",
+    "consultant report",
+    "manholes"
+   ]
+  },
+  {
+   "topic": "IMA negotiations with Leominster",
+   "resolution": "discussed; Dave authorized to speak with Town Counsel; letter approved",
+   "quote": "ima negotiations- john stated they cannot go into executive session to discuss",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "legal",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "discussed; revised list",
+   "quote": "capital planning- bill & paula met with al packard on 5/24 and things have changed.",
+   "tags": [
+    "capital",
+    "pump stations",
+    "SKADA"
+   ]
+  },
+  {
+   "topic": "Leominster Shirley Corridor and Mass Works grant",
+   "resolution": "discussed",
+   "quote": "leominster -shirley corridor development/mass works grant - paula reported the selectmen are working on a grant",
+   "tags": [
+    "grant",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Assistant Business Manager position",
+   "resolution": "hours changed to under 20 unbenefited",
+   "quote": "assistant business manager - paula noted the position is on hold.",
+   "tags": [
+    "personnel",
+    "staffing",
+    "union"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "noted",
+   "quote": "action items- dave suggested looking into leominster's ideas on manholes.",
+   "tags": [
+    "manholes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: FY23 budget update",
+   "resolution": "discussed; jetting plan",
+   "quote": "business manager report - fy23 budget update -paula sent out the current budget and upped the amount for i/i",
+   "tags": [
+    "budget",
+    "I/I",
+    "jetting"
+   ]
+  },
+  {
+   "topic": "System maintenance update",
+   "resolution": "discussed; CTE ordered 3 cranes",
+   "quote": "system maintenance update - paula and bill gave the ok to cte to order 3 cranes.",
+   "tags": [
+    "maintenance",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance and other reports",
+   "resolution": "noted; follow-up assigned",
+   "quote": "grease trap compliance - all reports are in except conrad's",
+   "tags": [
+    "grease trap",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "john thanked michael m. for sitting in on the meeting and hoped he would join them.",
+   "tags": [
+    "public comment",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and adjournment",
+   "resolution": "adjourned at 7:44pm",
+   "quote": "to adjourn at 7:44pm.",
+   "tags": [
+    "procedure",
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "ARPA funding",
+  "manhole repairs",
+  "pump stations",
+  "I/I",
+  "SKADA",
+  "non-compliance fines",
+  "grease trap",
+  "Leominster IMA",
+  "personnel",
+  "budget",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-04-04",
  "docid": "38",
@@ -12,6 +12,209 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in these minutes. Discussions occur regarding abatement application procedures and tax assessment matters, and the Select Board concurs with a statement by the Town Manager, but no formal motions with votes (motion by/seconded by, unanimous approval, \"so voted,\" or passed/failed results) are documented. The minutes end with \"Adjourn\" but record no adjournment motion or vote.",
- "cost_usd": 0.0746855
+ "note": "No votes are recorded in this text, including the opening and the adjournment; the minutes say only \"Adjourn\" with no motion or result, so the votes list is empty. Several speaker and attendee lines have broken spacing and split words, so quotes were chosen from contiguous single-spaced stretches. Lou Franco's quote is a bare label line because his name and role are split across lines in the extract. The investigation document Mr. Jeffreys read is not in the text, and no dollar figures are printed.",
+ "cost_usd": 0.01561591,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kevin Fish",
+   "role": "Board of Assessors",
+   "status": "present",
+   "quote": "board of assessors present: kevin fish, christine higdon, richard letarte (via zoom)"
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board of Assessors",
+   "status": "present",
+   "quote": "board of assessors present: kevin fish, christine higdon, richard letarte (via zoom)"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board of Assessors",
+   "status": "remote",
+   "quote": "board of assessors present: kevin fish, christine higdon, richard letarte (via zoom)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman, Select Board",
+   "status": "present",
+   "quote": "michael-ray jeffreys, chairman"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman, Select Board",
+   "status": "present",
+   "quote": "tom alonzo, vice chairman"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk, Select Board",
+   "status": "present",
+   "quote": "select board present:"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "clerk; heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Corrine Scouten",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "William Lakso",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Jacqueline Chabot",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "carol archambault, corrine scouten"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Resident, public comment",
+   "status": "present",
+   "quote": "50 sunset lane, inquired about the"
+  },
+  {
+   "name": "Chip Gershew",
+   "role": "Resident, public comment (filed an abatement)",
+   "status": "present",
+   "quote": "gershew, laurel lane, reported he"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Treasurer/collector will rely on the January 6 date as the date of mailing, so third and fourth quarter bills are due May 1, 2023 and no interest is due on third quarter taxes between February 1 and May 1.",
+   "quote": "in essence is that the third and fourth quarter"
+  },
+  {
+   "decision": "The BOA's plan is to review 60-100 applications per week.",
+   "quote": "their plan was to review 60-100 applications per week."
+  },
+  {
+   "decision": "The Select Board concurred with the Town Manager's advice that whatever is decided be applied consistently through the entire abatement process.",
+   "quote": "the select board concurred with her statement."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax bill due dates and interest on third quarter taxes",
+   "what_was_recorded": "The Treasurer/collector's date-of-mailing decision sets third and fourth quarter bill due dates and waives interest on third quarter taxes for February 1 to May 1; no dollar amounts are printed.",
+   "quote": "no interest is due on third quarter taxes",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Tax assessment investigation: DOR contact, mailing dates, lakefront 135% assessment",
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "quote": "50 sunset lane, inquired about the"
+  },
+  {
+   "topic": "Abatement filed; wanted to attend his abatement review",
+   "speaker": "Chip Gershew",
+   "stated_role": "Laurel Lane",
+   "quote": "gershew, laurel lane, reported he"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action; comments heard on tax assessment and abatement hearings",
+   "quote": "meeting was opened at 7:12",
+   "tags": [
+    "public comment",
+    "tax assessment",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Tax bill mailing date and due dates",
+   "resolution": "no action; Treasurer/collector determined mailing date, Town Counsel and DOR discussed",
+   "quote": "in essence is that the third and fourth quarter",
+   "tags": [
+    "tax bills",
+    "due dates",
+    "Treasurer"
+   ]
+  },
+  {
+   "topic": "Workshop: tax assessment investigation review",
+   "resolution": "discussed; no action; extension letters and hearing access considered",
+   "quote": "reported 207 abatement applications have been reviewed",
+   "tags": [
+    "abatements",
+    "inspections",
+    "extensions",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Investigation framework",
+   "resolution": "excerpts from investigation document read; no action",
+   "quote": "read excerpts from a document detailing the investigation",
+   "tags": [
+    "investigation",
+    "Select Board"
+   ]
+  }
+ ],
+ "tags": [
+  "tax assessment",
+  "abatements",
+  "property inspections",
+  "tax bills",
+  "due dates",
+  "Board of Assessors",
+  "Select Board",
+  "public comment",
+  "Open Meeting Law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

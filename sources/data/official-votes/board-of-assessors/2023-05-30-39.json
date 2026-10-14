@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2023-05-30",
  "docid": "39",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn and enter into executive session and not return to the open meeting",
+   "motion": "Adjourn and enter into executive session, not returning to the open meeting.",
    "moved_by": "Kevin Fish",
    "seconded_by": "Richard Letarte",
    "outcome": "passed",
@@ -21,6 +21,128 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: adjournment with entry into executive session.",
- "cost_usd": 0.0700385
+ "note": "The text is macOS Vision OCR of the minutes, so quotes are verbatim from the OCR text and may carry its errors (e.g. \"Principal Access\" is printed that way). The one vote recorded is the adjournment motion, with \"All in favor\" and no tally, so the outcome is recorded as \"passed\" without a count. The minutes say the motion was to enter executive session and not return to open meeting, yet also say \"The meeting adjourned at 3:08 PM\"; the text does not clarify the difference. No dollar figures appear, so budget_items and transfers are empty. Public commenters' attendance status is not stated; Mary Perkins says she submitted information at the Assessors' Office.",
+ "cost_usd": 0.01349171,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Access (as printed)",
+   "status": "present",
+   "quote": "members present: principal access cj carroll, administrative assessing assistant sheila craigen,"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "members present: principal access cj carroll, administrative assessing assistant sheila craigen,"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member kevin fish, chairman richard letarte, board member john rabbitt, interim"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board member kevin fish, chairman richard letarte, board member john rabbitt, interim"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member kevin fish, chairman richard letarte, board member john rabbitt, interim"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor rena swezey."
+  },
+  {
+   "name": "Mary Perkins",
+   "role": "62 Ruth Street (public commenter)",
+   "status": "not stated",
+   "quote": "mary perkins - 62 ruth street - submitted additional information at 11:30 am at the assessors'"
+  },
+  {
+   "name": "J. Senja Morgan",
+   "role": "22 May Street (public commenter)",
+   "status": "not stated",
+   "quote": "j. senja morgan - 22 may street - wanted to add that their home is used as a seasonal cottage"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board member Kevin Fish stated that each property will be individually reviewed, in response to a public question on how valuation factors were considered.",
+   "quote": "kevin fish states that each property is going to be individually reviewed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mary Perkins",
+   "stated_role": "62 Ruth Street",
+   "topic": "Fire Road 15 right-of-way and shared driveway in assessment",
+   "quote": "the original assessment did not include the information that fire road 15 runs through her property with rights of way."
+  },
+  {
+   "speaker": "J. Senja Morgan",
+   "stated_role": "22 May Street",
+   "topic": "seasonal cottage use and rising land and building value",
+   "quote": "wanted to add that their home is used as a seasonal cottage and the land and building value has increased significantly over the past 3 years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Abatement Application Update",
+   "resolution": "no action (update given)",
+   "quote": "currently, the board is wrapping up the final batch of 250 applications.",
+   "tags": [
+    "abatements",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "tentative remote meetings listed",
+   "quote": "tentative remote meetings are scheduled for june 5 at 2:00 pm, june 6 at 3:00 pm, june 8 at 3:00 pm",
+   "tags": [
+    "meeting schedule",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action (questions raised; Fish said each property will be reviewed)",
+   "quote": "kevin fish states that each property is going to be individually reviewed.",
+   "tags": [
+    "public comment",
+    "property valuation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned into executive session",
+   "quote": "motion to adjourn and enter into executive session and not return to the open meeting by kevin fish, seconded by richard letarte.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "abatements",
+  "property assessment",
+  "public comment",
+  "tax bills",
+  "executive session",
+  "remote meetings",
+  "Lunenburg",
+  "Board of Assessors"
+ ],
+ "dropped_unquoted_by_field": {}
 }
