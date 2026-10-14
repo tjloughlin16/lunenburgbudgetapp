@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Enrolment, split into topic pages: thirteen pages and the Students and schools hub.
+"""Enrolment, split into topic pages: fifteen pages and the Students and schools hub.
 
     python3 scripts/build_enrolment_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_enrolment_topics.py --check   # fail if any output would change
@@ -27,6 +27,9 @@ are supposed to:
   fy28/public/data/monty-tech.json        DESE's Chapter 70 workbook, the district's budget
                                           books and the town's ledger line.
   fy28/public/data/sped-students.json     only for the third FY2026 enrolment count.
+  fy28/public/data/high-schools.json      build_high_schools.py: grades 9-12 headcounts and
+                                          DESE's school-level spending a pupil, high school
+                                          to high school, with Monty Tech.
   fy28/public/data/peer-spending.json     only for DESE's all-funds spending a pupil at
                                           Monty Tech, set beside the operating budget on
                                           /enrolment/monty-tech-funding as NOT the same measure.
@@ -108,6 +111,8 @@ def sources():
              'Town of Lunenburg'),
             ('state-dese/district-expenditures-by-function.xlsx',
              'Massachusetts DESE, expenditures by function, all funds'),
+            ('state-dese/school-expenditures-by-spending-category.xlsx',
+             'Massachusetts DESE, school-level per-pupil expenditure'),
             ('town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
              'Town of Lunenburg, MUNIS (records request)'),
             ('meetings/text/select-board/2021-01-19-minutes-5244.txt',
@@ -141,6 +146,7 @@ def build():
     MT = load('monty-tech.json')
     SS = load('sped-students.json')
     PS = load('peer-spending.json')
+    HS = load('high-schools.json')
     src = sources()
     S = lambda *names: [src[n] for n in names]
     U = lambda v: figure(v, C.usd(v))
@@ -1150,6 +1156,161 @@ def build():
         sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx']],  # TTPP row, see dese_total
         finding_figures={'a': P(sh(rv6['ch70'])), 'y': F(2026), 'b': P(sh(rv6['assessments']))},
         finding_allow=CH70)
+
+    # ------------------------------------------------ high school to high school
+    # LIKE FOR LIKE. Monty Tech enrols grades 9-12 only, so it is set beside the GRADES 9-12
+    # of each comparison district (build_high_schools.py checks its whole district equals its
+    # grades 9-12), and its high school beside theirs on ONE DESE measure, in the years each
+    # school enrolled nothing below grade 9. Nothing divides a cost by a count.
+    G = ('9–12', 'grades 9–12', 'Grades 9–12', 'grade 9', 'K–12')
+    hd = {d['lea']: d for d in HS['enrolment']['districts']}
+    LUN, MTL = '01620000', '08320000'
+    e0, e1 = HS['enrolment']['first_fy'], HS['enrolment']['last_fy']
+    if e0 != b0 or e1 != last_fy:
+        fail('high-schools.json spans FY%d-FY%d, the enrolment pages FY%d-FY%d' % (e0, e1, b0, last_fy))
+    if hd[LUN]['g912'][str(last_fy)] != d26['g912']:
+        fail('high-schools.json and enrollment.json disagree on Lunenburg’s grades 9–12')
+    short = lambda d: 'Monty Tech' if d['lea'] == MTL else d['district'].replace(' School District', '')
+    chg = {}
+    for lea, d in hd.items():
+        ys = sorted(int(y) for y in d['g912'])
+        a, b = d['g912'][str(ys[0])], d['g912'][str(e1)]
+        chg[lea] = dict(first=ys[0], a=a, b=b, pct=p100((b - a) / a))
+    full = [l for l in hd if chg[l]['first'] == e0]
+    late = [l for l in hd if chg[l]['first'] != e0]
+    k12 = [l for l in full if l != MTL]
+    fell = [l for l in k12 if chg[l]['pct'] < 0]
+    if len(fell) != len(k12) or chg[MTL]['pct'] <= 0:
+        fail('the high school enrolment conclusion assumes every K-12 district fell and Monty '
+             'Tech rose; that is no longer so')
+    lo = max(k12, key=lambda l: chg[l]['pct'])
+    hi = min(k12, key=lambda l: chg[l]['pct'])
+    peers_ = [l for l in hd if l not in (LUN, MTL)]
+    regional = sum(1 for l in peers_ if hd[l]['regional'])
+    mem = HS['monty_tech_members']
+    ef = {}
+    for l in full:
+        ef[l] = f('c-' + l, P(abs(chg[l]['pct'])), '%s, grades 9–12, %s, %s to %s'
+                  % (short(hd[l]), 'fall' if chg[l]['pct'] < 0 else 'rise', C.fy(e0), C.fy(e1)),
+                  'estimate', {'a': F(e0), 'b': F(e1)}, allow=G)
+    for l in late:
+        ef[l] = f('c-' + l, P(abs(chg[l]['pct'])), '%s, %s, %s to %s'
+                  % (short(hd[l]), 'fall' if chg[l]['pct'] < 0 else 'rise', C.fy(chg[l]['first']),
+                     C.fy(e1)), 'estimate', {'a': F(chg[l]['first']), 'b': F(e1)})
+    ef['n-lun'] = f('n-lun', N(chg[LUN]['b'], 'children'), 'Lunenburg, grades 9–12, %s'
+                    % C.fy(e1), 'published', {'y': F(e1)}, allow=G)
+    ef['n-mt'] = f('n-mt', N(chg[MTL]['b'], 'children'), 'Monty Tech, all of it grades 9–12, %s'
+                   % C.fy(e1), 'published', {'y': F(e1)}, allow=G)
+    ef['mem'] = f('mem', N(mem['count'], 'towns'), 'Monty Tech’s member towns', 'published')
+    yrs_e = list(range(e0, e1 + 1))
+    out['high-school-enrolment'] = TP.page(
+        'high-school-enrolment',
+        'Lunenburg’s grades 9–12 fell %s from %s to %s; Monty Tech, all grades 9–12, rose %s.'
+        % (C.pct(abs(chg[LUN]['pct'])), C.fy(e0), C.fy(e1), C.pct(chg[MTL]['pct'])),
+        list(ef.values()),
+        [con('All %s K–12 districts counted since %s fell in grades 9–12, by %s to %s.'
+             % (C.num(len(k12)), C.fy(e0), C.pct(abs(chg[lo]['pct'])), C.pct(abs(chg[hi]['pct']))),
+             ['c-' + l for l in k12] + ['n-lun'],
+             {'n': N(len(k12)), 'y': F(e0), 'a': P(abs(chg[lo]['pct'])), 'b': P(abs(chg[hi]['pct']))},
+             allow=G,
+             notes=[step('Births, families moving and Monty Tech admitting more all move these '
+                         'counts; nothing here tests which.', 'hypothesis')]),
+         con('Monty Tech rose %s over the same years, to %s pupils.'
+             % (C.pct(chg[MTL]['pct']), C.num(chg[MTL]['b'])), ['c-' + MTL, 'n-mt'],
+             {'a': P(chg[MTL]['pct']), 'b': N(chg[MTL]['b'])},
+             notes=[step('Its count is pupils from all %s member towns, not Lunenburg’s alone.'
+                         % C.num(mem['count']), 'gap', {'n': N(mem['count'])},
+                         closes='Monty Tech’s enrolment by member town and year, which only '
+                                'its October report gives')]),
+         con('Monty Tech draws from %s member towns; %s of the %s comparison districts are '
+             'regional too.' % (C.num(mem['count']), C.num(regional), C.num(len(peers_))),
+             ['mem'] + ['c-' + l for l in peers_],
+             {'n': N(mem['count']), 'r': N(regional), 'p': N(len(peers_))})]
+        + ([con('%s, counted from %s, its first year in DESE’s file, %s %s.'
+                % (short(hd[late[0]]), C.fy(chg[late[0]]['first']),
+                   'fell' if chg[late[0]]['pct'] < 0 else 'rose', C.pct(abs(chg[late[0]]['pct']))),
+                ['c-' + late[0]], {'y': F(chg[late[0]]['first']), 'a': P(abs(chg[late[0]]['pct']))})]
+           if len(late) == 1 else []),
+        chart=TP.ranking('High school enrolment change, district by district',
+                         [(short(hd[l]), chg[l]['pct']) for l in full], '%',
+                         highlight=[short(hd[LUN]), 'Monty Tech'], basis='estimate', decimals=1,
+                         note='%s to %s, DESE’s 1 October headcount in grades 9–12; Monty Tech '
+                              'is all grades 9–12. The change is our arithmetic.'
+                              % (C.fy(e0), C.fy(e1)),
+                         note_figures={'a': F(e0), 'b': F(e1)},
+                         note_allow=('1 October',) + G),
+        table=dict(caption='Grades 9–12 headcount, by district and year', views=[dict(
+            key='g912', label='%s to %s' % (C.fy(e0), C.fy(e1)), total_col=-1,
+            kinds=['ledger'] * len(hd), columns=[short(hd[l]) for l in hd],
+            rows=[dict(label=C.fy(y), cells=[(C.num(hd[l]['g912'][str(y)])
+                                              if hd[l]['g912'].get(str(y)) is not None else None)
+                                             for l in hd]) for y in reversed(yrs_e)],
+            note='DESE’s 1 October headcount, district rows, grades 9 to 12 summed. Monty Tech '
+                 'is its whole district. A blank is a year before the district existed.')]),
+        sources=S('dese-enrollment-by-grade.xlsx')
+        + [dict(label='FY27 Monty Tech Budget Presentation — DESE’s apportionment sheet, the '
+                      'member towns, PDF page 24', href=mem['docs_url'])],
+        finding_figures={'a': P(abs(chg[LUN]['pct'])), 'y': F(e0), 'z': F(e1),
+                         'b': P(chg[MTL]['pct'])}, finding_allow=G)
+
+    sp = HS['spending']
+    s1 = sp['last_fy']
+    ss = {s['lea']: s for s in sp['schools']}
+    if not all(ss[l]['years'][str(s1)]['grades_9_12_only'] for l in ss):
+        fail('a high school enrolled a grade below 9 in FY%d; the ranking compares all of them' % s1)
+    for l in (LUN, MTL):
+        if not all(v['grades_9_12_only'] for v in ss[l]['years'].values()):
+            fail('Lunenburg High or Monty Tech enrolled a grade below 9 in some year')
+    tot = lambda l, y: ss[l]['years'][str(y)]['total']
+    s0 = sp['first_fy']
+    nm = lambda l: ss[l]['school'].replace('Montachusett Regional Vocational Technical', 'Monty Tech')
+    order = sorted(ss, key=lambda l: -tot(l, s1))
+    rank = order.index(LUN) + 1
+    top = order[0]
+    sfacts = [f('s-' + l, U(tot(l, s1)), '%s, a pupil, %s' % (nm(l), C.fy(s1)), 'published',
+                {'y': F(s1)}) for l in order]
+    sfacts += [f('s0-lun', U(tot(LUN, s0)), '%s, a pupil, %s' % (nm(LUN), C.fy(s0)), 'published',
+                 {'y': F(s0)}),
+               f('s0-mt', U(tot(MTL, s0)), '%s, a pupil, %s' % (nm(MTL), C.fy(s0)), 'published',
+                 {'y': F(s0)})]
+    gl = p100(tot(LUN, s1) / tot(LUN, s0) - 1)
+    gm = p100(tot(MTL, s1) / tot(MTL, s0) - 1)
+    left = [(nm(l), y) for l in ss for y, v in sorted(ss[l]['years'].items())
+            if not v['grades_9_12_only']]
+    left_schools = sorted({x[0] for x in left})
+    out['high-school-spending'] = TP.page(
+        'high-school-spending',
+        'Monty Tech spent %s a pupil in %s and Lunenburg High %s, on one DESE measure.'
+        % (C.usd(tot(MTL, s1)), C.fy(s1), C.usd(tot(LUN, s1))),
+        sfacts,
+        [con('Monty Tech spent %s a pupil in %s, %s more than Lunenburg High.'
+             % (C.usd(tot(MTL, s1)), C.fy(s1), C.usd(tot(MTL, s1) - tot(LUN, s1))),
+             ['s-' + MTL, 's-' + LUN],
+             {'a': U(tot(MTL, s1)), 'y': F(s1), 'b': U(tot(MTL, s1) - tot(LUN, s1))},
+             notes=[step('A vocational school runs trade shops alongside academic classes; '
+                         'nothing here tests whether that is the difference.', 'hypothesis')]),
+         con('Lunenburg High ranked %s of %s high schools here; %s spent the most.'
+             % (C.num(rank), C.num(len(order)), nm(top)), ['s-' + l for l in order],
+             {'r': N(rank), 'n': N(len(order))}),
+         con('From %s to %s Lunenburg High’s figure rose %s and Monty Tech’s %s.'
+             % (C.fy(s0), C.fy(s1), C.pct(gl), C.pct(gm)), ['s0-lun', 's-' + LUN, 's0-mt', 's-' + MTL],
+             {'y': F(s0), 'z': F(s1), 'a': P(gl), 'b': P(gm)})],
+        chart=TP.ranking('High school spending a pupil', [(nm(l), tot(l, s1)) for l in order], '$',
+                         highlight=[nm(LUN), nm(MTL)],
+                         note='%s. DESE’s school-level Total Expenditures: state, local and federal '
+                              'spending a pupil. No capital or debt.' % C.fy(s1),
+                         note_figures={'y': F(s1)}),
+        table=dict(caption='High school spending a pupil, by year', views=[dict(
+            key='pp', label='%s to %s' % (C.fy(s0), C.fy(s1)), total_col=-1,
+            kinds=['ledger'] * len(order), columns=[nm(l) for l in order],
+            rows=[dict(label=C.fy(y), cells=[
+                C.usd(tot(l, y)) if ss[l]['years'].get(str(y), {}).get('grades_9_12_only') else None
+                for l in order]) for y in range(s1, s0 - 1, -1)],
+            note='DESE’s school-level per-pupil expenditure, Total A+B+C. A blank is a year the '
+                 'school also enrolled grades below 9 (%s), so it is not compared.'
+                 % ', '.join(left_schools))]),
+        sources=S('school-expenditures-by-spending-category.xlsx', 'dese-enrollment-by-grade.xlsx'),
+        finding_figures={'a': U(tot(MTL, s1)), 'y': F(s1), 'b': U(tot(LUN, s1))})
 
     # ------------------------------------------------ the hub
     h = {}

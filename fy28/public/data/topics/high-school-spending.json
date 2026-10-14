@@ -1,0 +1,516 @@
+{
+ "category": "enrolment",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [
+   "Lunenburg High",
+   "Monty Tech"
+  ],
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "FY2025. DESE’s school-level Total Expenditures: state, local and federal spending a pupil. No capital or debt."
+  },
+  "rows": [
+   {
+    "label": "Monty Tech",
+    "texts": [
+     "$26,407"
+    ],
+    "total": "$26,407",
+    "value": 26407
+   },
+   {
+    "label": "The Bromfield High School",
+    "texts": [
+     "$25,639"
+    ],
+    "total": "$25,639",
+    "value": 25639
+   },
+   {
+    "label": "Groton Dunstable Regional",
+    "texts": [
+     "$21,561"
+    ],
+    "total": "$21,561",
+    "value": 21561
+   },
+   {
+    "label": "Ayer Shirley Regional High School",
+    "texts": [
+     "$20,982"
+    ],
+    "total": "$20,982",
+    "value": 20982
+   },
+   {
+    "label": "Lunenburg High",
+    "texts": [
+     "$19,644"
+    ],
+    "total": "$19,644",
+    "value": 19644
+   },
+   {
+    "label": "North Middlesex Regional",
+    "texts": [
+     "$19,190"
+    ],
+    "total": "$19,190",
+    "value": 19190
+   },
+   {
+    "label": "Oakmont Regional High School",
+    "texts": [
+     "$17,484"
+    ],
+    "total": "$17,484",
+    "value": 17484
+   }
+  ],
+  "stack": null,
+  "title": "High school spending a pupil",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$26,407",
+     "unit": "",
+     "value": 26407
+    },
+    "b": {
+     "text": "$6,763",
+     "unit": "",
+     "value": 6763
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A vocational school runs trade shops alongside academic classes; nothing here tests whether that is the difference."
+    }
+   ],
+   "rests_on": [
+    "s-08320000",
+    "s-01620000"
+   ],
+   "text": "Monty Tech spent $26,407 a pupil in FY2025, $6,763 more than Lunenburg High."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "r": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "s-08320000",
+    "s-01250000",
+    "s-06730000",
+    "s-06160000",
+    "s-01620000",
+    "s-07350000",
+    "s-06100000"
+   ],
+   "text": "Lunenburg High ranked 5 of 7 high schools here; Monty Tech spent the most."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "35.7%",
+     "unit": "",
+     "value": 35.74735678253058
+    },
+    "b": {
+     "text": "29.0%",
+     "unit": "",
+     "value": 28.98451619205784
+    },
+    "y": {
+     "text": "FY2019",
+     "unit": "fiscal year",
+     "value": 2019
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "s0-lun",
+    "s-01620000",
+    "s0-mt",
+    "s-08320000"
+   ],
+   "text": "From FY2019 to FY2025 Lunenburg High’s figure rose 35.7% and Monty Tech’s 29.0%."
+  }
+ ],
+ "facts": [
+  {
+   "id": "s-08320000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$26,407",
+    "unit": "",
+    "value": 26407
+   }
+  },
+  {
+   "id": "s-01250000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "The Bromfield High School, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$25,639",
+    "unit": "",
+    "value": 25639
+   }
+  },
+  {
+   "id": "s-06730000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Groton Dunstable Regional, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$21,561",
+    "unit": "",
+    "value": 21561
+   }
+  },
+  {
+   "id": "s-06160000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Ayer Shirley Regional High School, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$20,982",
+    "unit": "",
+    "value": 20982
+   }
+  },
+  {
+   "id": "s-01620000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg High, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$19,644",
+    "unit": "",
+    "value": 19644
+   }
+  },
+  {
+   "id": "s-07350000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "North Middlesex Regional, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$19,190",
+    "unit": "",
+    "value": 19190
+   }
+  },
+  {
+   "id": "s-06100000",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Oakmont Regional High School, a pupil, FY2025"
+   },
+   "value": {
+    "text": "$17,484",
+    "unit": "",
+    "value": 17484
+   }
+  },
+  {
+   "id": "s0-lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg High, a pupil, FY2019"
+   },
+   "value": {
+    "text": "$14,471",
+    "unit": "",
+    "value": 14471
+   }
+  },
+  {
+   "id": "s0-mt",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech, a pupil, FY2019"
+   },
+   "value": {
+    "text": "$20,473",
+    "unit": "",
+    "value": 20473
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$26,407",
+    "unit": "",
+    "value": 26407
+   },
+   "b": {
+    "text": "$19,644",
+    "unit": "",
+    "value": 19644
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Monty Tech spent $26,407 a pupil in FY2025 and Lunenburg High $19,644, on one DESE measure."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "high-school-spending",
+ "kind": "topic",
+ "path": "/enrolment/high-school-spending",
+ "said": [],
+ "shelves": [
+  "enrolment"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/school-expenditures-by-spending-category.xlsx",
+   "label": "Massachusetts DESE, school-level per-pupil expenditure — school-expenditures-by-spending-category.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "High school spending a pupil, by year",
+  "views": [
+   {
+    "columns": [
+     "Monty Tech",
+     "The Bromfield High School",
+     "Groton Dunstable Regional",
+     "Ayer Shirley Regional High School",
+     "Lunenburg High",
+     "North Middlesex Regional",
+     "Oakmont Regional High School"
+    ],
+    "key": "pp",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2019 to FY2025",
+    "note": "DESE’s school-level per-pupil expenditure, Total A+B+C. A blank is a year the school also enrolled grades below 9 (The Bromfield High School), so it is not compared.",
+    "rows": [
+     {
+      "cells": [
+       "$26,407",
+       "$25,639",
+       "$21,561",
+       "$20,982",
+       "$19,644",
+       "$19,190",
+       "$17,484"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$25,500",
+       "$24,744",
+       "$20,472",
+       "$19,413",
+       "$18,224",
+       "$18,486",
+       "$16,121"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$24,580",
+       null,
+       "$20,399",
+       "$20,738",
+       "$18,664",
+       "$18,164",
+       "$15,764"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$23,323",
+       null,
+       "$18,761",
+       "$20,111",
+       "$16,837",
+       "$17,240",
+       "$15,231"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "$22,166",
+       null,
+       "$17,907",
+       "$19,720",
+       "$15,430",
+       "$16,285",
+       "$15,487"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "$20,866",
+       null,
+       "$15,872",
+       "$16,674",
+       "$14,518",
+       "$14,338",
+       "$13,765"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "$20,473",
+       null,
+       "$15,529",
+       "$16,674",
+       "$14,471",
+       "$14,562",
+       "$13,892"
+      ],
+      "label": "FY2019"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
+ "title": "High school spending"
+}

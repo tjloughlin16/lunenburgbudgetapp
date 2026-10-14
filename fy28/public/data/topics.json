@@ -195,6 +195,13 @@
      ]
     },
     {
+     "title": "High school to high school",
+     "topics": [
+      "high-school-enrolment",
+      "high-school-spending"
+     ]
+    },
+    {
      "title": "Students with plans",
      "topics": [
       "students-with-an-iep",
@@ -2026,6 +2033,19 @@
    ],
    "title": "High-needs students"
   },
+  "high-school-enrolment": {
+   "finding": "Lunenburg’s grades 9–12 fell 30.0% from FY2008 to FY2026; Monty Tech, all grades 9–12, rose 6.0%.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "high-school-enrolment",
+   "minutes": 1,
+   "path": "/enrolment/high-school-enrolment",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "High school enrolment"
+  },
   "high-school-sections": {
    "finding": "Lunenburg High ran 247 course sections in SY2025 against 225 in SY2017, with 438 students against 435.",
    "generator": "scripts/build_school_programs_topics.py",
@@ -2038,6 +2058,19 @@
     "school-programs"
    ],
    "title": "High school sections"
+  },
+  "high-school-spending": {
+   "finding": "Monty Tech spent $26,407 a pupil in FY2025 and Lunenburg High $19,644, on one DESE measure.",
+   "generator": "scripts/build_enrolment_topics.py",
+   "home": "enrolment",
+   "id": "high-school-spending",
+   "minutes": 1,
+   "path": "/enrolment/high-school-spending",
+   "ready": true,
+   "shelves": [
+    "enrolment"
+   ],
+   "title": "High school spending"
   },
   "hiring-versus-placing": {
    "finding": "Placements fell while in-district budgets rose; nothing published shows one caused the other.",

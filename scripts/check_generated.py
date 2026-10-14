@@ -538,6 +538,12 @@ CHECKS = [
     # extracted text this page cites. Any one of those going quiet leaves every number on
     # the page a faithful copy and a sentence beside it wrong.
     ('build_monty_tech.py', ['--check']),
+    # High school to high school, /enrolment/high-school-*. Refuses to write unless Monty
+    # Tech's whole district still equals its grades 9-12, the comparison districts' grades
+    # 9-12 still equal lunenburg.db, every school's A+B+C still foots to DESE's printed
+    # total, and the spending file still has no capital or debt category. Slow: it reads two
+    # DESE workbooks of 26 and 29 MB.
+    ('build_high_schools.py', ['--check']),
     # School transportation, /analysis/transportation. The generator refuses to write unless
     # the Finance Committee workbook still ties to the MUNIS reports line by line, every
     # transportation account is classified, the budget book's FY2025 and FY2026 columns still
