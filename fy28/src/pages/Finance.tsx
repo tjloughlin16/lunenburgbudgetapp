@@ -1,10 +1,9 @@
 import { JobsLink } from '../components/JobPostings'
 import { BoardNav } from '../components/BoardNav'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Tab } from '../routes'
 import { boardFinanceSlugFromPath, departmentSlugFromPath } from '../routes'
 import { usd } from '../model/engine'
-import { FullVersion } from '../components/FullVersion'
 import { Conclusions, Grain, H2, Body, NotEstablished, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion } from '../components/report'
 
@@ -143,7 +142,7 @@ function Standfirst({ d, slug }: { d: Payload; slug: string }) {
   if (t.special_revenue_held !== null) parts.push(<>holds {short(t.special_revenue_held)} in {o.counts['special-revenue']} funds outside the budget</>)
   if (t.trust_held !== null) parts.push(<>{short(t.trust_held)} in {(o.counts.trust ?? 0) + (o.counts.stabilization ?? 0)} trust and stabilization funds</>)
   if (t.revenue_estimate !== null && o.counts.revenue) parts.push(<>raises an estimated {short(t.revenue_estimate)} in {o.counts.revenue} revenue lines</>)
-  return <>The {o.name} {parts.length ? <>{parts.map((p, i) => <span key={i}>{i ? (i === parts.length - 1 ? ', and ' : ', ') : ''}{p}</span>)}.</> : <>owns {o.owns.length} accounts.</>} {o.owns.length} accounts in all, each one below with what it is for and what it has done.{slug !== 'school-committee' ? <> <a className="underline" href="/accounts">Every account, once</a>.</> : null}</>
+  return <>The {o.name} {parts.length ? <>{parts.map((p, i) => <span key={i}>{i ? (i === parts.length - 1 ? ', and ' : ', ') : ''}{p}</span>)}.</> : <>owns {o.owns.length} accounts.</>} <a className="underline" href="#accounts">{o.owns.length} accounts in all</a>, each with what it is for and what it has done.{slug !== 'school-committee' ? <> <a className="underline" href="/accounts">Every account, once</a>.</> : null}</>
 }
 
 function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclusions?: Conclusion[] }) {
@@ -153,8 +152,12 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
   const related = o.relates.map(i => d.measures[i])
   const [top, rest] = splitConclusions(conclusions)
   const isBoard = o.kind === 'board'
+  const tab = useFinanceTab()
+  const nAccounts = owns.length
   return (
     <>
+      <FinanceTabs tab={tab} nAccounts={nAccounts} />
+      <div hidden={tab !== 'overview'} role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
       <Grain>{d.grain}</Grain>
       {isBoard && <p className="text-[13px] mt-3"><a className="underline" href={`/boards/${slug}`}>&larr; the {o.name}&rsquo;s board page</a> · <a className="underline" href="/accounts">every account, once</a></p>}
       {/* JOB POSTINGS this body owns, if any -- the same block the board pages carry. */}
@@ -200,7 +203,10 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
         </>
       )}
 
-      <FullVersion what="every account, with its history">
+      <p className="text-[14px] mt-8"><a className="underline font-semibold" href="#accounts"
+        style={{ color: 'var(--series-cost)' }}>Every account, with its history &rarr;</a></p>
+      </div>
+      <div hidden={tab !== 'accounts'} role="tabpanel" id="panel-accounts" aria-labelledby="tab-accounts">
         {byKind.map(([k, ms]) => (
           <section key={k}>
             <H2 id={k}>{KIND_TITLE[k]}</H2>
@@ -228,8 +234,52 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
           'A trend for the appropriation lines. The annual reports print them, but the extract cannot yet say which printed column is which for most years (rule 13), so none is shown until it can.',
           ...d.gaps.map(g => g.what),
         ]} closes="The FY2025 special-revenue and trust reports, and the year-to-date budget reports for FY2023–FY2025, from the Town Accountant — the same printouts the FY26 ones are." />
-      </FullVersion>
+      </div>
     </>
+  )
+}
+
+/* ---- the two tabs ----------------------------------------------------------------
+ * ACCOUNTS IS A TAB WITH AN ADDRESS. TJ, 14 October 2026: "i need the 'funds/accounts' to
+ * be a tab in the /finance page for the boards. its buried in an expansion section and i
+ * cant share that with people directly." The accounts sat behind the "full version" fold,
+ * which has no address of its own, so a link could only ever land on the overview.
+ * `#accounts` now opens the Accounts tab, so /boards/<slug>/finance#accounts is a link a
+ * person can send. BOTH panels stay in the DOM and one is `hidden`, so the prerendered
+ * page and the search index still carry every account. */
+type FinanceTab = 'overview' | 'accounts'   // 'overview' is labelled Summary: the board's own tab row already has an Overview
+const tabFromHash = (): FinanceTab => (window.location.hash === '#accounts' ? 'accounts' : 'overview')
+
+function useFinanceTab(): FinanceTab {
+  const [tab, setTab] = useState<FinanceTab>(tabFromHash)
+  useEffect(() => {
+    const on = () => setTab(tabFromHash())
+    window.addEventListener('hashchange', on)
+    return () => window.removeEventListener('hashchange', on)
+  }, [])
+  return tab
+}
+
+function FinanceTabs({ tab, nAccounts }: { tab: FinanceTab; nAccounts: number }) {
+  const item = (id: FinanceTab, label: string) => {
+    const on = tab === id
+    return (
+      <a role="tab" id={`tab-${id}`} aria-selected={on} aria-controls={`panel-${id}`}
+        href={id === 'accounts' ? '#accounts' : '#overview'}
+        onClick={e => {
+          // Overview drops the hash rather than leaving "#overview" on a shared link.
+          if (id === 'overview') { e.preventDefault(); history.pushState(null, '', window.location.pathname + window.location.search); window.dispatchEvent(new HashChangeEvent('hashchange')) }
+        }}
+        className="px-1 pb-2 -mb-px text-[15px] font-semibold border-b-2 no-underline"
+        style={on ? { borderColor: 'var(--series-cost)', color: 'var(--text-primary)' }
+                  : { borderColor: 'transparent', color: 'var(--text-muted)' }}>{label}</a>
+    )
+  }
+  return (
+    <div role="tablist" aria-label="Finances" className="mt-6 flex gap-6 border-b" style={{ borderColor: 'var(--grid)' }}>
+      {item('overview', 'Summary')}
+      {item('accounts', `Accounts (${nAccounts})`)}
+    </div>
   )
 }
 
