@@ -1,0 +1,66 @@
+{
+  "posted": null,
+  "about": "Follow-up: the tax bill that rose while the rate fell, as the hook; then every subject on the site is short pages like it, with /reports as the door.",
+  "data": {
+    "m": "app-metrics.json",
+    "cats": "topics.json#categories",
+    "all": "topics.json#topics",
+    "transportation": "topics.json#categories[id=transportation]",
+    "athletics": "topics.json#categories[id=athletics]",
+    "special_education": "topics.json#categories[id=special-education]",
+    "enrolment": "topics.json#categories[id=enrolment]",
+    "school_staffing": "topics.json#categories[id=school-staffing]",
+    "state_aid": "topics.json#categories[id=state-aid]",
+    "school_spending": "topics.json#categories[id=school-spending]",
+    "school_programs": "topics.json#categories[id=school-programs]",
+    "town_reserves": "topics.json#categories[id=town-reserves]",
+    "fy2026_closeout": "topics.json#categories[id=fy2026-closeout]",
+    "department_budgets": "topics.json#categories[id=department-budgets]",
+    "homes_and_taxes": "topics.json#categories[id=homes-and-taxes]",
+    "health_insurance": "topics.json#categories[id=health-insurance]",
+    "board_records": "topics.json#categories[id=board-records]",
+    "parks": "topics.json#categories[id=parks]",
+    "budget_options": "topics.json#categories[id=budget-options]",
+    "tax": "topics/average-tax-bill.json"
+  },
+  "literal": [],
+  "flare": {
+    "accent": "ember",
+    "motif": "arcs"
+  },
+  "image": {
+    "layout": "hero",
+    "size": "square",
+    "headline": "The rate fell. The bill rose.",
+    "emphasis": "The bill rose.",
+    "headline_size": 68,
+    "sub": "The average single-family tax bill in Lunenburg, {tax.facts[3].label.figures.y.text} to {tax.finding.figures.y.text}.",
+    "hero": {
+      "value": "+{tax.finding.figures.b.text}",
+      "label": "the average bill, now {tax.finding.figures.a.text}",
+      "text": "The tax rate fell {tax.finding.figures.r.text}. The average home’s value went from {tax.facts[4].value.text} to {tax.facts[1].value.text}."
+    },
+    "path": "/homes-and-taxes/average-tax-bill",
+    "as_of": "As of {m.as_of|short}"
+  },
+  "text": [
+    "The tax rate went down. The average tax bill went up.",
+    "",
+    "Over ten years, the average single-family tax bill in Lunenburg rose {tax.finding.figures.b.text}, while the tax rate fell {tax.finding.figures.r.text}. The bill went up because the average home's assessed value went from {tax.facts[4].value.text} to {tax.facts[1].value.text}.",
+    "👉 lburg.org/homes-and-taxes/average-tax-bill",
+    "",
+    "That's one short page, and the whole site works that way now 📚",
+    "",
+    "{all|len} pages across {cats|len} subjects. Each page answers one question, shows where its figures come from, and says what they don't prove.",
+    "",
+    "🏫 The schools: {transportation.shelf} · {athletics.shelf} · {special_education.shelf} · {enrolment.shelf} · {school_staffing.shelf} · {state_aid.shelf} · {school_spending.shelf} · {school_programs.shelf}",
+    "",
+    "🏛️ The town: {town_reserves.shelf} · {fy2026_closeout.shelf} · {department_budgets.shelf} · {homes_and_taxes.shelf} · {health_insurance.shelf} · {board_records.shelf} · {parks.shelf}",
+    "",
+    "💡 And {budget_options.shelf}: what each way of closing the gap would cost, and who would pay it",
+    "",
+    "Every subject is listed at the top of lburg.org/reports.",
+    "",
+    "Pick one, open a page, and tell us in the comments what question you'd want answered that isn't there yet."
+  ]
+}

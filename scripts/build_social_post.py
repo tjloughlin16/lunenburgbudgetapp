@@ -243,7 +243,8 @@ body{width:%(w)spx;height:%(h)spx;background:#fcfcfb;color:#0b0b0b;position:rela
   font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;padding:64px 60px 0}
 .motif{position:absolute;left:0;top:0;z-index:0}
 .frame{position:relative;z-index:1;height:100%%;display:flex;flex-direction:column}
-.k{font-weight:700;font-size:22px;letter-spacing:.14em;color:%(a)s}
+.k{font-weight:700;font-size:22px;letter-spacing:.14em;color:%(a)s;display:flex;align-items:center;gap:16px}
+.k svg{width:52px;height:52px;flex:none}
 h1{margin:18px 0 0;font-weight:800;font-size:%(hs)spx;line-height:1.06;letter-spacing:-.02em;max-width:1080px;text-wrap:balance}
 h1 em{font-style:normal;color:%(a)s}
 .sub{font-size:28px;line-height:1.35;color:#52514e;margin:16px 0 0;max-width:980px}
@@ -304,7 +305,7 @@ def build_html(spec, slug, data):
 <style>{css}</style></head><body>
 {motif_svg(motif, color, w, h, seed)}
 <div class="frame">
-<div class="k">LUNENBURG BUDGET PROJECT</div>
+<div class="k">{logo_html(img)}<span>LUNENBURG BUDGET PROJECT</span></div>
 <h1>{head}</h1>
 {f'<p class="sub">{R(img["sub"])}</p>' if img.get('sub') else ''}
 <div class="body">{body}</div>
@@ -312,6 +313,21 @@ def build_html(spec, slug, data):
 </div></body></html>
 '''
 
+
+
+# THE MARK, beside the name. TJ, 14 October 2026: "make sure you put the logo of budget
+# project into every image" -- every SOCIAL image, from 2026-10-15-every-subject on. Read
+# from the brand file, never redrawn here, so a change to the mark reaches every post.
+# A post made before it carries "logo": false, so its image stays the one that was
+# attached; a posted post is frozen and never rebuilt anyway.
+LOGO_SVG = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources', 'data', 'brand', 'favicon.svg')
+
+
+def logo_html(img):
+    if img.get('logo') is False:
+        return ''
+    svg = open(LOGO_SVG, encoding='utf-8').read()
+    return re.sub(r'<title>.*?</title>', '', svg, flags=re.S).strip()
 
 def shoot(html_path, png_path, size):
     w, h = SIZES[size]
