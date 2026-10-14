@@ -1,0 +1,59 @@
+{
+  "posted": null,
+  "about": "The site reorganised: every subject is a hub of short pages, one question each, and /reports lists them all at the top. Shown through Athletics. For members who saw the launch post and found the long reports heavy.",
+  "data": {
+    "m": "app-metrics.json",
+    "ix": "topics.json",
+    "cats": "topics.json#categories",
+    "all": "topics.json#topics",
+    "ath": "topics.json#categories[id=athletics]",
+    "fee": "topics.json#topics.athletic-fee",
+    "part": "topics.json#topics.participation",
+    "bus": "topics.json#topics.athletic-bus-funding"
+  },
+  "literal": [],
+  "flare": {"accent": "pine", "motif": "blocks"},
+  "image": {
+    "layout": "spotlight",
+    "size": "square",
+    "headline": "One question, one short page",
+    "emphasis": "one short page",
+    "headline_size": 64,
+    "sub": "{all|len} short pages across {cats|len} subjects.",
+    "card": {
+      "eyebrow": "SUBJECT",
+      "title": "{ath.shelf}",
+      "rows": [
+        {"label": "{fee.title}", "value": "{fee.finding}"},
+        {"label": "{part.title}", "value": "{part.finding}"}
+      ],
+      "chips": ["{fee.title}", "{part.title}", "{bus.title}", "and more"]
+    },
+    "path": "/reports",
+    "as_of": "As of {m.as_of|short}"
+  },
+  "text": [
+    "The site is easier to read now 📚",
+    "",
+    "Since our last post we've rebuilt the Lunenburg Budget Project around one idea: you shouldn't have to read a long report to get one answer.",
+    "",
+    "Every subject now has its own page, and under it a set of short pages, each answering one question. There are {all|len} of them across {cats|len} subjects: the schools, the town, and the options for closing the budget gap.",
+    "",
+    "Take Athletics. Instead of one long report, each question gets its own page:",
+    "",
+    "▪️ {fee.title}: {fee.finding}",
+    "▪️ {part.title}: {part.finding}",
+    "▪️ {bus.title}: {bus.finding}",
+    "👉 lburg.org/athletics",
+    "",
+    "Finding things is easier too:",
+    "",
+    "📋 lburg.org/reports opens with a contents list of every subject",
+    "☰ The Menu at the top of every page reaches every section",
+    "🔎 Search covers the pages, the documents and the meeting minutes",
+    "",
+    "Every page still shows where its figures come from, and says what the numbers don't prove.",
+    "",
+    "Try it: pick a subject, open one short page, and tell us in the comments what question you'd want answered that isn't there yet."
+  ]
+}
