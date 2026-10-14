@@ -2,6 +2,7 @@ import { useNewReports, NewBadge, NEW_DAYS } from '../components/SiteMenu'
 import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
 import { Section, Note } from '../components/primitives'
+import { TopicLink } from '../components/TopicLink'
 
 /** Reports and analyses — what this project has written, as opposed to what it mirrors.
  *
@@ -273,21 +274,11 @@ function TopicShelves({ area }: { area: string }) {
                 <h3 className="text-[12px] font-semibold uppercase tracking-widest mb-2"
                   style={{ color: 'var(--text-muted)' }}>{g.title}</h3>
               ) : null}
-              <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-                {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => {
-                  const also = t.shelves.filter(s => s !== c.id)
-                  return (
-                    <li key={t.id} style={{ opacity: t.ready ? 1 : 0.55 }}>
-                      <a href={t.path} className="text-[15px] font-semibold underline"
-                        style={{ color: 'var(--series-cost)' }}>{t.title}</a>
-                      <p className="text-[13px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-                        {t.finding ?? 'Being written.'}
-                        {also.length ? <span style={{ color: 'var(--text-muted)' }}>
-                          {' '}· also under {also.map(shelfName).join(', ')}</span> : null}
-                      </p>
-                    </li>
-                  )
-                })}
+              <ul className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
+                {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => (
+                  <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== c.id)
+                    .map(shelfName).filter((x): x is string => !!x)} /></li>
+                ))}
               </ul>
             </div>
           ))}

@@ -122,15 +122,11 @@ function Sources({ sources }: { sources: { label: string; href: string }[] }) {
   )
 }
 
-/** The hubs drawn with the new topic shape (components/TopicLink), while TJ confirms it on
- *  one before it spreads to every hub and /reports. Empty this set by deleting the old
- *  card below. */
-const TOPIC_LINK_HUBS = new Set(['athletics'])
-
-/** The cards on a hub: one per topic, grouped as the registry groups them. */
+/** The cards on a hub: one per topic, grouped as the registry groups them, each drawn as
+ *  a TopicLink -- the one shape a topic has wherever it is listed. */
 function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
   const shelfOf = (id: string) => ix.categories.find(c => c.id === id)?.shelf
-  if (TOPIC_LINK_HUBS.has(cat.id)) return (
+  return (
     <section className="mt-10 max-w-3xl" id="topics">
       {cat.groups.map((g, gi) => (
         <div key={gi} className={gi ? 'mt-6' : undefined}>
@@ -140,36 +136,6 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
               <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== cat.id)
                 .map(shelfOf).filter((x): x is string => !!x)} /></li>
             ))}
-          </ul>
-        </div>
-      ))}
-      <Elsewhere cat={cat} />
-    </section>
-  )
-  return (
-    <section className="mt-10 max-w-3xl" id="topics">
-      {cat.groups.map((g, gi) => (
-        <div key={gi} className={gi ? 'mt-6' : undefined}>
-          <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-            {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => {
-              const also = t.shelves.filter(s => s !== cat.id)
-              return (
-                <li key={t.id}>
-                  <a href={abs(t.path)} className="card block p-3.5 h-full hover:shadow-sm"
-                    style={{ opacity: t.ready ? 1 : 0.55 }}>
-                    <p className="text-[15.5px] font-semibold leading-snug" style={{ color: 'var(--text-primary)' }}>{t.title}</p>
-                    <p className="text-[13.5px] leading-snug mt-1" style={{ color: 'var(--text-secondary)' }}>
-                      {t.finding ?? 'Being written.'}</p>
-                    <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
-                      {/* No reading time here yet: the site's own measure counts the
-                          table and said 7 where this said 1 for one page. One number or none. */}
-                      {also.length ? `Also under ${also.map(a => ix.categories.find(c => c.id === a)?.shelf).join(', ')}` : null}
-                    </p>
-                  </a>
-                </li>
-              )
-            })}
           </ul>
         </div>
       ))}
