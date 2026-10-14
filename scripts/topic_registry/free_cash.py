@@ -16,7 +16,7 @@ CATEGORY = dict(
         ('The balance', ['free-cash-balance', 'free-cash-guideline', 'free-cash-sources']),
         ('Where it goes', ['free-cash-and-capital', 'free-cash-redirect']),
     ],
-    elsewhere=[('/town-reserves', 'Stabilization funds')])
+    elsewhere=[('/town-reserves', 'Stabilization funds'), ('/free-cash-calculator', 'Free cash calculator')])
 GENERATOR = 'build_town_reserves_topics.py'
 TOPICS = {
     'free-cash-balance': 'Free cash balance',

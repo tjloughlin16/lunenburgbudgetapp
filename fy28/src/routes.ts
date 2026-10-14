@@ -116,7 +116,10 @@ export const SLUG: Record<Tab, string> = {
   // schedule for months because the source stated rates and never stated a year.
   rates: 'rate-register',
   // One-time money, and the page exists to show that it cannot bend the curve.
-  freecash: 'free-cash',
+  // The free-cash TOOL (the drawdown slider, the override comparison). The Free cash hub took
+  // /free-cash on 14 October 2026; TJ chose to keep this page, at its own address, linked
+  // from the hub, rather than lose what no topic page carries.
+  freecash: 'free-cash-calculator',
   // What this project WROTE, as opposed to what it mirrors. Public and linked.
   reports: 'reports',
   // Budgets against what the district LATER REPORTED it spent. The label says "reported"
@@ -802,7 +805,7 @@ export const LABEL: Record<Tab, string> = {
   thisweek: 'This week in town — meetings coming up, minutes and recordings just posted',
   athletics: 'Athletics costs',
   rates: 'Rates, fees and contracts — the register',
-  freecash: 'Free cash — how much is actually spendable',
+  freecash: 'Free cash calculator',
   reports: 'Reports and analyses',
   ask: 'How to query this data',
   agents: 'Every address on this site, as links',
