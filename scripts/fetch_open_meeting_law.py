@@ -95,6 +95,22 @@ DOCS = [
 ] + [('c30a-%d' % n, 'G.L. c.30A §%d (malegislature.gov)' % n, 'General Court of Massachusetts', LEG % n)
      for n in range(18, 26)]
 
+# REGIONAL SCHOOL DISTRICTS -- not the Open Meeting Law, but the same archive and the same
+# route. TJ, 14 October 2026, on whether Lunenburg "chooses" to be in the Monty Tech district:
+# the statute and the state's regulations say how a district is formed and how a member town
+# leaves; the Montachusett regional agreement itself is not public and is not fetched here.
+C71 = 'https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section%s'
+DOCS += [('c71-%s' % n.lower(), 'G.L. c.71 §%s, regional school districts (malegislature.gov)' % n,
+          'General Court of Massachusetts', C71 % n)
+         for n in ('14', '14A', '14B', '14C', '14D', '15', '16', '16A', '16B', '16C', '16D')]
+DOCS += [('603-cmr-41', '603 CMR 41.00, Regional School Districts (DESE regulations)',
+          'Massachusetts Department of Elementary and Secondary Education',
+          'https://www.doe.mass.edu/lawsregs/603cmr41.html')]
+# The page above is only the regulation's table of contents; the text is behind ?section=all.
+DOCS += [('603-cmr-41-all', '603 CMR 41.00, Regional School Districts, all sections (DESE regulations)',
+          'Massachusetts Department of Elementary and Secondary Education',
+          'https://www.doe.mass.edu/lawsregs/603cmr41.html?section=all')]
+
 
 def read_index():
     if not os.path.exists(INDEX):
@@ -154,7 +170,13 @@ def publisher_filename(url, disposition, ctype):
 # <main>, and on malegislature.gov the section from its heading to the end of its column.
 def html_text(raw, url):
     t = raw.decode('utf-8', errors='replace')
-    t = re.sub(r'(?is)<(script|style|noscript|svg|form)\b.*?</\1>', ' ', t)
+    t = re.sub(r'(?is)<(script|style|noscript|svg)\b.*?</\1>', ' ', t)
+    # FORMS ARE DROPPED ONLY IF THE PAGE SURVIVES IT. A <form> is usually a search box, but
+    # DESE (doe.mass.edu) wraps its WHOLE page in one, so dropping forms deleted 603 CMR 41.00
+    # entirely and it extracted to 88 characters (14 October 2026).
+    no_forms = re.sub(r'(?is)<form\b.*?</form>', ' ', t)
+    if len(re.sub(r'<[^>]+>|\s+', '', no_forms)) > 1500:
+        t = no_forms
     if 'malegislature.gov' in url:
         i = t.find('id="skipTo"')
         j = t.find('</main>', i) if i >= 0 else -1
@@ -164,8 +186,12 @@ def html_text(raw, url):
             t = t[:k] if k > 0 else t
     else:
         m = re.search(r'(?is)<main\b.*?</main>', t)
-        if m:
+        # A <main> with almost no text in it is not where the page is: fall back to the
+        # whole document rather than keep a header and lose the body.
+        if m and len(re.sub(r'<[^>]+>|\s+', '', m.group(0))) > 1500:
             t = m.group(0)
+        else:
+            t = re.sub(r'(?is)<head\b.*?</head>', ' ', t)   # the whole document less its head
     t = re.sub(r'(?i)<br\s*/?>', '\n', t)
     t = re.sub(r'(?i)</?(p|div|h[1-6]|li|tr|section|article|header|ul|ol|table)\b[^>]*>', '\n', t)
     t = html.unescape(re.sub(r'<[^>]+>', ' ', t)).replace(' ', ' ')
@@ -252,7 +278,8 @@ def fetch(only=None):
     write_index(rows)
     if not todo:
         return 0
-    browser = via_browser([u for _, _, _, u in todo if u.startswith(MASS)])
+    mass_urls = [u for _, _, _, u in todo if u.startswith(MASS)]
+    browser = via_browser(mass_urls) if mass_urls else {}   # nothing on mass.gov: no browser to start
     failed = 0
     for did, label, publisher, url in todo:
         if url.startswith(MASS):
