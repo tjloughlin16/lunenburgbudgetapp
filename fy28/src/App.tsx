@@ -95,7 +95,7 @@ import { Analysis } from './pages/Analysis'
 import { SiteMenu } from './components/SiteMenu'
 import { BOARDS, LABEL, PARENT, crumbLabel, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
-import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
+import { followTitleForShare, pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
 import { ReadingTime } from './components/ReadingTime'
 
@@ -185,6 +185,7 @@ export default function App() {
   // have run: if it set nothing more specific, its first paragraph under the H1.
   useLayoutEffect(() => { setShareMeta({ page: false }) }, [tab])
   useEffect(() => { const id = window.setTimeout(shareFromPage, 0); return () => window.clearTimeout(id) }, [tab])
+  useEffect(() => followTitleForShare(), [])
 
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.

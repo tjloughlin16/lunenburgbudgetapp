@@ -63,7 +63,8 @@ export function clip(text: string, max = 200): string {
   if (t.length <= max) return t
   const cut = t.slice(0, max)
   const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '), cut.lastIndexOf(' — '))
-  return (end > max * 0.5 ? cut.slice(0, end + 1) : cut.slice(0, cut.lastIndexOf(' ')) + '…').trim()
+  // A cut at '; ' keeps the semicolon, and a preview ending "…$146,911;" reads as broken.
+  return (end > max * 0.5 ? cut.slice(0, end + 1).replace(/;$/, '.') : cut.slice(0, cut.lastIndexOf(' ')) + '…').trim()
 }
 
 export function setShareMeta(o: { title?: string | null; description?: string | null; page?: boolean; type?: 'website' | 'article' }) {
@@ -101,4 +102,24 @@ export function useShareMeta(description: string | null | undefined, type: 'webs
   useEffect(() => {
     if (description) setShareMeta({ description, page: true, type })
   }, [description, type])
+}
+
+/** THE FALLBACK FOLLOWS THE TITLE. The app sets its generic share tags the moment a tab
+ *  changes, and most pages set their real title only after their payload arrives -- so
+ *  417 of 1,939 prerendered pages previewed on Facebook under a placeholder: "A board" on
+ *  every board page, "Reports and analyses" on every topic (TJ, 14 October 2026). Watch
+ *  the <title>; when it changes and no page has claimed the share tags, carry the new
+ *  title into them and re-read the description from the page as it now stands. */
+export function followTitleForShare(): () => void {
+  let last = document.title
+  const sync = () => {
+    if (document.title === last) return
+    last = document.title
+    if (document.head.querySelector(`meta[property="og:title"][${MARK}]`)) return
+    setShareMeta({ title: document.title, page: false })
+    shareFromPage()
+  }
+  const mo = new MutationObserver(sync)
+  mo.observe(document.head, { childList: true, subtree: true, characterData: true })
+  return () => mo.disconnect()
 }

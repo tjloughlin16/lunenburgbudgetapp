@@ -15,6 +15,7 @@
  *  Athletics) has ONE address and says which other shelf it is on. Never two copies. */
 import { createElement, useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
+import { pageTitle, setShareMeta } from '../lib/title'
 import { topicIdFromPath } from '../routes'
 import {
   FigureTable, Ladder, ReportShell,
@@ -189,7 +190,18 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       .then(r => { if (!r.ok) throw new Error(`No page called ${id} yet.`); return r.json() })
       .then(setP).catch(e => setErr(String(e.message ?? e)))
   }, [id])
-  useEffect(() => { if (p) document.title = `${p.title} — Lunenburg Budget Project` }, [p?.title])
+  // THE LINK PREVIEW IS THE PAGE'S OWN. TJ, 14 October 2026: every topic link shared on
+  // Facebook previewed as "Reports and analyses" with the site's disclaimer, because this
+  // set the tab title once the payload arrived and left og:title and og:description at the
+  // app's generic fallback. A topic's preview is its title and its finding; a hub's, its
+  // title and its answer. The prerender captures them, so a scraper gets the same.
+  useEffect(() => {
+    if (!p) return
+    const t = pageTitle(p.title)
+    if (t) document.title = t
+    setShareMeta({ title: t, description: p.kind === 'topic' ? p.finding.text : p.answer.text,
+                   page: true, type: 'article' })
+  }, [p])
 
   const title = p?.title ?? ix?.topics[id]?.title ?? ix?.categories.find(c => c.id === id)?.title ?? ''
   const cat = ix?.categories.find(c => c.id === (p?.category ?? id))
