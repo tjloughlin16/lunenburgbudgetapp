@@ -1429,6 +1429,10 @@ immediately before writing, and preserve the file's existing newline convention.
                                             #   build, and it looks exactly like a finished one
     bash scripts/check_phone_width.sh       # every route at a TRUE 400px viewport; fails if any page scrolls sideways
     (cd fy28 && npm run check:crumbs)       # every Menu page's breadcrumb sits where the Menu files it; runs in npm run build
+    bash scripts/deploy_site.sh             # THE way to deploy (rule 10: only when asked): waits for any build, refuses a
+                                            #   half-built dist (check_dist_complete.py + check_prerender.py), then deploys
+    python3 scripts/check_dist_complete.py  # is every sitemap page in fy28/dist? A build caught halfway passes check_prerender
+    bash scripts/tail_backlog.sh            # follow the minutes run -- whichever process-meeting*.log was written last
     python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
     python3 scripts/check_sitemap.py        # the live sitemap, and every URL in it, answers
     python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
