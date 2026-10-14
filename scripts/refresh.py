@@ -570,7 +570,6 @@ def adopt_new_meeting_documents(as_of):
     events = [e for e in read_csv(MEETING_EVENTS) if e['first_seen'] == as_of]
     if not events:
         return 0
-    cols = ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url']
     rows = read_csv(MEETINGS_INDEX)
     held = {(r['file_id'], r['kind']) for r in rows}
     board_id = {r['board']: r['board_id'] for r in rows if r.get('board_id')}
@@ -580,18 +579,16 @@ def adopt_new_meeting_documents(as_of):
             continue
         rows.append({'board': e['board'], 'board_id': board_id.get(e['board'], ''),
                      'date': e['meeting_date'], 'kind': e['kind'], 'file_id': e['file_id'],
-                     'path': '', 'url': e['url']})
+                     'path': '', 'url': e['url'], 'title': e.get('title', '')})
         held.add((e['file_id'], e['kind']))
         added += 1
     if added:
-        rows.sort(key=lambda r: (r['board'], r['date'], r['kind']))
-        tmp = MEETINGS_INDEX + '.tmp'
-        with open(tmp, 'w', newline='', encoding='utf-8') as fh:
-            w = csv.DictWriter(fh, fieldnames=cols)
-            w.writeheader()
-            for r in rows:
-                w.writerow({c: r.get(c, '') for c in cols})
-        os.replace(tmp, MEETINGS_INDEX)
+        # THROUGH THE ONE GUARDED WRITER. This function used to write the index itself, from
+        # a column list typed before `title` existed, and on 14 October 2026 it erased all
+        # 11,326 of the town's meeting titles. fetch_agendas.write_index keeps every column
+        # the file has and refuses to empty a single cell.
+        import fetch_agendas
+        fetch_agendas.write_index(rows, MEETINGS_INDEX)
         print('adopted %d new meeting document(s) into the catalogue' % added)
     return added
 

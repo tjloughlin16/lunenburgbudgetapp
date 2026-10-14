@@ -65,7 +65,7 @@ INDEX = (os.environ.get('MEETING_WATCH_INDEX')
 STATE_FIELDS = ['board', 'board_slug', 'date', 'kind', 'file_id', 'url',
                 'first_seen', 'basis']
 EVENT_FIELDS = ['first_seen', 'board', 'board_slug', 'meeting_date', 'kind', 'file_id',
-                'url', 'days_after_meeting_upper_bound']
+                'url', 'days_after_meeting_upper_bound', 'title']
 RUN_FIELDS = ['ran', 'source', 'boards_listed', 'documents_listed', 'boards_unanswered',
               'new_agendas', 'new_minutes']
 
@@ -276,7 +276,11 @@ def main():
                 'first_seen': a.as_of, 'board': r['board'], 'board_slug': r['board_slug'],
                 'meeting_date': r['date'], 'kind': r['kind'], 'file_id': r['file_id'],
                 'url': r['url'],
-                'days_after_meeting_upper_bound': lag if lag != '' and lag >= 0 else ''})
+                'days_after_meeting_upper_bound': lag if lag != '' and lag >= 0 else '',
+                # The town's own name for the meeting. refresh.py adopts the row into the
+                # index from this event, and only the title says that a "School Committee"
+                # listing is really a school advisory council.
+                'title': r.get('title', '')})
         state.append(row)
 
     # The day's announcement counts are DERIVED from the event log rather than

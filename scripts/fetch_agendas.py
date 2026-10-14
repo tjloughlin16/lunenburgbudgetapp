@@ -174,12 +174,69 @@ def backfill() -> int:
                 r['path'] = rel
             else:
                 print(f'  in flight, path left blank: {rel}')
-    with idx.open('w', newline='') as f:
-        w = csv.DictWriter(f, COLS)
-        w.writeheader()
-        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
+    write_index(rows)
     print(f'\nrecovered {got}; {len(still)} genuinely absent')
     return 0
+
+
+INDEX = OUT / 'index.csv'
+
+
+def row_key(r):
+    """What makes an index row ONE document. The date is part of it: a records-request
+    delivery files many meetings' minutes under one `file_id` (`rr2026-09-18`), and keyed
+    without the date sixteen of them collapsed into two."""
+    return (r.get('board_id', ''), r.get('file_id', ''), r.get('kind', ''), r.get('date', ''))
+
+
+def write_index(rows, path=None):
+    """THE ONLY WAY sources/meetings/index.csv IS WRITTEN. Refuses rather than lose anything.
+
+    On 14 October 2026 the daily refresh rewrote this file through a column list typed
+    before `title` existed, and 11,326 of the town's meeting titles were gone by 07:31. The
+    title is what tells a principal's advisory council from a School Committee meeting, so
+    the next day's notice announced the wrong body. Nothing failed; the file just got
+    smaller in a way no check measured.
+
+    So every writer comes through here, and here the file may only GROW:
+      - every column the file has now is kept (a writer that never heard of a column
+        cannot drop it), plus any in COLS it lacks;
+      - no row may disappear;
+      - no cell that holds a value may be emptied -- except `path`, which a fetch blanks
+        on purpose when the town has taken the document down or it is still in flight.
+    Any of those is a SystemExit naming what would have been lost, and the file is untouched.
+    """
+    path = pathlib.Path(path or INDEX)
+    old, cols = {}, list(COLS)
+    if path.exists():
+        with path.open(newline='', encoding='utf-8') as fh:
+            rd = csv.DictReader(fh)
+            cols = list(rd.fieldnames or []) + [c for c in COLS if c not in (rd.fieldnames or [])]
+            old = {row_key(r): r for r in rd}
+    new = {row_key(r): r for r in rows}
+    if len(new) < len(rows):
+        raise SystemExit(f'refusing to write {path.name}: {len(rows) - len(new)} row(s) share an '
+                         f'identity with another and would be merged away')
+    gone = [x for x in old if x not in new]
+    if gone:
+        raise SystemExit(f'refusing to write {path.name}: {len(gone)} row(s) would disappear, '
+                         f'e.g. {gone[0]}')
+    emptied = {}
+    for key, o in old.items():
+        n = new[key]
+        for c in cols:
+            if c != 'path' and (o.get(c) or '').strip() and not (n.get(c) or '').strip():
+                emptied.setdefault(c, []).append(key)
+    if emptied:
+        raise SystemExit(f'refusing to write {path.name}: it would empty ' + '; '.join(
+            f'{len(v)} `{c}` value(s), e.g. {v[0]}' for c, v in emptied.items())
+            + '. A writer is dropping a column it does not know about.')
+    tmp = path.with_suffix('.csv.tmp')
+    with tmp.open('w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, cols, extrasaction='ignore')
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
+    tmp.replace(path)
 
 
 def titles(start: int, end: int) -> int:
@@ -206,10 +263,7 @@ def titles(start: int, end: int) -> int:
                     found += 1
             time.sleep(0.2)
         print(f'  {name[:44]:<44} {sum(1 for r in rows if r["board_id"] == cid and r.get("title")):>5} titled')
-    with idx.open('w', newline='') as f:
-        w = csv.DictWriter(f, COLS)
-        w.writeheader()
-        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
+    write_index(rows)
     untitled = sum(1 for r in rows if not r.get('title'))
     print(f'\n{found} titles set; {untitled} of {len(rows)} rows still untitled; '
           f'{len(failed)} board-years did not answer' + (f': {", ".join(failed[:8])}' if failed else ''))
@@ -324,20 +378,17 @@ def main() -> None:
     held = {}
     if idx.exists():
         for r in csv.DictReader(idx.open()):
-            held[(r['board_id'], r['file_id'], r['kind'])] = r
+            held[row_key(r)] = r
     before = len(held)
     for r in rows:
-        old = held.get((r['board_id'], r['file_id'], r['kind']), {})
-        new = {c: r.get(c, '') for c in cols}
+        old = held.get(row_key(r), {})
+        new = {**old, **{c: r.get(c, '') for c in cols}}   # a column this run does not set is carried, not blanked
         new['title'] = new['title'] or old.get('title', '')   # a row seen without its title keeps the one it had
-        held[(r['board_id'], r['file_id'], r['kind'])] = new
+        held[row_key(r)] = new
     merged = sorted(held.values(), key=lambda r: (r['board'], r['date'], r['kind']))
     if before and len(merged) < before:
         raise SystemExit(f'refusing to write index.csv: would shrink from {before} to {len(merged)} rows')
-    with idx.open('w', newline='') as f:
-        w = csv.DictWriter(f, cols)
-        w.writeheader()
-        w.writerows(merged)
+    write_index(merged)
     print(f'downloaded {got}; index -> {idx} ({before} held, {len(merged)} after merge)')
 
 

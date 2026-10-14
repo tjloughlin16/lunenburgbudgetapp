@@ -103,8 +103,23 @@ def policy_boards():
     return {r['board_slug'] for r in csv.DictReader(open(POLICY, encoding='utf-8')) if r.get('board_slug')}
 
 
+def printed_bodies():
+    """(board_slug, date) -> the body the meeting's own listing or notice names, where
+    that is not the category the town filed it under. Read off the meeting register, as
+    build_meeting_feed.py and build_boards.py do: the School Committee category also holds
+    the principals' advisory councils and the committee's sub-committees, and a notice that
+    says "School Committee meets Thursday" about one of them sends people to the wrong room."""
+    reg = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
+    if not os.path.exists(reg):
+        return {}
+    return {(r['board_slug'], r['date']): r['body_as_printed']
+            for r in csv.DictReader(open(reg, encoding='utf-8', errors='replace'))
+            if r.get('body_as_printed')}
+
+
 def agendas(board=None, date=None, upcoming_from=None):
     out = []
+    printed = printed_bodies()
     for r in csv.DictReader(open(MEETINGS_INDEX, encoding='utf-8', errors='replace')):
         if r['kind'] != 'agenda':
             continue
@@ -121,7 +136,8 @@ def agendas(board=None, date=None, upcoming_from=None):
             continue
         out.append({'board_slug': slug, 'board': r['board'], 'date': r['date'],
                     'file_id': r['file_id'], 'url': r['url'], 'text': txt,
-                    'text_rel': os.path.relpath(txt, ROOT), 'stem': stem})
+                    'text_rel': os.path.relpath(txt, ROOT), 'stem': stem,
+                    'body_as_printed': printed.get((slug, r['date']), '')})
     # AGENDAS THE TOWN SENT SOME OTHER WAY (sources/data/meeting-notices-email.csv -- the
     # register build_meeting_feed.py and build_boards.py read). The School Committee's
     # 7 October 2026 agenda came only by email, so it had no preview until this read it.
@@ -162,7 +178,7 @@ def write_one(a, force=False):
     body = re.sub(r'^===PAGE \d+===$', '', raw, flags=re.M)
     if len(body.strip()) < 100:
         return 'too short to read'
-    prompt = 'Board: %s. Agenda for %s.\n\n%s' % (a['board'], a['date'], body)
+    prompt = 'Board: %s. Agenda for %s.\n\n%s' % (a.get('body_as_printed') or a['board'], a['date'], body)
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
     r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
@@ -186,6 +202,7 @@ def write_one(a, force=False):
         'what': 'A preview of a published agenda, for notice. An agenda lists what MAY be discussed; '
                 'nothing here predicts an outcome. Every agenda_line is verbatim from the document.',
         'board_slug': a['board_slug'], 'board': a['board'], 'date': a['date'], 'file_id': a['file_id'],
+        'body_as_printed': a.get('body_as_printed', ''),
         'agenda_url': a['url'],
         'agenda_text_url': '%s/docs/minutes/text/%s.txt' % (SITE, a['stem']),
         'source': {'text': a['text_rel'], 'sha256': sha},
@@ -205,7 +222,7 @@ def write_one(a, force=False):
 def facebook_text(a, p):
     """Composed, not written: the notice a person pastes. Every line is the preview's own."""
     d = dt.date.fromisoformat(a['date'])
-    head = '%s meets %s%s.' % (a['board'], d.strftime('%A %B %-d'),
+    head = '%s meets %s%s.' % (a.get('body_as_printed') or a['board'], d.strftime('%A %B %-d'),
                               (' at ' + p['time']) if p.get('time') and p['time'] != 'not stated' else '')
     lines = [head, (p.get('hook') or p['one_line']).rstrip('.') + '.']
     picks = [it for it in p['items'] if it.get('vote_expected')] or p['items']
@@ -231,7 +248,8 @@ def check():
         for it in d['preview']['items']:
             if normalise(it['agenda_line']) not in norm:
                 print('NOT IN AGENDA %s: %r' % (os.path.relpath(f, ROOT), it['agenda_line'][:60])); bad += 1
-        if d.get('facebook') != facebook_text({'board': d['board'], 'date': d['date'], 'url': d['agenda_url']}, d['preview']):
+        if d.get('facebook') != facebook_text({'board': d['board'], 'body_as_printed': d.get('body_as_printed', ''),
+                                         'date': d['date'], 'url': d['agenda_url']}, d['preview']):
             print('FACEBOOK TEXT DRIFTED %s' % os.path.relpath(f, ROOT)); bad += 1
     print('%d preview(s) checked, %d problem(s)' % (n, bad))
     return 1 if bad else 0
