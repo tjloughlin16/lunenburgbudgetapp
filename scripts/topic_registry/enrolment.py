@@ -40,3 +40,5 @@ TOPICS = {
     'high-school-enrolment': 'High school enrolment',
     'high-school-spending': 'High school spending',
 }
+# Questions no earlier report answered (scripts/topics.py, NEW): listed under New reports.
+NEW = ('monty-tech-funding', 'high-school-enrolment', 'high-school-spending')

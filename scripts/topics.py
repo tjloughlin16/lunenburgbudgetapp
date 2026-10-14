@@ -43,10 +43,21 @@ import sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import topic_registry as _reg  # noqa: E402
 
-CATEGORIES, TOPICS = [], {}
+# NEW: a category module may also define NEW, the ids of its topics that answer a question
+# NO EARLIER REPORT ANSWERED. Those, and only those, are listed under "New reports" on
+# /reports and in the menu (build_reports_index.py), dated by the commit that added the
+# topic's payload. TJ, 14 October 2026: "I would assume all the new stuff would show up
+# under 'new reports' but it doesnt." A topic MOVED out of an old report is not new: the
+# 12-13 October conversion created some two hundred topic files, and listing them by file
+# date would bury the few that are. So it is declared, not inferred.
+CATEGORIES, TOPICS, NEW = [], {}, set()
 for _m in sorted(_pk.iter_modules(_reg.__path__), key=lambda m: m.name):
     _mod = _il.import_module('topic_registry.' + _m.name)
     CATEGORIES.append(_mod.CATEGORY)
+    for _tid in getattr(_mod, 'NEW', ()):
+        if _tid not in _mod.TOPICS:
+            raise SystemExit('%s lists %r as NEW but is not its home' % (_m.name, _tid))
+        NEW.add(_tid)
     for _tid, _title in _mod.TOPICS.items():
         if _tid in TOPICS:
             raise SystemExit('topic %r is registered by two categories' % _tid)
