@@ -1,0 +1,83 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2022-11-16",
+ "source": {
+  "sha256": "4d1341238b6c45f1b8c4d82d4695351f9fcc01c53dd262357cba59a1186e47a1",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2022-11-16-GokzpCzPLuw.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "two and a half percent",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Business manager said level funding at two and a half percent over five years might yield about three new positions.",
+    "status": "announced",
+    "t": 3171,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": null,
+    "kind": "override",
+    "scope": "school",
+    "statement": "A member referred to a general override as a possible way to backfill ending ESSER revenue.",
+    "status": "proposed",
+    "t": 2790,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "staffing",
+    "condition": "absent another program replacing ESSER or an override",
+    "fiscal_year": null,
+    "prediction": "The district will be operating with fewer people in three years.",
+    "scope": "school",
+    "t": 2790,
+    "who": "a member"
+   },
+   {
+    "about": "school budget",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "Budget outlook is likely worse than the last three years; cuts or budget fights may come.",
+    "scope": "school",
+    "t": 3991,
+    "who": "a member"
+   },
+   {
+    "about": "services and programs",
+    "condition": "if funding stays at two and a half percent",
+    "fiscal_year": null,
+    "prediction": "With a two and a half percent increase the district cannot deliver all needed services.",
+    "scope": "school",
+    "t": 2852,
+    "who": "a member"
+   },
+   {
+    "about": "social workers",
+    "condition": "if ESSER-funded positions are not maintained",
+    "fiscal_year": null,
+    "prediction": "Social worker caseloads mean the district cannot meet needs if it returns to one social worker.",
+    "scope": "school",
+    "t": 4875,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "GokzpCzPLuw",
+ "video_url": "https://www.youtube.com/watch?v=GokzpCzPLuw",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-14T12:44:51Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

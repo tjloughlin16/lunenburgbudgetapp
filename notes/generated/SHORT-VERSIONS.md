@@ -9,14 +9,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 
 | page | kind | short / full | the points a reader should take away |
 |---|---|---:|---|
-| [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 6.8 min | *(none declared)* |
+| [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 7.0 min | *(none declared)* |
 | [Budget Crisis](/crisis) | page | 2.9 / 35.7 min | 1. Projections show a $933k deficit next year, and one in every year after it.<br>2. The budget in force already cut 9.2 FTE, and the projection reopens anyway.<br>3. Costs grow 5.18% a year and revenue 3.02%: a rate problem, not a bad year.<br>4. Salaries and health insurance are 64% of the budget — the only two lines that can change the direction, and neither is a School Committee vote.<br>5. About $795k a year of free cash could go to the schools, and it is one-time money. |
 | [Solutions](/solutions) | page | 1.0 / 13.5 min | 1. The fees and trims are worth doing and do not solve it.<br>2. Cutting every extracurricular does not buy a year: $376,207, 40% of it.<br>3. Business growth is real and slow.<br>4. Free cash covers a year, not a problem.<br>5. Only two things on the table change a rate: the health plan, and the pace of commercial building.<br>6. After that there are two choices, and only two: an override, or classroom positions. |
 | [Straight answers](/straight-answers) | page | 1.2 / 38.2 min | 1. $933k — The schools need $932,531 more next year than the town can give them. That is the whole problem, in one number.<br>2. 2.68% — The things schools buy get 5.18% more expensive each year. State law lets the town collect about 2.5% more each year. Nobody overspent — the two numbers are simply different.<br>3. $573k — That difference opens a brand new hole every year, of roughly $572,717 to $789,138, whether or not you closed the last one.<br>4. 1 yr — So no single cut fixes this. Every answer in the table below — sports, fees, administrators, pay, insurance — buys one year at most, and then the question comes back larger. |
 | [Bend the curve](/bend-the-curve) | page | 4.4 / 37.7 min | 1. Next year the schools get $856k more. Here is who spends it.<br>2. Costs grow 5.18%. Revenue grows 3.22%. |
 | [The cost of closing the gap](/what-solved-requires) | page | 3.8 / 38.3 min | 1. There is no arrangement of the other five lines that reaches the bar while salaries go on rising 4%. |
 | [The budget gap](/the-situation) | page | 2.6 / 47.2 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
-| [The money](/the-money) | reference | — / 9.2 min | *(none declared)* |
+| [The money](/the-money) | reference | — / 8.8 min | *(none declared)* |
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
 | [The annual town reports](/analysis/annual-reports) | page | 1.9 / 12.9 min | 1. All 477 pages holding a financial table have been read.<br>2. 208 of 477 pages tie to a total the page itself prints.<br>3. Appropriations is the least checked: 77 of its 95 pages have no check at all. |
 | [Connecting the school budget to the Town&#x27;s books](/analysis/connecting-the-budget) | page | 0.7 / 10.7 min | 1. Following a dollar from the school budget to the Town&#x27;s books works at two levels and stops at the third. |
@@ -32,7 +32,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Spending by category](/athletics/spending-by-category) | page | — / 6.9 min | *(none declared)* |
 | [Total athletics cost](/athletics/total-athletics-cost) | page | — / 7.0 min | *(none declared)* |
 | [Town budget and fee fund](/athletics/town-budget-and-fee-fund) | page | — / 7.4 min | *(none declared)* |
-| [Boards and committees](/board-records) | page | — / 7.5 min | *(none declared)* |
+| [Boards and committees](/board-records) | page | — / 7.6 min | *(none declared)* |
 | [Member tenure](/board-records/board-member-tenure) | page | — / 7.0 min | *(none declared)* |
 | [Minutes by year](/board-records/board-minutes-by-year) | page | — / 7.1 min | *(none declared)* |
 | [Minutes posted](/board-records/board-minutes-posted) | page | — / 7.7 min | *(none declared)* |
@@ -42,18 +42,21 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board sizes](/board-records/board-sizes) | page | — / 6.9 min | *(none declared)* |
 | [Seats changing hands](/board-records/board-turnover) | page | — / 7.4 min | *(none declared)* |
 | [The School Committee’s finances — every fund and line it owns](/boards/school-committee/finance) | page | 2.1 / 19.3 min | 1. The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.<br>2. The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.<br>3. 13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together. |
-| [Closing the gap](/budget-options) | page | — / 9.1 min | *(none declared)* |
+| [Closing the gap](/budget-options) | page | — / 9.5 min | *(none declared)* |
 | [Classroom positions](/budget-options/classroom-positions) | page | — / 6.5 min | *(none declared)* |
 | [Extracurricular cuts](/budget-options/extracurricular-cuts) | page | — / 6.8 min | *(none declared)* |
+| [Family fees](/budget-options/family-fees) | page | — / 6.8 min | *(none declared)* |
 | [FY2027 cut size](/budget-options/fy2027-cut-size) | page | — / 6.6 min | *(none declared)* |
 | [The FY2027 override](/budget-options/fy2027-override) | page | — / 6.9 min | *(none declared)* |
 | [Override duration](/budget-options/override-duration) | page | — / 7.2 min | *(none declared)* |
 | [Override history](/budget-options/override-history) | page | — / 7.0 min | *(none declared)* |
 | [Townwide or school-only](/budget-options/override-scope) | page | — / 6.7 min | *(none declared)* |
+| [Reduced and waived fees](/budget-options/reduced-and-waived-fees) | page | — / 6.8 min | *(none declared)* |
 | [Salary line and staffing](/budget-options/salary-line-and-staffing) | page | — / 7.3 min | *(none declared)* |
 | [School user fees](/budget-options/school-user-fees) | page | — / 6.8 min | *(none declared)* |
 | [Teacher contract](/budget-options/teacher-contract) | page | — / 7.0 min | *(none declared)* |
-| [Town departments](/department-budgets) | page | — / 8.7 min | *(none declared)* |
+| [Unpriced school charges](/budget-options/unpriced-school-charges) | page | — / 7.1 min | *(none declared)* |
+| [Town departments](/department-budgets) | page | — / 8.8 min | *(none declared)* |
 | [Growth above the cap](/department-budgets/town-budget-growth) | page | — / 7.2 min | *(none declared)* |
 | [Budget by department](/department-budgets/town-budget-shares) | page | — / 6.9 min | *(none declared)* |
 | [Debt service](/department-budgets/town-debt-service) | page | — / 6.7 min | *(none declared)* |
@@ -83,7 +86,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
 | [School choice flows](/enrolment/school-choice-flows) | page | — / 7.1 min | *(none declared)* |
 | [Free cash — how much is actually spendable](/free-cash) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
-| [FY2026 year end](/fy2026-closeout) | page | — / 8.3 min | *(none declared)* |
+| [FY2026 year end](/fy2026-closeout) | page | — / 8.4 min | *(none declared)* |
 | [FY2025 school surplus](/fy2026-closeout/fy2025-school-surplus) | page | — / 6.5 min | *(none declared)* |
 | [Lines over budget](/fy2026-closeout/fy2026-lines-over-budget) | page | — / 7.0 min | *(none declared)* |
 | [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.2 min | *(none declared)* |
@@ -96,7 +99,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 7.1 min | *(none declared)* |
 | [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 6.9 min | *(none declared)* |
 | [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 6.8 min | *(none declared)* |
-| [Health insurance costs](/health-insurance) | page | — / 8.2 min | *(none declared)* |
+| [Health insurance costs](/health-insurance) | page | — / 8.3 min | *(none declared)* |
 | [District health line](/health-insurance/district-health-line) | page | — / 6.7 min | *(none declared)* |
 | [Growth over time](/health-insurance/health-growth-over-time) | page | — / 6.9 min | *(none declared)* |
 | [Insurance department](/health-insurance/health-insurance-department) | page | — / 7.5 min | *(none declared)* |
@@ -125,7 +128,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [If students leave — what school choice would cost](/if-students-leave) | page | 4.0 / 47.5 min | 1. If 78 high school students transferred out, $401,700 would leave the town in year one.<br>2. Lunenburg’s state aid changes by $150 if one pupil leaves.<br>3. 58 Lunenburg residents left under school choice in the latest year counted. |
 | [The money outside the budget](/money-outside-the-budget) | page | 2.3 / 27.4 min | 1. The town’s funds outside the budget took in more than they spent in 12 of 13 years, and what they hold multiplied 3.6×.<br>2. 34% of what those funds hold is pandemic-era money, and this series ends before we can see whether it has gone.<br>3. Most of the money held outside the budget is not school money — a large part is water, sewer and trash.<br>4. FY23 was the first year since FY17 that the school funds spent more than they took in. |
 | [Not found — The Lunenburg Budget Project](/not-found) | page | — / 0.5 min | *(none declared)* |
-| [Parks department](/parks) | page | — / 8.1 min | *(none declared)* |
+| [Parks department](/parks) | page | — / 8.2 min | *(none declared)* |
 | [Artificial turf fund](/parks/artificial-turf-fund) | page | — / 6.2 min | *(none declared)* |
 | [Grounds maintenance bid](/parks/grounds-maintenance-bid) | page | — / 6.6 min | *(none declared)* |
 | [Smaller parks funds](/parks/other-parks-funds) | page | — / 6.5 min | *(none declared)* |
@@ -136,7 +139,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School facilities fund](/parks/school-facilities-fund) | page | — / 7.0 min | *(none declared)* |
 | [School field upkeep](/parks/school-field-upkeep) | page | — / 6.3 min | *(none declared)* |
 | [Youth league payments](/parks/youth-league-payments) | page | — / 6.5 min | *(none declared)* |
-| [Programs and cuts](/school-programs) | page | — / 8.5 min | *(none declared)* |
+| [Programs and cuts](/school-programs) | page | — / 8.6 min | *(none declared)* |
 | [Announced cuts](/school-programs/announced-cuts) | page | — / 7.8 min | *(none declared)* |
 | [AP participation](/school-programs/ap-participation) | page | — / 7.4 min | *(none declared)* |
 | [AP scores](/school-programs/ap-scores) | page | — / 6.9 min | *(none declared)* |
@@ -150,7 +153,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Outside money share](/school-programs/outside-money-share) | page | — / 7.1 min | *(none declared)* |
 | [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.3 min | *(none declared)* |
 | [World languages](/school-programs/world-languages) | page | — / 7.4 min | *(none declared)* |
-| [Spending compared](/school-spending) | page | — / 9.0 min | *(none declared)* |
+| [Spending compared](/school-spending) | page | — / 9.5 min | *(none declared)* |
 | [Average teacher salary](/school-spending/average-teacher-salary) | page | — / 6.6 min | *(none declared)* |
 | [Comparison districts](/school-spending/comparison-districts) | page | — / 6.7 min | *(none declared)* |
 | [Reaching the state median](/school-spending/cost-of-the-median) | page | — / 6.6 min | *(none declared)* |
@@ -160,7 +163,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Line-level misses](/school-spending/line-level-misses) | page | — / 7.1 min | *(none declared)* |
 | [Spending per pupil](/school-spending/per-pupil-spending) | page | — / 7.7 min | *(none declared)* |
 | [Regional districts](/school-spending/regional-district-spending) | page | — / 6.8 min | *(none declared)* |
+| [Revolving fund history](/school-spending/revolving-fund-history) | page | — / 7.0 min | *(none declared)* |
 | [Budget against actual](/school-spending/school-budget-against-actual) | page | — / 7.5 min | *(none declared)* |
+| [School Committee funds](/school-spending/school-committee-funds) | page | — / 6.7 min | *(none declared)* |
+| [School grant balances](/school-spending/school-grant-balances) | page | — / 6.9 min | *(none declared)* |
+| [School revolving funds](/school-spending/school-revolving-funds) | page | — / 6.7 min | *(none declared)* |
 | [Spending and pupils](/school-spending/spending-and-pupils) | page | — / 6.6 min | *(none declared)* |
 | [Spending by function](/school-spending/spending-by-function) | page | — / 7.5 min | *(none declared)* |
 | [School staff](/school-staffing) | page | — / 8.7 min | *(none declared)* |
@@ -176,7 +183,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Teachers by school](/school-staffing/teachers-by-school) | page | — / 7.6 min | *(none declared)* |
 | [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 7.9 min | *(none declared)* |
 | [Teachers per pupil](/school-staffing/teachers-per-pupil) | page | — / 7.6 min | *(none declared)* |
-| [Special education costs](/special-education) | page | — / 8.3 min | *(none declared)* |
+| [Special education costs](/special-education) | page | — / 8.4 min | *(none declared)* |
 | [Circuit breaker](/special-education/circuit-breaker) | page | — / 7.8 min | *(none declared)* |
 | [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 7.3 min | *(none declared)* |
 | [Class size limits](/special-education/class-size-limits) | page | — / 7.6 min | *(none declared)* |
@@ -188,7 +195,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Special education overruns](/special-education/special-education-overruns) | page | — / 6.7 min | *(none declared)* |
 | [Students with an IEP](/special-education/students-with-an-iep) | page | — / 7.0 min | *(none declared)* |
 | [Tuition budget](/special-education/tuition-budget) | page | — / 7.1 min | *(none declared)* |
-| [Chapter 70 aid](/state-aid) | page | — / 8.4 min | *(none declared)* |
+| [Chapter 70 aid](/state-aid) | page | — / 8.5 min | *(none declared)* |
 | [Aid per pupil](/state-aid/aid-per-pupil) | page | — / 6.6 min | *(none declared)* |
 | [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.3 min | *(none declared)* |
 | [Share of the school budget](/state-aid/chapter-70-school-budget-share) | page | — / 6.5 min | *(none declared)* |
@@ -201,7 +208,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Required local contribution](/state-aid/required-local-contribution) | page | — / 6.6 min | *(none declared)* |
 | [State aid growth](/state-aid/state-aid-growth) | page | — / 6.9 min | *(none declared)* |
 | [Total state aid](/state-aid/total-state-aid) | page | — / 7.3 min | *(none declared)* |
-| [Free cash and stabilization](/town-reserves) | page | — / 8.5 min | *(none declared)* |
+| [Free cash and stabilization](/town-reserves) | page | — / 8.6 min | *(none declared)* |
 | [Free cash and capital](/town-reserves/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
 | [Free cash balance](/town-reserves/free-cash-balance) | page | — / 7.3 min | *(none declared)* |
 | [Free cash guideline](/town-reserves/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
@@ -213,7 +220,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Stabilization deposits](/town-reserves/stabilization-deposits) | page | — / 7.4 min | *(none declared)* |
 | [Stabilization withdrawals](/town-reserves/stabilization-withdrawals) | page | — / 7.0 min | *(none declared)* |
 | [Who may spend it](/town-reserves/who-may-spend-it) | page | — / 6.7 min | *(none declared)* |
-| [School bus costs](/transportation) | page | — / 10.6 min | *(none declared)* |
+| [School bus costs](/transportation) | page | — / 10.7 min | *(none declared)* |
 | [Athletic bus funding](/transportation/athletic-bus-funding) | page | — / 6.7 min | *(none declared)* |
 | [Away trips by sport](/transportation/away-trips-by-sport) | page | — / 6.8 min | *(none declared)* |
 | [Bus cost by sport](/transportation/bus-cost-by-sport) | page | — / 6.9 min | *(none declared)* |
@@ -230,7 +237,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [For AI assistants](/ask) | reference | — / 10.1 min | *(none declared)* |
 | [Ask us a question](/ask-a-question) | reference | — / 6.5 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 6.8 min | *(none declared)* |
-| [The boards — each one, in one place](/boards) | reference | — / 10.4 min | *(none declared)* |
+| [The boards — each one, in one place](/boards) | reference | — / 10.5 min | *(none declared)* |
 | [Agricultural Commission](/boards/agricultural-commission) | reference | — / 7.4 min | *(none declared)* |
 | [Agricultural Commission — about](/boards/agricultural-commission/about) | reference | — / 7.3 min | *(none declared)* |
 | [Agricultural Commission — meetings](/boards/agricultural-commission/meetings) | reference | — / 7.3 min | *(none declared)* |
@@ -240,11 +247,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 8.0 min | *(none declared)* |
 | [Architectural Preservation District Commission — about](/boards/architectural-preservation-district-commission/about) | reference | — / 7.5 min | *(none declared)* |
 | [Architectural Preservation District Commission — finances](/boards/architectural-preservation-district-commission/finance) | reference | — / 10.7 min | *(none declared)* |
-| [Architectural Preservation District Commission — meetings](/boards/architectural-preservation-district-commission/meetings) | reference | — / 11.0 min | *(none declared)* |
+| [Architectural Preservation District Commission — meetings](/boards/architectural-preservation-district-commission/meetings) | reference | — / 11.1 min | *(none declared)* |
 | [Architectural Preservation District Commission — missing records](/boards/architectural-preservation-district-commission/records) | reference | — / 9.2 min | *(none declared)* |
 | [Architectural Preservation District Commission — budget schedule](/boards/architectural-preservation-district-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Architectural Preservation District Commission — where the time goes](/boards/architectural-preservation-district-commission/time) | reference | — / 5.9 min | *(none declared)* |
-| [Architectural Preservation District Commission — votes](/boards/architectural-preservation-district-commission/votes) | reference | — / 23.0 min | *(none declared)* |
+| [Architectural Preservation District Commission — votes](/boards/architectural-preservation-district-commission/votes) | reference | — / 23.1 min | *(none declared)* |
 | [Athletic Advisory Council](/boards/athletic-advisory-council) | reference | — / 6.6 min | *(none declared)* |
 | [Athletic Advisory Council — meetings](/boards/athletic-advisory-council/meetings) | reference | — / 6.2 min | *(none declared)* |
 | [Athletic Advisory Council — missing records](/boards/athletic-advisory-council/records) | reference | — / 7.3 min | *(none declared)* |
@@ -261,14 +268,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Assessors — budget schedule](/boards/board-of-assessors/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Assessors — where the time goes](/boards/board-of-assessors/time) | reference | — / 5.9 min | *(none declared)* |
 | [Board of Assessors: transfers](/boards/board-of-assessors/transfers) | reference | — / 6.7 min | *(none declared)* |
-| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 60.7 min | *(none declared)* |
+| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 61.0 min | *(none declared)* |
 | [Board of Health](/boards/board-of-health) | reference | — / 7.9 min | *(none declared)* |
 | [Board of Health — about](/boards/board-of-health/about) | reference | — / 7.0 min | *(none declared)* |
 | [Board of Health — finances](/boards/board-of-health/finance) | reference | — / 12.3 min | *(none declared)* |
 | [Board of Health — meetings](/boards/board-of-health/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Board of Health — missing records](/boards/board-of-health/records) | reference | — / 13.0 min | *(none declared)* |
 | [Board of Health — budget schedule](/boards/board-of-health/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 100.8 min | *(none declared)* |
+| [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 100.7 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
 | [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.1 min | *(none declared)* |
@@ -300,11 +307,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — about](/boards/capital-planning-committee/about) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 11.7 min | *(none declared)* |
-| [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 9.7 min | *(none declared)* |
+| [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 10.1 min | *(none declared)* |
 | [Capital Planning Committee — missing records](/boards/capital-planning-committee/records) | reference | — / 11.7 min | *(none declared)* |
 | [Capital Planning Committee — budget schedule](/boards/capital-planning-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Capital Planning Committee — where the time goes](/boards/capital-planning-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 12.5 min | *(none declared)* |
+| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 13.0 min | *(none declared)* |
 | [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.9 min | *(none declared)* |
 | [Cemetery Commission — about](/boards/cemetery-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 12.4 min | *(none declared)* |
@@ -330,21 +337,21 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Conservation Commission: transfers](/boards/conservation-commission/transfers) | reference | — / 7.1 min | *(none declared)* |
-| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 417.6 min | *(none declared)* |
+| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 421.6 min | *(none declared)* |
 | [Council on Aging](/boards/council-on-aging) | reference | — / 7.7 min | *(none declared)* |
 | [Council on Aging — about](/boards/council-on-aging/about) | reference | — / 6.5 min | *(none declared)* |
 | [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 11.5 min | *(none declared)* |
-| [Council on Aging — meetings](/boards/council-on-aging/meetings) | reference | — / 9.9 min | *(none declared)* |
+| [Council on Aging — meetings](/boards/council-on-aging/meetings) | reference | — / 10.0 min | *(none declared)* |
 | [Council on Aging — missing records](/boards/council-on-aging/records) | reference | — / 9.3 min | *(none declared)* |
 | [Council on Aging — budget schedule](/boards/council-on-aging/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Council on Aging — where the time goes](/boards/council-on-aging/time) | reference | — / 5.9 min | *(none declared)* |
-| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 24.7 min | *(none declared)* |
+| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 25.2 min | *(none declared)* |
 | [Cultural Council](/boards/cultural-council) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — about](/boards/cultural-council/about) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — finances](/boards/cultural-council/finance) | reference | — / 11.1 min | *(none declared)* |
 | [Cultural Council — meetings](/boards/cultural-council/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Cultural Council — missing records](/boards/cultural-council/records) | reference | — / 9.0 min | *(none declared)* |
-| [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 12.9 min | *(none declared)* |
+| [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 13.3 min | *(none declared)* |
 | [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 6.9 min | *(none declared)* |
 | [Devens Regional Oversight Committee — meetings](/boards/devens-regional-oversight-committee/meetings) | reference | — / 6.5 min | *(none declared)* |
 | [Devens Regional Oversight Committee — missing records](/boards/devens-regional-oversight-committee/records) | reference | — / 7.6 min | *(none declared)* |
@@ -375,7 +382,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee — budget schedule](/boards/finance-committee/schedule) | reference | — / 7.5 min | *(none declared)* |
 | [Finance Committee — where the time goes](/boards/finance-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Finance Committee: transfers](/boards/finance-committee/transfers) | reference | — / 8.0 min | *(none declared)* |
-| [Finance Committee — votes](/boards/finance-committee/votes) | reference | — / 100.3 min | *(none declared)* |
+| [Finance Committee — votes](/boards/finance-committee/votes) | reference | — / 101.1 min | *(none declared)* |
 | [Green Communities Committee](/boards/green-communities-committee) | reference | — / 7.8 min | *(none declared)* |
 | [Green Communities Committee — about](/boards/green-communities-committee/about) | reference | — / 8.5 min | *(none declared)* |
 | [Green Communities Committee — meetings](/boards/green-communities-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
@@ -384,7 +391,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 10.4 min | *(none declared)* |
 | [Green Community Task Force](/boards/green-community-task-force) | reference | — / 7.2 min | *(none declared)* |
 | [Green Community Task Force — about](/boards/green-community-task-force/about) | reference | — / 5.7 min | *(none declared)* |
-| [Green Community Task Force — meetings](/boards/green-community-task-force/meetings) | reference | — / 8.4 min | *(none declared)* |
+| [Green Community Task Force — meetings](/boards/green-community-task-force/meetings) | reference | — / 8.5 min | *(none declared)* |
 | [Green Community Task Force — where the time goes](/boards/green-community-task-force/time) | reference | — / 5.9 min | *(none declared)* |
 | [Green Community Task Force — votes](/boards/green-community-task-force/votes) | reference | — / 6.3 min | *(none declared)* |
 | [Historical Commission](/boards/historical-commission) | reference | — / 7.2 min | *(none declared)* |
@@ -405,7 +412,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Library Board of Trustees — missing records](/boards/library-board-of-trustees/records) | reference | — / 10.3 min | *(none declared)* |
 | [Library Board of Trustees — budget schedule](/boards/library-board-of-trustees/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Library Board of Trustees: transfers](/boards/library-board-of-trustees/transfers) | reference | — / 7.0 min | *(none declared)* |
-| [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 50.3 min | *(none declared)* |
+| [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 50.5 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 6.9 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — about](/boards/lunenburg-300th-anniversary-committee/about) | reference | — / 7.4 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — meetings](/boards/lunenburg-300th-anniversary-committee/meetings) | reference | — / 6.4 min | *(none declared)* |
@@ -415,9 +422,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Hazard Mitigation Plan Team Committee](/boards/lunenburg-hazard-mitigation-plan-team-committee) | reference | — / 6.1 min | *(none declared)* |
 | [Lunenburg Hazard Mitigation Plan Team Committee — meetings](/boards/lunenburg-hazard-mitigation-plan-team-committee/meetings) | reference | — / 6.0 min | *(none declared)* |
 | [Lunenburg Hazard Mitigation Plan Team Committee — missing records](/boards/lunenburg-hazard-mitigation-plan-team-committee/records) | reference | — / 7.2 min | *(none declared)* |
-| [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 7.1 min | *(none declared)* |
+| [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 7.2 min | *(none declared)* |
 | [Lunenburg Housing Authority — about](/boards/lunenburg-housing-authority/about) | reference | — / 6.1 min | *(none declared)* |
-| [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Lunenburg Housing Authority — missing records](/boards/lunenburg-housing-authority/records) | reference | — / 8.4 min | *(none declared)* |
 | [Lunenburg Housing Authority — budget schedule](/boards/lunenburg-housing-authority/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 62.4 min | *(none declared)* |
@@ -432,7 +439,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Water District — meetings](/boards/lunenburg-water-district/meetings) | reference | — / 10.5 min | *(none declared)* |
 | [Lunenburg Water District — where the time goes](/boards/lunenburg-water-district/time) | reference | — / 5.9 min | *(none declared)* |
 | [Lunenburg Water District: transfers](/boards/lunenburg-water-district/transfers) | reference | — / 7.0 min | *(none declared)* |
-| [Lunenburg Water District — votes](/boards/lunenburg-water-district/votes) | reference | — / 20.3 min | *(none declared)* |
+| [Lunenburg Water District — votes](/boards/lunenburg-water-district/votes) | reference | — / 21.7 min | *(none declared)* |
 | [Massachusetts Department of Public Utilities](/boards/ma-dpu) | reference | — / 6.3 min | *(none declared)* |
 | [Massachusetts Department of Public Utilities — meetings](/boards/ma-dpu/meetings) | reference | — / 6.0 min | *(none declared)* |
 | [Massachusetts Department of Public Utilities — where the time goes](/boards/ma-dpu/time) | reference | — / 5.8 min | *(none declared)* |
@@ -457,11 +464,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [North Central Climate Change Coalition — missing records](/boards/north-central-climate-change-coalition/records) | reference | — / 7.3 min | *(none declared)* |
 | [Open Space Committee](/boards/open-space-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Open Space Committee — about](/boards/open-space-committee/about) | reference | — / 6.7 min | *(none declared)* |
-| [Open Space Committee — meetings](/boards/open-space-committee/meetings) | reference | — / 9.3 min | *(none declared)* |
+| [Open Space Committee — meetings](/boards/open-space-committee/meetings) | reference | — / 9.6 min | *(none declared)* |
 | [Open Space Committee — missing records](/boards/open-space-committee/records) | reference | — / 10.1 min | *(none declared)* |
 | [Open Space Committee — budget schedule](/boards/open-space-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Open Space Committee — where the time goes](/boards/open-space-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 14.5 min | *(none declared)* |
+| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 14.6 min | *(none declared)* |
 | [Parks Commission](/boards/parks-commission) | reference | — / 8.3 min | *(none declared)* |
 | [Parks Commission — about](/boards/parks-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Parks Commission — finances](/boards/parks-commission/finance) | reference | — / 12.4 min | *(none declared)* |
@@ -470,14 +477,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Parks Commission — budget schedule](/boards/parks-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Parks Commission — where the time goes](/boards/parks-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Parks Commission: transfers](/boards/parks-commission/transfers) | reference | — / 6.6 min | *(none declared)* |
-| [Parks Commission — votes](/boards/parks-commission/votes) | reference | — / 56.4 min | *(none declared)* |
+| [Parks Commission — votes](/boards/parks-commission/votes) | reference | — / 56.2 min | *(none declared)* |
 | [Personnel Committee](/boards/personnel-committee) | reference | — / 7.6 min | *(none declared)* |
 | [Personnel Committee — about](/boards/personnel-committee/about) | reference | — / 6.5 min | *(none declared)* |
-| [Personnel Committee — meetings](/boards/personnel-committee/meetings) | reference | — / 9.5 min | *(none declared)* |
+| [Personnel Committee — meetings](/boards/personnel-committee/meetings) | reference | — / 9.8 min | *(none declared)* |
 | [Personnel Committee — missing records](/boards/personnel-committee/records) | reference | — / 9.7 min | *(none declared)* |
-| [Personnel Committee — budget schedule](/boards/personnel-committee/schedule) | reference | — / 6.1 min | *(none declared)* |
+| [Personnel Committee — budget schedule](/boards/personnel-committee/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Personnel Committee — where the time goes](/boards/personnel-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 45.5 min | *(none declared)* |
+| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 46.2 min | *(none declared)* |
 | [Planning Board](/boards/planning-board) | reference | — / 7.8 min | *(none declared)* |
 | [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
 | [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.2 min | *(none declared)* |
@@ -490,7 +497,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Planning Board — missing records](/boards/planning-board/records) | reference | — / 13.3 min | *(none declared)* |
 | [Planning Board — budget schedule](/boards/planning-board/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Planning Board — where the time goes](/boards/planning-board/time) | reference | — / 5.9 min | *(none declared)* |
-| [Planning Board — votes](/boards/planning-board/votes) | reference | — / 172.4 min | *(none declared)* |
+| [Planning Board — votes](/boards/planning-board/votes) | reference | — / 174.4 min | *(none declared)* |
 | [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 7.7 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — about](/boards/public-access-cable-committee-pacc/about) | reference | — / 6.0 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — meetings](/boards/public-access-cable-committee-pacc/meetings) | reference | — / 10.9 min | *(none declared)* |
@@ -498,7 +505,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC) — budget schedule](/boards/public-access-cable-committee-pacc/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — where the time goes](/boards/public-access-cable-committee-pacc/time) | reference | — / 5.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
-| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 38.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 38.7 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
@@ -518,7 +525,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
 | [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 8.6 min | *(none declared)* |
-| [School Committee — votes](/boards/school-committee/votes) | reference | — / 101.4 min | *(none declared)* |
+| [School Committee — votes](/boards/school-committee/votes) | reference | — / 106.6 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.1 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
 | [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.4 min | *(none declared)* |
@@ -530,7 +537,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Select Board — budget schedule](/boards/select-board/schedule) | reference | — / 7.8 min | *(none declared)* |
 | [Select Board — where the time goes](/boards/select-board/time) | reference | — / 5.9 min | *(none declared)* |
 | [Select Board: transfers](/boards/select-board/transfers) | reference | — / 10.9 min | *(none declared)* |
-| [Select Board — votes](/boards/select-board/votes) | reference | — / 553.8 min | *(none declared)* |
+| [Select Board — votes](/boards/select-board/votes) | reference | — / 560.8 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.1 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — meetings](/boards/senior-citizens-tax-work-off-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — missing records](/boards/senior-citizens-tax-work-off-committee/records) | reference | — / 7.7 min | *(none declared)* |
@@ -544,10 +551,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sewer Commission — budget schedule](/boards/sewer-commission/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Sewer Commission — where the time goes](/boards/sewer-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Sewer Commission: transfers](/boards/sewer-commission/transfers) | reference | — / 7.2 min | *(none declared)* |
-| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 108.2 min | *(none declared)* |
+| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 108.9 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 7.7 min | *(none declared)* |
 | [Stormwater Task Force — about](/boards/stormwater-task-force/about) | reference | — / 6.9 min | *(none declared)* |
-| [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.3 min | *(none declared)* |
+| [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.0 min | *(none declared)* |
 | [Stormwater Task Force — missing records](/boards/stormwater-task-force/records) | reference | — / 9.6 min | *(none declared)* |
 | [Stormwater Task Force — budget schedule](/boards/stormwater-task-force/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Stormwater Task Force — where the time goes](/boards/stormwater-task-force/time) | reference | — / 5.9 min | *(none declared)* |
@@ -583,7 +590,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 10.5 min | *(none declared)* |
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.6 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
-| [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 20.8 min | *(none declared)* |
+| [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 22.5 min | *(none declared)* |
 | [The budget feed — FY28](/budget-feed) | reference | — / 20.0 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
@@ -610,7 +617,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Find the money](/find-the-money) | tool | — / 11.9 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Job postings — the town and the schools](/jobs) | reference | — / 11.7 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 336.1 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 368.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, January 5, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-01-05-dGRjCkC0XiE) | reference | — / 13.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 21, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-02-21-O_n6KcPXFZ0) | reference | — / 10.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 7, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-03-07-oNLLrOpMLc8) | reference | — / 11.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, April 11, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-04-11-MP_8R4Icbzg) | reference | — / 12.2 min | *(none declared)* |
 | [Architectural Preservation District Commission, August 8, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-08-08-eAM2aeD34xk) | reference | — / 10.4 min | *(none declared)* |
 | [Architectural Preservation District Commission, September 12, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-09-12-FQgz9UZN-nk) | reference | — / 9.8 min | *(none declared)* |
 | [Architectural Preservation District Commission, October 10, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-10-10-AIrlOEyzbGU) | reference | — / 11.9 min | *(none declared)* |
@@ -648,6 +659,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Architectural Preservation District Commission, October 6, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-10-06-E2OZuLqP4zE) | reference | — / 11.7 min | *(none declared)* |
 | [Athletic Advisory Council, January 27, 2025](/meeting-minutes/athletic-advisory-council/2025-01-27-_tYwHQu995w) | reference | — / 12.6 min | *(none declared)* |
 | [Athletic Advisory Council, February 4, 2025](/meeting-minutes/athletic-advisory-council/2025-02-04-YwNTz8iSK1k) | reference | — / 11.2 min | *(none declared)* |
+| [Board of Assessors, January 31, 2023](/meeting-minutes/board-of-assessors/2023-01-31-fECORowQCt8) | reference | — / 14.9 min | *(none declared)* |
+| [Board of Assessors, February 22, 2023](/meeting-minutes/board-of-assessors/2023-02-22-I9BAESf41iI) | reference | — / 12.4 min | *(none declared)* |
+| [Board of Assessors, March 28, 2023](/meeting-minutes/board-of-assessors/2023-03-28-erYAto7Ja2w) | reference | — / 12.0 min | *(none declared)* |
 | [Board of Assessors, April 25, 2023](/meeting-minutes/board-of-assessors/2023-04-25-DmA1kLQW8XY) | reference | — / 13.1 min | *(none declared)* |
 | [Board of Assessors, May 4, 2023](/meeting-minutes/board-of-assessors/2023-05-04-I5B7niZeyz8) | reference | — / 12.7 min | *(none declared)* |
 | [Board of Assessors, May 16, 2023](/meeting-minutes/board-of-assessors/2023-05-16-R4E1CUtCdFY) | reference | — / 11.9 min | *(none declared)* |
@@ -738,6 +752,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Budget Task Force, December 16, 2024](/meeting-minutes/budget-task-force/2024-12-16-undX21PLoLU) | reference | — / 11.0 min | *(none declared)* |
 | [Cable Advisory Committee, July 23, 2026](/meeting-minutes/cable-advisory-committee/2026-07-23-cUYXjTh0Jq8) | reference | — / 10.6 min | *(none declared)* |
 | [Cable Advisory Committee, August 13, 2026](/meeting-minutes/cable-advisory-committee/2026-08-13-gIzjXrZwjYA) | reference | — / 13.9 min | *(none declared)* |
+| [Capital Planning Committee, December 5, 2022](/meeting-minutes/capital-planning-committee/2022-12-05-3DtWeBgX5tE) | reference | — / 11.2 min | *(none declared)* |
+| [Capital Planning Committee, December 14, 2022](/meeting-minutes/capital-planning-committee/2022-12-14-oPxHQO0ZFtM) | reference | — / 10.5 min | *(none declared)* |
+| [Capital Planning Committee, December 28, 2022](/meeting-minutes/capital-planning-committee/2022-12-28-txSHgkxAlcE) | reference | — / 10.1 min | *(none declared)* |
+| [Capital Planning Committee, February 13, 2023](/meeting-minutes/capital-planning-committee/2023-02-13-ZTyQdj9njms) | reference | — / 10.6 min | *(none declared)* |
 | [Capital Planning Committee, August 30, 2023](/meeting-minutes/capital-planning-committee/2023-08-30-dP88NWAPvUk) | reference | — / 9.9 min | *(none declared)* |
 | [Capital Planning Committee, October 23, 2023](/meeting-minutes/capital-planning-committee/2023-10-23-Su6zPCZR6Po) | reference | — / 10.3 min | *(none declared)* |
 | [Capital Planning Committee, October 23, 2023](/meeting-minutes/capital-planning-committee/2023-10-23-YHs6AN0UFF0) | reference | — / 10.1 min | *(none declared)* |
@@ -794,6 +812,16 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cemetery Commission, July 30, 2026](/meeting-minutes/cemetery-commission/2026-07-30-gc8unwrEL3k) | reference | — / 14.9 min | *(none declared)* |
 | [Cemetery Commission, August 19, 2026](/meeting-minutes/cemetery-commission/2026-08-19-9B8uWI7kA7w) | reference | — / 11.3 min | *(none declared)* |
 | [Cemetery Commission, September 24, 2026](/meeting-minutes/cemetery-commission/2026-09-24-I-vEsgVC3hk) | reference | — / 10.5 min | *(none declared)* |
+| [Conservation Commission, December 7, 2022](/meeting-minutes/conservation-commission/2022-12-07-UqKzsxWCnOo) | reference | — / 14.5 min | *(none declared)* |
+| [Conservation Commission, December 21, 2022](/meeting-minutes/conservation-commission/2022-12-21-6crpFMpEp0c) | reference | — / 13.1 min | *(none declared)* |
+| [Conservation Commission, January 4, 2023](/meeting-minutes/conservation-commission/2023-01-04-132F-jXSJhM) | reference | — / 14.3 min | *(none declared)* |
+| [Conservation Commission, January 18, 2023](/meeting-minutes/conservation-commission/2023-01-18-r-K4E2_YKAE) | reference | — / 11.6 min | *(none declared)* |
+| [Conservation Commission, February 1, 2023](/meeting-minutes/conservation-commission/2023-02-01-VFKxqaRoM6Y) | reference | — / 11.6 min | *(none declared)* |
+| [Conservation Commission, February 15, 2023](/meeting-minutes/conservation-commission/2023-02-15-kYdemkJaOQY) | reference | — / 13.5 min | *(none declared)* |
+| [Conservation Commission, March 1, 2023](/meeting-minutes/conservation-commission/2023-03-01-vSRs83Qa3ss) | reference | — / 13.4 min | *(none declared)* |
+| [Conservation Commission, March 15, 2023](/meeting-minutes/conservation-commission/2023-03-15-yiKFzdBlbAA) | reference | — / 11.8 min | *(none declared)* |
+| [Conservation Commission, April 5, 2023](/meeting-minutes/conservation-commission/2023-04-05-wdq6dONU2mY) | reference | — / 12.2 min | *(none declared)* |
+| [Conservation Commission, April 19, 2023](/meeting-minutes/conservation-commission/2023-04-19-GSQPREtpuoo) | reference | — / 13.8 min | *(none declared)* |
 | [Conservation Commission, May 3, 2023](/meeting-minutes/conservation-commission/2023-05-03-FiiaRGuRlC8) | reference | — / 13.2 min | *(none declared)* |
 | [Conservation Commission, May 17, 2023](/meeting-minutes/conservation-commission/2023-05-17-CaSU3VkGfCI) | reference | — / 12.3 min | *(none declared)* |
 | [Conservation Commission, June 7, 2023](/meeting-minutes/conservation-commission/2023-06-07-poKKF_ot4rA) | reference | — / 16.7 min | *(none declared)* |
@@ -901,6 +929,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Council on Aging, July 14, 2026](/meeting-minutes/council-on-aging/2026-07-14-R5R3xadnDc4) | reference | — / 15.7 min | *(none declared)* |
 | [Council on Aging, August 11, 2026](/meeting-minutes/council-on-aging/2026-08-11-a8-FjUsW9iw) | reference | — / 12.9 min | *(none declared)* |
 | [Council on Aging, September 8, 2026](/meeting-minutes/council-on-aging/2026-09-08-z6Wp_dJsdtA) | reference | — / 13.4 min | *(none declared)* |
+| [Council on Aging, October 13, 2026](/meeting-minutes/council-on-aging/2026-10-13-mNXN17bBNE0) | reference | — / 12.7 min | *(none declared)* |
 | [Economic Development Committee, July 27, 2023](/meeting-minutes/economic-development-committee/2023-07-27-qG8Mv02IVrE) | reference | — / 11.0 min | *(none declared)* |
 | [Economic Development Committee, August 24, 2023](/meeting-minutes/economic-development-committee/2023-08-24-0XEPykVQQ70) | reference | — / 11.0 min | *(none declared)* |
 | [Economic Development Committee, January 25, 2024](/meeting-minutes/economic-development-committee/2024-01-25-7rregbbaVBQ) | reference | — / 9.6 min | *(none declared)* |
@@ -919,6 +948,18 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-PbkkhwgRyUQ) | reference | — / 9.0 min | *(none declared)* |
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-aRgNS23pU6U) | reference | — / 9.0 min | *(none declared)* |
 | [Finance Committee Appointing Committee, July 6, 2026](/meeting-minutes/finance-committee-appointing-committee/2026-07-06-CqrerhpDpWk) | reference | — / 10.1 min | *(none declared)* |
+| [Finance Committee, January 12, 2023](/meeting-minutes/finance-committee/2023-01-12-Mz3Ww2E893I) | reference | — / 11.0 min | *(none declared)* |
+| [Finance Committee, January 26, 2023](/meeting-minutes/finance-committee/2023-01-26-f3mPfSY148c) | reference | — / 11.3 min | *(none declared)* |
+| [Finance Committee, February 9, 2023](/meeting-minutes/finance-committee/2023-02-09-olcG99iRSew) | reference | — / 14.1 min | *(none declared)* |
+| [Finance Committee, February 16, 2023](/meeting-minutes/finance-committee/2023-02-16-G_gNfRE8my4) | reference | — / 12.3 min | *(none declared)* |
+| [Finance Committee, February 23, 2023](/meeting-minutes/finance-committee/2023-02-23-mA3U0wo2SPw) | reference | — / 12.9 min | *(none declared)* |
+| [Finance Committee, March 2, 2023](/meeting-minutes/finance-committee/2023-03-02-52iZmZ8WSsk) | reference | — / 14.2 min | *(none declared)* |
+| [Finance Committee, March 9, 2023](/meeting-minutes/finance-committee/2023-03-09-JfIbPstvpPU) | reference | — / 10.9 min | *(none declared)* |
+| [Finance Committee, March 22, 2023](/meeting-minutes/finance-committee/2023-03-22-jEXTOz3-UvY) | reference | — / 15.2 min | *(none declared)* |
+| [Finance Committee, March 23, 2023](/meeting-minutes/finance-committee/2023-03-23-t9Tp3u7OWqk) | reference | — / 14.4 min | *(none declared)* |
+| [Finance Committee, March 30, 2023](/meeting-minutes/finance-committee/2023-03-30-Ow-nI3eipPU) | reference | — / 16.6 min | *(none declared)* |
+| [Finance Committee, April 6, 2023](/meeting-minutes/finance-committee/2023-04-06-ckCnO-5t0t8) | reference | — / 14.6 min | *(none declared)* |
+| [Finance Committee, April 20, 2023](/meeting-minutes/finance-committee/2023-04-20-q91xlcBZgQ0) | reference | — / 12.5 min | *(none declared)* |
 | [Finance Committee, June 8, 2023](/meeting-minutes/finance-committee/2023-06-08-L7DbTVp8e08) | reference | — / 12.2 min | *(none declared)* |
 | [Finance Committee, June 22, 2023](/meeting-minutes/finance-committee/2023-06-22-N85HSL6BnAk) | reference | — / 11.2 min | *(none declared)* |
 | [Finance Committee, July 27, 2023](/meeting-minutes/finance-committee/2023-07-27-rm53fDdeWug) | reference | — / 12.4 min | *(none declared)* |
@@ -994,6 +1035,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee, August 27, 2026](/meeting-minutes/finance-committee/2026-08-27-LGdwK249dSA) | reference | — / 15.9 min | *(none declared)* |
 | [Finance Committee, September 24, 2026](/meeting-minutes/finance-committee/2026-09-24-euQG57Zrac0) | reference | — / 11.9 min | *(none declared)* |
 | [Finance Committee, October 8, 2026](/meeting-minutes/finance-committee/2026-10-08-1Md_UYOImC0) | reference | — / 12.8 min | *(none declared)* |
+| [Green Community Task Force, December 8, 2022](/meeting-minutes/green-community-task-force/2022-12-08-u_-HtB82u7A) | reference | — / 10.1 min | *(none declared)* |
 | [Green Community Task Force, October 17, 2023](/meeting-minutes/green-community-task-force/2023-10-17-o8j-LOuk52I) | reference | — / 11.2 min | *(none declared)* |
 | [Green Community Task Force, January 29, 2024](/meeting-minutes/green-community-task-force/2024-01-29-kxzQI7ktRpU) | reference | — / 10.9 min | *(none declared)* |
 | [Green Community Task Force, March 6, 2024](/meeting-minutes/green-community-task-force/2024-03-06-E_5szEIz33k) | reference | — / 11.3 min | *(none declared)* |
@@ -1011,6 +1053,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Green Community Task Force, September 8, 2025](/meeting-minutes/green-community-task-force/2025-09-08-d65uWizxA7g) | reference | — / 10.6 min | *(none declared)* |
 | [Green Community Task Force, December 15, 2025](/meeting-minutes/green-community-task-force/2025-12-15-bhjksjeL-rw) | reference | — / 11.8 min | *(none declared)* |
 | [Green Community Task Force, April 27, 2026](/meeting-minutes/green-community-task-force/2026-04-27-rjCqM1XMcwk) | reference | — / 12.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, December 19, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-12-19-EBJrxpV6LmI) | reference | — / 10.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, January 12, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-01-12-DuC3g7IMNAg) | reference | — / 9.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, February 6, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-02-06-K-XlEX5ATGQ) | reference | — / 8.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 20, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-03-20-p64tH0npzsQ) | reference | — / 11.0 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee, May 1, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-05-01-hKXCSmhKtfI) | reference | — / 11.2 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee, August 21, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-08-21-HHkYTI0GhAQ) | reference | — / 10.7 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee, September 18, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-09-18-sUuUXpARock) | reference | — / 10.9 min | *(none declared)* |
@@ -1050,6 +1096,16 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Municipal Building Design Committee, August 31, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-08-31-kY5j-uu0MRo) | reference | — / 15.3 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee, September 21, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-09-21-MdHSKqTjxjk) | reference | — / 12.8 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee, October 5, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-10-05-5UjLq555UeQ) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, November 30, 2022](/meeting-minutes/lunenburg-water-district/2022-11-30-3qa8goWDWbE) | reference | — / 10.3 min | *(none declared)* |
+| [Lunenburg Water District, December 14, 2022](/meeting-minutes/lunenburg-water-district/2022-12-14-SlprUipk_K8) | reference | — / 11.0 min | *(none declared)* |
+| [Lunenburg Water District, January 4, 2023](/meeting-minutes/lunenburg-water-district/2023-01-04-iKm4ng-zJVY) | reference | — / 10.0 min | *(none declared)* |
+| [Lunenburg Water District, January 11, 2023](/meeting-minutes/lunenburg-water-district/2023-01-11-HN9EbW0Onl4) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Water District, January 25, 2023](/meeting-minutes/lunenburg-water-district/2023-01-25-1x9uu7lGIts) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Water District, February 8, 2023](/meeting-minutes/lunenburg-water-district/2023-02-08-ztIh7mCcWBQ) | reference | — / 10.7 min | *(none declared)* |
+| [Lunenburg Water District, March 1, 2023](/meeting-minutes/lunenburg-water-district/2023-03-01-dlDnoeS5HTA) | reference | — / 12.3 min | *(none declared)* |
+| [Lunenburg Water District, March 8, 2023](/meeting-minutes/lunenburg-water-district/2023-03-08-3GKzyw9i_jM) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Water District, March 22, 2023](/meeting-minutes/lunenburg-water-district/2023-03-22-fatemCMlWBo) | reference | — / 9.3 min | *(none declared)* |
+| [Lunenburg Water District, April 12, 2023](/meeting-minutes/lunenburg-water-district/2023-04-12-TSG84J7ocIs) | reference | — / 10.1 min | *(none declared)* |
 | [Lunenburg Water District, April 26, 2023](/meeting-minutes/lunenburg-water-district/2023-04-26-UiA2j1FcK8s) | reference | — / 10.6 min | *(none declared)* |
 | [Lunenburg Water District, May 24, 2023](/meeting-minutes/lunenburg-water-district/2023-05-24-W-lv7JMD3Lc) | reference | — / 10.5 min | *(none declared)* |
 | [Lunenburg Water District, June 14, 2023](/meeting-minutes/lunenburg-water-district/2023-06-14-0Ra8xpMzfCA) | reference | — / 9.2 min | *(none declared)* |
@@ -1162,6 +1218,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Master Plan Steering Committee, December 4, 2025](/meeting-minutes/master-plan-steering-committee/2025-12-04-sAkIiP5VByQ) | reference | — / 11.7 min | *(none declared)* |
 | [Master Plan Steering Committee, December 10, 2025](/meeting-minutes/master-plan-steering-committee/2025-12-10-QuF-yGvtXGs) | reference | — / 13.5 min | *(none declared)* |
 | [Master Plan Steering Committee, February 25, 2026](/meeting-minutes/master-plan-steering-committee/2026-02-25--Oy2emFIKUg) | reference | — / 9.7 min | *(none declared)* |
+| [Open Space Committee, January 11, 2023](/meeting-minutes/open-space-committee/2023-01-11-QiK81uHGclc) | reference | — / 13.9 min | *(none declared)* |
+| [Open Space Committee, February 8, 2023](/meeting-minutes/open-space-committee/2023-02-08-2JFZvl376X0) | reference | — / 12.3 min | *(none declared)* |
+| [Open Space Committee, February 8, 2023](/meeting-minutes/open-space-committee/2023-02-08-UXs7fpTAxRI) | reference | — / 11.7 min | *(none declared)* |
+| [Open Space Committee, April 12, 2023](/meeting-minutes/open-space-committee/2023-04-12-_Mr_e_ROT9s) | reference | — / 11.1 min | *(none declared)* |
 | [Open Space Committee, May 10, 2023](/meeting-minutes/open-space-committee/2023-05-10-vTcZ0YDmbk8) | reference | — / 10.8 min | *(none declared)* |
 | [Open Space Committee, June 14, 2023](/meeting-minutes/open-space-committee/2023-06-14-xT9JKcJslb8) | reference | — / 10.2 min | *(none declared)* |
 | [Open Space Committee, July 12, 2023](/meeting-minutes/open-space-committee/2023-07-12-bVJ0h5-DwVE) | reference | — / 9.6 min | *(none declared)* |
@@ -1185,6 +1245,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Open Space Committee, May 13, 2026](/meeting-minutes/open-space-committee/2026-05-13-LNEq_Bcx4ac) | reference | — / 11.4 min | *(none declared)* |
 | [Open Space Committee, September 9, 2026](/meeting-minutes/open-space-committee/2026-09-09-qp-NjUCVwuc) | reference | — / 10.4 min | *(none declared)* |
 | [Parks Commission, November 22, 2021](/meeting-minutes/parks-commission/2021-11-22-KTc7uLCgIqo) | reference | — / 12.0 min | *(none declared)* |
+| [Parks Commission, December 14, 2022](/meeting-minutes/parks-commission/2022-12-14-mk6g4PT8X14) | reference | — / 14.9 min | *(none declared)* |
+| [Parks Commission, February 15, 2023](/meeting-minutes/parks-commission/2023-02-15-9XWHsno9FSM) | reference | — / 13.3 min | *(none declared)* |
+| [Parks Commission, March 22, 2023](/meeting-minutes/parks-commission/2023-03-22-KWE3eUgQJyI) | reference | — / 13.2 min | *(none declared)* |
+| [Parks Commission, April 19, 2023](/meeting-minutes/parks-commission/2023-04-19-xon-NKhHvR0) | reference | — / 15.4 min | *(none declared)* |
 | [Parks Commission, May 24, 2023](/meeting-minutes/parks-commission/2023-05-24-ul7FHpl4UNQ) | reference | — / 15.7 min | *(none declared)* |
 | [Parks Commission, May 31, 2023](/meeting-minutes/parks-commission/2023-05-31-AyjizJjwlLo) | reference | — / 11.4 min | *(none declared)* |
 | [Parks Commission, June 28, 2023](/meeting-minutes/parks-commission/2023-06-28-xItLPcgE8Co) | reference | — / 14.3 min | *(none declared)* |
@@ -1226,6 +1290,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Parks Commission, July 22, 2026](/meeting-minutes/parks-commission/2026-07-22-QhMt1oE8eZo) | reference | — / 15.6 min | *(none declared)* |
 | [Parks Commission, August 26, 2026](/meeting-minutes/parks-commission/2026-08-26-myQGZh_udNc) | reference | — / 12.2 min | *(none declared)* |
 | [Parks Commission, September 30, 2026](/meeting-minutes/parks-commission/2026-09-30-j4r_5tj48fg) | reference | — / 10.5 min | *(none declared)* |
+| [Personnel Committee, December 5, 2022](/meeting-minutes/personnel-committee/2022-12-05-aa3vuY2HSK0) | reference | — / 10.6 min | *(none declared)* |
+| [Personnel Committee, January 9, 2023](/meeting-minutes/personnel-committee/2023-01-09-l94AUerRzV4) | reference | — / 11.2 min | *(none declared)* |
+| [Personnel Committee, February 6, 2023](/meeting-minutes/personnel-committee/2023-02-06-UZzkAaY8LyA) | reference | — / 11.2 min | *(none declared)* |
+| [Personnel Committee, February 27, 2023](/meeting-minutes/personnel-committee/2023-02-27-dF3gNYraxO4) | reference | — / 12.3 min | *(none declared)* |
+| [Personnel Committee, March 6, 2023](/meeting-minutes/personnel-committee/2023-03-06-9VB9yoo9KT0) | reference | — / 14.1 min | *(none declared)* |
+| [Personnel Committee, March 14, 2023](/meeting-minutes/personnel-committee/2023-03-14-xkzTl4oB6oY) | reference | — / 12.0 min | *(none declared)* |
+| [Personnel Committee, March 27, 2023](/meeting-minutes/personnel-committee/2023-03-27-U1lwdVQYGu0) | reference | — / 11.1 min | *(none declared)* |
 | [Personnel Committee, May 1, 2023](/meeting-minutes/personnel-committee/2023-05-01-_qkI3iv0Ijc) | reference | — / 11.1 min | *(none declared)* |
 | [Personnel Committee, July 5, 2023](/meeting-minutes/personnel-committee/2023-07-05-O8BgTx6LfWg) | reference | — / 10.0 min | *(none declared)* |
 | [Personnel Committee, July 19, 2023](/meeting-minutes/personnel-committee/2023-07-19-IRDZe8Eq8g4) | reference | — / 11.6 min | *(none declared)* |
@@ -1249,6 +1320,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Personnel Committee, August 31, 2026](/meeting-minutes/personnel-committee/2026-08-31-DcEdUB3CsCU) | reference | — / 12.4 min | *(none declared)* |
 | [Personnel Committee, September 3, 2026](/meeting-minutes/personnel-committee/2026-09-03-x4HDKD0Ol7c) | reference | — / 9.7 min | *(none declared)* |
 | [Personnel Committee, September 21, 2026](/meeting-minutes/personnel-committee/2026-09-21-aJWq6GB5GYc) | reference | — / 10.1 min | *(none declared)* |
+| [Planning Board, December 12, 2022](/meeting-minutes/planning-board/2022-12-12-W-O4Wv1bsxA) | reference | — / 11.7 min | *(none declared)* |
+| [Planning Board, January 9, 2023](/meeting-minutes/planning-board/2023-01-09-j0k_Ycm3c9w) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, February 13, 2023](/meeting-minutes/planning-board/2023-02-13-G1RxfM_M688) | reference | — / 12.3 min | *(none declared)* |
+| [Planning Board, February 27, 2023](/meeting-minutes/planning-board/2023-02-27-2kHmFvQXwmU) | reference | — / 13.2 min | *(none declared)* |
+| [Planning Board, March 13, 2023](/meeting-minutes/planning-board/2023-03-13-nhJHNcS22qo) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, March 27, 2023](/meeting-minutes/planning-board/2023-03-27-mCPrpmGZoDw) | reference | — / 13.0 min | *(none declared)* |
+| [Planning Board, April 10, 2023](/meeting-minutes/planning-board/2023-04-10-XUTK3hMFpe4) | reference | — / 12.2 min | *(none declared)* |
 | [Planning Board, April 24, 2023](/meeting-minutes/planning-board/2023-04-24-xwh6-yxKEwE) | reference | — / 11.0 min | *(none declared)* |
 | [Planning Board, May 8, 2023](/meeting-minutes/planning-board/2023-05-08-RVBk90EkSWI) | reference | — / 11.8 min | *(none declared)* |
 | [Planning Board, May 22, 2023](/meeting-minutes/planning-board/2023-05-22-LFMLSy12R6o) | reference | — / 11.0 min | *(none declared)* |
@@ -1321,6 +1399,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Planning Board, August 10, 2026](/meeting-minutes/planning-board/2026-08-10-KZf5AVu8sjQ) | reference | — / 13.2 min | *(none declared)* |
 | [Planning Board, August 24, 2026](/meeting-minutes/planning-board/2026-08-24-vZDJ6B71qqI) | reference | — / 15.6 min | *(none declared)* |
 | [Planning Board, September 28, 2026](/meeting-minutes/planning-board/2026-09-28-JGeGZxGcC7I) | reference | — / 11.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 5, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-12-05-vPmumvBaqtE) | reference | — / 10.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 9, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-01-09-WgKvxmCbqpM) | reference | — / 10.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), February 6, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-02-06-vxIXejMvzK4) | reference | — / 13.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 13, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-03-13-o9Ub4aZWufg) | reference | — / 12.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 10, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-04-10--h748h8jZMw) | reference | — / 11.7 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), May 8, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-05-08-YXVOq-ZDqgE) | reference | — / 12.5 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), June 12, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-06-12-Qh89koIUh44) | reference | — / 14.1 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), July 10, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-07-10-J0fl3-d6tKg) | reference | — / 13.3 min | *(none declared)* |
@@ -1359,6 +1442,18 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC), May 4, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-05-04-hOtGSCdR_Rs) | reference | — / 13.0 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), June 1, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-06-01-wbVcmEKBCvs) | reference | — / 14.7 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), September 8, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-08-f1AbB5ZEQ5Q) | reference | — / 11.9 min | *(none declared)* |
+| [School Committee, December 7, 2022](/meeting-minutes/school-committee/2022-12-07-cM8o1TaOIUY) | reference | — / 11.5 min | *(none declared)* |
+| [School Committee, January 4, 2023](/meeting-minutes/school-committee/2023-01-04-JnHgjxK6_Dc) | reference | — / 10.7 min | *(none declared)* |
+| [School Committee, January 18, 2023](/meeting-minutes/school-committee/2023-01-18-pSVPNkYi8vA) | reference | — / 11.1 min | *(none declared)* |
+| [School Committee, February 1, 2023](/meeting-minutes/school-committee/2023-02-01-XbNndKEfgho) | reference | — / 12.7 min | *(none declared)* |
+| [School Committee, February 15, 2023](/meeting-minutes/school-committee/2023-02-15-eTn3p7zsfMc) | reference | — / 11.8 min | *(none declared)* |
+| [School Committee, March 1, 2023](/meeting-minutes/school-committee/2023-03-01-JbyRVqHMaYE) | reference | — / 11.6 min | *(none declared)* |
+| [School Committee, March 8, 2023](/meeting-minutes/school-committee/2023-03-08-JxR0dNfTQEs) | reference | — / 9.3 min | *(none declared)* |
+| [School Committee, March 13, 2023](/meeting-minutes/school-committee/2023-03-13-Ehb4ap4uipw) | reference | — / 8.5 min | *(none declared)* |
+| [School Committee, March 15, 2023](/meeting-minutes/school-committee/2023-03-15-K55i2fjnBCQ) | reference | — / 14.0 min | *(none declared)* |
+| [School Committee, March 22, 2023](/meeting-minutes/school-committee/2023-03-22-vvJmOs8jbOc) | reference | — / 10.7 min | *(none declared)* |
+| [School Committee, April 5, 2023](/meeting-minutes/school-committee/2023-04-05-X7tlaGNIUhY) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee, April 12, 2023](/meeting-minutes/school-committee/2023-04-12-7gATFCCm-4o) | reference | — / 10.6 min | *(none declared)* |
 | [School Committee, May 3, 2023](/meeting-minutes/school-committee/2023-05-03-Frj-YrqQNf0) | reference | — / 11.7 min | *(none declared)* |
 | [School Committee, May 24, 2023](/meeting-minutes/school-committee/2023-05-24-AcWtH11Zx-M) | reference | — / 12.3 min | *(none declared)* |
 | [School Committee, June 7, 2023](/meeting-minutes/school-committee/2023-06-07-7XWiFPmG5SQ) | reference | — / 10.1 min | *(none declared)* |
@@ -1463,6 +1558,24 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee, September 16, 2026](/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg) | reference | — / 12.8 min | *(none declared)* |
 | [School Committee, October 1, 2026](/meeting-minutes/school-committee/2026-10-01-kWX2YIfTOMg) | reference | — / 9.6 min | *(none declared)* |
 | [School Committee, October 7, 2026](/meeting-minutes/school-committee/2026-10-07-kPZcnFd5COw) | reference | — / 11.4 min | *(none declared)* |
+| [Select Board, December 6, 2022](/meeting-minutes/select-board/2022-12-06-4AlNkC8iV_A) | reference | — / 13.3 min | *(none declared)* |
+| [Select Board, December 13, 2022](/meeting-minutes/select-board/2022-12-13-7WsTn3VNxN0) | reference | — / 14.2 min | *(none declared)* |
+| [Select Board, December 20, 2022](/meeting-minutes/select-board/2022-12-20-SZ7HtPfqChk) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, January 3, 2023](/meeting-minutes/select-board/2023-01-03-CYJr7pP6mpY) | reference | — / 12.8 min | *(none declared)* |
+| [Select Board, January 10, 2023](/meeting-minutes/select-board/2023-01-10-IihrcRkqYEo) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-EnQfoSyPDM4) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-lh4gniGlkl4) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-tPOow64a14o) | reference | — / 11.6 min | *(none declared)* |
+| [Select Board, January 24, 2023](/meeting-minutes/select-board/2023-01-24-kp0VKMqhrNk) | reference | — / 10.9 min | *(none declared)* |
+| [Select Board, January 31, 2023](/meeting-minutes/select-board/2023-01-31-CQsVUSFmSzw) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, February 7, 2023](/meeting-minutes/select-board/2023-02-07-zBOI0G0HSKQ) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, February 21, 2023](/meeting-minutes/select-board/2023-02-21-95QstTFldcE) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, February 28, 2023](/meeting-minutes/select-board/2023-02-28-sU5s0uIrK_E) | reference | — / 15.4 min | *(none declared)* |
+| [Select Board, March 7, 2023](/meeting-minutes/select-board/2023-03-07-neyT3m-Bi24) | reference | — / 16.1 min | *(none declared)* |
+| [Select Board, March 21, 2023](/meeting-minutes/select-board/2023-03-21-wau0eTh9dNQ) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, March 28, 2023](/meeting-minutes/select-board/2023-03-28-c31_XZD-Lxo) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, April 4, 2023](/meeting-minutes/select-board/2023-04-04-Ld6HAwskTvs) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, April 11, 2023](/meeting-minutes/select-board/2023-04-11-O64P5Pgpqkk) | reference | — / 14.2 min | *(none declared)* |
 | [Select Board, April 25, 2023](/meeting-minutes/select-board/2023-04-25-gYKQbfcvyFQ) | reference | — / 14.4 min | *(none declared)* |
 | [Select Board, May 2, 2023](/meeting-minutes/select-board/2023-05-02-cHopUkSixqk) | reference | — / 14.8 min | *(none declared)* |
 | [Select Board, May 9, 2023](/meeting-minutes/select-board/2023-05-09-1ZallDTx8pw) | reference | — / 14.7 min | *(none declared)* |
@@ -1609,6 +1722,16 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Select Board, September 15, 2026](/meeting-minutes/select-board/2026-09-15-kig-BTakGjQ) | reference | — / 19.4 min | *(none declared)* |
 | [Select Board, September 29, 2026](/meeting-minutes/select-board/2026-09-29-Pn0PV7qGjp4) | reference | — / 12.4 min | *(none declared)* |
 | [Select Board, October 6, 2026](/meeting-minutes/select-board/2026-10-06-PaRmbzsOMks) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, December 13, 2022](/meeting-minutes/sewer-commission/2022-12-13-6jNx35-m9-Q) | reference | — / 10.8 min | *(none declared)* |
+| [Sewer Commission, January 10, 2023](/meeting-minutes/sewer-commission/2023-01-10-SNpvMt0qzPM) | reference | — / 13.2 min | *(none declared)* |
+| [Sewer Commission, January 31, 2023](/meeting-minutes/sewer-commission/2023-01-31-LzO94o33VvM) | reference | — / 10.8 min | *(none declared)* |
+| [Sewer Commission, February 7, 2023](/meeting-minutes/sewer-commission/2023-02-07-ub8VPJS7cvU) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, February 14, 2023](/meeting-minutes/sewer-commission/2023-02-14-GthNkBgGA50) | reference | — / 12.8 min | *(none declared)* |
+| [Sewer Commission, February 28, 2023](/meeting-minutes/sewer-commission/2023-02-28-68BlVQXiLJI) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, March 21, 2023](/meeting-minutes/sewer-commission/2023-03-21-qRnMD9LpNhU) | reference | — / 15.2 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-6nlT1TwdXvY) | reference | — / 14.3 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-bMDWOby3QYI) | reference | — / 12.6 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-nysWeg9SaPo) | reference | — / 12.9 min | *(none declared)* |
 | [Sewer Commission, April 25, 2023](/meeting-minutes/sewer-commission/2023-04-25-CKV0XDVf_2U) | reference | — / 14.1 min | *(none declared)* |
 | [Sewer Commission, May 9, 2023](/meeting-minutes/sewer-commission/2023-05-09-rsrMK9kTsnI) | reference | — / 13.4 min | *(none declared)* |
 | [Sewer Commission, May 30, 2023](/meeting-minutes/sewer-commission/2023-05-30-fBQ-VIovsXE) | reference | — / 14.1 min | *(none declared)* |
@@ -1677,6 +1800,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sewer Commission, August 25, 2026](/meeting-minutes/sewer-commission/2026-08-25-Ki8TszCpmCY) | reference | — / 12.4 min | *(none declared)* |
 | [Sewer Commission, September 8, 2026](/meeting-minutes/sewer-commission/2026-09-08-VMfaXMyKBII) | reference | — / 12.4 min | *(none declared)* |
 | [Sewer Commission, September 29, 2026](/meeting-minutes/sewer-commission/2026-09-29-nEOkAfYljPY) | reference | — / 10.4 min | *(none declared)* |
+| [Stormwater Task Force, February 16, 2023](/meeting-minutes/stormwater-task-force/2023-02-16-dcBYjdoK070) | reference | — / 9.6 min | *(none declared)* |
 | [Stormwater Task Force, April 20, 2023](/meeting-minutes/stormwater-task-force/2023-04-20-j-T-E0SmeE4) | reference | — / 13.0 min | *(none declared)* |
 | [Stormwater Task Force, July 20, 2023](/meeting-minutes/stormwater-task-force/2023-07-20-uK5vgH9SYgo) | reference | — / 10.3 min | *(none declared)* |
 | [Stormwater Task Force, December 28, 2023](/meeting-minutes/stormwater-task-force/2023-12-28-c086dB0oGQk) | reference | — / 11.5 min | *(none declared)* |
@@ -1751,6 +1875,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Trust Fund Commission, August 27, 2026](/meeting-minutes/trust-fund-commission/2026-08-27-lO_rw3eY5D8) | reference | — / 12.6 min | *(none declared)* |
 | [Trust Fund Commission, September 10, 2026](/meeting-minutes/trust-fund-commission/2026-09-10-7wCeOTdyvdc) | reference | — / 12.4 min | *(none declared)* |
 | [Trust Fund Commission, September 24, 2026](/meeting-minutes/trust-fund-commission/2026-09-24-kNEMWtxiZOM) | reference | — / 12.6 min | *(none declared)* |
+| [Zoning Board of Appeals, December 14, 2022](/meeting-minutes/zoning-board-of-appeals/2022-12-14-6n850WRH4m8) | reference | — / 9.8 min | *(none declared)* |
+| [Zoning Board of Appeals, January 11, 2023](/meeting-minutes/zoning-board-of-appeals/2023-01-11-KL1jXmZgHbs) | reference | — / 11.4 min | *(none declared)* |
+| [Zoning Board of Appeals, January 25, 2023](/meeting-minutes/zoning-board-of-appeals/2023-01-25-6C0allU7Wlw) | reference | — / 11.0 min | *(none declared)* |
+| [Zoning Board of Appeals, February 8, 2023](/meeting-minutes/zoning-board-of-appeals/2023-02-08-0tObOP9QnZg) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, February 22, 2023](/meeting-minutes/zoning-board-of-appeals/2023-02-22-1CpChUJ_jAY) | reference | — / 8.4 min | *(none declared)* |
 | [Zoning Board of Appeals, May 24, 2023](/meeting-minutes/zoning-board-of-appeals/2023-05-24-t13x5lWgMl0) | reference | — / 9.7 min | *(none declared)* |
 | [Zoning Board of Appeals, June 14, 2023](/meeting-minutes/zoning-board-of-appeals/2023-06-14-U5e9naHfmyM) | reference | — / 9.8 min | *(none declared)* |
 | [Zoning Board of Appeals, June 28, 2023](/meeting-minutes/zoning-board-of-appeals/2023-06-28-8woW4wx2mYY) | reference | — / 8.9 min | *(none declared)* |
@@ -1801,10 +1930,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 36.5 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 37.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 18.2 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.7 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.3 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 14.3 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 192.1 min | *(none declared)* |

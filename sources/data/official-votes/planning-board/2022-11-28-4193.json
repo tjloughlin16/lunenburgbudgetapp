@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-11-28",
  "docid": "4193",
@@ -12,39 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Approve the stormwater permit for 680 Reservoir Road with Standard Conditions and two Special Conditions",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the stormwater permit for 680 Reservoir Road with Standard Conditions and two added Special Conditions (trash racks on the eight-inch pipe; clearing contained within the proposed driveway area).",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the stormwater permit for 680 reservoir road with standard conditions and the addition of two special conditions specifying a trash rack on both ends of the eight-inch pipe, and any clearing done prior to the recording of the decision needed to be contained within the proposed driveway area, a. reid seconded, passed unanimously"
+   "quote": "m. brenner made motion to approve the stormwater permit for 680 reservoir road with standard conditions"
   },
   {
-   "motion": "Approve the stormwater permit for 319 Highland Street with Standard Conditions plus Special Condition of keeping culvert free of debris",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the stormwater permit for 319 Highland Street with Standard Conditions plus a Special Condition of keeping the culvert free of debris at the inlet.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the stormwater permit for 319 highland street with standard conditions plus a special condition of keeping the culvert free of debris at the inlet, a. reid seconded, passed unanimously"
+   "quote": "m. brenner made motion to approve the stormwater permit for 319 highland street with standard conditions"
   },
   {
-   "motion": "Approve the minutes of 11/14/22 and 11/14/22, 260 Falulah Road",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Approve the minutes of 11/14/22 and 11/14/22, 260 Falulah Road, as printed.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to approve the minutes of 11/14/22 and 11/14/22, 260 falulah road ; a. reid seconded, roll call vote- m. brenner, aye; a. reid, aye; m. allison, aye; passed unanimously"
+   "quote": "m. brenner made motion to approve the minutes of 11/14/22 and 11/14/22, 260 falulah road"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote- m. brenner, aye; a. reid, aye; m. allison, aye; passed unanimously"
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote- m. brenner, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08036449999999999
+ "note": "Text is a readable extraction of typed minutes, not a scan; no votes were unreadable. Four motions carry a recorded result (\"passed unanimously\"); no numeric tally is printed for the three non-roll-call motions. The minutes-approval motion prints the date \"11/14/22 and 11/14/22\" twice, reproduced as printed. Section 250-6.4 is recorded as \"Tabled\" with no motion. The Pond View item records no action beyond the applicant retaining engineers. No public comment section and no dollar figures appear in the minutes. Timothy Willsmer's attendance is not stated; the minutes say only that he expressed interest.",
+ "cost_usd": 0.01517781,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "engineer",
+   "status": "present",
+   "quote": "the engineer, brian marchetti, noted that the applicant was anxious to get started."
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "applicant for the Planning Board talent bank",
+   "status": "not stated",
+   "quote": "timothy willsmer of 762 northfield road expressed his interest in serving on the planning board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A joint vote of the Select Board and the Planning Board on the talent bank applicant was scheduled for the December 6 Select Board meeting.",
+   "quote": "a joint vote of the select board and the planning board was scheduled for the december 6"
+  },
+  {
+   "decision": "Section 250-6.4, Driveways & Entrances, was tabled. No vote is recorded.",
+   "quote": "section 250-6.4., driveways & entrances- tabled"
+  },
+  {
+   "decision": "A. Burney would update the Master Plan RFP and provide the changes to the Assistant Town Manager.",
+   "quote": "a. burney would update the rfp and provide the changes to the assistant town manager."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Talent bank: Timothy Willsmer",
+   "resolution": "joint vote scheduled for December 6",
+   "quote": "timothy willsmer of 762 northfield road expressed his interest in serving on the planning board.",
+   "tags": [
+    "talent bank",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public hearing: 680 Reservoir Road stormwater permit",
+   "resolution": "stormwater permit approved",
+   "quote": "680 reservoir road- see separate minutes.",
+   "tags": [
+    "stormwater",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: 319 Highland Street stormwater permit",
+   "resolution": "stormwater permit approved",
+   "quote": "319 highland street- see separate minutes.",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "tree cutting"
+   ]
+  },
+  {
+   "topic": "Comprehensive permit application: Pond View Commons, LLC",
+   "resolution": "no action",
+   "quote": "pond view commons, llc, howard street",
+   "tags": [
+    "comprehensive permit",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP discussion",
+   "resolution": "RFP to be updated by A. Burney",
+   "quote": "board members discussed the rfp.",
+   "tags": [
+    "master plan",
+    "RFP",
+    "public participation"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4 Driveways & Entrances",
+   "resolution": "tabled",
+   "quote": "section 250-6.4., driveways & entrances- tabled",
+   "tags": [
+    "zoning",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "m. brenner made motion to approve the minutes of 11/14/22",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "the committee was working on prioritization.",
+   "tags": [
+    "capital planning",
+    "stormwater task force",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's item: STM follow-up",
+   "resolution": "noted",
+   "quote": "both zoning articles passed.",
+   "tags": [
+    "special town meeting",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "december 6 - with select board",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "noted",
+   "quote": "zoning for mbta communities",
+   "tags": [
+    "zoning",
+    "MBTA communities",
+    "growth"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:36 p.m.",
+   "quote": "meeting adjourned 8:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater permits",
+  "master plan",
+  "zoning",
+  "talent bank",
+  "comprehensive permit",
+  "Pond View Commons",
+  "driveways",
+  "special town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

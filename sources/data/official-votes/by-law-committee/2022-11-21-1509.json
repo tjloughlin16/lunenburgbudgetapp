@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2022-11-21",
  "docid": "1509",
@@ -12,23 +12,191 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 17, 2022, and the October 26, 2022 meetings",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "David Passios",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the October 17, 2022 and October 26, 2022 meetings.",
+   "moved_by": "Mr. Brenner",
+   "seconded_by": "Mr. Passios",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. brenner motioned to approve the minutes of the october 17, 2022, and the october 26, 2022 meetings, mr. passios seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Peter Beardmore",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Brenner",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. brenner motioned to adjourn, mr. beardmore seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. The note \"Unanimously approved by Capital Planning Committee at 12/14/2022 meeting\" refers to approval at a different meeting and is not a vote recorded in these 11/21/2022 minutes.",
- "cost_usd": 0.07563450000000001
+ "note": "The request names the board \"By Law Committee\", but the minutes are headed \"Lunenburg Capital Planning Committee\" (CPC); the record above follows the minutes. The text is a clean extraction, not a scan; no motions were recorded on the capital requests or prioritization. The line \"Unanimously approved by Capital Planning Committee at 12/14/2022 meeting\" refers to a later meeting and is not recorded as a vote here. The minutes do not print roles for the members other than the Chairperson, and do not record a motion for the inventory or meeting-schedule items.",
+ "cost_usd": 0.01416731,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, matthew brenner, and peter beardmore."
+  },
+  {
+   "name": "David Passios",
+   "role": "listed under Present (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, matthew brenner, and peter beardmore."
+  },
+  {
+   "name": "George Martin",
+   "role": "listed under Present (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, matthew brenner, and peter beardmore."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "listed under Present (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, matthew brenner, and peter beardmore."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "listed under Present (no role printed)",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, david passios, george martin, matthew brenner, and peter beardmore."
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg Resident",
+   "status": "present",
+   "quote": "guests: lunenburg resident rhonda lissio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that establishing the town's inventory in the summer before the capital planning process begins would be most helpful.",
+   "quote": "the committee agreed that establishing the town's inventory in the summer before the capital planning process begins would be most helpful."
+  },
+  {
+   "decision": "Action item for the next meeting: more discussion and prioritization of capital plan items.",
+   "quote": "action items for next meeting: more discussion, and prioritization of capital plan items"
+  },
+  {
+   "decision": "Subsequent CPC meetings confirmed for November 30, December 5, and December 14, 2022.",
+   "quote": "confirm subsequent cpc meetings: november 30, december 5, and december 14, 2022."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital plan requests total",
+   "what_was_recorded": "The committee had 29 capital plan requests before it, totaling the amount printed.",
+   "figures_as_printed": [
+    "$3,140,110"
+   ],
+   "quote": "there are 29 capital plan requests totaling $3,140,110"
+  },
+  {
+   "topic": "Inventory threshold for items and bulk purchases",
+   "what_was_recorded": "Mr. Brenner said the inventory list should cover items and bulk purchases at or above the printed dollar threshold, plus recently retired items such as vehicles.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "mr. brenner added that given the purview of the committee the list should consist of items and bulk purchases for $20,000 and over, as well as recently retired items such as vehicles."
+  },
+  {
+   "topic": "Protective film for school windows",
+   "what_was_recorded": "A resident said she would rather the town spend money on expanding the school officer resource program than on protective film for windows. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lissio commented that she would rather see the school officer resource program expanded than see the town spend money on protective film for windows."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "School officer resource program vs. window film",
+   "speaker": "Ms. Lissio",
+   "stated_role": "Lunenburg Resident",
+   "quote": "ms. lissio commented that she would rather see the school officer resource program expanded than see the town spend money on protective film for windows."
+  },
+  {
+   "topic": "Holiday tree arrival and tree lighting",
+   "speaker": "Mr. Passios",
+   "stated_role": "Public Comment from the committee",
+   "quote": "mr. passios announced the holiday tree is slated to arrive november 26, 2022 at the gazebo."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting law statement",
+   "resolution": "no action",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ],
+   "quote": "chairperson tom alonzo called meeting to order at 6:01 p.m., and read a statement regarding"
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "CPC inventory responsibility under chapter 12-18",
+   "resolution": "discussed; committee agreed inventory should be established in the summer before capital planning begins",
+   "tags": [
+    "inventory",
+    "bylaws",
+    "town property"
+   ],
+   "quote": "the committee agreed that establishing the town's inventory in the summer before the capital planning process begins would be most helpful."
+  },
+  {
+   "topic": "Capital planning requests and prioritization",
+   "resolution": "discussed; continued to next meeting",
+   "tags": [
+    "capital planning",
+    "prioritization",
+    "funding sources"
+   ],
+   "quote": "there are 29 capital plan requests totaling $3,140,110"
+  },
+  {
+   "topic": "Minutes approval (October 17 and 26, 2022)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. brenner motioned to approve the minutes of the october 17, 2022, and the october 26, 2022 meetings, mr. passios seconded. on vote, motion carried unanimously."
+  },
+  {
+   "topic": "Subsequent meetings and holiday tree announcement",
+   "resolution": "meetings confirmed; announcement made",
+   "tags": [
+    "meeting schedule",
+    "holiday tree"
+   ],
+   "quote": "confirm subsequent cpc meetings: november 30, december 5, and december 14, 2022."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mr. brenner motioned to adjourn, mr. beardmore seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "inventory",
+  "town bylaws chapter 12-18",
+  "capital plan requests",
+  "minutes approval",
+  "public comment",
+  "school safety",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

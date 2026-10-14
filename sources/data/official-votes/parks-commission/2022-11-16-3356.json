@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-11-16",
  "docid": "3356",
@@ -12,23 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for October 26, 2022",
+   "motion": "Approve the minutes of October 26, 2022.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "k. menard made a motion to approve the minutes for october 26, 2022. c. sullivan seconded. roll call vote, c. sullivan - yes k. menard - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to approve the minutes for october 26, 2022. c. sullivan seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K.Menard",
    "outcome": "passed",
    "procedural": true,
-   "quote": "c. sullivan made a motion to adjourn. k.menard seconded. roll call vote k. menard - yes c. sullivan - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "c. sullivan made a motion to adjourn. k.menard seconded. roll call vote"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. The minutes contain extensive discussion of park business (landscaping, playground access, grant applications, etc.) but these are informational updates and action items, not motions put to a vote. Only the approval of prior minutes and the adjournment motion were voted on.",
- "cost_usd": 0.09016740000000001
+ "dropped_unquoted": 1,
+ "note": "Text extract of a four-page set of minutes; no scanned-page limitation noted. Two motions were recorded, both procedural, each with a roll call and 'All in favor, motion carried.' No substantive motion was recorded, so no substantive votes are listed. The letterhead says 'Pat Hakey' and the attendance line says 'Patrick Hakey'; treated as one member, inferred. Andrea Mastrototoro is the signatory and her attendance is not stated. There is no public comment section in the minutes. The Betty McDonald kudos and a Facebook post are relayed feedback, not public comment, so they are not recorded as speakers. Dollar figures are as printed in the minutes; the minutes do not say whether the figures are approved amounts.",
+ "cost_usd": 0.01513561,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: dave passios and patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member (listed as Pat Hakey in the letterhead)",
+   "status": "absent",
+   "quote": "absent: dave passios and patrick hakey"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed the 51 Parmenter Road property is of interest for a park; the Chair will tell Open Space the Parks Commission is interested and wants their support.",
+   "quote": "the commission agreed this property is of interest for a park."
+  },
+  {
+   "decision": "The Chair will reach out to the Town Manager to devise an action plan (grant applications, and the Town Meeting follow-up).",
+   "quote": "a. lockwood is going to reach out to the town manager to devise an action plan."
+  },
+  {
+   "decision": "K. Menard will draft a naming-of-facilities policy for further review.",
+   "quote": "k. menard will work on putting something together for further review."
+  },
+  {
+   "decision": "C. Sullivan will follow up again with the Scout Master about the Veterans Memorial Park benches.",
+   "quote": "c. sullivan stated no, he will follow-up again with the scout master."
+  },
+  {
+   "decision": "A. Lockwood will connect with the Lunenburg Business Association at a later date, since the 7:30 appointment could not be held.",
+   "quote": "a. lockwood indicated they were unable to meet tonight. a. lockwood will connect with them at"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "McNally Park abatement",
+   "what_was_recorded": "The chair reported the McNally Park abatement is complete at a stated cost, and that the Commission will request funding approval.",
+   "figures_as_printed": [
+    "$4,300.00"
+   ],
+   "quote": "mcnally park, abatement is complete, the cost was $4,300.00 and will request funding"
+  },
+  {
+   "topic": "Marshall Park engineering survey award",
+   "what_was_recorded": "The chair reported the Marshall Park survey was awarded to Dillis and Roy for a stated cost.",
+   "figures_as_printed": [
+    "$18,900.00"
+   ],
+   "quote": "the marshall park survey has been awarded to dillis and roy for the cost of $18,900.00."
+  },
+  {
+   "topic": "Beach House rebid",
+   "what_was_recorded": "The Beach House is going back out to bid in January and will be funded from the Operational Budget; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the beach house is going back out to bid in january. this will be funded out of the operational budget."
+  },
+  {
+   "topic": "51 Parmenter Road / Lake Shirley title search",
+   "what_was_recorded": "The minutes record that Open Space was authorized for a title search on Stump Cove, up to a stated amount.",
+   "figures_as_printed": [
+    "$200,000.00"
+   ],
+   "quote": "stump cove has been authorized for up to $200,000.00 for a title search."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved (October 26, 2022 minutes)",
+   "quote": "k. menard made a motion to approve the minutes for october 26, 2022. c. sullivan seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Updates from the Chair",
+   "resolution": "received; facilities director resignation, park work, capital requests and a 5-10 year plan noted",
+   "quote": "a.lockwood indicated p. visconti, facilities director, has resigned and provided the",
+   "tags": [
+    "facilities",
+    "capital planning",
+    "parks maintenance",
+    "beach house"
+   ]
+  },
+  {
+   "topic": "7:30 Appointment with Lunenburg Business Association",
+   "resolution": "not held; chair to reconnect later",
+   "quote": "a. lockwood indicated they were unable to meet tonight. a. lockwood will connect with them at",
+   "tags": [
+    "partnership",
+    "events"
+   ]
+  },
+  {
+   "topic": "Town Meeting Article discussion",
+   "resolution": "no action; feedback reviewed",
+   "quote": "c. sullivan thought it went well and there seems to be support from the select board and",
+   "tags": [
+    "town meeting",
+    "community feedback",
+    "T-ball"
+   ]
+  },
+  {
+   "topic": "Grant application discussion",
+   "resolution": "chair to work with Town Manager on an action plan",
+   "quote": "next on the agenda, grant application discussion",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Marshall Park engineering survey",
+   "resolution": "no action; survey outreach discussed",
+   "quote": "c. sullivan stated he has received 20 responses to the survey thus far.",
+   "tags": [
+    "survey",
+    "marshall park"
+   ]
+  },
+  {
+   "topic": "Veterans Memorial Park benches repair update",
+   "resolution": "continued; Boy Scouts follow-up",
+   "quote": "a. lockwood asked c. sullivan if he has heard back for the boy scouts.",
+   "tags": [
+    "veterans memorial park",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "51 Parmenter Road discussion",
+   "resolution": "referred to Open Space Committee",
+   "quote": "a. lockwood asked the commission if they would like to defer this to open space.",
+   "tags": [
+    "land acquisition",
+    "lake shirley",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Naming of Facilities policy creation",
+   "resolution": "continued; K. Menard to draft",
+   "quote": "k. menard will work on putting something together for further review.",
+   "tags": [
+    "naming policy",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; memorial acknowledged",
+   "quote": "k. menard acknowledged the passing of cheryl shaw after a brave battle with cancer.",
+   "tags": [
+    "board comment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "park commission",
+  "minutes",
+  "facilities",
+  "capital planning",
+  "grants",
+  "land acquisition",
+  "lake shirley",
+  "open space",
+  "naming policy",
+  "survey",
+  "beach house",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -2536,9 +2536,9 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 278677,
+     "bytes": 279823,
      "url": "/docs/data/board-transfers.csv",
-     "count": 450,
+     "count": 453,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
     },
@@ -4878,7 +4878,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3732879,
+     "bytes": 3734872,
      "url": "/docs/data/meeting-register.csv",
      "count": 7074,
      "unit": "rows",
@@ -5070,9 +5070,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 693507,
+     "bytes": 695126,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10100,
+     "count": 10123,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -55239,7 +55239,7 @@
  "totals": {
   "documents": 4948,
   "groups": 25,
-  "bytes": 6403627875,
+  "bytes": 6403632633,
   "loadBearing": 189
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

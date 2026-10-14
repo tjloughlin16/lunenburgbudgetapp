@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-11-17",
  "docid": "2916",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the October 20, 2022 meeting",
+   "motion": "Approve the minutes of October 20, 2022.",
    "moved_by": "Vice Chair",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "vice chair made a motion to approve the minutes; tenant board member seconded, with all in favor."
+   "quote": "with no discussion, vice chair made a motion to approve the minutes; tenant board member seconded, with all in favor."
   },
   {
-   "motion": "elect Deborah A.H. Christen as Chair, Linda McDonald as Vice Chair, and Dale Proulx as Treasurer",
+   "motion": "Elect Deborah A.H. Christen as Chair, Linda McDonald as Vice Chair and Dale Proulx as Treasurer (slate of officers).",
    "moved_by": "Board Member Dale",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "board member dale nominated deborah a.h. christen as chair, linda mcdonald as vice chair and himself as treasurer. tenant board member seconded, with all in favor."
   },
   {
-   "motion": "approve the October 2022 financials as presented",
+   "motion": "Approve the October 2022 financials as presented.",
    "moved_by": "Treasurer",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -36,15 +36,15 @@
    "quote": "treasurer made a motion to approve the october, 2022 financials as presented; vice chair seconded, with all in favor."
   },
   {
-   "motion": "not hold a December Board Meeting",
+   "motion": "Not hold a December 2022 Board Meeting.",
    "moved_by": "Treasurer",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "treasurer motioned to not have a december board meeting; vice chair second, with all in favor."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:36p.m.",
    "moved_by": "Tenant Bard Member",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -53,6 +53,217 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed. Note: Minutes use titles rather than full names in vote attributions except in vote 2 where \"Board Member Dale\" is named. Vote 5 contains a typographical error in the original (\"Bard Member\" instead of \"Board Member\") and vote 4 contains \"second\" instead of \"seconded\"—both preserved verbatim per instructions.",
- "cost_usd": 0.11379650000000001
+ "note": "Text extracted from a single-document text layer; no scan. Votes are recorded only as \"all in favor\" with no counts, so each is recorded as \"passed\" without a tally. The election of officers is recorded as a vote because a second and \"all in favor\" follow the nomination; the minutes do not use the word \"motion\" there. [ASSUMING] that reading: if the nomination was not a formal vote, the election vote entry is wrong. Minutes name movers by title only in two places (\"Vice Chair\", \"Tenant Board Member\") and the adjournment mover is printed \"Tenant Bard Member\" (typo kept as printed). Christen appears as \"Chair\" in the header and as \"Vice Chair\" in item 1 of the body. No dollar figure appears anywhere in the text; the reserve is a percentage. No transfers recorded.",
+ "cost_usd": 0.01663341,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Chair (header); called Vice Chair in item 1",
+   "status": "present",
+   "quote": "deborah a.h. christen, chair"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair (header)",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "dale proulx, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "jade tavares, administrative assistance/special projects"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Assistant Executive Director to follow up on tenants' request for a speed limit sign in the complex.",
+   "quote": "assistant executive director agreed to follow up."
+  },
+  {
+   "decision": "Maintenance to put up signs for the two seasonal parking spots in the back lot.",
+   "quote": "maintenance will be putting up the signs."
+  },
+  {
+   "decision": "Next meeting to be held in January 2023.",
+   "quote": "next meeting will be held in january, 2023."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report (reserve and maintenance accounts)",
+   "what_was_recorded": "Executive Director reported the reserve as healthy at 60.94%, ordinary maintenance in surplus and extraordinary maintenance in deficit; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "reserve is healthy at 60.94%. we are 10 months in and going well."
+  },
+  {
+   "topic": "Generator project at 667-1 (Community Room)",
+   "what_was_recorded": "The generator project was tabled because of the cost of the bids received; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this project was tabled due to excessive cost of bids received."
+  },
+  {
+   "topic": "Intercom and electrical panel project at 667-1 (ARPA funding)",
+   "what_was_recorded": "DHCD combined the intercom project with a panel replacement described as an ARPA targeted award; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "an arpa targeted award, to be more cost effective."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Trash container and cardboard disposal",
+   "speaker": "Tenant",
+   "stated_role": "Tenant",
+   "quote": "tenant stated there should be an extra container for trash"
+  },
+  {
+   "topic": "Speeding cars and delivery trucks",
+   "speaker": "Tenants",
+   "stated_role": "Tenants",
+   "quote": "tenants talked about cars (tenants and visitors) speeding in the complex."
+  },
+  {
+   "topic": "Cars parking on the lawn and in visitor spots; additional parking",
+   "speaker": "Tenants",
+   "stated_role": "Tenants",
+   "quote": "tenants talked about some cars are parking on the lawn"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened at 2:00p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:00p.m.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of October 20, 2022 minutes",
+   "resolution": "approved",
+   "quote": "the minutes of october 20th, 2022 were presented. with no discussion, vice chair made a motion",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comments (trash, speeding, parking)",
+   "resolution": "speed-sign follow-up assigned to Assistant Executive Director; seasonal parking signs to Maintenance",
+   "quote": "there was an opportunity for public comments:",
+   "tags": [
+    "public comment",
+    "tenants",
+    "parking",
+    "trash",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Executive Director report (conference, officer election, booster clinic)",
+   "resolution": "officers elected; booster clinic discussed, no action recorded",
+   "quote": "election of officers - the executive director asked for nominations for a full slate of officers",
+   "tags": [
+    "elections",
+    "officers",
+    "covid",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "October 2022 financials approved",
+   "quote": "the financials of october 2022 were reviewed.",
+   "tags": [
+    "finance",
+    "reserve",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Administration: modernization, work orders, state-aided housing report",
+   "resolution": "reports received; no action recorded",
+   "quote": "we received 17 standard applications (14 elderly/young disabled and 3 family).",
+   "tags": [
+    "maintenance",
+    "modernization",
+    "waiting list",
+    "occupancy",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "Unfinished business: dead and dying trees",
+   "resolution": "no action recorded",
+   "quote": "lunenburg conservation commission regarding removal of dead and dying trees.",
+   "tags": [
+    "trees",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "New business: December meeting",
+   "resolution": "no December board meeting",
+   "quote": "treasurer motioned to not have a december board meeting",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Other correspondence: DHCD notice",
+   "resolution": "listed; no action recorded",
+   "quote": "dhcd phn 2022-21 reservation & modernization resource for lha-owned section 8 nc/sr",
+   "tags": [
+    "DHCD",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:36p.m.",
+   "quote": "tenant bard member made a motion to adjourn the meeting at 2:36p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "elections",
+  "financial report",
+  "public comment",
+  "maintenance",
+  "parking",
+  "tenants",
+  "DHCD",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

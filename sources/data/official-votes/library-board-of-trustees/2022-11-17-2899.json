@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-11-17",
  "docid": "2899",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of October 19, 2022 as presented",
+   "motion": "Accept the minutes of October 19, 2022 as presented.",
    "moved_by": "Kate",
    "seconded_by": "Maia",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call vote",
    "procedural": true,
    "quote": "kate made a motion to accept the minutes of october 19, 2022 as presented. seconded by maia. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Maia",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -29,6 +29,221 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0668381
+ "note": "Text is complete for pages 1-2; pages 3-6 are blank. Two procedural votes are recorded (minutes approval, adjournment), both with a stated result; no substantive vote is recorded. The by-laws vote was postponed, and the director's review is to be voted on in December, but neither was voted on here. Attendance is taken from the 'Attending:' line; the minutes do not separately mark anyone absent. Harry Kubetz is recorded as 'Harry Kubetz-remote' and is listed here as remote with the suffix dropped from the name. Dollar figures are printed as '$1339' and '$36k' without commas or cents. The 'Attached Documents' list (agenda, director's report, adult and teen services reports) is not in the text, so those were not read. The 'Friends' sale' amount is what the Friends made, not a library budget line.",
+ "cost_usd": 0.01537291,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "remote",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:47 p.m. by dick mailloux."
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz-remote, dick mailloux, donna saiia, muir haman - director lpl, maia wentrup, laura boussom, robin venezia"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "robin wanted to thank the bot for their help in setting up and running the friend's book sale."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "By-laws review discussion postponed to the December meeting.",
+   "quote": "discussion was postponed until the december meeting."
+  },
+  {
+   "decision": "Harry Kubetz to hold a subcommittee meeting on December 11 at 11 am to compile the director's review.",
+   "quote": "harry scheduled a subcommittee meeting for december 11th at 11 am to compile a completed review."
+  },
+  {
+   "decision": "Muir Haman to revisit the Turkey Hill school visits, with a possible Jan/Feb start.",
+   "quote": "muir will revisit this with a possible jan/feb start."
+  },
+  {
+   "decision": "Muir Haman to look into inviting the 6th grade classes to the library.",
+   "quote": "muir said he would look into this."
+  },
+  {
+   "decision": "Edward Jones to talk with Harry the next day about what is required to move the trust fund forward.",
+   "quote": "edward jones will talk with harry tomorrow about what is required to move forward."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends of LPL book sale proceeds",
+   "what_was_recorded": "The Friends made a stated amount from the recent book sale, in public comment.",
+   "figures_as_printed": [
+    "$1339"
+   ],
+   "quote": "the friend's made $1339 from the recent sale."
+  },
+  {
+   "topic": "Exterior painting quote",
+   "what_was_recorded": "The director obtained a quote for exterior painting, which is a high capital-plan priority alongside HVAC.",
+   "figures_as_printed": [
+    "$36k"
+   ],
+   "quote": "exterior painting is also a high priority. muir got a quote for this for $36k."
+  },
+  {
+   "topic": "Library spending to date",
+   "what_was_recorded": "The director reported the library is one-third expended for the year, typical for this time of year. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we are 1/3 expended, typical for this time of year."
+  },
+  {
+   "topic": "Trust fund investment",
+   "what_was_recorded": "Trust fund management was discussed with the town, Edward Jones and Bartholomew, including which firm holds the Touchstone funds. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "harry had a meeting with the town, edward jones and bartholomew."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Robin",
+   "topic": "thanks for help with Friends book sale",
+   "quote": "robin wanted to thank the bot for their help in setting up and running the friend's book sale."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; thanks to the board recorded",
+   "quote": "robin wanted to thank the bot for their help in setting up and running the friend's book sale.",
+   "tags": [
+    "friends of the library",
+    "book sale"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved unanimously",
+   "quote": "kate made a motion to accept the minutes of october 19, 2022 as presented. seconded by maia. the motion passed unanimously by roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; staffing interviews scheduled, strategic plan submitted, programs reported",
+   "quote": "we are 1/3 expended, typical for this time of year.",
+   "tags": [
+    "director",
+    "staffing",
+    "programs",
+    "strategic plan",
+    "capital plan",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Director's Review",
+   "resolution": "subcommittee scheduled; vote expected at December meeting",
+   "quote": "harry scheduled a subcommittee meeting for december 11th at 11 am to compile a completed review.",
+   "tags": [
+    "director review",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "discussed; no action; follow-up with Edward Jones",
+   "quote": "harry had a meeting with the town, edward jones and bartholomew.",
+   "tags": [
+    "trust fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "discussed; architect willing to help with design ideas",
+   "quote": "muir has been in touch with johnson-roberts associates, the library architects, and they are willing to help us with some design ideas.",
+   "tags": [
+    "library sign",
+    "architects"
+   ]
+  },
+  {
+   "topic": "By-Laws Review, Discussion, and vote",
+   "resolution": "postponed to December meeting",
+   "quote": "discussion was postponed until the december meeting.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no meeting; no quorum",
+   "quote": "the friends did not have a quorum so there wasn't a meeting.",
+   "tags": [
+    "friends of the library"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "congratulations to Lydia recorded",
+   "quote": "dick offered congratulations to lydia for the recent programming.",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:45 p.m.",
+   "quote": "motion to adjourn by maia. seconded by donna. meeting was adjourned at 7:45 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trust fund",
+  "director review",
+  "capital plan",
+  "HVAC",
+  "exterior painting",
+  "by-laws",
+  "friends of the library",
+  "programs",
+  "staffing",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }
