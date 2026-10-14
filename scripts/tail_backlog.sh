@@ -16,8 +16,12 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FILTER="^\[|wrote|reconciled|FAILED|STOPPED|done|completed"
 while true; do
   day=$(date +%Y-%m-%d)
-  echo "--- following build/process-meeting-$day.log ---"
-  tail -n 40 -F "$ROOT/build/process-meeting-$day.log" 2>/dev/null | grep --line-buffered -E "$FILTER" &
+  # BOTH NAMES. A run started by hand writes process-meeting-<day>.log; the launchd run
+  # (minutes_pacing.sh) writes process-meeting-week-<day>.log. Following only the first
+  # watched a file that never filled while the real run wrote the second (14 Oct 2026).
+  echo "--- following build/process-meeting-$day.log and process-meeting-week-$day.log ---"
+  tail -n 40 -F "$ROOT/build/process-meeting-$day.log" "$ROOT/build/process-meeting-week-$day.log" 2>/dev/null \
+    | grep --line-buffered -E "$FILTER" &
   pid=$!
   while [ "$(date +%Y-%m-%d)" = "$day" ]; do sleep 60; done
   pkill -P $pid 2>/dev/null; kill $pid 2>/dev/null
