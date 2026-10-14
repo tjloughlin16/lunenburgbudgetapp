@@ -1691,7 +1691,8 @@ def run_history(n=8):
         # .py on the line, not the first token after the colon.
         fails = re.findall(r'step failed:.*?([a-z_]+\.py)', text)
         done = '=== finished' in text
-        out.append(dict(day=day, again=again, name=os.path.basename(f),
+        st = re.search(r'daily refresh started \w+ \w+ +\d+ (\d\d:\d\d)', text)
+        out.append(dict(day=day, again=again, name=os.path.basename(f), started=st.group(1) if st else '',
                         exit=int(ex[-1]) if ex else None, finished=done,
                         failed=sorted(set(fails)),
                         running=(not done and day == dt.date.today().isoformat()),
@@ -1699,6 +1700,58 @@ def run_history(n=8):
                         mtime=ago(dt.datetime.fromtimestamp(os.path.getmtime(f),
                                                             dt.timezone.utc).isoformat())))
     return out
+
+
+
+def run_broke(r):
+    return r['exit'] not in (0, None) or bool(r['failed']) or not r['finished']
+
+
+def refresh_days(hist):
+    """THE DAY, NOT THE RUN. TJ, 14 October 2026: *"we need to think about it as 'today'.
+    Whats the status of TODAYS refresh. even if one fails, it becomes a subbullet if one is
+    running to recover. showing 2 separate messages is disorienting."*
+
+    A day's status is its LATEST run's, and the earlier runs are the story of how it got
+    there: `ok`, `recovered` (failed, then a re-run succeeded), `running`, `recovering`
+    (failed, a re-run is going now), `failed`. Runs are ordered by the start time each log
+    prints on its first line, never by filename -- `2026-10-14.log` sorts after
+    `2026-10-14-rerun.log`.
+    """
+    by = collections.OrderedDict()
+    for r in hist:
+        by.setdefault(r['day'], []).append(r)
+    out = []
+    for day, runs in by.items():
+        runs = sorted(runs, key=lambda r: (r.get('started') or '', r['again']))
+        last, earlier = runs[-1], runs[:-1]
+        fell = any(run_broke(r) for r in earlier)
+        if last['running']:
+            status = 'recovering' if fell else 'running'
+        elif run_broke(last):
+            status = 'failed'
+        else:
+            status = 'recovered' if fell else 'ok'
+        out.append(dict(day=day, runs=runs, status=status, latest=last))
+    return out
+
+
+DAY_PILL = {'ok': ('go', 'ok'), 'recovered': ('go', 'ok &middot; recovered'),
+            'running': ('go', 'running'), 'recovering': ('warn', 'failed &middot; re-running'),
+            'failed': ('no', 'FAILED')}
+
+
+def run_line(r):
+    """One run, as a sub-bullet under its day."""
+    who = ('%s %s' % (r.get('started') or '?', 're-run' if r['again'] else 'run'))
+    if r['running']:
+        what = 'running now'
+    elif run_broke(r):
+        what = ('failed at ' + ', '.join(r['failed'])) if r['failed'] else (
+            'failed (exit %s)' % r['exit'] if r['exit'] not in (None, 0) else 'stopped part-way')
+    else:
+        what = 'finished ok'
+    return '%s: %s' % (who, what)
 
 
 
@@ -2677,7 +2730,16 @@ def page_live(st):
              '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
              '%s</div>' % (st['generated'], tabs('index.html', st.get('questions'))))
 
+    # ONE MESSAGE ABOUT TODAY. A failed run being re-run was an amber banner AND a running
+    # card AND the day's card -- three boxes for one fact (TJ, 14 October 2026: "showing 2
+    # separate messages is disorienting"). While a run is going, the running card carries
+    # the day's story and the amber banner is not drawn; red and overdue still are.
+    _days = refresh_days(F['history'])
+    _now = next((d for d in _days if d['day'] == F['today']), None)
+    _live_refresh = any(x['name'] == 'Daily refresh' for x in R)
     for a in st['alerts']:
+        if a['kind'] == 'recovering' and _live_refresh:
+            continue
         tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
                 'recovering': ('warnbox', 'warn', 'FAILED — RERUNNING'),
                 'overdue': ('alert', 'no', 'NO RUN TODAY')}[a['kind']]
@@ -2691,13 +2753,19 @@ def page_live(st):
     if live:
         r = live[0]
         found = ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found'])
+        recovering = bool(_now and _now['status'] == 'recovering')
+        pill = ('warn', 'TODAY: FAILED &middot; RE-RUNNING') if recovering else ('go', 'DAILY REFRESH RUNNING')
+        story = ('<div class="tiny" style="margin-top:6px">%s</div>' % ''.join(
+            '<div>&bull; %s</div>' % html.escape(run_line(x)) for x in _now['runs'])) if recovering else ''
         h.append('<div class="card runbox"><div class="row">'
-                 '<span class="pill go">DAILY REFRESH RUNNING</span>'
+                 '<span class="pill %s">%s</span>'
                  '<b class="grow">%s</b><span class="tiny num">up %s</span></div>'
-                 '%s%s%s</div>'
-                 % (('now running <code>%s</code>' % html.escape(F['phase']['step']))
+                 '%s%s%s%s</div>'
+                 % (pill[0], pill[1],
+                    ('now running <code>%s</code>' % html.escape(F['phase']['step']))
                     if F['phase']['step'] else 'between steps',
                     html.escape(r['elapsed']),
+                    story,
                     ('<div class="tiny" style="margin-top:8px">Found so far: %s</div>' % found)
                     if found else '',
                     ('<div class="tiny" style="margin-top:4px">Spent <b style="color:#c09cf5">'
@@ -2786,9 +2854,13 @@ def page_live(st):
         h.append('</table></details>')
 
     h.append('<h2>The daily refresh</h2>')
+    _today = next((d for d in refresh_days(F['history']) if d['day'] == F['today']), None)
     h.append('<div class="card %s"><div class="row"><b class="grow">%s</b><span class="pill %s">%s</span></div>'
-             % ('on' if F['live'] else '', 'Today&rsquo;s run &mdash; ' + F['today'],
-                'go' if F['live'] else '', 'running' if F['live'] else 'not running'))
+             % ('on' if F['live'] else '', 'Today &mdash; ' + F['today'],
+                *(DAY_PILL[_today['status']] if _today else ('', 'no run yet'))))
+    if _today and (len(_today['runs']) > 1 or run_broke(_today['latest'])):
+        h.append('<div class="tiny" style="margin-top:6px">%s</div>' % ''.join(
+            '<div>&bull; %s</div>' % html.escape(run_line(x)) for x in _today['runs']))
     # THE FIRST-CLASS OBJECTS, read off the run row that refresh.py wrote, so this panel
     # and the run's own printed summary cannot give two different answers. `refresh.py`
     # defines them in FIRST_CLASS; nothing else is counted here, and never a vote.
@@ -2846,30 +2918,24 @@ def page_live(st):
              '<div class="card"><table>'
              '<tr><th>day</th><th style="width:7.5rem">outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
              '<th class="r">recordings</th><th class="r">notices</th><th>note</th></tr>')
-    for r in F['history']:
+    for d in refresh_days(F['history']):
+        r = d['latest']
         row = r['row'] or {}
-        if r['running']:
-            state = '<span class="pill go">running</span>'
-        elif r['exit'] == 0 or (r['finished'] and r['exit'] is None and not r['failed']):
-            state = '<span class="pill go">ok</span>'
-        elif r['exit'] is None and not r['finished']:
-            state = '<span class="pill warn">stopped part-way</span>'
-        else:
-            state = '<span class="pill no">FAILED</span>'
-        note = ('broke on ' + ', '.join(r['failed'])) if r['failed'] else (row.get('notes') or '')
+        cls, label = DAY_PILL[d['status']]
+        state = '<span class="pill %s">%s</span>' % (cls, label)
+        note = row.get('notes') or ''
         if not row and not r['running']:
             note = (note + ' — ' if note else '') + 'wrote no row: it died before recording the run'
-        h.append('<tr><td class="mono" style="white-space:nowrap">%s%s'
+        subs = ''.join('<div>&bull; %s</div>' % html.escape(run_line(x)) for x in d['runs']) \
+            if len(d['runs']) > 1 or run_broke(r) else ''
+        h.append('<tr><td class="mono" style="white-space:nowrap">%s'
                  '<div class="tiny">%s</div></td><td>%s</td>'
                  '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
-                 '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
-                 % (r['day'],
-                    ('<span class="tiny" style="color:#d29922"> %s</span>' % r['again'])
-                    if r['again'] else '',
-                    r['mtime'], state,
+                 '<td class="r num">%s</td><td class="tiny">%s%s</td></tr>'
+                 % (d['day'], r['mtime'], state,
                     r['seen'].get('agendas') or '·', r['seen'].get('minutes') or '·',
                     r['seen'].get('videos') or '·', r['seen'].get('notices') or '·',
-                    html.escape(note[:120])))
+                    subs, html.escape(note[:120])))
     h.append('</table></div></div>')
     return ''.join(h)
 
