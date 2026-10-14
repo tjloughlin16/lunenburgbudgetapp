@@ -83,6 +83,19 @@ async function loadReportUrls(env, request) {
     const d = await res.json()
     reportUrls = [...(d.reports || []), ...(d.pages || [])].map(r => SITE + r.url)
   } catch (e) { reportUrls = [] }
+  // THE TOPIC PAGES ARE REPORTS TOO. TJ, 14 October 2026: "I searched for free cash but no
+  // report came up" -- five free-cash topics and their hub existed, but this list was only
+  // the fourteen long reports, so every hub and topic page ranked as an ordinary `page`
+  // under two thousand meeting pages. Every hub and every ready topic in topics.json joins
+  // the Reports results.
+  try {
+    const res = await (env.ASSETS ? env.ASSETS.fetch(new URL('/data/topics.json', request.url))
+                                  : fetch(new URL('/data/topics.json', request.url)))
+    const t = await res.json()
+    const paths = [...(t.categories || []).filter(c => c.ready !== false).map(c => c.path),
+                   ...Object.values(t.topics || {}).filter(x => x.ready).map(x => x.path)]
+    reportUrls = [...new Set([...reportUrls, ...paths.map(p => SITE + p)])]
+  } catch (e) { /* the long reports alone, as before */ }
   return reportUrls
 }
 const sqlList = urls => urls.map(u => "'" + u.replace(/'/g, "''") + "'").join(',') || "''"
@@ -166,6 +179,9 @@ export async function onRequest(context) {
 
   const url = new URL(request.url)
   const q = (url.searchParams.get('q') || '').trim().slice(0, MAX_Q)
+  // The query's plain words, for ranking report TITLES (see the report ORDER BY). Letters
+  // and digits only, so they can be written into SQL as literals with nothing to escape.
+  const titleTerms = [...new Set(q.toLowerCase().match(/[a-z0-9]+/g) || [])].filter(w => w.length > 1).slice(0, 6)
   const corpusParam = (url.searchParams.get('corpus') || '').split(',').map(s => s.trim()).filter(Boolean)
   const corpora = corpusParam.length ? CORPORA.filter(c => corpusParam.includes(c)) : CORPORA
   const board = (url.searchParams.get('board') || '').trim().slice(0, 80)
@@ -257,7 +273,12 @@ export async function onRequest(context) {
       sortedBy[c] = byDate ? 'date' : 'rank'
       const order = byDate
         ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, rank"
-        : 'ORDER BY rank'
+        : c === SPLIT_FROM_PAGE && titleTerms.length
+          // A REPORT TITLED WITH YOUR WORDS COMES FIRST. "free cash" ranked /this-week and
+          // /meeting-minutes -- long pages that mention it in passing -- above the five
+          // pages named for it. Titles hit by more of the words first, then bm25.
+          ? `ORDER BY (${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
+          : 'ORDER BY rank'
       // `report` and `page` both read the page rows; the address list decides which side.
       const real = c === SPLIT_FROM_PAGE ? 'page' : c
       const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
