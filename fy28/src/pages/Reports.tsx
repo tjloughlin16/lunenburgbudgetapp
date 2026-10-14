@@ -205,11 +205,51 @@ function Row({ o, extra }: { o: Owner; extra: React.ReactNode }) {
  * by its descriptive title and the one line it finds. A topic on two shelves is listed on
  * both and says so; it has one address. */
 type TopicIndex = {
+  areas: { id: string; title: string }[]
   categories: { id: string; shelf: string; title: string; path: string; answer: string | null
     groups: { title: string | null; topics: string[] }[]
     elsewhere: { href: string; title: string }[]; area: string | null }[]
   topics: Record<string, { id: string; title: string; path: string; finding: string | null
     shelves: string[]; ready: boolean }>
+}
+
+/** THE HUBS, AT THE TOP. TJ, 14 October 2026: "on the reports page, we need a table of
+ *  contents for the hubs ... at the top of the page". Sixteen subjects sat in three areas
+ *  far down a long page, below the synthesis and the new reports, so a reader with one
+ *  subject in mind scrolled past everything else to find it. Each entry JUMPS to its
+ *  shelf rather than opening the hub: the shelf heading is the one door to a hub, and a
+ *  second link to the same page under it is the duplicate removed the same day. Read from
+ *  topics.json, so a new hub appears here the day it is built. */
+function HubContents() {
+  const [ix, setIx] = useState<TopicIndex | null>(null)
+  useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
+  if (!ix) return null
+  const areas = ix.areas.map(a => ({ ...a, hubs: ix.categories.filter(c => c.area === a.id) }))
+    .filter(a => a.hubs.length)
+  const pages = (c: TopicIndex['categories'][number]) =>
+    c.groups.reduce((n, g) => n + g.topics.filter(id => ix.topics[id]?.ready).length, 0)
+  return (
+    <nav aria-label="Subjects on this page" className="mx-auto max-w-6xl px-5 mt-6">
+      <div className="card p-4 sm:p-5 grid gap-x-8 gap-y-5 sm:grid-cols-3">
+        {areas.map(a => (
+          <div key={a.id}>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+              style={{ color: 'var(--text-muted)' }}>{a.title}</p>
+            <ul className="space-y-1">
+              {a.hubs.map(c => (
+                <li key={c.id} className="flex items-baseline justify-between gap-3 text-[15px]">
+                  <a href={`#${c.id}`} className="font-semibold hover:underline" style={{ color: 'var(--series-cost)' }}>
+                    {c.shelf}</a>
+                  <span className="text-[12px] tnum shrink-0" style={{ color: 'var(--text-muted)' }}>
+                    {pages(c)} pages</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </nav>
+  )
 }
 
 /** The shelves of one AREA (scripts/topics.py AREAS), drawn after that area's group of
@@ -324,6 +364,8 @@ export function Reports() {
           in one is recomputed from the data on every build, and every one of them prints.
         </p>
       </header>
+
+      <HubContents />
 
       {/* THE CAVEAT STAYS, BUT COLLAPSED.
           It was three paragraphs under a "Read this first" flag, immediately below a
