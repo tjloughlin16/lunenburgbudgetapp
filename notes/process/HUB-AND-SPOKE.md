@@ -175,3 +175,18 @@ reports with findings; they stay as they are.
 (`sources/analyses/UNLISTED`, `UNLISTED` in `fy28/src/routes.ts`) -- still served, linked from
 nowhere, out of the sitemap and the prerender; links that pointed at them retargeted to the hub
 or topic that now answers the question.
+
+**14 October 2026:**
+- **TopicLink** (`fy28/src/components/TopicLink.tsx`) is the one way a topic is listed, on
+  every hub and every /reports shelf. Do not draw topics as boxed cards.
+- **New in the enrolment category:** monty-tech-funding, high-school-enrolment,
+  high-school-spending; monty-tech-enrolment reworked to lead with the whole district.
+- **free-cash** split from town-reserves (see the table above). A topic that changes shelf
+  keeps working at its old address because a topic is fetched by id; Topic.tsx moves the
+  address bar to `/<home>/<id>`. `_redirects` is not honoured, so never rely on it.
+- **budget-options:** family-fees, reduced-and-waived-fees, unpriced-school-charges; and in
+  **school-spending**, school-committee-funds, school-revolving-funds, school-grant-balances,
+  revolving-fund-history (from the last two long reports, `families` and `schoolfinance`).
+- **New reports** lists every topic by its data file's first commit, for 7 days.
+- `ROWS_MAX` is 20.
+

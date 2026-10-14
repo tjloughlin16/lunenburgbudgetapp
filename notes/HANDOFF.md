@@ -11,6 +11,76 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 ---
 ---
 
+## 14 OCTOBER 2026 — TOPIC CONVENTION, MONTY TECH, FREE CASH SPLIT, SAFE DEPLOYS
+
+**State at the end of the day:** main is live; every commit through `e677a0447` is deployed
+(last deploy `a3020c4c`). Nothing is running. Verify against `git log` and the live site.
+
+**Built and live (each in its own commit; read the commit, not this summary):**
+- **One shape for a topic link**: `fy28/src/components/TopicLink.tsx` (left rule, title in the
+  link colour with an arrow, finding under it), used on every hub and on the /reports shelves.
+  /reports opens with a **contents list of the hubs** (anchor links to each shelf); each shelf
+  heading is the ONE link to its hub (the boxed duplicate card was removed).
+- **Search**: every hub and ready topic in `topics.json` counts as a Report, and a report whose
+  title holds the query's words ranks first (`fy28/functions/api/search.js`). Before this,
+  "free cash" returned no report.
+- **Link previews**: topic and hub pages set og:title/og:description from their own title and
+  finding; every other page's fallback follows `<title>` (`fy28/src/lib/title.ts`,
+  `followTitleForShare`). 417 of 1,939 pages previewed under a placeholder before.
+- **Finance pages**: Summary and Accounts tabs, `…/finance#accounts` is shareable.
+- **Free cash split** from Town reserves: hubs `free-cash` (/free-cash) and `town-reserves`
+  (now "Stabilization funds"). Old `/town-reserves/<free-cash-topic>` addresses still render
+  (the address bar moves to `/free-cash/<id>`); `TOPIC_ALIASES` in `routes.ts`. The old free
+  cash page survives as **/free-cash-calculator** (TJ: keep the slider). NOTE: `_redirects` is
+  NOT honoured on this Pages project -- redirects must be done in routing.
+- **Monty Tech**, five topics on the Enrolment shelf: enrolment (whole district, 18 member
+  towns ranked, Lunenburg 5th by FY2027 foundation count), assessment, **funding** (operating
+  budget by source, plus DESE's FY2025 fund split), **high school enrolment** and **high
+  school spending** (school to school, one DESE measure). `scripts/build_monty_tech.py`,
+  `scripts/build_high_schools.py` (slow: ~8 min, two large DESE workbooks).
+- **School user fees** now shows the $70 activity fee voted 7 May 2025 (it said unknown).
+- **New reports** fills itself from each topic's first-commit date (`build_reports_index.py`),
+  window **7 days** (`RECENT_DAYS` = `NEW_DAYS` in SiteMenu.tsx; was 21).
+- `ROWS_MAX` in `scripts/topic.py` is 20 (was 15); athletics cost-per-sport and transportation
+  bus-cost-by-sport charts now show 20 rows.
+
+**Deploying safely now -- use these, not raw wrangler:**
+- `bash scripts/deploy_site.sh` waits for any build, refuses unless every sitemap page is in
+  dist (`check_dist_complete.py`) and prerendered, then deploys. Three deploys on 14 Oct went
+  out mid-build before it existed.
+- `npm run build:site` takes **`build/site-build.lock`** (`scripts/with_build_lock.py`), and
+  the daily refresh holds the same lock while `build_search_index`, `build_app_metrics` and
+  `build_sitemap` read dist. A hand build at 07:30 had broken the 07:00 refresh.
+- `bash scripts/tail_backlog.sh` follows whichever `build/process-meeting*.log` was written
+  last -- no configuration.
+- The ingestion dashboard reports the refresh **by day** (`build_ingest_status.py`:
+  `refresh_days`), runs as bullets under the day, newest run by start time.
+
+**Archive added:** G.L. c.71 §§14–16D and **603 CMR 41.00** (regional school districts),
+`sources/state-law/`. 603 CMR 41.03(2)(c): a member withdraws only by an amendment to the
+regional agreement with the requisite member approvals and the Commissioner's, after a
+Long-Range Education Plan. The text extractor dropped every `<form>` and DESE wraps its page in
+one; fixed in `fetch_open_meeting_law.py`.
+
+**Facebook**: `social/README.md` "The format that works" -- the Monty Tech post
+(`social/posts/2026-10-14-what-we-spend`, posted 14 Oct) is the template. The tax follow-up
+(`2026-10-15-every-subject`) is built and NOT posted. Social images carry the full logo.
+
+**Not established -- do not restate as fact:**
+- That Lunenburg "chooses" Monty Tech membership. It is one of 18 member towns; who must approve
+  a withdrawal is set by the **Montachusett regional agreement, which is not held** (TJ may
+  request it).
+- Why Monty Tech spends more per pupil. "Trade shops" is a labelled hypothesis on the page.
+- The $70 activity fee's period and what it pays for (registered in `money-gaps.csv`).
+
+**Open (none critical):** the model's `activity_fees` lever still starts at $0 while $70 was
+voted (fixing it moves budget-options estimates -- TJ's call); `build/minutes-pacing.STOPPED`
+keeps the paced minutes run off until TJ says (the global `STOP-METERED` brake was removed, so
+the refresh's own minutes step runs); the refresh's commit swept another session's in-progress
+`Reports.tsx` edit into `baf8e4b8c` -- how refresh.py attributes files is worth checking; a
+lighter menu-only New-reports file; `notes/findings/VOC-TECH-PER-PUPIL.md` could become a
+topic; athletics-schedules files left uncommitted pending a facts-only read.
+
 ## 5 OCTOBER 2026 — THE PEC AGREEMENT ARRIVED, AND THE MUNIS REQUEST AS A SPREADSHEET
 
 Three commits: `6c2616c6`, `33e0e069`, `a7dd6d77`. Nothing deployed (rule 10).
