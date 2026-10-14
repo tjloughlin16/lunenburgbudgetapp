@@ -795,6 +795,63 @@ def revenue(fig, fy, budget, ch70, req_all, tr, cap, tot):
                 ties=True)
 
 
+DESE_FUNCTIONS = 'state-dese/district-expenditures-by-function.xlsx'
+DESE_FY = 2025
+
+
+def dese_total():
+    """DESE'S OWN TOTAL FOR THE DISTRICT, SPLIT BY FUND, read off its workbook by coordinate.
+
+    The per-pupil figure other pages quote for Monty Tech is the `TTPP` row of DESE's
+    expenditures-by-function file, which DESE itself titles "Expenditure (Admin,
+    Instruction, Operations)". Two things follow and both are asserted here, not assumed:
+    the row splits the total into general fund and grants/revolving IN DOLLARS, and the file
+    carries no capital (function 7000) or debt service (8000) row for either district -- so the
+    figure leaves out capital the same way for Monty Tech as for Lunenburg. The scan covers
+    both districts' rows for the year; `rows_read` says how many."""
+    import openpyxl
+    path = os.path.join(ROOT, 'sources', DESE_FUNCTIONS)
+    if not os.path.exists(path):
+        fail('%s is not here; run sync_archive.py --pull.' % DESE_FUNCTIONS)
+    ws = openpyxl.load_workbook(path, read_only=True).worksheets[0]
+    head = hit = None
+    rows = capital = 0
+    for i, row in enumerate(ws.iter_rows(values_only=True), start=1):
+        if head is None:
+            head = list(row)
+            want = ['SY', 'DIST_CODE', 'DIST_NAME', 'FUNC_CAT_CODE', 'FUNC_CAT_DESC',
+                    'FUNC_CODE', 'FUNC_DESC', 'IN_OUT_DIST', 'GEN_FUND', 'GRNTS_REVOLV',
+                    'TOT_EXP', 'PER_PUPIL_EXP']
+            if head[:len(want)] != want:
+                fail('%s: the header is no longer %s' % (DESE_FUNCTIONS, want))
+            continue
+        # Only the two districts the pages compare, in the one year: the file runs in
+        # year-then-district order, so the scan stops at the end of Monty Tech's block
+        # rather than reading all 363,000 rows on every build.
+        if str(row[0]) == str(DESE_FY) and row[1] in ('01620000', '08320000'):
+            rows += 1
+            if str(row[5])[:1] in ('7', '8'):
+                capital += 1
+            if row[1] == '08320000' and row[5] == 'TTPP':
+                hit = (i, row)
+                break
+    if hit is None:
+        fail('%s: no FY%d TTPP row for LEA 08320000' % (DESE_FUNCTIONS, DESE_FY))
+    if capital:
+        fail('%s now carries %d capital or debt rows for the two districts; the page says '
+             'it carries none'
+             % (DESE_FUNCTIONS, capital))
+    i, r = hit
+    gen, grants, total, pp = r[8], r[9], r[10], r[11]
+    if abs(gen + grants - total) > 1:   # DESE rounds each column to the dollar
+        fail('%s row %d: general fund plus grants is %s, the row prints %s'
+             % (DESE_FUNCTIONS, i, gen + grants, total))
+    return dict(fy=DESE_FY, lea=r[1], row=i, func_code=r[5], func_desc=r[6],
+                gen_fund=gen, grants_revolving=grants, total=total, per_pupil=pp,
+                rows_read=rows, capital_or_debt_rows=capital,
+                docs_url='/docs/' + DESE_FUNCTIONS)
+
+
 def documents():
     have = {}
     with open(MANIFEST, encoding='utf-8') as fh:
@@ -1659,6 +1716,7 @@ def build():
         'assessment': assess,
         'assessment_meta': assess_meta,
         'district': dist,
+        'dese_total': dese_total(),
         'said': said(),
         'searched': terms,
         'minutes': minutes,

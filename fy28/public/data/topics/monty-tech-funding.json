@@ -186,34 +186,40 @@
    "literals": [],
    "notes": [
     {
+     "closes": "DESE’s End of Year Financial Report for LEA 08320000 for FY2026, which splits spending by fund",
      "figures": {
       "a": {
-       "text": "$3,681,900",
+       "text": "$32,929,029",
        "unit": "",
-       "value": 3681900
+       "value": 32929029
+      },
+      "b": {
+       "text": "$5,189,760",
+       "unit": "",
+       "value": 5189760
       },
       "y": {
        "text": "FY2025",
        "unit": "fiscal year",
        "value": 2025
+      },
+      "z": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
       }
      },
-     "kind": "hypothesis",
-     "literals": [],
-     "text": "That the difference between them is grants and other funds is a hypothesis. The $3,681,900 of FY2025 awards is an award total, not a year’s spending."
-    },
-    {
-     "closes": "DESE’s End of Year Financial Report for LEA 08320000, which splits spending by fund",
-     "figures": {},
      "kind": "gap",
      "literals": [
-      "08320000"
+      "08320000",
+      "FY2026"
      ],
-     "text": "Monty Tech’s spending split by fund is not in this archive."
+     "text": "DESE splits FY2025: $32,929,029 general fund and $5,189,760 grants and revolving. The same split for FY2026, the budget above, is not in this archive."
     }
    ],
    "rests_on": [
     "pp",
+    "gr",
     "grants",
     "funds",
     "budget"
@@ -366,7 +372,7 @@
      }
     },
     "literals": [],
-    "text": "a pupil, all funds (DESE), FY2025: another measure"
+    "text": "a pupil, all funds, no capital or debt (DESE), FY2025"
    },
    "value": {
     "text": "$25,827",
@@ -395,13 +401,39 @@
    }
   },
   {
-   "closes": "DESE’s End of Year Financial Report for LEA 08320000, which splits spending by fund",
+   "id": "gr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "of grants and revolving money in DESE’s FY2025 total"
+   },
+   "value": {
+    "text": "$5,189,760",
+    "unit": "",
+    "value": 5189760
+   }
+  },
+  {
+   "closes": "DESE’s End of Year Financial Report for LEA 08320000 for FY2026, which splits spending by fund",
    "id": "funds",
    "kind": "gap",
    "label": {
-    "figures": {},
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
     "literals": [],
-    "text": "Monty Tech’s spending by fund, in dollars"
+    "text": "Monty Tech’s spending by fund, FY2026"
    },
    "value": null
   }

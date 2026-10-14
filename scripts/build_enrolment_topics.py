@@ -1059,6 +1059,11 @@ def build():
     if mtpp['lea'] != '08320000':
         fail('peer-spending.json: the widest destination is no longer Monty Tech (LEA 08320000)')
     pp_fy = PS['destinations']['fin_fy']
+    dt = MT['dese_total']
+    if (dt['fy'], dt['lea'], dt['per_pupil']) != (pp_fy, mtpp['lea'], mtpp['per_pupil']):
+        fail('monty-tech.json’s DESE total and peer-spending.json’s per-pupil row disagree')
+    if dt['capital_or_debt_rows'] or dt['func_code'] != 'TTPP':
+        fail('DESE’s total now includes capital or debt; the label says it does not')
     ga = MT['figures']['grant-awards']
     gr = ga['values']['fy25_grant_awards']
     PG = MT['figures']['district-budget']
@@ -1090,14 +1095,17 @@ def build():
            {'y': F(2026)}),
          f('next', U(d7['budget']), 'operating budget proposed, %s' % C.fy(2027), 'published',
            {'y': F(2027)}),
-         f('pp', U(mtpp['per_pupil']), 'a pupil, all funds (DESE), %s: another measure'
+         f('pp', U(mtpp['per_pupil']), 'a pupil, all funds, no capital or debt (DESE), %s'
            % C.fy(pp_fy), 'published',
            {'y': F(pp_fy)}),
          f('grants', U(gr), 'grant awards the district charts for %s' % C.fy(2025), 'published',
            {'y': F(2025)}),
-         f('funds', None, 'Monty Tech’s spending by fund, in dollars', 'gap',
-           closes='DESE’s End of Year Financial Report for LEA 08320000, which splits '
-                  'spending by fund')],
+         f('gr', U(dt['grants_revolving']), 'of grants and revolving money in DESE’s %s total'
+           % C.fy(pp_fy), 'published', {'y': F(pp_fy)}),
+         f('funds', None, 'Monty Tech’s spending by fund, %s' % C.fy(2026), 'gap',
+           {'y': F(2026)},
+           closes='DESE’s End of Year Financial Report for LEA 08320000 for FY2026, which '
+                  'splits spending by fund')],
         [con('The state’s Chapter 70 aid paid %s of the %s budget; the towns’ assessments %s.'
              % (C.pct(sh(rv6['ch70'])), C.fy(2026), C.pct(sh(rv6['assessments']))),
              ['ch70', 'towns', 'budget'],
@@ -1109,16 +1117,16 @@ def build():
              % (C.pct(rest6), C.usd(rest6_amt)), ['aid', 'ed', 'rtf'],
              {'p': P(rest6), 'a': U(rest6_amt)}),
          con('This is the operating budget only; DESE’s %s a pupil for %s counts every fund.'
-             % (C.usd(mtpp['per_pupil']), C.fy(pp_fy)), ['pp', 'grants', 'funds', 'budget'],
+             % (C.usd(mtpp['per_pupil']), C.fy(pp_fy)), ['pp', 'gr', 'grants', 'funds', 'budget'],
              {'a': U(mtpp['per_pupil']), 'y': F(pp_fy)},
-             notes=[step('That the difference between them is grants and other funds is a '
-                         'hypothesis. The %s of %s awards is an award total, not a year’s '
-                         'spending.' % (C.usd(gr), C.fy(2025)), 'hypothesis',
-                         {'a': U(gr), 'y': F(2025)}),
-                    step('Monty Tech’s spending split by fund is not in this archive.', 'gap',
-                         allow=('08320000',),
-                         closes='DESE’s End of Year Financial Report for LEA 08320000, which '
-                                'splits spending by fund')])],
+             notes=[step('DESE splits %s: %s general fund and %s grants and revolving. The '
+                         'same split for %s, the budget above, is not in this archive.'
+                         % (C.fy(pp_fy), C.usd(dt['gen_fund']), C.usd(dt['grants_revolving']),
+                            C.fy(2026)), 'gap',
+                         {'y': F(pp_fy), 'a': U(dt['gen_fund']), 'b': U(dt['grants_revolving']),
+                          'z': F(2026)}, allow=('08320000', 'FY2026'),
+                         closes='DESE’s End of Year Financial Report for LEA 08320000 for '
+                                'FY2026, which splits spending by fund')])],
         chart=TP.series('Monty Tech operating budget by source', [C.fy(y) for y in yrs], [
             TP.track(NAMES[k], [{p['key']: p for p in dv[y]['revenue']['parts']}[k]['amount']
                                 for y in yrs], 'stated', 'bar') for k in NAMES],
@@ -1139,7 +1147,7 @@ def build():
             note='The FY 2027 Budget Summary, PDF page 25. Excess & Deficiency is the sum of '
                  'what it applies to operating and to capital. The five sum to the printed '
                  'Total Budget in both years, checked by the generator.')]),
-        sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx']],
+        sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx']],  # TTPP row, see dese_total
         finding_figures={'a': P(sh(rv6['ch70'])), 'y': F(2026), 'b': P(sh(rv6['assessments']))},
         finding_allow=CH70)
 
