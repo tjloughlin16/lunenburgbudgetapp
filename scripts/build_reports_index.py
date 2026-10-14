@@ -52,7 +52,7 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports.json')
 # Birthdays only; the site decides what still counts as new against today, so it decays
 # daily without this file changing.
 RECENT_OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports-recent.json')
-RECENT_DAYS = 21          # = NEW_DAYS in fy28/src/components/SiteMenu.tsx
+RECENT_DAYS = 7           # = NEW_DAYS in fy28/src/components/SiteMenu.tsx. Was 21; TJ, 14 Oct 2026: a week, so the 12-13 Oct conversion clears fast
 SITE = 'https://lunenburgbudgetproject.org'
 
 # Order the reader should meet them in, not alphabetical. Anything not listed is appended

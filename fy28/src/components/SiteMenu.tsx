@@ -130,7 +130,7 @@ function ItemLink({ it, tab, onPick, compact, n }: { it: Item; tab: Tab; onPick?
  *  `reports-recent.json` carries only each report's birthday -- the commit that added it
  *  (build_reports_index.py) -- and the age is computed here against today, so a report
  *  leaves this list after NEW_DAYS with nothing regenerated. */
-export const NEW_DAYS = 21
+export const NEW_DAYS = 7    // = RECENT_DAYS in scripts/build_reports_index.py. Was 21; TJ, 14 Oct 2026, after ~200 pages published at once
 const FRESH_DAYS = 7
 type Recent = { reports: { title: string; url: string; first_published: string; about: string }[] }
 
