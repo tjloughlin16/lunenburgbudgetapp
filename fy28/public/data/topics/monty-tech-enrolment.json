@@ -3,106 +3,238 @@
  "chart": {
   "decimals": null,
   "from_zero": true,
-  "kind": "line",
+  "kind": "bar",
   "note": {
    "figures": {},
-   "literals": [],
-   "text": "Two counts of the same residents that differ every year. Neither is chosen or averaged."
+   "literals": [
+    "Chapter 70",
+    "1 October"
+   ],
+   "text": "DESE’s Chapter 70 count by member town, as the district prints it. Not the 1 October headcount."
   },
   "reference": null,
   "series": [
    {
     "basis": "published",
-    "mark": "line",
-    "name": "Headcount, 1 October",
+    "mark": "bar",
+    "name": "Foundation enrolment, FY2026",
     "texts": [
-     "70 children",
-     "76 children",
-     "86 children",
-     "87 children",
-     "77 children",
-     "72 children",
-     "75 children",
-     "77 children",
-     "90 children",
-     "92 children",
-     "97 children",
-     "96 children",
-     "97 children"
+     "396 pupils",
+     "158 pupils",
+     "157 pupils",
+     "109 pupils",
+     "101 pupils",
+     "86 pupils",
+     "70 pupils",
+     "83 pupils",
+     "64 pupils",
+     "63 pupils",
+     "47 pupils",
+     "35 pupils",
+     "33 pupils",
+     "27 pupils",
+     "28 pupils",
+     "10 pupils",
+     "10 pupils",
+     "11 pupils"
     ],
     "values": [
-     70.0,
-     76.0,
-     86.0,
-     87.0,
-     77.0,
-     72.0,
-     75.0,
-     77.0,
-     90.0,
-     92.0,
-     97.0,
-     96.0,
-     97.0
+     396,
+     158,
+     157,
+     109,
+     101,
+     86,
+     70,
+     83,
+     64,
+     63,
+     47,
+     35,
+     33,
+     27,
+     28,
+     10,
+     10,
+     11
     ]
    },
    {
     "basis": "published",
-    "mark": "line",
-    "name": "Foundation enrolment, Chapter 70",
+    "mark": "bar",
+    "name": "Foundation enrolment, FY2027",
     "texts": [
-     "74 children",
-     "71 children",
-     "78 children",
-     "91 children",
-     "92 children",
-     "82 children",
-     "74 children",
-     "82 children",
-     "83 children",
-     "94 children",
-     "97.1 children",
-     "99 children",
-     "101 children"
+     "391 pupils",
+     "170 pupils",
+     "147 pupils",
+     "106 pupils",
+     "104 pupils",
+     "80 pupils",
+     "79 pupils",
+     "77 pupils",
+     "62 pupils",
+     "60 pupils",
+     "44 pupils",
+     "35 pupils",
+     "33 pupils",
+     "28 pupils",
+     "22 pupils",
+     "10 pupils",
+     "9 pupils",
+     "8 pupils"
     ],
     "values": [
-     74.0,
-     71.0,
-     78.0,
-     91.0,
-     92.0,
-     82.0,
-     74.0,
-     82.0,
-     83.0,
-     94.0,
-     97.13,
-     99.0,
-     101.0
+     391,
+     170,
+     147,
+     106,
+     104,
+     80,
+     79,
+     77,
+     62,
+     60,
+     44,
+     35,
+     33,
+     28,
+     22,
+     10,
+     9,
+     8
     ]
    }
   ],
   "stacked": false,
-  "title": "Monty Tech pupils, two DESE counts",
+  "title": "Monty Tech foundation enrolment by member town",
   "type": "series",
-  "unit": "children",
+  "unit": "pupils",
   "x": [
-   "FY2014",
-   "FY2015",
-   "FY2016",
-   "FY2017",
-   "FY2018",
-   "FY2019",
-   "FY2020",
-   "FY2021",
-   "FY2022",
-   "FY2023",
-   "FY2024",
-   "FY2025",
-   "FY2026"
+   "Fitchburg",
+   "Holden",
+   "Gardner",
+   "Athol",
+   "Lunenburg",
+   "Winchendon",
+   "Westminster",
+   "Templeton",
+   "Ashburnham",
+   "Sterling",
+   "Barre",
+   "Hubbardston",
+   "Ashby",
+   "Princeton",
+   "Phillipston",
+   "Royalston",
+   "Harvard",
+   "Petersham"
   ]
  },
  "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "1,403",
+     "unit": "",
+     "value": 1403
+    },
+    "b": {
+     "text": "1,323",
+     "unit": "",
+     "value": 1323
+    },
+    "c": {
+     "text": "1,436",
+     "unit": "",
+     "value": 1436
+    },
+    "p": {
+     "text": "FY2016",
+     "unit": "fiscal year",
+     "value": 2016
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2008",
+     "unit": "fiscal year",
+     "value": 2008
+    }
+   },
+   "literals": [
+    "1 October"
+   ],
+   "rests_on": [
+    "w1",
+    "w0",
+    "wpk"
+   ],
+   "text": "Monty Tech enrolled 1,403 for FY2026 and 1,323 for FY2008; it peaked at 1,436 in FY2016."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "391",
+     "unit": "",
+     "value": 391
+    },
+    "b": {
+     "text": "104",
+     "unit": "",
+     "value": 104
+    },
+    "n": {
+     "text": "18",
+     "unit": "",
+     "value": 18
+    },
+    "r": {
+     "text": "5th",
+     "unit": "rank",
+     "value": 5
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s foundation enrolment detail for district 832, beside its 1 October headcount",
+     "figures": {
+      "a": {
+       "text": "1,465",
+       "unit": "",
+       "value": 1465
+      },
+      "b": {
+       "text": "1,403",
+       "unit": "",
+       "value": 1403
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "Chapter 70",
+      "1 October",
+      "832"
+     ],
+     "text": "Foundation enrolment is the Chapter 70 count, 1,465 for all towns; the 1 October headcount is 1,403. Nothing published reconciles the two."
+    }
+   ],
+   "rests_on": [
+    "top",
+    "lfe27",
+    "fe27",
+    "towns"
+   ],
+   "text": "By DESE’s foundation count for FY2027, Fitchburg sends 391 and Lunenburg 104, 5th most of 18."
+  },
   {
    "figures": {
     "a": {
@@ -137,10 +269,9 @@
    ],
    "rests_on": [
     "hc0",
-    "hc",
-    "res"
+    "hc"
    ],
-   "text": "Monty Tech enrolment went from 70 in FY2014 to 97 in FY2026."
+   "text": "Lunenburg residents at Monty Tech went from 70 in FY2014 to 97 in FY2026."
   },
   {
    "figures": {
@@ -153,6 +284,11 @@
      "text": "101",
      "unit": "",
      "value": 101.0
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
     }
    },
    "literals": [],
@@ -185,39 +321,146 @@
     "hc",
     "fe"
    ],
-   "text": "DESE counts 97 by headcount and 101 by foundation enrolment for the same year."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "5.9%",
-     "unit": "",
-     "value": 5.9272
-    },
-    "b": {
-     "text": "8.7%",
-     "unit": "",
-     "value": 8.7003
-    }
-   },
-   "literals": [],
-   "notes": [
-    {
-     "closes": "Monty Tech’s spending attributed to member towns, which no published document gives",
-     "figures": {},
-     "kind": "gap",
-     "literals": [],
-     "text": "The state’s formula sets a larger foundation budget for a vocational pupil. That is the formula’s assumption, not a measured cost."
-    }
-   ],
-   "rests_on": [
-    "feshare",
-    "fbshare"
-   ],
-   "text": "Monty Tech is 5.9% of the town’s foundation enrolment and 8.7% of its foundation budget."
+   "text": "DESE counts 97 Lunenburg pupils by headcount and 101 by foundation enrolment, FY2026."
   }
  ],
  "facts": [
+  {
+   "id": "w1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "1 October"
+    ],
+    "text": "Monty Tech, 1 October headcount, FY2026"
+   },
+   "value": {
+    "text": "1,403",
+    "unit": "pupils",
+    "value": 1403
+   }
+  },
+  {
+   "id": "w0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2008",
+      "unit": "fiscal year",
+      "value": 2008
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech, headcount, FY2008"
+   },
+   "value": {
+    "text": "1,323",
+    "unit": "pupils",
+    "value": 1323
+   }
+  },
+  {
+   "id": "wpk",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech, headcount, FY2016, the most"
+   },
+   "value": {
+    "text": "1,436",
+    "unit": "pupils",
+    "value": 1436
+   }
+  },
+  {
+   "id": "towns",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech’s member towns"
+   },
+   "value": {
+    "text": "18",
+    "unit": "towns",
+    "value": 18
+   }
+  },
+  {
+   "id": "fe27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "foundation enrolment, all towns, FY2027"
+   },
+   "value": {
+    "text": "1,465",
+    "unit": "pupils",
+    "value": 1465
+   }
+  },
+  {
+   "id": "top",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Fitchburg, foundation enrolment, FY2027"
+   },
+   "value": {
+    "text": "391",
+    "unit": "pupils",
+    "value": 391
+   }
+  },
+  {
+   "id": "lfe27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, foundation enrolment, FY2027"
+   },
+   "value": {
+    "text": "104",
+    "unit": "pupils",
+    "value": 104
+   }
+  },
   {
    "id": "hc",
    "kind": "published",
@@ -230,32 +473,12 @@
      }
     },
     "literals": [],
-    "text": "at Monty Tech, DESE headcount, FY2026"
+    "text": "Lunenburg residents, DESE headcount, FY2026"
    },
    "value": {
     "text": "97",
     "unit": "children",
     "value": 97.0
-   }
-  },
-  {
-   "id": "fe",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "at Monty Tech, DESE foundation enrolment, FY2026"
-   },
-   "value": {
-    "text": "101",
-    "unit": "pupils",
-    "value": 101.0
    }
   },
   {
@@ -270,7 +493,7 @@
      }
     },
     "literals": [],
-    "text": "at Monty Tech, headcount, FY2014"
+    "text": "Lunenburg residents, headcount, FY2014"
    },
    "value": {
     "text": "70",
@@ -279,27 +502,7 @@
    }
   },
   {
-   "id": "res",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "n": {
-      "text": "1,730",
-      "unit": "",
-      "value": 1730.0
-     }
-    },
-    "literals": [],
-    "text": "of 1,730 resident schoolchildren (ours)"
-   },
-   "value": {
-    "text": "5.6%",
-    "unit": "",
-    "value": 5.606936416184971
-   }
-  },
-  {
-   "id": "feshare",
+   "id": "fe",
    "kind": "published",
    "label": {
     "figures": {
@@ -310,32 +513,12 @@
      }
     },
     "literals": [],
-    "text": "of the town’s foundation enrolment, FY2026"
+    "text": "Lunenburg, foundation enrolment, FY2026"
    },
    "value": {
-    "text": "5.9%",
-    "unit": "",
-    "value": 5.9272
-   }
-  },
-  {
-   "id": "fbshare",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "of the town’s foundation budget, FY2026"
-   },
-   "value": {
-    "text": "8.7%",
-    "unit": "",
-    "value": 8.7003
+    "text": "101",
+    "unit": "pupils",
+    "value": 101.0
    }
   },
   {
@@ -353,28 +536,28 @@
  "finding": {
   "figures": {
    "a": {
+    "text": "1,403",
+    "unit": "",
+    "value": 1403
+   },
+   "b": {
     "text": "97",
     "unit": "",
     "value": 97.0
    },
-   "b": {
-    "text": "70",
+   "n": {
+    "text": "18",
     "unit": "",
-    "value": 70.0
+    "value": 18
    },
    "y": {
     "text": "FY2026",
     "unit": "fiscal year",
     "value": 2026
-   },
-   "z": {
-    "text": "FY2014",
-    "unit": "fiscal year",
-    "value": 2014
    }
   },
   "literals": [],
-  "text": "97 residents attended Monty Tech in FY2026, up from 70 in FY2014: more than any other outside district."
+  "text": "Monty Tech enrolled 1,403 pupils in FY2026 from 18 member towns; 97 were Lunenburg residents."
  },
  "full_report": {
   "href": "",
@@ -397,17 +580,302 @@
  ],
  "sources": [
   {
+   "href": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "label": "Massachusetts DESE — dese-enrollment-by-grade.xlsx"
+  },
+  {
    "href": "/docs/state-dese/dese-residents-sending.xlsx",
    "label": "Massachusetts DESE — dese-residents-sending.xlsx"
   },
   {
    "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
    "label": "Massachusetts DESE — dese-ch70-key-factors.xlsx"
+  },
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf#page=24",
+   "label": "FY27 Monty Tech Budget Presentation — DESE’s apportionment sheet, the member towns, PDF page 24"
   }
  ],
  "table": {
-  "caption": "Lunenburg residents at Monty Tech, two DESE counts",
+  "caption": "Monty Tech enrolment: the district, its towns, Lunenburg",
   "views": [
+   {
+    "columns": [
+     "1 October headcount"
+    ],
+    "key": "district",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "The whole district",
+    "note": "DESE’s 1 October headcount for the whole district, every pupil in grades 9 to 12, all member towns.",
+    "rows": [
+     {
+      "cells": [
+       "1,403"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "1,417"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "1,428"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "1,409"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "1,413"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "1,417"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "1,430"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "1,422"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "1,424"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "1,429"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "1,436"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "1,435"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "1,433"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "1,432"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "1,435"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "1,400"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "1,355"
+      ],
+      "label": "FY2010"
+     },
+     {
+      "cells": [
+       "1,341"
+      ],
+      "label": "FY2009"
+     },
+     {
+      "cells": [
+       "1,323"
+      ],
+      "label": "FY2008"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Foundation, FY2026",
+     "Foundation, FY2027"
+    ],
+    "key": "towns",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "By member town",
+    "note": "DESE’s foundation enrolment, the Chapter 70 count, from its apportionment sheet reprinted in the district’s FY27 presentation. The towns sum to the sheet’s own total, checked by the generator.",
+    "rows": [
+     {
+      "cells": [
+       "396",
+       "391"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "158",
+       "170"
+      ],
+      "label": "Holden"
+     },
+     {
+      "cells": [
+       "157",
+       "147"
+      ],
+      "label": "Gardner"
+     },
+     {
+      "cells": [
+       "109",
+       "106"
+      ],
+      "label": "Athol"
+     },
+     {
+      "cells": [
+       "101",
+       "104"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "86",
+       "80"
+      ],
+      "label": "Winchendon"
+     },
+     {
+      "cells": [
+       "70",
+       "79"
+      ],
+      "label": "Westminster"
+     },
+     {
+      "cells": [
+       "83",
+       "77"
+      ],
+      "label": "Templeton"
+     },
+     {
+      "cells": [
+       "64",
+       "62"
+      ],
+      "label": "Ashburnham"
+     },
+     {
+      "cells": [
+       "63",
+       "60"
+      ],
+      "label": "Sterling"
+     },
+     {
+      "cells": [
+       "47",
+       "44"
+      ],
+      "label": "Barre"
+     },
+     {
+      "cells": [
+       "35",
+       "35"
+      ],
+      "label": "Hubbardston"
+     },
+     {
+      "cells": [
+       "33",
+       "33"
+      ],
+      "label": "Ashby"
+     },
+     {
+      "cells": [
+       "27",
+       "28"
+      ],
+      "label": "Princeton"
+     },
+     {
+      "cells": [
+       "28",
+       "22"
+      ],
+      "label": "Phillipston"
+     },
+     {
+      "cells": [
+       "10",
+       "10"
+      ],
+      "label": "Royalston"
+     },
+     {
+      "cells": [
+       "10",
+       "9"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "11",
+       "8"
+      ],
+      "label": "Petersham"
+     },
+     {
+      "cells": [
+       "1,488",
+       "1,465"
+      ],
+      "label": "All member towns"
+     }
+    ],
+    "total_col": -1
+   },
    {
     "columns": [
      "Headcount",
@@ -420,8 +888,8 @@
      "ledger",
      "ledger"
     ],
-    "label": "Thirteen years",
-    "note": "The headcount is DESE’s 1 October enrolment of residents by district; foundation enrolment is the Chapter 70 formula’s count. Neither is averaged.",
+    "label": "Lunenburg, two counts",
+    "note": "The headcount is DESE’s 1 October enrolment of Lunenburg residents by district; foundation enrolment is the Chapter 70 formula’s count. Neither is averaged.",
     "rows": [
      {
       "cells": [

@@ -894,35 +894,85 @@ def build():
     if not all(c26['headcount'] > d['students'] for d in OF['destinations']):
         fail('Monty Tech is no longer the largest outside district residents attend')
     fe, fb = p100(hl['fe_share']), p100(hl['fb_share'])
+    # THE WHOLE DISTRICT FIRST, then its member towns, then Lunenburg's own residents. TJ, 14
+    # October 2026: "I wanted the full Monty Tech enrollment, not just Lunenburg's share."
+    # Two different counts, named every time and never combined: DESE's 1 October HEADCOUNT
+    # (the whole district, read by build_high_schools.py, where its total is checked equal to
+    # its grades 9-12) and DESE's FOUNDATION enrolment, the Chapter 70 count, by member town
+    # off the apportionment sheet the district reprints (build_monty_tech.member_towns,
+    # footed to the sheet's own totals).
+    mtd = next(d for d in HS['enrolment']['districts'] if d['lea'] == '08320000')
+    whole = {int(y): v for y, v in mtd['g912'].items()}
+    w0, w1 = min(whole), max(whole)
+    if w1 != 2026:
+        fail('high-schools.json no longer ends at FY2026 for Monty Tech')
+    wpk = max(whole, key=lambda y: (whole[y], -y))
+    MTT = MT['member_towns']
+    towns = sorted(MTT['towns'], key=lambda t: (-t['fe27'], t['town']))
+    if MTT['count'] != HS['monty_tech_members']['count']:
+        fail('the two payloads disagree on how many member towns Monty Tech has')
+    lt = next(t for t in towns if t['town'] == 'Lunenburg')
+    if lt['fe26'] != c26['foundation']:
+        fail('the apportionment sheet and DESE’s key factors disagree on Lunenburg’s FY2026 '
+             'foundation enrolment')
+    lrank = 1 + sum(1 for t in towns if t['fe27'] > lt['fe27'])
+    top = towns[0]
+    Ord = lambda n: figure(n, {1: '1st', 2: '2nd', 3: '3rd'}.get(n, '%dth' % n), 'rank')
     out['monty-tech-enrolment'] = TP.page(
         'monty-tech-enrolment',
-        '%s residents attended Monty Tech in %s, up from %s in %s: more than any other outside district.'
-        % (C.num(c26['headcount']), C.fy(2026), C.num(hl['students_from']), C.fy(hl['from_fy'])),
-        [f('hc', N(c26['headcount'], 'children'), 'at Monty Tech, DESE headcount, %s' % C.fy(2026),
-           'published', {'y': F(2026)}),
-         f('fe', N(c26['foundation'], 'pupils'), 'at Monty Tech, DESE foundation enrolment, %s'
+        'Monty Tech enrolled %s pupils in %s from %s member towns; %s were Lunenburg residents.'
+        % (C.num(whole[w1]), C.fy(w1), C.num(MTT['count']), C.num(c26['headcount'])),
+        [f('w1', N(whole[w1], 'pupils'), 'Monty Tech, 1 October headcount, %s' % C.fy(w1),
+           'published', {'y': F(w1)}, allow=('1 October',)),
+         f('w0', N(whole[w0], 'pupils'), 'Monty Tech, headcount, %s' % C.fy(w0), 'published',
+           {'y': F(w0)}),
+         f('wpk', N(whole[wpk], 'pupils'), 'Monty Tech, headcount, %s, the most' % C.fy(wpk),
+           'published', {'y': F(wpk)}),
+         f('towns', N(MTT['count'], 'towns'), 'Monty Tech’s member towns', 'published'),
+         f('fe27', N(MTT['fe27'], 'pupils'), 'foundation enrolment, all towns, %s' % C.fy(2027),
+           'published', {'y': F(2027)}),
+         f('top', N(top['fe27'], 'pupils'), '%s, foundation enrolment, %s'
+           % (top['town'], C.fy(2027)), 'published', {'y': F(2027)}),
+         f('lfe27', N(lt['fe27'], 'pupils'), 'Lunenburg, foundation enrolment, %s' % C.fy(2027),
+           'published', {'y': F(2027)}),
+         f('hc', N(c26['headcount'], 'children'), 'Lunenburg residents, DESE headcount, %s'
            % C.fy(2026), 'published', {'y': F(2026)}),
-         f('hc0', N(hl['students_from'], 'children'), 'at Monty Tech, headcount, %s'
+         f('hc0', N(hl['students_from'], 'children'), 'Lunenburg residents, headcount, %s'
            % C.fy(hl['from_fy']), 'published', {'y': F(hl['from_fy'])}),
-         f('res', P(mshare), 'of %s resident schoolchildren (ours)' % C.num(st26['all_resident']),
-           'published', {'n': N(st26['all_resident'])}),
-         f('feshare', P(fe), 'of the town’s foundation enrolment, %s' % C.fy(2026), 'published',
-           {'y': F(2026)}),
-         f('fbshare', P(fb), 'of the town’s foundation budget, %s' % C.fy(2026), 'published',
-           {'y': F(2026)}),
+         f('fe', N(c26['foundation'], 'pupils'), 'Lunenburg, foundation enrolment, %s'
+           % C.fy(2026), 'published', {'y': F(2026)}),
          f('turned', None, 'Lunenburg applicants Monty Tech turned away', 'gap',
            closes='Monty Tech’s admissions report by member town: applicants, admitted, '
                   'waitlisted')],
-        [con('Monty Tech enrolment went from %s in %s to %s in %s.'
+        [con('Monty Tech enrolled %s for %s and %s for %s; it peaked at %s in %s.'
+             % (C.num(whole[w1]), C.fy(w1), C.num(whole[w0]), C.fy(w0), C.num(whole[wpk]),
+                C.fy(wpk)),
+             ['w1', 'w0', 'wpk'],
+             {'a': N(whole[w1]), 'y': F(w1), 'b': N(whole[w0]), 'z': F(w0), 'c': N(whole[wpk]),
+              'p': F(wpk)},
+             allow=('1 October',)),
+         con('By DESE’s foundation count for %s, %s sends %s and Lunenburg %s, %s most of %s.'
+             % (C.fy(2027), top['town'], C.num(top['fe27']), C.num(lt['fe27']),
+                Ord(lrank)['text'], C.num(MTT['count'])),
+             ['top', 'lfe27', 'fe27', 'towns'],
+             {'y': F(2027), 'a': N(top['fe27']), 'b': N(lt['fe27']), 'r': Ord(lrank),
+              'n': N(MTT['count'])},
+             notes=[step('Foundation enrolment is the Chapter 70 count, %s for all towns; the '
+                         '1 October headcount is %s. Nothing published reconciles the two.'
+                         % (C.num(MTT['fe27']), C.num(whole[w1])), 'gap',
+                         {'a': N(MTT['fe27']), 'b': N(whole[w1])}, allow=('Chapter 70', '1 October', '832'),
+                         closes='DESE’s foundation enrolment detail for district 832, beside its '
+                                '1 October headcount')]),
+         con('Lunenburg residents at Monty Tech went from %s in %s to %s in %s.'
              % (C.num(hl['students_from']), C.fy(hl['from_fy']), C.num(c26['headcount']),
-                C.fy(2026)), ['hc0', 'hc', 'res'],
+                C.fy(2026)), ['hc0', 'hc'],
              {'a': N(hl['students_from']), 'y': F(hl['from_fy']), 'b': N(c26['headcount']),
               'z': F(2026)},
              notes=[step('A count is families applying and Monty Tech admitting; nothing '
                          'published separates demand from capacity.', 'hypothesis')]),
-         con('DESE counts %s by headcount and %s by foundation enrolment for the same year.'
-             % (C.num(c26['headcount']), C.num(c26['foundation'])), ['hc', 'fe'],
-             {'a': N(c26['headcount']), 'b': N(c26['foundation'])},
+         con('DESE counts %s Lunenburg pupils by headcount and %s by foundation enrolment, %s.'
+             % (C.num(c26['headcount']), C.num(c26['foundation']), C.fy(2026)), ['hc', 'fe'],
+             {'a': N(c26['headcount']), 'b': N(c26['foundation']), 'y': F(2026)},
              notes=[step('Foundation enrolment differs from the headcount in all %s years, from '
                          '%s below it to %s above. Nothing published reconciles them.'
                          % (C.num(len(gaps_c)), C.num(-hl['count_gap_min']),
@@ -930,32 +980,46 @@ def build():
                          {'n': N(len(gaps_c)), 'b': N(-hl['count_gap_min']),
                           'c': N(hl['count_gap_max'])},
                          closes='DESE’s definition of foundation enrolment for a regional '
-                                'vocational member, beside its October headcount')]),
-         con('Monty Tech is %s of the town’s foundation enrolment and %s of its foundation '
-             'budget.' % (C.pct(fe), C.pct(fb)), ['feshare', 'fbshare'],
-             {'a': P(fe), 'b': P(fb)},
-             notes=[step('The state’s formula sets a larger foundation budget for a vocational '
-                         'pupil. That is the formula’s assumption, not a measured cost.',
-                         'gap', closes='Monty Tech’s spending attributed to member towns, which '
-                                       'no published document gives')])],
-        chart=TP.series('Monty Tech pupils, two DESE counts', [C.fy(r['fy']) for r in MT['counts']], [
-            TP.track('Headcount, 1 October', [r['headcount'] for r in MT['counts']]),
-            TP.track('Foundation enrolment, Chapter 70', [r['foundation'] for r in MT['counts']])],
-            'children', note='Two counts of the same residents that differ every year. Neither is '
-                             'chosen or averaged.'),
-        table=dict(caption='Lunenburg residents at Monty Tech, two DESE counts', views=[dict(
-            key='counts', label='Thirteen years', total_col=-1, kinds=['ledger'] * 3,
-            columns=['Headcount', 'Foundation enrolment', 'Difference'],
-            rows=[dict(label=C.fy(r['fy']), cells=[C.num(r['headcount']),
-                                                    ('%.2f' % r['foundation']).rstrip('0').rstrip('.'),
-                                                    ('%.2f' % r['difference']).rstrip('0').rstrip('.')])
-                  for r in sorted(MT['counts'], key=lambda r: -r['fy'])],
-            note='The headcount is DESE’s 1 October enrolment of residents by district; '
-                 'foundation enrolment is the Chapter 70 formula’s count. Neither is averaged.')]),
+                                'vocational member, beside its October headcount')])],
+        chart=TP.series('Monty Tech foundation enrolment by member town',
+                        [t['town'] for t in towns], [
+            TP.track('Foundation enrolment, %s' % C.fy(2026), [t['fe26'] for t in towns], 'published', 'bar'),
+            TP.track('Foundation enrolment, %s' % C.fy(2027), [t['fe27'] for t in towns], 'published', 'bar')],
+            'pupils', kind='bar',
+            note='DESE’s Chapter 70 count by member town, as the district prints it. Not the '
+                 '1 October headcount.', note_allow=('Chapter 70', '1 October')),
+        table=dict(caption='Monty Tech enrolment: the district, its towns, Lunenburg', views=[
+            dict(key='district', label='The whole district', total_col=-1, kinds=['ledger'],
+                 columns=['1 October headcount'],
+                 rows=[dict(label=C.fy(y), cells=[C.num(whole[y])])
+                       for y in sorted(whole, reverse=True)],
+                 note='DESE’s 1 October headcount for the whole district, every pupil in grades '
+                      '9 to 12, all member towns.'),
+            dict(key='towns', label='By member town', total_col=-1, kinds=['ledger'] * 2,
+                 columns=['Foundation, %s' % C.fy(2026), 'Foundation, %s' % C.fy(2027)],
+                 rows=[dict(label=t['town'], cells=[C.num(t['fe26']), C.num(t['fe27'])])
+                       for t in towns]
+                 + [dict(label='All member towns', cells=[C.num(MTT['fe26']), C.num(MTT['fe27'])])],
+                 note='DESE’s foundation enrolment, the Chapter 70 count, from its apportionment '
+                      'sheet reprinted in the district’s FY27 presentation. The towns sum to the '
+                      'sheet’s own total, checked by the generator.'),
+            dict(key='counts', label='Lunenburg, two counts', total_col=-1, kinds=['ledger'] * 3,
+                 columns=['Headcount', 'Foundation enrolment', 'Difference'],
+                 rows=[dict(label=C.fy(r['fy']), cells=[
+                     C.num(r['headcount']),
+                     ('%.2f' % r['foundation']).rstrip('0').rstrip('.'),
+                     ('%.2f' % r['difference']).rstrip('0').rstrip('.')])
+                       for r in sorted(MT['counts'], key=lambda r: -r['fy'])],
+                 note='The headcount is DESE’s 1 October enrolment of Lunenburg residents by '
+                      'district; foundation enrolment is the Chapter 70 formula’s count. Neither '
+                      'is averaged.')]),
         said=[said(MT, 'disentangle')],
-        sources=S('dese-residents-sending.xlsx', 'dese-ch70-key-factors.xlsx'),
-        finding_figures={'a': N(c26['headcount']), 'y': F(2026), 'b': N(hl['students_from']),
-                         'z': F(hl['from_fy'])})
+        sources=S('dese-enrollment-by-grade.xlsx', 'dese-residents-sending.xlsx',
+                  'dese-ch70-key-factors.xlsx')
+        + [dict(label='FY27 Monty Tech Budget Presentation — DESE’s apportionment sheet, the '
+                      'member towns, PDF page 24', href=MTT['docs_url'])],
+        finding_figures={'a': N(whole[w1]), 'y': F(w1), 'n': N(MTT['count']),
+                         'b': N(c26['headcount'])})
 
     # ------------------------------------------------ Monty Tech assessment
     fc = MT['forecast']

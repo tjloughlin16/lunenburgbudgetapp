@@ -188,22 +188,13 @@ def spending(schools_enr, codes):
 
 
 def members():
-    """How many towns Monty Tech draws from: the member rows of DESE's apportionment sheet
-    as the district reprints it, footed to the sheet's own totals."""
-    path = os.path.join(ROOT, 'sources', MT_TEXT)
-    anchor = 'Total 1,488 1,465 -23 12,227,609 12,923,815 696,206'
-    for n, line in enumerate(open(path, encoding='utf-8'), start=1):
-        if anchor not in line:
-            continue
-        tail = line[line.index(anchor) + len(anchor):]
-        rows = re.findall(r'\d+ ([A-Z][a-z]+) (\d[\d,]*) (\d[\d,]*) -?\d[\d,]* (\d[\d,]*) (\d[\d,]*) ',
-                          tail)
-        num = lambda s: int(s.replace(',', ''))
-        if sum(num(r[1]) for r in rows) != 1488 or sum(num(r[3]) for r in rows) != 12227609:
-            fail('%s line %d: the member rows no longer foot to the printed totals' % (MT_TEXT, n))
-        return dict(count=len(rows), towns=[r[0] for r in rows], line=n, anchor=anchor,
-                    docs_url='/docs/' + MT_DOC + '#page=24')
-    fail('%s: the apportionment anchor is gone' % MT_TEXT)
+    """How many towns Monty Tech draws from, from the one parser of DESE's apportionment
+    sheet (build_monty_tech.member_towns), which foots every member row to the sheet's
+    totals."""
+    import build_monty_tech
+    m = build_monty_tech.member_towns()
+    return dict(count=m['count'], towns=[t['town'] for t in m['towns']], line=m['line'],
+                anchor=m['anchor'], docs_url=m['docs_url'])
 
 
 def build():

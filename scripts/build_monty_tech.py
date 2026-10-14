@@ -795,6 +795,41 @@ def revenue(fig, fy, budget, ch70, req_all, tr, cap, tot):
                 ties=True)
 
 
+MEMBERS_TEXT = 'town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt'
+MEMBERS_DOC = 'town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf'
+MEMBERS_ANCHOR = 'Total 1,488 1,465 -23 12,227,609 12,923,815 696,206'
+
+
+def member_towns():
+    """EVERY MEMBER TOWN'S FOUNDATION ENROLMENT AT MONTY TECH, off DESE's apportionment sheet
+    for the district (PDF page 24, "FY27 Chapter 70 Apportionment of Local Contribution
+    Across School Districts -- 832 Montachusett") as the district reprints it.
+
+    This is DESE's FOUNDATION enrolment, the Chapter 70 count, in the sheet's FY26 and FY27
+    columns. It is not the 1 October headcount and the two are never combined. The member
+    rows must foot to the sheet's own Total row -- enrolment and required contribution, both
+    years -- read off the anchor itself, or nothing is written. The one parser: the high
+    school page counts the member towns with this too."""
+    path = os.path.join(ROOT, 'sources', MEMBERS_TEXT)
+    num = lambda x: int(x.replace(',', ''))
+    for n, line in enumerate(open(path, encoding='utf-8'), start=1):
+        if MEMBERS_ANCHOR not in line:
+            continue
+        t26, t27, _, r26, r27, _ = MEMBERS_ANCHOR.split()[1:]
+        tail = line[line.index(MEMBERS_ANCHOR) + len(MEMBERS_ANCHOR):]
+        rows = re.findall(r'\d+ ([A-Z][a-z]+) (\d[\d,]*) (\d[\d,]*) -?\d[\d,]* (\d[\d,]*) '
+                          r'(\d[\d,]*) ', tail)
+        towns = [dict(town=t, fe26=num(a), fe27=num(b), rlc26=num(c), rlc27=num(d))
+                 for t, a, b, c, d in rows]
+        for k, printed in (('fe26', t26), ('fe27', t27), ('rlc26', r26), ('rlc27', r27)):
+            if sum(x[k] for x in towns) != num(printed):
+                fail('%s line %d: the member rows sum to %s for %s and the sheet prints %s'
+                     % (MEMBERS_TEXT, n, sum(x[k] for x in towns), k, printed))
+        return dict(towns=towns, count=len(towns), fe26=num(t26), fe27=num(t27), line=n,
+                    anchor=MEMBERS_ANCHOR, docs_url='/docs/' + MEMBERS_DOC + '#page=24')
+    fail('%s: the apportionment anchor is gone' % MEMBERS_TEXT)
+
+
 DESE_FUNCTIONS = 'state-dese/district-expenditures-by-function.xlsx'
 DESE_FY = 2025
 
@@ -1717,6 +1752,7 @@ def build():
         'assessment_meta': assess_meta,
         'district': dist,
         'dese_total': dese_total(),
+        'member_towns': member_towns(),
         'said': said(),
         'searched': terms,
         'minutes': minutes,
