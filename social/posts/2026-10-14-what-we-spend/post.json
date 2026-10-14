@@ -1,13 +1,15 @@
 {
   "posted": null,
-  "about": "Something few residents know: Lunenburg spends less a student than almost every district in the state, and has for every year on record. Two more surprises behind it, then the reorganised site, where each one is a short page.",
+  "about": "Something few residents know: Lunenburg spends less a student than almost every district in the state, and has for every year on record. Set beside Monty Tech, by the same measure. Two more surprises behind it, then the reorganised site, where each one is a short page.",
   "data": {
     "m": "app-metrics.json",
     "cats": "topics.json#categories",
     "all": "topics.json#topics",
     "pp": "topics/per-pupil-spending.json",
     "tax": "topics/average-tax-bill.json",
-    "g8": "topics/grade-to-grade-loss.json"
+    "g8": "topics/grade-to-grade-loss.json",
+    "mt": "topics/regional-district-spending.json#table.views[key=regional].rows[label=Montachusett Regional Vocational Technical]",
+    "mtk": "topics/destination-district-spending.json#table.views[key=destinations].rows[label=Montachusett Regional Vocational Technical]"
   },
   "literal": [],
   "flare": {
@@ -24,7 +26,7 @@
     "hero": {
       "value": "{pp.facts[4].value.text}",
       "label": "Lunenburg’s place, {pp.finding.figures.y.text}",
-      "text": "{pp.finding.figures.a.text} a student. The state median: {pp.finding.figures.b.text}."
+      "text": "{pp.finding.figures.a.text} a student. The state median: {pp.finding.figures.b.text}. Monty Tech: {mt.cells[0]}."
     },
     "path": "/school-spending/per-pupil-spending",
     "as_of": "As of {m.as_of|short}"
@@ -33,6 +35,8 @@
     "Lunenburg spends less on each student than almost any school district in Massachusetts.",
     "",
     "In {pp.finding.figures.y.text} the town spent {pp.finding.figures.a.text} per student, counting every source of money. The state median was {pp.finding.figures.b.text}. Ranked from the most spent per student to the least, Lunenburg placed {pp.facts[4].value.text} districts, and it has been in the state's bottom quarter in {pp.facts[5].value.text} years the state publishes.",
+    "",
+    "For comparison: Monty Tech, the regional vocational school {mtk.cells[1]} Lunenburg students attend, spent {mt.cells[0]} per student the same year, by the same state measure. A vocational school is a different kind of school, and the state's own formula sets a larger budget for a vocational student.",
     "👉 lburg.org/school-spending/per-pupil-spending",
     "",
     "Two more you may not have heard:",
