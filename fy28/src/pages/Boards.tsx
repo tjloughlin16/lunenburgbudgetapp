@@ -9,7 +9,7 @@ import { TransfersLink } from './BoardTransfers'
 import { useOrgCharts } from '../lib/orgChartLink'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, meetingBody, splitMeetings } from '../lib/meetings'
+import { daysAway as daysFromToday, splitMeetings, meetingTitle } from '../lib/meetings'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -263,6 +263,11 @@ function JoinCard({ b, next }: { b: Board; next: Meeting | undefined }) {
         ? <p className="text-[17px] font-bold leading-snug mt-1">{dateText(next.date)}{next.time ? `, ${next.time}` : ''}
             <span className="text-[12.5px] font-normal ml-2" style={kicker}>{daysFromToday(next.date) === 0 ? 'today' : daysFromToday(next.date) === 1 ? 'tomorrow' : `in ${daysFromToday(next.date)} days`}</span></p>
         : <p className="text-[14px] mt-1" style={{ color: 'var(--text-secondary)' }}>Nothing on the calendar yet.</p>}
+      {/* The body actually meeting, where the agenda names another -- the town files its
+          school advisory councils and sub-committees here. See meetingTitle(). */}
+      {next?.body_as_printed && meetingTitle(b.name, next.body_as_printed) !== b.name && (
+        <p className="text-[14px] font-semibold mt-1" style={{ color: 'var(--series-cost)' }}>{meetingTitle(b.name, next.body_as_printed)}</p>
+      )}
       {next?.hook && <p className="text-[14px] mt-1.5">{next.hook}</p>}
       {next && <JoinLinks j={next.join} />}
       {j?.weekday && (
@@ -284,9 +289,9 @@ function UpcomingCard({ b, u }: { b: Board; u: Meeting }) {
     <div className="card p-4 mt-3">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="font-bold">{dateText(u.date)}</span>
-        {/* The body actually meeting, when the agenda names a sub-committee of this board. */}
-        {u.body_as_printed
-          ? <span className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>{meetingBody(b.name, u.body_as_printed)}</span>
+        {/* The body actually meeting, where the agenda names another. See meetingTitle(). */}
+        {u.body_as_printed && meetingTitle(b.name, u.body_as_printed) !== b.name
+          ? <span className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>{meetingTitle(b.name, u.body_as_printed)}</span>
           : null}
         {u.time && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.time}</span>}
         {u.where && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.where}</span>}

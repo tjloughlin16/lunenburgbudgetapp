@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
 import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, meetingBody, todayIso, isBoardsOwn } from '../lib/meetings'
+import { daysAway as daysFromToday, todayIso, meetingTitle } from '../lib/meetings'
 import { ListSection, Row } from '../components/GroupedList'
 
 const TAB: Tab = 'thisweek'
@@ -86,7 +86,7 @@ function ActivityRow({ a }: { a: Recent }) {
       <div className="sm:flex sm:items-start sm:gap-4">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap gap-x-3 items-baseline">
-            <a className="font-semibold hover:underline" href={`/boards/${a.board_slug}`}>{meetingBody(a.board, a.body_as_printed)}</a>
+            <a className="font-semibold hover:underline" href={`/boards/${a.board_slug}`}>{meetingTitle(a.board, a.body_as_printed)}</a>
             <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
             <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
               style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
@@ -141,7 +141,7 @@ function PhoneActivity({ meetings, days }: { meetings: Recent[]; days: number })
             <Row key={a.board_slug + a.date} href={a.our_minutes?.url ?? `/boards/${a.board_slug}`}
               eyebrow={longDate(a.date) + (votes !== null ? ` · ${votes} vote${votes === 1 ? '' : 's'}` : '')
                 + ` · ${a.complete}/${a.complete_of} of the record`}
-              title={meetingBody(a.board, a.body_as_printed)}
+              title={meetingTitle(a.board, a.body_as_printed)}
               sub={a.our_minutes?.headline ?? (a.agenda ? 'Agenda posted; no minutes yet' : null)} />
           )
         })}
@@ -157,7 +157,7 @@ function OtherBoards({ rows, days }: { rows: Upcoming[]; days: number }) {
       footer={<ShowAll n={rows.length} shown={n} onClick={() => setN(rows.length)} />}>
       {rows.slice(0, n).map(m => (
         <Row key={m.file_id} href={m.agenda_url} eyebrow={longDate(m.date)}
-          title={meetingBody(m.board, m.body_as_printed)} sub={m.via_note ?? null} />
+          title={meetingTitle(m.board, m.body_as_printed)} sub={m.via_note ?? null} />
       ))}
     </ListSection>
   )
@@ -193,9 +193,9 @@ export function ThisWeek() {
       <H2>Upcoming meetings</H2>
       {(() => {
         const three = new Set(THE_THREE.map(t => t[0]))
-        // A body the town filed in a budget board's folder (a school advisory council) is listed
-        // here, under its own name, not in that board's card.
-        const others = [...week, ...later].filter(m => !three.has(m.board_slug) || !isBoardsOwn(m.board, m.body_as_printed))
+        // A body the town files in a budget board's folder stays in that board's card above,
+        // named as such (meetingTitle); this list is every OTHER board.
+        const others = [...week, ...later].filter(m => !three.has(m.board_slug))
         return others.length === 0
           ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No other agenda posted for the next {f.upcoming.horizon_days} days.</p>
           : <div className="max-w-xl"><OtherBoards rows={others} days={f.upcoming.horizon_days} /></div>

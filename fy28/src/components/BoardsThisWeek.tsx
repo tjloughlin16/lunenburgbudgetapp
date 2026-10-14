@@ -70,7 +70,7 @@ export const THE_THREE: [string, string][] = [
 // from here. A bare `export ... from` does NOT bring the names into this module's scope --
 // it only forwards them -- so the first attempt at this compiled to `Cannot find name
 // 'todayIso'` in six places inside this very file.
-import { todayIso, dayLabel, daysAway, meetingBody, isBoardsOwn } from '../lib/meetings'
+import { todayIso, dayLabel, daysAway, meetingTitle } from '../lib/meetings'
 // `daysFromToday` is what three pages already import from here, so the old name is kept as
 // the exported one while the library owns the single implementation.
 const daysFromToday = daysAway
@@ -116,7 +116,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
   const rows: { name: string; m: Upcoming; p?: Notice }[] = []
   const quiet: string[] = []
   for (const [slug, name] of THE_THREE) {
-    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && isBoardsOwn(m.board, m.body_as_printed) && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
+    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
     if (ms.length === 0) quiet.push(name)
     for (const m of ms) rows.push({ name, m, p: notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date) })
   }
@@ -149,7 +149,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
               style={{ color: 'var(--series-cost)' }}>
               {dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` \u00b7 ${p.time}` : ''}
             </span>
-            <span className="block text-[15px] font-bold leading-tight mt-0.5">{meetingBody(name, m.body_as_printed)}</span>
+            <span className="block text-[15px] font-bold leading-tight mt-0.5">{meetingTitle(name, m.body_as_printed)}</span>
             {(p?.hook || p?.one_line) && (
               <span className="block text-[13px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
                 {p!.hook || p!.one_line}
@@ -188,7 +188,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
   }, [compact, target, f])
   if (!f) return null
   const byBoard = (slug: string) =>
-    f.upcoming.meetings.filter(m => m.board_slug === slug && isBoardsOwn(m.board, m.body_as_printed) && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
+    f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
   const previewFor = (m: Upcoming) => notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
   return (
     <>
@@ -210,13 +210,11 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
                 {/* The board's own page, from the expanded card only: the compact card is
                     itself a link, and an anchor inside an anchor is invalid HTML. */}
-                {/* THE BODY THAT IS ACTUALLY MEETING. Where the agenda names a
-                    sub-committee of this board, that is what is shown -- the town files
-                    those under the parent board, and announcing the parent told a reader
-                    the School Committee was meeting when three people were. The link still
-                    goes to the board's page, which is where the sub-committee belongs. */}
-                {compact ? <span className="text-[13px] font-semibold w-36 shrink-0">{meetingBody(name, m.body_as_printed)}</span>
-                  : <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{meetingBody(name, m.body_as_printed)}</a>}
+                {/* THE BOARD, THEN THE BODY THAT IS ACTUALLY MEETING, where the agenda names
+                    another: `School Committee — School Advisory Council LHS`. It stays in
+                    this board's card. See meetingTitle(). */}
+                {compact ? <span className="text-[13px] font-semibold w-36 shrink-0">{meetingTitle(name, m.body_as_printed)}</span>
+                  : <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{meetingTitle(name, m.body_as_printed)}</a>}
                 <span className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{dayLabel(m.date, f.as_of)}</span>
                 {p?.time && p.time !== 'not stated' && <Chip tone="strong">{p.time}</Chip>}
                 {p?.where && p.where !== 'not stated' && <Chip>{p.where}</Chip>}

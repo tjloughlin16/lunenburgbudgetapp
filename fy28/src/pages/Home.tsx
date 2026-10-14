@@ -11,7 +11,7 @@ import { LEVEL_SERVICE } from '../model/walk'
 import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
 import { THE_THREE } from '../components/BoardsThisWeek'
 import { ListSection, Row } from '../components/GroupedList'
-import { todayIso, daysAway, dayLabel, meetingBody, splitMeetings, isBoardsOwn } from '../lib/meetings'
+import { todayIso, daysAway, dayLabel, splitMeetings, meetingTitle } from '../lib/meetings'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -60,7 +60,7 @@ function useThisWeek(): Pane | null {
   const quiet: string[] = []
   for (const [slug, name] of THE_THREE) {
     const ms = feed.upcoming.meetings
-      .filter(m => m.board_slug === slug && isBoardsOwn(name, m.body_as_printed) && m.date >= todayIso() && daysAway(m.date) <= 7)
+      .filter(m => m.board_slug === slug && m.date >= todayIso() && daysAway(m.date) <= 7)
       .sort((a, b) => a.date.localeCompare(b.date))
     if (!ms.length) quiet.push(name)
     for (const m of ms) {
@@ -75,7 +75,7 @@ function useThisWeek(): Pane | null {
       {rows.map(({ name, m, time, line }) => (
         <Row key={m.file_id} href={`/this-week#m-${m.board_slug}-${m.date}`} accent
           eyebrow={dayLabel(m.date, feed.as_of) + (time ? ` · ${time}` : '')}
-          title={meetingBody(name, m.body_as_printed)} sub={line} />
+          title={meetingTitle(name, m.body_as_printed)} sub={line} />
       ))}
       {quiet.length > 0 && <Row title={`${quiet.join(' and ')}: nothing posted this week`} muted />}
     </>,

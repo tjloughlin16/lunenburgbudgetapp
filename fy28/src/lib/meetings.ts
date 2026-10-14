@@ -110,16 +110,29 @@ export function whenPhrase(date: string, now: Date = new Date()): string {
  *  error rather than as emphasis. The board's own name stays available as `board` for the
  *  link and the grouping; only the label changes.
  */
-/** Is this the board's OWN meeting -- the board itself, or a sub-committee of it -- rather
- *  than another body the town filed in its folder? TJ, 13 October 2026: the AgendaCenter
- *  listed "School Advisory Council LMS" and "School Advisory Council LHS" under School
- *  Committee, and the budget boards' strip announced both as School Committee meetings. A
- *  principals' advisory council is not the board that votes the budget. A printed name
- *  that contains the board's own name is the board or a sub-committee of it, and stays. */
-export function isBoardsOwn(board: string, printed?: string | null): boolean {
-  if (!printed) return true
+/** What to call a meeting, as one line: the board, and -- where the agenda names a
+ *  different body -- that body after a dash. `School Committee — School Advisory Council LHS`.
+ *
+ *  TJ, 14 October 2026: *"subcommittees should show up under the main committees page, but
+ *  clearly call out that its a subcommittee meeting ... it needs to have the subcommittee
+ *  title somewhere"*, and then, of a tag reading "Not the full committee": *"too much. just
+ *  list the subcommittee name ... 'School Committee - School Advisory Council LHS'"*.
+ *
+ *  So these meetings stay WITH the board the town files them under (the 13 October version
+ *  moved the advisory councils out to "other boards", where a School Committee watcher
+ *  would never look), and the printed name carries the distinction by itself. No
+ *  "Subcommittee" label: a principal's advisory council is a school council, not a
+ *  sub-committee of anything, and the agenda's own name is the claim the document makes.
+ *  A printed name that repeats the board's (`School Committee Policy Sub-Committee`) loses
+ *  the repeat: `School Committee — Policy Sub-Committee`. One function, so every surface
+ *  says it the same way. */
+export function meetingTitle(board: string, printed?: string | null): string {
+  if (!printed) return board
   const n = (s: string) => s.toLowerCase().replace(/[^a-z]/g, '')
-  return n(printed).includes(n(board))
+  let name = meetingBody(board, printed)
+  if (n(name) === n(board)) return board
+  if (name.toLowerCase().startsWith(board.toLowerCase())) name = name.slice(board.length).trim() || name
+  return `${board} \u2014 ${name}`
 }
 
 export function meetingBody(board: string, printed?: string | null): string {
