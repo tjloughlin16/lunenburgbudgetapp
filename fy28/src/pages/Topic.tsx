@@ -23,6 +23,7 @@ import {
 import { ANALYSIS_CHARTS } from '../components/analysisCharts'
 import { InlineTopicChart, isInline, type InlineChart } from '../components/TopicCharts'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
+import { TopicLink } from '../components/TopicLink'
 
 type IndexTopic = {
   id: string; title: string; path: string; home: string; shelves: string[]
@@ -121,8 +122,30 @@ function Sources({ sources }: { sources: { label: string; href: string }[] }) {
   )
 }
 
+/** The hubs drawn with the new topic shape (components/TopicLink), while TJ confirms it on
+ *  one before it spreads to every hub and /reports. Empty this set by deleting the old
+ *  card below. */
+const TOPIC_LINK_HUBS = new Set(['athletics'])
+
 /** The cards on a hub: one per topic, grouped as the registry groups them. */
 function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
+  const shelfOf = (id: string) => ix.categories.find(c => c.id === id)?.shelf
+  if (TOPIC_LINK_HUBS.has(cat.id)) return (
+    <section className="mt-10 max-w-3xl" id="topics">
+      {cat.groups.map((g, gi) => (
+        <div key={gi} className={gi ? 'mt-6' : undefined}>
+          <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
+            {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => (
+              <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== cat.id)
+                .map(shelfOf).filter((x): x is string => !!x)} /></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <Elsewhere cat={cat} />
+    </section>
+  )
   return (
     <section className="mt-10 max-w-3xl" id="topics">
       {cat.groups.map((g, gi) => (
@@ -150,16 +173,20 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
           </ul>
         </div>
       ))}
-      {cat.elsewhere.length ? (
-        <div className="mt-6">
-          <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Elsewhere on the site</h2>
-          <ul className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-[14px]">
-            {cat.elsewhere.map(e => <li key={e.href}><a href={abs(e.href)} className="underline" style={link}>{e.title}</a></li>)}
-          </ul>
-        </div>
-      ) : null}
+      <Elsewhere cat={cat} />
     </section>
   )
+}
+
+function Elsewhere({ cat }: { cat: IndexCategory }) {
+  return cat.elsewhere.length ? (
+    <div className="mt-6">
+      <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Elsewhere on the site</h2>
+      <ul className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-[14px]">
+        {cat.elsewhere.map(e => <li key={e.href}><a href={abs(e.href)} className="underline" style={link}>{e.title}</a></li>)}
+      </ul>
+    </div>
+  ) : null
 }
 
 /** Previous, next, and back to the hub -- so a reader moves through a shelf without it. */
