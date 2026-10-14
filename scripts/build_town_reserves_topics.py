@@ -1099,7 +1099,9 @@ def build():
     h = {}
     h['h-cert'] = f('h-cert', U(c25), 'free cash certified as of 1 July 2025', 'published',
                     allow=('1 July 2025',))
-    h['h-under'] = f('h-under', P(us25), 'of it appropriated and not spent', 'published')
+    # NOT "of it": the share is of the free cash IDENTIFIED (the sources sum, before
+    # deductions), not of the certified figure beside it -- that would read 73.3%.
+    h['h-under'] = f('h-under', P(us25), 'of free cash identified, appropriated and not spent', 'published')
     h['h-share'] = f('h-share', P(fs['pct'], 2), 'free cash as a share of budget, %s, Town’s '
                      'figure' % C.fy(2026), 'published', {'y': F(2026)})
     h['h-short'] = f('h-short', N(len(last10) - len(met), 'years'),
@@ -1134,8 +1136,8 @@ def build():
         LD.tier('Where it goes', [h['h-capital'], h['h-redirect']]),
         LD.tier('What is not settled', [h['h-band-gap'], h['h-dept-gap']]),
     ], [
-        LD.conclusion('Free cash reached a record %s in July %s; %s of it was money '
-                      'appropriated and not spent.' % (C.usd(c25), '2025', C.pct(us25)),
+        LD.conclusion('Free cash hit a record %s in July %s; %s of its sources was money '
+                      'left unspent.' % (C.usd(c25), '2025', C.pct(us25)),
                       ['h-cert', 'h-under'], {'a': U(c25), 'y': Y(2025), 'p': P(us25)}),
         LD.conclusion('On the Town’s figures, free cash reached %s in only %s of the last %s '
                       'years.' % (C.pct(lo, 0), C.num(len(met)), C.num(len(last10))),
@@ -1152,7 +1154,7 @@ def build():
     out['free-cash'] = TP.hub(
         'free-cash',
         'The state certified %s of free cash as of 1 July %s, the most the Town’s records list; '
-        '%s of it was money appropriated and not spent.' % (C.usd(c25), '2025', C.pct(us25)),
+        '%s of the free cash identified that year was money appropriated and not spent.' % (C.usd(c25), '2025', C.pct(us25)),
         fc_ladder, chart=fc_chart,
         answer_figures={'a': U(c25), 'y': Y(2025), 'p': P(us25)}, answer_allow=('1 July',))
 
