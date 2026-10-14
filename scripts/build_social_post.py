@@ -322,13 +322,13 @@ def build_html(spec, slug, data):
 # THE LOGO, as the cover draws it. TJ, 14 October 2026: "make sure you put the logo of
 # budget project into every image" -- the L-mark AND the wordmark ("The / Lunenburg Budget
 # Project", in the serif, with the ochre highlighter), not the favicon beside a kicker in
-# capitals. Every social image from 2026-10-15-every-subject on.
+# capitals. Every social image from 14 October 2026 on (the per-student post took it too).
 #
 # ONE DRAWING. The mark's rects come from sources/data/brand/favicon.svg (its paper tile
 # dropped, cropped as the cover crops it), and the name, the "The" and the serif from
 # scripts/build_brand_assets.py, which drew the cover -- so the logo on a post and the
-# logo on the group's cover cannot drift apart. A post made before this carries
-# "logo": false and keeps the plain kicker, so the image already attached stays the same.
+# logo on the group's cover cannot drift apart. "logo": false keeps the plain kicker, for a
+# post whose image must not change.
 import build_brand_assets as _brand  # noqa: E402
 
 LOGO_SVG = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources', 'data', 'brand', 'favicon.svg')
