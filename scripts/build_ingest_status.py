@@ -2396,7 +2396,10 @@ def alert():
     Overdue stays its own alarm: a job that never fires writes no failure either.
     """
     out = []
-    hist = run_history(10)
+    # NEWEST FIRST BY WHEN EACH RUN STARTED, not by filename: `2026-10-14.log` sorts after
+    # `2026-10-14-rerun.log`, so a re-run that recovered the day read as older than the
+    # failure it fixed, and this banner stayed red over a green day (14 October 2026).
+    hist = sorted(run_history(10), key=lambda r: (r['day'], r.get('started') or ''), reverse=True)
     live = [r for r in hist if r['running']]
     done = [r for r in hist if not r['running']]
 
