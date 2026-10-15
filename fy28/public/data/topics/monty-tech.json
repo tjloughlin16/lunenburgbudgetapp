@@ -1,0 +1,376 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$1,334,521",
+    "unit": "",
+    "value": 1334521
+   },
+   "b": {
+    "text": "$25,827",
+    "unit": "",
+    "value": 25827
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Monty Tech is the regional vocational high school Lunenburg belongs to. Lunenburg’s bill was $1,334,521, most of it a minimum the state sets; the school spent $25,827 a pupil in FY2025, less than most vocational districts."
+ },
+ "category": "monty-tech",
+ "chains": [],
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "The district’s own budget summary for the year. Capital and grants are outside it."
+  },
+  "parts": [
+   {
+    "label": "State Chapter 70 aid",
+    "share": "54%",
+    "text": "$18,762,805",
+    "value": 18762805
+   },
+   {
+    "label": "The member towns",
+    "share": "38%",
+    "text": "$13,178,539",
+    "value": 13178539
+   },
+   {
+    "label": "State transportation aid",
+    "share": "6%",
+    "text": "$2,000,000",
+    "value": 2000000
+   },
+   {
+    "label": "Its own reserves",
+    "share": "2%",
+    "text": "$700,000",
+    "value": 700000
+   }
+  ],
+  "title": "Who pays for Monty Tech’s operating budget",
+  "total": "$34,641,344",
+  "type": "parts",
+  "unit": "$"
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "monty-tech",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "97",
+      "unit": "children",
+      "value": 97.0
+     },
+     "b": {
+      "text": "1,403",
+      "unit": "pupils",
+      "value": 1403
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-hc",
+     "h-all"
+    ],
+    "text": "97 of Monty Tech’s 1,403 pupils lived in Lunenburg."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$1,334,521",
+      "unit": "",
+      "value": 1334521
+     },
+     "b": {
+      "text": "95.2%",
+      "unit": "",
+      "value": 95.21849999999999
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-bill",
+     "h-share",
+     "h-next"
+    ],
+    "text": "Lunenburg’s bill was $1,334,521; 95.2% of it is a minimum the state formula sets."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$18,762,805",
+      "unit": "",
+      "value": 18762805
+     },
+     "b": {
+      "text": "$34,641,344",
+      "unit": "",
+      "value": 34641344
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "rests_on": [
+     "h-ch70",
+     "h-budget"
+    ],
+    "text": "State Chapter 70 aid paid $18,762,805 of the $34,641,344 operating budget."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$25,827",
+      "unit": "",
+      "value": 25827
+     },
+     "b": {
+      "text": "$26,634",
+      "unit": "",
+      "value": 26634.0
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-pp",
+     "h-vmed",
+     "h-cap"
+    ],
+    "text": "It spent $25,827 a pupil, below the vocational median of $26,634, and none of it capital."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-hc",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "Lunenburg residents, DESE headcount, FY2026"
+      },
+      "value": {
+       "text": "97",
+       "unit": "children",
+       "value": 97.0
+      }
+     },
+     {
+      "id": "h-all",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [
+        "1 October"
+       ],
+       "text": "Monty Tech, 1 October headcount, FY2026"
+      },
+      "value": {
+       "text": "1,403",
+       "unit": "pupils",
+       "value": 1403
+      }
+     },
+     {
+      "id": "h-towns",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "Monty Tech’s member towns"
+      },
+      "value": {
+       "text": "18",
+       "unit": "towns",
+       "value": 18
+      }
+     },
+     {
+      "id": "h-bill",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "Monty Tech assessment, FY2026"
+      },
+      "value": {
+       "text": "$1,334,521",
+       "unit": "",
+       "value": 1334521
+      }
+     },
+     {
+      "id": "h-share",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of the bill set by the state formula"
+      },
+      "value": {
+       "text": "95.2%",
+       "unit": "",
+       "value": 95.21849999999999
+      }
+     },
+     {
+      "id": "h-next",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "Monty Tech assessment, FY2027"
+      },
+      "value": {
+       "text": "$1,452,379",
+       "unit": "",
+       "value": 1452379
+      }
+     }
+    ],
+    "title": "Lunenburg’s pupils and its bill"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-budget",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "Monty Tech operating budget, FY2026"
+      },
+      "value": {
+       "text": "$34,641,344",
+       "unit": "",
+       "value": 34641344
+      }
+     },
+     {
+      "id": "h-ch70",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [
+        "Chapter 70"
+       ],
+       "text": "state Chapter 70 aid, paid by the state"
+      },
+      "value": {
+       "text": "$18,762,805",
+       "unit": "",
+       "value": 18762805
+      }
+     }
+    ],
+    "title": "Who pays for the school"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-pp",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "a pupil, all funds, FY2025"
+      },
+      "value": {
+       "text": "$25,827",
+       "unit": "",
+       "value": 25827
+      }
+     },
+     {
+      "id": "h-vmed",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "median vocational district"
+      },
+      "value": {
+       "text": "$26,634",
+       "unit": "",
+       "value": 26634.0
+      }
+     },
+     {
+      "id": "h-cap",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "capital or debt rows in DESE’s per-pupil data"
+      },
+      "value": {
+       "text": "0",
+       "unit": "",
+       "value": 0
+      }
+     }
+    ],
+    "title": "A pupil"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/monty-tech",
+ "shelves": [
+  "monty-tech"
+ ],
+ "table": null,
+ "title": "Monty Tech finances"
+}

@@ -1,0 +1,496 @@
+{
+ "category": "school-spending",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "FY2024, the latest year all three publish. All three are spending after the year closed, not budgets."
+  },
+  "rows": [
+   {
+    "label": "Census Bureau",
+    "texts": [
+     "$31,341,000",
+     "$1,087,000",
+     "$947,000"
+    ],
+    "total": "$33,375,000",
+    "values": [
+     31341000,
+     1087000,
+     947000
+    ]
+   },
+   {
+    "label": "DESE per-pupil total",
+    "texts": [
+     "$29,576,885",
+     null,
+     null
+    ],
+    "total": "$29,576,885",
+    "values": [
+     29576885,
+     null,
+     null
+    ]
+   },
+   {
+    "label": "Net school spending",
+    "texts": [
+     "$24,043,452",
+     null,
+     null
+    ],
+    "total": "$24,043,452",
+    "values": [
+     24043452,
+     null,
+     null
+    ]
+   }
+  ],
+  "stack": [
+   "Operating",
+   "Capital outlay",
+   "Interest on debt"
+  ],
+  "title": "Lunenburg school spending under three rules",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$29,576,885",
+     "unit": "",
+     "value": 29576885
+    },
+    "b": {
+     "text": "$24,043,452",
+     "unit": "",
+     "value": 24043452
+    },
+    "c": {
+     "text": "$31,341,000",
+     "unit": "",
+     "value": 31341000
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "dese",
+    "nss",
+    "cen"
+   ],
+   "text": "One year, three rules: $29,576,885 by DESE, $24,043,452 net school spending, $31,341,000 by the Census."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/state-law/2026-10-15/section2.html",
+      "label": "M.G.L. c.70 §2"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [],
+     "text": "The statute: it “shall not include any spending for school construction, long-term debt service, school meals, transportation of students to and from their homes”."
+    }
+   ],
+   "rests_on": [
+    "nss",
+    "dese",
+    "grants",
+    "trans"
+   ],
+   "text": "Net school spending leaves out grants and transportation; DESE’s figure counts both."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,087,000",
+     "unit": "",
+     "value": 1087000
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/state-census/census-school24doc.docx",
+      "label": "Census Bureau, technical documentation, Massachusetts"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [],
+     "text": "Census, on Massachusetts: bond-funded construction is “accounted for in the fiscal year that the bond principal is repaid”."
+    }
+   ],
+   "rests_on": [
+    "cap",
+    "int",
+    "rows"
+   ],
+   "text": "Neither state measure counts capital; the Census does, $1,087,000 for Lunenburg in FY2024."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,264,604",
+     "unit": "",
+     "value": 2264604
+    },
+    "b": {
+     "text": "$281,000",
+     "unit": "",
+     "value": 281000
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/state-dese/dese-eoyr-fy2025-printing-version.xlsx",
+      "label": "DESE End of Year Report form, lines 3524-3529"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [
+      "2420"
+     ],
+     "text": "DESE’s form puts vocational equipment in 2420, counted, “irrespective of unit cost”."
+    },
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [
+      "7000"
+     ],
+     "text": "Possibly the Census counts as capital only what districts code 7000. Nothing here tests it."
+    },
+    {
+     "closes": "each district’s End of Year Financial Report workbook, with its 7000 and lease schedules",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "7000"
+     ],
+     "text": "Whether every district draws that line the same way is not visible."
+    }
+   ],
+   "rests_on": [
+    "mteq",
+    "mtk"
+   ],
+   "text": "The rules split equipment: Monty Tech’s was $2,264,604 to DESE and $281,000 of capital to the Census."
+  }
+ ],
+ "facts": [
+  {
+   "id": "dese",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, DESE’s per-pupil total, FY2024"
+   },
+   "value": {
+    "text": "$29,576,885",
+    "unit": "",
+    "value": 29576885
+   }
+  },
+  {
+   "id": "nss",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, net school spending, FY2024"
+   },
+   "value": {
+    "text": "$24,043,452",
+    "unit": "",
+    "value": 24043452
+   }
+  },
+  {
+   "id": "cen",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg, Census current spending, FY2024"
+   },
+   "value": {
+    "text": "$31,341,000",
+    "unit": "",
+    "value": 31341000
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg, Census capital outlay"
+   },
+   "value": {
+    "text": "$1,087,000",
+    "unit": "",
+    "value": 1087000
+   }
+  },
+  {
+   "id": "int",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg, Census interest on school debt"
+   },
+   "value": {
+    "text": "$947,000",
+    "unit": "",
+    "value": 947000
+   }
+  },
+  {
+   "id": "grants",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "grants and revolving funds in DESE’s total"
+   },
+   "value": {
+    "text": "$4,287,612",
+    "unit": "",
+    "value": 4287612
+   }
+  },
+  {
+   "id": "trans",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "transportation in DESE’s total"
+   },
+   "value": {
+    "text": "$951,844",
+    "unit": "",
+    "value": 951844
+   }
+  },
+  {
+   "id": "rows",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "capital or debt rows in DESE’s per-pupil file"
+   },
+   "value": {
+    "text": "0",
+    "unit": "",
+    "value": 0
+   }
+  },
+  {
+   "id": "mteq",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech instructional equipment, DESE, counted"
+   },
+   "value": {
+    "text": "$2,264,604",
+    "unit": "",
+    "value": 2264604
+   }
+  },
+  {
+   "id": "mtk",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech instructional equipment, Census capital"
+   },
+   "value": {
+    "text": "$281,000",
+    "unit": "",
+    "value": 281000
+   }
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "Three official measures of school spending count different things; neither state one counts capital."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "what-per-pupil-counts",
+ "kind": "topic",
+ "path": "/school-spending/what-per-pupil-counts",
+ "said": [],
+ "shelves": [
+  "school-spending",
+  "monty-tech"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/state-law/2026-10-15/section2.html",
+   "label": "M.G.L. c.70 §2, the definition of net school spending — malegislature.gov, Section2.html"
+  },
+  {
+   "href": "/docs/state-dese/dese-ch70-district-profile.xlsx",
+   "label": "Massachusetts DESE, Chapter 70 district profile — dese-ch70-district-profile.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-eoyr-fy2025-printing-version.xlsx",
+   "label": "Massachusetts DESE, End of Year Financial Report FY2025, printing version — printing-version.xlsx"
+  },
+  {
+   "href": "/docs/state-census/census-elsec24.xlsx",
+   "label": "US Census Bureau, Annual Survey of School System Finances FY2024 — elsec24.xlsx"
+  },
+  {
+   "href": "/docs/state-census/census-school24doc.docx",
+   "label": "US Census Bureau, the same survey’s technical documentation — school24doc.docx"
+  }
+ ],
+ "table": {
+  "caption": "What each measure counts",
+  "views": [
+   {
+    "columns": [
+     "DESE per pupil",
+     "Net school spending",
+     "Census Bureau"
+    ],
+    "key": "rules",
+    "kinds": [
+     "ledger",
+     "statute",
+     "ledger"
+    ],
+    "label": "Who set the rule",
+    "note": "DESE: its expenditures-by-function file and End of Year Report form. Net school spending: M.G.L. c.70 §2. Census: its survey documentation.",
+    "rows": [
+     {
+      "cells": [
+       "Not counted",
+       "Not counted",
+       "Counted, apart"
+      ],
+      "label": "School construction"
+     },
+     {
+      "cells": [
+       "Not counted",
+       "Not stated in §2",
+       "Counted, apart"
+      ],
+      "label": "Other capital, code 7000"
+     },
+     {
+      "cells": [
+       "Not counted",
+       "Not counted",
+       "Interest only, apart"
+      ],
+      "label": "Debt service"
+     },
+     {
+      "cells": [
+       "Counted",
+       "Not counted",
+       "Counted"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "Counted",
+       "Not counted",
+       "Counted"
+      ],
+      "label": "School meals"
+     },
+     {
+      "cells": [
+       "Counted",
+       "Not counted",
+       "Not split by fund"
+      ],
+      "label": "Grants and revolving funds"
+     },
+     {
+      "cells": [
+       "Counted",
+       "Not excluded by §2",
+       "A capital item"
+      ],
+      "label": "Instructional equipment, 2420"
+     },
+     {
+      "cells": [
+       "Counted",
+       "Counted",
+       "Counted, apart"
+      ],
+      "label": "Tuition to other districts"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "What per pupil counts"
+}

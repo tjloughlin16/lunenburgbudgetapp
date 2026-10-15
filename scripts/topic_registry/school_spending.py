@@ -12,14 +12,15 @@ families (where Lunenburg children actually went), or this project (the six-dist
 
 The Chapter 70 spending floor is HOME on the State aid shelf, the teacher ratio on School
 staffing, children schooled elsewhere on Enrolment, the special education overruns on Special
-education and the two school surpluses on FY2026 closeout; each is listed here, one page on
-two shelves.
+education, the two school surpluses on FY2026 closeout and Monty Tech per pupil on Monty Tech;
+each is listed here, one page on two shelves. "What per pupil counts" is HOME here and listed on
+Monty Tech: it sets DESE's figure beside net school spending and the Census Bureau's.
 """
 CATEGORY = dict(
     id='school-spending', shelf='School spending', title='Spending compared', area='school',
     order=24,
     groups=[
-        ('Against the state', ['per-pupil-spending', 'spending-by-function',
+        ('Against the state', ['per-pupil-spending', 'what-per-pupil-counts', 'spending-by-function',
                                'grants-in-school-spending', 'cost-of-the-median']),
         ('Against other districts', ['comparison-districts', 'spending-and-pupils',
                                      'gap-by-function', 'average-teacher-salary',
@@ -31,12 +32,14 @@ CATEGORY = dict(
         ('Elsewhere on the site', ['net-school-spending', 'net-school-spending-rank',
                                    'required-local-contribution', 'teachers-per-pupil',
                                    'children-schooled-elsewhere', 'special-education-overruns',
-                                   'fy2025-school-surplus', 'fy2026-school-surplus']),
+                                   'fy2025-school-surplus', 'fy2026-school-surplus',
+                                   'monty-tech-per-pupil']),
     ],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_school_spending_topics.py'
 TOPICS = {
     'per-pupil-spending': 'Spending per pupil',
+    'what-per-pupil-counts': 'What per pupil counts',
     'spending-by-function': 'Spending by function',
     'grants-in-school-spending': 'Grants and revolving funds',
     'cost-of-the-median': 'Reaching the state median',

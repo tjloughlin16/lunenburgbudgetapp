@@ -422,7 +422,11 @@ export const SLUG: Record<Tab, string> = {
   // own address -- the one alias move made deliberately here, because a reader typing it
   // wanted the assessment and was being handed a headcount. The old page is linked from
   // the first screen of this one.
-  montytech: 'monty-tech',
+  // SINCE 15 OCTOBER 2026 THE MONTY TECH HUB HOLDS /monty-tech (scripts/topic_registry/
+  // monty_tech.py), and this long report moved to /analysis/monty-tech, still served because
+  // sources and other pages cite it. tabFromPath routes the two-segment slug before the
+  // generic `analysis/` rule, which would otherwise hand it to the markdown renderer.
+  montytech: 'analysis/monty-tech',
   // What the state ENFORCES, as against every other spending page here, which measures a
   // budget somebody chose. The slug is the sentence a resident says when they hear the
   // town is barely above the state minimum -- NOT `net-school-spending`, which is DESE's
@@ -697,9 +701,9 @@ const ALIASES: Record<string, Tab> = {
   'are-we-meeting-the-minimum': 'required',
   // NOT 'vocational' or 'regional' on their own: the first promises the school and the
   // second is a word this town uses for a planning commission and a transit authority.
-  'monty-tech': 'montytech', montytech: 'montytech', 'monty': 'montytech',
-  montachusett: 'montytech', 'regional-assessment': 'montytech',
-  'monty-tech-assessment': 'montytech', 'vocational-school': 'montytech',
+  // `monty-tech` itself is the hub's address now; these words for it land on the hub too
+  // (TOPIC_ALIASES). Only the old report's own slug and the assessment stay here.
+  montytech: 'montytech', 'monty-tech-assessment': 'montytech',
   'who-ends-up-out-of-district': 'spedroute', 'out-of-district': 'spedroute',
   'placement-counts': 'spedroute', 'placements': 'spedroute',
   'the-route-out-of-district': 'spedroute',
@@ -971,6 +975,7 @@ export function tabFromPath(pathname: string): Tab {
   // The one two-segment address on the site. Seventeen markdown analyses share a single
   // page component, so the document id travels in the path rather than in a Tab of its
   // own -- see `analysis` in the union above.
+  if (seg === SLUG.montytech) return 'montytech'
   if (seg.startsWith('analysis/')) return 'analysis'
   // TOPIC PAGES AND HUBS: any address whose first segment is a built category
   // (src/data/topic-categories.json, written by scripts/build_topics_index.py). A hub's own
@@ -1008,6 +1013,9 @@ export function topicIdFromPath(pathname: string): string | null {
 export const TOPIC_ALIASES: Record<string, string> = {
   freecash: 'free-cash', 'certified-free-cash': 'free-cash',
   reserves: 'town-reserves', 'stabilization-funds': 'town-reserves',
+  // The old Monty Tech report's aliases, since the hub took /monty-tech on 15 October 2026.
+  monty: 'monty-tech', montachusett: 'monty-tech', 'regional-assessment': 'monty-tech',
+  'vocational-school': 'monty-tech',
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.

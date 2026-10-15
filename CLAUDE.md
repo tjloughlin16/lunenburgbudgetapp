@@ -1614,6 +1614,12 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/extract_parks_myrec.py --check         # the Parks registration system's FY2025 sales, tied to the printed totals
     python3 scripts/build_parks.py                        # Parks & Recreation: the department, its fund since FY2011, its sales, its grounds bid
     python3 scripts/build_parks.py --check
+    python3 scripts/build_monty_tech_topics.py --check   # the Monty Tech hub (/monty-tech) and Monty Tech per pupil; the long
+                                                #   report is /analysis/monty-tech. Reads per_pupil_measures.py, which reads DESE's
+                                                #   by-function workbook (~90s cold, cached in build/cache by sha256) and the
+                                                #   Census Bureau's FY2024 school finance table, asserting both files' identities
+    python3 scripts/build_suggested_reports.py --check   # reports a meeting suggests, merged across meetings -> the backlog
+    python3 scripts/build_agenda_threads.py --check      # agenda items matched to threads by the threads' own patterns (no model)
     python3 scripts/build_boards.py                       # one page per board: upcoming, recent, every vote, time, budget calendar
     python3 scripts/build_boards.py --check
     python3 scripts/build_budget_feed.py                  # everything budget-related across every board, on one page

@@ -226,7 +226,7 @@ export function SpedLeaving() {
         and reading a rising assessment off it is the step this page will not take for you.
         The assessment itself is measured at{' '}
         <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href="/monty-tech">Monty Tech &mdash; the assessment, and what sets it</a>, and
+          href="/analysis/monty-tech">Monty Tech &mdash; the assessment, and what sets it</a>, and
         the short version is that the count is not what moves it: nearly all of the bill
         is the state&rsquo;s minimum required local contribution, computed from the
         town&rsquo;s property value and resident income. What school choice costs is a

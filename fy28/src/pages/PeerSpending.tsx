@@ -327,7 +327,7 @@ export function PeerSpending() {
           NOT ONE FOUNDATION FIGURE IS ON THIS PAGE. A foundation budget per pupil is a
           Chapter 70 formula output -- what the state's model says an adequate education
           costs -- and for Montachusett it is about five thousand dollars BELOW what the
-          district actually spends. /monty-tech reports the foundation figure; this section
+          district actually spends. /analysis/monty-tech reports the foundation figure; this section
           reports spending; the note under the table says plainly that they are different
           measures and nothing here puts the two in one row. */}
       <H2 id="destinations">
@@ -447,7 +447,7 @@ export function PeerSpending() {
           <strong>This is spending, not a foundation budget.</strong> Every figure in this
           section is what a district reported spending, all funds, after the year closed.
           A <em>foundation budget per pupil</em> &mdash; the figure{' '}
-          <a className="link" href={abs('/monty-tech')}>/monty-tech</a> reports &mdash; is a
+          <a className="link" href={abs('/analysis/monty-tech')}>/analysis/monty-tech</a> reports &mdash; is a
           Chapter&nbsp;70 formula output, the state&rsquo;s model of what an adequate
           education costs. The two measure different things, they differ by thousands of
           dollars for the same district in the same year, and they are never placed in one
@@ -472,7 +472,7 @@ export function PeerSpending() {
         member town of {shortName(DEST.widest.district)}, so the state computes one
         required local contribution for the town and splits it between its two districts by
         foundation-budget share &mdash; a different rule from school choice, and{' '}
-        <a className="link" href={abs('/monty-tech')}>/monty-tech</a> works it through.{' '}
+        <a className="link" href={abs('/analysis/monty-tech')}>/analysis/monty-tech</a> works it through.{' '}
         <a className="link" href={abs('/where-students-go-instead')}>
           Where students go instead</a> has the year-by-year counts.
       </Body>

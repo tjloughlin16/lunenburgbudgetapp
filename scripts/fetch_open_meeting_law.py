@@ -106,6 +106,12 @@ DOCS += [('c71-%s' % n.lower(), 'G.L. c.71 §%s, regional school districts (male
 DOCS += [('603-cmr-41', '603 CMR 41.00, Regional School Districts (DESE regulations)',
           'Massachusetts Department of Elementary and Secondary Education',
           'https://www.doe.mass.edu/lawsregs/603cmr41.html')]
+# SCHOOL FINANCE -- the definition of NET SCHOOL SPENDING, which the "What per pupil counts"
+# page sets beside DESE's per-pupil figure. TJ, 14 October 2026, after people in town said
+# some districts count capital in per-pupil spending and some do not.
+C70 = 'https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter70/Section%s'
+DOCS += [('c70-2', 'G.L. c.70 §2, definitions including net school spending (malegislature.gov)',
+          'General Court of Massachusetts', C70 % '2')]
 # The page above is only the regulation's table of contents; the text is behind ?section=all.
 DOCS += [('603-cmr-41-all', '603 CMR 41.00, Regional School Districts, all sections (DESE regulations)',
           'Massachusetts Department of Elementary and Secondary Education',

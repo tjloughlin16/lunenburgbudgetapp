@@ -218,6 +218,45 @@
    "title": "Students and schools"
   },
   {
+   "answer": "Monty Tech is the regional vocational high school Lunenburg belongs to. Lunenburg’s bill was $1,334,521, most of it a minimum the state sets; the school spent $25,827 a pupil in FY2025, less than most vocational districts.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/analysis/monty-tech",
+     "title": "The full Monty Tech report"
+    }
+   ],
+   "groups": [
+    {
+     "title": "Lunenburg’s pupils there",
+     "topics": [
+      "monty-tech-enrolment"
+     ]
+    },
+    {
+     "title": "What Lunenburg pays",
+     "topics": [
+      "monty-tech-assessment",
+      "monty-tech-funding"
+     ]
+    },
+    {
+     "title": "What it spends a pupil",
+     "topics": [
+      "monty-tech-per-pupil",
+      "what-per-pupil-counts"
+     ]
+    }
+   ],
+   "id": "monty-tech",
+   "minutes": 1,
+   "order": 22,
+   "path": "/monty-tech",
+   "ready": true,
+   "shelf": "Monty Tech",
+   "title": "Monty Tech finances"
+  },
+  {
    "answer": "The state counted 103.4 teacher FTE in FY2026; whether that is a rise or a fall depends on the year it is measured from. Paraprofessional FTE was 67.0 in FY2025, the most per pupil on the state’s sheet. Nothing published says which posts were filled.",
    "area": "school",
    "elsewhere": [
@@ -337,6 +376,7 @@
      "title": "Against the state",
      "topics": [
       "per-pupil-spending",
+      "what-per-pupil-counts",
       "spending-by-function",
       "grants-in-school-spending",
       "cost-of-the-median"
@@ -379,7 +419,8 @@
       "children-schooled-elsewhere",
       "special-education-overruns",
       "fy2025-school-surplus",
-      "fy2026-school-surplus"
+      "fy2026-school-surplus",
+      "monty-tech-per-pupil"
      ]
     }
    ],
@@ -2230,6 +2271,7 @@
    "ready": true,
    "shelves": [
     "enrolment",
+    "monty-tech",
     "department-budgets"
    ],
    "title": "Monty Tech assessment"
@@ -2243,7 +2285,8 @@
    "path": "/enrolment/monty-tech-enrolment",
    "ready": true,
    "shelves": [
-    "enrolment"
+    "enrolment",
+    "monty-tech"
    ],
    "title": "Monty Tech enrolment"
   },
@@ -2256,9 +2299,24 @@
    "path": "/enrolment/monty-tech-funding",
    "ready": true,
    "shelves": [
-    "enrolment"
+    "enrolment",
+    "monty-tech"
    ],
    "title": "Monty Tech funding"
+  },
+  "monty-tech-per-pupil": {
+   "finding": "Monty Tech spent $25,827 a pupil in FY2025: above the all-district median, below the vocational one.",
+   "generator": "scripts/build_monty_tech_topics.py",
+   "home": "monty-tech",
+   "id": "monty-tech-per-pupil",
+   "minutes": 2,
+   "path": "/monty-tech/monty-tech-per-pupil",
+   "ready": true,
+   "shelves": [
+    "monty-tech",
+    "school-spending"
+   ],
+   "title": "Monty Tech per pupil"
   },
   "nearby-district-enrolment": {
    "finding": "Lunenburg’s enrolment fell 14.0% from FY2008 to FY2026; 3 of 4 nearby districts fell further.",
@@ -3329,6 +3387,20 @@
     "budget-options"
    ],
    "title": "Unpriced school charges"
+  },
+  "what-per-pupil-counts": {
+   "finding": "Three official measures of school spending count different things; neither state one counts capital.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "what-per-pupil-counts",
+   "minutes": 2,
+   "path": "/school-spending/what-per-pupil-counts",
+   "ready": true,
+   "shelves": [
+    "school-spending",
+    "monty-tech"
+   ],
+   "title": "What per pupil counts"
   },
   "who-may-spend-it": {
    "finding": "Only the general fund, $3,147,179 of $9,061,421, may go to any lawful use, by a two-thirds vote.",

@@ -327,6 +327,27 @@ GROUPS = [
              'faster than the number of paras. Rebuild with scripts/fetch_dese.py.'),
         ]},
     {
+        'section': 'theirs', 'id': 'census-school-finance', 'origin': 'us-census',
+        'title': 'School finances, the federal definition \u2014 the Census Bureau',
+        'blurb': 'The Annual Survey of School System Finances: every public school system in '
+                 'the country, with capital outlay and interest on debt as items of their own. '
+                 'A THIRD MEASURE beside DESE\u2019s per-pupil figure and net school spending, '
+                 'with its own rules -- it counts instructional equipment as capital, where '
+                 'DESE counts it as operating. Amounts are in thousands of dollars.',
+        'items': [
+            ('state-census/census-elsec24.xlsx',
+             'School system finances, every district, FY2024', 1,
+             'One row per school system: current spending, capital outlay by kind, interest on '
+             'debt and fall membership. Lunenburg is a dependent school system of the town; '
+             'Monty Tech is an independent regional district. Read by '
+             'scripts/per_pupil_measures.py for /school-spending/what-per-pupil-counts.'),
+            ('state-census/census-school24doc.docx',
+             'Technical documentation, FY2024', 1,
+             'What every column means, and the notes by state. The Massachusetts notes say how '
+             'DESE accounts for construction financed by bonds: in the year the principal is '
+             'repaid, not the year it is built.'),
+        ]},
+    {
         'section': 'theirs', 'id': 'census', 'origin': 'us-census',
         'title': 'Who lives here \u2014 the American Community Survey',
         'blurb': 'The Census Bureau\u2019s five-year estimates for Lunenburg: age, '

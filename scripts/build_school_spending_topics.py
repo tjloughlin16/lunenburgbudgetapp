@@ -58,6 +58,7 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
+import per_pupil_measures as PPM  # noqa: E402
 
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 OUT_DIR = os.path.join(PUB, 'topics')
@@ -255,6 +256,123 @@ def short(d):
     if len(n) > TP.LABEL_MAX:
         fail('no short chart name for %r' % d)
     return n
+
+
+def what_counts():
+    """WHAT PER PUPIL COUNTS: three official measures of one district's school spending, in one
+    year, side by side -- DESE's per-pupil figure, Chapter 70 net school spending, and the Census
+    Bureau's -- with what each counts and who set the rule. The page that answers "some districts
+    include capital and some do not". Figures from per_pupil_measures.py (DESE's workbook and the
+    Census table) and spending-vs-required.json (net school spending); the rules quoted from the
+    documents that set them, all held in the archive."""
+    M = PPM.measures()
+    cen = M['federal']
+    y = cen['fy']
+    by = {r['fy']: r for r in M['by_year']}
+    if y not in by:
+        fail('DESE’s file has no FY%d, the Census year' % y)
+    SVR = load('spending-vs-required.json')
+    nss = next((r for r in SVR['actual'] if r['fy'] == y), None)
+    if nss is None:
+        fail('net school spending has no ACTUAL figure for FY%d' % y)
+    lun, mt = cen['by_lea'][PPM.LUNENBURG], cen['by_lea'][PPM.MONTY]
+    edge = M['edge_by_year'][y]
+    trans = edge['lunenburg'].get('3300')
+    mteq = edge['monty'].get('2420')
+    if not trans or not mteq:
+        fail('FY%d: no transportation row for Lunenburg or equipment row for Monty Tech' % y)
+    capital_rows = sum(v for k, v in M['census'].items() if k in '678')
+    d = by[y]
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    N = lambda v: figure(v, C.num(v))
+    f, con = LD.fact, TP.conclusion
+    statute = '/docs/state-law/2026-10-15/section2.html'
+    eoyr = '/docs/state-dese/dese-eoyr-fy2025-printing-version.xlsx'
+    cdoc = '/docs/state-census/census-school24doc.docx'
+    src = [dict(label='Massachusetts DESE, expenditures by function, all funds — '
+                      'district-expenditures-by-function.xlsx', href='/docs/' + PPM.KEY),
+           dict(label='M.G.L. c.70 §2, the definition of net school spending — malegislature.gov, '
+                      'Section2.html', href=statute),
+           dict(label='Massachusetts DESE, Chapter 70 district profile — '
+                      'dese-ch70-district-profile.xlsx', href=SVR['source']['docs_url']),
+           dict(label='Massachusetts DESE, End of Year Financial Report FY2025, printing version '
+                      '— printing-version.xlsx', href=eoyr),
+           dict(label='US Census Bureau, Annual Survey of School System Finances FY2024 — '
+                      'elsec24.xlsx', href='/docs/' + cen['key']),
+           dict(label='US Census Bureau, the same survey’s technical documentation — '
+                      'school24doc.docx', href=cdoc)]
+    yl = {'y': F(y)}
+    return TP.page(
+        'what-per-pupil-counts',
+        'Three official measures of school spending count different things; neither state one '
+        'counts capital.',
+        [f('dese', U(d['lunenburg_total']), 'Lunenburg, DESE’s per-pupil total, %s' % C.fy(y),
+           'published', yl),
+         f('nss', U(nss['spent']), 'Lunenburg, net school spending, %s' % C.fy(y), 'published', yl),
+         f('cen', U(lun['TCURELSC']), 'Lunenburg, Census current spending, %s' % C.fy(y),
+           'published', yl),
+         f('cap', U(lun['TCAPOUT']), 'Lunenburg, Census capital outlay', 'published'),
+         f('int', U(lun['I86']), 'Lunenburg, Census interest on school debt', 'published'),
+         f('grants', U(d['lunenburg_grants']), 'grants and revolving funds in DESE’s total',
+           'published'),
+         f('trans', U(trans['total']), 'transportation in DESE’s total', 'published'),
+         f('rows', N(capital_rows), 'capital or debt rows in DESE’s per-pupil file', 'published'),
+         f('mteq', U(mteq['total']), 'Monty Tech instructional equipment, DESE, counted',
+           'published'),
+         f('mtk', U(mt['K09']), 'Monty Tech instructional equipment, Census capital',
+           'published')],
+        [con('One year, three rules: %s by DESE, %s net school spending, %s by the Census.'
+             % (C.usd(d['lunenburg_total']), C.usd(nss['spent']), C.usd(lun['TCURELSC'])),
+             ['dese', 'nss', 'cen'],
+             {'a': U(d['lunenburg_total']), 'b': U(nss['spent']), 'c': U(lun['TCURELSC'])}),
+         con('Net school spending leaves out grants and transportation; DESE’s figure counts both.',
+             ['nss', 'dese', 'grants', 'trans'],
+             notes=[step('The statute: it “shall not include any spending for school construction, '
+                         'long-term debt service, school meals, transportation of students to and '
+                         'from their homes”.', 'quote', cite=(statute, 'M.G.L. c.70 §2'))]),
+         con('Neither state measure counts capital; the Census does, %s for Lunenburg in %s.'
+             % (C.usd(lun['TCAPOUT']), C.fy(y)), ['cap', 'int', 'rows'],
+             {'a': U(lun['TCAPOUT']), 'y': F(y)},
+             notes=[step('Census, on Massachusetts: bond-funded construction is “accounted for in '
+                         'the fiscal year that the bond principal is repaid”.', 'quote',
+                         cite=(cdoc, 'Census Bureau, technical documentation, Massachusetts'))]),
+         con('The rules split equipment: Monty Tech’s was %s to DESE and %s of capital to the Census.'
+             % (C.usd(mteq['total']), C.usd(mt['K09'])), ['mteq', 'mtk'],
+             {'a': U(mteq['total']), 'b': U(mt['K09'])},
+             notes=[step('DESE’s form puts vocational equipment in 2420, counted, “irrespective of '
+                         'unit cost”.', 'quote', allow=('2420',),
+                         cite=(eoyr, 'DESE End of Year Report form, lines 3524-3529')),
+                    step('Possibly the Census counts as capital only what districts code 7000. '
+                         'Nothing here tests it.', 'hypothesis', allow=('7000',)),
+                    step('Whether every district draws that line the same way is not visible.',
+                         'gap', allow=('7000',),
+                         closes='each district’s End of Year Financial Report workbook, '
+                                       'with its 7000 and lease schedules')])],
+        chart=TP.ranking('Lunenburg school spending under three rules', [
+            ('DESE per-pupil total', [d['lunenburg_total'], None, None]),
+            ('Net school spending', [nss['spent'], None, None]),
+            ('Census Bureau', [lun['TCURELSC'], lun['TCAPOUT'], lun['I86']])], '$',
+            stack=['Operating', 'Capital outlay', 'Interest on debt'],
+            note='%s, the latest year all three publish. All three are spending after the year '
+                 'closed, not budgets.' % C.fy(y), note_figures=yl),
+        table=dict(caption='What each measure counts', views=[dict(
+            key='rules', label='Who set the rule',
+            note='DESE: its expenditures-by-function file and End of Year Report form. Net school '
+                 'spending: M.G.L. c.70 §2. Census: its survey documentation.',
+            columns=['DESE per pupil', 'Net school spending', 'Census Bureau'],
+            kinds=['ledger', 'statute', 'ledger'],
+            rows=[dict(label=a, cells=list(b)) for a, b in (
+                ('School construction', ('Not counted', 'Not counted', 'Counted, apart')),
+                ('Other capital, code 7000', ('Not counted', 'Not stated in §2', 'Counted, apart')),
+                ('Debt service', ('Not counted', 'Not counted', 'Interest only, apart')),
+                ('Transportation', ('Counted', 'Not counted', 'Counted')),
+                ('School meals', ('Counted', 'Not counted', 'Counted')),
+                ('Grants and revolving funds', ('Counted', 'Not counted', 'Not split by fund')),
+                ('Instructional equipment, 2420', ('Counted', 'Not excluded by §2',
+                                                   'A capital item')),
+                ('Tuition to other districts', ('Counted', 'Counted', 'Counted, apart')))])]),
+        sources=src)
 
 
 def build():
@@ -1095,6 +1213,7 @@ def build():
                       'lines missed far more.' % C.num(len(yrs)), ['h-under', 'h-far', 'h-lines'],
                       {'n': N(len(yrs))}),
     ])
+    out['what-per-pupil-counts'] = what_counts()
     out['school-spending'] = TP.hub(
         'school-spending',
         'Lunenburg spent %s a pupil in %s, all funds, against a state median of %s, and has sat in '

@@ -1,0 +1,229 @@
+#!/usr/bin/env python3
+"""WHAT DESE'S PER-PUPIL FIGURE HOLDS, read once off DESE's own workbook. Shared by the Monty
+Tech shelf (build_monty_tech_topics.py) and the School spending shelf's "What per pupil
+counts" page, so the two read one set of figures and cannot disagree.
+
+    python3 scripts/per_pupil_measures.py      # print what it read
+
+WHY THIS EXISTS. People in town said *"some districts include their capital projects and
+some districts do not"* in per-pupil spending. The answer is in the file, not in anybody's
+account of it: DESE's expenditures-by-function workbook carries every district's spending by
+function code, FY2009-FY2025, and the per-pupil row (`TTPP`, which DESE titles "Expenditure
+(Admin, Instruction, Operations)") is built from those rows. So:
+
+  1. THE CENSUS. Every row of the file is counted by the first character of its function
+     code. If no row anywhere carries a 6xxx (community services), 7xxx (fixed assets --
+     capital) or 8xxx (debt service) code, the per-pupil figure cannot contain capital or
+     debt for ANY district, by construction. That is asserted over all 363,000-odd rows, not
+     sampled. A file that starts carrying such rows refuses the build.
+  2. THE IDENTITY. Every TTPP row's general fund plus grants/revolving equals its total, to
+     DESE's rounding. Asserted for every district and year.
+  3. THE EDGE. What the figure DOES count that a reader might call capital: function 2420,
+     "Instructional Equipment", and 4300, "Extraordinary Maintenance". Whether districts put
+     the same purchase in 2420 or in 7000 cannot be seen in this file -- that is registered
+     in money-gaps.csv, never asserted either way (rule 7).
+
+READING THE WORKBOOK TAKES ABOUT A MINUTE AND A HALF, so the extract is cached in the
+gitignored build/cache/, keyed by the workbook's sha256. A different workbook is a different
+key; nothing is ever read from a cache that does not match the bytes on disk.
+"""
+import csv
+import hashlib
+import json
+import os
+import statistics
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+KEY = 'state-dese/district-expenditures-by-function.xlsx'
+PATH = os.path.join(ROOT, 'sources', KEY)
+CACHE = os.path.join(ROOT, 'build', 'cache')
+# The statewide distribution the rest of the site already publishes (extract_dese_finance.py).
+# Read, never recomputed: one median per year on the site, not two. Note it counts a district
+# DESE prints at $0 a pupil (Gosnold, which has no pupils of its own) -- see its own docstring.
+STATEWIDE = os.path.join(ROOT, 'sources', 'data', 'dese-function-statewide.csv')
+LUNENBURG, MONTY = '01620000', '08320000'
+# THE FEDERAL DEFINITION. The Census Bureau's Annual Survey of School System Finances, FY2024,
+# in THOUSANDS of dollars (school24doc.docx: "All amounts, except for fall membership and
+# personal income, are expressed in thousands of dollars"). Its own NCES ids for the two:
+CENSUS_KEY = 'state-census/census-elsec24.xlsx'
+CENSUS_PATH = os.path.join(ROOT, 'sources', CENSUS_KEY)
+CENSUS_FY = 2024
+CENSUS_IDS = {'2507080': LUNENBURG, '2508050': MONTY}
+CENSUS_FIELDS = ('NAME', 'UNIT_TYPE', 'V33', 'TOTALEXP', 'TCURELSC', 'NONELSEC', 'TCAPOUT',
+                 'F12', 'G15', 'K09', 'K10', 'K11', 'J99', 'L12', 'M12', 'Q11', 'I86')
+HEAD = ['SY', 'DIST_CODE', 'DIST_NAME', 'FUNC_CAT_CODE', 'FUNC_CAT_DESC', 'FUNC_CODE',
+        'FUNC_DESC', 'IN_OUT_DIST', 'GEN_FUND', 'GRNTS_REVOLV', 'TOT_EXP', 'PER_PUPIL_EXP']
+# The function codes on the edge between "counted" and "capital", kept per district and year.
+EDGE = ('2420', '4300', '3300', '3400')
+VERSION = 2   # bump when the extract's shape changes, so an old cache is not read
+
+
+def fail(msg):
+    raise SystemExit('per_pupil_measures: ' + msg)
+
+
+def _sha(path=PATH):
+    h = hashlib.sha256()
+    with open(path, 'rb') as fh:
+        for b in iter(lambda: fh.read(1 << 20), b''):
+            h.update(b)
+    return h.hexdigest()
+
+
+def _read():
+    import openpyxl
+    ws = openpyxl.load_workbook(PATH, read_only=True).worksheets[0]
+    census, ttpp, edge, names, bad = {}, {}, {}, {}, []
+    rows = 0
+    for i, r in enumerate(ws.iter_rows(values_only=True), start=1):
+        if i == 1:
+            if list(r[:len(HEAD)]) != HEAD:
+                fail('%s: the header is no longer %s' % (KEY, HEAD))
+            continue
+        rows += 1
+        fy, lea, code = int(r[0]), r[1], str(r[5])
+        census[code[:1]] = census.get(code[:1], 0) + 1
+        names.setdefault(lea, r[2])
+        if code == 'TTPP':
+            gen, gr, tot, pp = r[8], r[9], r[10], r[11]
+            if abs((gen or 0) + (gr or 0) - (tot or 0)) > 1:
+                bad.append('row %d (%s FY%d): %s + %s != %s' % (i, lea, fy, gen, gr, tot))
+            ttpp.setdefault(str(fy), {})[lea] = dict(gen=gen, grants=gr, total=tot, pp=pp, row=i)
+        elif code in EDGE and r[7] == 'In-District':
+            edge.setdefault(str(fy), {}).setdefault(lea, {})[code] = dict(total=r[10], pp=r[11])
+    if bad:
+        fail('%d TTPP rows do not foot: %s' % (len(bad), '; '.join(bad[:5])))
+    return dict(version=VERSION, rows=rows, census=census, ttpp=ttpp, edge=edge, names=names)
+
+
+def raw():
+    if not os.path.exists(PATH):
+        fail('%s is not here; run sync_archive.py --pull.' % KEY)
+    sha = _sha()
+    cp = os.path.join(CACHE, 'dese-functions-%s.json' % sha[:16])
+    if os.path.exists(cp):
+        d = json.load(open(cp, encoding='utf-8'))
+        if d.get('version') == VERSION and d.get('sha256') == sha:
+            return d
+    d = _read()
+    d['sha256'] = sha
+    os.makedirs(CACHE, exist_ok=True)
+    tmp = cp + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as fh:
+        json.dump(d, fh)
+    os.replace(tmp, cp)
+    return d
+
+
+def measures():
+    """Everything the two shelves draw, derived from raw() and asserted."""
+    d = raw()
+    capital = {k: v for k, v in d['census'].items() if k in '678'}
+    if capital:
+        fail('%s now carries function codes starting %s (%d rows); the pages say it carries '
+             'no capital, debt or community-services rows' % (KEY, sorted(capital), sum(capital.values())))
+    years = sorted(int(y) for y in d['ttpp'])
+    sw = {int(r['fy']): r for r in csv.DictReader(open(STATEWIDE, encoding='utf-8'))
+          if r['level'] == 'total' and r['func_code'] == 'TTPP'}
+    if sorted(sw) != years:
+        fail('dese-function-statewide.csv covers %s, the workbook %s' % (sorted(sw), years))
+    voc = sorted(l for l in d['names'] if l.startswith('08'))
+    if MONTY not in voc:
+        fail('Monty Tech (LEA %s) is not among the 08 regional vocational codes' % MONTY)
+    by_year = []
+    for y in years:
+        t = d['ttpp'][str(y)]
+        vpp = {l: t[l]['pp'] for l in voc if l in t and t[l]['pp']}
+        if MONTY not in vpp or LUNENBURG not in t:
+            fail('FY%d: no TTPP row for Monty Tech or Lunenburg' % y)
+        rank = 1 + sum(1 for v in vpp.values() if v > vpp[MONTY])
+        s = sw[y]
+        if float(s['lunenburg_per_pupil']) != t[LUNENBURG]['pp']:
+            fail('FY%d: the statewide extract says Lunenburg %s, the workbook %s'
+                 % (y, s['lunenburg_per_pupil'], t[LUNENBURG]['pp']))
+        if int(s['districts']) != len(t):
+            fail('FY%d: the statewide extract counts %s districts, the workbook has %d TTPP rows'
+                 % (y, s['districts'], len(t)))
+        by_year.append(dict(
+            fy=y, districts=int(s['districts']), state_median=float(s['per_pupil_median']),
+            vocational=len(vpp), vocational_median=statistics.median(vpp.values()),
+            monty=t[MONTY]['pp'], monty_rank=rank, monty_total=t[MONTY]['total'],
+            monty_gen=t[MONTY]['gen'], monty_grants=t[MONTY]['grants'],
+            lunenburg=t[LUNENBURG]['pp'], lunenburg_total=t[LUNENBURG]['total'],
+            lunenburg_gen=t[LUNENBURG]['gen'], lunenburg_grants=t[LUNENBURG]['grants']))
+    last = years[-1]
+    e = d['edge'][str(last)]
+    eq = {l: e[l]['2420']['pp'] for l in voc if l in e and '2420' in e[l]}
+    return dict(
+        key=KEY, sha256=d['sha256'], rows=d['rows'],
+        districts=len(d['names']), first_fy=years[0], last_fy=last,
+        census={k: d['census'][k] for k in sorted(d['census'])},
+        codes_counted=sorted(k for k in d['census'] if k.isdigit()),
+        by_year=by_year,
+        vocational_names={l: d['names'][l] for l in voc},
+        equipment=dict(fy=last, by_district={d['names'][l]: v for l, v in eq.items()},
+                       monty=eq.get(MONTY), median=statistics.median(eq.values()),
+                       districts=len(eq)),
+        edge_last={'monty': e.get(MONTY, {}), 'lunenburg': e.get(LUNENBURG, {})},
+        edge_by_year={y: {'monty': d['edge'][str(y)].get(MONTY, {}),
+                          'lunenburg': d['edge'][str(y)].get(LUNENBURG, {})} for y in years},
+        federal=census())
+
+
+def census():
+    """The two districts in the Census Bureau's FY2024 table, in DOLLARS (the file's thousands
+    times 1,000), with both identities the documentation states asserted for every
+    Massachusetts row: TOTALEXP = TCURELSC + NONELSEC + TCAPOUT + L12 + M12 + Q11 + I86, and
+    TCAPOUT = F12 + G15 + K09 + K10 + K11 + J99."""
+    if not os.path.exists(CENSUS_PATH):
+        fail('%s is not here; run sync_archive.py --pull.' % CENSUS_KEY)
+    sha = _sha(CENSUS_PATH)
+    cp = os.path.join(CACHE, 'census-elsec-%s.json' % sha[:16])
+    if os.path.exists(cp):
+        rows = json.load(open(cp, encoding='utf-8'))
+    else:
+        import openpyxl
+        ws = openpyxl.load_workbook(CENSUS_PATH, read_only=True).worksheets[0]
+        rows, head = {}, None
+        for r in ws.iter_rows(values_only=True):
+            if head is None:
+                head = list(r)
+                miss = [f for f in ('FIPST', 'NCESID', 'YRDATA') + CENSUS_FIELDS if f not in head]
+                if miss:
+                    fail('%s: no column %s' % (CENSUS_KEY, miss))
+                continue
+            x = dict(zip(head, r))
+            if x['FIPST'] == '25':
+                rows[x['NCESID']] = {f: x[f] for f in ('YRDATA',) + CENSUS_FIELDS}
+        os.makedirs(CACHE, exist_ok=True)
+        with open(cp + '.tmp', 'w', encoding='utf-8') as fh:
+            json.dump(rows, fh)
+        os.replace(cp + '.tmp', cp)
+    bad = []
+    for nid, x in rows.items():
+        if x['TOTALEXP'] != sum(x[k] for k in ('TCURELSC', 'NONELSEC', 'TCAPOUT', 'L12', 'M12',
+                                               'Q11', 'I86')):
+            bad.append('%s TOTALEXP' % nid)
+        if x['TCAPOUT'] != sum(x[k] for k in ('F12', 'G15', 'K09', 'K10', 'K11', 'J99')):
+            bad.append('%s TCAPOUT' % nid)
+    if bad:
+        fail('%s: %d Massachusetts rows break an identity the documentation states: %s'
+             % (CENSUS_KEY, len(bad), bad[:5]))
+    out = {}
+    for nid, lea in CENSUS_IDS.items():
+        x = rows.get(nid)
+        if x is None or str(x['YRDATA']) != str(CENSUS_FY)[2:]:
+            fail('%s: no FY%d row for NCES id %s' % (CENSUS_KEY, CENSUS_FY, nid))
+        out[lea] = dict({k: (v * 1000 if k not in ('NAME', 'UNIT_TYPE', 'V33', 'YRDATA') else v)
+                         for k, v in x.items()}, nces=nid)
+    return dict(fy=CENSUS_FY, key=CENSUS_KEY, systems=len(rows), by_lea=out)
+
+
+if __name__ == '__main__':
+    m = measures()
+    by = m.pop('by_year')
+    json.dump(m, sys.stdout, indent=1, default=str)
+    print()
+    for r in by:
+        print(r)
