@@ -375,6 +375,88 @@ def what_counts():
         sources=src)
 
 
+def line_by_line():
+    """PER PUPIL, LINE BY LINE. TJ, 15 October 2026: *"If we already report the health insurance
+    to DESE, then we just need a page that breaks down the cost per pupil so it's very
+    obvious."* DESE's per-pupil total for Lunenburg, split into the categories it is built
+    from and footed to DESE's own total by per_pupil_measures.breakdown(); the twin of Monty
+    Tech's page, drawn by the same two helpers so the two read alike. What the school BUDGET
+    holds is read off the School health insurance page's payload (the FY2026 MUNIS ledger), not
+    recomputed here."""
+    b = PPM.breakdown(PPM.LUNENBURG, PPM.measures()['last_fy'])
+    y = b['fy']
+    cat = {c['code']: c for c in b['cats']}
+    by_pp = sorted(b['cats'], key=lambda c: -c['pp'])
+    if [c['code'] for c in by_pp[:2]] != ['TCHR', 'BENE']:
+        fail('teachers then insurance are no longer the two largest categories, which the page '
+             'says')
+    lines = {r['code']: r for r in b['lines'] if r['where'] == 'In-District'}
+    top = max(b['lines'], key=lambda r: r['grants'])
+    if top['code'] != '3400':
+        fail('food services is no longer the largest line grants and revolving funds paid')
+    if top['gen'] != 0:
+        fail('food services now has general fund money in it; the page says it had none')
+    ret = lines['5250']
+    SHI = {x['id']: x for x in load('topics/school-health-insurance.json')['facts']}
+    app, sret, act = SHI['app']['value'], SHI['ret']['value'], SHI['act']['value']
+    # The year the ledger figures are for is the payload's, read off its own labels.
+    ly = {int(m) for k in ('app', 'act') for m in re.findall(r'FY(\d{4})', SHI[k]['label']['text'])}
+    if len(ly) != 1:
+        fail('school-health-insurance.json labels name no single year: %s' % sorted(ly))
+    ly = ly.pop()
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    N = lambda v: figure(v, C.num(v))
+    PU = figure(b['fte_total'], '{:,.1f}'.format(b['fte_total']), 'FTE pupils')
+    f, con = LD.fact, TP.conclusion
+    tc, be = cat['TCHR'], cat['BENE']
+    src = [dict(label='Massachusetts DESE, expenditures by function, all funds — '
+                      'district-expenditures-by-function.xlsx', href='/docs/' + PPM.KEY),
+           dict(label='Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts, '
+                      'from RADAR)', href='/docs/data/dese-radar.csv'),
+           dict(label='Town of Lunenburg — Town Accountant (MUNIS), general fund, FY2026 '
+                      'period 12', href='/docs/town-ledgers/expenses/'
+                                        'glytdbud-expense-fy2026-p12-gf-all.xlsx')]
+    yl = {'y': F(y)}
+    return TP.page(
+        'per-pupil-line-by-line',
+        'Lunenburg’s %s a pupil in %s, by what it paid for: insurance and grants are in it, '
+        'capital is not.' % (C.usd(b['pp']), C.fy(y)),
+        [f('pp', U(b['pp']), 'a pupil, all funds, %s, DESE' % C.fy(y), 'published', yl),
+         f('total', U(b['total']), 'spent, all funds, %s' % C.fy(y), 'published', yl),
+         f('fte', PU, 'FTE pupils DESE divides by', 'published'),
+         f('tchr', U(tc['pp']), 'teachers, a pupil (our division)', 'published'),
+         f('bene', U(be['pp']), 'insurance, retirement and other, a pupil', 'published'),
+         f('ret', U(ret['total']), 'insurance for retired school staff, counted by DESE',
+           'published'),
+         f('grants', U(b['grants']), 'paid by grants and revolving funds', 'published'),
+         f('food', U(top['grants']), 'food services, paid wholly by them', 'published'),
+         f('cap', N(b['capital_rows']), 'rows coded capital (7000) or debt (8000) in DESE’s file',
+           'published', allow=('7000', '8000')),
+         f('app', app, 'the %s school appropriation' % C.fy(ly), 'published', {'y': F(ly)}),
+         f('act', act, 'staff health insurance, inside that budget', 'published'),
+         f('sret', sret, 'school retirees’ insurance, in the town’s budget', 'published')],
+        [con('Teachers were %s of the %s a pupil; insurance, retirement and other, %s, came next.'
+             % (C.usd(tc['pp']), C.usd(b['pp']), C.usd(be['pp'])), ['tchr', 'pp', 'bene', 'fte'],
+             {'a': U(tc['pp']), 'b': U(b['pp']), 'c': U(be['pp'])}),
+         con('Grants and revolving funds paid %s of it; their largest line, food services, was %s.'
+             % (C.usd(b['grants']), C.usd(top['grants'])), ['grants', 'food', 'total'],
+             {'a': U(b['grants']), 'b': U(top['grants'])}),
+         con('None of it is capital or debt service: %s rows in DESE’s file carry those codes.'
+             % C.num(b['capital_rows']), ['cap'], {'n': N(b['capital_rows'])}),
+         con('The %s school budget holds %s of staff insurance; %s for its retirees is in the '
+             'town’s.' % (C.fy(ly), act['text'], sret['text']), ['app', 'act', 'sret', 'ret'],
+             {'y': F(ly), 'a': act, 'b': sret},
+             notes=[step('How DESE’s general fund total reconciles to the school appropriation, '
+                         'line by line, has not been worked out.', 'gap',
+                         closes='the district’s End of Year Financial Report as filed with DESE, '
+                                'schedule by schedule, for the same year')])],
+        chart=PPM.breakdown_chart(b),
+        table=PPM.breakdown_table(b),
+        sources=src,
+        finding_figures={'a': U(b['pp']), 'y': F(y)})
+
+
 def build():
     PS = load('peer-spending.json')
     BV = load('budget-vs-actual.json')
@@ -1214,6 +1296,7 @@ def build():
                       {'n': N(len(yrs))}),
     ])
     out['what-per-pupil-counts'] = what_counts()
+    out['per-pupil-line-by-line'] = line_by_line()
     out['school-spending'] = TP.hub(
         'school-spending',
         'Lunenburg spent %s a pupil in %s, all funds, against a state median of %s, and has sat in '

@@ -20,7 +20,8 @@ CATEGORY = dict(
     id='school-spending', shelf='School spending', title='Spending compared', area='school',
     order=24,
     groups=[
-        ('Against the state', ['per-pupil-spending', 'what-per-pupil-counts', 'spending-by-function',
+        ('Against the state', ['per-pupil-spending', 'per-pupil-line-by-line',
+                               'what-per-pupil-counts', 'spending-by-function',
                                'grants-in-school-spending', 'cost-of-the-median']),
         ('Against other districts', ['comparison-districts', 'spending-and-pupils',
                                      'gap-by-function', 'average-teacher-salary',
@@ -33,12 +34,13 @@ CATEGORY = dict(
                                    'required-local-contribution', 'teachers-per-pupil',
                                    'children-schooled-elsewhere', 'special-education-overruns',
                                    'fy2025-school-surplus', 'fy2026-school-surplus',
-                                   'monty-tech-per-pupil']),
+                                   'monty-tech-per-pupil', 'monty-tech-line-by-line']),
     ],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_school_spending_topics.py'
 TOPICS = {
     'per-pupil-spending': 'Spending per pupil',
+    'per-pupil-line-by-line': 'Lunenburg per-pupil breakdown',
     'what-per-pupil-counts': 'What per pupil counts',
     'spending-by-function': 'Spending by function',
     'grants-in-school-spending': 'Grants and revolving funds',

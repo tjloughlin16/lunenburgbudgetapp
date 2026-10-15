@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""The Monty Tech shelf: its hub and the per-pupil page.
+"""The Monty Tech shelf: its hub, the per-pupil page, Monty Tech line by line, and Lunenburg at
+Monty Tech's rate (TJ, 15 October 2026: "how much would our budget be if we had the same per
+pupil rate as Monty Tech?").
 
     python3 scripts/build_monty_tech_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_monty_tech_topics.py --check   # fail if any output would change
@@ -17,6 +19,10 @@ IT COMPUTES NOTHING NEW THAT IT CAN READ INSTEAD.
                                              THEIR facts, read by id, so the hub and the pages
                                              cannot round one figure two ways. Run that generator
                                              first; check_generated.py runs both.
+  fy28/public/data/topics/cost-of-the-median.json
+                                             build_school_spending_topics.py: Lunenburg at the
+                                             state median. The rate scenario READS it, so the site
+                                             carries one figure for it. Run that generator first.
   scripts/per_pupil_measures.py              DESE's per-pupil figure for every district, read once
                                              off DESE's workbook, with the census of function codes
                                              that shows it holds no capital or debt for anybody.
@@ -69,6 +75,8 @@ def sources():
         'statewide': dict(label='Lunenburg Budget Project — dese-function-statewide.csv '
                                 '(DESE’s statewide distribution, by function)',
                           href='/docs/data/dese-function-statewide.csv'),
+        'radar': dict(label='Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts, '
+                            'from RADAR)', href='/docs/data/dese-radar.csv'),
         'eoyr': dict(label='Massachusetts DESE, End of Year Financial Report FY2025, printing '
                            'version — printing-version.xlsx, sheet eoy25, lines 3524-3529',
                      href=EOYR),
@@ -171,6 +179,159 @@ def build():
                 C.usd(by[v]['lunenburg'])]) for v in reversed(years)])]),
         sources=S('dese', 'statewide', 'eoyr'),
         finding_figures={'a': U(last['monty']), 'y': F(y)})
+
+
+    # ------------------------------------------------ Monty Tech, line by line
+    # The twin of /school-spending/per-pupil-line-by-line: the same split, footed the same way
+    # by per_pupil_measures.breakdown(), drawn by the same two helpers.
+    mb = PPM.breakdown(PPM.MONTY, y)
+    lb = PPM.breakdown(PPM.LUNENBURG, y)
+    if mb['pp'] != last['monty'] or lb['pp'] != last['lunenburg']:
+        fail('the line-by-line totals are not the per-pupil figures this shelf prints')
+    mcat = {c['code']: c for c in mb['cats']}
+    if [c['code'] for c in sorted(mb['cats'], key=lambda c: -c['pp'])[:2]] != ['TCHR', 'BENE']:
+        fail('teachers then insurance are no longer Monty Tech’s two largest categories')
+    mtop = max(mb['lines'], key=lambda r: r['grants'])
+    if mtop['code'] != '3400':
+        fail('food services is no longer the largest line grants and revolving funds paid')
+    meq = next(r for r in mb['lines'] if r['code'] == '2420' and r['where'] == 'In-District')
+    PU = lambda v: figure(v, '{:,.1f}'.format(v), 'FTE pupils')
+    yl = {'y': F(y)}
+    tc, be = mcat['TCHR'], mcat['BENE']
+    out['monty-tech-line-by-line'] = TP.page(
+        'monty-tech-line-by-line',
+        'Monty Tech’s %s a pupil in %s, by what it paid for: insurance and grants are in it, '
+        'capital is not.' % (C.usd(mb['pp']), C.fy(y)),
+        [f('pp', U(mb['pp']), 'a pupil, all funds, %s, DESE' % C.fy(y), 'published', yl),
+         f('total', U(mb['total']), 'spent, all funds, %s' % C.fy(y), 'published', yl),
+         f('fte', PU(mb['fte_total']), 'FTE pupils DESE divides by', 'published'),
+         f('tchr', U(tc['pp']), 'teachers, a pupil (our division)', 'published'),
+         f('bene', U(be['pp']), 'insurance, retirement and other, a pupil', 'published'),
+         f('grants', U(mb['grants']), 'paid by grants and revolving funds', 'published'),
+         f('food', U(mtop['grants']), 'food services, paid by them', 'published'),
+         f('foodall', U(mtop['total']), 'food services, all funds', 'published'),
+         f('eq', U(meq['total']), 'instructional equipment, all funds', 'published'),
+         f('eqgr', U(meq['grants']), 'of it from grants and revolving funds', 'published'),
+         f('cap', N(mb['capital_rows']), 'rows coded capital (7000) or debt (8000) in DESE’s file',
+           'published', allow=('7000', '8000'))],
+        [con('Teachers were %s of the %s a pupil; insurance, retirement and other, %s, came next.'
+             % (C.usd(tc['pp']), C.usd(mb['pp']), C.usd(be['pp'])), ['tchr', 'pp', 'bene', 'fte'],
+             {'a': U(tc['pp']), 'b': U(mb['pp']), 'c': U(be['pp'])}),
+         con('Grants and revolving funds paid %s; their largest line was food services, %s of %s.'
+             % (C.usd(mb['grants']), C.usd(mtop['grants']), C.usd(mtop['total'])),
+             ['grants', 'food', 'foodall', 'total'],
+             {'a': U(mb['grants']), 'b': U(mtop['grants']), 'c': U(mtop['total'])}),
+         con('None of it is capital or debt service: %s rows in DESE’s file carry those codes.'
+             % C.num(mb['capital_rows']), ['cap'], {'n': N(mb['capital_rows'])}),
+         con('Instructional equipment, %s, IS counted; %s of it came from grants and revolving '
+             'funds.' % (C.usd(meq['total']), C.usd(meq['grants'])), ['eq', 'eqgr'],
+             {'a': U(meq['total']), 'b': U(meq['grants'])},
+             notes=[step('Whether every district codes the same purchase as equipment rather than '
+                         'capital is not visible in DESE’s data.', 'gap',
+                         closes='each district’s End of Year Financial Report workbook, with its '
+                                '7000 and lease schedules', allow=('7000',))])],
+        chart=PPM.breakdown_chart(mb),
+        table=PPM.breakdown_table(mb),
+        sources=S('dese', 'radar'),
+        finding_figures={'a': U(mb['pp']), 'y': F(y)})
+
+    # ------------------------------------------------ Lunenburg at Monty Tech's rate
+    # OUR ARITHMETIC, labelled so: a rate DESE printed times the pupils DESE counted. The state
+    # median's version is READ off cost-of-the-median.json (build_school_spending_topics.py), so
+    # the site carries one figure for it, and recomputed here only to prove it ties.
+    cm = {x['id']: x['value'] for x in
+          json.load(open(os.path.join(OUT_DIR, 'cost-of-the-median.json'), encoding='utf-8'))['facts']}
+    pl, pm = lb['fte_total'], mb['fte_total']
+    if cm['pupils']['value'] != pl or cm['med']['value'] != last['state_median'] \
+            or cm['spent']['value'] != lb['total']:
+        fail('cost-of-the-median.json no longer reads the pupils, median and total used here')
+    if abs(cm['med']['value'] * pl - cm['need']['value']) > 0.5:
+        fail('the state median times Lunenburg’s pupils no longer recomputes to its page')
+    vmed = last['vocational_median']
+    if not mb['pp'] < vmed:
+        fail('Monty Tech is no longer below the vocational median, which the page says')
+    need = {'mt': mb['pp'] * pl, 'v': vmed * pl, 's': cm['need']['value']}
+    more = {k: v - lb['total'] for k, v in need.items()}
+    if abs(more['s'] - cm['more']['value']) > 0.5:
+        fail('the state median’s distance no longer recomputes to cost-of-the-median')
+    # THE TWO TOTALS, decomposed exactly: rates are DESE's totals over DESE's pupils, unrounded,
+    # so Monty Tech's pupils times the gap less the pupil difference times Lunenburg's rate IS
+    # the difference between the totals -- asserted to the cent.
+    rm, rl = mb['total'] / pm, lb['total'] / pl
+    tgap = mb['total'] - lb['total']
+    rate, vol = pm * (rm - rl), (pl - pm) * rl
+    if abs(rate - vol - tgap) > 0.01:
+        fail('the rate and pupil parts no longer add to the difference between the totals')
+    if not (tgap > 0 and vol > 0):
+        fail('the decomposition’s words assume Monty Tech spent more in all and has fewer pupils')
+    nyears = len(M['by_year'])
+    lc = {c['code']: c for c in lb['cats']}
+    side = [(c, lc.get(c['code'])) for c in mb['cats']] + \
+           [(None, c) for c in lb['cats'] if c['code'] not in mcat]
+    out['lunenburg-at-monty-tech-rate'] = TP.page(
+        'lunenburg-at-monty-tech-rate',
+        'At Monty Tech’s %s rate a pupil, Lunenburg would have spent %s more, by our arithmetic.'
+        % (C.fy(y), C.usd(more['mt'])),
+        [f('lun', U(lb['pp']), 'Lunenburg a pupil, all funds, %s' % C.fy(y), 'published', yl),
+         f('mt', U(mb['pp']), 'Monty Tech a pupil, the same measure', 'published'),
+         f('pupils', PU(pl), 'Lunenburg’s FTE pupils, DESE', 'published'),
+         f('need', U(need['mt']), 'at Monty Tech’s rate (ours)', 'estimate'),
+         f('more', U(more['mt']), 'more than Lunenburg spent (ours)', 'estimate'),
+         f('vmed', U(vmed), 'median vocational district a pupil', 'published'),
+         f('morev', U(more['v']), 'more, at the vocational median (ours)', 'estimate'),
+         f('smed', U(last['state_median']), 'median of all districts a pupil', 'published'),
+         f('mores', U(more['s']), 'more, at the all-district median (ours)', 'estimate'),
+         f('tgap', U(tgap), 'Monty Tech’s total less Lunenburg’s', 'published'),
+         f('rate', U(rate), 'Monty Tech’s pupils times the gap a pupil (ours)', 'estimate'),
+         f('vol', U(vol), 'its fewer pupils times Lunenburg’s rate (ours)', 'estimate')],
+        [con('Monty Tech’s %s for each of Lunenburg’s %s pupils comes to %s, %s more than spent.'
+             % (C.usd(mb['pp']), PU(pl)['text'], C.usd(need['mt']), C.usd(more['mt'])),
+             ['mt', 'pupils', 'need', 'more', 'lun'],
+             {'a': U(mb['pp']), 'n': PU(pl), 'b': U(need['mt']), 'c': U(more['mt'])}),
+         con('At the vocational median, which Monty Tech spends below, it is %s more; all '
+             'districts’, %s.' % (C.usd(more['v']), C.usd(more['s'])), ['vmed', 'morev', 'smed', 'mores'],
+             {'a': U(more['v']), 'b': U(more['s'])}),
+         con('Monty Tech is a vocational high school, Lunenburg K-12; the vocational median '
+             'beat the state’s all %s years.' % C.num(nyears), ['vmed', 'smed', 'mt'],
+             {'n': N(nyears)}, allow=('K-12',),
+             notes=[step('Possibly shop equipment, smaller shop classes and buses across many '
+                         'towns. Nothing here tests it.', 'hypothesis')]),
+         con('The totals differ by %s: %s from Monty Tech’s higher rate, less %s for fewer '
+             'pupils.' % (C.usd(tgap), C.usd(rate), C.usd(vol)), ['tgap', 'rate', 'vol'],
+             {'a': U(tgap), 'b': U(rate), 'c': U(vol)})],
+        chart=TP.series('Lunenburg’s spending at other rates',
+                        ['Spent', 'At the all-district median', 'At Monty Tech’s rate',
+                         'At the vocational median'], [
+            TP.track('Spent, all funds, DESE', [lb['total'], None, None, None], 'published', 'bar'),
+            TP.track('Ours, a rate times Lunenburg’s pupils', [None, need['s'], need['mt'],
+                                                                need['v']], 'estimate', 'bar')],
+            '$', stacked=True,
+            note='%s, all funds. The three right-hand bars are our multiplication, not a target '
+                 'or a cost anybody proposed.' % C.fy(y), note_figures=yl),
+        table=dict(caption='A pupil, side by side, %s' % C.fy(y), views=[
+            dict(key='side', label='Category by category', columns=['Lunenburg', 'Monty Tech',
+                                                                    'Difference'],
+                 kinds=['ledger'] * 3, total_col=2, rows=[
+                     dict(label=(m or l)['short'], cells=[
+                         C.usd(l['pp']) if l else None, C.usd(m['pp']) if m else None,
+                         C.usd((m['pp'] if m else 0) - (l['pp'] if l else 0))])
+                     for m, l in side] + [dict(label='Total, as DESE prints it', cells=[
+                         C.usd(lb['pp']), C.usd(mb['pp']), C.usd(mb['pp'] - lb['pp'])])],
+                 note='DESE, all funds. Each category over the district’s total FTE pupils, our '
+                      'division, so the rows add to DESE’s totals. A dash: no spending there.'),
+            dict(key='rates', label='The arithmetic', columns=['A pupil', 'Times pupils',
+                                                               'More than spent'],
+                 kinds=['ledger'] * 3, total_col=1, rows=[
+                     dict(label=k, cells=[C.usd(r), C.usd(n), C.usd(n - lb['total'])])
+                     for k, r, n in (('Lunenburg, as spent', lb['pp'], lb['total']),
+                                     ('All-district median', last['state_median'], need['s']),
+                                     ('Monty Tech', mb['pp'], need['mt']),
+                                     ('Vocational median', vmed, need['v']))],
+                 note='Ours: DESE’s rate a pupil times Lunenburg’s %s FTE pupils. The '
+                      'all-district line is the one on Reaching the state median.'
+                      % PU(pl)['text'])]),
+        sources=S('dese', 'statewide', 'radar'),
+        finding_figures={'y': F(y), 'a': U(more['mt'])})
 
     # ------------------------------------------------ the hub
     en, asmt, fund = (page_facts('monty-tech-%s' % t) for t in ('enrolment', 'assessment', 'funding'))

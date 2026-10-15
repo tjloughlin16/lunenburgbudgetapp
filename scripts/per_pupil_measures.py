@@ -56,7 +56,9 @@ HEAD = ['SY', 'DIST_CODE', 'DIST_NAME', 'FUNC_CAT_CODE', 'FUNC_CAT_DESC', 'FUNC_
         'FUNC_DESC', 'IN_OUT_DIST', 'GEN_FUND', 'GRNTS_REVOLV', 'TOT_EXP', 'PER_PUPIL_EXP']
 # The function codes on the edge between "counted" and "capital", kept per district and year.
 EDGE = ('2420', '4300', '3300', '3400')
-VERSION = 2   # bump when the extract's shape changes, so an old cache is not read
+VERSION = 3   # bump when the extract's shape changes, so an old cache is not read
+# Every row of the two districts this site is about, every year: what breakdown() splits.
+DETAIL = (LUNENBURG, MONTY)
 
 
 def fail(msg):
@@ -74,7 +76,7 @@ def _sha(path=PATH):
 def _read():
     import openpyxl
     ws = openpyxl.load_workbook(PATH, read_only=True).worksheets[0]
-    census, ttpp, edge, names, bad = {}, {}, {}, {}, []
+    census, ttpp, edge, names, bad, detail = {}, {}, {}, {}, [], {}
     rows = 0
     for i, r in enumerate(ws.iter_rows(values_only=True), start=1):
         if i == 1:
@@ -92,9 +94,14 @@ def _read():
             ttpp.setdefault(str(fy), {})[lea] = dict(gen=gen, grants=gr, total=tot, pp=pp, row=i)
         elif code in EDGE and r[7] == 'In-District':
             edge.setdefault(str(fy), {}).setdefault(lea, {})[code] = dict(total=r[10], pp=r[11])
+        if lea in DETAIL:
+            detail.setdefault(str(fy), {}).setdefault(lea, []).append(
+                dict(row=i, cat=r[3], cat_desc=r[4], code=code, desc=r[6], where=r[7],
+                     gen=r[8] or 0, grants=r[9] or 0, total=r[10] or 0, pp=r[11]))
     if bad:
         fail('%d TTPP rows do not foot: %s' % (len(bad), '; '.join(bad[:5])))
-    return dict(version=VERSION, rows=rows, census=census, ttpp=ttpp, edge=edge, names=names)
+    return dict(version=VERSION, rows=rows, census=census, ttpp=ttpp, edge=edge, names=names,
+                detail=detail)
 
 
 def raw():
@@ -169,6 +176,152 @@ def measures():
         edge_by_year={y: {'monty': d['edge'][str(y)].get(MONTY, {}),
                           'lunenburg': d['edge'][str(y)].get(LUNENBURG, {})} for y in years},
         federal=census())
+
+
+# ------------------------------------------------------------------ one district, line by line
+# DESE's per-pupil total split into the categories it is built from. The file's own structure,
+# asserted rather than assumed: each category's rollup row is the sum of its function rows; the
+# ten in-district categories sum to IIII; tuition (TUIT) plus out-of-district transportation
+# (ODTR) is OODD; IIII plus OODD is TTPP. A file that stops footing refuses the page.
+IN_CATS = ('ADMN', 'LDRS', 'TCHR', 'TSER', 'PDEV', 'MATL', 'GUID', 'SERV', 'OPMN', 'BENE')
+OUT_CATS = ('TUIT', 'ODTR')
+# Short names for a chart row; the table carries DESE's own names beside them.
+CAT_SHORT = {'ADMN': 'Administration', 'LDRS': 'Instructional leadership', 'TCHR': 'Teachers',
+             'TSER': 'Other teaching services', 'PDEV': 'Professional development',
+             'MATL': 'Materials, equipment, technology',
+             'GUID': 'Guidance, counselling, testing',
+             'SERV': 'Pupil services: buses, meals, sport',
+             'OPMN': 'Operations and maintenance', 'BENE': 'Insurance, retirement, other',
+             'TUIT': 'Tuition to other schools', 'ODTR': 'Out-of-district transportation'}
+# THE DENOMINATOR (build_peer_spending.py, docstring point 3): DESE's TTPP figure is over TOTAL
+# FTE pupils and every category's printed figure over IN-DISTRICT FTE pupils, so the printed
+# category figures do not add to the printed total. breakdown() divides every category by
+# TOTAL FTE pupils -- our division, which is what makes the parts add to DESE's total. Both
+# counts are DESE's own, from RADAR (sources/data/dese-radar.csv).
+RADAR = os.path.join(ROOT, 'sources', 'data', 'dese-radar.csv')
+TOL = 2   # dollars: DESE prints whole dollars, so a rollup may differ from its parts by rounding
+
+
+def fte(lea, fy):
+    got = {r['measure']: float(r['value']) for r in csv.DictReader(open(RADAR, encoding='utf-8'))
+           if r['lea'] == lea and r['fy'] == str(fy)
+           and r['measure'] in ('Total FTE Pupils', 'In-District FTE Pupils')}
+    if len(got) != 2:
+        fail('dese-radar.csv has no FTE pupil counts for %s FY%s' % (lea, fy))
+    return got['Total FTE Pupils'], got['In-District FTE Pupils']
+
+
+def breakdown(lea, fy):
+    """One district's DESE per-pupil total, category by category, footed to DESE's own TTPP row.
+    Every category: general fund, grants and revolving funds, all funds, a pupil (over TOTAL FTE
+    pupils), and its share of the total. `lines` are the function rows, for the table."""
+    d = raw()
+    if lea not in DETAIL:
+        fail('breakdown(%s): only %s are extracted line by line' % (lea, DETAIL))
+    rows = d['detail'].get(str(fy), {}).get(lea)
+    if not rows:
+        fail('no FY%s rows for %s' % (fy, lea))
+    roll = {r['code']: r for r in rows if r['code'] == r['cat']}
+    lines = [r for r in rows if r['code'] != r['cat']]
+    known = set(IN_CATS) | {'IIII', 'OODD', 'ODTR', 'TTPP'}
+    if set(roll) - known or not {'IIII', 'OODD', 'TTPP'} <= set(roll):
+        fail('FY%s %s: rollup rows are %s, not the categories this split knows'
+             % (fy, lea, sorted(roll)))
+    if {r['cat'] for r in lines} - set(IN_CATS) - {'TUIT'}:
+        fail('FY%s %s: function rows under an unknown category %s'
+             % (fy, lea, sorted({r['cat'] for r in lines} - set(IN_CATS) - {'TUIT'})))
+    zero = dict(gen=0, grants=0, total=0)
+    K = ('gen', 'grants', 'total')
+
+    def foot(name, want, parts):
+        for k in K:
+            got = sum(p[k] for p in parts)
+            if abs(got - want[k]) > TOL:
+                fail('FY%s %s: %s %s is %s, its parts sum to %s' % (fy, lea, name, k, want[k], got))
+
+    cats = []
+    for c in IN_CATS:
+        mine = [r for r in lines if r['cat'] == c]
+        r = roll.get(c)
+        if r is None:
+            if mine:
+                fail('FY%s %s: %s has function rows and no rollup' % (fy, lea, c))
+            continue
+        foot(c, r, mine)
+        cats.append(dict(code=c, desc=r['cat_desc'], dese_pp=r['pp'], **{k: r[k] for k in K}))
+    foot('IIII (in-district)', roll['IIII'], cats)
+    tuit = [r for r in lines if r['cat'] == 'TUIT']
+    if tuit:
+        cats.append(dict(code='TUIT', desc=tuit[0]['cat_desc'], dese_pp=None,
+                         **{k: sum(r[k] for r in tuit) for k in K}))
+    if 'ODTR' in roll and roll['ODTR']['total']:
+        cats.append(dict(code='ODTR', desc=roll['ODTR']['cat_desc'], dese_pp=None,
+                         **{k: roll['ODTR'][k] for k in K}))
+    foot('OODD (out-of-district)', roll['OODD'], [c for c in cats if c['code'] in OUT_CATS] or [zero])
+    t = roll['TTPP']
+    foot('TTPP (the per-pupil total)', t, cats)
+    ft, fi = fte(lea, fy)
+    if abs(t['total'] / ft - t['pp']) > 1:
+        fail('FY%s %s: DESE prints %s a pupil; its total over %s total FTE pupils is %.2f'
+             % (fy, lea, t['pp'], ft, t['total'] / ft))
+    for c in cats:
+        if c['code'] in IN_CATS and abs(c['total'] / fi - c['dese_pp']) > 1:
+            fail('FY%s %s: %s prints %s a pupil, not its total over %s in-district FTE pupils'
+                 % (fy, lea, c['code'], c['dese_pp'], fi))
+        c.update(short=CAT_SHORT[c['code']], pp=c['total'] / ft, gen_pp=c['gen'] / ft,
+                 grants_pp=c['grants'] / ft, share=100.0 * c['total'] / t['total'])
+    return dict(lea=lea, name=d['names'][lea], fy=fy, fte_total=ft, fte_in=fi,
+                gen=t['gen'], grants=t['grants'], total=t['total'], pp=t['pp'],
+                cats=cats, lines=lines, rows_in_file=d['rows'],
+                capital_rows=sum(v for k, v in d['census'].items() if k in '678'))
+
+
+# The function rows the line-by-line table shows beside the categories: the ones a reader asks
+# about -- classroom teachers, aides, equipment, buses, meals, sport, pensions and insurance.
+LINES = ('2305', '2330', '2420', '3300', '3400', '3510', '5100', '5200', '5250')
+
+
+def breakdown_chart(b):
+    """THE ONE FORMAT both line-by-line pages draw: each category a pupil, split by who paid."""
+    import topic as TP
+    import conclusions as C
+    return TP.ranking(
+        'A pupil, by what it paid for',
+        [(c['short'], [c['gen_pp'], c['grants_pp']]) for c in b['cats']], '$',
+        stack=['General fund', 'Grants and revolving funds'],
+        note='DESE, all funds, %s. Each category over all %s FTE pupils, our division, so the '
+             'rows add to DESE’s %s.' % (C.fy(b['fy']), '{:,.1f}'.format(b['fte_total']),
+                                        C.usd(b['pp'])),
+        note_figures={'y': C.figure(b['fy'], C.fy(b['fy']), 'fiscal year'),
+                      'n': C.figure(b['fte_total'], '{:,.1f}'.format(b['fte_total']), 'FTE pupils'),
+                      'a': C.figure(b['pp'], C.usd(b['pp']))})
+
+
+def breakdown_table(b):
+    import conclusions as C
+    cols = ['A pupil', 'All funds', 'General fund', 'Grants, revolving', 'Share']
+    cat_rows = [dict(label=c['desc'], cells=[C.usd(c['pp']), C.usd(c['total']), C.usd(c['gen']),
+                                             C.usd(c['grants']), C.pct(c['share'], 1)])
+                for c in b['cats']]
+    cat_rows.append(dict(label='Total, as DESE prints it', cells=[
+        C.usd(b['pp']), C.usd(b['total']), C.usd(b['gen']), C.usd(b['grants']), C.pct(100, 0)]))
+    by = {r['code']: r for r in b['lines'] if r['where'] == 'In-District'}
+    line_rows = [dict(label='%s (%s)' % (by[k]['desc'], k), cells=[
+        C.usd(by[k]['total'] / b['fte_total']), C.usd(by[k]['total']), C.usd(by[k]['gen']),
+        C.usd(by[k]['grants'])]) for k in LINES if k in by]
+    return dict(caption='%s, %s, line by line' % (SHORT_NAME[b['lea']], C.fy(b['fy'])), views=[
+        dict(key='categories', label='DESE’s categories', columns=cols, kinds=['ledger'] * 5,
+             total_col=0, rows=cat_rows,
+             note='DESE’s expenditures by function, all funds, after the year closed. A pupil: '
+                  'our division by total FTE pupils, so the rows add to the total. DESE prints '
+                  'each category over in-district pupils, a different figure.'),
+        dict(key='lines', label='Lines inside them', columns=cols[:4], kinds=['ledger'] * 4,
+             total_col=0, rows=line_rows,
+             note='Single function rows from the same file, by DESE function code. A pupil: '
+                  'over total FTE pupils, as above.')])
+
+
+SHORT_NAME = {LUNENBURG: 'Lunenburg', MONTY: 'Monty Tech'}
 
 
 def census():

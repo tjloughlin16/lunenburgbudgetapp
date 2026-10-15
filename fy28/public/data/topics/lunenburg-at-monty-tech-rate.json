@@ -1,0 +1,570 @@
+{
+ "category": "monty-tech",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "FY2025, all funds. The three right-hand bars are our multiplication, not a target or a cost anybody proposed."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Spent, all funds, DESE",
+    "texts": [
+     "$30,031,242",
+     null,
+     null,
+     null
+    ],
+    "values": [
+     30031242,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Ours, a rate times Lunenburg’s pupils",
+    "texts": [
+     null,
+     "$39,181,968",
+     "$43,025,199",
+     "$44,369,581"
+    ],
+    "values": [
+     null,
+     39181968.0,
+     43025199.300000004,
+     44369580.6
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Lunenburg’s spending at other rates",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Spent",
+   "At the all-district median",
+   "At Monty Tech’s rate",
+   "At the vocational median"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$25,827",
+     "unit": "",
+     "value": 25827
+    },
+    "b": {
+     "text": "$43,025,199",
+     "unit": "",
+     "value": 43025199.300000004
+    },
+    "c": {
+     "text": "$12,993,957",
+     "unit": "",
+     "value": 12993957.300000004
+    },
+    "n": {
+     "text": "1,665.9",
+     "unit": "FTE pupils",
+     "value": 1665.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "mt",
+    "pupils",
+    "need",
+    "more",
+    "lun"
+   ],
+   "text": "Monty Tech’s $25,827 for each of Lunenburg’s 1,665.9 pupils comes to $43,025,199, $12,993,957 more than spent."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$14,338,339",
+     "unit": "",
+     "value": 14338338.600000001
+    },
+    "b": {
+     "text": "$9,150,726",
+     "unit": "",
+     "value": 9150726.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "vmed",
+    "morev",
+    "smed",
+    "mores"
+   ],
+   "text": "At the vocational median, which Monty Tech spends below, it is $14,338,339 more; all districts’, $9,150,726."
+  },
+  {
+   "figures": {
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "literals": [
+    "K-12"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Possibly shop equipment, smaller shop classes and buses across many towns. Nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "vmed",
+    "smed",
+    "mt"
+   ],
+   "text": "Monty Tech is a vocational high school, Lunenburg K-12; the vocational median beat the state’s all 17 years."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$8,087,546",
+     "unit": "",
+     "value": 8087546
+    },
+    "b": {
+     "text": "$11,512,683",
+     "unit": "",
+     "value": 11512683.1510895
+    },
+    "c": {
+     "text": "$3,425,137",
+     "unit": "",
+     "value": 3425137.1510895006
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tgap",
+    "rate",
+    "vol"
+   ],
+   "text": "The totals differ by $8,087,546: $11,512,683 from Monty Tech’s higher rate, less $3,425,137 for fewer pupils."
+  }
+ ],
+ "facts": [
+  {
+   "id": "lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg a pupil, all funds, FY2025"
+   },
+   "value": {
+    "text": "$18,027",
+    "unit": "",
+    "value": 18027
+   }
+  },
+  {
+   "id": "mt",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech a pupil, the same measure"
+   },
+   "value": {
+    "text": "$25,827",
+    "unit": "",
+    "value": 25827
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg’s FTE pupils, DESE"
+   },
+   "value": {
+    "text": "1,665.9",
+    "unit": "FTE pupils",
+    "value": 1665.9
+   }
+  },
+  {
+   "id": "need",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "at Monty Tech’s rate (ours)"
+   },
+   "value": {
+    "text": "$43,025,199",
+    "unit": "",
+    "value": 43025199.300000004
+   }
+  },
+  {
+   "id": "more",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more than Lunenburg spent (ours)"
+   },
+   "value": {
+    "text": "$12,993,957",
+    "unit": "",
+    "value": 12993957.300000004
+   }
+  },
+  {
+   "id": "vmed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "median vocational district a pupil"
+   },
+   "value": {
+    "text": "$26,634",
+    "unit": "",
+    "value": 26634.0
+   }
+  },
+  {
+   "id": "morev",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more, at the vocational median (ours)"
+   },
+   "value": {
+    "text": "$14,338,339",
+    "unit": "",
+    "value": 14338338.600000001
+   }
+  },
+  {
+   "id": "smed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "median of all districts a pupil"
+   },
+   "value": {
+    "text": "$23,520",
+    "unit": "",
+    "value": 23520.0
+   }
+  },
+  {
+   "id": "mores",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more, at the all-district median (ours)"
+   },
+   "value": {
+    "text": "$9,150,726",
+    "unit": "",
+    "value": 9150726.0
+   }
+  },
+  {
+   "id": "tgap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech’s total less Lunenburg’s"
+   },
+   "value": {
+    "text": "$8,087,546",
+    "unit": "",
+    "value": 8087546
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech’s pupils times the gap a pupil (ours)"
+   },
+   "value": {
+    "text": "$11,512,683",
+    "unit": "",
+    "value": 11512683.1510895
+   }
+  },
+  {
+   "id": "vol",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its fewer pupils times Lunenburg’s rate (ours)"
+   },
+   "value": {
+    "text": "$3,425,137",
+    "unit": "",
+    "value": 3425137.1510895006
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$12,993,957",
+    "unit": "",
+    "value": 12993957.300000004
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "At Monty Tech’s FY2025 rate a pupil, Lunenburg would have spent $12,993,957 more, by our arithmetic."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "lunenburg-at-monty-tech-rate",
+ "kind": "topic",
+ "path": "/monty-tech/lunenburg-at-monty-tech-rate",
+ "said": [],
+ "shelves": [
+  "monty-tech"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-statewide.csv",
+   "label": "Lunenburg Budget Project — dese-function-statewide.csv (DESE’s statewide distribution, by function)"
+  },
+  {
+   "href": "/docs/data/dese-radar.csv",
+   "label": "Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts, from RADAR)"
+  }
+ ],
+ "table": {
+  "caption": "A pupil, side by side, FY2025",
+  "views": [
+   {
+    "columns": [
+     "Lunenburg",
+     "Monty Tech",
+     "Difference"
+    ],
+    "key": "side",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Category by category",
+    "note": "DESE, all funds. Each category over the district’s total FTE pupils, our division, so the rows add to DESE’s totals. A dash: no spending there.",
+    "rows": [
+     {
+      "cells": [
+       "$547",
+       "$1,112",
+       "$564"
+      ],
+      "label": "Administration"
+     },
+     {
+      "cells": [
+       "$1,045",
+       "$1,278",
+       "$233"
+      ],
+      "label": "Instructional leadership"
+     },
+     {
+      "cells": [
+       "$6,134",
+       "$8,239",
+       "$2,105"
+      ],
+      "label": "Teachers"
+     },
+     {
+      "cells": [
+       "$1,893",
+       "$913",
+       "-$980"
+      ],
+      "label": "Other teaching services"
+     },
+     {
+      "cells": [
+       "$45",
+       "$301",
+       "$256"
+      ],
+      "label": "Professional development"
+     },
+     {
+      "cells": [
+       "$212",
+       "$1,760",
+       "$1,547"
+      ],
+      "label": "Materials, equipment, technology"
+     },
+     {
+      "cells": [
+       "$638",
+       "$856",
+       "$218"
+      ],
+      "label": "Guidance, counselling, testing"
+     },
+     {
+      "cells": [
+       "$1,797",
+       "$3,749",
+       "$1,952"
+      ],
+      "label": "Pupil services: buses, meals, sport"
+     },
+     {
+      "cells": [
+       "$1,180",
+       "$3,141",
+       "$1,961"
+      ],
+      "label": "Operations and maintenance"
+     },
+     {
+      "cells": [
+       "$3,258",
+       "$4,287",
+       "$1,029"
+      ],
+      "label": "Insurance, retirement, other"
+     },
+     {
+      "cells": [
+       "$1,199",
+       "$193",
+       "-$1,006"
+      ],
+      "label": "Tuition to other schools"
+     },
+     {
+      "cells": [
+       "$78",
+       null,
+       "-$78"
+      ],
+      "label": "Out-of-district transportation"
+     },
+     {
+      "cells": [
+       "$18,027",
+       "$25,827",
+       "$7,800"
+      ],
+      "label": "Total, as DESE prints it"
+     }
+    ],
+    "total_col": 2
+   },
+   {
+    "columns": [
+     "A pupil",
+     "Times pupils",
+     "More than spent"
+    ],
+    "key": "rates",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The arithmetic",
+    "note": "Ours: DESE’s rate a pupil times Lunenburg’s 1,665.9 FTE pupils. The all-district line is the one on Reaching the state median.",
+    "rows": [
+     {
+      "cells": [
+       "$18,027",
+       "$30,031,242",
+       "$0"
+      ],
+      "label": "Lunenburg, as spent"
+     },
+     {
+      "cells": [
+       "$23,520",
+       "$39,181,968",
+       "$9,150,726"
+      ],
+      "label": "All-district median"
+     },
+     {
+      "cells": [
+       "$25,827",
+       "$43,025,199",
+       "$12,993,957"
+      ],
+      "label": "Monty Tech"
+     },
+     {
+      "cells": [
+       "$26,634",
+       "$44,369,581",
+       "$14,338,339"
+      ],
+      "label": "Vocational median"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Monty Tech rate scenario"
+}

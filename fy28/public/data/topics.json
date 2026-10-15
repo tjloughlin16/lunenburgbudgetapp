@@ -244,6 +244,9 @@
      "title": "What it spends a pupil",
      "topics": [
       "monty-tech-per-pupil",
+      "monty-tech-line-by-line",
+      "per-pupil-line-by-line",
+      "lunenburg-at-monty-tech-rate",
       "what-per-pupil-counts"
      ]
     }
@@ -376,6 +379,7 @@
      "title": "Against the state",
      "topics": [
       "per-pupil-spending",
+      "per-pupil-line-by-line",
       "what-per-pupil-counts",
       "spending-by-function",
       "grants-in-school-spending",
@@ -420,7 +424,8 @@
       "special-education-overruns",
       "fy2025-school-surplus",
       "fy2026-school-surplus",
-      "monty-tech-per-pupil"
+      "monty-tech-per-pupil",
+      "monty-tech-line-by-line"
      ]
     }
    ],
@@ -2248,6 +2253,19 @@
    ],
    "title": "Lines cut to zero"
   },
+  "lunenburg-at-monty-tech-rate": {
+   "finding": "At Monty Tech’s FY2025 rate a pupil, Lunenburg would have spent $12,993,957 more, by our arithmetic.",
+   "generator": "scripts/build_monty_tech_topics.py",
+   "home": "monty-tech",
+   "id": "lunenburg-at-monty-tech-rate",
+   "minutes": 2,
+   "path": "/monty-tech/lunenburg-at-monty-tech-rate",
+   "ready": true,
+   "shelves": [
+    "monty-tech"
+   ],
+   "title": "Monty Tech rate scenario"
+  },
   "minimum-aid": {
    "finding": "All of FY2026’s $240,450 increase was the Legislature’s minimum: $150 for each of 1,603 pupils.",
    "generator": "scripts/build_state_aid_topics.py",
@@ -2303,6 +2321,20 @@
     "monty-tech"
    ],
    "title": "Monty Tech funding"
+  },
+  "monty-tech-line-by-line": {
+   "finding": "Monty Tech’s $25,827 a pupil in FY2025, by what it paid for: insurance and grants are in it, capital is not.",
+   "generator": "scripts/build_monty_tech_topics.py",
+   "home": "monty-tech",
+   "id": "monty-tech-line-by-line",
+   "minutes": 1,
+   "path": "/monty-tech/monty-tech-line-by-line",
+   "ready": true,
+   "shelves": [
+    "monty-tech",
+    "school-spending"
+   ],
+   "title": "Monty Tech per-pupil breakdown"
   },
   "monty-tech-per-pupil": {
    "finding": "Monty Tech spent $25,827 a pupil in FY2025: above the all-district median, below the vocational one.",
@@ -2582,6 +2614,20 @@
     "health-insurance"
    ],
    "title": "PEC agreement"
+  },
+  "per-pupil-line-by-line": {
+   "finding": "Lunenburg’s $18,027 a pupil in FY2025, by what it paid for: insurance and grants are in it, capital is not.",
+   "generator": "scripts/build_school_spending_topics.py",
+   "home": "school-spending",
+   "id": "per-pupil-line-by-line",
+   "minutes": 2,
+   "path": "/school-spending/per-pupil-line-by-line",
+   "ready": true,
+   "shelves": [
+    "school-spending",
+    "monty-tech"
+   ],
+   "title": "Lunenburg per-pupil breakdown"
   },
   "per-pupil-spending": {
    "finding": "Lunenburg spent $18,027 a pupil in FY2025, all funds, against a state median of $23,520.",

@@ -15,10 +15,14 @@ CATEGORY = dict(
     groups=[
         ('Lunenburg’s pupils there', ['monty-tech-enrolment']),
         ('What Lunenburg pays', ['monty-tech-assessment', 'monty-tech-funding']),
-        ('What it spends a pupil', ['monty-tech-per-pupil', 'what-per-pupil-counts']),
+        ('What it spends a pupil', ['monty-tech-per-pupil', 'monty-tech-line-by-line',
+                                    'per-pupil-line-by-line', 'lunenburg-at-monty-tech-rate',
+                                    'what-per-pupil-counts']),
     ],
     elsewhere=[('/analysis/monty-tech', 'The full Monty Tech report')])
 GENERATOR = 'build_monty_tech_topics.py'
 TOPICS = {
     'monty-tech-per-pupil': 'Monty Tech per pupil',
+    'monty-tech-line-by-line': 'Monty Tech per-pupil breakdown',
+    'lunenburg-at-monty-tech-rate': 'Monty Tech rate scenario',
 }
