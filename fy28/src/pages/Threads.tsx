@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { threadIdFromPath, type Tab } from '../routes'
-import { Body, H2, H3, ReportShell, useReport } from '../components/report'
+import { Body, H2, H3, NotShown, ReportShell, Stat, useReport } from '../components/report'
+import { meetingTitle } from '../lib/meetings'
 import { Basis, type Level } from '../components/Basis'
 import { Note } from '../components/primitives'
 import { ThreadRibbons } from '../components/ThreadRibbons'
@@ -33,7 +34,17 @@ type Closure = {
   result: string; amount_as_printed: string; quote: string; fincom: string; select_board: string
   document: string; page: string; caveat: string
 }
-type Item = { kind: string; text: string; outcome: string; t: number | null; video_url: string }
+/** `source`: `town` is the town's own minutes, with the sentence quoted from them; `ours` is
+ *  our minutes of the recording, from machine captions, cited to the second. */
+type Item = {
+  kind: string; text: string; outcome: string; t: number | null; video_url: string
+  source?: 'town' | 'ours'; quote?: string; doc_url?: string; town_url?: string
+}
+/** An upcoming (or just-past) agenda item matched to this thread by build_agenda_threads.py. */
+type OnAgenda = {
+  board: string; board_slug: string; date: string; body_as_printed: string; upcoming: boolean
+  line: string; parent: string; by: 'words' | 'board'; agenda_url: string; agenda_doc: string
+}
 type Item2 = Item & { board: string; board_slug: string; date: string }
 type Stop = { board: string; board_slug: string; date: string; items: Item[] }
 type Thread = {
@@ -48,6 +59,7 @@ type Thread = {
   first_seen: string; last_moved: string; weight: number
   /** A person's call that this leads the page, in this order (threads.csv `pin`). */
   pin: number | null
+  on_agenda?: OnAgenda[]
 }
 type Declined = { candidate: string; declined_on: string; reason: string; revisit_if: string; note: string }
 type Payload = {
@@ -55,6 +67,7 @@ type Payload = {
   coverage: {
     rank_basis: string; meetings_readable: number; boards_readable: number
     town_meeting_readable: number; official_town_meeting_years: string[]
+    agendas_as_of?: string
     dated_in_the_future_and_excluded: { board: string; date: string; file: string }[]
   }
   threads: Thread[]; declined: Declined[]
@@ -197,6 +210,15 @@ function Card({ t, onGo, ours }: { t: Thread; onGo: (id: string) => void; ours: 
         {t.closure ? <ClosureBasis c={t.closure} ours={ours} /> : null}
       </div>
       <div style={{ ...secondary, fontSize: 13, marginTop: 2 }}><Standing t={t} /></div>
+      {/* NEXT ON AN AGENDA, where one is posted: the reason to open the thread today. */}
+      {(() => {
+        const next = (t.on_agenda ?? []).find(a => a.date >= localToday())
+        return next ? (
+          <div style={{ fontSize: 13, marginTop: 2, color: 'var(--series-cost)', fontWeight: 600 }}>
+            On the agenda: {weekday(next.date)}, {meetingTitle(next.board, next.body_as_printed)}
+          </div>
+        ) : null
+      })()}
       {t.status !== 'resolved' && t.stands.vote ? (
         <div style={{ ...secondary, fontSize: 13, marginTop: 2 }}>
           Last vote: <strong>{t.stands.vote.outcome || 'outcome not recorded'}</strong>{' '}
@@ -406,102 +428,293 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
   )
 }
 
-/** ONE THREAD. The order flips on status (§14d): an open thread's most valuable line is
- *  WHAT HAPPENS NEXT, because it is the only thing a resident can act on; a settled one's
- *  is HOW IT ENDED. Putting the chronology first on either is writing the page in the
- *  order it was built. */
+/** ONE THREAD, READ TO CATCH UP BEFORE A MEETING.
+ *
+ *  TJ, 15 October 2026: *"make sure the threads have all the relevant information, like what
+ *  has been said so people can use the thread as a way to catch up on the topic before the
+ *  meeting. The thread view probably needs a rethink. its not easy to understand yet."*
+ *
+ *  WHAT WAS HARD, measured on /threads/turf-field-study and /threads/stormwater-fee before
+ *  this rewrite:
+ *   1. The first thing under the title was our own instrumentation -- a kind glyph, a heat
+ *      word ("picking up"), and a count line ending in "voted on, not decided". Metadata
+ *      before the matter.
+ *   2. "Where it stands" was the last vote unless a later DECISION existed, so the turf
+ *      thread led with a School Committee note about its own future agendas while the
+ *      Select Board holding the article off the warrant sat further down.
+ *   3. "What happens next" printed the closure criterion -- a definition of done, not a
+ *      step -- and no thread could say which meeting was next.
+ *   4. "Meeting by meeting" was one flat bulleted dump: 179 bullets on the stormwater thread,
+ *      every kind of line in the same voice, nothing saying which record a line came from,
+ *      and nothing quoted from a document, because the town's own minutes were not read.
+ *
+ *  THE ORDER NOW (rule 7a, 7b; THREADS-MODEL §8 and §14d): the question, then the latest
+ *  thing that moved and the last vote, then the next meeting it is on an agenda for, then
+ *  the counts, then what was said, newest first, meeting by meeting, each line labelled with
+ *  the record it came from. What it does not show, the reading and the coverage come last.
+ *  A settled thread leads with how it ended and tells its story start to finish. */
+const KIND_WORD: Record<string, string> = {
+  vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed',
+  contention: 'Disputed', comment: 'Public comment',
+}
+const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, contention: 2, budget: 3, topic: 4, comment: 5 }
+const hms = (t: number) => {
+  const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60
+  return (h ? `${h}:${String(m).padStart(2, '0')}` : `${m}`) + `:${String(s).padStart(2, '0')}`
+}
+const localToday = () => {
+  const n = new Date()
+  return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`
+}
+const weekday = (iso: string) =>
+  new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })
+
+/** Which record a line came from, said on the line. Rule 7 and CLAUDE.md "Searching what
+ *  the town said": our notes from a recording are a finding aid written from machine
+ *  captions, and are never set in the same voice as the town's own minutes. */
+function Cite({ it }: { it: Item }) {
+  const link = { color: 'var(--series-cost)' }
+  if (it.source === 'town') {
+    return (
+      <span className="text-[12px]" style={muted}>
+        the town&rsquo;s minutes
+        {it.doc_url ? <> · <a className="underline" style={link} href={it.doc_url}>our copy</a></> : null}
+        {it.town_url ? <> · <a className="underline" style={link} href={it.town_url} target="_blank" rel="noreferrer">the town&rsquo;s</a></> : null}
+      </span>
+    )
+  }
+  return (
+    <span className="text-[12px]" style={muted}>
+      our notes from the recording, as heard
+      {it.video_url && it.t != null ? <> · <a className="underline" style={link}
+        href={`${it.video_url}&t=${it.t}s`} target="_blank" rel="noreferrer">watch at {hms(it.t)}</a></> : null}
+    </span>
+  )
+}
+
+function Line({ it }: { it: Item }) {
+  const vote = it.kind === 'vote'
+  return (
+    <li className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
+      <span className="block text-[10.5px] font-bold uppercase tracking-widest"
+        style={{ color: vote ? 'var(--series-cost)' : it.kind === 'contention' ? 'var(--status-critical)' : 'var(--text-muted)' }}>
+        {KIND_WORD[it.kind] ?? it.kind}{vote && it.outcome ? ` — ${it.outcome}` : ''}
+      </span>
+      <span className="block text-[14.5px] leading-snug mt-0.5" style={{ fontWeight: vote ? 600 : 400 }}>{it.text}</span>
+      {it.quote ? (
+        <span className="block text-[13px] leading-snug mt-1 pl-2.5"
+          style={{ ...secondary, borderLeft: '2px solid var(--grid)' }}>&ldquo;{it.quote}&rdquo;</span>
+      ) : null}
+      <span className="block mt-0.5"><Cite it={it} /></span>
+    </li>
+  )
+}
+
+/** One meeting: the board and date, then its lines -- votes first, then decisions, then
+ *  what was discussed -- the town's record before ours where both exist. */
+function Stop({ c }: { c: Stop }) {
+  const items = [...c.items].sort((a, b) =>
+    (KIND_RANK[a.kind] ?? 9) - (KIND_RANK[b.kind] ?? 9) || Number(a.source !== 'town') - Number(b.source !== 'town'))
+  return (
+    <li className="card px-4 py-3 avoid-break">
+      <div className="flex flex-wrap items-baseline gap-x-2">
+        <span className="text-[15px] font-bold">{pretty(c.date)}</span>
+        <a href={`/boards/${c.board_slug}`} className="text-[14px] font-semibold underline decoration-dotted">{c.board}</a>
+      </div>
+      <ul className="list-none p-0 m-0 mt-1">
+        {items.map((it, j) => <Line key={j} it={it} />)}
+      </ul>
+    </li>
+  )
+}
+
+/** THE LATEST THING THAT MOVED: the most recent meeting, and its weightiest line -- a vote,
+ *  else a decision, else what it was discussed under. Quoted, never summarised. */
+function latest(t: Thread) {
+  const at = lastStop(t)
+  if (!at) return null
+  const top = [...at.items].sort((a, b) => (KIND_RANK[a.kind] ?? 9) - (KIND_RANK[b.kind] ?? 9))[0]
+  return { stop: at, it: top }
+}
+function lastVote(t: Thread) {
+  for (const c of [...t.chronology].reverse()) {
+    const v = c.items.filter(i => i.kind === 'vote')
+    if (v.length) return { stop: c, it: v[v.length - 1] }
+  }
+  return null
+}
+
+function NextOnAgenda({ t, asOf }: { t: Thread; asOf: string }) {
+  const today = localToday()
+  const ahead = (t.on_agenda ?? []).filter(a => a.date >= today)
+  // Just past, newest first: an agenda whose minutes are not out yet is still news.
+  const past = (t.on_agenda ?? []).filter(a => a.date < today).reverse()
+  const days = new Map<string, OnAgenda[]>()
+  for (const a of ahead) days.set(a.board_slug + a.date, [...(days.get(a.board_slug + a.date) ?? []), a])
+  return (
+    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--series-cost)' }}>
+      <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>
+        Next on an agenda
+      </p>
+      {days.size === 0 ? (
+        <p className="text-[14px] mt-1" style={secondary}>
+          Not on any agenda posted for the next four weeks (agendas read {pretty(asOf) || 'recently'}).
+          Boards post agendas about two days before they meet.
+        </p>
+      ) : (
+        <ul className="list-none p-0 m-0 mt-1 space-y-2.5">
+          {[...days.values()].map(rows => {
+            const a = rows[0]
+            return (
+              <li key={a.board_slug + a.date}>
+                <span className="block text-[15px] font-bold">{weekday(a.date)} · {meetingTitle(a.board, a.body_as_printed)}</span>
+                {rows.map((r, i) => (
+                  <span key={i} className="block text-[13.5px] leading-snug mt-0.5" style={secondary}>
+                    &ldquo;{r.line.length > 220 ? r.line.slice(0, 218) + '…' : r.line}&rdquo;
+                    {r.by === 'board' ? <span style={muted}> — this board&rsquo;s own subject</span> : null}
+                  </span>
+                ))}
+                <span className="block text-[12px] mt-0.5">
+                  <a className="underline" style={{ color: 'var(--series-cost)' }} href={a.agenda_url} target="_blank" rel="noreferrer">the agenda</a>
+                  {' · '}<a className="underline" style={{ color: 'var(--series-cost)' }} href={`/this-week#m-${a.board_slug}-${a.date}`}>this week</a>
+                </span>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+      {past.length ? (
+        <div className="mt-2.5">
+          <p className="text-[11px] font-bold uppercase tracking-widest" style={muted}>On a recent agenda</p>
+          <ul className="list-none p-0 m-0 mt-0.5">
+            {past.map((a, i) => (
+              <li key={i} className="text-[13px] leading-snug mt-1" style={secondary}>
+                <span className="font-semibold">{prettyShort(a.date)}, {meetingTitle(a.board, a.body_as_printed)}:</span>{' '}
+                &ldquo;{a.line.length > 140 ? a.line.slice(0, 138) + '…' : a.line}&rdquo;{' '}
+                <a className="underline text-[12px]" style={{ color: 'var(--series-cost)' }} href={a.agenda_url} target="_blank" rel="noreferrer">agenda</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      <p className="text-[11.5px] mt-2" style={muted}>
+        Quoted from the posted agenda. An agenda lists what may be discussed, not what will be decided.
+      </p>
+    </div>
+  )
+}
+
 function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | null) => void; ours: Set<string> }) {
-  /* THE ORDER FLIPS ON STATUS, like the sections above it (§14d). An OPEN thread is read
-     for what just happened, so it runs newest first. A SETTLED one is a story with an
-     ending, and a story is told start to finish — "the chronology, start to finish" is
-     what the model says and what the first cut did not do, reversing both. */
-  const chron = t.status === 'resolved' ? t.chronology : [...t.chronology].reverse()
+  const [all, setAll] = useState(false)
+  const settled = t.status === 'resolved'
+  // Newest first while it is forming; start to finish once it is formed (§14d).
+  const chron = settled ? t.chronology : [...t.chronology].reverse()
+  const SHOW = 6
+  const shown = all ? chron : chron.slice(0, SHOW)
+  const now = latest(t)
+  const vote = lastVote(t)
+  const votes = t.chronology.flatMap(c => c.items.filter(i => i.kind === 'vote').map(i => ({ c, i }))).reverse()
+  const townN = t.chronology.filter(c => c.items.some(i => i.source === 'town')).length
+  const oursN = t.chronology.filter(c => c.items.some(i => i.source !== 'town')).length
   return (
     <>
-      <p style={{ margin: '0 0 14px' }}>
+      <p style={{ margin: '0 0 10px' }}>
         <a href="/threads" onClick={e => { e.preventDefault(); onGo(null) }}
           style={{ fontSize: 13 }}>← everything the town is deciding</a>
       </p>
 
-      <div className="flex items-center gap-3 flex-wrap mb-3 text-[13px]" style={secondary}>
-        <span className="flex items-center gap-2">
-          <ThreadKind kind={t.kind} size={18} tone={toneOf(t)} />
-          {(t.kind || '').split(';').filter(Boolean).map(k => KIND_LABEL[k] ?? k).join(' · ')}
-        </span>
+      {/* THE STATUS, ONE LINE. Open or settled, where it last came up, and -- only where it
+          is earned -- the hot badge, whose counts are in its own label. */}
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px]" style={secondary}>
+        <span><Standing t={t} /></span>
         <HotBadge hot={t.hot} momentum={t.momentum} />
-        <ThreadHeat heat={t.heat} tone={toneOf(t)} momentum={t.momentum} />
       </div>
-      {/* WHERE IT HAS GOT TO, in the counts rather than an adjective. */}
-      <p className="text-[13px] m-0 mb-4" style={muted}>
-        {t.momentum.boards} {t.momentum.boards === 1 ? 'board' : 'boards'} ·{' '}
-        {t.momentum.meetings} {t.momentum.meetings === 1 ? 'meeting' : 'meetings'} ·{' '}
-        {t.momentum.votes} {t.momentum.votes === 1 ? 'vote' : 'votes'} · {t.stage}
-        {t.momentum.span_days >= 45 ? ` · ran ${Math.round(t.momentum.span_days / 30)} months` : ''}
-        {t.tangled ? <> · <Tangled boards={t.momentum.boards} meetings={t.momentum.meetings} /></> : null}
-      </p>
 
-      {t.status === 'resolved' && t.closure ? (
-        <>
-          <H2>How it ended</H2>
-          <Body>
-            <strong>{t.closure.result || 'Outcome not recorded'}</strong> — {t.closure.meeting},{' '}
-            {pretty(t.closure.date)}{t.closure.article ? `, article ${t.closure.article}` : ''}.{' '}
+      {settled && t.closure ? (
+        <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: `4px solid ${toneOf(t)}` }}>
+          <p className="text-[11px] font-bold uppercase tracking-widest" style={muted}>How it ended</p>
+          <p className="text-[16px] font-bold mt-1">{t.closure.result || 'Outcome not recorded'}</p>
+          <p className="text-[13.5px] mt-0.5" style={secondary}>
+            {t.closure.meeting}, {pretty(t.closure.date)}{t.closure.article ? `, article ${t.closure.article}` : ''}{' '}
             <ClosureBasis c={t.closure} ours={ours} />
-          </Body>
-          <blockquote style={{
-            margin: '8px 0', padding: '8px 12px', borderLeft: '3px solid var(--grid)',
-            fontSize: 14, ...secondary,
-          }}>{t.closure.quote}</blockquote>
+          </p>
+          <p className="text-[13.5px] leading-snug mt-2 pl-2.5" style={{ ...secondary, borderLeft: '2px solid var(--grid)' }}>
+            &ldquo;{t.closure.quote}&rdquo;</p>
           {t.closure.fincom || t.closure.select_board ? (
-            <Body><span style={{ ...muted, fontSize: 13 }}>
-              Finance Committee: {t.closure.fincom || '—'} · Select Board: {t.closure.select_board || '—'}
-            </span></Body>
+            <p className="text-[12.5px] mt-1.5" style={muted}>
+              Finance Committee: {t.closure.fincom || '—'} · Select Board: {t.closure.select_board || '—'}</p>
           ) : null}
           {t.closure.caveat ? <Note>{t.closure.caveat}</Note> : null}
-        </>
+        </div>
       ) : (
         <>
-          <H2>Where it stands</H2>
-          {(() => {
-            /* THE LAST THING THAT MOVED, not the last time it was mentioned. A vote if one
-               was taken, else the decision the board recorded, else the topic it was last
-               discussed under — and the board, the date and the second in the recording,
-               so the reader can check it rather than take it. */
-            const v = t.stands.vote, dcn = t.stands.decision, any = t.stands.any
-            const top = v && (!dcn || v.date >= dcn.date) ? v : (dcn ?? any)
-            if (!top) return <Body><Standing t={t} /></Body>
-            const isVote = top.kind === 'vote'
-            return (
+          {/* WHERE IT STANDS: the latest meeting's weightiest line, and the last vote if it
+              is a different thing. Each quoted from the record and cited, never paraphrased. */}
+          <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: `4px solid ${toneOf(t)}` }}>
+            <p className="text-[11px] font-bold uppercase tracking-widest" style={muted}>Where it stands</p>
+            {now ? (
               <>
-                <Body>
-                  {isVote ? <strong>{top.outcome || 'outcome not recorded'} — </strong> : null}
-                  {top.text}
-                </Body>
-                <p className="text-[13px] m-0 mb-2" style={muted}>
-                  {isVote ? 'Voted at' : top.kind === 'decision' ? 'Decided at' : 'Discussed at'}{' '}
-                  the {top.board}, {pretty(top.date)}
-                  {top.video_url && top.t != null ? (
-                    <> · <a href={`${top.video_url}&t=${top.t}s`} target="_blank" rel="noreferrer">watch</a></>
-                  ) : null}
-                  {!v ? ' · no vote has been taken on this' : null}
-                </p>
+                <p className="text-[12.5px] mt-1" style={muted}>Latest: {now.stop.board}, {pretty(now.stop.date)}</p>
+                <p className="text-[15px] leading-snug mt-0.5" style={{ fontWeight: 600 }}>
+                  {now.it.kind === 'vote' ? `${now.it.outcome || 'Voted'}: ` : ''}{now.it.text}</p>
+                <Cite it={now.it} />
+                {vote && vote.it !== now.it ? (
+                  <>
+                    <p className="text-[12.5px] mt-3" style={muted}>Last vote: {vote.stop.board}, {pretty(vote.stop.date)}</p>
+                    <p className="text-[14.5px] leading-snug mt-0.5">
+                      <strong>{vote.it.outcome || 'outcome not recorded'}</strong> — {vote.it.text}</p>
+                    <Cite it={vote.it} />
+                  </>
+                ) : null}
+                {!vote ? <p className="text-[12.5px] mt-2" style={muted}>No vote on this in the record we can read.</p> : null}
               </>
-            )
-          })()}
-          <H2>What happens next</H2>
-          <Body>
-            This closes when <strong>{t.closes}</strong>.
-            {t.status === 'lapsed'
-              ? ' Nothing is currently scheduled, and it has not been discussed in some time.'
-              : ''}
-          </Body>
+            ) : <p className="text-[14px] mt-1" style={secondary}>Nothing in the readable record yet.</p>}
+          </div>
+          <NextOnAgenda t={t} asOf={d.coverage.agendas_as_of ?? ''} />
         </>
       )}
 
-      {/* READ FURTHER: the full reports behind this matter, curated in threads.csv
-          (`reports`) and resolved by build_threads.py. Placed after where it stands and
-          before the meeting-by-meeting record: the reader who wants depth on the SUBJECT
-          finds it before the long chronology. */}
+      {/* THE COUNTS, each with its unit (rule 7b: never a bare number). */}
+      <div className="flex flex-wrap gap-x-10 gap-y-4 mt-6">
+        <Stat value={String(t.meetings)}>{t.meetings === 1 ? 'meeting has' : 'meetings have'} taken it up</Stat>
+        <Stat value={String(t.boards_touched)}>{t.boards_touched === 1 ? 'board' : 'different boards'}</Stat>
+        <Stat value={String(t.momentum.votes)}>{t.momentum.votes === 1 ? 'vote' : 'votes'} taken on it</Stat>
+        {t.first_seen ? <Stat value={prettyShort(t.first_seen)}>first came up, {t.first_seen.slice(0, 4)}</Stat> : null}
+      </div>
+
+      <H2>{settled ? 'How it got there, meeting by meeting' : 'What has been said, newest first'}</H2>
+      <p className="text-[13px] mt-0 mb-3 max-w-2xl" style={muted}>
+        Every line names its record: <strong>the town&rsquo;s minutes</strong>, quoted, or{' '}
+        <strong>our notes from the recording</strong>, written from machine captions that can mishear
+        numbers and names — check the video at the second given.
+      </p>
+      {chron.length === 0 ? <Body>Nothing in the readable record yet.</Body> : (
+        <ol className="list-none p-0 m-0 space-y-2.5 max-w-2xl">
+          {shown.map((c, i) => <Stop key={i} c={c} />)}
+        </ol>
+      )}
+      {chron.length > SHOW ? (
+        <button type="button" onClick={() => setAll(a => !a)}
+          className="mt-2 text-[13.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+          {all ? 'Show fewer' : `Show the ${chron.length - SHOW} ${settled ? 'later' : 'earlier'} meetings`}
+        </button>
+      ) : null}
+
+      {votes.length > 1 ? (
+        <>
+          <H2>Every vote, newest first</H2>
+          <ul className="list-none p-0 m-0 max-w-2xl">
+            {votes.map(({ c, i }, k) => (
+              <li key={k} className="py-1.5 border-t first:border-t-0 text-[14px] leading-snug" style={{ borderColor: 'var(--grid)' }}>
+                <span className="font-semibold">{prettyShort(c.date)}, {c.board}:</span>{' '}
+                <strong>{i.outcome || 'outcome not recorded'}</strong> — {i.text}{' '}
+                <span className="text-[12px]" style={muted}>({i.source === 'town' ? 'the town’s minutes' : 'our notes, as heard'})</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+
       {t.reports?.length ? (
         <>
           <H2>Read further</H2>
@@ -516,45 +729,27 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         </>
       ) : null}
 
-      {t.caveat ? (
-        <>
-          <H2>What this does not show</H2>
-          <Body><span style={secondary}>{t.caveat}</span></Body>
-        </>
-      ) : null}
+      <NotShown>
+        {t.caveat ? <p>{t.caveat}</p> : null}
+        <p className={t.caveat ? 'mt-2' : ''}>
+          {settled ? 'It closed when ' : 'It closes when '}<strong>{t.closes}</strong>. A board discussing a
+          thing is not the board that decides it, and an agenda item is not a decision.
+        </p>
+        <p className="mt-2">
+          Found by this thread&rsquo;s own words in {t.meetings} of the {d.coverage.meetings_readable.toLocaleString()} meetings
+          we can read — {townN} through the town&rsquo;s minutes, {oursN} through our notes of a recording.
+          A meeting that discussed it in other words is missing; a thread can only follow meetings that left a record.
+        </p>
+      </NotShown>
 
-      <H2>Meeting by meeting</H2>
-      <Body><span style={{ ...muted, fontSize: 13 }}>
-        Tracked through {t.meetings} {t.meetings === 1 ? 'meeting' : 'meetings'} across{' '}
-        {t.boards_touched} {t.boards_touched === 1 ? 'board' : 'boards'}, out of{' '}
-        {d.coverage.meetings_readable} meetings we can read. A thread can only be followed
-        through meetings that left a record.
-      </span></Body>
-      {chron.map((c, i) => (
-        <div key={i} className="avoid-break" style={{ margin: '0 0 10px' }}>
-          <div style={{ fontWeight: 600, fontSize: 14 }}>
-            {pretty(c.date)} · {c.board}
-          </div>
-          <ul style={{ margin: '2px 0 0', paddingLeft: 18, fontSize: 14 }}>
-            {c.items.map((it, j) => (
-              <li key={j} style={{ marginBottom: 3 }}>
-                {it.kind === 'vote' ? <strong>Vote: </strong> : null}
-                {/* CONTENTION -- open conflict or charged words, as our minutes of the
-                    recording read it (from 10 October 2026). The words are the captions'. */}
-                {it.kind === 'contention' ? <strong style={{ color: 'var(--status-critical)' }}>Contested: </strong> : null}
-                {it.kind === 'comment' ? <span style={secondary}>Public comment: </span> : null}
-                {it.text}
-                {it.outcome ? <span style={secondary}> → {it.outcome}</span> : null}
-                {it.video_url && it.t != null ? (
-                  <> <a href={`${it.video_url}&t=${it.t}s`} target="_blank" rel="noreferrer"
-                    style={{ fontSize: 12 }}>watch</a></>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-      {chron.length === 0 ? <Body>Nothing in the readable record yet.</Body> : null}
+      {/* THE READING, AFTER THE THING IT READS (rule 7a): the heat word and its counts. */}
+      <p className="text-[12.5px] mt-4 flex flex-wrap items-center gap-x-2 gap-y-1" style={muted}>
+        <ThreadKind kind={t.kind} size={14} tone={toneOf(t)} />
+        {(t.kind || '').split(';').filter(Boolean).map(k => KIND_LABEL[k] ?? k).join(' · ')}
+        <span>·</span><ThreadHeat heat={t.heat} tone={toneOf(t)} momentum={t.momentum} />
+        <span>· {t.stage}</span>
+        {t.tangled ? <><span>·</span><Tangled boards={t.momentum.boards} meetings={t.momentum.meetings} /></> : null}
+      </p>
     </>
   )
 }

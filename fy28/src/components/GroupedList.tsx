@@ -31,8 +31,11 @@ export function ListSection({ title, all, allHref, children, label, footer }: {
   )
 }
 
-export function Row({ href, eyebrow, title, sub, accent, muted, tag }: {
+export function Row({ href, eyebrow, title, sub, accent, muted, tag, extra }: {
   href?: string; eyebrow?: string; title: string; sub?: string | null; accent?: boolean; muted?: boolean; tag?: string
+  /** Below the row and OUTSIDE its link, for links of its own (a link inside a link is
+   *  invalid HTML and nobody can press it). The threads on an upcoming agenda use it. */
+  extra?: React.ReactNode
 }) {
   const body = (
     <span className="flex items-center gap-3 px-4 py-2.5 min-h-[48px]">
@@ -59,6 +62,7 @@ export function Row({ href, eyebrow, title, sub, accent, muted, tag }: {
     <li className="border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
       {href ? <a href={href} className="block transition-colors hover:bg-[var(--surface-3)]"
         {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{body}</a> : body}
+      {extra ? <div className="px-4 pb-2.5 -mt-1">{extra}</div> : null}
     </li>
   )
 }

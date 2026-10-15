@@ -4,6 +4,7 @@ import { ReportShell, useReport, H2, MoreReports } from '../components/report'
 import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
 import { daysAway as daysFromToday, todayIso, meetingTitle } from '../lib/meetings'
 import { ListSection, Row } from '../components/GroupedList'
+import { AgendaThreadLinks, meetingFor, useAgendaThreads } from '../components/AgendaThreads'
 
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
@@ -152,12 +153,14 @@ function PhoneActivity({ meetings, days }: { meetings: Recent[]; days: number })
 
 function OtherBoards({ rows, days }: { rows: Upcoming[]; days: number }) {
   const [n, setN] = useState(6)
+  const at = useAgendaThreads().d
   return (
     <ListSection title={`Other boards, next ${days} days`} label="Other boards' upcoming meetings"
       footer={<ShowAll n={rows.length} shown={n} onClick={() => setN(rows.length)} />}>
       {rows.slice(0, n).map(m => (
         <Row key={m.file_id} href={m.agenda_url} eyebrow={longDate(m.date)}
-          title={meetingTitle(m.board, m.body_as_printed)} sub={m.via_note ?? null} />
+          title={meetingTitle(m.board, m.body_as_printed)} sub={m.via_note ?? null}
+          extra={<AgendaThreadLinks m={meetingFor(at, m.board_slug, m.date, m.file_id)} compact />} />
       ))}
     </ListSection>
   )

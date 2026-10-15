@@ -1,0 +1,2842 @@
+{
+ "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
+ "generated_by": "scripts/build_agenda_threads.py",
+ "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
+ "as_of": "2026-10-14",
+ "window": {
+  "from": "2026-09-30",
+  "to": "2026-11-11"
+ },
+ "counts": {
+  "agendas": 30,
+  "agendas_upcoming": 14,
+  "agendas_unreadable": 1,
+  "items": 305,
+  "business_items": 166,
+  "matched_items": 14,
+  "upcoming_business_items": 86,
+  "upcoming_matched_items": 9,
+  "threads_on_an_upcoming_agenda": 4
+ },
+ "unreadable": [
+  {
+   "board": "Board of Registrars",
+   "date": "2026-10-07",
+   "file_id": "8062",
+   "why": "no item could be read off the agenda text"
+  }
+ ],
+ "meetings": [
+  {
+   "board": "Board of Assessors",
+   "board_slug": "board-of-assessors",
+   "date": "2026-09-30",
+   "file_id": "8043",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8043",
+   "agenda_doc": "/docs/meetings/board-of-assessors/2026-09-30-agenda-8043.pdf",
+   "items": [
+    {
+     "line": "Amended 9/28/2026",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review minutes for Open Meetings and Executive Session of September 9 and September 23, 2026.",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Update on preparations for Classification Hearing",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Vote on Warrant Article to expand Veterans Exemptions to be presented at the November 17th Town Meeting.",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "veterans-exemption",
+       "label": "The veterans property tax exemption",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "veterans-exemption"
+   ]
+  },
+  {
+   "board": "Parks Commission",
+   "board_slug": "parks-commission",
+   "date": "2026-09-30",
+   "file_id": "8037",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8037",
+   "agenda_doc": "/docs/meetings/parks-commission/2026-09-30-agenda-8037.pdf",
+   "items": [
+    {
+     "line": "Open Meeting",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board & Public Comment",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Facilities Director and Recreation Director Updates",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Town Beach Season Recap",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Budget Check-in",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "LBA – 3rd Annual Spring Fair Date",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Skate Park Update (vote may be taken)",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion – Field Usage Fees",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion Wallis Court Lighting (vote may be taken)",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MOU for Community Room use between Parks and Library Board of Trustees",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Approval of Meeting Minutes from 8/26/26",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Chair Report",
+     "parent": "",
+     "n": 12,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Upcoming Meeting Dates",
+     "parent": "",
+     "n": 13,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Other Business",
+     "parent": "",
+     "n": 14,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Matters that may legally come before the Commission not known at the time of posting",
+     "parent": "",
+     "n": 15,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Correspondence and Announcements",
+     "parent": "",
+     "n": 16,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board and Public Comments",
+     "parent": "",
+     "n": 17,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjourn",
+     "parent": "",
+     "n": 18,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "School Committee",
+   "board_slug": "school-committee",
+   "date": "2026-10-01",
+   "file_id": "8046",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10012026-8046",
+   "agenda_doc": "/docs/meetings/school-committee/2026-10-01-agenda-8046.pdf",
+   "items": [
+    {
+     "line": "Call to Order (3 min)",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Pledge of Allegiance (3 min)",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment for Prior Issues (3 min)",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "New Business Action",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Change in Job Description from Business Administrator to Director of Finance and Operations (3 min)",
+     "parent": "New Business Action",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Appointment of Temporary Director of Finance and Operations (3 min)",
+     "parent": "New Business Action",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Public Comment for Issue Discussed Tonight",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Reports of Sub-Committee",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Topics for Future Discussion",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjournment Lunenburg Public Schools",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Library Board of Trustees",
+   "board_slug": "library-board-of-trustees",
+   "date": "2026-10-02",
+   "file_id": "8045",
+   "body_as_printed": "NDA Lunenburg Public Library Board of Trustees Strategic Plan Subcommittee",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10022026-8045",
+   "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-10-02-agenda-8045.pdf",
+   "items": [
+    {
+     "line": "1023 Massachusetts Avenue",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Lunenburg, MA 01462",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "(978) 582-4140 Agenda Lunenburg Public Library Board of Trustees Oct 2, 2026",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Conservation Commission",
+   "board_slug": "conservation-commission",
+   "date": "2026-10-03",
+   "file_id": "8041",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10032026-8041",
+   "agenda_doc": "/docs/meetings/conservation-commission/2026-10-03-agenda-8041.pdf",
+   "items": [
+    {
+     "line": "3 Wilderwood Avenue: RDA-26-12 A Request for Determination of Applicability by Matt Proctor for the replacement of a retaining wall",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "143 Island Road: NOI-26-30 Notice of Intent by Michelle Salas for the replacement of a septic system",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "386 Sunset Lane: NOI-26-31 A Notice of Intent by Matt Mitrano for replacement of a retaining wall including two timber walls",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "37 Fire Road 10: NOI-26-32 A Notice of Intent by Brian & Kelly Ryder for the removal and reconstruction of an existing patio and retaining wall",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Board of Health",
+   "board_slug": "board-of-health",
+   "date": "2026-10-05",
+   "file_id": "8051",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10052026-8051",
+   "agenda_doc": "/docs/meetings/board-of-health/2026-10-05-agenda-8051.pdf",
+   "items": [
+    {
+     "line": "1268 Lancaster Use of IA System 4: 4 0 pm 127 Pleasant Accept Title 5",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "499 Northfield Cat Shelter",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "SEPTIC PERMITS",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Lunenburg Municipal Building Design Committee",
+   "board_slug": "lunenburg-municipal-building-design-committee",
+   "date": "2026-10-05",
+   "file_id": "8048",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10052026-8048",
+   "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-10-05-agenda-8048.pdf",
+   "items": [
+    {
+     "line": "- Call to Order Approve Minutes Comments from Board and Public",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "tc-passios-site",
+       "label": "TC Passios: the site's future",
+       "by": "board"
+      }
+     ]
+    }
+   ],
+   "threads": [
+    "tc-passios-site"
+   ]
+  },
+  {
+   "board": "Personnel Committee",
+   "board_slug": "personnel-committee",
+   "date": "2026-10-05",
+   "file_id": "8050",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10052026-8050",
+   "agenda_doc": "/docs/meetings/personnel-committee/2026-10-05-agenda-8050.pdf",
+   "items": [
+    {
+     "line": "pm",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Call to Order",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Roll Call (If remote)",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Discussion Points",
+     "parent": "",
+     "n": 5,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review HR answers to questions regarding submitted Job Description s (possible vote)",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discuss SharePoint data and organization and processes",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discuss Special Town Meeting warrants",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Board/Public Comment",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjournment",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Architectural Preservation District Commission",
+   "board_slug": "architectural-preservation-district-commission",
+   "date": "2026-10-06",
+   "file_id": "8049",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10062026-8049",
+   "agenda_doc": "/docs/meetings/architectural-preservation-district-commission/2026-10-06-agenda-8049.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "APPROVE MEETING MINUTES-11 June 26",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CURRENT BUSINESS",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Introduction of Mali Wagner",
+     "parent": "",
+     "n": 5,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "NEW BUSINESS",
+     "parent": "",
+     "n": 6,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Lunenburg Food Pantry Trailers-30 School St",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Brooks House",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "brooks-house",
+       "label": "Brooks House: what becomes of it",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "CLOSING PUBLIC COMMENT",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "NEXT MEETING: TBD",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURNMENT",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "brooks-house"
+   ]
+  },
+  {
+   "board": "Select Board",
+   "board_slug": "select-board",
+   "date": "2026-10-06",
+   "file_id": "8052",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10062026-8052",
+   "agenda_doc": "/docs/meetings/select-board/2026-10-06-agenda-8052.pdf",
+   "items": [
+    {
+     "line": "*Revised 10/1/26",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "CALL TO ORDER AND PLEDGE OF ALLEGIANCE",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Cultural Council Accepting Grant Applications until October 15th for 2027",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Finance Committee Public Hearing for the November 17th Special Town Meeting will be held on Thursday, October 22nd at 7 pm",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Common Victualler License for Kiku, Inc. d/b/a Kiku Asian Cuisine located at 50 Massachusetts Avenue",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion on September 30th Select Board Chat Session and Schedule October Chat Session",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion on Future of the Tri-board",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion of Additions/Modifications to Bylaws Ch. 12 Boards, Commissions, and Committees",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Status of Polling Location for November 3, 2026 Election",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Special Town Meeting, November 17, 2026",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Review of Draft Warrant",
+     "parent": "Special Town Meeting, November 17, 2026",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Select Board Sponsored Warrant Article(s)",
+     "parent": "Special Town Meeting, November 17, 2026",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion of Special Town Meeting Logistics",
+     "parent": "Special Town Meeting, November 17, 2026",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Update on Food Pantry Relocation",
+     "parent": "",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Opioid Settlement Funds: Use for AEDs in All Town/School Buildings and Police/Fire Vehicles",
+     "parent": "",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Select Board Liaison for Personnel Committee and Any Necessary Liaison Reassignment(s)",
+     "parent": "",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Review Boards, Committees, and Commissions Handbook – Through Chapter 6",
+     "parent": "",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion on Lunenburg Municipal Buildings",
+     "parent": "",
+     "n": 18,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "October 20th Select Board Meeting",
+     "parent": "",
+     "n": 19,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Board of Registrars",
+   "board_slug": "board-of-registrars",
+   "date": "2026-10-07",
+   "file_id": "8062",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8062",
+   "agenda_doc": "/docs/meetings/board-of-registrars/2026-10-07-agenda-8062.pdf",
+   "items": [],
+   "threads": []
+  },
+  {
+   "board": "Cultural Council",
+   "board_slug": "cultural-council",
+   "date": "2026-10-07",
+   "file_id": "8053",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8053",
+   "agenda_doc": "/docs/meetings/cultural-council/2026-10-07-agenda-8053.pdf",
+   "items": [
+    {
+     "line": "Ritter Memorial Building DATE/TIME: 10/07/2026, 6:45pm AGENDA CALL MEETING TO ORDER PUBLIC COMMENT WELCOME VISITORS/POTENTIAL NEW MEMBERS APPROVE PREVIOUS MINUTES TREASURER’S REPORT DISCUSSION ON ARTIST PAYMENT SYSTEM VOTE ON ARTIST PAYMENT SYSTEM VOTE ON COUNCIL LEADERSHIP POSITIONS NEW BUSINESS COUNCIL MEMBER ASSIGNMENTS ADJOURN",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "School Committee",
+   "board_slug": "school-committee",
+   "date": "2026-10-07",
+   "file_id": "8058",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+   "agenda_doc": "/docs/meetings/school-committee/2026-10-07-agenda-8058.pdf",
+   "items": [
+    {
+     "line": "Call to Order (3 min)",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Pledge of Allegiance (3 min)",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment for Prior Issues (3 min)",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Chair’s Report (3 min)",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Student Representative’s Report (3 min)",
+     "parent": "",
+     "n": 5,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review & Approve Minutes (3 min)",
+     "parent": "",
+     "n": 6,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Regular Session Minutes 9/16/26",
+     "parent": "Review & Approve Minutes (3 min)",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review & Approve Line Item Transfers, Warrants & Donations",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Warrants 9/15/26 to 10/5/26 $315, 036.56",
+     "parent": "Review & Approve Line Item Transfers, Warrants & Donations",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Superintendent’s Report (3 min)",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "New Business Action",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "In Person Interview Richard Mathieu Director of Finance and Operations (3 min)",
+     "parent": "New Business Action",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Removal of Surplus Material (3 min)",
+     "parent": "New Business Action",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Beginning of Year Data Presentation (3 min)",
+     "parent": "New Business Action",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "COTA Position Change to .5 OT (3 min)",
+     "parent": "New Business Action",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Brooks House Redevelopment Proposal (3 min)",
+     "parent": "New Business Action",
+     "n": 16,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "brooks-house",
+       "label": "Brooks House: what becomes of it",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Amendment of School Calendar-Parent/Teacher Conferences (3 min)",
+     "parent": "New Business Action",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Fall Athletics Report (3 min)",
+     "parent": "New Business Action",
+     "n": 18,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Vote an Amount to Fund the Special Education Reserve Fund Approved at November 2026 Town Meeting (3 min) Lunenburg Public Schools",
+     "parent": "New Business Action",
+     "n": 19,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion of Track & Field (Turf) Future Costs",
+     "parent": "New Business Action",
+     "n": 20,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "turf-field-study",
+       "label": "The track and turf field",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Old Business Action",
+     "parent": "",
+     "n": 21,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Revised Paraprofessional Salary Schedule (3 min)",
+     "parent": "Old Business Action",
+     "n": 22,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment for Issues Discussed Tonight",
+     "parent": "",
+     "n": 23,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Reports of Sub-Committees",
+     "parent": "",
+     "n": 24,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Topics for Future Discussion",
+     "parent": "",
+     "n": 25,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Executive Session-pursuant to Massachusetts General Laws Chapter 30ASection 21(a)(1) for the following purpose: to discuss complaints brought against a public officer, employee, staff member, or individual (OML complaint-T. Loughlin) Executive Session-to conduct strategy sessions in preparation for negotiations with nonunion personnel or to conduct collective bargaining sessions or contract negotiations with nonunion personnel.",
+     "parent": "",
+     "n": 26,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Adjournment",
+     "parent": "",
+     "n": 27,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "brooks-house",
+    "turf-field-study"
+   ]
+  },
+  {
+   "board": "Council on Aging",
+   "board_slug": "council-on-aging",
+   "date": "2026-10-13",
+   "file_id": "8061",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10132026-8061",
+   "agenda_doc": "/docs/meetings/council-on-aging/2026-10-13-agenda-8061.pdf",
+   "items": [
+    {
+     "line": "Assessors O ﬃce Move - hours at LAAC - ADA Liaison",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Policies and Procedures Updates - Committee? eg addition of Honorary members and posting to website",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "COA tree for EHS “Festival of Trees” Fundraiser",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Entry for Town Report",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "By-Law Review Committee",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Council Priorities for FY ’28 Budget",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Eagle House Facility Space Needs",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Formula Grant Explanation and status",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Friendly Visitor Update",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Housing - Liaison to ADA Committee, ARCAP",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Building Usage Policy",
+     "parent": "",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Financial Report Final FY ‘26",
+     "parent": "",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Bylaws Discussion",
+     "parent": "",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Tea Party Update 10/26 Bakers and Baskets",
+     "parent": "",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Parking Lot update",
+     "parent": "",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "41A Update",
+     "parent": "",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Hospital Update - No ambulance service to Groton",
+     "parent": "",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "UPCOMING SCHEDULE: NEXT MEETING: Tuesday, November 10, 2026 at 9:30 a.m.",
+     "parent": "",
+     "n": 18,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "School Committee",
+   "board_slug": "school-committee",
+   "date": "2026-10-13",
+   "file_id": "8068",
+   "body_as_printed": "School Advisory Council LMS",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10132026-8068",
+   "agenda_doc": "/docs/meetings/school-committee/2026-10-13-agenda-8068.pdf",
+   "items": [
+    {
+     "line": "Introductions",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Roles and responsibilities",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Overview of beginning of school year/ Staffing",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Literacy work",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MCAS Public Release Date",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Washington DC",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Public Comment",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjourn",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Sewer Commission",
+   "board_slug": "sewer-commission",
+   "date": "2026-10-13",
+   "file_id": "8064",
+   "body_as_printed": "",
+   "upcoming": false,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10132026-8064",
+   "agenda_doc": "/docs/meetings/sewer-commission/2026-10-13-agenda-8064.pdf",
+   "items": [
+    {
+     "line": "6:00 PM CALL TO ORDER AND PLEDGE OF ALLEGIANCE",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CURRENT BUSINESS",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Minutes of 09/29/2026– Vote to Approve",
+     "parent": "CURRENT BUSINESS",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Sewer Business Manager/DPW Director Updates",
+     "parent": "CURRENT BUSINESS",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Transfer of funds from Capital Plan Line- Discussion",
+     "parent": "CURRENT BUSINESS",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "786-796 Mass Ave Connections- Update",
+     "parent": "Transfer of funds from Capital Plan Line- Discussion",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "CTE Contract– Update",
+     "parent": "Transfer of funds from Capital Plan Line- Discussion",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Future agenda Items– Discussion",
+     "parent": "CURRENT BUSINESS",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "OLD BUSINESS",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "UPCOMING SCHEDULED SEWER COMMISSION ACTIVITIES",
+     "parent": "",
+     "n": 12,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURN",
+     "parent": "",
+     "n": 13,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Board of Assessors",
+   "board_slug": "board-of-assessors",
+   "date": "2026-10-14",
+   "file_id": "8070",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
+   "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review and Approve Minutes of Open Meetings of September 9, September 23 and September 30, 2026.",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Discuss New Information on the Veteran's Exemption Articles.",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "veterans-exemption",
+       "label": "The veterans property tax exemption",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Status on Preparations for the Tax Classification Hearing:",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Commercial / Industrial (Vision) Update and Data Review if possible.",
+     "parent": "Status on Preparations for the Tax Classification Hearing:",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Personal Property & Residential Data Review.",
+     "parent": "Status on Preparations for the Tax Classification Hearing:",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discuss What Will Be Included in the Actual Presentation.",
+     "parent": "Status on Preparations for the Tax Classification Hearing:",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Schedule a Vote for the Board's Recommendations for the Tax Classification Hearing.",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 12,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review and approve/ deny Senior and Veterans real estate tax exemption applications.",
+     "parent": "",
+     "n": 13,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "veterans-exemption",
+       "label": "The veterans property tax exemption",
+       "by": "words"
+      }
+     ]
+    }
+   ],
+   "threads": [
+    "veterans-exemption"
+   ]
+  },
+  {
+   "board": "Open Space Committee",
+   "board_slug": "open-space-committee",
+   "date": "2026-10-14",
+   "file_id": "8059",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8059",
+   "agenda_doc": "/docs/meetings/open-space-committee/2026-10-14-agenda-8059.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "WELCOME NEW MEMBER DAN BURNS",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MINUTES APPROVAL FROM 9/9/26",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "REPORTS FROM OTHER BOARDS",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "DISCUSSION REGARDING REVISIONS TO THE OPEN",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "OTHER ITEMS NOT ANTICIPATED AT THE TIME OF",
+     "parent": "",
+     "n": 6,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CITIZEN COMMENTS",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "MEETING SCHEDULE - SECOND WEDNESDAY OF",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURNMENT",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Zoning Board of Appeals",
+   "board_slug": "zoning-board-of-appeals",
+   "date": "2026-10-14",
+   "file_id": "8030",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8030",
+   "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-14-agenda-8030.pdf",
+   "items": [
+    {
+     "line": "Alfred Gravelle, Chairman Patrick Callahan, Vice Chair David Blatt, Member Anthony Nicastro, Member Karin Menard, Member Donald Gurney, Associate Member Ritter Memorial Building960 Massachusetts AvenueLunenburg, MA 01462P:978-582-4146 F:978-582-4353 Notice of Public Hearing Town of Lunenburg Zoning Board of Appeals Notice is hereby given that the Zoning Board of Appeals will hold a public hearing onOctober 14, 2026 at 7:00PM. at the Lunenburg Town Hall, 2nd Floor, Joseph F.",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Zoning Board of Appeals",
+   "board_slug": "zoning-board-of-appeals",
+   "date": "2026-10-14",
+   "file_id": "8065",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8065",
+   "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-14-agenda-8065.pdf",
+   "items": [
+    {
+     "line": "P.M.-Town Hall, 2nd Floor October 14, 2026 Call to order:",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "7:00PM: 30 School Street , ZBA-26-12, Town of Lunenburg , Variance for the placement of a single story manufactured building within the Village Center District relative to 250-4.17 E(3)(a)",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Stephen Wallace, Director of Planning and Economic Development, present Zoning Amendments for 2027",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Historical Commission",
+   "board_slug": "historical-commission",
+   "date": "2026-10-15",
+   "file_id": "8063",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8063",
+   "agenda_doc": "/docs/meetings/historical-commission/2026-10-15-agenda-8063.pdf",
+   "items": [
+    {
+     "line": "CORRESPONDENCE",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "452 Northfield Rd demo request",
+     "parent": "New Business",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Town wide survey",
+     "parent": "Old Business",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Goodrich Cemetery",
+     "parent": "Old Business",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "APDC liaison",
+     "parent": "Old Business",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "OTHER BUSINESS",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "NEXT MEETNG: TBD",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "ADJOURNMENT",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Library Board of Trustees",
+   "board_slug": "library-board-of-trustees",
+   "date": "2026-10-15",
+   "file_id": "8060",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8060",
+   "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-10-15-agenda-8060.pdf",
+   "items": [
+    {
+     "line": "1023 Massachusetts Avenue",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Lunenburg, MA 01462",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "(978) 582-4140 Agenda Lunenburg Public Library Board of Trustees Oct 15, 2026",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "AGENDA Lunenburg Public Library Board of Trustees Thursday, October 15, 2026 6:00 p.m. Lunenburg Public Library Sudolnik Conference Room",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comments",
+     "parent": "",
+     "n": 5,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Agenda Items",
+     "parent": "",
+     "n": 6,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Approval of Minutes of September 17, 2026",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Director’s Report",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "FY 2027 Budget Update",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Staff Update – Using State Aid to partially fund PT Teen Librarian staff position?",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Programs Update",
+     "parent": "",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Technology Update",
+     "parent": "",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Building & Maintenance Update",
+     "parent": "",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Trustee Handbook Discussion – Chapter 8",
+     "parent": "",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion about updating the Library Director job description",
+     "parent": "",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Conroy Memorial Garden Update",
+     "parent": "",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Strategic Plan update (Maia)",
+     "parent": "",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Brooks House Update / Discussion - Would the Library be interested in having the Town turn it over to the Library - If the Town were to split off the Brooks House lot from the larger school property and sell it to a new user (business or office), would the library be willing to let the buyer use its driveway for access? - If a new driveway can come into the property to the right of the house, would the library be willing to let the new buyer’s customers use the library driveway as exit only?",
+     "parent": "",
+     "n": 18,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "brooks-house",
+       "label": "Brooks House: what becomes of it",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Friends Update",
+     "parent": "",
+     "n": 19,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Board Comments",
+     "parent": "",
+     "n": 20,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Other",
+     "parent": "",
+     "n": 21,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjourn",
+     "parent": "",
+     "n": 22,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "brooks-house"
+   ]
+  },
+  {
+   "board": "School Committee",
+   "board_slug": "school-committee",
+   "date": "2026-10-15",
+   "file_id": "8069",
+   "body_as_printed": "School Advisory Council LHS",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8069",
+   "agenda_doc": "/docs/meetings/school-committee/2026-10-15-agenda-8069.pdf",
+   "items": [
+    {
+     "line": "Introductions /Roles and Responsibilities",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "School Year update",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MCAS and School Accountability",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "School Improvement Plan",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Climate and culture",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Homecoming",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Adjourn",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Stormwater Task Force",
+   "board_slug": "stormwater-task-force",
+   "date": "2026-10-15",
+   "file_id": "8074",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8074",
+   "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-15-agenda-8074.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review Select Board and Finance Committee Presentations",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "stormwater-fee",
+       "label": "The stormwater fee",
+       "by": "board"
+      }
+     ]
+    }
+   ],
+   "threads": [
+    "stormwater-fee"
+   ]
+  },
+  {
+   "board": "Trust Fund Commission",
+   "board_slug": "trust-fund-commission",
+   "date": "2026-10-15",
+   "file_id": "8075",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8075",
+   "agenda_doc": "/docs/meetings/trust-fund-commission/2026-10-15-agenda-8075.pdf",
+   "items": [
+    {
+     "line": "PM-6:30PM Bilotta Meeting Room, Town Hall",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "OPEN • PLEDGE OF ALLEGIANCE",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT • COMMISSION",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "TRUST REP COMMUNICATION",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MEETINGS (every 2nd and 4th Thursday)",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "TREASURER AND FINANCE DIRECTOR REPORTS",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "NEW BUSINESS",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Day Fund Cy Pres Filing: status of Form PC-IF (follow up)",
+     "parent": "NEW BUSINESS",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Trust Fund Commission Application: inquiry from the Town Manager (follow up)",
+     "parent": "NEW BUSINESS",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "parent": "NEW BUSINESS",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Town Manager, Treasurer and Finance Director: written questions (follow up)",
+     "parent": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "School business office: request for account inventory (follow up)",
+     "parent": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Select Board: Charter § 3-2(e) request; Select Board Chair answer to Commission inquiry (follow up)",
+     "parent": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "School Committee Chair written questions; no response (follow up)",
+     "parent": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Public records requests to the School and Town Records Access Officers: Answered (follow up)",
+     "parent": "School Department Trust Funds and Charitable Gifts (follow up): correspondence and responses",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "By Law Warrant Article, Special Town Meeting: request for Select Board presentation date Review language and inquiry of Finance committee and Town Manager",
+     "parent": "NEW BUSINESS",
+     "n": 17,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "trust-fund-vacancy",
+       "label": "Trust fund administration during a vacancy",
+       "by": "board"
+      }
+     ]
+    },
+    {
+     "line": "Meeting Minutes Ratification",
+     "parent": "NEW BUSINESS",
+     "n": 18,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Next Steps For the Commission public awareness, writing the declaration for American Legion Poor Fund, Howard Sidewalk Fund, and Gazebo Fund as from notes in public records (follow up)",
+     "parent": "NEW BUSINESS",
+     "n": 19,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Elections versus appointments: the process for filling Commission seats, write-in results and seats not taken, the problems this has caused for the Commission, and reviewing voter records before appointments are made. (follow up)",
+     "parent": "NEW BUSINESS",
+     "n": 20,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "OLD BUSINESS",
+     "parent": "",
+     "n": 21,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "(Status update) Attorney General Notice of Breach for town failure to meet their legal obligations that triggers specific rights, duties, or consequences for the commission.",
+     "parent": "OLD BUSINESS",
+     "n": 22,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "trust-fund-vacancy",
+       "label": "Trust fund administration during a vacancy",
+       "by": "board"
+      }
+     ]
+    },
+    {
+     "line": "(Status Update) Regarding school department and letter to the school regarding gifts and scholarships not within exempted authority under MGLA chapter 71 and Chapter 55",
+     "parent": "OLD BUSINESS",
+     "n": 23,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Updates to website postings",
+     "parent": "OLD BUSINESS",
+     "n": 24,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Vacancy",
+     "parent": "OLD BUSINESS",
+     "n": 25,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "trust-fund-vacancy",
+       "label": "Trust fund administration during a vacancy",
+       "by": "board"
+      }
+     ]
+    },
+    {
+     "line": "Goals of the Commission",
+     "parent": "OLD BUSINESS",
+     "n": 26,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Update on interns (ongoing)",
+     "parent": "OLD BUSINESS",
+     "n": 27,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Real estate investigations (ongoing)",
+     "parent": "OLD BUSINESS",
+     "n": 28,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Review rewritten risk management policy ratify with corrections (finalize and vote)",
+     "parent": "OLD BUSINESS",
+     "n": 29,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "BENEFICIARY/COMMENT",
+     "parent": "",
+     "n": 30,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "UPCOMING MEETING/EVENTS",
+     "parent": "",
+     "n": 31,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "October 22, 2026",
+     "parent": "UPCOMING MEETING/EVENTS",
+     "n": 32,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "X. PUBLIC COMMENT",
+     "parent": "UPCOMING MEETING/EVENTS",
+     "n": 33,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC",
+     "parent": "UPCOMING MEETING/EVENTS",
+     "n": 34,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "TREASURER/FINANCE DIRECTOR",
+     "parent": "UPCOMING MEETING/EVENTS",
+     "n": 35,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "COMMISSION",
+     "parent": "UPCOMING MEETING/EVENTS",
+     "n": 36,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURN",
+     "parent": "",
+     "n": 37,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "trust-fund-vacancy"
+   ]
+  },
+  {
+   "board": "Personnel Committee",
+   "board_slug": "personnel-committee",
+   "date": "2026-10-19",
+   "file_id": "8072",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10192026-8072",
+   "agenda_doc": "/docs/meetings/personnel-committee/2026-10-19-agenda-8072.pdf",
+   "items": [
+    {
+     "line": "pm",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Call to Order",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Roll Call",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "If conducted remotely",
+     "parent": "Roll Call",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment",
+     "parent": "",
+     "n": 5,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Discussion Items",
+     "parent": "",
+     "n": 6,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Spring Town Meeting Warrant Articles",
+     "parent": "Discussion Items",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Develop language for Spring Town Meeting warrant articles",
+     "parent": "Spring Town Meeting Warrant Articles",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discuss job description review timelines",
+     "parent": "Spring Town Meeting Warrant Articles",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "SharePoint Data, Organization, and Processes",
+     "parent": "Discussion Items",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discuss the organization and management of Personnel Committee SharePoint data",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Develop a Personnel Committee handbook",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Create standard operating procedures for Personnel Committee member roles",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Create standard operating procedures for Personnel Committee responsibilities, including:",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Troubleshooting guidance",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Frequently asked questions",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Create standard operating procedures for Personnel Committee timelines",
+     "parent": "SharePoint Data, Organization, and Processes",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Committee/Public Comment",
+     "parent": "",
+     "n": 18,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjournment",
+     "parent": "",
+     "n": 19,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Planning Board Public Hearing",
+   "board_slug": "planning-board-public-hearing",
+   "date": "2026-10-19",
+   "file_id": "8042",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10192026-8042",
+   "agenda_doc": "/docs/meetings/planning-board-public-hearing/2026-10-19-agenda-8042.pdf",
+   "items": [
+    {
+     "line": "Delete eleven references to “development plan” or “development plan review” and replace with “site plan” or “site plan review” in Lunenburg’s Zoning Bylaw (Section 250 of the Code of the Town of Lunenburg, MA).",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Delete three references to the no longer in existence “Retail Commercial District” in Lunenburg’s Zoning Bylaw (Section 250 of the Code of the Town of Lunenburg, MA).",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Delete reference to the “Land Use Director” and replace with “Planning Director” in Lunenburg’s Zoning Bylaw (Section 250 of the Code of the Town of Lunenburg, MA).",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Delete Section 250 -3.4 (“Two dwellings on one lot”) from Lunenburg’s Zoning Bylaw.",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Delete Section 250 -6.4(C)(7)(c)(1)(e) the phrase “max number of lots: 4” and substituting therefor the phrase “max number of primary dwellings: 4,” regarding residential common driveways;",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Amend the Code of Lunenburg, Chapter 204 -1, (Stormwater and Storm Sewers) to give the Planning Board the authority to set the fee schedule for Stormwater permits.",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "stormwater-fee",
+       "label": "The stormwater fee",
+       "by": "words"
+      }
+     ]
+    }
+   ],
+   "threads": [
+    "stormwater-fee"
+   ]
+  },
+  {
+   "board": "Select Board Public Hearing",
+   "board_slug": "select-board-public-hearing",
+   "date": "2026-10-20",
+   "file_id": "8047",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8047",
+   "agenda_doc": "/docs/meetings/select-board-public-hearing/2026-10-20-agenda-8047.pdf",
+   "items": [
+    {
+     "line": "TOWN OF LUNENBURG OFFICE OF THE SELECT BOARD Public Hearing Notice Pursuant to Chapter 138, Section 12 M.G.L. the Lunenburg Select Board will hold a Public Hearing on Tuesday, October 20, 2026 at 7:10 pm in the Bilotta Meeting Room at Town Hall, 17 Main Street, Lunenburg, MA on an All Liquor On-Premises Liquor License and Common Victualer License for Kiku Inc. d/b/a Kiku Asian Cuisine located at 50 Massachusetts Avenue.",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Stormwater Task Force",
+   "board_slug": "stormwater-task-force",
+   "date": "2026-10-20",
+   "file_id": "8073",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8073",
+   "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-20-agenda-8073.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Joint meeting with Select Board",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "stormwater-fee",
+       "label": "The stormwater fee",
+       "by": "board"
+      }
+     ]
+    }
+   ],
+   "threads": [
+    "stormwater-fee"
+   ]
+  },
+  {
+   "board": "Lunenburg Housing Authority",
+   "board_slug": "lunenburg-housing-authority",
+   "date": "2026-10-21",
+   "file_id": "8071",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10212026-8071",
+   "agenda_doc": "/docs/meetings/lunenburg-housing-authority/2026-10-21-agenda-8071.pdf",
+   "items": [
+    {
+     "line": "Meeting Called to Order",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Roll Call",
+     "parent": "Meeting Called to Order",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Approval of Regular Minutes – 8/20/2026",
+     "parent": "Meeting Called to Order",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Executive Director Report",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Annual Conference",
+     "parent": "Executive Director Report",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Reserves",
+     "parent": "Executive Director Report",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Financials",
+     "parent": "",
+     "n": 7,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Approval of August and September 2026",
+     "parent": "Financials",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Administration",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Modernization/Work Order Report",
+     "parent": "Administration",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "State-Aided Housing Report",
+     "parent": "Administration",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Unfinished Busines s – None",
+     "parent": "",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "New Business",
+     "parent": "",
+     "n": 13,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Resolution 202 6 -15 Approval of Low Bid for Generator Project #162040",
+     "parent": "New Business",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Other Correspondence",
+     "parent": "",
+     "n": 15,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "EOHLC PHN 202 6 -9 Capital Improvement Plan (CIP) Module Now Available for December31 FYE Cohort",
+     "parent": "Other Correspondence",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "EOHLC PHN 2026-10 FY 2027 Executive Director Salary and Qualifications Schedule",
+     "parent": "Other Correspondence",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "EOHLC PHN 2026-11 FY 2027 Budget Guidelines",
+     "parent": "Other Correspondence",
+     "n": 18,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Motion to Adjourn Lunenburg Housing Authority C/O Leominster Housing Authority, Managing Agent 100 Main Street Leominster, Massachusetts 01453-5599",
+     "parent": "",
+     "n": 19,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  }
+ ],
+ "by_thread": {
+  "veterans-exemption": [
+   {
+    "board": "Board of Assessors",
+    "board_slug": "board-of-assessors",
+    "date": "2026-09-30",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Vote on Warrant Article to expand Veterans Exemptions to be presented at the November 17th Town Meeting.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8043",
+    "agenda_doc": "/docs/meetings/board-of-assessors/2026-09-30-agenda-8043.pdf"
+   },
+   {
+    "board": "Board of Assessors",
+    "board_slug": "board-of-assessors",
+    "date": "2026-10-14",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Discuss New Information on the Veteran's Exemption Articles.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
+    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
+   },
+   {
+    "board": "Board of Assessors",
+    "board_slug": "board-of-assessors",
+    "date": "2026-10-14",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Review and approve/ deny Senior and Veterans real estate tax exemption applications.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
+    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
+   }
+  ],
+  "tc-passios-site": [
+   {
+    "board": "Lunenburg Municipal Building Design Committee",
+    "board_slug": "lunenburg-municipal-building-design-committee",
+    "date": "2026-10-05",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "- Call to Order Approve Minutes Comments from Board and Public",
+    "parent": "",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10052026-8048",
+    "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-10-05-agenda-8048.pdf"
+   }
+  ],
+  "brooks-house": [
+   {
+    "board": "Architectural Preservation District Commission",
+    "board_slug": "architectural-preservation-district-commission",
+    "date": "2026-10-06",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Brooks House",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10062026-8049",
+    "agenda_doc": "/docs/meetings/architectural-preservation-district-commission/2026-10-06-agenda-8049.pdf"
+   },
+   {
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-10-07",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Brooks House Redevelopment Proposal (3 min)",
+    "parent": "New Business Action",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+    "agenda_doc": "/docs/meetings/school-committee/2026-10-07-agenda-8058.pdf"
+   },
+   {
+    "board": "Library Board of Trustees",
+    "board_slug": "library-board-of-trustees",
+    "date": "2026-10-15",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Brooks House Update / Discussion - Would the Library be interested in having the Town turn it over to the Library - If the Town were to split off the Brooks House lot from the larger school property and sell it to a new user (business or office), would the library be willing to let the buyer use its driveway for access? - If a new driveway can come into the property to the right of the house, would the library be willing to let the new buyer’s customers use the library driveway as exit only?",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8060",
+    "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-10-15-agenda-8060.pdf"
+   }
+  ],
+  "turf-field-study": [
+   {
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-10-07",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Discussion of Track & Field (Turf) Future Costs",
+    "parent": "New Business Action",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+    "agenda_doc": "/docs/meetings/school-committee/2026-10-07-agenda-8058.pdf"
+   }
+  ],
+  "stormwater-fee": [
+   {
+    "board": "Stormwater Task Force",
+    "board_slug": "stormwater-task-force",
+    "date": "2026-10-15",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Review Select Board and Finance Committee Presentations",
+    "parent": "",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8074",
+    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-15-agenda-8074.pdf"
+   },
+   {
+    "board": "Planning Board Public Hearing",
+    "board_slug": "planning-board-public-hearing",
+    "date": "2026-10-19",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Amend the Code of Lunenburg, Chapter 204 -1, (Stormwater and Storm Sewers) to give the Planning Board the authority to set the fee schedule for Stormwater permits.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10192026-8042",
+    "agenda_doc": "/docs/meetings/planning-board-public-hearing/2026-10-19-agenda-8042.pdf"
+   },
+   {
+    "board": "Stormwater Task Force",
+    "board_slug": "stormwater-task-force",
+    "date": "2026-10-20",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Joint meeting with Select Board",
+    "parent": "",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8073",
+    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-20-agenda-8073.pdf"
+   }
+  ],
+  "trust-fund-vacancy": [
+   {
+    "board": "Trust Fund Commission",
+    "board_slug": "trust-fund-commission",
+    "date": "2026-10-15",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "By Law Warrant Article, Special Town Meeting: request for Select Board presentation date Review language and inquiry of Finance committee and Town Manager",
+    "parent": "NEW BUSINESS",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8075",
+    "agenda_doc": "/docs/meetings/trust-fund-commission/2026-10-15-agenda-8075.pdf"
+   },
+   {
+    "board": "Trust Fund Commission",
+    "board_slug": "trust-fund-commission",
+    "date": "2026-10-15",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "(Status update) Attorney General Notice of Breach for town failure to meet their legal obligations that triggers specific rights, duties, or consequences for the commission.",
+    "parent": "OLD BUSINESS",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8075",
+    "agenda_doc": "/docs/meetings/trust-fund-commission/2026-10-15-agenda-8075.pdf"
+   },
+   {
+    "board": "Trust Fund Commission",
+    "board_slug": "trust-fund-commission",
+    "date": "2026-10-15",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "Vacancy",
+    "parent": "OLD BUSINESS",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152026-8075",
+    "agenda_doc": "/docs/meetings/trust-fund-commission/2026-10-15-agenda-8075.pdf"
+   }
+  ]
+ }
+}

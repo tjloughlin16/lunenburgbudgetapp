@@ -79,6 +79,16 @@ DECLINED = os.path.join(ROOT, 'sources', 'data', 'threads-declined.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 TMVOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'threads.json')
+# THE TOWN'S OWN MINUTES, read structured by extract_official_votes.py -- every item carries
+# its quote from the minutes, checked verbatim. Until 15 October 2026 a thread read only OUR
+# minutes of the recordings, so a meeting whose only record is the town's minutes (most
+# boards, most years) could never reach a thread, and nothing on a thread page could be
+# quoted from a document.
+TOWN = os.path.join(ROOT, 'sources', 'data', 'official-votes')
+# WHAT IS ON THE NEXT AGENDAS, matched by build_agenda_threads.py with each thread's own
+# patterns. TJ, 15 October 2026: a thread is how a resident catches up before the meeting,
+# so it has to say which meeting is next.
+AGENDAS = os.path.join(ROOT, 'fy28', 'public', 'data', 'agenda-threads.json')
 
 
 def read_csv(p):
@@ -143,6 +153,51 @@ def the_record():
     for r in by.values():
         r.pop('seen', None)
     return by, future
+
+
+def town_record():
+    """The town's minutes, one row per (board, date), every item with its verbatim quote.
+
+    Kept apart from `the_record()` on purpose: a closure resolves only against a vote whose
+    second in a recording can be cited, and the two records of one meeting are shown side by
+    side, each labelled, rather than merged into one list that would count a vote twice."""
+    by, today = {}, dt.date.today().isoformat()
+    for f in sorted(glob.glob(os.path.join(TOWN, '*', '*.json'))):
+        try:
+            j = json.load(open(f, encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        date = j.get('meeting_date') or ''
+        if not date or date > today or not j.get('board_slug'):
+            continue
+        src = j.get('source') or {}
+        cite = {'source': 'town', 'doc_url': src.get('doc_url') or '', 'town_url': src.get('minutes_url') or ''}
+        rec = by.setdefault((j['board_slug'], date), {'items': [], 'seen': set()})
+        def add(kind, text, quote, outcome=''):
+            k = (kind, norm_motion(text))
+            if not text or k in rec['seen']:
+                return
+            rec['seen'].add(k)
+            rec['items'].append(dict(cite, kind=kind, text=text, outcome=outcome, quote=quote or '',
+                                     t=None, video_url=''))
+        for v in j.get('votes') or []:
+            if not v.get('procedural'):
+                add('vote', v.get('motion') or '', v.get('quote'), v.get('outcome') or '')
+        for x in j.get('decisions') or []:
+            add('decision', x.get('decision') or '', x.get('quote'))
+        for b in j.get('budget_items') or []:
+            add('budget', (b.get('topic') or '') + ('. ' + b['what_was_recorded'] if b.get('what_was_recorded') else ''),
+                b.get('quote'))
+        for x in j.get('topics') or []:
+            add('topic', (x.get('topic') or '') + ('. ' + x['resolution'] if x.get('resolution') else ''), x.get('quote'))
+        # A SPEAKER'S NAME IS NOT CARRIED. The town's minutes print it and the quote may too;
+        # the thread needs what was raised, not who stood up.
+        for c in j.get('public_comment') or []:
+            if not re.match(r'\s*no public comment', c.get('topic') or '', re.I):
+                add('comment', c.get('topic') or '', c.get('quote'))
+    for r in by.values():
+        r.pop('seen', None)
+    return by
 
 
 def official_votes():
@@ -220,7 +275,13 @@ def looseness(t, record):
     return n
 
 
-def chronology(t, record):
+def chronology(t, record, town=None):
+    """Every meeting the thread came up at, oldest first, from BOTH records of it.
+
+    `source` on every item says which: `ours` is our minutes of the recording, written by a
+    model from machine captions, cited to the second; `town` is the town's own minutes,
+    cited to the document with the sentence quoted from it. A meeting can carry both, and
+    they are kept apart rather than merged -- two records of one vote are not two votes."""
     rx = re.compile(t['match'], re.I) if t.get('match') else None
     # ENTITY **AND** QUALIFIER (§2). "Turkey Hill" is a PLACE hosting two matters and a lot
     # of traffic -- paraprofessionals, DIBELS scores, solar offsets, intercoms. Both Turkey
@@ -230,32 +291,65 @@ def chronology(t, record):
     qu = re.compile(t['qualify'], re.I) if t.get('qualify') else None
     ex = re.compile(t['exclude'], re.I) if t.get('exclude') else None
     board = (t.get('boards') or '').strip()
+    town = town or {}
+
+    def hit(text):
+        return bool(rx and rx.search(text) and (not qu or qu.search(text)) and not (ex and ex.search(text)))
+
     out = []
-    for (slug, date), rec in sorted(record.items(), key=lambda kv: kv[0][1]):
+    names = dict(board_names(), **{k[0]: v['board'] for k, v in record.items()})
+    for key in sorted(set(record) | set(town), key=lambda k: (k[1], k[0])):
+        slug, date = key
         if t.get('started') and date < t['started']:
             continue
+        rec = record.get(key)
         hits = []
-        for v in rec['votes']:
-            if v['procedural']:
-                continue
-            if (rx and rx.search(v['motion']) and (not qu or qu.search(v['motion']))
-                    and not (ex and ex.search(v['motion']))):
-                hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
-                             't': v['t'], 'video_url': v['video_url']})
-        for it in rec['items']:
-            if (rx and rx.search(it['text']) and (not qu or qu.search(it['text']))
-                    and not (ex and ex.search(it['text']))):
-                hits.append({'kind': it['kind'], 'text': it['text'], 'outcome': '', 't': it['t'],
-                             'video_url': rec['recordings'][0] if rec['recordings'] else ''})
+        if rec:
+            for v in rec['votes']:
+                if not v['procedural'] and hit(v['motion']):
+                    hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
+                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours'})
+            for it in rec['items']:
+                if hit(it['text']):
+                    hits.append({'kind': it['kind'], 'text': it['text'], 'outcome': '', 't': it['t'],
+                                 'video_url': rec['recordings'][0] if rec['recordings'] else '',
+                                 'source': 'ours'})
+        for it in (town.get(key) or {}).get('items', []):
+            # The town's quote is matched too: a minute summarised as "Capital requests" whose
+            # sentence names the turf field is about the turf field.
+            if hit(it['text'] + ' ' + it['quote']):
+                hits.append(dict(it))
         # §17a: a board talking about its own subject does not repeat the subject's name.
         if not hits and board and slug == board:
-            for v in rec['votes']:
+            for v in (rec['votes'] if rec else []):
                 if not v['procedural'] and re.search(r'warrant|article|bylaw|fee|rate', v['motion'], re.I):
                     hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
-                                 't': v['t'], 'video_url': v['video_url']})
+                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours'})
+            for it in (town.get(key) or {}).get('items', []):
+                if it['kind'] == 'vote' and re.search(r'warrant|article|bylaw|fee|rate', it['text'], re.I):
+                    hits.append(dict(it))
         if hits:
-            out.append({'board': rec['board'], 'board_slug': slug, 'date': date, 'items': hits})
+            out.append({'board': (rec or {}).get('board') or names.get(slug) or slug.replace('-', ' ').title(),
+                        'board_slug': slug, 'date': date, 'items': hits,
+                        'records': sorted({h['source'] for h in hits})})
     return out
+
+
+def board_names():
+    """slug -> the board's name as the town's AgendaCenter files it."""
+    out = {}
+    for r in read_csv(os.path.join(ROOT, 'sources', 'meetings', 'index.csv')):
+        out.setdefault((r.get('path') or '').split('/')[0], r.get('board') or '')
+    return out
+
+
+def votes_in(stop):
+    """VOTES AT ONE MEETING, NEVER TWICE. Where both records carry the meeting, the larger
+    count of the two stands for it -- the same vote heard in the recording and printed in the
+    minutes is one vote (THREADS-MODEL §14d-i)."""
+    ours = sum(1 for i in stop['items'] if i['kind'] == 'vote' and i.get('source') != 'town')
+    town = sum(1 for i in stop['items'] if i['kind'] == 'vote' and i.get('source') == 'town')
+    return max(ours, town)
 
 
 SCHEDULED = re.compile(r'\b(warrant article|public hearing|statement of interest|\bRFP\b|'
@@ -292,7 +386,7 @@ def temperature(t, chron, today, record):
     across the town's boards and been settled by none of them."""
     dates = sorted({c['date'] for c in chron})
     n, boards = len(dates), len({c['board_slug'] for c in chron})
-    votes = sum(1 for c in chron for i in c['items'] if i['kind'] == 'vote')
+    votes = sum(votes_in(c) for c in chron)
     text = ' '.join(i['text'] for c in chron for i in c['items'])
     days = (dt.date.fromisoformat(today) - dt.date.fromisoformat(dates[-1])).days if dates else 9999
     span = (dt.date.fromisoformat(dates[-1]) - dt.date.fromisoformat(dates[0])).days if n > 1 else 0
@@ -416,6 +510,9 @@ def where_it_stands(chron):
 
 def build():
     (record, future), official = the_record(), official_votes()
+    town = town_record()
+    every = dict.fromkeys(set(record) | set(town))      # every meeting either record can read
+    agendas = json.load(open(AGENDAS, encoding='utf-8')) if os.path.exists(AGENDAS) else {}
     threads, problems = [], []
     rj = json.load(open(REPORTS, encoding='utf-8'))
     tj = json.load(open(TOPICS, encoding='utf-8'))
@@ -425,8 +522,8 @@ def build():
                              for x in tj['categories'] + list(tj['topics'].values())
                              if x.get('ready')}}
     for t in read_csv(THREADS):
-        chron = chronology(t, record)
-        temp = temperature(t, chron, dt.date.today().isoformat(), record)
+        chron = chronology(t, record, town)
+        temp = temperature(t, chron, dt.date.today().isoformat(), every)
         stands = where_it_stands(chron)
         closure = resolve_closure(t, record, official)
         if t['status'] == 'resolved' and not closure:
@@ -452,6 +549,10 @@ def build():
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             reports=report_links(t, catalogue),
+            # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries
+            # this thread's words, upcoming and just past. The page filters by the reader's
+            # clock. An agenda says what MAY be discussed, never what will be decided.
+            on_agenda=(agendas.get('by_thread') or {}).get(t['id'], []),
             chronology=chron,
             meetings=len(chron),
             boards_touched=len({c['board_slug'] for c in chron}),
@@ -497,8 +598,12 @@ def build():
     cov = {'rank_note': 'newest first — by the date each thread last came up',
            'dated_in_the_future_and_excluded': [{'board': b, 'date': d, 'file': f} for b, d, f in future],
            'rank_basis': 'when each last came up, newest first',
-           'meetings_readable': len(record),
-           'boards_readable': len({s for s, _ in record}),
+           'meetings_readable': len(every),
+           'meetings_with_our_minutes': len(record),
+           'meetings_with_town_minutes_read': len(town),
+           'boards_readable': len({s for s, _ in every}),
+           'agendas_as_of': agendas.get('as_of', ''),
+           'agendas_matched': agendas.get('counts', {}),
            'town_meeting_readable': len([1 for s, _ in record if s == 'town-meeting']),
            'official_town_meeting_years': sorted({r['fy'] for r in read_csv(TMVOTES)})}
     return threads, cov, problems

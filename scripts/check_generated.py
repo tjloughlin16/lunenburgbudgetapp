@@ -63,6 +63,8 @@ CHECKS = [
     # The threads, from the same minutes. Absent from this list until 10 October 2026, which
     # is how threads.json went three weeks stale without a single check failing.
     ('build_threads.py', ['--check']),
+    # Agenda items matched to threads, by the threads' own patterns (no model).
+    ('build_agenda_threads.py', ['--check']),
     # The printable decisions/questions sheet is EXTRACTED from the notes rather
     # than typed, so this fails the moment a decision is taken and struck from
     # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is
@@ -756,6 +758,9 @@ PREREQ = {
     # A BOARD PAGE QUOTES THE FEEDS. Rebuilding the boards first leaves them quoting
     # yesterday's notices, which is a wrong date on a public page rather than a stale file.
     'build_boards.py': ['build_feeds.py', 'build_notices.py', 'build_meeting_feed.py'],
+    # A THREAD SAYS WHICH AGENDA IT IS ON NEXT, so the agenda match comes first.
+    'build_threads.py': ['build_agenda_threads.py'],
+    'build_agenda_threads.py': ['build_meeting_feed.py'],
 }
 
 

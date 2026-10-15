@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useReport } from './report'
+import { AgendaThreadLinks, meetingFor, useAgendaThreads } from './AgendaThreads'
 
 /** THE THREE BOARDS, AT A GLANCE. Used on the front page and at the top of /this-week.
  *
@@ -175,6 +176,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
   const feed = useReport<Feed>('meeting-feed.json')
   const notices = useReport<Notices>('notices.json')
   const recorded = useReport<Recorded>('recording-minutes.json')
+  const agendaThreads = useAgendaThreads().d
   const f = feed.d
   // A row clicked on the front page lands here with #m-<board>-<date>: that meeting's
   // detail opens and the page scrolls to it. TJ: "should bring people to the 'this
@@ -232,6 +234,8 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                   button inside a link is a button nobody can press. */}
               {p?.join && <div className={indent}><JoinLinks j={p.join} compact={compact} /></div>}
               <p className={`mt-1 ${indent}`}><LastTime slug={slug} rec={recorded.d} /></p>
+              {/* THE THREADS ON THIS AGENDA: what to read to catch up before the meeting. */}
+              <div className={indent}><AgendaThreadLinks m={meetingFor(agendaThreads, m.board_slug, m.date, m.file_id)} compact={compact} /></div>
               {/* WHAT MATTERS, FLAGGED. TJ: "if there is anything in there that is
                   'important' (think, schools, budgets, citizen-facing impact) then lets
                   highlight that. And if there's NOTHING important, we probably need to
