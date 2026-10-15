@@ -2,21 +2,21 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-10-14",
+ "as_of": "2026-10-15",
  "window": {
-  "from": "2026-09-30",
-  "to": "2026-11-11"
+  "from": "2026-10-01",
+  "to": "2026-11-12"
  },
  "counts": {
-  "agendas": 30,
-  "agendas_upcoming": 14,
+  "agendas": 29,
+  "agendas_upcoming": 11,
   "agendas_unreadable": 1,
-  "items": 305,
-  "business_items": 166,
-  "matched_items": 14,
-  "upcoming_business_items": 86,
-  "upcoming_matched_items": 9,
-  "threads_on_an_upcoming_agenda": 4
+  "items": 283,
+  "business_items": 160,
+  "matched_items": 13,
+  "upcoming_business_items": 78,
+  "upcoming_matched_items": 7,
+  "threads_on_an_upcoming_agenda": 3
  },
  "unreadable": [
   {
@@ -27,222 +27,6 @@
   }
  ],
  "meetings": [
-  {
-   "board": "Board of Assessors",
-   "board_slug": "board-of-assessors",
-   "date": "2026-09-30",
-   "file_id": "8043",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8043",
-   "agenda_doc": "/docs/meetings/board-of-assessors/2026-09-30-agenda-8043.pdf",
-   "items": [
-    {
-     "line": "Amended 9/28/2026",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Board",
-     "parent": "",
-     "n": 2,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Public",
-     "parent": "",
-     "n": 3,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Review minutes for Open Meetings and Executive Session of September 9 and September 23, 2026.",
-     "parent": "",
-     "n": 4,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Update on preparations for Classification Hearing",
-     "parent": "",
-     "n": 5,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Vote on Warrant Article to expand Veterans Exemptions to be presented at the November 17th Town Meeting.",
-     "parent": "",
-     "n": 6,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "veterans-exemption",
-       "label": "The veterans property tax exemption",
-       "by": "words"
-      }
-     ]
-    },
-    {
-     "line": "Public",
-     "parent": "",
-     "n": 7,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Board",
-     "parent": "",
-     "n": 8,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": [
-    "veterans-exemption"
-   ]
-  },
-  {
-   "board": "Parks Commission",
-   "board_slug": "parks-commission",
-   "date": "2026-09-30",
-   "file_id": "8037",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8037",
-   "agenda_doc": "/docs/meetings/parks-commission/2026-09-30-agenda-8037.pdf",
-   "items": [
-    {
-     "line": "Open Meeting",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Board & Public Comment",
-     "parent": "",
-     "n": 2,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Facilities Director and Recreation Director Updates",
-     "parent": "",
-     "n": 3,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Town Beach Season Recap",
-     "parent": "",
-     "n": 4,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Budget Check-in",
-     "parent": "",
-     "n": 5,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "LBA – 3rd Annual Spring Fair Date",
-     "parent": "",
-     "n": 6,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Skate Park Update (vote may be taken)",
-     "parent": "",
-     "n": 7,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Discussion – Field Usage Fees",
-     "parent": "",
-     "n": 8,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Discussion Wallis Court Lighting (vote may be taken)",
-     "parent": "",
-     "n": 9,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "MOU for Community Room use between Parks and Library Board of Trustees",
-     "parent": "",
-     "n": 10,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Approval of Meeting Minutes from 8/26/26",
-     "parent": "",
-     "n": 11,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Chair Report",
-     "parent": "",
-     "n": 12,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Upcoming Meeting Dates",
-     "parent": "",
-     "n": 13,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Other Business",
-     "parent": "",
-     "n": 14,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Matters that may legally come before the Commission not known at the time of posting",
-     "parent": "",
-     "n": 15,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Correspondence and Announcements",
-     "parent": "",
-     "n": 16,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Board and Public Comments",
-     "parent": "",
-     "n": 17,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Adjourn",
-     "parent": "",
-     "n": 18,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
   {
    "board": "School Committee",
    "board_slug": "school-committee",
@@ -1357,7 +1141,7 @@
    "date": "2026-10-14",
    "file_id": "8070",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf",
    "items": [
@@ -1475,7 +1259,7 @@
    "date": "2026-10-14",
    "file_id": "8059",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8059",
    "agenda_doc": "/docs/meetings/open-space-committee/2026-10-14-agenda-8059.pdf",
    "items": [
@@ -1551,7 +1335,7 @@
    "date": "2026-10-14",
    "file_id": "8030",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8030",
    "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-14-agenda-8030.pdf",
    "items": [
@@ -1571,7 +1355,7 @@
    "date": "2026-10-14",
    "file_id": "8065",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8065",
    "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-14-agenda-8065.pdf",
    "items": [
@@ -2247,6 +2031,47 @@
    ]
   },
   {
+   "board": "Board of Health",
+   "board_slug": "board-of-health",
+   "date": "2026-10-19",
+   "file_id": "8076",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10192026-8076",
+   "agenda_doc": "/docs/meetings/board-of-health/2026-10-19-agenda-8076.pdf",
+   "items": [
+    {
+     "line": "186 Pleasant St. Offset to Property Line, Offset to Cellar Wall, Inlet & Outlet tees (Tight Tank)",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "507 West Townsend Well Variance, offset to property line",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "322 Flat Hill Bedroom Deed Restriction",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "SEPTIC PERMITS",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
    "board": "Personnel Committee",
    "board_slug": "personnel-committee",
    "date": "2026-10-19",
@@ -2658,44 +2483,6 @@
   }
  ],
  "by_thread": {
-  "veterans-exemption": [
-   {
-    "board": "Board of Assessors",
-    "board_slug": "board-of-assessors",
-    "date": "2026-09-30",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Vote on Warrant Article to expand Veterans Exemptions to be presented at the November 17th Town Meeting.",
-    "parent": "",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8043",
-    "agenda_doc": "/docs/meetings/board-of-assessors/2026-09-30-agenda-8043.pdf"
-   },
-   {
-    "board": "Board of Assessors",
-    "board_slug": "board-of-assessors",
-    "date": "2026-10-14",
-    "body_as_printed": "",
-    "upcoming": true,
-    "line": "Discuss New Information on the Veteran's Exemption Articles.",
-    "parent": "",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
-    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
-   },
-   {
-    "board": "Board of Assessors",
-    "board_slug": "board-of-assessors",
-    "date": "2026-10-14",
-    "body_as_printed": "",
-    "upcoming": true,
-    "line": "Review and approve/ deny Senior and Veterans real estate tax exemption applications.",
-    "parent": "",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
-    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
-   }
-  ],
   "tc-passios-site": [
    {
     "board": "Lunenburg Municipal Building Design Committee",
@@ -2760,6 +2547,32 @@
     "by": "words",
     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
     "agenda_doc": "/docs/meetings/school-committee/2026-10-07-agenda-8058.pdf"
+   }
+  ],
+  "veterans-exemption": [
+   {
+    "board": "Board of Assessors",
+    "board_slug": "board-of-assessors",
+    "date": "2026-10-14",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Discuss New Information on the Veteran's Exemption Articles.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
+    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
+   },
+   {
+    "board": "Board of Assessors",
+    "board_slug": "board-of-assessors",
+    "date": "2026-10-14",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Review and approve/ deny Senior and Veterans real estate tax exemption applications.",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142026-8070",
+    "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf"
    }
   ],
   "stormwater-fee": [
