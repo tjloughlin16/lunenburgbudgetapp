@@ -99,10 +99,20 @@ SAID_MAX = 4
 
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
-         finding_figures=None, finding_allow=()):
-    if id not in REG.TOPICS:
+         finding_figures=None, finding_allow=(), draft=None):
+    """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
+    (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
+    only the title and the shelf come from the draft instead of scripts/topics.py."""
+    if draft:
+        title, home = draft['title'], draft['home']
+        if not any(c['id'] == home for c in REG.CATEGORIES):
+            raise ConclusionError('draft %r: home %r is not a category in scripts/topics.py' % (id, home))
+        if title.rstrip().endswith(('?', '.')) or len(title.split()) > 5:
+            raise ConclusionError('draft %r: title %r reads as a sentence' % (id, title))
+    elif id not in REG.TOPICS:
         raise ConclusionError('topic %r is not in scripts/topics.py' % id)
-    title, home, _ = REG.TOPICS[id]
+    else:
+        title, home, _ = REG.TOPICS[id]
     f = _unit(finding, finding_figures, finding_allow, FINDING_MAX, '%s finding' % id)
     if not FACTS[0] <= len(facts) <= FACTS[1]:
         raise ConclusionError('%s: %d facts; a topic holds %d to %d' % ((id, len(facts)) + FACTS))
@@ -142,8 +152,9 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     return dict(
-        id=id, kind='topic', title=title, category=home, path=REG.path(id),
-        shelves=REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
+        id=id, kind='topic', title=title, category=home,
+        path=('/%s/%s' % (home, id)) if draft else REG.path(id),
+        shelves=[home] if draft else REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
         conclusions=list(conclusions), table=table, said=list(said), sources=list(sources),
         full_report=_full(home))
 

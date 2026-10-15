@@ -300,6 +300,25 @@ def score(row, occ, threads_json, today):
                 open_threads=open_t, hot_threads=hot_t)
 
 
+# FIT FOR AUTO-GENERATION, judged BEFORE anything is spent. TJ, 15 October 2026: "the goal is
+# that suggested reports may be auto-generated in 3 months from now ... we need to identify only
+# reports that make sense to auto-generate all the time." Three tests, all mechanical, and each
+# says which way it went. Only a suggestion that passes all three is a `candidate`; the
+# generation records (notes/report-generations/) are what will show whether the tests are right.
+def autogen_fit(row):
+    checks = [
+        ('numbers', bool((row.get('data_in_play_as_heard') or '').strip()),
+         'figures came up', 'no figures came up -- it may not be a numbers question'),
+        ('data', (row.get('data_leads') or 'not established') != 'not established',
+         'a dataset is named for it', 'no dataset named for it yet'),
+        ('recurs', int(row.get('meetings') or 0) >= 2 or bool((row.get('threads') or '').strip()),
+         'it comes back (several meetings, or a thread)', 'raised once, no thread'),
+    ]
+    ok = all(c[1] for c in checks)
+    return dict(fit='candidate' if ok else 'needs a person',
+                checks=[dict(name=n, passed=p, why=y if p else w) for n, p, y, w in checks])
+
+
 def ranked(today):
     """The register's NEW suggestions, scored and sorted, most important first."""
     rows = _csv(OUT)
@@ -309,7 +328,7 @@ def ranked(today):
     out = []
     for r in rows:
         mine = [o for o in occ if o['id'] == r['id']]
-        out.append(dict(r, score=score(r, mine, threads_json, today),
+        out.append(dict(r, score=score(r, mine, threads_json, today), fit=autogen_fit(r),
                         occurrences=sorted(mine, key=lambda o: o['date'], reverse=True)))
     out.sort(key=lambda r: (r['status'] != 'new', -r['score']['total'], r['id']))
     return out

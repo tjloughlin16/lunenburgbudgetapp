@@ -2997,13 +2997,17 @@ def page_suggested(st):
     today = dt.date.today().isoformat()
     rows = SR.ranked(today)
     _r, looked, not_looked, _c, _o = SR.build()
-    new = [r for r in rows if r['status'] == 'new']
+    gens = generations()
+    new = [r for r in rows if r['status'] == 'new' and r['slug'] not in gens]
     have = [r for r in rows if r['status'] == 'exists']
     esc = html.escape
     h = ['<div class="wrap"><div class="row"><div class="grow"><h1>Suggested reports</h1>'
-         '<p class="sub">%d to write, most important first &middot; %d of %d recorded meetings read '
-         'for suggestions &middot; %s</p></div>%s</div>'
-         % (len(new), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
+         '<p class="sub">%d to write, most important first &middot; %d generated &middot; %d of %d recorded '
+         'meetings read for suggestions &middot; %s</p></div>%s</div>'
+         % (len(new), len(gens), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
+    h.append('<div id="served" class="tiny" style="margin-bottom:8px"></div>')
+    h.append(generated_section(gens))
+    h.append('<h2>To write</h2>')
     if not new:
         h.append('<div class="card idle">Nothing to write yet.</div>')
     part_names = [('meetings', 'meetings'), ('boards', 'boards'), ('threads', 'threads'),
@@ -3034,6 +3038,13 @@ def page_suggested(st):
         if (r.get('data_in_play_as_heard') or '').strip():
             h.append('<div class="tiny" style="margin-top:2px">numbers in play, as heard: %s</div>'
                      % esc(r['data_in_play_as_heard']))
+        fit = r['fit']
+        h.append('<div class="tiny" style="margin-top:4px">auto-generation: <span class="pill %s">%s</span> %s</div>'
+                 % ('go' if fit['fit'] == 'candidate' else 'warn', fit['fit'],
+                    ' &middot; '.join(('&#10003; ' if c['passed'] else '&#10007; ') + esc(c['why']) for c in fit['checks'])))
+        h.append('<div style="margin-top:8px"><button class="gen" data-slug="%s">Generate a draft</button> '
+                 '<span class="tiny">an agent drafts it, capped at $%.2f a run; it appears under Generated reports</span></div>'
+                 % (esc(r['slug']), GEN_BUDGET))
         h.append('<details data-k="sr-%s" style="margin-top:6px"><summary class="tiny">every meeting it came up in</summary>'
                  % esc(r['slug']))
         for o in r['occurrences']:
@@ -3066,6 +3077,163 @@ def page_suggested(st):
                 W['years_cap'], W['numbers_in_play']))
     h.append('</div>')
     return ''.join(h)
+
+
+GEN_DIR = os.path.join(ROOT, 'notes', 'report-generations')
+GEN_BUDGET = 3.00   # shown on the button; the cap itself is generate_report.BUDGET_USD
+
+
+def generations():
+    out = {}
+    if os.path.isdir(GEN_DIR):
+        for slug in sorted(os.listdir(GEN_DIR)):
+            p = os.path.join(GEN_DIR, slug, 'generation.json')
+            if os.path.exists(p):
+                try:
+                    out[slug] = json.load(open(p, encoding='utf-8'))
+                except ValueError:
+                    pass
+    return out
+
+
+GEN_PILL = {'queued': 'warn', 'running': 'warn', 'needs-input': 'warn', 'draft-ready': 'go',
+            'blocked': 'no', 'failed': 'no', 'invalid': 'no', 'stopped-at-cap': 'warn'}
+
+
+def generated_section(gens):
+    """GENERATED REPORTS: every trial, with what the agent sent back. The tally at the top is
+    the evidence the three-month goal rests on: how often a draft came back that the machine
+    accepted, and how often the agent judged the KIND of report fit to generate unattended."""
+    esc = html.escape
+    if not gens:
+        return '<h2>Generated reports</h2><div class="card idle tiny">None yet. Press <b>Generate a draft</b> on a report below.</div>'
+    verdicts = collections.Counter(((g.get('result') or {}).get('autogen') or {}).get('verdict', 'none yet') for g in gens.values())
+    passed = sum(1 for g in gens.values() if (g.get('validation') or {}).get('passed'))
+    reviewed = [g for g in gens.values() if g.get('reviews')]
+    agree = sum(1 for g in reviewed if g['reviews'][-1]['verdict'] == ((g.get('result') or {}).get('autogen') or {}).get('verdict'))
+    cost = sum(g.get('cost_usd') or 0 for g in gens.values())
+    h = ['<h2>Generated reports</h2><div class="card tiny"><b>%d</b> trial%s &middot; generator passes the '
+         'page checks: <b>%d</b> &middot; verdict yes <b>%d</b>, with a person <b>%d</b>, no <b>%d</b> &middot; '
+         'reviewed by you <b>%d</b>, agreeing with the agent <b>%d</b> &middot; spent <b>$%.2f</b></div>'
+         % (len(gens), '' if len(gens) == 1 else 's', passed, verdicts['yes'], verdicts['with-a-person'],
+            verdicts['no'], len(reviewed), agree, cost)]
+    order = lambda g: ({'running': 0, 'queued': 0, 'needs-input': 1}.get(g['status'], 2), g.get('requested_at', ''))
+    for slug, g in sorted(gens.items(), key=lambda kv: order(kv[1])):
+        res = g.get('result') or {}
+        run = (g.get('runs') or [{}])[-1]
+        ag = res.get('autogen') or {}
+        v = g.get('validation') or {}
+        h.append('<div class="card"><div class="row"><b class="grow">%s <span class="tiny mono">%s</span></b>'
+                 '<span class="pill %s">%s</span></div>'
+                 % (esc(g['title']), esc(slug), GEN_PILL.get(g['status'], ''), esc(g['status'])))
+        h.append('<div class="tiny" style="margin-top:4px">asked %s &middot; %d run%s &middot; $%.2f &middot; '
+                 'last run: %s tool calls%s%s</div>'
+                 % (esc(g.get('requested_at', '')[:16].replace('T', ' ')), len(g['runs']),
+                    '' if len(g['runs']) == 1 else 's', g.get('cost_usd') or 0, run.get('tool_calls', 0),
+                    (', now: <span class="mono">%s</span>' % esc(run.get('last_action', ''))) if g['status'] == 'running' else '',
+                    (', <b>error</b>: %s' % esc(run.get('error', '')[:300])) if run.get('error') else ''))
+        if res.get('summary'):
+            h.append('<div style="margin-top:6px">%s</div>' % esc(res['summary']))
+        if ag:
+            h.append('<div class="tiny" style="margin-top:6px">auto-generation verdict: <span class="pill %s">%s</span> %s</div>'
+                     % ({'yes': 'go', 'with-a-person': 'warn', 'no': 'no'}.get(ag.get('verdict'), ''),
+                        esc(ag.get('verdict', '')), esc(' · '.join(ag.get('reasons') or []))))
+        if v.get('ran'):
+            h.append('<div class="tiny" style="margin-top:2px">page checks (topic.py, run by us): <b>%s</b>%s</div>'
+                     % ('pass' if v['passed'] else 'fail',
+                        '' if v['passed'] else ' &mdash; <span class="mono">%s</span>' % esc(v.get('error', '')[-300:])))
+        if run.get('changed_outside_its_folder'):
+            h.append('<div class="tiny" style="margin-top:2px;color:#d29922">files changed outside its folder during the '
+                     'run (may be another agent): %s</div>' % esc(', '.join(run['changed_outside_its_folder'][:8])))
+        qs = res.get('open_questions') or []
+        if qs:
+            h.append('<div style="margin-top:8px"><b>Open questions</b></div>')
+            for q in qs:
+                h.append('<div class="tiny" style="margin:3px 0 0 10px">%s<b>%s</b> &mdash; %s</div>'
+                         % ('<span class="pill warn">blocking</span> ' if q.get('blocking') else '',
+                            esc(q['question']), esc(q.get('why', ''))))
+            if g['status'] not in ('running', 'queued'):
+                h.append('<textarea class="ans" data-slug="%s" rows="3" style="width:100%%;margin-top:6px" '
+                         'placeholder="Answer here; the same agent resumes with it"></textarea>'
+                         '<button class="answer" data-slug="%s">Send answers</button>' % (esc(slug), esc(slug)))
+        if g['status'] in ('stopped-at-cap', 'invalid', 'failed') and g.get('session_id'):
+            why = ('Its generator does not pass the page checks: %s' % (v.get('error') or '')[-600:]) if v.get('ran') and not v.get('passed') else ''
+            h.append('<div style="margin-top:8px"><button class="cont" data-slug="%s" data-why="%s">Continue</button> '
+                     '<span class="tiny">resumes the same agent with a fresh $%.2f cap%s</span></div>'
+                     % (esc(slug), esc('Continue where you stopped. ' + why), GEN_BUDGET,
+                        ', and tells it why its generator failed' if why else ''))
+        for key, label in (('gaps', 'Gaps'), ('next_steps', 'Next steps')):
+            items = res.get(key) or []
+            if items:
+                h.append('<details data-k="gen-%s-%s" style="margin-top:6px"><summary class="tiny">%s (%d)</summary>%s</details>'
+                         % (esc(slug), key, label, len(items), ''.join(
+                             '<div class="tiny" style="margin:3px 0 0 10px">%s</div>'
+                             % esc(x if isinstance(x, str) else '%s -- closes: %s' % (x['what'], x['closes'])) for x in items)))
+        if res.get('figures'):
+            h.append('<details data-k="gen-%s-fig" style="margin-top:6px"><summary class="tiny">Figures (%d) and datasets (%d)</summary>%s%s</details>'
+                     % (esc(slug), len(res['figures']), len(res.get('datasets_used') or []),
+                        ''.join('<div class="tiny" style="margin:3px 0 0 10px"><b>%s</b> %s <span class="tag">%s</span> '
+                                '<span class="mono">%s</span></div>' % (esc(f['value']), esc(f['what']), esc(f['kind']), esc(f['source']))
+                                for f in res['figures']),
+                        ''.join('<div class="tiny" style="margin:3px 0 0 10px">dataset: <span class="mono">%s</span> &mdash; %s</div>'
+                                % (esc(d['source']), esc(d['what'])) for d in res.get('datasets_used') or [])))
+        if g['status'] not in ('running', 'queued'):
+            last = (g.get('reviews') or [None])[-1]
+            h.append('<div class="tiny" style="margin-top:8px">Your verdict%s: '
+                     '<button class="review" data-slug="%s" data-v="yes">yes, unattended</button> '
+                     '<button class="review" data-slug="%s" data-v="with-a-person">with a person</button> '
+                     '<button class="review" data-slug="%s" data-v="no">no</button> '
+                     '<input class="rnote" data-slug="%s" placeholder="why (optional)" style="width:40%%"></div>'
+                     % ((' (last: <b>%s</b>%s)' % (esc(last['verdict']), (' &mdash; ' + esc(last['note'])) if last['note'] else ''))
+                        if last else '', esc(slug), esc(slug), esc(slug), esc(slug)))
+        files = [f for f in ('DRAFT.md', 'build.py', 'payload.json')
+                 if os.path.exists(os.path.join(GEN_DIR, slug, f))]
+        if files:
+            h.append('<div class="tiny" style="margin-top:6px">files: %s &middot; <span class="mono">notes/report-generations/%s/</span></div>'
+                     % (' · '.join('<a class="lnk" target="_blank" href="/gen/%s/%s">%s</a>' % (esc(slug), f, f) for f in files), esc(slug)))
+        h.append('</div>')
+    return ''.join(h)
+
+
+GEN_JS = """
+setInterval(function(){
+  if ([...document.querySelectorAll('textarea,input.rnote')].some(t => t.value.trim()) ||
+      document.activeElement && ['TEXTAREA','INPUT'].includes(document.activeElement.tagName)) return;
+  location.reload();
+}, 30000);
+(function(){
+  const served = location.protocol.startsWith('http') && window.DASH_TOKEN;
+  const note = document.getElementById('served');
+  if (!served) {
+    if (note) note.innerHTML = 'Buttons are off: this page was opened from disk. Run <code>bash scripts/status.sh</code> and use http://127.0.0.1:8795/suggested.html';
+    document.querySelectorAll('button.gen,button.answer,button.review,button.cont').forEach(b => b.disabled = true);
+    return;
+  }
+  const post = (path, body) => fetch(path, {method: 'POST', headers: {'Content-Type': 'application/json',
+    'X-Dashboard-Token': window.DASH_TOKEN}, body: JSON.stringify(body)}).then(r => r.json());
+  document.querySelectorAll('button.gen').forEach(b => b.addEventListener('click', () => {
+    if (!confirm('Start an agent drafting "' + b.dataset.slug + '"? It spends up to the cap shown.')) return;
+    b.disabled = true; b.textContent = 'starting...';
+    post('/api/generate', {slug: b.dataset.slug}).then(r => { b.textContent = r.started ? 'started -- it moves up when the page refreshes' : (r.error || 'failed'); });
+  }));
+  document.querySelectorAll('button.cont').forEach(b => b.addEventListener('click', () => {
+    if (!confirm('Resume "' + b.dataset.slug + '"? It spends up to the cap again.')) return;
+    b.disabled = true; b.textContent = 'resuming...';
+    post('/api/answer', {slug: b.dataset.slug, text: b.dataset.why}).then(r => { b.textContent = r.started ? 'resumed' : (r.error || 'failed'); });
+  }));
+  document.querySelectorAll('button.review').forEach(b => b.addEventListener('click', () => {
+    const n = document.querySelector('input.rnote[data-slug="' + b.dataset.slug + '"]');
+    post('/api/review', {slug: b.dataset.slug, verdict: b.dataset.v, note: n ? n.value : ''})
+      .then(r => { b.textContent = r.reviewed ? 'saved' : (r.error || 'failed'); });
+  }));
+  document.querySelectorAll('button.answer').forEach(b => b.addEventListener('click', () => {
+    const t = document.querySelector('textarea.ans[data-slug="' + b.dataset.slug + '"]');
+    if (!t || !t.value.trim()) return;
+    b.disabled = true; b.textContent = 'sending...';
+    post('/api/answer', {slug: b.dataset.slug, text: t.value}).then(r => { b.textContent = r.started ? 'sent -- the agent has resumed' : (r.error || 'failed'); });
+  }));
+})();
+"""
 
 
 def page_backlog(st):
@@ -3436,8 +3604,10 @@ def write(open_it=False):
                          page_backlog(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'backlog.html'), 'w', encoding='utf-8') as fh:
         fh.write(_backlog)
-    _suggested = (shell % ('Suggested reports', '<meta http-equiv="refresh" content="60">', CSS,
-                           page_suggested(st)) + '<script>' + KEEP + '</script>')
+    # NO META REFRESH HERE: it would throw away an answer half typed. GEN_JS reloads every 30s
+    # instead, and skips the reload while any answer box holds text.
+    _suggested = (shell % ('Suggested reports', '', CSS,
+                           page_suggested(st)) + '<script src="/token.js"></script><script>' + KEEP + GEN_JS + '</script>')
     with open(os.path.join(OUT, 'suggested.html'), 'w', encoding='utf-8') as fh:
         fh.write(_suggested)
     _questions = (shell % ('Questions', '<meta http-equiv="refresh" content="60">', CSS,

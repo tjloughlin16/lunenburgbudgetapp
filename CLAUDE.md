@@ -1652,6 +1652,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
+    python3 scripts/generate_report.py --status # AUTO-GENERATION TRIALS: every suggested report an agent drafted, its
+                                                #   status, cost and verdict. Started by the dashboard's Generate button;
+                                                #   the process and what would let it run alone: notes/process/AUTO-GENERATING-REPORTS.md
     bash scripts/status.sh                      # THE INGESTION DASHBOARD: what is running, what is queued,
                                                 #   what is left, and where today's refresh looked. Local,
                                                 #   gitignored, refreshes itself every 20s. --once to just write it
