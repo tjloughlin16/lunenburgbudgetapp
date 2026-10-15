@@ -257,6 +257,64 @@ def build():
     return out, looked, not_looked, cleared, occ
 
 
+# IMPORTANCE: how much a suggested report is worth writing next. TJ, 15 October 2026: "each
+# suggested report has some 'scoring' that factors in how many meetings and threads its
+# related to, how recently it was discussed, etc. sorted by 'importance'."
+#
+# THE WEIGHTS ARE OURS -- a judgement written down so it can be argued with, not a measurement.
+# Each part is capped so no one signal can carry a report on its own, and every part is shown
+# beside the total. It is computed when it is READ, against today's date, never stored in the
+# register: recency changes daily, and a tracked file that changed daily could never pass its
+# own --check.
+WEIGHTS = dict(
+    per_meeting=10, meetings_cap=50,          # each meeting that raised it
+    per_extra_board=6, boards_cap=18,         # each board beyond the first: it crosses bodies
+    per_thread=8, per_hot_thread=6, threads_cap=28,   # an open thread it would serve; more if hot
+    recency=25, half_life_days=180,           # 25 points if raised today, halving every 6 months
+    per_extra_year=2, years_cap=8,            # each further fiscal year it came back in
+    numbers_in_play=5,                        # figures were in play: there is something to lay out
+)
+
+
+def score(row, occ, threads_json, today):
+    """{total, parts: {name: points}, days_since} for one register row. `occ` is its rows from
+    suggested-reports-meetings.csv; `threads_json` is fy28/public/data/threads.json."""
+    import datetime as _dt
+    W = WEIGHTS
+    tinfo = {t['id']: t for t in (threads_json or {}).get('threads', [])}
+    tids = [x.split(' (')[0] for x in (row.get('threads') or '').split(';') if x.strip()]
+    open_t = [t for t in tids if (tinfo.get(t) or {}).get('status', 'open') == 'open']
+    hot_t = [t for t in open_t if (tinfo.get(t) or {}).get('hot')]
+    days = (_dt.date.fromisoformat(today) - _dt.date.fromisoformat(row['last'])).days
+    years = {o['fiscal_year'] for o in occ}
+    parts = {
+        'meetings': min(W['per_meeting'] * int(row['meetings']), W['meetings_cap']),
+        'boards': min(W['per_extra_board'] * max(len([b for b in row['boards'].split(';') if b]) - 1, 0),
+                      W['boards_cap']),
+        'threads': min(W['per_thread'] * len(open_t) + W['per_hot_thread'] * len(hot_t), W['threads_cap']),
+        'recency': round(W['recency'] * 0.5 ** (max(days, 0) / W['half_life_days']), 1),
+        'years': min(W['per_extra_year'] * max(len(years) - 1, 0), W['years_cap']),
+        'numbers': W['numbers_in_play'] if (row.get('data_in_play_as_heard') or '').strip() else 0,
+    }
+    return dict(total=round(sum(parts.values()), 1), parts=parts, days_since=days,
+                open_threads=open_t, hot_threads=hot_t)
+
+
+def ranked(today):
+    """The register's NEW suggestions, scored and sorted, most important first."""
+    rows = _csv(OUT)
+    occ = _csv(MEETINGS_OUT)
+    tj = os.path.join(ROOT, 'fy28', 'public', 'data', 'threads.json')
+    threads_json = json.load(open(tj, encoding='utf-8')) if os.path.exists(tj) else {}
+    out = []
+    for r in rows:
+        mine = [o for o in occ if o['id'] == r['id']]
+        out.append(dict(r, score=score(r, mine, threads_json, today),
+                        occurrences=sorted(mine, key=lambda o: o['date'], reverse=True)))
+    out.sort(key=lambda r: (r['status'] != 'new', -r['score']['total'], r['id']))
+    return out
+
+
 def fiscal_year(date):
     """Massachusetts fiscal year of a meeting date: FY2027 runs 1 July 2026 to 30 June 2027."""
     y, mo = int(date[:4]), int(date[5:7])
