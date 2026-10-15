@@ -35,6 +35,7 @@ import glob
 import io
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -196,7 +197,7 @@ def jobs():
     state = {}
     for p in glob.glob(os.path.join(E.OUT, '*', '*.json')):
         k = os.path.relpath(p, E.OUT)[:-5]
-        state[k] = 2 if '"schema": 2' in open(p, encoding='utf-8').read() else 1
+        state[k] = 2 if bool(re.search(r'"schema": [2-9]\b', open(p, encoding='utf-8').read())) else 1
     todo = []
     for e in E.minutes_files():
         st = state.get('%s/%s-%s' % (e['board_slug'], e['date'], e['docid']))

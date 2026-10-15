@@ -90,7 +90,7 @@ def official_structured():
     official_votes_only() so the dual state is visible (TJ, 6 October 2026)."""
     import extract_official_votes as E
     files = E.minutes_files()
-    state = {os.path.relpath(p, E.OUT)[:-5]: ('"schema": 2' in open(p, encoding='utf-8').read())
+    state = {os.path.relpath(p, E.OUT)[:-5]: (bool(re.search(r'"schema": [2-9]\b', open(p, encoding='utf-8').read())))
              for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
     done, todo = [], []
     for e in files:
@@ -107,7 +107,7 @@ def official_structured():
 def official_votes_only():
     """(read for votes only, never read) -- the two kinds inside the structured stream's todo."""
     import extract_official_votes as E
-    have = {os.path.relpath(p, E.OUT)[:-5]: ('"schema": 2' in open(p, encoding='utf-8').read())
+    have = {os.path.relpath(p, E.OUT)[:-5]: (bool(re.search(r'"schema": [2-9]\b', open(p, encoding='utf-8').read())))
             for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
     v1 = sum(1 for k, v2 in have.items() if not v2)
     return v1
@@ -283,6 +283,41 @@ def fincom_tasks():
     return build_fincom_tasks.stream()
 
 
+def suggested_reports():
+    """SUGGESTED REPORTS, from sources/data/suggested-reports.csv (build_suggested_reports.py),
+    ranked by how many meetings each came up in. TJ, 15 October 2026: "bring that into the
+    backlog as a new SUGGESTED REPORTS section that pulls from it." It is a list of writing
+    work for a person, not a metered stream, so it sits beside the table, not in it."""
+    import build_suggested_reports as SR
+    rows = SR._csv(SR.OUT)
+    _rows, looked, not_looked, _ = SR.build()
+    out = ['\n## Suggested reports\n\n',
+           'Reports the discussion at a meeting showed a need for, merged across meetings in '
+           '`sources/data/suggested-reports.csv` and ranked by the number of meetings. **%d of %d** '
+           'recorded meetings have been read for suggestions; the rest were written before the field '
+           'existed (15 October 2026) and were never asked -- not "none suggested". `data leads` are '
+           'file names sharing a word with the title: a place to start, not a finding.\n\n'
+           % (looked, looked + not_looked)]
+    new = [r for r in rows if r['status'] == 'new']
+    have = [r for r in rows if r['status'] == 'exists']
+    if not rows:
+        out.append('*None yet.*\n')
+        return ''.join(out)
+    if not new:
+        out.append('*No new report suggested yet -- every suggestion so far names a page that exists.*\n')
+    else:
+        out.append('| meetings | suggested report | the question | boards | last | data leads |\n|---:|---|---|---|---|---|\n')
+    for r in new[:40]:
+        out.append('| %s | **%s** `%s` | %s | %s | %s | %s |\n' % (
+            r['meetings'], r['title'], r['slug'], r['question'].replace('|', '/'),
+            r['boards'].replace(';', ', '), r['last'], r['data_leads'].replace(';', ', ')))
+    if have:
+        out.append('\n**Would have helped, and the page exists** -- %d page(s) a meeting asked for: %s.\n' % (
+            len(have), '; '.join('[%s](%s) (%s meeting%s)' % (r['title'], r['exists_at'], r['meetings'],
+                                                              '' if r['meetings'] == '1' else 's') for r in have[:30])))
+    return ''.join(out)
+
+
 def main():
     streams = [
         ('Captions for recordings', 'fetch_youtube_transcripts.py — free, throttled by YouTube; run_transcript_backfill.sh sweeps the last two years across every board, then the rest; the refresh takes 12 a day', transcripts()),
@@ -345,6 +380,7 @@ def main():
     # extracts are counted as outstanding when one has been REPLACED and the other is
     # largely noise, and a backlog that counts either as work to do is lying about its
     # own size.
+    b.write(suggested_reports())
     b.write(_superseded())
     b.write('\n**Not in any stream, by choice:** conclusions on the finance pages are a '
             'per-owner writing job rather than a batch. Minutes-writing is NOT in this '

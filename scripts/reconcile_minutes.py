@@ -155,6 +155,108 @@ def structured_official(off_path, sha):
     return d
 
 
+# DOCUMENTS AND EXHIBITS: the recording against the town's list. 15 October 2026.
+#
+# NO MODEL CALL. The comparison is a name match, run at build time over whatever both files
+# hold today, so it works in either order -- ours first and the town's weeks later, or the
+# reverse -- and costs nothing to redo when either side arrives. It is a STRING match between
+# a title as the captions heard it and a title as the clerk printed it, so it can miss a
+# document named two different ways. It is a place to look, never a finding that the
+# minutes omit something (rule 8: a comparison, not an accusation).
+DOC_STOP = set('the and for from with this that our their its about any some all into was were '
+               'document documents meeting minutes copy draft'.split())
+
+
+def doc_words(s):
+    """Significant words, plus each adjacent pair run together, so the captions' "storm
+    water" meets the clerk's "Stormwater"."""
+    ws = [w for w in re.findall(r'[a-z0-9]+', (s or '').lower().replace('’', "'"))]
+    # A WORD IS ITS FIRST FIVE LETTERS, a crude stem: "photographs" and "Photos" are one
+    # word to this test, and so are "plan" and "plans". A run-together pair is cut to
+    # eight, so the captions' "storm water" and the clerk's "Stormwater" both read "stormwat".
+    out = {w if w.isdigit() else w[:5] for w in ws if (len(w) >= 3 or w.isdigit()) and w not in DOC_STOP}
+    out |= {(a + b)[:8] for a, b in zip(ws, ws[1:]) if len(a + b) >= 6 and not (a + b).isdigit()}
+    return out
+
+
+def doc_score(heard, printed):
+    """How plausibly two names name one document: 0, or the number of shared words. Needs
+    two shared words (or every word of a one-word name), and either three shared or at
+    least 40% of the heard name's words."""
+    a, b = doc_words(heard), doc_words(printed)
+    if not a or not b:
+        return 0
+    n = len(a & b)
+    # The denominator counts the heard name's WORDS, not the run-together pairs, so the
+    # pairs can find a match without making every name look longer than it is.
+    words = len([w for w in re.findall(r'[a-z0-9]+', (heard or '').lower())
+                 if (len(w) >= 3 or w.isdigit()) and w not in DOC_STOP]) or 1
+    if n < min(2, words):
+        return 0
+    return n if (n >= 3 or n / words >= 0.4) else 0
+
+
+def official_read_for(m):
+    """The structured read of the town's minutes for our meeting `m`, at whatever schema it
+    has, or None: there are no official minutes, or they have not been read."""
+    import extract_official_votes as E
+    off_path, _ = official_for(m)
+    if not off_path:
+        return None
+    mt = re.search(r'(\d{4}-\d{2}-\d{2})-minutes-(\w+)\.txt$', off_path)
+    if not mt:
+        return None
+    p = os.path.join(E.OUT, os.path.basename(os.path.dirname(off_path)), '%s-%s.json' % mt.groups())
+    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else None
+
+
+DOC_STATUS = {'list': 'in the minutes’ list',
+              'text': 'named in the minutes’ text, not in a list',
+              None: 'mentioned in the recording, not found in the minutes'}
+
+
+def compare_documents(m):
+    """{recording, minutes_published, minutes, compared, unheard} for our meeting `m`, or None
+    when neither side was ever looked at. Each side is None when it was never LOOKED FOR --
+    which is not the same as an empty list, and must not render as one."""
+    import extract_official_votes as E
+    rec = (m.get('minutes') or {}).get('documents_mentioned')   # None = not looked for
+    off = official_read_for(m)
+    has_minutes = official_for(m)[0] is not None
+    read = E.docs_read(off) if off else None
+    out = {'recording': rec, 'minutes_published': has_minutes,
+           'minutes': None if read is None else {
+               'printed': read['printed'], 'heading': read['heading'],
+               'listed': [{'name': x['name'], 'quote': x['quote']} for x in read['listed']],
+               'in_text': [{'name': x['name'], 'quote': x['quote']} for x in read['in_text']],
+               'doc_url': off['source'].get('doc_url'), 'minutes_url': off['source'].get('minutes_url')},
+           'compared': None, 'unheard': None}
+    if rec is None and read is None:
+        return None          # neither side was ever asked: the page says "not yet looked for"
+    if rec is None or read is None:
+        return out
+    used = set()
+    comp = []
+    for d in rec:
+        # THE BEST-SCORING printed name, list before text on a tie. One printed item may
+        # answer several heard ones: the captions often name one deck twice.
+        hit, best = None, 0
+        for i, x in enumerate(read['listed'] + read['in_text']):
+            sc = doc_score(d.get('name_as_heard'), x.get('name'))
+            if sc > best:
+                hit, best = (i, x), sc
+        where = hit and hit[1].get('where')
+        if hit:
+            used.add(hit[0])
+        comp.append({'t': d.get('t'), 'name_as_heard': d.get('name_as_heard'), 'kind': d.get('kind'),
+                     'status': DOC_STATUS[where if hit else None],
+                     'found': 'list' if where == 'list' else 'text' if hit else 'none',
+                     'minutes_name': hit[1]['name'] if hit else None})
+    out['compared'] = comp
+    out['unheard'] = [x['name'] for i, x in enumerate(read['listed']) if i not in used]
+    return out
+
+
 def official_for_prompt(d):
     """A schema-2 read, rendered in the same sections as ours_for_prompt, each item with
     the verbatim quote the extractor already checked against the minutes."""

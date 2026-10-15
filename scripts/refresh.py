@@ -1288,6 +1288,9 @@ def run(a, notes, ctx):
         py('build_meeting_register.py')
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')
+        # THE SUGGESTED-REPORTS REGISTER, merged from every minutes file just written. Free:
+        # the suggestions rode on the minutes call; this only groups them.
+        py('build_suggested_reports.py')
         py('build_notices.py')
         # OPEN SEATS BEFORE THE BOARDS, because build_boards.py reads the vacancy counts
         # to put `One open board seat available` on a board's own page. TJ, 22 September

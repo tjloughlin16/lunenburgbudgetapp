@@ -57,6 +57,23 @@ type Minutes = {
   topics: Topic[]
   not_audible: string[]
   confidence: 'high' | 'moderate' | 'low'
+  /** Absent on minutes written before 15 October 2026: not looked for. */
+  documents_mentioned?: DocHeard[]
+  suggested_reports?: Suggested[]
+}
+/** A document or exhibit the captions refer to. The name is a CANDIDATE, as heard. */
+type DocHeard = { t: number; name_as_heard: string; kind: string; shown?: boolean; words_as_heard: string }
+/** A report the discussion shows a need for; `existing` names a page that already answers it. */
+type Suggested = { slug: string; title: string; question: string; t: number; words_as_heard: string; data_in_play: string[]; existing: string }
+type DocPrinted = { name: string; quote: string }
+/** reconcile_minutes.compare_documents. Each side is null when it was NEVER LOOKED FOR --
+ *  which is not an empty list and must not render as one (rule 13c). */
+type Documents = {
+  recording: DocHeard[] | null
+  minutes_published: boolean
+  minutes: { printed: boolean; heading: string; listed: DocPrinted[]; in_text: DocPrinted[]; doc_url?: string; minutes_url?: string } | null
+  compared: { t: number; name_as_heard: string; kind: string; status: string; found: 'list' | 'text' | 'none'; minutes_name: string | null }[] | null
+  unheard: string[] | null
 }
 type TownDoc = { kind: string; url: string; text_url: string; path: string }
 type Finding = { kind: 'agree' | 'caption_error' | 'discrepancy' | 'only_in_ours' | 'only_in_official'; about: string; t?: number; ours: string; official: string; official_reading?: string; note: string }
@@ -66,6 +83,7 @@ type Meeting = {
   slug: string
   digest?: Digest | null
   reconciliation?: Reconciliation | null
+  documents?: Documents | null
   discrepancies?: number
   caption_errors?: number
   board_slug: string
@@ -305,6 +323,71 @@ function Caveat({ warning }: { warning: string }) {
   )
 }
 
+/** DOCUMENTS AND EXHIBITS. The Open Meeting Law, M.G.L. c.30A s.22(a), asks minutes to
+ *  carry "a list of documents and other exhibits used at the meeting". Two columns: what the
+ *  town's minutes print, and what the recording refers to. THREE STATES on each side, and the
+ *  page keeps them apart: not looked for (a file read before 15 October 2026), looked and
+ *  none, and the list. A side never looked at is never drawn as an empty list. */
+function DocumentsAndExhibits({ d, published, u }: { d: Documents | null; published: boolean; u: string }) {
+  const muted = { color: 'var(--text-muted)' }
+  const label = 'text-[10.5px] font-bold uppercase tracking-widest'
+  const town = !published
+    ? <p className="text-sm" style={muted}>The town has not published minutes for this meeting.</p>
+    : !d || d.minutes === null
+      ? <p className="text-sm" style={muted}>Not yet read for a documents list.</p>
+      : <>
+          {d.minutes.printed
+            ? <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>The minutes print a list{d.minutes.heading ? <>, headed <q>{d.minutes.heading}</q></> : null}{d.minutes.listed.length ? ':' : ', with nothing under it.'}</p>
+            : <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>The minutes print no list of documents and exhibits.</p>}
+          {d.minutes.listed.length > 0 && (
+            <ul className="mt-1 list-disc pl-5 space-y-0.5 text-sm">
+              {d.minutes.listed.map((x, i) => <li key={i} title={`“${x.quote}”`}>{x.name}</li>)}
+            </ul>
+          )}
+          {d.minutes.in_text.length > 0 && (
+            <>
+              <p className="text-xs mt-2" style={muted}>Named in the running text, not in a list:</p>
+              <ul className="mt-1 list-disc pl-5 space-y-0.5 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                {d.minutes.in_text.map((x, i) => <li key={i} title={`“${x.quote}”`}>{x.name}</li>)}
+              </ul>
+            </>
+          )}
+        </>
+  const byT = new Map((d?.compared || []).map(c => [c.t + '|' + c.name_as_heard, c]))
+  const heard = !d || d.recording === null
+    ? <p className="text-sm" style={muted}>Not yet looked for in the recording.</p>
+    : d.recording.length === 0
+      ? <p className="text-sm" style={muted}>No document was heard referred to.</p>
+      : <ul className="space-y-1">
+          {d.recording.map((x, i) => {
+            const c = byT.get(x.t + '|' + x.name_as_heard)
+            return (
+              <li key={i} className="text-sm flex flex-wrap gap-x-2 items-baseline">
+                <At url={u} t={x.t} />
+                <span title={`as heard: “${x.words_as_heard}”`}><em>{x.name_as_heard}</em></span>
+                <span className="text-xs" style={muted}>{x.kind}{x.shown ? ', shown' : ''}</span>
+                {c && <span className="text-xs" style={{ color: c.found === 'list' ? 'var(--series-cost)' : 'var(--text-muted)' }}>· {c.status}{c.minutes_name && c.found !== 'none' ? ` (“${c.minutes_name}”)` : ''}</span>}
+              </li>
+            )
+          })}
+        </ul>
+  return (
+    <>
+      <H2>Documents and exhibits</H2>
+      <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-4xl">
+        <div><p className={label} style={muted}>The town&rsquo;s minutes</p><div className="mt-1">{town}</div></div>
+        <div><p className={label} style={muted}>Heard in the recording</p><div className="mt-1">{heard}</div></div>
+      </div>
+      {d && d.unheard && d.unheard.length > 0 && (
+        <p className="text-xs mt-2" style={muted}>In the minutes&rsquo; list and not identified in the recording: {d.unheard.join('; ')}.</p>
+      )}
+      <p className="text-xs mt-2 max-w-3xl" style={muted}>
+        State law asks minutes to list the documents and exhibits used at a meeting (M.G.L. c.30A &sect;22(a)). Names from the recording are the caption model&rsquo;s hearing; the two sides are matched by name, by script, so a document named two different ways can be missed. A place to look, not a finding.
+      </p>
+    </>
+  )
+}
+
 function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dataUrl: string }) {
   const mm = m.minutes
   // THE LINK PREVIEW: the headline and the summary, so a meeting shared on Facebook says
@@ -541,6 +624,8 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
         </>
       )}
 
+      <DocumentsAndExhibits d={m.documents ?? null} published={m.has_official_minutes} u={u} />
+
       {(mm.public_comment || []).length > 0 && (
         <>
           <H2>Public comment</H2>
@@ -603,6 +688,25 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
         : <ul className="list-disc pl-5 space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
             {mm.not_audible.map((x, i) => <li key={i}>{x}</li>)}
           </ul>}
+
+      {mm.suggested_reports && mm.suggested_reports.length > 0 && (
+        <>
+          <H2>Reports this meeting suggests</H2>
+          <p className="text-xs mb-2" style={{ color: 'var(--text-muted)' }}>
+            Our reading of the discussion: questions where numbers were in play and a page laying them out would have helped. Every meeting&rsquo;s suggestions are merged into one register.
+          </p>
+          <ul className="space-y-1.5">
+            {mm.suggested_reports.map((x, i) => (
+              <li key={i} className="text-sm flex flex-wrap gap-x-3 items-baseline">
+                <At url={u} t={x.t} />
+                <span className="font-semibold">{x.title}</span>
+                <span style={{ color: 'var(--text-secondary)' }}>{x.question}</span>
+                {x.existing && <span className="text-xs" style={{ color: 'var(--text-muted)' }}>already answered: <code>{x.existing}</code></span>}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       <Caveat warning={warning} />
       <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>

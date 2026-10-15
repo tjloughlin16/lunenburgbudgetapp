@@ -46,6 +46,12 @@
     "field": "headline",
     "at": "2026-09-12T12:18:47Z",
     "cost_usd": 0.2246104
+   },
+   {
+    "field": "documents_mentioned+suggested_reports",
+    "model": "sonnet",
+    "at": "2026-10-15T10:26:46Z",
+    "cost_usd": 0.2801614
    }
   ]
  },
@@ -276,7 +282,64 @@
    "No numeric vote count given for the adjournment vote, only audible 'ayes'."
   ],
   "confidence": "moderate",
-  "headline": "Finance Committee, minus its chair, deferred nearly every substantive item — transfers, policy review, tri-board revival — to a future meeting."
+  "headline": "Finance Committee, minus its chair, deferred nearly every substantive item — transfers, policy review, tri-board revival — to a future meeting.",
+  "documents_mentioned": [
+   {
+    "t": 395,
+    "name_as_heard": "list of fiscal policies",
+    "kind": "other",
+    "words_as_heard": "Chris had put down a list and I had looked my list that we had talked about.",
+    "shown": false
+   },
+   {
+    "t": 495,
+    "name_as_heard": "draft of a policy book",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "discussing them within that draft of a policy book that we have?",
+    "shown": false
+   },
+   {
+    "t": 1101,
+    "name_as_heard": "town offices space needs surveys",
+    "kind": "other",
+    "words_as_heard": "there were surveys I uh that our chairman uh and the town manager were going to get to us",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stabilization-fund-use",
+    "title": "Stabilization fund use",
+    "question": "When may stabilization accounts be drawn on, and what do they hold?",
+    "t": 748,
+    "words_as_heard": "the stabilization accounts I think that's something uh I don't know enough about the policies for them. When do we draw them out?",
+    "data_in_play": [
+     "fire trucks $2 million"
+    ],
+    "existing": "topic:stabilization-balances"
+   },
+   {
+    "slug": "town-office-space",
+    "title": "Town office space",
+    "question": "What would meeting the town's office space needs cost, and what happens to buildings left empty?",
+    "t": 1080,
+    "words_as_heard": "trying to update what the needs of the town for a town uh offices would be the square footage and people",
+    "data_in_play": [
+     "11,000 square ft of office space",
+     "Ritter building"
+    ],
+    "existing": "thread:brooks-house"
+   },
+   {
+    "slug": "free-cash-policy",
+    "title": "Free cash policy",
+    "question": "What policy governs how free cash is used?",
+    "t": 395,
+    "words_as_heard": "free cash uh the policies on free cash that was something that we wanted to look at",
+    "data_in_play": [],
+    "existing": "topic:free-cash-guideline"
+   }
+  ]
  },
  "reconciliation": {
   "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",

@@ -153,6 +153,7 @@ CHECKS = [
     # whose-input-moved defect in its purest form.
     ('write_recording_minutes.py', ['--check']),
     ('build_recording_minutes.py', ['--check']),
+    ('build_suggested_reports.py', ['--check']),
     # THE NUMBERS FOR THE COMMUNITY. A sharing document is the one most likely to be
     # quoted, so it is generated and this fails the day the archive outgrows it.
     ('build_app_metrics.py', ['--check']),

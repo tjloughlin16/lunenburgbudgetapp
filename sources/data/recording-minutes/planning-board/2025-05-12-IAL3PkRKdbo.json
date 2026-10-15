@@ -37,7 +37,15 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-27T19:35:34Z",
-  "cost_usd": 0.449732
+  "cost_usd": 0.449732,
+  "backfilled": [
+   {
+    "field": "documents_mentioned+suggested_reports",
+    "model": "sonnet",
+    "at": "2026-10-15T10:24:57Z",
+    "cost_usd": 0.50397
+   }
+  ]
  },
  "minutes": {
   "attendees": [
@@ -386,7 +394,66 @@
   ],
   "confidence": "moderate",
   "headline": "Planning Board leans toward minimal 'paper compliance' rezoning of Tritown to meet the state's MBTA housing mandate",
-  "summary": "The board spent most of the meeting on the state-mandated MBTA Communities Act, hearing options from consultant Community Scale and leaning toward using the already-built Tritown (37 Young's Road) complex to satisfy the roughly 240-unit capacity requirement rather than upzoning new land, with public information sessions to follow. It also held public hearings on a scenic-road tree removal (approved) and a five-lot Towns and Harbor Road subdivision's storm water permit, sending the latter to paid peer review and continuing it to June 9, and voted to add a Finance Committee member to the Master Plan Steering Committee."
+  "summary": "The board spent most of the meeting on the state-mandated MBTA Communities Act, hearing options from consultant Community Scale and leaning toward using the already-built Tritown (37 Young's Road) complex to satisfy the roughly 240-unit capacity requirement rather than upzoning new land, with public information sessions to follow. It also held public hearings on a scenic-road tree removal (approved) and a five-lot Towns and Harbor Road subdivision's storm water permit, sending the latter to paid peer review and continuing it to June 9, and voted to add a Finance Committee member to the Master Plan Steering Committee.",
+  "documents_mentioned": [
+   {
+    "t": 381,
+    "name_as_heard": "Nells's MBTA Communities presentation",
+    "kind": "presentation",
+    "words_as_heard": "I have a short presentation that will walk us through what this means, what some of the options are.",
+    "shown": true
+   },
+   {
+    "t": 681,
+    "name_as_heard": "link to Nell's presentation",
+    "kind": "letter or email",
+    "words_as_heard": "I dropped you all an email with a link to Nell's presentation as well.",
+    "shown": true
+   },
+   {
+    "t": 2417,
+    "name_as_heard": "scenic road alteration application (63 Lancaster)",
+    "kind": "application or permit",
+    "words_as_heard": "to hear and review an application for scenic road alteration pursuant to MGL chapter 4015C",
+    "shown": true
+   },
+   {
+    "t": 3364,
+    "name_as_heard": "storm water management permit application, 100 Townsend Harbor Road",
+    "kind": "application or permit",
+    "words_as_heard": "an application for storm water management permit pursuant to 204-1D of the code of the town of Lunenburgg",
+    "shown": true
+   },
+   {
+    "t": 3452,
+    "name_as_heard": "site and drainage plans",
+    "kind": "plan or drawing",
+    "words_as_heard": "could we screen share some version of that plan? Yes.",
+    "shown": true
+   },
+   {
+    "t": 4529,
+    "name_as_heard": "neighbor's photographs",
+    "kind": "other",
+    "words_as_heard": "I have some photographs if they would help you.",
+    "shown": true
+   },
+   {
+    "t": 5882,
+    "name_as_heard": "email from Thomas Kameda",
+    "kind": "letter or email",
+    "words_as_heard": "we do have an email that was asked to be addressed as well.",
+    "shown": false
+   },
+   {
+    "t": 8038,
+    "name_as_heard": "April 28th, 2025 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "Minutes approval for our 428 meeting.",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
  },
  "digest": {
   "what_happened": [

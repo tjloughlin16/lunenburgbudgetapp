@@ -98,6 +98,7 @@ BUDGET_BOARDS = ('school-committee', 'select-board', 'finance-committee')
 
 def schema_for(board_slug):
     """The minutes schema, plus the budget state for a budget board."""
+    _fill_suggested()
     if board_slug not in BUDGET_BOARDS:
         return SCHEMA
     import write_budget_state as BS   # here, not at the top: BS imports this module
@@ -110,18 +111,62 @@ def schema_for(board_slug):
 
 
 def system_for(board_slug):
+    import build_suggested_reports as SR
+    base = SYSTEM + '\n\n' + SR.RULE
     if board_slug not in BUDGET_BOARDS:
-        return SYSTEM
+        return base
     import write_budget_state as BS
-    return SYSTEM + '\n\n=== SECOND TASK, returned as `budget_state` in the same JSON ===\n' + BS.SYSTEM
+    return base + '\n\n=== SECOND TASK, returned as `budget_state` in the same JSON ===\n' + BS.SYSTEM
 
+
+def _fill_suggested():
+    """The `suggested_reports` field is defined beside the register it feeds, and filled in
+    here rather than at import, because that module reads the topic registry."""
+    if SCHEMA['properties']['suggested_reports'] is None:
+        import build_suggested_reports as SR
+        SCHEMA['properties']['suggested_reports'] = SR.FIELD
+        EXTRAS_SCHEMA['properties']['suggested_reports'] = SR.FIELD
+
+
+# DOCUMENTS AND EXHIBITS -- added 15 October 2026, FORWARD ONLY. TJ: "from the transcript,
+# try to identify which documents are mentioned to look for in the official minutes."
+# M.G.L. c.30A s.22(a) requires the town's minutes to list "documents and other exhibits used
+# at the meeting"; what the recording says was used is the thing to look for in that list.
+# Captions mishear titles as readily as figures, so every name here is a CANDIDATE, as heard.
+# A file written before this date has no `documents_mentioned` key: NOT LOOKED FOR, which a
+# reader must never render as an empty list (rule 13c). `[]` means looked, and none heard.
+DOC_KINDS = ['presentation', 'spreadsheet', 'budget document', 'report', 'letter or email',
+             'memo', 'warrant article', 'draft policy or bylaw', 'contract or agreement',
+             'plan or drawing', 'application or permit', 'prior minutes', 'agenda', 'other']
+DOCUMENTS_FIELD = {'type': 'array', 'items': {
+    'type': 'object', 'additionalProperties': False,
+    'required': ['t', 'name_as_heard', 'kind', 'words_as_heard'],
+    'properties': {
+        't': {'type': 'integer', 'description': 'the second the document is first referred to'},
+        'name_as_heard': {'type': 'string', 'description': 'the document as the captions name or describe it ("the FY27 budget presentation", "the letter from DESE"); may be misheard'},
+        'kind': {'type': 'string', 'enum': DOC_KINDS},
+        'shown': {'type': 'boolean', 'description': 'true if the captions make evident it was on screen, handed out, or in the members\' packet'},
+        'words_as_heard': {'type': 'string', 'description': 'the words referring to it, exactly as the captions render them, under 200 characters'},
+    }},
+    'description': 'documents and exhibits referred to or used at the meeting; empty if none'}
+DOCUMENTS_RULE = ("documents_mentioned: every DOCUMENT or EXHIBIT the meeting refers to or uses -- a presentation or slides, "
+                  "a spreadsheet, a budget document, a report, a letter or email, a memo, a warrant article, a draft policy "
+                  "or bylaw, a contract, a plan or drawing, an application, the prior minutes. One entry per document, at "
+                  "the second it is first referred to, named as the captions render it (it may be misheard: do not correct "
+                  "or guess a title), with the referring words exactly as heard. Not the agenda as a running order, and not "
+                  "a subject that is merely discussed -- it must be a document. Empty if none.")
 
 SCHEMA = {
     'type': 'object',
     'additionalProperties': False,
     'required': ['headline', 'summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
-                 'transfers', 'decisions', 'topics', 'not_audible', 'confidence', 'contention'],
+                 'transfers', 'decisions', 'topics', 'not_audible', 'confidence', 'contention',
+                 'documents_mentioned', 'suggested_reports'],
     'properties': {
+        'documents_mentioned': DOCUMENTS_FIELD,
+        # SUGGESTED REPORTS -- 15 October 2026, FORWARD ONLY, same three states as above.
+        # The field, its rule and the register it feeds live in build_suggested_reports.py.
+        'suggested_reports': None,
         'attendees': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
             'required': ['name_as_heard', 'role'],
@@ -239,6 +284,8 @@ Rules, none optional:
 15. headline: the one most consequential thing, first and plainly, under 120 characters -- what a resident who reads nothing else should know.
 14. topics[].tags: one to three tags from the same list for each topic, so time can be summed by subject. A procedural stretch (pledge, adjournment) gets none. "public-comment" means comment from the floor by residents only -- a public interview of a candidate is hiring; a board member speaking is not public comment.
 16. contention: each moment of real CONFLICT -- members openly disagreeing with each other, a speaker accusing or sharply criticising a board, an official or a decision, charged or inflammatory language, raised voices or interruptions the captions make evident, a point of order, a walkout. NOT an ordinary question, a request for clarification, or a split vote by itself. For each: the second it began, what it was about, who took which side BY ROLE (never a name unless stated for the record), and the most charged words EXACTLY as the captions render them. Describe; do not judge who was right. Empty if the meeting had none.
+17. """ + DOCUMENTS_RULE + """
+18. suggested_reports: see SUGGESTED REPORTS below.
 
 Return only the JSON."""
 
@@ -402,8 +449,9 @@ def write_one(entry, docs, force=False):
         return 'too short'
     board = board_name_for(entry['board_slug'])
     video_title = doc.get('title') or ''
-    prompt = ('Meeting: %s, %s. Recording: %s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
-              % (board, entry['date'], doc.get('video_url'), len(lines), '\n'.join(lines)))
+    import build_suggested_reports as SR
+    prompt = ('Meeting: %s, %s. Recording: %s\n\n%s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
+              % (board, entry['date'], doc.get('video_url'), SR.prompt_context(), len(lines), '\n'.join(lines)))
     r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL,
                         '--system-prompt', system_for(entry['board_slug']),
                         '--json-schema', json.dumps(schema_for(entry['board_slug'])),
@@ -465,6 +513,62 @@ def write_one(entry, docs, force=False):
         extra = ' — budget state: %d statements, %d cuts, %d warnings' % (
             len(budget_state.get('statements', [])), len(budget_state.get('cuts', [])), len(budget_state.get('warnings', [])))
     return 'written ($%.3f)%s' % (res.get('total_cost_usd') or 0, extra)
+
+
+# THE TWO FIELDS ADDED 15 OCTOBER 2026, READ ON THEIR OWN for a file written before them.
+# Not run by anything scheduled: a backfill is TJ's decision (CLAUDE.md 7g). It re-reads the
+# captions -- the input is the cost -- but asks for only these two fields, and it leaves
+# every other field of the file, and its source hash, exactly as they were.
+EXTRAS_SCHEMA = {'type': 'object', 'additionalProperties': False,
+                 'required': ['documents_mentioned', 'suggested_reports'],
+                 'properties': {'documents_mentioned': DOCUMENTS_FIELD, 'suggested_reports': None}}
+EXTRAS_SYSTEM = ("""You read machine-generated captions of a public meeting's video, given as lines each prefixed with the time in seconds. Captions mishear numbers and names; write what you cite exactly as the captions render it, and every second you give must come from a line prefix.
+
+Return two fields:
+1. """ + DOCUMENTS_RULE + """
+2. suggested_reports: see below.
+
+""")
+
+
+def extras(entry, force=False):
+    """Add `documents_mentioned` and `suggested_reports` to an existing minutes file."""
+    import build_suggested_reports as SR
+    _fill_suggested()
+    path = out_path(entry)
+    if not os.path.exists(path):
+        return 'no minutes file -- write it first (the full read carries both fields)'
+    m = json.load(open(path, encoding='utf-8'))
+    mm = m['minutes']
+    if 'documents_mentioned' in mm and 'suggested_reports' in mm and not force:
+        return 'current'
+    if m.get('source', {}).get('sha256') != sha256_of(entry['path']):
+        return 'stale -- the transcript changed; rewrite the minutes instead'
+    doc = json.load(open(entry['path'], encoding='utf-8'))
+    lines = lines_for(doc)
+    prompt = ('Meeting: %s, %s.\n\n%s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
+              % (m['board'], m['meeting_date'], SR.prompt_context(), len(lines), '\n'.join(lines)))
+    r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL,
+                    '--system-prompt', EXTRAS_SYSTEM + SR.RULE + '\n\nReturn only the JSON.',
+                    '--json-schema', json.dumps(EXTRAS_SCHEMA), '--output-format', 'json',
+                    '--max-budget-usd', '1'], prompt, 900)
+    if r.returncode != 0:
+        raise SystemExit('claude failed on extras for %s:\n%s' % (path, (r.stdout + r.stderr)[-3000:]))
+    res = json.loads(r.stdout)
+    body = res.get('structured_output') or res.get('result')
+    if isinstance(body, str):
+        body = json.loads(body)
+    mm['documents_mentioned'] = body['documents_mentioned']
+    mm['suggested_reports'] = body['suggested_reports']
+    m['written'].setdefault('backfilled', []).append({
+        'field': 'documents_mentioned+suggested_reports', 'model': MODEL,
+        'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'cost_usd': res.get('total_cost_usd')})
+    if res.get('total_cost_usd') is not None:
+        print('cost $%.4f' % res['total_cost_usd'])
+    atomic_json(path, m, indent=1)
+    return 'extras ($%.3f): %d document(s), %d suggestion(s)' % (
+        res.get('total_cost_usd') or 0, len(body['documents_mentioned']), len(body['suggested_reports']))
 
 
 HEADLINE_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['headline'],
@@ -712,6 +816,16 @@ def check():
                 tt = it.get('t', it.get('t_start'))
                 if not isinstance(tt, int) or tt < 0:
                     print('NO TIME %s: %s item without a second' % (os.path.relpath(f, ROOT), k)); bad += 1
+        # ABSENT IS ALLOWED (written before 15 October 2026: not looked for). PRESENT must be
+        # a list whose every item carries a second and the words it rests on.
+        for k, need in (('documents_mentioned', ('t', 'name_as_heard', 'words_as_heard')),
+                        ('suggested_reports', ('slug', 'title', 't', 'question'))):
+            if k in mm:
+                if not isinstance(mm[k], list):
+                    print('BAD %s %s: not a list' % (k, os.path.relpath(f, ROOT))); bad += 1; continue
+                for it in mm[k]:
+                    if any(x not in it for x in need) or not isinstance(it.get('t'), int) or it['t'] < 0:
+                        print('BAD %s %s: item missing %s' % (k, os.path.relpath(f, ROOT), need)); bad += 1; break
         if m.get('town_published') != docs.get((m['board_slug'], m['meeting_date']), []):
             print('LINKS %s: the town-published documents for this meeting have changed' % os.path.relpath(f, ROOT)); bad += 1
     if not_held:
@@ -762,6 +876,9 @@ def main():
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--retag', action='store_true', help='add topic tags to minutes written before topics carried them')
+    ap.add_argument('--extras', action='store_true',
+                    help='add documents_mentioned and suggested_reports to EXISTING minutes (one call each; '
+                         'name a board and date, or --board with --limit). A backfill: only when TJ asks')
     ap.add_argument('--relink', action='store_true', help="refresh each file's list of the town's own documents for that meeting; no model call")
     a = ap.parse_args()
     if a.check:
@@ -791,6 +908,16 @@ def main():
     elif not a.all:
         ap.error('name a board and date, --board, or --all')
     ts.sort(key=lambda t: t['date'], reverse=True)
+    if a.extras:
+        if not (a.date or a.limit):
+            ap.error('--extras is metered: name a date, or give --limit')
+        ts = [t for t in ts if os.path.exists(out_path(t))]
+        if a.limit:
+            ts = [t for t in ts if a.force or 'suggested_reports' not in
+                  json.load(open(out_path(t), encoding='utf-8'))['minutes']][:a.limit]
+        for t in ts:
+            print('%s %s  %s' % (t['board_slug'], t['date'], extras(t, force=a.force)), flush=True)
+        return 0
     if a.limit and not a.force:
         # The limit is a budget of WORK, not of rows: a meeting whose minutes are already
         # current costs nothing and must not use up a slot. The first batch run this way

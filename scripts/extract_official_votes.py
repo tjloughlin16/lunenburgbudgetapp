@@ -86,7 +86,18 @@ SCHEMA = {
 #
 # A SUPERSET. `votes` is unchanged in name and shape, so everything that reads a version-1
 # file reads a version-2 file the same way. A v1 file has no `schema` key.
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
+# VERSION 3 (15 October 2026) adds `documents_and_exhibits` and `documents_list`. TJ: "the
+# minutes ingest ... needs to specifically look for a 'list of documents and exhibits'. and
+# list them. If none are found, show the list empty." M.G.L. c.30A s.22(a) requires minutes
+# to carry "a list of documents and other exhibits used at the meeting" -- town counsel said
+# so at the 23 September 2026 Open Meeting Law training (notes/findings/OML-TRAINING-2026-09-23.md).
+#
+# THREE STATES, AND ONLY TWO OF THEM ARE ANSWERS. A file of schema 3 or later with
+# `documents_and_exhibits: []` was LOOKED AT and the minutes name nothing. A file of schema
+# 1 or 2 has no such key: it was never asked, and must never be shown as an empty list --
+# that would be reporting our instrument's silence as the town's (rule 13c). `docs_read()`
+# is the one place that tells them apart.
 
 SYSTEM_V2 = SYSTEM.replace(
     'and listing every VOTE the minutes record.',
@@ -102,6 +113,8 @@ Beyond votes, also record -- each item with its own VERBATIM `quote` (20 to 300 
 - `public_comment`: each speaker in public comment, `speaker` and `stated_role` only as printed, `topic` in a few words.
 - `topics`: each agenda item taken up, in order, with its `resolution` in a few words ("approved", "continued", "no action") and short `tags`.
 - `tags`: a few short subject tags for the whole meeting, in plain words.
+- `documents_list`: whether the minutes print an EXPLICIT list or section of documents and exhibits -- a heading such as "Documents used at meeting:", "DOCUMENTS REFERENCED", "Exhibits", "Handouts:", "List of documents and other exhibits". `printed` true only if such a heading or labelled list is on the page; `heading_as_printed` is that heading copied verbatim (or "" if none). A heading printed with nothing under it is `printed: true` with no listed items.
+- `documents_and_exhibits`: every document or exhibit the minutes name -- a plan, a letter or email, a report, a presentation, a draft policy or bylaw, a warrant article, a spreadsheet, a memo, an application. `name` as printed, with any date or author the minutes give it. `where` is "list" for an item printed under the documents/exhibits heading, and "text" for one only mentioned in running text. An item that is in the list AND discussed in the text is ONE entry with `where: "list"`. Not the agenda or these minutes themselves unless the list names them. Empty list if the minutes name none.
 Record only what the minutes print. A field with nothing in it is an empty list."""
 
 _Q = {'type': 'string', 'description': 'VERBATIM and contiguous from the minutes text'}
@@ -130,11 +143,40 @@ SCHEMA_V2 = {
         'topics': _item(['topic', 'resolution'], topic=_S, resolution=_S,
                         tags={'type': 'array', 'items': _S}),
         'tags': {'type': 'array', 'items': _S},
+        'documents_list': {'type': 'object', 'additionalProperties': False,
+                           'required': ['printed', 'heading_as_printed'],
+                           'properties': {'printed': {'type': 'boolean'},
+                                          'heading_as_printed': {'type': 'string', 'description': 'VERBATIM, or "" if no list is printed'}}},
+        'documents_and_exhibits': _item(['name', 'where'], name=_S,
+                                        where={'type': 'string', 'enum': ['list', 'text']}),
         'note': SCHEMA['properties']['note'],
     },
+    # `required` is set below, so the list of fields is written once.
 }
+SCHEMA_V2['required'] = SCHEMA_V2['required'] + ['documents_list', 'documents_and_exhibits']
 # Every list whose items carry a quote. `check()` and the verifier walk exactly these.
-QUOTED = ('attendees', 'votes', 'decisions', 'budget_items', 'transfers', 'public_comment', 'topics')
+QUOTED = ('attendees', 'votes', 'decisions', 'budget_items', 'transfers', 'public_comment', 'topics',
+          'documents_and_exhibits')
+# Fields whose quote may be short: a name on an attendance line, a title on a documents list.
+SHORT_QUOTES = ('attendees', 'documents_and_exhibits')
+DOCS_SINCE = 3
+
+
+def docs_read(doc):
+    """The documents-and-exhibits reading of one file, or None if it was NEVER LOOKED FOR.
+
+    None is not "none listed": a file read before schema 3 was never asked the question.
+    Otherwise {printed, heading, items, listed, in_text}: `printed` says whether the minutes
+    carry an explicit documents/exhibits section -- the c.30A s.22(a) list -- and `listed`
+    holds only the items under it; `in_text` holds documents named in running text only."""
+    if schema_of(doc) < DOCS_SINCE or 'documents_and_exhibits' not in doc:
+        return None
+    dl = doc.get('documents_list') or {}
+    items = doc.get('documents_and_exhibits') or []
+    return {'printed': bool(dl.get('printed')), 'heading': dl.get('heading_as_printed') or '',
+            'items': items,
+            'listed': [x for x in items if x.get('where') == 'list'],
+            'in_text': [x for x in items if x.get('where') != 'list']}
 
 
 def schema_of(doc):
@@ -210,7 +252,7 @@ def verify_quotes(items, flat, field=None):
     of minutes print one ("PRESENT", "In attendance:") -- an attendee's quote is often
     just a name ("Pauline Roy"), and the 20-character floor built for a vote's quote threw
     out every one of them. Every other field keeps the 20-character floor unchanged."""
-    min_len = 4 if field == 'attendees' else 20
+    min_len = 4 if field in SHORT_QUOTES else 20
     kept, dropped = [], 0
     for v in items:
         q = canon(v.get('quote', ''))
@@ -379,6 +421,22 @@ def extract_one(e, force=False, schema=1, model=None, out_dir=None):
         for field in QUOTED:
             doc[field] = checked[field]
         doc['tags'] = body.get('tags') or []
+        # THE HEADING IS THE TOWN'S WORDS TOO, checked like a quote. A heading the model
+        # reports but the text does not hold is cleared and counted, and `printed` then
+        # rests only on whether any item was kept under it.
+        dl = body.get('documents_list') or {}
+        head = canon(dl.get('heading_as_printed') or '')
+        if head and head not in flat:
+            head = _squashed_span(head, flat) or ''
+            if not head:
+                dropped_by['documents_list_heading'] = 1
+        printed = bool(dl.get('printed')) and (bool(head) or any(
+            x.get('where') == 'list' for x in checked['documents_and_exhibits']))
+        if not printed:
+            # No heading on the page: nothing can have been printed UNDER it.
+            for x in checked['documents_and_exhibits']:
+                x['where'] = 'text'
+        doc['documents_list'] = {'printed': printed, 'heading_as_printed': head if printed else ''}
         doc['dropped_unquoted_by_field'] = {k: v for k, v in dropped_by.items() if v}
     # THE COST, PRINTED WHERE THE SWEEP CAN READ IT. It was already captured from
     # `claude -p --output-format json` and written into this file, and nowhere else --
@@ -391,7 +449,7 @@ def extract_one(e, force=False, schema=1, model=None, out_dir=None):
     import reconcile_minutes as R
     R.atomic_json(path, doc)
     if schema >= 2:
-        return 'wrote v2: %s%s%s ($%.3f)' % (', '.join('%d %s' % (len(checked[f]), f) for f in QUOTED),
+        return 'wrote v%d: %s%s%s ($%.3f)' % (SCHEMA_VERSION, ', '.join('%d %s' % (len(checked[f]), f) for f in QUOTED),
                                              ', dropped %d unquoted' % dropped if dropped else '', rec,
                                              doc['cost_usd'] or 0)
     return 'wrote %d vote(s)%s ($%.3f)' % (len(kept), ', dropped %d unquoted' % dropped if dropped else '', doc['cost_usd'] or 0)
@@ -413,6 +471,18 @@ def check():
                 votes += field == 'votes'
                 if canon(v['quote']) not in flat:
                     bad.append('%s: %s quote not in the minutes: %r' % (p, field, v['quote'][:80]))
+        if schema_of(d) >= DOCS_SINCE:
+            if 'documents_and_exhibits' not in d or 'documents_list' not in d:
+                bad.append('%s: schema %d without the documents fields' % (p, schema_of(d)))
+            else:
+                h = (d['documents_list'] or {}).get('heading_as_printed') or ''
+                if h and canon(h) not in flat:
+                    bad.append('%s: documents heading not in the minutes: %r' % (p, h[:80]))
+                if d['documents_list'].get('printed') is False and any(
+                        x.get('where') == 'list' for x in d['documents_and_exhibits']):
+                    bad.append('%s: an item filed under a documents list the minutes do not print' % p)
+        elif 'documents_and_exhibits' in d:
+            bad.append('%s: documents fields on a schema %d file, which never asked for them' % (p, schema_of(d)))
     if bad:
         sys.exit('official votes: %d problem(s)\n  ' % len(bad) + '\n  '.join(bad))
     print('official votes: %d files, %d votes, every quote verbatim in its minutes' % (n, votes))
@@ -440,8 +510,10 @@ def main():
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
-    ap.add_argument('--schema', type=int, default=1, choices=(1, 2),
-                    help='2 = the whole minutes, structured (re-reads a v1 file); 1 = votes only')
+    ap.add_argument('--schema', type=int, default=1, choices=(1, 2, 3),
+                    help='2 = the whole minutes, structured, at the current version (a v2 file '
+                         'counts as current); 3 = the same read, and a v2 file is re-read to add '
+                         'the documents-and-exhibits list; 1 = votes only')
     ap.add_argument('--model', default=None, help='override VOTES_MODEL for this run')
     ap.add_argument('--out', default=None, help='write here instead of sources/data/official-votes (a pilot)')
     a = ap.parse_args()

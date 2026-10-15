@@ -988,7 +988,7 @@ def streams():
     # official minutes have the schema-2 read; one read for votes only is still to do, and
     # the card says how many of the to-do are that, so the dual state is visible.
     def structured(p):
-        return '"schema": 2' in open(p, encoding='utf-8').read()
+        return bool(re.search(r'"schema": [2-9]\b', open(p, encoding='utf-8').read()))
     v_done, vp = register_split(lambda r: r.get('minutes') == '1', 'official-votes', keep=structured)
     v_any, _ = register_split(lambda r: r.get('minutes') == '1', 'official-votes')
     v_votes_only = v_any - v_done

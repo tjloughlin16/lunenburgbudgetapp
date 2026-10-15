@@ -43,6 +43,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import write_recording_minutes as W  # noqa: E402
+import reconcile_minutes as R  # noqa: E402
 
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json')
 SHARDS = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes')
@@ -255,6 +256,10 @@ def payload():
             'minutes': mm,
             'reconciliation': m.get('reconciliation'),
             'digest': m.get('digest'),
+            # Documents and exhibits: the recording's candidates against the town's list,
+            # matched by name at build time (reconcile_minutes.compare_documents). None when
+            # neither record was ever looked at for them -- NOT an empty list.
+            'documents': R.compare_documents(m),
         })
     items.sort(key=lambda i: (i['date'], i['video_id']), reverse=True)
     boards = {}
