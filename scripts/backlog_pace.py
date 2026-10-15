@@ -71,7 +71,12 @@ def audit(since_utc, now=None):
             # with no cost, and process_meeting stops on three in a row. Counted in guard(),
             # never matched here -- on 7 October one failed read from the run before stopped
             # the next run in its first minute.
-            and r.get('result', 'ok') == 'ok']
+            and r.get('result', 'ok') == 'ok'
+            # ONLY A CALL ABOUT A MEETING CAN OWE A MEETING'S FILE. Other streams log to the same
+            # ledger -- the refresh's own triage agent, with no board and no meeting -- and have
+            # no file here to match. On 14 October one such row (`triage`, no board, no cost)
+            # read as "a paid call with no output" and stopped the paced run for a day.
+            and r.get('board') and r.get('date')]
     # ONE FILE CAN SERVE SEVERAL STEPS. Our minutes are written, then reconciled, in the SAME
     # file (parks-commission 2024-12-18, 7 October: `minutes` then `reconcile`), so a file is
     # spent once PER STREAM, and a recording-minutes file rewritten by a later step still
