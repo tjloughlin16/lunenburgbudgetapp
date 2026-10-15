@@ -342,7 +342,11 @@ def discovered(known):
     return out
 
 
+@once
 def running():
+    # ONCE PER REBUILD. Four callers asked for it separately -- 54 ps/pgrep subprocesses and
+    # ~2.6 s of every rebuild, and launchd rebuilds this page every minute (15 October 2026).
+    # One snapshot of what is running serves the whole page.
     out = []
     for name, pat, what, sleeps in WATCHED:
         try:
@@ -1277,12 +1281,55 @@ def streams():
 BACKLOG_DEPTH = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
 
 
+# THE BACKLOG DEPTH WAS HALF OF EVERY REBUILD -- ~7 s of re-reading every meeting file, every
+# minute, for a count that moves only when a meeting is processed. TJ, 15 October 2026, on the
+# dashboard holding a core: "that need to be optimized". It is cached between rebuilds and
+# recomputed when anything it reads has changed -- the newest modification time of the folders
+# it reads (a new file changes its folder's time) and of the spend ledger -- or after
+# BACKLOG_TTL_S regardless, so an in-place rewrite cannot hold a stale count for long.
+BACKLOG_CACHE = os.path.join(OUT, '.backlog-depth-cache.json')
+BACKLOG_TTL_S = 30 * 60
+
+
+def _backlog_signature():
+    newest = 0.0
+    for root in ('sources/data/official-votes', 'sources/data/recording-minutes',
+                 'sources/meetings/text', 'sources/data/youtube-transcripts'):
+        full = os.path.join(ROOT, root)
+        if not os.path.isdir(full):
+            continue
+        newest = max(newest, os.path.getmtime(full))
+        for d in os.scandir(full):
+            if d.is_dir():
+                newest = max(newest, d.stat().st_mtime)
+    for f in ('sources/data/agentic-spend.csv', 'sources/meetings/index.csv'):
+        full = os.path.join(ROOT, f)
+        if os.path.exists(full):
+            newest = max(newest, os.path.getmtime(full))
+    return newest
+
+
 @once
 def backlog_depth():
+    sig = _backlog_signature()
+    try:
+        c = json.load(open(BACKLOG_CACHE, encoding='utf-8'))
+        if c.get('signature') == sig and time.time() - c.get('at', 0) < BACKLOG_TTL_S:
+            return c['payload']
+    except (OSError, ValueError):
+        pass
     try:
         import build_backlog_depth as B
         jobs, by_year, by_month, by_board = B.gather()
-        return B.payload(jobs, by_year, by_month, by_board, B.unit_costs())
+        payload = B.payload(jobs, by_year, by_month, by_board, B.unit_costs())
+        try:
+            os.makedirs(OUT, exist_ok=True)
+            with open(BACKLOG_CACHE + '.tmp', 'w', encoding='utf-8') as fh:
+                json.dump(dict(signature=sig, at=time.time(), payload=payload), fh)
+            os.replace(BACKLOG_CACHE + '.tmp', BACKLOG_CACHE)
+        except OSError:
+            pass
+        return payload
     except Exception as e:                      # the saved payload is the fallback
         print('backlog depth: live read failed (%s); using the saved payload' % e, file=sys.stderr)
     if not os.path.exists(BACKLOG_DEPTH):
