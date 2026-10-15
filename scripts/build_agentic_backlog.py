@@ -290,31 +290,54 @@ def suggested_reports():
     work for a person, not a metered stream, so it sits beside the table, not in it."""
     import build_suggested_reports as SR
     rows = SR._csv(SR.OUT)
-    _rows, looked, not_looked, _ = SR.build()
+    _rows, looked, not_looked, _, occ = SR.build()
+    by = {}
+    for o in occ:
+        by.setdefault(o['id'], []).append(o)
     out = ['\n## Suggested reports\n\n',
            'Reports the discussion at a meeting showed a need for, merged across meetings in '
-           '`sources/data/suggested-reports.csv` and ranked by the number of meetings. **%d of %d** '
-           'recorded meetings have been read for suggestions; the rest were written before the field '
-           'existed (15 October 2026) and were never asked -- not "none suggested". `data leads` are '
-           'file names sharing a word with the title: a place to start, not a finding.\n\n'
-           % (looked, looked + not_looked)]
-    new = [r for r in rows if r['status'] == 'new']
-    have = [r for r in rows if r['status'] == 'exists']
+           '`sources/data/suggested-reports.csv`, with every meeting each came up in -- its date, '
+           'board, fiscal year, the question as it was asked THEN and the words as heard -- in '
+           '`suggested-reports-meetings.csv`. Ranked by the number of meetings, then by the most '
+           'recent. **%d of %d** recorded meetings have been read for suggestions; the rest were '
+           'written before the field existed (15 October 2026) and were never asked -- not "none '
+           'suggested". `data leads` are file names sharing a word with the title: a place to '
+           'start, not a finding.\n\n' % (looked, looked + not_looked)]
     if not rows:
         out.append('*None yet.*\n')
         return ''.join(out)
+
+    def meetings(r):
+        """One line per raising, newest first. An old raising keeps its own words: TJ, 15
+        October 2026, "suggested reports from 2 years ago are interesting, but should have
+        context"."""
+        lines = []
+        for o in sorted(by.get(r['id'], []), key=lambda o: (o['date'], o['board_slug']), reverse=True):
+            lines.append('  - **%s**, %s (%s): %s%s [watch at %s](%s) · [our minutes](%s)\n' % (
+                o['date'], o['board'], o['fiscal_year'], o['question_then'] or o['title_as_suggested'],
+                (' -- *"%s"*' % o['words_as_heard'].replace('|', '/')) if o['words_as_heard'] else '',
+                o['at'], o['watch_at'], o['our_minutes']))
+        return ''.join(lines)
+
+    order = lambda r: (-int(r['meetings']), [-ord(c) for c in r['last']], r['id'])
+    new = sorted((r for r in rows if r['status'] == 'new'), key=order)
+    have = sorted((r for r in rows if r['status'] == 'exists'), key=order)
+    out.append('### No page answers these yet\n\n')
     if not new:
         out.append('*No new report suggested yet -- every suggestion so far names a page that exists.*\n')
-    else:
-        out.append('| meetings | suggested report | the question | boards | last | data leads |\n|---:|---|---|---|---|---|\n')
     for r in new[:40]:
-        out.append('| %s | **%s** `%s` | %s | %s | %s | %s |\n' % (
-            r['meetings'], r['title'], r['slug'], r['question'].replace('|', '/'),
-            r['boards'].replace(';', ', '), r['last'], r['data_leads'].replace(';', ', ')))
+        span = r['first'] if r['first'] == r['last'] else '%s to %s' % (r['first'], r['last'])
+        out.append('- **%s** `%s` -- %s meeting%s, %s (%s); boards: %s; data leads: %s\n' % (
+            r['title'], r['slug'], r['meetings'], '' if r['meetings'] == '1' else 's', span,
+            r['fiscal_years'].replace(';', ', '), r['boards'].replace(';', ', '),
+            r['data_leads'].replace(';', ', ')))
+        out.append(meetings(r))
     if have:
-        out.append('\n**Would have helped, and the page exists** -- %d page(s) a meeting asked for: %s.\n' % (
-            len(have), '; '.join('[%s](%s) (%s meeting%s)' % (r['title'], r['exists_at'], r['meetings'],
-                                                              '' if r['meetings'] == '1' else 's') for r in have[:30])))
+        out.append('\n### Would have helped, and the page exists\n\n')
+        for r in have[:30]:
+            out.append('- [%s](%s) -- %s meeting%s, last %s\n' % (
+                r['title'], r['exists_at'], r['meetings'], '' if r['meetings'] == '1' else 's', r['last']))
+            out.append(meetings(r))
     return ''.join(out)
 
 

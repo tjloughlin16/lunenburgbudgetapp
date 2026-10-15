@@ -50,6 +50,13 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 OUT = os.path.join(ROOT, 'sources', 'data', 'suggested-reports.csv')
+# ONE ROW PER MEETING A SUGGESTION CAME UP IN. TJ, 15 October 2026: "make sure the suggested
+# reports include relationships to meetings and dates. suggested reports from 2 years ago are
+# interesting, but should have context." So every raising keeps its own date, board, fiscal
+# year, the question AS IT WAS ASKED THEN, the words as heard and where to watch them -- a
+# merged row's single `question` is the latest one, and an old raising must not be read in
+# today's words.
+MEETINGS_OUT = os.path.join(ROOT, 'sources', 'data', 'suggested-reports-meetings.csv')
 MERGES = os.path.join(ROOT, 'sources', 'data', 'suggested-reports-merges.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 THREADS = os.path.join(ROOT, 'sources', 'data', 'threads.csv')
@@ -139,6 +146,7 @@ def build():
     rows = collections.OrderedDict()
     looked = not_looked = 0
     cleared = []
+    occ = []
     for f in sorted(glob.glob(os.path.join(MINUTES, '*', '*.json'))):
         m = json.load(open(f, encoding='utf-8'))
         mm = m.get('minutes') or {}
@@ -164,6 +172,18 @@ def build():
             r['dates'].append(m['meeting_date'])
             r['cites'].append('%s %s %s&t=%ds' % (m['board_slug'], m['meeting_date'], m['video_url'], int(s.get('t') or 0)))
             r['data'] += [d for d in s.get('data_in_play') or [] if d not in r['data']]
+            t = int(s.get('t') or 0)
+            occ.append({
+                'id': key, 'slug': exk.split(':', 1)[1] if exk else slug,
+                'date': m['meeting_date'], 'fiscal_year': fiscal_year(m['meeting_date']),
+                'board_slug': m['board_slug'], 'board': m.get('board') or m['board_slug'],
+                'title_as_suggested': (s.get('title') or '').strip(),
+                'question_then': (s.get('question') or '').strip(),
+                'words_as_heard': (s.get('words_as_heard') or '').strip(),
+                'data_in_play_as_heard': ' | '.join(s.get('data_in_play') or []),
+                'watch_at': '%s&t=%ds' % (m['video_url'], t), 'at': '%d:%02d:%02d' % (t // 3600, t // 60 % 60, t % 60),
+                'our_minutes': '/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
+            })
     out = []
     for key, r in rows.items():
         is_ex = not key.startswith('new:')
@@ -176,22 +196,34 @@ def build():
             'meetings': len(r['meetings']),
             'boards': ';'.join(sorted(r['boards'])),
             'first': min(r['dates']), 'last': max(r['dates']),
+            'fiscal_years': ';'.join(sorted({fiscal_year(d) for d in r['dates']})),
+            'meeting_list': ' | '.join('%s %s' % (d, b) for b, d in sorted(r['meetings'], key=lambda x: x[1], reverse=True)),
             'question': sorted(r['questions'])[-1][1],
             'citations': ' | '.join(sorted(set(r['cites']), reverse=True)),
             'data_in_play_as_heard': ' | '.join(r['data'][:12]),
             'data_leads': ';'.join(leads[:8]) or 'not established',
         })
     out.sort(key=lambda x: (-x['meetings'], x['status'] != 'new', x['id']))
-    return out, looked, not_looked, cleared
+    occ.sort(key=lambda o: (o['id'], o['date'], o['board_slug']), reverse=False)
+    return out, looked, not_looked, cleared, occ
+
+
+def fiscal_year(date):
+    """Massachusetts fiscal year of a meeting date: FY2027 runs 1 July 2026 to 30 June 2027."""
+    y, mo = int(date[:4]), int(date[5:7])
+    return 'FY%d' % (y + 1 if mo >= 7 else y)
 
 
 COLS = ['id', 'slug', 'title', 'status', 'exists_at', 'meetings', 'boards', 'first', 'last',
-        'question', 'citations', 'data_in_play_as_heard', 'data_leads']
+        'fiscal_years', 'meeting_list', 'question', 'citations', 'data_in_play_as_heard', 'data_leads']
+MEETING_COLS = ['id', 'slug', 'date', 'fiscal_year', 'board_slug', 'board', 'title_as_suggested',
+                'question_then', 'words_as_heard', 'data_in_play_as_heard', 'at', 'watch_at',
+                'our_minutes']
 
 
-def render(rows):
+def render(rows, cols=COLS):
     b = io.StringIO()
-    w = csv.DictWriter(b, fieldnames=COLS, lineterminator='\n')
+    w = csv.DictWriter(b, fieldnames=cols, lineterminator='\n')
     w.writeheader()
     for r in rows:
         w.writerow(r)
@@ -202,20 +234,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, looked, not_looked, cleared = build()
-    text = render(rows)
+    rows, looked, not_looked, cleared, occ = build()
+    outs = {OUT: render(rows), MEETINGS_OUT: render(occ, MEETING_COLS)}
     for c in cleared:
         print('  existing page cleared -- ' + c)
     if a.check:
-        have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
-        if have != text:
-            sys.exit('suggested-reports.csv is stale: run scripts/build_suggested_reports.py')
+        for path, text in outs.items():
+            have = open(path, encoding='utf-8').read() if os.path.exists(path) else ''
+            if have != text:
+                sys.exit('%s is stale: run scripts/build_suggested_reports.py' % os.path.basename(path))
         print('suggested reports: %d row(s), current; %d meeting(s) read for suggestions, %d never asked'
               % (len(rows), looked, not_looked))
         return 0
-    tmp = OUT + '.tmp'
-    open(tmp, 'w', encoding='utf-8').write(text)
-    os.replace(tmp, OUT)
+    for path, text in outs.items():
+        tmp = path + '.tmp'
+        open(tmp, 'w', encoding='utf-8').write(text)
+        os.replace(tmp, path)
     print('wrote %s: %d suggestion(s) (%d new, %d would have helped from a page that exists); '
           '%d meeting(s) read for suggestions, %d never asked'
           % (os.path.relpath(OUT, ROOT), len(rows), sum(r['status'] == 'new' for r in rows),

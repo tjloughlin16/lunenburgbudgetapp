@@ -1057,6 +1057,21 @@ GROUPS = [
              'One row per thread: the question a resident is following, which boards touch '
              'it, the match rules that find it in the record, when it was registered, and '
              'whether it has closed and on what vote.'),
+            ('data/suggested-reports.csv',
+             'Reports a meeting’s discussion showed a need for', 2,
+             'One row per suggestion, merged across meetings: the subject, whether a page '
+             'already answers it, how many meetings raised it, first and last date, fiscal '
+             'years, and the meetings by date. Read by a model from our minutes of each '
+             'recording -- a place to start, not a finding.'),
+            ('data/suggested-reports-meetings.csv',
+             'Every meeting a suggested report came up in', 2,
+             'One row per raising: the date, board and fiscal year, the question as it was asked '
+             'THEN, the words as the captions heard them, and the moment in the video. Kept apart '
+             'so a suggestion first raised years ago still carries its own context.'),
+            ('data/suggested-reports-merges.csv',
+             'Suggested reports a person folded together', 2,
+             'Where two suggestions the model named differently are one subject, the line that '
+             'merges them and why.'),
             ('data/threads-declined.csv',
              'Thread candidates that were rejected, and why', 2,
              'The counterpart to threads.csv, kept because a rejected candidate is a '

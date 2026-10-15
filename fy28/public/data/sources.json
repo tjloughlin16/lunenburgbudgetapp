@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "origins": [
   {
    "id": "school",
@@ -55,11 +55,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 59 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 61 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4374 of these 4390 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4390 of these 4406 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -549,6 +549,37 @@
      "count": 497,
      "unit": "rows",
      "textUrl": "/docs/state-dese/district-spending-categories.csv"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
+   "id": "census-school-finance",
+   "origin": "us-census",
+   "title": "School finances, the federal definition — the Census Bureau",
+   "blurb": "The Annual Survey of School System Finances: every public school system in the country, with capital outlay and interest on debt as items of their own. A THIRD MEASURE beside DESE’s per-pupil figure and net school spending, with its own rules -- it counts instructional equipment as capital, where DESE counts it as operating. Amounts are in thousands of dollars.",
+   "items": [
+    {
+     "path": "state-census/census-elsec24.xlsx",
+     "title": "School system finances, every district, FY2024",
+     "stars": 1,
+     "what": "One row per school system: current spending, capital outlay by kind, interest on debt and fall membership. Lunenburg is a dependent school system of the town; Monty Tech is an independent regional district. Read by scripts/per_pupil_measures.py for /school-spending/what-per-pupil-counts.",
+     "kind": "Spreadsheet",
+     "bytes": 12639997,
+     "url": "/docs/state-census/census-elsec24.xlsx",
+     "count": 14078,
+     "unit": "rows",
+     "textUrl": "/docs/state-census/census-elsec24.xlsx"
+    },
+    {
+     "path": "state-census/census-school24doc.docx",
+     "title": "Technical documentation, FY2024",
+     "stars": 1,
+     "what": "What every column means, and the notes by state. The Massachusetts notes say how DESE accounts for construction financed by bonds: in the year the principal is repaid, not the year it is built.",
+     "kind": "Document",
+     "bytes": 99693,
+     "url": "/docs/state-census/census-school24doc.docx",
+     "textUrl": "/docs/state-census/census-school24doc.docx"
     }
    ]
   },
@@ -2536,9 +2567,9 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 279823,
+     "bytes": 282334,
      "url": "/docs/data/board-transfers.csv",
-     "count": 453,
+     "count": 457,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
     },
@@ -2932,7 +2963,7 @@
      "stars": 2,
      "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
      "kind": "Data",
-     "bytes": 15161,
+     "bytes": 15440,
      "url": "/docs/data/threads.csv",
      "count": 21,
      "unit": "rows",
@@ -3107,6 +3138,30 @@
      "textUrl": "/docs/data/tax-collection-unreconciled.csv"
     },
     {
+     "path": "data/suggested-reports-meetings.csv",
+     "title": "Every meeting a suggested report came up in",
+     "stars": 2,
+     "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
+     "kind": "Data",
+     "bytes": 2801,
+     "url": "/docs/data/suggested-reports-meetings.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/suggested-reports-meetings.csv"
+    },
+    {
+     "path": "data/suggested-reports.csv",
+     "title": "Reports a meeting’s discussion showed a need for",
+     "stars": 2,
+     "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
+     "kind": "Data",
+     "bytes": 2744,
+     "url": "/docs/data/suggested-reports.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/suggested-reports.csv"
+    },
+    {
      "path": "data/threads-declined.csv",
      "title": "Thread candidates that were rejected, and why",
      "stars": 2,
@@ -3165,6 +3220,16 @@
      "count": 1,
      "unit": "rows",
      "textUrl": "/docs/data/extraction-blocked.csv"
+    },
+    {
+     "path": "data/suggested-reports-merges.csv",
+     "title": "Suggested reports a person folded together",
+     "stars": 2,
+     "what": "Where two suggestions the model named differently are one subject, the line that merges them and why.",
+     "kind": "Data",
+     "bytes": 27,
+     "url": "/docs/data/suggested-reports-merges.csv",
+     "textUrl": "/docs/data/suggested-reports-merges.csv"
     },
     {
      "path": "analyses/charts/towns-like-us-positions.svg",
@@ -4271,9 +4336,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1049221,
+     "bytes": 1049629,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4718,
+     "count": 4720,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -4295,9 +4360,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 592991,
+     "bytes": 593242,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4718,
+     "count": 4720,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -4307,9 +4372,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 456131,
+     "bytes": 456451,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2917,
+     "count": 2919,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -4343,9 +4408,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 244092,
+     "bytes": 246275,
      "url": "/docs/data/money-gaps.csv",
-     "count": 265,
+     "count": 267,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -4868,7 +4933,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 43433984,
+     "bytes": 43409408,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -4878,9 +4943,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3734872,
+     "bytes": 3741639,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7074,
+     "count": 7075,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -5070,9 +5135,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 695126,
+     "bytes": 699035,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10123,
+     "count": 10177,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -5118,9 +5183,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 459722,
+     "bytes": 460068,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2682,
+     "count": 2684,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -5744,9 +5809,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2580621,
+     "bytes": 2581314,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12155,
+     "count": 12158,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -5756,9 +5821,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1779497,
+     "bytes": 1779957,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12198,
+     "count": 12201,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -5972,9 +6037,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 64559,
+     "bytes": 73968,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 21,
+     "count": 23,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -6051,6 +6116,18 @@
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 20732,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 136,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/budget-seasons/fy27.csv",
      "title": "The FY27 budget season as a status board: the gap’s path, the choices, every cut, the override, what took effect",
      "stars": 2,
@@ -6061,18 +6138,6 @@
      "count": 91,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy27.csv"
-    },
-    {
-     "path": "data/meeting-watch-events.csv",
-     "title": "What appeared on the town’s site between one crawl and the next",
-     "stars": 2,
-     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 20083,
-     "url": "/docs/data/meeting-watch-events.csv",
-     "count": 133,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
      "path": "data/school-budget-comparison-fy25.csv",
@@ -6208,6 +6273,18 @@
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
     },
     {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 5803,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 49,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
      "path": "data/health-insurance-law.csv",
      "title": "What Massachusetts law lets a town do about health insurance, and what it forbids",
      "stars": 2,
@@ -6218,18 +6295,6 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/health-insurance-law.csv"
-    },
-    {
-     "path": "data/youtube-watch-events.csv",
-     "title": "What appeared on the town’s YouTube channel between one check and the next",
-     "stars": 2,
-     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
-     "kind": "Data",
-     "bytes": 5576,
-     "url": "/docs/data/youtube-watch-events.csv",
-     "count": 47,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "data/free-cash-fy26.csv",
@@ -6442,9 +6507,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1017,
+     "bytes": 1048,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 30,
+     "count": 31,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -22536,7 +22601,7 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 40 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 42 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
      "path": "state-dese/603cmr28-special-education-regulations.html",
@@ -22619,6 +22684,26 @@
      "bytes": 6270,
      "url": "/docs/state-dese/dese-curriculum-lunenburg.xlsx",
      "upstream": "https://profiles.doe.mass.edu/curriculum/?topNavId=1&leftNavId=16934&orgtypecode=5&orgcode=01620000"
+    },
+    {
+     "path": "state-dese/dese-eoyr-fy2025-printing-version.xlsx",
+     "title": "DESE End of Year Financial Report, FY2025, printing version — the form districts file, with the instruction for every function code (published as printing-version.xlsx)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 1697537,
+     "url": "/docs/state-dese/dese-eoyr-fy2025-printing-version.xlsx",
+     "upstream": "https://www.doe.mass.edu/finance/accounting/eoy/fy2025/printing-version.xlsx"
+    },
+    {
+     "path": "state-dese/dese-eoyr-fy2025-function-crosswalk.xlsx",
+     "title": "DESE End of Year Report expenditure function to line crosswalk, FY2025 (published as crosswalks.xlsx)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 238209,
+     "url": "/docs/state-dese/dese-eoyr-fy2025-function-crosswalk.xlsx",
+     "upstream": "https://www.doe.mass.edu/finance/accounting/eoy/fy2025/crosswalks.xlsx"
     },
     {
      "path": "state-dese/radar-district-comparison.xlsx",
@@ -22947,8 +23032,30 @@
    "id": "state-law",
    "origin": "state-law",
    "title": "The Open Meeting Law, as the State publishes it",
-   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2915 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
+   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2929 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
    "items": [
+    {
+     "path": "state-law/2026-10-14/603cmr41.html.html",
+     "title": "603 CMR 41.00, Regional School Districts (DESE regulations)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 44349,
+     "url": "/docs/state-law/2026-10-14/603cmr41.html.html",
+     "textUrl": "/docs/state-law/text/603-cmr-41.txt",
+     "upstream": "https://www.doe.mass.edu/lawsregs/603cmr41.html"
+    },
+    {
+     "path": "state-law/2026-10-14/603cmr41.html-section-all.html",
+     "title": "603 CMR 41.00, Regional School Districts, all sections (DESE regulations)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 83738,
+     "url": "/docs/state-law/2026-10-14/603cmr41.html-section-all.html",
+     "textUrl": "/docs/state-law/text/603-cmr-41-all.txt",
+     "upstream": "https://www.doe.mass.edu/lawsregs/603cmr41.html?section=all"
+    },
     {
      "path": "state-law/2026-10-08/new-oml-regulations-clean-version.pdf",
      "title": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
@@ -54927,6 +55034,138 @@
      "upstream": "https://www.mass.gov/doc/open-meeting-law-text/download"
     },
     {
+     "path": "state-law/2026-10-15/section2.html",
+     "title": "G.L. c.70 §2, definitions including net school spending (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 90452,
+     "url": "/docs/state-law/2026-10-15/section2.html",
+     "textUrl": "/docs/state-law/text/c70-2.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter70/Section2"
+    },
+    {
+     "path": "state-law/2026-10-14/section14.html",
+     "title": "G.L. c.71 §14, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 74141,
+     "url": "/docs/state-law/2026-10-14/section14.html",
+     "textUrl": "/docs/state-law/text/c71-14.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section14"
+    },
+    {
+     "path": "state-law/2026-10-14/section14a.html",
+     "title": "G.L. c.71 §14A, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 73893,
+     "url": "/docs/state-law/2026-10-14/section14a.html",
+     "textUrl": "/docs/state-law/text/c71-14a.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section14A"
+    },
+    {
+     "path": "state-law/2026-10-14/section14b.html",
+     "title": "G.L. c.71 §14B, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 76229,
+     "url": "/docs/state-law/2026-10-14/section14b.html",
+     "textUrl": "/docs/state-law/text/c71-14b.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section14B"
+    },
+    {
+     "path": "state-law/2026-10-14/section14c.html",
+     "title": "G.L. c.71 §14C, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 74445,
+     "url": "/docs/state-law/2026-10-14/section14c.html",
+     "textUrl": "/docs/state-law/text/c71-14c.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section14C"
+    },
+    {
+     "path": "state-law/2026-10-14/section14d.html",
+     "title": "G.L. c.71 §14D, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 74144,
+     "url": "/docs/state-law/2026-10-14/section14d.html",
+     "textUrl": "/docs/state-law/text/c71-14d.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section14D"
+    },
+    {
+     "path": "state-law/2026-10-14/section15.html",
+     "title": "G.L. c.71 §15, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 75335,
+     "url": "/docs/state-law/2026-10-14/section15.html",
+     "textUrl": "/docs/state-law/text/c71-15.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section15"
+    },
+    {
+     "path": "state-law/2026-10-14/section16.html",
+     "title": "G.L. c.71 §16, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 84310,
+     "url": "/docs/state-law/2026-10-14/section16.html",
+     "textUrl": "/docs/state-law/text/c71-16.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16"
+    },
+    {
+     "path": "state-law/2026-10-14/section16a.html",
+     "title": "G.L. c.71 §16A, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 76456,
+     "url": "/docs/state-law/2026-10-14/section16a.html",
+     "textUrl": "/docs/state-law/text/c71-16a.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16A"
+    },
+    {
+     "path": "state-law/2026-10-14/section16b.html",
+     "title": "G.L. c.71 §16B, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 84717,
+     "url": "/docs/state-law/2026-10-14/section16b.html",
+     "textUrl": "/docs/state-law/text/c71-16b.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16B"
+    },
+    {
+     "path": "state-law/2026-10-14/section16c.html",
+     "title": "G.L. c.71 §16C, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 75117,
+     "url": "/docs/state-law/2026-10-14/section16c.html",
+     "textUrl": "/docs/state-law/text/c71-16c.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16C"
+    },
+    {
+     "path": "state-law/2026-10-14/section16d.html",
+     "title": "G.L. c.71 §16D, regional school districts (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 83390,
+     "url": "/docs/state-law/2026-10-14/section16d.html",
+     "textUrl": "/docs/state-law/text/c71-16d.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16D"
+    },
+    {
      "path": "state-law/2026-10-08/11.06.2024-oml-executive-session-checklist-2024.pdf",
      "title": "OML checklist: executive session (Attorney General, 6 Nov 2024)",
      "stars": 1,
@@ -55041,11 +55280,11 @@
    },
    {
     "name": "Board Of Health",
-    "documents": 497
+    "documents": 498
    },
    {
     "name": "Board Of Assessors",
-    "documents": 495
+    "documents": 497
    },
    {
     "name": "Library Board Of Trustees",
@@ -55225,21 +55464,21 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12205,
-  "fetched": 12155,
-  "agendas": 7467,
-  "minutes": 4738,
+  "listed": 12208,
+  "fetched": 12158,
+  "agendas": 7468,
+  "minutes": 4740,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12157,
+  "textFiles": 12160,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4948,
-  "groups": 25,
-  "bytes": 6403632633,
+  "documents": 4969,
+  "groups": 26,
+  "bytes": 6419388224,
   "loadBearing": 189
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
