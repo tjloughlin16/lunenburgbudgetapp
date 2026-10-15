@@ -1,0 +1,61 @@
+{
+  "posted": null,
+  "about": "Something few residents have seen side by side: what the average home is worth and what its tax bill is in Lunenburg and the towns around it -- the towns it borders, this project's peer towns, and the towns whose schools Lunenburg children attend instead. The surprise: a below-middle home value with one of the higher tax bites. Then the Monty Tech assessment, in dollars of an average bill, as our estimate.",
+  "data": {
+    "m": "app-metrics.json",
+    "hv": "topics/home-value-and-bill.json",
+    "rs": "topics/regional-school-share.json",
+    "leo": "topics/home-value-and-bill.json#table.views[key=borders].rows[label=Leominster]",
+    "har": "topics/home-value-and-bill.json#table.views[key=peers].rows[label=Harvard]",
+    "leon": "towns-like-us.json#destinations[district=Leominster]"
+  },
+  "literal": [],
+  "flare": {
+    "accent": "harbor",
+    "motif": "blocks"
+  },
+  "image": {
+    "layout": "tiles",
+    "size": "square",
+    "headline": "Lunenburg’s tax bill takes {hv.facts[id=eff].value.text} of the home’s value: {hv.finding.figures.b.text}",
+    "emphasis": "{hv.finding.figures.b.text}",
+    "headline_size": 54,
+    "sub": "Among the towns it borders, our peer towns and the towns its children attend school in, {hv.facts[id=bill].label.figures.y.text}. An average single-family bill is no one household’s bill, and towns fund different things.",
+    "tiles": [
+      {
+        "eyebrow": "LUNENBURG",
+        "value": "{hv.facts[id=bill].value.text}",
+        "label": "average bill · {hv.facts[id=eff].value.text} of value",
+        "text": "On an average {hv.facts[id=value].value.text} home: {hv.facts[id=rv].value.text} on value.",
+        "path": "/homes-and-taxes/home-value-and-bill"
+      },
+      {
+        "eyebrow": "LEOMINSTER",
+        "value": "{leo.cells[1]}",
+        "label": "average bill · {leo.cells[2]} of value",
+        "text": "On an average {leo.cells[0]} home. {leon.students} Lunenburg children go to school there.",
+        "path": "/homes-and-taxes/home-value-and-bill"
+      }
+    ],
+    "path": "/homes-and-taxes/home-value-and-bill",
+    "as_of": "As of {m.as_of|short}",
+    "conclusion": "Lunenburg’s average home is worth less than in {hv.conclusions[0].figures.a.text} of the {hv.conclusions[0].figures.b.text} other towns.",
+    "conclusion_em": "{hv.conclusions[0].figures.a.text} of the {hv.conclusions[0].figures.b.text}",
+    "conclusion_size": 44
+  },
+  "text": [
+    "Lunenburg's average home is worth less than in most of the towns around it. Its tax bill takes a bigger share of that home's value than in most of them.",
+    "",
+    "In {hv.facts[id=bill].label.figures.y.text} the average single-family home in Lunenburg was assessed at {hv.facts[id=value].value.text} and its average bill was {hv.facts[id=bill].value.text}: {hv.facts[id=eff].value.text} of the value. We set it beside the towns Lunenburg borders, the peer towns this project compares it with, and the towns whose schools Lunenburg children attend instead. On home value Lunenburg ranks {hv.finding.figures.a.text}. On the bill as a share of value it ranks {hv.finding.figures.b.text}.",
+    "",
+    "For comparison: in Leominster, where {leon.students} Lunenburg children go to school, the average bill was {leo.cells[1]} on a {leo.cells[0]} home ({leo.cells[2]}). In Harvard, home of The Bromfield School, it was {har.cells[1]} on a {har.cells[0]} home, the highest of these towns.",
+    "👉 lburg.org/homes-and-taxes/home-value-and-bill",
+    "",
+    "One more you may not have heard: Lunenburg pays Monty Tech an assessment, like each of its {rs.facts[id=n].value.text} member towns, and it comes out of the same town budget as everything else. In {hv.facts[id=bill].label.figures.y.text} it was {rs.finding.figures.p.text} of the town's tax levy. In proportion, that is about {rs.finding.figures.m.text} of the average bill. That figure is our estimate: state aid pays into the same budget, and nothing published says which money pays which bill.",
+    "👉 lburg.org/homes-and-taxes/regional-school-share",
+    "",
+    "These are averages from the state's Division of Local Services: the average single-family value at the town's rate. No one household's bill, and a lower bill is not a cheaper town, because towns pay for different things.",
+    "",
+    "Which town would you compare Lunenburg to? Tell us in the comments."
+  ]
+}

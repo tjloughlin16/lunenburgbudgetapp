@@ -1008,6 +1008,8 @@ def build():
         finding_figures={'a': P(v1['cip_share']), 'y': F(v1['fy']), 'b': P(vpk['cip_share']),
                          'x': F(vpk['fy']), 'c': P(vlo['cip_share']), 'z': F(vlo['fy'])})
 
+    out.update(compare_pages(f, con, U, P, N, F))
+
     # ------------------------------------------------ the hub
     h = {}
     h['h-pop'] = f('h-pop', PM(pop['estimate'], pop['moe'], 'residents'), 'residents, %s sample' % W,
@@ -1073,6 +1075,280 @@ def build():
     if sorted(k for k in out if k != HUB) != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'
              % sorted(set(MINE) ^ set(out)))
+    return out
+
+
+# --------------------------------------------------------------------- the towns, compared
+#
+# TJ, 15 October 2026: "one of the main goals is how much a home would cost and how much you'd
+# pay in taxes in each of those district towns. And I think the regional aspect of, let's say,
+# Monty Tech gets interesting because we contribute."
+#
+# FOUR SETS, AND WHO CHOSE EACH (rule 3). All are read from towns-like-us.json, which
+# build_town_comparison.py writes:
+#   borders   computed from Census boundary polygons -- a fact;
+#   peers     the five towns THIS PROJECT chose -- ours, and said so on the page;
+#   matched   the twenty towns nearest Lunenburg on measures we picked, given equal weight;
+#   where children go  every district DESE counts Lunenburg residents enrolled in that has a
+#             town's tax bill behind it. A one-town district IS its town; a regional district
+#             is mapped to its member towns only where the payload's `regional_members` names
+#             them. Nashoba, Berlin-Boylston and Ralph C Mahar are not mapped -- nothing held
+#             here states their members (build_town_comparison.py's REGIONAL_MEMBERS says why)
+#             -- so they are counted and named, not guessed. Charters and the virtual schools
+#             have no town behind them. Monty Tech has eighteen, and is the second page.
+
+TAX_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-avg-tax-bill.csv')
+VAL_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-assessed-values.csv')
+RATE_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-tax-rates.csv')
+MTA_CSV = os.path.join(ROOT, 'sources', 'data', 'monty-tech-assessment.csv')
+VBC_CSV = os.path.join(ROOT, 'sources', 'data', 'valuation-by-class.csv')
+CLASSES = ('residential', 'open_space', 'commercial', 'industrial', 'personal_property')
+MT_DOC = ('budget-workbooks/finance-committee/fy26-budget/department-presentations/'
+          'monty-tech-school-fy26-budget-presentation-lunenburg-030625.pdf')
+
+
+def ordinal(n):
+    return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+
+
+def compare_pages(f, con, U, P, N, F):
+    TL = load('towns-like-us.json')
+    MT = load('monty-tech.json')
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+
+    def doc(key, label):
+        if key.split('#')[0] not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        return dict(label=label, href='/docs/' + key)
+
+    def by(path):
+        return {(r['municipality'], int(r['fy'])): r for r in csv.DictReader(open(path, encoding='utf-8'))}
+    bills, vals, rates = by(TAX_CSV), by(VAL_CSV), by(RATE_CSV)
+    # The last fiscal year DLS has a bill for Lunenburg; FY2027 is a blank row until rates are set.
+    fy = max(y for (t, y), r in bills.items() if t == 'Lunenburg' and r['avg_sf_bill'])
+    if fy != TL['fy']:
+        fail('the tax file’s last year (%s) is not towns-like-us.json’s (%s)' % (fy, TL['fy']))
+
+    def home(t):
+        r = bills.get((t, fy))
+        if not r or not r['avg_sf_bill']:
+            fail('no %s average bill for %s' % (C.fy(fy), t))
+        return dict(town=t, bill=float(r['avg_sf_bill']), value=float(r['avg_sf_value']),
+                    eff=float(r['bill_pct_of_value']))
+
+    def levy(t, y):
+        """Our arithmetic: each class's assessed value times its rate per $1,000, summed --
+        the tax recapitulation's own identity, on two DLS files."""
+        r, v = rates.get((t, y)), vals.get((t, y))
+        if not r or not v or r['residential'] == '' or v['total'] == '':
+            fail('no %s value or rate for %s' % (C.fy(y), t))
+        return sum(float(v[c] or 0) * float(r[c] or 0) / 1000 for c in CLASSES)
+
+    # SECOND ROUTE 1: the average bill is the average value at the residential rate. If DLS's
+    # average bill were anything else, this page's description of it would be wrong.
+    for (t, y), r in bills.items():
+        if y == fy and r['avg_sf_bill'] and (t, y) in rates and rates[(t, y)]['residential'] != '':
+            if abs(float(r['avg_sf_bill']) / float(r['avg_sf_value']) * 1000
+                   - float(rates[(t, y)]['residential'])) > 0.05:
+                fail('%s %s: the average bill is not the average value at the residential rate' % (t, C.fy(y)))
+    # SECOND ROUTE 2: the levy we compute ties to the levy Lunenburg's annual reports PRINT,
+    # in every year a TOTALS row was read and checked.
+    tied = 0
+    for r in csv.DictReader(open(VBC_CSV, encoding='utf-8')):
+        if r['label'] == 'TOTALS' and r['status'] == 'checked' and r['tax_levy']:
+            y = int(r['table_fiscal_year'])
+            if abs(levy('Lunenburg', y) - float(r['tax_levy'])) > 1:
+                fail('the computed %s levy does not tie to the annual report’s %s'
+                     % (C.fy(y), r['tax_levy']))
+            tied += 1
+    if tied < 8:
+        fail('only %d annual-report levies to tie the computed levy to' % tied)
+
+    # ------------------------------------------------ the sets
+    roles = TL['map']['roles']
+    of = lambda role: sorted(t for t, r in roles.items() if r == role)
+    borders, peers = of('neighbour'), of('peer')
+    matched = of('structural') + of('behavioural')
+    if (len(borders), len(peers), len(matched)) != (6, 5, 20):
+        fail('the comparison sets changed size; re-read every label on these pages')
+    members = {m['district']: [x['town'] for x in m['members']] for m in TL['regional_members']}
+    norm = lambda d: d.replace(' School District', '').replace('-', ' ').strip()
+    dest, unmapped, no_town = [], [], 0
+    for d in TL['destinations']:
+        if d['kind'] == 'one-town':
+            dest.append((d['district'], d['district'], d['students']))
+        elif d['kind'] == 'regional':
+            ms = members.get(norm(d['district']))
+            if ms:
+                dest += [(t, norm(d['district']), d['students']) for t in ms]
+            else:
+                unmapped.append(d)
+        elif d['kind'] == 'no-town':
+            no_town += d['students']
+        elif d['kind'] == 'assessed' and 'Montachusett' not in d['district']:
+            fail('an assessed destination that is not Monty Tech: %s' % d['district'])
+    goers = {t for t, _, _ in dest}
+    for t in ('Leominster', 'Fitchburg', 'Harvard'):
+        if t not in goers:
+            fail('%s is no longer a district Lunenburg children enrol in; rewrite the page' % t)
+    close = ['Lunenburg'] + sorted(set(borders) | set(peers) | goers)
+    H = {t: home(t) for t in set(close) | set(matched)}
+    n = len(close)
+    rank = lambda k, pool: 1 + sorted((-H[t][k] for t in pool)).index(-H['Lunenburg'][k])
+    rb, rv, re_ = rank('bill', close), rank('value', close), rank('eff', close)
+    L = H['Lunenburg']
+    rm = rank('bill', ['Lunenburg'] + matched)
+    top = max(close, key=lambda t: H[t]['bill'])
+    leo, fit = H['Leominster'], H['Fitchburg']
+    kids = {t: s for t, _, s in dest}
+    POS = lambda r, m: figure(r, '%s of %d' % (ordinal(r), m), 'towns')
+    Y = F(fy)
+    E = lambda v: figure(v, C.pct(v, 2), 'of value')
+    src_tax = doc('state-dls/' + bills[('Lunenburg', fy)]['source_file'],
+                  'Massachusetts DOR, Division of Local Services — Average Single-Family Tax Bill')
+    src_dest = doc('state-dese/dese-residents-sending.xlsx',
+                   'Massachusetts DESE — residents enrolled, by district attended')
+    out = {}
+    out['home-value-and-bill'] = TP.page(
+        'home-value-and-bill',
+        'Lunenburg’s average home ranks %s nearby towns on value but %s on its bill as a share of value.'
+        % (POS(rv, n)['text'], POS(re_, n)['text']),
+        [f('bill', U(L['bill']), 'Lunenburg’s average single-family bill, %s' % C.fy(fy), 'published', {'y': Y}),
+         f('value', U(L['value']), 'Lunenburg’s average single-family value, %s' % C.fy(fy), 'published', {'y': Y}),
+         f('eff', E(L['eff']), 'Lunenburg’s bill as a share of the home’s value', 'published'),
+         f('rb', POS(rb, n), 'nearby and destination towns, by average bill', 'published'),
+         f('rv', POS(rv, n), 'the same towns, by average home value', 'published'),
+         f('re', POS(re_, n), 'the same towns, by bill as a share of value', 'published'),
+         f('top', U(H[top]['bill']), '%s, the highest average bill of them' % top, 'published'),
+         f('leo', U(leo['bill']), 'Leominster’s average bill, on a %s home' % C.usd(leo['value']),
+           'published', {'v': U(leo['value'])}),
+         f('fit', U(fit['bill']), 'Fitchburg’s average bill, on a %s home' % C.usd(fit['value']),
+           'published', {'v': U(fit['value'])}),
+         f('rm', POS(rm, len(matched) + 1), 'with the towns the math matches, by bill', 'published'),
+         f('buys', None, 'what each town buys with its bill', 'gap',
+           closes='each town’s spending by function as filed with DLS (Schedule A), beside its bill')],
+        [con('The average home here is worth less than in %d of the %d other towns; its bill ranks %s.'
+             % (rv - 1, n - 1, ordinal(rb)), ['value', 'rv', 'rb', 'bill'],
+             {'a': N(rv - 1, 'towns'), 'b': N(n - 1, 'towns'), 'c': figure(rb, ordinal(rb), 'rank')}),
+         con('The bill takes %s of the home’s value, %s of %d: a higher rate on a lower value.'
+             % (C.pct(L['eff'], 2), ordinal(re_), n), ['eff', 're'],
+             {'p': E(L['eff']), 'r': figure(re_, ordinal(re_), 'rank'), 'n': N(n, 'towns')},
+             notes=[step('A town’s rate is its levy spread over its total value, so a rate says as '
+                         'much about the business base and the budget as about the homes.', 'hypothesis')]),
+         con('Leominster and Fitchburg border the town and Harvard is our peer; all three enrol '
+             'Lunenburg children.', ['leo', 'fit', 'top'],
+             notes=[step('The peers are this project’s choice. The borders are computed from '
+                         'boundary maps; the destinations are DESE’s count of residents enrolled.', 'gap',
+                         closes='a cohort the town itself names for comparison; none is published')]),
+         con('An average bill is DLS’s average value at the residential rate: no household’s bill.',
+             ['bill', 'value', 'buys'],
+             notes=[step('Any one bill depends on the home’s own value and any exemption it holds, '
+                         'and a lower bill is not a cheaper town: towns fund different things.', 'gap',
+                         closes='the Assessors’ commitment list, by parcel, with exemptions')])],
+        chart=TP.ranking(
+            'Average single-family bill, nearby and destination towns',
+            [(t, H[t]['bill']) for t in close], '$', highlight='Lunenburg',
+            note='DLS Average Single-Family Tax Bill, %s: borders, our peers and the towns behind '
+                 'districts Lunenburg children enrol in.' % C.fy(fy), note_figures={'y': Y}),
+        table=dict(caption='Average single-family value and bill, %s, by comparison set' % C.fy(fy), views=[
+            dict(key=key, label=label, total_col=1, kinds=['ledger', 'ledger', 'ledger'],
+                 columns=['Average home value', 'Average bill', 'Bill as share of value'],
+                 rows=[dict(label=lab(t), cells=[C.usd(H[t]['value']), C.usd(H[t]['bill']),
+                                                 C.pct(H[t]['eff'], 2)])
+                       for t in sorted(['Lunenburg'] + towns, key=lambda t: -H[t]['bill'])],
+                 note=note)
+            for key, label, towns, lab, note in [
+                ('borders', 'Towns it borders', borders, str,
+                 'Computed from Census boundary polygons: every town sharing a border.'),
+                ('peers', 'This project’s peers', peers, str,
+                 'Our choice of comparable towns, not one the town has named.'),
+                ('destinations', 'Where its children enrol', sorted(goers),
+                 lambda t: t if t == 'Lunenburg' else '%s — %s Lunenburg children' % (t, kids[t]),
+                 'DESE’s count of residents enrolled, %s. A regional district’s count is shared by '
+                 'its member towns. Charters, virtual schools and unmapped regionals are left out.'
+                 % C.fy(TL['fy'])),
+                ('matched', 'Towns the math matches', matched, str,
+                 'The twenty towns nearest Lunenburg on measures this project chose, given equal weight.'),
+            ]]),
+        sources=[src_tax, src_dest],
+        finding_figures={'a': POS(rv, n), 'b': POS(re_, n)})
+
+    # ------------------------------------------------ the regional school share
+    mta = {(int(r['fiscal_year']), r['component']): r for r in csv.DictReader(open(MTA_CSV, encoding='utf-8'))}
+    ass = float(mta[(fy, 'total_assessment')]['amount'])
+    req = float(mta[(fy, 'minimum_contribution')]['amount'])
+    mtown = {m['town']: m for m in MT['member_towns']['towns']}
+    if len(mtown) != MT['member_towns']['count'] or 'Lunenburg' not in mtown:
+        fail('monty-tech.json: the member towns are not the count it prints')
+    if mtown['Lunenburg']['rlc26'] != req or fy != 2026:
+        fail('the district’s FY2026 member table and the assessment file disagree on Lunenburg')
+    lev = {t: levy(t, fy) for t in mtown}
+    mbill = {t: home(t)['bill'] for t in mtown}
+    est = {t: mtown[t]['rlc26'] / lev[t] * mbill[t] for t in mtown}
+    share = 100 * ass / lev['Lunenburg']
+    mine = ass / lev['Lunenburg'] * L['bill']
+    lo_t, hi_t = min(est, key=est.get), max(est, key=est.get)
+    rmt = 1 + sorted(-v for v in est.values()).index(-est['Lunenburg'])
+    EST = lambda v: figure(v, C.usd(v), 'of an average bill')
+    src_val = doc('state-dls/' + vals[('Lunenburg', fy)]['source_file'],
+                  'Massachusetts DOR, Division of Local Services — Assessed Values by Class')
+    src_rate = doc('state-dls/' + rates[('Lunenburg', fy)]['source_file'],
+                   'Massachusetts DOR, Division of Local Services — Tax Rates by Class')
+    src_mt = doc(MT_DOC, 'Montachusett Regional Vocational Technical School District — FY2026 '
+                         'budget presentation to Lunenburg')
+    src_mm = doc(MT['member_towns']['docs_url'][len('/docs/'):],
+                 'Montachusett Regional Vocational Technical School District — FY2027 budget, member towns')
+    out['regional-school-share'] = TP.page(
+        'regional-school-share',
+        'Monty Tech’s %s assessment was %s of Lunenburg’s levy: about %s of the average bill, our estimate.'
+        % (C.fy(fy), C.pct(share, 2), C.usd(mine)),
+        [f('ass', U(ass), 'Monty Tech’s assessment on Lunenburg, %s' % C.fy(fy), 'published', {'y': Y}),
+         f('req', U(req), 'the state-required minimum within it', 'published'),
+         f('levy', U(lev['Lunenburg']), 'Lunenburg’s %s tax levy (our arithmetic)' % C.fy(fy),
+           'published', {'y': Y}),
+         f('share', P(share, 2), 'of that levy, the assessment (our arithmetic)', 'published'),
+         f('bill', U(L['bill']), 'Lunenburg’s average single-family bill, %s' % C.fy(fy), 'published', {'y': Y}),
+         f('mine', EST(mine), 'of that bill, in proportion to the assessment', 'estimate'),
+         f('n', N(len(mtown), 'towns'), 'member towns, each assessed by the district', 'published'),
+         f('rmt', POS(rmt, len(mtown)), 'Lunenburg among them, minimum per average bill', 'estimate'),
+         f('hi', EST(est[hi_t]), '%s, the most, on the minimum alone' % hi_t, 'estimate'),
+         f('lo', EST(est[lo_t]), '%s, the least' % lo_t, 'estimate'),
+         f('paid', None, 'what part of the assessment the levy pays', 'gap',
+           closes='nothing assigns it: the tax recapitulation sheet sets every appropriation '
+                  'against the levy, state aid and receipts together')],
+        [con('A member town pays its regional assessment from its own budget, which the levy and state aid fund.',
+             ['ass', 'levy', 'n'],
+             notes=[step('So every town’s average bill already carries its schools, local or '
+                         'regional; no town pays a separate school tax.', 'hypothesis')]),
+         con('The %s assessment was %s of the levy; in proportion, about %s of a %s average bill.'
+             % (C.usd(ass), C.pct(share, 2), C.usd(mine), C.usd(L['bill'])),
+             ['ass', 'share', 'mine', 'bill'],
+             {'a': U(ass), 'p': P(share, 2), 'm': EST(mine), 'b': U(L['bill'])},
+             notes=[step('Our estimate: it assumes the levy pays the assessment in proportion. '
+                         'Chapter 70 and other receipts fund the same budget.', 'gap',
+                         closes='nothing published; the recapitulation sheet shows the levy and '
+                                'every receipt beside the whole budget', allow=('Chapter 70',))]),
+         con('On the minimum alone, member towns range from %s (%s) to %s (%s) of an average bill.'
+             % (C.usd(est[lo_t]), lo_t, C.usd(est[hi_t]), hi_t), ['lo', 'hi', 'rmt', 'req'],
+             {'l': EST(est[lo_t]), 'h': EST(est[hi_t])})],
+        chart=TP.ranking(
+            'Monty Tech minimum, in an average bill',
+            [(t, est[t]) for t in mtown], '$', highlight='Lunenburg', basis='estimate',
+            note='Our estimate: each town’s %s required minimum over its levy, times its average '
+                 'bill. Lunenburg’s whole assessment is higher.' % C.fy(fy), note_figures={'y': Y}),
+        table=dict(caption='Monty Tech member towns, %s: the required minimum against the levy' % C.fy(fy), views=[dict(
+            key='members', label='Largest share first', total_col=4,
+            kinds=['ledger', 'stated', 'stated', 'ledger', 'stated'],
+            columns=['Required minimum', 'Tax levy (ours)', 'Share of levy', 'Average bill', 'Of that bill (ours)'],
+            rows=[dict(label=t, cells=[C.usd(mtown[t]['rlc26']), C.usd(lev[t]),
+                                       C.pct(100 * mtown[t]['rlc26'] / lev[t], 2), C.usd(mbill[t]),
+                                       C.usd(est[t])])
+                  for t in sorted(mtown, key=lambda t: -est[t])],
+            note='Required minimum: the district’s FY2027 budget book, FY2026 column. Levy: DLS '
+                 'assessed values by class times DLS tax rates by class. Transport, capital and '
+                 'anything above the minimum are left out for every town.')]),
+        sources=[src_mt, src_mm, src_val, src_rate, src_tax],
+        finding_figures={'y': Y, 'p': P(share, 2), 'm': EST(mine)})
     return out
 
 

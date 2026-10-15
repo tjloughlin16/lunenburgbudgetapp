@@ -688,6 +688,13 @@ GROUPS = [
              'industrial and personal property value, the total, and the residential and CIP '
              'shares. How big the commercial base IS — a revaluation moves it as much as a '
              'building does, so read it with new_growth.xlsx, which is what was added.'),
+            ('state-dls/taxratesbyclass-2026-10-15-7182dcc4901d.xlsx',
+             'Tax Rates by Class, every municipality, FY2003–FY2026', 3,
+             'DLS Gateway export, fetched by script on 15 October 2026 through ingest.land '
+             '(fetch_dls_tax_rates.py records the exact POST). Per town per year: the rate per '
+             '$1,000 for residential, open space, commercial, industrial and personal property. '
+             'With assessed values by class it gives each town’s total tax levy, which '
+             'nothing else here held for every town.'),
             ('state-dls/health-insurance-expenditures.xlsx',
              'Health insurance expenditures, every municipality, FY2002–FY2026', 3,
              'DLS Gateway export, fetched by script (fetch_dls_property.py): the whole '
@@ -3733,6 +3740,10 @@ GROUPS = [
          'Assessed value by class, eleven towns, FY2002–FY2026', 3,
          'Extracted from the DLS Gateway export in state-dls/, footed to its own totals. '
          'Rebuild with scripts/fetch_dls_property.py.'),
+        ('data/dls-tax-rates.csv',
+         'Tax rates by class, every municipality, FY2003–FY2026', 3,
+         'Extracted from the DLS Gateway export in state-dls/. Rebuild with '
+         'scripts/fetch_dls_tax_rates.py.'),
         ('data/dls-new-growth.csv',
          'New growth, residential and total, eleven towns, FY2003–FY2026', 3,
          'Extracted from the DLS Gateway export in state-dls/, footed to its own shares. '

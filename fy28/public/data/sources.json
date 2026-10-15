@@ -55,7 +55,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 61 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 62 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1445,6 +1445,18 @@
      "count": 235254,
      "unit": "rows",
      "textUrl": "/docs/data/dls-cherry-sheet.csv"
+    },
+    {
+     "path": "state-dls/taxratesbyclass-2026-10-15-7182dcc4901d.xlsx",
+     "title": "Tax Rates by Class, every municipality, FY2003–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script on 15 October 2026 through ingest.land (fetch_dls_tax_rates.py records the exact POST). Per town per year: the rate per $1,000 for residential, open space, commercial, industrial and personal property. With assessed values by class it gives each town’s total tax levy, which nothing else here held for every town.",
+     "kind": "Spreadsheet",
+     "bytes": 364255,
+     "url": "/docs/state-dls/taxratesbyclass-2026-10-15-7182dcc4901d.xlsx",
+     "count": 8801,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/taxratesbyclass-2026-10-15-7182dcc4901d.xlsx"
     },
     {
      "path": "state-dls/health-insurance-expenditures.xlsx",
@@ -4408,9 +4420,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 248216,
+     "bytes": 249039,
      "url": "/docs/data/money-gaps.csv",
-     "count": 269,
+     "count": 270,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -5044,6 +5056,18 @@
      "count": 6930,
      "unit": "rows",
      "textUrl": "/docs/data/dese-function-expenditure.csv"
+    },
+    {
+     "path": "data/dls-tax-rates.csv",
+     "title": "Tax rates by class, every municipality, FY2003–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/. Rebuild with scripts/fetch_dls_tax_rates.py.",
+     "kind": "Data",
+     "bytes": 1351835,
+     "url": "/docs/data/dls-tax-rates.csv",
+     "count": 8800,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-tax-rates.csv"
     },
     {
      "path": "data/dese-ap.csv",
@@ -55476,10 +55500,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4969,
+  "documents": 4971,
   "groups": 26,
-  "bytes": 6419390295,
-  "loadBearing": 189
+  "bytes": 6421107208,
+  "loadBearing": 191
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

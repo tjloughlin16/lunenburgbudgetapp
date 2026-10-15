@@ -728,6 +728,8 @@
       "owners-and-renters",
       "average-tax-bill",
       "tax-bill-neighbours",
+      "home-value-and-bill",
+      "regional-school-share",
       "years-in-the-home",
       "bill-by-deed-year"
      ]
@@ -2203,6 +2205,19 @@
    ],
    "title": "History courses"
   },
+  "home-value-and-bill": {
+   "finding": "Lunenburg’s average home ranks 10th of 15 nearby towns on value but 5th of 15 on its bill as a share of value.",
+   "generator": "scripts/build_homes_and_taxes_topics.py",
+   "home": "homes-and-taxes",
+   "id": "home-value-and-bill",
+   "minutes": 2,
+   "path": "/homes-and-taxes/home-value-and-bill",
+   "ready": true,
+   "shelves": [
+    "homes-and-taxes"
+   ],
+   "title": "Home value and bill"
+  },
   "homes-and-enrolment": {
    "finding": "773 more single-family homes since FY1994; enrolment is 319 below its FY2003 peak.",
    "generator": "scripts/build_homes_and_taxes_topics.py",
@@ -2749,6 +2764,19 @@
     "school-spending"
    ],
    "title": "Regional districts"
+  },
+  "regional-school-share": {
+   "finding": "Monty Tech’s FY2026 assessment was 3.80% of Lunenburg’s levy: about $283 of the average bill, our estimate.",
+   "generator": "scripts/build_homes_and_taxes_topics.py",
+   "home": "homes-and-taxes",
+   "id": "regional-school-share",
+   "minutes": 1,
+   "path": "/homes-and-taxes/regional-school-share",
+   "ready": true,
+   "shelves": [
+    "homes-and-taxes"
+   ],
+   "title": "Regional school share"
   },
   "registration-sales": {
    "finding": "The registration system recorded $47,784 in FY2025, and non-residents paid 50% of it.",
