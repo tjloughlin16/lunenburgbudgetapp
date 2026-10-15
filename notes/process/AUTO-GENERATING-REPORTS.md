@@ -16,15 +16,36 @@ So every generation today is a **trial**, and the point of a trial is its record
    figures came up; a dataset is named for it; it comes back (several meetings, or a thread).
 3. **A person presses Generate** on the dashboard's Suggested reports tab
    (`bash scripts/status.sh`, then http://127.0.0.1:8795/suggested.html).
-4. **An agent drafts it** (`scripts/generate_report.py`): sonnet, capped per run, fenced to
-   `notes/report-generations/<slug>/`, its generator run only inside a sandbox with no network
-   and no writes elsewhere. It must produce `DRAFT.md`, and `build.py`, a generator that
-   writes a topic payload through `scripts/topic.py` (`TP.page(..., draft=...)`).
-5. **We check it by machine.** The runner runs `build.py` itself. Pass means the page met the
-   same rule-2, length, chart and source checks as every published page.
-6. **It reports back** in `generation.json`: status, summary, the auto-generation verdict and
-   its reasons, datasets used, figures with their sources, open questions, gaps, next steps.
-   Open questions are answered on the dashboard; the same session resumes with the answer.
+4. **An agent builds it, in its own copy of the repository** (`scripts/generate_report.py`).
+   Each generation gets a git worktree, `~/lunenburgbudgets-gen/<slug>`, on its own branch
+   `gen/<slug>`. Inside it the agent can do anything a session could -- TJ: *"it should be able
+   to do anything YOU could do ... such as creating a hub in case its a big report"*: register
+   a hub and topics, write generators and extractors, change components, run checks. Sonnet,
+   capped per run; Continue resumes with a fresh cap.
+5. **A fence it cannot talk its way through.** The whole agent process runs under a macOS
+   sandbox: it WRITES only inside its worktree, and cannot READ the Cloudflare credential, ssh
+   keys or the GitHub token -- so no bucket push, no deploy, no D1, no git push, whatever it
+   tries. The runner commits its tree after every run, so its work is in git within seconds.
+6. **We check it by machine.** The agent declares the pages it built and the commands that
+   prove them; the runner runs those itself, in the sandbox, plus the registry check.
+7. **It reports back** in `notes/report-generations/<slug>/generation.json`: status, the
+   verdict and its reasons, pages, checks, datasets, figures, open questions, gaps, the branch
+   and its files. Questions are answered on the dashboard and the same session resumes.
+8. **Review.** Start preview runs the site's dev server from the worktree; every page the
+   agent built is a link. Your verdict is recorded beside the agent's.
+9. **Publish** (`scripts/publish_generation.py`) -- the button is the request to deploy:
+   replay the branch onto main (`git merge-tree`, nothing touched on a conflict), move the
+   tree onto it or REFUSE if that would overwrite anybody's uncommitted work, rebuild the
+   shared index files on main (never carried on the branch), run the checks on main, push
+   without force, then build and deploy -- refused while `fy28/` holds somebody else's
+   uncommitted change. Each page is then fetched from production.
+
+**The refresh's failures, and why they cannot recur here.** It reset its tree each morning
+(nothing here resets, cleans, stashes, checks out, rebases or removes a worktree --
+`check_refresh_safe.py` scans these scripts too); it committed another session's mid-edit
+file (a generation's worktree belongs to one agent, and on main only the paths the publish
+step wrote are committed, under refresh_git's baseline and settle); it pushed to side
+branches when main moved (publish replays onto main or stops and says why).
 
 ## The verdict, and what it means
 
@@ -51,6 +72,5 @@ Not decided yet. These are the measurements to decide it from, all already recor
 
 ## Not built yet, on purpose
 
-- Nothing publishes a draft. A passing `payload.json` is a page in shape, not a page on the
-  site: registering it in `scripts/topic_registry/` stays a person's decision.
+- Nothing publishes on its own. Publish is a person pressing the button.
 - Nothing starts a generation on its own. Unattended runs wait for the evidence above.

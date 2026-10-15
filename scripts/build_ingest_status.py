@@ -3080,7 +3080,7 @@ def page_suggested(st):
 
 
 GEN_DIR = os.path.join(ROOT, 'notes', 'report-generations')
-GEN_BUDGET = 3.00   # shown on the button; the cap itself is generate_report.BUDGET_USD
+GEN_BUDGET = 5.00   # shown on the button; the cap itself is generate_report.BUDGET_USD
 
 
 def generations():
@@ -3096,7 +3096,17 @@ def generations():
     return out
 
 
-GEN_PILL = {'queued': 'warn', 'running': 'warn', 'needs-input': 'warn', 'draft-ready': 'go',
+def preview_port(slug):
+    rec = os.path.join(ROOT, 'build', 'report-generations', '%s.preview' % slug)
+    try:
+        r = json.load(open(rec))
+        os.kill(r['pid'], 0)
+        return r['port']
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+GEN_PILL = {'publishing': 'warn', 'published': 'go', 'publish-failed': 'no', 'published-not-deployed': 'warn', 'queued': 'warn', 'running': 'warn', 'needs-input': 'warn', 'draft-ready': 'go',
             'blocked': 'no', 'failed': 'no', 'invalid': 'no', 'stopped-at-cap': 'warn'}
 
 
@@ -3108,7 +3118,7 @@ def generated_section(gens):
     if not gens:
         return '<h2>Generated reports</h2><div class="card idle tiny">None yet. Press <b>Generate a draft</b> on a report below.</div>'
     verdicts = collections.Counter(((g.get('result') or {}).get('autogen') or {}).get('verdict', 'none yet') for g in gens.values())
-    passed = sum(1 for g in gens.values() if (g.get('validation') or {}).get('passed'))
+    passed = sum(1 for g in gens.values() if g.get('checks') and all(c['exit'] == 0 for c in g['checks']))
     reviewed = [g for g in gens.values() if g.get('reviews')]
     agree = sum(1 for g in reviewed if g['reviews'][-1]['verdict'] == ((g.get('result') or {}).get('autogen') or {}).get('verdict'))
     cost = sum(g.get('cost_usd') or 0 for g in gens.values())
@@ -3122,7 +3132,9 @@ def generated_section(gens):
         res = g.get('result') or {}
         run = (g.get('runs') or [{}])[-1]
         ag = res.get('autogen') or {}
-        v = g.get('validation') or {}
+        chk = g.get('checks') or []
+        bs = g.get('branch_summary') or {}
+        port = preview_port(slug)
         h.append('<div class="card"><div class="row"><b class="grow">%s <span class="tiny mono">%s</span></b>'
                  '<span class="pill %s">%s</span></div>'
                  % (esc(g['title']), esc(slug), GEN_PILL.get(g['status'], ''), esc(g['status'])))
@@ -3138,10 +3150,45 @@ def generated_section(gens):
             h.append('<div class="tiny" style="margin-top:6px">auto-generation verdict: <span class="pill %s">%s</span> %s</div>'
                      % ({'yes': 'go', 'with-a-person': 'warn', 'no': 'no'}.get(ag.get('verdict'), ''),
                         esc(ag.get('verdict', '')), esc(' · '.join(ag.get('reasons') or []))))
-        if v.get('ran'):
-            h.append('<div class="tiny" style="margin-top:2px">page checks (topic.py, run by us): <b>%s</b>%s</div>'
-                     % ('pass' if v['passed'] else 'fail',
-                        '' if v['passed'] else ' &mdash; <span class="mono">%s</span>' % esc(v.get('error', '')[-300:])))
+        pages = res.get('pages') or []
+        if pages:
+            h.append('<div style="margin-top:8px"><b>Review</b> <span class="tiny">%s</span></div>' % (
+                'preview running on its own copy of the site' if port else
+                '<button class="prev" data-slug="%s">Start preview</button> runs the site from this '
+                'generation&rsquo;s worktree, so you read it before it reaches main' % esc(slug)))
+            for pg in pages:
+                link = ('<a class="lnk" target="_blank" href="http://127.0.0.1:%d%s">%s</a>' % (port, esc(pg['path']), esc(pg['path']))
+                        if port else '<span class="mono">%s</span>' % esc(pg['path']))
+                h.append('<div class="tiny" style="margin:3px 0 0 10px"><span class="tag">%s</span> <b>%s</b> %s</div>'
+                         % (esc(pg['kind']), esc(pg['title']), link))
+        if bs:
+            h.append('<details data-k="gen-%s-files" style="margin-top:6px"><summary class="tiny">branch <span class="mono">%s</span>: '
+                     '%d commit%s &middot; %s</summary>%s</details>'
+                     % (esc(slug), esc(bs['branch']), bs['commits'], '' if bs['commits'] == 1 else 's', esc(bs.get('stat', '')),
+                        ''.join('<div class="tiny mono" style="margin:2px 0 0 10px">%s</div>' % esc(f) for f in bs.get('files', [])[:80])))
+        if chk:
+            ok = all(c['exit'] == 0 for c in chk)
+            h.append('<details data-k="gen-%s-chk" style="margin-top:4px"%s><summary class="tiny">checks, run by us: <b>%s</b> '
+                     '(%d of %d pass)</summary>%s</details>'
+                     % (esc(slug), '' if ok else ' open', 'pass' if ok else 'FAIL', sum(c['exit'] == 0 for c in chk), len(chk),
+                        ''.join('<div class="tiny" style="margin:2px 0 0 10px">%s <span class="mono">%s</span>%s</div>'
+                                % ('&#10003;' if c['exit'] == 0 else '&#10007;', esc(c['cmd']),
+                                   '' if c['exit'] == 0 else '<div class="mono" style="white-space:pre-wrap">%s</div>' % esc(c['tail'][-400:]))
+                                for c in chk)))
+        pub = g.get('publish') or {}
+        if pub:
+            h.append('<details data-k="gen-%s-pub" open style="margin-top:6px"><summary class="tiny">publish: <b>%s</b></summary>%s</details>'
+                     % (esc(slug), esc(pub.get('state', '')), ''.join(
+                         '<div class="tiny" style="margin:2px 0 0 10px">%s <b>%s</b> %s</div>'
+                         % (esc(x['at'][11:16]), esc(x['step']), esc(x['detail'][:400])) for x in pub.get('steps', []))))
+        if g.get('live'):
+            h.append('<div class="tiny" style="margin-top:4px">live: %s</div>' % ' &middot; '.join(
+                '<a class="lnk" target="_blank" href="%s%s">%s</a> %s' % (SITE, esc(x['path']), esc(x['path']),
+                 'ok' if x.get('status') == 200 and x.get('title_found') else 'CHECK') for x in g['live']))
+        if g['status'] == 'draft-ready' and chk and all(c['exit'] == 0 for c in chk):
+            h.append('<div style="margin-top:8px"><button class="pub" data-slug="%s">Publish</button> '
+                     '<span class="tiny">onto main, pushed, built (~25 min) and deployed &mdash; refuses rather than '
+                     'overwrite anybody&rsquo;s uncommitted work</span></div>' % esc(slug))
         if run.get('changed_outside_its_folder'):
             h.append('<div class="tiny" style="margin-top:2px;color:#d29922">files changed outside its folder during the '
                      'run (may be another agent): %s</div>' % esc(', '.join(run['changed_outside_its_folder'][:8])))
@@ -3156,8 +3203,9 @@ def generated_section(gens):
                 h.append('<textarea class="ans" data-slug="%s" rows="3" style="width:100%%;margin-top:6px" '
                          'placeholder="Answer here; the same agent resumes with it"></textarea>'
                          '<button class="answer" data-slug="%s">Send answers</button>' % (esc(slug), esc(slug)))
-        if g['status'] in ('stopped-at-cap', 'invalid', 'failed') and g.get('session_id'):
-            why = ('Its generator does not pass the page checks: %s' % (v.get('error') or '')[-600:]) if v.get('ran') and not v.get('passed') else ''
+        if g['status'] in ('stopped-at-cap', 'invalid', 'failed', 'publish-failed') and g.get('session_id'):
+            bad = [c for c in chk if c['exit']]
+            why = ('These checks fail: %s' % ' | '.join('%s -> %s' % (c['cmd'], c['tail'][-300:]) for c in bad)) if bad else ''
             h.append('<div style="margin-top:8px"><button class="cont" data-slug="%s" data-why="%s">Continue</button> '
                      '<span class="tiny">resumes the same agent with a fresh $%.2f cap%s</span></div>'
                      % (esc(slug), esc('Continue where you stopped. ' + why), GEN_BUDGET,
@@ -3186,11 +3234,6 @@ def generated_section(gens):
                      '<input class="rnote" data-slug="%s" placeholder="why (optional)" style="width:40%%"></div>'
                      % ((' (last: <b>%s</b>%s)' % (esc(last['verdict']), (' &mdash; ' + esc(last['note'])) if last['note'] else ''))
                         if last else '', esc(slug), esc(slug), esc(slug), esc(slug)))
-        files = [f for f in ('DRAFT.md', 'build.py', 'payload.json')
-                 if os.path.exists(os.path.join(GEN_DIR, slug, f))]
-        if files:
-            h.append('<div class="tiny" style="margin-top:6px">files: %s &middot; <span class="mono">notes/report-generations/%s/</span></div>'
-                     % (' · '.join('<a class="lnk" target="_blank" href="/gen/%s/%s">%s</a>' % (esc(slug), f, f) for f in files), esc(slug)))
         h.append('</div>')
     return ''.join(h)
 
@@ -3206,7 +3249,7 @@ setInterval(function(){
   const note = document.getElementById('served');
   if (!served) {
     if (note) note.innerHTML = 'Buttons are off: this page was opened from disk. Run <code>bash scripts/status.sh</code> and use http://127.0.0.1:8795/suggested.html';
-    document.querySelectorAll('button.gen,button.answer,button.review,button.cont').forEach(b => b.disabled = true);
+    document.querySelectorAll('button.gen,button.answer,button.review,button.cont,button.prev,button.pub').forEach(b => b.disabled = true);
     return;
   }
   const post = (path, body) => fetch(path, {method: 'POST', headers: {'Content-Type': 'application/json',
@@ -3215,6 +3258,15 @@ setInterval(function(){
     if (!confirm('Start an agent drafting "' + b.dataset.slug + '"? It spends up to the cap shown.')) return;
     b.disabled = true; b.textContent = 'starting...';
     post('/api/generate', {slug: b.dataset.slug}).then(r => { b.textContent = r.started ? 'started -- it moves up when the page refreshes' : (r.error || 'failed'); });
+  }));
+  document.querySelectorAll('button.prev').forEach(b => b.addEventListener('click', () => {
+    b.disabled = true; b.textContent = 'starting...';
+    post('/api/preview', {slug: b.dataset.slug}).then(r => { b.textContent = r.port ? 'running on port ' + r.port + ' -- links appear on refresh' : (r.error || 'failed'); });
+  }));
+  document.querySelectorAll('button.pub').forEach(b => b.addEventListener('click', () => {
+    if (!confirm('Publish "' + b.dataset.slug + '"? It goes onto main, is pushed to GitHub, the site is rebuilt (~25 min) and deployed.')) return;
+    b.disabled = true; b.textContent = 'publishing...';
+    post('/api/publish', {slug: b.dataset.slug}).then(r => { b.textContent = r.started ? 'publishing -- follow the steps on this card' : (r.error || 'failed'); });
   }));
   document.querySelectorAll('button.cont').forEach(b => b.addEventListener('click', () => {
     if (!confirm('Resume "' + b.dataset.slug + '"? It spends up to the cap again.')) return;

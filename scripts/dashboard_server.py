@@ -13,7 +13,12 @@ from disk cannot start anything. So this serves the same files, plus two actions
                          written into its generation.json. No agent; costs nothing. It is the half of
                          the auto-generation evidence the agent cannot supply about itself.
 
-and reads a generation's own files under /gen/<slug>/ (DRAFT.md, build.py, payload.json).
+    POST /api/preview    {"slug": ...}            -> the site's dev server, run from the generation's
+                         worktree, so its pages can be read BEFORE anything reaches main
+    POST /api/publish    {"slug": ...}            -> scripts/publish_generation.py <slug>: onto main,
+                         pushed, built, deployed. Pressing it is the person asking (rule 10).
+
+and reads a generation's own record under /gen/<slug>/.
 
 WHO CAN PRESS IT. Bound to 127.0.0.1 only. And a web page on ANY other site can still send a
 request to localhost, so every action needs the header `X-Dashboard-Token`, a random value made
@@ -96,6 +101,13 @@ class H(http.server.BaseHTTPRequestHandler):
                 fh.write('\n')
             os.replace(p + '.tmp', p)
             return self.send(200, json.dumps({'reviewed': slug}))
+        if self.path == '/api/preview':
+            return self.send(200, json.dumps(preview(slug)))
+        if self.path == '/api/publish':
+            argv = [sys.executable, os.path.join(ROOT, 'scripts', 'publish_generation.py'), slug]
+            log = open(os.path.join(ROOT, 'build', 'report-generations', '%s.publish.out' % slug), 'a')
+            subprocess.Popen(argv, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+            return self.send(202, json.dumps({'started': slug}))
         argv = [sys.executable, os.path.join(ROOT, 'scripts', 'generate_report.py'), slug]
         if self.path == '/api/answer':
             text = (body.get('text') or '').strip()
@@ -109,6 +121,43 @@ class H(http.server.BaseHTTPRequestHandler):
         log = open(os.path.join(ROOT, 'build', 'report-generations', '%s.out' % slug), 'a')
         subprocess.Popen(argv, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
         return self.send(202, json.dumps({'started': slug}))
+
+
+PREVIEW_BASE = 8801
+
+
+def preview(slug):
+    """Start (or find) a dev server on the generation's worktree. -> {port} or {error}.
+    The record is build/report-generations/<slug>.preview; a dead pid is replaced, a live one
+    reused, so pressing twice does not start two."""
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    import generate_report as GR
+    tree = GR.tree(slug)
+    if not os.path.isdir(os.path.join(tree, 'fy28')):
+        return {'error': 'no worktree for %s' % slug}
+    rec = os.path.join(ROOT, 'build', 'report-generations', '%s.preview' % slug)
+    if os.path.exists(rec):
+        r = json.load(open(rec))
+        try:
+            os.kill(r['pid'], 0)
+            return {'port': r['port']}
+        except OSError:
+            pass
+    used = set()
+    for f in os.listdir(os.path.dirname(rec)):
+        if f.endswith('.preview') and f != os.path.basename(rec):
+            try:
+                used.add(json.load(open(os.path.join(os.path.dirname(rec), f)))['port'])
+            except (ValueError, KeyError, OSError):
+                pass
+    port = next(p for p in range(PREVIEW_BASE, PREVIEW_BASE + 50) if p not in used)
+    env = dict(os.environ, PATH=os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin') + os.pathsep + os.environ.get('PATH', ''))
+    log = open(rec + '.log', 'a')
+    p = subprocess.Popen(['npx', 'vite', '--port', str(port), '--strictPort', '--host', '127.0.0.1'],
+                         cwd=os.path.join(tree, 'fy28'), stdout=log, stderr=subprocess.STDOUT,
+                         env=env, start_new_session=True)
+    json.dump({'port': port, 'pid': p.pid}, open(rec, 'w'))
+    return {'port': port}
 
 
 def main():

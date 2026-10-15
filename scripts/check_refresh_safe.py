@@ -35,7 +35,10 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = ['scripts/daily_refresh.sh', 'scripts/refresh.py', 'scripts/refresh_git.py',
-         'scripts/triage_refresh.py']
+         'scripts/triage_refresh.py',
+         # Report generation runs agents in worktrees and publishes onto main: the same promise,
+         # never lose or step on work (TJ, 15 October 2026), held by the same scan.
+         'scripts/generate_report.py', 'scripts/publish_generation.py', 'scripts/dashboard_server.py']
 
 BANNED_SUB = {'reset', 'clean', 'stash', 'checkout', 'restore', 'switch', 'rebase', 'rm'}
 FORCE = {'-f', '--force', '--force-with-lease', '--force-if-includes'}
