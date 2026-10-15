@@ -167,10 +167,33 @@ DOC_STOP = set('the and for from with this that our their its about any some all
                'document documents meeting minutes copy draft'.split())
 
 
+# ONE THING, SEVERAL NAMES. The captions and the clerk name the same document in different
+# words -- "neighbor's photographs" heard, "Photos from abutter" printed -- and no stem joins
+# them. Each set below is one meaning; every word in it is read as the first. General
+# vocabulary for documents only, never a board's own format: a word added here must mean the
+# same thing in every minute of every board.
+DOC_SAME = [
+    'photo photos photograph photographs picture pictures image images',
+    'abutter abutters neighbor neighbors neighbour neighbours resident residents',
+    'presentation presentations slides slide deck powerpoint',
+    'email emails mail',
+    'spreadsheet spreadsheets workbook workbooks excel',
+    'memo memos memorandum memoranda',
+    'letter letters correspondence',
+    'plan plans drawing drawings plot',
+    'budget budgets',
+    'warrant article articles',
+    'policy policies',
+    'bylaw bylaws by-law by-laws',
+    'proposal proposals quote quotes estimate estimates bid bids',
+]
+DOC_CANON = {w: ws.split()[0] for ws in DOC_SAME for w in ws.split()}
+
+
 def doc_words(s):
     """Significant words, plus each adjacent pair run together, so the captions' "storm
     water" meets the clerk's "Stormwater"."""
-    ws = [w for w in re.findall(r'[a-z0-9]+', (s or '').lower().replace('’', "'"))]
+    ws = [DOC_CANON.get(w, w) for w in re.findall(r'[a-z0-9]+', (s or '').lower().replace('’', "'"))]
     # A WORD IS ITS FIRST FIVE LETTERS, a crude stem: "photographs" and "Photos" are one
     # word to this test, and so are "plan" and "plans". A run-together pair is cut to
     # eight, so the captions' "storm water" and the clerk's "Stormwater" both read "stormwat".
