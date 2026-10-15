@@ -248,13 +248,22 @@ def check():
     ago = (now - last).total_seconds() / 60 if last else None
     chain = subprocess.run(['pgrep', '-f', '[r]un_backlog_until'], capture_output=True).returncode == 0
     run = subprocess.run(['pgrep', '-f', '[p]rocess_meeting.py --(next|until-usage)'], capture_output=True).returncode == 0
-    log = os.path.join(ROOT, 'build', 'process-meeting-%s.log' % dt.date.today().isoformat())
+    # THE LOG THE RUN IS ACTUALLY WRITING. The paced run (minutes_pacing.sh) writes
+    # process-meeting-week-<date>.log, not process-meeting-<date>.log, so reading only the
+    # second called a run that was deliberately holding on the weekly line STUCK.
+    logs = glob.glob(os.path.join(ROOT, 'build', 'process-meeting-*%s.log' % dt.date.today().isoformat()))
+    log = max(logs, key=os.path.getmtime) if logs else ''
     tail = open(log, encoding='utf-8', errors='replace').read()[-4000:] if os.path.exists(log) else ''
     # ONLY THE CURRENT RUN'S LINES: after the last chunk the chainer started, or the last
     # governed run's opening `[gov] ` line -- an earlier run's STOPPED is history.
     marks = [m.end() for m in re.finditer(r'chunk of|\n\[gov\] ', tail)]
     current = tail[marks[-1]:] if marks else tail
-    waiting = bool(re.search(r'waiting for the (window to reset|[0-9:]+ reset)', current))
+    # WAITING, in any of the forms the governor holds in: a window's reset, or the weekly pace
+    # line (`weekly line: 93% used against 86.6% -- waiting for it`). Only the LAST decision
+    # counts: a hold that has ended is not a hold.
+    decisions = re.findall(r'\[gov [0-9:]+\][^\n]*', current)
+    waiting = bool(re.search(r'waiting for the (window to reset|[0-9:]+ reset)', current)) or bool(
+        decisions and re.search(r'waiting for (it|the)', decisions[-1]))
     problems, matched, n_unmatched = guard(now)
     if 'STOPPED' in current:
         problems.append('a run STOPPED')
