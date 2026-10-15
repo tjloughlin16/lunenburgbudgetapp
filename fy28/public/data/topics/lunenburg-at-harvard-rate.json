@@ -1,0 +1,560 @@
+{
+ "category": "bromfield",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "FY2025, all funds. The two right-hand bars are our multiplication, not a target or a cost anybody proposed."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Spent, all funds, DESE",
+    "texts": [
+     "$30,031,242",
+     null,
+     null
+    ],
+    "values": [
+     30031242,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Ours, a rate times Lunenburg’s pupils",
+    "texts": [
+     null,
+     "$39,181,968",
+     "$42,588,734"
+    ],
+    "values": [
+     null,
+     39181968.0,
+     42588733.5
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Lunenburg’s spending at other rates",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Spent",
+   "At the all-district median",
+   "At Harvard’s rate"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$25,565",
+     "unit": "",
+     "value": 25565
+    },
+    "b": {
+     "text": "$42,588,734",
+     "unit": "",
+     "value": 42588733.5
+    },
+    "c": {
+     "text": "$12,557,492",
+     "unit": "",
+     "value": 12557491.5
+    },
+    "n": {
+     "text": "1,665.9",
+     "unit": "FTE pupils",
+     "value": 1665.9
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "har",
+    "pupils",
+    "need",
+    "more",
+    "lun"
+   ],
+   "text": "Harvard’s $25,565 for each of Lunenburg’s 1,665.9 pupils comes to $42,588,734, $12,557,492 more than spent."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$9,150,726",
+     "unit": "",
+     "value": 9150726.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "smed",
+    "mores"
+   ],
+   "text": "At the median of all districts, which Harvard spends above, it is $9,150,726 more."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$2,795,004",
+     "unit": "",
+     "value": 2795004
+    },
+    "b": {
+     "text": "$10,825,236",
+     "unit": "",
+     "value": 10825236.101206554
+    },
+    "c": {
+     "text": "$8,030,232",
+     "unit": "",
+     "value": 8030232.101206556
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Possibly fixed costs spread over fewer pupils in a smaller district. Nothing here tests it."
+    }
+   ],
+   "rests_on": [
+    "lgap",
+    "vol",
+    "rate",
+    "hpupils"
+   ],
+   "text": "Lunenburg spent $2,795,004 more: $10,825,236 for more pupils, less $8,030,232 for Harvard’s higher rate."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "10.8%",
+     "unit": "",
+     "value": 10.8
+    },
+    "b": {
+     "text": "23.3%",
+     "unit": "",
+     "value": 23.3
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "har",
+    "lun",
+    "li"
+   ],
+   "text": "Harvard’s students were 10.8% low-income, Lunenburg’s 23.3%; a rate is not a like-for-like cost."
+  }
+ ],
+ "facts": [
+  {
+   "id": "lun",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg a pupil, all funds, FY2025"
+   },
+   "value": {
+    "text": "$18,027",
+    "unit": "",
+    "value": 18027
+   }
+  },
+  {
+   "id": "har",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard a pupil, the same measure"
+   },
+   "value": {
+    "text": "$25,565",
+    "unit": "",
+    "value": 25565
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg’s FTE pupils, DESE"
+   },
+   "value": {
+    "text": "1,665.9",
+    "unit": "FTE pupils",
+    "value": 1665.9
+   }
+  },
+  {
+   "id": "hpupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard’s FTE pupils, DESE"
+   },
+   "value": {
+    "text": "1,065.4",
+    "unit": "FTE pupils",
+    "value": 1065.4
+   }
+  },
+  {
+   "id": "need",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "at Harvard’s rate (ours)"
+   },
+   "value": {
+    "text": "$42,588,734",
+    "unit": "",
+    "value": 42588733.5
+   }
+  },
+  {
+   "id": "more",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more than Lunenburg spent (ours)"
+   },
+   "value": {
+    "text": "$12,557,492",
+    "unit": "",
+    "value": 12557491.5
+   }
+  },
+  {
+   "id": "smed",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "median of all districts a pupil"
+   },
+   "value": {
+    "text": "$23,520",
+    "unit": "",
+    "value": 23520.0
+   }
+  },
+  {
+   "id": "mores",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more, at the state median (ours)"
+   },
+   "value": {
+    "text": "$9,150,726",
+    "unit": "",
+    "value": 9150726.0
+   }
+  },
+  {
+   "id": "lgap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg’s total less Harvard’s"
+   },
+   "value": {
+    "text": "$2,795,004",
+    "unit": "",
+    "value": 2795004
+   }
+  },
+  {
+   "id": "vol",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg’s extra pupils at its own rate (ours)"
+   },
+   "value": {
+    "text": "$10,825,236",
+    "unit": "",
+    "value": 10825236.101206554
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard’s pupils times the gap a pupil (ours)"
+   },
+   "value": {
+    "text": "$8,030,232",
+    "unit": "",
+    "value": 8030232.101206556
+   }
+  },
+  {
+   "id": "li",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "l": {
+      "text": "23.3%",
+      "unit": "",
+      "value": 23.3
+     }
+    },
+    "literals": [],
+    "text": "of Harvard’s students low-income; Lunenburg 23.3%"
+   },
+   "value": {
+    "text": "10.8%",
+    "unit": "",
+    "value": 10.8
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$12,557,492",
+    "unit": "",
+    "value": 12557491.5
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "At Harvard’s FY2025 rate a pupil, Lunenburg would have spent $12,557,492 more, by our arithmetic."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "lunenburg-at-harvard-rate",
+ "kind": "topic",
+ "path": "/bromfield/lunenburg-at-harvard-rate",
+ "said": [],
+ "shelves": [
+  "bromfield"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-statewide.csv",
+   "label": "Lunenburg Budget Project — dese-function-statewide.csv (DESE’s statewide distribution, by function)"
+  },
+  {
+   "href": "/docs/data/dese-radar.csv",
+   "label": "Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts and student demographics, from RADAR)"
+  }
+ ],
+ "table": {
+  "caption": "A pupil, side by side, FY2025",
+  "views": [
+   {
+    "columns": [
+     "Lunenburg",
+     "Harvard",
+     "Difference"
+    ],
+    "key": "side",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Category by category",
+    "note": "DESE, all funds. Each category over the district’s total FTE pupils, our division, so the rows add to DESE’s totals. A dash: no spending there.",
+    "rows": [
+     {
+      "cells": [
+       "$547",
+       "$910",
+       "$362"
+      ],
+      "label": "Administration"
+     },
+     {
+      "cells": [
+       "$1,045",
+       "$1,412",
+       "$368"
+      ],
+      "label": "Instructional leadership"
+     },
+     {
+      "cells": [
+       "$6,134",
+       "$8,085",
+       "$1,951"
+      ],
+      "label": "Teachers"
+     },
+     {
+      "cells": [
+       "$1,893",
+       "$2,347",
+       "$454"
+      ],
+      "label": "Other teaching services"
+     },
+     {
+      "cells": [
+       "$45",
+       "$160",
+       "$115"
+      ],
+      "label": "Professional development"
+     },
+     {
+      "cells": [
+       "$212",
+       "$649",
+       "$436"
+      ],
+      "label": "Materials, equipment, technology"
+     },
+     {
+      "cells": [
+       "$638",
+       "$893",
+       "$255"
+      ],
+      "label": "Guidance, counselling, testing"
+     },
+     {
+      "cells": [
+       "$1,797",
+       "$2,420",
+       "$623"
+      ],
+      "label": "Pupil services: buses, meals, sport"
+     },
+     {
+      "cells": [
+       "$1,180",
+       "$2,038",
+       "$858"
+      ],
+      "label": "Operations and maintenance"
+     },
+     {
+      "cells": [
+       "$3,258",
+       "$4,008",
+       "$751"
+      ],
+      "label": "Insurance, retirement, other"
+     },
+     {
+      "cells": [
+       "$1,199",
+       "$2,413",
+       "$1,214"
+      ],
+      "label": "Tuition to other schools"
+     },
+     {
+      "cells": [
+       "$78",
+       "$229",
+       "$151"
+      ],
+      "label": "Out-of-district transportation"
+     },
+     {
+      "cells": [
+       "$18,027",
+       "$25,565",
+       "$7,538"
+      ],
+      "label": "Total, as DESE prints it"
+     }
+    ],
+    "total_col": 2
+   },
+   {
+    "columns": [
+     "A pupil",
+     "Times pupils",
+     "More than spent"
+    ],
+    "key": "rates",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "The arithmetic",
+    "note": "Ours: DESE’s rate a pupil times Lunenburg’s 1,665.9 FTE pupils. The all-district line is the one on Reaching the state median.",
+    "rows": [
+     {
+      "cells": [
+       "$18,027",
+       "$30,031,242",
+       "$0"
+      ],
+      "label": "Lunenburg, as spent"
+     },
+     {
+      "cells": [
+       "$23,520",
+       "$39,181,968",
+       "$9,150,726"
+      ],
+      "label": "All-district median"
+     },
+     {
+      "cells": [
+       "$25,565",
+       "$42,588,734",
+       "$12,557,492"
+      ],
+      "label": "Harvard"
+     }
+    ],
+    "total_col": 1
+   }
+  ]
+ },
+ "title": "Harvard rate scenario"
+}

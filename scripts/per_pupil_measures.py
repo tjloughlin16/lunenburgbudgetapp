@@ -43,6 +43,9 @@ CACHE = os.path.join(ROOT, 'build', 'cache')
 # DESE prints at $0 a pupil (Gosnold, which has no pupils of its own) -- see its own docstring.
 STATEWIDE = os.path.join(ROOT, 'sources', 'data', 'dese-function-statewide.csv')
 LUNENBURG, MONTY = '01620000', '08320000'
+# Harvard Public Schools, the district The Bromfield School belongs to: the Bromfield shelf's
+# benchmark (build_bromfield_topics.py).
+HARVARD = '01250000'
 # THE FEDERAL DEFINITION. The Census Bureau's Annual Survey of School System Finances, FY2024,
 # in THOUSANDS of dollars (school24doc.docx: "All amounts, except for fall membership and
 # personal income, are expressed in thousands of dollars"). Its own NCES ids for the two:
@@ -56,9 +59,10 @@ HEAD = ['SY', 'DIST_CODE', 'DIST_NAME', 'FUNC_CAT_CODE', 'FUNC_CAT_DESC', 'FUNC_
         'FUNC_DESC', 'IN_OUT_DIST', 'GEN_FUND', 'GRNTS_REVOLV', 'TOT_EXP', 'PER_PUPIL_EXP']
 # The function codes on the edge between "counted" and "capital", kept per district and year.
 EDGE = ('2420', '4300', '3300', '3400')
-VERSION = 3   # bump when the extract's shape changes, so an old cache is not read
-# Every row of the two districts this site is about, every year: what breakdown() splits.
-DETAIL = (LUNENBURG, MONTY)
+VERSION = 4   # bump when the extract's shape changes, so an old cache is not read
+# Every row of the districts this site splits line by line, every year: what breakdown() splits.
+# Harvard added 15 October 2026 for the Bromfield shelf (VERSION 4).
+DETAIL = (LUNENBURG, MONTY, HARVARD)
 
 
 def fail(msg):
@@ -142,9 +146,12 @@ def measures():
     for y in years:
         t = d['ttpp'][str(y)]
         vpp = {l: t[l]['pp'] for l in voc if l in t and t[l]['pp']}
-        if MONTY not in vpp or LUNENBURG not in t:
-            fail('FY%d: no TTPP row for Monty Tech or Lunenburg' % y)
+        if MONTY not in vpp or LUNENBURG not in t or not (t.get(HARVARD) or {}).get('pp'):
+            fail('FY%d: no TTPP row for Monty Tech, Lunenburg or Harvard' % y)
         rank = 1 + sum(1 for v in vpp.values() if v > vpp[MONTY])
+        # Among every district DESE prints a figure for, highest first (a $0 district, which
+        # has no pupils of its own, is not ranked).
+        app = [r['pp'] for r in t.values() if r['pp']]
         s = sw[y]
         if float(s['lunenburg_per_pupil']) != t[LUNENBURG]['pp']:
             fail('FY%d: the statewide extract says Lunenburg %s, the workbook %s'
@@ -158,7 +165,10 @@ def measures():
             monty=t[MONTY]['pp'], monty_rank=rank, monty_total=t[MONTY]['total'],
             monty_gen=t[MONTY]['gen'], monty_grants=t[MONTY]['grants'],
             lunenburg=t[LUNENBURG]['pp'], lunenburg_total=t[LUNENBURG]['total'],
-            lunenburg_gen=t[LUNENBURG]['gen'], lunenburg_grants=t[LUNENBURG]['grants']))
+            lunenburg_gen=t[LUNENBURG]['gen'], lunenburg_grants=t[LUNENBURG]['grants'],
+            harvard=t[HARVARD]['pp'], harvard_total=t[HARVARD]['total'],
+            ranked=len(app), harvard_rank=1 + sum(1 for v in app if v > t[HARVARD]['pp']),
+            lunenburg_rank=1 + sum(1 for v in app if v > t[LUNENBURG]['pp'])))
     last = years[-1]
     e = d['edge'][str(last)]
     eq = {l: e[l]['2420']['pp'] for l in voc if l in e and '2420' in e[l]}
@@ -321,7 +331,7 @@ def breakdown_table(b):
                   'over total FTE pupils, as above.')])
 
 
-SHORT_NAME = {LUNENBURG: 'Lunenburg', MONTY: 'Monty Tech'}
+SHORT_NAME = {LUNENBURG: 'Lunenburg', MONTY: 'Monty Tech', HARVARD: 'Harvard'}
 
 
 def census():
