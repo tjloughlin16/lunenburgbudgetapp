@@ -89,6 +89,35 @@ TOWN = os.path.join(ROOT, 'sources', 'data', 'official-votes')
 # patterns. TJ, 15 October 2026: a thread is how a resident catches up before the meeting,
 # so it has to say which meeting is next.
 AGENDAS = os.path.join(ROOT, 'fy28', 'public', 'data', 'agenda-threads.json')
+# THE REPORTS A THREAD NEEDS, from the meetings themselves (build_suggested_reports.py). TJ,
+# 15 October 2026: "reports should assist threads." A thread follows a matter; a report lays
+# out its numbers. A suggestion lands here when the model named this thread or the thread's
+# own patterns found its words -- never by board alone.
+SUGGESTED = os.path.join(ROOT, 'sources', 'data', 'suggested-reports.csv')
+SUGGESTED_MEETINGS = os.path.join(ROOT, 'sources', 'data', 'suggested-reports-meetings.csv')
+
+
+def reports_needed(tid):
+    """[{title, slug, status, url, question, meetings: [{date, board, question_then, watch_at,
+    at, our_minutes}]}] for the suggestions this thread is linked to, newest raising first."""
+    if not os.path.exists(SUGGESTED):
+        return []
+    occ = read_csv(SUGGESTED_MEETINGS) if os.path.exists(SUGGESTED_MEETINGS) else []
+    out = []
+    for r in read_csv(SUGGESTED):
+        ids = [x.split(' (')[0] for x in (r.get('threads') or '').split(';') if x.strip()]
+        if tid not in ids:
+            continue
+        ms = sorted((o for o in occ if o['id'] == r['id']), key=lambda o: o['date'], reverse=True)
+        out.append({'title': r['title'], 'slug': r['slug'], 'status': r['status'],
+                    'url': r['exists_at'] or '', 'question': r['question'],
+                    'how': [x.split(' (')[1].rstrip(')') for x in r['threads'].split(';')
+                            if x.split(' (')[0] == tid][0],
+                    'meetings': [{k: o[k] for k in ('date', 'board', 'fiscal_year', 'question_then',
+                                                     'watch_at', 'at', 'our_minutes')} for o in ms]})
+    out.sort(key=lambda x: (x['status'] != 'new', -len(x['meetings']),
+                            [-ord(c) for c in (x['meetings'][0]['date'] if x['meetings'] else '')]))
+    return out
 
 
 def read_csv(p):
@@ -549,6 +578,7 @@ def build():
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             reports=report_links(t, catalogue),
+            reports_needed=reports_needed(t['id']),
             # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries
             # this thread's words, upcoming and just past. The page filters by the reader's
             # clock. An agenda says what MAY be discussed, never what will be decided.

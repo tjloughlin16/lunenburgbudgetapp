@@ -320,17 +320,40 @@ def suggested_reports():
         return ''.join(lines)
 
     order = lambda r: (-int(r['meetings']), [-ord(c) for c in r['last']], r['id'])
+    tid = lambda x: x.split(' (')[0]
+    labels = {t['id']: t['label'] for t in SR._csv(SR.THREADS)}
     new = sorted((r for r in rows if r['status'] == 'new'), key=order)
     have = sorted((r for r in rows if r['status'] == 'exists'), key=order)
-    out.append('### No page answers these yet\n\n')
-    if not new:
-        out.append('*No new report suggested yet -- every suggestion so far names a page that exists.*\n')
-    for r in new[:40]:
+
+    def head(r):
         span = r['first'] if r['first'] == r['last'] else '%s to %s' % (r['first'], r['last'])
-        out.append('- **%s** `%s` -- %s meeting%s, %s (%s); boards: %s; data leads: %s\n' % (
+        return '- **%s** `%s` -- %s meeting%s, %s (%s); boards: %s; data leads: %s\n' % (
             r['title'], r['slug'], r['meetings'], '' if r['meetings'] == '1' else 's', span,
             r['fiscal_years'].replace(';', ', '), r['boards'].replace(';', ', '),
-            r['data_leads'].replace(';', ', ')))
+            r['data_leads'].replace(';', ', '))
+
+    # REPORTS SERVE THREADS (TJ, 15 October 2026: "reports should assist threads"). A report a
+    # thread needs is listed under the thread; the rest stand alone -- and one raised at many
+    # meetings with no thread is also a candidate for a thread.
+    by_thread = {}
+    for r in new:
+        for x in [x for x in (r.get('threads') or '').split(';') if x.strip()]:
+            by_thread.setdefault(tid(x), []).append(r)
+    out.append('### Reports a thread needs\n\n')
+    if not by_thread:
+        out.append('*None yet.*\n')
+    for t in sorted(by_thread, key=lambda t: (-sum(int(r['meetings']) for r in by_thread[t]), t)):
+        out.append('#### [%s](/threads/%s)\n\n' % (labels.get(t, t), t))
+        for r in by_thread[t]:
+            out.append(head(r))
+            out.append(meetings(r))
+        out.append('\n')
+    loose = [r for r in new if not (r.get('threads') or '').strip()]
+    out.append('### Reports no thread covers\n\n')
+    if not loose:
+        out.append('*None.*\n')
+    for r in loose[:40]:
+        out.append(head(r))
         out.append(meetings(r))
     if have:
         out.append('\n### Would have helped, and the page exists\n\n')

@@ -759,7 +759,8 @@ PREREQ = {
     # yesterday's notices, which is a wrong date on a public page rather than a stale file.
     'build_boards.py': ['build_feeds.py', 'build_notices.py', 'build_meeting_feed.py'],
     # A THREAD SAYS WHICH AGENDA IT IS ON NEXT, so the agenda match comes first.
-    'build_threads.py': ['build_agenda_threads.py'],
+    # ...and which REPORTS it needs, from the suggestions the meetings made.
+    'build_threads.py': ['build_agenda_threads.py', 'build_suggested_reports.py'],
     'build_agenda_threads.py': ['build_meeting_feed.py'],
 }
 

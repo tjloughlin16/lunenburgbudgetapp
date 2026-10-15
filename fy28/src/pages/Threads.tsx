@@ -51,6 +51,10 @@ type Thread = {
   id: string; label: string; question: string; kind: string; groups: string; tags: string
   boards: string; started: string; closes: string; status: string; resolved_on: string; caveat: string
   reports: { title: string; url: string }[]
+  /** Reports the meetings asked for that would serve this thread (build_suggested_reports.py).
+   *  `status: 'new'` is not written yet; `exists` has a page. `how`: the model named this thread,
+   *  the thread's own words found it, or both. */
+  reports_needed?: ReportNeeded[]
   heat: Heat; stage: string; tangled: boolean; is_new: boolean; registered_on: string
   hot?: boolean
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
@@ -60,6 +64,10 @@ type Thread = {
   /** A person's call that this leads the page, in this order (threads.csv `pin`). */
   pin: number | null
   on_agenda?: OnAgenda[]
+}
+type ReportNeeded = {
+  title: string; slug: string; status: 'new' | 'exists'; url: string; question: string; how: string
+  meetings: { date: string; board: string; fiscal_year: string; question_then: string; watch_at: string; at: string; our_minutes: string }[]
 }
 type Declined = { candidate: string; declined_on: string; reason: string; revisit_if: string; note: string }
 type Payload = {
@@ -726,6 +734,43 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
               </li>
             ))}
           </ul>
+        </>
+      ) : null}
+
+      {/* REPORTS SERVE THREADS. TJ, 15 October 2026: "reports should assist threads." The
+          questions the meetings on this matter asked that a page of numbers would answer --
+          each with the meeting that asked it, in its own words, because a question raised two
+          years ago reads differently from one raised last week. */}
+      {t.reports_needed?.length ? (
+        <>
+          <H2>Reports this thread needs</H2>
+          <ul className="m-0 mb-2 p-0 list-none max-w-2xl">
+            {t.reports_needed.map(r => (
+              <li key={r.slug} className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
+                <div className="text-[15px] font-semibold">
+                  {r.url ? <a href={r.url} style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</a> : r.title}
+                  {' '}<span className="text-[12px] font-normal" style={muted}>
+                    {r.status === 'new' ? 'not written yet' : 'answered on this page'}
+                    {' · asked at '}{r.meetings.length} meeting{r.meetings.length === 1 ? '' : 's'}
+                  </span>
+                </div>
+                <ul className="m-0 mt-1 p-0 list-none">
+                  {r.meetings.map((m, k) => (
+                    <li key={k} className="text-[14px] leading-snug mt-1">
+                      <span className="font-semibold">{prettyShort(m.date)}, {m.board}</span>{' '}
+                      <span className="text-[12px]" style={muted}>({m.fiscal_year})</span>: {m.question_then}{' '}
+                      <a href={m.watch_at} className="text-[12px] underline" style={muted}>watch at {m.at}</a>
+                      {' · '}<a href={m.our_minutes} className="text-[12px] underline" style={muted}>our notes</a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[12px] max-w-2xl mt-0" style={muted}>
+            Suggested from our notes of each recording: questions the meeting asked that a page laying out the
+            numbers would answer. A suggestion, not a finding.
+          </p>
         </>
       ) : null}
 
