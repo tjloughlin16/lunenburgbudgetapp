@@ -3143,7 +3143,7 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 2801,
+     "bytes": 2873,
      "url": "/docs/data/suggested-reports-meetings.csv",
      "count": 6,
      "unit": "rows",
@@ -3155,7 +3155,7 @@
      "stars": 2,
      "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
      "kind": "Data",
-     "bytes": 2744,
+     "bytes": 2733,
      "url": "/docs/data/suggested-reports.csv",
      "count": 6,
      "unit": "rows",
@@ -4408,9 +4408,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 246275,
+     "bytes": 248216,
      "url": "/docs/data/money-gaps.csv",
-     "count": 267,
+     "count": 269,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -5135,9 +5135,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 699035,
+     "bytes": 699104,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10177,
+     "count": 10178,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -55478,7 +55478,7 @@
  "totals": {
   "documents": 4969,
   "groups": 26,
-  "bytes": 6419388224,
+  "bytes": 6419390295,
   "loadBearing": 189
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
