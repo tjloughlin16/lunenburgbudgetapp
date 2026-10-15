@@ -1202,6 +1202,12 @@ def compare_pages(f, con, U, P, N, F):
     leo, fit = H['Leominster'], H['Fitchburg']
     kids = {t: s for t, _, s in dest}
     POS = lambda r, m: figure(r, '%s of %d' % (ordinal(r), m), 'towns')
+    # WHICH END A RANK COUNTS FROM, said in the words that travel. TJ, 15 October 2026: the
+    # post read "5th of 15", which a reader can take as 5th-lowest. Every rank here counts
+    # from the HIGHEST; the tiles say so in their labels (a tile value holds 14 characters),
+    # and the finding and the conclusions -- the text a post quotes -- say it in the figure.
+    HI = lambda r, m: figure(r, ('the highest of %d' % m) if r == 1 else '%s-highest of %d' % (ordinal(r), m), 'towns')
+    HI1 = lambda r: figure(r, 'the highest' if r == 1 else '%s-highest' % ordinal(r), 'rank')
     Y = F(fy)
     E = lambda v: figure(v, C.pct(v, 2), 'of value')
     src_tax = doc('state-dls/' + bills[('Lunenburg', fy)]['source_file'],
@@ -1211,14 +1217,14 @@ def compare_pages(f, con, U, P, N, F):
     out = {}
     out['home-value-and-bill'] = TP.page(
         'home-value-and-bill',
-        'Lunenburg’s average home ranks %s nearby towns on value but %s on its bill as a share of value.'
-        % (POS(rv, n)['text'], POS(re_, n)['text']),
+        'Lunenburg’s home value is %s nearby; its bill as a share of value, %s.'
+        % (HI1(rv)['text'], HI(re_, n)['text']),
         [f('bill', U(L['bill']), 'Lunenburg’s average single-family bill, %s' % C.fy(fy), 'published', {'y': Y}),
          f('value', U(L['value']), 'Lunenburg’s average single-family value, %s' % C.fy(fy), 'published', {'y': Y}),
          f('eff', E(L['eff']), 'Lunenburg’s bill as a share of the home’s value', 'published'),
-         f('rb', POS(rb, n), 'nearby and destination towns, by average bill', 'published'),
-         f('rv', POS(rv, n), 'the same towns, by average home value', 'published'),
-         f('re', POS(re_, n), 'the same towns, by bill as a share of value', 'published'),
+         f('rb', POS(rb, n), 'nearby and destination towns, by bill, highest first', 'published'),
+         f('rv', POS(rv, n), 'the same towns, by home value, highest first', 'published'),
+         f('re', POS(re_, n), 'by bill as a share of value, highest first', 'published'),
          f('top', U(H[top]['bill']), '%s, the highest average bill of them' % top, 'published'),
          f('leo', U(leo['bill']), 'Leominster’s average bill, on a %s home' % C.usd(leo['value']),
            'published', {'v': U(leo['value'])}),
@@ -1230,9 +1236,9 @@ def compare_pages(f, con, U, P, N, F):
         [con('The average home here is worth less than in %d of the %d other towns; its bill ranks %s.'
              % (rv - 1, n - 1, ordinal(rb)), ['value', 'rv', 'rb', 'bill'],
              {'a': N(rv - 1, 'towns'), 'b': N(n - 1, 'towns'), 'c': figure(rb, ordinal(rb), 'rank')}),
-         con('The bill takes %s of the home’s value, %s of %d: a higher rate on a lower value.'
-             % (C.pct(L['eff'], 2), ordinal(re_), n), ['eff', 're'],
-             {'p': E(L['eff']), 'r': figure(re_, ordinal(re_), 'rank'), 'n': N(n, 'towns')},
+         con('The bill takes %s of the home’s value, %s: a higher rate on a lower value.'
+             % (C.pct(L['eff'], 2), HI(re_, n)['text']), ['eff', 're'],
+             {'p': E(L['eff']), 'r': HI(re_, n)},
              notes=[step('A town’s rate is its levy spread over its total value, so a rate says as '
                          'much about the business base and the budget as about the homes.', 'hypothesis')]),
          con('Leominster and Fitchburg border the town and Harvard is our peer; all three enrol '
@@ -1271,7 +1277,7 @@ def compare_pages(f, con, U, P, N, F):
                  'The twenty towns nearest Lunenburg on measures this project chose, given equal weight.'),
             ]]),
         sources=[src_tax, src_dest],
-        finding_figures={'a': POS(rv, n), 'b': POS(re_, n)})
+        finding_figures={'a': HI1(rv), 'b': HI(re_, n)})
 
     # ------------------------------------------------ the regional school share
     mta = {(int(r['fiscal_year']), r['component']): r for r in csv.DictReader(open(MTA_CSV, encoding='utf-8'))}
