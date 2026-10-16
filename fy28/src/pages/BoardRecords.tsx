@@ -29,7 +29,7 @@ type Rec = {
   date: string
   due: string | null
   agenda: { posted: boolean; url: string | null }
-  video: { status: RecordStatus; url: string | null; reason: string | null }
+  video: { status: RecordStatus; url: string | null; reason: string | null; likely_none?: boolean }
   minutes: { status: RecordStatus; url: string | null; reason: string | null }
   transcript: { status: RecordStatus; captions_disabled: boolean; reason: string | null }
 }

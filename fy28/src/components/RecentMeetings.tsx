@@ -1,5 +1,5 @@
 import { useReport } from './report'
-import { splitMeetings, todayIso } from '../lib/meetings'
+import { splitMeetings, todayIso, meetingTitle } from '../lib/meetings'
 
 /** RECENT MEETINGS: what we have for each, whatever that is.
  *
@@ -23,6 +23,8 @@ type Recent = {
   date: string; agenda_doc?: string | null; agenda_url?: string | null
   minutes_doc?: string | null; minutes_url?: string | null; video_url?: string | null
   transcript?: boolean; captions_disabled?: boolean
+  body_as_printed?: string | null
+  record?: { video?: { likely_none?: boolean } } | null
   ours?: { slug: string; headline?: string; votes?: number } | null
 }
 type Board = { slug: string; name: string; the_three?: boolean; meetings: Recent[] }
@@ -33,11 +35,15 @@ const fmt = (iso: string) => {
   return new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
 }
 
-function pending(r: Recent): string {
+/** What the row says when we have no minutes of our own. Shared with the front page, which
+ *  used to hardcode the third case for every meeting -- promising minutes "once the recording
+ *  is read" for a School Advisory Council that is never recorded. */
+export function pending(r: Pick<Recent, 'ours' | 'video_url' | 'captions_disabled' | 'record'>): string {
   if (r.ours) return ''
+  if (!r.video_url && r.record?.video?.likely_none) return 'not recorded: sub-committees and councils rarely are'
   if (r.video_url && r.captions_disabled) return 'captions are off on the recording, so our minutes cannot be written from it'
   if (r.video_url) return 'our minutes follow once the recording has been read'
-  return 'recording not posted yet'
+  return 'no recording posted, so no minutes of ours'
 }
 
 export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: number; min?: number; compact?: boolean }) {
@@ -101,8 +107,8 @@ export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: 
             {/* The board name is the title and the link, on its own line -- the date used
               * to share the line with it and wrapped mid-date on a phone. */}
             {r.ours
-              ? <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{board}</a>
-              : <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/boards/${slug}`} style={{ color: 'var(--series-cost)' }}>{board}</a>}
+              ? <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{meetingTitle(board, r.body_as_printed)}</a>
+              : <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/boards/${slug}`} style={{ color: 'var(--series-cost)' }}>{meetingTitle(board, r.body_as_printed)}</a>}
           </div>
           {/* WHAT WE HAVE, as links, IN THE ORDER WE WANT THEM USED. TJ, 17 September
               2026: "our meetings should be the most obvious clickable thing and come

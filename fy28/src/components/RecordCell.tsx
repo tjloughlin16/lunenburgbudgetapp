@@ -27,10 +27,16 @@ export function judged(status: RecordStatus, due: string | null | undefined, tod
  *  muted "not available" inside it, with the date it closes; muted "n/a" with a short
  *  reason when the record was never going to exist. Never a bare dash -- a dash does not
  *  say which of those it is. */
-export function RecordCell({ status, due, url, label, reason }: {
+export function RecordCell({ status, due, url, label, reason, likely_none }: {
   status: RecordStatus; due?: string | null; url?: string | null; label: string; reason?: string | null
+  likely_none?: boolean
 }) {
   const s = judged(status, due)
+  // A sub-committee or council filed under a board that records: still 'n/a' to every count,
+  // but SAID, not hovered -- a reader looking for the video should not wait for one.
+  if (s === 'n/a' && likely_none) {
+    return <span style={{ color: 'var(--text-secondary)' }}>likely none <span className="text-xs" style={{ color: 'var(--text-muted)' }}>&mdash; {reason}</span></span>
+  }
   if (s === 'posted') return url ? <a className="underline" href={url}>{label}</a> : <span>{label}</span>
   if (s === 'missing') return <strong style={{ color: 'var(--status-critical)' }}>MISSING</strong>
   if (s === 'not-provided') {

@@ -111,6 +111,26 @@ def explanations():
     return _explained
 
 
+_sub_bodies = None
+
+
+def sub_body_recordings():
+    """(recorded, meetings) over every register row whose agenda names a body OTHER than the
+    board it is filed under -- `body_as_printed`: a policy sub-committee, a screening
+    committee, a School Advisory Council. Read once.
+
+    WHY. TJ, 16 October 2026, seeing two School Advisory Council meetings on the front page
+    promised *"our minutes follow once the recording is read"*: *"show that it likely won't
+    have a video."* The board they are filed under records, so the per-board rule expected a
+    video. These bodies almost never are -- the count is printed with the reason, so the
+    "likely" is a measurement rather than our say-so, and it moves if they start recording."""
+    global _sub_bodies
+    if _sub_bodies is None:
+        sub = [r for r in _rows() if (r.get('body_as_printed') or '').strip()]
+        _sub_bodies = (sum(1 for r in sub if _truthy(r.get('video'))), len(sub))
+    return _sub_bodies
+
+
 def fiscal_year(ym):
     """Massachusetts FY: July starts the next one. FY2023 is Jul 2022 - Jun 2023. `ym` is
     a date or a 'YYYY-MM' prefix; only the first 7 characters are read."""
@@ -205,6 +225,13 @@ def status(row, first_video, due=None, as_of=None):
         v_status, v_reason = 'n/a', 'before recordings began'
     else:
         v_status, v_reason = _absent(due, as_of)
+    # A SUB-BODY FILED UNDER A BOARD THAT RECORDS: not a gap, and not a video to wait for.
+    # 'n/a', so nothing counts it MISSING; `likely_none` so a page can say so out loud.
+    likely_none = False
+    if not has_video and (row.get('body_as_printed') or '').strip() and v_status != 'n/a':
+        k, n = sub_body_recordings()
+        v_status, likely_none = 'n/a', True
+        v_reason = 'sub-committees and councils are rarely recorded (%d of %d)' % (k, n)
     m_status, m_reason = ('posted', None) if _truthy(row.get('minutes')) else _absent(due, as_of)
     if not has_video:
         t_status, t_reason = 'n/a', 'no recording'
@@ -224,7 +251,8 @@ def status(row, first_video, due=None, as_of=None):
     return dict(
         due=due,
         agenda=dict(posted=_truthy(row.get('agenda')), url=row.get('agenda_url') or None),
-        video=dict(status=v_status, url=video_url if has_video else None, reason=v_reason),
+        video=dict(status=v_status, url=video_url if has_video else None, reason=v_reason,
+                   likely_none=likely_none),
         minutes=dict(status=m_status, url=row.get('minutes_url') or None, reason=m_reason),
         transcript=dict(status=t_status, captions_disabled=_truthy(row.get('captions_disabled')), reason=t_reason),
     )
@@ -250,7 +278,7 @@ def in_policy(board_slug, date, rows=None):
     return any(r['board_slug'] in (board_slug, '*') and date >= r['since'] for r in rows)
 
 
-def our_minutes_status(has_our_minutes, video_status, policy_ok=True):
+def our_minutes_status(has_our_minutes, video_status, policy_ok=True, likely_none=False):
     """Our minutes are written FROM the recording, so a meeting with no video yet is not
     our gap -- it is waiting on the town's. Four states: `'posted'` (we have them),
     `'pending'` (video is in; ours is in the queue), `'needs-video'` (no video to write
@@ -261,6 +289,8 @@ def our_minutes_status(has_our_minutes, video_status, policy_ok=True):
         return dict(state='n/a', reason='not in our policy')
     if video_status == 'posted':
         return dict(state='pending', reason='in our queue')
+    if likely_none:
+        return dict(state='n/a', reason='no recording expected')
     return dict(state='needs-video', reason='written from the recording')
 
 

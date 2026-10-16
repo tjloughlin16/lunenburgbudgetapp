@@ -9,7 +9,7 @@ import { TransfersLink } from './BoardTransfers'
 import { useOrgCharts } from '../lib/orgChartLink'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, splitMeetings, meetingTitle } from '../lib/meetings'
+import { daysAway as daysFromToday, splitMeetings, meetingTitle, meetingBody } from '../lib/meetings'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -42,7 +42,7 @@ type Meeting = {
   // board doesn't record, or this is before its first recording).
   record?: {
     due: string | null
-    video: { status: RecordStatus; url?: string | null; reason?: string | null }
+    video: { status: RecordStatus; url?: string | null; reason?: string | null; likely_none?: boolean }
     minutes: { status: RecordStatus; url?: string | null; reason?: string | null }
     transcript: { status: RecordStatus; captions_disabled: boolean; reason?: string | null }
     our_minutes: { state: 'posted' | 'pending' | 'needs-video' | 'n/a'; reason?: string | null }
@@ -316,7 +316,7 @@ function UpcomingCard({ b, u }: { b: Board; u: Meeting }) {
   )
 }
 
-function RecentTable({ rows }: { rows: Meeting[] }) {
+function RecentTable({ rows, board }: { rows: Meeting[]; board: string }) {
   return (
     <div className="overflow-x-auto mt-3">
       <table className="text-sm w-full" style={{ minWidth: 720 }}>
@@ -326,7 +326,11 @@ function RecentTable({ rows }: { rows: Meeting[] }) {
           <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">our minutes</th><th className="text-left py-1.5 pr-3">recording</th><th className="text-left py-1.5 pr-3">agenda</th><th className="text-left py-1.5">official minutes</th></tr></thead>
         <tbody>{rows.map(r => (
           <tr key={r.date} style={{ borderTop: '1px solid var(--grid)' }}>
-            <td className="py-2 pr-3 tnum font-semibold whitespace-nowrap align-top">{mmdd(r.date)} {r.date.slice(0, 4)}</td>
+            <td className="py-2 pr-3 tnum font-semibold whitespace-nowrap align-top">{mmdd(r.date)} {r.date.slice(0, 4)}
+              {/* Which body met, where it is not the board itself -- a council or a
+                * sub-committee the town files under this board's agendas. */}
+              {r.body_as_printed && meetingBody(board, r.body_as_printed) !== board &&
+                <span className="block text-xs font-normal whitespace-normal" style={{ ...kicker, maxWidth: 160 }}>{meetingBody(board, r.body_as_printed)}</span>}</td>
             <td className="py-2 pr-3 align-top">
               {r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={kicker}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></>
                 : r.record?.our_minutes.state === 'pending' ? <span title="in our queue" style={kicker}>pending</span>
@@ -334,7 +338,7 @@ function RecentTable({ rows }: { rows: Meeting[] }) {
                 : <span title="written from the recording" style={kicker}>needs video</span>}
             </td>
             <td className="py-2 pr-3 align-top">
-              {r.record ? <RecordCell status={r.record.video.status} due={r.record.due} url={r.record.video.url} label="video" reason={r.record.video.reason} /> : (r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={kicker}>—</span>)}
+              {r.record ? <RecordCell status={r.record.video.status} due={r.record.due} url={r.record.video.url} label="video" reason={r.record.video.reason} likely_none={r.record.video.likely_none} /> : (r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={kicker}>—</span>)}
               {r.record?.video.status === 'posted' && (r.captions_disabled ? <span className="text-xs" style={kicker}> · no captions</span> : !r.transcript ? <span className="text-xs" style={kicker}> · no transcript yet</span> : null)}
             </td>
             <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={kicker}>—</span>}</td>
@@ -489,7 +493,7 @@ function OverviewTab({ b, upcoming, past }: { b: Board; upcoming: Meeting[]; pas
       <Deciding b={b} />
 
       <H2 id="recent">Lately</H2>
-      {lately.length ? <RecentTable rows={lately} /> : <Body>No meetings on the record yet.</Body>}
+      {lately.length ? <RecentTable rows={lately} board={b.name} /> : <Body>No meetings on the record yet.</Body>}
       <More href={`/boards/${b.slug}/meetings`}>Every meeting</More>
 
       {recentVotes.length > 0 && <>
@@ -520,7 +524,7 @@ function MeetingsTab({ b, d, upcoming, past }: { b: Board; d: Payload; upcoming:
         ? <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>Nothing on the calendar for a future date. The site was last updated {d.as_of}; a meeting noticed since then appears when it is next built.</p>
         : upcoming.map(u => <UpcomingCard key={u.date} b={b} u={u} />)}
       <H2 id="recent">Every meeting, newest first</H2>
-      {past.length ? <RecentTable rows={past} /> : <Body>No meetings on the record yet.</Body>}
+      {past.length ? <RecentTable rows={past} board={b.name} /> : <Body>No meetings on the record yet.</Body>}
       <p className="text-xs mt-1" style={kicker}>{n0(past.length)} meetings, by today&rsquo;s date rather than the day the site was built &mdash; so a meeting moves here on its own. Which are missing a record: <a className="underline" href={`/boards/${b.slug}/records`}>missing records</a>. For a program, every agenda and set of minutes as one text file: <a className="underline" href={b.urls.minutes_text}>{b.urls.minutes_text}</a>.</p>
     </>
   )

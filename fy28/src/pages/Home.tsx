@@ -10,6 +10,7 @@ import { usdShort } from '../model/engine'
 import { LEVEL_SERVICE } from '../model/walk'
 import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
 import { THE_THREE } from '../components/BoardsThisWeek'
+import { pending } from '../components/RecentMeetings'
 import { ListSection, Row } from '../components/GroupedList'
 import { todayIso, daysAway, dayLabel, splitMeetings, meetingTitle } from '../lib/meetings'
 
@@ -94,8 +95,16 @@ function useThreads(): Pane | null {
   }
 }
 
-type HomeRecent = { date: string; ours?: { slug: string; headline?: string; votes?: number } | null }
+// `body_as_printed`: the town files some other bodies' agendas under a board -- the School
+// Advisory Councils sit under School Committee -- so the title is what the agenda calls itself.
+type HomeRecent = {
+  date: string; ours?: { slug: string; headline?: string; votes?: number } | null
+  video_url?: string | null; captions_disabled?: boolean; body_as_printed?: string | null
+  record?: { video?: { likely_none?: boolean } } | null
+}
 type HomeBoards = { boards: { slug: string; name: string; the_three?: boolean; meetings: HomeRecent[] }[] }
+
+const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1)
 
 function useRecentMeetings(): Pane | null {
   const { d } = useReport<HomeBoards>('boards.json')
@@ -116,7 +125,7 @@ function useRecentMeetings(): Pane | null {
         href={r.ours ? `/meeting-minutes/${r.ours.slug}` : `/boards/${slug}`}
         eyebrow={when(r.date) + (r.ours && typeof r.ours.votes === 'number'
           ? ` · ${r.ours.votes} vote${r.ours.votes === 1 ? '' : 's'}` : '')}
-        title={board} sub={r.ours?.headline ?? 'Our minutes follow once the recording is read'} />
+        title={meetingTitle(board, r.body_as_printed)} sub={r.ours?.headline ?? cap(pending(r))} />
     )),
   }
 }

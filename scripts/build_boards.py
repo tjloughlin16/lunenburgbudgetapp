@@ -481,10 +481,11 @@ def build(as_of=None):
                 captions_disabled='1' if _has_captions_disabled else '0',
                 agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
                 minutes_url=(mn and mn['url']) or rg.get('minutes_url') or None,
-                video_url=_video_url)
+                video_url=_video_url, body_as_printed=rg.get('body_as_printed') or '')
             _st = MR.status(_status_row, first_video, due.get((slug, d)))
             _our_minutes = MR.our_minutes_status(o is not None, _st['video']['status'],
-                                                 MR.in_policy(slug, d, pol_rows))
+                                                 MR.in_policy(slug, d, pol_rows),
+                                                 _st['video']['likely_none'])
             meetings.append(dict(
                 date=d,
                 # What the agenda calls the body, where that is not the board it is filed
