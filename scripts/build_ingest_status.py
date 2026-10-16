@@ -1428,6 +1428,14 @@ def _fy_label(x, y, r, done):
             % (x, y, '\u2019' + r['fy'][-2:]))
 
 
+def _bar_open(x, bw, H, r):
+    """A bar is one clickable group: a transparent full-height rect so the empty space above a
+    short bar still answers, and the bar's segments drawn inside it. bkShow() reads the fiscal
+    year off it and the board off the chart's current filter."""
+    return ('<g class="bkbar" data-fy="%s" onclick="bkShow(this)" style="cursor:pointer">'
+            '<rect x="%.1f" y="0" width="%.1f" height="%d" fill="transparent"/>' % (r['fy'], x, bw, H))
+
+
 def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
     done = {r['fy'] for r in rows if _fy_done(r)}
     # MISSING RECORDS CAN BE HIDDEN (TJ, 7 October 2026). Hidden means drawn without them --
@@ -1467,6 +1475,7 @@ def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
     for i, r in enumerate(rows):
         x = PAD + i * (bw + GAP)
         y = base
+        out.append(_bar_open(x, bw, H, r))
         for name, col in STREAM_COLOUR:
             n = r.get(name, 0)
             if not n:
@@ -1529,6 +1538,7 @@ def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
                 floor = min(floor, job_label_y - 10)
             out.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="8" text-anchor="middle">+%s</text>'
                        % (x + bw / 2, floor, format(miss_tot, ',')))
+        out.append('</g>')
     out.append('</svg>')
     return ''.join(out)
 
@@ -1550,6 +1560,7 @@ def _pct_svg(rows):
                % (r['fy'], r['meetings_open'], r['meetings'], r['pct_open'],
                   ', '.join('%s %d' % (n, r.get(n, 0)) for n, _ in STREAM_COLOUR if r.get(n))
                   or 'nothing open'))
+        out.append(_bar_open(x, bw, H, r))
         out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="#21262d"><title>%s</title></rect>'
                    % (x, top, bw, full, tip))
         out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#d29922"><title>%s</title></rect>'
@@ -1557,6 +1568,7 @@ def _pct_svg(rows):
         out.append(_fy_label(x + bw / 2, base + 12, r, _fy_done(r)))
         out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%.0f%%</text>'
                    % (x + bw / 2, top - 4, r['pct_open']))
+        out.append('</g>')
     out.append('</svg>')
     return ''.join(out)
 
@@ -1621,14 +1633,62 @@ def backlog_chart(bd):
     out.append('<div class="tiny" style="margin-top:4px"><span style="color:%s">\u2713</span> beside a year: '
                'nothing left to process and nothing held for review \u2014 done, even where the town\u2019s '
                'record has gaps.</div>' % DONE_COLOUR)
+    out.append('<div class="tiny" style="margin-top:4px">Click a bar for what it is made of, by board, and the '
+               'held meetings by name.</div>')
     out.append('<div class="tiny" style="margin-top:4px">By the MEETING\u2019s own date, not by when we found it. '
                'A job is one meeting in one stream, so a meeting waiting in two streams is two jobs; the '
                'streams are different work at different prices and are never added into one figure.</div></div>')
+    # THE BREAKDOWN OF A CLICKED BAR (TJ, 16 October 2026: *"there are 5 meetings in '27 ... I
+    # cant tell what they are for. in the backlog view, if i hover or click a bar, can you show
+    # a breakdown of what im looking at on the bar"*). Every segment, by board, and the held
+    # meetings by name with the reason each was held -- read off build_backlog_depth's payload.
+    detail = {k: {r['fy']: dict(streams=r.get('stream_boards') or {}, held=r.get('needs_review_meetings') or [],
+                               missing=r.get('missing_boards') or {}, meetings=r.get('meetings', 0),
+                               open=r.get('meetings_open', 0))
+                  for r in rows} for k, rows in byfy.items()}
+    names = {}
+    for rows in byfy.values():
+        for r in rows:
+            for c in list((r.get('stream_boards') or {}).values()) + list((r.get('missing_boards') or {}).values()):
+                names.update({b: _board_name(b) for b in c})
+            names.update({m['board']: _board_name(m['board']) for m in r.get('needs_review_meetings') or []})
+    seg = [dict(k=n, c=c, label=legend[n]) for n, c in STREAM_COLOUR]
+    out.append('<div id="bkd" class="tiny" style="display:none;margin-top:10px;padding:10px 12px;border:1px solid '
+               '#30363d;border-radius:8px;background:#0d1117"></div>')
+    out.append('<script>var BKD=%s, BKN=%s, BKS=%s, BKM=%s, BKH="%s";</script>' % (
+        json.dumps(detail, separators=(',', ':')).replace('</', '<\\/'),
+        json.dumps(names, separators=(',', ':')), json.dumps(seg),
+        json.dumps([dict(k=n, c=MISSING_LINE[n], label=MISSING_LABEL[n]) for n, _b, _s, _w in MISSING_COLOUR]),
+        NEEDS_REVIEW_COLOUR))
     out.append("""<script>
+function bkEsc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function bkBoards(o){return Object.keys(o).map(function(b){return bkEsc(BKN[b]||b)+' '+o[b];}).join(' \u00b7 ');}
+function bkHide(){document.getElementById('bkd').style.display='none';return false;}
+function bkShow(g){var c=document.getElementById('bk'),bd=c.dataset.board||'all',fy=g.dataset.fy,
+ d=(BKD[bd]||{})[fy],p=document.getElementById('bkd');
+ if(!d){p.style.display='none';return;}
+ if(p.dataset.fy===fy&&p.dataset.board===bd&&p.style.display==='block'){p.style.display='none';return;}
+ p.dataset.fy=fy;p.dataset.board=bd;
+ var sw=function(col){return '<span style="color:'+col+'">\u25a0</span> ';},
+  sum=function(o){var n=0;for(var k in o)n+=o[k];return n;},
+  h=['<div style="display:flex;justify-content:space-between"><b style="font-size:13px">'+fy+'</b>'
+    +'<a href="#" onclick="return bkHide()">close</a></div>',
+    '<div style="margin:2px 0 8px">'+d.open+' of '+d.meetings+' meetings with a record to process still have something open</div>'];
+ var any=false;
+ BKS.forEach(function(s){var o=d.streams[s.k];if(!o)return;any=true;
+  h.push('<div style="margin-top:6px">'+sw(s.c)+'<b>'+sum(o)+'</b> '+bkEsc(s.label)+'<div style="margin-left:16px;color:#8b949e">'+bkBoards(o)+'</div></div>');});
+ if(!any)h.push('<div style="margin-top:6px;color:#3fb950">\u2713 No machine work left in this year.</div>');
+ if(d.held.length){h.push('<div style="margin-top:10px">'+sw(BKH)+'<b>'+d.held.length+'</b> held for review \u2014 a suspect read, waiting for a person (scripts/review_queue.py --show KEY):</div>');
+  d.held.forEach(function(m){h.push('<div style="margin-left:16px">'+bkEsc(m.date)+' '+bkEsc(BKN[m.board]||m.board)
+   +' <span style="color:#8b949e">\u2014 '+bkEsc(m.why.join('; '))+'</span></div>');});}
+ BKM.forEach(function(s){var o=d.missing[s.k];if(!o)return;
+  h.push('<div style="margin-top:6px">'+sw(s.c)+'<b>'+sum(o)+'</b> '+bkEsc(s.label)+' <span style="color:#8b949e">(not work)</span><div style="margin-left:16px;color:#8b949e">'+bkBoards(o)+'</div></div>');});
+ p.innerHTML=h.join('');p.style.display='block';}
 function bkPick(b){var c=document.getElementById('bk');
  var k=b.dataset.board?'board':(b.dataset.measure?'measure':(b.dataset.missing?'missing':'held'));
  c.querySelectorAll('button[data-'+k+']').forEach(function(x){x.style.background=(x===b)?'#1f6feb':'#161b22';});
  c.dataset[k]=b.dataset[k];
+ var pd=document.getElementById('bkd');if(pd&&k==='board')pd.style.display='none';
  var bd=c.dataset.board||'all', ms=c.dataset.measure||'jobs', mi=c.dataset.missing||'on', he=c.dataset.held||'on';
  c.querySelectorAll('.bkp').forEach(function(p){p.style.display=(p.dataset.board===bd&&p.dataset.measure===ms
    &&(p.dataset.missing==='any'||p.dataset.missing===mi)&&(p.dataset.held==='any'||p.dataset.held===he))?'block':'none';});

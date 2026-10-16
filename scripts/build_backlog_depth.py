@@ -180,15 +180,23 @@ def by_board_fy(jobs):
     disagree about which meetings are held."""
     import review_queue as Q
     review_keys = {k for k in Q.open_keys() if len(k[1]) >= 7}
+    review_why = collections.defaultdict(list)
+    for r in Q.open_rows():
+        review_why[(r['board_slug'], r['meeting_date'])].append(r['detail'] or r['reason'])
     meetings = processable_meetings()
     jobs = [j for j in jobs if (j['board'], j['date']) not in review_keys]
     open_m = {(j['board'], j['date']) for j in jobs}
     out = {}
     for key, keep in [('all', None)] + [(slug, slug) for slug, _ in FILTER_BOARDS]:
         rows = collections.defaultdict(lambda: collections.Counter())
+        # WHAT A BAR IS MADE OF, BY BOARD (TJ, 16 October 2026: *"if i hover or click a bar,
+        # can you show a breakdown of what im looking at"*): fy -> stream -> board -> jobs.
+        stream_boards = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
         for j in jobs:
             if (keep is None or j['board'] == keep) and len(j['date']) >= 7:
-                rows['FY%d' % fiscal_year(j['date'][:7])][j['stream']] += 1
+                fy = 'FY%d' % fiscal_year(j['date'][:7])
+                rows[fy][j['stream']] += 1
+                stream_boards[fy][j['stream']][j['board']] += 1
         held = collections.Counter()
         still = collections.Counter()
         review = collections.Counter()
@@ -209,7 +217,12 @@ def by_board_fy(jobs):
                          pct_open=round(100.0 * still[fy] / held[fy], 1) if held[fy] else 0.0,
                          needs_review=review[fy],
                          # WHICH BOARDS (TJ, 7 October 2026: the hover must say), largest first.
-                         needs_review_boards=dict(review_boards[fy].most_common()))
+                         needs_review_boards=dict(review_boards[fy].most_common()),
+                         stream_boards={s: dict(c.most_common()) for s, c in stream_boards[fy].items()},
+                         # ...and the held meetings by name, with why: there are only ever a few.
+                         needs_review_meetings=[dict(board=b, date=d, why=review_why.get((b, d), []))
+                                                for b, d in sorted(review_keys, key=lambda k: k[1], reverse=True)
+                                                if (keep is None or b == keep) and 'FY%d' % fiscal_year(d[:7]) == fy])
                     for fy in sorted(set(held) | set(review))]
     return out
 
@@ -239,14 +252,18 @@ def missing_by_fy(missing):
     out = {}
     for key, keep in [('all', None)] + [(slug, slug) for slug, _ in FILTER_BOARDS]:
         rows = collections.defaultdict(collections.Counter)
+        boards = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
         for m in missing:
             if keep is None or m['board'] == keep:
                 fy = 'FY%d' % fiscal_year(m['date'][:7])
                 for s in MISSING_STREAMS:
                     if m[s]:
                         rows[fy][s] += 1
+                        boards[fy][s][m['board']] += 1
                 if m['captions_disabled']:
                     rows[fy]['captions_disabled'] += 1
+        for fy, by in boards.items():
+            rows[fy]['missing_boards'] = {s: dict(c.most_common()) for s, c in by.items()}
         out[key] = rows
     return out
 
@@ -265,6 +282,7 @@ def _with_missing(rows, counts_by_fy, zero):
         for s in MISSING_STREAMS:
             base[s] = c.get(s, 0)
         base['captions_disabled'] = c.get('captions_disabled', 0)
+        base['missing_boards'] = c.get('missing_boards', {})
     return [idx[fy] for fy in sorted(idx)]
 
 
