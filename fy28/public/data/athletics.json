@@ -2535,7 +2535,7 @@
   {
    "side": "money_in",
    "what": "Which fund pays the teacher salaries a district charges to grants and revolving accounts?",
-   "why": "DESE\u2019s function-code file splits spending into general fund and grants-plus-revolving, and the gap between comparable districts is large: Harvard charges $4,964 per pupil of TEACHER salaries to grants and revolving funds where Lunenburg charges $726. That single line is most of the difference in what the two draw from outside the appropriation. The file does not say WHICH fund \u2014 a specific grant, school choice tuition received, a tuition agreement \u2014 and the answer decides whether it is something Lunenburg could pursue or a feature of one district\u2019s circumstances. \u2014 closes: DESE\u2019s End of Year Pupil and Financial Report for the district, which reports spending by individual fund."
+   "why": "DESE\u2019s function-code file splits spending into general fund and grants-plus-revolving, and the gap between comparable districts is large: Harvard charges $2,482 per pupil of TEACHER salaries to grants and revolving funds where Lunenburg charges $363 (FY2025, over total FTE pupils). That single line is the largest part, about half, of the difference in what the two draw from outside the appropriation. (Corrected 15 October 2026: this row said $4,964 and $726, each exactly double -- DESE's category subtotal row had been summed with its own line items.) The file does not say WHICH fund \u2014 a specific grant, school choice tuition received, a tuition agreement \u2014 and the answer decides whether it is something Lunenburg could pursue or a feature of one district\u2019s circumstances. \u2014 closes: DESE\u2019s End of Year Pupil and Financial Report for the district, which reports spending by individual fund."
   },
   {
    "side": "money_in",
@@ -2616,6 +2616,11 @@
    "side": "comparison",
    "what": "Do two districts put the same purchase on the same side of the line, so that their per-pupil figures compare like for like?",
    "why": "DESE\u2019s per-pupil figure counts functions 1000-5000 and leaves out capital (7000) and debt service (8000); its expenditures-by-function file carries no 6000, 7000 or 8000 row for any district, so no district\u2019s figure contains capital. But the line between counted and capital is a coding rule, and DESE\u2019s FY2025 End of Year Report form draws it: instructional equipment, \u201cincluding vocational equipment and science lab equipment irrespective of unit cost\u201d, goes in 2420 and is counted; non-instructional equipment over $5,000 and extraordinary maintenance over $150,000 a project go in 7000 and are not. Whether every district applies that rule the same way cannot be seen: DESE publishes each district\u2019s reported totals, not the purchases behind them. So a difference between two districts on an equipment or maintenance line may be spending, or may be coding. \u2014 closes: each district\u2019s own End of Year Financial Report workbook with its 7000 schedule, lease schedule and depreciation schedule, and DESE\u2019s desk-review or audit findings on them."
+  },
+  {
+   "side": "money_out",
+   "what": "How much of DESE\u2019s general fund figure for Lunenburg the school budget paid, and how much other town budgets paid",
+   "why": "DESE\u2019s per-pupil figure counts general fund spending on the schools whoever paid it: insurance for retired school staff (function 5250) is in it, and in FY2026 the town carries that insurance in its own insurance department (SCHRETHLTH), not in the school appropriation. DESE\u2019s expenditures-by-function file has one GEN_FUND column and does not say which budget paid which line, so the school appropriation divided by pupils is not DESE\u2019s figure a pupil, and the difference cannot be itemised from it. Found building /school-spending/per-pupil-line-by-line. \u2014 closes: the district\u2019s End of Year Financial Report as filed with DESE, whose Schedule 1 reports expenditures by the school committee and, separately, expenditures by city or town (part B, row 1016 of DESE\u2019s FY2025 form), for the same year."
   }
  ],
  "generated_by": "scripts/build_athletics_charts.py",
@@ -2687,13 +2692,13 @@
  "memo_total": 304046.18,
  "minutes": {
   "first_date": "2009-01-05",
-  "held": 12158,
+  "held": 12166,
   "image_scan": 1119,
   "last_date": "2026-11-17",
-  "published": 12208,
-  "searchable": 11021,
+  "published": 12216,
+  "searchable": 11029,
   "searchable_share": 0.9065,
-  "text_files_present": 12157,
+  "text_files_present": 12165,
   "unsearchable": 1137
  },
  "negatives": [
@@ -2926,7 +2931,7 @@
    "term": "programmatic cost"
   },
   {
-   "documents": 315,
+   "documents": 316,
    "term": "officials"
   }
  ],

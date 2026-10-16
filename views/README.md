@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4948 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4972 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4332 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4356 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -280,6 +280,7 @@ Listed so this view cannot look more complete than it is.
 - `data/dls-health-self-insured.csv` — Which municipalities pay health claims from a trust rather than buying premiums
 - `data/dls-new-growth.csv` — New growth, residential and total, eleven towns, FY2003–FY2026
 - `data/dls-override-votes.csv` — Override and underride votes, extracted
+- `data/dls-tax-rates.csv` — Tax rates by class, every municipality, FY2003–FY2026
 - `data/document-basis.csv` — What produced each document’s figures
 - `data/document-defects.csv` — Where a document the town published is itself incomplete
 - `data/document-watch-events.csv` — Documents that appeared on the district's and the town's pages, and when we first saw them
@@ -420,6 +421,9 @@ Listed so this view cannot look more complete than it is.
 - `data/staffing-coverage.csv` — Where a department publishes and we still have no number
 - `data/stated-cuts.csv` — Every reduction and restoration the district named in writing, FY2020–FY2027
 - `data/stated-figures.csv` — Figures the town stated about itself, with the quote
+- `data/suggested-reports-meetings.csv` — Every meeting a suggested report came up in
+- `data/suggested-reports-merges.csv` — Suggested reports a person folded together
+- `data/suggested-reports.csv` — Reports a meeting’s discussion showed a need for
 - `data/table-corrections.csv` — Cells read off the page image, and cells checked against it
 - `data/table-semantics.csv` — What each table in the database is
 - `data/tax-collection-unreconciled.csv` — The thirteen years it will not publish, and why each refuses
@@ -457,7 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/youtube-title-classification.csv` — What each video title says the video IS
 - `data/youtube-transcript-index.csv` — Which meeting recordings we hold a transcript for
 - `data/youtube-video-boards.csv` — One row per (video, board) pair
-- `data/youtube-video-classification.csv` — One row per video, with what we think it is
-- `data/youtube-videos.csv` — Every video on the town’s PEG access channel
-- `data/youtube-watch-events.csv` — What appeared on the town’s YouTube channel between one check and the next
-- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
