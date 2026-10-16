@@ -62,14 +62,16 @@ WHAT A MEETING COSTS, MEASURED 7-8 October 2026 (the governed runs; TJ: "So 1% p
 A BATCH TAKES THE LOCK FROM THE PACED RUN, AND GIVES IT BACK. TJ, 16 October 2026: *"i want
 this ability to process a batch of meetings directly. so that should capture the lock when
 asked ... and then when its done, reopen the lock."* A batch (`--next N`, or one meeting) that
-finds the paced run (`--until-usage`) holding the lock writes build/process-meeting.YIELD with
+finds the paced run (`--until-usage` with no `--next`) holding the lock writes build/process-meeting.YIELD with
 its pid and waits. The paced run sees it before handing out its next meeting, lets the one in
 flight finish -- a step killed half way is paid for and produces nothing -- releases the lock,
 and waits for the file to go. The batch re-plans (the paced run may just have done its first
 meeting), runs, and removes the file on the way out, however it exits; the paced run takes the
 lock back and carries on. A batch killed with -9 leaves the file behind; the paced run checks
 the pid inside and clears a dead one. Two batches still never run at once -- only the paced run
-yields -- and nothing is spent twice, because both sides re-read what a meeting needs from disk.
+yields -- and nothing is spent twice. A big batch should be GOVERNED: `--until-usage --next 250
+--session-cap 80 --max-jobs 1` is a batch too (it takes the lock the same way), but paced by the
+live bars and waiting out each window's reset instead of running one into the ground, because both sides re-read what a meeting needs from disk.
 
 THE ONE EXCEPTION: `--oldest --gap SECONDS`, a SLOW second run from the other end of the
 queue, to use what one run leaves of a window (TJ, 7 October 2026: *"15% remaining in the
@@ -100,6 +102,7 @@ LOCK = os.path.join(ROOT, 'build', 'process-meeting.lock')
 YIELD = os.path.join(ROOT, 'build', 'process-meeting.YIELD')   # a batch asking the paced run for the lock
 YIELD_WAIT_S = 1800      # how long a batch waits for the paced run to finish its meeting in flight
 LOCK_FH = None           # this run's open, flocked lock file
+PACED = False            # this run is the open-ended paced run -- the only one that yields
 MAX_FAILED_IN_A_ROW = 3
 MAX_STUCK_IN_A_ROW = 2
 
@@ -383,6 +386,10 @@ def main():
             G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs, week_goal=a.week_line), G.readings(), time.time())), flush=True)
     if a.dry_run:
         return 0
+    # THE PACED RUN is the open-ended governor. `--until-usage --next N` is a BATCH that happens
+    # to be paced by the bars: it takes the lock like any batch and never yields it.
+    global PACED
+    PACED = bool(a.until_usage and not a.next)
 
     if S.kill_switch():
         sys.exit('not starting -- %s' % S.kill_switch())
@@ -396,7 +403,7 @@ def main():
             fcntl.flock(LOCK_FH, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             holder = lock_holder(lock_path)
-            if a.until_usage or a.oldest or not holder or not is_paced_run(holder):
+            if (a.until_usage and not a.next) or a.oldest or not holder or not is_paced_run(holder):
                 sys.exit('not starting -- another process_meeting.py run%s holds %s'
                          % (' (pid %s)' % holder if holder else '', os.path.relpath(lock_path, ROOT)))
             asked = take_from_paced_run(holder)
@@ -408,7 +415,7 @@ def main():
                 say('lock taken; re-planned: %d meeting(s), estimated $%.2f; ceiling $%.2f' % (len(plan), est, ceiling))
         LOCK_FH.seek(0)
         LOCK_FH.truncate()
-        LOCK_FH.write('%d %s\n' % (os.getpid(), 'paced' if a.until_usage else 'batch'))
+        LOCK_FH.write('%d %s\n' % (os.getpid(), 'paced' if PACED else 'batch'))
         LOCK_FH.flush()
 
         if a.until_usage:
@@ -451,7 +458,7 @@ def pid_alive(pid):
 
 def is_paced_run(pid):
     cmd = subprocess.run(['ps', '-o', 'command=', '-p', str(pid)], capture_output=True, text=True).stdout
-    return 'process_meeting.py' in cmd and '--until-usage' in cmd
+    return 'process_meeting.py' in cmd and '--until-usage' in cmd and '--next' not in cmd
 
 
 def take_from_paced_run(holder):
@@ -675,7 +682,7 @@ def run_governed(plan, a, S, ceiling):
             if S.kill_switch():
                 stop = S.kill_switch()
                 break
-            asker = yield_requested()
+            asker = yield_requested() if PACED else None
             if asker:
                 if active:                   # start nothing new; let the meeting in flight finish
                     time.sleep(2)
@@ -918,7 +925,7 @@ def wait_for_reset(gp, S, G):
         dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
     while not S.kill_switch():
         time.sleep(30)
-        asker = yield_requested()
+        asker = yield_requested() if PACED else None
         if asker:
             yield_to_batch(asker)
         if time.time() - getattr(gp, '_last_wait_fetch', 0) >= FETCH_RUNNING_S:
