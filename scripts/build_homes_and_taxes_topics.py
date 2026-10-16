@@ -1208,6 +1208,17 @@ def compare_pages(f, con, U, P, N, F):
     # and the finding and the conclusions -- the text a post quotes -- say it in the figure.
     HI = lambda r, m: figure(r, ('the highest of %d' % m) if r == 1 else '%s-highest of %d' % (ordinal(r), m), 'towns')
     HI1 = lambda r: figure(r, 'the highest' if r == 1 else '%s-highest' % ordinal(r), 'rank')
+    # LIKE FOR LIKE. TJ, 15-16 October 2026: "most people won't understand what 1.44% of the
+    # value means" and "for a $500k house in both, what are the taxes you'd pay". So the same
+    # home -- $500,000, our choice of a round figure near Lunenburg's average -- is put in every
+    # town at that town's own rate. DLS's average bill IS the average value at the residential
+    # rate (asserted below), so bill / value is the rate, exactly. Before any exemption or
+    # surcharge, which no one figure can carry.
+    STD = 500000
+    std = lambda t: H[t]['bill'] / H[t]['value'] * STD
+    per100k = lambda t: H[t]['bill'] / H[t]['value'] * 100000
+    SD = figure(STD, C.usd(STD), 'home value')
+    har = H['Harvard']
     Y = F(fy)
     E = lambda v: figure(v, C.pct(v, 2), 'of value')
     src_tax = doc('state-dls/' + bills[('Lunenburg', fy)]['source_file'],
@@ -1217,32 +1228,32 @@ def compare_pages(f, con, U, P, N, F):
     out = {}
     out['home-value-and-bill'] = TP.page(
         'home-value-and-bill',
-        'Lunenburg’s home value is %s nearby; its bill as a share of value, %s.'
-        % (HI1(rv)['text'], HI(re_, n)['text']),
+        'A $500,000 home is taxed %s a year in Lunenburg, %s nearby; in Leominster, %s.'
+        % (C.usd(std('Lunenburg')), HI(re_, n)['text'], C.usd(std('Leominster'))),
         [f('bill', U(L['bill']), 'Lunenburg’s average single-family bill, %s' % C.fy(fy), 'published', {'y': Y}),
          f('value', U(L['value']), 'Lunenburg’s average single-family value, %s' % C.fy(fy), 'published', {'y': Y}),
-         f('eff', E(L['eff']), 'Lunenburg’s bill as a share of the home’s value', 'published'),
-         f('rb', POS(rb, n), 'nearby and destination towns, by bill, highest first', 'published'),
+         f('std', U(std('Lunenburg')), 'tax on a $500,000 home at Lunenburg’s rate', 'published',
+           {'s': SD}),
+         f('p100', U(per100k('Lunenburg')), 'a year for every $100,000 a home is worth', 'published',
+           allow=('$100,000',)),
+         f('rb', POS(rb, n), 'nearby and destination towns, by average bill, highest first', 'published'),
          f('rv', POS(rv, n), 'the same towns, by home value, highest first', 'published'),
-         f('re', POS(re_, n), 'by bill as a share of value, highest first', 'published'),
+         f('re', POS(re_, n), 'by tax on the same home, highest first', 'published'),
          f('top', U(H[top]['bill']), '%s, the highest average bill of them' % top, 'published'),
-         f('leo', U(leo['bill']), 'Leominster’s average bill, on a %s home' % C.usd(leo['value']),
-           'published', {'v': U(leo['value'])}),
-         f('fit', U(fit['bill']), 'Fitchburg’s average bill, on a %s home' % C.usd(fit['value']),
-           'published', {'v': U(fit['value'])}),
-         f('rm', POS(rm, len(matched) + 1), 'with the towns the math matches, by bill', 'published'),
+         f('leostd', U(std('Leominster')), 'the same $500,000 home in Leominster', 'published', {'s': SD}),
+         f('harstd', U(std('Harvard')), 'the same $500,000 home in Harvard', 'published', {'s': SD}),
          f('buys', None, 'what each town buys with its bill', 'gap',
            closes='each town’s spending by function as filed with DLS (Schedule A), beside its bill')],
         [con('The average home here is worth less than in %d of the %d other towns; its bill ranks %s.'
              % (rv - 1, n - 1, ordinal(rb)), ['value', 'rv', 'rb', 'bill'],
              {'a': N(rv - 1, 'towns'), 'b': N(n - 1, 'towns'), 'c': figure(rb, ordinal(rb), 'rank')}),
-         con('The bill takes %s of the home’s value, %s: a higher rate on a lower value.'
-             % (C.pct(L['eff'], 2), HI(re_, n)['text']), ['eff', 're'],
-             {'p': E(L['eff']), 'r': HI(re_, n)},
+         con('A $500,000 home is taxed %s here, %s: a higher rate on lower-value homes.'
+             % (C.usd(std('Lunenburg')), HI(re_, n)['text']), ['std', 'p100', 're'],
+             {'s': SD, 'a': U(std('Lunenburg')), 'r': HI(re_, n)},
              notes=[step('A town’s rate is its levy spread over its total value, so a rate says as '
                          'much about the business base and the budget as about the homes.', 'hypothesis')]),
          con('Leominster and Fitchburg border the town and Harvard is our peer; all three enrol '
-             'Lunenburg children.', ['leo', 'fit', 'top'],
+             'Lunenburg children.', ['leostd', 'harstd', 'top'],
              notes=[step('The peers are this project’s choice. The borders are computed from '
                          'boundary maps; the destinations are DESE’s count of residents enrolled.', 'gap',
                          closes='a cohort the town itself names for comparison; none is published')]),
@@ -1252,16 +1263,17 @@ def compare_pages(f, con, U, P, N, F):
                          'and a lower bill is not a cheaper town: towns fund different things.', 'gap',
                          closes='the Assessors’ commitment list, by parcel, with exemptions')])],
         chart=TP.ranking(
-            'Average single-family bill, nearby and destination towns',
-            [(t, H[t]['bill']) for t in close], '$', highlight='Lunenburg',
-            note='DLS Average Single-Family Tax Bill, %s: borders, our peers and the towns behind '
-                 'districts Lunenburg children enrol in.' % C.fy(fy), note_figures={'y': Y}),
+            'Tax on the same home, town by town',
+            [(t, std(t)) for t in close], '$', highlight='Lunenburg',
+            note='A $500,000 home at each town’s %s residential rate, our arithmetic from DLS; before '
+                 'any exemption or surcharge.' % C.fy(fy), note_figures={'y': Y, 's': SD}),
         table=dict(caption='Average single-family value and bill, %s, by comparison set' % C.fy(fy), views=[
-            dict(key=key, label=label, total_col=1, kinds=['ledger', 'ledger', 'ledger'],
-                 columns=['Average home value', 'Average bill', 'Bill as share of value'],
-                 rows=[dict(label=lab(t), cells=[C.usd(H[t]['value']), C.usd(H[t]['bill']),
-                                                 C.pct(H[t]['eff'], 2)])
-                       for t in sorted(['Lunenburg'] + towns, key=lambda t: -H[t]['bill'])],
+            dict(key=key, label=label, total_col=1, kinds=['ledger', 'ledger', 'ledger', 'ledger'],
+                 columns=['Tax on a $500,000 home', 'Per $100,000 of value', 'Average home value',
+                          'Average bill'],
+                 rows=[dict(label=lab(t), cells=[C.usd(std(t)), C.usd(per100k(t)),
+                                                 C.usd(H[t]['value']), C.usd(H[t]['bill'])])
+                       for t in sorted(['Lunenburg'] + towns, key=lambda t: -std(t))],
                  note=note)
             for key, label, towns, lab, note in [
                 ('borders', 'Towns it borders', borders, str,
@@ -1277,7 +1289,7 @@ def compare_pages(f, con, U, P, N, F):
                  'The twenty towns nearest Lunenburg on measures this project chose, given equal weight.'),
             ]]),
         sources=[src_tax, src_dest],
-        finding_figures={'a': HI1(rv), 'b': HI(re_, n)})
+        finding_figures={'s': SD, 'a': U(std('Lunenburg')), 'b': HI(re_, n), 'c': U(std('Leominster'))})
 
     # ------------------------------------------------ the regional school share
     mta = {(int(r['fiscal_year']), r['component']): r for r in csv.DictReader(open(MTA_CSV, encoding='utf-8'))}

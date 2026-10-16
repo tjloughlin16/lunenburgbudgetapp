@@ -220,12 +220,18 @@ def layout_spotlight(img, R):
 
 
 def layout_tiles(img, R):
+    # ONE ROW, HOWEVER MANY CARDS. Two was the only case until 16 October 2026, when TJ asked
+    # for three towns side by side; a two-column grid wrapped the third onto a second row and
+    # overflowed the square. Three or more cards get a smaller figure so each still fits.
+    n = len(img['tiles'])
     t = ''.join(
         f'<div class="t"><div class="te">{R(x["eyebrow"])}</div><div class="tn">{R(x["value"])}</div>'
         f'<div class="tu">{R(x["label"])}</div><div class="td">{R(x.get("text", ""))}</div>'
-        f'<div class="tp">{SITE}<b>{html.escape(x.get("path", ""))}</b></div></div>'
+        + (f'<div class="tp">{SITE}<b>{html.escape(x["path"])}</b></div>' if x.get('path') else '')
+        + '</div>'
         for x in img['tiles'])
-    return f'<div class="tiles">{t}</div>'
+    return (f'<div class="tiles{" many" if n > 2 else ""}" '
+            f'style="grid-template-columns:repeat({n},1fr)">{t}</div>')
 
 
 def layout_hero(img, R):
@@ -278,6 +284,7 @@ h1 em{font-style:normal;color:%(a)s}
 .t{background:#fff;border:2px solid #e4e2dc;border-top:10px solid %(a)s;border-radius:16px;padding:26px 30px;min-height:330px;display:flex;flex-direction:column}
 .te{font-weight:700;font-size:18px;letter-spacing:.12em;color:%(a)s}
 .tn{font-weight:800;font-size:72px;line-height:1;margin-top:12px;letter-spacing:-.02em}
+.tiles.many .t{padding:24px 24px;min-height:0}.tiles.many .tn{font-size:56px}
 .tu{font-weight:700;font-size:25px;margin-top:6px}
 .td{font-size:21px;line-height:1.38;color:#52514e;margin-top:10px}
 .tp{margin-top:auto;font-size:18px;color:#898781}.tp b{color:%(a)s}

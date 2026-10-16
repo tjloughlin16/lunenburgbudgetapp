@@ -9,7 +9,10 @@
     "har": "topics/home-value-and-bill.json#table.views[key=peers].rows[label=Harvard]",
     "leon": "towns-like-us.json#destinations[district=Leominster]"
   },
-  "literal": [],
+  "literal": [
+    "$100,000",
+    "$500,000"
+  ],
   "flare": {
     "accent": "harbor",
     "motif": "blocks"
@@ -17,38 +20,42 @@
   "image": {
     "layout": "tiles",
     "size": "square",
-    "headline": "Lunenburg’s tax bill takes {hv.facts[id=eff].value.text} of the home’s value: {hv.finding.figures.b.text}",
-    "emphasis": "{hv.finding.figures.b.text}",
-    "headline_size": 54,
-    "sub": "Among the towns it borders, our peer towns and the towns its children attend school in, {hv.facts[id=bill].label.figures.y.text}. An average single-family bill is no one household’s bill, and towns fund different things.",
+    "headline": "The same $500,000 home is taxed {hv.facts[id=std].value.text} a year in Lunenburg",
+    "emphasis": "{hv.facts[id=std].value.text}",
+    "headline_size": 50,
+    "sub": "{hv.finding.figures.b.text} nearby, each town at its own {hv.facts[id=bill].label.figures.y.text} rate. Real bills vary with exemptions and what each town funds.",
     "tiles": [
       {
         "eyebrow": "LUNENBURG",
-        "value": "{hv.facts[id=bill].value.text}",
-        "label": "average bill · {hv.facts[id=eff].value.text} of value",
-        "text": "On an average {hv.facts[id=value].value.text} home: {hv.facts[id=rv].value.text} on value.",
-        "path": "/homes-and-taxes/home-value-and-bill"
+        "value": "{hv.facts[id=std].value.text}",
+        "label": "on a $500,000 home",
+        "text": "{hv.facts[id=p100].value.text} per $100,000 of value."
       },
       {
         "eyebrow": "LEOMINSTER",
-        "value": "{leo.cells[1]}",
-        "label": "average bill · {leo.cells[2]} of value",
-        "text": "On an average {leo.cells[0]} home. {leon.students} Lunenburg children go to school there.",
-        "path": "/homes-and-taxes/home-value-and-bill"
+        "value": "{leo.cells[0]}",
+        "label": "on a $500,000 home",
+        "text": "{leo.cells[1]} per $100,000. {leon.students} Lunenburg children go to school there."
+      },
+      {
+        "eyebrow": "HARVARD · BROMFIELD",
+        "value": "{har.cells[0]}",
+        "label": "on a $500,000 home",
+        "text": "{har.cells[1]} per $100,000."
       }
     ],
     "path": "/homes-and-taxes/home-value-and-bill",
     "as_of": "As of {m.as_of|short}",
     "conclusion": "Lunenburg’s average home is worth less than in {hv.conclusions[0].figures.a.text} of the {hv.conclusions[0].figures.b.text} other towns.",
     "conclusion_em": "{hv.conclusions[0].figures.a.text} of the {hv.conclusions[0].figures.b.text}",
-    "conclusion_size": 44
+    "conclusion_size": 40
   },
   "text": [
-    "Lunenburg's average home is worth less than in most of the towns around it. Its tax bill takes a bigger share of that home's value than in most of them.",
+    "Put the same $500,000 home in Lunenburg and the towns around it, and Lunenburg's tax on it is {hv.facts[id=std].value.text} a year: {hv.finding.figures.b.text} nearby.",
     "",
-    "In {hv.facts[id=bill].label.figures.y.text} the average single-family home in Lunenburg was assessed at {hv.facts[id=value].value.text} and its average bill was {hv.facts[id=bill].value.text}: {hv.facts[id=eff].value.text} of the value. We set it beside the towns Lunenburg borders, the peer towns this project compares it with, and the towns whose schools Lunenburg children attend instead. On home value Lunenburg ranks {hv.finding.figures.a.text}. On the bill as a share of value it ranks {hv.finding.figures.b.text}.",
+    "That is Lunenburg's {hv.facts[id=bill].label.figures.y.text} rate, {hv.facts[id=p100].value.text} for every $100,000 a home is worth, applied to one home for every town so the comparison is like for like. The average single-family home here is worth {hv.facts[id=value].value.text} and its average bill was {hv.facts[id=bill].value.text}. We compared the towns Lunenburg borders, this project's peer towns, and the towns whose schools Lunenburg children attend instead.",
     "",
-    "For comparison: in Leominster, where {leon.students} Lunenburg children go to school, the average bill was {leo.cells[1]} on a {leo.cells[0]} home ({leo.cells[2]}). In Harvard, home of The Bromfield School, it was {har.cells[1]} on a {har.cells[0]} home, the highest of these towns.",
+    "The same $500,000 home: {leo.cells[0]} in Leominster, where {leon.students} Lunenburg children go to school; {har.cells[0]} in Harvard, home of The Bromfield School. Lunenburg's average home is worth less than in {hv.conclusions[0].figures.a.text} of the {hv.conclusions[0].figures.b.text} other towns, so its rate is higher on lower-value homes.",
     "👉 lburg.org/homes-and-taxes/home-value-and-bill",
     "",
     "One more you may not have heard: Lunenburg pays Monty Tech an assessment, like each of its {rs.facts[id=n].value.text} member towns, and it comes out of the same town budget as everything else. In {hv.facts[id=bill].label.figures.y.text} it was {rs.finding.figures.p.text} of the town's tax levy. In proportion, that is about {rs.finding.figures.m.text} of the average bill. That figure is our estimate: state aid pays into the same budget, and nothing published says which money pays which bill.",
