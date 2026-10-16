@@ -35,7 +35,8 @@ WHY IT CANNOT RUN AWAY. Every one of these stops the whole run, says why, and ex
   * no progress: a meeting whose steps all "succeeded" and that still needs the same steps --
     twice in a row. Judged by RE-READING what is on disk, never by what a step printed.
   * three failed meetings in a row
-  * another run already holds the lock                            (one at a time, never two)
+  * another run already holds the lock                            (one at a time, never two --
+    except that a batch PREEMPTS the paced run; see below)
 
 And it runs ONE STEP AT A TIME. Parallel runs cost the same dollars and spend them faster,
 which is what exhausts the five-hour window and takes TJ's own session down with it.
@@ -57,6 +58,18 @@ WHAT A MEETING COSTS, MEASURED 7-8 October 2026 (the governed runs; TJ: "So 1% p
   * a window of pure batch work measured ~ $42 ($0.42 a point, overnight 7-8 Oct: 96 meetings
     moved the bar 6% -> 100%; 74 meetings 3% -> 66%). The governor steers by the server's bar,
     not by these numbers; they are for sanity-checking its projection.
+
+A BATCH TAKES THE LOCK FROM THE PACED RUN, AND GIVES IT BACK. TJ, 16 October 2026: *"i want
+this ability to process a batch of meetings directly. so that should capture the lock when
+asked ... and then when its done, reopen the lock."* A batch (`--next N`, or one meeting) that
+finds the paced run (`--until-usage`) holding the lock writes build/process-meeting.YIELD with
+its pid and waits. The paced run sees it before handing out its next meeting, lets the one in
+flight finish -- a step killed half way is paid for and produces nothing -- releases the lock,
+and waits for the file to go. The batch re-plans (the paced run may just have done its first
+meeting), runs, and removes the file on the way out, however it exits; the paced run takes the
+lock back and carries on. A batch killed with -9 leaves the file behind; the paced run checks
+the pid inside and clears a dead one. Two batches still never run at once -- only the paced run
+yields -- and nothing is spent twice, because both sides re-read what a meeting needs from disk.
 
 THE ONE EXCEPTION: `--oldest --gap SECONDS`, a SLOW second run from the other end of the
 queue, to use what one run leaves of a window (TJ, 7 October 2026: *"15% remaining in the
@@ -84,6 +97,9 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 LOCK = os.path.join(ROOT, 'build', 'process-meeting.lock')
+YIELD = os.path.join(ROOT, 'build', 'process-meeting.YIELD')   # a batch asking the paced run for the lock
+YIELD_WAIT_S = 1800      # how long a batch waits for the paced run to finish its meeting in flight
+LOCK_FH = None           # this run's open, flocked lock file
 MAX_FAILED_IN_A_ROW = 3
 MAX_STUCK_IN_A_ROW = 2
 
@@ -372,17 +388,134 @@ def main():
         sys.exit('not starting -- %s' % S.kill_switch())
     os.makedirs(os.path.dirname(LOCK), exist_ok=True)
     lock_path = LOCK.replace('.lock', '-oldest.lock') if a.oldest else LOCK
-    lock = open(lock_path, 'w')
+    global LOCK_FH
+    LOCK_FH = open(lock_path, 'a+')          # 'a+', not 'w': a refused run must not wipe the holder's pid
+    asked = False
     try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except BlockingIOError:
-        sys.exit('not starting -- another process_meeting.py run holds %s' % os.path.relpath(lock_path, ROOT))
-    lock.write(str(os.getpid()))
-    lock.flush()
+        try:
+            fcntl.flock(LOCK_FH, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            holder = lock_holder(lock_path)
+            if a.until_usage or a.oldest or not holder or not is_paced_run(holder):
+                sys.exit('not starting -- another process_meeting.py run%s holds %s'
+                         % (' (pid %s)' % holder if holder else '', os.path.relpath(lock_path, ROOT)))
+            asked = take_from_paced_run(holder)
+            # RE-PLAN: the paced run may have finished the very meeting this batch planned first.
+            if a.next:
+                plan = queue()[:a.next]
+                est = estimate(plan)
+                ceiling = a.max_usd if a.max_usd is not None else max(1.0, round(2 * est, 2))
+                say('lock taken; re-planned: %d meeting(s), estimated $%.2f; ceiling $%.2f' % (len(plan), est, ceiling))
+        LOCK_FH.seek(0)
+        LOCK_FH.truncate()
+        LOCK_FH.write('%d %s\n' % (os.getpid(), 'paced' if a.until_usage else 'batch'))
+        LOCK_FH.flush()
 
-    if a.until_usage:
-        return run_governed(plan, a, S, ceiling)
-    return run_serial(plan, a, S, ceiling)
+        if a.until_usage:
+            return run_governed(plan, a, S, ceiling)
+        return run_serial(plan, a, S, ceiling)
+    finally:
+        if asked:
+            # GIVE IT BACK, however this run ends: release first, then withdraw the request,
+            # so the paced run's blocking flock returns the moment it looks.
+            fcntl.flock(LOCK_FH, fcntl.LOCK_UN)
+            try:
+                os.remove(YIELD)
+            except FileNotFoundError:
+                pass
+            say('lock returned to the paced run')
+
+
+def lock_holder(lock_path):
+    """The pid holding `lock_path`: the one it wrote, else whoever has it open (lsof)."""
+    try:
+        first = open(lock_path, encoding='utf-8').read().split()
+        if first and first[0].isdigit() and pid_alive(int(first[0])):
+            return int(first[0])
+    except OSError:
+        pass
+    out = subprocess.run(['lsof', '-t', lock_path], capture_output=True, text=True).stdout.split()
+    others = [int(p) for p in out if p.isdigit() and int(p) != os.getpid()]
+    return others[0] if others else None
+
+
+def pid_alive(pid):
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+
+
+def is_paced_run(pid):
+    cmd = subprocess.run(['ps', '-o', 'command=', '-p', str(pid)], capture_output=True, text=True).stdout
+    return 'process_meeting.py' in cmd and '--until-usage' in cmd
+
+
+def take_from_paced_run(holder):
+    """Ask the paced run for the lock and block until it is ours. -> True (we asked, so we
+    must give it back), or exits if the paced run does not yield in YIELD_WAIT_S."""
+    if os.path.exists(YIELD):
+        other = open(YIELD, encoding='utf-8').read().split()
+        if other and other[0].isdigit() and int(other[0]) != os.getpid() and pid_alive(int(other[0])):
+            sys.exit('not starting -- another batch (pid %s) is already waiting for the paced run' % other[0])
+    with open(YIELD + '.tmp', 'w') as fh:
+        fh.write('%d\n' % os.getpid())
+    os.replace(YIELD + '.tmp', YIELD)
+    say('the paced run (pid %d) holds the lock -- asked it to yield; waiting for its meeting in flight' % holder)
+    t0 = time.time()
+    try:
+        while True:
+            try:
+                fcntl.flock(LOCK_FH, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                say('lock taken after %ds' % (time.time() - t0))
+                return True
+            except BlockingIOError:
+                if time.time() - t0 > YIELD_WAIT_S:
+                    raise SystemExit('not starting -- the paced run did not yield in %d minutes '
+                                     '(running old code? restart it: scripts/minutes_pacing.sh)' % (YIELD_WAIT_S // 60))
+                time.sleep(5)
+    except BaseException:
+        try:
+            os.remove(YIELD)
+        except FileNotFoundError:
+            pass
+        raise
+
+
+def yield_requested():
+    """A live batch's pid in YIELD, or None. A dead one's file is cleared here."""
+    try:
+        f = open(YIELD, encoding='utf-8').read().split()
+    except FileNotFoundError:
+        return None
+    pid = int(f[0]) if f and f[0].isdigit() else None
+    if pid and pid_alive(pid):
+        return pid
+    try:
+        os.remove(YIELD)
+        say('[yield] cleared a request from a batch that is gone (pid %s)' % pid)
+    except FileNotFoundError:
+        pass
+    return None
+
+
+def yield_to_batch(pid):
+    """THE PACED RUN'S SIDE: nothing in flight, so release the lock, wait for the batch to
+    finish (its YIELD file gone, or its process dead), and take the lock back."""
+    say('[gov %s] a batch (pid %d) asked for the lock -- yielding' % (dt.datetime.now().strftime('%H:%M'), pid))
+    fcntl.flock(LOCK_FH, fcntl.LOCK_UN)
+    t0 = time.time()
+    while yield_requested():
+        time.sleep(5)
+    fcntl.flock(LOCK_FH, fcntl.LOCK_EX)      # blocking: the batch releases before it withdraws
+    LOCK_FH.seek(0)
+    LOCK_FH.truncate()
+    LOCK_FH.write('%d paced\n' % os.getpid())
+    LOCK_FH.flush()
+    say('[gov %s] lock back after %d min -- resuming' % (dt.datetime.now().strftime('%H:%M'), (time.time() - t0) // 60))
 
 
 def work_meeting(board, date, S, label, quiet=False):
@@ -542,6 +675,14 @@ def run_governed(plan, a, S, ceiling):
             if S.kill_switch():
                 stop = S.kill_switch()
                 break
+            asker = yield_requested()
+            if asker:
+                if active:                   # start nothing new; let the meeting in flight finish
+                    time.sleep(2)
+                    continue
+                yield_to_batch(asker)
+                d, last_tick = None, 0       # decide afresh: the batch moved the bars
+                continue
             if T.spent >= ceiling:
                 stop = 'the ceiling: $%.2f spent of $%.2f' % (T.spent, ceiling)
                 break
@@ -606,6 +747,8 @@ def run_governed(plan, a, S, ceiling):
             if d and d['start'] and nxt < n and len(active) < d['jobs']:
                 board, date, _ = plan[nxt]
                 nxt += 1
+                if not steps(board, date):   # done meanwhile -- by a batch that took the lock
+                    continue
                 proj = nxt - 1 + len(active) + projected_remaining(gp, G.readings())
                 fut = pool.submit(work_meeting, board, date, S, '%d/~%d' % (nxt, max(proj, nxt)), a.max_jobs > 1)
                 active[fut] = (board, date)
@@ -775,6 +918,9 @@ def wait_for_reset(gp, S, G):
         dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
     while not S.kill_switch():
         time.sleep(30)
+        asker = yield_requested()
+        if asker:
+            yield_to_batch(asker)
         if time.time() - getattr(gp, '_last_wait_fetch', 0) >= FETCH_RUNNING_S:
             G.fetch(force=True)          # every FETCH_RUNNING_S while waiting for a reset
             gp._last_wait_fetch = time.time()
