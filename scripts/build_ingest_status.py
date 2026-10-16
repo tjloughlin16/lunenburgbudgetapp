@@ -2854,7 +2854,13 @@ def tabs(sel, q=None):
     """The tab bar. `Questions (N)` carries the count of OPEN questions, so somebody waiting
     on an answer is visible from every page, not only from the Questions tab."""
     n = (q or {}).get('open') or 0
+    try:
+        import review_queue as RQ
+        nr = len({r['key'] for r in RQ.open_rows()})
+    except Exception:                                   # noqa: BLE001 -- a tab label must never break a page
+        nr = 0
     items = [('index.html', 'Running'), ('backlog.html', 'Backlog'),
+             ('review.html', 'Review' + (' (%d)' % nr if nr else '')),
              ('suggested.html', 'Suggested reports'), ('sources.html', 'Documents'),
              ('questions.html', 'Questions' + (' (%d)' % n if n else ''))]
     return '<div class="tabs">%s</div>' % ''.join(
@@ -3120,6 +3126,138 @@ def page_questions(st):
                     'yes' if r.get('has_email') == '1' else 'no', html.escape(r.get('country') or '')))
     h.append('</table></div></div>')
     return ''.join(h)
+
+
+# THE REVIEW TAB. TJ, 16 October 2026: *"is there a place on this dash i can review things in
+# question though, without you?"* There was not: a held meeting could only be looked at with
+# `review_queue.py --show` and resolved with `--resolve`, both in a terminal. So every OPEN row
+# is a card here with everything --show prints -- the flags, the reader's own note, what was
+# kept and dropped by field, the attendance block of the source text, the whole text behind a
+# fold, and the town's own file -- and two buttons that run `review_queue.py --resolve` through
+# dashboard_server.py. Accept costs nothing. Re-read is ONE model call on ONE meeting (~$0.02);
+# it is never batched, which is review_queue's own rule.
+REVIEW_HELP = {
+    'field_all_dropped': 'the reader found items for this field and the quote check threw every one out -- '
+                         'usually the check failing, not the minutes lacking them. Compare with the text below.',
+    'high_dropped_total': 'many items were thrown out by the quote check; look for what is missing.',
+    'note_damage': 'the reader\u2019s own note mentions damage. Often the note is describing the MEETING '
+                   '(a lost file, a truncated roll call in the town\u2019s document), not damage to the text.',
+}
+
+
+def page_review(st):
+    import review_queue as RQ
+    import extract_official_votes as E
+    rows = RQ._rows()
+    open_ = [r for r in rows if r.get('status') == 'open']
+    by = collections.OrderedDict()
+    for r in sorted(open_, key=lambda r: (r['meeting_date'], r['key']), reverse=True):
+        by.setdefault(r['key'], []).append(r)
+    h = ['<div class="wrap"><div class="row"><div class="grow"><h1>Review</h1>'
+         '<p class="sub">%d meeting(s) held for a person &middot; %s</p></div>%s</div>'
+         % (len(by), st['generated'], tabs('review.html', st.get('questions')))]
+    h.append('<div class="tiny" id="served" style="margin:-4px 0 10px"></div>')
+    if not by:
+        h.append('<div class="card idle">Nothing held for review.</div>')
+    for key, flags in by.items():
+        r0 = flags[0]
+        p = os.path.join(E.OUT, key + '.json')
+        d = json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {}
+        src = d.get('source') or {}
+        text = ''
+        if src.get('text') and os.path.exists(os.path.join(ROOT, src['text'])):
+            text = open(os.path.join(ROOT, src['text']), encoding='utf-8', errors='replace').read()
+        kept = ' &middot; '.join('%s <b>%d</b>' % (f, len(d.get(f) or [])) for f in E.QUOTED) if d else 'no file'
+        dropped = d.get('dropped_unquoted_by_field') or {}
+        k = html.escape(key)
+        h.append('<div class="card" style="margin-bottom:12px"><div class="row"><b class="grow">%s &nbsp;%s</b>'
+                 '<span class="tiny mono">%s</span></div>'
+                 % (html.escape(r0['meeting_date']), html.escape(_board_name(r0['board_slug'])), k))
+        for f in flags:
+            rule = f['reason'].split(':')[0]
+            h.append('<div style="margin-top:6px"><span class="pill warn">%s</span> %s'
+                     '<div class="tiny" style="color:#8b949e;margin:2px 0 0 4px">%s</div></div>'
+                     % (html.escape(f['reason']), html.escape(f['detail']), html.escape(REVIEW_HELP.get(rule, ''))))
+        rnote = (d.get('note') or '').strip().strip('"').strip()
+        if rnote:
+            h.append('<div class="tiny" style="margin-top:8px"><b>The reader\u2019s note:</b> %s</div>'
+                     % html.escape(rnote))
+        h.append('<div class="tiny" style="margin-top:6px"><b>Kept:</b> %s%s</div>'
+                 % (kept, (' &nbsp; <b>Dropped:</b> ' + html.escape(', '.join('%s %d' % kv for kv in dropped.items())))
+                    if dropped else ''))
+        if d.get('attendees'):
+            h.append('<div class="tiny" style="margin-top:4px"><b>Attendees read:</b> %s</div>' % html.escape(
+                ', '.join(a.get('name', '') if isinstance(a, dict) else str(a) for a in d['attendees'])))
+        if any(f['reason'].startswith('field_all_dropped:attendees') for f in flags) or 'attendees' in dropped:
+            h.append('<div class="tiny" style="margin-top:6px"><b>The attendance block in the text:</b></div>'
+                     '<pre class="tiny" style="white-space:pre-wrap;margin:4px 0">%s</pre>'
+                     % html.escape(RQ._attendance_excerpt(text, lines=12)))
+        links = []
+        if src.get('minutes_url'):
+            links.append('<a href="%s" target="_blank">the town\u2019s minutes</a>' % html.escape(src['minutes_url']))
+        if src.get('doc_url'):
+            links.append('<a href="%s%s" target="_blank">our text copy</a>' % (SITE, html.escape(src['doc_url'])))
+        if links:
+            h.append('<div class="tiny" style="margin-top:6px">%s</div>' % ' &middot; '.join(links))
+        if text:
+            h.append('<details style="margin-top:6px"><summary class="tiny">the whole text (%s characters)</summary>'
+                     '<pre class="tiny" style="white-space:pre-wrap;max-height:420px;overflow:auto">%s</pre></details>'
+                     % (format(len(text), ','), html.escape(text)))
+        h.append('<div class="tiny" style="margin-top:10px">'
+                 '<button class="rq" data-key="%s" data-how="accept" title="the read is right; the flag was the '
+                 'town\u2019s document or a false alarm">Accept the read</button> '
+                 '<button class="rq" data-key="%s" data-how="reread" title="one model call on this one meeting">'
+                 'Re-read it (~$0.02)</button> '
+                 '<input class="rqnote" data-key="%s" placeholder="why (kept with the decision)" style="width:45%%">'
+                 '<span class="rqout" data-key="%s" style="margin-left:8px"></span></div></div>' % (k, k, k, k))
+    done = sorted([r for r in rows if r.get('status') != 'open'], key=lambda r: r.get('resolved_on') or '', reverse=True)[:12]
+    if done:
+        h.append('<h2>Recently decided</h2><div class="card"><table><tr><th>decided</th><th>meeting</th>'
+                 '<th>flag</th><th>how</th><th>note</th><th>kept now</th></tr>')
+        for r in done:
+            p = os.path.join(E.OUT, r['key'] + '.json')
+            now = ''
+            if os.path.exists(p):
+                d = json.load(open(p, encoding='utf-8'))
+                f = r['reason'].split(':')[1] if r['reason'].startswith('field_all_dropped:') else None
+                # A RE-READ THAT DROPPED THEM AGAIN must be visible here: the sweep will not
+                # re-flag a key and reason it has seen, resolved or not.
+                now = ('%s %d' % (f, len(d.get(f) or []))) if f else ''
+            h.append('<tr><td class="mono tiny">%s</td><td>%s %s</td><td class="tiny">%s</td><td>%s</td>'
+                     '<td class="tiny">%s</td><td class="tiny">%s</td></tr>'
+                     % (html.escape(r.get('resolved_on') or ''), html.escape(r['meeting_date']),
+                        html.escape(_board_name(r['board_slug'])), html.escape(r['reason']),
+                        html.escape(r.get('resolution') or ''), html.escape(r.get('note') or ''), html.escape(now)))
+        h.append('</table></div>')
+    h.append('</div>')
+    return ''.join(h)
+
+
+REVIEW_JS = """
+(function(){
+  const served = location.protocol.startsWith('http') && window.DASH_TOKEN;
+  const note = document.getElementById('served');
+  if (!served) {
+    if (note) note.innerHTML = 'Buttons are off: this page was opened from disk. Run <code>bash scripts/status.sh</code> and use http://127.0.0.1:8795/review.html';
+    document.querySelectorAll('button.rq').forEach(b => b.disabled = true);
+    return;
+  }
+  document.querySelectorAll('button.rq').forEach(b => b.addEventListener('click', () => {
+    const k = b.dataset.key, how = b.dataset.how;
+    if (how === 'reread' && !confirm('Re-read ' + k + '? One model call, about $0.02.')) return;
+    const n = document.querySelector('input.rqnote[data-key="' + k + '"]');
+    const out = document.querySelector('span.rqout[data-key="' + k + '"]');
+    document.querySelectorAll('button.rq[data-key="' + k + '"]').forEach(x => x.disabled = true);
+    out.textContent = how === 'reread' ? 're-reading (up to a minute)...' : 'saving...';
+    fetch('/api/resolve', {method: 'POST', headers: {'Content-Type': 'application/json', 'X-Dashboard-Token': window.DASH_TOKEN},
+      body: JSON.stringify({key: k, how: how, note: n ? n.value : ''})}).then(r => r.json()).then(r => {
+        out.textContent = r.ok ? ('done: ' + r.said + ' -- reloading') : ('failed: ' + (r.error || r.said));
+        if (r.ok) setTimeout(() => location.reload(), 2500);
+        else document.querySelectorAll('button.rq[data-key="' + k + '"]').forEach(x => x.disabled = false);
+      });
+  }));
+})();
+"""
 
 
 SITE = 'https://lunenburgbudgetproject.org'
@@ -3857,6 +3995,10 @@ def write(open_it=False):
                            page_suggested(st)) + '<script src="/token.js"></script><script>' + KEEP + GEN_JS + '</script>')
     with open(os.path.join(OUT, 'suggested.html'), 'w', encoding='utf-8') as fh:
         fh.write(_suggested)
+    _review = (shell % ('Review', '', CSS, page_review(st))
+               + '<script src="/token.js"></script><script>' + KEEP + REVIEW_JS + '</script>')
+    with open(os.path.join(OUT, 'review.html'), 'w', encoding='utf-8') as fh:
+        fh.write(_review)
     _questions = (shell % ('Questions', '<meta http-equiv="refresh" content="60">', CSS,
                            page_questions(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'questions.html'), 'w', encoding='utf-8') as fh:

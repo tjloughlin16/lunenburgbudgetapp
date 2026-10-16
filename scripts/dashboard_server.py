@@ -13,6 +13,10 @@ from disk cannot start anything. So this serves the same files, plus two actions
                          written into its generation.json. No agent; costs nothing. It is the half of
                          the auto-generation evidence the agent cannot supply about itself.
 
+    POST /api/resolve    {"key": ..., "how": "accept"|"reread", "note": ...} -> scripts/review_queue.py
+                         --resolve KEY: a person's decision on a meeting held for review (the Review tab).
+                         Accept costs nothing; reread is one model call on one meeting.
+
     POST /api/preview    {"slug": ...}            -> the site's dev server, run from the generation's
                          worktree, so its pages can be read BEFORE anything reaches main
     POST /api/publish    {"slug": ...}            -> scripts/publish_generation.py <slug>: onto main,
@@ -66,6 +70,27 @@ class H(http.server.BaseHTTPRequestHandler):
             return self.send(404, '{"error":"not found"}')
         self.send(200, open(p, 'rb').read(), TYPES.get(os.path.splitext(p)[1], 'application/octet-stream'))
 
+    def resolve(self, body):
+        """Only a key with an OPEN row, only the two verbs; the CLI does the rest, so the
+        dashboard and the terminal cannot resolve a meeting two different ways."""
+        sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+        import review_queue as RQ
+        key, how = body.get('key') or '', body.get('how')
+        if how not in ('accept', 'reread'):
+            return self.send(400, '{"error":"how is accept or reread"}')
+        if key not in {r['key'] for r in RQ.open_rows()}:
+            return self.send(404, '{"error":"no open review row for that key"}')
+        argv = [sys.executable, os.path.join(ROOT, 'scripts', 'review_queue.py'), '--resolve', key,
+                '--' + how, '--note', (body.get('note') or '').strip()[:500]]
+        r = subprocess.run(argv, cwd=ROOT, capture_output=True, text=True, timeout=600)
+        said = (r.stdout + r.stderr).strip().splitlines()
+        if r.returncode == 0:
+            # Rebuild the dashboard so the Backlog chart and this tab agree straight away.
+            subprocess.Popen([sys.executable, os.path.join(ROOT, 'scripts', 'build_ingest_status.py')], cwd=ROOT,
+                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+        return self.send(200 if r.returncode == 0 else 500,
+                         json.dumps({'ok': r.returncode == 0, 'said': said[-1] if said else ''}))
+
     def do_GET(self):
         path = urllib.parse.urlparse(self.path).path
         if path == '/token.js':
@@ -81,6 +106,8 @@ class H(http.server.BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(int(self.headers.get('Content-Length') or 0)) or b'{}')
         except ValueError:
             return self.send(400, '{"error":"not json"}')
+        if self.path == '/api/resolve':
+            return self.resolve(body)
         slug = body.get('slug') or ''
         if not SLUG.match(slug):
             return self.send(400, '{"error":"bad slug"}')
