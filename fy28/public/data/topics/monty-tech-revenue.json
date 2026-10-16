@@ -6,6 +6,16 @@
   "kind": "bar",
   "note": {
    "figures": {
+    "s": {
+     "text": "71.0%",
+     "unit": "",
+     "value": 71.0
+    },
+    "t": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
     "y": {
      "text": "FY2024",
      "unit": "fiscal year",
@@ -13,7 +23,7 @@
     }
    },
    "literals": [],
-   "text": "Census Bureau, FY2024, every revenue source, as a share of each district’s total. The grouping is ours."
+   "text": "Census Bureau, FY2024, shares of each district’s revenue; grouping ours. Lunenburg’s town budget is 71.0% property tax (FY2026)."
   },
   "reference": null,
   "series": [
@@ -46,7 +56,7 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "The towns (member towns, or Lunenburg itself)",
+    "name": "Town budgets, mostly property tax",
     "texts": [
      "27.8%",
      "52.0%"
@@ -166,7 +176,7 @@
     "mt-st",
     "mt-stp"
    ],
-   "text": "State Chapter 70 aid and the member towns brought 70.3%, more than six times as much."
+   "text": "State Chapter 70 aid and member town budgets brought 70.3%, over six times as much."
   },
   {
    "figures": {
@@ -181,7 +191,9 @@
      "value": 80.4
     }
    },
-   "literals": [],
+   "literals": [
+    "Chapter 70"
+   ],
    "notes": [
     {
      "closes": "Lunenburg’s DESE End of Year Financial Report, its revenue and food service schedules",
@@ -203,7 +215,7 @@
     "lu-stp",
     "lu-total"
    ],
-   "text": "Lunenburg’s schools took 7.2% from grants and donations; the state and the town, 80.4%."
+   "text": "Lunenburg’s schools took 7.2% from grants and donations; Chapter 70 and the town budget, 80.4%."
   },
   {
    "figures": {
@@ -299,7 +311,7 @@
     "literals": [
      "Chapter 70"
     ],
-    "text": "Chapter 70 aid plus the member towns"
+    "text": "Chapter 70 aid plus member town budgets"
    },
    "value": {
     "text": "$30,310,000",
@@ -315,7 +327,7 @@
     "literals": [
      "Chapter 70"
     ],
-    "text": "share from Chapter 70 and the towns"
+    "text": "share from Chapter 70 and town budgets"
    },
    "value": {
     "text": "70.3%",
@@ -393,7 +405,7 @@
     "literals": [
      "Chapter 70"
     ],
-    "text": "share from Chapter 70 and the town"
+    "text": "share from Chapter 70 and the town budget"
    },
    "value": {
     "text": "80.4%",
@@ -448,8 +460,10 @@
     "value": 2024
    }
   },
-  "literals": [],
-  "text": "Grants and donations were 10.7% of Monty Tech’s FY2024 revenue; the state’s aid and the towns, 70.3%."
+  "literals": [
+   "Chapter 70"
+  ],
+  "text": "Grants and donations were 10.7% of Monty Tech’s FY2024 revenue; Chapter 70 aid and town budgets, 70.3%."
  },
  "full_report": {
   "href": "",
@@ -494,7 +508,7 @@
      "ledger"
     ],
     "label": "Census Bureau, in dollars",
-    "note": "The file reports thousands of dollars; shown here times 1,000. Each total is checked against its items, as the survey’s documentation lists them.",
+    "note": "Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty Tech, what its member towns are assessed. The file reports thousands of dollars, shown here times 1,000; each total is checked against its items.",
     "rows": [
      {
       "cells": [
@@ -557,7 +571,7 @@
        "$16,157,000",
        "52.0%"
       ],
-      "label": "The towns"
+      "label": "Town budgets, mostly property tax"
      },
      {
       "cells": [
