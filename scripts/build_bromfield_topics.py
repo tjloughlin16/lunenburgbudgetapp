@@ -297,6 +297,7 @@ def build():
                                 hv['std']['value']['value'])
     tax_rows = [(lab, [fmt(more), fmt(mores)]) for lab, fmt in (
         ('More than spent, a year (ours)', C.usd),
+        ('More than Lunenburg’s schools spent, all funds (ours)', lambda v: C.pct(100 * v / lb['total'], 0)),
         ('As a share of the FY2026 tax levy (ours)', lambda v: C.pct(100 * v / levy, 1)),
         ('Added to the tax on the same $500,000 home (ours)', lambda v: C.usd(std_bill * v / levy)),
         ('Added to the average single-family bill (ours)', lambda v: C.usd(avg_bill * v / levy)))]
@@ -364,7 +365,7 @@ def build():
                  note='Ours: DESE’s rate a pupil times Lunenburg’s %s FTE pupils. The '
                       'all-district line is the one on Reaching the state median.'
                       % PU(pl)['text']),
-            dict(key='tax', label='In tax terms', columns=['At Harvard’s rate', 'At the state median'],
+            dict(key='tax', label='In budget and tax terms', columns=['At Harvard’s rate', 'At the state median'],
                  kinds=['ledger'] * 2, rows=[dict(label=l, cells=c) for l, c in tax_rows],
                  note='Ours, and a scenario, not a proposal: as if the whole difference were raised '
                       'from the property tax, spread in proportion over the FY2026 levy, so every '
