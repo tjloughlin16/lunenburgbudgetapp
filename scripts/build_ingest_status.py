@@ -1406,7 +1406,30 @@ def _board_name(slug):
     return slug.replace('-', ' ').title().replace(' Of ', ' of ').replace(' On ', ' on ').replace('Pacc', '(PACC)')
 
 
+# A YEAR WITH NOTHING LEFT TO DO GETS A GREEN CHECK BESIDE ITS LABEL. TJ, 16 October 2026:
+# *"when a backlog FY is completely done, can you put a green check mark next to the FY? Even
+# if there are 'missing' records, theres nothing else to do."* Done = it has meetings, no open
+# job in any stream, and nothing held for review -- a held meeting is work for a person, a
+# missing record is work for nobody. Judged on the row BEFORE any toggle hides a segment, so
+# hiding the held blocks cannot award a check.
+DONE_COLOUR = '#3fb950'
+
+
+def _fy_done(r):
+    return bool(r.get('meetings')) and not r.get('total') and not r.get('needs_review')
+
+
+def _fy_label(x, y, r, done):
+    if done:
+        return ('<text x="%.1f" y="%d" fill="%s" font-size="10" text-anchor="middle">\u2713\u2019%s'
+                '<title>%s: done \u2014 nothing left to process; anything still drawn is a record '
+                'the town does not have</title></text>' % (x, y, DONE_COLOUR, r['fy'][-2:], r['fy']))
+    return ('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
+            % (x, y, '\u2019' + r['fy'][-2:]))
+
+
 def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
+    done = {r['fy'] for r in rows if _fy_done(r)}
     # MISSING RECORDS CAN BE HIDDEN (TJ, 7 October 2026). Hidden means drawn without them --
     # the bars rescale to the work alone -- not drawn with them and then made invisible,
     # which would leave the work squashed under empty space.
@@ -1421,12 +1444,14 @@ def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
     # FOR REVIEW. A fiscal year can have every job cleared and still owe a bar, because a
     # missing record is not work and a held meeting is pulled out of the backlog, not
     # cleared from it.
+    # ...and a DONE year keeps its column too, empty, so its check has somewhere to sit.
     rows = [r for r in rows
-           if r.get('total') or r.get('needs_review') or any(r.get(s) for s, _, _, _ in MISSING_COLOUR)]
+           if r.get('total') or r.get('needs_review') or r['fy'] in done
+           or any(r.get(s) for s, _, _, _ in MISSING_COLOUR)]
     if not rows:
         return '<div class="tiny" style="margin:12px 0">Nothing open, and nothing missing.</div>'
-    hi = max(r['total'] + r.get('needs_review', 0) + sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR)
-            for r in rows)
+    hi = max([r['total'] + r.get('needs_review', 0) + sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR)
+             for r in rows] + [1])
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
     pid = re.sub(r'[^a-z0-9]+', '-', key.lower()).strip('-') or 'x'
@@ -1472,8 +1497,7 @@ def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
                        '<title>%s %s: %s meeting(s) \u2014 not work, the record is simply '
                        'incomplete</title></rect>'
                        % (x, y, bw, bh, pid, name, r['fy'], MISSING_LABEL[name], format(n, ',')))
-        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
-                   % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
+        out.append(_fy_label(x + bw / 2, base + 12, r, r['fy'] in done))
         # THE BAR'S TOTAL LABEL IS THE JOB TOTAL, NEVER THE COMBINED HEIGHT -- a reader must
         # not read the two numbers as one. The missing total gets its own, smaller "+N"
         # label above the hatch (the word "missing" is in the legend and the hover title,
@@ -1530,8 +1554,7 @@ def _pct_svg(rows):
                    % (x, top, bw, full, tip))
         out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#d29922"><title>%s</title></rect>'
                    % (x, base - bh, bw, bh, tip))
-        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
-                   % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
+        out.append(_fy_label(x + bw / 2, base + 12, r, _fy_done(r)))
         out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%.0f%%</text>'
                    % (x + bw / 2, top - 4, r['pct_open']))
     out.append('</svg>')
@@ -1595,6 +1618,9 @@ def backlog_chart(bd):
                'in that fiscal year that have a record to process \u2014 the town\u2019s minutes with readable '
                'text, or a usable recording \u2014 the share with anything still to do. Hover a bar for what '
                'is left. A meeting with only an agenda has nothing to process and is not counted.</div>')
+    out.append('<div class="tiny" style="margin-top:4px"><span style="color:%s">\u2713</span> beside a year: '
+               'nothing left to process and nothing held for review \u2014 done, even where the town\u2019s '
+               'record has gaps.</div>' % DONE_COLOUR)
     out.append('<div class="tiny" style="margin-top:4px">By the MEETING\u2019s own date, not by when we found it. '
                'A job is one meeting in one stream, so a meeting waiting in two streams is two jobs; the '
                'streams are different work at different prices and are never added into one figure.</div></div>')
