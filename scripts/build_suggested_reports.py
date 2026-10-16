@@ -266,11 +266,19 @@ def build():
 # beside the total. It is computed when it is READ, against today's date, never stored in the
 # register: recency changes daily, and a tracked file that changed daily could never pass its
 # own --check.
+#
+# RECENCY IS A MULTIPLIER, NOT A PART. TJ, 16 October 2026, seeing suggestions last raised 1,400+
+# days ago ranked above recent ones: "there's no recency, so the score has to be seriously
+# impacted by recency." As one capped part among six it could only ever cost an old suggestion
+# 25 points, so four meetings in 2022 still outscored one last week. Now every other part is
+# scaled by how recently it was raised, so a stale suggestion cannot rank on volume alone.
 WEIGHTS = dict(
     per_meeting=10, meetings_cap=50,          # each meeting that raised it
     per_extra_board=6, boards_cap=18,         # each board beyond the first: it crosses bodies
     per_thread=8, per_hot_thread=6, threads_cap=28,   # an open thread it would serve; more if hot
-    recency=25, half_life_days=180,           # 25 points if raised today, halving every 6 months
+    half_life_days=180,                       # RECENCY MULTIPLIES the total: x1 raised today, x0.5 at
+                                              #   6 months, x0.25 at a year
+    historical_days=365,                      # last raised longer ago than this: folded away as historical
     per_extra_year=2, years_cap=8,            # each further fiscal year it came back in
     numbers_in_play=5,                        # figures were in play: there is something to lay out
 )
@@ -292,11 +300,13 @@ def score(row, occ, threads_json, today):
         'boards': min(W['per_extra_board'] * max(len([b for b in row['boards'].split(';') if b]) - 1, 0),
                       W['boards_cap']),
         'threads': min(W['per_thread'] * len(open_t) + W['per_hot_thread'] * len(hot_t), W['threads_cap']),
-        'recency': round(W['recency'] * 0.5 ** (max(days, 0) / W['half_life_days']), 1),
         'years': min(W['per_extra_year'] * max(len(years) - 1, 0), W['years_cap']),
         'numbers': W['numbers_in_play'] if (row.get('data_in_play_as_heard') or '').strip() else 0,
     }
-    return dict(total=round(sum(parts.values()), 1), parts=parts, days_since=days,
+    recency = 0.5 ** (max(days, 0) / W['half_life_days'])
+    base = sum(parts.values())
+    return dict(total=round(base * recency, 1), base=base, recency=round(recency, 3), parts=parts,
+                days_since=days, historical=days > W['historical_days'],
                 open_threads=open_t, hot_threads=hot_t)
 
 

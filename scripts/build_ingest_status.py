@@ -2377,6 +2377,11 @@ font-size:11.5px;color:#a0adba;margin:0;max-height:260px}
 input[type=search]{width:100%;padding:8px 10px;background:#0b0e13;border:1px solid #30363d;
 border-radius:6px;color:#e6edf3;font-size:13px}
 .tiny{font-size:11.5px;color:#8b949e}.r{text-align:right}
+.metric{display:inline-flex;flex-direction:column;align-items:center;line-height:1.1;min-width:58px}
+.metric b{font-size:20px;font-variant-numeric:tabular-nums}
+details.sr>summary{list-style:none;cursor:pointer}details.sr>summary::-webkit-details-marker{display:none}
+details.sr .chev::before{content:'\\25B8  details'}details.sr[open] .chev::before{content:'\\25BE  hide details'}
+details.sr:not([open]):hover{border-color:#484f58}
 .tabs a{display:inline-block;padding:5px 11px;border:1px solid #30363d;border-radius:6px;
 margin-right:6px;text-decoration:none;font-size:12.5px}
 .tabs a.sel{background:#1f6feb;border-color:#1f6feb;color:#fff}
@@ -3046,23 +3051,35 @@ def page_suggested(st):
     _r, looked, not_looked, _c, _o = SR.build()
     gens = generations()
     new = [r for r in rows if r['status'] == 'new' and r['slug'] not in gens]
+    cur = [r for r in new if not r['score']['historical']]
+    # Recency has taken every historical score to ~0, so order the fold by the score BEFORE recency.
+    old = sorted((r for r in new if r['score']['historical']), key=lambda r: -r['score']['base'])
     have = [r for r in rows if r['status'] == 'exists']
     esc = html.escape
     h = ['<div class="wrap"><div class="row"><div class="grow"><h1>Suggested reports</h1>'
-         '<p class="sub">%d to write, most important first &middot; %d generated &middot; %d of %d recorded '
+         '<p class="sub">%d to write, most important first &middot; %d historical &middot; %d generated &middot; %d of %d recorded '
          'meetings read for suggestions &middot; %s</p></div>%s</div>'
-         % (len(new), len(gens), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
+         % (len(cur), len(old), len(gens), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
     h.append('<div id="served" class="tiny" style="margin-bottom:8px"></div>')
+    h.append(score_chart(cur, old))
     h.append(generated_section(gens))
     h.append('<h2>To write</h2>')
-    if not new:
+    if not cur:
         h.append('<div class="card idle">Nothing to write yet.</div>')
     part_names = [('meetings', 'meetings'), ('boards', 'boards'), ('threads', 'threads'),
-                  ('recency', 'recent'), ('years', 'years'), ('numbers', 'numbers')]
-    for i, r in enumerate(new, 1):
+                  ('years', 'years'), ('numbers', 'numbers')]
+    for i, r in enumerate(cur + old, 1):
+        if i == len(cur) + 1:
+            # HISTORICAL: last raised over a year ago. Folded, closed by default (KEEP remembers if
+            # it was opened), so the list above is what is live.
+            h.append('<details data-k="sr-historical" class="card"><summary><b>Historical suggested reports</b> '
+                     '<span class="tiny">%d, each last raised more than %d days ago &mdash; kept, not ranked '
+                     'against the live ones</span></summary><div style="margin-top:8px">'
+                     % (len(old), SR.WEIGHTS['historical_days']))
         sc = r['score']
         parts = ' &middot; '.join('%s <b>%s</b>' % (lbl, ('%g' % sc['parts'][k]))
                                   for k, lbl in part_names if sc['parts'][k])
+        parts += ' &rarr; %g &times; <b>%.2f</b> recency' % (sc['base'], sc['recency'])
         thr = []
         for x in [x for x in (r.get('threads') or '').split(';') if x.strip()]:
             tid, how = x.split(' (')[0], x.split(' (')[1].rstrip(')')
@@ -3070,16 +3087,26 @@ def page_suggested(st):
                        % (SITE, tid, esc(tid), ' <span class="pill warn">hot</span>' if tid in sc['hot_threads'] else '',
                           esc(how.replace('+', ' + '))))
         span = r['first'] if r['first'] == r['last'] else '%s &rarr; %s' % (r['first'], r['last'])
-        h.append('<div class="card"><div class="row"><b class="grow">%d. %s <span class="tiny mono">%s</span></b>'
+        # The two numbers a reader sorts by in their head, as METRICS beside the title (TJ, 16 Oct):
+        # how often it came up, and how long ago. Each carries its unit, never a bare number.
+        days = sc['days_since']
+        metric = ('<span class="metric"><b>%s</b><span class="tiny">%s</span></span>')
+        # COLLAPSED BY DEFAULT (TJ, 16 Oct: "I just want the high level info, but then clicking
+        # expands to show all the details"). The summary is the title, the question and the three
+        # metrics; everything else -- the button included -- is behind the click. KEEP remembers
+        # which cards were open across the 30-second reload.
+        h.append('<details class="card sr" data-k="card-%s"><summary>'
+                 '<div class="row" style="align-items:center"><b class="grow">%d. %s '
+                 '<span class="tiny mono">%s</span></b>%s%s'
                  '<span class="pill go">%g pts</span></div>'
-                 '<div style="margin-top:4px">%s</div>'
-                 '<div class="tiny" style="margin-top:6px">%s meeting%s &middot; %s &middot; last raised '
-                 '%d day%s ago &middot; %s &middot; boards: %s</div>'
+                 '<div style="margin-top:4px">%s</div><div class="tiny chev" style="margin-top:4px"></div></summary>'
+                 '<div class="tiny" style="margin-top:6px">%s &middot; %s &middot; boards: %s</div>'
                  '<div class="tiny" style="margin-top:2px">threads: %s</div>'
                  '<div class="tiny" style="margin-top:2px">score: %s</div>'
-                 % (i, esc(r['title']), esc(r['slug']), sc['total'], esc(r['question']),
-                    r['meetings'], '' if r['meetings'] == '1' else 's', span, sc['days_since'],
-                    '' if sc['days_since'] == 1 else 's', esc(r['fiscal_years'].replace(';', ', ')),
+                 % (esc(r['slug']), i, esc(r['title']), esc(r['slug']),
+                    metric % (r['meetings'], 'meeting' if r['meetings'] == '1' else 'meetings'),
+                    metric % ('{:,}'.format(days), 'day ago' if days == 1 else 'days ago'),
+                    sc['total'], esc(r['question']), span, esc(r['fiscal_years'].replace(';', ', ')),
                     esc(r['boards'].replace(';', ', ')), ', '.join(thr) or 'none &mdash; a thread may be missing',
                     parts))
         if (r.get('data_in_play_as_heard') or '').strip():
@@ -3101,7 +3128,9 @@ def page_suggested(st):
                      % (esc(o['date']), esc(o['board']), esc(o['fiscal_year']), esc(o['question_then']),
                         (' &mdash; <i>&ldquo;%s&rdquo;</i>' % esc(o['words_as_heard'])) if o['words_as_heard'] else '',
                         esc(o['watch_at']), esc(o['at']), SITE, esc(o['our_minutes'])))
-        h.append('</details></div>')
+        h.append('</details></details>')
+    if old:
+        h.append('</div></details>')
     if have:
         h.append('<h2>Already answered by a page</h2><div class="card">')
         for r in have:
@@ -3115,13 +3144,15 @@ def page_suggested(st):
              'Our weights, not a measurement &mdash; each part is capped so no one signal carries a report. '
              '<b>meetings</b> %d each, up to %d &middot; <b>boards</b> %d for each beyond the first, up to %d '
              '&middot; <b>threads</b> %d per open thread it would serve, %d more if the thread is hot, up to %d '
-             '&middot; <b>recent</b> %d if raised today, halving every %d days &middot; <b>years</b> %d for each '
+             '&middot; <b>years</b> %d for each '
              'further fiscal year it came back in, up to %d &middot; <b>numbers</b> %d if figures were in play. '
+             'Then the sum is <b>multiplied by recency</b>: &times;1 if raised today, halving every %d days, so a '
+             'suggestion cannot rank on volume alone. Last raised more than %d days ago: <b>historical</b>, folded away. '
              'Weights live in <code>scripts/build_suggested_reports.py</code> (WEIGHTS). Only meetings read '
              'for suggestions count: the rest were never asked, which is not &ldquo;none suggested&rdquo;.</div>'
              % (W['per_meeting'], W['meetings_cap'], W['per_extra_board'], W['boards_cap'], W['per_thread'],
-                W['per_hot_thread'], W['threads_cap'], W['recency'], W['half_life_days'], W['per_extra_year'],
-                W['years_cap'], W['numbers_in_play']))
+                W['per_hot_thread'], W['threads_cap'], W['per_extra_year'],
+                W['years_cap'], W['numbers_in_play'], W['half_life_days'], W['historical_days']))
     h.append('</div>')
     return ''.join(h)
 
@@ -3155,6 +3186,37 @@ def preview_port(slug):
 
 GEN_PILL = {'publishing': 'warn', 'published': 'go', 'publish-failed': 'no', 'published-not-deployed': 'warn', 'queued': 'warn', 'running': 'warn', 'needs-input': 'warn', 'draft-ready': 'go',
             'blocked': 'no', 'failed': 'no', 'invalid': 'no', 'stopped-at-cap': 'warn'}
+
+
+def score_chart(cur, old, step=10):
+    """How the LIVE suggestions spread by score, one column per `step` points. TJ, 16 October
+    2026: "a chart at the top that shows counts per value (score) of where the suggested reports
+    fall." Historical ones are counted beside it, not plotted: recency takes every one of them to
+    ~0, so as a column they set the scale and flatten the live bars to a pixel. Local dashboard,
+    so plain HTML bars rather than a chart library."""
+    if not cur and not old:
+        return ''
+    note = ('<span class="tiny">plus <b>%d historical</b>, all at or below %g points after recency &mdash; '
+            'folded at the bottom</span>' % (len(old), max(r['score']['total'] for r in old)) if old else '')
+    if not cur:
+        return '<div class="card"><b>Suggestions by score</b> <span class="tiny">no live ones</span> %s</div>' % note
+    bins = [0] * (int(max(r['score']['total'] for r in cur) // step) + 1)
+    for r in cur:
+        bins[int(r['score']['total'] // step)] += 1
+    hi, px = max(bins), 70
+    cols = ''.join('<div style="flex:1;display:flex;flex-direction:column;align-items:center;min-width:0" '
+                   'title="%d&ndash;%d points: %d">'
+                   '<div class="tiny">%s</div>'
+                   '<div style="width:70%%;display:flex;align-items:flex-end;height:%dpx;border-bottom:1px solid #30363d">'
+                   '<i style="display:block;width:100%%;height:%dpx;background:#3fb950;border-radius:2px 2px 0 0"></i></div>'
+                   '<div class="tiny mono" style="margin-top:3px">%d</div></div>'
+                   % (k * step, k * step + step - 1, n, n or '', px, round(px * n / hi), k * step)
+                   for k, n in enumerate(bins))
+    return ('<div class="card"><div class="row"><b class="grow">Suggestions by score</b>%s</div>'
+            '<div style="display:flex;gap:2px;align-items:flex-end;margin-top:10px">%s</div>'
+            '<div class="tiny" style="margin-top:4px">%d live suggestions, counted in %d-point bands; '
+            'each label is the band&rsquo;s lower edge</div></div>'
+            % (note, cols, len(cur), step))
 
 
 def generated_section(gens):
