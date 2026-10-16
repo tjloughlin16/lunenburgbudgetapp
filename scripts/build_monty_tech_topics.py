@@ -46,6 +46,7 @@ import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
 import per_pupil_measures as PPM  # noqa: E402
+import census_revenue as CR  # noqa: E402
 
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 OUT_DIR = os.path.join(PUB, 'topics')
@@ -77,6 +78,13 @@ def sources():
                           href='/docs/data/dese-function-statewide.csv'),
         'radar': dict(label='Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts, '
                             'from RADAR)', href='/docs/data/dese-radar.csv'),
+        'census': dict(label='U.S. Census Bureau, Annual Survey of School System Finances, FY2024 '
+                             '— census-elsec24.xlsx', href='/docs/' + CR.KEY),
+        'census-doc': dict(label='U.S. Census Bureau, the same survey’s documentation and data '
+                                 'dictionary — census-school24doc.docx', href='/docs/' + CR.DOC_KEY),
+        'mt-deck': dict(label='Monty Tech, FY27 Budget Presentation, page 5, “Update of Annual '
+                              'Grant Awards” — 3583-fy27-monty-tech-budget-presentation-pdf.pdf',
+                        href='/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf'),
         'eoyr': dict(label='Massachusetts DESE, End of Year Financial Report FY2025, printing '
                            'version — printing-version.xlsx, sheet eoy25, lines 3524-3529',
                      href=EOYR),
@@ -332,6 +340,112 @@ def build():
                       % PU(pl)['text'])]),
         sources=S('dese', 'statewide', 'radar'),
         finding_figures={'y': F(y), 'a': U(more['mt'])})
+
+    # ------------------------------------------------ Monty Tech revenue, against Lunenburg's
+    # TJ, 16 October 2026: people say *"monty tech makes most of its money by grants and
+    # fundraising"* -- *"we need to show that, and compare lunenburg's grants."* Every figure is
+    # the Census Bureau's, read and footed by census_revenue.py; the grouping is OURS and says so.
+    fund = page_facts('monty-tech-funding')
+    R = CR.revenue()
+    mt, lu = R['monty'], R['lunenburg']
+    sh = lambda d, k: 100.0 * d[k] / d['total']
+    P = lambda v: figure(round(v, 1), C.pct(v))
+    # A share that rounds to 0.0% is not nothing: Monty Tech's gifts are $6,000, not zero.
+    SP = lambda v: 'under 0.1%' if 0 < v < 0.05 else C.pct(v)
+    ry = {'y': F(CR.FY)}
+    mgd, lgd = sh(mt, 'grants_and_donations'), sh(lu, 'grants_and_donations')
+    mst, lst = sh(mt, 'state_and_towns'), sh(lu, 'state_and_towns')
+    times = mt['state_and_towns'] / mt['grants_and_donations']
+    # The words below say "most", "more than six times", "a small share at both" and that
+    # Lunenburg's gifts were larger. They are only true while these hold.
+    if not (mgd < 20 and lgd < 20 and mst > 50 and 6 < times < 7):
+        fail('the revenue page\'s words no longer fit the Census figures: grants and donations '
+             '%.1f%% / %.1f%%, Chapter 70 and towns %.1f%%, ratio %.2f' % (mgd, lgd, mst, times))
+    if not lu['donations'] > mt['donations']:
+        fail('Monty Tech now reports more in private gifts than Lunenburg; the page says fewer')
+    awards = fund['grants']['value']['value']
+    TOWN_LABEL = 'The towns (member towns, or Lunenburg itself)'
+    order = [('Grants and donations', 'grants_and_donations'), ('State Chapter 70 aid', 'ch70'),
+             (TOWN_LABEL, 'towns'), ('Other state money', 'state_rest'),
+             ('Other local money', 'other_local')]
+    for d in (mt, lu):
+        if sum(d[k] for _, k in order) != d['total']:
+            fail('the chart\'s five parts do not add to %s\'s total revenue' % d['name'])
+    out['monty-tech-revenue'] = TP.page(
+        'monty-tech-revenue',
+        'Grants and donations were %s of Monty Tech’s %s revenue; the state’s aid and the '
+        'towns, %s.' % (C.pct(mgd), C.fy(CR.FY), C.pct(mst)),
+        [f('mt-total', U(mt['total']), 'Monty Tech revenue, every source, %s' % C.fy(CR.FY),
+           'published', ry),
+         f('mt-gd', U(mt['grants_and_donations']), 'of it grants and donations (our grouping)',
+           'published'),
+         f('mt-gdp', P(mgd), 'share from grants and donations', 'published'),
+         f('mt-st', U(mt['state_and_towns']), 'Chapter 70 aid plus the member towns',
+           'published', allow=('Chapter 70',)),
+         f('mt-stp', P(mst), 'share from Chapter 70 and the towns', 'published',
+           allow=('Chapter 70',)),
+         f('mt-don', U(mt['donations']), 'private gifts to Monty Tech', 'published'),
+         f('lu-total', U(lu['total']), 'Lunenburg schools revenue, %s' % C.fy(CR.FY), 'published',
+           ry),
+         f('lu-gd', U(lu['grants_and_donations']), 'of it grants and donations', 'published'),
+         f('lu-gdp', P(lgd), 'share from grants and donations', 'published'),
+         f('lu-stp', P(lst), 'share from Chapter 70 and the town', 'published',
+           allow=('Chapter 70',)),
+         f('lu-don', U(lu['donations']), 'private gifts to Lunenburg’s schools', 'published'),
+         f('awards', U(awards), 'grant awards Monty Tech charts, a later year', 'published')],
+        [con('Grants and donations brought Monty Tech %s of %s in %s, %s.'
+             % (C.usd(mt['grants_and_donations']), C.usd(mt['total']), C.fy(CR.FY), C.pct(mgd)),
+             ['mt-gd', 'mt-total', 'mt-gdp'],
+             {'a': U(mt['grants_and_donations']), 'b': U(mt['total']), 'y': F(CR.FY), 'p': P(mgd)},
+             notes=[step('“Grants” is our grouping: every federal dollar, plus the state’s program '
+                         'grants. Chapter 70, transport aid and pensions the state pays are left '
+                         'out.', 'measured', allow=('Chapter 70',)),
+                    step('Monty Tech’s own chart shows %s in grant awards for %s: awards in a '
+                         'later year, not revenue received.' % (C.usd(awards), C.fy(2025)),
+                         'measured', {'a': U(awards), 'y': F(2025)})]),
+         con('State Chapter 70 aid and the member towns brought %s, more than six times as much.'
+             % C.pct(mst), ['mt-st', 'mt-stp'], {'p': P(mst)}, allow=('Chapter 70',)),
+         con('Lunenburg’s schools took %s from grants and donations; the state and the town, %s.'
+             % (C.pct(lgd), C.pct(lst)), ['lu-gd', 'lu-gdp', 'lu-stp', 'lu-total'],
+             {'a': P(lgd), 'b': P(lst)},
+             notes=[step('Lunenburg reported no school-meal revenue to the survey, where Monty '
+                         'Tech reported %s of federal meal money. If Lunenburg’s sits elsewhere, '
+                         'its grant share is understated.' % C.usd(mt['meals_federal']), 'gap',
+                         {'a': U(mt['meals_federal'])},
+                         closes='Lunenburg’s DESE End of Year Financial Report, its revenue '
+                                'and food service schedules')]),
+         con('Private gifts: %s to Monty Tech in %s, %s to Lunenburg’s schools.'
+             % (C.usd(mt['donations']), C.fy(CR.FY), C.usd(lu['donations'])),
+             ['mt-don', 'lu-don'],
+             {'a': U(mt['donations']), 'y': F(CR.FY), 'b': U(lu['donations'])},
+             notes=[step('Money a separate foundation or booster club raises and spends itself '
+                         'is not on a district’s books, so it is not in either figure.', 'gap',
+                         closes='the IRS Form 990 of any foundation raising money for Monty Tech', allow=('990',))])],
+        chart=TP.series('Where the money comes from', ['Monty Tech', 'Lunenburg schools'], [
+            TP.track(name, [sh(mt, k), sh(lu, k)]) for name, k in order],
+            '%', kind='bar', stacked=True, decimals=1,
+            note='Census Bureau, %s, every revenue source, as a share of each district’s total. '
+                 'The grouping is ours.' % C.fy(CR.FY), note_figures=ry),
+        table=dict(caption='Revenue by source, %s' % C.fy(CR.FY), views=[dict(
+            key='sources', label='Census Bureau, in dollars',
+            columns=['Monty Tech', 'Share', 'Lunenburg schools', 'Share'],
+            kinds=['ledger'] * 4,
+            rows=[dict(label=lab, cells=[C.usd(mt[k]), SP(sh(mt, k)), C.usd(lu[k]),
+                                         SP(sh(lu, k))])
+                  for lab, k in (('Federal grants', 'federal'),
+                                 ('State program grants', 'state_programs'),
+                                 ('Private gifts', 'donations'),
+                                 ('State Chapter 70 aid', 'ch70'),
+                                 ('State transportation aid', 'transport'),
+                                 ('Pensions the state pays on its behalf', 'on_behalf'),
+                                 ('The towns', 'towns'),
+                                 ('Other local: tuition, fees, interest, other', 'other_local'),
+                                 ('Total revenue', 'total'))],
+            note='The file reports thousands of dollars; shown here times 1,000. Each total is '
+                 'checked against its items, as the survey’s documentation lists them.')]),
+        sources=S('census', 'census-doc', 'mt-deck'),
+        finding_figures={'a': P(mgd), 'y': F(CR.FY), 'b': P(mst)},
+        finding_allow=())
 
     # ------------------------------------------------ the hub
     en, asmt, fund = (page_facts('monty-tech-%s' % t) for t in ('enrolment', 'assessment', 'funding'))

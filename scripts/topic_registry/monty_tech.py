@@ -14,7 +14,8 @@ CATEGORY = dict(
     id='monty-tech', shelf='Monty Tech', title='Monty Tech finances', area='school', order=22,
     groups=[
         ('Lunenburg’s pupils there', ['monty-tech-enrolment']),
-        ('What Lunenburg pays', ['monty-tech-assessment', 'monty-tech-funding']),
+        ('What Lunenburg pays', ['monty-tech-assessment']),
+        ('Where its money comes from', ['monty-tech-funding', 'monty-tech-revenue']),
         ('What it spends a pupil', ['monty-tech-per-pupil', 'monty-tech-line-by-line',
                                     'per-pupil-line-by-line', 'lunenburg-at-monty-tech-rate',
                                     'what-per-pupil-counts']),
@@ -25,4 +26,5 @@ TOPICS = {
     'monty-tech-per-pupil': 'Monty Tech per pupil',
     'monty-tech-line-by-line': 'Monty Tech per-pupil breakdown',
     'lunenburg-at-monty-tech-rate': 'Monty Tech rate scenario',
+    'monty-tech-revenue': 'Monty Tech revenue',
 }

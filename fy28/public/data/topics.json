@@ -236,8 +236,14 @@
     {
      "title": "What Lunenburg pays",
      "topics": [
-      "monty-tech-assessment",
-      "monty-tech-funding"
+      "monty-tech-assessment"
+     ]
+    },
+    {
+     "title": "Where its money comes from",
+     "topics": [
+      "monty-tech-funding",
+      "monty-tech-revenue"
      ]
     },
     {
@@ -2206,7 +2212,7 @@
    "title": "History courses"
   },
   "home-value-and-bill": {
-   "finding": "Lunenburg’s average home ranks 10th of 15 nearby towns on value but 5th of 15 on its bill as a share of value.",
+   "finding": "A $500,000 home is taxed $7,195 a year in Lunenburg, 5th-highest of 15 nearby; in Leominster, $6,830.",
    "generator": "scripts/build_homes_and_taxes_topics.py",
    "home": "homes-and-taxes",
    "id": "home-value-and-bill",
@@ -2432,6 +2438,19 @@
     "school-spending"
    ],
    "title": "Monty Tech per pupil"
+  },
+  "monty-tech-revenue": {
+   "finding": "Grants and donations were 10.7% of Monty Tech’s FY2024 revenue; the state’s aid and the towns, 70.3%.",
+   "generator": "scripts/build_monty_tech_topics.py",
+   "home": "monty-tech",
+   "id": "monty-tech-revenue",
+   "minutes": 2,
+   "path": "/monty-tech/monty-tech-revenue",
+   "ready": true,
+   "shelves": [
+    "monty-tech"
+   ],
+   "title": "Monty Tech revenue"
   },
   "nearby-district-enrolment": {
    "finding": "Lunenburg’s enrolment fell 14.0% from FY2008 to FY2026; 3 of 4 nearby districts fell further.",

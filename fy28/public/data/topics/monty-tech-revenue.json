@@ -1,0 +1,585 @@
+{
+ "category": "monty-tech",
+ "chart": {
+  "decimals": 1,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "Census Bureau, FY2024, every revenue source, as a share of each district’s total. The grouping is ours."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Grants and donations",
+    "texts": [
+     "10.7%",
+     "7.2%"
+    ],
+    "values": [
+     10.660545779137975,
+     7.152748703745451
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "State Chapter 70 aid",
+    "texts": [
+     "42.5%",
+     "28.4%"
+    ],
+    "values": [
+     42.472931302311565,
+     28.401661782229237
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The towns (member towns, or Lunenburg itself)",
+    "texts": [
+     "27.8%",
+     "52.0%"
+    ],
+    "values": [
+     27.801349377477916,
+     52.03375092589611
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Other state money",
+    "texts": [
+     "11.8%",
+     "11.6%"
+    ],
+    "values": [
+     11.789664046741322,
+     11.558403916137966
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Other local money",
+    "texts": [
+     "7.3%",
+     "0.9%"
+    ],
+    "values": [
+     7.2755094943312235,
+     0.8534346719912402
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Where the money comes from",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "Monty Tech",
+   "Lunenburg schools"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$4,598,000",
+     "unit": "",
+     "value": 4598000
+    },
+    "b": {
+     "text": "$43,131,000",
+     "unit": "",
+     "value": 43131000
+    },
+    "p": {
+     "text": "10.7%",
+     "unit": "",
+     "value": 10.7
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "“Grants” is our grouping: every federal dollar, plus the state’s program grants. Chapter 70, transport aid and pensions the state pays are left out."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$3,681,900",
+       "unit": "",
+       "value": 3681900
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Monty Tech’s own chart shows $3,681,900 in grant awards for FY2025: awards in a later year, not revenue received."
+    }
+   ],
+   "rests_on": [
+    "mt-gd",
+    "mt-total",
+    "mt-gdp"
+   ],
+   "text": "Grants and donations brought Monty Tech $4,598,000 of $43,131,000 in FY2024, 10.7%."
+  },
+  {
+   "figures": {
+    "p": {
+     "text": "70.3%",
+     "unit": "",
+     "value": 70.3
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "mt-st",
+    "mt-stp"
+   ],
+   "text": "State Chapter 70 aid and the member towns brought 70.3%, more than six times as much."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "7.2%",
+     "unit": "",
+     "value": 7.2
+    },
+    "b": {
+     "text": "80.4%",
+     "unit": "",
+     "value": 80.4
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "Lunenburg’s DESE End of Year Financial Report, its revenue and food service schedules",
+     "figures": {
+      "a": {
+       "text": "$1,266,000",
+       "unit": "",
+       "value": 1266000
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "Lunenburg reported no school-meal revenue to the survey, where Monty Tech reported $1,266,000 of federal meal money. If Lunenburg’s sits elsewhere, its grant share is understated."
+    }
+   ],
+   "rests_on": [
+    "lu-gd",
+    "lu-gdp",
+    "lu-stp",
+    "lu-total"
+   ],
+   "text": "Lunenburg’s schools took 7.2% from grants and donations; the state and the town, 80.4%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$6,000",
+     "unit": "",
+     "value": 6000
+    },
+    "b": {
+     "text": "$137,000",
+     "unit": "",
+     "value": 137000
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the IRS Form 990 of any foundation raising money for Monty Tech",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "990"
+     ],
+     "text": "Money a separate foundation or booster club raises and spends itself is not on a district’s books, so it is not in either figure."
+    }
+   ],
+   "rests_on": [
+    "mt-don",
+    "lu-don"
+   ],
+   "text": "Private gifts: $6,000 to Monty Tech in FY2024, $137,000 to Lunenburg’s schools."
+  }
+ ],
+ "facts": [
+  {
+   "id": "mt-total",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech revenue, every source, FY2024"
+   },
+   "value": {
+    "text": "$43,131,000",
+    "unit": "",
+    "value": 43131000
+   }
+  },
+  {
+   "id": "mt-gd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it grants and donations (our grouping)"
+   },
+   "value": {
+    "text": "$4,598,000",
+    "unit": "",
+    "value": 4598000
+   }
+  },
+  {
+   "id": "mt-gdp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "share from grants and donations"
+   },
+   "value": {
+    "text": "10.7%",
+    "unit": "",
+    "value": 10.7
+   }
+  },
+  {
+   "id": "mt-st",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 aid plus the member towns"
+   },
+   "value": {
+    "text": "$30,310,000",
+    "unit": "",
+    "value": 30310000
+   }
+  },
+  {
+   "id": "mt-stp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "share from Chapter 70 and the towns"
+   },
+   "value": {
+    "text": "70.3%",
+    "unit": "",
+    "value": 70.3
+   }
+  },
+  {
+   "id": "mt-don",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "private gifts to Monty Tech"
+   },
+   "value": {
+    "text": "$6,000",
+    "unit": "",
+    "value": 6000
+   }
+  },
+  {
+   "id": "lu-total",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg schools revenue, FY2024"
+   },
+   "value": {
+    "text": "$31,051,000",
+    "unit": "",
+    "value": 31051000
+   }
+  },
+  {
+   "id": "lu-gd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it grants and donations"
+   },
+   "value": {
+    "text": "$2,221,000",
+    "unit": "",
+    "value": 2221000
+   }
+  },
+  {
+   "id": "lu-gdp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "share from grants and donations"
+   },
+   "value": {
+    "text": "7.2%",
+    "unit": "",
+    "value": 7.2
+   }
+  },
+  {
+   "id": "lu-stp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "share from Chapter 70 and the town"
+   },
+   "value": {
+    "text": "80.4%",
+    "unit": "",
+    "value": 80.4
+   }
+  },
+  {
+   "id": "lu-don",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "private gifts to Lunenburg’s schools"
+   },
+   "value": {
+    "text": "$137,000",
+    "unit": "",
+    "value": 137000
+   }
+  },
+  {
+   "id": "awards",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "grant awards Monty Tech charts, a later year"
+   },
+   "value": {
+    "text": "$3,681,900",
+    "unit": "",
+    "value": 3681900
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "10.7%",
+    "unit": "",
+    "value": 10.7
+   },
+   "b": {
+    "text": "70.3%",
+    "unit": "",
+    "value": 70.3
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   }
+  },
+  "literals": [],
+  "text": "Grants and donations were 10.7% of Monty Tech’s FY2024 revenue; the state’s aid and the towns, 70.3%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "monty-tech-revenue",
+ "kind": "topic",
+ "path": "/monty-tech/monty-tech-revenue",
+ "said": [],
+ "shelves": [
+  "monty-tech"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-census/census-elsec24.xlsx",
+   "label": "U.S. Census Bureau, Annual Survey of School System Finances, FY2024 — census-elsec24.xlsx"
+  },
+  {
+   "href": "/docs/state-census/census-school24doc.docx",
+   "label": "U.S. Census Bureau, the same survey’s documentation and data dictionary — census-school24doc.docx"
+  },
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
+   "label": "Monty Tech, FY27 Budget Presentation, page 5, “Update of Annual Grant Awards” — 3583-fy27-monty-tech-budget-presentation-pdf.pdf"
+  }
+ ],
+ "table": {
+  "caption": "Revenue by source, FY2024",
+  "views": [
+   {
+    "columns": [
+     "Monty Tech",
+     "Share",
+     "Lunenburg schools",
+     "Share"
+    ],
+    "key": "sources",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Census Bureau, in dollars",
+    "note": "The file reports thousands of dollars; shown here times 1,000. Each total is checked against its items, as the survey’s documentation lists them.",
+    "rows": [
+     {
+      "cells": [
+       "$3,054,000",
+       "7.1%",
+       "$1,928,000",
+       "6.2%"
+      ],
+      "label": "Federal grants"
+     },
+     {
+      "cells": [
+       "$1,538,000",
+       "3.6%",
+       "$156,000",
+       "0.5%"
+      ],
+      "label": "State program grants"
+     },
+     {
+      "cells": [
+       "$6,000",
+       "under 0.1%",
+       "$137,000",
+       "0.4%"
+      ],
+      "label": "Private gifts"
+     },
+     {
+      "cells": [
+       "$18,319,000",
+       "42.5%",
+       "$8,819,000",
+       "28.4%"
+      ],
+      "label": "State Chapter 70 aid"
+     },
+     {
+      "cells": [
+       "$2,196,000",
+       "5.1%",
+       "$427,000",
+       "1.4%"
+      ],
+      "label": "State transportation aid"
+     },
+     {
+      "cells": [
+       "$2,889,000",
+       "6.7%",
+       "$3,162,000",
+       "10.2%"
+      ],
+      "label": "Pensions the state pays on its behalf"
+     },
+     {
+      "cells": [
+       "$11,991,000",
+       "27.8%",
+       "$16,157,000",
+       "52.0%"
+      ],
+      "label": "The towns"
+     },
+     {
+      "cells": [
+       "$3,138,000",
+       "7.3%",
+       "$265,000",
+       "0.9%"
+      ],
+      "label": "Other local: tuition, fees, interest, other"
+     },
+     {
+      "cells": [
+       "$43,131,000",
+       "100.0%",
+       "$31,051,000",
+       "100.0%"
+      ],
+      "label": "Total revenue"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "Monty Tech revenue"
+}
