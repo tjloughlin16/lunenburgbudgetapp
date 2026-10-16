@@ -284,6 +284,24 @@ def build():
         fail('the pupil and rate parts no longer add to the difference between the totals')
     if not (lgap > 0 and rate > 0 and pl > ph):
         fail('the decomposition’s words assume Lunenburg spent more in all, with more pupils')
+    # IN TAX TERMS. TJ, 16 October 2026: "the equivalent increase to Lunenburg taxes if we had
+    # that same spend per pupil". OUR ESTIMATE, on stated assumptions: the whole difference
+    # raised from the property tax, spread in proportion over the levy (so every bill rises by
+    # the same share), FY2025 spending against the FY2026 levy -- the latest of each. Read from
+    # the property-tax pages (build_homes_and_taxes_topics.py runs first), never recomputed.
+    def _facts(name):
+        return {x['id']: x for x in json.load(open(os.path.join(OUT_DIR, name + '.json'),
+                                                    encoding='utf-8'))['facts']}
+    rs, hv = _facts('regional-school-share'), _facts('home-value-and-bill')
+    levy, avg_bill, std_bill = (rs['levy']['value']['value'], rs['bill']['value']['value'],
+                                hv['std']['value']['value'])
+    tax_rows = [(lab, [fmt(more), fmt(mores)]) for lab, fmt in (
+        ('More than spent, a year (ours)', C.usd),
+        ('As a share of the FY2026 tax levy (ours)', lambda v: C.pct(100 * v / levy, 1)),
+        ('Added to the tax on the same $500,000 home (ours)', lambda v: C.usd(std_bill * v / levy)),
+        ('Added to the average single-family bill (ours)', lambda v: C.usd(avg_bill * v / levy)))]
+    if not 0 < more / levy < 1:
+        fail('the Harvard-rate difference is no longer a share of the levy between 0 and 1')
     out['lunenburg-at-harvard-rate'] = TP.page(
         'lunenburg-at-harvard-rate',
         'At Harvard’s %s rate a pupil, Lunenburg would have spent %s more, by our arithmetic.'
@@ -345,7 +363,14 @@ def build():
                                      ('Harvard', hb['pp'], need))],
                  note='Ours: DESE’s rate a pupil times Lunenburg’s %s FTE pupils. The '
                       'all-district line is the one on Reaching the state median.'
-                      % PU(pl)['text'])]),
+                      % PU(pl)['text']),
+            dict(key='tax', label='In tax terms', columns=['At Harvard’s rate', 'At the state median'],
+                 kinds=['ledger'] * 2, rows=[dict(label=l, cells=c) for l, c in tax_rows],
+                 note='Ours, and a scenario, not a proposal: as if the whole difference were raised '
+                      'from the property tax, spread in proportion over the FY2026 levy, so every '
+                      'bill rises by the same share. FY2025 spending against the FY2026 levy, the '
+                      'latest of each. A rise this size is far beyond what Proposition 2½ allows '
+                      'in a year without an override vote.')]),
         sources=S('dese', 'statewide', 'radar'),
         finding_figures={'y': F(y), 'a': U(more)})
 
