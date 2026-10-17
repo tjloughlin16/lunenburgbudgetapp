@@ -38,7 +38,7 @@ type Closure = {
  *  our minutes of the recording, from machine captions, cited to the second. */
 type Item = {
   kind: string; text: string; outcome: string; t: number | null; video_url: string
-  source?: 'town' | 'ours'; quote?: string; doc_url?: string; town_url?: string
+  source?: 'town' | 'ours' | 'caption'; quote?: string; doc_url?: string; town_url?: string
 }
 /** An upcoming (or just-past) agenda item matched to this thread by build_agenda_threads.py. */
 type OnAgenda = {
@@ -463,9 +463,9 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
  *  A settled thread leads with how it ended and tells its story start to finish. */
 const KIND_WORD: Record<string, string> = {
   vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed',
-  contention: 'Disputed', comment: 'Public comment',
+  contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised',
 }
-const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, contention: 2, budget: 3, topic: 4, comment: 5 }
+const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, contention: 2, budget: 3, topic: 4, comment: 5 }
 const hms = (t: number) => {
   const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60
   return (h ? `${h}:${String(m).padStart(2, '0')}` : `${m}`) + `:${String(s).padStart(2, '0')}`
@@ -491,6 +491,17 @@ function Cite({ it }: { it: Item }) {
       </span>
     )
   }
+  // A MOMENT A PERSON PICKED OUT (sources/data/thread-moments.csv): the quote is the machine
+  // captions word for word, checked at build -- a finding aid, so it says so and links the second.
+  if (it.source === 'caption') {
+    return (
+      <span className="text-[12px]" style={muted}>
+        quoted from the recording&rsquo;s machine captions, which mishear
+        {it.video_url && it.t != null ? <> · <a className="underline" style={link}
+          href={`${it.video_url}&t=${it.t}s`} target="_blank" rel="noreferrer">watch at {hms(it.t)}</a></> : null}
+      </span>
+    )
+  }
   return (
     <span className="text-[12px]" style={muted}>
       our notes from the recording, as heard
@@ -505,7 +516,7 @@ function Line({ it }: { it: Item }) {
   return (
     <li className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
       <span className="block text-[10.5px] font-bold uppercase tracking-widest"
-        style={{ color: vote ? 'var(--series-cost)' : it.kind === 'contention' ? 'var(--status-critical)' : 'var(--text-muted)' }}>
+        style={{ color: vote ? 'var(--series-cost)' : (it.kind === 'contention' || it.kind === 'safety') ? 'var(--status-critical)' : 'var(--text-muted)' }}>
         {KIND_WORD[it.kind] ?? it.kind}{vote && it.outcome ? ` — ${it.outcome}` : ''}
       </span>
       <span className="block text-[14.5px] leading-snug mt-0.5" style={{ fontWeight: vote ? 600 : 400 }}>{it.text}</span>

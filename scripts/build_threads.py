@@ -77,6 +77,37 @@ def report_links(t, catalogue):
     return out
 DECLINED = os.path.join(ROOT, 'sources', 'data', 'threads-declined.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
+# MOMENTS A PERSON PICKED OUT OF A RECORDING, for a thread, where our minutes dropped them.
+# TJ, 17 October 2026, on the School Committee calling the track walls a danger: *"can you put
+# those safety notes into the turf field thread?"* -- our minutes of 7 October kept the cost
+# and the next step and lost every remark about safety. Each row's quote must appear
+# VERBATIM in the machine captions within a minute and a half of its `t`, or the build stops:
+# the quote is the evidence, and a misremembered one is worse than none.
+MOMENTS = os.path.join(ROOT, 'sources', 'data', 'thread-moments.csv')
+TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts')
+
+
+def moments(tid):
+    """{(board_slug, date): [item, ...]} for one thread, every quote checked against the captions."""
+    out = {}
+    if not os.path.exists(MOMENTS):
+        return out
+    for r in read_csv(MOMENTS):
+        if r['thread'] != tid:
+            continue
+        f = os.path.join(TRANSCRIPTS, r['board_slug'], '%s-%s.json' % (r['date'], r['video_id']))
+        if not os.path.exists(f):
+            raise SystemExit('thread-moments.csv: no captions at %s' % os.path.relpath(f, ROOT))
+        t = int(r['t'])
+        segs = json.load(open(f, encoding='utf-8'))['segments']
+        heard = ' '.join(x['text'] for x in segs if t - 30 <= x['start'] <= t + 90)
+        if ' '.join(r['quote'].split()) not in ' '.join(heard.split()):
+            raise SystemExit('thread-moments.csv: %s %s t=%d -- %r is not in the captions there'
+                             % (r['board_slug'], r['date'], t, r['quote']))
+        out.setdefault((r['board_slug'], r['date']), []).append(
+            {'kind': r['kind'], 'text': r['text'], 'outcome': '', 't': t, 'quote': r['quote'],
+             'video_url': 'https://www.youtube.com/watch?v=' + r['video_id'], 'source': 'caption'})
+    return out
 TMVOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'threads.json')
 # THE TOWN'S OWN MINUTES, read structured by extract_official_votes.py -- every item carries
@@ -361,6 +392,16 @@ def chronology(t, record, town=None):
             out.append({'board': (rec or {}).get('board') or names.get(slug) or slug.replace('-', ' ').title(),
                         'board_slug': slug, 'date': date, 'items': hits,
                         'records': sorted({h['source'] for h in hits})})
+    # The picked moments, into the meeting they belong to -- or as a meeting of their own.
+    picked = moments(t['id'])
+    for c in out:
+        c['items'].extend(picked.pop((c['board_slug'], c['date']), []))
+    for (slug, date), items in picked.items():
+        out.append({'board': names.get(slug) or slug.replace('-', ' ').title(),
+                    'board_slug': slug, 'date': date, 'items': items, 'records': []})
+    for c in out:
+        c['records'] = sorted({h['source'] for h in c['items']})
+    out.sort(key=lambda c: (c['date'], c['board_slug']))
     return out
 
 
