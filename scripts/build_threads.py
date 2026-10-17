@@ -189,7 +189,8 @@ def the_record():
         for x in (m.get('decisions') or []):
             rec['items'].append({'kind': 'decision', 'text': x.get('decision') or '', 't': x.get('t')})
         for t in (m.get('topics') or []):
-            rec['items'].append({'kind': 'topic', 'text': t.get('topic') or '', 't': t.get('t_start')})
+            rec['items'].append({'kind': 'topic', 'text': t.get('topic') or '', 't': t.get('t_start'),
+                                 't_end': t.get('t_end')})
         # THE BUDGET DISCUSSION AND THE PUBLIC'S COMMENTS, READ TOO. Until 10 October 2026 a
         # thread saw only votes, decisions and topic headings, so the Finance Committee's
         # 24 September discussion of the track and turf engineering request -- recorded under
@@ -205,6 +206,12 @@ def the_record():
         for c in (m.get('contention') or []):
             rec['items'].append({'kind': 'contention',
                                  'text': '%s (%s): "%s"' % (c.get('about') or '', c.get('sides') or '',
+                                                            c.get('words_as_heard') or ''),
+                                 't': c.get('t')})
+        # CONCERNS AND CONDITIONS (17 October 2026 onward; same three states as contention).
+        for c in (m.get('concerns_and_conditions') or []):
+            rec['items'].append({'kind': {'condition': 'condition', 'liability or legal': 'liability'}.get(c.get('kind'), 'safety'),
+                                 'text': '%s (%s): "%s"' % (c.get('about') or '', c.get('who') or '',
                                                             c.get('words_as_heard') or ''),
                                  't': c.get('t')})
         for c in (m.get('public_comment') or []):
@@ -369,8 +376,26 @@ def chronology(t, record, town=None):
                 if not v['procedural'] and hit(v['motion']):
                     hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
                                  't': v['t'], 'video_url': v['video_url'], 'source': 'ours'})
+            # A REMARK MADE IN PASSING DOES NOT REPEAT ITS SUBJECT. "That wall is going to collapse
+            # on someone" was said inside the School Committee's track and turf discussion and
+            # names neither. So a concern, condition or dispute also belongs to the thread when it
+            # falls inside a matching topic's span, or names the thread's subject within ten
+            # minutes of a full match in the same meeting (the Select Board's "kids are actively
+            # getting injured because of the condition of the field", 6 Oct, inside a three-hour
+            # warrant topic that a span cannot narrow).
+            full = [it for it in rec['items'] if it.get('t') is not None and hit(it['text'])] + \
+                   [v for v in rec['votes'] if v.get('t') is not None and not v['procedural'] and hit(v['motion'])]
+            spans = [(it['t'], it['t_end']) for it in full if it.get('kind') == 'topic' and it.get('t_end')]
+
+            def near(it):
+                if it['kind'] not in ('safety', 'liability', 'condition', 'contention') or it.get('t') is None:
+                    return False
+                if any(a <= it['t'] <= b for a, b in spans):
+                    return True
+                return bool(rx and rx.search(it['text']) and not (ex and ex.search(it['text']))
+                            and any(abs(f['t'] - it['t']) <= 600 for f in full))
             for it in rec['items']:
-                if hit(it['text']):
+                if hit(it['text']) or near(it):
                     hits.append({'kind': it['kind'], 'text': it['text'], 'outcome': '', 't': it['t'],
                                  'video_url': rec['recordings'][0] if rec['recordings'] else '',
                                  'source': 'ours'})

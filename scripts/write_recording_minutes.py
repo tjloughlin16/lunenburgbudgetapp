@@ -161,7 +161,7 @@ SCHEMA = {
     'additionalProperties': False,
     'required': ['headline', 'summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
                  'transfers', 'decisions', 'topics', 'not_audible', 'confidence', 'contention',
-                 'documents_mentioned', 'suggested_reports'],
+                 'concerns_and_conditions', 'documents_mentioned', 'suggested_reports'],
     'properties': {
         'documents_mentioned': DOCUMENTS_FIELD,
         # SUGGESTED REPORTS -- 15 October 2026, FORWARD ONLY, same three states as above.
@@ -226,6 +226,23 @@ SCHEMA = {
                 'kind': {'type': 'string', 'enum': ['members disagree', 'public criticism', 'charged language', 'procedural fight']},
             }},
             'description': 'moments of open conflict or charged language; empty if none'},
+        # CONCERNS AND CONDITIONS -- added 17 October 2026, FORWARD ONLY, same three states as
+        # contention (absent = not read for it). Contention catches CONFLICT; this catches the two
+        # things that are not conflict and still decide a vote. All three meetings on the turf
+        # field in Sept-Oct 2026 lost them: "that wall is going to collapse on someone" (School
+        # Committee) and "They can make a real life safety argument about it, then I could be in
+        # favor of it" (Select Board). TJ asked for it; build_threads.py reads it.
+        'concerns_and_conditions': {'type': 'array', 'items': {
+            'type': 'object', 'additionalProperties': False,
+            'required': ['t', 'kind', 'about', 'who', 'words_as_heard'],
+            'properties': {
+                't': {'type': 'integer', 'description': 'second it was said'},
+                'kind': {'type': 'string', 'enum': ['safety', 'liability or legal', 'condition']},
+                'about': {'type': 'string', 'description': 'what it concerns, in one plain sentence'},
+                'who': {'type': 'string', 'description': 'who said it, by role ("a member", "the superintendent")'},
+                'words_as_heard': {'type': 'string', 'description': 'the words exactly as the captions render them, under 200 characters'},
+            }},
+            'description': 'risks to people or the town, and conditions a member sets for their vote; empty if none'},
         'transfers': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
             'required': ['t', 'description', 'outcome'],
@@ -286,6 +303,7 @@ Rules, none optional:
 16. contention: each moment of real CONFLICT -- members openly disagreeing with each other, a speaker accusing or sharply criticising a board, an official or a decision, charged or inflammatory language, raised voices or interruptions the captions make evident, a point of order, a walkout. NOT an ordinary question, a request for clarification, or a split vote by itself. For each: the second it began, what it was about, who took which side BY ROLE (never a name unless stated for the record), and the most charged words EXACTLY as the captions render them. Describe; do not judge who was right. Empty if the meeting had none.
 17. """ + DOCUMENTS_RULE + """
 18. suggested_reports: see SUGGESTED REPORTS below.
+19. concerns_and_conditions: each time anyone says something could hurt people or expose the town -- a safety risk, an injury, something that could collapse or fail, a liability, a legal or compliance problem (kind "safety" or "liability or legal") -- and each time a member says what it would take to win their vote: "I'd support it if...", "not unless...", "I need to see..." (kind "condition"). Include remarks made in passing; these are often not the agenda item's main point. For each: the second, what it concerns, who said it BY ROLE, and the words EXACTLY as the captions render them. Describe; do not judge whether the claim is true. Not routine safety business (a police report, a permit's standard conditions). Empty if none.
 
 Return only the JSON."""
 
