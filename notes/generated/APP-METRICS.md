@@ -1,10 +1,10 @@
 # The Lunenburg Budget Project, by the numbers
 
-*As of 2026-10-16. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
+*As of 2026-10-17. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
 
 ## What the town and the state published — and we hold
 
-- **16,523 documents** — PDFs, spreadsheets, Word files and slide decks — 43,326 files and 10.18 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16,527 documents** — PDFs, spreadsheets, Word files and slide decks — 43,598 files and 10.18 GB in all, each with its address, its publisher’s filename and a checksum.
 - **15 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,216 meeting documents** from **51 town boards**: 4,743 sets of minutes and 7,473 agendas, 2009-01-05 to 2026-10-15 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -15,17 +15,17 @@
 ## What we made from it
 
 - **4,512 hours of meeting recordings transcribed** — 2,683 meetings, 188.0 days of audio end to end, 2012-05-02 to 2026-10-14. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **1399 meetings with our own minutes** written from those recordings — **4292 substantive votes** and **709 transfers** logged, each linked to the second of the video.
-- **A database of 161,342 rows in 122 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **1594 meetings with our own minutes** written from those recordings — **5083 substantive votes** and **768 transfers** logged, each linked to the second of the video.
+- **A database of 161,346 rows in 122 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **5 analyses** and **254 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
 - **266 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
-- **351 pages** on the site.
+- **352 pages** on the site.
 
 ## Where it came from
 
 - `www.lunenburgma.gov` — 12,625 files
-- `massago.hylandcloud.com` — 5,791 files
+- `massago.hylandcloud.com` — 5,799 files
 - `drive.google.com` — 1,519 files
 - `docs.google.com` — 52 files
 - `malegislature.gov` — 40 files
