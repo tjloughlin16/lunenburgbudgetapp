@@ -463,9 +463,9 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
  *  A settled thread leads with how it ended and tells its story start to finish. */
 const KIND_WORD: Record<string, string> = {
   vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed',
-  contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised',
+  contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised', condition: 'Condition set',
 }
-const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, contention: 2, budget: 3, topic: 4, comment: 5 }
+const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, condition: 1, contention: 2, budget: 3, topic: 4, comment: 5 }
 const hms = (t: number) => {
   const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60
   return (h ? `${h}:${String(m).padStart(2, '0')}` : `${m}`) + `:${String(s).padStart(2, '0')}`
@@ -516,7 +516,7 @@ function Line({ it }: { it: Item }) {
   return (
     <li className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
       <span className="block text-[10.5px] font-bold uppercase tracking-widest"
-        style={{ color: vote ? 'var(--series-cost)' : (it.kind === 'contention' || it.kind === 'safety') ? 'var(--status-critical)' : 'var(--text-muted)' }}>
+        style={{ color: vote ? 'var(--series-cost)' : (it.kind === 'contention' || it.kind === 'safety' || it.kind === 'condition') ? 'var(--status-critical)' : 'var(--text-muted)' }}>
         {KIND_WORD[it.kind] ?? it.kind}{vote && it.outcome ? ` — ${it.outcome}` : ''}
       </span>
       <span className="block text-[14.5px] leading-snug mt-0.5" style={{ fontWeight: vote ? 600 : 400 }}>{it.text}</span>
