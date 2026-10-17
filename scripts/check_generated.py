@@ -584,6 +584,9 @@ CHECKS = [
     # and never written: without it every improvement to the classification would silently
     # discard every human correction, and nothing would report that it happened.
     ('build_youtube_classification.py', ['--check']),
+    # A MEETING POSTED TWICE: which videos are the same recording, and their minutes merged.
+    ('reconcile_meeting_videos.py', ['--check']),
+    ('merge_recording_minutes.py', ['--check']),
     ('build_views.py', ['--check']),
     ('build_archive_guide.py', ['--check']),
     ('build_show_your_work.py', ['--check']),
@@ -757,10 +760,13 @@ PREREQ = {
     'build_pipeline_state.py': ['map_annual_report_pages.py'],
     # A BOARD PAGE QUOTES THE FEEDS. Rebuilding the boards first leaves them quoting
     # yesterday's notices, which is a wrong date on a public page rather than a stale file.
-    'build_boards.py': ['build_feeds.py', 'build_notices.py', 'build_meeting_feed.py'],
+    'build_boards.py': ['build_feeds.py', 'build_notices.py', 'build_meeting_feed.py', 'merge_recording_minutes.py'],
     # A THREAD SAYS WHICH AGENDA IT IS ON NEXT, so the agenda match comes first.
     # ...and which REPORTS it needs, from the suggestions the meetings made.
-    'build_threads.py': ['build_agenda_threads.py', 'build_suggested_reports.py'],
+    'build_threads.py': ['build_agenda_threads.py', 'build_suggested_reports.py', 'merge_recording_minutes.py'],
+    'merge_recording_minutes.py': ['reconcile_meeting_videos.py'],
+    'reconcile_meeting_videos.py': ['build_youtube_classification.py'],
+    'build_recording_minutes.py': ['merge_recording_minutes.py'],
     'build_agenda_threads.py': ['build_meeting_feed.py'],
 }
 

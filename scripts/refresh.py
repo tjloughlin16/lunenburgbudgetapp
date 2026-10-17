@@ -509,7 +509,9 @@ def covered(board_slug, date, rows):
 
 
 def minutes_targets(rows):
-    """Recordings inside the policy with a transcript on disk and no minutes yet."""
+    """Recordings inside the policy with a transcript on disk and no minutes yet -- EVERY
+    recording, a re-upload included: both are valid, and merge_recording_minutes.py
+    reconciles their minutes."""
     out = []
     for t in read_csv(TRANSCRIPT_INDEX):
         row = covered(t['board_slug'], t['meeting_date'], rows)
@@ -1194,6 +1196,15 @@ def run(a, notes, ctx):
         else:
             since = (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=TRANSCRIPT_WINDOW_DAYS)).isoformat()
             py('fetch_youtube_transcripts.py', '--since', since, '--limit', '12', '--sleep', '45', check=False)
+        # A MEETING POSTED TWICE. Which videos are the same recording, from their captions --
+        # BEFORE minutes are written, so both recordings are written and then merged. A
+        # newly re-posted meeting is news: the town usually re-posts to fix something.
+        rv = subprocess.run([sys.executable, os.path.join(SCRIPTS, 'reconcile_meeting_videos.py')],
+                            capture_output=True, text=True)
+        print(rv.stdout, end='')
+        for line in rv.stdout.splitlines():
+            if line.startswith('NEWLY RE-POSTED'):
+                notes.append(line.lower().replace('newly re-posted: ', 're-posted: '))
 
     wrote_minutes = set()     # (board, date) whose minutes this run wrote -- reconciled below
     # 7. Our minutes, inside the policy, capped -- for recordings whose transcript is NEW.

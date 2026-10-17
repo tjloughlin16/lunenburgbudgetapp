@@ -38,7 +38,7 @@ type Closure = {
  *  our minutes of the recording, from machine captions, cited to the second. */
 type Item = {
   kind: string; text: string; outcome: string; t: number | null; video_url: string
-  source?: 'town' | 'ours' | 'caption'; quote?: string; doc_url?: string; town_url?: string
+  source?: 'town' | 'ours' | 'caption'; quote?: string; recording_note?: string; doc_url?: string; town_url?: string
 }
 /** An upcoming (or just-past) agenda item matched to this thread by build_agenda_threads.py. */
 type OnAgenda = {
@@ -523,6 +523,11 @@ function Line({ it }: { it: Item }) {
       {it.quote ? (
         <span className="block text-[13px] leading-snug mt-1 pl-2.5"
           style={{ ...secondary, borderLeft: '2px solid var(--grid)' }}>&ldquo;{it.quote}&rdquo;</span>
+      ) : null}
+      {/* A MEETING POSTED TWICE: content one recording lost, said on the line. */}
+      {it.recording_note ? (
+        <span className="inline-block mt-1 px-1.5 py-0.5 text-[11px] font-semibold rounded"
+          style={{ background: 'var(--surface-3)', color: 'var(--status-critical)' }}>{it.recording_note}</span>
       ) : null}
       <span className="block mt-0.5"><Cite it={it} /></span>
     </li>

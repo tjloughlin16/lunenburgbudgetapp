@@ -159,12 +159,41 @@ def norm_motion(s):
     return re.sub(r'\W+', ' ', (s or '').lower()).strip()
 
 
+def src(o):
+    """Where an item came from, when the meeting was posted twice: the recording that heard it,
+    and a note if the other recording lacks that moment. Empty for an ordinary meeting."""
+    return {'video_url': o.get('video_url') or '', 'recording_note': o.get('recording_note') or ''}
+
+
 def the_record():
     """Every meeting we can read, one row per (board, date), votes deduped across parts."""
     by, future = {}, []
     today = dt.date.today().isoformat()
+    # A MEETING POSTED TWICE IS READ ONCE, FROM THE MERGED ACCOUNT. Both recordings are
+    # valid; merge_recording_minutes.py lines their minutes up and keeps the union, each item
+    # citing the recording it came from and saying when the other recording lacks that moment.
+    # Reading both files instead would put every remark on a thread twice.
+    import merge_recording_minutes as MRG
+    merged, skip = {}, set()
+    for (b, d), gs in MRG.groups().items():
+        for g in gs:
+            mg = MRG.merged(b, d, g)
+            if mg:
+                lead = mg['videos'][0]
+                merged[lead], role = mg, MRG.roles(mg['videos'])
+                mg['_role'] = role
+                skip.update(v for v in mg['videos'] if v != lead)
     for f in sorted(glob.glob(os.path.join(MINUTES, '*', '*.json'))):
+        vid = os.path.basename(f)[:-5].split('-', 3)[-1]
+        if vid in skip:
+            continue
         j = json.load(open(f, encoding='utf-8'))
+        if vid in merged:
+            mg = merged[vid]
+            j = dict(j, minutes=dict(j.get('minutes') or {}, **{k: [
+                dict(it, video_url='https://www.youtube.com/watch?v=' + it['video_id'],
+                     recording_note=MRG.label(it, mg['_role']) if it.get('absent_from') else '')
+                for it in mg[k]] for k in MRG.LISTS}))
         # A MEETING CANNOT HAVE HAPPENED TOMORROW. Three minutes files carry dates a model
         # read wrong (2027-11-06, 2027-01-16, and a 2021 Parks meeting). Left in, the worst
         # of them made a thread report `last moved 2027-01-16` and sort to the top of the
@@ -185,12 +214,13 @@ def the_record():
             rec['seen'].add(k)
             rec['votes'].append({'motion': v.get('motion') or '', 'outcome': v.get('outcome') or '',
                                  'procedural': bool(v.get('procedural')), 't': v.get('t'),
-                                 'video_url': j.get('video_url') or ''})
+                                 'video_url': v.get('video_url') or j.get('video_url') or '',
+                                 'recording_note': v.get('recording_note') or ''})
         for x in (m.get('decisions') or []):
-            rec['items'].append({'kind': 'decision', 'text': x.get('decision') or '', 't': x.get('t')})
+            rec['items'].append({'kind': 'decision', 'text': x.get('decision') or '', 't': x.get('t'), **src(x)})
         for t in (m.get('topics') or []):
             rec['items'].append({'kind': 'topic', 'text': t.get('topic') or '', 't': t.get('t_start'),
-                                 't_end': t.get('t_end')})
+                                 't_end': t.get('t_end'), **src(t)})
         # THE BUDGET DISCUSSION AND THE PUBLIC'S COMMENTS, READ TOO. Until 10 October 2026 a
         # thread saw only votes, decisions and topic headings, so the Finance Committee's
         # 24 September discussion of the track and turf engineering request -- recorded under
@@ -200,23 +230,23 @@ def the_record():
         # detected that. we need to figure out why"*.
         for b in (m.get('budget_items') or []):
             txt = (b.get('topic') or '') + ('. ' + b['what_was_said'] if b.get('what_was_said') else '')
-            rec['items'].append({'kind': 'budget', 'text': txt, 't': b.get('t')})
+            rec['items'].append({'kind': 'budget', 'text': txt, 't': b.get('t'), **src(b)})
         # CONTENTION, where our minutes were read for it (10 October 2026 onward; an older
         # file has no key and contributes nothing -- not "calm", just not read).
         for c in (m.get('contention') or []):
             rec['items'].append({'kind': 'contention',
                                  'text': '%s (%s): "%s"' % (c.get('about') or '', c.get('sides') or '',
                                                             c.get('words_as_heard') or ''),
-                                 't': c.get('t')})
+                                 't': c.get('t'), **src(c)})
         # CONCERNS AND CONDITIONS (17 October 2026 onward; same three states as contention).
         for c in (m.get('concerns_and_conditions') or []):
             rec['items'].append({'kind': {'condition': 'condition', 'liability or legal': 'liability'}.get(c.get('kind'), 'safety'),
                                  'text': '%s (%s): "%s"' % (c.get('about') or '', c.get('who') or '',
                                                             c.get('words_as_heard') or ''),
-                                 't': c.get('t')})
+                                 't': c.get('t'), **src(c)})
         for c in (m.get('public_comment') or []):
             if not re.match(r'\s*no public comment', c.get('topic') or '', re.I):
-                rec['items'].append({'kind': 'comment', 'text': c.get('topic') or '', 't': c.get('t')})
+                rec['items'].append({'kind': 'comment', 'text': c.get('topic') or '', 't': c.get('t'), **src(c)})
     for r in by.values():
         r.pop('seen', None)
     return by, future
@@ -375,7 +405,7 @@ def chronology(t, record, town=None):
             for v in rec['votes']:
                 if not v['procedural'] and hit(v['motion']):
                     hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
-                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours'})
+                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours', 'recording_note': v.get('recording_note') or ''})
             # A REMARK MADE IN PASSING DOES NOT REPEAT ITS SUBJECT. "That wall is going to collapse
             # on someone" was said inside the School Committee's track and turf discussion and
             # names neither. So a concern, condition or dispute also belongs to the thread when it
@@ -397,8 +427,8 @@ def chronology(t, record, town=None):
             for it in rec['items']:
                 if hit(it['text']) or near(it):
                     hits.append({'kind': it['kind'], 'text': it['text'], 'outcome': '', 't': it['t'],
-                                 'video_url': rec['recordings'][0] if rec['recordings'] else '',
-                                 'source': 'ours'})
+                                 'video_url': it.get('video_url') or (rec['recordings'][0] if rec['recordings'] else ''),
+                                 'source': 'ours', 'recording_note': it.get('recording_note') or ''})
         for it in (town.get(key) or {}).get('items', []):
             # The town's quote is matched too: a minute summarised as "Capital requests" whose
             # sentence names the turf field is about the turf field.
@@ -409,7 +439,7 @@ def chronology(t, record, town=None):
             for v in (rec['votes'] if rec else []):
                 if not v['procedural'] and re.search(r'warrant|article|bylaw|fee|rate', v['motion'], re.I):
                     hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
-                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours'})
+                                 't': v['t'], 'video_url': v['video_url'], 'source': 'ours', 'recording_note': v.get('recording_note') or ''})
             for it in (town.get(key) or {}).get('items', []):
                 if it['kind'] == 'vote' and re.search(r'warrant|article|bylaw|fee|rate', it['text'], re.I):
                     hits.append(dict(it))

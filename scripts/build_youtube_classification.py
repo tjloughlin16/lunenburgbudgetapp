@@ -139,6 +139,29 @@ def stem_of(title):
     return re.sub(r'\s+', ' ', s).strip(' -–—,.|:')
 
 
+# A RE-UPLOAD OR A PART SAYS SO IN ITS TITLE, AND THE MARKER IS NOT THE BODY'S NAME.
+# TJ, 17 October 2026, on "School Committee Meeting 10.07.26 - Audio Fix" sitting
+# `undetermined` while the original it replaced had been taken down: *"i dont think we
+# handled this case ever!"* The stem kept the marker, so it was a stem nobody had decided,
+# and the town's corrected recording of a School Committee meeting joined no board. The
+# channel has written a revision seven ways since 2018; each is read off here as `revision`,
+# a part number as `part`, and a stem with no decision of its own falls back to the stem
+# without them. reconcile_meeting_videos.py decides what a revision REPLACES.
+REVISION = re.compile(r'[\s\-–—]*[\(\[]?\s*(audio fix(?:ed)?|audio edited|audio revision|'
+                      r're-?upload[^\)\]]*|date corrected|corrected date)\s*[\)\]]?', re.I)
+PART = re.compile(r'[\s\-–—,]*\bpart\s*(\d+)(?:\s*(?:of\s*\d+|[a-z]\b))?', re.I)
+
+
+def markers(stem):
+    """(base stem, revision marker as printed, part number) -- the stem with both removed."""
+    rev = REVISION.search(stem)
+    base = REVISION.sub(' ', stem) if rev else stem
+    part = PART.search(base)
+    base = PART.sub(' ', base) if part else base
+    base = re.sub(r'\s+', ' ', base).strip(' -–—,.|:')
+    return base, (rev.group(1) if rev else ''), (part.group(1) if part else '')
+
+
 def read_csv(path):
     with open(path, newline='') as fh:
         return list(csv.DictReader(fh))
@@ -226,7 +249,8 @@ def build():
             # thing and a correction is somebody's judgment, which belongs in the overrides.
             date_flag = 'after the index date; the title may carry a typo'
 
-        d = dec.get(stem)
+        base, revision, part = markers(stem)
+        d = dec.get(stem) or dec.get(base)
         if d is None:
             unknown_stems[stem] += 1
             kind, slugs, category, note = 'undetermined', [], '', 'no decision recorded'
@@ -273,6 +297,8 @@ def build():
             'classification_source': source,
             'classified_by': by,
             'classified_at': at,
+            'revision': revision,
+            'part': part,
         })
         # A JOINT BODY IS ITS OWN BODY, AND IT COUNTS FOR ITS CONSTITUENTS. The Tri-Board is
         # the School Committee, Select Board and Finance Committee sitting together: it owns
@@ -326,7 +352,7 @@ def render(rows, cols):
 
 VIDEO_COLS = ['video_id', 'channel_rank', 'title', 'url', 'title_stem', 'kind', 'category',
               'board_count', 'meeting_date', 'date_source', 'date_flag', 'note',
-              'classification_source', 'classified_by', 'classified_at']
+              'classification_source', 'classified_by', 'classified_at', 'revision', 'part']
 BOARD_COLS = ['video_id', 'board_slug', 'board_name', 'role', 'title_stem',
               'meetings_folder', 'in_agenda_center', 'meeting_date',
               'classification_source', 'classified_by', 'classified_at']

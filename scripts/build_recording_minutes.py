@@ -44,6 +44,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import write_recording_minutes as W  # noqa: E402
 import reconcile_minutes as R  # noqa: E402
+import reconcile_meeting_videos as MV  # noqa: E402
+import merge_recording_minutes as MRG  # noqa: E402
 
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json')
 SHARDS = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes')
@@ -210,6 +212,14 @@ def with_posted_names(attendees, board_slug, date, all_rosters):
 def payload():
     items = []
     all_rosters = rosters()
+    # A MEETING POSTED TWICE: both recordings are valid and both pages stay up. Each page
+    # says it was posted twice, tags the items whose moment the OTHER recording lacks, and
+    # lists what only the other recording has (merge_recording_minutes.py).
+    same = MV.same_recording()
+    twice = {}
+    for (b, d), gs in MRG.groups().items():
+        for g in gs:
+            twice.update(MRG.annotations(b, d, g))
     for f in sorted(glob.glob(os.path.join(W.OUT, '*', '*.json'))):
         m = json.load(open(f, encoding='utf-8'))
         mm = dict(m['minutes'])
@@ -235,6 +245,8 @@ def payload():
             'date': m['meeting_date'],
             'video_id': m['video_id'],
             'video_url': m['video_url'],
+            'recorded_twice': twice.get(m['video_id']),
+            'same_recording_as': [v for v in same.get(m['video_id'], []) if v != m['video_id']],
             'headline': mm.get('headline', ''),
             'summary': mm['summary'],
             'confidence': mm['confidence'],

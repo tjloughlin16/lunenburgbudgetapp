@@ -83,6 +83,15 @@ type Meeting = {
   slug: string
   digest?: Digest | null
   reconciliation?: Reconciliation | null
+  // A MEETING POSTED TWICE (scripts/merge_recording_minutes.py). Both recordings are valid;
+  // `labels` tags this page's items whose moment the other recording LACKS, by list and index,
+  // and `missing_here` is what only the other recording has -- content cut from this one.
+  recorded_twice?: {
+    role: string
+    others: { video_id: string; role: string }[]
+    labels: Record<string, Record<string, string>>
+    missing_here: { list: string; text: string; outcome: string; t: number | null; video_id: string; role: string }[]
+  } | null
   documents?: Documents | null
   discrepancies?: number
   caption_errors?: number
@@ -388,6 +397,64 @@ function DocumentsAndExhibits({ d, published, u }: { d: Documents | null; publis
   )
 }
 
+/** Lost content, said on the item: "missing from the edited video". */
+function Lost({ text }: { text?: string }) {
+  if (!text) return null
+  return <span className="text-[11px] font-semibold px-1.5 py-0.5 rounded whitespace-nowrap"
+    style={{ background: 'var(--surface-3)', color: 'var(--status-critical)' }}>{text}</span>
+}
+
+const LIST_WORD: Record<string, string> = {
+  votes: 'vote', decisions: 'decision', budget_items: 'money item', transfers: 'transfer',
+  contention: 'dispute', concerns_and_conditions: 'concern', public_comment: 'public comment', topics: 'topic',
+}
+
+/** THIS MEETING WAS POSTED TWICE. Leads the page: it changes what a reader should trust. */
+function PostedTwice({ m }: { m: Meeting }) {
+  const rt = m.recorded_twice
+  if (!rt) return null
+  const here = rt.missing_here.length
+  const tagged = Object.values(rt.labels).reduce((n, x) => n + Object.keys(x).length, 0)
+  const other = (v: string) => `/meeting-minutes/${m.board_slug}/${m.date}-${v}`
+  return (
+    <div className="card p-4 mt-4 max-w-3xl" style={{ borderLeft: '4px solid var(--status-critical)' }}>
+      <p className="text-[10.5px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Posted twice</p>
+      <p className="text-sm mt-1">
+        The town posted this meeting more than once. These are our minutes of <strong>{rt.role}</strong>; see also{' '}
+        {rt.others.map((o, i) => <span key={o.video_id}>{i ? ', ' : ''}<a className="underline" href={other(o.video_id)}>{o.role}</a></span>)}.
+        {' '}Both are valid, and we read both.
+        {here > 0 && <> <strong>{here} item{here === 1 ? ' is' : 's are'} missing from this recording</strong> &mdash; the moment is not in it at all &mdash; and listed below.</>}
+        {tagged > 0 && <> {tagged} item{tagged === 1 ? '' : 's'} here {tagged === 1 ? 'is' : 'are'} missing from the other recording, and tagged.</>}
+        {here === 0 && tagged === 0 && <> Neither recording is missing anything the other has.</>}
+      </p>
+    </div>
+  )
+}
+
+function MissingHere({ m }: { m: Meeting }) {
+  const rt = m.recorded_twice
+  if (!rt || rt.missing_here.length === 0) return null
+  return (
+    <>
+      <H2>Missing from this recording</H2>
+      <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        Heard only in {[...new Set(rt.missing_here.map(x => x.role))].join(' and ')}: the moment is not in this video.
+        Each links to the second it was said there.
+      </p>
+      <ol className="space-y-2 mt-2">
+        {rt.missing_here.map((x, i) => (
+          <li key={i} className="card p-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
+            {x.t != null ? <At url={`https://www.youtube.com/watch?v=${x.video_id}`} t={x.t} /> : null}
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{LIST_WORD[x.list] ?? x.list}</span>
+            <span className="text-sm flex-1 min-w-[16rem]">{x.text}</span>
+            {x.outcome ? <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{x.outcome}</span> : null}
+          </li>
+        ))}
+      </ol>
+    </>
+  )
+}
+
 function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dataUrl: string }) {
   const mm = m.minutes
   // THE LINK PREVIEW: the headline and the summary, so a meeting shared on Facebook says
@@ -410,6 +477,8 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
         {m.recording ? <>{' · '}{m.recording.duration} long, about {m.recording.words_approx.toLocaleString()} words spoken</> : null}
         {' · '}captions carried this meeting {mm.confidence === 'high' ? 'well' : mm.confidence === 'moderate' ? 'moderately well' : 'poorly'}
       </span>}>
+
+      <PostedTwice m={m} />
 
       {/* THE RECORD FIRST, where one exists. Ours are the finding aid. */}
       {(official.length > 0 || agendas.length > 0) && (
@@ -492,6 +561,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
               <li key={i} className="card p-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
                 <At url={u} t={v.t} />
                 <span className="text-sm flex-1 min-w-[16rem]">{v.motion}{v.moved_by ? <span style={{ color: 'var(--text-muted)' }}> — moved by {v.moved_by}, as heard</span> : null}</span>
+                <Lost text={m.recorded_twice?.labels?.votes?.[String(mm.votes.indexOf(v))]} />
                 <span className="text-xs font-bold uppercase tracking-widest whitespace-nowrap"
                   style={{ color: v.outcome.startsWith('pass') ? 'var(--series-cost)' : v.outcome === 'not audible' ? 'var(--text-muted)' : 'var(--series-revenue, #b5540f)' }}>{v.outcome}</span>
               </li>
@@ -502,6 +572,8 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
           And {procedural.length} procedural: {procedural.map((v, i) => <span key={i}>{i ? '; ' : ''}{v.motion.toLowerCase()} (<At url={u} t={v.t} />)</span>)}.
         </p>
       )}
+
+      <MissingHere m={m} />
 
       {/* AGAINST THE TOWN'S MINUTES. Two records of one meeting; neither is the referee.
           TJ: "if there truly is a difference in what was documented vs what we think,
@@ -584,7 +656,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
                     <td className="py-2 pr-3 align-top"><At url={u} t={t.t} /></td>
                     <td className="py-2 pr-3 align-top">{t.description}</td>
                     <td className="py-2 pr-3 align-top">{t.amount_as_heard ? <Heard s={t.amount_as_heard} /> : <span style={{ color: 'var(--text-muted)' }}>not heard</span>}</td>
-                    <td className="py-2 align-top text-xs" style={{ color: 'var(--text-secondary)' }}>{t.outcome}</td>
+                    <td className="py-2 align-top text-xs" style={{ color: 'var(--text-secondary)' }}>{t.outcome} <Lost text={m.recorded_twice?.labels?.transfers?.[String(i)]} /></td>
                   </tr>
                 ))}
               </tbody>
@@ -602,6 +674,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
                 <div className="flex flex-wrap gap-x-3 items-baseline">
                   <At url={u} t={b.t} />
                   <span className="text-sm font-semibold">{b.topic}</span>
+                  <Lost text={m.recorded_twice?.labels?.budget_items?.[String(mm.budget_items.indexOf(b))]} />
                 </div>
                 <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{b.what_was_said}</p>
                 {b.figures_as_heard && b.figures_as_heard.length > 0 && (
@@ -618,7 +691,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
           <H2>Settled without a vote</H2>
           <ul className="space-y-1.5">
             {mm.decisions.map((x, i) => (
-              <li key={i} className="text-sm flex gap-3 items-baseline"><At url={u} t={x.t} /><span>{x.decision}</span></li>
+              <li key={i} className="text-sm flex gap-3 items-baseline"><At url={u} t={x.t} /><span>{x.decision}</span><Lost text={m.recorded_twice?.labels?.decisions?.[String(i)]} /></li>
             ))}
           </ul>
         </>
@@ -636,6 +709,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
                 <span><span style={{ color: 'var(--text-secondary)' }}>{c.topic}</span>
                   {(c.speaker_as_heard || c.stated_role) && <span className="text-xs" style={{ color: 'var(--text-muted)' }}> — {c.speaker_as_heard ? `${c.speaker_as_heard}, as heard` : 'a speaker'}{c.stated_role ? `, ${c.stated_role}` : ''}</span>}
                 </span>
+                <Lost text={m.recorded_twice?.labels?.public_comment?.[String(i)]} />
               </li>
             ))}
           </ol>
@@ -677,6 +751,7 @@ function MeetingPage({ m, warning, dataUrl }: { m: Meeting; warning: string; dat
           <li key={i} className="text-sm flex flex-wrap gap-x-3 gap-y-0.5 items-baseline py-1" style={{ borderTop: '1px solid var(--grid)' }}>
             <At url={u} t={t.t_start} />
             <span className="flex-1 min-w-[14rem]">{t.topic}</span>
+            <Lost text={m.recorded_twice?.labels?.topics?.[String(i)]} />
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{t.resolution} · {hms(t.t_end - t.t_start)} long{(t.tags || []).length ? ' · ' + t.tags!.map(x => x.replace(/-/g, ' ')).join(', ') : ''}</span>
           </li>
         ))}

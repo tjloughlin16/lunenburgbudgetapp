@@ -34,6 +34,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import sys
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import merge_recording_minutes as MRG  # noqa: E402
 from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
 import meeting_records as MR   # noqa: E402
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
@@ -380,9 +381,17 @@ def build(as_of=None):
                 r, url='https://lunenburgbudgetproject.org/docs/meetings/' + r['path'])
     vids = collections.defaultdict(dict)                                     # slug -> date -> video row
     cls = {r['video_id']: r for r in read_csv(CLASS)}
+    # ONE VIDEO LINK PER MEETING: THE NEWEST. This used to keep whichever row came last, and
+    # the list runs newest first -- so every meeting the channel re-posted linked its OLDEST
+    # video, including School Committee 7 October 2026, whose original was taken down for an
+    # audio fix. Both recordings stay valid (merge_recording_minutes.py); the LINK goes to the
+    # newest because an older upload is the one most likely to have been taken down.
+    rank = lambda r: int(cls.get(r['video_id'], {}).get('channel_rank') or 10 ** 9)
     for r in read_csv(VIDEOS):
         if cls.get(r['video_id'], {}).get('kind') == 'meeting' and r['meeting_date']:
-            vids[r['board_slug']][r['meeting_date']] = r
+            have = vids[r['board_slug']].get(r['meeting_date'])
+            if have is None or rank(r) < rank(have):
+                vids[r['board_slug']][r['meeting_date']] = r
             names.setdefault(r['board_slug'], r['board_name'])
     trans = {(r['board_slug'], r['meeting_date']): r for r in read_csv(TRANSCRIPTS)}
     nocap = {(r['board_slug'], r['meeting_date']) for r in read_csv(NOCAP)}
@@ -392,7 +401,21 @@ def build(as_of=None):
     for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'official-votes', '*', '*.json')):
         ov = json.load(open(p, encoding='utf-8'))
         official[ov['board_slug']][ov['meeting_date']] = ov
+    # A MEETING POSTED TWICE: one row, from the merged account -- its headline from the
+    # recording that heard the most votes, and the votes counted across both.
+    merged = {}
+    for (b, d), gs in MRG.groups().items():
+        for g in gs:
+            mg = MRG.merged(b, d, g)
+            if mg:
+                merged[(b, d, mg['headline_from'])] = mg
     for m in rec['meetings']:
+        mg = merged.get((m['board_slug'], m['date'], m['video_id']))
+        if mg:
+            m = dict(m, headline=mg['headline'], recordings=len(mg['videos']),
+                     counts=dict(m['counts'], votes=sum(1 for v in mg['votes'] if not v.get('procedural'))))
+        elif any(k[0] == m['board_slug'] and k[1] == m['date'] for k in merged):
+            continue                   # the other recording of a merged meeting
         ours[m['board_slug']][m['date']] = m
     # THE REGISTER: one row per board and date, the single record both this page and
     # build_meeting_feed.py now read. `reg_dates` is every meeting the town has noticed,
