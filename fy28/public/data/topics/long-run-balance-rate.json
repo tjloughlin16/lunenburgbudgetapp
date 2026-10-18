@@ -1,0 +1,321 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "decimals": 2,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Every line above the reference grows faster than the schools’ revenue can in the long run. Tuition is held flat."
+  },
+  "reference": {
+   "label": "Long-run revenue growth (ours)",
+   "text": "2.82%",
+   "value": 2.8174486226795192
+  },
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Assumed yearly growth (ours)",
+    "texts": [
+     "4.00%",
+     "9.00%",
+     "6.00%",
+     "6.48%",
+     "0.00%",
+     "5.00%",
+     "3.00%"
+    ],
+    "values": [
+     4.0,
+     9.0,
+     6.0,
+     6.484031082497201,
+     0.0,
+     5.0,
+     3.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Assumed growth by cost line",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "Salaries",
+   "Health insurance",
+   "Transportation",
+   "Special education, in district",
+   "Out-of-district special education",
+   "Utilities",
+   "Everything else"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "0.77%",
+     "unit": "",
+     "value": 0.7721845715956618
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "n": {
+       "text": "30",
+       "unit": "years",
+       "value": 30
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "The bar is revenue growth 30 years out, once flat new growth has mostly stopped counting."
+    }
+   ],
+   "rests_on": [
+    "salrate",
+    "target"
+   ],
+   "text": "To balance with every other line at our rates, the salary line falls 0.77% a year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.0
+    },
+    "b": {
+     "text": "6.0",
+     "unit": "positions",
+     "value": 5.992733905001352
+    },
+    "c": {
+     "text": "54%",
+     "unit": "",
+     "value": 54.36130537987083
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$89,096",
+       "unit": "",
+       "value": 89096
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "Positions are priced at $89,096 each, salary and benefits, from our catalogue of budget lines."
+    }
+   ],
+   "rests_on": [
+    "pos",
+    "after20",
+    "sal",
+    "cpf"
+   ],
+   "text": "Frozen at zero while pay rises 4.0%, it loses 6.0 positions a year, 54% in twenty years."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "64.4%",
+     "unit": "",
+     "value": 64.40784009273509
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sh",
+    "health",
+    "sal"
+   ],
+   "text": "Salaries and health insurance are 64.4% of the budget: one bargained, one bought by the Town."
+  }
+ ],
+ "facts": [
+  {
+   "id": "target",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2057",
+      "unit": "fiscal year",
+      "value": 2057
+     }
+    },
+    "literals": [],
+    "text": "school revenue growth by FY2057 (ours)"
+   },
+   "value": {
+    "text": "2.82%",
+    "unit": "",
+    "value": 2.8174486226795192
+   }
+  },
+  {
+   "id": "blended",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, what the schools buy (ours)"
+   },
+   "value": {
+    "text": "5.18%",
+    "unit": "",
+    "value": 5.179814758927022
+   }
+  },
+  {
+   "id": "salrate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salary line a year, to balance (ours)"
+   },
+   "value": {
+    "text": "-0.77%",
+    "unit": "",
+    "value": -0.7721845715956618
+   }
+  },
+  {
+   "id": "sal",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, salaries, assumed (ours)"
+   },
+   "value": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 4.0
+   }
+  },
+  {
+   "id": "health",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, health insurance, assumed (ours)"
+   },
+   "value": {
+    "text": "9.0%",
+    "unit": "",
+    "value": 9.0
+   }
+  },
+  {
+   "id": "sh",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget, salaries and insurance (our grouping)"
+   },
+   "value": {
+    "text": "64.4%",
+    "unit": "",
+    "value": 64.40784009273509
+   }
+  },
+  {
+   "id": "pos",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year lost, line frozen (ours)"
+   },
+   "value": {
+    "text": "6.0 positions",
+    "unit": "positions",
+    "value": 5.992733905001352
+   }
+  },
+  {
+   "id": "after20",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of positions gone in twenty years (ours)"
+   },
+   "value": {
+    "text": "54%",
+    "unit": "",
+    "value": 54.36130537987083
+   }
+  },
+  {
+   "id": "cpf",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a position, our catalogue’s average"
+   },
+   "value": {
+    "text": "$89,096",
+    "unit": "",
+    "value": 89096
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2.82%",
+    "unit": "",
+    "value": 2.8174486226795192
+   },
+   "b": {
+    "text": "5.18%",
+    "unit": "",
+    "value": 5.179814758927022
+   }
+  },
+  "literals": [],
+  "text": "To balance for good, what the schools buy could grow 2.82% a year; our rates give 5.18%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "long-run-balance-rate",
+ "kind": "topic",
+ "path": "/budget-crisis/long-run-balance-rate",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY27 budget, line by line)"
+  }
+ ],
+ "table": null,
+ "title": "Long-run balance rate"
+}

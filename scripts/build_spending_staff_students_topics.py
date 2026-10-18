@@ -1,0 +1,673 @@
+#!/usr/bin/env python3
+"""Spending, staff, students: five topic pages and the hub that sets the three side by side.
+
+    python3 scripts/build_spending_staff_students_topics.py           # write the payloads
+    python3 scripts/build_spending_staff_students_topics.py --check   # fail if any would change
+
+WHY THIS EXISTS. Older residents, relayed by TJ on 18 October 2026: "They want to see as far
+back as we have data to relate the budget and the spending to the FTE counts and the
+enrollment count." Each of the three is already on the site on its own shelf; nothing set
+them on one scale. This shelf does that and nothing else. It MEASURES. It does not confirm
+or rebut anybody's reading of the measures (CLAUDE.md rules 7 and 8), and every page that
+could be read as a cause carries the alternatives as hypotheses.
+
+THE THREE SERIES, AND WHERE EACH STARTS -- each is drawn from the first year it is published:
+
+  spending   DESE's NET SCHOOL SPENDING, FY1994-FY2026, from the Chapter 70 district
+             profile (sources/data/dese-ch70-formula.csv). ACTUAL through FY2024 and
+             BUDGETED for FY2025 and FY2026: the two stages are separate tracks and never
+             one rate (rule 1). It is the state's measure, not the town's school line and
+             not what the town pays: Chapter 70 aid is part of it (rule 11).
+  pupils     DESE's 1 October headcount, FY1994-FY2026 (sources/data/dese-enrollment.csv).
+  teachers   DESE's teacher FTE, FY2008-FY2026, read from the staffing payload that every
+             teacher page reads (fy28/public/data/school-staffing.json).
+  other staff  DESE's comparison sheet, FY2009-FY2025: paraprofessional and instructional
+             support FTE beside teachers (sources/data/dese-radar.csv). No DESE file counts
+             administrators, nurses, counsellors, clerical staff or custodians as FTE.
+
+DOLLARS ARE AS PRINTED. The archive holds no price index, so nothing here is in constant
+dollars, and every spending page says so with a gap tile naming the index that would close
+it. A Bureau of Labor Statistics CPI series was reachable on 18 October 2026, but landing it
+needs a decision this generator cannot make: no folder in sources/ is for a federal
+statistics agency (scripts/check_archive_layout.py, TOP), and the bucket keeps a key for ten
+years.
+
+JUDGEMENT CALLS, each named where it is used:
+  * The index chart rebases each series to FY2008 = 100%, the first year all three exist.
+    The base year is OURS; a page says what a different start reads.
+  * Spending per child divides net school spending by the 1 October headcount -- OUR
+    division, of two DESE figures that do not count exactly the same children. The
+    foundation-enrolment division is given beside it so the choice is visible.
+  * The town's own School Department line (sources/data/omnibus-history.csv, the Finance
+    Committee's FY26 Budget Master) is NOT used: it is a workbook somebody assembled (rule
+    13a), its expended column jumps between FY2006 and FY2007 by far more than net school
+    spending does with no note saying why, and its other columns change kind year to year.
+  * Whether the FY2011 teacher count is a real reduction or a reporting artefact is NOT
+    settled; scripts/build_school_staffing_topics.py treats FY2011 the same way.
+
+The statewide teacher file takes about two minutes to read, so its extract is cached in the
+gitignored build/cache/, keyed by the workbook's sha256 -- nothing is read from a cache that
+does not match the bytes on disk.
+"""
+import argparse
+import collections
+import csv
+import hashlib
+import json
+import os
+import statistics
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import conclusions as C  # noqa: E402
+from conclusions import figure  # noqa: E402
+import ladder as LD  # noqa: E402
+import topic as TP  # noqa: E402
+import topics as REG  # noqa: E402
+from brief import step  # noqa: E402
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, 'sources', 'data')
+PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
+DOCS_DATA = os.path.join(ROOT, 'fy28', 'public', 'docs', 'data')
+OUT_DIR = os.path.join(PUB, 'topics')
+MANIFEST = os.path.join(DATA, 'archive-manifest.csv')
+TEACHER_XLSX = os.path.join(ROOT, 'sources', 'state-dese', 'dese-teacher-data.xlsx')
+CACHE = os.path.join(ROOT, 'build', 'cache')
+CACHE_VERSION = 1
+CID = 'spending-staff-students'
+LEA = '01620000'          # Lunenburg's DESE district code
+STATE = '00000000'
+
+MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
+        if home == CID and gen == 'build_spending_staff_students_topics.py']
+
+# The documents a gap would be closed by. Prose, no figures; said once.
+PRICES = ('a published price index landed in this archive, e.g. the BLS CPI-U for '
+          'Boston-Cambridge-Newton, annual averages')
+EPIMS = ('Lunenburg’s EPIMS teacher assignments by school for the year in question, or the '
+         'district’s own staffing list for it')
+POSITIONS = ('the district’s position control report: each post with its FTE, funding source '
+             'and whether it was filled')
+NON_TEACHING = 'an FTE count by job class for every school employee, from EPIMS or the district'
+
+FTE_UNIT = 'full-time equivalents'
+
+
+def fail(msg):
+    raise SystemExit('build_spending_staff_students_topics: ' + msg)
+
+
+# ---------------------------------------------------------------------------- inputs
+
+def nss_series():
+    """{fy: row} for Lunenburg out of the Chapter 70 district profile extract."""
+    out = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-ch70-formula.csv'), encoding='utf-8')):
+        if r['lea'] != LEA:
+            continue
+        if r['reconciles'] != 'yes':
+            fail('Chapter 70 row FY%s no longer reconciles' % r['fy'])
+        out[int(r['fy'])] = dict(
+            nss=float(r['net_school_spending']) if r['net_school_spending'] else None,
+            stage=r['nss_stage'] or None, aid=float(r['ch70_aid']),
+            fe=int(r['foundation_enrollment']))
+    return out
+
+
+def enrolment():
+    out = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-enrollment.csv'), encoding='utf-8')):
+        if r['lea'] == LEA and r['org_level'] == 'district' and r['total_cnt']:
+            out[int(r['fy'])] = int(r['total_cnt'])
+    return out
+
+
+def radar():
+    out = collections.defaultdict(dict)
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-radar.csv'), encoding='utf-8')):
+        if r['lea'] == LEA:
+            out[r['measure']][int(r['fy'])] = float(r['value'])
+    return out
+
+
+def schools():
+    """Teacher FTE by school and year, Lunenburg, from DESE's programme-area file."""
+    out = collections.defaultdict(dict)
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-teacher-program-area.csv'),
+                                 encoding='utf-8')):
+        if r['lea'] == LEA and r['total_fte']:
+            out[r['org_name'] if r['org_level'] == 'school' else '_district'][int(r['fy'])] = \
+                float(r['total_fte'])
+    return out
+
+
+def statewide_teachers():
+    """{lea: {fy: All Teachers FTE}} for every district and the state, cached by sha256."""
+    sha = hashlib.sha256(open(TEACHER_XLSX, 'rb').read()).hexdigest()
+    cp = os.path.join(CACHE, 'dese-teacher-totals-%s.json' % sha[:16])
+    if os.path.exists(cp):
+        got = json.load(open(cp, encoding='utf-8'))
+        if got.get('sha256') == sha and got.get('version') == CACHE_VERSION:
+            return {k: {int(y): v for y, v in s.items()} for k, s in got['series'].items()}
+    import openpyxl
+    ws = openpyxl.load_workbook(TEACHER_XLSX, read_only=True)['Data']
+    rows = ws.iter_rows(values_only=True)
+    head = list(next(rows))
+    ix = {k: head.index(k) for k in ('SY', 'DIST_CODE', 'ORG_CODE', 'SUBJECT', 'TCHR_CNT')}
+    series = collections.defaultdict(dict)
+    for r in rows:
+        if len(r) <= ix['TCHR_CNT'] or r[ix['SUBJECT']] != 'All Teachers':
+            continue
+        if r[ix['ORG_CODE']] != r[ix['DIST_CODE']] or r[ix['TCHR_CNT']] is None:
+            continue           # school rows; the district's own row is the one whose codes match
+        series[r[ix['DIST_CODE']]][int(r[ix['SY']])] = float(r[ix['TCHR_CNT']])
+    os.makedirs(CACHE, exist_ok=True)
+    json.dump(dict(sha256=sha, version=CACHE_VERSION, series=series), open(cp, 'w', encoding='utf-8'))
+    return dict(series)
+
+
+def sources():
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+    out = {}
+    dese = 'Massachusetts DESE'
+    for k, (key, pub) in {
+            'ch70': ('state-dese/dese-ch70-district-profile.xlsx', dese + ', Chapter 70 district profiles'),
+            'enrol': ('state-dese/dese-enrollment-by-grade.xlsx', dese),
+            'teachers': ('state-dese/dese-teacher-data.xlsx', dese),
+            'program': ('state-dese/dese-teachers-by-program-area.xlsx', dese),
+            'radar': ('state-dese/radar-district-comparison.xlsx', dese + ', district comparison'),
+    }.items():
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        out[k] = dict(label='%s — %s' % (pub, key.split('/')[-1]), href='/docs/' + key)
+    for k, (f, what) in {
+            'ch70-csv': ('dese-ch70-formula.csv', 'net school spending and Chapter 70, by year'),
+            'enrol-csv': ('dese-enrollment.csv', 'DESE’s 1 October headcount, by year'),
+            'radar-csv': ('dese-radar.csv', 'DESE’s comparison sheet, by measure and year'),
+            'program-csv': ('dese-teacher-program-area.csv', 'teacher FTE by school, by year'),
+    }.items():
+        if not os.path.exists(os.path.join(DOCS_DATA, f)):
+            fail('/docs/data/%s is not published' % f)
+        out[k] = dict(label='Lunenburg Budget Project — %s (%s)' % (f, what), href='/docs/data/' + f)
+    return out
+
+
+# ---------------------------------------------------------------------------- the pages
+
+def build():
+    src = sources()
+    S = lambda *names: [src[n] for n in names]
+    ch = nss_series()
+    E = enrolment()
+    R = radar()
+    SC = schools()
+    SS = json.load(open(os.path.join(PUB, 'school-staffing.json'), encoding='utf-8'))
+    T = {r['fy']: r['fte'] for r in SS['composition']['district']}
+
+    # The staffing payload and the files this script reads must describe the same counts.
+    for y, v in T.items():
+        if abs(SC['_district'].get(y, -1) - v) > 0.05:
+            fail('teacher FTE for FY%d differs between the staffing payload and the programme '
+                 'file (%s against %s)' % (y, v, SC['_district'].get(y)))
+    for r in SS['composition']['district']:
+        if E.get(r['fy']) != r['students']:
+            fail('the 1 October headcount for FY%d differs between the staffing payload and '
+                 'dese-enrollment.csv' % r['fy'])
+
+    N_ = {y: r['nss'] for y, r in ch.items() if r['nss'] is not None}
+    actual = sorted(y for y in N_ if ch[y]['stage'] == 'actual')
+    budgeted = sorted(y for y in N_ if ch[y]['stage'] == 'budgeted')
+    if not actual or not budgeted or actual[-1] >= budgeted[0]:
+        fail('the actual and budgeted years of net school spending no longer split cleanly')
+    if set(N_) != set(actual) | set(budgeted):
+        fail('a net school spending year is neither actual nor budgeted')
+    a0, a1 = actual[0], actual[-1]
+    b1 = budgeted[-1]
+    e0, e1 = min(E), max(E)
+    t0, t1 = min(T), max(T)
+    base = max(min(N_), e0, t0)               # the first year all three are published (ours)
+
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    U = lambda v: figure(v, C.usd(v))
+    PC = lambda v, dp=1: figure(v, C.pct(v, dp))
+    SP = lambda v: figure(v, '%+.1f%%' % v)
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    FTE = lambda v: figure(v, '%.1f' % v, FTE_UNIT)
+    DF = lambda v: figure(v, '%.1f' % abs(v), FTE_UNIT)
+    X = lambda v: figure(v, '%.2f' % v, 'times')
+    f, con = LD.fact, TP.conclusion
+    ORD = lambda n: '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else
+                              {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+    chg = lambda a, b: 100.0 * (b / a - 1)
+    out = {}
+
+    prices_gap = lambda fid: f(fid, None, 'the same dollars adjusted for prices', 'gap',
+                               closes=PRICES)
+
+    # ================================================================ growth side by side
+    n_chg = chg(N_[base], N_[a1])
+    e_chg = chg(E[base], E[a1])
+    t_chg = chg(T[base], T[a1])
+    nb_idx = 100.0 * N_[b1] / N_[base]
+    e_last = chg(E[base], E[e1])
+    t_last = chg(T[base], T[t1])
+    # From the first year of the state's comparable teacher era, as the staffing pages use it.
+    era = SS['composition']['eras']['total']
+    t_era = chg(T[era], T[a1])
+    e_era = chg(E[era], E[a1])
+    years = list(range(base, max(b1, e1, t1) + 1))
+    idx = lambda m, ys: [100.0 * m[y] / m[base] if y in m and y in ys else None for y in years]
+    growth_chart = TP.series(
+        'Spending, pupils and teachers, rebased', [C.fy(y) for y in years], [
+            TP.track('Net school spending, actual', idx(N_, actual), 'published', 'line'),
+            TP.track('Net school spending, budgeted', idx(N_, budgeted), 'published', 'line'),
+            TP.track('Pupils, 1 October', idx(E, E), 'published', 'line'),
+            TP.track('Teacher FTE', idx(T, T), 'published', 'line')], '%',
+        decimals=1, reference=(100, 'The %s level' % C.fy(base)),
+        note='Each series divided by its own %s value, our arithmetic. Dollars as printed, '
+             'not adjusted for prices.' % C.fy(base), note_figures={'y': F(base)})
+    out['growth-side-by-side'] = TP.page(
+        'growth-side-by-side',
+        'From %s to %s net school spending rose %s; pupils fell %s and teacher FTE %s.'
+        % (C.fy(base), C.fy(a1), C.pct(n_chg), C.pct(-e_chg), C.pct(-t_chg)),
+        [f('n-chg', SP(n_chg), 'net school spending, %s to %s, actual' % (C.fy(base), C.fy(a1)),
+           'published', {'a': F(base), 'b': F(a1)}),
+         f('e-chg', SP(e_chg), 'pupils enrolled 1 October, the same years', 'published',
+           allow=('1',)),
+         f('t-chg', SP(t_chg), 'teacher FTE, the same years', 'published'),
+         f('nb-idx', PC(nb_idx), 'budgeted %s spending, as a share of %s' % (C.fy(b1), C.fy(base)),
+           'published', {'a': F(b1), 'b': F(base)}),
+         f('e-last', SP(e_last), 'pupils, %s to %s' % (C.fy(base), C.fy(e1)), 'published',
+           {'a': F(base), 'b': F(e1)}),
+         f('t-last', SP(t_last), 'teacher FTE, %s to %s' % (C.fy(base), C.fy(t1)), 'published',
+           {'a': F(base), 'b': F(t1)}),
+         f('t-era', SP(t_era), 'teacher FTE, %s to %s' % (C.fy(era), C.fy(a1)), 'published',
+           {'a': F(era), 'b': F(a1)}),
+         f('e-era', SP(e_era), 'pupils, %s to %s' % (C.fy(era), C.fy(a1)), 'published',
+           {'a': F(era), 'b': F(a1)}),
+         prices_gap('prices')],
+        [con('Spending rose %s over %s to %s while pupils fell %s; dollars are as printed.'
+             % (C.pct(n_chg), C.fy(base), C.fy(a1), C.pct(-e_chg)), ['n-chg', 'e-chg', 'prices'],
+             {'a': PC(n_chg), 'y': F(base), 'z': F(a1), 'b': PC(-e_chg)}),
+         con('Teacher FTE reads %s from %s and %s from %s; the start year sets the sign.'
+             % ('%+.1f%%' % t_chg, C.fy(base), '%+.1f%%' % t_era, C.fy(era)), ['t-chg', 't-era', 'e-era'],
+             {'a': SP(t_chg), 'y': F(base), 'b': SP(t_era), 'z': F(era)},
+             notes=[step('%s is the first year of the state’s comparable teacher series; the '
+                         'counts before it move by more than any staffing decision explains.'
+                         % C.fy(era), 'gap', {'y': F(era)}, closes=EPIMS)]),
+         con('Budgeted %s spending is %s of the %s level; it is a budget, drawn as its own line.'
+             % (C.fy(b1), C.pct(nb_idx), C.fy(base)), ['nb-idx'],
+             {'y': F(b1), 'a': PC(nb_idx), 'b': F(base)}),
+         con('The three moving apart does not show why they did.', ['n-chg', 't-chg', 'e-chg'],
+             notes=[step('Prices, salary steps, out-of-district placements, mandates and staff '
+                         'who are not teachers all fit the same lines. Nothing here separates '
+                         'them.', 'hypothesis')])],
+        chart=growth_chart,
+        table=dict(caption='Each series as a share of its %s value' % C.fy(base), views=[dict(
+            key='index', label='Share of %s' % C.fy(base), total_col=-1, kinds=['ledger'] * 3,
+            columns=['Net school spending', 'Pupils', 'Teacher FTE'],
+            rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
+                C.pct(100.0 * N_[y] / N_[base]) if y in N_ else None,
+                C.pct(100.0 * E[y] / E[base]) if y in E else None,
+                C.pct(100.0 * T[y] / T[base]) if y in T else None]) for y in reversed(years)],
+            note='Our arithmetic on DESE’s figures. A budgeted year is never set against an '
+                 'actual one.')]),
+        sources=S('ch70', 'enrol', 'teachers', 'ch70-csv', 'enrol-csv'),
+        finding_figures={'y': F(base), 'z': F(a1), 'a': PC(n_chg), 'b': PC(-e_chg),
+                         'c': PC(-t_chg)})
+
+    # ================================================================ long-run school spending
+    mult = N_[a1] / N_[a0]
+    steps_up = sum(1 for y in actual[1:] if N_[y] > N_[y - 1])
+    steps_n = len(actual) - 1
+    if any(y - 1 not in N_ for y in actual[1:]):
+        fail('the actual years of net school spending are no longer consecutive')
+    aid0, aid1 = 100.0 * ch[a0]['aid'] / N_[a0], 100.0 * ch[a1]['aid'] / N_[a1]
+    xs = list(range(a0, b1 + 1))
+    out['long-run-school-spending'] = TP.page(
+        'long-run-school-spending',
+        'Net school spending was %s in %s and %s in %s, in dollars as printed.'
+        % (C.usd(N_[a0]), C.fy(a0), C.usd(N_[a1]), C.fy(a1)),
+        [f('n0', U(N_[a0]), 'net school spending, %s, actual' % C.fy(a0), 'published', {'y': F(a0)}),
+         f('n1', U(N_[a1]), 'net school spending, %s, actual' % C.fy(a1), 'published', {'y': F(a1)}),
+         f('mult', X(mult), 'times the %s figure, %s' % (C.fy(a0), C.fy(a1)), 'published',
+           {'a': F(a0), 'b': F(a1)}),
+         f('nb', U(N_[b1]), 'net school spending, %s, budgeted' % C.fy(b1), 'published', {'y': F(b1)}),
+         f('up', N(steps_up, 'years'), 'of %s year-to-year steps rose, actual years' % C.num(steps_n),
+           'published', {'n': N(steps_n)}),
+         f('aid0', PC(aid0), 'Chapter 70 aid as a share of it, %s' % C.fy(a0), 'published',
+           {'y': F(a0)}, allow=('70',)),
+         f('aid1', PC(aid1), 'Chapter 70 aid as a share of it, %s' % C.fy(a1), 'published',
+           {'y': F(a1)}, allow=('70',)),
+         prices_gap('prices')],
+        [con('Net school spending rose in %s of %s steps from %s to %s.'
+             % (C.num(steps_up), C.num(steps_n), C.fy(a0), C.fy(a1)), ['up', 'n0', 'n1'],
+             {'a': N(steps_up), 'n': N(steps_n), 'y': F(a0), 'z': F(a1)}),
+         con('Chapter 70 aid was %s of it in %s and %s in %s; the rest came through the town.'
+             % (C.pct(aid0), C.fy(a0), C.pct(aid1), C.fy(a1)), ['aid0', 'aid1'],
+             {'a': PC(aid0), 'y': F(a0), 'b': PC(aid1), 'z': F(a1)}, allow=('70',),
+             notes=[step('Net school spending is the state’s measure: it counts some costs the '
+                         'town carries for the schools and leaves out transport and capital. It '
+                         'is not the town’s school budget line.', 'measured')]),
+         con('None of these dollars is adjusted for prices: the archive holds no price index.',
+             ['prices', 'mult']),
+         con('%s and %s are budgets and are never set against the actual years.'
+             % (C.fy(budgeted[0]), C.fy(b1)), ['nb'], {'a': F(budgeted[0]), 'b': F(b1)})],
+        chart=TP.series('Net school spending by year', [C.fy(y) for y in xs], [
+            TP.track('Actual', [N_[y] if y in actual else None for y in xs], 'published', 'bar'),
+            TP.track('Budgeted', [N_[y] if y in budgeted else None for y in xs], 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='DESE’s Chapter 70 district profile. Dollars as printed, not adjusted for prices.',
+            note_allow=('70',)),
+        table=dict(caption='Net school spending and Chapter 70 aid by year', views=[dict(
+            key=key, label=label, total_col=-1, kinds=['ledger'] * 3,
+            columns=['Net school spending', 'Chapter 70 aid', 'Aid share'],
+            rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
+                C.usd(N_[y]), C.usd(ch[y]['aid']), C.pct(100.0 * ch[y]['aid'] / N_[y])])
+                for y in reversed(ys)],
+            note='DESE’s figures; the share is our division. The last two years are budgets.')
+            for key, label, ys in (
+                ('recent', '%s to %s' % (C.fy(a0 + 16), C.fy(b1)), xs[16:]),
+                ('earlier', '%s to %s' % (C.fy(a0), C.fy(a0 + 15)), xs[:16]))]),
+        sources=S('ch70', 'ch70-csv'),
+        finding_figures={'a': U(N_[a0]), 'y': F(a0), 'b': U(N_[a1]), 'z': F(a1)})
+
+    # ================================================================ spending per child enrolled
+    pp = {y: N_[y] / E[y] for y in N_ if y in E}
+    pf1 = N_[a1] / ch[a1]['fe']
+    pp_mult = pp[a1] / pp[a0]
+    e_long = chg(E[a0], E[a1])
+    peak = max((y for y in E if y <= a1), key=lambda y: E[y])
+    out['spending-per-child-enrolled'] = TP.page(
+        'spending-per-child-enrolled',
+        'Net school spending per child enrolled was %s in %s and %s in %s; pupils fell %s.'
+        % (C.usd(pp[a0]), C.fy(a0), C.usd(pp[a1]), C.fy(a1), C.pct(-e_long)),
+        [f('pp0', U(pp[a0]), 'per child enrolled, %s (our division)' % C.fy(a0), 'published',
+           {'y': F(a0)}),
+         f('pp1', U(pp[a1]), 'per child enrolled, %s (our division)' % C.fy(a1), 'published',
+           {'y': F(a1)}),
+         f('ppx', X(pp_mult), 'times the %s figure, per child' % C.fy(a0), 'published', {'y': F(a0)}),
+         f('totx', X(mult), 'times the %s figure, in total' % C.fy(a0), 'published', {'y': F(a0)}),
+         f('e0', N(E[a0], 'children'), 'enrolled 1 October, %s' % C.fy(a0), 'published',
+           {'y': F(a0)}, allow=('1',)),
+         f('e1', N(E[a1], 'children'), 'enrolled 1 October, %s' % C.fy(a1), 'published',
+           {'y': F(a1)}, allow=('1',)),
+         f('peak', N(E[peak], 'children'), 'enrolled, %s, the most in these years' % C.fy(peak),
+           'published', {'y': F(peak)}),
+         f('pf1', U(pf1), 'per foundation pupil, %s (our division)' % C.fy(a1), 'published',
+           {'y': F(a1)}),
+         f('fe1', N(ch[a1]['fe'], 'pupils'), 'the state’s foundation enrolment, %s' % C.fy(a1),
+           'published', {'y': F(a1)}),
+         prices_gap('prices')],
+        [con('Per child, %s spending was %s times %s; in total it was %s times.'
+             % (C.fy(a1), '%.2f' % pp_mult, C.fy(a0), '%.2f' % mult), ['ppx', 'totx', 'e0', 'e1'],
+             {'y': F(a1), 'a': X(pp_mult), 'z': F(a0), 'b': X(mult)}),
+         con('Divided by the state’s foundation enrolment instead, %s reads %s a pupil.'
+             % (C.fy(a1), C.usd(pf1)), ['pf1', 'fe1', 'pp1'], {'y': F(a1), 'a': U(pf1)}),
+         con('Neither count is exactly the children the dollars pay for.', ['e1', 'fe1'],
+             notes=[step('Tuition for children placed outside the district is in the spending '
+                         'and not in the 1 October headcount; the foundation count adds '
+                         'children schooled elsewhere whose costs are paid another way.',
+                         'measured', allow=('1',))]),
+         con('Enrolment peaked at %s children in %s; per child, %s was %s times that year.'
+             % (C.num(E[peak]), C.fy(peak), C.fy(a1), '%.2f' % (pp[a1] / pp[peak])),
+             ['peak', 'pp1'], {'a': N(E[peak]), 'y': F(peak), 'z': F(a1),
+                               'b': X(pp[a1] / pp[peak])})],
+        chart=TP.series('Spending per child enrolled', [C.fy(y) for y in xs], [
+            TP.track('Actual years', [pp[y] if y in actual else None for y in xs], 'published', 'line'),
+            TP.track('Budgeted years', [pp[y] if y in budgeted else None for y in xs], 'published',
+                     'line')], '$',
+            note='Net school spending over the 1 October headcount, our division. Dollars as '
+                 'printed.', note_allow=('1',)),
+        table=dict(caption='Spending, children and spending per child', views=[dict(
+            key=key, label=label, total_col=-1, kinds=['ledger'] * 3,
+            columns=['Net school spending', 'Enrolled', 'Per child'],
+            rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
+                C.usd(N_[y]), C.num(E[y]), C.usd(pp[y])]) for y in reversed(ys)],
+            note='DESE’s figures; per child is our division. The last two years are budgets.')
+            for key, label, ys in (
+                ('recent', '%s to %s' % (C.fy(a0 + 16), C.fy(b1)), xs[16:]),
+                ('earlier', '%s to %s' % (C.fy(a0), C.fy(a0 + 15)), xs[:16]))]),
+        sources=S('ch70', 'enrol', 'ch70-csv', 'enrol-csv'),
+        finding_figures={'a': U(pp[a0]), 'y': F(a0), 'b': U(pp[a1]), 'z': F(a1),
+                         'c': PC(-e_long)})
+
+    # ================================================================ teachers and other staff
+    tr, pr, sr = R['Teacher FTE'], R['Paraprofessional FTE'], R['Instructional Support FTE']
+    pup = R['In-District FTE Pupils']
+    ry = sorted(set(tr) & set(pr) & set(sr) & set(pup))
+    if ry != list(range(ry[0], ry[-1] + 1)):
+        fail('the comparison sheet years are no longer consecutive')
+    r0, r1 = ry[0], ry[-1]
+    for y in ry:
+        if y in T and abs(tr[y] - T[y]) > 0.15:
+            fail('the comparison sheet and the teacher file now differ by more than they did '
+                 'in FY%d' % y)
+    oth = {y: pr[y] + sr[y] for y in ry}
+    per = lambda m, y: 100.0 * m[y] / pup[y]
+    R2 = lambda v: figure(v, '%.2f' % v, 'per hundred pupils')
+    p_low = min(ry, key=lambda y: pr[y])
+    out['teachers-and-other-staff'] = TP.page(
+        'teachers-and-other-staff',
+        'The state counted %s teacher FTE and %s paraprofessional and support FTE in %s.'
+        % ('%.1f' % tr[r1], '%.1f' % oth[r1], C.fy(r1)),
+        [f('t1', FTE(tr[r1]), 'teacher FTE, %s' % C.fy(r1), 'published', {'y': F(r1)}),
+         f('t0', FTE(tr[r0]), 'teacher FTE, %s' % C.fy(r0), 'published', {'y': F(r0)}),
+         f('o1', FTE(oth[r1]), 'paraprofessional and support FTE, %s' % C.fy(r1), 'published',
+           {'y': F(r1)}),
+         f('o0', FTE(oth[r0]), 'paraprofessional and support FTE, %s' % C.fy(r0), 'published',
+           {'y': F(r0)}),
+         f('tp1', R2(per(tr, r1)), 'teachers per hundred pupils, %s' % C.fy(r1), 'published',
+           {'y': F(r1)}),
+         f('tp0', R2(per(tr, r0)), 'teachers per hundred pupils, %s' % C.fy(r0), 'published',
+           {'y': F(r0)}),
+         f('op1', R2(per(oth, r1)), 'paraprofessional and support FTE per hundred pupils, %s' % C.fy(r1), 'published',
+           {'y': F(r1)}),
+         f('op0', R2(per(oth, r0)), 'paraprofessional and support FTE per hundred pupils, %s' % C.fy(r0), 'published',
+           {'y': F(r0)}),
+         f('pup', SP(chg(pup[r0], pup[r1])), 'in-district pupils, %s to %s' % (C.fy(r0), C.fy(r1)),
+           'published', {'a': F(r0), 'b': F(r1)}),
+         f('p-low', FTE(pr[p_low]), 'paraprofessional FTE, %s, the fewest' % C.fy(p_low),
+           'published', {'y': F(p_low)}),
+         f('non-teaching', None, 'administrators, nurses, counsellors, clerks, custodians',
+           'gap', closes=NON_TEACHING),
+         f('posts', None, 'which posts were filled, and which fund paid', 'gap', closes=POSITIONS)],
+        [con('Teacher FTE went from %s in %s to %s in %s; paraprofessional and support from %s to %s.'
+             % ('%.1f' % tr[r0], C.fy(r0), '%.1f' % tr[r1], C.fy(r1), '%.1f' % oth[r0],
+                '%.1f' % oth[r1]), ['t0', 't1', 'o0', 'o1'],
+             {'a': FTE(tr[r0]), 'y': F(r0), 'b': FTE(tr[r1]), 'z': F(r1), 'c': FTE(oth[r0]),
+              'd': FTE(oth[r1])}),
+         con('Per hundred pupils: teachers %s to %s; paraprofessionals and support %s to %s.'
+             % ('%.2f' % per(tr, r0), '%.2f' % per(tr, r1), '%.2f' % per(oth, r0),
+                '%.2f' % per(oth, r1)), ['tp0', 'tp1', 'op0', 'op1', 'pup'],
+             {'a': R2(per(tr, r0)), 'b': R2(per(tr, r1)), 'c': R2(per(oth, r0)),
+              'd': R2(per(oth, r1))}),
+         con('The paraprofessional row fell to %s in %s before rising; why is not published.'
+             % ('%.1f' % pr[p_low], C.fy(p_low)), ['p-low'], {'a': FTE(pr[p_low]), 'y': F(p_low)},
+             notes=[step('A staffing change and a change in how posts were coded fit the same '
+                         'series; the state’s two paraprofessional files also disagree in recent '
+                         'years.', 'hypothesis')]),
+         con('No state file counts the school’s other employees as FTE.', ['non-teaching', 'posts'])],
+        chart=TP.series('Teachers and other staff by year', [C.fy(y) for y in ry], [
+            TP.track('Teachers', [tr[y] for y in ry], 'published', 'bar'),
+            TP.track('Paraprofessionals', [pr[y] for y in ry], 'published', 'bar'),
+            TP.track('Instructional support', [sr[y] for y in ry], 'published', 'bar')], 'FTE',
+            kind='bar', stacked=True, decimals=1,
+            note='Three rows of DESE’s comparison sheet. An FTE counts assignments, not people '
+                 'or filled posts.'),
+        table=dict(caption='Staff FTE and pupils by year', views=[dict(
+            key='years', label='FTE and pupils', total_col=-1, kinds=['ledger'] * 4,
+            columns=['Teachers', 'Paraprofessionals', 'Instructional support', 'In-district pupils'],
+            rows=[dict(label=C.fy(y), cells=['%.1f' % tr[y], '%.1f' % pr[y], '%.1f' % sr[y],
+                                             '%.1f' % pup[y]]) for y in reversed(ry)],
+            note='DESE’s comparison sheet, as printed. Pupils are DESE’s in-district FTE pupils.')]),
+        sources=S('radar', 'radar-csv', 'teachers'),
+        finding_figures={'a': FTE(tr[r1]), 'b': FTE(oth[r1]), 'y': F(r1)})
+
+    # ================================================================ the FY2011 teacher reading
+    Y = 2011       # the year under examination; named by the request, not derived
+    if not (T[Y] < T[Y - 1] and T[Y] < T[Y + 1]):
+        fail('FY2011 is no longer below both neighbours; this page no longer describes the file')
+    st = statewide_teachers()
+    if abs(st[LEA][Y] - T[Y]) > 0.05:
+        fail('the statewide extract and the staffing payload disagree about FY2011')
+    s_chg = chg(st[STATE][Y - 1], st[STATE][Y])
+    s_other = [chg(st[STATE][y - 1], st[STATE][y]) for y in sorted(st[STATE])
+               if y - 1 in st[STATE] and y != Y]
+    if not s_chg < min(s_other):
+        fail('the state total no longer falls more in FY2011 than in any other year')
+    dch = {k: chg(s[Y - 1], s[Y]) for k, s in st.items()
+           if k != STATE and s.get(Y - 1) and s.get(Y)}
+    rank = sorted(dch, key=lambda k: dch[k]).index(LEA) + 1
+    med = statistics.median(dch.values())
+    sch = {k: v for k, v in SC.items() if k != '_district' and Y - 1 in v and Y in v}
+    lower = [k for k, v in sch.items() if v[Y] < v[Y - 1]]
+    back = [k for k in lower if SC[k].get(Y + 1, 0) > SC[k][Y]]
+    biggest = max(sch, key=lambda k: sch[k][Y - 1] - sch[k][Y])
+    sy = list(range(Y - 3, Y + 4))
+    names = sorted(sch, key=lambda k: -sch[k][Y - 1])
+    if len(names) > TP.TRACKS_MAX:
+        fail('more schools than a chart holds')
+    short = lambda k: k.replace('Thomas C ', '').replace(' Elementary', '').replace(' School', '')
+    out['fy2011-teacher-reading'] = TP.page(
+        'fy2011-teacher-reading',
+        'The state’s file reads %s teacher FTE for %s: %s below %s and %s below %s.'
+        % ('%.1f' % T[Y], C.fy(Y), '%.1f' % (T[Y - 1] - T[Y]), C.fy(Y - 1),
+           '%.1f' % (T[Y + 1] - T[Y]), C.fy(Y + 1)),
+        [f('y0', FTE(T[Y - 1]), 'teacher FTE, %s' % C.fy(Y - 1), 'published', {'y': F(Y - 1)}),
+         f('y1', FTE(T[Y]), 'teacher FTE, %s' % C.fy(Y), 'published', {'y': F(Y)}),
+         f('y2', FTE(T[Y + 1]), 'teacher FTE, %s' % C.fy(Y + 1), 'published', {'y': F(Y + 1)}),
+         f('lower', N(len(lower), 'schools'), 'of %s schools read lower in %s than %s'
+           % (C.num(len(sch)), C.fy(Y), C.fy(Y - 1)), 'published',
+           {'n': N(len(sch)), 'y': F(Y), 'z': F(Y - 1)}),
+         f('back', N(len(back), 'schools'), 'of those schools read higher again in %s' % C.fy(Y + 1),
+           'published', {'y': F(Y + 1)}),
+         f('big', DF(sch[biggest][Y - 1] - sch[biggest][Y]), 'FTE fewer at %s, the largest fall'
+           % short(biggest), 'published'),
+         f('state', SP(s_chg), 'the state’s teacher total, %s to %s' % (C.fy(Y - 1), C.fy(Y)),
+           'published', {'a': F(Y - 1), 'b': F(Y)}),
+         f('state-lo', SP(min(s_other)), 'the state’s total, its largest fall in other years',
+           'published'),
+         f('rank', figure(rank, ORD(rank), 'place'), 'of %s districts, by the size of the fall'
+           % C.num(len(dch)), 'published', {'n': N(len(dch))}),
+         f('median', SP(med), 'the median district’s change, %s to %s' % (C.fy(Y - 1), C.fy(Y)),
+           'published', {'a': F(Y - 1), 'b': F(Y)}),
+         f('cause', None, 'whether the %s figure is a cut or a reporting error' % C.fy(Y), 'gap',
+           closes=EPIMS, label_figures={'y': F(Y)})],
+        [con('%s of %s schools read lower in %s; %s of them read higher again in %s.'
+             % (C.num(len(lower)), C.num(len(sch)), C.fy(Y), C.num(len(back)), C.fy(Y + 1)),
+             ['lower', 'back', 'big'],
+             {'a': N(len(lower)), 'n': N(len(sch)), 'y': F(Y), 'b': N(len(back)), 'z': F(Y + 1)}),
+         con('The state’s total fell %s, more than in any other year; Lunenburg’s fell %s.'
+             % (C.pct(-s_chg), C.pct(-dch[LEA])), ['state', 'state-lo', 'y0', 'y1'],
+             {'a': PC(-s_chg), 'b': PC(-dch[LEA])},
+             notes=[step('Cuts across the state that year fit the direction. Nothing published '
+                         'here explains a fall many times the state’s, or the rise a year later.',
+                         'hypothesis')]),
+         con('Lunenburg’s fall was the %s largest of %s districts; the median moved %s.'
+             % (ORD(rank), C.num(len(dch)), '%+.1f%%' % med), ['rank', 'median'],
+             {'a': figure(rank, ORD(rank), 'place'), 'n': N(len(dch)), 'b': SP(med)}),
+         con('The file cannot tell a cut restored a year later from a reporting error.',
+             ['cause', 'y1'],
+             notes=[step('Comparisons on this shelf start at %s, before it; one starting at %s '
+                         'would read the rebound as growth.' % (C.fy(base), C.fy(Y)), 'measured',
+                         {'a': F(base), 'b': F(Y)})])],
+        chart=TP.series('Teacher FTE by school', [C.fy(y) for y in sy], [
+            TP.track(short(k), [SC[k].get(y) for y in sy], 'published', 'line') for k in names],
+            FTE_UNIT, decimals=1,
+            note='DESE’s teacher FTE by programme area, school totals. A school that closed is a '
+                 'gap, not a zero.'),
+        table=dict(caption='Teacher FTE by school', views=[dict(
+            key='schools', label='By school', total_col=len(names), kinds=['ledger'] * (len(names) + 1),
+            columns=[short(k) for k in names] + ['District'],
+            rows=[dict(label=C.fy(y), cells=[('%.1f' % SC[k][y]) if y in SC[k] else None
+                                             for k in names] + ['%.1f' % SC['_district'][y]])
+                  for y in reversed(sy)],
+            note='DESE’s figures as printed. A blank is a year the school did not exist.')]),
+        sources=S('teachers', 'program', 'program-csv'),
+        finding_figures={'a': FTE(T[Y]), 'y': F(Y), 'b': FTE(T[Y - 1] - T[Y]), 'p': F(Y - 1),
+                         'c': FTE(T[Y + 1] - T[Y]), 'q': F(Y + 1)})
+
+    # ================================================================ the hub
+    tiers = [
+        LD.tier('%s to %s' % (C.fy(base), C.fy(a1)), [
+            f('h-n', SP(n_chg), 'net school spending, actual', 'published'),
+            f('h-e', SP(e_chg), 'pupils enrolled 1 October', 'published', allow=('1',)),
+            f('h-t', SP(t_chg), 'teacher FTE', 'published')]),
+        LD.tier('As far back as each goes', [
+            f('h-mult', X(mult), 'times the %s net school spending, in %s' % (C.fy(a0), C.fy(a1)),
+              'published', {'a': F(a0), 'b': F(a1)}),
+            f('h-pp', U(pp[a1]), 'per child enrolled, %s (ours)' % C.fy(a1), 'published',
+              {'y': F(a1)}),
+            f('h-el', SP(e_long), 'pupils, %s to %s' % (C.fy(a0), C.fy(a1)), 'published',
+              {'a': F(a0), 'b': F(a1)}),
+            f('h-o', FTE(oth[r1] - oth[r0]), 'more paraprofessional and support FTE, %s to %s'
+              % (C.fy(r0), C.fy(r1)), 'published', {'a': F(r0), 'b': F(r1)})]),
+        LD.tier('What is not settled', [
+            prices_gap('h-prices'),
+            f('h-2011', None, 'what the %s teacher count measured' % C.fy(Y), 'gap', closes=EPIMS,
+              label_figures={'y': F(Y)}),
+            f('h-posts', None, 'which posts were filled, and which fund paid', 'gap',
+              closes=POSITIONS)]),
+    ]
+    hub_ladder = LD.ladder(tiers, [
+        LD.conclusion('From %s to %s spending rose %s while pupils fell %s.'
+                      % (C.fy(base), C.fy(a1), C.pct(n_chg), C.pct(-e_chg)), ['h-n', 'h-e'],
+                      {'y': F(base), 'z': F(a1), 'a': PC(n_chg), 'b': PC(-e_chg)}),
+        LD.conclusion('Teacher FTE read %s lower over those years; from %s it reads %s higher.'
+                      % (C.pct(-t_chg), C.fy(era), C.pct(t_era)), ['h-t', 'h-2011'],
+                      {'a': PC(-t_chg), 'y': F(era), 'b': PC(t_era)}),
+        LD.conclusion('Paraprofessional and support FTE rose by %s from %s to %s.'
+                      % ('%.1f' % (oth[r1] - oth[r0]), C.fy(r0), C.fy(r1)), ['h-o'],
+                      {'a': FTE(oth[r1] - oth[r0]), 'y': F(r0), 'z': F(r1)}),
+        LD.conclusion('Over %s to %s spending is %s times larger and pupils %s fewer.'
+                      % (C.fy(a0), C.fy(a1), '%.2f' % mult, C.pct(-e_long)), ['h-mult', 'h-el', 'h-pp'],
+                      {'y': F(a0), 'z': F(a1), 'a': X(mult), 'b': PC(-e_long)}),
+        LD.conclusion('Every dollar here is as printed; none is adjusted for prices.',
+                      ['h-prices', 'h-mult']),
+    ])
+    out[CID] = TP.hub(
+        CID,
+        'From %s to %s net school spending rose %s in dollars as printed, pupils fell %s and '
+        'teacher FTE fell %s. None of it is adjusted for prices, and none of it says why.'
+        % (C.fy(base), C.fy(a1), C.pct(n_chg), C.pct(-e_chg), C.pct(-t_chg)),
+        hub_ladder, chart=growth_chart,
+        answer_figures={'y': F(base), 'z': F(a1), 'a': PC(n_chg), 'b': PC(-e_chg),
+                        'c': PC(-t_chg)})
+
+    if sorted(k for k in out if k != CID) != sorted(MINE):
+        fail('the pages built are not the pages the registry gives this script: %s'
+             % sorted(set(MINE) ^ set(out)))
+    return out
+
+
+def outputs():
+    return {os.path.join(OUT_DIR, '%s.json' % t):
+            json.dumps(p, indent=1, ensure_ascii=False, sort_keys=True) + '\n'
+            for t, p in build().items()}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    a = ap.parse_args()
+    outs = outputs()
+    if a.check:
+        stale = [os.path.relpath(p, ROOT) for p, text in outs.items()
+                 if (open(p, encoding='utf-8').read() if os.path.exists(p) else None) != text]
+        if stale:
+            print('STALE %s' % ', '.join(stale), file=sys.stderr)
+            return 1
+        print('spending, staff, students topics: %d outputs current' % len(outs))
+        return 0
+    for p, text in outs.items():
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, 'w', encoding='utf-8', newline='\n') as fh:
+            fh.write(text)
+        print('wrote %s' % os.path.relpath(p, ROOT))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

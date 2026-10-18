@@ -1,0 +1,350 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "Our grouping, at FY2027 adopted amounts. Sports are the district’s figure; the rest is ours."
+  },
+  "parts": [
+   {
+    "label": "Every sport",
+    "share": "15%",
+    "text": "$217,908",
+    "value": 217908
+   },
+   {
+    "label": "Band, chorus, clubs, art",
+    "share": "11%",
+    "text": "$158,299",
+    "value": 158299
+   },
+   {
+    "label": "Most of technology",
+    "share": "26%",
+    "text": "$383,205",
+    "value": 383205
+   },
+   {
+    "label": "Office and admin lines",
+    "share": "49%",
+    "text": "$736,468",
+    "value": 736468
+   }
+  ],
+  "title": "Every nameable cut, by group",
+  "total": "$1,495,880",
+  "type": "parts",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    },
+    "b": {
+     "text": "FY2029",
+     "unit": "fiscal year",
+     "value": 2029
+    },
+    "c": {
+     "text": "$2,205,046",
+     "unit": "",
+     "value": 2205046
+    },
+    "y": {
+     "text": "FY2030",
+     "unit": "fiscal year",
+     "value": 2030
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "3.0%",
+       "unit": "",
+       "value": 3.0
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "Even with the saving grown 3.0% a year, as the line it came from would have."
+    }
+   ],
+   "rests_on": [
+    "all",
+    "g28",
+    "gafter"
+   ],
+   "text": "Together they cover FY2028 and FY2029; FY2030’s gap of $2,205,046 is larger than all of it."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$736,468",
+     "unit": "",
+     "value": 736468
+    },
+    "f": {
+     "text": "10",
+     "unit": "positions",
+     "value": 10.0
+    },
+    "n": {
+     "text": "14",
+     "unit": "lines",
+     "value": 14
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "n": {
+       "text": "7",
+       "unit": "lines",
+       "value": 7
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "Which roles state law requires is our reading: 7 lines, the superintendent and principals among them, are left out."
+    }
+   ],
+   "rests_on": [
+    "admin",
+    "adminn",
+    "adminf"
+   ],
+   "text": "Administration is the largest piece: $736,468 across 14 lines and 10 positions."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "ath",
+    "ext",
+    "tech"
+   ],
+   "text": "This list is our grouping of the catalogue; no board has proposed cutting all of it."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ath",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "every sport still funded, FY2027 adopted"
+   },
+   "value": {
+    "text": "$217,908",
+    "unit": "",
+    "value": 217908
+   }
+  },
+  {
+   "id": "ext",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "band, chorus, clubs and art supplies (our grouping)"
+   },
+   "value": {
+    "text": "$158,299",
+    "unit": "",
+    "value": 158299
+   }
+  },
+  {
+   "id": "tech",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "b": {
+      "text": "$638,675",
+      "unit": "",
+      "value": 638675
+     },
+     "p": {
+      "text": "60%",
+      "unit": "",
+      "value": 60
+     }
+    },
+    "literals": [],
+    "text": "technology, 60% of $638,675 (ours)"
+   },
+   "value": {
+    "text": "$383,205",
+    "unit": "",
+    "value": 383205
+   }
+  },
+  {
+   "id": "admin",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "office and admin lines not required by law (ours)"
+   },
+   "value": {
+    "text": "$736,468",
+    "unit": "",
+    "value": 736468
+   }
+  },
+  {
+   "id": "adminn",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "office and admin budget lines among them"
+   },
+   "value": {
+    "text": "14 lines",
+    "unit": "lines",
+    "value": 14
+   }
+  },
+  {
+   "id": "adminf",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "positions among them"
+   },
+   "value": {
+    "text": "10 FTE",
+    "unit": "FTE",
+    "value": 10.0
+   }
+  },
+  {
+   "id": "all",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "all four together (ours)"
+   },
+   "value": {
+    "text": "$1,495,880",
+    "unit": "",
+    "value": 1495880
+   }
+  },
+  {
+   "id": "g28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$932,531",
+    "unit": "",
+    "value": 932531
+   }
+  },
+  {
+   "id": "gafter",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2030",
+      "unit": "fiscal year",
+      "value": 2030
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2030 (ours)"
+   },
+   "value": {
+    "text": "$2,205,046",
+    "unit": "",
+    "value": 2205046
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,495,880",
+    "unit": "",
+    "value": 1495880
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   },
+   "z": {
+    "text": "FY2029",
+    "unit": "fiscal year",
+    "value": 2029
+   }
+  },
+  "literals": [],
+  "text": "Every sport, club, lawful office line and most technology: $1,495,880 (ours), enough for FY2028 and FY2029."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "all-cuts-combined",
+ "kind": "topic",
+ "path": "/budget-crisis/all-cuts-combined",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/district-budget/docs/final-budget-document.pdf",
+   "label": "Lunenburg Public Schools — FY27 budget document — final-budget-document.pdf"
+  }
+ ],
+ "table": null,
+ "title": "All cuts combined"
+}

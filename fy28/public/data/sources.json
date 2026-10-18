@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16",
+ "generated": "2026-10-18",
  "origins": [
   {
    "id": "school",
@@ -59,7 +59,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4391 of these 4407 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4395 of these 4411 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2579,11 +2579,23 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 285875,
+     "bytes": 313036,
      "url": "/docs/data/board-transfers.csv",
-     "count": 463,
+     "count": 509,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
+    },
+    {
+     "path": "data/suggested-reports-meetings.csv",
+     "title": "Every meeting a suggested report came up in",
+     "stars": 2,
+     "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
+     "kind": "Data",
+     "bytes": 221621,
+     "url": "/docs/data/suggested-reports-meetings.csv",
+     "count": 483,
+     "unit": "rows",
+     "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
     {
      "path": "data/town-personnel.csv",
@@ -2632,6 +2644,18 @@
      "count": 1032,
      "unit": "rows",
      "textUrl": "/docs/data/debt-repayment-detail.csv"
+    },
+    {
+     "path": "data/suggested-reports.csv",
+     "title": "Reports a meeting’s discussion showed a need for",
+     "stars": 2,
+     "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
+     "kind": "Data",
+     "bytes": 126378,
+     "url": "/docs/data/suggested-reports.csv",
+     "count": 188,
+     "unit": "rows",
+     "textUrl": "/docs/data/suggested-reports.csv"
     },
     {
      "path": "data/tenure.csv",
@@ -2730,18 +2754,6 @@
      "textUrl": "/docs/analyses/fy26-closeout.md"
     },
     {
-     "path": "data/suggested-reports-meetings.csv",
-     "title": "Every meeting a suggested report came up in",
-     "stars": 2,
-     "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
-     "kind": "Data",
-     "bytes": 50326,
-     "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 109,
-     "unit": "rows",
-     "textUrl": "/docs/data/suggested-reports-meetings.csv"
-    },
-    {
      "path": "analyses/fy26-school-surplus.md",
      "title": "The FY26 school surplus, from the period-13 ledger",
      "stars": 2,
@@ -2800,18 +2812,6 @@
      "count": 744,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
-    },
-    {
-     "path": "data/suggested-reports.csv",
-     "title": "Reports a meeting’s discussion showed a need for",
-     "stars": 2,
-     "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
-     "kind": "Data",
-     "bytes": 40051,
-     "url": "/docs/data/suggested-reports.csv",
-     "count": 81,
-     "unit": "rows",
-     "textUrl": "/docs/data/suggested-reports.csv"
     },
     {
      "path": "data/staff-directory.csv",
@@ -3059,7 +3059,7 @@
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 9952,
+     "bytes": 9954,
      "url": "/docs/data/school-job-postings.csv",
      "count": 20,
      "unit": "rows",
@@ -3196,6 +3196,18 @@
      "count": 4,
      "unit": "rows",
      "textUrl": "/docs/data/town-job-postings.csv"
+    },
+    {
+     "path": "data/thread-moments.csv",
+     "title": "Moments added to a thread by hand, each checked against the captions",
+     "stars": 2,
+     "what": "A remark a thread should carry that no minutes file caught: the board, the date, the video and the second it starts, the kind (a safety concern, a condition, a gap where the captions go unreadable), the verbatim quote, and why it was added. build_threads.py refuses a quote that is not in the machine captions near that second.",
+     "kind": "Data",
+     "bytes": 1171,
+     "url": "/docs/data/thread-moments.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/thread-moments.csv"
     },
     {
      "path": "data/town-job-posting-changes.csv",
@@ -4271,6 +4283,18 @@
      "textUrl": "/docs/data/placement-counts.csv"
     },
     {
+     "path": "data/review-queue.csv",
+     "title": "Structured reads of the town's minutes flagged for a person to check",
+     "stars": 3,
+     "what": "A schema-2 read that looks wrong -- an attendance list dropped by the quote check although the minutes print one -- is pulled out of the normal processing flow and listed here with why it was flagged and what became of it. Appended, never rewritten. An OPEN row keeps that meeting out of every backlog run. See scripts/review_queue.py.",
+     "kind": "Data",
+     "bytes": 1955,
+     "url": "/docs/data/review-queue.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/review-queue.csv"
+    },
+    {
      "path": "data/document-watch-events.csv",
      "title": "Documents that appeared on the district's and the town's pages, and when we first saw them",
      "stars": 3,
@@ -4281,18 +4305,6 @@
      "count": 5,
      "unit": "rows",
      "textUrl": "/docs/data/document-watch-events.csv"
-    },
-    {
-     "path": "data/review-queue.csv",
-     "title": "Structured reads of the town's minutes flagged for a person to check",
-     "stars": 3,
-     "what": "A schema-2 read that looks wrong -- an attendance list dropped by the quote check although the minutes print one -- is pulled out of the normal processing flow and listed here with why it was flagged and what became of it. Appended, never rewritten. An OPEN row keeps that meeting out of every backlog run. See scripts/review_queue.py.",
-     "kind": "Data",
-     "bytes": 930,
-     "url": "/docs/data/review-queue.csv",
-     "count": 6,
-     "unit": "rows",
-     "textUrl": "/docs/data/review-queue.csv"
     },
     {
      "path": "data/meeting-notices-email.csv",
@@ -4348,7 +4360,7 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1049830,
+     "bytes": 1059295,
      "url": "/docs/data/youtube-video-classification.csv",
      "count": 4721,
      "unit": "rows",
@@ -4384,9 +4396,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 456605,
+     "bytes": 457323,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2920,
+     "count": 2924,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -4420,9 +4432,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 249039,
+     "bytes": 251158,
      "url": "/docs/data/money-gaps.csv",
-     "count": 270,
+     "count": 273,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -4648,7 +4660,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 5619,
+     "bytes": 5613,
      "url": "/docs/data/ingest-plan.csv",
      "count": 13,
      "unit": "rows",
@@ -4792,9 +4804,9 @@
      "stars": 1,
      "what": "1,594 rows, one per distinct title stem — the title with its date removed, which is OUR grouping device and never a quotable title. Each is `meeting`, `not_a_meeting` (a Mass, a basketball game, a book club) or `undetermined`, with the boards for a meeting and the reason where one is worth recording. A LANGUAGE MODEL read these; see data/PROVENANCE-youtube-classification.md.",
      "kind": "Data",
-     "bytes": 116591,
+     "bytes": 116664,
      "url": "/docs/data/youtube-title-classification.csv",
-     "count": 1594,
+     "count": 1595,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-title-classification.csv"
     },
@@ -4859,6 +4871,18 @@
      "textUrl": "/docs/data/report-monty-tech.csv"
     },
     {
+     "path": "data/meeting-videos.csv",
+     "title": "Meetings posted to the channel more than once, and how the postings relate",
+     "stars": 1,
+     "what": "One row per video of a board and date that has more than one. `relation` says whether two postings are the same recording, an excerpt of it, or a separate recording, measured by shared six-word runs of their captions in BOTH directions; `newest` is the one the site links. Both are treated as valid and their minutes are merged. Written by reconcile_meeting_videos.py.",
+     "kind": "Data",
+     "bytes": 20013,
+     "url": "/docs/data/meeting-videos.csv",
+     "count": 121,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-videos.csv"
+    },
+    {
      "path": "data/report-vital-records.csv",
      "title": "Births, marriages and deaths",
      "stars": 1,
@@ -4905,6 +4929,16 @@
      "count": 3,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-classification-overrides.csv"
+    },
+    {
+     "path": "data/meeting-video-decisions.csv",
+     "title": "A person’s ruling on whether two postings are one recording",
+     "stars": 1,
+     "what": "Where the caption measurement cannot decide, or decides wrongly, a person records `same` or `separate`, with which video, why, who decided and when. reconcile_meeting_videos.py reads it ahead of its own measurement.",
+     "kind": "Data",
+     "bytes": 53,
+     "url": "/docs/data/meeting-video-decisions.csv",
+     "textUrl": "/docs/data/meeting-video-decisions.csv"
     }
    ]
   },
@@ -4945,7 +4979,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 43409408,
+     "bytes": 43433984,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -4955,7 +4989,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3756729,
+     "bytes": 3802203,
      "url": "/docs/data/meeting-register.csv",
      "count": 7080,
      "unit": "rows",
@@ -5159,9 +5193,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 710459,
+     "bytes": 749477,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10334,
+     "count": 10871,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -5190,6 +5224,18 @@
      "textUrl": "/docs/data/fincom-ledgers.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 460778,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 2688,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/eoyr-schedule1.csv",
      "title": "The district’s End of Year Financial Report, Schedule 1, FY2023 and FY2024",
      "stars": 3,
@@ -5200,18 +5246,6 @@
      "count": 3620,
      "unit": "rows",
      "textUrl": "/docs/data/eoyr-schedule1.csv"
-    },
-    {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 460068,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2684,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "data/dese-class-size.csv",
@@ -5893,9 +5927,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 598270,
+     "bytes": 600679,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4252,
+     "count": 4270,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -6044,6 +6078,18 @@
      "textUrl": "/docs/data/copy-status.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 86916,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 26,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/police-expended.csv",
      "title": "Police spending as expended, FY2015-FY2023",
      "stars": 2,
@@ -6054,18 +6100,6 @@
      "count": 453,
      "unit": "rows",
      "textUrl": "/docs/data/police-expended.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 73968,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 23,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/athletics-venue-distances.csv",
@@ -6502,6 +6536,30 @@
      "textUrl": "/docs/data/myths.csv"
     },
     {
+     "path": "data/feed-watch-events.csv",
+     "title": "What appeared in those feeds",
+     "stars": 2,
+     "what": "Written by us. One row per item first seen, with when.",
+     "kind": "Data",
+     "bytes": 1219,
+     "url": "/docs/data/feed-watch-events.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-watch-events.csv"
+    },
+    {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1141,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 34,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/school-insurance-tiers.csv",
      "title": "School health insurance subscribers by plan and tier, as totals",
      "stars": 2,
@@ -6512,18 +6570,6 @@
      "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/school-insurance-tiers.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 1079,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 32,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/feed-sources.csv",
@@ -6538,18 +6584,6 @@
      "textUrl": "/docs/data/feed-sources.csv"
     },
     {
-     "path": "data/feed-watch-events.csv",
-     "title": "What appeared in those feeds",
-     "stars": 2,
-     "what": "Written by us. One row per item first seen, with when.",
-     "kind": "Data",
-     "bytes": 1056,
-     "url": "/docs/data/feed-watch-events.csv",
-     "count": 6,
-     "unit": "rows",
-     "textUrl": "/docs/data/feed-watch-events.csv"
-    },
-    {
      "path": "data/recording-minutes-policy.csv",
      "title": "Which boards TJ has approved minutes for, from when, in what order",
      "stars": 2,
@@ -6560,6 +6594,18 @@
      "count": 5,
      "unit": "rows",
      "textUrl": "/docs/data/recording-minutes-policy.csv"
+    },
+    {
+     "path": "data/budget-seasons/fy28.proposed.csv",
+     "title": "Rows the record proposes for the FY28 board, awaiting confirmation",
+     "stars": 2,
+     "what": "Generated daily by build_budget_season.py; never rendered. A row moves to fy28.csv when a person confirms it.",
+     "kind": "Data",
+     "bytes": 884,
+     "url": "/docs/data/budget-seasons/fy28.proposed.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy28.proposed.csv"
     },
     {
      "path": "data/field-rental-receipts-lysa.csv",
@@ -6584,18 +6630,6 @@
      "count": 25,
      "unit": "rows",
      "textUrl": "/docs/data/sped-transport-history.csv"
-    },
-    {
-     "path": "data/budget-seasons/fy28.proposed.csv",
-     "title": "Rows the record proposes for the FY28 board, awaiting confirmation",
-     "stars": 2,
-     "what": "Generated daily by build_budget_season.py; never rendered. A row moves to fy28.csv when a person confirms it.",
-     "kind": "Data",
-     "bytes": 708,
-     "url": "/docs/data/budget-seasons/fy28.proposed.csv",
-     "count": 4,
-     "unit": "rows",
-     "textUrl": "/docs/data/budget-seasons/fy28.proposed.csv"
     },
     {
      "path": "data/capital-funding-history.csv",
@@ -23066,7 +23100,7 @@
    "id": "state-law",
    "origin": "state-law",
    "title": "The Open Meeting Law, as the State publishes it",
-   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2929 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
+   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2933 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
    "items": [
     {
      "path": "state-law/2026-10-14/603cmr41.html.html",
@@ -53924,6 +53958,50 @@
      "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfikHE3sSvkT%C3%89t3BTXaLjXwxRx%C3%89csUykxw1zBKW%C3%81OcaUSbhZzOxW%C3%81uAIGZu7GGtgPTVKwbHDpVJzsrLmOuXwDjM%3D/?ViewerMode=PDF&ForceDownload=true"
     },
     {
+     "path": "state-law/2026-10-17/determinations/determination-10-9-2026-oml-2026-130-whitman-hanson-regional-school-district.pdf",
+     "title": "AG determination OML 2026-130, 10/9/2026, Whitman Hanson Regional School District (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 285203,
+     "url": "/docs/state-law/2026-10-17/determinations/determination-10-9-2026-oml-2026-130-whitman-hanson-regional-school-district.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-130.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUcEltUnUPNxTEjyKPw5MGpT3NPzCYm5R47JJjY9RJpENKHE7VJ0YPi0Fbz9FVdA%C3%81vDI%C3%8101Az21Mco6nNwjw7uw%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-131-hopedale-selectboard.pdf",
+     "title": "AG determination OML 2026-131, 10/13/2026, Hopedale Selectboard (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 664891,
+     "url": "/docs/state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-131-hopedale-selectboard.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-131.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aby1DOjesuCyU7LhfDPQJwb09MZzmWxFe2Ntguf3uZw7dLOct7JpOoAwVGm%C3%81OAYe%C3%89hZ%C3%89vh%C3%81dv2tfyHY6k8oRztE%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-132-gardner-city-council.pdf",
+     "title": "AG determination OML 2026-132, 10/13/2026, Gardner City Council (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 323236,
+     "url": "/docs/state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-132-gardner-city-council.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-132.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AU7SxLCyetAWvpyua7Gche9rB9Lqk5UwhhMvfWUWzWP1fXHXZQe%C3%89hRQAF7zEZoESnVkJ4lhpcpWjKr%C3%81CLpIBdko%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-133-townsend-selectboard.pdf",
+     "title": "AG determination OML 2026-133, 10/13/2026, Townsend Selectboard (portal Violation field: NO)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 295379,
+     "url": "/docs/state-law/2026-10-17/determinations/determination-10-13-2026-oml-2026-133-townsend-selectboard.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-133.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXXayGnEtvh5kwzXqpgI7BKwNOH%C3%81eqRJRkId4UysymmaXv%C3%89OEqe8JqQp2X0bxsBns9UtsX%C3%81qrtEg64d4lVgU08k%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
      "path": "state-law/2026-10-09/determinations/determination-1-22-2026-oml-2026-14-somerset-school-committee-redistricting-subcommittee.pdf",
      "title": "AG determination OML 2026-14, 1/22/2026, Somerset School Committee Redistricting Subcommittee (portal Violation field: NO)",
      "stars": 1,
@@ -55510,9 +55588,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4972,
+  "documents": 4979,
   "groups": 26,
-  "bytes": 6421400100,
+  "bytes": 6423413761,
   "loadBearing": 191
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

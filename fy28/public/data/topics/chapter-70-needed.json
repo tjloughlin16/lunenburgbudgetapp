@@ -1,0 +1,437 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "text": "Both are our projection from FY2027’s Chapter 70."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "At the rate needed (ours)",
+    "texts": [
+     "$10,408,959",
+     "$11,588,678",
+     "$12,902,102",
+     "$14,364,385",
+     "$15,992,399",
+     "$17,804,927",
+     "$19,822,882",
+     "$22,069,544",
+     "$24,570,837",
+     "$27,355,618"
+    ],
+    "values": [
+     10408959.097428253,
+     11588677.643055297,
+     12902101.762301153,
+     14364385.22254788,
+     15992399.271306861,
+     17804927.289991695,
+     19822881.50913489,
+     22069544.285422646,
+     24570836.724306677,
+     27355617.74745436
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "At our assumed rate (ours)",
+    "texts": [
+     "$9,602,799",
+     "$9,863,135",
+     "$10,130,528",
+     "$10,405,171",
+     "$10,687,259",
+     "$10,976,995",
+     "$11,274,585",
+     "$11,580,244",
+     "$11,894,189",
+     "$12,216,645"
+    ],
+    "values": [
+     9602799.105655588,
+     9863134.721729381,
+     10130528.137539564,
+     10405170.692780148,
+     10687258.914438613,
+     10976994.657425456,
+     11274585.249016248,
+     11580243.637209589,
+     11894188.543107083,
+     12216644.617424408
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Chapter 70 at two growth rates",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2028",
+   "FY2029",
+   "FY2030",
+   "FY2031",
+   "FY2032",
+   "FY2033",
+   "FY2034",
+   "FY2035",
+   "FY2036",
+   "FY2037"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "9.50%",
+     "unit": "",
+     "value": 9.499161233837285
+    },
+    "b": {
+     "text": "11.33%",
+     "unit": "",
+     "value": 11.333684132916977
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "estimate",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "Chapter 70 is the school part of state aid; the rest is held at our assumed rate."
+    }
+   ],
+   "rests_on": [
+    "aidrate",
+    "chrate",
+    "aid",
+    "ch70"
+   ],
+   "text": "To hold the gap, all state aid would grow 9.50% a year; Chapter 70 alone, 11.33%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$27,355,618",
+     "unit": "",
+     "value": 27355617.74745436
+    },
+    "b": {
+     "text": "$12,216,645",
+     "unit": "",
+     "value": 12216644.617424408
+    },
+    "y": {
+     "text": "FY2037",
+     "unit": "fiscal year",
+     "value": 2037
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "need37",
+    "base37",
+    "assumed"
+   ],
+   "text": "By FY2037 that is $27,355,618 of Chapter 70, against $12,216,645 at our assumed rate."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$68,248,782",
+     "unit": "",
+     "value": 68248782
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "rests_on": [
+    "extra"
+   ],
+   "text": "Over ten years, $68,248,782 more Chapter 70 than the projection already counts."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,482,708",
+     "unit": "",
+     "value": 3482708
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$23,089,580",
+       "unit": "",
+       "value": 23089580
+      },
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      }
+     },
+     "kind": "measured",
+     "literals": [
+      "Chapter 70"
+     ],
+     "text": "Foundation budget $23,089,580, from the state’s FY2027 Chapter 70 figures in model.json."
+    }
+   ],
+   "rests_on": [
+    "above"
+   ],
+   "text": "The FY2027 school budget is $3,482,708 above the state’s foundation budget."
+  }
+ ],
+ "facts": [
+  {
+   "id": "ch70",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70, FY2027"
+   },
+   "value": {
+    "text": "$9,349,335",
+    "unit": "",
+    "value": 9349335
+   }
+  },
+  {
+   "id": "aid",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "all state aid, FY2027"
+   },
+   "value": {
+    "text": "$11,876,038",
+    "unit": "",
+    "value": 11876038
+   }
+  },
+  {
+   "id": "share",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the town’s revenue, state aid (our division)"
+   },
+   "value": {
+    "text": "23.8%",
+    "unit": "",
+    "value": 23.76919448354411
+   }
+  },
+  {
+   "id": "assumed",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, state aid growth, assumed (ours)"
+   },
+   "value": {
+    "text": "2.71%",
+    "unit": "",
+    "value": 2.711038866995208
+   }
+  },
+  {
+   "id": "aidrate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, all state aid, to hold the gap (ours)"
+   },
+   "value": {
+    "text": "9.50%",
+    "unit": "",
+    "value": 9.499161233837285
+   }
+  },
+  {
+   "id": "chrate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "a year, Chapter 70 alone (ours)"
+   },
+   "value": {
+    "text": "11.33%",
+    "unit": "",
+    "value": 11.333684132916977
+   }
+  },
+  {
+   "id": "need37",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2037",
+      "unit": "fiscal year",
+      "value": 2037
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 in FY2037 at that rate (ours)"
+   },
+   "value": {
+    "text": "$27,355,618",
+    "unit": "",
+    "value": 27355617.74745436
+   }
+  },
+  {
+   "id": "base37",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "at our assumed rate (ours)"
+   },
+   "value": {
+    "text": "$12,216,645",
+    "unit": "",
+    "value": 12216644.617424408
+   }
+  },
+  {
+   "id": "extra",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "more Chapter 70 over ten years than we count (ours)"
+   },
+   "value": {
+    "text": "$68,248,782",
+    "unit": "",
+    "value": 68248782
+   }
+  },
+  {
+   "id": "above",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "FY2027 budget above foundation (our subtraction)"
+   },
+   "value": {
+    "text": "$3,482,708",
+    "unit": "",
+    "value": 3482708
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "11.33%",
+    "unit": "",
+    "value": 11.333684132916977
+   },
+   "b": {
+    "text": "2.71%",
+    "unit": "",
+    "value": 2.711038866995208
+   }
+  },
+  "literals": [
+   "Chapter 70"
+  ],
+  "text": "For state aid alone to hold the gap, Chapter 70 would grow 11.33% a year (ours); we assume 2.71%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "chapter-70-needed",
+ "kind": "topic",
+ "path": "/budget-crisis/chapter-70-needed",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/data/dls-cherry-sheet.csv",
+   "label": "Lunenburg Budget Project — dls-cherry-sheet.csv (every cherry sheet line)"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  }
+ ],
+ "table": null,
+ "title": "Chapter 70 needed"
+}

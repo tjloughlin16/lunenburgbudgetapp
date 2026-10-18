@@ -1,0 +1,334 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Each source’s share of the town’s added revenue, applied to the schools’ part of it. Our arithmetic."
+  },
+  "parts": [
+   {
+    "label": "Levy limit rise",
+    "share": "53%",
+    "text": "$453,830",
+    "value": 453830
+   },
+   {
+    "label": "New growth",
+    "share": "25%",
+    "text": "$212,731",
+    "value": 212731
+   },
+   {
+    "label": "State aid",
+    "share": "20%",
+    "text": "$171,230",
+    "value": 171230
+   },
+   {
+    "label": "Local receipts",
+    "share": "2%",
+    "text": "$18,657",
+    "value": 18657
+   }
+  ],
+  "title": "Where the new school revenue comes from",
+  "total": "$856,448",
+  "type": "parts",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "b": {
+     "text": "$453,830",
+     "unit": "",
+     "value": 453830
+    },
+    "c": {
+     "text": "$856,448",
+     "unit": "",
+     "value": 856448
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [
+      "Proposition 2½",
+      "1980"
+     ],
+     "text": "Proposition 2½ was a 1980 statewide ballot question; the cap is a fixed percentage, not tied to any price."
+    }
+   ],
+   "rests_on": [
+    "cap",
+    "levy",
+    "allowed"
+   ],
+   "text": "The levy limit may rise 2.5% a year; that is $453,830 of the schools’ $856,448."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "3.22%",
+     "unit": "",
+     "value": 3.2230888123931933
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "ng",
+    "aid",
+    "rec",
+    "rate"
+   ],
+   "text": "New growth, state aid and receipts lift school revenue growth to 3.22% in FY2028."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "163%",
+     "unit": "",
+     "value": 163.0822887087132
+    },
+    "b": {
+     "text": "$932,531",
+     "unit": "",
+     "value": 932531
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "increase",
+    "consumed",
+    "g28"
+   ],
+   "text": "Costs want 163% of the increase; the shortfall, with September’s salaries, is $932,531."
+  }
+ ],
+ "facts": [
+  {
+   "id": "allowed",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "more for the schools, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$856,448",
+    "unit": "",
+    "value": 856448
+   }
+  },
+  {
+   "id": "cap",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Proposition 2½"
+    ],
+    "text": "a year, the levy limit’s rise under Proposition 2½"
+   },
+   "value": {
+    "text": "2.5%",
+    "unit": "",
+    "value": 2.5
+   }
+  },
+  {
+   "id": "levy",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it from the levy limit’s rise (ours)"
+   },
+   "value": {
+    "text": "$453,830",
+    "unit": "",
+    "value": 453830
+   }
+  },
+  {
+   "id": "ng",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from new growth (ours)"
+   },
+   "value": {
+    "text": "$212,731",
+    "unit": "",
+    "value": 212731
+   }
+  },
+  {
+   "id": "aid",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from state aid (ours)"
+   },
+   "value": {
+    "text": "$171,230",
+    "unit": "",
+    "value": 171230
+   }
+  },
+  {
+   "id": "rec",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "from local receipts (ours)"
+   },
+   "value": {
+    "text": "$18,657",
+    "unit": "",
+    "value": 18657
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "growth in school revenue, FY2028 (ours)"
+   },
+   "value": {
+    "text": "3.22%",
+    "unit": "",
+    "value": 3.2230888123931933
+   }
+  },
+  {
+   "id": "increase",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "level service costs more (ours)"
+   },
+   "value": {
+    "text": "$1,396,714",
+    "unit": "",
+    "value": 1396714
+   }
+  },
+  {
+   "id": "consumed",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the increase, what the costs want (ours)"
+   },
+   "value": {
+    "text": "163%",
+    "unit": "",
+    "value": 163.0822887087132
+   }
+  },
+  {
+   "id": "g28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$932,531",
+    "unit": "",
+    "value": 932531
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$856,448",
+    "unit": "",
+    "value": 856448
+   },
+   "b": {
+    "text": "$1,396,714",
+    "unit": "",
+    "value": 1396714
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "The schools’ share of new revenue in FY2028 is $856,448 by our estimate, against $1,396,714 of costs."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2028-revenue-increase",
+ "kind": "topic",
+ "path": "/budget-crisis/fy2028-revenue-increase",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  },
+  {
+   "href": "/docs/data/dls-cherry-sheet.csv",
+   "label": "Lunenburg Budget Project — dls-cherry-sheet.csv (every cherry sheet line)"
+  }
+ ],
+ "table": null,
+ "title": "FY2028 revenue increase"
+}

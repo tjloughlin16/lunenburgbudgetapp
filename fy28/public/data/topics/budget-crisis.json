@@ -1,0 +1,486 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$932,531",
+    "unit": "",
+    "value": 932531
+   },
+   "b": {
+    "text": "5.18%",
+    "unit": "",
+    "value": 5.179814758927022
+   },
+   "c": {
+    "text": "3.22%",
+    "unit": "",
+    "value": 3.2230888123931933
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "On our projection the school budget is $932,531 short in FY2028 and short every year after: what the schools buy grows 5.18% a year, their revenue 3.22% and falling. A cut lowers the cost line once; only a rate changes where it heads."
+ },
+ "category": "budget-crisis",
+ "chains": [],
+ "chart": {
+  "decimals": null,
+  "from_zero": false,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "Our projection from the FY2027 adopted budget. The space between the lines is the gap, and it widens every year."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "Level service cost (ours)",
+    "texts": [
+     "$28,361,267",
+     "$29,841,775",
+     "$31,411,702",
+     "$33,077,086",
+     "$34,844,413",
+     "$36,720,647",
+     "$38,713,274",
+     "$40,830,335",
+     "$43,080,481",
+     "$45,473,012"
+    ],
+    "values": [
+     28361267,
+     29841775,
+     31411702,
+     33077086,
+     34844413,
+     36720647,
+     38713274,
+     40830335,
+     43080481,
+     45473012
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "line",
+    "name": "Revenue for the schools (ours)",
+    "texts": [
+     "$27,428,736",
+     "$28,306,678",
+     "$29,206,656",
+     "$30,129,229",
+     "$31,074,970",
+     "$32,044,466",
+     "$33,038,317",
+     "$34,057,143",
+     "$35,101,574",
+     "$36,172,261"
+    ],
+    "values": [
+     27428736,
+     28306678,
+     29206656,
+     30129229,
+     31074970,
+     32044466,
+     33038317,
+     34057143,
+     35101574,
+     36172261
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Level service cost and school revenue",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2028",
+   "FY2029",
+   "FY2030",
+   "FY2031",
+   "FY2032",
+   "FY2033",
+   "FY2034",
+   "FY2035",
+   "FY2036",
+   "FY2037"
+  ]
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "budget-crisis",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$932,531",
+      "unit": "",
+      "value": 932531
+     },
+     "b": {
+      "text": "$4,676,182",
+      "unit": "",
+      "value": 4676182
+     },
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     },
+     "z": {
+      "text": "FY2033",
+      "unit": "fiscal year",
+      "value": 2033
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-g28",
+     "h-glast"
+    ],
+    "text": "On our arithmetic the schools are $932,531 short in FY2028 and $4,676,182 in FY2033."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$1,396,714",
+      "unit": "",
+      "value": 1396714
+     },
+     "b": {
+      "text": "$856,448",
+      "unit": "",
+      "value": 856448
+     },
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-inc",
+     "h-allowed"
+    ],
+    "text": "Level service wants $1,396,714 more in FY2028; revenue brings $856,448."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "5.18%",
+      "unit": "",
+      "value": 5.179814758927022
+     },
+     "b": {
+      "text": "3.22%",
+      "unit": "",
+      "value": 3.2230888123931933
+     },
+     "c": {
+      "text": "2.5%",
+      "unit": "",
+      "value": 2.5
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-blended",
+     "h-rev",
+     "h-cap"
+    ],
+    "text": "Costs grow 5.18% a year, revenue 3.22% and falling toward the 2.5% cap."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$261,240",
+      "unit": "",
+      "value": 261240
+     },
+     "b": {
+      "text": "$932,531",
+      "unit": "",
+      "value": 932531
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-hct",
+     "h-g28"
+    ],
+    "text": "Health insurance puts the most into the gap: $261,240 of $932,531."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$1,495,880",
+      "unit": "",
+      "value": 1495880
+     },
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     },
+     "z": {
+      "text": "FY2029",
+      "unit": "fiscal year",
+      "value": 2029
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-cuts"
+    ],
+    "text": "Every nameable cut together, $1,495,880, covers FY2028 and FY2029 only."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$2,153,441",
+      "unit": "",
+      "value": 2153441
+     },
+     "b": {
+      "text": "11.33%",
+      "unit": "",
+      "value": 11.333684132916977
+     }
+    },
+    "literals": [
+     "Chapter 70"
+    ],
+    "rests_on": [
+     "h-need",
+     "h-ch70"
+    ],
+    "text": "Growth would need $2,153,441 of new levy a year; state aid alone, Chapter 70 at 11.33%."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-g28",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "projected gap, FY2028 (ours)"
+      },
+      "value": {
+       "text": "$932,531",
+       "unit": "",
+       "value": 932531
+      }
+     },
+     {
+      "id": "h-glast",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2033",
+         "unit": "fiscal year",
+         "value": 2033
+        }
+       },
+       "literals": [],
+       "text": "projected gap, FY2033 (ours)"
+      },
+      "value": {
+       "text": "$4,676,182",
+       "unit": "",
+       "value": 4676182
+      }
+     },
+     {
+      "id": "h-inc",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "more for level service, FY2028 (ours)"
+      },
+      "value": {
+       "text": "$1,396,714",
+       "unit": "",
+       "value": 1396714
+      }
+     },
+     {
+      "id": "h-allowed",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "more revenue for the schools (ours)"
+      },
+      "value": {
+       "text": "$856,448",
+       "unit": "",
+       "value": 856448
+      }
+     }
+    ],
+    "title": "The gap"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-blended",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "a year, what the schools buy (ours)"
+      },
+      "value": {
+       "text": "5.18%",
+       "unit": "",
+       "value": 5.179814758927022
+      }
+     },
+     {
+      "id": "h-rev",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2028",
+         "unit": "fiscal year",
+         "value": 2028
+        }
+       },
+       "literals": [],
+       "text": "a year, school revenue, FY2028 (ours)"
+      },
+      "value": {
+       "text": "3.22%",
+       "unit": "",
+       "value": 3.2230888123931933
+      }
+     },
+     {
+      "id": "h-cap",
+      "kind": "statute",
+      "label": {
+       "figures": {},
+       "literals": [
+        "Proposition 2½"
+       ],
+       "text": "a year, the levy cap, Proposition 2½"
+      },
+      "value": {
+       "text": "2.5%",
+       "unit": "",
+       "value": 2.5
+      }
+     },
+     {
+      "id": "h-hct",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "health insurance’s part of the gap (ours)"
+      },
+      "value": {
+       "text": "$261,240",
+       "unit": "",
+       "value": 261240
+      }
+     }
+    ],
+    "title": "The rates"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-cuts",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "every nameable cut, together (ours)"
+      },
+      "value": {
+       "text": "$1,495,880",
+       "unit": "",
+       "value": 1495880
+      }
+     },
+     {
+      "id": "h-need",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "new growth a year to hold the gap (ours)"
+      },
+      "value": {
+       "text": "$2,153,441",
+       "unit": "",
+       "value": 2153441
+      }
+     },
+     {
+      "id": "h-ch70",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [
+        "Chapter 70"
+       ],
+       "text": "a year, Chapter 70, to hold it (ours)"
+      },
+      "value": {
+       "text": "11.33%",
+       "unit": "",
+       "value": 11.333684132916977
+      }
+     }
+    ],
+    "title": "What would hold it"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/budget-crisis",
+ "shelves": [
+  "budget-crisis"
+ ],
+ "table": null,
+ "title": "The structural gap"
+}

@@ -32,7 +32,7 @@ def main():
     rows = db.execute("SELECT fy, total_cnt, swd_cnt, swd_pct, el_cnt, low_income_pct, "
                       "grade_9_cnt+grade_10_cnt+grade_11_cnt+grade_12_cnt g912, "
                       "pk_cnt+k_cnt+grade_1_cnt+grade_2_cnt+grade_3_cnt+grade_4_cnt+grade_5_cnt k5 "
-                      "FROM dese_enrollment WHERE org_level='district' AND org_name='Lunenburg' ORDER BY fy").fetchall()
+                      "FROM dese_enrollment WHERE org_level='district' AND org_code='01620000' AND total_cnt IS NOT NULL ORDER BY fy").fetchall()
     by = {r[0]: r for r in rows}
     last = rows[-1]
     peak = max(rows, key=lambda r: r[1])
@@ -50,8 +50,8 @@ def main():
     old = [r for r in rows if r[0] <= 2014 and r[5] is not None][-1]
     check(abs(f('low-income-share-doubled-across-a-definition-change', 'then') - old[5]) < 1e-9 and abs(f('low-income-share-doubled-across-a-definition-change', 'now') - last[5]) < 1e-9, 'low income')
     for name in ['North Middlesex', 'Harvard', 'Groton-Dunstable', 'Ashburnham-Westminster']:
-        a = db.execute("SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND org_name=? AND fy=?", (name, d['base_fy'])).fetchone()
-        b = db.execute("SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND org_name=? AND fy=?", (name, last[0])).fetchone()
+        a = db.execute("SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND upper(org_name)=upper(?) AND fy=?", (name, d['base_fy'])).fetchone()
+        b = db.execute("SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND upper(org_name)=upper(?) AND fy=?", (name, last[0])).fetchone()
         p = next(x for x in d['peers'] if x['district'] == name)
         check(a and b and abs(p['pct'] - (b[0] - a[0]) / a[0]) < 1e-9, 'peer %s' % name)
     lun = next(x for x in d['peers'] if x['district'] == 'Lunenburg')

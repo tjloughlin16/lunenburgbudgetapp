@@ -370,7 +370,7 @@
    "closes": "DESE\u2019s End of Year Pupil and Financial Report for the district, which reports spending by individual fund.",
    "side": "money_in",
    "what": "Which fund pays the teacher salaries a district charges to grants and revolving accounts?",
-   "why": "DESE\u2019s function-code file splits spending into general fund and grants-plus-revolving, and the gap between comparable districts is large: Harvard charges $4,964 per pupil of TEACHER salaries to grants and revolving funds where Lunenburg charges $726. That single line is most of the difference in what the two draw from outside the appropriation. The file does not say WHICH fund \u2014 a specific grant, school choice tuition received, a tuition agreement \u2014 and the answer decides whether it is something Lunenburg could pursue or a feature of one district\u2019s circumstances."
+   "why": "DESE\u2019s function-code file splits spending into general fund and grants-plus-revolving, and the gap between comparable districts is large: Harvard charges $2,482 per pupil of TEACHER salaries to grants and revolving funds where Lunenburg charges $363 (FY2025, over total FTE pupils). That single line is the largest part, about half, of the difference in what the two draw from outside the appropriation. (Corrected 15 October 2026: this row said $4,964 and $726, each exactly double -- DESE's category subtotal row had been summed with its own line items.) The file does not say WHICH fund \u2014 a specific grant, school choice tuition received, a tuition agreement \u2014 and the answer decides whether it is something Lunenburg could pursue or a feature of one district\u2019s circumstances."
   },
   {
    "closes": "DLS Schedule A for each town, which reports every revenue source a municipality collects, so local receipts, enterprise funds and reserves can be compared rather than inferred.",
@@ -413,6 +413,36 @@
    "side": "record",
    "what": "Why DESE\u2019s FY2025 transportation spending for Lunenburg differs from the town ledger",
    "why": "DESE's End of Year Financial Report gives general fund in-district transportation (function 3300) and out-of-district transportation, and their sum equals the town's MUNIS regular plus special education transportation accounts to the dollar in FY2022, FY2023 and FY2024. In FY2025 DESE's sum is higher than the ledger and nothing published explains it. In FY2020 and FY2021 the two differ by equal and opposite amounts, which is what one payment booked in different years by the two would look like."
+  },
+  {
+   "closes": "DESE\u2019s End of Year Financial Report for LEA 08320000 for FY2026, which splits spending by fund.",
+   "side": "money_in",
+   "what": "How much of Monty Tech\u2019s FY2026 spending is outside its operating budget, and from which funds",
+   "why": "The district\u2019s FY 2027 Budget Summary sets out its operating (general fund) budget for FY2026 and FY2027 and the five sources that pay for it: Chapter 70, the member towns\u2019 assessments, state transportation aid, its Regional Transportation Fund and its Excess & Deficiency reserve. Grants and revolving funds are not in it. DESE\u2019s expenditures-by-function file DOES split the district\u2019s total by fund, general fund against grants and revolving, but only through FY2025, and that total, which DESE titles Expenditure (Admin, Instruction, Operations), carries no capital or debt service row. So the operating budget on /enrolment/monty-tech-funding and DESE\u2019s per-pupil figure are different years and different scopes, and nothing here reconciles them."
+  },
+  {
+   "closes": "each district\u2019s own End of Year Financial Report workbook with its 7000 schedule, lease schedule and depreciation schedule, and DESE\u2019s desk-review or audit findings on them.",
+   "side": "comparison",
+   "what": "Do two districts put the same purchase on the same side of the line, so that their per-pupil figures compare like for like?",
+   "why": "DESE\u2019s per-pupil figure counts functions 1000-5000 and leaves out capital (7000) and debt service (8000); its expenditures-by-function file carries no 6000, 7000 or 8000 row for any district, so no district\u2019s figure contains capital. But the line between counted and capital is a coding rule, and DESE\u2019s FY2025 End of Year Report form draws it: instructional equipment, \u201cincluding vocational equipment and science lab equipment irrespective of unit cost\u201d, goes in 2420 and is counted; non-instructional equipment over $5,000 and extraordinary maintenance over $150,000 a project go in 7000 and are not. Whether every district applies that rule the same way cannot be seen: DESE publishes each district\u2019s reported totals, not the purchases behind them. So a difference between two districts on an equipment or maintenance line may be spending, or may be coding."
+  },
+  {
+   "closes": "the district\u2019s End of Year Financial Report as filed with DESE, whose Schedule 1 reports expenditures by the school committee and, separately, expenditures by city or town (part B, row 1016 of DESE\u2019s FY2025 form), for the same year.",
+   "side": "money_out",
+   "what": "How much of DESE\u2019s general fund figure for Lunenburg the school budget paid, and how much other town budgets paid",
+   "why": "DESE\u2019s per-pupil figure counts general fund spending on the schools whoever paid it: insurance for retired school staff (function 5250) is in it, and in FY2026 the town carries that insurance in its own insurance department (SCHRETHLTH), not in the school appropriation. DESE\u2019s expenditures-by-function file has one GEN_FUND column and does not say which budget paid which line, so the school appropriation divided by pupils is not DESE\u2019s figure a pupil, and the difference cannot be itemised from it. Found building /school-spending/per-pupil-line-by-line."
+  },
+  {
+   "closes": "nothing assigns it; the town\u2019s tax recapitulation sheet sets every appropriation against the levy and every receipt, and each member town\u2019s voted Monty Tech appropriation would replace the minimum.",
+   "side": "money_in",
+   "what": "What part of Lunenburg\u2019s Monty Tech assessment the property tax levy pays, rather than state aid or other receipts",
+   "why": "A member town pays its regional assessment out of one budget that the levy, Chapter 70 and local receipts fund together, and no document assigns one revenue to one appropriation. So /homes-and-taxes/regional-school-share can only ESTIMATE the assessment\u2019s weight in an average bill, in proportion to its share of the levy (our arithmetic on DLS values and rates by class). For the other seventeen member towns only the state-required minimum is held, not the whole assessment."
+  },
+  {
+   "closes": "the Bureau of Labor Statistics CPI-U for Boston-Cambridge-Newton, annual averages, landed with its address and sha256; or the state and local government price deflator the state uses to inflate the Chapter 70 foundation budget.",
+   "side": "document_wanted",
+   "what": "What school spending has been in constant dollars",
+   "why": "Net school spending is published from FY1994 in dollars as printed, and every spending figure on /spending-staff-students is nominal. Without a price index nothing there can say how much of the rise is prices and how much is more of something. The index is public; this archive holds none, and landing one needs a place in sources/ for a federal statistics agency\u2019s files, which the archive layout does not yet have"
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

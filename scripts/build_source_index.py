@@ -1084,6 +1084,13 @@ GROUPS = [
              'The counterpart to threads.csv, kept because a rejected candidate is a '
              'decision rather than an absence: what was proposed, who declined it, the '
              'reason, and what would justify revisiting it.'),
+            ('data/thread-moments.csv',
+             'Moments added to a thread by hand, each checked against the captions', 2,
+             'A remark a thread should carry that no minutes file caught: the board, the '
+             'date, the video and the second it starts, the kind (a safety concern, a '
+             'condition, a gap where the captions go unreadable), the verbatim quote, and '
+             'why it was added. build_threads.py refuses a quote that is not in the '
+             'machine captions near that second.'),
             ('data/town-meeting-votes.csv',
              'Every Town Meeting article and how it was voted', 2,
              'FY2011 onward: the article, its subject, the result, the amount as printed, '
@@ -2549,6 +2556,18 @@ GROUPS = [
              '`undetermined`, with the boards for a meeting and the reason where one is '
              'worth recording. A LANGUAGE MODEL read these; see '
              'data/PROVENANCE-youtube-classification.md.'),
+            ('data/meeting-videos.csv',
+             'Meetings posted to the channel more than once, and how the postings relate', 1,
+             'One row per video of a board and date that has more than one. `relation` '
+             'says whether two postings are the same recording, an excerpt of it, or a '
+             'separate recording, measured by shared six-word runs of their captions in '
+             'BOTH directions; `newest` is the one the site links. Both are treated as '
+             'valid and their minutes are merged. Written by reconcile_meeting_videos.py.'),
+            ('data/meeting-video-decisions.csv',
+             'A person’s ruling on whether two postings are one recording', 1,
+             'Where the caption measurement cannot decide, or decides wrongly, a person '
+             'records `same` or `separate`, with which video, why, who decided and when. '
+             'reconcile_meeting_videos.py reads it ahead of its own measurement.'),
             ('data/youtube-boards.csv',
              'The bodies we named, and why we say two names are one board', 1,
              '40 rows. `meetings_folder` joins to the AgendaCenter folders and is EMPTY '

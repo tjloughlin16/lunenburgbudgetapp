@@ -10,8 +10,8 @@ Same recording: at least 50% of each transcript's six-word runs occur in the oth
 |---|---|---|---|---:|---:|---|
 | 2026-10-07 | school-committee | [School Committee 10.07.26](https://www.youtube.com/watch?v=kPZcnFd5COw) | same recording | 0.78 | 0 | yes |
 | 2026-10-07 | school-committee | [School Committee Meeting 10.07.26 - Audio Fix](https://www.youtube.com/watch?v=_XGfbHmZPJg) | same recording | 0.78 | 0 | yes |
-| 2026-09-08 | stormwater-task-force | [Stormwater Task Force 09.08.26 Part 1](https://www.youtube.com/watch?v=rGZsddKMXyM) | separate recording | 0.00 | 0 |  |
-| 2026-09-08 | stormwater-task-force | [Stormwater Task Force 09.08.26 Part 2](https://www.youtube.com/watch?v=BgwomyYoCJk) | separate recording | 0.00 | 0 |  |
+| 2026-09-08 | stormwater-task-force | [Stormwater Task Force 09.08.26 Part 1](https://www.youtube.com/watch?v=rGZsddKMXyM) | separate recording | 0.00 | 0 | yes |
+| 2026-09-08 | stormwater-task-force | [Stormwater Task Force 09.08.26 Part 2](https://www.youtube.com/watch?v=BgwomyYoCJk) | separate recording | 0.00 | 0 | yes |
 | 2026-08-18 | select-board | [Select Board 08.18.26](https://www.youtube.com/watch?v=YnQcT2BMWS4) | separate recording | 0.01 | 0 | yes |
 | 2026-08-18 | select-board | [Select Board Public Hearing  -  Dog Complaint  08.18.26](https://www.youtube.com/watch?v=revUfCcR4IU) | separate recording | 0.01 | 0 | yes |
 | 2026-05-02 | town-meeting | [Annual Town Meeting 05.02.26](https://www.youtube.com/watch?v=F0viGd2yFSU) | same recording | 0.86 | 14 | yes |

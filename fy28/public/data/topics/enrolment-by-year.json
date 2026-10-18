@@ -19,13 +19,13 @@
     "name": "Enrolled, DESE headcount",
     "texts": [
      "1,758 children",
-     null,
-     null,
-     null,
-     null,
+     "1,786 children",
+     "1,788 children",
+     "1,843 children",
+     "1,829 children",
      "1,830 children",
-     null,
-     null,
+     "1,861 children",
+     "1,889 children",
      "1,851 children",
      "1,887 children",
      "1,830 children",
@@ -54,13 +54,13 @@
     ],
     "values": [
      1758,
-     null,
-     null,
-     null,
-     null,
+     1786,
+     1788,
+     1843,
+     1829,
      1830,
-     null,
-     null,
+     1861,
+     1889,
      1851,
      1887,
      1830,
@@ -133,9 +133,9 @@
   {
    "figures": {
     "a": {
-     "text": "FY2003",
+     "text": "FY2001",
      "unit": "fiscal year",
-     "value": 2003
+     "value": 2001
     },
     "b": {
      "text": "FY2015",
@@ -143,9 +143,9 @@
      "value": 2015
     },
     "p": {
-     "text": "17.5%",
+     "text": "17.6%",
      "unit": "",
-     "value": 17.488076311605724
+     "value": 17.575436739015352
     }
    },
    "literals": [],
@@ -162,7 +162,7 @@
     "trough",
     "fall"
    ],
-   "text": "Enrolment fell 17.5% from FY2003 to FY2015, then stopped falling."
+   "text": "Enrolment fell 17.6% from FY2001 to FY2015, then stopped falling."
   },
   {
    "figures": {
@@ -305,18 +305,18 @@
    "label": {
     "figures": {
      "y": {
-      "text": "FY2003",
+      "text": "FY2001",
       "unit": "fiscal year",
-      "value": 2003
+      "value": 2001
      }
     },
     "literals": [],
-    "text": "enrolled, FY2003, the peak"
+    "text": "enrolled, FY2001, the peak"
    },
    "value": {
-    "text": "1,887",
+    "text": "1,889",
     "unit": "children",
-    "value": 1887
+    "value": 1889
    }
   },
   {
@@ -365,9 +365,9 @@
    "label": {
     "figures": {
      "a": {
-      "text": "FY2003",
+      "text": "FY2001",
       "unit": "fiscal year",
-      "value": 2003
+      "value": 2001
      },
      "b": {
       "text": "FY2015",
@@ -376,12 +376,12 @@
      }
     },
     "literals": [],
-    "text": "fall from FY2003 to FY2015 (our arithmetic)"
+    "text": "fall from FY2001 to FY2015 (our arithmetic)"
    },
    "value": {
-    "text": "17.5%",
+    "text": "17.6%",
     "unit": "",
-    "value": 17.488076311605724
+    "value": 17.575436739015352
    }
   },
   {
@@ -467,9 +467,9 @@
     "value": 1568
    },
    "b": {
-    "text": "319",
+    "text": "321",
     "unit": "",
-    "value": 319
+    "value": 321
    },
    "x": {
     "text": "FY2015",
@@ -482,13 +482,13 @@
     "value": 2026
    },
    "z": {
-    "text": "FY2003",
+    "text": "FY2001",
     "unit": "fiscal year",
-    "value": 2003
+    "value": 2001
    }
   },
   "literals": [],
-  "text": "1,568 children in FY2026: 319 fewer than the FY2003 peak, and close to where the count has sat since FY2015."
+  "text": "1,568 children in FY2026: 321 fewer than the FY2001 peak, and close to where the count has sat since FY2015."
  },
  "full_report": {
   "href": "",
@@ -500,6 +500,7 @@
  "said": [],
  "shelves": [
   "enrolment",
+  "spending-staff-students",
   "homes-and-taxes"
  ],
  "sources": [
@@ -526,14 +527,14 @@
      "Grades 6–8",
      "Grades 9–12"
     ],
-    "key": "bands",
+    "key": "recent",
     "kinds": [
      "ledger",
      "ledger",
      "ledger",
      "ledger"
     ],
-    "label": "District total and grade bands",
+    "label": "FY2011 to FY2026",
     "note": "DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to the total by the few students DESE counts beyond grade 12.",
     "rows": [
      {
@@ -679,7 +680,27 @@
        "535"
       ],
       "label": "FY2011"
-     },
+     }
+    ],
+    "total_col": 0
+   },
+   {
+    "columns": [
+     "All",
+     "Pre-K to 5",
+     "Grades 6–8",
+     "Grades 9–12"
+    ],
+    "key": "earlier",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY1994 to FY2010",
+    "note": "DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to the total by the few students DESE counts beyond grade 12.",
+    "rows": [
      {
       "cells": [
        "1,702",
@@ -763,12 +784,66 @@
      },
      {
       "cells": [
+       "1,889",
+       "876",
+       "451",
+       "562"
+      ],
+      "label": "FY2001"
+     },
+     {
+      "cells": [
+       "1,861",
+       "893",
+       "417",
+       "551"
+      ],
+      "label": "FY2000"
+     },
+     {
+      "cells": [
        "1,830",
        "857",
        "431",
        "542"
       ],
       "label": "FY1999"
+     },
+     {
+      "cells": [
+       "1,829",
+       "908",
+       "434",
+       "487"
+      ],
+      "label": "FY1998"
+     },
+     {
+      "cells": [
+       "1,843",
+       "896",
+       "456",
+       "490"
+      ],
+      "label": "FY1997"
+     },
+     {
+      "cells": [
+       "1,788",
+       "868",
+       "445",
+       "473"
+      ],
+      "label": "FY1996"
+     },
+     {
+      "cells": [
+       "1,786",
+       "870",
+       "431",
+       "485"
+      ],
+      "label": "FY1995"
      },
      {
       "cells": [

@@ -1,0 +1,478 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "highlight": [
+   "Health insurance"
+  ],
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "text": "What leaves the FY2028 gap when that line alone grows at the levy cap. Tuition is below zero: it is held flat, under the cap."
+  },
+  "rows": [
+   {
+    "label": "Health insurance",
+    "texts": [
+     "$261,240"
+    ],
+    "total": "$261,240",
+    "value": 261240
+   },
+   {
+    "label": "Special education, in district",
+    "texts": [
+     "$217,775"
+    ],
+    "total": "$217,775",
+    "value": 217775
+   },
+   {
+    "label": "Salaries",
+    "texts": [
+     "$200,223"
+    ],
+    "total": "$200,223",
+    "value": 200223
+   },
+   {
+    "label": "Transportation",
+    "texts": [
+     "$36,868"
+    ],
+    "total": "$36,868",
+    "value": 36868
+   },
+   {
+    "label": "Utilities",
+    "texts": [
+     "$15,138"
+    ],
+    "total": "$15,138",
+    "value": 15138
+   },
+   {
+    "label": "Everything else",
+    "texts": [
+     "$8,860"
+    ],
+    "total": "$8,860",
+    "value": 8860
+   },
+   {
+    "label": "Out-of-district special education",
+    "texts": [
+     "-$17,504"
+    ],
+    "total": "-$17,504",
+    "value": -17504
+   }
+  ],
+  "stack": null,
+  "title": "Each line’s part of the gap",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "49.5%",
+     "unit": "",
+     "value": 49.50282414281401
+    },
+    "b": {
+     "text": "$200,223",
+     "unit": "",
+     "value": 200223
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "estimate",
+     "literals": [],
+     "text": "Each line is held to the levy cap alone and the projection rerun; what leaves the gap is that line’s part."
+    }
+   ],
+   "rests_on": [
+    "sw",
+    "sct",
+    "hct",
+    "hw"
+   ],
+   "text": "Salaries are 49.5% of the budget and put in $200,223; size alone does not rank a line."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "6.6%",
+     "unit": "",
+     "value": 6.5717869201876455
+    },
+    "b": {
+     "text": "3.0%",
+     "unit": "",
+     "value": 3.0
+    },
+    "c": {
+     "text": "$8,860",
+     "unit": "",
+     "value": 8860
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "0%",
+       "unit": "",
+       "value": 0.0
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "It and out-of-district tuition are the two lines inside their share of new revenue; tuition only because we hold it at 0%."
+    }
+   ],
+   "rests_on": [
+    "ow",
+    "orate",
+    "oct"
+   ],
+   "text": "Everything else is 6.6% of the budget at 3.0% a year, and puts in $8,860."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$209,931",
+     "unit": "",
+     "value": 209931
+    },
+    "b": {
+     "text": "$567,053",
+     "unit": "",
+     "value": 567053
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    },
+    "z": {
+     "text": "FY2032",
+     "unit": "fiscal year",
+     "value": 2032
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "none28",
+    "none32"
+   ],
+   "text": "With no line above the cap, FY2028 is still $209,931 short; FY2032 has $567,053 spare."
+  }
+ ],
+ "facts": [
+  {
+   "id": "hct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "health insurance’s part of the gap (ours)"
+   },
+   "value": {
+    "text": "$261,240",
+    "unit": "",
+    "value": 261240
+   }
+  },
+  {
+   "id": "hw",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget, health insurance (our grouping)"
+   },
+   "value": {
+    "text": "14.9%",
+    "unit": "",
+    "value": 14.905015949921069
+   }
+  },
+  {
+   "id": "sct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries’ part of the gap (ours)"
+   },
+   "value": {
+    "text": "$200,223",
+    "unit": "",
+    "value": 200223
+   }
+  },
+  {
+   "id": "sw",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget, salaries (our grouping)"
+   },
+   "value": {
+    "text": "49.5%",
+    "unit": "",
+    "value": 49.50282414281401
+   }
+  },
+  {
+   "id": "dct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "special education in district, its part (ours)"
+   },
+   "value": {
+    "text": "$217,775",
+    "unit": "",
+    "value": 217775
+   }
+  },
+  {
+   "id": "oct",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "everything else, its part (ours)"
+   },
+   "value": {
+    "text": "$8,860",
+    "unit": "",
+    "value": 8860
+   }
+  },
+  {
+   "id": "ow",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the budget, everything else (our grouping)"
+   },
+   "value": {
+    "text": "6.6%",
+    "unit": "",
+    "value": 6.5717869201876455
+   }
+  },
+  {
+   "id": "orate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, everything else, assumed (ours)"
+   },
+   "value": {
+    "text": "3.0%",
+    "unit": "",
+    "value": 3.0
+   }
+  },
+  {
+   "id": "tut",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "a year, out-of-district tuition, held flat (ours)"
+   },
+   "value": {
+    "text": "0%",
+    "unit": "",
+    "value": 0.0
+   }
+  },
+  {
+   "id": "none28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "the FY2028 gap if no line outran the cap (ours)"
+   },
+   "value": {
+    "text": "$209,931",
+    "unit": "",
+    "value": 209931
+   }
+  },
+  {
+   "id": "none32",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2032",
+      "unit": "fiscal year",
+      "value": 2032
+     }
+    },
+    "literals": [],
+    "text": "spare in FY2032 on the same path (ours)"
+   },
+   "value": {
+    "text": "$567,053",
+    "unit": "",
+    "value": 567053
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$261,240",
+    "unit": "",
+    "value": 261240
+   },
+   "b": {
+    "text": "14.9%",
+    "unit": "",
+    "value": 14.905015949921069
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Health insurance puts $261,240 into the FY2028 gap from 14.9% of the budget, by our estimate."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "gap-by-cost-line",
+ "kind": "topic",
+ "path": "/budget-crisis/gap-by-cost-line",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY27 budget, line by line)"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  }
+ ],
+ "table": {
+  "caption": "Size against growth, by line (ours)",
+  "views": [
+   {
+    "columns": [
+     "Share of budget",
+     "Assumed growth",
+     "Part of the gap"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Rule 4: weight times excess rate",
+    "note": "Share of the FY2027 cost base, the growth model.json assumes, and the part of the FY2028 gap each line puts in.",
+    "rows": [
+     {
+      "cells": [
+       "14.9%",
+       "9.00%",
+       "$261,240"
+      ],
+      "label": "Health insurance"
+     },
+     {
+      "cells": [
+       "20.3%",
+       "6.48%",
+       "$217,775"
+      ],
+      "label": "Special education, in district"
+     },
+     {
+      "cells": [
+       "49.5%",
+       "4.00%",
+       "$200,223"
+      ],
+      "label": "Salaries"
+     },
+     {
+      "cells": [
+       "3.9%",
+       "6.00%",
+       "$36,868"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "2.2%",
+       "5.00%",
+       "$15,138"
+      ],
+      "label": "Utilities"
+     },
+     {
+      "cells": [
+       "6.6%",
+       "3.00%",
+       "$8,860"
+      ],
+      "label": "Everything else"
+     },
+     {
+      "cells": [
+       "2.6%",
+       "0.00%",
+       "-$17,504"
+      ],
+      "label": "Out-of-district special education"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "Gap by cost line"
+}

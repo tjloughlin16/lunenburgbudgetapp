@@ -73,7 +73,7 @@ GRADES = ['pk_cnt', 'k_cnt'] + ['grade_%d_cnt' % g for g in range(1, 13)] + ['sp
 
 
 def district_series(db):
-    rows = q(db, "SELECT * FROM dese_enrollment WHERE org_level='district' AND org_name=? ORDER BY fy", DISTRICT)
+    rows = q(db, "SELECT * FROM dese_enrollment WHERE org_level='district' AND upper(org_name)=upper(?) AND total_cnt IS NOT NULL ORDER BY fy", DISTRICT)
     if len(rows) < 20:
         fail('only %d district rows for %s' % (len(rows), DISTRICT))
     # `reconciles` is the loader's own check that the grades sum to the total. 'no' is a
@@ -111,8 +111,8 @@ def schools(db):
 def peers(db, first, last):
     out = []
     for name in [DISTRICT] + PEERS:
-        a = q(db, "SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND org_name=? AND fy=?", name, first)
-        b = q(db, "SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND org_name=? AND fy=?", name, last)
+        a = q(db, "SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND upper(org_name)=upper(?) AND fy=?", name, first)
+        b = q(db, "SELECT total_cnt FROM dese_enrollment WHERE org_level='district' AND upper(org_name)=upper(?) AND fy=?", name, last)
         if not a or not b:
             continue
         out.append(dict(district=name, first=int(a[0]['total_cnt']), last=int(b[0]['total_cnt']),

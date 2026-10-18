@@ -1,0 +1,425 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "basis": "estimate",
+  "decimals": null,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "text": "Each line’s FY2027 cost grown one year at the rate model.json assumes for it. Out-of-district tuition is held flat."
+  },
+  "rows": [
+   {
+    "label": "Salaries",
+    "texts": [
+     "$533,929"
+    ],
+    "total": "$533,929",
+    "value": 533929
+   },
+   {
+    "label": "Health insurance",
+    "texts": [
+     "$361,716"
+    ],
+    "total": "$361,716",
+    "value": 361716
+   },
+   {
+    "label": "Special education, in district",
+    "texts": [
+     "$354,430"
+    ],
+    "total": "$354,430",
+    "value": 354430
+   },
+   {
+    "label": "Transportation",
+    "texts": [
+     "$63,202"
+    ],
+    "total": "$63,202",
+    "value": 63202
+   },
+   {
+    "label": "Everything else",
+    "texts": [
+     "$53,162"
+    ],
+    "total": "$53,162",
+    "value": 53162
+   },
+   {
+    "label": "Utilities",
+    "texts": [
+     "$30,276"
+    ],
+    "total": "$30,276",
+    "value": 30276
+   },
+   {
+    "label": "Out-of-district special education",
+    "texts": [
+     "$0"
+    ],
+    "total": "$0",
+    "value": 0
+   }
+  ],
+  "stack": null,
+  "title": "Cost increase by line",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,396,714",
+     "unit": "",
+     "value": 1396714
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "increase",
+    "pupils"
+   ],
+   "text": "Level service is the same staff, buses and buildings; $1,396,714 of it buys nothing new."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$533,929",
+     "unit": "",
+     "value": 533929
+    },
+    "b": {
+     "text": "$361,716",
+     "unit": "",
+     "value": 361716
+    },
+    "c": {
+     "text": "64.1%",
+     "unit": "",
+     "value": 64.12515375373913
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "sal",
+    "health",
+    "top2"
+   ],
+   "text": "Salaries add $533,929 and health insurance $361,716: 64.1% of the increase."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$392,264",
+     "unit": "",
+     "value": 392264
+    },
+    "y": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Its money was one year of state receipts above budget and a fund transfer; model/finance.py records neither as recurring."
+    }
+   ],
+   "rests_on": [
+    "addbacks",
+    "cost28"
+   ],
+   "text": "The $392,264 restored in September carries into FY2028 as salary."
+  }
+ ],
+ "facts": [
+  {
+   "id": "approp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the school budget, FY2027, as adopted"
+   },
+   "value": {
+    "text": "$26,572,288",
+    "unit": "",
+    "value": 26572288
+   }
+  },
+  {
+   "id": "addbacks",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salaries restored at the September Special Town Meeting"
+   },
+   "value": {
+    "text": "$392,264",
+    "unit": "",
+    "value": 392264
+   }
+  },
+  {
+   "id": "pupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "pupils, held the same next year"
+   },
+   "value": {
+    "text": "1,581",
+    "unit": "pupils",
+    "value": 1581
+   }
+  },
+  {
+   "id": "cost28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "level service, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$28,361,267",
+    "unit": "",
+    "value": 28361267
+   }
+  },
+  {
+   "id": "increase",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "more than at FY2027 prices (ours)"
+   },
+   "value": {
+    "text": "$1,396,714",
+    "unit": "",
+    "value": 1396714
+   }
+  },
+  {
+   "id": "sal",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "r": {
+      "text": "4.0%",
+      "unit": "",
+      "value": 4.0
+     }
+    },
+    "literals": [],
+    "text": "of it salaries, at 4.0% (ours)"
+   },
+   "value": {
+    "text": "$533,929",
+    "unit": "",
+    "value": 533929
+   }
+  },
+  {
+   "id": "health",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "r": {
+      "text": "9.0%",
+      "unit": "",
+      "value": 9.0
+     }
+    },
+    "literals": [],
+    "text": "health insurance, at 9.0% (ours)"
+   },
+   "value": {
+    "text": "$361,716",
+    "unit": "",
+    "value": 361716
+   }
+  },
+  {
+   "id": "top2",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the increase, those two lines (ours)"
+   },
+   "value": {
+    "text": "64.1%",
+    "unit": "",
+    "value": 64.12515375373913
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$1,396,714",
+    "unit": "",
+    "value": 1396714
+   },
+   "b": {
+    "text": "$28,361,267",
+    "unit": "",
+    "value": 28361267
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   }
+  },
+  "literals": [],
+  "text": "Keeping the same schools costs $1,396,714 more in FY2028, by our estimate: $28,361,267 in all."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "level-service-cost",
+ "kind": "topic",
+ "path": "/budget-crisis/level-service-cost",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY27 budget, line by line)"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  }
+ ],
+ "table": {
+  "caption": "The increase, line by line (ours)",
+  "views": [
+   {
+    "columns": [
+     "FY2027 cost",
+     "Assumed growth",
+     "Increase"
+    ],
+    "key": "lines",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2028 level service",
+    "note": "FY2027 cost is the adopted budget’s lines plus the salaries restored in September.",
+    "rows": [
+     {
+      "cells": [
+       "$13,348,216",
+       "4.00%",
+       "$533,929"
+      ],
+      "label": "Salaries"
+     },
+     {
+      "cells": [
+       "$4,019,071",
+       "9.00%",
+       "$361,716"
+      ],
+      "label": "Health insurance"
+     },
+     {
+      "cells": [
+       "$5,466,201",
+       "6.48%",
+       "$354,430"
+      ],
+      "label": "Special education, in district"
+     },
+     {
+      "cells": [
+       "$1,053,360",
+       "6.00%",
+       "$63,202"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$1,772,053",
+       "3.00%",
+       "$53,162"
+      ],
+      "label": "Everything else"
+     },
+     {
+      "cells": [
+       "$605,511",
+       "5.00%",
+       "$30,276"
+      ],
+      "label": "Utilities"
+     },
+     {
+      "cells": [
+       "$700,142",
+       "0.00%",
+       "$0"
+      ],
+      "label": "Out-of-district special education"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "Level service cost"
+}

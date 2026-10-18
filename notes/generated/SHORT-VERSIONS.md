@@ -16,12 +16,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Bend the curve](/bend-the-curve) | page | 4.4 / 37.7 min | 1. Next year the schools get $856k more. Here is who spends it.<br>2. Costs grow 5.18%. Revenue grows 3.22%. |
 | [The cost of closing the gap](/what-solved-requires) | page | 3.8 / 38.3 min | 1. There is no arrangement of the other five lines that reaches the bar while salaries go on rising 4%. |
 | [The budget gap](/the-situation) | page | 2.6 / 47.2 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
-| [The money](/the-money) | reference | — / 8.8 min | *(none declared)* |
+| [The money](/the-money) | reference | — / 9.0 min | *(none declared)* |
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
 | [The annual town reports](/analysis/annual-reports) | page | 1.9 / 12.9 min | 1. All 477 pages holding a financial table have been read.<br>2. 208 of 477 pages tie to a total the page itself prints.<br>3. Appropriations is the least checked: 77 of its 95 pages have no check at all. |
 | [Connecting the school budget to the Town&#x27;s books](/analysis/connecting-the-budget) | page | 0.7 / 10.7 min | 1. Following a dollar from the school budget to the Town&#x27;s books works at two levels and stops at the third. |
 | [A hundred questions this archive can answer](/analysis/questions) | page | — / 31.1 min | *(none declared)* |
 | [Show your work](/analysis/show-your-work) | page | — / 70.4 min | *(none declared)* |
+| [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 65.4 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 14.5 min | *(none declared)* |
 | [Athletics costs](/athletics) | page | — / 9.0 min | *(none declared)* |
 | [Athletic fee](/athletics/athletic-fee) | page | — / 7.2 min | *(none declared)* |
@@ -255,7 +256,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Ask us a question](/ask-a-question) | reference | — / 6.5 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 6.8 min | *(none declared)* |
 | [The boards — each one, in one place](/boards) | reference | — / 10.5 min | *(none declared)* |
-| [Agricultural Commission](/boards/agricultural-commission) | reference | — / 7.7 min | *(none declared)* |
+| [Agricultural Commission](/boards/agricultural-commission) | reference | — / 7.6 min | *(none declared)* |
 | [Agricultural Commission — about](/boards/agricultural-commission/about) | reference | — / 7.3 min | *(none declared)* |
 | [Agricultural Commission — meetings](/boards/agricultural-commission/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Agricultural Commission — missing records](/boards/agricultural-commission/records) | reference | — / 10.0 min | *(none declared)* |
@@ -506,7 +507,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 48.7 min | *(none declared)* |
 | [Planning Board](/boards/planning-board) | reference | — / 7.8 min | *(none declared)* |
 | [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
-| [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.1 min | *(none declared)* |
 | [Planning Board Public Hearing — budget schedule](/boards/planning-board-public-hearing/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Planning Board Public Hearing — votes](/boards/planning-board-public-hearing/votes) | reference | — / 7.6 min | *(none declared)* |
 | [Planning Board — about](/boards/planning-board/about) | reference | — / 7.2 min | *(none declared)* |
@@ -516,14 +517,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Planning Board — budget schedule](/boards/planning-board/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Planning Board — where the time goes](/boards/planning-board/time) | reference | — / 5.9 min | *(none declared)* |
 | [Planning Board — votes](/boards/planning-board/votes) | reference | — / 183.6 min | *(none declared)* |
-| [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 7.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 7.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — about](/boards/public-access-cable-committee-pacc/about) | reference | — / 6.0 min | *(none declared)* |
-| [Public Access Cable Committee (PACC) — meetings](/boards/public-access-cable-committee-pacc/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — meetings](/boards/public-access-cable-committee-pacc/meetings) | reference | — / 11.0 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — missing records](/boards/public-access-cable-committee-pacc/records) | reference | — / 11.2 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — budget schedule](/boards/public-access-cable-committee-pacc/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — where the time goes](/boards/public-access-cable-committee-pacc/time) | reference | — / 5.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
-| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 40.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.0 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
@@ -542,7 +543,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee — missing records](/boards/school-committee/records) | reference | — / 17.6 min | *(none declared)* |
 | [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
 | [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 8.6 min | *(none declared)* |
+| [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 10.0 min | *(none declared)* |
 | [School Committee — votes](/boards/school-committee/votes) | reference | — / 119.4 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.3 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
@@ -571,7 +572,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 113.5 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 7.7 min | *(none declared)* |
 | [Stormwater Task Force — about](/boards/stormwater-task-force/about) | reference | — / 6.9 min | *(none declared)* |
-| [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.0 min | *(none declared)* |
+| [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.1 min | *(none declared)* |
 | [Stormwater Task Force — missing records](/boards/stormwater-task-force/records) | reference | — / 9.6 min | *(none declared)* |
 | [Stormwater Task Force — budget schedule](/boards/stormwater-task-force/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Stormwater Task Force — where the time goes](/boards/stormwater-task-force/time) | reference | — / 5.9 min | *(none declared)* |
@@ -610,7 +611,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
 | [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 26.1 min | *(none declared)* |
-| [The budget feed — FY28](/budget-feed) | reference | — / 20.0 min | *(none declared)* |
+| [The budget feed — FY28](/budget-feed) | reference | — / 19.6 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
 | [The departments](/departments) | reference | — / 7.7 min | *(none declared)* |
@@ -636,7 +637,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Find the money](/find-the-money) | tool | — / 11.9 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Job postings — the town and the schools](/jobs) | reference | — / 12.1 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 443.3 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 444.0 min | *(none declared)* |
 | [Agricultural Commission, February 17, 2022](/meeting-minutes/agricultural-commission/2022-02-17-0ZIyMdjowFU) | reference | — / 12.7 min | *(none declared)* |
 | [Architectural Preservation District Commission, March 10, 2022](/meeting-minutes/architectural-preservation-district-commission/2022-03-10-AGHQVROpYA4) | reference | — / 10.9 min | *(none declared)* |
 | [Architectural Preservation District Commission, January 5, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-01-05-dGRjCkC0XiE) | reference | — / 14.3 min | *(none declared)* |
@@ -1633,6 +1634,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC), May 4, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-05-04-hOtGSCdR_Rs) | reference | — / 13.3 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), June 1, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-06-01-wbVcmEKBCvs) | reference | — / 15.1 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), September 8, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-08-f1AbB5ZEQ5Q) | reference | — / 12.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 16, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0) | reference | — / 10.3 min | *(none declared)* |
 | [School Committee, November 3, 2021](/meeting-minutes/school-committee/2021-11-03-4H57y3BPVh0) | reference | — / 11.8 min | *(none declared)* |
 | [School Committee, November 17, 2021](/meeting-minutes/school-committee/2021-11-17-qhe5sfqOvNs) | reference | — / 11.2 min | *(none declared)* |
 | [School Committee, December 1, 2021](/meeting-minutes/school-committee/2021-12-01-RCVMIJdFrgo) | reference | — / 12.5 min | *(none declared)* |
@@ -2121,6 +2123,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Stormwater Task Force, June 24, 2026](/meeting-minutes/stormwater-task-force/2026-06-24-46iJXIejnrw) | reference | — / 14.2 min | *(none declared)* |
 | [Stormwater Task Force, August 12, 2026](/meeting-minutes/stormwater-task-force/2026-08-12-C7njxgJv88A) | reference | — / 12.4 min | *(none declared)* |
 | [Stormwater Task Force, August 31, 2026](/meeting-minutes/stormwater-task-force/2026-08-31-N5dSxGy3zZs) | reference | — / 13.0 min | *(none declared)* |
+| [Stormwater Task Force, September 8, 2026](/meeting-minutes/stormwater-task-force/2026-09-08-BgwomyYoCJk) | reference | — / 9.0 min | *(none declared)* |
+| [Stormwater Task Force, September 8, 2026](/meeting-minutes/stormwater-task-force/2026-09-08-rGZsddKMXyM) | reference | — / 10.9 min | *(none declared)* |
 | [Stormwater Task Force, September 14, 2026](/meeting-minutes/stormwater-task-force/2026-09-14-fHuUxPFr0rg) | reference | — / 10.8 min | *(none declared)* |
 | [Stormwater Task Force, September 21, 2026](/meeting-minutes/stormwater-task-force/2026-09-21-uXzVaiUhtzw) | reference | — / 12.5 min | *(none declared)* |
 | [TCP Building Design Committee, October 20, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-20-XKdzno_0IiQ) | reference | — / 9.9 min | *(none declared)* |
@@ -2235,7 +2239,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 61.8 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 62.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 18.5 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 17.1 min | *(none declared)* |

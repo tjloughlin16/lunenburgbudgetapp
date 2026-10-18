@@ -217,14 +217,24 @@ def build():
     if sp_enr is None:
         fail('sped-students.json: the program file has no FY2026 enrolment')
     YL0 = F(last_fy)
+    # TWO VIEWS, SPLIT AT FY2010: one table past 30 rows is refused, and the six FY1990s rows
+    # DESE prints in capitals came back on 18 October 2026, when the selection stopped being
+    # case-sensitive. Split by period, newest first, rather than drop years.
+    def band_rows(keep):
+        return [dict(label=C.fy(r['fy']), cells=[C.num(r['total']), C.num(r['k5']),
+                                                 C.num(r['g68']), C.num(r['g912'])])
+                for r in sorted(EN['district'], key=lambda r: -r['fy']) if keep(r['fy'])]
+    SPLIT = 2010
+    yrs = sorted(r['fy'] for r in EN['district'])
     year_table = dict(caption='DESE enrolment by year, 1 October headcount', views=[dict(
-        key='bands', label='District total and grade bands', total_col=0,
+        key=key, label=label, total_col=0,
         kinds=['ledger'] * 4, columns=['All', 'Pre-K to 5', 'Grades 6–8', 'Grades 9–12'],
-        rows=[dict(label=C.fy(r['fy']), cells=[C.num(r['total']), C.num(r['k5']),
-                                               C.num(r['g68']), C.num(r['g912'])])
-              for r in sorted(EN['district'], key=lambda r: -r['fy'])],
+        rows=band_rows(keep),
         note='DESE’s enrolment by grade file, Lunenburg district rows. The bands do not add to '
-             'the total by the few students DESE counts beyond grade 12.')])
+             'the total by the few students DESE counts beyond grade 12.')
+        for key, label, keep in (
+            ('recent', '%s to %s' % (C.fy(SPLIT + 1), C.fy(yrs[-1])), lambda y: y > SPLIT),
+            ('earlier', '%s to %s' % (C.fy(yrs[0]), C.fy(SPLIT)), lambda y: y <= SPLIT))])
     # THE SIGNATURE of the page and of the hub: the headcount every year DESE prints it, so
     # the peak, the fall and the plateau the finding names are one picture.
     tot = {y: r['total'] for y, r in dist.items()}

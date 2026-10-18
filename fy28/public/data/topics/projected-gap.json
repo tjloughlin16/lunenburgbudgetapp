@@ -1,0 +1,446 @@
+{
+ "category": "budget-crisis",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Each year’s gap includes the years before it; the second bar is the part that is new."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "Gap that year (ours)",
+    "texts": [
+     "$932,531",
+     "$1,535,097",
+     "$2,205,046",
+     "$2,947,857",
+     "$3,769,443",
+     "$4,676,182"
+    ],
+    "values": [
+     932531,
+     1535097,
+     2205046,
+     2947857,
+     3769443,
+     4676182
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "New that year (ours)",
+    "texts": [
+     "$932,531",
+     "$572,717",
+     "$621,142",
+     "$673,158",
+     "$729,054",
+     "$789,138"
+    ],
+    "values": [
+     932531,
+     572717,
+     621142,
+     673158,
+     729054,
+     789138
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Projected school gap by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2028",
+   "FY2029",
+   "FY2030",
+   "FY2031",
+   "FY2032",
+   "FY2033"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$572,717",
+     "unit": "",
+     "value": 572717
+    },
+    "b": {
+     "text": "$1,535,097",
+     "unit": "",
+     "value": 1535097
+    },
+    "y": {
+     "text": "FY2029",
+     "unit": "fiscal year",
+     "value": 2029
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "FY2033",
+       "unit": "fiscal year",
+       "value": 2033
+      },
+      "b": {
+       "text": "FY2028",
+       "unit": "fiscal year",
+       "value": 2028
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "So the yearly figures are not added together: FY2033 already includes FY2028."
+    }
+   ],
+   "rests_on": [
+    "g29",
+    "new29"
+   ],
+   "text": "Each year’s gap holds the last: $572,717 of FY2029’s $1,535,097 is new that year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.0
+    },
+    "b": {
+     "text": "9.0%",
+     "unit": "",
+     "value": 9.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/analyses/show-your-work.md",
+      "label": "show-your-work.md"
+     },
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Every rate, and where it came from, is in the method document."
+    }
+   ],
+   "rests_on": [
+    "sal",
+    "health"
+   ],
+   "text": "It assumes salaries grow 4.0% a year and health insurance 9.0%; both are ours."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2028",
+     "unit": "fiscal year",
+     "value": 2028
+    },
+    "b": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "approp",
+    "g28",
+    "none"
+   ],
+   "text": "No board has published an FY2028 figure; this is our arithmetic on FY2027’s budget."
+  }
+ ],
+ "facts": [
+  {
+   "id": "approp",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "the school budget, FY2027, as adopted"
+   },
+   "value": {
+    "text": "$26,572,288",
+    "unit": "",
+    "value": 26572288
+   }
+  },
+  {
+   "id": "g28",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2028 (ours)"
+   },
+   "value": {
+    "text": "$932,531",
+    "unit": "",
+    "value": 932531
+   }
+  },
+  {
+   "id": "g29",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2029",
+      "unit": "fiscal year",
+      "value": 2029
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2029 (ours)"
+   },
+   "value": {
+    "text": "$1,535,097",
+    "unit": "",
+    "value": 1535097
+   }
+  },
+  {
+   "id": "new29",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2029",
+      "unit": "fiscal year",
+      "value": 2029
+     }
+    },
+    "literals": [],
+    "text": "of it new in FY2029 (ours)"
+   },
+   "value": {
+    "text": "$572,717",
+    "unit": "",
+    "value": 572717
+   }
+  },
+  {
+   "id": "glast",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2033",
+      "unit": "fiscal year",
+      "value": 2033
+     }
+    },
+    "literals": [],
+    "text": "projected gap, FY2033 (ours)"
+   },
+   "value": {
+    "text": "$4,676,182",
+    "unit": "",
+    "value": 4676182
+   }
+  },
+  {
+   "id": "sal",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "yearly growth in salaries, assumed (ours)"
+   },
+   "value": {
+    "text": "4.0%",
+    "unit": "",
+    "value": 4.0
+   }
+  },
+  {
+   "id": "health",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "yearly growth in health insurance, assumed (ours)"
+   },
+   "value": {
+    "text": "9.0%",
+    "unit": "",
+    "value": 9.0
+   }
+  },
+  {
+   "closes": "The district’s proposed FY2028 budget, not yet presented",
+   "id": "none",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "a published FY2028 school budget"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$932,531",
+    "unit": "",
+    "value": 932531
+   },
+   "b": {
+    "text": "$4,676,182",
+    "unit": "",
+    "value": 4676182
+   },
+   "y": {
+    "text": "FY2028",
+    "unit": "fiscal year",
+    "value": 2028
+   },
+   "z": {
+    "text": "FY2033",
+    "unit": "fiscal year",
+    "value": 2033
+   }
+  },
+  "literals": [],
+  "text": "Run forward on our assumed rates, the schools are $932,531 short in FY2028 and $4,676,182 in FY2033."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "projected-gap",
+ "kind": "topic",
+ "path": "/budget-crisis/projected-gap",
+ "said": [],
+ "shelves": [
+  "budget-crisis"
+ ],
+ "sources": [
+  {
+   "href": "/data/model.json",
+   "label": "Lunenburg Budget Project — model.json (the projection; ours)"
+  },
+  {
+   "href": "/docs/analyses/show-your-work.md",
+   "label": "Lunenburg Budget Project — show-your-work.md (every rate the projection uses)"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — FY27 budget workbook — fy27-proposals.xlsx"
+  }
+ ],
+ "table": {
+  "caption": "The projection, year by year (ours)",
+  "views": [
+   {
+    "columns": [
+     "Level service cost",
+     "Revenue for the schools",
+     "Gap",
+     "New that year"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Level service against revenue",
+    "note": "Our projection from the FY2027 adopted budget, at the rates model.json assumes.",
+    "rows": [
+     {
+      "cells": [
+       "$28,361,267",
+       "$27,428,736",
+       "$932,531",
+       "$932,531"
+      ],
+      "label": "FY2028"
+     },
+     {
+      "cells": [
+       "$29,841,775",
+       "$28,306,678",
+       "$1,535,097",
+       "$572,717"
+      ],
+      "label": "FY2029"
+     },
+     {
+      "cells": [
+       "$31,411,702",
+       "$29,206,656",
+       "$2,205,046",
+       "$621,142"
+      ],
+      "label": "FY2030"
+     },
+     {
+      "cells": [
+       "$33,077,086",
+       "$30,129,229",
+       "$2,947,857",
+       "$673,158"
+      ],
+      "label": "FY2031"
+     },
+     {
+      "cells": [
+       "$34,844,413",
+       "$31,074,970",
+       "$3,769,443",
+       "$729,054"
+      ],
+      "label": "FY2032"
+     },
+     {
+      "cells": [
+       "$36,720,647",
+       "$32,044,466",
+       "$4,676,182",
+       "$789,138"
+      ],
+      "label": "FY2033"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "Projected school gap"
+}

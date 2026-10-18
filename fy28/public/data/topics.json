@@ -531,6 +531,54 @@
    "title": "Programs and cuts"
   },
   {
+   "answer": "From FY2008 to FY2024 net school spending rose 61.3% in dollars as printed, pupils fell 13.4% and teacher FTE fell 4.6%. None of it is adjusted for prices, and none of it says why.",
+   "area": "school",
+   "elsewhere": [
+    {
+     "href": "/what-we-cannot-answer",
+     "title": "What we cannot answer"
+    }
+   ],
+   "groups": [
+    {
+     "title": "Side by side",
+     "topics": [
+      "growth-side-by-side",
+      "long-run-school-spending",
+      "spending-per-child-enrolled",
+      "teachers-and-other-staff"
+     ]
+    },
+    {
+     "title": "What the counts cannot settle",
+     "topics": [
+      "fy2011-teacher-reading"
+     ]
+    },
+    {
+     "title": "Each measure on its own",
+     "topics": [
+      "enrolment-by-year",
+      "teacher-fte-over-time",
+      "teachers-per-pupil",
+      "paraprofessional-fte",
+      "headcount-and-fte",
+      "per-pupil-spending",
+      "spending-and-pupils",
+      "net-school-spending",
+      "chapter-70-by-year"
+     ]
+    }
+   ],
+   "id": "spending-staff-students",
+   "minutes": 1,
+   "order": 26,
+   "path": "/spending-staff-students",
+   "ready": true,
+   "shelf": "Spending, staff, students",
+   "title": "Spending, staff, students"
+  },
+  {
    "answer": "The state certified $3,354,370 of free cash as of 1 July 2025, the most the Town’s records list; 66.1% of the free cash identified that year was money appropriated and not spent.",
    "area": "town",
    "elsewhere": [
@@ -904,6 +952,81 @@
    "title": "Parks department"
   },
   {
+   "answer": "On our projection the school budget is $932,531 short in FY2028 and short every year after: what the schools buy grows 5.18% a year, their revenue 3.22% and falling. A cut lowers the cost line once; only a rate changes where it heads.",
+   "area": "options",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": "The gap",
+     "topics": [
+      "projected-gap",
+      "level-service-cost",
+      "fy2028-revenue-increase"
+     ]
+    },
+    {
+     "title": "Why it comes back",
+     "topics": [
+      "gap-by-cost-line",
+      "cost-and-revenue-growth",
+      "long-run-balance-rate"
+     ]
+    },
+    {
+     "title": "What has happened",
+     "topics": [
+      "fy2027-cut-size",
+      "announced-cuts",
+      "fy2027-override"
+     ]
+    },
+    {
+     "title": "Cuts",
+     "topics": [
+      "all-cuts-combined",
+      "extracurricular-cuts",
+      "classroom-positions",
+      "school-user-fees"
+     ]
+    },
+    {
+     "title": "Overrides and reserves",
+     "topics": [
+      "override-duration",
+      "override-scope",
+      "free-cash-redirect"
+     ]
+    },
+    {
+     "title": "Growth and the state",
+     "topics": [
+      "development-needed",
+      "new-growth",
+      "business-building-pace",
+      "chapter-70-needed",
+      "total-state-aid",
+      "state-aid-growth",
+      "foundation-budget"
+     ]
+    },
+    {
+     "title": "Pay and insurance",
+     "topics": [
+      "teacher-contract",
+      "salary-line-and-staffing",
+      "health-insurance-options"
+     ]
+    }
+   ],
+   "id": "budget-crisis",
+   "minutes": 1,
+   "order": 69,
+   "path": "/budget-crisis",
+   "ready": true,
+   "shelf": "Budget crisis",
+   "title": "The structural gap"
+  },
+  {
    "answer": "Against a projected FY2028 gap of $932,531 (ours), each option has a size and a payer: an override, fees, cuts to programmes or positions, reserves, or the next teachers’ settlement.",
    "area": "options",
    "elsewhere": [
@@ -982,6 +1105,19 @@
    ],
    "title": "Aid per pupil"
   },
+  "all-cuts-combined": {
+   "finding": "Every sport, club, lawful office line and most technology: $1,495,880 (ours), enough for FY2028 and FY2029.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "all-cuts-combined",
+   "minutes": 1,
+   "path": "/budget-crisis/all-cuts-combined",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "All cuts combined"
+  },
   "announced-cuts": {
    "finding": "The district named 158 reductions in 9 budget documents across 5 cycles; none records what became of a post.",
    "generator": "scripts/build_school_programs_topics.py",
@@ -992,6 +1128,7 @@
    "ready": true,
    "shelves": [
     "school-programs",
+    "budget-crisis",
     "budget-options"
    ],
    "title": "Announced cuts"
@@ -1270,7 +1407,8 @@
    "path": "/homes-and-taxes/business-building-pace",
    "ready": true,
    "shelves": [
-    "homes-and-taxes"
+    "homes-and-taxes",
+    "budget-crisis"
    ],
    "title": "Business building pace"
   },
@@ -1283,9 +1421,23 @@
    "path": "/state-aid/chapter-70-by-year",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "spending-staff-students"
    ],
    "title": "Chapter 70 by year"
+  },
+  "chapter-70-needed": {
+   "finding": "For state aid alone to hold the gap, Chapter 70 would grow 11.33% a year (ours); we assume 2.71%.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "chapter-70-needed",
+   "minutes": 1,
+   "path": "/budget-crisis/chapter-70-needed",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Chapter 70 needed"
   },
   "chapter-70-school-budget-share": {
    "finding": "Chapter 70 was 35.1% of the FY2026 school appropriation; the School Committee said 35%.",
@@ -1389,7 +1541,8 @@
    "path": "/budget-options/classroom-positions",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Classroom positions"
   },
@@ -1431,6 +1584,19 @@
     "school-programs"
    ],
    "title": "Computer science"
+  },
+  "cost-and-revenue-growth": {
+   "finding": "What the schools buy grows 5.18% a year on our rates; their revenue 3.22% in FY2028, then less.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "cost-and-revenue-growth",
+   "minutes": 1,
+   "path": "/budget-crisis/cost-and-revenue-growth",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Cost and revenue growth"
   },
   "cost-of-the-median": {
    "finding": "At the FY2025 state median a pupil, Lunenburg would have spent $39,181,968, by our arithmetic.",
@@ -1524,6 +1690,19 @@
    ],
    "title": "Destination districts"
   },
+  "development-needed": {
+   "finding": "Growth alone would need $2,153,441 of new levy a year (ours); the best year on record added $630,220.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "development-needed",
+   "minutes": 1,
+   "path": "/budget-crisis/development-needed",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Development needed"
+  },
   "district-health-line": {
    "finding": "The district’s adopted health line rose from $2,633,912 in FY2018 to $3,701,195 in FY2026, 4.3% a year.",
    "generator": "scripts/build_health_insurance_topics.py",
@@ -1573,6 +1752,7 @@
    "ready": true,
    "shelves": [
     "enrolment",
+    "spending-staff-students",
     "homes-and-taxes"
    ],
    "title": "Enrolment by year"
@@ -1586,7 +1766,8 @@
    "path": "/budget-options/extracurricular-cuts",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Extracurricular cuts"
   },
@@ -1625,7 +1806,8 @@
    "path": "/state-aid/foundation-budget",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "budget-crisis"
    ],
    "title": "Foundation budget"
   },
@@ -1678,6 +1860,7 @@
    "ready": true,
    "shelves": [
     "free-cash",
+    "budget-crisis",
     "budget-options"
    ],
    "title": "Free cash for schools"
@@ -1694,6 +1877,19 @@
     "free-cash"
    ],
    "title": "Free cash sources"
+  },
+  "fy2011-teacher-reading": {
+   "finding": "The state’s file reads 102.3 teacher FTE for FY2011: 18.1 below FY2010 and 12.1 below FY2012.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "spending-staff-students",
+   "id": "fy2011-teacher-reading",
+   "minutes": 2,
+   "path": "/spending-staff-students/fy2011-teacher-reading",
+   "ready": true,
+   "shelves": [
+    "spending-staff-students"
+   ],
+   "title": "FY2011 teacher reading"
   },
   "fy2025-school-surplus": {
    "finding": "FY2025 closed with $627,117 unspent, $23,231 more than the figure the School Committee was given.",
@@ -1908,7 +2104,8 @@
    "path": "/budget-options/fy2027-cut-size",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "FY2027 cut size"
   },
@@ -1921,9 +2118,36 @@
    "path": "/budget-options/fy2027-override",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "The FY2027 override"
+  },
+  "fy2028-revenue-increase": {
+   "finding": "The schools’ share of new revenue in FY2028 is $856,448 by our estimate, against $1,396,714 of costs.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "fy2028-revenue-increase",
+   "minutes": 1,
+   "path": "/budget-crisis/fy2028-revenue-increase",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "FY2028 revenue increase"
+  },
+  "gap-by-cost-line": {
+   "finding": "Health insurance puts $261,240 into the FY2028 gap from 14.9% of the budget, by our estimate.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "gap-by-cost-line",
+   "minutes": 1,
+   "path": "/budget-crisis/gap-by-cost-line",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Gap by cost line"
   },
   "gap-by-function": {
    "finding": "In-district, Lunenburg spent $2,103 a pupil less than Ayer Shirley, the middle of the six this project chose.",
@@ -2016,6 +2240,19 @@
    ],
    "title": "Grounds maintenance bid"
   },
+  "growth-side-by-side": {
+   "finding": "From FY2008 to FY2024 net school spending rose 61.3%; pupils fell 13.4% and teacher FTE 4.6%.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "spending-staff-students",
+   "id": "growth-side-by-side",
+   "minutes": 1,
+   "path": "/spending-staff-students/growth-side-by-side",
+   "ready": true,
+   "shelves": [
+    "spending-staff-students"
+   ],
+   "title": "Growth side by side"
+  },
   "harvard-line-by-line": {
    "finding": "Harvard’s $25,565 a pupil in FY2025 by what it bought: teachers first, 24.0% paid by grants and revolving.",
    "generator": "scripts/build_bromfield_topics.py",
@@ -2051,7 +2288,8 @@
    "path": "/school-staffing/headcount-and-fte",
    "ready": true,
    "shelves": [
-    "school-staffing"
+    "school-staffing",
+    "spending-staff-students"
    ],
    "title": "People and posts"
   },
@@ -2090,7 +2328,8 @@
    "path": "/health-insurance/health-insurance-options",
    "ready": true,
    "shelves": [
-    "health-insurance"
+    "health-insurance",
+    "budget-crisis"
    ],
    "title": "Options under the law"
   },
@@ -2303,6 +2542,19 @@
    ],
    "title": "Leaving and arriving"
   },
+  "level-service-cost": {
+   "finding": "Keeping the same schools costs $1,396,714 more in FY2028, by our estimate: $28,361,267 in all.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "level-service-cost",
+   "minutes": 1,
+   "path": "/budget-crisis/level-service-cost",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Level service cost"
+  },
   "line-level-misses": {
    "finding": "Of 576 budget lines and years the district restated, 198 landed within 2% of the line’s budget.",
    "generator": "scripts/build_school_spending_topics.py",
@@ -2328,6 +2580,32 @@
     "school-programs"
    ],
    "title": "Lines cut to zero"
+  },
+  "long-run-balance-rate": {
+   "finding": "To balance for good, what the schools buy could grow 2.82% a year; our rates give 5.18%.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "long-run-balance-rate",
+   "minutes": 1,
+   "path": "/budget-crisis/long-run-balance-rate",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Long-run balance rate"
+  },
+  "long-run-school-spending": {
+   "finding": "Net school spending was $6,951,622 in FY1994 and $24,043,452 in FY2024, in dollars as printed.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "spending-staff-students",
+   "id": "long-run-school-spending",
+   "minutes": 1,
+   "path": "/spending-staff-students/long-run-school-spending",
+   "ready": true,
+   "shelves": [
+    "spending-staff-students"
+   ],
+   "title": "Long-run school spending"
   },
   "lunenburg-at-harvard-rate": {
    "finding": "At Harvard’s FY2025 rate a pupil, Lunenburg would have spent $12,557,492 more, by our arithmetic.",
@@ -2475,7 +2753,8 @@
    "ready": true,
    "shelves": [
     "state-aid",
-    "school-spending"
+    "school-spending",
+    "spending-staff-students"
    ],
    "title": "Net school spending"
   },
@@ -2502,7 +2781,8 @@
    "path": "/homes-and-taxes/new-growth",
    "ready": true,
    "shelves": [
-    "homes-and-taxes"
+    "homes-and-taxes",
+    "budget-crisis"
    ],
    "title": "New growth"
   },
@@ -2583,7 +2863,8 @@
    "path": "/budget-options/override-duration",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Override duration"
   },
@@ -2609,7 +2890,8 @@
    "path": "/budget-options/override-scope",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Townwide or school-only"
   },
@@ -2648,7 +2930,8 @@
    "path": "/school-staffing/paraprofessional-fte",
    "ready": true,
    "shelves": [
-    "school-staffing"
+    "school-staffing",
+    "spending-staff-students"
    ],
    "title": "Paraprofessionals over time"
   },
@@ -2741,6 +3024,7 @@
    "ready": true,
    "shelves": [
     "school-spending",
+    "spending-staff-students",
     "homes-and-taxes"
    ],
    "title": "Spending per pupil"
@@ -2757,6 +3041,19 @@
     "school-staffing"
    ],
    "title": "Printed school rosters"
+  },
+  "projected-gap": {
+   "finding": "Run forward on our assumed rates, the schools are $932,531 short in FY2028 and $4,676,182 in FY2033.",
+   "generator": "scripts/build_budget_crisis_topics.py",
+   "home": "budget-crisis",
+   "id": "projected-gap",
+   "minutes": 1,
+   "path": "/budget-crisis/projected-gap",
+   "ready": true,
+   "shelves": [
+    "budget-crisis"
+   ],
+   "title": "Projected school gap"
   },
   "reduced-and-waived-fees": {
    "finding": "Three high schoolers at one sport each: $812.50 a year at the full fee, $150 reduced, $0 waived.",
@@ -2886,7 +3183,8 @@
    "path": "/budget-options/salary-line-and-staffing",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Salary line and staffing"
   },
@@ -3016,7 +3314,8 @@
    "path": "/budget-options/school-user-fees",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "School user fees"
   },
@@ -3058,7 +3357,8 @@
    "path": "/school-spending/spending-and-pupils",
    "ready": true,
    "shelves": [
-    "school-spending"
+    "school-spending",
+    "spending-staff-students"
    ],
    "title": "Spending and pupils"
   },
@@ -3087,6 +3387,19 @@
     "school-spending"
    ],
    "title": "Spending by function"
+  },
+  "spending-per-child-enrolled": {
+   "finding": "Net school spending per child enrolled was $3,954 in FY1994 and $15,217 in FY2024; pupils fell 10.1%.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "spending-staff-students",
+   "id": "spending-per-child-enrolled",
+   "minutes": 1,
+   "path": "/spending-staff-students/spending-per-child-enrolled",
+   "ready": true,
+   "shelves": [
+    "spending-staff-students"
+   ],
+   "title": "Spending per child enrolled"
   },
   "stabilization-balances": {
    "finding": "The town’s ledger files $9,061,421 under its nine stabilization accounts, at the start of FY2026.",
@@ -3162,7 +3475,8 @@
    "path": "/state-aid/state-aid-growth",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "budget-crisis"
    ],
    "title": "State aid growth"
   },
@@ -3216,7 +3530,8 @@
    "path": "/budget-options/teacher-contract",
    "ready": true,
    "shelves": [
-    "budget-options"
+    "budget-options",
+    "budget-crisis"
    ],
    "title": "Teacher contract"
   },
@@ -3229,9 +3544,23 @@
    "path": "/school-staffing/teacher-fte-over-time",
    "ready": true,
    "shelves": [
-    "school-staffing"
+    "school-staffing",
+    "spending-staff-students"
    ],
    "title": "Teachers over time"
+  },
+  "teachers-and-other-staff": {
+   "finding": "The state counted 105.1 teacher FTE and 78.5 paraprofessional and support FTE in FY2025.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "spending-staff-students",
+   "id": "teachers-and-other-staff",
+   "minutes": 1,
+   "path": "/spending-staff-students/teachers-and-other-staff",
+   "ready": true,
+   "shelves": [
+    "spending-staff-students"
+   ],
+   "title": "Teachers and other staff"
   },
   "teachers-by-school": {
    "finding": "Turkey Hill Elementary went from 27.0 to 18.4 teacher FTE, FY2017 to FY2026; the district fell 8.7.",
@@ -3270,7 +3599,8 @@
    "ready": true,
    "shelves": [
     "school-staffing",
-    "school-spending"
+    "school-spending",
+    "spending-staff-students"
    ],
    "title": "Teachers per pupil"
   },
@@ -3296,7 +3626,8 @@
    "path": "/state-aid/total-state-aid",
    "ready": true,
    "shelves": [
-    "state-aid"
+    "state-aid",
+    "budget-crisis"
    ],
    "title": "Total state aid"
   },
