@@ -127,6 +127,7 @@ const ICON: Record<string, string> = {
   'per-pupil-spending': '\u{1F393}', 'peer-districts': '\u{1F5FA}\uFE0F',
   'connecting-the-budget': '\u{1F517}', 'show-your-work': '\u{1F9EE}',
   'monty-tech': '\u{1F527}', questions: '\u2753', 'what-you-can-ask': '\u{1F50D}',
+  'towns-like-us': '\u{1F5FA}\uFE0F',   // has a map: the icon says so
 }
 const icon = (id: string) => ICON[id] || '\u{1F4C4}'
 

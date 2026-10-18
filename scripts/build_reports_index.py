@@ -148,8 +148,13 @@ CATEGORIES = [
         # does not yet know the place cannot weigh anything below it, and it is the one
         # report in the index that needs no budget knowledge at all to read.
         # Homes and taxes, Budget options, Boards and Parks are shelves of their own now;
-        # this group stays, empty, as the anchor the page draws the town's shelves after.
-        ('', []),
+        # this group is the anchor the page draws the town's shelves after.
+        # TOWNS LIKE US, promoted 18 October 2026. Published UNLISTED on 26 September for
+        # TJ to read and never promoted; he went looking for "the map of comparison
+        # districts" and could not find it. It measures the town against the towns around
+        # it, so it heads the town's shelf; its card carries a map icon because the map is
+        # what people remember it by.
+        ('', ['towns-like-us']),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
@@ -282,6 +287,10 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads',
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
+    'towns-like-us':
+        'How Lunenburg compares with the towns it borders, the peers this project chose, '
+        'and the towns most like it across the whole state, on what a town is and what it '
+        'does \u2014 with a map of every town in Massachusetts.',
     'annual-reports':
         'The sixteen annual town reports, FY2011\u2013FY2025, every one downloadable with '
         'the sha256 of the bytes we hold \u2014 and what we read out of them, by category. '
