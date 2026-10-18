@@ -100,6 +100,22 @@ def moments(tid):
             raise SystemExit('thread-moments.csv: no captions at %s' % os.path.relpath(f, ROOT))
         t = int(r['t'])
         segs = json.load(open(f, encoding='utf-8'))['segments']
+        # A GAP IN THE CAPTIONS is a moment too: `kind` unreadable, `quote` empty, `t` and
+        # `t_end` the stretch. TJ, 18 October 2026, on the School Committee's 7 October
+        # meeting: the superintendent called the fields unsafe *"but unfortunately in the
+        # audio, that's all garbled"*. Nobody can quote her from this record, so the thread
+        # says where the record goes silent -- checked: the captions there must hold almost
+        # nothing, or the build stops.
+        if r['kind'] == 'unreadable':
+            end = int(r['t_end'])
+            n = sum(len(x['text'].split()) for x in segs if t <= x['start'] < end)
+            if n > (end - t) // 2:     # under one word in two seconds; speech runs ~2.5 a second
+                raise SystemExit('thread-moments.csv: %s %s %d-%d holds %d caption words; not a gap'
+                                 % (r['board_slug'], r['date'], t, end, n))
+            out.setdefault((r['board_slug'], r['date']), []).append(
+                {'kind': 'unreadable', 'text': r['text'], 'outcome': '', 't': t, 'quote': '',
+                 'video_url': 'https://www.youtube.com/watch?v=' + r['video_id'], 'source': 'caption'})
+            continue
         heard = ' '.join(x['text'] for x in segs if t - 30 <= x['start'] <= t + 90)
         if ' '.join(r['quote'].split()) not in ' '.join(heard.split()):
             raise SystemExit('thread-moments.csv: %s %s t=%d -- %r is not in the captions there'

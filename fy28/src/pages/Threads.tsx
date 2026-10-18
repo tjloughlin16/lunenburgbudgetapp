@@ -463,7 +463,7 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
  *  A settled thread leads with how it ended and tells its story start to finish. */
 const KIND_WORD: Record<string, string> = {
   vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed',
-  contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised', liability: 'Liability raised', condition: 'Condition set',
+  contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised', liability: 'Liability raised', condition: 'Condition set', unreadable: 'Captions unreadable',
 }
 const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, liability: 2, condition: 1, contention: 2, budget: 3, topic: 4, comment: 5 }
 const hms = (t: number) => {
@@ -496,7 +496,7 @@ function Cite({ it }: { it: Item }) {
   if (it.source === 'caption') {
     return (
       <span className="text-[12px]" style={muted}>
-        quoted from the recording&rsquo;s machine captions, which mishear
+        {it.kind === 'unreadable' ? 'a gap in the recording’s machine captions; listen for yourself' : <>quoted from the recording&rsquo;s machine captions, which mishear</>}
         {it.video_url && it.t != null ? <> · <a className="underline" style={link}
           href={`${it.video_url}&t=${it.t}s`} target="_blank" rel="noreferrer">watch at {hms(it.t)}</a></> : null}
       </span>
