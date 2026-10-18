@@ -1,6 +1,6 @@
 {
  "about": "Every board and committee the town posts for, one page each: what is coming, what happened, every vote we have minutes for, where the board\u2019s time goes, and when budget season has fallen on its agendas in past years.",
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "boards": [
   {
    "about_itself": [
@@ -156240,7 +156240,7 @@
      "fy": 2027,
      "minutes": {
       "have": 1,
-      "meetings": 1
+      "meetings": 2
      },
      "recordings": {
       "have": 3,
@@ -167118,8 +167118,8 @@
     "this": {
      "fy": 2027,
      "minutes": {
-      "have": 3,
-      "meetings": 6
+      "have": 4,
+      "meetings": 7
      },
      "recordings": {
       "have": 5,
@@ -236922,8 +236922,8 @@
      "record": {
       "due": "2026-10-17",
       "minutes": {
-       "reason": "due by 2026-10-17",
-       "status": "not-available",
+       "reason": null,
+       "status": "missing",
        "url": null
       },
       "our_minutes": {
@@ -236937,8 +236937,8 @@
       },
       "video": {
        "likely_none": false,
-       "reason": "due by 2026-10-17",
-       "status": "not-available",
+       "reason": null,
+       "status": "missing",
        "url": null
       }
      },
@@ -335078,11 +335078,11 @@
     "last": "2026-09-16",
     "minutes": 162,
     "official_votes_read": 150,
-    "our_minutes": 54,
+    "our_minutes": 55,
     "recordings": 71,
     "transcripts": 71,
     "vote_conflicts": 0,
-    "votes": 426
+    "votes": 428
    },
    "finance": null,
    "join": {
@@ -335112,7 +335112,47 @@
      "join": null,
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "The final article wording, to be assembled by the chair and sent to the select board's office.",
+        "The Town Meeting warrant, where the article would appear for a vote."
+       ],
+       "what_happened": [
+        {
+         "line": "The Public Access Cable Committee voted 3-0 by roll call to ask Town Meeting to fully fund the FY27 PEG access operating budget from retained earnings.",
+         "t": 427
+        },
+        {
+         "line": "Members changed the article's wording from \"fund\" to \"fully fund\" so it would not imply the original budget was wrong.",
+         "t": 277
+        },
+        {
+         "line": "The article's summary describes a salary increase for the rest of FY27, with indirect costs rising alongside it and included in the request.",
+         "t": 195
+        },
+        {
+         "line": "The chair will assemble the final wording and forward it to the select board's office as required for a duly called meeting.",
+         "t": 534
+        }
+       ],
+       "why_it_matters": [
+        "The request would draw on the PEG access enterprise fund's retained earnings rather than the tax levy, so it is a spending decision Town Meeting voters would be asked to approve.",
+        "The minutes do not state the amount, so residents cannot yet judge the size of the salary increase or how much retained earnings it would use."
+       ],
+       "written": {
+        "at": "2026-10-18T11:06:26Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.327268,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "PACC voted by roll call, 3 yes, to ask Town Meeting to fully fund its FY27 PEG access budget from retained earnings.",
+      "reconciled": false,
+      "slug": "public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0",
+      "votes": 1
+     },
      "record": {
       "due": null,
       "minutes": {
@@ -335121,8 +335161,8 @@
        "url": null
       },
       "our_minutes": {
-       "reason": "in our queue",
-       "state": "pending"
+       "reason": null,
+       "state": "posted"
       },
       "transcript": {
        "captions_disabled": false,
@@ -338289,84 +338329,114 @@
     {
      "label": "budget",
      "seconds": 61232,
-     "share": 0.33435626371946225,
+     "share": 0.3332698347039966,
      "tag": "budget"
     },
     {
      "label": "technology",
      "seconds": 51266,
-     "share": 0.27993709524173555,
+     "share": 0.2790274912780097,
      "tag": "technology"
     },
     {
      "label": "facilities",
      "seconds": 37393,
-     "share": 0.20418382168248386,
+     "share": 0.20352036401042828,
      "tag": "facilities"
     },
     {
      "label": "policy",
      "seconds": 34723,
-     "share": 0.18960433343890265,
+     "share": 0.1889882491250796,
      "tag": "policy"
     },
     {
      "label": "capital",
      "seconds": 26547,
-     "share": 0.14495942861511243,
+     "share": 0.1444884096858995,
      "tag": "capital"
     },
     {
      "label": "town departments",
      "seconds": 17073,
-     "share": 0.09322681752159621,
+     "share": 0.0929238941713701,
      "tag": "town-departments"
     },
     {
      "label": "personnel",
-     "seconds": 15906,
-     "share": 0.0868544344578287,
+     "seconds": 16180,
+     "share": 0.08806352765728157,
      "tag": "personnel"
     },
     {
      "label": "legal",
      "seconds": 13719,
-     "share": 0.07491235925606386,
+     "share": 0.07466894536033658,
      "tag": "legal"
     },
     {
      "label": "fees",
      "seconds": 12163,
-     "share": 0.06641584850437385,
+     "share": 0.06620004245336933,
      "tag": "fees"
     },
     {
      "label": "town meeting",
-     "seconds": 10952,
-     "share": 0.059803204211124096,
+     "seconds": 11059,
+     "share": 0.06019125787156223,
      "tag": "town-meeting"
     },
     {
      "label": "grants",
      "seconds": 10367,
-     "share": 0.05660882195550799,
+     "share": 0.05642488202861792,
      "tag": "grants"
     },
     {
      "label": "budget fy27",
-     "seconds": 9768,
-     "share": 0.053337992945056624,
+     "seconds": 10149,
+     "share": 0.05523836478329732,
      "tag": "budget-fy27"
     }
    ],
-   "time_meetings": 54,
-   "time_span_s": 183134,
+   "time_meetings": 55,
+   "time_span_s": 183731,
    "urls": {
     "minutes_text": "/minutes/public-access-cable-committee-pacc.txt",
     "this_week": "/this-week#m-public-access-cable-committee-pacc",
     "what_was_said": "/meeting-minutes"
    },
    "votes": [
+    {
+     "conflict": null,
+     "date": "2026-09-16",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Move to see if the town will vote to raise and appropriate or transfer from available funds a sum of money to fully fund the FY 2027 PEG access enterprise operating budget, with the summary of an increase for salaries to be funded from retained earnings.",
+     "moved_by": "Steve or Brian (not clear from captions)",
+     "outcome": "passed 3-0 by roll call (three ayes heard: Steve, Brian, and the chair)",
+     "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0",
+     "procedural": false,
+     "quote": null,
+     "source": "recording",
+     "t": 427,
+     "video_url": "https://www.youtube.com/watch?v=OiwZv1YBXj0&t=427s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-09-16",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Motion to adjourn",
+     "moved_by": null,
+     "outcome": "not audible",
+     "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0",
+     "procedural": true,
+     "quote": null,
+     "source": "recording",
+     "t": 565,
+     "video_url": "https://www.youtube.com/watch?v=OiwZv1YBXj0&t=565s"
+    },
     {
      "conflict": null,
      "date": "2026-09-08",
@@ -374143,11 +374213,11 @@
     "last": "2026-10-15",
     "minutes": 63,
     "official_votes_read": 63,
-    "our_minutes": 39,
+    "our_minutes": 40,
     "recordings": 41,
     "transcripts": 41,
     "vote_conflicts": 0,
-    "votes": 143
+    "votes": 144
    },
    "finance": null,
    "join": {
@@ -374430,7 +374500,47 @@
      "join": null,
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "Task force meeting on the 14th, with warrant approval and the abatement process write-up on the agenda.",
+        "Feedback from Adam on the draft, requested by end of day Monday."
+       ],
+       "what_happened": [
+        {
+         "line": "The Stormwater Task Force agreed its draft summary was ready and will send it to Adam that night, asking for feedback by end of day Monday.",
+         "t": 185
+        },
+        {
+         "line": "Members agreed to add helpful links for more information at the end of the summary, and one member will check the town website for existing stormwater material.",
+         "t": 121
+        },
+        {
+         "line": "The next meeting was set for the 14th, a Monday night.",
+         "t": 206
+        },
+        {
+         "line": "The next agenda will include approval for the town meeting warrant under ongoing business, and a review of the abatement process write-up.",
+         "t": 227
+        }
+       ],
+       "why_it_matters": [
+        "The summary is meant for the town meeting warrant, so its wording and links are what voters will see when a stormwater question reaches them.",
+        "No vote was taken at this meeting; warrant approval is planned for the next one."
+       ],
+       "written": {
+        "at": "2026-10-18T11:07:48Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.2223577,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "Task force agreed to send its draft to Adam for feedback by Monday and meet again on the 14th.",
+      "reconciled": false,
+      "slug": "stormwater-task-force/2026-09-08-BgwomyYoCJk",
+      "votes": 0
+     },
      "record": {
       "due": "2026-10-15",
       "minutes": {
@@ -374439,8 +374549,8 @@
        "url": null
       },
       "our_minutes": {
-       "reason": "in our queue",
-       "state": "pending"
+       "reason": null,
+       "state": "posted"
       },
       "transcript": {
        "captions_disabled": false,
@@ -377309,79 +377419,79 @@
    "time_by_tag": [
     {
      "label": "fees",
-     "seconds": 74829,
-     "share": 0.4437414013947531,
+     "seconds": 77787,
+     "share": 0.44823671775959434,
      "tag": "fees"
     },
     {
      "label": "water sewer",
      "seconds": 53847,
-     "share": 0.31931661843540965,
+     "share": 0.3102858130690331,
      "tag": "water-sewer"
     },
     {
      "label": "budget",
-     "seconds": 37428,
-     "share": 0.22195075667726172,
+     "seconds": 38278,
+     "share": 0.22057162613806616,
      "tag": "budget"
     },
     {
      "label": "roads and dpw",
      "seconds": 29861,
-     "share": 0.17707789743346458,
+     "share": 0.17206983980638468,
      "tag": "roads-and-dpw"
+    },
+    {
+     "label": "town meeting",
+     "seconds": 23542,
+     "share": 0.13565748530598132,
+     "tag": "town-meeting"
     },
     {
      "label": "policy",
      "seconds": 23114,
-     "share": 0.13706769770861996,
+     "share": 0.13319119511351848,
      "tag": "policy"
-    },
-    {
-     "label": "town meeting",
-     "seconds": 22136,
-     "share": 0.13126808672138146,
-     "tag": "town-meeting"
     },
     {
      "label": "town departments",
      "seconds": 13440,
-     "share": 0.07970017553014849,
+     "share": 0.07744612193154315,
      "tag": "town-departments"
     },
     {
      "label": "planning and zoning",
      "seconds": 12347,
-     "share": 0.07321860619573983,
+     "share": 0.07114786216434252,
      "tag": "planning-and-zoning"
+    },
+    {
+     "label": "warrant article",
+     "seconds": 11497,
+     "share": 0.06624985594099343,
+     "tag": "warrant-article"
     },
     {
      "label": "grants",
      "seconds": 9924,
-     "share": 0.05885004032449357,
+     "share": 0.057185663247666246,
      "tag": "grants"
     },
     {
      "label": "staffing",
      "seconds": 8988,
-     "share": 0.0532994923857868,
+     "share": 0.051792094041719486,
      "tag": "staffing"
     },
     {
      "label": "capital",
      "seconds": 8661,
-     "share": 0.05136035865078989,
+     "share": 0.04990780223579578,
      "tag": "capital"
-    },
-    {
-     "label": "warrant article",
-     "seconds": 8243,
-     "share": 0.04888158831064092,
-     "tag": "warrant-article"
     }
    ],
-   "time_meetings": 40,
-   "time_span_s": 168632,
+   "time_meetings": 42,
+   "time_span_s": 173540,
    "urls": {
     "minutes_text": "/minutes/stormwater-task-force.txt",
     "this_week": "/this-week#m-stormwater-task-force",
@@ -377462,6 +377572,21 @@
      "source": "recording",
      "t": 1160,
      "video_url": "https://www.youtube.com/watch?v=fHuUxPFr0rg&t=1160s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-09-08",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Motion to adjourn; moved and seconded, roll call taken",
+     "moved_by": null,
+     "outcome": "not audible",
+     "page": "/meeting-minutes/stormwater-task-force/2026-09-08-BgwomyYoCJk",
+     "procedural": true,
+     "quote": null,
+     "source": "recording",
+     "t": 269,
+     "video_url": "https://www.youtube.com/watch?v=BgwomyYoCJk&t=269s"
     },
     {
      "conflict": null,

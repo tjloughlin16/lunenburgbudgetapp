@@ -2,17 +2,17 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "window": {
-  "from": "2026-10-03",
-  "to": "2026-11-14"
+  "from": "2026-10-04",
+  "to": "2026-11-15"
  },
  "counts": {
-  "agendas": 32,
+  "agendas": 31,
   "agendas_upcoming": 11,
   "agendas_unreadable": 1,
-  "items": 356,
-  "business_items": 207,
+  "items": 352,
+  "business_items": 203,
   "matched_items": 17,
   "upcoming_business_items": 82,
   "upcoming_matched_items": 6,
@@ -27,47 +27,6 @@
   }
  ],
  "meetings": [
-  {
-   "board": "Conservation Commission",
-   "board_slug": "conservation-commission",
-   "date": "2026-10-03",
-   "file_id": "8041",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10032026-8041",
-   "agenda_doc": "/docs/meetings/conservation-commission/2026-10-03-agenda-8041.pdf",
-   "items": [
-    {
-     "line": "3 Wilderwood Avenue: RDA-26-12 A Request for Determination of Applicability by Matt Proctor for the replacement of a retaining wall",
-     "parent": "",
-     "n": 1,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "143 Island Road: NOI-26-30 Notice of Intent by Michelle Salas for the replacement of a septic system",
-     "parent": "",
-     "n": 2,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "386 Sunset Lane: NOI-26-31 A Notice of Intent by Matt Mitrano for replacement of a retaining wall including two timber walls",
-     "parent": "",
-     "n": 3,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "37 Fire Road 10: NOI-26-32 A Notice of Intent by Brian & Kelly Ryder for the removal and reconstruction of an existing patio and retaining wall",
-     "parent": "",
-     "n": 4,
-     "procedural": false,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
   {
    "board": "Board of Health",
    "board_slug": "board-of-health",

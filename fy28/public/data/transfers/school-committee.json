@@ -356,9 +356,320 @@
      "to_line": "HS Sped Resource Room",
      "video_url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=807s",
      "why_not": "a reclassification on the sheet, not in the motion"
+    },
+    {
+     "accounts": {
+      "from": [
+       {
+        "amount_as_printed": "$185.00",
+        "description": "Princ Office Sup",
+        "found": false,
+        "object": "545002",
+        "org": "S201608"
+       },
+       {
+        "amount_as_printed": "$310.00",
+        "description": "Princ Office Sup",
+        "found": false,
+        "object": "545002",
+        "org": "S201609"
+       },
+       {
+        "amount_as_printed": "$1,357.00",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Cust. Sup",
+        "found": true,
+        "function_code": "4110",
+        "function_name": "Custodial Services",
+        "munis_account": "0100-3-300-4110-99-1-74-2-541001",
+        "munis_fy": "2026",
+        "munis_name": "CUSTODIAL SUPPLIES",
+        "object": "541001",
+        "org": "S4991742"
+       },
+       {
+        "amount_as_printed": "$20,719.82",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Teach Cont. Serv.",
+        "found": true,
+        "function_code": "1450",
+        "function_name": "Administrative Technology-Districtwide",
+        "munis_account": "0100-3-300-1450-99-1-52-2-535006",
+        "munis_fy": "2026",
+        "munis_name": "CONTRACTED SERVICES",
+        "object": "535006",
+        "org": "S1990522"
+       },
+       {
+        "amount_as_printed": "$284.30",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Ace Resource Room",
+        "found": true,
+        "function_code": "2320",
+        "function_name": "Medical/ Therapeutic Services",
+        "munis_account": "0100-3-300-2320-51-1-06-1-511025",
+        "munis_fy": "2026",
+        "munis_name": "ACE RESOURCE ROOM TEACHERS",
+        "object": "511025",
+        "org": "S2511061"
+       }
+      ],
+      "to": [
+       {
+        "amount_as_printed": "$185.00",
+        "building": "High School",
+        "building_basis": "ours: all 24 account names in this building code carry its prefix",
+        "description": "Accreditation Exp",
+        "found": true,
+        "function_code": "2210",
+        "function_name": "School Leadership",
+        "munis_account": "0100-3-300-2210-06-6-08-2-535009",
+        "munis_fy": "2026",
+        "munis_name": "ACCREDITATION EXPENSES",
+        "object": "535009",
+        "org": "S2066082"
+       },
+       {
+        "amount_as_printed": "$310.00",
+        "building": "High School",
+        "building_basis": "ours: all 24 account names in this building code carry its prefix",
+        "description": "Repair Music Equipt",
+        "found": true,
+        "function_code": "4230",
+        "function_name": "Maintenance of Equipment",
+        "munis_account": "0100-3-300-4230-06-6-63-2-525001",
+        "munis_fy": "2026",
+        "munis_name": "REPAIR OF MUSIC EQUIPMENT",
+        "object": "525001",
+        "org": "S4066632"
+       },
+       {
+        "amount_as_printed": "$1,357.00",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Cloth Allow",
+        "found": true,
+        "function_code": "4110",
+        "function_name": "Custodial Services",
+        "munis_account": "0100-3-300-4110-99-1-74-1-519003",
+        "munis_fy": "2026",
+        "munis_name": "CLOTHING ALLOWANCE-MAINTENANCE",
+        "object": "519003",
+        "org": "S4991741"
+       },
+       {
+        "amount_as_printed": "$20,719.82",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Prof Dev",
+        "found": true,
+        "function_code": "2357",
+        "function_name": "Prof. Dev. Stipends, Providers, Expenses",
+        "munis_account": "0100-3-300-2357-99-1-50-2-535015",
+        "munis_fy": "2026",
+        "munis_name": "PROFESSIONAL DEVELOPMENT EXP",
+        "object": "535015",
+        "org": "S2991502"
+       },
+       {
+        "amount_as_printed": "$284.30",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "Summer Salary",
+        "found": true,
+        "function_code": "2320",
+        "function_name": "Medical/ Therapeutic Services",
+        "munis_account": "0100-3-300-2320-51-1-06-1-511003",
+        "munis_fy": "2026",
+        "munis_name": "SPED SUMMER PROGRAM SALARIES",
+        "object": "511003",
+        "org": "S2511061"
+       }
+      ]
+     },
+     "amount": "22856.12",
+     "amount_as_printed": "$22,856.12",
+     "amount_basis": "the district sheet’s printed total",
+     "crosses": [
+      "schools",
+      "programs"
+     ],
+     "description": "Accreditation fee Inc. - Music Equip. Repair, more equipment need repair than budget amt. - Clothing Allowance Inc. due to new contract. - Prof. Dev. Inc due to more staff exp compared to projection at the time the budget was developed. Summer Salary Inc. due to more services to parents and more student attendance.",
+     "evidence": {
+      "form": true,
+      "minutes": false,
+      "recording": true
+     },
+     "form": "budget transfer",
+     "from_line": "Princ Office Sup; Princ Office Sup; Cust. Sup; Teach Cont. Serv.; Ace Resource Room",
+     "fy_basis": "stated in the recording",
+     "fy_ours": false,
+     "kind": "line item",
+     "meeting_date": "2026-10-07",
+     "minutes_url": "",
+     "our_copy": "",
+     "outcome": "voted",
+     "quote": "",
+     "sheet": "/docs/budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf",
+     "sheet_page": "3",
+     "ties": true,
+     "to_line": "Accreditation Exp; Repair Music Equipt; Cloth Allow; Prof Dev; Summer Salary",
+     "video_url": "https://www.youtube.com/watch?v=_XGfbHmZPJg&t=811s",
+     "why_not": "tentative: vote heard in the recording; amounts and accounts from the district’s sheet; awaiting the town’s minutes"
+    },
+    {
+     "accounts": {
+      "from": [
+       {
+        "amount_as_printed": "$18,703.94",
+        "building": "District-wide",
+        "building_basis": "ours: no account name in this code carries a school prefix",
+        "description": "School Salary Reserve",
+        "found": true,
+        "function_code": "0300",
+        "function_name": "",
+        "munis_account": "0100-3-300-0300-99-0-99-4-517006",
+        "munis_fy": "2026",
+        "munis_name": "SCHOOL SALARY RESERVE",
+        "object": "517006",
+        "org": "S0990991"
+       }
+      ],
+      "to": [
+       {
+        "amount_as_printed": "$5,196.44",
+        "building": "Primary School",
+        "building_basis": "ours: all 30 account names in this building code carry its prefix",
+        "description": "Kindergarten Para Salary",
+        "found": true,
+        "function_code": "2330",
+        "function_name": "Paraprofessionals",
+        "munis_account": "0100-3-300-2330-03-2-13-1-511203",
+        "munis_fy": "2026",
+        "munis_name": "KIND PARAPROFESSIONALS/REG",
+        "object": "511203",
+        "org": "S2032131"
+       },
+       {
+        "amount_as_printed": "$12,121.05",
+        "building": "Elementary School",
+        "building_basis": "ours: all 25 account names in this building code carry its prefix",
+        "description": "PSY Salary",
+        "found": true,
+        "function_code": "2800",
+        "function_name": "Psychological Services",
+        "munis_account": "0100-3-300-2800-04-4-06-1-511023",
+        "munis_fy": "2026",
+        "munis_name": "PSYCHOLOGISTS SALARIES",
+        "object": "511023",
+        "org": "S2044061"
+       },
+       {
+        "amount_as_printed": "$1,386.45",
+        "building": "Middle School",
+        "building_basis": "ours: all 23 account names in this building code carry its prefix",
+        "description": "M.S. SPED Sub",
+        "found": true,
+        "function_code": "2325",
+        "function_name": "Substitutes, Short-Term",
+        "munis_account": "0100-3-300-2325-51-5-71-1-512203",
+        "munis_fy": "2026",
+        "munis_name": "M.S. SPED SUBSTITUTES",
+        "object": "512203",
+        "org": "S2515711"
+       }
+      ]
+     },
+     "amount": "18703.94",
+     "amount_as_printed": "$18,703.94",
+     "amount_basis": "the district sheet’s printed total",
+     "crosses": [
+      "schools",
+      "programs"
+     ],
+     "description": "To balance three salary accounts that were not funded.",
+     "evidence": {
+      "form": true,
+      "minutes": false,
+      "recording": true
+     },
+     "form": "budget transfer",
+     "from_line": "School Salary Reserve",
+     "fy_basis": "stated in the recording",
+     "fy_ours": false,
+     "kind": "line item",
+     "meeting_date": "2026-10-07",
+     "minutes_url": "",
+     "our_copy": "",
+     "outcome": "voted",
+     "quote": "",
+     "sheet": "/docs/budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf",
+     "sheet_page": "2",
+     "ties": true,
+     "to_line": "Kindergarten Para Salary; PSY Salary; M.S. SPED Sub",
+     "video_url": "https://www.youtube.com/watch?v=_XGfbHmZPJg&t=811s",
+     "why_not": "tentative: vote heard in the recording; amounts and accounts from the district’s sheet; awaiting the town’s minutes"
+    },
+    {
+     "accounts": {
+      "from": [
+       {
+        "amount_as_printed": "$1,784.90",
+        "description": "Sped Tutor Cont. Serv.",
+        "found": false,
+        "object": "519016",
+        "org": "S05011061"
+       }
+      ],
+      "to": [
+       {
+        "amount_as_printed": "$1,784.90",
+        "building": "High School",
+        "building_basis": "ours: all 24 account names in this building code carry its prefix",
+        "description": "HS Sped Resource Room",
+        "found": true,
+        "function_code": "2310",
+        "function_name": "Teachers, Specialists",
+        "munis_account": "0100-3-300-2310-51-6-06-1-511001",
+        "munis_fy": "2026",
+        "munis_name": "HS SPED RESOURCE ROOM TEACHER",
+        "object": "511001",
+        "org": "S2516061"
+       }
+      ]
+     },
+     "amount": "",
+     "amount_as_printed": "$1,784.90",
+     "amount_basis": "the district sheet’s printed total",
+     "crosses": [],
+     "description": "Reclassifying from the Tutor line to a Sped salary line.",
+     "evidence": {
+      "form": true,
+      "minutes": false,
+      "recording": true
+     },
+     "form": "reclassification",
+     "from_line": "Sped Tutor Cont. Serv.",
+     "fy_basis": "stated in the recording",
+     "fy_ours": false,
+     "kind": "line item",
+     "meeting_date": "2026-10-07",
+     "minutes_url": "",
+     "our_copy": "",
+     "outcome": "voted",
+     "quote": "",
+     "sheet": "/docs/budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf",
+     "sheet_page": "1",
+     "ties": true,
+     "to_line": "HS Sped Resource Room",
+     "video_url": "https://www.youtube.com/watch?v=_XGfbHmZPJg&t=811s",
+     "why_not": "a reclassification on the sheet, not in the motion"
     }
    ],
-   "tentative_total": "41560.06",
+   "tentative_total": "83120.12",
    "total": "0.00"
   },
   {
