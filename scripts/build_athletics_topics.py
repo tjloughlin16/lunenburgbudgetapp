@@ -519,8 +519,10 @@ def build():
            'published', {'y': F(2024)}),
          f('wb-officials', U(c24['Officials']), 'officials, %s, district workbook' % C.fy(2024),
            'published', {'y': F(2024)}),
-         f('wb-else', U(c24['Everything else']), 'everything else, %s, district workbook'
-           % C.fy(2024), 'published', {'y': F(2024)}),
+         f('wb-gear', U(c24['Uniforms and equipment']), 'uniforms and equipment, %s, district '
+           'workbook' % C.fy(2024), 'published', {'y': F(2024)}),
+         f('wb-else', U(c24[A['category_order'][-1]]), 'dues, police, assignor and misc, %s, '
+           'district workbook' % C.fy(2024), 'published', {'y': F(2024)}),
          f('gf-coaches', U(coaches26), 'coaches, town budget, %s (ledger)' % C.fy(2026),
            'published', {'y': F(2026)}),
          f('gf-director', U(director26), 'athletic director, town budget, %s' % C.fy(2026),
@@ -534,7 +536,7 @@ def build():
          f('fund-sal', U(sal26), 'fee fund, salaries, %s (ledger)' % C.fy(2026), 'published',
            {'y': F(2026)})],
         [con('On the district’s %s sheet, coaches and buses were the two largest costs.'
-             % C.fy(2024), ['wb-coaches', 'wb-bus', 'wb-officials', 'wb-else'],
+             % C.fy(2024), ['wb-coaches', 'wb-bus', 'wb-officials', 'wb-gear', 'wb-else'],
              {'y': F(2024)}),
          con('The town’s officials account held %s in %s; the fee fund bought %s of services.'
              % (C.usd(0), C.fy(2026), C.usd(pos26)), ['gf-officials', 'fund-pos'],

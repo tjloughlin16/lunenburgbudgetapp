@@ -53,14 +53,27 @@
    {
     "basis": "stated",
     "mark": "bar",
-    "name": "Everything else",
+    "name": "Uniforms and equipment",
     "texts": [
-     "$55,429",
-     "$50,371"
+     "$30,401",
+     "$21,679"
     ],
     "values": [
-     55429.45,
-     50370.59
+     30401.1,
+     21678.66
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Everything else: dues, police, assignor",
+    "texts": [
+     "$25,028",
+     "$28,692"
+    ],
+    "values": [
+     25028.35,
+     28691.93
     ]
    }
   ],
@@ -87,6 +100,7 @@
     "wb-coaches",
     "wb-bus",
     "wb-officials",
+    "wb-gear",
     "wb-else"
    ],
    "text": "On the district’s FY2024 sheet, coaches and buses were the two largest costs."
@@ -208,6 +222,26 @@
    }
   },
   {
+   "id": "wb-gear",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "uniforms and equipment, FY2024, district workbook"
+   },
+   "value": {
+    "text": "$30,401",
+    "unit": "",
+    "value": 30401.1
+   }
+  },
+  {
    "id": "wb-else",
    "kind": "published",
    "label": {
@@ -219,12 +253,12 @@
      }
     },
     "literals": [],
-    "text": "everything else, FY2024, district workbook"
+    "text": "dues, police, assignor and misc, FY2024, district workbook"
    },
    "value": {
-    "text": "$55,429",
+    "text": "$25,028",
     "unit": "",
-    "value": 55429.45
+    "value": 25028.35
    }
   },
   {
@@ -409,11 +443,13 @@
      "Coaches",
      "Transportation",
      "Officials",
-     "Everything else",
+     "Uniforms and equipment",
+     "Everything else: dues, police, assignor",
      "Total"
     ],
     "key": "categories",
     "kinds": [
+     "stated",
      "stated",
      "stated",
      "stated",
@@ -428,7 +464,8 @@
        "$91,589",
        "$91,066",
        "$50,696",
-       "$50,371",
+       "$21,679",
+       "$28,692",
        "$283,721"
       ],
       "label": "FY2025"
@@ -438,13 +475,14 @@
        "$127,088",
        "$117,555",
        "$51,570",
-       "$55,429",
+       "$30,401",
+       "$25,028",
        "$351,643"
       ],
       "label": "FY2024"
      }
     ],
-    "total_col": 4
+    "total_col": 5
    }
   ]
  },

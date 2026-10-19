@@ -35,7 +35,10 @@ export const CAT_COLOUR: Record<string, string> = {
   Coaches: 'var(--ath-coaches)',
   Transportation: 'var(--ath-transport)',
   Officials: 'var(--ath-officials)',
-  'Everything else': NEUTRAL,
+  // Uniforms, Equipment and Equipment Recon: the workbook's gear columns, drawn rather than
+  // left in the residual. The fourth hue of the --bud-* set, validated with these three.
+  'Uniforms and equipment': 'var(--ath-gear)',
+  'Everything else: dues, police, assignor': NEUTRAL,
 }
 
 export const fy = (n: number) => `FY${String(n).slice(2)}`

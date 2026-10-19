@@ -70,12 +70,22 @@ CENT = 0.005
 # groups them that way, and regrouping them would put a second difference into a table
 # whose whole job is to isolate ONE -- the general fund side. The category is the
 # workbook's own column name, `Official`, not our idea of what officiating costs.
+#
+# UNIFORMS AND EQUIPMENT ARE DRAWN, NOT HIDDEN. The residual was a fifth of the sheet and
+# held the workbook's Uniforms, Equipment and Equipment Recon columns -- the gear a booster
+# president told the School Committee there was not enough of ("more heads than we have
+# helmets"). They are one band, named for exactly those three columns; the remainder is
+# labelled with what is in it (TJ, 19 October 2026, on an invented grouping: "that was bad!").
+REST = 'Everything else: dues, police, assignor'
 CATEGORY = {
     'Coaches': 'Coaches',
     'Transportation': 'Transportation',
     'Official': 'Officials',
+    'Uniforms': 'Uniforms and equipment',
+    'Equipment': 'Uniforms and equipment',
+    'Equipment Recon': 'Uniforms and equipment',
 }
-CAT_ORDER = ['Coaches', 'Transportation', 'Officials', 'Everything else']
+CAT_ORDER = ['Coaches', 'Transportation', 'Officials', 'Uniforms and equipment', REST]
 COST_METRICS = ['Coaches', 'Transportation', 'Official', 'Assignor', 'Police/ EMS',
                 'Uniforms', 'Equipment', 'Equipment Recon', 'Dues & Fees', 'Misc']
 
@@ -820,7 +830,7 @@ def build():
             printed[fy] += v
         if r['metric'] in COST_METRICS:
             metric_tot[fy][r['metric']] += v
-            by_cat[fy][CATEGORY.get(r['metric'], 'Everything else')] += v
+            by_cat[fy][CATEGORY.get(r['metric'], REST)] += v
 
     cost_years = sorted(printed)
     if not cost_years:
