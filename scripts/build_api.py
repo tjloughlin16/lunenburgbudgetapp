@@ -182,6 +182,31 @@ def q(db, sql, *a):
 
 
 _DOCS = None
+_GONE = None
+
+
+def withheld(row):
+    """Mark a document row whose /docs/ address answers 410.
+
+    A key in sources/data/takedowns.csv has stopped being served -- the three fund 1301
+    journal exports name a family on a returned fee check -- so its `path` no longer leads a
+    reader to the document. The row stays (the document exists, held privately), and says
+    why it is withheld and where the public replacement is, which is OUR redacted extract,
+    not the Town's export."""
+    global _GONE
+    if _GONE is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import archive_storage
+        _GONE = archive_storage.taken_down()
+    p = row.get('path') or row.get('doc_id') or ''
+    t = _GONE.get(p[len('sources/'):] if p.startswith('sources/') else p)
+    if t:
+        row['withheld'] = t['reason']
+        if t.get('superseded_by'):
+            row['public_copy'] = f"{SITE}/docs/{t['superseded_by']}"
+            row['public_copy_is'] = ('our redacted extract of the Town\u2019s MUNIS export '
+                                     '(the original is withheld)')
+    return row
 
 
 def _doc_index(db):
@@ -200,6 +225,7 @@ def _doc_index(db):
                                local_sha256 AS sha256 FROM document""")
         _DOCS = {}
         for r in rows:
+            withheld(r)
             _DOCS[r['doc_id']] = r
             _DOCS.setdefault(os.path.basename(r['path'] or r['doc_id']), r)
     return _DOCS
@@ -634,9 +660,10 @@ def main():
         about='Every source document: what produced its figures, where it lives, and '
               'whether our copy still matches the publisher\'s.',
         caveats=TABLES['document']['caveats'],
-        rows=q(db, """SELECT doc_id, path, source_type, basis, ledger_at, hidden_columns,
-                             url, link_state, copy_state, local_sha256, remote_sha256
-                      FROM document ORDER BY path"""),
+        rows=[withheld(r) for r in q(db, """SELECT doc_id, path, source_type, basis, ledger_at,
+                             hidden_columns, url, link_state, copy_state, local_sha256,
+                             remote_sha256
+                      FROM document ORDER BY path""")],
     ))
 
     # Everything else in the database, fetchable rather than merely named.

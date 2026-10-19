@@ -457,6 +457,35 @@ for f in sorted(os.listdir(REQ)):
         print(f'  FAIL  {f} sha256 not recorded in PROVENANCE.md')
         FAILS.append(f'sha {f}')
 
+# WITHHELD IS NOT ABSENT. The three fund 1301 journal exports were taken down on 19 October
+# 2026 (sources/data/takedowns.csv: they name a family), so they are no longer in this folder
+# and the loop above would skip them without a word -- three provenance checks quietly
+# becoming none. Check them from the register instead: the bytes the register says were
+# withheld must be the bytes the provenance note recorded, and the register must name the
+# public copy a reader is sent to.
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import archive_storage  # noqa: E402
+gone = archive_storage.taken_down()
+for y in (24, 25, 26):
+    key = f'town-ledgers/account-details/account-details-fy20{y}-fund1301.xlsx'
+    f = os.path.basename(key)
+    if os.path.exists(os.path.join(REQ, f)):
+        continue        # still on disk: the loop above has already checked it
+    CHECKS += 1
+    t = gone.get(key)
+    if not t:
+        print(f'  FAIL  {f} is not on disk and not in takedowns.csv -- missing, not withheld')
+        FAILS.append(f'sha {f}')
+    elif t['sha256'] not in prov:
+        print(f'  FAIL  {f} withheld, but the register sha256 is not in PROVENANCE-fund1301.md')
+        FAILS.append(f'sha {f}')
+    elif not t.get('superseded_by'):
+        print(f'  FAIL  {f} withheld with no public copy named in takedowns.csv')
+        FAILS.append(f'sha {f}')
+    else:
+        print(f"  ok    {f + ' (withheld; public copy ' + t['superseded_by'] + ')':<58} "
+              f"{t['sha256'][:16]}…")
+
 print(f'\n{CHECKS} checks, {len(FAILS)} failed')
 for f in FAILS:
     print(f'  - {f}')

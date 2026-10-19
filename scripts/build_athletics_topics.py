@@ -52,6 +52,7 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
+import archive_storage as ARCHIVE  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, 'sources', 'data')
@@ -141,12 +142,10 @@ def sources():
                  'Town of Lunenburg — Town Accountant (MUNIS)'),
         'sp24': ('town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx',
                  'Town of Lunenburg — Town Accountant (MUNIS)'),
-        'cash24': ('town-ledgers/account-details/account-details-fy2024-fund1301.xlsx',
-                   'Town of Lunenburg — Town Accountant (MUNIS)'),
-        'cash25': ('town-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
-                   'Town of Lunenburg — Town Accountant (MUNIS)'),
-        'cash26': ('town-ledgers/account-details/account-details-fy2026-fund1301.xlsx',
-                   'Town of Lunenburg — Town Accountant (MUNIS)'),
+        # The fund 1301 journal exports (account-details-fy2024/2025/2026-fund1301.xlsx) are
+        # WITHHELD and TAKEN DOWN (sources/data/takedowns.csv): they name a family on a
+        # returned fee check, and /docs/ answers 410 for them. Their figures are cited
+        # through 'd-cash' below, our redacted extract, and the label says so.
         'workbook': ('town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
                      'Lunenburg Public Schools'),
         'feecounts': ('town-ledgers/account-details/athletic-fee-counts-fy2026.docx',
@@ -160,14 +159,22 @@ def sources():
         'fy19': ('district-budget/docs/fy19-proposed-athletics-budget.pdf',
                  'Lunenburg Public Schools'),
     }
+    gone = ARCHIVE.taken_down()
     out = {}
     for k, (key, pub) in spec.items():
         if key not in man:
             fail('%s is not in archive-manifest.csv' % key)
+        if key in gone:
+            # A reader following this link would get a 410. Cite the register's public
+            # replacement instead, and say whose it is.
+            fail('%s is taken down (takedowns.csv); cite its replacement, %s'
+                 % (key, gone[key].get('superseded_by') or 'none registered'))
         out[k] = dict(label='%s — %s' % (pub, key.split('/')[-1]), href='/docs/' + key)
     ours = {
         'd-munis': ('munis-school-ytd.csv', 'the MUNIS year-end reports, one row an account'),
-        'd-cash': ('fund-1301-cash-journal.csv', 'the fund’s cashbook, every posting'),
+        'd-cash': ('fund-1301-cash-journal.csv',
+                   'our redacted extract of the Town’s MUNIS journal exports for fund 1301, '
+                   'every posting; the originals are withheld: they name a family'),
         'd-sport': ('athletics-by-sport.csv', 'the by-sport workbook, cell by cell'),
         'd-fincom': ('athletics-fincom.csv', 'the second per-sport sheet, cell by cell'),
         'd-fees': ('athletic-fee-schedule.csv', 'every athletic fee, with its source line'),
@@ -486,7 +493,7 @@ def build():
             note_figures={'k': N(min(TP.ROWS_MAX, teams)), 'n': N(teams), 'y': F(2024)}),
         said=[said_from(A['by_sport_said'], 0), said_from(A['by_sport_said'], 1),
               said_from(A['by_sport_said'], 2)],
-        sources=[src['bysport'], src['costs1'], src['workbook'], src['cash26'], src['d-sport'],
+        sources=[src['bysport'], src['costs1'], src['workbook'], src['d-sport'],
                  src['d-fincom'], src['d-cash']],
         finding_figures={'n': N(teams), 'y': F(2024)})
 
@@ -806,8 +813,9 @@ def build():
             columns=['Opening cash', 'Money in', 'Paid out', 'Of money in: journal entries',
                      'Closing cash'],
             rows=flow_rows,
-            note='MUNIS journal exports for fund 1301. Each year’s close ties to the next '
-                 'year’s printed opening. The latest year stops on 12 June 2026.')]),
+            note='Our redacted reading of the Town’s MUNIS journal exports for fund 1301 '
+                 '(the originals are withheld: they name a family). Each year’s close ties '
+                 'to the next year’s printed opening. The latest year stops on 12 June 2026.')]),
         said=[said_file('school-committee/2025-09-03-minutes-7385.txt',
                         'in the past 6 months or so there have been things that have come up, '
                         'athletic revolving fund was running in a deficit, I was told over '
@@ -816,7 +824,7 @@ def build():
                         'She emphasized the need for all revolving accounts to have a budget, '
                         'even if they are not town meeting revolving accounts, to prevent '
                         'negative balances from going unnoticed.', 'Finance Committee')],
-        sources=[src['cash24'], src['cash25'], src['cash26'], src['funds26'], src['d-cash']],
+        sources=[src['funds26'], src['d-cash']],
         finding_figures={'a': U(-flow[2024]['net']), 'y': F(2024), 'b': U(memo25),
                          'z': F(2025)})
 

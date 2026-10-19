@@ -43,6 +43,7 @@ from datetime import date
 
 import openpyxl
 
+import archive_storage as ARCHIVE
 import build_munis_request_xlsx as xlsx_mod
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -181,9 +182,34 @@ def c(key, page, quote=None, shot=None):
 _HELD_TEXT = {}
 
 
+def held_path(key):
+    """Where THIS tree reads a held report from.
+
+    A report in the takedown register (sources/data/takedowns.csv) is no longer in sources/:
+    the three fund 1301 journal exports name a family and are withheld, so /docs/ answers 410
+    for them. The Town still holds the original and this PDF quotes only its sheet name and
+    column headings, so it is read from the PRIVATE copy -- the gitignored cache
+    extract_fund1301_ledger.py keeps, fetched from the private bucket if absent -- and
+    refused unless it hashes to the sha256 the register records."""
+    rel = HELD[key][0]
+    gone = ARCHIVE.taken_down().get(rel)
+    if not gone:
+        return os.path.join(SRC, rel)
+    path = os.path.join(ROOT, 'build', 'private', 'munis', gone['private_key'])
+    if not os.path.exists(path):
+        blob = ARCHIVE.get_private(gone['private_key'])
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path + '.part', 'wb') as fh:
+            fh.write(blob)
+        os.replace(path + '.part', path)
+    if hashlib.sha256(open(path, 'rb').read()).hexdigest() != gone['sha256']:
+        sys.exit(f'{path}: not the {rel} the takedown register records')
+    return path
+
+
 def h(key, quote):
     """A quotation from one of the Town's own reports we hold."""
-    path = os.path.join(SRC, HELD[key][0])
+    path = held_path(key)
     if path.endswith('.xlsx'):
         if key not in _HELD_TEXT:
             wb = openpyxl.load_workbook(path, read_only=True)

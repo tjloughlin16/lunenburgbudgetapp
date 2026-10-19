@@ -40,6 +40,7 @@ import sys
 
 # The conclusions this report states, as DATA rather than as sentences in a page. See
 # scripts/conclusions.py.
+import archive_storage as ARCHIVE
 import conclusions as C
 from conclusions import conclusion, emit, figure
 
@@ -369,7 +370,23 @@ def build():
     if not ledger_years or not ledger_accounts:
         sys.exit('ledger_snapshot is empty. The page states which years ARE ledger-backed; '
                  'with no rows it would state that none are, which is a different claim.')
-    ledger_docs = [dict(path=r['path'], why=(r['ledger_why'] or '').strip())
+    # A ledger the archive holds PRIVATELY is still a ledger, so it stays in the count. But
+    # its /docs/ address answers 410 (sources/data/takedowns.csv), so it is marked withheld,
+    # with the register's printable reason and the public copy a reader can actually open.
+    gone = ARCHIVE.taken_down()
+
+    def ledger_doc(r):
+        d = dict(path=r['path'], why=(r['ledger_why'] or '').strip())
+        t = gone.get(r['path'][len('sources/'):] if r['path'].startswith('sources/') else r['path'])
+        if t:
+            d['withheld'] = t['reason']
+            if t.get('superseded_by'):
+                d['public_copy'] = '/docs/' + t['superseded_by']
+                d['public_copy_is'] = ('our redacted extract of the Town’s MUNIS export '
+                                       '(the original is withheld)')
+        return d
+
+    ledger_docs = [ledger_doc(r)
                    for r in sorted((v for v in basis_of.values()
                                     if v['source_type'] == 'ledger'),
                                    key=lambda v: v['path'])]
