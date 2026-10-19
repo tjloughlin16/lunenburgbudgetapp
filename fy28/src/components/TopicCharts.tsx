@@ -38,6 +38,8 @@ export type SeriesChart = {
   note: Unit | null
   reference?: { value: number; label: string; text: string } | null
   from_zero?: boolean
+  /** Small multiples: one panel per track, all on one scale from zero (scripts/topic.py). */
+  multiples?: boolean
 }
 export type RankingChart = {
   type: 'ranking'; title: string; unit: string; basis: Basis; stack: string[] | null
@@ -119,9 +121,11 @@ function Key({ colour, name, basis, mark, tag = true }: {
 
 /* ------------------------------------------------------------------- series */
 
-type TipProps = { active?: boolean; label?: string; c: SeriesChart; row?: Record<string, number | null> }
+type TipProps = { active?: boolean; label?: string; c: SeriesChart; row?: Record<string, number | null>
+  /** A small-multiples panel passes one track; this is its colour's place in the set. */
+  offset?: number }
 
-function SeriesTip({ active, label, c, payload }: TipProps & { payload?: { payload: Record<string, number | null> }[] }) {
+function SeriesTip({ active, label, c, payload, offset = 0 }: TipProps & { payload?: { payload: Record<string, number | null> }[] }) {
   if (!active || !payload?.length) return null
   const row = payload[0].payload
   const at = c.x.indexOf(String(label))
@@ -132,7 +136,7 @@ function SeriesTip({ active, label, c, payload }: TipProps & { payload?: { paylo
       {c.series.map((s, i) => row[`s${i}`] === undefined ? null : (
         <p key={s.name} className="flex items-center justify-between gap-5 tnum">
           <span className="inline-flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-            <span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: COLOURS[i] }} />
+            <span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: COLOURS[(i + offset) % COLOURS.length] }} />
             {s.name}{BASIS_TAG[s.basis] ? ` (${BASIS_TAG[s.basis]})` : ''}</span>
           <span className="font-semibold" style={{ color: row[`s${i}`] == null ? 'var(--text-muted)' : undefined }}>
             {shown(s.texts[at])}</span>
@@ -153,7 +157,66 @@ function seriesLabel(c: SeriesChart) {
   return `${c.title}. Chart in ${unitWord(c.unit)}, ${span}. ${each.join('; ')}.`
 }
 
+/** SMALL MULTIPLES. One panel per track, every panel on ONE scale from zero -- so each
+ *  track's own change reads as its own slope, and a big track still looks big beside a small
+ *  one. A stack cannot do the first: only its bottom band sits on a flat baseline. Each
+ *  panel prints its first and last value, so the change is readable without hovering. */
+function Multiples({ c }: { c: SeriesChart }) {
+  const max = Math.max(0, ...c.series.flatMap(s => s.values).filter((v): v is number => v != null))
+  // The shared scale tops out on a round number with a round midpoint ($12M, not $11.27M).
+  const mag = max > 0 ? Math.pow(10, Math.floor(Math.log10(max)) - 1) : 1
+  const top = ([2, 4, 6, 8, 10, 12, 15, 20, 30, 40, 60, 80, 100].find(m => m * mag >= max) ?? 100) * mag
+  const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
+  return (
+    <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
+        {c.series.map((s, i) => {
+          const pts = s.texts.map((t, k) => [c.x[k], t] as const).filter(([, t]) => t != null)
+          const first = pts[0], last = pts[pts.length - 1]
+          const est = s.basis === 'estimate'
+          const rows = c.x.map((x, k) => ({ x, s0: s.values[k] }))
+          return (
+            <div key={s.name} className="min-w-0">
+              <p className="text-[12.5px] font-semibold leading-snug flex items-center gap-1.5"
+                style={{ color: 'var(--text-primary)' }}>
+                <span className="inline-block w-2.5 h-2.5 rounded-[2px] shrink-0" style={{ background: COLOURS[i % COLOURS.length] }} />
+                {s.name}</p>
+              <p className="text-[11.5px] tnum mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                {first[1]} in {first[0]} &rarr; {last[1]} in {last[0]}</p>
+              <div style={{ height: 110 }} aria-hidden>
+                <ResponsiveContainer width="100%" height="100%">
+                  <ComposedChart data={rows} margin={{ top: 6, right: 26, bottom: 0, left: 0 }}>
+                    <CartesianGrid stroke="var(--grid)" vertical={false} />
+                    <XAxis dataKey="x" ticks={[c.x[0], c.x[c.x.length - 1]]} interval={0}
+                      tick={{ fill: 'var(--text-muted)', fontSize: 10 }} stroke="var(--axis)" tickLine={false} />
+                    <YAxis width={c.unit === '$' ? 50 : 40} domain={[0, top]} ticks={[0, top / 2, top]}
+                      tick={{ fill: 'var(--text-muted)', fontSize: 10 }} stroke="var(--axis)"
+                      tickLine={false} axisLine={false} tickFormatter={(v: number) => tick(c.unit, v)} />
+                    <Tooltip content={<SeriesTip c={{ ...c, series: [s] }} offset={i} />}
+                      cursor={{ fill: 'var(--surface-3)', opacity: 0.5 }} />
+                    {s.mark === 'bar' ? (
+                      <Bar dataKey="s0" fill={COLOURS[i % COLOURS.length]} isAnimationActive={false}
+                        fillOpacity={est ? 0.15 : s.basis === 'stated' ? 0.6 : 1} radius={[2, 2, 0, 0]} />
+                    ) : (
+                      <Line dataKey="s0" stroke={COLOURS[i % COLOURS.length]} strokeWidth={2}
+                        strokeDasharray={est ? '6 4' : undefined} dot={false} connectNulls={false}
+                        isAnimationActive={false} type="linear" />
+                    )}
+                  </ComposedChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <SrTable head={['', ...c.series.map(s => s.name)]}
+        rows={c.x.map((x, i) => [x, ...c.series.map(s => shown(s.texts[i]))])} />
+    </Frame>
+  )
+}
+
 function Series({ c }: { c: SeriesChart }) {
+  if (c.multiples) return <Multiples c={c} />
   const rows = c.x.map((x, i) => Object.fromEntries([['x', x],
     ...c.series.map((s, j) => [`s${j}`, s.values[i]] as const)]))
   const negative = c.series.some(s => s.values.some(v => v != null && v < 0))

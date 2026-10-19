@@ -99,10 +99,14 @@ SAID_MAX = 4
 
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
-         finding_figures=None, finding_allow=(), draft=None):
+         finding_figures=None, finding_allow=(), draft=None, also=()):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
-    only the title and the shelf come from the draft instead of scripts/topics.py."""
+    only the title and the shelf come from the draft instead of scripts/topics.py.
+
+    `also`: up to two more charts, drawn under the signature, for a second question the same
+    figures answer -- a stack says what a total is made of, small multiples how each part
+    moved. The signature stays first and stays the page's one remembered image."""
     if draft:
         title, home = draft['title'], draft['home']
         if not any(c['id'] == home for c in REG.CATEGORIES):
@@ -127,6 +131,11 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         raise ConclusionError('%s: two facts share an id' % id)
     bad = check_unit(f, '%s finding' % id)
     bad += check_chart(chart, id, required=CHART_REQUIRED)
+    if len(also) > 2:
+        bad.append('%s: %d extra charts; a topic draws its signature and at most two more'
+                   % (id, len(also)))
+    for i, c in enumerate(also):
+        bad += check_chart(c, '%s also %d' % (id, i + 1), required=True)
     for x in facts:
         bad += check_unit(x['label'], '%s %s label' % (id, x['id']))
     for i, c in enumerate(conclusions):
@@ -151,8 +160,9 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
                    % (id, TABLE_ROWS_MAX))
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
+    extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
     return dict(
-        id=id, kind='topic', title=title, category=home,
+        extra, id=id, kind='topic', title=title, category=home,
         path=('/%s/%s' % (home, id)) if draft else REG.path(id),
         shelves=[home] if draft else REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
         conclusions=list(conclusions), table=table, said=list(said), sources=list(sources),
@@ -251,13 +261,20 @@ def track(name, values, basis='published', mark=None):
 
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
-           note_allow=(), decimals=None, reference=None, from_zero=True):
+           note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
     from_zero: False lets a LINE chart's axis start near its data, for ratios that move
       within a few points. Refused with bars: a bar's length IS its value, and a bar
-      drawn from 90 overstates every difference."""
+      drawn from 90 overstates every difference.
+    multiples: SMALL MULTIPLES -- one small panel per track, every panel on the same scale
+      from zero, so each track's own change can be read and their sizes still compare. The
+      answer to a stack, where only the bottom band sits on a flat baseline (TJ, 19 October
+      2026: "Its hard with the stacking to see how each one ITSELF changed")."""
+    if multiples and (stacked or not from_zero or reference is not None):
+        raise ConclusionError('chart %r: small multiples are unstacked, from zero, with no '
+                              'reference line -- one shared scale is the point' % title)
     if not from_zero and any((t['mark'] or kind) == 'bar' for t in tracks):
         raise ConclusionError('chart %r: from_zero=False with bars -- a bar is measured from zero'
                               % title)
@@ -265,10 +282,13 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
     if reference is not None:
         rv, rl = reference
         ref = dict(value=rv, label=' '.join(str(rl).split()), text=fmt(unit, rv, decimals))
+    # `multiples` is written only when set, so no existing chart's payload changes.
     return _checked(dict(type='series', title=' '.join(title.split()), unit=unit, kind=kind,
                          stacked=bool(stacked), x=list(x),
                          series=[dict(t, mark=t['mark'] or kind) for t in tracks],
-                         decimals=decimals, reference=ref, from_zero=bool(from_zero), note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
+                         decimals=decimals, reference=ref, from_zero=bool(from_zero),
+                         note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
+                         **({'multiples': True} if multiples else {})))
 
 
 def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note=None,

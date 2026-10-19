@@ -894,6 +894,13 @@ def build():
             kind='bar', stacked=True,
             note='DESE’s spending by function, as printed, general fund plus grants and revolving '
                  'funds. Each bar is one year’s total.'),
+        # The same five, one panel each on one scale -- how each ITSELF changed, which a stack
+        # hides above its bottom band (TJ, 19 October 2026).
+        also=[TP.series('Each type on its own', [C.fy(y) for y in gy], [
+            TP.track(n, [band[n][y] for y in gy], 'published', 'line') for n, _ in STACK], '$',
+            multiples=True,
+            note='The same five groups, every panel on the same dollar scale, so a steeper line '
+                 'is a bigger rise in dollars.')],
         table=dict(caption='School spending by type, by year', views=[dict(
             key='years', label='By year', total_col=len(STACK), kinds=['ledger'] * (len(STACK) + 1),
             columns=[n for n, _ in STACK] + ['Total'],

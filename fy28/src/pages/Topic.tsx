@@ -50,6 +50,8 @@ type TopicPayload = {
   conclusions: (LadderUnit & { rests_on: string[]; notes?: Step[] })[]
   table: FigureTableData | null; said: Said[]; sources: { label: string; href: string }[]
   full_report: { href: string; label: string }
+  /** Up to two more charts under the signature (scripts/topic.py page(also=...)). */
+  also?: ChartRef[]
 }
 type HubPayload = {
   kind: 'hub'; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
@@ -273,6 +275,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           <Shelf ix={ix} t={p} />
           <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
           <TopicChart chart={p.chart} alt={p.title} />
+          {(p.also ?? []).map((c, i) => <TopicChart key={i} chart={c} alt={p.title} />)}
           <Ladder
             l={{ tiers: [{ title: 'The facts', facts: p.facts }], title: 'What it shows',
                  conclusions: p.conclusions.map((c, i) => ({ ...c, chain: c.notes?.length ? `n${i}` : undefined })) }}
