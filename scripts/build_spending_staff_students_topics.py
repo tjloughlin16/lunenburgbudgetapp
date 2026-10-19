@@ -339,6 +339,139 @@ def contract():
     return dict(fy=fy0, cola=cola, lo=min(cells), hi=max(cells))
 
 
+# ---------------------------------------------------------------------------- pay scales
+# TEACHER PAY COMPARED, BY SCHEDULE. sources/data/teacher-salary-schedules.csv is every cell of
+# every comparison district's teachers' salary schedule, read off the contract by
+# scripts/extract_teacher_salary_schedules.py. Lanes are named differently in every contract,
+# so comparing them needs an ALIGNMENT, and this one is OURS -- each district's printed lane
+# set against "bachelor's", "master's" and its highest lane:
+#   * Montachusett's lane IV is printed "Masters or BS+45 / Licensure+45": a master's OR a
+#     bachelor's plus 45 credits, so its master's lane is not master's alone.
+#   * Fitchburg's highest lane is MA+60; it prints no doctorate lane.
+#   * North Middlesex's BA+15 lane is closed since 1 July 2019 (its contract, Article 6,
+#     pdf page 23); its BA lane is the one used, and its two BA lanes stop at step 10.
+#   * "Highest lane" is the lane with the largest top step in that contract; asserted below.
+# "Top" is the highest step printed in that lane. A district printing two schedules for one
+# fiscal year (Harvard did, mid-year, in FY2020) would need a rule; none of the current ones
+# does, and build() refuses rather than choose silently if one starts to.
+SCHEDULES = os.path.join(DATA, 'teacher-salary-schedules.csv')
+SCHED_DOCS = os.path.join(DATA, 'teacher-salary-schedule-docs.csv')
+SHORT = {'Montachusett Regional Vocational Technical': 'Monty Tech'}
+LANES = {   # district: (bachelor's, master's, highest), each as the contract prints it
+    'Lunenburg': ('Bach', 'Masters', 'Doctorate'),
+    'Harvard': ('B', 'M', 'PhD'),
+    'North Middlesex': ('BA', 'MA', 'MA+75/Ph.D.'),
+    'Fitchburg': ('BA', 'MA', 'MA+60'),
+    'Montachusett Regional Vocational Technical': (
+        'I: BS / Licensure', 'IV: Masters or BS+45 / Licensure+45', 'VIII: CAGS / Masters'),
+}
+
+# LONGEVITY IS PAID OUTSIDE EVERY GRID. Each rule as the contract prints it: the extracted
+# text, the pdf page, and the amount by years of service completed. Every amount must be
+# printed on that page of the text or nothing is built. `at(years)` is the yearly longevity a
+# teacher with that many years would get -- OUR reading of each rule; the contracts count
+# service differently (Lunenburg teaching service in the district, Fitchburg continuous
+# service, Montachusett creditable service in the retirement system).
+LONGEVITY_YEARS = 25
+LONGEVITY = {
+    'Lunenburg': dict(
+        txt='contracts/txt/dese-teacher-contract.txt', page=28,
+        printed=[1900, 3800, 5700], words=['4%'],
+        tiers=[(15, 1900), (20, 3800), (25, 5700)],
+        text='%s, %s, %s added to step 13 at 15, 20, 25 years; 4%% of base at 30',
+        extra=None),
+    'Harvard': dict(
+        txt='contracts/txt/harvard-teachers-2023-2026.txt', page=None, printed=[], words=[],
+        tiers=[], text='none found in the agreement', extra=None),
+    'North Middlesex': dict(
+        txt='contracts/txt/north-middlesex-teachers-2024-2027.txt', page=56,
+        printed=[1350, 1600, 1850, 2150], words=[],
+        tiers=[(15, 1350), (20, 1600), (25, 1850), (30, 2150)],
+        text='%s, %s, %s, %s a year at 15, 20, 25, 30 years', extra=None),
+    'Fitchburg': dict(
+        txt='contracts/txt/fitchburg-teachers-2024-2027.txt', page=66,
+        printed=[1000, 500, 100, 2000], words=['seven (7)'],
+        # $1,000 from 7 years; from 15, $500 more, rising $100 a year to $2,000 at 30
+        tiers=[(7, 1000)] + [(y, 1000 + min(500 + 100 * (y - 15), 2000)) for y in range(15, 31)],
+        text='%s a year from 7 years; from 15, %s more, rising %s a year to %s', extra=None),
+    'Montachusett Regional Vocational Technical': dict(
+        txt='contracts/txt/dese-teacher-contract-montachusett.txt', page=10,
+        printed=[750, 1000, 1250, 1500, 15000], words=['$5000'],
+        tiers=[(15, 750), (20, 1000), (25, 1250), (30, 1500)],
+        text='%s, %s, %s, %s a year at 15, 20, 25, 30 years; optional %s over three years',
+        extra=15000),
+}
+
+
+def page_text(txt, page):
+    """One pdf page of an extracted contract text, by its ===PAGE n=== marker."""
+    import re
+    t = open(os.path.join(ROOT, 'sources', txt), encoding='utf-8').read()
+    parts = re.split(r'===PAGE (\d+)===', t)
+    pages = {int(parts[i]): parts[i + 1] for i in range(1, len(parts), 2)}
+    return pages if page is None else pages.get(page, '')
+
+
+def longevity():
+    """{district: {'at': {years: $}, 'text': as printed, 'page': n}}, each amount checked
+    against the page of the contract it is said to be printed on."""
+    out = {}
+    for d, r in LONGEVITY.items():
+        if r['page'] is None:
+            # NONE FOUND is a statement about our search, so the search is the whole text,
+            # every page, and the word is searched for, not a heading (rule 13c).
+            pages = page_text(r['txt'], None)
+            if any('longev' in p.lower() for p in pages.values()):
+                fail('%s now prints a longevity rule; LONGEVITY says none' % d)
+            r = dict(r, pages=len(pages))
+        else:
+            flat = ' '.join(page_text(r['txt'], r['page']).split())
+            for a in r['printed']:
+                if format(a, ',d') not in flat and str(a) not in flat:
+                    fail('%s longevity: %s is not printed on pdf page %d of %s'
+                         % (d, format(a, ',d'), r['page'], r['txt']))
+            for w in r['words']:
+                if w not in flat:
+                    fail('%s longevity: %r is not on pdf page %d' % (d, w, r['page']))
+        at = lambda y, t=r['tiers']: max([a for yy, a in t if yy <= y] or [0])
+        out[d] = dict(at=at, page=r['page'], pages=r.get('pages'),
+                      text=r['text'] % tuple(C.usd(a) for a in r['printed'][:r['text'].count('%s')])
+                      if r['printed'] else r['text'])
+    return out
+
+
+def schedules():
+    """({district: {fy: {lane: {step: $}}}}, {district: (schedule, doc)} for every fy), from
+    our table of the contracts. Refuses a district/year printed under two schedules."""
+    grid = collections.defaultdict(lambda: collections.defaultdict(
+        lambda: collections.defaultdict(dict)))
+    which = collections.defaultdict(set)
+    for r in csv.DictReader(open(SCHEDULES, encoding='utf-8')):
+        y = int(r['fy'])
+        which[(r['district'], y)].add((r['schedule'], r['doc']))
+        grid[r['district']][y][r['lane']][int(r['step'])] = float(r['salary'])
+    return grid, which
+
+
+def pay_distribution():
+    """(PD, PB, TOPS) from teacher-pay-distribution.csv: per-year measures, histogram bands,
+    and per-lane top-step counts. Counts and distributions only; no names (rule 13e)."""
+    PD = collections.defaultdict(dict)
+    PB = collections.defaultdict(list)
+    TOPS = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'teacher-pay-distribution.csv'),
+                                 encoding='utf-8')):
+        y, m, v = int(r['fy']), r['measure'], r['value']
+        if m == 'band':
+            lo, hi = r['note'].split('-')
+            PB[y].append((int(lo) if lo else None, int(hi) if hi else None, int(v)))
+        elif m in ('top_step_calendar', 'at_or_above_top', 'above_top_plus_longevity'):
+            TOPS.setdefault(r['note'], {})[m] = int(v)
+        elif m not in ('matched_by_rule', 'list_heading'):
+            PD[y][m] = float(v)
+    return PD, PB, TOPS
+
+
 def sources():
     man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
     out = {}
@@ -411,6 +544,25 @@ def sources():
     out['schedule-csv'] = dict(label='Lunenburg Budget Project — lea-teacher-salary-schedule.csv '
                                      '(the agreement’s salary schedules, step by lane)',
                                href='/docs/' + key)
+    # Every comparison contract whose schedule was read, labelled as the contracts catalogue
+    # labels it, keyed 'k:<doc>'; the pages pick the ones they use.
+    labels = {r['local']: r['label'] for r in
+              csv.DictReader(open(os.path.join(ROOT, 'sources', 'contracts', 'index.csv'),
+                                  encoding='utf-8'))}
+    for doc in sorted({r['doc'] for r in csv.DictReader(open(SCHEDULES, encoding='utf-8'))}):
+        if doc not in man or 'sources/' + doc not in labels:
+            fail('%s is not in archive-manifest.csv and the contracts catalogue' % doc)
+        out['k:' + doc] = dict(label='%s — %s' % (labels['sources/' + doc], doc.split('/')[-1]),
+                               href='/docs/' + doc)
+    for k, (f, what) in {
+            'schedules-csv': ('teacher-salary-schedules.csv', 'every cell of the comparison '
+                              'districts’ salary schedules, with its page'),
+            'schedule-docs-csv': ('teacher-salary-schedule-docs.csv', 'which contract each '
+                                  'schedule came from, and what it covers'),
+    }.items():
+        if not os.path.exists(os.path.join(DOCS_DATA, f)):
+            fail('/docs/data/%s is not published' % f)
+        out[k] = dict(label='Lunenburg Budget Project — %s (%s)' % (f, what), href='/docs/data/' + f)
     return out
 
 
@@ -1227,94 +1379,219 @@ def build():
     if set(EXS) != set(six):
         fail('the experienced share is missing for one of the six in FY%d' % ly)
     eplace = sorted(six, key=lambda l: -EXS[l]).index(LEA) + 1
-    if abs(W[odd] - SAL[LEA][odd]) >= 1:
-        fail('in the swing year DESE’s average no longer equals Teachers spending over FTE')
-    if place(odd) != 1:
-        fail('Lunenburg is no longer first in the swing year; the second conclusion says it is')
     if odd not in sy:
         fail('the swing year is outside the salary years')
     Ord = lambda n: figure(n, ORD(n), 'place')
     OF = lambda a, b, unit=None: figure(a, '%s of %s' % (C.num(a), C.num(b)), unit)
-    lo_v, lo_step, lo_lane = KC['lo']
-    hi_v, hi_step, hi_lane = KC['hi']
-    SCHED = ('each district’s teacher contract as filed with DESE, its salary schedule read '
-             'into a table, step by lane')
     lyf = {'y': F(ly)}
+
+    # ---- the salary SCHEDULES. The year compared is the latest one the most districts' held
+    # contracts cover (ours): later years have fewer districts, and every year is in the table.
+    LEA_NAME = RN[LEA]
+    G, WHICH = schedules()
+    cover = collections.defaultdict(set)
+    for d, ys in G.items():
+        for y in ys:
+            cover[y].add(d)
+    sfy = max(cover, key=lambda y: (len(cover[y]), y))
+    held = sorted(cover[sfy])
+    if LEA_NAME not in held:
+        fail('Lunenburg has no schedule for FY%d' % sfy)
+    if set(held) != set(LANES):
+        fail('the districts with an FY%d schedule (%s) are not the ones LANES aligns'
+             % (sfy, ', '.join(held)))
+    stale = {d: max(G[d]) for d in G if max(G[d]) < sfy}      # read, but expired
+    for y in (sfy - 1, sfy):
+        for d in held:
+            if len(WHICH[(d, y)]) != 1:
+                fail('%s prints %d schedules for FY%d; choose one and say which on the page'
+                     % (d, len(WHICH[(d, y)]), y))
+    snm = lambda d: SHORT.get(d, d)
+
+    def cells(y):
+        out_ = {}
+        for d in held:
+            g = G[d][y]
+            b, m, h = (g[l] for l in LANES[d])
+            if any(not g[l] for l in LANES[d]):
+                fail('%s FY%d: an aligned lane is not in the schedule' % (d, y))
+            if max(g, key=lambda l: g[l][max(g[l])]) != LANES[d][2]:
+                fail('%s FY%d: %s is not its highest-paid lane' % (d, y, LANES[d][2]))
+            out_[d] = dict(ba1=b[1], batop=b[max(b)], ma1=m[1], matop=m[max(m)],
+                           hitop=h[max(h)], bast=max(b), mast=max(m))
+        return out_
+    SC6, SC5 = cells(sfy), cells(sfy - 1)
+    srank = lambda cs, k, d=LEA_NAME: sorted(held, key=lambda x: -cs[x][k]).index(d) + 1
+    ns = len(held)
+    RK = {k: srank(SC6, k) for k in ('ba1', 'batop', 'ma1', 'matop', 'hitop')}
+    if not (RK['matop'] == RK['batop'] == RK['ba1'] == ns):
+        fail('Lunenburg is no longer lowest on the bachelor’s start and both top steps; the '
+             'finding and first conclusion say it is')
+    if srank(SC5, 'ba1') != ns:
+        fail('Lunenburg’s FY%d bachelor’s step 1 is no longer the lowest' % (sfy - 1))
+    LG = longevity()
+    LY = LONGEVITY_YEARS
+    withl = {d: SC6[d]['matop'] + LG[d]['at'](LY) for d in held}
+    lrank = sorted(held, key=lambda d: -withl[d]).index(LEA_NAME) + 1
+    if max(held, key=lambda d: LG[d]['at'](LY)) != LEA_NAME:
+        fail('Lunenburg’s longevity is no longer the largest at %d years' % LY)
+    six_miss = [nm(l) for l in six if nm(l) not in held]
+    if not six_miss or any(m not in stale for m in six_miss):
+        fail('the six districts missing a current schedule are not all among those read')
+    mx = max(held, key=lambda d: SC6[d]['matop'])
+    stp = [SC6[d][k] for d in held for k in ('bast', 'mast')]
+    monty = 'Montachusett Regional Vocational Technical'
+    PD, _, TOPS = pay_distribution()
+
+    def sched_view(cs, y, key):
+        cols = ['Bachelor’s, step 1', 'Bachelor’s, top', 'Master’s, step 1', 'Master’s, top',
+                'Highest lane, top', 'Steps, BA / MA']
+        ks = ('ba1', 'batop', 'ma1', 'matop', 'hitop')
+        rows = [dict(label=snm(d), cells=[C.usd(cs[d][k]) for k in ks]
+                     + ['%d / %d' % (cs[d]['bast'], cs[d]['mast'])])
+                for d in sorted(held, key=lambda d: -cs[d]['matop'])]
+        rows.append(dict(label='Lunenburg’s place, highest first',
+                         cells=['%s of %d' % (ORD(srank(cs, k)), ns) for k in ks] + [None]))
+        return dict(key=key, label='Schedules, %s' % C.fy(y), total_col=-1,
+                    kinds=['ledger'] * len(cols), columns=cols, rows=rows,
+                    note='Each contract’s base salary schedule, lanes aligned by us (see Lanes '
+                         'compared). Longevity and stipends are paid outside it.')
+    pl = max(PD)
+    nfull, mtop = int(PD[pl]['full_year']), TOPS['Masters']['at_or_above_top']
+    CURRENT = ('each district’s current teachers’ agreement with its salary schedules, by '
+               'records request')
+    sy_ = {'y': F(sfy)}
+    YRS = figure(LY, str(LY), 'years')
     out['teacher-pay-compared'] = TP.page(
         'teacher-pay-compared',
-        'On DESE’s average teacher salary, Lunenburg was %s of the six districts compared in %s.'
-        % (ORD(place(ly)), C.fy(ly)),
-        [f('sal', U(SAL[LEA][ly]), 'Lunenburg’s average teacher salary, %s' % C.fy(ly),
+        'On the %s %s salary schedules held, Lunenburg’s top step was lowest in the bachelor’s '
+        'and master’s lanes.' % (C.num(ns), C.fy(sfy)),
+        [f('matop', U(SC6[LEA_NAME]['matop']), 'Lunenburg’s master’s top step, %s' % C.fy(sfy),
+           'contract', sy_),
+         f('marank', OF(RK['matop'], ns, 'districts'), 'its place on that step, highest first',
+           'contract'),
+         f('mahi', U(SC6[mx]['matop']), '%s’s, the highest of them' % snm(mx), 'contract'),
+         f('batop', U(SC6[LEA_NAME]['batop']), 'Lunenburg’s bachelor’s top step, %s of %s'
+           % (ORD(RK['batop']), C.num(ns)), 'contract',
+           {'r': Ord(RK['batop']), 'n': N(ns, 'districts')}),
+         f('ba1', U(SC6[LEA_NAME]['ba1']), 'its bachelor’s starting pay, %s of %s'
+           % (ORD(RK['ba1']), C.num(ns)), 'contract',
+           {'r': Ord(RK['ba1']), 'n': N(ns, 'districts')}),
+         f('lng', U(withl[LEA_NAME]), 'its master’s top plus longevity at %d years, ours' % LY,
+           'estimate', {'a': YRS}),
+         f('lngr', OF(lrank, ns, 'districts'), 'its place, each contract’s longevity added',
+           'estimate'),
+         f('current', None, 'no current schedule held, %s districts read'
+           % C.num(len(stale)), 'gap', {'n': N(len(stale), 'districts')}, closes=CURRENT),
+         f('sal', U(SAL[LEA][ly]), 'Lunenburg’s average teacher salary, %s' % C.fy(ly),
            'published', lyf),
-         f('rank', OF(place(ly), len(six), 'districts'), 'its place, highest first', 'published'),
-         f('hi', U(SAL[order[0]][ly]), '%s, the highest of the six' % nm(order[0]), 'published'),
-         f('lo', U(SAL[order[-1]][ly]), '%s, the lowest' % nm(order[-1]), 'published'),
-         f('r0', Ord(place(sy[0])), 'its place in %s' % C.fy(sy[0]), 'published', {'y': F(sy[0])}),
-         f('rodd', Ord(place(odd)), 'its place in %s, the swing year' % C.fy(odd), 'published',
-           {'y': F(odd)}),
+         f('rank', OF(place(ly), len(six), 'districts'), 'its place among the project’s six',
+           'published'),
          f('wide', OF(wplace, len(trad), 'districts'), 'its place on all of DESE’s sheet, our cut',
            'published'),
          f('exp', PC(100 * EXS[LEA]), 'teachers DESE counts experienced, %s' % C.fy(ly),
-           'published', lyf),
-         f('expr', Ord(eplace), 'its place on that share among the six', 'published'),
-         f('slo', U(lo_v), 'lowest pay on Lunenburg’s %s salary schedule' % C.fy(KC['fy']),
-           'contract', {'y': F(KC['fy'])}),
-         f('shi', U(hi_v), 'highest on it, the %s lane' % hi_lane.lower(), 'contract'),
-         f('sched', None, 'the other five districts’ salary schedules', 'gap', closes=SCHED)],
-        [con('Lunenburg’s average was %s in %s, %s of six; %s’s %s was first.'
-             % (C.usd(SAL[LEA][ly]), C.fy(ly), ORD(place(ly)), nm(order[0]),
-                C.usd(SAL[order[0]][ly])), ['sal', 'rank', 'hi', 'lo'],
-             {'a': U(SAL[LEA][ly]), 'y': F(ly), 'r': Ord(place(ly)), 'b': U(SAL[order[0]][ly])},
-             notes=[step('The six are this project’s choice; no document records why these six. '
-                         'Among the %s town districts on DESE’s sheet it was %s.'
-                         % (C.num(len(trad)), ORD(wplace)), 'measured',
-                         {'n': N(len(trad)), 'r': Ord(wplace)}),
-                    step('Left out of those, our call: a vocational school, charter schools and '
-                         'virtual schools, which are not town districts.', 'measured')]),
-         con('It was %s of six in %s and %s in %s, the year DESE’s teachers line swung.'
-             % (ORD(place(sy[0])), C.fy(sy[0]), ORD(place(odd)), C.fy(odd)), ['r0', 'rodd'],
-             {'a': Ord(place(sy[0])), 'y': F(sy[0]), 'b': Ord(place(odd)), 'z': F(odd)},
-             notes=[step('In %s Lunenburg’s teachers line rose and its insurance line fell by '
-                         'millions, both reversing a year later; that year this average equals '
-                         'that line over teacher FTE.' % C.fy(odd), 'measured', {'y': F(odd)})]),
-         con('Whether Lunenburg’s salary schedule sits below the others’ is not measured here.',
-             ['sched', 'slo', 'shi'],
-             notes=[step('An average is not a schedule: a higher average fits a lower schedule '
-                         'if more teachers sit on top steps or in higher lanes.', 'hypothesis'),
-                    step('Lunenburg’s %s schedule runs %s to %s; the other five have not been '
-                         'read.' % (C.fy(KC['fy']), C.usd(lo_v), C.usd(hi_v)), 'gap',
-                         {'y': F(KC['fy']), 'a': U(lo_v), 'b': U(hi_v)}, closes=SCHED)]),
+           'published', lyf)],
+        [con('Lunenburg’s master’s top was %s, against %s’s %s; its bachelor’s start was '
+             'lowest too.' % (C.usd(SC6[LEA_NAME]['matop']), snm(mx), C.usd(SC6[mx]['matop'])),
+             ['matop', 'marank', 'mahi', 'batop', 'ba1', 'current'],
+             {'a': U(SC6[LEA_NAME]['matop']), 'b': U(SC6[mx]['matop'])},
+             notes=[step('Its master’s start was %s and its highest lane’s top %s. Lanes are '
+                         'aligned by us.' % (ORD(RK['ma1']), ORD(RK['hitop'])),
+                         'measured', {'a': Ord(RK['ma1']), 'b': Ord(RK['hitop'])}),
+                    step('The top step is step %s to step %s by contract, so it is not the same '
+                         'years of service everywhere.' % (min(stp), max(stp)), 'measured',
+                         {'a': N(min(stp), 'step'), 'b': N(max(stp), 'step')}),
+                    step('%s districts read have no current contract held, %s of them in the '
+                         'project’s six, which cannot be compared on scale.'
+                         % (C.num(len(stale)), C.num(len(six_miss))), 'gap',
+                         {'a': N(len(stale), 'districts'), 'b': N(len(six_miss), 'districts')},
+                         closes=CURRENT)]),
+         con('With each contract’s longevity at %d years, our arithmetic, its master’s top is '
+             '%s, %s of %s.' % (LY, C.usd(withl[LEA_NAME]), ORD(lrank), C.num(ns)),
+             ['lng', 'lngr'],
+             {'y': YRS, 'a': U(withl[LEA_NAME]), 'r': Ord(lrank), 'n': N(ns, 'districts')},
+             notes=[step('Longevity is paid outside every grid; at %d years Lunenburg’s, %s, is '
+                         'the largest, and Harvard’s agreement prints none.'
+                         % (LY, C.usd(LG[LEA_NAME]['at'](LY))), 'measured',
+                         {'y': YRS, 'a': U(LG[LEA_NAME]['at'](LY))}),
+                    step('Each contract counts service its own way; %s’s optional %s is left out. '
+                         'Rules and pages are in the table.'
+                         % (snm(monty), C.usd(LONGEVITY[monty]['extra'])), 'estimate',
+                         {'a': U(LONGEVITY[monty]['extra'])})]),
+         con('On DESE’s average teacher salary Lunenburg was %s of the project’s six in %s.'
+             % (ORD(place(ly)), C.fy(ly)), ['sal', 'rank', 'wide'],
+             {'r': Ord(place(ly)), 'y': F(ly)},
+             notes=[step('A low scale fits a high average if the staff sits high on it: in calendar %d, '
+                         '%s matched teachers were paid at least the master’s top, gross.'
+                         % (pl, '%s of %s' % (C.num(mtop), C.num(nfull))), 'hypothesis',
+                         {'y': figure(pl, str(pl), 'calendar year'),
+                          'a': OF(mtop, nfull, 'teachers')},
+                         cite=(REG.path('teachers-on-the-scale'), 'Teachers on the scale')),
+                    step('The six are this project’s choice. Among the %s town districts on '
+                         'DESE’s sheet it was %s.' % (C.num(len(trad)), ORD(wplace)), 'measured',
+                         {'n': N(len(trad)), 'r': Ord(wplace)})]),
          con('DESE counted %s of Lunenburg’s teachers experienced in %s, %s of the six.'
-             % (C.pct(100 * EXS[LEA]), C.fy(ly), ORD(eplace)), ['exp', 'expr'],
+             % (C.pct(100 * EXS[LEA]), C.fy(ly), ORD(eplace)), ['exp'],
              {'a': PC(100 * EXS[LEA]), 'y': F(ly), 'r': Ord(eplace)},
              notes=[step('No document we hold defines experienced, and a share past a threshold '
                          'cannot see veterans moving up steps.', 'gap', closes=EXP_DEF)])],
-        chart=TP.ranking('Average teacher salary, six districts',
+        chart=TP.ranking('Master’s lane top step by district',
+                         [(snm(d), SC6[d]['matop']) for d in held], '$', highlight='Lunenburg',
+                         basis='published',
+                         note='Each contract’s %s salary schedule, master’s lane, highest step '
+                              'printed. %s’s lane also takes a bachelor’s plus credits.'
+                              % (C.fy(sfy), snm(monty)), note_figures=sy_),
+        also=[TP.series('Starting and top pay by district', [snm(d) for d in
+                        [LEA_NAME] + [d for d in held if d != LEA_NAME]], [
+                  TP.track(name, [SC6[d][k] for d in [LEA_NAME] + [d for d in held
+                                                                    if d != LEA_NAME]],
+                           'published', 'bar')
+                  for name, k in (('Bachelor’s, step 1', 'ba1'), ('Bachelor’s, top', 'batop'),
+                                  ('Master’s, step 1', 'ma1'), ('Master’s, top', 'matop'))],
+                  '$', kind='bar',
+                  note='%s salary schedules, lanes aligned by us. Longevity, paid outside the '
+                       'grid, is not in these.' % C.fy(sfy), note_figures=sy_,
+                  note_allow=('1',)),
+              TP.ranking('Average teacher salary, six districts',
                          [(nm(l), SAL[l][ly]) for l in six], '$', highlight='Lunenburg',
-                         note='DESE’s comparison sheet, %s. The six are this project’s choice.'
-                              % C.fy(ly), note_figures=lyf),
-        also=[TP.series('Average teacher salary by year', [C.fy(y) for y in sy], [
-                  TP.track(nm(l), [SAL[l][y] for y in sy], 'published', 'line',
-                           colour=0 if l == LEA else 1) for l in order], '$', multiples=True,
-                  note='One scale for all six; Lunenburg’s panel has its own colour.'),
-              TP.ranking('Teachers DESE counts experienced, six districts',
-                         [(nm(l), 100 * EXS[l]) for l in six], '%', highlight='Lunenburg',
-                         decimals=1,
-                         note='DESE, %s. A more senior staff raises an average salary with no '
-                              'change to the schedule.' % C.fy(ly), note_figures=lyf)],
-        table=dict(caption='Average teacher salary, six districts', views=[
-            dict(key='latest', label=C.fy(ly), total_col=-1, kinds=['ledger'] * 3,
+                         note='DESE’s comparison sheet, %s. The six are this project’s choice; '
+                              'an average reflects who is employed, not only the scale.'
+                              % C.fy(ly), note_figures=lyf)],
+        table=dict(caption='Teacher pay: salary schedules and DESE’s average', views=[
+            sched_view(SC6, sfy, 'schedule'), sched_view(SC5, sfy - 1, 'schedule-prev'),
+            dict(key='lanes', label='Lanes compared', total_col=-1, kinds=['ledger'] * 3,
+                 columns=['Bachelor’s', 'Master’s', 'Highest lane'],
+                 rows=[dict(label=snm(d), cells=list(LANES[d])) for d in held],
+                 note='Each lane as its contract prints it; the alignment is ours. North '
+                      'Middlesex’s BA+15 lane is closed to new entrants.'),
+            dict(key='longevity', label='Longevity', total_col=-1, kinds=['ledger'] * 4,
+                 columns=['As the contract prints it', 'At %d years, ours' % LY,
+                          'Master’s top plus that, ours', 'Contract page'],
+                 rows=[dict(label=snm(d), cells=[
+                     LG[d]['text'], C.usd(LG[d]['at'](LY)), C.usd(withl[d]),
+                     ('pdf page %d' % LG[d]['page']) if LG[d]['page']
+                     else 'all %d pages searched' % LG[d]['pages']])
+                     for d in sorted(held, key=lambda d: -withl[d])],
+                 note='Paid outside the salary grid. Each contract counts years of service its '
+                      'own way; the reading at %d years is ours.' % LY),
+            dict(key='missing', label='Not current', total_col=-1, kinds=['ledger'],
+                 columns=['Latest schedule held'],
+                 rows=[dict(label=d, cells=[C.fy(stale[d])]) for d in sorted(stale)],
+                 note='Read from the latest contract each district filed with DESE; none covers '
+                      '%s.' % C.fy(sfy)),
+            dict(key='latest', label='Average, %s' % C.fy(ly), total_col=-1, kinds=['ledger'] * 3,
                  columns=['Average salary', 'Experienced', 'Teacher FTE'],
                  rows=[dict(label=nm(l), cells=[C.usd(SAL[l][ly]), C.pct(100 * EXS[l]),
                                                 '%.1f' % RA[l]['Teacher FTE'][ly]])
                        for l in order],
                  note='DESE’s comparison sheet and teacher data, as printed.'),
-            dict(key='years', label='By year', total_col=-1, kinds=['ledger'] * 4,
+            dict(key='years', label='Average by year', total_col=-1, kinds=['ledger'] * 4,
                  columns=['Lunenburg', 'Its place of six', 'Highest', 'Lowest'],
                  rows=[dict(label=C.fy(y), cells=[
                      C.usd(SAL[LEA][y]), ORD(place(y)), C.usd(max(SAL[l][y] for l in six)),
                      C.usd(min(SAL[l][y] for l in six))]) for y in reversed(sy)],
-                 note='DESE’s comparison sheet. %s is the swing year.' % C.fy(odd)),
+                 note='DESE’s comparison sheet. In %s DESE’s teachers line swung; that year the '
+                      'average equals that line over teacher FTE.' % C.fy(odd)),
             dict(key='wide', label='All of DESE’s sheet', total_col=-1, kinds=['ledger'],
                  columns=['Average salary, %s' % C.fy(ly)],
                  rows=[dict(label=RN[l] + (' (left out)' if l in other else ''),
@@ -1322,9 +1599,11 @@ def build():
                        for l in sorted(allsal, key=lambda l: -RA[l]['Average Teacher Salary'][ly])],
                  note='Every district DESE’s comparison sheet prints. Leaving out the vocational, '
                       'charter and virtual schools is ours.')]),
-        sources=S('radar', 'radar-csv', 'teachers', 'subject-csv', 'contract', 'contract-txt',
-                  'schedule-csv'),
-        finding_figures={'r': Ord(place(ly)), 'y': F(ly)})
+        sources=[src['k:' + doc] for doc in sorted({dc for d in held
+                                                    for _, dc in WHICH[(d, sfy)]})]
+        + S('schedules-csv', 'schedule-docs-csv', 'radar', 'radar-csv', 'teachers',
+            'subject-csv', 'paydist-csv'),
+        finding_figures={'n': N(ns, 'districts'), 'y': F(sfy)})
 
 
     # ================================================================ teachers on the scale
@@ -1335,19 +1614,7 @@ def build():
     # post; scripts/extract_teacher_pay.py joins the two PRIVATELY (rule 13e) and publishes
     # only counts and distributions, which is all this page reads.
     import extract_teacher_pay as XP
-    PD = collections.defaultdict(dict)
-    PB = collections.defaultdict(list)
-    TOPS = {}
-    for r in csv.DictReader(open(os.path.join(DATA, 'teacher-pay-distribution.csv'),
-                                 encoding='utf-8')):
-        y, m, v = int(r['fy']), r['measure'], r['value']
-        if m == 'band':
-            lo, hi = r['note'].split('-')
-            PB[y].append((int(lo) if lo else None, int(hi) if hi else None, int(v)))
-        elif m in ('top_step_calendar', 'at_or_above_top', 'above_top_plus_longevity'):
-            TOPS.setdefault(r['note'], {})[m] = int(v)
-        elif m not in ('matched_by_rule', 'list_heading'):
-            PD[y][m] = float(v)
+    PD, PB, TOPS = pay_distribution()
     py = sorted(PD)
     pl = py[-1]
     if 'top_step_calendar' not in TOPS.get('Masters', {}) or 'Bach' not in TOPS:

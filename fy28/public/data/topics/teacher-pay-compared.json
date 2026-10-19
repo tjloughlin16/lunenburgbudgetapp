@@ -3,196 +3,114 @@
   {
    "decimals": null,
    "from_zero": true,
-   "kind": "line",
-   "multiples": true,
+   "kind": "bar",
    "note": {
-    "figures": {},
-    "literals": [],
-    "text": "One scale for all six; Lunenburg’s panel has its own colour."
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "1"
+    ],
+    "text": "FY2026 salary schedules, lanes aligned by us. Longevity, paid outside the grid, is not in these."
    },
    "reference": null,
    "series": [
     {
      "basis": "published",
-     "change": "+$13,936",
-     "colour": 1,
-     "mark": "line",
-     "name": "Harvard",
+     "mark": "bar",
+     "name": "Bachelor’s, step 1",
      "texts": [
-      "$85,200",
-      "$95,198",
-      "$93,735",
-      "$86,248",
-      "$92,249",
-      "$90,257",
-      "$91,787",
-      "$99,136"
+      "$52,822",
+      "$57,019",
+      "$56,949",
+      "$57,294",
+      "$58,382"
      ],
      "values": [
-      85200.0,
-      95198.0,
-      93735.0,
-      86248.0,
-      92249.0,
-      90257.0,
-      91787.0,
-      99136.0
+      52822.0,
+      57019.0,
+      56949.0,
+      57294.0,
+      58382.0
      ]
     },
     {
      "basis": "published",
-     "change": "+$22,997",
-     "colour": 0,
-     "mark": "line",
-     "name": "Lunenburg",
+     "mark": "bar",
+     "name": "Bachelor’s, top",
      "texts": [
-      "$74,236",
-      "$77,908",
-      "$83,054",
-      "$85,067",
-      "$85,426",
-      "$88,019",
-      "$98,894",
-      "$97,233"
+      "$82,038",
+      "$86,626",
+      "$83,722",
+      "$97,385",
+      "$83,003"
      ],
      "values": [
-      74236.0,
-      77908.0,
-      83054.0,
-      85067.0,
-      85426.0,
-      88019.0,
-      98894.0,
-      97233.0
+      82038.0,
+      86626.0,
+      83722.0,
+      97385.0,
+      83003.0
      ]
     },
     {
      "basis": "published",
-     "change": "+$17,794",
-     "colour": 1,
-     "mark": "line",
-     "name": "Groton-Dunstable",
+     "mark": "bar",
+     "name": "Master’s, step 1",
      "texts": [
-      "$79,346",
-      "$81,239",
-      "$83,460",
-      "$84,511",
-      "$84,514",
-      "$88,744",
-      "$91,218",
-      "$97,140"
+      "$60,958",
+      "$61,826",
+      "$61,137",
+      "$61,885",
+      "$60,707"
      ],
      "values": [
-      79346.0,
-      81239.0,
-      83460.0,
-      84511.0,
-      84514.0,
-      88744.0,
-      91218.0,
-      97140.0
+      60958.0,
+      61826.0,
+      61137.0,
+      61885.0,
+      60707.0
      ]
     },
     {
      "basis": "published",
-     "change": "+$18,786",
-     "colour": 1,
-     "mark": "line",
-     "name": "North Middlesex",
+     "mark": "bar",
+     "name": "Master’s, top",
      "texts": [
-      "$69,995",
-      "$73,007",
-      "$75,065",
-      "$77,865",
-      "$79,434",
-      "$80,669",
-      "$83,109",
-      "$88,781"
+      "$90,212",
+      "$92,636",
+      "$95,676",
+      "$101,965",
+      "$97,128"
      ],
      "values": [
-      69995.0,
-      73007.0,
-      75065.0,
-      77865.0,
-      79434.0,
-      80669.0,
-      83109.0,
-      88781.0
-     ]
-    },
-    {
-     "basis": "published",
-     "change": "+$23,074",
-     "colour": 1,
-     "mark": "line",
-     "name": "Ayer Shirley",
-     "texts": [
-      "$63,017",
-      "$64,689",
-      "$70,600",
-      "$72,701",
-      "$74,484",
-      "$78,954",
-      "$85,887",
-      "$86,091"
-     ],
-     "values": [
-      63017.0,
-      64689.0,
-      70600.0,
-      72701.0,
-      74484.0,
-      78954.0,
-      85887.0,
-      86091.0
-     ]
-    },
-    {
-     "basis": "published",
-     "change": "+$15,382",
-     "colour": 1,
-     "mark": "line",
-     "name": "Ashburnham-Westminster",
-     "texts": [
-      "$69,342",
-      "$70,800",
-      "$71,534",
-      "$74,493",
-      "$75,723",
-      "$78,780",
-      "$80,274",
-      "$84,724"
-     ],
-     "values": [
-      69342.0,
-      70800.0,
-      71534.0,
-      74493.0,
-      75723.0,
-      78780.0,
-      80274.0,
-      84724.0
+      90212.0,
+      92636.0,
+      95676.0,
+      101965.0,
+      97128.0
      ]
     }
    ],
    "stacked": false,
-   "title": "Average teacher salary by year",
+   "title": "Starting and top pay by district",
    "type": "series",
    "unit": "$",
    "x": [
-    "FY2018",
-    "FY2019",
-    "FY2020",
-    "FY2021",
-    "FY2022",
-    "FY2023",
-    "FY2024",
-    "FY2025"
+    "Lunenburg",
+    "Fitchburg",
+    "Harvard",
+    "Monty Tech",
+    "North Middlesex"
    ]
   },
   {
    "basis": "published",
-   "decimals": 1,
+   "decimals": null,
    "highlight": [
     "Lunenburg"
    ],
@@ -205,62 +123,62 @@
      }
     },
     "literals": [],
-    "text": "DESE, FY2025. A more senior staff raises an average salary with no change to the schedule."
+    "text": "DESE’s comparison sheet, FY2025. The six are this project’s choice; an average reflects who is employed, not only the scale."
    },
    "rows": [
     {
      "label": "Harvard",
      "texts": [
-      "84.5%"
+      "$99,136"
      ],
-     "total": "84.5%",
-     "value": 84.5
-    },
-    {
-     "label": "Groton-Dunstable",
-     "texts": [
-      "84.5%"
-     ],
-     "total": "84.5%",
-     "value": 84.5
-    },
-    {
-     "label": "Ashburnham-Westminster",
-     "texts": [
-      "82.8%"
-     ],
-     "total": "82.8%",
-     "value": 82.8
+     "total": "$99,136",
+     "value": 99136.0
     },
     {
      "label": "Lunenburg",
      "texts": [
-      "82.3%"
+      "$97,233"
      ],
-     "total": "82.3%",
-     "value": 82.3
+     "total": "$97,233",
+     "value": 97233.0
+    },
+    {
+     "label": "Groton-Dunstable",
+     "texts": [
+      "$97,140"
+     ],
+     "total": "$97,140",
+     "value": 97140.0
     },
     {
      "label": "North Middlesex",
      "texts": [
-      "79.6%"
+      "$88,781"
      ],
-     "total": "79.6%",
-     "value": 79.60000000000001
+     "total": "$88,781",
+     "value": 88781.0
     },
     {
      "label": "Ayer Shirley",
      "texts": [
-      "79.4%"
+      "$86,091"
      ],
-     "total": "79.4%",
-     "value": 79.4
+     "total": "$86,091",
+     "value": 86091.0
+    },
+    {
+     "label": "Ashburnham-Westminster",
+     "texts": [
+      "$84,724"
+     ],
+     "total": "$84,724",
+     "value": 84724.0
     }
    ],
    "stack": null,
-   "title": "Teachers DESE counts experienced, six districts",
+   "title": "Average teacher salary, six districts",
    "type": "ranking",
-   "unit": "%"
+   "unit": "$"
   }
  ],
  "category": "school-spending-history",
@@ -273,66 +191,58 @@
   "note": {
    "figures": {
     "y": {
-     "text": "FY2025",
+     "text": "FY2026",
      "unit": "fiscal year",
-     "value": 2025
+     "value": 2026
     }
    },
    "literals": [],
-   "text": "DESE’s comparison sheet, FY2025. The six are this project’s choice."
+   "text": "Each contract’s FY2026 salary schedule, master’s lane, highest step printed. Monty Tech’s lane also takes a bachelor’s plus credits."
   },
   "rows": [
    {
-    "label": "Harvard",
+    "label": "Monty Tech",
     "texts": [
-     "$99,136"
+     "$101,965"
     ],
-    "total": "$99,136",
-    "value": 99136.0
-   },
-   {
-    "label": "Lunenburg",
-    "texts": [
-     "$97,233"
-    ],
-    "total": "$97,233",
-    "value": 97233.0
-   },
-   {
-    "label": "Groton-Dunstable",
-    "texts": [
-     "$97,140"
-    ],
-    "total": "$97,140",
-    "value": 97140.0
+    "total": "$101,965",
+    "value": 101965.0
    },
    {
     "label": "North Middlesex",
     "texts": [
-     "$88,781"
+     "$97,128"
     ],
-    "total": "$88,781",
-    "value": 88781.0
+    "total": "$97,128",
+    "value": 97128.0
    },
    {
-    "label": "Ayer Shirley",
+    "label": "Harvard",
     "texts": [
-     "$86,091"
+     "$95,676"
     ],
-    "total": "$86,091",
-    "value": 86091.0
+    "total": "$95,676",
+    "value": 95676.0
    },
    {
-    "label": "Ashburnham-Westminster",
+    "label": "Fitchburg",
     "texts": [
-     "$84,724"
+     "$92,636"
     ],
-    "total": "$84,724",
-    "value": 84724.0
+    "total": "$92,636",
+    "value": 92636.0
+   },
+   {
+    "label": "Lunenburg",
+    "texts": [
+     "$90,212"
+    ],
+    "total": "$90,212",
+    "value": 90212.0
    }
   ],
   "stack": null,
-  "title": "Average teacher salary, six districts",
+  "title": "Master’s lane top step by district",
   "type": "ranking",
   "unit": "$"
  },
@@ -340,15 +250,144 @@
   {
    "figures": {
     "a": {
-     "text": "$97,233",
+     "text": "$90,212",
      "unit": "",
-     "value": 97233.0
+     "value": 90212.0
     },
     "b": {
-     "text": "$99,136",
+     "text": "$101,965",
      "unit": "",
-     "value": 99136.0
+     "value": 101965.0
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "4th",
+       "unit": "place",
+       "value": 4
+      },
+      "b": {
+       "text": "3rd",
+       "unit": "place",
+       "value": 3
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Its master’s start was 4th and its highest lane’s top 3rd. Lanes are aligned by us."
     },
+    {
+     "figures": {
+      "a": {
+       "text": "10",
+       "unit": "step",
+       "value": 10
+      },
+      "b": {
+       "text": "15",
+       "unit": "step",
+       "value": 15
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "The top step is step 10 to step 15 by contract, so it is not the same years of service everywhere."
+    },
+    {
+     "closes": "each district’s current teachers’ agreement with its salary schedules, by records request",
+     "figures": {
+      "a": {
+       "text": "4",
+       "unit": "districts",
+       "value": 4
+      },
+      "b": {
+       "text": "3",
+       "unit": "districts",
+       "value": 3
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "4 districts read have no current contract held, 3 of them in the project’s six, which cannot be compared on scale."
+    }
+   ],
+   "rests_on": [
+    "matop",
+    "marank",
+    "mahi",
+    "batop",
+    "ba1",
+    "current"
+   ],
+   "text": "Lunenburg’s master’s top was $90,212, against Monty Tech’s $101,965; its bachelor’s start was lowest too."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$95,912",
+     "unit": "",
+     "value": 95912.0
+    },
+    "n": {
+     "text": "5",
+     "unit": "districts",
+     "value": 5
+    },
+    "r": {
+     "text": "3rd",
+     "unit": "place",
+     "value": 3
+    },
+    "y": {
+     "text": "25",
+     "unit": "years",
+     "value": 25
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$5,700",
+       "unit": "",
+       "value": 5700
+      },
+      "y": {
+       "text": "25",
+       "unit": "years",
+       "value": 25
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Longevity is paid outside every grid; at 25 years Lunenburg’s, $5,700, is the largest, and Harvard’s agreement prints none."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$15,000",
+       "unit": "",
+       "value": 15000
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "Each contract counts service its own way; Monty Tech’s optional $15,000 is left out. Rules and pages are in the table."
+    }
+   ],
+   "rests_on": [
+    "lng",
+    "lngr"
+   ],
+   "text": "With each contract’s longevity at 25 years, our arithmetic, its master’s top is $95,912, 3rd of 5."
+  },
+  {
+   "figures": {
     "r": {
      "text": "2nd",
      "unit": "place",
@@ -362,6 +401,27 @@
    },
    "literals": [],
    "notes": [
+    {
+     "cite": {
+      "href": "/school-spending-history/teachers-on-the-scale",
+      "label": "Teachers on the scale"
+     },
+     "figures": {
+      "a": {
+       "text": "56 of 90",
+       "unit": "teachers",
+       "value": 56
+      },
+      "y": {
+       "text": "2025",
+       "unit": "calendar year",
+       "value": 2025
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "A low scale fits a high average if the staff sits high on it: in calendar 2025, 56 of 90 matched teachers were paid at least the master’s top, gross."
+    },
     {
      "figures": {
       "n": {
@@ -377,107 +437,15 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "The six are this project’s choice; no document records why these six. Among the 8 town districts on DESE’s sheet it was 2nd."
-    },
-    {
-     "figures": {},
-     "kind": "measured",
-     "literals": [],
-     "text": "Left out of those, our call: a vocational school, charter schools and virtual schools, which are not town districts."
+     "text": "The six are this project’s choice. Among the 8 town districts on DESE’s sheet it was 2nd."
     }
    ],
    "rests_on": [
     "sal",
     "rank",
-    "hi",
-    "lo"
+    "wide"
    ],
-   "text": "Lunenburg’s average was $97,233 in FY2025, 2nd of six; Harvard’s $99,136 was first."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "3rd",
-     "unit": "place",
-     "value": 3
-    },
-    "b": {
-     "text": "1st",
-     "unit": "place",
-     "value": 1
-    },
-    "y": {
-     "text": "FY2018",
-     "unit": "fiscal year",
-     "value": 2018
-    },
-    "z": {
-     "text": "FY2024",
-     "unit": "fiscal year",
-     "value": 2024
-    }
-   },
-   "literals": [],
-   "notes": [
-    {
-     "figures": {
-      "y": {
-       "text": "FY2024",
-       "unit": "fiscal year",
-       "value": 2024
-      }
-     },
-     "kind": "measured",
-     "literals": [],
-     "text": "In FY2024 Lunenburg’s teachers line rose and its insurance line fell by millions, both reversing a year later; that year this average equals that line over teacher FTE."
-    }
-   ],
-   "rests_on": [
-    "r0",
-    "rodd"
-   ],
-   "text": "It was 3rd of six in FY2018 and 1st in FY2024, the year DESE’s teachers line swung."
-  },
-  {
-   "figures": {},
-   "literals": [],
-   "notes": [
-    {
-     "figures": {},
-     "kind": "hypothesis",
-     "literals": [],
-     "text": "An average is not a schedule: a higher average fits a lower schedule if more teachers sit on top steps or in higher lanes."
-    },
-    {
-     "closes": "each district’s teacher contract as filed with DESE, its salary schedule read into a table, step by lane",
-     "figures": {
-      "a": {
-       "text": "$50,790",
-       "unit": "",
-       "value": 50790
-      },
-      "b": {
-       "text": "$102,459",
-       "unit": "",
-       "value": 102459
-      },
-      "y": {
-       "text": "FY2025",
-       "unit": "fiscal year",
-       "value": 2025
-      }
-     },
-     "kind": "gap",
-     "literals": [],
-     "text": "Lunenburg’s FY2025 schedule runs $50,790 to $102,459; the other five have not been read."
-    }
-   ],
-   "rests_on": [
-    "sched",
-    "slo",
-    "shi"
-   ],
-   "text": "Whether Lunenburg’s salary schedule sits below the others’ is not measured here."
+   "text": "On DESE’s average teacher salary Lunenburg was 2nd of the project’s six in FY2025."
   },
   {
    "figures": {
@@ -508,13 +476,161 @@
     }
    ],
    "rests_on": [
-    "exp",
-    "expr"
+    "exp"
    ],
    "text": "DESE counted 82.3% of Lunenburg’s teachers experienced in FY2025, 4th of the six."
   }
  ],
  "facts": [
+  {
+   "id": "matop",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg’s master’s top step, FY2026"
+   },
+   "value": {
+    "text": "$90,212",
+    "unit": "",
+    "value": 90212.0
+   }
+  },
+  {
+   "id": "marank",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its place on that step, highest first"
+   },
+   "value": {
+    "text": "5 of 5",
+    "unit": "districts",
+    "value": 5
+   }
+  },
+  {
+   "id": "mahi",
+   "kind": "contract",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech’s, the highest of them"
+   },
+   "value": {
+    "text": "$101,965",
+    "unit": "",
+    "value": 101965.0
+   }
+  },
+  {
+   "id": "batop",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "districts",
+      "value": 5
+     },
+     "r": {
+      "text": "5th",
+      "unit": "place",
+      "value": 5
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg’s bachelor’s top step, 5th of 5"
+   },
+   "value": {
+    "text": "$82,038",
+    "unit": "",
+    "value": 82038.0
+   }
+  },
+  {
+   "id": "ba1",
+   "kind": "contract",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "districts",
+      "value": 5
+     },
+     "r": {
+      "text": "5th",
+      "unit": "place",
+      "value": 5
+     }
+    },
+    "literals": [],
+    "text": "its bachelor’s starting pay, 5th of 5"
+   },
+   "value": {
+    "text": "$52,822",
+    "unit": "",
+    "value": 52822.0
+   }
+  },
+  {
+   "id": "lng",
+   "kind": "estimate",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "25",
+      "unit": "years",
+      "value": 25
+     }
+    },
+    "literals": [],
+    "text": "its master’s top plus longevity at 25 years, ours"
+   },
+   "value": {
+    "text": "$95,912",
+    "unit": "",
+    "value": 95912.0
+   }
+  },
+  {
+   "id": "lngr",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its place, each contract’s longevity added"
+   },
+   "value": {
+    "text": "3 of 5",
+    "unit": "districts",
+    "value": 3
+   }
+  },
+  {
+   "closes": "each district’s current teachers’ agreement with its salary schedules, by records request",
+   "id": "current",
+   "kind": "gap",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "4",
+      "unit": "districts",
+      "value": 4
+     }
+    },
+    "literals": [],
+    "text": "no current schedule held, 4 districts read"
+   },
+   "value": null
+  },
   {
    "id": "sal",
    "kind": "published",
@@ -541,80 +657,12 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "its place, highest first"
+    "text": "its place among the project’s six"
    },
    "value": {
     "text": "2 of 6",
     "unit": "districts",
     "value": 2
-   }
-  },
-  {
-   "id": "hi",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "Harvard, the highest of the six"
-   },
-   "value": {
-    "text": "$99,136",
-    "unit": "",
-    "value": 99136.0
-   }
-  },
-  {
-   "id": "lo",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "Ashburnham-Westminster, the lowest"
-   },
-   "value": {
-    "text": "$84,724",
-    "unit": "",
-    "value": 84724.0
-   }
-  },
-  {
-   "id": "r0",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2018",
-      "unit": "fiscal year",
-      "value": 2018
-     }
-    },
-    "literals": [],
-    "text": "its place in FY2018"
-   },
-   "value": {
-    "text": "3rd",
-    "unit": "place",
-    "value": 3
-   }
-  },
-  {
-   "id": "rodd",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2024",
-      "unit": "fiscal year",
-      "value": 2024
-     }
-    },
-    "literals": [],
-    "text": "its place in FY2024, the swing year"
-   },
-   "value": {
-    "text": "1st",
-    "unit": "place",
-    "value": 1
    }
   },
   {
@@ -650,82 +698,23 @@
     "unit": "",
     "value": 82.3
    }
-  },
-  {
-   "id": "expr",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "its place on that share among the six"
-   },
-   "value": {
-    "text": "4th",
-    "unit": "place",
-    "value": 4
-   }
-  },
-  {
-   "id": "slo",
-   "kind": "contract",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     }
-    },
-    "literals": [],
-    "text": "lowest pay on Lunenburg’s FY2025 salary schedule"
-   },
-   "value": {
-    "text": "$50,790",
-    "unit": "",
-    "value": 50790
-   }
-  },
-  {
-   "id": "shi",
-   "kind": "contract",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "highest on it, the doctorate lane"
-   },
-   "value": {
-    "text": "$102,459",
-    "unit": "",
-    "value": 102459
-   }
-  },
-  {
-   "closes": "each district’s teacher contract as filed with DESE, its salary schedule read into a table, step by lane",
-   "id": "sched",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "the other five districts’ salary schedules"
-   },
-   "value": null
   }
  ],
  "finding": {
   "figures": {
-   "r": {
-    "text": "2nd",
-    "unit": "place",
-    "value": 2
+   "n": {
+    "text": "5",
+    "unit": "districts",
+    "value": 5
    },
    "y": {
-    "text": "FY2025",
+    "text": "FY2026",
     "unit": "fiscal year",
-    "value": 2025
+    "value": 2026
    }
   },
   "literals": [],
-  "text": "On DESE’s average teacher salary, Lunenburg was 2nd of the six districts compared in FY2025."
+  "text": "On the 5 FY2026 salary schedules held, Lunenburg’s top step was lowest in the bachelor’s and master’s lanes."
  },
  "full_report": {
   "href": "",
@@ -740,6 +729,34 @@
   "school-spending"
  ],
  "sources": [
+  {
+   "href": "/docs/contracts/pdf/dese-teacher-contract-montachusett.pdf",
+   "label": "Montachusett Regional Vocational Technical School teachers' agreement (Montachusett Regional Teachers' Association), 1 September 2023 to 31 August 2026, as filed with DESE — dese-teacher-contract-montachusett.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/dese-teacher-contract.pdf",
+   "label": "Teachers' agreement (Lunenburg Education Association), 1 July 2024 to 30 June 2027 — raises of 2.5%, 4.0% and 3.5%, as filed with DESE — dese-teacher-contract.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/fitchburg-teachers-2024-2027.pdf",
+   "label": "Fitchburg Unit A agreement (Fitchburg Education Association), 1 July 2024 to 30 June 2027, the union's posted copy — fitchburg-teachers-2024-2027.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/harvard-teachers-2023-2026.pdf",
+   "label": "Harvard teachers' agreement (Harvard Educators Association), 24 August 2023 to 23 August 2026, from the Town of Harvard's site — harvard-teachers-2023-2026.pdf"
+  },
+  {
+   "href": "/docs/contracts/pdf/north-middlesex-teachers-2024-2027.pdf",
+   "label": "North Middlesex teachers' agreement, 1 July 2024 to 30 June 2027, the North Middlesex Teachers Association's posted copy — north-middlesex-teachers-2024-2027.pdf"
+  },
+  {
+   "href": "/docs/data/teacher-salary-schedules.csv",
+   "label": "Lunenburg Budget Project — teacher-salary-schedules.csv (every cell of the comparison districts’ salary schedules, with its page)"
+  },
+  {
+   "href": "/docs/data/teacher-salary-schedule-docs.csv",
+   "label": "Lunenburg Budget Project — teacher-salary-schedule-docs.csv (which contract each schedule came from, and what it covers)"
+  },
   {
    "href": "/docs/state-dese/radar-district-comparison.xlsx",
    "label": "Massachusetts DESE, district comparison — radar-district-comparison.xlsx"
@@ -757,21 +774,354 @@
    "label": "Lunenburg Budget Project — dese-teacher-subject.csv (teacher FTE and the share DESE counts experienced, by district and year)"
   },
   {
-   "href": "/docs/contracts/pdf/dese-teacher-contract.pdf",
-   "label": "Lunenburg Education Association agreement, 1 July 2024 to 30 June 2027, as filed with DESE — dese-teacher-contract.pdf"
-  },
-  {
-   "href": "/docs/contracts/txt/lea-teachers-2024-2027.txt",
-   "label": "the same agreement, the district’s copy, extracted text — lea-teachers-2024-2027.txt"
-  },
-  {
-   "href": "/docs/contracts/data/lea-teacher-salary-schedule.csv",
-   "label": "Lunenburg Budget Project — lea-teacher-salary-schedule.csv (the agreement’s salary schedules, step by lane)"
+   "href": "/docs/data/teacher-pay-distribution.csv",
+   "label": "Lunenburg Budget Project — teacher-pay-distribution.csv (teacher gross pay as counts and distributions, by year; no names)"
   }
  ],
  "table": {
-  "caption": "Average teacher salary, six districts",
+  "caption": "Teacher pay: salary schedules and DESE’s average",
   "views": [
+   {
+    "columns": [
+     "Bachelor’s, step 1",
+     "Bachelor’s, top",
+     "Master’s, step 1",
+     "Master’s, top",
+     "Highest lane, top",
+     "Steps, BA / MA"
+    ],
+    "key": "schedule",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Schedules, FY2026",
+    "note": "Each contract’s base salary schedule, lanes aligned by us (see Lanes compared). Longevity and stipends are paid outside it.",
+    "rows": [
+     {
+      "cells": [
+       "$57,294",
+       "$97,385",
+       "$61,885",
+       "$101,965",
+       "$110,382",
+       "15 / 15"
+      ],
+      "label": "Monty Tech"
+     },
+     {
+      "cells": [
+       "$58,382",
+       "$83,003",
+       "$60,707",
+       "$97,128",
+       "$105,650",
+       "10 / 13"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$56,949",
+       "$83,722",
+       "$61,137",
+       "$95,676",
+       "$118,469",
+       "13 / 13"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$57,019",
+       "$86,626",
+       "$61,826",
+       "$92,636",
+       "$103,141",
+       "10 / 10"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "$52,822",
+       "$82,038",
+       "$60,958",
+       "$90,212",
+       "$106,557",
+       "13 / 13"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "5th of 5",
+       "5th of 5",
+       "4th of 5",
+       "5th of 5",
+       "3rd of 5",
+       null
+      ],
+      "label": "Lunenburg’s place, highest first"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Bachelor’s, step 1",
+     "Bachelor’s, top",
+     "Master’s, step 1",
+     "Master’s, top",
+     "Highest lane, top",
+     "Steps, BA / MA"
+    ],
+    "key": "schedule-prev",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Schedules, FY2025",
+    "note": "Each contract’s base salary schedule, lanes aligned by us (see Lanes compared). Longevity and stipends are paid outside it.",
+    "rows": [
+     {
+      "cells": [
+       "$55,625",
+       "$94,548",
+       "$60,083",
+       "$98,995",
+       "$107,167",
+       "15 / 15"
+      ],
+      "label": "Monty Tech"
+     },
+     {
+      "cells": [
+       "$56,408",
+       "$80,196",
+       "$58,654",
+       "$93,843",
+       "$102,077",
+       "10 / 13"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$55,560",
+       "$81,680",
+       "$59,646",
+       "$93,343",
+       "$115,579",
+       "13 / 13"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$55,358",
+       "$81,653",
+       "$60,025",
+       "$87,318",
+       "$97,220",
+       "9 / 9"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "$50,790",
+       "$78,883",
+       "$58,613",
+       "$86,742",
+       "$102,459",
+       "13 / 13"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "5th of 5",
+       "5th of 5",
+       "5th of 5",
+       "5th of 5",
+       "3rd of 5",
+       null
+      ],
+      "label": "Lunenburg’s place, highest first"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Bachelor’s",
+     "Master’s",
+     "Highest lane"
+    ],
+    "key": "lanes",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Lanes compared",
+    "note": "Each lane as its contract prints it; the alignment is ours. North Middlesex’s BA+15 lane is closed to new entrants.",
+    "rows": [
+     {
+      "cells": [
+       "BA",
+       "MA",
+       "MA+60"
+      ],
+      "label": "Fitchburg"
+     },
+     {
+      "cells": [
+       "B",
+       "M",
+       "PhD"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "Bach",
+       "Masters",
+       "Doctorate"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "I: BS / Licensure",
+       "IV: Masters or BS+45 / Licensure+45",
+       "VIII: CAGS / Masters"
+      ],
+      "label": "Monty Tech"
+     },
+     {
+      "cells": [
+       "BA",
+       "MA",
+       "MA+75/Ph.D."
+      ],
+      "label": "North Middlesex"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "As the contract prints it",
+     "At 25 years, ours",
+     "Master’s top plus that, ours",
+     "Contract page"
+    ],
+    "key": "longevity",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Longevity",
+    "note": "Paid outside the salary grid. Each contract counts years of service its own way; the reading at 25 years is ours.",
+    "rows": [
+     {
+      "cells": [
+       "$750, $1,000, $1,250, $1,500 a year at 15, 20, 25, 30 years; optional $15,000 over three years",
+       "$1,250",
+       "$103,215",
+       "pdf page 10"
+      ],
+      "label": "Monty Tech"
+     },
+     {
+      "cells": [
+       "$1,350, $1,600, $1,850, $2,150 a year at 15, 20, 25, 30 years",
+       "$1,850",
+       "$98,978",
+       "pdf page 56"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "$1,900, $3,800, $5,700 added to step 13 at 15, 20, 25 years; 4% of base at 30",
+       "$5,700",
+       "$95,912",
+       "pdf page 28"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "none found in the agreement",
+       "$0",
+       "$95,676",
+       "all 46 pages searched"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "$1,000 a year from 7 years; from 15, $500 more, rising $100 a year to $2,000",
+       "$2,500",
+       "$95,136",
+       "pdf page 66"
+      ],
+      "label": "Fitchburg"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Latest schedule held"
+    ],
+    "key": "missing",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Not current",
+    "note": "Read from the latest contract each district filed with DESE; none covers FY2026.",
+    "rows": [
+     {
+      "cells": [
+       "FY2019"
+      ],
+      "label": "Ashburnham-Westminster"
+     },
+     {
+      "cells": [
+       "FY2022"
+      ],
+      "label": "Ayer Shirley"
+     },
+     {
+      "cells": [
+       "FY2020"
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "FY2018"
+      ],
+      "label": "Leominster"
+     }
+    ],
+    "total_col": -1
+   },
    {
     "columns": [
      "Average salary",
@@ -784,7 +1134,7 @@
      "ledger",
      "ledger"
     ],
-    "label": "FY2025",
+    "label": "Average, FY2025",
     "note": "DESE’s comparison sheet and teacher data, as printed.",
     "rows": [
      {
@@ -852,8 +1202,8 @@
      "ledger",
      "ledger"
     ],
-    "label": "By year",
-    "note": "DESE’s comparison sheet. FY2024 is the swing year.",
+    "label": "Average by year",
+    "note": "DESE’s comparison sheet. In FY2024 DESE’s teachers line swung; that year the average equals that line over teacher FTE.",
     "rows": [
      {
       "cells": [
