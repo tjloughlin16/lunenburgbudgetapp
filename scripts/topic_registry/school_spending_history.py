@@ -22,6 +22,10 @@ CATEGORY = dict(
                           # TJ, 19 October 2026: "did the increase cost from more teachers,
                           # or higher pay per teacher?" -- and how pay compares nearby.
                           'pay-or-headcount', 'teacher-pay-compared',
+                          # TJ, 19 October 2026: DESE's average puts Lunenburg second of
+                          # six while residents call its scale the lowest -- where on the
+                          # scale the teachers sit, from the town's own wage list.
+                          'teachers-on-the-scale',
                           'growth-side-by-side',
                           'teachers-and-other-staff', 'spending-per-child-enrolled',
                           'long-run-school-spending']),
@@ -46,4 +50,5 @@ TOPICS = {
     'fy2011-teacher-reading': 'FY2011 teacher reading',
     'pay-or-headcount': 'Pay or headcount',
     'teacher-pay-compared': 'Teacher pay compared',
+    'teachers-on-the-scale': 'Teachers on the scale',
 }

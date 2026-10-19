@@ -1403,6 +1403,15 @@ GROUPS = [
              'dont have the data, we shouldn\u2019t show partial data. that may be '
              'misleading\u201d* \u2014 so it is held here as working material, and the two things '
              'it would answer are registered in money-gaps.csv instead.'),
+            ('data/teacher-pay-distribution.csv',
+             'Teacher gross pay as counts and distributions, by year \u2014 NO NAMES', 2,
+             'The town\u2019s calendar-year wage list joined, by name, to the school rosters '
+             'the same reports print, FY2011\u2013FY2025, by scripts/extract_teacher_pay.py. '
+             'The join is PRIVATE (build/private/, gitignored; rule 13e): this file holds only '
+             'counts, quartiles and $10,000 bands, none resting on fewer than three people, '
+             'plus the match rate and every rule it rests on. Gross pay includes stipends, '
+             'coaching and longevity; it is not a salary schedule cell. Digital years are '
+             'reconciled amount by amount to the PDF\u2019s own text layer.'),
             ('data/gross-wages-refused.csv',
              'Payroll pages that would not read, and why each refused', 1,
              'Written by us. Two pages, both a PAIRING failure rather than a faint scan: '
