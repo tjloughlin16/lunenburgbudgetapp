@@ -12,6 +12,7 @@ import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
 import { Walkthrough } from './pages/Walkthrough'
 import { Home } from './pages/Home'
+import NotFound from './pages/NotFound'
 import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
@@ -93,7 +94,7 @@ import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
 import { SiteMenu } from './components/SiteMenu'
-import { BOARDS, LABEL, PARENT, crumbLabel, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, crumbLabel, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, isUnknownPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { followTitleForShare, pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -174,6 +175,7 @@ export default function App() {
   useEffect(() => { track('view', tab) }, [tab])
 
   useLayoutEffect(() => {
+    if (tab === ROOT && isUnknownPath(window.location.pathname)) { document.title = pageTitle('Page not found')!; return }
     if (tab === ROOT) { document.title = HOME_TITLE; return }
     // An area's front page is named for the area -- "Budget Crisis", not "Start here",
     // which is what the tab inside the area calls it.
@@ -487,7 +489,9 @@ export default function App() {
           does, including the walkthrough now that it sits one level down. */}
       {tab !== ROOT && <Breadcrumb tab={tab} goUp={goUp} />}
 
-      {tab === 'home' && <Home />}
+      {/* An address nothing answers resolves to the root tab, so the chrome still draws;
+          the page in it is the 404, never the front page (routes.ts, tabFromPath). */}
+      {tab === 'home' && (isUnknownPath(window.location.pathname) ? <NotFound /> : <Home />)}
 
       {tab === 'walk' && <Walkthrough />}
 

@@ -973,9 +973,21 @@ export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')
  *  drift the next time the front door moves. */
 export const ROOT: Tab = (Object.entries(SLUG) as [Tab, string][]).find(([, v]) => v === '')![0]
 
-/** Anything unrecognized falls back to the first tab rather than to an error page.
- *  A stale link should land somebody on the site, not on a 404 they will not report. */
+/** Anything unrecognized resolves to the root TAB, so the header, the menu and the footer
+ *  still draw -- but App renders <NotFound /> in place of the front page (isUnknownPath).
+ *
+ *  It used to show the front page itself, on the theory that a stale link should land
+ *  somebody on the site. TJ, 19 October 2026: "we need a 404 page when a page isnt found.
+ *  redirecting to HOME is very confusing" -- a reader who followed a link to a report and
+ *  got the front page has no way to tell the link was wrong rather than the site. */
 export function tabFromPath(pathname: string): Tab {
+  return resolvePath(pathname) ?? ROOT
+}
+
+/** True when nothing on the site answers this address. The root itself is known. */
+export const isUnknownPath = (pathname: string): boolean => resolvePath(pathname) === null
+
+function resolvePath(pathname: string): Tab | null {
   const seg = pathname.replace(/^\/+|\/+$/g, '').toLowerCase()
   // The one two-segment address on the site. Seventeen markdown analyses share a single
   // page component, so the document id travels in the path rather than in a Tab of its
@@ -998,7 +1010,8 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('boards/')) return 'boards'
   if (seg.startsWith('departments/')) return 'departments'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
-  return BY_SLUG[seg] ?? ROOT
+  if (seg === '') return ROOT
+  return BY_SLUG[seg] ?? null
 }
 
 /** The topic page or hub a `/transportation[/<id>]` or `/athletics[/<id>]` address names:
