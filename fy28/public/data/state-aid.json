@@ -439,10 +439,10 @@
    "why": "A member town pays its regional assessment out of one budget that the levy, Chapter 70 and local receipts fund together, and no document assigns one revenue to one appropriation. So /homes-and-taxes/regional-school-share can only ESTIMATE the assessment\u2019s weight in an average bill, in proportion to its share of the levy (our arithmetic on DLS values and rates by class). For the other seventeen member towns only the state-required minimum is held, not the whole assessment."
   },
   {
-   "closes": "the Bureau of Labor Statistics CPI-U for Boston-Cambridge-Newton, annual averages, landed with its address and sha256; or the state and local government price deflator the state uses to inflate the Chapter 70 foundation budget.",
+   "closes": null,
    "side": "document_wanted",
    "what": "What school spending has been in constant dollars",
-   "why": "Net school spending is published from FY1994 in dollars as printed, and every spending figure on /spending-staff-students is nominal. Without a price index nothing there can say how much of the rise is prices and how much is more of something. The index is public; this archive holds none, and landing one needs a place in sources/ for a federal statistics agency\u2019s files, which the archive layout does not yet have"
+   "why": "CLOSED 18 October 2026. The Bureau of Labor Statistics CPI-U for Boston-Cambridge-Newton (series CUURS11ASA0, January 1990 onward) is landed in sources/federal-bls/, four API responses saved as returned with their addresses and sha256, and its PROVENANCE.md says how the fiscal-year average is built. Every spending page on /spending-staff-students now gives dollars as printed beside dollars of the latest actual year, July-June averages, our arithmetic. What the index does NOT settle: it measures what a basket of consumer goods costs in the Boston area, not what a school pays for teachers, tuition or insurance, so \"after prices\" means after general prices -- closes: the CPI-U for Boston-Cambridge-Newton, landed; for a school-specific measure, the state and local government price deflator the state uses to inflate the Chapter 70 foundation budget."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

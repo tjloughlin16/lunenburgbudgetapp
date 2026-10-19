@@ -89,6 +89,10 @@ ORIGINS = [
     # catalogued, because a figure nobody can get back to is not checkable.
     {'id': 'us-census', 'name': 'United States Census Bureau',
      'url': 'https://www.census.gov/programs-surveys/acs/'},
+    # A federal statistics agency, added 18 October 2026 for the price index. Like the
+    # Census Bureau, its answers arrive as JSON from an API and are saved as returned.
+    {'id': 'us-bls', 'name': 'United States Bureau of Labor Statistics',
+     'url': 'https://www.bls.gov/cpi/regional-resources.htm'},
     {'id': 'peer-districts', 'name': 'Neighboring districts', 'url': None},
     {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
@@ -426,6 +430,37 @@ GROUPS = [
              'Median household income, every Massachusetts municipality, 2014\u20132018', 2,
              'The 2014\u20132018 window. It holds 351 municipalities against 2023\u2019s '
              '350, so a rank in one vintage is not a rank in the same set as the other.'),
+        ]},
+    {
+        'section': 'theirs', 'id': 'bls-cpi', 'origin': 'us-bls',
+        'title': 'Prices \u2014 the Bureau of Labor Statistics',
+        'blurb': 'The consumer price index for the Boston-Cambridge-Newton area (CPI-U, all '
+                 'items, not seasonally adjusted, 1982-84 = 100), January 1990 onward. It is '
+                 'what turns thirty years of school spending into dollars of one year. The '
+                 'fiscal-year averages built from it are OUR arithmetic, because BLS '
+                 'publishes calendar-year averages only.',
+        'items': [
+            ('federal-bls/cpi-u-CUURS11ASA0-1990-1999.json',
+             'Consumer prices, Boston area, 1990\u20131999', 1,
+             'The BLS API\u2019s answer for series CUURS11ASA0, January 1990 to November 1999, every '
+             'published (bimonthly) value, saved as returned.'),
+            ('federal-bls/cpi-u-CUURS11ASA0-2000-2009.json',
+             'Consumer prices, Boston area, 2000\u20132009', 1,
+             'The BLS API\u2019s answer for series CUURS11ASA0, January 2000 to November 2009, every '
+             'published (bimonthly) value, saved as returned.'),
+            ('federal-bls/cpi-u-CUURS11ASA0-2010-2019.json',
+             'Consumer prices, Boston area, 2010\u20132019', 1,
+             'The BLS API\u2019s answer for series CUURS11ASA0, January 2010 to November 2019, every '
+             'published (bimonthly) value, saved as returned.'),
+            ('federal-bls/cpi-u-CUURS11ASA0-2020-2026.json',
+             'Consumer prices, Boston area, 2020\u20132026', 1,
+             'The BLS API\u2019s answer for series CUURS11ASA0, January 2020 to September 2026, every '
+             'published (bimonthly) value, saved as returned.'),
+            ('federal-bls/PROVENANCE.md',
+             'Where the price index came from', 1,
+             'Written by us: the four request addresses, why the API rather than BLS\u2019s '
+             'flat file, why nothing is spliced, and how a fiscal-year average is built. '
+             'Read by scripts/build_spending_staff_students_topics.py.'),
         ]},
     {
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',

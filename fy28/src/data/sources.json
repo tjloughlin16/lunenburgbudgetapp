@@ -37,6 +37,11 @@
    "url": "https://www.census.gov/programs-surveys/acs/"
   },
   {
+   "id": "us-bls",
+   "name": "United States Bureau of Labor Statistics",
+   "url": "https://www.bls.gov/cpi/regional-resources.htm"
+  },
+  {
    "id": "peer-districts",
    "name": "Neighboring districts",
    "url": null
@@ -55,7 +60,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 62 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 67 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -749,6 +754,67 @@
      "bytes": 1937878,
      "url": "/docs/state-census/tigerweb-cousub-worcester-middlesex.json",
      "textUrl": "/docs/state-census/tigerweb-cousub-worcester-middlesex.json"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
+   "id": "bls-cpi",
+   "origin": "us-bls",
+   "title": "Prices — the Bureau of Labor Statistics",
+   "blurb": "The consumer price index for the Boston-Cambridge-Newton area (CPI-U, all items, not seasonally adjusted, 1982-84 = 100), January 1990 onward. It is what turns thirty years of school spending into dollars of one year. The fiscal-year averages built from it are OUR arithmetic, because BLS publishes calendar-year averages only.",
+   "items": [
+    {
+     "path": "federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
+     "title": "Consumer prices, Boston area, 2010–2019",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASA0, January 2010 to November 2019, every published (bimonthly) value, saved as returned.",
+     "kind": "JSON",
+     "bytes": 5403,
+     "url": "/docs/federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
+     "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-2010-2019.json"
+    },
+    {
+     "path": "federal-bls/cpi-u-CUURS11ASA0-2000-2009.json",
+     "title": "Consumer prices, Boston area, 2000–2009",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASA0, January 2000 to November 2009, every published (bimonthly) value, saved as returned.",
+     "kind": "JSON",
+     "bytes": 5319,
+     "url": "/docs/federal-bls/cpi-u-CUURS11ASA0-2000-2009.json",
+     "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-2000-2009.json"
+    },
+    {
+     "path": "federal-bls/cpi-u-CUURS11ASA0-1990-1999.json",
+     "title": "Consumer prices, Boston area, 1990–1999",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASA0, January 1990 to November 1999, every published (bimonthly) value, saved as returned.",
+     "kind": "JSON",
+     "bytes": 5283,
+     "url": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json",
+     "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json"
+    },
+    {
+     "path": "federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
+     "title": "Consumer prices, Boston area, 2020–2026",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASA0, January 2020 to September 2026, every published (bimonthly) value, saved as returned.",
+     "kind": "JSON",
+     "bytes": 3745,
+     "url": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
+     "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json"
+    },
+    {
+     "path": "federal-bls/PROVENANCE.md",
+     "title": "Where the price index came from",
+     "stars": 1,
+     "what": "Written by us: the four request addresses, why the API rather than BLS’s flat file, why nothing is spliced, and how a fiscal-year average is built. Read by scripts/build_spending_staff_students_topics.py.",
+     "kind": "Notes",
+     "bytes": 2557,
+     "url": "/docs/federal-bls/PROVENANCE.md",
+     "count": 45,
+     "unit": "lines",
+     "textUrl": "/docs/federal-bls/PROVENANCE.md"
     }
    ]
   },
@@ -4432,7 +4498,7 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 251158,
+     "bytes": 251359,
      "url": "/docs/data/money-gaps.csv",
      "count": 273,
      "unit": "rows",
@@ -55588,9 +55654,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4979,
-  "groups": 26,
-  "bytes": 6423413761,
+  "documents": 4984,
+  "groups": 27,
+  "bytes": 6423436269,
   "loadBearing": 191
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

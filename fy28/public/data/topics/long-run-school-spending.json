@@ -5,18 +5,22 @@
   "from_zero": true,
   "kind": "bar",
   "note": {
-   "figures": {},
-   "literals": [
-    "70"
-   ],
-   "text": "DESE’s Chapter 70 district profile. Dollars as printed, not adjusted for prices."
+   "figures": {
+    "r": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "Bars as printed by DESE; lines in FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
   },
   "reference": null,
   "series": [
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Actual",
+    "name": "Actual, as printed",
     "texts": [
      "$6,951,622",
      "$7,468,739",
@@ -91,7 +95,7 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Budgeted",
+    "name": "Budgeted, as printed",
     "texts": [
      null,
      null,
@@ -162,6 +166,156 @@
      25420399.654624697,
      27085833.0
     ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Actual, FY2024 dollars",
+    "texts": [
+     "$14,974,588",
+     "$15,760,040",
+     "$16,101,740",
+     "$17,812,468",
+     "$18,603,478",
+     "$18,993,146",
+     "$19,039,860",
+     "$19,435,916",
+     "$20,444,977",
+     "$20,970,864",
+     "$20,093,814",
+     "$19,489,083",
+     "$21,001,379",
+     "$21,407,642",
+     "$21,339,218",
+     "$21,375,232",
+     "$21,627,809",
+     "$21,457,781",
+     "$21,893,826",
+     "$22,486,362",
+     "$23,093,511",
+     "$23,841,359",
+     "$24,351,255",
+     "$24,924,813",
+     "$26,205,531",
+     "$26,156,149",
+     "$26,011,017",
+     "$26,250,196",
+     "$26,104,637",
+     "$24,965,301",
+     "$24,043,452",
+     null,
+     null
+    ],
+    "values": [
+     14974587.65538428,
+     15760039.99301361,
+     16101740.435329527,
+     17812467.894025944,
+     18603477.52435885,
+     18993145.780667815,
+     19039860.482676577,
+     19435916.107550852,
+     20444976.598922323,
+     20970863.82829764,
+     20093814.333862007,
+     19489082.94219081,
+     21001379.39354249,
+     21407642.112059064,
+     21339218.378036704,
+     21375231.858750243,
+     21627809.301654477,
+     21457780.69880602,
+     21893826.16938005,
+     22486362.478789065,
+     23093510.68136784,
+     23841359.19276676,
+     24351255.37345527,
+     24924812.574204046,
+     26205531.243076213,
+     26156148.59015418,
+     26011017.40213117,
+     26250195.710714687,
+     26104637.248158272,
+     24965301.37609225,
+     24043451.70773381,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Budgeted, FY2024 dollars",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$24,629,546",
+     "$25,568,587"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     24629546.417267032,
+     25568586.81923465
+    ]
    }
   ],
   "stacked": true,
@@ -208,9 +362,9 @@
   {
    "figures": {
     "a": {
-     "text": "27",
+     "text": "21",
      "unit": "",
-     "value": 27
+     "value": 21
     },
     "n": {
      "text": "30",
@@ -229,12 +383,26 @@
     }
    },
    "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "27",
+       "unit": "",
+       "value": 27
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "As printed it rose in 27 of them."
+    }
+   ],
    "rests_on": [
     "up",
-    "n0",
+    "r0",
     "n1"
    ],
-   "text": "Net school spending rose in 27 of 30 steps from FY1994 to FY2024."
+   "text": "After prices, net school spending rose in 21 of 30 steps from FY1994 to FY2024."
   },
   {
    "figures": {
@@ -277,13 +445,35 @@
    "text": "Chapter 70 aid was 26.3% of it in FY1994 and 36.7% in FY2024; the rest came through the town."
   },
   {
-   "figures": {},
+   "figures": {
+    "a": {
+     "text": "3.46",
+     "unit": "times",
+     "value": 3.4586822626048725
+    },
+    "b": {
+     "text": "2.15",
+     "unit": "times",
+     "value": 2.1541141988710377
+    },
+    "c": {
+     "text": "1.61",
+     "unit": "times",
+     "value": 1.6056169465934322
+    },
+    "y": {
+     "text": "FY1994",
+     "unit": "fiscal year",
+     "value": 1994
+    }
+   },
    "literals": [],
    "rests_on": [
-    "prices",
-    "mult"
+    "mult",
+    "pmult",
+    "rmult"
    ],
-   "text": "None of these dollars is adjusted for prices: the archive holds no price index."
+   "text": "As printed spending is 3.46 times FY1994; prices are 2.15 times, so after prices 1.61."
   },
   {
    "figures": {
@@ -307,6 +497,81 @@
  ],
  "facts": [
   {
+   "id": "r0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "r": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     },
+     "y": {
+      "text": "FY1994",
+      "unit": "fiscal year",
+      "value": 1994
+     }
+    },
+    "literals": [],
+    "text": "net school spending, FY1994, in FY2024 dollars"
+   },
+   "value": {
+    "text": "$14,974,588",
+    "unit": "",
+    "value": 14974587.65538428
+   }
+  },
+  {
+   "id": "rmult",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY1994",
+      "unit": "fiscal year",
+      "value": 1994
+     },
+     "b": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "times the FY1994 figure, FY2024, after prices"
+   },
+   "value": {
+    "text": "1.61",
+    "unit": "times",
+    "value": 1.6056169465934322
+   }
+  },
+  {
+   "id": "pmult",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY1994",
+      "unit": "fiscal year",
+      "value": 1994
+     },
+     "b": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "times the FY1994 price level, FY2024, July-June"
+   },
+   "value": {
+    "text": "2.15",
+    "unit": "times",
+    "value": 2.1541141988710377
+   }
+  },
+  {
    "id": "n0",
    "kind": "published",
    "label": {
@@ -318,7 +583,7 @@
      }
     },
     "literals": [],
-    "text": "net school spending, FY1994, actual"
+    "text": "net school spending, FY1994, as printed"
    },
    "value": {
     "text": "$6,951,622",
@@ -363,7 +628,7 @@
      }
     },
     "literals": [],
-    "text": "times the FY1994 figure, FY2024"
+    "text": "times the FY1994 figure, FY2024, as printed"
    },
    "value": {
     "text": "3.46",
@@ -403,12 +668,12 @@
      }
     },
     "literals": [],
-    "text": "of 30 year-to-year steps rose, actual years"
+    "text": "of 30 year-to-year steps rose after prices"
    },
    "value": {
-    "text": "27",
+    "text": "21",
     "unit": "years",
-    "value": 27
+    "value": 21
    }
   },
   {
@@ -454,30 +719,29 @@
     "unit": "",
     "value": 36.679958049298065
    }
-  },
-  {
-   "closes": "a published price index landed in this archive, e.g. the BLS CPI-U for Boston-Cambridge-Newton, annual averages",
-   "id": "prices",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "the same dollars adjusted for prices"
-   },
-   "value": null
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "$6,951,622",
+    "text": "$14,974,588",
     "unit": "",
-    "value": 6951622.0
+    "value": 14974587.65538428
    },
    "b": {
     "text": "$24,043,452",
     "unit": "",
     "value": 24043451.70773381
+   },
+   "m": {
+    "text": "1.61",
+    "unit": "times",
+    "value": 1.6056169465934322
+   },
+   "r": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
    },
    "y": {
     "text": "FY1994",
@@ -491,7 +755,7 @@
    }
   },
   "literals": [],
-  "text": "Net school spending was $6,951,622 in FY1994 and $24,043,452 in FY2024, in dollars as printed."
+  "text": "In FY2024 dollars net school spending went from $14,974,588 in FY1994 to $24,043,452 in FY2024, 1.61 times."
  },
  "full_report": {
   "href": "",
@@ -512,6 +776,26 @@
   {
    "href": "/docs/data/dese-ch70-formula.csv",
    "label": "Lunenburg Budget Project — dese-ch70-formula.csv (net school spending and Chapter 70, by year)"
+  },
+  {
+   "href": "/docs/federal-bls/PROVENANCE.md",
+   "label": "Lunenburg Budget Project — PROVENANCE.md (where the price index came from, and the fiscal-year average)"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-1990-1999.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2000-2009.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2000-2009.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2010-2019.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2020-2026.json"
   }
  ],
  "table": {
@@ -519,7 +803,8 @@
   "views": [
    {
     "columns": [
-     "Net school spending",
+     "As printed",
+     "In FY2024 dollars",
      "Chapter 70 aid",
      "Aid share"
     ],
@@ -527,14 +812,16 @@
     "kinds": [
      "ledger",
      "ledger",
+     "ledger",
      "ledger"
     ],
     "label": "FY2010 to FY2026",
-    "note": "DESE’s figures; the share is our division. The last two years are budgets.",
+    "note": "DESE’s figures; the share and the real dollars are ours (BLS Boston-area CPI-U, July-June averages). The last two years are budgets.",
     "rows": [
      {
       "cells": [
        "$27,085,833",
+       "$25,568,587",
        "$9,229,410",
        "34.1%"
       ],
@@ -543,6 +830,7 @@
      {
       "cells": [
        "$25,420,400",
+       "$24,629,546",
        "$8,988,960",
        "35.4%"
       ],
@@ -550,6 +838,7 @@
      },
      {
       "cells": [
+       "$24,043,452",
        "$24,043,452",
        "$8,819,128",
        "36.7%"
@@ -559,6 +848,7 @@
      {
       "cells": [
        "$24,273,713",
+       "$24,965,301",
        "$8,722,228",
        "35.9%"
       ],
@@ -567,6 +857,7 @@
      {
       "cells": [
        "$23,919,189",
+       "$26,104,637",
        "$7,823,618",
        "32.7%"
       ],
@@ -575,6 +866,7 @@
      {
       "cells": [
        "$22,735,918",
+       "$26,250,196",
        "$7,773,938",
        "34.2%"
       ],
@@ -583,6 +875,7 @@
      {
       "cells": [
        "$22,275,868",
+       "$26,011,017",
        "$7,771,740",
        "34.9%"
       ],
@@ -591,6 +884,7 @@
      {
       "cells": [
        "$22,038,813",
+       "$26,156,149",
        "$7,538,072",
        "34.2%"
       ],
@@ -599,6 +893,7 @@
      {
       "cells": [
        "$21,483,776",
+       "$26,205,531",
        "$7,272,505",
        "33.9%"
       ],
@@ -607,6 +902,7 @@
      {
       "cells": [
        "$19,861,673",
+       "$24,924,813",
        "$6,351,257",
        "32.0%"
       ],
@@ -615,6 +911,7 @@
      {
       "cells": [
        "$19,004,427",
+       "$24,351,255",
        "$5,834,483",
        "30.7%"
       ],
@@ -623,6 +920,7 @@
      {
       "cells": [
        "$18,452,511",
+       "$23,841,359",
        "$5,605,872",
        "30.4%"
       ],
@@ -631,6 +929,7 @@
      {
       "cells": [
        "$17,672,191",
+       "$23,093,511",
        "$5,354,696",
        "30.3%"
       ],
@@ -639,6 +938,7 @@
      {
       "cells": [
        "$16,958,752",
+       "$22,486,362",
        "$5,219,937",
        "30.8%"
       ],
@@ -647,6 +947,7 @@
      {
       "cells": [
        "$16,265,437",
+       "$21,893,826",
        "$4,522,545",
        "27.8%"
       ],
@@ -655,6 +956,7 @@
      {
       "cells": [
        "$15,548,411",
+       "$21,457,781",
        "$4,498,396",
        "28.9%"
       ],
@@ -663,6 +965,7 @@
      {
       "cells": [
        "$15,471,660",
+       "$21,627,809",
        "$4,528,374",
        "29.3%"
       ],
@@ -673,7 +976,8 @@
    },
    {
     "columns": [
-     "Net school spending",
+     "As printed",
+     "In FY2024 dollars",
      "Chapter 70 aid",
      "Aid share"
     ],
@@ -681,14 +985,16 @@
     "kinds": [
      "ledger",
      "ledger",
+     "ledger",
      "ledger"
     ],
     "label": "FY1994 to FY2009",
-    "note": "DESE’s figures; the share is our division. The last two years are budgets.",
+    "note": "DESE’s figures; the share and the real dollars are ours (BLS Boston-area CPI-U, July-June averages). The last two years are budgets.",
     "rows": [
      {
       "cells": [
        "$15,155,736",
+       "$21,375,232",
        "$4,620,790",
        "30.5%"
       ],
@@ -697,6 +1003,7 @@
      {
       "cells": [
        "$14,903,224",
+       "$21,339,218",
        "$4,314,259",
        "28.9%"
       ],
@@ -705,6 +1012,7 @@
      {
       "cells": [
        "$14,561,883",
+       "$21,407,642",
        "$3,921,700",
        "26.9%"
       ],
@@ -713,6 +1021,7 @@
      {
       "cells": [
        "$13,976,437",
+       "$21,001,379",
        "$3,708,907",
        "26.5%"
       ],
@@ -721,6 +1030,7 @@
      {
       "cells": [
        "$12,477,955",
+       "$19,489,083",
        "$3,625,757",
        "29.1%"
       ],
@@ -729,6 +1039,7 @@
      {
       "cells": [
        "$12,577,557",
+       "$20,093,814",
        "$3,625,757",
        "28.8%"
       ],
@@ -737,6 +1048,7 @@
      {
       "cells": [
        "$12,682,682",
+       "$20,970,864",
        "$3,650,152",
        "28.8%"
       ],
@@ -745,6 +1057,7 @@
      {
       "cells": [
        "$11,950,457",
+       "$20,444,977",
        "$3,650,152",
        "30.5%"
       ],
@@ -753,6 +1066,7 @@
      {
       "cells": [
        "$11,025,671",
+       "$19,435,916",
        "$3,174,045",
        "28.8%"
       ],
@@ -761,6 +1075,7 @@
      {
       "cells": [
        "$10,324,128",
+       "$19,039,860",
        "$2,886,345",
        "28.0%"
       ],
@@ -769,6 +1084,7 @@
      {
       "cells": [
        "$9,946,571",
+       "$18,993,146",
        "$2,651,776",
        "26.7%"
       ],
@@ -777,6 +1093,7 @@
      {
       "cells": [
        "$9,540,942",
+       "$18,603,478",
        "$2,580,063",
        "27.0%"
       ],
@@ -785,6 +1102,7 @@
      {
       "cells": [
        "$8,925,219",
+       "$17,812,468",
        "$2,366,295",
        "26.5%"
       ],
@@ -793,6 +1111,7 @@
      {
       "cells": [
        "$7,818,112",
+       "$16,101,740",
        "$2,401,616",
        "30.7%"
       ],
@@ -801,6 +1120,7 @@
      {
       "cells": [
        "$7,468,739",
+       "$15,760,040",
        "$2,102,432",
        "28.1%"
       ],
@@ -809,6 +1129,7 @@
      {
       "cells": [
        "$6,951,622",
+       "$14,974,588",
        "$1,831,283",
        "26.3%"
       ],

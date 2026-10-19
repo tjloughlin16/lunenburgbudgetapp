@@ -558,7 +558,9 @@ def frozen(key):
     # swept in 72 files including our own PROVENANCE.md, CONTRACTS.md and extracted text,
     # all of which legitimately change -- and freezing a file that changes makes the
     # manifest refuse to write.
-    if (len(parts) == 2 and parts[0].startswith('state-')
+    # `federal-` joined `state-` on 18 October 2026 with `sources/federal-bls/`, the Bureau
+    # of Labor Statistics' price index saved as the API returned it.
+    if (len(parts) == 2 and parts[0].startswith(('state-', 'federal-'))
             and parts[-1].lower().endswith('.json')):
         return True
     return os.path.splitext(parts[-1])[1].lower() in ORIGINAL_EXTS

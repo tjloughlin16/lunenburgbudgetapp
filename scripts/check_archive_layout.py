@@ -60,6 +60,11 @@ TOP = {
     # 9 October 2026 ("i approve state-law folder"), with the AG's determination letters
     # in it (scripts/fetch_oml_determinations.py).
     'state-law':                'the law as the State publishes it — Open Meeting Law statute, regulations, AG guide, AG determinations',
+    # Added 18 October 2026 for the price index every long-run dollar comparison needs:
+    # the Bureau of Labor Statistics' CPI-U, saved as the BLS API returned it. A federal
+    # agency is neither DESE nor DLS nor the Census Bureau, so it could not go in any of
+    # those. APPROVED by TJ, 18 October 2026, relayed by the coordinating session.
+    'federal-bls':              'Bureau of Labor Statistics API responses, saved as returned — the consumer price index',
     'peer-districts':              'other districts, assembled by us from several publishers',
     'contracts':          'union contracts, from the district HR page and DESE',
     'town-ledgers':      'MUNIS reports — sent to us, never published',

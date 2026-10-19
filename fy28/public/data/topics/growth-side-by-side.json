@@ -6,6 +6,11 @@
   "kind": "line",
   "note": {
    "figures": {
+    "r": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
     "y": {
      "text": "FY2008",
      "unit": "fiscal year",
@@ -13,7 +18,7 @@
     }
    },
    "literals": [],
-   "text": "Each series divided by its own FY2008 value, our arithmetic. Dollars as printed, not adjusted for prices."
+   "text": "Each series over its own FY2008 value. FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
   },
   "reference": {
    "label": "The FY2008 level",
@@ -24,7 +29,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Net school spending, actual",
+    "name": "Spending as printed, actual",
     "texts": [
      "100.0%",
      "101.7%",
@@ -71,7 +76,54 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Net school spending, budgeted",
+    "name": "Spending, FY2024 dollars, actual",
+    "texts": [
+     "100.0%",
+     "100.2%",
+     "101.4%",
+     "100.6%",
+     "102.6%",
+     "105.4%",
+     "108.2%",
+     "111.7%",
+     "114.1%",
+     "116.8%",
+     "122.8%",
+     "122.6%",
+     "121.9%",
+     "123.0%",
+     "122.3%",
+     "117.0%",
+     "112.7%",
+     null,
+     null
+    ],
+    "values": [
+     100.0,
+     100.16876663463272,
+     101.35239688026626,
+     100.55560760787446,
+     102.5990070560137,
+     105.37575500859515,
+     108.22097732097224,
+     111.72555044146029,
+     114.11502962319695,
+     116.8028375390628,
+     122.80455065799477,
+     122.57313331155223,
+     121.89301848517046,
+     123.01385761032647,
+     122.33174048692597,
+     116.99257645625708,
+     112.6725978514772,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Spending as printed, budgeted",
     "texts": [
      null,
      null,
@@ -240,9 +292,9 @@
   {
    "figures": {
     "a": {
-     "text": "61.3%",
+     "text": "12.7%",
      "unit": "",
-     "value": 61.33053967204552
+     "value": 12.672597851477185
     },
     "b": {
      "text": "13.4%",
@@ -261,12 +313,30 @@
     }
    },
    "literals": [],
-   "rests_on": [
-    "n-chg",
-    "e-chg",
-    "prices"
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "61.3%",
+       "unit": "",
+       "value": 61.33053967204552
+      },
+      "b": {
+       "text": "43.2%",
+       "unit": "",
+       "value": 43.18524889672668
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "As printed the rise is 61.3%; Boston-area prices rose 43.2% over the same fiscal years."
+    }
    ],
-   "text": "Spending rose 61.3% over FY2008 to FY2024 while pupils fell 13.4%; dollars are as printed."
+   "rests_on": [
+    "r-chg",
+    "e-chg"
+   ],
+   "text": "After prices spending rose 12.7% over FY2008 to FY2024, and pupils fell 13.4%."
   },
   {
    "figures": {
@@ -336,7 +406,7 @@
    "rests_on": [
     "nb-idx"
    ],
-   "text": "Budgeted FY2026 spending is 181.7% of the FY2008 level; it is a budget, drawn as its own line."
+   "text": "Budgeted FY2026 spending is 181.7% of the FY2008 level as printed, drawn as its own line."
   },
   {
    "figures": {},
@@ -346,11 +416,11 @@
      "figures": {},
      "kind": "hypothesis",
      "literals": [],
-     "text": "Prices, salary steps, out-of-district placements, mandates and staff who are not teachers all fit the same lines. Nothing here separates them."
+     "text": "Salaries rising faster than prices, out-of-district placements, mandates and staff who are not teachers all fit the same lines. Nothing here separates them."
     }
    ],
    "rests_on": [
-    "n-chg",
+    "r-chg",
     "t-chg",
     "e-chg"
    ],
@@ -359,7 +429,7 @@
  ],
  "facts": [
   {
-   "id": "n-chg",
+   "id": "r-chg",
    "kind": "published",
    "label": {
     "figures": {
@@ -372,15 +442,48 @@
       "text": "FY2024",
       "unit": "fiscal year",
       "value": 2024
+     },
+     "r": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
      }
     },
     "literals": [],
-    "text": "net school spending, FY2008 to FY2024, actual"
+    "text": "net school spending in FY2024 dollars, FY2008 to FY2024"
+   },
+   "value": {
+    "text": "+12.7%",
+    "unit": "",
+    "value": 12.672597851477185
+   }
+  },
+  {
+   "id": "n-chg",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "net school spending as printed, the same years"
    },
    "value": {
     "text": "+61.3%",
     "unit": "",
     "value": 61.33053967204552
+   }
+  },
+  {
+   "id": "p-chg",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Boston-area prices, the same years, July-June"
+   },
+   "value": {
+    "text": "+43.2%",
+    "unit": "",
+    "value": 43.18524889672668
    }
   },
   {
@@ -537,17 +640,6 @@
     "unit": "",
     "value": -0.4410838059231259
    }
-  },
-  {
-   "closes": "a published price index landed in this archive, e.g. the BLS CPI-U for Boston-Cambridge-Newton, annual averages",
-   "id": "prices",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "the same dollars adjusted for prices"
-   },
-   "value": null
   }
  ],
  "finding": {
@@ -567,6 +659,11 @@
     "unit": "",
     "value": 4.602510460251041
    },
+   "r": {
+    "text": "12.7%",
+    "unit": "",
+    "value": 12.672597851477185
+   },
    "y": {
     "text": "FY2008",
     "unit": "fiscal year",
@@ -579,7 +676,7 @@
    }
   },
   "literals": [],
-  "text": "From FY2008 to FY2024 net school spending rose 61.3%; pupils fell 13.4% and teacher FTE 4.6%."
+  "text": "FY2008 to FY2024: spending up 12.7% after prices (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%."
  },
  "full_report": {
   "href": "",
@@ -612,6 +709,26 @@
   {
    "href": "/docs/data/dese-enrollment.csv",
    "label": "Lunenburg Budget Project — dese-enrollment.csv (DESE’s 1 October headcount, by year)"
+  },
+  {
+   "href": "/docs/federal-bls/PROVENANCE.md",
+   "label": "Lunenburg Budget Project — PROVENANCE.md (where the price index came from, and the fiscal-year average)"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-1990-1999.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2000-2009.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2000-2009.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2010-2019.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2020-2026.json"
   }
  ],
  "table": {
@@ -619,7 +736,8 @@
   "views": [
    {
     "columns": [
-     "Net school spending",
+     "Spending as printed",
+     "Spending, FY2024 dollars",
      "Pupils",
      "Teacher FTE"
     ],
@@ -627,14 +745,16 @@
     "kinds": [
      "ledger",
      "ledger",
+     "ledger",
      "ledger"
     ],
     "label": "Share of FY2008",
-    "note": "Our arithmetic on DESE’s figures. A budgeted year is never set against an actual one.",
+    "note": "Our arithmetic on DESE’s figures and the BLS price index, July-June averages. A budgeted year is never set against an actual one.",
     "rows": [
      {
       "cells": [
        "181.7%",
+       "119.8%",
        "86.0%",
        "86.5%"
       ],
@@ -643,6 +763,7 @@
      {
       "cells": [
        "170.6%",
+       "115.4%",
        "85.7%",
        "87.9%"
       ],
@@ -651,6 +772,7 @@
      {
       "cells": [
        "161.3%",
+       "112.7%",
        "86.6%",
        "95.4%"
       ],
@@ -659,6 +781,7 @@
      {
       "cells": [
        "162.9%",
+       "117.0%",
        "85.6%",
        "94.4%"
       ],
@@ -667,6 +790,7 @@
      {
       "cells": [
        "160.5%",
+       "122.3%",
        "87.6%",
        "93.1%"
       ],
@@ -675,6 +799,7 @@
      {
       "cells": [
        "152.6%",
+       "123.0%",
        "87.3%",
        "91.0%"
       ],
@@ -683,6 +808,7 @@
      {
       "cells": [
        "149.5%",
+       "121.9%",
        "90.0%",
        "89.9%"
       ],
@@ -691,6 +817,7 @@
      {
       "cells": [
        "147.9%",
+       "122.6%",
        "90.4%",
        "92.5%"
       ],
@@ -699,6 +826,7 @@
      {
       "cells": [
        "144.2%",
+       "122.8%",
        "90.0%",
        "96.3%"
       ],
@@ -707,6 +835,7 @@
      {
       "cells": [
        "133.3%",
+       "116.8%",
        "88.4%",
        "93.8%"
       ],
@@ -715,6 +844,7 @@
      {
       "cells": [
        "127.5%",
+       "114.1%",
        "85.9%",
        "87.6%"
       ],
@@ -723,6 +853,7 @@
      {
       "cells": [
        "123.8%",
+       "111.7%",
        "85.4%",
        "85.0%"
       ],
@@ -731,6 +862,7 @@
      {
       "cells": [
        "118.6%",
+       "108.2%",
        "85.7%",
        "84.2%"
       ],
@@ -739,6 +871,7 @@
      {
       "cells": [
        "113.8%",
+       "105.4%",
        "87.0%",
        "86.2%"
       ],
@@ -747,6 +880,7 @@
      {
       "cells": [
        "109.1%",
+       "102.6%",
        "89.7%",
        "95.7%"
       ],
@@ -755,6 +889,7 @@
      {
       "cells": [
        "104.3%",
+       "100.6%",
        "90.5%",
        "85.6%"
       ],
@@ -763,6 +898,7 @@
      {
       "cells": [
        "103.8%",
+       "101.4%",
        "93.3%",
        "100.8%"
       ],
@@ -771,6 +907,7 @@
      {
       "cells": [
        "101.7%",
+       "100.2%",
        "95.3%",
        "100.6%"
       ],
@@ -778,6 +915,7 @@
      },
      {
       "cells": [
+       "100.0%",
        "100.0%",
        "100.0%",
        "100.0%"

@@ -16,6 +16,11 @@
     "unit": "",
     "value": 4.602510460251041
    },
+   "r": {
+    "text": "12.7%",
+    "unit": "",
+    "value": 12.672597851477185
+   },
    "y": {
     "text": "FY2008",
     "unit": "fiscal year",
@@ -28,7 +33,7 @@
    }
   },
   "literals": [],
-  "text": "From FY2008 to FY2024 net school spending rose 61.3% in dollars as printed, pupils fell 13.4% and teacher FTE fell 4.6%. None of it is adjusted for prices, and none of it says why."
+  "text": "From FY2008 to FY2024 net school spending rose 12.7% after prices (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why."
  },
  "category": "spending-staff-students",
  "chains": [],
@@ -38,6 +43,11 @@
   "kind": "line",
   "note": {
    "figures": {
+    "r": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
     "y": {
      "text": "FY2008",
      "unit": "fiscal year",
@@ -45,7 +55,7 @@
     }
    },
    "literals": [],
-   "text": "Each series divided by its own FY2008 value, our arithmetic. Dollars as printed, not adjusted for prices."
+   "text": "Each series over its own FY2008 value. FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
   },
   "reference": {
    "label": "The FY2008 level",
@@ -56,7 +66,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Net school spending, actual",
+    "name": "Spending as printed, actual",
     "texts": [
      "100.0%",
      "101.7%",
@@ -103,7 +113,54 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Net school spending, budgeted",
+    "name": "Spending, FY2024 dollars, actual",
+    "texts": [
+     "100.0%",
+     "100.2%",
+     "101.4%",
+     "100.6%",
+     "102.6%",
+     "105.4%",
+     "108.2%",
+     "111.7%",
+     "114.1%",
+     "116.8%",
+     "122.8%",
+     "122.6%",
+     "121.9%",
+     "123.0%",
+     "122.3%",
+     "117.0%",
+     "112.7%",
+     null,
+     null
+    ],
+    "values": [
+     100.0,
+     100.16876663463272,
+     101.35239688026626,
+     100.55560760787446,
+     102.5990070560137,
+     105.37575500859515,
+     108.22097732097224,
+     111.72555044146029,
+     114.11502962319695,
+     116.8028375390628,
+     122.80455065799477,
+     122.57313331155223,
+     121.89301848517046,
+     123.01385761032647,
+     122.33174048692597,
+     116.99257645625708,
+     112.6725978514772,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Spending as printed, budgeted",
     "texts": [
      null,
      null,
@@ -279,9 +336,9 @@
    {
     "figures": {
      "a": {
-      "text": "61.3%",
+      "text": "12.7%",
       "unit": "",
-      "value": 61.33053967204552
+      "value": 12.672597851477185
      },
      "b": {
       "text": "13.4%",
@@ -301,10 +358,11 @@
     },
     "literals": [],
     "rests_on": [
+     "h-r",
      "h-n",
      "h-e"
     ],
-    "text": "From FY2008 to FY2024 spending rose 61.3% while pupils fell 13.4%."
+    "text": "From FY2008 to FY2024 spending rose 12.7% after prices while pupils fell 13.4%."
    },
    {
     "figures": {
@@ -358,9 +416,9 @@
    {
     "figures": {
      "a": {
-      "text": "3.46",
+      "text": "1.61",
       "unit": "times",
-      "value": 3.4586822626048725
+      "value": 1.6056169465934322
      },
      "b": {
       "text": "10.1%",
@@ -381,31 +439,66 @@
     "literals": [],
     "rests_on": [
      "h-mult",
-     "h-el",
-     "h-pp"
+     "h-el"
     ],
-    "text": "Over FY1994 to FY2024 spending is 3.46 times larger and pupils 10.1% fewer."
+    "text": "Over FY1994 to FY2024 spending is 1.61 times larger after prices; pupils 10.1% fewer."
    },
    {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$8,518",
+      "unit": "",
+      "value": 8517.967949592878
+     },
+     "b": {
+      "text": "$15,217",
+      "unit": "",
+      "value": 15217.374498565703
+     },
+     "r": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
     "literals": [],
     "rests_on": [
-     "h-prices",
-     "h-mult"
+     "h-rpp",
+     "h-pp"
     ],
-    "text": "Every dollar here is as printed; none is adjusted for prices."
+    "text": "Per child enrolled it went from $8,518 to $15,217, both in FY2024 dollars."
    }
   ],
   "tiers": [
    {
     "facts": [
      {
+      "id": "h-r",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "r": {
+         "text": "FY2024",
+         "unit": "fiscal year",
+         "value": 2024
+        }
+       },
+       "literals": [],
+       "text": "net school spending, in FY2024 dollars"
+      },
+      "value": {
+       "text": "+12.7%",
+       "unit": "",
+       "value": 12.672597851477185
+      }
+     },
+     {
       "id": "h-n",
       "kind": "published",
       "label": {
        "figures": {},
        "literals": [],
-       "text": "net school spending, actual"
+       "text": "net school spending, as printed"
       },
       "value": {
        "text": "+61.3%",
@@ -465,12 +558,12 @@
         }
        },
        "literals": [],
-       "text": "times the FY1994 net school spending, in FY2024"
+       "text": "times the FY1994 net school spending, FY2024, after prices"
       },
       "value": {
-       "text": "3.46",
+       "text": "1.61",
        "unit": "times",
-       "value": 3.4586822626048725
+       "value": 1.6056169465934322
       }
      },
      {
@@ -491,6 +584,31 @@
        "text": "$15,217",
        "unit": "",
        "value": 15217.374498565703
+      }
+     },
+     {
+      "id": "h-rpp",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "r": {
+         "text": "FY2024",
+         "unit": "fiscal year",
+         "value": 2024
+        },
+        "y": {
+         "text": "FY1994",
+         "unit": "fiscal year",
+         "value": 1994
+        }
+       },
+       "literals": [],
+       "text": "per child, FY1994, in FY2024 dollars (ours)"
+      },
+      "value": {
+       "text": "$8,518",
+       "unit": "",
+       "value": 8517.967949592878
       }
      },
      {
@@ -548,17 +666,6 @@
    },
    {
     "facts": [
-     {
-      "closes": "a published price index landed in this archive, e.g. the BLS CPI-U for Boston-Cambridge-Newton, annual averages",
-      "id": "h-prices",
-      "kind": "gap",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "the same dollars adjusted for prices"
-      },
-      "value": null
-     },
      {
       "closes": "Lunenburg’s EPIMS teacher assignments by school for the year in question, or the district’s own staffing list for it",
       "id": "h-2011",

@@ -4,8 +4,8 @@
 
 ## What the town and the state published — and we hold
 
-- **16,527 documents** — PDFs, spreadsheets, Word files and slide decks — 43,610 files and 10.18 GB in all, each with its address, its publisher’s filename and a checksum.
-- **15 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
+- **16,527 documents** — PDFs, spreadsheets, Word files and slide decks — 43,614 files and 10.18 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,216 meeting documents** from **51 town boards**: 4,743 sets of minutes and 7,473 agendas, 2009-01-05 to 2026-10-15 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
 - **3,751 names** on the town’s printed staff rosters, FY2011–FY2025.
