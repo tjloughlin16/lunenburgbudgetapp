@@ -94,15 +94,16 @@ function Frame({ title, basis, note, label, children }: {
   )
 }
 
-/** A legend chip that draws the mark as the chart does: dashed for an estimate. */
+/** A legend chip that draws the mark as the chart does: dashed for an estimate. The estimate
+ *  colour goes on the TAG, not as the left rule the stat tiles use: on a card that rule is an
+ *  edge, on a 12px inline chip it read as a stray orange bar (TJ, 19 October 2026). */
 function Key({ colour, name, basis, mark, tag = true }: {
   colour: string; name: string; basis: Basis; mark: 'line' | 'bar'; tag?: boolean
 }) {
   const est = basis === 'estimate'
   return (
     <span className="inline-flex items-center gap-1.5 text-[12px]"
-      style={{ color: 'var(--text-secondary)', boxShadow: est ? 'inset 3px 0 0 var(--status-warning)' : undefined,
-        paddingLeft: est ? 7 : undefined }}>
+      style={{ color: 'var(--text-secondary)' }}>
       {mark === 'line'
         ? <svg width="18" height="8" aria-hidden><line x1="1" y1="4" x2="17" y2="4" stroke={colour}
             strokeWidth="2.5" strokeDasharray={est ? '4 3' : undefined} /></svg>
@@ -111,7 +112,7 @@ function Key({ colour, name, basis, mark, tag = true }: {
             border: est ? `1.5px dashed ${colour}` : undefined }} />}
       {name}
       {tag && BASIS_TAG[basis] ? <span className="text-[10px] uppercase tracking-wider"
-        style={{ color: 'var(--text-muted)' }}>{BASIS_TAG[basis]}</span> : null}
+        style={{ color: est ? 'var(--status-warning)' : 'var(--text-muted)' }}>{BASIS_TAG[basis]}</span> : null}
     </span>
   )
 }
