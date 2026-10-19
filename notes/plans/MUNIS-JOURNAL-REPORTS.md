@@ -30,12 +30,12 @@ one masked family or child is not.
 
 | step | state |
 |---|---|
-| Extractor redaction fixed to TJ's principle, three privacy reads plus a final read | final read running, 19 Oct |
-| Clean CSVs back in `sources/data/`; `fy28/public/docs/data/` copy | not started |
-| `redactions.csv` row names our CSV as the public copy (`public_key`, `public_sha256`) | not started |
-| `build_db.py` loads the tables (the hold in it removed); `describe_data.py` semantics for both tables | not started |
-| `build_source_index.py` catalogue entries (held uncommitted) committed with the CSVs | not started |
-| Committed by path; D1 picks it up on the daily refresh (never `sync_d1.py` by hand) | not started |
+| Extractor redaction fixed to TJ's principle, three privacy reads plus a final read | **done** 19 Oct: final read found nothing confidential visible; last round checked as a diff |
+| Clean CSVs back in `sources/data/`; `fy28/public/docs/data/` copy | **done** `2ee126b2f` |
+| `redactions.csv` row names our CSV as the public copy (`public_key`, `public_sha256`) | **done** `2ee126b2f` |
+| `build_db.py` loads the tables (with `name_basis`); `describe_data.py` semantics for both tables | **done** `2ee126b2f`; the hold guard in build_db stays, harmless |
+| `build_source_index.py` catalogue entries committed with the CSVs | **done** `2ee126b2f`; `sources.json` not regenerated in git (other agents' entries mixed in) |
+| Committed by path; D1 picks it up on the daily refresh (never `sync_d1.py` by hand) | committed; D1 waits for the refresh |
 | History rewrite of the unpushed range before any push (see memory: open items 19 Oct) | waiting for the other agents to pause |
 | The **journal data page**: grain, sources, the redaction rule, what it cannot show | not started |
 
@@ -185,7 +185,7 @@ plus minutes) → `built` → `deployed`.
 
 | hub | id | state | commit | note |
 |---|---|---|---|---|
-| 0 | gate (Phase 0) | in progress | | final privacy read running |
+| 0 | gate (Phase 0) | data published `2ee126b2f` | | history rewrite + data page left |
 | 0 | journal data page | not started | | |
 | A | sped-all-funds | not started | | builds the fund rollup |
 | A | sped-providers | not started | | |

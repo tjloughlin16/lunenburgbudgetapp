@@ -82,11 +82,18 @@ Checked 18 October 2026:
   the Town's file and its redaction misses a child.
 - **What is published is our redacted reading of it:** `sources/data/munis-school-journal.csv`
   (every journal line) and `munis-school-journal-accounts.csv` (every account), built by
-  `scripts/extract_munis_school_journal.py`, which states the redaction rule in its header:
-  people paid as vendors become `individual (redacted)` with no vendor or invoice number;
-  children, and people named in a description, become `[redacted]`; businesses and public
-  bodies stay. Every distinct vendor name and every distinct description was read for a
-  person before it was written.
+  `scripts/extract_munis_school_journal.py`, which states the redaction rule in its header.
+  TJ's rule, 19 October 2026: *"remove ANYBODY who is directly named as a parent or child
+  getting services from the school. anybody contributing to those services as vendors
+  should be ID'd... It's associating a name to a disability that we are trying to avoid."*
+  - Recipients are masked. Children become `[redacted]`. A family's payment becomes
+    `individual (redacted)`, with no vendor, invoice, check or receipt number.
+  - Providers and vendors are named: special education providers, officials, contractors,
+    staff acting in role, scholarship recipients.
+  - Four independent privacy reads were run on 19 October 2026. The last found nothing
+    confidential visible.
+  - A first redacted version failed its privacy read and was never published; it is held
+    in `build/private/`.
 - **The three picture pages** were read by eye into
   `sources/data/munis-school-journal-image-pages.csv`, already masked. The extractor proves
   that reading: the three accounts those pages fall in close to the cent only with it.
