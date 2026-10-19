@@ -35,6 +35,7 @@ Writes sources/data/fund-1301-cash-journal.csv and prints the year-by-year roll-
 """
 import csv
 import os
+import re
 import sys
 from datetime import datetime
 
@@ -118,6 +119,19 @@ def d(v):
     return v.strftime('%Y-%m-%d') if isinstance(v, datetime) else ''
 
 
+# A payer the cashbook names as `SURNAME, FIRST` is a private person -- in this export, a
+# family whose fee check bounced (NSF) and was redeposited. Written as INDIVIDUAL, as
+# extract_munis_school_journal.py does (CLAUDE.md 13e). Staff acting in role, e.g.
+# `ATHLETIC DEPT/<secretary>`, are not in that form and stay: a public employee, on the
+# rosters and the district's directory.
+PERSON = re.compile(r"^[A-Z][A-Z'\- ]*, [A-Z]")
+INDIVIDUAL = 'individual (redacted)'
+
+
+def payer(v):
+    return INDIVIDUAL if PERSON.match(str(v).strip()) else v
+
+
 def main():
     years, chain = {}, []
     prior_close = None
@@ -170,7 +184,7 @@ def main():
                         r['src'], SRC_MEANING.get(r['src'], ''), r['period'], r['journal'],
                         r['ref1'], r['po_ref2'], r['ref3'], r['reference'],
                         f"{r['amount']:.2f}", f"{r['running_balance_derived']:.2f}",
-                        r['check_no'], r['warrant'], r['voucher'], r['vendor'],
+                        r['check_no'], r['warrant'], r['voucher'], payer(r['vendor']),
                         r['comments']])
 
     print(f'wrote {OUT}  ({len(out)} rows)\n')
