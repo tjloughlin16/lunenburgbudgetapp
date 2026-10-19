@@ -3,9 +3,17 @@
 // See functions/_notfound.js for why this is a Function and not a _redirects rule.
 import { assetOr404 } from '../_notfound.js'
 import { movedTo } from './_moved.js'
-import { fromBucket } from './_bucket.js'
+import { fromBucket, goneFor } from './_bucket.js'
 
 export async function onRequest(context) {
+  // A WITHDRAWN DOCUMENT IS ANSWERED FIRST, before the build or the bucket is asked -- so
+  // no stray copy in either can serve it. sources/data/takedowns.csv.
+  const path = Array.isArray(context.params.path)
+    ? context.params.path.join('/')
+    : String(context.params.path || '')
+  const gone = goneFor(path)
+  if (gone) return gone
+
   const res = await context.next()
 
   // A document that is genuinely here.
@@ -15,9 +23,6 @@ export async function onRequest(context) {
   // Not here. Before answering 404, check whether it MOVED. The archive was reorganised
   // on 4 September 2026 and llms.txt tells agents to cite `/docs/<path>` URLs, so an
   // address published before that date is a promise this file keeps.
-  const path = Array.isArray(context.params.path)
-    ? context.params.path.join('/')
-    : String(context.params.path || '')
   const to = movedTo(path)
   if (to && to !== path) {
     const url = new URL(context.request.url)

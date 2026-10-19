@@ -42,8 +42,16 @@ from datetime import datetime
 import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details')
 OUT = os.path.join(ROOT, 'sources', 'data', 'fund-1301-cash-journal.csv')
+
+# THE RAW IS PRIVATE, 19 October 2026. The three workbooks name a family on a bounced
+# (NSF) fee check, so they are WITHHELD (sources/data/redactions.csv) and taken down from
+# the public bucket (sources/data/takedowns.csv). They are no longer read from sources/:
+# the raw lives in the PRIVATE bucket under `raw/<key>`, cached locally in gitignored
+# build/private/munis/raw/ -- the same pattern extract_munis_school_journal.py uses -- and
+# every read is checked against the sha256 the register records.
+KEY_DIR = 'town-ledgers/account-details'
+CACHE = os.path.join(ROOT, 'build', 'private', 'munis', 'raw', KEY_DIR)
 
 # The publisher's own filenames, kept because links die and a resident asking the town for
 # these has to ask by the name the town used (rule 12). Ours on the left, theirs on the
@@ -53,6 +61,31 @@ YEARS = [
     (2025, 'account-details-fy2025-fund1301.xlsx'),
     (2026, 'account-details-fy2026-fund1301.xlsx'),
 ]
+RAW_SHA256 = {
+    'account-details-fy2024-fund1301.xlsx': '9bbf76db320bf83148870005e7208b990dddaeb5e04433e9196d62c38d8230bd',
+    'account-details-fy2025-fund1301.xlsx': '3ebf3472134182f2f52953323f47330a59f130ad24842b677a9db4666a53691f',
+    'account-details-fy2026-fund1301.xlsx': 'fc76a981f0857c6670ad19b3199a0ad1f5d5d724d58a1817adb0f6ba04b7a69a',
+}
+
+
+def raw_path(filename):
+    """The local copy of a privately held workbook, fetched from the private bucket if
+    this tree does not have it, and refused unless its sha256 is the one registered."""
+    import hashlib
+    path = os.path.join(CACHE, filename)
+    if not os.path.exists(path):
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import archive_storage as A
+        blob = A.get_private(f'raw/{KEY_DIR}/{filename}')
+        os.makedirs(CACHE, exist_ok=True)
+        with open(path + '.part', 'wb') as fh:
+            fh.write(blob)
+        os.replace(path + '.part', path)
+    sha = hashlib.sha256(open(path, 'rb').read()).hexdigest()
+    if sha != RAW_SHA256[filename]:
+        sys.exit(f'{path}: sha256 {sha[:12]}, expected {RAW_SHA256[filename][:12]} -- not '
+                 'the document this extractor was written against')
+    return path
 
 SHEET = 'Journal Detail Export'
 
@@ -80,7 +113,7 @@ def cell(row, i):
 
 
 def load_year(fy, filename):
-    path = os.path.join(SRC, filename)
+    path = raw_path(filename)
     wb = openpyxl.load_workbook(path, data_only=True)
     if SHEET not in wb.sheetnames:
         sys.exit(f'{filename}: expected a sheet named {SHEET!r}, found {wb.sheetnames}')

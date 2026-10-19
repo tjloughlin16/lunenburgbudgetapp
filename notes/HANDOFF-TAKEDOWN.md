@@ -1,3 +1,5 @@
+**BUILT 19 October 2026 and documented in `notes/process/REMOVING-FROM-THE-ARCHIVE.md`. Read that; this file is the design history.**
+
 # Handoff: a way to DELETE from the archive -- and the 16 documents that need it first
 
 Written 6 October 2026 for a fresh session. Nothing here is built yet.

@@ -53,6 +53,10 @@ CHECKS = [
     # cheap and offline, which is why they come first.
     ('check_refresh_safe.py', ['--selftest']),
     ('test_refresh_git.py', []),
+    # THE TAKEDOWN REGISTER, compiled into the 410 module the site serves. Offline and
+    # instant. Fails if fy28/functions/docs/_takedowns.js no longer matches
+    # sources/data/takedowns.csv, or if any tree holds a taken-down document in sources/.
+    ('takedown.py', ['--check']),
     ('build_readme.py', ['--check']),
     # JOB POSTINGS: the town's snapshots tie to their catalogue and to the page's own printed
     # count, and /jobs, the town's two tables and every board's link reproduce from them.

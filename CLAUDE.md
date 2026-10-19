@@ -917,7 +917,8 @@ Do not write a new character-count test. Call `pdf_kind`.
 ### 13e. The raw is private. The public copy is ours. The decision is written down
 
 TJ, 4 October 2026, after a records-request delivery put one employee's number, start date,
-grade and salary into the public bucket -- which cannot delete it for ten years: *"we
+grade and salary into the public bucket -- whose lock refuses deletion unless it is
+deliberately lifted (see *Removing a document* below): *"we
 probably need a REDACTION mechanism, so that we can have a private storage of the raw, and a
 public version with all redacted PII removed. This will come up in MUNIS data too."*
 
@@ -1113,8 +1114,8 @@ figure about the archive: the same published sentence had three defensible value
 and REFUSES, naming the file and `sync_archive.py --pull`. Any other generator publishing a
 corpus count should do the same.
 
-**A RENAME ORPHANS AN OBJECT AND CANNOT BE UNDONE.** The bucket forbids deletion for ten
-years, so changing a document's filename leaves the old object there forever, unfindable
+**A RENAME ORPHANS AN OBJECT.** The bucket's lock refuses deletion in ordinary use, so
+changing a document's filename leaves the old object there, unfindable
 because the bucket cannot be listed. Eleven went that way when a slug changed how it renders
 an apostrophe (`town-manager-s` to `town-manager-39-s`). `sources/data/archive-orphans.csv`
 is the register, matched by **sha256** rather than by name, and it says `superseded_by` where
@@ -1151,7 +1152,26 @@ overwriting for ten years across every prefix. An OVERWRITE is refused loudly (`
 object is locked by the bucket policy`). **A DELETE is not: R2 answers it with success and
 keeps the object** -- found on 5 October 2026, when a delete meant to prove the lock was
 working reported success and the object was still listed and still served. So whether an
-object is gone is answered by LISTING it afterwards, never by the response. Everything we
+object is gone is answered by LISTING it afterwards, never by the response.
+
+**Removing a document: the lock is a setting, not a law of nature.** Ten years is the
+lock rule's age, and the account owner can lift it. TJ, 6 October 2026: *"we HAVE to have a
+way to delete things. it can't truly be permanent."* There is ONE way, and it is
+`scripts/takedown.py`, documented in `notes/process/REMOVING-FROM-THE-ARCHIVE.md`. In
+outline:
+- a private copy first;
+- a row in `sources/data/takedowns.csv`;
+- the site answers **410 Gone, with the reason** (deploy);
+- a FRESH verified `backup_snapshot.py`;
+- `--delete`, which lifts the lock, deletes, confirms by listing, and restores the lock in a
+  `finally`.
+
+Use it when a public document holds private information. Never delete by hand, and never
+write "cannot be deleted" here again -- that sentence sent two agents the wrong way on 19
+October 2026, when three workbooks naming families were treated as permanent. Not reached by
+any deletion: git history, search engines, the Wayback Machine.
+
+Everything we
 derive from
 those documents does change -- the extracted text when an extractor improves, the analyses
 when a rate does -- and git versions that properly: atomic across files, with a message,
@@ -1681,6 +1701,8 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   bucket, read back and compared? Nothing destructive may
                                                 #   run while one is not. Offline, under a second
     python3 scripts/check_archive_backed_up.py --push   # ...and back up whatever is not
+    python3 scripts/takedown.py --status        # documents registered for REMOVAL: served 410? still in the bucket?
+    python3 scripts/takedown.py --dry-run       # ...exactly what --delete would do, and what it refuses
     python3 scripts/ingest.py --status          # documents in flight: staged, not yet in the bucket
     python3 scripts/ingest.py --secure          # ...finish them (push, read back, file, catalogue)
     python3 scripts/check_manifest_history.py   # has any document LEFT the index? A dropped row does not

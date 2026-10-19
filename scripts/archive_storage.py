@@ -459,6 +459,22 @@ OURS_DIRS = {'text', 'ocr', 'pages'}
 DATED_SNAPSHOT = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 
 
+# TAKEN DOWN, 19 October 2026. A key in `sources/data/takedowns.csv` is a public object we
+# have stopped serving (410 Gone) and may later delete. Its manifest row stays until the
+# object is actually gone -- the manifest is a truthful index into the bucket -- but no tree
+# may hold it, pull it back, or count it as missing. `scripts/takedown.py` is the register's
+# only writer.
+TAKEDOWNS = os.path.join(SRC, 'data', 'takedowns.csv')
+
+
+def taken_down():
+    """{key: register row} for every key in the takedown register, whatever its state."""
+    if not os.path.exists(TAKEDOWNS):
+        return {}
+    with open(TAKEDOWNS, newline='', encoding='utf-8') as fh:
+        return {r['key']: r for r in csv.DictReader(fh) if r.get('key')}
+
+
 def incomplete(prefix=None, manifest_path=None):
     """Documents the index names that THIS TREE does not hold.
 
@@ -485,8 +501,9 @@ def incomplete(prefix=None, manifest_path=None):
     Frozen keys only: our derived files legitimately come and go.
     """
     rows = read_manifest(manifest_path or MANIFEST)
+    gone = taken_down()
     return sorted(k for k in rows
-                  if frozen(k)
+                  if frozen(k) and k not in gone
                   and (prefix is None or k.startswith(prefix))
                   and not os.path.exists(local_path(k)))
 

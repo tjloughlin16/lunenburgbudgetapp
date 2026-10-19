@@ -26,4 +26,11 @@ if ! python3 scripts/check_dist_complete.py || ! python3 scripts/check_prerender
   echo "NOT DEPLOYING: fy28/dist is not fully prerendered (above). Run: cd fy28 && npm run build:site"
   exit 1
 fi
+# A TAKEDOWN THAT IS NOT IN THE MODULE IS NOT TAKEN DOWN. The 410s are compiled from
+# sources/data/takedowns.csv; a stale module would deploy a withdrawn document as served.
+if ! python3 scripts/takedown.py --check; then
+  echo
+  echo "NOT DEPLOYING: the takedown module is stale (above). Run: python3 scripts/takedown.py --write-module"
+  exit 1
+fi
 cd "$ROOT/fy28" && npx wrangler pages deploy --commit-dirty=true

@@ -327,8 +327,13 @@ def pull(only=None, workers=6):
     rows = A.read_manifest()
     if not rows:
         sys.exit('No manifest. A clone should have one; run --manifest if this is not one.')
+    # A TAKEN-DOWN KEY IS NEVER PULLED BACK. Its row stays in the manifest until the object
+    # is deleted, and without this a fresh clone would fetch a withdrawn document straight
+    # back into sources/ from the r2.dev URL. sources/data/takedowns.csv.
+    gone = A.taken_down()
     todo = [r for r in rows.values()
-            if (not only or only in r['key']) and not os.path.exists(A.local_path(r['key']))]
+            if (not only or only in r['key']) and r['key'] not in gone
+            and not os.path.exists(A.local_path(r['key']))]
     if not todo:
         print('Nothing to pull: every file in the manifest is already on disk.')
         return 0

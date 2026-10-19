@@ -12,6 +12,41 @@
 // is a promise. The bucket follows the folder, so the URL has to be translated here.
 const KEY_PREFIX = [['minutes/', 'meetings/']]
 
+// TAKEN DOWN. A key in sources/data/takedowns.csv is a document we published and then
+// withdrew -- because it holds private information about a person. The register is
+// compiled into `_takedowns.js` by scripts/takedown.py (never read at runtime), and every
+// such key answers 410 Gone WITH THE REASON, whether or not the bucket still holds it.
+// 410 rather than 404: the address existed, it was withdrawn on purpose, and a reader or
+// a crawler should be told so rather than told it was never there.
+import { TAKEN_DOWN } from './_takedowns.js'
+
+/** A 410 response for a taken-down /docs/ path, or null if the path is not taken down. */
+export function goneFor(path) {
+  const entry = TAKEN_DOWN[bucketKey(path)]
+  if (!entry) return null
+  const lines = [
+    'This document has been withdrawn from the archive (410 Gone).',
+    '',
+    entry.reason,
+    '',
+    `Withdrawn: ${entry.decided_on}`,
+  ]
+  if (entry.replacement) {
+    lines.push(`What is published instead: https://lunenburgbudgetproject.org${entry.replacement}`)
+  }
+  lines.push('', 'Every takedown is recorded in https://lunenburgbudgetproject.org/docs/data/takedowns.csv')
+  return new Response(lines.join('\n') + '\n', {
+    status: 410,
+    headers: {
+      'content-type': 'text/plain; charset=utf-8',
+      // An hour, like every other answer this site may later change its mind about.
+      'cache-control': 'public, max-age=3600',
+      'x-robots-tag': 'noindex',
+      'x-archive-source': 'takedown',
+    },
+  })
+}
+
 /** The bucket key for a published /docs/ path. */
 export function bucketKey(path) {
   for (const [from, to] of KEY_PREFIX) {
@@ -36,6 +71,9 @@ export function bucketKey(path) {
 export async function fromBucket(context, path) {
   const bucket = context.env && context.env.ARCHIVE
   if (!bucket) return null
+
+  const gone = goneFor(path)
+  if (gone) return gone
 
   const key = bucketKey(path)
   const { request } = context
