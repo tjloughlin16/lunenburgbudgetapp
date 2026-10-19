@@ -170,12 +170,35 @@ def radar():
 # Report's Schedule 3 groups); the names are ours, and the table beside the chart prints both.
 FUNC_NAMES = {
     'TCHR': 'Teachers', 'BENE': 'Insurance, retirement, other',
-    'TSER': 'Paras, therapists, substitutes', 'SERV': 'Buses, food, nurses, athletics',
+    'TSER': 'Paras, therapists, substitutes', 'SERV': 'Pupil services',
     'TUIT': 'Out-of-district tuition', 'GUID': 'Guidance and testing',
     'OPMN': 'Buildings and upkeep', 'LDRS': 'Principals and curriculum leads',
     'ADMN': 'Central administration', 'MATL': 'Books, supplies, technology',
     'ODTR': 'Out-of-district transport', 'PDEV': 'Professional development',
 }
+
+
+# DESE's PUPIL SERVICES category holds buses, food, nurses and sports -- four unrelated things
+# a reader will not accept as one (TJ, 19 October 2026: "are these really grouped together?!").
+# Every chart and table here shows them apart, by DESE's own function codes, which must add
+# back to the category every year.
+SERV_SPLIT = [('SERV-3300', 'Buses', ['3300']), ('SERV-3400', 'Food service', ['3400']),
+              ('SERV-3200', 'Nurses and health', ['3200']),
+              ('SERV-3500', 'Sports and student activities', ['3510', '3520'])]
+
+
+def types(y):
+    """{key: (name, code label, $)} for one year of functions(): every DESE category, with
+    pupil services split into its four parts."""
+    out = {k: (FUNC_NAMES[k], k, v) for k, v in y['cat'].items() if k != 'SERV'}
+    parts = 0.0
+    for key, name, codes in SERV_SPLIT:
+        v = sum(y['code'].get(c, 0.0) for c in codes)
+        out[key] = (name, '/'.join(codes), v)
+        parts += v
+    if abs(parts - y['cat']['SERV']) > 12:
+        fail('pupil services no longer equals buses, food, nurses and sports; a code is missing')
+    return out
 
 
 def functions():
@@ -744,7 +767,12 @@ def build():
     g0, g1 = min(FX), max(FX)
     if g1 not in P:
         fail('no price average for FY%d, the last spending-by-function year' % g1)
-    c0, c1, tt0, tt1 = FX[g0]['cat'], FX[g1]['cat'], FX[g0]['total'], FX[g1]['total']
+    T0, T1 = types(FX[g0]), types(FX[g1])
+    TN = {k: v[0] for k, v in T1.items()}
+    TC = {k: v[1] for k, v in T1.items()}
+    c0 = {k: v[2] for k, v in T0.items()}
+    c1 = {k: v[2] for k, v in T1.items()}
+    tt0, tt1 = FX[g0]['total'], FX[g1]['total']
     if set(c0) != set(c1):
         fail('the function categories differ between FY%d and FY%d' % (g0, g1))
     fg = {k: chg(c0[k], c1[k]) for k in c1}
@@ -809,7 +837,7 @@ def build():
                          'because the town spent more. DESE renumbered some codes over these '
                          'years, so compare categories, not single codes.', 'measured')])],
         chart=TP.ranking('Change in share of all school spending',
-                         [(FUNC_NAMES[k], dsh[k]) for k in c1], '%', decimals=1,
+                         [(TN[k], dsh[k]) for k in c1], '%', decimals=1,
                          note='%s to %s, DESE, all funds. Insurance went from %s of all school '
                               'spending to %s: a bar of %s.'
                               % (C.fy(g0), C.fy(g1), C.pct(sh0['BENE'], 1), C.pct(sh1['BENE'], 1),
@@ -820,7 +848,7 @@ def build():
             key='types', label='By type', total_col=None, kinds=['ledger'] * 5,
             columns=[C.fy(g0), C.fy(g1), 'Growth on itself', 'Share %s' % C.fy(g0),
                      'Share %s' % C.fy(g1)],
-            rows=[dict(label='%s (%s)' % (FUNC_NAMES[k], k), cells=[
+            rows=[dict(label='%s (%s)' % (TN[k], TC[k]), cells=[
                 C.usd(c0[k]), C.usd(c1[k]), '%+.0f%%' % fg[k], C.pct(sh0[k], 1), C.pct(sh1[k], 1)])
                   for k in sorted(c1, key=lambda k: -dsh[k])] + [dict(label='Total', cells=[
                 C.usd(tt0), C.usd(tt1), '%+.0f%%' % tg, '100.0%', '100.0%'])],
@@ -833,12 +861,13 @@ def build():
     # ================================================================ spending by type over time
     # TJ, 19 October 2026: "a stacked bar chart that shows the actual dollar amounts ... how
     # the spending line on the main page is composed over time." Five stacks, not twelve: the
-    # palette has five colours, and twelve bands on one bar are a smear (rule 7f). The ranking
-    # and the table one page over carry all twelve.
+    # palette has five colours, and twelve bands on one bar are a smear (rule 7f). The groups
+    # are named for what is in them -- the fourth is every child schooled elsewhere, the fifth
+    # says plainly it is the rest -- and the small multiples under the stack open them up.
     STACK = [('Teachers', ['TCHR']), ('Paras, therapists, substitutes', ['TSER']),
              ('Insurance and retirement', ['BENE']),
-             ('Buses, tuition, food, nurses, sports', ['SERV', 'TUIT', 'ODTR']),
-             ('Buildings, leaders, guidance, other', ['OPMN', 'LDRS', 'ADMN', 'GUID', 'MATL', 'PDEV'])]
+             ('Out-of-district tuition and transport', ['TUIT', 'ODTR']),
+             ('All other in-district spending', ['SERV', 'OPMN', 'LDRS', 'ADMN', 'GUID', 'MATL', 'PDEV'])]
     if sorted(k for _, ks in STACK for k in ks) != sorted(FUNC_NAMES):
         fail('the five stacks do not hold every function category exactly once')
     gy = sorted(FX)
@@ -868,8 +897,8 @@ def build():
            'published', fy01),
          f('a-b', U(add[n0]), 'more for insurance and retirement a year', 'published'),
          f('a-p', U(add[STACK[1][0]]), 'more for paras, therapists, substitutes a year', 'published'),
-         f('a-s', U(add[STACK[3][0]]), 'more for buses, tuition, food, nurses, sports', 'published'),
-         f('a-o', U(add[STACK[4][0]]), 'more for buildings, leaders, guidance, other', 'published'),
+         f('a-s', U(add[STACK[3][0]]), 'more for out-of-district tuition and transport', 'published'),
+         f('a-o', U(add[STACK[4][0]]), 'more for all other in-district spending', 'published'),
          f('odd-b', U(dB), 'insurance and retirement, %s against %s' % (C.fy(odd), C.fy(odd - 1)),
            'published', {'y': F(odd), 'p': F(odd - 1)}),
          f('odd-t', U(dT), 'teachers, %s against %s' % (C.fy(odd), C.fy(odd - 1)), 'published',
@@ -877,7 +906,7 @@ def build():
         [con('Of the %s added a year, teachers took %s and insurance and retirement %s.'
              % (C.usd(tt1 - tt0), C.usd(add[n1]), C.usd(add[n0])), ['t0', 't1', 'a-t', 'a-b'],
              {'a': U(tt1 - tt0), 'b': U(add[n1]), 'c': U(add[n0])}),
-         con('Paras, therapists and substitutes added %s a year; buildings and the rest %s.'
+         con('Paras, therapists and substitutes added %s a year; all other in-district %s.'
              % (C.usd(add[STACK[1][0]]), C.usd(add[STACK[4][0]])), ['a-p', 'a-o'],
              {'a': U(add[STACK[1][0]]), 'b': U(add[STACK[4][0]])},
              notes=[step('These are all funds, so the stack is not the net school spending line on '
@@ -894,16 +923,18 @@ def build():
             kind='bar', stacked=True,
             note='DESE’s spending by function, as printed, general fund plus grants and revolving '
                  'funds. Each bar is one year’s total.'),
-        # The same five, one panel each on one scale -- how each ITSELF changed, which a stack
-        # hides above its bottom band (TJ, 19 October 2026).
-        # Largest dollar increase first (TJ, 19 October 2026); each keeps its colour from the
-        # stack above, so one group is one colour on the page.
+        # EVERY TYPE, one panel each on one scale -- how each ITSELF changed, which a stack
+        # hides above its bottom band; largest dollar increase first (TJ, 19 October 2026).
+        # Each panel takes the colour of the stack band it sits in, so the two charts read
+        # together; pupil services is split into buses, food, nurses and sports.
         also=[TP.series('Each type on its own', [C.fy(y) for y in gy], [
-            TP.track(n, [band[n][y] for y in gy], 'published', 'line', colour=j)
-            for j, (n, _) in sorted(enumerate(STACK), key=lambda e: -add[e[1][0]])], '$',
+            TP.track(TN[k], [types(FX[y])[k][2] for y in gy], 'published', 'line',
+                     colour=next(j for j, (_, ks) in enumerate(STACK)
+                                 if (k.split('-')[0]) in ks))
+            for k in sorted(c1, key=lambda k: -(c1[k] - c0[k]))], '$',
             multiples=True,
-            note='The same five groups, every panel on the same dollar scale, so a steeper line '
-                 'is a bigger rise in dollars.')],
+            note='Every type, on one dollar scale: a steeper line is a bigger rise. A panel '
+                 'takes the colour of its band in the stack above.')],
         table=dict(caption='School spending by type, by year', views=[dict(
             key='years', label='By year', total_col=len(STACK), kinds=['ledger'] * (len(STACK) + 1),
             columns=[n for n, _ in STACK] + ['Total'],

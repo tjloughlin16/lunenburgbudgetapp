@@ -173,7 +173,7 @@ function Multiples({ c }: { c: SeriesChart }) {
   const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
   return (
     <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
+      <div className={`grid grid-cols-1 sm:grid-cols-2 ${c.series.length > 6 ? 'md:grid-cols-3' : ''} gap-x-5 gap-y-4`}>
         {c.series.map((s, i) => {
           const pts = s.texts.map((t, k) => [c.x[k], t] as const).filter(([, t]) => t != null)
           const first = pts[0], last = pts[pts.length - 1]
@@ -188,7 +188,7 @@ function Multiples({ c }: { c: SeriesChart }) {
                 {s.name}</p>
               {s.change ? <p className="text-[17px] font-bold tnum leading-tight mt-1" style={{ color: col }}>
                 {s.change} <span className="text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
-                  added since {c.x[0]}</span></p> : null}
+                  since {c.x[0]}</span></p> : null}
               <p className="text-[11.5px] tnum mt-0.5" style={{ color: 'var(--text-secondary)' }}>
                 {first[1]} in {first[0]} &rarr; {last[1]} in {last[0]}</p>
               <div style={{ height: 110 }} aria-hidden>

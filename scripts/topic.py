@@ -195,6 +195,8 @@ CHART_NOTE_MAX = 160
 CAPTION_MAX = 220
 ALT = (20, 300)
 TRACKS_MAX = 5            # the site's validated categorical set has five hues; never cycle
+PANELS_MAX = 16           # small multiples: each panel is LABELLED, so a colour may repeat --
+                          # but only on purpose, as the band of another chart it belongs to
 POINTS_MAX = 40
 ROWS_MAX = 20             # a ranking past twenty is a table. Was 15; raised 14 Oct 2026 so the
                           # 18 Monty Tech member towns can be ranked with Lunenburg highlighted
@@ -431,8 +433,12 @@ def _inline_bad(c, where, texts=True):
             bad.append('%s: %d x values; a series chart draws 2 to %d' % (where, len(x), POINTS_MAX))
         if len(set(x)) != len(x) or not all(isinstance(v, str) and v for v in x):
             bad.append('%s: x must be distinct non-empty strings (C.fy(y) for years)' % where)
-        if not 1 <= len(ts) <= TRACKS_MAX:
-            bad.append('%s: %d tracks; a chart holds 1 to %d' % (where, len(ts), TRACKS_MAX))
+        cap = PANELS_MAX if c.get('multiples') else TRACKS_MAX
+        if not 1 <= len(ts) <= cap:
+            bad.append('%s: %d tracks; a chart holds 1 to %d' % (where, len(ts), cap))
+        if len(ts) > TRACKS_MAX and not all('colour' in s for s in ts):
+            bad.append('%s: more panels than colours -- give every track its colour= so a '
+                       'repeated colour means something' % where)
         if len({s['name'] for s in ts}) != len(ts):
             bad.append('%s: two tracks share a name' % where)
         n = 0
