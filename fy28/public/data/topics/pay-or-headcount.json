@@ -3,6 +3,129 @@
   {
    "decimals": null,
    "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "a": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "b": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Each pair runs from that starting year to FY2025, so longer spans add more. Pay per teacher is larger in every one. FY2024 is left out."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "From higher pay per teacher",
+     "texts": [
+      "$4,090,851",
+      "$3,969,675",
+      "$2,751,441",
+      "$3,515,491",
+      "$2,555,289",
+      "$2,345,123",
+      "$2,347,486",
+      "$2,219,642",
+      "$2,433,362",
+      "$2,544,885",
+      "$2,091,291",
+      "$1,527,359",
+      "$1,308,868",
+      "$1,387,743",
+      "$1,129,219"
+     ],
+     "values": [
+      4090851.3613786544,
+      3969675.0083720936,
+      2751440.830385421,
+      3515490.622472528,
+      2555289.31816921,
+      2345123.163555808,
+      2347485.9812935884,
+      2219642.3883462953,
+      2433361.659272333,
+      2544885.2589561865,
+      2091290.8587912093,
+      1527359.229337591,
+      1308867.7519108949,
+      1387742.6900000006,
+      1129219.346306991
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "From the change in teacher count",
+     "texts": [
+      "-$1,203,102",
+      "-$1,227,460",
+      "$226,919",
+      "-$764,161",
+      "$170,064",
+      "$378,007",
+      "$292,245",
+      "$26,020",
+      "-$611,370",
+      "-$866,120",
+      "-$481,869",
+      "-$216,302",
+      "-$337,411",
+      "-$572,677",
+      "-$718,631"
+     ],
+     "values": [
+      -1203102.3613786548,
+      -1227460.0083720936,
+      226919.1696145792,
+      -764160.6224725279,
+      170063.68183079056,
+      378006.8364441925,
+      292245.01870641223,
+      26019.611653704214,
+      -611369.6592723329,
+      -866120.2589561868,
+      -481868.85879120877,
+      -216302.2293375903,
+      -337410.7519108953,
+      -572676.6899999998,
+      -718631.3463069907
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "The same split from each starting year",
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "FY2009",
+    "FY2010",
+    "FY2011",
+    "FY2012",
+    "FY2013",
+    "FY2014",
+    "FY2015",
+    "FY2016",
+    "FY2017",
+    "FY2018",
+    "FY2019",
+    "FY2020",
+    "FY2021",
+    "FY2022",
+    "FY2023"
+   ]
+  },
+  {
+   "decimals": null,
+   "from_zero": true,
    "kind": "line",
    "note": {
     "figures": {
@@ -170,183 +293,56 @@
     "FY2024",
     "FY2025"
    ]
-  },
-  {
-   "decimals": 1,
-   "from_zero": false,
-   "kind": "line",
-   "note": {
-    "figures": {},
-    "literals": [],
-    "text": "DESE’s share, all teachers. Its definition is not in any document we hold."
-   },
-   "reference": null,
-   "series": [
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "Lunenburg",
-     "texts": [
-      "86.0%",
-      "87.6%",
-      "91.8%",
-      "91.0%",
-      "90.1%",
-      "86.1%",
-      "88.4%",
-      "82.3%"
-     ],
-     "values": [
-      86.0,
-      87.6,
-      91.8,
-      91.0,
-      90.10000000000001,
-      86.1,
-      88.4,
-      82.3
-     ]
-    }
-   ],
-   "stacked": false,
-   "title": "Teachers DESE counts experienced",
-   "type": "series",
-   "unit": "%",
-   "x": [
-    "FY2018",
-    "FY2019",
-    "FY2020",
-    "FY2021",
-    "FY2022",
-    "FY2023",
-    "FY2024",
-    "FY2025"
-   ]
   }
  ],
  "category": "school-spending-history",
  "chart": {
+  "basis": "published",
   "decimals": null,
-  "from_zero": true,
-  "kind": "bar",
+  "highlight": [],
   "note": {
    "figures": {
     "a": {
+     "text": "FY2009",
+     "unit": "fiscal year",
+     "value": 2009
+    },
+    "b": {
      "text": "FY2025",
      "unit": "fiscal year",
      "value": 2025
     },
-    "b": {
-     "text": "FY2024",
-     "unit": "fiscal year",
-     "value": 2024
+    "c": {
+     "text": "$2,887,749",
+     "unit": "",
+     "value": 2887748.9999999995
     }
    },
    "literals": [],
-   "text": "Each pair runs from that year to FY2025: our midpoint split of DESE’s figures. FY2024, the swing year, is left out."
+   "text": "FY2009 to FY2025, our midpoint split of DESE’s figures; the two add to the whole rise of $2,887,749."
   },
-  "reference": null,
-  "series": [
+  "rows": [
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "Change in teacher count",
+    "label": "From higher pay per teacher",
     "texts": [
-     "-$1,203,102",
-     "-$1,227,460",
-     "$226,919",
-     "-$764,161",
-     "$170,064",
-     "$378,007",
-     "$292,245",
-     "$26,020",
-     "-$611,370",
-     "-$866,120",
-     "-$481,869",
-     "-$216,302",
-     "-$337,411",
-     "-$572,677",
-     "-$718,631"
+     "$4,090,851"
     ],
-    "values": [
-     -1203102.3613786548,
-     -1227460.0083720936,
-     226919.1696145792,
-     -764160.6224725279,
-     170063.68183079056,
-     378006.8364441925,
-     292245.01870641223,
-     26019.611653704214,
-     -611369.6592723329,
-     -866120.2589561868,
-     -481868.85879120877,
-     -216302.2293375903,
-     -337410.7519108953,
-     -572676.6899999998,
-     -718631.3463069907
-    ]
+    "total": "$4,090,851",
+    "value": 4090851.3613786544
    },
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "More spent per teacher",
+    "label": "From the change in teacher count",
     "texts": [
-     "$4,090,851",
-     "$3,969,675",
-     "$2,751,441",
-     "$3,515,491",
-     "$2,555,289",
-     "$2,345,123",
-     "$2,347,486",
-     "$2,219,642",
-     "$2,433,362",
-     "$2,544,885",
-     "$2,091,291",
-     "$1,527,359",
-     "$1,308,868",
-     "$1,387,743",
-     "$1,129,219"
+     "-$1,203,102"
     ],
-    "values": [
-     4090851.3613786544,
-     3969675.0083720936,
-     2751440.830385421,
-     3515490.622472528,
-     2555289.31816921,
-     2345123.163555808,
-     2347485.9812935884,
-     2219642.3883462953,
-     2433361.659272333,
-     2544885.2589561865,
-     2091290.8587912093,
-     1527359.229337591,
-     1308867.7519108949,
-     1387742.6900000006,
-     1129219.346306991
-    ]
+    "total": "-$1,203,102",
+    "value": -1203102.3613786548
    }
   ],
-  "stacked": false,
-  "title": "Teacher count against spending per teacher",
-  "type": "series",
-  "unit": "$",
-  "x": [
-   "FY2009",
-   "FY2010",
-   "FY2011",
-   "FY2012",
-   "FY2013",
-   "FY2014",
-   "FY2015",
-   "FY2016",
-   "FY2017",
-   "FY2018",
-   "FY2019",
-   "FY2020",
-   "FY2021",
-   "FY2022",
-   "FY2023"
-  ]
+  "stack": null,
+  "title": "Where the rise in teachers spending came from",
+  "type": "ranking",
+  "unit": "$"
  },
  "conclusions": [
   {

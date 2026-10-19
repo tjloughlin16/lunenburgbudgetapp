@@ -1312,28 +1312,35 @@ def build():
                        'z': F(ey[0])},
              notes=[step('No document we hold defines experienced, and a share past a threshold '
                          'cannot see veterans moving up steps.', 'gap', closes=EXP_DEF)])],
-        chart=TP.series('Teacher count against spending per teacher',
-                        [C.fy(y) for y in starts], [
-                            TP.track('Change in teacher count', [SPL[y][0] for y in starts],
-                                     'published', 'bar'),
-                            TP.track('More spent per teacher', [SPL[y][1] for y in starts],
-                                     'published', 'bar')], '$', kind='bar',
-                        note='Each pair runs from that year to %s: our midpoint split of DESE’s '
-                             'figures. %s, the swing year, is left out.' % (C.fy(g1), C.fy(odd)),
-                        note_figures={'a': F(g1), 'b': F(odd)}),
-        also=[TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
+        # THE SIGNATURE IS THE ONE SPLIT a reader came for, FY2009 to the latest year. It was
+        # the every-start-year chart, whose x axis read as years though each bar is a SPAN to
+        # the latest year -- so FY2009 looked like the year "more per teacher" was highest
+        # (TJ, 19 October 2026: "what does 'more spent per teacher' mean when FY09 has the
+        # highest number"). That chart is now the check underneath, labelled as start years.
+        chart=TP.ranking('Where the rise in teachers spending came from',
+                         [('From higher pay per teacher', r0_),
+                          ('From the change in teacher count', v0)], '$',
+                         note='%s to %s, our midpoint split of DESE’s figures; the two add to the '
+                              'whole rise of %s.' % (C.fy(g0), C.fy(g1), C.usd(r0_ + v0)),
+                         note_figures={'a': F(g0), 'b': F(g1), 'c': U(r0_ + v0)}),
+        also=[TP.series('The same split from each starting year', [C.fy(y) for y in starts], [
+                  # Pay first, so it takes the same colour as in the split above it.
+                  TP.track('From higher pay per teacher', [SPL[y][1] for y in starts],
+                           'published', 'bar'),
+                  TP.track('From the change in teacher count', [SPL[y][0] for y in starts],
+                           'published', 'bar')], '$', kind='bar',
+                  note='Each pair runs from that starting year to %s, so longer spans add more. '
+                       'Pay per teacher is larger in every one. %s is left out.'
+                       % (C.fy(g1), C.fy(odd)),
+                  note_figures={'a': F(g1), 'b': F(odd)}),
+              TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
                   TP.track('As printed, our division', [W[y] for y in gy], 'published', 'line'),
                   TP.track('In %s dollars' % C.fy(g1), [WR[y] for y in gy], 'published', 'line'),
                   TP.track('DESE’s average teacher salary', [sal.get(y) for y in gy],
                            'published', 'line')], '$',
                   note='Teachers spending over teacher FTE. %s dollars: Boston-area CPI-U, '
                        'July-June averages, our arithmetic.' % C.fy(g1),
-                  note_figures={'a': F(g1)}),
-              TP.series('Teachers DESE counts experienced', [C.fy(y) for y in ey], [
-                  TP.track('Lunenburg', [100 * ex[y] for y in ey], 'published', 'line')], '%',
-                  decimals=1, from_zero=False,
-                  note='DESE’s share, all teachers. Its definition is not in any document we '
-                       'hold.')],
+                  note_figures={'a': F(g1)})],
         table=dict(caption='Teachers spending, teacher FTE and spending per FTE', views=[dict(
             key='years', label='By year', total_col=-1, kinds=['ledger'] * 4,
             columns=['Teachers spending', 'Teacher FTE', 'Per FTE, ours', 'DESE average salary'],
