@@ -1323,6 +1323,13 @@ def run(a, notes, ctx):
         # ...after the agendas are matched to them, so a thread names its next meeting.
         py('build_agenda_threads.py', check=False)
         py('build_threads.py', check=False)
+        # THE CALLOUTS, for the threads whose record just changed -- what someone says next
+        # (TJ, 19 October 2026). A model picks, threads batched to a call, only where the input moved, and a second call judges every new pick;
+        # build_threads.py checks every pick against its source and drops what fails, so it
+        # runs again after. Metered: the kill switch and the limit words stop it like any other.
+        if not a.no_minutes and not a.dry_run:
+            if metered('write_thread_callouts.py', notes=notes) is not None:
+                py('build_threads.py', check=False)
         py('build_budget_feed.py', '--as-of', a.as_of)
         py('build_feeds.py')
         # AND THE DATABASE, AND EVERYTHING THE SITE SERVES OFF IT. See SITE_PAYLOADS:

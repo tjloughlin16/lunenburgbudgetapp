@@ -1,0 +1,69 @@
+{
+ "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
+ "thread": "brooks-house",
+ "picked_at": "2026-10-19T15:22:48Z",
+ "model": "sonnet",
+ "version": 2,
+ "cost_usd": 0.0669,
+ "input_sha256": "5febfae1a57c77a17f659a54425ed5b52e9dec3bbaf3399e8dd8a9af7be22d5c",
+ "callouts": [
+  {
+   "kind": "warrant",
+   "value": "Nov 17",
+   "label": "Town Meeting hears the report on selling or leasing Brooks House",
+   "hook": "Brooks House report due",
+   "quote": "prepare a report for the november 17 special town meeting",
+   "heard": [],
+   "item_date": "2026-09-15",
+   "item_board": "select-board",
+   "basis": "printed",
+   "doc": "meetings/select-board/2026-09-15-minutes-8011.txt",
+   "text": "meetings/text/select-board/2026-09-15-minutes-8011.txt",
+   "where": "Select Board minutes, 15 Sep 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Minutes say report prepared for Nov 17 special town meeting; later items don't overtake it."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "No use",
+   "label": "building committee voted that the town has no municipal use for Brooks House",
+   "hook": "",
+   "quote": "I move that the Lunberg Municipal Building Design Committee say that there's no municipal use for the Brooks House.",
+   "heard": [],
+   "item_date": "2026-08-03",
+   "item_board": "lunenburg-municipal-building-design-committee",
+   "basis": "heard",
+   "board": "lunenburg-municipal-building-design-committee",
+   "date": "2026-08-03",
+   "video_id": "YJ8CLX_0gLA",
+   "t": 547,
+   "where": "Lunenburg Municipal Building Design Committee, 3 Aug 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Motion and roll call recorded; the committee found no municipal use."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "No need",
+   "label": "School Committee voted that the schools have no need for Brooks House",
+   "hook": "",
+   "quote": "the school department has no need",
+   "heard": [],
+   "item_date": "2026-10-07",
+   "item_board": "school-committee",
+   "basis": "heard",
+   "board": "school-committee",
+   "date": "2026-10-07",
+   "video_id": "_XGfbHmZPJg",
+   "t": 4644,
+   "where": "School Committee, 7 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Motion and roll call yes votes on 'no need' shown; nothing later."
+   }
+  }
+ ]
+}

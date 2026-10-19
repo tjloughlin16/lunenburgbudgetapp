@@ -85,6 +85,8 @@ MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 # the quote is the evidence, and a misremembered one is worse than none.
 MOMENTS = os.path.join(ROOT, 'sources', 'data', 'thread-moments.csv')
 TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts')
+CALLOUTS = os.path.join(ROOT, 'sources', 'data', 'thread-callouts.csv')
+CALLOUTS_AUTO = os.path.join(ROOT, 'sources', 'data', 'thread-callouts-auto')
 
 
 def moments(tid):
@@ -142,6 +144,181 @@ AGENDAS = os.path.join(ROOT, 'fy28', 'public', 'data', 'agenda-threads.json')
 # own patterns found its words -- never by board alone.
 SUGGESTED = os.path.join(ROOT, 'sources', 'data', 'suggested-reports.csv')
 SUGGESTED_MEETINGS = os.path.join(ROOT, 'sources', 'data', 'suggested-reports-meetings.csv')
+
+
+# THE CALLOUTS: what someone says NEXT. TJ, 19 October 2026: *"if someone walked up to me and
+# said 'did you hear about TC Passios?!' what will they say next? 'Theres an article to vote
+# for its demolition, that'll cost 1-4 million!'"* -- and the kinds: *"money, warrant articles
+# at town meeting, increase in fees and amount, change to town or school services, or
+# something 'impactful'"*. A count of meetings never passes that test; a stake or an event does.
+#
+# PICKED BY A PERSON, CHECKED BY THE BUILD. Which figure is the stake is judgement -- the
+# latest figure on the town offices thread is a basement slab, the stake is the $21M plan --
+# so scripts/propose_callouts.py ranks candidates and a person writes the row. The build then
+# refuses any row whose evidence does not hold:
+#   * every quote must be IN its source, whitespace ignored (an extract prints "T otal").
+#     PRINTED: the document's text. HEARD: the machine captions near `t`, or -- where the
+#     captions are not held -- our notes of that recording, and the page says which.
+#   * a PRINTED value's every number must be in its quote, at the precision shown: "$21.4M"
+#     against "$21,409,100". A HEARD quote is words ("one and four million"), so the value is
+#     our rendering of it and the card says "as heard".
+#   * `hook` is the few words that ride beside the value on the front page, and it may not
+#     hold a digit: a figure in it would be a figure typed into prose (CLAUDE.md rule 2).
+CALLOUT_KINDS = ('money', 'warrant', 'fee', 'service', 'impact')
+_NUM = re.compile(r'(\d[\d,]*(?:\.\d+)?)\s*(M\b|K\b|million\b|thousand\b)?', re.I)
+
+
+_WORDNUM = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8,
+            'nine': 9, 'ten': 10, 'twenty': 20, 'thirty': 30, 'fifty': 50, 'hundred': 100, 'a': 1, 'half': .5}
+_SCALE = {'million': 1e6, 'm': 1e6, 'thousand': 1e3, 'k': 1e3, 'billion': 1e9}
+
+
+def _amounts(text):
+    """Every amount a passage names, scaled: "$21,409,100" -> 21409100; "between one and four
+    million" -> 1e6 and 4e6, because a unit three words on scales the numbers before it."""
+    toks = re.findall(r'\d[\d,]*(?:\.\d+)?|[a-z]+', (text or '').lower().replace('$', ' '))
+    out = []
+    for i, tk in enumerate(toks):
+        if tk[0].isdigit():
+            v = float(tk.replace(',', ''))
+        elif tk in _WORDNUM and tk != 'a' or (tk == 'a' and i + 1 < len(toks) and toks[i + 1] in _SCALE):
+            v = _WORDNUM[tk]
+        else:
+            continue
+        scale = next((_SCALE[x] for x in toks[i + 1:i + 4] if x in _SCALE), 1)
+        out += [v, v * scale]
+    return out
+
+
+def _value_holds(value, evidence):
+    """Is every number in a callout's value in its evidence, at the precision shown?
+    "$21.4M" against 21,409,100; "Nov 17" against "November 17, 2026"."""
+    have = _amounts(evidence)
+    for num, unit in _NUM.findall(value):
+        v = float(num.replace(',', ''))
+        scale = {'m': 1e6, 'million': 1e6, 'k': 1e3, 'thousand': 1e3}.get(unit.lower(), 1)
+        places = len(num.split('.')[1]) if '.' in num else 0
+        if not any(round(q / scale, places) == v for q in have):
+            return num + unit
+    return None
+
+
+def _squash(s):
+    return ''.join((s or '').replace('\u2019', "'").replace('\u2018', "'").split()).lower()
+
+
+def _callout_source(r, n, problems):
+    """One source of one callout -> {basis, href, where, checked_against}, or None with a problem."""
+    sfx = '' if n == 1 else str(n)
+    basis, quote = r['basis' + sfx], r['quote' + sfx]
+    if not basis:
+        return None
+    tag = '%s callout %s' % (r['thread'], r['order'])
+    if basis == 'printed':
+        txt = os.path.join(ROOT, 'sources', r['text' + sfx])
+        if not os.path.exists(txt):
+            problems.append('%s: no text at sources/%s' % (tag, r['text' + sfx]))
+            return None
+        if _squash(quote) not in _squash(open(txt, encoding='utf-8', errors='replace').read()):
+            problems.append('%s: quote not in sources/%s' % (tag, r['text' + sfx]))
+            return None
+        if n == 1:
+            # THE LABEL'S NUMBERS TOO. Monty Tech's first machine pick said "about $117,438 more"
+            # beside a value of 8.8% -- a figure typed into the sentence, unchecked.
+            miss = _value_holds(r['value'] + ' ' + r['label'], quote)
+            if miss:
+                problems.append('%s: %s in the value is not in its quote' % (tag, miss))
+                return None
+        return {'basis': 'printed', 'href': '/docs/' + r['doc' + sfx], 'where': r['where' + sfx],
+                'checked_against': 'the document'}
+    if basis == 'heard':
+        b, d, vid, t = r['board' + sfx], r['date' + sfx], r['video_id' + sfx], int(r['t' + sfx])
+        cap = os.path.join(TRANSCRIPTS, b, '%s-%s.json' % (d, vid))
+        if os.path.exists(cap):
+            segs = json.load(open(cap, encoding='utf-8'))['segments']
+            heard, against = ' '.join(x['text'] for x in segs if t - 120 <= x['start'] <= t + 120), 'the captions'
+        else:
+            notes = os.path.join(MINUTES, b, '%s-%s.json' % (d, vid))
+            if not os.path.exists(notes):
+                problems.append('%s: neither captions nor our notes for %s %s' % (tag, b, d))
+                return None
+            heard, against = json.dumps(json.load(open(notes, encoding='utf-8'))['minutes'], ensure_ascii=False), 'our notes of the recording'
+        if _squash(quote) not in _squash(heard):
+            problems.append('%s: quote not in %s of %s %s' % (tag, against, b, d))
+            return None
+        # A HEARD VALUE IS OUR RENDERING OF WORDS, so its numbers must be in those words or in
+        # what our notes heard at that moment -- "$1M-$4M" from "one and four million". A
+        # number found in neither was computed, and a computed figure is not a callout.
+        if n == 1:
+            miss = _value_holds(r['value'] + ' ' + r['label'], quote + ' ' + ' '.join(r.get('heard') or []))
+            if miss:
+                problems.append('%s: %s in the value is neither in its quote nor heard' % (tag, miss))
+                return None
+        return {'basis': 'heard', 'href': 'https://www.youtube.com/watch?v=%s&t=%ds' % (vid, t),
+                'where': r['where' + sfx], 'checked_against': against}
+    problems.append('%s: basis is printed or heard, not %r' % (tag, basis))
+    return None
+
+
+def callouts(known, problems):
+    """{thread id: [callout, ...]} in order, every row's evidence checked."""
+    out = {}
+    if not os.path.exists(CALLOUTS):
+        return out
+    for r in read_csv(CALLOUTS):
+        tag = '%s callout %s' % (r['thread'], r['order'])
+        if r['thread'] not in known:
+            problems.append('%s: no such thread' % tag)
+            continue
+        if r['kind'] not in CALLOUT_KINDS:
+            problems.append('%s: kind %r is not one of %s' % (tag, r['kind'], ', '.join(CALLOUT_KINDS)))
+        if re.search(r'\d', r['hook']):
+            problems.append('%s: the hook holds a digit; a figure goes in `value`' % tag)
+        if len(r['value']) > 24 or len(r['label']) > 110 or len(r['hook']) > 40:
+            problems.append('%s: value <= 24, label <= 110, hook <= 40 characters' % tag)
+        srcs = [x for x in (_callout_source(r, 1, problems), _callout_source(r, 2, problems)) if x]
+        if not srcs:
+            continue
+        out.setdefault(r['thread'], []).append({'order': int(r['order']), 'kind': r['kind'], 'value': r['value'],
+                                                'label': r['label'], 'hook': r['hook'], 'sources': srcs})
+    # THE MACHINE'S PICKS (scripts/write_thread_callouts.py), for every thread a person has
+    # not picked. Checked by the same code as a person's row; a failure is DROPPED and named
+    # here rather than stopping the build -- the refresh must not fail on a model's mistake,
+    # and a dropped callout is a thread showing less, never a thread showing something wrong.
+    if os.path.isdir(CALLOUTS_AUTO):
+        for f in sorted(os.listdir(CALLOUTS_AUTO)):
+            if not f.endswith('.json'):
+                continue
+            j = json.load(open(os.path.join(CALLOUTS_AUTO, f), encoding='utf-8'))
+            tid = j['thread']
+            if tid in out or tid not in known:
+                continue
+            for k, c in enumerate(j['callouts'], 1):
+                # THE SECOND READER'S VERDICT (write_thread_callouts.judge). Unjudged is not kept.
+                v = c.get('verdict') or {}
+                if not v.get('keep'):
+                    print('  DROPPED (machine pick): %s callout %d: %s' % (tid, k, v.get('why') or 'not judged'))
+                    continue
+                r = dict({x: '' for x in ('doc', 'text', 'board', 'date', 'video_id', 't', 'basis2')},
+                         **{x: v for x, v in c.items() if x not in ('item_date', 'item_board', 'verdict')},
+                         thread=tid, order=str(k))
+                r['t'] = str(r['t'])
+                mine = []
+                if re.search(r'\d', r['hook']) or len(r['value']) > 24 or len(r['label']) > 110 or len(r['hook']) > 40 \
+                        or r['kind'] not in CALLOUT_KINDS:
+                    mine.append('%s callout %d: breaks a length, hook or kind rule' % (tid, k))
+                src = None if mine else _callout_source(r, 1, mine)
+                if not src or mine:
+                    print('  DROPPED (machine pick): ' + '; '.join(mine))
+                    continue
+                out.setdefault(tid, []).append({'order': k, 'kind': r['kind'], 'value': r['value'],
+                                                'label': r['label'], 'hook': r['hook'], 'sources': [src],
+                                                'auto': True})
+    for tid, cs in out.items():
+        cs.sort(key=lambda c: c['order'])
+        if len(cs) > 3:
+            problems.append('%s: %d callouts; three at most, or none of them is the hook' % (tid, len(cs)))
+    return out
 
 
 def reports_needed(tid):
@@ -436,6 +613,11 @@ def chronology(t, record, town=None):
             def near(it):
                 if it['kind'] not in ('safety', 'liability', 'condition', 'contention') or it.get('t') is None:
                     return False
+                # `exclude` HOLDS HERE TOO. A remark inside a matching topic's span skipped it,
+                # so the pantry's modular hearing at the ZBA reached TC Passios through one
+                # line that mentioned where the pantry is now (TJ, 19 October 2026).
+                if ex and ex.search(it['text']):
+                    return False
                 if any(a <= it['t'] <= b for a, b in spans):
                     return True
                 return bool(rx and rx.search(it['text']) and not (ex and ex.search(it['text']))
@@ -662,7 +844,9 @@ def build():
                  'by_path': {x['path']: {'title': x['title'], 'url': x['path']}
                              for x in tj['categories'] + list(tj['topics'].values())
                              if x.get('ready')}}
-    for t in read_csv(THREADS):
+    rows = read_csv(THREADS)
+    calls = callouts({t['id'] for t in rows}, problems)
+    for t in rows:
         chron = chronology(t, record, town)
         temp = temperature(t, chron, dt.date.today().isoformat(), every)
         stands = where_it_stands(chron)
@@ -689,6 +873,7 @@ def build():
             {k: t[k] for k in ('id', 'label', 'question', 'kind', 'groups', 'tags', 'boards',
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
+            callouts=calls.get(t['id'], []),
             reports=report_links(t, catalogue),
             reports_needed=reports_needed(t['id']),
             # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries
@@ -751,6 +936,35 @@ def build():
     return threads, cov, problems
 
 
+def hottest(threads):
+    """WHAT THE TOWN IS TALKING ABOUT RIGHT NOW -- the strip at the top of the front page.
+
+    TJ, 19 October 2026: *"a sort of thin headline to dynamically call out the HOTTEST topic
+    in town"*, *"it has to be automated ... populated and removed when there is no hot
+    topic"*, and *"if there are multiple equally hot topics, we can list them"*.
+
+    NO NEW RULE. The set is exactly the threads `temperature()` already calls hot, so the
+    front page and the 🔥 badge on /threads can never disagree. Ordered by meetings in the
+    window, then boards, then the most recent. EMPTY IS AN ANSWER: the page draws nothing.
+
+    `as_of` travels with it because `hot` is relative to the day this ran. A refresh that
+    stops would otherwise leave last month's fire on the front page; the page checks it."""
+    rows = [t for t in threads if t['hot']]
+    rows.sort(key=lambda t: (-t['momentum']['meetings_last_30'], -t['momentum']['boards_last_30'],
+                             t['momentum']['days_since_last']))
+    return {'as_of': dt.date.today().isoformat(), 'window_days': HOT_WINDOW,
+            'threads': [{'id': t['id'], 'label': t['label'],
+                         # "TC Passios: the site's future" -> "TC Passios". A label without a
+                         # colon is already short.
+                         'short': t['label'].split(':')[0].strip(),
+                         # The front page's hook: the first callout that carries one, value
+                         # first -- "$1M–$4M to demolish". Checked where the callout is.
+                         'hook': next(('%s %s' % (c['value'], c['hook']) for c in t['callouts'] if c['hook']), ''),
+                         'meetings': t['momentum']['meetings_last_30'],
+                         'boards': t['momentum']['boards_last_30'],
+                         'days_since_last': t['momentum']['days_since_last']} for t in rows]}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -760,6 +974,7 @@ def main():
                         'notes/process/THREADS-MODEL.md',
                'generated_by': 'scripts/build_threads.py',
                'coverage': cov,
+               'hottest': hottest(threads),
                'threads': threads,
                'declined': read_csv(DECLINED)}
     body = json.dumps(payload, indent=1, ensure_ascii=False) + '\n'

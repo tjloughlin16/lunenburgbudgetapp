@@ -1,0 +1,53 @@
+{
+ "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
+ "thread": "dpw-union-contract",
+ "picked_at": "2026-10-19T15:22:48Z",
+ "model": "sonnet",
+ "version": 2,
+ "cost_usd": 0.0233,
+ "input_sha256": "8301f00211f4552e38ebda2f5f3a8b8365598b6f13e8355f47f57ea216d53a88",
+ "callouts": [
+  {
+   "kind": "money",
+   "value": "$680,690",
+   "label": "FY26 snow and ice deficit reported at Town Meeting, before DPW retro pay",
+   "hook": "snow and ice deficit",
+   "quote": "snow and ice deficit of roughly $680,690",
+   "heard": [
+    "roughly $680,690",
+    "little south of $690,000",
+    "$690,000"
+   ],
+   "item_date": "2026-08-18",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-08-18",
+   "video_id": "YnQcT2BMWS4",
+   "t": 3966,
+   "where": "Select Board, 18 Aug 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Quoted 'roughly $680,690'; label already says it's before retro pay."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "3-0",
+   "label": "Select Board vote ratifying the DPW union contract",
+   "hook": "",
+   "quote": "the motion passed (3-0-0)",
+   "heard": [],
+   "item_date": "2026-07-27",
+   "item_board": "select-board",
+   "basis": "printed",
+   "doc": "meetings/select-board/2026-07-27-minutes-7925.txt",
+   "text": "meetings/text/select-board/2026-07-27-minutes-7925.txt",
+   "where": "Select Board minutes, 27 Jul 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Minutes: motion passed 3-0-0."
+   }
+  }
+ ]
+}

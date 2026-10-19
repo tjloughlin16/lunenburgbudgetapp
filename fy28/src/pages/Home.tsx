@@ -398,10 +398,65 @@ function BudgetFeedCard() {
   )
 }
 
+type Hottest = {
+  as_of: string; window_days: number
+  threads: { id: string; label: string; short: string; hook?: string; meetings: number; boards: number; days_since_last: number }[]
+}
+
+/** 🔥 HOT IN TOWN -- one line above everything, and nothing at all when nothing is hot.
+ *
+ *  TJ, 19 October 2026: *"a sort of thin headline to dynamically call out the HOTTEST topic
+ *  in town ... dont make it a big bubble block like the reports and crisis. just something
+ *  to attract people to click"*; *"it should be populated and removed when there is no hot
+ *  topic"*. So: no card, no figure, a line of links.
+ *
+ *  THE PICK IS NOT MADE HERE. `hottest` in threads.json is computed by build_threads.py from
+ *  the same rule as the 🔥 badge on /threads, and the daily refresh rebuilds it. The counts
+ *  that make each one hot are in its tooltip -- the badge's own words.
+ *
+ *  A WEEK-OLD FIRE IS NOT NEWS. `hot` is relative to the day the payload was built, so if
+ *  the refresh stops the strip removes itself rather than going on calling stale talk hot. */
+const HOT_SHOWN = 3
+function HotInTown() {
+  const { d } = useReport<{ hottest?: Hottest }>('threads.json')
+  const h = d?.hottest
+  if (!h || !h.threads.length) return null
+  const age = (Date.parse(todayIso()) - Date.parse(h.as_of)) / 86400000
+  if (!(age <= 7)) return null
+  const shown = h.threads.slice(0, HOT_SHOWN)
+  const more = h.threads.length - shown.length
+  return (
+    <p className="text-[13.5px] leading-snug mb-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+      <span className="text-[11px] font-bold uppercase tracking-widest shrink-0"
+        style={{ color: 'var(--status-critical)' }}>
+        <span aria-hidden="true">🔥</span> Hot in town
+      </span>
+      {shown.map((t, i) => (
+        <span key={t.id}>
+          <a href={`/threads/${t.id}`} onClick={() => track('door', 'hot:' + t.id)}
+            className="font-semibold underline decoration-1 underline-offset-2"
+            title={`${t.label}: ${t.meetings} meetings across ${t.boards} boards in the last ${h.window_days} days`}>
+            {t.short}
+          </a>
+          {/* THE HOOK -- "$1M–$4M to demolish" -- where the thread has a checked callout. */}
+          {t.hook ? <span style={{ color: 'var(--text-secondary)' }}>: {t.hook}</span> : null}
+          {i < shown.length - 1 || more > 0
+            ? <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}> ·</span> : null}
+        </span>
+      ))}
+      {more > 0 ? (
+        <a href="/threads" className="underline decoration-1 underline-offset-2"
+          style={{ color: 'var(--text-muted)' }}>{more} more</a>
+      ) : null}
+    </p>
+  )
+}
+
 export function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5 pb-20">
       <header className="pt-10 pb-6">
+        <HotInTown />
         <h1 className="text-[27px] sm:text-4xl font-bold tracking-tight leading-[1.1]">
           The <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
         </h1>

@@ -1,0 +1,79 @@
+{
+ "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
+ "thread": "veterans-exemption",
+ "picked_at": "2026-10-19T15:24:01Z",
+ "model": "sonnet",
+ "version": 2,
+ "cost_usd": 0.0565,
+ "input_sha256": "ee489494b5bbb2fbb34a898dc660f52f8d9802e9cb2267d3f80c44271dd74d46",
+ "callouts": [
+  {
+   "kind": "fee",
+   "value": "$400 to $600 or $800",
+   "label": "proposed increase in the veterans property tax exemption (not set)",
+   "hook": "proposed veterans exemption raise",
+   "quote": "from the current $400 to an as yet undetermined amount, but it will either be 600 or $800",
+   "heard": [
+    "$400",
+    "600",
+    "$800"
+   ],
+   "item_date": "2026-09-24",
+   "item_board": "finance-committee",
+   "basis": "heard",
+   "board": "finance-committee",
+   "date": "2026-09-24",
+   "video_id": "euQG57Zrac0",
+   "t": 522,
+   "where": "Finance Committee, 24 Sep 2026",
+   "verdict": {
+    "keep": false,
+    "why": "Overtaken: assessors voted 30 Sep to put the 22I (CPI-tied) and 22J (doubling) articles forward rather than a $600-or-$800 choice, and the Select Board then held them off the warrant."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "No state refund",
+   "label": "any increase in the veterans exemption would come entirely out of town funds",
+   "hook": "",
+   "quote": "it all comes out of town funds. It doesn't it doesn't get reimbursed",
+   "heard": [
+    "400",
+    "600",
+    "800"
+   ],
+   "item_date": "2026-09-09",
+   "item_board": "board-of-assessors",
+   "basis": "heard",
+   "board": "board-of-assessors",
+   "date": "2026-09-09",
+   "video_id": "Qimi3yNAudg",
+   "t": 2039,
+   "where": "Board of Assessors, 9 Sep 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Assessor said any increase 'all comes out of town funds' and isn't reimbursed."
+   }
+  },
+  {
+   "kind": "warrant",
+   "value": "Held off",
+   "label": "Select Board held the veterans exemption articles off the November warrant for now",
+   "hook": "",
+   "quote": "OK, so we'll hold on those two.",
+   "heard": [],
+   "item_date": "2026-10-06",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-06",
+   "video_id": "PaRmbzsOMks",
+   "t": 6773,
+   "where": "Select Board, 6 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Select Board 6 Oct held the veterans exemption articles off the warrant; nothing later reverses it."
+   }
+  }
+ ]
+}

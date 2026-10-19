@@ -729,13 +729,17 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
  *  `sourceUrl` is the report's own document where one exists -- the Markdown analyses keep
  *  theirs at /docs/analyses/<id>.md, which is rule 12's third leg. */
 /** Routes that serve many pages, so the route's label is not the page's name. */
-const MANY_PER_ROUTE: ReadonlySet<Tab> = new Set<Tab>(['recorded', 'boards', 'blog', 'analysis', 'budgetfeed', 'departments'])
+const MANY_PER_ROUTE: ReadonlySet<Tab> = new Set<Tab>(['recorded', 'boards', 'blog', 'analysis', 'budgetfeed', 'departments', 'threads'])
 
 export function ReportShell({
   tab, kicker, title, standfirst, err, loading, dataUrl, sourceUrl, meta, children,
-  noPrint,
+  noPrint, icon,
 }: {
   title: React.ReactNode
+  /** A mark set inside the h1, before the title, saying what KIND of page this is -- a
+   *  thread is not a report (TJ, 19 October 2026). Separate from `title` so a string title
+   *  still names the browser tab. */
+  icon?: React.ReactNode
   /** A page that is an instrument rather than a document -- the search box -- has
    *  nothing to print. */
   noPrint?: boolean
@@ -786,7 +790,8 @@ export function ReportShell({
             NAME and some are the finding itself, in a sentence -- both are the first
             thing on the page and both are set the same, because a reader takes a
             difference in setting for a difference in weight. */}
-        <h1 className="text-[2rem] sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">{title}</h1>
+        <h1 className="text-[2rem] sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">
+          {icon}{title}</h1>
         {standfirst && (
           <p ref={standRef} className="mt-3 sm:mt-5 text-[17px] sm:text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}>{standfirst}</p>

@@ -6,7 +6,7 @@ import { Basis, type Level } from '../components/Basis'
 import { Note } from '../components/primitives'
 import { ThreadRibbons } from '../components/ThreadRibbons'
 import { ThreadsHero } from '../components/ThreadsHero'
-import { ThreadKind, KINDS, KIND_LABEL } from '../components/ThreadKind'
+import { ThreadKind, ThreadMark, KINDS, KIND_LABEL } from '../components/ThreadKind'
 import { HotBadge, ThreadHeat, Tangled, type Heat } from '../components/ThreadHeat'
 import { DynamicThread } from '../components/DynamicThread'
 
@@ -47,6 +47,12 @@ type OnAgenda = {
 }
 type Item2 = Item & { board: string; board_slug: string; date: string }
 type Stop = { board: string; board_slug: string; date: string; items: Item[] }
+type Callout = {
+  order: number; kind: string; value: string; label: string; hook: string
+  /** Picked by write_thread_callouts.py, not a person -- and checked against its source. */
+  auto?: boolean
+  sources: { basis: 'printed' | 'heard'; href: string; where: string; checked_against: string }[]
+}
 type Thread = {
   id: string; label: string; question: string; kind: string; groups: string; tags: string
   boards: string; started: string; closes: string; status: string; resolved_on: string; caveat: string
@@ -57,6 +63,8 @@ type Thread = {
   reports_needed?: ReportNeeded[]
   heat: Heat; stage: string; tangled: boolean; is_new: boolean; registered_on: string
   hot?: boolean
+  /** What someone says NEXT about this matter (sources/data/thread-callouts.csv). */
+  callouts?: Callout[]
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number; meetings_last_30?: number; boards_last_30?: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
@@ -511,15 +519,99 @@ function Cite({ it }: { it: Item }) {
   )
 }
 
+/** WHAT KIND OF LINE THIS IS, as a label -- and a VOTE is a chip. TJ, 19 October 2026:
+ *  *"VOTES should have an icon or the word 'VOTE' should be a chip, to call out votes
+ *  specifically"*. A vote is the one line that is a fact about what a board DID, so it is the
+ *  one that gets a filled shape; everything else stays a quiet word. The outcome rides
+ *  beside the chip. And only the label is bold -- *"only titles or labels should be bold"* --
+ *  never the line itself, which can be a long quotation. */
+function KindTag({ it }: { it: Item }) {
+  if (it.kind === 'vote') {
+    return (
+      <span className="inline-flex items-center gap-1.5 flex-wrap">
+        <span className="inline-flex items-center gap-1 px-1.5 py-[1px] rounded text-[10.5px] font-bold uppercase tracking-wider"
+          style={{ background: 'var(--series-cost)', color: '#fff' }}>
+          <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor"
+            strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2.5 8.5h11v5h-11zM5 8.5l1.2-6h3.6L11 8.5M6.6 5.4l1.2 1.2 2-2.4" />
+          </svg>
+          Vote
+        </span>
+        {it.outcome ? <span className="text-[12.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>{it.outcome}</span> : null}
+      </span>
+    )
+  }
+  // MONEY DISCUSSED: an OUTLINED chip with the coin the money kind already uses. TJ: "lets
+  // use colors or chips for 'money discussed' label too". Outlined, not filled, so a vote
+  // stays the one filled shape: a figure SAID is not a thing a board DID.
+  if (it.kind === 'budget') {
+    return (
+      <span className="inline-flex items-center gap-1 px-1.5 py-[1px] rounded text-[10.5px] font-bold uppercase tracking-wider"
+        style={{ border: '1px solid var(--status-good)', color: 'var(--status-good)' }}>
+        <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor"
+          strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M8 2.6a5.4 5.4 0 100 10.8A5.4 5.4 0 008 2.6zM8 5v6M6.4 6.3h3.2M6.4 9.7h3.2" />
+        </svg>
+        {KIND_WORD.budget}
+      </span>
+    )
+  }
+  const alarm = it.kind === 'contention' || it.kind === 'safety' || it.kind === 'liability' || it.kind === 'condition'
+  return (
+    <span className="text-[10.5px] font-bold uppercase tracking-widest"
+      style={{ color: alarm ? 'var(--status-critical)' : 'var(--text-muted)' }}>
+      {KIND_WORD[it.kind] ?? it.kind}
+    </span>
+  )
+}
+
+/** THE CALLOUTS, first under the title: the stake or the event someone says next. TJ, 19
+ *  October 2026: *"did you hear about TC Passios?! ... 'Theres an article to vote for its
+ *  demolition, that'll cost 1-4 million!' Stuff like that is what i think we need to find and
+ *  surface"*. Picked by a person, checked by build_threads.py, and every one says whether its
+ *  figure was PRINTED in a document or HEARD in a recording -- the line a reader is most likely
+ *  to repeat is the last place to hide that (rule 7). */
+const CALLOUT_KIND: Record<string, { word: string; tone: string }> = {
+  money: { word: 'Money', tone: 'var(--status-good)' },
+  fee: { word: 'Fee', tone: 'var(--status-good)' },
+  warrant: { word: 'Town Meeting & ballot', tone: 'var(--series-cost)' },
+  service: { word: 'Service change', tone: 'var(--series-revenue)' },
+  impact: { word: 'What it means', tone: 'var(--text-secondary)' },
+}
+function Callouts({ cs }: { cs: Callout[] }) {
+  if (!cs.length) return null
+  return (
+    <div className="grid gap-3 mt-4 max-w-3xl sm:grid-cols-3">
+      {cs.map(c => {
+        const k = CALLOUT_KIND[c.kind] ?? { word: c.kind, tone: 'var(--text-secondary)' }
+        return (
+          <div key={c.order} className="card p-3.5" style={{ borderTop: `3px solid ${k.tone}` }}>
+            <span className="block text-[10.5px] font-bold uppercase tracking-widest" style={{ color: k.tone }}>{k.word}</span>
+            <span className="block text-[24px] font-bold leading-tight tnum mt-1">{c.value}</span>
+            <span className="block text-[13.5px] leading-snug mt-1" style={secondary}>{c.label}</span>
+            {c.sources.map((x, i) => (
+              <a key={i} href={x.href} target={x.basis === 'heard' ? '_blank' : undefined} rel="noreferrer"
+                className="block text-[11.5px] leading-snug mt-1.5 underline decoration-dotted" style={muted}>
+                {x.basis === 'printed' ? 'Printed' : 'As heard'} · {x.where}{x.basis === 'heard' ? ' · watch' : ''}
+              </a>
+            ))}
+            {c.auto ? (
+              <span className="block text-[11px] mt-1" style={muted}
+                title="Chosen by a language model from this thread's record; shown only because its quote and every number were found in the source">
+                Picked automatically, checked against the source</span>
+            ) : null}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function Line({ it }: { it: Item }) {
-  const vote = it.kind === 'vote'
   return (
     <li className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
-      <span className="block text-[10.5px] font-bold uppercase tracking-widest"
-        style={{ color: vote ? 'var(--series-cost)' : (it.kind === 'contention' || it.kind === 'safety' || it.kind === 'liability' || it.kind === 'condition') ? 'var(--status-critical)' : 'var(--text-muted)' }}>
-        {KIND_WORD[it.kind] ?? it.kind}{vote && it.outcome ? ` — ${it.outcome}` : ''}
-      </span>
-      <span className="block text-[14.5px] leading-snug mt-0.5" style={{ fontWeight: vote ? 600 : 400 }}>{it.text}</span>
+      <span className="block"><KindTag it={it} /></span>
+      <span className="block text-[14.5px] leading-snug mt-0.5">{it.text}</span>
       {it.quote ? (
         <span className="block text-[13px] leading-snug mt-1 pl-2.5"
           style={{ ...secondary, borderLeft: '2px solid var(--grid)' }}>&ldquo;{it.quote}&rdquo;</span>
@@ -647,12 +739,12 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           style={{ fontSize: 13 }}>← everything the town is deciding</a>
       </p>
 
-      {/* THE STATUS, ONE LINE. Open or settled, where it last came up, and -- only where it
-          is earned -- the hot badge, whose counts are in its own label. */}
+      {/* THE STATUS, ONE LINE. Open or settled, and where it last came up. The hot badge,
+          where earned, sits above the title (the shell's kicker), not here. */}
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px]" style={secondary}>
         <span><Standing t={t} /></span>
-        <HotBadge hot={t.hot} momentum={t.momentum} />
       </div>
+      <Callouts cs={t.callouts ?? []} />
 
       {settled && t.closure ? (
         <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: `4px solid ${toneOf(t)}` }}>
@@ -672,27 +764,33 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         </div>
       ) : (
         <>
-          {/* WHERE IT STANDS: the latest meeting's weightiest line, and the last vote if it
-              is a different thing. Each quoted from the record and cited, never paraphrased. */}
+          {/* WHERE IT STANDS: THE LAST VOTE FIRST, then what has happened since. TJ, 19 October
+              2026: "a vote, ESPECIALLY one like this one which is about adding something to
+              town meeting warrant, is the most important thing to start with for context."
+              It led with the newest meeting's line, so a board member's objection eight days
+              later sat above the vote that put the question to Town Meeting. A vote is what a
+              board DID; a later remark is commentary on it. Each quoted and cited. */}
           <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: `4px solid ${toneOf(t)}` }}>
             <p className="text-[11px] font-bold uppercase tracking-widest" style={muted}>Where it stands</p>
-            {now ? (
+            {vote ? (
               <>
-                <p className="text-[12.5px] mt-1" style={muted}>Latest: {now.stop.board}, {pretty(now.stop.date)}</p>
-                <p className="text-[15px] leading-snug mt-0.5" style={{ fontWeight: 600 }}>
-                  {now.it.kind === 'vote' ? `${now.it.outcome || 'Voted'}: ` : ''}{now.it.text}</p>
-                <Cite it={now.it} />
-                {vote && vote.it !== now.it ? (
-                  <>
-                    <p className="text-[12.5px] mt-3" style={muted}>Last vote: {vote.stop.board}, {pretty(vote.stop.date)}</p>
-                    <p className="text-[14.5px] leading-snug mt-0.5">
-                      <strong>{vote.it.outcome || 'outcome not recorded'}</strong> — {vote.it.text}</p>
-                    <Cite it={vote.it} />
-                  </>
-                ) : null}
-                {!vote ? <p className="text-[12.5px] mt-2" style={muted}>No vote on this in the record we can read.</p> : null}
+                <p className="text-[12.5px] mt-1" style={muted}>Last vote: {vote.stop.board}, {pretty(vote.stop.date)}</p>
+                <p className="mt-1.5"><KindTag it={vote.it} /></p>
+                <p className="text-[15px] leading-snug mt-0.5">{vote.it.text}</p>
+                <Cite it={vote.it} />
               </>
-            ) : <p className="text-[14px] mt-1" style={secondary}>Nothing in the readable record yet.</p>}
+            ) : null}
+            {now && now.it !== vote?.it ? (
+              <>
+                <p className={'text-[12.5px] ' + (vote ? 'mt-3' : 'mt-1')} style={muted}>
+                  {vote && now.stop.date > vote.stop.date ? 'Since then' : 'Latest'}: {now.stop.board}, {pretty(now.stop.date)}</p>
+                <p className="mt-1.5"><KindTag it={now.it} /></p>
+                <p className="text-[14.5px] leading-snug mt-0.5">{now.it.text}</p>
+                <Cite it={now.it} />
+              </>
+            ) : null}
+            {now && !vote ? <p className="text-[12.5px] mt-2" style={muted}>No vote on this in the record we can read.</p> : null}
+            {!now ? <p className="text-[14px] mt-1" style={secondary}>Nothing in the readable record yet.</p> : null}
           </div>
           <NextOnAgenda t={t} asOf={d.coverage.agendas_as_of ?? ''} />
         </>
@@ -731,7 +829,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
             {votes.map(({ c, i }, k) => (
               <li key={k} className="py-1.5 border-t first:border-t-0 text-[14px] leading-snug" style={{ borderColor: 'var(--grid)' }}>
                 <span className="font-semibold">{prettyShort(c.date)}, {c.board}:</span>{' '}
-                <strong>{i.outcome || 'outcome not recorded'}</strong> — {i.text}{' '}
+                <KindTag it={i.outcome ? i : { ...i, outcome: 'outcome not recorded' }} /> {i.text}{' '}
                 <span className="text-[12px]" style={muted}>({i.source === 'town' ? 'the town’s minutes' : 'our notes, as heard'})</span>
               </li>
             ))}
@@ -857,6 +955,12 @@ export function Threads() {
   return (
     <ReportShell
       tab={TAB}
+      // HOT GOES RIGHT ABOVE THE TITLE. TJ, 19 October 2026, on /threads/town-offices: "the
+      // HOT label needs to go right above the title". The eyebrow says THREAD rather than the
+      // area label ("Analysis: ..."), because a thread is not a report and the mark before
+      // the title says so too.
+      kicker={t ? <span className="inline-flex flex-wrap items-center gap-2">Thread<HotBadge hot={t.hot} momentum={t.momentum} /></span> : undefined}
+      icon={t ? <ThreadMark settled={t.status === 'resolved'} /> : undefined}
       title={t ? t.label : dynamic ? `${dynamic}: every dated mention` : 'What the town is deciding now'}
       standfirst={t ? t.question : dynamic ? 'A thread built from a search, not one somebody curated.'
         : `${open} things still open, ${settled} settled. Each one tracked across every board that touched it.`}

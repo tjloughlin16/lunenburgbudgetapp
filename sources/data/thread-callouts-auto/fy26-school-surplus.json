@@ -1,0 +1,53 @@
+{
+ "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
+ "thread": "fy26-school-surplus",
+ "picked_at": "2026-10-19T15:22:48Z",
+ "model": "sonnet",
+ "version": 2,
+ "cost_usd": 0.0123,
+ "input_sha256": "bcbffaaf285d3f11f97c38fa2adfbfd5346a739581270c4dbb46414e6a03565d",
+ "callouts": [
+  {
+   "kind": "money",
+   "value": "$470K-$600K",
+   "label": "unspent school money projected by the town manager from last fiscal year",
+   "hook": "unspent by the schools",
+   "quote": "between $470,000 and $600,000 in unspent appropriations",
+   "heard": [],
+   "item_date": "2026-09-03",
+   "item_board": "town-meeting",
+   "basis": "heard",
+   "board": "town-meeting",
+   "date": "2026-09-03",
+   "video_id": "UgUpJJb4cPw",
+   "t": 4396,
+   "where": "Town Meeting, 3 Sep 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Town manager's reported $470k-$600k projection; later says final amount unknown, no contradiction."
+   }
+  },
+  {
+   "kind": "money",
+   "value": "$100K-$200K",
+   "label": "what the schools usually return to the town each year; likely more this year",
+   "hook": "",
+   "quote": "somewhere between 100 and $200,000",
+   "heard": [
+    "100 and $200,000"
+   ],
+   "item_date": "2026-09-09",
+   "item_board": "school-committee",
+   "basis": "heard",
+   "board": "school-committee",
+   "date": "2026-09-09",
+   "video_id": "tKWYbMFWJtI",
+   "t": 2873,
+   "where": "School Committee, 9 Sep 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Member said typical return is $100-200k and more expected this year."
+   }
+  }
+ ]
+}

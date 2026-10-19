@@ -59,3 +59,25 @@ export function ThreadKind({ kind, tone, size = 16 }: { kind: string; tone: stri
 
 export const KIND_LABEL = Object.fromEntries(Object.entries(P).map(([k, v]) => [k, v.label]))
 export const KINDS = Object.keys(P)
+
+/** THIS PAGE IS A THREAD, NOT A REPORT. TJ, 19 October 2026: *"before the title, i'd like an
+ *  icon that makes it clear its different than a report and that its a thread"*.
+ *
+ *  A thread is one matter followed from meeting to meeting, so the mark is that: three
+ *  stops joined by a line. The last stop is hollow while the matter is OPEN -- the story
+ *  has not reached its end -- and filled once it is settled. Same stroke and grid as the
+ *  kind glyphs above, so the two read as one family. */
+export function ThreadMark({ settled = false, tone = 'var(--series-cost)' }: { settled?: boolean; tone?: string }) {
+  // NO <title> CHILD: the breadcrumb is read off the h1's text, and an SVG title is text.
+  const label = settled ? 'Thread, settled' : 'Thread, still open'
+  return (
+    <svg viewBox="0 0 24 16" role="img" aria-label={label}
+      className="inline-block shrink-0 mr-[0.25em] align-[-0.06em] h-[0.72em] w-auto"
+      fill="none" stroke={tone} strokeWidth="1.6" strokeLinecap="round">
+      <path d="M4.8 9.9C7.2 4.8 9.6 4.6 12 8s4.6 3.2 6.8-2.2" />
+      <circle cx="3.2" cy="11.6" r="2.2" fill={tone} />
+      <circle cx="12" cy="8" r="2.2" fill={tone} />
+      <circle cx="20.6" cy="4.4" r="2.2" fill={settled ? tone : 'none'} />
+    </svg>
+  )
+}
