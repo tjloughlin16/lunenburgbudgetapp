@@ -1727,11 +1727,11 @@ def build():
                          'one is in the project notes.', 'gap', closes=OTHER_TOWNS)])],
         chart=TP.series('Teacher gross pay, calendar year', xs, [
             TP.track('Matched teachers', vals, 'published', 'bar')], 'teachers', kind='bar',
-            note='Full-year matched teachers. Step 1 %s, BA top %s, MA top %s, bachelor’s and '
-                 'master’s lanes: our calendar blend.' % (C.usd(s1), C.usd(ba['top_step_calendar']),
-                                          C.usd(ma['top_step_calendar'])),
-            note_figures={'a': U(s1), 'b': U(ba['top_step_calendar']),
-                          'c': U(ma['top_step_calendar'])}, note_allow=('1',)),
+            # THE CAVEAT A READER NEEDS ON THE CHART ITSELF (TJ, 19 October 2026: read alone it
+            # says "we pay most of our people too much"). The step lines are in the band names
+            # and the table; the note says what the picture cannot.
+            note='Lunenburg’s teachers on Lunenburg’s scale, gross pay. Whether that is high or '
+                 'low needs the same picture for other districts, not yet measured.'),
         also=[TP.series('Teacher gross pay by year', [str(y) for y in py], [
                   TP.track('Upper quartile', [PD[y]['p75'] for y in py], 'published', 'line'),
                   TP.track('Median', [PD[y]['median'] for y in py], 'published', 'line'),
