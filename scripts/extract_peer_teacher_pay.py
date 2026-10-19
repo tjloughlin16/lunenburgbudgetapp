@@ -82,6 +82,12 @@ SCHEDULES = os.path.join(SRC, 'data', 'teacher-salary-schedules.csv')
 HARVARD = ('peer-districts/harvard-annual-town-report-2025.pdf', range(228, 232))
 AW = ('peer-districts/ashburnham-annual-town-report-2025.pdf', range(136, 147))
 AW_HEADING = 'Earnings In Excess of $500 7/1/24 - 6/30/25'
+TYNG = ('peer-districts/tyngsborough-gross-wage-report-2022.pdf', range(1, 14), range(14, 27))
+TYNG_YEAR = 2022
+# The master's lane, under whatever name a district's agreement prints it -- read from our table
+# of the contracts, never typed. A district with no such cell for the list's period gets dollar
+# quartiles only.
+MA_LANES = ('Masters', 'M', 'MA')
 
 MIN_CELL = 3
 PART_YEAR = 0.5
@@ -229,6 +235,81 @@ def aw():
     return recs, refused, headed
 
 
+# ===================================================================== Tyngsborough
+# OUR RULE over the printed POSITION, mirroring A-W's: classroom (regular education,
+# kindergarten, preschool), special education and English-learner TEACHERS. Positions print a
+# school code after a dash (TES, TMS, THS, ECC, DW), and spelling and case vary ("Reg Ed Teach",
+# "REG ED TEACHER"), so the rule is a pattern over the upper-cased position. Title 1 teachers
+# (a programme, the counterpart of A-W's reading specialists) are left out and counted, as are
+# long-term substitutes, counsellors, therapists, nurses, paras and coaches.
+TYNG_TEACH = re.compile(r'^(REG ED|SPED|KINDERGARTEN|PRESCHOOL|ELL) TEACH(ER)?$')
+TYNG_PROGRAMME = re.compile(r'^TITLE 1 TEACH(ER)?$')
+
+
+def _tyng_position(t):
+    """The position without its school code: `Reg Ed Teach- TES` -> `REG ED TEACH`."""
+    return ' '.join(re.split(r'\s*-\s*(?:ECC|TES|TMS|THS|DW|ECC/TES)$', t.strip().upper())[0].split())
+
+
+def tyngsborough():
+    """[(position, department, total, page)], refused count, {check: count}.
+
+    The report is ONE sheet printed across two runs of pages: pdf pages 1-13 carry Department
+    and Name, pages 14-26 Position, SR, Munis and Total, row for row in the same order. Rows
+    are paired by page and order, and the pairing is asserted -- every page pair has the same
+    number of rows. NAMES ARE NEVER READ: the department is the words left of the Name column
+    header, and that is all this function takes from the first run.
+    """
+    key, left, right = TYNG
+    pdf = _pdf(key)
+    recs, refused = [], 0
+    checks = collections.Counter()
+    cols = None
+    for pl, pr in zip(left, right):
+        lp, rp = pdf.pages[pl - 1], pdf.pages[pr - 1]
+        lw, rw = lp.extract_words(), rp.extract_words()
+        hn = [w for w in lw if w['text'] == 'Name']
+        hp = {w['text']: w for w in rw if w['text'] in ('Position', 'SR', 'Munis', 'Total')}
+        # The header is printed on the FIRST page of each run only; its columns hold for the
+        # rest (the sheet was printed from one spreadsheet).
+        if pl == left[0]:
+            if len(hn) != 1 or len(hp) != 4:
+                fail('Tyngsborough p%d/p%d: the column headers are not printed once' % (pl, pr))
+            cols = (hn[0]['x0'] - 3, hp['SR']['x0'] - 3, hp['Munis']['x0'] - 3,
+                    hp['Total']['x0'] - 3)
+            top_l, top_r = hn[0]['bottom'], hp['Position']['bottom']
+        else:
+            if hn or hp:
+                fail('Tyngsborough p%d/p%d: a header repeated mid-report' % (pl, pr))
+            top_l = top_r = 0
+        x_name, x_sr, x_mu, x_to = cols
+        lrows = [r for r in _rows([w for w in lw if w['top'] > top_l])]
+        rrows = [r for r in _rows([w for w in rw if w['top'] > top_r])]
+        if len(lrows) != len(rrows):
+            fail('Tyngsborough p%d/p%d: %d rows against %d -- the pairing fails'
+                 % (pl, pr, len(lrows), len(rrows)))
+        checks['page_pairs'] += 1
+        for lr, rr in zip(lrows, rrows):
+            dept = ' '.join(w['text'] for w in lr if w['x0'] < x_name)
+            pos = ' '.join(w['text'] for w in rr if w['x0'] < x_sr)
+
+            def col(a, b):
+                ts = [w['text'] for w in rr if a <= w['x0'] < b and w['text'] != '$']
+                if ts == ['-']:
+                    return 0.0
+                return _money(ts[0]) if len(ts) == 1 else None
+            sr, mu, to = col(x_sr, x_mu), col(x_mu, x_to), col(x_to, 10 ** 4)
+            if None in (sr, mu, to):
+                refused += 1
+                continue
+            # AN IDENTITY THE LIST STATES ABOUT ITSELF: Total is SR plus Munis.
+            if abs(sr + mu - to) > 0.005:
+                fail('Tyngsborough p%d: SR %.2f + Munis %.2f is not Total %.2f' % (pr, sr, mu, to))
+            checks['rows_tied'] += 1
+            recs.append((pos, dept, to, pr))
+    return recs, refused, checks
+
+
 # ===================================================================== aggregates
 def pct(xs, q):
     xs = sorted(xs)
@@ -271,6 +352,18 @@ def ma_top(district, fy, lane):
         fail('no %s %s schedule for FY%d in teacher-salary-schedules.csv' % (district, lane, fy))
     top = max(cells, key=lambda r: int(r['step']))
     return int(top['salary']), int(top['step']), top['page'], top['doc']
+
+
+def ma_top_held(district, fy):
+    """The master's-lane top cell for one fiscal year, or None if our table holds none."""
+    cells = [r for r in csv.DictReader(open(SCHEDULES, encoding='utf-8'))
+             if r['district'] == district and int(r['fy']) == fy and r['lane'] in MA_LANES]
+    lanes = {r['lane'] for r in cells}
+    if len(lanes) > 1:
+        fail('%s FY%d: more than one master\'s lane name (%s)' % (district, fy, sorted(lanes)))
+    if not cells:
+        return None
+    return ma_top(district, fy, lanes.pop())
 
 
 def distribution(put, d, period, pay, how):
@@ -383,11 +476,49 @@ def aggregates():
     titles = sorted({t for t, _n, _a, _p in recs_aw if t in TEACHING_TITLES})
     put('Ashburnham-Westminster', P, 'teaching_titles', len(titles), 'titles',
         '; '.join(titles))
-    distribution(put, 'Ashburnham-Westminster', P, sel,
-                 'our rule over the printed primary job title (TEACHING_TITLES)')
-    put('Ashburnham-Westminster', P, 'ma_top', '', 'dollars',
-        'not held: the latest agreement filed with DESE covers FY2017-FY2019')
-    return out, recs, recs_aw
+    full = distribution(put, 'Ashburnham-Westminster', P, sel,
+                        'our rule over the printed primary job title (TEACHING_TITLES)')
+    held = ma_top_held('Ashburnham-Westminster', 2025)
+    if held:
+        t, st, pg, _ = held
+        on_scale(put, 'Ashburnham-Westminster', P, full, t,
+                 'master\'s lane step %d, FY2025 cell ($%s, p%s)' % (st, format(t, ','), pg))
+    else:
+        put('Ashburnham-Westminster', P, 'ma_top', '', 'dollars',
+            'not held for FY2025: the agreements held cover FY2017-FY2019 and FY2026-FY2028')
+
+    # ---------------------------------------------------------------- Tyngsborough
+    recs_ty, refused, checks = tyngsborough()
+    P = 'period not printed; titled %d' % TYNG_YEAR
+    D = 'Tyngsborough'
+    put(D, P, 'list_rows', len(recs_ty), 'people',
+        'every row with three amounts, town and school, paired across the two runs of pages')
+    put(D, P, 'rows_tied', checks['rows_tied'], 'rows',
+        'each row\'s Total is its SR plus its Munis amount, to the cent')
+    put(D, P, 'rows_refused', refused, 'rows', 'a row whose amounts would not read')
+    put(D, P, 'positions_blank', sum(1 for p_, _d, _a, _p in recs_ty if not p_), 'rows',
+        'a row with amounts and no position printed (not selected)')
+    sel_ty = [(p_, d_, a_) for p_, d_, a_, _p in recs_ty if TYNG_TEACH.match(_tyng_position(p_))]
+    if any(not d_.startswith('School') for _p, d_, _a in sel_ty):
+        fail('Tyngsborough: a teaching position outside the School Dept. -- the pairing is wrong')
+    put(D, P, 'programme_titles_left_out',
+        sum(1 for p_, _d, _a, _p in recs_ty if TYNG_PROGRAMME.match(_tyng_position(p_))),
+        'people', 'Title 1 teachers: a programme, not a post')
+    pos = sorted({_tyng_position(p_) for p_, _d, _a in sel_ty})
+    put(D, P, 'teaching_titles', len(pos), 'titles', '; '.join(pos))
+    full = distribution(put, D, P, [a_ for _p, _d, a_ in sel_ty],
+                        'our rule over the printed position, school code dropped (TYNG_TEACH)')
+    h1, h2 = ma_top_held(D, TYNG_YEAR), ma_top_held(D, TYNG_YEAR + 1)
+    if h1 and h2:
+        on_scale(put, D, 'if calendar %d' % TYNG_YEAR, full, round((h1[0] + h2[0]) / 2.0),
+                 'master\'s step %d: half the FY%d cell ($%s, p%s) plus half the FY%d ($%s, '
+                 'p%s), our blend' % (h1[1], TYNG_YEAR, format(h1[0], ','), h1[2],
+                                      TYNG_YEAR + 1, format(h2[0], ','), h2[2]))
+    else:
+        put(D, P, 'ma_top', '', 'dollars',
+            'not held for FY%d-FY%d: the agreements held cover FY2019-FY2021 and FY2025-FY2027'
+            % (TYNG_YEAR, TYNG_YEAR + 1))
+    return out, recs, recs_aw, recs_ty
 
 
 def render(rows):
@@ -398,7 +529,7 @@ def render(rows):
     return buf.getvalue()
 
 
-def write_private(recs, recs_aw):
+def write_private(recs, recs_aw, recs_ty):
     """Name-level rows -- PRIVATE, gitignored, never published."""
     os.makedirs(PRIV, exist_ok=True)
     with open(os.path.join(PRIV, 'harvard-rows.csv'), 'w', newline='') as fh:
@@ -409,13 +540,20 @@ def write_private(recs, recs_aw):
         w = csv.writer(fh)
         w.writerow(['title', 'name', 'amount', 'page', 'teacher'])
         w.writerows([(t, n, a, p, t in TEACHING_TITLES) for t, n, a, p in recs_aw])
+    # Tyngsborough: no names were read, but the rows stay private all the same -- a position
+    # and a school code can name one person.
+    with open(os.path.join(PRIV, 'tyngsborough-rows.csv'), 'w', newline='') as fh:
+        w = csv.writer(fh)
+        w.writerow(['position', 'department', 'total', 'page', 'teacher'])
+        w.writerows([(p_, d_, a_, pg, bool(TYNG_TEACH.match(_tyng_position(p_))))
+                     for p_, d_, a_, pg in recs_ty])
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, recs, recs_aw = aggregates()
+    rows, recs, recs_aw, recs_ty = aggregates()
     text = render(rows)
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else None
@@ -424,7 +562,7 @@ def main():
             return 1
         print('peer teacher pay: current (%d rows)' % (text.count('\n') - 1))
         return 0
-    write_private(recs, recs_aw)
+    write_private(recs, recs_aw, recs_ty)
     with open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(text)
     print('wrote %s' % os.path.relpath(OUT, ROOT))

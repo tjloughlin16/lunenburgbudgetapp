@@ -70,6 +70,7 @@ import csv
 import hashlib
 import json
 import os
+import re
 import statistics
 import sys
 
@@ -493,6 +494,45 @@ def peer_pay():
     return M, B
 
 
+# The two comparison sets, as given when this page was extended (19 October 2026), used only
+# if sources/data/comparison-sets.csv -- the register of who chose each set, and where it is
+# printed -- is not on disk.
+SETS_FALLBACK = {
+    'official': {'Nashoba', 'Groton-Dunstable', 'Ashburnham-Westminster', 'Shrewsbury',
+                 'Uxbridge', 'Maynard', 'Wachusett', 'Ayer Shirley', 'Hudson', 'Tyngsborough',
+                 'Harvard'},
+    'project-six': {'Ashburnham-Westminster', 'Ayer Shirley', 'Groton-Dunstable',
+                    'North Middlesex', 'Montachusett Regional Vocational Technical'},
+}
+
+
+def comparison_sets():
+    """{set_id: {district}} -- read from comparison-sets.csv when it exists."""
+    p = os.path.join(DATA, 'comparison-sets.csv')
+    if not os.path.exists(p):
+        return SETS_FALLBACK
+    out = collections.defaultdict(set)
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        out[r['set_id']].add(r['district_as_printed'].replace('-', ' ')
+                             if r['district_as_printed'] == 'Ayer-Shirley'
+                             else r['district_as_printed'])
+    if set(out) != set(SETS_FALLBACK):
+        fail('comparison-sets.csv carries sets %s, not %s' % (sorted(out), sorted(SETS_FALLBACK)))
+    return out
+
+
+def set_label(d, sets):
+    """Which set a district belongs to, in the words the page uses."""
+    a, b = d in sets['official'], d in sets['project-six']
+    if a and b:
+        return 'both sets'
+    if a:
+        return 'the district’s comparison districts'
+    if b:
+        return 'this project’s six'
+    fail('%s is in neither comparison set' % d)
+
+
 def sources():
     man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
     out = {}
@@ -570,6 +610,9 @@ def sources():
                           'Town of Ashburnham, 2025 annual town report (“2025 Annual Town '
                           'Report (Final).pdf”), the Ashburnham-Westminster Regional School '
                           'District’s earnings list, pdf pages 136–146'),
+            'tyng-report': ('peer-districts/tyngsborough-gross-wage-report-2022.pdf',
+                            'Town of Tyngsborough, 2022 Gross Wage Report (“2022 Gross Wage '
+                            'Report (PDF).pdf”), position and pay on pdf pages 14–26'),
     }.items():
         if key not in man:
             fail('%s is not in archive-manifest.csv' % key)
@@ -577,9 +620,10 @@ def sources():
     f = 'peer-teacher-pay-distribution.csv'
     if not os.path.exists(os.path.join(DOCS_DATA, f)):
         fail('/docs/data/%s is not published' % f)
-    out['peer-csv'] = dict(label='Lunenburg Budget Project — %s (teacher gross pay in Harvard '
-                                 'and Ashburnham-Westminster, on each one’s own scale; no '
-                                 'names)' % f, href='/docs/data/' + f)
+    out['peer-csv'] = dict(label='Lunenburg Budget Project — %s (teacher gross pay in Harvard, '
+                                 'Ashburnham-Westminster and Tyngsborough, on each one’s own '
+                                 'scale where its schedule is held; no names)' % f,
+                           href='/docs/data/' + f)
     key = 'contracts/data/lea-teacher-salary-schedule.csv'
     if key not in man:
         fail('%s is not in archive-manifest.csv' % key)
@@ -1522,48 +1566,64 @@ def build():
     YRS = figure(LY, str(LY), 'years')
     # ON EACH DISTRICT'S OWN SCALE (TJ, 19 October 2026: "we cannot say what the composition
     # of our school is compared to other schools"). scripts/extract_peer_teacher_pay.py reads
-    # Harvard's and Ashburnham-Westminster's wage lists and publishes counts only; Lunenburg's
+    # the comparison districts' wage lists and publishes counts only; Lunenburg's
     # row there is computed from the same private match this page's distribution rests on.
     PM, PBD = peer_pay()
     LK, HK = ('Lunenburg', 'calendar 2025'), ('Harvard', 'if calendar 2025')
     HKF, HKP = ('Harvard', 'if fiscal 2025'), ('Harvard', 'period not printed')
-    AWK = [k for k in PM if k[0] == 'Ashburnham-Westminster']
-    if len(AWK) != 1 or any(k not in PM for k in (LK, HK, HKF, HKP)):
+    # Every other district the file carries: its list's own key (the one with a full-year
+    # count) and, where its schedule for the list's period is held, the key its own-scale
+    # measure sits under. A district with no schedule gets dollar quartiles only.
+    SETS = comparison_sets()
+    OTHER = {}
+    for d in sorted({k[0] for k in PM} - {'Lunenburg', 'Harvard'}):
+        lst = [k for k in PM if k[0] == d and 'full_year' in PM[k]]
+        scl = [k for k in PM if k[0] == d and PM[k].get('at_or_above_top') is not None]
+        if len(lst) != 1 or len(scl) > 1:
+            fail('%s: the peer file does not carry one list and at most one scale' % d)
+        OTHER[d] = (lst[0], scl[0] if scl else None)
+    if 'Ashburnham-Westminster' not in OTHER or any(k not in PM for k in (LK, HK, HKF, HKP)):
         fail('peer-teacher-pay-distribution.csv does not carry the districts and periods expected')
-    AWK = AWK[0]
     if PM[LK]['full_year'] != PD[max(PD)]['full_year'] or \
             PM[LK]['at_or_above_top'] != TOPS['Masters']['at_or_above_top']:
         fail('the peer file\'s Lunenburg row disagrees with teacher-pay-distribution.csv')
-    for k in (LK, HKP, AWK):
+    for k in [LK, HKP] + [b for b, _ in OTHER.values()]:
         if sum(c for _, _, c in PBD[k]['usd']) != PM[k]['full_year']:
             fail('%s: the dollar bands do not add to the full-year count' % (k,))
-    for k in (LK, HK, HKF):
-        if sum(c for _, _, c in PBD[k]['pct']) != PM[(k[0], 'period not printed')
-                                                     if k[0] == 'Harvard' else k]['full_year']:
+    for k, n in [(LK, PM[LK]), (HK, PM[HKP]), (HKF, PM[HKP])] + \
+            [(sc, PM[b]) for b, sc in OTHER.values() if sc]:
+        if sum(c for _, _, c in PBD[k]['pct']) != n['full_year']:
             fail('%s: the share-of-top bands do not add to the full-year count' % (k,))
     hfull = int(PM[HKP]['full_year'])
+    # The districts placed on their own scale, and those with a list but no schedule for it.
+    SCALED = [d for d, (_, sc) in OTHER.items() if sc]
+    UNSCALED = [d for d, (_, sc) in OTHER.items() if not sc]
+
+    def period_of(k):
+        """The list's period in the table's words, from the key the extractor wrote."""
+        return k[1].replace('period not printed; titled', 'not printed; titled').split(' (')[0]
 
     def own_scale_view():
         def row(label, period, m, sc):
             return dict(label=label, cells=[
-                period, C.num(int(m['full_year'])), C.usd(m['p25']), C.usd(m['median']),
-                C.usd(m['p75']),
+                'this district' if label == 'Lunenburg' else set_label(label, SETS), period, C.num(int(m['full_year'])), C.usd(m['p25']),
+                C.usd(m['median']), C.usd(m['p75']),
                 ('%s of %s' % (C.num(int(sc['at_or_above_top'])), C.num(int(m['full_year']))))
                 if sc else 'schedule not held',
                 C.pct(sc['median_pct_of_top']) if sc else 'schedule not held'])
         return dict(key='own-scale', label='On their own scales', total_col=-1,
-                    kinds=['ledger'] * 7,
-                    columns=['Period', 'Full-year teachers', 'Lower quartile', 'Median',
+                    kinds=['ledger'] * 8,
+                    columns=['Set', 'Period', 'Full-year teachers', 'Lower quartile', 'Median',
                              'Upper quartile', 'At or above own master’s top',
                              'Median, share of own top'],
                     rows=[row('Lunenburg', 'calendar 2025', PM[LK], PM[LK]),
                           row('Harvard', 'not printed; as calendar 2025', PM[HKP], PM[HK]),
-                          row('Harvard', 'not printed; as fiscal 2025', PM[HKP], PM[HKF]),
-                          row('Ashburnham-Westminster', 'fiscal 2025', PM[AWK], None)],
-                    note='Gross pay of full-year teachers, from each town’s printed wage list. '
-                         'Lunenburg: roster names matched to the list. Harvard: the list’s own '
-                         'TEACHER section. Ashburnham-Westminster: our rule over the printed '
-                         'job title, earnings over $500 only; its current schedule is not held.')
+                          row('Harvard', 'not printed; as fiscal 2025', PM[HKP], PM[HKF])]
+                    + [row(d, period_of(b), PM[b], PM[sc] if sc else None)
+                       for d, (b, sc) in OTHER.items()],
+                    note='Gross pay of full-year teachers, from each printed wage list; periods '
+                         'differ. Lunenburg: roster names matched to it. Harvard: its TEACHER '
+                         'section. Others: our rule over the printed job title.')
 
     out['teacher-pay-compared'] = TP.page(
         'teacher-pay-compared',
@@ -1754,8 +1814,19 @@ def build():
         xs.append(lab + (' (%s)' % ', '.join(marks) if marks else ''))
         vals.append(c)
     WAGES_GAP = STEPS
-    AW_SCHEDULE = ('the Ashburnham-Westminster teachers’ agreement covering the year of its wage '
-                   'list, with its salary schedule')
+    # The districts whose wage list is read but whose salary schedule for that list's period
+    # is not held: the remedy is the agreement covering it (read from the peer file).
+    def wanted(d):
+        got = re.search(r'not held for (FY\S+):', PM[OTHER[d][0]].get('_note_ma_top', ''))
+        if not got:
+            fail('%s: the peer file does not say which schedule year is missing' % d)
+        return '%s %s' % (d, got.group(1).replace('-', '–'))
+    OWN_SCHEDULE = ('the teachers’ agreement with the salary schedule for each list’s year: %s'
+                    % '; '.join(wanted(d) for d in UNSCALED))
+    # What the survey of 19 October 2026 found for the comparison districts not read here
+    # (notes/findings/WAGE-LISTS-COMPARISON-TOWNS.md): a school wage list with NO job title, so
+    # no teacher can be told from a custodian or a substitute; or no list found at all.
+    NO_TITLES = ['Hudson', 'Maynard', 'Uxbridge']
     hv_t = '%s of %s' % (C.num(int(PM[HK]['at_or_above_top'])), C.num(hfull))
     lv_t = '%s of %s' % (C.num(ma['at_or_above_top']), C.num(nfull))
     # The comparison chart's bands, OURS: each published share-of-top band must sit wholly
@@ -1777,6 +1848,27 @@ def build():
             fail('%s: share bands add to %d, not %d' % (k, sum(got), n))
         return [round(100.0 * g / n, 1) for g in got]
     plf = {'y': CY(pl)}
+    TAG = {'both sets': 'both sets', 'the district’s comparison districts': 'district’s set',
+           'this project’s six': 'project’s six'}
+
+    def own_scale_chart():
+        # Every district placed on its own scale. Up to five fit one band chart (the palette's
+        # five hues); past that, a ranking of the share at or above own master's top, with
+        # Lunenburg highlighted.
+        named = [('Lunenburg', LK, nfull), ('Harvard (%s)' % TAG[set_label('Harvard', SETS)],
+                                            HK, hfull)] + \
+            [('%s (%s)' % (d, TAG[set_label(d, SETS)]), OTHER[d][1], int(PM[OTHER[d][0]]['full_year']))
+             for d in SCALED]
+        note = ('Share of full-year teachers, gross pay over own district’s master’s top step. '
+                'Periods differ; Harvard’s is not printed.')
+        if len(named) <= 5:
+            return TP.series('Pay against own master’s top', [b[0] for b in SHARE_BANDS], [
+                TP.track(lab, share_counts(k, n), 'estimate', 'bar') for lab, k, n in named],
+                '%', kind='bar', decimals=0, note=note)
+        return TP.ranking('Pay at or above own master’s top', [
+            (lab, round(100.0 * PM[k]['at_or_above_top'] / n, 1)) for lab, k, n in named], '%',
+            highlight='Lunenburg', basis='estimate', decimals=0, note=note)
+
     out['teachers-on-the-scale'] = TP.page(
         'teachers-on-the-scale',
         'In calendar %d, %s teachers we matched were paid at least the master’s top step.'
@@ -1801,7 +1893,8 @@ def build():
          f('steps', None, 'teachers on each step and lane, each year', 'gap', closes=WAGES_GAP),
          f('hv', OFN(int(PM[HK]['at_or_above_top']), hfull),
            'Harvard, at least Harvard’s master’s top', 'estimate'),
-         f('aw', None, 'Ashburnham-Westminster on its own scale', 'gap', closes=AW_SCHEDULE)],
+         f('aw', None, 'other lists, on own scales', 'gap',
+           closes=OWN_SCHEDULE)],
         [con('%s of %s matched teachers were paid at least the bachelor’s top step; %s the '
              'master’s.' % (C.num(ba['at_or_above_top']), C.num(nfull),
                             C.num(ma['at_or_above_top'])), ['ba', 'ma', 'matop', 'batop'],
@@ -1832,7 +1925,7 @@ def build():
          con('%s Harvard teachers were paid at least Harvard’s own master’s top; Lunenburg %s.'
              % (hv_t, lv_t), ['hv', 'ma', 'aw'],
              {'a': OFN(int(PM[HK]['at_or_above_top']), hfull), 'b': OFN(ma['at_or_above_top'], nfull)},
-             notes=[step('Median pay was %s of own top in Harvard, %s here; lower quartiles %s '
+             notes=[step('Median: %s of own top in Harvard, %s here; lower quartiles %s '
                          'and %s.' % (C.pct(PM[HK]['median_pct_of_top']),
                                                     C.pct(PM[LK]['median_pct_of_top']),
                                                     C.pct(PM[HK]['p25_pct_of_top']),
@@ -1845,10 +1938,11 @@ def build():
                                                          C.num(hfull))), 'estimate',
                          {'y': figure(pl, str(pl), 'fiscal year'),
                           'a': OFN(int(PM[HKF]['at_or_above_top']), hfull)}),
-                    step('Harvard’s are its list’s TEACHER section; ours, roster names matched to '
-                         'it. Harvard prints no longevity.', 'measured'),
-                    step('Ashburnham-Westminster’s current salary schedule is not held.', 'gap',
-                         closes=AW_SCHEDULE)])],
+                    step('Harvard: its TEACHER section; its agreement prints no longevity. '
+                         'Ours: roster names matched.', 'measured'),
+                    step('%s: read; schedule not held. %s: no job titles.'
+                         % (', '.join(UNSCALED), ', '.join(NO_TITLES)), 'gap', closes=OWN_SCHEDULE,
+                         allow=tuple(sorted(set(re.findall(r'\d+', OWN_SCHEDULE)))))])],
         chart=TP.series('Teacher gross pay, calendar year', xs, [
             TP.track('Matched teachers', vals, 'published', 'bar')], 'teachers', kind='bar',
             # THE CAVEAT A READER NEEDS ON THE CHART ITSELF (TJ, 19 October 2026: read alone it
@@ -1862,13 +1956,7 @@ def build():
                   TP.track('Lower quartile', [PD[y]['p25'] for y in py], 'published', 'line')],
                   '$', note='Full-year matched teachers, gross, each calendar year. The match '
                             'rate differs by year; see the table.'),
-              TP.series('Pay against own master’s top', [b[0] for b in SHARE_BANDS], [
-                  TP.track('Lunenburg', share_counts(LK, nfull), 'estimate', 'bar'),
-                  TP.track('Harvard', share_counts(HK, hfull), 'estimate', 'bar')],
-                  '%', kind='bar', decimals=0,
-                  note='Share of full-year teachers, gross pay over own district’s master’s top '
-                       'step, calendar %d blend. Harvard’s period is not printed.' % pl,
-                  note_figures={'y': CY(pl)})],
+              own_scale_chart()],
         table=dict(caption='Teachers matched, and their gross pay', views=[
             dict(key='years', label='By year', total_col=-1, kinds=['ledger'] * 6,
                  columns=['Roster teachers', 'Matched', 'Part-year', 'Lower quartile', 'Median',
@@ -1891,7 +1979,8 @@ def build():
             own_scale_view()]),
         sources=[src['wages%d' % y] for y in sorted(py, reverse=True)][:15]
         + S('paydist-csv', 'roster-csv', 'contract', 'schedule-csv', 'harvard-report',
-            'aw-report', 'peer-csv') + [src['k:contracts/pdf/harvard-teachers-2023-2026.pdf']],
+            'aw-report', 'tyng-report', 'peer-csv')
+        + [src['k:contracts/pdf/harvard-teachers-2023-2026.pdf']],
         finding_figures={'y': CY(pl), 'a': OFN(ma['at_or_above_top'], nfull)})
 
     # ================================================================ the hub

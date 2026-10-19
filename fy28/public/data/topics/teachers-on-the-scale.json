@@ -156,15 +156,9 @@
    "from_zero": true,
    "kind": "bar",
    "note": {
-    "figures": {
-     "y": {
-      "text": "2025",
-      "unit": "calendar year",
-      "value": 2025
-     }
-    },
+    "figures": {},
     "literals": [],
-    "text": "Share of full-year teachers, gross pay over own district’s master’s top step, calendar 2025 blend. Harvard’s period is not printed."
+    "text": "Share of full-year teachers, gross pay over own district’s master’s top step. Periods differ; Harvard’s is not printed."
    },
    "reference": null,
    "series": [
@@ -194,7 +188,7 @@
     {
      "basis": "estimate",
      "mark": "bar",
-     "name": "Harvard",
+     "name": "Harvard (district’s set)",
      "texts": [
       "9%",
       "9%",
@@ -462,7 +456,7 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "Median pay was 108.7% of own top in Harvard, 104.6% here; lower quartiles 86.1% and 95.8%."
+     "text": "Median: 108.7% of own top in Harvard, 104.6% here; lower quartiles 86.1% and 95.8%."
     },
     {
      "figures": {
@@ -485,14 +479,18 @@
      "figures": {},
      "kind": "measured",
      "literals": [],
-     "text": "Harvard’s are its list’s TEACHER section; ours, roster names matched to it. Harvard prints no longevity."
+     "text": "Harvard: its TEACHER section; its agreement prints no longevity. Ours: roster names matched."
     },
     {
-     "closes": "the Ashburnham-Westminster teachers’ agreement covering the year of its wage list, with its salary schedule",
+     "closes": "the teachers’ agreement with the salary schedule for each list’s year: Ashburnham-Westminster FY2025; Tyngsborough FY2022–FY2023",
      "figures": {},
      "kind": "gap",
-     "literals": [],
-     "text": "Ashburnham-Westminster’s current salary schedule is not held."
+     "literals": [
+      "2022",
+      "2023",
+      "2025"
+     ],
+     "text": "Ashburnham-Westminster, Tyngsborough: read; schedule not held. Hudson, Maynard, Uxbridge: no job titles."
     }
    ],
    "rests_on": [
@@ -680,13 +678,13 @@
    }
   },
   {
-   "closes": "the Ashburnham-Westminster teachers’ agreement covering the year of its wage list, with its salary schedule",
+   "closes": "the teachers’ agreement with the salary schedule for each list’s year: Ashburnham-Westminster FY2025; Tyngsborough FY2022–FY2023",
    "id": "aw",
    "kind": "gap",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "Ashburnham-Westminster on its own scale"
+    "text": "other lists, on own scales"
    },
    "value": null
   }
@@ -804,8 +802,12 @@
    "label": "Town of Ashburnham, 2025 annual town report (“2025 Annual Town Report (Final).pdf”), the Ashburnham-Westminster Regional School District’s earnings list, pdf pages 136–146 — ashburnham-annual-town-report-2025.pdf"
   },
   {
+   "href": "/docs/peer-districts/tyngsborough-gross-wage-report-2022.pdf",
+   "label": "Town of Tyngsborough, 2022 Gross Wage Report (“2022 Gross Wage Report (PDF).pdf”), position and pay on pdf pages 14–26 — tyngsborough-gross-wage-report-2022.pdf"
+  },
+  {
    "href": "/docs/data/peer-teacher-pay-distribution.csv",
-   "label": "Lunenburg Budget Project — peer-teacher-pay-distribution.csv (teacher gross pay in Harvard and Ashburnham-Westminster, on each one’s own scale; no names)"
+   "label": "Lunenburg Budget Project — peer-teacher-pay-distribution.csv (teacher gross pay in Harvard, Ashburnham-Westminster and Tyngsborough, on each one’s own scale where its schedule is held; no names)"
   },
   {
    "href": "/docs/contracts/pdf/harvard-teachers-2023-2026.pdf",
@@ -1104,6 +1106,7 @@
    },
    {
     "columns": [
+     "Set",
      "Period",
      "Full-year teachers",
      "Lower quartile",
@@ -1120,13 +1123,15 @@
      "ledger",
      "ledger",
      "ledger",
+     "ledger",
      "ledger"
     ],
     "label": "On their own scales",
-    "note": "Gross pay of full-year teachers, from each town’s printed wage list. Lunenburg: roster names matched to the list. Harvard: the list’s own TEACHER section. Ashburnham-Westminster: our rule over the printed job title, earnings over $500 only; its current schedule is not held.",
+    "note": "Gross pay of full-year teachers, from each printed wage list; periods differ. Lunenburg: roster names matched to it. Harvard: its TEACHER section. Others: our rule over the printed job title.",
     "rows": [
      {
       "cells": [
+       "this district",
        "calendar 2025",
        "90",
        "$84,719",
@@ -1139,6 +1144,7 @@
      },
      {
       "cells": [
+       "the district’s comparison districts",
        "not printed; as calendar 2025",
        "104",
        "$81,347",
@@ -1151,6 +1157,7 @@
      },
      {
       "cells": [
+       "the district’s comparison districts",
        "not printed; as fiscal 2025",
        "104",
        "$81,347",
@@ -1163,6 +1170,7 @@
      },
      {
       "cells": [
+       "both sets",
        "fiscal 2025",
        "162",
        "$66,944",
@@ -1172,6 +1180,19 @@
        "schedule not held"
       ],
       "label": "Ashburnham-Westminster"
+     },
+     {
+      "cells": [
+       "the district’s comparison districts",
+       "not printed; titled 2022",
+       "127",
+       "$78,208",
+       "$89,373",
+       "$95,656",
+       "schedule not held",
+       "schedule not held"
+      ],
+      "label": "Tyngsborough"
      }
     ],
     "total_col": -1

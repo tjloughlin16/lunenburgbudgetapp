@@ -783,6 +783,14 @@ GROUPS = [
              '\u201cEarnings In Excess of $500 7/1/24 - 6/30/25\u201d, by name and primary '
              'job title. Read by scripts/extract_peer_teacher_pay.py; only counts and '
              'distributions are published, never a name.'),
+            ('peer-districts/tyngsborough-gross-wage-report-2022.pdf',
+             'Tyngsborough gross wage report, 2022', 2,
+             'The Town of Tyngsborough\u2019s \u201c2022 Gross Wage Report\u201d (publisher\u2019s '
+             'filename \u201c2022 Gross Wage Report (PDF).pdf\u201d), town and school employees. '
+             'One sheet split over two runs of pages: department and name on pdf pages 1-13, '
+             'position, SR, Munis and Total on pages 14-26, row for row. The period is not '
+             'printed. Read by scripts/extract_peer_teacher_pay.py; only counts and '
+             'distributions are published, never a name.'),
         ],
     },
     {
@@ -1491,18 +1499,21 @@ GROUPS = [
              'coaching and longevity; it is not a salary schedule cell. Digital years are '
              'reconciled amount by amount to the PDF\u2019s own text layer.'),
             ('data/peer-teacher-pay-distribution.csv',
-             'Teacher gross pay in Harvard and Ashburnham-Westminster, on each district\u2019s '
-             'own scale \u2014 NO NAMES', 2,
-             'The wage lists two member towns print (Harvard\u2019s 2025 report, period not '
-             'printed; Ashburnham\u2019s reprint of the regional district\u2019s FY2025 list, '
-             'earnings over $500), read from the PDFs\u2019 text layer by '
+             'Teacher gross pay in Harvard, Ashburnham-Westminster and Tyngsborough, on each '
+             'district\u2019s own scale \u2014 NO NAMES', 2,
+             'The wage lists three comparison districts\u2019 towns print (Harvard\u2019s 2025 '
+             'report, period not printed; Ashburnham\u2019s reprint of the regional district\u2019s '
+             'FY2025 list, earnings over $500; Tyngsborough\u2019s 2022 Gross Wage Report, period '
+             'not printed), read from the PDFs\u2019 text layer by '
              'scripts/extract_peer_teacher_pay.py, beside Lunenburg\u2019s calendar-2025 '
              'figures from the same rules. Teachers are Harvard\u2019s own TEACHER section and, '
-             'for A-W, our rule over the printed job title. Each full-year teacher\u2019s gross '
-             'pay as a share of their own district\u2019s master\u2019s top step, as counts and '
-             'bands only, none resting on fewer than three people. Harvard\u2019s sections tie '
-             'to the totals the page prints, to the cent. A-W\u2019s current salary schedule is '
-             'not held, so its share cannot be computed.'),
+             'for A-W and Tyngsborough, our rule over the printed job title. Each full-year '
+             'teacher\u2019s gross pay as a share of their own district\u2019s master\u2019s top '
+             'step where the schedule for the list\u2019s year is held, as counts and bands only, '
+             'none resting on fewer than three people. Harvard\u2019s sections tie to the totals '
+             'the page prints, to the cent; each Tyngsborough row\u2019s Total is its SR plus '
+             'Munis. A-W\u2019s FY2025 and Tyngsborough\u2019s FY2022-FY2023 schedules are not '
+             'held, so their shares cannot be computed.'),
             ('data/gross-wages-refused.csv',
              'Payroll pages that would not read, and why each refused', 1,
              'Written by us. Two pages, both a PAIRING failure rather than a faint scan: '
@@ -4724,6 +4735,10 @@ SOURCE_URLS = {
         'https://www.harvard-ma.gov/Archive/ViewFile/Item/463',
     'peer-districts/ashburnham-annual-town-report-2025.pdf':
         'https://ma-ashburnham.civicplus.com/ArchiveCenter/ViewFile/Item/231',
+    # Tyngsborough's own wage report, fetched 19 October 2026 (archive category 'Accounting
+    # Wage Reports'; the latest it lists is 2022).
+    'peer-districts/tyngsborough-gross-wage-report-2022.pdf':
+        'https://www.tyngsboroughma.gov/Archive.aspx?ADID=88',
 
     # Three Tyler MUNIS user guides published by OTHER governments, fetched 6 October 2026.
     # Held because Lunenburg runs MUNIS and publishes no guide to it; they are how a
