@@ -94,10 +94,20 @@ SPELLING_MATCH = 0.90
 # What the money buys, from what the district's own label names. OURS, and said to be
 # ours on the page. Order matters: the first pattern that matches wins, so the specific
 # sits above the general.
+#
+# ADMINISTRATORS ARE NOT TEACHING STAFF. The staff pattern once caught principal, director,
+# coordinator and department head, so a Human Resource Director was a fifth of the
+# "teaching and specialist" money cut to zero (TJ, 19 October 2026, on an invented grouping:
+# "that was bad!"). They are their own group, matched first; department heads go with them
+# because DESE files them under instructional leadership (2120), not teaching. A nurse's
+# travel and dues line is an expense, not a nurse, so `nurse` no longer matches it. Legal
+# services are their own group rather than a "contract or service".
 BUYS = [
+    ('Administrators, directors, department heads',
+     r'principal|director|coordinator|department head'),
     ('Teaching and specialist staff',
      r'teacher|paraprofessional|para\b|speech|psychologist|social worker|counselor|'
-     r'counsellor|nurse|librarian|principal|director|coordinator|department head|'
+     r'counsellor|nurse(?!s? travel)|librarian|'
      r'master teacher|tutoring|therapist|pathologist'),
     ('Substitutes and stipends',
      r'substitut|\bsubs?\b|stipend|overtime|longevity|accompanist|advisor'),
@@ -111,9 +121,10 @@ BUYS = [
      r'equipment|repair|maint|furniture|recondition|custodial|grounds|fire safety'),
     ('Transportation', r'transportation|transp|bus'),
     ('Tuition and out-of-district', r'tuition|collaborative|placement'),
+    ('Legal services', r'legal'),
     ('Utilities, contracts and services',
      r'contracted|contractual|electricity|natural gas|fuel oil|heating|telephone|'
-     r'software|lease|legal|insurance|advertis|classified ads|dumping|sewerage|'
+     r'software|lease|insurance|advertis|classified ads|dumping|sewerage|'
      r'unemployment|services'),
 ]
 
