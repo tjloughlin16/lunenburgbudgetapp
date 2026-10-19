@@ -426,6 +426,9 @@ def build():
     U = lambda v: figure(v, C.usd(v))
     F = lambda y: figure(y, C.fy(y), 'fiscal year')
     P = lambda x, dp=2: figure(x * 100, C.pct(x * 100, dp))      # x is a fraction
+    # A RATE carries its period in the tile itself. TJ, 19 October 2026: "5.18%. Nobody knows
+    # what that means" -- a bare percent reads as a share; '5.18% a year' cannot.
+    PY = lambda x, dp=2: figure(x * 100, C.pct(x * 100, dp) + ' a year', 'percent a year')
     N = lambda v, unit=None: figure(v, C.num(v), unit)
     D1 = lambda v, unit: figure(v, '%.1f %s' % (v, unit), unit)
     f, con = LD.fact, TP.conclusion
@@ -457,8 +460,8 @@ def build():
            {'y': f29}),
          f('glast', U(glast), 'projected gap, %s (ours)' % C.fy(fy[-1]), 'estimate',
            {'y': flast}),
-         f('sal', P(R['salaries'], 1), 'yearly growth in salaries, assumed (ours)', 'estimate'),
-         f('health', P(R['health'], 1), 'yearly growth in health insurance, assumed (ours)',
+         f('sal', PY(R['salaries'], 1), 'salary growth, assumed (ours)', 'estimate'),
+         f('health', PY(R['health'], 1), 'health insurance cost growth, assumed (ours)',
            'estimate'),
          f('none', None, 'a published FY2028 school budget', 'gap', {'y': F(fy[0])},
            closes='The district’s proposed %s budget, not yet presented' % C.fy(fy[0]))],
@@ -468,7 +471,7 @@ def build():
              notes=[step('So the yearly figures are not added together: %s already includes %s.'
                          % (C.fy(fy[-1]), C.fy(fy[0])), 'measured',
                          {'a': flast, 'b': f28})]),
-         con('It assumes salaries grow %s a year and health insurance %s; both are ours.'
+         con('It assumes salaries grow %s a year and health insurance %s a year; both are ours.'
              % (C.pct(R['salaries'] * 100, 1), C.pct(R['health'] * 100, 1)), ['sal', 'health'],
              {'a': P(R['salaries'], 1), 'b': P(R['health'], 1)},
              notes=[step('Every rate, and where it came from, is in the method document.',
@@ -515,10 +518,10 @@ def build():
            'estimate', {'r': P(R['salaries'], 1)}),
          f('health', U(amt['health']), 'health insurance, at %s (ours)'
            % C.pct(R['health'] * 100, 1), 'estimate', {'r': P(R['health'], 1)}),
-         f('top2', P(top2_share, 1), 'of the increase, those two lines (ours)', 'estimate')],
+         f('top2', P(top2_share, 1), 'of the cost rise is salaries plus insurance (ours)', 'estimate')],
         [con('Level service is the same staff, buses and buildings; %s of it buys nothing new.'
              % C.usd(o['increase']), ['increase', 'pupils'], {'a': U(o['increase'])}),
-         con('Salaries add %s and health insurance %s: %s of the increase.'
+         con('Salaries add %s and health insurance %s: %s of the cost rise.'
              % (C.usd(amt['salaries']), C.usd(amt['health']), C.pct(top2_share * 100, 1)),
              ['sal', 'health', 'top2'],
              {'a': U(amt['salaries']), 'b': U(amt['health']), 'c': P(top2_share, 1)}),
@@ -550,16 +553,16 @@ def build():
         % (C.fy(fy[0]), C.usd(o['allowed']), C.usd(o['increase'])),
         [f('allowed', U(o['allowed']), 'more for the schools, %s (ours)' % C.fy(fy[0]),
            'estimate', {'y': f28}),
-         f('cap', P(o['levy_cap'], 1), 'a year, the levy limit’s rise under Proposition 2½',
+         f('cap', PY(o['levy_cap'], 1), 'most the levy may rise without an override, Proposition 2½',
            'statute', allow=('Proposition 2½',)),
          f('levy', U(sv['levy']), 'of it from the levy limit’s rise (ours)', 'estimate'),
          f('ng', U(sv['new_growth']), 'from new growth (ours)', 'estimate'),
          f('aid', U(sv['aid']), 'from state aid (ours)', 'estimate'),
          f('rec', U(sv['receipts']), 'from local receipts (ours)', 'estimate'),
-         f('rate', P(o['rev28'], 2), 'growth in school revenue, %s (ours)' % C.fy(fy[0]),
+         f('rate', PY(o['rev28'], 2), 'school revenue growth, %s (ours)' % C.fy(fy[0]),
            'estimate', {'y': f28}),
          f('increase', U(o['increase']), 'level service costs more (ours)', 'estimate'),
-         f('consumed', P(o['consumed'], 0), 'of the increase, what the costs want (ours)',
+         f('consumed', P(o['consumed'], 0), 'the cost rise, as a share of the new revenue (ours)',
            'estimate'),
          f('g28', U(g28), 'projected gap, %s (ours)' % C.fy(fy[0]), 'estimate', {'y': f28})],
         [con('The levy limit may rise %s a year; that is %s of the schools’ %s.'
@@ -569,10 +572,10 @@ def build():
              notes=[step('Proposition 2½ was a 1980 statewide ballot question; the cap is a fixed '
                          'percentage, not tied to any price.', 'measured',
                          allow=('Proposition 2½', '1980'))]),
-         con('New growth, state aid and receipts lift school revenue growth to %s in %s.'
+         con('New growth, state aid and receipts lift school revenue growth to %s a year in %s.'
              % (C.pct(o['rev28'] * 100, 2), C.fy(fy[0])), ['ng', 'aid', 'rec', 'rate'],
              {'a': P(o['rev28'], 2), 'y': f28}),
-         con('Costs want %s of the increase; the shortfall, with September’s salaries, is %s.'
+         con('Costs rise %s as much as revenue; with September’s salaries the gap is %s.'
              % (C.pct(o['consumed'] * 100, 0), C.usd(g28)), ['increase', 'consumed', 'g28'],
              {'a': P(o['consumed'], 0), 'b': U(g28)})],
         chart=TP.parts('Where the new school revenue comes from', [
@@ -596,28 +599,28 @@ def build():
         fail('with every line at the cap, FY2028 is no longer short and FY2032 no longer spare')
     out['gap-by-cost-line'] = TP.page(
         'gap-by-cost-line',
-        'Health insurance puts %s into the %s gap from %s of the budget, by our estimate.'
+        'Health insurance puts %s into the %s gap from %s of the school budget (ours).'
         % (C.usd(ct['health']), C.fy(fy[0]), C.pct(W['health'] * 100, 1)),
         [f('hct', U(ct['health']), 'health insurance’s part of the gap (ours)', 'estimate'),
-         f('hw', P(W['health'], 1), 'of the budget, health insurance (our grouping)', 'estimate'),
+         f('hw', P(W['health'], 1), 'of the school budget is health insurance (our grouping)', 'estimate'),
          f('sct', U(ct['salaries']), 'salaries’ part of the gap (ours)', 'estimate'),
-         f('sw', P(W['salaries'], 1), 'of the budget, salaries (our grouping)', 'estimate'),
+         f('sw', P(W['salaries'], 1), 'of the school budget is salaries (our grouping)', 'estimate'),
          f('dct', U(ct['sped']), 'special education in district, its part (ours)', 'estimate'),
          f('oct', U(ct['other']), 'everything else, its part (ours)', 'estimate'),
-         f('ow', P(W['other'], 1), 'of the budget, everything else (our grouping)', 'estimate'),
-         f('orate', P(R['other'], 1), 'a year, everything else, assumed (ours)', 'estimate'),
-         f('tut', P(R['sped_tuition'], 0), 'a year, out-of-district tuition, held flat (ours)',
+         f('ow', P(W['other'], 1), 'of the school budget is everything else (our grouping)', 'estimate'),
+         f('orate', PY(R['other'], 1), 'growth in everything else, assumed (ours)', 'estimate'),
+         f('tut', PY(R['sped_tuition'], 0), 'out-of-district tuition growth, held flat (ours)',
            'estimate'),
          f('none28', U(o['if_none_28']), 'the %s gap if no line outran the cap (ours)'
            % C.fy(fy[0]), 'estimate', {'y': f28}),
          f('none32', U(-o['if_none_32']), 'spare in %s on the same path (ours)' % C.fy(fy[4]),
            'estimate', {'y': F(fy[4])})],
-        [con('Salaries are %s of the budget and put in %s; size alone does not rank a line.'
+        [con('Salaries are %s of the school budget and put in %s; size alone does not rank a line.'
              % (C.pct(W['salaries'] * 100, 1), C.usd(ct['salaries'])), ['sw', 'sct', 'hct', 'hw'],
              {'a': P(W['salaries'], 1), 'b': U(ct['salaries'])},
              notes=[step('Each line is held to the levy cap alone and the projection rerun; what '
                          'leaves the gap is that line’s part.', 'estimate')]),
-         con('Everything else is %s of the budget at %s a year, and puts in %s.'
+         con('Everything else is %s of the school budget, growing %s a year, and puts in %s.'
              % (C.pct(W['other'] * 100, 1), C.pct(R['other'] * 100, 1), C.usd(ct['other'])),
              ['ow', 'orate', 'oct'],
              {'a': P(W['other'], 1), 'b': P(R['other'], 1), 'c': U(ct['other'])},
@@ -650,17 +653,17 @@ def build():
     spread = (o['blended'] - o['rev28']) * 100
     out['cost-and-revenue-growth'] = TP.page(
         'cost-and-revenue-growth',
-        'What the schools buy grows %s a year on our rates; their revenue %s in %s, then less.'
+        'Keeping today’s schools costs %s more each year; revenue grows %s a year in %s, then less.'
         % (C.pct(o['blended'] * 100, 2), C.pct(o['rev28'] * 100, 2), C.fy(fy[0])),
-        [f('blended', P(o['blended'], 2), 'a year, what the schools buy, blended (ours)',
+        [f('blended', PY(o['blended'], 2), 'cost growth, keeping today’s schools as they are (ours)',
            'estimate'),
-         f('rev28', P(o['rev28'], 2), 'school revenue growth, %s (ours)' % C.fy(fy[0]),
+         f('rev28', PY(o['rev28'], 2), 'school revenue growth, %s (ours)' % C.fy(fy[0]),
            'estimate', {'y': f28}),
-         f('revlast', P(L[-1]['growth'], 2), 'school revenue growth, %s (ours)' % C.fy(L[-1]['fy']),
+         f('revlast', PY(L[-1]['growth'], 2), 'school revenue growth, %s (ours)' % C.fy(L[-1]['fy']),
            'estimate', {'y': F(L[-1]['fy'])}),
-         f('cap', P(o['levy_cap'], 1), 'a year, the levy cap, Proposition 2½', 'statute',
+         f('cap', PY(o['levy_cap'], 1), 'levy limit growth, set by Proposition 2½', 'statute',
            allow=('Proposition 2½',)),
-         f('spread', figure(spread, C.points(spread, 2), 'points'), 'between the two, %s (ours)'
+         f('spread', figure(spread, C.points(spread, 2), 'points'), 'cost growth minus revenue growth, %s (ours)'
            % C.fy(fy[0]), 'estimate', {'y': f28}),
          f('ng', U(o['ng_assumed']), 'new growth a year, held flat (ours)', 'estimate'),
          f('g37', U(o['decade'][-1]['gap']), 'projected gap, %s (ours)' % C.fy(o['decade'][-1]['fy']),
@@ -670,16 +673,16 @@ def build():
              ['blended', 'rev28', 'spread', 'g37'],
              {'a': figure(spread, C.points(spread, 2), 'points'), 'b': U(o['decade'][-1]['gap']),
               'y': F(o['decade'][-1]['fy'])}),
-         con('Revenue growth falls to %s by %s: new growth is a flat %s, a shrinking share.'
+         con('Revenue growth falls to %s a year by %s: new growth is a flat %s, a shrinking share.'
              % (C.pct(L[-1]['growth'] * 100, 2), C.fy(L[-1]['fy']), C.usd(o['ng_assumed'])),
              ['revlast', 'ng', 'cap'],
              {'a': P(L[-1]['growth'], 2), 'y': F(L[-1]['fy']), 'b': U(o['ng_assumed'])}),
-         con('A cut lowers costs once; it leaves the %s rate where it was.'
+         con('A cut lowers costs once; it leaves the growth of %s a year where it was.'
              % C.pct(o['blended'] * 100, 2), ['blended'], {'a': P(o['blended'], 2)},
              notes=[step('That is the model’s arithmetic: a cut changes the level of the cost '
                          'line, never its growth rate.', 'estimate')])],
         chart=TP.series('Cost and revenue growth rates', [C.fy(y['fy']) for y in L], [
-            TP.track('What the schools buy (ours)', [o['blended'] * 100] * len(L), 'estimate'),
+            TP.track('Cost of today’s schools (ours)', [o['blended'] * 100] * len(L), 'estimate'),
             TP.track('School revenue (ours)', [y['growth'] * 100 for y in L], 'estimate')], '%',
             decimals=2, reference=(o['levy_cap'] * 100, 'The levy cap'), from_zero=False,
             note='Both are our projection. Costs hold their blended rate; revenue drifts toward '
@@ -693,19 +696,20 @@ def build():
         fail('a salary rate at or above zero now balances; the page says none does')
     out['long-run-balance-rate'] = TP.page(
         'long-run-balance-rate',
-        'To balance for good, what the schools buy could grow %s a year; our rates give %s.'
+        'To balance for good, school costs could grow %s a year; our rates give %s a year.'
         % (C.pct(o['target'] * 100, 2), C.pct(o['blended'] * 100, 2)),
-        [f('target', P(o['target'], 2), 'school revenue growth by %s (ours)' % C.fy(L[-1]['fy']),
+        [f('target', PY(o['target'], 2), 'school revenue growth by %s (ours)' % C.fy(L[-1]['fy']),
            'estimate', {'y': F(L[-1]['fy'])}),
-         f('blended', P(o['blended'], 2), 'a year, what the schools buy (ours)', 'estimate'),
-         f('salrate', P(o['salary_to_balance'], 2), 'salary line a year, to balance (ours)',
+         f('blended', PY(o['blended'], 2), 'cost growth, keeping today’s schools as they are (ours)',
            'estimate'),
-         f('sal', P(R['salaries'], 1), 'a year, salaries, assumed (ours)', 'estimate'),
-         f('health', P(R['health'], 1), 'a year, health insurance, assumed (ours)', 'estimate'),
-         f('sh', P(sh, 1), 'of the budget, salaries and insurance (our grouping)', 'estimate'),
-         f('pos', D1(o['shrink_per_year'], 'positions'), 'a year lost, line frozen (ours)',
+         f('salrate', PY(o['salary_to_balance'], 2), 'salary line change needed to balance (ours)',
            'estimate'),
-         f('after20', P(o['shrink_after20'], 0), 'of positions gone in twenty years (ours)',
+         f('sal', PY(R['salaries'], 1), 'salary growth, assumed (ours)', 'estimate'),
+         f('health', PY(R['health'], 1), 'health insurance cost growth, assumed (ours)', 'estimate'),
+         f('sh', P(sh, 1), 'of the budget is salaries plus insurance (our grouping)', 'estimate'),
+         f('pos', D1(o['shrink_per_year'], 'positions'), 'lost a year if the salary line is frozen (ours)',
+           'estimate'),
+         f('after20', P(o['shrink_after20'], 0), 'of positions gone after twenty years frozen (ours)',
            'estimate'),
          f('cpf', U(o['cost_per_fte']), 'a position, our catalogue’s average', 'estimate')],
         [con('To balance with every other line at our rates, the salary line falls %s a year.'
@@ -714,7 +718,7 @@ def build():
              notes=[step('The bar is revenue growth %s years out, once flat new growth has '
                          'mostly stopped counting.' % C.num(LONG), 'estimate',
                          {'n': N(LONG, 'years')})]),
-         con('Frozen at zero while pay rises %s, it loses %s positions a year, %s in twenty years.'
+         con('Frozen at zero while pay rises %s a year, it loses %s positions a year, %s in twenty years.'
              % (C.pct(R['salaries'] * 100, 1), '%.1f' % o['shrink_per_year'],
                 C.pct(o['shrink_after20'] * 100, 0)), ['pos', 'after20', 'sal', 'cpf'],
              {'a': P(R['salaries'], 1), 'b': figure(o['shrink_per_year'],
@@ -811,9 +815,9 @@ def build():
          f('dev', D1(o['ng_developments'], 'a year'), 'developments, at our mixed archetype',
            'estimate'),
          f('mix', U(o['mix']), 'our archetype development’s value', 'estimate'),
-         f('share', P(o['share'], 1), 'of a new levy dollar reaching the schools (ours)',
+         f('share', P(o['share'], 1), 'of each new tax dollar that reaches the schools (ours)',
            'estimate')],
-        [con('The schools keep %s of a new levy dollar, so growth works at about half its face.'
+        [con('The schools keep %s of each new tax dollar, so growth works at about half its face.'
              % C.pct(o['share'] * 100, 1), ['share'], {'a': P(o['share'], 1)}),
          con('%s a year is %s the best year on record, %s.'
              % (C.usd(o['ng_needed']), '%.1f times' % vs_best, C.fy(best['fy'])),
@@ -848,17 +852,17 @@ def build():
     CH = ('Chapter 70',)
     out['chapter-70-needed'] = TP.page(
         'chapter-70-needed',
-        'For state aid alone to hold the gap, Chapter 70 would grow %s a year (ours); we assume %s.'
+        'For state aid alone to hold the gap, Chapter 70 would grow %s a year (ours); we assume %s a year.'
         % (C.pct(o['ch70_rate'] * 100, 2), C.pct(o['aid_assumed'] * 100, 2)),
         [f('ch70', U(o['ch70']), 'Chapter 70, FY2027', 'published', {'y': F(B)}, allow=CH),
          f('aid', U(o['state_aid']), 'all state aid, FY2027', 'published', {'y': F(B)}),
-         f('share', P(o['aid_share_town'], 1), 'of the town’s revenue, state aid (our division)',
+         f('share', P(o['aid_share_town'], 1), 'of the town’s revenue is state aid (our division)',
            'estimate'),
-         f('assumed', P(o['aid_assumed'], 2), 'a year, state aid growth, assumed (ours)',
+         f('assumed', PY(o['aid_assumed'], 2), 'state aid growth, assumed (ours)',
            'estimate'),
-         f('aidrate', P(o['aid_rate'], 2), 'a year, all state aid, to hold the gap (ours)',
+         f('aidrate', PY(o['aid_rate'], 2), 'state aid growth needed to close the gap (ours)',
            'estimate'),
-         f('chrate', P(o['ch70_rate'], 2), 'a year, Chapter 70 alone (ours)', 'estimate',
+         f('chrate', PY(o['ch70_rate'], 2), 'Chapter 70 growth needed, if it alone closes it (ours)', 'estimate',
            allow=CH),
          f('need37', U(o['ch70_at_need'][-1]), 'Chapter 70 in %s at that rate (ours)'
            % C.fy(dec[-1]), 'estimate', {'y': F(dec[-1])}, allow=CH),
@@ -867,7 +871,7 @@ def build():
            'estimate', allow=CH),
          f('above', U(o['above_foundation']), 'FY2027 budget above foundation (our subtraction)',
            'estimate', {'y': F(B)})],
-        [con('To hold the gap, all state aid would grow %s a year; Chapter 70 alone, %s.'
+        [con('To hold the gap, all state aid would grow %s a year; Chapter 70 alone, %s a year.'
              % (C.pct(o['aid_rate'] * 100, 2), C.pct(o['ch70_rate'] * 100, 2)),
              ['aidrate', 'chrate', 'aid', 'ch70'],
              {'a': P(o['aid_rate'], 2), 'b': P(o['ch70_rate'], 2)}, allow=CH,
@@ -903,18 +907,18 @@ def build():
                  'estimate', {'y': f28})
     h['allowed'] = f('h-allowed', U(o['allowed']), 'more revenue for the schools (ours)',
                      'estimate')
-    h['blended'] = f('h-blended', P(o['blended'], 2), 'a year, what the schools buy (ours)',
+    h['blended'] = f('h-blended', PY(o['blended'], 2), 'cost growth, keeping today’s schools as they are',
                      'estimate')
-    h['rev'] = f('h-rev', P(o['rev28'], 2), 'a year, school revenue, %s (ours)' % C.fy(fy[0]),
+    h['rev'] = f('h-rev', PY(o['rev28'], 2), 'school revenue growth, %s (ours)' % C.fy(fy[0]),
                  'estimate', {'y': f28})
-    h['cap'] = f('h-cap', P(o['levy_cap'], 1), 'a year, the levy cap, Proposition 2½', 'statute',
+    h['cap'] = f('h-cap', PY(o['levy_cap'], 1), 'levy limit growth, set by Proposition 2½', 'statute',
                  allow=('Proposition 2½',))
     h['hct'] = f('h-hct', U(ct['health']), 'health insurance’s part of the gap (ours)',
                  'estimate')
     h['cuts'] = f('h-cuts', U(o['all_cuts']), 'every nameable cut, together (ours)', 'estimate')
     h['need'] = f('h-need', U(o['ng_needed']), 'new growth a year to hold the gap (ours)',
                   'estimate')
-    h['ch70'] = f('h-ch70', P(o['ch70_rate'], 2), 'a year, Chapter 70, to hold it (ours)',
+    h['ch70'] = f('h-ch70', PY(o['ch70_rate'], 2), 'Chapter 70 growth needed to close the gap (ours)',
                   'estimate', allow=CH)
     tiers = [
         LD.tier('The gap', [h['g28'], h['glast'], h['inc'], h['allowed']]),
@@ -929,7 +933,7 @@ def build():
                       % (C.usd(o['increase']), C.fy(fy[0]), C.usd(o['allowed'])),
                       ['h-inc', 'h-allowed'], {'a': U(o['increase']), 'y': f28,
                                                'b': U(o['allowed'])}),
-        LD.conclusion('Costs grow %s a year, revenue %s and falling toward the %s cap.'
+        LD.conclusion('Costs grow %s a year; revenue %s a year, slowing toward the %s cap.'
                       % (C.pct(o['blended'] * 100, 2), C.pct(o['rev28'] * 100, 2),
                          C.pct(o['levy_cap'] * 100, 1)), ['h-blended', 'h-rev', 'h-cap'],
                       {'a': P(o['blended'], 2), 'b': P(o['rev28'], 2), 'c': P(o['levy_cap'], 1)}),
@@ -939,7 +943,7 @@ def build():
         LD.conclusion('Every nameable cut together, %s, covers %s and %s only.'
                       % (C.usd(o['all_cuts']), C.fy(fy[0]), C.fy(fy[1])), ['h-cuts'],
                       {'a': U(o['all_cuts']), 'y': f28, 'z': f29}),
-        LD.conclusion('Growth would need %s of new levy a year; state aid alone, Chapter 70 at %s.'
+        LD.conclusion('Growth would need %s of new levy a year; or Chapter 70 growing %s a year.'
                       % (C.usd(o['ng_needed']), C.pct(o['ch70_rate'] * 100, 2)),
                       ['h-need', 'h-ch70'],
                       {'a': U(o['ng_needed']), 'b': P(o['ch70_rate'], 2)}, allow=CH),
@@ -947,9 +951,9 @@ def build():
     D = o['decade']
     out[HUB] = TP.hub(
         HUB,
-        'On our projection the school budget is %s short in %s and short every year after: what '
-        'the schools buy grows %s a year, their revenue %s and falling. A cut lowers the cost '
-        'line once; only a rate changes where it heads.'
+        'On our projection the school budget is %s short in %s and short every year after: '
+        'keeping today’s schools costs %s more each year, while revenue grows %s a year and '
+        'slows. A cut lowers the cost line once; only a rate changes where it heads.'
         % (C.usd(g28), C.fy(fy[0]), C.pct(o['blended'] * 100, 2), C.pct(o['rev28'] * 100, 2)),
         hub_ladder,
         chart=TP.series('Level service cost and school revenue', [C.fy(y['fy']) for y in D], [
