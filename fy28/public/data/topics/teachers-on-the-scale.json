@@ -150,6 +150,84 @@
     "2024",
     "2025"
    ]
+  },
+  {
+   "decimals": 0,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "y": {
+      "text": "2025",
+      "unit": "calendar year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Share of full-year teachers, gross pay over own district’s master’s top step, calendar 2025 blend. Harvard’s period is not printed."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "estimate",
+     "mark": "bar",
+     "name": "Lunenburg",
+     "texts": [
+      "3%",
+      "4%",
+      "12%",
+      "18%",
+      "24%",
+      "24%",
+      "13%"
+     ],
+     "values": [
+      3.3,
+      4.4,
+      12.2,
+      17.8,
+      24.4,
+      24.4,
+      13.3
+     ]
+    },
+    {
+     "basis": "estimate",
+     "mark": "bar",
+     "name": "Harvard",
+     "texts": [
+      "9%",
+      "9%",
+      "14%",
+      "10%",
+      "10%",
+      "20%",
+      "29%"
+     ],
+     "values": [
+      8.7,
+      8.7,
+      14.4,
+      9.6,
+      9.6,
+      20.2,
+      28.8
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "Pay against own master’s top",
+   "type": "series",
+   "unit": "%",
+   "x": [
+    "Under 70%",
+    "70–80%",
+    "80–90%",
+    "90–100%",
+    "100–110%",
+    "110–120%",
+    "120% and over"
+   ]
   }
  ],
  "category": "school-spending-history",
@@ -160,7 +238,7 @@
   "note": {
    "figures": {},
    "literals": [],
-   "text": "Lunenburg’s teachers on Lunenburg’s scale, gross pay. Whether that is high or low needs the same picture for other districts, not yet measured."
+   "text": "Lunenburg’s teachers on Lunenburg’s scale, gross pay. Harvard’s teachers on Harvard’s scale are drawn below, as a share of each one’s own top step."
   },
   "reference": null,
   "series": [
@@ -292,7 +370,7 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "Matched means one wage row for a roster name: 61% to 90% of roster teachers each year, never all."
+     "text": "Matched means one wage row for a roster name: 61% to 90% of roster teachers each year."
     },
     {
      "figures": {},
@@ -316,7 +394,7 @@
      "figures": {},
      "kind": "hypothesis",
      "literals": [],
-     "text": "A staff high on the scale fits: on the schedule alone, pay past the master’s top needs a higher lane."
+     "text": "A staff high on the scale fits: pay past the master’s top needs a higher lane."
     },
     {
      "figures": {
@@ -345,21 +423,84 @@
    "text": "It does not show how many teachers sit on each step or lane."
   },
   {
-   "figures": {},
+   "figures": {
+    "a": {
+     "text": "61 of 104",
+     "unit": "teachers",
+     "value": 61
+    },
+    "b": {
+     "text": "56 of 90",
+     "unit": "teachers",
+     "value": 56
+    }
+   },
    "literals": [],
    "notes": [
     {
-     "closes": "the same gross wage lists from the towns of the five other districts, read and matched the same way",
+     "figures": {
+      "a": {
+       "text": "108.7%",
+       "unit": "",
+       "value": 108.7
+      },
+      "b": {
+       "text": "104.6%",
+       "unit": "",
+       "value": 104.6
+      },
+      "c": {
+       "text": "86.1%",
+       "unit": "",
+       "value": 86.1
+      },
+      "d": {
+       "text": "95.8%",
+       "unit": "",
+       "value": 95.8
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Median pay was 108.7% of own top in Harvard, 104.6% here; lower quartiles 86.1% and 95.8%."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "65 of 104",
+       "unit": "teachers",
+       "value": 65
+      },
+      "y": {
+       "text": "2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "estimate",
+     "literals": [],
+     "text": "Harvard prints no period; on its fiscal 2025 cell it is 65 of 104."
+    },
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Harvard’s are its list’s TEACHER section; ours, roster names matched to it. Harvard prints no longevity."
+    },
+    {
+     "closes": "the Ashburnham-Westminster teachers’ agreement covering the year of its wage list, with its salary schedule",
      "figures": {},
      "kind": "gap",
      "literals": [],
-     "text": "Their towns’ wage lists have not been read; a survey of which publish one is in the project notes."
+     "text": "Ashburnham-Westminster’s current salary schedule is not held."
     }
    ],
    "rests_on": [
-    "others"
+    "hv",
+    "ma",
+    "aw"
    ],
-   "text": "Whether the other districts’ teachers sit as high is not measured here."
+   "text": "61 of 104 Harvard teachers were paid at least Harvard’s own master’s top; Lunenburg 56 of 90."
   }
  ],
  "facts": [
@@ -460,22 +601,6 @@
    }
   },
   {
-   "id": "s1",
-   "kind": "estimate",
-   "label": {
-    "figures": {},
-    "literals": [
-     "1"
-    ],
-    "text": "step 1, bachelor’s lane, the same blend"
-   },
-   "value": {
-    "text": "$51,806",
-    "unit": "",
-    "value": 51806
-   }
-  },
-  {
    "id": "match",
    "kind": "published",
    "label": {
@@ -541,13 +666,27 @@
    "value": null
   },
   {
-   "closes": "the same gross wage lists from the towns of the five other districts, read and matched the same way",
-   "id": "others",
+   "id": "hv",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Harvard, at least Harvard’s master’s top"
+   },
+   "value": {
+    "text": "61 of 104",
+    "unit": "teachers",
+    "value": 61
+   }
+  },
+  {
+   "closes": "the Ashburnham-Westminster teachers’ agreement covering the year of its wage list, with its salary schedule",
+   "id": "aw",
    "kind": "gap",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "the same distribution in the other five districts"
+    "text": "Ashburnham-Westminster on its own scale"
    },
    "value": null
   }
@@ -655,6 +794,22 @@
   {
    "href": "/docs/contracts/data/lea-teacher-salary-schedule.csv",
    "label": "Lunenburg Budget Project — lea-teacher-salary-schedule.csv (the agreement’s salary schedules, step by lane)"
+  },
+  {
+   "href": "/docs/peer-districts/harvard-annual-town-report-2025.pdf",
+   "label": "Town of Harvard, 2025 annual town report (“2025 Harvard Full Report - Website.pdf”), School Employee Earnings Report, pdf pages 228–231 — harvard-annual-town-report-2025.pdf"
+  },
+  {
+   "href": "/docs/peer-districts/ashburnham-annual-town-report-2025.pdf",
+   "label": "Town of Ashburnham, 2025 annual town report (“2025 Annual Town Report (Final).pdf”), the Ashburnham-Westminster Regional School District’s earnings list, pdf pages 136–146 — ashburnham-annual-town-report-2025.pdf"
+  },
+  {
+   "href": "/docs/data/peer-teacher-pay-distribution.csv",
+   "label": "Lunenburg Budget Project — peer-teacher-pay-distribution.csv (teacher gross pay in Harvard and Ashburnham-Westminster, on each one’s own scale; no names)"
+  },
+  {
+   "href": "/docs/contracts/pdf/harvard-teachers-2023-2026.pdf",
+   "label": "Harvard teachers' agreement (Harvard Educators Association), 24 August 2023 to 23 August 2026, from the Town of Harvard's site — harvard-teachers-2023-2026.pdf"
   }
  ],
  "table": {
@@ -943,6 +1098,80 @@
        "6"
       ],
       "label": "Doctorate"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Period",
+     "Full-year teachers",
+     "Lower quartile",
+     "Median",
+     "Upper quartile",
+     "At or above own master’s top",
+     "Median, share of own top"
+    ],
+    "key": "own-scale",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "On their own scales",
+    "note": "Gross pay of full-year teachers, from each town’s printed wage list. Lunenburg: roster names matched to the list. Harvard: the list’s own TEACHER section. Ashburnham-Westminster: our rule over the printed job title, earnings over $500 only; its current schedule is not held.",
+    "rows": [
+     {
+      "cells": [
+       "calendar 2025",
+       "90",
+       "$84,719",
+       "$92,521",
+       "$101,476",
+       "56 of 90",
+       "104.6%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "not printed; as calendar 2025",
+       "104",
+       "$81,347",
+       "$102,771",
+       "$114,138",
+       "61 of 104",
+       "108.7%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "not printed; as fiscal 2025",
+       "104",
+       "$81,347",
+       "$102,771",
+       "$114,138",
+       "65 of 104",
+       "110.1%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "fiscal 2025",
+       "162",
+       "$66,944",
+       "$81,441",
+       "$96,359",
+       "schedule not held",
+       "schedule not held"
+      ],
+      "label": "Ashburnham-Westminster"
      }
     ],
     "total_col": -1

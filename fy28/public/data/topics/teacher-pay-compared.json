@@ -784,6 +784,10 @@
   {
    "href": "/docs/data/teacher-pay-distribution.csv",
    "label": "Lunenburg Budget Project — teacher-pay-distribution.csv (teacher gross pay as counts and distributions, by year; no names)"
+  },
+  {
+   "href": "/docs/data/peer-teacher-pay-distribution.csv",
+   "label": "Lunenburg Budget Project — peer-teacher-pay-distribution.csv (teacher gross pay in Harvard and Ashburnham-Westminster, on each one’s own scale; no names)"
   }
  ],
  "table": {
@@ -965,6 +969,80 @@
        null
       ],
       "label": "Lunenburg’s place, highest first"
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Period",
+     "Full-year teachers",
+     "Lower quartile",
+     "Median",
+     "Upper quartile",
+     "At or above own master’s top",
+     "Median, share of own top"
+    ],
+    "key": "own-scale",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "On their own scales",
+    "note": "Gross pay of full-year teachers, from each town’s printed wage list. Lunenburg: roster names matched to the list. Harvard: the list’s own TEACHER section. Ashburnham-Westminster: our rule over the printed job title, earnings over $500 only; its current schedule is not held.",
+    "rows": [
+     {
+      "cells": [
+       "calendar 2025",
+       "90",
+       "$84,719",
+       "$92,521",
+       "$101,476",
+       "56 of 90",
+       "104.6%"
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "not printed; as calendar 2025",
+       "104",
+       "$81,347",
+       "$102,771",
+       "$114,138",
+       "61 of 104",
+       "108.7%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "not printed; as fiscal 2025",
+       "104",
+       "$81,347",
+       "$102,771",
+       "$114,138",
+       "65 of 104",
+       "110.1%"
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "fiscal 2025",
+       "162",
+       "$66,944",
+       "$81,441",
+       "$96,359",
+       "schedule not held",
+       "schedule not held"
+      ],
+      "label": "Ashburnham-Westminster"
      }
     ],
     "total_col": -1
