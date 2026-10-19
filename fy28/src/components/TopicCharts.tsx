@@ -34,7 +34,11 @@ type Basis = 'published' | 'stated' | 'estimate'
 export type SeriesChart = {
   type: 'series'; title: string; unit: string; kind: 'line' | 'bar'; stacked: boolean
   x: string[]
-  series: { name: string; values: (number | null)[]; texts: (string | null)[]; basis: Basis; mark: 'line' | 'bar' }[]
+  series: { name: string; values: (number | null)[]; texts: (string | null)[]; basis: Basis; mark: 'line' | 'bar'
+    /** Palette place, when it must match another chart of the same things. */
+    colour?: number
+    /** Small multiples only: first value to last, written by the generator. */
+    change?: string }[]
   note: Unit | null
   reference?: { value: number; label: string; text: string } | null
   from_zero?: boolean
@@ -175,12 +179,16 @@ function Multiples({ c }: { c: SeriesChart }) {
           const first = pts[0], last = pts[pts.length - 1]
           const est = s.basis === 'estimate'
           const rows = c.x.map((x, k) => ({ x, s0: s.values[k] }))
+          const col = COLOURS[(s.colour ?? i) % COLOURS.length]
           return (
             <div key={s.name} className="min-w-0">
               <p className="text-[12.5px] font-semibold leading-snug flex items-center gap-1.5"
                 style={{ color: 'var(--text-primary)' }}>
-                <span className="inline-block w-2.5 h-2.5 rounded-[2px] shrink-0" style={{ background: COLOURS[i % COLOURS.length] }} />
+                <span className="inline-block w-2.5 h-2.5 rounded-[2px] shrink-0" style={{ background: col }} />
                 {s.name}</p>
+              {s.change ? <p className="text-[17px] font-bold tnum leading-tight mt-1" style={{ color: col }}>
+                {s.change} <span className="text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
+                  added since {c.x[0]}</span></p> : null}
               <p className="text-[11.5px] tnum mt-0.5" style={{ color: 'var(--text-secondary)' }}>
                 {first[1]} in {first[0]} &rarr; {last[1]} in {last[0]}</p>
               <div style={{ height: 110 }} aria-hidden>
@@ -192,13 +200,13 @@ function Multiples({ c }: { c: SeriesChart }) {
                     <YAxis width={c.unit === '$' ? 50 : 40} domain={[0, top]} ticks={[0, top / 2, top]}
                       tick={{ fill: 'var(--text-muted)', fontSize: 10 }} stroke="var(--axis)"
                       tickLine={false} axisLine={false} tickFormatter={(v: number) => tick(c.unit, v)} />
-                    <Tooltip content={<SeriesTip c={{ ...c, series: [s] }} offset={i} />}
+                    <Tooltip content={<SeriesTip c={{ ...c, series: [s] }} offset={s.colour ?? i} />}
                       cursor={{ fill: 'var(--surface-3)', opacity: 0.5 }} />
                     {s.mark === 'bar' ? (
-                      <Bar dataKey="s0" fill={COLOURS[i % COLOURS.length]} isAnimationActive={false}
+                      <Bar dataKey="s0" fill={col} isAnimationActive={false}
                         fillOpacity={est ? 0.15 : s.basis === 'stated' ? 0.6 : 1} radius={[2, 2, 0, 0]} />
                     ) : (
-                      <Line dataKey="s0" stroke={COLOURS[i % COLOURS.length]} strokeWidth={2}
+                      <Line dataKey="s0" stroke={col} strokeWidth={2}
                         strokeDasharray={est ? '6 4' : undefined} dot={false} connectNulls={false}
                         isAnimationActive={false} type="linear" />
                     )}

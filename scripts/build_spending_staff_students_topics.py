@@ -896,8 +896,11 @@ def build():
                  'funds. Each bar is one year’s total.'),
         # The same five, one panel each on one scale -- how each ITSELF changed, which a stack
         # hides above its bottom band (TJ, 19 October 2026).
+        # Largest dollar increase first (TJ, 19 October 2026); each keeps its colour from the
+        # stack above, so one group is one colour on the page.
         also=[TP.series('Each type on its own', [C.fy(y) for y in gy], [
-            TP.track(n, [band[n][y] for y in gy], 'published', 'line') for n, _ in STACK], '$',
+            TP.track(n, [band[n][y] for y in gy], 'published', 'line', colour=j)
+            for j, (n, _) in sorted(enumerate(STACK), key=lambda e: -add[e[1][0]])], '$',
             multiples=True,
             note='The same five groups, every panel on the same dollar scale, so a steeper line '
                  'is a bigger rise in dollars.')],

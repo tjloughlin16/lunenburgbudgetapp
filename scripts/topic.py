@@ -255,9 +255,14 @@ def _note(note, figures, allow, cap, name):
     return _unit(note, figures, allow, cap, name) if note else None
 
 
-def track(name, values, basis='published', mark=None):
-    """One named line or set of bars in series(). `values` are numbers or None (a gap)."""
-    return dict(name=' '.join(str(name).split()), values=list(values), basis=basis, mark=mark)
+def track(name, values, basis='published', mark=None, colour=None):
+    """One named line or set of bars in series(). `values` are numbers or None (a gap).
+    `colour`: the track's place in the palette when it must match another chart that draws
+    the same thing in a different order -- written only when set."""
+    t = dict(name=' '.join(str(name).split()), values=list(values), basis=basis, mark=mark)
+    if colour is not None:
+        t['colour'] = int(colour)
+    return t
 
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
@@ -355,7 +360,16 @@ def _texts(c):
     """The display strings for every value in a chart, keyed beside the values."""
     u, t, d = c.get('unit'), c['type'], c.get('decimals')
     if t == 'series':
-        return dict(series=[dict(s, texts=[fmt(u, v, d) for v in s['values']]) for s in c['series']])
+        def one(s):
+            o = dict(s, texts=[fmt(u, v, d) for v in s['values']])
+            # A small-multiples panel prints its own change, first value to last, written here
+            # so the browser formats nothing (rule 2).
+            if c.get('multiples'):
+                got = [v for v in s['values'] if v is not None]
+                ch = got[-1] - got[0]
+                o['change'] = ('+' if ch >= 0 else '-') + fmt(u, abs(ch), d)
+            return o
+        return dict(series=[one(s) for s in c['series']])
     if t == 'ranking':
         def one(r):
             vs = r['values'] if c['stack'] else [r['value']]
