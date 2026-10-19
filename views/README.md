@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4972 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**616 of 4988 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4356 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4372 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -323,6 +323,8 @@ Listed so this view cannot look more complete than it is.
 - `data/meeting-notices-email.csv` — Meetings announced only by email, never posted to the AgendaCenter
 - `data/meeting-record-explanations.csv` — Why a meeting record will never exist, when somebody has said so
 - `data/meeting-register.csv` — Every meeting, and what survives of it
+- `data/meeting-video-decisions.csv` — A person’s ruling on whether two postings are one recording
+- `data/meeting-videos.csv` — Meetings posted to the channel more than once, and how the postings relate
 - `data/meeting-watch-events.csv` — What appeared on the town’s site between one crawl and the next
 - `data/meeting-watch-runs.csv` — When we looked, how much answered, and what was new
 - `data/meeting-watch-state.csv` — Every agenda and set of minutes the town has listed, and when we first saw it
@@ -335,6 +337,9 @@ Listed so this view cannot look more complete than it is.
 - `data/monty-tech-assessment.csv` — Lunenburg’s Monty Tech assessment by component, FY2023–FY2026
 - `data/monty-tech-expenses.csv` — Monty Tech’s spending by category, three years, off a chart
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
+- `data/munis-school-journal-accounts.csv` — The school department’s 3,356 accounts, FY2026 as the journal report prints them
+- `data/munis-school-journal-image-pages.csv` — Three pages of the school journal report, read by eye
+- `data/munis-school-journal.csv` — The school department, every posting, FY2023 to FY2026
 - `data/munis-school-ytd.csv` — The school department at year-end, FY2023 to FY2026, every account
 - `data/munis-trial-balance-journal.csv` — Lost books and technology fund, FY2026, every journal line
 - `data/munis-trial-balance.csv` — Lost books and technology fund, FY2026 trial balance by account
@@ -429,6 +434,7 @@ Listed so this view cannot look more complete than it is.
 - `data/tax-collection-unreconciled.csv` — The thirteen years it will not publish, and why each refuses
 - `data/tax-collection.csv` — The same Collector’s table, for the years read off a TEXT LAYER
 - `data/tenure.csv` — How long each person stayed, by body and year
+- `data/thread-moments.csv` — Moments added to a thread by hand, each checked against the captions
 - `data/threads-declined.csv` — Thread candidates that were rejected, and why
 - `data/threads.csv` — The matters this project tracks across boards
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
@@ -455,9 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/warrant-articles-fincom.csv` — Town Meeting warrant articles and amounts, FY2024–FY2027 drafts
 - `data/warrant-vs-votes-fincom.csv` — Draft warrant amounts against recorded Town Meeting votes
 - `data/working-copies.csv` — Files kept under a fixed name and overwritten when their publisher changes them
-- `data/youtube-boards.csv` — The bodies we named, and why we say two names are one board
-- `data/youtube-classification-overrides.csv` — Human corrections to the video classification
-- `data/youtube-no-captions.csv` — Recordings whose captions are switched off
-- `data/youtube-title-classification.csv` — What each video title says the video IS
-- `data/youtube-transcript-index.csv` — Which meeting recordings we hold a transcript for
-- `data/youtube-video-boards.csv` — One row per (video, board) pair

@@ -1,12 +1,12 @@
 # The Lunenburg Budget Project, by the numbers
 
-*As of 2026-10-18. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
+*As of 2026-10-19. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
 
 ## What the town and the state published — and we hold
 
-- **16,527 documents** — PDFs, spreadsheets, Word files and slide decks — 43,614 files and 10.18 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16,527 documents** — PDFs, spreadsheets, Word files and slide decks — 43,619 files and 10.21 GB in all, each with its address, its publisher’s filename and a checksum.
 - **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
-- **12,216 meeting documents** from **51 town boards**: 4,743 sets of minutes and 7,473 agendas, 2009-01-05 to 2026-10-15 — **18 years**.
+- **12,216 meeting documents** from **51 town boards**: 4,743 sets of minutes and 7,473 agendas, 2009-01-05 to 2026-10-19 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
 - **3,751 names** on the town’s printed staff rosters, FY2011–FY2025.
 - **9,503 school budget line-years**, FY2014–FY2027, and **983 ledger lines** from the town’s own accounting system.
@@ -16,7 +16,7 @@
 
 - **4,516 hours of meeting recordings transcribed** — 2,687 meetings, 188.2 days of audio end to end, 2012-05-02 to 2026-10-14. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
 - **1598 meetings with our own minutes** written from those recordings — **5095 substantive votes** and **770 transfers** logged, each linked to the second of the video.
-- **A database of 161,349 rows in 122 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **A database of 213,750 rows in 124 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **6 analyses** and **254 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
 - **269 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
