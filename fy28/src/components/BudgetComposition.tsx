@@ -15,7 +15,7 @@ import { RATE_LINES, type Bucket } from '../model/rates'
  *  A BAR RATHER THAN A PIE, and the reason is measured rather than stylistic. The sliders
  *  carry seven buckets; seven categorical hues do not survive the palette validator here
  *  (two below the chroma floor, CVD separation ΔE 5.4, normal-vision floor ΔE 12.8). Four
- *  grouped segments do, and a horizontal bar is the form for part-to-whole with long
+ *  hues and a neutral do, and a horizontal bar is the form for part-to-whole with long
  *  category names. The seven are not lost — they are the table underneath, under the
  *  sliders' own labels, which is also the relief the amber's 2.36:1 contrast requires.
  *
@@ -25,9 +25,19 @@ import { RATE_LINES, type Bucket } from '../model/rates'
 
 type Group = { id: string; label: string; hue: string; parts: Bucket[]; gloss: string }
 
-/** Four groups, and the grouping is an argument rather than a convenience: it is the
+/** Five groups, and the grouping is an argument rather than a convenience: it is the
  *  shape room 5 is about to make — most of the budget is people, a fifth is special
- *  education, insurance is the third thing, and what the Committee controls is the rest. */
+ *  education, insurance is the third thing, and what the Committee controls is its own band.
+ *
+ *  That last band is the model's `other` line ALONE. It used to be "Everything else" and
+ *  also held transportation and utilities, while the prose under the chart describes
+ *  everything else as supplies, technology, athletics and clubs — so the band was larger
+ *  than the line the sentence names (TJ, 19 October 2026, on an invented grouping: "that
+ *  was bad!"). Buses and utilities now share a band named for exactly those two: both are
+ *  bought on contract at a price a market sets (fuel; energy), and neither is the
+ *  Committee's own. Five, not six, because four validated hues plus one neutral is what
+ *  this bar can carry; the neutral goes to the pair, which is the band the argument needs
+ *  least. */
 const GROUPS: Group[] = [
   { id: 'pay', label: 'Staff pay', hue: 'var(--bud-pay)', parts: ['salaries'],
     gloss: 'Teachers, administrators, custodians, nurses — every position except special education' },
@@ -36,9 +46,12 @@ const GROUPS: Group[] = [
     gloss: 'Staff here, and tuition where a child’s plan requires another school' },
   { id: 'health', label: 'Health insurance', hue: 'var(--bud-health)', parts: ['health'],
     gloss: 'Bought by the Town, not by the school district' },
-  { id: 'else', label: 'Everything else', hue: 'var(--bud-else)',
-    parts: ['other', 'transport', 'utilities'],
-    gloss: 'Supplies, technology, athletics, clubs, buses, heat and light' },
+  { id: 'contracts', label: 'Buses, heat and light', hue: 'var(--bud-contracts)',
+    parts: ['transport', 'utilities'],
+    gloss: 'Bus contracts and utilities, both priced by a market' },
+  { id: 'else', label: 'Supplies, technology, athletics, clubs', hue: 'var(--bud-else)',
+    parts: ['other'],
+    gloss: 'The model’s “everything else” line — the one the School Committee controls' },
 ]
 
 const LINE = Object.fromEntries(RATE_LINES.map(l => [l.key, l])) as
@@ -92,9 +105,8 @@ export function BudgetComposition() {
               borderBottomRightRadius: i === rows.length - 1 ? 4 : 0,
               filter: hot && hot !== r.id ? 'saturate(0.45) opacity(0.55)' : 'none',
             }}>
-            {/* Direct label INSIDE the segment where it fits. Four segments, four labels —
-                the guidance allows direct labels up to four, and the two narrow ones fall
-                back to the legend rather than colliding. */}
+            {/* Direct label INSIDE the segment where it fits; the narrow ones fall back to
+                the legend rather than colliding. */}
             {r.share > 0.13 && (
               <span className="absolute inset-0 flex items-center justify-center
                                text-[12px] sm:text-[13px] font-bold tnum"
