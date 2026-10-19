@@ -216,9 +216,12 @@ const SHOW_SEARCH = false
 const GAP_NOW = usdShort(LEVEL_SERVICE.gap)
 const GAP_NEXT = usdShort(run(2, DEFAULT_SCENARIO)[1].gap)
 
-type Door = { to: Tab; label: string; who: string; figure?: string; figureNote?: string; quiet?: boolean }
+type Door = { to: Tab; href?: string; label: string; who: string; figure?: string; figureNote?: string; quiet?: boolean }
 const DOORS: Door[] = [
-  { to: AREA_HOME.crisis, label: AREA_LABEL.crisis,
+  // THE HUB, NOT THE WALKTHROUGH, since 18 October 2026: /crisis is the Budget crisis hub
+  // (scripts/topic_registry/crisis.py), which is a topic page and has no Tab of its own --
+  // so this door carries its address. `to` still names the area for the click count.
+  { to: AREA_HOME.crisis, href: '/crisis', label: AREA_LABEL.crisis,
     who: 'Why the budget keeps breaking, from the beginning',
     figure: `${GAP_NOW} short`, figureNote: `projected for FY${nextYear().fy}, ${GAP_NEXT} the year after` },
   { to: 'solutions', label: 'Solutions: what the town can do',
@@ -237,7 +240,7 @@ const DOORS: Door[] = [
 
 function DoorCard({ d, lead, sub }: { d: Door; lead?: boolean; sub?: boolean }) {
   return (
-    <Go to={d.to} onClick={() => track('door', d.to)}
+    <DoorLink d={d}
       className={'card block transition-opacity hover:opacity-90 '
         + (d.quiet ? 'px-4 py-3 min-h-[52px]' : lead ? 'px-5 py-5 min-h-[88px]'
           : sub ? 'px-3.5 py-2.5 min-h-[44px]' : 'px-4 py-4 min-h-[64px]')}
@@ -259,8 +262,18 @@ function DoorCard({ d, lead, sub }: { d: Door; lead?: boolean; sub?: boolean }) 
       {d.figureNote && (
         <span className="block text-[11.5px] mt-1.5 tnum" style={{ color: 'var(--text-muted)' }}>{d.figureNote}</span>
       )}
-    </Go>
+    </DoorLink>
   )
+}
+
+/** A door with an `href` is a plain link -- a topic hub has an address and no Tab, and Go
+ *  would route its click to the Tab instead. */
+function DoorLink({ d, children, ...rest }: { d: Door; children: React.ReactNode }
+  & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const click = () => track('door', d.to)
+  return d.href
+    ? <a href={d.href} onClick={click} {...rest}>{children}</a>
+    : <Go to={d.to} onClick={click} {...rest}>{children}</Go>
 }
 
 type Shelf = { id: string; shelf: string; path: string; area: string; order: number; ready: boolean

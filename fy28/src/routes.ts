@@ -87,7 +87,12 @@ export const SLUG: Record<Tab, string> = {
   // /walkthrough" -- the section is called Budget Crisis everywhere a reader sees it,
   // and an address should say what the page is, not how it was written. `walkthrough`
   // and `start-here` stay as aliases; nothing anybody typed or shared stops working.
-  walk: 'crisis',
+  // ON 18 OCTOBER 2026 IT GAVE THE ADDRESS UP AGAIN, to the Budget crisis HUB
+  // (scripts/topic_registry/crisis.py). TJ asked for the page to be broken into a hub and
+  // small topic pages "so people can look directly at individual pieces", and said yes to
+  // the hub taking /crisis. The walkthrough keeps every word at /walkthrough, the alias it
+  // already answered to.
+  walk: 'walkthrough',
   deeper: 'go-deeper',
   answers: 'straight-answers',
   money: 'find-the-money',
@@ -521,7 +526,7 @@ const ALIASES: Record<string, Tab> = {
   // is what somebody types when they have lost their place.
   home: 'home', doors: 'home',
   answers: 'answers',
-  walk: 'walk', crisis: 'walk', 'budget-crisis': 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
+  walk: 'walk', 'the-walkthrough': 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
   deeper: 'deeper', more: 'deeper', everything: 'deeper',
   money: 'money', context: 'context', situation: 'context',
   why: 'why', rates: 'curve', curve: 'curve',
@@ -788,7 +793,7 @@ const BY_SLUG: Record<string, Tab> = {
  *  chances for a page to be called two things. */
 export const LABEL: Record<Tab, string> = {
   home: 'Home',
-  walk: 'Start here',
+  walk: 'The walk-through',
   deeper: 'Go deeper',
   answers: 'Straight answers',
   money: 'Find the money',
@@ -1016,6 +1021,9 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // The old Monty Tech report's aliases, since the hub took /monty-tech on 15 October 2026.
   monty: 'monty-tech', montachusett: 'monty-tech', 'regional-assessment': 'monty-tech',
   'vocational-school': 'monty-tech',
+  // The Budget crisis hub took /crisis on 18 October 2026; it was built at /budget-crisis,
+  // which was also an alias of the walkthrough, so both words land on the hub.
+  'budget-crisis': 'crisis',
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.

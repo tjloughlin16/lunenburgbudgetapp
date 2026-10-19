@@ -55,7 +55,8 @@ export const GROUPS: Group[] = [
     { to: 'jobs', label: 'Job postings', sub: 'Open positions, town and schools' },
   ] },
   { title: 'The budget gap', under: 'walk', items: [
-    { to: 'walk', label: 'The walk-through', sub: 'Why the budget keeps breaking' },
+    { href: '/crisis', label: 'Budget crisis', sub: 'The gap, its parts, each on its own page' },
+    { to: 'walk', label: 'The walk-through', sub: 'The whole argument, in one long read' },
     { to: 'answers', label: 'Straight answers', sub: 'The questions people actually ask' },
     { to: 'why', label: 'Why it repeats', sub: 'The gap returns each year' },
     { to: 'solutions', label: 'Solutions', sub: 'Every option, and who it costs' },

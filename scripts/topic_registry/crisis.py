@@ -28,7 +28,7 @@ area holds what the district published; a forward projection sitting among those
 read as one of them.
 """
 CATEGORY = dict(
-    id='budget-crisis', shelf='Budget crisis', title='The structural gap', area='options',
+    id='crisis', shelf='Budget crisis', title='The structural gap', area='options',
     order=69,
     groups=[
         ('The gap', ['projected-gap', 'level-service-cost', 'fy2028-revenue-increase']),

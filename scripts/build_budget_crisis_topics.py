@@ -59,7 +59,7 @@ PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 OUT_DIR = os.path.join(PUB, 'topics')
 TS_MODEL = os.path.join(ROOT, 'fy28', 'src', 'model')
 ESBUILD = os.path.join(ROOT, 'fy28', 'node_modules', '.bin', 'esbuild')
-HUB = 'budget-crisis'
+HUB = 'crisis'
 
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
         if home == HUB and gen == 'build_budget_crisis_topics.py']
