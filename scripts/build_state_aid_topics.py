@@ -679,19 +679,41 @@ def build():
     # ------------------------------------------------ total state aid (the cherry sheet)
     fys = sorted(CS)
     R = lambda fy, line: CS[fy]['Receipts'][line]
+    # THE CHERRY SHEET'S OWN TWO SECTIONS. Its receipts are printed as Education Receipts --
+    # Chapter 70, school transportation, charter tuition reimbursement, Smart Growth school
+    # reimbursement and, as an offset, school choice receiving tuition, then "Sub-Total, All
+    # Education Items" (the School Committee's 2026-07-29 deck reproduces that block) -- and
+    # General Government, which opens with UGGA. DLS's workbook keeps the same order every
+    # year, education columns before UGGA, so a line's section is read off its position. This
+    # chart once drew "every other line, our subtraction", which put Smart Growth, the
+    # largest mover, in one band with veterans' benefits and library aid.
+    def sections(fy):
+        names = [k for k in CS[fy]['Receipts'] if k not in ('Total Receipts', 'Net Receipts')]
+        if names[0] != CH70 or 'UGGA' not in names:
+            fail('cherry sheet %d: receipts no longer open with Chapter 70 and carry UGGA' % fy)
+        u = names.index('UGGA')
+        edu, gg = names[1:u], names[u + 1:]
+        got = dict(ch70=R(fy, CH70), edu=sum(R(fy, k) for k in edu), ugga=R(fy, 'UGGA'),
+                   gg=sum(R(fy, k) for k in gg))
+        if abs(sum(got.values()) - R(fy, 'Total Receipts')) > 1:
+            fail('cherry sheet %d: the four sections do not add to Total Receipts' % fy)
+        return got
+    SEC = {fy: sections(fy) for fy in fys}
+    for k in ('Smart Growth', 'Charter Tuition Reimburse', 'Sch Choice Rcvng Tuition'):
+        if k not in list(CS[2027]['Receipts'])[:list(CS[2027]['Receipts']).index('UGGA')]:
+            fail('%s is no longer printed among the education receipts' % k)
     tot26, ch26, ug26 = R(y26, 'Total Receipts'), R(y26, CH70), R(y26, 'UGGA')
-    oth26 = tot26 - ch26 - ug26
+    edu26, gg26 = SEC[y26]['edu'], SEC[y26]['gg']
     tot27, ch27 = R(2027, 'Total Receipts'), R(2027, CH70)
     y0 = fys[0]
-    # Parts of one total each year, so stacked; the third is our subtraction and says so.
+    SEC_NAMES = (('ch70', 'Chapter 70'), ('edu', 'Other education receipts'),
+                 ('ugga', 'General government aid (UGGA)'),
+                 ('gg', 'Other general government receipts'))
     total_chart = TP.series('All cherry sheet aid by year', [C.fy(fy) for fy in fys], [
-        TP.track('Chapter 70', [R(fy, CH70) for fy in fys], 'published', 'bar'),
-        TP.track('General government aid', [R(fy, 'UGGA') for fy in fys], 'published', 'bar'),
-        TP.track('Every other line, our subtraction',
-                 [R(fy, 'Total Receipts') - R(fy, CH70) - R(fy, 'UGGA') for fy in fys],
-                 'published', 'bar')], '$', stacked=True,
-        note='The final state budget’s cherry sheet for each year: the state’s estimates, not '
-             'receipts.')
+        TP.track(name, [SEC[fy][k] for fy in fys], 'published', 'bar')
+        for k, name in SEC_NAMES], '$', stacked=True,
+        note='The final state budget’s cherry sheet for each year, in its own two sections: '
+             'the state’s estimates, not receipts.')
     out['total-state-aid'] = TP.page(
         'total-state-aid',
         'The state’s cherry sheet carries %s for Lunenburg for %s; Chapter 70 is %s of it.'
@@ -703,7 +725,9 @@ def build():
            {'y': F(y26)}, allow=(CH70,)),
          f('ug26', U(ug26), 'Unrestricted General Government Aid, %s' % C.fy(y26), 'published',
            {'y': F(y26)}),
-         f('oth26', U(oth26), 'every other receipt line, %s' % C.fy(y26), 'published',
+         f('edu26', U(edu26), 'other education receipts, %s' % C.fy(y26), 'published',
+           {'y': F(y26)}),
+         f('gg26', U(gg26), 'other general government receipts, %s' % C.fy(y26), 'published',
            {'y': F(y26)}),
          f('tot27', U(tot27), 'all cherry sheet aid, %s' % C.fy(2027), 'published',
            {'y': F(2027)}),
@@ -713,7 +737,7 @@ def build():
            'published', {'y': F(y0)})],
         [con('Of %s in %s, Chapter 70 was %s and general government aid %s.'
              % (C.usd(tot26), C.fy(y26), C.usd(ch26), C.usd(ug26)),
-             ['tot26', 'ch26', 'sh26', 'ug26', 'oth26'],
+             ['tot26', 'ch26', 'sh26', 'ug26', 'edu26', 'gg26'],
              {'a': U(tot26), 'y': F(y26), 'b': U(ch26), 'c': U(ug26)}, allow=(CH70,)),
          con('For %s the final state budget carries %s, %s of it Chapter 70.'
              % (C.fy(2027), C.usd(tot27), C.usd(ch27)), ['tot27', 'ch27'],
@@ -723,15 +747,16 @@ def build():
              ['tot0', 'tot26'],
              {'a': U(R(y0, 'Total Receipts')), 'y': F(y0), 'b': U(tot26), 'z': F(y26)})],
         table=dict(caption='The cherry sheet, receipts by year', views=[dict(
-            key='receipts', label='Final state budget', total_col=3, kinds=['ledger'] * 4,
-            columns=['Chapter 70', 'General government aid', 'Every other line', 'All aid'],
-            rows=[dict(label=C.fy(fy), cells=[
-                C.usd(R(fy, CH70)), C.usd(R(fy, 'UGGA')),
-                C.usd(R(fy, 'Total Receipts') - R(fy, CH70) - R(fy, 'UGGA')),
-                C.usd(R(fy, 'Total Receipts'))]) for fy in reversed(fys)],
+            key='receipts', label='Final state budget', total_col=4, kinds=['ledger'] * 5,
+            columns=['Chapter 70', 'Other education', 'UGGA', 'Other general government',
+                     'All aid'],
+            rows=[dict(label=C.fy(fy), cells=[C.usd(SEC[fy][k]) for k, _ in SEC_NAMES]
+                       + [C.usd(R(fy, 'Total Receipts'))]) for fy in reversed(fys)],
             note='Division of Local Services cherry sheets at the final state budget: the '
-                 'state’s estimates for the year, not receipts. Every other line includes '
-                 'school choice tuition received, charter reimbursement and library aid.')]),
+                 'state’s estimates, not receipts. Other education: school transportation, '
+                 'charter reimbursement, Smart Growth, school choice tuition received. Other '
+                 'general government: veterans’ benefits, exemptions, state-owned land, '
+                 'libraries.')]),
         chart=total_chart,
         sources=S(rec26, rec27, 'dls-cherry-sheet.csv'),
         finding_figures={'a': U(tot26), 'y': F(y26), 'p': P(100 * ch26 / tot26)},
@@ -900,6 +925,28 @@ def build():
     scs, chs = A(y26, 'School Ch Sending Tuition'), A(y26, 'Chart Sch Sending Tuition')
     net26 = R(y26, 'Net Receipts')
     at27 = A(2027, 'Total Assessments')
+    # EVERY CHARGE BY ITS OWN NAME. This chart once ended in "every other charge, our
+    # subtraction"; it now draws the two largest of the rest by name, and the remainder is
+    # labelled with exactly the lines in it.
+    CHARGE_NAMES = {'Mosquito Control': 'Mosquito control', 'Regional Transit': 'Regional transit',
+                    'RMV Non Renewal': 'RMV surcharge', 'MBTA': 'MBTA',
+                    'Air Pollution': 'air pollution', 'County Tax': 'county tax',
+                    'Special Education': 'special education'}
+    others = sorted(((k, v) for k, v in CS[y26]['Assessments'].items()
+                     if v and k not in ('School Ch Sending Tuition', 'Chart Sch Sending Tuition',
+                                        'Total Assessments', 'Net Receipts')),
+                    key=lambda kv: -kv[1])
+    if any(k not in CHARGE_NAMES for k, _ in others):
+        fail('a cherry sheet charge has no name here: %s'
+             % [k for k, _ in others if k not in CHARGE_NAMES])
+    charge_parts = [('School choice tuition', scs), ('Charter school tuition', chs)] + \
+        [(CHARGE_NAMES[k], v) for k, v in others[:2]]
+    rest = others[2:]
+    if rest:
+        charge_parts.append(('The rest: ' + ', '.join(CHARGE_NAMES[k] for k, _ in rest),
+                             sum(v for _, v in rest)))
+    if abs(sum(v for _, v in charge_parts) - at26) > 1:
+        fail('the charges drawn no longer add to Total Assessments')
     fq = said(SA, 'assessments')
     m = re.search(r'\$([\d,]+)', fq['quote'])
     fincom = float(m.group(1).replace(',', ''))
@@ -940,9 +987,7 @@ def build():
                 for fy in reversed(fys)],
             note='Division of Local Services cherry sheets at the final state budget. Charges '
                  'are deducted from the aid before the town receives it.')]),
-        chart=TP.parts('What the cherry sheet charged', [
-            ('School choice tuition', scs), ('Charter school tuition', chs),
-            ('Every other charge, our subtraction', at26 - scs - chs)], '$',
+        chart=TP.parts('What the cherry sheet charged', charge_parts, '$',
             note='The %s final cherry sheet. Charges come off the aid before the town receives it.'
                  % C.fy(y26), note_figures={'y': F(y26)}),
         said=[fq],
