@@ -1254,8 +1254,8 @@ def build():
     EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
     out['pay-or-headcount'] = TP.page(
         'pay-or-headcount',
-        'To %s from any start year %s–%s, more spent per teacher outweighed any change in the count.'
-        % (C.fy(g1), C.fy(starts[0]), C.fy(starts[-1])),
+        'From %s to %s, higher pay per teacher added %s; the change in teacher count took off %s.'
+        % (C.fy(g0), C.fy(g1), C.usd(r0_), C.usd(-v0)),
         [f('per', SU(r0_), 'more per teacher FTE, %s to %s (our split)' % (C.fy(g0), C.fy(g1)),
            'published', fy01),
          f('cnt', SU(v0), 'from the change in teacher FTE, the same years', 'published'),
@@ -1286,7 +1286,10 @@ def build():
                          'added %s and per teacher %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
                          'measured', {'y': F(era), 'a': U(ve), 'b': U(re_)}),
                     step('The split is ours, by midpoint weights; its two parts add to the '
-                         'whole with nothing left over.', 'measured')]),
+                         'whole with nothing left over.', 'measured'),
+                    step('From any start year %s to %s, pay per teacher is the larger part.'
+                         % (C.fy(starts[0]), C.fy(starts[-1])), 'measured',
+                         {'a': F(starts[0]), 'b': F(starts[-1])})]),
          con('Per teacher FTE went from %s to %s; after Boston-area prices that is %s.'
              % (C.usd(W[g0]), C.usd(W[g1]), '%+.1f%%' % wr_chg), ['w', 'wr', 'dese'],
              {'a': U(W[g0]), 'b': U(W[g1]), 'c': SP(wr_chg)},
@@ -1323,16 +1326,22 @@ def build():
                          note='%s to %s, our midpoint split of DESE’s figures; the two add to the '
                               'whole rise of %s.' % (C.fy(g0), C.fy(g1), C.usd(r0_ + v0)),
                          note_figures={'a': F(g0), 'b': F(g1), 'c': U(r0_ + v0)}),
-        also=[TP.series('The same split from each starting year', [C.fy(y) for y in starts], [
-                  # Pay first, so it takes the same colour as in the split above it.
-                  TP.track('From higher pay per teacher', [SPL[y][1] for y in starts],
-                           'published', 'bar'),
-                  TP.track('From the change in teacher count', [SPL[y][0] for y in starts],
-                           'published', 'bar')], '$', kind='bar',
-                  note='Each pair runs from that starting year to %s, so longer spans add more. '
-                       'Pay per teacher is larger in every one. %s is left out.'
-                       % (C.fy(g1), C.fy(odd)),
-                  note_figures={'a': F(g1), 'b': F(odd)}),
+        # A RUNNING TOTAL FROM ONE FIXED START, read left to right like any chart over time.
+        # It replaced a chart of one bar per START year, each a span to the latest year,
+        # which nobody could read (TJ, 19 October 2026: "i really dont understand how to read
+        # this chart then if its until FY25"). Each point is the split from FY2009 to that
+        # year, so the last point is the headline split exactly.
+        also=[TP.series('Added since the first year, year by year', [C.fy(y) for y in gy], [
+                  TP.track('From higher pay per teacher',
+                           [0 if y == g0 else split(g0, y)[1] for y in gy], 'published', 'line'),
+                  TP.track('From the change in teacher count',
+                           [0 if y == g0 else split(g0, y)[0] for y in gy], 'published', 'line'),
+                  TP.track('Total change in teachers spending', [TS[y] - TS[g0] for y in gy],
+                           'published', 'line')], '$',
+                  note='Each point: the change since %s, split in two; the two lines add to the '
+                       'total. %s reads high on the swing between insurance and teachers.'
+                       % (C.fy(g0), C.fy(odd)),
+                  note_figures={'a': F(g0), 'b': F(odd)}),
               TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
                   TP.track('As printed, our division', [W[y] for y in gy], 'published', 'line'),
                   TP.track('In %s dollars' % C.fy(g1), [WR[y] for y in gy], 'published', 'line'),
@@ -1351,7 +1360,7 @@ def build():
                  'average salary only from %s.' % C.fy(min(sal)))]),
         sources=S('func', 'func-csv', 'teachers', 'radar', 'radar-csv', 'subject-csv',
                   'contract', 'contract-txt', 'schedule-csv') + CPI_SRC,
-        finding_figures={'a': F(g1), 'b': F(starts[0]), 'c': F(starts[-1])})
+        finding_figures={'y': F(g0), 'z': F(g1), 'a': U(r0_), 'b': U(-v0)})
 
     # ================================================================ teacher pay compared
     # The six districts are the project's own set, read from the payload the School spending
