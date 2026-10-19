@@ -136,6 +136,17 @@ Journal-level topics that belong on shelves that already exist:
 - `health-insurance`: `school-health-postings` (MIIA by fund, invoices vs June reclassifications).
 - `athletics`: `athletics-journal` (the athletics revolving fund, all postings, cross-checked against the fund 1301 cashbook).
 
+## Cadence: one or two at a time, TJ reviews each
+
+TJ, 19 October 2026: *"we can roll out maybe 1 or 2 reports at a time, ill check, then we
+can go though the full plan... lets not do them all at once."*
+
+Build one or two topics, stop, and hand them to TJ to review: the payload, the page
+rendered locally, and its verifier passing. The next pair starts only after he has looked.
+Nothing deploys without being asked (rule 10). What he says in review feeds back into
+this plan before the next pair, because the first pages will set the pattern the rest
+follow.
+
 ## Build order
 
 1. **Phase 0** (the gate) and the **journal data page**.
