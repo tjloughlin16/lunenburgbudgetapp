@@ -315,6 +315,10 @@ console.log(JSON.stringify({
   cuts: R.CUT_OPTIONS.map(c => c.amount), allCuts: R.ALL_CUTS,
   cutsYears: Q.yearsCovered(R.ALL_CUTS, R.DEFAULT_RATES.other),
   run10: R.run(10, R.DEFAULT_SCENARIO).map(y => [y.cost, y.revenue]),
+  options: Q.OPTIONS.map(o => ({ id: o.id, saves: o.saves, growth: o.growth,
+                                 years: Q.yearsCovered(o.saves, o.growth) })),
+  healthShares: [Q.HEALTH.maxShare, Q.HEALTH.employeeShare],
+  leadersPct: Q.LEADERSHIP.cutFor[0].pct,
 }))
 """
 
@@ -420,7 +424,8 @@ def build():
     M = json.load(open(os.path.join(PUB, 'model.json'), encoding='utf-8'))
     B = 2000 + int(M['meta']['base_year'][2:])      # 'FY27': the adopted budget the run starts from
     o = compute(M)
-    parity(o, ts_values())
+    ts = ts_values()
+    parity(o, ts)
     src = sources()
     S = lambda *k: [src[x] for x in k]
     U = lambda v: figure(v, C.usd(v))
@@ -915,15 +920,92 @@ def build():
                  allow=('Proposition 2½',))
     h['hct'] = f('h-hct', U(ct['health']), 'health insurance’s part of the gap (ours)',
                  'estimate')
-    h['cuts'] = f('h-cuts', U(o['all_cuts']), 'every nameable cut, together (ours)', 'estimate')
-    h['need'] = f('h-need', U(o['ng_needed']), 'new growth a year to hold the gap (ours)',
-                  'estimate')
-    h['ch70'] = f('h-ch70', PY(o['ch70_rate'], 2), 'Chapter 70 growth needed to close the gap (ours)',
-                  'estimate', allow=CH)
+    # WHAT WOULD PREVENT CUTS: EVERY OPTION THE MODEL PRICES, OR NONE. TJ, 19 October 2026:
+    # "it needs to be all or nothing... we can't leave something out like health insurance or
+    # commercial dev, because people will be super confused." So the tier is the walkthrough's
+    # twelve OPTIONS (model/answers.ts), plus Chapter 70 and the four cuts together, and every
+    # tile carries ONE measure: how long it keeps the gap closed. A saving short of FY2028's gap
+    # is the share of that one year it covers. The savings are the TypeScript model's own
+    # (read through ts_values); the years are recomputed here from our gaps and checked.
+    # No '(ours)' in these labels: the budget is spent on what the option IS, and the tile's
+    # OUR ESTIMATE tag already says whose figure it is.
+    gaps = [y['gap'] for y in Y]
+
+    def years_covered(amount, growth):
+        n = 0
+        for i, gp in enumerate(gaps):
+            if amount * (1 + growth) ** i >= gp:
+                n += 1
+            else:
+                break
+        return n
+
+    def lasts(amount, growth, every=False):
+        n = len(gaps) if every else years_covered(amount, growth)
+        if n >= len(gaps):
+            return figure(n, 'every year', 'years')
+        # Said in fiscal years, the unit every other tile uses: "1 year" read as a duration,
+        # and "79% of a year" as nine and a half months, when it is 79% of FY2028's gap.
+        if n == 0:
+            share = amount / gaps[0] * 100
+            return figure(share, '%s of %s' % (C.pct(share, 0), C.fy(fy[0])), 'share of the gap')
+        if n == 1:
+            return figure(n, '%s only' % C.fy(fy[0]), 'years')
+        return figure(n, '%s–%s' % (C.fy(fy[0]), C.fy(fy[n - 1])), 'years')
+
+    opt = {x['id']: x for x in ts['options']}
+    for x in ts['options']:
+        if years_covered(x['saves'], x['growth']) != x['years'] and x['id'] != 'build':
+            fail('years covered disagree with the TypeScript for option %s' % x['id'])
+    hmax, hemp = ts['healthShares']
+    pc = lambda v, dp=0: figure(v, C.pct(v, dp))
+    LAB = {   # id: (label, its figures). Short: the tile's value says how long; this says what.
+        'paper': ('cut the office lines only: {a} a year', {}),
+        'fee_ath': ('athletics fees that pay for sports: {a} a year', {}),
+        'fee_act': ('fees that pay for band and clubs: {a} a year', {}),
+        'fee_bus': ('the highest bus fares possible: {a} a year', {}),
+        'extras': ('cut every sport, club, band and art: {a} a year', {}),
+        'tech': ('cut %s of software and devices: {a} a year' % C.pct(o['tech_max'], 0),
+                 {'p': pc(o['tech_max'])}),
+        'health': ('staff pay %s of health premiums, not %s: {a}'
+                   % (C.pct(hmax * 100, 0), C.pct(hemp * 100, 0)),
+                   {'p': pc(hmax * 100), 'q': pc(hemp * 100)}),
+        'admin': ('cut every administrator the law allows: {a} a year', {}),
+        'pay': ('a %s pay cut for all school staff: {a} a year' % C.pct(5, 0), {'p': pc(5)}),
+        'leaders': ('a %s pay cut for every administrator: {a}'
+                    % C.pct(ts['leadersPct'] * 100, 0), {'p': pc(ts['leadersPct'] * 100)}),
+        'override': ('a tax override of {a} a year', {}),
+    }
+    if set(LAB) | {'build'} != set(opt):
+        fail('the model\'s options changed; every one must have a tile: %s' % sorted(opt))
+    prevent = []
+    for k, (lab, figs) in LAB.items():
+        x = opt[k]
+        figs = dict(figs, a=U(round(x['saves'])))
+        prevent.append(f('h-%s' % k.replace('_', '-'), lasts(x['saves'], x['growth']),
+                         lab.replace('{a}', C.usd(round(x['saves']))), 'estimate', figs))
+    prevent.append(f('h-build', lasts(0, 0, every=True),
+                     '%s new commercial developments, every year'
+                     % ('%.1f' % o['ng_developments']),
+                     'estimate', {'d': figure(o['ng_developments'], '%.1f' % o['ng_developments'])}))
+    prevent.append(f('h-ch70', lasts(0, 0, every=True),
+                     'Chapter 70 growing %s a year, not %s'
+                     % (C.pct(o['ch70_rate'] * 100, 2), C.pct(o['aid_assumed'] * 100, 2)),
+                     'estimate', {'r': P(o['ch70_rate'], 2), 's': P(o['aid_assumed'], 2)},
+                     allow=CH))
+    prevent.append(f('h-cuts', lasts(o['all_cuts'], R['other']),
+                     'all four service cuts at once: %s a year' % C.usd(o['all_cuts']),
+                     'estimate', {'a': U(o['all_cuts'])}))
+    if years_covered(o['all_cuts'], R['other']) != o['cuts_years']:
+        fail('the combined cuts cover %d years here and %d on their own page'
+             % (years_covered(o['all_cuts'], R['other']), o['cuts_years']))
+    order = lambda t: (-(t['value']['value'] if t['value']['unit'] == 'years' else -1),
+                       -t['value']['value'])
+    prevent.sort(key=order)
     tiers = [
         LD.tier('The gap', [h['g28'], h['glast'], h['inc'], h['allowed']]),
         LD.tier('The rates', [h['blended'], h['rev'], h['cap'], h['hct']]),
-        LD.tier('What would hold it', [h['cuts'], h['need'], h['ch70']]),
+        LD.tier('What would prevent cuts', prevent),
     ]
     hub_ladder = LD.ladder(tiers, [
         LD.conclusion('On our arithmetic the schools are %s short in %s and %s in %s.'
@@ -940,13 +1022,13 @@ def build():
         LD.conclusion('Health insurance puts the most into the gap: %s of %s.'
                       % (C.usd(ct['health']), C.usd(g28)), ['h-hct', 'h-g28'],
                       {'a': U(ct['health']), 'b': U(g28)}),
-        LD.conclusion('Every nameable cut together, %s, covers %s and %s only.'
-                      % (C.usd(o['all_cuts']), C.fy(fy[0]), C.fy(fy[1])), ['h-cuts'],
+        LD.conclusion('No single program cut or fee covers %s; all four at once, %s, '
+                      'cover %s and %s.' % (C.fy(fy[0]), C.usd(o['all_cuts']), C.fy(fy[0]),
+                                            C.fy(fy[1])),
+                      ['h-admin', 'h-pay', 'h-health', 'h-cuts'],
                       {'a': U(o['all_cuts']), 'y': f28, 'z': f29}),
-        LD.conclusion('Growth would need %s of new levy a year; or Chapter 70 growing %s a year.'
-                      % (C.usd(o['ng_needed']), C.pct(o['ch70_rate'] * 100, 2)),
-                      ['h-need', 'h-ch70'],
-                      {'a': U(o['ng_needed']), 'b': P(o['ch70_rate'], 2)}, allow=CH),
+        LD.conclusion('Only new growth or faster Chapter 70 prevents cuts every year.',
+                      ['h-build', 'h-ch70'], allow=CH),
     ])
     D = o['decade']
     out[HUB] = TP.hub(

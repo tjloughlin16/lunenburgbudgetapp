@@ -249,31 +249,23 @@
     },
     "literals": [],
     "rests_on": [
+     "h-admin",
+     "h-pay",
+     "h-health",
      "h-cuts"
     ],
-    "text": "Every nameable cut together, $1,495,880, covers FY2028 and FY2029 only."
+    "text": "No single program cut or fee covers FY2028; all four at once, $1,495,880, cover FY2028 and FY2029."
    },
    {
-    "figures": {
-     "a": {
-      "text": "$2,153,441",
-      "unit": "",
-      "value": 2153441
-     },
-     "b": {
-      "text": "11.33%",
-      "unit": "",
-      "value": 11.333684132916977
-     }
-    },
+    "figures": {},
     "literals": [
      "Chapter 70"
     ],
     "rests_on": [
-     "h-need",
+     "h-build",
      "h-ch70"
     ],
-    "text": "Growth would need $2,153,441 of new levy a year; or Chapter 70 growing 11.33% a year."
+    "text": "Only new growth or faster Chapter 70 prevents cuts every year."
    }
   ],
   "tiers": [
@@ -428,51 +420,319 @@
    {
     "facts": [
      {
-      "id": "h-cuts",
+      "id": "h-build",
       "kind": "estimate",
       "label": {
-       "figures": {},
+       "figures": {
+        "d": {
+         "text": "40.5",
+         "unit": "",
+         "value": 40.54953974234811
+        }
+       },
        "literals": [],
-       "text": "every nameable cut, together (ours)"
+       "text": "40.5 new commercial developments, every year"
       },
       "value": {
-       "text": "$1,495,880",
-       "unit": "",
-       "value": 1495880
-      }
-     },
-     {
-      "id": "h-need",
-      "kind": "estimate",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "new growth a year to hold the gap (ours)"
-      },
-      "value": {
-       "text": "$2,153,441",
-       "unit": "",
-       "value": 2153441
+       "text": "every year",
+       "unit": "years",
+       "value": 6
       }
      },
      {
       "id": "h-ch70",
       "kind": "estimate",
       "label": {
-       "figures": {},
+       "figures": {
+        "r": {
+         "text": "11.33%",
+         "unit": "",
+         "value": 11.333684132916977
+        },
+        "s": {
+         "text": "2.71%",
+         "unit": "",
+         "value": 2.711038866995208
+        }
+       },
        "literals": [
         "Chapter 70"
        ],
-       "text": "Chapter 70 growth needed to close the gap (ours)"
+       "text": "Chapter 70 growing 11.33% a year, not 2.71%"
       },
       "value": {
-       "text": "11.33% a year",
-       "unit": "percent a year",
-       "value": 11.333684132916977
+       "text": "every year",
+       "unit": "years",
+       "value": 6
+      }
+     },
+     {
+      "id": "h-cuts",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$1,495,880",
+         "unit": "",
+         "value": 1495880
+        }
+       },
+       "literals": [],
+       "text": "all four service cuts at once: $1,495,880 a year"
+      },
+      "value": {
+       "text": "FY2028–FY2029",
+       "unit": "years",
+       "value": 2
+      }
+     },
+     {
+      "id": "h-leaders",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$932,531",
+         "unit": "",
+         "value": 932531
+        },
+        "p": {
+         "text": "59%",
+         "unit": "",
+         "value": 58.78258227554467
+        }
+       },
+       "literals": [],
+       "text": "a 59% pay cut for every administrator: $932,531"
+      },
+      "value": {
+       "text": "FY2028 only",
+       "unit": "years",
+       "value": 1
+      }
+     },
+     {
+      "id": "h-override",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$932,531",
+         "unit": "",
+         "value": 932531
+        }
+       },
+       "literals": [],
+       "text": "a tax override of $932,531 a year"
+      },
+      "value": {
+       "text": "FY2028 only",
+       "unit": "years",
+       "value": 1
+      }
+     },
+     {
+      "id": "h-admin",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$736,468",
+         "unit": "",
+         "value": 736468
+        }
+       },
+       "literals": [],
+       "text": "cut every administrator the law allows: $736,468 a year"
+      },
+      "value": {
+       "text": "79% of FY2028",
+       "unit": "share of the gap",
+       "value": 78.97517616036357
+      }
+     },
+     {
+      "id": "h-pay",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$667,411",
+         "unit": "",
+         "value": 667411
+        },
+        "p": {
+         "text": "5%",
+         "unit": "",
+         "value": 5
+        }
+       },
+       "literals": [],
+       "text": "a 5% pay cut for all school staff: $667,411 a year"
+      },
+      "value": {
+       "text": "72% of FY2028",
+       "unit": "share of the gap",
+       "value": 71.56984593541662
+      }
+     },
+     {
+      "id": "h-health",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$599,769",
+         "unit": "",
+         "value": 599769
+        },
+        "p": {
+         "text": "40%",
+         "unit": "",
+         "value": 40.0
+        },
+        "q": {
+         "text": "25%",
+         "unit": "",
+         "value": 25.0
+        }
+       },
+       "literals": [],
+       "text": "staff pay 40% of health premiums, not 25%: $599,769"
+      },
+      "value": {
+       "text": "64% of FY2028",
+       "unit": "share of the gap",
+       "value": 64.3162532934562
+      }
+     },
+     {
+      "id": "h-tech",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$383,205",
+         "unit": "",
+         "value": 383205
+        },
+        "p": {
+         "text": "60%",
+         "unit": "",
+         "value": 60
+        }
+       },
+       "literals": [],
+       "text": "cut 60% of software and devices: $383,205 a year"
+      },
+      "value": {
+       "text": "41% of FY2028",
+       "unit": "share of the gap",
+       "value": 41.093003878691434
+      }
+     },
+     {
+      "id": "h-extras",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$376,207",
+         "unit": "",
+         "value": 376207
+        }
+       },
+       "literals": [],
+       "text": "cut every sport, club, band and art: $376,207 a year"
+      },
+      "value": {
+       "text": "40% of FY2028",
+       "unit": "share of the gap",
+       "value": 40.342573061914294
+      }
+     },
+     {
+      "id": "h-fee-ath",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$158,007",
+         "unit": "",
+         "value": 158007
+        }
+       },
+       "literals": [],
+       "text": "athletics fees that pay for sports: $158,007 a year"
+      },
+      "value": {
+       "text": "17% of FY2028",
+       "unit": "share of the gap",
+       "value": 16.943887120106464
+      }
+     },
+     {
+      "id": "h-paper",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$125,030",
+         "unit": "",
+         "value": 125030
+        }
+       },
+       "literals": [],
+       "text": "cut the office lines only: $125,030 a year"
+      },
+      "value": {
+       "text": "13% of FY2028",
+       "unit": "share of the gap",
+       "value": 13.40759717371326
+      }
+     },
+     {
+      "id": "h-fee-act",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$106,244",
+         "unit": "",
+         "value": 106244
+        }
+       },
+       "literals": [],
+       "text": "fees that pay for band and clubs: $106,244 a year"
+      },
+      "value": {
+       "text": "11% of FY2028",
+       "unit": "share of the gap",
+       "value": 11.393079693865404
+      }
+     },
+     {
+      "id": "h-fee-bus",
+      "kind": "estimate",
+      "label": {
+       "figures": {
+        "a": {
+         "text": "$81,746",
+         "unit": "",
+         "value": 81746
+        }
+       },
+       "literals": [],
+       "text": "the highest bus fares possible: $81,746 a year"
+      },
+      "value": {
+       "text": "9% of FY2028",
+       "unit": "share of the gap",
+       "value": 8.766035659940528
       }
      }
     ],
-    "title": "What would hold it"
+    "title": "What would prevent cuts"
    }
   ],
   "title": "What it adds up to"
