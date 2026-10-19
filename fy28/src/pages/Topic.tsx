@@ -135,10 +135,21 @@ function StartHere({ ix, cat }: { ix: Index; cat: IndexCategory }) {
   const ts = (cat.start ?? []).map(id => ix.topics[id]).filter(t => t?.ready)
   if (!ts.length) return null
   return (
-    <div className="mb-6">
-      <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Start here</h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
-        {ts.map(t => <li key={t.id} className="[&>a]:border-l-4"><TopicLink t={t} /></li>)}
+    <div className="mb-7">
+      {/* One step up from the groups below, and no more: the eyebrow takes the link colour
+          and a small star, and each card sits on a faint wash of that colour with a 4px rule.
+          Same TopicLink inside, so it is still recognisably a topic. */}
+      <h2 className={`${eyebrow} inline-flex items-center gap-1.5`} style={link}>
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden fill="currentColor">
+          <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" />
+        </svg>
+        Start here</h2>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mt-2">
+        {ts.map(t => (
+          <li key={t.id} className="rounded-r-md py-2 pr-3 [&>a]:border-l-4"
+            style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)' }}>
+            <TopicLink t={t} /></li>
+        ))}
       </ul>
     </div>
   )
@@ -151,7 +162,11 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
   return (
     <section className="mt-10 max-w-3xl" id="topics">
       <StartHere ix={ix} cat={cat} />
-      {cat.groups.map((g, gi) => (
+      {/* A start page is listed once, in Start here, not again in its group just below it;
+          a group left empty by that is not drawn. The shelf's prev/next order is untouched. */}
+      {cat.groups.map(g => ({ ...g, topics: g.topics.filter(id => !(cat.start ?? []).includes(id)
+          || !ix.topics[id]?.ready) }))
+        .filter(g => g.topics.length).map((g, gi) => (
         <div key={gi} className={gi ? 'mt-6' : undefined}>
           <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
