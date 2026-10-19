@@ -110,6 +110,67 @@ def fail(msg):
     raise SystemExit('build_school_spending_topics: ' + msg)
 
 
+# PUPIL SERVICES, SPLIT BY ITS OWN FUNCTION CODES. DESE's "Pupil Services" files buses,
+# meals, nurses, sport, clubs, attendance officers and school security under one name, and
+# these pages drew it as one row (TJ, 19 October 2026, on an invented grouping: "that was
+# bad!"). Each part below is DESE's own function row. Athletics and other student activities
+# stay apart here because each is compared with its own statewide median, and medians of
+# parts do not add.
+SERV_CODES = (('3300', 'buses'), ('3400', 'food service'), ('3200', 'nurses and health'),
+              ('3510', 'athletics'), ('3520', 'other student activities'),
+              ('3100', 'attendance and parent liaison'), ('3600', 'school security'))
+SERV_NAME = dict(SERV_CODES)
+FUNC_CSV = os.path.join(ROOT, 'sources', 'data', 'dese-function-expenditure.csv')
+STATEWIDE_CSV = os.path.join(ROOT, 'sources', 'data', 'dese-function-statewide.csv')
+
+
+def serv_totals(fy, district):
+    """{func_code: all-funds total} for one district's pupil services, and the category
+    total DESE prints, read off dese-function-expenditure.csv."""
+    parts, cat = {}, None
+    for r in csv.DictReader(open(FUNC_CSV, encoding='utf-8')):
+        if r['fy'] != str(fy) or r['district'] != district or r['func_cat_code'] != 'SERV':
+            continue
+        if r['level'] == 'category':
+            cat = float(r['total'])
+        elif r['level'] == 'detail':
+            if r['func_code'] not in SERV_NAME:
+                fail('FY%d %s: pupil services carries %s, which the split does not name'
+                     % (fy, district, r['func_code']))
+            parts[r['func_code']] = parts.get(r['func_code'], 0.0) + float(r['total'])
+    if cat is None or abs(sum(parts.values()) - cat) > 2:
+        fail('FY%d %s: pupil services parts do not add to the category DESE prints'
+             % (fy, district))
+    return parts, cat
+
+
+def serv_statewide(fy):
+    """Each pupil-services function code against its own statewide distribution, in the
+    shape peer-spending.json gives a category. Codes Lunenburg reports nothing under are
+    returned separately: a function with no row is not a function measured at zero."""
+    got, none = [], []
+    for r in csv.DictReader(open(STATEWIDE_CSV, encoding='utf-8')):
+        if r['fy'] != str(fy) or r['level'] != 'detail' or r['func_cat_code'] != 'SERV':
+            continue
+        if r['func_code'] not in SERV_NAME:
+            fail('FY%d: statewide pupil services carries %s, which the split does not name'
+                 % (fy, r['func_code']))
+        if not r['lunenburg_per_pupil']:
+            none.append(dict(code=r['func_code'], desc=r['func_desc'],
+                             median=float(r['per_pupil_median']), districts=int(r['districts'])))
+            continue
+        m = re.fullmatch(r'(\d+) of (\d+)', r['lunenburg_rank_of_districts'])
+        rank, of = int(m.group(1)), int(m.group(2))
+        lun, med = float(r['lunenburg_per_pupil']), float(r['per_pupil_median'])
+        got.append(dict(code=r['func_code'], desc='Pupil services: ' + r['func_desc'],
+                        districts=of, median=med, lunenburg=lun, rank=rank,
+                        spend_less=of - rank, share_of_median=round(lun / med, 4),
+                        in_bottom_quarter=rank > of * 0.75))
+    if not got:
+        fail('FY%d: no statewide pupil-services detail rows' % fy)
+    return got, none
+
+
 def load(name):
     return json.load(open(os.path.join(PUB, name), encoding='utf-8'))
 
@@ -563,11 +624,17 @@ def build():
         fail('professional development is no longer the furthest below its median')
     if max(cats.values(), key=lambda c: c['share_of_median']) is not tser:
         fail('other teaching services is no longer the nearest its median')
+    # Pupil services drawn as its function codes (the count of categories in the bottom
+    # quarter, above, stays a count of DESE's eleven categories).
+    sw_serv, sw_none = serv_statewide(fy)
+    sf_by = {FN_CHART[c['code']].capitalize(): c for c in cats.values() if c['code'] != 'SERV'}
+    sf_by.update({'Pupil services: ' + SERV_NAME[c['code']]: c for c in sw_serv})
+    sf_rows = [(l, 100 * c['share_of_median']) for l, c in sf_by.items()]
     out['spending-by-function'] = TP.page(
         'spending-by-function',
-        'Lunenburg was in the state’s bottom quarter on %s spending functions in %s.'
+        'Lunenburg was in the state’s bottom quarter on %s DESE spending categories in %s.'
         % (OF(nbq, len(cats))['text'], C.fy(fy)),
-        [f('bq', OF(nbq, len(cats), 'functions'), 'functions in the state’s bottom quarter, %s'
+        [f('bq', OF(nbq, len(cats), 'categories'), 'DESE categories in the bottom quarter, %s'
            % C.fy(fy), 'published', {'y': F(fy)}),
          f('pdev', U(pdev['lunenburg']), 'professional development, a pupil', 'published'),
          f('pdevm', U(pdev['median']), 'its state median', 'published'),
@@ -603,15 +670,17 @@ def build():
             columns=['Lunenburg', 'State median', 'Rank'],
             rows=[dict(label=c['desc'], cells=[C.usd(c['lunenburg']), C.usd(c['median']),
                                                OF(c['rank'], c['districts'])['text']])
-                  for c in sorted(cats.values(), key=lambda c: c['share_of_median'])],
+                  for c in sorted(list(cats.values()) + sw_serv,
+                                  key=lambda c: c['share_of_median'])]
+            + [dict(label='Pupil services: %s' % c['desc'],
+                    cells=['none reported', C.usd(c['median']), None]) for c in sw_none],
             note='Each function over in-district FTE pupils, as DESE computes it; rank is highest '
-                 'spending first. All funds, reported after the year closed.')]),
-        chart=TP.ranking('Each function against its state median', [
-            (FN_CHART[c['code']].capitalize(), 100 * c['share_of_median']) for c in cats.values()],
-            '%', highlight=[FN_CHART[c['code']].capitalize() for c in cats.values()
-                            if c['in_bottom_quarter']],
-            note='Lunenburg’s figure a pupil as a share of each function’s state median, our '
-                 'division of DESE’s figures. Marked: in the state’s bottom quarter.'),
+                 'spending first. Pupil services rows: each of its function codes against the '
+                 'districts that report it. All funds, after the year closed.')]),
+        chart=TP.ranking('Each function against its state median', sf_rows, '%',
+            highlight=[l for l, c in sf_by.items() if c['in_bottom_quarter']],
+            note='Lunenburg’s figure a pupil as a share of each state median, our division. '
+                 'Pupil services shown by its own codes. Marked: bottom quarter.'),
         said=[said(PS, 'materials'), said(PS, 'sharing-pd')],
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-statewide.csv'),
         finding_figures={'n': OF(nbq, len(cats)), 'y': F(fy)})
@@ -843,10 +912,32 @@ def build():
     if abs(ch['lunenburg'] - ch['peer'] - ch['gap']) > 0.5:
         fail('the in-district gap no longer recomputes')
     gc = {c['code']: c for c in PS['categories']}
-    big2 = sorted(PS['categories'], key=lambda c: c['gap'])[:2]
-    pos = max(PS['categories'], key=lambda c: c['gap'])
+    # PUPIL SERVICES BY ITS CODES. Each district's category figure a pupil is split in
+    # proportion to its function totals -- our division, so the parts add exactly to the
+    # figure DESE prints and the gap still sums.
+    sv = gc['SERV']
+    lp, lc = serv_totals(fy, 'Lunenburg')
+    mp, mc = serv_totals(fy, med_d)
+    gparts = []
+    for code, name in SERV_CODES:
+        lv, mv = sv['lunenburg'] * lp.get(code, 0) / lc, sv['median_peer'] * mp.get(code, 0) / mc
+        if lv or mv:
+            gparts.append(dict(code='SERV-' + code, desc='Pupil services: ' + name,
+                               chart='Pupil services: ' + name, lunenburg=lv, median_peer=mv,
+                               gap=lv - mv, none=not lp.get(code)))
+    if abs(sum(g['gap'] for g in gparts) - sv['gap']) > 0.5:
+        fail('the pupil-services parts no longer add to its gap')
+    gcats = [dict(c, chart=FN_CHART[c['code']].capitalize()) for c in PS['categories']
+             if c['code'] != 'SERV'] + gparts
+    if abs(sum(c['gap'] for c in gcats) - ch['gap']) > 0.5:
+        fail('the gaps by function, pupil services split, no longer sum to the in-district gap')
+    big2 = sorted(gcats, key=lambda c: c['gap'])[:2]
+    pos = max(gcats, key=lambda c: c['gap'])
+    # A part Lunenburg reports nothing under, against a district that does.
+    unrep = [g for g in gparts if g['none'] and g['median_peer']]
     mn = SHORT.get(med_d, med_d)
     G = lambda v: U(-v)
+    gs = sorted(gparts, key=lambda g: g['gap'])
     out['gap-by-function'] = TP.page(
         'gap-by-function',
         'In-district, Lunenburg spent %s a pupil less than %s, the middle of the six this project '
@@ -857,7 +948,10 @@ def build():
          f('gap', G(ch['gap']), 'less a pupil (our arithmetic)', 'published')]
         + [f(c['code'].lower(), U(c['gap']), '%s, against %s' % (FN[c['code']], mn),
              'published') for c in PS['categories']
-           if c['code'] in ('TCHR', 'SERV', 'LDRS', 'OPMN', 'MATL', 'PDEV', 'TSER')],
+           if c['code'] in ('TCHR', 'LDRS', 'OPMN', 'MATL', 'PDEV', 'TSER')]
+        + [f(g['code'].lower(), U(g['gap']), '%s, against %s'
+             % (g['desc'][len('Pupil services: '):], mn), 'published')
+           for g in sorted(gparts, key=lambda g: g['gap'])[:3]],
         [con('Lunenburg’s in-district figure was %s against %s’s %s: %s less.'
              % (C.usd(ch['lunenburg']), mn, C.usd(ch['peer']), C.usd(-ch['gap'])),
              ['lun', 'mid', 'gap'], {'a': U(ch['lunenburg']), 'b': U(ch['peer']),
@@ -871,23 +965,34 @@ def build():
              {'a': U(big2[0]['gap']), 'b': U(big2[1]['gap'])}),
          con('%s ran the other way, %s above %s.' % (FN[pos['code']].capitalize(),
                                                     C.usd(pos['gap']), mn),
-             [pos['code'].lower()], {'a': U(pos['gap'])})],
+             [pos['code'].lower()], {'a': U(pos['gap'])}),
+         con('Within pupil services, %s (%s) and %s (%s) were the largest parts.'
+             % (gs[0]['desc'][len('Pupil services: '):], C.usd(gs[0]['gap']),
+                gs[1]['desc'][len('Pupil services: '):], C.usd(gs[1]['gap'])),
+             [g['code'].lower() for g in gs[:3]],
+             {'a': U(gs[0]['gap']), 'b': U(gs[1]['gap'])},
+             notes=[step('%s spends %s a pupil on %s; Lunenburg reports nothing there. The '
+                         'same work may be coded to another function here.'
+                         % (mn, C.usd(unrep[0]['median_peer']),
+                            unrep[0]['desc'][len('Pupil services: '):]),
+                         'hypothesis', {'a': U(unrep[0]['median_peer'])})] if unrep else ())],
         table=dict(caption='In-district spending a pupil, by function, %s' % C.fy(fy), views=[dict(
             key='gap', label='Lunenburg against %s' % mn, total_col=-1, kinds=['ledger'] * 3,
             columns=['Lunenburg', mn, 'Difference'],
             rows=[dict(label=c['desc'], cells=[C.usd(c['lunenburg']), C.usd(c['median_peer']),
                                                C.usd(c['gap'])])
-                  for c in sorted(PS['categories'], key=lambda c: c['gap'])],
-            note='DESE’s figures over in-district FTE pupils. Measured against one district, not '
-                 'a median of each function, because medians of parts do not add up.')]),
+                  for c in sorted(gcats, key=lambda c: c['gap'])],
+            note='DESE’s figures over in-district FTE pupils. Pupil services split by its function '
+                 'codes, in proportion to each district’s totals (our division). Against one '
+                 'district, because medians of parts do not add up.')]),
         chart=TP.ranking('Difference a pupil, by function',
-                         [(FN_CHART[c['code']].capitalize(), c['gap']) for c in PS['categories']],
+                         [(c['chart'], c['gap']) for c in gcats],
                          '$', note='Lunenburg less %s, in-district, a pupil, %s. Below zero, '
                                    'Lunenburg spent less.' % (mn, C.fy(fy)),
                          note_figures={'y': F(fy)}),
         sources=S('district-expenditures-by-function.xlsx', 'dese-function-expenditure.csv'),
         finding_figures={'a': G(ch['gap'])})
-    if gc['TCHR'] not in big2:
+    if 'TCHR' not in [c['code'] for c in big2]:
         fail('teachers is no longer among the two largest parts of the gap')
 
     # ---------------------------------------------------------- average teacher salary
@@ -1394,8 +1499,22 @@ def school_committee_fund_pages():
     if abs(trust - owner['totals']['trust_held']) > 0.01:
         fail('the school trusts no longer sum to the owner total')
     share = 100 * held / approp
+    # "OTHER" IS A NAME-MATCH REMAINDER, NOT A KIND OF FUND (build_fund_owners.py files a fund
+    # there when its name says neither revolving, grant, gift nor receipts). It was drawn as
+    # "Other receipts funds", which reads as a fund type, while one fund, After School
+    # Activities, held most of it. That fund is drawn by its own name; the rest is "other funds".
+    asa = [m for m in by['other'] if m['name'].startswith('AFTER SCHOOL ACTIVITIES')]
+    if len(asa) != 1:
+        fail('the After School Activities Fund is no longer one of the school’s "other" funds')
+    asa = asa[0]
+    tot['asa'] = asa['current']['closing']
+    rest_other = [m for m in by['other'] if m is not asa]
+    tot['other'] = sum(m['current']['closing'] for m in rest_other)
+    if not tot['asa'] > tot['other']:
+        fail('After School Activities no longer holds most of the "other" funds; the page says so')
     KIND = (('revolving', 'Revolving funds'), ('grant', 'Grant funds, net of overdrafts'),
-            ('other', 'Other receipts funds'), ('gift', 'Gift funds'))
+            ('asa', 'After School Activities Fund'), ('gift', 'Gift funds'),
+            ('other', 'Other funds'))
     out['school-committee-funds'] = TP.page(
         'school-committee-funds',
         'The schools held %s in %s funds outside the appropriation at 31 March 2026.'
@@ -1412,8 +1531,9 @@ def school_committee_fund_pages():
            % C.num(len(by['grant'])), 'published', {'n': N(len(by['grant']))}),
          f('gift', U(tot['gift']), 'in %s gift funds' % C.num(len(by['gift'])), 'published',
            {'n': N(len(by['gift']))}),
-         f('other', U(tot['other']), 'in %s other receipts funds' % C.num(len(by['other'])),
-           'published', {'n': N(len(by['other']))}),
+         f('asa', U(tot['asa']), 'in the After School Activities Fund', 'published'),
+         f('other', U(tot['other']), 'in %s other funds' % C.num(len(rest_other)),
+           'published', {'n': N(len(rest_other))}),
          f('trust', U(trust), 'in %s school trusts' % C.num(len(tr)), 'published',
            {'n': N(len(tr))}),
          f('close', None, 'what these funds held at the close of %s' % C.fy(2026), 'gap',
@@ -1431,10 +1551,10 @@ def school_committee_fund_pages():
          con('Revolving funds held %s of it; the grant funds %s, net of the ones overdrawn.'
              % (C.usd(tot['revolving']), C.usd(tot['grant'])), ['rev', 'grant'],
              {'a': U(tot['revolving']), 'b': U(tot['grant'])}),
-         con('Gift funds held %s, other receipts funds %s and the school trusts %s.'
-             % (C.usd(tot['gift']), C.usd(tot['other']), C.usd(trust)),
-             ['gift', 'other', 'trust'],
-             {'a': U(tot['gift']), 'b': U(tot['other']), 'c': U(trust)}),
+         con('After School Activities held %s; gift funds %s, other funds %s, trusts %s.'
+             % (C.usd(tot['asa']), C.usd(tot['gift']), C.usd(tot['other']), C.usd(trust)),
+             ['asa', 'gift', 'other', 'trust'],
+             {'d': U(tot['asa']), 'a': U(tot['gift']), 'b': U(tot['other']), 'c': U(trust)}),
          con('The balances are nine months into %s; the year-end balances are not held.'
              % C.fy(2026), ['close'], {'y': F(2026)})],
         chart=TP.parts('School fund balances, by kind of fund',
