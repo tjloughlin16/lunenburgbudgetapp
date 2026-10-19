@@ -1254,14 +1254,14 @@ def build():
     EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
     out['pay-or-headcount'] = TP.page(
         'pay-or-headcount',
-        'From %s to %s, higher pay per teacher added %s; fewer teachers took off %s.'
+        'From %s to %s, each teacher costing more added %s; fewer teachers took off %s.'
         % (C.fy(g0), C.fy(g1), C.usd(r0_), C.usd(-v0)),
-        [f('per', SU(r0_), 'more per teacher FTE, %s to %s (our split)' % (C.fy(g0), C.fy(g1)),
+        [f('per', SU(r0_), 'added by each teacher costing more, %s to %s' % (C.fy(g0), C.fy(g1)),
            'published', fy01),
-         f('cnt', SU(v0), 'from the change in teacher FTE, the same years', 'published'),
-         f('per-e', SU(re_), 'more per teacher FTE, %s to %s' % (C.fy(era), C.fy(g1)),
+         f('cnt', SU(v0), 'from fewer teachers, the same years', 'published'),
+         f('per-e', SU(re_), 'added by each teacher costing more, %s to %s' % (C.fy(era), C.fy(g1)),
            'published', {'a': F(era), 'b': F(g1)}),
-         f('cnt-e', SU(ve), 'from the change in teacher FTE, the same years', 'published'),
+         f('cnt-e', SU(ve), 'from fewer teachers, the same years', 'published'),
          f('tchr', SP(dTS), 'Teachers spending: %s to %s' % (C.usd(TS[g0]), C.usd(TS[g1])),
            'published', {'a': U(TS[g0]), 'b': U(TS[g1])}),
          f('fte', FTE(T[g1]), 'teacher FTE, %s; %s in %s, %s in %s'
@@ -1279,18 +1279,18 @@ def build():
          f('raise', PC(KC['cola']), 'salary schedule adjustment, %s, teachers’ agreement'
            % C.fy(KC['fy']), 'contract', {'y': F(KC['fy'])}),
          f('steps', None, 'teachers on each step and lane, each year', 'gap', closes=STEPS)],
-        [con('From %s the teacher count took %s off; more spent per teacher added %s.'
+        [con('From %s, fewer teachers took %s off; each teacher costing more added %s.'
              % (C.fy(g0), C.usd(-v0), C.usd(r0_)), ['cnt', 'per', 'tchr'],
              {'y': F(g0), 'a': U(-v0), 'b': U(r0_)},
-             notes=[step('From %s, the first year of the state’s comparable count, the count '
-                         'added %s and per teacher %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
+             notes=[step('From %s, the first year of the state’s comparable count, more teachers '
+                         'added %s and each teacher costing more %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
                          'measured', {'y': F(era), 'a': U(ve), 'b': U(re_)}),
                     step('The split is ours, by midpoint weights; its two parts add to the '
                          'whole with nothing left over.', 'measured'),
-                    step('From any start year %s to %s, pay per teacher is the larger part.'
+                    step('From any start year %s to %s, the cost per teacher is the larger part.'
                          % (C.fy(starts[0]), C.fy(starts[-1])), 'measured',
                          {'a': F(starts[0]), 'b': F(starts[-1])})]),
-         con('Per teacher FTE went from %s to %s; after Boston-area prices that is %s.'
+         con('Spending per teacher went from %s to %s; after Boston-area prices, %s.'
              % (C.usd(W[g0]), C.usd(W[g1]), '%+.1f%%' % wr_chg), ['w', 'wr', 'dese'],
              {'a': U(W[g0]), 'b': U(W[g1]), 'c': SP(wr_chg)},
              notes=[step('That division matches DESE’s own average teacher salary within %s in '
@@ -1321,8 +1321,8 @@ def build():
         # (TJ, 19 October 2026: "what does 'more spent per teacher' mean when FY09 has the
         # highest number"). That chart is now the check underneath, labelled as start years.
         chart=TP.ranking('Where the rise in teachers spending came from',
-                         [('From higher pay per teacher', r0_),
-                          ('From the change in teacher count', v0)], '$',
+                         [('Each teacher costs more', r0_),
+                          ('Fewer teachers', v0)], '$',
                          note='%s to %s, our midpoint split of DESE’s figures; the two add to the '
                               'whole rise of %s.' % (C.fy(g0), C.fy(g1), C.usd(r0_ + v0)),
                          note_figures={'a': F(g0), 'b': F(g1), 'c': U(r0_ + v0)}),
@@ -1332,9 +1332,9 @@ def build():
         # this chart then if its until FY25"). Each point is the split from FY2009 to that
         # year, so the last point is the headline split exactly.
         also=[TP.series('Added since the first year, year by year', [C.fy(y) for y in gy], [
-                  TP.track('From higher pay per teacher',
+                  TP.track('Each teacher costs more',
                            [0 if y == g0 else split(g0, y)[1] for y in gy], 'published', 'line'),
-                  TP.track('From the change in teacher count',
+                  TP.track('Fewer teachers',
                            [0 if y == g0 else split(g0, y)[0] for y in gy], 'published', 'line'),
                   TP.track('Total change in teachers spending', [TS[y] - TS[g0] for y in gy],
                            'published', 'line')], '$',
