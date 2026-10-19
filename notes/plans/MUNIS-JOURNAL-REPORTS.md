@@ -39,15 +39,30 @@ one masked family or child is not.
 | History rewrite of the unpushed range before any push (see memory: open items 19 Oct) | waiting for the other agents to pause |
 | The **journal data page**: grain, sources, the redaction rule, what it cannot show | not started |
 
-**Settle before any report** (each changes figures in several reports):
-- **Payroll grain.** Are `PRJ` lines one per pay run or one per person? Either way, payroll
-  dollars are not staff (rule 7). If per person, the masking rule decides what may be shown.
+**Settle before any report** (each changes figures in several reports). SETTLED 19 October
+2026, each by measurement; `journal.py` and `/analysis/school-journal` carry the answers:
+- **Payroll grain: one line per ACCOUNT per pay run, never per person.** All 9,564 `PRJ`/`PRH`
+  lines have an empty vendor and invoice and a `WARRANT=<n>P<yy>` description, and no account
+  carries two `PRJ` lines in one journal. 35, 33, 31 and 36 pay runs posted FY2023-FY2026.
+  So there is no person to mask, and payroll dollars are still not staff (rule 7).
+  `journal.PAYROLL_GRAIN`.
 - **The FY2026 close** is not posted in this run (encumbrances still open). Every FY26 figure
-  that depends on it says so.
-- **Open FY26 purchase orders**: the handoff says $246,767, `fy26-school-surplus.md` says
-  $236,767. They differ by exactly $10,000. Settle from the data.
-- **Org 13012, School Non-Recurring**: in the journal, missing from the period-13
-  spreadsheets. Does it belong in the general-fund surplus?
+  that depends on it says so (`journal.OPEN_FY`).
+- **Open FY26 purchase orders: both figures are right, for different scopes.** The journal's
+  general fund holds $246,766.94 open in 28 accounts; $10,000.00 of it is one account in
+  department 301 (org 13012, CURRICULUM ADOPTION). Department 300 alone, the scope of the
+  period-13 spreadsheets, holds $236,766.94 in 27 accounts. Not a typo.
+- **Org 13012 belongs in the school general fund, as the district states its own budget.**
+  Department 301's FY2026 original budget is $40,000, and department 300's is $26,247,474;
+  together they are $26,287,474, which is exactly the district's own printed "Total FY26
+  Budget" (LPS FY2027-2029 projections deck, slide 38, `fincom-presentation-tables.csv`; and
+  "TOTAL ACTUALS & BUDGET" in the FY27 proposed budget document). The School Committee voted a
+  $4,222.59 line-item transfer out of "the curriculum adoption line" on 17 September 2025
+  (`board-transfers.csv`), and the journal posts it on 13012 (`BUA`, PER MEMO 09/18/25). At
+  the run, 13012 had revised $35,777.41, actual $43,639.08, encumbered $10,000.00, available
+  -$17,861.67. So the FY26 surplus including it is $482,118.07 - $17,861.67 = $464,256.40
+  (before the close). Hub B decides how to show it; `fy26-school-surplus` (dept 300 only) is
+  correct for its stated scope and should say that 13012 is outside it.
 
 ## The hubs
 
@@ -157,7 +172,9 @@ follow.
 5. **Hub D**, funds.
 6. **Hub E** topics.
 
-**Shared code, built once** (memory: *no corner cutting*): `scripts/journal.py`, holding:
+**Shared code, built once** (memory: *no corner cutting*): `scripts/journal.py` (BUILT
+19 October 2026; the extractor now imports `COLUMN_OF` and `SPED_ACCOUNTS` from it, and its
+`--check` still reproduces the published CSVs byte for byte), holding:
 - the journal loader;
 - the source-code classes (actual, encumbrance, budget, reclass);
 - the fund and object rollups;
@@ -186,9 +203,9 @@ plus minutes) → `built` → `deployed`.
 | hub | id | state | commit | note |
 |---|---|---|---|---|
 | 0 | gate (Phase 0) | data published `2ee126b2f` | | history rewrite + data page left |
-| 0 | journal data page | not started | | |
-| A | sped-all-funds | not started | | builds the fund rollup |
-| A | sped-providers | not started | | |
+| 0 | journal data page | generator | | `/analysis/school-journal`, UNLISTED; `build_school_journal.py --check`; awaiting TJ |
+| A | sped-all-funds | verified | | `build_journal_sped_topics.py`; `verify_journal_sped_topics.py`; persona/minutes review and TJ next |
+| A | sped-providers | verified | | same generator and verifier; minutes: FLLAC never named in minutes or captions searched |
 | A | sped-cost-growth | not started | | |
 | A | sped-fund-shifts | not started | | |
 | A | sped-contracted-services | not started | | |

@@ -27,7 +27,8 @@ listed on another shelf keeps that one address.
 
 # ONE FILE PER CATEGORY, in scripts/topic_registry/. Each defines CATEGORY (id, shelf,
 # title, area, order, full_report, groups, optional elsewhere, optional start), GENERATOR (the script that
-# writes its pages) and TOPICS ({id: title}) for the topics it is HOME to. A group may list
+# writes its pages), optional TOPIC_GENERATORS ({id: script} for a topic another script
+# writes) and TOPICS ({id: title}) for the topics it is HOME to. A group may list
 # a topic another category is home to: that is how one page sits on two shelves.
 #
 # Split from one list on 12 October 2026 so several authors -- people or agents -- can each
@@ -50,8 +51,12 @@ for _m in sorted(_pk.iter_modules(_reg.__path__), key=lambda m: m.name):
     for _tid, _title in _mod.TOPICS.items():
         if _tid in TOPICS:
             raise SystemExit('topic %r is registered by two categories' % _tid)
-        # id -> (title, home category, generator that writes its payload)
-        TOPICS[_tid] = (_title, _mod.CATEGORY['id'], _mod.GENERATOR)
+        # id -> (title, home category, generator that writes its payload). A category's
+        # topics are written by its GENERATOR unless `TOPIC_GENERATORS` names another script
+        # for one of them -- a shelf can gain pages built from a different source without its
+        # first generator having to read that source.
+        TOPICS[_tid] = (_title, _mod.CATEGORY['id'],
+                        getattr(_mod, 'TOPIC_GENERATORS', {}).get(_tid, _mod.GENERATOR))
 CATEGORIES.sort(key=lambda c: (c.get('order', 99), c['id']))
 HUB_GENERATOR = {c['id']: _il.import_module('topic_registry.' + c['id'].replace('-', '_')).GENERATOR
                  for c in CATEGORIES}

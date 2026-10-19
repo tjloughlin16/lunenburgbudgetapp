@@ -1,0 +1,128 @@
+{
+ "conclusions": [
+  {
+   "basis": "munis-school-journal.csv against munis-school-journal-accounts.csv; the extractor also ties every printed TOTAL line and the GRAND TOTAL.",
+   "bearing": "sizes",
+   "claim": "All 3,356 school accounts add up, to the cent, to what the Town’s report prints.",
+   "detail": "For FY2026, every account’s lines, grouped by the column they post to, equal the original budget, transfers, actual and encumbrances the report prints for it. Recomputed here from the two public files alone.",
+   "figure": "n",
+   "figures": {
+    "n": {
+     "text": "3,356",
+     "unit": "accounts",
+     "value": 3356
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "id": "every-account-ties-to-the-printed-report",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That the earlier years tie account by account: the report prints figures for the last year only, and earlier years are tied to the Town’s period-13 spreadsheets for the accounts both hold.",
+   "see": [],
+   "so_what": "A sum of these lines is the Town’s own figure, not our estimate of it."
+  },
+  {
+   "basis": "the `vendor` and `masked` columns of munis-school-journal.csv.",
+   "bearing": "sizes",
+   "claim": "358 of 32,568 payee lines are masked; the other payees, 1,298 of them, are named.",
+   "detail": "A masked payee is a family or a child, hidden by the Town’s redaction or by ours. Providers, vendors, and staff named in their role are kept.",
+   "figure": "m",
+   "figures": {
+    "m": {
+     "text": "358",
+     "unit": "lines",
+     "value": 358
+    },
+    "p": {
+     "text": "1,298",
+     "unit": "payees",
+     "value": 1298
+    },
+    "v": {
+     "text": "32,568",
+     "unit": "lines",
+     "value": 32568
+    }
+   },
+   "id": "providers-named-families-masked",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether a masked line is one family or several: a masked payee loses its vendor number, on purpose, so masked payees cannot be counted.",
+   "see": [],
+   "so_what": "Who the schools paid can be followed. Who received a service cannot."
+  }
+ ],
+ "files": [
+  {
+   "bytes": 12622710,
+   "name": "munis-school-journal.csv",
+   "sha256": "b8303a62d2e45fd5a5bd02ef3a24a82af793381821baccc2ec0389e8c982dde4",
+   "url": "/docs/data/munis-school-journal.csv",
+   "what": "every journal line"
+  },
+  {
+   "bytes": 558146,
+   "name": "munis-school-journal-accounts.csv",
+   "sha256": "b5974c6932cf4b851dedc65f5fc8d039133fa0164246aca723fe1946093ad21a",
+   "url": "/docs/data/munis-school-journal-accounts.csv",
+   "what": "every account, with the FY2026 figures the report prints"
+  },
+  {
+   "bytes": 15878,
+   "name": "munis-school-journal-image-pages.csv",
+   "sha256": "7c6481e8243770f350452d1ec1a1a7b6e21b1062720a6133bc2d76c1061245cd",
+   "url": "/docs/data/munis-school-journal-image-pages.csv",
+   "what": "the lines of the three picture-only pages, read by eye and redacted by the same rule"
+  }
+ ],
+ "grain": "One row per journal line: a single posting to one school account, in any fund, with its date, source code, payee and description. A payroll line is one account’s share of one pay run, not a person.",
+ "id": "school-journal",
+ "not_established": [
+  "The FY2026 close: encumbrances were still open when the report was run, so every FY2026 figure can still move.",
+  "What anything costs in full. A line is a posting to a school account; benefits and costs charged to other accounts are not in it.",
+  "Who was paid on a pay run. Payroll lines carry no person.",
+  "Who received a service. Families and children are masked and cannot be counted.",
+  "Earlier years account by account against the report itself: it prints figures for FY2026 only."
+ ],
+ "sources": [
+  {
+   "what": "How the journal reached us, and what the Town redacted",
+   "where": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md"
+  },
+  {
+   "what": "The decision to publish our redacted reading, not the raw",
+   "where": "/docs/data/redactions.csv"
+  },
+  {
+   "what": "The reading and the redaction rule, in full",
+   "where": "scripts/extract_munis_school_journal.py (its header)"
+  },
+  {
+   "what": "The definitions every journal report shares",
+   "where": "scripts/journal.py"
+  }
+ ],
+ "stats": [
+  {
+   "label": "journal lines, FY2023 to FY2026",
+   "value": "49,043"
+  },
+  {
+   "label": "school accounts, in 368 funds",
+   "value": "3,356"
+  },
+  {
+   "label": "payees named",
+   "value": "1,298"
+  },
+  {
+   "label": "payee lines masked (families, children)",
+   "value": "358"
+  }
+ ],
+ "title": "The school journal"
+}

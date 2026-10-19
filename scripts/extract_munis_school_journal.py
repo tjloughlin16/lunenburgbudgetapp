@@ -210,10 +210,9 @@ X0, PITCH = 50.4, 4.8205
 MASK = '[redacted]'
 INDIVIDUAL = 'individual (redacted)'
 
-# Which journal source posts to which printed column -- proven by tie 1, not assumed.
-COLUMN_OF = {'BUC': 'original_budget', 'BUA': 'transfer'}
-COLUMN_OF.update({s: 'actual' for s in ('API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP')})
-COLUMN_OF.update({s: 'encumbrance' for s in ('POE', 'POL', 'POM', 'SOY', 'YEC', 'GEL')})
+# Which journal source posts to which printed column -- proven by tie 1, not assumed. Defined
+# ONCE, in scripts/journal.py, which every report on this journal reads too.
+from journal import COLUMN_OF  # noqa: E402
 
 J = re.compile(r'^  (\d{4})/(\d\d)/(\d{6}) (\d\d)/(\d\d)/(\d{4}) ([A-Z]{3}) ')
 AMOUNT = re.compile(r'^.{31}\s*(-?[\d,]*\.\d\d) ')
@@ -836,9 +835,10 @@ STAFF_WORDING = re.compile(r"\bSTAFF\b", re.I)
 # circuit breaker fund, SPED grants such as IDEA/240 and 262, tuition, placement and
 # out-of-district, and the student-service accounts), or its text names a special education
 # service (`SPED_TEXT`). Only transportation: refunds, NSF, lunch and fees are unchanged.
-SPED_ACCOUNTS = re.compile(r"SPED|SPEC(?:IAL)?\.? ED|CIRCUIT BREAKER|\bIDEA\b|\b240\b|\b262\b"
-                           r"|TUITION|\bPLACEM|\bOOD\b|OUT OF DIST|RELATED SERVICES|EVALUATION"
-                           r"|TUTOR|THERAP|PSYCH|COLLABORATIVE", re.I)
+# THE special education account list is defined ONCE, in scripts/journal.py, and imported: the
+# accounts every special education report counts are exactly the accounts whose families this
+# redaction masks.
+from journal import SPED_ACCOUNTS  # noqa: E402
 SPED_TEXT = re.compile(r"\bSPED\b|SPECIAL ED|\bIEP\b|\bOOD\b|OUT OF DIST|\bPLACEM|TUITION"
                        r"|\bACE\b|KEYSTONE|COLLAB", re.I)
 # A line about transporting a child, or about money families pay in, says nothing on its own
