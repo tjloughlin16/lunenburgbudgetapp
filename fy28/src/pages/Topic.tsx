@@ -125,22 +125,22 @@ function Sources({ sources }: { sources: { label: string; href: string }[] }) {
   )
 }
 
-/** START HERE: the one to three pages on a shelf that most directly answer it, called out
- *  under the hub's answer, before the chart. TJ, 19 October 2026: "we need a section that
- *  specifically calls out the most insightful pages for the hub." The same TopicLink shape
- *  at the hub card's 4px rule, so it reads as the shelf's lead page, not a new kind of
- *  thing. The pages stay in their groups below as well. */
+/** START HERE: the one to three pages on a shelf that most directly answer it -- the FIRST
+ *  group of the hub's topic list, above the registry's own groups. TJ, 19 October 2026: "we
+ *  need a section that specifically calls out the most insightful pages for the hub", and
+ *  then, when it was drawn under the answer: "this is intended to be the top section of the
+ *  reports for the hub ... it should go before 'side by side'". The same TopicLink shape at
+ *  a 4px rule, so it reads as the shelf's lead pages. They stay in their groups as well. */
 function StartHere({ ix, cat }: { ix: Index; cat: IndexCategory }) {
   const ts = (cat.start ?? []).map(id => ix.topics[id]).filter(t => t?.ready)
   if (!ts.length) return null
   return (
-    <section className="mt-6 max-w-3xl rounded-lg px-4 py-3"
-      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+    <div className="mb-6">
       <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Start here</h2>
-      <ul className="mt-2 space-y-3">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
         {ts.map(t => <li key={t.id} className="[&>a]:border-l-4"><TopicLink t={t} /></li>)}
       </ul>
-    </section>
+    </div>
   )
 }
 
@@ -150,6 +150,7 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
   const shelfOf = (id: string) => ix.categories.find(c => c.id === id)?.shelf
   return (
     <section className="mt-10 max-w-3xl" id="topics">
+      <StartHere ix={ix} cat={cat} />
       {cat.groups.map((g, gi) => (
         <div key={gi} className={gi ? 'mt-6' : undefined}>
           <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
@@ -241,8 +242,6 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       {p && ix && p.kind === 'hub' ? (
         <>
           <p className="text-[19px] leading-snug font-semibold mt-6 max-w-3xl">{p.answer.text}</p>
-          {ix.categories.find(c => c.id === p.id)
-            ? <StartHere ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           <p className="text-[13px] mt-2"><a href="#topics" className="underline" style={link}>
             Go straight to the topics &darr;</a></p>
           <TopicChart chart={p.chart} alt={title} />
