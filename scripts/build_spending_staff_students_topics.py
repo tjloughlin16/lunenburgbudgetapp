@@ -1557,13 +1557,14 @@ def build():
                          note='Each contract’s %s salary schedule, master’s lane, highest step '
                               'printed. %s’s lane also takes a bachelor’s plus credits.'
                               % (C.fy(sfy), snm(monty)), note_figures=sy_),
-        also=[TP.series('Starting and top pay by district', [snm(d) for d in
-                        [LEA_NAME] + [d for d in held if d != LEA_NAME]], [
-                  TP.track(name, [SC6[d][k] for d in [LEA_NAME] + [d for d in held
-                                                                    if d != LEA_NAME]],
+        # GROUPED BY PAY POINT, one coloured bar per district inside each group, Lunenburg
+        # first (TJ, 19 October 2026: "put the same category in a group per town (colored) vs
+        # per step. its hard to compare towns the way we have it").
+        also=[TP.series('Starting and top pay by district',
+                        ['Bachelor’s, step 1', 'Bachelor’s, top', 'Master’s, step 1', 'Master’s, top'], [
+                  TP.track(snm(d), [SC6[d][k] for k in ('ba1', 'batop', 'ma1', 'matop')],
                            'published', 'bar')
-                  for name, k in (('Bachelor’s, step 1', 'ba1'), ('Bachelor’s, top', 'batop'),
-                                  ('Master’s, step 1', 'ma1'), ('Master’s, top', 'matop'))],
+                  for d in [LEA_NAME] + [d for d in held if d != LEA_NAME]],
                   '$', kind='bar',
                   note='%s salary schedules, lanes aligned by us. Longevity, paid outside the '
                        'grid, is not in these.' % C.fy(sfy), note_figures=sy_,
