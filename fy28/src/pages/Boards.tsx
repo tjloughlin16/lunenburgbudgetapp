@@ -9,7 +9,7 @@ import { TransfersLink } from './BoardTransfers'
 import { useOrgCharts } from '../lib/orgChartLink'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, splitMeetings, meetingTitle, meetingBody } from '../lib/meetings'
+import { daysAway as daysFromToday, splitMeetings, meetingTitle, meetingBody, todayIso } from '../lib/meetings'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -54,6 +54,17 @@ type Meeting = {
   attend?: string | null; important?: unknown
   items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null
 }
+/* THE LIKELY NEXT MEETING -- OUR ESTIMATE, from scripts/meeting_cadence.py by way of
+ * build_boards.py. A rhythm read off the dates the board has met, backtested over the last
+ * year; `show` is true only where that backtest cleared a threshold WE chose. `dates` are
+ * the next few rule dates after the build, so the page can roll forward past one that has
+ * gone by without a rebuild. */
+type LikelyNext = {
+  show: boolean; reason: string | null; rule: string | null; weekday?: string; time?: string | null
+  dates: string[]; explained?: number; of?: number; last_met?: string | null; as_of: string
+  backtest: { made: number; exact: number; week: number }
+  threshold: { min_predictions: number; min_exact_share: number }
+}
 type Score = { fy: number; minutes: { meetings: number; have: number }; recordings: { meetings: number; have: number } }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string | null; video_url: string | null
   source: 'minutes' | 'recording' | 'both'; quote?: string | null; conflict?: string | null; minutes_doc?: string | null; minutes_url?: string | null }
@@ -75,6 +86,7 @@ type Board = {
     filed: number; said_none: number; of_years: number
     first: string; last: string; years_filed: string[]; years_said_none: string[]
   } | null
+  likely_next?: LikelyNext | null
   join?: { weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string; open_seats_filled_by?: string } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
   meetings: Meeting[]; votes: Vote[]
@@ -119,7 +131,11 @@ function Index({ d }: { d: Payload }) {
       <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>{b.name} &rarr;</p>
       <p className="text-xs mt-1.5 tnum" style={{ color: 'var(--text-secondary)' }}>
         {splitMeetings(b.meetings).upcoming[0]
-          ? <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>next {mmdd(splitMeetings(b.meetings).upcoming[0].date)} · </span> : null}
+          ? <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>next {mmdd(splitMeetings(b.meetings).upcoming[0].date)} · </span>
+          : likelyDate(b, [])
+            /* OUR ESTIMATE, never in the posted meeting's voice: the amber underline and the
+               word "likely", and the tag says whose guess it is. */
+            ? <span style={{ color: 'var(--text-primary)' }}><span style={{ borderBottom: '2px solid var(--status-warning)' }}>likely {mmdd(likelyDate(b, [])!)}</span> <span style={kicker}>(our estimate)</span> · </span> : null}
         {n0(b.counts.agendas)} agendas · {n0(b.counts.minutes)} minutes · {n0(b.counts.recordings)} recordings{b.counts.our_minutes ? ` · ${n0(b.counts.our_minutes)} of ours, ${n0(b.counts.votes)} votes` : ''}
       </p>
     </a>
@@ -246,6 +262,46 @@ function SeatBanner({ b }: { b: Board }) {
           : 'This is an appointed seat — filled by the Select Board.'} See every open seat in town →
       </p>
     </a>
+  )
+}
+
+/** THE ESTIMATE, OR NOTHING. A posting always wins: any meeting on the calendar for today
+ *  or later and there is no estimate at all (rule 3 -- our guess never sits where the
+ *  town's notice should). Otherwise the first rule date still to come on the READER'S
+ *  clock, so a static page built days ago rolls forward rather than naming a date gone by. */
+/** "the 1st and 3rd Wednesday of the month", but "every other Monday" -- no article. */
+const ruleText = (r: string | null) => !r ? '' : r.startsWith('every') ? r : `the ${r}`
+
+function likelyDate(b: Board, upcoming: Meeting[]): string | null {
+  const l = b.likely_next
+  if (upcoming.length || !l?.show) return null
+  const today = todayIso()
+  return l.dates.find(x => x >= today) ?? null
+}
+
+/** LIKELY NEXT MEETING -- styled as every estimate on this site is: the amber edge and the
+ *  "our estimate" tag (report.tsx's Maybe and the ladder's estimate tile). The metric is
+ *  the date; one line for the rhythm; one for how often it has been right. The method sits
+ *  in the expansion (rule 7b). */
+function LikelyCard({ b, date }: { b: Board; date: string }) {
+  const l = b.likely_next!
+  const bt = l.backtest
+  const pctT = Math.round(l.threshold.min_exact_share * 100)
+  const away = daysFromToday(date)
+  return (
+    <div className="card p-4" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+      <Kicker>Likely next meeting &middot; our estimate</Kicker>
+      <p className="text-[17px] font-bold leading-snug mt-1">{dateText(date)}{l.time ? <span className="font-normal">, usually {l.time}</span> : null}
+        <span className="text-[12.5px] font-normal ml-2" style={kicker}>{away === 0 ? 'today' : away === 1 ? 'tomorrow' : `in ${away} days`}</span></p>
+      <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>It usually meets {l.rule?.startsWith('every') ? '' : 'on '}{ruleText(l.rule)}. Nothing is posted yet.</p>
+      <p className="text-[13px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>This guess would have been right {bt.exact} of {bt.made} times over the last year.</p>
+      <details className="mt-2 text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
+        <summary className="cursor-pointer" style={kicker}>How this is worked out</summary>
+        <p className="mt-1.5">Read off the dates this board has met, not from anything it published. {l.explained} of its {l.of} meetings in the year to {l.as_of} fell on that pattern{l.last_met ? `; the last was ${dateText(l.last_met)}` : ''}.</p>
+        <p className="mt-1.5">The test: after each meeting in the last year we named the next date from what was known that day. The board met on the date named {bt.exact} of {bt.made} times, and its actual next meeting came within a week of it {bt.week} times.</p>
+        <p className="mt-1.5">We show an estimate only when both are at least {pctT}% over at least {l.threshold.min_predictions} tries, and the board has met recently. That threshold is our choice, not a rule anybody published. A posted agenda always replaces this card; the Open Meeting Law requires notice 48 hours ahead, not counting weekends and holidays. Worked out as of {l.as_of}.</p>
+      </details>
+    </div>
   )
 }
 
@@ -480,6 +536,7 @@ function OverviewTab({ b, upcoming, past }: { b: Board; upcoming: Meeting[]; pas
         <div className="space-y-3">
           <SeatBanner b={b} />
           <JoinCard b={b} next={upcoming[0]} />
+          {likelyDate(b, upcoming) && <LikelyCard b={b} date={likelyDate(b, upcoming)!} />}
           {upcoming.length > 1 && <More href={`/boards/${b.slug}/meetings`}>{upcoming.length - 1} more coming up</More>}
         </div>
         <RecordCard b={b} />
@@ -521,7 +578,14 @@ function MeetingsTab({ b, d, upcoming, past }: { b: Board; d: Payload; upcoming:
     <>
       <H2 id="up">Coming up</H2>
       {upcoming.length === 0
-        ? <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>Nothing on the calendar for a future date. The site was last updated {d.as_of}; a meeting noticed since then appears when it is next built.</p>
+        ? <>
+            <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>Nothing on the calendar for a future date. The site was last updated {d.as_of}; a meeting noticed since then appears when it is next built.</p>
+            {likelyDate(b, upcoming)
+              ? <div className="mt-3 max-w-xl"><LikelyCard b={b} date={likelyDate(b, upcoming)!} /></div>
+              : b.likely_next && !b.likely_next.show && b.likely_next.backtest.made > 0
+                ? <p className="text-xs mt-1" style={kicker}>No estimate of the next date: {b.likely_next.reason}{b.likely_next.rule ? ` (its closest pattern, ${ruleText(b.likely_next.rule)}, would have been right ${b.likely_next.backtest.exact} of ${b.likely_next.backtest.made} times over the last year)` : ''}.</p>
+                : null}
+          </>
         : upcoming.map(u => <UpcomingCard key={u.date} b={b} u={u} />)}
       <H2 id="recent">Every meeting, newest first</H2>
       {past.length ? <RecentTable rows={past} board={b.name} /> : <Body>No meetings on the record yet.</Body>}

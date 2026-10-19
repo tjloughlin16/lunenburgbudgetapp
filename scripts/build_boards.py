@@ -37,6 +37,9 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import merge_recording_minutes as MRG  # noqa: E402
 from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
 import meeting_records as MR   # noqa: E402
+# THE LIKELY NEXT MEETING -- a rhythm read off the register's dates, backtested, and shown
+# only where the backtest clears OUR threshold. An estimate, labelled as one on the page.
+import meeting_cadence as MC   # noqa: E402
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
 TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
@@ -132,6 +135,39 @@ def annual_report_filing():
 FILING = annual_report_filing()
 
 
+def agenda_head(slug, agenda):
+    """The first 2,500 characters of an agenda's extracted text, or None."""
+    txt_path = os.path.join(TEXT, slug, os.path.splitext(os.path.basename(agenda.get('path') or ''))[0] + '.txt')
+    if not os.path.exists(txt_path):
+        return None
+    return open(txt_path, encoding='utf-8', errors='replace').read()[:2500]
+
+
+def time_in(head):
+    """The first clock time an agenda's head states, as '7:00 pm', or None."""
+    for m in TIME_RE.finditer(head):
+        hh = int(m.group(1)); mm = m.group(2) or '00'
+        if 1 <= hh <= 12 and int(mm) < 60:
+            return '%d:%s %sm' % (hh, mm, m.group(3).lower())
+    return None
+
+
+def rhythm_time(slug, docs, on_rule):
+    """The commonest time stated on the agendas of the board's recent ON-RULE meetings --
+    the time of the rhythm the estimate names, not of whatever met last. None when no such
+    agenda states one; the page then shows no time rather than borrowing another."""
+    times = collections.Counter()
+    for d in reversed(on_rule):
+        a = docs.get(d, {}).get('agenda')
+        head = a and agenda_head(slug, a)
+        t = head and time_in(head)
+        if t:
+            times[t] += 1
+        if sum(times.values()) >= 6:
+            break
+    return times.most_common(1)[0][0] if times else None
+
+
 def how_to_join(slug, docs, as_of):
     """WHAT A PERSON NEEDS TO JOIN LIVE, read off the last few agendas rather than the
     board's boilerplate. TJ, 17 September 2026: "if someone wants to join live, what
@@ -146,17 +182,13 @@ def how_to_join(slug, docs, as_of):
     times, places, zoom, cable = collections.Counter(), collections.Counter(), False, False
     read = 0
     for d in dates:
-        a = docs[d]['agenda']
-        txt_path = os.path.join(TEXT, slug, os.path.splitext(os.path.basename(a.get('path') or ''))[0] + '.txt')
-        if not os.path.exists(txt_path):
+        head = agenda_head(slug, docs[d]['agenda'])
+        if head is None:
             continue
-        head = open(txt_path, encoding='utf-8', errors='replace').read()[:2500]
         read += 1
-        for m in TIME_RE.finditer(head):
-            hh = int(m.group(1)); mm = m.group(2) or '00'
-            if 1 <= hh <= 12 and int(mm) < 60:
-                times['%d:%s %sm' % (hh, mm, m.group(3).lower())] += 1
-                break
+        t = time_in(head)
+        if t:
+            times[t] += 1
         pm = LOCATION_RE.search(head) or PLACE_RE.search(head)
         if pm:
             place = pm.group(1) if pm.re is LOCATION_RE else pm.group(0)
@@ -427,6 +459,7 @@ def build(as_of=None):
         reg[(r['board_slug'], r['date'])] = r
         reg_dates[r['board_slug']].add(r['date'])
         names.setdefault(r['board_slug'], r.get('board') or r['board_slug'])
+    cadence_dates = MC.board_dates(reg.values())
     if not reg:
         raise SystemExit('meeting-register.csv is empty or unreadable, and every board page '
                          'now draws its meeting dates from it. Run '
@@ -657,8 +690,17 @@ def build(as_of=None):
             join['open_seats'] = OPEN[0].get(slug, 0)
             join['open_seats_fy'] = OPEN[1]
             join['open_seats_filled_by'] = OPEN[2].get(slug, '')
+        # LIKELY NEXT MEETING (TJ, 19 October 2026). Computed against the BUILD date; the
+        # page takes the first of `dates` still to come on the reader's clock, and shows it
+        # only when `show` is true AND nothing is posted for a future date -- a posting
+        # always wins. A body called per matter (a public hearing) gets no estimate.
+        likely = None
+        if not MC.not_a_rhythm(slug) and cadence_dates.get(slug):
+            likely = MC.likely_next(cadence_dates[slug], as_of)
+            likely['time'] = rhythm_time(slug, docs[slug], likely.pop('on_rule', []))
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
+            likely_next=likely,
             finance=finance_counts().get(slug),
             people=people_charts().get(slug),
             annual_report=FILING.get(slug),
