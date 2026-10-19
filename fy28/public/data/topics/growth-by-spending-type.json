@@ -1,0 +1,683 @@
+{
+ "category": "school-spending-history",
+ "chart": {
+  "basis": "published",
+  "decimals": 1,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "a": {
+     "text": "FY2009",
+     "unit": "fiscal year",
+     "value": 2009
+    },
+    "b": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "FY2009 to FY2025, DESE’s spending by function, all funds. Above zero grew faster than the total; below zero, slower."
+  },
+  "rows": [
+   {
+    "label": "Insurance, retirement, other",
+    "texts": [
+     "2.8 points"
+    ],
+    "total": "2.8 points",
+    "value": 2.833726475300372
+   },
+   {
+    "label": "Paras, therapists, substitutes",
+    "texts": [
+     "1.9 points"
+    ],
+    "total": "1.9 points",
+    "value": 1.9058971714772692
+   },
+   {
+    "label": "Buses, food, nurses, athletics",
+    "texts": [
+     "0.8 points"
+    ],
+    "total": "0.8 points",
+    "value": 0.7721395917857539
+   },
+   {
+    "label": "Guidance and testing",
+    "texts": [
+     "0.7 points"
+    ],
+    "total": "0.7 points",
+    "value": 0.6847510640053827
+   },
+   {
+    "label": "Out-of-district tuition",
+    "texts": [
+     "0.5 points"
+    ],
+    "total": "0.5 points",
+    "value": 0.502620310283036
+   },
+   {
+    "label": "Central administration",
+    "texts": [
+     "0.0 points"
+    ],
+    "total": "0.0 points",
+    "value": 0.04388242321310587
+   },
+   {
+    "label": "Books, supplies, technology",
+    "texts": [
+     "0.0 points"
+    ],
+    "total": "0.0 points",
+    "value": 0.039164121504184246
+   },
+   {
+    "label": "Out-of-district transport",
+    "texts": [
+     "-0.2 points"
+    ],
+    "total": "-0.2 points",
+    "value": -0.1983831673916669
+   },
+   {
+    "label": "Professional development",
+    "texts": [
+     "-0.5 points"
+    ],
+    "total": "-0.5 points",
+    "value": -0.5189190301203215
+   },
+   {
+    "label": "Principals and curriculum leads",
+    "texts": [
+     "-1.1 points"
+    ],
+    "total": "-1.1 points",
+    "value": -1.0944884567359434
+   },
+   {
+    "label": "Buildings and upkeep",
+    "texts": [
+     "-1.3 points"
+    ],
+    "total": "-1.3 points",
+    "value": -1.2999225417600773
+   },
+   {
+    "label": "Teachers",
+    "texts": [
+     "-3.7 points"
+    ],
+    "total": "-3.7 points",
+    "value": -3.6704679615610942
+   }
+  ],
+  "stack": null,
+  "title": "Change in share of school spending",
+  "type": "ranking",
+  "unit": "points"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$2,887,749",
+     "unit": "",
+     "value": 2887749.0
+    },
+    "b": {
+     "text": "39%",
+     "unit": "",
+     "value": 39.393486741193406
+    },
+    "c": {
+     "text": "54%",
+     "unit": "",
+     "value": 54.430435205844475
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tchr",
+    "tot0",
+    "tot1"
+   ],
+   "text": "Teachers added the most dollars, $2,887,749, but grew 39%; the total grew 54%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "83%",
+     "unit": "",
+     "value": 83.15024384745419
+    },
+    "b": {
+     "text": "96%",
+     "unit": "",
+     "value": 95.67970805055678
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bene",
+    "ins"
+   ],
+   "text": "Insurance and retirement grew 83%; insurance for active staff alone grew 96%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "89%",
+     "unit": "",
+     "value": 88.6673744971662
+    },
+    "b": {
+     "text": "91%",
+     "unit": "",
+     "value": 91.47827998212819
+    },
+    "c": {
+     "text": "50%",
+     "unit": "",
+     "value": 49.84309238479502
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "More paraprofessional and support FTE in the state’s staffing counts fits the direction; nothing here ties a dollar to a post."
+    }
+   ],
+   "rests_on": [
+    "tser",
+    "guid",
+    "pdev"
+   ],
+   "text": "Paras, therapists and substitutes grew 89% and guidance 91%; training fell 50%."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "37.7%",
+     "unit": "",
+     "value": 37.69594383099067
+    },
+    "b": {
+     "text": "34.0%",
+     "unit": "",
+     "value": 34.02547586942958
+    },
+    "c": {
+     "text": "15.2%",
+     "unit": "",
+     "value": 15.237344311582168
+    },
+    "d": {
+     "text": "18.1%",
+     "unit": "",
+     "value": 18.07107078688254
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "All funds: a line can rise because a grant moved onto it, not only because the town spent more. DESE renumbered some codes over these years, so compare categories, not single codes."
+    }
+   ],
+   "rests_on": [
+    "tchr-sh",
+    "bene-sh",
+    "posts"
+   ],
+   "text": "Teachers went from 37.7% of spending to 34.0%; insurance and retirement from 15.2% to 18.1%."
+  }
+ ],
+ "facts": [
+  {
+   "id": "tot0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "school spending, all funds, FY2009"
+   },
+   "value": {
+    "text": "$19,446,453",
+    "unit": "",
+    "value": 19446453.0
+   }
+  },
+  {
+   "id": "tot1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "school spending, all funds, FY2025"
+   },
+   "value": {
+    "text": "$30,031,242",
+    "unit": "",
+    "value": 30031242.0
+   }
+  },
+  {
+   "id": "totr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     },
+     "b": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the total after prices, FY2009 to FY2025"
+   },
+   "value": {
+    "text": "+6.1%",
+    "unit": "",
+    "value": 6.089678283952993
+   }
+  },
+  {
+   "id": "tchr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     },
+     "b": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "teachers, FY2009 to FY2025, as printed"
+   },
+   "value": {
+    "text": "+39.4%",
+    "unit": "",
+    "value": 39.393486741193406
+   }
+  },
+  {
+   "id": "bene",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "insurance, retirement and other, as printed"
+   },
+   "value": {
+    "text": "+83.2%",
+    "unit": "",
+    "value": 83.15024384745419
+   }
+  },
+  {
+   "id": "ins",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "insurance for active employees, as printed"
+   },
+   "value": {
+    "text": "+95.7%",
+    "unit": "",
+    "value": 95.67970805055678
+   }
+  },
+  {
+   "id": "tser",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paras, therapists and substitutes, as printed"
+   },
+   "value": {
+    "text": "+88.7%",
+    "unit": "",
+    "value": 88.6673744971662
+   }
+  },
+  {
+   "id": "guid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "guidance, counselling and testing, as printed"
+   },
+   "value": {
+    "text": "+91.5%",
+    "unit": "",
+    "value": 91.47827998212819
+   }
+  },
+  {
+   "id": "pdev",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "professional development, as printed"
+   },
+   "value": {
+    "text": "-49.8%",
+    "unit": "",
+    "value": -49.84309238479502
+   }
+  },
+  {
+   "id": "tchr-sh",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "teachers’ share of all school spending"
+   },
+   "value": {
+    "text": "-3.7 points",
+    "unit": "points",
+    "value": -3.6704679615610942
+   }
+  },
+  {
+   "id": "bene-sh",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "insurance and retirement’s share"
+   },
+   "value": {
+    "text": "+2.8 points",
+    "unit": "points",
+    "value": 2.833726475300372
+   }
+  },
+  {
+   "closes": "the district’s position control report: each post with its FTE, funding source and whether it was filled",
+   "id": "posts",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which posts were filled, and which fund paid"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "83%",
+    "unit": "",
+    "value": 83.15024384745419
+   },
+   "b": {
+    "text": "89%",
+    "unit": "",
+    "value": 88.6673744971662
+   },
+   "c": {
+    "text": "39%",
+    "unit": "",
+    "value": 39.393486741193406
+   },
+   "d": {
+    "text": "54%",
+    "unit": "",
+    "value": 54.430435205844475
+   },
+   "y": {
+    "text": "FY2009",
+    "unit": "fiscal year",
+    "value": 2009
+   },
+   "z": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "FY2009 to FY2025: insurance and retirement grew 83% and paras and therapists 89%; teachers 39%, the total 54%."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "growth-by-spending-type",
+ "kind": "topic",
+ "path": "/school-spending-history/growth-by-spending-type",
+ "said": [],
+ "shelves": [
+  "school-spending-history"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
+   "label": "Massachusetts DESE, district expenditures by function code — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/data/dese-function-expenditure.csv",
+   "label": "Lunenburg Budget Project — dese-function-expenditure.csv (spending by function code, by year)"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-1990-1999.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2000-2009.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2000-2009.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2010-2019.json"
+  },
+  {
+   "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
+   "label": "US Bureau of Labor Statistics, CPI-U Boston-Cambridge-Newton — cpi-u-CUURS11ASA0-2020-2026.json"
+  },
+  {
+   "href": "/docs/federal-bls/PROVENANCE.md",
+   "label": "Lunenburg Budget Project — PROVENANCE.md (where the price index came from, and the fiscal-year average)"
+  }
+ ],
+ "table": {
+  "caption": "School spending by type",
+  "views": [
+   {
+    "columns": [
+     "FY2009",
+     "FY2025",
+     "Change",
+     "Share FY2009",
+     "Share FY2025"
+    ],
+    "key": "types",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By type",
+    "note": "DESE’s figures as printed, general fund plus grants and revolving funds. The code in brackets is DESE’s category.",
+    "rows": [
+     {
+      "cells": [
+       "$2,963,123",
+       "$5,426,967",
+       "+83%",
+       "15.2%",
+       "18.1%"
+      ],
+      "label": "Insurance, retirement, other (BENE)"
+     },
+     {
+      "cells": [
+       "$1,671,775",
+       "$3,154,094",
+       "+89%",
+       "8.6%",
+       "10.5%"
+      ],
+      "label": "Paras, therapists, substitutes (TSER)"
+     },
+     {
+      "cells": [
+       "$1,788,490",
+       "$2,993,856",
+       "+67%",
+       "9.2%",
+       "10.0%"
+      ],
+      "label": "Buses, food, nurses, athletics (SERV)"
+     },
+     {
+      "cells": [
+       "$555,064",
+       "$1,062,827",
+       "+91%",
+       "2.9%",
+       "3.5%"
+      ],
+      "label": "Guidance and testing (GUID)"
+     },
+     {
+      "cells": [
+       "$1,195,636",
+       "$1,997,369",
+       "+67%",
+       "6.1%",
+       "6.7%"
+      ],
+      "label": "Out-of-district tuition (TUIT)"
+     },
+     {
+      "cells": [
+       "$582,021",
+       "$911,996",
+       "+57%",
+       "3.0%",
+       "3.0%"
+      ],
+      "label": "Central administration (ADMN)"
+     },
+     {
+      "cells": [
+       "$221,480",
+       "$353,794",
+       "+60%",
+       "1.1%",
+       "1.2%"
+      ],
+      "label": "Books, supplies, technology (MATL)"
+     },
+     {
+      "cells": [
+       "$123,203",
+       "$130,686",
+       "+6%",
+       "0.6%",
+       "0.4%"
+      ],
+      "label": "Out-of-district transport (ODTR)"
+     },
+     {
+      "cells": [
+       "$149,451",
+       "$74,960",
+       "-50%",
+       "0.8%",
+       "0.2%"
+      ],
+      "label": "Professional development (PDEV)"
+     },
+     {
+      "cells": [
+       "$1,339,597",
+       "$1,740,057",
+       "+30%",
+       "6.9%",
+       "5.8%"
+      ],
+      "label": "Principals and curriculum leads (LDRS)"
+     },
+     {
+      "cells": [
+       "$1,526,089",
+       "$1,966,363",
+       "+29%",
+       "7.8%",
+       "6.5%"
+      ],
+      "label": "Buildings and upkeep (OPMN)"
+     },
+     {
+      "cells": [
+       "$7,330,524",
+       "$10,218,273",
+       "+39%",
+       "37.7%",
+       "34.0%"
+      ],
+      "label": "Teachers (TCHR)"
+     },
+     {
+      "cells": [
+       "$19,446,453",
+       "$30,031,242",
+       "+54%",
+       "100.0%",
+       "100.0%"
+      ],
+      "label": "Total"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Growth by spending type"
+}

@@ -166,6 +166,57 @@ def radar():
     return out
 
 
+# DESE's function categories, in plain words. The codes are DESE's (the End of Year Financial
+# Report's Schedule 3 groups); the names are ours, and the table beside the chart prints both.
+FUNC_NAMES = {
+    'TCHR': 'Teachers', 'BENE': 'Insurance, retirement, other',
+    'TSER': 'Paras, therapists, substitutes', 'SERV': 'Buses, food, nurses, athletics',
+    'TUIT': 'Out-of-district tuition', 'GUID': 'Guidance and testing',
+    'OPMN': 'Buildings and upkeep', 'LDRS': 'Principals and curriculum leads',
+    'ADMN': 'Central administration', 'MATL': 'Books, supplies, technology',
+    'ODTR': 'Out-of-district transport', 'PDEV': 'Professional development',
+}
+
+
+def functions():
+    """{fy: {'total': $, 'cat': {code: $}, 'code': {func_code: $}}} for Lunenburg, from DESE's
+    spending by function (all funds: general fund plus grants and revolving funds). The twelve
+    categories (tuition derived, see below) must add to the `total` row DESE prints, every
+    year, or nothing is built."""
+    out = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-function-expenditure.csv'), encoding='utf-8')):
+        if r['lea'] != LEA:
+            continue
+        y = out.setdefault(int(r['fy']), {'total': None, 'cat': {}, 'code': {}})
+        v = float(r['total'])
+        if r['level'] == 'total':
+            y['total'] = v
+        elif r['level'] == 'category':
+            y['cat'][r['func_cat_code']] = v
+        elif r['level'] == 'detail':
+            y['code'][r['func_code']] = v
+        elif r['level'] == 'rollup':
+            y.setdefault('roll', {})[r['func_cat_code']] = v
+    if not out:
+        fail('dese-function-expenditure.csv holds no rows for %s' % LEA)
+    for fy, y in out.items():
+        # DESE prints no category row for tuition. Its rollups do it instead: in-district
+        # (IIII) is the ten in-district categories, and out-of-district (OODD) is tuition plus
+        # out-of-district transport (ODTR). So tuition is OODD less ODTR, and IIII is checked.
+        roll = y.get('roll', {})
+        if set(roll) != {'IIII', 'OODD'} or 'ODTR' not in y['cat']:
+            fail('FY%d: the in- and out-of-district rollups are not as expected' % fy)
+        if abs(sum(v for k, v in y['cat'].items() if k != 'ODTR') - roll['IIII']) > 12:
+            fail('FY%d: the in-district categories do not add to DESE\'s IIII rollup' % fy)
+        y['cat']['TUIT'] = roll['OODD'] - y['cat']['ODTR']
+        if set(y['cat']) - set(FUNC_NAMES):
+            fail('FY%d has a function category with no plain name: %s'
+                 % (fy, sorted(set(y['cat']) - set(FUNC_NAMES))))
+        if y['total'] is None or abs(sum(y['cat'].values()) - y['total']) > 12:
+            fail('FY%d: the function categories do not add to DESE\'s printed total' % fy)
+    return out
+
+
 def schools():
     """Teacher FTE by school and year, Lunenburg, from DESE's programme-area file."""
     out = collections.defaultdict(dict)
@@ -212,6 +263,8 @@ def sources():
             'teachers': ('state-dese/dese-teacher-data.xlsx', dese),
             'program': ('state-dese/dese-teachers-by-program-area.xlsx', dese),
             'radar': ('state-dese/radar-district-comparison.xlsx', dese + ', district comparison'),
+            'func': ('state-dese/district-expenditures-by-function.xlsx',
+                     dese + ', district expenditures by function code'),
     }.items():
         if key not in man:
             fail('%s is not in archive-manifest.csv' % key)
@@ -229,6 +282,7 @@ def sources():
             'enrol-csv': ('dese-enrollment.csv', 'DESE’s 1 October headcount, by year'),
             'radar-csv': ('dese-radar.csv', 'DESE’s comparison sheet, by measure and year'),
             'program-csv': ('dese-teacher-program-area.csv', 'teacher FTE by school, by year'),
+            'func-csv': ('dese-function-expenditure.csv', 'spending by function code, by year'),
     }.items():
         if not os.path.exists(os.path.join(DOCS_DATA, f)):
             fail('/docs/data/%s is not published' % f)
@@ -681,6 +735,90 @@ def build():
         finding_figures={'a': FTE(T[Y]), 'y': F(Y), 'b': FTE(T[Y - 1] - T[Y]), 'p': F(Y - 1),
                          'c': FTE(T[Y + 1] - T[Y]), 'q': F(Y + 1)})
 
+    # ================================================================ growth by spending type
+    # TJ, 19 October 2026: the side-by-side pages "should start with the reports that most
+    # directly answer the question or show the data for this spending increase per type."
+    # Ranked by CHANGE IN SHARE, not by dollars added: share x how far a line outgrew the
+    # total is how this repo ranks lines (CLAUDE.md rule 4), and a share needs no deflator.
+    FX = functions()
+    g0, g1 = min(FX), max(FX)
+    if g1 not in P:
+        fail('no price average for FY%d, the last spending-by-function year' % g1)
+    c0, c1, tt0, tt1 = FX[g0]['cat'], FX[g1]['cat'], FX[g0]['total'], FX[g1]['total']
+    if set(c0) != set(c1):
+        fail('the function categories differ between FY%d and FY%d' % (g0, g1))
+    fg = {k: chg(c0[k], c1[k]) for k in c1}
+    sh0 = {k: 100.0 * c0[k] / tt0 for k in c0}
+    sh1 = {k: 100.0 * c1[k] / tt1 for k in c1}
+    dsh = {k: sh1[k] - sh0[k] for k in c1}
+    tg = chg(tt0, tt1)
+    tgr = chg(tt0 * P[g1] / P[g0], tt1)
+    ins0, ins1 = FX[g0]['code']['5200'], FX[g1]['code']['5200']
+    PTS = lambda v: figure(v, '%+.1f points' % v, 'points')
+    SH = lambda v: figure(v, C.pct(v, 1))
+    fy01 = {'a': F(g0), 'b': F(g1)}
+    big = max(c1, key=lambda k: c1[k] - c0[k])
+    if big != 'TCHR':
+        fail('teachers are no longer the largest dollar increase; the first conclusion says so')
+    out['growth-by-spending-type'] = TP.page(
+        'growth-by-spending-type',
+        '%s to %s: insurance and retirement grew %s and paras and therapists %s; teachers %s, '
+        'the total %s.' % (C.fy(g0), C.fy(g1), C.pct(fg['BENE'], 0), C.pct(fg['TSER'], 0),
+                          C.pct(fg['TCHR'], 0), C.pct(tg, 0)),
+        [f('tot0', U(tt0), 'school spending, all funds, %s' % C.fy(g0), 'published', {'y': F(g0)}),
+         f('tot1', U(tt1), 'school spending, all funds, %s' % C.fy(g1), 'published', {'y': F(g1)}),
+         f('totr', SP(tgr), 'the total after prices, %s to %s' % (C.fy(g0), C.fy(g1)),
+           'published', fy01),
+         f('tchr', SP(fg['TCHR']), 'teachers, %s to %s, as printed' % (C.fy(g0), C.fy(g1)),
+           'published', fy01),
+         f('bene', SP(fg['BENE']), 'insurance, retirement and other, as printed', 'published'),
+         f('ins', SP(chg(ins0, ins1)), 'insurance for active employees, as printed', 'published'),
+         f('tser', SP(fg['TSER']), 'paras, therapists and substitutes, as printed', 'published'),
+         f('guid', SP(fg['GUID']), 'guidance, counselling and testing, as printed', 'published'),
+         f('pdev', SP(fg['PDEV']), 'professional development, as printed', 'published'),
+         f('tchr-sh', PTS(dsh['TCHR']), 'teachers’ share of all school spending', 'published'),
+         f('bene-sh', PTS(dsh['BENE']), 'insurance and retirement’s share', 'published'),
+         f('posts', None, 'which posts were filled, and which fund paid', 'gap', closes=POSITIONS)],
+        [con('Teachers added the most dollars, %s, but grew %s; the total grew %s.'
+             % (C.usd(c1['TCHR'] - c0['TCHR']), C.pct(fg['TCHR'], 0), C.pct(tg, 0)),
+             ['tchr', 'tot0', 'tot1'],
+             {'a': U(c1['TCHR'] - c0['TCHR']), 'b': PC(fg['TCHR'], 0), 'c': PC(tg, 0)}),
+         con('Insurance and retirement grew %s; insurance for active staff alone grew %s.'
+             % (C.pct(fg['BENE'], 0), C.pct(chg(ins0, ins1), 0)), ['bene', 'ins'],
+             {'a': PC(fg['BENE'], 0), 'b': PC(chg(ins0, ins1), 0)}),
+         con('Paras, therapists and substitutes grew %s and guidance %s; training fell %s.'
+             % (C.pct(fg['TSER'], 0), C.pct(fg['GUID'], 0), C.pct(-fg['PDEV'], 0)),
+             ['tser', 'guid', 'pdev'],
+             {'a': PC(fg['TSER'], 0), 'b': PC(fg['GUID'], 0), 'c': PC(-fg['PDEV'], 0)},
+             notes=[step('More paraprofessional and support FTE in the state’s staffing counts '
+                         'fits the direction; nothing here ties a dollar to a post.',
+                         'hypothesis')]),
+         con('Teachers went from %s of spending to %s; insurance and retirement from %s to %s.'
+             % (C.pct(sh0['TCHR'], 1), C.pct(sh1['TCHR'], 1), C.pct(sh0['BENE'], 1),
+                C.pct(sh1['BENE'], 1)), ['tchr-sh', 'bene-sh', 'posts'],
+             {'a': SH(sh0['TCHR']), 'b': SH(sh1['TCHR']), 'c': SH(sh0['BENE']),
+              'd': SH(sh1['BENE'])},
+             notes=[step('All funds: a line can rise because a grant moved onto it, not only '
+                         'because the town spent more. DESE renumbered some codes over these '
+                         'years, so compare categories, not single codes.', 'measured')])],
+        chart=TP.ranking('Change in share of school spending',
+                         [(FUNC_NAMES[k], dsh[k]) for k in c1], 'points', decimals=1,
+                         note='%s to %s, DESE’s spending by function, all funds. Above zero grew '
+                              'faster than the total; below zero, slower.' % (C.fy(g0), C.fy(g1)),
+                         note_figures=fy01),
+        table=dict(caption='School spending by type', views=[dict(
+            key='types', label='By type', total_col=None, kinds=['ledger'] * 5,
+            columns=[C.fy(g0), C.fy(g1), 'Change', 'Share %s' % C.fy(g0), 'Share %s' % C.fy(g1)],
+            rows=[dict(label='%s (%s)' % (FUNC_NAMES[k], k), cells=[
+                C.usd(c0[k]), C.usd(c1[k]), '%+.0f%%' % fg[k], C.pct(sh0[k], 1), C.pct(sh1[k], 1)])
+                  for k in sorted(c1, key=lambda k: -dsh[k])] + [dict(label='Total', cells=[
+                C.usd(tt0), C.usd(tt1), '%+.0f%%' % tg, '100.0%', '100.0%'])],
+            note='DESE’s figures as printed, general fund plus grants and revolving funds. '
+                 'The code in brackets is DESE’s category.')]),
+        sources=S('func', 'func-csv', *[k for k in src if k.startswith('cpi')]),
+        finding_figures={'y': F(g0), 'z': F(g1), 'a': PC(fg['BENE'], 0), 'b': PC(fg['TSER'], 0),
+                         'c': PC(fg['TCHR'], 0), 'd': PC(tg, 0)})
+
     # ================================================================ the hub
     tiers = [
         LD.tier('%s to %s' % (C.fy(base), C.fy(a1)), [
@@ -699,12 +837,19 @@ def build():
             f('h-el', SP(e_long), 'pupils, %s to %s' % (C.fy(a0), C.fy(a1)), 'published',
               {'a': F(a0), 'b': F(a1)}),
             f('h-o', FTE(oth[r1] - oth[r0]), 'more paraprofessional and support FTE, %s to %s'
-              % (C.fy(r0), C.fy(r1)), 'published', {'a': F(r0), 'b': F(r1)})]),
-        LD.tier('What is not settled', [
+              % (C.fy(r0), C.fy(r1)), 'published', {'a': F(r0), 'b': F(r1)}),
+            # The gaps sit with the long run: a ladder holds three tiers, and type of spending
+            # is the third (TJ, 19 October 2026: "these are really important").
             f('h-2011', None, 'what the %s teacher count measured' % C.fy(Y), 'gap', closes=EPIMS,
               label_figures={'y': F(Y)}),
             f('h-posts', None, 'which posts were filled, and which fund paid', 'gap',
               closes=POSITIONS)]),
+        LD.tier('By type of spending, %s to %s' % (C.fy(g0), C.fy(g1)), [
+            f('h-bene', SP(fg['BENE']), 'insurance, retirement and other, as printed', 'published'),
+            f('h-tser', SP(fg['TSER']), 'paras, therapists and substitutes, as printed',
+              'published'),
+            f('h-tchr', SP(fg['TCHR']), 'teachers, as printed', 'published'),
+            f('h-tot', SP(tg), 'all school spending, as printed', 'published')]),
     ]
     hub_ladder = LD.ladder(tiers, [
         LD.conclusion('From %s to %s spending rose %s after prices while pupils fell %s.'
@@ -719,6 +864,12 @@ def build():
         LD.conclusion('Over %s to %s spending is %s times larger after prices; pupils %s fewer.'
                       % (C.fy(a0), C.fy(a1), '%.2f' % rmult, C.pct(-e_long)), ['h-mult', 'h-el'],
                       {'y': F(a0), 'z': F(a1), 'a': X(rmult), 'b': PC(-e_long)}),
+        LD.conclusion('Since %s insurance and retirement grew %s, paras and therapists %s, '
+                      'teachers %s.' % (C.fy(g0), C.pct(fg['BENE'], 0), C.pct(fg['TSER'], 0),
+                                        C.pct(fg['TCHR'], 0)),
+                      ['h-bene', 'h-tser', 'h-tchr', 'h-tot'],
+                      {'y': F(g0), 'a': PC(fg['BENE'], 0), 'b': PC(fg['TSER'], 0),
+                       'c': PC(fg['TCHR'], 0)}),
         LD.conclusion('Per child enrolled it went from %s to %s, both in %s.'
                       % (C.usd(rpp[a0]), C.usd(pp[a1]), DOLLARS), ['h-rpp', 'h-pp'],
                       {'a': U(rpp[a0]), 'b': U(pp[a1]), 'r': F(ref)}),

@@ -16,8 +16,11 @@ CATEGORY = dict(
     id='school-spending-history', shelf='School spending history',
     title='School spending history', area='school', order=26,
     groups=[
-        ('Side by side', ['growth-side-by-side', 'long-run-school-spending',
-                          'spending-per-child-enrolled', 'teachers-and-other-staff']),
+        # Led by the pages that answer the question directly -- where the growth went, by
+        # type -- TJ, 19 October 2026.
+        ('Side by side', ['growth-by-spending-type', 'growth-side-by-side',
+                          'teachers-and-other-staff', 'spending-per-child-enrolled',
+                          'long-run-school-spending']),
         ('What the counts cannot settle', ['fy2011-teacher-reading']),
         ('Each measure on its own', ['enrolment-by-year', 'teacher-fte-over-time',
                                      'teachers-per-pupil', 'paraprofessional-fte',
@@ -28,6 +31,7 @@ CATEGORY = dict(
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_spending_staff_students_topics.py'
 TOPICS = {
+    'growth-by-spending-type': 'Growth by spending type',
     'growth-side-by-side': 'Growth side by side',
     'long-run-school-spending': 'Long-run school spending',
     'spending-per-child-enrolled': 'Spending per child enrolled',

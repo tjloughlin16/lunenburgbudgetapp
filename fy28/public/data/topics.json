@@ -543,10 +543,11 @@
     {
      "title": "Side by side",
      "topics": [
+      "growth-by-spending-type",
       "growth-side-by-side",
-      "long-run-school-spending",
+      "teachers-and-other-staff",
       "spending-per-child-enrolled",
-      "teachers-and-other-staff"
+      "long-run-school-spending"
      ]
     },
     {
@@ -1019,7 +1020,7 @@
     }
    ],
    "id": "crisis",
-   "minutes": 1,
+   "minutes": 2,
    "order": 69,
    "path": "/crisis",
    "ready": true,
@@ -2239,6 +2240,19 @@
     "parks"
    ],
    "title": "Grounds maintenance bid"
+  },
+  "growth-by-spending-type": {
+   "finding": "FY2009 to FY2025: insurance and retirement grew 83% and paras and therapists 89%; teachers 39%, the total 54%.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "school-spending-history",
+   "id": "growth-by-spending-type",
+   "minutes": 2,
+   "path": "/school-spending-history/growth-by-spending-type",
+   "ready": true,
+   "shelves": [
+    "school-spending-history"
+   ],
+   "title": "Growth by spending type"
   },
   "growth-side-by-side": {
    "finding": "FY2008 to FY2024: spending up 12.7% after prices (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%.",
