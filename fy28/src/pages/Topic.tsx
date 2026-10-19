@@ -34,6 +34,8 @@ type IndexCategory = {
   id: string; shelf: string; title: string; path: string; answer: string | null
   groups: { title: string | null; topics: string[] }[]
   elsewhere: { href: string; title: string }[]
+  /** The hub's most insightful pages, called out under the answer (scripts/topics.py). */
+  start?: string[]
   full_report: { href: string; label: string }
 }
 type Index = { categories: IndexCategory[]; topics: Record<string, IndexTopic> }
@@ -118,6 +120,25 @@ function Sources({ sources }: { sources: { label: string; href: string }[] }) {
         {sources.map(s => (
           <li key={s.href}><a href={abs(s.href)} className="underline" style={link}>{s.label}</a></li>
         ))}
+      </ul>
+    </section>
+  )
+}
+
+/** START HERE: the one to three pages on a shelf that most directly answer it, called out
+ *  under the hub's answer, before the chart. TJ, 19 October 2026: "we need a section that
+ *  specifically calls out the most insightful pages for the hub." The same TopicLink shape
+ *  at the hub card's 4px rule, so it reads as the shelf's lead page, not a new kind of
+ *  thing. The pages stay in their groups below as well. */
+function StartHere({ ix, cat }: { ix: Index; cat: IndexCategory }) {
+  const ts = (cat.start ?? []).map(id => ix.topics[id]).filter(t => t?.ready)
+  if (!ts.length) return null
+  return (
+    <section className="mt-6 max-w-3xl rounded-lg px-4 py-3"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Start here</h2>
+      <ul className="mt-2 space-y-3">
+        {ts.map(t => <li key={t.id} className="[&>a]:border-l-4"><TopicLink t={t} /></li>)}
       </ul>
     </section>
   )
@@ -220,6 +241,8 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       {p && ix && p.kind === 'hub' ? (
         <>
           <p className="text-[19px] leading-snug font-semibold mt-6 max-w-3xl">{p.answer.text}</p>
+          {ix.categories.find(c => c.id === p.id)
+            ? <StartHere ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           <p className="text-[13px] mt-2"><a href="#topics" className="underline" style={link}>
             Go straight to the topics &darr;</a></p>
           <TopicChart chart={p.chart} alt={title} />

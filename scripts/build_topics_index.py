@@ -73,6 +73,7 @@ def build(strict):
             minutes=max(1, math.ceil(words(h) / 200)) if h else None, ready=bool(h),
             groups=[dict(title=g, topics=list(ids)) for g, ids in c['groups']],
             elsewhere=[dict(href=a, title=b) for a, b in c.get('elsewhere', [])],
+            start=list(c.get('start', [])),
             area=c.get('area'), order=c.get('order', 99)))
     out = dict(generated_by='scripts/build_topics_index.py', categories=cats, topics=topics,
                areas=[dict(id=a, title=t) for a, t in REG.AREAS])

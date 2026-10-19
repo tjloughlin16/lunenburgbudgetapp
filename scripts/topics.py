@@ -26,7 +26,7 @@ listed on another shelf keeps that one address.
 """
 
 # ONE FILE PER CATEGORY, in scripts/topic_registry/. Each defines CATEGORY (id, shelf,
-# title, area, order, full_report, groups, optional elsewhere), GENERATOR (the script that
+# title, area, order, full_report, groups, optional elsewhere, optional start), GENERATOR (the script that
 # writes its pages) and TOPICS ({id: title}) for the topics it is HOME to. A group may list
 # a topic another category is home to: that is how one page sits on two shelves.
 #
@@ -87,6 +87,14 @@ def check():
                 bad.append('%s lists %r, which is not registered' % (c['id'], t))
         if len(set(seen)) != len(seen):
             bad.append('%s lists a topic twice' % c['id'])
+        # `start`: the pages a reader of this hub should open first -- the most insightful,
+        # called out above everything else (TJ, 19 October 2026). Each must be on the shelf.
+        for t in c.get('start', []):
+            if t not in seen:
+                bad.append('%s: start page %r is not listed on the shelf' % (c['id'], t))
+        if len(c.get('start', [])) > 3:
+            bad.append('%s: more than three start pages is a second index, not a callout'
+                       % c['id'])
     titles = {}
     for c in CATEGORIES:
         if c.get('area') not in dict(AREAS):

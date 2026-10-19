@@ -28,6 +28,8 @@ CATEGORY = dict(
                                      'spending-and-pupils', 'net-school-spending',
                                      'chapter-70-by-year']),
     ],
+    # The page that answers the residents' question most directly (TJ, 19 October 2026).
+    start=['growth-by-spending-type'],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_spending_staff_students_topics.py'
 TOPICS = {
