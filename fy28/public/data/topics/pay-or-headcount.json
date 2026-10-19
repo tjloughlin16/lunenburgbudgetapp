@@ -261,56 +261,53 @@
  "chart": {
   "basis": "published",
   "decimals": null,
-  "highlight": [
-   "FY2025, actual"
-  ],
+  "highlight": [],
   "note": {
    "figures": {
     "a": {
      "text": "FY2009",
      "unit": "fiscal year",
      "value": 2009
+    },
+    "b": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "c": {
+     "text": "$7,330,524",
+     "unit": "",
+     "value": 7330524.0
+    },
+    "d": {
+     "text": "$10,218,273",
+     "unit": "",
+     "value": 10218273.0
     }
    },
    "literals": [],
-   "text": "Teachers spending, all funds. A what-if is teachers times cost per teacher with one held at its FY2009 value: our arithmetic."
+   "text": "FY2009 to FY2025. $7,330,524, less what fewer teachers saved, plus the pay increase, is $10,218,273."
   },
   "rows": [
    {
-    "label": "FY2025 with FY2009’s number of teachers",
+    "label": "Pay increase for the teachers remaining",
     "texts": [
-     "$11,697,490"
+     "$3,814,737"
     ],
-    "total": "$11,697,490",
-    "value": 11697489.662857143
+    "total": "$3,814,737",
+    "value": 3814737.0599001665
    },
    {
-    "label": "FY2025, actual",
+    "label": "Saved from fewer teachers",
     "texts": [
-     "$10,218,273"
+     "-$926,988"
     ],
-    "total": "$10,218,273",
-    "value": 10218273.0
-   },
-   {
-    "label": "FY2009, actual",
-    "texts": [
-     "$7,330,524"
-    ],
-    "total": "$7,330,524",
-    "value": 7330524.0
-   },
-   {
-    "label": "FY2025’s teachers at FY2009’s cost each",
-    "texts": [
-     "$6,403,536"
-    ],
-    "total": "$6,403,536",
-    "value": 6403535.9400998335
+    "total": "-$926,988",
+    "value": -926988.0599001666
    }
   ],
   "stack": null,
-  "title": "The teachers line, actual and what-if",
+  "title": "What moved the teachers line",
   "type": "ranking",
   "unit": "$"
  },
@@ -318,19 +315,24 @@
   {
    "figures": {
     "a": {
-     "text": "$6,403,536",
+     "text": "$926,988",
      "unit": "",
-     "value": 6403535.9400998335
+     "value": 926988.0599001666
     },
     "b": {
-     "text": "$10,218,273",
+     "text": "$3,814,737",
      "unit": "",
-     "value": 10218273.0
+     "value": 3814737.0599001665
     },
-    "y": {
-     "text": "FY2009",
-     "unit": "fiscal year",
-     "value": 2009
+    "m": {
+     "text": "105.0",
+     "unit": "full-time equivalents",
+     "value": 105.0
+    },
+    "n": {
+     "text": "15.2",
+     "unit": "full-time equivalents",
+     "value": 15.200000000000003
     }
    },
    "literals": [],
@@ -338,14 +340,41 @@
     {
      "figures": {
       "a": {
-       "text": "$11,697,490",
+       "text": "$7,330,524",
        "unit": "",
-       "value": 11697489.662857143
+       "value": 7330524.0
       },
-      "n": {
-       "text": "120.2",
-       "unit": "full-time equivalents",
-       "value": 120.2
+      "b": {
+       "text": "$926,988",
+       "unit": "",
+       "value": 926988.0599001666
+      },
+      "c": {
+       "text": "$3,814,737",
+       "unit": "",
+       "value": 3814737.0599001665
+      },
+      "d": {
+       "text": "$10,218,273",
+       "unit": "",
+       "value": 10218273.0
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "$7,330,524, less $926,988, plus $3,814,737, is $10,218,273: the actual FY2025 teachers line."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$60,986",
+       "unit": "",
+       "value": 60986.05657237937
       },
       "y": {
        "text": "FY2009",
@@ -355,36 +384,19 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "And FY2009’s 120.2 teachers at today’s cost each would be $11,697,490."
+     "text": "Saved is priced at the FY2009 cost per teacher, $60,986. Pay is spending over FTE, so it holds stipends too."
     },
     {
      "figures": {
       "a": {
-       "text": "$1,203,102",
+       "text": "$145,494",
        "unit": "",
-       "value": 1203102.3613786548
+       "value": 145493.5922330097
       },
       "b": {
-       "text": "$4,090,851",
+       "text": "$2,579,859",
        "unit": "",
-       "value": 4090851.3613786544
-      }
-     },
-     "kind": "measured",
-     "literals": [],
-     "text": "Split exactly, by midpoint weights: fewer teachers took $1,203,102 off and each teacher costing more added $4,090,851."
-    },
-    {
-     "figures": {
-      "a": {
-       "text": "$170,064",
-       "unit": "",
-       "value": 170063.68183079056
-      },
-      "b": {
-       "text": "$2,555,289",
-       "unit": "",
-       "value": 2555289.31816921
+       "value": 2579859.4077669913
       },
       "y": {
        "text": "FY2013",
@@ -394,32 +406,15 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "From FY2013, the first year of the state’s comparable count, more teachers added $170,064 and each teacher costing more $2,555,289."
-    },
-    {
-     "figures": {
-      "a": {
-       "text": "FY2009",
-       "unit": "fiscal year",
-       "value": 2009
-      },
-      "b": {
-       "text": "FY2023",
-       "unit": "fiscal year",
-       "value": 2023
-      }
-     },
-     "kind": "measured",
-     "literals": [],
-     "text": "From any start year FY2009 to FY2023, the cost per teacher is the larger part."
+     "text": "From FY2013 the count rose instead: more teachers added $145,494, the pay increase $2,579,859."
     }
    ],
    "rests_on": [
-    "wi-cost",
-    "wi-count",
+    "cnt",
+    "per",
     "tchr"
    ],
-   "text": "Today’s teachers at FY2009’s cost each would cost $6,403,536; they cost $10,218,273."
+   "text": "15.2 fewer teachers saved $926,988; a pay increase for the 105.0 remaining added $3,814,737."
   },
   {
    "figures": {
@@ -502,6 +497,12 @@
    "figures": {},
    "literals": [],
    "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Nor does anything here link the two: fewer teachers and a higher cost per teacher happened over the same years, and the figures cannot say one paid for the other."
+    },
     {
      "figures": {},
      "kind": "hypothesis",
@@ -588,29 +589,45 @@
       "text": "FY2025",
       "unit": "fiscal year",
       "value": 2025
+     },
+     "n": {
+      "text": "105.0",
+      "unit": "full-time equivalents",
+      "value": 105.0
      }
     },
     "literals": [],
-    "text": "added by each teacher costing more, FY2009 to FY2025"
+    "text": "pay increase, the 105.0 teachers remaining, FY2009–FY2025"
    },
    "value": {
-    "text": "+$4,090,851",
+    "text": "+$3,814,737",
     "unit": "",
-    "value": 4090851.3613786544
+    "value": 3814737.0599001665
    }
   },
   {
    "id": "cnt",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "n": {
+      "text": "15.2",
+      "unit": "full-time equivalents",
+      "value": 15.200000000000003
+     },
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
     "literals": [],
-    "text": "from fewer teachers, the same years"
+    "text": "saved from 15.2 fewer teachers, at their FY2009 cost"
    },
    "value": {
-    "text": "-$1,203,102",
+    "text": "-$926,988",
     "unit": "",
-    "value": -1203102.3613786548
+    "value": -926988.0599001666
    }
   },
   {
@@ -800,56 +817,6 @@
     "text": "2.5%",
     "unit": "",
     "value": 2.5
-   }
-  },
-  {
-   "id": "wi-count",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "a": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     },
-     "b": {
-      "text": "FY2009",
-      "unit": "fiscal year",
-      "value": 2009
-     }
-    },
-    "literals": [],
-    "text": "FY2025 at FY2009’s count of teachers, our arithmetic"
-   },
-   "value": {
-    "text": "$11,697,490",
-    "unit": "",
-    "value": 11697489.662857143
-   }
-  },
-  {
-   "id": "wi-cost",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "a": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     },
-     "b": {
-      "text": "FY2009",
-      "unit": "fiscal year",
-      "value": 2009
-     }
-    },
-    "literals": [],
-    "text": "FY2025’s teachers at FY2009’s cost each, our arithmetic"
-   },
-   "value": {
-    "text": "$6,403,536",
-    "unit": "",
-    "value": 6403535.9400998335
    }
   },
   {

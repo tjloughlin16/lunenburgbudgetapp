@@ -1212,9 +1212,15 @@ def build():
     W = {y: TS[y] / T[y] for y in gy}
     WR = {y: W[y] * P[g1] / P[y] for y in gy}
 
+    # THE SPLIT, in the form a reader can say out loud (TJ, 19 October 2026: "'Amount saved
+    # from lost FTE' ... 'salary increase for remaining FTE'"): the teachers who went away,
+    # priced at what they cost in the START year; and the teachers still there, times how
+    # much more each costs. T1*W1 - T0*W0 = (T1-T0)*W0 + T1*(W1-W0), exactly -- no averaged
+    # weights and nothing left over. (It replaced midpoint weights, whose parts were exact
+    # too but described nothing a reader could picture.)
     def split(a, b):
-        v = (T[b] - T[a]) * (W[a] + W[b]) / 2
-        r = (W[b] - W[a]) * (T[a] + T[b]) / 2
+        v = (T[b] - T[a]) * W[a]
+        r = (W[b] - W[a]) * T[b]
         if abs(v + r - (TS[b] - TS[a])) > 1:
             fail('the split FY%d-FY%d does not add back to the change' % (a, b))
         return v, r
@@ -1252,18 +1258,15 @@ def build():
     RAISES = ('the teachers’ agreements before the current one, from the district or as filed '
               'with DESE')
     EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
-    # THE WHAT-IFS, in the unit of the budget line itself (TJ, 19 October 2026, on the split:
-    # "'each teacher costs more' $2m, what does that even mean"). Teachers x cost per teacher,
-    # with one of the two held at its FY2009 value -- our arithmetic on DESE's figures.
-    wi_count = T[g0] * W[g1]       # FY2009's number of teachers at FY2025's cost each
-    wi_cost = T[g1] * W[g0]        # FY2025's teachers at FY2009's cost each
     out['pay-or-headcount'] = TP.page(
         'pay-or-headcount',
         '%s had %s fewer teachers than %s, but each cost %s more; the teachers line rose %s.'
         % (C.fy(g1), '%.1f' % (T[g0] - T[g1]), C.fy(g0), C.usd(W[g1] - W[g0]), C.usd(TS[g1] - TS[g0])),
-        [f('per', SU(r0_), 'added by each teacher costing more, %s to %s' % (C.fy(g0), C.fy(g1)),
-           'published', fy01),
-         f('cnt', SU(v0), 'from fewer teachers, the same years', 'published'),
+        [f('per', SU(r0_), 'pay increase, the %s teachers remaining, %s–%s'
+           % ('%.1f' % T[g1], C.fy(g0), C.fy(g1)), 'published', dict(fy01, n=FTE(T[g1]))),
+         f('cnt', SU(v0), 'saved from %s fewer teachers, at their %s cost'
+           % ('%.1f' % (T[g0] - T[g1]), C.fy(g0)), 'published',
+           {'n': FTE(T[g0] - T[g1]), 'y': F(g0)}),
          f('tchr', SP(dTS), 'Teachers spending: %s to %s' % (C.usd(TS[g0]), C.usd(TS[g1])),
            'published', {'a': U(TS[g0]), 'b': U(TS[g1])}),
          f('fte', FTE(T[g1]), 'teacher FTE, %s; %s in %s, %s in %s'
@@ -1280,25 +1283,21 @@ def build():
            {'y': F(ey[-1]), 'a': PC(100 * ex[ey[0]]), 'p': F(ey[0])}),
          f('raise', PC(KC['cola']), 'salary schedule adjustment, %s, teachers’ agreement'
            % C.fy(KC['fy']), 'contract', {'y': F(KC['fy'])}),
-         f('wi-count', U(wi_count), '%s at %s’s count of teachers, our arithmetic'
-           % (C.fy(g1), C.fy(g0)), 'published', {'a': F(g1), 'b': F(g0)}),
-         f('wi-cost', U(wi_cost), '%s’s teachers at %s’s cost each, our arithmetic'
-           % (C.fy(g1), C.fy(g0)), 'published', {'a': F(g1), 'b': F(g0)}),
          f('steps', None, 'teachers on each step and lane, each year', 'gap', closes=STEPS)],
-        [con('Today’s teachers at %s’s cost each would cost %s; they cost %s.'
-             % (C.fy(g0), C.usd(wi_cost), C.usd(TS[g1])), ['wi-cost', 'wi-count', 'tchr'],
-             {'y': F(g0), 'a': U(wi_cost), 'b': U(TS[g1])},
-             notes=[step('And %s’s %s teachers at today’s cost each would be %s.'
-                         % (C.fy(g0), '%.1f' % T[g0], C.usd(wi_count)), 'measured',
-                         {'y': F(g0), 'n': FTE(T[g0]), 'a': U(wi_count)}),
-                    step('Split exactly, by midpoint weights: fewer teachers took %s off and each '
-                         'teacher costing more added %s.' % (C.usd(-v0), C.usd(r0_)), 'measured',
-                         {'a': U(-v0), 'b': U(r0_)}),step('From %s, the first year of the state’s comparable count, more teachers '
-                         'added %s and each teacher costing more %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
-                         'measured', {'y': F(era), 'a': U(ve), 'b': U(re_)}),
-                    step('From any start year %s to %s, the cost per teacher is the larger part.'
-                         % (C.fy(starts[0]), C.fy(starts[-1])), 'measured',
-                         {'a': F(starts[0]), 'b': F(starts[-1])})]),
+        [con('%s fewer teachers saved %s; a pay increase for the %s remaining added %s.'
+             % ('%.1f' % (T[g0] - T[g1]), C.usd(-v0), '%.1f' % T[g1], C.usd(r0_)),
+             ['cnt', 'per', 'tchr'],
+             {'n': FTE(T[g0] - T[g1]), 'a': U(-v0), 'm': FTE(T[g1]), 'b': U(r0_)},
+             notes=[step('%s, less %s, plus %s, is %s: the actual %s teachers line.'
+                         % (C.usd(TS[g0]), C.usd(-v0), C.usd(r0_), C.usd(TS[g1]), C.fy(g1)),
+                         'measured', {'a': U(TS[g0]), 'b': U(-v0), 'c': U(r0_), 'd': U(TS[g1]),
+                                      'y': F(g1)}),
+                    step('Saved is priced at the %s cost per teacher, %s. Pay is spending over FTE, '
+                         'so it holds stipends too.' % (C.fy(g0), C.usd(W[g0])),
+                         'measured', {'y': F(g0), 'a': U(W[g0])}),
+                    step('From %s the count rose instead: more teachers added %s, the pay '
+                         'increase %s.' % (C.fy(era), C.usd(ve), C.usd(re_)), 'measured',
+                         {'y': F(era), 'a': U(ve), 'b': U(re_)})]),
          con('Spending per teacher went from %s to %s; after Boston-area prices, %s.'
              % (C.usd(W[g0]), C.usd(W[g1]), '%+.1f%%' % wr_chg), ['w', 'wr', 'dese'],
              {'a': U(W[g0]), 'b': U(W[g1]), 'c': SP(wr_chg)},
@@ -1312,7 +1311,9 @@ def build():
                          {'y': F(odd), 'a': U(dT), 'b': U(-dB), 'z': F(odd + 1)})]),
          con('Neither shows whether raises, step increases or a change in who is on staff '
              'drove it.', ['steps', 'raise', 'fte'],
-             notes=[step('A mix effect fits too: when the teachers who remain sit higher on the '
+             notes=[step('Nor does anything here link the two: fewer teachers and a higher cost '
+                         'per teacher happened over the same years, and the figures cannot say one '
+                         'paid for the other.', 'measured'),step('A mix effect fits too: when the teachers who remain sit higher on the '
                          'schedule, the average rises though nobody’s pay changes.',
                          'hypothesis'),
                     step('The agreement set %s at %s; no earlier agreement is held, so earlier '
@@ -1329,14 +1330,12 @@ def build():
         # the latest year -- so FY2009 looked like the year "more per teacher" was highest
         # (TJ, 19 October 2026: "what does 'more spent per teacher' mean when FY09 has the
         # highest number"). That chart is now the check underneath, labelled as start years.
-        chart=TP.ranking('The teachers line, actual and what-if',
-                         [('%s, actual' % C.fy(g1), TS[g1]), ('%s, actual' % C.fy(g0), TS[g0]),
-                          ('%s with %s’s number of teachers' % (C.fy(g1), C.fy(g0)), wi_count),
-                          ('%s’s teachers at %s’s cost each' % (C.fy(g1), C.fy(g0)), wi_cost)],
-                         '$', highlight='%s, actual' % C.fy(g1),
-                         note='Teachers spending, all funds. A what-if is teachers times cost per '
-                              'teacher with one held at its %s value: our arithmetic.' % C.fy(g0),
-                         note_figures={'a': F(g0)}),
+        chart=TP.ranking('What moved the teachers line',
+                         [('Pay increase for the teachers remaining', r0_),
+                          ('Saved from fewer teachers', v0)], '$',
+                         note='%s to %s. %s, less what fewer teachers saved, plus the pay increase, '
+                              'is %s.' % (C.fy(g0), C.fy(g1), C.usd(TS[g0]), C.usd(TS[g1])),
+                         note_figures={'a': F(g0), 'b': F(g1), 'c': U(TS[g0]), 'd': U(TS[g1])}),
         also=[TP.series('Teachers, year by year', [C.fy(y) for y in gy], [
                   TP.track('Teacher FTE', [T[y] for y in gy], 'published', 'line')], FTE_UNIT,
                   decimals=1,
