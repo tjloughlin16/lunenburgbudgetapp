@@ -1254,7 +1254,7 @@ def build():
     EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
     out['pay-or-headcount'] = TP.page(
         'pay-or-headcount',
-        'From %s to %s, higher pay per teacher added %s; the change in teacher count took off %s.'
+        'From %s to %s, higher pay per teacher added %s; fewer teachers took off %s.'
         % (C.fy(g0), C.fy(g1), C.usd(r0_), C.usd(-v0)),
         [f('per', SU(r0_), 'more per teacher FTE, %s to %s (our split)' % (C.fy(g0), C.fy(g1)),
            'published', fy01),
