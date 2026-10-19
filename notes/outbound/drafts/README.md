@@ -20,6 +20,7 @@ what the recipient holds.
 | `REQUEST-CODING.pdf` | Superintendent | **not to be sent** — too detailed; the review document covers the same ground |
 | `COVER-EMAIL-DRAFT.md` | — | cover text |
 | `REQUEST-3c.md` | — | August records request; check whether it is superseded |
+| `MUNIS-STUDENT-DATA-EMAIL-DRAFT.md` | Superintendent | draft, 19 Oct 2026 — student names in PO descriptions, structural; recipients undecided |
 
 The `-DRAFT.md` files keep the working notes on how each request was scoped — what was
 held back and why. The send-ready PDFs have that stripped, because it tells a recipient
