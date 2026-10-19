@@ -554,6 +554,7 @@
      "title": "Side by side",
      "topics": [
       "growth-by-spending-type",
+      "spending-by-type-over-time",
       "growth-side-by-side",
       "teachers-and-other-staff",
       "spending-per-child-enrolled",
@@ -588,7 +589,8 @@
    "ready": true,
    "shelf": "School spending history",
    "start": [
-    "growth-by-spending-type"
+    "growth-by-spending-type",
+    "spending-by-type-over-time"
    ],
    "title": "School spending history"
   },
@@ -2265,7 +2267,7 @@
    "title": "Grounds maintenance bid"
   },
   "growth-by-spending-type": {
-   "finding": "FY2009 to FY2025: insurance and retirement grew 83% and paras and therapists 89%; teachers 39%, the total 54%.",
+   "finding": "Each against its own FY2009 cost: insurance and retirement grew 83%, paras 89%, teachers 39%, all 54%.",
    "generator": "scripts/build_spending_staff_students_topics.py",
    "home": "school-spending-history",
    "id": "growth-by-spending-type",
@@ -3424,6 +3426,19 @@
     "school-spending"
    ],
    "title": "Spending by function"
+  },
+  "spending-by-type-over-time": {
+   "finding": "School spending, all funds, went from $19,446,453 in FY2009 to $30,031,242 in FY2025.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "school-spending-history",
+   "id": "spending-by-type-over-time",
+   "minutes": 1,
+   "path": "/school-spending-history/spending-by-type-over-time",
+   "ready": true,
+   "shelves": [
+    "school-spending-history"
+   ],
+   "title": "Spending by type over time"
   },
   "spending-per-child-enrolled": {
    "finding": "In FY2024 dollars, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%.",

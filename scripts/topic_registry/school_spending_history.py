@@ -18,7 +18,8 @@ CATEGORY = dict(
     groups=[
         # Led by the pages that answer the question directly -- where the growth went, by
         # type -- TJ, 19 October 2026.
-        ('Side by side', ['growth-by-spending-type', 'growth-side-by-side',
+        ('Side by side', ['growth-by-spending-type', 'spending-by-type-over-time',
+                          'growth-side-by-side',
                           'teachers-and-other-staff', 'spending-per-child-enrolled',
                           'long-run-school-spending']),
         ('What the counts cannot settle', ['fy2011-teacher-reading']),
@@ -29,11 +30,12 @@ CATEGORY = dict(
                                      'chapter-70-by-year']),
     ],
     # The page that answers the residents' question most directly (TJ, 19 October 2026).
-    start=['growth-by-spending-type'],
+    start=['growth-by-spending-type', 'spending-by-type-over-time'],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_spending_staff_students_topics.py'
 TOPICS = {
     'growth-by-spending-type': 'Growth by spending type',
+    'spending-by-type-over-time': 'Spending by type over time',
     'growth-side-by-side': 'Growth side by side',
     'long-run-school-spending': 'Long-run school spending',
     'spending-per-child-enrolled': 'Spending per child enrolled',

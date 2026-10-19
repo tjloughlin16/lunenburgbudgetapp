@@ -15,113 +15,128 @@
      "text": "FY2025",
      "unit": "fiscal year",
      "value": 2025
+    },
+    "c": {
+     "text": "15.2%",
+     "unit": "",
+     "value": 15.237344311582168
+    },
+    "d": {
+     "text": "18.1%",
+     "unit": "",
+     "value": 18.07107078688254
+    },
+    "e": {
+     "text": "2.8%",
+     "unit": "",
+     "value": 2.833726475300372
     }
    },
    "literals": [],
-   "text": "FY2009 to FY2025, DESE’s spending by function, all funds. Above zero grew faster than the total; below zero, slower."
+   "text": "FY2009 to FY2025, DESE, all funds. Insurance went from 15.2% of all school spending to 18.1%: a bar of 2.8%."
   },
   "rows": [
    {
     "label": "Insurance, retirement, other",
     "texts": [
-     "2.8 points"
+     "2.8%"
     ],
-    "total": "2.8 points",
+    "total": "2.8%",
     "value": 2.833726475300372
    },
    {
     "label": "Paras, therapists, substitutes",
     "texts": [
-     "1.9 points"
+     "1.9%"
     ],
-    "total": "1.9 points",
+    "total": "1.9%",
     "value": 1.9058971714772692
    },
    {
     "label": "Buses, food, nurses, athletics",
     "texts": [
-     "0.8 points"
+     "0.8%"
     ],
-    "total": "0.8 points",
+    "total": "0.8%",
     "value": 0.7721395917857539
    },
    {
     "label": "Guidance and testing",
     "texts": [
-     "0.7 points"
+     "0.7%"
     ],
-    "total": "0.7 points",
+    "total": "0.7%",
     "value": 0.6847510640053827
    },
    {
     "label": "Out-of-district tuition",
     "texts": [
-     "0.5 points"
+     "0.5%"
     ],
-    "total": "0.5 points",
+    "total": "0.5%",
     "value": 0.502620310283036
    },
    {
     "label": "Central administration",
     "texts": [
-     "0.0 points"
+     "0.0%"
     ],
-    "total": "0.0 points",
+    "total": "0.0%",
     "value": 0.04388242321310587
    },
    {
     "label": "Books, supplies, technology",
     "texts": [
-     "0.0 points"
+     "0.0%"
     ],
-    "total": "0.0 points",
+    "total": "0.0%",
     "value": 0.039164121504184246
    },
    {
     "label": "Out-of-district transport",
     "texts": [
-     "-0.2 points"
+     "-0.2%"
     ],
-    "total": "-0.2 points",
+    "total": "-0.2%",
     "value": -0.1983831673916669
    },
    {
     "label": "Professional development",
     "texts": [
-     "-0.5 points"
+     "-0.5%"
     ],
-    "total": "-0.5 points",
+    "total": "-0.5%",
     "value": -0.5189190301203215
    },
    {
     "label": "Principals and curriculum leads",
     "texts": [
-     "-1.1 points"
+     "-1.1%"
     ],
-    "total": "-1.1 points",
+    "total": "-1.1%",
     "value": -1.0944884567359434
    },
    {
     "label": "Buildings and upkeep",
     "texts": [
-     "-1.3 points"
+     "-1.3%"
     ],
-    "total": "-1.3 points",
+    "total": "-1.3%",
     "value": -1.2999225417600773
    },
    {
     "label": "Teachers",
     "texts": [
-     "-3.7 points"
+     "-3.7%"
     ],
-    "total": "-3.7 points",
+    "total": "-3.7%",
     "value": -3.6704679615610942
    }
   ],
   "stack": null,
-  "title": "Change in share of school spending",
+  "title": "Change in share of all school spending",
   "type": "ranking",
-  "unit": "points"
+  "unit": "%"
  },
  "conclusions": [
   {
@@ -145,10 +160,9 @@
    "literals": [],
    "rests_on": [
     "tchr",
-    "tot0",
-    "tot1"
+    "tot"
    ],
-   "text": "Teachers added the most dollars, $2,887,749, but grew 39%; the total grew 54%."
+   "text": "Teachers added $2,887,749, the most of any type, yet grew 39%; all spending grew 54%."
   },
   {
    "figures": {
@@ -158,9 +172,14 @@
      "value": 83.15024384745419
     },
     "b": {
-     "text": "96%",
+     "text": "$2,963,123",
      "unit": "",
-     "value": 95.67970805055678
+     "value": 2963123.0
+    },
+    "c": {
+     "text": "$5,426,967",
+     "unit": "",
+     "value": 5426967.0
     }
    },
    "literals": [],
@@ -168,7 +187,7 @@
     "bene",
     "ins"
    ],
-   "text": "Insurance and retirement grew 83%; insurance for active staff alone grew 96%."
+   "text": "Insurance and retirement grew 83%, from $2,963,123 a year to $5,426,967."
   },
   {
    "figures": {
@@ -241,48 +260,33 @@
     "bene-sh",
     "posts"
    ],
-   "text": "Teachers went from 37.7% of spending to 34.0%; insurance and retirement from 15.2% to 18.1%."
+   "text": "Teachers fell from 37.7% of all school spending to 34.0%; insurance rose from 15.2% to 18.1%."
   }
  ],
  "facts": [
   {
-   "id": "tot0",
+   "id": "tot",
    "kind": "published",
    "label": {
     "figures": {
-     "y": {
-      "text": "FY2009",
-      "unit": "fiscal year",
-      "value": 2009
+     "a": {
+      "text": "$19,446,453",
+      "unit": "",
+      "value": 19446453.0
+     },
+     "b": {
+      "text": "$30,031,242",
+      "unit": "",
+      "value": 30031242.0
      }
     },
     "literals": [],
-    "text": "school spending, all funds, FY2009"
+    "text": "all school spending: $19,446,453 to $30,031,242"
    },
    "value": {
-    "text": "$19,446,453",
+    "text": "+54.4%",
     "unit": "",
-    "value": 19446453.0
-   }
-  },
-  {
-   "id": "tot1",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     }
-    },
-    "literals": [],
-    "text": "school spending, all funds, FY2025"
-   },
-   "value": {
-    "text": "$30,031,242",
-    "unit": "",
-    "value": 30031242.0
+    "value": 54.430435205844475
    }
   },
   {
@@ -302,7 +306,7 @@
      }
     },
     "literals": [],
-    "text": "the total after prices, FY2009 to FY2025"
+    "text": "all school spending after prices, FY2009 to FY2025"
    },
    "value": {
     "text": "+6.1%",
@@ -316,18 +320,18 @@
    "label": {
     "figures": {
      "a": {
-      "text": "FY2009",
-      "unit": "fiscal year",
-      "value": 2009
+      "text": "$7,330,524",
+      "unit": "",
+      "value": 7330524.0
      },
      "b": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
+      "text": "$10,218,273",
+      "unit": "",
+      "value": 10218273.0
      }
     },
     "literals": [],
-    "text": "teachers, FY2009 to FY2025, as printed"
+    "text": "teachers: $7,330,524 to $10,218,273"
    },
    "value": {
     "text": "+39.4%",
@@ -339,9 +343,20 @@
    "id": "bene",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$2,963,123",
+      "unit": "",
+      "value": 2963123.0
+     },
+     "b": {
+      "text": "$5,426,967",
+      "unit": "",
+      "value": 5426967.0
+     }
+    },
     "literals": [],
-    "text": "insurance, retirement and other, as printed"
+    "text": "insurance and retirement: $2,963,123 to $5,426,967"
    },
    "value": {
     "text": "+83.2%",
@@ -353,9 +368,20 @@
    "id": "ins",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$1,886,354",
+      "unit": "",
+      "value": 1886354.0
+     },
+     "b": {
+      "text": "$3,691,212",
+      "unit": "",
+      "value": 3691212.0
+     }
+    },
     "literals": [],
-    "text": "insurance for active employees, as printed"
+    "text": "active staff insurance: $1,886,354 to $3,691,212"
    },
    "value": {
     "text": "+95.7%",
@@ -367,9 +393,20 @@
    "id": "tser",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$1,671,775",
+      "unit": "",
+      "value": 1671775.0
+     },
+     "b": {
+      "text": "$3,154,094",
+      "unit": "",
+      "value": 3154094.0
+     }
+    },
     "literals": [],
-    "text": "paras, therapists and substitutes, as printed"
+    "text": "paras, therapists, substitutes: $1,671,775 to $3,154,094"
    },
    "value": {
     "text": "+88.7%",
@@ -381,9 +418,20 @@
    "id": "guid",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$555,064",
+      "unit": "",
+      "value": 555064.0
+     },
+     "b": {
+      "text": "$1,062,827",
+      "unit": "",
+      "value": 1062827.0
+     }
+    },
     "literals": [],
-    "text": "guidance, counselling and testing, as printed"
+    "text": "guidance and testing: $555,064 to $1,062,827"
    },
    "value": {
     "text": "+91.5%",
@@ -395,9 +443,20 @@
    "id": "pdev",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$149,451",
+      "unit": "",
+      "value": 149451.0
+     },
+     "b": {
+      "text": "$74,960",
+      "unit": "",
+      "value": 74960.0
+     }
+    },
     "literals": [],
-    "text": "professional development, as printed"
+    "text": "professional development: $149,451 to $74,960"
    },
    "value": {
     "text": "-49.8%",
@@ -411,11 +470,11 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "teachers’ share of all school spending"
+    "text": "change in teachers’ share of all spending"
    },
    "value": {
-    "text": "-3.7 points",
-    "unit": "points",
+    "text": "-3.7%",
+    "unit": "percent of all school spending",
     "value": -3.6704679615610942
    }
   },
@@ -425,11 +484,11 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "insurance and retirement’s share"
+    "text": "change in insurance’s share of all spending"
    },
    "value": {
-    "text": "+2.8 points",
-    "unit": "points",
+    "text": "+2.8%",
+    "unit": "percent of all school spending",
     "value": 2.833726475300372
    }
   },
@@ -471,15 +530,10 @@
     "text": "FY2009",
     "unit": "fiscal year",
     "value": 2009
-   },
-   "z": {
-    "text": "FY2025",
-    "unit": "fiscal year",
-    "value": 2025
    }
   },
   "literals": [],
-  "text": "FY2009 to FY2025: insurance and retirement grew 83% and paras and therapists 89%; teachers 39%, the total 54%."
+  "text": "Each against its own FY2009 cost: insurance and retirement grew 83%, paras 89%, teachers 39%, all 54%."
  },
  "full_report": {
   "href": "",
@@ -529,7 +583,7 @@
     "columns": [
      "FY2009",
      "FY2025",
-     "Change",
+     "Growth on itself",
      "Share FY2009",
      "Share FY2025"
     ],
@@ -542,7 +596,7 @@
      "ledger"
     ],
     "label": "By type",
-    "note": "DESE’s figures as printed, general fund plus grants and revolving funds. The code in brackets is DESE’s category.",
+    "note": "DESE’s figures as printed, general fund plus grants and revolving funds. A share is of all school spending that year.",
     "rows": [
      {
       "cells": [
