@@ -262,6 +262,69 @@ CREATE TABLE munis_trial_balance_journal (
     FOREIGN KEY (source, key) REFERENCES munis_trial_balance_account(source, key)
 );
 
+-- The school department's MUNIS journal detail, FY2023 period 0 to FY2026 period 13 --
+-- every posting to every school account in the general fund and every school special
+-- fund, from the 1,744-page `glytdbud` run of 7 October 2026 (the Town's second answer to
+-- the 4 September 2026 records request). scripts/extract_munis_school_journal.py, which
+-- refuses to write unless every account's FY2026 figures, every TOTAL line and the GRAND
+-- TOTAL close to the cent, and FY2023-FY2026 tie to `munis_school_ytd`. OUR REDACTED
+-- READING: the raw PDF is private; people paid as vendors read `individual (redacted)`,
+-- and a child or a person named in free text reads `[redacted]` (rule in the extractor).
+--
+-- TRAP: `amount` is signed as the ledger posts it, and only `posts_to` says which printed
+-- column it lands in -- 'actual' (API, APM, PRJ, PRH, GEN, GRV, CRP), 'encumbrance' (POE,
+-- POL, POM, SOY, YEC, GEL), 'original_budget' (BUC) or 'transfer' (BUA). Summing `amount`
+-- across posts_to mixes spending with purchase orders opened and closed.
+-- TRAP: revenue accounts (account type digit 4) carry receipts as NEGATIVE actuals.
+CREATE TABLE munis_school_journal (
+    fiscal_year         INTEGER NOT NULL,
+    period              INTEGER NOT NULL,
+    journal             TEXT NOT NULL,
+    effective_date      TEXT,
+    source              TEXT NOT NULL,     -- the MUNIS journal source code
+    posts_to            TEXT NOT NULL,
+    amount              REAL NOT NULL,
+    fund                TEXT NOT NULL,
+    fund_name           TEXT,
+    org                 TEXT,
+    org_name            TEXT,
+    account             TEXT NOT NULL,
+    object              TEXT,
+    account_description TEXT,
+    ref_type            TEXT,
+    vendor_no           TEXT,
+    vendor              TEXT,
+    doc_type            TEXT,
+    doc_no              TEXT,
+    description         TEXT,
+    check_no            TEXT,
+    comment             TEXT,
+    page                INTEGER NOT NULL,
+    line                INTEGER NOT NULL,
+    read                TEXT,
+    masked              TEXT,
+    name_basis          TEXT      -- why a PERSON is shown: an employee record, 'paid as vendor', 'scholarship award'
+);
+-- The same run's account rows: the FY2026 figures it prints for each account.
+CREATE TABLE munis_school_journal_account (
+    fund                TEXT NOT NULL,
+    fund_name           TEXT,
+    org                 TEXT,
+    org_name            TEXT,
+    account             TEXT PRIMARY KEY,
+    object              TEXT,
+    account_description TEXT,
+    original_approp     REAL,
+    transfers_adjustments REAL,
+    revised_budget      REAL,
+    ytd_actual          REAL,
+    encumbrances        REAL,
+    available_budget    REAL,
+    pct_used            TEXT,
+    journal_lines       INTEGER,
+    page                INTEGER
+);
+
 -- One row per budget line per year per STAGE. From line-history.csv, which is already
 -- tidy: 19,453 readings normalised to distinct lines across 24 documents.
 CREATE TABLE budget_figure (
@@ -1168,6 +1231,15 @@ REFERENCE = [
     # 6/30/2018 one), so split on `schedule`. See scripts/extract_teacher_salary_schedules.py.
     'teacher-salary-schedules', 'teacher-salary-schedule-docs',
 
+    # WHICH DISTRICTS are compared with Lunenburg, and who chose them: `official` is every
+    # district the district itself named in a budget document (one row per district per
+    # document), `project-six` is ours, with no recorded criterion. Checked by
+    # scripts/check_comparison_sets.py. And DESE's average teacher salary and teacher FTE for
+    # EVERY district, SY2009-SY2025 (the average from SY2018), from the statewide spending
+    # table, tied to dese_radar by scripts/extract_dese_teacher_salaries.py. An average is
+    # scale x seniority x credentials of whoever is employed; it is not a pay scale.
+    'comparison-sets', 'dese-teacher-salaries',
+
     'placement-counts', 'ballot-questions', 'annual-report-receipts',
     'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
     'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',
@@ -1688,6 +1760,42 @@ def load_munis_school_ytd(db):
             'munis_trial_balance_account: %r' % (len(orphans), orphans[:10]))
 
     return len(ytd), len(tb_accounts), len(tb_journal)
+
+
+def load_munis_school_journal(db):
+    """Every journal line of the school department's FY2023-FY2026 MUNIS journal detail,
+    and the FY2026 account rows the same run prints -- our redacted reading, from
+    scripts/extract_munis_school_journal.py (which ties it before writing)."""
+    acc = []
+    for r in rows('munis-school-journal-accounts'):
+        acc.append((r['fund'], r['fund_name'] or None, r['org'] or None, r['org_name'] or None,
+                    r['account'], r['object'] or None, r['account_description'] or None,
+                    num(r['original_approp']), num(r['transfers_adjustments']),
+                    num(r['revised_budget']), num(r['ytd_actual']), num(r['encumbrances']),
+                    num(r['available_budget']), r['pct_used'] or None,
+                    int(r['journal_lines']), int(r['page'])))
+    db.executemany('INSERT INTO munis_school_journal_account VALUES '
+                   '(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', acc)
+    keys = {a[4] for a in acc}
+    jr = []
+    for r in rows('munis-school-journal'):
+        jr.append((int(r['fiscal_year']), int(r['period']), r['journal'],
+                   r['effective_date'] or None, r['source'], r['posts_to'], float(r['amount']),
+                   r['fund'], r['fund_name'] or None, r['org'] or None, r['org_name'] or None,
+                   r['account'], r['object'] or None, r['account_description'] or None,
+                   r['ref_type'] or None, r['vendor_no'] or None, r['vendor'] or None,
+                   r['doc_type'] or None, r['doc_no'] or None, r['description'] or None,
+                   r['check_no'] or None, r['comment'] or None, int(r['page']),
+                   int(r['line']), r['read'] or None, r['masked'] or None,
+                   r['name_basis'] or None))
+    db.executemany('INSERT INTO munis_school_journal VALUES '
+                   '(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', jr)
+    # a join that matches nothing looks like absent data: every line must have its account
+    orphans = sorted({j[11] for j in jr if j[11] not in keys})
+    if orphans:
+        raise ValueError('%d journal account(s) not in munis_school_journal_account: %r'
+                         % (len(orphans), orphans[:5]))
+    return len(jr), len(acc)
 
 
 def load_funds(db):
@@ -3147,6 +3255,15 @@ def main():
     n_ytd, n_tba, n_tbj = load_munis_school_ytd(db)
     print('  school MUNIS YTD %5d  (trial balance: %d accounts, %d journal lines)'
           % (n_ytd, n_tba, n_tbj))
+    # HELD PRIVATE, 19 Oct 2026: the redacted CSVs failed a privacy read and sit in
+    # build/private/munis/held-2026-10-19/ until extract_munis_school_journal.py is fixed.
+    # Loud, not silent: the tables are empty because we withheld them, not because the
+    # Town printed nothing.
+    if os.path.exists(os.path.join(DATA, 'munis-school-journal.csv')):
+        n_mj, n_mja = load_munis_school_journal(db)
+        print('  school MUNIS journal %5d lines in %d accounts' % (n_mj, n_mja))
+    else:
+        print('  school MUNIS journal  HELD PRIVATE -- not loaded (see build/private/munis/)')
     print('  budget figures   %5d' % load_budget_figures(db))
     print('  workbook figures %5d' % load_workbook(db))
     print('  budget lines     %5d' % db.execute(

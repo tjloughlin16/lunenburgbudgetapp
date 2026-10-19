@@ -5,6 +5,7 @@ query, because two of the tables look joinable and are not.
 
     python3 scripts/extract_munis_report.py --check   # MUNIS reports -> munis-ledger.csv
     python3 scripts/extract_munis_school_ytd.py --check  # school YTD + trial balance (public xlsx only) -> 3 CSVs
+    python3 scripts/extract_munis_school_journal.py --check  # school journal detail FY2023-26, our redacted reading -> 2 CSVs
     python3 scripts/build_db.py --check               # CSVs -> lunenburg.db, or fail
 
 ---
@@ -132,6 +133,50 @@ and accounts to the sheet's own totals) — `extract_munis_school_ytd.py --check
 to write if any of that fails. `build_db.py`'s loader additionally asserts that every
 `munis_trial_balance_journal` row's `key` resolves in `munis_trial_balance_account`
 (CLAUDE.md: a join that matches nothing looks exactly like absent data).
+
+### `munis_school_journal`, `munis_school_journal_account`
+
+Every journal line behind every school account -- fund 0100 school orgs and every school
+special fund -- from FY2023 period 0 to FY2026 period 13: the Town's 1,744-page `glytdbud`
+run with journal detail, generated 7 October 2026
+(`sources/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md`).
+Extracted by `scripts/extract_munis_school_journal.py`. **The raw PDF is private** -- the
+Town's own redaction missed a child's name -- **and these tables are OUR REDACTED
+READING**, under TJ's rule (19 October 2026): *"remove ANYBODY who is directly named as a
+parent or child getting services from the school. anybody contributing to those services
+as vendors should be ID'd... It's associating a name to a disability that we are trying to
+avoid."* So:
+- **Providers and vendors are named**, including special education providers, officials,
+  contractors, staff in role and scholarship recipients. `name_basis` says why each person
+  is shown.
+- **Recipients are masked**: children read `[redacted]`. A family paid or refunded reads
+  `individual (redacted)`, with no vendor, invoice, check or receipt number.
+- **A blank `vendor` means the Town printed no payee.**
+
+Three pages the Town flattened to pictures were read by eye
+(`read = 'by eye (picture page)'`). The full rule is declared in the extractor's header.
+
+| table | one row per | grain |
+|---|---|---|
+| `munis_school_journal` | journal line | FY2023-FY2026, every school account |
+| `munis_school_journal_account` | account | the FY2026 figures the run prints |
+
+**Trap 1: `amount` alone is not spending.** `posts_to` says which printed column a line
+lands in: `actual` (API, APM, PRJ, PRH, GEN, GRV, CRP), `encumbrance` (POE, POL, POM, SOY,
+YEC, GEL), `original_budget` (BUC) or `transfer` (BUA). A purchase order is opened (POE)
+and liquidated (POL) as two lines that cancel; summing across `posts_to` counts it twice
+and then not at all. The assignment was not assumed: it is the only one under which every
+account's printed FY2026 figures close.
+
+**Trap 2: the per-year tie exists only where a second document prints the year.** This run
+prints account figures for FY2026 alone. FY2023-FY2025 tie to `munis_school_ytd` for the
+939 accounts both hold; the other 2,417 accounts here (mostly dormant grant funds) have no
+printed per-year figure to tie to, and `munis_school_ytd` holds 7 revenue accounts per year
+this run did not select.
+
+**Trap 3: payroll is one line per warrant per account (`PRJ`), not per person.** An
+account with one employee is still that employee's pay; read it as a line, never as a
+headcount.
 
 ---
 
@@ -283,6 +328,30 @@ its period, and what could not be read.
   not here, and they differ by district (Lunenburg adds longevity to step 13).
 - **Several DESE filings are expired contracts.** DESE publishes the latest one a district
   submitted. `contract_period` is the test of whether a figure is current.
+
+## `comparison_sets` says who chose the comparison; `dese_teacher_salaries` is every district
+
+`comparison_sets` (sources/data/comparison-sets.csv, written by hand from the documents;
+`scripts/check_comparison_sets.py --check`) names which districts are compared with
+Lunenburg and who chose them. `official` is every district the DISTRICT named, in three
+documents -- the Budget Task Force's nine (FY2026 proposed budget, p57), the three it entered
+in RADAR and the three DART columns (both FY2020 budget). `project-six` is ours, with no
+recorded criterion.
+
+- **Grain is (set, district, document).** Uxbridge and Ayer Shirley are named by all three
+  documents and have three `official` rows each. Count districts with
+  `COUNT(DISTINCT dese_org_code)`, never `COUNT(*)`.
+- **`dese_org_code` joins** to `dese_teacher_salaries.org_code`, `teacher_salary_schedules.org_code`
+  and `dese_measure.lea`. The checker refuses a printed name that resolves to anything but
+  exactly one DESE district.
+
+`dese_teacher_salaries` (`scripts/extract_dese_teacher_salaries.py --check`) is DESE's
+average teacher salary, teacher FTE and teachers per 100 students for every district,
+SY2009-SY2025, from the statewide spending table already held
+(`state-dese/district-expenditures-by-spending-category.xlsx`). The average exists from
+SY2018 only. Every figure `dese_measure` also holds ties to it, or nothing is written.
+An AVERAGE is the scale times the seniority and credentials of whoever is employed; set it
+beside `teacher_salary_schedules`, never in place of it.
 
 ## Adding a source
 

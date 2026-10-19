@@ -550,6 +550,67 @@ GROUPS = [
              'Monty Tech teachers’ agreement as filed with DESE, 2023-2026', 2,
              'DESE’s copy, Teacher_Contract.pdf. Mostly scanned. Salary schedules for '
              '2023-24 to 2025-26, pages 40-42, printed sideways.'),
+            ('data/comparison-sets.csv',
+             'Comparison districts: which ones, and who chose them', 3,
+             'Written by us, from the documents. One row per district per document that named '
+             'it. `official` is every district the district itself named as a comparison: the '
+             'Budget Task Force\u2019s nine in the FY2026 proposed budget (p57), and the three '
+             'entered in DESE\u2019s RADAR and the three DART columns in the FY2020 budget -- '
+             'eleven districts. `project-six` is this project\u2019s own six, chosen with no '
+             'recorded criterion. Each name is resolved to DESE\u2019s org code; '
+             'scripts/check_comparison_sets.py refuses one that matches anything but exactly one.'),
+            ('data/dese-teacher-salaries.csv',
+             'DESE average teacher salary and teacher FTE, every district, SY2009-SY2025', 2,
+             'Written by us from DESE\u2019s statewide spending table (held as '
+             'state-dese/district-expenditures-by-spending-category.xlsx). The average is printed '
+             'from SY2018. Every figure the RADAR extract also holds ties to it, Lunenburg '
+             'FY2018-FY2025 named. An average reflects the seniority and credentials of whoever '
+             'is employed; it is not a pay scale. Built by scripts/extract_dese_teacher_salaries.py.'),
+            ('contracts/pdf/dese-teacher-contract-maynard.pdf',
+             'Maynard teachers\u2019 agreement as filed with DESE, 1 September 2024 to 31 August 2027', 2,
+             'DESE\u2019s copy, Teacher_Contract.pdf, and current. Salary schedules for FY25 to FY27 (3%, 3.125%, 3.125%), pages 34-35.'),
+            ('contracts/pdf/dese-teacher-contract-uxbridge.pdf',
+             'Uxbridge Unit A agreement as filed with DESE, 1 July 2023 to 30 June 2026', 2,
+             'DESE\u2019s copy, Teacher_Contract.pdf. A scan; current through FY2026.'),
+            ('contracts/pdf/shrewsbury-teachers-2025-2028.pdf',
+             'Shrewsbury Education Association agreement, 25 August 2025 to 24 August 2028', 2,
+             'The union\u2019s posted copy, SEA-2025-2028-contract.pdf. A scan.'),
+            ('contracts/pdf/dese-teacher-contract-shrewsbury.pdf',
+             'Shrewsbury teachers\u2019 agreement as filed with DESE, 2022-2025', 1,
+             'DESE\u2019s copy, Teacher_Contract.pdf. Expired.'),
+            ('contracts/pdf/wachusett-teachers-2023-2026.pdf',
+             'Wachusett Regional Education Association agreement, 1 July 2023 to 30 June 2026', 2,
+             'The union\u2019s posted copy, 2023-2026-Unit-A-contract.pdf. Salary grids for FY24 to FY26 (2%, 2.25%, 2.75%), pages 47-49.'),
+            ('contracts/pdf/dese-teacher-contract-wachusett.pdf',
+             'Wachusett teachers\u2019 agreement as filed with DESE: the FY2022 extension of 2018-2021', 1,
+             'DESE\u2019s copy, Teacher_Contract.pdf. A scan. Expired.'),
+            ('contracts/pdf/hudson-teachers-2025-2028.pdf',
+             'Hudson Education Association agreement, 28 August 2025 to 27 August 2028', 2,
+             'The union\u2019s copy on Google Drive, HEA Contract 2025-2028.pdf. Salary schedules for FY26 to FY28 (2% a year), pages 46-48.'),
+            ('contracts/pdf/dese-teacher-contract-hudson.pdf',
+             'Hudson teachers\u2019 agreement as filed with DESE, 2015-2018', 1,
+             'DESE\u2019s copy, Teacher_Contract.pdf. Expired.'),
+            ('contracts/pdf/tyngsborough-teachers-2024-2027.pdf',
+             'Tyngsborough Unit A agreement, 1 September 2024 to 31 August 2027', 2,
+             'The district\u2019s copy on Google Drive, Unit A Collective Bargaining Agreement.pdf. Appendix A, page 39, is a scan.'),
+            ('contracts/pdf/dese-teacher-contract-tyngsborough.pdf',
+             'Tyngsborough Unit A agreement as filed with DESE, 2018-2021', 1,
+             'DESE\u2019s copy, Teacher_Contract.pdf. A scan. Expired.'),
+            ('contracts/pdf/groton-dunstable-teachers-2024-2027.pdf',
+             'Groton-Dunstable Unit A agreement, 1 September 2024 to 31 August 2027', 2,
+             'The union\u2019s posted signed copy, unit-a-contract-fy25-fy27-signed-1.pdf. A scan. DESE holds only the 2017-2020 schedules.'),
+            ('contracts/pdf/ayer-shirley-teachers-2025-2028.pdf',
+             'Ayer Shirley teachers\u2019 agreement, 1 September 2025 to 31 August 2028', 2,
+             'The union\u2019s posted copy, asrea_2025-2028_contract.pdf. A scan.'),
+            ('contracts/pdf/ayer-shirley-teachers-2022-2025.pdf',
+             'Ayer Shirley teachers\u2019 agreement, 1 September 2022 to 31 August 2025', 1,
+             'The union\u2019s posted copy, 2022-2025_teachers_contract.pdf. Salary schedules for FY23 to FY25, pages 41-43.'),
+            ('contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf',
+             'Ashburnham-Westminster Teachers\u2019 Association agreement, July 2025 to June 2028', 2,
+             'The district\u2019s posted copy, awta_contract_2025-2028_2.pdf. A scan.'),
+            ('contracts/docx/dese-teacher-contract-nashoba.docx',
+             'Nashoba Unit A agreement as filed with DESE, 2021-2022, with the 2017-2020 agreement', 1,
+             'DESE\u2019s copy, Teacher_Contract.docx. Expired; salary charts FY2018-FY2022 as Word tables. The 2023-2026 and 2026-2029 agreements were not found published.'),
             ('contracts/pdf/dese-teacher-contract.pdf', 'Lunenburg Education Association agreement', 3,
              'Runs 1 July 2024 to 30 June 2027. Raises of 2.5%, 4.0% and 3.5%, plus step '
              'increases worth about 3.32% a year. Expires at the end of FY27, so FY28 is '
@@ -843,6 +904,13 @@ GROUPS = [
              'redact, withhold), the rule, how much was removed, the reason and who decided. '
              'The raw copy of anything redacted or withheld is held privately; this register '
              'never holds a redacted value, only where one was.'),
+            ('data/takedowns.csv',
+             'What was taken down from the public archive, and why', 1,
+             'Written by us. One row per document we stopped serving after it was public: '
+             'the key, its sha256, the reason, who decided and when, and its state -- '
+             '`stopped serving` (the address answers 410 Gone with the reason), then '
+             '`deleted` once the object is removed from the bucket and confirmed gone by '
+             'listing. Kept by scripts/takedown.py.'),
             ('data/finance-committee-tasks.csv',
              'The Finance Committee’s files, as reading tasks', 1,
              'Written by us. One row per task for turning the delivery into tables: the '
@@ -956,23 +1024,11 @@ GROUPS = [
              'something the project had only been able to back-solve: the rounding is in '
              'the printing, not in the ledger. The sender\u2019s filename is '
              '\u201cPrint_ YEAR-TO-DATE BUDGET REPORT.pdf\u201d.'),
-            ('town-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
-             'Athletics revolving fund, journal detail, FY2025', 3,
-             'Every receipt and payment in fund 1301 for FY2025, with effective and posting '
-             'dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it '
-             'is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general '
-             'journal entries described only as an adjustment "per memo" account for '
-             '$254,121.18 of the $390,299.87 that came in.'),
-            ('town-ledgers/account-details/account-details-fy2024-fund1301.xlsx',
-             'Athletics revolving fund, journal detail, FY2024', 3,
-             'The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its '
-             'opening balance is a row the town prints, which is what lets the three years '
-             'be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.'),
-            ('town-ledgers/account-details/account-details-fy2026-fund1301.xlsx',
-             'Athletics revolving fund, journal detail, FY2026', 2,
-             'FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed '
-             'year. Its payroll total ties to the cent to the salary line in the fund’s own '
-             'year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.'),
+            # The three fund 1301 journal exports (account-details-fy2024/2025/2026-fund1301.xlsx)
+            # were catalogued here until 19 October 2026. They name a family on a returned
+            # (NSF) fee check, so they are WITHHELD (data/redactions.csv) and TAKEN DOWN
+            # (data/takedowns.csv): the raw is private, /docs/ answers 410, and the public
+            # copy is our redacted reading, data/fund-1301-cash-journal.csv, catalogued below.
             ('town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx',
              'School general fund at year-end, FY2026, account by account', 2,
              'MUNIS year-to-date budget report at period 13 -- the closed year -- for the school '
@@ -1030,6 +1086,12 @@ GROUPS = [
              'MUNIS account trial balance for fund 1300, periods 1 to 13 of FY2026, with every '
              'journal line: opening balance, debits, credits and closing balance by account. '
              'Journal references name vendors only. Same records request.'),
+            ('town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md',
+             'Where the school journal report came from, and why the Town\u2019s copy stays private (our provenance note)', 1,
+             'The Town Manager\u2019s 18 October 2026 email answering part 2 of our 4 September '
+             'request: a 1,744-page MUNIS journal report, redacted by the Town but not '
+             'completely, so it is held private and only our redacted reading is published. '
+             'Records the redaction log and the spreadsheet still to come.'),
             ('town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
              'Athletics by sport, three school years', 3,
              'The district’s own operating workbook: one row per sport, with participation '
@@ -3468,6 +3530,28 @@ GROUPS = [
              'Lost books and technology fund, FY2026, every journal line', 1,
              'Each entry behind the fund 1300 trial balance -- period, journal, source, date, '
              'reference (vendors only) and amount; the opening-balance line is flagged, never summed.'),
+            ('data/munis-school-journal.csv',
+             'The school department, every posting, FY2023 to FY2026', 3,
+             'Every journal line behind every school account -- general fund and every school '
+             'special fund -- from July 2022 to the FY2026 close: date, journal, source, amount, '
+             'vendor, invoice or purchase order, description and check number. Our redacted '
+             'reading of the Town\u2019s 1,744-page MUNIS journal report, which stays private '
+             'because the Town\u2019s own redaction missed a child\u2019s name. People paid as '
+             'vendors read individual (redacted); a child or a person named in a description '
+             'reads [redacted]. Built by scripts/extract_munis_school_journal.py, which refuses '
+             'to write unless every account, every printed total and the grand total close to '
+             'the cent.'),
+            ('data/munis-school-journal-accounts.csv',
+             'The school department\u2019s 3,356 accounts, FY2026 as the journal report prints them', 1,
+             'One row per account in the same journal report: fund, org, the FY2026 original '
+             'appropriation, transfers, revised budget, actual, encumbrances and available it '
+             'prints, and how many journal lines sit under it.'),
+            ('data/munis-school-journal-image-pages.csv',
+             'Three pages of the school journal report, read by eye', 1,
+             'Written by us. The Town flattened pages 34, 643 and 1080 of the journal report to '
+             'pictures; this is our reading of their 141 journal lines, with every child and '
+             'private person already masked. The extractor proves it: the three accounts those '
+             'pages fall in close to the cent only with these lines.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
@@ -4566,6 +4650,53 @@ SOURCE_URLS = {
     'contracts/pdf/north-middlesex-teachers-2024-2027.pdf':
         'https://nmta.massteacher.org/wp-content/uploads/sites/23/2025/03/'
         'Final-Teachers-CBA-2024-2027-NMRSD.pdf',
+    # The district's own comparison districts' teachers' contracts (comparison-sets.csv,
+    # set `official`), fetched 19 October 2026 and ingested from the bytes these returned.
+    'contracts/pdf/dese-teacher-contract-maynard.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01740000&type=T',
+    'contracts/pdf/dese-teacher-contract-uxbridge.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=03040000&type=T',
+    'contracts/pdf/dese-teacher-contract-shrewsbury.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=02710000&type=T',
+    'contracts/pdf/dese-teacher-contract-wachusett.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=07750000&type=T',
+    'contracts/pdf/dese-teacher-contract-hudson.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01410000&type=T',
+    'contracts/pdf/dese-teacher-contract-tyngsborough.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=03010000&type=T',
+    'contracts/docx/dese-teacher-contract-nashoba.docx':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=07250000&type=T',
+    'contracts/pdf/shrewsbury-teachers-2025-2028.pdf':
+        'https://shrewsbury.massteacher.org/wp-content/uploads/sites/47/2026/01/'
+        'SEA-2025-2028-contract.pdf',
+    'contracts/pdf/wachusett-teachers-2023-2026.pdf':
+        'https://wachusett.massteacher.org/wp-content/uploads/sites/56/2023/10/'
+        '2023-2026-Unit-A-contract.pdf',
+    'contracts/pdf/hudson-teachers-2025-2028.pdf':
+        'https://drive.google.com/file/d/'
+        '1YyP0NeOm3TWnXROL0c_0gr66Fqo1ldSc/view',
+    'contracts/pdf/tyngsborough-teachers-2024-2027.pdf':
+        'https://drive.google.com/file/d/'
+        '1WEvBmBXxdYvc7dIbvtkSqsIlt4ZvefgZ/view',
+    'contracts/pdf/groton-dunstable-teachers-2024-2027.pdf':
+        'https://grotondunstable.wordpress.com/wp-content/uploads/2025/01/'
+        'unit-a-contract-fy25-fy27-signed-1.pdf',
+    'contracts/pdf/ayer-shirley-teachers-2025-2028.pdf':
+        'https://asrea.weebly.com/uploads/8/8/7/5/8875355/'
+        'asrea_2025-2028_contract.pdf',
+    'contracts/pdf/ayer-shirley-teachers-2022-2025.pdf':
+        'https://asrea.weebly.com/uploads/8/8/7/5/8875355/'
+        '2022-2025_teachers_contract.pdf',
+    'contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf':
+        'https://files.smartsites.parentsquare.com/6739/'
+        'awta_contract_2025-2028_2.pdf',
 
     # Neighboring districts. Four of the six are hosted by somebody other than the
     # district -- two content networks and two member towns' own document centres --
