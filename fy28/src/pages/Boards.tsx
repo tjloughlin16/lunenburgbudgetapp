@@ -64,6 +64,9 @@ type LikelyNext = {
   dates: string[]; explained?: number; of?: number; last_met?: string | null; as_of: string
   backtest: { made: number; exact: number; week: number }
   threshold: { min_predictions: number; min_exact_share: number }
+  /** The town's page set against the year's meetings (build_boards.py, meeting_cadence). */
+  schedule_check?: { town_says: string; town_url?: string | null; record_says: string | null; agrees: boolean
+    outside: string[]; on_day: number; weekday: string }
 }
 type Score = { fy: number; minutes: { meetings: number; have: number }; recordings: { meetings: number; have: number } }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string | null; video_url: string | null
@@ -87,7 +90,7 @@ type Board = {
     first: string; last: string; years_filed: string[]; years_said_none: string[]
   } | null
   likely_next?: LikelyNext | null
-  join?: { weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string; open_seats_filled_by?: string } | null
+  join?: { rhythm?: string; rhythm_time?: string | null; weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string; open_seats_filled_by?: string } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
   meetings: Meeting[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -305,6 +308,28 @@ function LikelyCard({ b, date }: { b: Board; date: string }) {
   )
 }
 
+/** THE TOWN'S PAGE AGAINST THE RECORD. TJ, 19 October 2026: a board page "contradicting
+ *  reality needs to be flagged in our app". Both sides, side by side, and no verdict (rule
+ *  8): what the town's page says, and how many of the year's meetings on that weekday fell
+ *  on dates its wording rules out. Shown only when they disagree by OUR threshold
+ *  (meeting_cadence.against_record). */
+function ScheduleCheck({ b }: { b: Board }) {
+  const c = b.likely_next?.schedule_check
+  if (!c || c.agrees) return null
+  const shown = c.outside.slice(-4).map(d => dateText(d)).join(', ')
+  return (
+    <div className="card p-4" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+      <Kicker>Schedule check &middot; the town&rsquo;s page and the record differ</Kicker>
+      <p className="text-[14px] mt-1">
+        The town&rsquo;s page says it meets {c.town_says.startsWith('every') ? '' : 'on '}{ruleText(c.town_says)}.
+        In the last year, {c.outside.length} of its {c.on_day} {c.weekday} meetings fell on dates that wording rules out.</p>
+      <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+        Most recently {shown}.{c.record_says ? ` Its meetings fit ${ruleText(c.record_says)}.` : ''}{' '}
+        {c.town_url ? <a className="underline" href={c.town_url}>The town&rsquo;s page</a> : null}</p>
+    </div>
+  )
+}
+
 /** HOW TO JOIN. TJ, 17 September 2026: "if someone wants to join live, what info do they
  *  need to know?" -- the weekday and time first and large, then the room, then whether
  *  there is a Zoom and a broadcast. Read off the last few agendas (build_boards.how_to_join),
@@ -329,7 +354,13 @@ function JoinCard({ b, next }: { b: Board; next: Meeting | undefined }) {
       {j?.weekday && (
         <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-secondary)' }}>
           {/* An absent share means we do not know how consistent the day is, which is `Usually`. */}
-          Meets {(j.weekday_share ?? 0) >= 0.6 ? `${j.weekday}s` : `usually ${j.weekday}s`}{j.time ? `, ${j.time}` : ''}{j.place ? ` · ${j.place}` : ''}
+          {/* The rhythm the record shows, when one fits; the commonest recent weekday only
+              otherwise. The weekday count let Saturday site walks outvote the Wednesday
+              meetings (Conservation Commission, 19 October 2026). */}
+          {j.rhythm
+            ? <>Meets on {ruleText(j.rhythm)}{j.rhythm_time ? `, ${j.rhythm_time}` : ''}</>
+            : <>Meets {(j.weekday_share ?? 0) >= 0.6 ? `${j.weekday}s` : `usually ${j.weekday}s`}{j.time ? `, ${j.time}` : ''}</>}
+          {j.place ? ` · ${j.place}` : ''}
           {j.zoom ? ' · hybrid, Zoom link on each agenda' : ''}{j.cable ? ' · broadcast live on public access' : ''}
         </p>
       )}
@@ -537,6 +568,7 @@ function OverviewTab({ b, upcoming, past }: { b: Board; upcoming: Meeting[]; pas
           <SeatBanner b={b} />
           <JoinCard b={b} next={upcoming[0]} />
           {likelyDate(b, upcoming) && <LikelyCard b={b} date={likelyDate(b, upcoming)!} />}
+          <ScheduleCheck b={b} />
           {upcoming.length > 1 && <More href={`/boards/${b.slug}/meetings`}>{upcoming.length - 1} more coming up</More>}
         </div>
         <RecordCard b={b} />

@@ -31,8 +31,11 @@ export function ListSection({ title, all, allHref, children, label, footer }: {
   )
 }
 
-export function Row({ href, eyebrow, title, sub, accent, muted, tag, extra }: {
+export function Row({ href, eyebrow, title, sub, accent, muted, tag, extra, estimate }: {
   href?: string; eyebrow?: string; title: string; sub?: string | null; accent?: boolean; muted?: boolean; tag?: string
+  /** OUR ESTIMATE, not a posting: the amber edge and colour every estimate on the site
+   *  carries (rule 3), so it never reads as the town's notice. */
+  estimate?: boolean
   /** Below the row and OUTSIDE its link, for links of its own (a link inside a link is
    *  invalid HTML and nobody can press it). The threads on an upcoming agenda use it. */
   extra?: React.ReactNode
@@ -42,13 +45,13 @@ export function Row({ href, eyebrow, title, sub, accent, muted, tag, extra }: {
       <span className="min-w-0 flex-1">
         {eyebrow && (
           <span className="block text-[11px] font-bold uppercase tracking-wider"
-            style={{ color: accent ? 'var(--series-cost)' : 'var(--text-muted)' }}>{eyebrow}</span>
+            style={{ color: estimate ? 'var(--status-warning)' : accent ? 'var(--series-cost)' : 'var(--text-muted)' }}>{eyebrow}</span>
         )}
         <span className="block text-[15px] font-semibold leading-snug"
           style={{ color: muted ? 'var(--text-muted)' : 'var(--text-primary)', fontWeight: muted ? 400 : 600 }}>
           {title}
           {tag && <span className="ml-1.5 align-middle text-[10px] font-bold uppercase tracking-widest"
-            style={{ color: 'var(--series-cost)' }}>{tag}</span>}
+            style={{ color: estimate ? 'var(--status-warning)' : 'var(--series-cost)' }}>{tag}</span>}
         </span>
         {sub && (
           <span className="block text-[13px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)',
@@ -59,7 +62,8 @@ export function Row({ href, eyebrow, title, sub, accent, muted, tag, extra }: {
     </span>
   )
   return (
-    <li className="border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
+    <li className="border-t first:border-t-0" style={{ borderColor: 'var(--grid)',
+      ...(estimate ? { boxShadow: 'inset 4px 0 0 var(--status-warning)' } : {}) }}>
       {href ? <a href={href} className="block transition-colors hover:bg-[var(--surface-3)]"
         {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{body}</a> : body}
       {extra ? <div className="px-4 pb-2.5 -mt-1">{extra}</div> : null}

@@ -53,16 +53,29 @@ type HomeNotices = { upcoming: { board_slug: string; date: string; time?: string
  *  grouped list on a wide screen, and as one tab of a SEGMENTED CONTROL on a phone. */
 type Pane = { tab: string; title: string; all?: string; allHref?: string; label: string; rows: React.ReactNode }
 
+/** The board's likely next meeting, from boards.json (meeting_cadence.py). */
+type HomeLikely = { slug: string; likely_next?: { show: boolean; dates: string[]; time?: string | null; rule: string | null
+  backtest: { made: number; exact: number } } | null }
+
 function useThisWeek(): Pane | null {
   const feed = useReport<HomeFeed>('meeting-feed.json').d
   const notices = useReport<HomeNotices>('notices.json').d
+  const boards = useReport<{ boards: HomeLikely[] }>('boards.json').d
   if (!feed) return null
   const rows: { name: string; m: HomeUpcoming; time?: string; line?: string }[] = []
   const quiet: string[] = []
+  const likely: { name: string; slug: string; date: string; l: NonNullable<HomeLikely['likely_next']> }[] = []
   for (const [slug, name] of THE_THREE) {
     const ms = feed.upcoming.meetings
       .filter(m => m.board_slug === slug && m.date >= todayIso() && daysAway(m.date) <= 7)
       .sort((a, b) => a.date.localeCompare(b.date))
+    // NOTHING POSTED: the board's likely next meeting, if it falls this week and clears our
+    // threshold (TJ, 19 October 2026) -- drawn as an estimate, never as a notice. A board
+    // with ANY future posting gets none, the rule the board pages keep.
+    const posted = feed.upcoming.meetings.some(m => m.board_slug === slug && m.date >= todayIso())
+    const l = boards?.boards.find(x => x.slug === slug)?.likely_next
+    const guess = !posted && l?.show ? l.dates.find(x => x >= todayIso()) : undefined
+    if (guess && daysAway(guess) <= 7) { likely.push({ name, slug, date: guess, l: l! }); continue }
     if (!ms.length) quiet.push(name)
     for (const m of ms) {
       const p = notices?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
@@ -77,6 +90,12 @@ function useThisWeek(): Pane | null {
         <Row key={m.file_id} href={`/this-week#m-${m.board_slug}-${m.date}`} accent
           eyebrow={dayLabel(m.date, feed.as_of) + (time ? ` · ${time}` : '')}
           title={meetingTitle(name, m.body_as_printed)} sub={line} />
+      ))}
+      {likely.map(({ name, slug, date, l }) => (
+        <Row key={`likely-${slug}`} href={`/boards/${slug}`} estimate tag="our estimate"
+          eyebrow={`Likely ${dayLabel(date, feed.as_of)}${l.time ? ` · ${l.time}` : ''}`}
+          title={name}
+          sub={`Nothing posted yet. It usually meets ${l.rule?.startsWith('every') ? l.rule : `on the ${l.rule}`}; this guess was right ${l.backtest.exact} of ${l.backtest.made} times last year.`} />
       ))}
       {quiet.length > 0 && <Row title={`${quiet.join(' and ')}: nothing posted this week`} muted />}
     </>,

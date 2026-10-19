@@ -698,6 +698,29 @@ def build(as_of=None):
         if not MC.not_a_rhythm(slug) and cadence_dates.get(slug):
             likely = MC.likely_next(cadence_dates[slug], as_of)
             likely['time'] = rhythm_time(slug, docs[slug], likely.pop('on_rule', []))
+            likely.pop('shape', None)
+            # Fits: most of the year's meetings fall on it, OR it passed the backtest -- a
+            # board with many extra meetings (site walks, hearings) still keeps a rhythm.
+            fit = bool(likely.get('show') or (likely.get('of') and
+                                              likely['explained'] / likely['of'] >= MC.MIN_EXACT_SHARE))
+            # THE "MEETS ..." LINE READS THE RHYTHM when there is one that fits. It counted
+            # the weekdays of the last ten agendas, and the Conservation Commission's
+            # Saturday site walks outnumbered its Wednesday meetings, so the page said
+            # "Meets usually Saturdays, 9:30 am" over a card saying 1st and 3rd Wednesday
+            # (19 October 2026).
+            if join and likely.get('rule') and fit:
+                join['rhythm'] = likely['rule']
+                join['rhythm_time'] = likely['time']
+            # THE TOWN'S PAGE AGAINST THE RECORD. Where the board's own page states a plain
+            # schedule and the meetings of the last year fit a different one, the page says
+            # so -- both, side by side, no verdict. Only when the record's rhythm fits.
+            stated = MC.parse_stated((page or {}).get('meets'))
+            if stated:
+                vs = MC.against_record(stated, cadence_dates[slug], as_of)
+                likely['schedule_check'] = dict(
+                    town_says=MC.stated_words(stated), town_url=(page or {}).get('url'),
+                    record_says=likely.get('rule') if fit else None, agrees=vs['agrees'],
+                    outside=vs['outside'], on_day=vs['on_day'], weekday=MC.WEEKDAYS[stated['weekday']])
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             likely_next=likely,

@@ -42,6 +42,7 @@ which is the point at which "likely" stops being an honest word for it.
 """
 import argparse
 import collections
+import re
 import datetime as dt
 import sys
 
@@ -282,6 +283,74 @@ def not_a_rhythm(slug):
     return slug.endswith('-public-hearing') or slug.endswith('-appointing-committee')
 
 
+# ------------------------------------------------------------------ the board's own word
+
+_ORDW = {'1st': 1, 'first': 1, '2nd': 2, 'second': 2, '3rd': 3, 'third': 3, '4th': 4, 'fourth': 4,
+         'last': 5}
+# No \b in front: the town's sewer page prints 'Regular Meeting2nd Tuesday', words run together.
+_STATED = re.compile(r'(?<![0-9])((?:(?:1st|first|2nd|second|3rd|third|4th|fourth|last)(?:\s*(?:,|and|&)\s*)?)+)'
+                     r'\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)s?\b', re.I)
+
+
+def parse_stated(text):
+    """What a board's own page says about when it meets, or None when the text does not say
+    it in a form read here. Two forms: dict(kind='nth', weekday, nths) -- "1st and 3rd
+    Wednesday" -- and dict(kind='except_last', weekday) -- "every Tuesday except the last".
+    Conservative on purpose (TJ, 19 October 2026: a page contradicting the record must be
+    FLAGGED, so a misread here would accuse a board of a contradiction it did not make):
+    a sentence about a broadcast or a channel is not read, nor is any other 'except', and
+    two weekdays are not read."""
+    if not text:
+        return None
+    sents = [x for x in re.split(r'[\n.;]+', text) if not re.search(r'as needed|broadcast|televis|channel|cable', x, re.I)]
+    for x in sents:
+        m = re.search(r'every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s+except\s+(?:for\s+)?'
+                      r'the\s+last\s+\1', x, re.I)
+        if m:
+            return dict(kind='except_last', weekday=WEEKDAYS.index(m.group(1).capitalize()))
+    days, nths = set(), set()
+    for x in sents:
+        if re.search(r'except', x, re.I):
+            continue
+        for m in _STATED.finditer(x):
+            days.add(m.group(2).lower())
+            nths |= {_ORDW[w.lower()] for w in re.findall(r'1st|first|2nd|second|3rd|third|4th|fourth|last',
+                                                          m.group(1), re.I)}
+    if len(days) != 1 or not nths:
+        return None
+    return dict(kind='nth', weekday=WEEKDAYS.index(days.pop().capitalize()), nths=frozenset(nths))
+
+
+def stated_words(st):
+    if st['kind'] == 'except_last':
+        return 'every %s except the last' % WEEKDAYS[st['weekday']]
+    return Rule('nth', st['weekday'], st['nths']).words()
+
+
+def stated_allows(st, day):
+    if day.weekday() != st['weekday']:
+        return False
+    n, last = nth_of(day)
+    if st['kind'] == 'except_last':
+        return not last
+    return n in st['nths'] or (5 in st['nths'] and last)
+
+
+def against_record(st, dates, as_of):
+    """The year's meetings set against what the page says: the ones ON the stated weekday
+    that the stated schedule rules out. Other weekdays are not counted against it -- a
+    special meeting on another day does not contradict a regular schedule."""
+    as_of = _d(as_of)
+    lo = as_of - dt.timedelta(days=TRAIN_DAYS)
+    year = [d for d in sorted({_d(x) for x in dates}) if lo < d <= as_of]
+    on_day = [d for d in year if d.weekday() == st['weekday']]
+    outside = [d.isoformat() for d in on_day if not stated_allows(st, d)]
+    return dict(on_day=len(on_day), outside=outside,
+                # OUR THRESHOLD for calling it a disagreement: three or more such meetings,
+                # and at least a fifth of the year's meetings on that weekday.
+                agrees=not (len(outside) >= 3 and len(outside) >= 0.2 * max(len(on_day), 1)))
+
+
 def likely_next(dates, as_of, count=6):
     """Everything the page needs, or None when there is no history to read.
 
@@ -316,7 +385,8 @@ def likely_next(dates, as_of, count=6):
     return dict(out, show=bool(passes and recent), reason=reason, rule=r.words(),
                 weekday=WEEKDAYS[r.weekday], explained=inf['explained'], of=inf['of'],
                 last_met=last.isoformat(), dates=nxt,
-                on_rule=[d.isoformat() for d in hist if r.matches(d)][-10:])
+                on_rule=[d.isoformat() for d in hist if r.matches(d)][-10:],
+                shape=(r.weekday, frozenset(r.nths)) if r.kind == 'nth' else None)
 
 
 # ------------------------------------------------------------------ tests
