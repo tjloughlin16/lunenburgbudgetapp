@@ -7,6 +7,8 @@ There is no full report. The Park Department's line inside the facilities group 
 Department budgets and is only LISTED here. One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['parks-budget'],
     id='parks', shelf='Parks and recreation', title='Parks department', area='town',
     order=56,
     groups=[

@@ -9,6 +9,8 @@ children with a plan, and the children placed out of district. One question, one
 address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['enrolment-by-year', 'grade-to-grade-loss'],
     id='enrolment', shelf='Enrolment', title='Students and schools', area='school', order=21,
     groups=[
         ('How many', ['enrolment-by-year', 'enrolment-by-grade-band', 'high-needs-students',

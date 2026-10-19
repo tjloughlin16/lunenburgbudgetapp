@@ -1,5 +1,7 @@
 """The Transportation shelf. See scripts/topics.py for the model and the title rule."""
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['special-education-transportation', 'fy2027-bus-budget'],
     id='transportation', shelf='Transportation', title='School bus costs', area='school', order=10,
     full_report=('/analysis/transportation', 'School transportation, the full report'),
     groups=[

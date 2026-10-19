@@ -7,6 +7,8 @@ The circuit breaker is HOME on the Special education shelf and transportation re
 the Transportation shelf; both are listed here, one page on two shelves.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['required-local-contribution', 'minimum-aid'],
     id='state-aid', shelf='State aid', title='Chapter 70 aid', area='school', order=23,
     groups=[
         ('Chapter 70', ['chapter-70-by-year', 'minimum-aid', 'foundation-budget',

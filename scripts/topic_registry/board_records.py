@@ -13,6 +13,8 @@ the per-board records tab at /boards/<slug>/records; this shelf writes only unde
 fy28/public/data/topics/.)
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['board-minutes-posted'],
     id='board-records', shelf='Boards', title='Boards and committees', area='town',
     order=55,
     groups=[

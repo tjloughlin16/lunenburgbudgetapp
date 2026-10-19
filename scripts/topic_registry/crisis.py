@@ -28,6 +28,8 @@ area holds what the district published; a forward projection sitting among those
 read as one of them.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['gap-by-cost-line', 'all-cuts-combined'],
     id='crisis', shelf='Budget crisis', title='The structural gap', area='options',
     order=69,
     groups=[

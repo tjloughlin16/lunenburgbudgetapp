@@ -11,6 +11,8 @@ free cash for schools and the stabilization fund (Town reserves), the athletic f
 (Athletics), the bus fee (Transportation), the cut lists (School programs).
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['fy2027-override', 'override-duration'],
     id='budget-options', shelf='Budget options', title='Closing the gap', area='options',
     order=70,
     groups=[

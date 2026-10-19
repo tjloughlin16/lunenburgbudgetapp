@@ -13,6 +13,8 @@ Teacher FTE by subject is HOME on the School staffing shelf and out-of-district 
 Special education shelf; both are listed here, one page on two shelves.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['lines-cut-to-zero', 'world-languages'],
     id='school-programs', shelf='School programs', title='Programs and cuts', area='school',
     order=25,
     groups=[

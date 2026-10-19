@@ -11,6 +11,8 @@ Absorbs /analysis/free-cash, the /free-cash page and the /free-cash-for-schools 
 Written by the same generator as the stabilization funds, from the same data.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['free-cash-redirect', 'free-cash-sources'],
     id='free-cash', shelf='Free cash', title='Free cash', area='town', order=49,
     groups=[
         ('The balance', ['free-cash-balance', 'free-cash-guideline', 'free-cash-sources']),

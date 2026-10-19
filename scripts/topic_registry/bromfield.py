@@ -12,6 +12,8 @@ Lunenburg's, on DESE's one measure. "Reaching the state median" is HOME on Schoo
 listed here, one page on two shelves, because the rate scenario reads it.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['harvard-per-pupil'],
     id='bromfield', shelf='Bromfield', title='Harvard and Bromfield', area='school', order=23,
     groups=[
         ('What Harvard spends a pupil', ['harvard-per-pupil', 'harvard-line-by-line']),

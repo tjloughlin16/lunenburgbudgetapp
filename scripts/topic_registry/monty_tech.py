@@ -11,6 +11,8 @@ their addresses do not change; "What per pupil counts" is HOME on School spendin
 answers a question about every district. All four are listed here. One page, many shelves.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['monty-tech-per-pupil'],
     id='monty-tech', shelf='Monty Tech', title='Monty Tech finances', area='school', order=22,
     groups=[
         ('Lunenburg’s pupils there', ['monty-tech-enrolment']),

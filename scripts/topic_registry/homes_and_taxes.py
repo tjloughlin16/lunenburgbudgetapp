@@ -11,6 +11,8 @@ categories and are only LISTED: enrolment by year (Enrolment) and spending per p
 (School spending). One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['average-tax-bill', 'homes-and-enrolment'],
     id='homes-and-taxes', shelf='Homes and taxes', title='Homes, taxes, growth', area='town',
     order=53,
     groups=[

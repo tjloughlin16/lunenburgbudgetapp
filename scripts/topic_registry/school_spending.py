@@ -17,6 +17,8 @@ each is listed here, one page on two shelves. "What per pupil counts" is HOME he
 Monty Tech: it sets DESE's figure beside net school spending and the Census Bureau's.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['per-pupil-spending', 'spending-by-function'],
     id='school-spending', shelf='School spending', title='Spending compared', area='school',
     order=24,
     groups=[

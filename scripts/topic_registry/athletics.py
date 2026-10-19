@@ -1,5 +1,7 @@
 """The Athletics shelf. See scripts/topics.py for the model and the title rule."""
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['total-athletics-cost', 'town-budget-and-fee-fund'],
     id='athletics', shelf='Athletics', title='Athletics costs', area='school', order=11,
     full_report=('/analysis/athletics', 'Athletics, the full report'),
     groups=[

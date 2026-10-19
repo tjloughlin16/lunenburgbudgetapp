@@ -10,6 +10,8 @@ paraprofessional budget line (special education) and the FY2026 paraprofessional
 (FY2026 closeout). One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['teacher-fte-over-time', 'paraprofessional-fte'],
     id='school-staffing', shelf='School staffing', title='School staff', area='school',
     order=22,
     groups=[

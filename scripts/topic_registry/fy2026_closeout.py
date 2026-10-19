@@ -6,6 +6,8 @@ transportation's FY2026 overrun (transportation) and the FY2026 athletics unders
 (athletics). One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['fy2026-school-surplus', 'fy2026-surplus-and-fy2027'],
     id='fy2026-closeout', shelf='FY2026 closeout', title='FY2026 year end', area='town',
     order=51,
     groups=[

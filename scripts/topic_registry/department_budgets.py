@@ -8,6 +8,8 @@ Fund, and school retiree insurance (FY2026 closeout), and the Monty Tech assessm
 (Enrolment). One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['town-budget-growth', 'town-employee-benefits'],
     id='department-budgets', shelf='Department budgets', title='Town departments', area='town',
     order=52,
     groups=[

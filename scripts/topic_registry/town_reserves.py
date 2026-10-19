@@ -9,6 +9,8 @@ Absorbs /analysis/stabilization-funds and /analysis/stabilization-option. There 
 report: every question they answered has one page here.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['reserves-and-the-gap', 'who-may-spend-it'],
     id='town-reserves', shelf='Stabilization funds', title='Stabilization funds', area='town',
     order=50,
     groups=[

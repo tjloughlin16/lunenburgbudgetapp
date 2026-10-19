@@ -7,6 +7,8 @@ sped-and-the-curve, hiring-here-or-placing-there, /what-special-education-costs,
 Transportation shelf and is listed here, one page on two shelves.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['in-district-special-education', 'tuition-budget'],
     id='special-education', shelf='Special education', title='Special education costs',
     area='school', order=20,
     groups=[

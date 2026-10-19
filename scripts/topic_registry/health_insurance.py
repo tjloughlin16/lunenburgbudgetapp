@@ -8,6 +8,8 @@ insurance at the FY2026 year end (FY2026 closeout) and the employee benefits gro
 omnibus (Department budgets). One question, one page, one address.
 """
 CATEGORY = dict(
+    # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
+    start=['school-health-insurance', 'health-insurance-options'],
     id='health-insurance', shelf='Health insurance', title='Health insurance costs', area='town',
     order=54,
     groups=[
