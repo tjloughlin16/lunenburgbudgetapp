@@ -4084,6 +4084,7 @@ def main():
 def build_topics(m, brief, pay):
     import topic as TP
     import ladder as LD
+    from brief import step
     A, last, k, st = m['audit'], m['last'], m['contract'], m['state']
     by = {r['fy']: r for r in m['ledger']}
     U = lambda v: figure(v, C.usd(v))
@@ -4270,6 +4271,11 @@ def build_topics(m, brief, pay):
             fail('FY%d: school-day, athletic and band budgets no longer sum to all buses' % r_['fy'])
     if (bud[-1]['fy'], bud[-1]['school_budget'], bud[-2]['school_budget']) != (2027, x['sd27'], x['sd26']):
         fail('the FY2027 bus-budget chart no longer ends on the school-day figures its finding states')
+    sp_sped = 100.0 * (bud[-1]['sped_budget'] / bud[0]['sped_budget'] - 1)
+    sp_reg = 100.0 * (bud[-1]['regular_budget'] / bud[0]['regular_budget'] - 1)
+    if not sp_sped > sp_reg:
+        fail('special education buses no longer rose faster than regular routes, which the '
+             'bus-budget page says')
     out['fy2027-bus-budget'] = TP.page(
         'fy2027-bus-budget',
         'School-day buses rise %s in %s; the total shows %s because athletic buses were cut.'
@@ -4278,13 +4284,31 @@ def build_topics(m, brief, pay):
          f('sd26', U(x['sd26']), 'school-day buses, %s budget' % C.fy(last), 'published',
            {'y': F(last)}),
          f('sd27v', U(x['sd27']), 'school-day buses, %s budget' % C.fy(2027), 'published',
-           {'y': F(2027)})],
+           {'y': F(2027)}),
+         f('sp0', U(bud[0]['sped_budget']), 'special education buses, %s budget'
+           % C.fy(bud[0]['fy']), 'published', {'y': F(bud[0]['fy'])}),
+         f('sp27', U(bud[-1]['sped_budget']), 'special education buses, %s budget' % C.fy(2027),
+           'published', {'y': F(2027)}),
+         f('rgp', P(sp_reg), 'regular routes, change over the same years', 'published')],
         [con('The %s total looks flat because athletic buses were cut, not because buses got '
-             'cheaper.' % C.fy(2027), ['sd27', 'all27', 'cut27'], {'y': F(2027)})],
+             'cheaper.' % C.fy(2027), ['sd27', 'all27', 'cut27'], {'y': F(2027)}),
+         con('Special education buses went from %s in %s to %s, up %s; regular routes rose %s.'
+             % (C.usd(bud[0]['sped_budget']), C.fy(bud[0]['fy']), C.usd(bud[-1]['sped_budget']),
+                C.pct(sp_sped), C.pct(sp_reg)), ['sp0', 'sp27', 'rgp'],
+             {'a': U(bud[0]['sped_budget']), 'y': F(bud[0]['fy']), 'b': U(bud[-1]['sped_budget']),
+              'p': P(sp_sped), 'q': P(sp_reg)},
+             notes=[step('These are budgets voted, net of any reimbursement. Whether more '
+                         'children ride, or the routes cost more, is not in them.', 'gap',
+                         closes='the district’s special education transportation contracts and '
+                                'rider counts, by year')])],
         chart=TP.series(
             'Bus budgets as voted, by kind',
             [C.fy(r_['fy']) for r_ in bud],
-            [TP.track('School-day buses', [r_['school_budget'] for r_ in bud], 'published', 'bar'),
+            # School-day buses are drawn as their two lines, because they do not move
+            # together: special education transportation is the one that rises.
+            [TP.track('Regular routes', [r_['regular_budget'] for r_ in bud], 'published', 'bar'),
+             TP.track('Special education transportation', [r_['sped_budget'] for r_ in bud],
+                      'published', 'bar'),
              TP.track('Athletic buses', [r_['athletic_budget'] for r_ in bud], 'published', 'bar'),
              TP.track('Band and music', [r_['band_budget'] for r_ in bud], 'published', 'bar')],
             '$', kind='bar', stacked=True,

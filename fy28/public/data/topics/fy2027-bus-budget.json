@@ -27,22 +27,43 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "School-day buses",
+    "name": "Regular routes",
     "texts": [
-     "$1,067,343",
-     "$1,137,335",
-     "$1,174,747",
-     "$1,352,528",
-     "$1,531,234",
-     "$1,703,313"
+     "$769,500",
+     "$807,975",
+     "$838,800",
+     "$907,200",
+     "$965,500",
+     "$1,053,360"
     ],
     "values": [
-     1067343,
-     1137335,
-     1174747,
-     1352528,
-     1531234,
-     1703313
+     769500,
+     807975,
+     838800,
+     907200,
+     965500,
+     1053360
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Special education transportation",
+    "texts": [
+     "$297,843",
+     "$329,360",
+     "$335,947",
+     "$445,328",
+     "$565,734",
+     "$649,953"
+    ],
+    "values": [
+     297843,
+     329360,
+     335947,
+     445328,
+     565734,
+     649953
     ]
    },
    {
@@ -117,6 +138,51 @@
     "cut27"
    ],
    "text": "The FY2027 total looks flat because athletic buses were cut, not because buses got cheaper."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$297,843",
+     "unit": "",
+     "value": 297843
+    },
+    "b": {
+     "text": "$649,953",
+     "unit": "",
+     "value": 649953
+    },
+    "p": {
+     "text": "118.2%",
+     "unit": "",
+     "value": 118.22000181303571
+    },
+    "q": {
+     "text": "36.9%",
+     "unit": "",
+     "value": 36.888888888888886
+    },
+    "y": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s special education transportation contracts and rider counts, by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "These are budgets voted, net of any reimbursement. Whether more children ride, or the routes cost more, is not in them."
+    }
+   ],
+   "rests_on": [
+    "sp0",
+    "sp27",
+    "rgp"
+   ],
+   "text": "Special education buses went from $297,843 in FY2022 to $649,953, up 118.2%; regular routes rose 36.9%."
   }
  ],
  "facts": [
@@ -218,6 +284,60 @@
     "text": "$1,703,313",
     "unit": "",
     "value": 1703313
+   }
+  },
+  {
+   "id": "sp0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "special education buses, FY2022 budget"
+   },
+   "value": {
+    "text": "$297,843",
+    "unit": "",
+    "value": 297843
+   }
+  },
+  {
+   "id": "sp27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "special education buses, FY2027 budget"
+   },
+   "value": {
+    "text": "$649,953",
+    "unit": "",
+    "value": 649953
+   }
+  },
+  {
+   "id": "rgp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "regular routes, change over the same years"
+   },
+   "value": {
+    "text": "36.9%",
+    "unit": "",
+    "value": 36.888888888888886
    }
   }
  ],
