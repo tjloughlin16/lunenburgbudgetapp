@@ -1252,16 +1252,18 @@ def build():
     RAISES = ('the teachers’ agreements before the current one, from the district or as filed '
               'with DESE')
     EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
+    # THE WHAT-IFS, in the unit of the budget line itself (TJ, 19 October 2026, on the split:
+    # "'each teacher costs more' $2m, what does that even mean"). Teachers x cost per teacher,
+    # with one of the two held at its FY2009 value -- our arithmetic on DESE's figures.
+    wi_count = T[g0] * W[g1]       # FY2009's number of teachers at FY2025's cost each
+    wi_cost = T[g1] * W[g0]        # FY2025's teachers at FY2009's cost each
     out['pay-or-headcount'] = TP.page(
         'pay-or-headcount',
-        'From %s to %s, each teacher costing more added %s; fewer teachers took off %s.'
-        % (C.fy(g0), C.fy(g1), C.usd(r0_), C.usd(-v0)),
+        '%s had %s fewer teachers than %s, but each cost %s more; the teachers line rose %s.'
+        % (C.fy(g1), '%.1f' % (T[g0] - T[g1]), C.fy(g0), C.usd(W[g1] - W[g0]), C.usd(TS[g1] - TS[g0])),
         [f('per', SU(r0_), 'added by each teacher costing more, %s to %s' % (C.fy(g0), C.fy(g1)),
            'published', fy01),
          f('cnt', SU(v0), 'from fewer teachers, the same years', 'published'),
-         f('per-e', SU(re_), 'added by each teacher costing more, %s to %s' % (C.fy(era), C.fy(g1)),
-           'published', {'a': F(era), 'b': F(g1)}),
-         f('cnt-e', SU(ve), 'from fewer teachers, the same years', 'published'),
          f('tchr', SP(dTS), 'Teachers spending: %s to %s' % (C.usd(TS[g0]), C.usd(TS[g1])),
            'published', {'a': U(TS[g0]), 'b': U(TS[g1])}),
          f('fte', FTE(T[g1]), 'teacher FTE, %s; %s in %s, %s in %s'
@@ -1278,15 +1280,22 @@ def build():
            {'y': F(ey[-1]), 'a': PC(100 * ex[ey[0]]), 'p': F(ey[0])}),
          f('raise', PC(KC['cola']), 'salary schedule adjustment, %s, teachers’ agreement'
            % C.fy(KC['fy']), 'contract', {'y': F(KC['fy'])}),
+         f('wi-count', U(wi_count), '%s at %s’s count of teachers, our arithmetic'
+           % (C.fy(g1), C.fy(g0)), 'published', {'a': F(g1), 'b': F(g0)}),
+         f('wi-cost', U(wi_cost), '%s’s teachers at %s’s cost each, our arithmetic'
+           % (C.fy(g1), C.fy(g0)), 'published', {'a': F(g1), 'b': F(g0)}),
          f('steps', None, 'teachers on each step and lane, each year', 'gap', closes=STEPS)],
-        [con('From %s, fewer teachers took %s off; each teacher costing more added %s.'
-             % (C.fy(g0), C.usd(-v0), C.usd(r0_)), ['cnt', 'per', 'tchr'],
-             {'y': F(g0), 'a': U(-v0), 'b': U(r0_)},
-             notes=[step('From %s, the first year of the state’s comparable count, more teachers '
+        [con('Today’s teachers at %s’s cost each would cost %s; they cost %s.'
+             % (C.fy(g0), C.usd(wi_cost), C.usd(TS[g1])), ['wi-cost', 'wi-count', 'tchr'],
+             {'y': F(g0), 'a': U(wi_cost), 'b': U(TS[g1])},
+             notes=[step('And %s’s %s teachers at today’s cost each would be %s.'
+                         % (C.fy(g0), '%.1f' % T[g0], C.usd(wi_count)), 'measured',
+                         {'y': F(g0), 'n': FTE(T[g0]), 'a': U(wi_count)}),
+                    step('Split exactly, by midpoint weights: fewer teachers took %s off and each '
+                         'teacher costing more added %s.' % (C.usd(-v0), C.usd(r0_)), 'measured',
+                         {'a': U(-v0), 'b': U(r0_)}),step('From %s, the first year of the state’s comparable count, more teachers '
                          'added %s and each teacher costing more %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
                          'measured', {'y': F(era), 'a': U(ve), 'b': U(re_)}),
-                    step('The split is ours, by midpoint weights; its two parts add to the '
-                         'whole with nothing left over.', 'measured'),
                     step('From any start year %s to %s, the cost per teacher is the larger part.'
                          % (C.fy(starts[0]), C.fy(starts[-1])), 'measured',
                          {'a': F(starts[0]), 'b': F(starts[-1])})]),
@@ -1320,28 +1329,19 @@ def build():
         # the latest year -- so FY2009 looked like the year "more per teacher" was highest
         # (TJ, 19 October 2026: "what does 'more spent per teacher' mean when FY09 has the
         # highest number"). That chart is now the check underneath, labelled as start years.
-        chart=TP.ranking('Where the rise in teachers spending came from',
-                         [('Each teacher costs more', r0_),
-                          ('Fewer teachers', v0)], '$',
-                         note='%s to %s, our midpoint split of DESE’s figures; the two add to the '
-                              'whole rise of %s.' % (C.fy(g0), C.fy(g1), C.usd(r0_ + v0)),
-                         note_figures={'a': F(g0), 'b': F(g1), 'c': U(r0_ + v0)}),
-        # A RUNNING TOTAL FROM ONE FIXED START, read left to right like any chart over time.
-        # It replaced a chart of one bar per START year, each a span to the latest year,
-        # which nobody could read (TJ, 19 October 2026: "i really dont understand how to read
-        # this chart then if its until FY25"). Each point is the split from FY2009 to that
-        # year, so the last point is the headline split exactly.
-        also=[TP.series('Added since the first year, year by year', [C.fy(y) for y in gy], [
-                  TP.track('Each teacher costs more',
-                           [0 if y == g0 else split(g0, y)[1] for y in gy], 'published', 'line'),
-                  TP.track('Fewer teachers',
-                           [0 if y == g0 else split(g0, y)[0] for y in gy], 'published', 'line'),
-                  TP.track('Total change in teachers spending', [TS[y] - TS[g0] for y in gy],
-                           'published', 'line')], '$',
-                  note='Each point: the change since %s, split in two; the two lines add to the '
-                       'total. %s reads high on the swing between insurance and teachers.'
-                       % (C.fy(g0), C.fy(odd)),
-                  note_figures={'a': F(g0), 'b': F(odd)}),
+        chart=TP.ranking('The teachers line, actual and what-if',
+                         [('%s, actual' % C.fy(g1), TS[g1]), ('%s, actual' % C.fy(g0), TS[g0]),
+                          ('%s with %s’s number of teachers' % (C.fy(g1), C.fy(g0)), wi_count),
+                          ('%s’s teachers at %s’s cost each' % (C.fy(g1), C.fy(g0)), wi_cost)],
+                         '$', highlight='%s, actual' % C.fy(g1),
+                         note='Teachers spending, all funds. A what-if is teachers times cost per '
+                              'teacher with one held at its %s value: our arithmetic.' % C.fy(g0),
+                         note_figures={'a': F(g0)}),
+        also=[TP.series('Teachers, year by year', [C.fy(y) for y in gy], [
+                  TP.track('Teacher FTE', [T[y] for y in gy], 'published', 'line')], FTE_UNIT,
+                  decimals=1,
+                  note='DESE’s teacher FTE. %s reads low and recovers a year later; see FY2011 '
+                       'teacher reading.' % C.fy(2011), note_figures={'a': F(2011)}),
               TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
                   TP.track('As printed, our division', [W[y] for y in gy], 'published', 'line'),
                   TP.track('In %s dollars' % C.fy(g1), [WR[y] for y in gy], 'published', 'line'),
@@ -1360,7 +1360,8 @@ def build():
                  'average salary only from %s.' % C.fy(min(sal)))]),
         sources=S('func', 'func-csv', 'teachers', 'radar', 'radar-csv', 'subject-csv',
                   'contract', 'contract-txt', 'schedule-csv') + CPI_SRC,
-        finding_figures={'y': F(g0), 'z': F(g1), 'a': U(r0_), 'b': U(-v0)})
+        finding_figures={'z': F(g1), 'y': F(g0), 'n': FTE(T[g0] - T[g1]), 'a': U(W[g1] - W[g0]),
+                         'b': U(TS[g1] - TS[g0])})
 
     # ================================================================ teacher pay compared
     # The six districts are the project's own set, read from the payload the School spending

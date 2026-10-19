@@ -1,161 +1,70 @@
 {
  "also": [
   {
-   "decimals": null,
+   "decimals": 1,
    "from_zero": true,
    "kind": "line",
    "note": {
     "figures": {
      "a": {
-      "text": "FY2009",
+      "text": "FY2011",
       "unit": "fiscal year",
-      "value": 2009
-     },
-     "b": {
-      "text": "FY2024",
-      "unit": "fiscal year",
-      "value": 2024
+      "value": 2011
      }
     },
     "literals": [],
-    "text": "Each point: the change since FY2009, split in two; the two lines add to the total. FY2024 reads high on the swing between insurance and teachers."
+    "text": "DESE’s teacher FTE. FY2011 reads low and recovers a year later; see FY2011 teacher reading."
    },
    "reference": null,
    "series": [
     {
      "basis": "published",
      "mark": "line",
-     "name": "Each teacher costs more",
+     "name": "Teacher FTE",
      "texts": [
-      "$0",
-      "$133,226",
-      "$1,088,618",
-      "$502,563",
-      "$1,312,499",
-      "$1,492,426",
-      "$1,508,893",
-      "$1,704,870",
-      "$1,616,095",
-      "$1,553,688",
-      "$1,951,964",
-      "$2,497,787",
-      "$2,756,099",
-      "$2,720,030",
-      "$3,024,515",
-      "$4,439,009",
-      "$4,090,851"
+      "120.2 full-time equivalents",
+      "120.4 full-time equivalents",
+      "102.3 full-time equivalents",
+      "114.4 full-time equivalents",
+      "103.0 full-time equivalents",
+      "100.6 full-time equivalents",
+      "101.6 full-time equivalents",
+      "104.7 full-time equivalents",
+      "112.1 full-time equivalents",
+      "115.1 full-time equivalents",
+      "110.5 full-time equivalents",
+      "107.4 full-time equivalents",
+      "108.7 full-time equivalents",
+      "111.3 full-time equivalents",
+      "112.8 full-time equivalents",
+      "114.0 full-time equivalents",
+      "105.0 full-time equivalents"
      ],
      "values": [
-      0,
-      133226.04384442273,
-      1088618.1295877025,
-      502562.9582906688,
-      1312498.5331244033,
-      1492425.5094789003,
-      1508893.4501388762,
-      1704869.67625829,
-      1616095.2039620262,
-      1553688.2392204716,
-      1951963.9205298855,
-      2497786.583292277,
-      2756098.8262111447,
-      2720030.261270897,
-      3024515.3889277326,
-      4439008.876251568,
-      4090851.3613786544
-     ]
-    },
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "Fewer teachers",
-     "texts": [
-      "$0",
-      "$12,308",
-      "-$1,179,229",
-      "-$366,144",
-      "-$1,150,103",
-      "-$1,327,807",
-      "-$1,260,875",
-      "-$1,062,783",
-      "-$550,338",
-      "-$344,704",
-      "-$673,637",
-      "-$921,095",
-      "-$839,807",
-      "-$647,347",
-      "-$547,354",
-      "-$495,628",
-      "-$1,203,102"
-     ],
-     "values": [
-      0,
-      12307.956155576981,
-      -1179229.1295877027,
-      -366143.9582906692,
-      -1150102.5331244045,
-      -1327806.509478901,
-      -1260875.450138877,
-      -1062782.6762582897,
-      -550338.2039620264,
-      -344704.2392204716,
-      -673636.9205298863,
-      -921094.5832922781,
-      -839806.8262111447,
-      -647347.2612708982,
-      -547354.3889277332,
-      -495627.8762515692,
-      -1203102.3613786548
-     ]
-    },
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "Total change in teachers spending",
-     "texts": [
-      "$0",
-      "$145,534",
-      "-$90,611",
-      "$136,419",
-      "$162,396",
-      "$164,619",
-      "$248,018",
-      "$642,087",
-      "$1,065,757",
-      "$1,208,984",
-      "$1,278,327",
-      "$1,576,692",
-      "$1,916,292",
-      "$2,072,683",
-      "$2,477,161",
-      "$3,943,381",
-      "$2,887,749"
-     ],
-     "values": [
-      0.0,
-      145534.0,
-      -90611.0,
-      136419.0,
-      162396.0,
-      164619.0,
-      248018.0,
-      642087.0,
-      1065757.0,
-      1208984.0,
-      1278327.0,
-      1576692.0,
-      1916292.0,
-      2072683.0,
-      2477161.0,
-      3943381.0,
-      2887749.0
+      120.2,
+      120.4,
+      102.3,
+      114.4,
+      103.0,
+      100.6,
+      101.6,
+      104.7,
+      112.1,
+      115.1,
+      110.5,
+      107.4,
+      108.7,
+      111.3,
+      112.8,
+      114.0,
+      105.0
      ]
     }
    ],
    "stacked": false,
-   "title": "Added since the first year, year by year",
+   "title": "Teachers, year by year",
    "type": "series",
-   "unit": "$",
+   "unit": "full-time equivalents",
    "x": [
     "FY2009",
     "FY2010",
@@ -352,48 +261,56 @@
  "chart": {
   "basis": "published",
   "decimals": null,
-  "highlight": [],
+  "highlight": [
+   "FY2025, actual"
+  ],
   "note": {
    "figures": {
     "a": {
      "text": "FY2009",
      "unit": "fiscal year",
      "value": 2009
-    },
-    "b": {
-     "text": "FY2025",
-     "unit": "fiscal year",
-     "value": 2025
-    },
-    "c": {
-     "text": "$2,887,749",
-     "unit": "",
-     "value": 2887748.9999999995
     }
    },
    "literals": [],
-   "text": "FY2009 to FY2025, our midpoint split of DESE’s figures; the two add to the whole rise of $2,887,749."
+   "text": "Teachers spending, all funds. A what-if is teachers times cost per teacher with one held at its FY2009 value: our arithmetic."
   },
   "rows": [
    {
-    "label": "Each teacher costs more",
+    "label": "FY2025 with FY2009’s number of teachers",
     "texts": [
-     "$4,090,851"
+     "$11,697,490"
     ],
-    "total": "$4,090,851",
-    "value": 4090851.3613786544
+    "total": "$11,697,490",
+    "value": 11697489.662857143
    },
    {
-    "label": "Fewer teachers",
+    "label": "FY2025, actual",
     "texts": [
-     "-$1,203,102"
+     "$10,218,273"
     ],
-    "total": "-$1,203,102",
-    "value": -1203102.3613786548
+    "total": "$10,218,273",
+    "value": 10218273.0
+   },
+   {
+    "label": "FY2009, actual",
+    "texts": [
+     "$7,330,524"
+    ],
+    "total": "$7,330,524",
+    "value": 7330524.0
+   },
+   {
+    "label": "FY2025’s teachers at FY2009’s cost each",
+    "texts": [
+     "$6,403,536"
+    ],
+    "total": "$6,403,536",
+    "value": 6403535.9400998335
    }
   ],
   "stack": null,
-  "title": "Where the rise in teachers spending came from",
+  "title": "The teachers line, actual and what-if",
   "type": "ranking",
   "unit": "$"
  },
@@ -401,14 +318,14 @@
   {
    "figures": {
     "a": {
-     "text": "$1,203,102",
+     "text": "$6,403,536",
      "unit": "",
-     "value": 1203102.3613786548
+     "value": 6403535.9400998335
     },
     "b": {
-     "text": "$4,090,851",
+     "text": "$10,218,273",
      "unit": "",
-     "value": 4090851.3613786544
+     "value": 10218273.0
     },
     "y": {
      "text": "FY2009",
@@ -418,6 +335,45 @@
    },
    "literals": [],
    "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$11,697,490",
+       "unit": "",
+       "value": 11697489.662857143
+      },
+      "n": {
+       "text": "120.2",
+       "unit": "full-time equivalents",
+       "value": 120.2
+      },
+      "y": {
+       "text": "FY2009",
+       "unit": "fiscal year",
+       "value": 2009
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "And FY2009’s 120.2 teachers at today’s cost each would be $11,697,490."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$1,203,102",
+       "unit": "",
+       "value": 1203102.3613786548
+      },
+      "b": {
+       "text": "$4,090,851",
+       "unit": "",
+       "value": 4090851.3613786544
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Split exactly, by midpoint weights: fewer teachers took $1,203,102 off and each teacher costing more added $4,090,851."
+    },
     {
      "figures": {
       "a": {
@@ -441,12 +397,6 @@
      "text": "From FY2013, the first year of the state’s comparable count, more teachers added $170,064 and each teacher costing more $2,555,289."
     },
     {
-     "figures": {},
-     "kind": "measured",
-     "literals": [],
-     "text": "The split is ours, by midpoint weights; its two parts add to the whole with nothing left over."
-    },
-    {
      "figures": {
       "a": {
        "text": "FY2009",
@@ -465,11 +415,11 @@
     }
    ],
    "rests_on": [
-    "cnt",
-    "per",
+    "wi-cost",
+    "wi-count",
     "tchr"
    ],
-   "text": "From FY2009, fewer teachers took $1,203,102 off; each teacher costing more added $4,090,851."
+   "text": "Today’s teachers at FY2009’s cost each would cost $6,403,536; they cost $10,218,273."
   },
   {
    "figures": {
@@ -664,45 +614,6 @@
    }
   },
   {
-   "id": "per-e",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "a": {
-      "text": "FY2013",
-      "unit": "fiscal year",
-      "value": 2013
-     },
-     "b": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     }
-    },
-    "literals": [],
-    "text": "added by each teacher costing more, FY2013 to FY2025"
-   },
-   "value": {
-    "text": "+$2,555,289",
-    "unit": "",
-    "value": 2555289.31816921
-   }
-  },
-  {
-   "id": "cnt-e",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "from fewer teachers, the same years"
-   },
-   "value": {
-    "text": "+$170,064",
-    "unit": "",
-    "value": 170063.68183079056
-   }
-  },
-  {
    "id": "tchr",
    "kind": "published",
    "label": {
@@ -892,6 +803,56 @@
    }
   },
   {
+   "id": "wi-count",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "b": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "FY2025 at FY2009’s count of teachers, our arithmetic"
+   },
+   "value": {
+    "text": "$11,697,490",
+    "unit": "",
+    "value": 11697489.662857143
+   }
+  },
+  {
+   "id": "wi-cost",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "b": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
+     }
+    },
+    "literals": [],
+    "text": "FY2025’s teachers at FY2009’s cost each, our arithmetic"
+   },
+   "value": {
+    "text": "$6,403,536",
+    "unit": "",
+    "value": 6403535.9400998335
+   }
+  },
+  {
    "closes": "the district’s count of teachers on each step and lane of the salary schedule, for each year",
    "id": "steps",
    "kind": "gap",
@@ -906,14 +867,19 @@
  "finding": {
   "figures": {
    "a": {
-    "text": "$4,090,851",
+    "text": "$36,331",
     "unit": "",
-    "value": 4090851.3613786544
+    "value": 36330.829141906346
    },
    "b": {
-    "text": "$1,203,102",
+    "text": "$2,887,749",
     "unit": "",
-    "value": 1203102.3613786548
+    "value": 2887749.0
+   },
+   "n": {
+    "text": "15.2",
+    "unit": "full-time equivalents",
+    "value": 15.200000000000003
    },
    "y": {
     "text": "FY2009",
@@ -927,7 +893,7 @@
    }
   },
   "literals": [],
-  "text": "From FY2009 to FY2025, each teacher costing more added $4,090,851; fewer teachers took off $1,203,102."
+  "text": "FY2025 had 15.2 fewer teachers than FY2009, but each cost $36,331 more; the teachers line rose $2,887,749."
  },
  "full_report": {
   "href": "",
