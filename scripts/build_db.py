@@ -1160,6 +1160,14 @@ REFERENCE = [
     # actually adopted. See scripts/extract_stated_cuts.py.
     'stated-cuts',
 
+    # Teacher salary schedules as PRINTED in Lunenburg's and eight neighbouring districts'
+    # contracts, one row per cell, with `read` saying how each was read and `flag` where a
+    # check failed. A SCALE, not what anybody is paid: no headcount by step or lane is in it,
+    # and longevity and stipends outside the grid are not either. `fy` can repeat within one
+    # document (Harvard FY2020 has a first-half and a mid-year schedule, Leominster FY2018 a
+    # 6/30/2018 one), so split on `schedule`. See scripts/extract_teacher_salary_schedules.py.
+    'teacher-salary-schedules', 'teacher-salary-schedule-docs',
+
     'placement-counts', 'ballot-questions', 'annual-report-receipts',
     'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
     'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',

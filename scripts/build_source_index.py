@@ -495,6 +495,61 @@ GROUPS = [
             ('contracts/data/lea-teacher-salary-schedule.csv', 'Teacher salary schedule, FY25–FY27', 3,
              'Thirteen steps by ten lanes by three years, rebuilt from the printed FY25 grid '
              'and the contract’s own multipliers.'),
+            ('data/teacher-salary-schedules.csv',
+             'Teacher salary schedules, Lunenburg and eight neighbouring districts, as printed', 3,
+             'Written by us. One row per printed cell of every teacher salary schedule in the '
+             'contracts below: district, contract period, fiscal year, the schedule’s own '
+             'title, step and lane as printed, salary, document and page, how the cell was read '
+             '(text layer, OCR confirmed by a second reading, or by eye) and any flag from the '
+             'checks: salaries must rise along steps and across lanes, and each year must equal '
+             'the year before times the increase the contract states. Base schedule only: '
+             'longevity and stipends paid outside the grid are not in it. Built by '
+             'scripts/extract_teacher_salary_schedules.py, whose --check rebuilds it.'),
+            ('data/teacher-salary-schedule-docs.csv',
+             'Teacher contracts read for their salary schedules: what each covers', 2,
+             'Written by us. One row per contract: district, publisher, address, the '
+             'publisher’s filename, contract period, what pdf_kind.py found it to be, which '
+             'fiscal years were read, and what could not be. DESE publishes the latest contract '
+             'a district submitted, and most had expired; where a current one was found '
+             'published elsewhere it is listed too.'),
+            ('contracts/pdf/harvard-teachers-2023-2026.pdf',
+             'Harvard Educators Association agreement, 24 August 2023 to 23 August 2026', 2,
+             'From the Town of Harvard’s site; the town’s filename is “Teachers Contract '
+             'Aug 24, 2023-Aug 23, 2026.pdf”. Salary schedules for FY24, FY25 and FY26, pages 32-34.'),
+            ('contracts/pdf/fitchburg-teachers-2024-2027.pdf',
+             'Fitchburg Education Association, Unit A agreement, 1 July 2024 to 30 June 2027', 2,
+             'The union’s posted copy, FEA-Teachers-24-27.pdf. Salary schedules for FY25 to FY27, '
+             'pages 65-66; longevity paid outside the schedule, page 66.'),
+            ('contracts/pdf/north-middlesex-teachers-2024-2027.pdf',
+             'North Middlesex teachers’ agreement, 1 July 2024 to 30 June 2027', 2,
+             'The union’s posted copy, Final-Teachers-CBA-2024-2027-NMRSD.pdf. Raises of 3%, '
+             '3.5% and 3.5%; salary schedules pages 24-25.'),
+            ('contracts/pdf/dese-teacher-contract-harvard.pdf',
+             'Harvard teachers’ agreement as filed with DESE, 2017-2020', 1,
+             'DESE’s copy, Teacher_Contract.pdf. Expired; the latest Harvard filed.'),
+            ('contracts/pdf/dese-teacher-contract-groton-dunstable.pdf',
+             'Groton-Dunstable Unit A agreement as filed with DESE, schedules 2017-18 to 2019-20', 1,
+             'DESE’s copy, Teacher_Contract.pdf. A scan; a 2014 base agreement with the '
+             '2017-2020 salary schedules. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-leominster.pdf',
+             'Leominster teachers’ agreement as filed with DESE, 2015-2018', 1,
+             'DESE’s copy, Teacher_Contract.pdf. A scan. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-north-middlesex.pdf',
+             'North Middlesex teachers’ agreement as filed with DESE, 2018-2021', 1,
+             'DESE’s copy, Teacher_Contract.pdf. A scan. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-ayer-shirley.pdf',
+             'Ayer Shirley teachers’ agreement as filed with DESE, 2019-2022', 1,
+             'DESE’s copy, Teacher_Contract.pdf. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-fitchburg.pdf',
+             'Fitchburg Unit A agreement as filed with DESE, 2015-2018', 1,
+             'DESE’s copy, Teacher_Contract.pdf. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-ashburnham-westminster.pdf',
+             'Ashburnham-Westminster teachers’ agreement as filed with DESE, 2016-2019', 1,
+             'DESE’s copy, Teacher_Contract.pdf. Expired.'),
+            ('contracts/pdf/dese-teacher-contract-montachusett.pdf',
+             'Monty Tech teachers’ agreement as filed with DESE, 2023-2026', 2,
+             'DESE’s copy, Teacher_Contract.pdf. Mostly scanned. Salary schedules for '
+             '2023-24 to 2025-26, pages 40-42, printed sideways.'),
             ('contracts/pdf/dese-teacher-contract.pdf', 'Lunenburg Education Association agreement', 3,
              'Runs 1 July 2024 to 30 June 2027. Raises of 2.5%, 4.0% and 3.5%, plus step '
              'increases worth about 3.32% a year. Expires at the end of FY27, so FY28 is '
@@ -4438,6 +4493,41 @@ SOURCE_URLS = {
     'contracts/pdf/dese-superintendent-contract.pdf':
         'https://profiles.doe.mass.edu/statereport/'
         'educatorcontractsdownload.aspx?orgcode=01620000&type=S',
+    # The comparison districts' teachers' contracts, fetched 19 October 2026 from these
+    # addresses and ingested from the bytes they returned (ingest.py, sha256 in the manifest).
+    'contracts/pdf/dese-teacher-contract-harvard.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01250000&type=T',
+    'contracts/pdf/dese-teacher-contract-groton-dunstable.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=06730000&type=T',
+    'contracts/pdf/dese-teacher-contract-leominster.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01530000&type=T',
+    'contracts/pdf/dese-teacher-contract-north-middlesex.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=07350000&type=T',
+    'contracts/pdf/dese-teacher-contract-ayer-shirley.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=06160000&type=T',
+    'contracts/pdf/dese-teacher-contract-fitchburg.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=00970000&type=T',
+    'contracts/pdf/dese-teacher-contract-ashburnham-westminster.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=06100000&type=T',
+    'contracts/pdf/dese-teacher-contract-montachusett.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=08320000&type=T',
+    'contracts/pdf/harvard-teachers-2023-2026.pdf':
+        'https://www.harvard-ma.gov/DocumentCenter/View/2216/'
+        'Teachers-Contract-Aug-24-2023-Aug-23-2026-PDF',
+    'contracts/pdf/fitchburg-teachers-2024-2027.pdf':
+        'https://fitchburg.massteacher.org/wp-content/uploads/sites/49/2026/05/'
+        'FEA-Teachers-24-27.pdf',
+    'contracts/pdf/north-middlesex-teachers-2024-2027.pdf':
+        'https://nmta.massteacher.org/wp-content/uploads/sites/23/2025/03/'
+        'Final-Teachers-CBA-2024-2027-NMRSD.pdf',
 
     # Neighboring districts. Four of the six are hosted by somebody other than the
     # district -- two content networks and two member towns' own document centres --

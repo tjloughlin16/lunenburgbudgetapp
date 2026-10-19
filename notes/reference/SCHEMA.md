@@ -261,6 +261,29 @@ were requested from the Town Manager.
 
 ---
 
+## `teacher_salary_schedules` is a scale, not a payroll
+
+One row per printed cell of every teacher salary schedule in Lunenburg's contract and those
+of the neighbouring districts (`scripts/extract_teacher_salary_schedules.py`, which `--check`
+rebuilds byte for byte). `teacher_salary_schedule_docs` says which contract each came from,
+its period, and what could not be read.
+
+- **Grain is (document, schedule, step, lane).** `fy` alone is not a key: Harvard prints two
+  FY2020 schedules (first half, mid-year) and Leominster an extra `6/30/2018` one. Split on
+  `schedule`.
+- **Lanes and steps are as printed**, so `BA`, `Bach`, `B` and `I: BS / Licensure` are the
+  same idea under four names, and the number of steps differs by district. Compare by name, never by
+  position.
+- **`read`** is how a cell was read: the PDF's text layer; Vision OCR confirmed by a second,
+  independent OCR pass; or by eye off the rendered page, with what OCR returned. **`flag`**
+  is any check that failed -- salary must rise along steps and across lanes, and equal the
+  prior year times the increase the contract states -- and a flagged cell is printed so,
+  not corrected.
+- **Base schedule only.** Longevity, stipends and degree add-ons paid outside the grid are
+  not here, and they differ by district (Lunenburg adds longevity to step 13).
+- **Several DESE filings are expired contracts.** DESE publishes the latest one a district
+  submitted. `contract_period` is the test of whether a figure is current.
+
 ## Adding a source
 
 1. Extract it to a CSV in `sources/data/` with a named `extract_*.py` that **reconciles to
