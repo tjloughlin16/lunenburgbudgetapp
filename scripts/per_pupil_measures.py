@@ -200,9 +200,49 @@ CAT_SHORT = {'ADMN': 'Administration', 'LDRS': 'Instructional leadership', 'TCHR
              'TSER': 'Other teaching services', 'PDEV': 'Professional development',
              'MATL': 'Materials, equipment, technology',
              'GUID': 'Guidance, counselling, testing',
-             'SERV': 'Pupil services: buses, meals, sport',
+             'SERV': 'Pupil services',
              'OPMN': 'Operations and maintenance', 'BENE': 'Insurance, retirement, other',
              'TUIT': 'Tuition to other schools', 'ODTR': 'Out-of-district transportation'}
+# PUPIL SERVICES IS A CATCH-ALL, SO IT IS SPLIT BY ITS OWN FUNCTION CODES. DESE files buses,
+# meals, nurses, sport and clubs, attendance officers and school security under one category,
+# and this chart once named it "buses, meals, sport" -- a label of ours that fitted three of
+# its six things (TJ, 19 October 2026, on an invented grouping: "that was bad!"). Every part
+# below is DESE's own function row; a code not listed refuses the build rather than vanish
+# into a remainder. The same split as build_spending_staff_students_topics.py's SERV_SPLIT.
+SERV_PARTS = (('3300', 'Buses', ('3300',)), ('3400', 'Food service', ('3400',)),
+              ('3200', 'Nurses and health', ('3200',)),
+              ('3500', 'Sports and student activities', ('3510', '3520')),
+              ('3100', 'Attendance and parent liaison', ('3100',)),
+              ('3600', 'School security', ('3600',)))
+CAT_SHORT.update({'SERV-' + k: name for k, name, _ in SERV_PARTS})
+
+
+def _split_serv(cats, lines, fy, lea):
+    """cats with the SERV category replaced by its parts, each footed back to it."""
+    at = next((i for i, c in enumerate(cats) if c['code'] == 'SERV'), None)
+    if at is None:
+        return cats
+    serv, mine = cats[at], [r for r in lines if r['cat'] == 'SERV']
+    known = {c for _, _, codes in SERV_PARTS for c in codes}
+    if {r['code'] for r in mine} - known:
+        fail('FY%s %s: pupil services has a function row %s this split does not name'
+             % (fy, lea, sorted({r['code'] for r in mine} - known)))
+    parts = []
+    for key, _, codes in SERV_PARTS:
+        rs = [r for r in mine if r['code'] in codes]
+        if not rs or not any(r['total'] for r in rs):
+            continue
+        parts.append(dict(code='SERV-' + key, dese_pp=None,
+                          desc='Pupil services: %s (%s)' % (', '.join(r['desc'] for r in rs),
+                                                            '/'.join(r['code'] for r in rs)),
+                          **{k: sum(r[k] for r in rs) for k in ('gen', 'grants', 'total')}))
+    for k in ('gen', 'grants', 'total'):
+        if abs(sum(p[k] for p in parts) - serv[k]) > TOL:
+            fail('FY%s %s: pupil services %s is %s, its parts %s'
+                 % (fy, lea, k, serv[k], sum(p[k] for p in parts)))
+    return cats[:at] + parts + cats[at + 1:]
+
+
 # THE DENOMINATOR (build_peer_spending.py, docstring point 3): DESE's TTPP figure is over TOTAL
 # FTE pupils and every category's printed figure over IN-DISTRICT FTE pupils, so the printed
 # category figures do not add to the printed total. breakdown() divides every category by
@@ -274,6 +314,7 @@ def breakdown(lea, fy):
     if abs(t['total'] / ft - t['pp']) > 1:
         fail('FY%s %s: DESE prints %s a pupil; its total over %s total FTE pupils is %.2f'
              % (fy, lea, t['pp'], ft, t['total'] / ft))
+    cats = _split_serv(cats, lines, fy, lea)
     for c in cats:
         if c['code'] in IN_CATS and abs(c['total'] / fi - c['dese_pp']) > 1:
             fail('FY%s %s: %s prints %s a pupil, not its total over %s in-district FTE pupils'

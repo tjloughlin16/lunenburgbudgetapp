@@ -32,11 +32,11 @@
     "mark": "bar",
     "name": "Grants and donations",
     "texts": [
-     "10.7%",
+     "7.7%",
      "7.2%"
     ],
     "values": [
-     10.660545779137975,
+     7.692842734923837,
      7.152748703745451
     ]
    },
@@ -69,7 +69,7 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Other state money",
+    "name": "State transport aid and state-paid pensions",
     "texts": [
      "11.8%",
      "11.6%"
@@ -82,13 +82,13 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Other local money",
+    "name": "The rest: school meals, tuition, fees",
     "texts": [
-     "7.3%",
+     "10.2%",
      "0.9%"
     ],
     "values": [
-     7.2755094943312235,
+     10.243212538545361,
      0.8534346719912402
     ]
    }
@@ -106,9 +106,9 @@
   {
    "figures": {
     "a": {
-     "text": "$4,598,000",
+     "text": "$3,318,000",
      "unit": "",
-     "value": 4598000
+     "value": 3318000
     },
     "b": {
      "text": "$43,131,000",
@@ -116,9 +116,9 @@
      "value": 43131000
     },
     "p": {
-     "text": "10.7%",
+     "text": "7.7%",
      "unit": "",
-     "value": 10.7
+     "value": 7.7
     },
     "y": {
      "text": "FY2024",
@@ -134,7 +134,24 @@
      "literals": [
       "Chapter 70"
      ],
-     "text": "“Grants” is our grouping: every federal dollar, plus the state’s program grants. Chapter 70, transport aid and pensions the state pays are left out."
+     "text": "“Grants” is our grouping: federal money and the state’s program grants, less school-meal money, which is paid per meal by formula. Chapter 70, transport aid and pensions the state pays are left out."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$1,280,000",
+       "unit": "",
+       "value": 1280000
+      },
+      "p": {
+       "text": "10.7%",
+       "unit": "",
+       "value": 10.7
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Monty Tech’s school-meal money was $1,280,000, federal and state; counted as a grant, it would raise the share to 10.7%."
     },
     {
      "figures": {
@@ -159,10 +176,15 @@
     "mt-total",
     "mt-gdp"
    ],
-   "text": "Grants and donations brought Monty Tech $4,598,000 of $43,131,000 in FY2024, 10.7%."
+   "text": "Grants and donations brought Monty Tech $3,318,000 of $43,131,000 in FY2024, 7.7%."
   },
   {
    "figures": {
+    "n": {
+     "text": "9",
+     "unit": "times",
+     "value": 9
+    },
     "p": {
      "text": "70.3%",
      "unit": "",
@@ -176,7 +198,7 @@
     "mt-st",
     "mt-stp"
    ],
-   "text": "State Chapter 70 aid and member town budgets brought 70.3%, over six times as much."
+   "text": "State Chapter 70 aid and member town budgets brought 70.3%, over 9 times as much."
   },
   {
    "figures": {
@@ -206,7 +228,7 @@
      },
      "kind": "gap",
      "literals": [],
-     "text": "Lunenburg reported no school-meal revenue to the survey, where Monty Tech reported $1,266,000 of federal meal money. If Lunenburg’s sits elsewhere, its grant share is understated."
+     "text": "Lunenburg reported no school-meal revenue to the survey, where Monty Tech reported $1,266,000 of federal meal money. If Lunenburg’s sits in another federal line, its grant share is overstated."
     }
    ],
    "rests_on": [
@@ -284,9 +306,9 @@
     "text": "of it grants and donations (our grouping)"
    },
    "value": {
-    "text": "$4,598,000",
+    "text": "$3,318,000",
     "unit": "",
-    "value": 4598000
+    "value": 3318000
    }
   },
   {
@@ -298,9 +320,9 @@
     "text": "share from grants and donations"
    },
    "value": {
-    "text": "10.7%",
+    "text": "7.7%",
     "unit": "",
-    "value": 10.7
+    "value": 7.7
    }
   },
   {
@@ -445,9 +467,9 @@
  "finding": {
   "figures": {
    "a": {
-    "text": "10.7%",
+    "text": "7.7%",
     "unit": "",
-    "value": 10.7
+    "value": 7.7
    },
    "b": {
     "text": "70.3%",
@@ -463,7 +485,7 @@
   "literals": [
    "Chapter 70"
   ],
-  "text": "Grants and donations were 10.7% of Monty Tech’s FY2024 revenue; Chapter 70 aid and town budgets, 70.3%."
+  "text": "Grants and donations were 7.7% of Monty Tech’s FY2024 revenue; Chapter 70 aid and town budgets, 70.3%."
  },
  "full_report": {
   "href": "",
@@ -512,21 +534,12 @@
     "rows": [
      {
       "cells": [
-       "$3,054,000",
-       "7.1%",
-       "$1,928,000",
-       "6.2%"
+       "$3,312,000",
+       "7.7%",
+       "$2,084,000",
+       "6.7%"
       ],
-      "label": "Federal grants"
-     },
-     {
-      "cells": [
-       "$1,538,000",
-       "3.6%",
-       "$156,000",
-       "0.5%"
-      ],
-      "label": "State program grants"
+      "label": "Federal and state grants, less meals"
      },
      {
       "cells": [
@@ -536,6 +549,15 @@
        "0.4%"
       ],
       "label": "Private gifts"
+     },
+     {
+      "cells": [
+       "$1,280,000",
+       "3.0%",
+       "$0",
+       "0.0%"
+      ],
+      "label": "School-meal money, federal and state"
      },
      {
       "cells": [
@@ -563,6 +585,15 @@
        "10.2%"
       ],
       "label": "Pensions the state pays on its behalf"
+     },
+     {
+      "cells": [
+       "$0",
+       "0.0%",
+       "$0",
+       "0.0%"
+      ],
+      "label": "State capital and debt aid"
      },
      {
       "cells": [

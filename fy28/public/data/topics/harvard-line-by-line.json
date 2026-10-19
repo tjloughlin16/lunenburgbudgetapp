@@ -51,18 +51,6 @@
     ]
    },
    {
-    "label": "Pupil services: buses, meals, sport",
-    "texts": [
-     "$1,015",
-     "$1,405"
-    ],
-    "total": "$2,420",
-    "values": [
-     1014.6752393467242,
-     1405.2177585883235
-    ]
-   },
-   {
     "label": "Tuition to other schools",
     "texts": [
      "$1,017",
@@ -111,6 +99,18 @@
     ]
    },
    {
+    "label": "Buses",
+    "texts": [
+     "$627",
+     "$392"
+    ],
+    "total": "$1,019",
+    "values": [
+     627.0583818284211,
+     391.6801201426694
+    ]
+   },
+   {
     "label": "Administration",
     "texts": [
      "$910",
@@ -144,6 +144,42 @@
     "values": [
      223.299230336024,
      425.43363994743754
+    ]
+   },
+   {
+    "label": "Sports and student activities",
+    "texts": [
+     "$137",
+     "$498"
+    ],
+    "total": "$634",
+    "values": [
+     136.66510230899192,
+     497.5032851511169
+    ]
+   },
+   {
+    "label": "Food service",
+    "texts": [
+     "$0",
+     "$494"
+    ],
+    "total": "$494",
+    "values": [
+     0.0,
+     493.5076027782992
+    ]
+   },
+   {
+    "label": "Nurses and health",
+    "texts": [
+     "$251",
+     "$23"
+    ],
+    "total": "$273",
+    "values": [
+     250.95175520931105,
+     22.52675051623803
     ]
    },
    {
@@ -595,13 +631,43 @@
      },
      {
       "cells": [
-       "$2,420",
-       "$2,578,154",
-       "$1,081,035",
-       "$1,497,119",
-       "9.5%"
+       "$1,019",
+       "$1,085,364",
+       "$668,068",
+       "$417,296",
+       "4.0%"
       ],
-      "label": "Pupil Services"
+      "label": "Pupil services: Transportation Services (3300)"
+     },
+     {
+      "cells": [
+       "$494",
+       "$525,783",
+       "$0",
+       "$525,783",
+       "1.9%"
+      ],
+      "label": "Pupil services: Food Services (3400)"
+     },
+     {
+      "cells": [
+       "$273",
+       "$291,364",
+       "$267,364",
+       "$24,000",
+       "1.1%"
+      ],
+      "label": "Pupil services: Medical/Health Services (3200)"
+     },
+     {
+      "cells": [
+       "$634",
+       "$675,643",
+       "$145,603",
+       "$530,040",
+       "2.5%"
+      ],
+      "label": "Pupil services: Athletics, Other Student Activities (3510/3520)"
      },
      {
       "cells": [

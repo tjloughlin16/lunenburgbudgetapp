@@ -51,18 +51,6 @@
     ]
    },
    {
-    "label": "Pupil services: buses, meals, sport",
-    "texts": [
-     "$2,715",
-     "$1,034"
-    ],
-    "total": "$3,749",
-    "values": [
-     2714.7848770241885,
-     1033.9047360932311
-    ]
-   },
-   {
     "label": "Operations and maintenance",
     "texts": [
      "$3,061",
@@ -72,6 +60,18 @@
     "values": [
      3061.303611355783,
      79.88684870248662
+    ]
+   },
+   {
+    "label": "Buses",
+    "texts": [
+     "$1,788",
+     "$30"
+    ],
+    "total": "$1,818",
+    "values": [
+     1787.9944440680263,
+     29.53045599295345
     ]
    },
    {
@@ -111,6 +111,18 @@
     ]
    },
    {
+    "label": "Food service",
+    "texts": [
+     "$1",
+     "$954"
+    ],
+    "total": "$955",
+    "values": [
+     0.8469408496510603,
+     953.8220746663053
+    ]
+   },
+   {
     "label": "Other teaching services",
     "texts": [
      "$458",
@@ -135,6 +147,18 @@
     ]
    },
    {
+    "label": "Sports and student activities",
+    "texts": [
+     "$641",
+     "$51"
+    ],
+    "total": "$692",
+    "values": [
+     641.3232603834948,
+     50.55220543397249
+    ]
+   },
+   {
     "label": "Professional development",
     "texts": [
      "$229",
@@ -155,6 +179,30 @@
     "total": "$193",
     "values": [
      192.6593942679043,
+     0.0
+    ]
+   },
+   {
+    "label": "Nurses and health",
+    "texts": [
+     "$181",
+     "$0"
+    ],
+    "total": "$181",
+    "values": [
+     180.77783047631954,
+     0.0
+    ]
+   },
+   {
+    "label": "School security",
+    "texts": [
+     "$104",
+     "$0"
+    ],
+    "total": "$104",
+    "values": [
+     103.84240124669692,
      0.0
     ]
    }
@@ -571,13 +619,53 @@
      },
      {
       "cells": [
-       "$3,749",
-       "$5,532,691",
-       "$4,006,751",
-       "$1,525,940",
-       "14.5%"
+       "$1,818",
+       "$2,682,485",
+       "$2,638,901",
+       "$43,584",
+       "7.0%"
       ],
-      "label": "Pupil Services"
+      "label": "Pupil services: Transportation Services (3300)"
+     },
+     {
+      "cells": [
+       "$955",
+       "$1,408,996",
+       "$1,250",
+       "$1,407,746",
+       "3.7%"
+      ],
+      "label": "Pupil services: Food Services (3400)"
+     },
+     {
+      "cells": [
+       "$181",
+       "$266,810",
+       "$266,810",
+       "$0",
+       "0.7%"
+      ],
+      "label": "Pupil services: Medical/Health Services (3200)"
+     },
+     {
+      "cells": [
+       "$692",
+       "$1,021,139",
+       "$946,529",
+       "$74,610",
+       "2.7%"
+      ],
+      "label": "Pupil services: Athletics, Other Student Activities (3510/3520)"
+     },
+     {
+      "cells": [
+       "$104",
+       "$153,261",
+       "$153,261",
+       "$0",
+       "0.4%"
+      ],
+      "label": "Pupil services: School Security (3600)"
      },
      {
       "cells": [

@@ -357,9 +357,11 @@ def build():
     mgd, lgd = sh(mt, 'grants_and_donations'), sh(lu, 'grants_and_donations')
     mst, lst = sh(mt, 'state_and_towns'), sh(lu, 'state_and_towns')
     times = mt['state_and_towns'] / mt['grants_and_donations']
-    # The words below say "most", "more than six times", "a small share at both" and that
-    # Lunenburg's gifts were larger. They are only true while these hold.
-    if not (mgd < 20 and lgd < 20 and mst > 50 and 6 < times < 7):
+    # "More than N times": N is the whole part of the measured ratio, interpolated.
+    tn = int(times)
+    # The words below say "most", "a small share at both" and that Lunenburg's gifts were
+    # larger. They are only true while these hold.
+    if not (mgd < 20 and lgd < 20 and mst > 50 and tn >= 2):
         fail('the revenue page\'s words no longer fit the Census figures: grants and donations '
              '%.1f%% / %.1f%%, Chapter 70 and towns %.1f%%, ratio %.2f' % (mgd, lgd, mst, times))
     if not lu['donations'] > mt['donations']:
@@ -371,9 +373,18 @@ def build():
     # town's own revenue distribution -- not who passes it on.
     lv = BT.levy_share(2026)
     TOWN_LABEL = 'Town budgets, mostly property tax'
+    # FIVE BANDS, because the site has five validated hues, and NINE sources. So two bands
+    # are groups, and each is named for exactly what it holds (TJ, 19 October 2026, on an
+    # invented grouping elsewhere: "that was bad!"). Grants exclude school-meal money, which
+    # is paid per meal by formula -- it once made up a quarter of Monty Tech's "grants". The
+    # state's transport aid and the pensions it pays on a district's behalf are both state
+    # payments outside Chapter 70 that nobody applies for. Every source is its own table row.
     order = [('Grants and donations', 'grants_and_donations'), ('State Chapter 70 aid', 'ch70'),
-             (TOWN_LABEL, 'towns'), ('Other state money', 'state_rest'),
-             ('Other local money', 'other_local')]
+             (TOWN_LABEL, 'towns'),
+             ('State transport aid and state-paid pensions', 'transport_and_pensions'),
+             ('The rest: school meals, tuition, fees', 'meals_and_local')]
+    if mt['capital_aid'] or lu['capital_aid']:
+        fail('state capital aid is no longer zero for both; give it a band of its own')
     for d in (mt, lu):
         if sum(d[k] for _, k in order) != d['total']:
             fail('the chart\'s five parts do not add to %s\'s total revenue' % d['name'])
@@ -403,20 +414,26 @@ def build():
              % (C.usd(mt['grants_and_donations']), C.usd(mt['total']), C.fy(CR.FY), C.pct(mgd)),
              ['mt-gd', 'mt-total', 'mt-gdp'],
              {'a': U(mt['grants_and_donations']), 'b': U(mt['total']), 'y': F(CR.FY), 'p': P(mgd)},
-             notes=[step('“Grants” is our grouping: every federal dollar, plus the state’s program '
-                         'grants. Chapter 70, transport aid and pensions the state pays are left '
-                         'out.', 'measured', allow=('Chapter 70',)),
+             notes=[step('“Grants” is our grouping: federal money and the state’s program '
+                         'grants, less school-meal money, which is paid per meal by formula. '
+                         'Chapter 70, transport aid and pensions the state pays are left out.',
+                         'measured', allow=('Chapter 70',)),
+                    step('Monty Tech’s school-meal money was %s, federal and state; counted as a '
+                         'grant, it would raise the share to %s.'
+                         % (C.usd(mt['meals']), C.pct(sh(mt, 'meals') + mgd)), 'measured',
+                         {'a': U(mt['meals']), 'p': P(sh(mt, 'meals') + mgd)}),
                     step('Monty Tech’s own chart shows %s in grant awards for %s: awards in a '
                          'later year, not revenue received.' % (C.usd(awards), C.fy(2025)),
                          'measured', {'a': U(awards), 'y': F(2025)})]),
-         con('State Chapter 70 aid and member town budgets brought %s, over six times as much.'
-             % C.pct(mst), ['mt-st', 'mt-stp'], {'p': P(mst)}, allow=('Chapter 70',)),
+         con('State Chapter 70 aid and member town budgets brought %s, over %s times as much.'
+             % (C.pct(mst), C.num(tn)), ['mt-st', 'mt-stp'],
+             {'p': P(mst), 'n': figure(tn, C.num(tn), 'times')}, allow=('Chapter 70',)),
          con('Lunenburg’s schools took %s from grants and donations; Chapter 70 and the town budget, %s.'
              % (C.pct(lgd), C.pct(lst)), ['lu-gd', 'lu-gdp', 'lu-stp', 'lu-total'],
              {'a': P(lgd), 'b': P(lst)}, allow=('Chapter 70',),
              notes=[step('Lunenburg reported no school-meal revenue to the survey, where Monty '
-                         'Tech reported %s of federal meal money. If Lunenburg’s sits elsewhere, '
-                         'its grant share is understated.' % C.usd(mt['meals_federal']), 'gap',
+                         'Tech reported %s of federal meal money. If Lunenburg’s sits in another '
+                         'federal line, its grant share is overstated.' % C.usd(mt['meals_federal']), 'gap',
                          {'a': U(mt['meals_federal'])},
                          closes='Lunenburg’s DESE End of Year Financial Report, its revenue '
                                 'and food service schedules')]),
@@ -439,12 +456,13 @@ def build():
             kinds=['ledger'] * 4,
             rows=[dict(label=lab, cells=[C.usd(mt[k]), SP(sh(mt, k)), C.usd(lu[k]),
                                          SP(sh(lu, k))])
-                  for lab, k in (('Federal grants', 'federal'),
-                                 ('State program grants', 'state_programs'),
+                  for lab, k in (('Federal and state grants, less meals', 'grants'),
                                  ('Private gifts', 'donations'),
+                                 ('School-meal money, federal and state', 'meals'),
                                  ('State Chapter 70 aid', 'ch70'),
                                  ('State transportation aid', 'transport'),
                                  ('Pensions the state pays on its behalf', 'on_behalf'),
+                                 ('State capital and debt aid', 'capital_aid'),
                                  ('Town budgets, mostly property tax', 'towns'),
                                  ('Other local: tuition, fees, interest, other', 'other_local'),
                                  ('Total revenue', 'total'))],
@@ -458,12 +476,17 @@ def build():
     # ------------------------------------------------ the hub
     en, asmt, fund = (page_facts('monty-tech-%s' % t) for t in ('enrolment', 'assessment', 'funding'))
     V = lambda facts, k: facts[k]['value']
+    # THE DISTRICT'S OWN FIVE SOURCES, as monty-tech-funding draws them. This chart once
+    # folded the Regional Transportation Fund into "its own reserves" beside Excess &
+    # Deficiency; the district's Budget Summary counts that fund as one of the three revenues
+    # that pay for transportation (build_monty_tech.py checks that identity), not a reserve.
     parts = [('State Chapter 70 aid', V(fund, 'ch70')['value']),
-             ('The member towns', V(fund, 'towns')['value']),
+             ('Member towns’ assessments', V(fund, 'towns')['value']),
              ('State transportation aid', V(fund, 'aid')['value']),
-             ('Its own reserves', V(fund, 'ed')['value'] + V(fund, 'rtf')['value'])]
+             ('Excess & Deficiency (reserves)', V(fund, 'ed')['value']),
+             ('Regional Transportation Fund', V(fund, 'rtf')['value'])]
     if round(sum(v for _, v in parts), 2) != V(fund, 'budget')['value']:
-        fail('the four payers no longer add up to the operating budget on monty-tech-funding')
+        fail('the five sources no longer add up to the operating budget on monty-tech-funding')
     h = {}
     h['h-hc'] = f('h-hc', V(en, 'hc'), en['hc']['label']['text'], 'published',
                   en['hc']['label']['figures'], en['hc']['label']['literals'])

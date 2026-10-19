@@ -20,6 +20,11 @@ and competitive money (career and technical, school meals, all other, nonspecifi
 where a state award such as a Clean Energy Center grant lands; it leaves out Chapter 70,
 transportation reimbursement and the benefits the state pays on a district's behalf, none of
 which anybody applies for. `donations` is the survey's own item, U50, private contributions.
+
+SCHOOL MEALS ARE NOT GRANTS. Federal school-meal money (C25, Child Nutrition Act) and the state's
+meal programs (C10) are paid per meal served, by formula. They once sat inside `grants` and were
+a quarter of Monty Tech's "grants and donations"; they are now `meals`, a band of their own, and
+`grants` is federal plus state programs LESS the meal items.
 """
 import hashlib
 import json
@@ -41,6 +46,7 @@ STATE = ('C01 C04 C05 C06 C07 C08 C09 C10 C11 C12 C13 C24 C35 C38 C39').split()
 LOCAL = ('T02 T06 T09 T15 T40 T99 D11 D23 A07 A08 A09 A11 A13 A15 A20 A40 '
          'U11 U22 U30 U50 U97').split()
 STATE_PROGRAMS = ('C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C13', 'C24', 'C35', 'C39')
+MEALS = ('C25', 'C10')   # federal and state school-meal programs, both the survey's own items
 TOWNS = ('T02', 'D23')   # a parent town's appropriation; a regional district's member towns
 
 
@@ -99,18 +105,19 @@ def revenue():
                  capital_aid=k(x['C11']),
                  state_programs=k(g(STATE_PROGRAMS)),
                  towns=k(g(TOWNS)), donations=k(x['U50']),
-                 meals_federal=k(x['C25']))
+                 meals_federal=k(x['C25']), meals=k(g(MEALS)))
         if d['ch70'] + d['transport'] + d['on_behalf'] + d['capital_aid'] + d['state_programs'] != d['state']:
             fail('%s %s: the state groupings do not add to TSTREV' % (KEY, nid))
         d['other_local'] = d['local'] - d['towns'] - d['donations']
-        d['grants'] = d['federal'] + d['state_programs']
+        d['grants'] = d['federal'] + d['state_programs'] - d['meals']
         d['grants_and_donations'] = d['grants'] + d['donations']
         d['state_and_towns'] = d['ch70'] + d['towns']
-        d['state_rest'] = d['transport'] + d['on_behalf'] + d['capital_aid']
-        parts = (d['federal'], d['state_programs'], d['donations'], d['ch70'], d['state_rest'],
-                 d['towns'], d['other_local'])
+        d['transport_and_pensions'] = d['transport'] + d['on_behalf']
+        d['meals_and_local'] = d['meals'] + d['other_local']
+        parts = (d['grants'], d['meals'], d['donations'], d['ch70'], d['transport'],
+                 d['on_behalf'], d['capital_aid'], d['towns'], d['other_local'])
         if sum(parts) != d['total']:
-            fail('%s %s: the page\'s seven parts do not add to TOTALREV' % (KEY, nid))
+            fail('%s %s: the page\'s nine parts do not add to TOTALREV' % (KEY, nid))
         out[who] = d
     return out
 
