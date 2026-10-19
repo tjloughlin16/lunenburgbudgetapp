@@ -1,5 +1,7 @@
 # Plan: what the school did not spend, and where it went — a variance bridge from the journal
 
+**Part of `notes/plans/MUNIS-JOURNAL-REPORTS.md`** (Hub B), which tracks every report the journal carries.
+
 Written 19 October 2026. **Blocked until the school MUNIS journal is clean and published.**
 TJ's rule (CLAUDE.md 13e): process, verify it is safe, publish, *then* build against it. As
 of writing, the redacted CSVs failed a privacy read and are held in
