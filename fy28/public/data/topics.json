@@ -457,6 +457,7 @@
       "spending-and-pupils",
       "gap-by-function",
       "average-teacher-salary",
+      "teacher-pay-compared",
       "destination-district-spending",
       "regional-district-spending"
      ]
@@ -583,6 +584,8 @@
      "topics": [
       "growth-by-spending-type",
       "spending-by-type-over-time",
+      "pay-or-headcount",
+      "teacher-pay-compared",
       "growth-side-by-side",
       "teachers-and-other-staff",
       "spending-per-child-enrolled",
@@ -618,7 +621,8 @@
    "shelf": "School spending history",
    "start": [
     "growth-by-spending-type",
-    "spending-by-type-over-time"
+    "spending-by-type-over-time",
+    "pay-or-headcount"
    ],
    "title": "School spending history"
   },
@@ -3082,6 +3086,19 @@
    ],
    "title": "Participation"
   },
+  "pay-or-headcount": {
+   "finding": "To FY2025 from any start year FY2009–FY2023, more spent per teacher outweighed any change in the count.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "school-spending-history",
+   "id": "pay-or-headcount",
+   "minutes": 2,
+   "path": "/school-spending-history/pay-or-headcount",
+   "ready": true,
+   "shelves": [
+    "school-spending-history"
+   ],
+   "title": "Pay or headcount"
+  },
   "pec-agreement": {
    "finding": "The town pays 75% of active premiums under a PEC agreement that runs to 30 June 2029.",
    "generator": "scripts/build_health_insurance_topics.py",
@@ -3656,6 +3673,20 @@
     "school-spending-history"
    ],
    "title": "Teachers over time"
+  },
+  "teacher-pay-compared": {
+   "finding": "On DESE’s average teacher salary, Lunenburg was 2nd of the six districts compared in FY2025.",
+   "generator": "scripts/build_spending_staff_students_topics.py",
+   "home": "school-spending-history",
+   "id": "teacher-pay-compared",
+   "minutes": 2,
+   "path": "/school-spending-history/teacher-pay-compared",
+   "ready": true,
+   "shelves": [
+    "school-spending-history",
+    "school-spending"
+   ],
+   "title": "Teacher pay compared"
   },
   "teachers-and-other-staff": {
    "finding": "The state counted 105.1 teacher FTE and 78.5 paraprofessional and support FTE in FY2025.",

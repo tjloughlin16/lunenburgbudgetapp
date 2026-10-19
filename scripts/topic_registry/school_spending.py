@@ -27,6 +27,7 @@ CATEGORY = dict(
                                'grants-in-school-spending', 'cost-of-the-median']),
         ('Against other districts', ['comparison-districts', 'spending-and-pupils',
                                      'gap-by-function', 'average-teacher-salary',
+                                     'teacher-pay-compared',
                                      'destination-district-spending',
                                      'regional-district-spending']),
         ('Budget against actual', ['school-budget-against-actual', 'line-level-misses']),

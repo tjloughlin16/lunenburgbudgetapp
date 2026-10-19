@@ -19,6 +19,9 @@ CATEGORY = dict(
         # Led by the pages that answer the question directly -- where the growth went, by
         # type -- TJ, 19 October 2026.
         ('Side by side', ['growth-by-spending-type', 'spending-by-type-over-time',
+                          # TJ, 19 October 2026: "did the increase cost from more teachers,
+                          # or higher pay per teacher?" -- and how pay compares nearby.
+                          'pay-or-headcount', 'teacher-pay-compared',
                           'growth-side-by-side',
                           'teachers-and-other-staff', 'spending-per-child-enrolled',
                           'long-run-school-spending']),
@@ -30,7 +33,7 @@ CATEGORY = dict(
                                      'chapter-70-by-year']),
     ],
     # The page that answers the residents' question most directly (TJ, 19 October 2026).
-    start=['growth-by-spending-type', 'spending-by-type-over-time'],
+    start=['growth-by-spending-type', 'spending-by-type-over-time', 'pay-or-headcount'],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_spending_staff_students_topics.py'
 TOPICS = {
@@ -41,4 +44,6 @@ TOPICS = {
     'spending-per-child-enrolled': 'Spending per child enrolled',
     'teachers-and-other-staff': 'Teachers and other staff',
     'fy2011-teacher-reading': 'FY2011 teacher reading',
+    'pay-or-headcount': 'Pay or headcount',
+    'teacher-pay-compared': 'Teacher pay compared',
 }

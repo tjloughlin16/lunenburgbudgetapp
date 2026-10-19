@@ -48,6 +48,18 @@ JUDGEMENT CALLS, each named where it is used:
   * Whether the FY2011 teacher count is a real reduction or a reporting artefact is NOT
     settled; scripts/build_school_staffing_topics.py treats FY2011 the same way.
 
+PAY OR HEADCOUNT, AND TEACHER PAY COMPARED (TJ, 19 October 2026: "did the increase cost from
+more teachers, or higher pay per teacher?", and how Lunenburg's pay compares nearby):
+  * The split of DESE's Teachers function into a teacher-count part and a per-teacher part
+    uses MIDPOINT weights, OURS; it is run from every start year, because the start year
+    sets the sign of the count part (the state's comparable count begins FY2013).
+  * Spending per teacher FTE is our division; it is asserted against DESE's own Average
+    Teacher Salary in every year DESE prints one, and the widest gap is printed.
+  * The comparison uses the project's six districts, read from peer-spending.json, so this
+    shelf and /school-spending/average-teacher-salary cannot disagree. An AVERAGE salary is
+    not a salary SCHEDULE; the other districts' schedules are a registered gap.
+  * What DESE counts as an "experienced" teacher is not defined in any document held.
+
 The statewide teacher file takes about two minutes to read, so its extract is cached in the
 gitignored build/cache/, keyed by the workbook's sha256 -- nothing is read from a cache that
 does not match the bytes on disk.
@@ -276,6 +288,57 @@ def statewide_teachers():
     return dict(series)
 
 
+def radar_all():
+    """({lea: {measure: {fy: value}}}, {lea: name}) for every district on DESE's comparison
+    sheet -- the comparison pages need the others, not only Lunenburg."""
+    out, names = collections.defaultdict(lambda: collections.defaultdict(dict)), {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-radar.csv'), encoding='utf-8')):
+        if r['reconciles'] != 'yes':
+            # A row that fails the sheet's own check is LEFT OUT, never used; a page that
+            # needs it then fails on the missing value rather than quoting it.
+            continue
+        out[r['lea']][r['measure']][int(r['fy'])] = float(r['value'])
+        names[r['lea']] = r['district']
+    return out, names
+
+
+def experienced():
+    """{lea: {fy: share}}: DESE's EXP_TCHR_PCT at the district's own all-teachers row, as
+    extracted by scripts/extract_dese_staffing.py. WHAT DESE COUNTS AS "EXPERIENCED" IS NOT
+    DEFINED in any document this archive holds -- the workbook has one sheet, Data, and no
+    dictionary -- so every page that uses it says so and registers the gap."""
+    out = collections.defaultdict(dict)
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-teacher-subject.csv'), encoding='utf-8')):
+        if (r['org_level'] == 'district' and r['subject_level'] == 'all'
+                and r['experienced_pct']):
+            out[r['lea']][int(r['fy'])] = float(r['experienced_pct'])
+    return out
+
+
+CONTRACT_TXT = os.path.join(ROOT, 'sources', 'contracts', 'txt', 'lea-teachers-2024-2027.txt')
+SCHEDULE_CSV = os.path.join(ROOT, 'sources', 'contracts', 'data', 'lea-teacher-salary-schedule.csv')
+
+
+def contract():
+    """The teachers' agreement now in force: the first year's schedule adjustment, read off
+    Appendix B's own heading, and that year's salary schedule from our table of it -- each
+    cell of which must be printed in the contract text, or nothing is built (rule 13)."""
+    import re
+    text = open(CONTRACT_TXT, encoding='utf-8').read()
+    m = re.search(r'FY ?(\d\d) Salary ([\d.]+)% COLA', text)
+    if not m:
+        fail('the contract text no longer prints a first-year schedule adjustment')
+    fy0, cola = 2000 + int(m.group(1)), float(m.group(2))
+    rows = list(csv.DictReader(open(SCHEDULE_CSV, encoding='utf-8')))
+    col = 'fy%02d' % (fy0 - 2000)
+    cells = [(int(r[col]), r['step'], r['lane']) for r in rows]
+    flat = text.replace('\n', ' ')
+    missing = [v for v, _, _ in cells if format(v, ',d') not in flat]
+    if missing:
+        fail('salary schedule cells not printed in the contract: %s' % missing[:5])
+    return dict(fy=fy0, cola=cola, lo=min(cells), hi=max(cells))
+
+
 def sources():
     man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
     out = {}
@@ -288,6 +351,11 @@ def sources():
             'radar': ('state-dese/radar-district-comparison.xlsx', dese + ', district comparison'),
             'func': ('state-dese/district-expenditures-by-function.xlsx',
                      dese + ', district expenditures by function code'),
+            'contract': ('contracts/pdf/dese-teacher-contract.pdf',
+                         'Lunenburg Education Association agreement, 1 July 2024 to 30 June '
+                         '2027, as filed with DESE'),
+            'contract-txt': ('contracts/txt/lea-teachers-2024-2027.txt',
+                             'the same agreement, the district’s copy, extracted text'),
     }.items():
         if key not in man:
             fail('%s is not in archive-manifest.csv' % key)
@@ -310,6 +378,20 @@ def sources():
         if not os.path.exists(os.path.join(DOCS_DATA, f)):
             fail('/docs/data/%s is not published' % f)
         out[k] = dict(label='Lunenburg Budget Project — %s (%s)' % (f, what), href='/docs/data/' + f)
+    # Teacher experience by district, and our table of the salary schedule.
+    for k, (f, what) in {
+            'subject-csv': ('dese-teacher-subject.csv', 'teacher FTE and the share DESE counts '
+                                                       'experienced, by district and year'),
+    }.items():
+        if not os.path.exists(os.path.join(DOCS_DATA, f)):
+            fail('/docs/data/%s is not published' % f)
+        out[k] = dict(label='Lunenburg Budget Project — %s (%s)' % (f, what), href='/docs/data/' + f)
+    key = 'contracts/data/lea-teacher-salary-schedule.csv'
+    if key not in man:
+        fail('%s is not in archive-manifest.csv' % key)
+    out['schedule-csv'] = dict(label='Lunenburg Budget Project — lea-teacher-salary-schedule.csv '
+                                     '(the agreement’s salary schedules, step by lane)',
+                               href='/docs/' + key)
     return out
 
 
@@ -944,6 +1026,286 @@ def build():
                  'Growth by spending type.')]),
         sources=S('func', 'func-csv'),
         finding_figures={'a': U(tt0), 'y': F(g0), 'b': U(tt1), 'z': F(g1)})
+
+    # ================================================================ pay or headcount
+    # TJ, 19 October 2026: teacher spending rose while teacher FTE fell -- "did the increase
+    # cost from more teachers, or higher pay per teacher?" A RATE-VOLUME SPLIT of DESE's
+    # Teachers function (all funds) over DESE's teacher FTE, with MIDPOINT weights: the count
+    # change priced at the average of the two years' spending per FTE, and the per-FTE change
+    # weighted by the average of the two counts. The two parts add to the whole exactly; the
+    # method is OURS and every page says so. Spending per FTE is our division, and it is
+    # checked against DESE's own Average Teacher Salary in every year DESE prints one.
+    TS = {y: FX[y]['cat']['TCHR'] for y in gy}
+    if any(y not in T for y in gy):
+        fail('a spending-by-function year has no teacher FTE')
+    W = {y: TS[y] / T[y] for y in gy}
+    WR = {y: W[y] * P[g1] / P[y] for y in gy}
+
+    def split(a, b):
+        v = (T[b] - T[a]) * (W[a] + W[b]) / 2
+        r = (W[b] - W[a]) * (T[a] + T[b]) / 2
+        if abs(v + r - (TS[b] - TS[a])) > 1:
+            fail('the split FY%d-FY%d does not add back to the change' % (a, b))
+        return v, r
+    # The swing year (FY2024 when written) is not a start year: its teachers line is the one
+    # that moved with insurance and back. Every other start year is used.
+    if odd != g1 - 1:
+        fail('the swing year is no longer the year before the last; the start years assume it')
+    starts = [y for y in gy if y < odd]
+    SPL = {y: split(y, g1) for y in starts}
+    if not all(r > abs(v) for v, r in SPL.values()):
+        fail('in some start year the teacher count now outweighs spending per teacher; the '
+             'finding says it never does')
+    v0, r0_ = SPL[g0]
+    ve, re_ = SPL[era]
+    if not (v0 < 0 < ve):
+        fail('the count effect is no longer negative from FY%d and positive from FY%d; the '
+             'first conclusion words it that way' % (g0, era))
+    sal = radar()['Average Teacher Salary']
+    ov = sorted(set(sal) & set(gy))
+    gapd = max(abs(W[y] / sal[y] - 1) for y in ov)
+    if gapd > 0.015:
+        fail('spending per teacher FTE no longer matches DESE’s average salary within 1.5%%; '
+             'worst %.2f%%' % (100 * gapd))
+    EX = experienced()
+    ex = EX[LEA]
+    ey = sorted(y for y in ex if y in gy)
+    KC = contract()
+    if KC['fy'] != g1:
+        fail('the contract’s first year is no longer the last spending year')
+    SU = lambda v: figure(v, ('+' if v >= 0 else '-') + C.usd(abs(v)))
+    w_chg, wr_chg = chg(W[g0], W[g1]), chg(WR[g0], WR[g1])
+    dTS = chg(TS[g0], TS[g1])
+    STEPS = ('the district’s count of teachers on each step and lane of the salary schedule, '
+             'for each year')
+    RAISES = ('the teachers’ agreements before the current one, from the district or as filed '
+              'with DESE')
+    EXP_DEF = 'DESE’s own definition of the experienced-teacher share in its teacher data file'
+    out['pay-or-headcount'] = TP.page(
+        'pay-or-headcount',
+        'To %s from any start year %s–%s, more spent per teacher outweighed any change in the count.'
+        % (C.fy(g1), C.fy(starts[0]), C.fy(starts[-1])),
+        [f('per', SU(r0_), 'more per teacher FTE, %s to %s (our split)' % (C.fy(g0), C.fy(g1)),
+           'published', fy01),
+         f('cnt', SU(v0), 'from the change in teacher FTE, the same years', 'published'),
+         f('per-e', SU(re_), 'more per teacher FTE, %s to %s' % (C.fy(era), C.fy(g1)),
+           'published', {'a': F(era), 'b': F(g1)}),
+         f('cnt-e', SU(ve), 'from the change in teacher FTE, the same years', 'published'),
+         f('tchr', SP(dTS), 'Teachers spending: %s to %s' % (C.usd(TS[g0]), C.usd(TS[g1])),
+           'published', {'a': U(TS[g0]), 'b': U(TS[g1])}),
+         f('fte', FTE(T[g1]), 'teacher FTE, %s; %s in %s, %s in %s'
+           % (C.fy(g1), '%.1f' % T[g0], C.fy(g0), '%.1f' % T[era], C.fy(era)), 'published',
+           {'y': F(g1), 'a': FTE(T[g0]), 'p': F(g0), 'b': FTE(T[era]), 'q': F(era)}),
+         f('w', SP(w_chg), 'per teacher FTE: %s to %s, %s to %s'
+           % (C.usd(W[g0]), C.usd(W[g1]), C.fy(g0), C.fy(g1)), 'published',
+           {'a': U(W[g0]), 'b': U(W[g1]), 'p': F(g0), 'q': F(g1)}),
+         f('wr', SP(wr_chg), 'the same, after Boston-area prices', 'published'),
+         f('dese', PC(100 * gapd, 1), 'widest gap to DESE’s average salary, %s to %s'
+           % (C.fy(ov[0]), C.fy(ov[-1])), 'published', {'a': F(ov[0]), 'b': F(ov[-1])}),
+         f('exp', PC(100 * ex[ey[-1]]), 'teachers DESE counts experienced, %s; %s in %s'
+           % (C.fy(ey[-1]), C.pct(100 * ex[ey[0]]), C.fy(ey[0])), 'published',
+           {'y': F(ey[-1]), 'a': PC(100 * ex[ey[0]]), 'p': F(ey[0])}),
+         f('raise', PC(KC['cola']), 'salary schedule adjustment, %s, teachers’ agreement'
+           % C.fy(KC['fy']), 'contract', {'y': F(KC['fy'])}),
+         f('steps', None, 'teachers on each step and lane, each year', 'gap', closes=STEPS)],
+        [con('From %s the teacher count took %s off; more spent per teacher added %s.'
+             % (C.fy(g0), C.usd(-v0), C.usd(r0_)), ['cnt', 'per', 'tchr'],
+             {'y': F(g0), 'a': U(-v0), 'b': U(r0_)},
+             notes=[step('From %s, the first year of the state’s comparable count, the count '
+                         'added %s and per teacher %s.' % (C.fy(era), C.usd(ve), C.usd(re_)),
+                         'measured', {'y': F(era), 'a': U(ve), 'b': U(re_)}),
+                    step('The split is ours, by midpoint weights; its two parts add to the '
+                         'whole with nothing left over.', 'measured')]),
+         con('Per teacher FTE went from %s to %s; after Boston-area prices that is %s.'
+             % (C.usd(W[g0]), C.usd(W[g1]), '%+.1f%%' % wr_chg), ['w', 'wr', 'dese'],
+             {'a': U(W[g0]), 'b': U(W[g1]), 'c': SP(wr_chg)},
+             notes=[step('That division matches DESE’s own average teacher salary within %s in '
+                         'every year DESE prints one, %s to %s.'
+                         % (C.pct(100 * gapd), C.fy(ov[0]), C.fy(ov[-1])), 'measured',
+                         {'g': PC(100 * gapd), 'a': F(ov[0]), 'b': F(ov[-1])}),
+                    step('In %s the teachers line rose %s while insurance fell %s; both '
+                         'reversed in %s, and DESE’s average carries the same swing.'
+                         % (C.fy(odd), C.usd(dT), C.usd(-dB), C.fy(odd + 1)), 'measured',
+                         {'y': F(odd), 'a': U(dT), 'b': U(-dB), 'z': F(odd + 1)})]),
+         con('Neither shows whether raises, step increases or a change in who is on staff '
+             'drove it.', ['steps', 'raise', 'fte'],
+             notes=[step('A mix effect fits too: when the teachers who remain sit higher on the '
+                         'schedule, the average rises though nobody’s pay changes.',
+                         'hypothesis'),
+                    step('The agreement set %s at %s; no earlier agreement is held, so earlier '
+                         'raises are not known.' % (C.fy(KC['fy']), C.pct(KC['cola'])), 'gap',
+                         {'y': F(KC['fy']), 'a': PC(KC['cola'])}, closes=RAISES)]),
+         con('DESE counted %s of teachers experienced in %s, against %s in %s.'
+             % (C.pct(100 * ex[ey[-1]]), C.fy(ey[-1]), C.pct(100 * ex[ey[0]]), C.fy(ey[0])),
+             ['exp'], {'a': PC(100 * ex[ey[-1]]), 'y': F(ey[-1]), 'b': PC(100 * ex[ey[0]]),
+                       'z': F(ey[0])},
+             notes=[step('No document we hold defines experienced, and a share past a threshold '
+                         'cannot see veterans moving up steps.', 'gap', closes=EXP_DEF)])],
+        chart=TP.series('Teacher count against spending per teacher',
+                        [C.fy(y) for y in starts], [
+                            TP.track('Change in teacher count', [SPL[y][0] for y in starts],
+                                     'published', 'bar'),
+                            TP.track('More spent per teacher', [SPL[y][1] for y in starts],
+                                     'published', 'bar')], '$', kind='bar',
+                        note='Each pair runs from that year to %s: our midpoint split of DESE’s '
+                             'figures. %s, the swing year, is left out.' % (C.fy(g1), C.fy(odd)),
+                        note_figures={'a': F(g1), 'b': F(odd)}),
+        also=[TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
+                  TP.track('As printed, our division', [W[y] for y in gy], 'published', 'line'),
+                  TP.track('In %s dollars' % C.fy(g1), [WR[y] for y in gy], 'published', 'line'),
+                  TP.track('DESE’s average teacher salary', [sal.get(y) for y in gy],
+                           'published', 'line')], '$',
+                  note='Teachers spending over teacher FTE. %s dollars: Boston-area CPI-U, '
+                       'July-June averages, our arithmetic.' % C.fy(g1),
+                  note_figures={'a': F(g1)}),
+              TP.series('Teachers DESE counts experienced', [C.fy(y) for y in ey], [
+                  TP.track('Lunenburg', [100 * ex[y] for y in ey], 'published', 'line')], '%',
+                  decimals=1, from_zero=False,
+                  note='DESE’s share, all teachers. Its definition is not in any document we '
+                       'hold.')],
+        table=dict(caption='Teachers spending, teacher FTE and spending per FTE', views=[dict(
+            key='years', label='By year', total_col=-1, kinds=['ledger'] * 4,
+            columns=['Teachers spending', 'Teacher FTE', 'Per FTE, ours', 'DESE average salary'],
+            rows=[dict(label=C.fy(y), cells=[C.usd(TS[y]), '%.1f' % T[y], C.usd(W[y]),
+                                             C.usd(sal[y]) if y in sal else None])
+                  for y in reversed(gy)],
+            note='DESE’s figures as printed, all funds; the division is ours. DESE prints an '
+                 'average salary only from %s.' % C.fy(min(sal)))]),
+        sources=S('func', 'func-csv', 'teachers', 'radar', 'radar-csv', 'subject-csv',
+                  'contract', 'contract-txt', 'schedule-csv') + CPI_SRC,
+        finding_figures={'a': F(g1), 'b': F(starts[0]), 'c': F(starts[-1])})
+
+    # ================================================================ teacher pay compared
+    # The six districts are the project's own set, read from the payload the School spending
+    # shelf builds from (peer-spending.json), so this page and /school-spending/average-
+    # teacher-salary cannot name different districts or different ranks.
+    RA, RN = radar_all()
+    PS = json.load(open(os.path.join(PUB, 'peer-spending.json'), encoding='utf-8'))
+    by_name = {v: k for k, v in RN.items()}
+    six = [by_name[r['district']] for r in PS['teachers']]
+    if len(six) != 6 or LEA not in six:
+        fail('the six-district teacher rows no longer hold six districts and Lunenburg')
+    SAL = {l: RA[l]['Average Teacher Salary'] for l in six}
+    ly = PS['teachers_meta']['fy']
+    if ly != max(SAL[LEA]):
+        fail('the six-district payload’s year is not the latest DESE average salary')
+    for r in PS['teachers']:
+        if SAL[by_name[r['district']]][ly] != r['average_salary']:
+            fail('peer-spending.json and dese-radar.csv disagree on %s' % r['district'])
+    sy = sorted(set.intersection(*[set(SAL[l]) for l in six]))
+    if sy != list(range(sy[0], sy[-1] + 1)):
+        fail('the six districts’ salary years are no longer consecutive')
+    place = lambda y: sorted(six, key=lambda l: -SAL[l][y]).index(LEA) + 1
+    order = sorted(six, key=lambda l: -SAL[l][ly])
+    nm = lambda l: {'Ayer Shirley School District': 'Ayer Shirley'}.get(RN[l], RN[l])
+    # DESE's comparison sheet also lists a vocational school, charter schools and virtual
+    # schools. Leaving them out of "districts" is OUR call, said on the page.
+    allsal = [l for l in RA if ly in RA[l].get('Average Teacher Salary', {})]
+    other = [l for l in allsal if any(w in RN[l] for w in ('Charter', 'Virtual', 'Vocational'))]
+    trad = [l for l in allsal if l not in other]
+    wplace = sorted(trad, key=lambda l: -RA[l]['Average Teacher Salary'][ly]).index(LEA) + 1
+    EXS = {l: EX[l][ly] for l in six if ly in EX.get(l, {})}
+    if set(EXS) != set(six):
+        fail('the experienced share is missing for one of the six in FY%d' % ly)
+    eplace = sorted(six, key=lambda l: -EXS[l]).index(LEA) + 1
+    if abs(W[odd] - SAL[LEA][odd]) >= 1:
+        fail('in the swing year DESE’s average no longer equals Teachers spending over FTE')
+    if place(odd) != 1:
+        fail('Lunenburg is no longer first in the swing year; the second conclusion says it is')
+    if odd not in sy:
+        fail('the swing year is outside the salary years')
+    Ord = lambda n: figure(n, ORD(n), 'place')
+    OF = lambda a, b, unit=None: figure(a, '%s of %s' % (C.num(a), C.num(b)), unit)
+    lo_v, lo_step, lo_lane = KC['lo']
+    hi_v, hi_step, hi_lane = KC['hi']
+    SCHED = ('each district’s teacher contract as filed with DESE, its salary schedule read '
+             'into a table, step by lane')
+    lyf = {'y': F(ly)}
+    out['teacher-pay-compared'] = TP.page(
+        'teacher-pay-compared',
+        'On DESE’s average teacher salary, Lunenburg was %s of the six districts compared in %s.'
+        % (ORD(place(ly)), C.fy(ly)),
+        [f('sal', U(SAL[LEA][ly]), 'Lunenburg’s average teacher salary, %s' % C.fy(ly),
+           'published', lyf),
+         f('rank', OF(place(ly), len(six), 'districts'), 'its place, highest first', 'published'),
+         f('hi', U(SAL[order[0]][ly]), '%s, the highest of the six' % nm(order[0]), 'published'),
+         f('lo', U(SAL[order[-1]][ly]), '%s, the lowest' % nm(order[-1]), 'published'),
+         f('r0', Ord(place(sy[0])), 'its place in %s' % C.fy(sy[0]), 'published', {'y': F(sy[0])}),
+         f('rodd', Ord(place(odd)), 'its place in %s, the swing year' % C.fy(odd), 'published',
+           {'y': F(odd)}),
+         f('wide', OF(wplace, len(trad), 'districts'), 'its place on all of DESE’s sheet, our cut',
+           'published'),
+         f('exp', PC(100 * EXS[LEA]), 'teachers DESE counts experienced, %s' % C.fy(ly),
+           'published', lyf),
+         f('expr', Ord(eplace), 'its place on that share among the six', 'published'),
+         f('slo', U(lo_v), 'lowest pay on Lunenburg’s %s salary schedule' % C.fy(KC['fy']),
+           'contract', {'y': F(KC['fy'])}),
+         f('shi', U(hi_v), 'highest on it, the %s lane' % hi_lane.lower(), 'contract'),
+         f('sched', None, 'the other five districts’ salary schedules', 'gap', closes=SCHED)],
+        [con('Lunenburg’s average was %s in %s, %s of six; %s’s %s was first.'
+             % (C.usd(SAL[LEA][ly]), C.fy(ly), ORD(place(ly)), nm(order[0]),
+                C.usd(SAL[order[0]][ly])), ['sal', 'rank', 'hi', 'lo'],
+             {'a': U(SAL[LEA][ly]), 'y': F(ly), 'r': Ord(place(ly)), 'b': U(SAL[order[0]][ly])},
+             notes=[step('The six are this project’s choice; no document records why these six. '
+                         'Among the %s town districts on DESE’s sheet it was %s.'
+                         % (C.num(len(trad)), ORD(wplace)), 'measured',
+                         {'n': N(len(trad)), 'r': Ord(wplace)}),
+                    step('Left out of those, our call: a vocational school, charter schools and '
+                         'virtual schools, which are not town districts.', 'measured')]),
+         con('It was %s of six in %s and %s in %s, the year DESE’s teachers line swung.'
+             % (ORD(place(sy[0])), C.fy(sy[0]), ORD(place(odd)), C.fy(odd)), ['r0', 'rodd'],
+             {'a': Ord(place(sy[0])), 'y': F(sy[0]), 'b': Ord(place(odd)), 'z': F(odd)},
+             notes=[step('In %s Lunenburg’s teachers line rose and its insurance line fell by '
+                         'millions, both reversing a year later; that year this average equals '
+                         'that line over teacher FTE.' % C.fy(odd), 'measured', {'y': F(odd)})]),
+         con('Whether Lunenburg’s salary schedule sits below the others’ is not measured here.',
+             ['sched', 'slo', 'shi'],
+             notes=[step('An average is not a schedule: a higher average fits a lower schedule '
+                         'if more teachers sit on top steps or in higher lanes.', 'hypothesis'),
+                    step('Lunenburg’s %s schedule runs %s to %s; the other five have not been '
+                         'read.' % (C.fy(KC['fy']), C.usd(lo_v), C.usd(hi_v)), 'gap',
+                         {'y': F(KC['fy']), 'a': U(lo_v), 'b': U(hi_v)}, closes=SCHED)]),
+         con('DESE counted %s of Lunenburg’s teachers experienced in %s, %s of the six.'
+             % (C.pct(100 * EXS[LEA]), C.fy(ly), ORD(eplace)), ['exp', 'expr'],
+             {'a': PC(100 * EXS[LEA]), 'y': F(ly), 'r': Ord(eplace)},
+             notes=[step('No document we hold defines experienced, and a share past a threshold '
+                         'cannot see veterans moving up steps.', 'gap', closes=EXP_DEF)])],
+        chart=TP.ranking('Average teacher salary, six districts',
+                         [(nm(l), SAL[l][ly]) for l in six], '$', highlight='Lunenburg',
+                         note='DESE’s comparison sheet, %s. The six are this project’s choice.'
+                              % C.fy(ly), note_figures=lyf),
+        also=[TP.series('Average teacher salary by year', [C.fy(y) for y in sy], [
+                  TP.track(nm(l), [SAL[l][y] for y in sy], 'published', 'line',
+                           colour=0 if l == LEA else 1) for l in order], '$', multiples=True,
+                  note='One scale for all six; Lunenburg’s panel has its own colour.'),
+              TP.ranking('Teachers DESE counts experienced, six districts',
+                         [(nm(l), 100 * EXS[l]) for l in six], '%', highlight='Lunenburg',
+                         decimals=1,
+                         note='DESE, %s. A more senior staff raises an average salary with no '
+                              'change to the schedule.' % C.fy(ly), note_figures=lyf)],
+        table=dict(caption='Average teacher salary, six districts', views=[
+            dict(key='latest', label=C.fy(ly), total_col=-1, kinds=['ledger'] * 3,
+                 columns=['Average salary', 'Experienced', 'Teacher FTE'],
+                 rows=[dict(label=nm(l), cells=[C.usd(SAL[l][ly]), C.pct(100 * EXS[l]),
+                                                '%.1f' % RA[l]['Teacher FTE'][ly]])
+                       for l in order],
+                 note='DESE’s comparison sheet and teacher data, as printed.'),
+            dict(key='years', label='By year', total_col=-1, kinds=['ledger'] * 4,
+                 columns=['Lunenburg', 'Its place of six', 'Highest', 'Lowest'],
+                 rows=[dict(label=C.fy(y), cells=[
+                     C.usd(SAL[LEA][y]), ORD(place(y)), C.usd(max(SAL[l][y] for l in six)),
+                     C.usd(min(SAL[l][y] for l in six))]) for y in reversed(sy)],
+                 note='DESE’s comparison sheet. %s is the swing year.' % C.fy(odd)),
+            dict(key='wide', label='All of DESE’s sheet', total_col=-1, kinds=['ledger'],
+                 columns=['Average salary, %s' % C.fy(ly)],
+                 rows=[dict(label=RN[l] + (' (left out)' if l in other else ''),
+                            cells=[C.usd(RA[l]['Average Teacher Salary'][ly])])
+                       for l in sorted(allsal, key=lambda l: -RA[l]['Average Teacher Salary'][ly])],
+                 note='Every district DESE’s comparison sheet prints. Leaving out the vocational, '
+                      'charter and virtual schools is ours.')]),
+        sources=S('radar', 'radar-csv', 'teachers', 'subject-csv', 'contract', 'contract-txt',
+                  'schedule-csv'),
+        finding_figures={'r': Ord(place(ly)), 'y': F(ly)})
 
     # ================================================================ the hub
     tiers = [
