@@ -359,7 +359,7 @@ def build():
          f('teach', U(te['unspent']), 'left on teachers and substitutes, net', 'published'),
          f('teach-pct', P(te['pct_of_revised']), 'of the teacher budget left', 'published'),
          f('paras', U(pa['unspent']), 'paraprofessionals, net (over budget)', 'published'),
-         f('disc', U(disc['unspent']), 'left in supplies, upkeep, equipment (our grouping)',
+         f('disc', U(disc['unspent']), 'left in supplies, upkeep, equipment and the like (ours)',
            'estimate'),
          f('disc-pct', P(disc['share_pct']), 'of the surplus in those lines (our grouping)',
            'estimate'),

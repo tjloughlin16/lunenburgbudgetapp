@@ -182,7 +182,7 @@ export function SchoolSurplusCauses({ data }: ChartProps) {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <Legend items={[[KIND_FILL.discretionary, 'Discretionary (supplies, upkeep, equipment)'],
+      <Legend items={[[KIND_FILL.discretionary, 'Discretionary (supplies, upkeep, equipment, athletics, training, legal)'],
         [KIND_FILL.circumstantial, 'Circumstantial (staff, tuition, prices)'],
         [OVER_FILL, 'Over budget']]} />
     </div>

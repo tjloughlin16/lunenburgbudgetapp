@@ -168,8 +168,9 @@ def flat(text):
 # importing the generator's table -- so a change to one that is not made to the other
 # fails. Same order as the generator's table: first match wins.
 
-SALARY_KEYS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'other_staff')
-DISCRETIONARY = ('buildings', 'equipment', 'supplies')
+SALARY_KEYS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
+               'other_staff')
+DISCRETIONARY = ('buildings', 'equipment', 'athletics', 'prof_dev', 'legal', 'supplies')
 
 
 def cat_of(func, sal):
@@ -184,6 +185,8 @@ def cat_of(func, sal):
             return 'admin'
         if 4000 <= func <= 4999:
             return 'custodians'
+        if func in (3510, 3520):
+            return 'athletics_staff'
         return 'other_staff'
     if func >= 9000:
         return 'tuition'
@@ -199,6 +202,12 @@ def cat_of(func, sal):
         return 'buildings'
     if 7000 <= func <= 7999 or func == 2451:
         return 'equipment'
+    if func in (3510, 3520):
+        return 'athletics'
+    if 2350 <= func <= 2359:
+        return 'prof_dev'
+    if func == 1430:
+        return 'legal'
     return 'supplies'
 
 
@@ -444,7 +453,9 @@ def verify_2025(run):
                 run.check(D(str(r[k])) == v, 'payload para %s %s mismatch' % (org, k))
 
     wants = verify_causes(run, rows, s, dict(
-        disc=D('240114.95'), top3=['supplies', 'paras', 'custodians'],
+        # top3 was supplies, paras, custodians until athletics, professional development
+        # and legal left supplies (19 October 2026); the discretionary total is unchanged.
+        disc=D('240114.95'), top3=['paras', 'custodians', 'supplies'],
         circuit_breaker=D('473650.35'),
         years_under={'buildings': 4, 'supplies': 4, 'custodians': 4, 'equipment': 1}))
     check_conclusions(run, dict(wants, **{
@@ -643,7 +654,9 @@ def verify_audit_2026(run, rows):
     W.update({cid + '/sup': sum(sg), cid + '/sn': D(len(Y)),
               cid + '/br': ((bv26 / bv23 - 1) * 100, tol), cid + '/bl26': bl26,
               cid + '/bv23': bv23, cid + '/bv26': bv26})
-    run.check(sum(sg) == D('375174.98'), 'supplies gap recomputed as %s' % sum(sg))
+    # 375,174.98 until 19 October 2026, when athletics, professional development and legal
+    # left the supplies category for categories of their own (build_school_surplus.py).
+    run.check(sum(sg) == D('390769.73'), 'supplies gap recomputed as %s' % sum(sg))
 
     cid = 'lines-budgeted-again'
     kp = AUDIT_KEYS['psych'][0][0]

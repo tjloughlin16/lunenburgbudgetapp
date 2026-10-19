@@ -444,8 +444,16 @@ CATEGORIES = (
      lambda f, s: s and 1000 <= f < 2300),
     ('custodians', 'Custodians', 'circumstantial',
      'salary lines, functions 4000–4999', lambda f, s: s and 4000 <= f < 5000),
-    ('other_staff', 'Nurses, coaches & other staff', 'circumstantial',
-     'every other salary line (nurses, athletics, advisors, reserves)', lambda f, s: s),
+    # Coaches were once "nurses, coaches & other staff", with athletics, legal and
+    # professional development folded into "supplies, services & everything else" -- groups
+    # that hid the three things a reader asks about by name (TJ, 19 October 2026, on an
+    # invented grouping: "that was bad!"). Each is now split out by its own DESE function code.
+    ('athletics_staff', 'Coaches & activity advisors', 'circumstantial',
+     'salary lines, functions 3510 and 3520 (athletic director, coaches, after-school '
+     'advisors)', lambda f, s: s and f in (3510, 3520)),
+    ('other_staff', 'Nurses & other staff', 'circumstantial',
+     'every other salary line (nurses, special details, crossing guards, reserves)',
+     lambda f, s: s),
     ('tuition', 'Out-of-district tuition', 'circumstantial',
      'functions 9000 and up (private and collaborative special-education tuition)',
      lambda f, s: f >= 9000),
@@ -466,16 +474,26 @@ CATEGORIES = (
     ('equipment', 'Equipment & technology', 'discretionary',
      'functions 7000–7999, and 2451 (furniture, equipment, computers and their leases)',
      lambda f, s: 7000 <= f < 8000 or f == 2451),
+    ('athletics', 'Athletics & activities expenses', 'discretionary',
+     'non-salary lines, functions 3510 and 3520 (athletic buses, officials, equipment, '
+     'supplies, dues)', lambda f, s: f in (3510, 3520)),
+    ('prof_dev', 'Professional development', 'discretionary',
+     'non-salary lines, functions 2350–2359 (courses, conferences, workshops)',
+     lambda f, s: 2350 <= f < 2360),
+    ('legal', 'Legal services', 'discretionary',
+     'non-salary lines, function 1430 (legal services for the School Committee)',
+     lambda f, s: f == 1430),
     ('supplies', 'Supplies, services & everything else', 'discretionary',
-     'every remaining non-salary line (classroom supplies, textbooks, professional '
-     'development, legal, dues, athletics expenses, office services)',
-     lambda f, s: True),
+     'every remaining non-salary line (classroom supplies, textbooks, dues, office and '
+     'contracted services)', lambda f, s: True),
 )
 CAT_LABEL = {c[0]: c[1] for c in CATEGORIES}
 # The same categories in two words, for a conclusion card's 95 characters.
 CAT_SHORT = {'teachers': 'teachers', 'counselors': 'counselors', 'paras': 'paraprofessionals',
              'admin': 'administration', 'custodians': 'custodians',
-             'other_staff': 'other staff', 'tuition': 'tuition',
+             'athletics_staff': 'coaches and advisors', 'other_staff': 'other staff',
+             'tuition': 'tuition', 'athletics': 'athletics', 'prof_dev': 'professional development',
+             'legal': 'legal services',
              'sped_services': 'special-ed services', 'transport': 'transportation',
              'utilities': 'utilities', 'benefits': 'benefits', 'buildings': 'building upkeep',
              'equipment': 'equipment', 'supplies': 'supplies'}
@@ -589,7 +607,7 @@ def special_overlap(fy, cats):
     totalled separately and said to be unmatchable rather than guessed at."""
     by_cat = {c['key']: set(c['functions']) for c in cats}
     sal_of = {c['key']: c['key'] in ('teachers', 'counselors', 'paras', 'admin',
-                                      'custodians', 'other_staff') for c in cats}
+                                      'custodians', 'athletics_staff', 'other_staff') for c in cats}
     matched, coarse = {}, 0.0
     for r in special_rows(fy):
         f, s = func_of(r), r['obj'].startswith('51')
@@ -741,9 +759,18 @@ HYPOTHESES = {
               'the position-control roster by month'),
     'custodians': ('custodial vacancies or turnover',
                    'the custodial roster by month, with overtime'),
-    'other_staff': ('stipends not paid for seasons or programs that did not run, or a '
-                    'nurse post vacant for part of the year',
-                    'the stipend and nursing payroll by month'),
+    'athletics_staff': ('stipends not paid for seasons or programs that did not run, or '
+                        'coaches paid from the athletic fee fund instead',
+                        'the coaching and advisor stipend payroll by season'),
+    'other_staff': ('a nurse post vacant for part of the year, or reserves not drawn',
+                    'the nursing payroll by month'),
+    'athletics': ('fewer games, trips or officials than budgeted, or costs paid from the '
+                  'athletic fee fund instead', 'the athletics accounts\' journal detail and '
+                  'the fee fund\'s spending by month'),
+    'prof_dev': ('fewer courses or conferences than budgeted, or training paid from a grant '
+                 'instead', 'the professional development invoices and grant budgets'),
+    'legal': ('fewer legal matters than budgeted, or bills for one year paid in another',
+              'the School Committee\'s legal invoices by month'),
     'tuition': ('fewer children placed than budgeted, placements starting later, a '
                 'placement paid from the circuit breaker fund instead, or a placement '
                 'billed to a different tuition line',
@@ -858,7 +885,7 @@ def causes_svg(cats, title, subtitle):
              % (zx, TOP, zx, TOP + ROW * len(cats), AXIS))
     ly = TOP + ROW * len(cats) + 22
     lx = 0
-    for kind, text in (('discretionary', 'Discretionary (supplies, upkeep, equipment)'),
+    for kind, text in (('discretionary', 'Discretionary (supplies, upkeep, …)'),
                        ('circumstantial', 'Circumstantial (staff, tuition, prices)')):
         b.append('<rect x="%d" y="%d" width="10" height="10" fill="%s"/>'
                  % (lx, ly - 9, KIND_COLOR[kind]))
@@ -995,7 +1022,7 @@ def why(fy, rows, t):
     disc_share = 100 * disc / total
     disc_enc = round(sum(c['encumbered'] for c in cats if c['kind'] == 'discretionary'), 2)
     sal = [c for c in cats if c['key'] in ('teachers', 'counselors', 'paras', 'admin',
-                                            'custodians', 'other_staff')]
+                                            'custodians', 'athletics_staff', 'other_staff')]
     sal_net = round(sum(c['unspent'] for c in sal), 2)
     top_u, top_o = top_accounts(rows)
     record = check_record(fy)
@@ -1035,8 +1062,8 @@ def why(fy, rows, t):
                 (', led by %s' % ' and '.join('%s, %s over' % (c['label'].lower(),
                                                                  usd(abs(c['unspent'])))
                                               for c in overs[:2])) if overs else ''))
-    s.append('**Was it thrift? %s of it (%s) sat in discretionary lines — supplies, upkeep '
-             'and equipment, the part a decision to spend less could explain.** The other %s '
+    s.append('**Was it thrift? %s of it (%s) sat in discretionary lines — supplies, upkeep, '
+             'equipment, athletics expenses, professional development and legal, the part a decision to spend less could explain.** The other %s '
              'sat in salaries, benefits, tuition and other lines that follow staffing, '
              'placements and prices. The split of lines into the two groups is ours; see '
              '*Was it thrift?* below.\n'
@@ -1265,7 +1292,8 @@ def why(fy, rows, t):
                      'c_ndisc': figure(len(disc_cats), C.num(len(disc_cats)),
                                        'categories')},
             figure='c_disc_share', kind='measured', bearing='sizes',
-            detail='Discretionary means supplies, upkeep and equipment — the split is ours, '
+            detail='Discretionary means supplies, upkeep, equipment, athletics expenses, '
+                   'professional development and legal services — the split is ours, '
                    'stated in the method table. %s of the %s discretionary categories were also '
                    'left under budget in all %s closed years held, which reads as budgeted high '
                    'as much as run lean. It is the most thrift could explain, not a finding '

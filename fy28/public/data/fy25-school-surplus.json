@@ -120,16 +120,6 @@
    },
    {
     "committed_pct": 0.0,
-    "key": "supplies",
-    "label": "Supplies, services & everything else",
-    "left_pct": 15.4,
-    "over_pct": 0,
-    "revised": 811130.86,
-    "spent_pct": 84.6,
-    "spent_shown": 84.6
-   },
-   {
-    "committed_pct": 0.0,
     "key": "custodians",
     "label": "Custodians",
     "left_pct": 14.7,
@@ -150,16 +140,6 @@
    },
    {
     "committed_pct": 0.0,
-    "key": "other_staff",
-    "label": "Nurses, coaches & other staff",
-    "left_pct": 0.8,
-    "over_pct": 0,
-    "revised": 681542.04,
-    "spent_pct": 99.2,
-    "spent_shown": 99.2
-   },
-   {
-    "committed_pct": 0.0,
     "key": "equipment",
     "label": "Equipment & technology",
     "left_pct": 10.8,
@@ -167,6 +147,16 @@
     "revised": 598356.8,
     "spent_pct": 89.2,
     "spent_shown": 89.2
+   },
+   {
+    "committed_pct": 0.0,
+    "key": "supplies",
+    "label": "Supplies, services & everything else",
+    "left_pct": 18.7,
+    "over_pct": 0,
+    "revised": 583792.01,
+    "spent_pct": 81.3,
+    "spent_shown": 81.3
    },
    {
     "committed_pct": 0.0,
@@ -190,6 +180,36 @@
    },
    {
     "committed_pct": 0.0,
+    "key": "athletics_staff",
+    "label": "Coaches & activity advisors",
+    "left_pct": 0.8,
+    "over_pct": 0,
+    "revised": 407470.91,
+    "spent_pct": 99.2,
+    "spent_shown": 99.2
+   },
+   {
+    "committed_pct": 0.0,
+    "key": "other_staff",
+    "label": "Nurses & other staff",
+    "left_pct": 0.7,
+    "over_pct": 0,
+    "revised": 274071.13,
+    "spent_pct": 99.3,
+    "spent_shown": 99.3
+   },
+   {
+    "committed_pct": 0.0,
+    "key": "athletics",
+    "label": "Athletics & activities expenses",
+    "left_pct": 7.1,
+    "over_pct": 0,
+    "revised": 163363.85,
+    "spent_pct": 92.9,
+    "spent_shown": 92.9
+   },
+   {
+    "committed_pct": 0.0,
     "key": "sped_services",
     "label": "Special-ed contracted services",
     "left_pct": 8.3,
@@ -197,46 +217,30 @@
     "revised": 161140.04,
     "spent_pct": 91.7,
     "spent_shown": 91.7
+   },
+   {
+    "committed_pct": 0.0,
+    "key": "prof_dev",
+    "label": "Professional development",
+    "left_pct": 5.9,
+    "over_pct": 0,
+    "revised": 35000.0,
+    "spent_pct": 94.1,
+    "spent_shown": 94.1
+   },
+   {
+    "committed_pct": 0.0,
+    "key": "legal",
+    "label": "Legal services",
+    "left_pct": 8.7,
+    "over_pct": 0,
+    "revised": 28975.0,
+    "spent_pct": 91.3,
+    "spent_shown": 91.3
    }
   ],
   "bvs_cap": 130.0,
   "categories": [
-   {
-    "accounts": 166,
-    "encumbered": 0.0,
-    "expended": 685938.79,
-    "functions": [
-     1110,
-     1210,
-     1410,
-     1430,
-     1450,
-     2000,
-     2110,
-     2210,
-     2330,
-     2357,
-     2410,
-     2415,
-     2420,
-     2430,
-     2440,
-     2710,
-     2800,
-     3200,
-     3510
-    ],
-    "key": "supplies",
-    "kind": "discretionary",
-    "label": "Supplies, services & everything else",
-    "original": 858905.0,
-    "over": -262.7,
-    "pct_of_revised": 15.4,
-    "revised": 811130.86,
-    "transfers": -47774.14,
-    "under": 125454.77,
-    "unspent": 125192.07
-   },
    {
     "accounts": 27,
     "encumbered": 0.0,
@@ -272,6 +276,39 @@
     "transfers": -114885.94,
     "under": 113828.89,
     "unspent": 113828.89
+   },
+   {
+    "accounts": 149,
+    "encumbered": 0.0,
+    "expended": 474861.66,
+    "functions": [
+     1110,
+     1210,
+     1410,
+     1450,
+     2000,
+     2110,
+     2210,
+     2330,
+     2410,
+     2415,
+     2420,
+     2430,
+     2440,
+     2710,
+     2800,
+     3200
+    ],
+    "key": "supplies",
+    "kind": "discretionary",
+    "label": "Supplies, services & everything else",
+    "original": 700905.0,
+    "over": -262.7,
+    "pct_of_revised": 18.7,
+    "revised": 583792.01,
+    "transfers": -117112.99,
+    "under": 109193.05,
+    "unspent": 108930.35
    },
    {
     "accounts": 19,
@@ -376,6 +413,24 @@
     "unspent": 13408.42
    },
    {
+    "accounts": 8,
+    "encumbered": 0.0,
+    "expended": 151690.93,
+    "functions": [
+     3510
+    ],
+    "key": "athletics",
+    "kind": "discretionary",
+    "label": "Athletics & activities expenses",
+    "original": 95000.0,
+    "over": 0.0,
+    "pct_of_revised": 7.1,
+    "revised": 163363.85,
+    "transfers": 68363.85,
+    "under": 11672.92,
+    "unspent": 11672.92
+   },
+   {
     "accounts": 69,
     "encumbered": 0.0,
     "expended": 10840407.11,
@@ -462,29 +517,23 @@
     "unspent": 5629.2
    },
    {
-    "accounts": 21,
+    "accounts": 10,
     "encumbered": 0.0,
-    "expended": 676349.92,
+    "expended": 404293.49,
     "functions": [
-     300,
-     3200,
      3510,
-     3520,
-     3600,
-     5150,
-     5200,
-     5500
+     3520
     ],
-    "key": "other_staff",
+    "key": "athletics_staff",
     "kind": "circumstantial",
-    "label": "Nurses, coaches & other staff",
-    "original": 784893.0,
+    "label": "Coaches & activity advisors",
+    "original": 165280.0,
     "over": 0.0,
     "pct_of_revised": 0.8,
-    "revised": 681542.04,
-    "transfers": -103350.96,
-    "under": 5192.12,
-    "unspent": 5192.12
+    "revised": 407470.91,
+    "transfers": 242190.91,
+    "under": 3177.42,
+    "unspent": 3177.42
    },
    {
     "accounts": 15,
@@ -504,6 +553,65 @@
     "transfers": 2143.86,
     "under": 2695.26,
     "unspent": 2695.26
+   },
+   {
+    "accounts": 1,
+    "encumbered": 0.0,
+    "expended": 26461.25,
+    "functions": [
+     1430
+    ],
+    "key": "legal",
+    "kind": "discretionary",
+    "label": "Legal services",
+    "original": 28000.0,
+    "over": 0.0,
+    "pct_of_revised": 8.7,
+    "revised": 28975.0,
+    "transfers": 975.0,
+    "under": 2513.75,
+    "unspent": 2513.75
+   },
+   {
+    "accounts": 8,
+    "encumbered": 0.0,
+    "expended": 32924.95,
+    "functions": [
+     2357
+    ],
+    "key": "prof_dev",
+    "kind": "discretionary",
+    "label": "Professional development",
+    "original": 35000.0,
+    "over": 0.0,
+    "pct_of_revised": 5.9,
+    "revised": 35000.0,
+    "transfers": 0.0,
+    "under": 2075.05,
+    "unspent": 2075.05
+   },
+   {
+    "accounts": 11,
+    "encumbered": 0.0,
+    "expended": 272056.43,
+    "functions": [
+     300,
+     3200,
+     3600,
+     5150,
+     5200,
+     5500
+    ],
+    "key": "other_staff",
+    "kind": "circumstantial",
+    "label": "Nurses & other staff",
+    "original": 619613.0,
+    "over": 0.0,
+    "pct_of_revised": 0.7,
+    "revised": 274071.13,
+    "transfers": -345541.87,
+    "under": 2014.7,
+    "unspent": 2014.7
    }
   ],
   "category_rules": [
@@ -538,10 +646,16 @@
     "rule": "salary lines, functions 4000–4999"
    },
    {
+    "key": "athletics_staff",
+    "kind": "circumstantial",
+    "label": "Coaches & activity advisors",
+    "rule": "salary lines, functions 3510 and 3520 (athletic director, coaches, after-school advisors)"
+   },
+   {
     "key": "other_staff",
     "kind": "circumstantial",
-    "label": "Nurses, coaches & other staff",
-    "rule": "every other salary line (nurses, athletics, advisors, reserves)"
+    "label": "Nurses & other staff",
+    "rule": "every other salary line (nurses, special details, crossing guards, reserves)"
    },
    {
     "key": "tuition",
@@ -586,10 +700,28 @@
     "rule": "functions 7000–7999, and 2451 (furniture, equipment, computers and their leases)"
    },
    {
+    "key": "athletics",
+    "kind": "discretionary",
+    "label": "Athletics & activities expenses",
+    "rule": "non-salary lines, functions 3510 and 3520 (athletic buses, officials, equipment, supplies, dues)"
+   },
+   {
+    "key": "prof_dev",
+    "kind": "discretionary",
+    "label": "Professional development",
+    "rule": "non-salary lines, functions 2350–2359 (courses, conferences, workshops)"
+   },
+   {
+    "key": "legal",
+    "kind": "discretionary",
+    "label": "Legal services",
+    "rule": "non-salary lines, function 1430 (legal services for the School Committee)"
+   },
+   {
     "key": "supplies",
     "kind": "discretionary",
     "label": "Supplies, services & everything else",
-    "rule": "every remaining non-salary line (classroom supplies, textbooks, professional development, legal, dues, athletics expenses, office services)"
+    "rule": "every remaining non-salary line (classroom supplies, textbooks, dues, office and contracted services)"
    }
   ],
   "circumstantial": {
@@ -599,16 +731,17 @@
    "encumbered": 0.0,
    "repeat_every_year": [
     "supplies",
-    "buildings"
+    "buildings",
+    "athletics"
    ],
    "share_pct": 38.29,
    "unspent": 240114.95
   },
   "explain_min": 25000.0,
   "explained": [
-   "supplies",
    "paras",
    "custodians",
+   "supplies",
    "equipment",
    "utilities",
    "buildings",
@@ -616,18 +749,6 @@
   ],
   "history": {
    "rows": [
-    {
-     "by_year": [
-      43030.82,
-      53199.83,
-      125192.07,
-      96362.6
-     ],
-     "key": "supplies",
-     "kind": "discretionary",
-     "label": "Supplies, services & everything else",
-     "years_under": 4
-    },
     {
      "by_year": [
       47426.51,
@@ -650,6 +771,18 @@
      "key": "custodians",
      "kind": "circumstantial",
      "label": "Custodians",
+     "years_under": 4
+    },
+    {
+     "by_year": [
+      13650.85,
+      58151.76,
+      108930.35,
+      71861.05
+     ],
+     "key": "supplies",
+     "kind": "discretionary",
+     "label": "Supplies, services & everything else",
      "years_under": 4
     },
     {
@@ -714,6 +847,18 @@
     },
     {
      "by_year": [
+      1127.25,
+      3560.73,
+      11672.92,
+      18885.16
+     ],
+     "key": "athletics",
+     "kind": "discretionary",
+     "label": "Athletics & activities expenses",
+     "years_under": 4
+    },
+    {
+     "by_year": [
       210173.42,
       122858.39,
       11529.4,
@@ -762,15 +907,15 @@
     },
     {
      "by_year": [
-      -441.24,
-      -29771.71,
-      5192.12,
-      25699.53
+      8921.28,
+      -58984.0,
+      3177.42,
+      33020.09
      ],
-     "key": "other_staff",
+     "key": "athletics_staff",
      "kind": "circumstantial",
-     "label": "Nurses, coaches & other staff",
-     "years_under": 2
+     "label": "Coaches & activity advisors",
+     "years_under": 3
     },
     {
      "by_year": [
@@ -783,6 +928,42 @@
      "kind": "circumstantial",
      "label": "Counselors & psychologists",
      "years_under": 4
+    },
+    {
+     "by_year": [
+      18412.5,
+      -7017.5,
+      2513.75,
+      14029.59
+     ],
+     "key": "legal",
+     "kind": "discretionary",
+     "label": "Legal services",
+     "years_under": 3
+    },
+    {
+     "by_year": [
+      9840.22,
+      -1495.16,
+      2075.05,
+      -8413.2
+     ],
+     "key": "prof_dev",
+     "kind": "discretionary",
+     "label": "Professional development",
+     "years_under": 2
+    },
+    {
+     "by_year": [
+      -9362.52,
+      29212.29,
+      2014.7,
+      -7320.56
+     ],
+     "key": "other_staff",
+     "kind": "circumstantial",
+     "label": "Nurses & other staff",
+     "years_under": 2
     }
    ],
    "years": [
@@ -926,7 +1107,7 @@
     "name": "EXTENDED DAY REVOLVING F"
    },
    {
-    "category": "supplies",
+    "category": "athletics",
     "expended": 27947.47,
     "fund": "1301",
     "name": "CHAPTER 658 REVOLVING FU"
@@ -950,7 +1131,7 @@
     "name": "FY25 TITLE I #305"
    },
    {
-    "category": "other_staff",
+    "category": "athletics_staff",
     "expended": 4849.0,
     "fund": "1301",
     "name": "CHAPTER 658 REVOLVING FU"
@@ -1105,34 +1286,34 @@
   {
    "basis": "`sources/data/munis-school-ytd.csv`, FY2025 period 13, report gf-school, every account put in one category by `CATEGORIES` in the generator.",
    "bearing": "sizes",
-   "claim": "$360,315 was left in three categories: supplies, paraprofessionals and custodians.",
-   "detail": "By category, net: supplies, services & everything else $125,192; paraprofessionals $121,294; custodians $113,829. Accounts under budget left $649,392 in all, and the surplus is what remained, $627,117. The ledger shows where money was left, never why.",
+   "claim": "$344,054 was left in three categories: paraprofessionals, custodians and supplies.",
+   "detail": "By category, net: paraprofessionals $121,294; custodians $113,829; supplies, services & everything else $108,930. Accounts under budget left $649,392 in all, and the surplus is what remained, $627,117. The ledger shows where money was left, never why.",
    "figure": "c_three",
    "figures": {
     "c_lead_pct": {
-     "text": "15.4%",
+     "text": "8.3%",
      "unit": "",
-     "value": 15.4
+     "value": 8.3
     },
     "c_three": {
-     "text": "$360,315",
+     "text": "$344,054",
      "unit": "left over in the three largest categories",
-     "value": 360315.22
+     "value": 344053.5
     },
     "c_top0": {
-     "text": "$125,192",
-     "unit": "",
-     "value": 125192.07
-    },
-    "c_top1": {
      "text": "$121,294",
      "unit": "",
      "value": 121294.26
     },
-    "c_top2": {
+    "c_top1": {
      "text": "$113,829",
      "unit": "",
      "value": 113828.89
+    },
+    "c_top2": {
+     "text": "$108,930",
+     "unit": "",
+     "value": 108930.35
     },
     "c_total": {
      "text": "$627,117",
@@ -1153,13 +1334,13 @@
    ],
    "not_shown": "Why any category was left under budget — vacancies, placements, prices and restraint all produce the same ledger.",
    "see": [],
-   "so_what": "No category ran over, net; the largest, supplies, left 15.4% of its budget."
+   "so_what": "No category ran over, net; the largest, paraprofessionals, left 8.3% of its budget."
   },
   {
    "basis": "`munis-school-ytd.csv`, FY2023 to FY2026 period 13, gf-school; the category table in the generator.",
    "bearing": "sizes",
    "claim": "38% of the surplus ($240,115) sat in discretionary lines thrift could explain.",
-   "detail": "Discretionary means supplies, upkeep and equipment — the split is ours, stated in the method table. 2 of the 3 discretionary categories were also left under budget in all 4 closed years held, which reads as budgeted high as much as run lean. It is the most thrift could explain, not a finding that it did.",
+   "detail": "Discretionary means supplies, upkeep, equipment, athletics expenses, professional development and legal services — the split is ours, stated in the method table. 3 of the 6 discretionary categories were also left under budget in all 4 closed years held, which reads as budgeted high as much as run lean. It is the most thrift could explain, not a finding that it did.",
    "figure": "c_disc_share",
    "figures": {
     "c_circ": {
@@ -1178,14 +1359,14 @@
      "value": 38.28870906133827
     },
     "c_ndisc": {
+     "text": "6",
+     "unit": "categories",
+     "value": 6
+    },
+    "c_rep": {
      "text": "3",
      "unit": "categories",
      "value": 3
-    },
-    "c_rep": {
-     "text": "2",
-     "unit": "categories",
-     "value": 2
     },
     "c_years": {
      "text": "4",
