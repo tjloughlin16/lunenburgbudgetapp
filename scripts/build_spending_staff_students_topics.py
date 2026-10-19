@@ -81,7 +81,7 @@ CACHE_VERSION = 1
 CPI_DIR = os.path.join(ROOT, 'sources', 'federal-bls')
 CPI_SERIES = 'CUURS11ASA0'
 CPI_MONTHS = (7, 9, 11, 1, 3, 5)   # the bimonthly releases inside one fiscal year, July to May
-CID = 'spending-staff-students'
+CID = 'school-spending-history'
 LEA = '01620000'          # Lunenburg's DESE district code
 STATE = '00000000'
 

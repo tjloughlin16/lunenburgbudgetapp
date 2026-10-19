@@ -1,4 +1,4 @@
-"""The Spending, staff, students shelf: the schools' spending, their teaching staff and their
+"""The School spending history shelf (/school-spending-history): the schools' spending, their teaching staff and their
 pupils, set side by side over as many years as each is published. See scripts/topics.py for
 the model and the title rule.
 
@@ -13,8 +13,8 @@ spending per pupil against the state, net school spending against the state mini
 LISTED here and live at their one address. One question, one page.
 """
 CATEGORY = dict(
-    id='spending-staff-students', shelf='Spending, staff, students',
-    title='Spending, staff, students', area='school', order=26,
+    id='school-spending-history', shelf='School spending history',
+    title='School spending history', area='school', order=26,
     groups=[
         ('Side by side', ['growth-side-by-side', 'long-run-school-spending',
                           'spending-per-child-enrolled', 'teachers-and-other-staff']),

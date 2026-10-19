@@ -570,13 +570,13 @@
      ]
     }
    ],
-   "id": "spending-staff-students",
+   "id": "school-spending-history",
    "minutes": 1,
    "order": 26,
-   "path": "/spending-staff-students",
+   "path": "/school-spending-history",
    "ready": true,
-   "shelf": "Spending, staff, students",
-   "title": "Spending, staff, students"
+   "shelf": "School spending history",
+   "title": "School spending history"
   },
   {
    "answer": "The state certified $3,354,370 of free cash as of 1 July 2025, the most the Town’s records list; 66.1% of the free cash identified that year was money appropriated and not spent.",
@@ -952,7 +952,7 @@
    "title": "Parks department"
   },
   {
-   "answer": "On our projection the school budget is $932,531 short in FY2028 and short every year after: what the schools buy grows 5.18% a year, their revenue 3.22% and falling. A cut lowers the cost line once; only a rate changes where it heads.",
+   "answer": "On our projection the school budget is $932,531 short in FY2028 and short every year after: keeping today’s schools costs 5.18% more each year, while revenue grows 3.22% a year and slows. A cut lowers the cost line once; only a rate changes where it heads.",
    "area": "options",
    "elsewhere": [],
    "groups": [
@@ -1422,12 +1422,12 @@
    "ready": true,
    "shelves": [
     "state-aid",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Chapter 70 by year"
   },
   "chapter-70-needed": {
-   "finding": "For state aid alone to hold the gap, Chapter 70 would grow 11.33% a year (ours); we assume 2.71%.",
+   "finding": "For state aid alone to hold the gap, Chapter 70 would grow 11.33% a year (ours); we assume 2.71% a year.",
    "generator": "scripts/build_budget_crisis_topics.py",
    "home": "crisis",
    "id": "chapter-70-needed",
@@ -1586,7 +1586,7 @@
    "title": "Computer science"
   },
   "cost-and-revenue-growth": {
-   "finding": "What the schools buy grows 5.18% a year on our rates; their revenue 3.22% in FY2028, then less.",
+   "finding": "Keeping today’s schools costs 5.18% more each year; revenue grows 3.22% a year in FY2028, then less.",
    "generator": "scripts/build_budget_crisis_topics.py",
    "home": "crisis",
    "id": "cost-and-revenue-growth",
@@ -1752,7 +1752,7 @@
    "ready": true,
    "shelves": [
     "enrolment",
-    "spending-staff-students",
+    "school-spending-history",
     "homes-and-taxes"
    ],
    "title": "Enrolment by year"
@@ -1881,13 +1881,13 @@
   "fy2011-teacher-reading": {
    "finding": "The state’s file reads 102.3 teacher FTE for FY2011: 18.1 below FY2010 and 12.1 below FY2012.",
    "generator": "scripts/build_spending_staff_students_topics.py",
-   "home": "spending-staff-students",
+   "home": "school-spending-history",
    "id": "fy2011-teacher-reading",
    "minutes": 2,
-   "path": "/spending-staff-students/fy2011-teacher-reading",
+   "path": "/school-spending-history/fy2011-teacher-reading",
    "ready": true,
    "shelves": [
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "FY2011 teacher reading"
   },
@@ -2137,11 +2137,11 @@
    "title": "FY2028 revenue increase"
   },
   "gap-by-cost-line": {
-   "finding": "Health insurance puts $261,240 into the FY2028 gap from 14.9% of the budget, by our estimate.",
+   "finding": "Health insurance puts $261,240 into the FY2028 gap from 14.9% of the school budget (ours).",
    "generator": "scripts/build_budget_crisis_topics.py",
    "home": "crisis",
    "id": "gap-by-cost-line",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/crisis/gap-by-cost-line",
    "ready": true,
    "shelves": [
@@ -2243,13 +2243,13 @@
   "growth-side-by-side": {
    "finding": "FY2008 to FY2024: spending up 12.7% after prices (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%.",
    "generator": "scripts/build_spending_staff_students_topics.py",
-   "home": "spending-staff-students",
+   "home": "school-spending-history",
    "id": "growth-side-by-side",
    "minutes": 2,
-   "path": "/spending-staff-students/growth-side-by-side",
+   "path": "/school-spending-history/growth-side-by-side",
    "ready": true,
    "shelves": [
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Growth side by side"
   },
@@ -2289,7 +2289,7 @@
    "ready": true,
    "shelves": [
     "school-staffing",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "People and posts"
   },
@@ -2582,7 +2582,7 @@
    "title": "Lines cut to zero"
   },
   "long-run-balance-rate": {
-   "finding": "To balance for good, what the schools buy could grow 2.82% a year; our rates give 5.18%.",
+   "finding": "To balance for good, school costs could grow 2.82% a year; our rates give 5.18% a year.",
    "generator": "scripts/build_budget_crisis_topics.py",
    "home": "crisis",
    "id": "long-run-balance-rate",
@@ -2597,13 +2597,13 @@
   "long-run-school-spending": {
    "finding": "In FY2024 dollars net school spending went from $14,974,588 in FY1994 to $24,043,452 in FY2024, 1.61 times.",
    "generator": "scripts/build_spending_staff_students_topics.py",
-   "home": "spending-staff-students",
+   "home": "school-spending-history",
    "id": "long-run-school-spending",
    "minutes": 2,
-   "path": "/spending-staff-students/long-run-school-spending",
+   "path": "/school-spending-history/long-run-school-spending",
    "ready": true,
    "shelves": [
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Long-run school spending"
   },
@@ -2754,7 +2754,7 @@
    "shelves": [
     "state-aid",
     "school-spending",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Net school spending"
   },
@@ -2931,7 +2931,7 @@
    "ready": true,
    "shelves": [
     "school-staffing",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Paraprofessionals over time"
   },
@@ -3024,7 +3024,7 @@
    "ready": true,
    "shelves": [
     "school-spending",
-    "spending-staff-students",
+    "school-spending-history",
     "homes-and-taxes"
    ],
    "title": "Spending per pupil"
@@ -3358,7 +3358,7 @@
    "ready": true,
    "shelves": [
     "school-spending",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Spending and pupils"
   },
@@ -3391,13 +3391,13 @@
   "spending-per-child-enrolled": {
    "finding": "In FY2024 dollars, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%.",
    "generator": "scripts/build_spending_staff_students_topics.py",
-   "home": "spending-staff-students",
+   "home": "school-spending-history",
    "id": "spending-per-child-enrolled",
    "minutes": 1,
-   "path": "/spending-staff-students/spending-per-child-enrolled",
+   "path": "/school-spending-history/spending-per-child-enrolled",
    "ready": true,
    "shelves": [
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Spending per child enrolled"
   },
@@ -3545,20 +3545,20 @@
    "ready": true,
    "shelves": [
     "school-staffing",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Teachers over time"
   },
   "teachers-and-other-staff": {
    "finding": "The state counted 105.1 teacher FTE and 78.5 paraprofessional and support FTE in FY2025.",
    "generator": "scripts/build_spending_staff_students_topics.py",
-   "home": "spending-staff-students",
+   "home": "school-spending-history",
    "id": "teachers-and-other-staff",
    "minutes": 1,
-   "path": "/spending-staff-students/teachers-and-other-staff",
+   "path": "/school-spending-history/teachers-and-other-staff",
    "ready": true,
    "shelves": [
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Teachers and other staff"
   },
@@ -3600,7 +3600,7 @@
    "shelves": [
     "school-staffing",
     "school-spending",
-    "spending-staff-students"
+    "school-spending-history"
    ],
    "title": "Teachers per pupil"
   },
