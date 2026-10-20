@@ -1,0 +1,35 @@
+diff --git a/scripts/build_spending_staff_students_topics.py b/scripts/build_spending_staff_students_topics.py
+index 1cd17ed63..40c4442ba 100644
+--- a/scripts/build_spending_staff_students_topics.py
++++ b/scripts/build_spending_staff_students_topics.py
+@@ -448,6 +448,12 @@ def schedules():
+         lambda: collections.defaultdict(dict)))
+     which = collections.defaultdict(set)
+     for r in csv.DictReader(open(SCHEDULES, encoding='utf-8')):
++        # ONLY THE DISTRICTS THIS PAGE HAS ALIGNED. The table now also holds the district's own
++        # comparison districts (Maynard, Wachusett, Hudson, Tyngsborough, Uxbridge, Shrewsbury,
++        # and current Groton-Dunstable and Ayer Shirley schedules); each needs its lanes in
++        # LANES and its longevity rule in LONGEVITY before it can be set beside these.
++        if r['district'] not in LANES:
++            continue
+         y = int(r['fy'])
+         which[(r['district'], y)].add((r['schedule'], r['doc']))
+         grid[r['district']][y][r['lane']][int(r['step'])] = float(r['salary'])
+@@ -513,9 +519,14 @@ def comparison_sets():
+         return SETS_FALLBACK
+     out = collections.defaultdict(set)
+     for r in csv.DictReader(open(p, encoding='utf-8')):
+-        out[r['set_id']].add(r['district_as_printed'].replace('-', ' ')
+-                             if r['district_as_printed'] == 'Ayer-Shirley'
+-                             else r['district_as_printed'])
++        name = r['district_as_printed']
++        # The schedules table names the district 'Ayer Shirley'; the registry prints it as
++        # the Budget Task Force did ('Ayer-Shirley') and, for the project's own set, by DESE's
++        # name ('Ayer Shirley School District'). The project's set also lists Lunenburg.
++        if name in ('Ayer-Shirley', 'Ayer Shirley School District'):
++            name = 'Ayer Shirley'
++        if name != 'Lunenburg':
++            out[r['set_id']].add(name)
+     if set(out) != set(SETS_FALLBACK):
+         fail('comparison-sets.csv carries sets %s, not %s' % (sorted(out), sorted(SETS_FALLBACK)))
+     return out
