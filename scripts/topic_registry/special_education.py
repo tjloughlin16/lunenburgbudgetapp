@@ -20,13 +20,14 @@ CATEGORY = dict(
                                      'hiring-versus-placing', 'class-size-limits']),
         # The school MUNIS journal, every fund, posting by posting (notes/plans/
         # MUNIS-JOURNAL-REPORTS.md, Hub A). Written by build_journal_sped_topics.py.
-        ('Who is paid, and from where', ['sped-all-funds', 'sped-providers']),
+        ('Who is paid, and from where', ['sped-all-funds', 'sped-providers', 'sped-burndown']),
     ],
     elsewhere=[('/enrolment/children-schooled-elsewhere', 'Children schooled elsewhere'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
 TOPIC_GENERATORS = {'sped-all-funds': 'build_journal_sped_topics.py',
-                    'sped-providers': 'build_journal_sped_topics.py'}
+                    'sped-providers': 'build_journal_sped_topics.py',
+                    'sped-burndown': 'build_journal_surplus_topics.py'}
 TOPICS = {
     'out-of-district-tuition': 'Out-of-district tuition',
     'cost-per-placement': 'Cost per placement',
@@ -41,4 +42,5 @@ TOPICS = {
     'class-size-limits': 'Class size limits',
     'sped-all-funds': 'Special education, all funds',
     'sped-providers': 'Special education providers',
+    'sped-burndown': 'Special education burndown',
 }

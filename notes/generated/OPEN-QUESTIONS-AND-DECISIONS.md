@@ -1,8 +1,8 @@
 # What is waiting on a decision, and what is waiting on a document
 
-The Lunenburg Budget Project — for review, 19 October 2026
+The Lunenburg Budget Project — for review, 20 October 2026
 
-**4 decisions** and **13 open questions**. The gap registry behind the questions holds **269 rows** across 11 kinds: `comparison`, `curriculum`, `document_wanted`, `extraction`, `held`, `money`, `money_in`, `money_out`, `people`, `record`, `students`.
+**4 decisions** and **13 open questions**. The gap registry behind the questions holds **279 rows** across 11 kinds: `comparison`, `curriculum`, `document_wanted`, `extraction`, `held`, `money`, `money_in`, `money_out`, `people`, `record`, `students`.
 
 The two lists are kept apart because they behave differently, and section 3 below is the part worth reading first if you read nothing else.
 

@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-10-19T15:24:01Z",
+ "picked_at": "2026-10-20T11:35:21Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.2707,
- "input_sha256": "ff395d491647d0d6e2bde4768bc8c0c3d5d3a5bd850e0a2aacdbe1c1b942e31c",
+ "cost_usd": 0.4035,
+ "input_sha256": "4ab02d3e3cbca8c79762525ae9d631e5b6ce859a97c83250320359e626e3b6e4",
  "callouts": [
   {
    "kind": "fee",
    "value": "~$80",
-   "label": "per household a year, the flat stormwater fee the task force was looking at (not set)",
-   "hook": "household fee floated",
-   "quote": "we're kind of looking at like like $80 per household",
+   "label": "flat per-household stormwater fee the task force is looking at, not yet set",
+   "hook": "floated flat household fee",
+   "quote": "$80 per household",
    "heard": [
     "$80"
    ],
@@ -26,35 +26,15 @@
    "where": "Stormwater Task Force, 31 Aug 2026",
    "verdict": {
     "keep": true,
-    "why": "Consultant said 'looking at like $80 per household'; label says not set."
-   }
-  },
-  {
-   "kind": "fee",
-   "value": "Separate bill",
-   "label": "stormwater fees would be billed apart from the tax bill, with a quarterly pay option",
-   "hook": "",
-   "quote": "So, it's going to be a separate bill.",
-   "heard": [],
-   "item_date": "2026-08-31",
-   "item_board": "stormwater-task-force",
-   "basis": "heard",
-   "board": "stormwater-task-force",
-   "date": "2026-08-31",
-   "video_id": "N5dSxGy3zZs",
-   "t": 1580,
-   "where": "Stormwater Task Force, 31 Aug 2026",
-   "verdict": {
-    "keep": true,
-    "why": "Task force agreed on a separate bill with a quarterly option; nothing contradicts."
+    "why": "~$80 per household was said as 'kind of looking at'; label says not yet set; no later item sets or changes it."
    }
   },
   {
    "kind": "warrant",
    "value": "Nov 17",
-   "label": "special town meeting date when the stormwater fee bylaw and advisory vote are planned",
+   "label": "Special Town Meeting takes up the stormwater fee bylaw article",
    "hook": "",
-   "quote": "November 17th special town meeting: referral of zoning cleanup and stormwater fee bylaw articles to planning board",
+   "quote": "November 17th special town meeting",
    "heard": [],
    "item_date": "2026-09-15",
    "item_board": "select-board",
@@ -65,8 +45,32 @@
    "t": 4336,
    "where": "Select Board, 15 Sep 2026",
    "verdict": {
-    "keep": false,
-    "why": "Evidence lists only the fee bylaw referral, not an advisory vote; later the Select Board held the stormwater advisory article off the warrant."
+    "keep": true,
+    "why": "Select Board 15 Sep names the Nov 17 special town meeting with the stormwater fee bylaw article; 6 Oct vote put it in the warrant."
+   }
+  },
+  {
+   "kind": "money",
+   "value": "$108",
+   "label": "added to the average single-family tax bill if $500,000 of stormwater cost went into the operating budget",
+   "hook": "",
+   "quote": "$500,000. The average single family tax bill goes up $108",
+   "heard": [
+    "$500,000",
+    "$108",
+    "2 and a half%"
+   ],
+   "item_date": "2026-06-24",
+   "item_board": "stormwater-task-force",
+   "basis": "heard",
+   "board": "stormwater-task-force",
+   "date": "2026-06-24",
+   "video_id": "46iJXIejnrw",
+   "t": 3511,
+   "where": "Stormwater Task Force, 24 Jun 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Member ran the calculator: $500,000 in operating budget raises average single-family bill $108; stated as a scenario, matches label."
    }
   }
  ]

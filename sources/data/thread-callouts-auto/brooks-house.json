@@ -1,17 +1,17 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "brooks-house",
- "picked_at": "2026-10-19T15:22:48Z",
+ "picked_at": "2026-10-20T11:35:21Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0669,
- "input_sha256": "5febfae1a57c77a17f659a54425ed5b52e9dec3bbaf3399e8dd8a9af7be22d5c",
+ "cost_usd": 0.0946,
+ "input_sha256": "e87413494c4a5870dffa634bb29d4d58c3798327043d442d236d835c9008cf2b",
  "callouts": [
   {
    "kind": "warrant",
    "value": "Nov 17",
-   "label": "Town Meeting hears the report on selling or leasing Brooks House",
-   "hook": "Brooks House report due",
+   "label": "Special Town Meeting is to hear the overdue report on selling or leasing Brooks House",
+   "hook": "report due at town meeting",
    "quote": "prepare a report for the november 17 special town meeting",
    "heard": [],
    "item_date": "2026-09-15",
@@ -22,15 +22,15 @@
    "where": "Select Board minutes, 15 Sep 2026",
    "verdict": {
     "keep": true,
-    "why": "Minutes say report prepared for Nov 17 special town meeting; later items don't overtake it."
+    "why": "Minutes say board had staff prepare a report for the Nov 17 special town meeting; later items (APDC joint-meeting request) don't change that."
    }
   },
   {
    "kind": "impact",
-   "value": "No use",
-   "label": "building committee voted that the town has no municipal use for Brooks House",
+   "value": "No municipal use",
+   "label": "Building Design Committee voted that the town has no use for Brooks House",
    "hook": "",
-   "quote": "I move that the Lunberg Municipal Building Design Committee say that there's no municipal use for the Brooks House.",
+   "quote": "there's no municipal use for the Brooks House",
    "heard": [],
    "item_date": "2026-08-03",
    "item_board": "lunenburg-municipal-building-design-committee",
@@ -42,15 +42,15 @@
    "where": "Lunenburg Municipal Building Design Committee, 3 Aug 2026",
    "verdict": {
     "keep": true,
-    "why": "Motion and roll call recorded; the committee found no municipal use."
+    "why": "Motion that there is no municipal use was moved, seconded and roll-called; nothing later reverses it."
    }
   },
   {
    "kind": "impact",
-   "value": "No need",
-   "label": "School Committee voted that the schools have no need for Brooks House",
+   "value": "Schools pass",
+   "label": "School Committee voted that the school department has no need for Brooks House",
    "hook": "",
-   "quote": "the school department has no need",
+   "quote": "the school department has no need for them to give it to us",
    "heard": [],
    "item_date": "2026-10-07",
    "item_board": "school-committee",
@@ -62,7 +62,7 @@
    "where": "School Committee, 7 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Motion and roll call yes votes on 'no need' shown; nothing later."
+    "why": "School Committee roll call 'yes' on the motion that the school department has no need; nothing later."
    }
   }
  ]
